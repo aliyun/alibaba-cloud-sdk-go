@@ -77,12 +77,12 @@ func (client *Client) GetEditingProjectMaterialsWithCallback(request *GetEditing
 type GetEditingProjectMaterialsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	Type                 string `position:"Query" name:"Type"`
 	MaterialType         string `position:"Query" name:"MaterialType"`
+	ProjectId            string `position:"Query" name:"ProjectId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
-	Type                 string `position:"Query" name:"Type"`
-	ProjectId            string `position:"Query" name:"ProjectId"`
 }
 
 // GetEditingProjectMaterialsResponse is the response struct for api GetEditingProjectMaterials

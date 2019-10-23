@@ -77,11 +77,11 @@ func (client *Client) DeleteTranscodeTemplateGroupWithCallback(request *DeleteTr
 type DeleteTranscodeTemplateGroupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
 	TranscodeTemplateIds     string           `position:"Query" name:"TranscodeTemplateIds"`
+	ForceDelGroup            string           `position:"Query" name:"ForceDelGroup"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	TranscodeTemplateGroupId string           `position:"Query" name:"TranscodeTemplateGroupId"`
-	ForceDelGroup            string           `position:"Query" name:"ForceDelGroup"`
 }
 
 // DeleteTranscodeTemplateGroupResponse is the response struct for api DeleteTranscodeTemplateGroup

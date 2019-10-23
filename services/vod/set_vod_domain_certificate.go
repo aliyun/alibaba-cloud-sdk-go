@@ -76,14 +76,14 @@ func (client *Client) SetVodDomainCertificateWithCallback(request *SetVodDomainC
 // SetVodDomainCertificateRequest is the request struct for api SetVodDomainCertificate
 type SetVodDomainCertificateRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	SSLPub        string           `position:"Query" name:"SSLPub"`
-	CertName      string           `position:"Query" name:"CertName"`
 	SSLProtocol   string           `position:"Query" name:"SSLProtocol"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	SSLPri        string           `position:"Query" name:"SSLPri"`
+	CertName      string           `position:"Query" name:"CertName"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SSLPub        string           `position:"Query" name:"SSLPub"`
 	Region        string           `position:"Query" name:"Region"`
-	SSLPri        string           `position:"Query" name:"SSLPri"`
 }
 
 // SetVodDomainCertificateResponse is the response struct for api SetVodDomainCertificate

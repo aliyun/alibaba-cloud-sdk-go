@@ -78,9 +78,9 @@ type GetURLUploadInfosRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	JobIds               string           `position:"Query" name:"JobIds"`
 	UploadURLs           string           `position:"Query" name:"UploadURLs"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // GetURLUploadInfosResponse is the response struct for api GetURLUploadInfos

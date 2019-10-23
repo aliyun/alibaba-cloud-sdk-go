@@ -77,11 +77,11 @@ func (client *Client) DeleteMessageCallbackWithCallback(request *DeleteMessageCa
 type DeleteMessageCallbackRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
+	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	AppId                string           `position:"Query" name:"AppId"`
-	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
 	OwnerId              string           `position:"Query" name:"OwnerId"`
+	AppId                string           `position:"Query" name:"AppId"`
 }
 
 // DeleteMessageCallbackResponse is the response struct for api DeleteMessageCallback

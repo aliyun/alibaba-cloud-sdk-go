@@ -17,5 +17,5 @@ package vod
 
 // TemplateInfoList is a nested struct in vod response
 type TemplateInfoList struct {
-	TemplateInfoListItem []TemplateInfoListItem `json:"TemplateInfoListItem" xml:"TemplateInfoListItem"`
+	TemplateInfoListItem []TemplateInfoListItem `json:"TemplateInfoList" xml:"TemplateInfoList"`
 }

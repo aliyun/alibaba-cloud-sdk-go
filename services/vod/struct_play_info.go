@@ -17,19 +17,27 @@ package vod
 
 // PlayInfo is a nested struct in vod response
 type PlayInfo struct {
-	Height     string `json:"Height" xml:"Height"`
-	JobId      string `json:"JobId" xml:"JobId"`
-	Format     string `json:"Format" xml:"Format"`
-	Fps        string `json:"Fps" xml:"Fps"`
-	Bitrate    string `json:"Bitrate" xml:"Bitrate"`
-	Encrypt    int64  `json:"Encrypt" xml:"Encrypt"`
-	Rand       string `json:"Rand" xml:"Rand"`
-	StreamType string `json:"StreamType" xml:"StreamType"`
-	Width      string `json:"Width" xml:"Width"`
-	Duration   string `json:"Duration" xml:"Duration"`
-	Complexity string `json:"Complexity" xml:"Complexity"`
-	Size       string `json:"Size" xml:"Size"`
-	Definition string `json:"Definition" xml:"Definition"`
-	Plaintext  string `json:"Plaintext" xml:"Plaintext"`
-	PlayURL    string `json:"PlayURL" xml:"PlayURL"`
+	JobId            string `json:"JobId" xml:"JobId"`
+	Format           string `json:"Format" xml:"Format"`
+	PreprocessStatus string `json:"PreprocessStatus" xml:"PreprocessStatus"`
+	EncryptType      string `json:"EncryptType" xml:"EncryptType"`
+	Fps              string `json:"Fps" xml:"Fps"`
+	ModificationTime string `json:"ModificationTime" xml:"ModificationTime"`
+	NarrowBandType   string `json:"NarrowBandType" xml:"NarrowBandType"`
+	Bitrate          string `json:"Bitrate" xml:"Bitrate"`
+	Encrypt          int64  `json:"Encrypt" xml:"Encrypt"`
+	Rand             string `json:"Rand" xml:"Rand"`
+	CreationTime     string `json:"CreationTime" xml:"CreationTime"`
+	StreamType       string `json:"StreamType" xml:"StreamType"`
+	Height           int64  `json:"Height" xml:"Height"`
+	WatermarkId      string `json:"WatermarkId" xml:"WatermarkId"`
+	Duration         string `json:"Duration" xml:"Duration"`
+	Complexity       string `json:"Complexity" xml:"Complexity"`
+	Width            int64  `json:"Width" xml:"Width"`
+	Size             int64  `json:"Size" xml:"Size"`
+	Status           string `json:"Status" xml:"Status"`
+	Definition       string `json:"Definition" xml:"Definition"`
+	Plaintext        string `json:"Plaintext" xml:"Plaintext"`
+	PlayURL          string `json:"PlayURL" xml:"PlayURL"`
+	Specification    string `json:"Specification" xml:"Specification"`
 }

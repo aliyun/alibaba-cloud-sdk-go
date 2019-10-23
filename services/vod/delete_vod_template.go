@@ -78,8 +78,8 @@ type DeleteVodTemplateRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	VodTemplateId        string           `position:"Query" name:"VodTemplateId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VodTemplateId        string           `position:"Query" name:"VodTemplateId"`
 }
 
 // DeleteVodTemplateResponse is the response struct for api DeleteVodTemplate

@@ -17,5 +17,5 @@ package vod
 
 // CounterListInGetAIMediaAuditJob is a nested struct in vod response
 type CounterListInGetAIMediaAuditJob struct {
-	CounterListItem []CounterListItem `json:"CounterListItem" xml:"CounterListItem"`
+	CounterListItem []CounterListItem `json:"CounterList" xml:"CounterList"`
 }

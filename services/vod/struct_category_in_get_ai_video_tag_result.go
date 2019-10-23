@@ -17,5 +17,5 @@ package vod
 
 // CategoryInGetAIVideoTagResult is a nested struct in vod response
 type CategoryInGetAIVideoTagResult struct {
-	CategoryItem []CategoryItem `json:"CategoryItem" xml:"CategoryItem"`
+	CategoryItem []CategoryItem `json:"Category" xml:"Category"`
 }

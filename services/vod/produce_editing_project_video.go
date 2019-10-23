@@ -77,16 +77,16 @@ func (client *Client) ProduceEditingProjectVideoWithCallback(request *ProduceEdi
 type ProduceEditingProjectVideoRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	MediaMetadata        string           `position:"Query" name:"MediaMetadata"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Description          string           `position:"Query" name:"Description"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Title                string           `position:"Query" name:"Title"`
 	CoverURL             string           `position:"Query" name:"CoverURL"`
 	UserData             string           `position:"Query" name:"UserData"`
-	Timeline             string           `position:"Query" name:"Timeline"`
 	ProduceConfig        string           `position:"Query" name:"ProduceConfig"`
 	ProjectId            string           `position:"Query" name:"ProjectId"`
+	MediaMetadata        string           `position:"Query" name:"MediaMetadata"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Timeline             string           `position:"Query" name:"Timeline"`
 }
 
 // ProduceEditingProjectVideoResponse is the response struct for api ProduceEditingProjectVideo

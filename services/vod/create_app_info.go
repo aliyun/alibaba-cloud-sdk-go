@@ -77,10 +77,10 @@ func (client *Client) CreateAppInfoWithCallback(request *CreateAppInfoRequest, c
 type CreateAppInfoRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AppName              string           `position:"Query" name:"AppName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Description          string           `position:"Query" name:"Description"`
 	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
+	AppName              string           `position:"Query" name:"AppName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

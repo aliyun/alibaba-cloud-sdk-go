@@ -17,5 +17,5 @@ package vod
 
 // TopListInGetMediaAuditResult is a nested struct in vod response
 type TopListInGetMediaAuditResult struct {
-	TopListItem []TopListItem `json:"TopListItem" xml:"TopListItem"`
+	TopListItem []TopListItem `json:"TopList" xml:"TopList"`
 }

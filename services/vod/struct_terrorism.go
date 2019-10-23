@@ -17,5 +17,5 @@ package vod
 
 // Terrorism is a nested struct in vod response
 type Terrorism struct {
-	TerrorismItem []TerrorismItem `json:"TerrorismItem" xml:"TerrorismItem"`
+	TerrorismItem []TerrorismItem `json:"Terrorism" xml:"Terrorism"`
 }

@@ -17,5 +17,5 @@ package vod
 
 // Porn is a nested struct in vod response
 type Porn struct {
-	PornItem []PornItem `json:"PornItem" xml:"PornItem"`
+	PornItem []PornItem `json:"Porn" xml:"Porn"`
 }

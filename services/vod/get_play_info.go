@@ -77,20 +77,20 @@ func (client *Client) GetPlayInfoWithCallback(request *GetPlayInfoRequest, callb
 type GetPlayInfoRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	StreamType           string           `position:"Query" name:"StreamType"`
 	Formats              string           `position:"Query" name:"Formats"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Channel              string           `position:"Query" name:"Channel"`
-	VideoId              string           `position:"Query" name:"VideoId"`
 	PlayerVersion        string           `position:"Query" name:"PlayerVersion"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResultType           string           `position:"Query" name:"ResultType"`
 	Rand                 string           `position:"Query" name:"Rand"`
 	ReAuthInfo           string           `position:"Query" name:"ReAuthInfo"`
 	PlayConfig           string           `position:"Query" name:"PlayConfig"`
 	OutputType           string           `position:"Query" name:"OutputType"`
 	Definition           string           `position:"Query" name:"Definition"`
 	AuthTimeout          requests.Integer `position:"Query" name:"AuthTimeout"`
+	StreamType           string           `position:"Query" name:"StreamType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	VideoId              string           `position:"Query" name:"VideoId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResultType           string           `position:"Query" name:"ResultType"`
 	AuthInfo             string           `position:"Query" name:"AuthInfo"`
 }
 

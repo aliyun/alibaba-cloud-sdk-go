@@ -77,23 +77,23 @@ func (client *Client) CreateUploadVideoWithCallback(request *CreateUploadVideoRe
 type CreateUploadVideoRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	TranscodeMode        string           `position:"Query" name:"TranscodeMode"`
-	IP                   string           `position:"Query" name:"IP"`
 	Description          string           `position:"Query" name:"Description"`
 	FileSize             requests.Integer `position:"Query" name:"FileSize"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Title                string           `position:"Query" name:"Title"`
-	Tags                 string           `position:"Query" name:"Tags"`
 	StorageLocation      string           `position:"Query" name:"StorageLocation"`
 	CoverURL             string           `position:"Query" name:"CoverURL"`
 	UserData             string           `position:"Query" name:"UserData"`
-	FileName             string           `position:"Query" name:"FileName"`
-	TemplateGroupId      string           `position:"Query" name:"TemplateGroupId"`
 	CateId               requests.Integer `position:"Query" name:"CateId"`
-	AppId                string           `position:"Query" name:"AppId"`
 	WorkflowId           string           `position:"Query" name:"WorkflowId"`
 	CustomMediaInfo      string           `position:"Query" name:"CustomMediaInfo"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	IP                   string           `position:"Query" name:"IP"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	FileName             string           `position:"Query" name:"FileName"`
+	TemplateGroupId      string           `position:"Query" name:"TemplateGroupId"`
+	AppId                string           `position:"Query" name:"AppId"`
 }
 
 // CreateUploadVideoResponse is the response struct for api CreateUploadVideo

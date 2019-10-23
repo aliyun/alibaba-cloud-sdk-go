@@ -78,8 +78,8 @@ type GetVodTemplateRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	VodTemplateId        string           `position:"Query" name:"VodTemplateId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VodTemplateId        string           `position:"Query" name:"VodTemplateId"`
 }
 
 // GetVodTemplateResponse is the response struct for api GetVodTemplate

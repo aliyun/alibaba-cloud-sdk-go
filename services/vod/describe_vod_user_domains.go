@@ -76,15 +76,15 @@ func (client *Client) DescribeVodUserDomainsWithCallback(request *DescribeVodUse
 // DescribeVodUserDomainsRequest is the request struct for api DescribeVodUserDomains
 type DescribeVodUserDomainsRequest struct {
 	*requests.RpcRequest
-	FuncFilter       string           `position:"Query" name:"FuncFilter"`
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 	CheckDomainShow  requests.Boolean `position:"Query" name:"CheckDomainShow"`
 	SecurityToken    string           `position:"Query" name:"SecurityToken"`
 	CdnType          string           `position:"Query" name:"CdnType"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	FuncFilter       string           `position:"Query" name:"FuncFilter"`
 	DomainName       string           `position:"Query" name:"DomainName"`
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 	FuncId           string           `position:"Query" name:"FuncId"`
-	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 	DomainStatus     string           `position:"Query" name:"DomainStatus"`
 	DomainSearchType string           `position:"Query" name:"DomainSearchType"`
 }

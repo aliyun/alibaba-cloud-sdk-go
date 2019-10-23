@@ -17,5 +17,5 @@ package vod
 
 // Location is a nested struct in vod response
 type Location struct {
-	LocationItem []LocationItem `json:"LocationItem" xml:"LocationItem"`
+	LocationItem []LocationItem `json:"Location" xml:"Location"`
 }

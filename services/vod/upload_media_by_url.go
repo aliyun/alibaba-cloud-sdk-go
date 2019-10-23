@@ -77,17 +77,17 @@ func (client *Client) UploadMediaByURLWithCallback(request *UploadMediaByURLRequ
 type UploadMediaByURLRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	MessageCallback      string           `position:"Query" name:"MessageCallback"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Priority             string           `position:"Query" name:"Priority"`
 	StorageLocation      string           `position:"Query" name:"StorageLocation"`
 	UserData             string           `position:"Query" name:"UserData"`
+	WorkflowId           string           `position:"Query" name:"WorkflowId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Priority             string           `position:"Query" name:"Priority"`
 	TemplateGroupId      string           `position:"Query" name:"TemplateGroupId"`
 	UploadMetadatas      string           `position:"Query" name:"UploadMetadatas"`
 	UploadURLs           string           `position:"Query" name:"UploadURLs"`
 	AppId                string           `position:"Query" name:"AppId"`
-	WorkflowId           string           `position:"Query" name:"WorkflowId"`
 }
 
 // UploadMediaByURLResponse is the response struct for api UploadMediaByURL

@@ -76,8 +76,8 @@ func (client *Client) SetAuditSecurityIpWithCallback(request *SetAuditSecurityIp
 // SetAuditSecurityIpRequest is the request struct for api SetAuditSecurityIp
 type SetAuditSecurityIpRequest struct {
 	*requests.RpcRequest
-	OperateMode       string `position:"Query" name:"OperateMode"`
 	SecurityGroupName string `position:"Query" name:"SecurityGroupName"`
+	OperateMode       string `position:"Query" name:"OperateMode"`
 	Ips               string `position:"Query" name:"Ips"`
 }
 

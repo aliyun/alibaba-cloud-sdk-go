@@ -30,5 +30,6 @@ type ImageInfo struct {
 	Status          string    `json:"Status" xml:"Status"`
 	AppId           string    `json:"AppId" xml:"AppId"`
 	RegionId        string    `json:"RegionId" xml:"RegionId"`
+	AuditStatus     string    `json:"AuditStatus" xml:"AuditStatus"`
 	Mezzanine       Mezzanine `json:"Mezzanine" xml:"Mezzanine"`
 }

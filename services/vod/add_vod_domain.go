@@ -78,8 +78,8 @@ type AddVodDomainRequest struct {
 	*requests.RpcRequest
 	Sources       string           `position:"Query" name:"Sources"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
 	Scope         string           `position:"Query" name:"Scope"`
+	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	CheckUrl      string           `position:"Query" name:"CheckUrl"`

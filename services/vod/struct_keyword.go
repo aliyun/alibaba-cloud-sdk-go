@@ -17,5 +17,5 @@ package vod
 
 // Keyword is a nested struct in vod response
 type Keyword struct {
-	KeywordItem []KeywordItem `json:"KeywordItem" xml:"KeywordItem"`
+	KeywordItem []KeywordItem `json:"Keyword" xml:"Keyword"`
 }

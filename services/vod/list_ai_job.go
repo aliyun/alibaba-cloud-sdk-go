@@ -79,8 +79,8 @@ type ListAIJobRequest struct {
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	JobIds               string `position:"Query" name:"JobIds"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
+	JobIds               string `position:"Query" name:"JobIds"`
 }
 
 // ListAIJobResponse is the response struct for api ListAIJob

@@ -77,10 +77,10 @@ func (client *Client) GetAppInfosWithCallback(request *GetAppInfosRequest, callb
 type GetAppInfosRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AppIds               string           `position:"Query" name:"AppIds"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AppIds               string           `position:"Query" name:"AppIds"`
 }
 
 // GetAppInfosResponse is the response struct for api GetAppInfos

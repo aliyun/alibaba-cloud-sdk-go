@@ -78,8 +78,8 @@ type DeleteMezzaninesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Force                requests.Boolean `position:"Query" name:"Force"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Force                requests.Boolean `position:"Query" name:"Force"`
 	VideoIds             string           `position:"Query" name:"VideoIds"`
 }
 

@@ -76,15 +76,15 @@ func (client *Client) AddEditingProjectWithCallback(request *AddEditingProjectRe
 // AddEditingProjectRequest is the request struct for api AddEditingProject
 type AddEditingProjectRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	Description          string `position:"Query" name:"Description"`
+	Title                string `position:"Query" name:"Title"`
 	CoverURL             string `position:"Query" name:"CoverURL"`
 	Division             string `position:"Query" name:"Division"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Description          string `position:"Query" name:"Description"`
-	Timeline             string `position:"Query" name:"Timeline"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
-	Title                string `position:"Query" name:"Title"`
+	Timeline             string `position:"Query" name:"Timeline"`
 }
 
 // AddEditingProjectResponse is the response struct for api AddEditingProject

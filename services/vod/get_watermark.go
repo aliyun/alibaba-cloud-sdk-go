@@ -76,10 +76,10 @@ func (client *Client) GetWatermarkWithCallback(request *GetWatermarkRequest, cal
 // GetWatermarkRequest is the request struct for api GetWatermark
 type GetWatermarkRequest struct {
 	*requests.RpcRequest
-	WatermarkId          string           `position:"Query" name:"WatermarkId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	WatermarkId          string           `position:"Query" name:"WatermarkId"`
 }
 
 // GetWatermarkResponse is the response struct for api GetWatermark

@@ -76,10 +76,10 @@ func (client *Client) DeleteVodSpecificConfigWithCallback(request *DeleteVodSpec
 // DeleteVodSpecificConfigRequest is the request struct for api DeleteVodSpecificConfig
 type DeleteVodSpecificConfigRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	ConfigId      string           `position:"Query" name:"ConfigId"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	ConfigId      string           `position:"Query" name:"ConfigId"`
 }
 
 // DeleteVodSpecificConfigResponse is the response struct for api DeleteVodSpecificConfig

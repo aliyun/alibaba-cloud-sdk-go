@@ -77,13 +77,13 @@ func (client *Client) AddWatermarkWithCallback(request *AddWatermarkRequest, cal
 type AddWatermarkRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Type                 string           `position:"Query" name:"Type"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	WatermarkConfig      string           `position:"Query" name:"WatermarkConfig"`
 	AppId                string           `position:"Query" name:"AppId"`
 	Name                 string           `position:"Query" name:"Name"`
 	FileUrl              string           `position:"Query" name:"FileUrl"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Type                 string           `position:"Query" name:"Type"`
-	WatermarkConfig      string           `position:"Query" name:"WatermarkConfig"`
 }
 
 // AddWatermarkResponse is the response struct for api AddWatermark

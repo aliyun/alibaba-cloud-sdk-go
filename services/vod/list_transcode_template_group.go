@@ -77,11 +77,11 @@ func (client *Client) ListTranscodeTemplateGroupWithCallback(request *ListTransc
 type ListTranscodeTemplateGroupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNo               requests.Integer `position:"Query" name:"PageNo"`
 	AppId                string           `position:"Query" name:"AppId"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ListTranscodeTemplateGroupResponse is the response struct for api ListTranscodeTemplateGroup

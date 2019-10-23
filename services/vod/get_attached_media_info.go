@@ -77,12 +77,12 @@ func (client *Client) GetAttachedMediaInfoWithCallback(request *GetAttachedMedia
 type GetAttachedMediaInfoRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
 	OutputType           string           `position:"Query" name:"OutputType"`
 	MediaIds             string           `position:"Query" name:"MediaIds"`
-	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AuthTimeout          requests.Integer `position:"Query" name:"AuthTimeout"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // GetAttachedMediaInfoResponse is the response struct for api GetAttachedMediaInfo

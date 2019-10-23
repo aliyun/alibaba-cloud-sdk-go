@@ -17,5 +17,5 @@ package vod
 
 // Detail is a nested struct in vod response
 type Detail struct {
-	DetailItem []DetailItem `json:"DetailItem" xml:"DetailItem"`
+	DetailItem []DetailItem `json:"Detail" xml:"Detail"`
 }

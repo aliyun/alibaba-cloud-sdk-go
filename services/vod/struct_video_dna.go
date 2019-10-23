@@ -17,5 +17,5 @@ package vod
 
 // VideoDNA is a nested struct in vod response
 type VideoDNA struct {
-	VideoDNAItem []VideoDNAItem `json:"VideoDNAItem" xml:"VideoDNAItem"`
+	VideoDNAItem []VideoDNAItem `json:"VideoDNA" xml:"VideoDNA"`
 }

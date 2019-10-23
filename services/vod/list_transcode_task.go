@@ -77,13 +77,13 @@ func (client *Client) ListTranscodeTaskWithCallback(request *ListTranscodeTaskRe
 type ListTranscodeTaskRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNo               requests.Integer `position:"Query" name:"PageNo"`
+	StartTime            string           `position:"Query" name:"StartTime"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
 	VideoId              string           `position:"Query" name:"VideoId"`
-	StartTime            string           `position:"Query" name:"StartTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNo               requests.Integer `position:"Query" name:"PageNo"`
 }
 
 // ListTranscodeTaskResponse is the response struct for api ListTranscodeTask

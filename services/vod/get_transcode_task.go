@@ -78,8 +78,8 @@ type GetTranscodeTaskRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	TranscodeTaskId      string           `position:"Query" name:"TranscodeTaskId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TranscodeTaskId      string           `position:"Query" name:"TranscodeTaskId"`
 }
 
 // GetTranscodeTaskResponse is the response struct for api GetTranscodeTask

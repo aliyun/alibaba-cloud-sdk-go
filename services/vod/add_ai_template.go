@@ -77,10 +77,10 @@ func (client *Client) AddAITemplateWithCallback(request *AddAITemplateRequest, c
 type AddAITemplateRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	TemplateConfig       string           `position:"Query" name:"TemplateConfig"`
 	TemplateType         string           `position:"Query" name:"TemplateType"`
 	TemplateName         string           `position:"Query" name:"TemplateName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

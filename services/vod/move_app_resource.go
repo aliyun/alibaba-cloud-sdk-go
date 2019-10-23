@@ -76,10 +76,10 @@ func (client *Client) MoveAppResourceWithCallback(request *MoveAppResourceReques
 // MoveAppResourceRequest is the request struct for api MoveAppResource
 type MoveAppResourceRequest struct {
 	*requests.RpcRequest
-	TargetAppId          string           `position:"Query" name:"TargetAppId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
+	TargetAppId          string           `position:"Query" name:"TargetAppId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceType         string           `position:"Query" name:"ResourceType"`
 	ResourceIds          string           `position:"Query" name:"ResourceIds"`

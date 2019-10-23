@@ -19,6 +19,9 @@ package vod
 type VideoResult struct {
 	Suggestion      string          `json:"Suggestion" xml:"Suggestion"`
 	Label           string          `json:"Label" xml:"Label"`
+	LogoResult      LogoResult      `json:"LogoResult" xml:"LogoResult"`
+	AdResult        AdResult        `json:"AdResult" xml:"AdResult"`
+	LiveResult      LiveResult      `json:"LiveResult" xml:"LiveResult"`
 	TerrorismResult TerrorismResult `json:"TerrorismResult" xml:"TerrorismResult"`
 	PornResult      PornResult      `json:"PornResult" xml:"PornResult"`
 }

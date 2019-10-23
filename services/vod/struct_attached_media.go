@@ -17,19 +17,21 @@ package vod
 
 // AttachedMedia is a nested struct in vod response
 type AttachedMedia struct {
+	BusinessType     string     `json:"BusinessType" xml:"BusinessType"`
 	Tags             string     `json:"Tags" xml:"Tags"`
 	Title            string     `json:"Title" xml:"Title"`
 	ModificationTime string     `json:"ModificationTime" xml:"ModificationTime"`
+	StorageLocation  string     `json:"StorageLocation" xml:"StorageLocation"`
 	CreationTime     string     `json:"CreationTime" xml:"CreationTime"`
 	Icon             string     `json:"Icon" xml:"Icon"`
 	URL              string     `json:"URL" xml:"URL"`
 	AppId            string     `json:"AppId" xml:"AppId"`
 	RegionId         string     `json:"RegionId" xml:"RegionId"`
 	FileSize         int64      `json:"FileSize" xml:"FileSize"`
-	StorageLocation  int64      `json:"StorageLocation" xml:"StorageLocation"`
 	Status           string     `json:"Status" xml:"Status"`
 	MediaId          string     `json:"MediaId" xml:"MediaId"`
 	Description      string     `json:"Description" xml:"Description"`
+	Ext              string     `json:"Ext" xml:"Ext"`
 	OnlineStatus     string     `json:"OnlineStatus" xml:"OnlineStatus"`
 	Type             string     `json:"Type" xml:"Type"`
 	Categories       []Category `json:"Categories" xml:"Categories"`

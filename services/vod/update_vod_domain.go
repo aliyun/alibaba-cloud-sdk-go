@@ -78,9 +78,9 @@ type UpdateVodDomainRequest struct {
 	*requests.RpcRequest
 	TopLevelDomain string           `position:"Query" name:"TopLevelDomain"`
 	Sources        string           `position:"Query" name:"Sources"`
-	SecurityToken  string           `position:"Query" name:"SecurityToken"`
 	DomainName     string           `position:"Query" name:"DomainName"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken  string           `position:"Query" name:"SecurityToken"`
 }
 
 // UpdateVodDomainResponse is the response struct for api UpdateVodDomain

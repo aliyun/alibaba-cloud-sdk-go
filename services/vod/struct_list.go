@@ -17,5 +17,5 @@ package vod
 
 // List is a nested struct in vod response
 type List struct {
-	ListItem []ListItem `json:"ListItem" xml:"ListItem"`
+	ListItem []ListItem `json:"List" xml:"List"`
 }

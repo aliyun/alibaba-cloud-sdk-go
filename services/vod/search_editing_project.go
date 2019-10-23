@@ -77,14 +77,14 @@ func (client *Client) SearchEditingProjectWithCallback(request *SearchEditingPro
 type SearchEditingProjectRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	Title                string           `position:"Query" name:"Title"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
-	StartTime            string           `position:"Query" name:"StartTime"`
 	OwnerId              string           `position:"Query" name:"OwnerId"`
-	Title                string           `position:"Query" name:"Title"`
 	PageNo               requests.Integer `position:"Query" name:"PageNo"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	SortBy               string           `position:"Query" name:"SortBy"`
 	Status               string           `position:"Query" name:"Status"`
 }

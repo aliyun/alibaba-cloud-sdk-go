@@ -76,10 +76,10 @@ func (client *Client) SetDefaultWatermarkWithCallback(request *SetDefaultWaterma
 // SetDefaultWatermarkRequest is the request struct for api SetDefaultWatermark
 type SetDefaultWatermarkRequest struct {
 	*requests.RpcRequest
-	WatermarkId          string           `position:"Query" name:"WatermarkId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	WatermarkId          string           `position:"Query" name:"WatermarkId"`
 }
 
 // SetDefaultWatermarkResponse is the response struct for api SetDefaultWatermark

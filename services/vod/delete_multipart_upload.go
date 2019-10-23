@@ -77,9 +77,9 @@ func (client *Client) DeleteMultipartUploadWithCallback(request *DeleteMultipart
 type DeleteMultipartUploadRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
+	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
 	OwnerId              string           `position:"Query" name:"OwnerId"`
 	MediaId              string           `position:"Query" name:"MediaId"`
 	MediaType            string           `position:"Query" name:"MediaType"`

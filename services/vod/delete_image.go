@@ -77,9 +77,9 @@ func (client *Client) DeleteImageWithCallback(request *DeleteImageRequest, callb
 type DeleteImageRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ImageURLs            string           `position:"Query" name:"ImageURLs"`
 	ImageType            string           `position:"Query" name:"ImageType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ImageURLs            string           `position:"Query" name:"ImageURLs"`
 	VideoId              string           `position:"Query" name:"VideoId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	DeleteImageType      string           `position:"Query" name:"DeleteImageType"`

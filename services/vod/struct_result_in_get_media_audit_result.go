@@ -17,5 +17,5 @@ package vod
 
 // ResultInGetMediaAuditResult is a nested struct in vod response
 type ResultInGetMediaAuditResult struct {
-	ResultItem []ResultItem `json:"ResultItem" xml:"ResultItem"`
+	ResultItem []ResultItem `json:"Result" xml:"Result"`
 }

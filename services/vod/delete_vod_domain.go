@@ -76,10 +76,10 @@ func (client *Client) DeleteVodDomainWithCallback(request *DeleteVodDomainReques
 // DeleteVodDomainRequest is the request struct for api DeleteVodDomain
 type DeleteVodDomainRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DeleteVodDomainResponse is the response struct for api DeleteVodDomain

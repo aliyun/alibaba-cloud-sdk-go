@@ -78,9 +78,9 @@ type DeleteStreamRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	JobIds               string           `position:"Query" name:"JobIds"`
 	VideoId              string           `position:"Query" name:"VideoId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	JobIds               string           `position:"Query" name:"JobIds"`
 }
 
 // DeleteStreamResponse is the response struct for api DeleteStream

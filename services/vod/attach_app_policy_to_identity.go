@@ -76,14 +76,14 @@ func (client *Client) AttachAppPolicyToIdentityWithCallback(request *AttachAppPo
 // AttachAppPolicyToIdentityRequest is the request struct for api AttachAppPolicyToIdentity
 type AttachAppPolicyToIdentityRequest struct {
 	*requests.RpcRequest
-	IdentityName         string           `position:"Query" name:"IdentityName"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	IdentityType         string           `position:"Query" name:"IdentityType"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AppId                string           `position:"Query" name:"AppId"`
 	PolicyNames          string           `position:"Query" name:"PolicyNames"`
 	ResourceRealOwnerId  string           `position:"Query" name:"ResourceRealOwnerId"`
+	IdentityName         string           `position:"Query" name:"IdentityName"`
+	IdentityType         string           `position:"Query" name:"IdentityType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AppId                string           `position:"Query" name:"AppId"`
 }
 
 // AttachAppPolicyToIdentityResponse is the response struct for api AttachAppPolicyToIdentity

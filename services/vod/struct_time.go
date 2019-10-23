@@ -17,5 +17,5 @@ package vod
 
 // Time is a nested struct in vod response
 type Time struct {
-	TimeItem []TimeItem `json:"TimeItem" xml:"TimeItem"`
+	TimeItem []TimeItem `json:"Time" xml:"Time"`
 }

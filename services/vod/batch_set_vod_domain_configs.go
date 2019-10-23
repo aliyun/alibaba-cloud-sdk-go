@@ -77,10 +77,10 @@ func (client *Client) BatchSetVodDomainConfigsWithCallback(request *BatchSetVodD
 type BatchSetVodDomainConfigsRequest struct {
 	*requests.RpcRequest
 	Functions     string           `position:"Query" name:"Functions"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainNames   string           `position:"Query" name:"DomainNames"`
 	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // BatchSetVodDomainConfigsResponse is the response struct for api BatchSetVodDomainConfigs

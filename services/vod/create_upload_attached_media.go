@@ -77,20 +77,20 @@ func (client *Client) CreateUploadAttachedMediaWithCallback(request *CreateUploa
 type CreateUploadAttachedMediaRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	CateIds              string           `position:"Query" name:"CateIds"`
 	Icon                 string           `position:"Query" name:"Icon"`
 	Description          string           `position:"Query" name:"Description"`
 	FileSize             string           `position:"Query" name:"FileSize"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Title                string           `position:"Query" name:"Title"`
 	BusinessType         string           `position:"Query" name:"BusinessType"`
-	Tags                 string           `position:"Query" name:"Tags"`
 	StorageLocation      string           `position:"Query" name:"StorageLocation"`
 	UserData             string           `position:"Query" name:"UserData"`
+	CateId               requests.Integer `position:"Query" name:"CateId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	CateIds              string           `position:"Query" name:"CateIds"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Tags                 string           `position:"Query" name:"Tags"`
 	MediaExt             string           `position:"Query" name:"MediaExt"`
 	FileName             string           `position:"Query" name:"FileName"`
-	CateId               requests.Integer `position:"Query" name:"CateId"`
 	AppId                string           `position:"Query" name:"AppId"`
 }
 

@@ -17,5 +17,5 @@ package vod
 
 // PlayInfoListInSearchMedia is a nested struct in vod response
 type PlayInfoListInSearchMedia struct {
-	PlayInfo []PlayInfo `json:"PlayInfo" xml:"PlayInfo"`
+	PlayInfo []PlayInfoInSearchMedia `json:"PlayInfo" xml:"PlayInfo"`
 }

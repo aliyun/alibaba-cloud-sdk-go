@@ -77,17 +77,18 @@ func (client *Client) SubmitSnapshotJobWithCallback(request *SubmitSnapshotJobRe
 type SubmitSnapshotJobRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	UserData             string           `position:"Query" name:"UserData"`
+	SpecifiedOffsetTime  requests.Integer `position:"Query" name:"SpecifiedOffsetTime"`
+	SpriteSnapshotConfig string           `position:"Query" name:"SpriteSnapshotConfig"`
+	SnapshotTemplateId   string           `position:"Query" name:"SnapshotTemplateId"`
+	Height               string           `position:"Query" name:"Height"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Count                requests.Integer `position:"Query" name:"Count"`
 	VideoId              string           `position:"Query" name:"VideoId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	UserData             string           `position:"Query" name:"UserData"`
-	SpecifiedOffsetTime  requests.Integer `position:"Query" name:"SpecifiedOffsetTime"`
 	Width                string           `position:"Query" name:"Width"`
+	FileUrl              string           `position:"Query" name:"FileUrl"`
 	Interval             requests.Integer `position:"Query" name:"Interval"`
-	SpriteSnapshotConfig string           `position:"Query" name:"SpriteSnapshotConfig"`
-	SnapshotTemplateId   string           `position:"Query" name:"SnapshotTemplateId"`
-	Height               string           `position:"Query" name:"Height"`
 }
 
 // SubmitSnapshotJobResponse is the response struct for api SubmitSnapshotJob

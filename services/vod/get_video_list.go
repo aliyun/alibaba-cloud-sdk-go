@@ -77,16 +77,16 @@ func (client *Client) GetVideoListWithCallback(request *GetVideoListRequest, cal
 type GetVideoListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	CateId               requests.Integer `position:"Query" name:"CateId"`
-	PageNo               requests.Integer `position:"Query" name:"PageNo"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	EndTime              string           `position:"Query" name:"EndTime"`
-	SortBy               string           `position:"Query" name:"SortBy"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Status               string           `position:"Query" name:"Status"`
 	StorageLocation      string           `position:"Query" name:"StorageLocation"`
+	CateId               requests.Integer `position:"Query" name:"CateId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNo               requests.Integer `position:"Query" name:"PageNo"`
+	SortBy               string           `position:"Query" name:"SortBy"`
+	Status               string           `position:"Query" name:"Status"`
 }
 
 // GetVideoListResponse is the response struct for api GetVideoList

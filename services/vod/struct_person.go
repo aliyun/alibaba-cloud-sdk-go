@@ -17,5 +17,5 @@ package vod
 
 // Person is a nested struct in vod response
 type Person struct {
-	PersonItem []PersonItem `json:"PersonItem" xml:"PersonItem"`
+	PersonItem []PersonItem `json:"Person" xml:"Person"`
 }

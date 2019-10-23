@@ -76,9 +76,9 @@ func (client *Client) BatchStopVodDomainWithCallback(request *BatchStopVodDomain
 // BatchStopVodDomainRequest is the request struct for api BatchStopVodDomain
 type BatchStopVodDomainRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainNames   string           `position:"Query" name:"DomainNames"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // BatchStopVodDomainResponse is the response struct for api BatchStopVodDomain

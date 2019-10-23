@@ -78,9 +78,9 @@ type GetMediaAuditResultDetailRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNo               requests.Integer `position:"Query" name:"PageNo"`
 	OwnerId              string           `position:"Query" name:"OwnerId"`
 	MediaId              string           `position:"Query" name:"MediaId"`
+	PageNo               requests.Integer `position:"Query" name:"PageNo"`
 }
 
 // GetMediaAuditResultDetailResponse is the response struct for api GetMediaAuditResultDetail

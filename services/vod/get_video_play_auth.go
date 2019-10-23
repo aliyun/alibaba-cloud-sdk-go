@@ -77,12 +77,12 @@ func (client *Client) GetVideoPlayAuthWithCallback(request *GetVideoPlayAuthRequ
 type GetVideoPlayAuthRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ReAuthInfo           string           `position:"Query" name:"ReAuthInfo"`
 	PlayConfig           string           `position:"Query" name:"PlayConfig"`
-	AuthInfoTimeout      requests.Integer `position:"Query" name:"AuthInfoTimeout"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	VideoId              string           `position:"Query" name:"VideoId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AuthInfoTimeout      requests.Integer `position:"Query" name:"AuthInfoTimeout"`
 }
 
 // GetVideoPlayAuthResponse is the response struct for api GetVideoPlayAuth

@@ -79,10 +79,10 @@ type AddTranscodeTemplateGroupRequest struct {
 	TranscodeTemplateList    string           `position:"Query" name:"TranscodeTemplateList"`
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	AppId                    string           `position:"Query" name:"AppId"`
-	Name                     string           `position:"Query" name:"Name"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	TranscodeTemplateGroupId string           `position:"Query" name:"TranscodeTemplateGroupId"`
+	AppId                    string           `position:"Query" name:"AppId"`
+	Name                     string           `position:"Query" name:"Name"`
 }
 
 // AddTranscodeTemplateGroupResponse is the response struct for api AddTranscodeTemplateGroup

@@ -78,11 +78,11 @@ type UpdateTranscodeTemplateGroupRequest struct {
 	*requests.RpcRequest
 	TranscodeTemplateList    string           `position:"Query" name:"TranscodeTemplateList"`
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	Name                     string           `position:"Query" name:"Name"`
-	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	Locked                   string           `position:"Query" name:"Locked"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	TranscodeTemplateGroupId string           `position:"Query" name:"TranscodeTemplateGroupId"`
+	Name                     string           `position:"Query" name:"Name"`
 }
 
 // UpdateTranscodeTemplateGroupResponse is the response struct for api UpdateTranscodeTemplateGroup

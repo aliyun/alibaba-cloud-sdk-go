@@ -78,14 +78,14 @@ type SetMessageCallbackRequest struct {
 	*requests.RpcRequest
 	AuthKey              string           `position:"Query" name:"AuthKey"`
 	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
+	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
+	CallbackType         string           `position:"Query" name:"CallbackType"`
+	CallbackSwitch       string           `position:"Query" name:"CallbackSwitch"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EventTypeList        string           `position:"Query" name:"EventTypeList"`
 	MnsQueueName         string           `position:"Query" name:"MnsQueueName"`
-	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
 	OwnerId              string           `position:"Query" name:"OwnerId"`
-	CallbackType         string           `position:"Query" name:"CallbackType"`
-	CallbackSwitch       string           `position:"Query" name:"CallbackSwitch"`
 	MnsEndpoint          string           `position:"Query" name:"MnsEndpoint"`
 	AppId                string           `position:"Query" name:"AppId"`
 	AuthSwitch           string           `position:"Query" name:"AuthSwitch"`

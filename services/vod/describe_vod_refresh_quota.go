@@ -76,8 +76,8 @@ func (client *Client) DescribeVodRefreshQuotaWithCallback(request *DescribeVodRe
 // DescribeVodRefreshQuotaRequest is the request struct for api DescribeVodRefreshQuota
 type DescribeVodRefreshQuotaRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeVodRefreshQuotaResponse is the response struct for api DescribeVodRefreshQuota

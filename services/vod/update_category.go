@@ -78,8 +78,8 @@ type UpdateCategoryRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	CateId               requests.Integer `position:"Query" name:"CateId"`
 	OwnerId              string           `position:"Query" name:"OwnerId"`
+	CateId               requests.Integer `position:"Query" name:"CateId"`
 	CateName             string           `position:"Query" name:"CateName"`
 }
 

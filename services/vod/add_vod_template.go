@@ -77,13 +77,13 @@ func (client *Client) AddVodTemplateWithCallback(request *AddVodTemplateRequest,
 type AddVodTemplateRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	SubTemplateType      string           `position:"Query" name:"SubTemplateType"`
 	TemplateConfig       string           `position:"Query" name:"TemplateConfig"`
 	TemplateType         string           `position:"Query" name:"TemplateType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AppId                string           `position:"Query" name:"AppId"`
 	Name                 string           `position:"Query" name:"Name"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SubTemplateType      string           `position:"Query" name:"SubTemplateType"`
 }
 
 // AddVodTemplateResponse is the response struct for api AddVodTemplate

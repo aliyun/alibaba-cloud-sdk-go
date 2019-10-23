@@ -78,8 +78,8 @@ type GetVideoInfosRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AdditionType         string           `position:"Query" name:"AdditionType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AdditionType         string           `position:"Query" name:"AdditionType"`
 	VideoIds             string           `position:"Query" name:"VideoIds"`
 }
 

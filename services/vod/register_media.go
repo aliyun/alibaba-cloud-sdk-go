@@ -76,13 +76,13 @@ func (client *Client) RegisterMediaWithCallback(request *RegisterMediaRequest, c
 // RegisterMediaRequest is the request struct for api RegisterMedia
 type RegisterMediaRequest struct {
 	*requests.RpcRequest
-	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	TemplateGroupId      string           `position:"Query" name:"TemplateGroupId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	UserData             string           `position:"Query" name:"UserData"`
 	RegisterMetadatas    string           `position:"Query" name:"RegisterMetadatas"`
 	WorkflowId           string           `position:"Query" name:"WorkflowId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TemplateGroupId      string           `position:"Query" name:"TemplateGroupId"`
 }
 
 // RegisterMediaResponse is the response struct for api RegisterMedia

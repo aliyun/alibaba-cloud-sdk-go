@@ -76,9 +76,9 @@ func (client *Client) DescribeVodDomainDetailWithCallback(request *DescribeVodDo
 // DescribeVodDomainDetailRequest is the request struct for api DescribeVodDomainDetail
 type DescribeVodDomainDetailRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeVodDomainDetailResponse is the response struct for api DescribeVodDomainDetail

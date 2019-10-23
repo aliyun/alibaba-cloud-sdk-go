@@ -78,8 +78,8 @@ type DeleteAttachedMediaRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	MediaIds             string           `position:"Query" name:"MediaIds"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	MediaIds             string           `position:"Query" name:"MediaIds"`
 }
 
 // DeleteAttachedMediaResponse is the response struct for api DeleteAttachedMedia

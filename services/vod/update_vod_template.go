@@ -77,11 +77,11 @@ func (client *Client) UpdateVodTemplateWithCallback(request *UpdateVodTemplateRe
 type UpdateVodTemplateRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	TemplateConfig       string           `position:"Query" name:"TemplateConfig"`
-	Name                 string           `position:"Query" name:"Name"`
 	VodTemplateId        string           `position:"Query" name:"VodTemplateId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // UpdateVodTemplateResponse is the response struct for api UpdateVodTemplate

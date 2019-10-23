@@ -78,8 +78,8 @@ type GetDefaultAITemplateRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	TemplateType         string           `position:"Query" name:"TemplateType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TemplateType         string           `position:"Query" name:"TemplateType"`
 }
 
 // GetDefaultAITemplateResponse is the response struct for api GetDefaultAITemplate

@@ -76,9 +76,9 @@ func (client *Client) DescribeVodCertificateListWithCallback(request *DescribeVo
 // DescribeVodCertificateListRequest is the request struct for api DescribeVodCertificateList
 type DescribeVodCertificateListRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeVodCertificateListResponse is the response struct for api DescribeVodCertificateList

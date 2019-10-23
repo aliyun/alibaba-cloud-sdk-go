@@ -76,14 +76,14 @@ func (client *Client) SubmitAIJobWithCallback(request *SubmitAIJobRequest, callb
 // SubmitAIJobRequest is the request struct for api SubmitAIJob
 type SubmitAIJobRequest struct {
 	*requests.RpcRequest
-	UserData             string `position:"Query" name:"UserData"`
-	Input                string `position:"Query" name:"Input"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	UserData             string `position:"Query" name:"UserData"`
 	Types                string `position:"Query" name:"Types"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
 	MediaId              string `position:"Query" name:"MediaId"`
+	Input                string `position:"Query" name:"Input"`
 	Config               string `position:"Query" name:"Config"`
 }
 

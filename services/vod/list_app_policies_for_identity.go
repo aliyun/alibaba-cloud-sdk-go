@@ -76,12 +76,12 @@ func (client *Client) ListAppPoliciesForIdentityWithCallback(request *ListAppPol
 // ListAppPoliciesForIdentityRequest is the request struct for api ListAppPoliciesForIdentity
 type ListAppPoliciesForIdentityRequest struct {
 	*requests.RpcRequest
-	IdentityName         string           `position:"Query" name:"IdentityName"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	IdentityName         string           `position:"Query" name:"IdentityName"`
 	IdentityType         string           `position:"Query" name:"IdentityType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AppId                string           `position:"Query" name:"AppId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AppId                string           `position:"Query" name:"AppId"`
 }
 
 // ListAppPoliciesForIdentityResponse is the response struct for api ListAppPoliciesForIdentity
