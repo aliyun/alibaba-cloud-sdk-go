@@ -112,7 +112,7 @@ func CreateGetSubscriptionPriceRequest() (request *GetSubscriptionPriceRequest) 
 	request = &GetSubscriptionPriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "GetSubscriptionPrice", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "GetSubscriptionPrice", "bssopenapi", "openAPI")
 	return
 }
 

@@ -100,7 +100,7 @@ func CreateSetRenewalRequest() (request *SetRenewalRequest) {
 	request = &SetRenewalRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetRenewal", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetRenewal", "bssopenapi", "openAPI")
 	return
 }
 

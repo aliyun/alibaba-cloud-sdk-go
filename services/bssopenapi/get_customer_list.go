@@ -93,7 +93,7 @@ func CreateGetCustomerListRequest() (request *GetCustomerListRequest) {
 	request = &GetCustomerListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "GetCustomerList", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "GetCustomerList", "bssopenapi", "openAPI")
 	return
 }
 
