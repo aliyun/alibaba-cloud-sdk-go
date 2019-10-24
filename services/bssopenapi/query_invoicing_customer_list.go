@@ -94,7 +94,7 @@ func CreateQueryInvoicingCustomerListRequest() (request *QueryInvoicingCustomerL
 	request = &QueryInvoicingCustomerListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryInvoicingCustomerList", "bssopenapi", "openAPI")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryInvoicingCustomerList", "", "")
 	return
 }
 

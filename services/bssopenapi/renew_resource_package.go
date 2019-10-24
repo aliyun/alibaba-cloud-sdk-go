@@ -99,7 +99,7 @@ func CreateRenewResourcePackageRequest() (request *RenewResourcePackageRequest) 
 	request = &RenewResourcePackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "RenewResourcePackage", "bssopenapi", "openAPI")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "RenewResourcePackage", "", "")
 	return
 }
 

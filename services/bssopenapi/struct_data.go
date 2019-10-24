@@ -57,8 +57,8 @@ type Data struct {
 	Mpk                         int64                                `json:"Mpk" xml:"Mpk"`
 	UidList                     UidList                              `json:"UidList" xml:"UidList"`
 	OmsData                     OmsData                              `json:"OmsData" xml:"OmsData"`
-	FinanceUnitStatisInfo       FinanceUnitStatisInfo                `json:"FinanceUnitStatisInfo" xml:"FinanceUnitStatisInfo"`
-	FinanceUnit                 FinanceUnit                          `json:"FinanceUnit" xml:"FinanceUnit"`
+	CostUnit                    CostUnit                             `json:"CostUnit" xml:"CostUnit"`
+	CostUnitStatisInfo          CostUnitStatisInfo                   `json:"CostUnitStatisInfo" xml:"CostUnitStatisInfo"`
 	ResourceInstanceDtoList     []ResourceInstanceList               `json:"ResourceInstanceDtoList" xml:"ResourceInstanceDtoList"`
 	ModuleList                  ModuleList                           `json:"ModuleList" xml:"ModuleList"`
 	Items                       ItemsInQueryInstanceBill             `json:"Items" xml:"Items"`
@@ -70,8 +70,8 @@ type Data struct {
 	ModuleDetails               ModuleDetailsInGetPayAsYouGoPrice    `json:"ModuleDetails" xml:"ModuleDetails"`
 	PromotionDetails            PromotionDetailsInGetPayAsYouGoPrice `json:"PromotionDetails" xml:"PromotionDetails"`
 	AccountTransactionsList     AccountTransactionsList              `json:"AccountTransactionsList" xml:"AccountTransactionsList"`
+	CostUnitDtoList             []CostUnitDtoListItem                `json:"CostUnitDtoList" xml:"CostUnitDtoList"`
 	EvaluateList                EvaluateList                         `json:"EvaluateList" xml:"EvaluateList"`
-	FinanceUnitDtoList          []FinanceUnitDtoListItem             `json:"FinanceUnitDtoList" xml:"FinanceUnitDtoList"`
 	Promotions                  Promotions                           `json:"Promotions" xml:"Promotions"`
 	CustomerInvoiceAddressList  CustomerInvoiceAddressList           `json:"CustomerInvoiceAddressList" xml:"CustomerInvoiceAddressList"`
 	CustomerInvoiceList         CustomerInvoiceList                  `json:"CustomerInvoiceList" xml:"CustomerInvoiceList"`

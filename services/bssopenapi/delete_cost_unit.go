@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteFinanceUnit invokes the bssopenapi.DeleteFinanceUnit API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/deletefinanceunit.html
-func (client *Client) DeleteFinanceUnit(request *DeleteFinanceUnitRequest) (response *DeleteFinanceUnitResponse, err error) {
-	response = CreateDeleteFinanceUnitResponse()
+// DeleteCostUnit invokes the bssopenapi.DeleteCostUnit API synchronously
+// api document: https://help.aliyun.com/api/bssopenapi/deletecostunit.html
+func (client *Client) DeleteCostUnit(request *DeleteCostUnitRequest) (response *DeleteCostUnitResponse, err error) {
+	response = CreateDeleteCostUnitResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteFinanceUnitWithChan invokes the bssopenapi.DeleteFinanceUnit API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/deletefinanceunit.html
+// DeleteCostUnitWithChan invokes the bssopenapi.DeleteCostUnit API asynchronously
+// api document: https://help.aliyun.com/api/bssopenapi/deletecostunit.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteFinanceUnitWithChan(request *DeleteFinanceUnitRequest) (<-chan *DeleteFinanceUnitResponse, <-chan error) {
-	responseChan := make(chan *DeleteFinanceUnitResponse, 1)
+func (client *Client) DeleteCostUnitWithChan(request *DeleteCostUnitRequest) (<-chan *DeleteCostUnitResponse, <-chan error) {
+	responseChan := make(chan *DeleteCostUnitResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteFinanceUnit(request)
+		response, err := client.DeleteCostUnit(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteFinanceUnitWithChan(request *DeleteFinanceUnitReques
 	return responseChan, errChan
 }
 
-// DeleteFinanceUnitWithCallback invokes the bssopenapi.DeleteFinanceUnit API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/deletefinanceunit.html
+// DeleteCostUnitWithCallback invokes the bssopenapi.DeleteCostUnit API asynchronously
+// api document: https://help.aliyun.com/api/bssopenapi/deletecostunit.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteFinanceUnitWithCallback(request *DeleteFinanceUnitRequest, callback func(response *DeleteFinanceUnitResponse, err error)) <-chan int {
+func (client *Client) DeleteCostUnitWithCallback(request *DeleteCostUnitRequest, callback func(response *DeleteCostUnitResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteFinanceUnitResponse
+		var response *DeleteCostUnitResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteFinanceUnit(request)
+		response, err = client.DeleteCostUnit(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,15 +73,15 @@ func (client *Client) DeleteFinanceUnitWithCallback(request *DeleteFinanceUnitRe
 	return result
 }
 
-// DeleteFinanceUnitRequest is the request struct for api DeleteFinanceUnit
-type DeleteFinanceUnitRequest struct {
+// DeleteCostUnitRequest is the request struct for api DeleteCostUnit
+type DeleteCostUnitRequest struct {
 	*requests.RpcRequest
 	UnitId   requests.Integer `position:"Query" name:"UnitId"`
 	OwnerUid requests.Integer `position:"Query" name:"OwnerUid"`
 }
 
-// DeleteFinanceUnitResponse is the response struct for api DeleteFinanceUnit
-type DeleteFinanceUnitResponse struct {
+// DeleteCostUnitResponse is the response struct for api DeleteCostUnit
+type DeleteCostUnitResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
@@ -90,18 +90,18 @@ type DeleteFinanceUnitResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateDeleteFinanceUnitRequest creates a request to invoke DeleteFinanceUnit API
-func CreateDeleteFinanceUnitRequest() (request *DeleteFinanceUnitRequest) {
-	request = &DeleteFinanceUnitRequest{
+// CreateDeleteCostUnitRequest creates a request to invoke DeleteCostUnit API
+func CreateDeleteCostUnitRequest() (request *DeleteCostUnitRequest) {
+	request = &DeleteCostUnitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "DeleteFinanceUnit", "bssopenapi", "openAPI")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "DeleteCostUnit", "", "")
 	return
 }
 
-// CreateDeleteFinanceUnitResponse creates a response to parse from DeleteFinanceUnit response
-func CreateDeleteFinanceUnitResponse() (response *DeleteFinanceUnitResponse) {
-	response = &DeleteFinanceUnitResponse{
+// CreateDeleteCostUnitResponse creates a response to parse from DeleteCostUnit response
+func CreateDeleteCostUnitResponse() (response *DeleteCostUnitResponse) {
+	response = &DeleteCostUnitResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
