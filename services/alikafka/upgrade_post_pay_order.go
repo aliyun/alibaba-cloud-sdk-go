@@ -81,7 +81,6 @@ type UpgradePostPayOrderRequest struct {
 	TopicQuota requests.Integer `position:"Query" name:"TopicQuota"`
 	EipMax     requests.Integer `position:"Query" name:"EipMax"`
 	InstanceId string           `position:"Query" name:"InstanceId"`
-	MsgRetain  requests.Integer `position:"Query" name:"MsgRetain"`
 }
 
 // UpgradePostPayOrderResponse is the response struct for api UpgradePostPayOrder

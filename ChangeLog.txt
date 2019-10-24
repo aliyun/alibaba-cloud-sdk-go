@@ -1,3 +1,6 @@
+2019-10-24 Version: 1.60.214
+- Optimize instance relevant interface.
+
 2019-10-24 Version: 1.60.213
 - Generated 2017-12-14 for `BssOpenApi`.
 
