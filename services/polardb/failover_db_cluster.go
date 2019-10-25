@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// LockDBClusterDeletion invokes the polardb.LockDBClusterDeletion API synchronously
-// api document: https://help.aliyun.com/api/polardb/lockdbclusterdeletion.html
-func (client *Client) LockDBClusterDeletion(request *LockDBClusterDeletionRequest) (response *LockDBClusterDeletionResponse, err error) {
-	response = CreateLockDBClusterDeletionResponse()
+// FailoverDBCluster invokes the polardb.FailoverDBCluster API synchronously
+// api document: https://help.aliyun.com/api/polardb/failoverdbcluster.html
+func (client *Client) FailoverDBCluster(request *FailoverDBClusterRequest) (response *FailoverDBClusterResponse, err error) {
+	response = CreateFailoverDBClusterResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// LockDBClusterDeletionWithChan invokes the polardb.LockDBClusterDeletion API asynchronously
-// api document: https://help.aliyun.com/api/polardb/lockdbclusterdeletion.html
+// FailoverDBClusterWithChan invokes the polardb.FailoverDBCluster API asynchronously
+// api document: https://help.aliyun.com/api/polardb/failoverdbcluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) LockDBClusterDeletionWithChan(request *LockDBClusterDeletionRequest) (<-chan *LockDBClusterDeletionResponse, <-chan error) {
-	responseChan := make(chan *LockDBClusterDeletionResponse, 1)
+func (client *Client) FailoverDBClusterWithChan(request *FailoverDBClusterRequest) (<-chan *FailoverDBClusterResponse, <-chan error) {
+	responseChan := make(chan *FailoverDBClusterResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.LockDBClusterDeletion(request)
+		response, err := client.FailoverDBCluster(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) LockDBClusterDeletionWithChan(request *LockDBClusterDeleti
 	return responseChan, errChan
 }
 
-// LockDBClusterDeletionWithCallback invokes the polardb.LockDBClusterDeletion API asynchronously
-// api document: https://help.aliyun.com/api/polardb/lockdbclusterdeletion.html
+// FailoverDBClusterWithCallback invokes the polardb.FailoverDBCluster API asynchronously
+// api document: https://help.aliyun.com/api/polardb/failoverdbcluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) LockDBClusterDeletionWithCallback(request *LockDBClusterDeletionRequest, callback func(response *LockDBClusterDeletionResponse, err error)) <-chan int {
+func (client *Client) FailoverDBClusterWithCallback(request *FailoverDBClusterRequest, callback func(response *FailoverDBClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *LockDBClusterDeletionResponse
+		var response *FailoverDBClusterResponse
 		var err error
 		defer close(result)
-		response, err = client.LockDBClusterDeletion(request)
+		response, err = client.FailoverDBCluster(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,34 +73,36 @@ func (client *Client) LockDBClusterDeletionWithCallback(request *LockDBClusterDe
 	return result
 }
 
-// LockDBClusterDeletionRequest is the request struct for api LockDBClusterDeletion
-type LockDBClusterDeletionRequest struct {
+// FailoverDBClusterRequest is the request struct for api FailoverDBCluster
+type FailoverDBClusterRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TargetDBNodeId       string           `position:"Query" name:"TargetDBNodeId"`
 }
 
-// LockDBClusterDeletionResponse is the response struct for api LockDBClusterDeletion
-type LockDBClusterDeletionResponse struct {
+// FailoverDBClusterResponse is the response struct for api FailoverDBCluster
+type FailoverDBClusterResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateLockDBClusterDeletionRequest creates a request to invoke LockDBClusterDeletion API
-func CreateLockDBClusterDeletionRequest() (request *LockDBClusterDeletionRequest) {
-	request = &LockDBClusterDeletionRequest{
+// CreateFailoverDBClusterRequest creates a request to invoke FailoverDBCluster API
+func CreateFailoverDBClusterRequest() (request *FailoverDBClusterRequest) {
+	request = &FailoverDBClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "LockDBClusterDeletion", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "FailoverDBCluster", "polardb", "openAPI")
 	return
 }
 
-// CreateLockDBClusterDeletionResponse creates a response to parse from LockDBClusterDeletion response
-func CreateLockDBClusterDeletionResponse() (response *LockDBClusterDeletionResponse) {
-	response = &LockDBClusterDeletionResponse{
+// CreateFailoverDBClusterResponse creates a response to parse from FailoverDBCluster response
+func CreateFailoverDBClusterResponse() (response *FailoverDBClusterResponse) {
+	response = &FailoverDBClusterResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

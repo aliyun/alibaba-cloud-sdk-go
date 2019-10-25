@@ -17,13 +17,14 @@ package polardb
 
 // DBNode is a nested struct in polardb response
 type DBNode struct {
-	DBNodeClass    string `json:"DBNodeClass" xml:"DBNodeClass"`
-	MaxIOPS        int    `json:"MaxIOPS" xml:"MaxIOPS"`
-	DBNodeRole     string `json:"DBNodeRole" xml:"DBNodeRole"`
-	RegionId       string `json:"RegionId" xml:"RegionId"`
-	MaxConnections int    `json:"MaxConnections" xml:"MaxConnections"`
-	ZoneId         string `json:"ZoneId" xml:"ZoneId"`
-	DBNodeStatus   string `json:"DBNodeStatus" xml:"DBNodeStatus"`
-	DBNodeId       string `json:"DBNodeId" xml:"DBNodeId"`
-	CreationTime   string `json:"CreationTime" xml:"CreationTime"`
+	DBNodeClass      string `json:"DBNodeClass" xml:"DBNodeClass"`
+	MaxIOPS          int    `json:"MaxIOPS" xml:"MaxIOPS"`
+	FailoverPriority int    `json:"FailoverPriority" xml:"FailoverPriority"`
+	DBNodeRole       string `json:"DBNodeRole" xml:"DBNodeRole"`
+	MaxConnections   int    `json:"MaxConnections" xml:"MaxConnections"`
+	RegionId         string `json:"RegionId" xml:"RegionId"`
+	ZoneId           string `json:"ZoneId" xml:"ZoneId"`
+	DBNodeStatus     string `json:"DBNodeStatus" xml:"DBNodeStatus"`
+	DBNodeId         string `json:"DBNodeId" xml:"DBNodeId"`
+	CreationTime     string `json:"CreationTime" xml:"CreationTime"`
 }

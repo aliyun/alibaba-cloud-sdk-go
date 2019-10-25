@@ -84,7 +84,9 @@ type CreateDatabaseRequest struct {
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Collate              string           `position:"Query" name:"Collate"`
 	DBName               string           `position:"Query" name:"DBName"`
+	Ctype                string           `position:"Query" name:"Ctype"`
 	CharacterSetName     string           `position:"Query" name:"CharacterSetName"`
 }
 

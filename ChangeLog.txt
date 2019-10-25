@@ -1,3 +1,6 @@
+2019-10-25 Version: 1.60.215
+- Add DescribeDBClusterPerformance, DescribeDBNodePerformance for performance.
+
 2019-10-24 Version: 1.60.214
 - Optimize instance relevant interface.
 
