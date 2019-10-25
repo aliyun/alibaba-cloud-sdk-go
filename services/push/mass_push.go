@@ -134,7 +134,7 @@ func CreateMassPushRequest() (request *MassPushRequest) {
 	request = &MassPushRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "MassPush", "", "")
+	request.InitWithApiInfo("Push", "2016-08-01", "MassPush", "cps", "openAPI")
 	return
 }
 

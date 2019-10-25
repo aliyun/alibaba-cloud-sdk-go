@@ -92,7 +92,7 @@ func CreateCheckDevicesRequest() (request *CheckDevicesRequest) {
 	request = &CheckDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "CheckDevices", "", "")
+	request.InitWithApiInfo("Push", "2016-08-01", "CheckDevices", "cps", "openAPI")
 	return
 }
 

@@ -93,7 +93,7 @@ func CreateQueryTagsRequest() (request *QueryTagsRequest) {
 	request = &QueryTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "QueryTags", "", "")
+	request.InitWithApiInfo("Push", "2016-08-01", "QueryTags", "cps", "openAPI")
 	return
 }
 

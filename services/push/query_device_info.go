@@ -92,7 +92,7 @@ func CreateQueryDeviceInfoRequest() (request *QueryDeviceInfoRequest) {
 	request = &QueryDeviceInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "QueryDeviceInfo", "", "")
+	request.InitWithApiInfo("Push", "2016-08-01", "QueryDeviceInfo", "cps", "openAPI")
 	return
 }
 

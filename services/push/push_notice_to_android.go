@@ -97,7 +97,7 @@ func CreatePushNoticeToAndroidRequest() (request *PushNoticeToAndroidRequest) {
 	request = &PushNoticeToAndroidRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "PushNoticeToAndroid", "", "")
+	request.InitWithApiInfo("Push", "2016-08-01", "PushNoticeToAndroid", "cps", "openAPI")
 	return
 }
 

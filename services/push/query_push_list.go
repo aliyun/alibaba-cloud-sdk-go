@@ -99,7 +99,7 @@ func CreateQueryPushListRequest() (request *QueryPushListRequest) {
 	request = &QueryPushListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "QueryPushList", "", "")
+	request.InitWithApiInfo("Push", "2016-08-01", "QueryPushList", "cps", "openAPI")
 	return
 }
 

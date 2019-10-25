@@ -92,7 +92,7 @@ func CreateQueryDevicesByAliasRequest() (request *QueryDevicesByAliasRequest) {
 	request = &QueryDevicesByAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "QueryDevicesByAlias", "", "")
+	request.InitWithApiInfo("Push", "2016-08-01", "QueryDevicesByAlias", "cps", "openAPI")
 	return
 }
 

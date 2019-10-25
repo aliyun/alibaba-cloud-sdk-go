@@ -92,7 +92,7 @@ func CreateQueryPushStatByMsgRequest() (request *QueryPushStatByMsgRequest) {
 	request = &QueryPushStatByMsgRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "QueryPushStatByMsg", "", "")
+	request.InitWithApiInfo("Push", "2016-08-01", "QueryPushStatByMsg", "cps", "openAPI")
 	return
 }
 
