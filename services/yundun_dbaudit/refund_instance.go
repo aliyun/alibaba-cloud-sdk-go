@@ -76,9 +76,8 @@ func (client *Client) RefundInstanceWithCallback(request *RefundInstanceRequest,
 // RefundInstanceRequest is the request struct for api RefundInstance
 type RefundInstanceRequest struct {
 	*requests.RpcRequest
-	SourceIp string           `position:"Query" name:"SourceIp"`
-	Name     requests.Integer `position:"Query" name:"Name"`
-	Id       requests.Integer `position:"Query" name:"id"`
+	InstanceId string `position:"Query" name:"InstanceId"`
+	SourceIp   string `position:"Query" name:"SourceIp"`
 }
 
 // RefundInstanceResponse is the response struct for api RefundInstance

@@ -1,3 +1,6 @@
+2019-10-28 Version: 1.60.219
+- FIX RefundInstance.
+
 2019-10-25 Version: 1.60.218
 - ADD RefundInstance.
 
