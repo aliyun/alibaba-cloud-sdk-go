@@ -99,7 +99,7 @@ func CreateRenewInstanceRequest() (request *RenewInstanceRequest) {
 	request = &RenewInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "RenewInstance", "bssopenapi", "openAPI")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "RenewInstance", "", "")
 	return
 }
 

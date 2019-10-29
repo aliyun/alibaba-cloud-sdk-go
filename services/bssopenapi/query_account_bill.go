@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QueryCostUnit invokes the bssopenapi.QueryCostUnit API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querycostunit.html
-func (client *Client) QueryCostUnit(request *QueryCostUnitRequest) (response *QueryCostUnitResponse, err error) {
-	response = CreateQueryCostUnitResponse()
+// QueryAccountBill invokes the bssopenapi.QueryAccountBill API synchronously
+// api document: https://help.aliyun.com/api/bssopenapi/queryaccountbill.html
+func (client *Client) QueryAccountBill(request *QueryAccountBillRequest) (response *QueryAccountBillResponse, err error) {
+	response = CreateQueryAccountBillResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QueryCostUnitWithChan invokes the bssopenapi.QueryCostUnit API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querycostunit.html
+// QueryAccountBillWithChan invokes the bssopenapi.QueryAccountBill API asynchronously
+// api document: https://help.aliyun.com/api/bssopenapi/queryaccountbill.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryCostUnitWithChan(request *QueryCostUnitRequest) (<-chan *QueryCostUnitResponse, <-chan error) {
-	responseChan := make(chan *QueryCostUnitResponse, 1)
+func (client *Client) QueryAccountBillWithChan(request *QueryAccountBillRequest) (<-chan *QueryAccountBillResponse, <-chan error) {
+	responseChan := make(chan *QueryAccountBillResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryCostUnit(request)
+		response, err := client.QueryAccountBill(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) QueryCostUnitWithChan(request *QueryCostUnitRequest) (<-ch
 	return responseChan, errChan
 }
 
-// QueryCostUnitWithCallback invokes the bssopenapi.QueryCostUnit API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querycostunit.html
+// QueryAccountBillWithCallback invokes the bssopenapi.QueryAccountBill API asynchronously
+// api document: https://help.aliyun.com/api/bssopenapi/queryaccountbill.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryCostUnitWithCallback(request *QueryCostUnitRequest, callback func(response *QueryCostUnitResponse, err error)) <-chan int {
+func (client *Client) QueryAccountBillWithCallback(request *QueryAccountBillRequest, callback func(response *QueryAccountBillResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryCostUnitResponse
+		var response *QueryAccountBillResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryCostUnit(request)
+		response, err = client.QueryAccountBill(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,17 +73,17 @@ func (client *Client) QueryCostUnitWithCallback(request *QueryCostUnitRequest, c
 	return result
 }
 
-// QueryCostUnitRequest is the request struct for api QueryCostUnit
-type QueryCostUnitRequest struct {
+// QueryAccountBillRequest is the request struct for api QueryAccountBill
+type QueryAccountBillRequest struct {
 	*requests.RpcRequest
-	ParentUnitId requests.Integer `position:"Query" name:"ParentUnitId"`
+	BillingCycle string           `position:"Query" name:"BillingCycle"`
 	PageNum      requests.Integer `position:"Query" name:"PageNum"`
+	OwnerID      requests.Integer `position:"Query" name:"OwnerID"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	OwnerUid     requests.Integer `position:"Query" name:"OwnerUid"`
 }
 
-// QueryCostUnitResponse is the response struct for api QueryCostUnit
-type QueryCostUnitResponse struct {
+// QueryAccountBillResponse is the response struct for api QueryAccountBill
+type QueryAccountBillResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
@@ -92,18 +92,18 @@ type QueryCostUnitResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateQueryCostUnitRequest creates a request to invoke QueryCostUnit API
-func CreateQueryCostUnitRequest() (request *QueryCostUnitRequest) {
-	request = &QueryCostUnitRequest{
+// CreateQueryAccountBillRequest creates a request to invoke QueryAccountBill API
+func CreateQueryAccountBillRequest() (request *QueryAccountBillRequest) {
+	request = &QueryAccountBillRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryCostUnit", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryAccountBill", "", "")
 	return
 }
 
-// CreateQueryCostUnitResponse creates a response to parse from QueryCostUnit response
-func CreateQueryCostUnitResponse() (response *QueryCostUnitResponse) {
-	response = &QueryCostUnitResponse{
+// CreateQueryAccountBillResponse creates a response to parse from QueryAccountBill response
+func CreateQueryAccountBillResponse() (response *QueryAccountBillResponse) {
+	response = &QueryAccountBillResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

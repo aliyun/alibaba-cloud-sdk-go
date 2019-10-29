@@ -1,3 +1,6 @@
+2019-10-29 Version: 1.60.220
+- Add a new Alibaba Cloud Bill API named QueryAccountBill.
+
 2019-10-28 Version: 1.60.219
 - FIX RefundInstance.
 
