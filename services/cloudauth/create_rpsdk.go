@@ -76,10 +76,10 @@ func (client *Client) CreateRPSDKWithCallback(request *CreateRPSDKRequest, callb
 // CreateRPSDKRequest is the request struct for api CreateRPSDK
 type CreateRPSDKRequest struct {
 	*requests.RpcRequest
-	SourceIp string `position:"Query" name:"SourceIp"`
 	AppUrl   string `position:"Query" name:"AppUrl"`
-	Lang     string `position:"Query" name:"Lang"`
 	Platform string `position:"Query" name:"Platform"`
+	SourceIp string `position:"Query" name:"SourceIp"`
+	Lang     string `position:"Query" name:"Lang"`
 }
 
 // CreateRPSDKResponse is the response struct for api CreateRPSDK

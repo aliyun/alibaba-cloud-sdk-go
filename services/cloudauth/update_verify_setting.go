@@ -76,12 +76,12 @@ func (client *Client) UpdateVerifySettingWithCallback(request *UpdateVerifySetti
 // UpdateVerifySettingRequest is the request struct for api UpdateVerifySetting
 type UpdateVerifySettingRequest struct {
 	*requests.RpcRequest
-	BizType     string           `position:"Query" name:"BizType"`
-	ResultStep  requests.Boolean `position:"Query" name:"ResultStep"`
 	GuideStep   requests.Boolean `position:"Query" name:"GuideStep"`
+	ResultStep  requests.Boolean `position:"Query" name:"ResultStep"`
 	SourceIp    string           `position:"Query" name:"SourceIp"`
-	BizName     string           `position:"Query" name:"BizName"`
 	Solution    string           `position:"Query" name:"Solution"`
+	BizName     string           `position:"Query" name:"BizName"`
+	BizType     string           `position:"Query" name:"BizType"`
 	PrivacyStep requests.Boolean `position:"Query" name:"PrivacyStep"`
 }
 

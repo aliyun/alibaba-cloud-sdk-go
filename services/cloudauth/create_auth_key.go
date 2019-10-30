@@ -76,10 +76,10 @@ func (client *Client) CreateAuthKeyWithCallback(request *CreateAuthKeyRequest, c
 // CreateAuthKeyRequest is the request struct for api CreateAuthKey
 type CreateAuthKeyRequest struct {
 	*requests.RpcRequest
-	BizType      string           `position:"Query" name:"BizType"`
 	UserDeviceId string           `position:"Query" name:"UserDeviceId"`
-	SourceIp     string           `position:"Query" name:"SourceIp"`
 	Test         requests.Boolean `position:"Query" name:"Test"`
+	BizType      string           `position:"Query" name:"BizType"`
+	SourceIp     string           `position:"Query" name:"SourceIp"`
 	AuthYears    requests.Integer `position:"Query" name:"AuthYears"`
 	Lang         string           `position:"Query" name:"Lang"`
 }

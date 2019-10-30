@@ -76,10 +76,10 @@ func (client *Client) DescribeVerifyUsageWithCallback(request *DescribeVerifyUsa
 // DescribeVerifyUsageRequest is the request struct for api DescribeVerifyUsage
 type DescribeVerifyUsageRequest struct {
 	*requests.RpcRequest
+	StartDate string `position:"Query" name:"StartDate"`
 	BizType   string `position:"Query" name:"BizType"`
 	EndDate   string `position:"Query" name:"EndDate"`
 	SourceIp  string `position:"Query" name:"SourceIp"`
-	StartDate string `position:"Query" name:"StartDate"`
 }
 
 // DescribeVerifyUsageResponse is the response struct for api DescribeVerifyUsage

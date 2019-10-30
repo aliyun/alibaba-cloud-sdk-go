@@ -76,9 +76,9 @@ func (client *Client) DescribeFaceUsageWithCallback(request *DescribeFaceUsageRe
 // DescribeFaceUsageRequest is the request struct for api DescribeFaceUsage
 type DescribeFaceUsageRequest struct {
 	*requests.RpcRequest
+	StartDate string `position:"Query" name:"StartDate"`
 	EndDate   string `position:"Query" name:"EndDate"`
 	SourceIp  string `position:"Query" name:"SourceIp"`
-	StartDate string `position:"Query" name:"StartDate"`
 }
 
 // DescribeFaceUsageResponse is the response struct for api DescribeFaceUsage

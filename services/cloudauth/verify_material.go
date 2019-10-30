@@ -76,15 +76,15 @@ func (client *Client) VerifyMaterialWithCallback(request *VerifyMaterialRequest,
 // VerifyMaterialRequest is the request struct for api VerifyMaterial
 type VerifyMaterialRequest struct {
 	*requests.RpcRequest
-	BizType             string `position:"Query" name:"BizType"`
-	IdCardNumber        string `position:"Query" name:"IdCardNumber"`
-	SourceIp            string `position:"Query" name:"SourceIp"`
-	BizId               string `position:"Query" name:"BizId"`
-	Name                string `position:"Query" name:"Name"`
-	IdCardFrontImageUrl string `position:"Query" name:"IdCardFrontImageUrl"`
-	IdCardBackImageUrl  string `position:"Query" name:"IdCardBackImageUrl"`
 	FaceImageUrl        string `position:"Query" name:"FaceImageUrl"`
 	UserId              string `position:"Query" name:"UserId"`
+	SourceIp            string `position:"Query" name:"SourceIp"`
+	IdCardBackImageUrl  string `position:"Query" name:"IdCardBackImageUrl"`
+	IdCardNumber        string `position:"Query" name:"IdCardNumber"`
+	IdCardFrontImageUrl string `position:"Query" name:"IdCardFrontImageUrl"`
+	BizType             string `position:"Query" name:"BizType"`
+	BizId               string `position:"Query" name:"BizId"`
+	Name                string `position:"Query" name:"Name"`
 }
 
 // VerifyMaterialResponse is the response struct for api VerifyMaterial

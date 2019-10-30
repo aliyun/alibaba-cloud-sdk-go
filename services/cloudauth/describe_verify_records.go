@@ -76,17 +76,17 @@ func (client *Client) DescribeVerifyRecordsWithCallback(request *DescribeVerifyR
 // DescribeVerifyRecordsRequest is the request struct for api DescribeVerifyRecords
 type DescribeVerifyRecordsRequest struct {
 	*requests.RpcRequest
-	BizType     string           `position:"Query" name:"BizType"`
-	IdCardNum   string           `position:"Query" name:"IdCardNum"`
-	TotalCount  requests.Integer `position:"Query" name:"TotalCount"`
-	EndDate     string           `position:"Query" name:"EndDate"`
 	StatusList  string           `position:"Query" name:"StatusList"`
+	StartDate   string           `position:"Query" name:"StartDate"`
 	SourceIp    string           `position:"Query" name:"SourceIp"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	BizId       string           `position:"Query" name:"BizId"`
+	TotalCount  requests.Integer `position:"Query" name:"TotalCount"`
 	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	StartDate   string           `position:"Query" name:"StartDate"`
 	QueryId     string           `position:"Query" name:"QueryId"`
+	BizType     string           `position:"Query" name:"BizType"`
+	IdCardNum   string           `position:"Query" name:"IdCardNum"`
+	EndDate     string           `position:"Query" name:"EndDate"`
+	BizId       string           `position:"Query" name:"BizId"`
 }
 
 // DescribeVerifyRecordsResponse is the response struct for api DescribeVerifyRecords

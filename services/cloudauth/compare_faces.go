@@ -78,10 +78,10 @@ type CompareFacesRequest struct {
 	*requests.RpcRequest
 	SourceImageType  string           `position:"Body" name:"SourceImageType"`
 	ResourceOwnerId  requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SourceIp         string           `position:"Query" name:"SourceIp"`
 	TargetImageType  string           `position:"Body" name:"TargetImageType"`
-	SourceImageValue string           `position:"Body" name:"SourceImageValue"`
 	TargetImageValue string           `position:"Body" name:"TargetImageValue"`
+	SourceIp         string           `position:"Query" name:"SourceIp"`
+	SourceImageValue string           `position:"Body" name:"SourceImageValue"`
 }
 
 // CompareFacesResponse is the response struct for api CompareFaces

@@ -76,12 +76,12 @@ func (client *Client) CreateVerifySettingWithCallback(request *CreateVerifySetti
 // CreateVerifySettingRequest is the request struct for api CreateVerifySetting
 type CreateVerifySettingRequest struct {
 	*requests.RpcRequest
-	BizType     string           `position:"Query" name:"BizType"`
-	ResultStep  requests.Boolean `position:"Query" name:"ResultStep"`
 	GuideStep   requests.Boolean `position:"Query" name:"GuideStep"`
+	ResultStep  requests.Boolean `position:"Query" name:"ResultStep"`
 	SourceIp    string           `position:"Query" name:"SourceIp"`
-	BizName     string           `position:"Query" name:"BizName"`
 	Solution    string           `position:"Query" name:"Solution"`
+	BizName     string           `position:"Query" name:"BizName"`
+	BizType     string           `position:"Query" name:"BizType"`
 	PrivacyStep requests.Boolean `position:"Query" name:"PrivacyStep"`
 }
 

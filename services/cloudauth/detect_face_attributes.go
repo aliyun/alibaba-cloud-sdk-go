@@ -79,11 +79,11 @@ type DetectFaceAttributesRequest struct {
 	MaxNumPhotosPerCategory requests.Integer `position:"Body" name:"MaxNumPhotosPerCategory"`
 	MaxFaceNum              requests.Integer `position:"Body" name:"MaxFaceNum"`
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SourceIp                string           `position:"Query" name:"SourceIp"`
 	RetAttributes           string           `position:"Body" name:"RetAttributes"`
+	ClientTag               string           `position:"Body" name:"ClientTag"`
+	SourceIp                string           `position:"Query" name:"SourceIp"`
 	MaterialValue           string           `position:"Body" name:"MaterialValue"`
 	DontSaveDB              requests.Boolean `position:"Body" name:"DontSaveDB"`
-	ClientTag               string           `position:"Body" name:"ClientTag"`
 }
 
 // DetectFaceAttributesResponse is the response struct for api DetectFaceAttributes

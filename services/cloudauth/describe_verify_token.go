@@ -76,18 +76,17 @@ func (client *Client) DescribeVerifyTokenWithCallback(request *DescribeVerifyTok
 // DescribeVerifyTokenRequest is the request struct for api DescribeVerifyToken
 type DescribeVerifyTokenRequest struct {
 	*requests.RpcRequest
-	IdCardNumber         string `position:"Query" name:"IdCardNumber"`
-	IdCardFrontImageUrl  string `position:"Query" name:"IdCardFrontImageUrl"`
 	FaceRetainedImageUrl string `position:"Query" name:"FaceRetainedImageUrl"`
 	UserId               string `position:"Query" name:"UserId"`
-	BizType              string `position:"Query" name:"BizType"`
-	IdImageUrl           string `position:"Query" name:"IdImageUrl"`
-	PassedRedirectUrl    string `position:"Query" name:"PassedRedirectUrl"`
 	SourceIp             string `position:"Query" name:"SourceIp"`
 	CallbackSeed         string `position:"Query" name:"CallbackSeed"`
+	IdCardBackImageUrl   string `position:"Query" name:"IdCardBackImageUrl"`
+	IdCardNumber         string `position:"Query" name:"IdCardNumber"`
+	IdCardFrontImageUrl  string `position:"Query" name:"IdCardFrontImageUrl"`
+	BizType              string `position:"Query" name:"BizType"`
+	PassedRedirectUrl    string `position:"Query" name:"PassedRedirectUrl"`
 	BizId                string `position:"Query" name:"BizId"`
 	Name                 string `position:"Query" name:"Name"`
-	IdCardBackImageUrl   string `position:"Query" name:"IdCardBackImageUrl"`
 	CallbackUrl          string `position:"Query" name:"CallbackUrl"`
 	FailedRedirectUrl    string `position:"Query" name:"FailedRedirectUrl"`
 }

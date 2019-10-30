@@ -76,16 +76,16 @@ func (client *Client) DescribeDeviceInfoWithCallback(request *DescribeDeviceInfo
 // DescribeDeviceInfoRequest is the request struct for api DescribeDeviceInfo
 type DescribeDeviceInfoRequest struct {
 	*requests.RpcRequest
-	BizType         string           `position:"Query" name:"BizType"`
 	UserDeviceId    string           `position:"Query" name:"UserDeviceId"`
-	TotalCount      requests.Integer `position:"Query" name:"TotalCount"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
 	Lang            string           `position:"Query" name:"Lang"`
-	ExpiredEndDay   string           `position:"Query" name:"ExpiredEndDay"`
-	DeviceId        string           `position:"Query" name:"DeviceId"`
 	ExpiredStartDay string           `position:"Query" name:"ExpiredStartDay"`
+	TotalCount      requests.Integer `position:"Query" name:"TotalCount"`
+	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
+	DeviceId        string           `position:"Query" name:"DeviceId"`
+	BizType         string           `position:"Query" name:"BizType"`
+	ExpiredEndDay   string           `position:"Query" name:"ExpiredEndDay"`
 }
 
 // DescribeDeviceInfoResponse is the response struct for api DescribeDeviceInfo

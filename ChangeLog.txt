@@ -1,3 +1,6 @@
+2019-10-30 Version: 1.60.221
+- Update interface params of the cloudauth.
+
 2019-10-29 Version: 1.60.220
 - Add a new Alibaba Cloud Bill API named QueryAccountBill.
 

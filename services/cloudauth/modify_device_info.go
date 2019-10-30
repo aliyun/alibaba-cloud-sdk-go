@@ -77,12 +77,12 @@ func (client *Client) ModifyDeviceInfoWithCallback(request *ModifyDeviceInfoRequ
 type ModifyDeviceInfoRequest struct {
 	*requests.RpcRequest
 	UserDeviceId string `position:"Query" name:"UserDeviceId"`
-	BizType      string `position:"Query" name:"BizType"`
 	Duration     string `position:"Query" name:"Duration"`
 	ExpiredDay   string `position:"Query" name:"ExpiredDay"`
 	SourceIp     string `position:"Query" name:"SourceIp"`
 	Lang         string `position:"Query" name:"Lang"`
 	DeviceId     string `position:"Query" name:"DeviceId"`
+	BizType      string `position:"Query" name:"BizType"`
 }
 
 // ModifyDeviceInfoResponse is the response struct for api ModifyDeviceInfo

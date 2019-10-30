@@ -76,10 +76,10 @@ func (client *Client) CreateVerifySDKWithCallback(request *CreateVerifySDKReques
 // CreateVerifySDKRequest is the request struct for api CreateVerifySDK
 type CreateVerifySDKRequest struct {
 	*requests.RpcRequest
-	SourceIp string `position:"Query" name:"SourceIp"`
 	AppUrl   string `position:"Query" name:"AppUrl"`
-	Lang     string `position:"Query" name:"Lang"`
 	Platform string `position:"Query" name:"Platform"`
+	SourceIp string `position:"Query" name:"SourceIp"`
+	Lang     string `position:"Query" name:"Lang"`
 }
 
 // CreateVerifySDKResponse is the response struct for api CreateVerifySDK
