@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// RemoveMeeting invokes the aliyuncvc.RemoveMeeting API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/removemeeting.html
-func (client *Client) RemoveMeeting(request *RemoveMeetingRequest) (response *RemoveMeetingResponse, err error) {
-	response = CreateRemoveMeetingResponse()
+// ListUsers invokes the aliyuncvc.ListUsers API synchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/listusers.html
+func (client *Client) ListUsers(request *ListUsersRequest) (response *ListUsersResponse, err error) {
+	response = CreateListUsersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// RemoveMeetingWithChan invokes the aliyuncvc.RemoveMeeting API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/removemeeting.html
+// ListUsersWithChan invokes the aliyuncvc.ListUsers API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/listusers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) RemoveMeetingWithChan(request *RemoveMeetingRequest) (<-chan *RemoveMeetingResponse, <-chan error) {
-	responseChan := make(chan *RemoveMeetingResponse, 1)
+func (client *Client) ListUsersWithChan(request *ListUsersRequest) (<-chan *ListUsersResponse, <-chan error) {
+	responseChan := make(chan *ListUsersResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.RemoveMeeting(request)
+		response, err := client.ListUsers(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) RemoveMeetingWithChan(request *RemoveMeetingRequest) (<-ch
 	return responseChan, errChan
 }
 
-// RemoveMeetingWithCallback invokes the aliyuncvc.RemoveMeeting API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/removemeeting.html
+// ListUsersWithCallback invokes the aliyuncvc.ListUsers API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/listusers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) RemoveMeetingWithCallback(request *RemoveMeetingRequest, callback func(response *RemoveMeetingResponse, err error)) <-chan int {
+func (client *Client) ListUsersWithCallback(request *ListUsersRequest, callback func(response *ListUsersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *RemoveMeetingResponse
+		var response *ListUsersResponse
 		var err error
 		defer close(result)
-		response, err = client.RemoveMeeting(request)
+		response, err = client.ListUsers(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,33 +73,35 @@ func (client *Client) RemoveMeetingWithCallback(request *RemoveMeetingRequest, c
 	return result
 }
 
-// RemoveMeetingRequest is the request struct for api RemoveMeeting
-type RemoveMeetingRequest struct {
+// ListUsersRequest is the request struct for api ListUsers
+type ListUsersRequest struct {
 	*requests.RpcRequest
-	MeetingUUID string `position:"Body" name:"MeetingUUID"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
-// RemoveMeetingResponse is the response struct for api RemoveMeeting
-type RemoveMeetingResponse struct {
+// ListUsersResponse is the response struct for api ListUsers
+type ListUsersResponse struct {
 	*responses.BaseResponse
 	ErrorCode int    `json:"ErrorCode" xml:"ErrorCode"`
 	Message   string `json:"Message" xml:"Message"`
 	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateRemoveMeetingRequest creates a request to invoke RemoveMeeting API
-func CreateRemoveMeetingRequest() (request *RemoveMeetingRequest) {
-	request = &RemoveMeetingRequest{
+// CreateListUsersRequest creates a request to invoke ListUsers API
+func CreateListUsersRequest() (request *ListUsersRequest) {
+	request = &ListUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-09-19", "RemoveMeeting", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "ListUsers", "aliyuncvc", "openAPI")
 	return
 }
 
-// CreateRemoveMeetingResponse creates a response to parse from RemoveMeeting response
-func CreateRemoveMeetingResponse() (response *RemoveMeetingResponse) {
-	response = &RemoveMeetingResponse{
+// CreateListUsersResponse creates a response to parse from ListUsers response
+func CreateListUsersResponse() (response *ListUsersResponse) {
+	response = &ListUsersResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

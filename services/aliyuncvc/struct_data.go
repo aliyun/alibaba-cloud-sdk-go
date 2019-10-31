@@ -17,11 +17,8 @@ package aliyuncvc
 
 // Data is a nested struct in aliyuncvc response
 type Data struct {
-	TotalCount  int           `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  int           `json:"PageNumber" xml:"PageNumber"`
-	PageSize    int           `json:"PageSize" xml:"PageSize"`
-	Total       Total         `json:"Total" xml:"Total"`
-	DayInfo     []DayInfoItem `json:"DayInfo" xml:"DayInfo"`
-	Commodities []Commodity   `json:"Commodities" xml:"Commodities"`
-	UserInfos   []UserInfo    `json:"UserInfos" xml:"UserInfos"`
+	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
+	PageSize   int        `json:"PageSize" xml:"PageSize"`
+	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
+	UserInfos  []UserInfo `json:"UserInfos" xml:"UserInfos"`
 }

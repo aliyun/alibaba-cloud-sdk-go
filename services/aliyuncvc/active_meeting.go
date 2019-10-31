@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QueryMemberRecord invokes the aliyuncvc.QueryMemberRecord API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/querymemberrecord.html
-func (client *Client) QueryMemberRecord(request *QueryMemberRecordRequest) (response *QueryMemberRecordResponse, err error) {
-	response = CreateQueryMemberRecordResponse()
+// ActiveMeeting invokes the aliyuncvc.ActiveMeeting API synchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/activemeeting.html
+func (client *Client) ActiveMeeting(request *ActiveMeetingRequest) (response *ActiveMeetingResponse, err error) {
+	response = CreateActiveMeetingResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QueryMemberRecordWithChan invokes the aliyuncvc.QueryMemberRecord API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/querymemberrecord.html
+// ActiveMeetingWithChan invokes the aliyuncvc.ActiveMeeting API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/activemeeting.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryMemberRecordWithChan(request *QueryMemberRecordRequest) (<-chan *QueryMemberRecordResponse, <-chan error) {
-	responseChan := make(chan *QueryMemberRecordResponse, 1)
+func (client *Client) ActiveMeetingWithChan(request *ActiveMeetingRequest) (<-chan *ActiveMeetingResponse, <-chan error) {
+	responseChan := make(chan *ActiveMeetingResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryMemberRecord(request)
+		response, err := client.ActiveMeeting(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) QueryMemberRecordWithChan(request *QueryMemberRecordReques
 	return responseChan, errChan
 }
 
-// QueryMemberRecordWithCallback invokes the aliyuncvc.QueryMemberRecord API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/querymemberrecord.html
+// ActiveMeetingWithCallback invokes the aliyuncvc.ActiveMeeting API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/activemeeting.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryMemberRecordWithCallback(request *QueryMemberRecordRequest, callback func(response *QueryMemberRecordResponse, err error)) <-chan int {
+func (client *Client) ActiveMeetingWithCallback(request *ActiveMeetingRequest, callback func(response *ActiveMeetingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryMemberRecordResponse
+		var response *ActiveMeetingResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryMemberRecord(request)
+		response, err = client.ActiveMeeting(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,14 +73,15 @@ func (client *Client) QueryMemberRecordWithCallback(request *QueryMemberRecordRe
 	return result
 }
 
-// QueryMemberRecordRequest is the request struct for api QueryMemberRecord
-type QueryMemberRecordRequest struct {
+// ActiveMeetingRequest is the request struct for api ActiveMeeting
+type ActiveMeetingRequest struct {
 	*requests.RpcRequest
 	MeetingUUID string `position:"Query" name:"MeetingUUID"`
+	MeetingCode string `position:"Query" name:"MeetingCode"`
 }
 
-// QueryMemberRecordResponse is the response struct for api QueryMemberRecord
-type QueryMemberRecordResponse struct {
+// ActiveMeetingResponse is the response struct for api ActiveMeeting
+type ActiveMeetingResponse struct {
 	*responses.BaseResponse
 	ErrorCode   int         `json:"ErrorCode" xml:"ErrorCode"`
 	Message     string      `json:"Message" xml:"Message"`
@@ -89,18 +90,18 @@ type QueryMemberRecordResponse struct {
 	MeetingInfo MeetingInfo `json:"MeetingInfo" xml:"MeetingInfo"`
 }
 
-// CreateQueryMemberRecordRequest creates a request to invoke QueryMemberRecord API
-func CreateQueryMemberRecordRequest() (request *QueryMemberRecordRequest) {
-	request = &QueryMemberRecordRequest{
+// CreateActiveMeetingRequest creates a request to invoke ActiveMeeting API
+func CreateActiveMeetingRequest() (request *ActiveMeetingRequest) {
+	request = &ActiveMeetingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-09-19", "QueryMemberRecord", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "ActiveMeeting", "aliyuncvc", "openAPI")
 	return
 }
 
-// CreateQueryMemberRecordResponse creates a response to parse from QueryMemberRecord response
-func CreateQueryMemberRecordResponse() (response *QueryMemberRecordResponse) {
-	response = &QueryMemberRecordResponse{
+// CreateActiveMeetingResponse creates a response to parse from ActiveMeeting response
+func CreateActiveMeetingResponse() (response *ActiveMeetingResponse) {
+	response = &ActiveMeetingResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

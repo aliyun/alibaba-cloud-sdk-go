@@ -17,20 +17,20 @@ package aliyuncvc
 
 // MeetingInfo is a nested struct in aliyuncvc response
 type MeetingInfo struct {
-	ValidDate         int64            `json:"ValidDate" xml:"ValidDate"`
-	MeetingToken      string           `json:"MeetingToken" xml:"MeetingToken"`
-	MeetingUUID       string           `json:"MeetingUUID" xml:"MeetingUUID"`
-	MeetingAppId      string           `json:"MeetingAppId" xml:"MeetingAppId"`
-	MeetingCode       string           `json:"MeetingCode" xml:"MeetingCode"`
-	MemberUUID        string           `json:"MemberUUID" xml:"MemberUUID"`
-	ClientAppId       string           `json:"ClientAppId" xml:"ClientAppId"`
-	UserId            string           `json:"UserId" xml:"UserId"`
-	MeetingName       string           `json:"MeetingName" xml:"MeetingName"`
-	UserName          string           `json:"UserName" xml:"UserName"`
-	MeetingDomain     string           `json:"MeetingDomain" xml:"MeetingDomain"`
-	Memo              string           `json:"Memo" xml:"Memo"`
-	CreateDate        int64            `json:"CreateDate" xml:"CreateDate"`
-	SlsInfo           SlsInfo          `json:"SlsInfo" xml:"SlsInfo"`
-	MemberList        []MemberListItem `json:"MemberList" xml:"MemberList"`
-	MemberRecordsList []MemberRecord   `json:"MemberRecordsList" xml:"MemberRecordsList"`
+	MeetingToken  string           `json:"MeetingToken" xml:"MeetingToken"`
+	MeetingUUID   string           `json:"MeetingUUID" xml:"MeetingUUID"`
+	CreateTime    int64            `json:"CreateTime" xml:"CreateTime"`
+	MeetingAppId  string           `json:"MeetingAppId" xml:"MeetingAppId"`
+	MeetingCode   string           `json:"MeetingCode" xml:"MeetingCode"`
+	MemberUUID    string           `json:"MemberUUID" xml:"MemberUUID"`
+	ValidTime     int64            `json:"ValidTime" xml:"ValidTime"`
+	ClientAppId   string           `json:"ClientAppId" xml:"ClientAppId"`
+	UserId        string           `json:"UserId" xml:"UserId"`
+	MeetingName   string           `json:"MeetingName" xml:"MeetingName"`
+	UserName      string           `json:"UserName" xml:"UserName"`
+	MeetingDomain string           `json:"MeetingDomain" xml:"MeetingDomain"`
+	Memo          string           `json:"Memo" xml:"Memo"`
+	SlsInfo       SlsInfo          `json:"SlsInfo" xml:"SlsInfo"`
+	MemberList    []MemberListItem `json:"MemberList" xml:"MemberList"`
+	MemberInfos   []MemberRecord   `json:"MemberInfos" xml:"MemberInfos"`
 }

@@ -87,6 +87,7 @@ type CreateUserResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	UserId    string `json:"UserId" xml:"UserId"`
 }
 
 // CreateCreateUserRequest creates a request to invoke CreateUser API
@@ -94,7 +95,7 @@ func CreateCreateUserRequest() (request *CreateUserRequest) {
 	request = &CreateUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-09-19", "CreateUser", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "CreateUser", "aliyuncvc", "openAPI")
 	return
 }
 

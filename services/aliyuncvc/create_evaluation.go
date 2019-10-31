@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateUserEvaluations invokes the aliyuncvc.CreateUserEvaluations API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createuserevaluations.html
-func (client *Client) CreateUserEvaluations(request *CreateUserEvaluationsRequest) (response *CreateUserEvaluationsResponse, err error) {
-	response = CreateCreateUserEvaluationsResponse()
+// CreateEvaluation invokes the aliyuncvc.CreateEvaluation API synchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/createevaluation.html
+func (client *Client) CreateEvaluation(request *CreateEvaluationRequest) (response *CreateEvaluationResponse, err error) {
+	response = CreateCreateEvaluationResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateUserEvaluationsWithChan invokes the aliyuncvc.CreateUserEvaluations API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createuserevaluations.html
+// CreateEvaluationWithChan invokes the aliyuncvc.CreateEvaluation API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/createevaluation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateUserEvaluationsWithChan(request *CreateUserEvaluationsRequest) (<-chan *CreateUserEvaluationsResponse, <-chan error) {
-	responseChan := make(chan *CreateUserEvaluationsResponse, 1)
+func (client *Client) CreateEvaluationWithChan(request *CreateEvaluationRequest) (<-chan *CreateEvaluationResponse, <-chan error) {
+	responseChan := make(chan *CreateEvaluationResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateUserEvaluations(request)
+		response, err := client.CreateEvaluation(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateUserEvaluationsWithChan(request *CreateUserEvaluatio
 	return responseChan, errChan
 }
 
-// CreateUserEvaluationsWithCallback invokes the aliyuncvc.CreateUserEvaluations API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createuserevaluations.html
+// CreateEvaluationWithCallback invokes the aliyuncvc.CreateEvaluation API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/createevaluation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateUserEvaluationsWithCallback(request *CreateUserEvaluationsRequest, callback func(response *CreateUserEvaluationsResponse, err error)) <-chan int {
+func (client *Client) CreateEvaluationWithCallback(request *CreateEvaluationRequest, callback func(response *CreateEvaluationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateUserEvaluationsResponse
+		var response *CreateEvaluationResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateUserEvaluations(request)
+		response, err = client.CreateEvaluation(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,12 +73,12 @@ func (client *Client) CreateUserEvaluationsWithCallback(request *CreateUserEvalu
 	return result
 }
 
-// CreateUserEvaluationsRequest is the request struct for api CreateUserEvaluations
-type CreateUserEvaluationsRequest struct {
+// CreateEvaluationRequest is the request struct for api CreateEvaluation
+type CreateEvaluationRequest struct {
 	*requests.RpcRequest
+	CreateTime  requests.Integer `position:"Query" name:"CreateTime"`
 	Memo        string           `position:"Query" name:"Memo"`
 	Description string           `position:"Query" name:"Description"`
-	CreateDate  requests.Integer `position:"Query" name:"CreateDate"`
 	MemberUUID  string           `position:"Query" name:"MemberUUID"`
 	UserId      string           `position:"Query" name:"UserId"`
 	Evaluation  string           `position:"Query" name:"Evaluation"`
@@ -87,8 +87,8 @@ type CreateUserEvaluationsRequest struct {
 	AppId       string           `position:"Query" name:"AppId"`
 }
 
-// CreateUserEvaluationsResponse is the response struct for api CreateUserEvaluations
-type CreateUserEvaluationsResponse struct {
+// CreateEvaluationResponse is the response struct for api CreateEvaluation
+type CreateEvaluationResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
@@ -96,18 +96,18 @@ type CreateUserEvaluationsResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateCreateUserEvaluationsRequest creates a request to invoke CreateUserEvaluations API
-func CreateCreateUserEvaluationsRequest() (request *CreateUserEvaluationsRequest) {
-	request = &CreateUserEvaluationsRequest{
+// CreateCreateEvaluationRequest creates a request to invoke CreateEvaluation API
+func CreateCreateEvaluationRequest() (request *CreateEvaluationRequest) {
+	request = &CreateEvaluationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-09-19", "CreateUserEvaluations", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "CreateEvaluation", "aliyuncvc", "openAPI")
 	return
 }
 
-// CreateCreateUserEvaluationsResponse creates a response to parse from CreateUserEvaluations response
-func CreateCreateUserEvaluationsResponse() (response *CreateUserEvaluationsResponse) {
-	response = &CreateUserEvaluationsResponse{
+// CreateCreateEvaluationResponse creates a response to parse from CreateEvaluation response
+func CreateCreateEvaluationResponse() (response *CreateEvaluationResponse) {
+	response = &CreateEvaluationResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

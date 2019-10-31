@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CheckMeetingCode invokes the aliyuncvc.CheckMeetingCode API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/checkmeetingcode.html
-func (client *Client) CheckMeetingCode(request *CheckMeetingCodeRequest) (response *CheckMeetingCodeResponse, err error) {
-	response = CreateCheckMeetingCodeResponse()
+// JoinMeeting invokes the aliyuncvc.JoinMeeting API synchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/joinmeeting.html
+func (client *Client) JoinMeeting(request *JoinMeetingRequest) (response *JoinMeetingResponse, err error) {
+	response = CreateJoinMeetingResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CheckMeetingCodeWithChan invokes the aliyuncvc.CheckMeetingCode API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/checkmeetingcode.html
+// JoinMeetingWithChan invokes the aliyuncvc.JoinMeeting API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/joinmeeting.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CheckMeetingCodeWithChan(request *CheckMeetingCodeRequest) (<-chan *CheckMeetingCodeResponse, <-chan error) {
-	responseChan := make(chan *CheckMeetingCodeResponse, 1)
+func (client *Client) JoinMeetingWithChan(request *JoinMeetingRequest) (<-chan *JoinMeetingResponse, <-chan error) {
+	responseChan := make(chan *JoinMeetingResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CheckMeetingCode(request)
+		response, err := client.JoinMeeting(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CheckMeetingCodeWithChan(request *CheckMeetingCodeRequest)
 	return responseChan, errChan
 }
 
-// CheckMeetingCodeWithCallback invokes the aliyuncvc.CheckMeetingCode API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/checkmeetingcode.html
+// JoinMeetingWithCallback invokes the aliyuncvc.JoinMeeting API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/joinmeeting.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CheckMeetingCodeWithCallback(request *CheckMeetingCodeRequest, callback func(response *CheckMeetingCodeResponse, err error)) <-chan int {
+func (client *Client) JoinMeetingWithCallback(request *JoinMeetingRequest, callback func(response *JoinMeetingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CheckMeetingCodeResponse
+		var response *JoinMeetingResponse
 		var err error
 		defer close(result)
-		response, err = client.CheckMeetingCode(request)
+		response, err = client.JoinMeeting(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,15 +73,15 @@ func (client *Client) CheckMeetingCodeWithCallback(request *CheckMeetingCodeRequ
 	return result
 }
 
-// CheckMeetingCodeRequest is the request struct for api CheckMeetingCode
-type CheckMeetingCodeRequest struct {
+// JoinMeetingRequest is the request struct for api JoinMeeting
+type JoinMeetingRequest struct {
 	*requests.RpcRequest
 	MeetingCode string `position:"Body" name:"MeetingCode"`
 	UserId      string `position:"Body" name:"UserId"`
 }
 
-// CheckMeetingCodeResponse is the response struct for api CheckMeetingCode
-type CheckMeetingCodeResponse struct {
+// JoinMeetingResponse is the response struct for api JoinMeeting
+type JoinMeetingResponse struct {
 	*responses.BaseResponse
 	ErrorCode   int         `json:"ErrorCode" xml:"ErrorCode"`
 	Success     bool        `json:"Success" xml:"Success"`
@@ -90,18 +90,18 @@ type CheckMeetingCodeResponse struct {
 	MeetingInfo MeetingInfo `json:"MeetingInfo" xml:"MeetingInfo"`
 }
 
-// CreateCheckMeetingCodeRequest creates a request to invoke CheckMeetingCode API
-func CreateCheckMeetingCodeRequest() (request *CheckMeetingCodeRequest) {
-	request = &CheckMeetingCodeRequest{
+// CreateJoinMeetingRequest creates a request to invoke JoinMeeting API
+func CreateJoinMeetingRequest() (request *JoinMeetingRequest) {
+	request = &JoinMeetingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-09-19", "CheckMeetingCode", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc", "openAPI")
 	return
 }
 
-// CreateCheckMeetingCodeResponse creates a response to parse from CheckMeetingCode response
-func CreateCheckMeetingCodeResponse() (response *CheckMeetingCodeResponse) {
-	response = &CheckMeetingCodeResponse{
+// CreateJoinMeetingResponse creates a response to parse from JoinMeeting response
+func CreateJoinMeetingResponse() (response *JoinMeetingResponse) {
+	response = &JoinMeetingResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

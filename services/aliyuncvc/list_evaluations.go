@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QueryUserEvaluation invokes the aliyuncvc.QueryUserEvaluation API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/queryuserevaluation.html
-func (client *Client) QueryUserEvaluation(request *QueryUserEvaluationRequest) (response *QueryUserEvaluationResponse, err error) {
-	response = CreateQueryUserEvaluationResponse()
+// ListEvaluations invokes the aliyuncvc.ListEvaluations API synchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/listevaluations.html
+func (client *Client) ListEvaluations(request *ListEvaluationsRequest) (response *ListEvaluationsResponse, err error) {
+	response = CreateListEvaluationsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QueryUserEvaluationWithChan invokes the aliyuncvc.QueryUserEvaluation API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/queryuserevaluation.html
+// ListEvaluationsWithChan invokes the aliyuncvc.ListEvaluations API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/listevaluations.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryUserEvaluationWithChan(request *QueryUserEvaluationRequest) (<-chan *QueryUserEvaluationResponse, <-chan error) {
-	responseChan := make(chan *QueryUserEvaluationResponse, 1)
+func (client *Client) ListEvaluationsWithChan(request *ListEvaluationsRequest) (<-chan *ListEvaluationsResponse, <-chan error) {
+	responseChan := make(chan *ListEvaluationsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryUserEvaluation(request)
+		response, err := client.ListEvaluations(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) QueryUserEvaluationWithChan(request *QueryUserEvaluationRe
 	return responseChan, errChan
 }
 
-// QueryUserEvaluationWithCallback invokes the aliyuncvc.QueryUserEvaluation API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/queryuserevaluation.html
+// ListEvaluationsWithCallback invokes the aliyuncvc.ListEvaluations API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/listevaluations.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryUserEvaluationWithCallback(request *QueryUserEvaluationRequest, callback func(response *QueryUserEvaluationResponse, err error)) <-chan int {
+func (client *Client) ListEvaluationsWithCallback(request *ListEvaluationsRequest, callback func(response *ListEvaluationsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryUserEvaluationResponse
+		var response *ListEvaluationsResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryUserEvaluation(request)
+		response, err = client.ListEvaluations(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,13 +73,13 @@ func (client *Client) QueryUserEvaluationWithCallback(request *QueryUserEvaluati
 	return result
 }
 
-// QueryUserEvaluationRequest is the request struct for api QueryUserEvaluation
-type QueryUserEvaluationRequest struct {
+// ListEvaluationsRequest is the request struct for api ListEvaluations
+type ListEvaluationsRequest struct {
 	*requests.RpcRequest
 }
 
-// QueryUserEvaluationResponse is the response struct for api QueryUserEvaluation
-type QueryUserEvaluationResponse struct {
+// ListEvaluationsResponse is the response struct for api ListEvaluations
+type ListEvaluationsResponse struct {
 	*responses.BaseResponse
 	UserEvaluation string `json:"UserEvaluation" xml:"UserEvaluation"`
 	ErrorCode      int    `json:"ErrorCode" xml:"ErrorCode"`
@@ -88,18 +88,18 @@ type QueryUserEvaluationResponse struct {
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateQueryUserEvaluationRequest creates a request to invoke QueryUserEvaluation API
-func CreateQueryUserEvaluationRequest() (request *QueryUserEvaluationRequest) {
-	request = &QueryUserEvaluationRequest{
+// CreateListEvaluationsRequest creates a request to invoke ListEvaluations API
+func CreateListEvaluationsRequest() (request *ListEvaluationsRequest) {
+	request = &ListEvaluationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-09-19", "QueryUserEvaluation", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "ListEvaluations", "aliyuncvc", "openAPI")
 	return
 }
 
-// CreateQueryUserEvaluationResponse creates a response to parse from QueryUserEvaluation response
-func CreateQueryUserEvaluationResponse() (response *QueryUserEvaluationResponse) {
-	response = &QueryUserEvaluationResponse{
+// CreateListEvaluationsResponse creates a response to parse from ListEvaluations response
+func CreateListEvaluationsResponse() (response *ListEvaluationsResponse) {
+	response = &ListEvaluationsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

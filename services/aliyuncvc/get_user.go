@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QueryIsvUserInfo invokes the aliyuncvc.QueryIsvUserInfo API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/queryisvuserinfo.html
-func (client *Client) QueryIsvUserInfo(request *QueryIsvUserInfoRequest) (response *QueryIsvUserInfoResponse, err error) {
-	response = CreateQueryIsvUserInfoResponse()
+// GetUser invokes the aliyuncvc.GetUser API synchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/getuser.html
+func (client *Client) GetUser(request *GetUserRequest) (response *GetUserResponse, err error) {
+	response = CreateGetUserResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QueryIsvUserInfoWithChan invokes the aliyuncvc.QueryIsvUserInfo API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/queryisvuserinfo.html
+// GetUserWithChan invokes the aliyuncvc.GetUser API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/getuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryIsvUserInfoWithChan(request *QueryIsvUserInfoRequest) (<-chan *QueryIsvUserInfoResponse, <-chan error) {
-	responseChan := make(chan *QueryIsvUserInfoResponse, 1)
+func (client *Client) GetUserWithChan(request *GetUserRequest) (<-chan *GetUserResponse, <-chan error) {
+	responseChan := make(chan *GetUserResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryIsvUserInfo(request)
+		response, err := client.GetUser(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) QueryIsvUserInfoWithChan(request *QueryIsvUserInfoRequest)
 	return responseChan, errChan
 }
 
-// QueryIsvUserInfoWithCallback invokes the aliyuncvc.QueryIsvUserInfo API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/queryisvuserinfo.html
+// GetUserWithCallback invokes the aliyuncvc.GetUser API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/getuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryIsvUserInfoWithCallback(request *QueryIsvUserInfoRequest, callback func(response *QueryIsvUserInfoResponse, err error)) <-chan int {
+func (client *Client) GetUserWithCallback(request *GetUserRequest, callback func(response *GetUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryIsvUserInfoResponse
+		var response *GetUserResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryIsvUserInfo(request)
+		response, err = client.GetUser(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,14 +73,14 @@ func (client *Client) QueryIsvUserInfoWithCallback(request *QueryIsvUserInfoRequ
 	return result
 }
 
-// QueryIsvUserInfoRequest is the request struct for api QueryIsvUserInfo
-type QueryIsvUserInfoRequest struct {
+// GetUserRequest is the request struct for api GetUser
+type GetUserRequest struct {
 	*requests.RpcRequest
 	UserId string `position:"Query" name:"UserId"`
 }
 
-// QueryIsvUserInfoResponse is the response struct for api QueryIsvUserInfo
-type QueryIsvUserInfoResponse struct {
+// GetUserResponse is the response struct for api GetUser
+type GetUserResponse struct {
 	*responses.BaseResponse
 	ErrorCode int      `json:"ErrorCode" xml:"ErrorCode"`
 	Message   string   `json:"Message" xml:"Message"`
@@ -89,18 +89,18 @@ type QueryIsvUserInfoResponse struct {
 	UserInfo  UserInfo `json:"UserInfo" xml:"UserInfo"`
 }
 
-// CreateQueryIsvUserInfoRequest creates a request to invoke QueryIsvUserInfo API
-func CreateQueryIsvUserInfoRequest() (request *QueryIsvUserInfoRequest) {
-	request = &QueryIsvUserInfoRequest{
+// CreateGetUserRequest creates a request to invoke GetUser API
+func CreateGetUserRequest() (request *GetUserRequest) {
+	request = &GetUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-09-19", "QueryIsvUserInfo", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "GetUser", "aliyuncvc", "openAPI")
 	return
 }
 
-// CreateQueryIsvUserInfoResponse creates a response to parse from QueryIsvUserInfo response
-func CreateQueryIsvUserInfoResponse() (response *QueryIsvUserInfoResponse) {
-	response = &QueryIsvUserInfoResponse{
+// CreateGetUserResponse creates a response to parse from GetUser response
+func CreateGetUserResponse() (response *GetUserResponse) {
+	response = &GetUserResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QueryUserList invokes the aliyuncvc.QueryUserList API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/queryuserlist.html
-func (client *Client) QueryUserList(request *QueryUserListRequest) (response *QueryUserListResponse, err error) {
-	response = CreateQueryUserListResponse()
+// DeleteMeeting invokes the aliyuncvc.DeleteMeeting API synchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/deletemeeting.html
+func (client *Client) DeleteMeeting(request *DeleteMeetingRequest) (response *DeleteMeetingResponse, err error) {
+	response = CreateDeleteMeetingResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QueryUserListWithChan invokes the aliyuncvc.QueryUserList API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/queryuserlist.html
+// DeleteMeetingWithChan invokes the aliyuncvc.DeleteMeeting API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/deletemeeting.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryUserListWithChan(request *QueryUserListRequest) (<-chan *QueryUserListResponse, <-chan error) {
-	responseChan := make(chan *QueryUserListResponse, 1)
+func (client *Client) DeleteMeetingWithChan(request *DeleteMeetingRequest) (<-chan *DeleteMeetingResponse, <-chan error) {
+	responseChan := make(chan *DeleteMeetingResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryUserList(request)
+		response, err := client.DeleteMeeting(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) QueryUserListWithChan(request *QueryUserListRequest) (<-ch
 	return responseChan, errChan
 }
 
-// QueryUserListWithCallback invokes the aliyuncvc.QueryUserList API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/queryuserlist.html
+// DeleteMeetingWithCallback invokes the aliyuncvc.DeleteMeeting API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/deletemeeting.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryUserListWithCallback(request *QueryUserListRequest, callback func(response *QueryUserListResponse, err error)) <-chan int {
+func (client *Client) DeleteMeetingWithCallback(request *DeleteMeetingRequest, callback func(response *DeleteMeetingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryUserListResponse
+		var response *DeleteMeetingResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryUserList(request)
+		response, err = client.DeleteMeeting(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,33 @@ func (client *Client) QueryUserListWithCallback(request *QueryUserListRequest, c
 	return result
 }
 
-// QueryUserListRequest is the request struct for api QueryUserList
-type QueryUserListRequest struct {
+// DeleteMeetingRequest is the request struct for api DeleteMeeting
+type DeleteMeetingRequest struct {
 	*requests.RpcRequest
-	PageSize requests.Integer `position:"Query" name:"PageSize"`
-	PageNum  requests.Integer `position:"Query" name:"PageNum"`
+	MeetingUUID string `position:"Body" name:"MeetingUUID"`
 }
 
-// QueryUserListResponse is the response struct for api QueryUserList
-type QueryUserListResponse struct {
+// DeleteMeetingResponse is the response struct for api DeleteMeeting
+type DeleteMeetingResponse struct {
 	*responses.BaseResponse
 	ErrorCode int    `json:"ErrorCode" xml:"ErrorCode"`
 	Message   string `json:"Message" xml:"Message"`
 	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateQueryUserListRequest creates a request to invoke QueryUserList API
-func CreateQueryUserListRequest() (request *QueryUserListRequest) {
-	request = &QueryUserListRequest{
+// CreateDeleteMeetingRequest creates a request to invoke DeleteMeeting API
+func CreateDeleteMeetingRequest() (request *DeleteMeetingRequest) {
+	request = &DeleteMeetingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-09-19", "QueryUserList", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "DeleteMeeting", "aliyuncvc", "openAPI")
 	return
 }
 
-// CreateQueryUserListResponse creates a response to parse from QueryUserList response
-func CreateQueryUserListResponse() (response *QueryUserListResponse) {
-	response = &QueryUserListResponse{
+// CreateDeleteMeetingResponse creates a response to parse from DeleteMeeting response
+func CreateDeleteMeetingResponse() (response *DeleteMeetingResponse) {
+	response = &DeleteMeetingResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

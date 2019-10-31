@@ -95,7 +95,7 @@ func CreateCreateMeetingRequest() (request *CreateMeetingRequest) {
 	request = &CreateMeetingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-09-19", "CreateMeeting", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "CreateMeeting", "aliyuncvc", "openAPI")
 	return
 }
 

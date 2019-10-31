@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ActiveMeetingCode invokes the aliyuncvc.ActiveMeetingCode API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/activemeetingcode.html
-func (client *Client) ActiveMeetingCode(request *ActiveMeetingCodeRequest) (response *ActiveMeetingCodeResponse, err error) {
-	response = CreateActiveMeetingCodeResponse()
+// ListMembers invokes the aliyuncvc.ListMembers API synchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/listmembers.html
+func (client *Client) ListMembers(request *ListMembersRequest) (response *ListMembersResponse, err error) {
+	response = CreateListMembersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ActiveMeetingCodeWithChan invokes the aliyuncvc.ActiveMeetingCode API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/activemeetingcode.html
+// ListMembersWithChan invokes the aliyuncvc.ListMembers API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/listmembers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ActiveMeetingCodeWithChan(request *ActiveMeetingCodeRequest) (<-chan *ActiveMeetingCodeResponse, <-chan error) {
-	responseChan := make(chan *ActiveMeetingCodeResponse, 1)
+func (client *Client) ListMembersWithChan(request *ListMembersRequest) (<-chan *ListMembersResponse, <-chan error) {
+	responseChan := make(chan *ListMembersResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ActiveMeetingCode(request)
+		response, err := client.ListMembers(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ActiveMeetingCodeWithChan(request *ActiveMeetingCodeReques
 	return responseChan, errChan
 }
 
-// ActiveMeetingCodeWithCallback invokes the aliyuncvc.ActiveMeetingCode API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/activemeetingcode.html
+// ListMembersWithCallback invokes the aliyuncvc.ListMembers API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/listmembers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ActiveMeetingCodeWithCallback(request *ActiveMeetingCodeRequest, callback func(response *ActiveMeetingCodeResponse, err error)) <-chan int {
+func (client *Client) ListMembersWithCallback(request *ListMembersRequest, callback func(response *ListMembersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ActiveMeetingCodeResponse
+		var response *ListMembersResponse
 		var err error
 		defer close(result)
-		response, err = client.ActiveMeetingCode(request)
+		response, err = client.ListMembers(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,15 +73,14 @@ func (client *Client) ActiveMeetingCodeWithCallback(request *ActiveMeetingCodeRe
 	return result
 }
 
-// ActiveMeetingCodeRequest is the request struct for api ActiveMeetingCode
-type ActiveMeetingCodeRequest struct {
+// ListMembersRequest is the request struct for api ListMembers
+type ListMembersRequest struct {
 	*requests.RpcRequest
 	MeetingUUID string `position:"Query" name:"MeetingUUID"`
-	MeetingCode string `position:"Query" name:"MeetingCode"`
 }
 
-// ActiveMeetingCodeResponse is the response struct for api ActiveMeetingCode
-type ActiveMeetingCodeResponse struct {
+// ListMembersResponse is the response struct for api ListMembers
+type ListMembersResponse struct {
 	*responses.BaseResponse
 	ErrorCode   int         `json:"ErrorCode" xml:"ErrorCode"`
 	Message     string      `json:"Message" xml:"Message"`
@@ -90,18 +89,18 @@ type ActiveMeetingCodeResponse struct {
 	MeetingInfo MeetingInfo `json:"MeetingInfo" xml:"MeetingInfo"`
 }
 
-// CreateActiveMeetingCodeRequest creates a request to invoke ActiveMeetingCode API
-func CreateActiveMeetingCodeRequest() (request *ActiveMeetingCodeRequest) {
-	request = &ActiveMeetingCodeRequest{
+// CreateListMembersRequest creates a request to invoke ListMembers API
+func CreateListMembersRequest() (request *ListMembersRequest) {
+	request = &ListMembersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-09-19", "ActiveMeetingCode", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "ListMembers", "aliyuncvc", "openAPI")
 	return
 }
 
-// CreateActiveMeetingCodeResponse creates a response to parse from ActiveMeetingCode response
-func CreateActiveMeetingCodeResponse() (response *ActiveMeetingCodeResponse) {
-	response = &ActiveMeetingCodeResponse{
+// CreateListMembersResponse creates a response to parse from ListMembers response
+func CreateListMembersResponse() (response *ListMembersResponse) {
+	response = &ListMembersResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
