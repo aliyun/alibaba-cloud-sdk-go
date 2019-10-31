@@ -1,3 +1,6 @@
+2019-10-31 Version: 1.60.222
+- Support ListTagResources for tag fuzzy filter.
+
 2019-10-30 Version: 1.60.221
 - Update interface params of the cloudauth.
 

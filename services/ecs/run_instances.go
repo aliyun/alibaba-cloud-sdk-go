@@ -92,10 +92,12 @@ type RunInstancesRequest struct {
 	Tag                            *[]RunInstancesTag              `position:"Query" name:"Tag"  type:"Repeated"`
 	SystemDiskAutoSnapshotPolicyId string                          `position:"Query" name:"SystemDisk.AutoSnapshotPolicyId"`
 	AutoRenewPeriod                requests.Integer                `position:"Query" name:"AutoRenewPeriod"`
+	CpuOptionsCore                 requests.Integer                `position:"Query" name:"CpuOptions.Core"`
 	Period                         requests.Integer                `position:"Query" name:"Period"`
 	DryRun                         requests.Boolean                `position:"Query" name:"DryRun"`
 	LaunchTemplateId               string                          `position:"Query" name:"LaunchTemplateId"`
 	Ipv6AddressCount               requests.Integer                `position:"Query" name:"Ipv6AddressCount"`
+	CpuOptionsNuma                 string                          `position:"Query" name:"CpuOptions.Numa"`
 	OwnerId                        requests.Integer                `position:"Query" name:"OwnerId"`
 	CapacityReservationPreference  string                          `position:"Query" name:"CapacityReservationPreference"`
 	VSwitchId                      string                          `position:"Query" name:"VSwitchId"`
@@ -116,6 +118,7 @@ type RunInstancesRequest struct {
 	SecurityGroupId                string                          `position:"Query" name:"SecurityGroupId"`
 	InternetMaxBandwidthOut        requests.Integer                `position:"Query" name:"InternetMaxBandwidthOut"`
 	Description                    string                          `position:"Query" name:"Description"`
+	CpuOptionsThreadsPerCore       requests.Integer                `position:"Query" name:"CpuOptions.ThreadsPerCore"`
 	SystemDiskCategory             string                          `position:"Query" name:"SystemDisk.Category"`
 	CapacityReservationId          string                          `position:"Query" name:"CapacityReservationId"`
 	SystemDiskPerformanceLevel     string                          `position:"Query" name:"SystemDisk.PerformanceLevel"`
