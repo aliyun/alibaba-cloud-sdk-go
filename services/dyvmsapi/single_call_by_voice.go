@@ -76,15 +76,15 @@ func (client *Client) SingleCallByVoiceWithCallback(request *SingleCallByVoiceRe
 // SingleCallByVoiceRequest is the request struct for api SingleCallByVoice
 type SingleCallByVoiceRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CalledShowNumber     string           `position:"Query" name:"CalledShowNumber"`
+	Speed                requests.Integer `position:"Query" name:"Speed"`
 	CalledNumber         string           `position:"Query" name:"CalledNumber"`
 	VoiceCode            string           `position:"Query" name:"VoiceCode"`
+	CalledShowNumber     string           `position:"Query" name:"CalledShowNumber"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	PlayTimes            requests.Integer `position:"Query" name:"PlayTimes"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Volume               requests.Integer `position:"Query" name:"Volume"`
-	Speed                requests.Integer `position:"Query" name:"Speed"`
 	OutId                string           `position:"Query" name:"OutId"`
 }
 

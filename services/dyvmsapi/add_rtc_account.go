@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// VoipAddAccount invokes the dyvmsapi.VoipAddAccount API synchronously
-// api document: https://help.aliyun.com/api/dyvmsapi/voipaddaccount.html
-func (client *Client) VoipAddAccount(request *VoipAddAccountRequest) (response *VoipAddAccountResponse, err error) {
-	response = CreateVoipAddAccountResponse()
+// AddRtcAccount invokes the dyvmsapi.AddRtcAccount API synchronously
+// api document: https://help.aliyun.com/api/dyvmsapi/addrtcaccount.html
+func (client *Client) AddRtcAccount(request *AddRtcAccountRequest) (response *AddRtcAccountResponse, err error) {
+	response = CreateAddRtcAccountResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// VoipAddAccountWithChan invokes the dyvmsapi.VoipAddAccount API asynchronously
-// api document: https://help.aliyun.com/api/dyvmsapi/voipaddaccount.html
+// AddRtcAccountWithChan invokes the dyvmsapi.AddRtcAccount API asynchronously
+// api document: https://help.aliyun.com/api/dyvmsapi/addrtcaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) VoipAddAccountWithChan(request *VoipAddAccountRequest) (<-chan *VoipAddAccountResponse, <-chan error) {
-	responseChan := make(chan *VoipAddAccountResponse, 1)
+func (client *Client) AddRtcAccountWithChan(request *AddRtcAccountRequest) (<-chan *AddRtcAccountResponse, <-chan error) {
+	responseChan := make(chan *AddRtcAccountResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.VoipAddAccount(request)
+		response, err := client.AddRtcAccount(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) VoipAddAccountWithChan(request *VoipAddAccountRequest) (<-
 	return responseChan, errChan
 }
 
-// VoipAddAccountWithCallback invokes the dyvmsapi.VoipAddAccount API asynchronously
-// api document: https://help.aliyun.com/api/dyvmsapi/voipaddaccount.html
+// AddRtcAccountWithCallback invokes the dyvmsapi.AddRtcAccount API asynchronously
+// api document: https://help.aliyun.com/api/dyvmsapi/addrtcaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) VoipAddAccountWithCallback(request *VoipAddAccountRequest, callback func(response *VoipAddAccountResponse, err error)) <-chan int {
+func (client *Client) AddRtcAccountWithCallback(request *AddRtcAccountRequest, callback func(response *AddRtcAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *VoipAddAccountResponse
+		var response *AddRtcAccountResponse
 		var err error
 		defer close(result)
-		response, err = client.VoipAddAccount(request)
+		response, err = client.AddRtcAccount(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,8 +73,8 @@ func (client *Client) VoipAddAccountWithCallback(request *VoipAddAccountRequest,
 	return result
 }
 
-// VoipAddAccountRequest is the request struct for api VoipAddAccount
-type VoipAddAccountRequest struct {
+// AddRtcAccountRequest is the request struct for api AddRtcAccount
+type AddRtcAccountRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -82,8 +82,8 @@ type VoipAddAccountRequest struct {
 	DeviceId             string           `position:"Query" name:"DeviceId"`
 }
 
-// VoipAddAccountResponse is the response struct for api VoipAddAccount
-type VoipAddAccountResponse struct {
+// AddRtcAccountResponse is the response struct for api AddRtcAccount
+type AddRtcAccountResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Module    string `json:"Module" xml:"Module"`
@@ -91,18 +91,18 @@ type VoipAddAccountResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateVoipAddAccountRequest creates a request to invoke VoipAddAccount API
-func CreateVoipAddAccountRequest() (request *VoipAddAccountRequest) {
-	request = &VoipAddAccountRequest{
+// CreateAddRtcAccountRequest creates a request to invoke AddRtcAccount API
+func CreateAddRtcAccountRequest() (request *AddRtcAccountRequest) {
+	request = &AddRtcAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "VoipAddAccount", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "AddRtcAccount", "", "")
 	return
 }
 
-// CreateVoipAddAccountResponse creates a response to parse from VoipAddAccount response
-func CreateVoipAddAccountResponse() (response *VoipAddAccountResponse) {
-	response = &VoipAddAccountResponse{
+// CreateAddRtcAccountResponse creates a response to parse from AddRtcAccount response
+func CreateAddRtcAccountResponse() (response *AddRtcAccountResponse) {
+	response = &AddRtcAccountResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

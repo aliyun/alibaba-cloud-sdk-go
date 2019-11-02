@@ -76,10 +76,10 @@ func (client *Client) CancelCallWithCallback(request *CancelCallRequest, callbac
 // CancelCallRequest is the request struct for api CancelCall
 type CancelCallRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CallId               string           `position:"Query" name:"CallId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // CancelCallResponse is the response struct for api CancelCall

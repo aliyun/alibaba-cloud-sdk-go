@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// VoipAddAccount invokes the dyvmsapi.VoipAddAccount API synchronously
-// api document: https://help.aliyun.com/api/dyvmsapi/voipaddaccount.html
-func (client *Client) VoipAddAccount(request *VoipAddAccountRequest) (response *VoipAddAccountResponse, err error) {
-	response = CreateVoipAddAccountResponse()
+// CancelRobotTask invokes the dyvmsapi.CancelRobotTask API synchronously
+// api document: https://help.aliyun.com/api/dyvmsapi/cancelrobottask.html
+func (client *Client) CancelRobotTask(request *CancelRobotTaskRequest) (response *CancelRobotTaskResponse, err error) {
+	response = CreateCancelRobotTaskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// VoipAddAccountWithChan invokes the dyvmsapi.VoipAddAccount API asynchronously
-// api document: https://help.aliyun.com/api/dyvmsapi/voipaddaccount.html
+// CancelRobotTaskWithChan invokes the dyvmsapi.CancelRobotTask API asynchronously
+// api document: https://help.aliyun.com/api/dyvmsapi/cancelrobottask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) VoipAddAccountWithChan(request *VoipAddAccountRequest) (<-chan *VoipAddAccountResponse, <-chan error) {
-	responseChan := make(chan *VoipAddAccountResponse, 1)
+func (client *Client) CancelRobotTaskWithChan(request *CancelRobotTaskRequest) (<-chan *CancelRobotTaskResponse, <-chan error) {
+	responseChan := make(chan *CancelRobotTaskResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.VoipAddAccount(request)
+		response, err := client.CancelRobotTask(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) VoipAddAccountWithChan(request *VoipAddAccountRequest) (<-
 	return responseChan, errChan
 }
 
-// VoipAddAccountWithCallback invokes the dyvmsapi.VoipAddAccount API asynchronously
-// api document: https://help.aliyun.com/api/dyvmsapi/voipaddaccount.html
+// CancelRobotTaskWithCallback invokes the dyvmsapi.CancelRobotTask API asynchronously
+// api document: https://help.aliyun.com/api/dyvmsapi/cancelrobottask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) VoipAddAccountWithCallback(request *VoipAddAccountRequest, callback func(response *VoipAddAccountResponse, err error)) <-chan int {
+func (client *Client) CancelRobotTaskWithCallback(request *CancelRobotTaskRequest, callback func(response *CancelRobotTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *VoipAddAccountResponse
+		var response *CancelRobotTaskResponse
 		var err error
 		defer close(result)
-		response, err = client.VoipAddAccount(request)
+		response, err = client.CancelRobotTask(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,36 +73,36 @@ func (client *Client) VoipAddAccountWithCallback(request *VoipAddAccountRequest,
 	return result
 }
 
-// VoipAddAccountRequest is the request struct for api VoipAddAccount
-type VoipAddAccountRequest struct {
+// CancelRobotTaskRequest is the request struct for api CancelRobotTask
+type CancelRobotTaskRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DeviceId             string           `position:"Query" name:"DeviceId"`
+	TaskId               requests.Integer `position:"Query" name:"TaskId"`
 }
 
-// VoipAddAccountResponse is the response struct for api VoipAddAccount
-type VoipAddAccountResponse struct {
+// CancelRobotTaskResponse is the response struct for api CancelRobotTask
+type CancelRobotTaskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Module    string `json:"Module" xml:"Module"`
+	Data      string `json:"Data" xml:"Data"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateVoipAddAccountRequest creates a request to invoke VoipAddAccount API
-func CreateVoipAddAccountRequest() (request *VoipAddAccountRequest) {
-	request = &VoipAddAccountRequest{
+// CreateCancelRobotTaskRequest creates a request to invoke CancelRobotTask API
+func CreateCancelRobotTaskRequest() (request *CancelRobotTaskRequest) {
+	request = &CancelRobotTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "VoipAddAccount", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "CancelRobotTask", "", "")
 	return
 }
 
-// CreateVoipAddAccountResponse creates a response to parse from VoipAddAccount response
-func CreateVoipAddAccountResponse() (response *VoipAddAccountResponse) {
-	response = &VoipAddAccountResponse{
+// CreateCancelRobotTaskResponse creates a response to parse from CancelRobotTask response
+func CreateCancelRobotTaskResponse() (response *CancelRobotTaskResponse) {
+	response = &CancelRobotTaskResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

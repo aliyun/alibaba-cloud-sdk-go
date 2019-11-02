@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// VoipAddAccount invokes the dyvmsapi.VoipAddAccount API synchronously
-// api document: https://help.aliyun.com/api/dyvmsapi/voipaddaccount.html
-func (client *Client) VoipAddAccount(request *VoipAddAccountRequest) (response *VoipAddAccountResponse, err error) {
-	response = CreateVoipAddAccountResponse()
+// SmartCallOperate invokes the dyvmsapi.SmartCallOperate API synchronously
+// api document: https://help.aliyun.com/api/dyvmsapi/smartcalloperate.html
+func (client *Client) SmartCallOperate(request *SmartCallOperateRequest) (response *SmartCallOperateResponse, err error) {
+	response = CreateSmartCallOperateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// VoipAddAccountWithChan invokes the dyvmsapi.VoipAddAccount API asynchronously
-// api document: https://help.aliyun.com/api/dyvmsapi/voipaddaccount.html
+// SmartCallOperateWithChan invokes the dyvmsapi.SmartCallOperate API asynchronously
+// api document: https://help.aliyun.com/api/dyvmsapi/smartcalloperate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) VoipAddAccountWithChan(request *VoipAddAccountRequest) (<-chan *VoipAddAccountResponse, <-chan error) {
-	responseChan := make(chan *VoipAddAccountResponse, 1)
+func (client *Client) SmartCallOperateWithChan(request *SmartCallOperateRequest) (<-chan *SmartCallOperateResponse, <-chan error) {
+	responseChan := make(chan *SmartCallOperateResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.VoipAddAccount(request)
+		response, err := client.SmartCallOperate(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) VoipAddAccountWithChan(request *VoipAddAccountRequest) (<-
 	return responseChan, errChan
 }
 
-// VoipAddAccountWithCallback invokes the dyvmsapi.VoipAddAccount API asynchronously
-// api document: https://help.aliyun.com/api/dyvmsapi/voipaddaccount.html
+// SmartCallOperateWithCallback invokes the dyvmsapi.SmartCallOperate API asynchronously
+// api document: https://help.aliyun.com/api/dyvmsapi/smartcalloperate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) VoipAddAccountWithCallback(request *VoipAddAccountRequest, callback func(response *VoipAddAccountResponse, err error)) <-chan int {
+func (client *Client) SmartCallOperateWithCallback(request *SmartCallOperateRequest, callback func(response *SmartCallOperateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *VoipAddAccountResponse
+		var response *SmartCallOperateResponse
 		var err error
 		defer close(result)
-		response, err = client.VoipAddAccount(request)
+		response, err = client.SmartCallOperate(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,36 +73,38 @@ func (client *Client) VoipAddAccountWithCallback(request *VoipAddAccountRequest,
 	return result
 }
 
-// VoipAddAccountRequest is the request struct for api VoipAddAccount
-type VoipAddAccountRequest struct {
+// SmartCallOperateRequest is the request struct for api SmartCallOperate
+type SmartCallOperateRequest struct {
 	*requests.RpcRequest
+	CallId               string           `position:"Query" name:"CallId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Param                string           `position:"Query" name:"Param"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DeviceId             string           `position:"Query" name:"DeviceId"`
+	Command              string           `position:"Query" name:"Command"`
 }
 
-// VoipAddAccountResponse is the response struct for api VoipAddAccount
-type VoipAddAccountResponse struct {
+// SmartCallOperateResponse is the response struct for api SmartCallOperate
+type SmartCallOperateResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Module    string `json:"Module" xml:"Module"`
+	Status    bool   `json:"Status" xml:"Status"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateVoipAddAccountRequest creates a request to invoke VoipAddAccount API
-func CreateVoipAddAccountRequest() (request *VoipAddAccountRequest) {
-	request = &VoipAddAccountRequest{
+// CreateSmartCallOperateRequest creates a request to invoke SmartCallOperate API
+func CreateSmartCallOperateRequest() (request *SmartCallOperateRequest) {
+	request = &SmartCallOperateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "VoipAddAccount", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "SmartCallOperate", "", "")
 	return
 }
 
-// CreateVoipAddAccountResponse creates a response to parse from VoipAddAccount response
-func CreateVoipAddAccountResponse() (response *VoipAddAccountResponse) {
-	response = &VoipAddAccountResponse{
+// CreateSmartCallOperateResponse creates a response to parse from SmartCallOperate response
+func CreateSmartCallOperateResponse() (response *SmartCallOperateResponse) {
+	response = &SmartCallOperateResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

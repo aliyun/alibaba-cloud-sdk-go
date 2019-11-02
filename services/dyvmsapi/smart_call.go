@@ -76,21 +76,30 @@ func (client *Client) SmartCallWithCallback(request *SmartCallRequest, callback 
 // SmartCallRequest is the request struct for api SmartCall
 type SmartCallRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CalledShowNumber     string           `position:"Query" name:"CalledShowNumber"`
-	CalledNumber         string           `position:"Query" name:"CalledNumber"`
-	VoiceCode            string           `position:"Query" name:"VoiceCode"`
-	RecordFlag           requests.Boolean `position:"Query" name:"RecordFlag"`
-	Volume               requests.Integer `position:"Query" name:"Volume"`
+	VoiceCodeParam       string           `position:"Query" name:"VoiceCodeParam"`
+	EarlyMediaAsr        requests.Boolean `position:"Query" name:"EarlyMediaAsr"`
 	Speed                requests.Integer `position:"Query" name:"Speed"`
+	AsrBaseId            string           `position:"Query" name:"AsrBaseId"`
+	SessionTimeout       requests.Integer `position:"Query" name:"SessionTimeout"`
+	DynamicId            string           `position:"Query" name:"DynamicId"`
+	CalledNumber         string           `position:"Query" name:"CalledNumber"`
+	TtsSpeed             requests.Integer `position:"Query" name:"TtsSpeed"`
+	VoiceCode            string           `position:"Query" name:"VoiceCode"`
+	CalledShowNumber     string           `position:"Query" name:"CalledShowNumber"`
+	ActionCodeTimeBreak  requests.Integer `position:"Query" name:"ActionCodeTimeBreak"`
+	TtsConf              requests.Boolean `position:"Query" name:"TtsConf"`
+	ActionCodeBreak      requests.Boolean `position:"Query" name:"ActionCodeBreak"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	RecordFlag           requests.Boolean `position:"Query" name:"RecordFlag"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TtsVolume            requests.Integer `position:"Query" name:"TtsVolume"`
+	Volume               requests.Integer `position:"Query" name:"Volume"`
+	MuteTime             requests.Integer `position:"Query" name:"MuteTime"`
+	OutId                string           `position:"Query" name:"OutId"`
 	AsrModelId           string           `position:"Query" name:"AsrModelId"`
 	PauseTime            requests.Integer `position:"Query" name:"PauseTime"`
-	MuteTime             requests.Integer `position:"Query" name:"MuteTime"`
-	ActionCodeBreak      requests.Boolean `position:"Query" name:"ActionCodeBreak"`
-	OutId                string           `position:"Query" name:"OutId"`
-	DynamicId            string           `position:"Query" name:"DynamicId"`
+	TtsStyle             string           `position:"Query" name:"TtsStyle"`
 }
 
 // SmartCallResponse is the response struct for api SmartCall

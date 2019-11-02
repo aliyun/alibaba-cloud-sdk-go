@@ -76,12 +76,12 @@ func (client *Client) QueryCallDetailByCallIdWithCallback(request *QueryCallDeta
 // QueryCallDetailByCallIdRequest is the request struct for api QueryCallDetailByCallId
 type QueryCallDetailByCallIdRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CallId               string           `position:"Query" name:"CallId"`
-	ProdId               requests.Integer `position:"Query" name:"ProdId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	QueryDate            requests.Integer `position:"Query" name:"QueryDate"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ProdId               requests.Integer `position:"Query" name:"ProdId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // QueryCallDetailByCallIdResponse is the response struct for api QueryCallDetailByCallId

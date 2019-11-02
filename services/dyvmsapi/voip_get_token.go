@@ -76,11 +76,12 @@ func (client *Client) VoipGetTokenWithCallback(request *VoipGetTokenRequest, cal
 // VoipGetTokenRequest is the request struct for api VoipGetToken
 type VoipGetTokenRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	VoipId               string           `position:"Query" name:"VoipId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	DeviceId             string           `position:"Query" name:"DeviceId"`
+	IsCustomAccount      requests.Boolean `position:"Query" name:"IsCustomAccount"`
 }
 
 // VoipGetTokenResponse is the response struct for api VoipGetToken

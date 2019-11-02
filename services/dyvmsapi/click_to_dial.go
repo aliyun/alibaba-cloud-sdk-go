@@ -76,18 +76,18 @@ func (client *Client) ClickToDialWithCallback(request *ClickToDialRequest, callb
 // ClickToDialRequest is the request struct for api ClickToDial
 type ClickToDialRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CallerShowNumber     string           `position:"Query" name:"CallerShowNumber"`
-	CallerNumber         string           `position:"Query" name:"CallerNumber"`
-	CalledShowNumber     string           `position:"Query" name:"CalledShowNumber"`
-	CalledNumber         string           `position:"Query" name:"CalledNumber"`
-	RecordFlag           requests.Boolean `position:"Query" name:"RecordFlag"`
-	AsrFlag              requests.Boolean `position:"Query" name:"AsrFlag"`
 	SessionTimeout       requests.Integer `position:"Query" name:"SessionTimeout"`
-	AsrModelId           string           `position:"Query" name:"AsrModelId"`
+	CalledNumber         string           `position:"Query" name:"CalledNumber"`
+	CalledShowNumber     string           `position:"Query" name:"CalledShowNumber"`
+	AsrFlag              requests.Boolean `position:"Query" name:"AsrFlag"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	RecordFlag           requests.Boolean `position:"Query" name:"RecordFlag"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	OutId                string           `position:"Query" name:"OutId"`
+	AsrModelId           string           `position:"Query" name:"AsrModelId"`
+	CallerNumber         string           `position:"Query" name:"CallerNumber"`
 }
 
 // ClickToDialResponse is the response struct for api ClickToDial

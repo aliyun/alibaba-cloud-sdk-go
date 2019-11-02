@@ -76,26 +76,26 @@ func (client *Client) IvrCallWithCallback(request *IvrCallRequest, callback func
 // IvrCallRequest is the request struct for api IvrCall
 type IvrCallRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer     `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string               `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer     `position:"Query" name:"ResourceOwnerId"`
-	CalledShowNumber     string               `position:"Query" name:"CalledShowNumber"`
-	CalledNumber         string               `position:"Query" name:"CalledNumber"`
-	StartCode            string               `position:"Query" name:"StartCode"`
-	StartTtsParams       string               `position:"Query" name:"StartTtsParams"`
-	MenuKeyMap           *[]IvrCallMenuKeyMap `position:"Query" name:"MenuKeyMap"  type:"Repeated"`
-	PlayTimes            requests.Integer     `position:"Query" name:"PlayTimes"`
 	ByeCode              string               `position:"Query" name:"ByeCode"`
-	ByeTtsParams         string               `position:"Query" name:"ByeTtsParams"`
+	ResourceOwnerId      requests.Integer     `position:"Query" name:"ResourceOwnerId"`
+	StartTtsParams       string               `position:"Query" name:"StartTtsParams"`
 	Timeout              requests.Integer     `position:"Query" name:"Timeout"`
+	StartCode            string               `position:"Query" name:"StartCode"`
+	CalledNumber         string               `position:"Query" name:"CalledNumber"`
+	CalledShowNumber     string               `position:"Query" name:"CalledShowNumber"`
+	MenuKeyMap           *[]IvrCallMenuKeyMap `position:"Query" name:"MenuKeyMap"  type:"Repeated"`
+	ResourceOwnerAccount string               `position:"Query" name:"ResourceOwnerAccount"`
+	PlayTimes            requests.Integer     `position:"Query" name:"PlayTimes"`
+	OwnerId              requests.Integer     `position:"Query" name:"OwnerId"`
 	OutId                string               `position:"Query" name:"OutId"`
+	ByeTtsParams         string               `position:"Query" name:"ByeTtsParams"`
 }
 
 // IvrCallMenuKeyMap is a repeated param struct in IvrCallRequest
 type IvrCallMenuKeyMap struct {
-	Key       string `name:"Key"`
 	Code      string `name:"Code"`
 	TtsParams string `name:"TtsParams"`
+	Key       string `name:"Key"`
 }
 
 // IvrCallResponse is the response struct for api IvrCall

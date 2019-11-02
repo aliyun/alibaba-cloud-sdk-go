@@ -76,16 +76,16 @@ func (client *Client) SingleCallByTtsWithCallback(request *SingleCallByTtsReques
 // SingleCallByTtsRequest is the request struct for api SingleCallByTts
 type SingleCallByTtsRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CalledShowNumber     string           `position:"Query" name:"CalledShowNumber"`
-	CalledNumber         string           `position:"Query" name:"CalledNumber"`
-	TtsCode              string           `position:"Query" name:"TtsCode"`
 	TtsParam             string           `position:"Query" name:"TtsParam"`
-	PlayTimes            requests.Integer `position:"Query" name:"PlayTimes"`
-	Volume               requests.Integer `position:"Query" name:"Volume"`
 	Speed                requests.Integer `position:"Query" name:"Speed"`
+	CalledNumber         string           `position:"Query" name:"CalledNumber"`
+	CalledShowNumber     string           `position:"Query" name:"CalledShowNumber"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	TtsCode              string           `position:"Query" name:"TtsCode"`
+	PlayTimes            requests.Integer `position:"Query" name:"PlayTimes"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Volume               requests.Integer `position:"Query" name:"Volume"`
 	OutId                string           `position:"Query" name:"OutId"`
 }
 
