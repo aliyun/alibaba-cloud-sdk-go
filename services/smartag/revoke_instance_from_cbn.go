@@ -77,11 +77,11 @@ func (client *Client) RevokeInstanceFromCbnWithCallback(request *RevokeInstanceF
 type RevokeInstanceFromCbnRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	CenInstanceId        string           `position:"Query" name:"CenInstanceId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	CcnInstanceId        string           `position:"Query" name:"CcnInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	CenInstanceId        string           `position:"Query" name:"CenInstanceId"`
 }
 
 // RevokeInstanceFromCbnResponse is the response struct for api RevokeInstanceFromCbn

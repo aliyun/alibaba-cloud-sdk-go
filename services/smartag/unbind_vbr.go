@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SwitchSAGHaState invokes the smartag.SwitchSAGHaState API synchronously
-// api document: https://help.aliyun.com/api/smartag/switchsaghastate.html
-func (client *Client) SwitchSAGHaState(request *SwitchSAGHaStateRequest) (response *SwitchSAGHaStateResponse, err error) {
-	response = CreateSwitchSAGHaStateResponse()
+// UnbindVbr invokes the smartag.UnbindVbr API synchronously
+// api document: https://help.aliyun.com/api/smartag/unbindvbr.html
+func (client *Client) UnbindVbr(request *UnbindVbrRequest) (response *UnbindVbrResponse, err error) {
+	response = CreateUnbindVbrResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SwitchSAGHaStateWithChan invokes the smartag.SwitchSAGHaState API asynchronously
-// api document: https://help.aliyun.com/api/smartag/switchsaghastate.html
+// UnbindVbrWithChan invokes the smartag.UnbindVbr API asynchronously
+// api document: https://help.aliyun.com/api/smartag/unbindvbr.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) SwitchSAGHaStateWithChan(request *SwitchSAGHaStateRequest) (<-chan *SwitchSAGHaStateResponse, <-chan error) {
-	responseChan := make(chan *SwitchSAGHaStateResponse, 1)
+func (client *Client) UnbindVbrWithChan(request *UnbindVbrRequest) (<-chan *UnbindVbrResponse, <-chan error) {
+	responseChan := make(chan *UnbindVbrResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SwitchSAGHaState(request)
+		response, err := client.UnbindVbr(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) SwitchSAGHaStateWithChan(request *SwitchSAGHaStateRequest)
 	return responseChan, errChan
 }
 
-// SwitchSAGHaStateWithCallback invokes the smartag.SwitchSAGHaState API asynchronously
-// api document: https://help.aliyun.com/api/smartag/switchsaghastate.html
+// UnbindVbrWithCallback invokes the smartag.UnbindVbr API asynchronously
+// api document: https://help.aliyun.com/api/smartag/unbindvbr.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) SwitchSAGHaStateWithCallback(request *SwitchSAGHaStateRequest, callback func(response *SwitchSAGHaStateResponse, err error)) <-chan int {
+func (client *Client) UnbindVbrWithCallback(request *UnbindVbrRequest, callback func(response *UnbindVbrResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SwitchSAGHaStateResponse
+		var response *UnbindVbrResponse
 		var err error
 		defer close(result)
-		response, err = client.SwitchSAGHaState(request)
+		response, err = client.UnbindVbr(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,36 @@ func (client *Client) SwitchSAGHaStateWithCallback(request *SwitchSAGHaStateRequ
 	return result
 }
 
-// SwitchSAGHaStateRequest is the request struct for api SwitchSAGHaState
-type SwitchSAGHaStateRequest struct {
+// UnbindVbrRequest is the request struct for api UnbindVbr
+type UnbindVbrRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	VbrId                string           `position:"Query" name:"VbrId"`
+	VbrRegionId          string           `position:"Query" name:"VbrRegionId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	HaType               string           `position:"Query" name:"HaType"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 }
 
-// SwitchSAGHaStateResponse is the response struct for api SwitchSAGHaState
-type SwitchSAGHaStateResponse struct {
+// UnbindVbrResponse is the response struct for api UnbindVbr
+type UnbindVbrResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateSwitchSAGHaStateRequest creates a request to invoke SwitchSAGHaState API
-func CreateSwitchSAGHaStateRequest() (request *SwitchSAGHaStateRequest) {
-	request = &SwitchSAGHaStateRequest{
+// CreateUnbindVbrRequest creates a request to invoke UnbindVbr API
+func CreateUnbindVbrRequest() (request *UnbindVbrRequest) {
+	request = &UnbindVbrRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Smartag", "2018-03-13", "SwitchSAGHaState", "smartag", "openAPI")
+	request.InitWithApiInfo("Smartag", "2018-03-13", "UnbindVbr", "smartag", "openAPI")
 	return
 }
 
-// CreateSwitchSAGHaStateResponse creates a response to parse from SwitchSAGHaState response
-func CreateSwitchSAGHaStateResponse() (response *SwitchSAGHaStateResponse) {
-	response = &SwitchSAGHaStateResponse{
+// CreateUnbindVbrResponse creates a response to parse from UnbindVbr response
+func CreateUnbindVbrResponse() (response *UnbindVbrResponse) {
+	response = &UnbindVbrResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

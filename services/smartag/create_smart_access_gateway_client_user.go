@@ -77,13 +77,14 @@ func (client *Client) CreateSmartAccessGatewayClientUserWithCallback(request *Cr
 type CreateSmartAccessGatewayClientUserRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Password             string           `position:"Query" name:"Password"`
+	ClientIp             string           `position:"Query" name:"ClientIp"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ClientIp             string           `position:"Query" name:"ClientIp"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 	UserMail             string           `position:"Query" name:"UserMail"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 	UserName             string           `position:"Query" name:"UserName"`
 }
 

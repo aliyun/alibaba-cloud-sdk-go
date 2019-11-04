@@ -78,11 +78,11 @@ type SetSagRouteableAddressRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RouteableAddress     string           `position:"Query" name:"RouteableAddress"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SagId                string           `position:"Query" name:"SagId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	RouteableAddress     string           `position:"Query" name:"RouteableAddress"`
+	SagId                string           `position:"Query" name:"SagId"`
 }
 
 // SetSagRouteableAddressResponse is the response struct for api SetSagRouteableAddress

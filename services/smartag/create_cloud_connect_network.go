@@ -77,14 +77,14 @@ func (client *Client) CreateCloudConnectNetworkWithCallback(request *CreateCloud
 type CreateCloudConnectNetworkRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
-	CidrBlock            string           `position:"Query" name:"CidrBlock"`
 	Description          string           `position:"Query" name:"Description"`
 	SnatCidrBlock        string           `position:"Query" name:"SnatCidrBlock"`
 	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
+	CidrBlock            string           `position:"Query" name:"CidrBlock"`
 }
 
 // CreateCloudConnectNetworkResponse is the response struct for api CreateCloudConnectNetwork

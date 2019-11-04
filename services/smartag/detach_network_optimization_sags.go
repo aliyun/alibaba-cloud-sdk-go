@@ -77,10 +77,10 @@ func (client *Client) DetachNetworkOptimizationSagsWithCallback(request *DetachN
 type DetachNetworkOptimizationSagsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	NetworkOptId         string           `position:"Query" name:"NetworkOptId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	SmartAGIds           *[]string        `position:"Query" name:"SmartAGIds"  type:"Repeated"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

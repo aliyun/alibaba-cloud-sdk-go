@@ -80,8 +80,8 @@ type ModifySmartAccessGatewayClientUserRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 	UserName             string           `position:"Query" name:"UserName"`
 }
 

@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ModifySerialNumber invokes the smartag.ModifySerialNumber API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifyserialnumber.html
-func (client *Client) ModifySerialNumber(request *ModifySerialNumberRequest) (response *ModifySerialNumberResponse, err error) {
-	response = CreateModifySerialNumberResponse()
+// AssociateFlowLog invokes the smartag.AssociateFlowLog API synchronously
+// api document: https://help.aliyun.com/api/smartag/associateflowlog.html
+func (client *Client) AssociateFlowLog(request *AssociateFlowLogRequest) (response *AssociateFlowLogResponse, err error) {
+	response = CreateAssociateFlowLogResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ModifySerialNumberWithChan invokes the smartag.ModifySerialNumber API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifyserialnumber.html
+// AssociateFlowLogWithChan invokes the smartag.AssociateFlowLog API asynchronously
+// api document: https://help.aliyun.com/api/smartag/associateflowlog.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ModifySerialNumberWithChan(request *ModifySerialNumberRequest) (<-chan *ModifySerialNumberResponse, <-chan error) {
-	responseChan := make(chan *ModifySerialNumberResponse, 1)
+func (client *Client) AssociateFlowLogWithChan(request *AssociateFlowLogRequest) (<-chan *AssociateFlowLogResponse, <-chan error) {
+	responseChan := make(chan *AssociateFlowLogResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ModifySerialNumber(request)
+		response, err := client.AssociateFlowLog(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ModifySerialNumberWithChan(request *ModifySerialNumberRequ
 	return responseChan, errChan
 }
 
-// ModifySerialNumberWithCallback invokes the smartag.ModifySerialNumber API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifyserialnumber.html
+// AssociateFlowLogWithCallback invokes the smartag.AssociateFlowLog API asynchronously
+// api document: https://help.aliyun.com/api/smartag/associateflowlog.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ModifySerialNumberWithCallback(request *ModifySerialNumberRequest, callback func(response *ModifySerialNumberResponse, err error)) <-chan int {
+func (client *Client) AssociateFlowLogWithCallback(request *AssociateFlowLogRequest, callback func(response *AssociateFlowLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ModifySerialNumberResponse
+		var response *AssociateFlowLogResponse
 		var err error
 		defer close(result)
-		response, err = client.ModifySerialNumber(request)
+		response, err = client.AssociateFlowLog(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,35 @@ func (client *Client) ModifySerialNumberWithCallback(request *ModifySerialNumber
 	return result
 }
 
-// ModifySerialNumberRequest is the request struct for api ModifySerialNumber
-type ModifySerialNumberRequest struct {
+// AssociateFlowLogRequest is the request struct for api AssociateFlowLog
+type AssociateFlowLogRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SerialNumber         string           `position:"Query" name:"SerialNumber"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SmartAGId            string           `position:"Query" name:"SmartAGId"`
+	FlowLogId            string           `position:"Query" name:"FlowLogId"`
 }
 
-// ModifySerialNumberResponse is the response struct for api ModifySerialNumber
-type ModifySerialNumberResponse struct {
+// AssociateFlowLogResponse is the response struct for api AssociateFlowLog
+type AssociateFlowLogResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateModifySerialNumberRequest creates a request to invoke ModifySerialNumber API
-func CreateModifySerialNumberRequest() (request *ModifySerialNumberRequest) {
-	request = &ModifySerialNumberRequest{
+// CreateAssociateFlowLogRequest creates a request to invoke AssociateFlowLog API
+func CreateAssociateFlowLogRequest() (request *AssociateFlowLogRequest) {
+	request = &AssociateFlowLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Smartag", "2018-03-13", "ModifySerialNumber", "smartag", "openAPI")
+	request.InitWithApiInfo("Smartag", "2018-03-13", "AssociateFlowLog", "smartag", "openAPI")
 	return
 }
 
-// CreateModifySerialNumberResponse creates a response to parse from ModifySerialNumber response
-func CreateModifySerialNumberResponse() (response *ModifySerialNumberResponse) {
-	response = &ModifySerialNumberResponse{
+// CreateAssociateFlowLogResponse creates a response to parse from AssociateFlowLog response
+func CreateAssociateFlowLogResponse() (response *AssociateFlowLogResponse) {
+	response = &AssociateFlowLogResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

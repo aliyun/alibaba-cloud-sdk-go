@@ -77,11 +77,11 @@ func (client *Client) DescribeNetworkOptimizationSettingsWithCallback(request *D
 type DescribeNetworkOptimizationSettingsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	NetworkOptId         string           `position:"Query" name:"NetworkOptId"`
-	PageNo               requests.Integer `position:"Query" name:"PageNo"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
@@ -90,7 +90,7 @@ type DescribeNetworkOptimizationSettingsResponse struct {
 	*responses.BaseResponse
 	RequestId  string   `json:"RequestId" xml:"RequestId"`
 	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
-	PageNo     int      `json:"PageNo" xml:"PageNo"`
+	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int      `json:"PageSize" xml:"PageSize"`
 	Settings   Settings `json:"Settings" xml:"Settings"`
 }

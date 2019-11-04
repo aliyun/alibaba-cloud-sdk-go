@@ -76,16 +76,16 @@ func (client *Client) UnicomOrderConfirmWithCallback(request *UnicomOrderConfirm
 // UnicomOrderConfirmRequest is the request struct for api UnicomOrderConfirm
 type UnicomOrderConfirmRequest struct {
 	*requests.RpcRequest
-	TmsCode              string                         `position:"Query" name:"TmsCode"`
 	ResourceOwnerId      requests.Integer               `position:"Query" name:"ResourceOwnerId"`
+	TmsCode              string                         `position:"Query" name:"TmsCode"`
 	OrderItem            *[]UnicomOrderConfirmOrderItem `position:"Query" name:"OrderItem"  type:"Repeated"`
+	OrderPostFee         requests.Integer               `position:"Query" name:"OrderPostFee"`
+	TradeId              string                         `position:"Query" name:"TradeId"`
 	OwnerUserId          string                         `position:"Query" name:"OwnerUserId"`
 	ResourceOwnerAccount string                         `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string                         `position:"Query" name:"OwnerAccount"`
-	OrderPostFee         requests.Integer               `position:"Query" name:"OrderPostFee"`
 	OwnerId              requests.Integer               `position:"Query" name:"OwnerId"`
 	TmsOrderCode         string                         `position:"Query" name:"TmsOrderCode"`
-	TradeId              string                         `position:"Query" name:"TradeId"`
 }
 
 // UnicomOrderConfirmOrderItem is a repeated param struct in UnicomOrderConfirmRequest

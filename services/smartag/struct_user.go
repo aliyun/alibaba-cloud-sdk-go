@@ -21,5 +21,6 @@ type User struct {
 	UserMail   string `json:"UserMail" xml:"UserMail"`
 	UserName   string `json:"UserName" xml:"UserName"`
 	OnlineTime string `json:"OnlineTime" xml:"OnlineTime"`
+	State      int    `json:"State" xml:"State"`
 	ClientIp   string `json:"ClientIp" xml:"ClientIp"`
 }

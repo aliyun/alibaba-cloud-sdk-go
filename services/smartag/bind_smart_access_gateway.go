@@ -77,11 +77,12 @@ func (client *Client) BindSmartAccessGatewayWithCallback(request *BindSmartAcces
 type BindSmartAccessGatewayRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CcnId                string           `position:"Query" name:"CcnId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	CcnId                string           `position:"Query" name:"CcnId"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SmartAGUid           requests.Integer `position:"Query" name:"SmartAGUid"`
+	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 }
 
 // BindSmartAccessGatewayResponse is the response struct for api BindSmartAccessGateway

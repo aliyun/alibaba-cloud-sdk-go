@@ -76,21 +76,22 @@ func (client *Client) ModifyACLRuleWithCallback(request *ModifyACLRuleRequest, c
 // ModifyACLRuleRequest is the request struct for api ModifyACLRule
 type ModifyACLRuleRequest struct {
 	*requests.RpcRequest
-	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SourcePortRange      string           `position:"Query" name:"SourcePortRange"`
+	SourceCidr           string           `position:"Query" name:"SourceCidr"`
+	Description          string           `position:"Query" name:"Description"`
+	Type                 string           `position:"Query" name:"Type"`
+	DestCidr             string           `position:"Query" name:"DestCidr"`
+	Direction            string           `position:"Query" name:"Direction"`
+	Policy               string           `position:"Query" name:"Policy"`
+	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	IpProtocol           string           `position:"Query" name:"IpProtocol"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	SourceCidr           string           `position:"Query" name:"SourceCidr"`
-	Description          string           `position:"Query" name:"Description"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Priority             requests.Integer `position:"Query" name:"Priority"`
 	AcrId                string           `position:"Query" name:"AcrId"`
-	DestCidr             string           `position:"Query" name:"DestCidr"`
 	DestPortRange        string           `position:"Query" name:"DestPortRange"`
-	Direction            string           `position:"Query" name:"Direction"`
-	Policy               string           `position:"Query" name:"Policy"`
 }
 
 // ModifyACLRuleResponse is the response struct for api ModifyACLRule
@@ -108,7 +109,7 @@ type ModifyACLRuleResponse struct {
 	DestPortRange   string `json:"DestPortRange" xml:"DestPortRange"`
 	Policy          string `json:"Policy" xml:"Policy"`
 	Priority        int    `json:"Priority" xml:"Priority"`
-	GmtCreate       int    `json:"GmtCreate" xml:"GmtCreate"`
+	GmtCreate       int64  `json:"GmtCreate" xml:"GmtCreate"`
 }
 
 // CreateModifyACLRuleRequest creates a request to invoke ModifyACLRule API

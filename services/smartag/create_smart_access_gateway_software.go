@@ -77,13 +77,13 @@ func (client *Client) CreateSmartAccessGatewaySoftwareWithCallback(request *Crea
 type CreateSmartAccessGatewaySoftwareRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	UserCount            requests.Integer `position:"Query" name:"UserCount"`
 	Period               requests.Integer `position:"Query" name:"Period"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	UserCount            requests.Integer `position:"Query" name:"UserCount"`
-	ChargeType           string           `position:"Query" name:"ChargeType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ChargeType           string           `position:"Query" name:"ChargeType"`
 	DataPlan             requests.Integer `position:"Query" name:"DataPlan"`
 }
 

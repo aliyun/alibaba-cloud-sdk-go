@@ -19,5 +19,6 @@ package smartag
 type SmartAGVersion struct {
 	VersionCode string `json:"VersionCode" xml:"VersionCode"`
 	VersionName string `json:"VersionName" xml:"VersionName"`
-	CreateTime  int    `json:"CreateTime" xml:"CreateTime"`
+	CreateTime  int64  `json:"CreateTime" xml:"CreateTime"`
+	Type        string `json:"Type" xml:"Type"`
 }

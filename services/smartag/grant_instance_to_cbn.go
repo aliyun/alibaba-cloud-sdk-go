@@ -77,12 +77,12 @@ func (client *Client) GrantInstanceToCbnWithCallback(request *GrantInstanceToCbn
 type GrantInstanceToCbnRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CcnInstanceId        string           `position:"Query" name:"CcnInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	CenUid               string           `position:"Query" name:"CenUid"`
 	CenInstanceId        string           `position:"Query" name:"CenInstanceId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	CcnInstanceId        string           `position:"Query" name:"CcnInstanceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // GrantInstanceToCbnResponse is the response struct for api GrantInstanceToCbn

@@ -20,7 +20,7 @@ type NetworkOptimization struct {
 	InstanceId string `json:"InstanceId" xml:"InstanceId"`
 	Name       string `json:"Name" xml:"Name"`
 	State      string `json:"State" xml:"State"`
-	CreateTime int    `json:"CreateTime" xml:"CreateTime"`
+	CreateTime int64  `json:"CreateTime" xml:"CreateTime"`
 	SagCount   int    `json:"SagCount" xml:"SagCount"`
 	CcnId      string `json:"CcnId" xml:"CcnId"`
 }

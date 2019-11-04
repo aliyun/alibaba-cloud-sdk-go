@@ -78,9 +78,9 @@ type DescribeSagRouteableAddressRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SagId                string           `position:"Query" name:"SagId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SagId                string           `position:"Query" name:"SagId"`
 }
 
 // DescribeSagRouteableAddressResponse is the response struct for api DescribeSagRouteableAddress

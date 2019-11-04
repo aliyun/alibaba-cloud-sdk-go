@@ -77,11 +77,11 @@ func (client *Client) ModifyNetworkOptimizationWithCallback(request *ModifyNetwo
 type ModifyNetworkOptimizationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	NetworkOptId         string           `position:"Query" name:"NetworkOptId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // ModifyNetworkOptimizationResponse is the response struct for api ModifyNetworkOptimization

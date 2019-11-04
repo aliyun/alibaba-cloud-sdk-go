@@ -76,20 +76,21 @@ func (client *Client) AddACLRuleWithCallback(request *AddACLRuleRequest, callbac
 // AddACLRuleRequest is the request struct for api AddACLRule
 type AddACLRuleRequest struct {
 	*requests.RpcRequest
-	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SourcePortRange      string           `position:"Query" name:"SourcePortRange"`
+	SourceCidr           string           `position:"Query" name:"SourceCidr"`
+	Description          string           `position:"Query" name:"Description"`
+	Type                 string           `position:"Query" name:"Type"`
+	DestCidr             string           `position:"Query" name:"DestCidr"`
+	Direction            string           `position:"Query" name:"Direction"`
+	Policy               string           `position:"Query" name:"Policy"`
+	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	IpProtocol           string           `position:"Query" name:"IpProtocol"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	SourceCidr           string           `position:"Query" name:"SourceCidr"`
-	Description          string           `position:"Query" name:"Description"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Priority             requests.Integer `position:"Query" name:"Priority"`
-	DestCidr             string           `position:"Query" name:"DestCidr"`
 	DestPortRange        string           `position:"Query" name:"DestPortRange"`
-	Direction            string           `position:"Query" name:"Direction"`
-	Policy               string           `position:"Query" name:"Policy"`
 }
 
 // AddACLRuleResponse is the response struct for api AddACLRule
@@ -107,7 +108,8 @@ type AddACLRuleResponse struct {
 	DestPortRange   string `json:"DestPortRange" xml:"DestPortRange"`
 	Policy          string `json:"Policy" xml:"Policy"`
 	Priority        int    `json:"Priority" xml:"Priority"`
-	GmtCreate       int    `json:"GmtCreate" xml:"GmtCreate"`
+	GmtCreate       int64  `json:"GmtCreate" xml:"GmtCreate"`
+	Type            string `json:"Type" xml:"Type"`
 }
 
 // CreateAddACLRuleRequest creates a request to invoke AddACLRule API

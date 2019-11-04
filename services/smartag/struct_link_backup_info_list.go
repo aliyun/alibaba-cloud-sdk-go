@@ -17,5 +17,5 @@ package smartag
 
 // LinkBackupInfoList is a nested struct in smartag response
 type LinkBackupInfoList struct {
-	LinkBackupInfoListItem []LinkBackupInfoListItem `json:"LinkBackupInfoListItem" xml:"LinkBackupInfoListItem"`
+	LinkBackupInfoListItem []LinkBackupInfoListItem `json:"LinkBackupInfoList" xml:"LinkBackupInfoList"`
 }

@@ -77,22 +77,22 @@ func (client *Client) DescribeGrantRulesWithCallback(request *DescribeGrantRules
 type DescribeGrantRulesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageSize             string           `position:"Query" name:"PageSize"`
 	AssociatedCcnId      string           `position:"Query" name:"AssociatedCcnId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PageNumber           string           `position:"Query" name:"PageNumber"`
 }
 
 // DescribeGrantRulesResponse is the response struct for api DescribeGrantRules
 type DescribeGrantRulesResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int        `json:"PageSize" xml:"PageSize"`
-	GrantRules GrantRules `json:"GrantRules" xml:"GrantRules"`
+	RequestId  string                         `json:"RequestId" xml:"RequestId"`
+	TotalCount int                            `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int                            `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                            `json:"PageSize" xml:"PageSize"`
+	GrantRules GrantRulesInDescribeGrantRules `json:"GrantRules" xml:"GrantRules"`
 }
 
 // CreateDescribeGrantRulesRequest creates a request to invoke DescribeGrantRules API

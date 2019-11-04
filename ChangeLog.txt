@@ -1,3 +1,6 @@
+2019-11-04 Version: 1.60.227
+- Supported Qos for smartag.
+
 2019-11-04 Version: 1.60.226
 - Support console api for cloud bastionhost.
 

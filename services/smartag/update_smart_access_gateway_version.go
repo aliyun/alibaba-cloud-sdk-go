@@ -77,12 +77,12 @@ func (client *Client) UpdateSmartAccessGatewayVersionWithCallback(request *Updat
 type UpdateSmartAccessGatewayVersionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	VersionCode          string           `position:"Query" name:"VersionCode"`
 	SerialNumber         string           `position:"Query" name:"SerialNumber"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	VersionCode          string           `position:"Query" name:"VersionCode"`
+	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 }
 
 // UpdateSmartAccessGatewayVersionResponse is the response struct for api UpdateSmartAccessGatewayVersion

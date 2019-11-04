@@ -77,12 +77,12 @@ func (client *Client) DescribeSmartAccessGatewayClientUsersWithCallback(request 
 type DescribeSmartAccessGatewayClientUsersRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNo               requests.Integer `position:"Query" name:"PageNo"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 	UserName             string           `position:"Query" name:"UserName"`
 }
 
@@ -91,7 +91,7 @@ type DescribeSmartAccessGatewayClientUsersResponse struct {
 	*responses.BaseResponse
 	RequestId  string                                       `json:"RequestId" xml:"RequestId"`
 	TotalCount int                                          `json:"TotalCount" xml:"TotalCount"`
-	PageNo     int                                          `json:"PageNo" xml:"PageNo"`
+	PageNumber int                                          `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int                                          `json:"PageSize" xml:"PageSize"`
 	Users      UsersInDescribeSmartAccessGatewayClientUsers `json:"Users" xml:"Users"`
 }

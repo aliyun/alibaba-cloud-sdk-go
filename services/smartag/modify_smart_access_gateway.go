@@ -76,23 +76,17 @@ func (client *Client) ModifySmartAccessGatewayWithCallback(request *ModifySmartA
 // ModifySmartAccessGatewayRequest is the request struct for api ModifySmartAccessGateway
 type ModifySmartAccessGatewayRequest struct {
 	*requests.RpcRequest
-	SnatEntries           *[]ModifySmartAccessGatewaySnatEntries `position:"Query" name:"SnatEntries"  type:"Repeated"`
-	ResourceOwnerId       requests.Integer                       `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount  string                                 `position:"Query" name:"ResourceOwnerAccount"`
-	City                  string                                 `position:"Query" name:"City"`
-	OwnerAccount          string                                 `position:"Query" name:"OwnerAccount"`
-	Description           string                                 `position:"Query" name:"Description"`
-	OwnerId               requests.Integer                       `position:"Query" name:"OwnerId"`
-	SecurityLockThreshold requests.Integer                       `position:"Query" name:"SecurityLockThreshold"`
-	Name                  string                                 `position:"Query" name:"Name"`
-	CidrBlock             string                                 `position:"Query" name:"CidrBlock"`
-	SmartAGId             string                                 `position:"Query" name:"SmartAGId"`
-}
-
-// ModifySmartAccessGatewaySnatEntries is a repeated param struct in ModifySmartAccessGatewayRequest
-type ModifySmartAccessGatewaySnatEntries struct {
-	CidrBlock string `name:"CidrBlock"`
-	SnatIp    string `name:"SnatIp"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	City                  string           `position:"Query" name:"City"`
+	Description           string           `position:"Query" name:"Description"`
+	SecurityLockThreshold requests.Integer `position:"Query" name:"SecurityLockThreshold"`
+	RoutingStrategy       string           `position:"Query" name:"RoutingStrategy"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	Name                  string           `position:"Query" name:"Name"`
+	CidrBlock             string           `position:"Query" name:"CidrBlock"`
+	SmartAGId             string           `position:"Query" name:"SmartAGId"`
 }
 
 // ModifySmartAccessGatewayResponse is the response struct for api ModifySmartAccessGateway

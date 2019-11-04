@@ -77,12 +77,12 @@ func (client *Client) AddNetworkOptimizationSettingWithCallback(request *AddNetw
 type AddNetworkOptimizationSettingRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	NetworkOptId         string           `position:"Query" name:"NetworkOptId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Domain               string           `position:"Query" name:"Domain"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Type                 string           `position:"Query" name:"Type"`
+	NetworkOptId         string           `position:"Query" name:"NetworkOptId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Domain               string           `position:"Query" name:"Domain"`
 }
 
 // AddNetworkOptimizationSettingResponse is the response struct for api AddNetworkOptimizationSetting

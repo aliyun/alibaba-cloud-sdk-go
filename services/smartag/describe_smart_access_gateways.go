@@ -77,18 +77,19 @@ func (client *Client) DescribeSmartAccessGatewaysWithCallback(request *DescribeS
 type DescribeSmartAccessGatewaysRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AclIds               string           `position:"Query" name:"AclIds"`
+	CanAssociateQos      requests.Boolean `position:"Query" name:"CanAssociateQos"`
+	UnboundAclIds        string           `position:"Query" name:"UnboundAclIds"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
 	SerialNumber         string           `position:"Query" name:"SerialNumber"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AclIds               string           `position:"Query" name:"AclIds"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	AssociatedCcnId      string           `position:"Query" name:"AssociatedCcnId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	UnboundAclIds        string           `position:"Query" name:"UnboundAclIds"`
-	PageNumber           string           `position:"Query" name:"PageNumber"`
 	Name                 string           `position:"Query" name:"Name"`
-	PageSize             string           `position:"Query" name:"PageSize"`
 	SmartAGId            string           `position:"Query" name:"SmartAGId"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
 	Status               string           `position:"Query" name:"Status"`
 }
 

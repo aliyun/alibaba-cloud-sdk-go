@@ -17,12 +17,15 @@ package smartag
 
 // GrantRule is a nested struct in smartag response
 type GrantRule struct {
-	GrantRuleId   string `json:"GrantRuleId" xml:"GrantRuleId"`
-	CenUid        int    `json:"CenUid" xml:"CenUid"`
-	CcnId         int    `json:"CcnId" xml:"CcnId"`
-	CenInstanceId string `json:"CenInstanceId" xml:"CenInstanceId"`
-	CcnInstanceId string `json:"CcnInstanceId" xml:"CcnInstanceId"`
-	GmtCreate     int    `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified   int    `json:"GmtModified" xml:"GmtModified"`
+	GmtCreate     int64  `json:"GmtCreate" xml:"GmtCreate"`
+	CcnUid        int64  `json:"CcnUid" xml:"CcnUid"`
 	RegionId      string `json:"RegionId" xml:"RegionId"`
+	GrantRuleId   string `json:"GrantRuleId" xml:"GrantRuleId"`
+	CenInstanceId string `json:"CenInstanceId" xml:"CenInstanceId"`
+	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
+	CcnInstanceId string `json:"CcnInstanceId" xml:"CcnInstanceId"`
+	GmtModified   int64  `json:"GmtModified" xml:"GmtModified"`
+	CenUid        int64  `json:"CenUid" xml:"CenUid"`
+	CreateTime    int64  `json:"CreateTime" xml:"CreateTime"`
+	SmartAGId     string `json:"SmartAGId" xml:"SmartAGId"`
 }

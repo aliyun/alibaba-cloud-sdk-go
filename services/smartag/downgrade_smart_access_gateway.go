@@ -77,13 +77,13 @@ func (client *Client) DowngradeSmartAccessGatewayWithCallback(request *Downgrade
 type DowngradeSmartAccessGatewayRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	BandWidthSpec        requests.Integer `position:"Query" name:"BandWidthSpec"`
+	UserCount            requests.Integer `position:"Query" name:"UserCount"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	UserCount            requests.Integer `position:"Query" name:"UserCount"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 	DataPlan             requests.Integer `position:"Query" name:"DataPlan"`
 }
 

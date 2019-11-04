@@ -77,8 +77,8 @@ func (client *Client) DeleteNetworkOptimizationWithCallback(request *DeleteNetwo
 type DeleteNetworkOptimizationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	NetworkOptId         string           `position:"Query" name:"NetworkOptId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }

@@ -77,11 +77,11 @@ func (client *Client) CreateNetworkOptimizationWithCallback(request *CreateNetwo
 type CreateNetworkOptimizationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CcnId                string           `position:"Query" name:"CcnId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
-	CcnId                string           `position:"Query" name:"CcnId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // CreateNetworkOptimizationResponse is the response struct for api CreateNetworkOptimization

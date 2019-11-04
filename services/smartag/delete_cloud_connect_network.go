@@ -77,9 +77,9 @@ func (client *Client) DeleteCloudConnectNetworkWithCallback(request *DeleteCloud
 type DeleteCloudConnectNetworkRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CcnId                string           `position:"Query" name:"CcnId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	CcnId                string           `position:"Query" name:"CcnId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

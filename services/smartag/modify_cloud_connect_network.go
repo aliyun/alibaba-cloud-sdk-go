@@ -77,14 +77,14 @@ func (client *Client) ModifyCloudConnectNetworkWithCallback(request *ModifyCloud
 type ModifyCloudConnectNetworkRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CcnId                string           `position:"Query" name:"CcnId"`
+	Description          string           `position:"Query" name:"Description"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	CcnId                string           `position:"Query" name:"CcnId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Name                 string           `position:"Query" name:"Name"`
 	CidrBlock            string           `position:"Query" name:"CidrBlock"`
-	Description          string           `position:"Query" name:"Description"`
-	SnatCidrBlock        string           `position:"Query" name:"SnatCidrBlock"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InterworkingStatus   string           `position:"Query" name:"InterworkingStatus"`
 }
 
 // ModifyCloudConnectNetworkResponse is the response struct for api ModifyCloudConnectNetwork

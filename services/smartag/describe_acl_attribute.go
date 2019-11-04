@@ -76,15 +76,15 @@ func (client *Client) DescribeACLAttributeWithCallback(request *DescribeACLAttri
 // DescribeACLAttributeRequest is the request struct for api DescribeACLAttribute
 type DescribeACLAttributeRequest struct {
 	*requests.RpcRequest
-	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	Direction            string           `position:"Query" name:"Direction"`
 	Order                string           `position:"Query" name:"Order"`
+	AclId                string           `position:"Query" name:"AclId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeACLAttributeResponse is the response struct for api DescribeACLAttribute

@@ -77,14 +77,14 @@ func (client *Client) DescribeNetworkOptimizationsWithCallback(request *Describe
 type DescribeNetworkOptimizationsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	NetworkOptId         string           `position:"Query" name:"NetworkOptId"`
-	PageNo               requests.Integer `position:"Query" name:"PageNo"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	CcnId                string           `position:"Query" name:"CcnId"`
-	Name                 string           `position:"Query" name:"Name"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	NetworkOptId         string           `position:"Query" name:"NetworkOptId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // DescribeNetworkOptimizationsResponse is the response struct for api DescribeNetworkOptimizations
@@ -92,7 +92,7 @@ type DescribeNetworkOptimizationsResponse struct {
 	*responses.BaseResponse
 	RequestId            string               `json:"RequestId" xml:"RequestId"`
 	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
-	PageNo               int                  `json:"PageNo" xml:"PageNo"`
+	PageNumber           int                  `json:"PageNumber" xml:"PageNumber"`
 	PageSize             int                  `json:"PageSize" xml:"PageSize"`
 	NetworkOptimizations NetworkOptimizations `json:"NetworkOptimizations" xml:"NetworkOptimizations"`
 }

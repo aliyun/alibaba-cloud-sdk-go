@@ -17,25 +17,32 @@ package smartag
 
 // SmartAccessGateway is a nested struct in smartag response
 type SmartAccessGateway struct {
-	Name                  string      `json:"Name" xml:"Name"`
-	MaxBandwidth          string      `json:"MaxBandwidth" xml:"MaxBandwidth"`
-	SoftwareVersion       string      `json:"SoftwareVersion" xml:"SoftwareVersion"`
-	HardwareVersion       string      `json:"HardwareVersion" xml:"HardwareVersion"`
-	CreateTime            int         `json:"CreateTime" xml:"CreateTime"`
-	EndTime               int         `json:"EndTime" xml:"EndTime"`
-	City                  string      `json:"City" xml:"City"`
-	SerialNumber          string      `json:"SerialNumber" xml:"SerialNumber"`
-	AssociatedCcnId       string      `json:"AssociatedCcnId" xml:"AssociatedCcnId"`
-	State                 string      `json:"State" xml:"State"`
-	AclIds                string      `json:"AclIds" xml:"AclIds"`
-	InstanceId            string      `json:"InstanceId" xml:"InstanceId"`
-	SecurityLockThreshold int         `json:"SecurityLockThreshold" xml:"SecurityLockThreshold"`
-	UserCount             int         `json:"UserCount" xml:"UserCount"`
-	Status                string      `json:"Status" xml:"Status"`
-	CidrBlock             string      `json:"CidrBlock" xml:"CidrBlock"`
-	AssociatedCcnName     string      `json:"AssociatedCcnName" xml:"AssociatedCcnName"`
-	Description           string      `json:"Description" xml:"Description"`
-	SmartAGId             string      `json:"SmartAGId" xml:"SmartAGId"`
-	DataPlan              int         `json:"DataPlan" xml:"DataPlan"`
-	SnatEntries           SnatEntries `json:"SnatEntries" xml:"SnatEntries"`
+	Name                  string                             `json:"Name" xml:"Name"`
+	MaxBandwidth          string                             `json:"MaxBandwidth" xml:"MaxBandwidth"`
+	HardwareVersion       string                             `json:"HardwareVersion" xml:"HardwareVersion"`
+	CreateTime            int64                              `json:"CreateTime" xml:"CreateTime"`
+	EndTime               int64                              `json:"EndTime" xml:"EndTime"`
+	SerialNumber          string                             `json:"SerialNumber" xml:"SerialNumber"`
+	AclIds                string                             `json:"AclIds" xml:"AclIds"`
+	InstanceId            string                             `json:"InstanceId" xml:"InstanceId"`
+	SecurityLockThreshold int                                `json:"SecurityLockThreshold" xml:"SecurityLockThreshold"`
+	UserCount             int                                `json:"UserCount" xml:"UserCount"`
+	CidrBlock             string                             `json:"CidrBlock" xml:"CidrBlock"`
+	Description           string                             `json:"Description" xml:"Description"`
+	UpBandwidth4G         int                                `json:"UpBandwidth4G" xml:"UpBandwidth4G"`
+	SoftwareVersion       string                             `json:"SoftwareVersion" xml:"SoftwareVersion"`
+	City                  string                             `json:"City" xml:"City"`
+	SmartAGUid            int64                              `json:"SmartAGUid" xml:"SmartAGUid"`
+	AssociatedCcnId       string                             `json:"AssociatedCcnId" xml:"AssociatedCcnId"`
+	State                 string                             `json:"State" xml:"State"`
+	RoutingStrategy       string                             `json:"RoutingStrategy" xml:"RoutingStrategy"`
+	BackupStatus          string                             `json:"BackupStatus" xml:"BackupStatus"`
+	BackupSoftwareVersion string                             `json:"BackupSoftwareVersion" xml:"BackupSoftwareVersion"`
+	QosIds                string                             `json:"QosIds" xml:"QosIds"`
+	UpBandwidthWan        int                                `json:"UpBandwidthWan" xml:"UpBandwidthWan"`
+	Status                string                             `json:"Status" xml:"Status"`
+	AssociatedCcnName     string                             `json:"AssociatedCcnName" xml:"AssociatedCcnName"`
+	SmartAGId             string                             `json:"SmartAGId" xml:"SmartAGId"`
+	DataPlan              int64                              `json:"DataPlan" xml:"DataPlan"`
+	Links                 LinksInDescribeSmartAccessGateways `json:"Links" xml:"Links"`
 }

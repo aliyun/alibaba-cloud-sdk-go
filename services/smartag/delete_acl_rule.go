@@ -76,8 +76,8 @@ func (client *Client) DeleteACLRuleWithCallback(request *DeleteACLRuleRequest, c
 // DeleteACLRuleRequest is the request struct for api DeleteACLRule
 type DeleteACLRuleRequest struct {
 	*requests.RpcRequest
-	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

@@ -76,12 +76,12 @@ func (client *Client) ModifyACLWithCallback(request *ModifyACLRequest, callback 
 // ModifyACLRequest is the request struct for api ModifyACL
 type ModifyACLRequest struct {
 	*requests.RpcRequest
-	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // ModifyACLResponse is the response struct for api ModifyACL

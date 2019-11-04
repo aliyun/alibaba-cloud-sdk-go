@@ -76,8 +76,8 @@ func (client *Client) DeleteACLWithCallback(request *DeleteACLRequest, callback 
 // DeleteACLRequest is the request struct for api DeleteACL
 type DeleteACLRequest struct {
 	*requests.RpcRequest
-	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

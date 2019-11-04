@@ -27,6 +27,7 @@ type Acr struct {
 	DestPortRange   string `json:"DestPortRange" xml:"DestPortRange"`
 	Policy          string `json:"Policy" xml:"Policy"`
 	Priority        int    `json:"Priority" xml:"Priority"`
-	GmtCreate       int    `json:"GmtCreate" xml:"GmtCreate"`
+	GmtCreate       int64  `json:"GmtCreate" xml:"GmtCreate"`
 	AclId           string `json:"AclId" xml:"AclId"`
+	Type            string `json:"Type" xml:"Type"`
 }

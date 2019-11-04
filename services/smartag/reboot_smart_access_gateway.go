@@ -80,8 +80,8 @@ type RebootSmartAccessGatewayRequest struct {
 	SerialNumber         string           `position:"Query" name:"SerialNumber"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 }
 
 // RebootSmartAccessGatewayResponse is the response struct for api RebootSmartAccessGateway
