@@ -320,10 +320,11 @@ func Test_DoAction_HTTPSInsecure(t *testing.T) {
 			return mockResponse(400, "", errors.New("x509: certificate signed by unknown authority"))
 		}
 	}
+	response = responses.NewCommonResponse()
 	err = client.DoAction(request, response)
 	assert.NotNil(t, err)
-	assert.Equal(t, 400, response.GetHttpStatus())
-	assert.Equal(t, "", response.GetHttpContentString())
+	assert.Equal(t, 0, response.GetHttpStatus())
+	assert.Equal(t, "x509: certificate signed by unknown authority", err.Error())
 
 	client.Shutdown()
 	os.Setenv("HTTPS_PROXY", envHttpsProxy)
