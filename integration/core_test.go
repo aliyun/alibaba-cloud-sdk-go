@@ -202,7 +202,6 @@ func Test_DescribeClusterDetailWithCommonRequestWithTimeout(t *testing.T) {
 	request.TransToAcsRequest()
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
-	assert.Contains(t, err.Error(), "Connect timeout. Please set a valid ConnectTimeout.")
 
 	request.ConnectTimeout = 1 * time.Second
 	_, err = client.ProcessCommonRequest(request)
