@@ -81,14 +81,14 @@ type ModifyBackupSourceEndpointRequest struct {
 	SourceEndpointInstanceID   string           `position:"Query" name:"SourceEndpointInstanceID"`
 	SourceEndpointUserName     string           `position:"Query" name:"SourceEndpointUserName"`
 	ClientToken                string           `position:"Query" name:"ClientToken"`
-	SourceEndpointPassword     string           `position:"Query" name:"SourceEndpointPassword"`
 	BackupPlanId               string           `position:"Query" name:"BackupPlanId"`
+	SourceEndpointDatabaseName string           `position:"Query" name:"SourceEndpointDatabaseName"`
+	SourceEndpointIP           string           `position:"Query" name:"SourceEndpointIP"`
+	SourceEndpointPassword     string           `position:"Query" name:"SourceEndpointPassword"`
 	BackupObjects              string           `position:"Query" name:"BackupObjects"`
 	OwnerId                    string           `position:"Query" name:"OwnerId"`
 	SourceEndpointPort         requests.Integer `position:"Query" name:"SourceEndpointPort"`
-	SourceEndpointDatabaseName string           `position:"Query" name:"SourceEndpointDatabaseName"`
 	SourceEndpointInstanceType string           `position:"Query" name:"SourceEndpointInstanceType"`
-	SourceEndpointIP           string           `position:"Query" name:"SourceEndpointIP"`
 	SourceEndpointOracleSID    string           `position:"Query" name:"SourceEndpointOracleSID"`
 }
 

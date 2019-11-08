@@ -76,11 +76,11 @@ func (client *Client) ModifyBackupStrategyWithCallback(request *ModifyBackupStra
 // ModifyBackupStrategyRequest is the request struct for api ModifyBackupStrategy
 type ModifyBackupStrategyRequest struct {
 	*requests.RpcRequest
-	BackupPeriod    string `position:"Query" name:"BackupPeriod"`
-	BackupStartTime string `position:"Query" name:"BackupStartTime"`
 	ClientToken     string `position:"Query" name:"ClientToken"`
 	BackupPlanId    string `position:"Query" name:"BackupPlanId"`
 	OwnerId         string `position:"Query" name:"OwnerId"`
+	BackupPeriod    string `position:"Query" name:"BackupPeriod"`
+	BackupStartTime string `position:"Query" name:"BackupStartTime"`
 }
 
 // ModifyBackupStrategyResponse is the response struct for api ModifyBackupStrategy

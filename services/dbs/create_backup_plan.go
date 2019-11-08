@@ -77,16 +77,16 @@ func (client *Client) CreateBackupPlanWithCallback(request *CreateBackupPlanRequ
 type CreateBackupPlanRequest struct {
 	*requests.RpcRequest
 	DatabaseType   string           `position:"Query" name:"DatabaseType"`
-	Period         string           `position:"Query" name:"Period"`
 	ClientToken    string           `position:"Query" name:"ClientToken"`
-	OwnerId        string           `position:"Query" name:"OwnerId"`
-	UsedTime       requests.Integer `position:"Query" name:"UsedTime"`
 	InstanceClass  string           `position:"Query" name:"InstanceClass"`
 	StorageType    string           `position:"Query" name:"StorageType"`
-	BackupMethod   string           `position:"Query" name:"BackupMethod"`
 	DatabaseRegion string           `position:"Query" name:"DatabaseRegion"`
-	StorageRegion  string           `position:"Query" name:"StorageRegion"`
 	InstanceType   string           `position:"Query" name:"InstanceType"`
+	Period         string           `position:"Query" name:"Period"`
+	OwnerId        string           `position:"Query" name:"OwnerId"`
+	UsedTime       requests.Integer `position:"Query" name:"UsedTime"`
+	BackupMethod   string           `position:"Query" name:"BackupMethod"`
+	StorageRegion  string           `position:"Query" name:"StorageRegion"`
 	Region         string           `position:"Query" name:"Region"`
 	PayType        string           `position:"Query" name:"PayType"`
 }

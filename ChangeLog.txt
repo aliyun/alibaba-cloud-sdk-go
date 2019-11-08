@@ -1,3 +1,6 @@
+2019-11-08 Version: 1.60.229
+- Add DescribeJobErrorCode.
+
 2019-11-05 Version: 1.60.228
 - Add OperateBlackNo.
 

@@ -77,27 +77,27 @@ func (client *Client) ConfigureBackupPlanWithCallback(request *ConfigureBackupPl
 type ConfigureBackupPlanRequest struct {
 	*requests.RpcRequest
 	SourceEndpointRegion              string           `position:"Query" name:"SourceEndpointRegion"`
-	DuplicationArchivePeriod          requests.Integer `position:"Query" name:"DuplicationArchivePeriod"`
 	BackupGatewayId                   requests.Integer `position:"Query" name:"BackupGatewayId"`
 	SourceEndpointInstanceID          string           `position:"Query" name:"SourceEndpointInstanceID"`
 	SourceEndpointUserName            string           `position:"Query" name:"SourceEndpointUserName"`
 	ClientToken                       string           `position:"Query" name:"ClientToken"`
-	SourceEndpointPassword            string           `position:"Query" name:"SourceEndpointPassword"`
 	BackupPlanId                      string           `position:"Query" name:"BackupPlanId"`
+	SourceEndpointDatabaseName        string           `position:"Query" name:"SourceEndpointDatabaseName"`
+	DuplicationInfrequentAccessPeriod requests.Integer `position:"Query" name:"DuplicationInfrequentAccessPeriod"`
+	BackupStartTime                   string           `position:"Query" name:"BackupStartTime"`
+	SourceEndpointIP                  string           `position:"Query" name:"SourceEndpointIP"`
+	EnableBackupLog                   requests.Boolean `position:"Query" name:"EnableBackupLog"`
+	DuplicationArchivePeriod          requests.Integer `position:"Query" name:"DuplicationArchivePeriod"`
+	SourceEndpointPassword            string           `position:"Query" name:"SourceEndpointPassword"`
 	BackupObjects                     string           `position:"Query" name:"BackupObjects"`
 	OwnerId                           string           `position:"Query" name:"OwnerId"`
 	SourceEndpointPort                requests.Integer `position:"Query" name:"SourceEndpointPort"`
-	SourceEndpointDatabaseName        string           `position:"Query" name:"SourceEndpointDatabaseName"`
 	BackupRetentionPeriod             requests.Integer `position:"Query" name:"BackupRetentionPeriod"`
-	DuplicationInfrequentAccessPeriod requests.Integer `position:"Query" name:"DuplicationInfrequentAccessPeriod"`
 	BackupPeriod                      string           `position:"Query" name:"BackupPeriod"`
-	BackupStartTime                   string           `position:"Query" name:"BackupStartTime"`
 	SourceEndpointInstanceType        string           `position:"Query" name:"SourceEndpointInstanceType"`
-	SourceEndpointIP                  string           `position:"Query" name:"SourceEndpointIP"`
 	BackupPlanName                    string           `position:"Query" name:"BackupPlanName"`
 	SourceEndpointOracleSID           string           `position:"Query" name:"SourceEndpointOracleSID"`
 	OSSBucketName                     string           `position:"Query" name:"OSSBucketName"`
-	EnableBackupLog                   requests.Boolean `position:"Query" name:"EnableBackupLog"`
 }
 
 // ConfigureBackupPlanResponse is the response struct for api ConfigureBackupPlan

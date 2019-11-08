@@ -77,22 +77,22 @@ func (client *Client) CreateRestoreTaskWithCallback(request *CreateRestoreTaskRe
 type CreateRestoreTaskRequest struct {
 	*requests.RpcRequest
 	BackupGatewayId                 requests.Integer `position:"Query" name:"BackupGatewayId"`
-	DestinationEndpointOracleSID    string           `position:"Query" name:"DestinationEndpointOracleSID"`
-	RestoreTime                     requests.Integer `position:"Query" name:"RestoreTime"`
 	DestinationEndpointInstanceType string           `position:"Query" name:"DestinationEndpointInstanceType"`
 	ClientToken                     string           `position:"Query" name:"ClientToken"`
-	DestinationEndpointInstanceID   string           `position:"Query" name:"DestinationEndpointInstanceID"`
-	DestinationEndpointPort         requests.Integer `position:"Query" name:"DestinationEndpointPort"`
 	BackupPlanId                    string           `position:"Query" name:"BackupPlanId"`
-	BackupSetId                     string           `position:"Query" name:"BackupSetId"`
-	OwnerId                         string           `position:"Query" name:"OwnerId"`
 	DestinationEndpointRegion       string           `position:"Query" name:"DestinationEndpointRegion"`
-	RestoreDir                      string           `position:"Query" name:"RestoreDir"`
-	DestinationEndpointIP           string           `position:"Query" name:"DestinationEndpointIP"`
-	DestinationEndpointDatabaseName string           `position:"Query" name:"DestinationEndpointDatabaseName"`
 	DestinationEndpointUserName     string           `position:"Query" name:"DestinationEndpointUserName"`
 	RestoreObjects                  string           `position:"Query" name:"RestoreObjects"`
 	RestoreTaskName                 string           `position:"Query" name:"RestoreTaskName"`
+	DestinationEndpointOracleSID    string           `position:"Query" name:"DestinationEndpointOracleSID"`
+	RestoreTime                     requests.Integer `position:"Query" name:"RestoreTime"`
+	DestinationEndpointInstanceID   string           `position:"Query" name:"DestinationEndpointInstanceID"`
+	DestinationEndpointPort         requests.Integer `position:"Query" name:"DestinationEndpointPort"`
+	BackupSetId                     string           `position:"Query" name:"BackupSetId"`
+	OwnerId                         string           `position:"Query" name:"OwnerId"`
+	RestoreDir                      string           `position:"Query" name:"RestoreDir"`
+	DestinationEndpointIP           string           `position:"Query" name:"DestinationEndpointIP"`
+	DestinationEndpointDatabaseName string           `position:"Query" name:"DestinationEndpointDatabaseName"`
 	DuplicateConflict               string           `position:"Query" name:"DuplicateConflict"`
 	DestinationEndpointPassword     string           `position:"Query" name:"DestinationEndpointPassword"`
 }

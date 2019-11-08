@@ -77,11 +77,11 @@ func (client *Client) DescribeRestoreTaskListWithCallback(request *DescribeResto
 type DescribeRestoreTaskListRequest struct {
 	*requests.RpcRequest
 	ClientToken   string           `position:"Query" name:"ClientToken"`
-	RestoreTaskId string           `position:"Query" name:"RestoreTaskId"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 	BackupPlanId  string           `position:"Query" name:"BackupPlanId"`
 	PageNum       requests.Integer `position:"Query" name:"PageNum"`
 	OwnerId       string           `position:"Query" name:"OwnerId"`
+	RestoreTaskId string           `position:"Query" name:"RestoreTaskId"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeRestoreTaskListResponse is the response struct for api DescribeRestoreTaskList

@@ -78,10 +78,10 @@ type DescribeBackupGatewayListRequest struct {
 	*requests.RpcRequest
 	Identifier  string           `position:"Query" name:"Identifier"`
 	ClientToken string           `position:"Query" name:"ClientToken"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	Region      string           `position:"Query" name:"Region"`
 	PageNum     requests.Integer `position:"Query" name:"PageNum"`
 	OwnerId     string           `position:"Query" name:"OwnerId"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	Region      string           `position:"Query" name:"Region"`
 }
 
 // DescribeBackupGatewayListResponse is the response struct for api DescribeBackupGatewayList

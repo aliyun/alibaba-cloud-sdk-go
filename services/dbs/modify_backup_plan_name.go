@@ -76,10 +76,10 @@ func (client *Client) ModifyBackupPlanNameWithCallback(request *ModifyBackupPlan
 // ModifyBackupPlanNameRequest is the request struct for api ModifyBackupPlanName
 type ModifyBackupPlanNameRequest struct {
 	*requests.RpcRequest
-	BackupPlanName string `position:"Query" name:"BackupPlanName"`
 	ClientToken    string `position:"Query" name:"ClientToken"`
 	BackupPlanId   string `position:"Query" name:"BackupPlanId"`
 	OwnerId        string `position:"Query" name:"OwnerId"`
+	BackupPlanName string `position:"Query" name:"BackupPlanName"`
 }
 
 // ModifyBackupPlanNameResponse is the response struct for api ModifyBackupPlanName

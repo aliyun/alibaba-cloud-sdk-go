@@ -77,8 +77,8 @@ func (client *Client) DescribeNodeCidrListWithCallback(request *DescribeNodeCidr
 type DescribeNodeCidrListRequest struct {
 	*requests.RpcRequest
 	ClientToken string `position:"Query" name:"ClientToken"`
-	Region      string `position:"Query" name:"Region"`
 	OwnerId     string `position:"Query" name:"OwnerId"`
+	Region      string `position:"Query" name:"Region"`
 }
 
 // DescribeNodeCidrListResponse is the response struct for api DescribeNodeCidrList

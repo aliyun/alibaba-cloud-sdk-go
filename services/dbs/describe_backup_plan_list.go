@@ -77,11 +77,11 @@ func (client *Client) DescribeBackupPlanListWithCallback(request *DescribeBackup
 type DescribeBackupPlanListRequest struct {
 	*requests.RpcRequest
 	ClientToken  string           `position:"Query" name:"ClientToken"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	BackupPlanId string           `position:"Query" name:"BackupPlanId"`
-	Region       string           `position:"Query" name:"Region"`
 	PageNum      requests.Integer `position:"Query" name:"PageNum"`
 	OwnerId      string           `position:"Query" name:"OwnerId"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	Region       string           `position:"Query" name:"Region"`
 }
 
 // DescribeBackupPlanListResponse is the response struct for api DescribeBackupPlanList
