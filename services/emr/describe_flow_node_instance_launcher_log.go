@@ -90,9 +90,9 @@ type DescribeFlowNodeInstanceLauncherLogRequest struct {
 // DescribeFlowNodeInstanceLauncherLogResponse is the response struct for api DescribeFlowNodeInstanceLauncherLog
 type DescribeFlowNodeInstanceLauncherLogResponse struct {
 	*responses.BaseResponse
-	RequestId string                                         `json:"RequestId" xml:"RequestId"`
-	LogEnd    bool                                           `json:"LogEnd" xml:"LogEnd"`
-	LogEntrys LogEntrysInDescribeFlowNodeInstanceLauncherLog `json:"LogEntrys" xml:"LogEntrys"`
+	RequestId  string                                          `json:"RequestId" xml:"RequestId"`
+	LogEnd     bool                                            `json:"LogEnd" xml:"LogEnd"`
+	LogEntries LogEntriesInDescribeFlowNodeInstanceLauncherLog `json:"LogEntrys" xml:"LogEntrys"`
 }
 
 // CreateDescribeFlowNodeInstanceLauncherLogRequest creates a request to invoke DescribeFlowNodeInstanceLauncherLog API

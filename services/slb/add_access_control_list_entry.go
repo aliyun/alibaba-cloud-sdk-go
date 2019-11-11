@@ -78,7 +78,7 @@ type AddAccessControlListEntryRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AclEntrys            string           `position:"Query" name:"AclEntrys"`
+	AclEntries           string           `position:"Query" name:"AclEntrys"`
 	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

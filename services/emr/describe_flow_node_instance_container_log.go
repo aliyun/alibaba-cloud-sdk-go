@@ -88,9 +88,9 @@ type DescribeFlowNodeInstanceContainerLogRequest struct {
 // DescribeFlowNodeInstanceContainerLogResponse is the response struct for api DescribeFlowNodeInstanceContainerLog
 type DescribeFlowNodeInstanceContainerLogResponse struct {
 	*responses.BaseResponse
-	RequestId string                                          `json:"RequestId" xml:"RequestId"`
-	LogEnd    bool                                            `json:"LogEnd" xml:"LogEnd"`
-	LogEntrys LogEntrysInDescribeFlowNodeInstanceContainerLog `json:"LogEntrys" xml:"LogEntrys"`
+	RequestId  string                                           `json:"RequestId" xml:"RequestId"`
+	LogEnd     bool                                             `json:"LogEnd" xml:"LogEnd"`
+	LogEntries LogEntriesInDescribeFlowNodeInstanceContainerLog `json:"LogEntrys" xml:"LogEntrys"`
 }
 
 // CreateDescribeFlowNodeInstanceContainerLogRequest creates a request to invoke DescribeFlowNodeInstanceContainerLog API
