@@ -16,8 +16,6 @@ platform:
 
 install:
   - set PATH=%GOPATH%\bin;c:\go\bin;%PATH%
-  - go get -u github.com/golang/dep/cmd/dep
-  - dep ensure
 
 test_script:
   - go vet ./sdk
