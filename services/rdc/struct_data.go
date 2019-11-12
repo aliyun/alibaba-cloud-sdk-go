@@ -17,18 +17,20 @@ package rdc
 
 // Data is a nested struct in rdc response
 type Data struct {
-	Name          string `json:"Name" xml:"Name"`
-	Status        int    `json:"Status" xml:"Status"`
-	ApplicationId string `json:"ApplicationId" xml:"ApplicationId"`
-	Code          string `json:"Code" xml:"Code"`
-	TotalCount    string `json:"TotalCount" xml:"TotalCount"`
-	Cases         string `json:"Cases" xml:"Cases"`
-	PageTotal     string `json:"PageTotal" xml:"PageTotal"`
-	Id            int64  `json:"Id" xml:"Id"`
-	PageSize      string `json:"PageSize" xml:"PageSize"`
-	PageNum       string `json:"PageNum" xml:"PageNum"`
-	Identifier    string `json:"Identifier" xml:"Identifier"`
-	ProhibitCode  int    `json:"ProhibitCode" xml:"ProhibitCode"`
-	Type          int    `json:"Type" xml:"Type"`
-	IsValid       bool   `json:"IsValid" xml:"IsValid"`
+	GmtModified    string          `json:"GmtModified" xml:"GmtModified"`
+	Description    string          `json:"Description" xml:"Description"`
+	Stamp          string          `json:"Stamp" xml:"Stamp"`
+	GmtCreate      string          `json:"GmtCreate" xml:"GmtCreate"`
+	Type           string          `json:"Type" xml:"Type"`
+	ParentId       int             `json:"ParentId" xml:"ParentId"`
+	Mode           string          `json:"Mode" xml:"Mode"`
+	IdPath         string          `json:"IdPath" xml:"IdPath"`
+	Name           string          `json:"Name" xml:"Name"`
+	Id             int             `json:"Id" xml:"Id"`
+	Region         string          `json:"Region" xml:"Region"`
+	CustomValues   string          `json:"CustomValues" xml:"CustomValues"`
+	Status         string          `json:"Status" xml:"Status"`
+	Creator        Creator         `json:"Creator" xml:"Creator"`
+	Modifier       Modifier        `json:"Modifier" xml:"Modifier"`
+	ProjectMembers []ProjectMember `json:"ProjectMembers" xml:"ProjectMembers"`
 }
