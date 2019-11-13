@@ -1,3 +1,8 @@
+2019-11-13 Version: 1.60.233
+- Supported API UpdateDomainRemark for Update Domain Remark.
+- Supported API UpdateDomainRecordRemark for Update Record Remark.
+- Unsupported API CheckDomainRecord.
+
 2019-11-13 Version: 1.60.232
 - Support Go SDK.
 - Support C SDK.

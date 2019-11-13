@@ -77,10 +77,10 @@ func (client *Client) DescribeBatchResultDetailWithCallback(request *DescribeBat
 type DescribeBatchResultDetailRequest struct {
 	*requests.RpcRequest
 	BatchType    string           `position:"Query" name:"BatchType"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	Lang         string           `position:"Query" name:"Lang"`
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
 	TaskId       requests.Integer `position:"Query" name:"TaskId"`
 }
 
@@ -99,7 +99,7 @@ func CreateDescribeBatchResultDetailRequest() (request *DescribeBatchResultDetai
 	request = &DescribeBatchResultDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeBatchResultDetail", "Alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeBatchResultDetail", "alidns", "openAPI")
 	return
 }
 
