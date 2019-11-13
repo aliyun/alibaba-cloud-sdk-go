@@ -1,3 +1,8 @@
+2019-11-13 Version: 1.60.232
+- Support Go SDK.
+- Support C SDK.
+- Support PHP SDK.
+
 2019-11-12 Version: 1.60.231
 - Generated 2018-08-21, 2018-08-16 for `Rdc`.
 
