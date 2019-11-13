@@ -18,7 +18,7 @@ package bssopenapi
 // ResourceInstanceList is a nested struct in bssopenapi response
 type ResourceInstanceList struct {
 	ResourceUserId   int64  `json:"ResourceUserId" xml:"ResourceUserId"`
-	ResourceId       int64  `json:"ResourceId" xml:"ResourceId"`
+	ResourceId       string `json:"ResourceId" xml:"ResourceId"`
 	CommodityCode    string `json:"CommodityCode" xml:"CommodityCode"`
 	ResourceUserName string `json:"ResourceUserName" xml:"ResourceUserName"`
 	CommodityName    string `json:"CommodityName" xml:"CommodityName"`

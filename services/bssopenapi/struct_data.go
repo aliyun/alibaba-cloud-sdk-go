@@ -59,7 +59,6 @@ type Data struct {
 	OmsData                     OmsData                              `json:"OmsData" xml:"OmsData"`
 	CostUnit                    CostUnit                             `json:"CostUnit" xml:"CostUnit"`
 	CostUnitStatisInfo          CostUnitStatisInfo                   `json:"CostUnitStatisInfo" xml:"CostUnitStatisInfo"`
-	ResourceInstanceDtoList     []ResourceInstanceList               `json:"ResourceInstanceDtoList" xml:"ResourceInstanceDtoList"`
 	ModuleList                  ModuleList                           `json:"ModuleList" xml:"ModuleList"`
 	Items                       ItemsInQueryInstanceBill             `json:"Items" xml:"Items"`
 	InstanceList                []Instance                           `json:"InstanceList" xml:"InstanceList"`
@@ -69,6 +68,7 @@ type Data struct {
 	ProductList                 ProductList                          `json:"ProductList" xml:"ProductList"`
 	ModuleDetails               ModuleDetailsInGetPayAsYouGoPrice    `json:"ModuleDetails" xml:"ModuleDetails"`
 	PromotionDetails            PromotionDetailsInGetPayAsYouGoPrice `json:"PromotionDetails" xml:"PromotionDetails"`
+	ResourceInstanceDtoList     []ResourceInstanceList               `json:"ResourceInstanceDtoList" xml:"ResourceInstanceDtoList"`
 	AccountTransactionsList     AccountTransactionsList              `json:"AccountTransactionsList" xml:"AccountTransactionsList"`
 	CostUnitDtoList             []CostUnitDtoListItem                `json:"CostUnitDtoList" xml:"CostUnitDtoList"`
 	EvaluateList                EvaluateList                         `json:"EvaluateList" xml:"EvaluateList"`
