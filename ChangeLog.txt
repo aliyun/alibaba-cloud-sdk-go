@@ -1,3 +1,6 @@
+2019-11-15 Version: 1.60.242
+- Modify DescribeRestoreRangeInfo.
+
 2019-11-15 Version: 1.60.241
 - Add DescribeRestoreRangeInfo.
 

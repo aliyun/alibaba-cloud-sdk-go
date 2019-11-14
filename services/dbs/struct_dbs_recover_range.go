@@ -19,8 +19,8 @@ package dbs
 type DBSRecoverRange struct {
 	SourceEndpointInstanceType string         `json:"SourceEndpointInstanceType" xml:"SourceEndpointInstanceType"`
 	SourceEndpointInstanceID   string         `json:"SourceEndpointInstanceID" xml:"SourceEndpointInstanceID"`
-	BeginTimestampForRestore   string         `json:"BeginTimestampForRestore" xml:"BeginTimestampForRestore"`
-	EndTimestampForRestore     string         `json:"EndTimestampForRestore" xml:"EndTimestampForRestore"`
+	BeginTimestampForRestore   int64          `json:"BeginTimestampForRestore" xml:"BeginTimestampForRestore"`
+	EndTimestampForRestore     int64          `json:"EndTimestampForRestore" xml:"EndTimestampForRestore"`
 	RangeType                  string         `json:"RangeType" xml:"RangeType"`
 	FullBackupList             FullBackupList `json:"FullBackupList" xml:"FullBackupList"`
 }
