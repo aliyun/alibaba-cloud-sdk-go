@@ -76,8 +76,8 @@ func (client *Client) JoinMeetingWithCallback(request *JoinMeetingRequest, callb
 // JoinMeetingRequest is the request struct for api JoinMeeting
 type JoinMeetingRequest struct {
 	*requests.RpcRequest
-	MeetingCode string `position:"Body" name:"MeetingCode"`
 	UserId      string `position:"Body" name:"UserId"`
+	MeetingCode string `position:"Body" name:"MeetingCode"`
 }
 
 // JoinMeetingResponse is the response struct for api JoinMeeting

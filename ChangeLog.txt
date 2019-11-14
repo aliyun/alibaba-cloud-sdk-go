@@ -1,3 +1,10 @@
+2019-11-14 Version: 1.60.238
+- Initial construction.
+- Public beta version.
+- Supported AliyunController for Interface.
+- Supported ConsoleController for Interface.
+- Supported AccountController for Interface.
+
 2019-11-13 Version: 1.60.237
 - Supported Stream analyse.
 

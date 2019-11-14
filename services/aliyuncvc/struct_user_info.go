@@ -28,4 +28,5 @@ type UserInfo struct {
 	DepartId      string `json:"DepartId" xml:"DepartId"`
 	UserTel       string `json:"UserTel" xml:"UserTel"`
 	UserEmail     string `json:"UserEmail" xml:"UserEmail"`
+	JobName       string `json:"JobName" xml:"JobName"`
 }
