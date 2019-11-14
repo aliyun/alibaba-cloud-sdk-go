@@ -1,3 +1,7 @@
+2019-11-14 Version: 1.60.239
+- Support Tag OpenAPI.
+- Fix endpoint problem.
+
 2019-11-14 Version: 1.60.238
 - Initial construction.
 - Public beta version.
