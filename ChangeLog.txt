@@ -1,3 +1,6 @@
+2019-11-14 Version: 1.60.240
+- Released dysms OpenAPI.
+
 2019-11-14 Version: 1.60.239
 - Support Tag OpenAPI.
 - Fix endpoint problem.

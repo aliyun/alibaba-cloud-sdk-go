@@ -96,7 +96,7 @@ func CreateDeleteSmsTemplateRequest() (request *DeleteSmsTemplateRequest) {
 	request = &DeleteSmsTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "DeleteSmsTemplate", "dysmsapi", "openAPI")
+	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "DeleteSmsTemplate", "dysms", "openAPI")
 	return
 }
 

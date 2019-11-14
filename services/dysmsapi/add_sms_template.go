@@ -99,7 +99,7 @@ func CreateAddSmsTemplateRequest() (request *AddSmsTemplateRequest) {
 	request = &AddSmsTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "AddSmsTemplate", "dysmsapi", "openAPI")
+	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "AddSmsTemplate", "dysms", "openAPI")
 	return
 }
 

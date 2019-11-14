@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SendSms invokes the dysmsapi.SendSms API synchronously
-// api document: https://help.aliyun.com/api/dysmsapi/sendsms.html
-func (client *Client) SendSms(request *SendSmsRequest) (response *SendSmsResponse, err error) {
-	response = CreateSendSmsResponse()
+// QuerySmsProdStatus invokes the dysmsapi.QuerySmsProdStatus API synchronously
+// api document: https://help.aliyun.com/api/dysmsapi/querysmsprodstatus.html
+func (client *Client) QuerySmsProdStatus(request *QuerySmsProdStatusRequest) (response *QuerySmsProdStatusResponse, err error) {
+	response = CreateQuerySmsProdStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SendSmsWithChan invokes the dysmsapi.SendSms API asynchronously
-// api document: https://help.aliyun.com/api/dysmsapi/sendsms.html
+// QuerySmsProdStatusWithChan invokes the dysmsapi.QuerySmsProdStatus API asynchronously
+// api document: https://help.aliyun.com/api/dysmsapi/querysmsprodstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) SendSmsWithChan(request *SendSmsRequest) (<-chan *SendSmsResponse, <-chan error) {
-	responseChan := make(chan *SendSmsResponse, 1)
+func (client *Client) QuerySmsProdStatusWithChan(request *QuerySmsProdStatusRequest) (<-chan *QuerySmsProdStatusResponse, <-chan error) {
+	responseChan := make(chan *QuerySmsProdStatusResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SendSms(request)
+		response, err := client.QuerySmsProdStatus(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) SendSmsWithChan(request *SendSmsRequest) (<-chan *SendSmsR
 	return responseChan, errChan
 }
 
-// SendSmsWithCallback invokes the dysmsapi.SendSms API asynchronously
-// api document: https://help.aliyun.com/api/dysmsapi/sendsms.html
+// QuerySmsProdStatusWithCallback invokes the dysmsapi.QuerySmsProdStatus API asynchronously
+// api document: https://help.aliyun.com/api/dysmsapi/querysmsprodstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) SendSmsWithCallback(request *SendSmsRequest, callback func(response *SendSmsResponse, err error)) <-chan int {
+func (client *Client) QuerySmsProdStatusWithCallback(request *QuerySmsProdStatusRequest, callback func(response *QuerySmsProdStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SendSmsResponse
+		var response *QuerySmsProdStatusResponse
 		var err error
 		defer close(result)
-		response, err = client.SendSms(request)
+		response, err = client.QuerySmsProdStatus(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,41 +73,35 @@ func (client *Client) SendSmsWithCallback(request *SendSmsRequest, callback func
 	return result
 }
 
-// SendSmsRequest is the request struct for api SendSms
-type SendSmsRequest struct {
+// QuerySmsProdStatusRequest is the request struct for api QuerySmsProdStatus
+type QuerySmsProdStatusRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SmsUpExtendCode      string           `position:"Query" name:"SmsUpExtendCode"`
-	SignName             string           `position:"Query" name:"SignName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PhoneNumbers         string           `position:"Query" name:"PhoneNumbers"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	OutId                string           `position:"Query" name:"OutId"`
-	TemplateCode         string           `position:"Query" name:"TemplateCode"`
-	TemplateParam        string           `position:"Query" name:"TemplateParam"`
+	AliyUid              requests.Integer `position:"Query" name:"AliyUid"`
 }
 
-// SendSmsResponse is the response struct for api SendSms
-type SendSmsResponse struct {
+// QuerySmsProdStatusResponse is the response struct for api QuerySmsProdStatus
+type QuerySmsProdStatusResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	BizId     string `json:"BizId" xml:"BizId"`
 	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
+	Data      string `json:"Data" xml:"Data"`
 }
 
-// CreateSendSmsRequest creates a request to invoke SendSms API
-func CreateSendSmsRequest() (request *SendSmsRequest) {
-	request = &SendSmsRequest{
+// CreateQuerySmsProdStatusRequest creates a request to invoke QuerySmsProdStatus API
+func CreateQuerySmsProdStatusRequest() (request *QuerySmsProdStatusRequest) {
+	request = &QuerySmsProdStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "SendSms", "dysms", "openAPI")
+	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "QuerySmsProdStatus", "dysms", "openAPI")
 	return
 }
 
-// CreateSendSmsResponse creates a response to parse from SendSms response
-func CreateSendSmsResponse() (response *SendSmsResponse) {
-	response = &SendSmsResponse{
+// CreateQuerySmsProdStatusResponse creates a response to parse from QuerySmsProdStatus response
+func CreateQuerySmsProdStatusResponse() (response *QuerySmsProdStatusResponse) {
+	response = &QuerySmsProdStatusResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

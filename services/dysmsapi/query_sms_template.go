@@ -102,7 +102,7 @@ func CreateQuerySmsTemplateRequest() (request *QuerySmsTemplateRequest) {
 	request = &QuerySmsTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "QuerySmsTemplate", "dysmsapi", "openAPI")
+	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "QuerySmsTemplate", "dysms", "openAPI")
 	return
 }
 

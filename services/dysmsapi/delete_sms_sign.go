@@ -96,7 +96,7 @@ func CreateDeleteSmsSignRequest() (request *DeleteSmsSignRequest) {
 	request = &DeleteSmsSignRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "DeleteSmsSign", "dysmsapi", "openAPI")
+	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "DeleteSmsSign", "dysms", "openAPI")
 	return
 }
 

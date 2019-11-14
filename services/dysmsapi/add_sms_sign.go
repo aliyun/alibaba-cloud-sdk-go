@@ -105,7 +105,7 @@ func CreateAddSmsSignRequest() (request *AddSmsSignRequest) {
 	request = &AddSmsSignRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "AddSmsSign", "dysmsapi", "openAPI")
+	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "AddSmsSign", "dysms", "openAPI")
 	return
 }
 

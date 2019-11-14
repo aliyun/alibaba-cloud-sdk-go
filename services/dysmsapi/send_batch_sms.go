@@ -100,7 +100,7 @@ func CreateSendBatchSmsRequest() (request *SendBatchSmsRequest) {
 	request = &SendBatchSmsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "SendBatchSms", "dysmsapi", "openAPI")
+	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "SendBatchSms", "dysms", "openAPI")
 	return
 }
 

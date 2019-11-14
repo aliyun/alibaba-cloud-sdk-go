@@ -99,7 +99,7 @@ func CreateQuerySmsSignRequest() (request *QuerySmsSignRequest) {
 	request = &QuerySmsSignRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "QuerySmsSign", "dysmsapi", "openAPI")
+	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "QuerySmsSign", "dysms", "openAPI")
 	return
 }
 

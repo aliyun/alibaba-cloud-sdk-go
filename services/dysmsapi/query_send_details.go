@@ -101,7 +101,7 @@ func CreateQuerySendDetailsRequest() (request *QuerySendDetailsRequest) {
 	request = &QuerySendDetailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "QuerySendDetails", "dysmsapi", "openAPI")
+	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "QuerySendDetails", "dysms", "openAPI")
 	return
 }
 
