@@ -79,8 +79,6 @@ type DescribeDcdnDomainWebsocketBpsDataRequest struct {
 	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
 	StartTime      string           `position:"Query" name:"StartTime"`
 	IspNameEn      string           `position:"Query" name:"IspNameEn"`
-	FixTimeGap     string           `position:"Query" name:"FixTimeGap"`
-	TimeMerge      string           `position:"Query" name:"TimeMerge"`
 	DomainName     string           `position:"Query" name:"DomainName"`
 	EndTime        string           `position:"Query" name:"EndTime"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`

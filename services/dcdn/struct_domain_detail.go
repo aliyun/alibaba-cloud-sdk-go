@@ -17,16 +17,16 @@ package dcdn
 
 // DomainDetail is a nested struct in dcdn response
 type DomainDetail struct {
-	GmtCreated      string                            `json:"GmtCreated" xml:"GmtCreated"`
-	GmtModified     string                            `json:"GmtModified" xml:"GmtModified"`
-	DomainStatus    string                            `json:"DomainStatus" xml:"DomainStatus"`
 	Cname           string                            `json:"Cname" xml:"Cname"`
+	CertName        string                            `json:"CertName" xml:"CertName"`
+	DomainStatus    string                            `json:"DomainStatus" xml:"DomainStatus"`
+	ResourceGroupId string                            `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DomainName      string                            `json:"DomainName" xml:"DomainName"`
-	Description     string                            `json:"Description" xml:"Description"`
+	GmtModified     string                            `json:"GmtModified" xml:"GmtModified"`
 	SSLProtocol     string                            `json:"SSLProtocol" xml:"SSLProtocol"`
 	SSLPub          string                            `json:"SSLPub" xml:"SSLPub"`
 	Scope           string                            `json:"Scope" xml:"Scope"`
-	CertName        string                            `json:"CertName" xml:"CertName"`
-	ResourceGroupId string                            `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	GmtCreated      string                            `json:"GmtCreated" xml:"GmtCreated"`
+	Description     string                            `json:"Description" xml:"Description"`
 	Sources         SourcesInDescribeDcdnDomainDetail `json:"Sources" xml:"Sources"`
 }

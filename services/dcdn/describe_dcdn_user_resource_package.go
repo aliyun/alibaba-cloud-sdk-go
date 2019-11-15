@@ -76,8 +76,8 @@ func (client *Client) DescribeDcdnUserResourcePackageWithCallback(request *Descr
 // DescribeDcdnUserResourcePackageRequest is the request struct for api DescribeDcdnUserResourcePackage
 type DescribeDcdnUserResourcePackageRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeDcdnUserResourcePackageResponse is the response struct for api DescribeDcdnUserResourcePackage

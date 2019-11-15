@@ -77,9 +77,9 @@ func (client *Client) PreloadDcdnObjectCachesWithCallback(request *PreloadDcdnOb
 type PreloadDcdnObjectCachesRequest struct {
 	*requests.RpcRequest
 	Area          string           `position:"Query" name:"Area"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	ObjectPath    string           `position:"Query" name:"ObjectPath"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // PreloadDcdnObjectCachesResponse is the response struct for api PreloadDcdnObjectCaches

@@ -78,7 +78,6 @@ type DescribeDcdnTopDomainsByFlowRequest struct {
 	*requests.RpcRequest
 	StartTime string           `position:"Query" name:"StartTime"`
 	Limit     requests.Integer `position:"Query" name:"Limit"`
-	Product   string           `position:"Query" name:"Product"`
 	EndTime   string           `position:"Query" name:"EndTime"`
 	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 }
@@ -89,8 +88,8 @@ type DescribeDcdnTopDomainsByFlowResponse struct {
 	RequestId         string     `json:"RequestId" xml:"RequestId"`
 	StartTime         string     `json:"StartTime" xml:"StartTime"`
 	EndTime           string     `json:"EndTime" xml:"EndTime"`
-	DomainCount       int        `json:"DomainCount" xml:"DomainCount"`
-	DomainOnlineCount int        `json:"DomainOnlineCount" xml:"DomainOnlineCount"`
+	DomainCount       int64      `json:"DomainCount" xml:"DomainCount"`
+	DomainOnlineCount int64      `json:"DomainOnlineCount" xml:"DomainOnlineCount"`
 	TopDomains        TopDomains `json:"TopDomains" xml:"TopDomains"`
 }
 

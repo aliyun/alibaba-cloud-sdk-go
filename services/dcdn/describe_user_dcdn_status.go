@@ -76,8 +76,8 @@ func (client *Client) DescribeUserDcdnStatusWithCallback(request *DescribeUserDc
 // DescribeUserDcdnStatusRequest is the request struct for api DescribeUserDcdnStatus
 type DescribeUserDcdnStatusRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeUserDcdnStatusResponse is the response struct for api DescribeUserDcdnStatus

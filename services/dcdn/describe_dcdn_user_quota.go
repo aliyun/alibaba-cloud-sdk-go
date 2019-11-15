@@ -76,8 +76,8 @@ func (client *Client) DescribeDcdnUserQuotaWithCallback(request *DescribeDcdnUse
 // DescribeDcdnUserQuotaRequest is the request struct for api DescribeDcdnUserQuota
 type DescribeDcdnUserQuotaRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeDcdnUserQuotaResponse is the response struct for api DescribeDcdnUserQuota

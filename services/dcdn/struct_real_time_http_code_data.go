@@ -17,5 +17,5 @@ package dcdn
 
 // RealTimeHttpCodeData is a nested struct in dcdn response
 type RealTimeHttpCodeData struct {
-	UsageData []UsageData `json:"UsageData" xml:"UsageData"`
+	UsageData []UsageDataInDescribeDcdnDomainRealTimeHttpCodeData `json:"UsageData" xml:"UsageData"`
 }

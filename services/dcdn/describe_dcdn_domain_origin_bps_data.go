@@ -77,8 +77,6 @@ func (client *Client) DescribeDcdnDomainOriginBpsDataWithCallback(request *Descr
 type DescribeDcdnDomainOriginBpsDataRequest struct {
 	*requests.RpcRequest
 	StartTime  string           `position:"Query" name:"StartTime"`
-	FixTimeGap string           `position:"Query" name:"FixTimeGap"`
-	TimeMerge  string           `position:"Query" name:"TimeMerge"`
 	DomainName string           `position:"Query" name:"DomainName"`
 	EndTime    string           `position:"Query" name:"EndTime"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`

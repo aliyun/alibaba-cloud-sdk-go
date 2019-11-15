@@ -77,16 +77,16 @@ func (client *Client) DescribeDcdnDomainConfigsWithCallback(request *DescribeDcd
 type DescribeDcdnDomainConfigsRequest struct {
 	*requests.RpcRequest
 	FunctionNames string           `position:"Query" name:"FunctionNames"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeDcdnDomainConfigsResponse is the response struct for api DescribeDcdnDomainConfigs
 type DescribeDcdnDomainConfigsResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	DomainConfigs DomainConfigs `json:"DomainConfigs" xml:"DomainConfigs"`
+	RequestId     string                                   `json:"RequestId" xml:"RequestId"`
+	DomainConfigs DomainConfigsInDescribeDcdnDomainConfigs `json:"DomainConfigs" xml:"DomainConfigs"`
 }
 
 // CreateDescribeDcdnDomainConfigsRequest creates a request to invoke DescribeDcdnDomainConfigs API

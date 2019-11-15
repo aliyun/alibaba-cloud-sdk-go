@@ -1,3 +1,6 @@
+2019-11-15 Version: 1.60.246
+- Sync cdn APIs.
+
 2019-11-15 Version: 1.60.245
 - Fixed bugs.
 

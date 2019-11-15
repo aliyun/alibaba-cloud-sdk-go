@@ -17,7 +17,7 @@ package dcdn
 
 // DomainLogDetail is a nested struct in dcdn response
 type DomainLogDetail struct {
-	LogCount  int       `json:"LogCount" xml:"LogCount"`
+	LogCount  int64     `json:"LogCount" xml:"LogCount"`
 	PageInfos PageInfos `json:"PageInfos" xml:"PageInfos"`
 	LogInfos  LogInfos  `json:"LogInfos" xml:"LogInfos"`
 }

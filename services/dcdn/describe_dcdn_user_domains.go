@@ -76,27 +76,29 @@ func (client *Client) DescribeDcdnUserDomainsWithCallback(request *DescribeDcdnU
 // DescribeDcdnUserDomainsRequest is the request struct for api DescribeDcdnUserDomains
 type DescribeDcdnUserDomainsRequest struct {
 	*requests.RpcRequest
-	FuncFilter       string           `position:"Query" name:"FuncFilter"`
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 	CheckDomainShow  requests.Boolean `position:"Query" name:"CheckDomainShow"`
 	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken    string           `position:"Query" name:"SecurityToken"`
+	ChangeEndTime    string           `position:"Query" name:"ChangeEndTime"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	FuncFilter       string           `position:"Query" name:"FuncFilter"`
 	DomainName       string           `position:"Query" name:"DomainName"`
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 	FuncId           string           `position:"Query" name:"FuncId"`
-	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 	DomainStatus     string           `position:"Query" name:"DomainStatus"`
 	DomainSearchType string           `position:"Query" name:"DomainSearchType"`
+	ChangeStartTime  string           `position:"Query" name:"ChangeStartTime"`
 }
 
 // DescribeDcdnUserDomainsResponse is the response struct for api DescribeDcdnUserDomains
 type DescribeDcdnUserDomainsResponse struct {
 	*responses.BaseResponse
-	RequestId  string  `json:"RequestId" xml:"RequestId"`
-	PageNumber int     `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int     `json:"PageSize" xml:"PageSize"`
-	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
-	Domains    Domains `json:"Domains" xml:"Domains"`
+	RequestId  string                           `json:"RequestId" xml:"RequestId"`
+	PageNumber int64                            `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int64                            `json:"PageSize" xml:"PageSize"`
+	TotalCount int64                            `json:"TotalCount" xml:"TotalCount"`
+	Domains    DomainsInDescribeDcdnUserDomains `json:"Domains" xml:"Domains"`
 }
 
 // CreateDescribeDcdnUserDomainsRequest creates a request to invoke DescribeDcdnUserDomains API

@@ -17,14 +17,14 @@ package dcdn
 
 // PageData is a nested struct in dcdn response
 type PageData struct {
-	DomainName      string                           `json:"DomainName" xml:"DomainName"`
-	Cname           string                           `json:"Cname" xml:"Cname"`
-	DomainStatus    string                           `json:"DomainStatus" xml:"DomainStatus"`
-	GmtCreated      string                           `json:"GmtCreated" xml:"GmtCreated"`
-	GmtModified     string                           `json:"GmtModified" xml:"GmtModified"`
-	Description     string                           `json:"Description" xml:"Description"`
-	SSLProtocol     string                           `json:"SSLProtocol" xml:"SSLProtocol"`
-	ResourceGroupId string                           `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	Sandbox         string                           `json:"Sandbox" xml:"Sandbox"`
-	Sources         SourcesInDescribeDcdnUserDomains `json:"Sources" xml:"Sources"`
+	Cname           string                              `json:"Cname" xml:"Cname"`
+	Sandbox         string                              `json:"Sandbox" xml:"Sandbox"`
+	DomainStatus    string                              `json:"DomainStatus" xml:"DomainStatus"`
+	ResourceGroupId string                              `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	DomainName      string                              `json:"DomainName" xml:"DomainName"`
+	GmtModified     string                              `json:"GmtModified" xml:"GmtModified"`
+	SSLProtocol     string                              `json:"SSLProtocol" xml:"SSLProtocol"`
+	GmtCreated      string                              `json:"GmtCreated" xml:"GmtCreated"`
+	Description     string                              `json:"Description" xml:"Description"`
+	Sources         SourcesInDescribeDcdnIpaUserDomains `json:"Sources" xml:"Sources"`
 }

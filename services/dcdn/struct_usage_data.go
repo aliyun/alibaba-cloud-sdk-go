@@ -17,6 +17,6 @@ package dcdn
 
 // UsageData is a nested struct in dcdn response
 type UsageData struct {
-	TimeStamp string                                        `json:"TimeStamp" xml:"TimeStamp"`
-	Value     ValueInDescribeDcdnDomainRealTimeHttpCodeData `json:"Value" xml:"Value"`
+	Value     string `json:"Value" xml:"Value"`
+	TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
 }

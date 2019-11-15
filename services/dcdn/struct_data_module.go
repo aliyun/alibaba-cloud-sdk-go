@@ -28,6 +28,7 @@ type DataModule struct {
 	StaticHttpsBps                   float64                          `json:"StaticHttpsBps" xml:"StaticHttpsBps"`
 	OriginTraffic                    float64                          `json:"OriginTraffic" xml:"OriginTraffic"`
 	DynamicHttpAcc                   float64                          `json:"DynamicHttpAcc" xml:"DynamicHttpAcc"`
+	IpaTraffic                       float64                          `json:"IpaTraffic" xml:"IpaTraffic"`
 	StaticHttpsTraffic               float64                          `json:"StaticHttpsTraffic" xml:"StaticHttpsTraffic"`
 	TimeStamp                        string                           `json:"TimeStamp" xml:"TimeStamp"`
 	Acc                              float64                          `json:"Acc" xml:"Acc"`
@@ -41,17 +42,18 @@ type DataModule struct {
 	OriginBps                        float64                          `json:"OriginBps" xml:"OriginBps"`
 	Bps                              float64                          `json:"Bps" xml:"Bps"`
 	DynamicHttpBps                   float64                          `json:"DynamicHttpBps" xml:"DynamicHttpBps"`
-	StaticHttpOriginTraffic          float64                          `json:"StaticHttpOriginTraffic" xml:"StaticHttpOriginTraffic"`
 	StaticHttpOriginBps              float64                          `json:"StaticHttpOriginBps" xml:"StaticHttpOriginBps"`
+	StaticHttpOriginTraffic          float64                          `json:"StaticHttpOriginTraffic" xml:"StaticHttpOriginTraffic"`
 	Value                            string                           `json:"Value" xml:"Value"`
 	Qps                              float64                          `json:"Qps" xml:"Qps"`
-	DynamicHttpsTraffic              float64                          `json:"DynamicHttpsTraffic" xml:"DynamicHttpsTraffic"`
-	StaticHttpsQps                   float64                          `json:"StaticHttpsQps" xml:"StaticHttpsQps"`
 	DynamicHttpsOriginTraffic        float64                          `json:"DynamicHttpsOriginTraffic" xml:"DynamicHttpsOriginTraffic"`
+	StaticHttpsQps                   float64                          `json:"StaticHttpsQps" xml:"StaticHttpsQps"`
+	DynamicHttpsTraffic              float64                          `json:"DynamicHttpsTraffic" xml:"DynamicHttpsTraffic"`
 	StaticHttpsOriginBps             float64                          `json:"StaticHttpsOriginBps" xml:"StaticHttpsOriginBps"`
 	ByteHitRate                      float64                          `json:"ByteHitRate" xml:"ByteHitRate"`
 	DynamicHttpsQps                  float64                          `json:"DynamicHttpsQps" xml:"DynamicHttpsQps"`
 	DynamicHttpQps                   float64                          `json:"DynamicHttpQps" xml:"DynamicHttpQps"`
+	IpaBps                           float64                          `json:"IpaBps" xml:"IpaBps"`
 	Traffic                          float64                          `json:"Traffic" xml:"Traffic"`
 	HttpCodeDataPerInterval          HttpCodeDataPerInterval          `json:"HttpCodeDataPerInterval" xml:"HttpCodeDataPerInterval"`
 	WebsocketHttpCodeDataPerInterval WebsocketHttpCodeDataPerInterval `json:"WebsocketHttpCodeDataPerInterval" xml:"WebsocketHttpCodeDataPerInterval"`

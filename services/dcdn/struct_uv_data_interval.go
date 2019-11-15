@@ -17,5 +17,5 @@ package dcdn
 
 // UvDataInterval is a nested struct in dcdn response
 type UvDataInterval struct {
-	UsageData []UsageDataInDescribeDcdnDomainUvData `json:"UsageData" xml:"UsageData"`
+	UsageData []UsageData `json:"UsageData" xml:"UsageData"`
 }

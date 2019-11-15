@@ -17,5 +17,5 @@ package dcdn
 
 // PvDataInterval is a nested struct in dcdn response
 type PvDataInterval struct {
-	UsageData []UsageDataInDescribeDcdnDomainPvData `json:"UsageData" xml:"UsageData"`
+	UsageData []UsageData `json:"UsageData" xml:"UsageData"`
 }

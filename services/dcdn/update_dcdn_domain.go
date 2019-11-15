@@ -77,11 +77,11 @@ func (client *Client) UpdateDcdnDomainWithCallback(request *UpdateDcdnDomainRequ
 type UpdateDcdnDomainRequest struct {
 	*requests.RpcRequest
 	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	Sources         string           `position:"Query" name:"Sources"`
-	SecurityToken   string           `position:"Query" name:"SecurityToken"`
 	DomainName      string           `position:"Query" name:"DomainName"`
 	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	SecurityToken   string           `position:"Query" name:"SecurityToken"`
 }
 
 // UpdateDcdnDomainResponse is the response struct for api UpdateDcdnDomain
