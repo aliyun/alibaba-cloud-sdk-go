@@ -1,3 +1,6 @@
+2019-11-15 Version: 1.60.248
+- Nlp Automl SDK.
+
 2019-11-15 Version: 1.60.247
 - Support tags.
 - Support create pre paid alikafka instance.
