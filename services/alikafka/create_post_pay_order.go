@@ -76,11 +76,13 @@ func (client *Client) CreatePostPayOrderWithCallback(request *CreatePostPayOrder
 // CreatePostPayOrderRequest is the request struct for api CreatePostPayOrder
 type CreatePostPayOrderRequest struct {
 	*requests.RpcRequest
+	PaidType   requests.Integer `position:"Query" name:"PaidType"`
 	DiskSize   requests.Integer `position:"Query" name:"DiskSize"`
 	IoMax      requests.Integer `position:"Query" name:"IoMax"`
 	DiskType   string           `position:"Query" name:"DiskType"`
 	TopicQuota requests.Integer `position:"Query" name:"TopicQuota"`
 	EipMax     requests.Integer `position:"Query" name:"EipMax"`
+	SpecType   string           `position:"Query" name:"SpecType"`
 	DeployType requests.Integer `position:"Query" name:"DeployType"`
 }
 

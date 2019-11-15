@@ -80,6 +80,7 @@ type UpgradePostPayOrderRequest struct {
 	IoMax      requests.Integer `position:"Query" name:"IoMax"`
 	TopicQuota requests.Integer `position:"Query" name:"TopicQuota"`
 	EipMax     requests.Integer `position:"Query" name:"EipMax"`
+	SpecType   string           `position:"Query" name:"SpecType"`
 	InstanceId string           `position:"Query" name:"InstanceId"`
 }
 

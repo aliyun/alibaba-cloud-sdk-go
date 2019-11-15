@@ -17,14 +17,15 @@ package alikafka
 
 // TopicVO is a nested struct in alikafka response
 type TopicVO struct {
-	Topic        string `json:"Topic" xml:"Topic"`
-	CreateTime   int64  `json:"CreateTime" xml:"CreateTime"`
-	Remark       string `json:"Remark" xml:"Remark"`
-	Status       int    `json:"Status" xml:"Status"`
-	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
-	RegionId     string `json:"RegionId" xml:"RegionId"`
-	StatusName   string `json:"StatusName" xml:"StatusName"`
-	CompactTopic bool   `json:"CompactTopic" xml:"CompactTopic"`
-	LocalTopic   bool   `json:"LocalTopic" xml:"LocalTopic"`
-	PartitionNum int    `json:"PartitionNum" xml:"PartitionNum"`
+	Topic        string             `json:"Topic" xml:"Topic"`
+	CreateTime   int64              `json:"CreateTime" xml:"CreateTime"`
+	Remark       string             `json:"Remark" xml:"Remark"`
+	Status       int                `json:"Status" xml:"Status"`
+	InstanceId   string             `json:"InstanceId" xml:"InstanceId"`
+	RegionId     string             `json:"RegionId" xml:"RegionId"`
+	StatusName   string             `json:"StatusName" xml:"StatusName"`
+	CompactTopic bool               `json:"CompactTopic" xml:"CompactTopic"`
+	LocalTopic   bool               `json:"LocalTopic" xml:"LocalTopic"`
+	PartitionNum int                `json:"PartitionNum" xml:"PartitionNum"`
+	Tags         TagsInGetTopicList `json:"Tags" xml:"Tags"`
 }

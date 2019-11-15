@@ -1,3 +1,7 @@
+2019-11-15 Version: 1.60.247
+- Support tags.
+- Support create pre paid alikafka instance.
+
 2019-11-15 Version: 1.60.246
 - Sync cdn APIs.
 

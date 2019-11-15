@@ -35,5 +35,8 @@ type InstanceVO struct {
 	MsgRetain                int                      `json:"MsgRetain" xml:"MsgRetain"`
 	TopicNumLimit            int                      `json:"TopicNumLimit" xml:"TopicNumLimit"`
 	ZoneId                   string                   `json:"ZoneId" xml:"ZoneId"`
+	PaidType                 int                      `json:"PaidType" xml:"PaidType"`
+	SpecType                 string                   `json:"SpecType" xml:"SpecType"`
 	UpgradeServiceDetailInfo UpgradeServiceDetailInfo `json:"UpgradeServiceDetailInfo" xml:"UpgradeServiceDetailInfo"`
+	Tags                     TagsInGetInstanceList    `json:"Tags" xml:"Tags"`
 }
