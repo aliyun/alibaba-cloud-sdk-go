@@ -102,7 +102,7 @@ func CreateQueryResourcePackageInstancesRequest() (request *QueryResourcePackage
 	request = &QueryResourcePackageInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryResourcePackageInstances", "BssOpenApi", "openAPI")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryResourcePackageInstances", "", "")
 	return
 }
 
