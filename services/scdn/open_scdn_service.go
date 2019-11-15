@@ -76,16 +76,16 @@ func (client *Client) OpenScdnServiceWithCallback(request *OpenScdnServiceReques
 // OpenScdnServiceRequest is the request struct for api OpenScdnService
 type OpenScdnServiceRequest struct {
 	*requests.RpcRequest
-	EndDate           string           `position:"Query" name:"EndDate"`
+	StartDate         string           `position:"Query" name:"StartDate"`
+	CcProtection      requests.Integer `position:"Query" name:"CcProtection"`
 	SecurityToken     string           `position:"Query" name:"SecurityToken"`
+	ProtectType       string           `position:"Query" name:"ProtectType"`
+	DDoSBasic         requests.Integer `position:"Query" name:"DDoSBasic"`
 	Bandwidth         requests.Integer `position:"Query" name:"Bandwidth"`
 	DomainCount       requests.Integer `position:"Query" name:"DomainCount"`
 	OwnerId           requests.Integer `position:"Query" name:"OwnerId"`
-	ProtectType       string           `position:"Query" name:"ProtectType"`
-	StartDate         string           `position:"Query" name:"StartDate"`
+	EndDate           string           `position:"Query" name:"EndDate"`
 	ElasticProtection requests.Integer `position:"Query" name:"ElasticProtection"`
-	DDoSBasic         requests.Integer `position:"Query" name:"DDoSBasic"`
-	CcProtection      requests.Integer `position:"Query" name:"CcProtection"`
 }
 
 // OpenScdnServiceResponse is the response struct for api OpenScdnService
@@ -99,7 +99,7 @@ func CreateOpenScdnServiceRequest() (request *OpenScdnServiceRequest) {
 	request = &OpenScdnServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "OpenScdnService", "scdn", "openAPI")
+	request.InitWithApiInfo("scdn", "2017-11-15", "OpenScdnService", "", "")
 	return
 }
 

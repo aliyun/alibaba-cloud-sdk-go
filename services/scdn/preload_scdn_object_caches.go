@@ -77,9 +77,9 @@ func (client *Client) PreloadScdnObjectCachesWithCallback(request *PreloadScdnOb
 type PreloadScdnObjectCachesRequest struct {
 	*requests.RpcRequest
 	Area          string           `position:"Query" name:"Area"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	ObjectPath    string           `position:"Query" name:"ObjectPath"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // PreloadScdnObjectCachesResponse is the response struct for api PreloadScdnObjectCaches
@@ -94,7 +94,7 @@ func CreatePreloadScdnObjectCachesRequest() (request *PreloadScdnObjectCachesReq
 	request = &PreloadScdnObjectCachesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "PreloadScdnObjectCaches", "scdn", "openAPI")
+	request.InitWithApiInfo("scdn", "2017-11-15", "PreloadScdnObjectCaches", "", "")
 	return
 }
 

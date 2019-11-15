@@ -76,11 +76,11 @@ func (client *Client) AddScdnDomainWithCallback(request *AddScdnDomainRequest, c
 // AddScdnDomainRequest is the request struct for api AddScdnDomain
 type AddScdnDomainRequest struct {
 	*requests.RpcRequest
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	Sources         string           `position:"Query" name:"Sources"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken   string           `position:"Query" name:"SecurityToken"`
-	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
 	Scope           string           `position:"Query" name:"Scope"`
+	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
 	DomainName      string           `position:"Query" name:"DomainName"`
 	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 	CheckUrl        string           `position:"Query" name:"CheckUrl"`
@@ -97,7 +97,7 @@ func CreateAddScdnDomainRequest() (request *AddScdnDomainRequest) {
 	request = &AddScdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "AddScdnDomain", "scdn", "openAPI")
+	request.InitWithApiInfo("scdn", "2017-11-15", "AddScdnDomain", "", "")
 	return
 }
 

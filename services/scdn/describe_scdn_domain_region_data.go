@@ -98,7 +98,7 @@ func CreateDescribeScdnDomainRegionDataRequest() (request *DescribeScdnDomainReg
 	request = &DescribeScdnDomainRegionDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDomainRegionData", "scdn", "openAPI")
+	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDomainRegionData", "", "")
 	return
 }
 

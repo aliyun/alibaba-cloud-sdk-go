@@ -17,5 +17,5 @@ package scdn
 
 // UvDataInterval is a nested struct in scdn response
 type UvDataInterval struct {
-	UsageData []UsageDataInDescribeScdnDomainUvData `json:"UsageData" xml:"UsageData"`
+	UsageData []UsageData `json:"UsageData" xml:"UsageData"`
 }

@@ -17,5 +17,7 @@ package scdn
 
 // PageInfos is a nested struct in scdn response
 type PageInfos struct {
-	PageInfoDetail []PageInfoDetail `json:"PageInfoDetail" xml:"PageInfoDetail"`
+	PageNumber int64 `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int64 `json:"PageSize" xml:"PageSize"`
+	Total      int64 `json:"Total" xml:"Total"`
 }

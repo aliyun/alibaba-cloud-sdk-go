@@ -17,5 +17,5 @@ package scdn
 
 // RealTimeHttpCodeData is a nested struct in scdn response
 type RealTimeHttpCodeData struct {
-	UsageData []UsageData `json:"UsageData" xml:"UsageData"`
+	UsageData []UsageDataInDescribeScdnDomainRealTimeHttpCodeData `json:"UsageData" xml:"UsageData"`
 }

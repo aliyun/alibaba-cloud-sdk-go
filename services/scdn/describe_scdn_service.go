@@ -76,32 +76,47 @@ func (client *Client) DescribeScdnServiceWithCallback(request *DescribeScdnServi
 // DescribeScdnServiceRequest is the request struct for api DescribeScdnService
 type DescribeScdnServiceRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeScdnServiceResponse is the response struct for api DescribeScdnService
 type DescribeScdnServiceResponse struct {
 	*responses.BaseResponse
-	RequestId              string         `json:"RequestId" xml:"RequestId"`
-	InstanceId             string         `json:"InstanceId" xml:"InstanceId"`
-	OpenTime               string         `json:"OpenTime" xml:"OpenTime"`
-	EndTime                string         `json:"EndTime" xml:"EndTime"`
-	ProtectType            string         `json:"ProtectType" xml:"ProtectType"`
-	ProtectTypeValue       string         `json:"ProtectTypeValue" xml:"ProtectTypeValue"`
-	Bandwidth              string         `json:"Bandwidth" xml:"Bandwidth"`
-	CcProtection           string         `json:"CcProtection" xml:"CcProtection"`
-	DDoSBasic              string         `json:"DDoSBasic" xml:"DDoSBasic"`
-	DomainCount            string         `json:"DomainCount" xml:"DomainCount"`
-	ElasticProtection      string         `json:"ElasticProtection" xml:"ElasticProtection"`
-	BandwidthValue         string         `json:"BandwidthValue" xml:"BandwidthValue"`
-	CcProtectionValue      string         `json:"CcProtectionValue" xml:"CcProtectionValue"`
-	DDoSBasicValue         string         `json:"DDoSBasicValue" xml:"DDoSBasicValue"`
-	DomainCountValue       string         `json:"DomainCountValue" xml:"DomainCountValue"`
-	ElasticProtectionValue string         `json:"ElasticProtectionValue" xml:"ElasticProtectionValue"`
-	PriceType              string         `json:"PriceType" xml:"PriceType"`
-	PricingCycle           string         `json:"PricingCycle" xml:"PricingCycle"`
-	OperationLocks         OperationLocks `json:"OperationLocks" xml:"OperationLocks"`
+	RequestId                     string         `json:"RequestId" xml:"RequestId"`
+	ChangingAffectTime            string         `json:"ChangingAffectTime" xml:"ChangingAffectTime"`
+	InternetChargeType            string         `json:"InternetChargeType" xml:"InternetChargeType"`
+	ChangingChargeType            string         `json:"ChangingChargeType" xml:"ChangingChargeType"`
+	InstanceId                    string         `json:"InstanceId" xml:"InstanceId"`
+	OpenTime                      string         `json:"OpenTime" xml:"OpenTime"`
+	EndTime                       string         `json:"EndTime" xml:"EndTime"`
+	ProtectType                   string         `json:"ProtectType" xml:"ProtectType"`
+	ProtectTypeValue              string         `json:"ProtectTypeValue" xml:"ProtectTypeValue"`
+	Bandwidth                     string         `json:"Bandwidth" xml:"Bandwidth"`
+	CcProtection                  string         `json:"CcProtection" xml:"CcProtection"`
+	DDoSBasic                     string         `json:"DDoSBasic" xml:"DDoSBasic"`
+	DomainCount                   string         `json:"DomainCount" xml:"DomainCount"`
+	ElasticProtection             string         `json:"ElasticProtection" xml:"ElasticProtection"`
+	BandwidthValue                string         `json:"BandwidthValue" xml:"BandwidthValue"`
+	CcProtectionValue             string         `json:"CcProtectionValue" xml:"CcProtectionValue"`
+	DDoSBasicValue                string         `json:"DDoSBasicValue" xml:"DDoSBasicValue"`
+	DomainCountValue              string         `json:"DomainCountValue" xml:"DomainCountValue"`
+	ElasticProtectionValue        string         `json:"ElasticProtectionValue" xml:"ElasticProtectionValue"`
+	CurrentProtectType            string         `json:"CurrentProtectType" xml:"CurrentProtectType"`
+	CurrentProtectTypeValue       string         `json:"CurrentProtectTypeValue" xml:"CurrentProtectTypeValue"`
+	CurrentBandwidth              string         `json:"CurrentBandwidth" xml:"CurrentBandwidth"`
+	CurrentCcProtection           string         `json:"CurrentCcProtection" xml:"CurrentCcProtection"`
+	CurrentDDoSBasic              string         `json:"CurrentDDoSBasic" xml:"CurrentDDoSBasic"`
+	CurrentDomainCount            string         `json:"CurrentDomainCount" xml:"CurrentDomainCount"`
+	CurrentElasticProtection      string         `json:"CurrentElasticProtection" xml:"CurrentElasticProtection"`
+	CurrentBandwidthValue         string         `json:"CurrentBandwidthValue" xml:"CurrentBandwidthValue"`
+	CurrentCcProtectionValue      string         `json:"CurrentCcProtectionValue" xml:"CurrentCcProtectionValue"`
+	CurrentDDoSBasicValue         string         `json:"CurrentDDoSBasicValue" xml:"CurrentDDoSBasicValue"`
+	CurrentDomainCountValue       string         `json:"CurrentDomainCountValue" xml:"CurrentDomainCountValue"`
+	CurrentElasticProtectionValue string         `json:"CurrentElasticProtectionValue" xml:"CurrentElasticProtectionValue"`
+	PriceType                     string         `json:"PriceType" xml:"PriceType"`
+	PricingCycle                  string         `json:"PricingCycle" xml:"PricingCycle"`
+	OperationLocks                OperationLocks `json:"OperationLocks" xml:"OperationLocks"`
 }
 
 // CreateDescribeScdnServiceRequest creates a request to invoke DescribeScdnService API
@@ -109,7 +124,7 @@ func CreateDescribeScdnServiceRequest() (request *DescribeScdnServiceRequest) {
 	request = &DescribeScdnServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnService", "scdn", "openAPI")
+	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnService", "", "")
 	return
 }
 

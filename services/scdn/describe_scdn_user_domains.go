@@ -76,26 +76,28 @@ func (client *Client) DescribeScdnUserDomainsWithCallback(request *DescribeScdnU
 // DescribeScdnUserDomainsRequest is the request struct for api DescribeScdnUserDomains
 type DescribeScdnUserDomainsRequest struct {
 	*requests.RpcRequest
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
+	CheckDomainShow  requests.Boolean `position:"Query" name:"CheckDomainShow"`
+	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
+	SecurityToken    string           `position:"Query" name:"SecurityToken"`
+	ChangeEndTime    string           `position:"Query" name:"ChangeEndTime"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 	FuncFilter       string           `position:"Query" name:"FuncFilter"`
 	DomainName       string           `position:"Query" name:"DomainName"`
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 	FuncId           string           `position:"Query" name:"FuncId"`
-	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 	DomainStatus     string           `position:"Query" name:"DomainStatus"`
 	DomainSearchType string           `position:"Query" name:"DomainSearchType"`
-	CheckDomainShow  requests.Boolean `position:"Query" name:"CheckDomainShow"`
-	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
-	SecurityToken    string           `position:"Query" name:"SecurityToken"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	ChangeStartTime  string           `position:"Query" name:"ChangeStartTime"`
 }
 
 // DescribeScdnUserDomainsResponse is the response struct for api DescribeScdnUserDomains
 type DescribeScdnUserDomainsResponse struct {
 	*responses.BaseResponse
 	RequestId  string  `json:"RequestId" xml:"RequestId"`
-	PageNumber int     `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int     `json:"PageSize" xml:"PageSize"`
-	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int64   `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int64   `json:"PageSize" xml:"PageSize"`
+	TotalCount int64   `json:"TotalCount" xml:"TotalCount"`
 	Domains    Domains `json:"Domains" xml:"Domains"`
 }
 
@@ -104,7 +106,7 @@ func CreateDescribeScdnUserDomainsRequest() (request *DescribeScdnUserDomainsReq
 	request = &DescribeScdnUserDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnUserDomains", "scdn", "openAPI")
+	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnUserDomains", "", "")
 	return
 }
 

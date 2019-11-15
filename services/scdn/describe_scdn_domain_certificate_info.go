@@ -92,7 +92,7 @@ func CreateDescribeScdnDomainCertificateInfoRequest() (request *DescribeScdnDoma
 	request = &DescribeScdnDomainCertificateInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDomainCertificateInfo", "scdn", "openAPI")
+	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDomainCertificateInfo", "", "")
 	return
 }
 

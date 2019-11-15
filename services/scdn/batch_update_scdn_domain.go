@@ -77,11 +77,11 @@ func (client *Client) BatchUpdateScdnDomainWithCallback(request *BatchUpdateScdn
 type BatchUpdateScdnDomainRequest struct {
 	*requests.RpcRequest
 	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	Sources         string           `position:"Query" name:"Sources"`
-	SecurityToken   string           `position:"Query" name:"SecurityToken"`
 	DomainName      string           `position:"Query" name:"DomainName"`
 	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	SecurityToken   string           `position:"Query" name:"SecurityToken"`
 }
 
 // BatchUpdateScdnDomainResponse is the response struct for api BatchUpdateScdnDomain
@@ -95,7 +95,7 @@ func CreateBatchUpdateScdnDomainRequest() (request *BatchUpdateScdnDomainRequest
 	request = &BatchUpdateScdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "BatchUpdateScdnDomain", "scdn", "openAPI")
+	request.InitWithApiInfo("scdn", "2017-11-15", "BatchUpdateScdnDomain", "", "")
 	return
 }
 

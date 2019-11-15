@@ -76,11 +76,10 @@ func (client *Client) DescribeScdnDomainPvDataWithCallback(request *DescribeScdn
 // DescribeScdnDomainPvDataRequest is the request struct for api DescribeScdnDomainPvData
 type DescribeScdnDomainPvDataRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	StartTime  string           `position:"Query" name:"StartTime"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeScdnDomainPvDataResponse is the response struct for api DescribeScdnDomainPvData
@@ -88,9 +87,7 @@ type DescribeScdnDomainPvDataResponse struct {
 	*responses.BaseResponse
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	DomainName     string         `json:"DomainName" xml:"DomainName"`
-	DataInterval   string         `json:"DataInterval" xml:"DataInterval"`
 	StartTime      string         `json:"StartTime" xml:"StartTime"`
-	EndTime        string         `json:"EndTime" xml:"EndTime"`
 	PvDataInterval PvDataInterval `json:"PvDataInterval" xml:"PvDataInterval"`
 }
 
@@ -99,7 +96,7 @@ func CreateDescribeScdnDomainPvDataRequest() (request *DescribeScdnDomainPvDataR
 	request = &DescribeScdnDomainPvDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDomainPvData", "scdn", "openAPI")
+	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDomainPvData", "", "")
 	return
 }
 

@@ -1,3 +1,7 @@
+2019-11-15 Version: 1.60.244
+- Add Scdn APIS.
+- Sync cdn APIS.
+
 2019-11-15 Version: 1.60.243
 - Modify QueryAccountBill, support group by product.
 

@@ -17,5 +17,5 @@ package scdn
 
 // PvDataInterval is a nested struct in scdn response
 type PvDataInterval struct {
-	UsageData []UsageDataInDescribeScdnDomainPvData `json:"UsageData" xml:"UsageData"`
+	UsageData []UsageData `json:"UsageData" xml:"UsageData"`
 }

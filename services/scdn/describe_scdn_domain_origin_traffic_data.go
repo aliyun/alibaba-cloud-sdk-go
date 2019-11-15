@@ -99,7 +99,7 @@ func CreateDescribeScdnDomainOriginTrafficDataRequest() (request *DescribeScdnDo
 	request = &DescribeScdnDomainOriginTrafficDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDomainOriginTrafficData", "scdn", "openAPI")
+	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDomainOriginTrafficData", "", "")
 	return
 }
 

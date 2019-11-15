@@ -89,8 +89,8 @@ type DescribeScdnTopDomainsByFlowResponse struct {
 	RequestId         string     `json:"RequestId" xml:"RequestId"`
 	StartTime         string     `json:"StartTime" xml:"StartTime"`
 	EndTime           string     `json:"EndTime" xml:"EndTime"`
-	DomainCount       int        `json:"DomainCount" xml:"DomainCount"`
-	DomainOnlineCount int        `json:"DomainOnlineCount" xml:"DomainOnlineCount"`
+	DomainCount       int64      `json:"DomainCount" xml:"DomainCount"`
+	DomainOnlineCount int64      `json:"DomainOnlineCount" xml:"DomainOnlineCount"`
 	TopDomains        TopDomains `json:"TopDomains" xml:"TopDomains"`
 }
 
@@ -99,7 +99,7 @@ func CreateDescribeScdnTopDomainsByFlowRequest() (request *DescribeScdnTopDomain
 	request = &DescribeScdnTopDomainsByFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnTopDomainsByFlow", "scdn", "openAPI")
+	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnTopDomainsByFlow", "", "")
 	return
 }
 

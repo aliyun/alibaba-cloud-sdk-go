@@ -17,6 +17,6 @@ package scdn
 
 // UsageData is a nested struct in scdn response
 type UsageData struct {
-	TimeStamp string                                        `json:"TimeStamp" xml:"TimeStamp"`
-	Value     ValueInDescribeScdnDomainRealTimeHttpCodeData `json:"Value" xml:"Value"`
+	Value     string `json:"Value" xml:"Value"`
+	TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
 }

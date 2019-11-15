@@ -76,9 +76,9 @@ func (client *Client) StartScdnDomainWithCallback(request *StartScdnDomainReques
 // StartScdnDomainRequest is the request struct for api StartScdnDomain
 type StartScdnDomainRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // StartScdnDomainResponse is the response struct for api StartScdnDomain
@@ -92,7 +92,7 @@ func CreateStartScdnDomainRequest() (request *StartScdnDomainRequest) {
 	request = &StartScdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "StartScdnDomain", "scdn", "openAPI")
+	request.InitWithApiInfo("scdn", "2017-11-15", "StartScdnDomain", "", "")
 	return
 }
 
