@@ -92,7 +92,7 @@ func CreateModifyCdnDomainSchdmByPropertyRequest() (request *ModifyCdnDomainSchd
 	request = &ModifyCdnDomainSchdmByPropertyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "ModifyCdnDomainSchdmByProperty", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "ModifyCdnDomainSchdmByProperty", "", "")
 	return
 }
 

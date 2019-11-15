@@ -76,10 +76,10 @@ func (client *Client) SetForceRedirectConfigWithCallback(request *SetForceRedire
 // SetForceRedirectConfigRequest is the request struct for api SetForceRedirectConfig
 type SetForceRedirectConfigRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	RedirectType  string           `position:"Query" name:"RedirectType"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // SetForceRedirectConfigResponse is the response struct for api SetForceRedirectConfig
@@ -93,7 +93,7 @@ func CreateSetForceRedirectConfigRequest() (request *SetForceRedirectConfigReque
 	request = &SetForceRedirectConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "SetForceRedirectConfig", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetForceRedirectConfig", "", "")
 	return
 }
 

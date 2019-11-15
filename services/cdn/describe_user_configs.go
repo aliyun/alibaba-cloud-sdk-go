@@ -76,8 +76,8 @@ func (client *Client) DescribeUserConfigsWithCallback(request *DescribeUserConfi
 // DescribeUserConfigsRequest is the request struct for api DescribeUserConfigs
 type DescribeUserConfigsRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	Config        string           `position:"Query" name:"Config"`
 }
 
@@ -93,7 +93,7 @@ func CreateDescribeUserConfigsRequest() (request *DescribeUserConfigsRequest) {
 	request = &DescribeUserConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeUserConfigs", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeUserConfigs", "", "")
 	return
 }
 

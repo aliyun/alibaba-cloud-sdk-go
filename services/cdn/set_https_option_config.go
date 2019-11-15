@@ -93,7 +93,7 @@ func CreateSetHttpsOptionConfigRequest() (request *SetHttpsOptionConfigRequest) 
 	request = &SetHttpsOptionConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "SetHttpsOptionConfig", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetHttpsOptionConfig", "", "")
 	return
 }
 

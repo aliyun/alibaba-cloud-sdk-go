@@ -91,7 +91,7 @@ func CreateDeleteUsageDetailDataExportTaskRequest() (request *DeleteUsageDetailD
 	request = &DeleteUsageDetailDataExportTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DeleteUsageDetailDataExportTask", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DeleteUsageDetailDataExportTask", "", "")
 	return
 }
 

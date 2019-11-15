@@ -92,7 +92,7 @@ func CreateListDomainsByLogConfigIdRequest() (request *ListDomainsByLogConfigIdR
 	request = &ListDomainsByLogConfigIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "ListDomainsByLogConfigId", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "ListDomainsByLogConfigId", "", "")
 	return
 }
 

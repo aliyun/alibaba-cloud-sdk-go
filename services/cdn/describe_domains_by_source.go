@@ -77,8 +77,8 @@ func (client *Client) DescribeDomainsBySourceWithCallback(request *DescribeDomai
 type DescribeDomainsBySourceRequest struct {
 	*requests.RpcRequest
 	Sources       string           `position:"Query" name:"Sources"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeDomainsBySourceResponse is the response struct for api DescribeDomainsBySource
@@ -94,7 +94,7 @@ func CreateDescribeDomainsBySourceRequest() (request *DescribeDomainsBySourceReq
 	request = &DescribeDomainsBySourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainsBySource", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainsBySource", "", "")
 	return
 }
 

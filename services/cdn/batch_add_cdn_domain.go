@@ -76,13 +76,13 @@ func (client *Client) BatchAddCdnDomainWithCallback(request *BatchAddCdnDomainRe
 // BatchAddCdnDomainRequest is the request struct for api BatchAddCdnDomain
 type BatchAddCdnDomainRequest struct {
 	*requests.RpcRequest
-	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	Sources         string           `position:"Query" name:"Sources"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken   string           `position:"Query" name:"SecurityToken"`
 	CdnType         string           `position:"Query" name:"CdnType"`
-	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
 	Scope           string           `position:"Query" name:"Scope"`
+	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
+	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
 	DomainName      string           `position:"Query" name:"DomainName"`
 	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 	CheckUrl        string           `position:"Query" name:"CheckUrl"`
@@ -99,7 +99,7 @@ func CreateBatchAddCdnDomainRequest() (request *BatchAddCdnDomainRequest) {
 	request = &BatchAddCdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "BatchAddCdnDomain", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "BatchAddCdnDomain", "", "")
 	return
 }
 

@@ -77,10 +77,10 @@ func (client *Client) BatchDeleteCdnDomainConfigWithCallback(request *BatchDelet
 type BatchDeleteCdnDomainConfigRequest struct {
 	*requests.RpcRequest
 	FunctionNames string           `position:"Query" name:"FunctionNames"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainNames   string           `position:"Query" name:"DomainNames"`
 	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // BatchDeleteCdnDomainConfigResponse is the response struct for api BatchDeleteCdnDomainConfig
@@ -94,7 +94,7 @@ func CreateBatchDeleteCdnDomainConfigRequest() (request *BatchDeleteCdnDomainCon
 	request = &BatchDeleteCdnDomainConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "BatchDeleteCdnDomainConfig", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "BatchDeleteCdnDomainConfig", "", "")
 	return
 }
 

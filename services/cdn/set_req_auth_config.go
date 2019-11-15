@@ -78,12 +78,12 @@ type SetReqAuthConfigRequest struct {
 	*requests.RpcRequest
 	Key1           string           `position:"Query" name:"Key1"`
 	Key2           string           `position:"Query" name:"Key2"`
+	TimeOut        string           `position:"Query" name:"TimeOut"`
+	AuthType       string           `position:"Query" name:"AuthType"`
 	AuthRemoteDesc string           `position:"Query" name:"AuthRemoteDesc"`
 	SecurityToken  string           `position:"Query" name:"SecurityToken"`
 	DomainName     string           `position:"Query" name:"DomainName"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	TimeOut        string           `position:"Query" name:"TimeOut"`
-	AuthType       string           `position:"Query" name:"AuthType"`
 }
 
 // SetReqAuthConfigResponse is the response struct for api SetReqAuthConfig
@@ -97,7 +97,7 @@ func CreateSetReqAuthConfigRequest() (request *SetReqAuthConfigRequest) {
 	request = &SetReqAuthConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "SetReqAuthConfig", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetReqAuthConfig", "", "")
 	return
 }
 

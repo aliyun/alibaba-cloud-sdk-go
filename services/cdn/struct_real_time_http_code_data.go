@@ -17,5 +17,5 @@ package cdn
 
 // RealTimeHttpCodeData is a nested struct in cdn response
 type RealTimeHttpCodeData struct {
-	UsageData []UsageData `json:"UsageData" xml:"UsageData"`
+	UsageData []UsageDataInDescribeDomainRealTimeHttpCodeData `json:"UsageData" xml:"UsageData"`
 }

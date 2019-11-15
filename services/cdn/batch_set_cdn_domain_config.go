@@ -77,10 +77,10 @@ func (client *Client) BatchSetCdnDomainConfigWithCallback(request *BatchSetCdnDo
 type BatchSetCdnDomainConfigRequest struct {
 	*requests.RpcRequest
 	Functions     string           `position:"Query" name:"Functions"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainNames   string           `position:"Query" name:"DomainNames"`
 	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // BatchSetCdnDomainConfigResponse is the response struct for api BatchSetCdnDomainConfig
@@ -94,7 +94,7 @@ func CreateBatchSetCdnDomainConfigRequest() (request *BatchSetCdnDomainConfigReq
 	request = &BatchSetCdnDomainConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "BatchSetCdnDomainConfig", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "BatchSetCdnDomainConfig", "", "")
 	return
 }
 

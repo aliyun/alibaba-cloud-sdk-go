@@ -76,16 +76,16 @@ func (client *Client) BatchSetCdnDomainServerCertificateWithCallback(request *Ba
 // BatchSetCdnDomainServerCertificateRequest is the request struct for api BatchSetCdnDomainServerCertificate
 type BatchSetCdnDomainServerCertificateRequest struct {
 	*requests.RpcRequest
-	ForceSet      string           `position:"Query" name:"ForceSet"`
+	SSLProtocol   string           `position:"Query" name:"SSLProtocol"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	CertType      string           `position:"Query" name:"CertType"`
-	SSLPub        string           `position:"Query" name:"SSLPub"`
+	SSLPri        string           `position:"Query" name:"SSLPri"`
+	ForceSet      string           `position:"Query" name:"ForceSet"`
 	CertName      string           `position:"Query" name:"CertName"`
-	SSLProtocol   string           `position:"Query" name:"SSLProtocol"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SSLPub        string           `position:"Query" name:"SSLPub"`
 	Region        string           `position:"Query" name:"Region"`
-	SSLPri        string           `position:"Query" name:"SSLPri"`
 }
 
 // BatchSetCdnDomainServerCertificateResponse is the response struct for api BatchSetCdnDomainServerCertificate
@@ -99,7 +99,7 @@ func CreateBatchSetCdnDomainServerCertificateRequest() (request *BatchSetCdnDoma
 	request = &BatchSetCdnDomainServerCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "BatchSetCdnDomainServerCertificate", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "BatchSetCdnDomainServerCertificate", "", "")
 	return
 }
 

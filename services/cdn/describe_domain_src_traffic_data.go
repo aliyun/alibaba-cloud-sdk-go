@@ -99,7 +99,7 @@ func CreateDescribeDomainSrcTrafficDataRequest() (request *DescribeDomainSrcTraf
 	request = &DescribeDomainSrcTrafficDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainSrcTrafficData", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainSrcTrafficData", "", "")
 	return
 }
 

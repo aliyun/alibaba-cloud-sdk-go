@@ -76,13 +76,13 @@ func (client *Client) AddCdnDomainWithCallback(request *AddCdnDomainRequest, cal
 // AddCdnDomainRequest is the request struct for api AddCdnDomain
 type AddCdnDomainRequest struct {
 	*requests.RpcRequest
-	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	Sources         string           `position:"Query" name:"Sources"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken   string           `position:"Query" name:"SecurityToken"`
 	CdnType         string           `position:"Query" name:"CdnType"`
-	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
 	Scope           string           `position:"Query" name:"Scope"`
+	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
+	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
 	DomainName      string           `position:"Query" name:"DomainName"`
 	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 	CheckUrl        string           `position:"Query" name:"CheckUrl"`
@@ -99,7 +99,7 @@ func CreateAddCdnDomainRequest() (request *AddCdnDomainRequest) {
 	request = &AddCdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "AddCdnDomain", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "AddCdnDomain", "", "")
 	return
 }
 

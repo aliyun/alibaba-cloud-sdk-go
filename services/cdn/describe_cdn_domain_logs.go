@@ -96,7 +96,7 @@ func CreateDescribeCdnDomainLogsRequest() (request *DescribeCdnDomainLogsRequest
 	request = &DescribeCdnDomainLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnDomainLogs", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnDomainLogs", "", "")
 	return
 }
 

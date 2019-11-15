@@ -76,9 +76,9 @@ func (client *Client) RefreshObjectCachesWithCallback(request *RefreshObjectCach
 // RefreshObjectCachesRequest is the request struct for api RefreshObjectCaches
 type RefreshObjectCachesRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	ObjectPath    string           `position:"Query" name:"ObjectPath"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	ObjectType    string           `position:"Query" name:"ObjectType"`
 }
 
@@ -94,7 +94,7 @@ func CreateRefreshObjectCachesRequest() (request *RefreshObjectCachesRequest) {
 	request = &RefreshObjectCachesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "RefreshObjectCaches", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "RefreshObjectCaches", "", "")
 	return
 }
 

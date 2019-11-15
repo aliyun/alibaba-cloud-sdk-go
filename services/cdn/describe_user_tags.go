@@ -91,7 +91,7 @@ func CreateDescribeUserTagsRequest() (request *DescribeUserTagsRequest) {
 	request = &DescribeUserTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeUserTags", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeUserTags", "", "")
 	return
 }
 

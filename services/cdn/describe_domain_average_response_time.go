@@ -94,10 +94,6 @@ type DescribeDomainAverageResponseTimeResponse struct {
 	DomainName       string           `json:"DomainName" xml:"DomainName"`
 	StartTime        string           `json:"StartTime" xml:"StartTime"`
 	EndTime          string           `json:"EndTime" xml:"EndTime"`
-	LocationNameEn   string           `json:"LocationNameEn" xml:"LocationNameEn"`
-	IspNameEn        string           `json:"IspNameEn" xml:"IspNameEn"`
-	LocationName     string           `json:"LocationName" xml:"LocationName"`
-	IspName          string           `json:"IspName" xml:"IspName"`
 	DataInterval     string           `json:"DataInterval" xml:"DataInterval"`
 	AvgRTPerInterval AvgRTPerInterval `json:"AvgRTPerInterval" xml:"AvgRTPerInterval"`
 }
@@ -107,7 +103,7 @@ func CreateDescribeDomainAverageResponseTimeRequest() (request *DescribeDomainAv
 	request = &DescribeDomainAverageResponseTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainAverageResponseTime", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainAverageResponseTime", "", "")
 	return
 }
 

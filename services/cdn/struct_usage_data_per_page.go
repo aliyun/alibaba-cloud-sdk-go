@@ -17,8 +17,8 @@ package cdn
 
 // UsageDataPerPage is a nested struct in cdn response
 type UsageDataPerPage struct {
-	TotalCount int                                         `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int                                         `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int                                         `json:"PageSize" xml:"PageSize"`
-	Data       DataInDescribeUserUsageDetailDataExportTask `json:"Data" xml:"Data"`
+	TotalCount int                                   `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int                                   `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                                   `json:"PageSize" xml:"PageSize"`
+	Data       DataInDescribeUserUsageDataExportTask `json:"Data" xml:"Data"`
 }

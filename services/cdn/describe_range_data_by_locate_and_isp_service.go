@@ -96,7 +96,7 @@ func CreateDescribeRangeDataByLocateAndIspServiceRequest() (request *DescribeRan
 	request = &DescribeRangeDataByLocateAndIspServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeRangeDataByLocateAndIspService", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeRangeDataByLocateAndIspService", "", "")
 	return
 }
 

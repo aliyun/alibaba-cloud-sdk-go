@@ -104,7 +104,7 @@ func CreateDescribeDomainUsageDataRequest() (request *DescribeDomainUsageDataReq
 	request = &DescribeDomainUsageDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainUsageData", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainUsageData", "", "")
 	return
 }
 

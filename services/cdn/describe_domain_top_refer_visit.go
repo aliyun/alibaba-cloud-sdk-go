@@ -79,6 +79,7 @@ type DescribeDomainTopReferVisitRequest struct {
 	StartTime  string           `position:"Query" name:"StartTime"`
 	Percent    string           `position:"Query" name:"Percent"`
 	DomainName string           `position:"Query" name:"DomainName"`
+	EndTime    string           `position:"Query" name:"EndTime"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 	SortBy     string           `position:"Query" name:"SortBy"`
 }
@@ -97,7 +98,7 @@ func CreateDescribeDomainTopReferVisitRequest() (request *DescribeDomainTopRefer
 	request = &DescribeDomainTopReferVisitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainTopReferVisit", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainTopReferVisit", "", "")
 	return
 }
 

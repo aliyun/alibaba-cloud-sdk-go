@@ -76,9 +76,9 @@ func (client *Client) DescribeCdnTypesWithCallback(request *DescribeCdnTypesRequ
 // DescribeCdnTypesRequest is the request struct for api DescribeCdnTypes
 type DescribeCdnTypesRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeCdnTypesResponse is the response struct for api DescribeCdnTypes
@@ -93,7 +93,7 @@ func CreateDescribeCdnTypesRequest() (request *DescribeCdnTypesRequest) {
 	request = &DescribeCdnTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnTypes", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeCdnTypes", "", "")
 	return
 }
 

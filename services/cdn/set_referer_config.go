@@ -77,11 +77,11 @@ func (client *Client) SetRefererConfigWithCallback(request *SetRefererConfigRequ
 type SetRefererConfigRequest struct {
 	*requests.RpcRequest
 	ReferList     string           `position:"Query" name:"ReferList"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	ReferType     string           `position:"Query" name:"ReferType"`
 	DisableAst    string           `position:"Query" name:"DisableAst"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	AllowEmpty    string           `position:"Query" name:"AllowEmpty"`
 }
 
@@ -96,7 +96,7 @@ func CreateSetRefererConfigRequest() (request *SetRefererConfigRequest) {
 	request = &SetRefererConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "SetRefererConfig", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetRefererConfig", "", "")
 	return
 }
 

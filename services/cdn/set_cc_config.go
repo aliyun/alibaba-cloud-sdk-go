@@ -76,10 +76,10 @@ func (client *Client) SetCcConfigWithCallback(request *SetCcConfigRequest, callb
 // SetCcConfigRequest is the request struct for api SetCcConfig
 type SetCcConfigRequest struct {
 	*requests.RpcRequest
-	AllowIps      string           `position:"Query" name:"AllowIps"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	AllowIps      string           `position:"Query" name:"AllowIps"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	BlockIps      string           `position:"Query" name:"BlockIps"`
 }
 
@@ -94,7 +94,7 @@ func CreateSetCcConfigRequest() (request *SetCcConfigRequest) {
 	request = &SetCcConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "SetCcConfig", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetCcConfig", "", "")
 	return
 }
 

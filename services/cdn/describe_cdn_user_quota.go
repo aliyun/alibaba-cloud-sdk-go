@@ -76,8 +76,8 @@ func (client *Client) DescribeCdnUserQuotaWithCallback(request *DescribeCdnUserQ
 // DescribeCdnUserQuotaRequest is the request struct for api DescribeCdnUserQuota
 type DescribeCdnUserQuotaRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeCdnUserQuotaResponse is the response struct for api DescribeCdnUserQuota
@@ -100,7 +100,7 @@ func CreateDescribeCdnUserQuotaRequest() (request *DescribeCdnUserQuotaRequest) 
 	request = &DescribeCdnUserQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnUserQuota", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnUserQuota", "", "")
 	return
 }
 

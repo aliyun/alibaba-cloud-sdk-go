@@ -76,12 +76,12 @@ func (client *Client) SetDomainServerCertificateWithCallback(request *SetDomainS
 // SetDomainServerCertificateRequest is the request struct for api SetDomainServerCertificate
 type SetDomainServerCertificateRequest struct {
 	*requests.RpcRequest
-	PrivateKey              string           `position:"Query" name:"PrivateKey"`
-	ForceSet                string           `position:"Query" name:"ForceSet"`
-	ServerCertificateStatus string           `position:"Query" name:"ServerCertificateStatus"`
 	ServerCertificate       string           `position:"Query" name:"ServerCertificate"`
+	PrivateKey              string           `position:"Query" name:"PrivateKey"`
+	ServerCertificateStatus string           `position:"Query" name:"ServerCertificateStatus"`
 	SecurityToken           string           `position:"Query" name:"SecurityToken"`
 	CertType                string           `position:"Query" name:"CertType"`
+	ForceSet                string           `position:"Query" name:"ForceSet"`
 	CertName                string           `position:"Query" name:"CertName"`
 	DomainName              string           `position:"Query" name:"DomainName"`
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
@@ -99,7 +99,7 @@ func CreateSetDomainServerCertificateRequest() (request *SetDomainServerCertific
 	request = &SetDomainServerCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "SetDomainServerCertificate", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetDomainServerCertificate", "", "")
 	return
 }
 

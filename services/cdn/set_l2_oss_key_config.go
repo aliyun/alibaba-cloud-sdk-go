@@ -78,7 +78,7 @@ type SetL2OssKeyConfigRequest struct {
 	*requests.RpcRequest
 	DomainName     string           `position:"Query" name:"DomainName"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	ConfigId       requests.Integer `position:"Query" name:"ConfigId"`
+	SecurityToken  string           `position:"Query" name:"SecurityToken"`
 	PrivateOssAuth string           `position:"Query" name:"PrivateOssAuth"`
 }
 
@@ -93,7 +93,7 @@ func CreateSetL2OssKeyConfigRequest() (request *SetL2OssKeyConfigRequest) {
 	request = &SetL2OssKeyConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "SetL2OssKeyConfig", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "SetL2OssKeyConfig", "", "")
 	return
 }
 

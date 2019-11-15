@@ -76,10 +76,10 @@ func (client *Client) DeleteSpecificConfigWithCallback(request *DeleteSpecificCo
 // DeleteSpecificConfigRequest is the request struct for api DeleteSpecificConfig
 type DeleteSpecificConfigRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	ConfigId      string           `position:"Query" name:"ConfigId"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	ConfigId      string           `position:"Query" name:"ConfigId"`
 }
 
 // DeleteSpecificConfigResponse is the response struct for api DeleteSpecificConfig
@@ -93,7 +93,7 @@ func CreateDeleteSpecificConfigRequest() (request *DeleteSpecificConfigRequest) 
 	request = &DeleteSpecificConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DeleteSpecificConfig", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DeleteSpecificConfig", "", "")
 	return
 }
 

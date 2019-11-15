@@ -76,10 +76,10 @@ func (client *Client) SetSourceHostConfigWithCallback(request *SetSourceHostConf
 // SetSourceHostConfigRequest is the request struct for api SetSourceHostConfig
 type SetSourceHostConfigRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	Enable        string           `position:"Query" name:"Enable"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	Enable        string           `position:"Query" name:"Enable"`
 	BackSrcDomain string           `position:"Query" name:"BackSrcDomain"`
 }
 
@@ -94,7 +94,7 @@ func CreateSetSourceHostConfigRequest() (request *SetSourceHostConfigRequest) {
 	request = &SetSourceHostConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "SetSourceHostConfig", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetSourceHostConfig", "", "")
 	return
 }
 

@@ -77,9 +77,9 @@ func (client *Client) DescribeCdnDomainConfigsWithCallback(request *DescribeCdnD
 type DescribeCdnDomainConfigsRequest struct {
 	*requests.RpcRequest
 	FunctionNames string           `position:"Query" name:"FunctionNames"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeCdnDomainConfigsResponse is the response struct for api DescribeCdnDomainConfigs
@@ -94,7 +94,7 @@ func CreateDescribeCdnDomainConfigsRequest() (request *DescribeCdnDomainConfigsR
 	request = &DescribeCdnDomainConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnDomainConfigs", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnDomainConfigs", "", "")
 	return
 }
 

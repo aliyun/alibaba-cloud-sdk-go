@@ -96,7 +96,7 @@ func CreateDescribeRealtimeDeliveryAccRequest() (request *DescribeRealtimeDelive
 	request = &DescribeRealtimeDeliveryAccRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeRealtimeDeliveryAcc", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeRealtimeDeliveryAcc", "", "")
 	return
 }
 

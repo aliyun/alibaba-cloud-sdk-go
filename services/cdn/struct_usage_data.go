@@ -17,10 +17,10 @@ package cdn
 
 // UsageData is a nested struct in cdn response
 type UsageData struct {
-	Path      string                                    `json:"Path" xml:"Path"`
-	Time      string                                    `json:"Time" xml:"Time"`
-	Traffic   int                                       `json:"Traffic" xml:"Traffic"`
-	TimeStamp string                                    `json:"TimeStamp" xml:"TimeStamp"`
-	Acc       int                                       `json:"Acc" xml:"Acc"`
-	Value     ValueInDescribeDomainRealTimeHttpCodeData `json:"Value" xml:"Value"`
+	Path      string                                      `json:"Path" xml:"Path"`
+	Time      string                                      `json:"Time" xml:"Time"`
+	Traffic   int                                         `json:"Traffic" xml:"Traffic"`
+	TimeStamp string                                      `json:"TimeStamp" xml:"TimeStamp"`
+	Acc       int                                         `json:"Acc" xml:"Acc"`
+	Value     ValueInDescribeDomainFileSizeProportionData `json:"Value" xml:"Value"`
 }

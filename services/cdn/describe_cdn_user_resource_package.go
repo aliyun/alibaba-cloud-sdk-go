@@ -76,8 +76,8 @@ func (client *Client) DescribeCdnUserResourcePackageWithCallback(request *Descri
 // DescribeCdnUserResourcePackageRequest is the request struct for api DescribeCdnUserResourcePackage
 type DescribeCdnUserResourcePackageRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeCdnUserResourcePackageResponse is the response struct for api DescribeCdnUserResourcePackage
@@ -92,7 +92,7 @@ func CreateDescribeCdnUserResourcePackageRequest() (request *DescribeCdnUserReso
 	request = &DescribeCdnUserResourcePackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnUserResourcePackage", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnUserResourcePackage", "", "")
 	return
 }
 

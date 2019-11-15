@@ -17,5 +17,5 @@ package cdn
 
 // FileSizeProportionDataInterval is a nested struct in cdn response
 type FileSizeProportionDataInterval struct {
-	UsageData []UsageDataInDescribeDomainFileSizeProportionData `json:"UsageData" xml:"UsageData"`
+	UsageData []UsageData `json:"UsageData" xml:"UsageData"`
 }

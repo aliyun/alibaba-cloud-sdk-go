@@ -76,12 +76,12 @@ func (client *Client) ModifyHttpHeaderConfigWithCallback(request *ModifyHttpHead
 // ModifyHttpHeaderConfigRequest is the request struct for api ModifyHttpHeaderConfig
 type ModifyHttpHeaderConfigRequest struct {
 	*requests.RpcRequest
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	HeaderValue   string           `position:"Query" name:"HeaderValue"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	ConfigID      string           `position:"Query" name:"ConfigID"`
-	DomainName    string           `position:"Query" name:"DomainName"`
 	HeaderKey     string           `position:"Query" name:"HeaderKey"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyHttpHeaderConfigResponse is the response struct for api ModifyHttpHeaderConfig
@@ -95,7 +95,7 @@ func CreateModifyHttpHeaderConfigRequest() (request *ModifyHttpHeaderConfigReque
 	request = &ModifyHttpHeaderConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "ModifyHttpHeaderConfig", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "ModifyHttpHeaderConfig", "", "")
 	return
 }
 

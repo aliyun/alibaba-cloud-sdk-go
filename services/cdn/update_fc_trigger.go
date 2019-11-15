@@ -95,7 +95,7 @@ func CreateUpdateFCTriggerRequest() (request *UpdateFCTriggerRequest) {
 	request = &UpdateFCTriggerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "UpdateFCTrigger", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "UpdateFCTrigger", "", "")
 	return
 }
 

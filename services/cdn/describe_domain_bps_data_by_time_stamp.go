@@ -97,7 +97,7 @@ func CreateDescribeDomainBpsDataByTimeStampRequest() (request *DescribeDomainBps
 	request = &DescribeDomainBpsDataByTimeStampRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainBpsDataByTimeStamp", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainBpsDataByTimeStamp", "", "")
 	return
 }
 

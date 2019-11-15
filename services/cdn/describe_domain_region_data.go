@@ -98,7 +98,7 @@ func CreateDescribeDomainRegionDataRequest() (request *DescribeDomainRegionDataR
 	request = &DescribeDomainRegionDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainRegionData", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainRegionData", "", "")
 	return
 }
 

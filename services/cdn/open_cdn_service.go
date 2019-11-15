@@ -76,9 +76,9 @@ func (client *Client) OpenCdnServiceWithCallback(request *OpenCdnServiceRequest,
 // OpenCdnServiceRequest is the request struct for api OpenCdnService
 type OpenCdnServiceRequest struct {
 	*requests.RpcRequest
+	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken      string           `position:"Query" name:"SecurityToken"`
 	InternetChargeType string           `position:"Query" name:"InternetChargeType"`
-	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // OpenCdnServiceResponse is the response struct for api OpenCdnService
@@ -92,7 +92,7 @@ func CreateOpenCdnServiceRequest() (request *OpenCdnServiceRequest) {
 	request = &OpenCdnServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "OpenCdnService", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "OpenCdnService", "", "")
 	return
 }
 

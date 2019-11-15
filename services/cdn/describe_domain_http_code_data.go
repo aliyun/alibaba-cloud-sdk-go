@@ -99,7 +99,7 @@ func CreateDescribeDomainHttpCodeDataRequest() (request *DescribeDomainHttpCodeD
 	request = &DescribeDomainHttpCodeDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainHttpCodeData", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainHttpCodeData", "", "")
 	return
 }
 

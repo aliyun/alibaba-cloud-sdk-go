@@ -31,8 +31,8 @@ type CertInfo struct {
 	ServerCertificateStatus string `json:"ServerCertificateStatus" xml:"ServerCertificateStatus"`
 	CertUpdateTime          string `json:"CertUpdateTime" xml:"CertUpdateTime"`
 	CertSubjectCommonName   string `json:"CertSubjectCommonName" xml:"CertSubjectCommonName"`
-	CertCommonName          string `json:"CertCommonName" xml:"CertCommonName"`
 	CertCaIsLegacy          string `json:"CertCaIsLegacy" xml:"CertCaIsLegacy"`
+	CertCommonName          string `json:"CertCommonName" xml:"CertCommonName"`
 	Status                  string `json:"Status" xml:"Status"`
 	CertExpired             string `json:"CertExpired" xml:"CertExpired"`
 	CertDomainName          string `json:"CertDomainName" xml:"CertDomainName"`

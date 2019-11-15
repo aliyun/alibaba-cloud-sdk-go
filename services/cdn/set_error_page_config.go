@@ -77,10 +77,10 @@ func (client *Client) SetErrorPageConfigWithCallback(request *SetErrorPageConfig
 type SetErrorPageConfigRequest struct {
 	*requests.RpcRequest
 	PageType      string           `position:"Query" name:"PageType"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	CustomPageUrl string           `position:"Query" name:"CustomPageUrl"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // SetErrorPageConfigResponse is the response struct for api SetErrorPageConfig
@@ -94,7 +94,7 @@ func CreateSetErrorPageConfigRequest() (request *SetErrorPageConfigRequest) {
 	request = &SetErrorPageConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "SetErrorPageConfig", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetErrorPageConfig", "", "")
 	return
 }
 

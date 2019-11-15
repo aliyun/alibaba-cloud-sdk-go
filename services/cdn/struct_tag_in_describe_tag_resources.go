@@ -17,5 +17,5 @@ package cdn
 
 // TagInDescribeTagResources is a nested struct in cdn response
 type TagInDescribeTagResources struct {
-	TagItem []TagItem `json:"TagItem" xml:"TagItem"`
+	TagItem []TagItem `json:"Tag" xml:"Tag"`
 }

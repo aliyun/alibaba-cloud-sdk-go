@@ -97,7 +97,7 @@ func CreateCreateUserUsageDataExportTaskRequest() (request *CreateUserUsageDataE
 	request = &CreateUserUsageDataExportTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "CreateUserUsageDataExportTask", "cdn", "openAPI")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "CreateUserUsageDataExportTask", "", "")
 	return
 }
 
