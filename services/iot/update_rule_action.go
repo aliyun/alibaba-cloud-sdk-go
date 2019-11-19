@@ -77,9 +77,9 @@ func (client *Client) UpdateRuleActionWithCallback(request *UpdateRuleActionRequ
 type UpdateRuleActionRequest struct {
 	*requests.RpcRequest
 	Configuration string           `position:"Query" name:"Configuration"`
+	Type          string           `position:"Query" name:"Type"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	ActionId      requests.Integer `position:"Query" name:"ActionId"`
-	Type          string           `position:"Query" name:"Type"`
 }
 
 // UpdateRuleActionResponse is the response struct for api UpdateRuleAction

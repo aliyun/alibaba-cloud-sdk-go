@@ -76,8 +76,8 @@ func (client *Client) ListProductTagsWithCallback(request *ListProductTagsReques
 // ListProductTagsRequest is the request struct for api ListProductTags
 type ListProductTagsRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 	ProductKey    string `position:"Query" name:"ProductKey"`
+	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 }
 
 // ListProductTagsResponse is the response struct for api ListProductTags

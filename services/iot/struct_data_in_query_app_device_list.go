@@ -17,5 +17,5 @@ package iot
 
 // DataInQueryAppDeviceList is a nested struct in iot response
 type DataInQueryAppDeviceList struct {
-	DataItem []DataItem `json:"DataItem" xml:"DataItem"`
+	DataItem []DataItem `json:"Data" xml:"Data"`
 }

@@ -77,20 +77,20 @@ func (client *Client) QueryDeviceDesiredPropertyWithCallback(request *QueryDevic
 type QueryDeviceDesiredPropertyRequest struct {
 	*requests.RpcRequest
 	Identifier    *[]string `position:"Query" name:"Identifier"  type:"Repeated"`
+	ProductKey    string    `position:"Query" name:"ProductKey"`
 	IotId         string    `position:"Query" name:"IotId"`
 	IotInstanceId string    `position:"Query" name:"IotInstanceId"`
 	DeviceName    string    `position:"Query" name:"DeviceName"`
-	ProductKey    string    `position:"Query" name:"ProductKey"`
 }
 
 // QueryDeviceDesiredPropertyResponse is the response struct for api QueryDeviceDesiredProperty
 type QueryDeviceDesiredPropertyResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	Code         string `json:"Code" xml:"Code"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data         Data   `json:"Data" xml:"Data"`
+	RequestId    string                           `json:"RequestId" xml:"RequestId"`
+	Success      bool                             `json:"Success" xml:"Success"`
+	Code         string                           `json:"Code" xml:"Code"`
+	ErrorMessage string                           `json:"ErrorMessage" xml:"ErrorMessage"`
+	Data         DataInQueryDeviceDesiredProperty `json:"Data" xml:"Data"`
 }
 
 // CreateQueryDeviceDesiredPropertyRequest creates a request to invoke QueryDeviceDesiredProperty API

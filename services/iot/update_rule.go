@@ -78,13 +78,13 @@ type UpdateRuleRequest struct {
 	*requests.RpcRequest
 	Select        string           `position:"Query" name:"Select"`
 	RuleDesc      string           `position:"Query" name:"RuleDesc"`
-	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
-	Name          string           `position:"Query" name:"Name"`
-	Where         string           `position:"Query" name:"Where"`
-	RuleId        requests.Integer `position:"Query" name:"RuleId"`
-	ProductKey    string           `position:"Query" name:"ProductKey"`
-	TopicType     requests.Integer `position:"Query" name:"TopicType"`
 	ShortTopic    string           `position:"Query" name:"ShortTopic"`
+	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
+	Where         string           `position:"Query" name:"Where"`
+	TopicType     requests.Integer `position:"Query" name:"TopicType"`
+	ProductKey    string           `position:"Query" name:"ProductKey"`
+	Name          string           `position:"Query" name:"Name"`
+	RuleId        requests.Integer `position:"Query" name:"RuleId"`
 }
 
 // UpdateRuleResponse is the response struct for api UpdateRule

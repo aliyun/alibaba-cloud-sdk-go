@@ -76,12 +76,12 @@ func (client *Client) RRpcWithCallback(request *RRpcRequest, callback func(respo
 // RRpcRequest is the request struct for api RRpc
 type RRpcRequest struct {
 	*requests.RpcRequest
-	IotInstanceId     string           `position:"Query" name:"IotInstanceId"`
 	RequestBase64Byte string           `position:"Query" name:"RequestBase64Byte"`
-	Topic             string           `position:"Query" name:"Topic"`
-	DeviceName        string           `position:"Query" name:"DeviceName"`
 	ProductKey        string           `position:"Query" name:"ProductKey"`
 	Timeout           requests.Integer `position:"Query" name:"Timeout"`
+	IotInstanceId     string           `position:"Query" name:"IotInstanceId"`
+	Topic             string           `position:"Query" name:"Topic"`
+	DeviceName        string           `position:"Query" name:"DeviceName"`
 }
 
 // RRpcResponse is the response struct for api RRpc

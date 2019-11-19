@@ -76,9 +76,9 @@ func (client *Client) SetDevicesPropertyWithCallback(request *SetDevicesProperty
 // SetDevicesPropertyRequest is the request struct for api SetDevicesProperty
 type SetDevicesPropertyRequest struct {
 	*requests.RpcRequest
+	ProductKey    string    `position:"Query" name:"ProductKey"`
 	IotInstanceId string    `position:"Query" name:"IotInstanceId"`
 	DeviceName    *[]string `position:"Query" name:"DeviceName"  type:"Repeated"`
-	ProductKey    string    `position:"Query" name:"ProductKey"`
 	Items         string    `position:"Query" name:"Items"`
 }
 

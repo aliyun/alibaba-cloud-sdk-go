@@ -78,13 +78,13 @@ type CreateRuleRequest struct {
 	*requests.RpcRequest
 	Select        string           `position:"Query" name:"Select"`
 	RuleDesc      string           `position:"Query" name:"RuleDesc"`
+	ProductKey    string           `position:"Query" name:"ProductKey"`
+	ShortTopic    string           `position:"Query" name:"ShortTopic"`
 	DataType      string           `position:"Query" name:"DataType"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	Name          string           `position:"Query" name:"Name"`
 	Where         string           `position:"Query" name:"Where"`
-	ProductKey    string           `position:"Query" name:"ProductKey"`
 	TopicType     requests.Integer `position:"Query" name:"TopicType"`
-	ShortTopic    string           `position:"Query" name:"ShortTopic"`
 }
 
 // CreateRuleResponse is the response struct for api CreateRule

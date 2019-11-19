@@ -76,16 +76,16 @@ func (client *Client) QueryDeviceEventDataWithCallback(request *QueryDeviceEvent
 // QueryDeviceEventDataRequest is the request struct for api QueryDeviceEventData
 type QueryDeviceEventDataRequest struct {
 	*requests.RpcRequest
-	Asc           requests.Integer `position:"Query" name:"Asc"`
-	Identifier    string           `position:"Query" name:"Identifier"`
+	StartTime     requests.Integer `position:"Query" name:"StartTime"`
 	IotId         string           `position:"Query" name:"IotId"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	Identifier    string           `position:"Query" name:"Identifier"`
 	EndTime       requests.Integer `position:"Query" name:"EndTime"`
+	ProductKey    string           `position:"Query" name:"ProductKey"`
+	Asc           requests.Integer `position:"Query" name:"Asc"`
 	EventType     string           `position:"Query" name:"EventType"`
 	DeviceName    string           `position:"Query" name:"DeviceName"`
-	StartTime     requests.Integer `position:"Query" name:"StartTime"`
-	ProductKey    string           `position:"Query" name:"ProductKey"`
 }
 
 // QueryDeviceEventDataResponse is the response struct for api QueryDeviceEventData

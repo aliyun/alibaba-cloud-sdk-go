@@ -22,6 +22,7 @@ type ProductInfo struct {
 	DataFormat  int    `json:"DataFormat" xml:"DataFormat"`
 	ProductKey  string `json:"ProductKey" xml:"ProductKey"`
 	DeviceCount int    `json:"DeviceCount" xml:"DeviceCount"`
+	AuthType    string `json:"AuthType" xml:"AuthType"`
 	CreateTime  int64  `json:"CreateTime" xml:"CreateTime"`
 	NodeType    int    `json:"NodeType" xml:"NodeType"`
 	Description string `json:"Description" xml:"Description"`

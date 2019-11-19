@@ -76,9 +76,9 @@ func (client *Client) BatchCheckDeviceNamesWithCallback(request *BatchCheckDevic
 // BatchCheckDeviceNamesRequest is the request struct for api BatchCheckDeviceNames
 type BatchCheckDeviceNamesRequest struct {
 	*requests.RpcRequest
+	ProductKey    string    `position:"Query" name:"ProductKey"`
 	IotInstanceId string    `position:"Query" name:"IotInstanceId"`
 	DeviceName    *[]string `position:"Query" name:"DeviceName"  type:"Repeated"`
-	ProductKey    string    `position:"Query" name:"ProductKey"`
 }
 
 // BatchCheckDeviceNamesResponse is the response struct for api BatchCheckDeviceNames

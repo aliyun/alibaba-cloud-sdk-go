@@ -76,9 +76,9 @@ func (client *Client) DeleteProductTagsWithCallback(request *DeleteProductTagsRe
 // DeleteProductTagsRequest is the request struct for api DeleteProductTags
 type DeleteProductTagsRequest struct {
 	*requests.RpcRequest
+	ProductKey    string    `position:"Query" name:"ProductKey"`
 	IotInstanceId string    `position:"Query" name:"IotInstanceId"`
 	ProductTagKey *[]string `position:"Query" name:"ProductTagKey"  type:"Repeated"`
-	ProductKey    string    `position:"Query" name:"ProductKey"`
 }
 
 // DeleteProductTagsResponse is the response struct for api DeleteProductTags

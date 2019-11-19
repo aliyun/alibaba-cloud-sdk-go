@@ -76,12 +76,12 @@ func (client *Client) QueryDeviceFileListWithCallback(request *QueryDeviceFileLi
 // QueryDeviceFileListRequest is the request struct for api QueryDeviceFileList
 type QueryDeviceFileListRequest struct {
 	*requests.RpcRequest
+	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
+	ProductKey    string           `position:"Query" name:"ProductKey"`
 	IotId         string           `position:"Query" name:"IotId"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 	DeviceName    string           `position:"Query" name:"DeviceName"`
-	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
-	ProductKey    string           `position:"Query" name:"ProductKey"`
 }
 
 // QueryDeviceFileListResponse is the response struct for api QueryDeviceFileList

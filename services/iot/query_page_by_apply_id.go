@@ -76,10 +76,10 @@ func (client *Client) QueryPageByApplyIdWithCallback(request *QueryPageByApplyId
 // QueryPageByApplyIdRequest is the request struct for api QueryPageByApplyId
 type QueryPageByApplyIdRequest struct {
 	*requests.RpcRequest
+	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
 	ApplyId       requests.Integer `position:"Query" name:"ApplyId"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
 }
 
 // QueryPageByApplyIdResponse is the response struct for api QueryPageByApplyId

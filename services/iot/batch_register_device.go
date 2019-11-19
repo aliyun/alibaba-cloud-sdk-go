@@ -76,9 +76,9 @@ func (client *Client) BatchRegisterDeviceWithCallback(request *BatchRegisterDevi
 // BatchRegisterDeviceRequest is the request struct for api BatchRegisterDevice
 type BatchRegisterDeviceRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	Count         requests.Integer `position:"Query" name:"Count"`
 	ProductKey    string           `position:"Query" name:"ProductKey"`
+	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 }
 
 // BatchRegisterDeviceResponse is the response struct for api BatchRegisterDevice

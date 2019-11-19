@@ -76,9 +76,9 @@ func (client *Client) QueryDeviceByTagsWithCallback(request *QueryDeviceByTagsRe
 // QueryDeviceByTagsRequest is the request struct for api QueryDeviceByTags
 type QueryDeviceByTagsRequest struct {
 	*requests.RpcRequest
+	CurrentPage   requests.Integer        `position:"Query" name:"CurrentPage"`
 	IotInstanceId string                  `position:"Query" name:"IotInstanceId"`
 	PageSize      requests.Integer        `position:"Query" name:"PageSize"`
-	CurrentPage   requests.Integer        `position:"Query" name:"CurrentPage"`
 	Tag           *[]QueryDeviceByTagsTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 

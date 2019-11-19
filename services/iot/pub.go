@@ -77,10 +77,10 @@ func (client *Client) PubWithCallback(request *PubRequest, callback func(respons
 type PubRequest struct {
 	*requests.RpcRequest
 	TopicFullName  string           `position:"Query" name:"TopicFullName"`
-	Qos            requests.Integer `position:"Query" name:"Qos"`
 	MessageContent string           `position:"Query" name:"MessageContent"`
-	IotInstanceId  string           `position:"Query" name:"IotInstanceId"`
 	ProductKey     string           `position:"Query" name:"ProductKey"`
+	Qos            requests.Integer `position:"Query" name:"Qos"`
+	IotInstanceId  string           `position:"Query" name:"IotInstanceId"`
 }
 
 // PubResponse is the response struct for api Pub

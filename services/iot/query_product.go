@@ -76,18 +76,18 @@ func (client *Client) QueryProductWithCallback(request *QueryProductRequest, cal
 // QueryProductRequest is the request struct for api QueryProduct
 type QueryProductRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 	ProductKey    string `position:"Query" name:"ProductKey"`
+	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 }
 
 // QueryProductResponse is the response struct for api QueryProduct
 type QueryProductResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	Code         string `json:"Code" xml:"Code"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data         Data   `json:"Data" xml:"Data"`
+	RequestId    string             `json:"RequestId" xml:"RequestId"`
+	Success      bool               `json:"Success" xml:"Success"`
+	Code         string             `json:"Code" xml:"Code"`
+	ErrorMessage string             `json:"ErrorMessage" xml:"ErrorMessage"`
+	Data         DataInQueryProduct `json:"Data" xml:"Data"`
 }
 
 // CreateQueryProductRequest creates a request to invoke QueryProduct API

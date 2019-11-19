@@ -76,17 +76,19 @@ func (client *Client) CreateProductWithCallback(request *CreateProductRequest, c
 // CreateProductRequest is the request struct for api CreateProduct
 type CreateProductRequest struct {
 	*requests.RpcRequest
-	DataFormat          requests.Integer `position:"Query" name:"DataFormat"`
 	NodeType            requests.Integer `position:"Query" name:"NodeType"`
-	Id2                 requests.Boolean `position:"Query" name:"Id2"`
-	IotInstanceId       string           `position:"Query" name:"IotInstanceId"`
-	NetType             string           `position:"Query" name:"NetType"`
-	ProductName         string           `position:"Query" name:"ProductName"`
 	Description         string           `position:"Query" name:"Description"`
-	ProtocolType        string           `position:"Query" name:"ProtocolType"`
-	AliyunCommodityCode string           `position:"Query" name:"AliyunCommodityCode"`
 	JoinPermissionId    string           `position:"Query" name:"JoinPermissionId"`
+	AuthType            string           `position:"Query" name:"AuthType"`
+	ResourceGroupId     string           `position:"Query" name:"ResourceGroupId"`
+	IotInstanceId       string           `position:"Query" name:"IotInstanceId"`
+	ProductName         string           `position:"Query" name:"ProductName"`
+	AliyunCommodityCode string           `position:"Query" name:"AliyunCommodityCode"`
 	CategoryId          requests.Integer `position:"Query" name:"CategoryId"`
+	DataFormat          requests.Integer `position:"Query" name:"DataFormat"`
+	Id2                 requests.Boolean `position:"Query" name:"Id2"`
+	NetType             string           `position:"Query" name:"NetType"`
+	ProtocolType        string           `position:"Query" name:"ProtocolType"`
 }
 
 // CreateProductResponse is the response struct for api CreateProduct

@@ -76,10 +76,10 @@ func (client *Client) ListProductByTagsWithCallback(request *ListProductByTagsRe
 // ListProductByTagsRequest is the request struct for api ListProductByTags
 type ListProductByTagsRequest struct {
 	*requests.RpcRequest
+	CurrentPage   requests.Integer               `position:"Query" name:"CurrentPage"`
 	ProductTag    *[]ListProductByTagsProductTag `position:"Query" name:"ProductTag"  type:"Repeated"`
 	IotInstanceId string                         `position:"Query" name:"IotInstanceId"`
 	PageSize      requests.Integer               `position:"Query" name:"PageSize"`
-	CurrentPage   requests.Integer               `position:"Query" name:"CurrentPage"`
 }
 
 // ListProductByTagsProductTag is a repeated param struct in ListProductByTagsRequest

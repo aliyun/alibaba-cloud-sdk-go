@@ -77,11 +77,11 @@ func (client *Client) RegisterDeviceWithCallback(request *RegisterDeviceRequest,
 type RegisterDeviceRequest struct {
 	*requests.RpcRequest
 	PinCode       string `position:"Query" name:"PinCode"`
+	ProductKey    string `position:"Query" name:"ProductKey"`
+	DevEui        string `position:"Query" name:"DevEui"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 	Nickname      string `position:"Query" name:"Nickname"`
 	DeviceName    string `position:"Query" name:"DeviceName"`
-	ProductKey    string `position:"Query" name:"ProductKey"`
-	DevEui        string `position:"Query" name:"DevEui"`
 }
 
 // RegisterDeviceResponse is the response struct for api RegisterDevice

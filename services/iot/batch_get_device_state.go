@@ -76,10 +76,10 @@ func (client *Client) BatchGetDeviceStateWithCallback(request *BatchGetDeviceSta
 // BatchGetDeviceStateRequest is the request struct for api BatchGetDeviceState
 type BatchGetDeviceStateRequest struct {
 	*requests.RpcRequest
+	ProductKey    string    `position:"Query" name:"ProductKey"`
 	IotId         *[]string `position:"Query" name:"IotId"  type:"Repeated"`
 	IotInstanceId string    `position:"Query" name:"IotInstanceId"`
 	DeviceName    *[]string `position:"Query" name:"DeviceName"  type:"Repeated"`
-	ProductKey    string    `position:"Query" name:"ProductKey"`
 }
 
 // BatchGetDeviceStateResponse is the response struct for api BatchGetDeviceState

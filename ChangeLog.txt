@@ -1,3 +1,6 @@
+2019-11-19 Version: 1.60.249
+- Generated 2018-01-20 for `Iot`.
+
 2019-11-15 Version: 1.60.248
 - Nlp Automl SDK.
 

@@ -76,8 +76,8 @@ func (client *Client) CreateLoRaNodesTaskWithCallback(request *CreateLoRaNodesTa
 // CreateLoRaNodesTaskRequest is the request struct for api CreateLoRaNodesTask
 type CreateLoRaNodesTaskRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string                           `position:"Query" name:"IotInstanceId"`
 	ProductKey    string                           `position:"Query" name:"ProductKey"`
+	IotInstanceId string                           `position:"Query" name:"IotInstanceId"`
 	DeviceInfo    *[]CreateLoRaNodesTaskDeviceInfo `position:"Query" name:"DeviceInfo"  type:"Repeated"`
 }
 

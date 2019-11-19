@@ -18,15 +18,24 @@ package iot
 // DataItem is a nested struct in iot response
 type DataItem struct {
 	ProductName       string `json:"ProductName" xml:"ProductName"`
-	ProductKey        string `json:"ProductKey" xml:"ProductKey"`
-	DeviceName        string `json:"DeviceName" xml:"DeviceName"`
-	NodeType          int    `json:"NodeType" xml:"NodeType"`
-	Status            string `json:"Status" xml:"Status"`
+	Region            string `json:"Region" xml:"Region"`
+	DeviceSecret      string `json:"DeviceSecret" xml:"DeviceSecret"`
 	ActiveTime        string `json:"ActiveTime" xml:"ActiveTime"`
-	LastOnlineTime    string `json:"LastOnlineTime" xml:"LastOnlineTime"`
+	ProductKey        string `json:"ProductKey" xml:"ProductKey"`
 	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
+	UtcCreate         string `json:"UtcCreate" xml:"UtcCreate"`
 	ChildDeviceCount  int64  `json:"ChildDeviceCount" xml:"ChildDeviceCount"`
+	UtcActive         string `json:"UtcActive" xml:"UtcActive"`
+	DeviceName        string `json:"DeviceName" xml:"DeviceName"`
+	Nickname          string `json:"Nickname" xml:"Nickname"`
+	GmtCreate         string `json:"GmtCreate" xml:"GmtCreate"`
 	UtcActiveTime     string `json:"UtcActiveTime" xml:"UtcActiveTime"`
-	UtcLastOnlineTime string `json:"UtcLastOnlineTime" xml:"UtcLastOnlineTime"`
+	FirmwareVersion   string `json:"FirmwareVersion" xml:"FirmwareVersion"`
+	IotId             string `json:"IotId" xml:"IotId"`
+	GmtActive         string `json:"GmtActive" xml:"GmtActive"`
+	LastOnlineTime    string `json:"LastOnlineTime" xml:"LastOnlineTime"`
 	UtcCreateTime     string `json:"UtcCreateTime" xml:"UtcCreateTime"`
+	Status            string `json:"Status" xml:"Status"`
+	UtcLastOnlineTime string `json:"UtcLastOnlineTime" xml:"UtcLastOnlineTime"`
+	NodeType          int    `json:"NodeType" xml:"NodeType"`
 }

@@ -17,5 +17,5 @@ package iot
 
 // RequestParams is a nested struct in iot response
 type RequestParams struct {
-	RequestParamsItem []RequestParamsItem `json:"RequestParamsItem" xml:"RequestParamsItem"`
+	RequestParamsItem []RequestParamsItem `json:"RequestParams" xml:"RequestParams"`
 }

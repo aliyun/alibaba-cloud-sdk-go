@@ -76,9 +76,10 @@ func (client *Client) QueryProductListWithCallback(request *QueryProductListRequ
 // QueryProductListRequest is the request struct for api QueryProductList
 type QueryProductListRequest struct {
 	*requests.RpcRequest
+	CurrentPage         requests.Integer `position:"Query" name:"CurrentPage"`
+	ResourceGroupId     string           `position:"Query" name:"ResourceGroupId"`
 	IotInstanceId       string           `position:"Query" name:"IotInstanceId"`
 	PageSize            requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage         requests.Integer `position:"Query" name:"CurrentPage"`
 	AliyunCommodityCode string           `position:"Query" name:"AliyunCommodityCode"`
 }
 

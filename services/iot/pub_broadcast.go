@@ -78,8 +78,8 @@ type PubBroadcastRequest struct {
 	*requests.RpcRequest
 	TopicFullName  string `position:"Query" name:"TopicFullName"`
 	MessageContent string `position:"Query" name:"MessageContent"`
-	IotInstanceId  string `position:"Query" name:"IotInstanceId"`
 	ProductKey     string `position:"Query" name:"ProductKey"`
+	IotInstanceId  string `position:"Query" name:"IotInstanceId"`
 }
 
 // PubBroadcastResponse is the response struct for api PubBroadcast

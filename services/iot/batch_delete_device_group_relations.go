@@ -76,8 +76,8 @@ func (client *Client) BatchDeleteDeviceGroupRelationsWithCallback(request *Batch
 // BatchDeleteDeviceGroupRelationsRequest is the request struct for api BatchDeleteDeviceGroupRelations
 type BatchDeleteDeviceGroupRelationsRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string                                   `position:"Query" name:"IotInstanceId"`
 	GroupId       string                                   `position:"Query" name:"GroupId"`
+	IotInstanceId string                                   `position:"Query" name:"IotInstanceId"`
 	Device        *[]BatchDeleteDeviceGroupRelationsDevice `position:"Query" name:"Device"  type:"Repeated"`
 }
 

@@ -76,10 +76,10 @@ func (client *Client) DisableThingWithCallback(request *DisableThingRequest, cal
 // DisableThingRequest is the request struct for api DisableThing
 type DisableThingRequest struct {
 	*requests.RpcRequest
+	ProductKey    string `position:"Query" name:"ProductKey"`
 	IotId         string `position:"Query" name:"IotId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 	DeviceName    string `position:"Query" name:"DeviceName"`
-	ProductKey    string `position:"Query" name:"ProductKey"`
 }
 
 // DisableThingResponse is the response struct for api DisableThing

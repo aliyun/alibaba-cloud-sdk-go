@@ -76,18 +76,18 @@ func (client *Client) CreateDataAPIServiceWithCallback(request *CreateDataAPISer
 // CreateDataAPIServiceRequest is the request struct for api CreateDataAPIService
 type CreateDataAPIServiceRequest struct {
 	*requests.RpcRequest
-	ResponseParam *[]CreateDataAPIServiceResponseParam `position:"Body" name:"ResponseParam"  type:"Repeated"`
-	OriginSql     string                               `position:"Query" name:"OriginSql"`
-	DisplayName   string                               `position:"Query" name:"DisplayName"`
 	ApiPath       string                               `position:"Query" name:"ApiPath"`
 	RequestParam  *[]CreateDataAPIServiceRequestParam  `position:"Body" name:"RequestParam"  type:"Repeated"`
 	FolderId      string                               `position:"Query" name:"FolderId"`
 	TemplateSql   string                               `position:"Query" name:"TemplateSql"`
+	ResponseParam *[]CreateDataAPIServiceResponseParam `position:"Body" name:"ResponseParam"  type:"Repeated"`
+	OriginSql     string                               `position:"Query" name:"OriginSql"`
+	DisplayName   string                               `position:"Query" name:"DisplayName"`
 	Desc          string                               `position:"Query" name:"Desc"`
 }
 
-// CreateDataAPIServiceResponseParam is a repeated param struct in CreateDataAPIServiceRequest
-type CreateDataAPIServiceResponseParam struct {
+// CreateDataAPIServiceRequestParam is a repeated param struct in CreateDataAPIServiceRequest
+type CreateDataAPIServiceRequestParam struct {
 	Name     string `name:"Name"`
 	Type     string `name:"Type"`
 	Required string `name:"Required"`
@@ -95,8 +95,8 @@ type CreateDataAPIServiceResponseParam struct {
 	Example  string `name:"Example"`
 }
 
-// CreateDataAPIServiceRequestParam is a repeated param struct in CreateDataAPIServiceRequest
-type CreateDataAPIServiceRequestParam struct {
+// CreateDataAPIServiceResponseParam is a repeated param struct in CreateDataAPIServiceRequest
+type CreateDataAPIServiceResponseParam struct {
 	Name     string `name:"Name"`
 	Type     string `name:"Type"`
 	Required string `name:"Required"`

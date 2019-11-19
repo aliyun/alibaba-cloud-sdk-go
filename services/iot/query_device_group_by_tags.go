@@ -76,9 +76,9 @@ func (client *Client) QueryDeviceGroupByTagsWithCallback(request *QueryDeviceGro
 // QueryDeviceGroupByTagsRequest is the request struct for api QueryDeviceGroupByTags
 type QueryDeviceGroupByTagsRequest struct {
 	*requests.RpcRequest
+	CurrentPage   requests.Integer             `position:"Query" name:"CurrentPage"`
 	IotInstanceId string                       `position:"Query" name:"IotInstanceId"`
 	PageSize      requests.Integer             `position:"Query" name:"PageSize"`
-	CurrentPage   requests.Integer             `position:"Query" name:"CurrentPage"`
 	Tag           *[]QueryDeviceGroupByTagsTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 

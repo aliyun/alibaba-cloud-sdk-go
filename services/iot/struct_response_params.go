@@ -17,5 +17,5 @@ package iot
 
 // ResponseParams is a nested struct in iot response
 type ResponseParams struct {
-	ResponseParamsItem []ResponseParamsItem `json:"ResponseParamsItem" xml:"ResponseParamsItem"`
+	ResponseParamsItem []ResponseParamsItem `json:"ResponseParams" xml:"ResponseParams"`
 }

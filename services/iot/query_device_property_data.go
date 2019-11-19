@@ -76,15 +76,15 @@ func (client *Client) QueryDevicePropertyDataWithCallback(request *QueryDevicePr
 // QueryDevicePropertyDataRequest is the request struct for api QueryDevicePropertyData
 type QueryDevicePropertyDataRequest struct {
 	*requests.RpcRequest
-	Asc           requests.Integer `position:"Query" name:"Asc"`
 	Identifier    string           `position:"Query" name:"Identifier"`
+	EndTime       requests.Integer `position:"Query" name:"EndTime"`
+	StartTime     requests.Integer `position:"Query" name:"StartTime"`
+	ProductKey    string           `position:"Query" name:"ProductKey"`
+	Asc           requests.Integer `position:"Query" name:"Asc"`
 	IotId         string           `position:"Query" name:"IotId"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	EndTime       requests.Integer `position:"Query" name:"EndTime"`
 	DeviceName    string           `position:"Query" name:"DeviceName"`
-	StartTime     requests.Integer `position:"Query" name:"StartTime"`
-	ProductKey    string           `position:"Query" name:"ProductKey"`
 }
 
 // QueryDevicePropertyDataResponse is the response struct for api QueryDevicePropertyData

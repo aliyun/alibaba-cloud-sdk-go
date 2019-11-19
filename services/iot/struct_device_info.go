@@ -22,8 +22,8 @@ type DeviceInfo struct {
 	Nickname     string `json:"Nickname" xml:"Nickname"`
 	IotId        string `json:"IotId" xml:"IotId"`
 	DeviceSecret string `json:"DeviceSecret" xml:"DeviceSecret"`
-	DeviceId     string `json:"DeviceId" xml:"DeviceId"`
 	ProductKey   string `json:"ProductKey" xml:"ProductKey"`
+	DeviceId     string `json:"DeviceId" xml:"DeviceId"`
 	DeviceStatus string `json:"DeviceStatus" xml:"DeviceStatus"`
 	GmtModified  string `json:"GmtModified" xml:"GmtModified"`
 	DeviceType   string `json:"DeviceType" xml:"DeviceType"`

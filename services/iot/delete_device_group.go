@@ -76,8 +76,8 @@ func (client *Client) DeleteDeviceGroupWithCallback(request *DeleteDeviceGroupRe
 // DeleteDeviceGroupRequest is the request struct for api DeleteDeviceGroup
 type DeleteDeviceGroupRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 	GroupId       string `position:"Query" name:"GroupId"`
+	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 }
 
 // DeleteDeviceGroupResponse is the response struct for api DeleteDeviceGroup

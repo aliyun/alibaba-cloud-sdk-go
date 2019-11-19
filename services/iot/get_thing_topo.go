@@ -76,22 +76,22 @@ func (client *Client) GetThingTopoWithCallback(request *GetThingTopoRequest, cal
 // GetThingTopoRequest is the request struct for api GetThingTopo
 type GetThingTopoRequest struct {
 	*requests.RpcRequest
+	ProductKey    string           `position:"Query" name:"ProductKey"`
 	IotId         string           `position:"Query" name:"IotId"`
 	PageNo        requests.Integer `position:"Query" name:"PageNo"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 	DeviceName    string           `position:"Query" name:"DeviceName"`
-	ProductKey    string           `position:"Query" name:"ProductKey"`
 }
 
 // GetThingTopoResponse is the response struct for api GetThingTopo
 type GetThingTopoResponse struct {
 	*responses.BaseResponse
-	RequestId    string             `json:"RequestId" xml:"RequestId"`
-	Success      bool               `json:"Success" xml:"Success"`
-	Code         string             `json:"Code" xml:"Code"`
-	ErrorMessage string             `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data         DataInGetThingTopo `json:"Data" xml:"Data"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	Success      bool   `json:"Success" xml:"Success"`
+	Code         string `json:"Code" xml:"Code"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Data         Data   `json:"Data" xml:"Data"`
 }
 
 // CreateGetThingTopoRequest creates a request to invoke GetThingTopo API

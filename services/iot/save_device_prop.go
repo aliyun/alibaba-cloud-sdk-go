@@ -76,11 +76,11 @@ func (client *Client) SaveDevicePropWithCallback(request *SaveDevicePropRequest,
 // SaveDevicePropRequest is the request struct for api SaveDeviceProp
 type SaveDevicePropRequest struct {
 	*requests.RpcRequest
+	ProductKey    string `position:"Query" name:"ProductKey"`
+	Props         string `position:"Query" name:"Props"`
 	IotId         string `position:"Query" name:"IotId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 	DeviceName    string `position:"Query" name:"DeviceName"`
-	ProductKey    string `position:"Query" name:"ProductKey"`
-	Props         string `position:"Query" name:"Props"`
 }
 
 // SaveDevicePropResponse is the response struct for api SaveDeviceProp

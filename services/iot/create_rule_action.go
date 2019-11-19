@@ -77,9 +77,9 @@ func (client *Client) CreateRuleActionWithCallback(request *CreateRuleActionRequ
 type CreateRuleActionRequest struct {
 	*requests.RpcRequest
 	Configuration   string           `position:"Query" name:"Configuration"`
+	Type            string           `position:"Query" name:"Type"`
 	IotInstanceId   string           `position:"Query" name:"IotInstanceId"`
 	RuleId          requests.Integer `position:"Query" name:"RuleId"`
-	Type            string           `position:"Query" name:"Type"`
 	ErrorActionFlag requests.Boolean `position:"Query" name:"ErrorActionFlag"`
 }
 
