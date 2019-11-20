@@ -1,3 +1,6 @@
+2019-11-20 Version: 1.60.253
+- Add new pop api.
+
 2019-11-20 Version: 1.60.252
 - Supported ecsDemand CreateDemand, ModifyDemand, DeleteDemand API.
 - Modify ecsDemand DescribesDemands API.
