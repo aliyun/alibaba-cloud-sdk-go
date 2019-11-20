@@ -1,3 +1,6 @@
+2019-11-20 Version: 1.60.251
+- Generated 2019-01-01 for `HBase`.
+
 2019-11-20 Version: 1.60.250
 - Add API ReportVoipProblems.
 - Add API QueryVoipNumberBindINfos.
