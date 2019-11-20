@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// VoipGetToken invokes the dyvmsapi.VoipGetToken API synchronously
-// api document: https://help.aliyun.com/api/dyvmsapi/voipgettoken.html
-func (client *Client) VoipGetToken(request *VoipGetTokenRequest) (response *VoipGetTokenResponse, err error) {
-	response = CreateVoipGetTokenResponse()
+// ReportVoipProblems invokes the dyvmsapi.ReportVoipProblems API synchronously
+// api document: https://help.aliyun.com/api/dyvmsapi/reportvoipproblems.html
+func (client *Client) ReportVoipProblems(request *ReportVoipProblemsRequest) (response *ReportVoipProblemsResponse, err error) {
+	response = CreateReportVoipProblemsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// VoipGetTokenWithChan invokes the dyvmsapi.VoipGetToken API asynchronously
-// api document: https://help.aliyun.com/api/dyvmsapi/voipgettoken.html
+// ReportVoipProblemsWithChan invokes the dyvmsapi.ReportVoipProblems API asynchronously
+// api document: https://help.aliyun.com/api/dyvmsapi/reportvoipproblems.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) VoipGetTokenWithChan(request *VoipGetTokenRequest) (<-chan *VoipGetTokenResponse, <-chan error) {
-	responseChan := make(chan *VoipGetTokenResponse, 1)
+func (client *Client) ReportVoipProblemsWithChan(request *ReportVoipProblemsRequest) (<-chan *ReportVoipProblemsResponse, <-chan error) {
+	responseChan := make(chan *ReportVoipProblemsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.VoipGetToken(request)
+		response, err := client.ReportVoipProblems(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) VoipGetTokenWithChan(request *VoipGetTokenRequest) (<-chan
 	return responseChan, errChan
 }
 
-// VoipGetTokenWithCallback invokes the dyvmsapi.VoipGetToken API asynchronously
-// api document: https://help.aliyun.com/api/dyvmsapi/voipgettoken.html
+// ReportVoipProblemsWithCallback invokes the dyvmsapi.ReportVoipProblems API asynchronously
+// api document: https://help.aliyun.com/api/dyvmsapi/reportvoipproblems.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) VoipGetTokenWithCallback(request *VoipGetTokenRequest, callback func(response *VoipGetTokenResponse, err error)) <-chan int {
+func (client *Client) ReportVoipProblemsWithCallback(request *ReportVoipProblemsRequest, callback func(response *ReportVoipProblemsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *VoipGetTokenResponse
+		var response *ReportVoipProblemsResponse
 		var err error
 		defer close(result)
-		response, err = client.VoipGetToken(request)
+		response, err = client.ReportVoipProblems(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,38 +73,39 @@ func (client *Client) VoipGetTokenWithCallback(request *VoipGetTokenRequest, cal
 	return result
 }
 
-// VoipGetTokenRequest is the request struct for api VoipGetToken
-type VoipGetTokenRequest struct {
+// ReportVoipProblemsRequest is the request struct for api ReportVoipProblems
+type ReportVoipProblemsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Title                string           `position:"Query" name:"Title"`
 	VoipId               string           `position:"Query" name:"VoipId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DeviceId             string           `position:"Query" name:"DeviceId"`
-	IsCustomAccount      requests.Boolean `position:"Query" name:"IsCustomAccount"`
+	ChannelId            string           `position:"Query" name:"ChannelId"`
+	Desc                 string           `position:"Query" name:"Desc"`
 }
 
-// VoipGetTokenResponse is the response struct for api VoipGetToken
-type VoipGetTokenResponse struct {
+// ReportVoipProblemsResponse is the response struct for api ReportVoipProblems
+type ReportVoipProblemsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Module    string `json:"Module" xml:"Module"`
 	Code      string `json:"Code" xml:"Code"`
+	Module    string `json:"Module" xml:"Module"`
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateVoipGetTokenRequest creates a request to invoke VoipGetToken API
-func CreateVoipGetTokenRequest() (request *VoipGetTokenRequest) {
-	request = &VoipGetTokenRequest{
+// CreateReportVoipProblemsRequest creates a request to invoke ReportVoipProblems API
+func CreateReportVoipProblemsRequest() (request *ReportVoipProblemsRequest) {
+	request = &ReportVoipProblemsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "VoipGetToken", "dyvms", "openAPI")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "ReportVoipProblems", "dyvms", "openAPI")
 	return
 }
 
-// CreateVoipGetTokenResponse creates a response to parse from VoipGetToken response
-func CreateVoipGetTokenResponse() (response *VoipGetTokenResponse) {
-	response = &VoipGetTokenResponse{
+// CreateReportVoipProblemsResponse creates a response to parse from ReportVoipProblems response
+func CreateReportVoipProblemsResponse() (response *ReportVoipProblemsResponse) {
+	response = &ReportVoipProblemsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

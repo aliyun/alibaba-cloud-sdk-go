@@ -95,7 +95,7 @@ func CreateQueryRobotv2AllListRequest() (request *QueryRobotv2AllListRequest) {
 	request = &QueryRobotv2AllListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "QueryRobotv2AllList", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "QueryRobotv2AllList", "dyvms", "openAPI")
 	return
 }
 

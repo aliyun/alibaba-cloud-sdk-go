@@ -96,7 +96,7 @@ func CreateVoipAddAccountRequest() (request *VoipAddAccountRequest) {
 	request = &VoipAddAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "VoipAddAccount", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "VoipAddAccount", "dyvms", "openAPI")
 	return
 }
 

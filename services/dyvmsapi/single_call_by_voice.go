@@ -102,7 +102,7 @@ func CreateSingleCallByVoiceRequest() (request *SingleCallByVoiceRequest) {
 	request = &SingleCallByVoiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "SingleCallByVoice", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "SingleCallByVoice", "dyvms", "openAPI")
 	return
 }
 

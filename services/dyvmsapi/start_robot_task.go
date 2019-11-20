@@ -97,7 +97,7 @@ func CreateStartRobotTaskRequest() (request *StartRobotTaskRequest) {
 	request = &StartRobotTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "StartRobotTask", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "StartRobotTask", "dyvms", "openAPI")
 	return
 }
 

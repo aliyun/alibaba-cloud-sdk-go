@@ -112,7 +112,7 @@ func CreateIvrCallRequest() (request *IvrCallRequest) {
 	request = &IvrCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "IvrCall", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "IvrCall", "dyvms", "openAPI")
 	return
 }
 

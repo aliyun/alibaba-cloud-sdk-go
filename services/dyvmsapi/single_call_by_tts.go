@@ -103,7 +103,7 @@ func CreateSingleCallByTtsRequest() (request *SingleCallByTtsRequest) {
 	request = &SingleCallByTtsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "SingleCallByTts", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "SingleCallByTts", "dyvms", "openAPI")
 	return
 }
 

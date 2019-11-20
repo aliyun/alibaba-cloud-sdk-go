@@ -106,7 +106,7 @@ func CreateBatchRobotSmartCallRequest() (request *BatchRobotSmartCallRequest) {
 	request = &BatchRobotSmartCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "BatchRobotSmartCall", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "BatchRobotSmartCall", "dyvms", "openAPI")
 	return
 }
 

@@ -98,7 +98,7 @@ func CreateGetRtcTokenRequest() (request *GetRtcTokenRequest) {
 	request = &GetRtcTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "GetRtcToken", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "GetRtcToken", "dyvms", "openAPI")
 	return
 }
 

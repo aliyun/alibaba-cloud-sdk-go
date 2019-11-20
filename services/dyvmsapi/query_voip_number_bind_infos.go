@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// BindNumberAndVoipId invokes the dyvmsapi.BindNumberAndVoipId API synchronously
-// api document: https://help.aliyun.com/api/dyvmsapi/bindnumberandvoipid.html
-func (client *Client) BindNumberAndVoipId(request *BindNumberAndVoipIdRequest) (response *BindNumberAndVoipIdResponse, err error) {
-	response = CreateBindNumberAndVoipIdResponse()
+// QueryVoipNumberBindInfos invokes the dyvmsapi.QueryVoipNumberBindInfos API synchronously
+// api document: https://help.aliyun.com/api/dyvmsapi/queryvoipnumberbindinfos.html
+func (client *Client) QueryVoipNumberBindInfos(request *QueryVoipNumberBindInfosRequest) (response *QueryVoipNumberBindInfosResponse, err error) {
+	response = CreateQueryVoipNumberBindInfosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// BindNumberAndVoipIdWithChan invokes the dyvmsapi.BindNumberAndVoipId API asynchronously
-// api document: https://help.aliyun.com/api/dyvmsapi/bindnumberandvoipid.html
+// QueryVoipNumberBindInfosWithChan invokes the dyvmsapi.QueryVoipNumberBindInfos API asynchronously
+// api document: https://help.aliyun.com/api/dyvmsapi/queryvoipnumberbindinfos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) BindNumberAndVoipIdWithChan(request *BindNumberAndVoipIdRequest) (<-chan *BindNumberAndVoipIdResponse, <-chan error) {
-	responseChan := make(chan *BindNumberAndVoipIdResponse, 1)
+func (client *Client) QueryVoipNumberBindInfosWithChan(request *QueryVoipNumberBindInfosRequest) (<-chan *QueryVoipNumberBindInfosResponse, <-chan error) {
+	responseChan := make(chan *QueryVoipNumberBindInfosResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.BindNumberAndVoipId(request)
+		response, err := client.QueryVoipNumberBindInfos(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) BindNumberAndVoipIdWithChan(request *BindNumberAndVoipIdRe
 	return responseChan, errChan
 }
 
-// BindNumberAndVoipIdWithCallback invokes the dyvmsapi.BindNumberAndVoipId API asynchronously
-// api document: https://help.aliyun.com/api/dyvmsapi/bindnumberandvoipid.html
+// QueryVoipNumberBindInfosWithCallback invokes the dyvmsapi.QueryVoipNumberBindInfos API asynchronously
+// api document: https://help.aliyun.com/api/dyvmsapi/queryvoipnumberbindinfos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) BindNumberAndVoipIdWithCallback(request *BindNumberAndVoipIdRequest, callback func(response *BindNumberAndVoipIdResponse, err error)) <-chan int {
+func (client *Client) QueryVoipNumberBindInfosWithCallback(request *QueryVoipNumberBindInfosRequest, callback func(response *QueryVoipNumberBindInfosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *BindNumberAndVoipIdResponse
+		var response *QueryVoipNumberBindInfosResponse
 		var err error
 		defer close(result)
-		response, err = client.BindNumberAndVoipId(request)
+		response, err = client.QueryVoipNumberBindInfos(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,8 +73,8 @@ func (client *Client) BindNumberAndVoipIdWithCallback(request *BindNumberAndVoip
 	return result
 }
 
-// BindNumberAndVoipIdRequest is the request struct for api BindNumberAndVoipId
-type BindNumberAndVoipIdRequest struct {
+// QueryVoipNumberBindInfosRequest is the request struct for api QueryVoipNumberBindInfos
+type QueryVoipNumberBindInfosRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -83,27 +83,27 @@ type BindNumberAndVoipIdRequest struct {
 	VoipId               string           `position:"Query" name:"VoipId"`
 }
 
-// BindNumberAndVoipIdResponse is the response struct for api BindNumberAndVoipId
-type BindNumberAndVoipIdResponse struct {
+// QueryVoipNumberBindInfosResponse is the response struct for api QueryVoipNumberBindInfos
+type QueryVoipNumberBindInfosResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
 	Module    string `json:"Module" xml:"Module"`
+	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateBindNumberAndVoipIdRequest creates a request to invoke BindNumberAndVoipId API
-func CreateBindNumberAndVoipIdRequest() (request *BindNumberAndVoipIdRequest) {
-	request = &BindNumberAndVoipIdRequest{
+// CreateQueryVoipNumberBindInfosRequest creates a request to invoke QueryVoipNumberBindInfos API
+func CreateQueryVoipNumberBindInfosRequest() (request *QueryVoipNumberBindInfosRequest) {
+	request = &QueryVoipNumberBindInfosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "BindNumberAndVoipId", "dyvms", "openAPI")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "QueryVoipNumberBindInfos", "dyvms", "openAPI")
 	return
 }
 
-// CreateBindNumberAndVoipIdResponse creates a response to parse from BindNumberAndVoipId response
-func CreateBindNumberAndVoipIdResponse() (response *BindNumberAndVoipIdResponse) {
-	response = &BindNumberAndVoipIdResponse{
+// CreateQueryVoipNumberBindInfosResponse creates a response to parse from QueryVoipNumberBindInfos response
+func CreateQueryVoipNumberBindInfosResponse() (response *QueryVoipNumberBindInfosResponse) {
+	response = &QueryVoipNumberBindInfosResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

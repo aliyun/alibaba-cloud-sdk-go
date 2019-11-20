@@ -100,7 +100,7 @@ func CreateQueryRobotTaskListRequest() (request *QueryRobotTaskListRequest) {
 	request = &QueryRobotTaskListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "QueryRobotTaskList", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "QueryRobotTaskList", "dyvms", "openAPI")
 	return
 }
 

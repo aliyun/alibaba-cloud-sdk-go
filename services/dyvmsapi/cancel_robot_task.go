@@ -96,7 +96,7 @@ func CreateCancelRobotTaskRequest() (request *CancelRobotTaskRequest) {
 	request = &CancelRobotTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "CancelRobotTask", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "CancelRobotTask", "dyvms", "openAPI")
 	return
 }
 

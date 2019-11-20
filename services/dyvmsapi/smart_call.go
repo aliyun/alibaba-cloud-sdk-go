@@ -116,7 +116,7 @@ func CreateSmartCallRequest() (request *SmartCallRequest) {
 	request = &SmartCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "SmartCall", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "SmartCall", "dyvms", "openAPI")
 	return
 }
 

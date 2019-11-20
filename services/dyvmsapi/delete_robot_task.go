@@ -96,7 +96,7 @@ func CreateDeleteRobotTaskRequest() (request *DeleteRobotTaskRequest) {
 	request = &DeleteRobotTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "DeleteRobotTask", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "DeleteRobotTask", "dyvms", "openAPI")
 	return
 }
 

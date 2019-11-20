@@ -99,7 +99,7 @@ func CreateUploadRobotTaskCalledFileRequest() (request *UploadRobotTaskCalledFil
 	request = &UploadRobotTaskCalledFileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "UploadRobotTaskCalledFile", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "UploadRobotTaskCalledFile", "dyvms", "openAPI")
 	return
 }
 

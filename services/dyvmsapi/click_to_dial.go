@@ -104,7 +104,7 @@ func CreateClickToDialRequest() (request *ClickToDialRequest) {
 	request = &ClickToDialRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "ClickToDial", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "ClickToDial", "dyvms", "openAPI")
 	return
 }
 

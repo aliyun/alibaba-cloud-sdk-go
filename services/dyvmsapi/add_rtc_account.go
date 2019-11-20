@@ -96,7 +96,7 @@ func CreateAddRtcAccountRequest() (request *AddRtcAccountRequest) {
 	request = &AddRtcAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "AddRtcAccount", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "AddRtcAccount", "dyvms", "openAPI")
 	return
 }
 

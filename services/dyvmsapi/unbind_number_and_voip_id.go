@@ -97,7 +97,7 @@ func CreateUnbindNumberAndVoipIdRequest() (request *UnbindNumberAndVoipIdRequest
 	request = &UnbindNumberAndVoipIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "UnbindNumberAndVoipId", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "UnbindNumberAndVoipId", "dyvms", "openAPI")
 	return
 }
 

@@ -96,7 +96,7 @@ func CreateCancelCallRequest() (request *CancelCallRequest) {
 	request = &CancelCallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "CancelCall", "", "")
+	request.InitWithApiInfo("Dyvmsapi", "2017-05-25", "CancelCall", "dyvms", "openAPI")
 	return
 }
 
