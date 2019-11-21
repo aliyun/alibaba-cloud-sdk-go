@@ -85,8 +85,6 @@ type GetSuggestShrinkableNodesRequest struct {
 type GetSuggestShrinkableNodesResponse struct {
 	*responses.BaseResponse
 	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Code      string       `json:"Code" xml:"Code"`
-	Message   string       `json:"Message" xml:"Message"`
 	Result    []ResultItem `json:"Result" xml:"Result"`
 }
 

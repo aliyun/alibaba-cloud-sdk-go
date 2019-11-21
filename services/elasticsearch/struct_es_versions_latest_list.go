@@ -17,5 +17,5 @@ package elasticsearch
 
 // EsVersionsLatestList is a nested struct in elasticsearch response
 type EsVersionsLatestList struct {
-	EsVersionsLatestListItem []EsVersionsLatestListItem `json:"esVersionsLatestListItem" xml:"esVersionsLatestListItem"`
+	EsVersionsLatestListItem []EsVersionsLatestListItem `json:"esVersionsLatestList" xml:"esVersionsLatestList"`
 }

@@ -17,5 +17,5 @@ package elasticsearch
 
 // ResultInListSearchLog is a nested struct in elasticsearch response
 type ResultInListSearchLog struct {
-	ResultItem []ResultItem `json:"ResultItem" xml:"ResultItem"`
+	ResultItem []ResultItem `json:"Result" xml:"Result"`
 }

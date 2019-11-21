@@ -82,8 +82,8 @@ type DescribeInstanceRequest struct {
 // DescribeInstanceResponse is the response struct for api DescribeInstance
 type DescribeInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string                   `json:"RequestId" xml:"RequestId"`
-	Result    ResultInDescribeInstance `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Result    Result `json:"Result" xml:"Result"`
 }
 
 // CreateDescribeInstanceRequest creates a request to invoke DescribeInstance API

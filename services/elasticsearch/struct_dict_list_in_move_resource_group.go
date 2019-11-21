@@ -17,5 +17,5 @@ package elasticsearch
 
 // DictListInMoveResourceGroup is a nested struct in elasticsearch response
 type DictListInMoveResourceGroup struct {
-	DictListItem []DictListItem `json:"dictListItem" xml:"dictListItem"`
+	DictListItem []DictListItem `json:"dictList" xml:"dictList"`
 }

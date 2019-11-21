@@ -17,5 +17,5 @@ package elasticsearch
 
 // NodeSpecList is a nested struct in elasticsearch response
 type NodeSpecList struct {
-	NodeSpecListItem []NodeSpecListItem `json:"nodeSpecListItem" xml:"nodeSpecListItem"`
+	NodeSpecListItem []NodeSpecListItem `json:"nodeSpecList" xml:"nodeSpecList"`
 }

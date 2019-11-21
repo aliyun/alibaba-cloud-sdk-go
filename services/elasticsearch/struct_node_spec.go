@@ -17,7 +17,8 @@ package elasticsearch
 
 // NodeSpec is a nested struct in elasticsearch response
 type NodeSpec struct {
-	Disk     int    `json:"disk" xml:"disk"`
-	Spec     string `json:"spec" xml:"spec"`
-	DiskType string `json:"diskType" xml:"diskType"`
+	Disk           int    `json:"disk" xml:"disk"`
+	DiskEncryption bool   `json:"diskEncryption" xml:"diskEncryption"`
+	Spec           string `json:"spec" xml:"spec"`
+	DiskType       string `json:"diskType" xml:"diskType"`
 }

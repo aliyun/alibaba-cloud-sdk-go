@@ -17,5 +17,5 @@ package elasticsearch
 
 // DataDiskList is a nested struct in elasticsearch response
 type DataDiskList struct {
-	DataDiskListItem []DataDiskListItem `json:"dataDiskListItem" xml:"dataDiskListItem"`
+	DataDiskListItem []DataDiskListItem `json:"dataDiskList" xml:"dataDiskList"`
 }

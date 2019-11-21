@@ -17,5 +17,5 @@ package elasticsearch
 
 // SynonymsDictsInMoveResourceGroup is a nested struct in elasticsearch response
 type SynonymsDictsInMoveResourceGroup struct {
-	SynonymsDictsItem []SynonymsDictsItem `json:"synonymsDictsItem" xml:"synonymsDictsItem"`
+	SynonymsDictsItem []SynonymsDictsItem `json:"synonymsDicts" xml:"synonymsDicts"`
 }

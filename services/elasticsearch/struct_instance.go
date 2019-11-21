@@ -17,18 +17,19 @@ package elasticsearch
 
 // Instance is a nested struct in elasticsearch response
 type Instance struct {
-	InstanceId             string              `json:"instanceId" xml:"instanceId"`
-	Description            string              `json:"description" xml:"description"`
-	NodeAmount             int                 `json:"nodeAmount" xml:"nodeAmount"`
-	PaymentType            string              `json:"paymentType" xml:"paymentType"`
-	Status                 string              `json:"status" xml:"status"`
-	EsVersion              string              `json:"esVersion" xml:"esVersion"`
-	CreatedAt              string              `json:"createdAt" xml:"createdAt"`
-	UpdatedAt              string              `json:"updatedAt" xml:"updatedAt"`
-	AdvancedDedicateMaster bool                `json:"advancedDedicateMaster" xml:"advancedDedicateMaster"`
 	DedicateMaster         bool                `json:"dedicateMaster" xml:"dedicateMaster"`
-	NodeSpec               NodeSpec            `json:"nodeSpec" xml:"nodeSpec"`
+	UpdatedAt              string              `json:"updatedAt" xml:"updatedAt"`
+	NodeAmount             int                 `json:"nodeAmount" xml:"nodeAmount"`
+	InstanceId             string              `json:"instanceId" xml:"instanceId"`
+	Status                 string              `json:"status" xml:"status"`
+	Description            string              `json:"description" xml:"description"`
+	AdvancedDedicateMaster bool                `json:"advancedDedicateMaster" xml:"advancedDedicateMaster"`
+	Version                string              `json:"version" xml:"version"`
+	EsVersion              string              `json:"esVersion" xml:"esVersion"`
+	PaymentType            string              `json:"paymentType" xml:"paymentType"`
+	CreatedAt              string              `json:"createdAt" xml:"createdAt"`
 	NetworkConfig          NetworkConfig       `json:"networkConfig" xml:"networkConfig"`
 	MasterConfiguration    MasterConfiguration `json:"masterConfiguration" xml:"masterConfiguration"`
+	NodeSpec               NodeSpec            `json:"nodeSpec" xml:"nodeSpec"`
 	KibanaConfiguration    KibanaConfiguration `json:"kibanaConfiguration" xml:"kibanaConfiguration"`
 }

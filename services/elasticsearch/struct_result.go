@@ -17,49 +17,73 @@ package elasticsearch
 
 // Result is a nested struct in elasticsearch response
 type Result struct {
-	Enable                    bool                       `json:"enable" xml:"enable"`
+	Config                    map[string]interface{}     `json:"config" xml:"config"`
 	KibanaPort                int                        `json:"kibanaPort" xml:"kibanaPort"`
-	QuartzRegex               string                     `json:"quartzRegex" xml:"quartzRegex"`
-	CreateUrl                 string                     `json:"createUrl" xml:"createUrl"`
+	VpcInstanceId             string                     `json:"vpcInstanceId" xml:"vpcInstanceId"`
+	UserName                  string                     `json:"userName" xml:"userName"`
+	Endpoints                 string                     `json:"endpoints" xml:"endpoints"`
 	PublicDomain              string                     `json:"publicDomain" xml:"publicDomain"`
+	HaveKibana                bool                       `json:"haveKibana" xml:"haveKibana"`
 	KibanaDomain              string                     `json:"kibanaDomain" xml:"kibanaDomain"`
 	Domain                    string                     `json:"domain" xml:"domain"`
-	PaymentType               string                     `json:"paymentType" xml:"paymentType"`
 	RegionId                  string                     `json:"regionId" xml:"regionId"`
-	UpdatedAt                 string                     `json:"updatedAt" xml:"updatedAt"`
+	Port                      int                        `json:"port" xml:"port"`
 	Env                       string                     `json:"env" xml:"env"`
+	EnableKibanaPublicNetwork bool                       `json:"enableKibanaPublicNetwork" xml:"enableKibanaPublicNetwork"`
+	WarmNode                  bool                       `json:"warmNode" xml:"warmNode"`
+	AdvancedDedicateMaster    bool                       `json:"advancedDedicateMaster" xml:"advancedDedicateMaster"`
+	EnablePublic              bool                       `json:"enablePublic" xml:"enablePublic"`
+	EsVersion                 string                     `json:"esVersion" xml:"esVersion"`
+	Id                        string                     `json:"id" xml:"id"`
+	PublicPort                int                        `json:"publicPort" xml:"publicPort"`
+	DedicateMaster            bool                       `json:"dedicateMaster" xml:"dedicateMaster"`
+	Enable                    bool                       `json:"enable" xml:"enable"`
+	QuartzRegex               string                     `json:"quartzRegex" xml:"quartzRegex"`
+	CreateUrl                 string                     `json:"createUrl" xml:"createUrl"`
+	PipelineManagementType    string                     `json:"pipelineManagementType" xml:"pipelineManagementType"`
+	Protocol                  string                     `json:"protocol" xml:"protocol"`
+	PaymentType               string                     `json:"paymentType" xml:"paymentType"`
+	UpdatedAt                 string                     `json:"updatedAt" xml:"updatedAt"`
 	NodeAmount                int                        `json:"nodeAmount" xml:"nodeAmount"`
 	InstanceId                string                     `json:"instanceId" xml:"instanceId"`
 	Status                    string                     `json:"status" xml:"status"`
+	ZoneCount                 int                        `json:"zoneCount" xml:"zoneCount"`
 	Description               string                     `json:"description" xml:"description"`
-	EnablePublic              bool                       `json:"enablePublic" xml:"enablePublic"`
-	EsVersion                 string                     `json:"esVersion" xml:"esVersion"`
+	EsConfig                  map[string]interface{}     `json:"esConfig" xml:"esConfig"`
+	Version                   string                     `json:"version" xml:"version"`
+	HaveClientNode            bool                       `json:"haveClientNode" xml:"haveClientNode"`
 	CreatedAt                 string                     `json:"createdAt" xml:"createdAt"`
-	Id                        string                     `json:"id" xml:"id"`
-	PublicPort                int                        `json:"publicPort" xml:"publicPort"`
 	EsIPWhitelist             []string                   `json:"esIPWhitelist" xml:"esIPWhitelist"`
-	KibanaIPWhitelist         []string                   `json:"kibanaIPWhitelist" xml:"kibanaIPWhitelist"`
-	PublicIpWhitelist         []string                   `json:"publicIpWhitelist" xml:"publicIpWhitelist"`
 	EsIPBlacklist             []string                   `json:"esIPBlacklist" xml:"esIPBlacklist"`
-	MasterSpec                []string                   `json:"masterSpec" xml:"masterSpec"`
 	PrivateNetworkIpWhiteList []string                   `json:"privateNetworkIpWhiteList" xml:"privateNetworkIpWhiteList"`
+	MasterSpec                []string                   `json:"masterSpec" xml:"masterSpec"`
+	PublicIpWhitelist         []string                   `json:"publicIpWhitelist" xml:"publicIpWhitelist"`
 	ClientNodeSpec            []string                   `json:"clientNodeSpec" xml:"clientNodeSpec"`
 	EsVersions                []string                   `json:"esVersions" xml:"esVersions"`
+	KibanaIPWhitelist         []string                   `json:"kibanaIPWhitelist" xml:"kibanaIPWhitelist"`
+	PipelineIds               []string                   `json:"pipelineIds" xml:"pipelineIds"`
 	Zones                     []string                   `json:"zones" xml:"zones"`
-	NetworkConfig             NetworkConfig              `json:"networkConfig" xml:"networkConfig"`
 	Node                      Node                       `json:"node" xml:"node"`
 	NodeSpec                  NodeSpec                   `json:"nodeSpec" xml:"nodeSpec"`
-	MasterConfiguration       MasterConfiguration        `json:"masterConfiguration" xml:"masterConfiguration"`
+	AdvancedSetting           AdvancedSetting            `json:"advancedSetting" xml:"advancedSetting"`
 	JvmConfine                JvmConfine                 `json:"jvmConfine" xml:"jvmConfine"`
 	KibanaConfiguration       KibanaConfiguration        `json:"kibanaConfiguration" xml:"kibanaConfiguration"`
-	KibanaNodeProperties      KibanaNodeProperties       `json:"kibanaNodeProperties" xml:"kibanaNodeProperties"`
+	WarmNodeConfiguration     WarmNodeConfiguration      `json:"warmNodeConfiguration" xml:"warmNodeConfiguration"`
+	ClientNodeConfiguration   ClientNodeConfiguration    `json:"clientNodeConfiguration" xml:"clientNodeConfiguration"`
 	WarmNodeProperties        WarmNodeProperties         `json:"warmNodeProperties" xml:"warmNodeProperties"`
+	NetworkConfig             NetworkConfig              `json:"networkConfig" xml:"networkConfig"`
+	MasterConfiguration       MasterConfiguration        `json:"masterConfiguration" xml:"masterConfiguration"`
+	KibanaNodeProperties      KibanaNodeProperties       `json:"kibanaNodeProperties" xml:"kibanaNodeProperties"`
 	ClientNodeAmountRange     ClientNodeAmountRange      `json:"clientNodeAmountRange" xml:"clientNodeAmountRange"`
+	SupportVersions           []CategoryEntity           `json:"supportVersions" xml:"supportVersions"`
+	ZoneInfos                 []ZoneInfo                 `json:"zoneInfos" xml:"zoneInfos"`
 	MasterDiskList            []Disk                     `json:"masterDiskList" xml:"masterDiskList"`
 	EsVersionsLatestList      []EsVersionsLatestListItem `json:"esVersionsLatestList" xml:"esVersionsLatestList"`
+	EndpointList              []Endpoint                 `json:"endpointList" xml:"endpointList"`
 	NodeSpecList              []NodeSpecListItem         `json:"nodeSpecList" xml:"nodeSpecList"`
 	ClientNodeDiskList        []Disk                     `json:"clientNodeDiskList" xml:"clientNodeDiskList"`
-	SynonymsDicts             []SynonymsDictsItem        `json:"synonymsDicts" xml:"synonymsDicts"`
 	DataDiskList              []DataDiskListItem         `json:"dataDiskList" xml:"dataDiskList"`
-	DictList                  []DictListItem             `json:"dictList" xml:"dictList"`
+	SynonymsDicts             []SynonymsDicts            `json:"synonymsDicts" xml:"synonymsDicts"`
+	AliwsDicts                []Dict                     `json:"aliwsDicts" xml:"aliwsDicts"`
+	DictList                  []DictList                 `json:"dictList" xml:"dictList"`
 }

@@ -30,7 +30,7 @@ type ResultItem struct {
 	Description string `json:"description" xml:"description"`
 	CpuPercent  string `json:"cpuPercent" xml:"cpuPercent"`
 	HeapPercent string `json:"heapPercent" xml:"heapPercent"`
-	Source      string `json:"source" xml:"source"`
 	Level       string `json:"level" xml:"level"`
+	Source      string `json:"source" xml:"source"`
 	Name        string `json:"name" xml:"name"`
 }
