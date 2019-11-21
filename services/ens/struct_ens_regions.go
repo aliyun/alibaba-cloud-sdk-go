@@ -17,5 +17,5 @@ package ens
 
 // EnsRegions is a nested struct in ens response
 type EnsRegions struct {
-	EnsRegionsItem []EnsRegionsItem `json:"EnsRegionsItem" xml:"EnsRegionsItem"`
+	EnsRegionsItem []EnsRegionsItem `json:"EnsRegions" xml:"EnsRegions"`
 }

@@ -17,15 +17,7 @@ package ens
 
 // Image is a nested struct in ens response
 type Image struct {
-	Architecture    string `json:"Architecture" xml:"Architecture"`
-	Platform        string `json:"Platform" xml:"Platform"`
-	ImageVersion    string `json:"ImageVersion" xml:"ImageVersion"`
-	OSType          string `json:"OSType" xml:"OSType"`
-	ImageId         string `json:"ImageId" xml:"ImageId"`
-	OSName          string `json:"OSName" xml:"OSName"`
-	ImageOwnerAlias string `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
-	CreationTime    string `json:"CreationTime" xml:"CreationTime"`
-	ImageName       string `json:"ImageName" xml:"ImageName"`
-	Description     string `json:"Description" xml:"Description"`
-	ImageSize       string `json:"ImageSize" xml:"ImageSize"`
+	ImageId   string `json:"ImageId" xml:"ImageId"`
+	ImageName string `json:"ImageName" xml:"ImageName"`
+	ImageSize int    `json:"ImageSize" xml:"ImageSize"`
 }

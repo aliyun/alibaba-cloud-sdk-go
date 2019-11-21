@@ -17,5 +17,5 @@ package ens
 
 // DataDisk is a nested struct in ens response
 type DataDisk struct {
-	DataDiskItem []DataDiskItem `json:"DataDiskItem" xml:"DataDiskItem"`
+	DataDiskItem []DataDiskItem `json:"DataDisk" xml:"DataDisk"`
 }

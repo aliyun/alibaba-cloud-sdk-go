@@ -84,11 +84,7 @@ type AttachEnsInstancesRequest struct {
 // AttachEnsInstancesResponse is the response struct for api AttachEnsInstances
 type AttachEnsInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	Code               int    `json:"Code" xml:"Code"`
-	EnsServiceId       string `json:"EnsServiceId" xml:"EnsServiceId"`
-	NetLevel           string `json:"NetLevel" xml:"NetLevel"`
-	BuyResourcesDetail string `json:"BuyResourcesDetail" xml:"BuyResourcesDetail"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateAttachEnsInstancesRequest creates a request to invoke AttachEnsInstances API

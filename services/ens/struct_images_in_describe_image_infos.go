@@ -17,5 +17,5 @@ package ens
 
 // ImagesInDescribeImageInfos is a nested struct in ens response
 type ImagesInDescribeImageInfos struct {
-	Image []Image `json:"Image" xml:"Image"`
+	Image []ImageInDescribeImageInfos `json:"Image" xml:"Image"`
 }
