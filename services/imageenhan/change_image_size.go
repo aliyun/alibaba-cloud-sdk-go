@@ -85,8 +85,6 @@ type ChangeImageSizeRequest struct {
 type ChangeImageSizeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -95,7 +93,7 @@ func CreateChangeImageSizeRequest() (request *ChangeImageSizeRequest) {
 	request = &ChangeImageSizeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageenhan", "2019-09-30", "ChangeImageSize", "", "")
+	request.InitWithApiInfo("imageenhan", "2019-09-30", "ChangeImageSize", "imageenhan", "openAPI")
 	return
 }
 

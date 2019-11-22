@@ -84,8 +84,6 @@ type ExtendImageStyleRequest struct {
 type ExtendImageStyleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -94,7 +92,7 @@ func CreateExtendImageStyleRequest() (request *ExtendImageStyleRequest) {
 	request = &ExtendImageStyleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageenhan", "2019-09-30", "ExtendImageStyle", "", "")
+	request.InitWithApiInfo("imageenhan", "2019-09-30", "ExtendImageStyle", "imageenhan", "openAPI")
 	return
 }
 

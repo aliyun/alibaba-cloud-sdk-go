@@ -1,3 +1,6 @@
+2019-11-22 Version: 1.60.258
+- First version.
+
 2019-11-21 Version: 1.60.257
 - Add ConvertPayType.
 - Add ConvertLogstashPayType.

@@ -83,8 +83,6 @@ type MakeSuperResolutionImageRequest struct {
 type MakeSuperResolutionImageResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -93,7 +91,7 @@ func CreateMakeSuperResolutionImageRequest() (request *MakeSuperResolutionImageR
 	request = &MakeSuperResolutionImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageenhan", "2019-09-30", "MakeSuperResolutionImage", "", "")
+	request.InitWithApiInfo("imageenhan", "2019-09-30", "MakeSuperResolutionImage", "imageenhan", "openAPI")
 	return
 }
 

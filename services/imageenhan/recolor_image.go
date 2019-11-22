@@ -92,8 +92,6 @@ type RecolorImageColorTemplate struct {
 type RecolorImageResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
@@ -102,7 +100,7 @@ func CreateRecolorImageRequest() (request *RecolorImageRequest) {
 	request = &RecolorImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageenhan", "2019-09-30", "RecolorImage", "", "")
+	request.InitWithApiInfo("imageenhan", "2019-09-30", "RecolorImage", "imageenhan", "openAPI")
 	return
 }
 
