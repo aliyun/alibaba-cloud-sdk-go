@@ -103,7 +103,7 @@ func CreateStartTaskRequest() (request *StartTaskRequest) {
 	request = &StartTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "StartTask", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "StartTask", "", "")
 	return
 }
 

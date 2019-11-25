@@ -17,5 +17,5 @@ package rtc
 
 // ChannelList is a nested struct in rtc response
 type ChannelList struct {
-	ChannelListItem []ChannelListItem `json:"ChannelListItem" xml:"ChannelListItem"`
+	ChannelListItem []ChannelListItem `json:"ChannelList" xml:"ChannelList"`
 }

@@ -94,7 +94,7 @@ func CreateDescribeConferenceAuthInfoRequest() (request *DescribeConferenceAuthI
 	request = &DescribeConferenceAuthInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeConferenceAuthInfo", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeConferenceAuthInfo", "", "")
 	return
 }
 

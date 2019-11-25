@@ -17,11 +17,6 @@ package rtc
 
 // Duration is a nested struct in rtc response
 type Duration struct {
-	Sd          float64     `json:"Sd" xml:"Sd"`
-	All         float64     `json:"All" xml:"All"`
-	Fhd         float64     `json:"Fhd" xml:"Fhd"`
-	Audio       float64     `json:"Audio" xml:"Audio"`
-	Hd          float64     `json:"Hd" xml:"Hd"`
 	PubDuration PubDuration `json:"PubDuration" xml:"PubDuration"`
 	SubDuration SubDuration `json:"SubDuration" xml:"SubDuration"`
 }

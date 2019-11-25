@@ -96,7 +96,7 @@ func CreateReceiveNotifyRequest() (request *ReceiveNotifyRequest) {
 	request = &ReceiveNotifyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "ReceiveNotify", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "ReceiveNotify", "", "")
 	return
 }
 

@@ -94,7 +94,7 @@ func CreateGetTaskStatusRequest() (request *GetTaskStatusRequest) {
 	request = &GetTaskStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "GetTaskStatus", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "GetTaskStatus", "", "")
 	return
 }
 

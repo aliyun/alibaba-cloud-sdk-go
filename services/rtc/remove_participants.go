@@ -95,7 +95,7 @@ func CreateRemoveParticipantsRequest() (request *RemoveParticipantsRequest) {
 	request = &RemoveParticipantsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "RemoveParticipants", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "RemoveParticipants", "", "")
 	return
 }
 

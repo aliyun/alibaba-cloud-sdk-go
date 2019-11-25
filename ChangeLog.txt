@@ -1,3 +1,6 @@
+2019-11-25 Version: 1.60.260
+- One or more people can be subscribed when creating tasks.
+
 2019-11-22 Version: 1.60.259
 - Update Api Request And Response structure.
 

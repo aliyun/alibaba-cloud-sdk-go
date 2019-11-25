@@ -93,7 +93,7 @@ func CreateGetMPUTaskStatusRequest() (request *GetMPUTaskStatusRequest) {
 	request = &GetMPUTaskStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "GetMPUTaskStatus", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "GetMPUTaskStatus", "", "")
 	return
 }
 

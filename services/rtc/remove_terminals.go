@@ -94,7 +94,7 @@ func CreateRemoveTerminalsRequest() (request *RemoveTerminalsRequest) {
 	request = &RemoveTerminalsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "RemoveTerminals", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "RemoveTerminals", "", "")
 	return
 }
 

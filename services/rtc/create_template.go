@@ -122,7 +122,7 @@ func CreateCreateTemplateRequest() (request *CreateTemplateRequest) {
 	request = &CreateTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "CreateTemplate", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "CreateTemplate", "", "")
 	return
 }
 

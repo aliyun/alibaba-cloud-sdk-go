@@ -92,7 +92,7 @@ func CreateModifyAppRequest() (request *ModifyAppRequest) {
 	request = &ModifyAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "ModifyApp", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "ModifyApp", "", "")
 	return
 }
 

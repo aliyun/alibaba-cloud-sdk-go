@@ -98,7 +98,7 @@ func CreateDescribeAppsRequest() (request *DescribeAppsRequest) {
 	request = &DescribeAppsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeApps", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeApps", "", "")
 	return
 }
 

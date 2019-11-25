@@ -84,6 +84,7 @@ type StartMPUTaskRequest struct {
 	TaskId          string                   `position:"Query" name:"TaskId"`
 	StreamURL       string                   `position:"Query" name:"StreamURL"`
 	OwnerId         requests.Integer         `position:"Query" name:"OwnerId"`
+	SubSpecUsers    *[]string                `position:"Query" name:"SubSpecUsers"  type:"Repeated"`
 	AppId           string                   `position:"Query" name:"AppId"`
 	MediaEncode     requests.Integer         `position:"Query" name:"MediaEncode"`
 	ChannelId       string                   `position:"Query" name:"ChannelId"`
@@ -107,7 +108,7 @@ func CreateStartMPUTaskRequest() (request *StartMPUTaskRequest) {
 	request = &StartMPUTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "StartMPUTask", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "StartMPUTask", "", "")
 	return
 }
 

@@ -94,7 +94,7 @@ func CreateDescribeRtcChannelMetricRequest() (request *DescribeRtcChannelMetricR
 	request = &DescribeRtcChannelMetricRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRtcChannelMetric", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRtcChannelMetric", "", "")
 	return
 }
 
