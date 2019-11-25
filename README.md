@@ -13,7 +13,7 @@ English | [简体中文](README-CN.md)
 <br/>
 <a href="https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go"><img src="https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go/branch/master/graph/badge.svg" alt="codecov"></a>
 <a href="https://travis-ci.org/aliyun/alibaba-cloud-sdk-go"><img src="https://travis-ci.org/aliyun/alibaba-cloud-sdk-go.svg?branch=master" alt="Travis Build Status"></a>
-<a href="https://ci.appveyor.com/project/aliyun/alibaba-cloud-sdk-go/branch/master"><img src="https://ci.appveyor.com/api/projects/status/1hiuo3ppx5j49psv/branch/master?svg=true" alt="Appveyor Build Status"></a>
+<a href="https://ci.appveyor.com/project/aliyun/alibaba-cloud-sdk-go/branch/master"><img src="https://ci.appveyor.com/api/projects/status/gn17u48i53ktblfp/branch/master?svg=true" alt="Appveyor Build Status"></a>
 <a href="https://app.codacy.com/app/aliyun/alibaba-cloud-sdk-go?utm_source=github.com&utm_medium=referral&utm_content=aliyun/alibaba-cloud-sdk-go&utm_campaign=Badge_Grade_Dashboard"><img src="https://api.codacy.com/project/badge/Grade/291a39e242364b04ad442f0cce0e30d5" alt="Codacy Badge"></a>
 <a href="https://goreportcard.com/report/github.com/aliyun/alibaba-cloud-sdk-go"><img src="https://goreportcard.com/badge/github.com/aliyun/alibaba-cloud-sdk-go" alt="Go Report Card"></a>
 </p>
