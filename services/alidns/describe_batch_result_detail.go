@@ -82,6 +82,7 @@ type DescribeBatchResultDetailRequest struct {
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	Lang         string           `position:"Query" name:"Lang"`
 	TaskId       requests.Integer `position:"Query" name:"TaskId"`
+	Status       string           `position:"Query" name:"Status"`
 }
 
 // DescribeBatchResultDetailResponse is the response struct for api DescribeBatchResultDetail

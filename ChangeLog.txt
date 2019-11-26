@@ -1,3 +1,12 @@
+2019-11-26 Version: v1.60.265
+- Supported API BindInstanceDomains.
+- Supported API UnbindInstanceDomains.
+- Supported API AddCustomLine.
+- Supported API UpdateCustomLine.
+- Supported API DeleteCustomLines.
+- Supported API DescribeCustomLine.
+- Supported API DescribeCustomLines.
+
 2019-11-26 Version: v1.60.264
 - Generated 2015-12-01 for `Dds`.
 
