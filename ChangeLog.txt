@@ -1,3 +1,6 @@
+2019-11-26 Version: v1.60.263
+- Refresh endpoint.
+
 2019-11-26 Version: v1.60.262
 - Generated 2014-08-15 for `Rds`.
 
