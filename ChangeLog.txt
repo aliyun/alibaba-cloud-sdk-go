@@ -1,3 +1,6 @@
+2019-11-26 Version: v1.60.267
+- Modify QueryBill, add SubOrderId in item of response.
+
 2019-11-26 Version: v1.60.266
 - Generated 2015-12-01 for `Dds`.
 

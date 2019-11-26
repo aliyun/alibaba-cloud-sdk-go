@@ -57,6 +57,7 @@ type Item struct {
 	LinkedCustomerOrderID       string  `json:"LinkedCustomerOrderID" xml:"LinkedCustomerOrderID"`
 	CostUnit                    string  `json:"CostUnit" xml:"CostUnit"`
 	AfterTaxAmount              float64 `json:"AfterTaxAmount" xml:"AfterTaxAmount"`
+	SubOrderId                  string  `json:"SubOrderId" xml:"SubOrderId"`
 	ResourceGroup               string  `json:"ResourceGroup" xml:"ResourceGroup"`
 	SubscribeTime               string  `json:"SubscribeTime" xml:"SubscribeTime"`
 	BillingType                 string  `json:"BillingType" xml:"BillingType"`
