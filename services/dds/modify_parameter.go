@@ -97,7 +97,7 @@ func CreateModifyParameterRequest() (request *ModifyParameterRequest) {
 	request = &ModifyParameterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyParameter", "", "")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyParameter", "dds", "openAPI")
 	return
 }
 

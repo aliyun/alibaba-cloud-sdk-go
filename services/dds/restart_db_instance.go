@@ -96,7 +96,7 @@ func CreateRestartDBInstanceRequest() (request *RestartDBInstanceRequest) {
 	request = &RestartDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "RestartDBInstance", "", "")
+	request.InitWithApiInfo("Dds", "2015-12-01", "RestartDBInstance", "dds", "openAPI")
 	return
 }
 

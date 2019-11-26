@@ -103,7 +103,7 @@ func CreateDescribeAuditFilesRequest() (request *DescribeAuditFilesRequest) {
 	request = &DescribeAuditFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeAuditFiles", "", "")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeAuditFiles", "dds", "openAPI")
 	return
 }
 

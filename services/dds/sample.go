@@ -97,7 +97,7 @@ func CreateSampleRequest() (request *SampleRequest) {
 	request = &SampleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "Sample", "", "")
+	request.InitWithApiInfo("Dds", "2015-12-01", "Sample", "dds", "openAPI")
 	return
 }
 

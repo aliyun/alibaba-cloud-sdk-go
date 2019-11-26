@@ -97,7 +97,7 @@ func CreateMigrateAvailableZoneRequest() (request *MigrateAvailableZoneRequest) 
 	request = &MigrateAvailableZoneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "MigrateAvailableZone", "", "")
+	request.InitWithApiInfo("Dds", "2015-12-01", "MigrateAvailableZone", "dds", "openAPI")
 	return
 }
 
