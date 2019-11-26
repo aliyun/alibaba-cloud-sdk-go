@@ -98,7 +98,7 @@ func CreateDescribeAvailableRecoveryTimeRequest() (request *DescribeAvailableRec
 	request = &DescribeAvailableRecoveryTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAvailableRecoveryTime", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAvailableRecoveryTime", "", "")
 	return
 }
 

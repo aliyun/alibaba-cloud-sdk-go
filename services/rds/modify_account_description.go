@@ -96,7 +96,7 @@ func CreateModifyAccountDescriptionRequest() (request *ModifyAccountDescriptionR
 	request = &ModifyAccountDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyAccountDescription", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyAccountDescription", "", "")
 	return
 }
 

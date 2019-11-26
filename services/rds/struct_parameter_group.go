@@ -23,9 +23,9 @@ type ParameterGroup struct {
 	ParameterGroupName string      `json:"ParameterGroupName" xml:"ParameterGroupName"`
 	ParameterGroupType int         `json:"ParameterGroupType" xml:"ParameterGroupType"`
 	ParameterGroupDesc string      `json:"ParameterGroupDesc" xml:"ParameterGroupDesc"`
-	ParameterGroupId   int         `json:"ParameterGroupId" xml:"ParameterGroupId"`
 	CreateTime         string      `json:"CreateTime" xml:"CreateTime"`
 	ParamCounts        int         `json:"ParamCounts" xml:"ParamCounts"`
 	ForceRestart       int         `json:"ForceRestart" xml:"ForceRestart"`
+	ParameterGroupId   string      `json:"ParameterGroupId" xml:"ParameterGroupId"`
 	ParamDetail        ParamDetail `json:"ParamDetail" xml:"ParamDetail"`
 }

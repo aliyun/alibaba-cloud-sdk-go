@@ -106,6 +106,7 @@ type DescribeDBInstancesRequest struct {
 	Tag3Value            string           `position:"Query" name:"Tag.3.value"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DedicatedHostId      string           `position:"Query" name:"DedicatedHostId"`
 	Tag5Value            string           `position:"Query" name:"Tag.5.value"`
 	Tag1Key              string           `position:"Query" name:"Tag.1.key"`
 	VpcId                string           `position:"Query" name:"VpcId"`
@@ -128,7 +129,7 @@ func CreateDescribeDBInstancesRequest() (request *DescribeDBInstancesRequest) {
 	request = &DescribeDBInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstances", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstances", "", "")
 	return
 }
 

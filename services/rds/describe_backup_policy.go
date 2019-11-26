@@ -88,22 +88,25 @@ type DescribeBackupPolicyRequest struct {
 // DescribeBackupPolicyResponse is the response struct for api DescribeBackupPolicy
 type DescribeBackupPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId                string              `json:"RequestId" xml:"RequestId"`
-	BackupRetentionPeriod    int                 `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
-	PreferredNextBackupTime  string              `json:"PreferredNextBackupTime" xml:"PreferredNextBackupTime"`
-	PreferredBackupTime      string              `json:"PreferredBackupTime" xml:"PreferredBackupTime"`
-	PreferredBackupPeriod    string              `json:"PreferredBackupPeriod" xml:"PreferredBackupPeriod"`
-	BackupLog                string              `json:"BackupLog" xml:"BackupLog"`
-	LogBackupRetentionPeriod int                 `json:"LogBackupRetentionPeriod" xml:"LogBackupRetentionPeriod"`
-	EnableBackupLog          string              `json:"EnableBackupLog" xml:"EnableBackupLog"`
-	LocalLogRetentionHours   int                 `json:"LocalLogRetentionHours" xml:"LocalLogRetentionHours"`
-	LocalLogRetentionSpace   string              `json:"LocalLogRetentionSpace" xml:"LocalLogRetentionSpace"`
-	Duplication              string              `json:"Duplication" xml:"Duplication"`
-	DuplicationContent       string              `json:"DuplicationContent" xml:"DuplicationContent"`
-	HighSpaceUsageProtection string              `json:"HighSpaceUsageProtection" xml:"HighSpaceUsageProtection"`
-	LogBackupFrequency       string              `json:"LogBackupFrequency" xml:"LogBackupFrequency"`
-	CompressType             string              `json:"CompressType" xml:"CompressType"`
-	DuplicationLocation      DuplicationLocation `json:"DuplicationLocation" xml:"DuplicationLocation"`
+	RequestId                    string              `json:"RequestId" xml:"RequestId"`
+	BackupRetentionPeriod        int                 `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
+	PreferredNextBackupTime      string              `json:"PreferredNextBackupTime" xml:"PreferredNextBackupTime"`
+	PreferredBackupTime          string              `json:"PreferredBackupTime" xml:"PreferredBackupTime"`
+	PreferredBackupPeriod        string              `json:"PreferredBackupPeriod" xml:"PreferredBackupPeriod"`
+	BackupLog                    string              `json:"BackupLog" xml:"BackupLog"`
+	LogBackupRetentionPeriod     int                 `json:"LogBackupRetentionPeriod" xml:"LogBackupRetentionPeriod"`
+	EnableBackupLog              string              `json:"EnableBackupLog" xml:"EnableBackupLog"`
+	LocalLogRetentionHours       int                 `json:"LocalLogRetentionHours" xml:"LocalLogRetentionHours"`
+	LocalLogRetentionSpace       string              `json:"LocalLogRetentionSpace" xml:"LocalLogRetentionSpace"`
+	Duplication                  string              `json:"Duplication" xml:"Duplication"`
+	DuplicationContent           string              `json:"DuplicationContent" xml:"DuplicationContent"`
+	HighSpaceUsageProtection     string              `json:"HighSpaceUsageProtection" xml:"HighSpaceUsageProtection"`
+	LogBackupFrequency           string              `json:"LogBackupFrequency" xml:"LogBackupFrequency"`
+	CompressType                 string              `json:"CompressType" xml:"CompressType"`
+	ArchiveBackupRetentionPeriod string              `json:"ArchiveBackupRetentionPeriod" xml:"ArchiveBackupRetentionPeriod"`
+	ArchiveBackupKeepPolicy      string              `json:"ArchiveBackupKeepPolicy" xml:"ArchiveBackupKeepPolicy"`
+	ArchiveBackupKeepCount       string              `json:"ArchiveBackupKeepCount" xml:"ArchiveBackupKeepCount"`
+	DuplicationLocation          DuplicationLocation `json:"DuplicationLocation" xml:"DuplicationLocation"`
 }
 
 // CreateDescribeBackupPolicyRequest creates a request to invoke DescribeBackupPolicy API
@@ -111,7 +114,7 @@ func CreateDescribeBackupPolicyRequest() (request *DescribeBackupPolicyRequest) 
 	request = &DescribeBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackupPolicy", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackupPolicy", "", "")
 	return
 }
 

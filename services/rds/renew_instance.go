@@ -98,7 +98,7 @@ func CreateRenewInstanceRequest() (request *RenewInstanceRequest) {
 	request = &RenewInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "RenewInstance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "RenewInstance", "", "")
 	return
 }
 

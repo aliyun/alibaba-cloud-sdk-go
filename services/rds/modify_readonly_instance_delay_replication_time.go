@@ -97,7 +97,7 @@ func CreateModifyReadonlyInstanceDelayReplicationTimeRequest() (request *ModifyR
 	request = &ModifyReadonlyInstanceDelayReplicationTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyReadonlyInstanceDelayReplicationTime", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyReadonlyInstanceDelayReplicationTime", "", "")
 	return
 }
 

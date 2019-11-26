@@ -96,7 +96,7 @@ func CreateDescribeDBInstanceIPArrayListRequest() (request *DescribeDBInstanceIP
 	request = &DescribeDBInstanceIPArrayListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceIPArrayList", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceIPArrayList", "", "")
 	return
 }
 

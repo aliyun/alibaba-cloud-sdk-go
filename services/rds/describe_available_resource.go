@@ -93,8 +93,8 @@ type DescribeAvailableResourceRequest struct {
 // DescribeAvailableResourceResponse is the response struct for api DescribeAvailableResource
 type DescribeAvailableResourceResponse struct {
 	*responses.BaseResponse
-	RequestId      string                                    `json:"RequestId" xml:"RequestId"`
-	AvailableZones AvailableZonesInDescribeAvailableResource `json:"AvailableZones" xml:"AvailableZones"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	AvailableZones AvailableZones `json:"AvailableZones" xml:"AvailableZones"`
 }
 
 // CreateDescribeAvailableResourceRequest creates a request to invoke DescribeAvailableResource API
@@ -102,7 +102,7 @@ func CreateDescribeAvailableResourceRequest() (request *DescribeAvailableResourc
 	request = &DescribeAvailableResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAvailableResource", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAvailableResource", "", "")
 	return
 }
 

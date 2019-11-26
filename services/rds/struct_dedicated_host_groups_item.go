@@ -29,4 +29,5 @@ type DedicatedHostGroupsItem struct {
 	HostNumber             int    `json:"HostNumber" xml:"HostNumber"`
 	InstanceNumber         int    `json:"InstanceNumber" xml:"InstanceNumber"`
 	Engine                 string `json:"Engine" xml:"Engine"`
+	Text                   string `json:"Text" xml:"Text"`
 }

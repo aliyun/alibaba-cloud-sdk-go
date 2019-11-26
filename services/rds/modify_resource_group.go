@@ -96,7 +96,7 @@ func CreateModifyResourceGroupRequest() (request *ModifyResourceGroupRequest) {
 	request = &ModifyResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyResourceGroup", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyResourceGroup", "", "")
 	return
 }
 

@@ -96,7 +96,7 @@ func CreateResetAccountRequest() (request *ResetAccountRequest) {
 	request = &ResetAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ResetAccount", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ResetAccount", "", "")
 	return
 }
 

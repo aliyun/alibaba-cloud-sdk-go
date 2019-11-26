@@ -79,7 +79,6 @@ type CreateDedicatedHostRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	HostName             string           `position:"Query" name:"HostName"`
-	HostCount            requests.Integer `position:"Query" name:"HostCount"`
 	DedicatedHostGroupId string           `position:"Query" name:"DedicatedHostGroupId"`
 	Period               string           `position:"Query" name:"Period"`
 	HostClass            string           `position:"Query" name:"HostClass"`
@@ -105,7 +104,7 @@ func CreateCreateDedicatedHostRequest() (request *CreateDedicatedHostRequest) {
 	request = &CreateDedicatedHostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDedicatedHost", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDedicatedHost", "", "")
 	return
 }
 

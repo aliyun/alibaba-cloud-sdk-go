@@ -95,7 +95,7 @@ func CreateModifyDBInstanceProxyConfigurationRequest() (request *ModifyDBInstanc
 	request = &ModifyDBInstanceProxyConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceProxyConfiguration", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceProxyConfiguration", "", "")
 	return
 }
 

@@ -32,6 +32,7 @@ type DBInstanceAttribute struct {
 	MaxConnections                    int                                                `json:"MaxConnections" xml:"MaxConnections"`
 	IncrementSourceDBInstanceId       string                                             `json:"IncrementSourceDBInstanceId" xml:"IncrementSourceDBInstanceId"`
 	InstanceNetworkType               string                                             `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
+	MultipleTempUpgrade               bool                                               `json:"MultipleTempUpgrade" xml:"MultipleTempUpgrade"`
 	DBInstanceType                    string                                             `json:"DBInstanceType" xml:"DBInstanceType"`
 	TempUpgradeRecoveryClass          string                                             `json:"TempUpgradeRecoveryClass" xml:"TempUpgradeRecoveryClass"`
 	DBInstanceId                      string                                             `json:"DBInstanceId" xml:"DBInstanceId"`
@@ -72,6 +73,7 @@ type DBInstanceAttribute struct {
 	ExpireTime                        string                                             `json:"ExpireTime" xml:"ExpireTime"`
 	TempUpgradeRecoveryMemory         int                                                `json:"TempUpgradeRecoveryMemory" xml:"TempUpgradeRecoveryMemory"`
 	DispenseMode                      string                                             `json:"DispenseMode" xml:"DispenseMode"`
+	OriginConfiguration               string                                             `json:"OriginConfiguration" xml:"OriginConfiguration"`
 	ProxyType                         int                                                `json:"ProxyType" xml:"ProxyType"`
 	AccountMaxQuantity                int                                                `json:"AccountMaxQuantity" xml:"AccountMaxQuantity"`
 	TempUpgradeRecoveryMaxConnections string                                             `json:"TempUpgradeRecoveryMaxConnections" xml:"TempUpgradeRecoveryMaxConnections"`

@@ -107,7 +107,7 @@ func CreateCheckCreateDdrDBInstanceRequest() (request *CheckCreateDdrDBInstanceR
 	request = &CheckCreateDdrDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CheckCreateDdrDBInstance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CheckCreateDdrDBInstance", "", "")
 	return
 }
 

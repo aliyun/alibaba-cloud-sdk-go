@@ -93,7 +93,7 @@ func CreateDescribeCollationTimeZonesRequest() (request *DescribeCollationTimeZo
 	request = &DescribeCollationTimeZonesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCollationTimeZones", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCollationTimeZones", "", "")
 	return
 }
 
