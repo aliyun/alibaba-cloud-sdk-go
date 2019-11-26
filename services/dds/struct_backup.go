@@ -17,14 +17,15 @@ package dds
 
 // Backup is a nested struct in dds response
 type Backup struct {
-	BackupDBNames     string `json:"BackupDBNames" xml:"BackupDBNames"`
-	BackupId          int    `json:"BackupId" xml:"BackupId"`
-	BackupStatus      string `json:"BackupStatus" xml:"BackupStatus"`
-	BackupStartTime   string `json:"BackupStartTime" xml:"BackupStartTime"`
-	BackupEndTime     string `json:"BackupEndTime" xml:"BackupEndTime"`
-	BackupType        string `json:"BackupType" xml:"BackupType"`
-	BackupMode        string `json:"BackupMode" xml:"BackupMode"`
-	BackupMethod      string `json:"BackupMethod" xml:"BackupMethod"`
-	BackupDownloadURL string `json:"BackupDownloadURL" xml:"BackupDownloadURL"`
-	BackupSize        int    `json:"BackupSize" xml:"BackupSize"`
+	BackupDBNames             string `json:"BackupDBNames" xml:"BackupDBNames"`
+	BackupId                  int    `json:"BackupId" xml:"BackupId"`
+	BackupStatus              string `json:"BackupStatus" xml:"BackupStatus"`
+	BackupStartTime           string `json:"BackupStartTime" xml:"BackupStartTime"`
+	BackupEndTime             string `json:"BackupEndTime" xml:"BackupEndTime"`
+	BackupType                string `json:"BackupType" xml:"BackupType"`
+	BackupMode                string `json:"BackupMode" xml:"BackupMode"`
+	BackupMethod              string `json:"BackupMethod" xml:"BackupMethod"`
+	BackupDownloadURL         string `json:"BackupDownloadURL" xml:"BackupDownloadURL"`
+	BackupIntranetDownloadURL string `json:"BackupIntranetDownloadURL" xml:"BackupIntranetDownloadURL"`
+	BackupSize                int64  `json:"BackupSize" xml:"BackupSize"`
 }

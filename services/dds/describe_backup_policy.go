@@ -78,9 +78,9 @@ type DescribeBackupPolicyRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
@@ -99,7 +99,7 @@ func CreateDescribeBackupPolicyRequest() (request *DescribeBackupPolicyRequest) 
 	request = &DescribeBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeBackupPolicy", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeBackupPolicy", "", "")
 	return
 }
 

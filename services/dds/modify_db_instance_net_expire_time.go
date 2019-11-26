@@ -77,13 +77,13 @@ func (client *Client) ModifyDBInstanceNetExpireTimeWithCallback(request *ModifyD
 type ModifyDBInstanceNetExpireTimeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SecurityToken            string           `position:"Query" name:"SecurityToken"`
-	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
 	ConnectionString         string           `position:"Query" name:"ConnectionString"`
-	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId             string           `position:"Query" name:"DBInstanceId"`
-	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	ClassicExpendExpiredDays requests.Integer `position:"Query" name:"ClassicExpendExpiredDays"`
+	SecurityToken            string           `position:"Query" name:"SecurityToken"`
+	DBInstanceId             string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyDBInstanceNetExpireTimeResponse is the response struct for api ModifyDBInstanceNetExpireTime
@@ -97,7 +97,7 @@ func CreateModifyDBInstanceNetExpireTimeRequest() (request *ModifyDBInstanceNetE
 	request = &ModifyDBInstanceNetExpireTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyDBInstanceNetExpireTime", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyDBInstanceNetExpireTime", "", "")
 	return
 }
 

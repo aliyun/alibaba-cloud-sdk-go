@@ -17,8 +17,8 @@ package dds
 
 // PerformanceKey is a nested struct in dds response
 type PerformanceKey struct {
-	Key               string                                           `json:"Key" xml:"Key"`
-	Unit              string                                           `json:"Unit" xml:"Unit"`
-	ValueFormat       string                                           `json:"ValueFormat" xml:"ValueFormat"`
-	PerformanceValues PerformanceValuesInDescribeDBInstancePerformance `json:"PerformanceValues" xml:"PerformanceValues"`
+	Key               string            `json:"Key" xml:"Key"`
+	Unit              string            `json:"Unit" xml:"Unit"`
+	ValueFormat       string            `json:"ValueFormat" xml:"ValueFormat"`
+	PerformanceValues PerformanceValues `json:"PerformanceValues" xml:"PerformanceValues"`
 }

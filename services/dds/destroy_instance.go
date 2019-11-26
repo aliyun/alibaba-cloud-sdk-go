@@ -77,12 +77,13 @@ func (client *Client) DestroyInstanceWithCallback(request *DestroyInstanceReques
 type DestroyInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // DestroyInstanceResponse is the response struct for api DestroyInstance
@@ -96,7 +97,7 @@ func CreateDestroyInstanceRequest() (request *DestroyInstanceRequest) {
 	request = &DestroyInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DestroyInstance", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DestroyInstance", "", "")
 	return
 }
 

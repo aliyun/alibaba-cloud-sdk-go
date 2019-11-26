@@ -76,14 +76,14 @@ func (client *Client) MigrateToOtherZoneWithCallback(request *MigrateToOtherZone
 // MigrateToOtherZoneRequest is the request struct for api MigrateToOtherZone
 type MigrateToOtherZoneRequest struct {
 	*requests.RpcRequest
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
 }
 
 // MigrateToOtherZoneResponse is the response struct for api MigrateToOtherZone
@@ -97,7 +97,7 @@ func CreateMigrateToOtherZoneRequest() (request *MigrateToOtherZoneRequest) {
 	request = &MigrateToOtherZoneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "MigrateToOtherZone", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "MigrateToOtherZone", "", "")
 	return
 }
 

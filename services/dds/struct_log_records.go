@@ -24,11 +24,11 @@ type LogRecords struct {
 	QueryTimes         string `json:"QueryTimes" xml:"QueryTimes"`
 	SQLText            string `json:"SQLText" xml:"SQLText"`
 	ConnInfo           string `json:"ConnInfo" xml:"ConnInfo"`
-	Content            int    `json:"Content" xml:"Content"`
 	ExecutionStartTime string `json:"ExecutionStartTime" xml:"ExecutionStartTime"`
-	ReturnRowCounts    int    `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
+	ReturnRowCounts    int64  `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
+	Content            string `json:"Content" xml:"Content"`
 	AccountName        string `json:"AccountName" xml:"AccountName"`
-	DocsExamined       int    `json:"DocsExamined" xml:"DocsExamined"`
+	DocsExamined       int64  `json:"DocsExamined" xml:"DocsExamined"`
 	DBName             string `json:"DBName" xml:"DBName"`
-	KeysExamined       int    `json:"KeysExamined" xml:"KeysExamined"`
+	KeysExamined       int64  `json:"KeysExamined" xml:"KeysExamined"`
 }

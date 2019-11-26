@@ -21,7 +21,9 @@ type DBInstance struct {
 	DBInstanceDescription string                                   `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
 	Engine                string                                   `json:"Engine" xml:"Engine"`
 	ChargeType            string                                   `json:"ChargeType" xml:"ChargeType"`
+	ReadonlyReplicas      string                                   `json:"ReadonlyReplicas" xml:"ReadonlyReplicas"`
 	DBInstanceClass       string                                   `json:"DBInstanceClass" xml:"DBInstanceClass"`
+	VpcAuthMode           string                                   `json:"VpcAuthMode" xml:"VpcAuthMode"`
 	DestroyTime           string                                   `json:"DestroyTime" xml:"DestroyTime"`
 	RegionId              string                                   `json:"RegionId" xml:"RegionId"`
 	LastDowngradeTime     string                                   `json:"LastDowngradeTime" xml:"LastDowngradeTime"`
@@ -47,7 +49,9 @@ type DBInstance struct {
 	CurrentKernelVersion  string                                   `json:"CurrentKernelVersion" xml:"CurrentKernelVersion"`
 	ZoneId                string                                   `json:"ZoneId" xml:"ZoneId"`
 	LockMode              string                                   `json:"LockMode" xml:"LockMode"`
+	MongosList            MongosListInDescribeDBInstances          `json:"MongosList" xml:"MongosList"`
 	ReplicaSets           ReplicaSetsInDescribeDBInstanceAttribute `json:"ReplicaSets" xml:"ReplicaSets"`
-	ShardList             ShardListInDescribeDBInstances           `json:"ShardList" xml:"ShardList"`
-	MongosList            MongosListInDescribeDBInstanceAttribute  `json:"MongosList" xml:"MongosList"`
+	ShardList             ShardListInDescribeDBInstanceAttribute   `json:"ShardList" xml:"ShardList"`
+	Tags                  TagsInDescribeDBInstanceAttribute        `json:"Tags" xml:"Tags"`
+	ConfigserverList      ConfigserverList                         `json:"ConfigserverList" xml:"ConfigserverList"`
 }

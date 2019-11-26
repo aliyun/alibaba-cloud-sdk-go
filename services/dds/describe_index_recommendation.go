@@ -77,20 +77,20 @@ func (client *Client) DescribeIndexRecommendationWithCallback(request *DescribeI
 type DescribeIndexRecommendationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EndTime              string           `position:"Query" name:"EndTime"`
-	Collection           string           `position:"Query" name:"Collection"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	OperationType        string           `position:"Query" name:"OperationType"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	Database             string           `position:"Query" name:"Database"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	NodeId               string           `position:"Query" name:"NodeId"`
 	TaskId               string           `position:"Query" name:"TaskId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	Collection           string           `position:"Query" name:"Collection"`
+	OperationType        string           `position:"Query" name:"OperationType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // DescribeIndexRecommendationResponse is the response struct for api DescribeIndexRecommendation
@@ -108,7 +108,7 @@ func CreateDescribeIndexRecommendationRequest() (request *DescribeIndexRecommend
 	request = &DescribeIndexRecommendationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeIndexRecommendation", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeIndexRecommendation", "", "")
 	return
 }
 

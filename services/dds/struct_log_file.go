@@ -22,5 +22,5 @@ type LogFile struct {
 	LogStartTime   string `json:"LogStartTime" xml:"LogStartTime"`
 	LogEndTime     string `json:"LogEndTime" xml:"LogEndTime"`
 	LogDownloadURL string `json:"LogDownloadURL" xml:"LogDownloadURL"`
-	LogSize        int    `json:"LogSize" xml:"LogSize"`
+	LogSize        int64  `json:"LogSize" xml:"LogSize"`
 }

@@ -77,14 +77,14 @@ func (client *Client) ModifySecurityIpsWithCallback(request *ModifySecurityIpsRe
 type ModifySecurityIpsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ModifyMode               string           `position:"Query" name:"ModifyMode"`
-	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
 	SecurityIps              string           `position:"Query" name:"SecurityIps"`
-	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityIpGroupName      string           `position:"Query" name:"SecurityIpGroupName"`
 	SecurityToken            string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId             string           `position:"Query" name:"DBInstanceId"`
+	ModifyMode               string           `position:"Query" name:"ModifyMode"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityIpGroupAttribute string           `position:"Query" name:"SecurityIpGroupAttribute"`
 }
 
@@ -99,7 +99,7 @@ func CreateModifySecurityIpsRequest() (request *ModifySecurityIpsRequest) {
 	request = &ModifySecurityIpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifySecurityIps", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifySecurityIps", "", "")
 	return
 }
 

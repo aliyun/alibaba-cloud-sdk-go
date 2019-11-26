@@ -78,11 +78,11 @@ type RestartDBInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	NodeId               string           `position:"Query" name:"NodeId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	NodeId               string           `position:"Query" name:"NodeId"`
 }
 
 // RestartDBInstanceResponse is the response struct for api RestartDBInstance
@@ -96,7 +96,7 @@ func CreateRestartDBInstanceRequest() (request *RestartDBInstanceRequest) {
 	request = &RestartDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "RestartDBInstance", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "RestartDBInstance", "", "")
 	return
 }
 

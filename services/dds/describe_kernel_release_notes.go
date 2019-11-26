@@ -77,11 +77,11 @@ func (client *Client) DescribeKernelReleaseNotesWithCallback(request *DescribeKe
 type DescribeKernelReleaseNotesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	KernelVersion        string           `position:"Query" name:"KernelVersion"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	KernelVersion        string           `position:"Query" name:"KernelVersion"`
 }
 
 // DescribeKernelReleaseNotesResponse is the response struct for api DescribeKernelReleaseNotes
@@ -96,7 +96,7 @@ func CreateDescribeKernelReleaseNotesRequest() (request *DescribeKernelReleaseNo
 	request = &DescribeKernelReleaseNotesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeKernelReleaseNotes", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeKernelReleaseNotes", "", "")
 	return
 }
 

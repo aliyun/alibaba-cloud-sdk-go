@@ -78,10 +78,10 @@ type RestoreDBInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	BackupId             requests.Integer `position:"Query" name:"BackupId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
@@ -96,7 +96,7 @@ func CreateRestoreDBInstanceRequest() (request *RestoreDBInstanceRequest) {
 	request = &RestoreDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "RestoreDBInstance", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "RestoreDBInstance", "", "")
 	return
 }
 

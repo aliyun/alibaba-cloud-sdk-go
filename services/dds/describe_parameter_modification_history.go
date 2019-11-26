@@ -77,14 +77,14 @@ func (client *Client) DescribeParameterModificationHistoryWithCallback(request *
 type DescribeParameterModificationHistoryRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	NodeId               string           `position:"Query" name:"NodeId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	StartTime            string           `position:"Query" name:"StartTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	NodeId               string           `position:"Query" name:"NodeId"`
 }
 
 // DescribeParameterModificationHistoryResponse is the response struct for api DescribeParameterModificationHistory
@@ -99,7 +99,7 @@ func CreateDescribeParameterModificationHistoryRequest() (request *DescribeParam
 	request = &DescribeParameterModificationHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeParameterModificationHistory", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeParameterModificationHistory", "", "")
 	return
 }
 

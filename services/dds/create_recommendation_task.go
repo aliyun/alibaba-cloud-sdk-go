@@ -77,14 +77,14 @@ func (client *Client) CreateRecommendationTaskWithCallback(request *CreateRecomm
 type CreateRecommendationTaskRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	NodeId               string           `position:"Query" name:"NodeId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
-	StartTime            string           `position:"Query" name:"StartTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	NodeId               string           `position:"Query" name:"NodeId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // CreateRecommendationTaskResponse is the response struct for api CreateRecommendationTask
@@ -98,7 +98,7 @@ func CreateCreateRecommendationTaskRequest() (request *CreateRecommendationTaskR
 	request = &CreateRecommendationTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "CreateRecommendationTask", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "CreateRecommendationTask", "", "")
 	return
 }
 

@@ -25,4 +25,6 @@ type NetworkAddress struct {
 	VswitchId      string `json:"VswitchId" xml:"VswitchId"`
 	NodeId         string `json:"NodeId" xml:"NodeId"`
 	ExpiredTime    string `json:"ExpiredTime" xml:"ExpiredTime"`
+	NodeType       string `json:"NodeType" xml:"NodeType"`
+	Role           string `json:"Role" xml:"Role"`
 }

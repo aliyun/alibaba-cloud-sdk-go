@@ -77,13 +77,13 @@ func (client *Client) DeleteNodeWithCallback(request *DeleteNodeRequest, callbac
 type DeleteNodeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	NodeId               string           `position:"Query" name:"NodeId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteNodeResponse is the response struct for api DeleteNode
@@ -98,7 +98,7 @@ func CreateDeleteNodeRequest() (request *DeleteNodeRequest) {
 	request = &DeleteNodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DeleteNode", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DeleteNode", "", "")
 	return
 }
 

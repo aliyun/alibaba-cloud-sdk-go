@@ -77,15 +77,13 @@ func (client *Client) SwitchDBInstanceHAWithCallback(request *SwitchDBInstanceHA
 type SwitchDBInstanceHARequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RoleIds              string           `position:"Query" name:"RoleIds"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	NodeId               string           `position:"Query" name:"NodeId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	TargetInstanceId     requests.Integer `position:"Query" name:"TargetInstanceId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	SwitchType           requests.Integer `position:"Query" name:"SwitchType"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	SourceInstanceId     requests.Integer `position:"Query" name:"SourceInstanceId"`
-	NodeId               string           `position:"Query" name:"NodeId"`
 }
 
 // SwitchDBInstanceHAResponse is the response struct for api SwitchDBInstanceHA
@@ -99,7 +97,7 @@ func CreateSwitchDBInstanceHARequest() (request *SwitchDBInstanceHARequest) {
 	request = &SwitchDBInstanceHARequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "SwitchDBInstanceHA", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "SwitchDBInstanceHA", "", "")
 	return
 }
 

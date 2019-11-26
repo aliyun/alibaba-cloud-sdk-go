@@ -77,18 +77,18 @@ func (client *Client) ModifyNodeSpecWithCallback(request *ModifyNodeSpecRequest,
 type ModifyNodeSpecRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
-	FromApp              string           `position:"Query" name:"FromApp"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	NodeStorage          requests.Integer `position:"Query" name:"NodeStorage"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	NodeClass            string           `position:"Query" name:"NodeClass"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	NodeId               string           `position:"Query" name:"NodeId"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	FromApp              string           `position:"Query" name:"FromApp"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	NodeStorage          requests.Integer `position:"Query" name:"NodeStorage"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyNodeSpecResponse is the response struct for api ModifyNodeSpec
@@ -103,7 +103,7 @@ func CreateModifyNodeSpecRequest() (request *ModifyNodeSpecRequest) {
 	request = &ModifyNodeSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyNodeSpec", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyNodeSpec", "", "")
 	return
 }
 

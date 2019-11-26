@@ -78,11 +78,11 @@ type DescribeShardingNetworkAddressRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	NodeId               string           `position:"Query" name:"NodeId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	NodeId               string           `position:"Query" name:"NodeId"`
 }
 
 // DescribeShardingNetworkAddressResponse is the response struct for api DescribeShardingNetworkAddress
@@ -97,7 +97,7 @@ func CreateDescribeShardingNetworkAddressRequest() (request *DescribeShardingNet
 	request = &DescribeShardingNetworkAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeShardingNetworkAddress", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeShardingNetworkAddress", "", "")
 	return
 }
 

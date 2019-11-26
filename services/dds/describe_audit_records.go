@@ -77,19 +77,19 @@ func (client *Client) DescribeAuditRecordsWithCallback(request *DescribeAuditRec
 type DescribeAuditRecordsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EndTime              string           `position:"Query" name:"EndTime"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	QueryKeywords        string           `position:"Query" name:"QueryKeywords"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	Database             string           `position:"Query" name:"Database"`
-	Form                 string           `position:"Query" name:"Form"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	NodeId               string           `position:"Query" name:"NodeId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Form                 string           `position:"Query" name:"Form"`
 	User                 string           `position:"Query" name:"User"`
 }
 
@@ -108,7 +108,7 @@ func CreateDescribeAuditRecordsRequest() (request *DescribeAuditRecordsRequest) 
 	request = &DescribeAuditRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeAuditRecords", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeAuditRecords", "", "")
 	return
 }
 

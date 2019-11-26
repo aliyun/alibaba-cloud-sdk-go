@@ -22,12 +22,12 @@ type Analyzation struct {
 	Operation                string               `json:"Operation" xml:"Operation"`
 	Query                    string               `json:"Query" xml:"Query"`
 	Sort                     string               `json:"Sort" xml:"Sort"`
-	Count                    int                  `json:"Count" xml:"Count"`
-	TotalExecutionTime       int                  `json:"TotalExecutionTime" xml:"TotalExecutionTime"`
-	AverageExecutionTime     int                  `json:"AverageExecutionTime" xml:"AverageExecutionTime"`
-	AverageReturnRowCount    int                  `json:"AverageReturnRowCount" xml:"AverageReturnRowCount"`
-	AverageDocsExaminedCount int                  `json:"AverageDocsExaminedCount" xml:"AverageDocsExaminedCount"`
-	AverageKeysExaminedCount int                  `json:"AverageKeysExaminedCount" xml:"AverageKeysExaminedCount"`
+	Count                    int64                `json:"Count" xml:"Count"`
+	TotalExecutionTime       int64                `json:"TotalExecutionTime" xml:"TotalExecutionTime"`
+	AverageExecutionTime     int64                `json:"AverageExecutionTime" xml:"AverageExecutionTime"`
+	AverageReturnRowCount    int64                `json:"AverageReturnRowCount" xml:"AverageReturnRowCount"`
+	AverageDocsExaminedCount int64                `json:"AverageDocsExaminedCount" xml:"AverageDocsExaminedCount"`
+	AverageKeysExaminedCount int64                `json:"AverageKeysExaminedCount" xml:"AverageKeysExaminedCount"`
 	InMemorySort             string               `json:"InMemorySort" xml:"InMemorySort"`
 	LastExecutionTime        string               `json:"LastExecutionTime" xml:"LastExecutionTime"`
 	ExecutionPlan            string               `json:"ExecutionPlan" xml:"ExecutionPlan"`

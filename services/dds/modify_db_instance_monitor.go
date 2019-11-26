@@ -78,11 +78,11 @@ type ModifyDBInstanceMonitorRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Granularity          string           `position:"Query" name:"Granularity"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Granularity          string           `position:"Query" name:"Granularity"`
 }
 
 // ModifyDBInstanceMonitorResponse is the response struct for api ModifyDBInstanceMonitor
@@ -96,7 +96,7 @@ func CreateModifyDBInstanceMonitorRequest() (request *ModifyDBInstanceMonitorReq
 	request = &ModifyDBInstanceMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyDBInstanceMonitor", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyDBInstanceMonitor", "", "")
 	return
 }
 

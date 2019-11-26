@@ -78,12 +78,12 @@ type ModifyDBInstanceDescriptionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken         string           `position:"Query" name:"SecurityToken"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
 	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	NodeId                string           `position:"Query" name:"NodeId"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyDBInstanceDescriptionResponse is the response struct for api ModifyDBInstanceDescription
@@ -97,7 +97,7 @@ func CreateModifyDBInstanceDescriptionRequest() (request *ModifyDBInstanceDescri
 	request = &ModifyDBInstanceDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyDBInstanceDescription", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyDBInstanceDescription", "", "")
 	return
 }
 

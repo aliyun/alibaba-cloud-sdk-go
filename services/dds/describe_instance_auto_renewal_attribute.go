@@ -77,13 +77,13 @@ func (client *Client) DescribeInstanceAutoRenewalAttributeWithCallback(request *
 type DescribeInstanceAutoRenewalAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           string           `position:"Query" name:"PageNumber"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	PageSize             string           `position:"Query" name:"PageSize"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PageNumber           string           `position:"Query" name:"PageNumber"`
 	DBInstanceType       string           `position:"Query" name:"DBInstanceType"`
 }
 
@@ -102,7 +102,7 @@ func CreateDescribeInstanceAutoRenewalAttributeRequest() (request *DescribeInsta
 	request = &DescribeInstanceAutoRenewalAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeInstanceAutoRenewalAttribute", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeInstanceAutoRenewalAttribute", "", "")
 	return
 }
 

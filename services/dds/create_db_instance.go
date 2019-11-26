@@ -78,31 +78,33 @@ type CreateDBInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
 	CouponNo              string           `position:"Query" name:"CouponNo"`
 	EngineVersion         string           `position:"Query" name:"EngineVersion"`
 	NetworkType           string           `position:"Query" name:"NetworkType"`
-	ReplicationFactor     string           `position:"Query" name:"ReplicationFactor"`
-	StorageEngine         string           `position:"Query" name:"StorageEngine"`
 	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken         string           `position:"Query" name:"SecurityToken"`
-	Engine                string           `position:"Query" name:"Engine"`
 	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
 	BusinessInfo          string           `position:"Query" name:"BusinessInfo"`
 	Period                requests.Integer `position:"Query" name:"Period"`
-	RestoreTime           string           `position:"Query" name:"RestoreTime"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	SrcDBInstanceId       string           `position:"Query" name:"SrcDBInstanceId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	BackupId              string           `position:"Query" name:"BackupId"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
 	SecurityIPList        string           `position:"Query" name:"SecurityIPList"`
 	VSwitchId             string           `position:"Query" name:"VSwitchId"`
-	AccountPassword       string           `position:"Query" name:"AccountPassword"`
 	AutoRenew             string           `position:"Query" name:"AutoRenew"`
-	VpcId                 string           `position:"Query" name:"VpcId"`
 	ZoneId                string           `position:"Query" name:"ZoneId"`
+	ClientToken           string           `position:"Query" name:"ClientToken"`
+	ReadonlyReplicas      string           `position:"Query" name:"ReadonlyReplicas"`
+	ReplicationFactor     string           `position:"Query" name:"ReplicationFactor"`
+	StorageEngine         string           `position:"Query" name:"StorageEngine"`
+	DatabaseNames         string           `position:"Query" name:"DatabaseNames"`
+	Engine                string           `position:"Query" name:"Engine"`
+	RestoreTime           string           `position:"Query" name:"RestoreTime"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	SrcDBInstanceId       string           `position:"Query" name:"SrcDBInstanceId"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	AccountPassword       string           `position:"Query" name:"AccountPassword"`
+	VpcId                 string           `position:"Query" name:"VpcId"`
 	ChargeType            string           `position:"Query" name:"ChargeType"`
 }
 
@@ -119,7 +121,7 @@ func CreateCreateDBInstanceRequest() (request *CreateDBInstanceRequest) {
 	request = &CreateDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "CreateDBInstance", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "CreateDBInstance", "", "")
 	return
 }
 

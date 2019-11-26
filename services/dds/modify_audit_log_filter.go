@@ -76,14 +76,14 @@ func (client *Client) ModifyAuditLogFilterWithCallback(request *ModifyAuditLogFi
 // ModifyAuditLogFilterRequest is the request struct for api ModifyAuditLogFilter
 type ModifyAuditLogFilterRequest struct {
 	*requests.RpcRequest
-	Filter               string           `position:"Query" name:"Filter"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	RoleType             string           `position:"Query" name:"RoleType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Filter               string           `position:"Query" name:"Filter"`
 }
 
 // ModifyAuditLogFilterResponse is the response struct for api ModifyAuditLogFilter
@@ -97,7 +97,7 @@ func CreateModifyAuditLogFilterRequest() (request *ModifyAuditLogFilterRequest) 
 	request = &ModifyAuditLogFilterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyAuditLogFilter", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyAuditLogFilter", "", "")
 	return
 }
 

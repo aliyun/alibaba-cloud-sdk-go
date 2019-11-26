@@ -77,19 +77,19 @@ func (client *Client) DescribeAvailableTimeRangeWithCallback(request *DescribeAv
 type DescribeAvailableTimeRangeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	NodeId               string           `position:"Query" name:"NodeId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	NodeId               string           `position:"Query" name:"NodeId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // DescribeAvailableTimeRangeResponse is the response struct for api DescribeAvailableTimeRange
 type DescribeAvailableTimeRangeResponse struct {
 	*responses.BaseResponse
-	RequestId string                                `json:"RequestId" xml:"RequestId"`
-	TimeRange TimeRangeInDescribeAvailableTimeRange `json:"TimeRange" xml:"TimeRange"`
+	RequestId string    `json:"RequestId" xml:"RequestId"`
+	TimeRange TimeRange `json:"TimeRange" xml:"TimeRange"`
 }
 
 // CreateDescribeAvailableTimeRangeRequest creates a request to invoke DescribeAvailableTimeRange API
@@ -97,7 +97,7 @@ func CreateDescribeAvailableTimeRangeRequest() (request *DescribeAvailableTimeRa
 	request = &DescribeAvailableTimeRangeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeAvailableTimeRange", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeAvailableTimeRange", "", "")
 	return
 }
 

@@ -78,10 +78,10 @@ type ModifyDBInstanceMaintainTimeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	MaintainStartTime    string           `position:"Query" name:"MaintainStartTime"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	MaintainEndTime      string           `position:"Query" name:"MaintainEndTime"`
 }
@@ -97,7 +97,7 @@ func CreateModifyDBInstanceMaintainTimeRequest() (request *ModifyDBInstanceMaint
 	request = &ModifyDBInstanceMaintainTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyDBInstanceMaintainTime", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyDBInstanceMaintainTime", "", "")
 	return
 }
 

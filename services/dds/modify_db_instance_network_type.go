@@ -77,16 +77,16 @@ func (client *Client) ModifyDBInstanceNetworkTypeWithCallback(request *ModifyDBI
 type ModifyDBInstanceNetworkTypeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	NetworkType          string           `position:"Query" name:"NetworkType"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ClassicExpiredDays   requests.Integer `position:"Query" name:"ClassicExpiredDays"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	NetworkType          string           `position:"Query" name:"NetworkType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	RetainClassic        string           `position:"Query" name:"RetainClassic"`
-	ClassicExpiredDays   requests.Integer `position:"Query" name:"ClassicExpiredDays"`
 	VpcId                string           `position:"Query" name:"VpcId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 // ModifyDBInstanceNetworkTypeResponse is the response struct for api ModifyDBInstanceNetworkType
@@ -100,7 +100,7 @@ func CreateModifyDBInstanceNetworkTypeRequest() (request *ModifyDBInstanceNetwor
 	request = &ModifyDBInstanceNetworkTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyDBInstanceNetworkType", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyDBInstanceNetworkType", "", "")
 	return
 }
 

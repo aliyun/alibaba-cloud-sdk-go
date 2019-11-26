@@ -21,8 +21,8 @@ type SQLRecord struct {
 	AccountName         string `json:"AccountName" xml:"AccountName"`
 	HostAddress         string `json:"HostAddress" xml:"HostAddress"`
 	Syntax              string `json:"Syntax" xml:"Syntax"`
-	TotalExecutionTimes int    `json:"TotalExecutionTimes" xml:"TotalExecutionTimes"`
-	ReturnRowCounts     int    `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
+	TotalExecutionTimes int64  `json:"TotalExecutionTimes" xml:"TotalExecutionTimes"`
+	ReturnRowCounts     int64  `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
 	ExecuteTime         string `json:"ExecuteTime" xml:"ExecuteTime"`
 	ThreadID            string `json:"ThreadID" xml:"ThreadID"`
 }

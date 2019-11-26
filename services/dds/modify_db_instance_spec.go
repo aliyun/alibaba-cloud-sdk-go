@@ -78,18 +78,19 @@ type ModifyDBInstanceSpecRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceStorage    string           `position:"Query" name:"DBInstanceStorage"`
-	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
-	FromApp              string           `position:"Query" name:"FromApp"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ReadonlyReplicas     string           `position:"Query" name:"ReadonlyReplicas"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ReplicationFactor    string           `position:"Query" name:"ReplicationFactor"`
-	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	FromApp              string           `position:"Query" name:"FromApp"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
 	OrderType            string           `position:"Query" name:"OrderType"`
 }
 
@@ -105,7 +106,7 @@ func CreateModifyDBInstanceSpecRequest() (request *ModifyDBInstanceSpecRequest) 
 	request = &ModifyDBInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyDBInstanceSpec", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyDBInstanceSpec", "", "")
 	return
 }
 

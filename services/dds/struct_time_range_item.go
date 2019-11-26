@@ -17,9 +17,9 @@ package dds
 
 // TimeRangeItem is a nested struct in dds response
 type TimeRangeItem struct {
-	NodeId    string `json:"NodeId" xml:"NodeId"`
 	StartTime string `json:"StartTime" xml:"StartTime"`
-	TaskId    string `json:"TaskId" xml:"TaskId"`
 	EndTime   string `json:"EndTime" xml:"EndTime"`
 	Status    string `json:"Status" xml:"Status"`
+	NodeId    string `json:"NodeId" xml:"NodeId"`
+	TaskId    string `json:"TaskId" xml:"TaskId"`
 }

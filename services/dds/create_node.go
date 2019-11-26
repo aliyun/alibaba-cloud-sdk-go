@@ -78,16 +78,16 @@ type CreateNodeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	NodeType             string           `position:"Query" name:"NodeType"`
-	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
-	FromApp              string           `position:"Query" name:"FromApp"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	NodeStorage          requests.Integer `position:"Query" name:"NodeStorage"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	NodeClass            string           `position:"Query" name:"NodeClass"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	FromApp              string           `position:"Query" name:"FromApp"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	NodeStorage          requests.Integer `position:"Query" name:"NodeStorage"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // CreateNodeResponse is the response struct for api CreateNode
@@ -102,7 +102,7 @@ func CreateCreateNodeRequest() (request *CreateNodeRequest) {
 	request = &CreateNodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "CreateNode", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "CreateNode", "", "")
 	return
 }
 

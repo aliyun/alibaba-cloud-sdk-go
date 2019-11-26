@@ -17,5 +17,5 @@ package dds
 
 // PerformanceValues is a nested struct in dds response
 type PerformanceValues struct {
-	PerformanceValue []PerformanceValueItem `json:"PerformanceValue" xml:"PerformanceValue"`
+	PerformanceValue []PerformanceValue `json:"PerformanceValue" xml:"PerformanceValue"`
 }
