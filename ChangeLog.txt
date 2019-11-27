@@ -1,3 +1,6 @@
+2019-11-27 Version: v1.60.269
+- CreateReplicationJob API supports the specified instance type.
+
 2019-11-27 Version: v1.60.268
 - Add enhanced natgateway sdk.
 
