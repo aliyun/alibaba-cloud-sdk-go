@@ -1,3 +1,6 @@
+2019-11-27 Version: v1.60.270
+- Add Tag API.
+
 2019-11-27 Version: v1.60.269
 - CreateReplicationJob API supports the specified instance type.
 
