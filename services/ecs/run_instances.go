@@ -155,11 +155,12 @@ type RunInstancesTag struct {
 
 // RunInstancesNetworkInterface is a repeated param struct in RunInstancesRequest
 type RunInstancesNetworkInterface struct {
-	PrimaryIpAddress     string `name:"PrimaryIpAddress"`
-	VSwitchId            string `name:"VSwitchId"`
-	SecurityGroupId      string `name:"SecurityGroupId"`
-	NetworkInterfaceName string `name:"NetworkInterfaceName"`
-	Description          string `name:"Description"`
+	PrimaryIpAddress     string    `name:"PrimaryIpAddress"`
+	VSwitchId            string    `name:"VSwitchId"`
+	SecurityGroupId      string    `name:"SecurityGroupId"`
+	SecurityGroupIds     *[]string `name:"SecurityGroupIds" type:"Repeated"`
+	NetworkInterfaceName string    `name:"NetworkInterfaceName"`
+	Description          string    `name:"Description"`
 }
 
 // RunInstancesDataDisk is a repeated param struct in RunInstancesRequest

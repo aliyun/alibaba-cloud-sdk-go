@@ -1,3 +1,6 @@
+2019-11-28 Version: v1.60.272
+- Eni Supports Multi-SecurityGroup.
+
 2019-11-28 Version: v1.60.271
 - Support Order Basis API, include CreateOrder, CloseOrder, ListOrders, GetOrderBaseInfo.
 - Support Order Approval API, include SubmitOrderApproval, ApproveOrder, GetApprovalDetail.
