@@ -78,6 +78,7 @@ type CreateVideoCompressTaskRequest struct {
 	*requests.RpcRequest
 	Project         string `position:"Query" name:"Project"`
 	NotifyEndpoint  string `position:"Query" name:"NotifyEndpoint"`
+	TargetContainer string `position:"Query" name:"TargetContainer"`
 	CustomMessage   string `position:"Query" name:"CustomMessage"`
 	NotifyTopicName string `position:"Query" name:"NotifyTopicName"`
 	TargetList      string `position:"Query" name:"TargetList"`

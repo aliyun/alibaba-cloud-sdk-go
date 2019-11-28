@@ -1,3 +1,6 @@
+2019-11-28 Version: v1.60.273
+- Supported dash for compress.
+
 2019-11-28 Version: v1.60.272
 - Eni Supports Multi-SecurityGroup.
 
