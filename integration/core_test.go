@@ -229,7 +229,7 @@ func Test_CreateInstanceWithCommonRequestWithPolicy(t *testing.T) {
 	request.TransToAcsRequest()
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
-	assert.Contains(t, err.Error(), "This resource type is not supported; please try other resource types.")
+	assert.Contains(t, err.Error(), "user order resource type [classic] not exists in [random]")
 
 	policy := `{
     "Version": "1",
