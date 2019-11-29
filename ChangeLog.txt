@@ -1,3 +1,6 @@
+2019-11-29 Version: v1.60.275
+- Add RWMutex to AddEndpointMapping and GetEndpointFromMap.
+
 2019-11-28 Version: v1.60.274
 - Supported API GetTxtRecordForVerify.
 - Supported API RetrieveDomain.
