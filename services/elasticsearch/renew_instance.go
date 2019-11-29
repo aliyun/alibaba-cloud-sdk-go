@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ConvertPayType invokes the elasticsearch.ConvertPayType API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/convertpaytype.html
-func (client *Client) ConvertPayType(request *ConvertPayTypeRequest) (response *ConvertPayTypeResponse, err error) {
-	response = CreateConvertPayTypeResponse()
+// RenewInstance invokes the elasticsearch.RenewInstance API synchronously
+// api document: https://help.aliyun.com/api/elasticsearch/renewinstance.html
+func (client *Client) RenewInstance(request *RenewInstanceRequest) (response *RenewInstanceResponse, err error) {
+	response = CreateRenewInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ConvertPayTypeWithChan invokes the elasticsearch.ConvertPayType API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/convertpaytype.html
+// RenewInstanceWithChan invokes the elasticsearch.RenewInstance API asynchronously
+// api document: https://help.aliyun.com/api/elasticsearch/renewinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ConvertPayTypeWithChan(request *ConvertPayTypeRequest) (<-chan *ConvertPayTypeResponse, <-chan error) {
-	responseChan := make(chan *ConvertPayTypeResponse, 1)
+func (client *Client) RenewInstanceWithChan(request *RenewInstanceRequest) (<-chan *RenewInstanceResponse, <-chan error) {
+	responseChan := make(chan *RenewInstanceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ConvertPayType(request)
+		response, err := client.RenewInstance(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ConvertPayTypeWithChan(request *ConvertPayTypeRequest) (<-
 	return responseChan, errChan
 }
 
-// ConvertPayTypeWithCallback invokes the elasticsearch.ConvertPayType API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/convertpaytype.html
+// RenewInstanceWithCallback invokes the elasticsearch.RenewInstance API asynchronously
+// api document: https://help.aliyun.com/api/elasticsearch/renewinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ConvertPayTypeWithCallback(request *ConvertPayTypeRequest, callback func(response *ConvertPayTypeResponse, err error)) <-chan int {
+func (client *Client) RenewInstanceWithCallback(request *RenewInstanceRequest, callback func(response *RenewInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ConvertPayTypeResponse
+		var response *RenewInstanceResponse
 		var err error
 		defer close(result)
-		response, err = client.ConvertPayType(request)
+		response, err = client.RenewInstance(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,33 +73,33 @@ func (client *Client) ConvertPayTypeWithCallback(request *ConvertPayTypeRequest,
 	return result
 }
 
-// ConvertPayTypeRequest is the request struct for api ConvertPayType
-type ConvertPayTypeRequest struct {
+// RenewInstanceRequest is the request struct for api RenewInstance
+type RenewInstanceRequest struct {
 	*requests.RoaRequest
 	InstanceId  string `position:"Path" name:"InstanceId"`
 	ClientToken string `position:"Query" name:"clientToken"`
 }
 
-// ConvertPayTypeResponse is the response struct for api ConvertPayType
-type ConvertPayTypeResponse struct {
+// RenewInstanceResponse is the response struct for api RenewInstance
+type RenewInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Result    bool   `json:"Result" xml:"Result"`
 }
 
-// CreateConvertPayTypeRequest creates a request to invoke ConvertPayType API
-func CreateConvertPayTypeRequest() (request *ConvertPayTypeRequest) {
-	request = &ConvertPayTypeRequest{
+// CreateRenewInstanceRequest creates a request to invoke RenewInstance API
+func CreateRenewInstanceRequest() (request *RenewInstanceRequest) {
+	request = &RenewInstanceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("elasticsearch", "2017-06-13", "ConvertPayType", "/openapi/instances/[InstanceId]/convert-pay-type", "elasticsearch", "openAPI")
+	request.InitWithApiInfo("elasticsearch", "2017-06-13", "RenewInstance", "/openapi/instances/[InstanceId]/actions/renew", "elasticsearch", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateConvertPayTypeResponse creates a response to parse from ConvertPayType response
-func CreateConvertPayTypeResponse() (response *ConvertPayTypeResponse) {
-	response = &ConvertPayTypeResponse{
+// CreateRenewInstanceResponse creates a response to parse from RenewInstance response
+func CreateRenewInstanceResponse() (response *RenewInstanceResponse) {
+	response = &RenewInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
