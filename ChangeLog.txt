@@ -1,3 +1,6 @@
+2019-12-02 Version: v1.60.277
+- Remove QuerySmsProdStatus OpenAPI.
+
 2019-11-29 Version: v1.60.276
 - Add RenewInstance.
 - Add RenewLogstash.
