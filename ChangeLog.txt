@@ -1,3 +1,6 @@
+2019-12-02 Version: v1.60.279
+- Generated 2019-01-23 for `Drds`.
+
 2019-12-02 Version: v1.60.278
 - Update go sdk.
 

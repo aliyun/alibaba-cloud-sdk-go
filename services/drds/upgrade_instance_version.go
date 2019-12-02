@@ -78,6 +78,7 @@ type UpgradeInstanceVersionRequest struct {
 	*requests.RpcRequest
 	DrdsPassword   string `position:"Query" name:"DrdsPassword"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	Rpm            string `position:"Query" name:"Rpm"`
 }
 
 // UpgradeInstanceVersionResponse is the response struct for api UpgradeInstanceVersion
@@ -92,7 +93,7 @@ func CreateUpgradeInstanceVersionRequest() (request *UpgradeInstanceVersionReque
 	request = &UpgradeInstanceVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "UpgradeInstanceVersion", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "UpgradeInstanceVersion", "Drds", "openAPI")
 	return
 }
 

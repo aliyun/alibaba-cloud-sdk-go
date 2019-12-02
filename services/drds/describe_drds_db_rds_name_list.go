@@ -76,8 +76,8 @@ func (client *Client) DescribeDrdsDbRdsNameListWithCallback(request *DescribeDrd
 // DescribeDrdsDbRdsNameListRequest is the request struct for api DescribeDrdsDbRdsNameList
 type DescribeDrdsDbRdsNameListRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // DescribeDrdsDbRdsNameListResponse is the response struct for api DescribeDrdsDbRdsNameList
@@ -93,7 +93,7 @@ func CreateDescribeDrdsDbRdsNameListRequest() (request *DescribeDrdsDbRdsNameLis
 	request = &DescribeDrdsDbRdsNameListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDbRdsNameList", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDbRdsNameList", "Drds", "openAPI")
 	return
 }
 

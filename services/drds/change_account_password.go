@@ -76,9 +76,9 @@ func (client *Client) ChangeAccountPasswordWithCallback(request *ChangeAccountPa
 // ChangeAccountPasswordRequest is the request struct for api ChangeAccountPassword
 type ChangeAccountPasswordRequest struct {
 	*requests.RpcRequest
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 	Password       string `position:"Query" name:"Password"`
 	AccountName    string `position:"Query" name:"AccountName"`
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
 // ChangeAccountPasswordResponse is the response struct for api ChangeAccountPassword
@@ -93,7 +93,7 @@ func CreateChangeAccountPasswordRequest() (request *ChangeAccountPasswordRequest
 	request = &ChangeAccountPasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "ChangeAccountPassword", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "ChangeAccountPassword", "Drds", "openAPI")
 	return
 }
 

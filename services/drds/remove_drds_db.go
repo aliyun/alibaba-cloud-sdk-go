@@ -76,8 +76,8 @@ func (client *Client) RemoveDrdsDbWithCallback(request *RemoveDrdsDbRequest, cal
 // RemoveDrdsDbRequest is the request struct for api RemoveDrdsDb
 type RemoveDrdsDbRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // RemoveDrdsDbResponse is the response struct for api RemoveDrdsDb
@@ -92,7 +92,7 @@ func CreateRemoveDrdsDbRequest() (request *RemoveDrdsDbRequest) {
 	request = &RemoveDrdsDbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveDrdsDb", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveDrdsDb", "Drds", "openAPI")
 	return
 }
 

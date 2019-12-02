@@ -93,7 +93,7 @@ func CreateRemoveBackupsSetRequest() (request *RemoveBackupsSetRequest) {
 	request = &RemoveBackupsSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveBackupsSet", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveBackupsSet", "Drds", "openAPI")
 	return
 }
 

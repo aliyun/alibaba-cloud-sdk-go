@@ -76,9 +76,9 @@ func (client *Client) CreateInstanceAccountWithCallback(request *CreateInstanceA
 // CreateInstanceAccountRequest is the request struct for api CreateInstanceAccount
 type CreateInstanceAccountRequest struct {
 	*requests.RpcRequest
+	DrdsInstanceId string                              `position:"Query" name:"DrdsInstanceId"`
 	Password       string                              `position:"Query" name:"Password"`
 	AccountName    string                              `position:"Query" name:"AccountName"`
-	DrdsInstanceId string                              `position:"Query" name:"DrdsInstanceId"`
 	DbPrivilege    *[]CreateInstanceAccountDbPrivilege `position:"Query" name:"DbPrivilege"  type:"Repeated"`
 }
 
@@ -100,7 +100,7 @@ func CreateCreateInstanceAccountRequest() (request *CreateInstanceAccountRequest
 	request = &CreateInstanceAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "CreateInstanceAccount", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "CreateInstanceAccount", "Drds", "openAPI")
 	return
 }
 

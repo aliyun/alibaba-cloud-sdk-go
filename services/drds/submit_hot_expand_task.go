@@ -76,20 +76,14 @@ func (client *Client) SubmitHotExpandTaskWithCallback(request *SubmitHotExpandTa
 // SubmitHotExpandTaskRequest is the request struct for api SubmitHotExpandTask
 type SubmitHotExpandTaskRequest struct {
 	*requests.RpcRequest
-	InstanceDbMapping    *[]SubmitHotExpandTaskInstanceDbMapping    `position:"Query" name:"InstanceDbMapping"  type:"Repeated"`
 	Mapping              *[]SubmitHotExpandTaskMapping              `position:"Query" name:"Mapping"  type:"Repeated"`
 	TaskDesc             string                                     `position:"Query" name:"TaskDesc"`
-	DbName               string                                     `position:"Query" name:"DbName"`
 	SupperAccountMapping *[]SubmitHotExpandTaskSupperAccountMapping `position:"Query" name:"SupperAccountMapping"  type:"Repeated"`
 	ExtendedMapping      *[]SubmitHotExpandTaskExtendedMapping      `position:"Query" name:"ExtendedMapping"  type:"Repeated"`
 	TaskName             string                                     `position:"Query" name:"TaskName"`
 	DrdsInstanceId       string                                     `position:"Query" name:"DrdsInstanceId"`
-}
-
-// SubmitHotExpandTaskInstanceDbMapping is a repeated param struct in SubmitHotExpandTaskRequest
-type SubmitHotExpandTaskInstanceDbMapping struct {
-	DbList       string `name:"DbList"`
-	InstanceName string `name:"InstanceName"`
+	InstanceDbMapping    *[]SubmitHotExpandTaskInstanceDbMapping    `position:"Query" name:"InstanceDbMapping"  type:"Repeated"`
+	DbName               string                                     `position:"Query" name:"DbName"`
 }
 
 // SubmitHotExpandTaskMapping is a repeated param struct in SubmitHotExpandTaskRequest
@@ -116,6 +110,12 @@ type SubmitHotExpandTaskExtendedMapping struct {
 	SrcDb         string `name:"SrcDb"`
 }
 
+// SubmitHotExpandTaskInstanceDbMapping is a repeated param struct in SubmitHotExpandTaskRequest
+type SubmitHotExpandTaskInstanceDbMapping struct {
+	DbList       string `name:"DbList"`
+	InstanceName string `name:"InstanceName"`
+}
+
 // SubmitHotExpandTaskResponse is the response struct for api SubmitHotExpandTask
 type SubmitHotExpandTaskResponse struct {
 	*responses.BaseResponse
@@ -128,7 +128,7 @@ func CreateSubmitHotExpandTaskRequest() (request *SubmitHotExpandTaskRequest) {
 	request = &SubmitHotExpandTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitHotExpandTask", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitHotExpandTask", "Drds", "openAPI")
 	return
 }
 

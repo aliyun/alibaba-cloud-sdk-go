@@ -17,5 +17,5 @@ package drds
 
 // RdsOrderDOList is a nested struct in drds response
 type RdsOrderDOList struct {
-	RdsOrderDOListItem []RdsOrderDOListItem `json:"RdsOrderDOListItem" xml:"RdsOrderDOListItem"`
+	RdsOrderDOListItem []RdsOrderDOListItem `json:"RdsOrderDOList" xml:"RdsOrderDOList"`
 }

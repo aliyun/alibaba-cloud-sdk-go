@@ -92,7 +92,7 @@ func CreateRollbackInstanceVersionRequest() (request *RollbackInstanceVersionReq
 	request = &RollbackInstanceVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "RollbackInstanceVersion", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "RollbackInstanceVersion", "Drds", "openAPI")
 	return
 }
 

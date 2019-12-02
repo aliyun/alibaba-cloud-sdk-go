@@ -76,11 +76,11 @@ func (client *Client) SubmitSmoothExpandTaskWithCallback(request *SubmitSmoothEx
 // SubmitSmoothExpandTaskRequest is the request struct for api SubmitSmoothExpandTask
 type SubmitSmoothExpandTaskRequest struct {
 	*requests.RpcRequest
+	DrdsInstanceId       string                                     `position:"Query" name:"DrdsInstanceId"`
+	DbInstanceIsCreating requests.Boolean                           `position:"Query" name:"DbInstanceIsCreating"`
 	RdsSuperInstances    *[]SubmitSmoothExpandTaskRdsSuperInstances `position:"Query" name:"RdsSuperInstances"  type:"Repeated"`
 	DbName               string                                     `position:"Query" name:"DbName"`
 	TransferTaskInfos    *[]SubmitSmoothExpandTaskTransferTaskInfos `position:"Query" name:"TransferTaskInfos"  type:"Repeated"`
-	DrdsInstanceId       string                                     `position:"Query" name:"DrdsInstanceId"`
-	DbInstanceIsCreating requests.Boolean                           `position:"Query" name:"DbInstanceIsCreating"`
 }
 
 // SubmitSmoothExpandTaskRdsSuperInstances is a repeated param struct in SubmitSmoothExpandTaskRequest
@@ -110,7 +110,7 @@ func CreateSubmitSmoothExpandTaskRequest() (request *SubmitSmoothExpandTaskReque
 	request = &SubmitSmoothExpandTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSmoothExpandTask", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSmoothExpandTask", "Drds", "openAPI")
 	return
 }
 

@@ -77,11 +77,11 @@ func (client *Client) DescribeTableListByTypeWithCallback(request *DescribeTable
 type DescribeTableListByTypeRequest struct {
 	*requests.RpcRequest
 	TableType      string           `position:"Query" name:"TableType"`
-	DbName         string           `position:"Query" name:"DbName"`
 	Query          string           `position:"Query" name:"Query"`
-	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	CurrentPage    requests.Integer `position:"Query" name:"CurrentPage"`
 	DrdsInstanceId string           `position:"Query" name:"DrdsInstanceId"`
+	DbName         string           `position:"Query" name:"DbName"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeTableListByTypeResponse is the response struct for api DescribeTableListByType
@@ -100,7 +100,7 @@ func CreateDescribeTableListByTypeRequest() (request *DescribeTableListByTypeReq
 	request = &DescribeTableListByTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeTableListByType", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeTableListByType", "Drds", "openAPI")
 	return
 }
 

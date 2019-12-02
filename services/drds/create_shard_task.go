@@ -77,10 +77,10 @@ func (client *Client) CreateShardTaskWithCallback(request *CreateShardTaskReques
 type CreateShardTaskRequest struct {
 	*requests.RpcRequest
 	TaskType        string `position:"Query" name:"TaskType"`
-	DbName          string `position:"Query" name:"DbName"`
-	SourceTableName string `position:"Query" name:"SourceTableName"`
 	TargetTableName string `position:"Query" name:"TargetTableName"`
 	DrdsInstanceId  string `position:"Query" name:"DrdsInstanceId"`
+	DbName          string `position:"Query" name:"DbName"`
+	SourceTableName string `position:"Query" name:"SourceTableName"`
 }
 
 // CreateShardTaskResponse is the response struct for api CreateShardTask
@@ -96,7 +96,7 @@ func CreateCreateShardTaskRequest() (request *CreateShardTaskRequest) {
 	request = &CreateShardTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "CreateShardTask", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "CreateShardTask", "Drds", "openAPI")
 	return
 }
 

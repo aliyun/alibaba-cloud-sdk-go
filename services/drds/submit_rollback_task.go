@@ -76,11 +76,11 @@ func (client *Client) SubmitRollbackTaskWithCallback(request *SubmitRollbackTask
 // SubmitRollbackTaskRequest is the request struct for api SubmitRollbackTask
 type SubmitRollbackTaskRequest struct {
 	*requests.RpcRequest
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	ExpandType     string `position:"Query" name:"ExpandType"`
 	JobId          string `position:"Query" name:"JobId"`
 	DbName         string `position:"Query" name:"DbName"`
 	ParentJobId    string `position:"Query" name:"ParentJobId"`
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
-	ExpandType     string `position:"Query" name:"ExpandType"`
 }
 
 // SubmitRollbackTaskResponse is the response struct for api SubmitRollbackTask
@@ -95,7 +95,7 @@ func CreateSubmitRollbackTaskRequest() (request *SubmitRollbackTaskRequest) {
 	request = &SubmitRollbackTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitRollbackTask", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitRollbackTask", "Drds", "openAPI")
 	return
 }
 

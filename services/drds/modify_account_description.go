@@ -76,9 +76,9 @@ func (client *Client) ModifyAccountDescriptionWithCallback(request *ModifyAccoun
 // ModifyAccountDescriptionRequest is the request struct for api ModifyAccountDescription
 type ModifyAccountDescriptionRequest struct {
 	*requests.RpcRequest
-	AccountName    string `position:"Query" name:"AccountName"`
 	Description    string `position:"Query" name:"Description"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	AccountName    string `position:"Query" name:"AccountName"`
 }
 
 // ModifyAccountDescriptionResponse is the response struct for api ModifyAccountDescription
@@ -93,7 +93,7 @@ func CreateModifyAccountDescriptionRequest() (request *ModifyAccountDescriptionR
 	request = &ModifyAccountDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "ModifyAccountDescription", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "ModifyAccountDescription", "Drds", "openAPI")
 	return
 }
 

@@ -76,8 +76,8 @@ func (client *Client) DescribeExpandLogicTableInfoListWithCallback(request *Desc
 // DescribeExpandLogicTableInfoListRequest is the request struct for api DescribeExpandLogicTableInfoList
 type DescribeExpandLogicTableInfoListRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // DescribeExpandLogicTableInfoListResponse is the response struct for api DescribeExpandLogicTableInfoList
@@ -93,7 +93,7 @@ func CreateDescribeExpandLogicTableInfoListRequest() (request *DescribeExpandLog
 	request = &DescribeExpandLogicTableInfoListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeExpandLogicTableInfoList", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeExpandLogicTableInfoList", "Drds", "openAPI")
 	return
 }
 

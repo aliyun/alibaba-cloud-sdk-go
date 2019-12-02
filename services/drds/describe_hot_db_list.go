@@ -76,17 +76,17 @@ func (client *Client) DescribeHotDbListWithCallback(request *DescribeHotDbListRe
 // DescribeHotDbListRequest is the request struct for api DescribeHotDbList
 type DescribeHotDbListRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // DescribeHotDbListResponse is the response struct for api DescribeHotDbList
 type DescribeHotDbListResponse struct {
 	*responses.BaseResponse
-	RequestId string                  `json:"RequestId" xml:"RequestId"`
-	Success   bool                    `json:"Success" xml:"Success"`
-	Msg       string                  `json:"Msg" xml:"Msg"`
-	Data      DataInDescribeHotDbList `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Msg       string `json:"Msg" xml:"Msg"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeHotDbListRequest creates a request to invoke DescribeHotDbList API
@@ -94,7 +94,7 @@ func CreateDescribeHotDbListRequest() (request *DescribeHotDbListRequest) {
 	request = &DescribeHotDbListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeHotDbList", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeHotDbList", "Drds", "openAPI")
 	return
 }
 

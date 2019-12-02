@@ -17,5 +17,5 @@ package drds
 
 // PolarOrderDOList is a nested struct in drds response
 type PolarOrderDOList struct {
-	PolarOrderDOListItem []PolarOrderDOListItem `json:"PolarOrderDOListItem" xml:"PolarOrderDOListItem"`
+	PolarOrderDOListItem []PolarOrderDOListItem `json:"PolarOrderDOList" xml:"PolarOrderDOList"`
 }

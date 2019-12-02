@@ -92,7 +92,7 @@ func CreateEnableInstanceIpv6AddressRequest() (request *EnableInstanceIpv6Addres
 	request = &EnableInstanceIpv6AddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "EnableInstanceIpv6Address", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "EnableInstanceIpv6Address", "Drds", "openAPI")
 	return
 }
 

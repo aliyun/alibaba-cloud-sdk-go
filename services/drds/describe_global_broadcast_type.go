@@ -76,8 +76,8 @@ func (client *Client) DescribeGlobalBroadcastTypeWithCallback(request *DescribeG
 // DescribeGlobalBroadcastTypeRequest is the request struct for api DescribeGlobalBroadcastType
 type DescribeGlobalBroadcastTypeRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // DescribeGlobalBroadcastTypeResponse is the response struct for api DescribeGlobalBroadcastType
@@ -93,7 +93,7 @@ func CreateDescribeGlobalBroadcastTypeRequest() (request *DescribeGlobalBroadcas
 	request = &DescribeGlobalBroadcastTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeGlobalBroadcastType", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeGlobalBroadcastType", "Drds", "openAPI")
 	return
 }
 

@@ -93,7 +93,7 @@ func CreateRollbackHiStoreInstanceRequest() (request *RollbackHiStoreInstanceReq
 	request = &RollbackHiStoreInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "RollbackHiStoreInstance", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "RollbackHiStoreInstance", "Drds", "openAPI")
 	return
 }
 

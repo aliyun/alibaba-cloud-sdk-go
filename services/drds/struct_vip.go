@@ -17,9 +17,11 @@ package drds
 
 // Vip is a nested struct in drds response
 type Vip struct {
-	Port      string `json:"Port" xml:"Port"`
-	IP        string `json:"IP" xml:"IP"`
-	VswitchId string `json:"VswitchId" xml:"VswitchId"`
-	VpcId     string `json:"VpcId" xml:"VpcId"`
-	Type      string `json:"Type" xml:"Type"`
+	ExpireDays int64  `json:"ExpireDays" xml:"ExpireDays"`
+	Port       string `json:"Port" xml:"Port"`
+	Dns        string `json:"Dns" xml:"Dns"`
+	IP         string `json:"IP" xml:"IP"`
+	VswitchId  string `json:"VswitchId" xml:"VswitchId"`
+	VpcId      string `json:"VpcId" xml:"VpcId"`
+	Type       string `json:"Type" xml:"Type"`
 }

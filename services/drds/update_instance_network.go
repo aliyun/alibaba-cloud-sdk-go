@@ -76,10 +76,10 @@ func (client *Client) UpdateInstanceNetworkWithCallback(request *UpdateInstanceN
 // UpdateInstanceNetworkRequest is the request struct for api UpdateInstanceNetwork
 type UpdateInstanceNetworkRequest struct {
 	*requests.RpcRequest
+	DrdsInstanceId         string           `position:"Query" name:"DrdsInstanceId"`
 	RetainClassic          requests.Boolean `position:"Query" name:"RetainClassic"`
 	ClassicExpiredDays     requests.Integer `position:"Query" name:"ClassicExpiredDays"`
 	SrcInstanceNetworkType string           `position:"Query" name:"SrcInstanceNetworkType"`
-	DrdsInstanceId         string           `position:"Query" name:"DrdsInstanceId"`
 }
 
 // UpdateInstanceNetworkResponse is the response struct for api UpdateInstanceNetwork
@@ -94,7 +94,7 @@ func CreateUpdateInstanceNetworkRequest() (request *UpdateInstanceNetworkRequest
 	request = &UpdateInstanceNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "UpdateInstanceNetwork", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "UpdateInstanceNetwork", "Drds", "openAPI")
 	return
 }
 

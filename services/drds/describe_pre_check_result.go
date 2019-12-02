@@ -93,7 +93,7 @@ func CreateDescribePreCheckResultRequest() (request *DescribePreCheckResultReque
 	request = &DescribePreCheckResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribePreCheckResult", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribePreCheckResult", "Drds", "openAPI")
 	return
 }
 

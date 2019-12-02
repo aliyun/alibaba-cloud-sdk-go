@@ -76,8 +76,8 @@ func (client *Client) CheckSqlAuditEnableStatusWithCallback(request *CheckSqlAud
 // CheckSqlAuditEnableStatusRequest is the request struct for api CheckSqlAuditEnableStatus
 type CheckSqlAuditEnableStatusRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // CheckSqlAuditEnableStatusResponse is the response struct for api CheckSqlAuditEnableStatus
@@ -93,7 +93,7 @@ func CreateCheckSqlAuditEnableStatusRequest() (request *CheckSqlAuditEnableStatu
 	request = &CheckSqlAuditEnableStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "CheckSqlAuditEnableStatus", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "CheckSqlAuditEnableStatus", "Drds", "openAPI")
 	return
 }
 

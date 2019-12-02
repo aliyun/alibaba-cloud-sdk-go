@@ -76,9 +76,9 @@ func (client *Client) DeleteShardTasksWithCallback(request *DeleteShardTasksRequ
 // DeleteShardTasksRequest is the request struct for api DeleteShardTasks
 type DeleteShardTasksRequest struct {
 	*requests.RpcRequest
+	DrdsInstanceId string                       `position:"Query" name:"DrdsInstanceId"`
 	DbName         string                       `position:"Query" name:"DbName"`
 	TableName      *[]DeleteShardTasksTableName `position:"Query" name:"TableName"  type:"Repeated"`
-	DrdsInstanceId string                       `position:"Query" name:"DrdsInstanceId"`
 }
 
 // DeleteShardTasksTableName is a repeated param struct in DeleteShardTasksRequest
@@ -100,7 +100,7 @@ func CreateDeleteShardTasksRequest() (request *DeleteShardTasksRequest) {
 	request = &DeleteShardTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DeleteShardTasks", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DeleteShardTasks", "Drds", "openAPI")
 	return
 }
 

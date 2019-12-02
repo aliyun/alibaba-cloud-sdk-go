@@ -76,10 +76,10 @@ func (client *Client) SetupTableWithCallback(request *SetupTableRequest, callbac
 // SetupTableRequest is the request struct for api SetupTable
 type SetupTableRequest struct {
 	*requests.RpcRequest
-	DbName             string           `position:"Query" name:"DbName"`
 	AllowFullTableScan requests.Boolean `position:"Query" name:"AllowFullTableScan"`
-	TableName          *[]string        `position:"Query" name:"TableName"  type:"Repeated"`
 	DrdsInstanceId     string           `position:"Query" name:"DrdsInstanceId"`
+	DbName             string           `position:"Query" name:"DbName"`
+	TableName          *[]string        `position:"Query" name:"TableName"  type:"Repeated"`
 }
 
 // SetupTableResponse is the response struct for api SetupTable
@@ -95,7 +95,7 @@ func CreateSetupTableRequest() (request *SetupTableRequest) {
 	request = &SetupTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SetupTable", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SetupTable", "Drds", "openAPI")
 	return
 }
 

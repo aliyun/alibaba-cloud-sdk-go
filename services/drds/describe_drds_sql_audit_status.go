@@ -92,7 +92,7 @@ func CreateDescribeDrdsSqlAuditStatusRequest() (request *DescribeDrdsSqlAuditSta
 	request = &DescribeDrdsSqlAuditStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsSqlAuditStatus", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsSqlAuditStatus", "Drds", "openAPI")
 	return
 }
 

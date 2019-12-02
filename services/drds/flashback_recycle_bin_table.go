@@ -76,9 +76,9 @@ func (client *Client) FlashbackRecycleBinTableWithCallback(request *FlashbackRec
 // FlashbackRecycleBinTableRequest is the request struct for api FlashbackRecycleBinTable
 type FlashbackRecycleBinTableRequest struct {
 	*requests.RpcRequest
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 	DbName         string `position:"Query" name:"DbName"`
 	TableName      string `position:"Query" name:"TableName"`
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
 // FlashbackRecycleBinTableResponse is the response struct for api FlashbackRecycleBinTable
@@ -94,7 +94,7 @@ func CreateFlashbackRecycleBinTableRequest() (request *FlashbackRecycleBinTableR
 	request = &FlashbackRecycleBinTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "FlashbackRecycleBinTable", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "FlashbackRecycleBinTable", "Drds", "openAPI")
 	return
 }
 

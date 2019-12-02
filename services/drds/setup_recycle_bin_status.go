@@ -77,8 +77,8 @@ func (client *Client) SetupRecycleBinStatusWithCallback(request *SetupRecycleBin
 type SetupRecycleBinStatusRequest struct {
 	*requests.RpcRequest
 	StatusAction   string `position:"Query" name:"StatusAction"`
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // SetupRecycleBinStatusResponse is the response struct for api SetupRecycleBinStatus
@@ -94,7 +94,7 @@ func CreateSetupRecycleBinStatusRequest() (request *SetupRecycleBinStatusRequest
 	request = &SetupRecycleBinStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SetupRecycleBinStatus", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SetupRecycleBinStatus", "Drds", "openAPI")
 	return
 }
 

@@ -77,15 +77,15 @@ func (client *Client) CreateDrdsInstanceWithCallback(request *CreateDrdsInstance
 type CreateDrdsInstanceRequest struct {
 	*requests.RpcRequest
 	IsAutoRenew    requests.Boolean `position:"Query" name:"IsAutoRenew"`
-	Quantity       requests.Integer `position:"Query" name:"Quantity"`
 	ClientToken    string           `position:"Query" name:"ClientToken"`
 	Description    string           `position:"Query" name:"Description"`
-	Specification  string           `position:"Query" name:"Specification"`
 	Type           string           `position:"Query" name:"Type"`
-	VswitchId      string           `position:"Query" name:"VswitchId"`
 	Duration       requests.Integer `position:"Query" name:"Duration"`
-	IsHa           requests.Boolean `position:"Query" name:"IsHa"`
+	IsHa           requests.Boolean `position:"Query" name:"isHa"`
 	InstanceSeries string           `position:"Query" name:"InstanceSeries"`
+	Quantity       requests.Integer `position:"Query" name:"Quantity"`
+	Specification  string           `position:"Query" name:"Specification"`
+	VswitchId      string           `position:"Query" name:"VswitchId"`
 	VpcId          string           `position:"Query" name:"VpcId"`
 	ZoneId         string           `position:"Query" name:"ZoneId"`
 	PayType        string           `position:"Query" name:"PayType"`
@@ -105,7 +105,7 @@ func CreateCreateDrdsInstanceRequest() (request *CreateDrdsInstanceRequest) {
 	request = &CreateDrdsInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "CreateDrdsInstance", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "CreateDrdsInstance", "Drds", "openAPI")
 	return
 }
 

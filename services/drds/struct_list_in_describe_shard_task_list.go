@@ -17,5 +17,5 @@ package drds
 
 // ListInDescribeShardTaskList is a nested struct in drds response
 type ListInDescribeShardTaskList struct {
-	ListItem []ListItem `json:"ListItem" xml:"ListItem"`
+	ListItem []ListItem `json:"List" xml:"List"`
 }

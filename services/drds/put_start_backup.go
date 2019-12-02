@@ -77,9 +77,9 @@ func (client *Client) PutStartBackupWithCallback(request *PutStartBackupRequest,
 type PutStartBackupRequest struct {
 	*requests.RpcRequest
 	BackupDbNames  string `position:"Query" name:"BackupDbNames"`
-	BackupMode     string `position:"Query" name:"BackupMode"`
 	BackupLevel    string `position:"Query" name:"BackupLevel"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	BackupMode     string `position:"Query" name:"BackupMode"`
 }
 
 // PutStartBackupResponse is the response struct for api PutStartBackup
@@ -95,7 +95,7 @@ func CreatePutStartBackupRequest() (request *PutStartBackupRequest) {
 	request = &PutStartBackupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "PutStartBackup", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "PutStartBackup", "Drds", "openAPI")
 	return
 }
 

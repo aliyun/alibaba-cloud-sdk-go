@@ -76,17 +76,17 @@ func (client *Client) DescribeDrdsDBClusterWithCallback(request *DescribeDrdsDBC
 // DescribeDrdsDBClusterRequest is the request struct for api DescribeDrdsDBCluster
 type DescribeDrdsDBClusterRequest struct {
 	*requests.RpcRequest
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 	DbName         string `position:"Query" name:"DbName"`
 	DbInstanceId   string `position:"Query" name:"DbInstanceId"`
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
 // DescribeDrdsDBClusterResponse is the response struct for api DescribeDrdsDBCluster
 type DescribeDrdsDBClusterResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	Success    bool       `json:"Success" xml:"Success"`
-	DbInstance DbInstance `json:"DbInstance" xml:"DbInstance"`
+	RequestId  string                            `json:"RequestId" xml:"RequestId"`
+	Success    bool                              `json:"Success" xml:"Success"`
+	DbInstance DbInstanceInDescribeDrdsDBCluster `json:"DbInstance" xml:"DbInstance"`
 }
 
 // CreateDescribeDrdsDBClusterRequest creates a request to invoke DescribeDrdsDBCluster API
@@ -94,7 +94,7 @@ func CreateDescribeDrdsDBClusterRequest() (request *DescribeDrdsDBClusterRequest
 	request = &DescribeDrdsDBClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDBCluster", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDBCluster", "Drds", "openAPI")
 	return
 }
 

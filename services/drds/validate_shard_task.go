@@ -77,18 +77,18 @@ func (client *Client) ValidateShardTaskWithCallback(request *ValidateShardTaskRe
 type ValidateShardTaskRequest struct {
 	*requests.RpcRequest
 	TaskType        string `position:"Query" name:"TaskType"`
-	DbName          string `position:"Query" name:"DbName"`
-	SourceTableName string `position:"Query" name:"SourceTableName"`
 	TargetTableName string `position:"Query" name:"TargetTableName"`
 	DrdsInstanceId  string `position:"Query" name:"DrdsInstanceId"`
+	DbName          string `position:"Query" name:"DbName"`
+	SourceTableName string `position:"Query" name:"SourceTableName"`
 }
 
 // ValidateShardTaskResponse is the response struct for api ValidateShardTask
 type ValidateShardTaskResponse struct {
 	*responses.BaseResponse
-	RequestId string                        `json:"RequestId" xml:"RequestId"`
-	Success   bool                          `json:"Success" xml:"Success"`
-	List      []ListItemInValidateShardTask `json:"List" xml:"List"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
+	Success   bool       `json:"Success" xml:"Success"`
+	List      []ListItem `json:"List" xml:"List"`
 }
 
 // CreateValidateShardTaskRequest creates a request to invoke ValidateShardTask API
@@ -96,7 +96,7 @@ func CreateValidateShardTaskRequest() (request *ValidateShardTaskRequest) {
 	request = &ValidateShardTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "ValidateShardTask", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "ValidateShardTask", "Drds", "openAPI")
 	return
 }
 

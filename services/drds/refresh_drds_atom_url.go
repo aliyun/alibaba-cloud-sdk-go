@@ -76,8 +76,8 @@ func (client *Client) RefreshDrdsAtomUrlWithCallback(request *RefreshDrdsAtomUrl
 // RefreshDrdsAtomUrlRequest is the request struct for api RefreshDrdsAtomUrl
 type RefreshDrdsAtomUrlRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // RefreshDrdsAtomUrlResponse is the response struct for api RefreshDrdsAtomUrl
@@ -93,7 +93,7 @@ func CreateRefreshDrdsAtomUrlRequest() (request *RefreshDrdsAtomUrlRequest) {
 	request = &RefreshDrdsAtomUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "RefreshDrdsAtomUrl", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "RefreshDrdsAtomUrl", "Drds", "openAPI")
 	return
 }
 

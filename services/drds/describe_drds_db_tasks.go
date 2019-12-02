@@ -77,8 +77,8 @@ func (client *Client) DescribeDrdsDbTasksWithCallback(request *DescribeDrdsDbTas
 type DescribeDrdsDbTasksRequest struct {
 	*requests.RpcRequest
 	TaskType       string `position:"Query" name:"TaskType"`
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // DescribeDrdsDbTasksResponse is the response struct for api DescribeDrdsDbTasks
@@ -94,7 +94,7 @@ func CreateDescribeDrdsDbTasksRequest() (request *DescribeDrdsDbTasksRequest) {
 	request = &DescribeDrdsDbTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDbTasks", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDbTasks", "Drds", "openAPI")
 	return
 }
 

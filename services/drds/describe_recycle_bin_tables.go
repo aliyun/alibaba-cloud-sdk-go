@@ -76,8 +76,8 @@ func (client *Client) DescribeRecycleBinTablesWithCallback(request *DescribeRecy
 // DescribeRecycleBinTablesRequest is the request struct for api DescribeRecycleBinTables
 type DescribeRecycleBinTablesRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // DescribeRecycleBinTablesResponse is the response struct for api DescribeRecycleBinTables
@@ -93,7 +93,7 @@ func CreateDescribeRecycleBinTablesRequest() (request *DescribeRecycleBinTablesR
 	request = &DescribeRecycleBinTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRecycleBinTables", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRecycleBinTables", "Drds", "openAPI")
 	return
 }
 

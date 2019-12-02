@@ -91,7 +91,7 @@ func CreateRemoveDrdsInstanceRequest() (request *RemoveDrdsInstanceRequest) {
 	request = &RemoveDrdsInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "RemoveDrdsInstance", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveDrdsInstance", "Drds", "openAPI")
 	return
 }
 

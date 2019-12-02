@@ -76,10 +76,10 @@ func (client *Client) DescribeShardTaskInfoWithCallback(request *DescribeShardTa
 // DescribeShardTaskInfoRequest is the request struct for api DescribeShardTaskInfo
 type DescribeShardTaskInfoRequest struct {
 	*requests.RpcRequest
-	DbName          string `position:"Query" name:"DbName"`
-	SourceTableName string `position:"Query" name:"SourceTableName"`
 	TargetTableName string `position:"Query" name:"TargetTableName"`
 	DrdsInstanceId  string `position:"Query" name:"DrdsInstanceId"`
+	DbName          string `position:"Query" name:"DbName"`
+	SourceTableName string `position:"Query" name:"SourceTableName"`
 }
 
 // DescribeShardTaskInfoResponse is the response struct for api DescribeShardTaskInfo
@@ -95,7 +95,7 @@ func CreateDescribeShardTaskInfoRequest() (request *DescribeShardTaskInfoRequest
 	request = &DescribeShardTaskInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeShardTaskInfo", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeShardTaskInfo", "Drds", "openAPI")
 	return
 }
 

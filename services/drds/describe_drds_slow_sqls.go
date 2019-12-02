@@ -76,12 +76,12 @@ func (client *Client) DescribeDrdsSlowSqlsWithCallback(request *DescribeDrdsSlow
 // DescribeDrdsSlowSqlsRequest is the request struct for api DescribeDrdsSlowSqls
 type DescribeDrdsSlowSqlsRequest struct {
 	*requests.RpcRequest
-	DbName         string           `position:"Query" name:"DbName"`
-	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	EndTime        requests.Integer `position:"Query" name:"EndTime"`
 	StartTime      requests.Integer `position:"Query" name:"StartTime"`
 	DrdsInstanceId string           `position:"Query" name:"DrdsInstanceId"`
 	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
+	DbName         string           `position:"Query" name:"DbName"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	ExeTime        requests.Integer `position:"Query" name:"ExeTime"`
 }
 
@@ -101,7 +101,7 @@ func CreateDescribeDrdsSlowSqlsRequest() (request *DescribeDrdsSlowSqlsRequest) 
 	request = &DescribeDrdsSlowSqlsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsSlowSqls", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsSlowSqls", "Drds", "openAPI")
 	return
 }
 

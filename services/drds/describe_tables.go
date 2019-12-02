@@ -76,11 +76,11 @@ func (client *Client) DescribeTablesWithCallback(request *DescribeTablesRequest,
 // DescribeTablesRequest is the request struct for api DescribeTables
 type DescribeTablesRequest struct {
 	*requests.RpcRequest
-	DbName         string           `position:"Query" name:"DbName"`
 	Query          string           `position:"Query" name:"Query"`
-	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	CurrentPage    requests.Integer `position:"Query" name:"CurrentPage"`
 	DrdsInstanceId string           `position:"Query" name:"DrdsInstanceId"`
+	DbName         string           `position:"Query" name:"DbName"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeTablesResponse is the response struct for api DescribeTables
@@ -99,7 +99,7 @@ func CreateDescribeTablesRequest() (request *DescribeTablesRequest) {
 	request = &DescribeTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeTables", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeTables", "Drds", "openAPI")
 	return
 }
 

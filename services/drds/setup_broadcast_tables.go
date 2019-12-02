@@ -76,10 +76,10 @@ func (client *Client) SetupBroadcastTablesWithCallback(request *SetupBroadcastTa
 // SetupBroadcastTablesRequest is the request struct for api SetupBroadcastTables
 type SetupBroadcastTablesRequest struct {
 	*requests.RpcRequest
-	DbName         string           `position:"Query" name:"DbName"`
 	Active         requests.Boolean `position:"Query" name:"Active"`
-	TableName      *[]string        `position:"Query" name:"TableName"  type:"Repeated"`
 	DrdsInstanceId string           `position:"Query" name:"DrdsInstanceId"`
+	DbName         string           `position:"Query" name:"DbName"`
+	TableName      *[]string        `position:"Query" name:"TableName"  type:"Repeated"`
 }
 
 // SetupBroadcastTablesResponse is the response struct for api SetupBroadcastTables
@@ -95,7 +95,7 @@ func CreateSetupBroadcastTablesRequest() (request *SetupBroadcastTablesRequest) 
 	request = &SetupBroadcastTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SetupBroadcastTables", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SetupBroadcastTables", "Drds", "openAPI")
 	return
 }
 

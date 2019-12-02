@@ -76,9 +76,9 @@ func (client *Client) DescribeDrdsShardingDbsWithCallback(request *DescribeDrdsS
 // DescribeDrdsShardingDbsRequest is the request struct for api DescribeDrdsShardingDbs
 type DescribeDrdsShardingDbsRequest struct {
 	*requests.RpcRequest
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 	DbName         string `position:"Query" name:"DbName"`
 	DbNamePattern  string `position:"Query" name:"DbNamePattern"`
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
 // DescribeDrdsShardingDbsResponse is the response struct for api DescribeDrdsShardingDbs
@@ -94,7 +94,7 @@ func CreateDescribeDrdsShardingDbsRequest() (request *DescribeDrdsShardingDbsReq
 	request = &DescribeDrdsShardingDbsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsShardingDbs", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsShardingDbs", "Drds", "openAPI")
 	return
 }
 

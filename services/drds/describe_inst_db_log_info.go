@@ -76,8 +76,8 @@ func (client *Client) DescribeInstDbLogInfoWithCallback(request *DescribeInstDbL
 // DescribeInstDbLogInfoRequest is the request struct for api DescribeInstDbLogInfo
 type DescribeInstDbLogInfoRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // DescribeInstDbLogInfoResponse is the response struct for api DescribeInstDbLogInfo
@@ -93,7 +93,7 @@ func CreateDescribeInstDbLogInfoRequest() (request *DescribeInstDbLogInfoRequest
 	request = &DescribeInstDbLogInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeInstDbLogInfo", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeInstDbLogInfo", "Drds", "openAPI")
 	return
 }
 

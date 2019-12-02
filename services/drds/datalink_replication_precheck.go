@@ -76,10 +76,10 @@ func (client *Client) DatalinkReplicationPrecheckWithCallback(request *DatalinkR
 // DatalinkReplicationPrecheckRequest is the request struct for api DatalinkReplicationPrecheck
 type DatalinkReplicationPrecheckRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	SrcTableName   string `position:"Query" name:"SrcTableName"`
-	DstTableName   string `position:"Query" name:"DstTableName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
+	DstTableName   string `position:"Query" name:"DstTableName"`
 }
 
 // DatalinkReplicationPrecheckResponse is the response struct for api DatalinkReplicationPrecheck
@@ -95,7 +95,7 @@ func CreateDatalinkReplicationPrecheckRequest() (request *DatalinkReplicationPre
 	request = &DatalinkReplicationPrecheckRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DatalinkReplicationPrecheck", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DatalinkReplicationPrecheck", "Drds", "openAPI")
 	return
 }
 

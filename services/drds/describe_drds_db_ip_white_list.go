@@ -76,17 +76,17 @@ func (client *Client) DescribeDrdsDBIpWhiteListWithCallback(request *DescribeDrd
 // DescribeDrdsDBIpWhiteListRequest is the request struct for api DescribeDrdsDBIpWhiteList
 type DescribeDrdsDBIpWhiteListRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 	GroupName      string `position:"Query" name:"GroupName"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // DescribeDrdsDBIpWhiteListResponse is the response struct for api DescribeDrdsDBIpWhiteList
 type DescribeDrdsDBIpWhiteListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	Success     bool        `json:"Success" xml:"Success"`
+	IpWhiteList IpWhiteList `json:"IpWhiteList" xml:"IpWhiteList"`
 }
 
 // CreateDescribeDrdsDBIpWhiteListRequest creates a request to invoke DescribeDrdsDBIpWhiteList API
@@ -94,7 +94,7 @@ func CreateDescribeDrdsDBIpWhiteListRequest() (request *DescribeDrdsDBIpWhiteLis
 	request = &DescribeDrdsDBIpWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeDrdsDBIpWhiteList", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDBIpWhiteList", "Drds", "openAPI")
 	return
 }
 

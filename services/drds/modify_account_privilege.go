@@ -76,8 +76,8 @@ func (client *Client) ModifyAccountPrivilegeWithCallback(request *ModifyAccountP
 // ModifyAccountPrivilegeRequest is the request struct for api ModifyAccountPrivilege
 type ModifyAccountPrivilegeRequest struct {
 	*requests.RpcRequest
-	AccountName    string                               `position:"Query" name:"AccountName"`
 	DrdsInstanceId string                               `position:"Query" name:"DrdsInstanceId"`
+	AccountName    string                               `position:"Query" name:"AccountName"`
 	DbPrivilege    *[]ModifyAccountPrivilegeDbPrivilege `position:"Query" name:"DbPrivilege"  type:"Repeated"`
 }
 
@@ -99,7 +99,7 @@ func CreateModifyAccountPrivilegeRequest() (request *ModifyAccountPrivilegeReque
 	request = &ModifyAccountPrivilegeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "ModifyAccountPrivilege", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "ModifyAccountPrivilege", "Drds", "openAPI")
 	return
 }
 

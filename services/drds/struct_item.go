@@ -17,11 +17,9 @@ package drds
 
 // Item is a nested struct in drds response
 type Item struct {
-	Host         string                       `json:"Host" xml:"Host"`
-	Schema       string                       `json:"Schema" xml:"Schema"`
-	SendTime     int64                        `json:"SendTime" xml:"SendTime"`
-	DbInstanceId string                       `json:"DbInstanceId" xml:"DbInstanceId"`
-	ResponseTime int64                        `json:"ResponseTime" xml:"ResponseTime"`
-	Sql          string                       `json:"Sql" xml:"Sql"`
-	DbNames      DbNamesInCreateDrdsDBPreview `json:"DbNames" xml:"DbNames"`
+	Schema       string `json:"Schema" xml:"Schema"`
+	Sql          string `json:"Sql" xml:"Sql"`
+	SendTime     int64  `json:"SendTime" xml:"SendTime"`
+	ResponseTime int64  `json:"ResponseTime" xml:"ResponseTime"`
+	Host         string `json:"Host" xml:"Host"`
 }

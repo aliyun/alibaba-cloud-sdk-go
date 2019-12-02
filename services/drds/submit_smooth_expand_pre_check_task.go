@@ -76,8 +76,8 @@ func (client *Client) SubmitSmoothExpandPreCheckTaskWithCallback(request *Submit
 // SubmitSmoothExpandPreCheckTaskRequest is the request struct for api SubmitSmoothExpandPreCheckTask
 type SubmitSmoothExpandPreCheckTaskRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // SubmitSmoothExpandPreCheckTaskResponse is the response struct for api SubmitSmoothExpandPreCheckTask
@@ -94,7 +94,7 @@ func CreateSubmitSmoothExpandPreCheckTaskRequest() (request *SubmitSmoothExpandP
 	request = &SubmitSmoothExpandPreCheckTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSmoothExpandPreCheckTask", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSmoothExpandPreCheckTask", "Drds", "openAPI")
 	return
 }
 

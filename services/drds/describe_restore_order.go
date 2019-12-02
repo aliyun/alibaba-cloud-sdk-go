@@ -76,12 +76,12 @@ func (client *Client) DescribeRestoreOrderWithCallback(request *DescribeRestoreO
 // DescribeRestoreOrderRequest is the request struct for api DescribeRestoreOrder
 type DescribeRestoreOrderRequest struct {
 	*requests.RpcRequest
-	PreferredBackupTime string `position:"Query" name:"PreferredBackupTime"`
 	BackupDbNames       string `position:"Query" name:"BackupDbNames"`
 	BackupId            string `position:"Query" name:"BackupId"`
-	BackupMode          string `position:"Query" name:"BackupMode"`
 	BackupLevel         string `position:"Query" name:"BackupLevel"`
 	DrdsInstanceId      string `position:"Query" name:"DrdsInstanceId"`
+	PreferredBackupTime string `position:"Query" name:"PreferredBackupTime"`
+	BackupMode          string `position:"Query" name:"BackupMode"`
 }
 
 // DescribeRestoreOrderResponse is the response struct for api DescribeRestoreOrder
@@ -97,7 +97,7 @@ func CreateDescribeRestoreOrderRequest() (request *DescribeRestoreOrderRequest) 
 	request = &DescribeRestoreOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRestoreOrder", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRestoreOrder", "Drds", "openAPI")
 	return
 }
 

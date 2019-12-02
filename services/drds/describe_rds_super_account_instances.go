@@ -77,8 +77,8 @@ func (client *Client) DescribeRdsSuperAccountInstancesWithCallback(request *Desc
 type DescribeRdsSuperAccountInstancesRequest struct {
 	*requests.RpcRequest
 	RdsInstance    *[]string `position:"Query" name:"RdsInstance"  type:"Repeated"`
-	DbInstType     string    `position:"Query" name:"DbInstType"`
 	DrdsInstanceId string    `position:"Query" name:"DrdsInstanceId"`
+	DbInstType     string    `position:"Query" name:"DbInstType"`
 }
 
 // DescribeRdsSuperAccountInstancesResponse is the response struct for api DescribeRdsSuperAccountInstances
@@ -93,7 +93,7 @@ func CreateDescribeRdsSuperAccountInstancesRequest() (request *DescribeRdsSuperA
 	request = &DescribeRdsSuperAccountInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRdsSuperAccountInstances", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRdsSuperAccountInstances", "Drds", "openAPI")
 	return
 }
 

@@ -17,15 +17,10 @@ package drds
 
 // DataItem is a nested struct in drds response
 type DataItem struct {
-	UsedInstanceType     string               `json:"UsedInstanceType" xml:"UsedInstanceType"`
-	RdsInstanceId        string               `json:"RdsInstanceId" xml:"RdsInstanceId"`
-	Enabled              string               `json:"Enabled" xml:"Enabled"`
-	CreateTime           string               `json:"CreateTime" xml:"CreateTime"`
-	Detailed             string               `json:"Detailed" xml:"Detailed"`
-	OriginalTableName    string               `json:"OriginalTableName" xml:"OriginalTableName"`
-	TableName            string               `json:"TableName" xml:"TableName"`
-	DbName               string               `json:"DbName" xml:"DbName"`
-	UsedInstanceId       string               `json:"UsedInstanceId" xml:"UsedInstanceId"`
-	ReadOnlyInstanceInfo ReadOnlyInstanceInfo `json:"ReadOnlyInstanceInfo" xml:"ReadOnlyInstanceInfo"`
-	ReadOnlyInstanceIds  ReadOnlyInstanceIds  `json:"ReadOnlyInstanceIds" xml:"ReadOnlyInstanceIds"`
+	Enabled           string `json:"Enabled" xml:"Enabled"`
+	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
+	Detailed          string `json:"Detailed" xml:"Detailed"`
+	OriginalTableName string `json:"OriginalTableName" xml:"OriginalTableName"`
+	TableName         string `json:"TableName" xml:"TableName"`
+	DbName            string `json:"DbName" xml:"DbName"`
 }

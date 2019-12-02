@@ -92,7 +92,7 @@ func CreateRestartDrdsInstanceRequest() (request *RestartDrdsInstanceRequest) {
 	request = &RestartDrdsInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "RestartDrdsInstance", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "RestartDrdsInstance", "Drds", "openAPI")
 	return
 }
 

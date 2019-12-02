@@ -17,5 +17,5 @@ package drds
 
 // DataInDescribeRecycleBinTables is a nested struct in drds response
 type DataInDescribeRecycleBinTables struct {
-	DataItem []DataItem `json:"DataItem" xml:"DataItem"`
+	DataItem []DataItem `json:"Data" xml:"Data"`
 }

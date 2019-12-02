@@ -92,7 +92,7 @@ func CreateDescribeInstanceMenuSwitchRequest() (request *DescribeInstanceMenuSwi
 	request = &DescribeInstanceMenuSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeInstanceMenuSwitch", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeInstanceMenuSwitch", "Drds", "openAPI")
 	return
 }
 

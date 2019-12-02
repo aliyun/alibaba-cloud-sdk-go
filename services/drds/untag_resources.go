@@ -77,10 +77,10 @@ func (client *Client) UntagResourcesWithCallback(request *UntagResourcesRequest,
 type UntagResourcesRequest struct {
 	*requests.RpcRequest
 	All          requests.Boolean `position:"Query" name:"All"`
-	NoRole       requests.Boolean `position:"Query" name:"NoRole"`
 	ResourceId   *[]string        `position:"Query" name:"ResourceId"  type:"Repeated"`
-	TagKey       *[]string        `position:"Query" name:"TagKey"  type:"Repeated"`
 	ResourceType string           `position:"Query" name:"ResourceType"`
+	NoRole       requests.Boolean `position:"Query" name:"NoRole"`
+	TagKey       *[]string        `position:"Query" name:"TagKey"  type:"Repeated"`
 }
 
 // UntagResourcesResponse is the response struct for api UntagResources
@@ -95,7 +95,7 @@ func CreateUntagResourcesRequest() (request *UntagResourcesRequest) {
 	request = &UntagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "UntagResources", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "UntagResources", "Drds", "openAPI")
 	return
 }
 

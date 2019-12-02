@@ -17,5 +17,5 @@ package drds
 
 // DataInDescribeDrdsSqlAuditStatus is a nested struct in drds response
 type DataInDescribeDrdsSqlAuditStatus struct {
-	DataItem []DataItem `json:"DataItem" xml:"DataItem"`
+	DataItem []DataItem `json:"Data" xml:"Data"`
 }

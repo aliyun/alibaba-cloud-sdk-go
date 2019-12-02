@@ -80,8 +80,8 @@ type DescribeRDSPerformanceRequest struct {
 	EndTime        requests.Integer `position:"Query" name:"EndTime"`
 	StartTime      requests.Integer `position:"Query" name:"StartTime"`
 	RdsInstanceId  string           `position:"Query" name:"RdsInstanceId"`
-	DbInstType     string           `position:"Query" name:"DbInstType"`
 	DrdsInstanceId string           `position:"Query" name:"DrdsInstanceId"`
+	DbInstType     string           `position:"Query" name:"DbInstType"`
 }
 
 // DescribeRDSPerformanceResponse is the response struct for api DescribeRDSPerformance
@@ -97,7 +97,7 @@ func CreateDescribeRDSPerformanceRequest() (request *DescribeRDSPerformanceReque
 	request = &DescribeRDSPerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRDSPerformance", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRDSPerformance", "Drds", "openAPI")
 	return
 }
 

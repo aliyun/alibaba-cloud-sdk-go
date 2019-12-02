@@ -76,19 +76,19 @@ func (client *Client) DescribeDrdsInstanceDbMonitorWithCallback(request *Describ
 // DescribeDrdsInstanceDbMonitorRequest is the request struct for api DescribeDrdsInstanceDbMonitor
 type DescribeDrdsInstanceDbMonitorRequest struct {
 	*requests.RpcRequest
-	DbName         string           `position:"Query" name:"DbName"`
 	EndTime        requests.Integer `position:"Query" name:"EndTime"`
 	StartTime      requests.Integer `position:"Query" name:"StartTime"`
 	DrdsInstanceId string           `position:"Query" name:"DrdsInstanceId"`
+	DbName         string           `position:"Query" name:"DbName"`
 	Key            string           `position:"Query" name:"Key"`
 }
 
 // DescribeDrdsInstanceDbMonitorResponse is the response struct for api DescribeDrdsInstanceDbMonitor
 type DescribeDrdsInstanceDbMonitorResponse struct {
 	*responses.BaseResponse
-	RequestId string                              `json:"RequestId" xml:"RequestId"`
-	Success   bool                                `json:"Success" xml:"Success"`
-	Data      DataInDescribeDrdsInstanceDbMonitor `json:"Data" xml:"Data"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	Success   bool                     `json:"Success" xml:"Success"`
+	Data      []PartialPerformanceData `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeDrdsInstanceDbMonitorRequest creates a request to invoke DescribeDrdsInstanceDbMonitor API
@@ -96,7 +96,7 @@ func CreateDescribeDrdsInstanceDbMonitorRequest() (request *DescribeDrdsInstance
 	request = &DescribeDrdsInstanceDbMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeDrdsInstanceDbMonitor", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsInstanceDbMonitor", "Drds", "openAPI")
 	return
 }
 

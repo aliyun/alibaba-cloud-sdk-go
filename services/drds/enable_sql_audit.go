@@ -77,9 +77,9 @@ func (client *Client) EnableSqlAuditWithCallback(request *EnableSqlAuditRequest,
 type EnableSqlAuditRequest struct {
 	*requests.RpcRequest
 	RecallStartTimestamp string           `position:"Query" name:"RecallStartTimestamp"`
+	DrdsInstanceId       string           `position:"Query" name:"DrdsInstanceId"`
 	DbName               string           `position:"Query" name:"DbName"`
 	IsRecall             requests.Boolean `position:"Query" name:"IsRecall"`
-	DrdsInstanceId       string           `position:"Query" name:"DrdsInstanceId"`
 	RecallEndTimestamp   string           `position:"Query" name:"RecallEndTimestamp"`
 }
 
@@ -96,7 +96,7 @@ func CreateEnableSqlAuditRequest() (request *EnableSqlAuditRequest) {
 	request = &EnableSqlAuditRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "EnableSqlAudit", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "EnableSqlAudit", "Drds", "openAPI")
 	return
 }
 

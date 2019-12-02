@@ -76,8 +76,8 @@ func (client *Client) RemoveDrdsDbFailedRecordWithCallback(request *RemoveDrdsDb
 // RemoveDrdsDbFailedRecordRequest is the request struct for api RemoveDrdsDbFailedRecord
 type RemoveDrdsDbFailedRecordRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // RemoveDrdsDbFailedRecordResponse is the response struct for api RemoveDrdsDbFailedRecord
@@ -93,7 +93,7 @@ func CreateRemoveDrdsDbFailedRecordRequest() (request *RemoveDrdsDbFailedRecordR
 	request = &RemoveDrdsDbFailedRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveDrdsDbFailedRecord", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveDrdsDbFailedRecord", "Drds", "openAPI")
 	return
 }
 

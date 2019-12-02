@@ -77,8 +77,8 @@ func (client *Client) DescribeDrdsParamsWithCallback(request *DescribeDrdsParams
 type DescribeDrdsParamsRequest struct {
 	*requests.RpcRequest
 	ParamLevel     string `position:"Query" name:"ParamLevel"`
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // DescribeDrdsParamsResponse is the response struct for api DescribeDrdsParams
@@ -94,7 +94,7 @@ func CreateDescribeDrdsParamsRequest() (request *DescribeDrdsParamsRequest) {
 	request = &DescribeDrdsParamsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsParams", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsParams", "Drds", "openAPI")
 	return
 }
 

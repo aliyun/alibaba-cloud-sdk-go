@@ -76,8 +76,8 @@ func (client *Client) SwitchGlobalBroadcastTypeWithCallback(request *SwitchGloba
 // SwitchGlobalBroadcastTypeRequest is the request struct for api SwitchGlobalBroadcastType
 type SwitchGlobalBroadcastTypeRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // SwitchGlobalBroadcastTypeResponse is the response struct for api SwitchGlobalBroadcastType
@@ -93,7 +93,7 @@ func CreateSwitchGlobalBroadcastTypeRequest() (request *SwitchGlobalBroadcastTyp
 	request = &SwitchGlobalBroadcastTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SwitchGlobalBroadcastType", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SwitchGlobalBroadcastType", "Drds", "openAPI")
 	return
 }
 

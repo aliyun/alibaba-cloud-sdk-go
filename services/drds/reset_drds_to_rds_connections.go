@@ -76,8 +76,8 @@ func (client *Client) ResetDrdsToRdsConnectionsWithCallback(request *ResetDrdsTo
 // ResetDrdsToRdsConnectionsRequest is the request struct for api ResetDrdsToRdsConnections
 type ResetDrdsToRdsConnectionsRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // ResetDrdsToRdsConnectionsResponse is the response struct for api ResetDrdsToRdsConnections
@@ -93,7 +93,7 @@ func CreateResetDrdsToRdsConnectionsRequest() (request *ResetDrdsToRdsConnection
 	request = &ResetDrdsToRdsConnectionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "ResetDrdsToRdsConnections", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "ResetDrdsToRdsConnections", "Drds", "openAPI")
 	return
 }
 

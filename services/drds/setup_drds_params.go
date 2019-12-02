@@ -103,7 +103,7 @@ func CreateSetupDrdsParamsRequest() (request *SetupDrdsParamsRequest) {
 	request = &SetupDrdsParamsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SetupDrdsParams", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SetupDrdsParams", "Drds", "openAPI")
 	return
 }
 

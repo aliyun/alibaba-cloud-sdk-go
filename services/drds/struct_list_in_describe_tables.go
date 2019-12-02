@@ -17,5 +17,5 @@ package drds
 
 // ListInDescribeTables is a nested struct in drds response
 type ListInDescribeTables struct {
-	ListItem []ListItem `json:"ListItem" xml:"ListItem"`
+	ListItem []ListItem `json:"List" xml:"List"`
 }

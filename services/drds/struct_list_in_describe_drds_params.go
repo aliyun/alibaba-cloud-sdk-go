@@ -17,5 +17,5 @@ package drds
 
 // ListInDescribeDrdsParams is a nested struct in drds response
 type ListInDescribeDrdsParams struct {
-	ListItem []ListItem `json:"ListItem" xml:"ListItem"`
+	ListItem []ListItem `json:"List" xml:"List"`
 }

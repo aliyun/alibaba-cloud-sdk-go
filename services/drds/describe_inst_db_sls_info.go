@@ -76,8 +76,8 @@ func (client *Client) DescribeInstDbSlsInfoWithCallback(request *DescribeInstDbS
 // DescribeInstDbSlsInfoRequest is the request struct for api DescribeInstDbSlsInfo
 type DescribeInstDbSlsInfoRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // DescribeInstDbSlsInfoResponse is the response struct for api DescribeInstDbSlsInfo
@@ -93,7 +93,7 @@ func CreateDescribeInstDbSlsInfoRequest() (request *DescribeInstDbSlsInfoRequest
 	request = &DescribeInstDbSlsInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeInstDbSlsInfo", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeInstDbSlsInfo", "Drds", "openAPI")
 	return
 }
 

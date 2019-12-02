@@ -76,8 +76,8 @@ func (client *Client) DisableSqlAuditWithCallback(request *DisableSqlAuditReques
 // DisableSqlAuditRequest is the request struct for api DisableSqlAudit
 type DisableSqlAuditRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // DisableSqlAuditResponse is the response struct for api DisableSqlAudit
@@ -93,7 +93,7 @@ func CreateDisableSqlAuditRequest() (request *DisableSqlAuditRequest) {
 	request = &DisableSqlAuditRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DisableSqlAudit", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DisableSqlAudit", "Drds", "openAPI")
 	return
 }
 

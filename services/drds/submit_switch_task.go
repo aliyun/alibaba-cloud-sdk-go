@@ -76,11 +76,11 @@ func (client *Client) SubmitSwitchTaskWithCallback(request *SubmitSwitchTaskRequ
 // SubmitSwitchTaskRequest is the request struct for api SubmitSwitchTask
 type SubmitSwitchTaskRequest struct {
 	*requests.RpcRequest
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	ExpandType     string `position:"Query" name:"ExpandType"`
 	JobId          string `position:"Query" name:"JobId"`
 	DbName         string `position:"Query" name:"DbName"`
 	ParentJobId    string `position:"Query" name:"ParentJobId"`
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
-	ExpandType     string `position:"Query" name:"ExpandType"`
 }
 
 // SubmitSwitchTaskResponse is the response struct for api SubmitSwitchTask
@@ -95,7 +95,7 @@ func CreateSubmitSwitchTaskRequest() (request *SubmitSwitchTaskRequest) {
 	request = &SubmitSwitchTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSwitchTask", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSwitchTask", "Drds", "openAPI")
 	return
 }
 

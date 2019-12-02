@@ -76,8 +76,8 @@ func (client *Client) EnableSqlFlashbackMatchSwitchWithCallback(request *EnableS
 // EnableSqlFlashbackMatchSwitchRequest is the request struct for api EnableSqlFlashbackMatchSwitch
 type EnableSqlFlashbackMatchSwitchRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // EnableSqlFlashbackMatchSwitchResponse is the response struct for api EnableSqlFlashbackMatchSwitch
@@ -93,7 +93,7 @@ func CreateEnableSqlFlashbackMatchSwitchRequest() (request *EnableSqlFlashbackMa
 	request = &EnableSqlFlashbackMatchSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "EnableSqlFlashbackMatchSwitch", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "EnableSqlFlashbackMatchSwitch", "Drds", "openAPI")
 	return
 }
 

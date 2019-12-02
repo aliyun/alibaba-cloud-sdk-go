@@ -76,9 +76,9 @@ func (client *Client) RemoveRecycleBinTableWithCallback(request *RemoveRecycleBi
 // RemoveRecycleBinTableRequest is the request struct for api RemoveRecycleBinTable
 type RemoveRecycleBinTableRequest struct {
 	*requests.RpcRequest
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 	DbName         string `position:"Query" name:"DbName"`
 	TableName      string `position:"Query" name:"TableName"`
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
 // RemoveRecycleBinTableResponse is the response struct for api RemoveRecycleBinTable
@@ -94,7 +94,7 @@ func CreateRemoveRecycleBinTableRequest() (request *RemoveRecycleBinTableRequest
 	request = &RemoveRecycleBinTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveRecycleBinTable", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveRecycleBinTable", "Drds", "openAPI")
 	return
 }
 

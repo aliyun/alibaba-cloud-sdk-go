@@ -76,8 +76,8 @@ func (client *Client) CheckDrdsDbNameWithCallback(request *CheckDrdsDbNameReques
 // CheckDrdsDbNameRequest is the request struct for api CheckDrdsDbName
 type CheckDrdsDbNameRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // CheckDrdsDbNameResponse is the response struct for api CheckDrdsDbName
@@ -93,7 +93,7 @@ func CreateCheckDrdsDbNameRequest() (request *CheckDrdsDbNameRequest) {
 	request = &CheckDrdsDbNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "CheckDrdsDbName", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "CheckDrdsDbName", "Drds", "openAPI")
 	return
 }
 

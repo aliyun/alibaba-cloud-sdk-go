@@ -77,9 +77,9 @@ func (client *Client) SetBackupLocalWithCallback(request *SetBackupLocalRequest,
 type SetBackupLocalRequest struct {
 	*requests.RpcRequest
 	LocalLogRetentionHours   string `position:"Query" name:"LocalLogRetentionHours"`
-	HighSpaceUsageProtection string `position:"Query" name:"HighSpaceUsageProtection"`
 	LocalLogRetentionSpace   string `position:"Query" name:"LocalLogRetentionSpace"`
 	DrdsInstanceId           string `position:"Query" name:"DrdsInstanceId"`
+	HighSpaceUsageProtection string `position:"Query" name:"HighSpaceUsageProtection"`
 }
 
 // SetBackupLocalResponse is the response struct for api SetBackupLocal
@@ -95,7 +95,7 @@ func CreateSetBackupLocalRequest() (request *SetBackupLocalRequest) {
 	request = &SetBackupLocalRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SetBackupLocal", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SetBackupLocal", "Drds", "openAPI")
 	return
 }
 

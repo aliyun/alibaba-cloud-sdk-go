@@ -76,8 +76,8 @@ func (client *Client) RemoveInstanceAccountWithCallback(request *RemoveInstanceA
 // RemoveInstanceAccountRequest is the request struct for api RemoveInstanceAccount
 type RemoveInstanceAccountRequest struct {
 	*requests.RpcRequest
-	AccountName    string `position:"Query" name:"AccountName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	AccountName    string `position:"Query" name:"AccountName"`
 }
 
 // RemoveInstanceAccountResponse is the response struct for api RemoveInstanceAccount
@@ -92,7 +92,7 @@ func CreateRemoveInstanceAccountRequest() (request *RemoveInstanceAccountRequest
 	request = &RemoveInstanceAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveInstanceAccount", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveInstanceAccount", "Drds", "openAPI")
 	return
 }
 

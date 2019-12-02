@@ -92,7 +92,7 @@ func CreateDescribeBackMenuRequest() (request *DescribeBackMenuRequest) {
 	request = &DescribeBackMenuRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeBackMenu", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeBackMenu", "Drds", "openAPI")
 	return
 }
 

@@ -17,5 +17,5 @@ package drds
 
 // ItemsInDescribeDbInstances is a nested struct in drds response
 type ItemsInDescribeDbInstances struct {
-	DBInstance []DBInstanceInDescribeDbInstances `json:"DBInstance" xml:"DBInstance"`
+	DBInstance []DBInstance `json:"DBInstance" xml:"DBInstance"`
 }

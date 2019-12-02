@@ -92,7 +92,7 @@ func CreateReleaseInstanceInternetAddressRequest() (request *ReleaseInstanceInte
 	request = &ReleaseInstanceInternetAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "ReleaseInstanceInternetAddress", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "ReleaseInstanceInternetAddress", "Drds", "openAPI")
 	return
 }
 

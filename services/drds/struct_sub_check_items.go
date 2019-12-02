@@ -17,5 +17,5 @@ package drds
 
 // SubCheckItems is a nested struct in drds response
 type SubCheckItems struct {
-	SubCheckItemsItem []SubCheckItemsItem `json:"SubCheckItemsItem" xml:"SubCheckItemsItem"`
+	SubCheckItemsItem []SubCheckItemsItem `json:"SubCheckItems" xml:"SubCheckItems"`
 }

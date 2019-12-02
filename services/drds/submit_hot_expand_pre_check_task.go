@@ -76,10 +76,10 @@ func (client *Client) SubmitHotExpandPreCheckTaskWithCallback(request *SubmitHot
 // SubmitHotExpandPreCheckTaskRequest is the request struct for api SubmitHotExpandPreCheckTask
 type SubmitHotExpandPreCheckTaskRequest struct {
 	*requests.RpcRequest
-	DbName         string    `position:"Query" name:"DbName"`
 	TableList      *[]string `position:"Query" name:"TableList"  type:"Repeated"`
-	DbInstType     string    `position:"Query" name:"DbInstType"`
 	DrdsInstanceId string    `position:"Query" name:"DrdsInstanceId"`
+	DbName         string    `position:"Query" name:"DbName"`
+	DbInstType     string    `position:"Query" name:"DbInstType"`
 }
 
 // SubmitHotExpandPreCheckTaskResponse is the response struct for api SubmitHotExpandPreCheckTask
@@ -96,7 +96,7 @@ func CreateSubmitHotExpandPreCheckTaskRequest() (request *SubmitHotExpandPreChec
 	request = &SubmitHotExpandPreCheckTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitHotExpandPreCheckTask", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitHotExpandPreCheckTask", "Drds", "openAPI")
 	return
 }
 

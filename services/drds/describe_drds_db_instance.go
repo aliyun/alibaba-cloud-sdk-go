@@ -76,17 +76,17 @@ func (client *Client) DescribeDrdsDbInstanceWithCallback(request *DescribeDrdsDb
 // DescribeDrdsDbInstanceRequest is the request struct for api DescribeDrdsDbInstance
 type DescribeDrdsDbInstanceRequest struct {
 	*requests.RpcRequest
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 	DbName         string `position:"Query" name:"DbName"`
 	DbInstanceId   string `position:"Query" name:"DbInstanceId"`
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
 // DescribeDrdsDbInstanceResponse is the response struct for api DescribeDrdsDbInstance
 type DescribeDrdsDbInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	Success    bool       `json:"Success" xml:"Success"`
-	DbInstance DbInstance `json:"DbInstance" xml:"DbInstance"`
+	RequestId  string                             `json:"RequestId" xml:"RequestId"`
+	Success    bool                               `json:"Success" xml:"Success"`
+	DbInstance DbInstanceInDescribeDrdsDbInstance `json:"DbInstance" xml:"DbInstance"`
 }
 
 // CreateDescribeDrdsDbInstanceRequest creates a request to invoke DescribeDrdsDbInstance API
@@ -94,7 +94,7 @@ func CreateDescribeDrdsDbInstanceRequest() (request *DescribeDrdsDbInstanceReque
 	request = &DescribeDrdsDbInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDbInstance", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDbInstance", "Drds", "openAPI")
 	return
 }
 

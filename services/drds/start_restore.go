@@ -76,12 +76,12 @@ func (client *Client) StartRestoreWithCallback(request *StartRestoreRequest, cal
 // StartRestoreRequest is the request struct for api StartRestore
 type StartRestoreRequest struct {
 	*requests.RpcRequest
-	PreferredBackupTime string `position:"Query" name:"PreferredBackupTime"`
 	BackupDbNames       string `position:"Query" name:"BackupDbNames"`
 	BackupId            string `position:"Query" name:"BackupId"`
-	BackupMode          string `position:"Query" name:"BackupMode"`
 	BackupLevel         string `position:"Query" name:"BackupLevel"`
 	DrdsInstanceId      string `position:"Query" name:"DrdsInstanceId"`
+	PreferredBackupTime string `position:"Query" name:"PreferredBackupTime"`
+	BackupMode          string `position:"Query" name:"BackupMode"`
 }
 
 // StartRestoreResponse is the response struct for api StartRestore
@@ -97,7 +97,7 @@ func CreateStartRestoreRequest() (request *StartRestoreRequest) {
 	request = &StartRestoreRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "StartRestore", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "StartRestore", "Drds", "openAPI")
 	return
 }
 

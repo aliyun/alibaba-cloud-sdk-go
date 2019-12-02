@@ -93,7 +93,7 @@ func CreateReleaseHiStoreInstanceRequest() (request *ReleaseHiStoreInstanceReque
 	request = &ReleaseHiStoreInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "ReleaseHiStoreInstance", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "ReleaseHiStoreInstance", "Drds", "openAPI")
 	return
 }
 

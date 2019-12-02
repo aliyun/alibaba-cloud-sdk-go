@@ -76,10 +76,10 @@ func (client *Client) ModifyRdsReadWeightWithCallback(request *ModifyRdsReadWeig
 // ModifyRdsReadWeightRequest is the request struct for api ModifyRdsReadWeight
 type ModifyRdsReadWeightRequest struct {
 	*requests.RpcRequest
-	InstanceNames  string `position:"Query" name:"InstanceNames"`
-	DbName         string `position:"Query" name:"DbName"`
 	Weights        string `position:"Query" name:"Weights"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	InstanceNames  string `position:"Query" name:"InstanceNames"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // ModifyRdsReadWeightResponse is the response struct for api ModifyRdsReadWeight
@@ -94,7 +94,7 @@ func CreateModifyRdsReadWeightRequest() (request *ModifyRdsReadWeightRequest) {
 	request = &ModifyRdsReadWeightRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "ModifyRdsReadWeight", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "ModifyRdsReadWeight", "Drds", "openAPI")
 	return
 }
 

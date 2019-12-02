@@ -76,15 +76,15 @@ func (client *Client) SetBackupPolicyWithCallback(request *SetBackupPolicyReques
 // SetBackupPolicyRequest is the request struct for api SetBackupPolicy
 type SetBackupPolicyRequest struct {
 	*requests.RpcRequest
-	PreferredBackupPeriod     string `position:"Query" name:"PreferredBackupPeriod"`
 	BackupDbNames             string `position:"Query" name:"BackupDbNames"`
-	DataBackupRetentionPeriod string `position:"Query" name:"DataBackupRetentionPeriod"`
-	PreferredBackupStartTime  string `position:"Query" name:"PreferredBackupStartTime"`
-	PreferredBackupEndTime    string `position:"Query" name:"PreferredBackupEndTime"`
-	BackupMode                string `position:"Query" name:"BackupMode"`
 	BackupLog                 string `position:"Query" name:"BackupLog"`
+	PreferredBackupEndTime    string `position:"Query" name:"PreferredBackupEndTime"`
+	PreferredBackupPeriod     string `position:"Query" name:"PreferredBackupPeriod"`
+	PreferredBackupStartTime  string `position:"Query" name:"PreferredBackupStartTime"`
 	BackupLevel               string `position:"Query" name:"BackupLevel"`
 	DrdsInstanceId            string `position:"Query" name:"DrdsInstanceId"`
+	DataBackupRetentionPeriod string `position:"Query" name:"DataBackupRetentionPeriod"`
+	BackupMode                string `position:"Query" name:"BackupMode"`
 	LogBackupRetentionPeriod  string `position:"Query" name:"LogBackupRetentionPeriod"`
 }
 
@@ -101,7 +101,7 @@ func CreateSetBackupPolicyRequest() (request *SetBackupPolicyRequest) {
 	request = &SetBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SetBackupPolicy", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SetBackupPolicy", "Drds", "openAPI")
 	return
 }
 

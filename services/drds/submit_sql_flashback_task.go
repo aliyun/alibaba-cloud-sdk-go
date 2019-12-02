@@ -77,15 +77,15 @@ func (client *Client) SubmitSqlFlashbackTaskWithCallback(request *SubmitSqlFlash
 type SubmitSqlFlashbackTaskRequest struct {
 	*requests.RpcRequest
 	TraceId           string           `position:"Query" name:"TraceId"`
-	SqlType           string           `position:"Query" name:"SqlType"`
 	SqlPk             string           `position:"Query" name:"SqlPk"`
+	StartTime         string           `position:"Query" name:"StartTime"`
 	RecallRestoreType requests.Integer `position:"Query" name:"RecallRestoreType"`
+	TableName         string           `position:"Query" name:"TableName"`
+	SqlType           string           `position:"Query" name:"SqlType"`
+	EndTime           string           `position:"Query" name:"EndTime"`
+	DrdsInstanceId    string           `position:"Query" name:"DrdsInstanceId"`
 	RecallType        requests.Integer `position:"Query" name:"RecallType"`
 	DbName            string           `position:"Query" name:"DbName"`
-	EndTime           string           `position:"Query" name:"EndTime"`
-	StartTime         string           `position:"Query" name:"StartTime"`
-	TableName         string           `position:"Query" name:"TableName"`
-	DrdsInstanceId    string           `position:"Query" name:"DrdsInstanceId"`
 }
 
 // SubmitSqlFlashbackTaskResponse is the response struct for api SubmitSqlFlashbackTask
@@ -101,7 +101,7 @@ func CreateSubmitSqlFlashbackTaskRequest() (request *SubmitSqlFlashbackTaskReque
 	request = &SubmitSqlFlashbackTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSqlFlashbackTask", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSqlFlashbackTask", "Drds", "openAPI")
 	return
 }
 

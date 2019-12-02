@@ -76,11 +76,30 @@ func (client *Client) CreateDrdsDBWithCallback(request *CreateDrdsDBRequest, cal
 // CreateDrdsDBRequest is the request struct for api CreateDrdsDB
 type CreateDrdsDBRequest struct {
 	*requests.RpcRequest
-	Encode         string `position:"Query" name:"Encode"`
-	Password       string `position:"Query" name:"Password"`
-	DbName         string `position:"Query" name:"DbName"`
-	RdsInstances   string `position:"Query" name:"RdsInstances"`
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	Encode               string                         `position:"Query" name:"Encode"`
+	RdsInstance          *[]string                      `position:"Query" name:"RdsInstance"  type:"Repeated"`
+	Type                 string                         `position:"Query" name:"Type"`
+	Password             string                         `position:"Query" name:"Password"`
+	RdsSuperAccount      *[]CreateDrdsDBRdsSuperAccount `position:"Query" name:"RdsSuperAccount"  type:"Repeated"`
+	AccountName          string                         `position:"Query" name:"AccountName"`
+	DrdsInstanceId       string                         `position:"Query" name:"DrdsInstanceId"`
+	DbInstanceIsCreating requests.Boolean               `position:"Query" name:"DbInstanceIsCreating"`
+	InstDbName           *[]CreateDrdsDBInstDbName      `position:"Query" name:"InstDbName"  type:"Repeated"`
+	DbName               string                         `position:"Query" name:"DbName"`
+	DbInstType           string                         `position:"Query" name:"DbInstType"`
+}
+
+// CreateDrdsDBRdsSuperAccount is a repeated param struct in CreateDrdsDBRequest
+type CreateDrdsDBRdsSuperAccount struct {
+	Password     string `name:"Password"`
+	AccountName  string `name:"AccountName"`
+	DbInstanceId string `name:"DbInstanceId"`
+}
+
+// CreateDrdsDBInstDbName is a repeated param struct in CreateDrdsDBRequest
+type CreateDrdsDBInstDbName struct {
+	ShardDbName  *[]string `name:"ShardDbName" type:"Repeated"`
+	DbInstanceId string    `name:"DbInstanceId"`
 }
 
 // CreateDrdsDBResponse is the response struct for api CreateDrdsDB
@@ -95,7 +114,7 @@ func CreateCreateDrdsDBRequest() (request *CreateDrdsDBRequest) {
 	request = &CreateDrdsDBRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "CreateDrdsDB", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "CreateDrdsDB", "Drds", "openAPI")
 	return
 }
 

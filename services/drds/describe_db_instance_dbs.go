@@ -76,11 +76,11 @@ func (client *Client) DescribeDbInstanceDbsWithCallback(request *DescribeDbInsta
 // DescribeDbInstanceDbsRequest is the request struct for api DescribeDbInstanceDbs
 type DescribeDbInstanceDbsRequest struct {
 	*requests.RpcRequest
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 	Password       string `position:"Query" name:"Password"`
 	AccountName    string `position:"Query" name:"AccountName"`
 	DbInstanceId   string `position:"Query" name:"DbInstanceId"`
 	DbInstType     string `position:"Query" name:"DbInstType"`
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
 // DescribeDbInstanceDbsResponse is the response struct for api DescribeDbInstanceDbs
@@ -97,7 +97,7 @@ func CreateDescribeDbInstanceDbsRequest() (request *DescribeDbInstanceDbsRequest
 	request = &DescribeDbInstanceDbsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDbInstanceDbs", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDbInstanceDbs", "Drds", "openAPI")
 	return
 }
 

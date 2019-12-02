@@ -76,8 +76,8 @@ func (client *Client) CheckExpandStatusWithCallback(request *CheckExpandStatusRe
 // CheckExpandStatusRequest is the request struct for api CheckExpandStatus
 type CheckExpandStatusRequest struct {
 	*requests.RpcRequest
-	DbName         string `position:"Query" name:"DbName"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	DbName         string `position:"Query" name:"DbName"`
 }
 
 // CheckExpandStatusResponse is the response struct for api CheckExpandStatus
@@ -93,7 +93,7 @@ func CreateCheckExpandStatusRequest() (request *CheckExpandStatusRequest) {
 	request = &CheckExpandStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "CheckExpandStatus", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "CheckExpandStatus", "Drds", "openAPI")
 	return
 }
 

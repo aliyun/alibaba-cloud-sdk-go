@@ -76,11 +76,11 @@ func (client *Client) SubmitCleanTaskWithCallback(request *SubmitCleanTaskReques
 // SubmitCleanTaskRequest is the request struct for api SubmitCleanTask
 type SubmitCleanTaskRequest struct {
 	*requests.RpcRequest
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	ExpandType     string `position:"Query" name:"ExpandType"`
 	JobId          string `position:"Query" name:"JobId"`
 	DbName         string `position:"Query" name:"DbName"`
 	ParentJobId    string `position:"Query" name:"ParentJobId"`
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
-	ExpandType     string `position:"Query" name:"ExpandType"`
 }
 
 // SubmitCleanTaskResponse is the response struct for api SubmitCleanTask
@@ -95,7 +95,7 @@ func CreateSubmitCleanTaskRequest() (request *SubmitCleanTaskRequest) {
 	request = &SubmitCleanTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitCleanTask", "drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitCleanTask", "Drds", "openAPI")
 	return
 }
 
