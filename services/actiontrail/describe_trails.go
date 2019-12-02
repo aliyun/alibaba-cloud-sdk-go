@@ -76,8 +76,8 @@ func (client *Client) DescribeTrailsWithCallback(request *DescribeTrailsRequest,
 // DescribeTrailsRequest is the request struct for api DescribeTrails
 type DescribeTrailsRequest struct {
 	*requests.RpcRequest
-	NameList            string           `position:"Query" name:"NameList"`
 	IncludeShadowTrails requests.Boolean `position:"Query" name:"IncludeShadowTrails"`
+	NameList            string           `position:"Query" name:"NameList"`
 }
 
 // DescribeTrailsResponse is the response struct for api DescribeTrails

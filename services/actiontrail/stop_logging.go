@@ -83,8 +83,6 @@ type StopLoggingRequest struct {
 type StopLoggingResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Param     string `json:"Param" xml:"Param"`
-	Result    string `json:"Result" xml:"Result"`
 }
 
 // CreateStopLoggingRequest creates a request to invoke StopLogging API

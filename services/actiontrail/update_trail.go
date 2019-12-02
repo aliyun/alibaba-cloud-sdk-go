@@ -78,19 +78,17 @@ type UpdateTrailRequest struct {
 	*requests.RpcRequest
 	SlsProjectArn   string `position:"Query" name:"SlsProjectArn"`
 	SlsWriteRoleArn string `position:"Query" name:"SlsWriteRoleArn"`
+	OssKeyPrefix    string `position:"Query" name:"OssKeyPrefix"`
 	RoleName        string `position:"Query" name:"RoleName"`
+	EventRW         string `position:"Query" name:"EventRW"`
 	Name            string `position:"Query" name:"Name"`
 	OssBucketName   string `position:"Query" name:"OssBucketName"`
-	OssKeyPrefix    string `position:"Query" name:"OssKeyPrefix"`
-	EventRW         string `position:"Query" name:"EventRW"`
 }
 
 // UpdateTrailResponse is the response struct for api UpdateTrail
 type UpdateTrailResponse struct {
 	*responses.BaseResponse
 	RequestId       string `json:"RequestId" xml:"RequestId"`
-	Param           string `json:"Param" xml:"Param"`
-	Result          string `json:"Result" xml:"Result"`
 	Name            string `json:"Name" xml:"Name"`
 	HomeRegion      string `json:"HomeRegion" xml:"HomeRegion"`
 	OssBucketName   string `json:"OssBucketName" xml:"OssBucketName"`

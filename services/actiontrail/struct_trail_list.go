@@ -17,5 +17,5 @@ package actiontrail
 
 // TrailList is a nested struct in actiontrail response
 type TrailList struct {
-	TrailListItem []TrailListItem `json:"TrailListItem" xml:"TrailListItem"`
+	TrailListItem []TrailListItem `json:"TrailList" xml:"TrailList"`
 }

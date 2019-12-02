@@ -78,11 +78,11 @@ type CreateTrailRequest struct {
 	*requests.RpcRequest
 	SlsProjectArn   string `position:"Query" name:"SlsProjectArn"`
 	SlsWriteRoleArn string `position:"Query" name:"SlsWriteRoleArn"`
+	OssKeyPrefix    string `position:"Query" name:"OssKeyPrefix"`
 	RoleName        string `position:"Query" name:"RoleName"`
+	EventRW         string `position:"Query" name:"EventRW"`
 	Name            string `position:"Query" name:"Name"`
 	OssBucketName   string `position:"Query" name:"OssBucketName"`
-	OssKeyPrefix    string `position:"Query" name:"OssKeyPrefix"`
-	EventRW         string `position:"Query" name:"EventRW"`
 }
 
 // CreateTrailResponse is the response struct for api CreateTrail

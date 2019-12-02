@@ -17,16 +17,12 @@ package actiontrail
 
 // TrailListItem is a nested struct in actiontrail response
 type TrailListItem struct {
-	Name                      string `json:"Name" xml:"Name"`
-	HomeRegion                string `json:"HomeRegion" xml:"HomeRegion"`
-	RoleName                  string `json:"RoleName" xml:"RoleName"`
-	Status                    string `json:"Status" xml:"Status"`
-	IncludeGlobalServiceEvent string `json:"IncludeGlobalServiceEvent" xml:"IncludeGlobalServiceEvent"`
-	OssBucketName             string `json:"OssBucketName" xml:"OssBucketName"`
-	OssKeyPrefix              string `json:"OssKeyPrefix" xml:"OssKeyPrefix"`
-	Region                    string `json:"Region" xml:"Region"`
-	EventRW                   string `json:"EventRW" xml:"EventRW"`
-	Type                      string `json:"Type" xml:"Type"`
-	SlsWriteRoleArn           string `json:"SlsWriteRoleArn" xml:"SlsWriteRoleArn"`
-	SlsProjectArn             string `json:"SlsProjectArn" xml:"SlsProjectArn"`
+	Name            string `json:"Name" xml:"Name"`
+	HomeRegion      string `json:"HomeRegion" xml:"HomeRegion"`
+	RoleName        string `json:"RoleName" xml:"RoleName"`
+	OssBucketName   string `json:"OssBucketName" xml:"OssBucketName"`
+	OssKeyPrefix    string `json:"OssKeyPrefix" xml:"OssKeyPrefix"`
+	EventRW         string `json:"EventRW" xml:"EventRW"`
+	SlsWriteRoleArn string `json:"SlsWriteRoleArn" xml:"SlsWriteRoleArn"`
+	SlsProjectArn   string `json:"SlsProjectArn" xml:"SlsProjectArn"`
 }

@@ -77,29 +77,29 @@ func (client *Client) LookupEventsWithCallback(request *LookupEventsRequest, cal
 type LookupEventsRequest struct {
 	*requests.RpcRequest
 	Request          string `position:"Query" name:"Request"`
+	StartTime        string `position:"Query" name:"StartTime"`
+	EventName        string `position:"Query" name:"EventName"`
+	NextToken        string `position:"Query" name:"NextToken"`
+	ServiceName      string `position:"Query" name:"ServiceName"`
+	Event            string `position:"Query" name:"Event"`
 	EventAccessKeyId string `position:"Query" name:"EventAccessKeyId"`
 	EndTime          string `position:"Query" name:"EndTime"`
 	EventRW          string `position:"Query" name:"EventRW"`
-	StartTime        string `position:"Query" name:"StartTime"`
 	ResourceType     string `position:"Query" name:"ResourceType"`
-	EventName        string `position:"Query" name:"EventName"`
-	NextToken        string `position:"Query" name:"NextToken"`
 	MaxResults       string `position:"Query" name:"MaxResults"`
 	EventType        string `position:"Query" name:"EventType"`
-	ServiceName      string `position:"Query" name:"ServiceName"`
 	ResourceName     string `position:"Query" name:"ResourceName"`
-	Event            string `position:"Query" name:"Event"`
 	User             string `position:"Query" name:"User"`
 }
 
 // LookupEventsResponse is the response struct for api LookupEvents
 type LookupEventsResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	NextToken string   `json:"NextToken" xml:"NextToken"`
-	StartTime string   `json:"StartTime" xml:"StartTime"`
-	EndTime   string   `json:"EndTime" xml:"EndTime"`
-	Events    []string `json:"Events" xml:"Events"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	NextToken string                   `json:"NextToken" xml:"NextToken"`
+	StartTime string                   `json:"StartTime" xml:"StartTime"`
+	EndTime   string                   `json:"EndTime" xml:"EndTime"`
+	Events    []map[string]interface{} `json:"Events" xml:"Events"`
 }
 
 // CreateLookupEventsRequest creates a request to invoke LookupEvents API
