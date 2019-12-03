@@ -25,4 +25,5 @@ type TrailListItem struct {
 	EventRW         string `json:"EventRW" xml:"EventRW"`
 	SlsWriteRoleArn string `json:"SlsWriteRoleArn" xml:"SlsWriteRoleArn"`
 	SlsProjectArn   string `json:"SlsProjectArn" xml:"SlsProjectArn"`
+	Status          string `json:"Status" xml:"Status"`
 }
