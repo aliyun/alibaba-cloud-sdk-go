@@ -76,9 +76,11 @@ func (client *Client) CreateGifTaskWithCallback(request *CreateGifTaskRequest, c
 // CreateGifTaskRequest is the request struct for api CreateGifTask
 type CreateGifTaskRequest struct {
 	*requests.RpcRequest
-	VideoUrl      string `position:"Query" name:"VideoUrl"`
-	VideoName     string `position:"Query" name:"VideoName"`
-	ApplicationId string `position:"Query" name:"ApplicationId"`
+	TemplateId    requests.Integer `position:"Query" name:"TemplateId"`
+	VideoUrl      string           `position:"Query" name:"VideoUrl"`
+	VideoName     string           `position:"Query" name:"VideoName"`
+	CallbackUrl   string           `position:"Query" name:"CallbackUrl"`
+	ApplicationId string           `position:"Query" name:"ApplicationId"`
 }
 
 // CreateGifTaskResponse is the response struct for api CreateGifTask

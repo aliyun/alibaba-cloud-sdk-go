@@ -76,9 +76,11 @@ func (client *Client) CreateCoverTaskWithCallback(request *CreateCoverTaskReques
 // CreateCoverTaskRequest is the request struct for api CreateCoverTask
 type CreateCoverTaskRequest struct {
 	*requests.RpcRequest
-	VideoUrl      string `position:"Query" name:"VideoUrl"`
-	VideoName     string `position:"Query" name:"VideoName"`
-	ApplicationId string `position:"Query" name:"ApplicationId"`
+	TemplateId    requests.Integer `position:"Query" name:"TemplateId"`
+	VideoUrl      string           `position:"Query" name:"VideoUrl"`
+	VideoName     string           `position:"Query" name:"VideoName"`
+	CallbackUrl   string           `position:"Query" name:"CallbackUrl"`
+	ApplicationId string           `position:"Query" name:"ApplicationId"`
 }
 
 // CreateCoverTaskResponse is the response struct for api CreateCoverTask
