@@ -109,6 +109,8 @@ type DescribeInstanceResponse struct {
 	ColdStorageStatus  string `json:"ColdStorageStatus" xml:"ColdStorageStatus"`
 	BackupStatus       string `json:"BackupStatus" xml:"BackupStatus"`
 	CoreDiskCount      string `json:"CoreDiskCount" xml:"CoreDiskCount"`
+	MaintainStartTime  string `json:"MaintainStartTime" xml:"MaintainStartTime"`
+	MaintainEndTime    string `json:"MaintainEndTime" xml:"MaintainEndTime"`
 	Tags               Tags   `json:"Tags" xml:"Tags"`
 }
 

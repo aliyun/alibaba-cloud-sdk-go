@@ -17,11 +17,16 @@ package hbase
 
 // Cluster is a nested struct in hbase response
 type Cluster struct {
-	ClusterId   string `json:"ClusterId" xml:"ClusterId"`
-	ClusterName string `json:"ClusterName" xml:"ClusterName"`
-	DBVersion   string `json:"DBVersion" xml:"DBVersion"`
-	Status      string `json:"Status" xml:"Status"`
-	DBType      string `json:"DBType" xml:"DBType"`
-	IsRelated   bool   `json:"IsRelated" xml:"IsRelated"`
-	LockMode    string `json:"LockMode" xml:"LockMode"`
+	HaName        string        `json:"HaName" xml:"HaName"`
+	ClusterId     string        `json:"ClusterId" xml:"ClusterId"`
+	DBVersion     string        `json:"DBVersion" xml:"DBVersion"`
+	DBType        string        `json:"DBType" xml:"DBType"`
+	BdsName       string        `json:"BdsName" xml:"BdsName"`
+	StandbyName   string        `json:"StandbyName" xml:"StandbyName"`
+	IsRelated     bool          `json:"IsRelated" xml:"IsRelated"`
+	ActiveName    string        `json:"ActiveName" xml:"ActiveName"`
+	ClusterName   string        `json:"ClusterName" xml:"ClusterName"`
+	Status        string        `json:"Status" xml:"Status"`
+	LockMode      string        `json:"LockMode" xml:"LockMode"`
+	HaSlbConnList HaSlbConnList `json:"HaSlbConnList" xml:"HaSlbConnList"`
 }

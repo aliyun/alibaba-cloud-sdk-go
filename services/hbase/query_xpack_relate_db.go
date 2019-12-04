@@ -83,8 +83,8 @@ type QueryXpackRelateDBRequest struct {
 // QueryXpackRelateDBResponse is the response struct for api QueryXpackRelateDB
 type QueryXpackRelateDBResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	ClusterList ClusterList `json:"ClusterList" xml:"ClusterList"`
+	RequestId   string                          `json:"RequestId" xml:"RequestId"`
+	ClusterList ClusterListInQueryXpackRelateDB `json:"ClusterList" xml:"ClusterList"`
 }
 
 // CreateQueryXpackRelateDBRequest creates a request to invoke QueryXpackRelateDB API
