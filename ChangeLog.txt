@@ -1,3 +1,6 @@
+2019-12-04 Version: v1.60.284
+- Delete invalid Api.
+
 2019-12-04 Version: v1.60.283
 - Generated 2019-01-01 for `HBase`.
 
