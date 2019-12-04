@@ -105,7 +105,7 @@ func CreateDescibeImportsFromDatabaseRequest() (request *DescibeImportsFromDatab
 	request = &DescibeImportsFromDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescibeImportsFromDatabase", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescibeImportsFromDatabase", "rds", "openAPI")
 	return
 }
 

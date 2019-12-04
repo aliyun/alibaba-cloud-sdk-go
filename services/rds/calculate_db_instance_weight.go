@@ -95,7 +95,7 @@ func CreateCalculateDBInstanceWeightRequest() (request *CalculateDBInstanceWeigh
 	request = &CalculateDBInstanceWeightRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CalculateDBInstanceWeight", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CalculateDBInstanceWeight", "rds", "openAPI")
 	return
 }
 

@@ -94,7 +94,7 @@ func CreateCheckInstanceExistRequest() (request *CheckInstanceExistRequest) {
 	request = &CheckInstanceExistRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CheckInstanceExist", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CheckInstanceExist", "rds", "openAPI")
 	return
 }
 

@@ -87,6 +87,7 @@ type ModifyBackupPolicyRequest struct {
 	EnableBackupLog              string           `position:"Query" name:"EnableBackupLog"`
 	BackupPolicyMode             string           `position:"Query" name:"BackupPolicyMode"`
 	PreferredBackupPeriod        string           `position:"Query" name:"PreferredBackupPeriod"`
+	ReleasedKeepPolicy           string           `position:"Query" name:"ReleasedKeepPolicy"`
 	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
 	CompressType                 string           `position:"Query" name:"CompressType"`
@@ -118,7 +119,7 @@ func CreateModifyBackupPolicyRequest() (request *ModifyBackupPolicyRequest) {
 	request = &ModifyBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyBackupPolicy", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyBackupPolicy", "rds", "openAPI")
 	return
 }
 

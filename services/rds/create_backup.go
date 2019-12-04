@@ -99,7 +99,7 @@ func CreateCreateBackupRequest() (request *CreateBackupRequest) {
 	request = &CreateBackupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateBackup", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateBackup", "rds", "openAPI")
 	return
 }
 

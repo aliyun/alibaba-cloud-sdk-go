@@ -102,7 +102,7 @@ func CreateDescribeSQLReportsRequest() (request *DescribeSQLReportsRequest) {
 	request = &DescribeSQLReportsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLReports", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLReports", "rds", "openAPI")
 	return
 }
 

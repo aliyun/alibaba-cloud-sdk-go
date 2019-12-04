@@ -96,7 +96,7 @@ func CreateClearDedicatedHostRequest() (request *ClearDedicatedHostRequest) {
 	request = &ClearDedicatedHostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ClearDedicatedHost", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ClearDedicatedHost", "rds", "openAPI")
 	return
 }
 

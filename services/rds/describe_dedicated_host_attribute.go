@@ -122,7 +122,7 @@ func CreateDescribeDedicatedHostAttributeRequest() (request *DescribeDedicatedHo
 	request = &DescribeDedicatedHostAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDedicatedHostAttribute", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDedicatedHostAttribute", "rds", "openAPI")
 	return
 }
 

@@ -119,7 +119,7 @@ func CreateCreateDBInstanceReplicaRequest() (request *CreateDBInstanceReplicaReq
 	request = &CreateDBInstanceReplicaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBInstanceReplica", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBInstanceReplica", "rds", "openAPI")
 	return
 }
 

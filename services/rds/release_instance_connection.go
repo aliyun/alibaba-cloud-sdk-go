@@ -96,7 +96,7 @@ func CreateReleaseInstanceConnectionRequest() (request *ReleaseInstanceConnectio
 	request = &ReleaseInstanceConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ReleaseInstanceConnection", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ReleaseInstanceConnection", "rds", "openAPI")
 	return
 }
 

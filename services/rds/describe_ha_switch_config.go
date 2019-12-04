@@ -95,7 +95,7 @@ func CreateDescribeHASwitchConfigRequest() (request *DescribeHASwitchConfigReque
 	request = &DescribeHASwitchConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeHASwitchConfig", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeHASwitchConfig", "rds", "openAPI")
 	return
 }
 

@@ -116,7 +116,7 @@ func CreateDescribeDBInstancesForCloneRequest() (request *DescribeDBInstancesFor
 	request = &DescribeDBInstancesForCloneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesForClone", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesForClone", "rds", "openAPI")
 	return
 }
 

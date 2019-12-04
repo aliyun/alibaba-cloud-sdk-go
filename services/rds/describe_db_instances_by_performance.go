@@ -115,7 +115,7 @@ func CreateDescribeDBInstancesByPerformanceRequest() (request *DescribeDBInstanc
 	request = &DescribeDBInstancesByPerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesByPerformance", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesByPerformance", "rds", "openAPI")
 	return
 }
 

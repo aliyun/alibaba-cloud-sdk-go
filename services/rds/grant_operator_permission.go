@@ -96,7 +96,7 @@ func CreateGrantOperatorPermissionRequest() (request *GrantOperatorPermissionReq
 	request = &GrantOperatorPermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "GrantOperatorPermission", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "GrantOperatorPermission", "rds", "openAPI")
 	return
 }
 

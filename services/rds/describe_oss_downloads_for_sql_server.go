@@ -97,7 +97,7 @@ func CreateDescribeOssDownloadsForSQLServerRequest() (request *DescribeOssDownlo
 	request = &DescribeOssDownloadsForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOssDownloadsForSQLServer", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeOssDownloadsForSQLServer", "rds", "openAPI")
 	return
 }
 

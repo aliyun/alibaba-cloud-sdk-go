@@ -86,6 +86,7 @@ type CloneDBInstanceRequest struct {
 	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
 	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
 	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
+	DedicatedHostGroupId  string           `position:"Query" name:"DedicatedHostGroupId"`
 	RestoreTime           string           `position:"Query" name:"RestoreTime"`
 	Period                string           `position:"Query" name:"Period"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -120,7 +121,7 @@ func CreateCloneDBInstanceRequest() (request *CloneDBInstanceRequest) {
 	request = &CloneDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CloneDBInstance", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CloneDBInstance", "rds", "openAPI")
 	return
 }
 

@@ -100,7 +100,7 @@ func CreateEvaluateDedicatedHostInstanceResourceRequest() (request *EvaluateDedi
 	request = &EvaluateDedicatedHostInstanceResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "EvaluateDedicatedHostInstanceResource", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "EvaluateDedicatedHostInstanceResource", "rds", "openAPI")
 	return
 }
 

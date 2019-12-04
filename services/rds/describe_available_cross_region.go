@@ -93,7 +93,7 @@ func CreateDescribeAvailableCrossRegionRequest() (request *DescribeAvailableCros
 	request = &DescribeAvailableCrossRegionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAvailableCrossRegion", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAvailableCrossRegion", "rds", "openAPI")
 	return
 }
 

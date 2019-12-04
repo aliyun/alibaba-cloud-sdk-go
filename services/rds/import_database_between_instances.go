@@ -97,7 +97,7 @@ func CreateImportDatabaseBetweenInstancesRequest() (request *ImportDatabaseBetwe
 	request = &ImportDatabaseBetweenInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ImportDatabaseBetweenInstances", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ImportDatabaseBetweenInstances", "rds", "openAPI")
 	return
 }
 

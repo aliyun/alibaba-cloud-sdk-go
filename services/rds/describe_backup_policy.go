@@ -106,6 +106,7 @@ type DescribeBackupPolicyResponse struct {
 	ArchiveBackupRetentionPeriod string              `json:"ArchiveBackupRetentionPeriod" xml:"ArchiveBackupRetentionPeriod"`
 	ArchiveBackupKeepPolicy      string              `json:"ArchiveBackupKeepPolicy" xml:"ArchiveBackupKeepPolicy"`
 	ArchiveBackupKeepCount       string              `json:"ArchiveBackupKeepCount" xml:"ArchiveBackupKeepCount"`
+	ReleasedKeepPolicy           string              `json:"ReleasedKeepPolicy" xml:"ReleasedKeepPolicy"`
 	DuplicationLocation          DuplicationLocation `json:"DuplicationLocation" xml:"DuplicationLocation"`
 }
 
@@ -114,7 +115,7 @@ func CreateDescribeBackupPolicyRequest() (request *DescribeBackupPolicyRequest) 
 	request = &DescribeBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackupPolicy", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackupPolicy", "rds", "openAPI")
 	return
 }
 

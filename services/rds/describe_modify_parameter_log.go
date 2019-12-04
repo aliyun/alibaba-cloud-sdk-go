@@ -105,7 +105,7 @@ func CreateDescribeModifyParameterLogRequest() (request *DescribeModifyParameter
 	request = &DescribeModifyParameterLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeModifyParameterLog", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeModifyParameterLog", "rds", "openAPI")
 	return
 }
 

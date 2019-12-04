@@ -96,7 +96,7 @@ func CreateDescribeDBInstanceTDERequest() (request *DescribeDBInstanceTDERequest
 	request = &DescribeDBInstanceTDERequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceTDE", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceTDE", "rds", "openAPI")
 	return
 }
 

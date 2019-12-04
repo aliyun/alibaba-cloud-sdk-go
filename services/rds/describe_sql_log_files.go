@@ -101,7 +101,7 @@ func CreateDescribeSQLLogFilesRequest() (request *DescribeSQLLogFilesRequest) {
 	request = &DescribeSQLLogFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLLogFiles", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLLogFiles", "rds", "openAPI")
 	return
 }
 

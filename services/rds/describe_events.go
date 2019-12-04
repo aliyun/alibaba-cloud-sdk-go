@@ -100,7 +100,7 @@ func CreateDescribeEventsRequest() (request *DescribeEventsRequest) {
 	request = &DescribeEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeEvents", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeEvents", "rds", "openAPI")
 	return
 }
 

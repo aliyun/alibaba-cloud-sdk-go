@@ -98,7 +98,7 @@ func CreateDescribeDBInstanceHAConfigRequest() (request *DescribeDBInstanceHACon
 	request = &DescribeDBInstanceHAConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceHAConfig", "", "")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceHAConfig", "rds", "openAPI")
 	return
 }
 
