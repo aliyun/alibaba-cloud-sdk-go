@@ -76,17 +76,17 @@ func (client *Client) SearchTracesWithCallback(request *SearchTracesRequest, cal
 // SearchTracesRequest is the request struct for api SearchTraces
 type SearchTracesRequest struct {
 	*requests.RpcRequest
-	ServiceIp     string             `position:"Query" name:"ServiceIp"`
-	OperationName string             `position:"Query" name:"OperationName"`
 	AppType       string             `position:"Query" name:"AppType"`
-	PageSize      requests.Integer   `position:"Query" name:"PageSize"`
 	EndTime       requests.Integer   `position:"Query" name:"EndTime"`
-	ServiceName   string             `position:"Query" name:"ServiceName"`
 	StartTime     requests.Integer   `position:"Query" name:"StartTime"`
-	Tag           *[]SearchTracesTag `position:"Query" name:"Tag"  type:"Repeated"`
 	Reverse       requests.Boolean   `position:"Query" name:"Reverse"`
 	MinDuration   requests.Integer   `position:"Query" name:"MinDuration"`
 	PageNumber    requests.Integer   `position:"Query" name:"PageNumber"`
+	ServiceIp     string             `position:"Query" name:"ServiceIp"`
+	OperationName string             `position:"Query" name:"OperationName"`
+	PageSize      requests.Integer   `position:"Query" name:"PageSize"`
+	ServiceName   string             `position:"Query" name:"ServiceName"`
+	Tag           *[]SearchTracesTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 
 // SearchTracesTag is a repeated param struct in SearchTracesRequest
