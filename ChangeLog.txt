@@ -1,3 +1,6 @@
+2019-12-11 Version: v1.60.286
+- Support GroupDeletionProtection.
+
 2019-12-05 Version: v1.60.285
 - Add api QueryMetric.
 

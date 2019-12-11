@@ -77,25 +77,25 @@ func (client *Client) ModifyScalingRuleWithCallback(request *ModifyScalingRuleRe
 type ModifyScalingRuleRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId          requests.Integer                   `position:"Query" name:"ResourceOwnerId"`
+	StepAdjustment           *[]ModifyScalingRuleStepAdjustment `position:"Query" name:"StepAdjustment"  type:"Repeated"`
+	DisableScaleIn           requests.Boolean                   `position:"Query" name:"DisableScaleIn"`
+	ScalingRuleId            string                             `position:"Query" name:"ScalingRuleId"`
+	InitialMaxSize           requests.Integer                   `position:"Query" name:"InitialMaxSize"`
+	ScalingRuleName          string                             `position:"Query" name:"ScalingRuleName"`
+	Cooldown                 requests.Integer                   `position:"Query" name:"Cooldown"`
+	PredictiveValueBehavior  string                             `position:"Query" name:"PredictiveValueBehavior"`
+	MetricName               string                             `position:"Query" name:"MetricName"`
+	PredictiveScalingMode    string                             `position:"Query" name:"PredictiveScalingMode"`
 	ResourceOwnerAccount     string                             `position:"Query" name:"ResourceOwnerAccount"`
 	AdjustmentValue          requests.Integer                   `position:"Query" name:"AdjustmentValue"`
-	StepAdjustment           *[]ModifyScalingRuleStepAdjustment `position:"Query" name:"StepAdjustment"  type:"Repeated"`
 	EstimatedInstanceWarmup  requests.Integer                   `position:"Query" name:"EstimatedInstanceWarmup"`
 	OwnerAccount             string                             `position:"Query" name:"OwnerAccount"`
 	PredictiveTaskBufferTime requests.Integer                   `position:"Query" name:"PredictiveTaskBufferTime"`
 	AdjustmentType           string                             `position:"Query" name:"AdjustmentType"`
-	DisableScaleIn           requests.Boolean                   `position:"Query" name:"DisableScaleIn"`
 	OwnerId                  requests.Integer                   `position:"Query" name:"OwnerId"`
-	ScalingRuleId            string                             `position:"Query" name:"ScalingRuleId"`
-	InitialMaxSize           requests.Integer                   `position:"Query" name:"InitialMaxSize"`
 	PredictiveValueBuffer    requests.Integer                   `position:"Query" name:"PredictiveValueBuffer"`
-	ScalingRuleName          string                             `position:"Query" name:"ScalingRuleName"`
-	Cooldown                 requests.Integer                   `position:"Query" name:"Cooldown"`
 	MinAdjustmentMagnitude   requests.Integer                   `position:"Query" name:"MinAdjustmentMagnitude"`
-	PredictiveValueBehavior  string                             `position:"Query" name:"PredictiveValueBehavior"`
 	TargetValue              requests.Float                     `position:"Query" name:"TargetValue"`
-	MetricName               string                             `position:"Query" name:"MetricName"`
-	PredictiveScalingMode    string                             `position:"Query" name:"PredictiveScalingMode"`
 }
 
 // ModifyScalingRuleStepAdjustment is a repeated param struct in ModifyScalingRuleRequest

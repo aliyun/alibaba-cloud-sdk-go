@@ -76,23 +76,13 @@ func (client *Client) DescribeScalingInstancesWithCallback(request *DescribeScal
 // DescribeScalingInstancesRequest is the request struct for api DescribeScalingInstances
 type DescribeScalingInstancesRequest struct {
 	*requests.RpcRequest
-	InstanceId10           string           `position:"Query" name:"InstanceId.10"`
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId12           string           `position:"Query" name:"InstanceId.12"`
-	InstanceId11           string           `position:"Query" name:"InstanceId.11"`
-	ScalingGroupId         string           `position:"Query" name:"ScalingGroupId"`
-	LifecycleState         string           `position:"Query" name:"LifecycleState"`
 	CreationType           string           `position:"Query" name:"CreationType"`
-	PageNumber             requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize               requests.Integer `position:"Query" name:"PageSize"`
-	InstanceId20           string           `position:"Query" name:"InstanceId.20"`
 	InstanceId1            string           `position:"Query" name:"InstanceId.1"`
 	InstanceId3            string           `position:"Query" name:"InstanceId.3"`
-	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	InstanceId2            string           `position:"Query" name:"InstanceId.2"`
 	InstanceId5            string           `position:"Query" name:"InstanceId.5"`
 	InstanceId4            string           `position:"Query" name:"InstanceId.4"`
-	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 	InstanceId7            string           `position:"Query" name:"InstanceId.7"`
 	InstanceId6            string           `position:"Query" name:"InstanceId.6"`
 	InstanceId9            string           `position:"Query" name:"InstanceId.9"`
@@ -100,6 +90,16 @@ type DescribeScalingInstancesRequest struct {
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	ScalingConfigurationId string           `position:"Query" name:"ScalingConfigurationId"`
 	HealthStatus           string           `position:"Query" name:"HealthStatus"`
+	InstanceId10           string           `position:"Query" name:"InstanceId.10"`
+	InstanceId12           string           `position:"Query" name:"InstanceId.12"`
+	InstanceId11           string           `position:"Query" name:"InstanceId.11"`
+	ScalingGroupId         string           `position:"Query" name:"ScalingGroupId"`
+	LifecycleState         string           `position:"Query" name:"LifecycleState"`
+	PageNumber             requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize               requests.Integer `position:"Query" name:"PageSize"`
+	InstanceId20           string           `position:"Query" name:"InstanceId.20"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 	InstanceId18           string           `position:"Query" name:"InstanceId.18"`
 	InstanceId17           string           `position:"Query" name:"InstanceId.17"`
 	InstanceId19           string           `position:"Query" name:"InstanceId.19"`

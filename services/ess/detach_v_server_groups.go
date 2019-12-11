@@ -76,10 +76,10 @@ func (client *Client) DetachVServerGroupsWithCallback(request *DetachVServerGrou
 // DetachVServerGroupsRequest is the request struct for api DetachVServerGroups
 type DetachVServerGroupsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string                             `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string                             `position:"Query" name:"ScalingGroupId"`
-	ForceDetach          requests.Boolean                   `position:"Query" name:"ForceDetach"`
+	ResourceOwnerAccount string                             `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer                   `position:"Query" name:"OwnerId"`
+	ForceDetach          requests.Boolean                   `position:"Query" name:"ForceDetach"`
 	VServerGroup         *[]DetachVServerGroupsVServerGroup `position:"Query" name:"VServerGroup"  type:"Repeated"`
 }
 

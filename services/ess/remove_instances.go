@@ -76,13 +76,14 @@ func (client *Client) RemoveInstancesWithCallback(request *RemoveInstancesReques
 // RemoveInstancesRequest is the request struct for api RemoveInstances
 type RemoveInstancesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
-	RemovePolicy         string           `position:"Query" name:"RemovePolicy"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ScalingGroupId          string           `position:"Query" name:"ScalingGroupId"`
+	DecreaseDesiredCapacity requests.Boolean `position:"Query" name:"DecreaseDesiredCapacity"`
+	RemovePolicy            string           `position:"Query" name:"RemovePolicy"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId              *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 }
 
 // RemoveInstancesResponse is the response struct for api RemoveInstances

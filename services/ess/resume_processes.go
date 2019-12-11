@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// EnterStandby invokes the ess.EnterStandby API synchronously
-// api document: https://help.aliyun.com/api/ess/enterstandby.html
-func (client *Client) EnterStandby(request *EnterStandbyRequest) (response *EnterStandbyResponse, err error) {
-	response = CreateEnterStandbyResponse()
+// ResumeProcesses invokes the ess.ResumeProcesses API synchronously
+// api document: https://help.aliyun.com/api/ess/resumeprocesses.html
+func (client *Client) ResumeProcesses(request *ResumeProcessesRequest) (response *ResumeProcessesResponse, err error) {
+	response = CreateResumeProcessesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// EnterStandbyWithChan invokes the ess.EnterStandby API asynchronously
-// api document: https://help.aliyun.com/api/ess/enterstandby.html
+// ResumeProcessesWithChan invokes the ess.ResumeProcesses API asynchronously
+// api document: https://help.aliyun.com/api/ess/resumeprocesses.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) EnterStandbyWithChan(request *EnterStandbyRequest) (<-chan *EnterStandbyResponse, <-chan error) {
-	responseChan := make(chan *EnterStandbyResponse, 1)
+func (client *Client) ResumeProcessesWithChan(request *ResumeProcessesRequest) (<-chan *ResumeProcessesResponse, <-chan error) {
+	responseChan := make(chan *ResumeProcessesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.EnterStandby(request)
+		response, err := client.ResumeProcesses(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) EnterStandbyWithChan(request *EnterStandbyRequest) (<-chan
 	return responseChan, errChan
 }
 
-// EnterStandbyWithCallback invokes the ess.EnterStandby API asynchronously
-// api document: https://help.aliyun.com/api/ess/enterstandby.html
+// ResumeProcessesWithCallback invokes the ess.ResumeProcesses API asynchronously
+// api document: https://help.aliyun.com/api/ess/resumeprocesses.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) EnterStandbyWithCallback(request *EnterStandbyRequest, callback func(response *EnterStandbyResponse, err error)) <-chan int {
+func (client *Client) ResumeProcessesWithCallback(request *ResumeProcessesRequest, callback func(response *ResumeProcessesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *EnterStandbyResponse
+		var response *ResumeProcessesResponse
 		var err error
 		defer close(result)
-		response, err = client.EnterStandby(request)
+		response, err = client.ResumeProcesses(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,33 +73,33 @@ func (client *Client) EnterStandbyWithCallback(request *EnterStandbyRequest, cal
 	return result
 }
 
-// EnterStandbyRequest is the request struct for api EnterStandby
-type EnterStandbyRequest struct {
+// ResumeProcessesRequest is the request struct for api ResumeProcesses
+type ResumeProcessesRequest struct {
 	*requests.RpcRequest
+	Process              *[]string        `position:"Query" name:"Process"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 }
 
-// EnterStandbyResponse is the response struct for api EnterStandby
-type EnterStandbyResponse struct {
+// ResumeProcessesResponse is the response struct for api ResumeProcesses
+type ResumeProcessesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateEnterStandbyRequest creates a request to invoke EnterStandby API
-func CreateEnterStandbyRequest() (request *EnterStandbyRequest) {
-	request = &EnterStandbyRequest{
+// CreateResumeProcessesRequest creates a request to invoke ResumeProcesses API
+func CreateResumeProcessesRequest() (request *ResumeProcessesRequest) {
+	request = &ResumeProcessesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "EnterStandby", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "ResumeProcesses", "ess", "openAPI")
 	return
 }
 
-// CreateEnterStandbyResponse creates a response to parse from EnterStandby response
-func CreateEnterStandbyResponse() (response *EnterStandbyResponse) {
-	response = &EnterStandbyResponse{
+// CreateResumeProcessesResponse creates a response to parse from ResumeProcesses response
+func CreateResumeProcessesResponse() (response *ResumeProcessesResponse) {
+	response = &ResumeProcessesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

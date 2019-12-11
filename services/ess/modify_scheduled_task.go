@@ -76,17 +76,17 @@ func (client *Client) ModifyScheduledTaskWithCallback(request *ModifyScheduledTa
 // ModifyScheduledTaskRequest is the request struct for api ModifyScheduledTask
 type ModifyScheduledTaskRequest struct {
 	*requests.RpcRequest
-	LaunchTime           string           `position:"Query" name:"LaunchTime"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ScheduledAction      string           `position:"Query" name:"ScheduledAction"`
 	MaxValue             requests.Integer `position:"Query" name:"MaxValue"`
+	Description          string           `position:"Query" name:"Description"`
+	RecurrenceEndTime    string           `position:"Query" name:"RecurrenceEndTime"`
+	LaunchTime           string           `position:"Query" name:"LaunchTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	RecurrenceValue      string           `position:"Query" name:"RecurrenceValue"`
 	LaunchExpirationTime requests.Integer `position:"Query" name:"LaunchExpirationTime"`
-	RecurrenceEndTime    string           `position:"Query" name:"RecurrenceEndTime"`
 	MinValue             requests.Integer `position:"Query" name:"MinValue"`
 	ScheduledTaskName    string           `position:"Query" name:"ScheduledTaskName"`
 	TaskEnabled          requests.Boolean `position:"Query" name:"TaskEnabled"`

@@ -76,9 +76,9 @@ func (client *Client) AttachVServerGroupsWithCallback(request *AttachVServerGrou
 // AttachVServerGroupsRequest is the request struct for api AttachVServerGroups
 type AttachVServerGroupsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string                             `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string                             `position:"Query" name:"ScalingGroupId"`
 	ForceAttach          requests.Boolean                   `position:"Query" name:"ForceAttach"`
+	ResourceOwnerAccount string                             `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer                   `position:"Query" name:"OwnerId"`
 	VServerGroup         *[]AttachVServerGroupsVServerGroup `position:"Query" name:"VServerGroup"  type:"Repeated"`
 }
