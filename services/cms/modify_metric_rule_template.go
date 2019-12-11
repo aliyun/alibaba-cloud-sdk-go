@@ -87,6 +87,7 @@ type ModifyMetricRuleTemplateRequest struct {
 type ModifyMetricRuleTemplateAlertTemplates struct {
 	Period                                string `name:"Period"`
 	EscalationsWarnThreshold              string `name:"Escalations.Warn.Threshold"`
+	Webhook                               string `name:"Webhook"`
 	EscalationsWarnComparisonOperator     string `name:"Escalations.Warn.ComparisonOperator"`
 	EscalationsCriticalStatistics         string `name:"Escalations.Critical.Statistics"`
 	EscalationsInfoTimes                  string `name:"Escalations.Info.Times"`

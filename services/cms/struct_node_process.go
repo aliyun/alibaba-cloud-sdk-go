@@ -22,4 +22,5 @@ type NodeProcess struct {
 	ProcessName string `json:"ProcessName" xml:"ProcessName"`
 	ProcessUser string `json:"ProcessUser" xml:"ProcessUser"`
 	Command     string `json:"Command" xml:"Command"`
+	GroupId     string `json:"GroupId" xml:"GroupId"`
 }

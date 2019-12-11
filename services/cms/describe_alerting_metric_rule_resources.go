@@ -76,8 +76,10 @@ func (client *Client) DescribeAlertingMetricRuleResourcesWithCallback(request *D
 // DescribeAlertingMetricRuleResourcesRequest is the request struct for api DescribeAlertingMetricRuleResources
 type DescribeAlertingMetricRuleResourcesRequest struct {
 	*requests.RpcRequest
-	GroupId string `position:"Query" name:"GroupId"`
-	RuleId  string `position:"Query" name:"RuleId"`
+	GroupId  string           `position:"Query" name:"GroupId"`
+	PageSize requests.Integer `position:"Query" name:"PageSize"`
+	Page     requests.Integer `position:"Query" name:"Page"`
+	RuleId   string           `position:"Query" name:"RuleId"`
 }
 
 // DescribeAlertingMetricRuleResourcesResponse is the response struct for api DescribeAlertingMetricRuleResources

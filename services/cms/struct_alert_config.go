@@ -17,10 +17,10 @@ package cms
 
 // AlertConfig is a nested struct in cms response
 type AlertConfig struct {
+	SilenceTime    int                                          `json:"SilenceTime" xml:"SilenceTime"`
+	EndTime        int                                          `json:"EndTime" xml:"EndTime"`
 	NotifyType     int                                          `json:"NotifyType" xml:"NotifyType"`
 	StartTime      int                                          `json:"StartTime" xml:"StartTime"`
-	EndTime        int                                          `json:"EndTime" xml:"EndTime"`
-	SilenceTime    int                                          `json:"SilenceTime" xml:"SilenceTime"`
 	WebHook        string                                       `json:"WebHook" xml:"WebHook"`
 	EscalationList EscalationListInDescribeHostAvailabilityList `json:"EscalationList" xml:"EscalationList"`
 }
