@@ -1,3 +1,6 @@
+2019-12-14 Version: v1.60.288
+- Update DescribeAvailableResource.
+
 2019-12-11 Version: v1.60.287
 - Add tag API.
 - Add group process monitoring API.

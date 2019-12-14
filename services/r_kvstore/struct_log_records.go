@@ -26,10 +26,10 @@ type LogRecords struct {
 	DataBaseName string `json:"DataBaseName" xml:"DataBaseName"`
 	ElapsedTime  int64  `json:"ElapsedTime" xml:"ElapsedTime"`
 	ConnInfo     string `json:"ConnInfo" xml:"ConnInfo"`
-	Content      int64  `json:"Content" xml:"Content"`
 	Command      string `json:"Command" xml:"Command"`
 	ExecuteTime  string `json:"ExecuteTime" xml:"ExecuteTime"`
 	NodeId       string `json:"NodeId" xml:"NodeId"`
+	Content      string `json:"Content" xml:"Content"`
 	AccountName  string `json:"AccountName" xml:"AccountName"`
 	DBName       string `json:"DBName" xml:"DBName"`
 }

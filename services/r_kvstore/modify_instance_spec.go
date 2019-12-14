@@ -89,6 +89,7 @@ type ModifyInstanceSpecRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	ForceUpgrade         requests.Boolean `position:"Query" name:"ForceUpgrade"`
+	OrderType            string           `position:"Query" name:"OrderType"`
 }
 
 // ModifyInstanceSpecResponse is the response struct for api ModifyInstanceSpec

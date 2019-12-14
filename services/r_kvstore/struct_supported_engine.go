@@ -17,6 +17,6 @@ package r_kvstore
 
 // SupportedEngine is a nested struct in r_kvstore response
 type SupportedEngine struct {
-	Engine                  string                  `json:"Engine" xml:"Engine"`
-	SupportedEngineVersions SupportedEngineVersions `json:"SupportedEngineVersions" xml:"SupportedEngineVersions"`
+	Engine                string                `json:"Engine" xml:"Engine"`
+	SupportedEditionTypes SupportedEditionTypes `json:"SupportedEditionTypes" xml:"SupportedEditionTypes"`
 }

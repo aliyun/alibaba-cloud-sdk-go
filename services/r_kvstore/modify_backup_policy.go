@@ -78,6 +78,7 @@ type ModifyBackupPolicyRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken         string           `position:"Query" name:"SecurityToken"`
+	EnableBackupLog       requests.Integer `position:"Query" name:"EnableBackupLog"`
 	PreferredBackupPeriod string           `position:"Query" name:"PreferredBackupPeriod"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`

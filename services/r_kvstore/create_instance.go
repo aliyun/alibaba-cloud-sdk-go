@@ -77,31 +77,33 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 type CreateInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	NodeType             string           `position:"Query" name:"NodeType"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
 	NetworkType          string           `position:"Query" name:"NetworkType"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
-	AutoUseCoupon        string           `position:"Query" name:"AutoUseCoupon"`
-	InstanceClass        string           `position:"Query" name:"InstanceClass"`
-	Capacity             requests.Integer `position:"Query" name:"Capacity"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	Password             string           `position:"Query" name:"Password"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 	AutoRenewPeriod      string           `position:"Query" name:"AutoRenewPeriod"`
 	Period               string           `position:"Query" name:"Period"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SrcDBInstanceId      string           `position:"Query" name:"SrcDBInstanceId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	BackupId             string           `position:"Query" name:"BackupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Token                string           `position:"Query" name:"Token"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress     string           `position:"Query" name:"PrivateIpAddress"`
 	InstanceName         string           `position:"Query" name:"InstanceName"`
 	AutoRenew            string           `position:"Query" name:"AutoRenew"`
-	VpcId                string           `position:"Query" name:"VpcId"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
+	NodeType             string           `position:"Query" name:"NodeType"`
+	AutoUseCoupon        string           `position:"Query" name:"AutoUseCoupon"`
+	InstanceClass        string           `position:"Query" name:"InstanceClass"`
+	Capacity             requests.Integer `position:"Query" name:"Capacity"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
+	RestoreTime          string           `position:"Query" name:"RestoreTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	SrcDBInstanceId      string           `position:"Query" name:"SrcDBInstanceId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Token                string           `position:"Query" name:"Token"`
+	VpcId                string           `position:"Query" name:"VpcId"`
 	ChargeType           string           `position:"Query" name:"ChargeType"`
 	Config               string           `position:"Query" name:"Config"`
 }

@@ -82,6 +82,7 @@ type DescribeInstancesRequest struct {
 	EngineVersion        string                  `position:"Query" name:"EngineVersion"`
 	InstanceClass        string                  `position:"Query" name:"InstanceClass"`
 	PageNumber           requests.Integer        `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string                  `position:"Query" name:"ResourceGroupId"`
 	Expired              string                  `position:"Query" name:"Expired"`
 	SecurityToken        string                  `position:"Query" name:"SecurityToken"`
 	PageSize             requests.Integer        `position:"Query" name:"PageSize"`

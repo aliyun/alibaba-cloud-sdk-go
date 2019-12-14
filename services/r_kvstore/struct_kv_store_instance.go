@@ -17,38 +17,38 @@ package r_kvstore
 
 // KVStoreInstance is a nested struct in r_kvstore response
 type KVStoreInstance struct {
-	InstanceClass       string                  `json:"InstanceClass" xml:"InstanceClass"`
-	PackageType         string                  `json:"PackageType" xml:"PackageType"`
-	ChargeType          string                  `json:"ChargeType" xml:"ChargeType"`
+	ReplacateId         string                  `json:"ReplacateId" xml:"ReplacateId"`
+	InstanceId          string                  `json:"InstanceId" xml:"InstanceId"`
+	InstanceName        string                  `json:"InstanceName" xml:"InstanceName"`
 	SearchKey           string                  `json:"SearchKey" xml:"SearchKey"`
 	ConnectionDomain    string                  `json:"ConnectionDomain" xml:"ConnectionDomain"`
-	CreateTime          string                  `json:"CreateTime" xml:"CreateTime"`
-	HasRenewChangeOrder string                  `json:"HasRenewChangeOrder" xml:"HasRenewChangeOrder"`
-	InstanceType        string                  `json:"InstanceType" xml:"InstanceType"`
-	VpcCloudInstanceId  string                  `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
-	DestroyTime         string                  `json:"DestroyTime" xml:"DestroyTime"`
-	RegionId            string                  `json:"RegionId" xml:"RegionId"`
-	PrivateIp           string                  `json:"PrivateIp" xml:"PrivateIp"`
-	InstanceId          string                  `json:"InstanceId" xml:"InstanceId"`
+	Port                int64                   `json:"Port" xml:"Port"`
+	UserName            string                  `json:"UserName" xml:"UserName"`
 	InstanceStatus      string                  `json:"InstanceStatus" xml:"InstanceStatus"`
+	RegionId            string                  `json:"RegionId" xml:"RegionId"`
+	Capacity            int64                   `json:"Capacity" xml:"Capacity"`
+	InstanceClass       string                  `json:"InstanceClass" xml:"InstanceClass"`
+	QPS                 int64                   `json:"QPS" xml:"QPS"`
 	Bandwidth           int64                   `json:"Bandwidth" xml:"Bandwidth"`
+	Connections         int64                   `json:"Connections" xml:"Connections"`
+	ZoneId              string                  `json:"ZoneId" xml:"ZoneId"`
+	Config              string                  `json:"Config" xml:"Config"`
+	ChargeType          string                  `json:"ChargeType" xml:"ChargeType"`
 	NetworkType         string                  `json:"NetworkType" xml:"NetworkType"`
 	VpcId               string                  `json:"VpcId" xml:"VpcId"`
-	NodeType            string                  `json:"NodeType" xml:"NodeType"`
-	Connections         int64                   `json:"Connections" xml:"Connections"`
-	ArchitectureType    string                  `json:"ArchitectureType" xml:"ArchitectureType"`
-	ReplacateId         string                  `json:"ReplacateId" xml:"ReplacateId"`
-	EngineVersion       string                  `json:"EngineVersion" xml:"EngineVersion"`
-	Capacity            int64                   `json:"Capacity" xml:"Capacity"`
 	VSwitchId           string                  `json:"VSwitchId" xml:"VSwitchId"`
-	InstanceName        string                  `json:"InstanceName" xml:"InstanceName"`
-	Port                int64                   `json:"Port" xml:"Port"`
-	ZoneId              string                  `json:"ZoneId" xml:"ZoneId"`
+	PrivateIp           string                  `json:"PrivateIp" xml:"PrivateIp"`
+	CreateTime          string                  `json:"CreateTime" xml:"CreateTime"`
 	EndTime             string                  `json:"EndTime" xml:"EndTime"`
-	QPS                 int64                   `json:"QPS" xml:"QPS"`
-	UserName            string                  `json:"UserName" xml:"UserName"`
-	Config              string                  `json:"Config" xml:"Config"`
+	HasRenewChangeOrder string                  `json:"HasRenewChangeOrder" xml:"HasRenewChangeOrder"`
 	IsRds               bool                    `json:"IsRds" xml:"IsRds"`
+	InstanceType        string                  `json:"InstanceType" xml:"InstanceType"`
+	ArchitectureType    string                  `json:"ArchitectureType" xml:"ArchitectureType"`
+	NodeType            string                  `json:"NodeType" xml:"NodeType"`
+	PackageType         string                  `json:"PackageType" xml:"PackageType"`
+	EngineVersion       string                  `json:"EngineVersion" xml:"EngineVersion"`
+	DestroyTime         string                  `json:"DestroyTime" xml:"DestroyTime"`
 	ConnectionMode      string                  `json:"ConnectionMode" xml:"ConnectionMode"`
+	VpcCloudInstanceId  string                  `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
 	Tags                TagsInDescribeInstances `json:"Tags" xml:"Tags"`
 }

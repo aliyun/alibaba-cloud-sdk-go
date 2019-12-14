@@ -17,6 +17,6 @@ package r_kvstore
 
 // SupportedArchitectureType is a nested struct in r_kvstore response
 type SupportedArchitectureType struct {
-	Architecture              string                    `json:"Architecture" xml:"Architecture"`
-	SupportedPerformanceTypes SupportedPerformanceTypes `json:"SupportedPerformanceTypes" xml:"SupportedPerformanceTypes"`
+	Architecture          string                `json:"Architecture" xml:"Architecture"`
+	SupportedShardNumbers SupportedShardNumbers `json:"SupportedShardNumbers" xml:"SupportedShardNumbers"`
 }

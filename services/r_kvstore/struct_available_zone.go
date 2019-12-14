@@ -21,5 +21,6 @@ type AvailableZone struct {
 	ZoneId           string           `json:"ZoneId" xml:"ZoneId"`
 	Status           string           `json:"Status" xml:"Status"`
 	NetworkTypes     string           `json:"NetworkTypes" xml:"NetworkTypes"`
+	ZoneName         string           `json:"ZoneName" xml:"ZoneName"`
 	SupportedEngines SupportedEngines `json:"SupportedEngines" xml:"SupportedEngines"`
 }

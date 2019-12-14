@@ -78,10 +78,12 @@ type RestoreInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	RestoreTime          string           `position:"Query" name:"RestoreTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	BackupId             string           `position:"Query" name:"BackupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	RestoreType          string           `position:"Query" name:"RestoreType"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 

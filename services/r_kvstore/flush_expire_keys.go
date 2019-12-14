@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UnlinkReplicaInstance invokes the r_kvstore.UnlinkReplicaInstance API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/unlinkreplicainstance.html
-func (client *Client) UnlinkReplicaInstance(request *UnlinkReplicaInstanceRequest) (response *UnlinkReplicaInstanceResponse, err error) {
-	response = CreateUnlinkReplicaInstanceResponse()
+// FlushExpireKeys invokes the r_kvstore.FlushExpireKeys API synchronously
+// api document: https://help.aliyun.com/api/r-kvstore/flushexpirekeys.html
+func (client *Client) FlushExpireKeys(request *FlushExpireKeysRequest) (response *FlushExpireKeysResponse, err error) {
+	response = CreateFlushExpireKeysResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UnlinkReplicaInstanceWithChan invokes the r_kvstore.UnlinkReplicaInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/unlinkreplicainstance.html
+// FlushExpireKeysWithChan invokes the r_kvstore.FlushExpireKeys API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/flushexpirekeys.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) UnlinkReplicaInstanceWithChan(request *UnlinkReplicaInstanceRequest) (<-chan *UnlinkReplicaInstanceResponse, <-chan error) {
-	responseChan := make(chan *UnlinkReplicaInstanceResponse, 1)
+func (client *Client) FlushExpireKeysWithChan(request *FlushExpireKeysRequest) (<-chan *FlushExpireKeysResponse, <-chan error) {
+	responseChan := make(chan *FlushExpireKeysResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UnlinkReplicaInstance(request)
+		response, err := client.FlushExpireKeys(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) UnlinkReplicaInstanceWithChan(request *UnlinkReplicaInstan
 	return responseChan, errChan
 }
 
-// UnlinkReplicaInstanceWithCallback invokes the r_kvstore.UnlinkReplicaInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/unlinkreplicainstance.html
+// FlushExpireKeysWithCallback invokes the r_kvstore.FlushExpireKeys API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/flushexpirekeys.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) UnlinkReplicaInstanceWithCallback(request *UnlinkReplicaInstanceRequest, callback func(response *UnlinkReplicaInstanceResponse, err error)) <-chan int {
+func (client *Client) FlushExpireKeysWithCallback(request *FlushExpireKeysRequest, callback func(response *FlushExpireKeysResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UnlinkReplicaInstanceResponse
+		var response *FlushExpireKeysResponse
 		var err error
 		defer close(result)
-		response, err = client.UnlinkReplicaInstance(request)
+		response, err = client.FlushExpireKeys(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,39 +73,38 @@ func (client *Client) UnlinkReplicaInstanceWithCallback(request *UnlinkReplicaIn
 	return result
 }
 
-// UnlinkReplicaInstanceRequest is the request struct for api UnlinkReplicaInstance
-type UnlinkReplicaInstanceRequest struct {
+// FlushExpireKeysRequest is the request struct for api FlushExpireKeys
+type FlushExpireKeysRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	ReplicaId            string           `position:"Query" name:"ReplicaId"`
+	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
-// UnlinkReplicaInstanceResponse is the response struct for api UnlinkReplicaInstance
-type UnlinkReplicaInstanceResponse struct {
+// FlushExpireKeysResponse is the response struct for api FlushExpireKeys
+type FlushExpireKeysResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	InstanceId string `json:"InstanceId" xml:"InstanceId"`
-	WorkflowId string `json:"WorkflowId" xml:"WorkflowId"`
-	ReplicaId  string `json:"ReplicaId" xml:"ReplicaId"`
+	TaskId     string `json:"TaskId" xml:"TaskId"`
 }
 
-// CreateUnlinkReplicaInstanceRequest creates a request to invoke UnlinkReplicaInstance API
-func CreateUnlinkReplicaInstanceRequest() (request *UnlinkReplicaInstanceRequest) {
-	request = &UnlinkReplicaInstanceRequest{
+// CreateFlushExpireKeysRequest creates a request to invoke FlushExpireKeys API
+func CreateFlushExpireKeysRequest() (request *FlushExpireKeysRequest) {
+	request = &FlushExpireKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "UnlinkReplicaInstance", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "FlushExpireKeys", "", "")
 	return
 }
 
-// CreateUnlinkReplicaInstanceResponse creates a response to parse from UnlinkReplicaInstance response
-func CreateUnlinkReplicaInstanceResponse() (response *UnlinkReplicaInstanceResponse) {
-	response = &UnlinkReplicaInstanceResponse{
+// CreateFlushExpireKeysResponse creates a response to parse from FlushExpireKeys response
+func CreateFlushExpireKeysResponse() (response *FlushExpireKeysResponse) {
+	response = &FlushExpireKeysResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

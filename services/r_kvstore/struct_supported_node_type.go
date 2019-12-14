@@ -17,6 +17,6 @@ package r_kvstore
 
 // SupportedNodeType is a nested struct in r_kvstore response
 type SupportedNodeType struct {
-	NodeType              string                `json:"NodeType" xml:"NodeType"`
-	SupportedPackageTypes SupportedPackageTypes `json:"SupportedPackageTypes" xml:"SupportedPackageTypes"`
+	SupportedNodeType  string             `json:"SupportedNodeType" xml:"SupportedNodeType"`
+	AvailableResources AvailableResources `json:"AvailableResources" xml:"AvailableResources"`
 }

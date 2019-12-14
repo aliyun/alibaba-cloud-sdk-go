@@ -27,4 +27,5 @@ type InstanceNetInfo struct {
 	IPType            string `json:"IPType" xml:"IPType"`
 	ExpiredTime       string `json:"ExpiredTime" xml:"ExpiredTime"`
 	Upgradeable       string `json:"Upgradeable" xml:"Upgradeable"`
+	DirectConnection  int    `json:"DirectConnection" xml:"DirectConnection"`
 }
