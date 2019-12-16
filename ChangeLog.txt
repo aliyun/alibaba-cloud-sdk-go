@@ -1,3 +1,6 @@
+2019-12-16 Version: v1.60.291
+- Update tag related api to publically visable.
+
 2019-12-14 Version: v1.60.290
 - Generated 2015-01-01 for `R-kvstore`.
 
