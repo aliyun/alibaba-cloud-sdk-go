@@ -1,3 +1,6 @@
+2019-12-16 Version: v1.60.292
+- Update tag related api to publically visable.
+
 2019-12-16 Version: v1.60.291
 - Update tag related api to publically visable.
 
