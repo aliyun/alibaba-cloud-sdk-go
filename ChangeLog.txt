@@ -1,3 +1,6 @@
+2019-12-16 Version: v1.60.293
+- DescribeTransferDomains add query param, TargetUserId, FromUserId, DomainName.
+
 2019-12-16 Version: v1.60.292
 - Update tag related api to publically visable.
 

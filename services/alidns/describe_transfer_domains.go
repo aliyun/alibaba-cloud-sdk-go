@@ -76,11 +76,14 @@ func (client *Client) DescribeTransferDomainsWithCallback(request *DescribeTrans
 // DescribeTransferDomainsRequest is the request struct for api DescribeTransferDomains
 type DescribeTransferDomainsRequest struct {
 	*requests.RpcRequest
+	FromUserId   requests.Integer `position:"Query" name:"FromUserId"`
 	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
-	TransferType string           `position:"Query" name:"TransferType"`
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	TargetUserId requests.Integer `position:"Query" name:"TargetUserId"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	Lang         string           `position:"Query" name:"Lang"`
+	DomainName   string           `position:"Query" name:"DomainName"`
+	TransferType string           `position:"Query" name:"TransferType"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
 }
 
 // DescribeTransferDomainsResponse is the response struct for api DescribeTransferDomains
