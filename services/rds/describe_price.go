@@ -76,23 +76,25 @@ func (client *Client) DescribePriceWithCallback(request *DescribePriceRequest, c
 // DescribePriceRequest is the request struct for api DescribePrice
 type DescribePriceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceStorage    requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	EngineVersion        string           `position:"Query" name:"EngineVersion"`
-	Engine               string           `position:"Query" name:"Engine"`
-	Quantity             requests.Integer `position:"Query" name:"Quantity"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	CommodityCode        string           `position:"Query" name:"CommodityCode"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	UsedTime             requests.Integer `position:"Query" name:"UsedTime"`
-	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
-	InstanceUsedType     requests.Integer `position:"Query" name:"InstanceUsedType"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
-	TimeType             string           `position:"Query" name:"TimeType"`
-	PayType              string           `position:"Query" name:"PayType"`
-	OrderType            string           `position:"Query" name:"OrderType"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
+	ClientToken           string           `position:"Query" name:"ClientToken"`
+	EngineVersion         string           `position:"Query" name:"EngineVersion"`
+	Engine                string           `position:"Query" name:"Engine"`
+	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
+	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
+	Quantity              requests.Integer `position:"Query" name:"Quantity"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	CommodityCode         string           `position:"Query" name:"CommodityCode"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	UsedTime              requests.Integer `position:"Query" name:"UsedTime"`
+	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
+	InstanceUsedType      requests.Integer `position:"Query" name:"InstanceUsedType"`
+	ZoneId                string           `position:"Query" name:"ZoneId"`
+	TimeType              string           `position:"Query" name:"TimeType"`
+	PayType               string           `position:"Query" name:"PayType"`
+	OrderType             string           `position:"Query" name:"OrderType"`
 }
 
 // DescribePriceResponse is the response struct for api DescribePrice
