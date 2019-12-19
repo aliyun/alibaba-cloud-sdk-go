@@ -77,6 +77,7 @@ func (client *Client) ModifyInstanceDeploymentWithCallback(request *ModifyInstan
 type ModifyInstanceDeploymentRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
 	DeploymentSetId      string           `position:"Query" name:"DeploymentSetId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

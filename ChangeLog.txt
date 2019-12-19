@@ -1,3 +1,7 @@
+2019-12-19 Version: v1.60.296
+- Generated 2014-05-26 for `Ecs`.
+- DescribeNetworkInterfaces Supports NextToken.
+
 2019-12-18 Version: v1.60.295
 - Generated 2014-08-15 for `Rds`.
 

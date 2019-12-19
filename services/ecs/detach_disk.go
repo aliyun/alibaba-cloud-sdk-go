@@ -78,6 +78,7 @@ type DetachDiskRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DiskId               string           `position:"Query" name:"DiskId"`
+	DeleteWithInstance   requests.Boolean `position:"Query" name:"DeleteWithInstance"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
