@@ -109,6 +109,7 @@ type DescribeDBClusterAttributeResponse struct {
 	ZoneIds              string   `json:"ZoneIds" xml:"ZoneIds"`
 	SQLSize              int64    `json:"SQLSize" xml:"SQLSize"`
 	IsLatestVersion      bool     `json:"IsLatestVersion" xml:"IsLatestVersion"`
+	ResourceGroupId      string   `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	Tags                 []Tag    `json:"Tags" xml:"Tags"`
 	DBNodes              []DBNode `json:"DBNodes" xml:"DBNodes"`
 }

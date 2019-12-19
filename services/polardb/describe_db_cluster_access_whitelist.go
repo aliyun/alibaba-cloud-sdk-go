@@ -86,8 +86,9 @@ type DescribeDBClusterAccessWhitelistRequest struct {
 // DescribeDBClusterAccessWhitelistResponse is the response struct for api DescribeDBClusterAccessWhitelist
 type DescribeDBClusterAccessWhitelistResponse struct {
 	*responses.BaseResponse
-	RequestId string                                  `json:"RequestId" xml:"RequestId"`
-	Items     ItemsInDescribeDBClusterAccessWhitelist `json:"Items" xml:"Items"`
+	RequestId               string                                  `json:"RequestId" xml:"RequestId"`
+	Items                   ItemsInDescribeDBClusterAccessWhitelist `json:"Items" xml:"Items"`
+	DBClusterSecurityGroups DBClusterSecurityGroups                 `json:"DBClusterSecurityGroups" xml:"DBClusterSecurityGroups"`
 }
 
 // CreateDescribeDBClusterAccessWhitelistRequest creates a request to invoke DescribeDBClusterAccessWhitelist API

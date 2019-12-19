@@ -17,11 +17,12 @@ package polardb
 
 // DBAccount is a nested struct in polardb response
 type DBAccount struct {
-	AccountName        string              `json:"AccountName" xml:"AccountName"`
-	AccountStatus      string              `json:"AccountStatus" xml:"AccountStatus"`
-	AccountDescription string              `json:"AccountDescription" xml:"AccountDescription"`
-	AccountType        string              `json:"AccountType" xml:"AccountType"`
-	AccountLockState   string              `json:"AccountLockState" xml:"AccountLockState"`
-	PrivilegeExceeded  string              `json:"PrivilegeExceeded" xml:"PrivilegeExceeded"`
-	DatabasePrivileges []DatabasePrivilege `json:"DatabasePrivileges" xml:"DatabasePrivileges"`
+	AccountName              string              `json:"AccountName" xml:"AccountName"`
+	AccountStatus            string              `json:"AccountStatus" xml:"AccountStatus"`
+	AccountDescription       string              `json:"AccountDescription" xml:"AccountDescription"`
+	AccountType              string              `json:"AccountType" xml:"AccountType"`
+	AccountLockState         string              `json:"AccountLockState" xml:"AccountLockState"`
+	PrivilegeExceeded        string              `json:"PrivilegeExceeded" xml:"PrivilegeExceeded"`
+	AccountPasswordValidTime string              `json:"AccountPasswordValidTime" xml:"AccountPasswordValidTime"`
+	DatabasePrivileges       []DatabasePrivilege `json:"DatabasePrivileges" xml:"DatabasePrivileges"`
 }

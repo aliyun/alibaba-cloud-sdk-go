@@ -36,6 +36,7 @@ type DBCluster struct {
 	DBNodeNumber         int                         `json:"DBNodeNumber" xml:"DBNodeNumber"`
 	DBNodeClass          string                      `json:"DBNodeClass" xml:"DBNodeClass"`
 	StorageUsed          int64                       `json:"StorageUsed" xml:"StorageUsed"`
+	ResourceGroupId      string                      `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DBNodes              DBNodesInDescribeDBClusters `json:"DBNodes" xml:"DBNodes"`
 	Tags                 TagsInDescribeDBClusters    `json:"Tags" xml:"Tags"`
 }

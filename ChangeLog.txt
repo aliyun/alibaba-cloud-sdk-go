@@ -1,3 +1,7 @@
+2019-12-19 Version: v1.60.298
+- Generated 2017-08-01 for `polardb`.
+- Add DescribeSlowLogRecords,DescribeSlowLogs for SlowLog.
+
 2019-12-19 Version: v1.60.297
 - Generated 2019-09-28 for `reid`.
 

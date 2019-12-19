@@ -80,6 +80,7 @@ type DescribeDBClustersRequest struct {
 	DBClusterDescription string                   `position:"Query" name:"DBClusterDescription"`
 	DBClusterStatus      string                   `position:"Query" name:"DBClusterStatus"`
 	PageNumber           requests.Integer         `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string                   `position:"Query" name:"ResourceGroupId"`
 	PageSize             requests.Integer         `position:"Query" name:"PageSize"`
 	Tag                  *[]DescribeDBClustersTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceOwnerAccount string                   `position:"Query" name:"ResourceOwnerAccount"`

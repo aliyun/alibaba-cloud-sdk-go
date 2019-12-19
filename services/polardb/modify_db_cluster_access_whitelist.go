@@ -82,7 +82,9 @@ type ModifyDBClusterAccessWhitelistRequest struct {
 	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId               string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
+	WhiteListType             string           `position:"Query" name:"WhiteListType"`
 	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityGroupIds          string           `position:"Query" name:"SecurityGroupIds"`
 	DBClusterIPArrayName      string           `position:"Query" name:"DBClusterIPArrayName"`
 }
 
