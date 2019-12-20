@@ -1,3 +1,7 @@
+2019-12-20 Version: v1.60.300
+- Generated 2019-03-08 for `ivision`.
+- Supported Search stream predict task list use modelId for IVISION.
+
 2019-12-20 Version: v1.60.299
 - Generated 2019-02-14 for `Ons`.
 - Add result value for OnsConsumerStatus.

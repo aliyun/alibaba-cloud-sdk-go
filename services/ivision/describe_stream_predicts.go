@@ -80,6 +80,7 @@ type DescribeStreamPredictsRequest struct {
 	PredictIds    string           `position:"Query" name:"PredictIds"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 	ShowLog       string           `position:"Query" name:"ShowLog"`
+	ModelId       string           `position:"Query" name:"ModelId"`
 	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
