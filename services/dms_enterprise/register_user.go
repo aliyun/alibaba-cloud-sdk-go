@@ -79,6 +79,7 @@ type RegisterUserRequest struct {
 	RoleNames string           `position:"Query" name:"RoleNames"`
 	Uid       requests.Integer `position:"Query" name:"Uid"`
 	UserNick  string           `position:"Query" name:"UserNick"`
+	Mobile    string           `position:"Query" name:"Mobile"`
 	Tid       requests.Integer `position:"Query" name:"Tid"`
 }
 

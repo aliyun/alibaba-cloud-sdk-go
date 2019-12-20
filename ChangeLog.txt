@@ -1,3 +1,11 @@
+2019-12-20 Version: v1.60.301
+- Generated 2018-11-01 for `dms-enterprise`.
+- Supported Authorization API, includes GrantUserPermission, RevokeUserPermission, ListDatabaseUserPermssions, ListUserPermissions.
+- Supported Database or Table Metadata synchronization API, includes SyncInstanceMeta, SyncDatabaseMeta.
+- Supported Database or Table Owner set up API.
+- Supported GetUser API to get information of one DMS user.
+- Supported set Dingding mobile number with RegisterUser API.
+
 2019-12-20 Version: v1.60.300
 - Generated 2019-03-08 for `ivision`.
 - Supported Search stream predict task list use modelId for IVISION.
