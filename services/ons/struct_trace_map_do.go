@@ -17,7 +17,7 @@ package ons
 
 // TraceMapDo is a nested struct in ons response
 type TraceMapDo struct {
-	PubTime      int     `json:"PubTime" xml:"PubTime"`
+	PubTime      int64   `json:"PubTime" xml:"PubTime"`
 	Topic        string  `json:"Topic" xml:"Topic"`
 	PubGroupName string  `json:"PubGroupName" xml:"PubGroupName"`
 	MsgId        string  `json:"MsgId" xml:"MsgId"`

@@ -76,10 +76,9 @@ func (client *Client) OnsMessageTraceWithCallback(request *OnsMessageTraceReques
 // OnsMessageTraceRequest is the request struct for api OnsMessageTrace
 type OnsMessageTraceRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	Topic        string           `position:"Query" name:"Topic"`
-	MsgId        string           `position:"Query" name:"MsgId"`
+	MsgId      string `position:"Query" name:"MsgId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
+	Topic      string `position:"Query" name:"Topic"`
 }
 
 // OnsMessageTraceResponse is the response struct for api OnsMessageTrace

@@ -76,9 +76,8 @@ func (client *Client) OnsGroupListWithCallback(request *OnsGroupListRequest, cal
 // OnsGroupListRequest is the request struct for api OnsGroupList
 type OnsGroupListRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	GroupId      string           `position:"Query" name:"GroupId"`
+	GroupId    string `position:"Query" name:"GroupId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 // OnsGroupListResponse is the response struct for api OnsGroupList

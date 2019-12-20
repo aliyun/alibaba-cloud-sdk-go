@@ -76,11 +76,10 @@ func (client *Client) OnsMqttQueryHistoryOnlineWithCallback(request *OnsMqttQuer
 // OnsMqttQueryHistoryOnlineRequest is the request struct for api OnsMqttQueryHistoryOnline
 type OnsMqttQueryHistoryOnlineRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	GroupId      string           `position:"Query" name:"GroupId"`
-	EndTime      requests.Integer `position:"Query" name:"EndTime"`
-	BeginTime    requests.Integer `position:"Query" name:"BeginTime"`
+	GroupId    string           `position:"Query" name:"GroupId"`
+	EndTime    requests.Integer `position:"Query" name:"EndTime"`
+	BeginTime  requests.Integer `position:"Query" name:"BeginTime"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
 }
 
 // OnsMqttQueryHistoryOnlineResponse is the response struct for api OnsMqttQueryHistoryOnline

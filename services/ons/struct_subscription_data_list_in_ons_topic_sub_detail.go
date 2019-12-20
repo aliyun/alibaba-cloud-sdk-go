@@ -17,5 +17,5 @@ package ons
 
 // SubscriptionDataListInOnsTopicSubDetail is a nested struct in ons response
 type SubscriptionDataListInOnsTopicSubDetail struct {
-	SubscriptionDataListItem []SubscriptionDataListItem `json:"SubscriptionDataListItem" xml:"SubscriptionDataListItem"`
+	SubscriptionDataListItem []SubscriptionDataListItem `json:"SubscriptionDataList" xml:"SubscriptionDataList"`
 }

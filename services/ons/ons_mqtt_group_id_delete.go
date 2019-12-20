@@ -76,9 +76,8 @@ func (client *Client) OnsMqttGroupIdDeleteWithCallback(request *OnsMqttGroupIdDe
 // OnsMqttGroupIdDeleteRequest is the request struct for api OnsMqttGroupIdDelete
 type OnsMqttGroupIdDeleteRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	GroupId      string           `position:"Query" name:"GroupId"`
+	GroupId    string `position:"Query" name:"GroupId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 // OnsMqttGroupIdDeleteResponse is the response struct for api OnsMqttGroupIdDelete

@@ -76,11 +76,10 @@ func (client *Client) OnsTopicCreateWithCallback(request *OnsTopicCreateRequest,
 // OnsTopicCreateRequest is the request struct for api OnsTopicCreate
 type OnsTopicCreateRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	MessageType  requests.Integer `position:"Query" name:"MessageType"`
-	Topic        string           `position:"Query" name:"Topic"`
-	Remark       string           `position:"Query" name:"Remark"`
+	MessageType requests.Integer `position:"Query" name:"MessageType"`
+	Remark      string           `position:"Query" name:"Remark"`
+	InstanceId  string           `position:"Query" name:"InstanceId"`
+	Topic       string           `position:"Query" name:"Topic"`
 }
 
 // OnsTopicCreateResponse is the response struct for api OnsTopicCreate

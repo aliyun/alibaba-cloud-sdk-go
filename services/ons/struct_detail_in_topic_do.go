@@ -17,8 +17,8 @@ package ons
 
 // DetailInTopicDo is a nested struct in ons response
 type DetailInTopicDo struct {
-	DelayTime     int    `json:"DelayTime" xml:"DelayTime"`
-	TotalDiff     int    `json:"TotalDiff" xml:"TotalDiff"`
+	DelayTime     int64  `json:"DelayTime" xml:"DelayTime"`
+	TotalDiff     int64  `json:"TotalDiff" xml:"TotalDiff"`
 	Topic         string `json:"Topic" xml:"Topic"`
-	LastTimestamp int    `json:"LastTimestamp" xml:"LastTimestamp"`
+	LastTimestamp int64  `json:"LastTimestamp" xml:"LastTimestamp"`
 }

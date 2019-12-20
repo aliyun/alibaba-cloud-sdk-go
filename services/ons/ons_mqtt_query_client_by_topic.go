@@ -76,10 +76,9 @@ func (client *Client) OnsMqttQueryClientByTopicWithCallback(request *OnsMqttQuer
 // OnsMqttQueryClientByTopicRequest is the request struct for api OnsMqttQueryClientByTopic
 type OnsMqttQueryClientByTopicRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	ParentTopic  string           `position:"Query" name:"ParentTopic"`
-	SubTopic     string           `position:"Query" name:"SubTopic"`
+	ParentTopic string `position:"Query" name:"ParentTopic"`
+	InstanceId  string `position:"Query" name:"InstanceId"`
+	SubTopic    string `position:"Query" name:"SubTopic"`
 }
 
 // OnsMqttQueryClientByTopicResponse is the response struct for api OnsMqttQueryClientByTopic

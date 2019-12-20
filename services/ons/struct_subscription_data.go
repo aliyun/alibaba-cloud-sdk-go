@@ -19,6 +19,6 @@ package ons
 type SubscriptionData struct {
 	Topic      string  `json:"Topic" xml:"Topic"`
 	SubString  string  `json:"SubString" xml:"SubString"`
-	SubVersion int     `json:"SubVersion" xml:"SubVersion"`
+	SubVersion int64   `json:"SubVersion" xml:"SubVersion"`
 	TagsSet    TagsSet `json:"TagsSet" xml:"TagsSet"`
 }

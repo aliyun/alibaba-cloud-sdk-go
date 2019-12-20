@@ -76,9 +76,8 @@ func (client *Client) OnsTopicDeleteWithCallback(request *OnsTopicDeleteRequest,
 // OnsTopicDeleteRequest is the request struct for api OnsTopicDelete
 type OnsTopicDeleteRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	Topic        string           `position:"Query" name:"Topic"`
+	InstanceId string `position:"Query" name:"InstanceId"`
+	Topic      string `position:"Query" name:"Topic"`
 }
 
 // OnsTopicDeleteResponse is the response struct for api OnsTopicDelete

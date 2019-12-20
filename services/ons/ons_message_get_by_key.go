@@ -76,10 +76,9 @@ func (client *Client) OnsMessageGetByKeyWithCallback(request *OnsMessageGetByKey
 // OnsMessageGetByKeyRequest is the request struct for api OnsMessageGetByKey
 type OnsMessageGetByKeyRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	Topic        string           `position:"Query" name:"Topic"`
-	Key          string           `position:"Query" name:"Key"`
+	InstanceId string `position:"Query" name:"InstanceId"`
+	Topic      string `position:"Query" name:"Topic"`
+	Key        string `position:"Query" name:"Key"`
 }
 
 // OnsMessageGetByKeyResponse is the response struct for api OnsMessageGetByKey

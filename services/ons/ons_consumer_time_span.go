@@ -76,10 +76,9 @@ func (client *Client) OnsConsumerTimeSpanWithCallback(request *OnsConsumerTimeSp
 // OnsConsumerTimeSpanRequest is the request struct for api OnsConsumerTimeSpan
 type OnsConsumerTimeSpanRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	GroupId      string           `position:"Query" name:"GroupId"`
-	Topic        string           `position:"Query" name:"Topic"`
+	GroupId    string `position:"Query" name:"GroupId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
+	Topic      string `position:"Query" name:"Topic"`
 }
 
 // OnsConsumerTimeSpanResponse is the response struct for api OnsConsumerTimeSpan

@@ -76,8 +76,7 @@ func (client *Client) OnsTraceGetResultWithCallback(request *OnsTraceGetResultRe
 // OnsTraceGetResultRequest is the request struct for api OnsTraceGetResult
 type OnsTraceGetResultRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	QueryId      string           `position:"Query" name:"QueryId"`
+	QueryId string `position:"Query" name:"QueryId"`
 }
 
 // OnsTraceGetResultResponse is the response struct for api OnsTraceGetResult

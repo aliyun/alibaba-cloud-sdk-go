@@ -76,12 +76,11 @@ func (client *Client) OnsConsumerResetOffsetWithCallback(request *OnsConsumerRes
 // OnsConsumerResetOffsetRequest is the request struct for api OnsConsumerResetOffset
 type OnsConsumerResetOffsetRequest struct {
 	*requests.RpcRequest
-	PreventCache   requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId     string           `position:"Query" name:"InstanceId"`
 	GroupId        string           `position:"Query" name:"GroupId"`
-	Topic          string           `position:"Query" name:"Topic"`
 	ResetTimestamp requests.Integer `position:"Query" name:"ResetTimestamp"`
 	Type           requests.Integer `position:"Query" name:"Type"`
+	InstanceId     string           `position:"Query" name:"InstanceId"`
+	Topic          string           `position:"Query" name:"Topic"`
 }
 
 // OnsConsumerResetOffsetResponse is the response struct for api OnsConsumerResetOffset

@@ -21,4 +21,5 @@ type ConnectionDo struct {
 	ClientId   string `json:"ClientId" xml:"ClientId"`
 	Version    string `json:"Version" xml:"Version"`
 	Language   string `json:"Language" xml:"Language"`
+	RemoteIP   string `json:"RemoteIP" xml:"RemoteIP"`
 }

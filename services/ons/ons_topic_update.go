@@ -76,10 +76,9 @@ func (client *Client) OnsTopicUpdateWithCallback(request *OnsTopicUpdateRequest,
 // OnsTopicUpdateRequest is the request struct for api OnsTopicUpdate
 type OnsTopicUpdateRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	Perm         requests.Integer `position:"Query" name:"Perm"`
-	Topic        string           `position:"Query" name:"Topic"`
+	Perm       requests.Integer `position:"Query" name:"Perm"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	Topic      string           `position:"Query" name:"Topic"`
 }
 
 // OnsTopicUpdateResponse is the response struct for api OnsTopicUpdate

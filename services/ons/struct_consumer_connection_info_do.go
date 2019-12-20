@@ -24,8 +24,8 @@ type ConsumerConnectionInfoDo struct {
 	ConsumeModel    string          `json:"ConsumeModel" xml:"ConsumeModel"`
 	ConsumeType     string          `json:"ConsumeType" xml:"ConsumeType"`
 	ThreadCount     int             `json:"ThreadCount" xml:"ThreadCount"`
-	StartTimeStamp  int             `json:"StartTimeStamp" xml:"StartTimeStamp"`
-	LastTimeStamp   int             `json:"LastTimeStamp" xml:"LastTimeStamp"`
+	StartTimeStamp  int64           `json:"StartTimeStamp" xml:"StartTimeStamp"`
+	LastTimeStamp   int64           `json:"LastTimeStamp" xml:"LastTimeStamp"`
 	SubscriptionSet SubscriptionSet `json:"SubscriptionSet" xml:"SubscriptionSet"`
 	RunningDataList RunningDataList `json:"RunningDataList" xml:"RunningDataList"`
 	Jstack          Jstack          `json:"Jstack" xml:"Jstack"`

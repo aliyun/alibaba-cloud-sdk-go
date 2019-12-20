@@ -22,5 +22,5 @@ type ConsumerRunningDataDo struct {
 	Rt                 float64 `json:"Rt" xml:"Rt"`
 	OkTps              float64 `json:"OkTps" xml:"OkTps"`
 	FailedTps          float64 `json:"FailedTps" xml:"FailedTps"`
-	FailedCountPerHour int     `json:"FailedCountPerHour" xml:"FailedCountPerHour"`
+	FailedCountPerHour int64   `json:"FailedCountPerHour" xml:"FailedCountPerHour"`
 }

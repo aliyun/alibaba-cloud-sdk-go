@@ -76,7 +76,6 @@ func (client *Client) OnsInstanceInServiceListWithCallback(request *OnsInstanceI
 // OnsInstanceInServiceListRequest is the request struct for api OnsInstanceInServiceList
 type OnsInstanceInServiceListRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
 }
 
 // OnsInstanceInServiceListResponse is the response struct for api OnsInstanceInServiceList

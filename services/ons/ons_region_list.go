@@ -76,7 +76,6 @@ func (client *Client) OnsRegionListWithCallback(request *OnsRegionListRequest, c
 // OnsRegionListRequest is the request struct for api OnsRegionList
 type OnsRegionListRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
 }
 
 // OnsRegionListResponse is the response struct for api OnsRegionList

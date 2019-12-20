@@ -76,8 +76,7 @@ func (client *Client) OnsMqttGroupIdListWithCallback(request *OnsMqttGroupIdList
 // OnsMqttGroupIdListRequest is the request struct for api OnsMqttGroupIdList
 type OnsMqttGroupIdListRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 // OnsMqttGroupIdListResponse is the response struct for api OnsMqttGroupIdList

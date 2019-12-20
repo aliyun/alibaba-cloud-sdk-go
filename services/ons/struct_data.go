@@ -17,44 +17,44 @@ package ons
 
 // Data is a nested struct in ons response
 type Data struct {
-	DelayTime                  int                                      `json:"DelayTime" xml:"DelayTime"`
+	DelayTime                  int64                                    `json:"DelayTime" xml:"DelayTime"`
 	ConsumeModel               string                                   `json:"ConsumeModel" xml:"ConsumeModel"`
 	Title                      string                                   `json:"Title" xml:"Title"`
 	Online                     bool                                     `json:"Online" xml:"Online"`
 	Flag                       int                                      `json:"Flag" xml:"Flag"`
-	BornTimestamp              int                                      `json:"BornTimestamp" xml:"BornTimestamp"`
+	BornTimestamp              int64                                    `json:"BornTimestamp" xml:"BornTimestamp"`
 	RebalanceOK                bool                                     `json:"RebalanceOK" xml:"RebalanceOK"`
 	XUnit                      string                                   `json:"XUnit" xml:"XUnit"`
 	OffsetId                   string                                   `json:"OffsetId" xml:"OffsetId"`
 	SubscriptionSame           bool                                     `json:"SubscriptionSame" xml:"SubscriptionSame"`
-	MaxTimeStamp               int                                      `json:"MaxTimeStamp" xml:"MaxTimeStamp"`
+	MaxTimeStamp               int64                                    `json:"MaxTimeStamp" xml:"MaxTimeStamp"`
 	InstanceId                 string                                   `json:"InstanceId" xml:"InstanceId"`
 	ConsumeTps                 float64                                  `json:"ConsumeTps" xml:"ConsumeTps"`
 	GroupId                    string                                   `json:"GroupId" xml:"GroupId"`
 	Topic                      string                                   `json:"Topic" xml:"Topic"`
-	ConsumeTimeStamp           int                                      `json:"ConsumeTimeStamp" xml:"ConsumeTimeStamp"`
-	TotalCount                 int                                      `json:"TotalCount" xml:"TotalCount"`
+	ConsumeTimeStamp           int64                                    `json:"ConsumeTimeStamp" xml:"ConsumeTimeStamp"`
+	TotalCount                 int64                                    `json:"TotalCount" xml:"TotalCount"`
+	TotalDiff                  int64                                    `json:"TotalDiff" xml:"TotalDiff"`
 	ReconsumeTimes             int                                      `json:"ReconsumeTimes" xml:"ReconsumeTimes"`
-	TotalDiff                  int                                      `json:"TotalDiff" xml:"TotalDiff"`
 	Body                       string                                   `json:"Body" xml:"Body"`
 	BornHost                   string                                   `json:"BornHost" xml:"BornHost"`
-	MinTimeStamp               int                                      `json:"MinTimeStamp" xml:"MinTimeStamp"`
-	LastTimeStamp              int                                      `json:"LastTimeStamp" xml:"LastTimeStamp"`
+	MinTimeStamp               int64                                    `json:"MinTimeStamp" xml:"MinTimeStamp"`
+	LastTimeStamp              int64                                    `json:"LastTimeStamp" xml:"LastTimeStamp"`
 	MessageModel               string                                   `json:"MessageModel" xml:"MessageModel"`
 	InstanceType               int                                      `json:"InstanceType" xml:"InstanceType"`
 	BodyCRC                    int                                      `json:"BodyCRC" xml:"BodyCRC"`
 	MsgId                      string                                   `json:"MsgId" xml:"MsgId"`
-	StoreTimestamp             int                                      `json:"StoreTimestamp" xml:"StoreTimestamp"`
+	StoreTimestamp             int64                                    `json:"StoreTimestamp" xml:"StoreTimestamp"`
 	StoreSize                  int                                      `json:"StoreSize" xml:"StoreSize"`
 	StoreHost                  string                                   `json:"StoreHost" xml:"StoreHost"`
 	YUnit                      string                                   `json:"YUnit" xml:"YUnit"`
-	LastTimestamp              int                                      `json:"LastTimestamp" xml:"LastTimestamp"`
+	LastTimestamp              int64                                    `json:"LastTimestamp" xml:"LastTimestamp"`
 	Perm                       int                                      `json:"Perm" xml:"Perm"`
-	ConnectionSet              ConnectionSet                            `json:"ConnectionSet" xml:"ConnectionSet"`
 	PropertyList               PropertyListInOnsDLQMessageGetById       `json:"PropertyList" xml:"PropertyList"`
 	Records                    RecordsInOnsMqttQueryHistoryOnline       `json:"Records" xml:"Records"`
 	ConsumerConnectionInfoList ConsumerConnectionInfoList               `json:"ConsumerConnectionInfoList" xml:"ConsumerConnectionInfoList"`
 	DetailInTopicList          DetailInTopicListInOnsConsumerAccumulate `json:"DetailInTopicList" xml:"DetailInTopicList"`
 	SubscriptionDataList       SubscriptionDataListInOnsGroupSubDetail  `json:"SubscriptionDataList" xml:"SubscriptionDataList"`
+	ConnectionSet              ConnectionSet                            `json:"ConnectionSet" xml:"ConnectionSet"`
 	ConnectionList             ConnectionList                           `json:"ConnectionList" xml:"ConnectionList"`
 }

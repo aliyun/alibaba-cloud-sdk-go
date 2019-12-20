@@ -76,10 +76,9 @@ func (client *Client) OnsConsumerAccumulateWithCallback(request *OnsConsumerAccu
 // OnsConsumerAccumulateRequest is the request struct for api OnsConsumerAccumulate
 type OnsConsumerAccumulateRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	GroupId      string           `position:"Query" name:"GroupId"`
-	Detail       requests.Boolean `position:"Query" name:"Detail"`
+	GroupId    string           `position:"Query" name:"GroupId"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	Detail     requests.Boolean `position:"Query" name:"Detail"`
 }
 
 // OnsConsumerAccumulateResponse is the response struct for api OnsConsumerAccumulate

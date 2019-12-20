@@ -20,6 +20,6 @@ type MqttClientInfoDo struct {
 	Online          bool            `json:"Online" xml:"Online"`
 	ClientId        string          `json:"ClientId" xml:"ClientId"`
 	SocketChannel   string          `json:"SocketChannel" xml:"SocketChannel"`
-	LastTouch       int             `json:"LastTouch" xml:"LastTouch"`
+	LastTouch       int64           `json:"LastTouch" xml:"LastTouch"`
 	SubScriptonData SubScriptonData `json:"SubScriptonData" xml:"SubScriptonData"`
 }

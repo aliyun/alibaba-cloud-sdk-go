@@ -76,12 +76,11 @@ func (client *Client) OnsMessagePushWithCallback(request *OnsMessagePushRequest,
 // OnsMessagePushRequest is the request struct for api OnsMessagePush
 type OnsMessagePushRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	ClientId     string           `position:"Query" name:"ClientId"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	GroupId      string           `position:"Query" name:"GroupId"`
-	MsgId        string           `position:"Query" name:"MsgId"`
-	Topic        string           `position:"Query" name:"Topic"`
+	ClientId   string `position:"Query" name:"ClientId"`
+	GroupId    string `position:"Query" name:"GroupId"`
+	MsgId      string `position:"Query" name:"MsgId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
+	Topic      string `position:"Query" name:"Topic"`
 }
 
 // OnsMessagePushResponse is the response struct for api OnsMessagePush

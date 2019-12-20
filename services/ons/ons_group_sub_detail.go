@@ -76,9 +76,8 @@ func (client *Client) OnsGroupSubDetailWithCallback(request *OnsGroupSubDetailRe
 // OnsGroupSubDetailRequest is the request struct for api OnsGroupSubDetail
 type OnsGroupSubDetailRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	GroupId      string           `position:"Query" name:"GroupId"`
+	GroupId    string `position:"Query" name:"GroupId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 // OnsGroupSubDetailResponse is the response struct for api OnsGroupSubDetail

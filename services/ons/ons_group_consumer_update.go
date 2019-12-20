@@ -76,10 +76,9 @@ func (client *Client) OnsGroupConsumerUpdateWithCallback(request *OnsGroupConsum
 // OnsGroupConsumerUpdateRequest is the request struct for api OnsGroupConsumerUpdate
 type OnsGroupConsumerUpdateRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	ReadEnable   requests.Boolean `position:"Query" name:"ReadEnable"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	GroupId      string           `position:"Query" name:"GroupId"`
+	GroupId    string           `position:"Query" name:"GroupId"`
+	ReadEnable requests.Boolean `position:"Query" name:"ReadEnable"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
 }
 
 // OnsGroupConsumerUpdateResponse is the response struct for api OnsGroupConsumerUpdate

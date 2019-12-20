@@ -76,9 +76,8 @@ func (client *Client) OnsInstanceCreateWithCallback(request *OnsInstanceCreateRe
 // OnsInstanceCreateRequest is the request struct for api OnsInstanceCreate
 type OnsInstanceCreateRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceName string           `position:"Query" name:"InstanceName"`
-	Remark       string           `position:"Query" name:"Remark"`
+	Remark       string `position:"Query" name:"Remark"`
+	InstanceName string `position:"Query" name:"InstanceName"`
 }
 
 // OnsInstanceCreateResponse is the response struct for api OnsInstanceCreate

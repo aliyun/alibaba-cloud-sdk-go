@@ -76,16 +76,15 @@ func (client *Client) OnsWarnCreateWithCallback(request *OnsWarnCreateRequest, c
 // OnsWarnCreateRequest is the request struct for api OnsWarnCreate
 type OnsWarnCreateRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	BlockTime    string           `position:"Query" name:"BlockTime"`
-	Level        string           `position:"Query" name:"Level"`
-	GroupId      string           `position:"Query" name:"GroupId"`
-	DelayTime    string           `position:"Query" name:"DelayTime"`
-	Topic        string           `position:"Query" name:"Topic"`
-	Threshold    string           `position:"Query" name:"Threshold"`
-	AlertTime    string           `position:"Query" name:"AlertTime"`
-	Contacts     string           `position:"Query" name:"Contacts"`
+	Level      string `position:"Query" name:"Level"`
+	GroupId    string `position:"Query" name:"GroupId"`
+	DelayTime  string `position:"Query" name:"DelayTime"`
+	Threshold  string `position:"Query" name:"Threshold"`
+	AlertTime  string `position:"Query" name:"AlertTime"`
+	InstanceId string `position:"Query" name:"InstanceId"`
+	BlockTime  string `position:"Query" name:"BlockTime"`
+	Topic      string `position:"Query" name:"Topic"`
+	Contacts   string `position:"Query" name:"Contacts"`
 }
 
 // OnsWarnCreateResponse is the response struct for api OnsWarnCreate

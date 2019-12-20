@@ -19,8 +19,9 @@ package ons
 type SubscribeInfoDo struct {
 	Owner             string `json:"Owner" xml:"Owner"`
 	GroupId           string `json:"GroupId" xml:"GroupId"`
-	UpdateTime        int    `json:"UpdateTime" xml:"UpdateTime"`
+	UpdateTime        int64  `json:"UpdateTime" xml:"UpdateTime"`
 	Remark            string `json:"Remark" xml:"Remark"`
 	InstanceId        string `json:"InstanceId" xml:"InstanceId"`
 	IndependentNaming bool   `json:"IndependentNaming" xml:"IndependentNaming"`
+	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
 }

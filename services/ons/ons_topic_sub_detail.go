@@ -76,9 +76,8 @@ func (client *Client) OnsTopicSubDetailWithCallback(request *OnsTopicSubDetailRe
 // OnsTopicSubDetailRequest is the request struct for api OnsTopicSubDetail
 type OnsTopicSubDetailRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	Topic        string           `position:"Query" name:"Topic"`
+	InstanceId string `position:"Query" name:"InstanceId"`
+	Topic      string `position:"Query" name:"Topic"`
 }
 
 // OnsTopicSubDetailResponse is the response struct for api OnsTopicSubDetail

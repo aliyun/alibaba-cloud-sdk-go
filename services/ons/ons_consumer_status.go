@@ -76,11 +76,10 @@ func (client *Client) OnsConsumerStatusWithCallback(request *OnsConsumerStatusRe
 // OnsConsumerStatusRequest is the request struct for api OnsConsumerStatus
 type OnsConsumerStatusRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	NeedJstack   requests.Boolean `position:"Query" name:"NeedJstack"`
-	GroupId      string           `position:"Query" name:"GroupId"`
-	Detail       requests.Boolean `position:"Query" name:"Detail"`
+	GroupId    string           `position:"Query" name:"GroupId"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	NeedJstack requests.Boolean `position:"Query" name:"NeedJstack"`
+	Detail     requests.Boolean `position:"Query" name:"Detail"`
 }
 
 // OnsConsumerStatusResponse is the response struct for api OnsConsumerStatus

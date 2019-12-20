@@ -76,12 +76,11 @@ func (client *Client) OnsMessageSendWithCallback(request *OnsMessageSendRequest,
 // OnsMessageSendRequest is the request struct for api OnsMessageSend
 type OnsMessageSendRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	Topic        string           `position:"Query" name:"Topic"`
-	Tag          string           `position:"Query" name:"Tag"`
-	Message      string           `position:"Query" name:"Message"`
-	Key          string           `position:"Query" name:"Key"`
+	Message    string `position:"Query" name:"Message"`
+	InstanceId string `position:"Query" name:"InstanceId"`
+	Topic      string `position:"Query" name:"Topic"`
+	Tag        string `position:"Query" name:"Tag"`
+	Key        string `position:"Query" name:"Key"`
 }
 
 // OnsMessageSendResponse is the response struct for api OnsMessageSend

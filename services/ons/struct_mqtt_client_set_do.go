@@ -17,6 +17,6 @@ package ons
 
 // MqttClientSetDo is a nested struct in ons response
 type MqttClientSetDo struct {
-	OnlineCount  int `json:"OnlineCount" xml:"OnlineCount"`
-	PersistCount int `json:"PersistCount" xml:"PersistCount"`
+	OnlineCount  int64 `json:"OnlineCount" xml:"OnlineCount"`
+	PersistCount int64 `json:"PersistCount" xml:"PersistCount"`
 }

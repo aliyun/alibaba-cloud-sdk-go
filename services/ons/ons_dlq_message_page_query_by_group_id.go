@@ -76,14 +76,13 @@ func (client *Client) OnsDLQMessagePageQueryByGroupIdWithCallback(request *OnsDL
 // OnsDLQMessagePageQueryByGroupIdRequest is the request struct for api OnsDLQMessagePageQueryByGroupId
 type OnsDLQMessagePageQueryByGroupIdRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	GroupId      string           `position:"Query" name:"GroupId"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	EndTime      requests.Integer `position:"Query" name:"EndTime"`
-	BeginTime    requests.Integer `position:"Query" name:"BeginTime"`
-	CurrentPage  requests.Integer `position:"Query" name:"CurrentPage"`
-	TaskId       string           `position:"Query" name:"TaskId"`
+	GroupId     string           `position:"Query" name:"GroupId"`
+	EndTime     requests.Integer `position:"Query" name:"EndTime"`
+	BeginTime   requests.Integer `position:"Query" name:"BeginTime"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	InstanceId  string           `position:"Query" name:"InstanceId"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	TaskId      string           `position:"Query" name:"TaskId"`
 }
 
 // OnsDLQMessagePageQueryByGroupIdResponse is the response struct for api OnsDLQMessagePageQueryByGroupId

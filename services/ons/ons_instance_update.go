@@ -76,10 +76,9 @@ func (client *Client) OnsInstanceUpdateWithCallback(request *OnsInstanceUpdateRe
 // OnsInstanceUpdateRequest is the request struct for api OnsInstanceUpdate
 type OnsInstanceUpdateRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceName string           `position:"Query" name:"InstanceName"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	Remark       string           `position:"Query" name:"Remark"`
+	Remark       string `position:"Query" name:"Remark"`
+	InstanceName string `position:"Query" name:"InstanceName"`
+	InstanceId   string `position:"Query" name:"InstanceId"`
 }
 
 // OnsInstanceUpdateResponse is the response struct for api OnsInstanceUpdate

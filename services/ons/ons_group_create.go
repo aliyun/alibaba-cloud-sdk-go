@@ -76,10 +76,9 @@ func (client *Client) OnsGroupCreateWithCallback(request *OnsGroupCreateRequest,
 // OnsGroupCreateRequest is the request struct for api OnsGroupCreate
 type OnsGroupCreateRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	GroupId      string           `position:"Query" name:"GroupId"`
-	Remark       string           `position:"Query" name:"Remark"`
+	GroupId    string `position:"Query" name:"GroupId"`
+	Remark     string `position:"Query" name:"Remark"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 // OnsGroupCreateResponse is the response struct for api OnsGroupCreate

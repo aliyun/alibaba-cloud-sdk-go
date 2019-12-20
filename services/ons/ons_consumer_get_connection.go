@@ -76,9 +76,8 @@ func (client *Client) OnsConsumerGetConnectionWithCallback(request *OnsConsumerG
 // OnsConsumerGetConnectionRequest is the request struct for api OnsConsumerGetConnection
 type OnsConsumerGetConnectionRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	GroupId      string           `position:"Query" name:"GroupId"`
+	GroupId    string `position:"Query" name:"GroupId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 // OnsConsumerGetConnectionResponse is the response struct for api OnsConsumerGetConnection

@@ -76,10 +76,9 @@ func (client *Client) OnsMessageGetByMsgIdWithCallback(request *OnsMessageGetByM
 // OnsMessageGetByMsgIdRequest is the request struct for api OnsMessageGetByMsgId
 type OnsMessageGetByMsgIdRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	MsgId        string           `position:"Query" name:"MsgId"`
-	Topic        string           `position:"Query" name:"Topic"`
+	MsgId      string `position:"Query" name:"MsgId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
+	Topic      string `position:"Query" name:"Topic"`
 }
 
 // OnsMessageGetByMsgIdResponse is the response struct for api OnsMessageGetByMsgId

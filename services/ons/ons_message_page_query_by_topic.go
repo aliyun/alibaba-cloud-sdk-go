@@ -76,14 +76,13 @@ func (client *Client) OnsMessagePageQueryByTopicWithCallback(request *OnsMessage
 // OnsMessagePageQueryByTopicRequest is the request struct for api OnsMessagePageQueryByTopic
 type OnsMessagePageQueryByTopicRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	Topic        string           `position:"Query" name:"Topic"`
-	EndTime      requests.Integer `position:"Query" name:"EndTime"`
-	BeginTime    requests.Integer `position:"Query" name:"BeginTime"`
-	CurrentPage  requests.Integer `position:"Query" name:"CurrentPage"`
-	TaskId       string           `position:"Query" name:"TaskId"`
+	EndTime     requests.Integer `position:"Query" name:"EndTime"`
+	BeginTime   requests.Integer `position:"Query" name:"BeginTime"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	InstanceId  string           `position:"Query" name:"InstanceId"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	Topic       string           `position:"Query" name:"Topic"`
+	TaskId      string           `position:"Query" name:"TaskId"`
 }
 
 // OnsMessagePageQueryByTopicResponse is the response struct for api OnsMessagePageQueryByTopic

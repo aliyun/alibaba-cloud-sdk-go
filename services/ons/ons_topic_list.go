@@ -76,9 +76,8 @@ func (client *Client) OnsTopicListWithCallback(request *OnsTopicListRequest, cal
 // OnsTopicListRequest is the request struct for api OnsTopicList
 type OnsTopicListRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	Topic        string           `position:"Query" name:"Topic"`
+	InstanceId string `position:"Query" name:"InstanceId"`
+	Topic      string `position:"Query" name:"Topic"`
 }
 
 // OnsTopicListResponse is the response struct for api OnsTopicList

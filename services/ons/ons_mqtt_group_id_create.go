@@ -76,10 +76,9 @@ func (client *Client) OnsMqttGroupIdCreateWithCallback(request *OnsMqttGroupIdCr
 // OnsMqttGroupIdCreateRequest is the request struct for api OnsMqttGroupIdCreate
 type OnsMqttGroupIdCreateRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	GroupId      string           `position:"Query" name:"GroupId"`
-	Topic        string           `position:"Query" name:"Topic"`
+	GroupId    string `position:"Query" name:"GroupId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
+	Topic      string `position:"Query" name:"Topic"`
 }
 
 // OnsMqttGroupIdCreateResponse is the response struct for api OnsMqttGroupIdCreate

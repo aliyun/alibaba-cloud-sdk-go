@@ -76,12 +76,11 @@ func (client *Client) OnsTraceQueryByMsgKeyWithCallback(request *OnsTraceQueryBy
 // OnsTraceQueryByMsgKeyRequest is the request struct for api OnsTraceQueryByMsgKey
 type OnsTraceQueryByMsgKeyRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	Topic        string           `position:"Query" name:"Topic"`
-	EndTime      requests.Integer `position:"Query" name:"EndTime"`
-	BeginTime    requests.Integer `position:"Query" name:"BeginTime"`
-	MsgKey       string           `position:"Query" name:"MsgKey"`
+	EndTime    requests.Integer `position:"Query" name:"EndTime"`
+	BeginTime  requests.Integer `position:"Query" name:"BeginTime"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	Topic      string           `position:"Query" name:"Topic"`
+	MsgKey     string           `position:"Query" name:"MsgKey"`
 }
 
 // OnsTraceQueryByMsgKeyResponse is the response struct for api OnsTraceQueryByMsgKey

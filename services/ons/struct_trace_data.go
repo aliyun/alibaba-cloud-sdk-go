@@ -23,8 +23,8 @@ type TraceData struct {
 	MsgId      string    `json:"MsgId" xml:"MsgId"`
 	MsgKey     string    `json:"MsgKey" xml:"MsgKey"`
 	Status     string    `json:"Status" xml:"Status"`
-	CreateTime int       `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime int       `json:"UpdateTime" xml:"UpdateTime"`
+	CreateTime int64     `json:"CreateTime" xml:"CreateTime"`
+	UpdateTime int64     `json:"UpdateTime" xml:"UpdateTime"`
 	InstanceId string    `json:"InstanceId" xml:"InstanceId"`
 	TraceList  TraceList `json:"TraceList" xml:"TraceList"`
 }

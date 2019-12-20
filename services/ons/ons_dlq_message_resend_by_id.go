@@ -76,10 +76,9 @@ func (client *Client) OnsDLQMessageResendByIdWithCallback(request *OnsDLQMessage
 // OnsDLQMessageResendByIdRequest is the request struct for api OnsDLQMessageResendById
 type OnsDLQMessageResendByIdRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	GroupId      string           `position:"Query" name:"GroupId"`
-	MsgId        string           `position:"Query" name:"MsgId"`
+	GroupId    string `position:"Query" name:"GroupId"`
+	MsgId      string `position:"Query" name:"MsgId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 // OnsDLQMessageResendByIdResponse is the response struct for api OnsDLQMessageResendById

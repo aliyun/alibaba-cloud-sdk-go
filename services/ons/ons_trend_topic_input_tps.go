@@ -76,13 +76,12 @@ func (client *Client) OnsTrendTopicInputTpsWithCallback(request *OnsTrendTopicIn
 // OnsTrendTopicInputTpsRequest is the request struct for api OnsTrendTopicInputTps
 type OnsTrendTopicInputTpsRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	Period       requests.Integer `position:"Query" name:"Period"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	Topic        string           `position:"Query" name:"Topic"`
-	EndTime      requests.Integer `position:"Query" name:"EndTime"`
-	BeginTime    requests.Integer `position:"Query" name:"BeginTime"`
-	Type         requests.Integer `position:"Query" name:"Type"`
+	Period     requests.Integer `position:"Query" name:"Period"`
+	EndTime    requests.Integer `position:"Query" name:"EndTime"`
+	BeginTime  requests.Integer `position:"Query" name:"BeginTime"`
+	Type       requests.Integer `position:"Query" name:"Type"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	Topic      string           `position:"Query" name:"Topic"`
 }
 
 // OnsTrendTopicInputTpsResponse is the response struct for api OnsTrendTopicInputTps

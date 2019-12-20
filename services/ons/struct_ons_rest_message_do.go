@@ -19,13 +19,13 @@ package ons
 type OnsRestMessageDo struct {
 	ReconsumeTimes int                                           `json:"ReconsumeTimes" xml:"ReconsumeTimes"`
 	Flag           int                                           `json:"Flag" xml:"Flag"`
-	BornTimestamp  int                                           `json:"BornTimestamp" xml:"BornTimestamp"`
+	BornTimestamp  int64                                         `json:"BornTimestamp" xml:"BornTimestamp"`
 	Body           string                                        `json:"Body" xml:"Body"`
 	BornHost       string                                        `json:"BornHost" xml:"BornHost"`
 	OffsetId       string                                        `json:"OffsetId" xml:"OffsetId"`
 	BodyCRC        int                                           `json:"BodyCRC" xml:"BodyCRC"`
 	MsgId          string                                        `json:"MsgId" xml:"MsgId"`
-	StoreTimestamp int                                           `json:"StoreTimestamp" xml:"StoreTimestamp"`
+	StoreTimestamp int64                                         `json:"StoreTimestamp" xml:"StoreTimestamp"`
 	InstanceId     string                                        `json:"InstanceId" xml:"InstanceId"`
 	StoreSize      int                                           `json:"StoreSize" xml:"StoreSize"`
 	StoreHost      string                                        `json:"StoreHost" xml:"StoreHost"`

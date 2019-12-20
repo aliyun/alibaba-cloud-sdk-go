@@ -17,6 +17,6 @@ package ons
 
 // StatsDataDo is a nested struct in ons response
 type StatsDataDo struct {
-	X int     `json:"X" xml:"X"`
+	X int64   `json:"X" xml:"X"`
 	Y float64 `json:"Y" xml:"Y"`
 }

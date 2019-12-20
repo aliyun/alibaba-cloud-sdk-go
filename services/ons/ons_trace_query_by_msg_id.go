@@ -76,12 +76,11 @@ func (client *Client) OnsTraceQueryByMsgIdWithCallback(request *OnsTraceQueryByM
 // OnsTraceQueryByMsgIdRequest is the request struct for api OnsTraceQueryByMsgId
 type OnsTraceQueryByMsgIdRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	Topic        string           `position:"Query" name:"Topic"`
-	MsgId        string           `position:"Query" name:"MsgId"`
-	EndTime      requests.Integer `position:"Query" name:"EndTime"`
-	BeginTime    requests.Integer `position:"Query" name:"BeginTime"`
+	MsgId      string           `position:"Query" name:"MsgId"`
+	EndTime    requests.Integer `position:"Query" name:"EndTime"`
+	BeginTime  requests.Integer `position:"Query" name:"BeginTime"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	Topic      string           `position:"Query" name:"Topic"`
 }
 
 // OnsTraceQueryByMsgIdResponse is the response struct for api OnsTraceQueryByMsgId

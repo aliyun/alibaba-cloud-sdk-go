@@ -76,16 +76,15 @@ func (client *Client) OnsMqttQueryMsgTransTrendWithCallback(request *OnsMqttQuer
 // OnsMqttQueryMsgTransTrendRequest is the request struct for api OnsMqttQueryMsgTransTrend
 type OnsMqttQueryMsgTransTrendRequest struct {
 	*requests.RpcRequest
-	PreventCache requests.Integer `position:"Query" name:"PreventCache"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	Qos          requests.Integer `position:"Query" name:"Qos"`
-	TransType    string           `position:"Query" name:"TransType"`
-	EndTime      requests.Integer `position:"Query" name:"EndTime"`
-	BeginTime    requests.Integer `position:"Query" name:"BeginTime"`
-	TpsType      string           `position:"Query" name:"TpsType"`
-	ParentTopic  string           `position:"Query" name:"ParentTopic"`
-	MsgType      string           `position:"Query" name:"MsgType"`
-	SubTopic     string           `position:"Query" name:"SubTopic"`
+	TransType   string           `position:"Query" name:"TransType"`
+	EndTime     requests.Integer `position:"Query" name:"EndTime"`
+	BeginTime   requests.Integer `position:"Query" name:"BeginTime"`
+	TpsType     string           `position:"Query" name:"TpsType"`
+	ParentTopic string           `position:"Query" name:"ParentTopic"`
+	InstanceId  string           `position:"Query" name:"InstanceId"`
+	Qos         requests.Integer `position:"Query" name:"Qos"`
+	MsgType     string           `position:"Query" name:"MsgType"`
+	SubTopic    string           `position:"Query" name:"SubTopic"`
 }
 
 // OnsMqttQueryMsgTransTrendResponse is the response struct for api OnsMqttQueryMsgTransTrend
