@@ -76,8 +76,8 @@ func (client *Client) CreateFlowProjectWithCallback(request *CreateFlowProjectRe
 // CreateFlowProjectRequest is the request struct for api CreateFlowProject
 type CreateFlowProjectRequest struct {
 	*requests.RpcRequest
-	Name        string `position:"Query" name:"Name"`
 	Description string `position:"Query" name:"Description"`
+	Name        string `position:"Query" name:"Name"`
 }
 
 // CreateFlowProjectResponse is the response struct for api CreateFlowProject

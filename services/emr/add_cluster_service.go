@@ -77,14 +77,15 @@ func (client *Client) AddClusterServiceWithCallback(request *AddClusterServiceRe
 type AddClusterServiceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer            `position:"Query" name:"ResourceOwnerId"`
+	ClusterId       string                      `position:"Query" name:"ClusterId"`
 	Service         *[]AddClusterServiceService `position:"Query" name:"Service"  type:"Repeated"`
 	Comment         string                      `position:"Query" name:"Comment"`
-	ClusterId       string                      `position:"Query" name:"ClusterId"`
 }
 
 // AddClusterServiceService is a repeated param struct in AddClusterServiceRequest
 type AddClusterServiceService struct {
-	ServiceName string `name:"ServiceName"`
+	ServiceVersion string `name:"ServiceVersion"`
+	ServiceName    string `name:"ServiceName"`
 }
 
 // AddClusterServiceResponse is the response struct for api AddClusterService

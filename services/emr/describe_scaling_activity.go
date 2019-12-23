@@ -77,9 +77,9 @@ func (client *Client) DescribeScalingActivityWithCallback(request *DescribeScali
 type DescribeScalingActivityRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId   requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	HostGroupId       string           `position:"Query" name:"HostGroupId"`
 	ClusterId         string           `position:"Query" name:"ClusterId"`
 	ScalingActivityId string           `position:"Query" name:"ScalingActivityId"`
+	HostGroupId       string           `position:"Query" name:"HostGroupId"`
 }
 
 // DescribeScalingActivityResponse is the response struct for api DescribeScalingActivity

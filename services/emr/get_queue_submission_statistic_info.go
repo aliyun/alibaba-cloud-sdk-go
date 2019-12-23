@@ -80,8 +80,8 @@ type GetQueueSubmissionStatisticInfoRequest struct {
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	ToDatetime      string           `position:"Query" name:"ToDatetime"`
-	ApplicationType string           `position:"Query" name:"ApplicationType"`
 	FinalStatus     string           `position:"Query" name:"FinalStatus"`
+	ApplicationType string           `position:"Query" name:"ApplicationType"`
 }
 
 // GetQueueSubmissionStatisticInfoResponse is the response struct for api GetQueueSubmissionStatisticInfo

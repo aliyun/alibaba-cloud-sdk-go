@@ -77,10 +77,10 @@ func (client *Client) ListJobsWithCallback(request *ListJobsRequest, callback fu
 type ListJobsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	QueryString     string           `position:"Query" name:"QueryString"`
 	IsDesc          requests.Boolean `position:"Query" name:"IsDesc"`
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	QueryType       string           `position:"Query" name:"QueryType"`
 }
 

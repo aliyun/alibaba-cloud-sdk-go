@@ -76,13 +76,13 @@ func (client *Client) CreateJobWithCallback(request *CreateJobRequest, callback 
 // CreateJobRequest is the request struct for api CreateJob
 type CreateJobRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Type            string           `position:"Query" name:"Type"`
+	FailAct         string           `position:"Query" name:"FailAct"`
 	RunParameter    string           `position:"Query" name:"RunParameter"`
 	RetryInterval   requests.Integer `position:"Query" name:"RetryInterval"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Name            string           `position:"Query" name:"Name"`
-	Type            string           `position:"Query" name:"Type"`
 	MaxRetry        requests.Integer `position:"Query" name:"MaxRetry"`
-	FailAct         string           `position:"Query" name:"FailAct"`
 }
 
 // CreateJobResponse is the response struct for api CreateJob

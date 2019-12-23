@@ -80,21 +80,14 @@ type CreateClusterTemplateRequest struct {
 	LogPath                string                                  `position:"Query" name:"LogPath"`
 	MasterPwd              string                                  `position:"Query" name:"MasterPwd"`
 	Configurations         string                                  `position:"Query" name:"Configurations"`
-	IoOptimized            requests.Boolean                        `position:"Query" name:"IoOptimized"`
-	SecurityGroupId        string                                  `position:"Query" name:"SecurityGroupId"`
 	SshEnable              requests.Boolean                        `position:"Query" name:"SshEnable"`
-	EasEnable              requests.Boolean                        `position:"Query" name:"EasEnable"`
 	KeyPairName            string                                  `position:"Query" name:"KeyPairName"`
 	MetaStoreType          string                                  `position:"Query" name:"MetaStoreType"`
 	SecurityGroupName      string                                  `position:"Query" name:"SecurityGroupName"`
-	DepositType            string                                  `position:"Query" name:"DepositType"`
 	MachineType            string                                  `position:"Query" name:"MachineType"`
 	BootstrapAction        *[]CreateClusterTemplateBootstrapAction `position:"Query" name:"BootstrapAction"  type:"Repeated"`
-	UseLocalMetaDb         requests.Boolean                        `position:"Query" name:"UseLocalMetaDb"`
 	MetaStoreConf          string                                  `position:"Query" name:"MetaStoreConf"`
 	EmrVer                 string                                  `position:"Query" name:"EmrVer"`
-	TemplateName           string                                  `position:"Query" name:"TemplateName"`
-	UserDefinedEmrEcsRole  string                                  `position:"Query" name:"UserDefinedEmrEcsRole"`
 	IsOpenPublicIp         requests.Boolean                        `position:"Query" name:"IsOpenPublicIp"`
 	Period                 requests.Integer                        `position:"Query" name:"Period"`
 	InstanceGeneration     string                                  `position:"Query" name:"InstanceGeneration"`
@@ -102,14 +95,21 @@ type CreateClusterTemplateRequest struct {
 	ClusterType            string                                  `position:"Query" name:"ClusterType"`
 	AutoRenew              requests.Boolean                        `position:"Query" name:"AutoRenew"`
 	OptionSoftWareList     *[]string                               `position:"Query" name:"OptionSoftWareList"  type:"Repeated"`
-	VpcId                  string                                  `position:"Query" name:"VpcId"`
 	NetType                string                                  `position:"Query" name:"NetType"`
-	HostGroup              *[]CreateClusterTemplateHostGroup       `position:"Query" name:"HostGroup"  type:"Repeated"`
 	ZoneId                 string                                  `position:"Query" name:"ZoneId"`
 	UseCustomHiveMetaDb    requests.Boolean                        `position:"Query" name:"UseCustomHiveMetaDb"`
+	InitCustomHiveMetaDb   requests.Boolean                        `position:"Query" name:"InitCustomHiveMetaDb"`
+	IoOptimized            requests.Boolean                        `position:"Query" name:"IoOptimized"`
+	SecurityGroupId        string                                  `position:"Query" name:"SecurityGroupId"`
+	EasEnable              requests.Boolean                        `position:"Query" name:"EasEnable"`
+	DepositType            string                                  `position:"Query" name:"DepositType"`
+	UseLocalMetaDb         requests.Boolean                        `position:"Query" name:"UseLocalMetaDb"`
+	TemplateName           string                                  `position:"Query" name:"TemplateName"`
+	UserDefinedEmrEcsRole  string                                  `position:"Query" name:"UserDefinedEmrEcsRole"`
+	VpcId                  string                                  `position:"Query" name:"VpcId"`
+	HostGroup              *[]CreateClusterTemplateHostGroup       `position:"Query" name:"HostGroup"  type:"Repeated"`
 	Config                 *[]CreateClusterTemplateConfig          `position:"Query" name:"Config"  type:"Repeated"`
 	HighAvailabilityEnable requests.Boolean                        `position:"Query" name:"HighAvailabilityEnable"`
-	InitCustomHiveMetaDb   requests.Boolean                        `position:"Query" name:"InitCustomHiveMetaDb"`
 }
 
 // CreateClusterTemplateBootstrapAction is a repeated param struct in CreateClusterTemplateRequest

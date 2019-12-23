@@ -77,11 +77,11 @@ func (client *Client) ModifyResourcePoolWithCallback(request *ModifyResourcePool
 type ModifyResourcePoolRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer            `position:"Query" name:"ResourceOwnerId"`
-	Name            string                      `position:"Query" name:"Name"`
 	Active          requests.Boolean            `position:"Query" name:"Active"`
-	Id              string                      `position:"Query" name:"Id"`
 	ClusterId       string                      `position:"Query" name:"ClusterId"`
 	Yarnsiteconfig  string                      `position:"Query" name:"Yarnsiteconfig"`
+	Name            string                      `position:"Query" name:"Name"`
+	Id              string                      `position:"Query" name:"Id"`
 	Config          *[]ModifyResourcePoolConfig `position:"Query" name:"Config"  type:"Repeated"`
 }
 

@@ -17,12 +17,12 @@ package emr
 
 // CloudWatchTrigger is a nested struct in emr response
 type CloudWatchTrigger struct {
-	ComparisonOperator string `json:"ComparisonOperator" xml:"ComparisonOperator"`
-	MetricDisplayName  string `json:"MetricDisplayName" xml:"MetricDisplayName"`
-	Unit               string `json:"Unit" xml:"Unit"`
-	Period             int    `json:"Period" xml:"Period"`
 	MetricName         string `json:"MetricName" xml:"MetricName"`
+	Period             int    `json:"Period" xml:"Period"`
 	Statistics         string `json:"Statistics" xml:"Statistics"`
-	EvaluationCount    string `json:"EvaluationCount" xml:"EvaluationCount"`
+	ComparisonOperator string `json:"ComparisonOperator" xml:"ComparisonOperator"`
 	Threshold          string `json:"Threshold" xml:"Threshold"`
+	EvaluationCount    string `json:"EvaluationCount" xml:"EvaluationCount"`
+	Unit               string `json:"Unit" xml:"Unit"`
+	MetricDisplayName  string `json:"MetricDisplayName" xml:"MetricDisplayName"`
 }

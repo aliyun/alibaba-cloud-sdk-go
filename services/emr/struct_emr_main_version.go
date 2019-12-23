@@ -17,14 +17,14 @@ package emr
 
 // EmrMainVersion is a nested struct in emr response
 type EmrMainVersion struct {
-	EcmVersion          bool                                    `json:"EcmVersion" xml:"EcmVersion"`
-	RegionId            string                                  `json:"RegionId" xml:"RegionId"`
-	EmrVersion          string                                  `json:"EmrVersion" xml:"EmrVersion"`
-	Display             bool                                    `json:"Display" xml:"Display"`
-	ImageId             string                                  `json:"ImageId" xml:"ImageId"`
-	MainVersionName     string                                  `json:"MainVersionName" xml:"MainVersionName"`
-	StackName           string                                  `json:"StackName" xml:"StackName"`
-	StackVersion        string                                  `json:"StackVersion" xml:"StackVersion"`
-	WhiteUserList       WhiteUserListInListEmrMainVersion       `json:"WhiteUserList" xml:"WhiteUserList"`
-	ClusterTypeInfoList ClusterTypeInfoListInListEmrMainVersion `json:"ClusterTypeInfoList" xml:"ClusterTypeInfoList"`
+	EcmVersion          bool                                        `json:"EcmVersion" xml:"EcmVersion"`
+	RegionId            string                                      `json:"RegionId" xml:"RegionId"`
+	EmrVersion          string                                      `json:"EmrVersion" xml:"EmrVersion"`
+	Display             bool                                        `json:"Display" xml:"Display"`
+	ImageId             string                                      `json:"ImageId" xml:"ImageId"`
+	MainVersionName     string                                      `json:"MainVersionName" xml:"MainVersionName"`
+	StackName           string                                      `json:"StackName" xml:"StackName"`
+	StackVersion        string                                      `json:"StackVersion" xml:"StackVersion"`
+	WhiteUserList       WhiteUserListInDescribeEmrMainVersion       `json:"WhiteUserList" xml:"WhiteUserList"`
+	ClusterTypeInfoList ClusterTypeInfoListInDescribeEmrMainVersion `json:"ClusterTypeInfoList" xml:"ClusterTypeInfoList"`
 }

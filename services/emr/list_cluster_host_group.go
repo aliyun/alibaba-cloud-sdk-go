@@ -78,12 +78,12 @@ type ListClusterHostGroupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	StatusList      *[]string        `position:"Query" name:"StatusList"  type:"Repeated"`
-	HostGroupId     string           `position:"Query" name:"HostGroupId"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	HostGroupName   string           `position:"Query" name:"HostGroupName"`
-	HostGroupType   string           `position:"Query" name:"HostGroupType"`
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	HostGroupId     string           `position:"Query" name:"HostGroupId"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	HostGroupType   string           `position:"Query" name:"HostGroupType"`
 }
 
 // ListClusterHostGroupResponse is the response struct for api ListClusterHostGroup

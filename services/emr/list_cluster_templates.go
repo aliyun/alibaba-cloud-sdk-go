@@ -77,9 +77,9 @@ func (client *Client) ListClusterTemplatesWithCallback(request *ListClusterTempl
 type ListClusterTemplatesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	BizId           string           `position:"Query" name:"BizId"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListClusterTemplatesResponse is the response struct for api ListClusterTemplates

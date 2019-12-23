@@ -17,6 +17,6 @@ package emr
 
 // Queue is a nested struct in emr response
 type Queue struct {
-	EcmResourceQueue          EcmResourceQueue                                    `json:"EcmResourceQueue" xml:"EcmResourceQueue"`
-	EcmResourcePoolConfigList EcmResourcePoolConfigListInListResourcePoolForAdmin `json:"EcmResourcePoolConfigList" xml:"EcmResourcePoolConfigList"`
+	EcmResourceQueue          EcmResourceQueue                            `json:"EcmResourceQueue" xml:"EcmResourceQueue"`
+	EcmResourcePoolConfigList EcmResourcePoolConfigListInListResourcePool `json:"EcmResourcePoolConfigList" xml:"EcmResourcePoolConfigList"`
 }

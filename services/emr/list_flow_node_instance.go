@@ -77,11 +77,11 @@ func (client *Client) ListFlowNodeInstanceWithCallback(request *ListFlowNodeInst
 type ListFlowNodeInstanceRequest struct {
 	*requests.RpcRequest
 	StatusList *[]string        `position:"Query" name:"StatusList"  type:"Repeated"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	OrderBy    string           `position:"Query" name:"OrderBy"`
 	StartTime  requests.Integer `position:"Query" name:"StartTime"`
-	ProjectId  string           `position:"Query" name:"ProjectId"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	ProjectId  string           `position:"Query" name:"ProjectId"`
 	OrderType  string           `position:"Query" name:"OrderType"`
 }
 

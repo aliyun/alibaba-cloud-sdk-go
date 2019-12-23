@@ -76,14 +76,14 @@ func (client *Client) ListFlowWithCallback(request *ListFlowRequest, callback fu
 // ListFlowRequest is the request struct for api ListFlow
 type ListFlowRequest struct {
 	*requests.RpcRequest
-	JobId      string           `position:"Query" name:"JobId"`
 	Periodic   requests.Boolean `position:"Query" name:"Periodic"`
+	ClusterId  string           `position:"Query" name:"ClusterId"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	JobId      string           `position:"Query" name:"JobId"`
 	Name       string           `position:"Query" name:"Name"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	Id         string           `position:"Query" name:"Id"`
-	ClusterId  string           `position:"Query" name:"ClusterId"`
 	ProjectId  string           `position:"Query" name:"ProjectId"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	Status     string           `position:"Query" name:"Status"`
 }
 

@@ -77,8 +77,8 @@ func (client *Client) ListClusterServiceQuickLinkWithCallback(request *ListClust
 type ListClusterServiceQuickLinkRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ServiceName     string           `position:"Query" name:"ServiceName"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
+	ServiceName     string           `position:"Query" name:"ServiceName"`
 }
 
 // ListClusterServiceQuickLinkResponse is the response struct for api ListClusterServiceQuickLink

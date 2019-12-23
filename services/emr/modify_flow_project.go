@@ -76,8 +76,8 @@ func (client *Client) ModifyFlowProjectWithCallback(request *ModifyFlowProjectRe
 // ModifyFlowProjectRequest is the request struct for api ModifyFlowProject
 type ModifyFlowProjectRequest struct {
 	*requests.RpcRequest
-	Name        string `position:"Query" name:"Name"`
 	Description string `position:"Query" name:"Description"`
+	Name        string `position:"Query" name:"Name"`
 	ProjectId   string `position:"Query" name:"ProjectId"`
 }
 

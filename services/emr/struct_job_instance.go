@@ -17,13 +17,13 @@ package emr
 
 // JobInstance is a nested struct in emr response
 type JobInstance struct {
+	Id        string `json:"Id" xml:"Id"`
+	JobName   string `json:"JobName" xml:"JobName"`
 	StartTime int64  `json:"StartTime" xml:"StartTime"`
+	RunTime   int    `json:"RunTime" xml:"RunTime"`
+	JobType   string `json:"JobType" xml:"JobType"`
 	JobId     string `json:"JobId" xml:"JobId"`
 	ClusterId string `json:"ClusterId" xml:"ClusterId"`
-	RetryInfo string `json:"RetryInfo" xml:"RetryInfo"`
-	Id        string `json:"Id" xml:"Id"`
-	RunTime   int    `json:"RunTime" xml:"RunTime"`
 	Status    string `json:"Status" xml:"Status"`
-	JobType   string `json:"JobType" xml:"JobType"`
-	JobName   string `json:"JobName" xml:"JobName"`
+	RetryInfo string `json:"RetryInfo" xml:"RetryInfo"`
 }

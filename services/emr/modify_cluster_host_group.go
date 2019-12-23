@@ -76,13 +76,13 @@ func (client *Client) ModifyClusterHostGroupWithCallback(request *ModifyClusterH
 // ModifyClusterHostGroupRequest is the request struct for api ModifyClusterHostGroup
 type ModifyClusterHostGroupRequest struct {
 	*requests.RpcRequest
-	VswitchId       string           `position:"Query" name:"VswitchId"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	HostGroupId     string           `position:"Query" name:"HostGroupId"`
 	SecurityGroupId string           `position:"Query" name:"SecurityGroupId"`
-	Comment         string           `position:"Query" name:"Comment"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	HostGroupName   string           `position:"Query" name:"HostGroupName"`
+	VswitchId       string           `position:"Query" name:"VswitchId"`
+	HostGroupId     string           `position:"Query" name:"HostGroupId"`
+	Comment         string           `position:"Query" name:"Comment"`
 }
 
 // ModifyClusterHostGroupResponse is the response struct for api ModifyClusterHostGroup

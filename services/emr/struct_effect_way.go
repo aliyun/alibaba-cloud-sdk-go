@@ -17,6 +17,6 @@ package emr
 
 // EffectWay is a nested struct in emr response
 type EffectWay struct {
-	InvokeServiceName string `json:"InvokeServiceName" xml:"InvokeServiceName"`
 	EffectType        string `json:"EffectType" xml:"EffectType"`
+	InvokeServiceName string `json:"InvokeServiceName" xml:"InvokeServiceName"`
 }

@@ -83,28 +83,30 @@ type DescribeFlowJobRequest struct {
 // DescribeFlowJobResponse is the response struct for api DescribeFlowJob
 type DescribeFlowJobResponse struct {
 	*responses.BaseResponse
-	RequestId       string                        `json:"RequestId" xml:"RequestId"`
-	Id              string                        `json:"Id" xml:"Id"`
-	GmtCreate       int64                         `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified     int64                         `json:"GmtModified" xml:"GmtModified"`
-	Name            string                        `json:"Name" xml:"Name"`
-	Type            string                        `json:"Type" xml:"Type"`
-	Description     string                        `json:"Description" xml:"Description"`
-	FailAct         string                        `json:"FailAct" xml:"FailAct"`
-	MaxRetry        int                           `json:"MaxRetry" xml:"MaxRetry"`
-	RetryInterval   int64                         `json:"RetryInterval" xml:"RetryInterval"`
-	Params          string                        `json:"Params" xml:"Params"`
-	ParamConf       string                        `json:"ParamConf" xml:"ParamConf"`
-	CustomVariables string                        `json:"CustomVariables" xml:"CustomVariables"`
-	EnvConf         string                        `json:"EnvConf" xml:"EnvConf"`
-	RunConf         string                        `json:"RunConf" xml:"RunConf"`
-	MonitorConf     string                        `json:"MonitorConf" xml:"MonitorConf"`
-	CategoryId      string                        `json:"CategoryId" xml:"CategoryId"`
-	Mode            string                        `json:"mode" xml:"mode"`
-	LastInstanceId  string                        `json:"LastInstanceId" xml:"LastInstanceId"`
-	Adhoc           string                        `json:"Adhoc" xml:"Adhoc"`
-	AlertConf       string                        `json:"AlertConf" xml:"AlertConf"`
-	ResourceList    ResourceListInDescribeFlowJob `json:"ResourceList" xml:"ResourceList"`
+	RequestId         string                        `json:"RequestId" xml:"RequestId"`
+	Id                string                        `json:"Id" xml:"Id"`
+	GmtCreate         int64                         `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified       int64                         `json:"GmtModified" xml:"GmtModified"`
+	Name              string                        `json:"Name" xml:"Name"`
+	Type              string                        `json:"Type" xml:"Type"`
+	Description       string                        `json:"Description" xml:"Description"`
+	FailAct           string                        `json:"FailAct" xml:"FailAct"`
+	MaxRetry          int                           `json:"MaxRetry" xml:"MaxRetry"`
+	RetryInterval     int64                         `json:"RetryInterval" xml:"RetryInterval"`
+	Params            string                        `json:"Params" xml:"Params"`
+	ParamConf         string                        `json:"ParamConf" xml:"ParamConf"`
+	CustomVariables   string                        `json:"CustomVariables" xml:"CustomVariables"`
+	EnvConf           string                        `json:"EnvConf" xml:"EnvConf"`
+	RunConf           string                        `json:"RunConf" xml:"RunConf"`
+	MonitorConf       string                        `json:"MonitorConf" xml:"MonitorConf"`
+	CategoryId        string                        `json:"CategoryId" xml:"CategoryId"`
+	Mode              string                        `json:"mode" xml:"mode"`
+	LastInstanceId    string                        `json:"LastInstanceId" xml:"LastInstanceId"`
+	Adhoc             string                        `json:"Adhoc" xml:"Adhoc"`
+	AlertConf         string                        `json:"AlertConf" xml:"AlertConf"`
+	EditLockDetail    string                        `json:"EditLockDetail" xml:"EditLockDetail"`
+	MaxRunningTimeSec int64                         `json:"MaxRunningTimeSec" xml:"MaxRunningTimeSec"`
+	ResourceList      ResourceListInDescribeFlowJob `json:"ResourceList" xml:"ResourceList"`
 }
 
 // CreateDescribeFlowJobRequest creates a request to invoke DescribeFlowJob API

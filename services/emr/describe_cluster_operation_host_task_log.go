@@ -77,9 +77,9 @@ func (client *Client) DescribeClusterOperationHostTaskLogWithCallback(request *D
 type DescribeClusterOperationHostTaskLogRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OperationId     string           `position:"Query" name:"OperationId"`
 	HostId          string           `position:"Query" name:"HostId"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
+	OperationId     string           `position:"Query" name:"OperationId"`
 	TaskId          string           `position:"Query" name:"TaskId"`
 	Status          string           `position:"Query" name:"Status"`
 }

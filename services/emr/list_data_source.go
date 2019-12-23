@@ -78,22 +78,22 @@ type ListDataSourceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CreateFrom      string           `position:"Query" name:"CreateFrom"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	Name            string           `position:"Query" name:"Name"`
 	SourceType      string           `position:"Query" name:"SourceType"`
 	Id              string           `position:"Query" name:"Id"`
 	ProjectId       string           `position:"Query" name:"ProjectId"`
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListDataSourceResponse is the response struct for api ListDataSource
 type ListDataSourceResponse struct {
 	*responses.BaseResponse
-	RequestId      string                         `json:"RequestId" xml:"RequestId"`
-	Total          int                            `json:"Total" xml:"Total"`
-	PageSize       int                            `json:"PageSize" xml:"PageSize"`
-	PageNumber     int                            `json:"PageNumber" xml:"PageNumber"`
-	DataSourceList DataSourceListInListDataSource `json:"DataSourceList" xml:"DataSourceList"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	Total          int            `json:"Total" xml:"Total"`
+	PageSize       int            `json:"PageSize" xml:"PageSize"`
+	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
+	DataSourceList DataSourceList `json:"DataSourceList" xml:"DataSourceList"`
 }
 
 // CreateListDataSourceRequest creates a request to invoke ListDataSource API

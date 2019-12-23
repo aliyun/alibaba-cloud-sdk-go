@@ -76,10 +76,10 @@ func (client *Client) ListFlowNodeInstanceContainerStatusWithCallback(request *L
 // ListFlowNodeInstanceContainerStatusRequest is the request struct for api ListFlowNodeInstanceContainerStatus
 type ListFlowNodeInstanceContainerStatusRequest struct {
 	*requests.RpcRequest
-	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	NodeInstanceId string           `position:"Query" name:"NodeInstanceId"`
-	ProjectId      string           `position:"Query" name:"ProjectId"`
 	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	ProjectId      string           `position:"Query" name:"ProjectId"`
 }
 
 // ListFlowNodeInstanceContainerStatusResponse is the response struct for api ListFlowNodeInstanceContainerStatus

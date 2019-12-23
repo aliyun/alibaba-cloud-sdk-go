@@ -17,11 +17,11 @@ package emr
 
 // EcmResourcePool is a nested struct in emr response
 type EcmResourcePool struct {
+	Id             int64  `json:"Id" xml:"Id"`
 	Name           string `json:"Name" xml:"Name"`
 	PoolType       string `json:"PoolType" xml:"PoolType"`
-	YarnSiteConfig string `json:"YarnSiteConfig" xml:"YarnSiteConfig"`
-	UserId         string `json:"UserId" xml:"UserId"`
 	Active         bool   `json:"Active" xml:"Active"`
-	Id             int64  `json:"Id" xml:"Id"`
 	Note           string `json:"Note" xml:"Note"`
+	UserId         string `json:"UserId" xml:"UserId"`
+	YarnSiteConfig string `json:"YarnSiteConfig" xml:"YarnSiteConfig"`
 }

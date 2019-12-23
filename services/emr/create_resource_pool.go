@@ -78,10 +78,10 @@ type CreateResourcePoolRequest struct {
 	*requests.RpcRequest
 	Note            string                      `position:"Query" name:"Note"`
 	ResourceOwnerId requests.Integer            `position:"Query" name:"ResourceOwnerId"`
-	Name            string                      `position:"Query" name:"Name"`
 	Active          requests.Boolean            `position:"Query" name:"Active"`
 	ClusterId       string                      `position:"Query" name:"ClusterId"`
 	YarnSiteConfig  string                      `position:"Query" name:"YarnSiteConfig"`
+	Name            string                      `position:"Query" name:"Name"`
 	Config          *[]CreateResourcePoolConfig `position:"Query" name:"Config"  type:"Repeated"`
 	PoolType        string                      `position:"Query" name:"PoolType"`
 }

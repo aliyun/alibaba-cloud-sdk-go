@@ -77,25 +77,25 @@ func (client *Client) ListClusterHostComponentWithCallback(request *ListClusterH
 type ListClusterHostComponentRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	HostName        string           `position:"Query" name:"HostName"`
 	HostInstanceId  string           `position:"Query" name:"HostInstanceId"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	ComponentName   string           `position:"Query" name:"ComponentName"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	ComponentStatus string           `position:"Query" name:"ComponentStatus"`
+	HostName        string           `position:"Query" name:"HostName"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	ServiceName     string           `position:"Query" name:"ServiceName"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	HostRole        string           `position:"Query" name:"HostRole"`
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
-	ComponentStatus string           `position:"Query" name:"ComponentStatus"`
 }
 
 // ListClusterHostComponentResponse is the response struct for api ListClusterHostComponent
 type ListClusterHostComponentResponse struct {
 	*responses.BaseResponse
-	RequestId     string                                  `json:"RequestId" xml:"RequestId"`
-	PageNumber    int                                     `json:"PageNumber" xml:"PageNumber"`
-	PageSize      int                                     `json:"PageSize" xml:"PageSize"`
-	Total         int                                     `json:"Total" xml:"Total"`
-	ComponentList ComponentListInListClusterHostComponent `json:"ComponentList" xml:"ComponentList"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	PageNumber    int           `json:"PageNumber" xml:"PageNumber"`
+	PageSize      int           `json:"PageSize" xml:"PageSize"`
+	Total         int           `json:"Total" xml:"Total"`
+	ComponentList ComponentList `json:"ComponentList" xml:"ComponentList"`
 }
 
 // CreateListClusterHostComponentRequest creates a request to invoke ListClusterHostComponent API

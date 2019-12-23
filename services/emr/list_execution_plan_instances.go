@@ -80,9 +80,9 @@ type ListExecutionPlanInstancesRequest struct {
 	ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ExecutionPlanIdList *[]string        `position:"Query" name:"ExecutionPlanIdList"  type:"Repeated"`
 	StatusList          *[]string        `position:"Query" name:"StatusList"  type:"Repeated"`
-	PageSize            requests.Integer `position:"Query" name:"PageSize"`
 	IsDesc              requests.Boolean `position:"Query" name:"IsDesc"`
 	PageNumber          requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize            requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListExecutionPlanInstancesResponse is the response struct for api ListExecutionPlanInstances

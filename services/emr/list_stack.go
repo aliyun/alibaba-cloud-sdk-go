@@ -77,10 +77,10 @@ func (client *Client) ListStackWithCallback(request *ListStackRequest, callback 
 type ListStackRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	StackName       string           `position:"Query" name:"StackName"`
 	StackVersion    string           `position:"Query" name:"StackVersion"`
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListStackResponse is the response struct for api ListStack

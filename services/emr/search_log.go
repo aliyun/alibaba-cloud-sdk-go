@@ -77,14 +77,14 @@ func (client *Client) SearchLogWithCallback(request *SearchLogRequest, callback 
 type SearchLogRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Line            requests.Integer `position:"Query" name:"Line"`
+	HostName        string           `position:"Query" name:"HostName"`
 	LogstoreName    string           `position:"Query" name:"LogstoreName"`
 	FromTimestamp   requests.Integer `position:"Query" name:"FromTimestamp"`
 	Offset          requests.Integer `position:"Query" name:"Offset"`
-	Line            requests.Integer `position:"Query" name:"Line"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	Reverse         requests.Boolean `position:"Query" name:"Reverse"`
 	HostInnerIp     string           `position:"Query" name:"HostInnerIp"`
-	HostName        string           `position:"Query" name:"HostName"`
 	ToTimestamp     requests.Integer `position:"Query" name:"ToTimestamp"`
 	SlsQueryString  string           `position:"Query" name:"SlsQueryString"`
 }

@@ -17,7 +17,7 @@ package emr
 
 // PoolInfo is a nested struct in emr response
 type PoolInfo struct {
-	EcmResourcePool           EcmResourcePool                                     `json:"EcmResourcePool" xml:"EcmResourcePool"`
-	QueueList                 QueueListInListResourcePoolForAdmin                 `json:"QueueList" xml:"QueueList"`
-	EcmResourcePoolConfigList EcmResourcePoolConfigListInListResourcePoolForAdmin `json:"EcmResourcePoolConfigList" xml:"EcmResourcePoolConfigList"`
+	EcmResourcePool           EcmResourcePool                             `json:"EcmResourcePool" xml:"EcmResourcePool"`
+	QueueList                 QueueListInListResourcePool                 `json:"QueueList" xml:"QueueList"`
+	EcmResourcePoolConfigList EcmResourcePoolConfigListInListResourcePool `json:"EcmResourcePoolConfigList" xml:"EcmResourcePoolConfigList"`
 }

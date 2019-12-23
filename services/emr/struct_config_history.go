@@ -17,14 +17,14 @@ package emr
 
 // ConfigHistory is a nested struct in emr response
 type ConfigHistory struct {
-	NewValue       string `json:"NewValue" xml:"NewValue"`
-	ConfigFileName string `json:"ConfigFileName" xml:"ConfigFileName"`
-	Comment        string `json:"Comment" xml:"Comment"`
-	Applied        bool   `json:"Applied" xml:"Applied"`
-	OldValue       string `json:"OldValue" xml:"OldValue"`
-	Author         string `json:"Author" xml:"Author"`
-	CreateTime     int64  `json:"CreateTime" xml:"CreateTime"`
-	ConfigVersion  string `json:"ConfigVersion" xml:"ConfigVersion"`
 	ServiceName    string `json:"ServiceName" xml:"ServiceName"`
+	ConfigVersion  string `json:"ConfigVersion" xml:"ConfigVersion"`
+	ConfigFileName string `json:"ConfigFileName" xml:"ConfigFileName"`
 	ConfigItemName string `json:"ConfigItemName" xml:"ConfigItemName"`
+	NewValue       string `json:"NewValue" xml:"NewValue"`
+	OldValue       string `json:"OldValue" xml:"OldValue"`
+	Applied        bool   `json:"Applied" xml:"Applied"`
+	CreateTime     int64  `json:"CreateTime" xml:"CreateTime"`
+	Author         string `json:"Author" xml:"Author"`
+	Comment        string `json:"Comment" xml:"Comment"`
 }

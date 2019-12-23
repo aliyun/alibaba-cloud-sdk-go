@@ -77,8 +77,8 @@ func (client *Client) DeleteResourceQueueWithCallback(request *DeleteResourceQue
 type DeleteResourceQueueRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceQueueId string           `position:"Query" name:"ResourceQueueId"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
+	ResourceQueueId string           `position:"Query" name:"ResourceQueueId"`
 }
 
 // DeleteResourceQueueResponse is the response struct for api DeleteResourceQueue

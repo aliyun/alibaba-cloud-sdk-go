@@ -17,7 +17,7 @@ package emr
 
 // ConfigValue is a nested struct in emr response
 type ConfigValue struct {
-	ConfigName          string                                                    `json:"ConfigName" xml:"ConfigName"`
-	AllowCustom         bool                                                      `json:"AllowCustom" xml:"AllowCustom"`
-	ConfigItemValueList ConfigItemValueListInDescribeClusterServiceConfigForAdmin `json:"ConfigItemValueList" xml:"ConfigItemValueList"`
+	ConfigName          string                                            `json:"ConfigName" xml:"ConfigName"`
+	AllowCustom         bool                                              `json:"AllowCustom" xml:"AllowCustom"`
+	ConfigItemValueList ConfigItemValueListInDescribeClusterServiceConfig `json:"ConfigItemValueList" xml:"ConfigItemValueList"`
 }

@@ -79,15 +79,15 @@ type ListClusterHostRequest struct {
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	HostInstanceId  string           `position:"Query" name:"HostInstanceId"`
 	StatusList      *[]string        `position:"Query" name:"StatusList"  type:"Repeated"`
-	PrivateIp       string           `position:"Query" name:"PrivateIp"`
 	ComponentName   string           `position:"Query" name:"ComponentName"`
 	PublicIp        string           `position:"Query" name:"PublicIp"`
-	ClusterId       string           `position:"Query" name:"ClusterId"`
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	HostName        string           `position:"Query" name:"HostName"`
 	GroupType       string           `position:"Query" name:"GroupType"`
-	HostGroupId     string           `position:"Query" name:"HostGroupId"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	PrivateIp       string           `position:"Query" name:"PrivateIp"`
+	ClusterId       string           `position:"Query" name:"ClusterId"`
+	HostGroupId     string           `position:"Query" name:"HostGroupId"`
 }
 
 // ListClusterHostResponse is the response struct for api ListClusterHost

@@ -76,18 +76,18 @@ func (client *Client) RunClusterServiceActionWithCallback(request *RunClusterSer
 // RunClusterServiceActionRequest is the request struct for api RunClusterServiceAction
 type RunClusterServiceActionRequest struct {
 	*requests.RpcRequest
-	ExecuteStrategy             string           `position:"Query" name:"ExecuteStrategy"`
 	HostGroupIdList             *[]string        `position:"Query" name:"HostGroupIdList"  type:"Repeated"`
 	ResourceOwnerId             requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ServiceActionName           string           `position:"Query" name:"ServiceActionName"`
+	IsRolling                   requests.Boolean `position:"Query" name:"IsRolling"`
+	TotlerateFailCount          requests.Integer `position:"Query" name:"TotlerateFailCount"`
+	ServiceName                 string           `position:"Query" name:"ServiceName"`
+	ExecuteStrategy             string           `position:"Query" name:"ExecuteStrategy"`
 	OnlyRestartStaleConfigNodes requests.Boolean `position:"Query" name:"OnlyRestartStaleConfigNodes"`
 	NodeCountPerBatch           requests.Integer `position:"Query" name:"NodeCountPerBatch"`
 	ClusterId                   string           `position:"Query" name:"ClusterId"`
 	CustomCommand               string           `position:"Query" name:"CustomCommand"`
 	ComponentNameList           string           `position:"Query" name:"ComponentNameList"`
-	ServiceActionName           string           `position:"Query" name:"ServiceActionName"`
-	IsRolling                   requests.Boolean `position:"Query" name:"IsRolling"`
-	TotlerateFailCount          requests.Integer `position:"Query" name:"TotlerateFailCount"`
-	ServiceName                 string           `position:"Query" name:"ServiceName"`
 	Comment                     string           `position:"Query" name:"Comment"`
 	CustomParams                string           `position:"Query" name:"CustomParams"`
 	Interval                    requests.Integer `position:"Query" name:"Interval"`

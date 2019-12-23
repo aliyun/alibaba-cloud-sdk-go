@@ -77,12 +77,12 @@ func (client *Client) ModifyFlowProjectClusterSettingWithCallback(request *Modif
 type ModifyFlowProjectClusterSettingRequest struct {
 	*requests.RpcRequest
 	UserList     *[]string `position:"Query" name:"UserList"  type:"Repeated"`
-	QueueList    *[]string `position:"Query" name:"QueueList"  type:"Repeated"`
 	HostList     *[]string `position:"Query" name:"HostList"  type:"Repeated"`
 	ClusterId    string    `position:"Query" name:"ClusterId"`
 	DefaultQueue string    `position:"Query" name:"DefaultQueue"`
-	ProjectId    string    `position:"Query" name:"ProjectId"`
 	DefaultUser  string    `position:"Query" name:"DefaultUser"`
+	QueueList    *[]string `position:"Query" name:"QueueList"  type:"Repeated"`
+	ProjectId    string    `position:"Query" name:"ProjectId"`
 }
 
 // ModifyFlowProjectClusterSettingResponse is the response struct for api ModifyFlowProjectClusterSetting

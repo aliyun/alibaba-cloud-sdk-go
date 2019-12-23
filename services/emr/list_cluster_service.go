@@ -77,9 +77,9 @@ func (client *Client) ListClusterServiceWithCallback(request *ListClusterService
 type ListClusterServiceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListClusterServiceResponse is the response struct for api ListClusterService

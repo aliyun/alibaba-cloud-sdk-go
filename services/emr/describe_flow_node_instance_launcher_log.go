@@ -81,9 +81,9 @@ type DescribeFlowNodeInstanceLauncherLogRequest struct {
 	Length         requests.Integer `position:"Query" name:"Length"`
 	EndTime        requests.Integer `position:"Query" name:"EndTime"`
 	StartTime      requests.Integer `position:"Query" name:"StartTime"`
-	Lines          requests.Integer `position:"Query" name:"Lines"`
 	Reverse        requests.Boolean `position:"Query" name:"Reverse"`
 	NodeInstanceId string           `position:"Query" name:"NodeInstanceId"`
+	Lines          requests.Integer `position:"Query" name:"Lines"`
 	ProjectId      string           `position:"Query" name:"ProjectId"`
 }
 

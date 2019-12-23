@@ -78,10 +78,10 @@ type DescribeFlowNodeInstanceContainerLogRequest struct {
 	*requests.RpcRequest
 	Offset         requests.Integer `position:"Query" name:"Offset"`
 	LogName        string           `position:"Query" name:"LogName"`
-	AppId          string           `position:"Query" name:"AppId"`
 	Length         requests.Integer `position:"Query" name:"Length"`
-	ContainerId    string           `position:"Query" name:"ContainerId"`
 	NodeInstanceId string           `position:"Query" name:"NodeInstanceId"`
+	AppId          string           `position:"Query" name:"AppId"`
+	ContainerId    string           `position:"Query" name:"ContainerId"`
 	ProjectId      string           `position:"Query" name:"ProjectId"`
 }
 

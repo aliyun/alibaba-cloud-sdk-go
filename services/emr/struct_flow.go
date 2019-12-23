@@ -17,5 +17,5 @@ package emr
 
 // Flow is a nested struct in emr response
 type Flow struct {
-	FlowItem []FlowItem `json:"FlowItem" xml:"FlowItem"`
+	FlowItem []FlowItem `json:"Flow" xml:"Flow"`
 }

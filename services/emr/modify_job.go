@@ -76,14 +76,14 @@ func (client *Client) ModifyJobWithCallback(request *ModifyJobRequest, callback 
 // ModifyJobRequest is the request struct for api ModifyJob
 type ModifyJobRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Type            string           `position:"Query" name:"Type"`
+	FailAct         string           `position:"Query" name:"FailAct"`
 	RunParameter    string           `position:"Query" name:"RunParameter"`
 	RetryInterval   requests.Integer `position:"Query" name:"RetryInterval"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Name            string           `position:"Query" name:"Name"`
 	Id              string           `position:"Query" name:"Id"`
-	Type            string           `position:"Query" name:"Type"`
 	MaxRetry        requests.Integer `position:"Query" name:"MaxRetry"`
-	FailAct         string           `position:"Query" name:"FailAct"`
 }
 
 // ModifyJobResponse is the response struct for api ModifyJob

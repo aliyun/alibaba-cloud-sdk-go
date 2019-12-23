@@ -78,14 +78,15 @@ type ListClustersRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	StatusList      *[]string        `position:"Query" name:"StatusList"  type:"Repeated"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	ClusterTypeList *[]string        `position:"Query" name:"ClusterTypeList"  type:"Repeated"`
 	IsDesc          requests.Boolean `position:"Query" name:"IsDesc"`
-	CreateType      string           `position:"Query" name:"CreateType"`
 	DepositType     string           `position:"Query" name:"DepositType"`
-	DefaultStatus   requests.Boolean `position:"Query" name:"DefaultStatus"`
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	MachineType     string           `position:"Query" name:"MachineType"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	CreateType      string           `position:"Query" name:"CreateType"`
+	DefaultStatus   requests.Boolean `position:"Query" name:"DefaultStatus"`
+	Name            string           `position:"Query" name:"Name"`
+	ClusterTypeList *[]string        `position:"Query" name:"ClusterTypeList"  type:"Repeated"`
 }
 
 // ListClustersResponse is the response struct for api ListClusters

@@ -17,7 +17,7 @@ package emr
 
 // ClusterTypeInfo is a nested struct in emr response
 type ClusterTypeInfo struct {
-	ClusterType            string                              `json:"ClusterType" xml:"ClusterType"`
-	ClusterServiceInfoList ClusterServiceInfoList              `json:"ClusterServiceInfoList" xml:"ClusterServiceInfoList"`
-	ServiceInfoList        ServiceInfoListInListEmrMainVersion `json:"ServiceInfoList" xml:"ServiceInfoList"`
+	ClusterType            string                                  `json:"ClusterType" xml:"ClusterType"`
+	ClusterServiceInfoList ClusterServiceInfoList                  `json:"ClusterServiceInfoList" xml:"ClusterServiceInfoList"`
+	ServiceInfoList        ServiceInfoListInDescribeEmrMainVersion `json:"ServiceInfoList" xml:"ServiceInfoList"`
 }

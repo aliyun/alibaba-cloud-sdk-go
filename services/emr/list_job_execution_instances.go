@@ -77,20 +77,20 @@ func (client *Client) ListJobExecutionInstancesWithCallback(request *ListJobExec
 type ListJobExecutionInstancesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ExecutionPlanInstanceId string           `position:"Query" name:"ExecutionPlanInstanceId"`
-	PageSize                requests.Integer `position:"Query" name:"PageSize"`
 	IsDesc                  requests.Boolean `position:"Query" name:"IsDesc"`
 	PageNumber              requests.Integer `position:"Query" name:"PageNumber"`
+	ExecutionPlanInstanceId string           `position:"Query" name:"ExecutionPlanInstanceId"`
+	PageSize                requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListJobExecutionInstancesResponse is the response struct for api ListJobExecutionInstances
 type ListJobExecutionInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId    string                                  `json:"RequestId" xml:"RequestId"`
-	TotalCount   int                                     `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   int                                     `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int                                     `json:"PageSize" xml:"PageSize"`
-	JobInstances JobInstancesInListJobExecutionInstances `json:"JobInstances" xml:"JobInstances"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
+	PageNumber   int          `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int          `json:"PageSize" xml:"PageSize"`
+	JobInstances JobInstances `json:"JobInstances" xml:"JobInstances"`
 }
 
 // CreateListJobExecutionInstancesRequest creates a request to invoke ListJobExecutionInstances API

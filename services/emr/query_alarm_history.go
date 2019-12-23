@@ -78,10 +78,10 @@ type QueryAlarmHistoryRequest struct {
 	*requests.RpcRequest
 	Cursor          string           `position:"Query" name:"Cursor"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Size            requests.Integer `position:"Query" name:"Size"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	StartTimeStamp  requests.Integer `position:"Query" name:"StartTimeStamp"`
 	EndTimeStamp    requests.Integer `position:"Query" name:"EndTimeStamp"`
+	Size            requests.Integer `position:"Query" name:"Size"`
 }
 
 // QueryAlarmHistoryResponse is the response struct for api QueryAlarmHistory

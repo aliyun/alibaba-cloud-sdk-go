@@ -76,20 +76,20 @@ func (client *Client) ModifyScalingRuleWithCallback(request *ModifyScalingRuleRe
 // ModifyScalingRuleRequest is the request struct for api ModifyScalingRule
 type ModifyScalingRuleRequest struct {
 	*requests.RpcRequest
-	LaunchTime           string                                `position:"Query" name:"LaunchTime"`
 	ResourceOwnerId      requests.Integer                      `position:"Query" name:"ResourceOwnerId"`
-	AdjustmentValue      requests.Integer                      `position:"Query" name:"AdjustmentValue"`
-	AdjustmentType       string                                `position:"Query" name:"AdjustmentType"`
 	RuleName             string                                `position:"Query" name:"RuleName"`
-	ClusterId            string                                `position:"Query" name:"ClusterId"`
 	ScalingRuleId        string                                `position:"Query" name:"ScalingRuleId"`
-	LaunchExpirationTime requests.Integer                      `position:"Query" name:"LaunchExpirationTime"`
-	RecurrenceValue      string                                `position:"Query" name:"RecurrenceValue"`
 	RecurrenceEndTime    string                                `position:"Query" name:"RecurrenceEndTime"`
 	CloudWatchTrigger    *[]ModifyScalingRuleCloudWatchTrigger `position:"Query" name:"CloudWatchTrigger"  type:"Repeated"`
+	Cooldown             requests.Integer                      `position:"Query" name:"Cooldown"`
+	LaunchTime           string                                `position:"Query" name:"LaunchTime"`
+	AdjustmentValue      requests.Integer                      `position:"Query" name:"AdjustmentValue"`
+	AdjustmentType       string                                `position:"Query" name:"AdjustmentType"`
+	ClusterId            string                                `position:"Query" name:"ClusterId"`
+	LaunchExpirationTime requests.Integer                      `position:"Query" name:"LaunchExpirationTime"`
+	RecurrenceValue      string                                `position:"Query" name:"RecurrenceValue"`
 	HostGroupId          string                                `position:"Query" name:"HostGroupId"`
 	SchedulerTrigger     *[]ModifyScalingRuleSchedulerTrigger  `position:"Query" name:"SchedulerTrigger"  type:"Repeated"`
-	Cooldown             requests.Integer                      `position:"Query" name:"Cooldown"`
 	RecurrenceType       string                                `position:"Query" name:"RecurrenceType"`
 }
 

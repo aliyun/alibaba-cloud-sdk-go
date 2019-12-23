@@ -19,11 +19,12 @@ package emr
 type ParentFlow struct {
 	BizDate              int64  `json:"BizDate" xml:"BizDate"`
 	FlowId               string `json:"FlowId" xml:"FlowId"`
-	ScheduleKey          string `json:"ScheduleKey" xml:"ScheduleKey"`
 	ParentFlowId         string `json:"ParentFlowId" xml:"ParentFlowId"`
 	ProjectName          string `json:"ProjectName" xml:"ProjectName"`
+	ScheduleKey          string `json:"ScheduleKey" xml:"ScheduleKey"`
 	ProjectId            string `json:"ProjectId" xml:"ProjectId"`
 	DependencyFlowId     string `json:"DependencyFlowId" xml:"DependencyFlowId"`
+	Meet                 bool   `json:"Meet" xml:"Meet"`
 	FlowInstanceId       string `json:"FlowInstanceId" xml:"FlowInstanceId"`
 	DependencyInstanceId string `json:"DependencyInstanceId" xml:"DependencyInstanceId"`
 	ParentFlowName       string `json:"ParentFlowName" xml:"ParentFlowName"`

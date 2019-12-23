@@ -17,13 +17,13 @@ package emr
 
 // EcmResourceQueue is a nested struct in emr response
 type EcmResourceQueue struct {
+	Id             int64  `json:"Id" xml:"Id"`
 	Name           string `json:"Name" xml:"Name"`
 	QualifiedName  string `json:"QualifiedName" xml:"QualifiedName"`
-	UserId         string `json:"UserId" xml:"UserId"`
 	QueueType      string `json:"QueueType" xml:"QueueType"`
-	Id             int64  `json:"Id" xml:"Id"`
 	ParentQueueId  int64  `json:"ParentQueueId" xml:"ParentQueueId"`
-	Status         string `json:"Status" xml:"Status"`
 	Leaf           bool   `json:"Leaf" xml:"Leaf"`
+	Status         string `json:"Status" xml:"Status"`
+	UserId         string `json:"UserId" xml:"UserId"`
 	ResourcePoolId int64  `json:"ResourcePoolId" xml:"ResourcePoolId"`
 }

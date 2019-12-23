@@ -76,11 +76,11 @@ func (client *Client) ListFlowCategoryWithCallback(request *ListFlowCategoryRequ
 // ListFlowCategoryRequest is the request struct for api ListFlowCategory
 type ListFlowCategoryRequest struct {
 	*requests.RpcRequest
+	ParentId   string           `position:"Query" name:"ParentId"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	Root       requests.Boolean `position:"Query" name:"Root"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	ProjectId  string           `position:"Query" name:"ProjectId"`
-	ParentId   string           `position:"Query" name:"ParentId"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListFlowCategoryResponse is the response struct for api ListFlowCategory

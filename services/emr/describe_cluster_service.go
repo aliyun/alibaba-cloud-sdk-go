@@ -77,8 +77,8 @@ func (client *Client) DescribeClusterServiceWithCallback(request *DescribeCluste
 type DescribeClusterServiceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ServiceName     string           `position:"Query" name:"ServiceName"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
+	ServiceName     string           `position:"Query" name:"ServiceName"`
 }
 
 // DescribeClusterServiceResponse is the response struct for api DescribeClusterService

@@ -10,12 +10,15 @@ var EndpointType = "regional"
 func GetEndpointMap() map[string]string {
 	if EndpointMap == nil {
 		EndpointMap = map[string]string{
-			"cn-shenzhen":    "emr.aliyuncs.com",
-			"cn-beijing":     "emr.aliyuncs.com",
-			"cn-shanghai":    "emr.aliyuncs.com",
-			"ap-southeast-1": "emr.aliyuncs.com",
-			"us-west-1":      "emr.aliyuncs.com",
-			"cn-hangzhou":    "emr.aliyuncs.com",
+			"cn-shenzhen":           "emr.aliyuncs.com",
+			"cn-beijing":            "emr.aliyuncs.com",
+			"cn-shanghai":           "emr.aliyuncs.com",
+			"cn-shanghai-finance-1": "emr.aliyuncs.com",
+			"cn-hangzhou-finance":   "emr.aliyuncs.com",
+			"ap-southeast-1":        "emr.aliyuncs.com",
+			"cn-shenzhen-finance-1": "emr.aliyuncs.com",
+			"us-west-1":             "emr.aliyuncs.com",
+			"cn-hangzhou":           "emr.aliyuncs.com",
 		}
 	}
 	return EndpointMap

@@ -76,8 +76,11 @@ func (client *Client) DescribeFlowCategoryTreeWithCallback(request *DescribeFlow
 // DescribeFlowCategoryTreeRequest is the request struct for api DescribeFlowCategoryTree
 type DescribeFlowCategoryTreeRequest struct {
 	*requests.RpcRequest
-	Type      string `position:"Query" name:"Type"`
-	ProjectId string `position:"Query" name:"ProjectId"`
+	Type       string `position:"Query" name:"Type"`
+	Mode       string `position:"Query" name:"Mode"`
+	Keyword    string `position:"Query" name:"Keyword"`
+	ProjectId  string `position:"Query" name:"ProjectId"`
+	CategoryId string `position:"Query" name:"CategoryId"`
 }
 
 // DescribeFlowCategoryTreeResponse is the response struct for api DescribeFlowCategoryTree

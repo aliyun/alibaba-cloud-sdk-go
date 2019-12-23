@@ -76,24 +76,26 @@ func (client *Client) CreateFlowJobWithCallback(request *CreateFlowJobRequest, c
 // CreateFlowJobRequest is the request struct for api CreateFlowJob
 type CreateFlowJobRequest struct {
 	*requests.RpcRequest
-	RunConf        string                       `position:"Query" name:"RunConf"`
-	EnvConf        string                       `position:"Query" name:"EnvConf"`
-	Description    string                       `position:"Query" name:"Description"`
-	ClusterId      string                       `position:"Query" name:"ClusterId"`
-	Type           string                       `position:"Query" name:"Type"`
-	Params         string                       `position:"Query" name:"Params"`
-	ParamConf      string                       `position:"Query" name:"ParamConf"`
-	ResourceList   *[]CreateFlowJobResourceList `position:"Query" name:"ResourceList"  type:"Repeated"`
-	FailAct        string                       `position:"Query" name:"FailAct"`
-	Mode           string                       `position:"Query" name:"Mode"`
-	RetryInterval  requests.Integer             `position:"Query" name:"RetryInterval"`
-	MonitorConf    string                       `position:"Query" name:"MonitorConf"`
-	Name           string                       `position:"Query" name:"Name"`
-	MaxRetry       requests.Integer             `position:"Query" name:"MaxRetry"`
-	Adhoc          requests.Boolean             `position:"Query" name:"Adhoc"`
-	AlertConf      string                       `position:"Query" name:"AlertConf"`
-	ProjectId      string                       `position:"Query" name:"ProjectId"`
-	ParentCategory string                       `position:"Query" name:"ParentCategory"`
+	RunConf           string                       `position:"Query" name:"RunConf"`
+	Description       string                       `position:"Query" name:"Description"`
+	Type              string                       `position:"Query" name:"Type"`
+	ParamConf         string                       `position:"Query" name:"ParamConf"`
+	ResourceList      *[]CreateFlowJobResourceList `position:"Query" name:"ResourceList"  type:"Repeated"`
+	FailAct           string                       `position:"Query" name:"FailAct"`
+	Mode              string                       `position:"Query" name:"Mode"`
+	MonitorConf       string                       `position:"Query" name:"MonitorConf"`
+	MaxRetry          requests.Integer             `position:"Query" name:"MaxRetry"`
+	AlertConf         string                       `position:"Query" name:"AlertConf"`
+	ProjectId         string                       `position:"Query" name:"ProjectId"`
+	EnvConf           string                       `position:"Query" name:"EnvConf"`
+	MaxRunningTimeSec requests.Integer             `position:"Query" name:"MaxRunningTimeSec"`
+	ClusterId         string                       `position:"Query" name:"ClusterId"`
+	Params            string                       `position:"Query" name:"Params"`
+	CustomVariables   string                       `position:"Query" name:"CustomVariables"`
+	RetryInterval     requests.Integer             `position:"Query" name:"RetryInterval"`
+	Name              string                       `position:"Query" name:"Name"`
+	Adhoc             requests.Boolean             `position:"Query" name:"Adhoc"`
+	ParentCategory    string                       `position:"Query" name:"ParentCategory"`
 }
 
 // CreateFlowJobResourceList is a repeated param struct in CreateFlowJobRequest

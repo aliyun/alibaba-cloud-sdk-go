@@ -76,10 +76,10 @@ func (client *Client) ListFlowProjectWithCallback(request *ListFlowProjectReques
 // ListFlowProjectRequest is the request struct for api ListFlowProject
 type ListFlowProjectRequest struct {
 	*requests.RpcRequest
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	Name       string           `position:"Query" name:"Name"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	ProjectId  string           `position:"Query" name:"ProjectId"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListFlowProjectResponse is the response struct for api ListFlowProject

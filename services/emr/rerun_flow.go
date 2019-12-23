@@ -77,8 +77,8 @@ func (client *Client) RerunFlowWithCallback(request *RerunFlowRequest, callback 
 type RerunFlowRequest struct {
 	*requests.RpcRequest
 	FlowInstanceId string           `position:"Query" name:"FlowInstanceId"`
-	ProjectId      string           `position:"Query" name:"ProjectId"`
 	ReRunFail      requests.Boolean `position:"Query" name:"ReRunFail"`
+	ProjectId      string           `position:"Query" name:"ProjectId"`
 }
 
 // RerunFlowResponse is the response struct for api RerunFlow

@@ -17,23 +17,16 @@ package emr
 
 // DataSource is a nested struct in emr response
 type DataSource struct {
-	Name           string                                  `json:"Name" xml:"Name"`
-	ClusterId      string                                  `json:"ClusterId" xml:"ClusterId"`
-	Capacity       int64                                   `json:"Capacity" xml:"Capacity"`
-	UsedSize       int64                                   `json:"UsedSize" xml:"UsedSize"`
-	CreateFrom     string                                  `json:"CreateFrom" xml:"CreateFrom"`
-	GmtCreate      int64                                   `json:"GmtCreate" xml:"GmtCreate"`
-	Conf           string                                  `json:"Conf" xml:"Conf"`
-	SourceType     string                                  `json:"SourceType" xml:"SourceType"`
-	Modifier       string                                  `json:"Modifier" xml:"Modifier"`
-	ConnectionInfo string                                  `json:"ConnectionInfo" xml:"ConnectionInfo"`
-	UserId         string                                  `json:"UserId" xml:"UserId"`
-	Creator        string                                  `json:"Creator" xml:"Creator"`
-	GmtModified    int64                                   `json:"GmtModified" xml:"GmtModified"`
-	ClusterBizId   string                                  `json:"ClusterBizId" xml:"ClusterBizId"`
-	ClusterName    string                                  `json:"ClusterName" xml:"ClusterName"`
-	Id             string                                  `json:"Id" xml:"Id"`
-	Status         string                                  `json:"Status" xml:"Status"`
-	Description    string                                  `json:"Description" xml:"Description"`
-	ConfigList     ConfigListInMetastoreDescribeDataSource `json:"ConfigList" xml:"ConfigList"`
+	Id          string `json:"Id" xml:"Id"`
+	Name        string `json:"Name" xml:"Name"`
+	Description string `json:"Description" xml:"Description"`
+	Status      string `json:"Status" xml:"Status"`
+	SourceType  string `json:"SourceType" xml:"SourceType"`
+	CreateFrom  string `json:"CreateFrom" xml:"CreateFrom"`
+	Conf        string `json:"Conf" xml:"Conf"`
+	ClusterId   string `json:"ClusterId" xml:"ClusterId"`
+	Creator     string `json:"Creator" xml:"Creator"`
+	Modifier    string `json:"Modifier" xml:"Modifier"`
+	GmtCreate   int64  `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified int64  `json:"GmtModified" xml:"GmtModified"`
 }

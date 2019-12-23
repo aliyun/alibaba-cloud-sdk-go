@@ -81,36 +81,36 @@ type CreateExecutionPlanRequest struct {
 	LogPath                string                                `position:"Query" name:"LogPath"`
 	ClusterName            string                                `position:"Query" name:"ClusterName"`
 	Configurations         string                                `position:"Query" name:"Configurations"`
-	IoOptimized            requests.Boolean                      `position:"Query" name:"IoOptimized"`
-	SecurityGroupId        string                                `position:"Query" name:"SecurityGroupId"`
-	EasEnable              requests.Boolean                      `position:"Query" name:"EasEnable"`
 	CreateClusterOnDemand  requests.Boolean                      `position:"Query" name:"CreateClusterOnDemand"`
 	StartTime              requests.Integer                      `position:"Query" name:"StartTime"`
-	JobIdList              *[]string                             `position:"Query" name:"JobIdList"  type:"Repeated"`
-	DayOfMonth             string                                `position:"Query" name:"DayOfMonth"`
 	BootstrapAction        *[]CreateExecutionPlanBootstrapAction `position:"Query" name:"BootstrapAction"  type:"Repeated"`
-	UseLocalMetaDb         requests.Boolean                      `position:"Query" name:"UseLocalMetaDb"`
 	EmrVer                 string                                `position:"Query" name:"EmrVer"`
-	UserDefinedEmrEcsRole  string                                `position:"Query" name:"UserDefinedEmrEcsRole"`
 	IsOpenPublicIp         requests.Boolean                      `position:"Query" name:"IsOpenPublicIp"`
-	ClusterId              string                                `position:"Query" name:"ClusterId"`
-	TimeUnit               string                                `position:"Query" name:"TimeUnit"`
 	InstanceGeneration     string                                `position:"Query" name:"InstanceGeneration"`
 	ClusterType            string                                `position:"Query" name:"ClusterType"`
 	VSwitchId              string                                `position:"Query" name:"VSwitchId"`
 	OptionSoftWareList     *[]string                             `position:"Query" name:"OptionSoftWareList"  type:"Repeated"`
-	VpcId                  string                                `position:"Query" name:"VpcId"`
 	NetType                string                                `position:"Query" name:"NetType"`
 	EcsOrder               *[]CreateExecutionPlanEcsOrder        `position:"Query" name:"EcsOrder"  type:"Repeated"`
-	WorkflowDefinition     string                                `position:"Query" name:"WorkflowDefinition"`
 	Name                   string                                `position:"Query" name:"Name"`
-	DayOfWeek              string                                `position:"Query" name:"DayOfWeek"`
 	ZoneId                 string                                `position:"Query" name:"ZoneId"`
 	UseCustomHiveMetaDB    requests.Boolean                      `position:"Query" name:"UseCustomHiveMetaDB"`
+	InitCustomHiveMetaDB   requests.Boolean                      `position:"Query" name:"InitCustomHiveMetaDB"`
+	IoOptimized            requests.Boolean                      `position:"Query" name:"IoOptimized"`
+	SecurityGroupId        string                                `position:"Query" name:"SecurityGroupId"`
+	EasEnable              requests.Boolean                      `position:"Query" name:"EasEnable"`
+	JobIdList              *[]string                             `position:"Query" name:"JobIdList"  type:"Repeated"`
+	DayOfMonth             string                                `position:"Query" name:"DayOfMonth"`
+	UseLocalMetaDb         requests.Boolean                      `position:"Query" name:"UseLocalMetaDb"`
+	UserDefinedEmrEcsRole  string                                `position:"Query" name:"UserDefinedEmrEcsRole"`
+	ClusterId              string                                `position:"Query" name:"ClusterId"`
+	TimeUnit               string                                `position:"Query" name:"TimeUnit"`
+	VpcId                  string                                `position:"Query" name:"VpcId"`
+	WorkflowDefinition     string                                `position:"Query" name:"WorkflowDefinition"`
+	DayOfWeek              string                                `position:"Query" name:"DayOfWeek"`
 	Strategy               string                                `position:"Query" name:"Strategy"`
 	Config                 *[]CreateExecutionPlanConfig          `position:"Query" name:"Config"  type:"Repeated"`
 	HighAvailabilityEnable requests.Boolean                      `position:"Query" name:"HighAvailabilityEnable"`
-	InitCustomHiveMetaDB   requests.Boolean                      `position:"Query" name:"InitCustomHiveMetaDB"`
 	LogEnable              requests.Boolean                      `position:"Query" name:"LogEnable"`
 }
 

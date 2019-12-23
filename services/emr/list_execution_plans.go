@@ -76,16 +76,16 @@ func (client *Client) ListExecutionPlansWithCallback(request *ListExecutionPlans
 // ListExecutionPlansRequest is the request struct for api ListExecutionPlans
 type ListExecutionPlansRequest struct {
 	*requests.RpcRequest
-	JobId           string           `position:"Query" name:"JobId"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	StatusList      *[]string        `position:"Query" name:"StatusList"  type:"Repeated"`
+	IsDesc          requests.Boolean `position:"Query" name:"IsDesc"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	JobId           string           `position:"Query" name:"JobId"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	QueryType       string           `position:"Query" name:"QueryType"`
 	QueryString     string           `position:"Query" name:"QueryString"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
-	IsDesc          requests.Boolean `position:"Query" name:"IsDesc"`
 	Strategy        string           `position:"Query" name:"Strategy"`
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
-	QueryType       string           `position:"Query" name:"QueryType"`
 }
 
 // ListExecutionPlansResponse is the response struct for api ListExecutionPlans

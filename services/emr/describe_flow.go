@@ -104,6 +104,7 @@ type DescribeFlowResponse struct {
 	AlertUserGroupBizId     string         `json:"AlertUserGroupBizId" xml:"AlertUserGroupBizId"`
 	AlertDingDingGroupBizId string         `json:"AlertDingDingGroupBizId" xml:"AlertDingDingGroupBizId"`
 	Application             string         `json:"Application" xml:"Application"`
+	EditLockDetail          string         `json:"EditLockDetail" xml:"EditLockDetail"`
 	ParentFlowList          ParentFlowList `json:"ParentFlowList" xml:"ParentFlowList"`
 }
 

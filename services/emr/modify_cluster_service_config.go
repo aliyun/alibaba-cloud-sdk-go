@@ -78,15 +78,15 @@ type ModifyClusterServiceConfigRequest struct {
 	*requests.RpcRequest
 	RefreshHostConfig    requests.Boolean `position:"Query" name:"RefreshHostConfig"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ConfigType           string           `position:"Query" name:"ConfigType"`
 	HostInstanceId       string           `position:"Query" name:"HostInstanceId"`
+	ServiceName          string           `position:"Query" name:"ServiceName"`
+	GatewayClusterIdList *[]string        `position:"Query" name:"GatewayClusterIdList"  type:"Repeated"`
+	ConfigParams         string           `position:"Query" name:"ConfigParams"`
+	ConfigType           string           `position:"Query" name:"ConfigType"`
 	GroupId              string           `position:"Query" name:"GroupId"`
 	ClusterId            string           `position:"Query" name:"ClusterId"`
 	CustomConfigParams   string           `position:"Query" name:"CustomConfigParams"`
-	ServiceName          string           `position:"Query" name:"ServiceName"`
 	Comment              string           `position:"Query" name:"Comment"`
-	GatewayClusterIdList *[]string        `position:"Query" name:"GatewayClusterIdList"  type:"Repeated"`
-	ConfigParams         string           `position:"Query" name:"ConfigParams"`
 }
 
 // ModifyClusterServiceConfigResponse is the response struct for api ModifyClusterServiceConfig

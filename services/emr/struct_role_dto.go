@@ -17,10 +17,10 @@ package emr
 
 // RoleDTO is a nested struct in emr response
 type RoleDTO struct {
+	Id           int64  `json:"Id" xml:"Id"`
 	Name         string `json:"Name" xml:"Name"`
 	ResourceType string `json:"ResourceType" xml:"ResourceType"`
 	GmtCreate    string `json:"GmtCreate" xml:"GmtCreate"`
 	GmtModified  string `json:"GmtModified" xml:"GmtModified"`
-	Id           int64  `json:"Id" xml:"Id"`
 	Description  string `json:"Description" xml:"Description"`
 }

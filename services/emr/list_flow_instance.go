@@ -76,17 +76,17 @@ func (client *Client) ListFlowInstanceWithCallback(request *ListFlowInstanceRequ
 // ListFlowInstanceRequest is the request struct for api ListFlowInstance
 type ListFlowInstanceRequest struct {
 	*requests.RpcRequest
+	StatusList *[]string        `position:"Query" name:"StatusList"  type:"Repeated"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	Id         string           `position:"Query" name:"Id"`
+	ProjectId  string           `position:"Query" name:"ProjectId"`
 	Owner      string           `position:"Query" name:"Owner"`
 	TimeRange  string           `position:"Query" name:"TimeRange"`
-	StatusList *[]string        `position:"Query" name:"StatusList"  type:"Repeated"`
 	OrderBy    string           `position:"Query" name:"OrderBy"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId string           `position:"Query" name:"InstanceId"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	FlowName   string           `position:"Query" name:"FlowName"`
-	Id         string           `position:"Query" name:"Id"`
 	FlowId     string           `position:"Query" name:"FlowId"`
-	ProjectId  string           `position:"Query" name:"ProjectId"`
 	OrderType  string           `position:"Query" name:"OrderType"`
 }
 

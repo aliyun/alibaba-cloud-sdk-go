@@ -77,9 +77,9 @@ func (client *Client) DescribeScalingRuleWithCallback(request *DescribeScalingRu
 type DescribeScalingRuleRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	HostGroupId     string           `position:"Query" name:"HostGroupId"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	ScalingRuleId   string           `position:"Query" name:"ScalingRuleId"`
+	HostGroupId     string           `position:"Query" name:"HostGroupId"`
 }
 
 // DescribeScalingRuleResponse is the response struct for api DescribeScalingRule

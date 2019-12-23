@@ -76,10 +76,10 @@ func (client *Client) AuthorizeSecurityGroupWithCallback(request *AuthorizeSecur
 // AuthorizeSecurityGroupRequest is the request struct for api AuthorizeSecurityGroup
 type AuthorizeSecurityGroupRequest struct {
 	*requests.RpcRequest
-	BizType         string           `position:"Query" name:"BizType"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	BizContent      string           `position:"Query" name:"BizContent"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
+	BizType         string           `position:"Query" name:"BizType"`
+	BizContent      string           `position:"Query" name:"BizContent"`
 }
 
 // AuthorizeSecurityGroupResponse is the response struct for api AuthorizeSecurityGroup

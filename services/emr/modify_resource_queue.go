@@ -77,13 +77,13 @@ func (client *Client) ModifyResourceQueueWithCallback(request *ModifyResourceQue
 type ModifyResourceQueueRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer             `position:"Query" name:"ResourceOwnerId"`
-	ParentQueueId   requests.Integer             `position:"Query" name:"ParentQueueId"`
-	Name            string                       `position:"Query" name:"Name"`
 	QualifiedName   string                       `position:"Query" name:"QualifiedName"`
 	ResourcePoolId  requests.Integer             `position:"Query" name:"ResourcePoolId"`
-	Id              string                       `position:"Query" name:"Id"`
 	ClusterId       string                       `position:"Query" name:"ClusterId"`
 	Leaf            requests.Boolean             `position:"Query" name:"Leaf"`
+	ParentQueueId   requests.Integer             `position:"Query" name:"ParentQueueId"`
+	Name            string                       `position:"Query" name:"Name"`
+	Id              string                       `position:"Query" name:"Id"`
 	Config          *[]ModifyResourceQueueConfig `position:"Query" name:"Config"  type:"Repeated"`
 }
 

@@ -17,30 +17,25 @@ package emr
 
 // Host is a nested struct in emr response
 type Host struct {
-	HostId         string                    `json:"HostId" xml:"HostId"`
-	PublicIp       string                    `json:"PublicIp" xml:"PublicIp"`
-	ChargeType     string                    `json:"ChargeType" xml:"ChargeType"`
-	CreateTime     string                    `json:"CreateTime" xml:"CreateTime"`
-	InstanceType   string                    `json:"InstanceType" xml:"InstanceType"`
-	EndTime        int64                     `json:"EndTime" xml:"EndTime"`
-	SerialNumber   string                    `json:"SerialNumber" xml:"SerialNumber"`
-	StartTime      int64                     `json:"StartTime" xml:"StartTime"`
-	Role           string                    `json:"Role" xml:"Role"`
-	PrivateIp      string                    `json:"PrivateIp" xml:"PrivateIp"`
-	InstanceStatus string                    `json:"InstanceStatus" xml:"InstanceStatus"`
-	ExpiredTime    int64                     `json:"ExpiredTime" xml:"ExpiredTime"`
-	Type           string                    `json:"Type" xml:"Type"`
-	Message        string                    `json:"Message" xml:"Message"`
-	HostInstanceId string                    `json:"HostInstanceId" xml:"HostInstanceId"`
-	Data           string                    `json:"Data" xml:"Data"`
-	Memory         int                       `json:"Memory" xml:"Memory"`
-	EmrExpiredTime string                    `json:"EmrExpiredTime" xml:"EmrExpiredTime"`
-	State          string                    `json:"State" xml:"State"`
-	ZoneId         string                    `json:"ZoneId" xml:"ZoneId"`
-	HostName       string                    `json:"HostName" xml:"HostName"`
-	Cpu            int                       `json:"Cpu" xml:"Cpu"`
-	Status         string                    `json:"Status" xml:"Status"`
-	SupportIpV6    bool                      `json:"SupportIpV6" xml:"SupportIpV6"`
-	HostGroupId    string                    `json:"HostGroupId" xml:"HostGroupId"`
-	DiskList       DiskListInListClusterHost `json:"DiskList" xml:"DiskList"`
+	HostInstanceId string   `json:"HostInstanceId" xml:"HostInstanceId"`
+	PublicIp       string   `json:"PublicIp" xml:"PublicIp"`
+	HostId         string   `json:"HostId" xml:"HostId"`
+	Memory         int      `json:"Memory" xml:"Memory"`
+	ChargeType     string   `json:"ChargeType" xml:"ChargeType"`
+	CreateTime     string   `json:"CreateTime" xml:"CreateTime"`
+	InstanceType   string   `json:"InstanceType" xml:"InstanceType"`
+	SerialNumber   string   `json:"SerialNumber" xml:"SerialNumber"`
+	EmrExpiredTime string   `json:"EmrExpiredTime" xml:"EmrExpiredTime"`
+	Role           string   `json:"Role" xml:"Role"`
+	ZoneId         string   `json:"ZoneId" xml:"ZoneId"`
+	PrivateIp      string   `json:"PrivateIp" xml:"PrivateIp"`
+	InstanceStatus string   `json:"InstanceStatus" xml:"InstanceStatus"`
+	HostName       string   `json:"HostName" xml:"HostName"`
+	Cpu            int      `json:"Cpu" xml:"Cpu"`
+	Status         string   `json:"Status" xml:"Status"`
+	SupportIpV6    bool     `json:"SupportIpV6" xml:"SupportIpV6"`
+	ExpiredTime    int64    `json:"ExpiredTime" xml:"ExpiredTime"`
+	HostGroupId    string   `json:"HostGroupId" xml:"HostGroupId"`
+	Type           string   `json:"Type" xml:"Type"`
+	DiskList       DiskList `json:"DiskList" xml:"DiskList"`
 }

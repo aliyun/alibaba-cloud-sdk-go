@@ -77,21 +77,21 @@ func (client *Client) ModifyFlowWithCallback(request *ModifyFlowRequest, callbac
 type ModifyFlowRequest struct {
 	*requests.RpcRequest
 	CronExpr                string           `position:"Query" name:"CronExpr"`
-	ParentFlowList          string           `position:"Query" name:"ParentFlowList"`
-	AlertDingDingGroupBizId string           `position:"Query" name:"AlertDingDingGroupBizId"`
 	Periodic                requests.Boolean `position:"Query" name:"Periodic"`
-	StartSchedule           requests.Integer `position:"Query" name:"StartSchedule"`
 	Description             string           `position:"Query" name:"Description"`
-	ClusterId               string           `position:"Query" name:"ClusterId"`
 	AlertUserGroupBizId     string           `position:"Query" name:"AlertUserGroupBizId"`
 	HostName                string           `position:"Query" name:"HostName"`
-	Application             string           `position:"Query" name:"Application"`
 	CreateCluster           requests.Boolean `position:"Query" name:"CreateCluster"`
-	Name                    string           `position:"Query" name:"Name"`
 	EndSchedule             requests.Integer `position:"Query" name:"EndSchedule"`
 	Id                      string           `position:"Query" name:"Id"`
 	AlertConf               string           `position:"Query" name:"AlertConf"`
 	ProjectId               string           `position:"Query" name:"ProjectId"`
+	ParentFlowList          string           `position:"Query" name:"ParentFlowList"`
+	AlertDingDingGroupBizId string           `position:"Query" name:"AlertDingDingGroupBizId"`
+	StartSchedule           requests.Integer `position:"Query" name:"StartSchedule"`
+	ClusterId               string           `position:"Query" name:"ClusterId"`
+	Application             string           `position:"Query" name:"Application"`
+	Name                    string           `position:"Query" name:"Name"`
 	Status                  string           `position:"Query" name:"Status"`
 	ParentCategory          string           `position:"Query" name:"ParentCategory"`
 }

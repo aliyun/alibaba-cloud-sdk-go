@@ -76,10 +76,10 @@ func (client *Client) CreateFlowCategoryWithCallback(request *CreateFlowCategory
 // CreateFlowCategoryRequest is the request struct for api CreateFlowCategory
 type CreateFlowCategoryRequest struct {
 	*requests.RpcRequest
-	Name      string `position:"Query" name:"Name"`
 	Type      string `position:"Query" name:"Type"`
-	ProjectId string `position:"Query" name:"ProjectId"`
 	ParentId  string `position:"Query" name:"ParentId"`
+	Name      string `position:"Query" name:"Name"`
+	ProjectId string `position:"Query" name:"ProjectId"`
 }
 
 // CreateFlowCategoryResponse is the response struct for api CreateFlowCategory

@@ -76,23 +76,23 @@ func (client *Client) ListFlowJobWithCallback(request *ListFlowJobRequest, callb
 // ListFlowJobRequest is the request struct for api ListFlowJob
 type ListFlowJobRequest struct {
 	*requests.RpcRequest
+	Type       string           `position:"Query" name:"Type"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	Name       string           `position:"Query" name:"Name"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	Id         string           `position:"Query" name:"Id"`
-	Type       string           `position:"Query" name:"Type"`
 	Adhoc      requests.Boolean `position:"Query" name:"Adhoc"`
 	ProjectId  string           `position:"Query" name:"ProjectId"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListFlowJobResponse is the response struct for api ListFlowJob
 type ListFlowJobResponse struct {
 	*responses.BaseResponse
-	RequestId  string               `json:"RequestId" xml:"RequestId"`
-	PageNumber int                  `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int                  `json:"PageSize" xml:"PageSize"`
-	Total      int                  `json:"Total" xml:"Total"`
-	JobList    JobListInListFlowJob `json:"JobList" xml:"JobList"`
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
+	PageNumber int     `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int     `json:"PageSize" xml:"PageSize"`
+	Total      int     `json:"Total" xml:"Total"`
+	JobList    JobList `json:"JobList" xml:"JobList"`
 }
 
 // CreateListFlowJobRequest creates a request to invoke ListFlowJob API

@@ -17,7 +17,7 @@ package emr
 
 // ConfigTag is a nested struct in emr response
 type ConfigTag struct {
-	Tag       string                                             `json:"Tag" xml:"Tag"`
-	TagDesc   string                                             `json:"TagDesc" xml:"TagDesc"`
-	ValueList ValueListInDescribeClusterServiceConfigTagForAdmin `json:"ValueList" xml:"ValueList"`
+	Tag       string    `json:"Tag" xml:"Tag"`
+	TagDesc   string    `json:"TagDesc" xml:"TagDesc"`
+	ValueList ValueList `json:"ValueList" xml:"ValueList"`
 }

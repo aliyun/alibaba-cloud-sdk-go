@@ -77,9 +77,9 @@ func (client *Client) ReleaseClusterHostGroupWithCallback(request *ReleaseCluste
 type ReleaseClusterHostGroupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClusterId       string           `position:"Query" name:"ClusterId"`
 	HostGroupId     string           `position:"Query" name:"HostGroupId"`
 	InstanceIdList  string           `position:"Query" name:"InstanceIdList"`
-	ClusterId       string           `position:"Query" name:"ClusterId"`
 }
 
 // ReleaseClusterHostGroupResponse is the response struct for api ReleaseClusterHostGroup

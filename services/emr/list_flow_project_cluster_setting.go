@@ -76,9 +76,9 @@ func (client *Client) ListFlowProjectClusterSettingWithCallback(request *ListFlo
 // ListFlowProjectClusterSettingRequest is the request struct for api ListFlowProjectClusterSetting
 type ListFlowProjectClusterSettingRequest struct {
 	*requests.RpcRequest
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	ProjectId  string           `position:"Query" name:"ProjectId"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListFlowProjectClusterSettingResponse is the response struct for api ListFlowProjectClusterSetting

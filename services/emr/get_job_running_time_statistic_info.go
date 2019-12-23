@@ -78,10 +78,10 @@ type GetJobRunningTimeStatisticInfoRequest struct {
 	*requests.RpcRequest
 	FromDatetime    string           `position:"Query" name:"FromDatetime"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	ToDatetime      string           `position:"Query" name:"ToDatetime"`
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // GetJobRunningTimeStatisticInfoResponse is the response struct for api GetJobRunningTimeStatisticInfo

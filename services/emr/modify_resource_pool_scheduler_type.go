@@ -77,8 +77,8 @@ func (client *Client) ModifyResourcePoolSchedulerTypeWithCallback(request *Modif
 type ModifyResourcePoolSchedulerTypeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SchedulerType   string           `position:"Query" name:"SchedulerType"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
+	SchedulerType   string           `position:"Query" name:"SchedulerType"`
 }
 
 // ModifyResourcePoolSchedulerTypeResponse is the response struct for api ModifyResourcePoolSchedulerType

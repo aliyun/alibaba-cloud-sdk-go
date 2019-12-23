@@ -17,14 +17,14 @@ package emr
 
 // PropertyInfo is a nested struct in emr response
 type PropertyInfo struct {
-	Name                    string                                              `json:"Name" xml:"Name"`
-	Value                   string                                              `json:"Value" xml:"Value"`
-	Component               string                                              `json:"Component" xml:"Component"`
-	Description             string                                              `json:"Description" xml:"Description"`
-	FileName                string                                              `json:"FileName" xml:"FileName"`
-	ServiceName             string                                              `json:"ServiceName" xml:"ServiceName"`
-	DisplayName             string                                              `json:"DisplayName" xml:"DisplayName"`
-	PropertyTypes           PropertyTypesInDescribeClusterServiceConfigForAdmin `json:"PropertyTypes" xml:"PropertyTypes"`
-	EffectWay               EffectWay                                           `json:"EffectWay" xml:"EffectWay"`
-	PropertyValueAttributes PropertyValueAttributes                             `json:"PropertyValueAttributes" xml:"PropertyValueAttributes"`
+	Name                    string                  `json:"Name" xml:"Name"`
+	Value                   string                  `json:"Value" xml:"Value"`
+	Description             string                  `json:"Description" xml:"Description"`
+	FileName                string                  `json:"FileName" xml:"FileName"`
+	DisplayName             string                  `json:"DisplayName" xml:"DisplayName"`
+	ServiceName             string                  `json:"ServiceName" xml:"ServiceName"`
+	Component               string                  `json:"Component" xml:"Component"`
+	PropertyTypes           PropertyTypes           `json:"PropertyTypes" xml:"PropertyTypes"`
+	PropertyValueAttributes PropertyValueAttributes `json:"PropertyValueAttributes" xml:"PropertyValueAttributes"`
+	EffectWay               EffectWay               `json:"EffectWay" xml:"EffectWay"`
 }

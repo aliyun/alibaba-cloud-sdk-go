@@ -18,11 +18,11 @@ package emr
 // HostGroup is a nested struct in emr response
 type HostGroup struct {
 	HostGroupType         string `json:"HostGroupType" xml:"HostGroupType"`
-	LockReason            string `json:"LockReason" xml:"LockReason"`
 	MemoryCapacity        int    `json:"MemoryCapacity" xml:"MemoryCapacity"`
+	LockReason            string `json:"LockReason" xml:"LockReason"`
 	HostGroupSubType      string `json:"HostGroupSubType" xml:"HostGroupSubType"`
-	SecurityGroupId       string `json:"SecurityGroupId" xml:"SecurityGroupId"`
 	CpuCore               int    `json:"CpuCore" xml:"CpuCore"`
+	SecurityGroupId       string `json:"SecurityGroupId" xml:"SecurityGroupId"`
 	SystemDiskCount       int    `json:"SystemDiskCount" xml:"SystemDiskCount"`
 	ChargeType            string `json:"ChargeType" xml:"ChargeType"`
 	SysDiskCapacity       int    `json:"SysDiskCapacity" xml:"SysDiskCapacity"`
@@ -47,9 +47,9 @@ type HostGroup struct {
 	GmtCreate             string `json:"gmtCreate" xml:"gmtCreate"`
 	DataDiskType          string `json:"DataDiskType" xml:"DataDiskType"`
 	SysDiskType           string `json:"SysDiskType" xml:"SysDiskType"`
+	HostGroupChangeType   string `json:"HostGroupChangeType" xml:"HostGroupChangeType"`
 	Cpu                   int    `json:"Cpu" xml:"Cpu"`
 	Status                string `json:"Status" xml:"Status"`
-	HostGroupChangeType   string `json:"HostGroupChangeType" xml:"HostGroupChangeType"`
 	HostGroupId           string `json:"HostGroupId" xml:"HostGroupId"`
 	DataDiskCount         int    `json:"DataDiskCount" xml:"DataDiskCount"`
 	SystemDiskType        string `json:"SystemDiskType" xml:"SystemDiskType"`

@@ -18,5 +18,6 @@ package emr
 // Row is a nested struct in emr response
 type Row struct {
 	RowIndex    int         `json:"RowIndex" xml:"RowIndex"`
+	Columns     Columns     `json:"Columns" xml:"Columns"`
 	RowItemList RowItemList `json:"RowItemList" xml:"RowItemList"`
 }

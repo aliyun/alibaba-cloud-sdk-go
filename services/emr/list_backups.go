@@ -86,7 +86,6 @@ type ListBackupsRequest struct {
 	ServiceName     string           `position:"Query" name:"ServiceName"`
 	Id              requests.Integer `position:"Query" name:"Id"`
 	CurrentSize     requests.Integer `position:"Query" name:"CurrentSize"`
-	OrderField      string           `position:"Query" name:"OrderField"`
 	BackupId        *[]string        `position:"Query" name:"BackupId"  type:"Repeated"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	MetadataType    string           `position:"Query" name:"MetadataType"`

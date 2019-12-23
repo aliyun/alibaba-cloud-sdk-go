@@ -17,5 +17,5 @@ package emr
 
 // Columns is a nested struct in emr response
 type Columns struct {
-	Column []Column `json:"Column" xml:"Column"`
+	Column []string `json:"Column" xml:"Column"`
 }

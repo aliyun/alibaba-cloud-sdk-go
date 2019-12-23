@@ -80,9 +80,9 @@ type DescribeClusterServiceConfigRequest struct {
 	HostInstanceId  string           `position:"Query" name:"HostInstanceId"`
 	TagValue        string           `position:"Query" name:"TagValue"`
 	GroupId         string           `position:"Query" name:"GroupId"`
-	ServiceName     string           `position:"Query" name:"ServiceName"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	ConfigVersion   string           `position:"Query" name:"ConfigVersion"`
+	ServiceName     string           `position:"Query" name:"ServiceName"`
 }
 
 // DescribeClusterServiceConfigResponse is the response struct for api DescribeClusterServiceConfig

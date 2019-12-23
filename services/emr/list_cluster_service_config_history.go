@@ -77,21 +77,21 @@ func (client *Client) ListClusterServiceConfigHistoryWithCallback(request *ListC
 type ListClusterServiceConfigHistoryRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	ServiceName     string           `position:"Query" name:"ServiceName"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	ConfigVersion   string           `position:"Query" name:"ConfigVersion"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	ServiceName     string           `position:"Query" name:"ServiceName"`
 }
 
 // ListClusterServiceConfigHistoryResponse is the response struct for api ListClusterServiceConfigHistory
 type ListClusterServiceConfigHistoryResponse struct {
 	*responses.BaseResponse
-	RequestId         string                                             `json:"RequestId" xml:"RequestId"`
-	TotalCount        int                                                `json:"TotalCount" xml:"TotalCount"`
-	PageNumber        int                                                `json:"PageNumber" xml:"PageNumber"`
-	PageSize          int                                                `json:"PageSize" xml:"PageSize"`
-	ConfigHistoryList ConfigHistoryListInListClusterServiceConfigHistory `json:"ConfigHistoryList" xml:"ConfigHistoryList"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	TotalCount        int               `json:"TotalCount" xml:"TotalCount"`
+	PageNumber        int               `json:"PageNumber" xml:"PageNumber"`
+	PageSize          int               `json:"PageSize" xml:"PageSize"`
+	ConfigHistoryList ConfigHistoryList `json:"ConfigHistoryList" xml:"ConfigHistoryList"`
 }
 
 // CreateListClusterServiceConfigHistoryRequest creates a request to invoke ListClusterServiceConfigHistory API

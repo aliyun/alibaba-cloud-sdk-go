@@ -17,5 +17,5 @@ package emr
 
 // NodeInstanceInDescribeFlowInstance is a nested struct in emr response
 type NodeInstanceInDescribeFlowInstance struct {
-	NodeInstanceItem []NodeInstanceItem `json:"NodeInstanceItem" xml:"NodeInstanceItem"`
+	NodeInstanceItem []NodeInstanceItem `json:"NodeInstance" xml:"NodeInstance"`
 }

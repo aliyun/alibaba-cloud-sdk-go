@@ -76,20 +76,20 @@ func (client *Client) CreateScalingRuleWithCallback(request *CreateScalingRuleRe
 // CreateScalingRuleRequest is the request struct for api CreateScalingRule
 type CreateScalingRuleRequest struct {
 	*requests.RpcRequest
-	LaunchTime           string                                `position:"Query" name:"LaunchTime"`
 	ResourceOwnerId      requests.Integer                      `position:"Query" name:"ResourceOwnerId"`
+	RuleName             string                                `position:"Query" name:"RuleName"`
+	RecurrenceEndTime    string                                `position:"Query" name:"RecurrenceEndTime"`
+	CloudWatchTrigger    *[]CreateScalingRuleCloudWatchTrigger `position:"Query" name:"CloudWatchTrigger"  type:"Repeated"`
+	Cooldown             requests.Integer                      `position:"Query" name:"Cooldown"`
+	LaunchTime           string                                `position:"Query" name:"LaunchTime"`
 	RuleCategory         string                                `position:"Query" name:"RuleCategory"`
 	AdjustmentValue      requests.Integer                      `position:"Query" name:"AdjustmentValue"`
 	AdjustmentType       string                                `position:"Query" name:"AdjustmentType"`
-	RuleName             string                                `position:"Query" name:"RuleName"`
 	ClusterId            string                                `position:"Query" name:"ClusterId"`
 	LaunchExpirationTime requests.Integer                      `position:"Query" name:"LaunchExpirationTime"`
 	RecurrenceValue      string                                `position:"Query" name:"RecurrenceValue"`
-	RecurrenceEndTime    string                                `position:"Query" name:"RecurrenceEndTime"`
-	CloudWatchTrigger    *[]CreateScalingRuleCloudWatchTrigger `position:"Query" name:"CloudWatchTrigger"  type:"Repeated"`
 	HostGroupId          string                                `position:"Query" name:"HostGroupId"`
 	SchedulerTrigger     *[]CreateScalingRuleSchedulerTrigger  `position:"Query" name:"SchedulerTrigger"  type:"Repeated"`
-	Cooldown             requests.Integer                      `position:"Query" name:"Cooldown"`
 	RecurrenceType       string                                `position:"Query" name:"RecurrenceType"`
 }
 

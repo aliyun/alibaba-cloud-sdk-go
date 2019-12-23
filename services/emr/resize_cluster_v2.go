@@ -76,12 +76,12 @@ func (client *Client) ResizeClusterV2WithCallback(request *ResizeClusterV2Reques
 // ResizeClusterV2Request is the request struct for api ResizeClusterV2
 type ResizeClusterV2Request struct {
 	*requests.RpcRequest
-	VswitchId         string                              `position:"Query" name:"VswitchId"`
 	IsOpenPublicIp    requests.Boolean                    `position:"Query" name:"IsOpenPublicIp"`
 	AutoPayOrder      requests.Boolean                    `position:"Query" name:"AutoPayOrder"`
+	ClusterId         string                              `position:"Query" name:"ClusterId"`
+	VswitchId         string                              `position:"Query" name:"VswitchId"`
 	HostComponentInfo *[]ResizeClusterV2HostComponentInfo `position:"Query" name:"HostComponentInfo"  type:"Repeated"`
 	HostGroup         *[]ResizeClusterV2HostGroup         `position:"Query" name:"HostGroup"  type:"Repeated"`
-	ClusterId         string                              `position:"Query" name:"ClusterId"`
 }
 
 // ResizeClusterV2HostComponentInfo is a repeated param struct in ResizeClusterV2Request

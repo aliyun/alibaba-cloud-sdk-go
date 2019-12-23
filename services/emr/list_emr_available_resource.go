@@ -77,17 +77,17 @@ func (client *Client) ListEmrAvailableResourceWithCallback(request *ListEmrAvail
 type ListEmrAvailableResourceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId     requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClusterId           string           `position:"Query" name:"ClusterId"`
 	DepositType         string           `position:"Query" name:"DepositType"`
+	SystemDiskType      string           `position:"Query" name:"SystemDiskType"`
+	InstanceType        string           `position:"Query" name:"InstanceType"`
+	InstanceChargeType  string           `position:"Query" name:"InstanceChargeType"`
+	ClusterId           string           `position:"Query" name:"ClusterId"`
 	DestinationResource string           `position:"Query" name:"DestinationResource"`
 	ClusterType         string           `position:"Query" name:"ClusterType"`
 	SpotStrategy        string           `position:"Query" name:"SpotStrategy"`
-	SystemDiskType      string           `position:"Query" name:"SystemDiskType"`
 	NetType             string           `position:"Query" name:"NetType"`
 	ZoneId              string           `position:"Query" name:"ZoneId"`
-	InstanceType        string           `position:"Query" name:"InstanceType"`
 	DataDiskType        string           `position:"Query" name:"DataDiskType"`
-	InstanceChargeType  string           `position:"Query" name:"InstanceChargeType"`
 }
 
 // ListEmrAvailableResourceResponse is the response struct for api ListEmrAvailableResource

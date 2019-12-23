@@ -77,19 +77,19 @@ func (client *Client) ListApmApplicationWithCallback(request *ListApmApplication
 type ListApmApplicationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	FinalStatus     string           `position:"Query" name:"FinalStatus"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	State           string           `position:"Query" name:"State"`
+	StartTimeTo     requests.Integer `position:"Query" name:"StartTimeTo"`
 	DiagnoseResult  string           `position:"Query" name:"DiagnoseResult"`
 	EndTimeFrom     requests.Integer `position:"Query" name:"EndTimeFrom"`
 	OrderBy         string           `position:"Query" name:"OrderBy"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	JobType         string           `position:"Query" name:"JobType"`
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
-	FinalStatus     string           `position:"Query" name:"FinalStatus"`
 	StartTimeFrom   requests.Integer `position:"Query" name:"StartTimeFrom"`
 	AppId           string           `position:"Query" name:"AppId"`
 	Name            string           `position:"Query" name:"Name"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	State           string           `position:"Query" name:"State"`
-	StartTimeTo     requests.Integer `position:"Query" name:"StartTimeTo"`
 	User            string           `position:"Query" name:"User"`
 	EndTimeTo       requests.Integer `position:"Query" name:"EndTimeTo"`
 	Queue           string           `position:"Query" name:"Queue"`

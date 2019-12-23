@@ -77,9 +77,9 @@ func (client *Client) CreateNoteWithCallback(request *CreateNoteRequest, callbac
 type CreateNoteRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Name            string           `position:"Query" name:"Name"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	Type            string           `position:"Query" name:"Type"`
+	Name            string           `position:"Query" name:"Name"`
 }
 
 // CreateNoteResponse is the response struct for api CreateNote

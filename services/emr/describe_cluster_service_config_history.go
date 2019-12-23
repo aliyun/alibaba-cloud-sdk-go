@@ -77,9 +77,9 @@ func (client *Client) DescribeClusterServiceConfigHistoryWithCallback(request *D
 type DescribeClusterServiceConfigHistoryRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ServiceName     string           `position:"Query" name:"ServiceName"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	ConfigVersion   string           `position:"Query" name:"ConfigVersion"`
+	ServiceName     string           `position:"Query" name:"ServiceName"`
 }
 
 // DescribeClusterServiceConfigHistoryResponse is the response struct for api DescribeClusterServiceConfigHistory

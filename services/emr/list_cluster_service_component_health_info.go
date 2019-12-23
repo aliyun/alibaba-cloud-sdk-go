@@ -77,8 +77,8 @@ func (client *Client) ListClusterServiceComponentHealthInfoWithCallback(request 
 type ListClusterServiceComponentHealthInfoRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ServiceName     string           `position:"Query" name:"ServiceName"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
+	ServiceName     string           `position:"Query" name:"ServiceName"`
 }
 
 // ListClusterServiceComponentHealthInfoResponse is the response struct for api ListClusterServiceComponentHealthInfo

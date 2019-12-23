@@ -77,16 +77,16 @@ func (client *Client) DescribeClusterServiceConfigTagWithCallback(request *Descr
 type DescribeClusterServiceConfigTagRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClusterId       string           `position:"Query" name:"ClusterId"`
 	ConfigTag       string           `position:"Query" name:"ConfigTag"`
 	ServiceName     string           `position:"Query" name:"ServiceName"`
-	ClusterId       string           `position:"Query" name:"ClusterId"`
 }
 
 // DescribeClusterServiceConfigTagResponse is the response struct for api DescribeClusterServiceConfigTag
 type DescribeClusterServiceConfigTagResponse struct {
 	*responses.BaseResponse
-	RequestId     string                                         `json:"RequestId" xml:"RequestId"`
-	ConfigTagList ConfigTagListInDescribeClusterServiceConfigTag `json:"ConfigTagList" xml:"ConfigTagList"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	ConfigTagList ConfigTagList `json:"ConfigTagList" xml:"ConfigTagList"`
 }
 
 // CreateDescribeClusterServiceConfigTagRequest creates a request to invoke DescribeClusterServiceConfigTag API

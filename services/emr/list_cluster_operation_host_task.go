@@ -77,11 +77,11 @@ func (client *Client) ListClusterOperationHostTaskWithCallback(request *ListClus
 type ListClusterOperationHostTaskRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	OperationId     string           `position:"Query" name:"OperationId"`
 	HostId          string           `position:"Query" name:"HostId"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	OperationId     string           `position:"Query" name:"OperationId"`
 	Status          string           `position:"Query" name:"Status"`
 }
 

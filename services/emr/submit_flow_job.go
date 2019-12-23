@@ -76,10 +76,10 @@ func (client *Client) SubmitFlowJobWithCallback(request *SubmitFlowJobRequest, c
 // SubmitFlowJobRequest is the request struct for api SubmitFlowJob
 type SubmitFlowJobRequest struct {
 	*requests.RpcRequest
-	JobId     string `position:"Query" name:"JobId"`
-	HostName  string `position:"Query" name:"HostName"`
 	Conf      string `position:"Query" name:"Conf"`
 	ClusterId string `position:"Query" name:"ClusterId"`
+	JobId     string `position:"Query" name:"JobId"`
+	HostName  string `position:"Query" name:"HostName"`
 	ProjectId string `position:"Query" name:"ProjectId"`
 }
 

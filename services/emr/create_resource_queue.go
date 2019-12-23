@@ -77,12 +77,12 @@ func (client *Client) CreateResourceQueueWithCallback(request *CreateResourceQue
 type CreateResourceQueueRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer             `position:"Query" name:"ResourceOwnerId"`
-	ParentQueueId   requests.Integer             `position:"Query" name:"ParentQueueId"`
-	Name            string                       `position:"Query" name:"Name"`
 	QualifiedName   string                       `position:"Query" name:"QualifiedName"`
 	ResourcePoolId  requests.Integer             `position:"Query" name:"ResourcePoolId"`
 	ClusterId       string                       `position:"Query" name:"ClusterId"`
 	Leaf            requests.Boolean             `position:"Query" name:"Leaf"`
+	ParentQueueId   requests.Integer             `position:"Query" name:"ParentQueueId"`
+	Name            string                       `position:"Query" name:"Name"`
 	Config          *[]CreateResourceQueueConfig `position:"Query" name:"Config"  type:"Repeated"`
 }
 

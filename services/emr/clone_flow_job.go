@@ -76,6 +76,7 @@ func (client *Client) CloneFlowJobWithCallback(request *CloneFlowJobRequest, cal
 // CloneFlowJobRequest is the request struct for api CloneFlowJob
 type CloneFlowJobRequest struct {
 	*requests.RpcRequest
+	Name      string `position:"Query" name:"Name"`
 	Id        string `position:"Query" name:"Id"`
 	ProjectId string `position:"Query" name:"ProjectId"`
 }

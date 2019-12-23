@@ -17,12 +17,12 @@ package emr
 
 // PropertyValueAttributes is a nested struct in emr response
 type PropertyValueAttributes struct {
-	Unit          string                                        `json:"Unit" xml:"Unit"`
-	Hidden        bool                                          `json:"Hidden" xml:"Hidden"`
-	Maximum       string                                        `json:"Maximum" xml:"Maximum"`
-	Mimimum       string                                        `json:"Mimimum" xml:"Mimimum"`
-	IncrememtStep string                                        `json:"IncrememtStep" xml:"IncrememtStep"`
-	Type          string                                        `json:"Type" xml:"Type"`
-	ReadOnly      bool                                          `json:"ReadOnly" xml:"ReadOnly"`
-	Entries       EntriesInDescribeClusterServiceConfigForAdmin `json:"Entries" xml:"Entries"`
+	Type          string  `json:"Type" xml:"Type"`
+	Maximum       string  `json:"Maximum" xml:"Maximum"`
+	Mimimum       string  `json:"Mimimum" xml:"Mimimum"`
+	Unit          string  `json:"Unit" xml:"Unit"`
+	ReadOnly      bool    `json:"ReadOnly" xml:"ReadOnly"`
+	Hidden        bool    `json:"Hidden" xml:"Hidden"`
+	IncrememtStep string  `json:"IncrememtStep" xml:"IncrememtStep"`
+	Entries       Entries `json:"Entries" xml:"Entries"`
 }

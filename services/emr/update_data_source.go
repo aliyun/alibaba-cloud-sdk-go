@@ -77,9 +77,9 @@ func (client *Client) UpdateDataSourceWithCallback(request *UpdateDataSourceRequ
 type UpdateDataSourceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Name            string           `position:"Query" name:"Name"`
 	Description     string           `position:"Query" name:"Description"`
 	Conf            string           `position:"Query" name:"Conf"`
+	Name            string           `position:"Query" name:"Name"`
 	Id              string           `position:"Query" name:"Id"`
 }
 

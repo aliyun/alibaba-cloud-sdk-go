@@ -77,11 +77,11 @@ func (client *Client) ListEmrMainVersionWithCallback(request *ListEmrMainVersion
 type ListEmrMainVersionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	EmrVersion      string           `position:"Query" name:"EmrVersion"`
 	StackName       string           `position:"Query" name:"StackName"`
 	StackVersion    string           `position:"Query" name:"StackVersion"`
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListEmrMainVersionResponse is the response struct for api ListEmrMainVersion

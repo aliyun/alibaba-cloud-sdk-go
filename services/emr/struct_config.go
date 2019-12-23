@@ -17,19 +17,17 @@ package emr
 
 // Config is a nested struct in emr response
 type Config struct {
-	Author           string                                                 `json:"Author" xml:"Author"`
-	CreateTime       string                                                 `json:"CreateTime" xml:"CreateTime"`
-	ConfigName       string                                                 `json:"ConfigName" xml:"ConfigName"`
-	ConfigValue      string                                                 `json:"ConfigValue" xml:"ConfigValue"`
-	ConfigVersion    string                                                 `json:"ConfigVersion" xml:"ConfigVersion"`
-	Applied          string                                                 `json:"Applied" xml:"Applied"`
-	Replace          string                                                 `json:"Replace" xml:"Replace"`
-	Comment          string                                                 `json:"Comment" xml:"Comment"`
-	Value            string                                                 `json:"Value" xml:"Value"`
-	ConfigKey        string                                                 `json:"ConfigKey" xml:"ConfigKey"`
-	ServiceName      string                                                 `json:"ServiceName" xml:"ServiceName"`
-	FileName         string                                                 `json:"FileName" xml:"FileName"`
-	Encrypt          string                                                 `json:"Encrypt" xml:"Encrypt"`
-	PropertyInfoList PropertyInfoListInDescribeClusterServiceConfigForAdmin `json:"PropertyInfoList" xml:"PropertyInfoList"`
-	ConfigValueList  ConfigValueListInDescribeClusterServiceConfigForAdmin  `json:"ConfigValueList" xml:"ConfigValueList"`
+	Author           string                                        `json:"Author" xml:"Author"`
+	CreateTime       string                                        `json:"CreateTime" xml:"CreateTime"`
+	ConfigValue      string                                        `json:"ConfigValue" xml:"ConfigValue"`
+	ConfigVersion    string                                        `json:"ConfigVersion" xml:"ConfigVersion"`
+	Applied          string                                        `json:"Applied" xml:"Applied"`
+	Replace          string                                        `json:"Replace" xml:"Replace"`
+	Comment          string                                        `json:"Comment" xml:"Comment"`
+	ConfigKey        string                                        `json:"ConfigKey" xml:"ConfigKey"`
+	ServiceName      string                                        `json:"ServiceName" xml:"ServiceName"`
+	FileName         string                                        `json:"FileName" xml:"FileName"`
+	Encrypt          string                                        `json:"Encrypt" xml:"Encrypt"`
+	PropertyInfoList PropertyInfoList                              `json:"PropertyInfoList" xml:"PropertyInfoList"`
+	ConfigValueList  ConfigValueListInDescribeClusterServiceConfig `json:"ConfigValueList" xml:"ConfigValueList"`
 }

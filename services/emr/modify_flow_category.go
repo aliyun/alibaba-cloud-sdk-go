@@ -76,10 +76,10 @@ func (client *Client) ModifyFlowCategoryWithCallback(request *ModifyFlowCategory
 // ModifyFlowCategoryRequest is the request struct for api ModifyFlowCategory
 type ModifyFlowCategoryRequest struct {
 	*requests.RpcRequest
+	ParentId  string `position:"Query" name:"ParentId"`
 	Name      string `position:"Query" name:"Name"`
 	Id        string `position:"Query" name:"Id"`
 	ProjectId string `position:"Query" name:"ProjectId"`
-	ParentId  string `position:"Query" name:"ParentId"`
 }
 
 // ModifyFlowCategoryResponse is the response struct for api ModifyFlowCategory

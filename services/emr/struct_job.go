@@ -17,25 +17,25 @@ package emr
 
 // Job is a nested struct in emr response
 type Job struct {
-	Name               string                    `json:"Name" xml:"Name"`
-	FailAct            string                    `json:"FailAct" xml:"FailAct"`
-	RunConf            string                    `json:"RunConf" xml:"RunConf"`
-	RetryInterval      int64                     `json:"RetryInterval" xml:"RetryInterval"`
-	ParamConf          string                    `json:"ParamConf" xml:"ParamConf"`
-	Mode               string                    `json:"mode" xml:"mode"`
-	MaxRetry           int                       `json:"MaxRetry" xml:"MaxRetry"`
-	EnvConf            string                    `json:"EnvConf" xml:"EnvConf"`
-	AlertConf          string                    `json:"AlertConf" xml:"AlertConf"`
-	GmtCreate          int64                     `json:"GmtCreate" xml:"GmtCreate"`
-	CategoryId         string                    `json:"CategoryId" xml:"CategoryId"`
-	GmtModified        int64                     `json:"GmtModified" xml:"GmtModified"`
 	Id                 string                    `json:"Id" xml:"Id"`
-	Description        string                    `json:"Description" xml:"Description"`
-	CustomVariables    string                    `json:"CustomVariables" xml:"CustomVariables"`
-	MonitorConf        string                    `json:"MonitorConf" xml:"MonitorConf"`
-	Params             string                    `json:"Params" xml:"Params"`
-	Adhoc              string                    `json:"Adhoc" xml:"Adhoc"`
+	GmtCreate          int64                     `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified        int64                     `json:"GmtModified" xml:"GmtModified"`
+	Name               string                    `json:"Name" xml:"Name"`
 	Type               string                    `json:"Type" xml:"Type"`
+	Description        string                    `json:"Description" xml:"Description"`
+	FailAct            string                    `json:"FailAct" xml:"FailAct"`
+	MaxRetry           int                       `json:"MaxRetry" xml:"MaxRetry"`
+	RetryInterval      int64                     `json:"RetryInterval" xml:"RetryInterval"`
+	Params             string                    `json:"Params" xml:"Params"`
+	ParamConf          string                    `json:"ParamConf" xml:"ParamConf"`
+	CustomVariables    string                    `json:"CustomVariables" xml:"CustomVariables"`
+	EnvConf            string                    `json:"EnvConf" xml:"EnvConf"`
+	RunConf            string                    `json:"RunConf" xml:"RunConf"`
+	MonitorConf        string                    `json:"MonitorConf" xml:"MonitorConf"`
+	CategoryId         string                    `json:"CategoryId" xml:"CategoryId"`
+	Mode               string                    `json:"mode" xml:"mode"`
+	Adhoc              string                    `json:"Adhoc" xml:"Adhoc"`
+	AlertConf          string                    `json:"AlertConf" xml:"AlertConf"`
 	LastInstanceDetail string                    `json:"LastInstanceDetail" xml:"LastInstanceDetail"`
 	ResourceList       ResourceListInListFlowJob `json:"ResourceList" xml:"ResourceList"`
 }

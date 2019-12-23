@@ -17,9 +17,9 @@ package emr
 
 // ServiceInfo is a nested struct in emr response
 type ServiceInfo struct {
+	NeedRestartInfo              string                                    `json:"NeedRestartInfo" xml:"NeedRestartInfo"`
 	ServiceDisplayVersion        string                                    `json:"ServiceDisplayVersion" xml:"ServiceDisplayVersion"`
 	Mandatory                    bool                                      `json:"Mandatory" xml:"Mandatory"`
-	NeedRestartInfo              string                                    `json:"NeedRestartInfo" xml:"NeedRestartInfo"`
 	Display                      bool                                      `json:"Display" xml:"Display"`
 	NeedRestartNum               int                                       `json:"NeedRestartNum" xml:"NeedRestartNum"`
 	ServiceStatus                string                                    `json:"ServiceStatus" xml:"ServiceStatus"`

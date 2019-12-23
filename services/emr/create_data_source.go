@@ -78,11 +78,11 @@ type CreateDataSourceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	NavParentId     string           `position:"Query" name:"NavParentId"`
-	Name            string           `position:"Query" name:"Name"`
 	Description     string           `position:"Query" name:"Description"`
-	SourceType      string           `position:"Query" name:"SourceType"`
 	Conf            string           `position:"Query" name:"Conf"`
 	ClusterId       string           `position:"Query" name:"ClusterId"`
+	Name            string           `position:"Query" name:"Name"`
+	SourceType      string           `position:"Query" name:"SourceType"`
 }
 
 // CreateDataSourceResponse is the response struct for api CreateDataSource

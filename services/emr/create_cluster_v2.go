@@ -81,42 +81,45 @@ type CreateClusterV2Request struct {
 	LogPath                string                              `position:"Query" name:"LogPath"`
 	MasterPwd              string                              `position:"Query" name:"MasterPwd"`
 	Configurations         string                              `position:"Query" name:"Configurations"`
-	IoOptimized            requests.Boolean                    `position:"Query" name:"IoOptimized"`
-	SecurityGroupId        string                              `position:"Query" name:"SecurityGroupId"`
 	SshEnable              requests.Boolean                    `position:"Query" name:"SshEnable"`
-	EasEnable              requests.Boolean                    `position:"Query" name:"EasEnable"`
 	KeyPairName            string                              `position:"Query" name:"KeyPairName"`
 	MetaStoreType          string                              `position:"Query" name:"MetaStoreType"`
 	SecurityGroupName      string                              `position:"Query" name:"SecurityGroupName"`
-	DepositType            string                              `position:"Query" name:"DepositType"`
 	MachineType            string                              `position:"Query" name:"MachineType"`
 	HostComponentInfo      *[]CreateClusterV2HostComponentInfo `position:"Query" name:"HostComponentInfo"  type:"Repeated"`
+	ClickHouseConf         string                              `position:"Query" name:"ClickHouseConf"`
 	BootstrapAction        *[]CreateClusterV2BootstrapAction   `position:"Query" name:"BootstrapAction"  type:"Repeated"`
-	UseLocalMetaDb         requests.Boolean                    `position:"Query" name:"UseLocalMetaDb"`
 	MetaStoreConf          string                              `position:"Query" name:"MetaStoreConf"`
 	EmrVer                 string                              `position:"Query" name:"EmrVer"`
-	UserInfo               *[]CreateClusterV2UserInfo          `position:"Query" name:"UserInfo"  type:"Repeated"`
-	UserDefinedEmrEcsRole  string                              `position:"Query" name:"UserDefinedEmrEcsRole"`
+	Tag                    *[]CreateClusterV2Tag               `position:"Query" name:"Tag"  type:"Repeated"`
 	AuthorizeContent       string                              `position:"Query" name:"AuthorizeContent"`
 	IsOpenPublicIp         requests.Boolean                    `position:"Query" name:"IsOpenPublicIp"`
 	Period                 requests.Integer                    `position:"Query" name:"Period"`
-	WhiteListType          string                              `position:"Query" name:"WhiteListType"`
-	RelatedClusterId       string                              `position:"Query" name:"RelatedClusterId"`
 	InstanceGeneration     string                              `position:"Query" name:"InstanceGeneration"`
 	VSwitchId              string                              `position:"Query" name:"VSwitchId"`
 	ClusterType            string                              `position:"Query" name:"ClusterType"`
 	AutoRenew              requests.Boolean                    `position:"Query" name:"AutoRenew"`
 	OptionSoftWareList     *[]string                           `position:"Query" name:"OptionSoftWareList"  type:"Repeated"`
-	VpcId                  string                              `position:"Query" name:"VpcId"`
 	NetType                string                              `position:"Query" name:"NetType"`
 	Name                   string                              `position:"Query" name:"Name"`
-	HostGroup              *[]CreateClusterV2HostGroup         `position:"Query" name:"HostGroup"  type:"Repeated"`
 	ZoneId                 string                              `position:"Query" name:"ZoneId"`
-	ChargeType             string                              `position:"Query" name:"ChargeType"`
 	UseCustomHiveMetaDB    requests.Boolean                    `position:"Query" name:"UseCustomHiveMetaDB"`
+	InitCustomHiveMetaDB   requests.Boolean                    `position:"Query" name:"InitCustomHiveMetaDB"`
+	IoOptimized            requests.Boolean                    `position:"Query" name:"IoOptimized"`
+	SecurityGroupId        string                              `position:"Query" name:"SecurityGroupId"`
+	EasEnable              requests.Boolean                    `position:"Query" name:"EasEnable"`
+	DepositType            string                              `position:"Query" name:"DepositType"`
+	UseLocalMetaDb         requests.Boolean                    `position:"Query" name:"UseLocalMetaDb"`
+	UserInfo               *[]CreateClusterV2UserInfo          `position:"Query" name:"UserInfo"  type:"Repeated"`
+	UserDefinedEmrEcsRole  string                              `position:"Query" name:"UserDefinedEmrEcsRole"`
+	WhiteListType          string                              `position:"Query" name:"WhiteListType"`
+	RelatedClusterId       string                              `position:"Query" name:"RelatedClusterId"`
+	VpcId                  string                              `position:"Query" name:"VpcId"`
+	HostGroup              *[]CreateClusterV2HostGroup         `position:"Query" name:"HostGroup"  type:"Repeated"`
+	ChargeType             string                              `position:"Query" name:"ChargeType"`
+	ServiceInfo            *[]CreateClusterV2ServiceInfo       `position:"Query" name:"ServiceInfo"  type:"Repeated"`
 	Config                 *[]CreateClusterV2Config            `position:"Query" name:"Config"  type:"Repeated"`
 	HighAvailabilityEnable requests.Boolean                    `position:"Query" name:"HighAvailabilityEnable"`
-	InitCustomHiveMetaDB   requests.Boolean                    `position:"Query" name:"InitCustomHiveMetaDB"`
 }
 
 // CreateClusterV2HostComponentInfo is a repeated param struct in CreateClusterV2Request
@@ -131,6 +134,12 @@ type CreateClusterV2BootstrapAction struct {
 	Path string `name:"Path"`
 	Arg  string `name:"Arg"`
 	Name string `name:"Name"`
+}
+
+// CreateClusterV2Tag is a repeated param struct in CreateClusterV2Request
+type CreateClusterV2Tag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateClusterV2UserInfo is a repeated param struct in CreateClusterV2Request
@@ -160,6 +169,12 @@ type CreateClusterV2HostGroup struct {
 	ChargeType      string `name:"ChargeType"`
 	CreateType      string `name:"CreateType"`
 	HostGroupType   string `name:"HostGroupType"`
+}
+
+// CreateClusterV2ServiceInfo is a repeated param struct in CreateClusterV2Request
+type CreateClusterV2ServiceInfo struct {
+	ServiceVersion string `name:"ServiceVersion"`
+	ServiceName    string `name:"ServiceName"`
 }
 
 // CreateClusterV2Config is a repeated param struct in CreateClusterV2Request
