@@ -1,3 +1,7 @@
+2019-12-26 Version: v1.60.303
+- Generated 2019-03-06 for `Dbs`.
+- Modify CreateRestoreTask.
+
 2019-12-23 Version: v1.60.302
 - Generated 2016-04-08 for `Emr`.
 - Bugfix.

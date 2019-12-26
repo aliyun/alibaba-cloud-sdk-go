@@ -84,6 +84,7 @@ type CreateRestoreTaskRequest struct {
 	DestinationEndpointUserName     string           `position:"Query" name:"DestinationEndpointUserName"`
 	RestoreObjects                  string           `position:"Query" name:"RestoreObjects"`
 	RestoreTaskName                 string           `position:"Query" name:"RestoreTaskName"`
+	RestoreHome                     string           `position:"Query" name:"RestoreHome"`
 	DestinationEndpointOracleSID    string           `position:"Query" name:"DestinationEndpointOracleSID"`
 	RestoreTime                     requests.Integer `position:"Query" name:"RestoreTime"`
 	DestinationEndpointInstanceID   string           `position:"Query" name:"DestinationEndpointInstanceID"`
