@@ -97,7 +97,7 @@ func CreateDeleteDevicePropRequest() (request *DeleteDevicePropRequest) {
 	request = &DeleteDevicePropRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteDeviceProp", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteDeviceProp", "Iot", "openAPI")
 	return
 }
 

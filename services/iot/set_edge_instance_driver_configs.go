@@ -103,7 +103,7 @@ func CreateSetEdgeInstanceDriverConfigsRequest() (request *SetEdgeInstanceDriver
 	request = &SetEdgeInstanceDriverConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "SetEdgeInstanceDriverConfigs", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "SetEdgeInstanceDriverConfigs", "Iot", "openAPI")
 	return
 }
 

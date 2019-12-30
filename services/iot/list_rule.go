@@ -76,10 +76,11 @@ func (client *Client) ListRuleWithCallback(request *ListRuleRequest, callback fu
 // ListRuleRequest is the request struct for api ListRule
 type ListRuleRequest struct {
 	*requests.RpcRequest
-	SearchName    string           `position:"Query" name:"SearchName"`
-	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
-	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	SearchName      string           `position:"Query" name:"SearchName"`
+	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	IotInstanceId   string           `position:"Query" name:"IotInstanceId"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListRuleResponse is the response struct for api ListRule
@@ -89,9 +90,9 @@ type ListRuleResponse struct {
 	Success      bool           `json:"Success" xml:"Success"`
 	Code         string         `json:"Code" xml:"Code"`
 	ErrorMessage string         `json:"ErrorMessage" xml:"ErrorMessage"`
-	PageSize     int            `json:"PageSize" xml:"PageSize"`
 	Page         int            `json:"Page" xml:"Page"`
 	Total        int            `json:"Total" xml:"Total"`
+	PageSize     int            `json:"PageSize" xml:"PageSize"`
 	Data         DataInListRule `json:"Data" xml:"Data"`
 }
 
@@ -100,7 +101,7 @@ func CreateListRuleRequest() (request *ListRuleRequest) {
 	request = &ListRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListRule", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListRule", "Iot", "openAPI")
 	return
 }
 

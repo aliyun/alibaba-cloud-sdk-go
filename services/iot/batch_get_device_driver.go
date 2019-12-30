@@ -96,7 +96,7 @@ func CreateBatchGetDeviceDriverRequest() (request *BatchGetDeviceDriverRequest) 
 	request = &BatchGetDeviceDriverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchGetDeviceDriver", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchGetDeviceDriver", "Iot", "openAPI")
 	return
 }
 

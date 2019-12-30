@@ -76,15 +76,16 @@ func (client *Client) CreateRuleWithCallback(request *CreateRuleRequest, callbac
 // CreateRuleRequest is the request struct for api CreateRule
 type CreateRuleRequest struct {
 	*requests.RpcRequest
-	Select        string           `position:"Query" name:"Select"`
-	RuleDesc      string           `position:"Query" name:"RuleDesc"`
-	ProductKey    string           `position:"Query" name:"ProductKey"`
-	ShortTopic    string           `position:"Query" name:"ShortTopic"`
-	DataType      string           `position:"Query" name:"DataType"`
-	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
-	Name          string           `position:"Query" name:"Name"`
-	Where         string           `position:"Query" name:"Where"`
-	TopicType     requests.Integer `position:"Query" name:"TopicType"`
+	Select          string           `position:"Query" name:"Select"`
+	RuleDesc        string           `position:"Query" name:"RuleDesc"`
+	ShortTopic      string           `position:"Query" name:"ShortTopic"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	DataType        string           `position:"Query" name:"DataType"`
+	IotInstanceId   string           `position:"Query" name:"IotInstanceId"`
+	Where           string           `position:"Query" name:"Where"`
+	TopicType       requests.Integer `position:"Query" name:"TopicType"`
+	ProductKey      string           `position:"Query" name:"ProductKey"`
+	Name            string           `position:"Query" name:"Name"`
 }
 
 // CreateRuleResponse is the response struct for api CreateRule
@@ -102,7 +103,7 @@ func CreateCreateRuleRequest() (request *CreateRuleRequest) {
 	request = &CreateRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateRule", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateRule", "Iot", "openAPI")
 	return
 }
 

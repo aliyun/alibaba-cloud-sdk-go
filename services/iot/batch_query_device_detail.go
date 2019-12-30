@@ -96,7 +96,7 @@ func CreateBatchQueryDeviceDetailRequest() (request *BatchQueryDeviceDetailReque
 	request = &BatchQueryDeviceDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchQueryDeviceDetail", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchQueryDeviceDetail", "Iot", "openAPI")
 	return
 }
 

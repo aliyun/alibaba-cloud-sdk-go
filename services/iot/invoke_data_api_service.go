@@ -103,7 +103,7 @@ func CreateInvokeDataAPIServiceRequest() (request *InvokeDataAPIServiceRequest) 
 	request = &InvokeDataAPIServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "InvokeDataAPIService", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "InvokeDataAPIService", "Iot", "openAPI")
 	return
 }
 

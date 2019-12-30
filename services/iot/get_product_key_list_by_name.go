@@ -97,7 +97,7 @@ func CreateGetProductKeyListByNameRequest() (request *GetProductKeyListByNameReq
 	request = &GetProductKeyListByNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetProductKeyListByName", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetProductKeyListByName", "Iot", "openAPI")
 	return
 }
 

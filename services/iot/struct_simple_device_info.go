@@ -17,8 +17,15 @@ package iot
 
 // SimpleDeviceInfo is a nested struct in iot response
 type SimpleDeviceInfo struct {
-	ProductName string `json:"ProductName" xml:"ProductName"`
-	DeviceName  string `json:"DeviceName" xml:"DeviceName"`
-	IotId       string `json:"IotId" xml:"IotId"`
-	ProductKey  string `json:"ProductKey" xml:"ProductKey"`
+	ProductName  string `json:"ProductName" xml:"ProductName"`
+	DeviceName   string `json:"DeviceName" xml:"DeviceName"`
+	Nickname     string `json:"Nickname" xml:"Nickname"`
+	GmtCreate    string `json:"GmtCreate" xml:"GmtCreate"`
+	IotId        string `json:"IotId" xml:"IotId"`
+	DeviceSecret string `json:"DeviceSecret" xml:"DeviceSecret"`
+	ProductKey   string `json:"ProductKey" xml:"ProductKey"`
+	GmtModified  string `json:"GmtModified" xml:"GmtModified"`
+	Status       string `json:"Status" xml:"Status"`
+	UtcModified  string `json:"UtcModified" xml:"UtcModified"`
+	UtcCreate    string `json:"UtcCreate" xml:"UtcCreate"`
 }

@@ -96,7 +96,7 @@ func CreateQueryDeviceCertRequest() (request *QueryDeviceCertRequest) {
 	request = &QueryDeviceCertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceCert", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceCert", "Iot", "openAPI")
 	return
 }
 

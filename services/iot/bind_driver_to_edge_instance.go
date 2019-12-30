@@ -80,6 +80,7 @@ type BindDriverToEdgeInstanceRequest struct {
 	InstanceId    string `position:"Query" name:"InstanceId"`
 	DriverId      string `position:"Query" name:"DriverId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	DriverVersion string `position:"Query" name:"DriverVersion"`
 }
 
 // BindDriverToEdgeInstanceResponse is the response struct for api BindDriverToEdgeInstance
@@ -96,7 +97,7 @@ func CreateBindDriverToEdgeInstanceRequest() (request *BindDriverToEdgeInstanceR
 	request = &BindDriverToEdgeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BindDriverToEdgeInstance", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BindDriverToEdgeInstance", "Iot", "openAPI")
 	return
 }
 

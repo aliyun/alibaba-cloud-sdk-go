@@ -96,7 +96,7 @@ func CreateGetDeviceListByIotIdsRequest() (request *GetDeviceListByIotIdsRequest
 	request = &GetDeviceListByIotIdsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetDeviceListByIotIds", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetDeviceListByIotIds", "Iot", "openAPI")
 	return
 }
 
