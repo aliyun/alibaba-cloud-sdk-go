@@ -1,3 +1,7 @@
+2019-12-31 Version: v1.60.312
+- Generated 2019-12-30 for `ocr`.
+- First version.
+
 2019-12-31 Version: v1.60.311
 - Generated 2014-08-15 for `Rds`.
 - Supported SQL SERVER support delete backup set according to time range.
