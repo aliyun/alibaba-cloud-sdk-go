@@ -1,3 +1,9 @@
+2019-12-31 Version: v1.60.306
+- Generated 2019-03-15 for `adb`.
+- Support DeleteDBCluster.
+- Support ModifyDBCluster.
+- Support DescribeAvailableResource.
+
 2019-12-30 Version: v1.60.305
 - Generated 2018-01-20 for `Iot`.
 - Supported 2018-01-20 for Golang.

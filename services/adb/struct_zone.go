@@ -19,4 +19,5 @@ package adb
 type Zone struct {
 	ZoneId     string `json:"ZoneId" xml:"ZoneId"`
 	VpcEnabled bool   `json:"VpcEnabled" xml:"VpcEnabled"`
+	LocalName  string `json:"LocalName" xml:"LocalName"`
 }

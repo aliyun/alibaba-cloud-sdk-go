@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeRegions invokes the adb.DescribeRegions API synchronously
-// api document: https://help.aliyun.com/api/adb/describeregions.html
-func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response *DescribeRegionsResponse, err error) {
-	response = CreateDescribeRegionsResponse()
+// DescribeTables invokes the adb.DescribeTables API synchronously
+// api document: https://help.aliyun.com/api/adb/describetables.html
+func (client *Client) DescribeTables(request *DescribeTablesRequest) (response *DescribeTablesResponse, err error) {
+	response = CreateDescribeTablesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeRegionsWithChan invokes the adb.DescribeRegions API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeregions.html
+// DescribeTablesWithChan invokes the adb.DescribeTables API asynchronously
+// api document: https://help.aliyun.com/api/adb/describetables.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (<-chan *DescribeRegionsResponse, <-chan error) {
-	responseChan := make(chan *DescribeRegionsResponse, 1)
+func (client *Client) DescribeTablesWithChan(request *DescribeTablesRequest) (<-chan *DescribeTablesResponse, <-chan error) {
+	responseChan := make(chan *DescribeTablesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeRegions(request)
+		response, err := client.DescribeTables(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (
 	return responseChan, errChan
 }
 
-// DescribeRegionsWithCallback invokes the adb.DescribeRegions API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeregions.html
+// DescribeTablesWithCallback invokes the adb.DescribeTables API asynchronously
+// api document: https://help.aliyun.com/api/adb/describetables.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsRequest, callback func(response *DescribeRegionsResponse, err error)) <-chan int {
+func (client *Client) DescribeTablesWithCallback(request *DescribeTablesRequest, callback func(response *DescribeTablesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeRegionsResponse
+		var response *DescribeTablesResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeRegions(request)
+		response, err = client.DescribeTables(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,36 @@ func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsReques
 	return result
 }
 
-// DescribeRegionsRequest is the request struct for api DescribeRegions
-type DescribeRegionsRequest struct {
+// DescribeTablesRequest is the request struct for api DescribeTables
+type DescribeTablesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SchemaName           string           `position:"Query" name:"SchemaName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
 }
 
-// DescribeRegionsResponse is the response struct for api DescribeRegions
-type DescribeRegionsResponse struct {
+// DescribeTablesResponse is the response struct for api DescribeTables
+type DescribeTablesResponse struct {
 	*responses.BaseResponse
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	Regions   Regions `json:"Regions" xml:"Regions"`
+	RequestId string                `json:"RequestId" xml:"RequestId"`
+	Items     ItemsInDescribeTables `json:"Items" xml:"Items"`
 }
 
-// CreateDescribeRegionsRequest creates a request to invoke DescribeRegions API
-func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
-	request = &DescribeRegionsRequest{
+// CreateDescribeTablesRequest creates a request to invoke DescribeTables API
+func CreateDescribeTablesRequest() (request *DescribeTablesRequest) {
+	request = &DescribeTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("adb", "2019-03-15", "DescribeRegions", "ads", "openAPI")
+	request.InitWithApiInfo("adb", "2019-03-15", "DescribeTables", "ads", "openAPI")
 	return
 }
 
-// CreateDescribeRegionsResponse creates a response to parse from DescribeRegions response
-func CreateDescribeRegionsResponse() (response *DescribeRegionsResponse) {
-	response = &DescribeRegionsResponse{
+// CreateDescribeTablesResponse creates a response to parse from DescribeTables response
+func CreateDescribeTablesResponse() (response *DescribeTablesResponse) {
+	response = &DescribeTablesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

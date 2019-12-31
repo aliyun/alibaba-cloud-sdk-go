@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeRegions invokes the adb.DescribeRegions API synchronously
-// api document: https://help.aliyun.com/api/adb/describeregions.html
-func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response *DescribeRegionsResponse, err error) {
-	response = CreateDescribeRegionsResponse()
+// KillProcess invokes the adb.KillProcess API synchronously
+// api document: https://help.aliyun.com/api/adb/killprocess.html
+func (client *Client) KillProcess(request *KillProcessRequest) (response *KillProcessResponse, err error) {
+	response = CreateKillProcessResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeRegionsWithChan invokes the adb.DescribeRegions API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeregions.html
+// KillProcessWithChan invokes the adb.KillProcess API asynchronously
+// api document: https://help.aliyun.com/api/adb/killprocess.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (<-chan *DescribeRegionsResponse, <-chan error) {
-	responseChan := make(chan *DescribeRegionsResponse, 1)
+func (client *Client) KillProcessWithChan(request *KillProcessRequest) (<-chan *KillProcessResponse, <-chan error) {
+	responseChan := make(chan *KillProcessResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeRegions(request)
+		response, err := client.KillProcess(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (
 	return responseChan, errChan
 }
 
-// DescribeRegionsWithCallback invokes the adb.DescribeRegions API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeregions.html
+// KillProcessWithCallback invokes the adb.KillProcess API asynchronously
+// api document: https://help.aliyun.com/api/adb/killprocess.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsRequest, callback func(response *DescribeRegionsResponse, err error)) <-chan int {
+func (client *Client) KillProcessWithCallback(request *KillProcessRequest, callback func(response *KillProcessResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeRegionsResponse
+		var response *KillProcessResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeRegions(request)
+		response, err = client.KillProcess(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,35 @@ func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsReques
 	return result
 }
 
-// DescribeRegionsRequest is the request struct for api DescribeRegions
-type DescribeRegionsRequest struct {
+// KillProcessRequest is the request struct for api KillProcess
+type KillProcessRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
+	ProcessId            string           `position:"Query" name:"ProcessId"`
 }
 
-// DescribeRegionsResponse is the response struct for api DescribeRegions
-type DescribeRegionsResponse struct {
+// KillProcessResponse is the response struct for api KillProcess
+type KillProcessResponse struct {
 	*responses.BaseResponse
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	Regions   Regions `json:"Regions" xml:"Regions"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDescribeRegionsRequest creates a request to invoke DescribeRegions API
-func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
-	request = &DescribeRegionsRequest{
+// CreateKillProcessRequest creates a request to invoke KillProcess API
+func CreateKillProcessRequest() (request *KillProcessRequest) {
+	request = &KillProcessRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("adb", "2019-03-15", "DescribeRegions", "ads", "openAPI")
+	request.InitWithApiInfo("adb", "2019-03-15", "KillProcess", "ads", "openAPI")
 	return
 }
 
-// CreateDescribeRegionsResponse creates a response to parse from DescribeRegions response
-func CreateDescribeRegionsResponse() (response *DescribeRegionsResponse) {
-	response = &DescribeRegionsResponse{
+// CreateKillProcessResponse creates a response to parse from KillProcess response
+func CreateKillProcessResponse() (response *KillProcessResponse) {
+	response = &KillProcessResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
