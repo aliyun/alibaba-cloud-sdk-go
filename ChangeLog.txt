@@ -1,3 +1,7 @@
+2019-12-31 Version: v1.60.309
+- Generated 2019-02-14 for `Ons`.
+- Add request parameter groupType for OnsGroupCreate.
+
 2019-12-31 Version: v1.60.308
 - Generated 2017-09-06 for `imm`.
 - Supported image for process.

@@ -79,6 +79,7 @@ type OnsGroupCreateRequest struct {
 	GroupId    string `position:"Query" name:"GroupId"`
 	Remark     string `position:"Query" name:"Remark"`
 	InstanceId string `position:"Query" name:"InstanceId"`
+	GroupType  string `position:"Query" name:"GroupType"`
 }
 
 // OnsGroupCreateResponse is the response struct for api OnsGroupCreate
