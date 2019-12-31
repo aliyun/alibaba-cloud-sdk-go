@@ -74,6 +74,7 @@ type DBInstanceAttribute struct {
 	TempUpgradeRecoveryMemory         int                                                `json:"TempUpgradeRecoveryMemory" xml:"TempUpgradeRecoveryMemory"`
 	DispenseMode                      string                                             `json:"DispenseMode" xml:"DispenseMode"`
 	OriginConfiguration               string                                             `json:"OriginConfiguration" xml:"OriginConfiguration"`
+	DedicatedHostGroupId              string                                             `json:"DedicatedHostGroupId" xml:"DedicatedHostGroupId"`
 	ProxyType                         int                                                `json:"ProxyType" xml:"ProxyType"`
 	AccountMaxQuantity                int                                                `json:"AccountMaxQuantity" xml:"AccountMaxQuantity"`
 	TempUpgradeRecoveryMaxConnections string                                             `json:"TempUpgradeRecoveryMaxConnections" xml:"TempUpgradeRecoveryMaxConnections"`

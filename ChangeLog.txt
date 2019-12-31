@@ -1,3 +1,7 @@
+2019-12-31 Version: v1.60.311
+- Generated 2014-08-15 for `Rds`.
+- Supported SQL SERVER support delete backup set according to time range.
+
 2019-12-31 Version: v1.60.310
 - Generated 2016-01-20 for `Kms`.
 - Support asymmetric keys.

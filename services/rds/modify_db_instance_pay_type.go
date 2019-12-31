@@ -82,7 +82,7 @@ type ModifyDBInstancePayTypeRequest struct {
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 	Period               string           `position:"Query" name:"Period"`
 	AgentId              string           `position:"Query" name:"AgentId"`
-	AutoPay              string           `position:"Query" name:"AutoPay"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Resource             string           `position:"Query" name:"Resource"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

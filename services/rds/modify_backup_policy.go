@@ -76,42 +76,44 @@ func (client *Client) ModifyBackupPolicyWithCallback(request *ModifyBackupPolicy
 // ModifyBackupPolicyRequest is the request struct for api ModifyBackupPolicy
 type ModifyBackupPolicyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LocalLogRetentionHours       string           `position:"Query" name:"LocalLogRetentionHours"`
-	LogBackupFrequency           string           `position:"Query" name:"LogBackupFrequency"`
-	ArchiveBackupKeepCount       string           `position:"Query" name:"ArchiveBackupKeepCount"`
-	BackupLog                    string           `position:"Query" name:"BackupLog"`
-	DuplicationContent           string           `position:"Query" name:"DuplicationContent"`
-	HighSpaceUsageProtection     string           `position:"Query" name:"HighSpaceUsageProtection"`
-	DBInstanceId                 string           `position:"Query" name:"DBInstanceId"`
-	EnableBackupLog              string           `position:"Query" name:"EnableBackupLog"`
-	BackupPolicyMode             string           `position:"Query" name:"BackupPolicyMode"`
-	PreferredBackupPeriod        string           `position:"Query" name:"PreferredBackupPeriod"`
-	ReleasedKeepPolicy           string           `position:"Query" name:"ReleasedKeepPolicy"`
-	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
-	CompressType                 string           `position:"Query" name:"CompressType"`
-	LocalLogRetentionSpace       string           `position:"Query" name:"LocalLogRetentionSpace"`
-	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
-	ArchiveBackupKeepPolicy      string           `position:"Query" name:"ArchiveBackupKeepPolicy"`
-	Duplication                  string           `position:"Query" name:"Duplication"`
-	PreferredBackupTime          string           `position:"Query" name:"PreferredBackupTime"`
-	BackupRetentionPeriod        string           `position:"Query" name:"BackupRetentionPeriod"`
-	DuplicationLocation          string           `position:"Query" name:"DuplicationLocation"`
-	ArchiveBackupRetentionPeriod string           `position:"Query" name:"ArchiveBackupRetentionPeriod"`
-	LogBackupRetentionPeriod     string           `position:"Query" name:"LogBackupRetentionPeriod"`
+	ResourceOwnerId               requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	LocalLogRetentionHours        string           `position:"Query" name:"LocalLogRetentionHours"`
+	LogBackupFrequency            string           `position:"Query" name:"LogBackupFrequency"`
+	ArchiveBackupKeepCount        string           `position:"Query" name:"ArchiveBackupKeepCount"`
+	BackupLog                     string           `position:"Query" name:"BackupLog"`
+	DuplicationContent            string           `position:"Query" name:"DuplicationContent"`
+	HighSpaceUsageProtection      string           `position:"Query" name:"HighSpaceUsageProtection"`
+	LogBackupLocalRetentionNumber requests.Integer `position:"Query" name:"LogBackupLocalRetentionNumber"`
+	DBInstanceId                  string           `position:"Query" name:"DBInstanceId"`
+	EnableBackupLog               string           `position:"Query" name:"EnableBackupLog"`
+	BackupPolicyMode              string           `position:"Query" name:"BackupPolicyMode"`
+	PreferredBackupPeriod         string           `position:"Query" name:"PreferredBackupPeriod"`
+	ReleasedKeepPolicy            string           `position:"Query" name:"ReleasedKeepPolicy"`
+	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                  string           `position:"Query" name:"OwnerAccount"`
+	CompressType                  string           `position:"Query" name:"CompressType"`
+	LocalLogRetentionSpace        string           `position:"Query" name:"LocalLogRetentionSpace"`
+	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
+	ArchiveBackupKeepPolicy       string           `position:"Query" name:"ArchiveBackupKeepPolicy"`
+	Duplication                   string           `position:"Query" name:"Duplication"`
+	PreferredBackupTime           string           `position:"Query" name:"PreferredBackupTime"`
+	BackupRetentionPeriod         string           `position:"Query" name:"BackupRetentionPeriod"`
+	DuplicationLocation           string           `position:"Query" name:"DuplicationLocation"`
+	ArchiveBackupRetentionPeriod  string           `position:"Query" name:"ArchiveBackupRetentionPeriod"`
+	LogBackupRetentionPeriod      string           `position:"Query" name:"LogBackupRetentionPeriod"`
 }
 
 // ModifyBackupPolicyResponse is the response struct for api ModifyBackupPolicy
 type ModifyBackupPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId                string `json:"RequestId" xml:"RequestId"`
-	DBInstanceID             string `json:"DBInstanceID" xml:"DBInstanceID"`
-	EnableBackupLog          string `json:"EnableBackupLog" xml:"EnableBackupLog"`
-	LocalLogRetentionHours   int    `json:"LocalLogRetentionHours" xml:"LocalLogRetentionHours"`
-	LocalLogRetentionSpace   string `json:"LocalLogRetentionSpace" xml:"LocalLogRetentionSpace"`
-	HighSpaceUsageProtection string `json:"HighSpaceUsageProtection" xml:"HighSpaceUsageProtection"`
-	CompressType             string `json:"CompressType" xml:"CompressType"`
+	RequestId                     string `json:"RequestId" xml:"RequestId"`
+	DBInstanceID                  string `json:"DBInstanceID" xml:"DBInstanceID"`
+	EnableBackupLog               string `json:"EnableBackupLog" xml:"EnableBackupLog"`
+	LocalLogRetentionHours        int    `json:"LocalLogRetentionHours" xml:"LocalLogRetentionHours"`
+	LocalLogRetentionSpace        string `json:"LocalLogRetentionSpace" xml:"LocalLogRetentionSpace"`
+	HighSpaceUsageProtection      string `json:"HighSpaceUsageProtection" xml:"HighSpaceUsageProtection"`
+	CompressType                  string `json:"CompressType" xml:"CompressType"`
+	LogBackupLocalRetentionNumber int    `json:"LogBackupLocalRetentionNumber" xml:"LogBackupLocalRetentionNumber"`
 }
 
 // CreateModifyBackupPolicyRequest creates a request to invoke ModifyBackupPolicy API
