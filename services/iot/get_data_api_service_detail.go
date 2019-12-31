@@ -94,7 +94,7 @@ func CreateGetDataAPIServiceDetailRequest() (request *GetDataAPIServiceDetailReq
 	request = &GetDataAPIServiceDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetDataAPIServiceDetail", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetDataAPIServiceDetail", "iot", "openAPI")
 	return
 }
 

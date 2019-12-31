@@ -103,7 +103,7 @@ func CreateCreateRuleRequest() (request *CreateRuleRequest) {
 	request = &CreateRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateRule", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateRule", "iot", "openAPI")
 	return
 }
 

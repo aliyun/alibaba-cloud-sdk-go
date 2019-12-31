@@ -98,7 +98,7 @@ func CreateGetProductMetaListByNameRequest() (request *GetProductMetaListByNameR
 	request = &GetProductMetaListByNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetProductMetaListByName", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetProductMetaListByName", "iot", "openAPI")
 	return
 }
 

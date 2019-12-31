@@ -95,7 +95,7 @@ func CreateQueryCertUrlByApplyIdRequest() (request *QueryCertUrlByApplyIdRequest
 	request = &QueryCertUrlByApplyIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryCertUrlByApplyId", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryCertUrlByApplyId", "iot", "openAPI")
 	return
 }
 

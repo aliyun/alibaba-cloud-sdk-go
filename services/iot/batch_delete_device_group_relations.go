@@ -104,7 +104,7 @@ func CreateBatchDeleteDeviceGroupRelationsRequest() (request *BatchDeleteDeviceG
 	request = &BatchDeleteDeviceGroupRelationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchDeleteDeviceGroupRelations", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchDeleteDeviceGroupRelations", "iot", "openAPI")
 	return
 }
 

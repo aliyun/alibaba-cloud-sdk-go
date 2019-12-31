@@ -98,7 +98,7 @@ func CreateNotifyAddThingTopoRequest() (request *NotifyAddThingTopoRequest) {
 	request = &NotifyAddThingTopoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "NotifyAddThingTopo", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "NotifyAddThingTopo", "iot", "openAPI")
 	return
 }
 

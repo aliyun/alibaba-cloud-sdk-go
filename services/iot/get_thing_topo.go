@@ -99,7 +99,7 @@ func CreateGetThingTopoRequest() (request *GetThingTopoRequest) {
 	request = &GetThingTopoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetThingTopo", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetThingTopo", "iot", "openAPI")
 	return
 }
 

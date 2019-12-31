@@ -98,7 +98,7 @@ func CreateQueryDeviceFileRequest() (request *QueryDeviceFileRequest) {
 	request = &QueryDeviceFileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceFile", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceFile", "iot", "openAPI")
 	return
 }
 

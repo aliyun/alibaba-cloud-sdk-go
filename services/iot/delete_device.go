@@ -96,7 +96,7 @@ func CreateDeleteDeviceRequest() (request *DeleteDeviceRequest) {
 	request = &DeleteDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteDevice", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteDevice", "iot", "openAPI")
 	return
 }
 

@@ -97,7 +97,7 @@ func CreateSaveDevicePropRequest() (request *SaveDevicePropRequest) {
 	request = &SaveDevicePropRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "SaveDeviceProp", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "SaveDeviceProp", "iot", "openAPI")
 	return
 }
 

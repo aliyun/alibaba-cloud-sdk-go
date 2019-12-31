@@ -95,7 +95,7 @@ func CreateQuerySuperDeviceGroupRequest() (request *QuerySuperDeviceGroupRequest
 	request = &QuerySuperDeviceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySuperDeviceGroup", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QuerySuperDeviceGroup", "iot", "openAPI")
 	return
 }
 

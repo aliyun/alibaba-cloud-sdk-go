@@ -95,7 +95,7 @@ func CreateBatchClearEdgeInstanceDeviceConfigRequest() (request *BatchClearEdgeI
 	request = &BatchClearEdgeInstanceDeviceConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchClearEdgeInstanceDeviceConfig", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchClearEdgeInstanceDeviceConfig", "iot", "openAPI")
 	return
 }
 

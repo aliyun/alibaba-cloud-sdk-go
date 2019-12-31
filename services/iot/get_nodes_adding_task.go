@@ -99,7 +99,7 @@ func CreateGetNodesAddingTaskRequest() (request *GetNodesAddingTaskRequest) {
 	request = &GetNodesAddingTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetNodesAddingTask", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetNodesAddingTask", "iot", "openAPI")
 	return
 }
 

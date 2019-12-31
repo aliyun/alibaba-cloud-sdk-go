@@ -24,14 +24,17 @@ type Data struct {
 	RequestProtocol        string                `json:"RequestProtocol" xml:"RequestProtocol"`
 	GmtCompleted           string                `json:"GmtCompleted" xml:"GmtCompleted"`
 	UtcCreate              string                `json:"UtcCreate" xml:"UtcCreate"`
+	UtcStartTime           string                `json:"UtcStartTime" xml:"UtcStartTime"`
 	RoleName               string                `json:"RoleName" xml:"RoleName"`
 	Spec                   int                   `json:"Spec" xml:"Spec"`
 	DeviceActive           int                   `json:"DeviceActive" xml:"DeviceActive"`
 	RequestMethod          string                `json:"RequestMethod" xml:"RequestMethod"`
 	Nickname               string                `json:"Nickname" xml:"Nickname"`
 	PageNo                 int                   `json:"PageNo" xml:"PageNo"`
+	UtcEndTime             string                `json:"UtcEndTime" xml:"UtcEndTime"`
 	DevEui                 string                `json:"DevEui" xml:"DevEui"`
 	GroupId                string                `json:"GroupId" xml:"GroupId"`
+	JobType                string                `json:"JobType" xml:"JobType"`
 	LatestDeploymentType   string                `json:"LatestDeploymentType" xml:"LatestDeploymentType"`
 	RoleArn                string                `json:"RoleArn" xml:"RoleArn"`
 	Type                   string                `json:"Type" xml:"Type"`
@@ -39,44 +42,65 @@ type Data struct {
 	LastUpdateTime         int64                 `json:"LastUpdateTime" xml:"LastUpdateTime"`
 	Tags                   string                `json:"Tags" xml:"Tags"`
 	Versions               string                `json:"Versions" xml:"Versions"`
+	SelectionType          string                `json:"SelectionType" xml:"SelectionType"`
+	FirmwareId             string                `json:"FirmwareId" xml:"FirmwareId"`
 	AliyunCommodityCode    string                `json:"AliyunCommodityCode" xml:"AliyunCommodityCode"`
 	ApplyId                int64                 `json:"ApplyId" xml:"ApplyId"`
 	UtcCreatedOn           string                `json:"UtcCreatedOn" xml:"UtcCreatedOn"`
+	UtcModified            string                `json:"UtcModified" xml:"UtcModified"`
+	Host                   string                `json:"Host" xml:"Host"`
 	MessageId              string                `json:"MessageId" xml:"MessageId"`
 	DeviceName             string                `json:"DeviceName" xml:"DeviceName"`
 	PageCount              int64                 `json:"PageCount" xml:"PageCount"`
 	Size                   string                `json:"Size" xml:"Size"`
 	Id2                    bool                  `json:"Id2" xml:"Id2"`
 	NodeType               int                   `json:"NodeType" xml:"NodeType"`
+	UtcScheduleTime        string                `json:"UtcScheduleTime" xml:"UtcScheduleTime"`
 	ApiSrn                 string                `json:"ApiSrn" xml:"ApiSrn"`
 	ProductName            string                `json:"ProductName" xml:"ProductName"`
 	Name                   string                `json:"Name" xml:"Name"`
+	OSSAccessKeyId         string                `json:"OSSAccessKeyId" xml:"OSSAccessKeyId"`
 	GroupName              string                `json:"GroupName" xml:"GroupName"`
 	DownloadUrl            string                `json:"DownloadUrl" xml:"DownloadUrl"`
+	RetryCount             int                   `json:"RetryCount" xml:"RetryCount"`
 	CreateTime             int64                 `json:"CreateTime" xml:"CreateTime"`
+	TimeoutInMinutes       int                   `json:"TimeoutInMinutes" xml:"TimeoutInMinutes"`
 	DeploymentId           string                `json:"DeploymentId" xml:"DeploymentId"`
 	PageSize               int                   `json:"PageSize" xml:"PageSize"`
+	Key                    string                `json:"Key" xml:"Key"`
 	GmtCreate              string                `json:"GmtCreate" xml:"GmtCreate"`
+	FirmwareUrl            string                `json:"FirmwareUrl" xml:"FirmwareUrl"`
+	DestVersion            string                `json:"DestVersion" xml:"DestVersion"`
 	InstanceId             string                `json:"InstanceId" xml:"InstanceId"`
+	MaximumPerMinute       int                   `json:"MaximumPerMinute" xml:"MaximumPerMinute"`
+	JobDesc                string                `json:"JobDesc" xml:"JobDesc"`
+	JobStatus              string                `json:"JobStatus" xml:"JobStatus"`
 	Description            string                `json:"Description" xml:"Description"`
+	Policy                 string                `json:"Policy" xml:"Policy"`
 	DateFormat             string                `json:"DateFormat" xml:"DateFormat"`
 	ApiPath                string                `json:"ApiPath" xml:"ApiPath"`
 	DeviceOnline           int                   `json:"DeviceOnline" xml:"DeviceOnline"`
+	JobId                  string                `json:"JobId" xml:"JobId"`
 	Status                 int                   `json:"Status" xml:"Status"`
 	Result                 string                `json:"Result" xml:"Result"`
+	RetryInterval          int                   `json:"RetryInterval" xml:"RetryInterval"`
 	DeviceSecret           string                `json:"DeviceSecret" xml:"DeviceSecret"`
 	ProductKey             string                `json:"ProductKey" xml:"ProductKey"`
 	GmtModified            string                `json:"GmtModified" xml:"GmtModified"`
 	DisplayName            string                `json:"DisplayName" xml:"DisplayName"`
 	JoinEui                string                `json:"JoinEui" xml:"JoinEui"`
 	CurrentPage            int                   `json:"CurrentPage" xml:"CurrentPage"`
+	Signature              string                `json:"Signature" xml:"Signature"`
 	IotId                  string                `json:"IotId" xml:"IotId"`
 	GroupDesc              string                `json:"GroupDesc" xml:"GroupDesc"`
 	DeviceCount            int                   `json:"DeviceCount" xml:"DeviceCount"`
+	GrayPercent            string                `json:"GrayPercent" xml:"GrayPercent"`
 	ProtocolType           string                `json:"ProtocolType" xml:"ProtocolType"`
 	AuthType               string                `json:"AuthType" xml:"AuthType"`
 	Total                  int64                 `json:"Total" xml:"Total"`
+	TargetSelection        string                `json:"TargetSelection" xml:"TargetSelection"`
 	FieldNameList          FieldNameList         `json:"FieldNameList" xml:"FieldNameList"`
+	SrcVersions            SrcVersions           `json:"SrcVersions" xml:"SrcVersions"`
 	InvalidDeviceNameList  InvalidDeviceNameList `json:"InvalidDeviceNameList" xml:"InvalidDeviceNameList"`
 	ResultList             ResultList            `json:"ResultList" xml:"ResultList"`
 	SqlTemplateDTO         SqlTemplateDTO        `json:"SqlTemplateDTO" xml:"SqlTemplateDTO"`

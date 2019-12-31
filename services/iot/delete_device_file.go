@@ -97,7 +97,7 @@ func CreateDeleteDeviceFileRequest() (request *DeleteDeviceFileRequest) {
 	request = &DeleteDeviceFileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteDeviceFile", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteDeviceFile", "iot", "openAPI")
 	return
 }
 

@@ -97,7 +97,7 @@ func CreateBindDriverToEdgeInstanceRequest() (request *BindDriverToEdgeInstanceR
 	request = &BindDriverToEdgeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BindDriverToEdgeInstance", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BindDriverToEdgeInstance", "iot", "openAPI")
 	return
 }
 

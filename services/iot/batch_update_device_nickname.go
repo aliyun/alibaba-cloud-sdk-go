@@ -102,7 +102,7 @@ func CreateBatchUpdateDeviceNicknameRequest() (request *BatchUpdateDeviceNicknam
 	request = &BatchUpdateDeviceNicknameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchUpdateDeviceNickname", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchUpdateDeviceNickname", "iot", "openAPI")
 	return
 }
 
