@@ -83,11 +83,16 @@ type DescribeOverviewDataRequest struct {
 // DescribeOverviewDataResponse is the response struct for api DescribeOverviewData
 type DescribeOverviewDataResponse struct {
 	*responses.BaseResponse
-	ErrorCode      string         `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage   string         `json:"ErrorMessage" xml:"ErrorMessage"`
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	Success        bool           `json:"Success" xml:"Success"`
-	OverviewDetail OverviewDetail `json:"OverviewDetail" xml:"OverviewDetail"`
+	ErrorCode              string                 `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage           string                 `json:"ErrorMessage" xml:"ErrorMessage"`
+	Message                string                 `json:"Message" xml:"Message"`
+	Code                   string                 `json:"Code" xml:"Code"`
+	DynamicCode            string                 `json:"DynamicCode" xml:"DynamicCode"`
+	RequestId              string                 `json:"RequestId" xml:"RequestId"`
+	Success                bool                   `json:"Success" xml:"Success"`
+	DynamicMessage         string                 `json:"DynamicMessage" xml:"DynamicMessage"`
+	OverviewDetail         OverviewDetail         `json:"OverviewDetail" xml:"OverviewDetail"`
+	AccurateOverviewDetail AccurateOverviewDetail `json:"AccurateOverviewDetail" xml:"AccurateOverviewDetail"`
 }
 
 // CreateDescribeOverviewDataRequest creates a request to invoke DescribeOverviewData API
