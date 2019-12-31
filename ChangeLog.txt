@@ -1,3 +1,7 @@
+2019-12-31 Version: v1.60.310
+- Generated 2016-01-20 for `Kms`.
+- Support asymmetric keys.
+
 2019-12-31 Version: v1.60.309
 - Generated 2019-02-14 for `Ons`.
 - Add request parameter groupType for OnsGroupCreate.

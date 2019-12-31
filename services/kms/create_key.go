@@ -80,6 +80,7 @@ type CreateKeyRequest struct {
 	KeyUsage                string           `position:"Query" name:"KeyUsage"`
 	Origin                  string           `position:"Query" name:"Origin"`
 	Description             string           `position:"Query" name:"Description"`
+	KeySpec                 string           `position:"Query" name:"KeySpec"`
 	RotationInterval        string           `position:"Query" name:"RotationInterval"`
 	EnableAutomaticRotation requests.Boolean `position:"Query" name:"EnableAutomaticRotation"`
 }

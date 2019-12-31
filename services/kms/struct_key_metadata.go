@@ -19,6 +19,7 @@ package kms
 type KeyMetadata struct {
 	NextRotationDate   string `json:"NextRotationDate" xml:"NextRotationDate"`
 	ProtectionLevel    string `json:"ProtectionLevel" xml:"ProtectionLevel"`
+	KeySpec            string `json:"KeySpec" xml:"KeySpec"`
 	KeyUsage           string `json:"KeyUsage" xml:"KeyUsage"`
 	DeleteDate         string `json:"DeleteDate" xml:"DeleteDate"`
 	AutomaticRotation  string `json:"AutomaticRotation" xml:"AutomaticRotation"`
