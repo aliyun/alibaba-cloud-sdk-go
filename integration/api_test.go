@@ -157,7 +157,6 @@ func Test_RDS_DescribeDBInstancesWithRPCrequest(t *testing.T) {
 	response, err := client.DescribeDBInstances(request)
 	assert.Nil(t, err)
 	assert.NotNil(t, response)
-	assert.Equal(t, 36, len(response.RequestId))
 }
 
 func Test_CDN_DescribeCdnDomainDetailWithRPCrequest(t *testing.T) {
