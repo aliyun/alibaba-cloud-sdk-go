@@ -121,7 +121,7 @@ func CreateCreateDBInstanceRequest() (request *CreateDBInstanceRequest) {
 	request = &CreateDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "CreateDBInstance", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "CreateDBInstance", "Dds", "openAPI")
 	return
 }
 

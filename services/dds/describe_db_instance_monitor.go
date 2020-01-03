@@ -96,7 +96,7 @@ func CreateDescribeDBInstanceMonitorRequest() (request *DescribeDBInstanceMonito
 	request = &DescribeDBInstanceMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeDBInstanceMonitor", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeDBInstanceMonitor", "Dds", "openAPI")
 	return
 }
 

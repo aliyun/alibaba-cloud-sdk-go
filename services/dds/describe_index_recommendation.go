@@ -108,7 +108,7 @@ func CreateDescribeIndexRecommendationRequest() (request *DescribeIndexRecommend
 	request = &DescribeIndexRecommendationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeIndexRecommendation", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeIndexRecommendation", "Dds", "openAPI")
 	return
 }
 

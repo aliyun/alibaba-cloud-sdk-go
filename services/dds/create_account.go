@@ -98,7 +98,7 @@ func CreateCreateAccountRequest() (request *CreateAccountRequest) {
 	request = &CreateAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "CreateAccount", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "CreateAccount", "Dds", "openAPI")
 	return
 }
 

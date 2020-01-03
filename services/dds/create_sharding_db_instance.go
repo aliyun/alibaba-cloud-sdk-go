@@ -132,7 +132,7 @@ func CreateCreateShardingDBInstanceRequest() (request *CreateShardingDBInstanceR
 	request = &CreateShardingDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "CreateShardingDBInstance", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "CreateShardingDBInstance", "Dds", "openAPI")
 	return
 }
 

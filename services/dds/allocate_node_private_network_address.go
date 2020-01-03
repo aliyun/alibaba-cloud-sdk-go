@@ -99,7 +99,7 @@ func CreateAllocateNodePrivateNetworkAddressRequest() (request *AllocateNodePriv
 	request = &AllocateNodePrivateNetworkAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "AllocateNodePrivateNetworkAddress", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "AllocateNodePrivateNetworkAddress", "Dds", "openAPI")
 	return
 }
 

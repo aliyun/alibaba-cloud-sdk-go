@@ -96,7 +96,7 @@ func CreateDescribeKernelReleaseNotesRequest() (request *DescribeKernelReleaseNo
 	request = &DescribeKernelReleaseNotesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeKernelReleaseNotes", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeKernelReleaseNotes", "Dds", "openAPI")
 	return
 }
 

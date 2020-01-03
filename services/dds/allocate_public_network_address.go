@@ -96,7 +96,7 @@ func CreateAllocatePublicNetworkAddressRequest() (request *AllocatePublicNetwork
 	request = &AllocatePublicNetworkAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "AllocatePublicNetworkAddress", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "AllocatePublicNetworkAddress", "Dds", "openAPI")
 	return
 }
 

@@ -98,7 +98,7 @@ func CreateDescribeAuditLogFilterRequest() (request *DescribeAuditLogFilterReque
 	request = &DescribeAuditLogFilterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeAuditLogFilter", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeAuditLogFilter", "Dds", "openAPI")
 	return
 }
 

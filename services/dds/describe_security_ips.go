@@ -87,9 +87,9 @@ type DescribeSecurityIpsRequest struct {
 // DescribeSecurityIpsResponse is the response struct for api DescribeSecurityIps
 type DescribeSecurityIpsResponse struct {
 	*responses.BaseResponse
-	RequestId        string                                `json:"RequestId" xml:"RequestId"`
-	SecurityIps      string                                `json:"SecurityIps" xml:"SecurityIps"`
-	SecurityIpGroups SecurityIpGroupsInDescribeSecurityIps `json:"SecurityIpGroups" xml:"SecurityIpGroups"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	SecurityIps      string           `json:"SecurityIps" xml:"SecurityIps"`
+	SecurityIpGroups SecurityIpGroups `json:"SecurityIpGroups" xml:"SecurityIpGroups"`
 }
 
 // CreateDescribeSecurityIpsRequest creates a request to invoke DescribeSecurityIps API
@@ -97,7 +97,7 @@ func CreateDescribeSecurityIpsRequest() (request *DescribeSecurityIpsRequest) {
 	request = &DescribeSecurityIpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeSecurityIps", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeSecurityIps", "Dds", "openAPI")
 	return
 }
 

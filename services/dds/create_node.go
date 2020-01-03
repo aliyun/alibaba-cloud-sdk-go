@@ -102,7 +102,7 @@ func CreateCreateNodeRequest() (request *CreateNodeRequest) {
 	request = &CreateNodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "CreateNode", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "CreateNode", "Dds", "openAPI")
 	return
 }
 

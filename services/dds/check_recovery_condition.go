@@ -100,7 +100,7 @@ func CreateCheckRecoveryConditionRequest() (request *CheckRecoveryConditionReque
 	request = &CheckRecoveryConditionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "CheckRecoveryCondition", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "CheckRecoveryCondition", "Dds", "openAPI")
 	return
 }
 

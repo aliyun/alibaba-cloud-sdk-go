@@ -96,7 +96,7 @@ func CreateDescribeAuditPolicyRequest() (request *DescribeAuditPolicyRequest) {
 	request = &DescribeAuditPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeAuditPolicy", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeAuditPolicy", "Dds", "openAPI")
 	return
 }
 
