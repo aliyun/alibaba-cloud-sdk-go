@@ -77,9 +77,9 @@ func (client *Client) ListNodesByQueueWithCallback(request *ListNodesByQueueRequ
 type ListNodesByQueueRequest struct {
 	*requests.RpcRequest
 	QueueName  string           `position:"Query" name:"QueueName"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	ClusterId  string           `position:"Query" name:"ClusterId"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListNodesByQueueResponse is the response struct for api ListNodesByQueue

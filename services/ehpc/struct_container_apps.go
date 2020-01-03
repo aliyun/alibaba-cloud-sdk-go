@@ -17,5 +17,5 @@ package ehpc
 
 // ContainerApps is a nested struct in ehpc response
 type ContainerApps struct {
-	ContainerAppsItem []ContainerAppsItem `json:"ContainerAppsItem" xml:"ContainerAppsItem"`
+	ContainerAppsItem []ContainerAppsItem `json:"ContainerApps" xml:"ContainerApps"`
 }

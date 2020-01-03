@@ -76,8 +76,8 @@ func (client *Client) UninstallSoftwareWithCallback(request *UninstallSoftwareRe
 // UninstallSoftwareRequest is the request struct for api UninstallSoftware
 type UninstallSoftwareRequest struct {
 	*requests.RpcRequest
-	Application string `position:"Query" name:"Application"`
 	ClusterId   string `position:"Query" name:"ClusterId"`
+	Application string `position:"Query" name:"Application"`
 }
 
 // UninstallSoftwareResponse is the response struct for api UninstallSoftware

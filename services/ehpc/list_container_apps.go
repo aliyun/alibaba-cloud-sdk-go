@@ -76,8 +76,8 @@ func (client *Client) ListContainerAppsWithCallback(request *ListContainerAppsRe
 // ListContainerAppsRequest is the request struct for api ListContainerApps
 type ListContainerAppsRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListContainerAppsResponse is the response struct for api ListContainerApps

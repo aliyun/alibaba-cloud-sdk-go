@@ -96,7 +96,7 @@ type CreateHybridClusterRequest struct {
 	RemoteDirectory             string                                  `position:"Query" name:"RemoteDirectory"`
 	PostInstallScript           *[]CreateHybridClusterPostInstallScript `position:"Query" name:"PostInstallScript"  type:"Repeated"`
 	VSwitchId                   string                                  `position:"Query" name:"VSwitchId"`
-	Nodes                       string                                  `position:"Query" name:"Nodes"`
+	Nodes                       *[]CreateHybridClusterNodes             `position:"Query" name:"Nodes"  type:"Repeated"`
 	Application                 *[]CreateHybridClusterApplication       `position:"Query" name:"Application"  type:"Repeated"`
 	Domain                      string                                  `position:"Query" name:"Domain"`
 	VpcId                       string                                  `position:"Query" name:"VpcId"`
@@ -104,6 +104,7 @@ type CreateHybridClusterRequest struct {
 	VolumeId                    string                                  `position:"Query" name:"VolumeId"`
 	VolumeMountpoint            string                                  `position:"Query" name:"VolumeMountpoint"`
 	ZoneId                      string                                  `position:"Query" name:"ZoneId"`
+	SchedulerPreInstall         requests.Boolean                        `position:"Query" name:"SchedulerPreInstall"`
 	Location                    string                                  `position:"Query" name:"Location"`
 }
 
@@ -111,6 +112,15 @@ type CreateHybridClusterRequest struct {
 type CreateHybridClusterPostInstallScript struct {
 	Args string `name:"Args"`
 	Url  string `name:"Url"`
+}
+
+// CreateHybridClusterNodes is a repeated param struct in CreateHybridClusterRequest
+type CreateHybridClusterNodes struct {
+	IpAddress     string `name:"IpAddress"`
+	HostName      string `name:"HostName"`
+	Role          string `name:"Role"`
+	AccountType   string `name:"AccountType"`
+	SchedulerType string `name:"SchedulerType"`
 }
 
 // CreateHybridClusterApplication is a repeated param struct in CreateHybridClusterRequest

@@ -76,9 +76,9 @@ func (client *Client) DescribeImageWithCallback(request *DescribeImageRequest, c
 // DescribeImageRequest is the request struct for api DescribeImage
 type DescribeImageRequest struct {
 	*requests.RpcRequest
-	ContainerType string `position:"Query" name:"ContainerType"`
 	ClusterId     string `position:"Query" name:"ClusterId"`
 	Repository    string `position:"Query" name:"Repository"`
+	ContainerType string `position:"Query" name:"ContainerType"`
 	ImageTag      string `position:"Query" name:"ImageTag"`
 }
 

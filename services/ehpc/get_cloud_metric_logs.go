@@ -76,15 +76,15 @@ func (client *Client) GetCloudMetricLogsWithCallback(request *GetCloudMetricLogs
 // GetCloudMetricLogsRequest is the request struct for api GetCloudMetricLogs
 type GetCloudMetricLogsRequest struct {
 	*requests.RpcRequest
+	MetricScope         string           `position:"Query" name:"MetricScope"`
+	ClusterId           string           `position:"Query" name:"ClusterId"`
+	AggregationInterval requests.Integer `position:"Query" name:"AggregationInterval"`
+	Reverse             requests.Boolean `position:"Query" name:"Reverse"`
 	AggregationType     string           `position:"Query" name:"AggregationType"`
 	Filter              string           `position:"Query" name:"Filter"`
 	MetricCategories    string           `position:"Query" name:"MetricCategories"`
-	MetricScope         string           `position:"Query" name:"MetricScope"`
 	From                requests.Integer `position:"Query" name:"From"`
-	ClusterId           string           `position:"Query" name:"ClusterId"`
 	To                  requests.Integer `position:"Query" name:"To"`
-	AggregationInterval requests.Integer `position:"Query" name:"AggregationInterval"`
-	Reverse             requests.Boolean `position:"Query" name:"Reverse"`
 }
 
 // GetCloudMetricLogsResponse is the response struct for api GetCloudMetricLogs

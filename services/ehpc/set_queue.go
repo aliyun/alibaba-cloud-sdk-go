@@ -77,8 +77,8 @@ func (client *Client) SetQueueWithCallback(request *SetQueueRequest, callback fu
 type SetQueueRequest struct {
 	*requests.RpcRequest
 	QueueName string          `position:"Query" name:"QueueName"`
-	Node      *[]SetQueueNode `position:"Query" name:"Node"  type:"Repeated"`
 	ClusterId string          `position:"Query" name:"ClusterId"`
+	Node      *[]SetQueueNode `position:"Query" name:"Node"  type:"Repeated"`
 }
 
 // SetQueueNode is a repeated param struct in SetQueueRequest

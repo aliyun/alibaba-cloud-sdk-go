@@ -77,11 +77,11 @@ func (client *Client) ListInvocationResultsWithCallback(request *ListInvocationR
 type ListInvocationResultsRequest struct {
 	*requests.RpcRequest
 	Instance           *[]ListInvocationResultsInstance `position:"Query" name:"Instance"  type:"Repeated"`
-	InvokeRecordStatus string                           `position:"Query" name:"InvokeRecordStatus"`
-	PageSize           requests.Integer                 `position:"Query" name:"PageSize"`
 	ClusterId          string                           `position:"Query" name:"ClusterId"`
 	CommandId          string                           `position:"Query" name:"CommandId"`
 	PageNumber         requests.Integer                 `position:"Query" name:"PageNumber"`
+	InvokeRecordStatus string                           `position:"Query" name:"InvokeRecordStatus"`
+	PageSize           requests.Integer                 `position:"Query" name:"PageSize"`
 }
 
 // ListInvocationResultsInstance is a repeated param struct in ListInvocationResultsRequest

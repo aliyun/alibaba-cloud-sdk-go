@@ -76,18 +76,19 @@ func (client *Client) GetAccountingReportWithCallback(request *GetAccountingRepo
 // GetAccountingReportRequest is the request struct for api GetAccountingReport
 type GetAccountingReportRequest struct {
 	*requests.RpcRequest
-	ReportType string           `position:"Query" name:"ReportType"`
-	EndTime    requests.Integer `position:"Query" name:"EndTime"`
-	ClusterId  string           `position:"Query" name:"ClusterId"`
-	StartTime  requests.Integer `position:"Query" name:"StartTime"`
+	ReportType  string           `position:"Query" name:"ReportType"`
+	EndTime     requests.Integer `position:"Query" name:"EndTime"`
+	FilterValue string           `position:"Query" name:"FilterValue"`
+	ClusterId   string           `position:"Query" name:"ClusterId"`
+	StartTime   requests.Integer `position:"Query" name:"StartTime"`
 }
 
 // GetAccountingReportResponse is the response struct for api GetAccountingReport
 type GetAccountingReportResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Metrics   string `json:"Metrics" xml:"Metrics"`
-	Data      string `json:"Data" xml:"Data"`
+	RequestId string                    `json:"RequestId" xml:"RequestId"`
+	Metrics   string                    `json:"Metrics" xml:"Metrics"`
+	Data      DataInGetAccountingReport `json:"Data" xml:"Data"`
 }
 
 // CreateGetAccountingReportRequest creates a request to invoke GetAccountingReport API

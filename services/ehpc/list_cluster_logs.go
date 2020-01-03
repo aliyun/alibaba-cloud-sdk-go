@@ -76,9 +76,9 @@ func (client *Client) ListClusterLogsWithCallback(request *ListClusterLogsReques
 // ListClusterLogsRequest is the request struct for api ListClusterLogs
 type ListClusterLogsRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	ClusterId  string           `position:"Query" name:"ClusterId"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListClusterLogsResponse is the response struct for api ListClusterLogs

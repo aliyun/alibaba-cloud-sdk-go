@@ -76,8 +76,8 @@ func (client *Client) ListClustersMetaWithCallback(request *ListClustersMetaRequ
 // ListClustersMetaRequest is the request struct for api ListClustersMeta
 type ListClustersMetaRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListClustersMetaResponse is the response struct for api ListClustersMeta

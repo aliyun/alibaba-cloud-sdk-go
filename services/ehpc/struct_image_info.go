@@ -17,16 +17,20 @@ package ehpc
 
 // ImageInfo is a nested struct in ehpc response
 type ImageInfo struct {
+	Name              string    `json:"Name" xml:"Name"`
 	Uid               string    `json:"Uid" xml:"Uid"`
 	Repository        string    `json:"Repository" xml:"Repository"`
 	SkuCode           string    `json:"SkuCode" xml:"SkuCode"`
 	ImageId           string    `json:"ImageId" xml:"ImageId"`
 	ImageOwnerAlias   string    `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
+	CreateTime        string    `json:"CreateTime" xml:"CreateTime"`
 	System            string    `json:"System" xml:"System"`
 	PostInstallScript string    `json:"PostInstallScript" xml:"PostInstallScript"`
 	ProductCode       string    `json:"ProductCode" xml:"ProductCode"`
+	Progress          string    `json:"Progress" xml:"Progress"`
 	Size              int       `json:"Size" xml:"Size"`
 	Tag               string    `json:"Tag" xml:"Tag"`
+	ImageType         string    `json:"ImageType" xml:"ImageType"`
 	PricingCycle      string    `json:"PricingCycle" xml:"PricingCycle"`
 	ImageName         string    `json:"ImageName" xml:"ImageName"`
 	Status            string    `json:"Status" xml:"Status"`

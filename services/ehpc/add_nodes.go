@@ -76,23 +76,27 @@ func (client *Client) AddNodesWithCallback(request *AddNodesRequest, callback fu
 // AddNodesRequest is the request struct for api AddNodes
 type AddNodesRequest struct {
 	*requests.RpcRequest
+	ImageId               string           `position:"Query" name:"ImageId"`
+	JobQueue              string           `position:"Query" name:"JobQueue"`
+	ImageOwnerAlias       string           `position:"Query" name:"ImageOwnerAlias"`
+	SystemDiskType        string           `position:"Query" name:"SystemDiskType"`
+	SystemDiskSize        requests.Integer `position:"Query" name:"SystemDiskSize"`
+	InstanceType          string           `position:"Query" name:"InstanceType"`
+	HostNamePrefix        string           `position:"Query" name:"HostNamePrefix"`
+	ComputeSpotPriceLimit string           `position:"Query" name:"ComputeSpotPriceLimit"`
 	AutoRenewPeriod       requests.Integer `position:"Query" name:"AutoRenewPeriod"`
 	Period                requests.Integer `position:"Query" name:"Period"`
-	ImageId               string           `position:"Query" name:"ImageId"`
 	Count                 requests.Integer `position:"Query" name:"Count"`
 	ClusterId             string           `position:"Query" name:"ClusterId"`
 	ComputeSpotStrategy   string           `position:"Query" name:"ComputeSpotStrategy"`
-	JobQueue              string           `position:"Query" name:"JobQueue"`
-	ImageOwnerAlias       string           `position:"Query" name:"ImageOwnerAlias"`
+	HostNameSuffix        string           `position:"Query" name:"HostNameSuffix"`
 	VSwitchId             string           `position:"Query" name:"VSwitchId"`
 	PeriodUnit            string           `position:"Query" name:"PeriodUnit"`
+	ComputeEnableHt       requests.Boolean `position:"Query" name:"ComputeEnableHt"`
 	AutoRenew             string           `position:"Query" name:"AutoRenew"`
 	EcsChargeType         string           `position:"Query" name:"EcsChargeType"`
 	CreateMode            string           `position:"Query" name:"CreateMode"`
-	SystemDiskSize        requests.Integer `position:"Query" name:"SystemDiskSize"`
-	InstanceType          string           `position:"Query" name:"InstanceType"`
 	ZoneId                string           `position:"Query" name:"ZoneId"`
-	ComputeSpotPriceLimit string           `position:"Query" name:"ComputeSpotPriceLimit"`
 }
 
 // AddNodesResponse is the response struct for api AddNodes

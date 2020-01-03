@@ -76,8 +76,8 @@ func (client *Client) DescribePriceWithCallback(request *DescribePriceRequest, c
 // DescribePriceRequest is the request struct for api DescribePrice
 type DescribePriceRequest struct {
 	*requests.RpcRequest
-	PriceUnit   string                      `position:"Query" name:"PriceUnit"`
 	Commodities *[]DescribePriceCommodities `position:"Query" name:"Commodities"  type:"Repeated"`
+	PriceUnit   string                      `position:"Query" name:"PriceUnit"`
 	ChargeType  string                      `position:"Query" name:"ChargeType"`
 	OrderType   string                      `position:"Query" name:"OrderType"`
 }

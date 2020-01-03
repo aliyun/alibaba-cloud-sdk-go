@@ -76,10 +76,10 @@ func (client *Client) ListContainerImagesWithCallback(request *ListContainerImag
 // ListContainerImagesRequest is the request struct for api ListContainerImages
 type ListContainerImagesRequest struct {
 	*requests.RpcRequest
-	ContainerType string           `position:"Query" name:"ContainerType"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 	ClusterId     string           `position:"Query" name:"ClusterId"`
 	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	ContainerType string           `position:"Query" name:"ContainerType"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListContainerImagesResponse is the response struct for api ListContainerImages

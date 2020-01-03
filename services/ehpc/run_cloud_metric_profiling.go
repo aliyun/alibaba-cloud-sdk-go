@@ -76,11 +76,11 @@ func (client *Client) RunCloudMetricProfilingWithCallback(request *RunCloudMetri
 // RunCloudMetricProfilingRequest is the request struct for api RunCloudMetricProfiling
 type RunCloudMetricProfilingRequest struct {
 	*requests.RpcRequest
+	Freq      requests.Integer `position:"Query" name:"Freq"`
+	ClusterId string           `position:"Query" name:"ClusterId"`
 	Duration  requests.Integer `position:"Query" name:"Duration"`
 	HostName  string           `position:"Query" name:"HostName"`
 	ProcessId requests.Integer `position:"Query" name:"ProcessId"`
-	Freq      requests.Integer `position:"Query" name:"Freq"`
-	ClusterId string           `position:"Query" name:"ClusterId"`
 }
 
 // RunCloudMetricProfilingResponse is the response struct for api RunCloudMetricProfiling

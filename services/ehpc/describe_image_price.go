@@ -79,8 +79,8 @@ type DescribeImagePriceRequest struct {
 	Period    requests.Integer `position:"Query" name:"Period"`
 	Amount    requests.Integer `position:"Query" name:"Amount"`
 	ImageId   string           `position:"Query" name:"ImageId"`
-	PriceUnit string           `position:"Query" name:"PriceUnit"`
 	SkuCode   string           `position:"Query" name:"SkuCode"`
+	PriceUnit string           `position:"Query" name:"PriceUnit"`
 	OrderType string           `position:"Query" name:"OrderType"`
 }
 

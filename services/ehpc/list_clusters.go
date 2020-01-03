@@ -76,8 +76,8 @@ func (client *Client) ListClustersWithCallback(request *ListClustersRequest, cal
 // ListClustersRequest is the request struct for api ListClusters
 type ListClustersRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListClustersResponse is the response struct for api ListClusters

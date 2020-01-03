@@ -76,9 +76,10 @@ func (client *Client) ListAvailableEcsTypesWithCallback(request *ListAvailableEc
 // ListAvailableEcsTypesRequest is the request struct for api ListAvailableEcsTypes
 type ListAvailableEcsTypesRequest struct {
 	*requests.RpcRequest
-	SpotStrategy       string `position:"Query" name:"SpotStrategy"`
-	ZoneId             string `position:"Query" name:"ZoneId"`
-	InstanceChargeType string `position:"Query" name:"InstanceChargeType"`
+	SpotStrategy       string           `position:"Query" name:"SpotStrategy"`
+	ZoneId             string           `position:"Query" name:"ZoneId"`
+	ShowSoldOut        requests.Boolean `position:"Query" name:"ShowSoldOut"`
+	InstanceChargeType string           `position:"Query" name:"InstanceChargeType"`
 }
 
 // ListAvailableEcsTypesResponse is the response struct for api ListAvailableEcsTypes

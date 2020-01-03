@@ -76,8 +76,8 @@ func (client *Client) StartVisualServiceWithCallback(request *StartVisualService
 // StartVisualServiceRequest is the request struct for api StartVisualService
 type StartVisualServiceRequest struct {
 	*requests.RpcRequest
-	Port      requests.Integer `position:"Query" name:"Port"`
 	ClusterId string           `position:"Query" name:"ClusterId"`
+	Port      requests.Integer `position:"Query" name:"Port"`
 	CidrIp    string           `position:"Query" name:"CidrIp"`
 }
 

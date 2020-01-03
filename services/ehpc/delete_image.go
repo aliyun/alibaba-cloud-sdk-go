@@ -76,9 +76,9 @@ func (client *Client) DeleteImageWithCallback(request *DeleteImageRequest, callb
 // DeleteImageRequest is the request struct for api DeleteImage
 type DeleteImageRequest struct {
 	*requests.RpcRequest
-	ContainerType string `position:"Query" name:"ContainerType"`
 	ClusterId     string `position:"Query" name:"ClusterId"`
 	Repository    string `position:"Query" name:"Repository"`
+	ContainerType string `position:"Query" name:"ContainerType"`
 	ImageTag      string `position:"Query" name:"ImageTag"`
 }
 

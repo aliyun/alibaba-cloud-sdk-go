@@ -76,8 +76,8 @@ func (client *Client) GetHybridClusterConfigWithCallback(request *GetHybridClust
 // GetHybridClusterConfigRequest is the request struct for api GetHybridClusterConfig
 type GetHybridClusterConfigRequest struct {
 	*requests.RpcRequest
-	Node      string `position:"Query" name:"Node"`
 	ClusterId string `position:"Query" name:"ClusterId"`
+	Node      string `position:"Query" name:"Node"`
 }
 
 // GetHybridClusterConfigResponse is the response struct for api GetHybridClusterConfig

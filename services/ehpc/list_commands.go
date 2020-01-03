@@ -76,10 +76,10 @@ func (client *Client) ListCommandsWithCallback(request *ListCommandsRequest, cal
 // ListCommandsRequest is the request struct for api ListCommands
 type ListCommandsRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	ClusterId  string           `position:"Query" name:"ClusterId"`
 	CommandId  string           `position:"Query" name:"CommandId"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListCommandsResponse is the response struct for api ListCommands

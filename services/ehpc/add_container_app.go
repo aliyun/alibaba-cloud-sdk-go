@@ -76,10 +76,10 @@ func (client *Client) AddContainerAppWithCallback(request *AddContainerAppReques
 // AddContainerAppRequest is the request struct for api AddContainerApp
 type AddContainerAppRequest struct {
 	*requests.RpcRequest
-	ContainerType string `position:"Query" name:"ContainerType"`
-	Name          string `position:"Query" name:"Name"`
 	Description   string `position:"Query" name:"Description"`
 	Repository    string `position:"Query" name:"Repository"`
+	ContainerType string `position:"Query" name:"ContainerType"`
+	Name          string `position:"Query" name:"Name"`
 	ImageTag      string `position:"Query" name:"ImageTag"`
 }
 

@@ -77,16 +77,16 @@ func (client *Client) EditJobTemplateWithCallback(request *EditJobTemplateReques
 type EditJobTemplateRequest struct {
 	*requests.RpcRequest
 	StderrRedirectPath string           `position:"Query" name:"StderrRedirectPath"`
+	CommandLine        string           `position:"Query" name:"CommandLine"`
+	ArrayRequest       string           `position:"Query" name:"ArrayRequest"`
+	PackagePath        string           `position:"Query" name:"PackagePath"`
+	StdoutRedirectPath string           `position:"Query" name:"StdoutRedirectPath"`
 	Variables          string           `position:"Query" name:"Variables"`
 	RunasUser          string           `position:"Query" name:"RunasUser"`
 	ReRunable          requests.Boolean `position:"Query" name:"ReRunable"`
 	TemplateId         string           `position:"Query" name:"TemplateId"`
 	Priority           requests.Integer `position:"Query" name:"Priority"`
-	CommandLine        string           `position:"Query" name:"CommandLine"`
-	ArrayRequest       string           `position:"Query" name:"ArrayRequest"`
-	PackagePath        string           `position:"Query" name:"PackagePath"`
 	Name               string           `position:"Query" name:"Name"`
-	StdoutRedirectPath string           `position:"Query" name:"StdoutRedirectPath"`
 }
 
 // EditJobTemplateResponse is the response struct for api EditJobTemplate

@@ -18,25 +18,27 @@ package ehpc
 // ClusterInfoSimple is a nested struct in ehpc response
 type ClusterInfoSimple struct {
 	Name            string         `json:"Name" xml:"Name"`
-	Count           int            `json:"Count" xml:"Count"`
 	AccountType     string         `json:"AccountType" xml:"AccountType"`
-	VSwitchId       string         `json:"VSwitchId" xml:"VSwitchId"`
 	ImageId         string         `json:"ImageId" xml:"ImageId"`
 	ImageOwnerAlias string         `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
 	CreateTime      string         `json:"CreateTime" xml:"CreateTime"`
 	InstanceType    string         `json:"InstanceType" xml:"InstanceType"`
+	NodePrefix      string         `json:"NodePrefix" xml:"NodePrefix"`
 	LoginNodes      string         `json:"LoginNodes" xml:"LoginNodes"`
-	Location        string         `json:"Location" xml:"Location"`
+	NodeSuffix      string         `json:"NodeSuffix" xml:"NodeSuffix"`
 	RegionId        string         `json:"RegionId" xml:"RegionId"`
-	ZoneId          string         `json:"ZoneId" xml:"ZoneId"`
-	OsTag           string         `json:"OsTag" xml:"OsTag"`
 	SchedulerType   string         `json:"SchedulerType" xml:"SchedulerType"`
 	EhpcVersion     string         `json:"EhpcVersion" xml:"EhpcVersion"`
 	Id              string         `json:"Id" xml:"Id"`
-	Status          string         `json:"Status" xml:"Status"`
 	VpcId           string         `json:"VpcId" xml:"VpcId"`
 	DeployMode      string         `json:"DeployMode" xml:"DeployMode"`
 	Description     string         `json:"Description" xml:"Description"`
+	Count           int            `json:"Count" xml:"Count"`
+	VSwitchId       string         `json:"VSwitchId" xml:"VSwitchId"`
+	Location        string         `json:"Location" xml:"Location"`
+	ZoneId          string         `json:"ZoneId" xml:"ZoneId"`
+	OsTag           string         `json:"OsTag" xml:"OsTag"`
+	Status          string         `json:"Status" xml:"Status"`
 	TotalResources  TotalResources `json:"TotalResources" xml:"TotalResources"`
 	UsedResources   UsedResources  `json:"UsedResources" xml:"UsedResources"`
 	Managers        Managers       `json:"Managers" xml:"Managers"`

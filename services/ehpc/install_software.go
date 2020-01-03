@@ -76,8 +76,8 @@ func (client *Client) InstallSoftwareWithCallback(request *InstallSoftwareReques
 // InstallSoftwareRequest is the request struct for api InstallSoftware
 type InstallSoftwareRequest struct {
 	*requests.RpcRequest
-	Application string `position:"Query" name:"Application"`
 	ClusterId   string `position:"Query" name:"ClusterId"`
+	Application string `position:"Query" name:"Application"`
 }
 
 // InstallSoftwareResponse is the response struct for api InstallSoftware

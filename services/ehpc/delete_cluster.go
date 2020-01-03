@@ -76,8 +76,8 @@ func (client *Client) DeleteClusterWithCallback(request *DeleteClusterRequest, c
 // DeleteClusterRequest is the request struct for api DeleteCluster
 type DeleteClusterRequest struct {
 	*requests.RpcRequest
-	ReleaseInstance string `position:"Query" name:"ReleaseInstance"`
 	ClusterId       string `position:"Query" name:"ClusterId"`
+	ReleaseInstance string `position:"Query" name:"ReleaseInstance"`
 }
 
 // DeleteClusterResponse is the response struct for api DeleteCluster

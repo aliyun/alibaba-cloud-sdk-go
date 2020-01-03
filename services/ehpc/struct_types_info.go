@@ -27,4 +27,5 @@ type TypesInfo struct {
 	InstanceBandwidthTx int    `json:"InstanceBandwidthTx" xml:"InstanceBandwidthTx"`
 	InstanceTypeId      string `json:"InstanceTypeId" xml:"InstanceTypeId"`
 	GPUSpec             string `json:"GPUSpec" xml:"GPUSpec"`
+	Status              string `json:"Status" xml:"Status"`
 }

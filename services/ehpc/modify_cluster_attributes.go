@@ -76,9 +76,9 @@ func (client *Client) ModifyClusterAttributesWithCallback(request *ModifyCluster
 // ModifyClusterAttributesRequest is the request struct for api ModifyClusterAttributes
 type ModifyClusterAttributesRequest struct {
 	*requests.RpcRequest
-	Name        string `position:"Query" name:"Name"`
 	Description string `position:"Query" name:"Description"`
 	ClusterId   string `position:"Query" name:"ClusterId"`
+	Name        string `position:"Query" name:"Name"`
 }
 
 // ModifyClusterAttributesResponse is the response struct for api ModifyClusterAttributes

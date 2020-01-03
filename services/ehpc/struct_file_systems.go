@@ -19,13 +19,10 @@ package ehpc
 type FileSystems struct {
 	FileSystemId    string                               `json:"FileSystemId" xml:"FileSystemId"`
 	RegionId        string                               `json:"RegionId" xml:"RegionId"`
-	StorageType     string                               `json:"StorageType" xml:"StorageType"`
 	ZoneId          string                               `json:"ZoneId" xml:"ZoneId"`
 	CreateTime      string                               `json:"CreateTime" xml:"CreateTime"`
 	ProtocolType    string                               `json:"ProtocolType" xml:"ProtocolType"`
 	Capacity        string                               `json:"Capacity" xml:"Capacity"`
-	MeteredSize     string                               `json:"MeteredSize" xml:"MeteredSize"`
 	Destription     string                               `json:"Destription" xml:"Destription"`
-	PackageList     PackageList                          `json:"PackageList" xml:"PackageList"`
 	MountTargetList MountTargetListInListCpfsFileSystems `json:"MountTargetList" xml:"MountTargetList"`
 }

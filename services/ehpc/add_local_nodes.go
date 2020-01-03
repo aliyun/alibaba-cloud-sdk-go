@@ -76,8 +76,8 @@ func (client *Client) AddLocalNodesWithCallback(request *AddLocalNodesRequest, c
 // AddLocalNodesRequest is the request struct for api AddLocalNodes
 type AddLocalNodesRequest struct {
 	*requests.RpcRequest
-	Nodes     string `position:"Query" name:"Nodes"`
 	ClusterId string `position:"Query" name:"ClusterId"`
+	Nodes     string `position:"Query" name:"Nodes"`
 }
 
 // AddLocalNodesResponse is the response struct for api AddLocalNodes

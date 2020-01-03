@@ -76,9 +76,9 @@ func (client *Client) PullImageWithCallback(request *PullImageRequest, callback 
 // PullImageRequest is the request struct for api PullImage
 type PullImageRequest struct {
 	*requests.RpcRequest
-	ContainerType string `position:"Query" name:"ContainerType"`
 	ClusterId     string `position:"Query" name:"ClusterId"`
 	Repository    string `position:"Query" name:"Repository"`
+	ContainerType string `position:"Query" name:"ContainerType"`
 	ImageTag      string `position:"Query" name:"ImageTag"`
 }
 

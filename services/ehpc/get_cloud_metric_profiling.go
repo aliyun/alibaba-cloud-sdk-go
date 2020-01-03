@@ -76,8 +76,8 @@ func (client *Client) GetCloudMetricProfilingWithCallback(request *GetCloudMetri
 // GetCloudMetricProfilingRequest is the request struct for api GetCloudMetricProfiling
 type GetCloudMetricProfilingRequest struct {
 	*requests.RpcRequest
-	ProfilingId string `position:"Query" name:"ProfilingId"`
 	ClusterId   string `position:"Query" name:"ClusterId"`
+	ProfilingId string `position:"Query" name:"ProfilingId"`
 }
 
 // GetCloudMetricProfilingResponse is the response struct for api GetCloudMetricProfiling

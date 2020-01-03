@@ -76,10 +76,10 @@ func (client *Client) ModifyVisualServicePasswdWithCallback(request *ModifyVisua
 // ModifyVisualServicePasswdRequest is the request struct for api ModifyVisualServicePasswd
 type ModifyVisualServicePasswdRequest struct {
 	*requests.RpcRequest
-	Passwd            string `position:"Query" name:"Passwd"`
 	RunasUserPassword string `position:"Query" name:"RunasUserPassword"`
 	RunasUser         string `position:"Query" name:"RunasUser"`
 	ClusterId         string `position:"Query" name:"ClusterId"`
+	Passwd            string `position:"Query" name:"Passwd"`
 }
 
 // ModifyVisualServicePasswdResponse is the response struct for api ModifyVisualServicePasswd

@@ -17,33 +17,35 @@ package ehpc
 
 // ClusterInfo is a nested struct in ehpc response
 type ClusterInfo struct {
-	Id                 string                        `json:"Id" xml:"Id"`
-	RegionId           string                        `json:"RegionId" xml:"RegionId"`
 	Name               string                        `json:"Name" xml:"Name"`
-	Description        string                        `json:"Description" xml:"Description"`
-	Status             string                        `json:"Status" xml:"Status"`
-	OsTag              string                        `json:"OsTag" xml:"OsTag"`
-	AccountType        string                        `json:"AccountType" xml:"AccountType"`
-	SchedulerType      string                        `json:"SchedulerType" xml:"SchedulerType"`
-	CreateTime         string                        `json:"CreateTime" xml:"CreateTime"`
-	SecurityGroupId    string                        `json:"SecurityGroupId" xml:"SecurityGroupId"`
-	VpcId              string                        `json:"VpcId" xml:"VpcId"`
-	VSwitchId          string                        `json:"VSwitchId" xml:"VSwitchId"`
-	VolumeType         string                        `json:"VolumeType" xml:"VolumeType"`
 	VolumeId           string                        `json:"VolumeId" xml:"VolumeId"`
 	VolumeProtocol     string                        `json:"VolumeProtocol" xml:"VolumeProtocol"`
-	VolumeMountpoint   string                        `json:"VolumeMountpoint" xml:"VolumeMountpoint"`
-	RemoteDirectory    string                        `json:"RemoteDirectory" xml:"RemoteDirectory"`
-	DeployMode         string                        `json:"DeployMode" xml:"DeployMode"`
-	HaEnable           bool                          `json:"HaEnable" xml:"HaEnable"`
-	EcsChargeType      string                        `json:"EcsChargeType" xml:"EcsChargeType"`
-	KeyPairName        string                        `json:"KeyPairName" xml:"KeyPairName"`
-	SccClusterId       string                        `json:"SccClusterId" xml:"SccClusterId"`
-	ClientVersion      string                        `json:"ClientVersion" xml:"ClientVersion"`
-	ImageOwnerAlias    string                        `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
+	SecurityGroupId    string                        `json:"SecurityGroupId" xml:"SecurityGroupId"`
+	AccountType        string                        `json:"AccountType" xml:"AccountType"`
 	ImageId            string                        `json:"ImageId" xml:"ImageId"`
+	ImageOwnerAlias    string                        `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
+	CreateTime         string                        `json:"CreateTime" xml:"CreateTime"`
+	RegionId           string                        `json:"RegionId" xml:"RegionId"`
+	VolumeMountpoint   string                        `json:"VolumeMountpoint" xml:"VolumeMountpoint"`
+	SchedulerType      string                        `json:"SchedulerType" xml:"SchedulerType"`
+	Id                 string                        `json:"Id" xml:"Id"`
+	VpcId              string                        `json:"VpcId" xml:"VpcId"`
+	DeployMode         string                        `json:"DeployMode" xml:"DeployMode"`
+	Description        string                        `json:"Description" xml:"Description"`
+	ClientVersion      string                        `json:"ClientVersion" xml:"ClientVersion"`
+	SccClusterId       string                        `json:"SccClusterId" xml:"SccClusterId"`
+	ClusterId          string                        `json:"ClusterId" xml:"ClusterId"`
+	VSwitchId          string                        `json:"VSwitchId" xml:"VSwitchId"`
+	VolumeType         string                        `json:"VolumeType" xml:"VolumeType"`
+	RemoteDirectory    string                        `json:"RemoteDirectory" xml:"RemoteDirectory"`
+	HaEnable           bool                          `json:"HaEnable" xml:"HaEnable"`
 	Location           string                        `json:"Location" xml:"Location"`
+	EcsChargeType      string                        `json:"EcsChargeType" xml:"EcsChargeType"`
+	InstanceCount      int                           `json:"InstanceCount" xml:"InstanceCount"`
+	KeyPairName        string                        `json:"KeyPairName" xml:"KeyPairName"`
+	OsTag              string                        `json:"OsTag" xml:"OsTag"`
+	Status             string                        `json:"Status" xml:"Status"`
 	EcsInfo            EcsInfo                       `json:"EcsInfo" xml:"EcsInfo"`
-	Applications       ApplicationsInDescribeCluster `json:"Applications" xml:"Applications"`
 	PostInstallScripts PostInstallScripts            `json:"PostInstallScripts" xml:"PostInstallScripts"`
+	Applications       ApplicationsInDescribeCluster `json:"Applications" xml:"Applications"`
 }

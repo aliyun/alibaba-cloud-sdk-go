@@ -76,8 +76,8 @@ func (client *Client) ListCpfsFileSystemsWithCallback(request *ListCpfsFileSyste
 // ListCpfsFileSystemsRequest is the request struct for api ListCpfsFileSystems
 type ListCpfsFileSystemsRequest struct {
 	*requests.RpcRequest
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	FileSystemId string           `position:"Query" name:"FileSystemId"`
 }
 

@@ -76,9 +76,9 @@ func (client *Client) ListJobTemplatesWithCallback(request *ListJobTemplatesRequ
 // ListJobTemplatesRequest is the request struct for api ListJobTemplates
 type ListJobTemplatesRequest struct {
 	*requests.RpcRequest
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	Name       string           `position:"Query" name:"Name"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListJobTemplatesResponse is the response struct for api ListJobTemplates

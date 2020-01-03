@@ -80,9 +80,9 @@ type RecoverClusterRequest struct {
 	OsTag           string `position:"Query" name:"OsTag"`
 	ClientVersion   string `position:"Query" name:"ClientVersion"`
 	AccountType     string `position:"Query" name:"AccountType"`
-	SchedulerType   string `position:"Query" name:"SchedulerType"`
 	ClusterId       string `position:"Query" name:"ClusterId"`
 	ImageOwnerAlias string `position:"Query" name:"ImageOwnerAlias"`
+	SchedulerType   string `position:"Query" name:"SchedulerType"`
 }
 
 // RecoverClusterResponse is the response struct for api RecoverCluster

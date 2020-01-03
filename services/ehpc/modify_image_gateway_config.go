@@ -76,14 +76,14 @@ func (client *Client) ModifyImageGatewayConfigWithCallback(request *ModifyImageG
 // ModifyImageGatewayConfigRequest is the request struct for api ModifyImageGatewayConfig
 type ModifyImageGatewayConfigRequest struct {
 	*requests.RpcRequest
+	Repo                   *[]ModifyImageGatewayConfigRepo `position:"Query" name:"Repo"  type:"Repeated"`
+	DBServerInfo           string                          `position:"Query" name:"DBServerInfo"`
+	ClusterId              string                          `position:"Query" name:"ClusterId"`
 	DefaultRepoLocation    string                          `position:"Query" name:"DefaultRepoLocation"`
 	DBPassword             string                          `position:"Query" name:"DBPassword"`
-	Repo                   *[]ModifyImageGatewayConfigRepo `position:"Query" name:"Repo"  type:"Repeated"`
 	DBType                 string                          `position:"Query" name:"DBType"`
 	DBUsername             string                          `position:"Query" name:"DBUsername"`
-	DBServerInfo           string                          `position:"Query" name:"DBServerInfo"`
 	PullUpdateTimeout      requests.Integer                `position:"Query" name:"PullUpdateTimeout"`
-	ClusterId              string                          `position:"Query" name:"ClusterId"`
 	ImageExpirationTimeout string                          `position:"Query" name:"ImageExpirationTimeout"`
 }
 

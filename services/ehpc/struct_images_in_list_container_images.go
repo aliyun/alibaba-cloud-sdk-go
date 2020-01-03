@@ -17,5 +17,5 @@ package ehpc
 
 // ImagesInListContainerImages is a nested struct in ehpc response
 type ImagesInListContainerImages struct {
-	ImagesItem []ImagesItem `json:"ImagesItem" xml:"ImagesItem"`
+	ImagesItem []ImagesItem `json:"Images" xml:"Images"`
 }

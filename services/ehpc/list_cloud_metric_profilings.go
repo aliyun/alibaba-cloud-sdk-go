@@ -76,9 +76,9 @@ func (client *Client) ListCloudMetricProfilingsWithCallback(request *ListCloudMe
 // ListCloudMetricProfilingsRequest is the request struct for api ListCloudMetricProfilings
 type ListCloudMetricProfilingsRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	ClusterId  string           `position:"Query" name:"ClusterId"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListCloudMetricProfilingsResponse is the response struct for api ListCloudMetricProfilings

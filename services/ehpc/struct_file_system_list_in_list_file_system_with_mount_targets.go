@@ -17,5 +17,5 @@ package ehpc
 
 // FileSystemListInListFileSystemWithMountTargets is a nested struct in ehpc response
 type FileSystemListInListFileSystemWithMountTargets struct {
-	FileSystems []FileSystems `json:"FileSystems" xml:"FileSystems"`
+	FileSystems []FileSystemsInListFileSystemWithMountTargets `json:"FileSystems" xml:"FileSystems"`
 }

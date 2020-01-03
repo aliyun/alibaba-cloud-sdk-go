@@ -76,8 +76,8 @@ func (client *Client) ListFileSystemWithMountTargetsWithCallback(request *ListFi
 // ListFileSystemWithMountTargetsRequest is the request struct for api ListFileSystemWithMountTargets
 type ListFileSystemWithMountTargetsRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListFileSystemWithMountTargetsResponse is the response struct for api ListFileSystemWithMountTargets

@@ -76,8 +76,8 @@ func (client *Client) StopVisualServiceWithCallback(request *StopVisualServiceRe
 // StopVisualServiceRequest is the request struct for api StopVisualService
 type StopVisualServiceRequest struct {
 	*requests.RpcRequest
-	Port      requests.Integer `position:"Query" name:"Port"`
 	ClusterId string           `position:"Query" name:"ClusterId"`
+	Port      requests.Integer `position:"Query" name:"Port"`
 	CidrIp    string           `position:"Query" name:"CidrIp"`
 }
 
