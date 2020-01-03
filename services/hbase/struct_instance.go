@@ -17,28 +17,32 @@ package hbase
 
 // Instance is a nested struct in hbase response
 type Instance struct {
-	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
-	InstanceName       string `json:"InstanceName" xml:"InstanceName"`
-	Status             string `json:"Status" xml:"Status"`
-	PayType            string `json:"PayType" xml:"PayType"`
-	CreatedTime        string `json:"CreatedTime" xml:"CreatedTime"`
-	ExpireTime         string `json:"ExpireTime" xml:"ExpireTime"`
-	MajorVersion       string `json:"MajorVersion" xml:"MajorVersion"`
-	Engine             string `json:"Engine" xml:"Engine"`
-	IsHa               bool   `json:"IsHa" xml:"IsHa"`
-	NetworkType        string `json:"NetworkType" xml:"NetworkType"`
-	VpcId              string `json:"VpcId" xml:"VpcId"`
-	VswitchId          string `json:"VswitchId" xml:"VswitchId"`
-	MasterInstanceType string `json:"MasterInstanceType" xml:"MasterInstanceType"`
-	MasterNodeCount    int    `json:"MasterNodeCount" xml:"MasterNodeCount"`
-	MasterDiskType     string `json:"MasterDiskType" xml:"MasterDiskType"`
-	MasterDiskSize     int    `json:"MasterDiskSize" xml:"MasterDiskSize"`
-	CoreInstanceType   string `json:"CoreInstanceType" xml:"CoreInstanceType"`
-	CoreNodeCount      int    `json:"CoreNodeCount" xml:"CoreNodeCount"`
-	CoreDiskType       string `json:"CoreDiskType" xml:"CoreDiskType"`
-	CoreDiskSize       int    `json:"CoreDiskSize" xml:"CoreDiskSize"`
-	RegionId           string `json:"RegionId" xml:"RegionId"`
-	ZoneId             string `json:"ZoneId" xml:"ZoneId"`
-	ColdStorageStatus  string `json:"ColdStorageStatus" xml:"ColdStorageStatus"`
-	BackupStatus       string `json:"BackupStatus" xml:"BackupStatus"`
+	InstanceId         string                  `json:"InstanceId" xml:"InstanceId"`
+	InstanceName       string                  `json:"InstanceName" xml:"InstanceName"`
+	Status             string                  `json:"Status" xml:"Status"`
+	PayType            string                  `json:"PayType" xml:"PayType"`
+	CreatedTime        string                  `json:"CreatedTime" xml:"CreatedTime"`
+	ExpireTime         string                  `json:"ExpireTime" xml:"ExpireTime"`
+	MajorVersion       string                  `json:"MajorVersion" xml:"MajorVersion"`
+	Engine             string                  `json:"Engine" xml:"Engine"`
+	IsHa               bool                    `json:"IsHa" xml:"IsHa"`
+	NetworkType        string                  `json:"NetworkType" xml:"NetworkType"`
+	VpcId              string                  `json:"VpcId" xml:"VpcId"`
+	VswitchId          string                  `json:"VswitchId" xml:"VswitchId"`
+	MasterInstanceType string                  `json:"MasterInstanceType" xml:"MasterInstanceType"`
+	MasterNodeCount    int                     `json:"MasterNodeCount" xml:"MasterNodeCount"`
+	MasterDiskType     string                  `json:"MasterDiskType" xml:"MasterDiskType"`
+	MasterDiskSize     int                     `json:"MasterDiskSize" xml:"MasterDiskSize"`
+	CoreInstanceType   string                  `json:"CoreInstanceType" xml:"CoreInstanceType"`
+	CoreNodeCount      int                     `json:"CoreNodeCount" xml:"CoreNodeCount"`
+	CoreDiskType       string                  `json:"CoreDiskType" xml:"CoreDiskType"`
+	CoreDiskSize       int                     `json:"CoreDiskSize" xml:"CoreDiskSize"`
+	RegionId           string                  `json:"RegionId" xml:"RegionId"`
+	ZoneId             string                  `json:"ZoneId" xml:"ZoneId"`
+	ColdStorageStatus  string                  `json:"ColdStorageStatus" xml:"ColdStorageStatus"`
+	BackupStatus       string                  `json:"BackupStatus" xml:"BackupStatus"`
+	ClusterType        string                  `json:"ClusterType" xml:"ClusterType"`
+	CreatedTimeUTC     string                  `json:"CreatedTimeUTC" xml:"CreatedTimeUTC"`
+	ExpireTimeUTC      string                  `json:"ExpireTimeUTC" xml:"ExpireTimeUTC"`
+	Tags               TagsInDescribeInstances `json:"Tags" xml:"Tags"`
 }

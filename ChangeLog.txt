@@ -1,3 +1,10 @@
+2020-01-03 Version: v1.60.315
+- Generated 2019-01-01 for `HBase`.
+- ImmediateDelete.
+- DescribeInstance CreateTimeUTC ExpireTimeUTC.
+- DescribeInstances CreateTimeUTC ExpireTimeUTC.
+- DescribeIpWhitelist Groups GroupName.
+
 2019-01-02 Version: v1.60.314
 - Remove r-kvstore.
 

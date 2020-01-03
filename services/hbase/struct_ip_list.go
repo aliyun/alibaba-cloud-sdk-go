@@ -17,5 +17,5 @@ package hbase
 
 // IpList is a nested struct in hbase response
 type IpList struct {
-	IP []string `json:"IP" xml:"IP"`
+	Ip []string `json:"Ip" xml:"Ip"`
 }

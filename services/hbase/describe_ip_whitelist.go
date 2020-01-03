@@ -83,7 +83,7 @@ type DescribeIpWhitelistRequest struct {
 type DescribeIpWhitelistResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	IpList    IpList `json:"IpList" xml:"IpList"`
+	Groups    Groups `json:"Groups" xml:"Groups"`
 }
 
 // CreateDescribeIpWhitelistRequest creates a request to invoke DescribeIpWhitelist API

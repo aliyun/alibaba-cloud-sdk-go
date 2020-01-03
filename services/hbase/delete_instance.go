@@ -76,7 +76,8 @@ func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest,
 // DeleteInstanceRequest is the request struct for api DeleteInstance
 type DeleteInstanceRequest struct {
 	*requests.RpcRequest
-	ClusterId string `position:"Query" name:"ClusterId"`
+	ImmediateDeleteFlag requests.Boolean `position:"Query" name:"ImmediateDeleteFlag"`
+	ClusterId           string           `position:"Query" name:"ClusterId"`
 }
 
 // DeleteInstanceResponse is the response struct for api DeleteInstance
