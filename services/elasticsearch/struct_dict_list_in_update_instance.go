@@ -17,5 +17,5 @@ package elasticsearch
 
 // DictListInUpdateInstance is a nested struct in elasticsearch response
 type DictListInUpdateInstance struct {
-	DictListItem []DictListItem `json:"dictList" xml:"dictList"`
+	DictList []DictList `json:"DictList" xml:"DictList"`
 }
