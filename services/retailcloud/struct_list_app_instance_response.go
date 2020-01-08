@@ -16,7 +16,7 @@ package retailcloud
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 // ListAppInstanceResponse is a nested struct in retailcloud response
-type ListAppInstanceResponse struct {
+type ListAppInstance struct {
 	AppInstanceId string `json:"AppInstanceId" xml:"AppInstanceId"`
 	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
 	Spec          string `json:"Spec" xml:"Spec"`
