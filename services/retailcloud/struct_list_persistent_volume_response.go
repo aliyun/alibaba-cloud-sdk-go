@@ -16,7 +16,7 @@ package retailcloud
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 // ListPersistentVolumeResponse is a nested struct in retailcloud response
-type ListPersistentVolumeResponse struct {
+type ListPersistentVolume struct {
 	Name          string `json:"Name" xml:"Name"`
 	Capacity      string `json:"Capacity" xml:"Capacity"`
 	AccessModes   string `json:"AccessModes" xml:"AccessModes"`
