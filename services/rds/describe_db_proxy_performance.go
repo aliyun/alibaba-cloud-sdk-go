@@ -101,7 +101,7 @@ func CreateDescribeDBProxyPerformanceRequest() (request *DescribeDBProxyPerforma
 	request = &DescribeDBProxyPerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBProxyPerformance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBProxyPerformance", "Rds", "openAPI")
 	return
 }
 

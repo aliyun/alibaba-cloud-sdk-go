@@ -103,7 +103,7 @@ func CreateDescribeCrossRegionBackupDBInstanceRequest() (request *DescribeCrossR
 	request = &DescribeCrossRegionBackupDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCrossRegionBackupDBInstance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCrossRegionBackupDBInstance", "Rds", "openAPI")
 	return
 }
 

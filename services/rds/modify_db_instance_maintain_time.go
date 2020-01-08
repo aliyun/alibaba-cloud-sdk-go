@@ -96,7 +96,7 @@ func CreateModifyDBInstanceMaintainTimeRequest() (request *ModifyDBInstanceMaint
 	request = &ModifyDBInstanceMaintainTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceMaintainTime", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceMaintainTime", "Rds", "openAPI")
 	return
 }
 

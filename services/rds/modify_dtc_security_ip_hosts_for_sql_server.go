@@ -100,7 +100,7 @@ func CreateModifyDTCSecurityIpHostsForSQLServerRequest() (request *ModifyDTCSecu
 	request = &ModifyDTCSecurityIpHostsForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDTCSecurityIpHostsForSQLServer", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDTCSecurityIpHostsForSQLServer", "Rds", "openAPI")
 	return
 }
 

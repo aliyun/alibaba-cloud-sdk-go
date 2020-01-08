@@ -98,7 +98,7 @@ func CreateDescribeDTCSecurityIpHostsForSQLServerRequest() (request *DescribeDTC
 	request = &DescribeDTCSecurityIpHostsForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDTCSecurityIpHostsForSQLServer", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDTCSecurityIpHostsForSQLServer", "Rds", "openAPI")
 	return
 }
 

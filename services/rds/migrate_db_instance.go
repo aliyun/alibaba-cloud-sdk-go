@@ -107,7 +107,7 @@ func CreateMigrateDBInstanceRequest() (request *MigrateDBInstanceRequest) {
 	request = &MigrateDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "MigrateDBInstance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "MigrateDBInstance", "Rds", "openAPI")
 	return
 }
 

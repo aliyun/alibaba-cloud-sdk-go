@@ -103,7 +103,7 @@ func CreateDescribeDBProxyEndpointRequest() (request *DescribeDBProxyEndpointReq
 	request = &DescribeDBProxyEndpointRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBProxyEndpoint", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBProxyEndpoint", "Rds", "openAPI")
 	return
 }
 

@@ -106,7 +106,7 @@ func CreateDescribeCrossRegionLogBackupFilesRequest() (request *DescribeCrossReg
 	request = &DescribeCrossRegionLogBackupFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCrossRegionLogBackupFiles", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCrossRegionLogBackupFiles", "Rds", "openAPI")
 	return
 }
 

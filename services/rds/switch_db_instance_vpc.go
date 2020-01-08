@@ -97,7 +97,7 @@ func CreateSwitchDBInstanceVpcRequest() (request *SwitchDBInstanceVpcRequest) {
 	request = &SwitchDBInstanceVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "SwitchDBInstanceVpc", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "SwitchDBInstanceVpc", "Rds", "openAPI")
 	return
 }
 

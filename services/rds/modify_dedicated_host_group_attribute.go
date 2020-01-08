@@ -99,7 +99,7 @@ func CreateModifyDedicatedHostGroupAttributeRequest() (request *ModifyDedicatedH
 	request = &ModifyDedicatedHostGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDedicatedHostGroupAttribute", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDedicatedHostGroupAttribute", "Rds", "openAPI")
 	return
 }
 

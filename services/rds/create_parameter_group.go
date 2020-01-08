@@ -97,7 +97,7 @@ func CreateCreateParameterGroupRequest() (request *CreateParameterGroupRequest) 
 	request = &CreateParameterGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateParameterGroup", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateParameterGroup", "Rds", "openAPI")
 	return
 }
 

@@ -95,7 +95,7 @@ func CreateDeleteAccountRequest() (request *DeleteAccountRequest) {
 	request = &DeleteAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteAccount", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteAccount", "Rds", "openAPI")
 	return
 }
 

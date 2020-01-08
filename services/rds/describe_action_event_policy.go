@@ -94,7 +94,7 @@ func CreateDescribeActionEventPolicyRequest() (request *DescribeActionEventPolic
 	request = &DescribeActionEventPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeActionEventPolicy", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeActionEventPolicy", "Rds", "openAPI")
 	return
 }
 

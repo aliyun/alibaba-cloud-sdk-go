@@ -96,7 +96,7 @@ func CreateReplaceDedicatedHostRequest() (request *ReplaceDedicatedHostRequest) 
 	request = &ReplaceDedicatedHostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ReplaceDedicatedHost", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ReplaceDedicatedHost", "Rds", "openAPI")
 	return
 }
 

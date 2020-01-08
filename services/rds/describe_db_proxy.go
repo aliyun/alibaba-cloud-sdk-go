@@ -98,7 +98,7 @@ func CreateDescribeDBProxyRequest() (request *DescribeDBProxyRequest) {
 	request = &DescribeDBProxyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBProxy", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBProxy", "Rds", "openAPI")
 	return
 }
 

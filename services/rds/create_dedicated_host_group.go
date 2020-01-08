@@ -101,7 +101,7 @@ func CreateCreateDedicatedHostGroupRequest() (request *CreateDedicatedHostGroupR
 	request = &CreateDedicatedHostGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDedicatedHostGroup", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDedicatedHostGroup", "Rds", "openAPI")
 	return
 }
 

@@ -95,7 +95,7 @@ func CreatePurgeDBInstanceLogRequest() (request *PurgeDBInstanceLogRequest) {
 	request = &PurgeDBInstanceLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "PurgeDBInstanceLog", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "PurgeDBInstanceLog", "Rds", "openAPI")
 	return
 }
 

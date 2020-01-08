@@ -103,7 +103,7 @@ func CreateCreateMigrateTaskForSQLServerRequest() (request *CreateMigrateTaskFor
 	request = &CreateMigrateTaskForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateMigrateTaskForSQLServer", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateMigrateTaskForSQLServer", "Rds", "openAPI")
 	return
 }
 

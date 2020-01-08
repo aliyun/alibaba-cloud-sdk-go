@@ -103,7 +103,7 @@ func CreateDescribeLogBackupFilesRequest() (request *DescribeLogBackupFilesReque
 	request = &DescribeLogBackupFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeLogBackupFiles", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeLogBackupFiles", "Rds", "openAPI")
 	return
 }
 
