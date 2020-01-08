@@ -76,18 +76,19 @@ func (client *Client) UploadServerCertificateWithCallback(request *UploadServerC
 // UploadServerCertificateRequest is the request struct for api UploadServerCertificate
 type UploadServerCertificateRequest struct {
 	*requests.RpcRequest
-	AccessKeyId             string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ServerCertificate       string           `position:"Query" name:"ServerCertificate"`
-	AliCloudCertificateName string           `position:"Query" name:"AliCloudCertificateName"`
-	AliCloudCertificateId   string           `position:"Query" name:"AliCloudCertificateId"`
-	PrivateKey              string           `position:"Query" name:"PrivateKey"`
-	ResourceGroupId         string           `position:"Query" name:"ResourceGroupId"`
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	Tags                    string           `position:"Query" name:"Tags"`
-	ServerCertificateName   string           `position:"Query" name:"ServerCertificateName"`
+	AccessKeyId                 string           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId             requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ServerCertificate           string           `position:"Query" name:"ServerCertificate"`
+	AliCloudCertificateName     string           `position:"Query" name:"AliCloudCertificateName"`
+	AliCloudCertificateId       string           `position:"Query" name:"AliCloudCertificateId"`
+	PrivateKey                  string           `position:"Query" name:"PrivateKey"`
+	ResourceGroupId             string           `position:"Query" name:"ResourceGroupId"`
+	ResourceOwnerAccount        string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
+	Tags                        string           `position:"Query" name:"Tags"`
+	AliCloudCertificateRegionId string           `position:"Query" name:"AliCloudCertificateRegionId"`
+	ServerCertificateName       string           `position:"Query" name:"ServerCertificateName"`
 }
 
 // UploadServerCertificateResponse is the response struct for api UploadServerCertificate

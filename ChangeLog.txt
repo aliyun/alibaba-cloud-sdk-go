@@ -1,3 +1,7 @@
+2020-01-08 Version: v1.60.323
+- Generated 2014-05-15 for `Slb`.
+- Supported upload Regional AlicloudCertificate.
+
 2020-01-08 Version: v1.60.322
 - Generated 2014-08-15 for `Rds`.
 

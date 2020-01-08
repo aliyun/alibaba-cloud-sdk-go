@@ -92,7 +92,7 @@ type DescribeLoadBalancerHTTPSListenerAttributeResponse struct {
 	RequestId              string                                                       `json:"RequestId" xml:"RequestId"`
 	ListenerPort           int                                                          `json:"ListenerPort" xml:"ListenerPort"`
 	BackendServerPort      int                                                          `json:"BackendServerPort" xml:"BackendServerPort"`
-	BackendProtocol        int                                                          `json:"BackendProtocol" xml:"BackendProtocol"`
+	BackendProtocol        string                                                       `json:"BackendProtocol" xml:"BackendProtocol"`
 	Bandwidth              int                                                          `json:"Bandwidth" xml:"Bandwidth"`
 	Status                 string                                                       `json:"Status" xml:"Status"`
 	SecurityStatus         string                                                       `json:"SecurityStatus" xml:"SecurityStatus"`
