@@ -76,8 +76,9 @@ func (client *Client) DescribeInstanceAutoRenewAttributeWithCallback(request *De
 // DescribeInstanceAutoRenewAttributeRequest is the request struct for api DescribeInstanceAutoRenewAttribute
 type DescribeInstanceAutoRenewAttributeRequest struct {
 	*requests.RpcRequest
-	Version     string `position:"Query" name:"Version"`
-	InstanceIds string `position:"Query" name:"InstanceIds"`
+	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	Version     string           `position:"Query" name:"Version"`
+	InstanceIds string           `position:"Query" name:"InstanceIds"`
 }
 
 // DescribeInstanceAutoRenewAttributeResponse is the response struct for api DescribeInstanceAutoRenewAttribute

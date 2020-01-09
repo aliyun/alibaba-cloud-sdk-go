@@ -17,17 +17,19 @@ package ens
 
 // SupportResource is a nested struct in ens response
 type SupportResource struct {
-	DataDiskMaxSize       int             `json:"DataDiskMaxSize" xml:"DataDiskMaxSize"`
-	SystemDiskMaxSize     int             `json:"SystemDiskMaxSize" xml:"SystemDiskMaxSize"`
-	EnsRegionId           string          `json:"EnsRegionId" xml:"EnsRegionId"`
-	DataDiskSize          string          `json:"DataDiskSize" xml:"DataDiskSize"`
-	InstanceSpec          string          `json:"InstanceSpec" xml:"InstanceSpec"`
-	SystemDiskSize        string          `json:"SystemDiskSize" xml:"SystemDiskSize"`
-	SystemDiskMinSize     int             `json:"SystemDiskMinSize" xml:"SystemDiskMinSize"`
-	DataDiskMinSize       int             `json:"DataDiskMinSize" xml:"DataDiskMinSize"`
-	SupportResourcesCount string          `json:"SupportResourcesCount" xml:"SupportResourcesCount"`
-	EnsRegionIds          EnsRegionIds    `json:"EnsRegionIds" xml:"EnsRegionIds"`
-	SystemDiskSizes       SystemDiskSizes `json:"SystemDiskSizes" xml:"SystemDiskSizes"`
-	InstanceSpeces        InstanceSpeces  `json:"InstanceSpeces" xml:"InstanceSpeces"`
-	DataDiskSizes         DataDiskSizes   `json:"DataDiskSizes" xml:"DataDiskSizes"`
+	DataDiskMaxSize       int                 `json:"DataDiskMaxSize" xml:"DataDiskMaxSize"`
+	SystemDiskMaxSize     int                 `json:"SystemDiskMaxSize" xml:"SystemDiskMaxSize"`
+	EnsRegionId           string              `json:"EnsRegionId" xml:"EnsRegionId"`
+	DataDiskSize          string              `json:"DataDiskSize" xml:"DataDiskSize"`
+	InstanceSpec          string              `json:"InstanceSpec" xml:"InstanceSpec"`
+	SystemDiskSize        string              `json:"SystemDiskSize" xml:"SystemDiskSize"`
+	SystemDiskMinSize     int                 `json:"SystemDiskMinSize" xml:"SystemDiskMinSize"`
+	DataDiskMinSize       int                 `json:"DataDiskMinSize" xml:"DataDiskMinSize"`
+	SupportResourcesCount string              `json:"SupportResourcesCount" xml:"SupportResourcesCount"`
+	EnsRegionIds          EnsRegionIds        `json:"EnsRegionIds" xml:"EnsRegionIds"`
+	BandwidthTypes        BandwidthTypes      `json:"BandwidthTypes" xml:"BandwidthTypes"`
+	SystemDiskSizes       SystemDiskSizes     `json:"SystemDiskSizes" xml:"SystemDiskSizes"`
+	InstanceSpeces        InstanceSpeces      `json:"InstanceSpeces" xml:"InstanceSpeces"`
+	DataDiskSizes         DataDiskSizes       `json:"DataDiskSizes" xml:"DataDiskSizes"`
+	EnsRegionIdsExtends   EnsRegionIdsExtends `json:"EnsRegionIdsExtends" xml:"EnsRegionIdsExtends"`
 }

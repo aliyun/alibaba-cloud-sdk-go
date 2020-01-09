@@ -87,9 +87,9 @@ type DescribeUserBandWidthDataRequest struct {
 // DescribeUserBandWidthDataResponse is the response struct for api DescribeUserBandWidthData
 type DescribeUserBandWidthDataResponse struct {
 	*responses.BaseResponse
-	RequestId   string            `json:"RequestId" xml:"RequestId"`
-	Code        int               `json:"Code" xml:"Code"`
-	MonitorData []MonitorDataItem `json:"MonitorData" xml:"MonitorData"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	Code        int         `json:"Code" xml:"Code"`
+	MonitorData MonitorData `json:"MonitorData" xml:"MonitorData"`
 }
 
 // CreateDescribeUserBandWidthDataRequest creates a request to invoke DescribeUserBandWidthData API

@@ -76,18 +76,20 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 // CreateInstanceRequest is the request struct for api CreateInstance
 type CreateInstanceRequest struct {
 	*requests.RpcRequest
-	ImageId            string `position:"Query" name:"ImageId"`
-	Password           string `position:"Query" name:"Password"`
-	EnsRegionId        string `position:"Query" name:"EnsRegionId"`
-	InstanceType       string `position:"Query" name:"InstanceType"`
-	DataDisk1Size      string `position:"Query" name:"DataDisk.1.Size"`
-	AutoRenewPeriod    string `position:"Query" name:"AutoRenewPeriod"`
-	Period             string `position:"Query" name:"Period"`
-	Quantity           string `position:"Query" name:"Quantity"`
-	Version            string `position:"Query" name:"Version"`
-	SystemDiskSize     string `position:"Query" name:"SystemDisk.Size"`
-	AutoRenew          string `position:"Query" name:"AutoRenew"`
-	InternetChargeType string `position:"Query" name:"InternetChargeType"`
+	ImageId            string           `position:"Query" name:"ImageId"`
+	Password           string           `position:"Query" name:"Password"`
+	EnsRegionId        string           `position:"Query" name:"EnsRegionId"`
+	InstanceType       string           `position:"Query" name:"InstanceType"`
+	DataDisk1Size      string           `position:"Query" name:"DataDisk.1.Size"`
+	AutoRenewPeriod    string           `position:"Query" name:"AutoRenewPeriod"`
+	Period             string           `position:"Query" name:"Period"`
+	Quantity           string           `position:"Query" name:"Quantity"`
+	IpType             string           `position:"Query" name:"IpType"`
+	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
+	Version            string           `position:"Query" name:"Version"`
+	SystemDiskSize     string           `position:"Query" name:"SystemDisk.Size"`
+	AutoRenew          string           `position:"Query" name:"AutoRenew"`
+	InternetChargeType string           `position:"Query" name:"InternetChargeType"`
 }
 
 // CreateInstanceResponse is the response struct for api CreateInstance

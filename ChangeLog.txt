@@ -1,3 +1,10 @@
+2020-01-09 Version: v1.60.325
+- Generated 2017-11-10 for `Ens`.
+- Add New Interface DescribeInstanceTypes.
+- Deprecated New Interface DescribeReservedResource.
+- Add New Interface DescribeAvailableResourceInfo.
+- Add New Interface AttachEnsInstances.
+
 2020-01-08 Version: v1.60.324
 - Generated 2017-09-06 for `imm`.
 - Add TagLevel to ListSetTags.
