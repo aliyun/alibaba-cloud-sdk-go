@@ -87,6 +87,7 @@ type Item struct {
 	PaymentTransactionID        string  `json:"PaymentTransactionID" xml:"PaymentTransactionID"`
 	OrderID                     string  `json:"OrderID" xml:"OrderID"`
 	OrderType                   string  `json:"OrderType" xml:"OrderType"`
+	BillingDate                 string  `json:"BillingDate" xml:"BillingDate"`
 	DeductedByCoupons           float64 `json:"DeductedByCoupons" xml:"DeductedByCoupons"`
 	BillingItem                 string  `json:"BillingItem" xml:"BillingItem"`
 	Zone                        string  `json:"Zone" xml:"Zone"`

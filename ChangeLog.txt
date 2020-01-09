@@ -1,3 +1,7 @@
+2020-01-09 Version: v1.60.326
+- Generated 2017-12-14 for `BssOpenApi`.
+- Support DAILY report in QueryInstanBill.
+
 2020-01-09 Version: v1.60.325
 - Generated 2017-11-10 for `Ens`.
 - Add New Interface DescribeInstanceTypes.

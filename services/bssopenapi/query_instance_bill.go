@@ -82,8 +82,10 @@ type QueryInstanceBillRequest struct {
 	BillingCycle     string           `position:"Query" name:"BillingCycle"`
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 	PageNum          requests.Integer `position:"Query" name:"PageNum"`
+	BillingDate      string           `position:"Query" name:"BillingDate"`
 	ProductType      string           `position:"Query" name:"ProductType"`
 	IsBillingItem    requests.Boolean `position:"Query" name:"IsBillingItem"`
+	Granularity      string           `position:"Query" name:"Granularity"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 }
 

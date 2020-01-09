@@ -60,10 +60,10 @@ type Data struct {
 	CostUnit                    CostUnit                             `json:"CostUnit" xml:"CostUnit"`
 	CostUnitStatisInfo          CostUnitStatisInfo                   `json:"CostUnitStatisInfo" xml:"CostUnitStatisInfo"`
 	ModuleList                  ModuleList                           `json:"ModuleList" xml:"ModuleList"`
-	Items                       ItemsInQueryInstanceBill             `json:"Items" xml:"Items"`
 	InstanceList                []Instance                           `json:"InstanceList" xml:"InstanceList"`
 	OrderList                   OrderListInQueryOrders               `json:"OrderList" xml:"OrderList"`
 	Modules                     Modules                              `json:"Modules" xml:"Modules"`
+	Items                       ItemsInQueryAccountBill              `json:"Items" xml:"Items"`
 	ResourcePackages            ResourcePackages                     `json:"ResourcePackages" xml:"ResourcePackages"`
 	ProductList                 ProductList                          `json:"ProductList" xml:"ProductList"`
 	ModuleDetails               ModuleDetailsInGetPayAsYouGoPrice    `json:"ModuleDetails" xml:"ModuleDetails"`
