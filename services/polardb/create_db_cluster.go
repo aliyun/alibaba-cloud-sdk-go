@@ -91,6 +91,7 @@ type CreateDBClusterRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	UsedTime             string           `position:"Query" name:"UsedTime"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	SecurityIPList       string           `position:"Query" name:"SecurityIPList"`
 	AutoRenew            requests.Boolean `position:"Query" name:"AutoRenew"`
 	VPCId                string           `position:"Query" name:"VPCId"`
 	DBType               string           `position:"Query" name:"DBType"`

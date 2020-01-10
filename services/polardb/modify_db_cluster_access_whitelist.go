@@ -79,6 +79,7 @@ type ModifyDBClusterAccessWhitelistRequest struct {
 	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityIps               string           `position:"Query" name:"SecurityIps"`
 	DBClusterIPArrayAttribute string           `position:"Query" name:"DBClusterIPArrayAttribute"`
+	ModifyMode                string           `position:"Query" name:"ModifyMode"`
 	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId               string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`

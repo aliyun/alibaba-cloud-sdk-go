@@ -27,4 +27,5 @@ type Backup struct {
 	BackupMethod    string `json:"BackupMethod" xml:"BackupMethod"`
 	StoreStatus     string `json:"StoreStatus" xml:"StoreStatus"`
 	BackupSetSize   string `json:"BackupSetSize" xml:"BackupSetSize"`
+	ConsistentTime  string `json:"ConsistentTime" xml:"ConsistentTime"`
 }

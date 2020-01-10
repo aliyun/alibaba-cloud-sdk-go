@@ -1,3 +1,8 @@
+2020-01-10 Version: v1.60.327
+- Generated 2017-08-01 for `polardb`.
+- Return `ConsistentTime` for DescribeBackups.
+- Return `DBNodeIds` for CreateDBNodes.
+
 2020-01-09 Version: v1.60.326
 - Generated 2017-12-14 for `BssOpenApi`.
 - Support DAILY report in QueryInstanBill.

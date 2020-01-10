@@ -94,9 +94,10 @@ type CreateDBNodesDBNode struct {
 // CreateDBNodesResponse is the response struct for api CreateDBNodes
 type CreateDBNodesResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	DBClusterId string `json:"DBClusterId" xml:"DBClusterId"`
-	OrderId     string `json:"OrderId" xml:"OrderId"`
+	RequestId   string    `json:"RequestId" xml:"RequestId"`
+	DBClusterId string    `json:"DBClusterId" xml:"DBClusterId"`
+	OrderId     string    `json:"OrderId" xml:"OrderId"`
+	DBNodeIds   DBNodeIds `json:"DBNodeIds" xml:"DBNodeIds"`
 }
 
 // CreateCreateDBNodesRequest creates a request to invoke CreateDBNodes API
