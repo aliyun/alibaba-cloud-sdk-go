@@ -17,10 +17,8 @@ package green
 
 // Keyword is a nested struct in green response
 type Keyword struct {
-	Keyword    string `json:"keyword" xml:"keyword"`
 	Id         int    `json:"Id" xml:"Id"`
-	Keyword    string `json:"Keyword" xml:"Keyword"`
 	CreateTime string `json:"CreateTime" xml:"CreateTime"`
-	Id         int    `json:"id" xml:"id"`
+	Keyword    string `json:"Keyword" xml:"Keyword"`
 	HitCount   int    `json:"HitCount" xml:"HitCount"`
 }

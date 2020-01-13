@@ -85,10 +85,10 @@ type CreateKeywordRequest struct {
 // CreateKeywordResponse is the response struct for api CreateKeyword
 type CreateKeywordResponse struct {
 	*responses.BaseResponse
-	RequestId          string    `json:"RequestId" xml:"RequestId"`
-	SuccessCount       int       `json:"SuccessCount" xml:"SuccessCount"`
-	InvalidKeywordList []string  `json:"InvalidKeywordList" xml:"InvalidKeywordList"`
-	ValidKeywordList   []Keyword `json:"validKeywordList" xml:"validKeywordList"`
+	RequestId          string         `json:"RequestId" xml:"RequestId"`
+	SuccessCount       int            `json:"SuccessCount" xml:"SuccessCount"`
+	InvalidKeywordList []string       `json:"InvalidKeywordList" xml:"InvalidKeywordList"`
+	ValidKeywordList   []ValidKeyword `json:"validKeywordList" xml:"validKeywordList"`
 }
 
 // CreateCreateKeywordRequest creates a request to invoke CreateKeyword API
