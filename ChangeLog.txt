@@ -1,3 +1,7 @@
+2020-01-13 Version: v1.60.333
+- Generated 2015-12-01 for `Dds`.
+- New API DescribeAvailableResource.
+
 2020-01-13 Version: v1.60.332
 - Generated 2014-05-26 for `Ecs`.
 - Solve conflict.
