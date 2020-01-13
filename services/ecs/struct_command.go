@@ -24,6 +24,7 @@ type Command struct {
 	CommandContent  string         `json:"CommandContent" xml:"CommandContent"`
 	WorkingDir      string         `json:"WorkingDir" xml:"WorkingDir"`
 	Timeout         int64          `json:"Timeout" xml:"Timeout"`
+	InvokeTimes     int            `json:"InvokeTimes" xml:"InvokeTimes"`
 	CreationTime    string         `json:"CreationTime" xml:"CreationTime"`
 	EnableParameter bool           `json:"EnableParameter" xml:"EnableParameter"`
 	ParameterNames  ParameterNames `json:"ParameterNames" xml:"ParameterNames"`
