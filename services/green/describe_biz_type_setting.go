@@ -87,6 +87,7 @@ type DescribeBizTypeSettingResponse struct {
 	RequestId string    `json:"RequestId" xml:"RequestId"`
 	Terrorism Terrorism `json:"Terrorism" xml:"Terrorism"`
 	Porn      Porn      `json:"Porn" xml:"Porn"`
+	Antispam  Antispam  `json:"Antispam" xml:"Antispam"`
 }
 
 // CreateDescribeBizTypeSettingRequest creates a request to invoke DescribeBizTypeSetting API

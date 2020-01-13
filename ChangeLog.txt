@@ -1,3 +1,7 @@
+2020-01-13 Version: v1.60.330
+- Generated 2017-08-23, 2018-05-09, 2016-12-22 for `Green`.
+- Fixed bugs for CreateKeywordResponse ValidKeywordList type.
+
 2020-01-13 Version: v1.60.329
 - Generated 2019-01-01 for `Cms`.
 - Add Dynamic Tag API.

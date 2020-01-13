@@ -76,6 +76,7 @@ func (client *Client) UpdateBizTypeSettingWithCallback(request *UpdateBizTypeSet
 // UpdateBizTypeSettingRequest is the request struct for api UpdateBizTypeSetting
 type UpdateBizTypeSettingRequest struct {
 	*requests.RpcRequest
+	Antispam     string `position:"Query" name:"Antispam"`
 	ResourceType string `position:"Query" name:"ResourceType"`
 	Porn         string `position:"Query" name:"Porn"`
 	SourceIp     string `position:"Query" name:"SourceIp"`

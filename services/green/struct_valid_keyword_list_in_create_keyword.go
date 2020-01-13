@@ -17,5 +17,5 @@ package green
 
 // ValidKeywordListInCreateKeyword is a nested struct in green response
 type ValidKeywordListInCreateKeyword struct {
-	StringItem []string `json:"StringItem" xml:"StringItem"`
+	Keyword []Keyword `json:"Keyword" xml:"Keyword"`
 }
