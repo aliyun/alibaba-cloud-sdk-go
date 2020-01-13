@@ -1,3 +1,7 @@
+2020-01-13 Version: v1.60.329
+- Generated 2019-01-01 for `Cms`.
+- Add Dynamic Tag API.
+
 2020-01-13 Version: v1.60.328
 - Generated 2014-05-26 for `Ecs`.
 - Supported InstanceMaintenanceAtrributes for maintening the attributes of instances.

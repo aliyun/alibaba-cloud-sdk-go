@@ -17,10 +17,10 @@ package cms
 
 // Process is a nested struct in cms response
 type Process struct {
-	Id                         string                                           `json:"Id" xml:"Id"`
-	GroupId                    string                                           `json:"GroupId" xml:"GroupId"`
-	ProcessName                string                                           `json:"ProcessName" xml:"ProcessName"`
-	MatchExpressFilterRelation string                                           `json:"MatchExpressFilterRelation" xml:"MatchExpressFilterRelation"`
-	MatchExpress               MatchExpress                                     `json:"MatchExpress" xml:"MatchExpress"`
-	AlertConfig                AlertConfigInDescribeGroupMonitoringAgentProcess `json:"AlertConfig" xml:"AlertConfig"`
+	Id                         string                                            `json:"Id" xml:"Id"`
+	GroupId                    string                                            `json:"GroupId" xml:"GroupId"`
+	ProcessName                string                                            `json:"ProcessName" xml:"ProcessName"`
+	MatchExpressFilterRelation string                                            `json:"MatchExpressFilterRelation" xml:"MatchExpressFilterRelation"`
+	MatchExpress               MatchExpressInDescribeGroupMonitoringAgentProcess `json:"MatchExpress" xml:"MatchExpress"`
+	AlertConfig                AlertConfigInDescribeGroupMonitoringAgentProcess  `json:"AlertConfig" xml:"AlertConfig"`
 }

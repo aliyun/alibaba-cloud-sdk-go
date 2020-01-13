@@ -83,11 +83,11 @@ type DescribeTagKeyListRequest struct {
 // DescribeTagKeyListResponse is the response struct for api DescribeTagKeyList
 type DescribeTagKeyListResponse struct {
 	*responses.BaseResponse
-	Code      string  `json:"Code" xml:"Code"`
-	Message   string  `json:"Message" xml:"Message"`
-	Success   bool    `json:"Success" xml:"Success"`
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	TagKeys   TagKeys `json:"TagKeys" xml:"TagKeys"`
+	Code      string                      `json:"Code" xml:"Code"`
+	Message   string                      `json:"Message" xml:"Message"`
+	Success   bool                        `json:"Success" xml:"Success"`
+	RequestId string                      `json:"RequestId" xml:"RequestId"`
+	TagKeys   TagKeysInDescribeTagKeyList `json:"TagKeys" xml:"TagKeys"`
 }
 
 // CreateDescribeTagKeyListRequest creates a request to invoke DescribeTagKeyList API

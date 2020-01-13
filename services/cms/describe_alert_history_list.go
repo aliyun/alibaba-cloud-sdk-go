@@ -76,18 +76,18 @@ func (client *Client) DescribeAlertHistoryListWithCallback(request *DescribeAler
 // DescribeAlertHistoryListRequest is the request struct for api DescribeAlertHistoryList
 type DescribeAlertHistoryListRequest struct {
 	*requests.RpcRequest
-	AlertStatus string           `position:"Query" name:"AlertStatus"`
-	RuleName    string           `position:"Query" name:"RuleName"`
-	StartTime   string           `position:"Query" name:"StartTime"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	State       string           `position:"Query" name:"State"`
-	MetricName  string           `position:"Query" name:"MetricName"`
-	GroupId     string           `position:"Query" name:"GroupId"`
-	EndTime     string           `position:"Query" name:"EndTime"`
-	Ascending   requests.Boolean `position:"Query" name:"Ascending"`
-	Namespace   string           `position:"Query" name:"Namespace"`
-	Page        requests.Integer `position:"Query" name:"Page"`
-	RuleId      string           `position:"Query" name:"RuleId"`
+	RuleName   string           `position:"Query" name:"RuleName"`
+	StartTime  string           `position:"Query" name:"StartTime"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	State      string           `position:"Query" name:"State"`
+	MetricName string           `position:"Query" name:"MetricName"`
+	GroupId    string           `position:"Query" name:"GroupId"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	Ascending  requests.Boolean `position:"Query" name:"Ascending"`
+	Namespace  string           `position:"Query" name:"Namespace"`
+	Page       requests.Integer `position:"Query" name:"Page"`
+	RuleId     string           `position:"Query" name:"RuleId"`
+	Status     string           `position:"Query" name:"Status"`
 }
 
 // DescribeAlertHistoryListResponse is the response struct for api DescribeAlertHistoryList
