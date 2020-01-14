@@ -77,6 +77,7 @@ func (client *Client) CreateConsumerGroupWithCallback(request *CreateConsumerGro
 type CreateConsumerGroupRequest struct {
 	*requests.RpcRequest
 	ConsumerId string `position:"Query" name:"ConsumerId"`
+	Remark     string `position:"Query" name:"Remark"`
 	InstanceId string `position:"Query" name:"InstanceId"`
 }
 

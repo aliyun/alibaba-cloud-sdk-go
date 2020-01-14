@@ -82,11 +82,11 @@ type GetMetaProductListRequest struct {
 // GetMetaProductListResponse is the response struct for api GetMetaProductList
 type GetMetaProductListResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      int    `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	MetaData  string `json:"MetaData" xml:"MetaData"`
+	Success   bool     `json:"Success" xml:"Success"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Code      int      `json:"Code" xml:"Code"`
+	Message   string   `json:"Message" xml:"Message"`
+	MetaData  MetaData `json:"MetaData" xml:"MetaData"`
 }
 
 // CreateGetMetaProductListRequest creates a request to invoke GetMetaProductList API

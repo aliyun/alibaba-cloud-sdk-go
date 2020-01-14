@@ -76,7 +76,15 @@ func (client *Client) GetInstanceListWithCallback(request *GetInstanceListReques
 // GetInstanceListRequest is the request struct for api GetInstanceList
 type GetInstanceListRequest struct {
 	*requests.RpcRequest
-	OrderId string `position:"Query" name:"OrderId"`
+	OrderId    string                `position:"Query" name:"OrderId"`
+	InstanceId *[]string             `position:"Query" name:"InstanceId"  type:"Repeated"`
+	Tag        *[]GetInstanceListTag `position:"Query" name:"Tag"  type:"Repeated"`
+}
+
+// GetInstanceListTag is a repeated param struct in GetInstanceListRequest
+type GetInstanceListTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // GetInstanceListResponse is the response struct for api GetInstanceList
