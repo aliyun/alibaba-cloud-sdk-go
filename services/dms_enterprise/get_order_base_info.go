@@ -76,7 +76,7 @@ func (client *Client) GetOrderBaseInfoWithCallback(request *GetOrderBaseInfoRequ
 // GetOrderBaseInfoRequest is the request struct for api GetOrderBaseInfo
 type GetOrderBaseInfoRequest struct {
 	*requests.RpcRequest
-	OrderId requests.Integer `position:"Body" name:"OrderId"`
+	OrderId requests.Integer `position:"Query" name:"OrderId"`
 	Tid     requests.Integer `position:"Query" name:"Tid"`
 }
 
