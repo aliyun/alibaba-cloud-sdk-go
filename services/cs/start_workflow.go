@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateCluster invokes the cs.CreateCluster API synchronously
-// api document: https://help.aliyun.com/api/cs/createcluster.html
-func (client *Client) CreateCluster(request *CreateClusterRequest) (response *CreateClusterResponse, err error) {
-	response = CreateCreateClusterResponse()
+// StartWorkflow invokes the cs.StartWorkflow API synchronously
+// api document: https://help.aliyun.com/api/cs/startworkflow.html
+func (client *Client) StartWorkflow(request *StartWorkflowRequest) (response *StartWorkflowResponse, err error) {
+	response = CreateStartWorkflowResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateClusterWithChan invokes the cs.CreateCluster API asynchronously
-// api document: https://help.aliyun.com/api/cs/createcluster.html
+// StartWorkflowWithChan invokes the cs.StartWorkflow API asynchronously
+// api document: https://help.aliyun.com/api/cs/startworkflow.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateClusterWithChan(request *CreateClusterRequest) (<-chan *CreateClusterResponse, <-chan error) {
-	responseChan := make(chan *CreateClusterResponse, 1)
+func (client *Client) StartWorkflowWithChan(request *StartWorkflowRequest) (<-chan *StartWorkflowResponse, <-chan error) {
+	responseChan := make(chan *StartWorkflowResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateCluster(request)
+		response, err := client.StartWorkflow(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateClusterWithChan(request *CreateClusterRequest) (<-ch
 	return responseChan, errChan
 }
 
-// CreateClusterWithCallback invokes the cs.CreateCluster API asynchronously
-// api document: https://help.aliyun.com/api/cs/createcluster.html
+// StartWorkflowWithCallback invokes the cs.StartWorkflow API asynchronously
+// api document: https://help.aliyun.com/api/cs/startworkflow.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateClusterWithCallback(request *CreateClusterRequest, callback func(response *CreateClusterResponse, err error)) <-chan int {
+func (client *Client) StartWorkflowWithCallback(request *StartWorkflowRequest, callback func(response *StartWorkflowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateClusterResponse
+		var response *StartWorkflowResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateCluster(request)
+		response, err = client.StartWorkflow(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,30 +73,29 @@ func (client *Client) CreateClusterWithCallback(request *CreateClusterRequest, c
 	return result
 }
 
-// CreateClusterRequest is the request struct for api CreateCluster
-type CreateClusterRequest struct {
+// StartWorkflowRequest is the request struct for api StartWorkflow
+type StartWorkflowRequest struct {
 	*requests.RoaRequest
 }
 
-// CreateClusterResponse is the response struct for api CreateCluster
-type CreateClusterResponse struct {
+// StartWorkflowResponse is the response struct for api StartWorkflow
+type StartWorkflowResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateCreateClusterRequest creates a request to invoke CreateCluster API
-func CreateCreateClusterRequest() (request *CreateClusterRequest) {
-	request = &CreateClusterRequest{
+// CreateStartWorkflowRequest creates a request to invoke StartWorkflow API
+func CreateStartWorkflowRequest() (request *StartWorkflowRequest) {
+	request = &StartWorkflowRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "CreateCluster", "/clusters", "csk", "openAPI")
+	request.InitWithApiInfo("CS", "2015-12-15", "StartWorkflow", "/gs/workflow", "csk", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateClusterResponse creates a response to parse from CreateCluster response
-func CreateCreateClusterResponse() (response *CreateClusterResponse) {
-	response = &CreateClusterResponse{
+// CreateStartWorkflowResponse creates a response to parse from StartWorkflow response
+func CreateStartWorkflowResponse() (response *StartWorkflowResponse) {
+	response = &StartWorkflowResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

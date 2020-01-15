@@ -83,6 +83,7 @@ type DescribeClustersRequest struct {
 // DescribeClustersResponse is the response struct for api DescribeClusters
 type DescribeClustersResponse struct {
 	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeClustersRequest creates a request to invoke DescribeClusters API
@@ -90,7 +91,7 @@ func CreateDescribeClustersRequest() (request *DescribeClustersRequest) {
 	request = &DescribeClustersRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusters", "/clusters", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusters", "/clusters", "csk", "openAPI")
 	request.Method = requests.GET
 	return
 }

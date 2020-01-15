@@ -90,7 +90,7 @@ func CreateDeleteClusterNodesRequest() (request *DeleteClusterNodesRequest) {
 	request = &DeleteClusterNodesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DeleteClusterNodes", "/clusters/[ClusterId]/nodes", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "DeleteClusterNodes", "/clusters/[ClusterId]/nodes", "csk", "openAPI")
 	request.Method = requests.POST
 	return
 }
