@@ -3,6 +3,7 @@ package integration
 import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/endpoints"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/services/airec"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/bssopenapi"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/cdn"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/cs"
@@ -24,13 +25,14 @@ var (
 	flag            = false
 )
 
-func Test_DescribeClusteWithROArequestWithXMLWithGet(t *testing.T) {
-	client, err := cs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+func Test_CreateDiversifyWithROArequestWithXMLWithGet(t *testing.T) {
+	client, err := airec.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
-	request := cs.CreateDescribeClusterDetailRequest()
+	request := airec.CreateCreateDiversifyRequest()
+	request.SetDomain("airec.cn-hangzhou.aliyuncs.com")
 	request.SetContentType("XML")
 	request.SetScheme("HTTPS")
-	response, err := client.DescribeClusterDetail(request)
+	response, err := client.CreateDiversify(request)
 	assert.NotNil(t, err)
 	assert.Equal(t, 400, response.GetHttpStatus())
 	assert.Contains(t, err.Error(), "Request url is invalid")

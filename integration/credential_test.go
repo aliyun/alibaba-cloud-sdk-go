@@ -10,7 +10,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials/provider"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/services/cs"
+	"github.com/aliyun/alibaba-cloud-sdk-go/services/airec"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/ecs"
 	"github.com/stretchr/testify/assert"
 
@@ -47,14 +47,14 @@ func Test_DescribeRegionsWithRPCrequestWithSTStoken(t *testing.T) {
 	assert.True(t, len(response.Regions.Region) > 0)
 }
 
-func Test_DescribeClusterDetailWithROArequestWithAK(t *testing.T) {
-	client, err := cs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+func Test_CreateDiversifyWithROArequestWithAK(t *testing.T) {
+	client, err := airec.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
-	request := cs.CreateDescribeClusterDetailRequest()
-	request.SetDomain("cs.aliyuncs.com")
+	request := airec.CreateCreateDiversifyRequest()
+	request.SetDomain("airec.cn-hangzhou.aliyuncs.com")
 	request.QueryParams["RegionId"] = os.Getenv("REGION_ID")
 	request.Method = "GET"
-	response, err := client.DescribeClusterDetail(request)
+	response, err := client.CreateDiversify(request)
 	assert.NotNil(t, err)
 	assert.Equal(t, 400, response.GetHttpStatus())
 	assert.Contains(t, err.Error(), "Request url is invalid")
