@@ -1,3 +1,7 @@
+2020-01-15 Version: v1.60.336
+- Generated 2019-01-01 for `Cms`.
+- Fix parameter issues for label synchronization group.
+
 2020-01-15 Version: v1.60.335
 - Generated 2015-12-15 for `CS`.
 - Support A csk.

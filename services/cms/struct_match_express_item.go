@@ -19,7 +19,6 @@ package cms
 type MatchExpressItem struct {
 	Name                  string `json:"Name" xml:"Name"`
 	Value                 string `json:"Value" xml:"Value"`
-	TagName               string `json:"TagName" xml:"TagName"`
 	TagValueMatchFunction string `json:"TagValueMatchFunction" xml:"TagValueMatchFunction"`
 	Function              string `json:"Function" xml:"Function"`
 	TagValue              string `json:"TagValue" xml:"TagValue"`

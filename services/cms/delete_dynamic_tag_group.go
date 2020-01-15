@@ -76,7 +76,7 @@ func (client *Client) DeleteDynamicTagGroupWithCallback(request *DeleteDynamicTa
 // DeleteDynamicTagGroupRequest is the request struct for api DeleteDynamicTagGroup
 type DeleteDynamicTagGroupRequest struct {
 	*requests.RpcRequest
-	DynamicTagGroupId string `position:"Query" name:"DynamicTagGroupId"`
+	DynamicTagRuleId string `position:"Query" name:"DynamicTagRuleId"`
 }
 
 // DeleteDynamicTagGroupResponse is the response struct for api DeleteDynamicTagGroup

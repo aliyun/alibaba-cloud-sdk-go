@@ -17,7 +17,7 @@ package cms
 
 // TagGroup is a nested struct in cms response
 type TagGroup struct {
-	DynamicTagGroupId          string                                   `json:"DynamicTagGroupId" xml:"DynamicTagGroupId"`
+	DynamicTagRuleId           string                                   `json:"DynamicTagRuleId" xml:"DynamicTagRuleId"`
 	TagKey                     string                                   `json:"TagKey" xml:"TagKey"`
 	RegionId                   string                                   `json:"RegionId" xml:"RegionId"`
 	MatchExpressFilterRelation string                                   `json:"MatchExpressFilterRelation" xml:"MatchExpressFilterRelation"`

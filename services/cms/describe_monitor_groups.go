@@ -78,6 +78,7 @@ type DescribeMonitorGroupsRequest struct {
 	*requests.RpcRequest
 	SelectContactGroups    requests.Boolean            `position:"Query" name:"SelectContactGroups"`
 	IncludeTemplateHistory requests.Boolean            `position:"Query" name:"IncludeTemplateHistory"`
+	DynamicTagRuleId       string                      `position:"Query" name:"DynamicTagRuleId"`
 	Type                   string                      `position:"Query" name:"Type"`
 	PageNumber             requests.Integer            `position:"Query" name:"PageNumber"`
 	PageSize               requests.Integer            `position:"Query" name:"PageSize"`
@@ -86,7 +87,6 @@ type DescribeMonitorGroupsRequest struct {
 	GroupId                string                      `position:"Query" name:"GroupId"`
 	GroupName              string                      `position:"Query" name:"GroupName"`
 	InstanceId             string                      `position:"Query" name:"InstanceId"`
-	DynamicTagGroupId      string                      `position:"Query" name:"DynamicTagGroupId"`
 }
 
 // DescribeMonitorGroupsTag is a repeated param struct in DescribeMonitorGroupsRequest
