@@ -87,6 +87,8 @@ type DescribeVerifyResultResponse struct {
 	RequestId                 string   `json:"RequestId" xml:"RequestId"`
 	VerifyStatus              int      `json:"VerifyStatus" xml:"VerifyStatus"`
 	AuthorityComparisionScore float64  `json:"AuthorityComparisionScore" xml:"AuthorityComparisionScore"`
+	FaceComparisonScore       float64  `json:"FaceComparisonScore" xml:"FaceComparisonScore"`
+	IdCardFaceComparisonScore float64  `json:"IdCardFaceComparisonScore" xml:"IdCardFaceComparisonScore"`
 	Material                  Material `json:"Material" xml:"Material"`
 }
 
