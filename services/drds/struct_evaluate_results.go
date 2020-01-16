@@ -17,20 +17,20 @@ package drds
 
 // EvaluateResults is a nested struct in drds response
 type EvaluateResults struct {
-	TaskId            int               `json:"TaskId" xml:"TaskId"`
-	TaskName          string            `json:"TaskName" xml:"TaskName"`
-	InstId            int               `json:"InstId" xml:"InstId"`
-	DbName            string            `json:"DbName" xml:"DbName"`
-	TaskStatus        string            `json:"TaskStatus" xml:"TaskStatus"`
-	GmtCreate         string            `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified       string            `json:"GmtModified" xml:"GmtModified"`
-	RdsType           string            `json:"RdsType" xml:"RdsType"`
-	RdsCount          int               `json:"RdsCount" xml:"RdsCount"`
-	RdsTotalSpace     string            `json:"RdsTotalSpace" xml:"RdsTotalSpace"`
-	DrdsType          string            `json:"DrdsType" xml:"DrdsType"`
-	DrdsCount         int               `json:"DrdsCount" xml:"DrdsCount"`
-	AllSqlCount       int               `json:"AllSqlCount" xml:"AllSqlCount"`
-	SlowSqlCount      int               `json:"SlowSqlCount" xml:"SlowSqlCount"`
-	TableShardResults TableShardResults `json:"TableShardResults" xml:"TableShardResults"`
-	RdsInstInfos      RdsInstInfos      `json:"RdsInstInfos" xml:"RdsInstInfos"`
+	RdsType           string                                             `json:"RdsType" xml:"RdsType"`
+	RdsTotalSpace     string                                             `json:"RdsTotalSpace" xml:"RdsTotalSpace"`
+	SlowSqlCount      int                                                `json:"SlowSqlCount" xml:"SlowSqlCount"`
+	RdsCount          int                                                `json:"RdsCount" xml:"RdsCount"`
+	GmtModified       string                                             `json:"GmtModified" xml:"GmtModified"`
+	DbName            string                                             `json:"DbName" xml:"DbName"`
+	DrdsCount         int                                                `json:"DrdsCount" xml:"DrdsCount"`
+	TaskStatus        string                                             `json:"TaskStatus" xml:"TaskStatus"`
+	GmtCreate         string                                             `json:"GmtCreate" xml:"GmtCreate"`
+	DrdsType          string                                             `json:"DrdsType" xml:"DrdsType"`
+	InstId            int                                                `json:"InstId" xml:"InstId"`
+	TaskName          string                                             `json:"TaskName" xml:"TaskName"`
+	TaskId            int                                                `json:"TaskId" xml:"TaskId"`
+	AllSqlCount       int                                                `json:"AllSqlCount" xml:"AllSqlCount"`
+	TableShardResults TableShardResultsInDescribeBatchEvaluateTaskReport `json:"TableShardResults" xml:"TableShardResults"`
+	RdsInstInfos      RdsInstInfosInDescribeBatchEvaluateTaskReport      `json:"RdsInstInfos" xml:"RdsInstInfos"`
 }

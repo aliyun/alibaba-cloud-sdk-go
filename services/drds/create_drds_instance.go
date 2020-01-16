@@ -82,7 +82,9 @@ type CreateDrdsInstanceRequest struct {
 	Type           string           `position:"Query" name:"Type"`
 	Duration       requests.Integer `position:"Query" name:"Duration"`
 	IsHa           requests.Boolean `position:"Query" name:"isHa"`
+	MySQLVersion   requests.Integer `position:"Query" name:"MySQLVersion"`
 	InstanceSeries string           `position:"Query" name:"InstanceSeries"`
+	MasterInstId   string           `position:"Query" name:"MasterInstId"`
 	Quantity       requests.Integer `position:"Query" name:"Quantity"`
 	Specification  string           `position:"Query" name:"Specification"`
 	VswitchId      string           `position:"Query" name:"VswitchId"`
@@ -95,9 +97,9 @@ type CreateDrdsInstanceRequest struct {
 // CreateDrdsInstanceResponse is the response struct for api CreateDrdsInstance
 type CreateDrdsInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	Success   bool                     `json:"Success" xml:"Success"`
+	Data      DataInCreateDrdsInstance `json:"Data" xml:"Data"`
 }
 
 // CreateCreateDrdsInstanceRequest creates a request to invoke CreateDrdsInstance API

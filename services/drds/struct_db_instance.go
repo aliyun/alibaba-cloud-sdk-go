@@ -17,14 +17,14 @@ package drds
 
 // DBInstance is a nested struct in drds response
 type DBInstance struct {
-	Engine                string               `json:"Engine" xml:"Engine"`
-	RegionId              string               `json:"RegionId" xml:"RegionId"`
-	DBInstanceDescription string               `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-	EngineVersion         string               `json:"EngineVersion" xml:"EngineVersion"`
-	ZoneId                string               `json:"ZoneId" xml:"ZoneId"`
-	InstanceNetworkType   string               `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
-	DBInstanceStatus      int                  `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
-	DBInstanceType        string               `json:"DBInstanceType" xml:"DBInstanceType"`
-	DBInstanceId          string               `json:"DBInstanceId" xml:"DBInstanceId"`
-	ReadOnlyDBInstanceId  ReadOnlyDBInstanceId `json:"ReadOnlyDBInstanceId" xml:"ReadOnlyDBInstanceId"`
+	Engine                string                                    `json:"Engine" xml:"Engine"`
+	RegionId              string                                    `json:"RegionId" xml:"RegionId"`
+	DBInstanceDescription string                                    `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
+	EngineVersion         string                                    `json:"EngineVersion" xml:"EngineVersion"`
+	ZoneId                string                                    `json:"ZoneId" xml:"ZoneId"`
+	InstanceNetworkType   string                                    `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
+	DBInstanceStatus      int                                       `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+	DBInstanceType        string                                    `json:"DBInstanceType" xml:"DBInstanceType"`
+	DBInstanceId          string                                    `json:"DBInstanceId" xml:"DBInstanceId"`
+	ReadOnlyDBInstanceId  ReadOnlyDBInstanceIdInDescribeDbInstances `json:"ReadOnlyDBInstanceId" xml:"ReadOnlyDBInstanceId"`
 }

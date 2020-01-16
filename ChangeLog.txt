@@ -1,3 +1,7 @@
+2020-01-16 Version: v1.60.339
+- Generated 2019-01-23 for `Drds`.
+
+
 2020-01-15 Version: v1.60.338
 - Generated 2018-11-01 for `dms-enterprise`.
 - Fix SignatureDoesNotMatch issue of GetOrderBaseInfo API.

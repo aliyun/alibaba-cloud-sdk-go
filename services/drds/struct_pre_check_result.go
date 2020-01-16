@@ -17,7 +17,7 @@ package drds
 
 // PreCheckResult is a nested struct in drds response
 type PreCheckResult struct {
-	PreCheckName  string              `json:"PreCheckName" xml:"PreCheckName"`
-	State         string              `json:"State" xml:"State"`
-	SubCheckItems []SubCheckItemsItem `json:"SubCheckItems" xml:"SubCheckItems"`
+	State         string                                          `json:"State" xml:"State"`
+	PreCheckName  string                                          `json:"PreCheckName" xml:"PreCheckName"`
+	SubCheckItems SubCheckItemsInDescribeDataImportPreCheckResult `json:"SubCheckItems" xml:"SubCheckItems"`
 }

@@ -86,10 +86,10 @@ type DescribeDbInstanceDbsRequest struct {
 // DescribeDbInstanceDbsResponse is the response struct for api DescribeDbInstanceDbs
 type DescribeDbInstanceDbsResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
-	Success   bool      `json:"Success" xml:"Success"`
-	Total     string    `json:"Total" xml:"Total"`
-	Databases Databases `json:"Databases" xml:"Databases"`
+	RequestId string                           `json:"RequestId" xml:"RequestId"`
+	Success   bool                             `json:"Success" xml:"Success"`
+	Total     string                           `json:"Total" xml:"Total"`
+	Databases DatabasesInDescribeDbInstanceDbs `json:"Databases" xml:"Databases"`
 }
 
 // CreateDescribeDbInstanceDbsRequest creates a request to invoke DescribeDbInstanceDbs API

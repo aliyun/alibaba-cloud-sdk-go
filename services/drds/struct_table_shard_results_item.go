@@ -17,14 +17,14 @@ package drds
 
 // TableShardResultsItem is a nested struct in drds response
 type TableShardResultsItem struct {
-	Table          string `json:"Table" xml:"Table"`
-	ShardType      string `json:"ShardType" xml:"ShardType"`
-	DbShardKey     string `json:"DbShardKey" xml:"DbShardKey"`
-	TbShardKey     string `json:"TbShardKey" xml:"TbShardKey"`
-	Tbpartitions   int    `json:"Tbpartitions" xml:"Tbpartitions"`
-	Dbpartitions   int    `json:"Dbpartitions" xml:"Dbpartitions"`
-	CreateTableSql string `json:"CreateTableSql" xml:"CreateTableSql"`
 	RowCount       int    `json:"RowCount" xml:"RowCount"`
-	SqlCount       int    `json:"SqlCount" xml:"SqlCount"`
+	Dbpartitions   int    `json:"Dbpartitions" xml:"Dbpartitions"`
 	ShardKeyType   string `json:"ShardKeyType" xml:"ShardKeyType"`
+	Table          string `json:"Table" xml:"Table"`
+	DbShardKey     string `json:"DbShardKey" xml:"DbShardKey"`
+	Tbpartitions   int    `json:"Tbpartitions" xml:"Tbpartitions"`
+	SqlCount       int    `json:"SqlCount" xml:"SqlCount"`
+	CreateTableSql string `json:"CreateTableSql" xml:"CreateTableSql"`
+	ShardType      string `json:"ShardType" xml:"ShardType"`
+	TbShardKey     string `json:"TbShardKey" xml:"TbShardKey"`
 }

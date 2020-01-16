@@ -17,9 +17,11 @@ package drds
 
 // Full is a nested struct in drds response
 type Full struct {
-	Expired   int    `json:"Expired" xml:"Expired"`
-	Progress  int    `json:"Progress" xml:"Progress"`
-	Total     int    `json:"Total" xml:"Total"`
-	Tps       int    `json:"Tps" xml:"Tps"`
-	StartTime string `json:"StartTime" xml:"StartTime"`
+	TransferCount int    `json:"TransferCount" xml:"TransferCount"`
+	Expired       int    `json:"Expired" xml:"Expired"`
+	StartTime     string `json:"StartTime" xml:"StartTime"`
+	Tps           int    `json:"Tps" xml:"Tps"`
+	Total         int    `json:"Total" xml:"Total"`
+	Progress      int    `json:"Progress" xml:"Progress"`
+	NeedTime      int    `json:"NeedTime" xml:"NeedTime"`
 }
