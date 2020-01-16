@@ -17,5 +17,6 @@ package r_kvstore
 
 // AvailableResource is a nested struct in r_kvstore response
 type AvailableResource struct {
-	InstanceClass string `json:"InstanceClass" xml:"InstanceClass"`
+	InstanceClass       string `json:"InstanceClass" xml:"InstanceClass"`
+	InstanceClassRemark string `json:"InstanceClassRemark" xml:"InstanceClassRemark"`
 }

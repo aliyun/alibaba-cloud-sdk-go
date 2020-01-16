@@ -102,7 +102,7 @@ func CreateDescribeInstanceAutoRenewalAttributeRequest() (request *DescribeInsta
 	request = &DescribeInstanceAutoRenewalAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstanceAutoRenewalAttribute", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstanceAutoRenewalAttribute", "R-kvstore", "openAPI")
 	return
 }
 
