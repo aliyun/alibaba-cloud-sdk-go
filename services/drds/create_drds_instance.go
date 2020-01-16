@@ -97,9 +97,9 @@ type CreateDrdsInstanceRequest struct {
 // CreateDrdsInstanceResponse is the response struct for api CreateDrdsInstance
 type CreateDrdsInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string                   `json:"RequestId" xml:"RequestId"`
-	Success   bool                     `json:"Success" xml:"Success"`
-	Data      DataInCreateDrdsInstance `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateCreateDrdsInstanceRequest creates a request to invoke CreateDrdsInstance API

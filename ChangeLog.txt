@@ -1,3 +1,7 @@
+2020-01-16 Version: v1.60.341
+- Generated 2019-01-23 for `Drds`.
+
+
 2020-01-16 Version: v1.60.340
 - Generated 2019-03-07 for `Cloudauth`.
 - Add fields faceComparisonScore for DescribeVerifyResult and VerifyMaterials interface.
