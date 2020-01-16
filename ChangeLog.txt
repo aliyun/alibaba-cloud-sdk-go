@@ -1,3 +1,7 @@
+2020-01-16 Version: v1.60.343
+- Generated 2019-01-01 for `Cms`.
+- Fix the result value of DeleteSiteMonitors.
+
 2020-01-16 Version: v1.60.342
 - Generated 2015-01-01 for `R-kvstore`.
 - Generated 2015-01-01 for `R-kvstore`.
