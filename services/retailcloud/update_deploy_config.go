@@ -76,13 +76,12 @@ func (client *Client) UpdateDeployConfigWithCallback(request *UpdateDeployConfig
 // UpdateDeployConfigRequest is the request struct for api UpdateDeployConfig
 type UpdateDeployConfigRequest struct {
 	*requests.RpcRequest
-	CodePath      string           `position:"Query" name:"CodePath"`
-	ConfigMapList *[]string        `position:"Query" name:"ConfigMapList"  type:"Repeated"`
-	ConfigMap     string           `position:"Query" name:"ConfigMap"`
-	StatefulSet   string           `position:"Query" name:"StatefulSet"`
-	AppId         requests.Integer `position:"Query" name:"AppId"`
-	Id            requests.Integer `position:"Query" name:"Id"`
-	Deployment    string           `position:"Query" name:"Deployment"`
+	CodePath    string           `position:"Query" name:"CodePath"`
+	ConfigMap   string           `position:"Query" name:"ConfigMap"`
+	StatefulSet string           `position:"Query" name:"StatefulSet"`
+	AppId       requests.Integer `position:"Query" name:"AppId"`
+	Id          requests.Integer `position:"Query" name:"Id"`
+	Deployment  string           `position:"Query" name:"Deployment"`
 }
 
 // UpdateDeployConfigResponse is the response struct for api UpdateDeployConfig
