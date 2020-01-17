@@ -83,6 +83,7 @@ type ModifyDBInstanceSpecRequest struct {
 	EffectiveTime         string           `position:"Query" name:"EffectiveTime"`
 	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
 	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
+	SourceBiz             string           `position:"Query" name:"SourceBiz"`
 	Direction             string           `position:"Query" name:"Direction"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`

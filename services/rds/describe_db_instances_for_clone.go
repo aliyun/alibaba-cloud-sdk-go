@@ -85,6 +85,7 @@ type DescribeDBInstancesForCloneRequest struct {
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	Expired              string           `position:"Query" name:"Expired"`
 	Engine               string           `position:"Query" name:"Engine"`
+	CurrentInstanceId    string           `position:"Query" name:"CurrentInstanceId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DBInstanceStatus     string           `position:"Query" name:"DBInstanceStatus"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`

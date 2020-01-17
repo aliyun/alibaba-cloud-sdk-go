@@ -17,15 +17,18 @@ package rds
 
 // EventItemsItem is a nested struct in rds response
 type EventItemsItem struct {
-	EventId         int    `json:"EventId" xml:"EventId"`
-	EventType       string `json:"EventType" xml:"EventType"`
 	EventName       string `json:"EventName" xml:"EventName"`
-	EventTime       string `json:"EventTime" xml:"EventTime"`
-	ResourceType    string `json:"ResourceType" xml:"ResourceType"`
-	ResourceName    string `json:"ResourceName" xml:"ResourceName"`
-	RegionId        string `json:"RegionId" xml:"RegionId"`
-	EventUserType   string `json:"EventUserType" xml:"EventUserType"`
-	EventReason     string `json:"EventReason" xml:"EventReason"`
 	EventPayload    string `json:"EventPayload" xml:"EventPayload"`
+	ResourceType    string `json:"ResourceType" xml:"ResourceType"`
+	EventReason     string `json:"EventReason" xml:"EventReason"`
+	EventSig        string `json:"EventSig" xml:"EventSig"`
+	RegionId        string `json:"RegionId" xml:"RegionId"`
+	EventType       string `json:"EventType" xml:"EventType"`
+	ResourceName    string `json:"ResourceName" xml:"ResourceName"`
+	EventContent    string `json:"EventContent" xml:"EventContent"`
+	EventId         int    `json:"EventId" xml:"EventId"`
+	EventRcpt       string `json:"EventRcpt" xml:"EventRcpt"`
+	EventTime       string `json:"EventTime" xml:"EventTime"`
+	EventUserType   string `json:"EventUserType" xml:"EventUserType"`
 	EventRecordTime string `json:"EventRecordTime" xml:"EventRecordTime"`
 }
