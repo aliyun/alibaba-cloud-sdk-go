@@ -81,7 +81,6 @@ type CreateAppRequest struct {
 	ServiceType     string           `position:"Body" name:"ServiceType"`
 	BizCode         string           `position:"Body" name:"BizCode"`
 	OperatingSystem string           `position:"Body" name:"OperatingSystem"`
-	Namespace       string           `position:"Body" name:"Namespace"`
 	Description     string           `position:"Body" name:"Description"`
 	Language        string           `position:"Body" name:"Language"`
 	Title           string           `position:"Body" name:"Title"`
