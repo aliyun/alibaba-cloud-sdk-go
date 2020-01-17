@@ -17,7 +17,8 @@ package retailcloud
 
 // ContainerYamlConf is a nested struct in retailcloud response
 type ContainerYamlConf struct {
-	Deployment  string `json:"Deployment" xml:"Deployment"`
-	ConfigMap   string `json:"ConfigMap" xml:"ConfigMap"`
-	StatefulSet string `json:"StatefulSet" xml:"StatefulSet"`
+	Deployment    string   `json:"Deployment" xml:"Deployment"`
+	ConfigMap     string   `json:"ConfigMap" xml:"ConfigMap"`
+	StatefulSet   string   `json:"StatefulSet" xml:"StatefulSet"`
+	ConfigMapList []string `json:"ConfigMapList" xml:"ConfigMapList"`
 }

@@ -86,13 +86,13 @@ type ListPodsRequest struct {
 // ListPodsResponse is the response struct for api ListPods
 type ListPodsResponse struct {
 	*responses.BaseResponse
-	Code       int        `json:"Code" xml:"Code"`
-	ErrorMsg   string     `json:"ErrorMsg" xml:"ErrorMsg"`
-	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int        `json:"PageSize" xml:"PageSize"`
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	TotalCount int64      `json:"TotalCount" xml:"TotalCount"`
-	Data       []ListPods `json:"Data" xml:"Data"`
+	Code       int                `json:"Code" xml:"Code"`
+	ErrorMsg   string             `json:"ErrorMsg" xml:"ErrorMsg"`
+	PageNumber int                `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                `json:"PageSize" xml:"PageSize"`
+	RequestId  string             `json:"RequestId" xml:"RequestId"`
+	TotalCount int64              `json:"TotalCount" xml:"TotalCount"`
+	Data       []ListPodsResponse `json:"Data" xml:"Data"`
 }
 
 // CreateListPodsRequest creates a request to invoke ListPods API

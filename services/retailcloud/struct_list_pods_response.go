@@ -16,7 +16,7 @@ package retailcloud
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 // ListPodsResponse is a nested struct in retailcloud response
-type ListPods struct {
+type ListPodsResponse struct {
 	AppInstanceId      string       `json:"AppInstanceId" xml:"AppInstanceId"`
 	DeployOrderId      int64        `json:"DeployOrderId" xml:"DeployOrderId"`
 	DeployPartitionNum int          `json:"DeployPartitionNum" xml:"DeployPartitionNum"`

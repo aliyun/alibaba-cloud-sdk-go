@@ -1,3 +1,8 @@
+2020-01-17 Version: v1.60.344
+- Generated 2018-03-13 for `retailcloud`.
+- Supported AAA for BBB.
+- Fixed bugs for CCC.
+
 2020-01-16 Version: v1.60.343
 - Generated 2019-01-01 for `Cms`.
 - Fix the result value of DeleteSiteMonitors.

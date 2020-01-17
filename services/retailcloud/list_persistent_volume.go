@@ -84,13 +84,13 @@ type ListPersistentVolumeRequest struct {
 // ListPersistentVolumeResponse is the response struct for api ListPersistentVolume
 type ListPersistentVolumeResponse struct {
 	*responses.BaseResponse
-	RequestId  string                 `json:"RequestId" xml:"RequestId"`
-	Code       int                    `json:"Code" xml:"Code"`
-	PageSize   int                    `json:"PageSize" xml:"PageSize"`
-	PageNumber int                    `json:"PageNumber" xml:"PageNumber"`
-	TotalCount int64                  `json:"TotalCount" xml:"TotalCount"`
-	ErrMsg     string                 `json:"ErrMsg" xml:"ErrMsg"`
-	Data       []ListPersistentVolume `json:"Data" xml:"Data"`
+	RequestId  string                         `json:"RequestId" xml:"RequestId"`
+	Code       int                            `json:"Code" xml:"Code"`
+	PageSize   int                            `json:"PageSize" xml:"PageSize"`
+	PageNumber int                            `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int64                          `json:"TotalCount" xml:"TotalCount"`
+	ErrMsg     string                         `json:"ErrMsg" xml:"ErrMsg"`
+	Data       []ListPersistentVolumeResponse `json:"Data" xml:"Data"`
 }
 
 // CreateListPersistentVolumeRequest creates a request to invoke ListPersistentVolume API
