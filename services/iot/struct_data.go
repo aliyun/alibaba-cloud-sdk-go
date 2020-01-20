@@ -39,9 +39,11 @@ type Data struct {
 	RoleArn                string                `json:"RoleArn" xml:"RoleArn"`
 	Type                   string                `json:"Type" xml:"Type"`
 	FileId                 string                `json:"FileId" xml:"FileId"`
+	ThingModelJson         string                `json:"ThingModelJson" xml:"ThingModelJson"`
 	LastUpdateTime         int64                 `json:"LastUpdateTime" xml:"LastUpdateTime"`
 	Tags                   string                `json:"Tags" xml:"Tags"`
 	Versions               string                `json:"Versions" xml:"Versions"`
+	TslUri                 string                `json:"TslUri" xml:"TslUri"`
 	SelectionType          string                `json:"SelectionType" xml:"SelectionType"`
 	FirmwareId             string                `json:"FirmwareId" xml:"FirmwareId"`
 	AliyunCommodityCode    string                `json:"AliyunCommodityCode" xml:"AliyunCommodityCode"`
@@ -55,6 +57,7 @@ type Data struct {
 	Size                   string                `json:"Size" xml:"Size"`
 	Id2                    bool                  `json:"Id2" xml:"Id2"`
 	NodeType               int                   `json:"NodeType" xml:"NodeType"`
+	TslStr                 string                `json:"TslStr" xml:"TslStr"`
 	UtcScheduleTime        string                `json:"UtcScheduleTime" xml:"UtcScheduleTime"`
 	ApiSrn                 string                `json:"ApiSrn" xml:"ApiSrn"`
 	ProductName            string                `json:"ProductName" xml:"ProductName"`
@@ -104,6 +107,7 @@ type Data struct {
 	InvalidDeviceNameList  InvalidDeviceNameList `json:"InvalidDeviceNameList" xml:"InvalidDeviceNameList"`
 	ResultList             ResultList            `json:"ResultList" xml:"ResultList"`
 	SqlTemplateDTO         SqlTemplateDTO        `json:"SqlTemplateDTO" xml:"SqlTemplateDTO"`
+	ModelVersions          []ModelVersion        `json:"ModelVersions" xml:"ModelVersions"`
 	TaskList               []Task                `json:"TaskList" xml:"TaskList"`
 	List                   ListInGetThingTopo    `json:"List" xml:"List"`
 }

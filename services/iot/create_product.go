@@ -78,12 +78,14 @@ type CreateProductRequest struct {
 	*requests.RpcRequest
 	NodeType            requests.Integer `position:"Query" name:"NodeType"`
 	Description         string           `position:"Query" name:"Description"`
+	CategoryKey         string           `position:"Query" name:"CategoryKey"`
 	JoinPermissionId    string           `position:"Query" name:"JoinPermissionId"`
 	AuthType            string           `position:"Query" name:"AuthType"`
 	ResourceGroupId     string           `position:"Query" name:"ResourceGroupId"`
 	IotInstanceId       string           `position:"Query" name:"IotInstanceId"`
 	ProductName         string           `position:"Query" name:"ProductName"`
 	AliyunCommodityCode string           `position:"Query" name:"AliyunCommodityCode"`
+	PublishAuto         requests.Boolean `position:"Query" name:"PublishAuto"`
 	CategoryId          requests.Integer `position:"Query" name:"CategoryId"`
 	DataFormat          requests.Integer `position:"Query" name:"DataFormat"`
 	Id2                 requests.Boolean `position:"Query" name:"Id2"`

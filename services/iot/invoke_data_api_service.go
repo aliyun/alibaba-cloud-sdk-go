@@ -76,16 +76,20 @@ func (client *Client) InvokeDataAPIServiceWithCallback(request *InvokeDataAPISer
 // InvokeDataAPIServiceRequest is the request struct for api InvokeDataAPIService
 type InvokeDataAPIServiceRequest struct {
 	*requests.RpcRequest
-	ApiSrn string                       `position:"Query" name:"ApiSrn"`
-	Param  *[]InvokeDataAPIServiceParam `position:"Body" name:"Param"  type:"Repeated"`
+	Param         *[]InvokeDataAPIServiceParam `position:"Body" name:"Param"  type:"Repeated"`
+	IotInstanceId string                       `position:"Body" name:"IotInstanceId"`
+	ApiSrn        string                       `position:"Body" name:"ApiSrn"`
+	ApiProduct    string                       `position:"Body" name:"ApiProduct"`
+	ApiRevision   string                       `position:"Body" name:"ApiRevision"`
 }
 
 // InvokeDataAPIServiceParam is a repeated param struct in InvokeDataAPIServiceRequest
 type InvokeDataAPIServiceParam struct {
-	ListParamType  string    `name:"ListParamType"`
+	ParamType      string    `name:"ParamType"`
 	ListParamValue *[]string `name:"ListParamValue" type:"Repeated"`
-	ParamValue     string    `name:"ParamValue"`
+	ListParamType  string    `name:"ListParamType"`
 	ParamName      string    `name:"ParamName"`
+	ParamValue     string    `name:"ParamValue"`
 }
 
 // InvokeDataAPIServiceResponse is the response struct for api InvokeDataAPIService
@@ -93,8 +97,8 @@ type InvokeDataAPIServiceResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	Success      bool   `json:"Success" xml:"Success"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Code         string `json:"Code" xml:"Code"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Data         Data   `json:"Data" xml:"Data"`
 }
 
