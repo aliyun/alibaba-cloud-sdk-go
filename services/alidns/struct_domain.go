@@ -32,5 +32,7 @@ type Domain struct {
 	InstanceEndTime string                      `json:"InstanceEndTime" xml:"InstanceEndTime"`
 	InstanceExpired bool                        `json:"InstanceExpired" xml:"InstanceExpired"`
 	Starmark        bool                        `json:"Starmark" xml:"Starmark"`
+	CreateTime      string                      `json:"CreateTime" xml:"CreateTime"`
+	CreateTimestamp int64                       `json:"CreateTimestamp" xml:"CreateTimestamp"`
 	DnsServers      DnsServersInDescribeDomains `json:"DnsServers" xml:"DnsServers"`
 }
