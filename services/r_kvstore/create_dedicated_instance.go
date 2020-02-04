@@ -128,7 +128,7 @@ func CreateCreateDedicatedInstanceRequest() (request *CreateDedicatedInstanceReq
 	request = &CreateDedicatedInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateDedicatedInstance", "R-kvstore", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateDedicatedInstance", "redisa", "openAPI")
 	return
 }
 

@@ -99,7 +99,7 @@ func CreateDescribeRedisLogConfigRequest() (request *DescribeRedisLogConfigReque
 	request = &DescribeRedisLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeRedisLogConfig", "R-kvstore", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeRedisLogConfig", "redisa", "openAPI")
 	return
 }
 

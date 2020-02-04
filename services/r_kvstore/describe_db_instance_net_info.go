@@ -97,7 +97,7 @@ func CreateDescribeDBInstanceNetInfoRequest() (request *DescribeDBInstanceNetInf
 	request = &DescribeDBInstanceNetInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeDBInstanceNetInfo", "R-kvstore", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeDBInstanceNetInfo", "redisa", "openAPI")
 	return
 }
 

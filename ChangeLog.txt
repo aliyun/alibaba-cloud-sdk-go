@@ -1,3 +1,8 @@
+2020-02-04 Version: v1.60.349
+- Generated 2015-01-01 for `R-kvstore`.
+- Generated 2015-01-01 for `R-kvstore`.
+- Update endpoint for `R-kvstore`.
+
 2020-01-21 Version: v1.60.348
 - Generated 2015-01-01 for `R-kvstore`.
 - Generated 2015-01-01 for `R-kvstore`.

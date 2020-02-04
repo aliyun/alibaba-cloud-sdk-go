@@ -101,7 +101,7 @@ func CreateDescribeHistoryMonitorValuesRequest() (request *DescribeHistoryMonito
 	request = &DescribeHistoryMonitorValuesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeHistoryMonitorValues", "R-kvstore", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeHistoryMonitorValues", "redisa", "openAPI")
 	return
 }
 

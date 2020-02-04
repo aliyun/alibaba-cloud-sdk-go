@@ -97,7 +97,7 @@ func CreateModifyInstanceMinorVersionRequest() (request *ModifyInstanceMinorVers
 	request = &ModifyInstanceMinorVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "R-kvstore", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa", "openAPI")
 	return
 }
 
