@@ -123,6 +123,13 @@ func (client *Client) GetNoProxy() string {
 	return client.noProxy
 }
 
+func (client *Client) SetTransport(transport http.RoundTripper) {
+	if client.httpClient == nil {
+		client.httpClient = &http.Client{}
+	}
+	client.httpClient.Transport = transport
+}
+
 // InitWithProviderChain will get credential from the providerChain,
 // the RsaKeyPairCredential Only applicable to regionID `ap-northeast-1`,
 // if your providerChain may return a credential type with RsaKeyPairCredential,

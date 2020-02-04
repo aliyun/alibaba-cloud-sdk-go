@@ -812,3 +812,29 @@ func TestNewClientWithBearerToken(t *testing.T) {
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
 }
+
+func TestClient_SetTransport_httpTransport(t *testing.T) {
+	client, err := NewClientWithBearerToken("cn-hangzhou", "Bearer.Token")
+	assert.Nil(t, err)
+	transport := &http.Transport{}
+	client.SetTransport(transport)
+	if client.httpClient.Transport.(*http.Transport) != transport {
+		t.Fail()
+	}
+}
+
+func TestClient_SetTransport_customTransport(t *testing.T) {
+	client, err := NewClientWithBearerToken("cn-hangzhou", "Bearer.Token")
+	assert.Nil(t, err)
+	transport := &myTransport{}
+	client.SetTransport(transport)
+	if client.httpClient.Transport.(*myTransport) != transport {
+		t.Fail()
+	}
+}
+
+type myTransport struct{}
+
+func (m *myTransport) RoundTrip(req *http.Request) (*http.Response, error) {
+	return http.DefaultTransport.RoundTrip(req)
+}
