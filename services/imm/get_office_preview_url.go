@@ -77,7 +77,6 @@ func (client *Client) GetOfficePreviewURLWithCallback(request *GetOfficePreviewU
 type GetOfficePreviewURLRequest struct {
 	*requests.RpcRequest
 	SrcType  string           `position:"Query" name:"SrcType"`
-	Expires  requests.Integer `position:"Query" name:"Expires"`
 	Project  string           `position:"Query" name:"Project"`
 	UseHTTPS requests.Boolean `position:"Query" name:"UseHTTPS"`
 	SrcUri   string           `position:"Query" name:"SrcUri"`
@@ -86,8 +85,12 @@ type GetOfficePreviewURLRequest struct {
 // GetOfficePreviewURLResponse is the response struct for api GetOfficePreviewURL
 type GetOfficePreviewURLResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PreviewURL string `json:"PreviewURL" xml:"PreviewURL"`
+	RequestId               string `json:"RequestId" xml:"RequestId"`
+	PreviewURL              string `json:"PreviewURL" xml:"PreviewURL"`
+	AccessToken             string `json:"AccessToken" xml:"AccessToken"`
+	RefreshToken            string `json:"RefreshToken" xml:"RefreshToken"`
+	AccessTokenExpiredTime  string `json:"AccessTokenExpiredTime" xml:"AccessTokenExpiredTime"`
+	RefreshTokenExpiredTime string `json:"RefreshTokenExpiredTime" xml:"RefreshTokenExpiredTime"`
 }
 
 // CreateGetOfficePreviewURLRequest creates a request to invoke GetOfficePreviewURL API
