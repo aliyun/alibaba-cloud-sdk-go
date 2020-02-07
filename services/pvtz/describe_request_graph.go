@@ -76,12 +76,12 @@ func (client *Client) DescribeRequestGraphWithCallback(request *DescribeRequestG
 // DescribeRequestGraphRequest is the request struct for api DescribeRequestGraph
 type DescribeRequestGraphRequest struct {
 	*requests.RpcRequest
+	StartTimestamp requests.Integer `position:"Query" name:"StartTimestamp"`
+	EndTimestamp   requests.Integer `position:"Query" name:"EndTimestamp"`
 	VpcId          string           `position:"Query" name:"VpcId"`
 	UserClientIp   string           `position:"Query" name:"UserClientIp"`
 	ZoneId         string           `position:"Query" name:"ZoneId"`
 	Lang           string           `position:"Query" name:"Lang"`
-	StartTimestamp requests.Integer `position:"Query" name:"StartTimestamp"`
-	EndTimestamp   requests.Integer `position:"Query" name:"EndTimestamp"`
 }
 
 // DescribeRequestGraphResponse is the response struct for api DescribeRequestGraph

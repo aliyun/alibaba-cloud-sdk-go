@@ -20,6 +20,6 @@ type VpcRequestTop struct {
 	RegionId     string `json:"RegionId" xml:"RegionId"`
 	VpcId        string `json:"VpcId" xml:"VpcId"`
 	TunnelId     string `json:"TunnelId" xml:"TunnelId"`
-	RequestCount int    `json:"RequestCount" xml:"RequestCount"`
+	RequestCount int64  `json:"RequestCount" xml:"RequestCount"`
 	RegionName   string `json:"RegionName" xml:"RegionName"`
 }

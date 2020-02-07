@@ -21,5 +21,4 @@ type Vpc struct {
 	VpcName    string `json:"VpcName" xml:"VpcName"`
 	VpcId      string `json:"VpcId" xml:"VpcId"`
 	RegionName string `json:"RegionName" xml:"RegionName"`
-	ReionId    string `json:"ReionId" xml:"ReionId"`
 }

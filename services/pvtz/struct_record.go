@@ -17,11 +17,13 @@ package pvtz
 
 // Record is a nested struct in pvtz response
 type Record struct {
-	RecordId int    `json:"RecordId" xml:"RecordId"`
+	RecordId int64  `json:"RecordId" xml:"RecordId"`
 	Rr       string `json:"Rr" xml:"Rr"`
 	Type     string `json:"Type" xml:"Type"`
 	Ttl      int    `json:"Ttl" xml:"Ttl"`
 	Priority int    `json:"Priority" xml:"Priority"`
 	Value    string `json:"Value" xml:"Value"`
 	Status   string `json:"Status" xml:"Status"`
+	RegionId string `json:"RegionId" xml:"RegionId"`
+	Remark   string `json:"Remark" xml:"Remark"`
 }

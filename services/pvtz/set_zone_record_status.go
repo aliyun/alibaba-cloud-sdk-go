@@ -86,7 +86,7 @@ type SetZoneRecordStatusRequest struct {
 type SetZoneRecordStatusResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	RecordId  int    `json:"RecordId" xml:"RecordId"`
+	RecordId  int64  `json:"RecordId" xml:"RecordId"`
 	Status    string `json:"Status" xml:"Status"`
 }
 

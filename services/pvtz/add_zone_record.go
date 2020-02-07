@@ -77,12 +77,12 @@ func (client *Client) AddZoneRecordWithCallback(request *AddZoneRecordRequest, c
 type AddZoneRecordRequest struct {
 	*requests.RpcRequest
 	Rr           string           `position:"Query" name:"Rr"`
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
-	ZoneId       string           `position:"Query" name:"ZoneId"`
-	Lang         string           `position:"Query" name:"Lang"`
 	Type         string           `position:"Query" name:"Type"`
 	Priority     requests.Integer `position:"Query" name:"Priority"`
 	Ttl          requests.Integer `position:"Query" name:"Ttl"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	ZoneId       string           `position:"Query" name:"ZoneId"`
+	Lang         string           `position:"Query" name:"Lang"`
 	Value        string           `position:"Query" name:"Value"`
 }
 
@@ -91,7 +91,7 @@ type AddZoneRecordResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
-	RecordId  int    `json:"RecordId" xml:"RecordId"`
+	RecordId  int64  `json:"RecordId" xml:"RecordId"`
 }
 
 // CreateAddZoneRecordRequest creates a request to invoke AddZoneRecord API

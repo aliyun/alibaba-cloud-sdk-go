@@ -21,11 +21,11 @@ type Zone struct {
 	UpdateTime      string `json:"UpdateTime" xml:"UpdateTime"`
 	ProxyPattern    string `json:"ProxyPattern" xml:"ProxyPattern"`
 	Remark          string `json:"Remark" xml:"Remark"`
-	CreateTimestamp int    `json:"CreateTimestamp" xml:"CreateTimestamp"`
+	CreateTimestamp int64  `json:"CreateTimestamp" xml:"CreateTimestamp"`
 	RecordCount     int    `json:"RecordCount" xml:"RecordCount"`
 	CreateTime      string `json:"CreateTime" xml:"CreateTime"`
 	ZoneName        string `json:"ZoneName" xml:"ZoneName"`
 	IsPtr           bool   `json:"IsPtr" xml:"IsPtr"`
-	UpdateTimestamp int    `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
+	UpdateTimestamp int64  `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
 	Vpcs            Vpcs   `json:"Vpcs" xml:"Vpcs"`
 }

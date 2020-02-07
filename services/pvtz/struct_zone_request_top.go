@@ -18,7 +18,7 @@ package pvtz
 // ZoneRequestTop is a nested struct in pvtz response
 type ZoneRequestTop struct {
 	Time         string `json:"Time" xml:"Time"`
-	RequestCount int    `json:"RequestCount" xml:"RequestCount"`
-	Timestamp    int    `json:"Timestamp" xml:"Timestamp"`
+	RequestCount int64  `json:"RequestCount" xml:"RequestCount"`
+	Timestamp    int64  `json:"Timestamp" xml:"Timestamp"`
 	ZoneName     string `json:"ZoneName" xml:"ZoneName"`
 }

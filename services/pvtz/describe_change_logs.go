@@ -76,15 +76,15 @@ func (client *Client) DescribeChangeLogsWithCallback(request *DescribeChangeLogs
 // DescribeChangeLogsRequest is the request struct for api DescribeChangeLogs
 type DescribeChangeLogsRequest struct {
 	*requests.RpcRequest
+	StartTimestamp requests.Integer `position:"Query" name:"StartTimestamp"`
+	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
+	EndTimestamp   requests.Integer `position:"Query" name:"EndTimestamp"`
 	EntityType     string           `position:"Query" name:"EntityType"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	UserClientIp   string           `position:"Query" name:"UserClientIp"`
 	ZoneId         string           `position:"Query" name:"ZoneId"`
 	Keyword        string           `position:"Query" name:"Keyword"`
 	Lang           string           `position:"Query" name:"Lang"`
-	StartTimestamp requests.Integer `position:"Query" name:"StartTimestamp"`
-	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
-	EndTimestamp   requests.Integer `position:"Query" name:"EndTimestamp"`
 }
 
 // DescribeChangeLogsResponse is the response struct for api DescribeChangeLogs

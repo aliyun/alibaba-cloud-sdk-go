@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteZoneRecord invokes the pvtz.DeleteZoneRecord API synchronously
-// api document: https://help.aliyun.com/api/pvtz/deletezonerecord.html
-func (client *Client) DeleteZoneRecord(request *DeleteZoneRecordRequest) (response *DeleteZoneRecordResponse, err error) {
-	response = CreateDeleteZoneRecordResponse()
+// UpdateRecordRemark invokes the pvtz.UpdateRecordRemark API synchronously
+// api document: https://help.aliyun.com/api/pvtz/updaterecordremark.html
+func (client *Client) UpdateRecordRemark(request *UpdateRecordRemarkRequest) (response *UpdateRecordRemarkResponse, err error) {
+	response = CreateUpdateRecordRemarkResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteZoneRecordWithChan invokes the pvtz.DeleteZoneRecord API asynchronously
-// api document: https://help.aliyun.com/api/pvtz/deletezonerecord.html
+// UpdateRecordRemarkWithChan invokes the pvtz.UpdateRecordRemark API asynchronously
+// api document: https://help.aliyun.com/api/pvtz/updaterecordremark.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteZoneRecordWithChan(request *DeleteZoneRecordRequest) (<-chan *DeleteZoneRecordResponse, <-chan error) {
-	responseChan := make(chan *DeleteZoneRecordResponse, 1)
+func (client *Client) UpdateRecordRemarkWithChan(request *UpdateRecordRemarkRequest) (<-chan *UpdateRecordRemarkResponse, <-chan error) {
+	responseChan := make(chan *UpdateRecordRemarkResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteZoneRecord(request)
+		response, err := client.UpdateRecordRemark(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteZoneRecordWithChan(request *DeleteZoneRecordRequest)
 	return responseChan, errChan
 }
 
-// DeleteZoneRecordWithCallback invokes the pvtz.DeleteZoneRecord API asynchronously
-// api document: https://help.aliyun.com/api/pvtz/deletezonerecord.html
+// UpdateRecordRemarkWithCallback invokes the pvtz.UpdateRecordRemark API asynchronously
+// api document: https://help.aliyun.com/api/pvtz/updaterecordremark.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteZoneRecordWithCallback(request *DeleteZoneRecordRequest, callback func(response *DeleteZoneRecordResponse, err error)) <-chan int {
+func (client *Client) UpdateRecordRemarkWithCallback(request *UpdateRecordRemarkRequest, callback func(response *UpdateRecordRemarkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteZoneRecordResponse
+		var response *UpdateRecordRemarkResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteZoneRecord(request)
+		response, err = client.UpdateRecordRemark(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,33 +73,34 @@ func (client *Client) DeleteZoneRecordWithCallback(request *DeleteZoneRecordRequ
 	return result
 }
 
-// DeleteZoneRecordRequest is the request struct for api DeleteZoneRecord
-type DeleteZoneRecordRequest struct {
+// UpdateRecordRemarkRequest is the request struct for api UpdateRecordRemark
+type UpdateRecordRemarkRequest struct {
 	*requests.RpcRequest
+	Remark       string           `position:"Query" name:"Remark"`
 	RecordId     requests.Integer `position:"Query" name:"RecordId"`
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	Lang         string           `position:"Query" name:"Lang"`
 }
 
-// DeleteZoneRecordResponse is the response struct for api DeleteZoneRecord
-type DeleteZoneRecordResponse struct {
+// UpdateRecordRemarkResponse is the response struct for api UpdateRecordRemark
+type UpdateRecordRemarkResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	RecordId  int64  `json:"RecordId" xml:"RecordId"`
 }
 
-// CreateDeleteZoneRecordRequest creates a request to invoke DeleteZoneRecord API
-func CreateDeleteZoneRecordRequest() (request *DeleteZoneRecordRequest) {
-	request = &DeleteZoneRecordRequest{
+// CreateUpdateRecordRemarkRequest creates a request to invoke UpdateRecordRemark API
+func CreateUpdateRecordRemarkRequest() (request *UpdateRecordRemarkRequest) {
+	request = &UpdateRecordRemarkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("pvtz", "2018-01-01", "DeleteZoneRecord", "pvtz", "openAPI")
+	request.InitWithApiInfo("pvtz", "2018-01-01", "UpdateRecordRemark", "pvtz", "openAPI")
 	return
 }
 
-// CreateDeleteZoneRecordResponse creates a response to parse from DeleteZoneRecord response
-func CreateDeleteZoneRecordResponse() (response *DeleteZoneRecordResponse) {
-	response = &DeleteZoneRecordResponse{
+// CreateUpdateRecordRemarkResponse creates a response to parse from UpdateRecordRemark response
+func CreateUpdateRecordRemarkResponse() (response *UpdateRecordRemarkResponse) {
+	response = &UpdateRecordRemarkResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

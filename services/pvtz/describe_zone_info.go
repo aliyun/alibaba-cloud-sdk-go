@@ -90,11 +90,12 @@ type DescribeZoneInfoResponse struct {
 	Remark          string   `json:"Remark" xml:"Remark"`
 	RecordCount     int      `json:"RecordCount" xml:"RecordCount"`
 	CreateTime      string   `json:"CreateTime" xml:"CreateTime"`
-	CreateTimestamp int      `json:"CreateTimestamp" xml:"CreateTimestamp"`
+	CreateTimestamp int64    `json:"CreateTimestamp" xml:"CreateTimestamp"`
 	UpdateTime      string   `json:"UpdateTime" xml:"UpdateTime"`
-	UpdateTimestamp int      `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
+	UpdateTimestamp int64    `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
 	IsPtr           bool     `json:"IsPtr" xml:"IsPtr"`
 	ProxyPattern    string   `json:"ProxyPattern" xml:"ProxyPattern"`
+	SlaveDns        bool     `json:"SlaveDns" xml:"SlaveDns"`
 	BindVpcs        BindVpcs `json:"BindVpcs" xml:"BindVpcs"`
 }
 

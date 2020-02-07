@@ -76,10 +76,11 @@ func (client *Client) AddZoneWithCallback(request *AddZoneRequest, callback func
 // AddZoneRequest is the request struct for api AddZone
 type AddZoneRequest struct {
 	*requests.RpcRequest
-	ProxyPattern string `position:"Query" name:"ProxyPattern"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
-	ZoneName     string `position:"Query" name:"ZoneName"`
+	ProxyPattern    string `position:"Query" name:"ProxyPattern"`
+	ZoneName        string `position:"Query" name:"ZoneName"`
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	UserClientIp    string `position:"Query" name:"UserClientIp"`
+	Lang            string `position:"Query" name:"Lang"`
 }
 
 // AddZoneResponse is the response struct for api AddZone

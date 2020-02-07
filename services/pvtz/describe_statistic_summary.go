@@ -84,7 +84,7 @@ type DescribeStatisticSummaryRequest struct {
 type DescribeStatisticSummaryResponse struct {
 	*responses.BaseResponse
 	RequestId       string          `json:"RequestId" xml:"RequestId"`
-	TotalCount      int             `json:"TotalCount" xml:"TotalCount"`
+	TotalCount      int64           `json:"TotalCount" xml:"TotalCount"`
 	ZoneRequestTops ZoneRequestTops `json:"ZoneRequestTops" xml:"ZoneRequestTops"`
 	VpcRequestTops  VpcRequestTops  `json:"VpcRequestTops" xml:"VpcRequestTops"`
 }
