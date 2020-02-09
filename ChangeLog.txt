@@ -1,3 +1,7 @@
+2020-02-09 Version: v1.60.353
+- Generated 2019-12-30 for `facebody`.
+- Sdk version 104.
+
 2020-02-07 Version: v1.60.352
 - Generated 2018-01-01 for `pvtz`.
 - Fix bug for DescribeZoneInfo, delete return result of reionId.
