@@ -1,3 +1,7 @@
+2020-02-10 Version: v1.60.354
+- Generated 2017-09-06 for `imm`.
+- Supported address for GetMediaMeta.
+
 2020-02-09 Version: v1.60.353
 - Generated 2019-12-30 for `facebody`.
 - Sdk version 104.
