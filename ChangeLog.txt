@@ -1,3 +1,10 @@
+2020-02-11 Version: v1.60.356
+- Generated 2018-01-20 for `Iot`.
+- Add Thing Model APIs, including CreateThingModel, UpdateThingModel, etc.
+- Add OTA API ListOTATaskByJob.
+- Update OTA API ListOTAJobByFirmware.
+- Update Thing Core Model API InvokeThingsService.
+
 2020-02-11 Version: v1.60.355
 - Generated 2018-01-01 for `pvtz`.
 - Update default endpoints.

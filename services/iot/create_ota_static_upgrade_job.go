@@ -86,6 +86,8 @@ type CreateOTAStaticUpgradeJobRequest struct {
 	RetryInterval    requests.Integer `position:"Query" name:"RetryInterval"`
 	SrcVersion       *[]string        `position:"Query" name:"SrcVersion"  type:"Repeated"`
 	ScheduleTime     requests.Integer `position:"Query" name:"ScheduleTime"`
+	ApiProduct       string           `position:"Body" name:"ApiProduct"`
+	ApiRevision      string           `position:"Body" name:"ApiRevision"`
 	MaximumPerMinute requests.Integer `position:"Query" name:"MaximumPerMinute"`
 	TargetDeviceName *[]string        `position:"Query" name:"TargetDeviceName"  type:"Repeated"`
 }

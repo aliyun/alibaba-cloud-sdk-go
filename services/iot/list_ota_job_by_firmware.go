@@ -76,12 +76,12 @@ func (client *Client) ListOTAJobByFirmwareWithCallback(request *ListOTAJobByFirm
 // ListOTAJobByFirmwareRequest is the request struct for api ListOTAJobByFirmware
 type ListOTAJobByFirmwareRequest struct {
 	*requests.RpcRequest
-	FirmwareId    string           `position:"Query" name:"FirmwareId"`
-	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
-	ProductKey    string           `position:"Query" name:"ProductKey"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	DeviceName    string           `position:"Query" name:"DeviceName"`
+	FirmwareId    string           `position:"Query" name:"FirmwareId"`
+	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 }
 
 // ListOTAJobByFirmwareResponse is the response struct for api ListOTAJobByFirmware
