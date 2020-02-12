@@ -76,11 +76,12 @@ func (client *Client) DescribeIncrementBackupListWithCallback(request *DescribeI
 // DescribeIncrementBackupListRequest is the request struct for api DescribeIncrementBackupList
 type DescribeIncrementBackupListRequest struct {
 	*requests.RpcRequest
-	ClientToken  string           `position:"Query" name:"ClientToken"`
-	BackupPlanId string           `position:"Query" name:"BackupPlanId"`
-	PageNum      requests.Integer `position:"Query" name:"PageNum"`
-	OwnerId      string           `position:"Query" name:"OwnerId"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	ClientToken     string           `position:"Query" name:"ClientToken"`
+	BackupPlanId    string           `position:"Query" name:"BackupPlanId"`
+	PageNum         requests.Integer `position:"Query" name:"PageNum"`
+	OwnerId         string           `position:"Query" name:"OwnerId"`
+	ShowStorageType requests.Boolean `position:"Query" name:"ShowStorageType"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeIncrementBackupListResponse is the response struct for api DescribeIncrementBackupList

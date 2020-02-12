@@ -1,3 +1,7 @@
+2020-02-12 Version: v1.60.358
+- Generated 2019-03-06 for `Dbs`.
+- Add Full showStorageTyp.
+
 2020-02-12 Version: v1.60.357
 - Generated 2018-01-11 for `rtc`.
 - Support mau.
