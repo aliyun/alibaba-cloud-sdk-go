@@ -1,3 +1,8 @@
+2020-02-12 Version: v1.60.359
+- Generated 2017-08-01 for `polardb`.
+- Return `VpcInstanceId ` for DescribeDBClusterEndpoints.
+- Add DescribeBackupLogs.
+
 2020-02-12 Version: v1.60.358
 - Generated 2019-03-06 for `Dbs`.
 - Add Full showStorageTyp.
