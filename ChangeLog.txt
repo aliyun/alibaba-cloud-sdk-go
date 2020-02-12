@@ -1,3 +1,7 @@
+2020-02-12 Version: v1.60.360
+- Generated 2020-01-21 for `DemoCenter`.
+- Support to create, describe and expire demo access token.
+
 2020-02-12 Version: v1.60.359
 - Generated 2017-08-01 for `polardb`.
 - Return `VpcInstanceId ` for DescribeDBClusterEndpoints.
