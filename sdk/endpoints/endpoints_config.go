@@ -1,4 +1,3 @@
-
 package endpoints
 
 import (
@@ -7,7 +6,7 @@ import (
 	"sync"
 )
 
-const endpointsJson =`{
+const endpointsJson = `{
 	"products": [
 		{
 			"code": "emr",
@@ -2577,7 +2576,84 @@ const endpointsJson =`{
 			"code": "sts",
 			"document_id": "28756",
 			"location_service_code": "sts",
-			"regional_endpoints": null,
+			"regional_endpoints": [
+				{
+					"region": "eu-central-1",
+					"endpoint": "sts.eu-central-1.aliyuncs.com"
+				},
+				{
+					"region": "eu-west-1",
+					"endpoint": "sts.eu-west-1.aliyuncs.com"
+				},
+				{
+					"region": "me-east-1",
+					"endpoint": "sts.me-east-1.aliyuncs.com"
+				},
+				{
+					"region": "us-east-1",
+					"endpoint": "sts.us-east-1.aliyuncs.com"
+				},
+				{
+					"region": "us-west-1",
+					"endpoint": "sts.us-west-1.aliyuncs.com"
+				},
+				{
+					"region": "ap-south-1",
+					"endpoint": "sts.ap-south-1.aliyuncs.com"
+				},
+				{
+					"region": "ap-northeast-1",
+					"endpoint": "sts.ap-northeast-1.aliyuncs.com"
+				},
+				{
+					"region": "ap-southeast-5",
+					"endpoint": "sts.ap-southeast-5.aliyuncs.com"
+				},
+				{
+					"region": "ap-southeast-3",
+					"endpoint": "sts.ap-southeast-3.aliyuncs.com"
+				},
+				{
+					"region": "ap-southeast-2",
+					"endpoint": "sts.ap-southeast-2.aliyuncs.com"
+				},
+				{
+					"region": "ap-southeast-1",
+					"endpoint": "sts.ap-southeast-1.aliyuncs.com"
+				},
+				{
+					"region": "cn-hongkong",
+					"endpoint": "sts.cn-hongkong.aliyuncs.com"
+				},
+				{
+					"region": "cn-shanghai",
+					"endpoint": "sts.cn-shanghai.aliyuncs.com"
+				},
+				{
+					"region": "cn-hangzhou",
+					"endpoint": "sts.cn-hangzhou.aliyuncs.com"
+				},
+				{
+					"region": "cn-huhehaote",
+					"endpoint": "sts.cn-huhehaote.aliyuncs.com"
+				},
+				{
+					"region": "cn-zhangjiakou",
+					"endpoint": "sts.cn-zhangjiakou.aliyuncs.com"
+				},
+				{
+					"region": "cn-beijing",
+					"endpoint": "sts.cn-beijing.aliyuncs.com"
+				},
+				{
+					"region": "cn-qingdao",
+					"endpoint": "sts.cn-qingdao.aliyuncs.com"
+				},
+				{
+					"region": "cn-shenzhen",
+					"endpoint": "sts.cn-shenzhen.aliyuncs.com"
+				}
+			],
 			"global_endpoint": "sts.aliyuncs.com",
 			"regional_endpoint_pattern": ""
 		},
@@ -4112,6 +4188,7 @@ const endpointsJson =`{
 		}
 	]
 }`
+
 var initOnce sync.Once
 var data interface{}
 
