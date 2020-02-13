@@ -1,3 +1,8 @@
+2020-02-13 Version: v1.60.369
+- Generated 2014-05-26 for `Ecs`.
+- ModifyNetworkInterfaceAttribute support modify QueueNumber.
+- DescribeNetworkInterfaces support QueueNumber.
+
 2020-02-13 Version: v1.60.368
 - Generated 2014-05-26 for `Ecs`.
 - ModifyNetworkInterfaceAttribute support modify QueueNumber.
