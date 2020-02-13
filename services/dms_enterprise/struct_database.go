@@ -19,6 +19,7 @@ package dms_enterprise
 type Database struct {
 	Port          int                        `json:"Port" xml:"Port"`
 	DbaName       string                     `json:"DbaName" xml:"DbaName"`
+	Logic         bool                       `json:"Logic" xml:"Logic"`
 	SchemaName    string                     `json:"SchemaName" xml:"SchemaName"`
 	Sid           string                     `json:"Sid" xml:"Sid"`
 	DbType        string                     `json:"DbType" xml:"DbType"`
@@ -31,6 +32,7 @@ type Database struct {
 	Encoding      string                     `json:"Encoding" xml:"Encoding"`
 	SearchName    string                     `json:"SearchName" xml:"SearchName"`
 	InstanceId    string                     `json:"InstanceId" xml:"InstanceId"`
+	DbId          int                        `json:"DbId" xml:"DbId"`
 	OwnerNameList OwnerNameListInGetDatabase `json:"OwnerNameList" xml:"OwnerNameList"`
 	OwnerIdList   OwnerIdListInGetDatabase   `json:"OwnerIdList" xml:"OwnerIdList"`
 }

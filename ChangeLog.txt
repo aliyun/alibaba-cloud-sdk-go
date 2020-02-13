@@ -1,3 +1,7 @@
+2020-02-13 Version: v1.60.362
+- Generated 2018-11-01 for `dms-enterprise`.
+- Fix GetDataCorrectOrderDetail API return empty database information.
+
 2020-02-13 Version: v1.60.361
 - Init MQTT SDK .
 
