@@ -1,3 +1,7 @@
+2020-02-13 Version: v1.60.365
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Add Staging apis.
+
 2020-02-13 Version: v1.60.364
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Add Staging apis.
