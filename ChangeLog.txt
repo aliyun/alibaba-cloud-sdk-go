@@ -1,3 +1,6 @@
+2020-02-13 Version: v1.60.361
+- Init MQTT SDK .
+
 2020-02-12 Version: v1.60.360
 - Generated 2020-01-21 for `DemoCenter`.
 - Support to create, describe and expire demo access token.
