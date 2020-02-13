@@ -1,3 +1,8 @@
+2020-02-13 Version: v1.60.368
+- Generated 2014-05-26 for `Ecs`.
+- ModifyNetworkInterfaceAttribute support modify QueueNumber.
+- DescribeNetworkInterfaces support QueueNumber.
+
 2020-02-13 Version: v1.60.367
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Add Staging apis.

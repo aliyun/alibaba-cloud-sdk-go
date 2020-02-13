@@ -86,6 +86,7 @@ type CreateSnapshotRequest struct {
 	OwnerAccount         string               `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer     `position:"Query" name:"OwnerId"`
 	RetentionDays        requests.Integer     `position:"Query" name:"RetentionDays"`
+	Category             string               `position:"Query" name:"Category"`
 }
 
 // CreateSnapshotTag is a repeated param struct in CreateSnapshotRequest
