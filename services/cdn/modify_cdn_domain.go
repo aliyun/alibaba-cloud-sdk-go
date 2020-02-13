@@ -76,12 +76,12 @@ func (client *Client) ModifyCdnDomainWithCallback(request *ModifyCdnDomainReques
 // ModifyCdnDomainRequest is the request struct for api ModifyCdnDomain
 type ModifyCdnDomainRequest struct {
 	*requests.RpcRequest
-	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
 	Sources         string           `position:"Query" name:"Sources"`
-	DomainName      string           `position:"Query" name:"DomainName"`
-	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken   string           `position:"Query" name:"SecurityToken"`
+	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
+	DomainName      string           `position:"Query" name:"DomainName"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyCdnDomainResponse is the response struct for api ModifyCdnDomain

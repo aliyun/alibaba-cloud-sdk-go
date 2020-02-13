@@ -76,13 +76,13 @@ func (client *Client) DescribeLiveStreamsOnlineListWithCallback(request *Describ
 // DescribeLiveStreamsOnlineListRequest is the request struct for api DescribeLiveStreamsOnlineList
 type DescribeLiveStreamsOnlineListRequest struct {
 	*requests.RpcRequest
-	StreamType    string           `position:"Query" name:"StreamType"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	PageNum       requests.Integer `position:"Query" name:"PageNum"`
 	AppName       string           `position:"Query" name:"AppName"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	StreamType    string           `position:"Query" name:"StreamType"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeLiveStreamsOnlineListResponse is the response struct for api DescribeLiveStreamsOnlineList

@@ -82,6 +82,7 @@ type DescribeDomainRealTimeDetailDataRequest struct {
 	Merge          string           `position:"Query" name:"Merge"`
 	DomainName     string           `position:"Query" name:"DomainName"`
 	EndTime        string           `position:"Query" name:"EndTime"`
+	MergeLocIsp    string           `position:"Query" name:"MergeLocIsp"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	Field          string           `position:"Query" name:"Field"`
 }

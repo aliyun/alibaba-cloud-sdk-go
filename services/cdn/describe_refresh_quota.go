@@ -92,6 +92,8 @@ type DescribeRefreshQuotaResponse struct {
 	BlockQuota    string `json:"BlockQuota" xml:"BlockQuota"`
 	PreloadRemain string `json:"PreloadRemain" xml:"PreloadRemain"`
 	BlockRemain   string `json:"blockRemain" xml:"blockRemain"`
+	RegexQuota    string `json:"RegexQuota" xml:"RegexQuota"`
+	RegexRemain   string `json:"RegexRemain" xml:"RegexRemain"`
 }
 
 // CreateDescribeRefreshQuotaRequest creates a request to invoke DescribeRefreshQuota API

@@ -21,12 +21,14 @@ type CertInfo struct {
 	CertOrg                 string `json:"CertOrg" xml:"CertOrg"`
 	DomainList              string `json:"DomainList" xml:"DomainList"`
 	Issuer                  string `json:"Issuer" xml:"Issuer"`
+	HttpsCrt                string `json:"HttpsCrt" xml:"HttpsCrt"`
 	DomainNames             string `json:"DomainNames" xml:"DomainNames"`
 	CertExpireTime          string `json:"CertExpireTime" xml:"CertExpireTime"`
 	CertStatus              string `json:"CertStatus" xml:"CertStatus"`
 	CertType                string `json:"CertType" xml:"CertType"`
 	DomainName              string `json:"DomainName" xml:"DomainName"`
 	DomainCnameStatus       string `json:"DomainCnameStatus" xml:"DomainCnameStatus"`
+	CreateTime              string `json:"CreateTime" xml:"CreateTime"`
 	ServerCertificate       string `json:"ServerCertificate" xml:"ServerCertificate"`
 	ServerCertificateStatus string `json:"ServerCertificateStatus" xml:"ServerCertificateStatus"`
 	CertUpdateTime          string `json:"CertUpdateTime" xml:"CertUpdateTime"`
@@ -38,4 +40,5 @@ type CertInfo struct {
 	CertDomainName          string `json:"CertDomainName" xml:"CertDomainName"`
 	CertLife                string `json:"CertLife" xml:"CertLife"`
 	CertStartTime           string `json:"CertStartTime" xml:"CertStartTime"`
+	CertId                  string `json:"CertId" xml:"CertId"`
 }

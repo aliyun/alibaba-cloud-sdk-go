@@ -1,3 +1,7 @@
+2020-02-13 Version: v1.60.363
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Add Staging apis.
+
 2020-02-13 Version: v1.60.362
 - Generated 2018-11-01 for `dms-enterprise`.
 - Fix GetDataCorrectOrderDetail API return empty database information.

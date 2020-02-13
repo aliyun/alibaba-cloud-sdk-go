@@ -76,13 +76,13 @@ func (client *Client) DescribeLiveStreamRecordContentWithCallback(request *Descr
 // DescribeLiveStreamRecordContentRequest is the request struct for api DescribeLiveStreamRecordContent
 type DescribeLiveStreamRecordContentRequest struct {
 	*requests.RpcRequest
-	DomainName    string           `position:"Query" name:"DomainName"`
-	EndTime       string           `position:"Query" name:"EndTime"`
 	StartTime     string           `position:"Query" name:"StartTime"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	AppName       string           `position:"Query" name:"AppName"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	StreamName    string           `position:"Query" name:"StreamName"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeLiveStreamRecordContentResponse is the response struct for api DescribeLiveStreamRecordContent
