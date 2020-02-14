@@ -17,5 +17,5 @@ package fnf
 
 // Executions is a nested struct in fnf response
 type Executions struct {
-	ExecutionsItem []ExecutionsItem `json:"ExecutionsItem" xml:"ExecutionsItem"`
+	ExecutionsItem []ExecutionsItem `json:"Executions" xml:"Executions"`
 }

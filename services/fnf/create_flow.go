@@ -76,12 +76,12 @@ func (client *Client) CreateFlowWithCallback(request *CreateFlowRequest, callbac
 // CreateFlowRequest is the request struct for api CreateFlow
 type CreateFlowRequest struct {
 	*requests.RpcRequest
+	Description string `position:"Body" name:"Description"`
+	Type        string `position:"Body" name:"Type"`
 	RequestId   string `position:"Query" name:"RequestId"`
 	RoleArn     string `position:"Body" name:"RoleArn"`
 	Name        string `position:"Body" name:"Name"`
-	Description string `position:"Body" name:"Description"`
 	Definition  string `position:"Body" name:"Definition"`
-	Type        string `position:"Body" name:"Type"`
 }
 
 // CreateFlowResponse is the response struct for api CreateFlow

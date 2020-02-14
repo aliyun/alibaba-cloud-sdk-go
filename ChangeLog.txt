@@ -1,3 +1,8 @@
+2020-02-14 Version: v1.60.378
+- Generated 2019-03-15 for `fnf`.
+- Add callback params to StartExecution API.
+- Support ListExecutions with Status API.
+
 2020-02-14 Version: v1.60.377
 - Generated 2015-04-01 for `Sts`.
 - Use standard endpoints.

@@ -80,6 +80,7 @@ type ListExecutionsRequest struct {
 	RequestId string           `position:"Query" name:"RequestId"`
 	Limit     requests.Integer `position:"Query" name:"Limit"`
 	FlowName  string           `position:"Query" name:"FlowName"`
+	Status    string           `position:"Query" name:"Status"`
 }
 
 // ListExecutionsResponse is the response struct for api ListExecutions

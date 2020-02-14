@@ -76,10 +76,11 @@ func (client *Client) StartExecutionWithCallback(request *StartExecutionRequest,
 // StartExecutionRequest is the request struct for api StartExecution
 type StartExecutionRequest struct {
 	*requests.RpcRequest
-	Input         string `position:"Body" name:"Input"`
-	ExecutionName string `position:"Body" name:"ExecutionName"`
-	RequestId     string `position:"Query" name:"RequestId"`
-	FlowName      string `position:"Body" name:"FlowName"`
+	CallbackFnFTaskToken string `position:"Body" name:"CallbackFnFTaskToken"`
+	ExecutionName        string `position:"Body" name:"ExecutionName"`
+	Input                string `position:"Body" name:"Input"`
+	RequestId            string `position:"Query" name:"RequestId"`
+	FlowName             string `position:"Body" name:"FlowName"`
 }
 
 // StartExecutionResponse is the response struct for api StartExecution

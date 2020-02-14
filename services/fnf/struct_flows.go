@@ -17,5 +17,5 @@ package fnf
 
 // Flows is a nested struct in fnf response
 type Flows struct {
-	FlowsItem []FlowsItem `json:"FlowsItem" xml:"FlowsItem"`
+	FlowsItem []FlowsItem `json:"Flows" xml:"Flows"`
 }

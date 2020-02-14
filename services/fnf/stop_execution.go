@@ -77,10 +77,10 @@ func (client *Client) StopExecutionWithCallback(request *StopExecutionRequest, c
 type StopExecutionRequest struct {
 	*requests.RpcRequest
 	ExecutionName string `position:"Body" name:"ExecutionName"`
-	RequestId     string `position:"Query" name:"RequestId"`
 	Cause         string `position:"Body" name:"Cause"`
-	FlowName      string `position:"Body" name:"FlowName"`
 	Error         string `position:"Body" name:"Error"`
+	RequestId     string `position:"Query" name:"RequestId"`
+	FlowName      string `position:"Body" name:"FlowName"`
 }
 
 // StopExecutionResponse is the response struct for api StopExecution

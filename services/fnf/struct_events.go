@@ -17,5 +17,5 @@ package fnf
 
 // Events is a nested struct in fnf response
 type Events struct {
-	EventsItem []EventsItem `json:"EventsItem" xml:"EventsItem"`
+	EventsItem []EventsItem `json:"Events" xml:"Events"`
 }

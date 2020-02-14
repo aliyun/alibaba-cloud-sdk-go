@@ -76,10 +76,10 @@ func (client *Client) ReportTaskFailedWithCallback(request *ReportTaskFailedRequ
 // ReportTaskFailedRequest is the request struct for api ReportTaskFailed
 type ReportTaskFailedRequest struct {
 	*requests.RpcRequest
-	RequestId string `position:"Query" name:"RequestId"`
 	Cause     string `position:"Body" name:"Cause"`
-	TaskToken string `position:"Query" name:"TaskToken"`
 	Error     string `position:"Body" name:"Error"`
+	RequestId string `position:"Query" name:"RequestId"`
+	TaskToken string `position:"Query" name:"TaskToken"`
 }
 
 // ReportTaskFailedResponse is the response struct for api ReportTaskFailed
