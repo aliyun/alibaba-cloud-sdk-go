@@ -1,3 +1,7 @@
+2020-02-14 Version: v1.60.377
+- Generated 2015-04-01 for `Sts`.
+- Use standard endpoints.
+
 2020-02-14 Version: v1.60.376
 - Generated 2018-01-01 for `pvtz`.
 - Update default endpoints.
