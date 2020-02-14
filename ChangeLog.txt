@@ -1,3 +1,7 @@
+2020-02-14 Version: v1.60.376
+- Generated 2018-01-01 for `pvtz`.
+- Update default endpoints.
+
 2020-02-14 Version: v1.60.375
 - Generated 2019-01-01 for `Cms`.
 - Fix the field definition for the site monitoring option OptionJson.
