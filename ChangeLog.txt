@@ -1,3 +1,7 @@
+2020-02-15 Version: v1.60.381
+- Generated 2018-11-01 for `dms-enterprise`.
+- Supported ListWorkFlowTemplates, ListWorkFlowNodes API.
+
 2020-02-15 Version: v1.60.380
 - Generated 2017-08-01 for `polardb`.
 - Add DescribeDBClusterSSL.

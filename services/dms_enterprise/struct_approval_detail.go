@@ -17,13 +17,13 @@ package dms_enterprise
 
 // ApprovalDetail is a nested struct in dms_enterprise response
 type ApprovalDetail struct {
-	AuditId         int64           `json:"AuditId" xml:"AuditId"`
-	OrderId         int64           `json:"OrderId" xml:"OrderId"`
-	OrderType       string          `json:"OrderType" xml:"OrderType"`
-	Title           string          `json:"Title" xml:"Title"`
-	WorkflowInsCode string          `json:"WorkflowInsCode" xml:"WorkflowInsCode"`
-	Description     string          `json:"Description" xml:"Description"`
-	ReasonList      ReasonList      `json:"ReasonList" xml:"ReasonList"`
-	WorkflowNodes   WorkflowNodes   `json:"WorkflowNodes" xml:"WorkflowNodes"`
-	CurrentHandlers CurrentHandlers `json:"CurrentHandlers" xml:"CurrentHandlers"`
+	AuditId         int64                            `json:"AuditId" xml:"AuditId"`
+	OrderId         int64                            `json:"OrderId" xml:"OrderId"`
+	OrderType       string                           `json:"OrderType" xml:"OrderType"`
+	Title           string                           `json:"Title" xml:"Title"`
+	WorkflowInsCode string                           `json:"WorkflowInsCode" xml:"WorkflowInsCode"`
+	Description     string                           `json:"Description" xml:"Description"`
+	ReasonList      ReasonList                       `json:"ReasonList" xml:"ReasonList"`
+	WorkflowNodes   WorkflowNodesInGetApprovalDetail `json:"WorkflowNodes" xml:"WorkflowNodes"`
+	CurrentHandlers CurrentHandlers                  `json:"CurrentHandlers" xml:"CurrentHandlers"`
 }

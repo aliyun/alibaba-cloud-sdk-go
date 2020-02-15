@@ -17,10 +17,18 @@ package dms_enterprise
 
 // WorkflowNode is a nested struct in dms_enterprise response
 type WorkflowNode struct {
-	NodeName        string          `json:"NodeName" xml:"NodeName"`
-	OperateComment  string          `json:"OperateComment" xml:"OperateComment"`
-	OperateTime     string          `json:"OperateTime" xml:"OperateTime"`
-	OperatorId      int64           `json:"OperatorId" xml:"OperatorId"`
-	WorkflowInsCode string          `json:"WorkflowInsCode" xml:"WorkflowInsCode"`
-	AuditUserIdList AuditUserIdList `json:"AuditUserIdList" xml:"AuditUserIdList"`
+	TemplateId         int64           `json:"TemplateId" xml:"TemplateId"`
+	CreateUserId       int64           `json:"CreateUserId" xml:"CreateUserId"`
+	CreateUserNickName string          `json:"CreateUserNickName" xml:"CreateUserNickName"`
+	Comment            string          `json:"Comment" xml:"Comment"`
+	NodeName           string          `json:"NodeName" xml:"NodeName"`
+	OperateTime        string          `json:"OperateTime" xml:"OperateTime"`
+	NodeId             int64           `json:"NodeId" xml:"NodeId"`
+	OperateComment     string          `json:"OperateComment" xml:"OperateComment"`
+	OperatorId         int64           `json:"OperatorId" xml:"OperatorId"`
+	Position           int             `json:"Position" xml:"Position"`
+	NodeType           string          `json:"NodeType" xml:"NodeType"`
+	WorkflowInsCode    string          `json:"WorkflowInsCode" xml:"WorkflowInsCode"`
+	AuditUserIdList    AuditUserIdList `json:"AuditUserIdList" xml:"AuditUserIdList"`
+	AuditUsers         AuditUsers      `json:"AuditUsers" xml:"AuditUsers"`
 }
