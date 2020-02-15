@@ -1,3 +1,8 @@
+2020-02-15 Version: v1.60.380
+- Generated 2017-08-01 for `polardb`.
+- Add DescribeDBClusterSSL.
+- Add ModifyDBClusterSSL.
+
 2020-02-14 Version: v1.60.379
 - Generated 2015-01-09 for `Alidns`.
 - Update default endpoints.
