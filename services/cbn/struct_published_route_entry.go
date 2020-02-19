@@ -17,12 +17,12 @@ package cbn
 
 // PublishedRouteEntry is a nested struct in cbn response
 type PublishedRouteEntry struct {
-	DestinationCidrBlock      string    `json:"DestinationCidrBlock" xml:"DestinationCidrBlock"`
-	ChildInstanceRouteTableId string    `json:"ChildInstanceRouteTableId" xml:"ChildInstanceRouteTableId"`
-	NextHopType               string    `json:"NextHopType" xml:"NextHopType"`
-	RouteType                 string    `json:"RouteType" xml:"RouteType"`
-	NextHopId                 string    `json:"NextHopId" xml:"NextHopId"`
-	OperationalMode           bool      `json:"OperationalMode" xml:"OperationalMode"`
-	PublishStatus             string    `json:"PublishStatus" xml:"PublishStatus"`
-	Conflicts                 Conflicts `json:"Conflicts" xml:"Conflicts"`
+	DestinationCidrBlock      string                                   `json:"DestinationCidrBlock" xml:"DestinationCidrBlock"`
+	ChildInstanceRouteTableId string                                   `json:"ChildInstanceRouteTableId" xml:"ChildInstanceRouteTableId"`
+	NextHopType               string                                   `json:"NextHopType" xml:"NextHopType"`
+	RouteType                 string                                   `json:"RouteType" xml:"RouteType"`
+	NextHopId                 string                                   `json:"NextHopId" xml:"NextHopId"`
+	OperationalMode           bool                                     `json:"OperationalMode" xml:"OperationalMode"`
+	PublishStatus             string                                   `json:"PublishStatus" xml:"PublishStatus"`
+	Conflicts                 ConflictsInDescribePublishedRouteEntries `json:"Conflicts" xml:"Conflicts"`
 }

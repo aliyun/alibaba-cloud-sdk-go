@@ -76,15 +76,15 @@ func (client *Client) AttachCenChildInstanceWithCallback(request *AttachCenChild
 // AttachCenChildInstanceRequest is the request struct for api AttachCenChildInstance
 type AttachCenChildInstanceRequest struct {
 	*requests.RpcRequest
-	ChildInstanceId       string           `position:"Query" name:"ChildInstanceId"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                 string           `position:"Query" name:"CenId"`
+	ChildInstanceRegionId string           `position:"Query" name:"ChildInstanceRegionId"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	ChildInstanceType     string           `position:"Query" name:"ChildInstanceType"`
 	ChildInstanceOwnerId  requests.Integer `position:"Query" name:"ChildInstanceOwnerId"`
-	ChildInstanceRegionId string           `position:"Query" name:"ChildInstanceRegionId"`
+	ChildInstanceId       string           `position:"Query" name:"ChildInstanceId"`
 }
 
 // AttachCenChildInstanceResponse is the response struct for api AttachCenChildInstance
@@ -98,7 +98,7 @@ func CreateAttachCenChildInstanceRequest() (request *AttachCenChildInstanceReque
 	request = &AttachCenChildInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "AttachCenChildInstance", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "AttachCenChildInstance", "Cbn", "openAPI")
 	return
 }
 

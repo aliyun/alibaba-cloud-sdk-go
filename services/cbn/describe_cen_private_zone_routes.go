@@ -77,12 +77,12 @@ func (client *Client) DescribeCenPrivateZoneRoutesWithCallback(request *Describe
 type DescribeCenPrivateZoneRoutesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                string           `position:"Query" name:"CenId"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	HostRegionId         string           `position:"Query" name:"HostRegionId"`
 	AccessRegionId       string           `position:"Query" name:"AccessRegionId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	HostRegionId         string           `position:"Query" name:"HostRegionId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 }
 
 // DescribeCenPrivateZoneRoutesResponse is the response struct for api DescribeCenPrivateZoneRoutes
@@ -102,7 +102,7 @@ func CreateDescribeCenPrivateZoneRoutesRequest() (request *DescribeCenPrivateZon
 	request = &DescribeCenPrivateZoneRoutesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenPrivateZoneRoutes", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenPrivateZoneRoutes", "Cbn", "openAPI")
 	return
 }
 

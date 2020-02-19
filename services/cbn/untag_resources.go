@@ -80,11 +80,9 @@ type UntagResourcesRequest struct {
 	ResourceId           *[]string        `position:"Query" name:"ResourceId"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	TagOwnerUid          requests.Integer `position:"Query" name:"TagOwnerUid"`
-	TagOwnerBid          string           `position:"Query" name:"TagOwnerBid"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	TagKey               *[]string        `position:"Query" name:"TagKey"  type:"Repeated"`
 	ResourceType         string           `position:"Query" name:"ResourceType"`
+	TagKey               *[]string        `position:"Query" name:"TagKey"  type:"Repeated"`
 }
 
 // UntagResourcesResponse is the response struct for api UntagResources
@@ -98,7 +96,7 @@ func CreateUntagResourcesRequest() (request *UntagResourcesRequest) {
 	request = &UntagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "UntagResources", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "UntagResources", "Cbn", "openAPI")
 	return
 }
 

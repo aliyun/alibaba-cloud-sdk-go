@@ -77,12 +77,12 @@ func (client *Client) DescribeCenGeographicSpansWithCallback(request *DescribeCe
 type DescribeCenGeographicSpansRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	GeographicSpanId     string           `position:"Query" name:"GeographicSpanId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeCenGeographicSpansResponse is the response struct for api DescribeCenGeographicSpans
@@ -100,7 +100,7 @@ func CreateDescribeCenGeographicSpansRequest() (request *DescribeCenGeographicSp
 	request = &DescribeCenGeographicSpansRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenGeographicSpans", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenGeographicSpans", "Cbn", "openAPI")
 	return
 }
 

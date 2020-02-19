@@ -79,9 +79,9 @@ type ModifyCenBandwidthPackageSpecRequest struct {
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth             requests.Integer `position:"Query" name:"Bandwidth"`
-	CenBandwidthPackageId string           `position:"Query" name:"CenBandwidthPackageId"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	CenBandwidthPackageId string           `position:"Query" name:"CenBandwidthPackageId"`
 }
 
 // ModifyCenBandwidthPackageSpecResponse is the response struct for api ModifyCenBandwidthPackageSpec
@@ -95,7 +95,7 @@ func CreateModifyCenBandwidthPackageSpecRequest() (request *ModifyCenBandwidthPa
 	request = &ModifyCenBandwidthPackageSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyCenBandwidthPackageSpec", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyCenBandwidthPackageSpec", "Cbn", "openAPI")
 	return
 }
 

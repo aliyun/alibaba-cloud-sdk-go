@@ -76,14 +76,14 @@ func (client *Client) DescribeCenAttachedChildInstanceAttributeWithCallback(requ
 // DescribeCenAttachedChildInstanceAttributeRequest is the request struct for api DescribeCenAttachedChildInstanceAttribute
 type DescribeCenAttachedChildInstanceAttributeRequest struct {
 	*requests.RpcRequest
-	ChildInstanceId       string           `position:"Query" name:"ChildInstanceId"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                 string           `position:"Query" name:"CenId"`
+	ChildInstanceRegionId string           `position:"Query" name:"ChildInstanceRegionId"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	ChildInstanceType     string           `position:"Query" name:"ChildInstanceType"`
-	ChildInstanceRegionId string           `position:"Query" name:"ChildInstanceRegionId"`
+	ChildInstanceId       string           `position:"Query" name:"ChildInstanceId"`
 }
 
 // DescribeCenAttachedChildInstanceAttributeResponse is the response struct for api DescribeCenAttachedChildInstanceAttribute
@@ -94,7 +94,7 @@ type DescribeCenAttachedChildInstanceAttributeResponse struct {
 	ChildInstanceId         string `json:"ChildInstanceId" xml:"ChildInstanceId"`
 	ChildInstanceType       string `json:"ChildInstanceType" xml:"ChildInstanceType"`
 	ChildInstanceRegionId   string `json:"ChildInstanceRegionId" xml:"ChildInstanceRegionId"`
-	ChildInstanceOwnerId    int    `json:"ChildInstanceOwnerId" xml:"ChildInstanceOwnerId"`
+	ChildInstanceOwnerId    int64  `json:"ChildInstanceOwnerId" xml:"ChildInstanceOwnerId"`
 	Status                  string `json:"Status" xml:"Status"`
 	ChildInstanceName       string `json:"ChildInstanceName" xml:"ChildInstanceName"`
 	ChildInstanceAttachTime string `json:"ChildInstanceAttachTime" xml:"ChildInstanceAttachTime"`
@@ -105,7 +105,7 @@ func CreateDescribeCenAttachedChildInstanceAttributeRequest() (request *Describe
 	request = &DescribeCenAttachedChildInstanceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstanceAttribute", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstanceAttribute", "Cbn", "openAPI")
 	return
 }
 

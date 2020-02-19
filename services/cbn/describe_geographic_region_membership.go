@@ -77,11 +77,11 @@ func (client *Client) DescribeGeographicRegionMembershipWithCallback(request *De
 type DescribeGeographicRegionMembershipRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	GeographicRegionId   string           `position:"Query" name:"GeographicRegionId"`
 }
 
@@ -100,7 +100,7 @@ func CreateDescribeGeographicRegionMembershipRequest() (request *DescribeGeograp
 	request = &DescribeGeographicRegionMembershipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGeographicRegionMembership", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGeographicRegionMembership", "Cbn", "openAPI")
 	return
 }
 

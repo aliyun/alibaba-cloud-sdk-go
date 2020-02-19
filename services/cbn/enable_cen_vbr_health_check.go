@@ -77,15 +77,15 @@ func (client *Client) EnableCenVbrHealthCheckWithCallback(request *EnableCenVbrH
 type EnableCenVbrHealthCheckRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                string           `position:"Query" name:"CenId"`
-	HealthCheckSourceIp  string           `position:"Query" name:"HealthCheckSourceIp"`
-	VbrInstanceOwnerId   requests.Integer `position:"Query" name:"VbrInstanceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	VbrInstanceId        string           `position:"Query" name:"VbrInstanceId"`
 	HealthCheckTargetIp  string           `position:"Query" name:"HealthCheckTargetIp"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VbrInstanceOwnerId   requests.Integer `position:"Query" name:"VbrInstanceOwnerId"`
 	VbrInstanceRegionId  string           `position:"Query" name:"VbrInstanceRegionId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	HealthCheckSourceIp  string           `position:"Query" name:"HealthCheckSourceIp"`
+	VbrInstanceId        string           `position:"Query" name:"VbrInstanceId"`
 }
 
 // EnableCenVbrHealthCheckResponse is the response struct for api EnableCenVbrHealthCheck
@@ -99,7 +99,7 @@ func CreateEnableCenVbrHealthCheckRequest() (request *EnableCenVbrHealthCheckReq
 	request = &EnableCenVbrHealthCheckRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "EnableCenVbrHealthCheck", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "EnableCenVbrHealthCheck", "Cbn", "openAPI")
 	return
 }
 

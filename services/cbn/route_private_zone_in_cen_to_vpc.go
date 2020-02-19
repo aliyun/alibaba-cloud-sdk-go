@@ -77,13 +77,13 @@ func (client *Client) RoutePrivateZoneInCenToVpcWithCallback(request *RoutePriva
 type RoutePrivateZoneInCenToVpcRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                string           `position:"Query" name:"CenId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	HostRegionId         string           `position:"Query" name:"HostRegionId"`
 	AccessRegionId       string           `position:"Query" name:"AccessRegionId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	HostRegionId         string           `position:"Query" name:"HostRegionId"`
 	HostVpcId            string           `position:"Query" name:"HostVpcId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // RoutePrivateZoneInCenToVpcResponse is the response struct for api RoutePrivateZoneInCenToVpc
@@ -97,7 +97,7 @@ func CreateRoutePrivateZoneInCenToVpcRequest() (request *RoutePrivateZoneInCenTo
 	request = &RoutePrivateZoneInCenToVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "RoutePrivateZoneInCenToVpc", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "RoutePrivateZoneInCenToVpc", "Cbn", "openAPI")
 	return
 }
 

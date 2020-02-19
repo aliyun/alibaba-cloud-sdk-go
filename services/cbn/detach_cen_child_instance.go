@@ -76,16 +76,16 @@ func (client *Client) DetachCenChildInstanceWithCallback(request *DetachCenChild
 // DetachCenChildInstanceRequest is the request struct for api DetachCenChildInstance
 type DetachCenChildInstanceRequest struct {
 	*requests.RpcRequest
-	ChildInstanceId       string           `position:"Query" name:"ChildInstanceId"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                 string           `position:"Query" name:"CenId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	CenOwnerId            requests.Integer `position:"Query" name:"CenOwnerId"`
+	ChildInstanceRegionId string           `position:"Query" name:"ChildInstanceRegionId"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	ChildInstanceType     string           `position:"Query" name:"ChildInstanceType"`
 	ChildInstanceOwnerId  requests.Integer `position:"Query" name:"ChildInstanceOwnerId"`
-	ChildInstanceRegionId string           `position:"Query" name:"ChildInstanceRegionId"`
+	ChildInstanceId       string           `position:"Query" name:"ChildInstanceId"`
 }
 
 // DetachCenChildInstanceResponse is the response struct for api DetachCenChildInstance
@@ -99,7 +99,7 @@ func CreateDetachCenChildInstanceRequest() (request *DetachCenChildInstanceReque
 	request = &DetachCenChildInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DetachCenChildInstance", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DetachCenChildInstance", "Cbn", "openAPI")
 	return
 }
 

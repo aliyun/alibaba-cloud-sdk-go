@@ -77,14 +77,14 @@ func (client *Client) DescribeCenAttachedChildInstancesWithCallback(request *Des
 type DescribeCenAttachedChildInstancesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                 string           `position:"Query" name:"CenId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize              requests.Integer `position:"Query" name:"PageSize"`
+	ChildInstanceRegionId string           `position:"Query" name:"ChildInstanceRegionId"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	ChildInstanceType     string           `position:"Query" name:"ChildInstanceType"`
-	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
-	ChildInstanceRegionId string           `position:"Query" name:"ChildInstanceRegionId"`
 }
 
 // DescribeCenAttachedChildInstancesResponse is the response struct for api DescribeCenAttachedChildInstances
@@ -102,7 +102,7 @@ func CreateDescribeCenAttachedChildInstancesRequest() (request *DescribeCenAttac
 	request = &DescribeCenAttachedChildInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstances", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstances", "Cbn", "openAPI")
 	return
 }
 

@@ -77,11 +77,11 @@ func (client *Client) AssociateCenBandwidthPackageWithCallback(request *Associat
 type AssociateCenBandwidthPackageRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                 string           `position:"Query" name:"CenId"`
-	CenBandwidthPackageId string           `position:"Query" name:"CenBandwidthPackageId"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	CenBandwidthPackageId string           `position:"Query" name:"CenBandwidthPackageId"`
 }
 
 // AssociateCenBandwidthPackageResponse is the response struct for api AssociateCenBandwidthPackage
@@ -95,7 +95,7 @@ func CreateAssociateCenBandwidthPackageRequest() (request *AssociateCenBandwidth
 	request = &AssociateCenBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "AssociateCenBandwidthPackage", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "AssociateCenBandwidthPackage", "Cbn", "openAPI")
 	return
 }
 

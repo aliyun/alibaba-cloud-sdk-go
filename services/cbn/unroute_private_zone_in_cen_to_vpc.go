@@ -77,10 +77,10 @@ func (client *Client) UnroutePrivateZoneInCenToVpcWithCallback(request *UnrouteP
 type UnroutePrivateZoneInCenToVpcRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                string           `position:"Query" name:"CenId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	AccessRegionId       string           `position:"Query" name:"AccessRegionId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
@@ -95,7 +95,7 @@ func CreateUnroutePrivateZoneInCenToVpcRequest() (request *UnroutePrivateZoneInC
 	request = &UnroutePrivateZoneInCenToVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "UnroutePrivateZoneInCenToVpc", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "UnroutePrivateZoneInCenToVpc", "Cbn", "openAPI")
 	return
 }
 

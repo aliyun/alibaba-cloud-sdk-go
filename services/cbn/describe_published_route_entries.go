@@ -76,16 +76,16 @@ func (client *Client) DescribePublishedRouteEntriesWithCallback(request *Describ
 // DescribePublishedRouteEntriesRequest is the request struct for api DescribePublishedRouteEntries
 type DescribePublishedRouteEntriesRequest struct {
 	*requests.RpcRequest
-	ChildInstanceId           string           `position:"Query" name:"ChildInstanceId"`
 	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                     string           `position:"Query" name:"CenId"`
-	DestinationCidrBlock      string           `position:"Query" name:"DestinationCidrBlock"`
-	PageSize                  requests.Integer `position:"Query" name:"PageSize"`
-	ChildInstanceType         string           `position:"Query" name:"ChildInstanceType"`
-	ChildInstanceRouteTableId string           `position:"Query" name:"ChildInstanceRouteTableId"`
 	PageNumber                requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize                  requests.Integer `position:"Query" name:"PageSize"`
 	ChildInstanceRegionId     string           `position:"Query" name:"ChildInstanceRegionId"`
+	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
+	DestinationCidrBlock      string           `position:"Query" name:"DestinationCidrBlock"`
+	ChildInstanceType         string           `position:"Query" name:"ChildInstanceType"`
+	ChildInstanceId           string           `position:"Query" name:"ChildInstanceId"`
+	ChildInstanceRouteTableId string           `position:"Query" name:"ChildInstanceRouteTableId"`
 }
 
 // DescribePublishedRouteEntriesResponse is the response struct for api DescribePublishedRouteEntries
@@ -103,7 +103,7 @@ func CreateDescribePublishedRouteEntriesRequest() (request *DescribePublishedRou
 	request = &DescribePublishedRouteEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribePublishedRouteEntries", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribePublishedRouteEntries", "Cbn", "openAPI")
 	return
 }
 

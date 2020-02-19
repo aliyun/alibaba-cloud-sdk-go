@@ -94,7 +94,7 @@ func CreateDeleteCenRequest() (request *DeleteCenRequest) {
 	request = &DeleteCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCen", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCen", "Cbn", "openAPI")
 	return
 }
 

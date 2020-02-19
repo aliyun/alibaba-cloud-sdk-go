@@ -76,14 +76,14 @@ func (client *Client) SetCenInterRegionBandwidthLimitWithCallback(request *SetCe
 // SetCenInterRegionBandwidthLimitRequest is the request struct for api SetCenInterRegionBandwidthLimit
 type SetCenInterRegionBandwidthLimitRequest struct {
 	*requests.RpcRequest
-	LocalRegionId        string           `position:"Query" name:"LocalRegionId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                string           `position:"Query" name:"CenId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OppositeRegionId     string           `position:"Query" name:"OppositeRegionId"`
-	BandwidthLimit       requests.Integer `position:"Query" name:"BandwidthLimit"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	LocalRegionId        string           `position:"Query" name:"LocalRegionId"`
+	BandwidthLimit       requests.Integer `position:"Query" name:"BandwidthLimit"`
 }
 
 // SetCenInterRegionBandwidthLimitResponse is the response struct for api SetCenInterRegionBandwidthLimit
@@ -97,7 +97,7 @@ func CreateSetCenInterRegionBandwidthLimitRequest() (request *SetCenInterRegionB
 	request = &SetCenInterRegionBandwidthLimitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "SetCenInterRegionBandwidthLimit", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "SetCenInterRegionBandwidthLimit", "Cbn", "openAPI")
 	return
 }
 

@@ -76,14 +76,14 @@ func (client *Client) PublishRouteEntriesWithCallback(request *PublishRouteEntri
 // PublishRouteEntriesRequest is the request struct for api PublishRouteEntries
 type PublishRouteEntriesRequest struct {
 	*requests.RpcRequest
-	ChildInstanceId           string           `position:"Query" name:"ChildInstanceId"`
 	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                     string           `position:"Query" name:"CenId"`
+	ChildInstanceRegionId     string           `position:"Query" name:"ChildInstanceRegionId"`
+	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
 	DestinationCidrBlock      string           `position:"Query" name:"DestinationCidrBlock"`
 	ChildInstanceType         string           `position:"Query" name:"ChildInstanceType"`
+	ChildInstanceId           string           `position:"Query" name:"ChildInstanceId"`
 	ChildInstanceRouteTableId string           `position:"Query" name:"ChildInstanceRouteTableId"`
-	ChildInstanceRegionId     string           `position:"Query" name:"ChildInstanceRegionId"`
 }
 
 // PublishRouteEntriesResponse is the response struct for api PublishRouteEntries
@@ -97,7 +97,7 @@ func CreatePublishRouteEntriesRequest() (request *PublishRouteEntriesRequest) {
 	request = &PublishRouteEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "PublishRouteEntries", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "PublishRouteEntries", "Cbn", "openAPI")
 	return
 }
 

@@ -77,12 +77,13 @@ func (client *Client) DeleteRouteServiceInCenWithCallback(request *DeleteRouteSe
 type DeleteRouteServiceInCenRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                string           `position:"Query" name:"CenId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AccessRegionId       string           `position:"Query" name:"AccessRegionId"`
 	Host                 string           `position:"Query" name:"Host"`
 	HostRegionId         string           `position:"Query" name:"HostRegionId"`
-	AccessRegionId       string           `position:"Query" name:"AccessRegionId"`
+	HostVpcId            string           `position:"Query" name:"HostVpcId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
@@ -97,7 +98,7 @@ func CreateDeleteRouteServiceInCenRequest() (request *DeleteRouteServiceInCenReq
 	request = &DeleteRouteServiceInCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteRouteServiceInCen", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteRouteServiceInCen", "Cbn", "openAPI")
 	return
 }
 

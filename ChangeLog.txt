@@ -1,3 +1,9 @@
+2020-02-19 Version: v1.60.382
+- Generated 2017-09-12 for `Cbn`.
+- Support terraform.
+- Support flow log.
+- Support route map.
+
 2020-02-15 Version: v1.60.381
 - Generated 2018-11-01 for `dms-enterprise`.
 - Supported ListWorkFlowTemplates, ListWorkFlowNodes API.

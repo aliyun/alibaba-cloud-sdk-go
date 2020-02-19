@@ -76,26 +76,26 @@ func (client *Client) DescribeCensWithCallback(request *DescribeCensRequest, cal
 // DescribeCensRequest is the request struct for api DescribeCens
 type DescribeCensRequest struct {
 	*requests.RpcRequest
-	Filter               *[]DescribeCensFilter `position:"Query" name:"Filter"  type:"Repeated"`
 	ResourceOwnerId      requests.Integer      `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string                `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string                `position:"Query" name:"OwnerAccount"`
+	PageNumber           requests.Integer      `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer      `position:"Query" name:"PageSize"`
 	Tag                  *[]DescribeCensTag    `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceOwnerAccount string                `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer      `position:"Query" name:"OwnerId"`
-	PageNumber           requests.Integer      `position:"Query" name:"PageNumber"`
-}
-
-// DescribeCensFilter is a repeated param struct in DescribeCensRequest
-type DescribeCensFilter struct {
-	Value *[]string `name:"Value" type:"Repeated"`
-	Key   string    `name:"Key"`
+	Filter               *[]DescribeCensFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 
 // DescribeCensTag is a repeated param struct in DescribeCensRequest
 type DescribeCensTag struct {
 	Value string `name:"Value"`
 	Key   string `name:"Key"`
+}
+
+// DescribeCensFilter is a repeated param struct in DescribeCensRequest
+type DescribeCensFilter struct {
+	Value *[]string `name:"Value" type:"Repeated"`
+	Key   string    `name:"Key"`
 }
 
 // DescribeCensResponse is the response struct for api DescribeCens
@@ -113,7 +113,7 @@ func CreateDescribeCensRequest() (request *DescribeCensRequest) {
 	request = &DescribeCensRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCens", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCens", "Cbn", "openAPI")
 	return
 }
 

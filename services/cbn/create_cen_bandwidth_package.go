@@ -76,18 +76,18 @@ func (client *Client) CreateCenBandwidthPackageWithCallback(request *CreateCenBa
 // CreateCenBandwidthPackageRequest is the request struct for api CreateCenBandwidthPackage
 type CreateCenBandwidthPackageRequest struct {
 	*requests.RpcRequest
-	GeographicRegionBId        string           `position:"Query" name:"GeographicRegionBId"`
 	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken                string           `position:"Query" name:"ClientToken"`
+	Description                string           `position:"Query" name:"Description"`
+	BandwidthPackageChargeType string           `position:"Query" name:"BandwidthPackageChargeType"`
+	GeographicRegionBId        string           `position:"Query" name:"GeographicRegionBId"`
 	Period                     requests.Integer `position:"Query" name:"Period"`
 	GeographicRegionAId        string           `position:"Query" name:"GeographicRegionAId"`
 	AutoPay                    requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken                string           `position:"Query" name:"ClientToken"`
 	Bandwidth                  requests.Integer `position:"Query" name:"Bandwidth"`
 	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
-	Description                string           `position:"Query" name:"Description"`
 	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
-	BandwidthPackageChargeType string           `position:"Query" name:"BandwidthPackageChargeType"`
 	Name                       string           `position:"Query" name:"Name"`
 	PricingCycle               string           `position:"Query" name:"PricingCycle"`
 }
@@ -105,7 +105,7 @@ func CreateCreateCenBandwidthPackageRequest() (request *CreateCenBandwidthPackag
 	request = &CreateCenBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenBandwidthPackage", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCenBandwidthPackage", "Cbn", "openAPI")
 	return
 }
 

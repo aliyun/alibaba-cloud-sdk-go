@@ -76,14 +76,14 @@ func (client *Client) ModifyCenAttributeWithCallback(request *ModifyCenAttribute
 // ModifyCenAttributeRequest is the request struct for api ModifyCenAttribute
 type ModifyCenAttributeRequest struct {
 	*requests.RpcRequest
-	ProtectionLevel      string           `position:"Query" name:"ProtectionLevel"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                string           `position:"Query" name:"CenId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
 	Description          string           `position:"Query" name:"Description"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ProtectionLevel      string           `position:"Query" name:"ProtectionLevel"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // ModifyCenAttributeResponse is the response struct for api ModifyCenAttribute
@@ -97,7 +97,7 @@ func CreateModifyCenAttributeRequest() (request *ModifyCenAttributeRequest) {
 	request = &ModifyCenAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyCenAttribute", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyCenAttribute", "Cbn", "openAPI")
 	return
 }
 

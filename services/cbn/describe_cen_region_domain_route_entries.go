@@ -77,23 +77,24 @@ func (client *Client) DescribeCenRegionDomainRouteEntriesWithCallback(request *D
 type DescribeCenRegionDomainRouteEntriesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                string           `position:"Query" name:"CenId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	CenRegionId          string           `position:"Query" name:"CenRegionId"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	CenRegionId          string           `position:"Query" name:"CenRegionId"`
+	Status               string           `position:"Query" name:"Status"`
 }
 
 // DescribeCenRegionDomainRouteEntriesResponse is the response struct for api DescribeCenRegionDomainRouteEntries
 type DescribeCenRegionDomainRouteEntriesResponse struct {
 	*responses.BaseResponse
-	RequestId       string          `json:"RequestId" xml:"RequestId"`
-	PageNumber      int             `json:"PageNumber" xml:"PageNumber"`
-	TotalCount      int             `json:"TotalCount" xml:"TotalCount"`
-	PageSize        int             `json:"PageSize" xml:"PageSize"`
-	CenRouteEntries CenRouteEntries `json:"CenRouteEntries" xml:"CenRouteEntries"`
+	RequestId       string                                               `json:"RequestId" xml:"RequestId"`
+	PageNumber      int                                                  `json:"PageNumber" xml:"PageNumber"`
+	TotalCount      int                                                  `json:"TotalCount" xml:"TotalCount"`
+	PageSize        int                                                  `json:"PageSize" xml:"PageSize"`
+	CenRouteEntries CenRouteEntriesInDescribeCenRegionDomainRouteEntries `json:"CenRouteEntries" xml:"CenRouteEntries"`
 }
 
 // CreateDescribeCenRegionDomainRouteEntriesRequest creates a request to invoke DescribeCenRegionDomainRouteEntries API
@@ -101,7 +102,7 @@ func CreateDescribeCenRegionDomainRouteEntriesRequest() (request *DescribeCenReg
 	request = &DescribeCenRegionDomainRouteEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenRegionDomainRouteEntries", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenRegionDomainRouteEntries", "Cbn", "openAPI")
 	return
 }
 

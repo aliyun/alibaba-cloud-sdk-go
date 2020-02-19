@@ -78,9 +78,9 @@ type DeleteCenBandwidthPackageRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	CenBandwidthPackageId string           `position:"Query" name:"CenBandwidthPackageId"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	CenBandwidthPackageId string           `position:"Query" name:"CenBandwidthPackageId"`
 }
 
 // DeleteCenBandwidthPackageResponse is the response struct for api DeleteCenBandwidthPackage
@@ -94,7 +94,7 @@ func CreateDeleteCenBandwidthPackageRequest() (request *DeleteCenBandwidthPackag
 	request = &DeleteCenBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenBandwidthPackage", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenBandwidthPackage", "Cbn", "openAPI")
 	return
 }
 

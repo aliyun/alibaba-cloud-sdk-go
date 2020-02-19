@@ -21,6 +21,6 @@ type CenInterRegionBandwidthLimit struct {
 	LocalRegionId    string `json:"LocalRegionId" xml:"LocalRegionId"`
 	OppositeRegionId string `json:"OppositeRegionId" xml:"OppositeRegionId"`
 	GeographicSpanId string `json:"GeographicSpanId" xml:"GeographicSpanId"`
-	BandwidthLimit   int    `json:"BandwidthLimit" xml:"BandwidthLimit"`
+	BandwidthLimit   int64  `json:"BandwidthLimit" xml:"BandwidthLimit"`
 	Status           string `json:"Status" xml:"Status"`
 }

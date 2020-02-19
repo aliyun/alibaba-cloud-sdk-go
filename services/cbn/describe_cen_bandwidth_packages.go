@@ -76,14 +76,15 @@ func (client *Client) DescribeCenBandwidthPackagesWithCallback(request *Describe
 // DescribeCenBandwidthPackagesRequest is the request struct for api DescribeCenBandwidthPackages
 type DescribeCenBandwidthPackagesRequest struct {
 	*requests.RpcRequest
-	Filter               *[]DescribeCenBandwidthPackagesFilter `position:"Query" name:"Filter"  type:"Repeated"`
-	ResourceOwnerId      requests.Integer                      `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string                                `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string                                `position:"Query" name:"OwnerAccount"`
-	PageSize             requests.Integer                      `position:"Query" name:"PageSize"`
-	OwnerId              requests.Integer                      `position:"Query" name:"OwnerId"`
-	PageNumber           requests.Integer                      `position:"Query" name:"PageNumber"`
-	IsOrKey              requests.Boolean                      `position:"Query" name:"IsOrKey"`
+	ResourceOwnerId        requests.Integer                      `position:"Query" name:"ResourceOwnerId"`
+	IncludeReservationData requests.Boolean                      `position:"Query" name:"IncludeReservationData"`
+	PageNumber             requests.Integer                      `position:"Query" name:"PageNumber"`
+	IsOrKey                requests.Boolean                      `position:"Query" name:"IsOrKey"`
+	PageSize               requests.Integer                      `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount   string                                `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount           string                                `position:"Query" name:"OwnerAccount"`
+	OwnerId                requests.Integer                      `position:"Query" name:"OwnerId"`
+	Filter                 *[]DescribeCenBandwidthPackagesFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 
 // DescribeCenBandwidthPackagesFilter is a repeated param struct in DescribeCenBandwidthPackagesRequest
@@ -107,7 +108,7 @@ func CreateDescribeCenBandwidthPackagesRequest() (request *DescribeCenBandwidthP
 	request = &DescribeCenBandwidthPackagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenBandwidthPackages", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenBandwidthPackages", "Cbn", "openAPI")
 	return
 }
 

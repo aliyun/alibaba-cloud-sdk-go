@@ -77,13 +77,13 @@ func (client *Client) DisableCenVbrHealthCheckWithCallback(request *DisableCenVb
 type DisableCenVbrHealthCheckRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                string           `position:"Query" name:"CenId"`
 	VbrInstanceOwnerId   requests.Integer `position:"Query" name:"VbrInstanceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	VbrInstanceId        string           `position:"Query" name:"VbrInstanceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	VbrInstanceRegionId  string           `position:"Query" name:"VbrInstanceRegionId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VbrInstanceId        string           `position:"Query" name:"VbrInstanceId"`
 }
 
 // DisableCenVbrHealthCheckResponse is the response struct for api DisableCenVbrHealthCheck
@@ -97,7 +97,7 @@ func CreateDisableCenVbrHealthCheckRequest() (request *DisableCenVbrHealthCheckR
 	request = &DisableCenVbrHealthCheckRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DisableCenVbrHealthCheck", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DisableCenVbrHealthCheck", "Cbn", "openAPI")
 	return
 }
 

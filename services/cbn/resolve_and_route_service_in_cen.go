@@ -77,15 +77,16 @@ func (client *Client) ResolveAndRouteServiceInCenWithCallback(request *ResolveAn
 type ResolveAndRouteServiceInCenRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	CenId                string           `position:"Query" name:"CenId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	UpdateInterval       requests.Integer `position:"Query" name:"UpdateInterval"`
 	Host                 string           `position:"Query" name:"Host"`
 	HostRegionId         string           `position:"Query" name:"HostRegionId"`
-	AccessRegionId       string           `position:"Query" name:"AccessRegionId"`
+	HostVpcId            string           `position:"Query" name:"HostVpcId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	UpdateInterval       requests.Integer `position:"Query" name:"UpdateInterval"`
+	AccessRegionIds      *[]string        `position:"Query" name:"AccessRegionIds"  type:"Repeated"`
 }
 
 // ResolveAndRouteServiceInCenResponse is the response struct for api ResolveAndRouteServiceInCen
@@ -99,7 +100,7 @@ func CreateResolveAndRouteServiceInCenRequest() (request *ResolveAndRouteService
 	request = &ResolveAndRouteServiceInCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ResolveAndRouteServiceInCen", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ResolveAndRouteServiceInCen", "Cbn", "openAPI")
 	return
 }
 

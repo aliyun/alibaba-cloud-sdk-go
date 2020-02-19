@@ -21,5 +21,5 @@ type GrantRule struct {
 	ChildInstanceRegionId string `json:"ChildInstanceRegionId" xml:"ChildInstanceRegionId"`
 	ChildInstanceType     string `json:"ChildInstanceType" xml:"ChildInstanceType"`
 	ChildInstanceId       string `json:"ChildInstanceId" xml:"ChildInstanceId"`
-	ChildInstanceOwnerId  int    `json:"ChildInstanceOwnerId" xml:"ChildInstanceOwnerId"`
+	ChildInstanceOwnerId  int64  `json:"ChildInstanceOwnerId" xml:"ChildInstanceOwnerId"`
 }

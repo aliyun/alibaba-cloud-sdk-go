@@ -77,11 +77,11 @@ func (client *Client) DescribeGrantRulesToCenWithCallback(request *DescribeGrant
 type DescribeGrantRulesToCenRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                string           `position:"Query" name:"CenId"`
+	ProductType          string           `position:"Query" name:"ProductType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ProductType          string           `position:"Query" name:"ProductType"`
 }
 
 // DescribeGrantRulesToCenResponse is the response struct for api DescribeGrantRulesToCen
@@ -96,7 +96,7 @@ func CreateDescribeGrantRulesToCenRequest() (request *DescribeGrantRulesToCenReq
 	request = &DescribeGrantRulesToCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGrantRulesToCen", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGrantRulesToCen", "Cbn", "openAPI")
 	return
 }
 

@@ -77,15 +77,15 @@ func (client *Client) DescribeCenVbrHealthCheckWithCallback(request *DescribeCen
 type DescribeCenVbrHealthCheckRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                string           `position:"Query" name:"CenId"`
-	VbrInstanceOwnerId   requests.Integer `position:"Query" name:"VbrInstanceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	VbrInstanceId        string           `position:"Query" name:"VbrInstanceId"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	VbrInstanceRegionId  string           `position:"Query" name:"VbrInstanceRegionId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	VbrInstanceOwnerId   requests.Integer `position:"Query" name:"VbrInstanceOwnerId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	VbrInstanceRegionId  string           `position:"Query" name:"VbrInstanceRegionId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VbrInstanceId        string           `position:"Query" name:"VbrInstanceId"`
 }
 
 // DescribeCenVbrHealthCheckResponse is the response struct for api DescribeCenVbrHealthCheck
@@ -103,7 +103,7 @@ func CreateDescribeCenVbrHealthCheckRequest() (request *DescribeCenVbrHealthChec
 	request = &DescribeCenVbrHealthCheckRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenVbrHealthCheck", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenVbrHealthCheck", "Cbn", "openAPI")
 	return
 }
 

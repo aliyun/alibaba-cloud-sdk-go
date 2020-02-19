@@ -17,9 +17,20 @@ package cbn
 
 // CenRouteEntry is a nested struct in cbn response
 type CenRouteEntry struct {
-	DestinationCidrBlock string `json:"DestinationCidrBlock" xml:"DestinationCidrBlock"`
-	Type                 string `json:"Type" xml:"Type"`
-	NextHopInstanceId    string `json:"NextHopInstanceId" xml:"NextHopInstanceId"`
-	NextHopType          string `json:"NextHopType" xml:"NextHopType"`
-	NextHopRegionId      string `json:"NextHopRegionId" xml:"NextHopRegionId"`
+	Preference            int                                                      `json:"Preference" xml:"Preference"`
+	PublishStatus         string                                                   `json:"PublishStatus" xml:"PublishStatus"`
+	NextHopType           string                                                   `json:"NextHopType" xml:"NextHopType"`
+	OperationalMode       bool                                                     `json:"OperationalMode" xml:"OperationalMode"`
+	RouteTableId          string                                                   `json:"RouteTableId" xml:"RouteTableId"`
+	ToOtherRegionStatus   string                                                   `json:"ToOtherRegionStatus" xml:"ToOtherRegionStatus"`
+	NextHopInstanceId     string                                                   `json:"NextHopInstanceId" xml:"NextHopInstanceId"`
+	Status                string                                                   `json:"Status" xml:"Status"`
+	DestinationCidrBlock  string                                                   `json:"DestinationCidrBlock" xml:"DestinationCidrBlock"`
+	NextHopRegionId       string                                                   `json:"NextHopRegionId" xml:"NextHopRegionId"`
+	Type                  string                                                   `json:"Type" xml:"Type"`
+	AsPaths               AsPathsInDescribeCenChildInstanceRouteEntries            `json:"AsPaths" xml:"AsPaths"`
+	Communities           CommunitiesInDescribeCenChildInstanceRouteEntries        `json:"Communities" xml:"Communities"`
+	Conflicts             ConflictsInDescribeCenChildInstanceRouteEntries          `json:"Conflicts" xml:"Conflicts"`
+	CenOutRouteMapRecords CenOutRouteMapRecords                                    `json:"CenOutRouteMapRecords" xml:"CenOutRouteMapRecords"`
+	CenRouteMapRecords    CenRouteMapRecordsInDescribeCenChildInstanceRouteEntries `json:"CenRouteMapRecords" xml:"CenRouteMapRecords"`
 }

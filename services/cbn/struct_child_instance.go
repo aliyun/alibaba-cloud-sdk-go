@@ -21,7 +21,7 @@ type ChildInstance struct {
 	ChildInstanceId         string `json:"ChildInstanceId" xml:"ChildInstanceId"`
 	ChildInstanceType       string `json:"ChildInstanceType" xml:"ChildInstanceType"`
 	ChildInstanceRegionId   string `json:"ChildInstanceRegionId" xml:"ChildInstanceRegionId"`
-	ChildInstanceOwnerId    int    `json:"ChildInstanceOwnerId" xml:"ChildInstanceOwnerId"`
+	ChildInstanceOwnerId    int64  `json:"ChildInstanceOwnerId" xml:"ChildInstanceOwnerId"`
 	Status                  string `json:"Status" xml:"Status"`
 	ChildInstanceAttachTime string `json:"ChildInstanceAttachTime" xml:"ChildInstanceAttachTime"`
 }

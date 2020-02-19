@@ -77,15 +77,16 @@ func (client *Client) DescribeRouteServicesInCenWithCallback(request *DescribeRo
 type DescribeRouteServicesInCenRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                string           `position:"Query" name:"CenId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AccessRegionId       string           `position:"Query" name:"AccessRegionId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	Host                 string           `position:"Query" name:"Host"`
 	HostRegionId         string           `position:"Query" name:"HostRegionId"`
-	AccessRegionId       string           `position:"Query" name:"AccessRegionId"`
+	HostVpcId            string           `position:"Query" name:"HostVpcId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeRouteServicesInCenResponse is the response struct for api DescribeRouteServicesInCen
@@ -103,7 +104,7 @@ func CreateDescribeRouteServicesInCenRequest() (request *DescribeRouteServicesIn
 	request = &DescribeRouteServicesInCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeRouteServicesInCen", "cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeRouteServicesInCen", "Cbn", "openAPI")
 	return
 }
 
