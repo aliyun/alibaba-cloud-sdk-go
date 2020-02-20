@@ -5,8 +5,8 @@
 
 ## Summary
 Describes the SSL certificate verification behavior of a request.
-- Set `false` to disable certificate validation, (This is not safe, please set certificates! )
-- Set to `true` to enable SSL certificate verification and use the default CA bundle provided by operating system.
+- Set `true` to disable certificate validation, (This is not safe, please set certificates! )
+- Set to `false` to enable SSL certificate verification and use the default CA bundle provided by operating system.
 
 ## Default
 - `false` 
