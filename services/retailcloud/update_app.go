@@ -76,12 +76,20 @@ func (client *Client) UpdateAppWithCallback(request *UpdateAppRequest, callback 
 // UpdateAppRequest is the request struct for api UpdateApp
 type UpdateAppRequest struct {
 	*requests.RpcRequest
-	BizTitle        string           `position:"Body" name:"BizTitle"`
-	ServiceType     string           `position:"Body" name:"ServiceType"`
-	AppId           requests.Integer `position:"Body" name:"AppId"`
-	OperatingSystem string           `position:"Body" name:"OperatingSystem"`
-	Description     string           `position:"Body" name:"Description"`
-	Language        string           `position:"Body" name:"Language"`
+	BizTitle        string                `position:"Body" name:"BizTitle"`
+	ServiceType     string                `position:"Body" name:"ServiceType"`
+	UserRoles       *[]UpdateAppUserRoles `position:"Body" name:"UserRoles"  type:"Repeated"`
+	AppId           requests.Integer      `position:"Body" name:"AppId"`
+	OperatingSystem string                `position:"Body" name:"OperatingSystem"`
+	Description     string                `position:"Body" name:"Description"`
+	Language        string                `position:"Body" name:"Language"`
+}
+
+// UpdateAppUserRoles is a repeated param struct in UpdateAppRequest
+type UpdateAppUserRoles struct {
+	RoleName string `name:"RoleName"`
+	UserType string `name:"UserType"`
+	UserId   string `name:"UserId"`
 }
 
 // UpdateAppResponse is the response struct for api UpdateApp

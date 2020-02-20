@@ -17,5 +17,5 @@ package retailcloud
 
 // DataInListPersistentVolume is a nested struct in retailcloud response
 type DataInListPersistentVolume struct {
-	ListPersistentVolumeResponse []ListPersistentVolumeResponse `json:"ListPersistentVolumeResponse" xml:"ListPersistentVolumeResponse"`
+	PersistentVolumeDetail []PersistentVolumeDetail `json:"PersistentVolumeDetail" xml:"PersistentVolumeDetail"`
 }

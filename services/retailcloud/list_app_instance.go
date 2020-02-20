@@ -85,13 +85,13 @@ type ListAppInstanceRequest struct {
 // ListAppInstanceResponse is the response struct for api ListAppInstance
 type ListAppInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId  string            `json:"RequestId" xml:"RequestId"`
-	Code       int               `json:"Code" xml:"Code"`
-	PageSize   int               `json:"PageSize" xml:"PageSize"`
-	PageNumber int               `json:"PageNumber" xml:"PageNumber"`
-	TotalCount int64             `json:"TotalCount" xml:"TotalCount"`
-	ErrMsg     string            `json:"ErrMsg" xml:"ErrMsg"`
-	Data       []ListAppInstance `json:"Data" xml:"Data"`
+	RequestId  string              `json:"RequestId" xml:"RequestId"`
+	Code       int                 `json:"Code" xml:"Code"`
+	PageSize   int                 `json:"PageSize" xml:"PageSize"`
+	PageNumber int                 `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int64               `json:"TotalCount" xml:"TotalCount"`
+	ErrMsg     string              `json:"ErrMsg" xml:"ErrMsg"`
+	Data       []AppInstanceDetail `json:"Data" xml:"Data"`
 }
 
 // CreateListAppInstanceRequest creates a request to invoke ListAppInstance API

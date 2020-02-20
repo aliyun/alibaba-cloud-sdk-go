@@ -76,14 +76,23 @@ func (client *Client) CreateAppWithCallback(request *CreateAppRequest, callback 
 // CreateAppRequest is the request struct for api CreateApp
 type CreateAppRequest struct {
 	*requests.RpcRequest
-	BizTitle        string           `position:"Body" name:"BizTitle"`
-	StateType       requests.Integer `position:"Body" name:"StateType"`
-	ServiceType     string           `position:"Body" name:"ServiceType"`
-	BizCode         string           `position:"Body" name:"BizCode"`
-	OperatingSystem string           `position:"Body" name:"OperatingSystem"`
-	Description     string           `position:"Body" name:"Description"`
-	Language        string           `position:"Body" name:"Language"`
-	Title           string           `position:"Body" name:"Title"`
+	BizTitle        string                `position:"Body" name:"BizTitle"`
+	StateType       requests.Integer      `position:"Body" name:"StateType"`
+	ServiceType     string                `position:"Body" name:"ServiceType"`
+	UserRoles       *[]CreateAppUserRoles `position:"Body" name:"UserRoles"  type:"Repeated"`
+	BizCode         string                `position:"Body" name:"BizCode"`
+	OperatingSystem string                `position:"Body" name:"OperatingSystem"`
+	Namespace       string                `position:"Body" name:"Namespace"`
+	Description     string                `position:"Body" name:"Description"`
+	Language        string                `position:"Body" name:"Language"`
+	Title           string                `position:"Body" name:"Title"`
+}
+
+// CreateAppUserRoles is a repeated param struct in CreateAppRequest
+type CreateAppUserRoles struct {
+	RoleName string `name:"RoleName"`
+	UserType string `name:"UserType"`
+	UserId   string `name:"UserId"`
 }
 
 // CreateAppResponse is the response struct for api CreateApp

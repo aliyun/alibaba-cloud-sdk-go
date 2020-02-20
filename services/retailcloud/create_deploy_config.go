@@ -76,13 +76,14 @@ func (client *Client) CreateDeployConfigWithCallback(request *CreateDeployConfig
 // CreateDeployConfigRequest is the request struct for api CreateDeployConfig
 type CreateDeployConfigRequest struct {
 	*requests.RpcRequest
-	CodePath    string           `position:"Query" name:"CodePath"`
-	AppId       requests.Integer `position:"Query" name:"AppId"`
-	ConfigMap   string           `position:"Query" name:"ConfigMap"`
-	StatefulSet string           `position:"Query" name:"StatefulSet"`
-	EnvType     string           `position:"Query" name:"EnvType"`
-	Name        string           `position:"Query" name:"Name"`
-	Deployment  string           `position:"Query" name:"Deployment"`
+	CodePath      string           `position:"Query" name:"CodePath"`
+	ConfigMapList *[]string        `position:"Query" name:"ConfigMapList"  type:"Repeated"`
+	AppId         requests.Integer `position:"Query" name:"AppId"`
+	ConfigMap     string           `position:"Query" name:"ConfigMap"`
+	StatefulSet   string           `position:"Query" name:"StatefulSet"`
+	EnvType       string           `position:"Query" name:"EnvType"`
+	Name          string           `position:"Query" name:"Name"`
+	Deployment    string           `position:"Query" name:"Deployment"`
 }
 
 // CreateDeployConfigResponse is the response struct for api CreateDeployConfig

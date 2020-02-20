@@ -17,5 +17,5 @@ package retailcloud
 
 // DataInListApp is a nested struct in retailcloud response
 type DataInListApp struct {
-	ListAppResponse []ListAppResponse `json:"ListAppResponse" xml:"ListAppResponse"`
+	AppDetail []AppDetail `json:"AppDetail" xml:"AppDetail"`
 }

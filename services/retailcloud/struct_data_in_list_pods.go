@@ -17,5 +17,5 @@ package retailcloud
 
 // DataInListPods is a nested struct in retailcloud response
 type DataInListPods struct {
-	ListPodsResponse []ListPodsResponse `json:"ListPodsResponse" xml:"ListPodsResponse"`
+	PodDetail []PodDetail `json:"PodDetail" xml:"PodDetail"`
 }

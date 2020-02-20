@@ -1,3 +1,8 @@
+2020-02-20 Version: v1.60.383
+- Generated 2018-03-13 for `retailcloud`.
+- Add new api ListUsers.
+- Supported userRole setting for api, CreateApp, UpdateApp, DescribeAppDetail.
+
 2020-02-19 Version: v1.60.382
 - Generated 2017-09-12 for `Cbn`.
 - Support terraform.

@@ -83,11 +83,11 @@ type ListAppRequest struct {
 // ListAppResponse is the response struct for api ListApp
 type ListAppResponse struct {
 	*responses.BaseResponse
-	RequestId  string    `json:"RequestId" xml:"RequestId"`
-	Code       int       `json:"Code" xml:"Code"`
-	ErrorMsg   string    `json:"ErrorMsg" xml:"ErrorMsg"`
-	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
-	Data       []ListApp `json:"Data" xml:"Data"`
+	RequestId  string      `json:"RequestId" xml:"RequestId"`
+	Code       int         `json:"Code" xml:"Code"`
+	ErrorMsg   string      `json:"ErrorMsg" xml:"ErrorMsg"`
+	TotalCount int         `json:"TotalCount" xml:"TotalCount"`
+	Data       []AppDetail `json:"Data" xml:"Data"`
 }
 
 // CreateListAppRequest creates a request to invoke ListApp API
