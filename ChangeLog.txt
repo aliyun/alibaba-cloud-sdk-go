@@ -1,3 +1,7 @@
+2020-02-20 Version: v1.60.385
+- Generated 2019-09-28 for `reid`.
+
+
 2020-02-20 Version: v1.60.384
 - Generated 2019-01-01 for `Cms`.
 - Fix the problem that the three APIs, disablesitemonitors, enablesitemonitors and modifysitemonitor, return result fields are not fully define.
