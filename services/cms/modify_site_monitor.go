@@ -92,7 +92,7 @@ type ModifySiteMonitorResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	Success   string `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      string `json:"Data" xml:"Data"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateModifySiteMonitorRequest creates a request to invoke ModifySiteMonitor API
