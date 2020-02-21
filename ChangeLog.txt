@@ -1,3 +1,7 @@
+2020-02-21 Version: v1.60.387
+- Generated 2019-09-10 for `waf-openapi`.
+
+
 2020-02-21 Version: v1.60.386
 - Support TAG API.
 
