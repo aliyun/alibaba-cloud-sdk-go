@@ -76,8 +76,9 @@ func (client *Client) UpdateTemplateWithCallback(request *UpdateTemplateRequest,
 // UpdateTemplateRequest is the request struct for api UpdateTemplate
 type UpdateTemplateRequest struct {
 	*requests.RpcRequest
-	TemplateName string `position:"Query" name:"TemplateName"`
-	Content      string `position:"Query" name:"Content"`
+	Content      string                 `position:"Query" name:"Content"`
+	Tags         map[string]interface{} `position:"Query" name:"Tags"`
+	TemplateName string                 `position:"Query" name:"TemplateName"`
 }
 
 // UpdateTemplateResponse is the response struct for api UpdateTemplate

@@ -76,8 +76,9 @@ func (client *Client) CreateTemplateWithCallback(request *CreateTemplateRequest,
 // CreateTemplateRequest is the request struct for api CreateTemplate
 type CreateTemplateRequest struct {
 	*requests.RpcRequest
-	TemplateName string `position:"Query" name:"TemplateName"`
-	Content      string `position:"Query" name:"Content"`
+	Content      string                 `position:"Query" name:"Content"`
+	Tags         map[string]interface{} `position:"Query" name:"Tags"`
+	TemplateName string                 `position:"Query" name:"TemplateName"`
 }
 
 // CreateTemplateResponse is the response struct for api CreateTemplate

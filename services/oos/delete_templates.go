@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteTemplate invokes the oos.DeleteTemplate API synchronously
-// api document: https://help.aliyun.com/api/oos/deletetemplate.html
-func (client *Client) DeleteTemplate(request *DeleteTemplateRequest) (response *DeleteTemplateResponse, err error) {
-	response = CreateDeleteTemplateResponse()
+// DeleteTemplates invokes the oos.DeleteTemplates API synchronously
+// api document: https://help.aliyun.com/api/oos/deletetemplates.html
+func (client *Client) DeleteTemplates(request *DeleteTemplatesRequest) (response *DeleteTemplatesResponse, err error) {
+	response = CreateDeleteTemplatesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteTemplateWithChan invokes the oos.DeleteTemplate API asynchronously
-// api document: https://help.aliyun.com/api/oos/deletetemplate.html
+// DeleteTemplatesWithChan invokes the oos.DeleteTemplates API asynchronously
+// api document: https://help.aliyun.com/api/oos/deletetemplates.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteTemplateWithChan(request *DeleteTemplateRequest) (<-chan *DeleteTemplateResponse, <-chan error) {
-	responseChan := make(chan *DeleteTemplateResponse, 1)
+func (client *Client) DeleteTemplatesWithChan(request *DeleteTemplatesRequest) (<-chan *DeleteTemplatesResponse, <-chan error) {
+	responseChan := make(chan *DeleteTemplatesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteTemplate(request)
+		response, err := client.DeleteTemplates(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteTemplateWithChan(request *DeleteTemplateRequest) (<-
 	return responseChan, errChan
 }
 
-// DeleteTemplateWithCallback invokes the oos.DeleteTemplate API asynchronously
-// api document: https://help.aliyun.com/api/oos/deletetemplate.html
+// DeleteTemplatesWithCallback invokes the oos.DeleteTemplates API asynchronously
+// api document: https://help.aliyun.com/api/oos/deletetemplates.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteTemplateWithCallback(request *DeleteTemplateRequest, callback func(response *DeleteTemplateResponse, err error)) <-chan int {
+func (client *Client) DeleteTemplatesWithCallback(request *DeleteTemplatesRequest, callback func(response *DeleteTemplatesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteTemplateResponse
+		var response *DeleteTemplatesResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteTemplate(request)
+		response, err = client.DeleteTemplates(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,31 +73,31 @@ func (client *Client) DeleteTemplateWithCallback(request *DeleteTemplateRequest,
 	return result
 }
 
-// DeleteTemplateRequest is the request struct for api DeleteTemplate
-type DeleteTemplateRequest struct {
+// DeleteTemplatesRequest is the request struct for api DeleteTemplates
+type DeleteTemplatesRequest struct {
 	*requests.RpcRequest
+	TemplateNames        string           `position:"Query" name:"TemplateNames"`
 	AutoDeleteExecutions requests.Boolean `position:"Query" name:"AutoDeleteExecutions"`
-	TemplateName         string           `position:"Query" name:"TemplateName"`
 }
 
-// DeleteTemplateResponse is the response struct for api DeleteTemplate
-type DeleteTemplateResponse struct {
+// DeleteTemplatesResponse is the response struct for api DeleteTemplates
+type DeleteTemplatesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDeleteTemplateRequest creates a request to invoke DeleteTemplate API
-func CreateDeleteTemplateRequest() (request *DeleteTemplateRequest) {
-	request = &DeleteTemplateRequest{
+// CreateDeleteTemplatesRequest creates a request to invoke DeleteTemplates API
+func CreateDeleteTemplatesRequest() (request *DeleteTemplatesRequest) {
+	request = &DeleteTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "DeleteTemplate", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "DeleteTemplates", "oos", "openAPI")
 	return
 }
 
-// CreateDeleteTemplateResponse creates a response to parse from DeleteTemplate response
-func CreateDeleteTemplateResponse() (response *DeleteTemplateResponse) {
-	response = &DeleteTemplateResponse{
+// CreateDeleteTemplatesResponse creates a response to parse from DeleteTemplates response
+func CreateDeleteTemplatesResponse() (response *DeleteTemplatesResponse) {
+	response = &DeleteTemplatesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

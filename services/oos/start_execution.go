@@ -76,12 +76,16 @@ func (client *Client) StartExecutionWithCallback(request *StartExecutionRequest,
 // StartExecutionRequest is the request struct for api StartExecution
 type StartExecutionRequest struct {
 	*requests.RpcRequest
-	Mode              string `position:"Query" name:"Mode"`
-	TemplateVersion   string `position:"Query" name:"TemplateVersion"`
-	ParentExecutionId string `position:"Query" name:"ParentExecutionId"`
-	TemplateName      string `position:"Query" name:"TemplateName"`
-	SafetyCheck       string `position:"Query" name:"SafetyCheck"`
-	Parameters        string `position:"Query" name:"Parameters"`
+	ClientToken       string                 `position:"Query" name:"ClientToken"`
+	Description       string                 `position:"Query" name:"Description"`
+	Mode              string                 `position:"Query" name:"Mode"`
+	TemplateVersion   string                 `position:"Query" name:"TemplateVersion"`
+	TemplateName      string                 `position:"Query" name:"TemplateName"`
+	LoopMode          string                 `position:"Query" name:"LoopMode"`
+	SafetyCheck       string                 `position:"Query" name:"SafetyCheck"`
+	Tags              map[string]interface{} `position:"Query" name:"Tags"`
+	ParentExecutionId string                 `position:"Query" name:"ParentExecutionId"`
+	Parameters        string                 `position:"Query" name:"Parameters"`
 }
 
 // StartExecutionResponse is the response struct for api StartExecution

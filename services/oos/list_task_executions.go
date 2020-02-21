@@ -76,18 +76,18 @@ func (client *Client) ListTaskExecutionsWithCallback(request *ListTaskExecutions
 // ListTaskExecutionsRequest is the request struct for api ListTaskExecutions
 type ListTaskExecutionsRequest struct {
 	*requests.RpcRequest
-	StartDateAfter            string           `position:"Query" name:"StartDateAfter"`
-	StartDateBefore           string           `position:"Query" name:"StartDateBefore"`
 	TaskName                  string           `position:"Query" name:"TaskName"`
 	IncludeChildTaskExecution requests.Boolean `position:"Query" name:"IncludeChildTaskExecution"`
 	ExecutionId               string           `position:"Query" name:"ExecutionId"`
 	ParentTaskExecutionId     string           `position:"Query" name:"ParentTaskExecutionId"`
 	NextToken                 string           `position:"Query" name:"NextToken"`
+	EndDateBefore             string           `position:"Query" name:"EndDateBefore"`
+	SortOrder                 string           `position:"Query" name:"SortOrder"`
+	StartDateAfter            string           `position:"Query" name:"StartDateAfter"`
+	StartDateBefore           string           `position:"Query" name:"StartDateBefore"`
 	EndDateAfter              string           `position:"Query" name:"EndDateAfter"`
 	MaxResults                requests.Integer `position:"Query" name:"MaxResults"`
-	EndDateBefore             string           `position:"Query" name:"EndDateBefore"`
 	TaskExecutionId           string           `position:"Query" name:"TaskExecutionId"`
-	SortOrder                 string           `position:"Query" name:"SortOrder"`
 	SortField                 string           `position:"Query" name:"SortField"`
 	TaskAction                string           `position:"Query" name:"TaskAction"`
 	Status                    string           `position:"Query" name:"Status"`

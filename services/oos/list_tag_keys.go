@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ListActions invokes the oos.ListActions API synchronously
-// api document: https://help.aliyun.com/api/oos/listactions.html
-func (client *Client) ListActions(request *ListActionsRequest) (response *ListActionsResponse, err error) {
-	response = CreateListActionsResponse()
+// ListTagKeys invokes the oos.ListTagKeys API synchronously
+// api document: https://help.aliyun.com/api/oos/listtagkeys.html
+func (client *Client) ListTagKeys(request *ListTagKeysRequest) (response *ListTagKeysResponse, err error) {
+	response = CreateListTagKeysResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ListActionsWithChan invokes the oos.ListActions API asynchronously
-// api document: https://help.aliyun.com/api/oos/listactions.html
+// ListTagKeysWithChan invokes the oos.ListTagKeys API asynchronously
+// api document: https://help.aliyun.com/api/oos/listtagkeys.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ListActionsWithChan(request *ListActionsRequest) (<-chan *ListActionsResponse, <-chan error) {
-	responseChan := make(chan *ListActionsResponse, 1)
+func (client *Client) ListTagKeysWithChan(request *ListTagKeysRequest) (<-chan *ListTagKeysResponse, <-chan error) {
+	responseChan := make(chan *ListTagKeysResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListActions(request)
+		response, err := client.ListTagKeys(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ListActionsWithChan(request *ListActionsRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// ListActionsWithCallback invokes the oos.ListActions API asynchronously
-// api document: https://help.aliyun.com/api/oos/listactions.html
+// ListTagKeysWithCallback invokes the oos.ListTagKeys API asynchronously
+// api document: https://help.aliyun.com/api/oos/listtagkeys.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ListActionsWithCallback(request *ListActionsRequest, callback func(response *ListActionsResponse, err error)) <-chan int {
+func (client *Client) ListTagKeysWithCallback(request *ListTagKeysRequest, callback func(response *ListTagKeysResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListActionsResponse
+		var response *ListTagKeysResponse
 		var err error
 		defer close(result)
-		response, err = client.ListActions(request)
+		response, err = client.ListTagKeys(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,35 @@ func (client *Client) ListActionsWithCallback(request *ListActionsRequest, callb
 	return result
 }
 
-// ListActionsRequest is the request struct for api ListActions
-type ListActionsRequest struct {
+// ListTagKeysRequest is the request struct for api ListTagKeys
+type ListTagKeysRequest struct {
 	*requests.RpcRequest
-	OOSActionName string           `position:"Query" name:"OOSActionName"`
-	NextToken     string           `position:"Query" name:"NextToken"`
-	MaxResults    requests.Integer `position:"Query" name:"MaxResults"`
+	ResourceType string           `position:"Query" name:"ResourceType"`
+	NextToken    string           `position:"Query" name:"NextToken"`
+	MaxResults   requests.Integer `position:"Query" name:"MaxResults"`
 }
 
-// ListActionsResponse is the response struct for api ListActions
-type ListActionsResponse struct {
+// ListTagKeysResponse is the response struct for api ListTagKeys
+type ListTagKeysResponse struct {
 	*responses.BaseResponse
 	RequestId  string   `json:"RequestId" xml:"RequestId"`
 	MaxResults int      `json:"MaxResults" xml:"MaxResults"`
 	NextToken  string   `json:"NextToken" xml:"NextToken"`
-	Actions    []Action `json:"Actions" xml:"Actions"`
+	Keys       []string `json:"Keys" xml:"Keys"`
 }
 
-// CreateListActionsRequest creates a request to invoke ListActions API
-func CreateListActionsRequest() (request *ListActionsRequest) {
-	request = &ListActionsRequest{
+// CreateListTagKeysRequest creates a request to invoke ListTagKeys API
+func CreateListTagKeysRequest() (request *ListTagKeysRequest) {
+	request = &ListTagKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListActions", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListTagKeys", "oos", "openAPI")
 	return
 }
 
-// CreateListActionsResponse creates a response to parse from ListActions response
-func CreateListActionsResponse() (response *ListActionsResponse) {
-	response = &ListActionsResponse{
+// CreateListTagKeysResponse creates a response to parse from ListTagKeys response
+func CreateListTagKeysResponse() (response *ListTagKeysResponse) {
+	response = &ListTagKeysResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

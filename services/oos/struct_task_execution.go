@@ -35,4 +35,5 @@ type TaskExecution struct {
 	LoopItem              string `json:"LoopItem" xml:"LoopItem"`
 	Loop                  string `json:"Loop" xml:"Loop"`
 	ExtraData             string `json:"ExtraData" xml:"ExtraData"`
+	LoopBatchNumber       int    `json:"LoopBatchNumber" xml:"LoopBatchNumber"`
 }

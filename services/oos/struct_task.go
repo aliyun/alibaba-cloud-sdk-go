@@ -18,8 +18,8 @@ package oos
 // Task is a nested struct in oos response
 type Task struct {
 	Name        string `json:"Name" xml:"Name"`
-	Type        string `json:"Type" xml:"Type"`
+	Outputs     string `json:"Outputs" xml:"Outputs"`
 	Description string `json:"Description" xml:"Description"`
 	Properties  string `json:"Properties" xml:"Properties"`
-	Outputs     string `json:"Outputs" xml:"Outputs"`
+	Type        string `json:"Type" xml:"Type"`
 }

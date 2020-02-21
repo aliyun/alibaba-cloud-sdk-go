@@ -1,3 +1,6 @@
+2020-02-21 Version: v1.60.386
+- Support TAG API.
+
 2020-02-20 Version: v1.60.385
 - Generated 2019-09-28 for `reid`.
 

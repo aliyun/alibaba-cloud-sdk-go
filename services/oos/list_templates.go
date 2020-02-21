@@ -76,16 +76,19 @@ func (client *Client) ListTemplatesWithCallback(request *ListTemplatesRequest, c
 // ListTemplatesRequest is the request struct for api ListTemplates
 type ListTemplatesRequest struct {
 	*requests.RpcRequest
-	CreatedDateBefore string           `position:"Query" name:"CreatedDateBefore"`
-	CreatedBy         string           `position:"Query" name:"CreatedBy"`
-	NextToken         string           `position:"Query" name:"NextToken"`
-	CreatedDateAfter  string           `position:"Query" name:"CreatedDateAfter"`
-	MaxResults        requests.Integer `position:"Query" name:"MaxResults"`
-	TemplateName      string           `position:"Query" name:"TemplateName"`
-	SortOrder         string           `position:"Query" name:"SortOrder"`
-	TemplateFormat    string           `position:"Query" name:"TemplateFormat"`
-	ShareType         string           `position:"Query" name:"ShareType"`
-	SortField         string           `position:"Query" name:"SortField"`
+	CreatedDateBefore string                 `position:"Query" name:"CreatedDateBefore"`
+	CreatedBy         string                 `position:"Query" name:"CreatedBy"`
+	NextToken         string                 `position:"Query" name:"NextToken"`
+	TemplateName      string                 `position:"Query" name:"TemplateName"`
+	SortOrder         string                 `position:"Query" name:"SortOrder"`
+	ShareType         string                 `position:"Query" name:"ShareType"`
+	HasTrigger        requests.Boolean       `position:"Query" name:"HasTrigger"`
+	CreatedDateAfter  string                 `position:"Query" name:"CreatedDateAfter"`
+	Tags              map[string]interface{} `position:"Query" name:"Tags"`
+	MaxResults        requests.Integer       `position:"Query" name:"MaxResults"`
+	TemplateFormat    string                 `position:"Query" name:"TemplateFormat"`
+	SortField         string                 `position:"Query" name:"SortField"`
+	Category          string                 `position:"Query" name:"Category"`
 }
 
 // ListTemplatesResponse is the response struct for api ListTemplates

@@ -76,9 +76,11 @@ func (client *Client) ListExecutionLogsWithCallback(request *ListExecutionLogsRe
 // ListExecutionLogsRequest is the request struct for api ListExecutionLogs
 type ListExecutionLogsRequest struct {
 	*requests.RpcRequest
-	ExecutionId string           `position:"Query" name:"ExecutionId"`
-	NextToken   string           `position:"Query" name:"NextToken"`
-	MaxResults  requests.Integer `position:"Query" name:"MaxResults"`
+	ExecutionId     string           `position:"Query" name:"ExecutionId"`
+	LogType         string           `position:"Query" name:"LogType"`
+	NextToken       string           `position:"Query" name:"NextToken"`
+	MaxResults      requests.Integer `position:"Query" name:"MaxResults"`
+	TaskExecutionId string           `position:"Query" name:"TaskExecutionId"`
 }
 
 // ListExecutionLogsResponse is the response struct for api ListExecutionLogs
@@ -87,6 +89,7 @@ type ListExecutionLogsResponse struct {
 	RequestId     string         `json:"RequestId" xml:"RequestId"`
 	MaxResults    int            `json:"MaxResults" xml:"MaxResults"`
 	NextToken     string         `json:"NextToken" xml:"NextToken"`
+	IsTruncated   bool           `json:"IsTruncated" xml:"IsTruncated"`
 	ExecutionLogs []ExecutionLog `json:"ExecutionLogs" xml:"ExecutionLogs"`
 }
 

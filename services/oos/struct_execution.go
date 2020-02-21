@@ -17,24 +17,30 @@ package oos
 
 // Execution is a nested struct in oos response
 type Execution struct {
-	TemplateId        string        `json:"TemplateId" xml:"TemplateId"`
-	ExecutedBy        string        `json:"ExecutedBy" xml:"ExecutedBy"`
-	EndDate           string        `json:"EndDate" xml:"EndDate"`
-	TemplateName      string        `json:"TemplateName" xml:"TemplateName"`
-	RamRole           string        `json:"RamRole" xml:"RamRole"`
-	IsParent          bool          `json:"IsParent" xml:"IsParent"`
-	StatusMessage     string        `json:"StatusMessage" xml:"StatusMessage"`
-	Mode              string        `json:"Mode" xml:"Mode"`
-	StartDate         string        `json:"StartDate" xml:"StartDate"`
-	SafetyCheck       string        `json:"SafetyCheck" xml:"SafetyCheck"`
-	TemplateVersion   string        `json:"TemplateVersion" xml:"TemplateVersion"`
-	CreateDate        string        `json:"CreateDate" xml:"CreateDate"`
-	Parameters        string        `json:"Parameters" xml:"Parameters"`
-	Counters          string        `json:"Counters" xml:"Counters"`
-	UpdateDate        string        `json:"UpdateDate" xml:"UpdateDate"`
-	ParentExecutionId string        `json:"ParentExecutionId" xml:"ParentExecutionId"`
-	Outputs           string        `json:"Outputs" xml:"Outputs"`
-	ExecutionId       string        `json:"ExecutionId" xml:"ExecutionId"`
-	Status            string        `json:"Status" xml:"Status"`
-	CurrentTasks      []CurrentTask `json:"CurrentTasks" xml:"CurrentTasks"`
+	TemplateId        string                 `json:"TemplateId" xml:"TemplateId"`
+	Category          string                 `json:"Category" xml:"Category"`
+	ExecutedBy        string                 `json:"ExecutedBy" xml:"ExecutedBy"`
+	TemplateName      string                 `json:"TemplateName" xml:"TemplateName"`
+	WaitingStatus     string                 `json:"WaitingStatus" xml:"WaitingStatus"`
+	IsParent          bool                   `json:"IsParent" xml:"IsParent"`
+	StatusMessage     string                 `json:"StatusMessage" xml:"StatusMessage"`
+	Mode              string                 `json:"Mode" xml:"Mode"`
+	SafetyCheck       string                 `json:"SafetyCheck" xml:"SafetyCheck"`
+	TemplateVersion   string                 `json:"TemplateVersion" xml:"TemplateVersion"`
+	UpdateDate        string                 `json:"UpdateDate" xml:"UpdateDate"`
+	ParentExecutionId string                 `json:"ParentExecutionId" xml:"ParentExecutionId"`
+	Outputs           string                 `json:"Outputs" xml:"Outputs"`
+	Description       string                 `json:"Description" xml:"Description"`
+	Tags              map[string]interface{} `json:"Tags" xml:"Tags"`
+	EndDate           string                 `json:"EndDate" xml:"EndDate"`
+	RamRole           string                 `json:"RamRole" xml:"RamRole"`
+	LoopMode          string                 `json:"LoopMode" xml:"LoopMode"`
+	StartDate         string                 `json:"StartDate" xml:"StartDate"`
+	StatusReason      string                 `json:"StatusReason" xml:"StatusReason"`
+	CreateDate        string                 `json:"CreateDate" xml:"CreateDate"`
+	Parameters        string                 `json:"Parameters" xml:"Parameters"`
+	Counters          string                 `json:"Counters" xml:"Counters"`
+	ExecutionId       string                 `json:"ExecutionId" xml:"ExecutionId"`
+	Status            string                 `json:"Status" xml:"Status"`
+	CurrentTasks      []CurrentTask          `json:"CurrentTasks" xml:"CurrentTasks"`
 }

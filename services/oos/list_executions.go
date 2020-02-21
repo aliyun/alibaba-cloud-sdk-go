@@ -76,22 +76,24 @@ func (client *Client) ListExecutionsWithCallback(request *ListExecutionsRequest,
 // ListExecutionsRequest is the request struct for api ListExecutions
 type ListExecutionsRequest struct {
 	*requests.RpcRequest
-	ExecutedBy            string           `position:"Query" name:"ExecutedBy"`
-	IncludeChildExecution requests.Boolean `position:"Query" name:"IncludeChildExecution"`
-	StartDateAfter        string           `position:"Query" name:"StartDateAfter"`
-	StartDateBefore       string           `position:"Query" name:"StartDateBefore"`
-	Mode                  string           `position:"Query" name:"Mode"`
-	ExecutionId           string           `position:"Query" name:"ExecutionId"`
-	ParentExecutionId     string           `position:"Query" name:"ParentExecutionId"`
-	RamRole               string           `position:"Query" name:"RamRole"`
-	NextToken             string           `position:"Query" name:"NextToken"`
-	EndDateAfter          string           `position:"Query" name:"EndDateAfter"`
-	MaxResults            requests.Integer `position:"Query" name:"MaxResults"`
-	TemplateName          string           `position:"Query" name:"TemplateName"`
-	EndDateBefore         string           `position:"Query" name:"EndDateBefore"`
-	SortOrder             string           `position:"Query" name:"SortOrder"`
-	SortField             string           `position:"Query" name:"SortField"`
-	Status                string           `position:"Query" name:"Status"`
+	ExecutedBy            string                 `position:"Query" name:"ExecutedBy"`
+	IncludeChildExecution requests.Boolean       `position:"Query" name:"IncludeChildExecution"`
+	Mode                  string                 `position:"Query" name:"Mode"`
+	ExecutionId           string                 `position:"Query" name:"ExecutionId"`
+	RamRole               string                 `position:"Query" name:"RamRole"`
+	NextToken             string                 `position:"Query" name:"NextToken"`
+	TemplateName          string                 `position:"Query" name:"TemplateName"`
+	EndDateBefore         string                 `position:"Query" name:"EndDateBefore"`
+	SortOrder             string                 `position:"Query" name:"SortOrder"`
+	StartDateAfter        string                 `position:"Query" name:"StartDateAfter"`
+	StartDateBefore       string                 `position:"Query" name:"StartDateBefore"`
+	Tags                  map[string]interface{} `position:"Query" name:"Tags"`
+	ParentExecutionId     string                 `position:"Query" name:"ParentExecutionId"`
+	EndDateAfter          string                 `position:"Query" name:"EndDateAfter"`
+	MaxResults            requests.Integer       `position:"Query" name:"MaxResults"`
+	SortField             string                 `position:"Query" name:"SortField"`
+	Category              string                 `position:"Query" name:"Category"`
+	Status                string                 `position:"Query" name:"Status"`
 }
 
 // ListExecutionsResponse is the response struct for api ListExecutions

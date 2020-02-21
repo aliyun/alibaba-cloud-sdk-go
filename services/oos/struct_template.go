@@ -17,17 +17,20 @@ package oos
 
 // Template is a nested struct in oos response
 type Template struct {
-	TemplateId          string `json:"TemplateId" xml:"TemplateId"`
-	TotalExecutionCount int    `json:"TotalExecutionCount" xml:"TotalExecutionCount"`
-	TemplateName        string `json:"TemplateName" xml:"TemplateName"`
-	Hash                string `json:"Hash" xml:"Hash"`
-	CreatedBy           string `json:"CreatedBy" xml:"CreatedBy"`
-	TemplateVersion     string `json:"TemplateVersion" xml:"TemplateVersion"`
-	TemplateFormat      string `json:"TemplateFormat" xml:"TemplateFormat"`
-	UpdatedBy           string `json:"UpdatedBy" xml:"UpdatedBy"`
-	CreatedDate         string `json:"CreatedDate" xml:"CreatedDate"`
-	Description         string `json:"Description" xml:"Description"`
-	UpdatedDate         string `json:"UpdatedDate" xml:"UpdatedDate"`
-	Popularity          int    `json:"Popularity" xml:"Popularity"`
-	ShareType           string `json:"ShareType" xml:"ShareType"`
+	TemplateId          string                 `json:"TemplateId" xml:"TemplateId"`
+	Category            string                 `json:"Category" xml:"Category"`
+	TotalExecutionCount int                    `json:"TotalExecutionCount" xml:"TotalExecutionCount"`
+	TemplateName        string                 `json:"TemplateName" xml:"TemplateName"`
+	Hash                string                 `json:"Hash" xml:"Hash"`
+	CreatedBy           string                 `json:"CreatedBy" xml:"CreatedBy"`
+	TemplateVersion     string                 `json:"TemplateVersion" xml:"TemplateVersion"`
+	TemplateFormat      string                 `json:"TemplateFormat" xml:"TemplateFormat"`
+	UpdatedBy           string                 `json:"UpdatedBy" xml:"UpdatedBy"`
+	CreatedDate         string                 `json:"CreatedDate" xml:"CreatedDate"`
+	HasTrigger          bool                   `json:"HasTrigger" xml:"HasTrigger"`
+	Description         string                 `json:"Description" xml:"Description"`
+	UpdatedDate         string                 `json:"UpdatedDate" xml:"UpdatedDate"`
+	Tags                map[string]interface{} `json:"Tags" xml:"Tags"`
+	Popularity          int                    `json:"Popularity" xml:"Popularity"`
+	ShareType           string                 `json:"ShareType" xml:"ShareType"`
 }

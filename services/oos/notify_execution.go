@@ -76,11 +76,13 @@ func (client *Client) NotifyExecutionWithCallback(request *NotifyExecutionReques
 // NotifyExecutionRequest is the request struct for api NotifyExecution
 type NotifyExecutionRequest struct {
 	*requests.RpcRequest
+	TaskName        string `position:"Query" name:"TaskName"`
 	ExecutionId     string `position:"Query" name:"ExecutionId"`
+	NotifyType      string `position:"Query" name:"NotifyType"`
 	ExecutionStatus string `position:"Query" name:"ExecutionStatus"`
 	NotifyNote      string `position:"Query" name:"NotifyNote"`
-	TaskName        string `position:"Query" name:"TaskName"`
-	NotifyType      string `position:"Query" name:"NotifyType"`
+	LoopItem        string `position:"Query" name:"LoopItem"`
+	TaskExecutionId string `position:"Query" name:"TaskExecutionId"`
 	Parameters      string `position:"Query" name:"Parameters"`
 }
 
