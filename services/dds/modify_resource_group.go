@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateAccount invokes the dds.CreateAccount API synchronously
-// api document: https://help.aliyun.com/api/dds/createaccount.html
-func (client *Client) CreateAccount(request *CreateAccountRequest) (response *CreateAccountResponse, err error) {
-	response = CreateCreateAccountResponse()
+// ModifyResourceGroup invokes the dds.ModifyResourceGroup API synchronously
+// api document: https://help.aliyun.com/api/dds/modifyresourcegroup.html
+func (client *Client) ModifyResourceGroup(request *ModifyResourceGroupRequest) (response *ModifyResourceGroupResponse, err error) {
+	response = CreateModifyResourceGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateAccountWithChan invokes the dds.CreateAccount API asynchronously
-// api document: https://help.aliyun.com/api/dds/createaccount.html
+// ModifyResourceGroupWithChan invokes the dds.ModifyResourceGroup API asynchronously
+// api document: https://help.aliyun.com/api/dds/modifyresourcegroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateAccountWithChan(request *CreateAccountRequest) (<-chan *CreateAccountResponse, <-chan error) {
-	responseChan := make(chan *CreateAccountResponse, 1)
+func (client *Client) ModifyResourceGroupWithChan(request *ModifyResourceGroupRequest) (<-chan *ModifyResourceGroupResponse, <-chan error) {
+	responseChan := make(chan *ModifyResourceGroupResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateAccount(request)
+		response, err := client.ModifyResourceGroup(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateAccountWithChan(request *CreateAccountRequest) (<-ch
 	return responseChan, errChan
 }
 
-// CreateAccountWithCallback invokes the dds.CreateAccount API asynchronously
-// api document: https://help.aliyun.com/api/dds/createaccount.html
+// ModifyResourceGroupWithCallback invokes the dds.ModifyResourceGroup API asynchronously
+// api document: https://help.aliyun.com/api/dds/modifyresourcegroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateAccountWithCallback(request *CreateAccountRequest, callback func(response *CreateAccountResponse, err error)) <-chan int {
+func (client *Client) ModifyResourceGroupWithCallback(request *ModifyResourceGroupRequest, callback func(response *ModifyResourceGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateAccountResponse
+		var response *ModifyResourceGroupResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateAccount(request)
+		response, err = client.ModifyResourceGroup(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,38 +73,36 @@ func (client *Client) CreateAccountWithCallback(request *CreateAccountRequest, c
 	return result
 }
 
-// CreateAccountRequest is the request struct for api CreateAccount
-type CreateAccountRequest struct {
+// ModifyResourceGroupRequest is the request struct for api ModifyResourceGroup
+type ModifyResourceGroupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AccountDescription   string           `position:"Query" name:"AccountDescription"`
-	AccountName          string           `position:"Query" name:"AccountName"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AccountPassword      string           `position:"Query" name:"AccountPassword"`
 }
 
-// CreateAccountResponse is the response struct for api CreateAccount
-type CreateAccountResponse struct {
+// ModifyResourceGroupResponse is the response struct for api ModifyResourceGroup
+type ModifyResourceGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateCreateAccountRequest creates a request to invoke CreateAccount API
-func CreateCreateAccountRequest() (request *CreateAccountRequest) {
-	request = &CreateAccountRequest{
+// CreateModifyResourceGroupRequest creates a request to invoke ModifyResourceGroup API
+func CreateModifyResourceGroupRequest() (request *ModifyResourceGroupRequest) {
+	request = &ModifyResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "CreateAccount", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyResourceGroup", "dds", "openAPI")
 	return
 }
 
-// CreateCreateAccountResponse creates a response to parse from CreateAccount response
-func CreateCreateAccountResponse() (response *CreateAccountResponse) {
-	response = &CreateAccountResponse{
+// CreateModifyResourceGroupResponse creates a response to parse from ModifyResourceGroup response
+func CreateModifyResourceGroupResponse() (response *ModifyResourceGroupResponse) {
+	response = &ModifyResourceGroupResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

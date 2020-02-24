@@ -81,8 +81,10 @@ type ModifyDBInstanceTDERequest struct {
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EncryptionKey        string           `position:"Query" name:"EncryptionKey"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	EncryptorName        string           `position:"Query" name:"EncryptorName"`
+	RoleARN              string           `position:"Query" name:"RoleARN"`
 	TDEStatus            string           `position:"Query" name:"TDEStatus"`
 }
 
@@ -97,7 +99,7 @@ func CreateModifyDBInstanceTDERequest() (request *ModifyDBInstanceTDERequest) {
 	request = &ModifyDBInstanceTDERequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyDBInstanceTDE", "Dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyDBInstanceTDE", "dds", "openAPI")
 	return
 }
 
