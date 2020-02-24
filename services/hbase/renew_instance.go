@@ -93,7 +93,7 @@ func CreateRenewInstanceRequest() (request *RenewInstanceRequest) {
 	request = &RenewInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("HBase", "2019-01-01", "RenewInstance", "hbase", "openAPI")
+	request.InitWithApiInfo("HBase", "2019-01-01", "RenewInstance", "", "")
 	return
 }
 

@@ -118,7 +118,7 @@ func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
 	request = &CreateInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("HBase", "2019-01-01", "CreateInstance", "hbase", "openAPI")
+	request.InitWithApiInfo("HBase", "2019-01-01", "CreateInstance", "", "")
 	return
 }
 

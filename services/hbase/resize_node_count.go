@@ -92,7 +92,7 @@ func CreateResizeNodeCountRequest() (request *ResizeNodeCountRequest) {
 	request = &ResizeNodeCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("HBase", "2019-01-01", "ResizeNodeCount", "hbase", "openAPI")
+	request.InitWithApiInfo("HBase", "2019-01-01", "ResizeNodeCount", "", "")
 	return
 }
 

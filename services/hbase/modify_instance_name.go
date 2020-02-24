@@ -93,7 +93,7 @@ func CreateModifyInstanceNameRequest() (request *ModifyInstanceNameRequest) {
 	request = &ModifyInstanceNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("HBase", "2019-01-01", "ModifyInstanceName", "hbase", "openAPI")
+	request.InitWithApiInfo("HBase", "2019-01-01", "ModifyInstanceName", "", "")
 	return
 }
 

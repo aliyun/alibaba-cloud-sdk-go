@@ -91,7 +91,7 @@ func CreateAddUserHdfsInfoRequest() (request *AddUserHdfsInfoRequest) {
 	request = &AddUserHdfsInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("HBase", "2019-01-01", "AddUserHdfsInfo", "hbase", "openAPI")
+	request.InitWithApiInfo("HBase", "2019-01-01", "AddUserHdfsInfo", "", "")
 	return
 }
 

@@ -93,7 +93,7 @@ func CreateConvertInstanceRequest() (request *ConvertInstanceRequest) {
 	request = &ConvertInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("HBase", "2019-01-01", "ConvertInstance", "hbase", "openAPI")
+	request.InitWithApiInfo("HBase", "2019-01-01", "ConvertInstance", "", "")
 	return
 }
 

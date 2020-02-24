@@ -104,7 +104,7 @@ func CreateDescribeInstancesRequest() (request *DescribeInstancesRequest) {
 	request = &DescribeInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("HBase", "2019-01-01", "DescribeInstances", "hbase", "openAPI")
+	request.InitWithApiInfo("HBase", "2019-01-01", "DescribeInstances", "", "")
 	return
 }
 

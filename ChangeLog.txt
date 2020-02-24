@@ -1,3 +1,11 @@
+2020-02-24 Version: v1.61.6
+- Generated 2019-01-01 for `HBase`.
+- ImmediateDelete.
+- DescribeInstance CreateTimeUTC ExpireTimeUTC.
+- DescribeInstances CreateTimeUTC ExpireTimeUTC.
+- DescribeIpWhitelist Groups GroupName.
+- CreateCluster.
+
 2020-02-24 Version: v1.61.5
 - Generated 2018-07-13 for `Ft`.
 - Release Ft SDK.

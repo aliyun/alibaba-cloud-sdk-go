@@ -90,7 +90,7 @@ func CreateListTagsRequest() (request *ListTagsRequest) {
 	request = &ListTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("HBase", "2019-01-01", "ListTags", "hbase", "openAPI")
+	request.InitWithApiInfo("HBase", "2019-01-01", "ListTags", "", "")
 	return
 }
 

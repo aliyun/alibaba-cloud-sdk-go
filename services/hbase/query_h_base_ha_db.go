@@ -94,7 +94,7 @@ func CreateQueryHBaseHaDBRequest() (request *QueryHBaseHaDBRequest) {
 	request = &QueryHBaseHaDBRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("HBase", "2019-01-01", "QueryHBaseHaDB", "hbase", "openAPI")
+	request.InitWithApiInfo("HBase", "2019-01-01", "QueryHBaseHaDB", "", "")
 	return
 }
 

@@ -93,7 +93,7 @@ func CreateCreateHbaseHaSlbRequest() (request *CreateHbaseHaSlbRequest) {
 	request = &CreateHbaseHaSlbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("HBase", "2019-01-01", "CreateHbaseHaSlb", "hbase", "openAPI")
+	request.InitWithApiInfo("HBase", "2019-01-01", "CreateHbaseHaSlb", "", "")
 	return
 }
 

@@ -92,7 +92,7 @@ func CreateModifyUIAccountPasswordRequest() (request *ModifyUIAccountPasswordReq
 	request = &ModifyUIAccountPasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("HBase", "2019-01-01", "ModifyUIAccountPassword", "hbase", "openAPI")
+	request.InitWithApiInfo("HBase", "2019-01-01", "ModifyUIAccountPassword", "", "")
 	return
 }
 
