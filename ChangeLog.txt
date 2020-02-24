@@ -1,3 +1,7 @@
+2020-02-24 Version: v1.61.2
+- Generated 2018-07-13 for `Ft`.
+- Release Ft SDK.
+
 2020-02-24 Version: v1.61.1
 - Add PATCH into requests.
 
