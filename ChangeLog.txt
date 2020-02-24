@@ -1,3 +1,6 @@
+2020-02-24 Version: v1.61.1
+- Add PATCH into requests.
+
 2020-02-24 Version: v1.60.392
 - Generated 2017-06-13 for `elasticsearch`.
 - Add tag of list instance parameters.
