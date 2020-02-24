@@ -1,3 +1,7 @@
+2020-02-24 Version: v1.60.389
+- Generated 2019-12-26 for `OutboundBot`.
+
+
 2020-02-24 Version: v1.60.388
 - Generated 2019-12-26 for `OutboundBot`.
 
