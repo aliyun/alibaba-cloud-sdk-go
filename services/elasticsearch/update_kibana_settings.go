@@ -93,7 +93,7 @@ func CreateUpdateKibanaSettingsRequest() (request *UpdateKibanaSettingsRequest) 
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("elasticsearch", "2017-06-13", "UpdateKibanaSettings", "/openapi/instances/[InstanceId]/actions/update-kibana-settings", "elasticsearch", "openAPI")
-	request.Method = requests.POST
+	request.Method = requests.PATCH
 	return
 }
 

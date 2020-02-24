@@ -83,8 +83,8 @@ type DescribeConnectableClustersRequest struct {
 // DescribeConnectableClustersResponse is the response struct for api DescribeConnectableClusters
 type DescribeConnectableClustersResponse struct {
 	*responses.BaseResponse
-	RequestId string                              `json:"RequestId" xml:"RequestId"`
-	Result    ResultInDescribeConnectableClusters `json:"Result" xml:"Result"`
+	RequestId string                    `json:"RequestId" xml:"RequestId"`
+	Result    []ConnectableClustersInfo `json:"Result" xml:"Result"`
 }
 
 // CreateDescribeConnectableClustersRequest creates a request to invoke DescribeConnectableClusters API

@@ -32,4 +32,5 @@ type Instance struct {
 	MasterConfiguration    MasterConfiguration `json:"masterConfiguration" xml:"masterConfiguration"`
 	NodeSpec               NodeSpec            `json:"nodeSpec" xml:"nodeSpec"`
 	KibanaConfiguration    KibanaConfiguration `json:"kibanaConfiguration" xml:"kibanaConfiguration"`
+	Tags                   []Tag               `json:"tags" xml:"tags"`
 }

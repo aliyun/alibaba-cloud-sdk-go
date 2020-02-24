@@ -93,7 +93,7 @@ func CreateUpdatePublicWhiteIpsRequest() (request *UpdatePublicWhiteIpsRequest) 
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("elasticsearch", "2017-06-13", "UpdatePublicWhiteIps", "/openapi/instances/[InstanceId]/public-white-ips", "elasticsearch", "openAPI")
-	request.Method = requests.POST
+	request.Method = requests.PATCH
 	return
 }
 

@@ -92,7 +92,7 @@ func CreateUpdateAdminPasswordRequest() (request *UpdateAdminPasswordRequest) {
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("elasticsearch", "2017-06-13", "UpdateAdminPassword", "/openapi/instances/[InstanceId]/admin-pwd", "elasticsearch", "openAPI")
-	request.Method = requests.POST
+	request.Method = requests.PATCH
 	return
 }
 

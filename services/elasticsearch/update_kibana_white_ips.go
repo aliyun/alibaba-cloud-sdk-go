@@ -93,7 +93,7 @@ func CreateUpdateKibanaWhiteIpsRequest() (request *UpdateKibanaWhiteIpsRequest) 
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("elasticsearch", "2017-06-13", "UpdateKibanaWhiteIps", "/openapi/instances/[InstanceId]/kibana-white-ips", "elasticsearch", "openAPI")
-	request.Method = requests.POST
+	request.Method = requests.PATCH
 	return
 }
 

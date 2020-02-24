@@ -93,7 +93,7 @@ func CreateMoveResourceGroupRequest() (request *MoveResourceGroupRequest) {
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("elasticsearch", "2017-06-13", "MoveResourceGroup", "/openapi/instances/[InstanceId]/resourcegroup", "elasticsearch", "openAPI")
-	request.Method = requests.POST
+	request.Method = requests.PATCH
 	return
 }
 

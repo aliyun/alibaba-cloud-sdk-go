@@ -93,7 +93,7 @@ func CreateUpdateAdvancedSettingRequest() (request *UpdateAdvancedSettingRequest
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("elasticsearch", "2017-06-13", "UpdateAdvancedSetting", "/openapi/instances/[InstanceId]/actions/update-advanced-setting", "elasticsearch", "openAPI")
-	request.Method = requests.PUT
+	request.Method = requests.POST
 	return
 }
 

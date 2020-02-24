@@ -18,6 +18,7 @@ package elasticsearch
 // Result is a nested struct in elasticsearch response
 type Result struct {
 	Config                    map[string]interface{}     `json:"config" xml:"config"`
+	ValidateType              string                     `json:"validateType" xml:"validateType"`
 	KibanaPort                int                        `json:"kibanaPort" xml:"kibanaPort"`
 	VpcInstanceId             string                     `json:"vpcInstanceId" xml:"vpcInstanceId"`
 	UserName                  string                     `json:"userName" xml:"userName"`
@@ -74,6 +75,7 @@ type Result struct {
 	NetworkConfig             NetworkConfig              `json:"networkConfig" xml:"networkConfig"`
 	MasterConfiguration       MasterConfiguration        `json:"masterConfiguration" xml:"masterConfiguration"`
 	KibanaNodeProperties      KibanaNodeProperties       `json:"kibanaNodeProperties" xml:"kibanaNodeProperties"`
+	ValidateResult            ValidateResult             `json:"validateResult" xml:"validateResult"`
 	ClientNodeAmountRange     ClientNodeAmountRange      `json:"clientNodeAmountRange" xml:"clientNodeAmountRange"`
 	SupportVersions           []CategoryEntity           `json:"supportVersions" xml:"supportVersions"`
 	ZoneInfos                 []ZoneInfo                 `json:"zoneInfos" xml:"zoneInfos"`
@@ -84,6 +86,7 @@ type Result struct {
 	ClientNodeDiskList        []Disk                     `json:"clientNodeDiskList" xml:"clientNodeDiskList"`
 	DataDiskList              []DataDiskListItem         `json:"dataDiskList" xml:"dataDiskList"`
 	SynonymsDicts             []SynonymsDicts            `json:"synonymsDicts" xml:"synonymsDicts"`
+	Tags                      []Tag                      `json:"tags" xml:"tags"`
 	AliwsDicts                []Dict                     `json:"aliwsDicts" xml:"aliwsDicts"`
 	DictList                  []DictList                 `json:"dictList" xml:"dictList"`
 }
