@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// StartBackupPlan invokes the dbs.StartBackupPlan API synchronously
-// api document: https://help.aliyun.com/api/dbs/startbackupplan.html
-func (client *Client) StartBackupPlan(request *StartBackupPlanRequest) (response *StartBackupPlanResponse, err error) {
-	response = CreateStartBackupPlanResponse()
+// StartTask invokes the dbs.StartTask API synchronously
+// api document: https://help.aliyun.com/api/dbs/starttask.html
+func (client *Client) StartTask(request *StartTaskRequest) (response *StartTaskResponse, err error) {
+	response = CreateStartTaskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// StartBackupPlanWithChan invokes the dbs.StartBackupPlan API asynchronously
-// api document: https://help.aliyun.com/api/dbs/startbackupplan.html
+// StartTaskWithChan invokes the dbs.StartTask API asynchronously
+// api document: https://help.aliyun.com/api/dbs/starttask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) StartBackupPlanWithChan(request *StartBackupPlanRequest) (<-chan *StartBackupPlanResponse, <-chan error) {
-	responseChan := make(chan *StartBackupPlanResponse, 1)
+func (client *Client) StartTaskWithChan(request *StartTaskRequest) (<-chan *StartTaskResponse, <-chan error) {
+	responseChan := make(chan *StartTaskResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.StartBackupPlan(request)
+		response, err := client.StartTask(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) StartBackupPlanWithChan(request *StartBackupPlanRequest) (
 	return responseChan, errChan
 }
 
-// StartBackupPlanWithCallback invokes the dbs.StartBackupPlan API asynchronously
-// api document: https://help.aliyun.com/api/dbs/startbackupplan.html
+// StartTaskWithCallback invokes the dbs.StartTask API asynchronously
+// api document: https://help.aliyun.com/api/dbs/starttask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) StartBackupPlanWithCallback(request *StartBackupPlanRequest, callback func(response *StartBackupPlanResponse, err error)) <-chan int {
+func (client *Client) StartTaskWithCallback(request *StartTaskRequest, callback func(response *StartTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *StartBackupPlanResponse
+		var response *StartTaskResponse
 		var err error
 		defer close(result)
-		response, err = client.StartBackupPlan(request)
+		response, err = client.StartTask(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,37 +73,38 @@ func (client *Client) StartBackupPlanWithCallback(request *StartBackupPlanReques
 	return result
 }
 
-// StartBackupPlanRequest is the request struct for api StartBackupPlan
-type StartBackupPlanRequest struct {
+// StartTaskRequest is the request struct for api StartTask
+type StartTaskRequest struct {
 	*requests.RpcRequest
-	ClientToken  string `position:"Query" name:"ClientToken"`
-	BackupPlanId string `position:"Query" name:"BackupPlanId"`
-	OwnerId      string `position:"Query" name:"OwnerId"`
+	ClientToken string `position:"Query" name:"ClientToken"`
+	OwnerId     string `position:"Query" name:"OwnerId"`
+	TaskId      string `position:"Query" name:"TaskId"`
 }
 
-// StartBackupPlanResponse is the response struct for api StartBackupPlan
-type StartBackupPlanResponse struct {
+// StartTaskResponse is the response struct for api StartTask
+type StartTaskResponse struct {
 	*responses.BaseResponse
 	Success        bool   `json:"Success" xml:"Success"`
 	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
 	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
-	BackupPlanId   string `json:"BackupPlanId" xml:"BackupPlanId"`
+	TaskId         string `json:"TaskId" xml:"TaskId"`
+	JobTypeName    string `json:"JobTypeName" xml:"JobTypeName"`
 }
 
-// CreateStartBackupPlanRequest creates a request to invoke StartBackupPlan API
-func CreateStartBackupPlanRequest() (request *StartBackupPlanRequest) {
-	request = &StartBackupPlanRequest{
+// CreateStartTaskRequest creates a request to invoke StartTask API
+func CreateStartTaskRequest() (request *StartTaskRequest) {
+	request = &StartTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "StartBackupPlan", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "StartTask", "", "")
 	return
 }
 
-// CreateStartBackupPlanResponse creates a response to parse from StartBackupPlan response
-func CreateStartBackupPlanResponse() (response *StartBackupPlanResponse) {
-	response = &StartBackupPlanResponse{
+// CreateStartTaskResponse creates a response to parse from StartTask response
+func CreateStartTaskResponse() (response *StartTaskResponse) {
+	response = &StartTaskResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

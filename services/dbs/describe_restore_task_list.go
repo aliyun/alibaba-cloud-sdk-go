@@ -104,7 +104,7 @@ func CreateDescribeRestoreTaskListRequest() (request *DescribeRestoreTaskListReq
 	request = &DescribeRestoreTaskListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeRestoreTaskList", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeRestoreTaskList", "", "")
 	return
 }
 

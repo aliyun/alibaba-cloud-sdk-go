@@ -104,7 +104,7 @@ func CreateDescribeFullBackupListRequest() (request *DescribeFullBackupListReque
 	request = &DescribeFullBackupListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeFullBackupList", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeFullBackupList", "", "")
 	return
 }
 
