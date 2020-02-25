@@ -94,7 +94,7 @@ func CreateEnableUserRequest() (request *EnableUserRequest) {
 	request = &EnableUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "EnableUser", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "EnableUser", "", "")
 	return
 }
 

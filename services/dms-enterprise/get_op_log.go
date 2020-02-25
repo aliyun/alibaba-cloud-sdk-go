@@ -91,7 +91,7 @@ type GetOpLogResponse struct {
 	Success      bool         `json:"Success" xml:"Success"`
 	ErrorMessage string       `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string       `json:"ErrorCode" xml:"ErrorCode"`
-	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
+	TotalCount   int64        `json:"TotalCount" xml:"TotalCount"`
 	OpLogDetails OpLogDetails `json:"OpLogDetails" xml:"OpLogDetails"`
 }
 
@@ -100,7 +100,7 @@ func CreateGetOpLogRequest() (request *GetOpLogRequest) {
 	request = &GetOpLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetOpLog", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetOpLog", "", "")
 	return
 }
 

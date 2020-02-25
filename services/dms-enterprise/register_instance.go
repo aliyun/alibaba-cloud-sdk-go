@@ -76,22 +76,25 @@ func (client *Client) RegisterInstanceWithCallback(request *RegisterInstanceRequ
 // RegisterInstanceRequest is the request struct for api RegisterInstance
 type RegisterInstanceRequest struct {
 	*requests.RpcRequest
-	EcsInstanceId    string           `position:"Query" name:"EcsInstanceId"`
 	EcsRegion        string           `position:"Query" name:"EcsRegion"`
-	ExportTimeout    requests.Integer `position:"Query" name:"ExportTimeout"`
-	DatabasePassword string           `position:"Query" name:"DatabasePassword"`
-	InstanceAlias    string           `position:"Query" name:"InstanceAlias"`
+	DdlOnline        requests.Integer `position:"Query" name:"DdlOnline"`
+	UseDsql          requests.Integer `position:"Query" name:"UseDsql"`
 	NetworkType      string           `position:"Query" name:"NetworkType"`
 	Tid              requests.Integer `position:"Query" name:"Tid"`
 	Sid              string           `position:"Query" name:"Sid"`
-	DatabaseUser     string           `position:"Query" name:"DatabaseUser"`
-	Port             requests.Integer `position:"Query" name:"Port"`
-	VpcId            string           `position:"Query" name:"VpcId"`
+	DataLinkName     string           `position:"Query" name:"DataLinkName"`
 	InstanceSource   string           `position:"Query" name:"InstanceSource"`
 	EnvType          string           `position:"Query" name:"EnvType"`
 	Host             string           `position:"Query" name:"Host"`
 	InstanceType     string           `position:"Query" name:"InstanceType"`
 	QueryTimeout     requests.Integer `position:"Query" name:"QueryTimeout"`
+	EcsInstanceId    string           `position:"Query" name:"EcsInstanceId"`
+	ExportTimeout    requests.Integer `position:"Query" name:"ExportTimeout"`
+	DatabasePassword string           `position:"Query" name:"DatabasePassword"`
+	InstanceAlias    string           `position:"Query" name:"InstanceAlias"`
+	DatabaseUser     string           `position:"Query" name:"DatabaseUser"`
+	Port             requests.Integer `position:"Query" name:"Port"`
+	VpcId            string           `position:"Query" name:"VpcId"`
 	DbaUid           requests.Integer `position:"Query" name:"DbaUid"`
 	SafeRule         string           `position:"Query" name:"SafeRule"`
 }
@@ -110,7 +113,7 @@ func CreateRegisterInstanceRequest() (request *RegisterInstanceRequest) {
 	request = &RegisterInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "RegisterInstance", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "RegisterInstance", "", "")
 	return
 }
 
