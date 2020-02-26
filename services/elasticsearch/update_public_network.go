@@ -93,7 +93,7 @@ func CreateUpdatePublicNetworkRequest() (request *UpdatePublicNetworkRequest) {
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("elasticsearch", "2017-06-13", "UpdatePublicNetwork", "/openapi/instances/[InstanceId]/public-network", "elasticsearch", "openAPI")
-	request.Method = requests.PATCH
+	request.Method = requests.POST
 	return
 }
 

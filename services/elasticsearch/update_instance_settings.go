@@ -92,7 +92,7 @@ func CreateUpdateInstanceSettingsRequest() (request *UpdateInstanceSettingsReque
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("elasticsearch", "2017-06-13", "UpdateInstanceSettings", "/openapi/instances/[InstanceId]/instance-settings", "elasticsearch", "openAPI")
-	request.Method = requests.PATCH
+	request.Method = requests.POST
 	return
 }
 

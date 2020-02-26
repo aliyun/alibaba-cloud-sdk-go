@@ -93,7 +93,7 @@ func CreateUpdateDescriptionRequest() (request *UpdateDescriptionRequest) {
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("elasticsearch", "2017-06-13", "UpdateDescription", "/openapi/instances/[InstanceId]/description", "elasticsearch", "openAPI")
-	request.Method = requests.PATCH
+	request.Method = requests.POST
 	return
 }
 

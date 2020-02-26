@@ -90,7 +90,7 @@ func CreateTagResourcesRequest() (request *TagResourcesRequest) {
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("elasticsearch", "2017-06-13", "TagResources", "/openapi/tags", "elasticsearch", "openAPI")
-	request.Method = requests.PATCH
+	request.Method = requests.POST
 	return
 }
 

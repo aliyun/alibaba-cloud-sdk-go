@@ -17,8 +17,8 @@ package elasticsearch
 
 // TagResourceItem is a nested struct in elasticsearch response
 type TagResourceItem struct {
-	ResourceId   string `json:"resourceId" xml:"resourceId"`
-	ResourceType string `json:"resourceType" xml:"resourceType"`
-	TagKey       string `json:"tagKey" xml:"tagKey"`
-	TagValue     string `json:"tagValue" xml:"tagValue"`
+	ResourceId   string `json:"ResourceId" xml:"ResourceId"`
+	ResourceType string `json:"ResourceType" xml:"ResourceType"`
+	TagKey       string `json:"TagKey" xml:"TagKey"`
+	TagValue     string `json:"TagValue" xml:"TagValue"`
 }
