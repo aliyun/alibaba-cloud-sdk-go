@@ -94,7 +94,7 @@ func CreateCreateRPSDKRequest() (request *CreateRPSDKRequest) {
 	request = &CreateRPSDKRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "CreateRPSDK", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "CreateRPSDK", "", "")
 	return
 }
 
