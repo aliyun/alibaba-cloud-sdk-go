@@ -1,3 +1,7 @@
+2020-02-27 Version: v1.61.13
+- Generated 2018-07-13 for `Ft`.
+- Release Ft SDK.
+
 2020-02-27 Version: v1.61.12
 - Generated 2018-07-13 for `Ft`.
 - Release Ft SDK.
