@@ -90,6 +90,7 @@ type BindAxbRequest struct {
 	Expiration           string           `position:"Query" name:"Expiration"`
 	IsRecordingEnabled   requests.Boolean `position:"Query" name:"IsRecordingEnabled"`
 	OutId                string           `position:"Query" name:"OutId"`
+	CallRestrict         string           `position:"Query" name:"CallRestrict"`
 }
 
 // BindAxbResponse is the response struct for api BindAxb
