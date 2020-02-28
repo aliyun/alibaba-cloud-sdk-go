@@ -95,7 +95,7 @@ func CreateAddGlobalAccelerationInstanceIpRequest() (request *AddGlobalAccelerat
 	request = &AddGlobalAccelerationInstanceIpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "AddGlobalAccelerationInstanceIp", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "AddGlobalAccelerationInstanceIp", "Vpc", "openAPI")
 	return
 }
 

@@ -96,7 +96,7 @@ func CreateRemoveIPv6TranslatorAclListEntryRequest() (request *RemoveIPv6Transla
 	request = &RemoveIPv6TranslatorAclListEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "RemoveIPv6TranslatorAclListEntry", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "RemoveIPv6TranslatorAclListEntry", "Vpc", "openAPI")
 	return
 }
 

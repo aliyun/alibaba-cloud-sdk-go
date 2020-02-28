@@ -107,7 +107,7 @@ func CreateCreateVpnConnectionRequest() (request *CreateVpnConnectionRequest) {
 	request = &CreateVpnConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateVpnConnection", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateVpnConnection", "Vpc", "openAPI")
 	return
 }
 

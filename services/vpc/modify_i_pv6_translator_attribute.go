@@ -97,7 +97,7 @@ func CreateModifyIPv6TranslatorAttributeRequest() (request *ModifyIPv6Translator
 	request = &ModifyIPv6TranslatorAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyIPv6TranslatorAttribute", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyIPv6TranslatorAttribute", "Vpc", "openAPI")
 	return
 }
 

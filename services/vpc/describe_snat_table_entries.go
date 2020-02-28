@@ -105,7 +105,7 @@ func CreateDescribeSnatTableEntriesRequest() (request *DescribeSnatTableEntriesR
 	request = &DescribeSnatTableEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeSnatTableEntries", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeSnatTableEntries", "Vpc", "openAPI")
 	return
 }
 

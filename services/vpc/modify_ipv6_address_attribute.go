@@ -96,7 +96,7 @@ func CreateModifyIpv6AddressAttributeRequest() (request *ModifyIpv6AddressAttrib
 	request = &ModifyIpv6AddressAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyIpv6AddressAttribute", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyIpv6AddressAttribute", "Vpc", "openAPI")
 	return
 }
 

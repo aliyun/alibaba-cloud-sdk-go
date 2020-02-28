@@ -95,7 +95,7 @@ func CreateDeactiveFlowLogRequest() (request *DeactiveFlowLogRequest) {
 	request = &DeactiveFlowLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeactiveFlowLog", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeactiveFlowLog", "Vpc", "openAPI")
 	return
 }
 

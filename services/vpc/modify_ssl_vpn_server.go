@@ -76,19 +76,21 @@ func (client *Client) ModifySslVpnServerWithCallback(request *ModifySslVpnServer
 // ModifySslVpnServerRequest is the request struct for api ModifySslVpnServer
 type ModifySslVpnServerRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	SslVpnServerId       string           `position:"Query" name:"SslVpnServerId"`
-	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
-	Cipher               string           `position:"Query" name:"Cipher"`
-	ClientIpPool         string           `position:"Query" name:"ClientIpPool"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Compress             requests.Boolean `position:"Query" name:"Compress"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Port                 requests.Integer `position:"Query" name:"Port"`
-	Proto                string           `position:"Query" name:"Proto"`
-	Name                 string           `position:"Query" name:"Name"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken           string           `position:"Query" name:"ClientToken"`
+	SslVpnServerId        string           `position:"Query" name:"SslVpnServerId"`
+	LocalSubnet           string           `position:"Query" name:"LocalSubnet"`
+	EnableMultiFactorAuth requests.Boolean `position:"Query" name:"EnableMultiFactorAuth"`
+	IDaaSInstanceId       string           `position:"Query" name:"IDaaSInstanceId"`
+	Cipher                string           `position:"Query" name:"Cipher"`
+	ClientIpPool          string           `position:"Query" name:"ClientIpPool"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	Compress              requests.Boolean `position:"Query" name:"Compress"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	Port                  requests.Integer `position:"Query" name:"Port"`
+	Proto                 string           `position:"Query" name:"Proto"`
+	Name                  string           `position:"Query" name:"Name"`
 }
 
 // ModifySslVpnServerResponse is the response struct for api ModifySslVpnServer
@@ -116,7 +118,7 @@ func CreateModifySslVpnServerRequest() (request *ModifySslVpnServerRequest) {
 	request = &ModifySslVpnServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifySslVpnServer", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifySslVpnServer", "Vpc", "openAPI")
 	return
 }
 

@@ -98,7 +98,7 @@ func CreateGrantInstanceToCenRequest() (request *GrantInstanceToCenRequest) {
 	request = &GrantInstanceToCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "GrantInstanceToCen", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "GrantInstanceToCen", "Vpc", "openAPI")
 	return
 }
 

@@ -94,7 +94,7 @@ func CreateModifyRouteEntryRequest() (request *ModifyRouteEntryRequest) {
 	request = &ModifyRouteEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyRouteEntry", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyRouteEntry", "Vpc", "openAPI")
 	return
 }
 

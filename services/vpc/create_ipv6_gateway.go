@@ -99,7 +99,7 @@ func CreateCreateIpv6GatewayRequest() (request *CreateIpv6GatewayRequest) {
 	request = &CreateIpv6GatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateIpv6Gateway", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateIpv6Gateway", "Vpc", "openAPI")
 	return
 }
 

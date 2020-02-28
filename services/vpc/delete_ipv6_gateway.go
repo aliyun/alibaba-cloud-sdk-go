@@ -94,7 +94,7 @@ func CreateDeleteIpv6GatewayRequest() (request *DeleteIpv6GatewayRequest) {
 	request = &DeleteIpv6GatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteIpv6Gateway", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteIpv6Gateway", "Vpc", "openAPI")
 	return
 }
 

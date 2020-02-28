@@ -94,7 +94,7 @@ func CreateDeleteExpressCloudConnectionRequest() (request *DeleteExpressCloudCon
 	request = &DeleteExpressCloudConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteExpressCloudConnection", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteExpressCloudConnection", "Vpc", "openAPI")
 	return
 }
 

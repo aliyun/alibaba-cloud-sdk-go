@@ -95,7 +95,7 @@ func CreateDisableVpcClassicLinkRequest() (request *DisableVpcClassicLinkRequest
 	request = &DisableVpcClassicLinkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DisableVpcClassicLink", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DisableVpcClassicLink", "Vpc", "openAPI")
 	return
 }
 

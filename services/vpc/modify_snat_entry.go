@@ -77,6 +77,7 @@ func (client *Client) ModifySnatEntryWithCallback(request *ModifySnatEntryReques
 type ModifySnatEntryRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	SnatIp               string           `position:"Query" name:"SnatIp"`
 	SnatEntryId          string           `position:"Query" name:"SnatEntryId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -97,7 +98,7 @@ func CreateModifySnatEntryRequest() (request *ModifySnatEntryRequest) {
 	request = &ModifySnatEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifySnatEntry", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifySnatEntry", "Vpc", "openAPI")
 	return
 }
 

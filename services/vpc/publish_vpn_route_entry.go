@@ -99,7 +99,7 @@ func CreatePublishVpnRouteEntryRequest() (request *PublishVpnRouteEntryRequest) 
 	request = &PublishVpnRouteEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "PublishVpnRouteEntry", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "PublishVpnRouteEntry", "Vpc", "openAPI")
 	return
 }
 

@@ -95,7 +95,7 @@ func CreateDeleteSslVpnServerRequest() (request *DeleteSslVpnServerRequest) {
 	request = &DeleteSslVpnServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteSslVpnServer", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteSslVpnServer", "Vpc", "openAPI")
 	return
 }
 

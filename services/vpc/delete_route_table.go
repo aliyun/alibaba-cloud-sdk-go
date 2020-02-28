@@ -94,7 +94,7 @@ func CreateDeleteRouteTableRequest() (request *DeleteRouteTableRequest) {
 	request = &DeleteRouteTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteRouteTable", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteRouteTable", "Vpc", "openAPI")
 	return
 }
 

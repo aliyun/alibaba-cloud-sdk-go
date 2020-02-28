@@ -95,7 +95,7 @@ func CreateRemoveCommonBandwidthPackageIpRequest() (request *RemoveCommonBandwid
 	request = &RemoveCommonBandwidthPackageIpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "RemoveCommonBandwidthPackageIp", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "RemoveCommonBandwidthPackageIp", "Vpc", "openAPI")
 	return
 }
 

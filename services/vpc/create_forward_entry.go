@@ -77,6 +77,7 @@ func (client *Client) CreateForwardEntryWithCallback(request *CreateForwardEntry
 type CreateForwardEntryRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	ForwardTableId       string           `position:"Query" name:"ForwardTableId"`
 	InternalIp           string           `position:"Query" name:"InternalIp"`
 	ExternalIp           string           `position:"Query" name:"ExternalIp"`
@@ -101,7 +102,7 @@ func CreateCreateForwardEntryRequest() (request *CreateForwardEntryRequest) {
 	request = &CreateForwardEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateForwardEntry", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateForwardEntry", "Vpc", "openAPI")
 	return
 }
 

@@ -96,7 +96,7 @@ func CreateDescribePhysicalConnectionLOARequest() (request *DescribePhysicalConn
 	request = &DescribePhysicalConnectionLOARequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribePhysicalConnectionLOA", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribePhysicalConnectionLOA", "Vpc", "openAPI")
 	return
 }
 

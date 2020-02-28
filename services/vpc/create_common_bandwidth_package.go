@@ -104,7 +104,7 @@ func CreateCreateCommonBandwidthPackageRequest() (request *CreateCommonBandwidth
 	request = &CreateCommonBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateCommonBandwidthPackage", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateCommonBandwidthPackage", "Vpc", "openAPI")
 	return
 }
 

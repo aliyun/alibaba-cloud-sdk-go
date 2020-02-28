@@ -96,7 +96,7 @@ func CreateModifyNetworkAclAttributesRequest() (request *ModifyNetworkAclAttribu
 	request = &ModifyNetworkAclAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyNetworkAclAttributes", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyNetworkAclAttributes", "Vpc", "openAPI")
 	return
 }
 

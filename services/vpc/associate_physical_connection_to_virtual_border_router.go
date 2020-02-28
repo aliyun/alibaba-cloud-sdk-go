@@ -101,7 +101,7 @@ func CreateAssociatePhysicalConnectionToVirtualBorderRouterRequest() (request *A
 	request = &AssociatePhysicalConnectionToVirtualBorderRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "AssociatePhysicalConnectionToVirtualBorderRouter", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "AssociatePhysicalConnectionToVirtualBorderRouter", "Vpc", "openAPI")
 	return
 }
 

@@ -17,5 +17,5 @@ package vpc
 
 // EipMonitorDatasInDescribeNewProjectEipMonitorData is a nested struct in vpc response
 type EipMonitorDatasInDescribeNewProjectEipMonitorData struct {
-	EipMonitorData []EipMonitorData `json:"EipMonitorData" xml:"EipMonitorData"`
+	EipMonitorData []EipMonitorDataInDescribeNewProjectEipMonitorData `json:"EipMonitorData" xml:"EipMonitorData"`
 }

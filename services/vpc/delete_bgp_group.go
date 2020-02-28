@@ -95,7 +95,7 @@ func CreateDeleteBgpGroupRequest() (request *DeleteBgpGroupRequest) {
 	request = &DeleteBgpGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteBgpGroup", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteBgpGroup", "Vpc", "openAPI")
 	return
 }
 

@@ -82,6 +82,7 @@ type DescribeVpnSslServerLogsRequest struct {
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	VpnSslServerId       string           `position:"Query" name:"VpnSslServerId"`
 	From                 requests.Integer `position:"Query" name:"From"`
+	SslVpnClientCertId   string           `position:"Query" name:"SslVpnClientCertId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -104,7 +105,7 @@ func CreateDescribeVpnSslServerLogsRequest() (request *DescribeVpnSslServerLogsR
 	request = &DescribeVpnSslServerLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpnSslServerLogs", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpnSslServerLogs", "Vpc", "openAPI")
 	return
 }
 

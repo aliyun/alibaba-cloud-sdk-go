@@ -95,7 +95,7 @@ func CreateDeleteFlowLogRequest() (request *DeleteFlowLogRequest) {
 	request = &DeleteFlowLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteFlowLog", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteFlowLog", "Vpc", "openAPI")
 	return
 }
 

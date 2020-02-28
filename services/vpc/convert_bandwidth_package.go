@@ -95,7 +95,7 @@ func CreateConvertBandwidthPackageRequest() (request *ConvertBandwidthPackageReq
 	request = &ConvertBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ConvertBandwidthPackage", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ConvertBandwidthPackage", "Vpc", "openAPI")
 	return
 }
 

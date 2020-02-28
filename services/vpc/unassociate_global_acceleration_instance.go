@@ -95,7 +95,7 @@ func CreateUnassociateGlobalAccelerationInstanceRequest() (request *UnassociateG
 	request = &UnassociateGlobalAccelerationInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "UnassociateGlobalAccelerationInstance", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "UnassociateGlobalAccelerationInstance", "Vpc", "openAPI")
 	return
 }
 

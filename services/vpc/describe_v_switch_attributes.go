@@ -110,7 +110,7 @@ func CreateDescribeVSwitchAttributesRequest() (request *DescribeVSwitchAttribute
 	request = &DescribeVSwitchAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVSwitchAttributes", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVSwitchAttributes", "Vpc", "openAPI")
 	return
 }
 

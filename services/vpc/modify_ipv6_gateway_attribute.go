@@ -96,7 +96,7 @@ func CreateModifyIpv6GatewayAttributeRequest() (request *ModifyIpv6GatewayAttrib
 	request = &ModifyIpv6GatewayAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyIpv6GatewayAttribute", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyIpv6GatewayAttribute", "Vpc", "openAPI")
 	return
 }
 

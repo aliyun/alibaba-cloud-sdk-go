@@ -98,7 +98,7 @@ func CreateCreateNetworkAclRequest() (request *CreateNetworkAclRequest) {
 	request = &CreateNetworkAclRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateNetworkAcl", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateNetworkAcl", "Vpc", "openAPI")
 	return
 }
 

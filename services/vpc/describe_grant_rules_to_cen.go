@@ -101,7 +101,7 @@ func CreateDescribeGrantRulesToCenRequest() (request *DescribeGrantRulesToCenReq
 	request = &DescribeGrantRulesToCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeGrantRulesToCen", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeGrantRulesToCen", "Vpc", "openAPI")
 	return
 }
 

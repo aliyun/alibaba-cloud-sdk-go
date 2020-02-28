@@ -76,19 +76,21 @@ func (client *Client) CreateSslVpnServerWithCallback(request *CreateSslVpnServer
 // CreateSslVpnServerRequest is the request struct for api CreateSslVpnServer
 type CreateSslVpnServerRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
-	Cipher               string           `position:"Query" name:"Cipher"`
-	ClientIpPool         string           `position:"Query" name:"ClientIpPool"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Compress             requests.Boolean `position:"Query" name:"Compress"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Port                 requests.Integer `position:"Query" name:"Port"`
-	Proto                string           `position:"Query" name:"Proto"`
-	Name                 string           `position:"Query" name:"Name"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken           string           `position:"Query" name:"ClientToken"`
+	LocalSubnet           string           `position:"Query" name:"LocalSubnet"`
+	EnableMultiFactorAuth requests.Boolean `position:"Query" name:"EnableMultiFactorAuth"`
+	IDaaSInstanceId       string           `position:"Query" name:"IDaaSInstanceId"`
+	Cipher                string           `position:"Query" name:"Cipher"`
+	ClientIpPool          string           `position:"Query" name:"ClientIpPool"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	Compress              requests.Boolean `position:"Query" name:"Compress"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	VpnGatewayId          string           `position:"Query" name:"VpnGatewayId"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	Port                  requests.Integer `position:"Query" name:"Port"`
+	Proto                 string           `position:"Query" name:"Proto"`
+	Name                  string           `position:"Query" name:"Name"`
 }
 
 // CreateSslVpnServerResponse is the response struct for api CreateSslVpnServer
@@ -104,7 +106,7 @@ func CreateCreateSslVpnServerRequest() (request *CreateSslVpnServerRequest) {
 	request = &CreateSslVpnServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateSslVpnServer", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateSslVpnServer", "Vpc", "openAPI")
 	return
 }
 

@@ -105,7 +105,7 @@ func CreateDescribeRouteEntryListRequest() (request *DescribeRouteEntryListReque
 	request = &DescribeRouteEntryListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeRouteEntryList", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeRouteEntryList", "Vpc", "openAPI")
 	return
 }
 

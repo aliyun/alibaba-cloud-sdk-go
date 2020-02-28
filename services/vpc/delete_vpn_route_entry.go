@@ -99,7 +99,7 @@ func CreateDeleteVpnRouteEntryRequest() (request *DeleteVpnRouteEntryRequest) {
 	request = &DeleteVpnRouteEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteVpnRouteEntry", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteVpnRouteEntry", "Vpc", "openAPI")
 	return
 }
 

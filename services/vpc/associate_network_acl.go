@@ -101,7 +101,7 @@ func CreateAssociateNetworkAclRequest() (request *AssociateNetworkAclRequest) {
 	request = &AssociateNetworkAclRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "AssociateNetworkAcl", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "AssociateNetworkAcl", "Vpc", "openAPI")
 	return
 }
 
