@@ -83,6 +83,7 @@ type DescribeServiceResponse struct {
 	*responses.BaseResponse
 	RequestId        string           `json:"RequestId" xml:"RequestId"`
 	ProtectionLevels ProtectionLevels `json:"ProtectionLevels" xml:"ProtectionLevels"`
+	KeySpecs         KeySpecs         `json:"KeySpecs" xml:"KeySpecs"`
 }
 
 // CreateDescribeServiceRequest creates a request to invoke DescribeService API
