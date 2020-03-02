@@ -84,11 +84,11 @@ type ListSecretsRequest struct {
 // ListSecretsResponse is the response struct for api ListSecrets
 type ListSecretsResponse struct {
 	*responses.BaseResponse
-	RequestId  string   `json:"RequestId" xml:"RequestId"`
-	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int      `json:"PageSize" xml:"PageSize"`
-	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
-	SecretList []Secret `json:"SecretList" xml:"SecretList"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int        `json:"PageSize" xml:"PageSize"`
+	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
+	SecretList SecretList `json:"SecretList" xml:"SecretList"`
 }
 
 // CreateListSecretsRequest creates a request to invoke ListSecrets API

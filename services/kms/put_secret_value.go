@@ -86,10 +86,10 @@ type PutSecretValueRequest struct {
 // PutSecretValueResponse is the response struct for api PutSecretValue
 type PutSecretValueResponse struct {
 	*responses.BaseResponse
-	RequestId     string   `json:"RequestId" xml:"RequestId"`
-	SecretName    string   `json:"SecretName" xml:"SecretName"`
-	VersionId     string   `json:"VersionId" xml:"VersionId"`
-	VersionStages []string `json:"VersionStages" xml:"VersionStages"`
+	RequestId     string                        `json:"RequestId" xml:"RequestId"`
+	SecretName    string                        `json:"SecretName" xml:"SecretName"`
+	VersionId     string                        `json:"VersionId" xml:"VersionId"`
+	VersionStages VersionStagesInPutSecretValue `json:"VersionStages" xml:"VersionStages"`
 }
 
 // CreatePutSecretValueRequest creates a request to invoke PutSecretValue API

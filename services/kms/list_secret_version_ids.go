@@ -85,12 +85,12 @@ type ListSecretVersionIdsRequest struct {
 // ListSecretVersionIdsResponse is the response struct for api ListSecretVersionIds
 type ListSecretVersionIdsResponse struct {
 	*responses.BaseResponse
-	PageNumber int         `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int         `json:"PageSize" xml:"PageSize"`
-	RequestId  string      `json:"RequestId" xml:"RequestId"`
-	SecretName string      `json:"SecretName" xml:"SecretName"`
-	TotalCount int         `json:"TotalCount" xml:"TotalCount"`
-	VersionIds []VersionId `json:"VersionIds" xml:"VersionIds"`
+	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int        `json:"PageSize" xml:"PageSize"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	SecretName string     `json:"SecretName" xml:"SecretName"`
+	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
+	VersionIds VersionIds `json:"VersionIds" xml:"VersionIds"`
 }
 
 // CreateListSecretVersionIdsRequest creates a request to invoke ListSecretVersionIds API

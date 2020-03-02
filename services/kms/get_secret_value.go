@@ -84,13 +84,13 @@ type GetSecretValueRequest struct {
 // GetSecretValueResponse is the response struct for api GetSecretValue
 type GetSecretValueResponse struct {
 	*responses.BaseResponse
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	SecretName     string   `json:"SecretName" xml:"SecretName"`
-	VersionId      string   `json:"VersionId" xml:"VersionId"`
-	CreateTime     string   `json:"CreateTime" xml:"CreateTime"`
-	SecretData     string   `json:"SecretData" xml:"SecretData"`
-	SecretDataType string   `json:"SecretDataType" xml:"SecretDataType"`
-	VersionStages  []string `json:"VersionStages" xml:"VersionStages"`
+	RequestId      string                        `json:"RequestId" xml:"RequestId"`
+	SecretName     string                        `json:"SecretName" xml:"SecretName"`
+	VersionId      string                        `json:"VersionId" xml:"VersionId"`
+	CreateTime     string                        `json:"CreateTime" xml:"CreateTime"`
+	SecretData     string                        `json:"SecretData" xml:"SecretData"`
+	SecretDataType string                        `json:"SecretDataType" xml:"SecretDataType"`
+	VersionStages  VersionStagesInGetSecretValue `json:"VersionStages" xml:"VersionStages"`
 }
 
 // CreateGetSecretValueRequest creates a request to invoke GetSecretValue API

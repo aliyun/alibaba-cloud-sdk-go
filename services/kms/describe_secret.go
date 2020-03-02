@@ -83,15 +83,15 @@ type DescribeSecretRequest struct {
 // DescribeSecretResponse is the response struct for api DescribeSecret
 type DescribeSecretResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	Arn               string `json:"Arn" xml:"Arn"`
-	SecretName        string `json:"SecretName" xml:"SecretName"`
-	EncryptionKeyId   string `json:"EncryptionKeyId" xml:"EncryptionKeyId"`
-	Description       string `json:"Description" xml:"Description"`
-	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime        string `json:"UpdateTime" xml:"UpdateTime"`
-	PlannedDeleteTime string `json:"PlannedDeleteTime" xml:"PlannedDeleteTime"`
-	Tags              []Tag  `json:"Tags" xml:"Tags"`
+	RequestId         string               `json:"RequestId" xml:"RequestId"`
+	Arn               string               `json:"Arn" xml:"Arn"`
+	SecretName        string               `json:"SecretName" xml:"SecretName"`
+	EncryptionKeyId   string               `json:"EncryptionKeyId" xml:"EncryptionKeyId"`
+	Description       string               `json:"Description" xml:"Description"`
+	CreateTime        string               `json:"CreateTime" xml:"CreateTime"`
+	UpdateTime        string               `json:"UpdateTime" xml:"UpdateTime"`
+	PlannedDeleteTime string               `json:"PlannedDeleteTime" xml:"PlannedDeleteTime"`
+	Tags              TagsInDescribeSecret `json:"Tags" xml:"Tags"`
 }
 
 // CreateDescribeSecretRequest creates a request to invoke DescribeSecret API
