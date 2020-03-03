@@ -1,3 +1,7 @@
+2020-03-03 Version: v1.61.20
+- Generated 2020-01-01 for `geoip`.
+- GeoIP Databases SDK initial release.
+
 2020-03-03 Version: v1.61.19
 - Generated 2016-01-20 for `Kms`.
 - Supported secretmanager for kms.
