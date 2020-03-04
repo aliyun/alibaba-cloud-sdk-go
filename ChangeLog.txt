@@ -1,3 +1,8 @@
+2020-03-04 Version: v1.61.24
+- Generated 2019-10-30 for `aliyuncvc`.
+- Public beta version.
+- Add Api GetMeetingMebers.
+
 2020-03-03 Version: v1.61.23
 - Generated 2016-01-20 for `Kms`.
 - Supported secretmanager stable version for kms.
