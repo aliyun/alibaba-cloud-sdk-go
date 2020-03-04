@@ -76,12 +76,13 @@ func (client *Client) UpdateK8sSlbWithCallback(request *UpdateK8sSlbRequest, cal
 // UpdateK8sSlbRequest is the request struct for api UpdateK8sSlb
 type UpdateK8sSlbRequest struct {
 	*requests.RoaRequest
-	SlbProtocol string `position:"Query" name:"SlbProtocol"`
-	Port        string `position:"Query" name:"Port"`
-	AppId       string `position:"Query" name:"AppId"`
-	ClusterId   string `position:"Query" name:"ClusterId"`
-	Type        string `position:"Query" name:"Type"`
-	TargetPort  string `position:"Query" name:"TargetPort"`
+	ServicePortInfos string `position:"Query" name:"ServicePortInfos"`
+	SlbProtocol      string `position:"Query" name:"SlbProtocol"`
+	Port             string `position:"Query" name:"Port"`
+	AppId            string `position:"Query" name:"AppId"`
+	ClusterId        string `position:"Query" name:"ClusterId"`
+	Type             string `position:"Query" name:"Type"`
+	TargetPort       string `position:"Query" name:"TargetPort"`
 }
 
 // UpdateK8sSlbResponse is the response struct for api UpdateK8sSlb
@@ -98,7 +99,7 @@ func CreateUpdateK8sSlbRequest() (request *UpdateK8sSlbRequest) {
 	request = &UpdateK8sSlbRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sSlb", "/pop/v5/k8s/acs/k8s_slb_binding", "", "")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sSlb", "/pop/v5/k8s/acs/k8s_slb_binding", "Edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

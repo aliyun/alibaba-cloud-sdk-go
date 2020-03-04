@@ -19,9 +19,9 @@ package edas
 type Cluster struct {
 	ClusterId      string `json:"ClusterId" xml:"ClusterId"`
 	NodeNum        int    `json:"NodeNum" xml:"NodeNum"`
-	UpdateTime     int    `json:"UpdateTime" xml:"UpdateTime"`
+	UpdateTime     int64  `json:"UpdateTime" xml:"UpdateTime"`
 	Mem            int    `json:"Mem" xml:"Mem"`
-	CreateTime     int    `json:"CreateTime" xml:"CreateTime"`
+	CreateTime     int64  `json:"CreateTime" xml:"CreateTime"`
 	OversoldFactor int    `json:"OversoldFactor" xml:"OversoldFactor"`
 	MemUsed        int    `json:"MemUsed" xml:"MemUsed"`
 	NetworkMode    int    `json:"NetworkMode" xml:"NetworkMode"`

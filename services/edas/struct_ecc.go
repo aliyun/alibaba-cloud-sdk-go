@@ -22,8 +22,8 @@ type Ecc struct {
 	AppId           string `json:"AppId" xml:"AppId"`
 	AppState        int    `json:"AppState" xml:"AppState"`
 	TaskState       int    `json:"TaskState" xml:"TaskState"`
-	CreateTime      int    `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime      int    `json:"UpdateTime" xml:"UpdateTime"`
+	CreateTime      int64  `json:"CreateTime" xml:"CreateTime"`
+	UpdateTime      int64  `json:"UpdateTime" xml:"UpdateTime"`
 	Ip              string `json:"Ip" xml:"Ip"`
 	VpcId           string `json:"VpcId" xml:"VpcId"`
 	GroupId         string `json:"GroupId" xml:"GroupId"`

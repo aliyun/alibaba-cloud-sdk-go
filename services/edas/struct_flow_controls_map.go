@@ -17,9 +17,9 @@ package edas
 
 // FlowControlsMap is a nested struct in edas response
 type FlowControlsMap struct {
-	AppId            string                             `json:"AppId" xml:"AppId"`
-	AppName          string                             `json:"AppName" xml:"AppName"`
-	RuleList         RuleList                           `json:"RuleList" xml:"RuleList"`
-	AppList          AppList                            `json:"AppList" xml:"AppList"`
-	InterfaceMethods InterfaceMethodsInListFlowControls `json:"InterfaceMethods" xml:"InterfaceMethods"`
+	AppId            string                                `json:"AppId" xml:"AppId"`
+	AppName          string                                `json:"AppName" xml:"AppName"`
+	RuleList         RuleList                              `json:"RuleList" xml:"RuleList"`
+	AppList          AppList                               `json:"AppList" xml:"AppList"`
+	InterfaceMethods InterfaceMethodsInListDegradeControls `json:"InterfaceMethods" xml:"InterfaceMethods"`
 }

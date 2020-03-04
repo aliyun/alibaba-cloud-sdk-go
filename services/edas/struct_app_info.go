@@ -17,9 +17,9 @@ package edas
 
 // AppInfo is a nested struct in edas response
 type AppInfo struct {
-	Application      Application      `json:"Application" xml:"Application"`
-	EcuList          EcuList          `json:"EcuList" xml:"EcuList"`
-	EccList          EccList          `json:"EccList" xml:"EccList"`
-	GroupList        GroupList        `json:"GroupList" xml:"GroupList"`
-	DeployRecordList DeployRecordList `json:"DeployRecordList" xml:"DeployRecordList"`
+	Application      ApplicationInQueryApplicationStatus `json:"Application" xml:"Application"`
+	EcuList          EcuList                             `json:"EcuList" xml:"EcuList"`
+	EccList          EccList                             `json:"EccList" xml:"EccList"`
+	GroupList        GroupList                           `json:"GroupList" xml:"GroupList"`
+	DeployRecordList DeployRecordList                    `json:"DeployRecordList" xml:"DeployRecordList"`
 }

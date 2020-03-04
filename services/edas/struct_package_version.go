@@ -22,7 +22,8 @@ type PackageVersion struct {
 	AppId          string `json:"AppId" xml:"AppId"`
 	Description    string `json:"Description" xml:"Description"`
 	WarUrl         string `json:"WarUrl" xml:"WarUrl"`
-	CreateTime     int    `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime     int    `json:"UpdateTime" xml:"UpdateTime"`
+	CreateTime     int64  `json:"CreateTime" xml:"CreateTime"`
+	UpdateTime     int64  `json:"UpdateTime" xml:"UpdateTime"`
 	Type           string `json:"Type" xml:"Type"`
+	PublicUrl      string `json:"PublicUrl" xml:"PublicUrl"`
 }

@@ -17,13 +17,33 @@ package edas
 
 // DeployGroup is a nested struct in edas response
 type DeployGroup struct {
-	GroupId          string `json:"GroupId" xml:"GroupId"`
-	GroupName        string `json:"GroupName" xml:"GroupName"`
-	AppId            string `json:"AppId" xml:"AppId"`
-	PackageVersionId string `json:"PackageVersionId" xml:"PackageVersionId"`
-	AppVersionId     string `json:"AppVersionId" xml:"AppVersionId"`
-	GroupType        int    `json:"GroupType" xml:"GroupType"`
-	ClusterId        string `json:"ClusterId" xml:"ClusterId"`
-	CreateTime       int    `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime       int    `json:"UpdateTime" xml:"UpdateTime"`
+	CsClusterId           string     `json:"CsClusterId" xml:"CsClusterId"`
+	Reversion             string     `json:"Reversion" xml:"Reversion"`
+	GroupName             string     `json:"GroupName" xml:"GroupName"`
+	DeploymentName        string     `json:"DeploymentName" xml:"DeploymentName"`
+	MemoryLimit           string     `json:"MemoryLimit" xml:"MemoryLimit"`
+	CreateTime            int64      `json:"CreateTime" xml:"CreateTime"`
+	PackageVersion        string     `json:"PackageVersion" xml:"PackageVersion"`
+	PackagePublicUrl      string     `json:"PackagePublicUrl" xml:"PackagePublicUrl"`
+	Selector              string     `json:"Selector" xml:"Selector"`
+	Strategy              string     `json:"Strategy" xml:"Strategy"`
+	PackageVersionId      string     `json:"PackageVersionId" xml:"PackageVersionId"`
+	ClusterName           string     `json:"ClusterName" xml:"ClusterName"`
+	PreStop               string     `json:"PreStop" xml:"PreStop"`
+	Env                   string     `json:"Env" xml:"Env"`
+	BaseComponentMetaName string     `json:"BaseComponentMetaName" xml:"BaseComponentMetaName"`
+	GroupId               string     `json:"GroupId" xml:"GroupId"`
+	AppVersionId          string     `json:"AppVersionId" xml:"AppVersionId"`
+	ClusterId             string     `json:"ClusterId" xml:"ClusterId"`
+	LastUpdateTime        int64      `json:"LastUpdateTime" xml:"LastUpdateTime"`
+	UpdateTime            int64      `json:"UpdateTime" xml:"UpdateTime"`
+	NameSpace             string     `json:"NameSpace" xml:"NameSpace"`
+	PostStart             string     `json:"PostStart" xml:"PostStart"`
+	GroupType             int        `json:"GroupType" xml:"GroupType"`
+	AppId                 string     `json:"AppId" xml:"AppId"`
+	CpuLimit              string     `json:"CpuLimit" xml:"CpuLimit"`
+	Labels                string     `json:"Labels" xml:"Labels"`
+	Status                string     `json:"Status" xml:"Status"`
+	PackageUrl            string     `json:"PackageUrl" xml:"PackageUrl"`
+	Components            Components `json:"Components" xml:"Components"`
 }

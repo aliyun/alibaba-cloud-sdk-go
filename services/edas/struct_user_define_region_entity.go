@@ -21,7 +21,7 @@ type UserDefineRegionEntity struct {
 	BelongRegion string `json:"BelongRegion" xml:"BelongRegion"`
 	DebugEnable  bool   `json:"DebugEnable" xml:"DebugEnable"`
 	UserId       string `json:"UserId" xml:"UserId"`
-	Id           int    `json:"Id" xml:"Id"`
+	Id           int64  `json:"Id" xml:"Id"`
 	RegionName   string `json:"RegionName" xml:"RegionName"`
 	Description  string `json:"Description" xml:"Description"`
 }

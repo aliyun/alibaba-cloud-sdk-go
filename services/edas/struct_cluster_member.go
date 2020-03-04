@@ -22,6 +22,6 @@ type ClusterMember struct {
 	EcuId           string `json:"EcuId" xml:"EcuId"`
 	EcsId           string `json:"EcsId" xml:"EcsId"`
 	Status          int    `json:"Status" xml:"Status"`
-	CreateTime      int    `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime      int    `json:"UpdateTime" xml:"UpdateTime"`
+	CreateTime      int64  `json:"CreateTime" xml:"CreateTime"`
+	UpdateTime      int64  `json:"UpdateTime" xml:"UpdateTime"`
 }

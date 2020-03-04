@@ -17,7 +17,7 @@ package edas
 
 // BuildPack is a nested struct in edas response
 type BuildPack struct {
-	ConfigId           int    `json:"ConfigId" xml:"ConfigId"`
+	ConfigId           int64  `json:"ConfigId" xml:"ConfigId"`
 	PackVersion        string `json:"PackVersion" xml:"PackVersion"`
 	TomcatDesc         string `json:"TomcatDesc" xml:"TomcatDesc"`
 	TomcatVersion      string `json:"TomcatVersion" xml:"TomcatVersion"`

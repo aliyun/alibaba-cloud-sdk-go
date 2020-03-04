@@ -22,5 +22,5 @@ type DeployRecord struct {
 	EcuId            string `json:"EcuId" xml:"EcuId"`
 	PackageVersionId string `json:"PackageVersionId" xml:"PackageVersionId"`
 	PackageMd5       string `json:"PackageMd5" xml:"PackageMd5"`
-	CreateTime       int    `json:"CreateTime" xml:"CreateTime"`
+	CreateTime       int64  `json:"CreateTime" xml:"CreateTime"`
 }

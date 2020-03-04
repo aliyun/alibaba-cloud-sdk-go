@@ -76,7 +76,8 @@ func (client *Client) ImportK8sClusterWithCallback(request *ImportK8sClusterRequ
 // ImportK8sClusterRequest is the request struct for api ImportK8sCluster
 type ImportK8sClusterRequest struct {
 	*requests.RoaRequest
-	ClusterId string `position:"Query" name:"ClusterId"`
+	NamespaceId string `position:"Query" name:"NamespaceId"`
+	ClusterId   string `position:"Query" name:"ClusterId"`
 }
 
 // ImportK8sClusterResponse is the response struct for api ImportK8sCluster
@@ -93,7 +94,7 @@ func CreateImportK8sClusterRequest() (request *ImportK8sClusterRequest) {
 	request = &ImportK8sClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ImportK8sCluster", "/pop/v5/import_k8s_cluster", "", "")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ImportK8sCluster", "/pop/v5/import_k8s_cluster", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

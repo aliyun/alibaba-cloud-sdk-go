@@ -79,6 +79,7 @@ type InsertK8sApplicationRequest struct {
 	NasId                  string           `position:"Query" name:"NasId"`
 	RepoId                 string           `position:"Query" name:"RepoId"`
 	InternetTargetPort     requests.Integer `position:"Query" name:"InternetTargetPort"`
+	WebContainer           string           `position:"Query" name:"WebContainer"`
 	IntranetSlbId          string           `position:"Query" name:"IntranetSlbId"`
 	CommandArgs            string           `position:"Query" name:"CommandArgs"`
 	Readiness              string           `position:"Query" name:"Readiness"`
@@ -86,11 +87,16 @@ type InsertK8sApplicationRequest struct {
 	InternetSlbPort        requests.Integer `position:"Query" name:"InternetSlbPort"`
 	Envs                   string           `position:"Query" name:"Envs"`
 	RequestsMem            requests.Integer `position:"Query" name:"RequestsMem"`
+	PackageVersion         string           `position:"Query" name:"PackageVersion"`
 	StorageType            string           `position:"Query" name:"StorageType"`
 	LimitMem               requests.Integer `position:"Query" name:"LimitMem"`
+	LimitmCpu              requests.Integer `position:"Query" name:"LimitmCpu"`
+	EdasContainerVersion   string           `position:"Query" name:"EdasContainerVersion"`
 	AppName                string           `position:"Query" name:"AppName"`
 	InternetSlbId          string           `position:"Query" name:"InternetSlbId"`
 	LogicalRegionId        string           `position:"Query" name:"LogicalRegionId"`
+	PackageUrl             string           `position:"Query" name:"PackageUrl"`
+	RequestsmCpu           requests.Integer `position:"Query" name:"RequestsmCpu"`
 	InternetSlbProtocol    string           `position:"Query" name:"InternetSlbProtocol"`
 	IntranetSlbPort        requests.Integer `position:"Query" name:"IntranetSlbPort"`
 	PreStop                string           `position:"Query" name:"PreStop"`
@@ -101,10 +107,14 @@ type InsertK8sApplicationRequest struct {
 	IntranetTargetPort     requests.Integer `position:"Query" name:"IntranetTargetPort"`
 	LocalVolume            string           `position:"Query" name:"LocalVolume"`
 	Command                string           `position:"Query" name:"Command"`
+	JDK                    string           `position:"Query" name:"JDK"`
+	UseBodyEncoding        requests.Boolean `position:"Query" name:"UseBodyEncoding"`
+	UriEncoding            string           `position:"Query" name:"UriEncoding"`
 	IntranetSlbProtocol    string           `position:"Query" name:"IntranetSlbProtocol"`
 	ImageUrl               string           `position:"Query" name:"ImageUrl"`
 	Namespace              string           `position:"Query" name:"Namespace"`
 	ApplicationDescription string           `position:"Query" name:"ApplicationDescription"`
+	PackageType            string           `position:"Query" name:"PackageType"`
 	RequestsCpu            requests.Integer `position:"Query" name:"RequestsCpu"`
 	PostStart              string           `position:"Query" name:"PostStart"`
 }
@@ -123,7 +133,7 @@ func CreateInsertK8sApplicationRequest() (request *InsertK8sApplicationRequest) 
 	request = &InsertK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertK8sApplication", "/pop/v5/k8s/acs/create_k8s_app", "", "")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertK8sApplication", "/pop/v5/k8s/acs/create_k8s_app", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

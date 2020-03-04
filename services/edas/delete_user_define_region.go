@@ -94,7 +94,7 @@ func CreateDeleteUserDefineRegionRequest() (request *DeleteUserDefineRegionReque
 	request = &DeleteUserDefineRegionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteUserDefineRegion", "/pop/v5/user_region_def", "", "")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteUserDefineRegion", "/pop/v5/user_region_def", "Edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

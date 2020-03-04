@@ -20,7 +20,7 @@ type Role struct {
 	Id          int    `json:"Id" xml:"Id"`
 	AdminUserId string `json:"AdminUserId" xml:"AdminUserId"`
 	Name        string `json:"Name" xml:"Name"`
-	CreateTime  int    `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime  int    `json:"UpdateTime" xml:"UpdateTime"`
+	CreateTime  int64  `json:"CreateTime" xml:"CreateTime"`
+	UpdateTime  int64  `json:"UpdateTime" xml:"UpdateTime"`
 	IsDefault   bool   `json:"IsDefault" xml:"IsDefault"`
 }

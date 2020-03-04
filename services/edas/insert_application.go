@@ -79,6 +79,7 @@ type InsertApplicationRequest struct {
 	WebContainer    string           `position:"Query" name:"WebContainer"`
 	EcuInfo         string           `position:"Query" name:"EcuInfo"`
 	BuildPackId     requests.Integer `position:"Query" name:"BuildPackId"`
+	ComponentIds    string           `position:"Query" name:"ComponentIds"`
 	HealthCheckURL  string           `position:"Query" name:"HealthCheckURL"`
 	ReservedPortStr string           `position:"Query" name:"ReservedPortStr"`
 	Description     string           `position:"Query" name:"Description"`
@@ -105,7 +106,7 @@ func CreateInsertApplicationRequest() (request *InsertApplicationRequest) {
 	request = &InsertApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertApplication", "/pop/v5/changeorder/co_create_app", "", "")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertApplication", "/pop/v5/changeorder/co_create_app", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

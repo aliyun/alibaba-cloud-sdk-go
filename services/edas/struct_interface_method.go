@@ -17,7 +17,7 @@ package edas
 
 // InterfaceMethod is a nested struct in edas response
 type InterfaceMethod struct {
-	Version string                    `json:"Version" xml:"Version"`
-	Name    string                    `json:"name" xml:"name"`
-	Methods MethodsInListFlowControls `json:"Methods" xml:"Methods"`
+	Version string                       `json:"Version" xml:"Version"`
+	Name    string                       `json:"name" xml:"name"`
+	Methods MethodsInListDegradeControls `json:"Methods" xml:"Methods"`
 }

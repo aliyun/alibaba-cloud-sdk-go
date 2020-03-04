@@ -76,26 +76,39 @@ func (client *Client) DeployK8sApplicationWithCallback(request *DeployK8sApplica
 // DeployK8sApplicationRequest is the request struct for api DeployK8sApplication
 type DeployK8sApplicationRequest struct {
 	*requests.RoaRequest
-	MemoryRequest requests.Integer `position:"Query" name:"MemoryRequest"`
-	NasId         string           `position:"Query" name:"NasId"`
-	Image         string           `position:"Query" name:"Image"`
-	PreStop       string           `position:"Query" name:"PreStop"`
-	MountDescs    string           `position:"Query" name:"MountDescs"`
-	Readiness     string           `position:"Query" name:"Readiness"`
-	Replicas      requests.Integer `position:"Query" name:"Replicas"`
-	BatchWaitTime requests.Integer `position:"Query" name:"BatchWaitTime"`
-	Liveness      string           `position:"Query" name:"Liveness"`
-	CpuRequest    requests.Integer `position:"Query" name:"CpuRequest"`
-	Envs          string           `position:"Query" name:"Envs"`
-	CpuLimit      requests.Integer `position:"Query" name:"CpuLimit"`
-	LocalVolume   string           `position:"Query" name:"LocalVolume"`
-	Command       string           `position:"Query" name:"Command"`
-	StorageType   string           `position:"Query" name:"StorageType"`
-	Args          string           `position:"Query" name:"Args"`
-	AppId         string           `position:"Query" name:"AppId"`
-	MemoryLimit   requests.Integer `position:"Query" name:"MemoryLimit"`
-	ImageTag      string           `position:"Query" name:"ImageTag"`
-	PostStart     string           `position:"Query" name:"PostStart"`
+	NasId                string           `position:"Query" name:"NasId"`
+	WebContainer         string           `position:"Query" name:"WebContainer"`
+	Readiness            string           `position:"Query" name:"Readiness"`
+	PackageVersionId     string           `position:"Query" name:"PackageVersionId"`
+	BatchWaitTime        requests.Integer `position:"Query" name:"BatchWaitTime"`
+	Liveness             string           `position:"Query" name:"Liveness"`
+	Envs                 string           `position:"Query" name:"Envs"`
+	CpuLimit             requests.Integer `position:"Query" name:"CpuLimit"`
+	PackageVersion       string           `position:"Query" name:"PackageVersion"`
+	StorageType          string           `position:"Query" name:"StorageType"`
+	EdasContainerVersion string           `position:"Query" name:"EdasContainerVersion"`
+	PackageUrl           string           `position:"Query" name:"PackageUrl"`
+	MemoryLimit          requests.Integer `position:"Query" name:"MemoryLimit"`
+	ImageTag             string           `position:"Query" name:"ImageTag"`
+	MemoryRequest        requests.Integer `position:"Query" name:"MemoryRequest"`
+	Image                string           `position:"Query" name:"Image"`
+	PreStop              string           `position:"Query" name:"PreStop"`
+	MountDescs           string           `position:"Query" name:"MountDescs"`
+	Replicas             requests.Integer `position:"Query" name:"Replicas"`
+	CpuRequest           requests.Integer `position:"Query" name:"CpuRequest"`
+	LocalVolume          string           `position:"Query" name:"LocalVolume"`
+	Command              string           `position:"Query" name:"Command"`
+	UpdateStrategy       string           `position:"Query" name:"UpdateStrategy"`
+	Args                 string           `position:"Query" name:"Args"`
+	JDK                  string           `position:"Query" name:"JDK"`
+	UseBodyEncoding      requests.Boolean `position:"Query" name:"UseBodyEncoding"`
+	ChangeOrderDesc      string           `position:"Query" name:"ChangeOrderDesc"`
+	UriEncoding          string           `position:"Query" name:"UriEncoding"`
+	AppId                string           `position:"Query" name:"AppId"`
+	McpuRequest          requests.Integer `position:"Query" name:"McpuRequest"`
+	McpuLimit            requests.Integer `position:"Query" name:"McpuLimit"`
+	VolumesStr           string           `position:"Query" name:"VolumesStr"`
+	PostStart            string           `position:"Query" name:"PostStart"`
 }
 
 // DeployK8sApplicationResponse is the response struct for api DeployK8sApplication
@@ -112,7 +125,7 @@ func CreateDeployK8sApplicationRequest() (request *DeployK8sApplicationRequest) 
 	request = &DeployK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeployK8sApplication", "/pop/v5/k8s/acs/k8s_apps", "", "")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeployK8sApplication", "/pop/v5/k8s/acs/k8s_apps", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

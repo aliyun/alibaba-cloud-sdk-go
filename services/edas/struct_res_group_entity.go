@@ -17,12 +17,12 @@ package edas
 
 // ResGroupEntity is a nested struct in edas response
 type ResGroupEntity struct {
-	Id          int                        `json:"Id" xml:"Id"`
+	Id          int64                      `json:"Id" xml:"Id"`
 	Name        string                     `json:"Name" xml:"Name"`
 	Description string                     `json:"Description" xml:"Description"`
 	AdminUserId string                     `json:"AdminUserId" xml:"AdminUserId"`
-	CreateTime  int                        `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime  int                        `json:"UpdateTime" xml:"UpdateTime"`
+	CreateTime  int64                      `json:"CreateTime" xml:"CreateTime"`
+	UpdateTime  int64                      `json:"UpdateTime" xml:"UpdateTime"`
 	RegionId    string                     `json:"RegionId" xml:"RegionId"`
 	EcsList     EcsList                    `json:"ecsList" xml:"ecsList"`
 	SlbList     SlbListInListResourceGroup `json:"SlbList" xml:"SlbList"`

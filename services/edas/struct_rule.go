@@ -17,18 +17,35 @@ package edas
 
 // Rule is a nested struct in edas response
 type Rule struct {
-	RuleType      string `json:"RuleType" xml:"RuleType"`
-	UpdateTime    int    `json:"UpdateTime" xml:"UpdateTime"`
-	Granularity   string `json:"Granularity" xml:"Granularity"`
-	CreateTime    int    `json:"CreateTime" xml:"CreateTime"`
-	RuleId        string `json:"RuleId" xml:"RuleId"`
-	State         int    `json:"State" xml:"State"`
-	Threshold     int    `json:"Threshold" xml:"Threshold"`
-	AppId         string `json:"AppId" xml:"AppId"`
-	ConsumerAppId string `json:"ConsumerAppId" xml:"ConsumerAppId"`
-	Strategy      string `json:"Strategy" xml:"Strategy"`
-	Duration      int    `json:"Duration" xml:"Duration"`
-	Id            string `json:"Id" xml:"Id"`
-	RtThreshold   int    `json:"RtThreshold" xml:"RtThreshold"`
-	Resource      string `json:"Resource" xml:"Resource"`
+	Step            int    `json:"Step" xml:"Step"`
+	TemplateId      string `json:"TemplateId" xml:"TemplateId"`
+	TemplateVersion int    `json:"TemplateVersion" xml:"TemplateVersion"`
+	CreateTime      int64  `json:"CreateTime" xml:"CreateTime"`
+	RuleId          string `json:"RuleId" xml:"RuleId"`
+	State           int    `json:"State" xml:"State"`
+	Threshold       int    `json:"Threshold" xml:"Threshold"`
+	Mode            string `json:"Mode" xml:"Mode"`
+	ConsumerAppId   string `json:"ConsumerAppId" xml:"ConsumerAppId"`
+	Strategy        string `json:"Strategy" xml:"Strategy"`
+	Duration        int    `json:"Duration" xml:"Duration"`
+	LoadNum         int    `json:"LoadNum" xml:"LoadNum"`
+	GroupId         string `json:"GroupId" xml:"GroupId"`
+	Id              string `json:"Id" xml:"Id"`
+	VpcId           string `json:"VpcId" xml:"VpcId"`
+	Rt              int    `json:"Rt" xml:"Rt"`
+	Resource        string `json:"Resource" xml:"Resource"`
+	MetricType      string `json:"MetricType" xml:"MetricType"`
+	RuleType        string `json:"RuleType" xml:"RuleType"`
+	UpdateTime      int64  `json:"UpdateTime" xml:"UpdateTime"`
+	Granularity     string `json:"Granularity" xml:"Granularity"`
+	SpecId          string `json:"SpecId" xml:"SpecId"`
+	VSwitchIds      string `json:"VSwitchIds" xml:"VSwitchIds"`
+	AppId           string `json:"AppId" xml:"AppId"`
+	ResourceFrom    string `json:"ResourceFrom" xml:"ResourceFrom"`
+	Enable          bool   `json:"Enable" xml:"Enable"`
+	InstNum         int    `json:"InstNum" xml:"InstNum"`
+	RtThreshold     int    `json:"RtThreshold" xml:"RtThreshold"`
+	Cond            string `json:"Cond" xml:"Cond"`
+	Cpu             int    `json:"Cpu" xml:"Cpu"`
+	MultiAzPolicy   string `json:"MultiAzPolicy" xml:"MultiAzPolicy"`
 }

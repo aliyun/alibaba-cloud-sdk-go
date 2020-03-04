@@ -18,11 +18,11 @@ package edas
 // EcuEntity is a nested struct in edas response
 type EcuEntity struct {
 	Name          string `json:"Name" xml:"Name"`
-	UpdateTime    int    `json:"UpdateTime" xml:"UpdateTime"`
+	UpdateTime    int64  `json:"UpdateTime" xml:"UpdateTime"`
 	Online        bool   `json:"Online" xml:"Online"`
-	HeartbeatTime int    `json:"HeartbeatTime" xml:"HeartbeatTime"`
+	HeartbeatTime int64  `json:"HeartbeatTime" xml:"HeartbeatTime"`
 	Mem           int    `json:"Mem" xml:"Mem"`
-	CreateTime    int    `json:"CreateTime" xml:"CreateTime"`
+	CreateTime    int64  `json:"CreateTime" xml:"CreateTime"`
 	EcuId         string `json:"EcuId" xml:"EcuId"`
 	RegionId      string `json:"RegionId" xml:"RegionId"`
 	ZoneId        string `json:"ZoneId" xml:"ZoneId"`

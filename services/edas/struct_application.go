@@ -19,20 +19,25 @@ package edas
 type Application struct {
 	Name                 string `json:"Name" xml:"Name"`
 	ClusterId            string `json:"ClusterId" xml:"ClusterId"`
-	ApplicationId        string `json:"ApplicationId" xml:"ApplicationId"`
 	Port                 int    `json:"Port" xml:"Port"`
-	Email                string `json:"Email" xml:"Email"`
+	ExtSlbIp             string `json:"ExtSlbIp" xml:"ExtSlbIp"`
+	BuildPackageId       int64  `json:"BuildPackageId" xml:"BuildPackageId"`
 	Memory               int    `json:"Memory" xml:"Memory"`
-	LaunchTime           int    `json:"LaunchTime" xml:"LaunchTime"`
+	ExtSlbId             string `json:"ExtSlbId" xml:"ExtSlbId"`
 	Owner                string `json:"Owner" xml:"Owner"`
-	CreateTime           int    `json:"CreateTime" xml:"CreateTime"`
+	CreateTime           int64  `json:"CreateTime" xml:"CreateTime"`
 	Dockerize            bool   `json:"Dockerize" xml:"Dockerize"`
-	BuildPackageId       int    `json:"BuildPackageId" xml:"BuildPackageId"`
-	InstanceCount        int    `json:"InstanceCount" xml:"InstanceCount"`
+	AppId                string `json:"AppId" xml:"AppId"`
 	RegionId             string `json:"RegionId" xml:"RegionId"`
+	InstanceCount        int    `json:"InstanceCount" xml:"InstanceCount"`
+	SlbPort              int    `json:"SlbPort" xml:"SlbPort"`
 	HealthCheckUrl       string `json:"HealthCheckUrl" xml:"HealthCheckUrl"`
 	UserId               string `json:"UserId" xml:"UserId"`
+	SlbId                string `json:"SlbId" xml:"SlbId"`
+	ApplicationType      string `json:"ApplicationType" xml:"ApplicationType"`
+	ClusterType          int    `json:"ClusterType" xml:"ClusterType"`
 	Cpu                  int    `json:"Cpu" xml:"Cpu"`
-	Phone                string `json:"Phone" xml:"Phone"`
+	Description          string `json:"Description" xml:"Description"`
 	RunningInstanceCount int    `json:"RunningInstanceCount" xml:"RunningInstanceCount"`
+	SlbIp                string `json:"SlbIp" xml:"SlbIp"`
 }

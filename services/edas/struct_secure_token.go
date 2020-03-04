@@ -17,7 +17,7 @@ package edas
 
 // SecureToken is a nested struct in edas response
 type SecureToken struct {
-	Id                int    `json:"Id" xml:"Id"`
+	Id                int64  `json:"Id" xml:"Id"`
 	UserId            string `json:"UserId" xml:"UserId"`
 	EdasId            string `json:"EdasId" xml:"EdasId"`
 	RegionId          string `json:"RegionId" xml:"RegionId"`

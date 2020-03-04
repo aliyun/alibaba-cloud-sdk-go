@@ -78,14 +78,15 @@ type DeployApplicationRequest struct {
 	*requests.RoaRequest
 	BuildPackId    requests.Integer `position:"Query" name:"BuildPackId"`
 	ComponentIds   string           `position:"Query" name:"ComponentIds"`
-	AppId          string           `position:"Query" name:"AppId"`
-	ImageUrl       string           `position:"Query" name:"ImageUrl"`
 	GroupId        string           `position:"Query" name:"GroupId"`
 	BatchWaitTime  requests.Integer `position:"Query" name:"BatchWaitTime"`
+	ReleaseType    requests.Integer `position:"Query" name:"ReleaseType"`
 	Batch          requests.Integer `position:"Query" name:"Batch"`
 	AppEnv         string           `position:"Query" name:"AppEnv"`
-	WarUrl         string           `position:"Query" name:"WarUrl"`
 	PackageVersion string           `position:"Query" name:"PackageVersion"`
+	AppId          string           `position:"Query" name:"AppId"`
+	ImageUrl       string           `position:"Query" name:"ImageUrl"`
+	WarUrl         string           `position:"Query" name:"WarUrl"`
 	Desc           string           `position:"Query" name:"Desc"`
 	DeployType     string           `position:"Query" name:"DeployType"`
 }
@@ -104,7 +105,7 @@ func CreateDeployApplicationRequest() (request *DeployApplicationRequest) {
 	request = &DeployApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeployApplication", "/pop/v5/changeorder/co_deploy", "", "")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeployApplication", "/pop/v5/changeorder/co_deploy", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

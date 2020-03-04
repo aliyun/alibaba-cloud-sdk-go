@@ -17,40 +17,19 @@ package edas
 
 // Data is a nested struct in edas response
 type Data struct {
-	PackageType       string `json:"PackageType" xml:"PackageType"`
-	ChangeOrderId     string `json:"ChangeOrderId" xml:"ChangeOrderId"`
-	WebContainer      string `json:"WebContainer" xml:"WebContainer"`
-	CommandArgs       string `json:"CommandArgs" xml:"CommandArgs"`
-	MinReadyInstances int    `json:"MinReadyInstances" xml:"MinReadyInstances"`
-	PackageVersion    string `json:"PackageVersion" xml:"PackageVersion"`
-	AppDescription    string `json:"AppDescription" xml:"AppDescription"`
-	Replicas          int    `json:"Replicas" xml:"Replicas"`
-	SlbPort           int    `json:"SlbPort" xml:"SlbPort"`
-	ImageUrl          string `json:"ImageUrl" xml:"ImageUrl"`
-	VpcId             string `json:"VpcId" xml:"VpcId"`
-	CustomHostAlias   string `json:"CustomHostAlias" xml:"CustomHostAlias"`
-	BatchWaitTime     int    `json:"BatchWaitTime" xml:"BatchWaitTime"`
-	ExtSlbIp          string `json:"ExtSlbIp" xml:"ExtSlbIp"`
-	Memory            int    `json:"Memory" xml:"Memory"`
-	VSwitchId         string `json:"VSwitchId" xml:"VSwitchId"`
-	JarStartArgs      string `json:"JarStartArgs" xml:"JarStartArgs"`
-	ExtSlbId          string `json:"ExtSlbId" xml:"ExtSlbId"`
-	Liveness          string `json:"Liveness" xml:"Liveness"`
-	Jdk               string `json:"Jdk" xml:"Jdk"`
-	ExtSlbName        string `json:"ExtSlbName" xml:"ExtSlbName"`
-	SlbName           string `json:"SlbName" xml:"SlbName"`
-	Readiness         string `json:"Readiness" xml:"Readiness"`
-	Command           string `json:"Command" xml:"Command"`
-	VServerGroupId    string `json:"VServerGroupId" xml:"VServerGroupId"`
-	AppId             string `json:"AppId" xml:"AppId"`
-	ExtVServerGroupId string `json:"ExtVServerGroupId" xml:"ExtVServerGroupId"`
-	JarStartOptions   string `json:"JarStartOptions" xml:"JarStartOptions"`
-	NamespaceId       string `json:"NamespaceId" xml:"NamespaceId"`
-	Envs              string `json:"Envs" xml:"Envs"`
-	Cpu               int    `json:"Cpu" xml:"Cpu"`
-	SlbId             string `json:"SlbId" xml:"SlbId"`
-	AppName           string `json:"AppName" xml:"AppName"`
-	PackageUrl        string `json:"PackageUrl" xml:"PackageUrl"`
-	BuildPackId       int    `json:"BuildPackId" xml:"BuildPackId"`
-	SlbIp             string `json:"SlbIp" xml:"SlbIp"`
+	ChangeOrderId     string                    `json:"ChangeOrderId" xml:"ChangeOrderId"`
+	ExtSlbIp          string                    `json:"ExtSlbIp" xml:"ExtSlbIp"`
+	UpdateTime        int64                     `json:"UpdateTime" xml:"UpdateTime"`
+	ExtSlbId          string                    `json:"ExtSlbId" xml:"ExtSlbId"`
+	ExtSlbName        string                    `json:"ExtSlbName" xml:"ExtSlbName"`
+	OversoldFactor    int                       `json:"OversoldFactor" xml:"OversoldFactor"`
+	SlbName           string                    `json:"SlbName" xml:"SlbName"`
+	VServerGroupId    string                    `json:"VServerGroupId" xml:"VServerGroupId"`
+	ExtVServerGroupId string                    `json:"ExtVServerGroupId" xml:"ExtVServerGroupId"`
+	SlbPort           int                       `json:"SlbPort" xml:"SlbPort"`
+	SlbId             string                    `json:"SlbId" xml:"SlbId"`
+	ClusterType       int                       `json:"ClusterType" xml:"ClusterType"`
+	VpcId             string                    `json:"VpcId" xml:"VpcId"`
+	SlbIp             string                    `json:"SlbIp" xml:"SlbIp"`
+	RuleList          RuleListInGetScalingRules `json:"RuleList" xml:"RuleList"`
 }

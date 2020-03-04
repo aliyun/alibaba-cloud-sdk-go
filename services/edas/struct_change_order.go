@@ -27,4 +27,7 @@ type ChangeOrder struct {
 	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
 	FinishTime    string `json:"FinishTime" xml:"FinishTime"`
 	CoType        string `json:"CoType" xml:"CoType"`
+	CreateUserId  string `json:"CreateUserId" xml:"CreateUserId"`
+	CoTypeCode    string `json:"CoTypeCode" xml:"CoTypeCode"`
+	Source        string `json:"Source" xml:"Source"`
 }

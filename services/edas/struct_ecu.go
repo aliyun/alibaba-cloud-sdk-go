@@ -20,10 +20,10 @@ type Ecu struct {
 	EcuId         string `json:"EcuId" xml:"EcuId"`
 	Online        bool   `json:"Online" xml:"Online"`
 	DockerEnv     bool   `json:"DockerEnv" xml:"DockerEnv"`
-	CreateTime    int    `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime    int    `json:"UpdateTime" xml:"UpdateTime"`
+	CreateTime    int64  `json:"CreateTime" xml:"CreateTime"`
+	UpdateTime    int64  `json:"UpdateTime" xml:"UpdateTime"`
 	IpAddr        string `json:"IpAddr" xml:"IpAddr"`
-	HeartbeatTime int    `json:"HeartbeatTime" xml:"HeartbeatTime"`
+	HeartbeatTime int64  `json:"HeartbeatTime" xml:"HeartbeatTime"`
 	UserId        string `json:"UserId" xml:"UserId"`
 	GroupId       string `json:"GroupId" xml:"GroupId"`
 	Name          string `json:"Name" xml:"Name"`

@@ -19,8 +19,8 @@ package edas
 type ApplicationInfo struct {
 	AppId         string `json:"AppId" xml:"AppId"`
 	Port          int    `json:"Port" xml:"Port"`
-	RegionId      string `json:"RegionId" xml:"RegionId"`
 	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
+	RegionId      string `json:"RegionId" xml:"RegionId"`
 	UserId        string `json:"UserId" xml:"UserId"`
 	Owner         string `json:"Owner" xml:"Owner"`
 	ClusterType   int    `json:"ClusterType" xml:"ClusterType"`

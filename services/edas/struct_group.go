@@ -24,6 +24,6 @@ type Group struct {
 	AppVersionId     string `json:"AppVersionId" xml:"AppVersionId"`
 	GroupType        int    `json:"GroupType" xml:"GroupType"`
 	ClusterId        string `json:"ClusterId" xml:"ClusterId"`
-	CreateTime       int    `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime       int    `json:"UpdateTime" xml:"UpdateTime"`
+	CreateTime       int64  `json:"CreateTime" xml:"CreateTime"`
+	UpdateTime       int64  `json:"UpdateTime" xml:"UpdateTime"`
 }

@@ -17,5 +17,5 @@ package edas
 
 // ApplicationList is a nested struct in edas response
 type ApplicationList struct {
-	Application []ApplicationInListApplication `json:"Application" xml:"Application"`
+	Application []Application `json:"Application" xml:"Application"`
 }

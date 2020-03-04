@@ -25,5 +25,7 @@ type ChangeOrderInfo struct {
 	Status           int              `json:"Status" xml:"Status"`
 	CoType           string           `json:"CoType" xml:"CoType"`
 	CreateTime       string           `json:"CreateTime" xml:"CreateTime"`
+	SupportRollback  bool             `json:"SupportRollback" xml:"SupportRollback"`
+	TrafficControl   TrafficControl   `json:"TrafficControl" xml:"TrafficControl"`
 	PipelineInfoList PipelineInfoList `json:"PipelineInfoList" xml:"PipelineInfoList"`
 }

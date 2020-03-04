@@ -24,6 +24,6 @@ type DeployGroupEntity struct {
 	ClusterId        string `json:"ClusterId" xml:"ClusterId"`
 	PackageVersionId string `json:"PackageVersionId" xml:"PackageVersionId"`
 	AppVersionId     string `json:"AppVersionId" xml:"AppVersionId"`
-	CreateTime       int    `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime       int    `json:"UpdateTime" xml:"UpdateTime"`
+	CreateTime       int64  `json:"CreateTime" xml:"CreateTime"`
+	UpdateTime       int64  `json:"UpdateTime" xml:"UpdateTime"`
 }
