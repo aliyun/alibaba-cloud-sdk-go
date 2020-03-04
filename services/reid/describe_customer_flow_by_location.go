@@ -107,7 +107,7 @@ func CreateDescribeCustomerFlowByLocationRequest() (request *DescribeCustomerFlo
 	request = &DescribeCustomerFlowByLocationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("reid", "2019-09-28", "DescribeCustomerFlowByLocation", "1.0.0", "openAPI")
+	request.InitWithApiInfo("reid", "2019-09-28", "DescribeCustomerFlowByLocation", "1.1.2", "openAPI")
 	return
 }
 

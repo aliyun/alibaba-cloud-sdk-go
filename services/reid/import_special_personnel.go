@@ -101,7 +101,7 @@ func CreateImportSpecialPersonnelRequest() (request *ImportSpecialPersonnelReque
 	request = &ImportSpecialPersonnelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("reid", "2019-09-28", "ImportSpecialPersonnel", "1.0.0", "openAPI")
+	request.InitWithApiInfo("reid", "2019-09-28", "ImportSpecialPersonnel", "1.1.2", "openAPI")
 	return
 }
 

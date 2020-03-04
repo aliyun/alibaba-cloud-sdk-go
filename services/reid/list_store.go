@@ -93,7 +93,7 @@ func CreateListStoreRequest() (request *ListStoreRequest) {
 	request = &ListStoreRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("reid", "2019-09-28", "ListStore", "1.0.0", "openAPI")
+	request.InitWithApiInfo("reid", "2019-09-28", "ListStore", "1.1.2", "openAPI")
 	return
 }
 
