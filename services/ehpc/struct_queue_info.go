@@ -25,6 +25,7 @@ type QueueInfo struct {
 	InstanceType        string        `json:"InstanceType" xml:"InstanceType"`
 	SpotStrategy        string        `json:"SpotStrategy" xml:"SpotStrategy"`
 	ComputeInstanceType string        `json:"ComputeInstanceType" xml:"ComputeInstanceType"`
+	MaxNodesInQueue     int           `json:"MaxNodesInQueue" xml:"MaxNodesInQueue"`
 	Type                string        `json:"Type" xml:"Type"`
 	InstanceTypes       InstanceTypes `json:"InstanceTypes" xml:"InstanceTypes"`
 }

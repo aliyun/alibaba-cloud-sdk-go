@@ -98,6 +98,7 @@ type GetAutoScaleConfigResponse struct {
 	ExcludeNodes            string                     `json:"ExcludeNodes" xml:"ExcludeNodes"`
 	SpotStrategy            string                     `json:"SpotStrategy" xml:"SpotStrategy"`
 	SpotPriceLimit          float64                    `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
+	ImageId                 string                     `json:"ImageId" xml:"ImageId"`
 	Queues                  QueuesInGetAutoScaleConfig `json:"Queues" xml:"Queues"`
 }
 

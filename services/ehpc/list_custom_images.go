@@ -78,6 +78,7 @@ type ListCustomImagesRequest struct {
 	*requests.RpcRequest
 	ImageOwnerAlias string `position:"Query" name:"ImageOwnerAlias"`
 	BaseOsTag       string `position:"Query" name:"BaseOsTag"`
+	InstanceType    string `position:"Query" name:"InstanceType"`
 }
 
 // ListCustomImagesResponse is the response struct for api ListCustomImages

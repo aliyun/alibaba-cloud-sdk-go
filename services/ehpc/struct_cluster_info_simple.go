@@ -29,6 +29,7 @@ type ClusterInfoSimple struct {
 	RegionId        string         `json:"RegionId" xml:"RegionId"`
 	SchedulerType   string         `json:"SchedulerType" xml:"SchedulerType"`
 	EhpcVersion     string         `json:"EhpcVersion" xml:"EhpcVersion"`
+	BaseOsTag       string         `json:"BaseOsTag" xml:"BaseOsTag"`
 	Id              string         `json:"Id" xml:"Id"`
 	VpcId           string         `json:"VpcId" xml:"VpcId"`
 	DeployMode      string         `json:"DeployMode" xml:"DeployMode"`

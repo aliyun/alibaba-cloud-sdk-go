@@ -37,5 +37,6 @@ type ImageInfo struct {
 	Description       string    `json:"Description" xml:"Description"`
 	Type              string    `json:"Type" xml:"Type"`
 	UpdateDateTime    string    `json:"UpdateDateTime" xml:"UpdateDateTime"`
+	OsTag             OsTag     `json:"OsTag" xml:"OsTag"`
 	BaseOsTag         BaseOsTag `json:"BaseOsTag" xml:"BaseOsTag"`
 }

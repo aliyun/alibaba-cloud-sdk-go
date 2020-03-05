@@ -76,6 +76,7 @@ func (client *Client) ListSoftwaresWithCallback(request *ListSoftwaresRequest, c
 // ListSoftwaresRequest is the request struct for api ListSoftwares
 type ListSoftwaresRequest struct {
 	*requests.RpcRequest
+	OsTag       string `position:"Query" name:"OsTag"`
 	EhpcVersion string `position:"Query" name:"EhpcVersion"`
 }
 

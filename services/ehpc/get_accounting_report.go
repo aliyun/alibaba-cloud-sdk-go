@@ -79,16 +79,24 @@ type GetAccountingReportRequest struct {
 	ReportType  string           `position:"Query" name:"ReportType"`
 	EndTime     requests.Integer `position:"Query" name:"EndTime"`
 	FilterValue string           `position:"Query" name:"FilterValue"`
+	Dim         string           `position:"Query" name:"Dim"`
 	ClusterId   string           `position:"Query" name:"ClusterId"`
 	StartTime   requests.Integer `position:"Query" name:"StartTime"`
+	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
+	JobId       string           `position:"Query" name:"JobId"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // GetAccountingReportResponse is the response struct for api GetAccountingReport
 type GetAccountingReportResponse struct {
 	*responses.BaseResponse
-	RequestId string                    `json:"RequestId" xml:"RequestId"`
-	Metrics   string                    `json:"Metrics" xml:"Metrics"`
-	Data      DataInGetAccountingReport `json:"Data" xml:"Data"`
+	RequestId     string                    `json:"RequestId" xml:"RequestId"`
+	Metrics       string                    `json:"Metrics" xml:"Metrics"`
+	TotalCoreTime int                       `json:"TotalCoreTime" xml:"TotalCoreTime"`
+	TotalCount    int                       `json:"TotalCount" xml:"TotalCount"`
+	PageSize      int                       `json:"PageSize" xml:"PageSize"`
+	PageNumber    int                       `json:"PageNumber" xml:"PageNumber"`
+	Data          DataInGetAccountingReport `json:"Data" xml:"Data"`
 }
 
 // CreateGetAccountingReportRequest creates a request to invoke GetAccountingReport API

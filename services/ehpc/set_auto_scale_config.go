@@ -76,6 +76,7 @@ func (client *Client) SetAutoScaleConfigWithCallback(request *SetAutoScaleConfig
 // SetAutoScaleConfigRequest is the request struct for api SetAutoScaleConfig
 type SetAutoScaleConfigRequest struct {
 	*requests.RpcRequest
+	ImageId                 string                      `position:"Query" name:"ImageId"`
 	SpotPriceLimit          requests.Float              `position:"Query" name:"SpotPriceLimit"`
 	ExcludeNodes            string                      `position:"Query" name:"ExcludeNodes"`
 	ExtraNodesGrowRatio     requests.Integer            `position:"Query" name:"ExtraNodesGrowRatio"`
@@ -97,6 +98,7 @@ type SetAutoScaleConfigQueues struct {
 	SpotStrategy     string                             `name:"SpotStrategy"`
 	QueueName        string                             `name:"QueueName"`
 	InstanceTypes    *[]SetAutoScaleConfigInstanceTypes `name:"InstanceTypes" type:"Repeated"`
+	MaxNodesInQueue  string                             `name:"MaxNodesInQueue"`
 	InstanceType     string                             `name:"InstanceType"`
 	EnableAutoGrow   string                             `name:"EnableAutoGrow"`
 	SpotPriceLimit   string                             `name:"SpotPriceLimit"`

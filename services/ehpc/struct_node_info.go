@@ -19,6 +19,7 @@ package ehpc
 type NodeInfo struct {
 	LockReason      string           `json:"LockReason" xml:"LockReason"`
 	Expired         bool             `json:"Expired" xml:"Expired"`
+	HtEnabled       bool             `json:"HtEnabled" xml:"HtEnabled"`
 	ExpiredTime     string           `json:"ExpiredTime" xml:"ExpiredTime"`
 	IpAddress       string           `json:"IpAddress" xml:"IpAddress"`
 	ImageId         string           `json:"ImageId" xml:"ImageId"`
