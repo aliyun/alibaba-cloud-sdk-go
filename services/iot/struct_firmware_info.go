@@ -27,6 +27,7 @@ type FirmwareInfo struct {
 	UtcModified    string `json:"UtcModified" xml:"UtcModified"`
 	UtcCreate      string `json:"UtcCreate" xml:"UtcCreate"`
 	FirmwareSize   int    `json:"FirmwareSize" xml:"FirmwareSize"`
+	ModuleName     string `json:"ModuleName" xml:"ModuleName"`
 	FirmwareUrl    string `json:"FirmwareUrl" xml:"FirmwareUrl"`
 	DestVersion    string `json:"DestVersion" xml:"DestVersion"`
 	SignMethod     string `json:"SignMethod" xml:"SignMethod"`

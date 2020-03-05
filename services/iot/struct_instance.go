@@ -30,4 +30,7 @@ type Instance struct {
 	BizEnable              bool   `json:"BizEnable" xml:"BizEnable"`
 	LatestDeploymentStatus int    `json:"LatestDeploymentStatus" xml:"LatestDeploymentStatus"`
 	LatestDeploymentType   string `json:"LatestDeploymentType" xml:"LatestDeploymentType"`
+	GmtCreateTimestamp     int64  `json:"GmtCreateTimestamp" xml:"GmtCreateTimestamp"`
+	GmtModifiedTimestamp   int64  `json:"GmtModifiedTimestamp" xml:"GmtModifiedTimestamp"`
+	RoleAttachTimestamp    int64  `json:"RoleAttachTimestamp" xml:"RoleAttachTimestamp"`
 }

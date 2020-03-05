@@ -76,9 +76,11 @@ func (client *Client) ClearEdgeInstanceDriverConfigsWithCallback(request *ClearE
 // ClearEdgeInstanceDriverConfigsRequest is the request struct for api ClearEdgeInstanceDriverConfigs
 type ClearEdgeInstanceDriverConfigsRequest struct {
 	*requests.RpcRequest
-	InstanceId    string `position:"Query" name:"InstanceId"`
 	DriverId      string `position:"Query" name:"DriverId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	InstanceId    string `position:"Query" name:"InstanceId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // ClearEdgeInstanceDriverConfigsResponse is the response struct for api ClearEdgeInstanceDriverConfigs

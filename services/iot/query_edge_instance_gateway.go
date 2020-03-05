@@ -76,8 +76,10 @@ func (client *Client) QueryEdgeInstanceGatewayWithCallback(request *QueryEdgeIns
 // QueryEdgeInstanceGatewayRequest is the request struct for api QueryEdgeInstanceGateway
 type QueryEdgeInstanceGatewayRequest struct {
 	*requests.RpcRequest
-	InstanceId    string `position:"Query" name:"InstanceId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	InstanceId    string `position:"Query" name:"InstanceId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // QueryEdgeInstanceGatewayResponse is the response struct for api QueryEdgeInstanceGateway

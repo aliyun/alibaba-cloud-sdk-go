@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CancelOTAStrategyByJob invokes the iot.CancelOTAStrategyByJob API synchronously
-// api document: https://help.aliyun.com/api/iot/cancelotastrategybyjob.html
-func (client *Client) CancelOTAStrategyByJob(request *CancelOTAStrategyByJobRequest) (response *CancelOTAStrategyByJobResponse, err error) {
-	response = CreateCancelOTAStrategyByJobResponse()
+// ResetThing invokes the iot.ResetThing API synchronously
+// api document: https://help.aliyun.com/api/iot/resetthing.html
+func (client *Client) ResetThing(request *ResetThingRequest) (response *ResetThingResponse, err error) {
+	response = CreateResetThingResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CancelOTAStrategyByJobWithChan invokes the iot.CancelOTAStrategyByJob API asynchronously
-// api document: https://help.aliyun.com/api/iot/cancelotastrategybyjob.html
+// ResetThingWithChan invokes the iot.ResetThing API asynchronously
+// api document: https://help.aliyun.com/api/iot/resetthing.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CancelOTAStrategyByJobWithChan(request *CancelOTAStrategyByJobRequest) (<-chan *CancelOTAStrategyByJobResponse, <-chan error) {
-	responseChan := make(chan *CancelOTAStrategyByJobResponse, 1)
+func (client *Client) ResetThingWithChan(request *ResetThingRequest) (<-chan *ResetThingResponse, <-chan error) {
+	responseChan := make(chan *ResetThingResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CancelOTAStrategyByJob(request)
+		response, err := client.ResetThing(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CancelOTAStrategyByJobWithChan(request *CancelOTAStrategyB
 	return responseChan, errChan
 }
 
-// CancelOTAStrategyByJobWithCallback invokes the iot.CancelOTAStrategyByJob API asynchronously
-// api document: https://help.aliyun.com/api/iot/cancelotastrategybyjob.html
+// ResetThingWithCallback invokes the iot.ResetThing API asynchronously
+// api document: https://help.aliyun.com/api/iot/resetthing.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CancelOTAStrategyByJobWithCallback(request *CancelOTAStrategyByJobRequest, callback func(response *CancelOTAStrategyByJobResponse, err error)) <-chan int {
+func (client *Client) ResetThingWithCallback(request *ResetThingRequest, callback func(response *ResetThingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CancelOTAStrategyByJobResponse
+		var response *ResetThingResponse
 		var err error
 		defer close(result)
-		response, err = client.CancelOTAStrategyByJob(request)
+		response, err = client.ResetThing(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,17 +73,19 @@ func (client *Client) CancelOTAStrategyByJobWithCallback(request *CancelOTAStrat
 	return result
 }
 
-// CancelOTAStrategyByJobRequest is the request struct for api CancelOTAStrategyByJob
-type CancelOTAStrategyByJobRequest struct {
+// ResetThingRequest is the request struct for api ResetThing
+type ResetThingRequest struct {
 	*requests.RpcRequest
-	JobId         string `position:"Query" name:"JobId"`
+	IotId         string `position:"Query" name:"IotId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	ProductKey    string `position:"Query" name:"ProductKey"`
 	ApiProduct    string `position:"Body" name:"ApiProduct"`
 	ApiRevision   string `position:"Body" name:"ApiRevision"`
+	DeviceName    string `position:"Query" name:"DeviceName"`
 }
 
-// CancelOTAStrategyByJobResponse is the response struct for api CancelOTAStrategyByJob
-type CancelOTAStrategyByJobResponse struct {
+// ResetThingResponse is the response struct for api ResetThing
+type ResetThingResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	Success      bool   `json:"Success" xml:"Success"`
@@ -91,18 +93,18 @@ type CancelOTAStrategyByJobResponse struct {
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 }
 
-// CreateCancelOTAStrategyByJobRequest creates a request to invoke CancelOTAStrategyByJob API
-func CreateCancelOTAStrategyByJobRequest() (request *CancelOTAStrategyByJobRequest) {
-	request = &CancelOTAStrategyByJobRequest{
+// CreateResetThingRequest creates a request to invoke ResetThing API
+func CreateResetThingRequest() (request *ResetThingRequest) {
+	request = &ResetThingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CancelOTAStrategyByJob", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ResetThing", "iot", "openAPI")
 	return
 }
 
-// CreateCancelOTAStrategyByJobResponse creates a response to parse from CancelOTAStrategyByJob response
-func CreateCancelOTAStrategyByJobResponse() (response *CancelOTAStrategyByJobResponse) {
-	response = &CancelOTAStrategyByJobResponse{
+// CreateResetThingResponse creates a response to parse from ResetThing response
+func CreateResetThingResponse() (response *ResetThingResponse) {
+	response = &ResetThingResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

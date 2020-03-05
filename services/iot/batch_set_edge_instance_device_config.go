@@ -76,9 +76,11 @@ func (client *Client) BatchSetEdgeInstanceDeviceConfigWithCallback(request *Batc
 // BatchSetEdgeInstanceDeviceConfigRequest is the request struct for api BatchSetEdgeInstanceDeviceConfig
 type BatchSetEdgeInstanceDeviceConfigRequest struct {
 	*requests.RpcRequest
-	InstanceId    string                                           `position:"Query" name:"InstanceId"`
 	DeviceConfigs *[]BatchSetEdgeInstanceDeviceConfigDeviceConfigs `position:"Query" name:"DeviceConfigs"  type:"Repeated"`
 	IotInstanceId string                                           `position:"Query" name:"IotInstanceId"`
+	InstanceId    string                                           `position:"Query" name:"InstanceId"`
+	ApiProduct    string                                           `position:"Body" name:"ApiProduct"`
+	ApiRevision   string                                           `position:"Body" name:"ApiRevision"`
 }
 
 // BatchSetEdgeInstanceDeviceConfigDeviceConfigs is a repeated param struct in BatchSetEdgeInstanceDeviceConfigRequest

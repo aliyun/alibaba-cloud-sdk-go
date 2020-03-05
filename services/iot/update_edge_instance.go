@@ -78,10 +78,12 @@ type UpdateEdgeInstanceRequest struct {
 	*requests.RpcRequest
 	BizEnable     requests.Boolean `position:"Query" name:"BizEnable"`
 	Spec          requests.Integer `position:"Query" name:"Spec"`
+	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	Tags          string           `position:"Query" name:"Tags"`
 	InstanceId    string           `position:"Query" name:"InstanceId"`
-	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
 	Name          string           `position:"Query" name:"Name"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 }
 
 // UpdateEdgeInstanceResponse is the response struct for api UpdateEdgeInstance

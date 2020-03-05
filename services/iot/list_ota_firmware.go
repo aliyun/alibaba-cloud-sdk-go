@@ -76,10 +76,12 @@ func (client *Client) ListOTAFirmwareWithCallback(request *ListOTAFirmwareReques
 // ListOTAFirmwareRequest is the request struct for api ListOTAFirmware
 type ListOTAFirmwareRequest struct {
 	*requests.RpcRequest
-	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
-	ProductKey    string           `position:"Query" name:"ProductKey"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
+	ProductKey    string           `position:"Query" name:"ProductKey"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 	DestVersion   string           `position:"Query" name:"DestVersion"`
 }
 

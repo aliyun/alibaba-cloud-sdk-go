@@ -76,8 +76,10 @@ func (client *Client) CreateTopicRouteTableWithCallback(request *CreateTopicRout
 // CreateTopicRouteTableRequest is the request struct for api CreateTopicRouteTable
 type CreateTopicRouteTableRequest struct {
 	*requests.RpcRequest
-	DstTopic      *[]string `position:"Query" name:"DstTopic"  type:"Repeated"`
 	IotInstanceId string    `position:"Query" name:"IotInstanceId"`
+	DstTopic      *[]string `position:"Query" name:"DstTopic"  type:"Repeated"`
+	ApiProduct    string    `position:"Body" name:"ApiProduct"`
+	ApiRevision   string    `position:"Body" name:"ApiRevision"`
 	SrcTopic      string    `position:"Query" name:"SrcTopic"`
 }
 

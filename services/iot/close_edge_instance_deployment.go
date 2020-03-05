@@ -76,8 +76,10 @@ func (client *Client) CloseEdgeInstanceDeploymentWithCallback(request *CloseEdge
 // CloseEdgeInstanceDeploymentRequest is the request struct for api CloseEdgeInstanceDeployment
 type CloseEdgeInstanceDeploymentRequest struct {
 	*requests.RpcRequest
-	InstanceId    string `position:"Query" name:"InstanceId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	InstanceId    string `position:"Query" name:"InstanceId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // CloseEdgeInstanceDeploymentResponse is the response struct for api CloseEdgeInstanceDeployment

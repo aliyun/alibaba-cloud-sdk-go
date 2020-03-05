@@ -76,9 +76,11 @@ func (client *Client) BatchGetDeviceDriverWithCallback(request *BatchGetDeviceDr
 // BatchGetDeviceDriverRequest is the request struct for api BatchGetDeviceDriver
 type BatchGetDeviceDriverRequest struct {
 	*requests.RpcRequest
-	InstanceId    string    `position:"Query" name:"InstanceId"`
 	IotIds        *[]string `position:"Query" name:"IotIds"  type:"Repeated"`
 	IotInstanceId string    `position:"Query" name:"IotInstanceId"`
+	InstanceId    string    `position:"Query" name:"InstanceId"`
+	ApiProduct    string    `position:"Body" name:"ApiProduct"`
+	ApiRevision   string    `position:"Body" name:"ApiRevision"`
 }
 
 // BatchGetDeviceDriverResponse is the response struct for api BatchGetDeviceDriver

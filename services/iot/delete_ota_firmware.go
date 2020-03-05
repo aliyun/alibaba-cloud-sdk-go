@@ -76,8 +76,10 @@ func (client *Client) DeleteOTAFirmwareWithCallback(request *DeleteOTAFirmwareRe
 // DeleteOTAFirmwareRequest is the request struct for api DeleteOTAFirmware
 type DeleteOTAFirmwareRequest struct {
 	*requests.RpcRequest
-	FirmwareId    string `position:"Query" name:"FirmwareId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	FirmwareId    string `position:"Query" name:"FirmwareId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // DeleteOTAFirmwareResponse is the response struct for api DeleteOTAFirmware

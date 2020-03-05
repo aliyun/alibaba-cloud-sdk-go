@@ -17,11 +17,14 @@ package iot
 
 // Deployment is a nested struct in iot response
 type Deployment struct {
-	GmtCreate    string `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified  string `json:"GmtModified" xml:"GmtModified"`
-	GmtCompleted string `json:"GmtCompleted" xml:"GmtCompleted"`
-	DeploymentId string `json:"DeploymentId" xml:"DeploymentId"`
-	Description  string `json:"Description" xml:"Description"`
-	Status       int    `json:"Status" xml:"Status"`
-	Type         string `json:"Type" xml:"Type"`
+	GmtCreate             string `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified           string `json:"GmtModified" xml:"GmtModified"`
+	GmtCompleted          string `json:"GmtCompleted" xml:"GmtCompleted"`
+	DeploymentId          string `json:"DeploymentId" xml:"DeploymentId"`
+	Description           string `json:"Description" xml:"Description"`
+	Status                int    `json:"Status" xml:"Status"`
+	Type                  string `json:"Type" xml:"Type"`
+	GmtCreateTimestamp    int64  `json:"GmtCreateTimestamp" xml:"GmtCreateTimestamp"`
+	GmtModifiedTimestamp  int64  `json:"GmtModifiedTimestamp" xml:"GmtModifiedTimestamp"`
+	GmtCompletedTimestamp int64  `json:"GmtCompletedTimestamp" xml:"GmtCompletedTimestamp"`
 }

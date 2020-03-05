@@ -77,6 +77,8 @@ func (client *Client) GenerateOTAUploadURLWithCallback(request *GenerateOTAUploa
 type GenerateOTAUploadURLRequest struct {
 	*requests.RpcRequest
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // GenerateOTAUploadURLResponse is the response struct for api GenerateOTAUploadURL

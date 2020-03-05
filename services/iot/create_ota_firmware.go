@@ -81,11 +81,14 @@ type CreateOTAFirmwareRequest struct {
 	FirmwareUrl   string           `position:"Query" name:"FirmwareUrl"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	FirmwareDesc  string           `position:"Query" name:"FirmwareDesc"`
+	ModuleName    string           `position:"Query" name:"ModuleName"`
 	FirmwareSign  string           `position:"Query" name:"FirmwareSign"`
 	FirmwareSize  requests.Integer `position:"Query" name:"FirmwareSize"`
 	FirmwareName  string           `position:"Query" name:"FirmwareName"`
 	ProductKey    string           `position:"Query" name:"ProductKey"`
 	SrcVersion    string           `position:"Query" name:"SrcVersion"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 	DestVersion   string           `position:"Query" name:"DestVersion"`
 }
 

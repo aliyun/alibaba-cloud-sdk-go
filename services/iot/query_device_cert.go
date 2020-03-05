@@ -76,8 +76,10 @@ func (client *Client) QueryDeviceCertWithCallback(request *QueryDeviceCertReques
 // QueryDeviceCertRequest is the request struct for api QueryDeviceCert
 type QueryDeviceCertRequest struct {
 	*requests.RpcRequest
-	ProductKey    string `position:"Query" name:"ProductKey"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	ProductKey    string `position:"Query" name:"ProductKey"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 	DeviceName    string `position:"Query" name:"DeviceName"`
 }
 

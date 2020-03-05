@@ -76,8 +76,10 @@ func (client *Client) GetEdgeInstanceWithCallback(request *GetEdgeInstanceReques
 // GetEdgeInstanceRequest is the request struct for api GetEdgeInstance
 type GetEdgeInstanceRequest struct {
 	*requests.RpcRequest
-	InstanceId    string `position:"Query" name:"InstanceId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	InstanceId    string `position:"Query" name:"InstanceId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // GetEdgeInstanceResponse is the response struct for api GetEdgeInstance

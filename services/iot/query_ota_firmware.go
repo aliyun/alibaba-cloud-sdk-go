@@ -76,8 +76,10 @@ func (client *Client) QueryOTAFirmwareWithCallback(request *QueryOTAFirmwareRequ
 // QueryOTAFirmwareRequest is the request struct for api QueryOTAFirmware
 type QueryOTAFirmwareRequest struct {
 	*requests.RpcRequest
-	FirmwareId    string `position:"Query" name:"FirmwareId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	FirmwareId    string `position:"Query" name:"FirmwareId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // QueryOTAFirmwareResponse is the response struct for api QueryOTAFirmware

@@ -76,9 +76,11 @@ func (client *Client) GetEdgeInstanceDeploymentWithCallback(request *GetEdgeInst
 // GetEdgeInstanceDeploymentRequest is the request struct for api GetEdgeInstanceDeployment
 type GetEdgeInstanceDeploymentRequest struct {
 	*requests.RpcRequest
-	InstanceId    string `position:"Query" name:"InstanceId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	InstanceId    string `position:"Query" name:"InstanceId"`
 	DeploymentId  string `position:"Query" name:"DeploymentId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // GetEdgeInstanceDeploymentResponse is the response struct for api GetEdgeInstanceDeployment

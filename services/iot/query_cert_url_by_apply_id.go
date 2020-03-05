@@ -76,8 +76,10 @@ func (client *Client) QueryCertUrlByApplyIdWithCallback(request *QueryCertUrlByA
 // QueryCertUrlByApplyIdRequest is the request struct for api QueryCertUrlByApplyId
 type QueryCertUrlByApplyIdRequest struct {
 	*requests.RpcRequest
-	ApplyId       requests.Integer `position:"Query" name:"ApplyId"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
+	ApplyId       requests.Integer `position:"Query" name:"ApplyId"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 }
 
 // QueryCertUrlByApplyIdResponse is the response struct for api QueryCertUrlByApplyId

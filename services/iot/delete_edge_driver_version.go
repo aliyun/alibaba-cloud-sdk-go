@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// BindDriverToEdgeInstance invokes the iot.BindDriverToEdgeInstance API synchronously
-// api document: https://help.aliyun.com/api/iot/binddrivertoedgeinstance.html
-func (client *Client) BindDriverToEdgeInstance(request *BindDriverToEdgeInstanceRequest) (response *BindDriverToEdgeInstanceResponse, err error) {
-	response = CreateBindDriverToEdgeInstanceResponse()
+// DeleteEdgeDriverVersion invokes the iot.DeleteEdgeDriverVersion API synchronously
+// api document: https://help.aliyun.com/api/iot/deleteedgedriverversion.html
+func (client *Client) DeleteEdgeDriverVersion(request *DeleteEdgeDriverVersionRequest) (response *DeleteEdgeDriverVersionResponse, err error) {
+	response = CreateDeleteEdgeDriverVersionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// BindDriverToEdgeInstanceWithChan invokes the iot.BindDriverToEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/binddrivertoedgeinstance.html
+// DeleteEdgeDriverVersionWithChan invokes the iot.DeleteEdgeDriverVersion API asynchronously
+// api document: https://help.aliyun.com/api/iot/deleteedgedriverversion.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) BindDriverToEdgeInstanceWithChan(request *BindDriverToEdgeInstanceRequest) (<-chan *BindDriverToEdgeInstanceResponse, <-chan error) {
-	responseChan := make(chan *BindDriverToEdgeInstanceResponse, 1)
+func (client *Client) DeleteEdgeDriverVersionWithChan(request *DeleteEdgeDriverVersionRequest) (<-chan *DeleteEdgeDriverVersionResponse, <-chan error) {
+	responseChan := make(chan *DeleteEdgeDriverVersionResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.BindDriverToEdgeInstance(request)
+		response, err := client.DeleteEdgeDriverVersion(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) BindDriverToEdgeInstanceWithChan(request *BindDriverToEdge
 	return responseChan, errChan
 }
 
-// BindDriverToEdgeInstanceWithCallback invokes the iot.BindDriverToEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/binddrivertoedgeinstance.html
+// DeleteEdgeDriverVersionWithCallback invokes the iot.DeleteEdgeDriverVersion API asynchronously
+// api document: https://help.aliyun.com/api/iot/deleteedgedriverversion.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) BindDriverToEdgeInstanceWithCallback(request *BindDriverToEdgeInstanceRequest, callback func(response *BindDriverToEdgeInstanceResponse, err error)) <-chan int {
+func (client *Client) DeleteEdgeDriverVersionWithCallback(request *DeleteEdgeDriverVersionRequest, callback func(response *DeleteEdgeDriverVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *BindDriverToEdgeInstanceResponse
+		var response *DeleteEdgeDriverVersionResponse
 		var err error
 		defer close(result)
-		response, err = client.BindDriverToEdgeInstance(request)
+		response, err = client.DeleteEdgeDriverVersion(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,20 +73,18 @@ func (client *Client) BindDriverToEdgeInstanceWithCallback(request *BindDriverTo
 	return result
 }
 
-// BindDriverToEdgeInstanceRequest is the request struct for api BindDriverToEdgeInstance
-type BindDriverToEdgeInstanceRequest struct {
+// DeleteEdgeDriverVersionRequest is the request struct for api DeleteEdgeDriverVersion
+type DeleteEdgeDriverVersionRequest struct {
 	*requests.RpcRequest
 	DriverId      string `position:"Query" name:"DriverId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 	DriverVersion string `position:"Query" name:"DriverVersion"`
-	OrderId       string `position:"Query" name:"OrderId"`
-	InstanceId    string `position:"Query" name:"InstanceId"`
 	ApiProduct    string `position:"Body" name:"ApiProduct"`
 	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
-// BindDriverToEdgeInstanceResponse is the response struct for api BindDriverToEdgeInstance
-type BindDriverToEdgeInstanceResponse struct {
+// DeleteEdgeDriverVersionResponse is the response struct for api DeleteEdgeDriverVersion
+type DeleteEdgeDriverVersionResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	Success      bool   `json:"Success" xml:"Success"`
@@ -94,18 +92,18 @@ type BindDriverToEdgeInstanceResponse struct {
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 }
 
-// CreateBindDriverToEdgeInstanceRequest creates a request to invoke BindDriverToEdgeInstance API
-func CreateBindDriverToEdgeInstanceRequest() (request *BindDriverToEdgeInstanceRequest) {
-	request = &BindDriverToEdgeInstanceRequest{
+// CreateDeleteEdgeDriverVersionRequest creates a request to invoke DeleteEdgeDriverVersion API
+func CreateDeleteEdgeDriverVersionRequest() (request *DeleteEdgeDriverVersionRequest) {
+	request = &DeleteEdgeDriverVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BindDriverToEdgeInstance", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteEdgeDriverVersion", "iot", "openAPI")
 	return
 }
 
-// CreateBindDriverToEdgeInstanceResponse creates a response to parse from BindDriverToEdgeInstance response
-func CreateBindDriverToEdgeInstanceResponse() (response *BindDriverToEdgeInstanceResponse) {
-	response = &BindDriverToEdgeInstanceResponse{
+// CreateDeleteEdgeDriverVersionResponse creates a response to parse from DeleteEdgeDriverVersion response
+func CreateDeleteEdgeDriverVersionResponse() (response *DeleteEdgeDriverVersionResponse) {
+	response = &DeleteEdgeDriverVersionResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -77,9 +77,11 @@ func (client *Client) SetEdgeInstanceDriverConfigsWithCallback(request *SetEdgeI
 type SetEdgeInstanceDriverConfigsRequest struct {
 	*requests.RpcRequest
 	Configs       *[]SetEdgeInstanceDriverConfigsConfigs `position:"Query" name:"Configs"  type:"Repeated"`
-	InstanceId    string                                 `position:"Query" name:"InstanceId"`
 	DriverId      string                                 `position:"Query" name:"DriverId"`
 	IotInstanceId string                                 `position:"Query" name:"IotInstanceId"`
+	InstanceId    string                                 `position:"Query" name:"InstanceId"`
+	ApiProduct    string                                 `position:"Body" name:"ApiProduct"`
+	ApiRevision   string                                 `position:"Body" name:"ApiRevision"`
 }
 
 // SetEdgeInstanceDriverConfigsConfigs is a repeated param struct in SetEdgeInstanceDriverConfigsRequest

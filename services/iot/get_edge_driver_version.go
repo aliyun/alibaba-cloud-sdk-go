@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QueryOTAJob invokes the iot.QueryOTAJob API synchronously
-// api document: https://help.aliyun.com/api/iot/queryotajob.html
-func (client *Client) QueryOTAJob(request *QueryOTAJobRequest) (response *QueryOTAJobResponse, err error) {
-	response = CreateQueryOTAJobResponse()
+// GetEdgeDriverVersion invokes the iot.GetEdgeDriverVersion API synchronously
+// api document: https://help.aliyun.com/api/iot/getedgedriverversion.html
+func (client *Client) GetEdgeDriverVersion(request *GetEdgeDriverVersionRequest) (response *GetEdgeDriverVersionResponse, err error) {
+	response = CreateGetEdgeDriverVersionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QueryOTAJobWithChan invokes the iot.QueryOTAJob API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryotajob.html
+// GetEdgeDriverVersionWithChan invokes the iot.GetEdgeDriverVersion API asynchronously
+// api document: https://help.aliyun.com/api/iot/getedgedriverversion.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryOTAJobWithChan(request *QueryOTAJobRequest) (<-chan *QueryOTAJobResponse, <-chan error) {
-	responseChan := make(chan *QueryOTAJobResponse, 1)
+func (client *Client) GetEdgeDriverVersionWithChan(request *GetEdgeDriverVersionRequest) (<-chan *GetEdgeDriverVersionResponse, <-chan error) {
+	responseChan := make(chan *GetEdgeDriverVersionResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryOTAJob(request)
+		response, err := client.GetEdgeDriverVersion(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) QueryOTAJobWithChan(request *QueryOTAJobRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// QueryOTAJobWithCallback invokes the iot.QueryOTAJob API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryotajob.html
+// GetEdgeDriverVersionWithCallback invokes the iot.GetEdgeDriverVersion API asynchronously
+// api document: https://help.aliyun.com/api/iot/getedgedriverversion.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryOTAJobWithCallback(request *QueryOTAJobRequest, callback func(response *QueryOTAJobResponse, err error)) <-chan int {
+func (client *Client) GetEdgeDriverVersionWithCallback(request *GetEdgeDriverVersionRequest, callback func(response *GetEdgeDriverVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryOTAJobResponse
+		var response *GetEdgeDriverVersionResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryOTAJob(request)
+		response, err = client.GetEdgeDriverVersion(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,41 +73,38 @@ func (client *Client) QueryOTAJobWithCallback(request *QueryOTAJobRequest, callb
 	return result
 }
 
-// QueryOTAJobRequest is the request struct for api QueryOTAJob
-type QueryOTAJobRequest struct {
+// GetEdgeDriverVersionRequest is the request struct for api GetEdgeDriverVersion
+type GetEdgeDriverVersionRequest struct {
 	*requests.RpcRequest
-	JobId         string `position:"Query" name:"JobId"`
+	DriverId      string `position:"Query" name:"DriverId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	DriverVersion string `position:"Query" name:"DriverVersion"`
 	ApiProduct    string `position:"Body" name:"ApiProduct"`
 	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
-// QueryOTAJobResponse is the response struct for api QueryOTAJob
-type QueryOTAJobResponse struct {
+// GetEdgeDriverVersionResponse is the response struct for api GetEdgeDriverVersion
+type GetEdgeDriverVersionResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	Success      bool   `json:"Success" xml:"Success"`
 	Code         string `json:"Code" xml:"Code"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Total        int    `json:"Total" xml:"Total"`
-	PageSize     int    `json:"PageSize" xml:"PageSize"`
-	PageCount    int    `json:"PageCount" xml:"PageCount"`
-	CurrentPage  int    `json:"CurrentPage" xml:"CurrentPage"`
 	Data         Data   `json:"Data" xml:"Data"`
 }
 
-// CreateQueryOTAJobRequest creates a request to invoke QueryOTAJob API
-func CreateQueryOTAJobRequest() (request *QueryOTAJobRequest) {
-	request = &QueryOTAJobRequest{
+// CreateGetEdgeDriverVersionRequest creates a request to invoke GetEdgeDriverVersion API
+func CreateGetEdgeDriverVersionRequest() (request *GetEdgeDriverVersionRequest) {
+	request = &GetEdgeDriverVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryOTAJob", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetEdgeDriverVersion", "iot", "openAPI")
 	return
 }
 
-// CreateQueryOTAJobResponse creates a response to parse from QueryOTAJob response
-func CreateQueryOTAJobResponse() (response *QueryOTAJobResponse) {
-	response = &QueryOTAJobResponse{
+// CreateGetEdgeDriverVersionResponse creates a response to parse from GetEdgeDriverVersion response
+func CreateGetEdgeDriverVersionResponse() (response *GetEdgeDriverVersionResponse) {
+	response = &GetEdgeDriverVersionResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

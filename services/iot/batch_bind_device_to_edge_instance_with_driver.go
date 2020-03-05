@@ -76,10 +76,12 @@ func (client *Client) BatchBindDeviceToEdgeInstanceWithDriverWithCallback(reques
 // BatchBindDeviceToEdgeInstanceWithDriverRequest is the request struct for api BatchBindDeviceToEdgeInstanceWithDriver
 type BatchBindDeviceToEdgeInstanceWithDriverRequest struct {
 	*requests.RpcRequest
-	InstanceId    string    `position:"Query" name:"InstanceId"`
 	DriverId      string    `position:"Query" name:"DriverId"`
 	IotIds        *[]string `position:"Query" name:"IotIds"  type:"Repeated"`
 	IotInstanceId string    `position:"Query" name:"IotInstanceId"`
+	InstanceId    string    `position:"Query" name:"InstanceId"`
+	ApiProduct    string    `position:"Body" name:"ApiProduct"`
+	ApiRevision   string    `position:"Body" name:"ApiRevision"`
 }
 
 // BatchBindDeviceToEdgeInstanceWithDriverResponse is the response struct for api BatchBindDeviceToEdgeInstanceWithDriver

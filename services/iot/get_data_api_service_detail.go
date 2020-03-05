@@ -76,7 +76,10 @@ func (client *Client) GetDataAPIServiceDetailWithCallback(request *GetDataAPISer
 // GetDataAPIServiceDetailRequest is the request struct for api GetDataAPIServiceDetail
 type GetDataAPIServiceDetailRequest struct {
 	*requests.RpcRequest
-	ApiSrn string `position:"Query" name:"ApiSrn"`
+	IotInstanceId string `position:"Body" name:"IotInstanceId"`
+	ApiSrn        string `position:"Body" name:"ApiSrn"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // GetDataAPIServiceDetailResponse is the response struct for api GetDataAPIServiceDetail
@@ -84,8 +87,8 @@ type GetDataAPIServiceDetailResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	Success      bool   `json:"Success" xml:"Success"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Code         string `json:"Code" xml:"Code"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Data         Data   `json:"Data" xml:"Data"`
 }
 

@@ -32,4 +32,5 @@ type SimpleFirmwareInfo struct {
 	SignMethod   string `json:"SignMethod" xml:"SignMethod"`
 	ProductName  string `json:"ProductName" xml:"ProductName"`
 	Type         int    `json:"Type" xml:"Type"`
+	ModuleName   string `json:"ModuleName" xml:"ModuleName"`
 }

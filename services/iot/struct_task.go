@@ -17,12 +17,15 @@ package iot
 
 // Task is a nested struct in iot response
 type Task struct {
-	GmtCreate            string             `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified          string             `json:"GmtModified" xml:"GmtModified"`
-	GmtCompleted         string             `json:"GmtCompleted" xml:"GmtCompleted"`
-	GatewayId            string             `json:"GatewayId" xml:"GatewayId"`
-	TaskId               string             `json:"TaskId" xml:"TaskId"`
-	Stage                int                `json:"Stage" xml:"Stage"`
-	Status               int                `json:"Status" xml:"Status"`
-	ResourceSnapshotList []ResourceSnapshot `json:"ResourceSnapshotList" xml:"ResourceSnapshotList"`
+	GmtCreate             string             `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified           string             `json:"GmtModified" xml:"GmtModified"`
+	GmtCompleted          string             `json:"GmtCompleted" xml:"GmtCompleted"`
+	GatewayId             string             `json:"GatewayId" xml:"GatewayId"`
+	TaskId                string             `json:"TaskId" xml:"TaskId"`
+	Stage                 int                `json:"Stage" xml:"Stage"`
+	Status                int                `json:"Status" xml:"Status"`
+	GmtCreateTimestamp    int64              `json:"GmtCreateTimestamp" xml:"GmtCreateTimestamp"`
+	GmtModifiedTimestamp  int64              `json:"GmtModifiedTimestamp" xml:"GmtModifiedTimestamp"`
+	GmtCompletedTimestamp int64              `json:"GmtCompletedTimestamp" xml:"GmtCompletedTimestamp"`
+	ResourceSnapshotList  []ResourceSnapshot `json:"ResourceSnapshotList" xml:"ResourceSnapshotList"`
 }

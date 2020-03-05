@@ -77,8 +77,10 @@ func (client *Client) BatchGetEdgeInstanceDriverConfigsWithCallback(request *Bat
 type BatchGetEdgeInstanceDriverConfigsRequest struct {
 	*requests.RpcRequest
 	DriverIds     *[]string `position:"Query" name:"DriverIds"  type:"Repeated"`
-	InstanceId    string    `position:"Query" name:"InstanceId"`
 	IotInstanceId string    `position:"Query" name:"IotInstanceId"`
+	InstanceId    string    `position:"Query" name:"InstanceId"`
+	ApiProduct    string    `position:"Body" name:"ApiProduct"`
+	ApiRevision   string    `position:"Body" name:"ApiRevision"`
 }
 
 // BatchGetEdgeInstanceDriverConfigsResponse is the response struct for api BatchGetEdgeInstanceDriverConfigs

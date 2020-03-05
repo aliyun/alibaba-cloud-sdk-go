@@ -76,32 +76,35 @@ func (client *Client) CreateDataAPIServiceWithCallback(request *CreateDataAPISer
 // CreateDataAPIServiceRequest is the request struct for api CreateDataAPIService
 type CreateDataAPIServiceRequest struct {
 	*requests.RpcRequest
-	ApiPath       string                               `position:"Query" name:"ApiPath"`
 	RequestParam  *[]CreateDataAPIServiceRequestParam  `position:"Body" name:"RequestParam"  type:"Repeated"`
-	FolderId      string                               `position:"Query" name:"FolderId"`
-	TemplateSql   string                               `position:"Query" name:"TemplateSql"`
+	FolderId      string                               `position:"Body" name:"FolderId"`
+	IotInstanceId string                               `position:"Body" name:"IotInstanceId"`
+	ApiPath       string                               `position:"Body" name:"ApiPath"`
+	TemplateSql   string                               `position:"Body" name:"TemplateSql"`
 	ResponseParam *[]CreateDataAPIServiceResponseParam `position:"Body" name:"ResponseParam"  type:"Repeated"`
-	OriginSql     string                               `position:"Query" name:"OriginSql"`
-	DisplayName   string                               `position:"Query" name:"DisplayName"`
-	Desc          string                               `position:"Query" name:"Desc"`
+	OriginSql     string                               `position:"Body" name:"OriginSql"`
+	DisplayName   string                               `position:"Body" name:"DisplayName"`
+	ApiProduct    string                               `position:"Body" name:"ApiProduct"`
+	ApiRevision   string                               `position:"Body" name:"ApiRevision"`
+	Desc          string                               `position:"Body" name:"Desc"`
 }
 
 // CreateDataAPIServiceRequestParam is a repeated param struct in CreateDataAPIServiceRequest
 type CreateDataAPIServiceRequestParam struct {
 	Name     string `name:"Name"`
 	Type     string `name:"Type"`
-	Required string `name:"Required"`
 	Desc     string `name:"Desc"`
 	Example  string `name:"Example"`
+	Required string `name:"Required"`
 }
 
 // CreateDataAPIServiceResponseParam is a repeated param struct in CreateDataAPIServiceRequest
 type CreateDataAPIServiceResponseParam struct {
 	Name     string `name:"Name"`
 	Type     string `name:"Type"`
-	Required string `name:"Required"`
 	Desc     string `name:"Desc"`
 	Example  string `name:"Example"`
+	Required string `name:"Required"`
 }
 
 // CreateDataAPIServiceResponse is the response struct for api CreateDataAPIService
@@ -109,8 +112,8 @@ type CreateDataAPIServiceResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	Success      bool   `json:"Success" xml:"Success"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Code         string `json:"Code" xml:"Code"`
+	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Data         Data   `json:"Data" xml:"Data"`
 }
 

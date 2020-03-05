@@ -77,9 +77,11 @@ func (client *Client) CreateEdgeInstanceWithCallback(request *CreateEdgeInstance
 type CreateEdgeInstanceRequest struct {
 	*requests.RpcRequest
 	Spec          requests.Integer `position:"Query" name:"Spec"`
-	Tags          string           `position:"Query" name:"Tags"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
+	Tags          string           `position:"Query" name:"Tags"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
 	Name          string           `position:"Query" name:"Name"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 }
 
 // CreateEdgeInstanceResponse is the response struct for api CreateEdgeInstance

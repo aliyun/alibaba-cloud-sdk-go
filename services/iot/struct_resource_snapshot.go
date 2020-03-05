@@ -17,15 +17,18 @@ package iot
 
 // ResourceSnapshot is a nested struct in iot response
 type ResourceSnapshot struct {
-	GmtCreate    string `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified  string `json:"GmtModified" xml:"GmtModified"`
-	GmtCompleted string `json:"GmtCompleted" xml:"GmtCompleted"`
-	SnapshotId   string `json:"SnapshotId" xml:"SnapshotId"`
-	ResourceType string `json:"ResourceType" xml:"ResourceType"`
-	ResourceId   string `json:"ResourceId" xml:"ResourceId"`
-	ResourceName string `json:"ResourceName" xml:"ResourceName"`
-	OperateType  int    `json:"OperateType" xml:"OperateType"`
-	Stage        int    `json:"Stage" xml:"Stage"`
-	Status       int    `json:"Status" xml:"Status"`
-	Log          string `json:"Log" xml:"Log"`
+	GmtCreate             string `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified           string `json:"GmtModified" xml:"GmtModified"`
+	GmtCompleted          string `json:"GmtCompleted" xml:"GmtCompleted"`
+	SnapshotId            string `json:"SnapshotId" xml:"SnapshotId"`
+	ResourceType          string `json:"ResourceType" xml:"ResourceType"`
+	ResourceId            string `json:"ResourceId" xml:"ResourceId"`
+	ResourceName          string `json:"ResourceName" xml:"ResourceName"`
+	OperateType           int    `json:"OperateType" xml:"OperateType"`
+	Stage                 int    `json:"Stage" xml:"Stage"`
+	Status                int    `json:"Status" xml:"Status"`
+	Log                   string `json:"Log" xml:"Log"`
+	GmtCreateTimestamp    int64  `json:"GmtCreateTimestamp" xml:"GmtCreateTimestamp"`
+	GmtModifiedTimestamp  int64  `json:"GmtModifiedTimestamp" xml:"GmtModifiedTimestamp"`
+	GmtCompletedTimestamp int64  `json:"GmtCompletedTimestamp" xml:"GmtCompletedTimestamp"`
 }

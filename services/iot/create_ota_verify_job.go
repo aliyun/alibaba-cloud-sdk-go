@@ -76,10 +76,12 @@ func (client *Client) CreateOTAVerifyJobWithCallback(request *CreateOTAVerifyJob
 // CreateOTAVerifyJobRequest is the request struct for api CreateOTAVerifyJob
 type CreateOTAVerifyJobRequest struct {
 	*requests.RpcRequest
-	FirmwareId       string           `position:"Query" name:"FirmwareId"`
-	ProductKey       string           `position:"Query" name:"ProductKey"`
 	TimeoutInMinutes requests.Integer `position:"Query" name:"TimeoutInMinutes"`
 	IotInstanceId    string           `position:"Query" name:"IotInstanceId"`
+	FirmwareId       string           `position:"Query" name:"FirmwareId"`
+	ProductKey       string           `position:"Query" name:"ProductKey"`
+	ApiProduct       string           `position:"Body" name:"ApiProduct"`
+	ApiRevision      string           `position:"Body" name:"ApiRevision"`
 	TargetDeviceName *[]string        `position:"Query" name:"TargetDeviceName"  type:"Repeated"`
 }
 

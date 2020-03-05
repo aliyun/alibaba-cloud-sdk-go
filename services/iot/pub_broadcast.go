@@ -89,6 +89,7 @@ type PubBroadcastResponse struct {
 	Success      bool   `json:"Success" xml:"Success"`
 	Code         string `json:"Code" xml:"Code"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	MessageId    int64  `json:"MessageId" xml:"MessageId"`
 }
 
 // CreatePubBroadcastRequest creates a request to invoke PubBroadcast API

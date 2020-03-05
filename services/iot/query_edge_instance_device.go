@@ -76,10 +76,12 @@ func (client *Client) QueryEdgeInstanceDeviceWithCallback(request *QueryEdgeInst
 // QueryEdgeInstanceDeviceRequest is the request struct for api QueryEdgeInstanceDevice
 type QueryEdgeInstanceDeviceRequest struct {
 	*requests.RpcRequest
-	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
-	InstanceId    string           `position:"Query" name:"InstanceId"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
+	InstanceId    string           `position:"Query" name:"InstanceId"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 }
 
 // QueryEdgeInstanceDeviceResponse is the response struct for api QueryEdgeInstanceDevice

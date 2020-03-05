@@ -76,10 +76,12 @@ func (client *Client) CancelOTATaskByDeviceWithCallback(request *CancelOTATaskBy
 // CancelOTATaskByDeviceRequest is the request struct for api CancelOTATaskByDevice
 type CancelOTATaskByDeviceRequest struct {
 	*requests.RpcRequest
-	FirmwareId    string    `position:"Query" name:"FirmwareId"`
-	ProductKey    string    `position:"Query" name:"ProductKey"`
 	JobId         string    `position:"Query" name:"JobId"`
 	IotInstanceId string    `position:"Query" name:"IotInstanceId"`
+	FirmwareId    string    `position:"Query" name:"FirmwareId"`
+	ProductKey    string    `position:"Query" name:"ProductKey"`
+	ApiProduct    string    `position:"Body" name:"ApiProduct"`
+	ApiRevision   string    `position:"Body" name:"ApiRevision"`
 	DeviceName    *[]string `position:"Query" name:"DeviceName"  type:"Repeated"`
 }
 

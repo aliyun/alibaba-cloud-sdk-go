@@ -76,9 +76,11 @@ func (client *Client) UnbindDriverFromEdgeInstanceWithCallback(request *UnbindDr
 // UnbindDriverFromEdgeInstanceRequest is the request struct for api UnbindDriverFromEdgeInstance
 type UnbindDriverFromEdgeInstanceRequest struct {
 	*requests.RpcRequest
-	InstanceId    string `position:"Query" name:"InstanceId"`
 	DriverId      string `position:"Query" name:"DriverId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	InstanceId    string `position:"Query" name:"InstanceId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // UnbindDriverFromEdgeInstanceResponse is the response struct for api UnbindDriverFromEdgeInstance

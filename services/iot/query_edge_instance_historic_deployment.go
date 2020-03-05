@@ -76,12 +76,14 @@ func (client *Client) QueryEdgeInstanceHistoricDeploymentWithCallback(request *Q
 // QueryEdgeInstanceHistoricDeploymentRequest is the request struct for api QueryEdgeInstanceHistoricDeployment
 type QueryEdgeInstanceHistoricDeploymentRequest struct {
 	*requests.RpcRequest
-	EndTime       requests.Integer `position:"Query" name:"EndTime"`
-	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
 	StartTime     requests.Integer `position:"Query" name:"StartTime"`
-	InstanceId    string           `position:"Query" name:"InstanceId"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	EndTime       requests.Integer `position:"Query" name:"EndTime"`
+	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
+	InstanceId    string           `position:"Query" name:"InstanceId"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 }
 
 // QueryEdgeInstanceHistoricDeploymentResponse is the response struct for api QueryEdgeInstanceHistoricDeployment

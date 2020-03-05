@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CancelOTAStrategyByJob invokes the iot.CancelOTAStrategyByJob API synchronously
-// api document: https://help.aliyun.com/api/iot/cancelotastrategybyjob.html
-func (client *Client) CancelOTAStrategyByJob(request *CancelOTAStrategyByJobRequest) (response *CancelOTAStrategyByJobResponse, err error) {
-	response = CreateCancelOTAStrategyByJobResponse()
+// DeleteEdgeDriver invokes the iot.DeleteEdgeDriver API synchronously
+// api document: https://help.aliyun.com/api/iot/deleteedgedriver.html
+func (client *Client) DeleteEdgeDriver(request *DeleteEdgeDriverRequest) (response *DeleteEdgeDriverResponse, err error) {
+	response = CreateDeleteEdgeDriverResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CancelOTAStrategyByJobWithChan invokes the iot.CancelOTAStrategyByJob API asynchronously
-// api document: https://help.aliyun.com/api/iot/cancelotastrategybyjob.html
+// DeleteEdgeDriverWithChan invokes the iot.DeleteEdgeDriver API asynchronously
+// api document: https://help.aliyun.com/api/iot/deleteedgedriver.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CancelOTAStrategyByJobWithChan(request *CancelOTAStrategyByJobRequest) (<-chan *CancelOTAStrategyByJobResponse, <-chan error) {
-	responseChan := make(chan *CancelOTAStrategyByJobResponse, 1)
+func (client *Client) DeleteEdgeDriverWithChan(request *DeleteEdgeDriverRequest) (<-chan *DeleteEdgeDriverResponse, <-chan error) {
+	responseChan := make(chan *DeleteEdgeDriverResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CancelOTAStrategyByJob(request)
+		response, err := client.DeleteEdgeDriver(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CancelOTAStrategyByJobWithChan(request *CancelOTAStrategyB
 	return responseChan, errChan
 }
 
-// CancelOTAStrategyByJobWithCallback invokes the iot.CancelOTAStrategyByJob API asynchronously
-// api document: https://help.aliyun.com/api/iot/cancelotastrategybyjob.html
+// DeleteEdgeDriverWithCallback invokes the iot.DeleteEdgeDriver API asynchronously
+// api document: https://help.aliyun.com/api/iot/deleteedgedriver.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CancelOTAStrategyByJobWithCallback(request *CancelOTAStrategyByJobRequest, callback func(response *CancelOTAStrategyByJobResponse, err error)) <-chan int {
+func (client *Client) DeleteEdgeDriverWithCallback(request *DeleteEdgeDriverRequest, callback func(response *DeleteEdgeDriverResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CancelOTAStrategyByJobResponse
+		var response *DeleteEdgeDriverResponse
 		var err error
 		defer close(result)
-		response, err = client.CancelOTAStrategyByJob(request)
+		response, err = client.DeleteEdgeDriver(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,17 +73,17 @@ func (client *Client) CancelOTAStrategyByJobWithCallback(request *CancelOTAStrat
 	return result
 }
 
-// CancelOTAStrategyByJobRequest is the request struct for api CancelOTAStrategyByJob
-type CancelOTAStrategyByJobRequest struct {
+// DeleteEdgeDriverRequest is the request struct for api DeleteEdgeDriver
+type DeleteEdgeDriverRequest struct {
 	*requests.RpcRequest
-	JobId         string `position:"Query" name:"JobId"`
+	DriverId      string `position:"Query" name:"DriverId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 	ApiProduct    string `position:"Body" name:"ApiProduct"`
 	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
-// CancelOTAStrategyByJobResponse is the response struct for api CancelOTAStrategyByJob
-type CancelOTAStrategyByJobResponse struct {
+// DeleteEdgeDriverResponse is the response struct for api DeleteEdgeDriver
+type DeleteEdgeDriverResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	Success      bool   `json:"Success" xml:"Success"`
@@ -91,18 +91,18 @@ type CancelOTAStrategyByJobResponse struct {
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 }
 
-// CreateCancelOTAStrategyByJobRequest creates a request to invoke CancelOTAStrategyByJob API
-func CreateCancelOTAStrategyByJobRequest() (request *CancelOTAStrategyByJobRequest) {
-	request = &CancelOTAStrategyByJobRequest{
+// CreateDeleteEdgeDriverRequest creates a request to invoke DeleteEdgeDriver API
+func CreateDeleteEdgeDriverRequest() (request *DeleteEdgeDriverRequest) {
+	request = &DeleteEdgeDriverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CancelOTAStrategyByJob", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteEdgeDriver", "iot", "openAPI")
 	return
 }
 
-// CreateCancelOTAStrategyByJobResponse creates a response to parse from CancelOTAStrategyByJob response
-func CreateCancelOTAStrategyByJobResponse() (response *CancelOTAStrategyByJobResponse) {
-	response = &CancelOTAStrategyByJobResponse{
+// CreateDeleteEdgeDriverResponse creates a response to parse from DeleteEdgeDriver response
+func CreateDeleteEdgeDriverResponse() (response *DeleteEdgeDriverResponse) {
+	response = &DeleteEdgeDriverResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

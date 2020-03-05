@@ -76,11 +76,13 @@ func (client *Client) QueryDeviceByDriverWithCallback(request *QueryDeviceByDriv
 // QueryDeviceByDriverRequest is the request struct for api QueryDeviceByDriver
 type QueryDeviceByDriverRequest struct {
 	*requests.RpcRequest
-	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
-	InstanceId    string           `position:"Query" name:"InstanceId"`
 	DriverId      string           `position:"Query" name:"DriverId"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
+	InstanceId    string           `position:"Query" name:"InstanceId"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 }
 
 // QueryDeviceByDriverResponse is the response struct for api QueryDeviceByDriver

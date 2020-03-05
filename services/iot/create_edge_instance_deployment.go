@@ -77,8 +77,10 @@ func (client *Client) CreateEdgeInstanceDeploymentWithCallback(request *CreateEd
 type CreateEdgeInstanceDeploymentRequest struct {
 	*requests.RpcRequest
 	Type          string `position:"Query" name:"Type"`
-	InstanceId    string `position:"Query" name:"InstanceId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	InstanceId    string `position:"Query" name:"InstanceId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // CreateEdgeInstanceDeploymentResponse is the response struct for api CreateEdgeInstanceDeployment

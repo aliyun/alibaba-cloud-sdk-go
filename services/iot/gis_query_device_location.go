@@ -76,8 +76,8 @@ func (client *Client) GisQueryDeviceLocationWithCallback(request *GisQueryDevice
 // GisQueryDeviceLocationRequest is the request struct for api GisQueryDeviceLocation
 type GisQueryDeviceLocationRequest struct {
 	*requests.RpcRequest
-	ThingList     string `position:"Query" name:"ThingList"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	ThingList     string `position:"Query" name:"ThingList"`
 	ApiProduct    string `position:"Body" name:"ApiProduct"`
 	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }

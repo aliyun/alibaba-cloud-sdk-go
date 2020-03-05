@@ -76,8 +76,10 @@ func (client *Client) DeleteEdgeInstanceWithCallback(request *DeleteEdgeInstance
 // DeleteEdgeInstanceRequest is the request struct for api DeleteEdgeInstance
 type DeleteEdgeInstanceRequest struct {
 	*requests.RpcRequest
-	InstanceId    string `position:"Query" name:"InstanceId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	InstanceId    string `position:"Query" name:"InstanceId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // DeleteEdgeInstanceResponse is the response struct for api DeleteEdgeInstance
