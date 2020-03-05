@@ -1,3 +1,7 @@
+2020-03-05 Version: v1.61.28
+- Generated 2019-12-11 for `OnsMqtt`.
+- Update send message noPresistFlag param.
+
 2020-03-04 Version: v1.61.27
 - Generated 2017-08-01 for `Edas`.
 - Add UpdateK8sResource API.
