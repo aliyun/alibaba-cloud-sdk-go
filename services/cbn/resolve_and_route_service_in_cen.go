@@ -79,6 +79,7 @@ type ResolveAndRouteServiceInCenRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	CenId                string           `position:"Query" name:"CenId"`
+	Description          string           `position:"Query" name:"Description"`
 	UpdateInterval       requests.Integer `position:"Query" name:"UpdateInterval"`
 	Host                 string           `position:"Query" name:"Host"`
 	HostRegionId         string           `position:"Query" name:"HostRegionId"`

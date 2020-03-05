@@ -79,12 +79,14 @@ type EnableCenVbrHealthCheckRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CenId                string           `position:"Query" name:"CenId"`
 	HealthCheckTargetIp  string           `position:"Query" name:"HealthCheckTargetIp"`
+	HealthyThreshold     requests.Integer `position:"Query" name:"HealthyThreshold"`
 	VbrInstanceOwnerId   requests.Integer `position:"Query" name:"VbrInstanceOwnerId"`
 	VbrInstanceRegionId  string           `position:"Query" name:"VbrInstanceRegionId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	HealthCheckSourceIp  string           `position:"Query" name:"HealthCheckSourceIp"`
+	HealthCheckInterval  requests.Integer `position:"Query" name:"HealthCheckInterval"`
 	VbrInstanceId        string           `position:"Query" name:"VbrInstanceId"`
 }
 

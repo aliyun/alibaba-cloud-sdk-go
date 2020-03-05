@@ -23,5 +23,7 @@ type RouteServiceEntry struct {
 	AccessRegionId string `json:"AccessRegionId" xml:"AccessRegionId"`
 	UpdateInterval string `json:"UpdateInterval" xml:"UpdateInterval"`
 	Status         string `json:"Status" xml:"Status"`
+	HostVpcId      string `json:"HostVpcId" xml:"HostVpcId"`
+	Description    string `json:"Description" xml:"Description"`
 	Cidrs          Cidrs  `json:"Cidrs" xml:"Cidrs"`
 }
