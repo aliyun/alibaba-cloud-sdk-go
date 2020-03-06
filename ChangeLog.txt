@@ -1,3 +1,7 @@
+2020-03-06 Version: v1.61.34
+- Generated 2018-09-19 for `saf`.
+- Supported Saf for cn.
+
 2020-03-06 Version: v1.61.33
 - Generated 2019-05-21 for `saf`.
 - Supported Saf for oversea.

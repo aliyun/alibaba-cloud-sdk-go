@@ -83,10 +83,10 @@ type ExecuteRequestRequest struct {
 // ExecuteRequestResponse is the response struct for api ExecuteRequest
 type ExecuteRequestResponse struct {
 	*responses.BaseResponse
-	RequestId string                 `json:"RequestId" xml:"RequestId"`
-	Code      int                    `json:"Code" xml:"Code"`
-	Message   string                 `json:"Message" xml:"Message"`
-	Data      map[string]interface{} `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      int    `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateExecuteRequestRequest creates a request to invoke ExecuteRequest API
@@ -94,7 +94,7 @@ func CreateExecuteRequestRequest() (request *ExecuteRequestRequest) {
 	request = &ExecuteRequestRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("saf", "2019-05-21", "ExecuteRequest", "saf", "openAPI")
+	request.InitWithApiInfo("saf", "2018-09-19", "ExecuteRequest", "saf", "openAPI")
 	return
 }
 
