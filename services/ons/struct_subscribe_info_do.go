@@ -24,4 +24,5 @@ type SubscribeInfoDo struct {
 	InstanceId        string `json:"InstanceId" xml:"InstanceId"`
 	IndependentNaming bool   `json:"IndependentNaming" xml:"IndependentNaming"`
 	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
+	GroupType         string `json:"GroupType" xml:"GroupType"`
 }

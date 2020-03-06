@@ -1,3 +1,8 @@
+2020-03-06 Version: v1.61.32
+- Generated 2019-02-14 for `Ons`.
+- Add request parameter groupType for OnsGroupCreate.
+- Add request parameter groupType for OnsGroupList.
+
 2020-03-05 Version: v1.61.31
 - Generated 2017-09-12 for `Cbn`.
 - Support flow log.

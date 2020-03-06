@@ -78,6 +78,7 @@ type OnsGroupListRequest struct {
 	*requests.RpcRequest
 	GroupId    string `position:"Query" name:"GroupId"`
 	InstanceId string `position:"Query" name:"InstanceId"`
+	GroupType  string `position:"Query" name:"GroupType"`
 }
 
 // OnsGroupListResponse is the response struct for api OnsGroupList
