@@ -100,7 +100,7 @@ func CreateQueryDeviceByDriverRequest() (request *QueryDeviceByDriverRequest) {
 	request = &QueryDeviceByDriverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceByDriver", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceByDriver", "Iot", "openAPI")
 	return
 }
 

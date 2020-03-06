@@ -103,7 +103,7 @@ func CreateUpdateEdgeDriverVersionRequest() (request *UpdateEdgeDriverVersionReq
 	request = &UpdateEdgeDriverVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateEdgeDriverVersion", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateEdgeDriverVersion", "Iot", "openAPI")
 	return
 }
 

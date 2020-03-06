@@ -97,7 +97,7 @@ func CreateGetGatewayBySubDeviceRequest() (request *GetGatewayBySubDeviceRequest
 	request = &GetGatewayBySubDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetGatewayBySubDevice", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetGatewayBySubDevice", "Iot", "openAPI")
 	return
 }
 

@@ -97,7 +97,7 @@ func CreateQueryProductCertInfoRequest() (request *QueryProductCertInfoRequest) 
 	request = &QueryProductCertInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryProductCertInfo", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryProductCertInfo", "Iot", "openAPI")
 	return
 }
 

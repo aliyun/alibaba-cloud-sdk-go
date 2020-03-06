@@ -102,7 +102,7 @@ func CreateCreateProductTagsRequest() (request *CreateProductTagsRequest) {
 	request = &CreateProductTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateProductTags", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateProductTags", "Iot", "openAPI")
 	return
 }
 

@@ -96,7 +96,7 @@ func CreateDeleteEdgeInstanceRequest() (request *DeleteEdgeInstanceRequest) {
 	request = &DeleteEdgeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteEdgeInstance", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteEdgeInstance", "Iot", "openAPI")
 	return
 }
 

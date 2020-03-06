@@ -95,7 +95,7 @@ func CreateListThingTemplatesRequest() (request *ListThingTemplatesRequest) {
 	request = &ListThingTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListThingTemplates", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListThingTemplates", "Iot", "openAPI")
 	return
 }
 

@@ -99,7 +99,7 @@ func CreateCreateEdgeInstanceRequest() (request *CreateEdgeInstanceRequest) {
 	request = &CreateEdgeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateEdgeInstance", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateEdgeInstance", "Iot", "openAPI")
 	return
 }
 

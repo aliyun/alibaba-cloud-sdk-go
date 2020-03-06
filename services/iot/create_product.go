@@ -109,7 +109,7 @@ func CreateCreateProductRequest() (request *CreateProductRequest) {
 	request = &CreateProductRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateProduct", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateProduct", "Iot", "openAPI")
 	return
 }
 

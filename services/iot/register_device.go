@@ -99,7 +99,7 @@ func CreateRegisterDeviceRequest() (request *RegisterDeviceRequest) {
 	request = &RegisterDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "RegisterDevice", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "RegisterDevice", "Iot", "openAPI")
 	return
 }
 

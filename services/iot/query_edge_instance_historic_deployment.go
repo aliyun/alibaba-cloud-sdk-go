@@ -101,7 +101,7 @@ func CreateQueryEdgeInstanceHistoricDeploymentRequest() (request *QueryEdgeInsta
 	request = &QueryEdgeInstanceHistoricDeploymentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryEdgeInstanceHistoricDeployment", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryEdgeInstanceHistoricDeployment", "Iot", "openAPI")
 	return
 }
 

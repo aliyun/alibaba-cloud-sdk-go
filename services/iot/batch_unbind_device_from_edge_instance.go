@@ -97,7 +97,7 @@ func CreateBatchUnbindDeviceFromEdgeInstanceRequest() (request *BatchUnbindDevic
 	request = &BatchUnbindDeviceFromEdgeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchUnbindDeviceFromEdgeInstance", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchUnbindDeviceFromEdgeInstance", "Iot", "openAPI")
 	return
 }
 

@@ -98,7 +98,7 @@ func CreateGetThingModelTslRequest() (request *GetThingModelTslRequest) {
 	request = &GetThingModelTslRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetThingModelTsl", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetThingModelTsl", "Iot", "openAPI")
 	return
 }
 

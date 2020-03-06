@@ -96,7 +96,7 @@ func CreateGetThingTemplateRequest() (request *GetThingTemplateRequest) {
 	request = &GetThingTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetThingTemplate", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetThingTemplate", "Iot", "openAPI")
 	return
 }
 

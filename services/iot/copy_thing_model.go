@@ -97,7 +97,7 @@ func CreateCopyThingModelRequest() (request *CopyThingModelRequest) {
 	request = &CopyThingModelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CopyThingModel", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CopyThingModel", "Iot", "openAPI")
 	return
 }
 

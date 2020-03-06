@@ -99,7 +99,7 @@ func CreateQueryEdgeInstanceDeviceRequest() (request *QueryEdgeInstanceDeviceReq
 	request = &QueryEdgeInstanceDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryEdgeInstanceDevice", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryEdgeInstanceDevice", "Iot", "openAPI")
 	return
 }
 

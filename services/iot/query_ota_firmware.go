@@ -97,7 +97,7 @@ func CreateQueryOTAFirmwareRequest() (request *QueryOTAFirmwareRequest) {
 	request = &QueryOTAFirmwareRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryOTAFirmware", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryOTAFirmware", "Iot", "openAPI")
 	return
 }
 

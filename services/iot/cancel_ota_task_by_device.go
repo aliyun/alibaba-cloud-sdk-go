@@ -99,7 +99,7 @@ func CreateCancelOTATaskByDeviceRequest() (request *CancelOTATaskByDeviceRequest
 	request = &CancelOTATaskByDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CancelOTATaskByDevice", "iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CancelOTATaskByDevice", "Iot", "openAPI")
 	return
 }
 

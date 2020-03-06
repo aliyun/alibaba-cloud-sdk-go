@@ -31,6 +31,7 @@ type Data struct {
 	GroupId                string                `json:"GroupId" xml:"GroupId"`
 	JobType                string                `json:"JobType" xml:"JobType"`
 	LatestDeploymentType   string                `json:"LatestDeploymentType" xml:"LatestDeploymentType"`
+	OssPreSignedAddress    string                `json:"OssPreSignedAddress" xml:"OssPreSignedAddress"`
 	Type                   string                `json:"Type" xml:"Type"`
 	FileId                 string                `json:"FileId" xml:"FileId"`
 	ThingModelJson         string                `json:"ThingModelJson" xml:"ThingModelJson"`
@@ -38,6 +39,7 @@ type Data struct {
 	Versions               string                `json:"Versions" xml:"Versions"`
 	TslUri                 string                `json:"TslUri" xml:"TslUri"`
 	SelectionType          string                `json:"SelectionType" xml:"SelectionType"`
+	OssAddress             string                `json:"OssAddress" xml:"OssAddress"`
 	FirmwareId             string                `json:"FirmwareId" xml:"FirmwareId"`
 	AliyunCommodityCode    string                `json:"AliyunCommodityCode" xml:"AliyunCommodityCode"`
 	ApplyId                int64                 `json:"ApplyId" xml:"ApplyId"`
