@@ -104,7 +104,7 @@ func CreateDescribeIncrementBackupListRequest() (request *DescribeIncrementBacku
 	request = &DescribeIncrementBackupListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeIncrementBackupList", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeIncrementBackupList", "cbs", "openAPI")
 	return
 }
 

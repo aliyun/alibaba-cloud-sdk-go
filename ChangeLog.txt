@@ -1,3 +1,7 @@
+2020-03-09 Version: v1.61.42
+- Generated 2019-03-06 for `Dbs`.
+- Add BackupStorageType.
+
 2020-03-09 Version: v1.61.41
 - Generated 2017-09-06 for `imm`.
 - Add EmotionConfidence to GetImage.

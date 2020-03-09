@@ -98,7 +98,7 @@ func CreateModifyBackupPlanNameRequest() (request *ModifyBackupPlanNameRequest) 
 	request = &ModifyBackupPlanNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "ModifyBackupPlanName", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "ModifyBackupPlanName", "cbs", "openAPI")
 	return
 }
 

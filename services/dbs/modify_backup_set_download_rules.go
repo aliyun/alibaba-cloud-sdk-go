@@ -103,7 +103,7 @@ func CreateModifyBackupSetDownloadRulesRequest() (request *ModifyBackupSetDownlo
 	request = &ModifyBackupSetDownloadRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "ModifyBackupSetDownloadRules", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "ModifyBackupSetDownloadRules", "cbs", "openAPI")
 	return
 }
 

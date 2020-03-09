@@ -99,7 +99,7 @@ func CreateCreateIncrementBackupSetDownloadRequest() (request *CreateIncrementBa
 	request = &CreateIncrementBackupSetDownloadRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "CreateIncrementBackupSetDownload", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "CreateIncrementBackupSetDownload", "cbs", "openAPI")
 	return
 }
 

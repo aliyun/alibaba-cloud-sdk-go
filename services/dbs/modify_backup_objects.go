@@ -99,7 +99,7 @@ func CreateModifyBackupObjectsRequest() (request *ModifyBackupObjectsRequest) {
 	request = &ModifyBackupObjectsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "ModifyBackupObjects", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "ModifyBackupObjects", "cbs", "openAPI")
 	return
 }
 

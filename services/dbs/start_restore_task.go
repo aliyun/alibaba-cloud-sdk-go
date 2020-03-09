@@ -97,7 +97,7 @@ func CreateStartRestoreTaskRequest() (request *StartRestoreTaskRequest) {
 	request = &StartRestoreTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "StartRestoreTask", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "StartRestoreTask", "cbs", "openAPI")
 	return
 }
 

@@ -100,7 +100,7 @@ func CreateModifyBackupStrategyRequest() (request *ModifyBackupStrategyRequest) 
 	request = &ModifyBackupStrategyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "ModifyBackupStrategy", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "ModifyBackupStrategy", "cbs", "openAPI")
 	return
 }
 

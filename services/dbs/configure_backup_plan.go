@@ -87,6 +87,7 @@ type ConfigureBackupPlanRequest struct {
 	BackupStartTime                   string           `position:"Query" name:"BackupStartTime"`
 	SourceEndpointIP                  string           `position:"Query" name:"SourceEndpointIP"`
 	EnableBackupLog                   requests.Boolean `position:"Query" name:"EnableBackupLog"`
+	BackupStorageType                 string           `position:"Query" name:"BackupStorageType"`
 	DuplicationArchivePeriod          requests.Integer `position:"Query" name:"DuplicationArchivePeriod"`
 	SourceEndpointPassword            string           `position:"Query" name:"SourceEndpointPassword"`
 	BackupObjects                     string           `position:"Query" name:"BackupObjects"`
@@ -116,7 +117,7 @@ func CreateConfigureBackupPlanRequest() (request *ConfigureBackupPlanRequest) {
 	request = &ConfigureBackupPlanRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "ConfigureBackupPlan", "", "")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "ConfigureBackupPlan", "cbs", "openAPI")
 	return
 }
 
