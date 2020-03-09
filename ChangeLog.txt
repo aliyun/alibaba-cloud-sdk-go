@@ -1,3 +1,7 @@
+2020-03-09 Version: v1.61.38
+- Generated 2019-11-11 for `nlp-automl`.
+- NlpAutoml update contract api.
+
 2020-03-06 Version: v1.61.37
 - Generated 2018-01-20 for `Iot`.
 - Add LinkIoTEdge CreateEdgeOssPreSignedAddress API.
