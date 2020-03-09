@@ -24,5 +24,4 @@ type TagsItem struct {
 	ParentTagEnName string  `json:"ParentTagEnName" xml:"ParentTagEnName"`
 	TagLevel        int     `json:"TagLevel" xml:"TagLevel"`
 	ParentTagName   string  `json:"ParentTagName" xml:"ParentTagName"`
-	Num             int     `json:"Num" xml:"Num"`
 }

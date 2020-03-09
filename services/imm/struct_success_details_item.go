@@ -17,10 +17,6 @@ package imm
 
 // SuccessDetailsItem is a nested struct in imm response
 type SuccessDetailsItem struct {
-	Time             string                 `json:"Time" xml:"Time"`
-	GetImageTime     string                 `json:"GetImageTime" xml:"GetImageTime"`
-	DetectTime       string                 `json:"DetectTime" xml:"DetectTime"`
-	SrcUri           string                 `json:"SrcUri" xml:"SrcUri"`
-	ClothesBoxDetail []ClothesBoxDetailItem `json:"ClothesBoxDetail" xml:"ClothesBoxDetail"`
-	QRCodes          []QRCodesItem          `json:"QRCodes" xml:"QRCodes"`
+	SrcUri  string        `json:"SrcUri" xml:"SrcUri"`
+	QRCodes []QRCodesItem `json:"QRCodes" xml:"QRCodes"`
 }
