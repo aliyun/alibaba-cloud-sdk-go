@@ -77,9 +77,9 @@ func (client *Client) RefreshObjectCachesWithCallback(request *RefreshObjectCach
 type RefreshObjectCachesRequest struct {
 	*requests.RpcRequest
 	ObjectPath    string           `position:"Query" name:"ObjectPath"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	ObjectType    string           `position:"Query" name:"ObjectType"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // RefreshObjectCachesResponse is the response struct for api RefreshObjectCaches
