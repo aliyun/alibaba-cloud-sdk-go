@@ -1,3 +1,7 @@
+2020-03-10 Version: v1.61.45
+- Generated 2020-02-06 for `acms-open`.
+- ACM POP SDK.
+
 2020-03-10 Version: v1.61.44
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Add ExportTas apis.
