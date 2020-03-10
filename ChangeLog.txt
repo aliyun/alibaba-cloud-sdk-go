@@ -1,3 +1,7 @@
+2020-03-10 Version: v1.61.44
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Add ExportTas apis.
+
 2020-03-10 Version: v1.61.43
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Add ExportTas apis.
