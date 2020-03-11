@@ -18,6 +18,7 @@ package ivpd
 // Data is a nested struct in ivpd response
 type Data struct {
 	MajorUrl          string          `json:"MajorUrl" xml:"MajorUrl"`
+	ImageUrl          string          `json:"ImageUrl" xml:"ImageUrl"`
 	Url               string          `json:"Url" xml:"Url"`
 	ImageList         []string        `json:"ImageList" xml:"ImageList"`
 	Styles            []string        `json:"Styles" xml:"Styles"`
