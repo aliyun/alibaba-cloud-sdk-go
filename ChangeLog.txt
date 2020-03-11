@@ -1,3 +1,6 @@
+2020-03-11 Version: v1.61.50
+- Generated 2018-08-08 for `Eci`.
+
 2020-03-11 Version: v1.61.49
 - Generated 2015-12-01 for `Dds`.
 - Update structure for DescribeAvailableResource without compatible.
