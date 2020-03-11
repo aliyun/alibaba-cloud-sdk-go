@@ -85,6 +85,7 @@ type DescribeContainerGroupMetricRequest struct {
 	StartTime            string           `position:"Query" name:"StartTime"`
 	EndTime              string           `position:"Query" name:"EndTime"`
 	Period               string           `position:"Query" name:"Period"`
+	VkClientVersion      string           `position:"Query" name:"VkClientVersion"`
 }
 
 // DescribeContainerGroupMetricResponse is the response struct for api DescribeContainerGroupMetric

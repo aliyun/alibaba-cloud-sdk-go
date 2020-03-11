@@ -83,6 +83,7 @@ type RestartContainerGroupRequest struct {
 	RegionId             string           `position:"Query" name:"RegionId"`
 	ContainerGroupId     string           `position:"Query" name:"ContainerGroupId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	VkClientVersion      string           `position:"Query" name:"VkClientVersion"`
 }
 
 // RestartContainerGroupResponse is the response struct for api RestartContainerGroup

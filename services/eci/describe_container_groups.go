@@ -89,6 +89,9 @@ type DescribeContainerGroupsRequest struct {
 	ContainerGroupIds    string                        `position:"Query" name:"ContainerGroupIds"`
 	ContainerGroupName   string                        `position:"Query" name:"ContainerGroupName"`
 	Status               string                        `position:"Query" name:"Status"`
+	VkClientVersion      string                        `position:"Query" name:"VkClientVersion"`
+	ResourceGroupId      string                        `position:"Query" name:"ResourceGroupId"`
+	WithEvent            requests.Boolean              `position:"Query" name:"WithEvent"`
 }
 
 type DescribeContainerGroupsTag struct {
@@ -125,6 +128,10 @@ type DescribeContainerGroupsContainerGroup0 struct {
 	ExpiredTime        string                                     `json:"ExpiredTime" xml:"ExpiredTime"`
 	FailedTime         string                                     `json:"FailedTime" xml:"FailedTime"`
 	RamRoleName        string                                     `json:"RamRoleName" xml:"RamRoleName"`
+	Ipv6Address        string                                     `json:"Ipv6Address" xml:"Ipv6Address"`
+	VpcId              string                                     `json:"VpcId" xml:"VpcId"`
+	Discount           int                                        `json:"Discount" xml:"Discount"`
+	ResourceGroupId    string                                     `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	Tags               []DescribeContainerGroupsLabel1            `json:"Tags" xml:"Tags"`
 	Events             []DescribeContainerGroupsEvent1            `json:"Events" xml:"Events"`
 	Containers         []DescribeContainerGroupsContainer1        `json:"Containers" xml:"Containers"`
@@ -160,6 +167,9 @@ type DescribeContainerGroupsContainer1 struct {
 	ImagePullPolicy string                                   `json:"ImagePullPolicy" xml:"ImagePullPolicy"`
 	Ready           bool                                     `json:"Ready" xml:"Ready"`
 	Gpu             int                                      `json:"Gpu" xml:"Gpu"`
+	Stdin           bool                                     `json:"Stdin" xml:"Stdin"`
+	StdinOnce       bool                                     `json:"StdinOnce" xml:"StdinOnce"`
+	Tty             bool                                     `json:"Tty" xml:"Tty"`
 	VolumeMounts    []DescribeContainerGroupsVolumeMount2    `json:"VolumeMounts" xml:"VolumeMounts"`
 	Ports           []DescribeContainerGroupsPort2           `json:"Ports" xml:"Ports"`
 	EnvironmentVars []DescribeContainerGroupsEnvironmentVar2 `json:"EnvironmentVars" xml:"EnvironmentVars"`
@@ -270,6 +280,9 @@ type DescribeContainerGroupsVolume1 struct {
 	NFSVolumeReadOnly                 bool                                                       `json:"NFSVolumeReadOnly" xml:"NFSVolumeReadOnly"`
 	DiskVolumeDiskId                  string                                                     `json:"DiskVolumeDiskId" xml:"DiskVolumeDiskId"`
 	DiskVolumeFsType                  string                                                     `json:"DiskVolumeFsType" xml:"DiskVolumeFsType"`
+	FlexVolumeDriver                  string                                                     `json:"FlexVolumeDriver" xml:"FlexVolumeDriver"`
+	FlexVolumeFsType                  string                                                     `json:"FlexVolumeFsType" xml:"FlexVolumeFsType"`
+	FlexVolumeOptions                 string                                                     `json:"FlexVolumeOptions" xml:"FlexVolumeOptions"`
 	ConfigFileVolumeConfigFileToPaths []DescribeContainerGroupsConfigFileVolumeConfigFileToPath2 `json:"ConfigFileVolumeConfigFileToPaths" xml:"ConfigFileVolumeConfigFileToPaths"`
 }
 

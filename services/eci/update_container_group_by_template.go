@@ -83,6 +83,7 @@ type UpdateContainerGroupByTemplateRequest struct {
 	RegionId             string           `position:"Query" name:"RegionId"`
 	Template             string           `position:"Body" name:"Template"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	VkClientVersion      string           `position:"Query" name:"VkClientVersion"`
 }
 
 // UpdateContainerGroupByTemplateResponse is the response struct for api UpdateContainerGroupByTemplate
