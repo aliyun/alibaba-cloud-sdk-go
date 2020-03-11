@@ -85,6 +85,8 @@ type DescribeContainerLogRequest struct {
 	ContainerName        string           `position:"Query" name:"ContainerName"`
 	StartTime            string           `position:"Query" name:"StartTime"`
 	Tail                 requests.Integer `position:"Query" name:"Tail"`
+	LastTime             requests.Boolean `position:"Query" name:"LastTime"`
+	SinceSeconds         requests.Integer `position:"Query" name:"SinceSeconds"`
 }
 
 // DescribeContainerLogResponse is the response struct for api DescribeContainerLog

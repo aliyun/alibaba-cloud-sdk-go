@@ -76,35 +76,44 @@ func (client *Client) CreateContainerGroupWithCallback(request *CreateContainerG
 // CreateContainerGroupRequest is the request struct for api CreateContainerGroup
 type CreateContainerGroupRequest struct {
 	*requests.RpcRequest
-	OwnerId                 requests.Integer                               `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount    string                                         `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId         requests.Integer                               `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount            string                                         `position:"Query" name:"OwnerAccount"`
-	RegionId                string                                         `position:"Query" name:"RegionId"`
-	ZoneId                  string                                         `position:"Query" name:"ZoneId"`
-	SecurityGroupId         string                                         `position:"Query" name:"SecurityGroupId"`
-	VSwitchId               string                                         `position:"Query" name:"VSwitchId"`
-	ContainerGroupName      string                                         `position:"Query" name:"ContainerGroupName"`
-	RestartPolicy           string                                         `position:"Query" name:"RestartPolicy"`
-	Tag                     *[]CreateContainerGroupTag                     `position:"Query" name:"Tag" type:"Repeated"`
-	ImageRegistryCredential *[]CreateContainerGroupImageRegistryCredential `position:"Query" name:"ImageRegistryCredential" type:"Repeated"`
-	Container               *[]CreateContainerGroupContainer               `position:"Query" name:"Container" type:"Repeated"`
-	Volume                  *[]CreateContainerGroupVolume                  `position:"Query" name:"Volume" type:"Repeated"`
-	EipInstanceId           string                                         `position:"Query" name:"EipInstanceId"`
-	InitContainer           *[]CreateContainerGroupInitContainer           `position:"Query" name:"InitContainer" type:"Repeated"`
-	Cpu                     requests.Float                                 `position:"Query" name:"Cpu"`
-	Memory                  requests.Float                                 `position:"Query" name:"Memory"`
-	ResourceGroupId         string                                         `position:"Query" name:"ResourceGroupId"`
-	DnsPolicy               string                                         `position:"Query" name:"DnsPolicy"`
-	ClientToken             string                                         `position:"Query" name:"ClientToken"`
-	HostAliase              *[]CreateContainerGroupHostAliase              `position:"Query" name:"HostAliase" type:"Repeated"`
-	Arn                     *[]CreateContainerGroupArn                     `position:"Query" name:"Arn" type:"Repeated"`
-	InstanceType            string                                         `position:"Query" name:"InstanceType"`
-	SlsEnable               requests.Boolean                               `position:"Query" name:"SlsEnable"`
-	ImageSnapshotId         string                                         `position:"Query" name:"ImageSnapshotId"`
-	RamRoleName             string                                         `position:"Query" name:"RamRoleName"`
-	DnsConfig               CreateContainerGroupDnsConfig                  `position:"Query" name:"DnsConfig" type:"Struct"`
-	SecurityContext         CreateContainerGroupSecurityContext            `position:"Query" name:"SecurityContext" type:"Struct"`
+	OwnerId                       requests.Integer                               `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount          string                                         `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId               requests.Integer                               `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount                  string                                         `position:"Query" name:"OwnerAccount"`
+	RegionId                      string                                         `position:"Query" name:"RegionId"`
+	ZoneId                        string                                         `position:"Query" name:"ZoneId"`
+	SecurityGroupId               string                                         `position:"Query" name:"SecurityGroupId"`
+	VSwitchId                     string                                         `position:"Query" name:"VSwitchId"`
+	ContainerGroupName            string                                         `position:"Query" name:"ContainerGroupName"`
+	RestartPolicy                 string                                         `position:"Query" name:"RestartPolicy"`
+	Tag                           *[]CreateContainerGroupTag                     `position:"Query" name:"Tag" type:"Repeated"`
+	ImageRegistryCredential       *[]CreateContainerGroupImageRegistryCredential `position:"Query" name:"ImageRegistryCredential" type:"Repeated"`
+	Container                     *[]CreateContainerGroupContainer               `position:"Query" name:"Container" type:"Repeated"`
+	Volume                        *[]CreateContainerGroupVolume                  `position:"Query" name:"Volume" type:"Repeated"`
+	EipInstanceId                 string                                         `position:"Query" name:"EipInstanceId"`
+	InitContainer                 *[]CreateContainerGroupInitContainer           `position:"Query" name:"InitContainer" type:"Repeated"`
+	Cpu                           requests.Float                                 `position:"Query" name:"Cpu"`
+	Memory                        requests.Float                                 `position:"Query" name:"Memory"`
+	ResourceGroupId               string                                         `position:"Query" name:"ResourceGroupId"`
+	DnsPolicy                     string                                         `position:"Query" name:"DnsPolicy"`
+	ClientToken                   string                                         `position:"Query" name:"ClientToken"`
+	HostAliase                    *[]CreateContainerGroupHostAliase              `position:"Query" name:"HostAliase" type:"Repeated"`
+	Arn                           *[]CreateContainerGroupArn                     `position:"Query" name:"Arn" type:"Repeated"`
+	InstanceType                  string                                         `position:"Query" name:"InstanceType"`
+	SlsEnable                     requests.Boolean                               `position:"Query" name:"SlsEnable"`
+	ImageSnapshotId               string                                         `position:"Query" name:"ImageSnapshotId"`
+	RamRoleName                   string                                         `position:"Query" name:"RamRoleName"`
+	NtpServer                     []string                                       `position:"Query" name:"NtpServer" type:"Repeated"`
+	TerminationGracePeriodSeconds requests.Integer                               `position:"Query" name:"TerminationGracePeriodSeconds"`
+	AutoMatchImageCache           requests.Boolean                               `position:"Query" name:"AutoMatchImageCache"`
+	VkClientVersion               string                                         `position:"Query" name:"VkClientVersion"`
+	Ipv6AddressCount              requests.Integer                               `position:"Query" name:"Ipv6AddressCount"`
+	ActiveDeadlineSeconds         requests.Integer                               `position:"Query" name:"ActiveDeadlineSeconds"`
+	SpotStrategy                  string                                         `position:"Query" name:"SpotStrategy"`
+	SpotPriceLimit                requests.Float                                 `position:"Query" name:"SpotPriceLimit"`
+	VSwitchStrategy               string                                         `position:"Query" name:"VSwitchStrategy"`
+	DnsConfig                     CreateContainerGroupDnsConfig                  `position:"Query" name:"DnsConfig" type:"Struct"`
+	SecurityContext               CreateContainerGroupSecurityContext            `position:"Query" name:"SecurityContext" type:"Struct"`
 }
 
 type CreateContainerGroupTag struct {
@@ -119,24 +128,40 @@ type CreateContainerGroupImageRegistryCredential struct {
 }
 
 type CreateContainerGroupContainer struct {
-	Image           string                                `name:"Image"`
-	Name            string                                `name:"Name"`
-	Cpu             requests.Float                        `name:"Cpu"`
-	Memory          requests.Float                        `name:"Memory"`
-	WorkingDir      string                                `name:"WorkingDir"`
-	ImagePullPolicy string                                `name:"ImagePullPolicy"`
-	Command         []string                              `name:"Command" type:"Repeated"`
-	Arg             []string                              `name:"Arg" type:"Repeated"`
-	VolumeMount     *[]CreateContainerGroupVolumeMount    `name:"VolumeMount" type:"Repeated"`
-	Port            *[]CreateContainerGroupPort           `name:"Port" type:"Repeated"`
-	EnvironmentVar  *[]CreateContainerGroupEnvironmentVar `name:"EnvironmentVar" type:"Repeated"`
-	Stdin           requests.Boolean                      `name:"Stdin"`
-	StdinOnce       requests.Boolean                      `name:"StdinOnce"`
-	Tty             requests.Boolean                      `name:"Tty"`
-	Gpu             requests.Integer                      `name:"Gpu"`
-	ReadinessProbe  CreateContainerGroupReadinessProbe    `name:"ReadinessProbe" type:"Struct"`
-	LivenessProbe   CreateContainerGroupLivenessProbe     `name:"LivenessProbe" type:"Struct"`
-	SecurityContext CreateContainerGroupSecurityContext   `name:"SecurityContext" type:"Struct"`
+	Image                                      string                                                            `name:"Image"`
+	Name                                       string                                                            `name:"Name"`
+	Cpu                                        requests.Float                                                    `name:"Cpu"`
+	Memory                                     requests.Float                                                    `name:"Memory"`
+	WorkingDir                                 string                                                            `name:"WorkingDir"`
+	ImagePullPolicy                            string                                                            `name:"ImagePullPolicy"`
+	Command                                    []string                                                          `name:"Command" type:"Repeated"`
+	Arg                                        []string                                                          `name:"Arg" type:"Repeated"`
+	VolumeMount                                *[]CreateContainerGroupVolumeMount                                `name:"VolumeMount" type:"Repeated"`
+	Port                                       *[]CreateContainerGroupPort                                       `name:"Port" type:"Repeated"`
+	EnvironmentVar                             *[]CreateContainerGroupEnvironmentVar                             `name:"EnvironmentVar" type:"Repeated"`
+	Stdin                                      requests.Boolean                                                  `name:"Stdin"`
+	StdinOnce                                  requests.Boolean                                                  `name:"StdinOnce"`
+	Tty                                        requests.Boolean                                                  `name:"Tty"`
+	Gpu                                        requests.Integer                                                  `name:"Gpu"`
+	LifecyclePostStartHandlerHttpGetHost       string                                                            `name:"LifecyclePostStartHandlerHttpGetHost"`
+	LifecyclePostStartHandlerHttpGetPort       requests.Integer                                                  `name:"LifecyclePostStartHandlerHttpGetPort"`
+	LifecyclePostStartHandlerHttpGetPath       string                                                            `name:"LifecyclePostStartHandlerHttpGetPath"`
+	LifecyclePostStartHandlerHttpGetScheme     string                                                            `name:"LifecyclePostStartHandlerHttpGetScheme"`
+	LifecyclePostStartHandlerHttpGetHttpHeader *[]CreateContainerGroupLifecyclePostStartHandlerHttpGetHttpHeader `name:"LifecyclePostStartHandlerHttpGetHttpHeader" type:"Repeated"`
+	LifecyclePostStartHandlerExec              []string                                                          `name:"LifecyclePostStartHandlerExec" type:"Repeated"`
+	LifecyclePostStartHandlerTcpSocketHost     string                                                            `name:"LifecyclePostStartHandlerTcpSocketHost"`
+	LifecyclePostStartHandlerTcpSocketPort     requests.Integer                                                  `name:"LifecyclePostStartHandlerTcpSocketPort"`
+	LifecyclePreStopHandlerHttpGetHost         string                                                            `name:"LifecyclePreStopHandlerHttpGetHost"`
+	LifecyclePreStopHandlerHttpGetPort         requests.Integer                                                  `name:"LifecyclePreStopHandlerHttpGetPort"`
+	LifecyclePreStopHandlerHttpGetPath         string                                                            `name:"LifecyclePreStopHandlerHttpGetPath"`
+	LifecyclePreStopHandlerHttpGetScheme       string                                                            `name:"LifecyclePreStopHandlerHttpGetScheme"`
+	LifecyclePreStopHandlerHttpGetHttpHeader   *[]CreateContainerGroupLifecyclePreStopHandlerHttpGetHttpHeader   `name:"LifecyclePreStopHandlerHttpGetHttpHeader" type:"Repeated"`
+	LifecyclePreStopHandlerExec                []string                                                          `name:"LifecyclePreStopHandlerExec" type:"Repeated"`
+	LifecyclePreStopHandlerTcpSocketHost       string                                                            `name:"LifecyclePreStopHandlerTcpSocketHost"`
+	LifecyclePreStopHandlerTcpSocketPort       requests.Integer                                                  `name:"LifecyclePreStopHandlerTcpSocketPort"`
+	ReadinessProbe                             CreateContainerGroupReadinessProbe                                `name:"ReadinessProbe" type:"Struct"`
+	LivenessProbe                              CreateContainerGroupLivenessProbe                                 `name:"LivenessProbe" type:"Struct"`
+	SecurityContext                            CreateContainerGroupSecurityContext                               `name:"SecurityContext" type:"Struct"`
 }
 
 type CreateContainerGroupVolume struct {
@@ -146,6 +171,8 @@ type CreateContainerGroupVolume struct {
 	ConfigFileVolume CreateContainerGroupConfigFileVolume `name:"ConfigFileVolume" type:"Struct"`
 	EmptyDirVolume   CreateContainerGroupEmptyDirVolume   `name:"EmptyDirVolume" type:"Struct"`
 	DiskVolume       CreateContainerGroupDiskVolume       `name:"DiskVolume" type:"Struct"`
+	FlexVolume       CreateContainerGroupFlexVolume       `name:"FlexVolume" type:"Struct"`
+	HostPathVolume   CreateContainerGroupHostPathVolume   `name:"HostPathVolume" type:"Struct"`
 }
 
 type CreateContainerGroupInitContainer struct {
@@ -176,13 +203,13 @@ type CreateContainerGroupArn struct {
 }
 
 type CreateContainerGroupDnsConfig struct {
-	NameServer []string                      `name:"NameServer" type:"Repeated"`
-	Search     []string                      `name:"Search" type:"Repeated"`
-	Option     *[]CreateContainerGroupOption `name:"Option" type:"Repeated"`
+	NameServer []string                      `name:"NameServer"`
+	Search     []string                      `name:"Search"`
+	Option     *[]CreateContainerGroupOption `name:"Option"`
 }
 
 type CreateContainerGroupSecurityContext struct {
-	Sysctl *[]CreateContainerGroupSysctl `name:"Sysctl" type:"Repeated"`
+	Sysctl *[]CreateContainerGroupSysctl `name:"Sysctl"`
 }
 
 type CreateContainerGroupVolumeMount struct {
@@ -207,6 +234,16 @@ type CreateContainerGroupFieldRef struct {
 	FieldPath string `name:"FieldPath"`
 }
 
+type CreateContainerGroupLifecyclePostStartHandlerHttpGetHttpHeader struct {
+	Name  string `name:"Name"`
+	Value string `name:"Value"`
+}
+
+type CreateContainerGroupLifecyclePreStopHandlerHttpGetHttpHeader struct {
+	Name  string `name:"Name"`
+	Value string `name:"Value"`
+}
+
 type CreateContainerGroupReadinessProbe struct {
 	InitialDelaySeconds requests.Integer              `name:"InitialDelaySeconds"`
 	PeriodSeconds       requests.Integer              `name:"PeriodSeconds"`
@@ -225,7 +262,7 @@ type CreateContainerGroupHttpGet struct {
 }
 
 type CreateContainerGroupExec struct {
-	Command []string `name:"Command" type:"Repeated"`
+	Command []string `name:"Command"`
 }
 
 type CreateContainerGroupTcpSocket struct {
@@ -250,7 +287,7 @@ type CreateContainerGroupNFSVolume struct {
 }
 
 type CreateContainerGroupConfigFileVolume struct {
-	ConfigFileToPath *[]CreateContainerGroupConfigFileToPath `name:"ConfigFileToPath" type:"Repeated"`
+	ConfigFileToPath *[]CreateContainerGroupConfigFileToPath `name:"ConfigFileToPath"`
 	DefaultModel     requests.Integer                        `name:"DefaultModel"`
 }
 
@@ -265,8 +302,20 @@ type CreateContainerGroupEmptyDirVolume struct {
 }
 
 type CreateContainerGroupDiskVolume struct {
-	DiskId string `name:"DiskId"`
-	FsType string `name:"FsType"`
+	DiskId   string           `name:"DiskId"`
+	FsType   string           `name:"FsType"`
+	DiskSize requests.Integer `name:"DiskSize"`
+}
+
+type CreateContainerGroupFlexVolume struct {
+	Driver  string `name:"Driver"`
+	FsType  string `name:"FsType"`
+	Options string `name:"Options"`
+}
+
+type CreateContainerGroupHostPathVolume struct {
+	Type string `name:"Type"`
+	Path string `name:"Path"`
 }
 
 type CreateContainerGroupOption struct {

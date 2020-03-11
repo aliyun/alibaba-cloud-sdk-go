@@ -82,6 +82,7 @@ type ExportContainerGroupTemplateRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	RegionId             string           `position:"Query" name:"RegionId"`
 	ContainerGroupId     string           `position:"Query" name:"ContainerGroupId"`
+	VkClientVersion      string           `position:"Query" name:"VkClientVersion"`
 }
 
 // ExportContainerGroupTemplateResponse is the response struct for api ExportContainerGroupTemplate
