@@ -1,3 +1,7 @@
+2020-03-11 Version: v1.61.46
+- Generated 2018-10-12 for `alimt`.
+- Support certificate translate.
+
 2020-03-10 Version: v1.61.45
 - Generated 2020-02-06 for `acms-open`.
 - ACM POP SDK.
