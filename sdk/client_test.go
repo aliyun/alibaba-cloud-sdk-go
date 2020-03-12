@@ -846,3 +846,18 @@ func TestClient_GetSigner(t *testing.T) {
 	assert.Equal(t, client.signer, signer)
 	assert.True(t, client.signer == signer)
 }
+
+func TestClient_SetSigner(t *testing.T) {
+	c1, err := NewClientWithBearerToken("cn-hangzhou", "Bearer.Token")
+	assert.Nil(t, err)
+	oldSinger := c1.GetSigner()
+
+	c2, err := NewClientWithBearerToken("cn-hangzhou", "Bearer.Token")
+	assert.Nil(t, err)
+	newSinger := c2.GetSigner()
+
+	c1.SetSigner(newSinger)
+	assert.Equal(t, newSinger, c1.signer)
+	assert.True(t, c1.signer == newSinger)
+	assert.True(t, c1.signer != oldSinger)
+}

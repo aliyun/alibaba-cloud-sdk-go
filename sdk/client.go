@@ -707,6 +707,10 @@ func (client *Client) GetSigner() auth.Signer {
 	return client.signer
 }
 
+func (client *Client) SetSigner(signer auth.Signer) {
+	client.signer = signer
+}
+
 func NewClient() (client *Client, err error) {
 	client = &Client{}
 	err = client.Init()
