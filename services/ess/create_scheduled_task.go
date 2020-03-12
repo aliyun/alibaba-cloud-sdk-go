@@ -77,14 +77,18 @@ func (client *Client) CreateScheduledTaskWithCallback(request *CreateScheduledTa
 type CreateScheduledTaskRequest struct {
 	*requests.RpcRequest
 	ScheduledAction      string           `position:"Query" name:"ScheduledAction"`
+	MaxValue             requests.Integer `position:"Query" name:"MaxValue"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	Description          string           `position:"Query" name:"Description"`
 	RecurrenceEndTime    string           `position:"Query" name:"RecurrenceEndTime"`
 	LaunchTime           string           `position:"Query" name:"LaunchTime"`
+	DesiredCapacity      requests.Integer `position:"Query" name:"DesiredCapacity"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	RecurrenceValue      string           `position:"Query" name:"RecurrenceValue"`
 	LaunchExpirationTime requests.Integer `position:"Query" name:"LaunchExpirationTime"`
+	MinValue             requests.Integer `position:"Query" name:"MinValue"`
 	ScheduledTaskName    string           `position:"Query" name:"ScheduledTaskName"`
 	TaskEnabled          requests.Boolean `position:"Query" name:"TaskEnabled"`
 	RecurrenceType       string           `position:"Query" name:"RecurrenceType"`

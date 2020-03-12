@@ -29,4 +29,6 @@ type ScheduledTask struct {
 	TaskEnabled          bool   `json:"TaskEnabled" xml:"TaskEnabled"`
 	MaxValue             int    `json:"MaxValue" xml:"MaxValue"`
 	MinValue             int    `json:"MinValue" xml:"MinValue"`
+	DesiredCapacity      int    `json:"DesiredCapacity" xml:"DesiredCapacity"`
+	ScalingGroupId       string `json:"ScalingGroupId" xml:"ScalingGroupId"`
 }

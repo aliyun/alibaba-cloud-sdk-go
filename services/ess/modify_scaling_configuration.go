@@ -83,6 +83,7 @@ type ModifyScalingConfigurationRequest struct {
 	HostName                       string                                      `position:"Query" name:"HostName"`
 	InstanceDescription            string                                      `position:"Query" name:"InstanceDescription"`
 	SystemDiskAutoSnapshotPolicyId string                                      `position:"Query" name:"SystemDisk.AutoSnapshotPolicyId"`
+	Ipv6AddressCount               requests.Integer                            `position:"Query" name:"Ipv6AddressCount"`
 	Cpu                            requests.Integer                            `position:"Query" name:"Cpu"`
 	OwnerId                        requests.Integer                            `position:"Query" name:"OwnerId"`
 	ScalingConfigurationName       string                                      `position:"Query" name:"ScalingConfigurationName"`

@@ -114,6 +114,7 @@ type AttachInstancesRequest struct {
 	InstanceId20         string           `position:"Query" name:"InstanceId.20"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Entrusted            requests.Boolean `position:"Query" name:"Entrusted"`
 	InstanceId18         string           `position:"Query" name:"InstanceId.18"`
 	InstanceId17         string           `position:"Query" name:"InstanceId.17"`
 	InstanceId19         string           `position:"Query" name:"InstanceId.19"`

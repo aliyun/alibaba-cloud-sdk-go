@@ -79,9 +79,11 @@ type ModifyScheduledTaskRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ScheduledAction      string           `position:"Query" name:"ScheduledAction"`
 	MaxValue             requests.Integer `position:"Query" name:"MaxValue"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	Description          string           `position:"Query" name:"Description"`
 	RecurrenceEndTime    string           `position:"Query" name:"RecurrenceEndTime"`
 	LaunchTime           string           `position:"Query" name:"LaunchTime"`
+	DesiredCapacity      requests.Integer `position:"Query" name:"DesiredCapacity"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

@@ -51,6 +51,7 @@ type ScalingConfiguration struct {
 	ResourceGroupId                string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	HpcClusterId                   string           `json:"HpcClusterId" xml:"HpcClusterId"`
 	InstanceDescription            string           `json:"InstanceDescription" xml:"InstanceDescription"`
+	Ipv6AddressCount               int              `json:"Ipv6AddressCount" xml:"Ipv6AddressCount"`
 	InstanceTypes                  InstanceTypes    `json:"InstanceTypes" xml:"InstanceTypes"`
 	SecurityGroupIds               SecurityGroupIds `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
 	DataDisks                      DataDisks        `json:"DataDisks" xml:"DataDisks"`

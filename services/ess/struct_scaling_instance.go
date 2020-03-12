@@ -28,4 +28,5 @@ type ScalingInstance struct {
 	LaunchTemplateId       string `json:"LaunchTemplateId" xml:"LaunchTemplateId"`
 	LaunchTemplateVersion  string `json:"LaunchTemplateVersion" xml:"LaunchTemplateVersion"`
 	WarmupState            string `json:"WarmupState" xml:"WarmupState"`
+	Entrusted              bool   `json:"Entrusted" xml:"Entrusted"`
 }

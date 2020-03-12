@@ -78,6 +78,7 @@ type CreateScalingGroupRequest struct {
 	*requests.RpcRequest
 	VSwitchIds                          *[]string                          `position:"Query" name:"VSwitchIds"  type:"Repeated"`
 	SpotInstanceRemedy                  requests.Boolean                   `position:"Query" name:"SpotInstanceRemedy"`
+	Tag                                 *[]CreateScalingGroupTag           `position:"Query" name:"Tag"  type:"Repeated"`
 	DefaultCooldown                     requests.Integer                   `position:"Query" name:"DefaultCooldown"`
 	MultiAZPolicy                       string                             `position:"Query" name:"MultiAZPolicy"`
 	DBInstanceIds                       string                             `position:"Query" name:"DBInstanceIds"`
@@ -104,6 +105,12 @@ type CreateScalingGroupRequest struct {
 	LaunchTemplateVersion               string                             `position:"Query" name:"LaunchTemplateVersion"`
 	ScalingPolicy                       string                             `position:"Query" name:"ScalingPolicy"`
 	VServerGroup                        *[]CreateScalingGroupVServerGroup  `position:"Query" name:"VServerGroup"  type:"Repeated"`
+}
+
+// CreateScalingGroupTag is a repeated param struct in CreateScalingGroupRequest
+type CreateScalingGroupTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateScalingGroupLifecycleHook is a repeated param struct in CreateScalingGroupRequest
