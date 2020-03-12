@@ -838,3 +838,11 @@ type myTransport struct{}
 func (m *myTransport) RoundTrip(req *http.Request) (*http.Response, error) {
 	return http.DefaultTransport.RoundTrip(req)
 }
+
+func TestClient_GetSigner(t *testing.T) {
+	client, err := NewClientWithBearerToken("cn-hangzhou", "Bearer.Token")
+	assert.Nil(t, err)
+	signer := client.GetSigner()
+	assert.Equal(t, client.signer, signer)
+	assert.True(t, client.signer == signer)
+}
