@@ -1,3 +1,7 @@
+2020-03-12 Version: v1.61.52
+- Generated 2019-06-25 for `ivpd`.
+- Add new Api SegmentBody.
+
 2020-03-11 Version: v1.61.51
 - Generated 2018-08-08 for `Eci`.
 
