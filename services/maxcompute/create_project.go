@@ -96,7 +96,7 @@ func CreateCreateProjectRequest() (request *CreateProjectRequest) {
 	request = &CreateProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("MaxCompute", "2019-06-12", "CreateProject", "CreateProject", "openAPI")
+	request.InitWithApiInfo("MaxCompute", "2019-06-12", "CreateProject", "", "")
 	return
 }
 

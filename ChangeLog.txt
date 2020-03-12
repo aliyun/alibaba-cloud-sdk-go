@@ -1,3 +1,8 @@
+2020-03-12 Version: v1.61.57
+- Generated 2019-06-12 for `MaxCompute`.
+- Apply delete project api.
+- Apply get project api.
+
 2020-03-12 Version: v1.61.56
 - Generated 2014-08-28 for `Ess`.
 - Add ListTagKeys, ListTagValues etc.
