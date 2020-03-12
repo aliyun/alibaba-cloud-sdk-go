@@ -703,6 +703,10 @@ func (client *Client) GetConfig() *Config {
 	return client.config
 }
 
+func (client *Client) GetSigner() auth.Signer {
+	return client.signer
+}
+
 func NewClient() (client *Client, err error) {
 	client = &Client{}
 	err = client.Init()
