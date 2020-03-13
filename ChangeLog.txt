@@ -1,3 +1,7 @@
+2020-03-13 Version: v1.61.58
+- Generated 2020-02-06 for `acms-open`.
+- ACM POP SDK.
+
 2020-03-12 Version: v1.61.57
 - Generated 2019-06-12 for `MaxCompute`.
 - Apply delete project api.
