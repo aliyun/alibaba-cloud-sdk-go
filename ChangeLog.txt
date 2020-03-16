@@ -1,3 +1,7 @@
+2020-03-16 Version: v1.61.62
+- Generated 2019-03-07 for `Cloudauth`.
+- DescribeFaceVerify API Return DeviceToken Field.
+
 2020-03-16 Version: v1.61.61
 - Generated 2019-01-01 for `Cms`.
 - Add exporter related API.

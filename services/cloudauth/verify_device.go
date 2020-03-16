@@ -95,7 +95,7 @@ func CreateVerifyDeviceRequest() (request *VerifyDeviceRequest) {
 	request = &VerifyDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "VerifyDevice", "", "")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "VerifyDevice", "cloudauth", "openAPI")
 	return
 }
 

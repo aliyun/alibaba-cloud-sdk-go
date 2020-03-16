@@ -96,7 +96,7 @@ func CreateDescribeUploadInfoRequest() (request *DescribeUploadInfoRequest) {
 	request = &DescribeUploadInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeUploadInfo", "", "")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeUploadInfo", "cloudauth", "openAPI")
 	return
 }
 

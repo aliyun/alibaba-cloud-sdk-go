@@ -80,6 +80,7 @@ type InitDeviceRequest struct {
 	BizData          string `position:"Query" name:"BizData"`
 	Merchant         string `position:"Query" name:"Merchant"`
 	AppVersion       string `position:"Query" name:"AppVersion"`
+	DeviceToken      string `position:"Query" name:"DeviceToken"`
 	CertifyId        string `position:"Query" name:"CertifyId"`
 	OuterOrderNo     string `position:"Query" name:"OuterOrderNo"`
 	ProduceNode      string `position:"Query" name:"ProduceNode"`
@@ -102,7 +103,7 @@ func CreateInitDeviceRequest() (request *InitDeviceRequest) {
 	request = &InitDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "InitDevice", "", "")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "InitDevice", "cloudauth", "openAPI")
 	return
 }
 

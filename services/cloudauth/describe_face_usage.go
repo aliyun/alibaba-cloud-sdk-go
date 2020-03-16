@@ -94,7 +94,7 @@ func CreateDescribeFaceUsageRequest() (request *DescribeFaceUsageRequest) {
 	request = &DescribeFaceUsageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeFaceUsage", "", "")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeFaceUsage", "cloudauth", "openAPI")
 	return
 }
 

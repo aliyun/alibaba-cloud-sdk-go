@@ -26,6 +26,7 @@ type ResultObject struct {
 	FileNamePrefix    string `json:"FileNamePrefix" xml:"FileNamePrefix"`
 	RetMessageSub     string `json:"RetMessageSub" xml:"RetMessageSub"`
 	ProductRetCode    string `json:"ProductRetCode" xml:"ProductRetCode"`
+	DeviceToken       string `json:"DeviceToken" xml:"DeviceToken"`
 	RetCode           string `json:"RetCode" xml:"RetCode"`
 	Passed            string `json:"Passed" xml:"Passed"`
 	MaterialInfo      string `json:"MaterialInfo" xml:"MaterialInfo"`
