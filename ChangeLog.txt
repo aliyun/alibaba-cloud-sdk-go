@@ -1,3 +1,7 @@
+2020-03-16 Version: v1.61.61
+- Generated 2019-01-01 for `Cms`.
+- Add exporter related API.
+
 2020-03-16 Version: v1.61.60
 - Generated 2019-12-12 for `amqp-open`.
 - Release.
