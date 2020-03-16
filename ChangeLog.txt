@@ -1,3 +1,11 @@
+2020-03-16 Version: v1.61.60
+- Generated 2019-12-12 for `amqp-open`.
+- Release.
+- Add virtual host modification API.
+- Add exchange modification API.
+- Add queue modification API.
+- Add binding modification API.
+
 2020-03-16 Version: v1.61.59
 - Generated 2014-05-26 for `Ecs`.
 - Add ImageFamily paramters and apis, in Instance creation apis and Image query apis, and add DescribeImageFromFamily.
