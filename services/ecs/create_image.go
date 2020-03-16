@@ -90,6 +90,7 @@ type CreateImageRequest struct {
 	OwnerAccount         string                          `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer                `position:"Query" name:"OwnerId"`
 	InstanceId           string                          `position:"Query" name:"InstanceId"`
+	ImageFamily          string                          `position:"Query" name:"ImageFamily"`
 	ImageVersion         string                          `position:"Query" name:"ImageVersion"`
 }
 

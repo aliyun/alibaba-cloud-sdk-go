@@ -76,11 +76,19 @@ func (client *Client) ImportKeyPairWithCallback(request *ImportKeyPairRequest, c
 // ImportKeyPairRequest is the request struct for api ImportKeyPair
 type ImportKeyPairRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	KeyPairName          string           `position:"Query" name:"KeyPairName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PublicKeyBody        string           `position:"Query" name:"PublicKeyBody"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId      requests.Integer    `position:"Query" name:"ResourceOwnerId"`
+	KeyPairName          string              `position:"Query" name:"KeyPairName"`
+	ResourceGroupId      string              `position:"Query" name:"ResourceGroupId"`
+	Tag                  *[]ImportKeyPairTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceOwnerAccount string              `position:"Query" name:"ResourceOwnerAccount"`
+	PublicKeyBody        string              `position:"Query" name:"PublicKeyBody"`
+	OwnerId              requests.Integer    `position:"Query" name:"OwnerId"`
+}
+
+// ImportKeyPairTag is a repeated param struct in ImportKeyPairRequest
+type ImportKeyPairTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ImportKeyPairResponse is the response struct for api ImportKeyPair

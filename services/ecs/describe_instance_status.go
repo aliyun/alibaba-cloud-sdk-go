@@ -83,6 +83,7 @@ type DescribeInstanceStatusRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ClusterId            string           `position:"Query" name:"ClusterId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 }
 

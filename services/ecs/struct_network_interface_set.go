@@ -33,6 +33,7 @@ type NetworkInterfaceSet struct {
 	ServiceID            int64                                       `json:"ServiceID" xml:"ServiceID"`
 	ServiceManaged       bool                                        `json:"ServiceManaged" xml:"ServiceManaged"`
 	QueueNumber          int                                         `json:"QueueNumber" xml:"QueueNumber"`
+	OwnerId              string                                      `json:"OwnerId" xml:"OwnerId"`
 	SecurityGroupIds     SecurityGroupIdsInDescribeNetworkInterfaces `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
 	AssociatedPublicIp   AssociatedPublicIp                          `json:"AssociatedPublicIp" xml:"AssociatedPublicIp"`
 	PrivateIpSets        PrivateIpSets                               `json:"PrivateIpSets" xml:"PrivateIpSets"`

@@ -79,6 +79,7 @@ type CreateDiskRequest struct {
 	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SnapshotId                string           `position:"Query" name:"SnapshotId"`
 	ClientToken               string           `position:"Query" name:"ClientToken"`
+	EncryptAlgorithm          string           `position:"Query" name:"EncryptAlgorithm"`
 	Description               string           `position:"Query" name:"Description"`
 	DiskName                  string           `position:"Query" name:"DiskName"`
 	ResourceGroupId           string           `position:"Query" name:"ResourceGroupId"`

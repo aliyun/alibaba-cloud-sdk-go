@@ -1,3 +1,9 @@
+2020-03-16 Version: v1.61.59
+- Generated 2014-05-26 for `Ecs`.
+- Add ImageFamily paramters and apis, in Instance creation apis and Image query apis, and add DescribeImageFromFamily.
+- Add Instance batch operation apis RebootInstances StartInstances and StopInstances.
+- Add EncryptAlgorithm paramter in instance creati
+
 2020-03-13 Version: v1.61.58
 - Generated 2020-02-06 for `acms-open`.
 - ACM POP SDK.

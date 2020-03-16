@@ -134,6 +134,7 @@ type CreateInstanceRequest struct {
 	DataDisk                      *[]CreateInstanceDataDisk `position:"Query" name:"DataDisk"  type:"Repeated"`
 	StorageSetId                  string                    `position:"Query" name:"StorageSetId"`
 	SystemDiskSize                requests.Integer          `position:"Query" name:"SystemDisk.Size"`
+	ImageFamily                   string                    `position:"Query" name:"ImageFamily"`
 	SystemDiskDescription         string                    `position:"Query" name:"SystemDisk.Description"`
 }
 
@@ -157,6 +158,7 @@ type CreateInstanceDataDisk struct {
 	Size               string `name:"Size"`
 	Encrypted          string `name:"Encrypted"`
 	PerformanceLevel   string `name:"PerformanceLevel"`
+	EncryptAlgorithm   string `name:"EncryptAlgorithm"`
 	Description        string `name:"Description"`
 	Category           string `name:"Category"`
 	KMSKeyId           string `name:"KMSKeyId"`

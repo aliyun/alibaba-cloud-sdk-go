@@ -78,6 +78,7 @@ type CopyImageRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ImageId                string           `position:"Query" name:"ImageId"`
+	EncryptAlgorithm       string           `position:"Query" name:"EncryptAlgorithm"`
 	DestinationRegionId    string           `position:"Query" name:"DestinationRegionId"`
 	Tag                    *[]CopyImageTag  `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`

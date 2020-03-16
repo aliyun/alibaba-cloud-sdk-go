@@ -144,6 +144,7 @@ type RunInstancesRequest struct {
 	LaunchTemplateVersion          requests.Integer                `position:"Query" name:"LaunchTemplateVersion"`
 	StorageSetId                   string                          `position:"Query" name:"StorageSetId"`
 	SystemDiskSize                 string                          `position:"Query" name:"SystemDisk.Size"`
+	ImageFamily                    string                          `position:"Query" name:"ImageFamily"`
 	SystemDiskDescription          string                          `position:"Query" name:"SystemDisk.Description"`
 }
 
@@ -176,6 +177,7 @@ type RunInstancesDataDisk struct {
 	DeleteWithInstance   string `name:"DeleteWithInstance"`
 	PerformanceLevel     string `name:"PerformanceLevel"`
 	AutoSnapshotPolicyId string `name:"AutoSnapshotPolicyId"`
+	EncryptAlgorithm     string `name:"EncryptAlgorithm"`
 }
 
 // RunInstancesResponse is the response struct for api RunInstances
