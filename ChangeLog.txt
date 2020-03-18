@@ -1,3 +1,7 @@
+2020-03-18 Version: v1.61.65
+- Generated 2019-11-18 for `address-purification`.
+- Support product addrp.
+
 2020-03-18 Version: v1.61.64
 - Generated 2017-08-24 for `faas`.
 - Support GO-SDK for 20170824 version.
