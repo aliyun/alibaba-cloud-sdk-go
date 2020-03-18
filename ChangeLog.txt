@@ -1,3 +1,7 @@
+2020-03-18 Version: v1.61.63
+- Generated 2018-08-28 for `Tag`.
+
+
 2020-03-16 Version: v1.61.62
 - Generated 2019-03-07 for `Cloudauth`.
 - DescribeFaceVerify API Return DeviceToken Field.
