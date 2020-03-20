@@ -1,3 +1,7 @@
+2020-03-20 Version: v1.61.69
+- Generated 2018-05-22 for `eas`.
+- Add GetNetworkInterface interface.
+
 2020-03-20 Version: v1.61.68
 - Generated 2015-05-01 for `Ram`.
 - RAM role support MaxSessionDuration.
