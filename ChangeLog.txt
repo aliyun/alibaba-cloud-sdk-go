@@ -1,3 +1,7 @@
+2020-03-20 Version: v1.61.68
+- Generated 2015-05-01 for `Ram`.
+- RAM role support MaxSessionDuration.
+
 2020-03-18 Version: v1.61.67
 - Generated 2015-01-09 for `Alidns`.
 - Supported API for DescribeInstanceDomains.
