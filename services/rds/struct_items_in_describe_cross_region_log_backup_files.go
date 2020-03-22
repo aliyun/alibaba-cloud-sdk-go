@@ -17,5 +17,5 @@ package rds
 
 // ItemsInDescribeCrossRegionLogBackupFiles is a nested struct in rds response
 type ItemsInDescribeCrossRegionLogBackupFiles struct {
-	Item []Item `json:"Item" xml:"Item"`
+	Item []ItemInDescribeCrossRegionLogBackupFiles `json:"Item" xml:"Item"`
 }

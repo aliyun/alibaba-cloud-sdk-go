@@ -87,6 +87,7 @@ type CloneDBInstanceRequest struct {
 	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
 	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
 	DedicatedHostGroupId  string           `position:"Query" name:"DedicatedHostGroupId"`
+	BackupType            string           `position:"Query" name:"BackupType"`
 	RestoreTime           string           `position:"Query" name:"RestoreTime"`
 	Period                string           `position:"Query" name:"Period"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -94,7 +95,7 @@ type CloneDBInstanceRequest struct {
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	RestoreTable          string           `position:"Query" name:"RestoreTable"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	UsedTime              string           `position:"Query" name:"UsedTime"`
+	UsedTime              requests.Integer `position:"Query" name:"UsedTime"`
 	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
 	DbNames               string           `position:"Query" name:"DbNames"`
 	VSwitchId             string           `position:"Query" name:"VSwitchId"`

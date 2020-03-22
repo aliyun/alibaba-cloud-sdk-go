@@ -17,5 +17,5 @@ package rds
 
 // ItemsInDescribeBackups is a nested struct in rds response
 type ItemsInDescribeBackups struct {
-	Backup []Backup `json:"Backup" xml:"Backup"`
+	Backup []BackupInDescribeBackups `json:"Backup" xml:"Backup"`
 }

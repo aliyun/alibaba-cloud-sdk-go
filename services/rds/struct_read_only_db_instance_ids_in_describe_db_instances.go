@@ -17,5 +17,5 @@ package rds
 
 // ReadOnlyDBInstanceIdsInDescribeDBInstances is a nested struct in rds response
 type ReadOnlyDBInstanceIdsInDescribeDBInstances struct {
-	ReadOnlyDBInstanceId []ReadOnlyDBInstanceId `json:"ReadOnlyDBInstanceId" xml:"ReadOnlyDBInstanceId"`
+	ReadOnlyDBInstanceId []ReadOnlyDBInstanceIdInDescribeDBInstances `json:"ReadOnlyDBInstanceId" xml:"ReadOnlyDBInstanceId"`
 }

@@ -17,5 +17,5 @@ package rds
 
 // CouponsInDescribeRenewalPrice is a nested struct in rds response
 type CouponsInDescribeRenewalPrice struct {
-	Coupon []Coupon `json:"Coupon" xml:"Coupon"`
+	Coupon []CouponInDescribeRenewalPrice `json:"Coupon" xml:"Coupon"`
 }

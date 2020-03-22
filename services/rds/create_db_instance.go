@@ -76,6 +76,7 @@ func (client *Client) CreateDBInstanceWithCallback(request *CreateDBInstanceRequ
 // CreateDBInstanceRequest is the request struct for api CreateDBInstance
 type CreateDBInstanceRequest struct {
 	*requests.RpcRequest
+	DBParamGroupId                 string           `position:"Query" name:"DBParamGroupId"`
 	ResourceOwnerId                requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceStorage              requests.Integer `position:"Query" name:"DBInstanceStorage"`
 	SystemDBCharset                string           `position:"Query" name:"SystemDBCharset"`
@@ -102,7 +103,9 @@ type CreateDBInstanceRequest struct {
 	TargetDedicatedHostIdForSlave  string           `position:"Query" name:"TargetDedicatedHostIdForSlave"`
 	ZoneIdSlave1                   string           `position:"Query" name:"ZoneIdSlave1"`
 	ZoneIdSlave2                   string           `position:"Query" name:"ZoneIdSlave2"`
+	DBIsIgnoreCase                 string           `position:"Query" name:"DBIsIgnoreCase"`
 	Engine                         string           `position:"Query" name:"Engine"`
+	DBTimeZone                     string           `position:"Query" name:"DBTimeZone"`
 	DBInstanceStorageType          string           `position:"Query" name:"DBInstanceStorageType"`
 	DedicatedHostGroupId           string           `position:"Query" name:"DedicatedHostGroupId"`
 	DBInstanceNetType              string           `position:"Query" name:"DBInstanceNetType"`

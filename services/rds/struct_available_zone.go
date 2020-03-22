@@ -17,9 +17,8 @@ package rds
 
 // AvailableZone is a nested struct in rds response
 type AvailableZone struct {
-	RegionId         string           `json:"RegionId" xml:"RegionId"`
-	ZoneId           string           `json:"ZoneId" xml:"ZoneId"`
-	Status           string           `json:"Status" xml:"Status"`
-	NetworkTypes     string           `json:"NetworkTypes" xml:"NetworkTypes"`
-	SupportedEngines SupportedEngines `json:"SupportedEngines" xml:"SupportedEngines"`
+	RegionId         string            `json:"RegionId" xml:"RegionId"`
+	ZoneId           string            `json:"ZoneId" xml:"ZoneId"`
+	NetworkTypes     string            `json:"NetworkTypes" xml:"NetworkTypes"`
+	SupportedEngines []SupportedEngine `json:"SupportedEngines" xml:"SupportedEngines"`
 }

@@ -17,5 +17,5 @@ package rds
 
 // ItemsInDescribeInstanceAutoRenewalAttribute is a nested struct in rds response
 type ItemsInDescribeInstanceAutoRenewalAttribute struct {
-	Item []Item `json:"Item" xml:"Item"`
+	Item []ItemInDescribeInstanceAutoRenewalAttribute `json:"Item" xml:"Item"`
 }

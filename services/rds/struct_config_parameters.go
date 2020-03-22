@@ -17,5 +17,5 @@ package rds
 
 // ConfigParameters is a nested struct in rds response
 type ConfigParameters struct {
-	DBInstanceParameter []DBInstanceParameter `json:"DBInstanceParameter" xml:"DBInstanceParameter"`
+	DBInstanceParameter []DBInstanceParameterInDescribeParameters `json:"DBInstanceParameter" xml:"DBInstanceParameter"`
 }

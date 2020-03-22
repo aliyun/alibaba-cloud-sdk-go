@@ -115,6 +115,9 @@ type DescribeDedicatedHostAttributeResponse struct {
 	CpuUsed                string `json:"CpuUsed" xml:"CpuUsed"`
 	MemoryUsed             string `json:"MemoryUsed" xml:"MemoryUsed"`
 	StorageUsed            string `json:"StorageUsed" xml:"StorageUsed"`
+	HostType               string `json:"HostType" xml:"HostType"`
+	AccountName            string `json:"AccountName" xml:"AccountName"`
+	OpenPermission         string `json:"OpenPermission" xml:"OpenPermission"`
 }
 
 // CreateDescribeDedicatedHostAttributeRequest creates a request to invoke DescribeDedicatedHostAttribute API

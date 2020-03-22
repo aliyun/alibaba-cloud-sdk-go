@@ -17,5 +17,5 @@ package rds
 
 // DatabasesInDescribeDatabases is a nested struct in rds response
 type DatabasesInDescribeDatabases struct {
-	Database []Database `json:"Database" xml:"Database"`
+	Database []DatabaseInDescribeDatabases `json:"Database" xml:"Database"`
 }

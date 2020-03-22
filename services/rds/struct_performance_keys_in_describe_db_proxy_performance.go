@@ -17,5 +17,5 @@ package rds
 
 // PerformanceKeysInDescribeDBProxyPerformance is a nested struct in rds response
 type PerformanceKeysInDescribeDBProxyPerformance struct {
-	PerformanceKey []PerformanceKey `json:"PerformanceKey" xml:"PerformanceKey"`
+	PerformanceKey []PerformanceKeyInDescribeDBProxyPerformance `json:"PerformanceKey" xml:"PerformanceKey"`
 }

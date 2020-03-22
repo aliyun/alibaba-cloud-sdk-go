@@ -85,12 +85,15 @@ type DescribeDBProxyRequest struct {
 // DescribeDBProxyResponse is the response struct for api DescribeDBProxy
 type DescribeDBProxyResponse struct {
 	*responses.BaseResponse
-	RequestId                 string                    `json:"RequestId" xml:"RequestId"`
-	DBProxyServiceStatus      string                    `json:"DBProxyServiceStatus" xml:"DBProxyServiceStatus"`
-	DBProxyInstanceType       string                    `json:"DBProxyInstanceType" xml:"DBProxyInstanceType"`
-	DBProxyInstanceNum        int                       `json:"DBProxyInstanceNum" xml:"DBProxyInstanceNum"`
-	DBProxyInstanceStatus     string                    `json:"DBProxyInstanceStatus" xml:"DBProxyInstanceStatus"`
-	DBProxyConnectStringItems DBProxyConnectStringItems `json:"DBProxyConnectStringItems" xml:"DBProxyConnectStringItems"`
+	RequestId                          string                    `json:"RequestId" xml:"RequestId"`
+	DBProxyServiceStatus               string                    `json:"DBProxyServiceStatus" xml:"DBProxyServiceStatus"`
+	DBProxyInstanceType                string                    `json:"DBProxyInstanceType" xml:"DBProxyInstanceType"`
+	DBProxyInstanceNum                 int                       `json:"DBProxyInstanceNum" xml:"DBProxyInstanceNum"`
+	DBProxyInstanceStatus              string                    `json:"DBProxyInstanceStatus" xml:"DBProxyInstanceStatus"`
+	DBProxyInstanceCurrentMinorVersion string                    `json:"DBProxyInstanceCurrentMinorVersion" xml:"DBProxyInstanceCurrentMinorVersion"`
+	DBProxyInstanceLatestMinorVersion  string                    `json:"DBProxyInstanceLatestMinorVersion" xml:"DBProxyInstanceLatestMinorVersion"`
+	DBProxyInstanceName                string                    `json:"DBProxyInstanceName" xml:"DBProxyInstanceName"`
+	DBProxyConnectStringItems          DBProxyConnectStringItems `json:"DBProxyConnectStringItems" xml:"DBProxyConnectStringItems"`
 }
 
 // CreateDescribeDBProxyRequest creates a request to invoke DescribeDBProxy API

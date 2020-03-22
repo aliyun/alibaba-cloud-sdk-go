@@ -31,4 +31,9 @@ type DedicatedHostsItem struct {
 	CreatedTime         string `json:"CreatedTime" xml:"CreatedTime"`
 	DedicatedHostId     string `json:"DedicatedHostId" xml:"DedicatedHostId"`
 	AllocationStatus    string `json:"AllocationStatus" xml:"AllocationStatus"`
+	EndTime             string `json:"EndTime" xml:"EndTime"`
+	HostType            string `json:"HostType" xml:"HostType"`
+	BastionInstanceId   string `json:"BastionInstanceId" xml:"BastionInstanceId"`
+	OpenPermission      string `json:"OpenPermission" xml:"OpenPermission"`
+	AccountName         string `json:"AccountName" xml:"AccountName"`
 }

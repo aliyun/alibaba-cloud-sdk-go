@@ -80,7 +80,7 @@ type RenewInstanceRequest struct {
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
-	Period               string           `position:"Query" name:"Period"`
+	Period               requests.Integer `position:"Query" name:"Period"`
 	AutoPay              string           `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

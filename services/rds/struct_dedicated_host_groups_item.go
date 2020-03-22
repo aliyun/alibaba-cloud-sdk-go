@@ -17,17 +17,21 @@ package rds
 
 // DedicatedHostGroupsItem is a nested struct in rds response
 type DedicatedHostGroupsItem struct {
-	DedicatedHostGroupId   string `json:"DedicatedHostGroupId" xml:"DedicatedHostGroupId"`
-	DedicatedHostGroupDesc string `json:"DedicatedHostGroupDesc" xml:"DedicatedHostGroupDesc"`
-	CpuAllocationRatio     int    `json:"CpuAllocationRatio" xml:"CpuAllocationRatio"`
-	MemAllocationRatio     int    `json:"MemAllocationRatio" xml:"MemAllocationRatio"`
-	DiskAllocationRatio    int    `json:"DiskAllocationRatio" xml:"DiskAllocationRatio"`
-	AllocationPolicy       string `json:"AllocationPolicy" xml:"AllocationPolicy"`
-	HostReplacePolicy      string `json:"HostReplacePolicy" xml:"HostReplacePolicy"`
-	CreateTime             string `json:"CreateTime" xml:"CreateTime"`
-	VPCId                  string `json:"VPCId" xml:"VPCId"`
-	HostNumber             int    `json:"HostNumber" xml:"HostNumber"`
-	InstanceNumber         int    `json:"InstanceNumber" xml:"InstanceNumber"`
-	Engine                 string `json:"Engine" xml:"Engine"`
-	Text                   string `json:"Text" xml:"Text"`
+	DedicatedHostGroupId              string                 `json:"DedicatedHostGroupId" xml:"DedicatedHostGroupId"`
+	DedicatedHostGroupDesc            string                 `json:"DedicatedHostGroupDesc" xml:"DedicatedHostGroupDesc"`
+	CpuAllocationRatio                int                    `json:"CpuAllocationRatio" xml:"CpuAllocationRatio"`
+	MemAllocationRatio                int                    `json:"MemAllocationRatio" xml:"MemAllocationRatio"`
+	DiskAllocationRatio               int                    `json:"DiskAllocationRatio" xml:"DiskAllocationRatio"`
+	AllocationPolicy                  string                 `json:"AllocationPolicy" xml:"AllocationPolicy"`
+	HostReplacePolicy                 string                 `json:"HostReplacePolicy" xml:"HostReplacePolicy"`
+	CreateTime                        string                 `json:"CreateTime" xml:"CreateTime"`
+	VPCId                             string                 `json:"VPCId" xml:"VPCId"`
+	HostNumber                        int                    `json:"HostNumber" xml:"HostNumber"`
+	InstanceNumber                    int                    `json:"InstanceNumber" xml:"InstanceNumber"`
+	Engine                            string                 `json:"Engine" xml:"Engine"`
+	Text                              string                 `json:"Text" xml:"Text"`
+	DedicatedHostCountGroupByHostType map[string]interface{} `json:"DedicatedHostCountGroupByHostType" xml:"DedicatedHostCountGroupByHostType"`
+	BastionInstanceId                 string                 `json:"BastionInstanceId" xml:"BastionInstanceId"`
+	OpenPermission                    string                 `json:"OpenPermission" xml:"OpenPermission"`
+	ZoneIDList                        ZoneIDList             `json:"ZoneIDList" xml:"ZoneIDList"`
 }

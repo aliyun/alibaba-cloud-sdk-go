@@ -17,5 +17,5 @@ package rds
 
 // RunningParameters is a nested struct in rds response
 type RunningParameters struct {
-	DBInstanceParameter []DBInstanceParameter `json:"DBInstanceParameter" xml:"DBInstanceParameter"`
+	DBInstanceParameter []DBInstanceParameterInDescribeParameters `json:"DBInstanceParameter" xml:"DBInstanceParameter"`
 }

@@ -17,5 +17,5 @@ package rds
 
 // ItemsInDescribeMigrateTasks is a nested struct in rds response
 type ItemsInDescribeMigrateTasks struct {
-	MigrateTask []MigrateTask `json:"MigrateTask" xml:"MigrateTask"`
+	MigrateTask []MigrateTaskInDescribeMigrateTasks `json:"MigrateTask" xml:"MigrateTask"`
 }

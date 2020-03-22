@@ -77,10 +77,11 @@ func (client *Client) DescribeDedicatedHostsWithCallback(request *DescribeDedica
 type DescribeDedicatedHostsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	HostType             string           `position:"Query" name:"HostType"`
+	DedicatedHostGroupId string           `position:"Query" name:"DedicatedHostGroupId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OrderId              requests.Integer `position:"Query" name:"OrderId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DedicatedHostGroupId string           `position:"Query" name:"DedicatedHostGroupId"`
 }
 
 // DescribeDedicatedHostsResponse is the response struct for api DescribeDedicatedHosts

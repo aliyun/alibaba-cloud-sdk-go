@@ -87,10 +87,8 @@ type DescribeSQLCollectorRetentionRequest struct {
 // DescribeSQLCollectorRetentionResponse is the response struct for api DescribeSQLCollectorRetention
 type DescribeSQLCollectorRetentionResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	DBInstanceID   int    `json:"DBInstanceID" xml:"DBInstanceID"`
-	DBInstanceName string `json:"DBInstanceName" xml:"DBInstanceName"`
-	ConfigValue    string `json:"ConfigValue" xml:"ConfigValue"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	ConfigValue string `json:"ConfigValue" xml:"ConfigValue"`
 }
 
 // CreateDescribeSQLCollectorRetentionRequest creates a request to invoke DescribeSQLCollectorRetention API

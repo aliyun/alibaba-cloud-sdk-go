@@ -17,5 +17,5 @@ package rds
 
 // ItemsInDescribeBinlogFiles is a nested struct in rds response
 type ItemsInDescribeBinlogFiles struct {
-	BinLogFile []BinLogFile `json:"BinLogFile" xml:"BinLogFile"`
+	BinLogFile []BinLogFileInDescribeBinlogFiles `json:"BinLogFile" xml:"BinLogFile"`
 }

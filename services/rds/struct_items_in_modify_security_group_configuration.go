@@ -17,5 +17,5 @@ package rds
 
 // ItemsInModifySecurityGroupConfiguration is a nested struct in rds response
 type ItemsInModifySecurityGroupConfiguration struct {
-	EcsSecurityGroupRelation []EcsSecurityGroupRelation `json:"EcsSecurityGroupRelation" xml:"EcsSecurityGroupRelation"`
+	EcsSecurityGroupRelation []EcsSecurityGroupRelationInModifySecurityGroupConfiguration `json:"EcsSecurityGroupRelation" xml:"EcsSecurityGroupRelation"`
 }

@@ -17,9 +17,11 @@ package rds
 
 // DBProxyConnectStringItemsItem is a nested struct in rds response
 type DBProxyConnectStringItemsItem struct {
-	DBProxyEndpointId           string `json:"DBProxyEndpointId" xml:"DBProxyEndpointId"`
-	DBProxyConnectString        string `json:"DBProxyConnectString" xml:"DBProxyConnectString"`
-	DBProxyConnectStringPort    string `json:"DBProxyConnectStringPort" xml:"DBProxyConnectStringPort"`
-	DBProxyConnectStringNetType string `json:"DBProxyConnectStringNetType" xml:"DBProxyConnectStringNetType"`
-	DBProxyVpcInstanceId        string `json:"DBProxyVpcInstanceId" xml:"DBProxyVpcInstanceId"`
+	DBProxyEndpointId               string `json:"DBProxyEndpointId" xml:"DBProxyEndpointId"`
+	DBProxyConnectString            string `json:"DBProxyConnectString" xml:"DBProxyConnectString"`
+	DBProxyConnectStringPort        string `json:"DBProxyConnectStringPort" xml:"DBProxyConnectStringPort"`
+	DBProxyConnectStringNetType     string `json:"DBProxyConnectStringNetType" xml:"DBProxyConnectStringNetType"`
+	DBProxyVpcInstanceId            string `json:"DBProxyVpcInstanceId" xml:"DBProxyVpcInstanceId"`
+	DBProxyEndpointName             string `json:"DBProxyEndpointName" xml:"DBProxyEndpointName"`
+	DBProxyConnectStringNetWorkType string `json:"DBProxyConnectStringNetWorkType" xml:"DBProxyConnectStringNetWorkType"`
 }

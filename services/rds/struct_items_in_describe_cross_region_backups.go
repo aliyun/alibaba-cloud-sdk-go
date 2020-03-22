@@ -17,5 +17,5 @@ package rds
 
 // ItemsInDescribeCrossRegionBackups is a nested struct in rds response
 type ItemsInDescribeCrossRegionBackups struct {
-	Item []Item `json:"Item" xml:"Item"`
+	Item []ItemInDescribeCrossRegionBackups `json:"Item" xml:"Item"`
 }

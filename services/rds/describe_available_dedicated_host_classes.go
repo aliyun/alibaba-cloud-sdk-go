@@ -79,6 +79,7 @@ type DescribeAvailableDedicatedHostClassesRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	StorageType          string           `position:"Query" name:"StorageType"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 }
 

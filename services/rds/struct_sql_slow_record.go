@@ -25,4 +25,5 @@ type SQLSlowRecord struct {
 	ParseRowCounts     int64  `json:"ParseRowCounts" xml:"ParseRowCounts"`
 	ReturnRowCounts    int64  `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
 	ExecutionStartTime string `json:"ExecutionStartTime" xml:"ExecutionStartTime"`
+	QueryTimeMS        int64  `json:"QueryTimeMS" xml:"QueryTimeMS"`
 }

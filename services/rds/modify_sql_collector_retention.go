@@ -88,10 +88,7 @@ type ModifySQLCollectorRetentionRequest struct {
 // ModifySQLCollectorRetentionResponse is the response struct for api ModifySQLCollectorRetention
 type ModifySQLCollectorRetentionResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	DBInstanceID   int    `json:"DBInstanceID" xml:"DBInstanceID"`
-	DBInstanceName string `json:"DBInstanceName" xml:"DBInstanceName"`
-	TaskId         int    `json:"TaskId" xml:"TaskId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifySQLCollectorRetentionRequest creates a request to invoke ModifySQLCollectorRetention API
