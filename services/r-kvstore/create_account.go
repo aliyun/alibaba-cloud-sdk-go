@@ -102,7 +102,7 @@ func CreateCreateAccountRequest() (request *CreateAccountRequest) {
 	request = &CreateAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateAccount", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateAccount", "redisa", "openAPI")
 	return
 }
 

@@ -99,7 +99,7 @@ func CreateModifyDBInstanceConnectionStringRequest() (request *ModifyDBInstanceC
 	request = &ModifyDBInstanceConnectionStringRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyDBInstanceConnectionString", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyDBInstanceConnectionString", "redisa", "openAPI")
 	return
 }
 

@@ -98,7 +98,7 @@ func CreateRestartInstanceRequest() (request *RestartInstanceRequest) {
 	request = &RestartInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RestartInstance", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RestartInstance", "redisa", "openAPI")
 	return
 }
 

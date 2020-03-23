@@ -17,5 +17,5 @@ package r_kvstore
 
 // ConfigParameters is a nested struct in r_kvstore response
 type ConfigParameters struct {
-	Parameter []Parameter `json:"Parameter" xml:"Parameter"`
+	Parameter []ParameterInDescribeParameters `json:"Parameter" xml:"Parameter"`
 }

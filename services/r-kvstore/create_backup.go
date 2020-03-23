@@ -96,7 +96,7 @@ func CreateCreateBackupRequest() (request *CreateBackupRequest) {
 	request = &CreateBackupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateBackup", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateBackup", "redisa", "openAPI")
 	return
 }
 

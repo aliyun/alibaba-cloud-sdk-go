@@ -104,7 +104,7 @@ func CreateDescribeUserClusterHostRequest() (request *DescribeUserClusterHostReq
 	request = &DescribeUserClusterHostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeUserClusterHost", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeUserClusterHost", "redisa", "openAPI")
 	return
 }
 

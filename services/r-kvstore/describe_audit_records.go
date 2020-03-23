@@ -111,7 +111,7 @@ func CreateDescribeAuditRecordsRequest() (request *DescribeAuditRecordsRequest) 
 	request = &DescribeAuditRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeAuditRecords", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeAuditRecords", "redisa", "openAPI")
 	return
 }
 

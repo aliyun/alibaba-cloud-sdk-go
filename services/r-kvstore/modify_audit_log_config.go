@@ -97,7 +97,7 @@ func CreateModifyAuditLogConfigRequest() (request *ModifyAuditLogConfigRequest) 
 	request = &ModifyAuditLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyAuditLogConfig", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyAuditLogConfig", "redisa", "openAPI")
 	return
 }
 

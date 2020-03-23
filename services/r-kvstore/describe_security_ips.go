@@ -96,7 +96,7 @@ func CreateDescribeSecurityIpsRequest() (request *DescribeSecurityIpsRequest) {
 	request = &DescribeSecurityIpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeSecurityIps", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeSecurityIps", "redisa", "openAPI")
 	return
 }
 

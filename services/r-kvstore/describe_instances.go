@@ -122,7 +122,7 @@ func CreateDescribeInstancesRequest() (request *DescribeInstancesRequest) {
 	request = &DescribeInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstances", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstances", "redisa", "openAPI")
 	return
 }
 

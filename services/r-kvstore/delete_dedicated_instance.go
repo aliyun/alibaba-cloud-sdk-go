@@ -97,7 +97,7 @@ func CreateDeleteDedicatedInstanceRequest() (request *DeleteDedicatedInstanceReq
 	request = &DeleteDedicatedInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteDedicatedInstance", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteDedicatedInstance", "redisa", "openAPI")
 	return
 }
 

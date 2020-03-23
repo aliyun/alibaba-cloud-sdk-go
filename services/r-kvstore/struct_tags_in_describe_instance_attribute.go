@@ -17,5 +17,5 @@ package r_kvstore
 
 // TagsInDescribeInstanceAttribute is a nested struct in r_kvstore response
 type TagsInDescribeInstanceAttribute struct {
-	Tag []Tag `json:"Tag" xml:"Tag"`
+	Tag []TagInDescribeInstanceAttribute `json:"Tag" xml:"Tag"`
 }

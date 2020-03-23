@@ -100,7 +100,7 @@ func CreateDescribeAvailableResourceRequest() (request *DescribeAvailableResourc
 	request = &DescribeAvailableResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeAvailableResource", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeAvailableResource", "redisa", "openAPI")
 	return
 }
 

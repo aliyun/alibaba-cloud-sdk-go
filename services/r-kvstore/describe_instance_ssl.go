@@ -99,7 +99,7 @@ func CreateDescribeInstanceSSLRequest() (request *DescribeInstanceSSLRequest) {
 	request = &DescribeInstanceSSLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstanceSSL", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstanceSSL", "redisa", "openAPI")
 	return
 }
 

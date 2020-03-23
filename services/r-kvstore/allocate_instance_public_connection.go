@@ -97,7 +97,7 @@ func CreateAllocateInstancePublicConnectionRequest() (request *AllocateInstanceP
 	request = &AllocateInstancePublicConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "AllocateInstancePublicConnection", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "AllocateInstancePublicConnection", "redisa", "openAPI")
 	return
 }
 

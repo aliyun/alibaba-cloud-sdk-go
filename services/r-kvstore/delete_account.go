@@ -96,7 +96,7 @@ func CreateDeleteAccountRequest() (request *DeleteAccountRequest) {
 	request = &DeleteAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteAccount", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteAccount", "redisa", "openAPI")
 	return
 }
 

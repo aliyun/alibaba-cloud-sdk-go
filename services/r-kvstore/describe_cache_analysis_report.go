@@ -106,7 +106,7 @@ func CreateDescribeCacheAnalysisReportRequest() (request *DescribeCacheAnalysisR
 	request = &DescribeCacheAnalysisReportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeCacheAnalysisReport", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeCacheAnalysisReport", "redisa", "openAPI")
 	return
 }
 

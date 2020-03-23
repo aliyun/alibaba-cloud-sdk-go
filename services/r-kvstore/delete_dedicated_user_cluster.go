@@ -97,7 +97,7 @@ func CreateDeleteDedicatedUserClusterRequest() (request *DeleteDedicatedUserClus
 	request = &DeleteDedicatedUserClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteDedicatedUserCluster", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteDedicatedUserCluster", "redisa", "openAPI")
 	return
 }
 

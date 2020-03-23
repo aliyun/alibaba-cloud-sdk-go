@@ -85,6 +85,7 @@ type DescribeInstanceAutoRenewalAttributeRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Category             string           `position:"Query" name:"Category"`
 }
 
 // DescribeInstanceAutoRenewalAttributeResponse is the response struct for api DescribeInstanceAutoRenewalAttribute
@@ -102,7 +103,7 @@ func CreateDescribeInstanceAutoRenewalAttributeRequest() (request *DescribeInsta
 	request = &DescribeInstanceAutoRenewalAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstanceAutoRenewalAttribute", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstanceAutoRenewalAttribute", "redisa", "openAPI")
 	return
 }
 

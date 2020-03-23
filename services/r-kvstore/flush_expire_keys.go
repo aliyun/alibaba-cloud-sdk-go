@@ -98,7 +98,7 @@ func CreateFlushExpireKeysRequest() (request *FlushExpireKeysRequest) {
 	request = &FlushExpireKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "FlushExpireKeys", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "FlushExpireKeys", "redisa", "openAPI")
 	return
 }
 

@@ -97,7 +97,7 @@ func CreateModifyInstanceMaintainTimeRequest() (request *ModifyInstanceMaintainT
 	request = &ModifyInstanceMaintainTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceMaintainTime", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceMaintainTime", "redisa", "openAPI")
 	return
 }
 

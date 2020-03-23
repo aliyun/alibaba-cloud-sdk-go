@@ -101,7 +101,7 @@ func CreateSwitchNetworkRequest() (request *SwitchNetworkRequest) {
 	request = &SwitchNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "SwitchNetwork", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "SwitchNetwork", "redisa", "openAPI")
 	return
 }
 

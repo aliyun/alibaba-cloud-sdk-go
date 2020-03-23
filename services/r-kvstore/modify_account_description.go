@@ -97,7 +97,7 @@ func CreateModifyAccountDescriptionRequest() (request *ModifyAccountDescriptionR
 	request = &ModifyAccountDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyAccountDescription", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyAccountDescription", "redisa", "openAPI")
 	return
 }
 

@@ -97,7 +97,7 @@ func CreateModifyInstanceMajorVersionRequest() (request *ModifyInstanceMajorVers
 	request = &ModifyInstanceMajorVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceMajorVersion", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceMajorVersion", "redisa", "openAPI")
 	return
 }
 

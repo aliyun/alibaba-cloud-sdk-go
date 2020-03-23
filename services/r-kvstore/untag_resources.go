@@ -97,7 +97,7 @@ func CreateUntagResourcesRequest() (request *UntagResourcesRequest) {
 	request = &UntagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "UntagResources", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "UntagResources", "redisa", "openAPI")
 	return
 }
 

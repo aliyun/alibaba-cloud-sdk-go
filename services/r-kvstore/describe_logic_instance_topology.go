@@ -98,7 +98,7 @@ func CreateDescribeLogicInstanceTopologyRequest() (request *DescribeLogicInstanc
 	request = &DescribeLogicInstanceTopologyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeLogicInstanceTopology", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeLogicInstanceTopology", "redisa", "openAPI")
 	return
 }
 

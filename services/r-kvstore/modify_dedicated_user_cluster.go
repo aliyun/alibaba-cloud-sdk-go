@@ -103,7 +103,7 @@ func CreateModifyDedicatedUserClusterRequest() (request *ModifyDedicatedUserClus
 	request = &ModifyDedicatedUserClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyDedicatedUserCluster", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyDedicatedUserCluster", "redisa", "openAPI")
 	return
 }
 

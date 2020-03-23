@@ -96,7 +96,7 @@ func CreateDescribeInstanceAttributeRequest() (request *DescribeInstanceAttribut
 	request = &DescribeInstanceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstanceAttribute", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstanceAttribute", "redisa", "openAPI")
 	return
 }
 

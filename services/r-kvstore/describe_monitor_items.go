@@ -95,7 +95,7 @@ func CreateDescribeMonitorItemsRequest() (request *DescribeMonitorItemsRequest) 
 	request = &DescribeMonitorItemsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeMonitorItems", "", "")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeMonitorItems", "redisa", "openAPI")
 	return
 }
 
