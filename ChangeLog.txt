@@ -1,3 +1,7 @@
+2020-03-24 Version: v1.61.75
+- Generated 2019-09-01 for `ahas-openapi`.
+
+
 2020-03-24 Version: v1.61.74
 - Generated 2018-10-10 for `Yundun-bastionhost`.
 
