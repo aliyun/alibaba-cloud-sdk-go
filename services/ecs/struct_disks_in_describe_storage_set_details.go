@@ -17,5 +17,5 @@ package ecs
 
 // DisksInDescribeStorageSetDetails is a nested struct in ecs response
 type DisksInDescribeStorageSetDetails struct {
-	Disk []Disk `json:"Disk" xml:"Disk"`
+	Disk []DiskInDescribeStorageSetDetails `json:"Disk" xml:"Disk"`
 }

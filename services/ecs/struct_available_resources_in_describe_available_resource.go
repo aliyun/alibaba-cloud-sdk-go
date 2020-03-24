@@ -17,5 +17,5 @@ package ecs
 
 // AvailableResourcesInDescribeAvailableResource is a nested struct in ecs response
 type AvailableResourcesInDescribeAvailableResource struct {
-	AvailableResource []AvailableResource `json:"AvailableResource" xml:"AvailableResource"`
+	AvailableResource []AvailableResourceInDescribeAvailableResource `json:"AvailableResource" xml:"AvailableResource"`
 }

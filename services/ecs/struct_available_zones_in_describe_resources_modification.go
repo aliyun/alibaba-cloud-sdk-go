@@ -17,5 +17,5 @@ package ecs
 
 // AvailableZonesInDescribeResourcesModification is a nested struct in ecs response
 type AvailableZonesInDescribeResourcesModification struct {
-	AvailableZone []AvailableZone `json:"AvailableZone" xml:"AvailableZone"`
+	AvailableZone []AvailableZoneInDescribeResourcesModification `json:"AvailableZone" xml:"AvailableZone"`
 }

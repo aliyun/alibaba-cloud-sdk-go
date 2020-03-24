@@ -17,5 +17,5 @@ package ecs
 
 // TagsInDescribeInstances is a nested struct in ecs response
 type TagsInDescribeInstances struct {
-	Tag []Tag `json:"Tag" xml:"Tag"`
+	Tag []TagInDescribeInstances `json:"Tag" xml:"Tag"`
 }

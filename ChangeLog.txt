@@ -1,3 +1,7 @@
+2020-03-24 Version: v1.61.76
+- Generated 2014-05-26 for `Ecs`.
+- DescribeInstanceTypes Supports EniIpv6AddressQuantity.
+
 2020-03-24 Version: v1.61.75
 - Generated 2019-09-01 for `ahas-openapi`.
 

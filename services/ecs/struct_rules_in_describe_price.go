@@ -17,5 +17,5 @@ package ecs
 
 // RulesInDescribePrice is a nested struct in ecs response
 type RulesInDescribePrice struct {
-	Rule []Rule `json:"Rule" xml:"Rule"`
+	Rule []RuleInDescribePrice `json:"Rule" xml:"Rule"`
 }

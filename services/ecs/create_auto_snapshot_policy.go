@@ -76,13 +76,20 @@ func (client *Client) CreateAutoSnapshotPolicyWithCallback(request *CreateAutoSn
 // CreateAutoSnapshotPolicyRequest is the request struct for api CreateAutoSnapshotPolicy
 type CreateAutoSnapshotPolicyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	TimePoints             string           `position:"Query" name:"timePoints"`
-	RepeatWeekdays         string           `position:"Query" name:"repeatWeekdays"`
-	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	AutoSnapshotPolicyName string           `position:"Query" name:"autoSnapshotPolicyName"`
-	RetentionDays          requests.Integer `position:"Query" name:"retentionDays"`
+	ResourceOwnerId        requests.Integer               `position:"Query" name:"ResourceOwnerId"`
+	TimePoints             string                         `position:"Query" name:"timePoints"`
+	RepeatWeekdays         string                         `position:"Query" name:"repeatWeekdays"`
+	Tag                    *[]CreateAutoSnapshotPolicyTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceOwnerAccount   string                         `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId                requests.Integer               `position:"Query" name:"OwnerId"`
+	AutoSnapshotPolicyName string                         `position:"Query" name:"autoSnapshotPolicyName"`
+	RetentionDays          requests.Integer               `position:"Query" name:"retentionDays"`
+}
+
+// CreateAutoSnapshotPolicyTag is a repeated param struct in CreateAutoSnapshotPolicyRequest
+type CreateAutoSnapshotPolicyTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateAutoSnapshotPolicyResponse is the response struct for api CreateAutoSnapshotPolicy

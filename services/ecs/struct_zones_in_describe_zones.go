@@ -17,5 +17,5 @@ package ecs
 
 // ZonesInDescribeZones is a nested struct in ecs response
 type ZonesInDescribeZones struct {
-	Zone []Zone `json:"Zone" xml:"Zone"`
+	Zone []ZoneInDescribeZones `json:"Zone" xml:"Zone"`
 }

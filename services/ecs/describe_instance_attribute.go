@@ -86,38 +86,38 @@ type DescribeInstanceAttributeRequest struct {
 // DescribeInstanceAttributeResponse is the response struct for api DescribeInstanceAttribute
 type DescribeInstanceAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId               string                                      `json:"RequestId" xml:"RequestId"`
-	InstanceId              string                                      `json:"InstanceId" xml:"InstanceId"`
-	InstanceName            string                                      `json:"InstanceName" xml:"InstanceName"`
-	ImageId                 string                                      `json:"ImageId" xml:"ImageId"`
-	RegionId                string                                      `json:"RegionId" xml:"RegionId"`
-	ZoneId                  string                                      `json:"ZoneId" xml:"ZoneId"`
-	ClusterId               string                                      `json:"ClusterId" xml:"ClusterId"`
-	InstanceType            string                                      `json:"InstanceType" xml:"InstanceType"`
-	Cpu                     int                                         `json:"Cpu" xml:"Cpu"`
-	Memory                  int                                         `json:"Memory" xml:"Memory"`
-	HostName                string                                      `json:"HostName" xml:"HostName"`
-	Status                  string                                      `json:"Status" xml:"Status"`
-	InternetChargeType      string                                      `json:"InternetChargeType" xml:"InternetChargeType"`
-	InternetMaxBandwidthIn  int                                         `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
-	InternetMaxBandwidthOut int                                         `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
-	VlanId                  string                                      `json:"VlanId" xml:"VlanId"`
-	SerialNumber            string                                      `json:"SerialNumber" xml:"SerialNumber"`
-	CreationTime            string                                      `json:"CreationTime" xml:"CreationTime"`
-	Description             string                                      `json:"Description" xml:"Description"`
-	InstanceNetworkType     string                                      `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
-	IoOptimized             string                                      `json:"IoOptimized" xml:"IoOptimized"`
-	InstanceChargeType      string                                      `json:"InstanceChargeType" xml:"InstanceChargeType"`
-	ExpiredTime             string                                      `json:"ExpiredTime" xml:"ExpiredTime"`
-	StoppedMode             string                                      `json:"StoppedMode" xml:"StoppedMode"`
-	CreditSpecification     string                                      `json:"CreditSpecification" xml:"CreditSpecification"`
-	SecurityGroupIds        SecurityGroupIdsInDescribeInstanceAttribute `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
-	PublicIpAddress         PublicIpAddressInDescribeInstanceAttribute  `json:"PublicIpAddress" xml:"PublicIpAddress"`
-	InnerIpAddress          InnerIpAddressInDescribeInstanceAttribute   `json:"InnerIpAddress" xml:"InnerIpAddress"`
-	VpcAttributes           VpcAttributes                               `json:"VpcAttributes" xml:"VpcAttributes"`
-	EipAddress              EipAddressInDescribeInstanceAttribute       `json:"EipAddress" xml:"EipAddress"`
-	DedicatedHostAttribute  DedicatedHostAttribute                      `json:"DedicatedHostAttribute" xml:"DedicatedHostAttribute"`
-	OperationLocks          OperationLocksInDescribeInstanceAttribute   `json:"OperationLocks" xml:"OperationLocks"`
+	RequestId               string                                            `json:"RequestId" xml:"RequestId"`
+	InstanceId              string                                            `json:"InstanceId" xml:"InstanceId"`
+	InstanceName            string                                            `json:"InstanceName" xml:"InstanceName"`
+	ImageId                 string                                            `json:"ImageId" xml:"ImageId"`
+	RegionId                string                                            `json:"RegionId" xml:"RegionId"`
+	ZoneId                  string                                            `json:"ZoneId" xml:"ZoneId"`
+	ClusterId               string                                            `json:"ClusterId" xml:"ClusterId"`
+	InstanceType            string                                            `json:"InstanceType" xml:"InstanceType"`
+	Cpu                     int                                               `json:"Cpu" xml:"Cpu"`
+	Memory                  int                                               `json:"Memory" xml:"Memory"`
+	HostName                string                                            `json:"HostName" xml:"HostName"`
+	Status                  string                                            `json:"Status" xml:"Status"`
+	InternetChargeType      string                                            `json:"InternetChargeType" xml:"InternetChargeType"`
+	InternetMaxBandwidthIn  int                                               `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
+	InternetMaxBandwidthOut int                                               `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
+	VlanId                  string                                            `json:"VlanId" xml:"VlanId"`
+	SerialNumber            string                                            `json:"SerialNumber" xml:"SerialNumber"`
+	CreationTime            string                                            `json:"CreationTime" xml:"CreationTime"`
+	Description             string                                            `json:"Description" xml:"Description"`
+	InstanceNetworkType     string                                            `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
+	IoOptimized             string                                            `json:"IoOptimized" xml:"IoOptimized"`
+	InstanceChargeType      string                                            `json:"InstanceChargeType" xml:"InstanceChargeType"`
+	ExpiredTime             string                                            `json:"ExpiredTime" xml:"ExpiredTime"`
+	StoppedMode             string                                            `json:"StoppedMode" xml:"StoppedMode"`
+	CreditSpecification     string                                            `json:"CreditSpecification" xml:"CreditSpecification"`
+	SecurityGroupIds        SecurityGroupIdsInDescribeInstanceAttribute       `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
+	PublicIpAddress         PublicIpAddressInDescribeInstanceAttribute        `json:"PublicIpAddress" xml:"PublicIpAddress"`
+	InnerIpAddress          InnerIpAddressInDescribeInstanceAttribute         `json:"InnerIpAddress" xml:"InnerIpAddress"`
+	VpcAttributes           VpcAttributesInDescribeInstanceAttribute          `json:"VpcAttributes" xml:"VpcAttributes"`
+	EipAddress              EipAddressInDescribeInstanceAttribute             `json:"EipAddress" xml:"EipAddress"`
+	DedicatedHostAttribute  DedicatedHostAttributeInDescribeInstanceAttribute `json:"DedicatedHostAttribute" xml:"DedicatedHostAttribute"`
+	OperationLocks          OperationLocksInDescribeInstanceAttribute         `json:"OperationLocks" xml:"OperationLocks"`
 }
 
 // CreateDescribeInstanceAttributeRequest creates a request to invoke DescribeInstanceAttribute API

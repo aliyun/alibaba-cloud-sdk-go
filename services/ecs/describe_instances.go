@@ -76,47 +76,51 @@ func (client *Client) DescribeInstancesWithCallback(request *DescribeInstancesRe
 // DescribeInstancesRequest is the request struct for api DescribeInstances
 type DescribeInstancesRequest struct {
 	*requests.RpcRequest
-	InnerIpAddresses     string                  `position:"Query" name:"InnerIpAddresses"`
-	ResourceOwnerId      requests.Integer        `position:"Query" name:"ResourceOwnerId"`
-	PrivateIpAddresses   string                  `position:"Query" name:"PrivateIpAddresses"`
-	HpcClusterId         string                  `position:"Query" name:"HpcClusterId"`
-	Filter2Value         string                  `position:"Query" name:"Filter.2.Value"`
-	KeyPairName          string                  `position:"Query" name:"KeyPairName"`
-	ResourceGroupId      string                  `position:"Query" name:"ResourceGroupId"`
-	LockReason           string                  `position:"Query" name:"LockReason"`
-	Filter1Key           string                  `position:"Query" name:"Filter.1.Key"`
-	DeviceAvailable      requests.Boolean        `position:"Query" name:"DeviceAvailable"`
-	Tag                  *[]DescribeInstancesTag `position:"Query" name:"Tag"  type:"Repeated"`
-	Filter3Value         string                  `position:"Query" name:"Filter.3.Value"`
-	DryRun               requests.Boolean        `position:"Query" name:"DryRun"`
-	Filter1Value         string                  `position:"Query" name:"Filter.1.Value"`
-	NeedSaleCycle        requests.Boolean        `position:"Query" name:"NeedSaleCycle"`
-	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
-	VSwitchId            string                  `position:"Query" name:"VSwitchId"`
-	InstanceName         string                  `position:"Query" name:"InstanceName"`
-	InstanceIds          string                  `position:"Query" name:"InstanceIds"`
-	InternetChargeType   string                  `position:"Query" name:"InternetChargeType"`
-	ZoneId               string                  `position:"Query" name:"ZoneId"`
-	InstanceNetworkType  string                  `position:"Query" name:"InstanceNetworkType"`
-	Status               string                  `position:"Query" name:"Status"`
-	ImageId              string                  `position:"Query" name:"ImageId"`
-	Filter4Value         string                  `position:"Query" name:"Filter.4.Value"`
-	IoOptimized          requests.Boolean        `position:"Query" name:"IoOptimized"`
-	SecurityGroupId      string                  `position:"Query" name:"SecurityGroupId"`
-	Filter4Key           string                  `position:"Query" name:"Filter.4.Key"`
-	PageNumber           requests.Integer        `position:"Query" name:"PageNumber"`
-	RdmaIpAddresses      string                  `position:"Query" name:"RdmaIpAddresses"`
-	PageSize             requests.Integer        `position:"Query" name:"PageSize"`
-	PublicIpAddresses    string                  `position:"Query" name:"PublicIpAddresses"`
-	InstanceType         string                  `position:"Query" name:"InstanceType"`
-	InstanceChargeType   string                  `position:"Query" name:"InstanceChargeType"`
-	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string                  `position:"Query" name:"OwnerAccount"`
-	InstanceTypeFamily   string                  `position:"Query" name:"InstanceTypeFamily"`
-	Filter2Key           string                  `position:"Query" name:"Filter.2.Key"`
-	EipAddresses         string                  `position:"Query" name:"EipAddresses"`
-	VpcId                string                  `position:"Query" name:"VpcId"`
-	Filter3Key           string                  `position:"Query" name:"Filter.3.Key"`
+	InnerIpAddresses        string                  `position:"Query" name:"InnerIpAddresses"`
+	ResourceOwnerId         requests.Integer        `position:"Query" name:"ResourceOwnerId"`
+	PrivateIpAddresses      string                  `position:"Query" name:"PrivateIpAddresses"`
+	HpcClusterId            string                  `position:"Query" name:"HpcClusterId"`
+	HttpPutResponseHopLimit requests.Integer        `position:"Query" name:"HttpPutResponseHopLimit"`
+	Filter2Value            string                  `position:"Query" name:"Filter.2.Value"`
+	KeyPairName             string                  `position:"Query" name:"KeyPairName"`
+	ResourceGroupId         string                  `position:"Query" name:"ResourceGroupId"`
+	LockReason              string                  `position:"Query" name:"LockReason"`
+	Filter1Key              string                  `position:"Query" name:"Filter.1.Key"`
+	DeviceAvailable         requests.Boolean        `position:"Query" name:"DeviceAvailable"`
+	Tag                     *[]DescribeInstancesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Filter3Value            string                  `position:"Query" name:"Filter.3.Value"`
+	DryRun                  requests.Boolean        `position:"Query" name:"DryRun"`
+	Filter1Value            string                  `position:"Query" name:"Filter.1.Value"`
+	NeedSaleCycle           requests.Boolean        `position:"Query" name:"NeedSaleCycle"`
+	OwnerId                 requests.Integer        `position:"Query" name:"OwnerId"`
+	VSwitchId               string                  `position:"Query" name:"VSwitchId"`
+	AdditionalAttributes    *[]string               `position:"Query" name:"AdditionalAttributes"  type:"Repeated"`
+	InstanceName            string                  `position:"Query" name:"InstanceName"`
+	InstanceIds             string                  `position:"Query" name:"InstanceIds"`
+	InternetChargeType      string                  `position:"Query" name:"InternetChargeType"`
+	ZoneId                  string                  `position:"Query" name:"ZoneId"`
+	InstanceNetworkType     string                  `position:"Query" name:"InstanceNetworkType"`
+	Status                  string                  `position:"Query" name:"Status"`
+	ImageId                 string                  `position:"Query" name:"ImageId"`
+	Filter4Value            string                  `position:"Query" name:"Filter.4.Value"`
+	IoOptimized             requests.Boolean        `position:"Query" name:"IoOptimized"`
+	SecurityGroupId         string                  `position:"Query" name:"SecurityGroupId"`
+	Filter4Key              string                  `position:"Query" name:"Filter.4.Key"`
+	PageNumber              requests.Integer        `position:"Query" name:"PageNumber"`
+	RdmaIpAddresses         string                  `position:"Query" name:"RdmaIpAddresses"`
+	HttpEndpoint            string                  `position:"Query" name:"HttpEndpoint"`
+	PageSize                requests.Integer        `position:"Query" name:"PageSize"`
+	PublicIpAddresses       string                  `position:"Query" name:"PublicIpAddresses"`
+	InstanceType            string                  `position:"Query" name:"InstanceType"`
+	InstanceChargeType      string                  `position:"Query" name:"InstanceChargeType"`
+	ResourceOwnerAccount    string                  `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount            string                  `position:"Query" name:"OwnerAccount"`
+	InstanceTypeFamily      string                  `position:"Query" name:"InstanceTypeFamily"`
+	Filter2Key              string                  `position:"Query" name:"Filter.2.Key"`
+	EipAddresses            string                  `position:"Query" name:"EipAddresses"`
+	VpcId                   string                  `position:"Query" name:"VpcId"`
+	HttpTokens              string                  `position:"Query" name:"HttpTokens"`
+	Filter3Key              string                  `position:"Query" name:"Filter.3.Key"`
 }
 
 // DescribeInstancesTag is a repeated param struct in DescribeInstancesRequest

@@ -96,6 +96,7 @@ type DescribeNetworkInterfacesRequest struct {
 	PrimaryIpAddress     string                          `position:"Query" name:"PrimaryIpAddress"`
 	MaxResults           requests.Integer                `position:"Query" name:"MaxResults"`
 	NetworkInterfaceId   *[]string                       `position:"Query" name:"NetworkInterfaceId"  type:"Repeated"`
+	Status               string                          `position:"Query" name:"Status"`
 }
 
 // DescribeNetworkInterfacesTag is a repeated param struct in DescribeNetworkInterfacesRequest

@@ -78,6 +78,7 @@ type CreateInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId               requests.Integer          `position:"Query" name:"ResourceOwnerId"`
 	HpcClusterId                  string                    `position:"Query" name:"HpcClusterId"`
+	HttpPutResponseHopLimit       requests.Integer          `position:"Query" name:"HttpPutResponseHopLimit"`
 	SecurityEnhancementStrategy   string                    `position:"Query" name:"SecurityEnhancementStrategy"`
 	KeyPairName                   string                    `position:"Query" name:"KeyPairName"`
 	SpotPriceLimit                requests.Float            `position:"Query" name:"SpotPriceLimit"`
@@ -117,6 +118,7 @@ type CreateInstanceRequest struct {
 	SystemDiskPerformanceLevel    string                    `position:"Query" name:"SystemDisk.PerformanceLevel"`
 	UserData                      string                    `position:"Query" name:"UserData"`
 	PasswordInherit               requests.Boolean          `position:"Query" name:"PasswordInherit"`
+	HttpEndpoint                  string                    `position:"Query" name:"HttpEndpoint"`
 	InstanceType                  string                    `position:"Query" name:"InstanceType"`
 	Arn                           *[]CreateInstanceArn      `position:"Query" name:"Arn"  type:"Repeated"`
 	InstanceChargeType            string                    `position:"Query" name:"InstanceChargeType"`
@@ -135,6 +137,7 @@ type CreateInstanceRequest struct {
 	StorageSetId                  string                    `position:"Query" name:"StorageSetId"`
 	SystemDiskSize                requests.Integer          `position:"Query" name:"SystemDisk.Size"`
 	ImageFamily                   string                    `position:"Query" name:"ImageFamily"`
+	HttpTokens                    string                    `position:"Query" name:"HttpTokens"`
 	SystemDiskDescription         string                    `position:"Query" name:"SystemDisk.Description"`
 }
 

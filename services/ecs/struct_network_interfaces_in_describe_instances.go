@@ -17,5 +17,5 @@ package ecs
 
 // NetworkInterfacesInDescribeInstances is a nested struct in ecs response
 type NetworkInterfacesInDescribeInstances struct {
-	NetworkInterface []NetworkInterface `json:"NetworkInterface" xml:"NetworkInterface"`
+	NetworkInterface []NetworkInterfaceInDescribeInstances `json:"NetworkInterface" xml:"NetworkInterface"`
 }

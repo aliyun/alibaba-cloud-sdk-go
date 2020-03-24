@@ -89,8 +89,8 @@ type DescribeRenewalPriceRequest struct {
 // DescribeRenewalPriceResponse is the response struct for api DescribeRenewalPrice
 type DescribeRenewalPriceResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
-	PriceInfo PriceInfo `json:"PriceInfo" xml:"PriceInfo"`
+	RequestId string                          `json:"RequestId" xml:"RequestId"`
+	PriceInfo PriceInfoInDescribeRenewalPrice `json:"PriceInfo" xml:"PriceInfo"`
 }
 
 // CreateDescribeRenewalPriceRequest creates a request to invoke DescribeRenewalPrice API

@@ -17,5 +17,5 @@ package ecs
 
 // OperationLocksInDescribeDisks is a nested struct in ecs response
 type OperationLocksInDescribeDisks struct {
-	OperationLock []OperationLock `json:"OperationLock" xml:"OperationLock"`
+	OperationLock []OperationLockInDescribeDisks `json:"OperationLock" xml:"OperationLock"`
 }

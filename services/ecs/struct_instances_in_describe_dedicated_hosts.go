@@ -17,5 +17,5 @@ package ecs
 
 // InstancesInDescribeDedicatedHosts is a nested struct in ecs response
 type InstancesInDescribeDedicatedHosts struct {
-	Instance []Instance `json:"Instance" xml:"Instance"`
+	Instance []InstanceInDescribeDedicatedHosts `json:"Instance" xml:"Instance"`
 }

@@ -17,5 +17,5 @@ package ecs
 
 // NetworkInterfacesInDescribeLaunchTemplateVersions is a nested struct in ecs response
 type NetworkInterfacesInDescribeLaunchTemplateVersions struct {
-	NetworkInterface []NetworkInterface `json:"NetworkInterface" xml:"NetworkInterface"`
+	NetworkInterface []NetworkInterfaceInDescribeLaunchTemplateVersions `json:"NetworkInterface" xml:"NetworkInterface"`
 }

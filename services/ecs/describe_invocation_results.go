@@ -92,8 +92,8 @@ type DescribeInvocationResultsRequest struct {
 // DescribeInvocationResultsResponse is the response struct for api DescribeInvocationResults
 type DescribeInvocationResultsResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	Invocation Invocation `json:"Invocation" xml:"Invocation"`
+	RequestId  string                                `json:"RequestId" xml:"RequestId"`
+	Invocation InvocationInDescribeInvocationResults `json:"Invocation" xml:"Invocation"`
 }
 
 // CreateDescribeInvocationResultsRequest creates a request to invoke DescribeInvocationResults API

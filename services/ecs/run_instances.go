@@ -80,6 +80,7 @@ type RunInstancesRequest struct {
 	ResourceOwnerId                requests.Integer                `position:"Query" name:"ResourceOwnerId"`
 	UniqueSuffix                   requests.Boolean                `position:"Query" name:"UniqueSuffix"`
 	HpcClusterId                   string                          `position:"Query" name:"HpcClusterId"`
+	HttpPutResponseHopLimit        requests.Integer                `position:"Query" name:"HttpPutResponseHopLimit"`
 	SecurityEnhancementStrategy    string                          `position:"Query" name:"SecurityEnhancementStrategy"`
 	KeyPairName                    string                          `position:"Query" name:"KeyPairName"`
 	MinAmount                      requests.Integer                `position:"Query" name:"MinAmount"`
@@ -124,6 +125,7 @@ type RunInstancesRequest struct {
 	SystemDiskPerformanceLevel     string                          `position:"Query" name:"SystemDisk.PerformanceLevel"`
 	UserData                       string                          `position:"Query" name:"UserData"`
 	PasswordInherit                requests.Boolean                `position:"Query" name:"PasswordInherit"`
+	HttpEndpoint                   string                          `position:"Query" name:"HttpEndpoint"`
 	InstanceType                   string                          `position:"Query" name:"InstanceType"`
 	HibernationConfigured          requests.Boolean                `position:"Query" name:"HibernationConfigured"`
 	InstanceChargeType             string                          `position:"Query" name:"InstanceChargeType"`
@@ -145,6 +147,7 @@ type RunInstancesRequest struct {
 	StorageSetId                   string                          `position:"Query" name:"StorageSetId"`
 	SystemDiskSize                 string                          `position:"Query" name:"SystemDisk.Size"`
 	ImageFamily                    string                          `position:"Query" name:"ImageFamily"`
+	HttpTokens                     string                          `position:"Query" name:"HttpTokens"`
 	SystemDiskDescription          string                          `position:"Query" name:"SystemDisk.Description"`
 }
 

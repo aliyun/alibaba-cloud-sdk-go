@@ -17,5 +17,5 @@ package ecs
 
 // TagsInDescribeLaunchTemplates is a nested struct in ecs response
 type TagsInDescribeLaunchTemplates struct {
-	Tag []Tag `json:"Tag" xml:"Tag"`
+	Tag []TagInDescribeLaunchTemplates `json:"Tag" xml:"Tag"`
 }

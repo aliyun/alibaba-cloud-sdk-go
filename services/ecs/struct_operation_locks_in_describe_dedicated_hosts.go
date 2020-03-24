@@ -17,5 +17,5 @@ package ecs
 
 // OperationLocksInDescribeDedicatedHosts is a nested struct in ecs response
 type OperationLocksInDescribeDedicatedHosts struct {
-	OperationLock []OperationLock `json:"OperationLock" xml:"OperationLock"`
+	OperationLock []OperationLockInDescribeDedicatedHosts `json:"OperationLock" xml:"OperationLock"`
 }
