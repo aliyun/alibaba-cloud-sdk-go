@@ -92,7 +92,7 @@ func CreateDeleteChannelRequest() (request *DeleteChannelRequest) {
 	request = &DeleteChannelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DeleteChannel", "", "")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DeleteChannel", "rtc", "openAPI")
 	return
 }
 

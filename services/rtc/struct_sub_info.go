@@ -17,7 +17,7 @@ package rtc
 
 // SubInfo is a nested struct in rtc response
 type SubInfo struct {
-	User   User                             `json:"User" xml:"User"`
+	User   UserInDescribeRtcQualityMetric   `json:"User" xml:"User"`
 	Data   DataInDescribeRtcQualityMetric   `json:"Data" xml:"Data"`
 	Events EventsInDescribeRtcQualityMetric `json:"Events" xml:"Events"`
 }

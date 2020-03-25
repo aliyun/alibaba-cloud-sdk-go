@@ -95,7 +95,7 @@ func CreateUpdateChannelRequest() (request *UpdateChannelRequest) {
 	request = &UpdateChannelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "UpdateChannel", "", "")
+	request.InitWithApiInfo("rtc", "2018-01-11", "UpdateChannel", "rtc", "openAPI")
 	return
 }
 

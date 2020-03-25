@@ -99,7 +99,7 @@ func CreateDescribeChannelParticipantsRequest() (request *DescribeChannelPartici
 	request = &DescribeChannelParticipantsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeChannelParticipants", "", "")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeChannelParticipants", "rtc", "openAPI")
 	return
 }
 

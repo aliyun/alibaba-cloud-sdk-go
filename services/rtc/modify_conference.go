@@ -97,7 +97,7 @@ func CreateModifyConferenceRequest() (request *ModifyConferenceRequest) {
 	request = &ModifyConferenceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "ModifyConference", "", "")
+	request.InitWithApiInfo("rtc", "2018-01-11", "ModifyConference", "rtc", "openAPI")
 	return
 }
 

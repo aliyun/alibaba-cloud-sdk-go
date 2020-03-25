@@ -95,7 +95,7 @@ func CreateUnmuteAudioAllRequest() (request *UnmuteAudioAllRequest) {
 	request = &UnmuteAudioAllRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "UnmuteAudioAll", "", "")
+	request.InitWithApiInfo("rtc", "2018-01-11", "UnmuteAudioAll", "rtc", "openAPI")
 	return
 }
 

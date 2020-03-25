@@ -96,7 +96,7 @@ func CreateDescribeRtcPeakChannelCntDataRequest() (request *DescribeRtcPeakChann
 	request = &DescribeRtcPeakChannelCntDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRtcPeakChannelCntData", "", "")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRtcPeakChannelCntData", "rtc", "openAPI")
 	return
 }
 

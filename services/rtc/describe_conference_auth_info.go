@@ -84,9 +84,9 @@ type DescribeConferenceAuthInfoRequest struct {
 // DescribeConferenceAuthInfoResponse is the response struct for api DescribeConferenceAuthInfo
 type DescribeConferenceAuthInfoResponse struct {
 	*responses.BaseResponse
-	RequestId    string   `json:"RequestId" xml:"RequestId"`
-	ConferenceId string   `json:"ConferenceId" xml:"ConferenceId"`
-	AuthInfo     AuthInfo `json:"AuthInfo" xml:"AuthInfo"`
+	RequestId    string                               `json:"RequestId" xml:"RequestId"`
+	ConferenceId string                               `json:"ConferenceId" xml:"ConferenceId"`
+	AuthInfo     AuthInfoInDescribeConferenceAuthInfo `json:"AuthInfo" xml:"AuthInfo"`
 }
 
 // CreateDescribeConferenceAuthInfoRequest creates a request to invoke DescribeConferenceAuthInfo API
@@ -94,7 +94,7 @@ func CreateDescribeConferenceAuthInfoRequest() (request *DescribeConferenceAuthI
 	request = &DescribeConferenceAuthInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeConferenceAuthInfo", "", "")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeConferenceAuthInfo", "rtc", "openAPI")
 	return
 }
 

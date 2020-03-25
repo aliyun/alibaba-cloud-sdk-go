@@ -93,7 +93,7 @@ func CreateStopTaskRequest() (request *StopTaskRequest) {
 	request = &StopTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "StopTask", "", "")
+	request.InitWithApiInfo("rtc", "2018-01-11", "StopTask", "rtc", "openAPI")
 	return
 }
 

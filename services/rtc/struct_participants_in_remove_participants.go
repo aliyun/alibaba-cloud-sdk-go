@@ -17,5 +17,5 @@ package rtc
 
 // ParticipantsInRemoveParticipants is a nested struct in rtc response
 type ParticipantsInRemoveParticipants struct {
-	Participant []Participant `json:"Participant" xml:"Participant"`
+	Participant []ParticipantInRemoveParticipants `json:"Participant" xml:"Participant"`
 }

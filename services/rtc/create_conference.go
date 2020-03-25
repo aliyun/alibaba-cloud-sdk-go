@@ -88,9 +88,9 @@ type CreateConferenceRequest struct {
 // CreateConferenceResponse is the response struct for api CreateConference
 type CreateConferenceResponse struct {
 	*responses.BaseResponse
-	RequestId    string   `json:"RequestId" xml:"RequestId"`
-	ConferenceId string   `json:"ConferenceId" xml:"ConferenceId"`
-	AuthInfo     AuthInfo `json:"AuthInfo" xml:"AuthInfo"`
+	RequestId    string                     `json:"RequestId" xml:"RequestId"`
+	ConferenceId string                     `json:"ConferenceId" xml:"ConferenceId"`
+	AuthInfo     AuthInfoInCreateConference `json:"AuthInfo" xml:"AuthInfo"`
 }
 
 // CreateCreateConferenceRequest creates a request to invoke CreateConference API
@@ -98,7 +98,7 @@ func CreateCreateConferenceRequest() (request *CreateConferenceRequest) {
 	request = &CreateConferenceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "CreateConference", "", "")
+	request.InitWithApiInfo("rtc", "2018-01-11", "CreateConference", "rtc", "openAPI")
 	return
 }
 

@@ -17,5 +17,5 @@ package rtc
 
 // ParticipantsInMuteAudio is a nested struct in rtc response
 type ParticipantsInMuteAudio struct {
-	Participant []Participant `json:"Participant" xml:"Participant"`
+	Participant []ParticipantInMuteAudio `json:"Participant" xml:"Participant"`
 }

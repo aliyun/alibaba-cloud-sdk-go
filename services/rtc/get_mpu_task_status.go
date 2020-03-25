@@ -76,9 +76,9 @@ func (client *Client) GetMPUTaskStatusWithCallback(request *GetMPUTaskStatusRequ
 // GetMPUTaskStatusRequest is the request struct for api GetMPUTaskStatus
 type GetMPUTaskStatusRequest struct {
 	*requests.RpcRequest
+	TaskId  string           `position:"Query" name:"TaskId"`
 	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 	AppId   string           `position:"Query" name:"AppId"`
-	TaskId  string           `position:"Query" name:"TaskId"`
 }
 
 // GetMPUTaskStatusResponse is the response struct for api GetMPUTaskStatus
@@ -93,7 +93,7 @@ func CreateGetMPUTaskStatusRequest() (request *GetMPUTaskStatusRequest) {
 	request = &GetMPUTaskStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "GetMPUTaskStatus", "", "")
+	request.InitWithApiInfo("rtc", "2018-01-11", "GetMPUTaskStatus", "rtc", "openAPI")
 	return
 }
 

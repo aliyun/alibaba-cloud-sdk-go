@@ -108,7 +108,7 @@ func CreateStartMPUTaskRequest() (request *StartMPUTaskRequest) {
 	request = &StartMPUTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "StartMPUTask", "", "")
+	request.InitWithApiInfo("rtc", "2018-01-11", "StartMPUTask", "rtc", "openAPI")
 	return
 }
 

@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DisableMAURule invokes the rtc.DisableMAURule API synchronously
-// api document: https://help.aliyun.com/api/rtc/disablemaurule.html
-func (client *Client) DisableMAURule(request *DisableMAURuleRequest) (response *DisableMAURuleResponse, err error) {
-	response = CreateDisableMAURuleResponse()
+// DescribeRTCAppKey invokes the rtc.DescribeRTCAppKey API synchronously
+// api document: https://help.aliyun.com/api/rtc/describertcappkey.html
+func (client *Client) DescribeRTCAppKey(request *DescribeRTCAppKeyRequest) (response *DescribeRTCAppKeyResponse, err error) {
+	response = CreateDescribeRTCAppKeyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DisableMAURuleWithChan invokes the rtc.DisableMAURule API asynchronously
-// api document: https://help.aliyun.com/api/rtc/disablemaurule.html
+// DescribeRTCAppKeyWithChan invokes the rtc.DescribeRTCAppKey API asynchronously
+// api document: https://help.aliyun.com/api/rtc/describertcappkey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DisableMAURuleWithChan(request *DisableMAURuleRequest) (<-chan *DisableMAURuleResponse, <-chan error) {
-	responseChan := make(chan *DisableMAURuleResponse, 1)
+func (client *Client) DescribeRTCAppKeyWithChan(request *DescribeRTCAppKeyRequest) (<-chan *DescribeRTCAppKeyResponse, <-chan error) {
+	responseChan := make(chan *DescribeRTCAppKeyResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DisableMAURule(request)
+		response, err := client.DescribeRTCAppKey(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DisableMAURuleWithChan(request *DisableMAURuleRequest) (<-
 	return responseChan, errChan
 }
 
-// DisableMAURuleWithCallback invokes the rtc.DisableMAURule API asynchronously
-// api document: https://help.aliyun.com/api/rtc/disablemaurule.html
+// DescribeRTCAppKeyWithCallback invokes the rtc.DescribeRTCAppKey API asynchronously
+// api document: https://help.aliyun.com/api/rtc/describertcappkey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DisableMAURuleWithCallback(request *DisableMAURuleRequest, callback func(response *DisableMAURuleResponse, err error)) <-chan int {
+func (client *Client) DescribeRTCAppKeyWithCallback(request *DescribeRTCAppKeyRequest, callback func(response *DescribeRTCAppKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DisableMAURuleResponse
+		var response *DescribeRTCAppKeyResponse
 		var err error
 		defer close(result)
-		response, err = client.DisableMAURule(request)
+		response, err = client.DescribeRTCAppKey(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,32 +73,32 @@ func (client *Client) DisableMAURuleWithCallback(request *DisableMAURuleRequest,
 	return result
 }
 
-// DisableMAURuleRequest is the request struct for api DisableMAURule
-type DisableMAURuleRequest struct {
+// DescribeRTCAppKeyRequest is the request struct for api DescribeRTCAppKey
+type DescribeRTCAppKeyRequest struct {
 	*requests.RpcRequest
 	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 	AppId   string           `position:"Query" name:"AppId"`
-	RuleId  requests.Integer `position:"Query" name:"RuleId"`
 }
 
-// DisableMAURuleResponse is the response struct for api DisableMAURule
-type DisableMAURuleResponse struct {
+// DescribeRTCAppKeyResponse is the response struct for api DescribeRTCAppKey
+type DescribeRTCAppKeyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	AppKey    string `json:"AppKey" xml:"AppKey"`
 }
 
-// CreateDisableMAURuleRequest creates a request to invoke DisableMAURule API
-func CreateDisableMAURuleRequest() (request *DisableMAURuleRequest) {
-	request = &DisableMAURuleRequest{
+// CreateDescribeRTCAppKeyRequest creates a request to invoke DescribeRTCAppKey API
+func CreateDescribeRTCAppKeyRequest() (request *DescribeRTCAppKeyRequest) {
+	request = &DescribeRTCAppKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DisableMAURule", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRTCAppKey", "rtc", "openAPI")
 	return
 }
 
-// CreateDisableMAURuleResponse creates a response to parse from DisableMAURule response
-func CreateDisableMAURuleResponse() (response *DisableMAURuleResponse) {
-	response = &DisableMAURuleResponse{
+// CreateDescribeRTCAppKeyResponse creates a response to parse from DescribeRTCAppKey response
+func CreateDescribeRTCAppKeyResponse() (response *DescribeRTCAppKeyResponse) {
+	response = &DescribeRTCAppKeyResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

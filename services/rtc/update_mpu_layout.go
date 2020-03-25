@@ -103,7 +103,7 @@ func CreateUpdateMPULayoutRequest() (request *UpdateMPULayoutRequest) {
 	request = &UpdateMPULayoutRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "UpdateMPULayout", "", "")
+	request.InitWithApiInfo("rtc", "2018-01-11", "UpdateMPULayout", "rtc", "openAPI")
 	return
 }
 

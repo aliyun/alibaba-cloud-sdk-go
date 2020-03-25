@@ -95,7 +95,7 @@ func CreateDescribeRtcUserListRequest() (request *DescribeRtcUserListRequest) {
 	request = &DescribeRtcUserListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRtcUserList", "", "")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRtcUserList", "rtc", "openAPI")
 	return
 }
 

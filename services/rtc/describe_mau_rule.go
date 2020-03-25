@@ -92,7 +92,7 @@ func CreateDescribeMAURuleRequest() (request *DescribeMAURuleRequest) {
 	request = &DescribeMAURuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeMAURule", "", "")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeMAURule", "rtc", "openAPI")
 	return
 }
 

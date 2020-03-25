@@ -97,7 +97,7 @@ func CreateDescribeRtcQualityMetricRequest() (request *DescribeRtcQualityMetricR
 	request = &DescribeRtcQualityMetricRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRtcQualityMetric", "", "")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRtcQualityMetric", "rtc", "openAPI")
 	return
 }
 

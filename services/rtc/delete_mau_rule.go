@@ -92,7 +92,7 @@ func CreateDeleteMAURuleRequest() (request *DeleteMAURuleRequest) {
 	request = &DeleteMAURuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "DeleteMAURule", "", "")
+	request.InitWithApiInfo("rtc", "2018-01-11", "DeleteMAURule", "rtc", "openAPI")
 	return
 }
 

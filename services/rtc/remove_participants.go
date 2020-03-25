@@ -77,8 +77,8 @@ func (client *Client) RemoveParticipantsWithCallback(request *RemoveParticipants
 type RemoveParticipantsRequest struct {
 	*requests.RpcRequest
 	ParticipantIds *[]string        `position:"Query" name:"ParticipantIds"  type:"Repeated"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	ConferenceId   string           `position:"Query" name:"ConferenceId"`
+	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	AppId          string           `position:"Query" name:"AppId"`
 }
 
@@ -95,7 +95,7 @@ func CreateRemoveParticipantsRequest() (request *RemoveParticipantsRequest) {
 	request = &RemoveParticipantsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "RemoveParticipants", "", "")
+	request.InitWithApiInfo("rtc", "2018-01-11", "RemoveParticipants", "rtc", "openAPI")
 	return
 }
 
