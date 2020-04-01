@@ -91,6 +91,7 @@ func CreateDeleteExecutionsRequest() (request *DeleteExecutionsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("oos", "2019-06-01", "DeleteExecutions", "oos", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

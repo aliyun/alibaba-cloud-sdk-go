@@ -1,3 +1,7 @@
+2020-04-01 Version: v1.61.80
+- Generated 2019-06-01 for `oos`.
+- Counters and Parameters are changed to Map in ListExections and StartExecution.
+
 2020-04-01 Version: v1.61.79
 - Generated 2018-08-01 for `dts`.
 

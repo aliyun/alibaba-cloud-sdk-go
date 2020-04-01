@@ -93,6 +93,7 @@ func CreateGetExecutionTemplateRequest() (request *GetExecutionTemplateRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("oos", "2019-06-01", "GetExecutionTemplate", "oos", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

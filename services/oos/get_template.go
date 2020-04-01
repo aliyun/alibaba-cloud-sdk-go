@@ -94,6 +94,7 @@ func CreateGetTemplateRequest() (request *GetTemplateRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("oos", "2019-06-01", "GetTemplate", "oos", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -76,14 +76,15 @@ func (client *Client) NotifyExecutionWithCallback(request *NotifyExecutionReques
 // NotifyExecutionRequest is the request struct for api NotifyExecution
 type NotifyExecutionRequest struct {
 	*requests.RpcRequest
-	TaskName        string `position:"Query" name:"TaskName"`
-	ExecutionId     string `position:"Query" name:"ExecutionId"`
-	NotifyType      string `position:"Query" name:"NotifyType"`
-	ExecutionStatus string `position:"Query" name:"ExecutionStatus"`
-	NotifyNote      string `position:"Query" name:"NotifyNote"`
-	LoopItem        string `position:"Query" name:"LoopItem"`
-	TaskExecutionId string `position:"Query" name:"TaskExecutionId"`
-	Parameters      string `position:"Query" name:"Parameters"`
+	TaskName         string `position:"Query" name:"TaskName"`
+	ExecutionId      string `position:"Query" name:"ExecutionId"`
+	NotifyType       string `position:"Query" name:"NotifyType"`
+	ExecutionStatus  string `position:"Query" name:"ExecutionStatus"`
+	NotifyNote       string `position:"Query" name:"NotifyNote"`
+	LoopItem         string `position:"Query" name:"LoopItem"`
+	TaskExecutionIds string `position:"Query" name:"TaskExecutionIds"`
+	TaskExecutionId  string `position:"Query" name:"TaskExecutionId"`
+	Parameters       string `position:"Query" name:"Parameters"`
 }
 
 // NotifyExecutionResponse is the response struct for api NotifyExecution
@@ -98,6 +99,7 @@ func CreateNotifyExecutionRequest() (request *NotifyExecutionRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("oos", "2019-06-01", "NotifyExecution", "oos", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
