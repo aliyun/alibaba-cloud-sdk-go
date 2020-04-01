@@ -36,7 +36,6 @@ type Execution struct {
 	Tags              map[string]interface{} `json:"Tags" xml:"Tags"`
 	EndDate           string                 `json:"EndDate" xml:"EndDate"`
 	RamRole           string                 `json:"RamRole" xml:"RamRole"`
-	LoopMode          string                 `json:"LoopMode" xml:"LoopMode"`
 	StartDate         string                 `json:"StartDate" xml:"StartDate"`
 	StatusReason      string                 `json:"StatusReason" xml:"StatusReason"`
 	CreateDate        string                 `json:"CreateDate" xml:"CreateDate"`

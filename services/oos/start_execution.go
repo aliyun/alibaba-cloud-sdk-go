@@ -91,8 +91,8 @@ type StartExecutionRequest struct {
 // StartExecutionResponse is the response struct for api StartExecution
 type StartExecutionResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
-	Execution Execution `json:"Execution" xml:"Execution"`
+	RequestId string                    `json:"RequestId" xml:"RequestId"`
+	Execution ExecutionInStartExecution `json:"Execution" xml:"Execution"`
 }
 
 // CreateStartExecutionRequest creates a request to invoke StartExecution API
