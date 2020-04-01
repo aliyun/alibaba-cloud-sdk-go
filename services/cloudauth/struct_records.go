@@ -19,6 +19,7 @@ package cloudauth
 type Records struct {
 	BizType                   string   `json:"BizType" xml:"BizType"`
 	BizId                     string   `json:"BizId" xml:"BizId"`
+	DataStats                 string   `json:"DataStats" xml:"DataStats"`
 	VerifyId                  string   `json:"VerifyId" xml:"VerifyId"`
 	FinishTime                int64    `json:"FinishTime" xml:"FinishTime"`
 	Status                    int      `json:"Status" xml:"Status"`

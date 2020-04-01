@@ -95,6 +95,7 @@ func CreateDescribeFaceVerifyRequest() (request *DescribeFaceVerifyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeFaceVerify", "cloudauth", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
