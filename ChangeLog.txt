@@ -1,3 +1,7 @@
+2020-04-01 Version: v1.61.82
+- Generated 2019-09-10 for `waf-openapi`.
+
+
 2020-04-01 Version: v1.61.81
 - Generated 2019-06-01 for `oos`.
 - Parameters is string in StartExecution Response.

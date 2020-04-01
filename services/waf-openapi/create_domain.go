@@ -109,6 +109,7 @@ func CreateCreateDomainRequest() (request *CreateDomainRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("waf-openapi", "2019-09-10", "CreateDomain", "waf", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

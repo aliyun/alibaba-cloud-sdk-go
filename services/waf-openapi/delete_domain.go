@@ -94,6 +94,7 @@ func CreateDeleteDomainRequest() (request *DeleteDomainRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("waf-openapi", "2019-09-10", "DeleteDomain", "waf", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

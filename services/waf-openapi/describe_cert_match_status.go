@@ -97,6 +97,7 @@ func CreateDescribeCertMatchStatusRequest() (request *DescribeCertMatchStatusReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("waf-openapi", "2019-09-10", "DescribeCertMatchStatus", "waf", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

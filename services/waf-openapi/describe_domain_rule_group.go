@@ -95,6 +95,7 @@ func CreateDescribeDomainRuleGroupRequest() (request *DescribeDomainRuleGroupReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("waf-openapi", "2019-09-10", "DescribeDomainRuleGroup", "waf", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
