@@ -17,19 +17,19 @@ package waf_openapi
 
 // Domain is a nested struct in waf_openapi response
 type Domain struct {
-	SourceIps       string `json:"SourceIps" xml:"SourceIps"`
-	HttpToUserIp    int    `json:"HttpToUserIp" xml:"HttpToUserIp"`
-	HttpsRedirect   int    `json:"HttpsRedirect" xml:"HttpsRedirect"`
-	Http2Port       string `json:"Http2Port" xml:"Http2Port"`
-	HttpPort        string `json:"HttpPort" xml:"HttpPort"`
-	LoadBalancing   int    `json:"LoadBalancing" xml:"LoadBalancing"`
-	Cname           string `json:"Cname" xml:"Cname"`
-	IsAccessProduct int    `json:"IsAccessProduct" xml:"IsAccessProduct"`
-	HttpsPort       string `json:"HttpsPort" xml:"HttpsPort"`
-	Version         int64  `json:"Version" xml:"Version"`
-	LogHeaders      string `json:"LogHeaders" xml:"LogHeaders"`
-	ClusterType     int    `json:"ClusterType" xml:"ClusterType"`
-	ConnectionTime  int    `json:"ConnectionTime" xml:"ConnectionTime"`
-	ReadTime        int    `json:"ReadTime" xml:"ReadTime"`
-	WriteTime       int    `json:"WriteTime" xml:"WriteTime"`
+	HttpToUserIp    int      `json:"HttpToUserIp" xml:"HttpToUserIp"`
+	HttpsRedirect   int      `json:"HttpsRedirect" xml:"HttpsRedirect"`
+	LoadBalancing   int      `json:"LoadBalancing" xml:"LoadBalancing"`
+	Cname           string   `json:"Cname" xml:"Cname"`
+	IsAccessProduct int      `json:"IsAccessProduct" xml:"IsAccessProduct"`
+	Version         int64    `json:"Version" xml:"Version"`
+	LogHeaders      string   `json:"LogHeaders" xml:"LogHeaders"`
+	ClusterType     int      `json:"ClusterType" xml:"ClusterType"`
+	ConnectionTime  int      `json:"ConnectionTime" xml:"ConnectionTime"`
+	ReadTime        int      `json:"ReadTime" xml:"ReadTime"`
+	WriteTime       int      `json:"WriteTime" xml:"WriteTime"`
+	SourceIps       []string `json:"SourceIps" xml:"SourceIps"`
+	Http2Port       []string `json:"Http2Port" xml:"Http2Port"`
+	HttpPort        []string `json:"HttpPort" xml:"HttpPort"`
+	HttpsPort       []string `json:"HttpsPort" xml:"HttpsPort"`
 }
