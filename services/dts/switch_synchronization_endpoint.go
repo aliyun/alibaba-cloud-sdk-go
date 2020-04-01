@@ -76,10 +76,11 @@ func (client *Client) SwitchSynchronizationEndpointWithCallback(request *SwitchS
 // SwitchSynchronizationEndpointRequest is the request struct for api SwitchSynchronizationEndpoint
 type SwitchSynchronizationEndpointRequest struct {
 	*requests.RpcRequest
-	SynchronizationJobId     string                                `position:"Query" name:"SynchronizationJobId"`
-	SynchronizationDirection string                                `position:"Query" name:"SynchronizationDirection"`
-	OwnerId                  string                                `position:"Query" name:"OwnerId"`
-	Endpoint                 SwitchSynchronizationEndpointEndpoint `position:"Query" name:"Endpoint" type:"Struct"`
+	SynchronizationJobId     string                                      `position:"Query" name:"SynchronizationJobId"`
+	SynchronizationDirection string                                      `position:"Query" name:"SynchronizationDirection"`
+	OwnerId                  string                                      `position:"Query" name:"OwnerId"`
+	Endpoint                 SwitchSynchronizationEndpointEndpoint       `position:"Query" name:"Endpoint" type:"Struct"`
+	SourceEndpoint           SwitchSynchronizationEndpointSourceEndpoint `position:"Query" name:"SourceEndpoint" type:"Struct"`
 }
 
 type SwitchSynchronizationEndpointEndpoint struct {
@@ -88,6 +89,11 @@ type SwitchSynchronizationEndpointEndpoint struct {
 	InstanceId   string `name:"InstanceId"`
 	IP           string `name:"IP"`
 	Port         string `name:"Port"`
+}
+
+type SwitchSynchronizationEndpointSourceEndpoint struct {
+	OwnerID string `name:"OwnerID"`
+	Role    string `name:"Role"`
 }
 
 // SwitchSynchronizationEndpointResponse is the response struct for api SwitchSynchronizationEndpoint

@@ -1,3 +1,6 @@
+2020-04-01 Version: v1.61.79
+- Generated 2018-08-01 for `dts`.
+
 2020-03-25 Version: v1.61.78
 - Generated 2018-01-11 for `rtc`.
 - Supported describe appkey for rtc application.

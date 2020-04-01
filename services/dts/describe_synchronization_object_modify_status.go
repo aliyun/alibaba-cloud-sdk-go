@@ -94,9 +94,9 @@ type DescribeSynchronizationObjectModifyStatusResponse struct {
 }
 
 type DescribeSynchronizationObjectModifyStatusPrecheckStatus0 struct {
-	Status  string                                             `json:"Status" xml:"Status"`
-	Percent string                                             `json:"Percent" xml:"Percent"`
-	Detail  []DescribeSynchronizationObjectModifyStatusDetail1 `json:"Detail" xml:"Detail"`
+	Status  string                                                `json:"Status" xml:"Status"`
+	Percent string                                                `json:"Percent" xml:"Percent"`
+	Detail  []DescribeSynchronizationObjectModifyStatusCheckItem1 `json:"Detail" xml:"Detail"`
 }
 
 type DescribeSynchronizationObjectModifyStatusStructureInitializationStatus0 struct {
@@ -120,11 +120,7 @@ type DescribeSynchronizationObjectModifyStatusDataSynchronizationStatus0 struct 
 	Delay        string `json:"Delay" xml:"Delay"`
 }
 
-type DescribeSynchronizationObjectModifyStatusDetail1 struct {
-	CheckItem []DescribeSynchronizationObjectModifyStatusCheckItem2 `json:"CheckItem" xml:"CheckItem"`
-}
-
-type DescribeSynchronizationObjectModifyStatusCheckItem2 struct {
+type DescribeSynchronizationObjectModifyStatusCheckItem1 struct {
 	ItemName     string `json:"ItemName" xml:"ItemName"`
 	CheckStatus  string `json:"CheckStatus" xml:"CheckStatus"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`

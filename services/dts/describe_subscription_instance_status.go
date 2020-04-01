@@ -92,16 +92,15 @@ type DescribeSubscriptionInstanceStatusResponse struct {
 	BeginTimestamp           string                                                  `json:"BeginTimestamp" xml:"BeginTimestamp"`
 	EndTimestamp             string                                                  `json:"EndTimestamp" xml:"EndTimestamp"`
 	ConsumptionClient        string                                                  `json:"ConsumptionClient" xml:"ConsumptionClient"`
-	SubscriptionObject       DescribeSubscriptionInstanceStatusSubscriptionObject0   `json:"SubscriptionObject" xml:"SubscriptionObject"`
+	SubscribeTopic           string                                                  `json:"SubscribeTopic" xml:"SubscribeTopic"`
+	RequestId                string                                                  `json:"RequestId" xml:"RequestId"`
+	SubscriptionObject       []DescribeSubscriptionInstanceStatusSynchronousObject0  `json:"SubscriptionObject" xml:"SubscriptionObject"`
 	SourceEndpoint           DescribeSubscriptionInstanceStatusSourceEndpoint0       `json:"SourceEndpoint" xml:"SourceEndpoint"`
 	SubscriptionDataType     DescribeSubscriptionInstanceStatusSubscriptionDataType0 `json:"SubscriptionDataType" xml:"SubscriptionDataType"`
+	SubscriptionHost         DescribeSubscriptionInstanceStatusSubscriptionHost0     `json:"SubscriptionHost" xml:"SubscriptionHost"`
 }
 
-type DescribeSubscriptionInstanceStatusSubscriptionObject0 struct {
-	SynchronousObject []DescribeSubscriptionInstanceStatusSynchronousObject1 `json:"SynchronousObject" xml:"SynchronousObject"`
-}
-
-type DescribeSubscriptionInstanceStatusSynchronousObject1 struct {
+type DescribeSubscriptionInstanceStatusSynchronousObject0 struct {
 	DatabaseName  string   `json:"DatabaseName" xml:"DatabaseName"`
 	WholeDatabase string   `json:"WholeDatabase" xml:"WholeDatabase"`
 	TableList     []string `json:"TableList" xml:"TableList"`
@@ -115,6 +114,12 @@ type DescribeSubscriptionInstanceStatusSourceEndpoint0 struct {
 type DescribeSubscriptionInstanceStatusSubscriptionDataType0 struct {
 	DDL bool `json:"DDL" xml:"DDL"`
 	DML bool `json:"DML" xml:"DML"`
+}
+
+type DescribeSubscriptionInstanceStatusSubscriptionHost0 struct {
+	PublicHost  string `json:"PublicHost" xml:"PublicHost"`
+	PrivateHost string `json:"PrivateHost" xml:"PrivateHost"`
+	VPCHost     string `json:"VPCHost" xml:"VPCHost"`
 }
 
 // CreateDescribeSubscriptionInstanceStatusRequest creates a request to invoke DescribeSubscriptionInstanceStatus API
