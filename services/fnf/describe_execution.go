@@ -76,9 +76,10 @@ func (client *Client) DescribeExecutionWithCallback(request *DescribeExecutionRe
 // DescribeExecutionRequest is the request struct for api DescribeExecution
 type DescribeExecutionRequest struct {
 	*requests.RpcRequest
-	ExecutionName string `position:"Query" name:"ExecutionName"`
-	RequestId     string `position:"Query" name:"RequestId"`
-	FlowName      string `position:"Query" name:"FlowName"`
+	ExecutionName   string           `position:"Query" name:"ExecutionName"`
+	WaitTimeSeconds requests.Integer `position:"Query" name:"WaitTimeSeconds"`
+	RequestId       string           `position:"Query" name:"RequestId"`
+	FlowName        string           `position:"Query" name:"FlowName"`
 }
 
 // DescribeExecutionResponse is the response struct for api DescribeExecution
