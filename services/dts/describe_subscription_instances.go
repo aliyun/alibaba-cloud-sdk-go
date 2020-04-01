@@ -86,17 +86,14 @@ type DescribeSubscriptionInstancesRequest struct {
 // DescribeSubscriptionInstancesResponse is the response struct for api DescribeSubscriptionInstances
 type DescribeSubscriptionInstancesResponse struct {
 	*responses.BaseResponse
-	PageNumber            int                                                 `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount      int64                                               `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount       int                                                 `json:"PageRecordCount" xml:"PageRecordCount"`
-	SubscriptionInstances DescribeSubscriptionInstancesSubscriptionInstances0 `json:"SubscriptionInstances" xml:"SubscriptionInstances"`
+	PageNumber            int                                                  `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount      int64                                                `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount       int                                                  `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId             string                                               `json:"RequestId" xml:"RequestId"`
+	SubscriptionInstances []DescribeSubscriptionInstancesSubscriptionInstance0 `json:"SubscriptionInstances" xml:"SubscriptionInstances"`
 }
 
-type DescribeSubscriptionInstancesSubscriptionInstances0 struct {
-	SubscriptionInstance []DescribeSubscriptionInstancesSubscriptionInstance1 `json:"SubscriptionInstance" xml:"SubscriptionInstance"`
-}
-
-type DescribeSubscriptionInstancesSubscriptionInstance1 struct {
+type DescribeSubscriptionInstancesSubscriptionInstance0 struct {
 	SubscriptionInstanceID   string                                             `json:"SubscriptionInstanceID" xml:"SubscriptionInstanceID"`
 	SubscriptionInstanceName string                                             `json:"SubscriptionInstanceName" xml:"SubscriptionInstanceName"`
 	PayType                  string                                             `json:"PayType" xml:"PayType"`
@@ -106,16 +103,14 @@ type DescribeSubscriptionInstancesSubscriptionInstance1 struct {
 	BeginTimestamp           string                                             `json:"BeginTimestamp" xml:"BeginTimestamp"`
 	EndTimestamp             string                                             `json:"EndTimestamp" xml:"EndTimestamp"`
 	ConsumptionClient        string                                             `json:"ConsumptionClient" xml:"ConsumptionClient"`
-	SubscriptionObject       []DescribeSubscriptionInstancesSubscriptionObject1 `json:"SubscriptionObject" xml:"SubscriptionObject"`
+	SubscribeTopic           string                                             `json:"SubscribeTopic" xml:"SubscribeTopic"`
+	SubscriptionObject       []DescribeSubscriptionInstancesSynchronousObject1  `json:"SubscriptionObject" xml:"SubscriptionObject"`
 	SourceEndpoint           DescribeSubscriptionInstancesSourceEndpoint1       `json:"SourceEndpoint" xml:"SourceEndpoint"`
 	SubscriptionDataType     DescribeSubscriptionInstancesSubscriptionDataType1 `json:"SubscriptionDataType" xml:"SubscriptionDataType"`
+	SubscriptionHost         DescribeSubscriptionInstancesSubscriptionHost1     `json:"SubscriptionHost" xml:"SubscriptionHost"`
 }
 
-type DescribeSubscriptionInstancesSubscriptionObject1 struct {
-	SynchronousObject []DescribeSubscriptionInstancesSynchronousObject2 `json:"SynchronousObject" xml:"SynchronousObject"`
-}
-
-type DescribeSubscriptionInstancesSynchronousObject2 struct {
+type DescribeSubscriptionInstancesSynchronousObject1 struct {
 	DatabaseName  string   `json:"DatabaseName" xml:"DatabaseName"`
 	WholeDatabase string   `json:"WholeDatabase" xml:"WholeDatabase"`
 	TableList     []string `json:"TableList" xml:"TableList"`
@@ -129,6 +124,12 @@ type DescribeSubscriptionInstancesSourceEndpoint1 struct {
 type DescribeSubscriptionInstancesSubscriptionDataType1 struct {
 	DDL bool `json:"DDL" xml:"DDL"`
 	DML bool `json:"DML" xml:"DML"`
+}
+
+type DescribeSubscriptionInstancesSubscriptionHost1 struct {
+	PublicHost  string `json:"PublicHost" xml:"PublicHost"`
+	PrivateHost string `json:"PrivateHost" xml:"PrivateHost"`
+	VPCHost     string `json:"VPCHost" xml:"VPCHost"`
 }
 
 // CreateDescribeSubscriptionInstancesRequest creates a request to invoke DescribeSubscriptionInstances API

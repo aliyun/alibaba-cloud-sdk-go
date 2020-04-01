@@ -76,19 +76,25 @@ func (client *Client) ConfigureSubscriptionInstanceWithCallback(request *Configu
 // ConfigureSubscriptionInstanceRequest is the request struct for api ConfigureSubscriptionInstance
 type ConfigureSubscriptionInstanceRequest struct {
 	*requests.RpcRequest
-	SubscriptionInstanceId   string                                            `position:"Query" name:"SubscriptionInstanceId"`
-	SubscriptionInstanceName string                                            `position:"Query" name:"SubscriptionInstanceName"`
-	SubscriptionObject       string                                            `position:"Query" name:"SubscriptionObject"`
-	OwnerId                  string                                            `position:"Query" name:"OwnerId"`
-	SourceEndpoint           ConfigureSubscriptionInstanceSourceEndpoint       `position:"Query" name:"SourceEndpoint" type:"Struct"`
-	SubscriptionDataType     ConfigureSubscriptionInstanceSubscriptionDataType `position:"Query" name:"SubscriptionDataType" type:"Struct"`
+	SubscriptionInstanceId          string                                            `position:"Query" name:"SubscriptionInstanceId"`
+	SubscriptionInstanceName        string                                            `position:"Query" name:"SubscriptionInstanceName"`
+	SubscriptionObject              string                                            `position:"Query" name:"SubscriptionObject"`
+	SubscriptionInstanceNetworkType string                                            `position:"Query" name:"SubscriptionInstanceNetworkType"`
+	OwnerId                         string                                            `position:"Query" name:"OwnerId"`
+	SourceEndpoint                  ConfigureSubscriptionInstanceSourceEndpoint       `position:"Query" name:"SourceEndpoint" type:"Struct"`
+	SubscriptionDataType            ConfigureSubscriptionInstanceSubscriptionDataType `position:"Query" name:"SubscriptionDataType" type:"Struct"`
+	SubscriptionInstance            ConfigureSubscriptionInstanceSubscriptionInstance `position:"Query" name:"SubscriptionInstance" type:"Struct"`
 }
 
 type ConfigureSubscriptionInstanceSourceEndpoint struct {
 	InstanceType string `name:"InstanceType"`
 	InstanceID   string `name:"InstanceID"`
+	IP           string `name:"IP"`
+	Port         string `name:"Port"`
 	UserName     string `name:"UserName"`
 	Password     string `name:"Password"`
+	OracleSID    string `name:"OracleSID"`
+	DatabaseName string `name:"DatabaseName"`
 	OwnerID      string `name:"OwnerID"`
 	Role         string `name:"Role"`
 }
@@ -96,6 +102,11 @@ type ConfigureSubscriptionInstanceSourceEndpoint struct {
 type ConfigureSubscriptionInstanceSubscriptionDataType struct {
 	DDL requests.Boolean `name:"DDL"`
 	DML requests.Boolean `name:"DML"`
+}
+
+type ConfigureSubscriptionInstanceSubscriptionInstance struct {
+	VPCId     string `name:"VPCId"`
+	VSwitchId string `name:"VSwitchId"`
 }
 
 // ConfigureSubscriptionInstanceResponse is the response struct for api ConfigureSubscriptionInstance

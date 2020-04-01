@@ -90,6 +90,7 @@ type DescribeMigrationJobStatusResponse struct {
 	MigrationJobClass             string                                                   `json:"MigrationJobClass" xml:"MigrationJobClass"`
 	MigrationObject               string                                                   `json:"MigrationObject" xml:"MigrationObject"`
 	MigrationJobStatus            string                                                   `json:"MigrationJobStatus" xml:"MigrationJobStatus"`
+	RequestId                     string                                                   `json:"RequestId" xml:"RequestId"`
 	SourceEndpoint                DescribeMigrationJobStatusSourceEndpoint0                `json:"SourceEndpoint" xml:"SourceEndpoint"`
 	DestinationEndpoint           DescribeMigrationJobStatusDestinationEndpoint0           `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
 	MigrationMode                 DescribeMigrationJobStatusMigrationMode0                 `json:"MigrationMode" xml:"MigrationMode"`
@@ -128,9 +129,9 @@ type DescribeMigrationJobStatusMigrationMode0 struct {
 }
 
 type DescribeMigrationJobStatusPrecheckStatus0 struct {
-	Status  string                              `json:"Status" xml:"Status"`
-	Percent string                              `json:"Percent" xml:"Percent"`
-	Detail  []DescribeMigrationJobStatusDetail1 `json:"Detail" xml:"Detail"`
+	Status  string                                 `json:"Status" xml:"Status"`
+	Percent string                                 `json:"Percent" xml:"Percent"`
+	Detail  []DescribeMigrationJobStatusCheckItem1 `json:"Detail" xml:"Detail"`
 }
 
 type DescribeMigrationJobStatusStructureInitializationStatus0 struct {
@@ -155,11 +156,7 @@ type DescribeMigrationJobStatusDataSynchronizationStatus0 struct {
 	Checkpoint   string `json:"Checkpoint" xml:"Checkpoint"`
 }
 
-type DescribeMigrationJobStatusDetail1 struct {
-	CheckItem []DescribeMigrationJobStatusCheckItem2 `json:"CheckItem" xml:"CheckItem"`
-}
-
-type DescribeMigrationJobStatusCheckItem2 struct {
+type DescribeMigrationJobStatusCheckItem1 struct {
 	ItemName     string `json:"ItemName" xml:"ItemName"`
 	CheckStatus  string `json:"CheckStatus" xml:"CheckStatus"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`

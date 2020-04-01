@@ -84,17 +84,13 @@ type DescribeSubscriptionObjectModifyStatusRequest struct {
 // DescribeSubscriptionObjectModifyStatusResponse is the response struct for api DescribeSubscriptionObjectModifyStatus
 type DescribeSubscriptionObjectModifyStatusResponse struct {
 	*responses.BaseResponse
-	RequestId string                                        `json:"RequestId" xml:"RequestId"`
-	Status    string                                        `json:"Status" xml:"Status"`
-	Percent   string                                        `json:"Percent" xml:"Percent"`
-	Detail    DescribeSubscriptionObjectModifyStatusDetail0 `json:"Detail" xml:"Detail"`
+	RequestId string                                             `json:"RequestId" xml:"RequestId"`
+	Status    string                                             `json:"Status" xml:"Status"`
+	Percent   string                                             `json:"Percent" xml:"Percent"`
+	Detail    []DescribeSubscriptionObjectModifyStatusCheckItem0 `json:"Detail" xml:"Detail"`
 }
 
-type DescribeSubscriptionObjectModifyStatusDetail0 struct {
-	CheckItem []DescribeSubscriptionObjectModifyStatusCheckItem1 `json:"CheckItem" xml:"CheckItem"`
-}
-
-type DescribeSubscriptionObjectModifyStatusCheckItem1 struct {
+type DescribeSubscriptionObjectModifyStatusCheckItem0 struct {
 	ItemName     string `json:"ItemName" xml:"ItemName"`
 	CheckStatus  string `json:"CheckStatus" xml:"CheckStatus"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`

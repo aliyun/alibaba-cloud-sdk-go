@@ -86,18 +86,14 @@ type DescribeSynchronizationJobsRequest struct {
 // DescribeSynchronizationJobsResponse is the response struct for api DescribeSynchronizationJobs
 type DescribeSynchronizationJobsResponse struct {
 	*responses.BaseResponse
-	RequestId                string                                               `json:"RequestId" xml:"RequestId"`
-	PageNumber               int                                                  `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount         int64                                                `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount          int                                                  `json:"PageRecordCount" xml:"PageRecordCount"`
-	SynchronizationInstances DescribeSynchronizationJobsSynchronizationInstances0 `json:"SynchronizationInstances" xml:"SynchronizationInstances"`
+	RequestId                string                                                `json:"RequestId" xml:"RequestId"`
+	PageNumber               int                                                   `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount         int64                                                 `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount          int                                                   `json:"PageRecordCount" xml:"PageRecordCount"`
+	SynchronizationInstances []DescribeSynchronizationJobsSynchronizationInstance0 `json:"SynchronizationInstances" xml:"SynchronizationInstances"`
 }
 
-type DescribeSynchronizationJobsSynchronizationInstances0 struct {
-	SynchronizationInstance []DescribeSynchronizationJobsSynchronizationInstance1 `json:"SynchronizationInstance" xml:"SynchronizationInstance"`
-}
-
-type DescribeSynchronizationJobsSynchronizationInstance1 struct {
+type DescribeSynchronizationJobsSynchronizationInstance0 struct {
 	SynchronizationJobId          string                                                    `json:"SynchronizationJobId" xml:"SynchronizationJobId"`
 	SynchronizationDirection      string                                                    `json:"SynchronizationDirection" xml:"SynchronizationDirection"`
 	SynchronizationJobName        string                                                    `json:"SynchronizationJobName" xml:"SynchronizationJobName"`
@@ -109,7 +105,7 @@ type DescribeSynchronizationJobsSynchronizationInstance1 struct {
 	Status                        string                                                    `json:"Status" xml:"Status"`
 	ErrorMessage                  string                                                    `json:"ErrorMessage" xml:"ErrorMessage"`
 	Delay                         string                                                    `json:"Delay" xml:"Delay"`
-	SynchronizationObjects        []DescribeSynchronizationJobsSynchronizationObjects1      `json:"SynchronizationObjects" xml:"SynchronizationObjects"`
+	SynchronizationObjects        []DescribeSynchronizationJobsSynchronizationObject1       `json:"SynchronizationObjects" xml:"SynchronizationObjects"`
 	SourceEndpoint                DescribeSynchronizationJobsSourceEndpoint1                `json:"SourceEndpoint" xml:"SourceEndpoint"`
 	DestinationEndpoint           DescribeSynchronizationJobsDestinationEndpoint1           `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
 	PrecheckStatus                DescribeSynchronizationJobsPrecheckStatus1                `json:"PrecheckStatus" xml:"PrecheckStatus"`
@@ -119,30 +115,18 @@ type DescribeSynchronizationJobsSynchronizationInstance1 struct {
 	Performance                   DescribeSynchronizationJobsPerformance1                   `json:"Performance" xml:"Performance"`
 }
 
-type DescribeSynchronizationJobsSynchronizationObjects1 struct {
-	SynchronizationObject []DescribeSynchronizationJobsSynchronizationObject2 `json:"SynchronizationObject" xml:"SynchronizationObject"`
+type DescribeSynchronizationJobsSynchronizationObject1 struct {
+	SchemaName    string                                     `json:"SchemaName" xml:"SchemaName"`
+	NewSchemaName string                                     `json:"NewSchemaName" xml:"NewSchemaName"`
+	TableIncludes []DescribeSynchronizationJobsTableInclude2 `json:"TableIncludes" xml:"TableIncludes"`
+	TableExcludes []DescribeSynchronizationJobsTableExclude2 `json:"TableExcludes" xml:"TableExcludes"`
 }
 
-type DescribeSynchronizationJobsSynchronizationObject2 struct {
-	SchemaName    string                                      `json:"SchemaName" xml:"SchemaName"`
-	NewSchemaName string                                      `json:"NewSchemaName" xml:"NewSchemaName"`
-	TableIncludes []DescribeSynchronizationJobsTableIncludes2 `json:"TableIncludes" xml:"TableIncludes"`
-	TableExcludes []DescribeSynchronizationJobsTableExcludes2 `json:"TableExcludes" xml:"TableExcludes"`
-}
-
-type DescribeSynchronizationJobsTableIncludes2 struct {
-	TableInclude []DescribeSynchronizationJobsTableInclude3 `json:"TableInclude" xml:"TableInclude"`
-}
-
-type DescribeSynchronizationJobsTableInclude3 struct {
+type DescribeSynchronizationJobsTableInclude2 struct {
 	TableName string `json:"TableName" xml:"TableName"`
 }
 
-type DescribeSynchronizationJobsTableExcludes2 struct {
-	TableExclude []DescribeSynchronizationJobsTableExclude3 `json:"TableExclude" xml:"TableExclude"`
-}
-
-type DescribeSynchronizationJobsTableExclude3 struct {
+type DescribeSynchronizationJobsTableExclude2 struct {
 	TableName string `json:"TableName" xml:"TableName"`
 }
 
@@ -165,16 +149,12 @@ type DescribeSynchronizationJobsDestinationEndpoint1 struct {
 }
 
 type DescribeSynchronizationJobsPrecheckStatus1 struct {
-	Status  string                               `json:"Status" xml:"Status"`
-	Percent string                               `json:"Percent" xml:"Percent"`
-	Detail  []DescribeSynchronizationJobsDetail2 `json:"Detail" xml:"Detail"`
+	Status  string                                  `json:"Status" xml:"Status"`
+	Percent string                                  `json:"Percent" xml:"Percent"`
+	Detail  []DescribeSynchronizationJobsCheckItem2 `json:"Detail" xml:"Detail"`
 }
 
-type DescribeSynchronizationJobsDetail2 struct {
-	CheckItem []DescribeSynchronizationJobsCheckItem3 `json:"CheckItem" xml:"CheckItem"`
-}
-
-type DescribeSynchronizationJobsCheckItem3 struct {
+type DescribeSynchronizationJobsCheckItem2 struct {
 	ItemName     string `json:"ItemName" xml:"ItemName"`
 	CheckStatus  string `json:"CheckStatus" xml:"CheckStatus"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`

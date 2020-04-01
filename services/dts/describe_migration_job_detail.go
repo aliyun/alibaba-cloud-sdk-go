@@ -93,34 +93,27 @@ type DescribeMigrationJobDetailMigrationMode struct {
 // DescribeMigrationJobDetailResponse is the response struct for api DescribeMigrationJobDetail
 type DescribeMigrationJobDetailResponse struct {
 	*responses.BaseResponse
-	PageNumber                        int                                                          `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount                  int64                                                        `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount                   int                                                          `json:"PageRecordCount" xml:"PageRecordCount"`
-	StructureInitializationDetailList DescribeMigrationJobDetailStructureInitializationDetailList0 `json:"StructureInitializationDetailList" xml:"StructureInitializationDetailList"`
-	DataInitializationDetailList      DescribeMigrationJobDetailDataInitializationDetailList0      `json:"DataInitializationDetailList" xml:"DataInitializationDetailList"`
-	DataSynchronizationDetailList     DescribeMigrationJobDetailDataSynchronizationDetailList0     `json:"DataSynchronizationDetailList" xml:"DataSynchronizationDetailList"`
+	PageNumber                        int                                                        `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount                  int64                                                      `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount                   int                                                        `json:"PageRecordCount" xml:"PageRecordCount"`
+	RequestId                         string                                                     `json:"RequestId" xml:"RequestId"`
+	StructureInitializationDetailList []DescribeMigrationJobDetailStructureInitializationDetail0 `json:"StructureInitializationDetailList" xml:"StructureInitializationDetailList"`
+	DataInitializationDetailList      []DescribeMigrationJobDetailDataInitializationDetail0      `json:"DataInitializationDetailList" xml:"DataInitializationDetailList"`
+	DataSynchronizationDetailList     []DescribeMigrationJobDetailDataSynchronizationDetail0     `json:"DataSynchronizationDetailList" xml:"DataSynchronizationDetailList"`
 }
 
-type DescribeMigrationJobDetailStructureInitializationDetailList0 struct {
-	StructureInitializationDetail []DescribeMigrationJobDetailStructureInitializationDetail1 `json:"StructureInitializationDetail" xml:"StructureInitializationDetail"`
+type DescribeMigrationJobDetailStructureInitializationDetail0 struct {
+	ObjectName             string                                                     `json:"ObjectName" xml:"ObjectName"`
+	ObjectType             string                                                     `json:"ObjectType" xml:"ObjectType"`
+	SourceOwnerDBName      string                                                     `json:"SourceOwnerDBName" xml:"SourceOwnerDBName"`
+	DestinationOwnerDBName string                                                     `json:"DestinationOwnerDBName" xml:"DestinationOwnerDBName"`
+	Status                 string                                                     `json:"Status" xml:"Status"`
+	ErrorMessage           string                                                     `json:"ErrorMessage" xml:"ErrorMessage"`
+	ObjectDefinition       string                                                     `json:"ObjectDefinition" xml:"ObjectDefinition"`
+	ConstraintList         []DescribeMigrationJobDetailStructureInitializationDetail1 `json:"ConstraintList" xml:"ConstraintList"`
 }
 
-type DescribeMigrationJobDetailStructureInitializationDetail1 struct {
-	ObjectName             string                                      `json:"ObjectName" xml:"ObjectName"`
-	ObjectType             string                                      `json:"ObjectType" xml:"ObjectType"`
-	SourceOwnerDBName      string                                      `json:"SourceOwnerDBName" xml:"SourceOwnerDBName"`
-	DestinationOwnerDBName string                                      `json:"DestinationOwnerDBName" xml:"DestinationOwnerDBName"`
-	Status                 string                                      `json:"Status" xml:"Status"`
-	ErrorMessage           string                                      `json:"ErrorMessage" xml:"ErrorMessage"`
-	ObjectDefinition       string                                      `json:"ObjectDefinition" xml:"ObjectDefinition"`
-	ConstraintList         []DescribeMigrationJobDetailConstraintList1 `json:"ConstraintList" xml:"ConstraintList"`
-}
-
-type DescribeMigrationJobDetailDataInitializationDetailList0 struct {
-	DataInitializationDetail []DescribeMigrationJobDetailDataInitializationDetail1 `json:"DataInitializationDetail" xml:"DataInitializationDetail"`
-}
-
-type DescribeMigrationJobDetailDataInitializationDetail1 struct {
+type DescribeMigrationJobDetailDataInitializationDetail0 struct {
 	TableName              string `json:"TableName" xml:"TableName"`
 	SourceOwnerDBName      string `json:"SourceOwnerDBName" xml:"SourceOwnerDBName"`
 	DestinationOwnerDBName string `json:"DestinationOwnerDBName" xml:"DestinationOwnerDBName"`
@@ -131,11 +124,7 @@ type DescribeMigrationJobDetailDataInitializationDetail1 struct {
 	MigrationTime          string `json:"MigrationTime" xml:"MigrationTime"`
 }
 
-type DescribeMigrationJobDetailDataSynchronizationDetailList0 struct {
-	DataSynchronizationDetail []DescribeMigrationJobDetailDataSynchronizationDetail1 `json:"DataSynchronizationDetail" xml:"DataSynchronizationDetail"`
-}
-
-type DescribeMigrationJobDetailDataSynchronizationDetail1 struct {
+type DescribeMigrationJobDetailDataSynchronizationDetail0 struct {
 	TableName              string `json:"TableName" xml:"TableName"`
 	SourceOwnerDBName      string `json:"SourceOwnerDBName" xml:"SourceOwnerDBName"`
 	DestinationOwnerDBName string `json:"DestinationOwnerDBName" xml:"DestinationOwnerDBName"`
@@ -143,11 +132,7 @@ type DescribeMigrationJobDetailDataSynchronizationDetail1 struct {
 	ErrorMessage           string `json:"ErrorMessage" xml:"ErrorMessage"`
 }
 
-type DescribeMigrationJobDetailConstraintList1 struct {
-	StructureInitializationDetail []DescribeMigrationJobDetailStructureInitializationDetail2 `json:"StructureInitializationDetail" xml:"StructureInitializationDetail"`
-}
-
-type DescribeMigrationJobDetailStructureInitializationDetail2 struct {
+type DescribeMigrationJobDetailStructureInitializationDetail1 struct {
 	ObjectName             string `json:"ObjectName" xml:"ObjectName"`
 	ObjectType             string `json:"ObjectType" xml:"ObjectType"`
 	SourceOwnerDBName      string `json:"SourceOwnerDBName" xml:"SourceOwnerDBName"`

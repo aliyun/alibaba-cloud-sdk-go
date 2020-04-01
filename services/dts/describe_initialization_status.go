@@ -85,31 +85,23 @@ type DescribeInitializationStatusRequest struct {
 // DescribeInitializationStatusResponse is the response struct for api DescribeInitializationStatus
 type DescribeInitializationStatusResponse struct {
 	*responses.BaseResponse
-	StructureInitializationDetails DescribeInitializationStatusStructureInitializationDetails0 `json:"StructureInitializationDetails" xml:"StructureInitializationDetails"`
-	DataInitializationDetails      DescribeInitializationStatusDataInitializationDetails0      `json:"DataInitializationDetails" xml:"DataInitializationDetails"`
-	DataSynchronizationDetails     DescribeInitializationStatusDataSynchronizationDetails0     `json:"DataSynchronizationDetails" xml:"DataSynchronizationDetails"`
+	StructureInitializationDetails []DescribeInitializationStatusStructureInitializationDetail0 `json:"StructureInitializationDetails" xml:"StructureInitializationDetails"`
+	DataInitializationDetails      []DescribeInitializationStatusDataInitializationDetail0      `json:"DataInitializationDetails" xml:"DataInitializationDetails"`
+	DataSynchronizationDetails     []DescribeInitializationStatusDataSynchronizationDetail0     `json:"DataSynchronizationDetails" xml:"DataSynchronizationDetails"`
 }
 
-type DescribeInitializationStatusStructureInitializationDetails0 struct {
-	StructureInitializationDetail []DescribeInitializationStatusStructureInitializationDetail1 `json:"StructureInitializationDetail" xml:"StructureInitializationDetail"`
+type DescribeInitializationStatusStructureInitializationDetail0 struct {
+	ObjectName             string                                                       `json:"ObjectName" xml:"ObjectName"`
+	ObjectType             string                                                       `json:"ObjectType" xml:"ObjectType"`
+	SourceOwnerDBName      string                                                       `json:"SourceOwnerDBName" xml:"SourceOwnerDBName"`
+	DestinationOwnerDBName string                                                       `json:"DestinationOwnerDBName" xml:"DestinationOwnerDBName"`
+	Status                 string                                                       `json:"Status" xml:"Status"`
+	ErrorMessage           string                                                       `json:"ErrorMessage" xml:"ErrorMessage"`
+	ObjectDefinition       string                                                       `json:"ObjectDefinition" xml:"ObjectDefinition"`
+	Constraints            []DescribeInitializationStatusStructureInitializationDetail1 `json:"Constraints" xml:"Constraints"`
 }
 
-type DescribeInitializationStatusStructureInitializationDetail1 struct {
-	ObjectName             string                                     `json:"ObjectName" xml:"ObjectName"`
-	ObjectType             string                                     `json:"ObjectType" xml:"ObjectType"`
-	SourceOwnerDBName      string                                     `json:"SourceOwnerDBName" xml:"SourceOwnerDBName"`
-	DestinationOwnerDBName string                                     `json:"DestinationOwnerDBName" xml:"DestinationOwnerDBName"`
-	Status                 string                                     `json:"Status" xml:"Status"`
-	ErrorMessage           string                                     `json:"ErrorMessage" xml:"ErrorMessage"`
-	ObjectDefinition       string                                     `json:"ObjectDefinition" xml:"ObjectDefinition"`
-	Constraints            []DescribeInitializationStatusConstraints1 `json:"Constraints" xml:"Constraints"`
-}
-
-type DescribeInitializationStatusDataInitializationDetails0 struct {
-	DataInitializationDetail []DescribeInitializationStatusDataInitializationDetail1 `json:"DataInitializationDetail" xml:"DataInitializationDetail"`
-}
-
-type DescribeInitializationStatusDataInitializationDetail1 struct {
+type DescribeInitializationStatusDataInitializationDetail0 struct {
 	TableName              string `json:"TableName" xml:"TableName"`
 	SourceOwnerDBName      string `json:"SourceOwnerDBName" xml:"SourceOwnerDBName"`
 	DestinationOwnerDBName string `json:"DestinationOwnerDBName" xml:"DestinationOwnerDBName"`
@@ -120,11 +112,7 @@ type DescribeInitializationStatusDataInitializationDetail1 struct {
 	UsedTime               string `json:"UsedTime" xml:"UsedTime"`
 }
 
-type DescribeInitializationStatusDataSynchronizationDetails0 struct {
-	DataSynchronizationDetail []DescribeInitializationStatusDataSynchronizationDetail1 `json:"DataSynchronizationDetail" xml:"DataSynchronizationDetail"`
-}
-
-type DescribeInitializationStatusDataSynchronizationDetail1 struct {
+type DescribeInitializationStatusDataSynchronizationDetail0 struct {
 	TableName              string `json:"TableName" xml:"TableName"`
 	SourceOwnerDBName      string `json:"SourceOwnerDBName" xml:"SourceOwnerDBName"`
 	DestinationOwnerDBName string `json:"DestinationOwnerDBName" xml:"DestinationOwnerDBName"`
@@ -132,11 +120,7 @@ type DescribeInitializationStatusDataSynchronizationDetail1 struct {
 	ErrorMessage           string `json:"ErrorMessage" xml:"ErrorMessage"`
 }
 
-type DescribeInitializationStatusConstraints1 struct {
-	StructureInitializationDetail []DescribeInitializationStatusStructureInitializationDetail2 `json:"StructureInitializationDetail" xml:"StructureInitializationDetail"`
-}
-
-type DescribeInitializationStatusStructureInitializationDetail2 struct {
+type DescribeInitializationStatusStructureInitializationDetail1 struct {
 	ObjectName             string `json:"ObjectName" xml:"ObjectName"`
 	ObjectType             string `json:"ObjectType" xml:"ObjectType"`
 	SourceOwnerDBName      string `json:"SourceOwnerDBName" xml:"SourceOwnerDBName"`

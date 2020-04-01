@@ -85,23 +85,19 @@ type DescribeMigrationJobsRequest struct {
 // DescribeMigrationJobsResponse is the response struct for api DescribeMigrationJobs
 type DescribeMigrationJobsResponse struct {
 	*responses.BaseResponse
-	PageNumber       int                                 `json:"PageNumber" xml:"PageNumber"`
-	TotalRecordCount int64                               `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageRecordCount  int                                 `json:"PageRecordCount" xml:"PageRecordCount"`
-	MigrationJobs    DescribeMigrationJobsMigrationJobs0 `json:"MigrationJobs" xml:"MigrationJobs"`
+	PageNumber       int                                  `json:"PageNumber" xml:"PageNumber"`
+	TotalRecordCount int64                                `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageRecordCount  int                                  `json:"PageRecordCount" xml:"PageRecordCount"`
+	MigrationJobs    []DescribeMigrationJobsMigrationJob0 `json:"MigrationJobs" xml:"MigrationJobs"`
 }
 
-type DescribeMigrationJobsMigrationJobs0 struct {
-	MigrationJob []DescribeMigrationJobsMigrationJob1 `json:"MigrationJob" xml:"MigrationJob"`
-}
-
-type DescribeMigrationJobsMigrationJob1 struct {
+type DescribeMigrationJobsMigrationJob0 struct {
 	MigrationJobID          string                                        `json:"MigrationJobID" xml:"MigrationJobID"`
 	MigrationJobName        string                                        `json:"MigrationJobName" xml:"MigrationJobName"`
 	PayType                 string                                        `json:"PayType" xml:"PayType"`
 	MigrationJobClass       string                                        `json:"MigrationJobClass" xml:"MigrationJobClass"`
 	MigrationJobStatus      string                                        `json:"MigrationJobStatus" xml:"MigrationJobStatus"`
-	MigrationObject         []DescribeMigrationJobsMigrationObject1       `json:"MigrationObject" xml:"MigrationObject"`
+	MigrationObject         []DescribeMigrationJobsSynchronousObject1     `json:"MigrationObject" xml:"MigrationObject"`
 	SourceEndpoint          DescribeMigrationJobsSourceEndpoint1          `json:"SourceEndpoint" xml:"SourceEndpoint"`
 	DestinationEndpoint     DescribeMigrationJobsDestinationEndpoint1     `json:"DestinationEndpoint" xml:"DestinationEndpoint"`
 	MigrationMode           DescribeMigrationJobsMigrationMode1           `json:"MigrationMode" xml:"MigrationMode"`
@@ -111,11 +107,7 @@ type DescribeMigrationJobsMigrationJob1 struct {
 	DataSynchronization     DescribeMigrationJobsDataSynchronization1     `json:"DataSynchronization" xml:"DataSynchronization"`
 }
 
-type DescribeMigrationJobsMigrationObject1 struct {
-	SynchronousObject []DescribeMigrationJobsSynchronousObject2 `json:"SynchronousObject" xml:"SynchronousObject"`
-}
-
-type DescribeMigrationJobsSynchronousObject2 struct {
+type DescribeMigrationJobsSynchronousObject1 struct {
 	DatabaseName  string   `json:"DatabaseName" xml:"DatabaseName"`
 	WholeDatabase string   `json:"WholeDatabase" xml:"WholeDatabase"`
 	TableList     []string `json:"TableList" xml:"TableList"`
