@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// InitFaceVerify invokes the cloudauth.InitFaceVerify API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/initfaceverify.html
-func (client *Client) InitFaceVerify(request *InitFaceVerifyRequest) (response *InitFaceVerifyResponse, err error) {
-	response = CreateInitFaceVerifyResponse()
+// ContrastFaceVerify invokes the cloudauth.ContrastFaceVerify API synchronously
+// api document: https://help.aliyun.com/api/cloudauth/contrastfaceverify.html
+func (client *Client) ContrastFaceVerify(request *ContrastFaceVerifyRequest) (response *ContrastFaceVerifyResponse, err error) {
+	response = CreateContrastFaceVerifyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// InitFaceVerifyWithChan invokes the cloudauth.InitFaceVerify API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/initfaceverify.html
+// ContrastFaceVerifyWithChan invokes the cloudauth.ContrastFaceVerify API asynchronously
+// api document: https://help.aliyun.com/api/cloudauth/contrastfaceverify.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) InitFaceVerifyWithChan(request *InitFaceVerifyRequest) (<-chan *InitFaceVerifyResponse, <-chan error) {
-	responseChan := make(chan *InitFaceVerifyResponse, 1)
+func (client *Client) ContrastFaceVerifyWithChan(request *ContrastFaceVerifyRequest) (<-chan *ContrastFaceVerifyResponse, <-chan error) {
+	responseChan := make(chan *ContrastFaceVerifyResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.InitFaceVerify(request)
+		response, err := client.ContrastFaceVerify(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) InitFaceVerifyWithChan(request *InitFaceVerifyRequest) (<-
 	return responseChan, errChan
 }
 
-// InitFaceVerifyWithCallback invokes the cloudauth.InitFaceVerify API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/initfaceverify.html
+// ContrastFaceVerifyWithCallback invokes the cloudauth.ContrastFaceVerify API asynchronously
+// api document: https://help.aliyun.com/api/cloudauth/contrastfaceverify.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) InitFaceVerifyWithCallback(request *InitFaceVerifyRequest, callback func(response *InitFaceVerifyResponse, err error)) <-chan int {
+func (client *Client) ContrastFaceVerifyWithCallback(request *ContrastFaceVerifyRequest, callback func(response *ContrastFaceVerifyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *InitFaceVerifyResponse
+		var response *ContrastFaceVerifyResponse
 		var err error
 		defer close(result)
-		response, err = client.InitFaceVerify(request)
+		response, err = client.ContrastFaceVerify(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,29 +73,28 @@ func (client *Client) InitFaceVerifyWithCallback(request *InitFaceVerifyRequest,
 	return result
 }
 
-// InitFaceVerifyRequest is the request struct for api InitFaceVerify
-type InitFaceVerifyRequest struct {
+// ContrastFaceVerifyRequest is the request struct for api ContrastFaceVerify
+type ContrastFaceVerifyRequest struct {
 	*requests.RpcRequest
 	ProductCode            string           `position:"Query" name:"ProductCode"`
+	OssObjectName          string           `position:"Query" name:"OssObjectName"`
 	FaceContrastPicture    string           `position:"Query" name:"FaceContrastPicture"`
+	CertName               string           `position:"Query" name:"CertName"`
+	Ip                     string           `position:"Query" name:"Ip"`
+	Mobile                 string           `position:"Query" name:"Mobile"`
+	DeviceToken            string           `position:"Query" name:"DeviceToken"`
 	UserId                 string           `position:"Query" name:"UserId"`
 	CertifyId              string           `position:"Query" name:"CertifyId"`
 	CertNo                 string           `position:"Query" name:"CertNo"`
 	OuterOrderNo           string           `position:"Query" name:"OuterOrderNo"`
 	CertType               string           `position:"Query" name:"CertType"`
 	FaceContrastPictureUrl string           `position:"Query" name:"FaceContrastPictureUrl"`
-	MetaInfo               string           `position:"Query" name:"MetaInfo"`
-	OssObjectName          string           `position:"Query" name:"OssObjectName"`
-	CertName               string           `position:"Query" name:"CertName"`
-	Ip                     string           `position:"Query" name:"Ip"`
-	Mobile                 string           `position:"Query" name:"Mobile"`
 	SceneId                requests.Integer `position:"Query" name:"SceneId"`
 	OssBucketName          string           `position:"Query" name:"OssBucketName"`
-	ReturnUrl              string           `position:"Query" name:"ReturnUrl"`
 }
 
-// InitFaceVerifyResponse is the response struct for api InitFaceVerify
-type InitFaceVerifyResponse struct {
+// ContrastFaceVerifyResponse is the response struct for api ContrastFaceVerify
+type ContrastFaceVerifyResponse struct {
 	*responses.BaseResponse
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	Message      string       `json:"Message" xml:"Message"`
@@ -103,18 +102,18 @@ type InitFaceVerifyResponse struct {
 	ResultObject ResultObject `json:"ResultObject" xml:"ResultObject"`
 }
 
-// CreateInitFaceVerifyRequest creates a request to invoke InitFaceVerify API
-func CreateInitFaceVerifyRequest() (request *InitFaceVerifyRequest) {
-	request = &InitFaceVerifyRequest{
+// CreateContrastFaceVerifyRequest creates a request to invoke ContrastFaceVerify API
+func CreateContrastFaceVerifyRequest() (request *ContrastFaceVerifyRequest) {
+	request = &ContrastFaceVerifyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "InitFaceVerify", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "ContrastFaceVerify", "cloudauth", "openAPI")
 	return
 }
 
-// CreateInitFaceVerifyResponse creates a response to parse from InitFaceVerify response
-func CreateInitFaceVerifyResponse() (response *InitFaceVerifyResponse) {
-	response = &InitFaceVerifyResponse{
+// CreateContrastFaceVerifyResponse creates a response to parse from ContrastFaceVerify response
+func CreateContrastFaceVerifyResponse() (response *ContrastFaceVerifyResponse) {
+	response = &ContrastFaceVerifyResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

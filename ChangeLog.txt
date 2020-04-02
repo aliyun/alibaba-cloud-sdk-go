@@ -1,3 +1,7 @@
+2020-04-02 Version: v1.61.86
+- Generated 2019-03-07 for `Cloudauth`.
+- Add API ContrastFaceVerify.
+
 2020-04-02 Version: v1.61.85
 - Generated 2019-03-15 for `fnf`.
 - Support for WaitTimeSeconds for DescribeExecution.

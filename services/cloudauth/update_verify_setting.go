@@ -101,7 +101,6 @@ func CreateUpdateVerifySettingRequest() (request *UpdateVerifySettingRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cloudauth", "2019-03-07", "UpdateVerifySetting", "cloudauth", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

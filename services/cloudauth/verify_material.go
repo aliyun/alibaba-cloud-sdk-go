@@ -105,7 +105,6 @@ func CreateVerifyMaterialRequest() (request *VerifyMaterialRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cloudauth", "2019-03-07", "VerifyMaterial", "cloudauth", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

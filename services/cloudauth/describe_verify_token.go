@@ -109,7 +109,6 @@ func CreateDescribeVerifyTokenRequest() (request *DescribeVerifyTokenRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeVerifyToken", "cloudauth", "openAPI")
-	request.Method = requests.POST
 	return
 }
 
