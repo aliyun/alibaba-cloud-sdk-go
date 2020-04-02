@@ -17,11 +17,11 @@ package csb
 
 // VisiableGroup is a nested struct in csb response
 type VisiableGroup struct {
-	Id           int    `json:"Id" xml:"Id"`
-	GroupId      int    `json:"GroupId" xml:"GroupId"`
+	Id           int64  `json:"Id" xml:"Id"`
+	GroupId      int64  `json:"GroupId" xml:"GroupId"`
 	UserId       string `json:"UserId" xml:"UserId"`
-	ServiceId    int    `json:"ServiceId" xml:"ServiceId"`
-	CreateTime   int    `json:"CreateTime" xml:"CreateTime"`
-	ModifiedTime int    `json:"ModifiedTime" xml:"ModifiedTime"`
+	ServiceId    int64  `json:"ServiceId" xml:"ServiceId"`
+	CreateTime   int64  `json:"CreateTime" xml:"CreateTime"`
+	ModifiedTime int64  `json:"ModifiedTime" xml:"ModifiedTime"`
 	Status       int    `json:"Status" xml:"Status"`
 }

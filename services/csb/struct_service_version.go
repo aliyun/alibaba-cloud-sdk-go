@@ -19,7 +19,7 @@ package csb
 type ServiceVersion struct {
 	Active            bool   `json:"Active" xml:"Active"`
 	AllVisiable       bool   `json:"AllVisiable" xml:"AllVisiable"`
-	Id                int    `json:"Id" xml:"Id"`
+	Id                int64  `json:"Id" xml:"Id"`
 	OldVersion        string `json:"OldVersion" xml:"OldVersion"`
 	OttFlag           bool   `json:"OttFlag" xml:"OttFlag"`
 	SSL               bool   `json:"SSL" xml:"SSL"`

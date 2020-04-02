@@ -19,9 +19,9 @@ package csb
 type Item struct {
 	Description      string `json:"Description" xml:"Description"`
 	FrontStatus      string `json:"FrontStatus" xml:"FrontStatus"`
-	GmtCreate        int    `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified      int    `json:"GmtModified" xml:"GmtModified"`
-	Id               int    `json:"Id" xml:"Id"`
+	GmtCreate        int64  `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified      int64  `json:"GmtModified" xml:"GmtModified"`
+	Id               int64  `json:"Id" xml:"Id"`
 	InstanceCategory int    `json:"InstanceCategory" xml:"InstanceCategory"`
 	Name             string `json:"Name" xml:"Name"`
 	StatusCode       int    `json:"StatusCode" xml:"StatusCode"`

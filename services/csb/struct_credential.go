@@ -17,8 +17,8 @@ package csb
 
 // Credential is a nested struct in csb response
 type Credential struct {
-	GmtCreate         int               `json:"GmtCreate" xml:"GmtCreate"`
-	Id                int               `json:"Id" xml:"Id"`
+	GmtCreate         int64             `json:"GmtCreate" xml:"GmtCreate"`
+	Id                int64             `json:"Id" xml:"Id"`
 	Name              string            `json:"Name" xml:"Name"`
 	OwnerAttr         string            `json:"OwnerAttr" xml:"OwnerAttr"`
 	UserId            string            `json:"UserId" xml:"UserId"`

@@ -76,9 +76,9 @@ func (client *Client) FindInstanceListWithCallback(request *FindInstanceListRequ
 // FindInstanceListRequest is the request struct for api FindInstanceList
 type FindInstanceListRequest struct {
 	*requests.RpcRequest
-	SearchTxt string           `position:"Query" name:"SearchTxt"`
 	CsbId     requests.Integer `position:"Query" name:"CsbId"`
 	PageNum   requests.Integer `position:"Query" name:"PageNum"`
+	SearchTxt string           `position:"Query" name:"SearchTxt"`
 	Status    requests.Integer `position:"Query" name:"Status"`
 }
 

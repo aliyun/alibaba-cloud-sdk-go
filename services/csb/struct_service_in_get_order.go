@@ -22,10 +22,10 @@ type ServiceInGetOrder struct {
 	Alias               string `json:"Alias" xml:"Alias"`
 	AllVisiable         bool   `json:"AllVisiable" xml:"AllVisiable"`
 	ConsumeTypesJSON    string `json:"ConsumeTypesJSON" xml:"ConsumeTypesJSON"`
-	CreateTime          int    `json:"CreateTime" xml:"CreateTime"`
-	CsbId               int    `json:"CsbId" xml:"CsbId"`
+	CreateTime          int64  `json:"CreateTime" xml:"CreateTime"`
+	CsbId               int64  `json:"CsbId" xml:"CsbId"`
 	ErrDefJSON          string `json:"ErrDefJSON" xml:"ErrDefJSON"`
-	Id                  int    `json:"Id" xml:"Id"`
+	Id                  int64  `json:"Id" xml:"Id"`
 	InterfaceName       string `json:"InterfaceName" xml:"InterfaceName"`
 	OldVersion          string `json:"OldVersion" xml:"OldVersion"`
 	OttFlag             bool   `json:"OttFlag" xml:"OttFlag"`
@@ -42,7 +42,7 @@ type ServiceInGetOrder struct {
 	SkipAuth            bool   `json:"SkipAuth" xml:"SkipAuth"`
 	StatisticName       string `json:"StatisticName" xml:"StatisticName"`
 	Status              int    `json:"Status" xml:"Status"`
-	UserId              int    `json:"UserId" xml:"UserId"`
+	UserId              int64  `json:"UserId" xml:"UserId"`
 	ValidConsumeTypes   bool   `json:"ValidConsumeTypes" xml:"ValidConsumeTypes"`
 	ValidProvideType    bool   `json:"ValidProvideType" xml:"ValidProvideType"`
 }

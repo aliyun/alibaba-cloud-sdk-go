@@ -78,8 +78,8 @@ type FindServiceStatisticalDataRequest struct {
 	*requests.RpcRequest
 	CsbId       requests.Integer `position:"Query" name:"CsbId"`
 	EndTime     requests.Integer `position:"Query" name:"EndTime"`
-	ServiceName string           `position:"Query" name:"ServiceName"`
 	StartTime   requests.Integer `position:"Query" name:"StartTime"`
+	ServiceName string           `position:"Query" name:"ServiceName"`
 }
 
 // FindServiceStatisticalDataResponse is the response struct for api FindServiceStatisticalData

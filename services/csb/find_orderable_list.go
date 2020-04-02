@@ -78,9 +78,9 @@ type FindOrderableListRequest struct {
 	*requests.RpcRequest
 	ProjectName string           `position:"Query" name:"ProjectName"`
 	CsbId       requests.Integer `position:"Query" name:"CsbId"`
+	PageNum     requests.Integer `position:"Query" name:"PageNum"`
 	Alias       string           `position:"Query" name:"Alias"`
 	ServiceName string           `position:"Query" name:"ServiceName"`
-	PageNum     requests.Integer `position:"Query" name:"PageNum"`
 }
 
 // FindOrderableListResponse is the response struct for api FindOrderableList

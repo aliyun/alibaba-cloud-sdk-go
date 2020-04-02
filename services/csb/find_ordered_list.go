@@ -79,9 +79,9 @@ type FindOrderedListRequest struct {
 	ProjectName  string           `position:"Query" name:"ProjectName"`
 	ShowDelOrder requests.Boolean `position:"Query" name:"ShowDelOrder"`
 	CsbId        requests.Integer `position:"Query" name:"CsbId"`
+	PageNum      requests.Integer `position:"Query" name:"PageNum"`
 	Alias        string           `position:"Query" name:"Alias"`
 	ServiceName  string           `position:"Query" name:"ServiceName"`
-	PageNum      requests.Integer `position:"Query" name:"PageNum"`
 	ServiceId    requests.Integer `position:"Query" name:"ServiceId"`
 	Status       string           `position:"Query" name:"Status"`
 }

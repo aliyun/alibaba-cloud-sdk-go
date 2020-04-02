@@ -17,6 +17,6 @@ package csb
 
 // SlaInfo is a nested struct in csb response
 type SlaInfo struct {
-	Qps string `json:"Qps" xml:"Qps"`
-	Qph string `json:"Qph" xml:"Qph"`
+	Qps int `json:"Qps" xml:"Qps"`
+	Qph int `json:"Qph" xml:"Qph"`
 }

@@ -78,11 +78,12 @@ type FindServiceListRequest struct {
 	*requests.RpcRequest
 	ProjectName    string           `position:"Query" name:"ProjectName"`
 	ShowDelService requests.Boolean `position:"Query" name:"ShowDelService"`
-	CasShowType    requests.Integer `position:"Query" name:"CasShowType"`
 	CsbId          requests.Integer `position:"Query" name:"CsbId"`
+	PageNum        requests.Integer `position:"Query" name:"PageNum"`
+	CasShowType    requests.Integer `position:"Query" name:"CasShowType"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	Alias          string           `position:"Query" name:"Alias"`
 	ServiceName    string           `position:"Query" name:"ServiceName"`
-	PageNum        requests.Integer `position:"Query" name:"PageNum"`
 }
 
 // FindServiceListResponse is the response struct for api FindServiceList

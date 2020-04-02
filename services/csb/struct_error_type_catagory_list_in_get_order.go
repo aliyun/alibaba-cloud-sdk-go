@@ -17,5 +17,5 @@ package csb
 
 // ErrorTypeCatagoryListInGetOrder is a nested struct in csb response
 type ErrorTypeCatagoryListInGetOrder struct {
-	ErrorTypeCatagory []ErrorTypeCatagory `json:"ErrorTypeCatagory" xml:"ErrorTypeCatagory"`
+	ErrorTypeCatagory []ErrorTypeCatagoryInGetOrder `json:"ErrorTypeCatagory" xml:"ErrorTypeCatagory"`
 }

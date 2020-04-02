@@ -17,18 +17,18 @@ package csb
 
 // OrderInFindOrderedList is a nested struct in csb response
 type OrderInFindOrderedList struct {
-	Alias                 string                               `json:"Alias" xml:"Alias"`
-	ProjectName           string                               `json:"ProjectName" xml:"ProjectName"`
-	ServiceName           string                               `json:"ServiceName" xml:"ServiceName"`
-	ServiceVersion        string                               `json:"ServiceVersion" xml:"ServiceVersion"`
-	OrderStatus           int                                  `json:"OrderStatus" xml:"OrderStatus"`
-	AliveOrderCount       int                                  `json:"AliveOrderCount" xml:"AliveOrderCount"`
-	GmtCreate             int                                  `json:"GmtCreate" xml:"GmtCreate"`
-	MaxRT                 int                                  `json:"MaxRT" xml:"MaxRT"`
-	MinRT                 int                                  `json:"MinRT" xml:"MinRT"`
-	ServiceId             string                               `json:"ServiceId" xml:"ServiceId"`
-	ServiceStatus         int                                  `json:"ServiceStatus" xml:"ServiceStatus"`
-	Total                 Total                                `json:"Total" xml:"Total"`
-	ErrorTypeCatagoryList []ErrorTypeCatagoryInFindOrderedList `json:"ErrorTypeCatagoryList" xml:"ErrorTypeCatagoryList"`
-	Orders                []Order                              `json:"Orders" xml:"Orders"`
+	Alias                 string              `json:"Alias" xml:"Alias"`
+	ProjectName           string              `json:"ProjectName" xml:"ProjectName"`
+	ServiceName           string              `json:"ServiceName" xml:"ServiceName"`
+	ServiceVersion        string              `json:"ServiceVersion" xml:"ServiceVersion"`
+	OrderStatus           int                 `json:"OrderStatus" xml:"OrderStatus"`
+	AliveOrderCount       int                 `json:"AliveOrderCount" xml:"AliveOrderCount"`
+	GmtCreate             int64               `json:"GmtCreate" xml:"GmtCreate"`
+	MaxRT                 int                 `json:"MaxRT" xml:"MaxRT"`
+	MinRT                 int                 `json:"MinRT" xml:"MinRT"`
+	ServiceId             string              `json:"ServiceId" xml:"ServiceId"`
+	ServiceStatus         int                 `json:"ServiceStatus" xml:"ServiceStatus"`
+	Total                 Total               `json:"Total" xml:"Total"`
+	ErrorTypeCatagoryList []ErrorTypeCatagory `json:"ErrorTypeCatagoryList" xml:"ErrorTypeCatagoryList"`
+	Orders                []Order             `json:"Orders" xml:"Orders"`
 }

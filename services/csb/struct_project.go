@@ -21,17 +21,17 @@ type Project struct {
 	Status               int    `json:"Status" xml:"Status"`
 	JarFileKey           string `json:"JarFileKey" xml:"JarFileKey"`
 	ProjectOwnerEmail    string `json:"ProjectOwnerEmail" xml:"ProjectOwnerEmail"`
-	Id                   int    `json:"Id" xml:"Id"`
+	Id                   int64  `json:"Id" xml:"Id"`
 	ProjectOwnerName     string `json:"ProjectOwnerName" xml:"ProjectOwnerName"`
 	ProjectOwnerPhoneNum string `json:"ProjectOwnerPhoneNum" xml:"ProjectOwnerPhoneNum"`
-	GmtCreate            int    `json:"GmtCreate" xml:"GmtCreate"`
+	GmtCreate            int64  `json:"GmtCreate" xml:"GmtCreate"`
 	InterfaceJarName     string `json:"InterfaceJarName" xml:"InterfaceJarName"`
 	DeleteFlag           int    `json:"DeleteFlag" xml:"DeleteFlag"`
 	OwnerId              string `json:"OwnerId" xml:"OwnerId"`
 	ProjectName          string `json:"ProjectName" xml:"ProjectName"`
 	UserId               string `json:"UserId" xml:"UserId"`
 	ApiNum               int    `json:"ApiNum" xml:"ApiNum"`
-	GmtModified          int    `json:"GmtModified" xml:"GmtModified"`
-	CsbId                int    `json:"CsbId" xml:"CsbId"`
+	GmtModified          int64  `json:"GmtModified" xml:"GmtModified"`
+	CsbId                int64  `json:"CsbId" xml:"CsbId"`
 	Description          string `json:"Description" xml:"Description"`
 }

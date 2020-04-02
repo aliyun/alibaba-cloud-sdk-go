@@ -17,10 +17,10 @@ package csb
 
 // Credentials is a nested struct in csb response
 type Credentials struct {
-	GmtCreate         int               `json:"GmtCreate" xml:"GmtCreate"`
+	GmtCreate         int64             `json:"GmtCreate" xml:"GmtCreate"`
 	Name              string            `json:"Name" xml:"Name"`
 	UserId            string            `json:"UserId" xml:"UserId"`
-	Id                int               `json:"Id" xml:"Id"`
+	Id                int64             `json:"Id" xml:"Id"`
 	CurrentCredential CurrentCredential `json:"CurrentCredential" xml:"CurrentCredential"`
 	NewCredential     NewCredential     `json:"NewCredential" xml:"NewCredential"`
 }

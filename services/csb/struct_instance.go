@@ -25,15 +25,15 @@ type Instance struct {
 	ClientVpcId          string `json:"ClientVpcId" xml:"ClientVpcId"`
 	ClientVpcName        string `json:"ClientVpcName" xml:"ClientVpcName"`
 	ClusterMembers       int    `json:"ClusterMembers" xml:"ClusterMembers"`
-	CredentialGroup      int    `json:"CredentialGroup" xml:"CredentialGroup"`
+	CredentialGroup      int64  `json:"CredentialGroup" xml:"CredentialGroup"`
 	CsbAccountId         string `json:"CsbAccountId" xml:"CsbAccountId"`
-	CsbId                int    `json:"CsbId" xml:"CsbId"`
+	CsbId                int64  `json:"CsbId" xml:"CsbId"`
 	DbStatus             int    `json:"DbStatus" xml:"DbStatus"`
 	Description          string `json:"Description" xml:"Description"`
 	FrontStatus          string `json:"FrontStatus" xml:"FrontStatus"`
-	GmtCreate            int    `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified          int    `json:"GmtModified" xml:"GmtModified"`
-	Id                   int    `json:"Id" xml:"Id"`
+	GmtCreate            int64  `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified          int64  `json:"GmtModified" xml:"GmtModified"`
+	Id                   int64  `json:"Id" xml:"Id"`
 	InstanceCategory     int    `json:"InstanceCategory" xml:"InstanceCategory"`
 	InstanceType         int    `json:"InstanceType" xml:"InstanceType"`
 	IpList               string `json:"IpList" xml:"IpList"`
@@ -42,9 +42,9 @@ type Instance struct {
 	Name                 string `json:"Name" xml:"Name"`
 	OwnerId              string `json:"OwnerId" xml:"OwnerId"`
 	SentinelCtlStr       string `json:"SentinelCtlStr" xml:"SentinelCtlStr"`
-	SentinelCtrl         int    `json:"SentinelCtrl" xml:"SentinelCtrl"`
+	SentinelCtrl         int64  `json:"SentinelCtrl" xml:"SentinelCtrl"`
 	SentinelGridInterval int    `json:"SentinelGridInterval" xml:"SentinelGridInterval"`
-	SentinelQps          int    `json:"SentinelQps" xml:"SentinelQps"`
+	SentinelQps          int64  `json:"SentinelQps" xml:"SentinelQps"`
 	Status               string `json:"Status" xml:"Status"`
 	StatusCode           int    `json:"StatusCode" xml:"StatusCode"`
 	TenantId             string `json:"TenantId" xml:"TenantId"`

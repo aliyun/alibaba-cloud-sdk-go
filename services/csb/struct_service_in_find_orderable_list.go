@@ -21,11 +21,11 @@ type ServiceInFindOrderableList struct {
 	AllVisiable    bool   `json:"AllVisiable" xml:"AllVisiable"`
 	ApproveUserId  string `json:"ApproveUserId" xml:"ApproveUserId"`
 	CasTargets     string `json:"CasTargets" xml:"CasTargets"`
-	CreateTime     int    `json:"CreateTime" xml:"CreateTime"`
-	CsbId          int    `json:"CsbId" xml:"CsbId"`
-	Id             int    `json:"Id" xml:"Id"`
+	CreateTime     int64  `json:"CreateTime" xml:"CreateTime"`
+	CsbId          int64  `json:"CsbId" xml:"CsbId"`
+	Id             int64  `json:"Id" xml:"Id"`
 	InterfaceName  string `json:"InterfaceName" xml:"InterfaceName"`
-	ModifiedTime   int    `json:"ModifiedTime" xml:"ModifiedTime"`
+	ModifiedTime   int64  `json:"ModifiedTime" xml:"ModifiedTime"`
 	OwnerId        string `json:"OwnerId" xml:"OwnerId"`
 	PrincipalName  string `json:"PrincipalName" xml:"PrincipalName"`
 	ProjectId      string `json:"ProjectId" xml:"ProjectId"`
