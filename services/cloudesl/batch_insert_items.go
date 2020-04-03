@@ -76,63 +76,76 @@ func (client *Client) BatchInsertItemsWithCallback(request *BatchInsertItemsRequ
 // BatchInsertItemsRequest is the request struct for api BatchInsertItems
 type BatchInsertItemsRequest struct {
 	*requests.RpcRequest
+	StoreId  string                      `position:"Body" name:"StoreId"`
 	ItemInfo *[]BatchInsertItemsItemInfo `position:"Body" name:"ItemInfo"  type:"Repeated"`
-	StoreId  string                      `position:"Query" name:"StoreId"`
 }
 
 // BatchInsertItemsItemInfo is a repeated param struct in BatchInsertItemsRequest
 type BatchInsertItemsItemInfo struct {
 	MemberPrice       string `name:"MemberPrice"`
 	ActionPrice       string `name:"ActionPrice"`
-	ProductionPlace   string `name:"ProductionPlace"`
 	BeSourceCode      string `name:"BeSourceCode"`
-	StoreId           string `name:"StoreId"`
 	BrandName         string `name:"BrandName"`
 	PromotionStart    string `name:"PromotionStart"`
-	SourceCode        string `name:"SourceCode"`
-	ItemId            string `name:"ItemId"`
-	ExtraAttribute    string `name:"ExtraAttribute"`
-	CompanyId         string `name:"CompanyId"`
 	PriceUnit         string `name:"PriceUnit"`
 	Rank              string `name:"Rank"`
+	ItemInfoIndex     string `name:"ItemInfoIndex"`
 	ItemBarCode       string `name:"ItemBarCode"`
+	CustomizeFeatureK string `name:"CustomizeFeatureK"`
+	CustomizeFeatureL string `name:"CustomizeFeatureL"`
+	CustomizeFeatureM string `name:"CustomizeFeatureM"`
 	BePromotion       string `name:"BePromotion"`
+	CustomizeFeatureN string `name:"CustomizeFeatureN"`
+	CustomizeFeatureO string `name:"CustomizeFeatureO"`
 	PromotionEnd      string `name:"PromotionEnd"`
 	ItemTitle         string `name:"ItemTitle"`
-	OriginalPrice     string `name:"OriginalPrice"`
-	ItemShortTitle    string `name:"ItemShortTitle"`
 	CustomizeFeatureC string `name:"CustomizeFeatureC"`
-	ItemQrCode        string `name:"ItemQrCode"`
 	CustomizeFeatureD string `name:"CustomizeFeatureD"`
-	PromotionReason   string `name:"PromotionReason"`
+	ItemQrCode        string `name:"ItemQrCode"`
 	CustomizeFeatureE string `name:"CustomizeFeatureE"`
+	InventoryStatus   string `name:"InventoryStatus"`
+	PromotionReason   string `name:"PromotionReason"`
 	CustomizeFeatureF string `name:"CustomizeFeatureF"`
-	ForestSecondId    string `name:"ForestSecondId"`
 	CustomizeFeatureG string `name:"CustomizeFeatureG"`
 	CustomizeFeatureH string `name:"CustomizeFeatureH"`
 	CustomizeFeatureI string `name:"CustomizeFeatureI"`
 	CustomizeFeatureJ string `name:"CustomizeFeatureJ"`
-	OptionGroups      string `name:"OptionGroups"`
-	ModelNumber       string `name:"ModelNumber"`
-	SaleSpec          string `name:"SaleSpec"`
 	CustomizeFeatureA string `name:"CustomizeFeatureA"`
 	CustomizeFeatureB string `name:"CustomizeFeatureB"`
 	SuggestPrice      string `name:"SuggestPrice"`
 	ForestFirstId     string `name:"ForestFirstId"`
+	ProductionPlace   string `name:"ProductionPlace"`
+	Manufacturer      string `name:"Manufacturer"`
+	SourceCode        string `name:"SourceCode"`
+	ItemId            string `name:"ItemId"`
+	SalesPrice        string `name:"SalesPrice"`
+	OriginalPrice     string `name:"OriginalPrice"`
+	ItemShortTitle    string `name:"ItemShortTitle"`
+	ForestSecondId    string `name:"ForestSecondId"`
+	ItemPicUrl        string `name:"ItemPicUrl"`
+	SupplierName      string `name:"SupplierName"`
+	Material          string `name:"Material"`
+	ModelNumber       string `name:"ModelNumber"`
+	SaleSpec          string `name:"SaleSpec"`
 	CategoryName      string `name:"CategoryName"`
+	TaxFee            string `name:"TaxFee"`
 	EnergyEfficiency  string `name:"EnergyEfficiency"`
-	SkuId             string `name:"SkuId"`
 	PromotionText     string `name:"PromotionText"`
+	SkuId             string `name:"SkuId"`
 }
 
 // BatchInsertItemsResponse is the response struct for api BatchInsertItems
 type BatchInsertItemsResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	Success      bool         `json:"Success" xml:"Success"`
-	Message      string       `json:"Message" xml:"Message"`
-	ErrorCode    string       `json:"ErrorCode" xml:"ErrorCode"`
-	BatchResults BatchResults `json:"BatchResults" xml:"BatchResults"`
+	ErrorMessage   string        `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode      string        `json:"ErrorCode" xml:"ErrorCode"`
+	Message        string        `json:"Message" xml:"Message"`
+	DynamicCode    string        `json:"DynamicCode" xml:"DynamicCode"`
+	Code           string        `json:"Code" xml:"Code"`
+	DynamicMessage string        `json:"DynamicMessage" xml:"DynamicMessage"`
+	RequestId      string        `json:"RequestId" xml:"RequestId"`
+	Success        bool          `json:"Success" xml:"Success"`
+	BatchResults   []BatchResult `json:"BatchResults" xml:"BatchResults"`
 }
 
 // CreateBatchInsertItemsRequest creates a request to invoke BatchInsertItems API
@@ -140,7 +153,7 @@ func CreateBatchInsertItemsRequest() (request *BatchInsertItemsRequest) {
 	request = &BatchInsertItemsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2018-08-01", "BatchInsertItems", "", "")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "BatchInsertItems", "cloudesl", "openAPI")
 	return
 }
 

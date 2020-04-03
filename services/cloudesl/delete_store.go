@@ -76,16 +76,20 @@ func (client *Client) DeleteStoreWithCallback(request *DeleteStoreRequest, callb
 // DeleteStoreRequest is the request struct for api DeleteStore
 type DeleteStoreRequest struct {
 	*requests.RpcRequest
-	StoreId string `position:"Query" name:"StoreId"`
+	StoreId string `position:"Body" name:"StoreId"`
 }
 
 // DeleteStoreResponse is the response struct for api DeleteStore
 type DeleteStoreResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	Message        string `json:"Message" xml:"Message"`
+	DynamicCode    string `json:"DynamicCode" xml:"DynamicCode"`
+	Code           string `json:"Code" xml:"Code"`
+	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDeleteStoreRequest creates a request to invoke DeleteStore API
@@ -93,7 +97,7 @@ func CreateDeleteStoreRequest() (request *DeleteStoreRequest) {
 	request = &DeleteStoreRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2018-08-01", "DeleteStore", "", "")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "DeleteStore", "cloudesl", "openAPI")
 	return
 }
 

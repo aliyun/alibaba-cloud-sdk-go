@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UnbindEslDevice invokes the cloudesl.UnbindEslDevice API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/unbindesldevice.html
-func (client *Client) UnbindEslDevice(request *UnbindEslDeviceRequest) (response *UnbindEslDeviceResponse, err error) {
-	response = CreateUnbindEslDeviceResponse()
+// AddUser invokes the cloudesl.AddUser API synchronously
+// api document: https://help.aliyun.com/api/cloudesl/adduser.html
+func (client *Client) AddUser(request *AddUserRequest) (response *AddUserResponse, err error) {
+	response = CreateAddUserResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UnbindEslDeviceWithChan invokes the cloudesl.UnbindEslDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/unbindesldevice.html
+// AddUserWithChan invokes the cloudesl.AddUser API asynchronously
+// api document: https://help.aliyun.com/api/cloudesl/adduser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) UnbindEslDeviceWithChan(request *UnbindEslDeviceRequest) (<-chan *UnbindEslDeviceResponse, <-chan error) {
-	responseChan := make(chan *UnbindEslDeviceResponse, 1)
+func (client *Client) AddUserWithChan(request *AddUserRequest) (<-chan *AddUserResponse, <-chan error) {
+	responseChan := make(chan *AddUserResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UnbindEslDevice(request)
+		response, err := client.AddUser(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) UnbindEslDeviceWithChan(request *UnbindEslDeviceRequest) (
 	return responseChan, errChan
 }
 
-// UnbindEslDeviceWithCallback invokes the cloudesl.UnbindEslDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/unbindesldevice.html
+// AddUserWithCallback invokes the cloudesl.AddUser API asynchronously
+// api document: https://help.aliyun.com/api/cloudesl/adduser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) UnbindEslDeviceWithCallback(request *UnbindEslDeviceRequest, callback func(response *UnbindEslDeviceResponse, err error)) <-chan int {
+func (client *Client) AddUserWithCallback(request *AddUserRequest, callback func(response *AddUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UnbindEslDeviceResponse
+		var response *AddUserResponse
 		var err error
 		defer close(result)
-		response, err = client.UnbindEslDevice(request)
+		response, err = client.AddUser(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,19 +73,14 @@ func (client *Client) UnbindEslDeviceWithCallback(request *UnbindEslDeviceReques
 	return result
 }
 
-// UnbindEslDeviceRequest is the request struct for api UnbindEslDevice
-type UnbindEslDeviceRequest struct {
+// AddUserRequest is the request struct for api AddUser
+type AddUserRequest struct {
 	*requests.RpcRequest
-	Column      string           `position:"Body" name:"Column"`
-	StoreId     string           `position:"Body" name:"StoreId"`
-	Layer       requests.Integer `position:"Body" name:"Layer"`
-	Shelf       string           `position:"Body" name:"Shelf"`
-	EslBarCode  string           `position:"Body" name:"EslBarCode"`
-	ItemBarCode string           `position:"Body" name:"ItemBarCode"`
+	UserId string `position:"Body" name:"UserId"`
 }
 
-// UnbindEslDeviceResponse is the response struct for api UnbindEslDevice
-type UnbindEslDeviceResponse struct {
+// AddUserResponse is the response struct for api AddUser
+type AddUserResponse struct {
 	*responses.BaseResponse
 	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
@@ -97,18 +92,18 @@ type UnbindEslDeviceResponse struct {
 	Success        bool   `json:"Success" xml:"Success"`
 }
 
-// CreateUnbindEslDeviceRequest creates a request to invoke UnbindEslDevice API
-func CreateUnbindEslDeviceRequest() (request *UnbindEslDeviceRequest) {
-	request = &UnbindEslDeviceRequest{
+// CreateAddUserRequest creates a request to invoke AddUser API
+func CreateAddUserRequest() (request *AddUserRequest) {
+	request = &AddUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "UnbindEslDevice", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "AddUser", "cloudesl", "openAPI")
 	return
 }
 
-// CreateUnbindEslDeviceResponse creates a response to parse from UnbindEslDevice response
-func CreateUnbindEslDeviceResponse() (response *UnbindEslDeviceResponse) {
-	response = &UnbindEslDeviceResponse{
+// CreateAddUserResponse creates a response to parse from AddUser response
+func CreateAddUserResponse() (response *AddUserResponse) {
+	response = &AddUserResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

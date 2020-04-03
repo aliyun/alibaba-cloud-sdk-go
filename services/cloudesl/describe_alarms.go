@@ -76,28 +76,31 @@ func (client *Client) DescribeAlarmsWithCallback(request *DescribeAlarmsRequest,
 // DescribeAlarmsRequest is the request struct for api DescribeAlarms
 type DescribeAlarmsRequest struct {
 	*requests.RpcRequest
-	ErrorType     string           `position:"Query" name:"ErrorType"`
-	ToAlarmTime   string           `position:"Query" name:"ToAlarmTime"`
-	AlarmType     string           `position:"Query" name:"AlarmType"`
-	FromAlarmTime string           `position:"Query" name:"FromAlarmTime"`
-	AlarmId       string           `position:"Query" name:"AlarmId"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	StoreId       string           `position:"Query" name:"StoreId"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
-	AlarmStatus   string           `position:"Query" name:"AlarmStatus"`
+	StoreId     string           `position:"Body" name:"StoreId"`
+	PageNumber  requests.Integer `position:"Body" name:"PageNumber"`
+	PageSize    requests.Integer `position:"Body" name:"PageSize"`
+	AlarmType   string           `position:"Body" name:"AlarmType"`
+	AlarmStatus string           `position:"Body" name:"AlarmStatus"`
+	ErrorType   string           `position:"Body" name:"ErrorType"`
+	AlarmId     string           `position:"Body" name:"AlarmId"`
+	DeviceMac   string           `position:"Body" name:"DeviceMac"`
 }
 
 // DescribeAlarmsResponse is the response struct for api DescribeAlarms
 type DescribeAlarmsResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Success    bool   `json:"Success" xml:"Success"`
-	Message    string `json:"Message" xml:"Message"`
-	ErrorCode  string `json:"ErrorCode" xml:"ErrorCode"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Alarms     Alarms `json:"Alarms" xml:"Alarms"`
+	ErrorMessage   string      `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode      string      `json:"ErrorCode" xml:"ErrorCode"`
+	PageSize       int         `json:"PageSize" xml:"PageSize"`
+	Message        string      `json:"Message" xml:"Message"`
+	TotalCount     int         `json:"TotalCount" xml:"TotalCount"`
+	PageNumber     int         `json:"PageNumber" xml:"PageNumber"`
+	DynamicCode    string      `json:"DynamicCode" xml:"DynamicCode"`
+	Code           string      `json:"Code" xml:"Code"`
+	DynamicMessage string      `json:"DynamicMessage" xml:"DynamicMessage"`
+	RequestId      string      `json:"RequestId" xml:"RequestId"`
+	Success        bool        `json:"Success" xml:"Success"`
+	Alarms         []AlarmInfo `json:"Alarms" xml:"Alarms"`
 }
 
 // CreateDescribeAlarmsRequest creates a request to invoke DescribeAlarms API
@@ -105,7 +108,7 @@ func CreateDescribeAlarmsRequest() (request *DescribeAlarmsRequest) {
 	request = &DescribeAlarmsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2018-08-01", "DescribeAlarms", "", "")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeAlarms", "cloudesl", "openAPI")
 	return
 }
 

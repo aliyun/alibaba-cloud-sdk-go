@@ -1,3 +1,7 @@
+2020-04-03 Version: v1.61.89
+- Generated 2020-02-01 for `cloudesl`.
+- Support shelf type for planogram position.
+
 2020-04-03 Version: v1.61.88
 - Generated 2017-12-25 for `OpenSearch`.
 - Support sort script.

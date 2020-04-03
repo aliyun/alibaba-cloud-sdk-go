@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UnbindEslDevice invokes the cloudesl.UnbindEslDevice API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/unbindesldevice.html
-func (client *Client) UnbindEslDevice(request *UnbindEslDeviceRequest) (response *UnbindEslDeviceResponse, err error) {
-	response = CreateUnbindEslDeviceResponse()
+// GetUser invokes the cloudesl.GetUser API synchronously
+// api document: https://help.aliyun.com/api/cloudesl/getuser.html
+func (client *Client) GetUser(request *GetUserRequest) (response *GetUserResponse, err error) {
+	response = CreateGetUserResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UnbindEslDeviceWithChan invokes the cloudesl.UnbindEslDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/unbindesldevice.html
+// GetUserWithChan invokes the cloudesl.GetUser API asynchronously
+// api document: https://help.aliyun.com/api/cloudesl/getuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) UnbindEslDeviceWithChan(request *UnbindEslDeviceRequest) (<-chan *UnbindEslDeviceResponse, <-chan error) {
-	responseChan := make(chan *UnbindEslDeviceResponse, 1)
+func (client *Client) GetUserWithChan(request *GetUserRequest) (<-chan *GetUserResponse, <-chan error) {
+	responseChan := make(chan *GetUserResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UnbindEslDevice(request)
+		response, err := client.GetUser(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) UnbindEslDeviceWithChan(request *UnbindEslDeviceRequest) (
 	return responseChan, errChan
 }
 
-// UnbindEslDeviceWithCallback invokes the cloudesl.UnbindEslDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/unbindesldevice.html
+// GetUserWithCallback invokes the cloudesl.GetUser API asynchronously
+// api document: https://help.aliyun.com/api/cloudesl/getuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) UnbindEslDeviceWithCallback(request *UnbindEslDeviceRequest, callback func(response *UnbindEslDeviceResponse, err error)) <-chan int {
+func (client *Client) GetUserWithCallback(request *GetUserRequest, callback func(response *GetUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UnbindEslDeviceResponse
+		var response *GetUserResponse
 		var err error
 		defer close(result)
-		response, err = client.UnbindEslDevice(request)
+		response, err = client.GetUser(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,19 +73,14 @@ func (client *Client) UnbindEslDeviceWithCallback(request *UnbindEslDeviceReques
 	return result
 }
 
-// UnbindEslDeviceRequest is the request struct for api UnbindEslDevice
-type UnbindEslDeviceRequest struct {
+// GetUserRequest is the request struct for api GetUser
+type GetUserRequest struct {
 	*requests.RpcRequest
-	Column      string           `position:"Body" name:"Column"`
-	StoreId     string           `position:"Body" name:"StoreId"`
-	Layer       requests.Integer `position:"Body" name:"Layer"`
-	Shelf       string           `position:"Body" name:"Shelf"`
-	EslBarCode  string           `position:"Body" name:"EslBarCode"`
-	ItemBarCode string           `position:"Body" name:"ItemBarCode"`
+	UserId string `position:"Body" name:"UserId"`
 }
 
-// UnbindEslDeviceResponse is the response struct for api UnbindEslDevice
-type UnbindEslDeviceResponse struct {
+// GetUserResponse is the response struct for api GetUser
+type GetUserResponse struct {
 	*responses.BaseResponse
 	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
@@ -95,20 +90,21 @@ type UnbindEslDeviceResponse struct {
 	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
+	User           User   `json:"User" xml:"User"`
 }
 
-// CreateUnbindEslDeviceRequest creates a request to invoke UnbindEslDevice API
-func CreateUnbindEslDeviceRequest() (request *UnbindEslDeviceRequest) {
-	request = &UnbindEslDeviceRequest{
+// CreateGetUserRequest creates a request to invoke GetUser API
+func CreateGetUserRequest() (request *GetUserRequest) {
+	request = &GetUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "UnbindEslDevice", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "GetUser", "cloudesl", "openAPI")
 	return
 }
 
-// CreateUnbindEslDeviceResponse creates a response to parse from UnbindEslDevice response
-func CreateUnbindEslDeviceResponse() (response *UnbindEslDeviceResponse) {
-	response = &UnbindEslDeviceResponse{
+// CreateGetUserResponse creates a response to parse from GetUser response
+func CreateGetUserResponse() (response *GetUserResponse) {
+	response = &GetUserResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

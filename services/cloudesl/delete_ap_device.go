@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UnbindEslDevice invokes the cloudesl.UnbindEslDevice API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/unbindesldevice.html
-func (client *Client) UnbindEslDevice(request *UnbindEslDeviceRequest) (response *UnbindEslDeviceResponse, err error) {
-	response = CreateUnbindEslDeviceResponse()
+// DeleteApDevice invokes the cloudesl.DeleteApDevice API synchronously
+// api document: https://help.aliyun.com/api/cloudesl/deleteapdevice.html
+func (client *Client) DeleteApDevice(request *DeleteApDeviceRequest) (response *DeleteApDeviceResponse, err error) {
+	response = CreateDeleteApDeviceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UnbindEslDeviceWithChan invokes the cloudesl.UnbindEslDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/unbindesldevice.html
+// DeleteApDeviceWithChan invokes the cloudesl.DeleteApDevice API asynchronously
+// api document: https://help.aliyun.com/api/cloudesl/deleteapdevice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) UnbindEslDeviceWithChan(request *UnbindEslDeviceRequest) (<-chan *UnbindEslDeviceResponse, <-chan error) {
-	responseChan := make(chan *UnbindEslDeviceResponse, 1)
+func (client *Client) DeleteApDeviceWithChan(request *DeleteApDeviceRequest) (<-chan *DeleteApDeviceResponse, <-chan error) {
+	responseChan := make(chan *DeleteApDeviceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UnbindEslDevice(request)
+		response, err := client.DeleteApDevice(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) UnbindEslDeviceWithChan(request *UnbindEslDeviceRequest) (
 	return responseChan, errChan
 }
 
-// UnbindEslDeviceWithCallback invokes the cloudesl.UnbindEslDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/unbindesldevice.html
+// DeleteApDeviceWithCallback invokes the cloudesl.DeleteApDevice API asynchronously
+// api document: https://help.aliyun.com/api/cloudesl/deleteapdevice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) UnbindEslDeviceWithCallback(request *UnbindEslDeviceRequest, callback func(response *UnbindEslDeviceResponse, err error)) <-chan int {
+func (client *Client) DeleteApDeviceWithCallback(request *DeleteApDeviceRequest, callback func(response *DeleteApDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UnbindEslDeviceResponse
+		var response *DeleteApDeviceResponse
 		var err error
 		defer close(result)
-		response, err = client.UnbindEslDevice(request)
+		response, err = client.DeleteApDevice(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,19 +73,15 @@ func (client *Client) UnbindEslDeviceWithCallback(request *UnbindEslDeviceReques
 	return result
 }
 
-// UnbindEslDeviceRequest is the request struct for api UnbindEslDevice
-type UnbindEslDeviceRequest struct {
+// DeleteApDeviceRequest is the request struct for api DeleteApDevice
+type DeleteApDeviceRequest struct {
 	*requests.RpcRequest
-	Column      string           `position:"Body" name:"Column"`
-	StoreId     string           `position:"Body" name:"StoreId"`
-	Layer       requests.Integer `position:"Body" name:"Layer"`
-	Shelf       string           `position:"Body" name:"Shelf"`
-	EslBarCode  string           `position:"Body" name:"EslBarCode"`
-	ItemBarCode string           `position:"Body" name:"ItemBarCode"`
+	ApMac   string `position:"Body" name:"ApMac"`
+	StoreId string `position:"Body" name:"StoreId"`
 }
 
-// UnbindEslDeviceResponse is the response struct for api UnbindEslDevice
-type UnbindEslDeviceResponse struct {
+// DeleteApDeviceResponse is the response struct for api DeleteApDevice
+type DeleteApDeviceResponse struct {
 	*responses.BaseResponse
 	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
@@ -97,18 +93,18 @@ type UnbindEslDeviceResponse struct {
 	Success        bool   `json:"Success" xml:"Success"`
 }
 
-// CreateUnbindEslDeviceRequest creates a request to invoke UnbindEslDevice API
-func CreateUnbindEslDeviceRequest() (request *UnbindEslDeviceRequest) {
-	request = &UnbindEslDeviceRequest{
+// CreateDeleteApDeviceRequest creates a request to invoke DeleteApDevice API
+func CreateDeleteApDeviceRequest() (request *DeleteApDeviceRequest) {
+	request = &DeleteApDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "UnbindEslDevice", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "DeleteApDevice", "cloudesl", "openAPI")
 	return
 }
 
-// CreateUnbindEslDeviceResponse creates a response to parse from UnbindEslDevice response
-func CreateUnbindEslDeviceResponse() (response *UnbindEslDeviceResponse) {
-	response = &UnbindEslDeviceResponse{
+// CreateDeleteApDeviceResponse creates a response to parse from DeleteApDevice response
+func CreateDeleteApDeviceResponse() (response *DeleteApDeviceResponse) {
+	response = &DeleteApDeviceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

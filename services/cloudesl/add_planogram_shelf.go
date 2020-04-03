@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UnbindEslDevice invokes the cloudesl.UnbindEslDevice API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/unbindesldevice.html
-func (client *Client) UnbindEslDevice(request *UnbindEslDeviceRequest) (response *UnbindEslDeviceResponse, err error) {
-	response = CreateUnbindEslDeviceResponse()
+// AddPlanogramShelf invokes the cloudesl.AddPlanogramShelf API synchronously
+// api document: https://help.aliyun.com/api/cloudesl/addplanogramshelf.html
+func (client *Client) AddPlanogramShelf(request *AddPlanogramShelfRequest) (response *AddPlanogramShelfResponse, err error) {
+	response = CreateAddPlanogramShelfResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UnbindEslDeviceWithChan invokes the cloudesl.UnbindEslDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/unbindesldevice.html
+// AddPlanogramShelfWithChan invokes the cloudesl.AddPlanogramShelf API asynchronously
+// api document: https://help.aliyun.com/api/cloudesl/addplanogramshelf.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) UnbindEslDeviceWithChan(request *UnbindEslDeviceRequest) (<-chan *UnbindEslDeviceResponse, <-chan error) {
-	responseChan := make(chan *UnbindEslDeviceResponse, 1)
+func (client *Client) AddPlanogramShelfWithChan(request *AddPlanogramShelfRequest) (<-chan *AddPlanogramShelfResponse, <-chan error) {
+	responseChan := make(chan *AddPlanogramShelfResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UnbindEslDevice(request)
+		response, err := client.AddPlanogramShelf(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) UnbindEslDeviceWithChan(request *UnbindEslDeviceRequest) (
 	return responseChan, errChan
 }
 
-// UnbindEslDeviceWithCallback invokes the cloudesl.UnbindEslDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/unbindesldevice.html
+// AddPlanogramShelfWithCallback invokes the cloudesl.AddPlanogramShelf API asynchronously
+// api document: https://help.aliyun.com/api/cloudesl/addplanogramshelf.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) UnbindEslDeviceWithCallback(request *UnbindEslDeviceRequest, callback func(response *UnbindEslDeviceResponse, err error)) <-chan int {
+func (client *Client) AddPlanogramShelfWithCallback(request *AddPlanogramShelfRequest, callback func(response *AddPlanogramShelfResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UnbindEslDeviceResponse
+		var response *AddPlanogramShelfResponse
 		var err error
 		defer close(result)
-		response, err = client.UnbindEslDevice(request)
+		response, err = client.AddPlanogramShelf(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,19 +73,16 @@ func (client *Client) UnbindEslDeviceWithCallback(request *UnbindEslDeviceReques
 	return result
 }
 
-// UnbindEslDeviceRequest is the request struct for api UnbindEslDevice
-type UnbindEslDeviceRequest struct {
+// AddPlanogramShelfRequest is the request struct for api AddPlanogramShelf
+type AddPlanogramShelfRequest struct {
 	*requests.RpcRequest
-	Column      string           `position:"Body" name:"Column"`
-	StoreId     string           `position:"Body" name:"StoreId"`
-	Layer       requests.Integer `position:"Body" name:"Layer"`
-	Shelf       string           `position:"Body" name:"Shelf"`
-	EslBarCode  string           `position:"Body" name:"EslBarCode"`
-	ItemBarCode string           `position:"Body" name:"ItemBarCode"`
+	ShelfType string `position:"Body" name:"ShelfType"`
+	StoreId   string `position:"Body" name:"StoreId"`
+	Shelf     string `position:"Body" name:"Shelf"`
 }
 
-// UnbindEslDeviceResponse is the response struct for api UnbindEslDevice
-type UnbindEslDeviceResponse struct {
+// AddPlanogramShelfResponse is the response struct for api AddPlanogramShelf
+type AddPlanogramShelfResponse struct {
 	*responses.BaseResponse
 	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
@@ -97,18 +94,18 @@ type UnbindEslDeviceResponse struct {
 	Success        bool   `json:"Success" xml:"Success"`
 }
 
-// CreateUnbindEslDeviceRequest creates a request to invoke UnbindEslDevice API
-func CreateUnbindEslDeviceRequest() (request *UnbindEslDeviceRequest) {
-	request = &UnbindEslDeviceRequest{
+// CreateAddPlanogramShelfRequest creates a request to invoke AddPlanogramShelf API
+func CreateAddPlanogramShelfRequest() (request *AddPlanogramShelfRequest) {
+	request = &AddPlanogramShelfRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "UnbindEslDevice", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "AddPlanogramShelf", "cloudesl", "openAPI")
 	return
 }
 
-// CreateUnbindEslDeviceResponse creates a response to parse from UnbindEslDevice response
-func CreateUnbindEslDeviceResponse() (response *UnbindEslDeviceResponse) {
-	response = &UnbindEslDeviceResponse{
+// CreateAddPlanogramShelfResponse creates a response to parse from AddPlanogramShelf response
+func CreateAddPlanogramShelfResponse() (response *AddPlanogramShelfResponse) {
+	response = &AddPlanogramShelfResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

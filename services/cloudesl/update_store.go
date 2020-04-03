@@ -76,22 +76,23 @@ func (client *Client) UpdateStoreWithCallback(request *UpdateStoreRequest, callb
 // UpdateStoreRequest is the request struct for api UpdateStore
 type UpdateStoreRequest struct {
 	*requests.RpcRequest
-	Comments  string `position:"Query" name:"Comments"`
-	Phone     string `position:"Query" name:"Phone"`
-	StoreName string `position:"Query" name:"StoreName"`
-	Groups    string `position:"Query" name:"Groups"`
-	OutId     string `position:"Query" name:"OutId"`
-	StoreId   string `position:"Query" name:"StoreId"`
-	Brand     string `position:"Query" name:"Brand"`
+	StoreName     string `position:"Body" name:"StoreName"`
+	StoreId       string `position:"Body" name:"StoreId"`
+	Phone         string `position:"Body" name:"Phone"`
+	UserStoreCode string `position:"Body" name:"UserStoreCode"`
 }
 
 // UpdateStoreResponse is the response struct for api UpdateStore
 type UpdateStoreResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
-	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	Message        string `json:"Message" xml:"Message"`
+	DynamicCode    string `json:"DynamicCode" xml:"DynamicCode"`
+	Code           string `json:"Code" xml:"Code"`
+	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateUpdateStoreRequest creates a request to invoke UpdateStore API
@@ -99,7 +100,7 @@ func CreateUpdateStoreRequest() (request *UpdateStoreRequest) {
 	request = &UpdateStoreRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2018-08-01", "UpdateStore", "", "")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "UpdateStore", "cloudesl", "openAPI")
 	return
 }
 
