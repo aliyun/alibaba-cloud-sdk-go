@@ -1,3 +1,7 @@
+2020-04-03 Version: v1.61.88
+- Generated 2017-12-25 for `OpenSearch`.
+- Support sort script.
+
 2020-04-02 Version: v1.61.87
 - Generated 2017-11-18 for `CSB`.
 - Add slo metrics.
