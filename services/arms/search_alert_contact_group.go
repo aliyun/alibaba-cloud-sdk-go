@@ -76,7 +76,10 @@ func (client *Client) SearchAlertContactGroupWithCallback(request *SearchAlertCo
 // SearchAlertContactGroupRequest is the request struct for api SearchAlertContactGroup
 type SearchAlertContactGroupRequest struct {
 	*requests.RpcRequest
-	ContactGroupName string `position:"Query" name:"ContactGroupName"`
+	ContactName      string           `position:"Query" name:"ContactName"`
+	ContactId        requests.Integer `position:"Query" name:"ContactId"`
+	ContactGroupName string           `position:"Query" name:"ContactGroupName"`
+	ProxyUserId      string           `position:"Query" name:"ProxyUserId"`
 }
 
 // SearchAlertContactGroupResponse is the response struct for api SearchAlertContactGroup

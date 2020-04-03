@@ -1,3 +1,8 @@
+2020-04-03 Version: v1.61.90
+- Generated 2019-08-08 for `ARMS`.
+- Add trace api.
+- Add prometheus api.
+
 2020-04-03 Version: v1.61.89
 - Generated 2020-02-01 for `cloudesl`.
 - Support shelf type for planogram position.

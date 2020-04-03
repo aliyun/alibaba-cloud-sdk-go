@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ImportAppAlertRules invokes the arms.ImportAppAlertRules API synchronously
-// api document: https://help.aliyun.com/api/arms/importappalertrules.html
-func (client *Client) ImportAppAlertRules(request *ImportAppAlertRulesRequest) (response *ImportAppAlertRulesResponse, err error) {
-	response = CreateImportAppAlertRulesResponse()
+// UpdateAlertRule invokes the arms.UpdateAlertRule API synchronously
+// api document: https://help.aliyun.com/api/arms/updatealertrule.html
+func (client *Client) UpdateAlertRule(request *UpdateAlertRuleRequest) (response *UpdateAlertRuleResponse, err error) {
+	response = CreateUpdateAlertRuleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ImportAppAlertRulesWithChan invokes the arms.ImportAppAlertRules API asynchronously
-// api document: https://help.aliyun.com/api/arms/importappalertrules.html
+// UpdateAlertRuleWithChan invokes the arms.UpdateAlertRule API asynchronously
+// api document: https://help.aliyun.com/api/arms/updatealertrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ImportAppAlertRulesWithChan(request *ImportAppAlertRulesRequest) (<-chan *ImportAppAlertRulesResponse, <-chan error) {
-	responseChan := make(chan *ImportAppAlertRulesResponse, 1)
+func (client *Client) UpdateAlertRuleWithChan(request *UpdateAlertRuleRequest) (<-chan *UpdateAlertRuleResponse, <-chan error) {
+	responseChan := make(chan *UpdateAlertRuleResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ImportAppAlertRules(request)
+		response, err := client.UpdateAlertRule(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ImportAppAlertRulesWithChan(request *ImportAppAlertRulesRe
 	return responseChan, errChan
 }
 
-// ImportAppAlertRulesWithCallback invokes the arms.ImportAppAlertRules API asynchronously
-// api document: https://help.aliyun.com/api/arms/importappalertrules.html
+// UpdateAlertRuleWithCallback invokes the arms.UpdateAlertRule API asynchronously
+// api document: https://help.aliyun.com/api/arms/updatealertrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ImportAppAlertRulesWithCallback(request *ImportAppAlertRulesRequest, callback func(response *ImportAppAlertRulesResponse, err error)) <-chan int {
+func (client *Client) UpdateAlertRuleWithCallback(request *UpdateAlertRuleRequest, callback func(response *UpdateAlertRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ImportAppAlertRulesResponse
+		var response *UpdateAlertRuleResponse
 		var err error
 		defer close(result)
-		response, err = client.ImportAppAlertRules(request)
+		response, err = client.UpdateAlertRule(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,36 +73,36 @@ func (client *Client) ImportAppAlertRulesWithCallback(request *ImportAppAlertRul
 	return result
 }
 
-// ImportAppAlertRulesRequest is the request struct for api ImportAppAlertRules
-type ImportAppAlertRulesRequest struct {
+// UpdateAlertRuleRequest is the request struct for api UpdateAlertRule
+type UpdateAlertRuleRequest struct {
 	*requests.RpcRequest
 	IsAutoStart         requests.Boolean `position:"Query" name:"IsAutoStart"`
 	ProxyUserId         string           `position:"Query" name:"ProxyUserId"`
 	ContactGroupIds     string           `position:"Query" name:"ContactGroupIds"`
-	Pids                string           `position:"Query" name:"Pids"`
+	AlertId             requests.Integer `position:"Query" name:"AlertId"`
 	TemplageAlertConfig string           `position:"Query" name:"TemplageAlertConfig"`
-	TemplateAlertId     string           `position:"Query" name:"TemplateAlertId"`
 }
 
-// ImportAppAlertRulesResponse is the response struct for api ImportAppAlertRules
-type ImportAppAlertRulesResponse struct {
+// UpdateAlertRuleResponse is the response struct for api UpdateAlertRule
+type UpdateAlertRuleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	AlertId   int64  `json:"AlertId" xml:"AlertId"`
 }
 
-// CreateImportAppAlertRulesRequest creates a request to invoke ImportAppAlertRules API
-func CreateImportAppAlertRulesRequest() (request *ImportAppAlertRulesRequest) {
-	request = &ImportAppAlertRulesRequest{
+// CreateUpdateAlertRuleRequest creates a request to invoke UpdateAlertRule API
+func CreateUpdateAlertRuleRequest() (request *UpdateAlertRuleRequest) {
+	request = &UpdateAlertRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "ImportAppAlertRules", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "UpdateAlertRule", "arms", "openAPI")
 	return
 }
 
-// CreateImportAppAlertRulesResponse creates a response to parse from ImportAppAlertRules response
-func CreateImportAppAlertRulesResponse() (response *ImportAppAlertRulesResponse) {
-	response = &ImportAppAlertRulesResponse{
+// CreateUpdateAlertRuleResponse creates a response to parse from UpdateAlertRule response
+func CreateUpdateAlertRuleResponse() (response *UpdateAlertRuleResponse) {
+	response = &UpdateAlertRuleResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

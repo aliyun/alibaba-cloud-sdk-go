@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateAlertContact invokes the arms.CreateAlertContact API synchronously
-// api document: https://help.aliyun.com/api/arms/createalertcontact.html
-func (client *Client) CreateAlertContact(request *CreateAlertContactRequest) (response *CreateAlertContactResponse, err error) {
-	response = CreateCreateAlertContactResponse()
+// UpdateAlertContact invokes the arms.UpdateAlertContact API synchronously
+// api document: https://help.aliyun.com/api/arms/updatealertcontact.html
+func (client *Client) UpdateAlertContact(request *UpdateAlertContactRequest) (response *UpdateAlertContactResponse, err error) {
+	response = CreateUpdateAlertContactResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateAlertContactWithChan invokes the arms.CreateAlertContact API asynchronously
-// api document: https://help.aliyun.com/api/arms/createalertcontact.html
+// UpdateAlertContactWithChan invokes the arms.UpdateAlertContact API asynchronously
+// api document: https://help.aliyun.com/api/arms/updatealertcontact.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateAlertContactWithChan(request *CreateAlertContactRequest) (<-chan *CreateAlertContactResponse, <-chan error) {
-	responseChan := make(chan *CreateAlertContactResponse, 1)
+func (client *Client) UpdateAlertContactWithChan(request *UpdateAlertContactRequest) (<-chan *UpdateAlertContactResponse, <-chan error) {
+	responseChan := make(chan *UpdateAlertContactResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateAlertContact(request)
+		response, err := client.UpdateAlertContact(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateAlertContactWithChan(request *CreateAlertContactRequ
 	return responseChan, errChan
 }
 
-// CreateAlertContactWithCallback invokes the arms.CreateAlertContact API asynchronously
-// api document: https://help.aliyun.com/api/arms/createalertcontact.html
+// UpdateAlertContactWithCallback invokes the arms.UpdateAlertContact API asynchronously
+// api document: https://help.aliyun.com/api/arms/updatealertcontact.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateAlertContactWithCallback(request *CreateAlertContactRequest, callback func(response *CreateAlertContactResponse, err error)) <-chan int {
+func (client *Client) UpdateAlertContactWithCallback(request *UpdateAlertContactRequest, callback func(response *UpdateAlertContactResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateAlertContactResponse
+		var response *UpdateAlertContactResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateAlertContact(request)
+		response, err = client.UpdateAlertContact(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,9 +73,10 @@ func (client *Client) CreateAlertContactWithCallback(request *CreateAlertContact
 	return result
 }
 
-// CreateAlertContactRequest is the request struct for api CreateAlertContact
-type CreateAlertContactRequest struct {
+// UpdateAlertContactRequest is the request struct for api UpdateAlertContact
+type UpdateAlertContactRequest struct {
 	*requests.RpcRequest
+	ContactId           requests.Integer `position:"Query" name:"ContactId"`
 	PhoneNum            string           `position:"Query" name:"PhoneNum"`
 	ProxyUserId         string           `position:"Query" name:"ProxyUserId"`
 	ContactName         string           `position:"Query" name:"ContactName"`
@@ -84,25 +85,25 @@ type CreateAlertContactRequest struct {
 	SystemNoc           requests.Boolean `position:"Query" name:"SystemNoc"`
 }
 
-// CreateAlertContactResponse is the response struct for api CreateAlertContact
-type CreateAlertContactResponse struct {
+// UpdateAlertContactResponse is the response struct for api UpdateAlertContact
+type UpdateAlertContactResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	ContactId string `json:"ContactId" xml:"ContactId"`
+	RequestId                   string `json:"RequestId" xml:"RequestId"`
+	UpdateAlertContactIsSuccess bool   `json:"IsSuccess" xml:"IsSuccess"`
 }
 
-// CreateCreateAlertContactRequest creates a request to invoke CreateAlertContact API
-func CreateCreateAlertContactRequest() (request *CreateAlertContactRequest) {
-	request = &CreateAlertContactRequest{
+// CreateUpdateAlertContactRequest creates a request to invoke UpdateAlertContact API
+func CreateUpdateAlertContactRequest() (request *UpdateAlertContactRequest) {
+	request = &UpdateAlertContactRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "CreateAlertContact", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "UpdateAlertContact", "arms", "openAPI")
 	return
 }
 
-// CreateCreateAlertContactResponse creates a response to parse from CreateAlertContact response
-func CreateCreateAlertContactResponse() (response *CreateAlertContactResponse) {
-	response = &CreateAlertContactResponse{
+// CreateUpdateAlertContactResponse creates a response to parse from UpdateAlertContact response
+func CreateUpdateAlertContactResponse() (response *UpdateAlertContactResponse) {
+	response = &UpdateAlertContactResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

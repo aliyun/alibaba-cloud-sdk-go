@@ -78,6 +78,7 @@ type QueryDatasetRequest struct {
 	*requests.RpcRequest
 	DateStr       string                      `position:"Query" name:"DateStr"`
 	MinTime       requests.Integer            `position:"Query" name:"MinTime"`
+	ProxyUserId   string                      `position:"Query" name:"ProxyUserId"`
 	ReduceTail    requests.Boolean            `position:"Query" name:"ReduceTail"`
 	MaxTime       requests.Integer            `position:"Query" name:"MaxTime"`
 	OptionalDims  *[]QueryDatasetOptionalDims `position:"Query" name:"OptionalDims"  type:"Repeated"`

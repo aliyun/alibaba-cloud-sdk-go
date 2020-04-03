@@ -77,6 +77,7 @@ func (client *Client) CreateAlertContactGroupWithCallback(request *CreateAlertCo
 type CreateAlertContactGroupRequest struct {
 	*requests.RpcRequest
 	ContactGroupName string `position:"Query" name:"ContactGroupName"`
+	ProxyUserId      string `position:"Query" name:"ProxyUserId"`
 	ContactIds       string `position:"Query" name:"ContactIds"`
 }
 

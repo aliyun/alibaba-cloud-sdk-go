@@ -76,10 +76,11 @@ func (client *Client) SearchAlertContactWithCallback(request *SearchAlertContact
 // SearchAlertContactRequest is the request struct for api SearchAlertContact
 type SearchAlertContactRequest struct {
 	*requests.RpcRequest
+	CurrentPage string `position:"Query" name:"CurrentPage"`
+	ProxyUserId string `position:"Query" name:"ProxyUserId"`
 	ContactName string `position:"Query" name:"ContactName"`
 	Phone       string `position:"Query" name:"Phone"`
 	PageSize    string `position:"Query" name:"PageSize"`
-	CurrentPage string `position:"Query" name:"CurrentPage"`
 	Email       string `position:"Query" name:"Email"`
 }
 

@@ -76,14 +76,15 @@ func (client *Client) QueryMetricWithCallback(request *QueryMetricRequest, callb
 // QueryMetricRequest is the request struct for api QueryMetric
 type QueryMetricRequest struct {
 	*requests.RpcRequest
-	Measures      *[]string             `position:"Query" name:"Measures"  type:"Repeated"`
-	IntervalInSec requests.Integer      `position:"Query" name:"IntervalInSec"`
-	Metric        string                `position:"Query" name:"Metric"`
-	Limit         requests.Integer      `position:"Query" name:"Limit"`
 	EndTime       requests.Integer      `position:"Query" name:"EndTime"`
 	OrderBy       string                `position:"Query" name:"OrderBy"`
 	StartTime     requests.Integer      `position:"Query" name:"StartTime"`
 	Filters       *[]QueryMetricFilters `position:"Query" name:"Filters"  type:"Repeated"`
+	ProxyUserId   string                `position:"Query" name:"ProxyUserId"`
+	Measures      *[]string             `position:"Query" name:"Measures"  type:"Repeated"`
+	IntervalInSec requests.Integer      `position:"Query" name:"IntervalInSec"`
+	Metric        string                `position:"Query" name:"Metric"`
+	Limit         requests.Integer      `position:"Query" name:"Limit"`
 	Dimensions    *[]string             `position:"Query" name:"Dimensions"  type:"Repeated"`
 	Order         string                `position:"Query" name:"Order"`
 }
