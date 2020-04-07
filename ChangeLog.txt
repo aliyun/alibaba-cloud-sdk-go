@@ -1,3 +1,7 @@
+2020-04-07 Version: v1.61.95
+- Generated 2020-02-06 for `acm`.
+- Support namespaces.
+
 2020-04-07 Version: v1.61.94
 - Generated 2020-03-20 for `imgsearch`.
 
