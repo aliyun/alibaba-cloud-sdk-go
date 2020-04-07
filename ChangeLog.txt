@@ -1,3 +1,7 @@
+2020-04-07 Version: v1.61.92
+- Generated 2020-02-06 for `acm`.
+- Support namespaces.
+
 2020-04-07 Version: v1.61.91
 - Generated 2019-08-08 for `ARMS`.
 - Update SearchAlertRules response struct.
