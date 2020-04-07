@@ -17,13 +17,13 @@ package arms
 
 // PageBean is a nested struct in arms response
 type PageBean struct {
-	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
-	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
-	PageSize       int            `json:"PageSize" xml:"PageSize"`
-	RetcodeApps    []RetcodeApp   `json:"RetcodeApps" xml:"RetcodeApps"`
-	Contacts       []Contact      `json:"Contacts" xml:"Contacts"`
-	AlertRules     []AlertRule    `json:"AlertRules" xml:"AlertRules"`
-	Event          []EventItem    `json:"Event" xml:"Event"`
-	TraceApps      []TraceApp     `json:"TraceApps" xml:"TraceApps"`
-	AlarmHistories []AlarmHistory `json:"AlarmHistories" xml:"AlarmHistories"`
+	TotalCount     int               `json:"TotalCount" xml:"TotalCount"`
+	PageNumber     int               `json:"PageNumber" xml:"PageNumber"`
+	PageSize       int               `json:"PageSize" xml:"PageSize"`
+	RetcodeApps    []RetcodeApp      `json:"RetcodeApps" xml:"RetcodeApps"`
+	Contacts       []Contact         `json:"Contacts" xml:"Contacts"`
+	AlertRules     []AlertRuleEntity `json:"AlertRules" xml:"AlertRules"`
+	Event          []EventItem       `json:"Event" xml:"Event"`
+	TraceApps      []TraceApp        `json:"TraceApps" xml:"TraceApps"`
+	AlarmHistories []AlarmHistory    `json:"AlarmHistories" xml:"AlarmHistories"`
 }

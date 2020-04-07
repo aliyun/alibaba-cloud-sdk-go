@@ -17,5 +17,5 @@ package arms
 
 // AlertRules is a nested struct in arms response
 type AlertRules struct {
-	AlertRule []AlertRule `json:"AlertRule" xml:"AlertRule"`
+	AlertRuleEntity []AlertRuleEntity `json:"AlertRuleEntity" xml:"AlertRuleEntity"`
 }

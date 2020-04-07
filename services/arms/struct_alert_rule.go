@@ -17,25 +17,6 @@ package arms
 
 // AlertRule is a nested struct in arms response
 type AlertRule struct {
-	UpdateTime         int64        `json:"UpdateTime" xml:"UpdateTime"`
-	AlertLevel         string       `json:"AlertLevel" xml:"AlertLevel"`
-	AlertVersion       int          `json:"AlertVersion" xml:"AlertVersion"`
-	Id                 int64        `json:"Id" xml:"Id"`
-	CreateTime         int64        `json:"CreateTime" xml:"CreateTime"`
-	Operator           string       `json:"Operator" xml:"Operator"`
-	ContactGroupIdList string       `json:"ContactGroupIdList" xml:"ContactGroupIdList"`
-	TaskStatus         string       `json:"TaskStatus" xml:"TaskStatus"`
-	RegionId           string       `json:"RegionId" xml:"RegionId"`
-	AlertTitle         string       `json:"AlertTitle" xml:"AlertTitle"`
-	TaskId             int64        `json:"TaskId" xml:"TaskId"`
-	UserId             string       `json:"UserId" xml:"UserId"`
-	Config             string       `json:"Config" xml:"Config"`
-	Status             string       `json:"Status" xml:"Status"`
-	AlertType          int          `json:"AlertType" xml:"AlertType"`
-	AlertWays          []string     `json:"AlertWays" xml:"AlertWays"`
-	AlarmContext       AlarmContext `json:"AlarmContext" xml:"AlarmContext"`
-	MetricParam        MetricParam  `json:"MetricParam" xml:"MetricParam"`
-	AlertRule          AlertRule    `json:"AlertRule" xml:"AlertRule"`
-	Notice             Notice       `json:"Notice" xml:"Notice"`
-	Rules              []Rule       `json:"Rules" xml:"Rules"`
+	Operator string `json:"Operator" xml:"Operator"`
+	Rules    []Rule `json:"Rules" xml:"Rules"`
 }

@@ -1,3 +1,7 @@
+2020-04-07 Version: v1.61.91
+- Generated 2019-08-08 for `ARMS`.
+- Update SearchAlertRules response struct.
+
 2020-04-03 Version: v1.61.90
 - Generated 2019-08-08 for `ARMS`.
 - Add trace api.
