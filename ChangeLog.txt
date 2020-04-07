@@ -1,3 +1,7 @@
+2020-04-07 Version: v1.61.94
+- Generated 2020-03-20 for `imgsearch`.
+
+
 2020-04-07 Version: v1.61.93
 - Generated 2019-12-30 for `facebody`.
 
