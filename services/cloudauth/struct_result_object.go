@@ -24,6 +24,7 @@ type ResultObject struct {
 	OssEndPoint       string `json:"OssEndPoint" xml:"OssEndPoint"`
 	RetCodeSub        string `json:"RetCodeSub" xml:"RetCodeSub"`
 	FileNamePrefix    string `json:"FileNamePrefix" xml:"FileNamePrefix"`
+	SubCode           string `json:"SubCode" xml:"SubCode"`
 	RetMessageSub     string `json:"RetMessageSub" xml:"RetMessageSub"`
 	ProductRetCode    string `json:"ProductRetCode" xml:"ProductRetCode"`
 	DeviceToken       string `json:"DeviceToken" xml:"DeviceToken"`
