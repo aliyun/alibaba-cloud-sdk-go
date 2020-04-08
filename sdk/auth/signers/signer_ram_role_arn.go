@@ -171,5 +171,8 @@ func (signer *RamRoleArnSigner) refreshCredential(response *responses.CommonResp
 }
 
 func (signer *RamRoleArnSigner) GetSessionCredential() *SessionCredential {
+	if signer.sessionCredential == nil || signer.needUpdateCredential() {
+		signer.updateCredential()
+	}
 	return signer.sessionCredential
 }
