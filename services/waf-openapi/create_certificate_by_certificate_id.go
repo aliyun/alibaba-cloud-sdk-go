@@ -96,7 +96,6 @@ func CreateCreateCertificateByCertificateIdRequest() (request *CreateCertificate
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("waf-openapi", "2019-09-10", "CreateCertificateByCertificateId", "waf", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

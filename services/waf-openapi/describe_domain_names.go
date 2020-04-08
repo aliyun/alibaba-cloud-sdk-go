@@ -96,7 +96,6 @@ func CreateDescribeDomainNamesRequest() (request *DescribeDomainNamesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("waf-openapi", "2019-09-10", "DescribeDomainNames", "waf", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

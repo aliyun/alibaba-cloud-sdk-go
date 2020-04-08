@@ -99,7 +99,6 @@ func CreateCreateIPBlockRequest() (request *CreateIPBlockRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("waf-openapi", "2019-09-10", "CreateIPBlock", "waf", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

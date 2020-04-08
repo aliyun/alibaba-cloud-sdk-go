@@ -96,7 +96,6 @@ func CreateModifyDomainIpv6StatusRequest() (request *ModifyDomainIpv6StatusReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("waf-openapi", "2019-09-10", "ModifyDomainIpv6Status", "waf", "openAPI")
-	request.Method = requests.POST
 	return
 }
 
