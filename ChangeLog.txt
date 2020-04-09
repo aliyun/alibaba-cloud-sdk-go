@@ -1,3 +1,7 @@
+2020-04-09 Version: v1.61.106
+- Generated 2019-08-08 for `ARMS`.
+- Add prometheus api AddGrafana and AddIntegration.
+
 2020-04-09 Version: v1.61.105
 - Generated 2017-06-26 for `NAS`.
 
