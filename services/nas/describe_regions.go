@@ -84,18 +84,14 @@ type DescribeRegionsRequest struct {
 // DescribeRegionsResponse is the response struct for api DescribeRegions
 type DescribeRegionsResponse struct {
 	*responses.BaseResponse
-	RequestId  string                  `json:"RequestId" xml:"RequestId"`
-	TotalCount int                     `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int                     `json:"PageSize" xml:"PageSize"`
-	PageNumber int                     `json:"PageNumber" xml:"PageNumber"`
-	Regions    DescribeRegionsRegions0 `json:"Regions" xml:"Regions"`
+	RequestId  string                   `json:"RequestId" xml:"RequestId"`
+	TotalCount int                      `json:"TotalCount" xml:"TotalCount"`
+	PageSize   int                      `json:"PageSize" xml:"PageSize"`
+	PageNumber int                      `json:"PageNumber" xml:"PageNumber"`
+	Regions    []DescribeRegionsRegion0 `json:"Regions" xml:"Regions"`
 }
 
-type DescribeRegionsRegions0 struct {
-	Region []DescribeRegionsRegion1 `json:"Region" xml:"Region"`
-}
-
-type DescribeRegionsRegion1 struct {
+type DescribeRegionsRegion0 struct {
 	RegionId       string `json:"RegionId" xml:"RegionId"`
 	LocalName      string `json:"LocalName" xml:"LocalName"`
 	RegionEndpoint string `json:"RegionEndpoint" xml:"RegionEndpoint"`

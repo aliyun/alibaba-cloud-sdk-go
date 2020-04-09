@@ -76,10 +76,21 @@ func (client *Client) CreateFileSystemWithCallback(request *CreateFileSystemRequ
 // CreateFileSystemRequest is the request struct for api CreateFileSystem
 type CreateFileSystemRequest struct {
 	*requests.RpcRequest
-	StorageType  string `position:"Query" name:"StorageType"`
-	ZoneId       string `position:"Query" name:"ZoneId"`
-	ProtocolType string `position:"Query" name:"ProtocolType"`
-	Description  string `position:"Query" name:"Description"`
+	FileSystemType string           `position:"Query" name:"FileSystemType"`
+	ChargeType     string           `position:"Query" name:"ChargeType"`
+	Duration       requests.Integer `position:"Query" name:"Duration"`
+	Capacity       requests.Integer `position:"Query" name:"Capacity"`
+	Bandwidth      requests.Integer `position:"Query" name:"Bandwidth"`
+	StorageType    string           `position:"Query" name:"StorageType"`
+	ZoneId         string           `position:"Query" name:"ZoneId"`
+	ProtocolType   string           `position:"Query" name:"ProtocolType"`
+	EncryptType    requests.Integer `position:"Query" name:"EncryptType"`
+	SnapshotId     string           `position:"Query" name:"SnapshotId"`
+	VpcId          string           `position:"Query" name:"VpcId"`
+	VSwitchId      string           `position:"Query" name:"VSwitchId"`
+	Description    string           `position:"Query" name:"Description"`
+	ClientToken    string           `position:"Query" name:"ClientToken"`
+	DryRun         requests.Boolean `position:"Query" name:"DryRun"`
 }
 
 // CreateFileSystemResponse is the response struct for api CreateFileSystem

@@ -90,25 +90,17 @@ type DescribeTagsTag struct {
 // DescribeTagsResponse is the response struct for api DescribeTags
 type DescribeTagsResponse struct {
 	*responses.BaseResponse
-	RequestId  string            `json:"RequestId" xml:"RequestId"`
-	TotalCount int               `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int               `json:"PageSize" xml:"PageSize"`
-	PageNumber int               `json:"PageNumber" xml:"PageNumber"`
-	Tags       DescribeTagsTags0 `json:"Tags" xml:"Tags"`
+	RequestId  string             `json:"RequestId" xml:"RequestId"`
+	TotalCount int                `json:"TotalCount" xml:"TotalCount"`
+	PageSize   int                `json:"PageSize" xml:"PageSize"`
+	PageNumber int                `json:"PageNumber" xml:"PageNumber"`
+	Tags       []DescribeTagsTag0 `json:"Tags" xml:"Tags"`
 }
 
-type DescribeTagsTags0 struct {
-	Tag []DescribeTagsTag1 `json:"Tag" xml:"Tag"`
-}
-
-type DescribeTagsTag1 struct {
-	Key           string                     `json:"Key" xml:"Key"`
-	Value         string                     `json:"Value" xml:"Value"`
-	FileSystemIds DescribeTagsFileSystemIds2 `json:"FileSystemIds" xml:"FileSystemIds"`
-}
-
-type DescribeTagsFileSystemIds2 struct {
-	FileSystemId []string `json:"FileSystemId" xml:"FileSystemId"`
+type DescribeTagsTag0 struct {
+	Key           string   `json:"Key" xml:"Key"`
+	Value         string   `json:"Value" xml:"Value"`
+	FileSystemIds []string `json:"FileSystemIds" xml:"FileSystemIds"`
 }
 
 // CreateDescribeTagsRequest creates a request to invoke DescribeTags API
