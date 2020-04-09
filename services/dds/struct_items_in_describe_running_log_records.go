@@ -17,5 +17,5 @@ package dds
 
 // ItemsInDescribeRunningLogRecords is a nested struct in dds response
 type ItemsInDescribeRunningLogRecords struct {
-	LogRecords []LogRecords `json:"LogRecords" xml:"LogRecords"`
+	LogRecords []LogRecordsInDescribeRunningLogRecords `json:"LogRecords" xml:"LogRecords"`
 }

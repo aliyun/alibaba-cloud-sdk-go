@@ -17,5 +17,5 @@ package dds
 
 // MongosListInDescribeDBInstances is a nested struct in dds response
 type MongosListInDescribeDBInstances struct {
-	MongosAttribute []MongosAttribute `json:"MongosAttribute" xml:"MongosAttribute"`
+	MongosAttribute []MongosAttributeInDescribeDBInstances `json:"MongosAttribute" xml:"MongosAttribute"`
 }

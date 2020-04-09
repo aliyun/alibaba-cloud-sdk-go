@@ -17,5 +17,5 @@ package dds
 
 // ShardListInDescribeDBInstances is a nested struct in dds response
 type ShardListInDescribeDBInstances struct {
-	ShardAttribute []ShardAttribute `json:"ShardAttribute" xml:"ShardAttribute"`
+	ShardAttribute []ShardAttributeInDescribeDBInstances `json:"ShardAttribute" xml:"ShardAttribute"`
 }

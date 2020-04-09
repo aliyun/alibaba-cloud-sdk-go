@@ -25,4 +25,5 @@ type SQLRecord struct {
 	ReturnRowCounts     int64  `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
 	ExecuteTime         string `json:"ExecuteTime" xml:"ExecuteTime"`
 	ThreadID            string `json:"ThreadID" xml:"ThreadID"`
+	TableName           string `json:"TableName" xml:"TableName"`
 }
