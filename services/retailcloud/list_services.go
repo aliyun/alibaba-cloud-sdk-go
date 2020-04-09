@@ -93,6 +93,7 @@ type ListServicesResponse struct {
 	PageSize   int               `json:"PageSize" xml:"PageSize"`
 	RequestId  string            `json:"RequestId" xml:"RequestId"`
 	TotalCount int64             `json:"TotalCount" xml:"TotalCount"`
+	ClusterIP  string            `json:"ClusterIP" xml:"ClusterIP"`
 	Data       []ServiceInstance `json:"Data" xml:"Data"`
 }
 

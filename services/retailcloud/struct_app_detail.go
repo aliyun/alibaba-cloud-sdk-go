@@ -17,14 +17,15 @@ package retailcloud
 
 // AppDetail is a nested struct in retailcloud response
 type AppDetail struct {
-	AppId           int64  `json:"AppId" xml:"AppId"`
-	Title           string `json:"Title" xml:"Title"`
-	Description     string `json:"Description" xml:"Description"`
-	Language        string `json:"Language" xml:"Language"`
-	OperatingSystem string `json:"OperatingSystem" xml:"OperatingSystem"`
-	BizName         string `json:"BizName" xml:"BizName"`
-	ServiceType     string `json:"ServiceType" xml:"ServiceType"`
-	DeployType      string `json:"DeployType" xml:"DeployType"`
-	BizTitle        string `json:"BizTitle" xml:"BizTitle"`
-	AppStateType    string `json:"AppStateType" xml:"AppStateType"`
+	AppId           int64            `json:"AppId" xml:"AppId"`
+	Title           string           `json:"Title" xml:"Title"`
+	Description     string           `json:"Description" xml:"Description"`
+	Language        string           `json:"Language" xml:"Language"`
+	OperatingSystem string           `json:"OperatingSystem" xml:"OperatingSystem"`
+	BizName         string           `json:"BizName" xml:"BizName"`
+	ServiceType     string           `json:"ServiceType" xml:"ServiceType"`
+	DeployType      string           `json:"DeployType" xml:"DeployType"`
+	BizTitle        string           `json:"BizTitle" xml:"BizTitle"`
+	AppStateType    string           `json:"AppStateType" xml:"AppStateType"`
+	MiddleWareList  []MiddleWareInfo `json:"MiddleWareList" xml:"MiddleWareList"`
 }

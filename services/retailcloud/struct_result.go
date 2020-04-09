@@ -40,6 +40,7 @@ type Result struct {
 	EnvTypeName             string               `json:"EnvTypeName" xml:"EnvTypeName"`
 	PersistentVolumeClaimId int64                `json:"PersistentVolumeClaimId" xml:"PersistentVolumeClaimId"`
 	SlbId                   string               `json:"SlbId" xml:"SlbId"`
+	ClusterIP               string               `json:"ClusterIP" xml:"ClusterIP"`
 	Name                    string               `json:"Name" xml:"Name"`
 	Region                  string               `json:"Region" xml:"Region"`
 	BizTitle                string               `json:"BizTitle" xml:"BizTitle"`
@@ -81,5 +82,6 @@ type Result struct {
 	Accounts                []AccountsItem       `json:"Accounts" xml:"Accounts"`
 	DeployStepList          []DeployLogStepRC    `json:"DeployStepList" xml:"DeployStepList"`
 	Items                   []Backup             `json:"Items" xml:"Items"`
+	MiddleWareInfoList      []MiddleWareInfo     `json:"MiddleWareInfoList" xml:"MiddleWareInfoList"`
 	Databases               []DatabasesItem      `json:"Databases" xml:"Databases"`
 }

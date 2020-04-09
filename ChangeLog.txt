@@ -1,3 +1,7 @@
+2020-04-09 Version: v1.61.103
+- Generated 2018-03-13 for `retailcloud`.
+
+
 2020-04-09 Version: v1.61.102
 - Generated 2019-09-10 for `waf-openapi`.
 

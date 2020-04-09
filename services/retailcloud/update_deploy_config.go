@@ -81,6 +81,7 @@ type UpdateDeployConfigRequest struct {
 	ConfigMap     string           `position:"Query" name:"ConfigMap"`
 	StatefulSet   string           `position:"Query" name:"StatefulSet"`
 	AppId         requests.Integer `position:"Query" name:"AppId"`
+	SecretList    *[]string        `position:"Query" name:"SecretList"  type:"Repeated"`
 	Id            requests.Integer `position:"Query" name:"Id"`
 	Deployment    string           `position:"Query" name:"Deployment"`
 }

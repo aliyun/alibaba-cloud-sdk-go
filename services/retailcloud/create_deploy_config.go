@@ -83,6 +83,7 @@ type CreateDeployConfigRequest struct {
 	StatefulSet   string           `position:"Query" name:"StatefulSet"`
 	EnvType       string           `position:"Query" name:"EnvType"`
 	Name          string           `position:"Query" name:"Name"`
+	SecretList    *[]string        `position:"Query" name:"SecretList"  type:"Repeated"`
 	Deployment    string           `position:"Query" name:"Deployment"`
 }
 

@@ -24,5 +24,6 @@ type ServiceInstance struct {
 	Name         string               `json:"Name" xml:"Name"`
 	ServiceId    int64                `json:"ServiceId" xml:"ServiceId"`
 	ServiceType  string               `json:"ServiceType" xml:"ServiceType"`
+	ClusterIP    string               `json:"ClusterIP" xml:"ClusterIP"`
 	PortMappings []ServicePortMapping `json:"PortMappings" xml:"PortMappings"`
 }

@@ -24,4 +24,6 @@ type AppInstanceDetail struct {
 	HostIp        string `json:"HostIp" xml:"HostIp"`
 	PodIp         string `json:"PodIp" xml:"PodIp"`
 	Health        string `json:"Health" xml:"Health"`
+	Requests      string `json:"Requests" xml:"Requests"`
+	Limits        string `json:"Limits" xml:"Limits"`
 }
