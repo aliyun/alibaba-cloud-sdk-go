@@ -1,3 +1,8 @@
+2020-04-09 Version: v1.61.100
+- Generated 2015-01-01 for `R-kvstore`.
+- Generated 2015-01-01 for `R-kvstore`.
+- Add DescribePrice API.
+
 2020-04-09 Version: v1.61.99
 - Generated 2019-09-10 for `waf-openapi`.
 - WAF OpenApi SDK Release.
