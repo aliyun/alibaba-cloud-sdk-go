@@ -80,7 +80,6 @@ type ModifyDomainClusterTypeRequest struct {
 	InstanceId  string           `position:"Query" name:"InstanceId"`
 	SourceIp    string           `position:"Query" name:"SourceIp"`
 	Domain      string           `position:"Query" name:"Domain"`
-	Region      string           `position:"Query" name:"Region"`
 }
 
 // ModifyDomainClusterTypeResponse is the response struct for api ModifyDomainClusterType
