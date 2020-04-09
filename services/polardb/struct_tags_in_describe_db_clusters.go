@@ -17,5 +17,5 @@ package polardb
 
 // TagsInDescribeDBClusters is a nested struct in polardb response
 type TagsInDescribeDBClusters struct {
-	Tag []Tag `json:"Tag" xml:"Tag"`
+	Tag []TagInDescribeDBClusters `json:"Tag" xml:"Tag"`
 }

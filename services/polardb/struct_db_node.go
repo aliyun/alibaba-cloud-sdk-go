@@ -22,7 +22,6 @@ type DBNode struct {
 	FailoverPriority int    `json:"FailoverPriority" xml:"FailoverPriority"`
 	DBNodeRole       string `json:"DBNodeRole" xml:"DBNodeRole"`
 	MaxConnections   int    `json:"MaxConnections" xml:"MaxConnections"`
-	RegionId         string `json:"RegionId" xml:"RegionId"`
 	ZoneId           string `json:"ZoneId" xml:"ZoneId"`
 	DBNodeStatus     string `json:"DBNodeStatus" xml:"DBNodeStatus"`
 	DBNodeId         string `json:"DBNodeId" xml:"DBNodeId"`

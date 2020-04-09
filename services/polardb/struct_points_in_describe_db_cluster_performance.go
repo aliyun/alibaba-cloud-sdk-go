@@ -17,5 +17,5 @@ package polardb
 
 // PointsInDescribeDBClusterPerformance is a nested struct in polardb response
 type PointsInDescribeDBClusterPerformance struct {
-	PerformanceItemValue []PerformanceItemValue `json:"PerformanceItemValue" xml:"PerformanceItemValue"`
+	PerformanceItemValue []PerformanceItemValueInDescribeDBClusterPerformance `json:"PerformanceItemValue" xml:"PerformanceItemValue"`
 }

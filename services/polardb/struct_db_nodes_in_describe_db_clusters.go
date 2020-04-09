@@ -17,5 +17,5 @@ package polardb
 
 // DBNodesInDescribeDBClusters is a nested struct in polardb response
 type DBNodesInDescribeDBClusters struct {
-	DBNode []DBNode `json:"DBNode" xml:"DBNode"`
+	DBNode []DBNodeInDescribeDBClusters `json:"DBNode" xml:"DBNode"`
 }

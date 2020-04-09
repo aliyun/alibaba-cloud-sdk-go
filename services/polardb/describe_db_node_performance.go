@@ -81,6 +81,7 @@ type DescribeDBNodePerformanceRequest struct {
 	StartTime            string           `position:"Query" name:"StartTime"`
 	Key                  string           `position:"Query" name:"Key"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
