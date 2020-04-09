@@ -76,28 +76,26 @@ func (client *Client) DescribeAccessRulesWithCallback(request *DescribeAccessRul
 // DescribeAccessRulesRequest is the request struct for api DescribeAccessRules
 type DescribeAccessRulesRequest struct {
 	*requests.RpcRequest
-	AccessGroupName string           `position:"Query" name:"AccessGroupName"`
-	AccessRuleId    string           `position:"Query" name:"AccessRuleId"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
-	FileSystemType  string           `position:"Query" name:"FileSystemType"`
+	AccessGroupName    string           `position:"Query" name:"AccessGroupName"`
+	AccessRuleId       string           `position:"Query" name:"AccessRuleId"`
+	SourceCidrIp       string           `position:"Query" name:"SourceCidrIp"`
+	PageSize           requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber         requests.Integer `position:"Query" name:"PageNumber"`
+	FileSystemType     string           `position:"Query" name:"FileSystemType"`
+	SourceCidrIpFilter string           `position:"Query" name:"SourceCidrIpFilter"`
 }
 
 // DescribeAccessRulesResponse is the response struct for api DescribeAccessRules
 type DescribeAccessRulesResponse struct {
 	*responses.BaseResponse
-	RequestId   string                          `json:"RequestId" xml:"RequestId"`
-	TotalCount  int                             `json:"TotalCount" xml:"TotalCount"`
-	PageSize    int                             `json:"PageSize" xml:"PageSize"`
-	PageNumber  int                             `json:"PageNumber" xml:"PageNumber"`
-	AccessRules DescribeAccessRulesAccessRules0 `json:"AccessRules" xml:"AccessRules"`
+	RequestId   string                           `json:"RequestId" xml:"RequestId"`
+	TotalCount  int                              `json:"TotalCount" xml:"TotalCount"`
+	PageSize    int                              `json:"PageSize" xml:"PageSize"`
+	PageNumber  int                              `json:"PageNumber" xml:"PageNumber"`
+	AccessRules []DescribeAccessRulesAccessRule0 `json:"AccessRules" xml:"AccessRules"`
 }
 
-type DescribeAccessRulesAccessRules0 struct {
-	AccessRule []DescribeAccessRulesAccessRule1 `json:"AccessRule" xml:"AccessRule"`
-}
-
-type DescribeAccessRulesAccessRule1 struct {
+type DescribeAccessRulesAccessRule0 struct {
 	SourceCidrIp string `json:"SourceCidrIp" xml:"SourceCidrIp"`
 	Priority     int    `json:"Priority" xml:"Priority"`
 	AccessRuleId string `json:"AccessRuleId" xml:"AccessRuleId"`

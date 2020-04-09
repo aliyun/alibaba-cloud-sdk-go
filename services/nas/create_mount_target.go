@@ -81,6 +81,7 @@ type CreateMountTargetRequest struct {
 	NetworkType     string `position:"Query" name:"NetworkType"`
 	VpcId           string `position:"Query" name:"VpcId"`
 	VSwitchId       string `position:"Query" name:"VSwitchId"`
+	SecurityGroupId string `position:"Query" name:"SecurityGroupId"`
 }
 
 // CreateMountTargetResponse is the response struct for api CreateMountTarget

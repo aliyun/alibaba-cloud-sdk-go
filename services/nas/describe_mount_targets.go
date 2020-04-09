@@ -85,24 +85,26 @@ type DescribeMountTargetsRequest struct {
 // DescribeMountTargetsResponse is the response struct for api DescribeMountTargets
 type DescribeMountTargetsResponse struct {
 	*responses.BaseResponse
-	RequestId    string                            `json:"RequestId" xml:"RequestId"`
-	TotalCount   int                               `json:"TotalCount" xml:"TotalCount"`
-	PageSize     int                               `json:"PageSize" xml:"PageSize"`
-	PageNumber   int                               `json:"PageNumber" xml:"PageNumber"`
-	MountTargets DescribeMountTargetsMountTargets0 `json:"MountTargets" xml:"MountTargets"`
+	RequestId    string                             `json:"RequestId" xml:"RequestId"`
+	TotalCount   int                                `json:"TotalCount" xml:"TotalCount"`
+	PageSize     int                                `json:"PageSize" xml:"PageSize"`
+	PageNumber   int                                `json:"PageNumber" xml:"PageNumber"`
+	MountTargets []DescribeMountTargetsMountTarget0 `json:"MountTargets" xml:"MountTargets"`
 }
 
-type DescribeMountTargetsMountTargets0 struct {
-	MountTarget []DescribeMountTargetsMountTarget1 `json:"MountTarget" xml:"MountTarget"`
+type DescribeMountTargetsMountTarget0 struct {
+	MountTargetDomain string                     `json:"MountTargetDomain" xml:"MountTargetDomain"`
+	NetworkType       string                     `json:"NetworkType" xml:"NetworkType"`
+	VpcId             string                     `json:"VpcId" xml:"VpcId"`
+	VswId             string                     `json:"VswId" xml:"VswId"`
+	AccessGroup       string                     `json:"AccessGroup" xml:"AccessGroup"`
+	Status            string                     `json:"Status" xml:"Status"`
+	Tags              []DescribeMountTargetsTag1 `json:"Tags" xml:"Tags"`
 }
 
-type DescribeMountTargetsMountTarget1 struct {
-	MountTargetDomain string `json:"MountTargetDomain" xml:"MountTargetDomain"`
-	NetworkType       string `json:"NetworkType" xml:"NetworkType"`
-	VpcId             string `json:"VpcId" xml:"VpcId"`
-	VswId             string `json:"VswId" xml:"VswId"`
-	AccessGroup       string `json:"AccessGroup" xml:"AccessGroup"`
-	Status            string `json:"Status" xml:"Status"`
+type DescribeMountTargetsTag1 struct {
+	Key   string `json:"Key" xml:"Key"`
+	Value string `json:"Value" xml:"Value"`
 }
 
 // CreateDescribeMountTargetsRequest creates a request to invoke DescribeMountTargets API

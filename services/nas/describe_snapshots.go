@@ -89,18 +89,14 @@ type DescribeSnapshotsRequest struct {
 // DescribeSnapshotsResponse is the response struct for api DescribeSnapshots
 type DescribeSnapshotsResponse struct {
 	*responses.BaseResponse
-	RequestId  string                      `json:"RequestId" xml:"RequestId"`
-	TotalCount int                         `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int                         `json:"PageSize" xml:"PageSize"`
-	PageNumber int                         `json:"PageNumber" xml:"PageNumber"`
-	Snapshots  DescribeSnapshotsSnapshots0 `json:"Snapshots" xml:"Snapshots"`
+	RequestId  string                       `json:"RequestId" xml:"RequestId"`
+	TotalCount int                          `json:"TotalCount" xml:"TotalCount"`
+	PageSize   int                          `json:"PageSize" xml:"PageSize"`
+	PageNumber int                          `json:"PageNumber" xml:"PageNumber"`
+	Snapshots  []DescribeSnapshotsSnapshot0 `json:"Snapshots" xml:"Snapshots"`
 }
 
-type DescribeSnapshotsSnapshots0 struct {
-	Snapshot []DescribeSnapshotsSnapshot1 `json:"Snapshot" xml:"Snapshot"`
-}
-
-type DescribeSnapshotsSnapshot1 struct {
+type DescribeSnapshotsSnapshot0 struct {
 	CreateTime           string `json:"CreateTime" xml:"CreateTime"`
 	Description          string `json:"Description" xml:"Description"`
 	Progress             string `json:"Progress" xml:"Progress"`
@@ -111,6 +107,7 @@ type DescribeSnapshotsSnapshot1 struct {
 	SourceFileSystemId   string `json:"SourceFileSystemId" xml:"SourceFileSystemId"`
 	SourceFileSystemSize int64  `json:"SourceFileSystemSize" xml:"SourceFileSystemSize"`
 	Status               string `json:"Status" xml:"Status"`
+	EncryptType          int    `json:"EncryptType" xml:"EncryptType"`
 }
 
 // CreateDescribeSnapshotsRequest creates a request to invoke DescribeSnapshots API

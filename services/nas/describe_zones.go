@@ -82,26 +82,14 @@ type DescribeZonesRequest struct {
 // DescribeZonesResponse is the response struct for api DescribeZones
 type DescribeZonesResponse struct {
 	*responses.BaseResponse
-	RequestId string              `json:"RequestId" xml:"RequestId"`
-	Zones     DescribeZonesZones0 `json:"Zones" xml:"Zones"`
+	RequestId string               `json:"RequestId" xml:"RequestId"`
+	Zones     []DescribeZonesZone0 `json:"Zones" xml:"Zones"`
 }
 
-type DescribeZonesZones0 struct {
-	Zone []DescribeZonesZone1 `json:"Zone" xml:"Zone"`
-}
-
-type DescribeZonesZone1 struct {
-	ZoneId      string                    `json:"ZoneId" xml:"ZoneId"`
-	Capacity    DescribeZonesCapacity2    `json:"Capacity" xml:"Capacity"`
-	Performance DescribeZonesPerformance2 `json:"Performance" xml:"Performance"`
-}
-
-type DescribeZonesCapacity2 struct {
-	Protocol []string `json:"Protocol" xml:"Protocol"`
-}
-
-type DescribeZonesPerformance2 struct {
-	Protocol []string `json:"Protocol" xml:"Protocol"`
+type DescribeZonesZone0 struct {
+	ZoneId      string   `json:"ZoneId" xml:"ZoneId"`
+	Capacity    []string `json:"Capacity" xml:"Capacity"`
+	Performance []string `json:"Performance" xml:"Performance"`
 }
 
 // CreateDescribeZonesRequest creates a request to invoke DescribeZones API
