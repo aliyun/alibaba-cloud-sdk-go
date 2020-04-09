@@ -96,7 +96,7 @@ func CreateDescribeDatabasesRequest() (request *DescribeDatabasesRequest) {
 	request = &DescribeDatabasesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDatabases", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDatabases", "", "")
 	return
 }
 

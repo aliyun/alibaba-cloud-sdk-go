@@ -96,7 +96,7 @@ func CreateModifyDBDescriptionRequest() (request *ModifyDBDescriptionRequest) {
 	request = &ModifyDBDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBDescription", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBDescription", "", "")
 	return
 }
 

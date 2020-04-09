@@ -102,7 +102,7 @@ func CreateTagResourcesRequest() (request *TagResourcesRequest) {
 	request = &TagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "TagResources", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "TagResources", "", "")
 	return
 }
 

@@ -94,7 +94,7 @@ func CreateRestartDBNodeRequest() (request *RestartDBNodeRequest) {
 	request = &RestartDBNodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "RestartDBNode", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "RestartDBNode", "", "")
 	return
 }
 

@@ -100,7 +100,7 @@ func CreateCreateAccountRequest() (request *CreateAccountRequest) {
 	request = &CreateAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "CreateAccount", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "CreateAccount", "", "")
 	return
 }
 

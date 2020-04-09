@@ -119,7 +119,7 @@ func CreateDescribeDBClusterAttributeRequest() (request *DescribeDBClusterAttrib
 	request = &DescribeDBClusterAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterAttribute", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterAttribute", "", "")
 	return
 }
 

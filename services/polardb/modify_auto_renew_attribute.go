@@ -98,7 +98,7 @@ func CreateModifyAutoRenewAttributeRequest() (request *ModifyAutoRenewAttributeR
 	request = &ModifyAutoRenewAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyAutoRenewAttribute", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyAutoRenewAttribute", "", "")
 	return
 }
 

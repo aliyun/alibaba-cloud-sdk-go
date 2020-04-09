@@ -95,7 +95,7 @@ func CreateModifyDBClusterMaintainTimeRequest() (request *ModifyDBClusterMaintai
 	request = &ModifyDBClusterMaintainTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBClusterMaintainTime", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBClusterMaintainTime", "", "")
 	return
 }
 

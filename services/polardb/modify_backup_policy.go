@@ -97,7 +97,7 @@ func CreateModifyBackupPolicyRequest() (request *ModifyBackupPolicyRequest) {
 	request = &ModifyBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyBackupPolicy", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyBackupPolicy", "", "")
 	return
 }
 

@@ -96,7 +96,7 @@ func CreateResetAccountRequest() (request *ResetAccountRequest) {
 	request = &ResetAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ResetAccount", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ResetAccount", "", "")
 	return
 }
 

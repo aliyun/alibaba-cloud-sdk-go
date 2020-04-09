@@ -17,5 +17,5 @@ package polardb
 
 // PerformanceKeysInDescribeDBNodePerformance is a nested struct in polardb response
 type PerformanceKeysInDescribeDBNodePerformance struct {
-	PerformanceItem []PerformanceItemInDescribeDBNodePerformance `json:"PerformanceItem" xml:"PerformanceItem"`
+	PerformanceItem []PerformanceItem `json:"PerformanceItem" xml:"PerformanceItem"`
 }

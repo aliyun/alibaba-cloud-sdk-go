@@ -99,7 +99,7 @@ func CreateModifyDBClusterEndpointRequest() (request *ModifyDBClusterEndpointReq
 	request = &ModifyDBClusterEndpointRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBClusterEndpoint", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBClusterEndpoint", "", "")
 	return
 }
 

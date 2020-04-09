@@ -98,7 +98,7 @@ func CreateDeleteDBNodesRequest() (request *DeleteDBNodesRequest) {
 	request = &DeleteDBNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DeleteDBNodes", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DeleteDBNodes", "", "")
 	return
 }
 
