@@ -1,3 +1,8 @@
+2020-04-10 Version: v1.61.108
+- Generated 2017-09-06 for `imm`.
+- Support GetOfficeEditURL.
+- Support RefreshOfficeEditToken.
+
 2020-04-10 Version: v1.61.107
 - Generated 2020-01-01 for `geoip`.
 - Support DescribeIpv4Location.
