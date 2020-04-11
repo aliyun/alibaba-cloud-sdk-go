@@ -1,8 +1,11 @@
 package responses
 
 import (
+	"reflect"
 	"testing"
 
+	jsoniter "github.com/json-iterator/go"
+	"github.com/modern-go/reflect2"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -698,5 +701,194 @@ func TestUnmarshalWithArray(t *testing.T) {
 	// TODO: Must support Array
 	// support auto json type trans
 	err := jsonParser.Unmarshal(from, to)
+	assert.NotNil(t, err)
+}
+
+func TestNewBetterFuzzyExtension(t *testing.T) {
+	betterFuzzyExtension := newBetterFuzzyExtension()
+	assert.NotNil(t, betterFuzzyExtension)
+
+	decoder := betterFuzzyExtension[reflect2.DefaultTypeOfKind(reflect.String)]
+	assert.NotNil(t, decoder)
+	assert.IsType(t, &nullableFuzzyStringDecoder{}, decoder)
+
+	decoder = betterFuzzyExtension[reflect2.DefaultTypeOfKind(reflect.Bool)]
+	assert.NotNil(t, decoder)
+	assert.IsType(t, &fuzzyBoolDecoder{}, decoder)
+
+	decoder = betterFuzzyExtension[reflect2.DefaultTypeOfKind(reflect.Float32)]
+	assert.NotNil(t, decoder)
+	assert.IsType(t, &nullableFuzzyFloat32Decoder{}, decoder)
+
+	decoder = betterFuzzyExtension[reflect2.DefaultTypeOfKind(reflect.Float64)]
+	assert.NotNil(t, decoder)
+	assert.IsType(t, &nullableFuzzyFloat64Decoder{}, decoder)
+
+	decoder = betterFuzzyExtension[reflect2.DefaultTypeOfKind(reflect.Int)]
+	assert.NotNil(t, decoder)
+	assert.IsType(t, &nullableFuzzyIntegerDecoder{}, decoder)
+
+	decoder = betterFuzzyExtension[reflect2.DefaultTypeOfKind(reflect.Uint)]
+	assert.NotNil(t, decoder)
+	assert.IsType(t, &nullableFuzzyIntegerDecoder{}, decoder)
+
+	decoder = betterFuzzyExtension[reflect2.DefaultTypeOfKind(reflect.Int8)]
+	assert.NotNil(t, decoder)
+	assert.IsType(t, &nullableFuzzyIntegerDecoder{}, decoder)
+
+	decoder = betterFuzzyExtension[reflect2.DefaultTypeOfKind(reflect.Uint8)]
+	assert.NotNil(t, decoder)
+	assert.IsType(t, &nullableFuzzyIntegerDecoder{}, decoder)
+
+	decoder = betterFuzzyExtension[reflect2.DefaultTypeOfKind(reflect.Int16)]
+	assert.NotNil(t, decoder)
+	assert.IsType(t, &nullableFuzzyIntegerDecoder{}, decoder)
+
+	decoder = betterFuzzyExtension[reflect2.DefaultTypeOfKind(reflect.Uint16)]
+	assert.NotNil(t, decoder)
+	assert.IsType(t, &nullableFuzzyIntegerDecoder{}, decoder)
+
+	decoder = betterFuzzyExtension[reflect2.DefaultTypeOfKind(reflect.Int32)]
+	assert.NotNil(t, decoder)
+	assert.IsType(t, &nullableFuzzyIntegerDecoder{}, decoder)
+
+	decoder = betterFuzzyExtension[reflect2.DefaultTypeOfKind(reflect.Uint32)]
+	assert.NotNil(t, decoder)
+	assert.IsType(t, &nullableFuzzyIntegerDecoder{}, decoder)
+
+	decoder = betterFuzzyExtension[reflect2.DefaultTypeOfKind(reflect.Int64)]
+	assert.NotNil(t, decoder)
+	assert.IsType(t, &nullableFuzzyIntegerDecoder{}, decoder)
+
+	decoder = betterFuzzyExtension[reflect2.DefaultTypeOfKind(reflect.Uint64)]
+	assert.NotNil(t, decoder)
+	assert.IsType(t, &nullableFuzzyIntegerDecoder{}, decoder)
+}
+
+func TestUnmarshalWithDefaultDecoders(t *testing.T) {
+	// should not be valid with default decoders
+	from := []byte(`{"STRING":true}`)
+	toString := &struct {
+		STRING string
+	}{}
+
+	err := jsoniter.Unmarshal(from, toString)
+	assert.NotNil(t, err)
+
+	// should not be valid with default decoders
+	from = []byte(`{"BOOL":""}`)
+	toBool := &struct {
+		BOOL bool
+	}{}
+
+	err = jsoniter.Unmarshal(from, toBool)
+	assert.NotNil(t, err)
+
+	// should not be valid with default decoders
+	from = []byte(`{"FLOAT32":""}`)
+	toFloat32 := &struct {
+		FLOAT32 float32
+	}{}
+
+	err = jsoniter.Unmarshal(from, toFloat32)
+	assert.NotNil(t, err)
+
+	// should not be valid with default decoders
+	from = []byte(`{"FLOAT64":""}`)
+	toFloat64 := &struct {
+		FLOAT64 float64
+	}{}
+
+	err = jsoniter.Unmarshal(from, toFloat64)
+	assert.NotNil(t, err)
+
+	// should not be valid with default decoders
+	from = []byte(`{"INT":""}`)
+	toInt := &struct {
+		INT int
+	}{}
+
+	err = jsoniter.Unmarshal(from, toInt)
+	assert.NotNil(t, err)
+
+	// should not be valid with default decoders
+	from = []byte(`{"UINT":""}`)
+	toUint := &struct {
+		UINT uint
+	}{}
+
+	err = jsoniter.Unmarshal(from, toUint)
+	assert.NotNil(t, err)
+
+	// should not be valid with default decoders
+	from = []byte(`{"INT8":""}`)
+	toInt8 := &struct {
+		INT8 int8
+	}{}
+
+	err = jsoniter.Unmarshal(from, toInt8)
+	assert.NotNil(t, err)
+
+	// should not be valid with default decoders
+	from = []byte(`{"UINT8":""}`)
+	toUint8 := &struct {
+		UINT8 uint8
+	}{}
+
+	err = jsoniter.Unmarshal(from, toUint8)
+	assert.NotNil(t, err)
+
+	// should not be valid with default decoders
+	from = []byte(`{"INT16":""}`)
+	toInt16 := &struct {
+		INT16 int16
+	}{}
+
+	err = jsoniter.Unmarshal(from, toInt16)
+	assert.NotNil(t, err)
+
+	// should not be valid with default decoders
+	from = []byte(`{"UINT16":""}`)
+	toUint16 := &struct {
+		UINT16 uint16
+	}{}
+
+	err = jsoniter.Unmarshal(from, toUint16)
+	assert.NotNil(t, err)
+
+	// should not be valid with default decoders
+	from = []byte(`{"INT32":""}`)
+	toInt32 := &struct {
+		INT32 int32
+	}{}
+
+	err = jsoniter.Unmarshal(from, toInt32)
+	assert.NotNil(t, err)
+
+	// should not be valid with default decoders
+	from = []byte(`{"UINT32":""}`)
+	toUint32 := &struct {
+		UINT32 uint32
+	}{}
+
+	err = jsoniter.Unmarshal(from, toUint32)
+	assert.NotNil(t, err)
+
+	// should not be valid with default decoders
+	from = []byte(`{"INT64":""}`)
+	toInt64 := &struct {
+		INT64 int64
+	}{}
+
+	err = jsoniter.Unmarshal(from, toInt64)
+	assert.NotNil(t, err)
+
+	// should not be valid with default decoders
+	from = []byte(`{"UINT64":""}`)
+	toUint64 := &struct {
+		UINT64 uint64
+	}{}
+
+	err = jsoniter.Unmarshal(from, toUint64)
 	assert.NotNil(t, err)
 }
