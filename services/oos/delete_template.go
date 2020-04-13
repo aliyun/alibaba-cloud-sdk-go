@@ -92,7 +92,6 @@ func CreateDeleteTemplateRequest() (request *DeleteTemplateRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("oos", "2019-06-01", "DeleteTemplate", "oos", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

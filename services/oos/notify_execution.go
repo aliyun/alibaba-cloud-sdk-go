@@ -99,7 +99,6 @@ func CreateNotifyExecutionRequest() (request *NotifyExecutionRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("oos", "2019-06-01", "NotifyExecution", "oos", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

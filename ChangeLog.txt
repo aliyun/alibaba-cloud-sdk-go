@@ -1,3 +1,7 @@
+2020-04-13 Version: v1.61.111
+- Generated 2019-06-01 for `oos`.
+- Fix ListTaskExecutions SDK error.
+
 2020-04-13 Version: v1.61.110
 - Generated 2019-09-10 for `waf-openapi`.
 

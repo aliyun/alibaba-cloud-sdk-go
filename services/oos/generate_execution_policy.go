@@ -92,7 +92,6 @@ func CreateGenerateExecutionPolicyRequest() (request *GenerateExecutionPolicyReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("oos", "2019-06-01", "GenerateExecutionPolicy", "oos", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

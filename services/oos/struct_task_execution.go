@@ -17,23 +17,23 @@ package oos
 
 // TaskExecution is a nested struct in oos response
 type TaskExecution struct {
-	ExecutionId           string `json:"ExecutionId" xml:"ExecutionId"`
-	TaskExecutionId       string `json:"TaskExecutionId" xml:"TaskExecutionId"`
-	TemplateId            string `json:"TemplateId" xml:"TemplateId"`
-	StartDate             string `json:"StartDate" xml:"StartDate"`
-	EndDate               string `json:"EndDate" xml:"EndDate"`
-	CreateDate            string `json:"CreateDate" xml:"CreateDate"`
-	UpdateDate            string `json:"UpdateDate" xml:"UpdateDate"`
-	Status                string `json:"Status" xml:"Status"`
-	Properties            string `json:"Properties" xml:"Properties"`
-	Outputs               string `json:"Outputs" xml:"Outputs"`
-	TaskAction            string `json:"TaskAction" xml:"TaskAction"`
-	TaskName              string `json:"TaskName" xml:"TaskName"`
-	StatusMessage         string `json:"StatusMessage" xml:"StatusMessage"`
-	ChildExecutionId      string `json:"ChildExecutionId" xml:"ChildExecutionId"`
-	ParentTaskExecutionId string `json:"ParentTaskExecutionId" xml:"ParentTaskExecutionId"`
-	LoopItem              string `json:"LoopItem" xml:"LoopItem"`
-	Loop                  string `json:"Loop" xml:"Loop"`
-	ExtraData             string `json:"ExtraData" xml:"ExtraData"`
-	LoopBatchNumber       int    `json:"LoopBatchNumber" xml:"LoopBatchNumber"`
+	ExecutionId           string                 `json:"ExecutionId" xml:"ExecutionId"`
+	TaskExecutionId       string                 `json:"TaskExecutionId" xml:"TaskExecutionId"`
+	TemplateId            string                 `json:"TemplateId" xml:"TemplateId"`
+	StartDate             string                 `json:"StartDate" xml:"StartDate"`
+	EndDate               string                 `json:"EndDate" xml:"EndDate"`
+	CreateDate            string                 `json:"CreateDate" xml:"CreateDate"`
+	UpdateDate            string                 `json:"UpdateDate" xml:"UpdateDate"`
+	Status                string                 `json:"Status" xml:"Status"`
+	Properties            string                 `json:"Properties" xml:"Properties"`
+	Outputs               string                 `json:"Outputs" xml:"Outputs"`
+	TaskAction            string                 `json:"TaskAction" xml:"TaskAction"`
+	TaskName              string                 `json:"TaskName" xml:"TaskName"`
+	StatusMessage         string                 `json:"StatusMessage" xml:"StatusMessage"`
+	ChildExecutionId      string                 `json:"ChildExecutionId" xml:"ChildExecutionId"`
+	ParentTaskExecutionId string                 `json:"ParentTaskExecutionId" xml:"ParentTaskExecutionId"`
+	LoopItem              string                 `json:"LoopItem" xml:"LoopItem"`
+	Loop                  map[string]interface{} `json:"Loop" xml:"Loop"`
+	ExtraData             map[string]interface{} `json:"ExtraData" xml:"ExtraData"`
+	LoopBatchNumber       int                    `json:"LoopBatchNumber" xml:"LoopBatchNumber"`
 }

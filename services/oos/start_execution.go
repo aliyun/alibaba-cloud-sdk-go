@@ -101,7 +101,6 @@ func CreateStartExecutionRequest() (request *StartExecutionRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("oos", "2019-06-01", "StartExecution", "oos", "openAPI")
-	request.Method = requests.POST
 	return
 }
 

@@ -99,7 +99,6 @@ func CreateListExecutionLogsRequest() (request *ListExecutionLogsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("oos", "2019-06-01", "ListExecutionLogs", "oos", "openAPI")
-	request.Method = requests.POST
 	return
 }
 
