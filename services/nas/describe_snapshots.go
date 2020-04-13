@@ -89,14 +89,18 @@ type DescribeSnapshotsRequest struct {
 // DescribeSnapshotsResponse is the response struct for api DescribeSnapshots
 type DescribeSnapshotsResponse struct {
 	*responses.BaseResponse
-	RequestId  string                       `json:"RequestId" xml:"RequestId"`
-	TotalCount int                          `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int                          `json:"PageSize" xml:"PageSize"`
-	PageNumber int                          `json:"PageNumber" xml:"PageNumber"`
-	Snapshots  []DescribeSnapshotsSnapshot0 `json:"Snapshots" xml:"Snapshots"`
+	RequestId  string                      `json:"RequestId" xml:"RequestId"`
+	TotalCount int                         `json:"TotalCount" xml:"TotalCount"`
+	PageSize   int                         `json:"PageSize" xml:"PageSize"`
+	PageNumber int                         `json:"PageNumber" xml:"PageNumber"`
+	Snapshots  DescribeSnapshotsSnapshots0 `json:"Snapshots" xml:"Snapshots"`
 }
 
-type DescribeSnapshotsSnapshot0 struct {
+type DescribeSnapshotsSnapshots0 struct {
+	Snapshot []DescribeSnapshotsSnapshot1 `json:"Snapshot" xml:"Snapshot"`
+}
+
+type DescribeSnapshotsSnapshot1 struct {
 	CreateTime           string `json:"CreateTime" xml:"CreateTime"`
 	Description          string `json:"Description" xml:"Description"`
 	Progress             string `json:"Progress" xml:"Progress"`

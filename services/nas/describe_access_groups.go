@@ -86,24 +86,32 @@ type DescribeAccessGroupsRequest struct {
 // DescribeAccessGroupsResponse is the response struct for api DescribeAccessGroups
 type DescribeAccessGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId    string                             `json:"RequestId" xml:"RequestId"`
-	TotalCount   int                                `json:"TotalCount" xml:"TotalCount"`
-	PageSize     int                                `json:"PageSize" xml:"PageSize"`
-	PageNumber   int                                `json:"PageNumber" xml:"PageNumber"`
-	AccessGroups []DescribeAccessGroupsAccessGroup0 `json:"AccessGroups" xml:"AccessGroups"`
+	RequestId    string                            `json:"RequestId" xml:"RequestId"`
+	TotalCount   int                               `json:"TotalCount" xml:"TotalCount"`
+	PageSize     int                               `json:"PageSize" xml:"PageSize"`
+	PageNumber   int                               `json:"PageNumber" xml:"PageNumber"`
+	AccessGroups DescribeAccessGroupsAccessGroups0 `json:"AccessGroups" xml:"AccessGroups"`
 }
 
-type DescribeAccessGroupsAccessGroup0 struct {
-	AccessGroupName  string                     `json:"AccessGroupName" xml:"AccessGroupName"`
-	AccessGroupType  string                     `json:"AccessGroupType" xml:"AccessGroupType"`
-	RuleCount        int                        `json:"RuleCount" xml:"RuleCount"`
-	MountTargetCount int                        `json:"MountTargetCount" xml:"MountTargetCount"`
-	Description      string                     `json:"Description" xml:"Description"`
-	CreateTime       string                     `json:"CreateTime" xml:"CreateTime"`
-	Tags             []DescribeAccessGroupsTag1 `json:"Tags" xml:"Tags"`
+type DescribeAccessGroupsAccessGroups0 struct {
+	AccessGroup []DescribeAccessGroupsAccessGroup1 `json:"AccessGroup" xml:"AccessGroup"`
 }
 
-type DescribeAccessGroupsTag1 struct {
+type DescribeAccessGroupsAccessGroup1 struct {
+	AccessGroupName  string                    `json:"AccessGroupName" xml:"AccessGroupName"`
+	AccessGroupType  string                    `json:"AccessGroupType" xml:"AccessGroupType"`
+	RuleCount        int                       `json:"RuleCount" xml:"RuleCount"`
+	MountTargetCount int                       `json:"MountTargetCount" xml:"MountTargetCount"`
+	Description      string                    `json:"Description" xml:"Description"`
+	CreateTime       string                    `json:"CreateTime" xml:"CreateTime"`
+	Tags             DescribeAccessGroupsTags2 `json:"Tags" xml:"Tags"`
+}
+
+type DescribeAccessGroupsTags2 struct {
+	Tag []DescribeAccessGroupsTag3 `json:"Tag" xml:"Tag"`
+}
+
+type DescribeAccessGroupsTag3 struct {
 	Key   string `json:"Key" xml:"Key"`
 	Value string `json:"Value" xml:"Value"`
 }

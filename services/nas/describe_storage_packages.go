@@ -85,14 +85,18 @@ type DescribeStoragePackagesRequest struct {
 // DescribeStoragePackagesResponse is the response struct for api DescribeStoragePackages
 type DescribeStoragePackagesResponse struct {
 	*responses.BaseResponse
-	RequestId  string                            `json:"RequestId" xml:"RequestId"`
-	TotalCount int                               `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int                               `json:"PageSize" xml:"PageSize"`
-	PageNumber int                               `json:"PageNumber" xml:"PageNumber"`
-	Packages   []DescribeStoragePackagesPackage0 `json:"Packages" xml:"Packages"`
+	RequestId  string                           `json:"RequestId" xml:"RequestId"`
+	TotalCount int                              `json:"TotalCount" xml:"TotalCount"`
+	PageSize   int                              `json:"PageSize" xml:"PageSize"`
+	PageNumber int                              `json:"PageNumber" xml:"PageNumber"`
+	Packages   DescribeStoragePackagesPackages0 `json:"Packages" xml:"Packages"`
 }
 
-type DescribeStoragePackagesPackage0 struct {
+type DescribeStoragePackagesPackages0 struct {
+	Package []DescribeStoragePackagesPackage1 `json:"Package" xml:"Package"`
+}
+
+type DescribeStoragePackagesPackage1 struct {
 	StartTime    string `json:"StartTime" xml:"StartTime"`
 	StorageType  string `json:"StorageType" xml:"StorageType"`
 	Status       string `json:"Status" xml:"Status"`

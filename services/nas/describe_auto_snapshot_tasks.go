@@ -86,14 +86,18 @@ type DescribeAutoSnapshotTasksRequest struct {
 // DescribeAutoSnapshotTasksResponse is the response struct for api DescribeAutoSnapshotTasks
 type DescribeAutoSnapshotTasksResponse struct {
 	*responses.BaseResponse
-	RequestId         string                                       `json:"RequestId" xml:"RequestId"`
-	TotalCount        int                                          `json:"TotalCount" xml:"TotalCount"`
-	PageSize          int                                          `json:"PageSize" xml:"PageSize"`
-	PageNumber        int                                          `json:"PageNumber" xml:"PageNumber"`
-	AutoSnapshotTasks []DescribeAutoSnapshotTasksAutoSnapshotTask0 `json:"AutoSnapshotTasks" xml:"AutoSnapshotTasks"`
+	RequestId         string                                      `json:"RequestId" xml:"RequestId"`
+	TotalCount        int                                         `json:"TotalCount" xml:"TotalCount"`
+	PageSize          int                                         `json:"PageSize" xml:"PageSize"`
+	PageNumber        int                                         `json:"PageNumber" xml:"PageNumber"`
+	AutoSnapshotTasks DescribeAutoSnapshotTasksAutoSnapshotTasks0 `json:"AutoSnapshotTasks" xml:"AutoSnapshotTasks"`
 }
 
-type DescribeAutoSnapshotTasksAutoSnapshotTask0 struct {
+type DescribeAutoSnapshotTasksAutoSnapshotTasks0 struct {
+	AutoSnapshotTask []DescribeAutoSnapshotTasksAutoSnapshotTask1 `json:"AutoSnapshotTask" xml:"AutoSnapshotTask"`
+}
+
+type DescribeAutoSnapshotTasksAutoSnapshotTask1 struct {
 	SourceFileSystemId   string `json:"SourceFileSystemId" xml:"SourceFileSystemId"`
 	AutoSnapshotPolicyId string `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
 }

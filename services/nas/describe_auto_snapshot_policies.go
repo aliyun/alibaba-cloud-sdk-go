@@ -89,10 +89,14 @@ type DescribeAutoSnapshotPoliciesResponse struct {
 	TotalCount           int                                               `json:"TotalCount" xml:"TotalCount"`
 	PageSize             int                                               `json:"PageSize" xml:"PageSize"`
 	PageNumber           int                                               `json:"PageNumber" xml:"PageNumber"`
-	AutoSnapshotPolicies []DescribeAutoSnapshotPoliciesAutoSnapshotPolicy0 `json:"AutoSnapshotPolicies" xml:"AutoSnapshotPolicies"`
+	AutoSnapshotPolicies DescribeAutoSnapshotPoliciesAutoSnapshotPolicies0 `json:"AutoSnapshotPolicies" xml:"AutoSnapshotPolicies"`
 }
 
-type DescribeAutoSnapshotPoliciesAutoSnapshotPolicy0 struct {
+type DescribeAutoSnapshotPoliciesAutoSnapshotPolicies0 struct {
+	AutoSnapshotPolicy []DescribeAutoSnapshotPoliciesAutoSnapshotPolicy1 `json:"AutoSnapshotPolicy" xml:"AutoSnapshotPolicy"`
+}
+
+type DescribeAutoSnapshotPoliciesAutoSnapshotPolicy1 struct {
 	AutoSnapshotPolicyId   string `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
 	AutoSnapshotPolicyName string `json:"AutoSnapshotPolicyName" xml:"AutoSnapshotPolicyName"`
 	CreateTime             string `json:"CreateTime" xml:"CreateTime"`
