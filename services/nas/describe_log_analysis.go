@@ -82,20 +82,24 @@ type DescribeLogAnalysisRequest struct {
 // DescribeLogAnalysisResponse is the response struct for api DescribeLogAnalysis
 type DescribeLogAnalysisResponse struct {
 	*responses.BaseResponse
-	RequestId  string                         `json:"RequestId" xml:"RequestId"`
-	Code       string                         `json:"Code" xml:"Code"`
-	TotalCount int                            `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int                            `json:"PageSize" xml:"PageSize"`
-	PageNumber int                            `json:"PageNumber" xml:"PageNumber"`
-	Analyses   []DescribeLogAnalysisAnalysis0 `json:"Analyses" xml:"Analyses"`
+	RequestId  string                       `json:"RequestId" xml:"RequestId"`
+	Code       string                       `json:"Code" xml:"Code"`
+	TotalCount int                          `json:"TotalCount" xml:"TotalCount"`
+	PageSize   int                          `json:"PageSize" xml:"PageSize"`
+	PageNumber int                          `json:"PageNumber" xml:"PageNumber"`
+	Analyses   DescribeLogAnalysisAnalyses0 `json:"Analyses" xml:"Analyses"`
 }
 
-type DescribeLogAnalysisAnalysis0 struct {
+type DescribeLogAnalysisAnalyses0 struct {
+	Analysis []DescribeLogAnalysisAnalysis1 `json:"Analysis" xml:"Analysis"`
+}
+
+type DescribeLogAnalysisAnalysis1 struct {
 	MetaKey   string                        `json:"MetaKey" xml:"MetaKey"`
-	MetaValue DescribeLogAnalysisMetaValue1 `json:"MetaValue" xml:"MetaValue"`
+	MetaValue DescribeLogAnalysisMetaValue2 `json:"MetaValue" xml:"MetaValue"`
 }
 
-type DescribeLogAnalysisMetaValue1 struct {
+type DescribeLogAnalysisMetaValue2 struct {
 	Logstore string `json:"Logstore" xml:"Logstore"`
 	Region   string `json:"Region" xml:"Region"`
 	Project  string `json:"Project" xml:"Project"`

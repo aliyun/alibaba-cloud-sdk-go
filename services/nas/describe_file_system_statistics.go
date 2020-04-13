@@ -83,14 +83,18 @@ type DescribeFileSystemStatisticsRequest struct {
 // DescribeFileSystemStatisticsResponse is the response struct for api DescribeFileSystemStatistics
 type DescribeFileSystemStatisticsResponse struct {
 	*responses.BaseResponse
-	RequestId            string                                             `json:"RequestId" xml:"RequestId"`
-	TotalCount           int                                                `json:"TotalCount" xml:"TotalCount"`
-	PageSize             int                                                `json:"PageSize" xml:"PageSize"`
-	PageNumber           int                                                `json:"PageNumber" xml:"PageNumber"`
-	FileSystemStatistics []DescribeFileSystemStatisticsFileSystemStatistic0 `json:"FileSystemStatistics" xml:"FileSystemStatistics"`
+	RequestId            string                                            `json:"RequestId" xml:"RequestId"`
+	TotalCount           int                                               `json:"TotalCount" xml:"TotalCount"`
+	PageSize             int                                               `json:"PageSize" xml:"PageSize"`
+	PageNumber           int                                               `json:"PageNumber" xml:"PageNumber"`
+	FileSystemStatistics DescribeFileSystemStatisticsFileSystemStatistics0 `json:"FileSystemStatistics" xml:"FileSystemStatistics"`
 }
 
-type DescribeFileSystemStatisticsFileSystemStatistic0 struct {
+type DescribeFileSystemStatisticsFileSystemStatistics0 struct {
+	FileSystemStatistic []DescribeFileSystemStatisticsFileSystemStatistic1 `json:"FileSystemStatistic" xml:"FileSystemStatistic"`
+}
+
+type DescribeFileSystemStatisticsFileSystemStatistic1 struct {
 	FileSystemType string `json:"FileSystemType" xml:"FileSystemType"`
 	TotalCount     int    `json:"TotalCount" xml:"TotalCount"`
 	MeteredSize    int64  `json:"MeteredSize" xml:"MeteredSize"`

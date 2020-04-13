@@ -87,14 +87,18 @@ type DescribeMountedClientsRequest struct {
 // DescribeMountedClientsResponse is the response struct for api DescribeMountedClients
 type DescribeMountedClientsResponse struct {
 	*responses.BaseResponse
-	RequestId  string                          `json:"RequestId" xml:"RequestId"`
-	TotalCount int                             `json:"TotalCount" xml:"TotalCount"`
-	PageSize   int                             `json:"PageSize" xml:"PageSize"`
-	PageNumber int                             `json:"PageNumber" xml:"PageNumber"`
-	Clients    []DescribeMountedClientsClient0 `json:"Clients" xml:"Clients"`
+	RequestId  string                         `json:"RequestId" xml:"RequestId"`
+	TotalCount int                            `json:"TotalCount" xml:"TotalCount"`
+	PageSize   int                            `json:"PageSize" xml:"PageSize"`
+	PageNumber int                            `json:"PageNumber" xml:"PageNumber"`
+	Clients    DescribeMountedClientsClients0 `json:"Clients" xml:"Clients"`
 }
 
-type DescribeMountedClientsClient0 struct {
+type DescribeMountedClientsClients0 struct {
+	Client []DescribeMountedClientsClient1 `json:"Client" xml:"Client"`
+}
+
+type DescribeMountedClientsClient1 struct {
 	ClientIP string `json:"ClientIP" xml:"ClientIP"`
 }
 

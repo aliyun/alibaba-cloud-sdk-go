@@ -88,14 +88,18 @@ type DescribeAccessRulesRequest struct {
 // DescribeAccessRulesResponse is the response struct for api DescribeAccessRules
 type DescribeAccessRulesResponse struct {
 	*responses.BaseResponse
-	RequestId   string                           `json:"RequestId" xml:"RequestId"`
-	TotalCount  int                              `json:"TotalCount" xml:"TotalCount"`
-	PageSize    int                              `json:"PageSize" xml:"PageSize"`
-	PageNumber  int                              `json:"PageNumber" xml:"PageNumber"`
-	AccessRules []DescribeAccessRulesAccessRule0 `json:"AccessRules" xml:"AccessRules"`
+	RequestId   string                          `json:"RequestId" xml:"RequestId"`
+	TotalCount  int                             `json:"TotalCount" xml:"TotalCount"`
+	PageSize    int                             `json:"PageSize" xml:"PageSize"`
+	PageNumber  int                             `json:"PageNumber" xml:"PageNumber"`
+	AccessRules DescribeAccessRulesAccessRules0 `json:"AccessRules" xml:"AccessRules"`
 }
 
-type DescribeAccessRulesAccessRule0 struct {
+type DescribeAccessRulesAccessRules0 struct {
+	AccessRule []DescribeAccessRulesAccessRule1 `json:"AccessRule" xml:"AccessRule"`
+}
+
+type DescribeAccessRulesAccessRule1 struct {
 	SourceCidrIp string `json:"SourceCidrIp" xml:"SourceCidrIp"`
 	Priority     int    `json:"Priority" xml:"Priority"`
 	AccessRuleId string `json:"AccessRuleId" xml:"AccessRuleId"`
