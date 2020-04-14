@@ -93,7 +93,7 @@ func CreateSegmentImageRequest() (request *SegmentImageRequest) {
 	request = &SegmentImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "SegmentImage", "ivpd", "openAPI")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "SegmentImage", "", "")
 	return
 }
 

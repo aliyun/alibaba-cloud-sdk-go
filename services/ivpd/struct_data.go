@@ -17,11 +17,18 @@ package ivpd
 
 // Data is a nested struct in ivpd response
 type Data struct {
+	JobId             string          `json:"JobId" xml:"JobId"`
 	MajorUrl          string          `json:"MajorUrl" xml:"MajorUrl"`
-	ImageUrl          string          `json:"ImageUrl" xml:"ImageUrl"`
+	TotalUsedTime     int64           `json:"TotalUsedTime" xml:"TotalUsedTime"`
 	Url               string          `json:"Url" xml:"Url"`
-	ImageList         []string        `json:"ImageList" xml:"ImageList"`
+	Progress          int             `json:"Progress" xml:"Progress"`
+	ImageUrl          string          `json:"ImageUrl" xml:"ImageUrl"`
+	BatchSize         int             `json:"BatchSize" xml:"BatchSize"`
+	Status            string          `json:"Status" xml:"Status"`
+	Completed         bool            `json:"Completed" xml:"Completed"`
 	Styles            []string        `json:"Styles" xml:"Styles"`
+	ImageList         []string        `json:"ImageList" xml:"ImageList"`
 	Elements          []Element       `json:"Elements" xml:"Elements"`
+	ResultList        []Result        `json:"ResultList" xml:"ResultList"`
 	ColorTemplateList []ColorTemplate `json:"ColorTemplateList" xml:"ColorTemplateList"`
 }

@@ -95,7 +95,7 @@ func CreateChangeImageSizeRequest() (request *ChangeImageSizeRequest) {
 	request = &ChangeImageSizeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "ChangeImageSize", "ivpd", "openAPI")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "ChangeImageSize", "", "")
 	return
 }
 

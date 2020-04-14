@@ -93,7 +93,7 @@ func CreateMakeSuperResolutionImageRequest() (request *MakeSuperResolutionImageR
 	request = &MakeSuperResolutionImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "MakeSuperResolutionImage", "ivpd", "openAPI")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "MakeSuperResolutionImage", "", "")
 	return
 }
 
