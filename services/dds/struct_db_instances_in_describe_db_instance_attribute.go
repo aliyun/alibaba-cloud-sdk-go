@@ -17,5 +17,5 @@ package dds
 
 // DBInstancesInDescribeDBInstanceAttribute is a nested struct in dds response
 type DBInstancesInDescribeDBInstanceAttribute struct {
-	DBInstance []DBInstanceInDescribeDBInstanceAttribute `json:"DBInstance" xml:"DBInstance"`
+	DBInstance []DBInstance `json:"DBInstance" xml:"DBInstance"`
 }

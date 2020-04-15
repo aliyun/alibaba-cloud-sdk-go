@@ -17,5 +17,5 @@ package dds
 
 // ConfigParameters is a nested struct in dds response
 type ConfigParameters struct {
-	Parameter []ParameterInDescribeParameters `json:"Parameter" xml:"Parameter"`
+	Parameter []Parameter `json:"Parameter" xml:"Parameter"`
 }

@@ -17,5 +17,5 @@ package dds
 
 // CouponsInDescribePrice is a nested struct in dds response
 type CouponsInDescribePrice struct {
-	Coupon []CouponInDescribePrice `json:"Coupon" xml:"Coupon"`
+	Coupon []Coupon `json:"Coupon" xml:"Coupon"`
 }

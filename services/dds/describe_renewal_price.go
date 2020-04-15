@@ -90,7 +90,7 @@ type DescribeRenewalPriceRequest struct {
 type DescribeRenewalPriceResponse struct {
 	*responses.BaseResponse
 	RequestId string                          `json:"RequestId" xml:"RequestId"`
-	Order     OrderInDescribeRenewalPrice     `json:"Order" xml:"Order"`
+	Order     Order                           `json:"Order" xml:"Order"`
 	Rules     RulesInDescribeRenewalPrice     `json:"Rules" xml:"Rules"`
 	SubOrders SubOrdersInDescribeRenewalPrice `json:"SubOrders" xml:"SubOrders"`
 }

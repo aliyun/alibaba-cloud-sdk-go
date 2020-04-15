@@ -17,5 +17,5 @@ package dds
 
 // ReplicaSetsInDescribeReplicaSetRole is a nested struct in dds response
 type ReplicaSetsInDescribeReplicaSetRole struct {
-	ReplicaSet []ReplicaSetInDescribeReplicaSetRole `json:"ReplicaSet" xml:"ReplicaSet"`
+	ReplicaSet []ReplicaSet `json:"ReplicaSet" xml:"ReplicaSet"`
 }

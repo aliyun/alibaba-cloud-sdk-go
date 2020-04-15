@@ -1,3 +1,7 @@
+2020-04-15 Version: v1.61.115
+- Generated 2015-12-01 for `Dds`.
+- CreateNode API add return NodeId.
+
 2020-04-15 Version: v1.61.114
 - Generated 2020-04-08 for `visionai-poc`.
 - Vision-poc response modified.

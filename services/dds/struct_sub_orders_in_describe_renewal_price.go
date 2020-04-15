@@ -17,5 +17,5 @@ package dds
 
 // SubOrdersInDescribeRenewalPrice is a nested struct in dds response
 type SubOrdersInDescribeRenewalPrice struct {
-	SubOrder []SubOrderInDescribeRenewalPrice `json:"SubOrder" xml:"SubOrder"`
+	SubOrder []SubOrder `json:"SubOrder" xml:"SubOrder"`
 }

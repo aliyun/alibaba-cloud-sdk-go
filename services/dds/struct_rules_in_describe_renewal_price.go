@@ -17,5 +17,5 @@ package dds
 
 // RulesInDescribeRenewalPrice is a nested struct in dds response
 type RulesInDescribeRenewalPrice struct {
-	Rule []RuleInDescribeRenewalPrice `json:"Rule" xml:"Rule"`
+	Rule []Rule `json:"Rule" xml:"Rule"`
 }

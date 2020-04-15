@@ -96,7 +96,7 @@ type DescribePriceResponse struct {
 	RequestId   string                   `json:"RequestId" xml:"RequestId"`
 	TraceId     string                   `json:"TraceId" xml:"TraceId"`
 	OrderParams string                   `json:"OrderParams" xml:"OrderParams"`
-	Order       OrderInDescribePrice     `json:"Order" xml:"Order"`
+	Order       Order                    `json:"Order" xml:"Order"`
 	Rules       RulesInDescribePrice     `json:"Rules" xml:"Rules"`
 	SubOrders   SubOrdersInDescribePrice `json:"SubOrders" xml:"SubOrders"`
 }

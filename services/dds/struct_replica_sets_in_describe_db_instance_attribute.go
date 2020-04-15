@@ -17,5 +17,5 @@ package dds
 
 // ReplicaSetsInDescribeDBInstanceAttribute is a nested struct in dds response
 type ReplicaSetsInDescribeDBInstanceAttribute struct {
-	ReplicaSet []ReplicaSetInDescribeDBInstanceAttribute `json:"ReplicaSet" xml:"ReplicaSet"`
+	ReplicaSet []ReplicaSet `json:"ReplicaSet" xml:"ReplicaSet"`
 }

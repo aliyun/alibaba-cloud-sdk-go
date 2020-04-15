@@ -95,6 +95,7 @@ type CreateNodeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
+	NodeId    string `json:"NodeId" xml:"NodeId"`
 }
 
 // CreateCreateNodeRequest creates a request to invoke CreateNode API

@@ -17,5 +17,5 @@ package dds
 
 // TagsInDescribeDBInstances is a nested struct in dds response
 type TagsInDescribeDBInstances struct {
-	Tag []TagInDescribeDBInstances `json:"Tag" xml:"Tag"`
+	Tag []Tag `json:"Tag" xml:"Tag"`
 }
