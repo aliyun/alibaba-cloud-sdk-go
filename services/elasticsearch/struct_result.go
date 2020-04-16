@@ -53,6 +53,7 @@ type Result struct {
 	EsConfig                  map[string]interface{}     `json:"esConfig" xml:"esConfig"`
 	Version                   string                     `json:"version" xml:"version"`
 	HaveClientNode            bool                       `json:"haveClientNode" xml:"haveClientNode"`
+	ResourceGroupId           string                     `json:"resourceGroupId" xml:"resourceGroupId"`
 	CreatedAt                 string                     `json:"createdAt" xml:"createdAt"`
 	EsIPWhitelist             []string                   `json:"esIPWhitelist" xml:"esIPWhitelist"`
 	EsIPBlacklist             []string                   `json:"esIPBlacklist" xml:"esIPBlacklist"`

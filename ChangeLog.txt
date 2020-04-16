@@ -1,3 +1,7 @@
+2020-04-16 Version: v1.61.121
+- Generated 2017-06-13 for `elasticsearch`.
+- Add ModifyWhiteIps.
+
 2020-04-16 Version: v1.61.120
 - Generated 2014-05-26 for `Ecs`.
 - Add BatchOptimization param in Stop and Start Instances.

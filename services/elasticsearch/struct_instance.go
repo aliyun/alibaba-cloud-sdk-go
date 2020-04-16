@@ -27,6 +27,7 @@ type Instance struct {
 	Version                string              `json:"version" xml:"version"`
 	EsVersion              string              `json:"esVersion" xml:"esVersion"`
 	PaymentType            string              `json:"paymentType" xml:"paymentType"`
+	ResourceGroupId        string              `json:"resourceGroupId" xml:"resourceGroupId"`
 	CreatedAt              string              `json:"createdAt" xml:"createdAt"`
 	NetworkConfig          NetworkConfig       `json:"networkConfig" xml:"networkConfig"`
 	MasterConfiguration    MasterConfiguration `json:"masterConfiguration" xml:"masterConfiguration"`

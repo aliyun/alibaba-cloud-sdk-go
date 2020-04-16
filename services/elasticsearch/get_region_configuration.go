@@ -76,6 +76,7 @@ func (client *Client) GetRegionConfigurationWithCallback(request *GetRegionConfi
 // GetRegionConfigurationRequest is the request struct for api GetRegionConfiguration
 type GetRegionConfigurationRequest struct {
 	*requests.RoaRequest
+	ZoneId string `position:"Query" name:"zoneId"`
 }
 
 // GetRegionConfigurationResponse is the response struct for api GetRegionConfiguration
