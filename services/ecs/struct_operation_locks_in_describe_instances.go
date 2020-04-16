@@ -17,5 +17,5 @@ package ecs
 
 // OperationLocksInDescribeInstances is a nested struct in ecs response
 type OperationLocksInDescribeInstances struct {
-	LockReason []LockReasonInDescribeInstances `json:"LockReason" xml:"LockReason"`
+	LockReason []LockReason `json:"LockReason" xml:"LockReason"`
 }

@@ -17,5 +17,5 @@ package ecs
 
 // EipMonitorDatasInDescribeNewProjectEipMonitorData is a nested struct in ecs response
 type EipMonitorDatasInDescribeNewProjectEipMonitorData struct {
-	EipMonitorData []EipMonitorDataInDescribeNewProjectEipMonitorData `json:"EipMonitorData" xml:"EipMonitorData"`
+	EipMonitorData []EipMonitorData `json:"EipMonitorData" xml:"EipMonitorData"`
 }

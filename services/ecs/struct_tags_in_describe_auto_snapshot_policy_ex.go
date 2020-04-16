@@ -17,5 +17,5 @@ package ecs
 
 // TagsInDescribeAutoSnapshotPolicyEx is a nested struct in ecs response
 type TagsInDescribeAutoSnapshotPolicyEx struct {
-	Tag []TagInDescribeAutoSnapshotPolicyEx `json:"Tag" xml:"Tag"`
+	Tag []Tag `json:"Tag" xml:"Tag"`
 }

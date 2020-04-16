@@ -17,5 +17,5 @@ package ecs
 
 // OperationLocksInDescribeEipAddresses is a nested struct in ecs response
 type OperationLocksInDescribeEipAddresses struct {
-	LockReason []LockReasonInDescribeEipAddresses `json:"LockReason" xml:"LockReason"`
+	LockReason []LockReason `json:"LockReason" xml:"LockReason"`
 }

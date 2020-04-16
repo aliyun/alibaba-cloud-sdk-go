@@ -17,5 +17,5 @@ package ecs
 
 // InstancesInDescribeAutoProvisioningGroupInstances is a nested struct in ecs response
 type InstancesInDescribeAutoProvisioningGroupInstances struct {
-	Instance []InstanceInDescribeAutoProvisioningGroupInstances `json:"Instance" xml:"Instance"`
+	Instance []Instance `json:"Instance" xml:"Instance"`
 }

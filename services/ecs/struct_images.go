@@ -17,5 +17,5 @@ package ecs
 
 // Images is a nested struct in ecs response
 type Images struct {
-	Image []ImageInDescribeImages `json:"Image" xml:"Image"`
+	Image []Image `json:"Image" xml:"Image"`
 }

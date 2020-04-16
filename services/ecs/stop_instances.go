@@ -79,6 +79,7 @@ type StopInstancesRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	StoppedMode          string           `position:"Query" name:"StoppedMode"`
 	ForceStop            requests.Boolean `position:"Query" name:"ForceStop"`
+	BatchOptimization    string           `position:"Query" name:"BatchOptimization"`
 	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -89,7 +90,8 @@ type StopInstancesRequest struct {
 // StopInstancesResponse is the response struct for api StopInstances
 type StopInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId         string                           `json:"RequestId" xml:"RequestId"`
+	InstanceResponses InstanceResponsesInStopInstances `json:"InstanceResponses" xml:"InstanceResponses"`
 }
 
 // CreateStopInstancesRequest creates a request to invoke StopInstances API

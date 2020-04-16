@@ -17,5 +17,5 @@ package ecs
 
 // NetworkInterfacePermissions is a nested struct in ecs response
 type NetworkInterfacePermissions struct {
-	NetworkInterfacePermission []NetworkInterfacePermissionInDescribeNetworkInterfacePermissions `json:"NetworkInterfacePermission" xml:"NetworkInterfacePermission"`
+	NetworkInterfacePermission []NetworkInterfacePermission `json:"NetworkInterfacePermission" xml:"NetworkInterfacePermission"`
 }

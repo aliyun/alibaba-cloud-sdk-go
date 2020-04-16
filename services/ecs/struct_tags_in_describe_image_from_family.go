@@ -17,5 +17,5 @@ package ecs
 
 // TagsInDescribeImageFromFamily is a nested struct in ecs response
 type TagsInDescribeImageFromFamily struct {
-	Tag []TagInDescribeImageFromFamily `json:"Tag" xml:"Tag"`
+	Tag []Tag `json:"Tag" xml:"Tag"`
 }

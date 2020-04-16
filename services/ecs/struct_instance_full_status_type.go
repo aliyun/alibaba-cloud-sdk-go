@@ -17,8 +17,8 @@ package ecs
 
 // InstanceFullStatusType is a nested struct in ecs response
 type InstanceFullStatusType struct {
-	InstanceId              string                                    `json:"InstanceId" xml:"InstanceId"`
-	Status                  StatusInDescribeInstancesFullStatus       `json:"Status" xml:"Status"`
-	HealthStatus            HealthStatusInDescribeInstancesFullStatus `json:"HealthStatus" xml:"HealthStatus"`
-	ScheduledSystemEventSet ScheduledSystemEventSet                   `json:"ScheduledSystemEventSet" xml:"ScheduledSystemEventSet"`
+	InstanceId              string                  `json:"InstanceId" xml:"InstanceId"`
+	Status                  Status                  `json:"Status" xml:"Status"`
+	HealthStatus            HealthStatus            `json:"HealthStatus" xml:"HealthStatus"`
+	ScheduledSystemEventSet ScheduledSystemEventSet `json:"ScheduledSystemEventSet" xml:"ScheduledSystemEventSet"`
 }

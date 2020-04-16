@@ -86,8 +86,8 @@ type DescribeImageFromFamilyRequest struct {
 // DescribeImageFromFamilyResponse is the response struct for api DescribeImageFromFamily
 type DescribeImageFromFamilyResponse struct {
 	*responses.BaseResponse
-	RequestId string                         `json:"RequestId" xml:"RequestId"`
-	Image     ImageInDescribeImageFromFamily `json:"Image" xml:"Image"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Image     Image  `json:"Image" xml:"Image"`
 }
 
 // CreateDescribeImageFromFamilyRequest creates a request to invoke DescribeImageFromFamily API

@@ -17,5 +17,5 @@ package ecs
 
 // OperationLocksInDescribeReservedInstances is a nested struct in ecs response
 type OperationLocksInDescribeReservedInstances struct {
-	OperationLock []OperationLockInDescribeReservedInstances `json:"OperationLock" xml:"OperationLock"`
+	OperationLock []OperationLock `json:"OperationLock" xml:"OperationLock"`
 }

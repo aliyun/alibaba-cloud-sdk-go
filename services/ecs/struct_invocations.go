@@ -17,5 +17,5 @@ package ecs
 
 // Invocations is a nested struct in ecs response
 type Invocations struct {
-	Invocation []InvocationInDescribeInvocations `json:"Invocation" xml:"Invocation"`
+	Invocation []Invocation `json:"Invocation" xml:"Invocation"`
 }

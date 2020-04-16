@@ -17,5 +17,5 @@ package ecs
 
 // InactiveDisksInDescribeInstanceHistoryEvents is a nested struct in ecs response
 type InactiveDisksInDescribeInstanceHistoryEvents struct {
-	InactiveDisk []InactiveDiskInDescribeInstanceHistoryEvents `json:"InactiveDisk" xml:"InactiveDisk"`
+	InactiveDisk []InactiveDisk `json:"InactiveDisk" xml:"InactiveDisk"`
 }

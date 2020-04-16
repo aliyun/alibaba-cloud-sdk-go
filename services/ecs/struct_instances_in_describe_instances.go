@@ -17,5 +17,5 @@ package ecs
 
 // InstancesInDescribeInstances is a nested struct in ecs response
 type InstancesInDescribeInstances struct {
-	Instance []InstanceInDescribeInstances `json:"Instance" xml:"Instance"`
+	Instance []Instance `json:"Instance" xml:"Instance"`
 }

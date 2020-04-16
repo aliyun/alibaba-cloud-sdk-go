@@ -1,3 +1,12 @@
+2020-04-16 Version: v1.61.120
+- Generated 2014-05-26 for `Ecs`.
+- Add BatchOptimization param in Stop and Start Instances.
+- Add RemoveSymbols in GetInstanceConsoleOutput.
+- Add ImageFamily in ModifyImageAttribute.
+- Customize InstanceType on DedicatedHosts is supported.
+- Add StorageCapacityUnit interfaces.
+- Add param Tag in CreateAutoSnapshotPolicy.
+
 2020-04-16 Version: v1.61.119
 - Generated 2017-07-05 for `CCC`.
 

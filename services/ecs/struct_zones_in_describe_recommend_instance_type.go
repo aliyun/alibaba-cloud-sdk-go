@@ -17,5 +17,5 @@ package ecs
 
 // ZonesInDescribeRecommendInstanceType is a nested struct in ecs response
 type ZonesInDescribeRecommendInstanceType struct {
-	Zone []ZoneInDescribeRecommendInstanceType `json:"zone" xml:"zone"`
+	Zone []Zone `json:"zone" xml:"zone"`
 }

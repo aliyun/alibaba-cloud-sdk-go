@@ -17,5 +17,5 @@ package ecs
 
 // DiskDeviceMappingsInDescribeImages is a nested struct in ecs response
 type DiskDeviceMappingsInDescribeImages struct {
-	DiskDeviceMapping []DiskDeviceMappingInDescribeImages `json:"DiskDeviceMapping" xml:"DiskDeviceMapping"`
+	DiskDeviceMapping []DiskDeviceMapping `json:"DiskDeviceMapping" xml:"DiskDeviceMapping"`
 }

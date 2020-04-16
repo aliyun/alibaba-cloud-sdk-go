@@ -17,5 +17,5 @@ package ecs
 
 // InstanceTypesInDescribeImageSupportInstanceTypes is a nested struct in ecs response
 type InstanceTypesInDescribeImageSupportInstanceTypes struct {
-	InstanceType []InstanceTypeInDescribeImageSupportInstanceTypes `json:"InstanceType" xml:"InstanceType"`
+	InstanceType []InstanceType `json:"InstanceType" xml:"InstanceType"`
 }

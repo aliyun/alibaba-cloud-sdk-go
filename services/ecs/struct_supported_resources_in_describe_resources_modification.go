@@ -17,5 +17,5 @@ package ecs
 
 // SupportedResourcesInDescribeResourcesModification is a nested struct in ecs response
 type SupportedResourcesInDescribeResourcesModification struct {
-	SupportedResource []SupportedResourceInDescribeResourcesModification `json:"SupportedResource" xml:"SupportedResource"`
+	SupportedResource []SupportedResource `json:"SupportedResource" xml:"SupportedResource"`
 }

@@ -17,5 +17,5 @@ package ecs
 
 // InactiveDisksInDescribeInstancesFullStatus is a nested struct in ecs response
 type InactiveDisksInDescribeInstancesFullStatus struct {
-	InactiveDisk []InactiveDiskInDescribeInstancesFullStatus `json:"InactiveDisk" xml:"InactiveDisk"`
+	InactiveDisk []InactiveDisk `json:"InactiveDisk" xml:"InactiveDisk"`
 }

@@ -17,5 +17,5 @@ package ecs
 
 // ResultsInDetachKeyPair is a nested struct in ecs response
 type ResultsInDetachKeyPair struct {
-	Result []ResultInDetachKeyPair `json:"Result" xml:"Result"`
+	Result []Result `json:"Result" xml:"Result"`
 }

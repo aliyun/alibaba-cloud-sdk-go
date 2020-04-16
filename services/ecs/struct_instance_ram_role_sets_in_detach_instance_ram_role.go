@@ -17,5 +17,5 @@ package ecs
 
 // InstanceRamRoleSetsInDetachInstanceRamRole is a nested struct in ecs response
 type InstanceRamRoleSetsInDetachInstanceRamRole struct {
-	InstanceRamRoleSet []InstanceRamRoleSetInDetachInstanceRamRole `json:"InstanceRamRoleSet" xml:"InstanceRamRoleSet"`
+	InstanceRamRoleSet []InstanceRamRoleSet `json:"InstanceRamRoleSet" xml:"InstanceRamRoleSet"`
 }

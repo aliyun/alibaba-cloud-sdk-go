@@ -17,5 +17,5 @@ package ecs
 
 // TagsInDescribeSecurityGroups is a nested struct in ecs response
 type TagsInDescribeSecurityGroups struct {
-	Tag []TagInDescribeSecurityGroups `json:"Tag" xml:"Tag"`
+	Tag []Tag `json:"Tag" xml:"Tag"`
 }

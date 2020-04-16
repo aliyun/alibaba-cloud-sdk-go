@@ -17,5 +17,5 @@ package ecs
 
 // OperationLocksInDescribeInstanceAttribute is a nested struct in ecs response
 type OperationLocksInDescribeInstanceAttribute struct {
-	LockReason []LockReasonInDescribeInstanceAttribute `json:"LockReason" xml:"LockReason"`
+	LockReason []LockReason `json:"LockReason" xml:"LockReason"`
 }

@@ -17,26 +17,26 @@ package ecs
 
 // NetworkInterfaceSet is a nested struct in ecs response
 type NetworkInterfaceSet struct {
-	NetworkInterfaceId   string                                        `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
-	Status               string                                        `json:"Status" xml:"Status"`
-	Type                 string                                        `json:"Type" xml:"Type"`
-	VpcId                string                                        `json:"VpcId" xml:"VpcId"`
-	VSwitchId            string                                        `json:"VSwitchId" xml:"VSwitchId"`
-	ZoneId               string                                        `json:"ZoneId" xml:"ZoneId"`
-	PrivateIpAddress     string                                        `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
-	MacAddress           string                                        `json:"MacAddress" xml:"MacAddress"`
-	NetworkInterfaceName string                                        `json:"NetworkInterfaceName" xml:"NetworkInterfaceName"`
-	Description          string                                        `json:"Description" xml:"Description"`
-	InstanceId           string                                        `json:"InstanceId" xml:"InstanceId"`
-	CreationTime         string                                        `json:"CreationTime" xml:"CreationTime"`
-	ResourceGroupId      string                                        `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	ServiceID            int64                                         `json:"ServiceID" xml:"ServiceID"`
-	ServiceManaged       bool                                          `json:"ServiceManaged" xml:"ServiceManaged"`
-	QueueNumber          int                                           `json:"QueueNumber" xml:"QueueNumber"`
-	OwnerId              string                                        `json:"OwnerId" xml:"OwnerId"`
-	SecurityGroupIds     SecurityGroupIdsInDescribeNetworkInterfaces   `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
-	AssociatedPublicIp   AssociatedPublicIpInDescribeNetworkInterfaces `json:"AssociatedPublicIp" xml:"AssociatedPublicIp"`
-	PrivateIpSets        PrivateIpSets                                 `json:"PrivateIpSets" xml:"PrivateIpSets"`
-	Ipv6Sets             Ipv6Sets                                      `json:"Ipv6Sets" xml:"Ipv6Sets"`
-	Tags                 TagsInDescribeNetworkInterfaces               `json:"Tags" xml:"Tags"`
+	NetworkInterfaceId   string                                      `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
+	Status               string                                      `json:"Status" xml:"Status"`
+	Type                 string                                      `json:"Type" xml:"Type"`
+	VpcId                string                                      `json:"VpcId" xml:"VpcId"`
+	VSwitchId            string                                      `json:"VSwitchId" xml:"VSwitchId"`
+	ZoneId               string                                      `json:"ZoneId" xml:"ZoneId"`
+	PrivateIpAddress     string                                      `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
+	MacAddress           string                                      `json:"MacAddress" xml:"MacAddress"`
+	NetworkInterfaceName string                                      `json:"NetworkInterfaceName" xml:"NetworkInterfaceName"`
+	Description          string                                      `json:"Description" xml:"Description"`
+	InstanceId           string                                      `json:"InstanceId" xml:"InstanceId"`
+	CreationTime         string                                      `json:"CreationTime" xml:"CreationTime"`
+	ResourceGroupId      string                                      `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ServiceID            int64                                       `json:"ServiceID" xml:"ServiceID"`
+	ServiceManaged       bool                                        `json:"ServiceManaged" xml:"ServiceManaged"`
+	QueueNumber          int                                         `json:"QueueNumber" xml:"QueueNumber"`
+	OwnerId              string                                      `json:"OwnerId" xml:"OwnerId"`
+	SecurityGroupIds     SecurityGroupIdsInDescribeNetworkInterfaces `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
+	AssociatedPublicIp   AssociatedPublicIp                          `json:"AssociatedPublicIp" xml:"AssociatedPublicIp"`
+	PrivateIpSets        PrivateIpSets                               `json:"PrivateIpSets" xml:"PrivateIpSets"`
+	Ipv6Sets             Ipv6Sets                                    `json:"Ipv6Sets" xml:"Ipv6Sets"`
+	Tags                 TagsInDescribeNetworkInterfaces             `json:"Tags" xml:"Tags"`
 }

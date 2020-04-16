@@ -83,6 +83,7 @@ type ModifyImageAttributeRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ImageFamily          string           `position:"Query" name:"ImageFamily"`
 	Status               string           `position:"Query" name:"Status"`
 }
 

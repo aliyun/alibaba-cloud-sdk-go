@@ -17,5 +17,5 @@ package ecs
 
 // TagsInDescribeDedicatedHosts is a nested struct in ecs response
 type TagsInDescribeDedicatedHosts struct {
-	Tag []TagInDescribeDedicatedHosts `json:"Tag" xml:"Tag"`
+	Tag []Tag `json:"Tag" xml:"Tag"`
 }

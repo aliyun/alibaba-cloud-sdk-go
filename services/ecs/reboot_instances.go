@@ -77,6 +77,7 @@ func (client *Client) RebootInstancesWithCallback(request *RebootInstancesReques
 type RebootInstancesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	BatchOptimization    string           `position:"Query" name:"BatchOptimization"`
 	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -88,7 +89,8 @@ type RebootInstancesRequest struct {
 // RebootInstancesResponse is the response struct for api RebootInstances
 type RebootInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId         string                             `json:"RequestId" xml:"RequestId"`
+	InstanceResponses InstanceResponsesInRebootInstances `json:"InstanceResponses" xml:"InstanceResponses"`
 }
 
 // CreateRebootInstancesRequest creates a request to invoke RebootInstances API

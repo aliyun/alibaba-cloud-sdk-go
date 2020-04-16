@@ -88,8 +88,8 @@ type CreateNetworkInterfacePermissionRequest struct {
 // CreateNetworkInterfacePermissionResponse is the response struct for api CreateNetworkInterfacePermission
 type CreateNetworkInterfacePermissionResponse struct {
 	*responses.BaseResponse
-	RequestId                  string                                                       `json:"RequestId" xml:"RequestId"`
-	NetworkInterfacePermission NetworkInterfacePermissionInCreateNetworkInterfacePermission `json:"NetworkInterfacePermission" xml:"NetworkInterfacePermission"`
+	RequestId                  string                     `json:"RequestId" xml:"RequestId"`
+	NetworkInterfacePermission NetworkInterfacePermission `json:"NetworkInterfacePermission" xml:"NetworkInterfacePermission"`
 }
 
 // CreateCreateNetworkInterfacePermissionRequest creates a request to invoke CreateNetworkInterfacePermission API

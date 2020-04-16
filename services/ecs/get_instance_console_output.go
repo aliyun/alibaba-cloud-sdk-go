@@ -77,6 +77,7 @@ func (client *Client) GetInstanceConsoleOutputWithCallback(request *GetInstanceC
 type GetInstanceConsoleOutputRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	RemoveSymbols        requests.Boolean `position:"Query" name:"RemoveSymbols"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

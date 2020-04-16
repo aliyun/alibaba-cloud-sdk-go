@@ -17,5 +17,5 @@ package ecs
 
 // ResultsInAttachKeyPair is a nested struct in ecs response
 type ResultsInAttachKeyPair struct {
-	Result []ResultInAttachKeyPair `json:"Result" xml:"Result"`
+	Result []Result `json:"Result" xml:"Result"`
 }
