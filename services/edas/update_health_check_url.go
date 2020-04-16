@@ -94,7 +94,7 @@ func CreateUpdateHealthCheckUrlRequest() (request *UpdateHealthCheckUrlRequest) 
 	request = &UpdateHealthCheckUrlRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateHealthCheckUrl", "/pop/v5/app/modify_hc_url", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateHealthCheckUrl", "/pop/v5/app/modify_hc_url", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

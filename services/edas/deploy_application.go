@@ -105,7 +105,7 @@ func CreateDeployApplicationRequest() (request *DeployApplicationRequest) {
 	request = &DeployApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeployApplication", "/pop/v5/changeorder/co_deploy", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeployApplication", "/pop/v5/changeorder/co_deploy", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

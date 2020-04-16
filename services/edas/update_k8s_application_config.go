@@ -97,7 +97,7 @@ func CreateUpdateK8sApplicationConfigRequest() (request *UpdateK8sApplicationCon
 	request = &UpdateK8sApplicationConfigRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "/pop/v5/k8s/acs/k8s_app_configuration", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "/pop/v5/k8s/acs/k8s_app_configuration", "edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

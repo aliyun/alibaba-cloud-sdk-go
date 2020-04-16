@@ -93,7 +93,7 @@ func CreateDisableDegradeControlRequest() (request *DisableDegradeControlRequest
 	request = &DisableDegradeControlRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DisableDegradeControl", "/pop/v5/degradecontrol/disable", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DisableDegradeControl", "/pop/v5/degradecontrol/disable", "edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

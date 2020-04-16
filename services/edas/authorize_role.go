@@ -93,7 +93,7 @@ func CreateAuthorizeRoleRequest() (request *AuthorizeRoleRequest) {
 	request = &AuthorizeRoleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "AuthorizeRole", "/pop/v5/account/authorize_role", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "AuthorizeRole", "/pop/v5/account/authorize_role", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

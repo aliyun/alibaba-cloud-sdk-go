@@ -93,7 +93,7 @@ func CreateListUserDefineRegionRequest() (request *ListUserDefineRegionRequest) 
 	request = &ListUserDefineRegionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListUserDefineRegion", "/pop/v5/user_region_defs", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListUserDefineRegion", "/pop/v5/user_region_defs", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

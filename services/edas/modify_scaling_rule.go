@@ -111,8 +111,9 @@ type ModifyScalingRuleRequest struct {
 // ModifyScalingRuleResponse is the response struct for api ModifyScalingRule
 type ModifyScalingRuleResponse struct {
 	*responses.BaseResponse
-	Code    int    `json:"Code" xml:"Code"`
-	Message string `json:"Message" xml:"Message"`
+	Code      int    `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyScalingRuleRequest creates a request to invoke ModifyScalingRule API
@@ -120,7 +121,7 @@ func CreateModifyScalingRuleRequest() (request *ModifyScalingRuleRequest) {
 	request = &ModifyScalingRuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ModifyScalingRule", "/pop/v5/app/scaling_rules2", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ModifyScalingRule", "/pop/v5/app/scaling_rules", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

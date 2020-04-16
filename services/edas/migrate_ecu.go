@@ -94,7 +94,7 @@ func CreateMigrateEcuRequest() (request *MigrateEcuRequest) {
 	request = &MigrateEcuRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "MigrateEcu", "/pop/v5/resource/migrate_ecu", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "MigrateEcu", "/pop/v5/resource/migrate_ecu", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

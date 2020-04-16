@@ -98,7 +98,7 @@ func CreateUpdateJvmConfigurationRequest() (request *UpdateJvmConfigurationReque
 	request = &UpdateJvmConfigurationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateJvmConfiguration", "/pop/v5/app/app_jvm_config", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateJvmConfiguration", "/pop/v5/app/app_jvm_config", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

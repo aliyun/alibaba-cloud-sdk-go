@@ -92,7 +92,7 @@ func CreateDeleteRoleRequest() (request *DeleteRoleRequest) {
 	request = &DeleteRoleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteRole", "/pop/v5/account/delete_role", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteRole", "/pop/v5/account/delete_role", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

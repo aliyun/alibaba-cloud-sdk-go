@@ -95,7 +95,7 @@ func CreateRollbackChangeOrderRequest() (request *RollbackChangeOrderRequest) {
 	request = &RollbackChangeOrderRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "RollbackChangeOrder", "/pop/v5/oam/changeorder/rollback", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "RollbackChangeOrder", "/pop/v5/oam/changeorder/rollback", "edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

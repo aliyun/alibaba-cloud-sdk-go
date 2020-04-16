@@ -17,8 +17,6 @@ package edas
 
 // TrafficControl is a nested struct in edas response
 type TrafficControl struct {
-	Module string `json:"Module" xml:"Module"`
-	Single bool   `json:"Single" xml:"Single"`
 	Rules  string `json:"Rules" xml:"Rules"`
 	Routes string `json:"Routes" xml:"Routes"`
 	Tips   string `json:"Tips" xml:"Tips"`

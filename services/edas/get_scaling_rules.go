@@ -84,11 +84,11 @@ type GetScalingRulesRequest struct {
 // GetScalingRulesResponse is the response struct for api GetScalingRules
 type GetScalingRulesResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Code       int    `json:"Code" xml:"Code"`
-	Message    string `json:"Message" xml:"Message"`
-	UpdateTime int64  `json:"UpdateTime" xml:"UpdateTime"`
-	Data       Data   `json:"Data" xml:"Data"`
+	RequestId  string                `json:"RequestId" xml:"RequestId"`
+	Code       int                   `json:"Code" xml:"Code"`
+	Message    string                `json:"Message" xml:"Message"`
+	UpdateTime int64                 `json:"UpdateTime" xml:"UpdateTime"`
+	Data       DataInGetScalingRules `json:"Data" xml:"Data"`
 }
 
 // CreateGetScalingRulesRequest creates a request to invoke GetScalingRules API
@@ -96,7 +96,7 @@ func CreateGetScalingRulesRequest() (request *GetScalingRulesRequest) {
 	request = &GetScalingRulesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetScalingRules", "/pop/v5/app/scalingRules", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetScalingRules", "/pop/v5/app/scalingRules", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

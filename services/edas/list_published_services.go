@@ -93,7 +93,7 @@ func CreateListPublishedServicesRequest() (request *ListPublishedServicesRequest
 	request = &ListPublishedServicesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListPublishedServices", "/pop/v5/service/listPublishedServices", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListPublishedServices", "/pop/v5/service/listPublishedServices", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

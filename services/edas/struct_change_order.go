@@ -17,17 +17,18 @@ package edas
 
 // ChangeOrder is a nested struct in edas response
 type ChangeOrder struct {
-	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
-	UserId        string `json:"UserId" xml:"UserId"`
-	BatchType     string `json:"BatchType" xml:"BatchType"`
-	BatchCount    int    `json:"BatchCount" xml:"BatchCount"`
-	AppId         string `json:"AppId" xml:"AppId"`
-	GroupId       string `json:"GroupId" xml:"GroupId"`
-	Status        int    `json:"Status" xml:"Status"`
-	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-	FinishTime    string `json:"FinishTime" xml:"FinishTime"`
-	CoType        string `json:"CoType" xml:"CoType"`
-	CreateUserId  string `json:"CreateUserId" xml:"CreateUserId"`
-	CoTypeCode    string `json:"CoTypeCode" xml:"CoTypeCode"`
-	Source        string `json:"Source" xml:"Source"`
+	ChangeOrderId          string `json:"ChangeOrderId" xml:"ChangeOrderId"`
+	UserId                 string `json:"UserId" xml:"UserId"`
+	BatchType              string `json:"BatchType" xml:"BatchType"`
+	BatchCount             int    `json:"BatchCount" xml:"BatchCount"`
+	AppId                  string `json:"AppId" xml:"AppId"`
+	GroupId                string `json:"GroupId" xml:"GroupId"`
+	Status                 int    `json:"Status" xml:"Status"`
+	CreateTime             string `json:"CreateTime" xml:"CreateTime"`
+	FinishTime             string `json:"FinishTime" xml:"FinishTime"`
+	CoType                 string `json:"CoType" xml:"CoType"`
+	CreateUserId           string `json:"CreateUserId" xml:"CreateUserId"`
+	CoTypeCode             string `json:"CoTypeCode" xml:"CoTypeCode"`
+	Source                 string `json:"Source" xml:"Source"`
+	ChangeOrderDescription string `json:"ChangeOrderDescription" xml:"ChangeOrderDescription"`
 }

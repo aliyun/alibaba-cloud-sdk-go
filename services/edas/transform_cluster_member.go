@@ -95,7 +95,7 @@ func CreateTransformClusterMemberRequest() (request *TransformClusterMemberReque
 	request = &TransformClusterMemberRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "TransformClusterMember", "/pop/v5/resource/transform_cluster_member", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "TransformClusterMember", "/pop/v5/resource/transform_cluster_member", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }
