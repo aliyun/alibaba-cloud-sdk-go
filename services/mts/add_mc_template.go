@@ -78,19 +78,19 @@ type AddMCTemplateRequest struct {
 	*requests.RpcRequest
 	Politics             string           `position:"Query" name:"Politics"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Contraband           string           `position:"Query" name:"Contraband"`
-	Ad                   string           `position:"Query" name:"Ad"`
 	Abuse                string           `position:"Query" name:"Abuse"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Qrcode               string           `position:"Query" name:"Qrcode"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Porn                 string           `position:"Query" name:"Porn"`
 	Terrorism            string           `position:"Query" name:"Terrorism"`
-	Name                 string           `position:"Query" name:"Name"`
 	Logo                 string           `position:"Query" name:"Logo"`
-	Spam                 string           `position:"Query" name:"spam"`
 	Live                 string           `position:"Query" name:"Live"`
+	Contraband           string           `position:"Query" name:"Contraband"`
+	Ad                   string           `position:"Query" name:"Ad"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
+	Spam                 string           `position:"Query" name:"spam"`
 }
 
 // AddMCTemplateResponse is the response struct for api AddMCTemplate

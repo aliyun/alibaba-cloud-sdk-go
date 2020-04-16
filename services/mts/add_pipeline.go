@@ -78,13 +78,13 @@ type AddPipelineRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Role                 string           `position:"Query" name:"Role"`
+	Speed                string           `position:"Query" name:"Speed"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
 	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
 	SpeedLevel           requests.Integer `position:"Query" name:"SpeedLevel"`
-	Speed                string           `position:"Query" name:"Speed"`
 }
 
 // AddPipelineResponse is the response struct for api AddPipeline

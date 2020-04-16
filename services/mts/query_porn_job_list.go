@@ -78,9 +78,9 @@ type QueryPornJobListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	JobIds               string           `position:"Query" name:"JobIds"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	JobIds               string           `position:"Query" name:"JobIds"`
 }
 
 // QueryPornJobListResponse is the response struct for api QueryPornJobList

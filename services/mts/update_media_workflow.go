@@ -77,10 +77,10 @@ func (client *Client) UpdateMediaWorkflowWithCallback(request *UpdateMediaWorkfl
 type UpdateMediaWorkflowRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Topology             string           `position:"Query" name:"Topology"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

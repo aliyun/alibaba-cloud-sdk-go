@@ -76,16 +76,16 @@ func (client *Client) SubmitFpCompareJobWithCallback(request *SubmitFpCompareJob
 // SubmitFpCompareJobRequest is the request struct for api SubmitFpCompareJob
 type SubmitFpCompareJobRequest struct {
 	*requests.RpcRequest
-	MatchedFrameStorage  string           `position:"Query" name:"MatchedFrameStorage"`
-	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	QueryMedia           string           `position:"Query" name:"QueryMedia"`
 	FpDBId               string           `position:"Query" name:"FpDBId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	MasterMedia          string           `position:"Query" name:"MasterMedia"`
+	UserData             string           `position:"Query" name:"UserData"`
+	QueryMedia           string           `position:"Query" name:"QueryMedia"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
+	MatchedFrameStorage  string           `position:"Query" name:"MatchedFrameStorage"`
 }
 
 // SubmitFpCompareJobResponse is the response struct for api SubmitFpCompareJob

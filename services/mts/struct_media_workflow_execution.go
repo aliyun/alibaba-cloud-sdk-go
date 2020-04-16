@@ -17,12 +17,12 @@ package mts
 
 // MediaWorkflowExecution is a nested struct in mts response
 type MediaWorkflowExecution struct {
-	Name            string                                        `json:"Name" xml:"Name"`
-	RunId           string                                        `json:"RunId" xml:"RunId"`
-	State           string                                        `json:"State" xml:"State"`
-	MediaWorkflowId string                                        `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
-	CreationTime    string                                        `json:"CreationTime" xml:"CreationTime"`
-	MediaId         string                                        `json:"MediaId" xml:"MediaId"`
-	Input           Input                                         `json:"Input" xml:"Input"`
-	ActivityList    ActivityListInQueryMediaWorkflowExecutionList `json:"ActivityList" xml:"ActivityList"`
+	Name            string                                    `json:"Name" xml:"Name"`
+	RunId           string                                    `json:"RunId" xml:"RunId"`
+	State           string                                    `json:"State" xml:"State"`
+	MediaWorkflowId string                                    `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
+	CreationTime    string                                    `json:"CreationTime" xml:"CreationTime"`
+	MediaId         string                                    `json:"MediaId" xml:"MediaId"`
+	Input           Input                                     `json:"Input" xml:"Input"`
+	ActivityList    ActivityListInListMediaWorkflowExecutions `json:"ActivityList" xml:"ActivityList"`
 }

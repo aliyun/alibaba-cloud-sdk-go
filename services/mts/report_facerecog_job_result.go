@@ -76,12 +76,12 @@ func (client *Client) ReportFacerecogJobResultWithCallback(request *ReportFacere
 // ReportFacerecogJobResultRequest is the request struct for api ReportFacerecogJobResult
 type ReportFacerecogJobResultRequest struct {
 	*requests.RpcRequest
-	JobId                string           `position:"Query" name:"JobId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Facerecog            string           `position:"Query" name:"Facerecog"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	JobId                string           `position:"Query" name:"JobId"`
 	Details              string           `position:"Query" name:"Details"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

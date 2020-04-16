@@ -17,7 +17,7 @@ package mts
 
 // Streams is a nested struct in mts response
 type Streams struct {
-	VideoStreamList    VideoStreamListInQueryVideoPoseJobList  `json:"VideoStreamList" xml:"VideoStreamList"`
-	SubtitleStreamList SubtitleStreamListInQueryComplexJobList `json:"SubtitleStreamList" xml:"SubtitleStreamList"`
-	AudioStreamList    AudioStreamListInQueryVideoPoseJobList  `json:"AudioStreamList" xml:"AudioStreamList"`
+	SubtitleStreamList SubtitleStreamListInListJob            `json:"SubtitleStreamList" xml:"SubtitleStreamList"`
+	VideoStreamList    VideoStreamListInQueryMediaInfoJobList `json:"VideoStreamList" xml:"VideoStreamList"`
+	AudioStreamList    AudioStreamListInListJob               `json:"AudioStreamList" xml:"AudioStreamList"`
 }

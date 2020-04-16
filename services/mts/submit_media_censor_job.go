@@ -77,16 +77,16 @@ func (client *Client) SubmitMediaCensorJobWithCallback(request *SubmitMediaCenso
 type SubmitMediaCensorJobRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Description          string           `position:"Query" name:"Description"`
+	Title                string           `position:"Query" name:"Title"`
+	VideoCensorConfig    string           `position:"Query" name:"VideoCensorConfig"`
+	UserData             string           `position:"Query" name:"UserData"`
 	CoverImages          string           `position:"Query" name:"CoverImages"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Title                string           `position:"Query" name:"Title"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
-	VideoCensorConfig    string           `position:"Query" name:"VideoCensorConfig"`
 	Input                string           `position:"Query" name:"Input"`
-	UserData             string           `position:"Query" name:"UserData"`
 	Barrages             string           `position:"Query" name:"Barrages"`
 }
 

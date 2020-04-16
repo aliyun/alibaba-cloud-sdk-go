@@ -78,12 +78,12 @@ type QueryMediaListByURLRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	IncludeSummaryList   requests.Boolean `position:"Query" name:"IncludeSummaryList"`
+	FileURLs             string           `position:"Query" name:"FileURLs"`
+	IncludePlayList      requests.Boolean `position:"Query" name:"IncludePlayList"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	IncludeSnapshotList  requests.Boolean `position:"Query" name:"IncludeSnapshotList"`
-	FileURLs             string           `position:"Query" name:"FileURLs"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	IncludePlayList      requests.Boolean `position:"Query" name:"IncludePlayList"`
 	IncludeMediaInfo     requests.Boolean `position:"Query" name:"IncludeMediaInfo"`
 }
 

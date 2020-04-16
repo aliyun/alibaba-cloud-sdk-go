@@ -77,19 +77,19 @@ func (client *Client) SearchMediaWithCallback(request *SearchMediaRequest, callb
 type SearchMediaRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Description          string           `position:"Query" name:"Description"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Title                string           `position:"Query" name:"Title"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	CateId               string           `position:"Query" name:"CateId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	From                 string           `position:"Query" name:"From"`
-	SortBy               string           `position:"Query" name:"SortBy"`
-	To                   string           `position:"Query" name:"To"`
 	Tag                  string           `position:"Query" name:"Tag"`
 	KeyWord              string           `position:"Query" name:"KeyWord"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SortBy               string           `position:"Query" name:"SortBy"`
+	To                   string           `position:"Query" name:"To"`
 }
 
 // SearchMediaResponse is the response struct for api SearchMedia

@@ -76,12 +76,12 @@ func (client *Client) ReportVideoSplitJobResultWithCallback(request *ReportVideo
 // ReportVideoSplitJobResultRequest is the request struct for api ReportVideoSplitJobResult
 type ReportVideoSplitJobResultRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Result               string           `position:"Query" name:"Result"`
 	JobId                string           `position:"Query" name:"JobId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Details              string           `position:"Query" name:"Details"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Details              string           `position:"Query" name:"Details"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

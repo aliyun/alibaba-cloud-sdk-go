@@ -80,9 +80,9 @@ type AddMediaWorkflowRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Topology             string           `position:"Query" name:"Topology"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TriggerMode          string           `position:"Query" name:"TriggerMode"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // AddMediaWorkflowResponse is the response struct for api AddMediaWorkflow

@@ -76,14 +76,14 @@ func (client *Client) SubmitMediaFpDeleteJobWithCallback(request *SubmitMediaFpD
 // SubmitMediaFpDeleteJobRequest is the request struct for api SubmitMediaFpDeleteJob
 type SubmitMediaFpDeleteJobRequest struct {
 	*requests.RpcRequest
-	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	FpDBId               string           `position:"Query" name:"FpDBId"`
+	UserData             string           `position:"Query" name:"UserData"`
+	PrimaryKey           string           `position:"Query" name:"PrimaryKey"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
-	PrimaryKey           string           `position:"Query" name:"PrimaryKey"`
 }
 
 // SubmitMediaFpDeleteJobResponse is the response struct for api SubmitMediaFpDeleteJob

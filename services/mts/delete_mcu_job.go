@@ -79,8 +79,8 @@ type DeleteMcuJobRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	JobIds               string           `position:"Query" name:"JobIds"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	JobIds               string           `position:"Query" name:"JobIds"`
 }
 
 // DeleteMcuJobResponse is the response struct for api DeleteMcuJob

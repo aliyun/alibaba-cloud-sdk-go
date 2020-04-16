@@ -77,16 +77,16 @@ func (client *Client) QueryMCJobListWithCallback(request *QueryMCJobListRequest,
 type QueryMCJobListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
 	NextPageToken              string           `position:"Query" name:"NextPageToken"`
 	StartOfJobCreatedTimeRange string           `position:"Query" name:"StartOfJobCreatedTimeRange"`
+	State                      string           `position:"Query" name:"State"`
+	EndOfJobCreatedTimeRange   string           `position:"Query" name:"EndOfJobCreatedTimeRange"`
+	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
 	MaximumPageSize            requests.Integer `position:"Query" name:"MaximumPageSize"`
 	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
 	PipelineId                 string           `position:"Query" name:"PipelineId"`
 	JobIds                     string           `position:"Query" name:"JobIds"`
-	State                      string           `position:"Query" name:"State"`
-	EndOfJobCreatedTimeRange   string           `position:"Query" name:"EndOfJobCreatedTimeRange"`
 }
 
 // QueryMCJobListResponse is the response struct for api QueryMCJobList

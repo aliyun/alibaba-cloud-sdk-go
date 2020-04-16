@@ -17,5 +17,5 @@ package mts
 
 // ImageSearchShots is a nested struct in mts response
 type ImageSearchShots struct {
-	ImageSearchShotsItem []ImageSearchShotsItem `json:"ImageSearchShotsItem" xml:"ImageSearchShotsItem"`
+	ImageSearchShotsItem []ImageSearchShotsItem `json:"ImageSearchShots" xml:"ImageSearchShots"`
 }

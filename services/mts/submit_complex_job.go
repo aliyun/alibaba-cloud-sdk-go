@@ -78,14 +78,14 @@ type SubmitComplexJobRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	TranscodeOutput      string           `position:"Query" name:"TranscodeOutput"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Inputs               string           `position:"Query" name:"Inputs"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OutputLocation       string           `position:"Query" name:"OutputLocation"`
+	UserData             string           `position:"Query" name:"UserData"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
 	OutputBucket         string           `position:"Query" name:"OutputBucket"`
-	UserData             string           `position:"Query" name:"UserData"`
 	ComplexConfigs       string           `position:"Query" name:"ComplexConfigs"`
 }
 

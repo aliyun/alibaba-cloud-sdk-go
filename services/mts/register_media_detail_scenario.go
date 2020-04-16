@@ -76,12 +76,12 @@ func (client *Client) RegisterMediaDetailScenarioWithCallback(request *RegisterM
 // RegisterMediaDetailScenarioRequest is the request struct for api RegisterMediaDetailScenario
 type RegisterMediaDetailScenarioRequest struct {
 	*requests.RpcRequest
-	JobId                string           `position:"Query" name:"JobId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Scenario             string           `position:"Query" name:"Scenario"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Description          string           `position:"Query" name:"Description"`
+	JobId                string           `position:"Query" name:"JobId"`
+	Scenario             string           `position:"Query" name:"Scenario"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

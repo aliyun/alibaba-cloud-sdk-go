@@ -19,4 +19,6 @@ package mts
 type FpShotConfig struct {
 	PrimaryKey string `json:"PrimaryKey" xml:"PrimaryKey"`
 	SaveType   string `json:"SaveType" xml:"SaveType"`
+	Notary     string `json:"Notary" xml:"Notary"`
+	FpDBId     string `json:"FpDBId" xml:"FpDBId"`
 }

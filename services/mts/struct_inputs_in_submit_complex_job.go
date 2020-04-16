@@ -17,5 +17,5 @@ package mts
 
 // InputsInSubmitComplexJob is a nested struct in mts response
 type InputsInSubmitComplexJob struct {
-	InputsItem []InputsItem `json:"InputsItem" xml:"InputsItem"`
+	InputsItem []InputsItem `json:"Inputs" xml:"Inputs"`
 }

@@ -79,10 +79,10 @@ type AddPornPipelineRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
 	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Priority             requests.Integer `position:"Query" name:"Priority"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // AddPornPipelineResponse is the response struct for api AddPornPipeline

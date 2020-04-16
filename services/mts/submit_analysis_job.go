@@ -76,15 +76,15 @@ func (client *Client) SubmitAnalysisJobWithCallback(request *SubmitAnalysisJobRe
 // SubmitAnalysisJobRequest is the request struct for api SubmitAnalysisJob
 type SubmitAnalysisJobRequest struct {
 	*requests.RpcRequest
-	Input                string           `position:"Query" name:"Input"`
-	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	AnalysisConfig       string           `position:"Query" name:"AnalysisConfig"`
+	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Priority             string           `position:"Query" name:"Priority"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
+	Input                string           `position:"Query" name:"Input"`
 }
 
 // SubmitAnalysisJobResponse is the response struct for api SubmitAnalysisJob

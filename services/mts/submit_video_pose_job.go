@@ -76,14 +76,14 @@ func (client *Client) SubmitVideoPoseJobWithCallback(request *SubmitVideoPoseJob
 // SubmitVideoPoseJobRequest is the request struct for api SubmitVideoPoseJob
 type SubmitVideoPoseJobRequest struct {
 	*requests.RpcRequest
-	Input                string           `position:"Query" name:"Input"`
-	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OutputConfig         string           `position:"Query" name:"OutputConfig"`
+	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
+	Input                string           `position:"Query" name:"Input"`
 }
 
 // SubmitVideoPoseJobResponse is the response struct for api SubmitVideoPoseJob

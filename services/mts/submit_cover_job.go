@@ -76,14 +76,14 @@ func (client *Client) SubmitCoverJobWithCallback(request *SubmitCoverJobRequest,
 // SubmitCoverJobRequest is the request struct for api SubmitCoverJob
 type SubmitCoverJobRequest struct {
 	*requests.RpcRequest
-	Input                string           `position:"Query" name:"Input"`
-	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CoverConfig          string           `position:"Query" name:"CoverConfig"`
+	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	CoverConfig          string           `position:"Query" name:"CoverConfig"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
+	Input                string           `position:"Query" name:"Input"`
 }
 
 // SubmitCoverJobResponse is the response struct for api SubmitCoverJob

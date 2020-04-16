@@ -78,12 +78,12 @@ type GetLicenseRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	Data                 string `position:"Query" name:"Data"`
+	Type                 string `position:"Query" name:"Type"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Header               string `position:"Query" name:"Header"`
 	OwnerId              string `position:"Query" name:"OwnerId"`
 	MediaId              string `position:"Query" name:"MediaId"`
-	Type                 string `position:"Query" name:"Type"`
+	Header               string `position:"Query" name:"Header"`
 	LicenseUrl           string `position:"Query" name:"LicenseUrl"`
 }
 

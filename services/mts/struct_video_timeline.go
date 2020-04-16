@@ -17,7 +17,7 @@ package mts
 
 // VideoTimeline is a nested struct in mts response
 type VideoTimeline struct {
-	Timestamp     string                                 `json:"Timestamp" xml:"Timestamp"`
-	Object        string                                 `json:"Object" xml:"Object"`
-	CensorResults CensorResultsInQueryMediaCensorJobList `json:"CensorResults" xml:"CensorResults"`
+	Timestamp     string                                   `json:"Timestamp" xml:"Timestamp"`
+	Object        string                                   `json:"Object" xml:"Object"`
+	CensorResults CensorResultsInQueryMediaCensorJobDetail `json:"CensorResults" xml:"CensorResults"`
 }

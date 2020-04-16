@@ -76,14 +76,14 @@ func (client *Client) SubmitSnapshotJobWithCallback(request *SubmitSnapshotJobRe
 // SubmitSnapshotJobRequest is the request struct for api SubmitSnapshotJob
 type SubmitSnapshotJobRequest struct {
 	*requests.RpcRequest
-	Input                string           `position:"Query" name:"Input"`
-	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SnapshotConfig       string           `position:"Query" name:"SnapshotConfig"`
+	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SnapshotConfig       string           `position:"Query" name:"SnapshotConfig"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
+	Input                string           `position:"Query" name:"Input"`
 }
 
 // SubmitSnapshotJobResponse is the response struct for api SubmitSnapshotJob

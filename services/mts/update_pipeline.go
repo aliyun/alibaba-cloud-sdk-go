@@ -78,13 +78,13 @@ type UpdatePipelineRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Role                 string           `position:"Query" name:"Role"`
+	State                string           `position:"Query" name:"State"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
-	State                string           `position:"Query" name:"State"`
 	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // UpdatePipelineResponse is the response struct for api UpdatePipeline

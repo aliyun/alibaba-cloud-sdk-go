@@ -17,6 +17,7 @@ package mts
 
 // FpShotSlice is a nested struct in mts response
 type FpShotSlice struct {
+	Similarity  string      `json:"Similarity" xml:"Similarity"`
 	Duplication Duplication `json:"Duplication" xml:"Duplication"`
 	Input       Input       `json:"Input" xml:"Input"`
 }

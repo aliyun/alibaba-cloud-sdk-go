@@ -76,14 +76,14 @@ func (client *Client) SubmitVideoGifJobWithCallback(request *SubmitVideoGifJobRe
 // SubmitVideoGifJobRequest is the request struct for api SubmitVideoGifJob
 type SubmitVideoGifJobRequest struct {
 	*requests.RpcRequest
-	Input                string           `position:"Query" name:"Input"`
-	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	VideoGifConfig       string           `position:"Query" name:"VideoGifConfig"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
+	Input                string           `position:"Query" name:"Input"`
 }
 
 // SubmitVideoGifJobResponse is the response struct for api SubmitVideoGifJob

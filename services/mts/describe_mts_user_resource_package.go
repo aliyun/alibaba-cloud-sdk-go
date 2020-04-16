@@ -76,8 +76,9 @@ func (client *Client) DescribeMtsUserResourcePackageWithCallback(request *Descri
 // DescribeMtsUserResourcePackageRequest is the request struct for api DescribeMtsUserResourcePackage
 type DescribeMtsUserResourcePackageRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	ShowLog       string           `position:"Query" name:"ShowLog"`
 }
 
 // DescribeMtsUserResourcePackageResponse is the response struct for api DescribeMtsUserResourcePackage

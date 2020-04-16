@@ -77,8 +77,8 @@ func (client *Client) ListAllMediaBucketWithCallback(request *ListAllMediaBucket
 type ListAllMediaBucketRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	NextPageToken        string           `position:"Query" name:"NextPageToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	MaximumPageSize      requests.Integer `position:"Query" name:"MaximumPageSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

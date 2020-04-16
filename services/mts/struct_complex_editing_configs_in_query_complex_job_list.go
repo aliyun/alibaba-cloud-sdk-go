@@ -17,5 +17,5 @@ package mts
 
 // ComplexEditingConfigsInQueryComplexJobList is a nested struct in mts response
 type ComplexEditingConfigsInQueryComplexJobList struct {
-	ComplexEditingConfigsItem []ComplexEditingConfigsItem `json:"ComplexEditingConfigsItem" xml:"ComplexEditingConfigsItem"`
+	ComplexEditingConfigsItem []ComplexEditingConfigsItem `json:"ComplexEditingConfigs" xml:"ComplexEditingConfigs"`
 }

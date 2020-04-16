@@ -77,11 +77,11 @@ func (client *Client) UpdateWaterMarkTemplateWithCallback(request *UpdateWaterMa
 type UpdateWaterMarkTemplateRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	WaterMarkTemplateId  string           `position:"Query" name:"WaterMarkTemplateId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	WaterMarkTemplateId  string           `position:"Query" name:"WaterMarkTemplateId"`
+	Name                 string           `position:"Query" name:"Name"`
 	Config               string           `position:"Query" name:"Config"`
 }
 

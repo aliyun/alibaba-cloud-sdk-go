@@ -76,12 +76,12 @@ func (client *Client) ReportAnnotationJobResultWithCallback(request *ReportAnnot
 // ReportAnnotationJobResultRequest is the request struct for api ReportAnnotationJobResult
 type ReportAnnotationJobResultRequest struct {
 	*requests.RpcRequest
-	Annotation           string           `position:"Query" name:"Annotation"`
-	JobId                string           `position:"Query" name:"JobId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	JobId                string           `position:"Query" name:"JobId"`
+	Details              string           `position:"Query" name:"Details"`
+	Annotation           string           `position:"Query" name:"Annotation"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Details              string           `position:"Query" name:"Details"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

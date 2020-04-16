@@ -77,8 +77,8 @@ func (client *Client) UpdateMediaCategoryWithCallback(request *UpdateMediaCatego
 type UpdateMediaCategoryRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CateId               requests.Integer `position:"Query" name:"CateId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	MediaId              string           `position:"Query" name:"MediaId"`

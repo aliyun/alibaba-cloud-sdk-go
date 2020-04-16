@@ -79,8 +79,8 @@ type ActivateMediaWorkflowRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
 }
 
 // ActivateMediaWorkflowResponse is the response struct for api ActivateMediaWorkflow

@@ -76,14 +76,14 @@ func (client *Client) SubmitBeautifyJobsWithCallback(request *SubmitBeautifyJobs
 // SubmitBeautifyJobsRequest is the request struct for api SubmitBeautifyJobs
 type SubmitBeautifyJobsRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	BeautifyConfig       string           `position:"Query" name:"BeautifyConfig"`
 	UserData             string           `position:"Query" name:"UserData"`
-	Async                requests.Boolean `position:"Query" name:"Async"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
+	Async                requests.Boolean `position:"Query" name:"Async"`
 }
 
 // SubmitBeautifyJobsResponse is the response struct for api SubmitBeautifyJobs

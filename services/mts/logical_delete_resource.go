@@ -78,13 +78,13 @@ type LogicalDeleteResourceRequest struct {
 	*requests.RpcRequest
 	Country        string           `position:"Query" name:"Country"`
 	Hid            requests.Integer `position:"Query" name:"Hid"`
+	Invoker        string           `position:"Query" name:"Invoker"`
+	Message        string           `position:"Query" name:"Message"`
 	Success        requests.Boolean `position:"Query" name:"Success"`
 	Interrupt      requests.Boolean `position:"Query" name:"Interrupt"`
 	GmtWakeup      string           `position:"Query" name:"GmtWakeup"`
 	Pk             string           `position:"Query" name:"Pk"`
-	Invoker        string           `position:"Query" name:"Invoker"`
 	Bid            string           `position:"Query" name:"Bid"`
-	Message        string           `position:"Query" name:"Message"`
 	TaskExtraData  string           `position:"Query" name:"TaskExtraData"`
 	TaskIdentifier string           `position:"Query" name:"TaskIdentifier"`
 }

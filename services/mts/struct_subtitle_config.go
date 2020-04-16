@@ -17,6 +17,6 @@ package mts
 
 // SubtitleConfig is a nested struct in mts response
 type SubtitleConfig struct {
-	SubtitleList    SubtitleListInQueryComplexJobList    `json:"SubtitleList" xml:"SubtitleList"`
-	ExtSubtitleList ExtSubtitleListInQueryComplexJobList `json:"ExtSubtitleList" xml:"ExtSubtitleList"`
+	SubtitleList    SubtitleListInListJob    `json:"SubtitleList" xml:"SubtitleList"`
+	ExtSubtitleList ExtSubtitleListInListJob `json:"ExtSubtitleList" xml:"ExtSubtitleList"`
 }

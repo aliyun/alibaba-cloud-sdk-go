@@ -77,17 +77,17 @@ func (client *Client) QueryFpShotJobListWithCallback(request *QueryFpShotJobList
 type QueryFpShotJobListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
 	NextPageToken              string           `position:"Query" name:"NextPageToken"`
 	StartOfJobCreatedTimeRange string           `position:"Query" name:"StartOfJobCreatedTimeRange"`
+	State                      string           `position:"Query" name:"State"`
+	EndOfJobCreatedTimeRange   string           `position:"Query" name:"EndOfJobCreatedTimeRange"`
+	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
 	MaximumPageSize            requests.Integer `position:"Query" name:"MaximumPageSize"`
 	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
 	PipelineId                 string           `position:"Query" name:"PipelineId"`
 	PrimaryKeyList             string           `position:"Query" name:"PrimaryKeyList"`
 	JobIds                     string           `position:"Query" name:"JobIds"`
-	State                      string           `position:"Query" name:"State"`
-	EndOfJobCreatedTimeRange   string           `position:"Query" name:"EndOfJobCreatedTimeRange"`
 }
 
 // QueryFpShotJobListResponse is the response struct for api QueryFpShotJobList

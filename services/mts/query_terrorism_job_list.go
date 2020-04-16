@@ -78,9 +78,9 @@ type QueryTerrorismJobListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	JobIds               string           `position:"Query" name:"JobIds"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	JobIds               string           `position:"Query" name:"JobIds"`
 }
 
 // QueryTerrorismJobListResponse is the response struct for api QueryTerrorismJobList

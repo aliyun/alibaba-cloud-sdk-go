@@ -77,16 +77,16 @@ func (client *Client) QueryCoverJobListWithCallback(request *QueryCoverJobListRe
 type QueryCoverJobListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
 	NextPageToken              string           `position:"Query" name:"NextPageToken"`
 	StartOfJobCreatedTimeRange string           `position:"Query" name:"StartOfJobCreatedTimeRange"`
+	CoverJobIds                string           `position:"Query" name:"CoverJobIds"`
+	State                      string           `position:"Query" name:"State"`
+	EndOfJobCreatedTimeRange   string           `position:"Query" name:"EndOfJobCreatedTimeRange"`
+	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
 	MaximumPageSize            requests.Integer `position:"Query" name:"MaximumPageSize"`
 	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
-	CoverJobIds                string           `position:"Query" name:"CoverJobIds"`
 	PipelineId                 string           `position:"Query" name:"PipelineId"`
-	State                      string           `position:"Query" name:"State"`
-	EndOfJobCreatedTimeRange   string           `position:"Query" name:"EndOfJobCreatedTimeRange"`
 }
 
 // QueryCoverJobListResponse is the response struct for api QueryCoverJobList

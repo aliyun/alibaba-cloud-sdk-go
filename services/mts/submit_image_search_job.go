@@ -76,16 +76,16 @@ func (client *Client) SubmitImageSearchJobWithCallback(request *SubmitImageSearc
 // SubmitImageSearchJobRequest is the request struct for api SubmitImageSearchJob
 type SubmitImageSearchJobRequest struct {
 	*requests.RpcRequest
-	InputImage           string           `position:"Query" name:"InputImage"`
-	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	FpDBId               string           `position:"Query" name:"FpDBId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	UserData             string           `position:"Query" name:"UserData"`
 	InputVideo           string           `position:"Query" name:"InputVideo"`
+	InputImage           string           `position:"Query" name:"InputImage"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Config               string           `position:"Query" name:"Config"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
+	Config               string           `position:"Query" name:"Config"`
 }
 
 // SubmitImageSearchJobResponse is the response struct for api SubmitImageSearchJob

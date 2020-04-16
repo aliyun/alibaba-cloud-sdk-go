@@ -77,14 +77,14 @@ func (client *Client) SubmitMcuJobWithCallback(request *SubmitMcuJobRequest, cal
 type SubmitMcuJobRequest struct {
 	*requests.RpcRequest
 	Template             string           `position:"Query" name:"Template"`
-	Input                string           `position:"Query" name:"Input"`
-	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TemplateId           string           `position:"Query" name:"TemplateId"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
+	Input                string           `position:"Query" name:"Input"`
 }
 
 // SubmitMcuJobResponse is the response struct for api SubmitMcuJob

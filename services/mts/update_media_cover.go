@@ -76,8 +76,8 @@ func (client *Client) UpdateMediaCoverWithCallback(request *UpdateMediaCoverRequ
 // UpdateMediaCoverRequest is the request struct for api UpdateMediaCover
 type UpdateMediaCoverRequest struct {
 	*requests.RpcRequest
-	CoverURL             string           `position:"Query" name:"CoverURL"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CoverURL             string           `position:"Query" name:"CoverURL"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

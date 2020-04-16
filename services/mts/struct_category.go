@@ -19,8 +19,8 @@ package mts
 type Category struct {
 	Score    string `json:"Score" xml:"Score"`
 	CateId   string `json:"CateId" xml:"CateId"`
-	Label    string `json:"Label" xml:"Label"`
 	ParentId string `json:"ParentId" xml:"ParentId"`
+	Label    string `json:"Label" xml:"Label"`
 	Level    string `json:"Level" xml:"Level"`
 	CateName string `json:"CateName" xml:"CateName"`
 }

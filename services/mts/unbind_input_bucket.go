@@ -76,12 +76,12 @@ func (client *Client) UnbindInputBucketWithCallback(request *UnbindInputBucketRe
 // UnbindInputBucketRequest is the request struct for api UnbindInputBucket
 type UnbindInputBucketRequest struct {
 	*requests.RpcRequest
-	Bucket               string           `position:"Query" name:"Bucket"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	RoleArn              string           `position:"Query" name:"RoleArn"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Bucket               string           `position:"Query" name:"Bucket"`
+	RoleArn              string           `position:"Query" name:"RoleArn"`
 }
 
 // UnbindInputBucketResponse is the response struct for api UnbindInputBucket

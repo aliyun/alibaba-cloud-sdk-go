@@ -76,10 +76,10 @@ func (client *Client) SubmitSubtitleJobWithCallback(request *SubmitSubtitleJobRe
 // SubmitSubtitleJobRequest is the request struct for api SubmitSubtitleJob
 type SubmitSubtitleJobRequest struct {
 	*requests.RpcRequest
-	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OutputConfig         string           `position:"Query" name:"OutputConfig"`
 	InputConfig          string           `position:"Query" name:"InputConfig"`
+	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

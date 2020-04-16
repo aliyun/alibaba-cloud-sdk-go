@@ -78,9 +78,9 @@ type QueryAsrPipelineListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PipelineIds          string           `position:"Query" name:"PipelineIds"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PipelineIds          string           `position:"Query" name:"PipelineIds"`
 }
 
 // QueryAsrPipelineListResponse is the response struct for api QueryAsrPipelineList

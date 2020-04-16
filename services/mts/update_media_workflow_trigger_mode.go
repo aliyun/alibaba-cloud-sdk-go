@@ -77,9 +77,9 @@ func (client *Client) UpdateMediaWorkflowTriggerModeWithCallback(request *Update
 type UpdateMediaWorkflowTriggerModeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TriggerMode          string           `position:"Query" name:"TriggerMode"`
 }

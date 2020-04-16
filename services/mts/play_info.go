@@ -76,17 +76,17 @@ func (client *Client) PlayInfoWithCallback(request *PlayInfoRequest, callback fu
 // PlayInfoRequest is the request struct for api PlayInfo
 type PlayInfoRequest struct {
 	*requests.RpcRequest
-	PlayDomain           string           `position:"Query" name:"PlayDomain"`
 	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
 	Formats              string           `position:"Query" name:"Formats"`
+	Rand                 string           `position:"Query" name:"Rand"`
+	AuthTimeout          requests.Integer `position:"Query" name:"AuthTimeout"`
+	PlayDomain           string           `position:"Query" name:"PlayDomain"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	HlsUriToken          string           `position:"Query" name:"HlsUriToken"`
 	Terminal             string           `position:"Query" name:"Terminal"`
 	OwnerId              string           `position:"Query" name:"OwnerId"`
 	MediaId              string           `position:"Query" name:"MediaId"`
-	Rand                 string           `position:"Query" name:"Rand"`
-	AuthTimeout          requests.Integer `position:"Query" name:"AuthTimeout"`
 	AuthInfo             string           `position:"Query" name:"AuthInfo"`
 }
 

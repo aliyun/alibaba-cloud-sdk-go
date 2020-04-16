@@ -79,8 +79,8 @@ type DeleteMediaRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	MediaIds             string           `position:"Query" name:"MediaIds"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	MediaIds             string           `position:"Query" name:"MediaIds"`
 }
 
 // DeleteMediaResponse is the response struct for api DeleteMedia

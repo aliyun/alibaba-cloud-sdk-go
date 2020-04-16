@@ -17,5 +17,5 @@ package mts
 
 // JobListInQueryVideoPoseJobList is a nested struct in mts response
 type JobListInQueryVideoPoseJobList struct {
-	Job []Job `json:"Job" xml:"Job"`
+	Job []JobInQueryVideoPoseJobList `json:"Job" xml:"Job"`
 }

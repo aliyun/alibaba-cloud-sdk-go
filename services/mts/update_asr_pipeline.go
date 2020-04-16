@@ -77,14 +77,14 @@ func (client *Client) UpdateAsrPipelineWithCallback(request *UpdateAsrPipelineRe
 type UpdateAsrPipelineRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	State                string           `position:"Query" name:"State"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
-	State                string           `position:"Query" name:"State"`
 	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Priority             requests.Integer `position:"Query" name:"Priority"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // UpdateAsrPipelineResponse is the response struct for api UpdateAsrPipeline

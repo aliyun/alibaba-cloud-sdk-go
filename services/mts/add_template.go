@@ -78,14 +78,14 @@ type AddTemplateRequest struct {
 	*requests.RpcRequest
 	Container            string           `position:"Query" name:"Container"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Video                string           `position:"Query" name:"Video"`
+	TransConfig          string           `position:"Query" name:"TransConfig"`
+	Audio                string           `position:"Query" name:"Audio"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
-	TransConfig          string           `position:"Query" name:"TransConfig"`
 	MuxConfig            string           `position:"Query" name:"MuxConfig"`
-	Video                string           `position:"Query" name:"Video"`
-	Audio                string           `position:"Query" name:"Audio"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // AddTemplateResponse is the response struct for api AddTemplate

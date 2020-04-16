@@ -78,9 +78,9 @@ type QueryTagJobListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	TagJobIds            string           `position:"Query" name:"TagJobIds"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TagJobIds            string           `position:"Query" name:"TagJobIds"`
 }
 
 // QueryTagJobListResponse is the response struct for api QueryTagJobList

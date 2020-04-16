@@ -76,10 +76,10 @@ func (client *Client) QueryMediaCensorJobDetailWithCallback(request *QueryMediaC
 // QueryMediaCensorJobDetailRequest is the request struct for api QueryMediaCensorJobDetail
 type QueryMediaCensorJobDetailRequest struct {
 	*requests.RpcRequest
-	JobId                string           `position:"Query" name:"JobId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	NextPageToken        string           `position:"Query" name:"NextPageToken"`
+	JobId                string           `position:"Query" name:"JobId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	MaximumPageSize      requests.Integer `position:"Query" name:"MaximumPageSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

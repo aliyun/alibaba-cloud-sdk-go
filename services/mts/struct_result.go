@@ -20,10 +20,12 @@ type Result struct {
 	Message          string           `json:"Message" xml:"Message"`
 	Code             string           `json:"Code" xml:"Code"`
 	Label            string           `json:"Label" xml:"Label"`
+	Data             string           `json:"Data" xml:"Data"`
 	Rate             string           `json:"Rate" xml:"Rate"`
 	Score            string           `json:"Score" xml:"Score"`
 	Suggestion       string           `json:"Suggestion" xml:"Suggestion"`
 	Scene            string           `json:"Scene" xml:"Scene"`
+	Type             string           `json:"Type" xml:"Type"`
 	PornResult       PornResult       `json:"PornResult" xml:"PornResult"`
 	PoliticsResult   PoliticsResult   `json:"PoliticsResult" xml:"PoliticsResult"`
 	QrcodeResult     QrcodeResult     `json:"QrcodeResult" xml:"QrcodeResult"`

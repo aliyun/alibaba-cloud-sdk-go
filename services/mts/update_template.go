@@ -78,15 +78,15 @@ type UpdateTemplateRequest struct {
 	*requests.RpcRequest
 	Container            string           `position:"Query" name:"Container"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Video                string           `position:"Query" name:"Video"`
+	TransConfig          string           `position:"Query" name:"TransConfig"`
+	Audio                string           `position:"Query" name:"Audio"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	MuxConfig            string           `position:"Query" name:"MuxConfig"`
-	Video                string           `position:"Query" name:"Video"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TemplateId           string           `position:"Query" name:"TemplateId"`
 	Name                 string           `position:"Query" name:"Name"`
-	TransConfig          string           `position:"Query" name:"TransConfig"`
-	Audio                string           `position:"Query" name:"Audio"`
 }
 
 // UpdateTemplateResponse is the response struct for api UpdateTemplate

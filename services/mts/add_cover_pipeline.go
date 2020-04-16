@@ -80,10 +80,10 @@ type AddCoverPipelineRequest struct {
 	Role                 string           `position:"Query" name:"Role"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
 	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Priority             string           `position:"Query" name:"Priority"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // AddCoverPipelineResponse is the response struct for api AddCoverPipeline

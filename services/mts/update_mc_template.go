@@ -78,20 +78,20 @@ type UpdateMCTemplateRequest struct {
 	*requests.RpcRequest
 	Politics             string           `position:"Query" name:"Politics"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Abuse                string           `position:"Query" name:"Abuse"`
+	Qrcode               string           `position:"Query" name:"Qrcode"`
+	Porn                 string           `position:"Query" name:"Porn"`
+	Terrorism            string           `position:"Query" name:"Terrorism"`
+	Logo                 string           `position:"Query" name:"Logo"`
+	Live                 string           `position:"Query" name:"Live"`
 	Contraband           string           `position:"Query" name:"Contraband"`
 	Ad                   string           `position:"Query" name:"Ad"`
-	Abuse                string           `position:"Query" name:"Abuse"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Qrcode               string           `position:"Query" name:"Qrcode"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TemplateId           string           `position:"Query" name:"TemplateId"`
-	Porn                 string           `position:"Query" name:"Porn"`
-	Terrorism            string           `position:"Query" name:"Terrorism"`
 	Name                 string           `position:"Query" name:"Name"`
-	Logo                 string           `position:"Query" name:"Logo"`
 	Spam                 string           `position:"Query" name:"spam"`
-	Live                 string           `position:"Query" name:"Live"`
 }
 
 // UpdateMCTemplateResponse is the response struct for api UpdateMCTemplate

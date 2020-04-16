@@ -77,12 +77,12 @@ func (client *Client) QueryFpImportResultWithCallback(request *QueryFpImportResu
 type QueryFpImportResultRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	StartTime            requests.Integer `position:"Query" name:"StartTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageIndex            requests.Integer `position:"Query" name:"PageIndex"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	EndTime              requests.Integer `position:"Query" name:"EndTime"`
-	PageIndex            requests.Integer `position:"Query" name:"PageIndex"`
-	StartTime            requests.Integer `position:"Query" name:"StartTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

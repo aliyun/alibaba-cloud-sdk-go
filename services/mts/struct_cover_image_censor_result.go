@@ -17,8 +17,8 @@ package mts
 
 // CoverImageCensorResult is a nested struct in mts response
 type CoverImageCensorResult struct {
-	Bucket   string                           `json:"Bucket" xml:"Bucket"`
-	Object   string                           `json:"Object" xml:"Object"`
-	Location string                           `json:"Location" xml:"Location"`
-	Results  ResultsInQueryMediaCensorJobList `json:"Results" xml:"Results"`
+	Bucket   string                             `json:"Bucket" xml:"Bucket"`
+	Object   string                             `json:"Object" xml:"Object"`
+	Location string                             `json:"Location" xml:"Location"`
+	Results  ResultsInQueryMediaCensorJobDetail `json:"Results" xml:"Results"`
 }

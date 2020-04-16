@@ -76,16 +76,16 @@ func (client *Client) SubmitMCJobWithCallback(request *SubmitMCJobRequest, callb
 // SubmitMCJobRequest is the request struct for api SubmitMCJob
 type SubmitMCJobRequest struct {
 	*requests.RpcRequest
-	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Video                string           `position:"Query" name:"Video"`
+	UserData             string           `position:"Query" name:"UserData"`
 	Images               string           `position:"Query" name:"Images"`
-	Texts                string           `position:"Query" name:"Texts"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Video                string           `position:"Query" name:"Video"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	CensorConfig         string           `position:"Query" name:"CensorConfig"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
+	Texts                string           `position:"Query" name:"Texts"`
 }
 
 // SubmitMCJobResponse is the response struct for api SubmitMCJob
