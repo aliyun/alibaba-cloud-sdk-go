@@ -17,12 +17,13 @@ package ccc
 
 // CallDetailRecord is a nested struct in ccc response
 type CallDetailRecord struct {
+	SkillGroupIdList   string                            `json:"SkillGroupIdList" xml:"SkillGroupIdList"`
 	ExtraAttr          string                            `json:"ExtraAttr" xml:"ExtraAttr"`
 	Feedback           string                            `json:"Feedback" xml:"Feedback"`
 	ContactId          string                            `json:"ContactId" xml:"ContactId"`
 	AgentNames         string                            `json:"AgentNames" xml:"AgentNames"`
-	CalledNumber       string                            `json:"CalledNumber" xml:"CalledNumber"`
 	SatisfactionDesc   string                            `json:"SatisfactionDesc" xml:"SatisfactionDesc"`
+	CalledNumber       string                            `json:"CalledNumber" xml:"CalledNumber"`
 	ContactType        string                            `json:"ContactType" xml:"ContactType"`
 	StartTime          int64                             `json:"StartTime" xml:"StartTime"`
 	CallingNumber      string                            `json:"CallingNumber" xml:"CallingNumber"`

@@ -85,12 +85,12 @@ type GetConversationDetailByContactIdRequest struct {
 // GetConversationDetailByContactIdResponse is the response struct for api GetConversationDetailByContactId
 type GetConversationDetailByContactIdResponse struct {
 	*responses.BaseResponse
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Success        bool     `json:"Success" xml:"Success"`
-	Code           string   `json:"Code" xml:"Code"`
-	Message        string   `json:"Message" xml:"Message"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	DataList       DataList `json:"DataList" xml:"DataList"`
+	RequestId      string                                     `json:"RequestId" xml:"RequestId"`
+	Success        bool                                       `json:"Success" xml:"Success"`
+	Code           string                                     `json:"Code" xml:"Code"`
+	Message        string                                     `json:"Message" xml:"Message"`
+	HttpStatusCode int                                        `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	DataList       DataListInGetConversationDetailByContactId `json:"DataList" xml:"DataList"`
 }
 
 // CreateGetConversationDetailByContactIdRequest creates a request to invoke GetConversationDetailByContactId API

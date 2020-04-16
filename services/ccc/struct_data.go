@@ -17,28 +17,21 @@ package ccc
 
 // Data is a nested struct in ccc response
 type Data struct {
-	Represent     string                     `json:"Represent" xml:"Represent"`
-	StateDuration string                     `json:"StateDuration" xml:"StateDuration"`
-	PrivacyNumber string                     `json:"PrivacyNumber" xml:"PrivacyNumber"`
-	CallId        string                     `json:"CallId" xml:"CallId"`
-	Callee        string                     `json:"Callee" xml:"Callee"`
-	PageSize      int                        `json:"PageSize" xml:"PageSize"`
-	Caller        string                     `json:"Caller" xml:"Caller"`
-	CallType      string                     `json:"CallType" xml:"CallType"`
-	AgentName     string                     `json:"AgentName" xml:"AgentName"`
-	ReleaseReason string                     `json:"ReleaseReason" xml:"ReleaseReason"`
-	StatusCode    string                     `json:"StatusCode" xml:"StatusCode"`
-	StartTime     string                     `json:"StartTime" xml:"StartTime"`
-	AgentId       string                     `json:"AgentId" xml:"AgentId"`
-	State         string                     `json:"State" xml:"State"`
-	TelX          string                     `json:"TelX" xml:"TelX"`
-	DateCreated   string                     `json:"DateCreated" xml:"DateCreated"`
-	InstanceId    string                     `json:"InstanceId" xml:"InstanceId"`
-	LoginName     string                     `json:"LoginName" xml:"LoginName"`
-	TotalCount    int                        `json:"TotalCount" xml:"TotalCount"`
-	ReleaseAgent  string                     `json:"ReleaseAgent" xml:"ReleaseAgent"`
-	Dn            string                     `json:"Dn" xml:"Dn"`
-	PageNumber    int                        `json:"PageNumber" xml:"PageNumber"`
-	List          ListInListSkillGroupStates `json:"List" xml:"List"`
-	Events        Events                     `json:"Events" xml:"Events"`
+	Represent     string                `json:"Represent" xml:"Represent"`
+	PrivacyNumber string                `json:"PrivacyNumber" xml:"PrivacyNumber"`
+	CallId        string                `json:"CallId" xml:"CallId"`
+	PageSize      int                   `json:"PageSize" xml:"PageSize"`
+	Callee        string                `json:"Callee" xml:"Callee"`
+	Caller        string                `json:"Caller" xml:"Caller"`
+	CallType      string                `json:"CallType" xml:"CallType"`
+	StatusCode    string                `json:"StatusCode" xml:"StatusCode"`
+	ReleaseReason string                `json:"ReleaseReason" xml:"ReleaseReason"`
+	TelX          string                `json:"TelX" xml:"TelX"`
+	StartTime     string                `json:"StartTime" xml:"StartTime"`
+	DateCreated   string                `json:"DateCreated" xml:"DateCreated"`
+	TotalCount    int                   `json:"TotalCount" xml:"TotalCount"`
+	ReleaseAgent  string                `json:"ReleaseAgent" xml:"ReleaseAgent"`
+	PageNumber    int                   `json:"PageNumber" xml:"PageNumber"`
+	List          ListInListAgentStates `json:"List" xml:"List"`
+	Events        Events                `json:"Events" xml:"Events"`
 }

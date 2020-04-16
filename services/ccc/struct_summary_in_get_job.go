@@ -17,5 +17,5 @@ package ccc
 
 // SummaryInGetJob is a nested struct in ccc response
 type SummaryInGetJob struct {
-	SummaryItem []SummaryItem `json:"SummaryItem" xml:"SummaryItem"`
+	SummaryItem []SummaryItem `json:"Summary" xml:"Summary"`
 }

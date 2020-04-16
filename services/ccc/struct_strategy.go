@@ -20,8 +20,8 @@ type Strategy struct {
 	StrategyName        string      `json:"StrategyName" xml:"StrategyName"`
 	Name                string      `json:"Name" xml:"Name"`
 	Customized          string      `json:"Customized" xml:"Customized"`
-	MinAttemptInterval  int         `json:"MinAttemptInterval" xml:"MinAttemptInterval"`
 	StrategyDescription string      `json:"StrategyDescription" xml:"StrategyDescription"`
+	MinAttemptInterval  int         `json:"MinAttemptInterval" xml:"MinAttemptInterval"`
 	FollowUpStrategy    string      `json:"FollowUpStrategy" xml:"FollowUpStrategy"`
 	StrategyId          string      `json:"StrategyId" xml:"StrategyId"`
 	MaxAttemptsPerDay   int         `json:"MaxAttemptsPerDay" xml:"MaxAttemptsPerDay"`

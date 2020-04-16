@@ -17,5 +17,5 @@ package ccc
 
 // SummaryInListJobStatus is a nested struct in ccc response
 type SummaryInListJobStatus struct {
-	SummaryItem []SummaryItem `json:"SummaryItem" xml:"SummaryItem"`
+	SummaryItem []SummaryItem `json:"Summary" xml:"Summary"`
 }

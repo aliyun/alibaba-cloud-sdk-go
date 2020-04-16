@@ -19,11 +19,11 @@ package ccc
 type Recording struct {
 	ContactId          string `json:"ContactId" xml:"ContactId"`
 	FileDescription    string `json:"FileDescription" xml:"FileDescription"`
-	CalledNumber       string `json:"CalledNumber" xml:"CalledNumber"`
 	QualityCheckTid    string `json:"QualityCheckTid" xml:"QualityCheckTid"`
+	CalledNumber       string `json:"CalledNumber" xml:"CalledNumber"`
 	ContactType        string `json:"ContactType" xml:"ContactType"`
-	CallingNumber      string `json:"CallingNumber" xml:"CallingNumber"`
 	StartTime          int64  `json:"StartTime" xml:"StartTime"`
+	CallingNumber      string `json:"CallingNumber" xml:"CallingNumber"`
 	AgentName          string `json:"AgentName" xml:"AgentName"`
 	AgentId            string `json:"AgentId" xml:"AgentId"`
 	Duration           int    `json:"Duration" xml:"Duration"`

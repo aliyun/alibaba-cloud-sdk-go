@@ -87,12 +87,12 @@ type ListAgentStatesRequest struct {
 // ListAgentStatesResponse is the response struct for api ListAgentStates
 type ListAgentStatesResponse struct {
 	*responses.BaseResponse
-	RequestId      string                `json:"RequestId" xml:"RequestId"`
-	Success        bool                  `json:"Success" xml:"Success"`
-	Code           string                `json:"Code" xml:"Code"`
-	Message        string                `json:"Message" xml:"Message"`
-	HttpStatusCode int                   `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Data           DataInListAgentStates `json:"Data" xml:"Data"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
+	Code           string `json:"Code" xml:"Code"`
+	Message        string `json:"Message" xml:"Message"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Data           Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListAgentStatesRequest creates a request to invoke ListAgentStates API

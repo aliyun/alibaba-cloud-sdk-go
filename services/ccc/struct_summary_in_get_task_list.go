@@ -17,5 +17,5 @@ package ccc
 
 // SummaryInGetTaskList is a nested struct in ccc response
 type SummaryInGetTaskList struct {
-	SummaryItem []SummaryItem `json:"SummaryItem" xml:"SummaryItem"`
+	SummaryItem []SummaryItem `json:"Summary" xml:"Summary"`
 }

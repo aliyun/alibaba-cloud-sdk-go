@@ -1,3 +1,7 @@
+2020-04-16 Version: v1.61.118
+- Generated 2017-07-05 for `CCC`.
+- Add features for open api.
+
 2020-04-16 Version: v1.61.117
 - Generated 2017-08-01 for `Edas`.
 - Increase the elastic expansion pop interface.

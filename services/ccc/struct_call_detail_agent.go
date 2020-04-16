@@ -23,9 +23,9 @@ type CallDetailAgent struct {
 	HoldTime       int    `json:"HoldTime" xml:"HoldTime"`
 	AgentId        string `json:"AgentId" xml:"AgentId"`
 	Feedback       string `json:"Feedback" xml:"Feedback"`
+	Satisfaction   string `json:"Satisfaction" xml:"Satisfaction"`
 	ContactId      string `json:"ContactId" xml:"ContactId"`
 	TalkTime       int    `json:"TalkTime" xml:"TalkTime"`
-	Satisfaction   string `json:"Satisfaction" xml:"Satisfaction"`
 	QueueTime      int    `json:"QueueTime" xml:"QueueTime"`
 	RingTime       int    `json:"RingTime" xml:"RingTime"`
 	WorkTime       int    `json:"WorkTime" xml:"WorkTime"`

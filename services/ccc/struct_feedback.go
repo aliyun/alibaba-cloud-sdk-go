@@ -17,7 +17,8 @@ package ccc
 
 // Feedback is a nested struct in ccc response
 type Feedback struct {
-	Content      string `json:"Content" xml:"Content"`
-	Action       string `json:"Action" xml:"Action"`
-	ActionParams string `json:"ActionParams" xml:"ActionParams"`
+	Content       string `json:"Content" xml:"Content"`
+	Action        string `json:"Action" xml:"Action"`
+	ActionParams  string `json:"ActionParams" xml:"ActionParams"`
+	Interruptible bool   `json:"Interruptible" xml:"Interruptible"`
 }

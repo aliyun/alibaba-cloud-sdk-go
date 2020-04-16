@@ -18,14 +18,13 @@ package ccc
 // Job is a nested struct in ccc response
 type Job struct {
 	JobId          string         `json:"JobId" xml:"JobId"`
-	JobGroupId     string         `json:"JobGroupId" xml:"JobGroupId"`
 	Priority       int            `json:"Priority" xml:"Priority"`
 	ReferenceId    string         `json:"ReferenceId" xml:"ReferenceId"`
 	StrategyId     string         `json:"StrategyId" xml:"StrategyId"`
 	ScenarioId     string         `json:"ScenarioId" xml:"ScenarioId"`
 	SystemPriority int            `json:"SystemPriority" xml:"SystemPriority"`
-	FailureReason  string         `json:"FailureReason" xml:"FailureReason"`
 	GroupId        string         `json:"GroupId" xml:"GroupId"`
+	FailureReason  string         `json:"FailureReason" xml:"FailureReason"`
 	Status         string         `json:"Status" xml:"Status"`
 	CallingNumbers []string       `json:"CallingNumbers" xml:"CallingNumbers"`
 	Tasks          []Task         `json:"Tasks" xml:"Tasks"`

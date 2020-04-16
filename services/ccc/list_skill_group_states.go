@@ -85,12 +85,12 @@ type ListSkillGroupStatesRequest struct {
 // ListSkillGroupStatesResponse is the response struct for api ListSkillGroupStates
 type ListSkillGroupStatesResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Data           Data   `json:"Data" xml:"Data"`
+	RequestId      string                     `json:"RequestId" xml:"RequestId"`
+	Success        bool                       `json:"Success" xml:"Success"`
+	Code           string                     `json:"Code" xml:"Code"`
+	Message        string                     `json:"Message" xml:"Message"`
+	HttpStatusCode int                        `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Data           DataInListSkillGroupStates `json:"Data" xml:"Data"`
 }
 
 // CreateListSkillGroupStatesRequest creates a request to invoke ListSkillGroupStates API

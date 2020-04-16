@@ -22,16 +22,9 @@ type JobGroup struct {
 	JobGroupName        string   `json:"JobGroupName" xml:"JobGroupName"`
 	CreationTime        int64    `json:"CreationTime" xml:"CreationTime"`
 	ScenarioId          string   `json:"ScenarioId" xml:"ScenarioId"`
-	SkillGroupName      string   `json:"SkillGroupName" xml:"SkillGroupName"`
-	OccupancyRate       string   `json:"OccupancyRate" xml:"OccupancyRate"`
-	SkillGroupId        string   `json:"SkillGroupId" xml:"SkillGroupId"`
-	StartTime           string   `json:"StartTime" xml:"StartTime"`
-	EndTime             string   `json:"EndTime" xml:"EndTime"`
-	InstanceId          string   `json:"InstanceId" xml:"InstanceId"`
 	JobGroupDescription string   `json:"JobGroupDescription" xml:"JobGroupDescription"`
 	JobFilePath         string   `json:"JobFilePath" xml:"JobFilePath"`
 	Id                  string   `json:"Id" xml:"Id"`
-	TaskType            string   `json:"TaskType" xml:"TaskType"`
 	Description         string   `json:"Description" xml:"Description"`
 	CallingNumbers      []string `json:"CallingNumbers" xml:"CallingNumbers"`
 	Strategy            Strategy `json:"Strategy" xml:"Strategy"`

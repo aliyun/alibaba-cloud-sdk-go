@@ -17,14 +17,14 @@ package ccc
 
 // AgentSummaryReport is a nested struct in ccc response
 type AgentSummaryReport struct {
-	SkillGroupNames string                                         `json:"SkillGroupNames" xml:"SkillGroupNames"`
-	AgentName       string                                         `json:"AgentName" xml:"AgentName"`
-	AgentId         string                                         `json:"AgentId" xml:"AgentId"`
-	Timestamp       string                                         `json:"Timestamp" xml:"Timestamp"`
-	SkillGroupIds   string                                         `json:"SkillGroupIds" xml:"SkillGroupIds"`
-	InstanceId      string                                         `json:"InstanceId" xml:"InstanceId"`
-	LoginName       string                                         `json:"LoginName" xml:"LoginName"`
-	Outbound        OutboundInListAgentSummaryReportsSinceMidnight `json:"Outbound" xml:"Outbound"`
-	Overall         Overall                                        `json:"Overall" xml:"Overall"`
-	Inbound         InboundInListAgentSummaryReportsSinceMidnight  `json:"Inbound" xml:"Inbound"`
+	SkillGroupNames string                            `json:"SkillGroupNames" xml:"SkillGroupNames"`
+	AgentName       string                            `json:"AgentName" xml:"AgentName"`
+	AgentId         string                            `json:"AgentId" xml:"AgentId"`
+	SkillGroupIds   string                            `json:"SkillGroupIds" xml:"SkillGroupIds"`
+	Timestamp       string                            `json:"Timestamp" xml:"Timestamp"`
+	InstanceId      string                            `json:"InstanceId" xml:"InstanceId"`
+	LoginName       string                            `json:"LoginName" xml:"LoginName"`
+	Outbound        OutboundInListAgentSummaryReports `json:"Outbound" xml:"Outbound"`
+	Overall         Overall                           `json:"Overall" xml:"Overall"`
+	Inbound         Inbound                           `json:"Inbound" xml:"Inbound"`
 }

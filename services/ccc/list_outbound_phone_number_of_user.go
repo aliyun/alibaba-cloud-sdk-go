@@ -76,8 +76,10 @@ func (client *Client) ListOutboundPhoneNumberOfUserWithCallback(request *ListOut
 // ListOutboundPhoneNumberOfUserRequest is the request struct for api ListOutboundPhoneNumberOfUser
 type ListOutboundPhoneNumberOfUserRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
-	UserId     string `position:"Query" name:"UserId"`
+	UserId     string           `position:"Query" name:"UserId"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListOutboundPhoneNumberOfUserResponse is the response struct for api ListOutboundPhoneNumberOfUser
@@ -88,6 +90,7 @@ type ListOutboundPhoneNumberOfUserResponse struct {
 	Code                 string                                              `json:"Code" xml:"Code"`
 	Message              string                                              `json:"Message" xml:"Message"`
 	HttpStatusCode       int                                                 `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	NumberList           NumberList                                          `json:"NumberList" xml:"NumberList"`
 	OutboundPhoneNumbers OutboundPhoneNumbersInListOutboundPhoneNumberOfUser `json:"OutboundPhoneNumbers" xml:"OutboundPhoneNumbers"`
 }
 

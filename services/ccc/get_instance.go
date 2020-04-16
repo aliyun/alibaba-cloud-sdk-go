@@ -82,12 +82,12 @@ type GetInstanceRequest struct {
 // GetInstanceResponse is the response struct for api GetInstance
 type GetInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Success        bool     `json:"Success" xml:"Success"`
-	Code           string   `json:"Code" xml:"Code"`
-	Message        string   `json:"Message" xml:"Message"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Instance       Instance `json:"Instance" xml:"Instance"`
+	RequestId      string                `json:"RequestId" xml:"RequestId"`
+	Success        bool                  `json:"Success" xml:"Success"`
+	Code           string                `json:"Code" xml:"Code"`
+	Message        string                `json:"Message" xml:"Message"`
+	HttpStatusCode int                   `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Instance       InstanceInGetInstance `json:"Instance" xml:"Instance"`
 }
 
 // CreateGetInstanceRequest creates a request to invoke GetInstance API

@@ -17,9 +17,9 @@ package ccc
 
 // MediaUploadParam is a nested struct in ccc response
 type MediaUploadParam struct {
-	Name        string `json:"Name" xml:"Name"`
 	Id          string `json:"Id" xml:"Id"`
 	Instance    string `json:"Instance" xml:"Instance"`
+	Name        string `json:"Name" xml:"Name"`
 	FileName    string `json:"FileName" xml:"FileName"`
 	OssFileName string `json:"OssFileName" xml:"OssFileName"`
 	OssFilePath string `json:"OssFilePath" xml:"OssFilePath"`

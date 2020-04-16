@@ -17,9 +17,9 @@ package ccc
 
 // InstanceSummaryReport is a nested struct in ccc response
 type InstanceSummaryReport struct {
-	Timestamp  string   `json:"Timestamp" xml:"Timestamp"`
-	InstanceId string   `json:"InstanceId" xml:"InstanceId"`
-	Outbound   Outbound `json:"Outbound" xml:"Outbound"`
-	Inbound    Inbound  `json:"Inbound" xml:"Inbound"`
-	Overall    Overall  `json:"Overall" xml:"Overall"`
+	Timestamp  string                            `json:"Timestamp" xml:"Timestamp"`
+	InstanceId string                            `json:"InstanceId" xml:"InstanceId"`
+	Outbound   Outbound                          `json:"Outbound" xml:"Outbound"`
+	Overall    Overall                           `json:"Overall" xml:"Overall"`
+	Inbound    InboundInGetInstanceSummaryReport `json:"Inbound" xml:"Inbound"`
 }

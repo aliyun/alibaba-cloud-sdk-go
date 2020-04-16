@@ -17,11 +17,11 @@ package ccc
 
 // SkillGroupSummaryReport is a nested struct in ccc response
 type SkillGroupSummaryReport struct {
-	SkillGroupName string   `json:"SkillGroupName" xml:"SkillGroupName"`
-	SkillGroupId   string   `json:"SkillGroupId" xml:"SkillGroupId"`
-	Timestamp      string   `json:"Timestamp" xml:"Timestamp"`
-	InstanceId     string   `json:"InstanceId" xml:"InstanceId"`
-	Outbound       Outbound `json:"Outbound" xml:"Outbound"`
-	Inbound        Inbound  `json:"Inbound" xml:"Inbound"`
-	Overall        Overall  `json:"Overall" xml:"Overall"`
+	SkillGroupName string                                `json:"SkillGroupName" xml:"SkillGroupName"`
+	SkillGroupId   string                                `json:"SkillGroupId" xml:"SkillGroupId"`
+	Timestamp      string                                `json:"Timestamp" xml:"Timestamp"`
+	InstanceId     string                                `json:"InstanceId" xml:"InstanceId"`
+	Outbound       Outbound                              `json:"Outbound" xml:"Outbound"`
+	Inbound        InboundInListSkillGroupSummaryReports `json:"Inbound" xml:"Inbound"`
+	Overall        Overall                               `json:"Overall" xml:"Overall"`
 }

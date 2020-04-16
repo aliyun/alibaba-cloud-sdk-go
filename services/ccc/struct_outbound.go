@@ -18,21 +18,21 @@ package ccc
 // Outbound is a nested struct in ccc response
 type Outbound struct {
 	TotalHoldTime                int64   `json:"TotalHoldTime" xml:"TotalHoldTime"`
-	CallsDialed                  int64   `json:"CallsDialed" xml:"CallsDialed"`
 	MaxHoldTime                  int64   `json:"MaxHoldTime" xml:"MaxHoldTime"`
-	AverageDialingTime           int64   `json:"AverageDialingTime" xml:"AverageDialingTime"`
+	CallsDialed                  int64   `json:"CallsDialed" xml:"CallsDialed"`
 	SatisfactionSurveysResponded int64   `json:"SatisfactionSurveysResponded" xml:"SatisfactionSurveysResponded"`
+	AverageDialingTime           int64   `json:"AverageDialingTime" xml:"AverageDialingTime"`
 	AverageWorkTime              int64   `json:"AverageWorkTime" xml:"AverageWorkTime"`
 	CallsAnswered                int64   `json:"CallsAnswered" xml:"CallsAnswered"`
 	SatisfactionIndex            float64 `json:"SatisfactionIndex" xml:"SatisfactionIndex"`
 	AverageTalkTime              int64   `json:"AverageTalkTime" xml:"AverageTalkTime"`
-	AnswerRate                   float64 `json:"AnswerRate" xml:"AnswerRate"`
 	MaxTalkTime                  int64   `json:"MaxTalkTime" xml:"MaxTalkTime"`
+	AnswerRate                   float64 `json:"AnswerRate" xml:"AnswerRate"`
 	TotalTalkTime                int64   `json:"TotalTalkTime" xml:"TotalTalkTime"`
 	TotalDialingTime             int64   `json:"TotalDialingTime" xml:"TotalDialingTime"`
 	MaxWorkTime                  int64   `json:"MaxWorkTime" xml:"MaxWorkTime"`
 	TotalWorkTime                int64   `json:"TotalWorkTime" xml:"TotalWorkTime"`
-	SatisfactionSurveysOffered   int64   `json:"SatisfactionSurveysOffered" xml:"SatisfactionSurveysOffered"`
 	AverageHoldTime              int64   `json:"AverageHoldTime" xml:"AverageHoldTime"`
+	SatisfactionSurveysOffered   int64   `json:"SatisfactionSurveysOffered" xml:"SatisfactionSurveysOffered"`
 	MaxDialingTime               int64   `json:"MaxDialingTime" xml:"MaxDialingTime"`
 }

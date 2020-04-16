@@ -22,18 +22,19 @@ type Overall struct {
 	MaxHoldTime                  int64   `json:"MaxHoldTime" xml:"MaxHoldTime"`
 	SatisfactionSurveysResponded int64   `json:"SatisfactionSurveysResponded" xml:"SatisfactionSurveysResponded"`
 	AverageWorkTime              int64   `json:"AverageWorkTime" xml:"AverageWorkTime"`
-	AverageReadyTime             int64   `json:"AverageReadyTime" xml:"AverageReadyTime"`
 	SatisfactionIndex            float64 `json:"SatisfactionIndex" xml:"SatisfactionIndex"`
+	AverageReadyTime             int64   `json:"AverageReadyTime" xml:"AverageReadyTime"`
 	AverageTalkTime              int64   `json:"AverageTalkTime" xml:"AverageTalkTime"`
-	MaxReadyTime                 int64   `json:"MaxReadyTime" xml:"MaxReadyTime"`
 	MaxTalkTime                  int64   `json:"MaxTalkTime" xml:"MaxTalkTime"`
+	MaxReadyTime                 int64   `json:"MaxReadyTime" xml:"MaxReadyTime"`
 	TotalTalkTime                int64   `json:"TotalTalkTime" xml:"TotalTalkTime"`
 	TotalCalls                   int64   `json:"TotalCalls" xml:"TotalCalls"`
-	TotalReadyTime               int64   `json:"TotalReadyTime" xml:"TotalReadyTime"`
 	MaxWorkTime                  int64   `json:"MaxWorkTime" xml:"MaxWorkTime"`
+	TotalReadyTime               int64   `json:"TotalReadyTime" xml:"TotalReadyTime"`
+	OneTransferCalls             int64   `json:"OneTransferCalls" xml:"OneTransferCalls"`
 	TotalWorkTime                int64   `json:"TotalWorkTime" xml:"TotalWorkTime"`
-	TotalBreakTime               int64   `json:"TotalBreakTime" xml:"TotalBreakTime"`
-	SatisfactionSurveysOffered   int64   `json:"SatisfactionSurveysOffered" xml:"SatisfactionSurveysOffered"`
 	AverageHoldTime              int64   `json:"AverageHoldTime" xml:"AverageHoldTime"`
+	SatisfactionSurveysOffered   int64   `json:"SatisfactionSurveysOffered" xml:"SatisfactionSurveysOffered"`
+	TotalBreakTime               int64   `json:"TotalBreakTime" xml:"TotalBreakTime"`
 	OccupancyRate                float64 `json:"OccupancyRate" xml:"OccupancyRate"`
 }
