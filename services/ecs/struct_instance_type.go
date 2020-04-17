@@ -22,23 +22,24 @@ type InstanceType struct {
 	InstancePpsRx               int64   `json:"InstancePpsRx" xml:"InstancePpsRx"`
 	CpuCoreCount                int     `json:"CpuCoreCount" xml:"CpuCoreCount"`
 	Cores                       int     `json:"Cores" xml:"Cores"`
-	Memory                      int     `json:"Memory" xml:"Memory"`
 	InstanceTypeId              string  `json:"InstanceTypeId" xml:"InstanceTypeId"`
 	InstanceBandwidthRx         int     `json:"InstanceBandwidthRx" xml:"InstanceBandwidthRx"`
-	BaselineCredit              int     `json:"BaselineCredit" xml:"BaselineCredit"`
 	InstanceType                string  `json:"InstanceType" xml:"InstanceType"`
 	EniQuantity                 int     `json:"EniQuantity" xml:"EniQuantity"`
-	GPUAmount                   int     `json:"GPUAmount" xml:"GPUAmount"`
 	Generation                  string  `json:"Generation" xml:"Generation"`
 	SupportIoOptimized          string  `json:"SupportIoOptimized" xml:"SupportIoOptimized"`
 	InstanceTypeFamily          string  `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
 	InitialCredit               int     `json:"InitialCredit" xml:"InitialCredit"`
-	EniIpv6AddressQuantity      int     `json:"EniIpv6AddressQuantity" xml:"EniIpv6AddressQuantity"`
 	InstancePpsTx               int64   `json:"InstancePpsTx" xml:"InstancePpsTx"`
 	LocalStorageAmount          int     `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
 	InstanceFamilyLevel         string  `json:"InstanceFamilyLevel" xml:"InstanceFamilyLevel"`
-	LocalStorageCapacity        int64   `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
+	TotalEniQueueQuantity       int     `json:"TotalEniQueueQuantity" xml:"TotalEniQueueQuantity"`
 	GPUSpec                     string  `json:"GPUSpec" xml:"GPUSpec"`
-	LocalStorageCategory        string  `json:"LocalStorageCategory" xml:"LocalStorageCategory"`
 	InstanceBandwidthTx         int     `json:"InstanceBandwidthTx" xml:"InstanceBandwidthTx"`
+	Memory                      int     `json:"Memory" xml:"Memory"`
+	BaselineCredit              int     `json:"BaselineCredit" xml:"BaselineCredit"`
+	GPUAmount                   int     `json:"GPUAmount" xml:"GPUAmount"`
+	EniIpv6AddressQuantity      int     `json:"EniIpv6AddressQuantity" xml:"EniIpv6AddressQuantity"`
+	LocalStorageCapacity        int64   `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
+	LocalStorageCategory        string  `json:"LocalStorageCategory" xml:"LocalStorageCategory"`
 }
