@@ -22,4 +22,8 @@ type Result struct {
 	ProcessResultUrl string `json:"ProcessResultUrl" xml:"ProcessResultUrl"`
 	AnalysisUseTime  int64  `json:"AnalysisUseTime" xml:"AnalysisUseTime"`
 	VideoUrl         string `json:"VideoUrl" xml:"VideoUrl"`
+	ErrorName        string `json:"ErrorName" xml:"ErrorName"`
+	ErrorReason      string `json:"ErrorReason" xml:"ErrorReason"`
+	ErrorCode        string `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMessage     string `json:"ErrorMessage" xml:"ErrorMessage"`
 }

@@ -95,7 +95,7 @@ func CreateCreateCoverTaskRequest() (request *CreateCoverTaskRequest) {
 	request = &CreateCoverTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("multimediaai", "2019-08-10", "CreateCoverTask", "multimediaai", "openAPI")
+	request.InitWithApiInfo("multimediaai", "2019-08-10", "CreateCoverTask", "", "")
 	return
 }
 

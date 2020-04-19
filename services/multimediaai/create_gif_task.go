@@ -95,7 +95,7 @@ func CreateCreateGifTaskRequest() (request *CreateGifTaskRequest) {
 	request = &CreateGifTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("multimediaai", "2019-08-10", "CreateGifTask", "multimediaai", "openAPI")
+	request.InitWithApiInfo("multimediaai", "2019-08-10", "CreateGifTask", "", "")
 	return
 }
 

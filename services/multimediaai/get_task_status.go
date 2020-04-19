@@ -91,7 +91,7 @@ func CreateGetTaskStatusRequest() (request *GetTaskStatusRequest) {
 	request = &GetTaskStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("multimediaai", "2019-08-10", "GetTaskStatus", "multimediaai", "openAPI")
+	request.InitWithApiInfo("multimediaai", "2019-08-10", "GetTaskStatus", "", "")
 	return
 }
 

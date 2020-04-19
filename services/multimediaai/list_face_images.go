@@ -97,7 +97,7 @@ func CreateListFaceImagesRequest() (request *ListFaceImagesRequest) {
 	request = &ListFaceImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("multimediaai", "2019-08-10", "ListFaceImages", "multimediaai", "openAPI")
+	request.InitWithApiInfo("multimediaai", "2019-08-10", "ListFaceImages", "", "")
 	return
 }
 

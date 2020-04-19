@@ -93,7 +93,7 @@ func CreateCreateFacePersonRequest() (request *CreateFacePersonRequest) {
 	request = &CreateFacePersonRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("multimediaai", "2019-08-10", "CreateFacePerson", "multimediaai", "openAPI")
+	request.InitWithApiInfo("multimediaai", "2019-08-10", "CreateFacePerson", "", "")
 	return
 }
 

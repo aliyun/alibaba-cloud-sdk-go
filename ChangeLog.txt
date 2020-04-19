@@ -1,3 +1,7 @@
+2020-04-19 Version: v1.61.124
+- Generated 2019-08-10 for `multimediaai`.
+- Multimedia poc modified.
+
 2020-04-17 Version: v1.61.123
 - Generated 2014-05-26 for `Ecs`.
 - DescribeInstanceTypes support TotalEniQueueQuantity.
