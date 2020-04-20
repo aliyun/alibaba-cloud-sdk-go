@@ -77,7 +77,7 @@ func (client *Client) InitFaceVerifyWithCallback(request *InitFaceVerifyRequest,
 type InitFaceVerifyRequest struct {
 	*requests.RpcRequest
 	ProductCode            string           `position:"Query" name:"ProductCode"`
-	FaceContrastPicture    string           `position:"Query" name:"FaceContrastPicture"`
+	FaceContrastPicture    string           `position:"Body" name:"FaceContrastPicture"`
 	UserId                 string           `position:"Query" name:"UserId"`
 	CertifyId              string           `position:"Query" name:"CertifyId"`
 	CertNo                 string           `position:"Query" name:"CertNo"`

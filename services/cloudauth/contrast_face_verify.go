@@ -76,21 +76,21 @@ func (client *Client) ContrastFaceVerifyWithCallback(request *ContrastFaceVerify
 // ContrastFaceVerifyRequest is the request struct for api ContrastFaceVerify
 type ContrastFaceVerifyRequest struct {
 	*requests.RpcRequest
-	ProductCode            string           `position:"Query" name:"ProductCode"`
-	OssObjectName          string           `position:"Query" name:"OssObjectName"`
-	FaceContrastPicture    string           `position:"Query" name:"FaceContrastPicture"`
-	CertName               string           `position:"Query" name:"CertName"`
-	Ip                     string           `position:"Query" name:"Ip"`
-	Mobile                 string           `position:"Query" name:"Mobile"`
-	DeviceToken            string           `position:"Query" name:"DeviceToken"`
-	UserId                 string           `position:"Query" name:"UserId"`
-	CertifyId              string           `position:"Query" name:"CertifyId"`
-	CertNo                 string           `position:"Query" name:"CertNo"`
-	OuterOrderNo           string           `position:"Query" name:"OuterOrderNo"`
-	CertType               string           `position:"Query" name:"CertType"`
-	FaceContrastPictureUrl string           `position:"Query" name:"FaceContrastPictureUrl"`
-	SceneId                requests.Integer `position:"Query" name:"SceneId"`
-	OssBucketName          string           `position:"Query" name:"OssBucketName"`
+	ProductCode            string           `position:"Body" name:"ProductCode"`
+	OssObjectName          string           `position:"Body" name:"OssObjectName"`
+	FaceContrastPicture    string           `position:"Body" name:"FaceContrastPicture"`
+	CertName               string           `position:"Body" name:"CertName"`
+	Ip                     string           `position:"Body" name:"Ip"`
+	Mobile                 string           `position:"Body" name:"Mobile"`
+	DeviceToken            string           `position:"Body" name:"DeviceToken"`
+	UserId                 string           `position:"Body" name:"UserId"`
+	CertifyId              string           `position:"Body" name:"CertifyId"`
+	CertNo                 string           `position:"Body" name:"CertNo"`
+	OuterOrderNo           string           `position:"Body" name:"OuterOrderNo"`
+	CertType               string           `position:"Body" name:"CertType"`
+	FaceContrastPictureUrl string           `position:"Body" name:"FaceContrastPictureUrl"`
+	SceneId                requests.Integer `position:"Body" name:"SceneId"`
+	OssBucketName          string           `position:"Body" name:"OssBucketName"`
 }
 
 // ContrastFaceVerifyResponse is the response struct for api ContrastFaceVerify

@@ -87,11 +87,11 @@ type CompareFacesRequest struct {
 // CompareFacesResponse is the response struct for api CompareFaces
 type CompareFacesResponse struct {
 	*responses.BaseResponse
-	RequestId string             `json:"RequestId" xml:"RequestId"`
-	Success   bool               `json:"Success" xml:"Success"`
-	Code      string             `json:"Code" xml:"Code"`
-	Message   string             `json:"Message" xml:"Message"`
-	Data      DataInCompareFaces `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateCompareFacesRequest creates a request to invoke CompareFaces API

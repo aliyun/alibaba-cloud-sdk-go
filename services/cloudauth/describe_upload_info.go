@@ -76,6 +76,7 @@ func (client *Client) DescribeUploadInfoWithCallback(request *DescribeUploadInfo
 // DescribeUploadInfoRequest is the request struct for api DescribeUploadInfo
 type DescribeUploadInfoRequest struct {
 	*requests.RpcRequest
+	Biz      string `position:"Query" name:"Biz"`
 	SourceIp string `position:"Query" name:"SourceIp"`
 }
 
