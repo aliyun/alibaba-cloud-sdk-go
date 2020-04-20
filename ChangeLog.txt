@@ -1,3 +1,7 @@
+2020-04-20 Version: v1.61.125
+- Generated 2017-06-13 for `elasticsearch`.
+- Add kibana network white Ips.
+
 2020-04-19 Version: v1.61.124
 - Generated 2019-08-10 for `multimediaai`.
 - Multimedia poc modified.
