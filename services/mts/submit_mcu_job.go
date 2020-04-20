@@ -99,7 +99,7 @@ func CreateSubmitMcuJobRequest() (request *SubmitMcuJobRequest) {
 	request = &SubmitMcuJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitMcuJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitMcuJob", "", "")
 	return
 }
 

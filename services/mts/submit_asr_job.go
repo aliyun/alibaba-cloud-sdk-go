@@ -98,7 +98,7 @@ func CreateSubmitAsrJobRequest() (request *SubmitAsrJobRequest) {
 	request = &SubmitAsrJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitAsrJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitAsrJob", "", "")
 	return
 }
 

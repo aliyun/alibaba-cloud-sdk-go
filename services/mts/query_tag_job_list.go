@@ -96,7 +96,7 @@ func CreateQueryTagJobListRequest() (request *QueryTagJobListRequest) {
 	request = &QueryTagJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryTagJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryTagJobList", "", "")
 	return
 }
 

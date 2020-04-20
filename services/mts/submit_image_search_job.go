@@ -100,7 +100,7 @@ func CreateSubmitImageSearchJobRequest() (request *SubmitImageSearchJobRequest) 
 	request = &SubmitImageSearchJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitImageSearchJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitImageSearchJob", "", "")
 	return
 }
 

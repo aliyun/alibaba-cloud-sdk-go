@@ -98,7 +98,7 @@ func CreateSubmitMediaInfoJobRequest() (request *SubmitMediaInfoJobRequest) {
 	request = &SubmitMediaInfoJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitMediaInfoJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitMediaInfoJob", "", "")
 	return
 }
 

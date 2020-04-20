@@ -95,7 +95,7 @@ func CreateCreateMcuTemplateRequest() (request *CreateMcuTemplateRequest) {
 	request = &CreateMcuTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "CreateMcuTemplate", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "CreateMcuTemplate", "", "")
 	return
 }
 

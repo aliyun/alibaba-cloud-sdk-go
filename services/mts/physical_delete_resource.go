@@ -110,7 +110,7 @@ func CreatePhysicalDeleteResourceRequest() (request *PhysicalDeleteResourceReque
 	request = &PhysicalDeleteResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "PhysicalDeleteResource", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "PhysicalDeleteResource", "", "")
 	return
 }
 

@@ -97,7 +97,7 @@ func CreateListAllMediaBucketRequest() (request *ListAllMediaBucketRequest) {
 	request = &ListAllMediaBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ListAllMediaBucket", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ListAllMediaBucket", "", "")
 	return
 }
 

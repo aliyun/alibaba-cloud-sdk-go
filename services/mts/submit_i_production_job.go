@@ -101,7 +101,7 @@ func CreateSubmitIProductionJobRequest() (request *SubmitIProductionJobRequest) 
 	request = &SubmitIProductionJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitIProductionJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitIProductionJob", "", "")
 	return
 }
 

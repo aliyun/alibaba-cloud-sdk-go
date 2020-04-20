@@ -97,7 +97,7 @@ func CreateQuerySmarttagJobRequest() (request *QuerySmarttagJobRequest) {
 	request = &QuerySmarttagJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QuerySmarttagJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QuerySmarttagJob", "", "")
 	return
 }
 

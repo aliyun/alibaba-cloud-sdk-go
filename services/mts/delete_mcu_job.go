@@ -96,7 +96,7 @@ func CreateDeleteMcuJobRequest() (request *DeleteMcuJobRequest) {
 	request = &DeleteMcuJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMcuJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMcuJob", "", "")
 	return
 }
 

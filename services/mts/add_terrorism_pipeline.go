@@ -97,7 +97,7 @@ func CreateAddTerrorismPipelineRequest() (request *AddTerrorismPipelineRequest) 
 	request = &AddTerrorismPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddTerrorismPipeline", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "AddTerrorismPipeline", "", "")
 	return
 }
 

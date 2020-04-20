@@ -96,7 +96,7 @@ func CreateQueryFpCompareJobListRequest() (request *QueryFpCompareJobListRequest
 	request = &QueryFpCompareJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryFpCompareJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryFpCompareJobList", "", "")
 	return
 }
 

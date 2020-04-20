@@ -97,7 +97,7 @@ func CreateSubmitImageQualityJobRequest() (request *SubmitImageQualityJobRequest
 	request = &SubmitImageQualityJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitImageQualityJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitImageQualityJob", "", "")
 	return
 }
 

@@ -95,7 +95,7 @@ func CreateUpdateMediaCategoryRequest() (request *UpdateMediaCategoryRequest) {
 	request = &UpdateMediaCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMediaCategory", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMediaCategory", "", "")
 	return
 }
 

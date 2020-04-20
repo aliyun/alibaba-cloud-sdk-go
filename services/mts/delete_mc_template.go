@@ -95,7 +95,7 @@ func CreateDeleteMCTemplateRequest() (request *DeleteMCTemplateRequest) {
 	request = &DeleteMCTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMCTemplate", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMCTemplate", "", "")
 	return
 }
 

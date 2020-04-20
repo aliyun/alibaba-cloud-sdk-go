@@ -96,7 +96,7 @@ func CreateQueryComplexJobListRequest() (request *QueryComplexJobListRequest) {
 	request = &QueryComplexJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryComplexJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryComplexJobList", "", "")
 	return
 }
 

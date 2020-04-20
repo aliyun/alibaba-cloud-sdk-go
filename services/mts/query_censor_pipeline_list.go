@@ -96,7 +96,7 @@ func CreateQueryCensorPipelineListRequest() (request *QueryCensorPipelineListReq
 	request = &QueryCensorPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryCensorPipelineList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryCensorPipelineList", "", "")
 	return
 }
 

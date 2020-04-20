@@ -97,7 +97,7 @@ func CreateRegisterMediaDetailScenarioRequest() (request *RegisterMediaDetailSce
 	request = &RegisterMediaDetailScenarioRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "RegisterMediaDetailScenario", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "RegisterMediaDetailScenario", "", "")
 	return
 }
 

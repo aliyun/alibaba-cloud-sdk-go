@@ -110,7 +110,7 @@ func CreateLogicalDeleteResourceRequest() (request *LogicalDeleteResourceRequest
 	request = &LogicalDeleteResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "LogicalDeleteResource", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "LogicalDeleteResource", "", "")
 	return
 }
 

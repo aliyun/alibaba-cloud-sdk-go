@@ -100,7 +100,7 @@ func CreateSearchMediaWorkflowRequest() (request *SearchMediaWorkflowRequest) {
 	request = &SearchMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SearchMediaWorkflow", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SearchMediaWorkflow", "", "")
 	return
 }
 

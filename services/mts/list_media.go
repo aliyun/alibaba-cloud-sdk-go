@@ -99,7 +99,7 @@ func CreateListMediaRequest() (request *ListMediaRequest) {
 	request = &ListMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ListMedia", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ListMedia", "", "")
 	return
 }
 

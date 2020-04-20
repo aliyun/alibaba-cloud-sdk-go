@@ -95,7 +95,7 @@ func CreateDeactivateMediaWorkflowRequest() (request *DeactivateMediaWorkflowReq
 	request = &DeactivateMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeactivateMediaWorkflow", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeactivateMediaWorkflow", "", "")
 	return
 }
 

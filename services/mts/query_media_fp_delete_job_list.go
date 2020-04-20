@@ -96,7 +96,7 @@ func CreateQueryMediaFpDeleteJobListRequest() (request *QueryMediaFpDeleteJobLis
 	request = &QueryMediaFpDeleteJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaFpDeleteJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaFpDeleteJobList", "", "")
 	return
 }
 

@@ -98,7 +98,7 @@ func CreateSubmitTerrorismJobRequest() (request *SubmitTerrorismJobRequest) {
 	request = &SubmitTerrorismJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitTerrorismJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitTerrorismJob", "", "")
 	return
 }
 

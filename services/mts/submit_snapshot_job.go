@@ -98,7 +98,7 @@ func CreateSubmitSnapshotJobRequest() (request *SubmitSnapshotJobRequest) {
 	request = &SubmitSnapshotJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitSnapshotJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitSnapshotJob", "", "")
 	return
 }
 

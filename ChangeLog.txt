@@ -1,3 +1,7 @@
+2020-04-20 Version: v1.61.127
+- Generated 2014-06-18 for `Mts`.
+- Add TemplateId.
+
 2020-04-20 Version: v1.61.126
 - Generated 2019-03-07 for `Cloudauth`.
 - Fix FaceContrastPicture.

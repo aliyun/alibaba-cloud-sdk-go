@@ -99,7 +99,7 @@ func CreateUpdatePornPipelineRequest() (request *UpdatePornPipelineRequest) {
 	request = &UpdatePornPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdatePornPipeline", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdatePornPipeline", "", "")
 	return
 }
 

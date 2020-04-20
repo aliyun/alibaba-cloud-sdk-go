@@ -103,7 +103,7 @@ func CreateQueryMCJobListRequest() (request *QueryMCJobListRequest) {
 	request = &QueryMCJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMCJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMCJobList", "", "")
 	return
 }
 

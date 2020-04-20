@@ -96,7 +96,7 @@ func CreateQueryVideoGifJobListRequest() (request *QueryVideoGifJobListRequest) 
 	request = &QueryVideoGifJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryVideoGifJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryVideoGifJobList", "", "")
 	return
 }
 

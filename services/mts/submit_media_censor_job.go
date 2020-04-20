@@ -102,7 +102,7 @@ func CreateSubmitMediaCensorJobRequest() (request *SubmitMediaCensorJobRequest) 
 	request = &SubmitMediaCensorJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitMediaCensorJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitMediaCensorJob", "", "")
 	return
 }
 

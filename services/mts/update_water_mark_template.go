@@ -97,7 +97,7 @@ func CreateUpdateWaterMarkTemplateRequest() (request *UpdateWaterMarkTemplateReq
 	request = &UpdateWaterMarkTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateWaterMarkTemplate", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateWaterMarkTemplate", "", "")
 	return
 }
 

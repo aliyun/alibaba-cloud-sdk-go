@@ -101,7 +101,7 @@ func CreateSubmitComplexJobRequest() (request *SubmitComplexJobRequest) {
 	request = &SubmitComplexJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitComplexJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitComplexJob", "", "")
 	return
 }
 

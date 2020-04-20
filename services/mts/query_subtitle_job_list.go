@@ -96,7 +96,7 @@ func CreateQuerySubtitleJobListRequest() (request *QuerySubtitleJobListRequest) 
 	request = &QuerySubtitleJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QuerySubtitleJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QuerySubtitleJobList", "", "")
 	return
 }
 

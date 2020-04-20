@@ -85,6 +85,7 @@ type SubmitSmarttagJobRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Params               string           `position:"Query" name:"Params"`
+	TemplateId           string           `position:"Query" name:"TemplateId"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
 	ContentType          string           `position:"Query" name:"ContentType"`
 	Input                string           `position:"Query" name:"Input"`
@@ -103,7 +104,7 @@ func CreateSubmitSmarttagJobRequest() (request *SubmitSmarttagJobRequest) {
 	request = &SubmitSmarttagJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitSmarttagJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitSmarttagJob", "", "")
 	return
 }
 

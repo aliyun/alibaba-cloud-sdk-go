@@ -98,7 +98,7 @@ func CreateSubmitMediaFpDeleteJobRequest() (request *SubmitMediaFpDeleteJobReque
 	request = &SubmitMediaFpDeleteJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitMediaFpDeleteJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitMediaFpDeleteJob", "", "")
 	return
 }
 

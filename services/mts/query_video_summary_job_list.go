@@ -96,7 +96,7 @@ func CreateQueryVideoSummaryJobListRequest() (request *QueryVideoSummaryJobListR
 	request = &QueryVideoSummaryJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryVideoSummaryJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryVideoSummaryJobList", "", "")
 	return
 }
 

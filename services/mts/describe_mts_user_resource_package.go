@@ -93,7 +93,7 @@ func CreateDescribeMtsUserResourcePackageRequest() (request *DescribeMtsUserReso
 	request = &DescribeMtsUserResourcePackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DescribeMtsUserResourcePackage", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DescribeMtsUserResourcePackage", "", "")
 	return
 }
 

@@ -99,7 +99,7 @@ func CreateAddPipelineRequest() (request *AddPipelineRequest) {
 	request = &AddPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddPipeline", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "AddPipeline", "", "")
 	return
 }
 

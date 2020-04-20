@@ -106,7 +106,7 @@ func CreateUpdateMCTemplateRequest() (request *UpdateMCTemplateRequest) {
 	request = &UpdateMCTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMCTemplate", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMCTemplate", "", "")
 	return
 }
 

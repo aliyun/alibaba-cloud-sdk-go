@@ -100,7 +100,7 @@ func CreateQueryFpImportResultRequest() (request *QueryFpImportResultRequest) {
 	request = &QueryFpImportResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryFpImportResult", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryFpImportResult", "", "")
 	return
 }
 

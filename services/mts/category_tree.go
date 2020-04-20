@@ -94,7 +94,7 @@ func CreateCategoryTreeRequest() (request *CategoryTreeRequest) {
 	request = &CategoryTreeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "CategoryTree", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "CategoryTree", "", "")
 	return
 }
 

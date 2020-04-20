@@ -98,7 +98,7 @@ func CreateSubmitVideoGifJobRequest() (request *SubmitVideoGifJobRequest) {
 	request = &SubmitVideoGifJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitVideoGifJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitVideoGifJob", "", "")
 	return
 }
 

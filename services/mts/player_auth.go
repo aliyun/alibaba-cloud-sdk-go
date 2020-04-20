@@ -95,7 +95,7 @@ func CreatePlayerAuthRequest() (request *PlayerAuthRequest) {
 	request = &PlayerAuthRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "PlayerAuth", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "PlayerAuth", "", "")
 	return
 }
 

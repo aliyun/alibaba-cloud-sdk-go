@@ -96,7 +96,7 @@ func CreateQueryMCTemplateListRequest() (request *QueryMCTemplateListRequest) {
 	request = &QueryMCTemplateListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMCTemplateList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMCTemplateList", "", "")
 	return
 }
 

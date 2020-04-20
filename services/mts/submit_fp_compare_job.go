@@ -100,7 +100,7 @@ func CreateSubmitFpCompareJobRequest() (request *SubmitFpCompareJobRequest) {
 	request = &SubmitFpCompareJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitFpCompareJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitFpCompareJob", "", "")
 	return
 }
 

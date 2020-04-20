@@ -103,7 +103,7 @@ func CreateQueryMediaCensorJobListRequest() (request *QueryMediaCensorJobListReq
 	request = &QueryMediaCensorJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaCensorJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaCensorJobList", "", "")
 	return
 }
 

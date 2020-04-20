@@ -97,7 +97,7 @@ func CreateQueryIProductionJobListRequest() (request *QueryIProductionJobListReq
 	request = &QueryIProductionJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryIProductionJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryIProductionJobList", "", "")
 	return
 }
 

@@ -100,7 +100,7 @@ func CreateListCoverPipelineRequest() (request *ListCoverPipelineRequest) {
 	request = &ListCoverPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ListCoverPipeline", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ListCoverPipeline", "", "")
 	return
 }
 

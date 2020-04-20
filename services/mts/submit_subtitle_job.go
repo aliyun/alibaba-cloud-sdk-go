@@ -98,7 +98,7 @@ func CreateSubmitSubtitleJobRequest() (request *SubmitSubtitleJobRequest) {
 	request = &SubmitSubtitleJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitSubtitleJob", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitSubtitleJob", "", "")
 	return
 }
 

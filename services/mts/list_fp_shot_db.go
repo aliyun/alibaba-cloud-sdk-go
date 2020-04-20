@@ -96,7 +96,7 @@ func CreateListFpShotDBRequest() (request *ListFpShotDBRequest) {
 	request = &ListFpShotDBRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ListFpShotDB", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ListFpShotDB", "", "")
 	return
 }
 

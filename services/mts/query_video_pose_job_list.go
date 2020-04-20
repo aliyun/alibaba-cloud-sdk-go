@@ -96,7 +96,7 @@ func CreateQueryVideoPoseJobListRequest() (request *QueryVideoPoseJobListRequest
 	request = &QueryVideoPoseJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryVideoPoseJobList", "mts", "openAPI")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryVideoPoseJobList", "", "")
 	return
 }
 
