@@ -1,3 +1,11 @@
+2020-04-21 Version: v1.61.129
+- Generated 2019-06-25 for `ivpd`.
+- Supported PackageDesign Apis.
+- Supported Api ListPackageDesignModelTypes.
+- Supported Api PreviewModelForPackageDesign.
+- Supported Api RenderImageForPackageDesign.
+- Supported Api GetRenderResult.
+
 2020-04-21 Version: v1.61.128
 - Generated 2017-11-18 for `CSB`.
 - Add Statistics API.

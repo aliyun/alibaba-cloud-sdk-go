@@ -20,6 +20,7 @@ type Data struct {
 	JobId             string          `json:"JobId" xml:"JobId"`
 	MajorUrl          string          `json:"MajorUrl" xml:"MajorUrl"`
 	TotalUsedTime     int64           `json:"TotalUsedTime" xml:"TotalUsedTime"`
+	PreviewUrl        string          `json:"PreviewUrl" xml:"PreviewUrl"`
 	Url               string          `json:"Url" xml:"Url"`
 	Progress          int             `json:"Progress" xml:"Progress"`
 	ImageUrl          string          `json:"ImageUrl" xml:"ImageUrl"`
@@ -28,6 +29,7 @@ type Data struct {
 	Completed         bool            `json:"Completed" xml:"Completed"`
 	Styles            []string        `json:"Styles" xml:"Styles"`
 	ImageList         []string        `json:"ImageList" xml:"ImageList"`
+	ModelTypeList     []ModelType     `json:"ModelTypeList" xml:"ModelTypeList"`
 	Elements          []Element       `json:"Elements" xml:"Elements"`
 	ResultList        []Result        `json:"ResultList" xml:"ResultList"`
 	ColorTemplateList []ColorTemplate `json:"ColorTemplateList" xml:"ColorTemplateList"`
