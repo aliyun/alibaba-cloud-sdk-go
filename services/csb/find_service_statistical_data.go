@@ -76,19 +76,19 @@ func (client *Client) FindServiceStatisticalDataWithCallback(request *FindServic
 // FindServiceStatisticalDataRequest is the request struct for api FindServiceStatisticalData
 type FindServiceStatisticalDataRequest struct {
 	*requests.RpcRequest
-	CsbId       requests.Integer `position:"Query" name:"CsbId"`
-	EndTime     requests.Integer `position:"Query" name:"EndTime"`
-	StartTime   requests.Integer `position:"Query" name:"StartTime"`
-	ServiceName string           `position:"Query" name:"ServiceName"`
+	CsbId              requests.Integer `position:"Query" name:"CsbId"`
+	EndTime            requests.Integer `position:"Query" name:"EndTime"`
+	StartTime          requests.Integer `position:"Query" name:"StartTime"`
+	ServiceNameVersion string           `position:"Query" name:"ServiceNameVersion"`
 }
 
 // FindServiceStatisticalDataResponse is the response struct for api FindServiceStatisticalData
 type FindServiceStatisticalDataResponse struct {
 	*responses.BaseResponse
-	Code      int    `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      int                              `json:"Code" xml:"Code"`
+	Message   string                           `json:"Message" xml:"Message"`
+	RequestId string                           `json:"RequestId" xml:"RequestId"`
+	Data      DataInFindServiceStatisticalData `json:"Data" xml:"Data"`
 }
 
 // CreateFindServiceStatisticalDataRequest creates a request to invoke FindServiceStatisticalData API

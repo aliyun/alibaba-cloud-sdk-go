@@ -17,11 +17,12 @@ package csb
 
 // ServiceStatisticData is a nested struct in csb response
 type ServiceStatisticData struct {
-	AvgRt       float64 `json:"AvgRt" xml:"AvgRt"`
-	MaxRt       float64 `json:"MaxRt" xml:"MaxRt"`
-	MinRt       float64 `json:"MinRt" xml:"MinRt"`
-	RequestTime int64   `json:"RequestTime" xml:"RequestTime"`
-	ServiceName string  `json:"ServiceName" xml:"ServiceName"`
-	UserId      string  `json:"UserId" xml:"UserId"`
-	Total       Total   `json:"Total" xml:"Total"`
+	MaxRt              float64                              `json:"MaxRt" xml:"MaxRt"`
+	AvgRt              float64                              `json:"AvgRt" xml:"AvgRt"`
+	MinRt              float64                              `json:"MinRt" xml:"MinRt"`
+	ServiceName        string                               `json:"ServiceName" xml:"ServiceName"`
+	CredentialName     string                               `json:"CredentialName" xml:"CredentialName"`
+	ProjectInfoData    ProjectInfoData                      `json:"ProjectInfoData" xml:"ProjectInfoData"`
+	CredentialInfoData CredentialInfoData                   `json:"CredentialInfoData" xml:"CredentialInfoData"`
+	Total              TotalInFindCredentialStatisticalData `json:"Total" xml:"Total"`
 }
