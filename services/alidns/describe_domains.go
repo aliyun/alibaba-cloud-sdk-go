@@ -76,19 +76,26 @@ func (client *Client) DescribeDomainsWithCallback(request *DescribeDomainsReques
 // DescribeDomainsRequest is the request struct for api DescribeDomains
 type DescribeDomainsRequest struct {
 	*requests.RpcRequest
-	StartDate       string           `position:"Query" name:"StartDate"`
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	Lang            string           `position:"Query" name:"Lang"`
-	KeyWord         string           `position:"Query" name:"KeyWord"`
-	Direction       string           `position:"Query" name:"Direction"`
-	Starmark        requests.Boolean `position:"Query" name:"Starmark"`
-	GroupId         string           `position:"Query" name:"GroupId"`
-	OrderBy         string           `position:"Query" name:"OrderBy"`
-	EndDate         string           `position:"Query" name:"EndDate"`
-	UserClientIp    string           `position:"Query" name:"UserClientIp"`
-	SearchMode      string           `position:"Query" name:"SearchMode"`
+	StartDate       string                `position:"Query" name:"StartDate"`
+	PageNumber      requests.Integer      `position:"Query" name:"PageNumber"`
+	ResourceGroupId string                `position:"Query" name:"ResourceGroupId"`
+	PageSize        requests.Integer      `position:"Query" name:"PageSize"`
+	Tag             *[]DescribeDomainsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Lang            string                `position:"Query" name:"Lang"`
+	KeyWord         string                `position:"Query" name:"KeyWord"`
+	Direction       string                `position:"Query" name:"Direction"`
+	Starmark        requests.Boolean      `position:"Query" name:"Starmark"`
+	GroupId         string                `position:"Query" name:"GroupId"`
+	OrderBy         string                `position:"Query" name:"OrderBy"`
+	EndDate         string                `position:"Query" name:"EndDate"`
+	UserClientIp    string                `position:"Query" name:"UserClientIp"`
+	SearchMode      string                `position:"Query" name:"SearchMode"`
+}
+
+// DescribeDomainsTag is a repeated param struct in DescribeDomainsRequest
+type DescribeDomainsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeDomainsResponse is the response struct for api DescribeDomains

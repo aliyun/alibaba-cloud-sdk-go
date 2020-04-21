@@ -35,4 +35,5 @@ type Domain struct {
 	CreateTime      string                      `json:"CreateTime" xml:"CreateTime"`
 	CreateTimestamp int64                       `json:"CreateTimestamp" xml:"CreateTimestamp"`
 	DnsServers      DnsServersInDescribeDomains `json:"DnsServers" xml:"DnsServers"`
+	Tags            TagsInDescribeDomains       `json:"Tags" xml:"Tags"`
 }

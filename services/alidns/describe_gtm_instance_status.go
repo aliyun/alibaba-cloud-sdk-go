@@ -89,6 +89,8 @@ type DescribeGtmInstanceStatusResponse struct {
 	AddrPoolNotAvailableNum     int    `json:"AddrPoolNotAvailableNum" xml:"AddrPoolNotAvailableNum"`
 	SwitchToFailoverStrategyNum int    `json:"SwitchToFailoverStrategyNum" xml:"SwitchToFailoverStrategyNum"`
 	StrategyNotAvailableNum     int    `json:"StrategyNotAvailableNum" xml:"StrategyNotAvailableNum"`
+	Status                      string `json:"Status" xml:"Status"`
+	StatusReason                string `json:"StatusReason" xml:"StatusReason"`
 }
 
 // CreateDescribeGtmInstanceStatusRequest creates a request to invoke DescribeGtmInstanceStatus API

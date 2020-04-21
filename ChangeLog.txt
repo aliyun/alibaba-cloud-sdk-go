@@ -1,3 +1,10 @@
+2020-04-21 Version: v1.61.130
+- Generated 2015-01-09 for `Alidns`.
+- Supported API for DescribeTags.
+- Supported API for ListTagResources.
+- Supported API for TagResources.
+- Supported API for UntagResources.
+
 2020-04-21 Version: v1.61.129
 - Generated 2019-06-25 for `ivpd`.
 - Supported PackageDesign Apis.
