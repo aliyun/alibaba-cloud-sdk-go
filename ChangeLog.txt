@@ -1,3 +1,7 @@
+2020-04-22 Version: v1.61.132
+- Generated 2019-01-01 for `Cassandra`.
+
+
 2020-04-21 Version: v1.61.131
 - Generated 2020-02-25 for `videosearch`.
 - VideoSearch deploy SDK.
