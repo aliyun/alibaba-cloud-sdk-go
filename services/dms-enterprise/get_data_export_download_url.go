@@ -96,7 +96,7 @@ func CreateGetDataExportDownloadURLRequest() (request *GetDataExportDownloadURLR
 	request = &GetDataExportDownloadURLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataExportDownloadURL", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataExportDownloadURL", "dmsenterprise", "openAPI")
 	return
 }
 

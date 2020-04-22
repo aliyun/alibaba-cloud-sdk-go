@@ -113,7 +113,7 @@ func CreateRegisterInstanceRequest() (request *RegisterInstanceRequest) {
 	request = &RegisterInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "RegisterInstance", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "RegisterInstance", "dmsenterprise", "openAPI")
 	return
 }
 

@@ -96,7 +96,7 @@ func CreateSetOwnersRequest() (request *SetOwnersRequest) {
 	request = &SetOwnersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SetOwners", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SetOwners", "dmsenterprise", "openAPI")
 	return
 }
 

@@ -95,7 +95,7 @@ func CreateGetDataCorrectOrderDetailRequest() (request *GetDataCorrectOrderDetai
 	request = &GetDataCorrectOrderDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataCorrectOrderDetail", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataCorrectOrderDetail", "dmsenterprise", "openAPI")
 	return
 }
 

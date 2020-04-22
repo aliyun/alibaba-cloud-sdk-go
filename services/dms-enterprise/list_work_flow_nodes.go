@@ -95,7 +95,7 @@ func CreateListWorkFlowNodesRequest() (request *ListWorkFlowNodesRequest) {
 	request = &ListWorkFlowNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListWorkFlowNodes", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListWorkFlowNodes", "dmsenterprise", "openAPI")
 	return
 }
 

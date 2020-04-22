@@ -97,7 +97,7 @@ func CreateGetInstanceRequest() (request *GetInstanceRequest) {
 	request = &GetInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetInstance", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetInstance", "dmsenterprise", "openAPI")
 	return
 }
 

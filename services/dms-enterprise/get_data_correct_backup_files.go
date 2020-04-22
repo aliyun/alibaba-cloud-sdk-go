@@ -97,7 +97,7 @@ func CreateGetDataCorrectBackupFilesRequest() (request *GetDataCorrectBackupFile
 	request = &GetDataCorrectBackupFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataCorrectBackupFiles", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataCorrectBackupFiles", "dmsenterprise", "openAPI")
 	return
 }
 

@@ -96,7 +96,7 @@ func CreateListIndexesRequest() (request *ListIndexesRequest) {
 	request = &ListIndexesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListIndexes", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListIndexes", "dmsenterprise", "openAPI")
 	return
 }
 

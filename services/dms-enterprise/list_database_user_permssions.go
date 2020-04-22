@@ -101,7 +101,7 @@ func CreateListDatabaseUserPermssionsRequest() (request *ListDatabaseUserPermssi
 	request = &ListDatabaseUserPermssionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListDatabaseUserPermssions", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListDatabaseUserPermssions", "dmsenterprise", "openAPI")
 	return
 }
 

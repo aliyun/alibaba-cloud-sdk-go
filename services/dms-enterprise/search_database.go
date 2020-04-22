@@ -102,7 +102,7 @@ func CreateSearchDatabaseRequest() (request *SearchDatabaseRequest) {
 	request = &SearchDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SearchDatabase", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SearchDatabase", "dmsenterprise", "openAPI")
 	return
 }
 

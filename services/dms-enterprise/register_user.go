@@ -97,7 +97,7 @@ func CreateRegisterUserRequest() (request *RegisterUserRequest) {
 	request = &RegisterUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "RegisterUser", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "RegisterUser", "dmsenterprise", "openAPI")
 	return
 }
 

@@ -101,7 +101,7 @@ func CreateGrantUserPermissionRequest() (request *GrantUserPermissionRequest) {
 	request = &GrantUserPermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GrantUserPermission", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GrantUserPermission", "dmsenterprise", "openAPI")
 	return
 }
 

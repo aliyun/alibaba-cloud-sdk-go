@@ -95,7 +95,7 @@ func CreateGetOrderBaseInfoRequest() (request *GetOrderBaseInfoRequest) {
 	request = &GetOrderBaseInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetOrderBaseInfo", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetOrderBaseInfo", "dmsenterprise", "openAPI")
 	return
 }
 

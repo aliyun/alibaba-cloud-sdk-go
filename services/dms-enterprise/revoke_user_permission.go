@@ -101,7 +101,7 @@ func CreateRevokeUserPermissionRequest() (request *RevokeUserPermissionRequest) 
 	request = &RevokeUserPermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "RevokeUserPermission", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "RevokeUserPermission", "dmsenterprise", "openAPI")
 	return
 }
 

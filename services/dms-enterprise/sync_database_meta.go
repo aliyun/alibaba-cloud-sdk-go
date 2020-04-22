@@ -95,7 +95,7 @@ func CreateSyncDatabaseMetaRequest() (request *SyncDatabaseMetaRequest) {
 	request = &SyncDatabaseMetaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SyncDatabaseMeta", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SyncDatabaseMeta", "dmsenterprise", "openAPI")
 	return
 }
 

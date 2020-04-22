@@ -96,7 +96,7 @@ func CreateExecuteDataExportRequest() (request *ExecuteDataExportRequest) {
 	request = &ExecuteDataExportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ExecuteDataExport", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ExecuteDataExport", "dmsenterprise", "openAPI")
 	return
 }
 

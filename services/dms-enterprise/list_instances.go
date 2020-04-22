@@ -103,7 +103,7 @@ func CreateListInstancesRequest() (request *ListInstancesRequest) {
 	request = &ListInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListInstances", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListInstances", "dmsenterprise", "openAPI")
 	return
 }
 

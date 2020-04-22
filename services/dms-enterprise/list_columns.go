@@ -96,7 +96,7 @@ func CreateListColumnsRequest() (request *ListColumnsRequest) {
 	request = &ListColumnsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListColumns", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListColumns", "dmsenterprise", "openAPI")
 	return
 }
 

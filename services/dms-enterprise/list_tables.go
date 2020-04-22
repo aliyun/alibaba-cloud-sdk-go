@@ -99,7 +99,7 @@ func CreateListTablesRequest() (request *ListTablesRequest) {
 	request = &ListTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListTables", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListTables", "dmsenterprise", "openAPI")
 	return
 }
 

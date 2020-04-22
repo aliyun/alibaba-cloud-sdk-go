@@ -100,7 +100,7 @@ func CreateGetOpLogRequest() (request *GetOpLogRequest) {
 	request = &GetOpLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetOpLog", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetOpLog", "dmsenterprise", "openAPI")
 	return
 }
 

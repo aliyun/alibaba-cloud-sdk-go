@@ -76,11 +76,13 @@ func (client *Client) UpdateUserWithCallback(request *UpdateUserRequest, callbac
 // UpdateUserRequest is the request struct for api UpdateUser
 type UpdateUserRequest struct {
 	*requests.RpcRequest
-	RoleNames string           `position:"Query" name:"RoleNames"`
-	Uid       requests.Integer `position:"Query" name:"Uid"`
-	UserNick  string           `position:"Query" name:"UserNick"`
-	Mobile    string           `position:"Query" name:"Mobile"`
-	Tid       requests.Integer `position:"Query" name:"Tid"`
+	RoleNames       string           `position:"Query" name:"RoleNames"`
+	Uid             requests.Integer `position:"Query" name:"Uid"`
+	MaxResultCount  requests.Integer `position:"Query" name:"MaxResultCount"`
+	MaxExecuteCount requests.Integer `position:"Query" name:"MaxExecuteCount"`
+	UserNick        string           `position:"Query" name:"UserNick"`
+	Mobile          string           `position:"Query" name:"Mobile"`
+	Tid             requests.Integer `position:"Query" name:"Tid"`
 }
 
 // UpdateUserResponse is the response struct for api UpdateUser
@@ -97,7 +99,7 @@ func CreateUpdateUserRequest() (request *UpdateUserRequest) {
 	request = &UpdateUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "UpdateUser", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "UpdateUser", "dmsenterprise", "openAPI")
 	return
 }
 

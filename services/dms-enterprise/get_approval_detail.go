@@ -95,7 +95,7 @@ func CreateGetApprovalDetailRequest() (request *GetApprovalDetailRequest) {
 	request = &GetApprovalDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetApprovalDetail", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetApprovalDetail", "dmsenterprise", "openAPI")
 	return
 }
 

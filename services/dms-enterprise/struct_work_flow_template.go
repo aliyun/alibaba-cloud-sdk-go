@@ -22,5 +22,6 @@ type WorkFlowTemplate struct {
 	TemplateId    int64                                `json:"TemplateId" xml:"TemplateId"`
 	IsSystem      int                                  `json:"IsSystem" xml:"IsSystem"`
 	Enabled       string                               `json:"Enabled" xml:"Enabled"`
+	CreateUserId  int64                                `json:"CreateUserId" xml:"CreateUserId"`
 	WorkflowNodes WorkflowNodesInListWorkFlowTemplates `json:"WorkflowNodes" xml:"WorkflowNodes"`
 }

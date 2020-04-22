@@ -101,7 +101,7 @@ func CreateSearchTableRequest() (request *SearchTableRequest) {
 	request = &SearchTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SearchTable", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SearchTable", "dmsenterprise", "openAPI")
 	return
 }
 

@@ -95,7 +95,7 @@ func CreateCloseOrderRequest() (request *CloseOrderRequest) {
 	request = &CloseOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "CloseOrder", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "CloseOrder", "dmsenterprise", "openAPI")
 	return
 }
 

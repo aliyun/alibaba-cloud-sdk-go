@@ -98,7 +98,7 @@ func CreateGetDatabaseRequest() (request *GetDatabaseRequest) {
 	request = &GetDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDatabase", "", "")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDatabase", "dmsenterprise", "openAPI")
 	return
 }
 
