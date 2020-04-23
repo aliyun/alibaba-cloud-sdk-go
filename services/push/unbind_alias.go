@@ -93,7 +93,7 @@ func CreateUnbindAliasRequest() (request *UnbindAliasRequest) {
 	request = &UnbindAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "UnbindAlias", "cps", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "UnbindAlias", "", "")
 	return
 }
 

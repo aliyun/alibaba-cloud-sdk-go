@@ -76,7 +76,7 @@ func (client *Client) MassPushWithCallback(request *MassPushRequest, callback fu
 // MassPushRequest is the request struct for api MassPush
 type MassPushRequest struct {
 	*requests.RpcRequest
-	PushTask *[]MassPushPushTask `position:"Query" name:"PushTask"  type:"Repeated"`
+	PushTask *[]MassPushPushTask `position:"Body" name:"PushTask"  type:"Repeated"`
 	AppKey   requests.Integer    `position:"Query" name:"AppKey"`
 }
 
@@ -134,7 +134,7 @@ func CreateMassPushRequest() (request *MassPushRequest) {
 	request = &MassPushRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "MassPush", "cps", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "MassPush", "", "")
 	return
 }
 

@@ -134,7 +134,7 @@ func CreatePushRequest() (request *PushRequest) {
 	request = &PushRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "Push", "cps", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "Push", "", "")
 	return
 }
 

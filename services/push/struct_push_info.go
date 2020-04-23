@@ -18,7 +18,7 @@ package push
 // PushInfo is a nested struct in push response
 type PushInfo struct {
 	AppKey     int64  `json:"AppKey" xml:"AppKey"`
-	MessageId  int64  `json:"MessageId" xml:"MessageId"`
+	MessageId  string `json:"MessageId" xml:"MessageId"`
 	PushType   string `json:"PushType" xml:"PushType"`
 	DeviceType string `json:"DeviceType" xml:"DeviceType"`
 	Target     string `json:"Target" xml:"Target"`

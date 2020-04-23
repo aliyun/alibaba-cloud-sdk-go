@@ -91,7 +91,7 @@ func CreateListTagsRequest() (request *ListTagsRequest) {
 	request = &ListTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "ListTags", "cps", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "ListTags", "", "")
 	return
 }
 
