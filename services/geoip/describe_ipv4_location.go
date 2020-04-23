@@ -84,13 +84,19 @@ type DescribeIpv4LocationRequest struct {
 // DescribeIpv4LocationResponse is the response struct for api DescribeIpv4Location
 type DescribeIpv4LocationResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Ip        string `json:"Ip" xml:"Ip"`
-	Country   string `json:"Country" xml:"Country"`
-	Province  string `json:"Province" xml:"Province"`
-	City      string `json:"City" xml:"City"`
-	County    string `json:"County" xml:"County"`
-	Isp       string `json:"Isp" xml:"Isp"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	Ip          string `json:"Ip" xml:"Ip"`
+	Country     string `json:"Country" xml:"Country"`
+	Province    string `json:"Province" xml:"Province"`
+	City        string `json:"City" xml:"City"`
+	County      string `json:"County" xml:"County"`
+	Isp         string `json:"Isp" xml:"Isp"`
+	CountryCode string `json:"CountryCode" xml:"CountryCode"`
+	CountryEn   string `json:"CountryEn" xml:"CountryEn"`
+	ProvinceEn  string `json:"ProvinceEn" xml:"ProvinceEn"`
+	CityEn      string `json:"CityEn" xml:"CityEn"`
+	Longitude   string `json:"Longitude" xml:"Longitude"`
+	Latitude    string `json:"Latitude" xml:"Latitude"`
 }
 
 // CreateDescribeIpv4LocationRequest creates a request to invoke DescribeIpv4Location API
