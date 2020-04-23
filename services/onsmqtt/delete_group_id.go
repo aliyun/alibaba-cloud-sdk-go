@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// RevokeToken invokes the onsmqtt.RevokeToken API synchronously
-// api document: https://help.aliyun.com/api/onsmqtt/revoketoken.html
-func (client *Client) RevokeToken(request *RevokeTokenRequest) (response *RevokeTokenResponse, err error) {
-	response = CreateRevokeTokenResponse()
+// DeleteGroupId invokes the onsmqtt.DeleteGroupId API synchronously
+// api document: https://help.aliyun.com/api/onsmqtt/deletegroupid.html
+func (client *Client) DeleteGroupId(request *DeleteGroupIdRequest) (response *DeleteGroupIdResponse, err error) {
+	response = CreateDeleteGroupIdResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// RevokeTokenWithChan invokes the onsmqtt.RevokeToken API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/revoketoken.html
+// DeleteGroupIdWithChan invokes the onsmqtt.DeleteGroupId API asynchronously
+// api document: https://help.aliyun.com/api/onsmqtt/deletegroupid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) RevokeTokenWithChan(request *RevokeTokenRequest) (<-chan *RevokeTokenResponse, <-chan error) {
-	responseChan := make(chan *RevokeTokenResponse, 1)
+func (client *Client) DeleteGroupIdWithChan(request *DeleteGroupIdRequest) (<-chan *DeleteGroupIdResponse, <-chan error) {
+	responseChan := make(chan *DeleteGroupIdResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.RevokeToken(request)
+		response, err := client.DeleteGroupId(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) RevokeTokenWithChan(request *RevokeTokenRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// RevokeTokenWithCallback invokes the onsmqtt.RevokeToken API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/revoketoken.html
+// DeleteGroupIdWithCallback invokes the onsmqtt.DeleteGroupId API asynchronously
+// api document: https://help.aliyun.com/api/onsmqtt/deletegroupid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) RevokeTokenWithCallback(request *RevokeTokenRequest, callback func(response *RevokeTokenResponse, err error)) <-chan int {
+func (client *Client) DeleteGroupIdWithCallback(request *DeleteGroupIdRequest, callback func(response *DeleteGroupIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *RevokeTokenResponse
+		var response *DeleteGroupIdResponse
 		var err error
 		defer close(result)
-		response, err = client.RevokeToken(request)
+		response, err = client.DeleteGroupId(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,31 +73,32 @@ func (client *Client) RevokeTokenWithCallback(request *RevokeTokenRequest, callb
 	return result
 }
 
-// RevokeTokenRequest is the request struct for api RevokeToken
-type RevokeTokenRequest struct {
+// DeleteGroupIdRequest is the request struct for api DeleteGroupId
+type DeleteGroupIdRequest struct {
 	*requests.RpcRequest
-	Token      string `position:"Query" name:"Token"`
+	GroupId    string `position:"Query" name:"GroupId"`
 	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
-// RevokeTokenResponse is the response struct for api RevokeToken
-type RevokeTokenResponse struct {
+// DeleteGroupIdResponse is the response struct for api DeleteGroupId
+type DeleteGroupIdResponse struct {
 	*responses.BaseResponse
+	HelpUrl   string `json:"HelpUrl" xml:"HelpUrl"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateRevokeTokenRequest creates a request to invoke RevokeToken API
-func CreateRevokeTokenRequest() (request *RevokeTokenRequest) {
-	request = &RevokeTokenRequest{
+// CreateDeleteGroupIdRequest creates a request to invoke DeleteGroupId API
+func CreateDeleteGroupIdRequest() (request *DeleteGroupIdRequest) {
+	request = &DeleteGroupIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OnsMqtt", "2020-04-20", "RevokeToken", "", "")
+	request.InitWithApiInfo("OnsMqtt", "2020-04-20", "DeleteGroupId", "", "")
 	return
 }
 
-// CreateRevokeTokenResponse creates a response to parse from RevokeToken response
-func CreateRevokeTokenResponse() (response *RevokeTokenResponse) {
-	response = &RevokeTokenResponse{
+// CreateDeleteGroupIdResponse creates a response to parse from DeleteGroupId response
+func CreateDeleteGroupIdResponse() (response *DeleteGroupIdResponse) {
+	response = &DeleteGroupIdResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -85,8 +85,8 @@ type ApplyTokenRequest struct {
 // ApplyTokenResponse is the response struct for api ApplyToken
 type ApplyTokenResponse struct {
 	*responses.BaseResponse
-	Token     string `json:"Token" xml:"Token"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Token     string `json:"Token" xml:"Token"`
 }
 
 // CreateApplyTokenRequest creates a request to invoke ApplyToken API
@@ -94,7 +94,7 @@ func CreateApplyTokenRequest() (request *ApplyTokenRequest) {
 	request = &ApplyTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OnsMqtt", "2019-12-11", "ApplyToken", "onsmqtt", "openAPI")
+	request.InitWithApiInfo("OnsMqtt", "2020-04-20", "ApplyToken", "", "")
 	return
 }
 

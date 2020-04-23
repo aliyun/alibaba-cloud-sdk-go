@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QueryToken invokes the onsmqtt.QueryToken API synchronously
-// api document: https://help.aliyun.com/api/onsmqtt/querytoken.html
-func (client *Client) QueryToken(request *QueryTokenRequest) (response *QueryTokenResponse, err error) {
-	response = CreateQueryTokenResponse()
+// ListGroupId invokes the onsmqtt.ListGroupId API synchronously
+// api document: https://help.aliyun.com/api/onsmqtt/listgroupid.html
+func (client *Client) ListGroupId(request *ListGroupIdRequest) (response *ListGroupIdResponse, err error) {
+	response = CreateListGroupIdResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QueryTokenWithChan invokes the onsmqtt.QueryToken API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/querytoken.html
+// ListGroupIdWithChan invokes the onsmqtt.ListGroupId API asynchronously
+// api document: https://help.aliyun.com/api/onsmqtt/listgroupid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryTokenWithChan(request *QueryTokenRequest) (<-chan *QueryTokenResponse, <-chan error) {
-	responseChan := make(chan *QueryTokenResponse, 1)
+func (client *Client) ListGroupIdWithChan(request *ListGroupIdRequest) (<-chan *ListGroupIdResponse, <-chan error) {
+	responseChan := make(chan *ListGroupIdResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryToken(request)
+		response, err := client.ListGroupId(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) QueryTokenWithChan(request *QueryTokenRequest) (<-chan *Qu
 	return responseChan, errChan
 }
 
-// QueryTokenWithCallback invokes the onsmqtt.QueryToken API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/querytoken.html
+// ListGroupIdWithCallback invokes the onsmqtt.ListGroupId API asynchronously
+// api document: https://help.aliyun.com/api/onsmqtt/listgroupid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryTokenWithCallback(request *QueryTokenRequest, callback func(response *QueryTokenResponse, err error)) <-chan int {
+func (client *Client) ListGroupIdWithCallback(request *ListGroupIdRequest, callback func(response *ListGroupIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryTokenResponse
+		var response *ListGroupIdResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryToken(request)
+		response, err = client.ListGroupId(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,32 +73,31 @@ func (client *Client) QueryTokenWithCallback(request *QueryTokenRequest, callbac
 	return result
 }
 
-// QueryTokenRequest is the request struct for api QueryToken
-type QueryTokenRequest struct {
+// ListGroupIdRequest is the request struct for api ListGroupId
+type ListGroupIdRequest struct {
 	*requests.RpcRequest
-	Token      string `position:"Query" name:"Token"`
 	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
-// QueryTokenResponse is the response struct for api QueryToken
-type QueryTokenResponse struct {
+// ListGroupIdResponse is the response struct for api ListGroupId
+type ListGroupIdResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	TokenStatus bool   `json:"TokenStatus" xml:"TokenStatus"`
+	RequestId string          `json:"RequestId" xml:"RequestId"`
+	Data      []MqttGroupIdDo `json:"Data" xml:"Data"`
 }
 
-// CreateQueryTokenRequest creates a request to invoke QueryToken API
-func CreateQueryTokenRequest() (request *QueryTokenRequest) {
-	request = &QueryTokenRequest{
+// CreateListGroupIdRequest creates a request to invoke ListGroupId API
+func CreateListGroupIdRequest() (request *ListGroupIdRequest) {
+	request = &ListGroupIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OnsMqtt", "2020-04-20", "QueryToken", "", "")
+	request.InitWithApiInfo("OnsMqtt", "2020-04-20", "ListGroupId", "", "")
 	return
 }
 
-// CreateQueryTokenResponse creates a response to parse from QueryToken response
-func CreateQueryTokenResponse() (response *QueryTokenResponse) {
-	response = &QueryTokenResponse{
+// CreateListGroupIdResponse creates a response to parse from ListGroupId response
+func CreateListGroupIdResponse() (response *ListGroupIdResponse) {
+	response = &ListGroupIdResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
