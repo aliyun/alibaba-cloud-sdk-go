@@ -1,3 +1,7 @@
+2020-04-24 Version: v1.61.141
+- Generated 2019-08-10 for `multimediaai`.
+- Template update.
+
 2020-04-24 Version: v1.61.140
 - Generated 2019-11-22 for `ledgerdb`.
 - Publish apis for ledger instances.
