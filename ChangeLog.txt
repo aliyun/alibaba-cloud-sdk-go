@@ -1,3 +1,10 @@
+2020-04-24 Version: v1.61.139
+- Generated 2019-11-22 for `ledgerdb`.
+- Publish apis for ledger instances.
+- Publish apis for members.
+- Publish apis for time anchors.
+- Publish apis for endpoints.
+
 2020-04-23 Version: v1.61.138
 - Generated 2018-11-01 for `dms-enterprise`.
 - GetUser API return user execute query count information.
