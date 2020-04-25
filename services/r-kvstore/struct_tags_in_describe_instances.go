@@ -17,5 +17,5 @@ package r_kvstore
 
 // TagsInDescribeInstances is a nested struct in r_kvstore response
 type TagsInDescribeInstances struct {
-	Tag []TagInDescribeInstances `json:"Tag" xml:"Tag"`
+	Tag []Tag `json:"Tag" xml:"Tag"`
 }

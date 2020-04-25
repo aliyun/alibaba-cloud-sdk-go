@@ -17,5 +17,5 @@ package r_kvstore
 
 // RedisShardList is a nested struct in r_kvstore response
 type RedisShardList struct {
-	NodeInfo []NodeInfoInDescribeLogicInstanceTopology `json:"NodeInfo" xml:"NodeInfo"`
+	NodeInfo []NodeInfo `json:"NodeInfo" xml:"NodeInfo"`
 }

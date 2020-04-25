@@ -77,6 +77,7 @@ func (client *Client) RestartInstanceWithCallback(request *RestartInstanceReques
 type RestartInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	UpgradeMinorVersion  requests.Boolean `position:"Query" name:"UpgradeMinorVersion"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

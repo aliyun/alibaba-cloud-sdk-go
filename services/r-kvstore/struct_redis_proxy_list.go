@@ -17,5 +17,5 @@ package r_kvstore
 
 // RedisProxyList is a nested struct in r_kvstore response
 type RedisProxyList struct {
-	NodeInfo []NodeInfoInDescribeLogicInstanceTopology `json:"NodeInfo" xml:"NodeInfo"`
+	NodeInfo []NodeInfo `json:"NodeInfo" xml:"NodeInfo"`
 }

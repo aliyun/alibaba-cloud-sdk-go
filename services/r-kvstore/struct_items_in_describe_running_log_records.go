@@ -17,5 +17,5 @@ package r_kvstore
 
 // ItemsInDescribeRunningLogRecords is a nested struct in r_kvstore response
 type ItemsInDescribeRunningLogRecords struct {
-	LogRecords []LogRecordsInDescribeRunningLogRecords `json:"LogRecords" xml:"LogRecords"`
+	LogRecords []LogRecords `json:"LogRecords" xml:"LogRecords"`
 }
