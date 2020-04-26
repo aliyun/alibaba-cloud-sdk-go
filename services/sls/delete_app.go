@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// OpenAccount invokes the sls.OpenAccount API synchronously
-// api document: https://help.aliyun.com/api/sls/openaccount.html
-func (client *Client) OpenAccount(request *OpenAccountRequest) (response *OpenAccountResponse, err error) {
-	response = CreateOpenAccountResponse()
+// DeleteApp invokes the sls.DeleteApp API synchronously
+// api document: https://help.aliyun.com/api/sls/deleteapp.html
+func (client *Client) DeleteApp(request *DeleteAppRequest) (response *DeleteAppResponse, err error) {
+	response = CreateDeleteAppResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// OpenAccountWithChan invokes the sls.OpenAccount API asynchronously
-// api document: https://help.aliyun.com/api/sls/openaccount.html
+// DeleteAppWithChan invokes the sls.DeleteApp API asynchronously
+// api document: https://help.aliyun.com/api/sls/deleteapp.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) OpenAccountWithChan(request *OpenAccountRequest) (<-chan *OpenAccountResponse, <-chan error) {
-	responseChan := make(chan *OpenAccountResponse, 1)
+func (client *Client) DeleteAppWithChan(request *DeleteAppRequest) (<-chan *DeleteAppResponse, <-chan error) {
+	responseChan := make(chan *DeleteAppResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.OpenAccount(request)
+		response, err := client.DeleteApp(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) OpenAccountWithChan(request *OpenAccountRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// OpenAccountWithCallback invokes the sls.OpenAccount API asynchronously
-// api document: https://help.aliyun.com/api/sls/openaccount.html
+// DeleteAppWithCallback invokes the sls.DeleteApp API asynchronously
+// api document: https://help.aliyun.com/api/sls/deleteapp.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) OpenAccountWithCallback(request *OpenAccountRequest, callback func(response *OpenAccountResponse, err error)) <-chan int {
+func (client *Client) DeleteAppWithCallback(request *DeleteAppRequest, callback func(response *DeleteAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *OpenAccountResponse
+		var response *DeleteAppResponse
 		var err error
 		defer close(result)
-		response, err = client.OpenAccount(request)
+		response, err = client.DeleteApp(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,31 +73,33 @@ func (client *Client) OpenAccountWithCallback(request *OpenAccountRequest, callb
 	return result
 }
 
-// OpenAccountRequest is the request struct for api OpenAccount
-type OpenAccountRequest struct {
+// DeleteAppRequest is the request struct for api DeleteApp
+type DeleteAppRequest struct {
 	*requests.RpcRequest
-	Bid    string           `position:"Query" name:"Bid"`
-	AliUid requests.Integer `position:"Query" name:"AliUid"`
+	AppName string `position:"Query" name:"AppName"`
 }
 
-// OpenAccountResponse is the response struct for api OpenAccount
-type OpenAccountResponse struct {
+// DeleteAppResponse is the response struct for api DeleteApp
+type DeleteAppResponse struct {
 	*responses.BaseResponse
+	Code      string `json:"Code" xml:"Code"`
+	Success   string `json:"Success" xml:"Success"`
+	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateOpenAccountRequest creates a request to invoke OpenAccount API
-func CreateOpenAccountRequest() (request *OpenAccountRequest) {
-	request = &OpenAccountRequest{
+// CreateDeleteAppRequest creates a request to invoke DeleteApp API
+func CreateDeleteAppRequest() (request *DeleteAppRequest) {
+	request = &DeleteAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2016-08-01", "OpenAccount", "", "")
+	request.InitWithApiInfo("Sls", "2019-10-23", "DeleteApp", "sls", "openAPI")
 	return
 }
 
-// CreateOpenAccountResponse creates a response to parse from OpenAccount response
-func CreateOpenAccountResponse() (response *OpenAccountResponse) {
-	response = &OpenAccountResponse{
+// CreateDeleteAppResponse creates a response to parse from DeleteApp response
+func CreateDeleteAppResponse() (response *DeleteAppResponse) {
+	response = &DeleteAppResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
