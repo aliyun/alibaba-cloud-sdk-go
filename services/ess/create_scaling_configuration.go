@@ -88,6 +88,7 @@ type CreateScalingConfigurationRequest struct {
 	SystemDiskCategory          string                                      `position:"Query" name:"SystemDisk.Category"`
 	UserData                    string                                      `position:"Query" name:"UserData"`
 	HostName                    string                                      `position:"Query" name:"HostName"`
+	Password                    string                                      `position:"Query" name:"Password"`
 	PasswordInherit             requests.Boolean                            `position:"Query" name:"PasswordInherit"`
 	ImageName                   string                                      `position:"Query" name:"ImageName"`
 	InstanceType                string                                      `position:"Query" name:"InstanceType"`
