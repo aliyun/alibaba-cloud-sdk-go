@@ -76,12 +76,13 @@ func (client *Client) DetachInstancesWithCallback(request *DetachInstancesReques
 // DetachInstancesRequest is the request struct for api DetachInstances
 type DetachInstancesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceId              *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	ScalingGroupId          string           `position:"Query" name:"ScalingGroupId"`
+	DecreaseDesiredCapacity requests.Boolean `position:"Query" name:"DecreaseDesiredCapacity"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DetachInstancesResponse is the response struct for api DetachInstances

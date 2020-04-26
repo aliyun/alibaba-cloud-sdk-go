@@ -79,6 +79,7 @@ type CreateScalingGroupRequest struct {
 	MultiAZPolicy         string                             `position:"Query" name:"MultiAZPolicy"`
 	DBInstanceIds         string                             `position:"Query" name:"DBInstanceIds"`
 	LaunchTemplateId      string                             `position:"Query" name:"LaunchTemplateId"`
+	DesiredCapacity       requests.Integer                   `position:"Query" name:"DesiredCapacity"`
 	LoadBalancerIds       string                             `position:"Query" name:"LoadBalancerIds"`
 	HealthCheckType       string                             `position:"Query" name:"HealthCheckType"`
 	ResourceOwnerAccount  string                             `position:"Query" name:"ResourceOwnerAccount"`
