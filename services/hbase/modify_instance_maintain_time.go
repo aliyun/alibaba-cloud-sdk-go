@@ -92,7 +92,7 @@ func CreateModifyInstanceMaintainTimeRequest() (request *ModifyInstanceMaintainT
 	request = &ModifyInstanceMaintainTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("HBase", "2019-01-01", "ModifyInstanceMaintainTime", "", "")
+	request.InitWithApiInfo("HBase", "2019-01-01", "ModifyInstanceMaintainTime", "hbase", "openAPI")
 	return
 }
 

@@ -91,7 +91,7 @@ func CreateDescribeSecurityGroupsRequest() (request *DescribeSecurityGroupsReque
 	request = &DescribeSecurityGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("HBase", "2019-01-01", "DescribeSecurityGroups", "", "")
+	request.InitWithApiInfo("HBase", "2019-01-01", "DescribeSecurityGroups", "hbase", "openAPI")
 	return
 }
 

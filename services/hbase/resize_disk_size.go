@@ -92,7 +92,7 @@ func CreateResizeDiskSizeRequest() (request *ResizeDiskSizeRequest) {
 	request = &ResizeDiskSizeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("HBase", "2019-01-01", "ResizeDiskSize", "", "")
+	request.InitWithApiInfo("HBase", "2019-01-01", "ResizeDiskSize", "hbase", "openAPI")
 	return
 }
 

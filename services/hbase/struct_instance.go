@@ -47,5 +47,8 @@ type Instance struct {
 	ClusterId            string                  `json:"ClusterId" xml:"ClusterId"`
 	ClusterName          string                  `json:"ClusterName" xml:"ClusterName"`
 	IsDeletionProtection bool                    `json:"IsDeletionProtection" xml:"IsDeletionProtection"`
+	ParentId             string                  `json:"ParentId" xml:"ParentId"`
+	ModuleId             int                     `json:"ModuleId" xml:"ModuleId"`
+	ModuleStackVersion   string                  `json:"ModuleStackVersion" xml:"ModuleStackVersion"`
 	Tags                 TagsInDescribeInstances `json:"Tags" xml:"Tags"`
 }

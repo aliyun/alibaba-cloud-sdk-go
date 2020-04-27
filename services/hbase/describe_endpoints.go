@@ -95,7 +95,7 @@ func CreateDescribeEndpointsRequest() (request *DescribeEndpointsRequest) {
 	request = &DescribeEndpointsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("HBase", "2019-01-01", "DescribeEndpoints", "", "")
+	request.InitWithApiInfo("HBase", "2019-01-01", "DescribeEndpoints", "hbase", "openAPI")
 	return
 }
 

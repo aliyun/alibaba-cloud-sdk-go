@@ -1,3 +1,7 @@
+2020-04-27 Version: v1.61.151
+- Generated 2019-01-01 for `HBase`.
+- Describe describeAvailableResource.
+
 2020-04-27 Version: v1.61.150
 - Generated 2019-03-07 for `Cloudauth`.
 - ContrastFaceVerify Return SubCode.
