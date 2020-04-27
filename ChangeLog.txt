@@ -1,3 +1,7 @@
+2020-04-27 Version: v1.61.149
+- Generated 2019-10-10 for `LRG`.
+- New api.
+
 2020-04-27 Version: v1.61.148
 - Generated 2019-08-08 for `ARMS`.
 - Build 20190808 release sdk.
