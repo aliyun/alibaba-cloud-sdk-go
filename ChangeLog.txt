@@ -1,3 +1,7 @@
+2020-04-27 Version: v1.61.152
+- Generated 2017-09-06 for `imm`.
+- Support watermark.
+
 2020-04-27 Version: v1.61.151
 - Generated 2019-01-01 for `HBase`.
 - Describe describeAvailableResource.

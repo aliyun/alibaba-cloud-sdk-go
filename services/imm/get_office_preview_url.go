@@ -76,10 +76,16 @@ func (client *Client) GetOfficePreviewURLWithCallback(request *GetOfficePreviewU
 // GetOfficePreviewURLRequest is the request struct for api GetOfficePreviewURL
 type GetOfficePreviewURLRequest struct {
 	*requests.RpcRequest
-	SrcType   string           `position:"Query" name:"SrcType"`
-	Project   string           `position:"Query" name:"Project"`
-	UseOldURL requests.Boolean `position:"Query" name:"UseOldURL"`
-	SrcUri    string           `position:"Query" name:"SrcUri"`
+	SrcType             string           `position:"Query" name:"SrcType"`
+	Project             string           `position:"Query" name:"Project"`
+	WatermarkVertical   requests.Integer `position:"Query" name:"WatermarkVertical"`
+	WatermarkType       requests.Integer `position:"Query" name:"WatermarkType"`
+	WatermarkRotate     requests.Float   `position:"Query" name:"WatermarkRotate"`
+	WatermarkValue      string           `position:"Query" name:"WatermarkValue"`
+	WatermarkFont       string           `position:"Query" name:"WatermarkFont"`
+	WatermarkHorizontal requests.Integer `position:"Query" name:"WatermarkHorizontal"`
+	SrcUri              string           `position:"Query" name:"SrcUri"`
+	WatermarkFillStyle  string           `position:"Query" name:"WatermarkFillStyle"`
 }
 
 // GetOfficePreviewURLResponse is the response struct for api GetOfficePreviewURL
