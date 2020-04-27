@@ -1,3 +1,7 @@
+2020-04-27 Version: v1.61.146
+- Generated 2019-01-01 for `Cassandra`.
+
+
 2020-04-27 Version: v1.61.145
 - Generated 2020-03-31 for `ResourceManager`.
 - The first open version.
