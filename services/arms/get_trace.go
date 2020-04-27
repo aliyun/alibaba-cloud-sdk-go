@@ -91,7 +91,7 @@ func CreateGetTraceRequest() (request *GetTraceRequest) {
 	request = &GetTraceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "GetTrace", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "GetTrace", "arms", "openAPI")
 	return
 }
 

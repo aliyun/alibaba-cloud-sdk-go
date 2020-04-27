@@ -92,7 +92,7 @@ func CreateDeleteAlertContactGroupRequest() (request *DeleteAlertContactGroupReq
 	request = &DeleteAlertContactGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteAlertContactGroup", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteAlertContactGroup", "arms", "openAPI")
 	return
 }
 

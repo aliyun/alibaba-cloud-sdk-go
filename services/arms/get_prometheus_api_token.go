@@ -90,7 +90,7 @@ func CreateGetPrometheusApiTokenRequest() (request *GetPrometheusApiTokenRequest
 	request = &GetPrometheusApiTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "GetPrometheusApiToken", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "GetPrometheusApiToken", "arms", "openAPI")
 	return
 }
 

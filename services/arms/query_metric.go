@@ -76,17 +76,19 @@ func (client *Client) QueryMetricWithCallback(request *QueryMetricRequest, callb
 // QueryMetricRequest is the request struct for api QueryMetric
 type QueryMetricRequest struct {
 	*requests.RpcRequest
-	EndTime       requests.Integer      `position:"Query" name:"EndTime"`
-	OrderBy       string                `position:"Query" name:"OrderBy"`
-	StartTime     requests.Integer      `position:"Query" name:"StartTime"`
-	Filters       *[]QueryMetricFilters `position:"Query" name:"Filters"  type:"Repeated"`
-	ProxyUserId   string                `position:"Query" name:"ProxyUserId"`
-	Measures      *[]string             `position:"Query" name:"Measures"  type:"Repeated"`
-	IntervalInSec requests.Integer      `position:"Query" name:"IntervalInSec"`
-	Metric        string                `position:"Query" name:"Metric"`
-	Limit         requests.Integer      `position:"Query" name:"Limit"`
-	Dimensions    *[]string             `position:"Query" name:"Dimensions"  type:"Repeated"`
-	Order         string                `position:"Query" name:"Order"`
+	ConsistencyQueryStrategy string                `position:"Query" name:"ConsistencyQueryStrategy"`
+	EndTime                  requests.Integer      `position:"Query" name:"EndTime"`
+	OrderBy                  string                `position:"Query" name:"OrderBy"`
+	StartTime                requests.Integer      `position:"Query" name:"StartTime"`
+	Filters                  *[]QueryMetricFilters `position:"Query" name:"Filters"  type:"Repeated"`
+	ConsistencyDataKey       string                `position:"Query" name:"ConsistencyDataKey"`
+	ProxyUserId              string                `position:"Query" name:"ProxyUserId"`
+	Measures                 *[]string             `position:"Query" name:"Measures"  type:"Repeated"`
+	IntervalInSec            requests.Integer      `position:"Query" name:"IntervalInSec"`
+	Metric                   string                `position:"Query" name:"Metric"`
+	Limit                    requests.Integer      `position:"Query" name:"Limit"`
+	Dimensions               *[]string             `position:"Query" name:"Dimensions"  type:"Repeated"`
+	Order                    string                `position:"Query" name:"Order"`
 }
 
 // QueryMetricFilters is a repeated param struct in QueryMetricRequest
@@ -107,7 +109,7 @@ func CreateQueryMetricRequest() (request *QueryMetricRequest) {
 	request = &QueryMetricRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "QueryMetric", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "QueryMetric", "arms", "openAPI")
 	return
 }
 
