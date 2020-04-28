@@ -76,26 +76,28 @@ func (client *Client) CreateFlowWithCallback(request *CreateFlowRequest, callbac
 // CreateFlowRequest is the request struct for api CreateFlow
 type CreateFlowRequest struct {
 	*requests.RpcRequest
-	Description string `position:"Body" name:"Description"`
-	Type        string `position:"Body" name:"Type"`
-	RequestId   string `position:"Query" name:"RequestId"`
-	RoleArn     string `position:"Body" name:"RoleArn"`
-	Name        string `position:"Body" name:"Name"`
-	Definition  string `position:"Body" name:"Definition"`
+	Description             string `position:"Body" name:"Description"`
+	Type                    string `position:"Body" name:"Type"`
+	RequestId               string `position:"Query" name:"RequestId"`
+	RoleArn                 string `position:"Body" name:"RoleArn"`
+	Name                    string `position:"Body" name:"Name"`
+	Definition              string `position:"Body" name:"Definition"`
+	ExternalStorageLocation string `position:"Body" name:"ExternalStorageLocation"`
 }
 
 // CreateFlowResponse is the response struct for api CreateFlow
 type CreateFlowResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	Name             string `json:"Name" xml:"Name"`
-	Description      string `json:"Description" xml:"Description"`
-	Definition       string `json:"Definition" xml:"Definition"`
-	Id               string `json:"Id" xml:"Id"`
-	Type             string `json:"Type" xml:"Type"`
-	RoleArn          string `json:"RoleArn" xml:"RoleArn"`
-	CreatedTime      string `json:"CreatedTime" xml:"CreatedTime"`
-	LastModifiedTime string `json:"LastModifiedTime" xml:"LastModifiedTime"`
+	RequestId               string `json:"RequestId" xml:"RequestId"`
+	Name                    string `json:"Name" xml:"Name"`
+	Description             string `json:"Description" xml:"Description"`
+	Definition              string `json:"Definition" xml:"Definition"`
+	Id                      string `json:"Id" xml:"Id"`
+	Type                    string `json:"Type" xml:"Type"`
+	RoleArn                 string `json:"RoleArn" xml:"RoleArn"`
+	CreatedTime             string `json:"CreatedTime" xml:"CreatedTime"`
+	LastModifiedTime        string `json:"LastModifiedTime" xml:"LastModifiedTime"`
+	ExternalStorageLocation string `json:"ExternalStorageLocation" xml:"ExternalStorageLocation"`
 }
 
 // CreateCreateFlowRequest creates a request to invoke CreateFlow API

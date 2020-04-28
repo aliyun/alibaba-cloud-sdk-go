@@ -17,12 +17,13 @@ package fnf
 
 // FlowsItem is a nested struct in fnf response
 type FlowsItem struct {
-	Name             string `json:"Name" xml:"Name"`
-	Description      string `json:"Description" xml:"Description"`
-	Definition       string `json:"Definition" xml:"Definition"`
-	Id               string `json:"Id" xml:"Id"`
-	Type             string `json:"Type" xml:"Type"`
-	RoleArn          string `json:"RoleArn" xml:"RoleArn"`
-	CreatedTime      string `json:"CreatedTime" xml:"CreatedTime"`
-	LastModifiedTime string `json:"LastModifiedTime" xml:"LastModifiedTime"`
+	Name                    string `json:"Name" xml:"Name"`
+	Description             string `json:"Description" xml:"Description"`
+	Definition              string `json:"Definition" xml:"Definition"`
+	Id                      string `json:"Id" xml:"Id"`
+	Type                    string `json:"Type" xml:"Type"`
+	RoleArn                 string `json:"RoleArn" xml:"RoleArn"`
+	CreatedTime             string `json:"CreatedTime" xml:"CreatedTime"`
+	LastModifiedTime        string `json:"LastModifiedTime" xml:"LastModifiedTime"`
+	ExternalStorageLocation string `json:"ExternalStorageLocation" xml:"ExternalStorageLocation"`
 }
