@@ -76,6 +76,7 @@ func (client *Client) VerifyDeviceWithCallback(request *VerifyDeviceRequest, cal
 // VerifyDeviceRequest is the request struct for api VerifyDevice
 type VerifyDeviceRequest struct {
 	*requests.RpcRequest
+	ExtInfo     string `position:"Body" name:"ExtInfo"`
 	CertifyData string `position:"Query" name:"CertifyData"`
 	AppVersion  string `position:"Query" name:"AppVersion"`
 	CertifyId   string `position:"Query" name:"CertifyId"`
