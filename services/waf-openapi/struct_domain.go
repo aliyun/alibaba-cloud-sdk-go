@@ -27,6 +27,7 @@ type Domain struct {
 	ConnectionTime  int         `json:"ConnectionTime" xml:"ConnectionTime"`
 	ReadTime        int         `json:"ReadTime" xml:"ReadTime"`
 	WriteTime       int         `json:"WriteTime" xml:"WriteTime"`
+	ResourceGroupId string      `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	SourceIps       []string    `json:"SourceIps" xml:"SourceIps"`
 	Http2Port       []string    `json:"Http2Port" xml:"Http2Port"`
 	HttpPort        []string    `json:"HttpPort" xml:"HttpPort"`
