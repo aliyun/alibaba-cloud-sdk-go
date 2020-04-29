@@ -95,7 +95,7 @@ func CreateTranslateCertificateRequest() (request *TranslateCertificateRequest) 
 	request = &TranslateCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "TranslateCertificate", "alimtct", "openAPI")
+	request.InitWithApiInfo("alimt", "2018-10-12", "TranslateCertificate", "alimt", "openAPI")
 	return
 }
 

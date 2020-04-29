@@ -1,3 +1,8 @@
+2020-04-29 Version: v1.61.159
+- Generated 2018-10-12 for `alimt`.
+- Support Document Translation.
+- Support Lanuage Detection.
+
 2020-04-29 Version: v1.61.158
 - Generated 2018-01-15 for `dcdn`.
 - Sync cdn APIs.

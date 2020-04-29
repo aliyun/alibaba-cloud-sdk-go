@@ -82,10 +82,13 @@ type GetDocTranslateTaskRequest struct {
 // GetDocTranslateTaskResponse is the response struct for api GetDocTranslateTask
 type GetDocTranslateTaskResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	TaskId           string `json:"TaskId" xml:"TaskId"`
-	Status           string `json:"Status" xml:"Status"`
-	TranslateFileUrl string `json:"TranslateFileUrl" xml:"TranslateFileUrl"`
+	RequestId             string `json:"RequestId" xml:"RequestId"`
+	TaskId                string `json:"TaskId" xml:"TaskId"`
+	Status                string `json:"Status" xml:"Status"`
+	TranslateFileUrl      string `json:"TranslateFileUrl" xml:"TranslateFileUrl"`
+	TranslateErrorCode    string `json:"TranslateErrorCode" xml:"TranslateErrorCode"`
+	TranslateErrorMessage string `json:"TranslateErrorMessage" xml:"TranslateErrorMessage"`
+	PageCount             int    `json:"PageCount" xml:"PageCount"`
 }
 
 // CreateGetDocTranslateTaskRequest creates a request to invoke GetDocTranslateTask API
@@ -93,7 +96,7 @@ func CreateGetDocTranslateTaskRequest() (request *GetDocTranslateTaskRequest) {
 	request = &GetDocTranslateTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "GetDocTranslateTask", "alimtct", "openAPI")
+	request.InitWithApiInfo("alimt", "2018-10-12", "GetDocTranslateTask", "alimt", "openAPI")
 	return
 }
 
