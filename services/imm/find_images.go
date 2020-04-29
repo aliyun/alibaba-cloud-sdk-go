@@ -76,6 +76,7 @@ func (client *Client) FindImagesWithCallback(request *FindImagesRequest, callbac
 // FindImagesRequest is the request struct for api FindImages
 type FindImagesRequest struct {
 	*requests.RpcRequest
+	RemarksArrayBIn          string           `position:"Query" name:"RemarksArrayBIn"`
 	Project                  string           `position:"Query" name:"Project"`
 	ExternalId               string           `position:"Query" name:"ExternalId"`
 	FacesModifyTimeRange     string           `position:"Query" name:"FacesModifyTimeRange"`
@@ -92,6 +93,7 @@ type FindImagesRequest struct {
 	ModifyTimeRange          string           `position:"Query" name:"ModifyTimeRange"`
 	AddressLineContentsMatch string           `position:"Query" name:"AddressLineContentsMatch"`
 	Gender                   string           `position:"Query" name:"Gender"`
+	RemarksArrayAIn          string           `position:"Query" name:"RemarksArrayAIn"`
 	ImageSizeRange           string           `position:"Query" name:"ImageSizeRange"`
 	RemarksBPrefix           string           `position:"Query" name:"RemarksBPrefix"`
 	LocationBoundary         string           `position:"Query" name:"LocationBoundary"`

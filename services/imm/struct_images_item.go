@@ -33,6 +33,7 @@ type ImagesItem struct {
 	RemarksB            string          `json:"RemarksB" xml:"RemarksB"`
 	FileSize            int             `json:"FileSize" xml:"FileSize"`
 	Orientation         string          `json:"Orientation" xml:"Orientation"`
+	RemarksArrayA       string          `json:"RemarksArrayA" xml:"RemarksArrayA"`
 	TagsStatus          string          `json:"TagsStatus" xml:"TagsStatus"`
 	FacesModifyTime     string          `json:"FacesModifyTime" xml:"FacesModifyTime"`
 	CelebrityModifyTime string          `json:"CelebrityModifyTime" xml:"CelebrityModifyTime"`
@@ -45,6 +46,7 @@ type ImagesItem struct {
 	ImageTime           string          `json:"ImageTime" xml:"ImageTime"`
 	Location            string          `json:"Location" xml:"Location"`
 	TagsModifyTime      string          `json:"TagsModifyTime" xml:"TagsModifyTime"`
+	RemarksArrayB       string          `json:"RemarksArrayB" xml:"RemarksArrayB"`
 	RemarksA            string          `json:"RemarksA" xml:"RemarksA"`
 	SourcePosition      string          `json:"SourcePosition" xml:"SourcePosition"`
 	OCRFailReason       string          `json:"OCRFailReason" xml:"OCRFailReason"`

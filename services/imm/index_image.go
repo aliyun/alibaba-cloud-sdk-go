@@ -85,6 +85,8 @@ type IndexImageRequest struct {
 	RemarksB        string `position:"Query" name:"RemarksB"`
 	RemarksA        string `position:"Query" name:"RemarksA"`
 	ImageUri        string `position:"Query" name:"ImageUri"`
+	RemarksArrayA   string `position:"Query" name:"RemarksArrayA"`
+	RemarksArrayB   string `position:"Query" name:"RemarksArrayB"`
 	SourceUri       string `position:"Query" name:"SourceUri"`
 	SourcePosition  string `position:"Query" name:"SourcePosition"`
 	RemarksD        string `position:"Query" name:"RemarksD"`
@@ -95,16 +97,18 @@ type IndexImageRequest struct {
 // IndexImageResponse is the response struct for api IndexImage
 type IndexImageResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	SetId      string `json:"SetId" xml:"SetId"`
-	ImageUri   string `json:"ImageUri" xml:"ImageUri"`
-	RemarksA   string `json:"RemarksA" xml:"RemarksA"`
-	RemarksB   string `json:"RemarksB" xml:"RemarksB"`
-	CreateTime string `json:"CreateTime" xml:"CreateTime"`
-	ModifyTime string `json:"ModifyTime" xml:"ModifyTime"`
-	RemarksC   string `json:"RemarksC" xml:"RemarksC"`
-	RemarksD   string `json:"RemarksD" xml:"RemarksD"`
-	ExternalId string `json:"ExternalId" xml:"ExternalId"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	SetId         string `json:"SetId" xml:"SetId"`
+	ImageUri      string `json:"ImageUri" xml:"ImageUri"`
+	RemarksA      string `json:"RemarksA" xml:"RemarksA"`
+	RemarksB      string `json:"RemarksB" xml:"RemarksB"`
+	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
+	ModifyTime    string `json:"ModifyTime" xml:"ModifyTime"`
+	RemarksC      string `json:"RemarksC" xml:"RemarksC"`
+	RemarksD      string `json:"RemarksD" xml:"RemarksD"`
+	ExternalId    string `json:"ExternalId" xml:"ExternalId"`
+	RemarksArrayA string `json:"RemarksArrayA" xml:"RemarksArrayA"`
+	RemarksArrayB string `json:"RemarksArrayB" xml:"RemarksArrayB"`
 }
 
 // CreateIndexImageRequest creates a request to invoke IndexImage API
