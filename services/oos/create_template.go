@@ -79,13 +79,15 @@ type CreateTemplateRequest struct {
 	Content      string                 `position:"Query" name:"Content"`
 	Tags         map[string]interface{} `position:"Query" name:"Tags"`
 	TemplateName string                 `position:"Query" name:"TemplateName"`
+	VersionName  string                 `position:"Query" name:"VersionName"`
 }
 
 // CreateTemplateResponse is the response struct for api CreateTemplate
 type CreateTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Template  Template `json:"Template" xml:"Template"`
+	RequestId    string   `json:"RequestId" xml:"RequestId"`
+	TemplateType string   `json:"TemplateType" xml:"TemplateType"`
+	Template     Template `json:"Template" xml:"Template"`
 }
 
 // CreateCreateTemplateRequest creates a request to invoke CreateTemplate API

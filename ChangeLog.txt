@@ -1,3 +1,10 @@
+2020-04-29 Version: v1.61.162
+- Generated 2019-06-01 for `oos`.
+- Add ListTemplateVersions API.
+- GenerateExecutionPolicy supports TemplateVersion.
+- CreateTemplate and UpdateTemplate support VersionName.
+
+
 2020-04-29 Version: v1.61.161
 - Generated 2020-04-20 for `OnsMqtt`.
 - Support groupId operations.

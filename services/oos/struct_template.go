@@ -28,6 +28,7 @@ type Template struct {
 	UpdatedBy           string                 `json:"UpdatedBy" xml:"UpdatedBy"`
 	CreatedDate         string                 `json:"CreatedDate" xml:"CreatedDate"`
 	HasTrigger          bool                   `json:"HasTrigger" xml:"HasTrigger"`
+	TemplateType        string                 `json:"TemplateType" xml:"TemplateType"`
 	Description         string                 `json:"Description" xml:"Description"`
 	UpdatedDate         string                 `json:"UpdatedDate" xml:"UpdatedDate"`
 	Tags                map[string]interface{} `json:"Tags" xml:"Tags"`

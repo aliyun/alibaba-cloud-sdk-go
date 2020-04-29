@@ -79,6 +79,7 @@ type UpdateTemplateRequest struct {
 	Content      string                 `position:"Query" name:"Content"`
 	Tags         map[string]interface{} `position:"Query" name:"Tags"`
 	TemplateName string                 `position:"Query" name:"TemplateName"`
+	VersionName  string                 `position:"Query" name:"VersionName"`
 }
 
 // UpdateTemplateResponse is the response struct for api UpdateTemplate

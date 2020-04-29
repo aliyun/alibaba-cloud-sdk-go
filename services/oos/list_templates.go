@@ -79,6 +79,7 @@ type ListTemplatesRequest struct {
 	CreatedDateBefore string                 `position:"Query" name:"CreatedDateBefore"`
 	CreatedBy         string                 `position:"Query" name:"CreatedBy"`
 	NextToken         string                 `position:"Query" name:"NextToken"`
+	TemplateType      string                 `position:"Query" name:"TemplateType"`
 	TemplateName      string                 `position:"Query" name:"TemplateName"`
 	SortOrder         string                 `position:"Query" name:"SortOrder"`
 	ShareType         string                 `position:"Query" name:"ShareType"`
