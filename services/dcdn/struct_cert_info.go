@@ -17,14 +17,24 @@ package dcdn
 
 // CertInfo is a nested struct in dcdn response
 type CertInfo struct {
-	DomainName     string `json:"DomainName" xml:"DomainName"`
-	CertName       string `json:"CertName" xml:"CertName"`
-	CertDomainName string `json:"CertDomainName" xml:"CertDomainName"`
-	CertExpireTime string `json:"CertExpireTime" xml:"CertExpireTime"`
-	CertLife       string `json:"CertLife" xml:"CertLife"`
-	CertOrg        string `json:"CertOrg" xml:"CertOrg"`
-	CertType       string `json:"CertType" xml:"CertType"`
-	SSLProtocol    string `json:"SSLProtocol" xml:"SSLProtocol"`
-	Status         string `json:"Status" xml:"Status"`
-	SSLPub         string `json:"SSLPub" xml:"SSLPub"`
+	CertName              string `json:"CertName" xml:"CertName"`
+	CertOrg               string `json:"CertOrg" xml:"CertOrg"`
+	DomainList            string `json:"DomainList" xml:"DomainList"`
+	Issuer                string `json:"Issuer" xml:"Issuer"`
+	DomainNames           string `json:"DomainNames" xml:"DomainNames"`
+	CertExpireTime        string `json:"CertExpireTime" xml:"CertExpireTime"`
+	CertStatus            string `json:"CertStatus" xml:"CertStatus"`
+	CertType              string `json:"CertType" xml:"CertType"`
+	DomainName            string `json:"DomainName" xml:"DomainName"`
+	SSLProtocol           string `json:"SSLProtocol" xml:"SSLProtocol"`
+	SSLPub                string `json:"SSLPub" xml:"SSLPub"`
+	CertUpdateTime        string `json:"CertUpdateTime" xml:"CertUpdateTime"`
+	CertSubjectCommonName string `json:"CertSubjectCommonName" xml:"CertSubjectCommonName"`
+	CertCaIsLegacy        string `json:"CertCaIsLegacy" xml:"CertCaIsLegacy"`
+	CertCommonName        string `json:"CertCommonName" xml:"CertCommonName"`
+	Status                string `json:"Status" xml:"Status"`
+	CertExpired           string `json:"CertExpired" xml:"CertExpired"`
+	CertDomainName        string `json:"CertDomainName" xml:"CertDomainName"`
+	CertLife              string `json:"CertLife" xml:"CertLife"`
+	CertStartTime         string `json:"CertStartTime" xml:"CertStartTime"`
 }
