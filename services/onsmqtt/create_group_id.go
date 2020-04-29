@@ -92,7 +92,7 @@ func CreateCreateGroupIdRequest() (request *CreateGroupIdRequest) {
 	request = &CreateGroupIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OnsMqtt", "2020-04-20", "CreateGroupId", "", "")
+	request.InitWithApiInfo("OnsMqtt", "2020-04-20", "CreateGroupId", "onsmqtt", "openAPI")
 	return
 }
 

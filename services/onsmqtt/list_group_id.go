@@ -91,7 +91,7 @@ func CreateListGroupIdRequest() (request *ListGroupIdRequest) {
 	request = &ListGroupIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OnsMqtt", "2020-04-20", "ListGroupId", "", "")
+	request.InitWithApiInfo("OnsMqtt", "2020-04-20", "ListGroupId", "onsmqtt", "openAPI")
 	return
 }
 

@@ -91,7 +91,7 @@ func CreateRevokeTokenRequest() (request *RevokeTokenRequest) {
 	request = &RevokeTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OnsMqtt", "2020-04-20", "RevokeToken", "", "")
+	request.InitWithApiInfo("OnsMqtt", "2020-04-20", "RevokeToken", "onsmqtt", "openAPI")
 	return
 }
 
