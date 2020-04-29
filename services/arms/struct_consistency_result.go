@@ -17,11 +17,11 @@ package arms
 
 // ConsistencyResult is a nested struct in arms response
 type ConsistencyResult struct {
-	JudgeTimestamp                 int64                  `json:"JudgeTimestamp" xml:"JudgeTimestamp"`
-	LastSlsShardWatermarkTimestamp int64                  `json:"LastSlsShardWatermarkTimestamp" xml:"LastSlsShardWatermarkTimestamp"`
-	LastAgentInfoTimestamp         int64                  `json:"LastAgentInfoTimestamp" xml:"LastAgentInfoTimestamp"`
-	BarrierPointsLastTimestampMap  map[string]interface{} `json:"BarrierPointsLastTimestampMap" xml:"BarrierPointsLastTimestampMap"`
-	LastBarrierTimestamp           int64                  `json:"LastBarrierTimestamp" xml:"LastBarrierTimestamp"`
-	SlsShardWatermarkBean          SlsShardWatermarkBean  `json:"SlsShardWatermarkBean" xml:"SlsShardWatermarkBean"`
-	AgentHeartbeatInfos            AgentHeartbeatInfos    `json:"AgentHeartbeatInfos" xml:"AgentHeartbeatInfos"`
+	JudgeTimestamp                 int64                 `json:"JudgeTimestamp" xml:"JudgeTimestamp"`
+	LastSlsShardWatermarkTimestamp int64                 `json:"LastSlsShardWatermarkTimestamp" xml:"LastSlsShardWatermarkTimestamp"`
+	LastAgentInfoTimestamp         int64                 `json:"LastAgentInfoTimestamp" xml:"LastAgentInfoTimestamp"`
+	BarrierPointsLastTimestampMap  string                `json:"BarrierPointsLastTimestampMap" xml:"BarrierPointsLastTimestampMap"`
+	LastBarrierTimestamp           int64                 `json:"LastBarrierTimestamp" xml:"LastBarrierTimestamp"`
+	SlsShardWatermarkBean          SlsShardWatermarkBean `json:"SlsShardWatermarkBean" xml:"SlsShardWatermarkBean"`
+	AgentHeartbeatInfos            AgentHeartbeatInfos   `json:"AgentHeartbeatInfos" xml:"AgentHeartbeatInfos"`
 }
