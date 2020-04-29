@@ -1,3 +1,8 @@
+2020-04-29 Version: v1.61.156
+- Generated 2017-11-15 for `scdn`.
+- Add Scdn APIS.
+- Sync cdn APIS.
+
 2020-04-28 Version: v1.61.155
 - Generated 2019-03-07 for `Cloudauth`.
 - Add CompareFaceVerify API.
