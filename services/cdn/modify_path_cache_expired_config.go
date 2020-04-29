@@ -76,12 +76,12 @@ func (client *Client) ModifyPathCacheExpiredConfigWithCallback(request *ModifyPa
 // ModifyPathCacheExpiredConfigRequest is the request struct for api ModifyPathCacheExpiredConfig
 type ModifyPathCacheExpiredConfigRequest struct {
 	*requests.RpcRequest
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	Weight        string           `position:"Query" name:"Weight"`
 	CacheContent  string           `position:"Query" name:"CacheContent"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	TTL           string           `position:"Query" name:"TTL"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	ConfigID      string           `position:"Query" name:"ConfigID"`
 }
 

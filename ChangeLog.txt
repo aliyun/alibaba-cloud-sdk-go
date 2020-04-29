@@ -1,3 +1,7 @@
+2020-04-29 Version: v1.61.160
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Add ExportTas apis.
+
 2020-04-29 Version: v1.61.159
 - Generated 2018-10-12 for `alimt`.
 - Support Document Translation.

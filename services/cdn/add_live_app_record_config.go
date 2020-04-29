@@ -76,12 +76,12 @@ func (client *Client) AddLiveAppRecordConfigWithCallback(request *AddLiveAppReco
 // AddLiveAppRecordConfigRequest is the request struct for api AddLiveAppRecordConfig
 type AddLiveAppRecordConfigRequest struct {
 	*requests.RpcRequest
-	OssBucket       string           `position:"Query" name:"OssBucket"`
-	DomainName      string           `position:"Query" name:"DomainName"`
 	OssEndpoint     string           `position:"Query" name:"OssEndpoint"`
-	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 	AppName         string           `position:"Query" name:"AppName"`
 	SecurityToken   string           `position:"Query" name:"SecurityToken"`
+	OssBucket       string           `position:"Query" name:"OssBucket"`
+	DomainName      string           `position:"Query" name:"DomainName"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 	OssObjectPrefix string           `position:"Query" name:"OssObjectPrefix"`
 }
 
