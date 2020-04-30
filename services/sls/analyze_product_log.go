@@ -79,11 +79,9 @@ type AnalyzeProductLogRequest struct {
 	Project       string           `position:"Query" name:"Project"`
 	CloudProduct  string           `position:"Query" name:"CloudProduct"`
 	ResourceQuota string           `position:"Query" name:"ResourceQuota"`
-	VariableMap   string           `position:"Query" name:"VariableMap"`
 	TTL           requests.Integer `position:"Query" name:"TTL"`
-	ClientIp      string           `position:"Query" name:"ClientIp"`
-	Lang          string           `position:"Query" name:"Lang"`
 	Region        string           `position:"Query" name:"Region"`
+	Lang          string           `position:"Query" name:"Lang"`
 	Logstore      string           `position:"Query" name:"Logstore"`
 	Overwrite     requests.Boolean `position:"Query" name:"Overwrite"`
 }
@@ -102,7 +100,7 @@ func CreateAnalyzeProductLogRequest() (request *AnalyzeProductLogRequest) {
 	request = &AnalyzeProductLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "AnalyzeProductLog", "sls", "openAPI")
+	request.InitWithApiInfo("Sls", "2018-06-13", "AnalyzeProductLog", "sls", "openAPI")
 	return
 }
 
