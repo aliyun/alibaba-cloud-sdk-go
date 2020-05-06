@@ -76,15 +76,21 @@ func (client *Client) DescribeBackupTablesWithCallback(request *DescribeBackupTa
 // DescribeBackupTablesRequest is the request struct for api DescribeBackupTables
 type DescribeBackupTablesRequest struct {
 	*requests.RpcRequest
-	ClusterId      string `position:"Query" name:"ClusterId"`
-	BackupRecordId string `position:"Query" name:"BackupRecordId"`
+	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	BackupRecordId string           `position:"Query" name:"BackupRecordId"`
+	ClusterId      string           `position:"Query" name:"ClusterId"`
 }
 
 // DescribeBackupTablesResponse is the response struct for api DescribeBackupTables
 type DescribeBackupTablesResponse struct {
 	*responses.BaseResponse
-	RequestId string                       `json:"RequestId" xml:"RequestId"`
-	Tables    TablesInDescribeBackupTables `json:"Tables" xml:"Tables"`
+	RequestId     string                       `json:"RequestId" xml:"RequestId"`
+	Total         int64                        `json:"Total" xml:"Total"`
+	PageSize      int                          `json:"PageSize" xml:"PageSize"`
+	PageNumber    int                          `json:"PageNumber" xml:"PageNumber"`
+	Tables        TablesInDescribeBackupTables `json:"Tables" xml:"Tables"`
+	BackupRecords BackupRecords                `json:"BackupRecords" xml:"BackupRecords"`
 }
 
 // CreateDescribeBackupTablesRequest creates a request to invoke DescribeBackupTables API

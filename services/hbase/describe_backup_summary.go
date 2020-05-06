@@ -76,7 +76,9 @@ func (client *Client) DescribeBackupSummaryWithCallback(request *DescribeBackupS
 // DescribeBackupSummaryRequest is the request struct for api DescribeBackupSummary
 type DescribeBackupSummaryRequest struct {
 	*requests.RpcRequest
-	ClusterId string `position:"Query" name:"ClusterId"`
+	ClusterId  string           `position:"Query" name:"ClusterId"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeBackupSummaryResponse is the response struct for api DescribeBackupSummary

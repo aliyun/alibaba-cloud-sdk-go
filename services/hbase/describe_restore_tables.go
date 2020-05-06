@@ -83,8 +83,12 @@ type DescribeRestoreTablesRequest struct {
 // DescribeRestoreTablesResponse is the response struct for api DescribeRestoreTables
 type DescribeRestoreTablesResponse struct {
 	*responses.BaseResponse
-	RequestId string                        `json:"RequestId" xml:"RequestId"`
-	Tables    TablesInDescribeRestoreTables `json:"Tables" xml:"Tables"`
+	RequestId         string                        `json:"RequestId" xml:"RequestId"`
+	Tables            TablesInDescribeRestoreTables `json:"Tables" xml:"Tables"`
+	RestoreSummary    RestoreSummary                `json:"RestoreSummary" xml:"RestoreSummary"`
+	RestoreSchema     RestoreSchema                 `json:"RestoreSchema" xml:"RestoreSchema"`
+	RestoreFull       RestoreFull                   `json:"RestoreFull" xml:"RestoreFull"`
+	RestoreIncrDetail RestoreIncrDetail             `json:"RestoreIncrDetail" xml:"RestoreIncrDetail"`
 }
 
 // CreateDescribeRestoreTablesRequest creates a request to invoke DescribeRestoreTables API

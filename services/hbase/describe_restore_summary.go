@@ -76,15 +76,19 @@ func (client *Client) DescribeRestoreSummaryWithCallback(request *DescribeRestor
 // DescribeRestoreSummaryRequest is the request struct for api DescribeRestoreSummary
 type DescribeRestoreSummaryRequest struct {
 	*requests.RpcRequest
-	ClusterId string `position:"Query" name:"ClusterId"`
+	ClusterId  string           `position:"Query" name:"ClusterId"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeRestoreSummaryResponse is the response struct for api DescribeRestoreSummary
 type DescribeRestoreSummaryResponse struct {
 	*responses.BaseResponse
 	RequestId            string   `json:"RequestId" xml:"RequestId"`
-	RestoreRecordSize    int      `json:"RestoreRecordSize" xml:"RestoreRecordSize"`
 	HasMoreRestoreRecord int      `json:"HasMoreRestoreRecord" xml:"HasMoreRestoreRecord"`
+	PageNumber           int      `json:"PageNumber" xml:"PageNumber"`
+	PageSize             int      `json:"PageSize" xml:"PageSize"`
+	Total                int      `json:"Total" xml:"Total"`
 	Rescords             Rescords `json:"Rescords" xml:"Rescords"`
 }
 
