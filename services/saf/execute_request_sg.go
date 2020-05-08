@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ExecuteRequest invokes the saf.ExecuteRequest API synchronously
-// api document: https://help.aliyun.com/api/saf/executerequest.html
-func (client *Client) ExecuteRequest(request *ExecuteRequestRequest) (response *ExecuteRequestResponse, err error) {
-	response = CreateExecuteRequestResponse()
+// ExecuteRequestSG invokes the saf.ExecuteRequestSG API synchronously
+// api document: https://help.aliyun.com/api/saf/executerequestsg.html
+func (client *Client) ExecuteRequestSG(request *ExecuteRequestSGRequest) (response *ExecuteRequestSGResponse, err error) {
+	response = CreateExecuteRequestSGResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ExecuteRequestWithChan invokes the saf.ExecuteRequest API asynchronously
-// api document: https://help.aliyun.com/api/saf/executerequest.html
+// ExecuteRequestSGWithChan invokes the saf.ExecuteRequestSG API asynchronously
+// api document: https://help.aliyun.com/api/saf/executerequestsg.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ExecuteRequestWithChan(request *ExecuteRequestRequest) (<-chan *ExecuteRequestResponse, <-chan error) {
-	responseChan := make(chan *ExecuteRequestResponse, 1)
+func (client *Client) ExecuteRequestSGWithChan(request *ExecuteRequestSGRequest) (<-chan *ExecuteRequestSGResponse, <-chan error) {
+	responseChan := make(chan *ExecuteRequestSGResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ExecuteRequest(request)
+		response, err := client.ExecuteRequestSG(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ExecuteRequestWithChan(request *ExecuteRequestRequest) (<-
 	return responseChan, errChan
 }
 
-// ExecuteRequestWithCallback invokes the saf.ExecuteRequest API asynchronously
-// api document: https://help.aliyun.com/api/saf/executerequest.html
+// ExecuteRequestSGWithCallback invokes the saf.ExecuteRequestSG API asynchronously
+// api document: https://help.aliyun.com/api/saf/executerequestsg.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ExecuteRequestWithCallback(request *ExecuteRequestRequest, callback func(response *ExecuteRequestResponse, err error)) <-chan int {
+func (client *Client) ExecuteRequestSGWithCallback(request *ExecuteRequestSGRequest, callback func(response *ExecuteRequestSGResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ExecuteRequestResponse
+		var response *ExecuteRequestSGResponse
 		var err error
 		defer close(result)
-		response, err = client.ExecuteRequest(request)
+		response, err = client.ExecuteRequestSG(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,15 +73,15 @@ func (client *Client) ExecuteRequestWithCallback(request *ExecuteRequestRequest,
 	return result
 }
 
-// ExecuteRequestRequest is the request struct for api ExecuteRequest
-type ExecuteRequestRequest struct {
+// ExecuteRequestSGRequest is the request struct for api ExecuteRequestSG
+type ExecuteRequestSGRequest struct {
 	*requests.RpcRequest
 	ServiceParameters string `position:"Query" name:"ServiceParameters"`
 	Service           string `position:"Query" name:"Service"`
 }
 
-// ExecuteRequestResponse is the response struct for api ExecuteRequest
-type ExecuteRequestResponse struct {
+// ExecuteRequestSGResponse is the response struct for api ExecuteRequestSG
+type ExecuteRequestSGResponse struct {
 	*responses.BaseResponse
 	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Code      int                    `json:"Code" xml:"Code"`
@@ -89,18 +89,18 @@ type ExecuteRequestResponse struct {
 	Data      map[string]interface{} `json:"Data" xml:"Data"`
 }
 
-// CreateExecuteRequestRequest creates a request to invoke ExecuteRequest API
-func CreateExecuteRequestRequest() (request *ExecuteRequestRequest) {
-	request = &ExecuteRequestRequest{
+// CreateExecuteRequestSGRequest creates a request to invoke ExecuteRequestSG API
+func CreateExecuteRequestSGRequest() (request *ExecuteRequestSGRequest) {
+	request = &ExecuteRequestSGRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("saf", "2019-05-21", "ExecuteRequest", "saf", "openAPI")
+	request.InitWithApiInfo("saf", "2019-05-21", "ExecuteRequestSG", "saf", "openAPI")
 	return
 }
 
-// CreateExecuteRequestResponse creates a response to parse from ExecuteRequest response
-func CreateExecuteRequestResponse() (response *ExecuteRequestResponse) {
-	response = &ExecuteRequestResponse{
+// CreateExecuteRequestSGResponse creates a response to parse from ExecuteRequestSG response
+func CreateExecuteRequestSGResponse() (response *ExecuteRequestSGResponse) {
+	response = &ExecuteRequestSGResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

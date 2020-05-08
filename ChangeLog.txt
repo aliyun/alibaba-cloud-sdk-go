@@ -1,3 +1,7 @@
+2020-05-08 Version: v1.61.173
+- Generated 2019-05-21 for `saf`.
+- Support sg for region.
+
 2020-05-06 Version: v1.61.172
 - Generated 2019-01-01 for `HBase`.
 - Describe describeAvailableResource.
