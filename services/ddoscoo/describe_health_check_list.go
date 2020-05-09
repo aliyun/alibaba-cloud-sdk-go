@@ -83,9 +83,8 @@ type DescribeHealthCheckListRequest struct {
 // DescribeHealthCheckListResponse is the response struct for api DescribeHealthCheckList
 type DescribeHealthCheckListResponse struct {
 	*responses.BaseResponse
-	RequestId       string        `json:"RequestId" xml:"RequestId"`
-	TotalCount      string        `json:"TotalCount" xml:"TotalCount"`
-	HealthCheckList []HealthCheck `json:"HealthCheckList" xml:"HealthCheckList"`
+	RequestId       string            `json:"RequestId" xml:"RequestId"`
+	HealthCheckList []HealthCheckItem `json:"HealthCheckList" xml:"HealthCheckList"`
 }
 
 // CreateDescribeHealthCheckListRequest creates a request to invoke DescribeHealthCheckList API
