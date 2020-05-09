@@ -21,7 +21,8 @@ type Instance struct {
 	Remark     string `json:"Remark" xml:"Remark"`
 	Status     int    `json:"Status" xml:"Status"`
 	DebtStatus int    `json:"DebtStatus" xml:"DebtStatus"`
-	ExpireTime int    `json:"ExpireTime" xml:"ExpireTime"`
-	GmtCreate  int    `json:"GmtCreate" xml:"GmtCreate"`
+	ExpireTime int64  `json:"ExpireTime" xml:"ExpireTime"`
+	GmtCreate  int64  `json:"GmtCreate" xml:"GmtCreate"`
 	Edition    int    `json:"Edition" xml:"Edition"`
+	Enabled    int    `json:"Enabled" xml:"Enabled"`
 }

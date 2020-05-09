@@ -21,7 +21,10 @@ type InstanceSpec struct {
 	BaseBandwidth    int    `json:"BaseBandwidth" xml:"BaseBandwidth"`
 	ElasticBandwidth int    `json:"ElasticBandwidth" xml:"ElasticBandwidth"`
 	PortLimit        int    `json:"PortLimit" xml:"PortLimit"`
+	SiteLimit        int    `json:"SiteLimit" xml:"SiteLimit"`
 	DomainLimit      int    `json:"DomainLimit" xml:"DomainLimit"`
 	BandwidthMbps    int    `json:"BandwidthMbps" xml:"BandwidthMbps"`
 	DefenseCount     int    `json:"DefenseCount" xml:"DefenseCount"`
+	FunctionVersion  string `json:"FunctionVersion" xml:"FunctionVersion"`
+	QpsLimit         int    `json:"QpsLimit" xml:"QpsLimit"`
 }

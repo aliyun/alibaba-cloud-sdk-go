@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ReleaseInstance invokes the ddoscoo.ReleaseInstance API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/releaseinstance.html
-func (client *Client) ReleaseInstance(request *ReleaseInstanceRequest) (response *ReleaseInstanceResponse, err error) {
-	response = CreateReleaseInstanceResponse()
+// ReleaseValueAdded invokes the ddoscoo.ReleaseValueAdded API synchronously
+// api document: https://help.aliyun.com/api/ddoscoo/releasevalueadded.html
+func (client *Client) ReleaseValueAdded(request *ReleaseValueAddedRequest) (response *ReleaseValueAddedResponse, err error) {
+	response = CreateReleaseValueAddedResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ReleaseInstanceWithChan invokes the ddoscoo.ReleaseInstance API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/releaseinstance.html
+// ReleaseValueAddedWithChan invokes the ddoscoo.ReleaseValueAdded API asynchronously
+// api document: https://help.aliyun.com/api/ddoscoo/releasevalueadded.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ReleaseInstanceWithChan(request *ReleaseInstanceRequest) (<-chan *ReleaseInstanceResponse, <-chan error) {
-	responseChan := make(chan *ReleaseInstanceResponse, 1)
+func (client *Client) ReleaseValueAddedWithChan(request *ReleaseValueAddedRequest) (<-chan *ReleaseValueAddedResponse, <-chan error) {
+	responseChan := make(chan *ReleaseValueAddedResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ReleaseInstance(request)
+		response, err := client.ReleaseValueAdded(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ReleaseInstanceWithChan(request *ReleaseInstanceRequest) (
 	return responseChan, errChan
 }
 
-// ReleaseInstanceWithCallback invokes the ddoscoo.ReleaseInstance API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/releaseinstance.html
+// ReleaseValueAddedWithCallback invokes the ddoscoo.ReleaseValueAdded API asynchronously
+// api document: https://help.aliyun.com/api/ddoscoo/releasevalueadded.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ReleaseInstanceWithCallback(request *ReleaseInstanceRequest, callback func(response *ReleaseInstanceResponse, err error)) <-chan int {
+func (client *Client) ReleaseValueAddedWithCallback(request *ReleaseValueAddedRequest, callback func(response *ReleaseValueAddedResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ReleaseInstanceResponse
+		var response *ReleaseValueAddedResponse
 		var err error
 		defer close(result)
-		response, err = client.ReleaseInstance(request)
+		response, err = client.ReleaseValueAdded(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,31 +73,31 @@ func (client *Client) ReleaseInstanceWithCallback(request *ReleaseInstanceReques
 	return result
 }
 
-// ReleaseInstanceRequest is the request struct for api ReleaseInstance
-type ReleaseInstanceRequest struct {
+// ReleaseValueAddedRequest is the request struct for api ReleaseValueAdded
+type ReleaseValueAddedRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
 	SourceIp   string `position:"Query" name:"SourceIp"`
 }
 
-// ReleaseInstanceResponse is the response struct for api ReleaseInstance
-type ReleaseInstanceResponse struct {
+// ReleaseValueAddedResponse is the response struct for api ReleaseValueAdded
+type ReleaseValueAddedResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateReleaseInstanceRequest creates a request to invoke ReleaseInstance API
-func CreateReleaseInstanceRequest() (request *ReleaseInstanceRequest) {
-	request = &ReleaseInstanceRequest{
+// CreateReleaseValueAddedRequest creates a request to invoke ReleaseValueAdded API
+func CreateReleaseValueAddedRequest() (request *ReleaseValueAddedRequest) {
+	request = &ReleaseValueAddedRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2017-12-28", "ReleaseInstance", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2017-12-28", "ReleaseValueAdded", "ddoscoo", "openAPI")
 	return
 }
 
-// CreateReleaseInstanceResponse creates a response to parse from ReleaseInstance response
-func CreateReleaseInstanceResponse() (response *ReleaseInstanceResponse) {
-	response = &ReleaseInstanceResponse{
+// CreateReleaseValueAddedResponse creates a response to parse from ReleaseValueAdded response
+func CreateReleaseValueAddedResponse() (response *ReleaseValueAddedResponse) {
+	response = &ReleaseValueAddedResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

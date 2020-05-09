@@ -76,13 +76,19 @@ func (client *Client) DescribeInstancesWithCallback(request *DescribeInstancesRe
 // DescribeInstancesRequest is the request struct for api DescribeInstances
 type DescribeInstancesRequest struct {
 	*requests.RpcRequest
-	SourceIp    string                  `position:"Query" name:"SourceIp"`
-	InstanceIds string                  `position:"Query" name:"InstanceIds"`
-	PageNo      string                  `position:"Query" name:"PageNo"`
-	Ip          string                  `position:"Query" name:"Ip"`
-	PageSize    string                  `position:"Query" name:"PageSize"`
-	Remark      string                  `position:"Query" name:"Remark"`
-	Tag         *[]DescribeInstancesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Edition         requests.Integer        `position:"Query" name:"Edition"`
+	Remark          string                  `position:"Query" name:"Remark"`
+	Enabled         requests.Integer        `position:"Query" name:"Enabled"`
+	ResourceGroupId string                  `position:"Query" name:"ResourceGroupId"`
+	SourceIp        string                  `position:"Query" name:"SourceIp"`
+	PageSize        string                  `position:"Query" name:"PageSize"`
+	Tag             *[]DescribeInstancesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ExpireStartTime requests.Integer        `position:"Query" name:"ExpireStartTime"`
+	ExpireEndTime   requests.Integer        `position:"Query" name:"ExpireEndTime"`
+	Ip              string                  `position:"Query" name:"Ip"`
+	InstanceIds     string                  `position:"Query" name:"InstanceIds"`
+	PageNo          string                  `position:"Query" name:"PageNo"`
+	Status          *[]string               `position:"Query" name:"Status"  type:"Repeated"`
 }
 
 // DescribeInstancesTag is a repeated param struct in DescribeInstancesRequest
@@ -95,7 +101,7 @@ type DescribeInstancesTag struct {
 type DescribeInstancesResponse struct {
 	*responses.BaseResponse
 	RequestId string     `json:"RequestId" xml:"RequestId"`
-	Total     int        `json:"Total" xml:"Total"`
+	Total     int64      `json:"Total" xml:"Total"`
 	Instances []Instance `json:"Instances" xml:"Instances"`
 }
 
