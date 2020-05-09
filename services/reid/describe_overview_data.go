@@ -100,7 +100,7 @@ func CreateDescribeOverviewDataRequest() (request *DescribeOverviewDataRequest) 
 	request = &DescribeOverviewDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("reid", "2019-09-28", "DescribeOverviewData", "1.1.2", "openAPI")
+	request.InitWithApiInfo("reid", "2019-09-28", "DescribeOverviewData", "", "")
 	return
 }
 

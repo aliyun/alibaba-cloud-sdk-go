@@ -98,7 +98,7 @@ func CreatePullActionDataRequest() (request *PullActionDataRequest) {
 	request = &PullActionDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("reid", "2019-09-28", "PullActionData", "1.1.2", "openAPI")
+	request.InitWithApiInfo("reid", "2019-09-28", "PullActionData", "", "")
 	return
 }
 

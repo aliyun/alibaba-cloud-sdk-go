@@ -99,7 +99,7 @@ func CreateDescribeBaseStatisticsRequest() (request *DescribeBaseStatisticsReque
 	request = &DescribeBaseStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("reid", "2019-09-28", "DescribeBaseStatistics", "1.1.2", "openAPI")
+	request.InitWithApiInfo("reid", "2019-09-28", "DescribeBaseStatistics", "", "")
 	return
 }
 

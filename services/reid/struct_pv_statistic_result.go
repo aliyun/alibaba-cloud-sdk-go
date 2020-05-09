@@ -21,5 +21,6 @@ type PvStatisticResult struct {
 	IpcId         int64   `json:"IpcId" xml:"IpcId"`
 	PvCount       int64   `json:"PvCount" xml:"PvCount"`
 	LocationId    int64   `json:"LocationId" xml:"LocationId"`
+	PvType        string  `json:"PvType" xml:"PvType"`
 	PvRects       PvRects `json:"PvRects" xml:"PvRects"`
 }
