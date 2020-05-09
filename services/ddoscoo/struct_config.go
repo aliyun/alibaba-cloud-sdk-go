@@ -17,9 +17,12 @@ package ddoscoo
 
 // Config is a nested struct in ddoscoo response
 type Config struct {
+	NodataConn         string     `json:"NodataConn" xml:"NodataConn"`
 	PersistenceTimeout int        `json:"PersistenceTimeout" xml:"PersistenceTimeout"`
 	Synproxy           string     `json:"Synproxy" xml:"Synproxy"`
-	NodataConn         string     `json:"NodataConn" xml:"NodataConn"`
+	RegionBlockSwitch  string     `json:"RegionBlockSwitch" xml:"RegionBlockSwitch"`
+	Countries          []string   `json:"Countries" xml:"Countries"`
+	Provinces          []string   `json:"Provinces" xml:"Provinces"`
 	Sla                Sla        `json:"Sla" xml:"Sla"`
 	Slimit             Slimit     `json:"Slimit" xml:"Slimit"`
 	PayloadLen         PayloadLen `json:"PayloadLen" xml:"PayloadLen"`

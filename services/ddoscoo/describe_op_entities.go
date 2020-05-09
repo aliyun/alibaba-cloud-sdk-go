@@ -77,20 +77,20 @@ func (client *Client) DescribeOpEntitiesWithCallback(request *DescribeOpEntities
 type DescribeOpEntitiesRequest struct {
 	*requests.RpcRequest
 	StartTime       requests.Integer `position:"Query" name:"StartTime"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	EndTime         requests.Integer `position:"Query" name:"EndTime"`
 	EntityObject    string           `position:"Query" name:"EntityObject"`
 	EntityType      requests.Integer `position:"Query" name:"EntityType"`
-	PageNo          requests.Integer `position:"Query" name:"PageNo"`
 }
 
 // DescribeOpEntitiesResponse is the response struct for api DescribeOpEntities
 type DescribeOpEntitiesResponse struct {
 	*responses.BaseResponse
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	Total      int64      `json:"Total" xml:"Total"`
+	TotalCount int64      `json:"TotalCount" xml:"TotalCount"`
 	OpEntities []OpEntity `json:"OpEntities" xml:"OpEntities"`
 }
 
@@ -99,7 +99,7 @@ func CreateDescribeOpEntitiesRequest() (request *DescribeOpEntitiesRequest) {
 	request = &DescribeOpEntitiesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2017-12-28", "DescribeOpEntities", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeOpEntities", "ddoscoo", "openAPI")
 	return
 }
 

@@ -93,7 +93,7 @@ func CreateDeleteAsyncTaskRequest() (request *DeleteAsyncTaskRequest) {
 	request = &DeleteAsyncTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2017-12-28", "DeleteAsyncTask", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteAsyncTask", "ddoscoo", "openAPI")
 	return
 }
 

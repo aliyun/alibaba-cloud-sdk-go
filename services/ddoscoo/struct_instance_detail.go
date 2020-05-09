@@ -21,5 +21,5 @@ type InstanceDetail struct {
 	InstanceId      string    `json:"InstanceId" xml:"InstanceId"`
 	Line            string    `json:"Line" xml:"Line"`
 	EipList         []string  `json:"EipList" xml:"EipList"`
-	EipInfoList     []EipInfo `json:"EipInfoList" xml:"EipInfoList"`
+	EipInfos        []EipInfo `json:"EipInfos" xml:"EipInfos"`
 }

@@ -76,8 +76,8 @@ func (client *Client) DescribeInstanceSpecsWithCallback(request *DescribeInstanc
 // DescribeInstanceSpecsRequest is the request struct for api DescribeInstanceSpecs
 type DescribeInstanceSpecsRequest struct {
 	*requests.RpcRequest
-	SourceIp    string `position:"Query" name:"SourceIp"`
-	InstanceIds string `position:"Query" name:"InstanceIds"`
+	SourceIp    string    `position:"Query" name:"SourceIp"`
+	InstanceIds *[]string `position:"Query" name:"InstanceIds"  type:"Repeated"`
 }
 
 // DescribeInstanceSpecsResponse is the response struct for api DescribeInstanceSpecs
@@ -92,7 +92,7 @@ func CreateDescribeInstanceSpecsRequest() (request *DescribeInstanceSpecsRequest
 	request = &DescribeInstanceSpecsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2017-12-28", "DescribeInstanceSpecs", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeInstanceSpecs", "ddoscoo", "openAPI")
 	return
 }
 

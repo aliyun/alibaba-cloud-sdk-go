@@ -105,7 +105,7 @@ func CreateDescribeDomainQpsWithCacheRequest() (request *DescribeDomainQpsWithCa
 	request = &DescribeDomainQpsWithCacheRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2017-12-28", "DescribeDomainQpsWithCache", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainQpsWithCache", "ddoscoo", "openAPI")
 	return
 }
 

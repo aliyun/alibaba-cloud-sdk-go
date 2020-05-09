@@ -77,10 +77,10 @@ func (client *Client) DescribeDomainAttackEventsWithCallback(request *DescribeDo
 type DescribeDomainAttackEventsRequest struct {
 	*requests.RpcRequest
 	StartTime       requests.Integer `position:"Query" name:"StartTime"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
-	PageSize        string           `position:"Query" name:"PageSize"`
-	Offset          requests.Integer `position:"Query" name:"Offset"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	EndTime         requests.Integer `position:"Query" name:"EndTime"`
 	Domain          string           `position:"Query" name:"Domain"`
 }
@@ -88,9 +88,9 @@ type DescribeDomainAttackEventsRequest struct {
 // DescribeDomainAttackEventsResponse is the response struct for api DescribeDomainAttackEvents
 type DescribeDomainAttackEventsResponse struct {
 	*responses.BaseResponse
-	RequestId string              `json:"RequestId" xml:"RequestId"`
-	Total     int64               `json:"Total" xml:"Total"`
-	Events    []DomainAttackEvent `json:"Events" xml:"Events"`
+	RequestId          string `json:"RequestId" xml:"RequestId"`
+	TotalCount         int64  `json:"TotalCount" xml:"TotalCount"`
+	DomainAttackEvents []Data `json:"DomainAttackEvents" xml:"DomainAttackEvents"`
 }
 
 // CreateDescribeDomainAttackEventsRequest creates a request to invoke DescribeDomainAttackEvents API
@@ -98,7 +98,7 @@ func CreateDescribeDomainAttackEventsRequest() (request *DescribeDomainAttackEve
 	request = &DescribeDomainAttackEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2017-12-28", "DescribeDomainAttackEvents", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainAttackEvents", "ddoscoo", "openAPI")
 	return
 }
 

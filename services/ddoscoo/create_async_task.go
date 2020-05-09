@@ -94,7 +94,7 @@ func CreateCreateAsyncTaskRequest() (request *CreateAsyncTaskRequest) {
 	request = &CreateAsyncTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2017-12-28", "CreateAsyncTask", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "CreateAsyncTask", "ddoscoo", "openAPI")
 	return
 }
 

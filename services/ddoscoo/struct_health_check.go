@@ -17,12 +17,16 @@ package ddoscoo
 
 // HealthCheck is a nested struct in ddoscoo response
 type HealthCheck struct {
-	Type     string `json:"Type" xml:"Type"`
-	Domain   string `json:"Domain" xml:"Domain"`
-	Uri      string `json:"Uri" xml:"Uri"`
-	Down     int    `json:"Down" xml:"Down"`
-	Interval int    `json:"Interval" xml:"Interval"`
-	Port     int    `json:"Port" xml:"Port"`
-	Timeout  int    `json:"Timeout" xml:"Timeout"`
-	Up       int    `json:"Up" xml:"Up"`
+	Domain       string      `json:"Domain" xml:"Domain"`
+	Port         int         `json:"Port" xml:"Port"`
+	Protocol     string      `json:"Protocol" xml:"Protocol"`
+	Down         int         `json:"Down" xml:"Down"`
+	InstanceId   string      `json:"InstanceId" xml:"InstanceId"`
+	Interval     int         `json:"Interval" xml:"Interval"`
+	Uri          string      `json:"Uri" xml:"Uri"`
+	FrontendPort int         `json:"FrontendPort" xml:"FrontendPort"`
+	Timeout      int         `json:"Timeout" xml:"Timeout"`
+	Up           int         `json:"Up" xml:"Up"`
+	Type         string      `json:"Type" xml:"Type"`
+	HealthCheck  HealthCheck `json:"HealthCheck" xml:"HealthCheck"`
 }

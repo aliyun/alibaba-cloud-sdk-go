@@ -92,7 +92,7 @@ func CreateDescribeDefenseCountStatisticsRequest() (request *DescribeDefenseCoun
 	request = &DescribeDefenseCountStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2017-12-28", "DescribeDefenseCountStatistics", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDefenseCountStatistics", "ddoscoo", "openAPI")
 	return
 }
 

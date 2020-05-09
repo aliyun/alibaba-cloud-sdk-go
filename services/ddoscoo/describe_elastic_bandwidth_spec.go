@@ -92,7 +92,7 @@ func CreateDescribeElasticBandwidthSpecRequest() (request *DescribeElasticBandwi
 	request = &DescribeElasticBandwidthSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2017-12-28", "DescribeElasticBandwidthSpec", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeElasticBandwidthSpec", "ddoscoo", "openAPI")
 	return
 }
 
