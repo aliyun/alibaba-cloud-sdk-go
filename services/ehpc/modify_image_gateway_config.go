@@ -105,7 +105,7 @@ func CreateModifyImageGatewayConfigRequest() (request *ModifyImageGatewayConfigR
 	request = &ModifyImageGatewayConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ModifyImageGatewayConfig", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ModifyImageGatewayConfig", "", "")
 	return
 }
 

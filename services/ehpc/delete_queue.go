@@ -91,7 +91,7 @@ func CreateDeleteQueueRequest() (request *DeleteQueueRequest) {
 	request = &DeleteQueueRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "DeleteQueue", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "DeleteQueue", "", "")
 	return
 }
 

@@ -97,7 +97,7 @@ func CreateListNodesByQueueRequest() (request *ListNodesByQueueRequest) {
 	request = &ListNodesByQueueRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListNodesByQueue", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListNodesByQueue", "", "")
 	return
 }
 

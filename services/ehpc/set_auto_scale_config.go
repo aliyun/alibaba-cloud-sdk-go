@@ -97,6 +97,7 @@ type SetAutoScaleConfigRequest struct {
 type SetAutoScaleConfigQueues struct {
 	SpotStrategy     string                             `name:"SpotStrategy"`
 	QueueName        string                             `name:"QueueName"`
+	MinNodesInQueue  string                             `name:"MinNodesInQueue"`
 	InstanceTypes    *[]SetAutoScaleConfigInstanceTypes `name:"InstanceTypes" type:"Repeated"`
 	MaxNodesInQueue  string                             `name:"MaxNodesInQueue"`
 	InstanceType     string                             `name:"InstanceType"`
@@ -126,7 +127,7 @@ func CreateSetAutoScaleConfigRequest() (request *SetAutoScaleConfigRequest) {
 	request = &SetAutoScaleConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "SetAutoScaleConfig", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "SetAutoScaleConfig", "", "")
 	return
 }
 

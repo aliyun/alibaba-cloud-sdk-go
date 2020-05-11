@@ -91,7 +91,7 @@ func CreateSetGWSInstanceNameRequest() (request *SetGWSInstanceNameRequest) {
 	request = &SetGWSInstanceNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "SetGWSInstanceName", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "SetGWSInstanceName", "", "")
 	return
 }
 

@@ -76,27 +76,31 @@ func (client *Client) AddNodesWithCallback(request *AddNodesRequest, callback fu
 // AddNodesRequest is the request struct for api AddNodes
 type AddNodesRequest struct {
 	*requests.RpcRequest
-	ImageId               string           `position:"Query" name:"ImageId"`
-	JobQueue              string           `position:"Query" name:"JobQueue"`
-	ImageOwnerAlias       string           `position:"Query" name:"ImageOwnerAlias"`
-	SystemDiskType        string           `position:"Query" name:"SystemDiskType"`
-	SystemDiskSize        requests.Integer `position:"Query" name:"SystemDiskSize"`
-	InstanceType          string           `position:"Query" name:"InstanceType"`
-	HostNamePrefix        string           `position:"Query" name:"HostNamePrefix"`
-	ComputeSpotPriceLimit string           `position:"Query" name:"ComputeSpotPriceLimit"`
-	AutoRenewPeriod       requests.Integer `position:"Query" name:"AutoRenewPeriod"`
-	Period                requests.Integer `position:"Query" name:"Period"`
-	Count                 requests.Integer `position:"Query" name:"Count"`
-	ClusterId             string           `position:"Query" name:"ClusterId"`
-	ComputeSpotStrategy   string           `position:"Query" name:"ComputeSpotStrategy"`
-	HostNameSuffix        string           `position:"Query" name:"HostNameSuffix"`
-	VSwitchId             string           `position:"Query" name:"VSwitchId"`
-	PeriodUnit            string           `position:"Query" name:"PeriodUnit"`
-	ComputeEnableHt       requests.Boolean `position:"Query" name:"ComputeEnableHt"`
-	AutoRenew             string           `position:"Query" name:"AutoRenew"`
-	EcsChargeType         string           `position:"Query" name:"EcsChargeType"`
-	CreateMode            string           `position:"Query" name:"CreateMode"`
-	ZoneId                string           `position:"Query" name:"ZoneId"`
+	ImageId                 string           `position:"Query" name:"ImageId"`
+	AllocatePublicAddress   requests.Boolean `position:"Query" name:"AllocatePublicAddress"`
+	InternetMaxBandWidthOut requests.Integer `position:"Query" name:"InternetMaxBandWidthOut"`
+	JobQueue                string           `position:"Query" name:"JobQueue"`
+	ImageOwnerAlias         string           `position:"Query" name:"ImageOwnerAlias"`
+	SystemDiskType          string           `position:"Query" name:"SystemDiskType"`
+	SystemDiskSize          requests.Integer `position:"Query" name:"SystemDiskSize"`
+	InstanceType            string           `position:"Query" name:"InstanceType"`
+	HostNamePrefix          string           `position:"Query" name:"HostNamePrefix"`
+	ComputeSpotPriceLimit   string           `position:"Query" name:"ComputeSpotPriceLimit"`
+	AutoRenewPeriod         requests.Integer `position:"Query" name:"AutoRenewPeriod"`
+	Period                  requests.Integer `position:"Query" name:"Period"`
+	Count                   requests.Integer `position:"Query" name:"Count"`
+	ClusterId               string           `position:"Query" name:"ClusterId"`
+	ComputeSpotStrategy     string           `position:"Query" name:"ComputeSpotStrategy"`
+	HostNameSuffix          string           `position:"Query" name:"HostNameSuffix"`
+	VSwitchId               string           `position:"Query" name:"VSwitchId"`
+	PeriodUnit              string           `position:"Query" name:"PeriodUnit"`
+	ComputeEnableHt         requests.Boolean `position:"Query" name:"ComputeEnableHt"`
+	AutoRenew               string           `position:"Query" name:"AutoRenew"`
+	EcsChargeType           string           `position:"Query" name:"EcsChargeType"`
+	InternetChargeType      string           `position:"Query" name:"InternetChargeType"`
+	CreateMode              string           `position:"Query" name:"CreateMode"`
+	ZoneId                  string           `position:"Query" name:"ZoneId"`
+	InternetMaxBandWidthIn  requests.Integer `position:"Query" name:"InternetMaxBandWidthIn"`
 }
 
 // AddNodesResponse is the response struct for api AddNodes
@@ -111,7 +115,7 @@ func CreateAddNodesRequest() (request *AddNodesRequest) {
 	request = &AddNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "AddNodes", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "AddNodes", "", "")
 	return
 }
 

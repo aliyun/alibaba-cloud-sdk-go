@@ -92,7 +92,7 @@ func CreateGetClusterVolumesRequest() (request *GetClusterVolumesRequest) {
 	request = &GetClusterVolumesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "GetClusterVolumes", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "GetClusterVolumes", "", "")
 	return
 }
 

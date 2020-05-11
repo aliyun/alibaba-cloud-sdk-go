@@ -100,7 +100,7 @@ func CreateDescribeImagePriceRequest() (request *DescribeImagePriceRequest) {
 	request = &DescribeImagePriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribeImagePrice", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribeImagePrice", "", "")
 	return
 }
 

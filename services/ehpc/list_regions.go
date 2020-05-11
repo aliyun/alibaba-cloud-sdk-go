@@ -90,7 +90,7 @@ func CreateListRegionsRequest() (request *ListRegionsRequest) {
 	request = &ListRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListRegions", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListRegions", "", "")
 	return
 }
 

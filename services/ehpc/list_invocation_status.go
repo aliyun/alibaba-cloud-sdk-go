@@ -94,7 +94,7 @@ func CreateListInvocationStatusRequest() (request *ListInvocationStatusRequest) 
 	request = &ListInvocationStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListInvocationStatus", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListInvocationStatus", "", "")
 	return
 }
 

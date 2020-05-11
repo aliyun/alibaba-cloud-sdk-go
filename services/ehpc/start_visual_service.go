@@ -93,7 +93,7 @@ func CreateStartVisualServiceRequest() (request *StartVisualServiceRequest) {
 	request = &StartVisualServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "StartVisualService", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "StartVisualService", "", "")
 	return
 }
 

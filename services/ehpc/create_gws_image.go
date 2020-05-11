@@ -92,7 +92,7 @@ func CreateCreateGWSImageRequest() (request *CreateGWSImageRequest) {
 	request = &CreateGWSImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "CreateGWSImage", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "CreateGWSImage", "", "")
 	return
 }
 

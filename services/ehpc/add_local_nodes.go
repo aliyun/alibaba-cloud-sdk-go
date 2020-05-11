@@ -92,7 +92,7 @@ func CreateAddLocalNodesRequest() (request *AddLocalNodesRequest) {
 	request = &AddLocalNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "AddLocalNodes", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "AddLocalNodes", "", "")
 	return
 }
 

@@ -82,6 +82,7 @@ type ListInstalledSoftwareRequest struct {
 // ListInstalledSoftwareResponse is the response struct for api ListInstalledSoftware
 type ListInstalledSoftwareResponse struct {
 	*responses.BaseResponse
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	SoftwareList SoftwareList `json:"SoftwareList" xml:"SoftwareList"`
 }
 
@@ -90,7 +91,7 @@ func CreateListInstalledSoftwareRequest() (request *ListInstalledSoftwareRequest
 	request = &ListInstalledSoftwareRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListInstalledSoftware", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListInstalledSoftware", "", "")
 	return
 }
 

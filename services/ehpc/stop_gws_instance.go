@@ -90,7 +90,7 @@ func CreateStopGWSInstanceRequest() (request *StopGWSInstanceRequest) {
 	request = &StopGWSInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "StopGWSInstance", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "StopGWSInstance", "", "")
 	return
 }
 

@@ -45,6 +45,7 @@ type ClusterInfo struct {
 	InstanceCount      int                           `json:"InstanceCount" xml:"InstanceCount"`
 	KeyPairName        string                        `json:"KeyPairName" xml:"KeyPairName"`
 	OsTag              string                        `json:"OsTag" xml:"OsTag"`
+	ImageName          string                        `json:"ImageName" xml:"ImageName"`
 	Status             string                        `json:"Status" xml:"Status"`
 	EcsInfo            EcsInfo                       `json:"EcsInfo" xml:"EcsInfo"`
 	PostInstallScripts PostInstallScripts            `json:"PostInstallScripts" xml:"PostInstallScripts"`

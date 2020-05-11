@@ -84,13 +84,15 @@ type DescribePriceRequest struct {
 
 // DescribePriceCommodities is a repeated param struct in DescribePriceRequest
 type DescribePriceCommodities struct {
-	Amount             string `name:"Amount"`
-	Period             string `name:"Period"`
-	NodeType           string `name:"NodeType"`
-	SystemDiskCategory string `name:"SystemDiskCategory"`
-	SystemDiskSize     string `name:"SystemDiskSize"`
-	InstanceType       string `name:"InstanceType"`
-	NetworkType        string `name:"NetworkType"`
+	Amount                  string `name:"Amount"`
+	Period                  string `name:"Period"`
+	NodeType                string `name:"NodeType"`
+	SystemDiskCategory      string `name:"SystemDiskCategory"`
+	InternetChargeType      string `name:"InternetChargeType"`
+	SystemDiskSize          string `name:"SystemDiskSize"`
+	InternetMaxBandWidthOut string `name:"InternetMaxBandWidthOut"`
+	InstanceType            string `name:"InstanceType"`
+	NetworkType             string `name:"NetworkType"`
 }
 
 // DescribePriceResponse is the response struct for api DescribePrice
@@ -106,7 +108,7 @@ func CreateDescribePriceRequest() (request *DescribePriceRequest) {
 	request = &DescribePriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribePrice", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribePrice", "", "")
 	return
 }
 

@@ -92,7 +92,7 @@ func CreateUnbindAccountToClusterUserRequest() (request *UnbindAccountToClusterU
 	request = &UnbindAccountToClusterUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "UnbindAccountToClusterUser", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "UnbindAccountToClusterUser", "", "")
 	return
 }
 

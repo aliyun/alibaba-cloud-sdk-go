@@ -22,6 +22,7 @@ type QueueInfo struct {
 	SpotPriceLimit      float64       `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
 	EnableAutoGrow      bool          `json:"EnableAutoGrow" xml:"EnableAutoGrow"`
 	EnableAutoShrink    bool          `json:"EnableAutoShrink" xml:"EnableAutoShrink"`
+	MinNodesInQueue     int           `json:"MinNodesInQueue" xml:"MinNodesInQueue"`
 	InstanceType        string        `json:"InstanceType" xml:"InstanceType"`
 	SpotStrategy        string        `json:"SpotStrategy" xml:"SpotStrategy"`
 	ComputeInstanceType string        `json:"ComputeInstanceType" xml:"ComputeInstanceType"`

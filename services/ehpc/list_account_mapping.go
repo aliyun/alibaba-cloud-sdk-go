@@ -91,7 +91,7 @@ func CreateListAccountMappingRequest() (request *ListAccountMappingRequest) {
 	request = &ListAccountMappingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListAccountMapping", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListAccountMapping", "", "")
 	return
 }
 

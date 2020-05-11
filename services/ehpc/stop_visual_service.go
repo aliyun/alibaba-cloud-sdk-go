@@ -93,7 +93,7 @@ func CreateStopVisualServiceRequest() (request *StopVisualServiceRequest) {
 	request = &StopVisualServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "StopVisualService", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "StopVisualService", "", "")
 	return
 }
 

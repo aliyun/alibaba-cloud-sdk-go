@@ -95,7 +95,7 @@ func CreateMountNFSRequest() (request *MountNFSRequest) {
 	request = &MountNFSRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "MountNFS", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "MountNFS", "", "")
 	return
 }
 

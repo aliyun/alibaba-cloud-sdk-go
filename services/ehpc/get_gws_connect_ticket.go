@@ -83,7 +83,8 @@ type GetGWSConnectTicketRequest struct {
 // GetGWSConnectTicketResponse is the response struct for api GetGWSConnectTicket
 type GetGWSConnectTicketResponse struct {
 	*responses.BaseResponse
-	Ticket string `json:"Ticket" xml:"Ticket"`
+	Ticket    string `json:"Ticket" xml:"Ticket"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetGWSConnectTicketRequest creates a request to invoke GetGWSConnectTicket API
@@ -91,7 +92,7 @@ func CreateGetGWSConnectTicketRequest() (request *GetGWSConnectTicketRequest) {
 	request = &GetGWSConnectTicketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "GetGWSConnectTicket", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "GetGWSConnectTicket", "", "")
 	return
 }
 

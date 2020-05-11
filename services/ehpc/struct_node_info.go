@@ -27,6 +27,7 @@ type NodeInfo struct {
 	Version         string           `json:"Version" xml:"Version"`
 	ImageOwnerAlias string           `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
 	CreateMode      string           `json:"CreateMode" xml:"CreateMode"`
+	PublicIpAddress string           `json:"PublicIpAddress" xml:"PublicIpAddress"`
 	Location        string           `json:"Location" xml:"Location"`
 	RegionId        string           `json:"RegionId" xml:"RegionId"`
 	ZoneId          string           `json:"ZoneId" xml:"ZoneId"`

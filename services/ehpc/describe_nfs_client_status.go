@@ -82,8 +82,9 @@ type DescribeNFSClientStatusRequest struct {
 // DescribeNFSClientStatusResponse is the response struct for api DescribeNFSClientStatus
 type DescribeNFSClientStatusResponse struct {
 	*responses.BaseResponse
-	Status string `json:"Status" xml:"Status"`
-	Result Result `json:"Result" xml:"Result"`
+	Status    string `json:"Status" xml:"Status"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Result    Result `json:"Result" xml:"Result"`
 }
 
 // CreateDescribeNFSClientStatusRequest creates a request to invoke DescribeNFSClientStatus API
@@ -91,7 +92,7 @@ func CreateDescribeNFSClientStatusRequest() (request *DescribeNFSClientStatusReq
 	request = &DescribeNFSClientStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribeNFSClientStatus", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribeNFSClientStatus", "", "")
 	return
 }
 

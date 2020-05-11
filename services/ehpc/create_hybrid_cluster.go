@@ -76,34 +76,38 @@ func (client *Client) CreateHybridClusterWithCallback(request *CreateHybridClust
 // CreateHybridClusterRequest is the request struct for api CreateHybridCluster
 type CreateHybridClusterRequest struct {
 	*requests.RpcRequest
+	KeyPairName                 string                                  `position:"Query" name:"KeyPairName"`
+	SecurityGroupName           string                                  `position:"Query" name:"SecurityGroupName"`
+	OnPremiseVolumeRemotePath   string                                  `position:"Query" name:"OnPremiseVolumeRemotePath"`
+	ImageOwnerAlias             string                                  `position:"Query" name:"ImageOwnerAlias"`
+	ResourceGroupId             string                                  `position:"Query" name:"ResourceGroupId"`
+	Password                    string                                  `position:"Query" name:"Password"`
+	ComputeSpotPriceLimit       requests.Float                          `position:"Query" name:"ComputeSpotPriceLimit"`
+	OnPremiseVolumeLocalPath    string                                  `position:"Query" name:"OnPremiseVolumeLocalPath"`
+	RemoteDirectory             string                                  `position:"Query" name:"RemoteDirectory"`
+	ComputeSpotStrategy         string                                  `position:"Query" name:"ComputeSpotStrategy"`
+	PostInstallScript           *[]CreateHybridClusterPostInstallScript `position:"Query" name:"PostInstallScript"  type:"Repeated"`
+	VSwitchId                   string                                  `position:"Query" name:"VSwitchId"`
+	Domain                      string                                  `position:"Query" name:"Domain"`
+	Name                        string                                  `position:"Query" name:"Name"`
+	VolumeId                    string                                  `position:"Query" name:"VolumeId"`
+	ZoneId                      string                                  `position:"Query" name:"ZoneId"`
+	ImageId                     string                                  `position:"Query" name:"ImageId"`
 	EhpcVersion                 string                                  `position:"Query" name:"EhpcVersion"`
 	SecurityGroupId             string                                  `position:"Query" name:"SecurityGroupId"`
 	Description                 string                                  `position:"Query" name:"Description"`
-	KeyPairName                 string                                  `position:"Query" name:"KeyPairName"`
-	SecurityGroupName           string                                  `position:"Query" name:"SecurityGroupName"`
 	EcsOrderComputeInstanceType string                                  `position:"Query" name:"EcsOrder.Compute.InstanceType"`
-	OnPremiseVolumeRemotePath   string                                  `position:"Query" name:"OnPremiseVolumeRemotePath"`
 	JobQueue                    string                                  `position:"Query" name:"JobQueue"`
 	VolumeType                  string                                  `position:"Query" name:"VolumeType"`
-	ResourceGroupId             string                                  `position:"Query" name:"ResourceGroupId"`
-	Password                    string                                  `position:"Query" name:"Password"`
 	OnPremiseVolumeMountPoint   string                                  `position:"Query" name:"OnPremiseVolumeMountPoint"`
 	OnPremiseVolumeProtocol     string                                  `position:"Query" name:"OnPremiseVolumeProtocol"`
 	VolumeProtocol              string                                  `position:"Query" name:"VolumeProtocol"`
-	OnPremiseVolumeLocalPath    string                                  `position:"Query" name:"OnPremiseVolumeLocalPath"`
 	ClientVersion               string                                  `position:"Query" name:"ClientVersion"`
 	OsTag                       string                                  `position:"Query" name:"OsTag"`
-	RemoteDirectory             string                                  `position:"Query" name:"RemoteDirectory"`
-	PostInstallScript           *[]CreateHybridClusterPostInstallScript `position:"Query" name:"PostInstallScript"  type:"Repeated"`
-	VSwitchId                   string                                  `position:"Query" name:"VSwitchId"`
 	Nodes                       *[]CreateHybridClusterNodes             `position:"Query" name:"Nodes"  type:"Repeated"`
 	Application                 *[]CreateHybridClusterApplication       `position:"Query" name:"Application"  type:"Repeated"`
-	Domain                      string                                  `position:"Query" name:"Domain"`
 	VpcId                       string                                  `position:"Query" name:"VpcId"`
-	Name                        string                                  `position:"Query" name:"Name"`
-	VolumeId                    string                                  `position:"Query" name:"VolumeId"`
 	VolumeMountpoint            string                                  `position:"Query" name:"VolumeMountpoint"`
-	ZoneId                      string                                  `position:"Query" name:"ZoneId"`
 	SchedulerPreInstall         requests.Boolean                        `position:"Query" name:"SchedulerPreInstall"`
 	Location                    string                                  `position:"Query" name:"Location"`
 }
@@ -140,7 +144,7 @@ func CreateCreateHybridClusterRequest() (request *CreateHybridClusterRequest) {
 	request = &CreateHybridClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "CreateHybridCluster", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "CreateHybridCluster", "", "")
 	return
 }
 

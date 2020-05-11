@@ -96,7 +96,7 @@ func CreateListCloudMetricProfilingsRequest() (request *ListCloudMetricProfiling
 	request = &ListCloudMetricProfilingsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListCloudMetricProfilings", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListCloudMetricProfilings", "", "")
 	return
 }
 

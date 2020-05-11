@@ -91,7 +91,7 @@ func CreateDescribeImageGatewayConfigRequest() (request *DescribeImageGatewayCon
 	request = &DescribeImageGatewayConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribeImageGatewayConfig", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribeImageGatewayConfig", "", "")
 	return
 }
 

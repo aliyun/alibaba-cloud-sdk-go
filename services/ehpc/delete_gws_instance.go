@@ -90,7 +90,7 @@ func CreateDeleteGWSInstanceRequest() (request *DeleteGWSInstanceRequest) {
 	request = &DeleteGWSInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "DeleteGWSInstance", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "DeleteGWSInstance", "", "")
 	return
 }
 

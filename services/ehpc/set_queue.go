@@ -97,7 +97,7 @@ func CreateSetQueueRequest() (request *SetQueueRequest) {
 	request = &SetQueueRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "SetQueue", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "SetQueue", "", "")
 	return
 }
 

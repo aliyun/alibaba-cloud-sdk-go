@@ -92,7 +92,7 @@ func CreateSetGWSInstanceUserRequest() (request *SetGWSInstanceUserRequest) {
 	request = &SetGWSInstanceUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "SetGWSInstanceUser", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "SetGWSInstanceUser", "", "")
 	return
 }
 

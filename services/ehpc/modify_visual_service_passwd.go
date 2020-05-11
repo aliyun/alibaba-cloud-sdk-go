@@ -94,7 +94,7 @@ func CreateModifyVisualServicePasswdRequest() (request *ModifyVisualServicePassw
 	request = &ModifyVisualServicePasswdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ModifyVisualServicePasswd", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ModifyVisualServicePasswd", "", "")
 	return
 }
 

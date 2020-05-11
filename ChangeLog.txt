@@ -1,3 +1,7 @@
+2020-05-11 Version: v1.61.181
+- Generated 2018-04-12 for `EHPC`.
+- Add new openapi ApplyNodes.
+
 2020-05-11 Version: v1.61.180
 - Generated 2017-08-01 for `polardb`.
 - Support CreationCategory for CreateDBCluster.

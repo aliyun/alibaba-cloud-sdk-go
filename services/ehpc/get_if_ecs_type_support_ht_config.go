@@ -93,7 +93,7 @@ func CreateGetIfEcsTypeSupportHtConfigRequest() (request *GetIfEcsTypeSupportHtC
 	request = &GetIfEcsTypeSupportHtConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "GetIfEcsTypeSupportHtConfig", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "GetIfEcsTypeSupportHtConfig", "", "")
 	return
 }
 

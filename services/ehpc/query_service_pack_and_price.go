@@ -97,7 +97,7 @@ func CreateQueryServicePackAndPriceRequest() (request *QueryServicePackAndPriceR
 	request = &QueryServicePackAndPriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "QueryServicePackAndPrice", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "QueryServicePackAndPrice", "", "")
 	return
 }
 
