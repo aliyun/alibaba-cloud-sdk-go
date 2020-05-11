@@ -95,7 +95,7 @@ func CreateDeleteBackupRequest() (request *DeleteBackupRequest) {
 	request = &DeleteBackupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DeleteBackup", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DeleteBackup", "polardb", "openAPI")
 	return
 }
 

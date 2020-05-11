@@ -96,7 +96,7 @@ func CreateModifyAccountPasswordRequest() (request *ModifyAccountPasswordRequest
 	request = &ModifyAccountPasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyAccountPassword", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyAccountPassword", "polardb", "openAPI")
 	return
 }
 

@@ -101,7 +101,7 @@ func CreateCreateDatabaseRequest() (request *CreateDatabaseRequest) {
 	request = &CreateDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "CreateDatabase", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "CreateDatabase", "polardb", "openAPI")
 	return
 }
 

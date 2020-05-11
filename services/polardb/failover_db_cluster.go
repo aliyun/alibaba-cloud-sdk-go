@@ -96,7 +96,7 @@ func CreateFailoverDBClusterRequest() (request *FailoverDBClusterRequest) {
 	request = &FailoverDBClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "FailoverDBCluster", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "FailoverDBCluster", "polardb", "openAPI")
 	return
 }
 

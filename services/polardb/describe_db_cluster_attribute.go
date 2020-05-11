@@ -86,32 +86,33 @@ type DescribeDBClusterAttributeRequest struct {
 // DescribeDBClusterAttributeResponse is the response struct for api DescribeDBClusterAttribute
 type DescribeDBClusterAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId            string   `json:"RequestId" xml:"RequestId"`
-	RegionId             string   `json:"RegionId" xml:"RegionId"`
-	DBClusterNetworkType string   `json:"DBClusterNetworkType" xml:"DBClusterNetworkType"`
-	VPCId                string   `json:"VPCId" xml:"VPCId"`
-	VSwitchId            string   `json:"VSwitchId" xml:"VSwitchId"`
-	PayType              string   `json:"PayType" xml:"PayType"`
-	DBClusterId          string   `json:"DBClusterId" xml:"DBClusterId"`
-	DBClusterStatus      string   `json:"DBClusterStatus" xml:"DBClusterStatus"`
-	DBClusterDescription string   `json:"DBClusterDescription" xml:"DBClusterDescription"`
-	Engine               string   `json:"Engine" xml:"Engine"`
-	DBType               string   `json:"DBType" xml:"DBType"`
-	DBVersion            string   `json:"DBVersion" xml:"DBVersion"`
-	LockMode             string   `json:"LockMode" xml:"LockMode"`
-	DeletionLock         int      `json:"DeletionLock" xml:"DeletionLock"`
-	CreationTime         string   `json:"CreationTime" xml:"CreationTime"`
-	ExpireTime           string   `json:"ExpireTime" xml:"ExpireTime"`
-	Expired              string   `json:"Expired" xml:"Expired"`
-	MaintainTime         string   `json:"MaintainTime" xml:"MaintainTime"`
-	StorageUsed          int64    `json:"StorageUsed" xml:"StorageUsed"`
-	StorageMax           int64    `json:"StorageMax" xml:"StorageMax"`
-	ZoneIds              string   `json:"ZoneIds" xml:"ZoneIds"`
-	SQLSize              int64    `json:"SQLSize" xml:"SQLSize"`
-	IsLatestVersion      bool     `json:"IsLatestVersion" xml:"IsLatestVersion"`
-	ResourceGroupId      string   `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	Tags                 []Tag    `json:"Tags" xml:"Tags"`
-	DBNodes              []DBNode `json:"DBNodes" xml:"DBNodes"`
+	RequestId                 string   `json:"RequestId" xml:"RequestId"`
+	RegionId                  string   `json:"RegionId" xml:"RegionId"`
+	DBClusterNetworkType      string   `json:"DBClusterNetworkType" xml:"DBClusterNetworkType"`
+	VPCId                     string   `json:"VPCId" xml:"VPCId"`
+	VSwitchId                 string   `json:"VSwitchId" xml:"VSwitchId"`
+	PayType                   string   `json:"PayType" xml:"PayType"`
+	DBClusterId               string   `json:"DBClusterId" xml:"DBClusterId"`
+	DBClusterStatus           string   `json:"DBClusterStatus" xml:"DBClusterStatus"`
+	DBClusterDescription      string   `json:"DBClusterDescription" xml:"DBClusterDescription"`
+	Engine                    string   `json:"Engine" xml:"Engine"`
+	DBType                    string   `json:"DBType" xml:"DBType"`
+	DBVersion                 string   `json:"DBVersion" xml:"DBVersion"`
+	LockMode                  string   `json:"LockMode" xml:"LockMode"`
+	DeletionLock              int      `json:"DeletionLock" xml:"DeletionLock"`
+	CreationTime              string   `json:"CreationTime" xml:"CreationTime"`
+	ExpireTime                string   `json:"ExpireTime" xml:"ExpireTime"`
+	Expired                   string   `json:"Expired" xml:"Expired"`
+	MaintainTime              string   `json:"MaintainTime" xml:"MaintainTime"`
+	StorageUsed               int64    `json:"StorageUsed" xml:"StorageUsed"`
+	StorageMax                int64    `json:"StorageMax" xml:"StorageMax"`
+	ZoneIds                   string   `json:"ZoneIds" xml:"ZoneIds"`
+	SQLSize                   int64    `json:"SQLSize" xml:"SQLSize"`
+	IsLatestVersion           bool     `json:"IsLatestVersion" xml:"IsLatestVersion"`
+	ResourceGroupId           string   `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	DataLevel1BackupChainSize int64    `json:"DataLevel1BackupChainSize" xml:"DataLevel1BackupChainSize"`
+	Tags                      []Tag    `json:"Tags" xml:"Tags"`
+	DBNodes                   []DBNode `json:"DBNodes" xml:"DBNodes"`
 }
 
 // CreateDescribeDBClusterAttributeRequest creates a request to invoke DescribeDBClusterAttribute API
@@ -119,7 +120,7 @@ func CreateDescribeDBClusterAttributeRequest() (request *DescribeDBClusterAttrib
 	request = &DescribeDBClusterAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterAttribute", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterAttribute", "polardb", "openAPI")
 	return
 }
 

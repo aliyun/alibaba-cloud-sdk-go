@@ -17,26 +17,28 @@ package polardb
 
 // DBCluster is a nested struct in polardb response
 type DBCluster struct {
-	DBClusterId          string                      `json:"DBClusterId" xml:"DBClusterId"`
-	DBClusterDescription string                      `json:"DBClusterDescription" xml:"DBClusterDescription"`
-	PayType              string                      `json:"PayType" xml:"PayType"`
-	DBClusterNetworkType string                      `json:"DBClusterNetworkType" xml:"DBClusterNetworkType"`
-	RegionId             string                      `json:"RegionId" xml:"RegionId"`
-	ZoneId               string                      `json:"ZoneId" xml:"ZoneId"`
-	ExpireTime           string                      `json:"ExpireTime" xml:"ExpireTime"`
-	Expired              string                      `json:"Expired" xml:"Expired"`
-	DBClusterStatus      string                      `json:"DBClusterStatus" xml:"DBClusterStatus"`
-	Engine               string                      `json:"Engine" xml:"Engine"`
+	DBNodeClass          string                      `json:"DBNodeClass" xml:"DBNodeClass"`
+	DeletionLock         int                         `json:"DeletionLock" xml:"DeletionLock"`
 	DBType               string                      `json:"DBType" xml:"DBType"`
 	DBVersion            string                      `json:"DBVersion" xml:"DBVersion"`
-	LockMode             string                      `json:"LockMode" xml:"LockMode"`
-	DeletionLock         int                         `json:"DeletionLock" xml:"DeletionLock"`
+	Engine               string                      `json:"Engine" xml:"Engine"`
+	PayType              string                      `json:"PayType" xml:"PayType"`
 	CreateTime           string                      `json:"CreateTime" xml:"CreateTime"`
-	VpcId                string                      `json:"VpcId" xml:"VpcId"`
+	DBClusterNetworkType string                      `json:"DBClusterNetworkType" xml:"DBClusterNetworkType"`
+	DBClusterId          string                      `json:"DBClusterId" xml:"DBClusterId"`
+	DBClusterStatus      string                      `json:"DBClusterStatus" xml:"DBClusterStatus"`
+	RegionId             string                      `json:"RegionId" xml:"RegionId"`
+	DeletedTime          string                      `json:"DeletedTime" xml:"DeletedTime"`
+	ZoneId               string                      `json:"ZoneId" xml:"ZoneId"`
 	DBNodeNumber         int                         `json:"DBNodeNumber" xml:"DBNodeNumber"`
-	DBNodeClass          string                      `json:"DBNodeClass" xml:"DBNodeClass"`
-	StorageUsed          int64                       `json:"StorageUsed" xml:"StorageUsed"`
 	ResourceGroupId      string                      `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	StorageUsed          int64                       `json:"StorageUsed" xml:"StorageUsed"`
+	IsDeleted            int                         `json:"IsDeleted" xml:"IsDeleted"`
+	DBClusterDescription string                      `json:"DBClusterDescription" xml:"DBClusterDescription"`
+	ExpireTime           string                      `json:"ExpireTime" xml:"ExpireTime"`
+	VpcId                string                      `json:"VpcId" xml:"VpcId"`
+	Expired              string                      `json:"Expired" xml:"Expired"`
+	LockMode             string                      `json:"LockMode" xml:"LockMode"`
 	DBNodes              DBNodesInDescribeDBClusters `json:"DBNodes" xml:"DBNodes"`
 	Tags                 TagsInDescribeDBClusters    `json:"Tags" xml:"Tags"`
 }

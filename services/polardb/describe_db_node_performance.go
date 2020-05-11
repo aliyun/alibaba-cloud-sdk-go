@@ -106,7 +106,7 @@ func CreateDescribeDBNodePerformanceRequest() (request *DescribeDBNodePerformanc
 	request = &DescribeDBNodePerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBNodePerformance", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBNodePerformance", "polardb", "openAPI")
 	return
 }
 

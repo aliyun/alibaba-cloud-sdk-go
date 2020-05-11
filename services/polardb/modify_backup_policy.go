@@ -76,14 +76,17 @@ func (client *Client) ModifyBackupPolicyWithCallback(request *ModifyBackupPolicy
 // ModifyBackupPolicyRequest is the request struct for api ModifyBackupPolicy
 type ModifyBackupPolicyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PreferredBackupPeriod string           `position:"Query" name:"PreferredBackupPeriod"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBClusterId           string           `position:"Query" name:"DBClusterId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	PreferredBackupTime   string           `position:"Query" name:"PreferredBackupTime"`
-	BackupRetentionPeriod string           `position:"Query" name:"BackupRetentionPeriod"`
+	ResourceOwnerId                        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DataLevel2BackupRetentionPeriod        string           `position:"Query" name:"DataLevel2BackupRetentionPeriod"`
+	PreferredBackupPeriod                  string           `position:"Query" name:"PreferredBackupPeriod"`
+	DataLevel1BackupRetentionPeriod        string           `position:"Query" name:"DataLevel1BackupRetentionPeriod"`
+	BackupRetentionPolicyOnClusterDeletion string           `position:"Query" name:"BackupRetentionPolicyOnClusterDeletion"`
+	ResourceOwnerAccount                   string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBClusterId                            string           `position:"Query" name:"DBClusterId"`
+	OwnerAccount                           string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                                requests.Integer `position:"Query" name:"OwnerId"`
+	PreferredBackupTime                    string           `position:"Query" name:"PreferredBackupTime"`
+	BackupRetentionPeriod                  string           `position:"Query" name:"BackupRetentionPeriod"`
 }
 
 // ModifyBackupPolicyResponse is the response struct for api ModifyBackupPolicy
@@ -97,7 +100,7 @@ func CreateModifyBackupPolicyRequest() (request *ModifyBackupPolicyRequest) {
 	request = &ModifyBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyBackupPolicy", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyBackupPolicy", "polardb", "openAPI")
 	return
 }
 

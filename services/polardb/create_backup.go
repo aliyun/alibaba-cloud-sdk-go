@@ -95,7 +95,7 @@ func CreateCreateBackupRequest() (request *CreateBackupRequest) {
 	request = &CreateBackupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "CreateBackup", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "CreateBackup", "polardb", "openAPI")
 	return
 }
 

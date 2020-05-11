@@ -99,7 +99,7 @@ func CreateModifyDBEndpointAddressRequest() (request *ModifyDBEndpointAddressReq
 	request = &ModifyDBEndpointAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBEndpointAddress", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBEndpointAddress", "polardb", "openAPI")
 	return
 }
 

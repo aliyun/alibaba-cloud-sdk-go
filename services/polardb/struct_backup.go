@@ -17,15 +17,17 @@ package polardb
 
 // Backup is a nested struct in polardb response
 type Backup struct {
-	BackupId        string `json:"BackupId" xml:"BackupId"`
-	DBClusterId     string `json:"DBClusterId" xml:"DBClusterId"`
-	BackupStatus    string `json:"BackupStatus" xml:"BackupStatus"`
-	BackupStartTime string `json:"BackupStartTime" xml:"BackupStartTime"`
-	BackupEndTime   string `json:"BackupEndTime" xml:"BackupEndTime"`
-	BackupType      string `json:"BackupType" xml:"BackupType"`
 	BackupMode      string `json:"BackupMode" xml:"BackupMode"`
-	BackupMethod    string `json:"BackupMethod" xml:"BackupMethod"`
-	StoreStatus     string `json:"StoreStatus" xml:"StoreStatus"`
+	IsAvail         string `json:"IsAvail" xml:"IsAvail"`
 	BackupSetSize   string `json:"BackupSetSize" xml:"BackupSetSize"`
+	BackupEndTime   string `json:"BackupEndTime" xml:"BackupEndTime"`
+	BackupMethod    string `json:"BackupMethod" xml:"BackupMethod"`
+	DBClusterId     string `json:"DBClusterId" xml:"DBClusterId"`
+	BackupType      string `json:"BackupType" xml:"BackupType"`
+	BackupStatus    string `json:"BackupStatus" xml:"BackupStatus"`
+	StoreStatus     string `json:"StoreStatus" xml:"StoreStatus"`
+	BackupStartTime string `json:"BackupStartTime" xml:"BackupStartTime"`
 	ConsistentTime  string `json:"ConsistentTime" xml:"ConsistentTime"`
+	BackupsLevel    string `json:"BackupsLevel" xml:"BackupsLevel"`
+	BackupId        string `json:"BackupId" xml:"BackupId"`
 }

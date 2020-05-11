@@ -86,11 +86,14 @@ type DescribeBackupPolicyRequest struct {
 // DescribeBackupPolicyResponse is the response struct for api DescribeBackupPolicy
 type DescribeBackupPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
-	BackupRetentionPeriod   int    `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
-	PreferredNextBackupTime string `json:"PreferredNextBackupTime" xml:"PreferredNextBackupTime"`
-	PreferredBackupTime     string `json:"PreferredBackupTime" xml:"PreferredBackupTime"`
-	PreferredBackupPeriod   string `json:"PreferredBackupPeriod" xml:"PreferredBackupPeriod"`
+	RequestId                              string `json:"RequestId" xml:"RequestId"`
+	BackupRetentionPeriod                  int    `json:"BackupRetentionPeriod" xml:"BackupRetentionPeriod"`
+	PreferredNextBackupTime                string `json:"PreferredNextBackupTime" xml:"PreferredNextBackupTime"`
+	PreferredBackupTime                    string `json:"PreferredBackupTime" xml:"PreferredBackupTime"`
+	PreferredBackupPeriod                  string `json:"PreferredBackupPeriod" xml:"PreferredBackupPeriod"`
+	DataLevel1BackupRetentionPeriod        string `json:"DataLevel1BackupRetentionPeriod" xml:"DataLevel1BackupRetentionPeriod"`
+	DataLevel2BackupRetentionPeriod        string `json:"DataLevel2BackupRetentionPeriod" xml:"DataLevel2BackupRetentionPeriod"`
+	BackupRetentionPolicyOnClusterDeletion string `json:"BackupRetentionPolicyOnClusterDeletion" xml:"BackupRetentionPolicyOnClusterDeletion"`
 }
 
 // CreateDescribeBackupPolicyRequest creates a request to invoke DescribeBackupPolicy API
@@ -98,7 +101,7 @@ func CreateDescribeBackupPolicyRequest() (request *DescribeBackupPolicyRequest) 
 	request = &DescribeBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeBackupPolicy", "", "")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeBackupPolicy", "polardb", "openAPI")
 	return
 }
 
