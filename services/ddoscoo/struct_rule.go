@@ -22,9 +22,9 @@ type Rule struct {
 	Expires       int64       `json:"Expires" xml:"Expires"`
 	Status        int         `json:"Status" xml:"Status"`
 	Priority      int         `json:"Priority" xml:"Priority"`
+	RegionId      string      `json:"RegionId" xml:"RegionId"`
 	Action        string      `json:"Action" xml:"Action"`
 	ValueType     int         `json:"ValueType" xml:"ValueType"`
-	RegionId      int         `json:"RegionId" xml:"RegionId"`
 	Owner         string      `json:"Owner" xml:"Owner"`
 	RestoreDelay  int         `json:"RestoreDelay" xml:"RestoreDelay"`
 	Type          string      `json:"Type" xml:"Type"`
