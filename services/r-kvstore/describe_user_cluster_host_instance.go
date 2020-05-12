@@ -77,13 +77,13 @@ func (client *Client) DescribeUserClusterHostInstanceWithCallback(request *Descr
 type DescribeUserClusterHostInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           string           `position:"Query" name:"PageNumber"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	Engine               string           `position:"Query" name:"Engine"`
 	InstanceStatus       string           `position:"Query" name:"InstanceStatus"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	MaxRecordsPerPage    string           `position:"Query" name:"MaxRecordsPerPage"`
+	MaxRecordsPerPage    requests.Integer `position:"Query" name:"MaxRecordsPerPage"`
 	ClusterId            string           `position:"Query" name:"ClusterId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceIds          string           `position:"Query" name:"InstanceIds"`
