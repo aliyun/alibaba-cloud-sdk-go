@@ -94,7 +94,7 @@ func CreateCreateVerifySDKRequest() (request *CreateVerifySDKRequest) {
 	request = &CreateVerifySDKRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "CreateVerifySDK", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2018-09-16", "CreateVerifySDK", "cloudauth", "openAPI")
 	return
 }
 
