@@ -1,3 +1,8 @@
+2020-05-13 Version: v1.61.188
+- Generated 2018-03-13 for `retailcloud`.
+- Supported AAA for BBB.
+- Fixed bugs for CCC.
+
 2020-05-13 Version: v1.61.187
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Add ExportTas apis.
