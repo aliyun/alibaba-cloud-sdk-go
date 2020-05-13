@@ -22,10 +22,12 @@ type DataModule struct {
 	SpecialValue          string `json:"SpecialValue" xml:"SpecialValue"`
 	HttpsAccOverseasValue string `json:"HttpsAccOverseasValue" xml:"HttpsAccOverseasValue"`
 	HttpsOverseasValue    string `json:"HttpsOverseasValue" xml:"HttpsOverseasValue"`
+	TotalValue            string `json:"TotalValue" xml:"TotalValue"`
 	DomesticValue         string `json:"DomesticValue" xml:"DomesticValue"`
 	AccValue              string `json:"AccValue" xml:"AccValue"`
 	Value                 string `json:"Value" xml:"Value"`
 	AccDomesticValue      string `json:"AccDomesticValue" xml:"AccDomesticValue"`
+	TrafficValue          string `json:"TrafficValue" xml:"TrafficValue"`
 	TimeStamp             string `json:"TimeStamp" xml:"TimeStamp"`
 	HttpsDomesticValue    string `json:"HttpsDomesticValue" xml:"HttpsDomesticValue"`
 	HttpsValue            string `json:"HttpsValue" xml:"HttpsValue"`

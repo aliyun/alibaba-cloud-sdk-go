@@ -1,3 +1,7 @@
+2020-05-13 Version: v1.61.187
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Add ExportTas apis.
+
 2020-05-13 Version: v1.61.186
 - Generated 2019-03-07, 2018-09-16 for `Cloudauth`.
 - About 2019-03-07 and 2018-09-16 Version.
