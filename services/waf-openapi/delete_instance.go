@@ -80,7 +80,6 @@ type DeleteInstanceRequest struct {
 	InstanceId      string `position:"Query" name:"InstanceId"`
 	SourceIp        string `position:"Query" name:"SourceIp"`
 	Lang            string `position:"Query" name:"Lang"`
-	Region          string `position:"Query" name:"Region"`
 }
 
 // DeleteInstanceResponse is the response struct for api DeleteInstance
