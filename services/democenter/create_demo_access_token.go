@@ -76,7 +76,8 @@ func (client *Client) CreateDemoAccessTokenWithCallback(request *CreateDemoAcces
 // CreateDemoAccessTokenRequest is the request struct for api CreateDemoAccessToken
 type CreateDemoAccessTokenRequest struct {
 	*requests.RpcRequest
-	DemoId requests.Integer `position:"Body" name:"DemoId"`
+	Edition requests.Integer `position:"Body" name:"Edition"`
+	DemoId  requests.Integer `position:"Body" name:"DemoId"`
 }
 
 // CreateDemoAccessTokenResponse is the response struct for api CreateDemoAccessToken
@@ -95,7 +96,7 @@ func CreateCreateDemoAccessTokenRequest() (request *CreateDemoAccessTokenRequest
 	request = &CreateDemoAccessTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DemoCenter", "2020-01-21", "CreateDemoAccessToken", "DemoCenter", "openAPI")
+	request.InitWithApiInfo("DemoCenter", "2020-01-21", "CreateDemoAccessToken", "", "")
 	return
 }
 

@@ -90,7 +90,7 @@ func CreateExpireDemoAccessTokenRequest() (request *ExpireDemoAccessTokenRequest
 	request = &ExpireDemoAccessTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DemoCenter", "2020-01-21", "ExpireDemoAccessToken", "DemoCenter", "openAPI")
+	request.InitWithApiInfo("DemoCenter", "2020-01-21", "ExpireDemoAccessToken", "", "")
 	return
 }
 

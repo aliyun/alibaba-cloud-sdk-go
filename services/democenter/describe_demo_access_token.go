@@ -88,6 +88,7 @@ type DescribeDemoAccessTokenResponse struct {
 	OpenUserId      string `json:"OpenUserId" xml:"OpenUserId"`
 	DemoTrialPage   string `json:"DemoTrialPage" xml:"DemoTrialPage"`
 	DemoDetailPage  string `json:"DemoDetailPage" xml:"DemoDetailPage"`
+	Edition         string `json:"Edition" xml:"Edition"`
 }
 
 // CreateDescribeDemoAccessTokenRequest creates a request to invoke DescribeDemoAccessToken API
@@ -95,7 +96,7 @@ func CreateDescribeDemoAccessTokenRequest() (request *DescribeDemoAccessTokenReq
 	request = &DescribeDemoAccessTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DemoCenter", "2020-01-21", "DescribeDemoAccessToken", "DemoCenter", "openAPI")
+	request.InitWithApiInfo("DemoCenter", "2020-01-21", "DescribeDemoAccessToken", "", "")
 	return
 }
 
