@@ -76,6 +76,7 @@ func (client *Client) CreateThingModelWithCallback(request *CreateThingModelRequ
 // CreateThingModelRequest is the request struct for api CreateThingModel
 type CreateThingModelRequest struct {
 	*requests.RpcRequest
+	IotInstanceId  string `position:"Query" name:"IotInstanceId"`
 	ProductKey     string `position:"Query" name:"ProductKey"`
 	ApiProduct     string `position:"Body" name:"ApiProduct"`
 	ThingModelJson string `position:"Query" name:"ThingModelJson"`

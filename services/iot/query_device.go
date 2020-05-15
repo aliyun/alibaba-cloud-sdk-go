@@ -76,10 +76,12 @@ func (client *Client) QueryDeviceWithCallback(request *QueryDeviceRequest, callb
 // QueryDeviceRequest is the request struct for api QueryDevice
 type QueryDeviceRequest struct {
 	*requests.RpcRequest
-	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
-	ProductKey    string           `position:"Query" name:"ProductKey"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
+	ProductKey    string           `position:"Query" name:"ProductKey"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 }
 
 // QueryDeviceResponse is the response struct for api QueryDevice

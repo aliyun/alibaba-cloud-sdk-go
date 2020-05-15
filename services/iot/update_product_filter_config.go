@@ -77,6 +77,7 @@ func (client *Client) UpdateProductFilterConfigWithCallback(request *UpdateProdu
 type UpdateProductFilterConfigRequest struct {
 	*requests.RpcRequest
 	PropertyTimestampFilter requests.Boolean `position:"Query" name:"PropertyTimestampFilter"`
+	IotInstanceId           string           `position:"Query" name:"IotInstanceId"`
 	ProductKey              string           `position:"Query" name:"ProductKey"`
 	ApiProduct              string           `position:"Body" name:"ApiProduct"`
 	ApiRevision             string           `position:"Body" name:"ApiRevision"`

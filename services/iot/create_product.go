@@ -90,6 +90,8 @@ type CreateProductRequest struct {
 	DataFormat          requests.Integer `position:"Query" name:"DataFormat"`
 	Id2                 requests.Boolean `position:"Query" name:"Id2"`
 	NetType             string           `position:"Query" name:"NetType"`
+	ApiProduct          string           `position:"Body" name:"ApiProduct"`
+	ApiRevision         string           `position:"Body" name:"ApiRevision"`
 	ProtocolType        string           `position:"Query" name:"ProtocolType"`
 }
 

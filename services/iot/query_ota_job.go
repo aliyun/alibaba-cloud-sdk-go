@@ -89,10 +89,6 @@ type QueryOTAJobResponse struct {
 	Success      bool   `json:"Success" xml:"Success"`
 	Code         string `json:"Code" xml:"Code"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Total        int    `json:"Total" xml:"Total"`
-	PageSize     int    `json:"PageSize" xml:"PageSize"`
-	PageCount    int    `json:"PageCount" xml:"PageCount"`
-	CurrentPage  int    `json:"CurrentPage" xml:"CurrentPage"`
 	Data         Data   `json:"Data" xml:"Data"`
 }
 

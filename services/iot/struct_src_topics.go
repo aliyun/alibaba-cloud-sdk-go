@@ -17,5 +17,5 @@ package iot
 
 // SrcTopics is a nested struct in iot response
 type SrcTopics struct {
-	Topic []string `json:"Topic" xml:"Topic"`
+	Topic []map[string]interface{} `json:"Topic" xml:"Topic"`
 }

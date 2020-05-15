@@ -77,9 +77,11 @@ func (client *Client) CreateDeviceGroupWithCallback(request *CreateDeviceGroupRe
 type CreateDeviceGroupRequest struct {
 	*requests.RpcRequest
 	SuperGroupId  string `position:"Query" name:"SuperGroupId"`
+	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 	GroupName     string `position:"Query" name:"GroupName"`
 	GroupDesc     string `position:"Query" name:"GroupDesc"`
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // CreateDeviceGroupResponse is the response struct for api CreateDeviceGroup

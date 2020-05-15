@@ -76,8 +76,10 @@ func (client *Client) BatchUpdateDeviceNicknameWithCallback(request *BatchUpdate
 // BatchUpdateDeviceNicknameRequest is the request struct for api BatchUpdateDeviceNickname
 type BatchUpdateDeviceNicknameRequest struct {
 	*requests.RpcRequest
-	DeviceNicknameInfo *[]BatchUpdateDeviceNicknameDeviceNicknameInfo `position:"Query" name:"DeviceNicknameInfo"  type:"Repeated"`
 	IotInstanceId      string                                         `position:"Query" name:"IotInstanceId"`
+	DeviceNicknameInfo *[]BatchUpdateDeviceNicknameDeviceNicknameInfo `position:"Query" name:"DeviceNicknameInfo"  type:"Repeated"`
+	ApiProduct         string                                         `position:"Body" name:"ApiProduct"`
+	ApiRevision        string                                         `position:"Body" name:"ApiRevision"`
 }
 
 // BatchUpdateDeviceNicknameDeviceNicknameInfo is a repeated param struct in BatchUpdateDeviceNicknameRequest

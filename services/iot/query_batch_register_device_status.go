@@ -76,9 +76,11 @@ func (client *Client) QueryBatchRegisterDeviceStatusWithCallback(request *QueryB
 // QueryBatchRegisterDeviceStatusRequest is the request struct for api QueryBatchRegisterDeviceStatus
 type QueryBatchRegisterDeviceStatusRequest struct {
 	*requests.RpcRequest
+	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	ProductKey    string           `position:"Query" name:"ProductKey"`
 	ApplyId       requests.Integer `position:"Query" name:"ApplyId"`
-	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 }
 
 // QueryBatchRegisterDeviceStatusResponse is the response struct for api QueryBatchRegisterDeviceStatus

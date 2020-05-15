@@ -77,12 +77,14 @@ func (client *Client) CreateOTADynamicUpgradeJobWithCallback(request *CreateOTAD
 type CreateOTADynamicUpgradeJobRequest struct {
 	*requests.RpcRequest
 	RetryCount       requests.Integer `position:"Query" name:"RetryCount"`
+	TimeoutInMinutes requests.Integer `position:"Query" name:"TimeoutInMinutes"`
+	IotInstanceId    string           `position:"Query" name:"IotInstanceId"`
 	FirmwareId       string           `position:"Query" name:"FirmwareId"`
 	ProductKey       string           `position:"Query" name:"ProductKey"`
-	TimeoutInMinutes requests.Integer `position:"Query" name:"TimeoutInMinutes"`
 	RetryInterval    requests.Integer `position:"Query" name:"RetryInterval"`
 	SrcVersion       *[]string        `position:"Query" name:"SrcVersion"  type:"Repeated"`
-	IotInstanceId    string           `position:"Query" name:"IotInstanceId"`
+	ApiProduct       string           `position:"Body" name:"ApiProduct"`
+	ApiRevision      string           `position:"Body" name:"ApiRevision"`
 	MaximumPerMinute requests.Integer `position:"Query" name:"MaximumPerMinute"`
 }
 

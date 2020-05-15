@@ -17,5 +17,5 @@ package iot
 
 // ValidList is a nested struct in iot response
 type ValidList struct {
-	Name []string `json:"Name" xml:"Name"`
+	Name []map[string]interface{} `json:"Name" xml:"Name"`
 }

@@ -76,8 +76,10 @@ func (client *Client) QueryProductTopicWithCallback(request *QueryProductTopicRe
 // QueryProductTopicRequest is the request struct for api QueryProductTopic
 type QueryProductTopicRequest struct {
 	*requests.RpcRequest
-	ProductKey    string `position:"Query" name:"ProductKey"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	ProductKey    string `position:"Query" name:"ProductKey"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // QueryProductTopicResponse is the response struct for api QueryProductTopic

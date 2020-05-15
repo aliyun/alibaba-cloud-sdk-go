@@ -83,7 +83,9 @@ type UpdateRuleRequest struct {
 	Where         string           `position:"Query" name:"Where"`
 	TopicType     requests.Integer `position:"Query" name:"TopicType"`
 	ProductKey    string           `position:"Query" name:"ProductKey"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
 	Name          string           `position:"Query" name:"Name"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 	RuleId        requests.Integer `position:"Query" name:"RuleId"`
 }
 

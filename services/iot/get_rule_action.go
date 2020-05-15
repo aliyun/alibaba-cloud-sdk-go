@@ -78,6 +78,8 @@ type GetRuleActionRequest struct {
 	*requests.RpcRequest
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	ActionId      requests.Integer `position:"Query" name:"ActionId"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 }
 
 // GetRuleActionResponse is the response struct for api GetRuleAction

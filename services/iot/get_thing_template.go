@@ -79,6 +79,8 @@ type GetThingTemplateRequest struct {
 	CategoryKey     string `position:"Query" name:"CategoryKey"`
 	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	IotInstanceId   string `position:"Query" name:"IotInstanceId"`
+	ApiProduct      string `position:"Body" name:"ApiProduct"`
+	ApiRevision     string `position:"Body" name:"ApiRevision"`
 }
 
 // GetThingTemplateResponse is the response struct for api GetThingTemplate

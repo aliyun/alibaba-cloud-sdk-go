@@ -76,10 +76,12 @@ func (client *Client) QueryDeviceListByDeviceGroupWithCallback(request *QueryDev
 // QueryDeviceListByDeviceGroupRequest is the request struct for api QueryDeviceListByDeviceGroup
 type QueryDeviceListByDeviceGroupRequest struct {
 	*requests.RpcRequest
-	GroupId       string           `position:"Query" name:"GroupId"`
-	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	GroupId       string           `position:"Query" name:"GroupId"`
+	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 }
 
 // QueryDeviceListByDeviceGroupResponse is the response struct for api QueryDeviceListByDeviceGroup

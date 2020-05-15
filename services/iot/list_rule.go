@@ -77,10 +77,12 @@ func (client *Client) ListRuleWithCallback(request *ListRuleRequest, callback fu
 type ListRuleRequest struct {
 	*requests.RpcRequest
 	SearchName      string           `position:"Query" name:"SearchName"`
-	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	IotInstanceId   string           `position:"Query" name:"IotInstanceId"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
+	ApiProduct      string           `position:"Body" name:"ApiProduct"`
+	ApiRevision     string           `position:"Body" name:"ApiRevision"`
 }
 
 // ListRuleResponse is the response struct for api ListRule

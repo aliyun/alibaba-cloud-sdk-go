@@ -78,6 +78,8 @@ type GetLoraNodesTaskRequest struct {
 	*requests.RpcRequest
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 	TaskId        string `position:"Query" name:"TaskId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // GetLoraNodesTaskResponse is the response struct for api GetLoraNodesTask

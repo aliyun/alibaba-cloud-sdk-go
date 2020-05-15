@@ -78,9 +78,11 @@ type NotifyAddThingTopoRequest struct {
 	*requests.RpcRequest
 	GwProductKey  string `position:"Query" name:"GwProductKey"`
 	DeviceListStr string `position:"Query" name:"DeviceListStr"`
-	GwDeviceName  string `position:"Query" name:"GwDeviceName"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 	GwIotId       string `position:"Query" name:"GwIotId"`
+	GwDeviceName  string `position:"Query" name:"GwDeviceName"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // NotifyAddThingTopoResponse is the response struct for api NotifyAddThingTopo

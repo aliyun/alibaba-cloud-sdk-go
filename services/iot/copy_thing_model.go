@@ -76,11 +76,13 @@ func (client *Client) CopyThingModelWithCallback(request *CopyThingModelRequest,
 // CopyThingModelRequest is the request struct for api CopyThingModel
 type CopyThingModelRequest struct {
 	*requests.RpcRequest
-	SourceProductKey   string `position:"Query" name:"SourceProductKey"`
 	TargetProductKey   string `position:"Query" name:"TargetProductKey"`
 	ResourceGroupId    string `position:"Query" name:"ResourceGroupId"`
 	IotInstanceId      string `position:"Query" name:"IotInstanceId"`
 	SourceModelVersion string `position:"Query" name:"SourceModelVersion"`
+	SourceProductKey   string `position:"Query" name:"SourceProductKey"`
+	ApiProduct         string `position:"Body" name:"ApiProduct"`
+	ApiRevision        string `position:"Body" name:"ApiRevision"`
 }
 
 // CopyThingModelResponse is the response struct for api CopyThingModel

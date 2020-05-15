@@ -77,7 +77,9 @@ func (client *Client) QueryTopicReverseRouteTableWithCallback(request *QueryTopi
 type QueryTopicReverseRouteTableRequest struct {
 	*requests.RpcRequest
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
 	Topic         string `position:"Query" name:"Topic"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // QueryTopicReverseRouteTableResponse is the response struct for api QueryTopicReverseRouteTable

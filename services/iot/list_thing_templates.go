@@ -78,6 +78,8 @@ type ListThingTemplatesRequest struct {
 	*requests.RpcRequest
 	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	IotInstanceId   string `position:"Query" name:"IotInstanceId"`
+	ApiProduct      string `position:"Body" name:"ApiProduct"`
+	ApiRevision     string `position:"Body" name:"ApiRevision"`
 }
 
 // ListThingTemplatesResponse is the response struct for api ListThingTemplates

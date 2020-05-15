@@ -76,11 +76,13 @@ func (client *Client) DeleteDeviceFileWithCallback(request *DeleteDeviceFileRequ
 // DeleteDeviceFileRequest is the request struct for api DeleteDeviceFile
 type DeleteDeviceFileRequest struct {
 	*requests.RpcRequest
-	ProductKey    string `position:"Query" name:"ProductKey"`
 	IotId         string `position:"Query" name:"IotId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	DeviceName    string `position:"Query" name:"DeviceName"`
 	FileId        string `position:"Query" name:"FileId"`
+	ProductKey    string `position:"Query" name:"ProductKey"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
+	DeviceName    string `position:"Query" name:"DeviceName"`
 }
 
 // DeleteDeviceFileResponse is the response struct for api DeleteDeviceFile

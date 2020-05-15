@@ -17,10 +17,11 @@ package iot
 
 // DeviceStatus is a nested struct in iot response
 type DeviceStatus struct {
-	DeviceId       string `json:"DeviceId" xml:"DeviceId"`
 	DeviceName     string `json:"DeviceName" xml:"DeviceName"`
-	Status         string `json:"Status" xml:"Status"`
+	IotId          string `json:"IotId" xml:"IotId"`
 	AsAddress      string `json:"AsAddress" xml:"AsAddress"`
 	LastOnlineTime string `json:"LastOnlineTime" xml:"LastOnlineTime"`
-	IotId          string `json:"IotId" xml:"IotId"`
+	DeviceId       string `json:"DeviceId" xml:"DeviceId"`
+	Status         string `json:"Status" xml:"Status"`
+	BindStatus     int    `json:"BindStatus" xml:"BindStatus"`
 }

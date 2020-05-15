@@ -76,9 +76,11 @@ func (client *Client) CreateProductTopicWithCallback(request *CreateProductTopic
 // CreateProductTopicRequest is the request struct for api CreateProductTopic
 type CreateProductTopicRequest struct {
 	*requests.RpcRequest
-	ProductKey     string `position:"Query" name:"ProductKey"`
 	IotInstanceId  string `position:"Query" name:"IotInstanceId"`
 	TopicShortName string `position:"Query" name:"TopicShortName"`
+	ProductKey     string `position:"Query" name:"ProductKey"`
+	ApiProduct     string `position:"Body" name:"ApiProduct"`
+	ApiRevision    string `position:"Body" name:"ApiRevision"`
 	Operation      string `position:"Query" name:"Operation"`
 	Desc           string `position:"Query" name:"Desc"`
 }

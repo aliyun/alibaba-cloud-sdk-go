@@ -78,8 +78,10 @@ type UpdateProductTopicRequest struct {
 	*requests.RpcRequest
 	TopicId        string `position:"Query" name:"TopicId"`
 	IotInstanceId  string `position:"Query" name:"IotInstanceId"`
-	Operation      string `position:"Query" name:"Operation"`
 	TopicShortName string `position:"Query" name:"TopicShortName"`
+	ApiProduct     string `position:"Body" name:"ApiProduct"`
+	ApiRevision    string `position:"Body" name:"ApiRevision"`
+	Operation      string `position:"Query" name:"Operation"`
 	Desc           string `position:"Query" name:"Desc"`
 }
 

@@ -85,7 +85,9 @@ type CreateRuleRequest struct {
 	Where           string           `position:"Query" name:"Where"`
 	TopicType       requests.Integer `position:"Query" name:"TopicType"`
 	ProductKey      string           `position:"Query" name:"ProductKey"`
+	ApiProduct      string           `position:"Body" name:"ApiProduct"`
 	Name            string           `position:"Query" name:"Name"`
+	ApiRevision     string           `position:"Body" name:"ApiRevision"`
 }
 
 // CreateRuleResponse is the response struct for api CreateRule

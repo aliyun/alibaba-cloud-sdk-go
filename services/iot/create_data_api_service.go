@@ -77,7 +77,6 @@ func (client *Client) CreateDataAPIServiceWithCallback(request *CreateDataAPISer
 type CreateDataAPIServiceRequest struct {
 	*requests.RpcRequest
 	RequestParam  *[]CreateDataAPIServiceRequestParam  `position:"Body" name:"RequestParam"  type:"Repeated"`
-	FolderId      string                               `position:"Body" name:"FolderId"`
 	IotInstanceId string                               `position:"Body" name:"IotInstanceId"`
 	ApiPath       string                               `position:"Body" name:"ApiPath"`
 	TemplateSql   string                               `position:"Body" name:"TemplateSql"`

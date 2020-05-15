@@ -76,11 +76,13 @@ func (client *Client) DeleteThingModelWithCallback(request *DeleteThingModelRequ
 // DeleteThingModelRequest is the request struct for api DeleteThingModel
 type DeleteThingModelRequest struct {
 	*requests.RpcRequest
-	ServiceIdentifier  *[]string `position:"Query" name:"ServiceIdentifier"  type:"Repeated"`
-	ProductKey         string    `position:"Query" name:"ProductKey"`
 	ResourceGroupId    string    `position:"Query" name:"ResourceGroupId"`
 	PropertyIdentifier *[]string `position:"Query" name:"PropertyIdentifier"  type:"Repeated"`
 	IotInstanceId      string    `position:"Query" name:"IotInstanceId"`
+	ServiceIdentifier  *[]string `position:"Query" name:"ServiceIdentifier"  type:"Repeated"`
+	ProductKey         string    `position:"Query" name:"ProductKey"`
+	ApiProduct         string    `position:"Body" name:"ApiProduct"`
+	ApiRevision        string    `position:"Body" name:"ApiRevision"`
 	EventIdentifier    *[]string `position:"Query" name:"EventIdentifier"  type:"Repeated"`
 }
 

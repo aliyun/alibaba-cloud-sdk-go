@@ -79,8 +79,10 @@ type CreateRuleActionRequest struct {
 	Configuration   string           `position:"Query" name:"Configuration"`
 	Type            string           `position:"Query" name:"Type"`
 	IotInstanceId   string           `position:"Query" name:"IotInstanceId"`
-	RuleId          requests.Integer `position:"Query" name:"RuleId"`
 	ErrorActionFlag requests.Boolean `position:"Query" name:"ErrorActionFlag"`
+	ApiProduct      string           `position:"Body" name:"ApiProduct"`
+	ApiRevision     string           `position:"Body" name:"ApiRevision"`
+	RuleId          requests.Integer `position:"Query" name:"RuleId"`
 }
 
 // CreateRuleActionResponse is the response struct for api CreateRuleAction

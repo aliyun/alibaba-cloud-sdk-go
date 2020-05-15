@@ -76,10 +76,12 @@ func (client *Client) PubBroadcastWithCallback(request *PubBroadcastRequest, cal
 // PubBroadcastRequest is the request struct for api PubBroadcast
 type PubBroadcastRequest struct {
 	*requests.RpcRequest
-	TopicFullName  string `position:"Query" name:"TopicFullName"`
 	MessageContent string `position:"Query" name:"MessageContent"`
-	ProductKey     string `position:"Query" name:"ProductKey"`
 	IotInstanceId  string `position:"Query" name:"IotInstanceId"`
+	TopicFullName  string `position:"Query" name:"TopicFullName"`
+	ProductKey     string `position:"Query" name:"ProductKey"`
+	ApiProduct     string `position:"Body" name:"ApiProduct"`
+	ApiRevision    string `position:"Body" name:"ApiRevision"`
 }
 
 // PubBroadcastResponse is the response struct for api PubBroadcast

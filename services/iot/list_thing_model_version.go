@@ -76,19 +76,21 @@ func (client *Client) ListThingModelVersionWithCallback(request *ListThingModelV
 // ListThingModelVersionRequest is the request struct for api ListThingModelVersion
 type ListThingModelVersionRequest struct {
 	*requests.RpcRequest
-	ProductKey      string `position:"Query" name:"ProductKey"`
 	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	IotInstanceId   string `position:"Query" name:"IotInstanceId"`
+	ProductKey      string `position:"Query" name:"ProductKey"`
+	ApiProduct      string `position:"Body" name:"ApiProduct"`
+	ApiRevision     string `position:"Body" name:"ApiRevision"`
 }
 
 // ListThingModelVersionResponse is the response struct for api ListThingModelVersion
 type ListThingModelVersionResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	Code         string `json:"Code" xml:"Code"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data         Data   `json:"Data" xml:"Data"`
+	RequestId    string                      `json:"RequestId" xml:"RequestId"`
+	Success      bool                        `json:"Success" xml:"Success"`
+	Code         string                      `json:"Code" xml:"Code"`
+	ErrorMessage string                      `json:"ErrorMessage" xml:"ErrorMessage"`
+	Data         DataInListThingModelVersion `json:"Data" xml:"Data"`
 }
 
 // CreateListThingModelVersionRequest creates a request to invoke ListThingModelVersion API

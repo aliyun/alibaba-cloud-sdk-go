@@ -76,10 +76,12 @@ func (client *Client) QueryDeviceDesiredPropertyWithCallback(request *QueryDevic
 // QueryDeviceDesiredPropertyRequest is the request struct for api QueryDeviceDesiredProperty
 type QueryDeviceDesiredPropertyRequest struct {
 	*requests.RpcRequest
-	Identifier    *[]string `position:"Query" name:"Identifier"  type:"Repeated"`
-	ProductKey    string    `position:"Query" name:"ProductKey"`
 	IotId         string    `position:"Query" name:"IotId"`
 	IotInstanceId string    `position:"Query" name:"IotInstanceId"`
+	Identifier    *[]string `position:"Query" name:"Identifier"  type:"Repeated"`
+	ProductKey    string    `position:"Query" name:"ProductKey"`
+	ApiProduct    string    `position:"Body" name:"ApiProduct"`
+	ApiRevision   string    `position:"Body" name:"ApiRevision"`
 	DeviceName    string    `position:"Query" name:"DeviceName"`
 }
 

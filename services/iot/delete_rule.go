@@ -77,6 +77,8 @@ func (client *Client) DeleteRuleWithCallback(request *DeleteRuleRequest, callbac
 type DeleteRuleRequest struct {
 	*requests.RpcRequest
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 	RuleId        requests.Integer `position:"Query" name:"RuleId"`
 }
 

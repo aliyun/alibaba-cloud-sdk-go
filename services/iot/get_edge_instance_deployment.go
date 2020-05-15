@@ -86,11 +86,11 @@ type GetEdgeInstanceDeploymentRequest struct {
 // GetEdgeInstanceDeploymentResponse is the response struct for api GetEdgeInstanceDeployment
 type GetEdgeInstanceDeploymentResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	Code         string `json:"Code" xml:"Code"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data         Data   `json:"Data" xml:"Data"`
+	RequestId    string                          `json:"RequestId" xml:"RequestId"`
+	Success      bool                            `json:"Success" xml:"Success"`
+	Code         string                          `json:"Code" xml:"Code"`
+	ErrorMessage string                          `json:"ErrorMessage" xml:"ErrorMessage"`
+	Data         DataInGetEdgeInstanceDeployment `json:"Data" xml:"Data"`
 }
 
 // CreateGetEdgeInstanceDeploymentRequest creates a request to invoke GetEdgeInstanceDeployment API

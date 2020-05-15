@@ -76,9 +76,11 @@ func (client *Client) ImportThingModelTslWithCallback(request *ImportThingModelT
 // ImportThingModelTslRequest is the request struct for api ImportThingModelTsl
 type ImportThingModelTslRequest struct {
 	*requests.RpcRequest
-	ProductKey      string `position:"Query" name:"ProductKey"`
 	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	IotInstanceId   string `position:"Query" name:"IotInstanceId"`
+	ProductKey      string `position:"Query" name:"ProductKey"`
+	ApiProduct      string `position:"Body" name:"ApiProduct"`
+	ApiRevision     string `position:"Body" name:"ApiRevision"`
 	TslUrl          string `position:"Query" name:"TslUrl"`
 	TslStr          string `position:"Query" name:"TslStr"`
 }

@@ -78,6 +78,8 @@ type DeleteRuleActionRequest struct {
 	*requests.RpcRequest
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	ActionId      requests.Integer `position:"Query" name:"ActionId"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 }
 
 // DeleteRuleActionResponse is the response struct for api DeleteRuleAction

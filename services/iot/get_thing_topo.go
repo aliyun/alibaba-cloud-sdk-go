@@ -76,11 +76,13 @@ func (client *Client) GetThingTopoWithCallback(request *GetThingTopoRequest, cal
 // GetThingTopoRequest is the request struct for api GetThingTopo
 type GetThingTopoRequest struct {
 	*requests.RpcRequest
-	ProductKey    string           `position:"Query" name:"ProductKey"`
 	IotId         string           `position:"Query" name:"IotId"`
-	PageNo        requests.Integer `position:"Query" name:"PageNo"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	ProductKey    string           `position:"Query" name:"ProductKey"`
+	PageNo        requests.Integer `position:"Query" name:"PageNo"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 	DeviceName    string           `position:"Query" name:"DeviceName"`
 }
 

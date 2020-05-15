@@ -76,8 +76,10 @@ func (client *Client) QueryDeviceGroupTagListWithCallback(request *QueryDeviceGr
 // QueryDeviceGroupTagListRequest is the request struct for api QueryDeviceGroupTagList
 type QueryDeviceGroupTagListRequest struct {
 	*requests.RpcRequest
-	GroupId       string `position:"Query" name:"GroupId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	GroupId       string `position:"Query" name:"GroupId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // QueryDeviceGroupTagListResponse is the response struct for api QueryDeviceGroupTagList

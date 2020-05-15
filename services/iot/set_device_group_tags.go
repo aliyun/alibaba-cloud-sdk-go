@@ -76,9 +76,11 @@ func (client *Client) SetDeviceGroupTagsWithCallback(request *SetDeviceGroupTags
 // SetDeviceGroupTagsRequest is the request struct for api SetDeviceGroupTags
 type SetDeviceGroupTagsRequest struct {
 	*requests.RpcRequest
+	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 	TagString     string `position:"Query" name:"TagString"`
 	GroupId       string `position:"Query" name:"GroupId"`
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // SetDeviceGroupTagsResponse is the response struct for api SetDeviceGroupTags

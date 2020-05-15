@@ -78,6 +78,8 @@ type DeleteProductTopicRequest struct {
 	*requests.RpcRequest
 	TopicId       string `position:"Query" name:"TopicId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // DeleteProductTopicResponse is the response struct for api DeleteProductTopic

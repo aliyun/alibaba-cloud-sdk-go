@@ -80,6 +80,8 @@ type UpdateRuleActionRequest struct {
 	Type          string           `position:"Query" name:"Type"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
 	ActionId      requests.Integer `position:"Query" name:"ActionId"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 }
 
 // UpdateRuleActionResponse is the response struct for api UpdateRuleAction

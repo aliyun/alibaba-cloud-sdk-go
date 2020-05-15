@@ -17,5 +17,5 @@ package iot
 
 // DstTopics is a nested struct in iot response
 type DstTopics struct {
-	Topic []string `json:"Topic" xml:"Topic"`
+	Topic []map[string]interface{} `json:"Topic" xml:"Topic"`
 }

@@ -76,9 +76,11 @@ func (client *Client) UpdateProductTagsWithCallback(request *UpdateProductTagsRe
 // UpdateProductTagsRequest is the request struct for api UpdateProductTags
 type UpdateProductTagsRequest struct {
 	*requests.RpcRequest
+	IotInstanceId string                         `position:"Query" name:"IotInstanceId"`
 	ProductKey    string                         `position:"Query" name:"ProductKey"`
 	ProductTag    *[]UpdateProductTagsProductTag `position:"Query" name:"ProductTag"  type:"Repeated"`
-	IotInstanceId string                         `position:"Query" name:"IotInstanceId"`
+	ApiProduct    string                         `position:"Body" name:"ApiProduct"`
+	ApiRevision   string                         `position:"Body" name:"ApiRevision"`
 }
 
 // UpdateProductTagsProductTag is a repeated param struct in UpdateProductTagsRequest

@@ -76,9 +76,11 @@ func (client *Client) QueryThingModelWithCallback(request *QueryThingModelReques
 // QueryThingModelRequest is the request struct for api QueryThingModel
 type QueryThingModelRequest struct {
 	*requests.RpcRequest
-	ProductKey      string `position:"Query" name:"ProductKey"`
 	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	IotInstanceId   string `position:"Query" name:"IotInstanceId"`
+	ProductKey      string `position:"Query" name:"ProductKey"`
+	ApiProduct      string `position:"Body" name:"ApiProduct"`
+	ApiRevision     string `position:"Body" name:"ApiRevision"`
 	ModelVersion    string `position:"Query" name:"ModelVersion"`
 }
 

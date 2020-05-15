@@ -77,9 +77,11 @@ func (client *Client) PublishThingModelWithCallback(request *PublishThingModelRe
 type PublishThingModelRequest struct {
 	*requests.RpcRequest
 	Description     string `position:"Query" name:"Description"`
-	ProductKey      string `position:"Query" name:"ProductKey"`
 	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	IotInstanceId   string `position:"Query" name:"IotInstanceId"`
+	ProductKey      string `position:"Query" name:"ProductKey"`
+	ApiProduct      string `position:"Body" name:"ApiProduct"`
+	ApiRevision     string `position:"Body" name:"ApiRevision"`
 	ModelVersion    string `position:"Query" name:"ModelVersion"`
 }
 

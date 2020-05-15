@@ -77,6 +77,8 @@ func (client *Client) QueryLoRaJoinPermissionsWithCallback(request *QueryLoRaJoi
 type QueryLoRaJoinPermissionsRequest struct {
 	*requests.RpcRequest
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // QueryLoRaJoinPermissionsResponse is the response struct for api QueryLoRaJoinPermissions

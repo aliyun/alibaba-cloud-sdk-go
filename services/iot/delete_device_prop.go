@@ -76,10 +76,12 @@ func (client *Client) DeleteDevicePropWithCallback(request *DeleteDevicePropRequ
 // DeleteDevicePropRequest is the request struct for api DeleteDeviceProp
 type DeleteDevicePropRequest struct {
 	*requests.RpcRequest
-	ProductKey    string `position:"Query" name:"ProductKey"`
 	PropKey       string `position:"Query" name:"PropKey"`
 	IotId         string `position:"Query" name:"IotId"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	ProductKey    string `position:"Query" name:"ProductKey"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 	DeviceName    string `position:"Query" name:"DeviceName"`
 }
 

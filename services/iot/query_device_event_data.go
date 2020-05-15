@@ -84,8 +84,10 @@ type QueryDeviceEventDataRequest struct {
 	EndTime       requests.Integer `position:"Query" name:"EndTime"`
 	ProductKey    string           `position:"Query" name:"ProductKey"`
 	Asc           requests.Integer `position:"Query" name:"Asc"`
-	EventType     string           `position:"Query" name:"EventType"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
 	DeviceName    string           `position:"Query" name:"DeviceName"`
+	EventType     string           `position:"Query" name:"EventType"`
 }
 
 // QueryDeviceEventDataResponse is the response struct for api QueryDeviceEventData

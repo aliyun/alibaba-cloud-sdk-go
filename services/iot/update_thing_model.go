@@ -76,6 +76,7 @@ func (client *Client) UpdateThingModelWithCallback(request *UpdateThingModelRequ
 // UpdateThingModelRequest is the request struct for api UpdateThingModel
 type UpdateThingModelRequest struct {
 	*requests.RpcRequest
+	IotInstanceId  string `position:"Query" name:"IotInstanceId"`
 	Identifier     string `position:"Query" name:"Identifier"`
 	ProductKey     string `position:"Query" name:"ProductKey"`
 	ApiProduct     string `position:"Body" name:"ApiProduct"`

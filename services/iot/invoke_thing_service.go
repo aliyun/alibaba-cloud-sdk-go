@@ -76,11 +76,13 @@ func (client *Client) InvokeThingServiceWithCallback(request *InvokeThingService
 // InvokeThingServiceRequest is the request struct for api InvokeThingService
 type InvokeThingServiceRequest struct {
 	*requests.RpcRequest
+	IotId         string `position:"Query" name:"IotId"`
+	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 	Identifier    string `position:"Query" name:"Identifier"`
 	ProductKey    string `position:"Query" name:"ProductKey"`
 	Args          string `position:"Query" name:"Args"`
-	IotId         string `position:"Query" name:"IotId"`
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 	DeviceName    string `position:"Query" name:"DeviceName"`
 }
 

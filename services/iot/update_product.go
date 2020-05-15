@@ -77,9 +77,11 @@ func (client *Client) UpdateProductWithCallback(request *UpdateProductRequest, c
 type UpdateProductRequest struct {
 	*requests.RpcRequest
 	Description   string `position:"Query" name:"Description"`
-	ProductKey    string `position:"Query" name:"ProductKey"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 	ProductName   string `position:"Query" name:"ProductName"`
+	ProductKey    string `position:"Query" name:"ProductKey"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // UpdateProductResponse is the response struct for api UpdateProduct
