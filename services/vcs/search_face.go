@@ -99,7 +99,7 @@ func CreateSearchFaceRequest() (request *SearchFaceRequest) {
 	request = &SearchFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "SearchFace", "VCS", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "SearchFace", "vcs", "openAPI")
 	return
 }
 

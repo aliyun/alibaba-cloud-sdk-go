@@ -95,7 +95,7 @@ func CreateGetDeviceLiveUrlRequest() (request *GetDeviceLiveUrlRequest) {
 	request = &GetDeviceLiveUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "GetDeviceLiveUrl", "VCS", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetDeviceLiveUrl", "vcs", "openAPI")
 	return
 }
 
