@@ -102,7 +102,7 @@ func CreateUpdateDeviceRequest() (request *UpdateDeviceRequest) {
 	request = &UpdateDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "UpdateDevice", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "UpdateDevice", "VCS", "openAPI")
 	return
 }
 

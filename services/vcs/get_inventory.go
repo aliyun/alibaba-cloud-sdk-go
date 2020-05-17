@@ -91,7 +91,7 @@ func CreateGetInventoryRequest() (request *GetInventoryRequest) {
 	request = &GetInventoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "GetInventory", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetInventory", "VCS", "openAPI")
 	return
 }
 

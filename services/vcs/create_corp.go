@@ -96,7 +96,7 @@ func CreateCreateCorpRequest() (request *CreateCorpRequest) {
 	request = &CreateCorpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "CreateCorp", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "CreateCorp", "VCS", "openAPI")
 	return
 }
 
