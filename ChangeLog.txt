@@ -1,3 +1,7 @@
+2020-05-18 Version: v1.61.199
+- Generated 2016-11-01 for `live`.
+- Support live audio audit config API.
+
 2020-05-17 Version: v1.61.198
 - Generated 2020-05-15 for `Vcs`.
 - Open API publish.
