@@ -76,8 +76,9 @@ func (client *Client) DescribeIpcLiveAddressWithCallback(request *DescribeIpcLiv
 // DescribeIpcLiveAddressRequest is the request struct for api DescribeIpcLiveAddress
 type DescribeIpcLiveAddressRequest struct {
 	*requests.RpcRequest
-	IpcId   requests.Integer `position:"Body" name:"IpcId"`
-	StoreId requests.Integer `position:"Body" name:"StoreId"`
+	IpcId        requests.Integer `position:"Body" name:"IpcId"`
+	StoreId      requests.Integer `position:"Body" name:"StoreId"`
+	ProtocolType string           `position:"Body" name:"ProtocolType"`
 }
 
 // DescribeIpcLiveAddressResponse is the response struct for api DescribeIpcLiveAddress
