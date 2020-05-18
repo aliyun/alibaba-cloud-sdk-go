@@ -78,6 +78,7 @@ type ListNodesNoPagingRequest struct {
 	*requests.RpcRequest
 	Role         string           `position:"Query" name:"Role"`
 	ClusterId    string           `position:"Query" name:"ClusterId"`
+	Sequence     string           `position:"Query" name:"Sequence"`
 	HostName     string           `position:"Query" name:"HostName"`
 	OnlyDetached requests.Boolean `position:"Query" name:"OnlyDetached"`
 }

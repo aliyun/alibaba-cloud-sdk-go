@@ -76,27 +76,28 @@ func (client *Client) ApplyNodesWithCallback(request *ApplyNodesRequest, callbac
 // ApplyNodesRequest is the request struct for api ApplyNodes
 type ApplyNodesRequest struct {
 	*requests.RpcRequest
-	ImageId                 string                         `position:"Query" name:"ImageId"`
-	Memory                  requests.Integer               `position:"Query" name:"Memory"`
-	AllocatePublicAddress   requests.Boolean               `position:"Query" name:"AllocatePublicAddress"`
-	InternetMaxBandWidthOut requests.Integer               `position:"Query" name:"InternetMaxBandWidthOut"`
-	ResourceAmountType      string                         `position:"Query" name:"ResourceAmountType"`
-	SystemDiskType          string                         `position:"Query" name:"SystemDiskType"`
-	Cores                   requests.Integer               `position:"Query" name:"Cores"`
-	SystemDiskSize          requests.Integer               `position:"Query" name:"SystemDiskSize"`
-	ZoneInfos               *[]ApplyNodesZoneInfos         `position:"Query" name:"ZoneInfos"  type:"Repeated"`
-	HostNamePrefix          string                         `position:"Query" name:"HostNamePrefix"`
-	ComputeSpotPriceLimit   string                         `position:"Query" name:"ComputeSpotPriceLimit"`
-	ClusterId               string                         `position:"Query" name:"ClusterId"`
-	ComputeSpotStrategy     string                         `position:"Query" name:"ComputeSpotStrategy"`
-	HostNameSuffix          string                         `position:"Query" name:"HostNameSuffix"`
-	PriorityStrategy        string                         `position:"Query" name:"PriorityStrategy"`
-	InstanceFamilyLevel     string                         `position:"Query" name:"InstanceFamilyLevel"`
-	EcsChargeType           string                         `position:"Query" name:"EcsChargeType"`
-	InternetChargeType      string                         `position:"Query" name:"InternetChargeType"`
-	InstanceTypeModel       *[]ApplyNodesInstanceTypeModel `position:"Query" name:"InstanceTypeModel"  type:"Repeated"`
-	InternetMaxBandWidthIn  requests.Integer               `position:"Query" name:"InternetMaxBandWidthIn"`
-	TargetCapacity          requests.Integer               `position:"Query" name:"TargetCapacity"`
+	ImageId                       string                         `position:"Query" name:"ImageId"`
+	Memory                        requests.Integer               `position:"Query" name:"Memory"`
+	AllocatePublicAddress         requests.Boolean               `position:"Query" name:"AllocatePublicAddress"`
+	InternetMaxBandWidthOut       requests.Integer               `position:"Query" name:"InternetMaxBandWidthOut"`
+	ResourceAmountType            string                         `position:"Query" name:"ResourceAmountType"`
+	SystemDiskType                string                         `position:"Query" name:"SystemDiskType"`
+	Cores                         requests.Integer               `position:"Query" name:"Cores"`
+	SystemDiskSize                requests.Integer               `position:"Query" name:"SystemDiskSize"`
+	ZoneInfos                     *[]ApplyNodesZoneInfos         `position:"Query" name:"ZoneInfos"  type:"Repeated"`
+	HostNamePrefix                string                         `position:"Query" name:"HostNamePrefix"`
+	ComputeSpotPriceLimit         string                         `position:"Query" name:"ComputeSpotPriceLimit"`
+	ClusterId                     string                         `position:"Query" name:"ClusterId"`
+	ComputeSpotStrategy           string                         `position:"Query" name:"ComputeSpotStrategy"`
+	HostNameSuffix                string                         `position:"Query" name:"HostNameSuffix"`
+	PriorityStrategy              string                         `position:"Query" name:"PriorityStrategy"`
+	InstanceFamilyLevel           string                         `position:"Query" name:"InstanceFamilyLevel"`
+	EcsChargeType                 string                         `position:"Query" name:"EcsChargeType"`
+	InternetChargeType            string                         `position:"Query" name:"InternetChargeType"`
+	InstanceTypeModel             *[]ApplyNodesInstanceTypeModel `position:"Query" name:"InstanceTypeModel"  type:"Repeated"`
+	InternetMaxBandWidthIn        requests.Integer               `position:"Query" name:"InternetMaxBandWidthIn"`
+	TargetCapacity                requests.Integer               `position:"Query" name:"TargetCapacity"`
+	StrictSatisfiedTargetCapacity requests.Boolean               `position:"Query" name:"StrictSatisfiedTargetCapacity"`
 }
 
 // ApplyNodesZoneInfos is a repeated param struct in ApplyNodesRequest

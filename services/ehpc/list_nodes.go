@@ -79,6 +79,7 @@ type ListNodesRequest struct {
 	Role       string           `position:"Query" name:"Role"`
 	ClusterId  string           `position:"Query" name:"ClusterId"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	Sequence   string           `position:"Query" name:"Sequence"`
 	HostName   string           `position:"Query" name:"HostName"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
