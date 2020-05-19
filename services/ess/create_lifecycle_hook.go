@@ -76,27 +76,16 @@ func (client *Client) CreateLifecycleHookWithCallback(request *CreateLifecycleHo
 // CreateLifecycleHookRequest is the request struct for api CreateLifecycleHook
 type CreateLifecycleHookRequest struct {
 	*requests.RpcRequest
-	DefaultResult        string                              `position:"Query" name:"DefaultResult"`
-	HeartbeatTimeout     requests.Integer                    `position:"Query" name:"HeartbeatTimeout"`
-	ScalingGroupId       string                              `position:"Query" name:"ScalingGroupId"`
-	LifecycleTransition  string                              `position:"Query" name:"LifecycleTransition"`
-	LifecycleHookName    string                              `position:"Query" name:"LifecycleHookName"`
-	NotificationArn      string                              `position:"Query" name:"NotificationArn"`
-	ResourceOwnerAccount string                              `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string                              `position:"Query" name:"OwnerAccount"`
-	NotificationMetadata string                              `position:"Query" name:"NotificationMetadata"`
-	OwnerId              requests.Integer                    `position:"Query" name:"OwnerId"`
-	LifecycleHook        *[]CreateLifecycleHookLifecycleHook `position:"Query" name:"LifecycleHook"  type:"Repeated"`
-}
-
-// CreateLifecycleHookLifecycleHook is a repeated param struct in CreateLifecycleHookRequest
-type CreateLifecycleHookLifecycleHook struct {
-	DefaultResult        string `name:"DefaultResult"`
-	LifecycleHookName    string `name:"LifecycleHookName"`
-	HeartbeatTimeout     string `name:"HeartbeatTimeout"`
-	NotificationArn      string `name:"NotificationArn"`
-	NotificationMetadata string `name:"NotificationMetadata"`
-	LifecycleTransition  string `name:"LifecycleTransition"`
+	DefaultResult        string           `position:"Query" name:"DefaultResult"`
+	HeartbeatTimeout     requests.Integer `position:"Query" name:"HeartbeatTimeout"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
+	LifecycleTransition  string           `position:"Query" name:"LifecycleTransition"`
+	LifecycleHookName    string           `position:"Query" name:"LifecycleHookName"`
+	NotificationArn      string           `position:"Query" name:"NotificationArn"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	NotificationMetadata string           `position:"Query" name:"NotificationMetadata"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // CreateLifecycleHookResponse is the response struct for api CreateLifecycleHook
