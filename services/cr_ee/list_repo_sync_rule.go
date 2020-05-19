@@ -102,7 +102,8 @@ func CreateListRepoSyncRuleRequest() (request *ListRepoSyncRuleRequest) {
 	request = &ListRepoSyncRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "ListRepoSyncRule", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "ListRepoSyncRule", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

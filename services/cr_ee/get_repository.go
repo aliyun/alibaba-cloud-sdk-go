@@ -106,7 +106,8 @@ func CreateGetRepositoryRequest() (request *GetRepositoryRequest) {
 	request = &GetRepositoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "GetRepository", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "GetRepository", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

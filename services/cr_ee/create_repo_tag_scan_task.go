@@ -94,7 +94,8 @@ func CreateCreateRepoTagScanTaskRequest() (request *CreateRepoTagScanTaskRequest
 	request = &CreateRepoTagScanTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "CreateRepoTagScanTask", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "CreateRepoTagScanTask", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

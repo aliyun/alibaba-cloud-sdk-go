@@ -93,7 +93,8 @@ func CreateDeleteChartNamespaceRequest() (request *DeleteChartNamespaceRequest) 
 	request = &DeleteChartNamespaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "DeleteChartNamespace", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "DeleteChartNamespace", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

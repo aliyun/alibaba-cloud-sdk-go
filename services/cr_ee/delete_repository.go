@@ -93,7 +93,8 @@ func CreateDeleteRepositoryRequest() (request *DeleteRepositoryRequest) {
 	request = &DeleteRepositoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "DeleteRepository", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "DeleteRepository", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

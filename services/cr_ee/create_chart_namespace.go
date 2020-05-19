@@ -95,7 +95,8 @@ func CreateCreateChartNamespaceRequest() (request *CreateChartNamespaceRequest) 
 	request = &CreateChartNamespaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "CreateChartNamespace", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "CreateChartNamespace", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

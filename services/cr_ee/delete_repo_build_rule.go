@@ -94,7 +94,8 @@ func CreateDeleteRepoBuildRuleRequest() (request *DeleteRepoBuildRuleRequest) {
 	request = &DeleteRepoBuildRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "DeleteRepoBuildRule", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "DeleteRepoBuildRule", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

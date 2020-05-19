@@ -96,7 +96,8 @@ func CreateDeleteChartReleaseRequest() (request *DeleteChartReleaseRequest) {
 	request = &DeleteChartReleaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "DeleteChartRelease", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "DeleteChartRelease", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

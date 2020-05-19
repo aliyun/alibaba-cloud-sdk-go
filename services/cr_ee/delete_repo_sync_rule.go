@@ -93,7 +93,8 @@ func CreateDeleteRepoSyncRuleRequest() (request *DeleteRepoSyncRuleRequest) {
 	request = &DeleteRepoSyncRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "DeleteRepoSyncRule", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "DeleteRepoSyncRule", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

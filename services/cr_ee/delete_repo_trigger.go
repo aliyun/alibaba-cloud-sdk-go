@@ -94,7 +94,8 @@ func CreateDeleteRepoTriggerRequest() (request *DeleteRepoTriggerRequest) {
 	request = &DeleteRepoTriggerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "DeleteRepoTrigger", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "DeleteRepoTrigger", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

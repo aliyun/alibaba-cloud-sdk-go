@@ -90,6 +90,7 @@ type ListInstanceResponse struct {
 	RequestId             string          `json:"RequestId" xml:"RequestId"`
 	PageNo                int             `json:"PageNo" xml:"PageNo"`
 	PageSize              int             `json:"PageSize" xml:"PageSize"`
+	TotalCount            int             `json:"TotalCount" xml:"TotalCount"`
 	Instances             []InstancesItem `json:"Instances" xml:"Instances"`
 }
 
@@ -98,7 +99,8 @@ func CreateListInstanceRequest() (request *ListInstanceRequest) {
 	request = &ListInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "ListInstance", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "ListInstance", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

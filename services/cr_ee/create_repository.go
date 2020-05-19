@@ -98,7 +98,8 @@ func CreateCreateRepositoryRequest() (request *CreateRepositoryRequest) {
 	request = &CreateRepositoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "CreateRepository", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "CreateRepository", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

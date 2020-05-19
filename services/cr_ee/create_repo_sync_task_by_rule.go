@@ -96,7 +96,8 @@ func CreateCreateRepoSyncTaskByRuleRequest() (request *CreateRepoSyncTaskByRuleR
 	request = &CreateRepoSyncTaskByRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "CreateRepoSyncTaskByRule", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "CreateRepoSyncTaskByRule", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

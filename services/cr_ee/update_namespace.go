@@ -95,7 +95,8 @@ func CreateUpdateNamespaceRequest() (request *UpdateNamespaceRequest) {
 	request = &UpdateNamespaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "UpdateNamespace", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "UpdateNamespace", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

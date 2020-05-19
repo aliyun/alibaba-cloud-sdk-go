@@ -95,7 +95,8 @@ func CreateUpdateInstanceEndpointStatusRequest() (request *UpdateInstanceEndpoin
 	request = &UpdateInstanceEndpointStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "UpdateInstanceEndpointStatus", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "UpdateInstanceEndpointStatus", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

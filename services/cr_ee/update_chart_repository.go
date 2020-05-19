@@ -96,7 +96,8 @@ func CreateUpdateChartRepositoryRequest() (request *UpdateChartRepositoryRequest
 	request = &UpdateChartRepositoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "UpdateChartRepository", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "UpdateChartRepository", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

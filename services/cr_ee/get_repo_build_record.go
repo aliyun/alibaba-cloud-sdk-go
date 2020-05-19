@@ -98,7 +98,8 @@ func CreateGetRepoBuildRecordRequest() (request *GetRepoBuildRecordRequest) {
 	request = &GetRepoBuildRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "GetRepoBuildRecord", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "GetRepoBuildRecord", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

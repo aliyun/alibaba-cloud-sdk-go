@@ -99,7 +99,8 @@ func CreateCreateRepoBuildRuleRequest() (request *CreateRepoBuildRuleRequest) {
 	request = &CreateRepoBuildRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "CreateRepoBuildRule", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "CreateRepoBuildRule", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

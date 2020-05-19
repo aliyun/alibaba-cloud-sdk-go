@@ -95,7 +95,8 @@ func CreateDeleteInstanceEndpointAclPolicyRequest() (request *DeleteInstanceEndp
 	request = &DeleteInstanceEndpointAclPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "DeleteInstanceEndpointAclPolicy", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "DeleteInstanceEndpointAclPolicy", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -95,7 +95,8 @@ func CreateCreateInstanceVpcEndpointLinkedVpcRequest() (request *CreateInstanceV
 	request = &CreateInstanceVpcEndpointLinkedVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "CreateInstanceVpcEndpointLinkedVpc", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "CreateInstanceVpcEndpointLinkedVpc", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

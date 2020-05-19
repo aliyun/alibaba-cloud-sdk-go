@@ -94,7 +94,8 @@ func CreateListInstanceEndpointRequest() (request *ListInstanceEndpointRequest) 
 	request = &ListInstanceEndpointRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "ListInstanceEndpoint", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "ListInstanceEndpoint", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
