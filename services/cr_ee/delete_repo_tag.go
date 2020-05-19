@@ -94,7 +94,8 @@ func CreateDeleteRepoTagRequest() (request *DeleteRepoTagRequest) {
 	request = &DeleteRepoTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "DeleteRepoTag", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "DeleteRepoTag", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

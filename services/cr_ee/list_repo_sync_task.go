@@ -99,7 +99,8 @@ func CreateListRepoSyncTaskRequest() (request *ListRepoSyncTaskRequest) {
 	request = &ListRepoSyncTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "ListRepoSyncTask", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "ListRepoSyncTask", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

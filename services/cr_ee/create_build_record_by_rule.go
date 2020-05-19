@@ -95,7 +95,8 @@ func CreateCreateBuildRecordByRuleRequest() (request *CreateBuildRecordByRuleReq
 	request = &CreateBuildRecordByRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "CreateBuildRecordByRule", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "CreateBuildRecordByRule", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

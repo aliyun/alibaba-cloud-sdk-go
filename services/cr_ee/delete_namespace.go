@@ -93,7 +93,8 @@ func CreateDeleteNamespaceRequest() (request *DeleteNamespaceRequest) {
 	request = &DeleteNamespaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "DeleteNamespace", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "DeleteNamespace", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

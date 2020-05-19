@@ -98,7 +98,8 @@ func CreateUpdateRepoTriggerRequest() (request *UpdateRepoTriggerRequest) {
 	request = &UpdateRepoTriggerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "UpdateRepoTrigger", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "UpdateRepoTrigger", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -101,7 +101,8 @@ func CreateListChartReleaseRequest() (request *ListChartReleaseRequest) {
 	request = &ListChartReleaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "ListChartRelease", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "ListChartRelease", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

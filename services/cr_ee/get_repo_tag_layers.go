@@ -95,7 +95,8 @@ func CreateGetRepoTagLayersRequest() (request *GetRepoTagLayersRequest) {
 	request = &GetRepoTagLayersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "GetRepoTagLayers", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "GetRepoTagLayers", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

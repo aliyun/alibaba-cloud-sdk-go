@@ -95,7 +95,8 @@ func CreateDeleteInstanceVpcEndpointLinkedVpcRequest() (request *DeleteInstanceV
 	request = &DeleteInstanceVpcEndpointLinkedVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "DeleteInstanceVpcEndpointLinkedVpc", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "DeleteInstanceVpcEndpointLinkedVpc", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

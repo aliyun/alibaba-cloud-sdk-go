@@ -96,7 +96,8 @@ func CreateGetRepoTagManifestRequest() (request *GetRepoTagManifestRequest) {
 	request = &GetRepoTagManifestRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "GetRepoTagManifest", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "GetRepoTagManifest", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -94,7 +94,8 @@ func CreateCancelRepoBuildRecordRequest() (request *CancelRepoBuildRecordRequest
 	request = &CancelRepoBuildRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "CancelRepoBuildRecord", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "CancelRepoBuildRecord", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

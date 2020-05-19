@@ -100,7 +100,8 @@ func CreateGetNamespaceRequest() (request *GetNamespaceRequest) {
 	request = &GetNamespaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "GetNamespace", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "GetNamespace", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

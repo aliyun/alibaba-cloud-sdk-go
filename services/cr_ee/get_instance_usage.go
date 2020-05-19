@@ -96,7 +96,8 @@ func CreateGetInstanceUsageRequest() (request *GetInstanceUsageRequest) {
 	request = &GetInstanceUsageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "GetInstanceUsage", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "GetInstanceUsage", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

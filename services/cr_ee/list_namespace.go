@@ -100,7 +100,8 @@ func CreateListNamespaceRequest() (request *ListNamespaceRequest) {
 	request = &ListNamespaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "ListNamespace", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "ListNamespace", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

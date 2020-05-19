@@ -92,7 +92,8 @@ func CreateGetInstanceCountRequest() (request *GetInstanceCountRequest) {
 	request = &GetInstanceCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "GetInstanceCount", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "GetInstanceCount", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

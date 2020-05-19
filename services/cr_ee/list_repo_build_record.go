@@ -99,7 +99,8 @@ func CreateListRepoBuildRecordRequest() (request *ListRepoBuildRecordRequest) {
 	request = &ListRepoBuildRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "ListRepoBuildRecord", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "ListRepoBuildRecord", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

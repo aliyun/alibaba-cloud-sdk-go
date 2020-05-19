@@ -96,7 +96,8 @@ func CreateUpdateRepositoryRequest() (request *UpdateRepositoryRequest) {
 	request = &UpdateRepositoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cr", "2018-12-01", "UpdateRepository", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2018-12-01", "UpdateRepository", "acr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
