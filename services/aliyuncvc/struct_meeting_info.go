@@ -22,6 +22,7 @@ type MeetingInfo struct {
 	CreateTime    int64            `json:"CreateTime" xml:"CreateTime"`
 	MeetingAppId  string           `json:"MeetingAppId" xml:"MeetingAppId"`
 	MeetingCode   string           `json:"MeetingCode" xml:"MeetingCode"`
+	Password      string           `json:"Password" xml:"Password"`
 	MemberUUID    string           `json:"MemberUUID" xml:"MemberUUID"`
 	ValidTime     int64            `json:"ValidTime" xml:"ValidTime"`
 	ClientAppId   string           `json:"ClientAppId" xml:"ClientAppId"`

@@ -82,11 +82,11 @@ type GetMeetingMemberRequest struct {
 // GetMeetingMemberResponse is the response struct for api GetMeetingMember
 type GetMeetingMemberResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
-	ErrorCode int    `json:"ErrorCode" xml:"ErrorCode"`
-	Members   []int  `json:"Members" xml:"Members"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
+	Message   string                 `json:"Message" xml:"Message"`
+	Success   bool                   `json:"Success" xml:"Success"`
+	ErrorCode int                    `json:"ErrorCode" xml:"ErrorCode"`
+	Members   map[string]interface{} `json:"Members" xml:"Members"`
 }
 
 // CreateGetMeetingMemberRequest creates a request to invoke GetMeetingMember API

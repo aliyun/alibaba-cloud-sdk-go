@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// JoinMeeting invokes the aliyuncvc.JoinMeeting API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/joinmeeting.html
-func (client *Client) JoinMeeting(request *JoinMeetingRequest) (response *JoinMeetingResponse, err error) {
-	response = CreateJoinMeetingResponse()
+// JoinLive invokes the aliyuncvc.JoinLive API synchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/joinlive.html
+func (client *Client) JoinLive(request *JoinLiveRequest) (response *JoinLiveResponse, err error) {
+	response = CreateJoinLiveResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// JoinMeetingWithChan invokes the aliyuncvc.JoinMeeting API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/joinmeeting.html
+// JoinLiveWithChan invokes the aliyuncvc.JoinLive API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/joinlive.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) JoinMeetingWithChan(request *JoinMeetingRequest) (<-chan *JoinMeetingResponse, <-chan error) {
-	responseChan := make(chan *JoinMeetingResponse, 1)
+func (client *Client) JoinLiveWithChan(request *JoinLiveRequest) (<-chan *JoinLiveResponse, <-chan error) {
+	responseChan := make(chan *JoinLiveResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.JoinMeeting(request)
+		response, err := client.JoinLive(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) JoinMeetingWithChan(request *JoinMeetingRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// JoinMeetingWithCallback invokes the aliyuncvc.JoinMeeting API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/joinmeeting.html
+// JoinLiveWithCallback invokes the aliyuncvc.JoinLive API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/joinlive.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) JoinMeetingWithCallback(request *JoinMeetingRequest, callback func(response *JoinMeetingResponse, err error)) <-chan int {
+func (client *Client) JoinLiveWithCallback(request *JoinLiveRequest, callback func(response *JoinLiveResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *JoinMeetingResponse
+		var response *JoinLiveResponse
 		var err error
 		defer close(result)
-		response, err = client.JoinMeeting(request)
+		response, err = client.JoinLive(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,16 +73,16 @@ func (client *Client) JoinMeetingWithCallback(request *JoinMeetingRequest, callb
 	return result
 }
 
-// JoinMeetingRequest is the request struct for api JoinMeeting
-type JoinMeetingRequest struct {
+// JoinLiveRequest is the request struct for api JoinLive
+type JoinLiveRequest struct {
 	*requests.RpcRequest
-	UserId      string `position:"Body" name:"UserId"`
-	Password    string `position:"Body" name:"Password"`
-	MeetingCode string `position:"Body" name:"MeetingCode"`
+	LiveUUID string `position:"Body" name:"LiveUUID"`
+	UserId   string `position:"Body" name:"UserId"`
+	Password string `position:"Body" name:"Password"`
 }
 
-// JoinMeetingResponse is the response struct for api JoinMeeting
-type JoinMeetingResponse struct {
+// JoinLiveResponse is the response struct for api JoinLive
+type JoinLiveResponse struct {
 	*responses.BaseResponse
 	ErrorCode   int         `json:"ErrorCode" xml:"ErrorCode"`
 	Success     bool        `json:"Success" xml:"Success"`
@@ -91,18 +91,18 @@ type JoinMeetingResponse struct {
 	MeetingInfo MeetingInfo `json:"MeetingInfo" xml:"MeetingInfo"`
 }
 
-// CreateJoinMeetingRequest creates a request to invoke JoinMeeting API
-func CreateJoinMeetingRequest() (request *JoinMeetingRequest) {
-	request = &JoinMeetingRequest{
+// CreateJoinLiveRequest creates a request to invoke JoinLive API
+func CreateJoinLiveRequest() (request *JoinLiveRequest) {
+	request = &JoinLiveRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "JoinLive", "aliyuncvc", "openAPI")
 	return
 }
 
-// CreateJoinMeetingResponse creates a response to parse from JoinMeeting response
-func CreateJoinMeetingResponse() (response *JoinMeetingResponse) {
-	response = &JoinMeetingResponse{
+// CreateJoinLiveResponse creates a response to parse from JoinLive response
+func CreateJoinLiveResponse() (response *JoinLiveResponse) {
+	response = &JoinLiveResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

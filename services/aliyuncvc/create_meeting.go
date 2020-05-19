@@ -76,8 +76,12 @@ func (client *Client) CreateMeetingWithCallback(request *CreateMeetingRequest, c
 // CreateMeetingRequest is the request struct for api CreateMeeting
 type CreateMeetingRequest struct {
 	*requests.RpcRequest
-	MeetingName string `position:"Body" name:"MeetingName"`
-	UserId      string `position:"Body" name:"UserId"`
+	MeetingName      string           `position:"Body" name:"MeetingName"`
+	UserId           string           `position:"Body" name:"UserId"`
+	OpenPasswordFlag requests.Boolean `position:"Body" name:"OpenPasswordFlag"`
+	Password         string           `position:"Body" name:"Password"`
+	MasterEnableFlag requests.Boolean `position:"Body" name:"MasterEnableFlag"`
+	MeetingMode      string           `position:"Body" name:"MeetingMode"`
 }
 
 // CreateMeetingResponse is the response struct for api CreateMeeting

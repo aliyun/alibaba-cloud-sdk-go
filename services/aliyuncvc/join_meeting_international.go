@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// JoinMeeting invokes the aliyuncvc.JoinMeeting API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/joinmeeting.html
-func (client *Client) JoinMeeting(request *JoinMeetingRequest) (response *JoinMeetingResponse, err error) {
-	response = CreateJoinMeetingResponse()
+// JoinMeetingInternational invokes the aliyuncvc.JoinMeetingInternational API synchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/joinmeetinginternational.html
+func (client *Client) JoinMeetingInternational(request *JoinMeetingInternationalRequest) (response *JoinMeetingInternationalResponse, err error) {
+	response = CreateJoinMeetingInternationalResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// JoinMeetingWithChan invokes the aliyuncvc.JoinMeeting API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/joinmeeting.html
+// JoinMeetingInternationalWithChan invokes the aliyuncvc.JoinMeetingInternational API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/joinmeetinginternational.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) JoinMeetingWithChan(request *JoinMeetingRequest) (<-chan *JoinMeetingResponse, <-chan error) {
-	responseChan := make(chan *JoinMeetingResponse, 1)
+func (client *Client) JoinMeetingInternationalWithChan(request *JoinMeetingInternationalRequest) (<-chan *JoinMeetingInternationalResponse, <-chan error) {
+	responseChan := make(chan *JoinMeetingInternationalResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.JoinMeeting(request)
+		response, err := client.JoinMeetingInternational(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) JoinMeetingWithChan(request *JoinMeetingRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// JoinMeetingWithCallback invokes the aliyuncvc.JoinMeeting API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/joinmeeting.html
+// JoinMeetingInternationalWithCallback invokes the aliyuncvc.JoinMeetingInternational API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/joinmeetinginternational.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) JoinMeetingWithCallback(request *JoinMeetingRequest, callback func(response *JoinMeetingResponse, err error)) <-chan int {
+func (client *Client) JoinMeetingInternationalWithCallback(request *JoinMeetingInternationalRequest, callback func(response *JoinMeetingInternationalResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *JoinMeetingResponse
+		var response *JoinMeetingInternationalResponse
 		var err error
 		defer close(result)
-		response, err = client.JoinMeeting(request)
+		response, err = client.JoinMeetingInternational(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,16 +73,16 @@ func (client *Client) JoinMeetingWithCallback(request *JoinMeetingRequest, callb
 	return result
 }
 
-// JoinMeetingRequest is the request struct for api JoinMeeting
-type JoinMeetingRequest struct {
+// JoinMeetingInternationalRequest is the request struct for api JoinMeetingInternational
+type JoinMeetingInternationalRequest struct {
 	*requests.RpcRequest
 	UserId      string `position:"Body" name:"UserId"`
 	Password    string `position:"Body" name:"Password"`
 	MeetingCode string `position:"Body" name:"MeetingCode"`
 }
 
-// JoinMeetingResponse is the response struct for api JoinMeeting
-type JoinMeetingResponse struct {
+// JoinMeetingInternationalResponse is the response struct for api JoinMeetingInternational
+type JoinMeetingInternationalResponse struct {
 	*responses.BaseResponse
 	ErrorCode   int         `json:"ErrorCode" xml:"ErrorCode"`
 	Success     bool        `json:"Success" xml:"Success"`
@@ -91,18 +91,18 @@ type JoinMeetingResponse struct {
 	MeetingInfo MeetingInfo `json:"MeetingInfo" xml:"MeetingInfo"`
 }
 
-// CreateJoinMeetingRequest creates a request to invoke JoinMeeting API
-func CreateJoinMeetingRequest() (request *JoinMeetingRequest) {
-	request = &JoinMeetingRequest{
+// CreateJoinMeetingInternationalRequest creates a request to invoke JoinMeetingInternational API
+func CreateJoinMeetingInternationalRequest() (request *JoinMeetingInternationalRequest) {
+	request = &JoinMeetingInternationalRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "JoinMeeting", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "JoinMeetingInternational", "aliyuncvc", "openAPI")
 	return
 }
 
-// CreateJoinMeetingResponse creates a response to parse from JoinMeeting response
-func CreateJoinMeetingResponse() (response *JoinMeetingResponse) {
-	response = &JoinMeetingResponse{
+// CreateJoinMeetingInternationalResponse creates a response to parse from JoinMeetingInternational response
+func CreateJoinMeetingInternationalResponse() (response *JoinMeetingInternationalResponse) {
+	response = &JoinMeetingInternationalResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
