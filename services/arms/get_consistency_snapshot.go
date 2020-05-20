@@ -85,8 +85,8 @@ type GetConsistencySnapshotRequest struct {
 // GetConsistencySnapshotResponse is the response struct for api GetConsistencySnapshot
 type GetConsistencySnapshotResponse struct {
 	*responses.BaseResponse
-	RequestId         string            `json:"RequestId" xml:"RequestId"`
-	ConsistencyResult ConsistencyResult `json:"ConsistencyResult" xml:"ConsistencyResult"`
+	RequestId                string `json:"RequestId" xml:"RequestId"`
+	ConsistencyResultJsonStr string `json:"ConsistencyResultJsonStr" xml:"ConsistencyResultJsonStr"`
 }
 
 // CreateGetConsistencySnapshotRequest creates a request to invoke GetConsistencySnapshot API
