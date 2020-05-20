@@ -28,5 +28,5 @@ type Profile struct {
 	Http2Port          string `json:"Http2Port" xml:"Http2Port"`
 	Rs                 string `json:"Rs" xml:"Rs"`
 	ClusterType        int    `json:"ClusterType" xml:"ClusterType"`
-	GSLBStatus         int    `json:"GSLBStatus" xml:"GSLBStatus"`
+	GSLBStatus         string `json:"GSLBStatus" xml:"GSLBStatus"`
 }
