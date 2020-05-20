@@ -17,8 +17,8 @@ package edas
 
 // ListConfigCenters is a nested struct in edas response
 type ListConfigCenters struct {
+	AppName string `json:"AppName" xml:"AppName"`
 	DataId  string `json:"DataId" xml:"DataId"`
 	Group   string `json:"Group" xml:"Group"`
 	Id      string `json:"Id" xml:"Id"`
-	AppName string `json:"AppName" xml:"AppName"`
 }

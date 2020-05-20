@@ -84,9 +84,9 @@ type ScaleInApplicationRequest struct {
 // ScaleInApplicationResponse is the response struct for api ScaleInApplication
 type ScaleInApplicationResponse struct {
 	*responses.BaseResponse
+	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
 	Code          int    `json:"Code" xml:"Code"`
 	Message       string `json:"Message" xml:"Message"`
-	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
 }
 
 // CreateScaleInApplicationRequest creates a request to invoke ScaleInApplication API
@@ -94,7 +94,7 @@ func CreateScaleInApplicationRequest() (request *ScaleInApplicationRequest) {
 	request = &ScaleInApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleInApplication", "/pop/v5/changeorder/co_scale_in", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleInApplication", "/pop/v5/changeorder/co_scale_in", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

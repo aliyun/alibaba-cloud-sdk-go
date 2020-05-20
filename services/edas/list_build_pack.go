@@ -92,7 +92,7 @@ func CreateListBuildPackRequest() (request *ListBuildPackRequest) {
 	request = &ListBuildPackRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListBuildPack", "/pop/v5/app/build_pack_list", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListBuildPack", "/pop/v5/app/build_pack_list", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

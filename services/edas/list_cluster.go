@@ -93,7 +93,7 @@ func CreateListClusterRequest() (request *ListClusterRequest) {
 	request = &ListClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListCluster", "/pop/v5/resource/cluster_list", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListCluster", "/pop/v5/resource/cluster_list", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

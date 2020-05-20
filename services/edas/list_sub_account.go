@@ -92,7 +92,7 @@ func CreateListSubAccountRequest() (request *ListSubAccountRequest) {
 	request = &ListSubAccountRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListSubAccount", "/pop/v5/account/sub_account_list", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListSubAccount", "/pop/v5/account/sub_account_list", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

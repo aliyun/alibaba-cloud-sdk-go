@@ -86,9 +86,9 @@ type UpdateK8sApplicationConfigRequest struct {
 // UpdateK8sApplicationConfigResponse is the response struct for api UpdateK8sApplicationConfig
 type UpdateK8sApplicationConfigResponse struct {
 	*responses.BaseResponse
+	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
 	Code          int    `json:"Code" xml:"Code"`
 	Message       string `json:"Message" xml:"Message"`
-	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
 	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
@@ -97,7 +97,7 @@ func CreateUpdateK8sApplicationConfigRequest() (request *UpdateK8sApplicationCon
 	request = &UpdateK8sApplicationConfigRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "/pop/v5/k8s/acs/k8s_app_configuration", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "/pop/v5/k8s/acs/k8s_app_configuration", "Edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

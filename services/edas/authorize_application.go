@@ -93,7 +93,7 @@ func CreateAuthorizeApplicationRequest() (request *AuthorizeApplicationRequest) 
 	request = &AuthorizeApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "AuthorizeApplication", "/pop/v5/account/authorize_app", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "AuthorizeApplication", "/pop/v5/account/authorize_app", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

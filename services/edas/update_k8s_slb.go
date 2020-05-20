@@ -88,9 +88,9 @@ type UpdateK8sSlbRequest struct {
 // UpdateK8sSlbResponse is the response struct for api UpdateK8sSlb
 type UpdateK8sSlbResponse struct {
 	*responses.BaseResponse
+	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
 	Code          int    `json:"Code" xml:"Code"`
 	Message       string `json:"Message" xml:"Message"`
-	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
 	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
@@ -99,7 +99,7 @@ func CreateUpdateK8sSlbRequest() (request *UpdateK8sSlbRequest) {
 	request = &UpdateK8sSlbRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sSlb", "/pop/v5/k8s/acs/k8s_slb_binding", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sSlb", "/pop/v5/k8s/acs/k8s_slb_binding", "Edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

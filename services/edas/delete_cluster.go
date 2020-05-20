@@ -76,7 +76,8 @@ func (client *Client) DeleteClusterWithCallback(request *DeleteClusterRequest, c
 // DeleteClusterRequest is the request struct for api DeleteCluster
 type DeleteClusterRequest struct {
 	*requests.RoaRequest
-	ClusterId string `position:"Query" name:"ClusterId"`
+	Mode      requests.Integer `position:"Query" name:"Mode"`
+	ClusterId string           `position:"Query" name:"ClusterId"`
 }
 
 // DeleteClusterResponse is the response struct for api DeleteCluster
@@ -93,7 +94,7 @@ func CreateDeleteClusterRequest() (request *DeleteClusterRequest) {
 	request = &DeleteClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteCluster", "/pop/v5/resource/cluster", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteCluster", "/pop/v5/resource/cluster", "Edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

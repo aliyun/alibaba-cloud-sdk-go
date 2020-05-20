@@ -94,7 +94,7 @@ func CreateDeleteDeployGroupRequest() (request *DeleteDeployGroupRequest) {
 	request = &DeleteDeployGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteDeployGroup", "/pop/v5/deploy_group", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteDeployGroup", "/pop/v5/deploy_group", "Edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

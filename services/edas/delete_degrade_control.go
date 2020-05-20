@@ -93,7 +93,7 @@ func CreateDeleteDegradeControlRequest() (request *DeleteDegradeControlRequest) 
 	request = &DeleteDegradeControlRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteDegradeControl", "/pop/v5/degradeControl", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteDegradeControl", "/pop/v5/degradeControl", "Edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

@@ -17,9 +17,9 @@ package edas
 
 // ConfigCenterInfo is a nested struct in edas response
 type ConfigCenterInfo struct {
+	AppName string `json:"AppName" xml:"AppName"`
 	Content string `json:"Content" xml:"Content"`
 	DataId  string `json:"DataId" xml:"DataId"`
 	Group   string `json:"Group" xml:"Group"`
 	Id      string `json:"Id" xml:"Id"`
-	AppName string `json:"AppName" xml:"AppName"`
 }

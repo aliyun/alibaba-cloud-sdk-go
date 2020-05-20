@@ -93,7 +93,7 @@ func CreateDeleteEcuRequest() (request *DeleteEcuRequest) {
 	request = &DeleteEcuRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteEcu", "/pop/v5/resource/delete_ecu", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteEcu", "/pop/v5/resource/delete_ecu", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -84,9 +84,9 @@ type ScaleOutApplicationRequest struct {
 // ScaleOutApplicationResponse is the response struct for api ScaleOutApplication
 type ScaleOutApplicationResponse struct {
 	*responses.BaseResponse
+	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
 	Code          int    `json:"Code" xml:"Code"`
 	Message       string `json:"Message" xml:"Message"`
-	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
 	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
@@ -95,7 +95,7 @@ func CreateScaleOutApplicationRequest() (request *ScaleOutApplicationRequest) {
 	request = &ScaleOutApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleOutApplication", "/pop/v5/changeorder/co_scale_out", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleOutApplication", "/pop/v5/changeorder/co_scale_out", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

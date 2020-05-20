@@ -83,9 +83,9 @@ type StopApplicationRequest struct {
 // StopApplicationResponse is the response struct for api StopApplication
 type StopApplicationResponse struct {
 	*responses.BaseResponse
+	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
 	Code          int    `json:"Code" xml:"Code"`
 	Message       string `json:"Message" xml:"Message"`
-	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
 	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
@@ -94,7 +94,7 @@ func CreateStopApplicationRequest() (request *StopApplicationRequest) {
 	request = &StopApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "StopApplication", "/pop/v5/changeorder/co_stop", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "StopApplication", "/pop/v5/changeorder/co_stop", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

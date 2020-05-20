@@ -86,9 +86,9 @@ type RollbackApplicationRequest struct {
 // RollbackApplicationResponse is the response struct for api RollbackApplication
 type RollbackApplicationResponse struct {
 	*responses.BaseResponse
+	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
 	Code          int    `json:"Code" xml:"Code"`
 	Message       string `json:"Message" xml:"Message"`
-	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
 	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
@@ -97,7 +97,7 @@ func CreateRollbackApplicationRequest() (request *RollbackApplicationRequest) {
 	request = &RollbackApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "RollbackApplication", "/pop/v5/changeorder/co_rollback", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "RollbackApplication", "/pop/v5/changeorder/co_rollback", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

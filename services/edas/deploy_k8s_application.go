@@ -90,6 +90,7 @@ type DeployK8sApplicationRequest struct {
 	PackageUrl           string           `position:"Query" name:"PackageUrl"`
 	MemoryLimit          requests.Integer `position:"Query" name:"MemoryLimit"`
 	ImageTag             string           `position:"Query" name:"ImageTag"`
+	DeployAcrossZones    string           `position:"Query" name:"DeployAcrossZones"`
 	MemoryRequest        requests.Integer `position:"Query" name:"MemoryRequest"`
 	Image                string           `position:"Query" name:"Image"`
 	PreStop              string           `position:"Query" name:"PreStop"`
@@ -108,6 +109,7 @@ type DeployK8sApplicationRequest struct {
 	McpuRequest          requests.Integer `position:"Query" name:"McpuRequest"`
 	McpuLimit            requests.Integer `position:"Query" name:"McpuLimit"`
 	VolumesStr           string           `position:"Query" name:"VolumesStr"`
+	RuntimeClassName     string           `position:"Query" name:"RuntimeClassName"`
 	PostStart            string           `position:"Query" name:"PostStart"`
 }
 
@@ -125,7 +127,7 @@ func CreateDeployK8sApplicationRequest() (request *DeployK8sApplicationRequest) 
 	request = &DeployK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeployK8sApplication", "/pop/v5/k8s/acs/k8s_apps", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeployK8sApplication", "/pop/v5/k8s/acs/k8s_apps", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

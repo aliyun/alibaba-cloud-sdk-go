@@ -28,4 +28,6 @@ type Conf struct {
 	PostStart          string `json:"PostStart" xml:"PostStart"`
 	PreStop            string `json:"PreStop" xml:"PreStop"`
 	Readiness          string `json:"Readiness" xml:"Readiness"`
+	RuntimeClassName   string `json:"RuntimeClassName" xml:"RuntimeClassName"`
+	DeployAcrossZones  string `json:"DeployAcrossZones" xml:"DeployAcrossZones"`
 }

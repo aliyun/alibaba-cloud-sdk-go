@@ -92,7 +92,7 @@ func CreateListServiceGroupsRequest() (request *ListServiceGroupsRequest) {
 	request = &ListServiceGroupsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListServiceGroups", "/pop/v5/service/serviceGroups", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListServiceGroups", "/pop/v5/service/serviceGroups", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

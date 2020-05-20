@@ -23,4 +23,6 @@ type SubAccount struct {
 	Phone       string `json:"Phone" xml:"Phone"`
 	AdminUserKp string `json:"AdminUserKp" xml:"AdminUserKp"`
 	SubUserKp   string `json:"SubUserKp" xml:"SubUserKp"`
+	AdminEdasId string `json:"AdminEdasId" xml:"AdminEdasId"`
+	SubEdasId   string `json:"SubEdasId" xml:"SubEdasId"`
 }

@@ -82,10 +82,10 @@ type RollbackChangeOrderRequest struct {
 // RollbackChangeOrderResponse is the response struct for api RollbackChangeOrder
 type RollbackChangeOrderResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	TraceId   string `json:"TraceId" xml:"TraceId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
@@ -95,7 +95,7 @@ func CreateRollbackChangeOrderRequest() (request *RollbackChangeOrderRequest) {
 	request = &RollbackChangeOrderRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "RollbackChangeOrder", "/pop/v5/oam/changeorder/rollback", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "RollbackChangeOrder", "/pop/v5/oam/changeorder/rollback", "Edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

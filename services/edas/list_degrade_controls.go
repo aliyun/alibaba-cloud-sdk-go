@@ -93,7 +93,7 @@ func CreateListDegradeControlsRequest() (request *ListDegradeControlsRequest) {
 	request = &ListDegradeControlsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListDegradeControls", "/pop/v5/app/degradeControls", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListDegradeControls", "/pop/v5/app/degradeControls", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }
