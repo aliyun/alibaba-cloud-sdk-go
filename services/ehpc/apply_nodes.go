@@ -86,13 +86,12 @@ type ApplyNodesRequest struct {
 	SystemDiskSize                requests.Integer               `position:"Query" name:"SystemDiskSize"`
 	ZoneInfos                     *[]ApplyNodesZoneInfos         `position:"Query" name:"ZoneInfos"  type:"Repeated"`
 	HostNamePrefix                string                         `position:"Query" name:"HostNamePrefix"`
-	ComputeSpotPriceLimit         string                         `position:"Query" name:"ComputeSpotPriceLimit"`
+	ComputeSpotPriceLimit         requests.Float                 `position:"Query" name:"ComputeSpotPriceLimit"`
 	ClusterId                     string                         `position:"Query" name:"ClusterId"`
 	ComputeSpotStrategy           string                         `position:"Query" name:"ComputeSpotStrategy"`
 	HostNameSuffix                string                         `position:"Query" name:"HostNameSuffix"`
 	PriorityStrategy              string                         `position:"Query" name:"PriorityStrategy"`
 	InstanceFamilyLevel           string                         `position:"Query" name:"InstanceFamilyLevel"`
-	EcsChargeType                 string                         `position:"Query" name:"EcsChargeType"`
 	InternetChargeType            string                         `position:"Query" name:"InternetChargeType"`
 	InstanceTypeModel             *[]ApplyNodesInstanceTypeModel `position:"Query" name:"InstanceTypeModel"  type:"Repeated"`
 	InternetMaxBandWidthIn        requests.Integer               `position:"Query" name:"InternetMaxBandWidthIn"`
@@ -115,9 +114,10 @@ type ApplyNodesInstanceTypeModel struct {
 // ApplyNodesResponse is the response struct for api ApplyNodes
 type ApplyNodesResponse struct {
 	*responses.BaseResponse
-	RequestId   string                  `json:"RequestId" xml:"RequestId"`
-	Detail      string                  `json:"Detail" xml:"Detail"`
-	InstanceIds InstanceIdsInApplyNodes `json:"InstanceIds" xml:"InstanceIds"`
+	RequestId       string                  `json:"RequestId" xml:"RequestId"`
+	Detail          string                  `json:"Detail" xml:"Detail"`
+	SatisfiedAmount int                     `json:"SatisfiedAmount" xml:"SatisfiedAmount"`
+	InstanceIds     InstanceIdsInApplyNodes `json:"InstanceIds" xml:"InstanceIds"`
 }
 
 // CreateApplyNodesRequest creates a request to invoke ApplyNodes API

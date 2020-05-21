@@ -1,3 +1,7 @@
+2020-05-21 Version: v1.61.211
+- Generated 2018-04-12 for `EHPC`.
+- Support more error Codes.
+
 2020-05-20 Version: v1.61.210
 - Generated 2017-08-01 for `Edas`.
 - Add supportting for deploy K8s application across zones.
