@@ -104,7 +104,7 @@ func CreateStartExecutionRequest() (request *StartExecutionRequest) {
 	request = &StartExecutionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "StartExecution", "fnf", "openAPI")
+	request.InitWithApiInfo("fnf", "2019-03-15", "StartExecution", "", "")
 	return
 }
 

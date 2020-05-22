@@ -105,7 +105,7 @@ func CreateUpdateFlowRequest() (request *UpdateFlowRequest) {
 	request = &UpdateFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "UpdateFlow", "fnf", "openAPI")
+	request.InitWithApiInfo("fnf", "2019-03-15", "UpdateFlow", "", "")
 	return
 }
 

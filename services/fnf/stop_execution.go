@@ -104,7 +104,7 @@ func CreateStopExecutionRequest() (request *StopExecutionRequest) {
 	request = &StopExecutionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "StopExecution", "fnf", "openAPI")
+	request.InitWithApiInfo("fnf", "2019-03-15", "StopExecution", "", "")
 	return
 }
 

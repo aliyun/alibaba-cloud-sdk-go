@@ -103,7 +103,7 @@ func CreateDescribeExecutionRequest() (request *DescribeExecutionRequest) {
 	request = &DescribeExecutionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "DescribeExecution", "fnf", "openAPI")
+	request.InitWithApiInfo("fnf", "2019-03-15", "DescribeExecution", "", "")
 	return
 }
 

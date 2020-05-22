@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ListExecutions invokes the fnf.ListExecutions API synchronously
-// api document: https://help.aliyun.com/api/fnf/listexecutions.html
-func (client *Client) ListExecutions(request *ListExecutionsRequest) (response *ListExecutionsResponse, err error) {
-	response = CreateListExecutionsResponse()
+// ListSchedules invokes the fnf.ListSchedules API synchronously
+// api document: https://help.aliyun.com/api/fnf/listschedules.html
+func (client *Client) ListSchedules(request *ListSchedulesRequest) (response *ListSchedulesResponse, err error) {
+	response = CreateListSchedulesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ListExecutionsWithChan invokes the fnf.ListExecutions API asynchronously
-// api document: https://help.aliyun.com/api/fnf/listexecutions.html
+// ListSchedulesWithChan invokes the fnf.ListSchedules API asynchronously
+// api document: https://help.aliyun.com/api/fnf/listschedules.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ListExecutionsWithChan(request *ListExecutionsRequest) (<-chan *ListExecutionsResponse, <-chan error) {
-	responseChan := make(chan *ListExecutionsResponse, 1)
+func (client *Client) ListSchedulesWithChan(request *ListSchedulesRequest) (<-chan *ListSchedulesResponse, <-chan error) {
+	responseChan := make(chan *ListSchedulesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListExecutions(request)
+		response, err := client.ListSchedules(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ListExecutionsWithChan(request *ListExecutionsRequest) (<-
 	return responseChan, errChan
 }
 
-// ListExecutionsWithCallback invokes the fnf.ListExecutions API asynchronously
-// api document: https://help.aliyun.com/api/fnf/listexecutions.html
+// ListSchedulesWithCallback invokes the fnf.ListSchedules API asynchronously
+// api document: https://help.aliyun.com/api/fnf/listschedules.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ListExecutionsWithCallback(request *ListExecutionsRequest, callback func(response *ListExecutionsResponse, err error)) <-chan int {
+func (client *Client) ListSchedulesWithCallback(request *ListSchedulesRequest, callback func(response *ListSchedulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListExecutionsResponse
+		var response *ListSchedulesResponse
 		var err error
 		defer close(result)
-		response, err = client.ListExecutions(request)
+		response, err = client.ListSchedules(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,36 +73,35 @@ func (client *Client) ListExecutionsWithCallback(request *ListExecutionsRequest,
 	return result
 }
 
-// ListExecutionsRequest is the request struct for api ListExecutions
-type ListExecutionsRequest struct {
+// ListSchedulesRequest is the request struct for api ListSchedules
+type ListSchedulesRequest struct {
 	*requests.RpcRequest
 	NextToken string           `position:"Query" name:"NextToken"`
 	RequestId string           `position:"Query" name:"RequestId"`
 	Limit     requests.Integer `position:"Query" name:"Limit"`
 	FlowName  string           `position:"Query" name:"FlowName"`
-	Status    string           `position:"Query" name:"Status"`
 }
 
-// ListExecutionsResponse is the response struct for api ListExecutions
-type ListExecutionsResponse struct {
+// ListSchedulesResponse is the response struct for api ListSchedules
+type ListSchedulesResponse struct {
 	*responses.BaseResponse
-	RequestId  string           `json:"RequestId" xml:"RequestId"`
-	NextToken  string           `json:"NextToken" xml:"NextToken"`
-	Executions []ExecutionsItem `json:"Executions" xml:"Executions"`
+	RequestId string          `json:"RequestId" xml:"RequestId"`
+	NextToken string          `json:"NextToken" xml:"NextToken"`
+	Schedules []SchedulesItem `json:"Schedules" xml:"Schedules"`
 }
 
-// CreateListExecutionsRequest creates a request to invoke ListExecutions API
-func CreateListExecutionsRequest() (request *ListExecutionsRequest) {
-	request = &ListExecutionsRequest{
+// CreateListSchedulesRequest creates a request to invoke ListSchedules API
+func CreateListSchedulesRequest() (request *ListSchedulesRequest) {
+	request = &ListSchedulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "ListExecutions", "", "")
+	request.InitWithApiInfo("fnf", "2019-03-15", "ListSchedules", "", "")
 	return
 }
 
-// CreateListExecutionsResponse creates a response to parse from ListExecutions response
-func CreateListExecutionsResponse() (response *ListExecutionsResponse) {
-	response = &ListExecutionsResponse{
+// CreateListSchedulesResponse creates a response to parse from ListSchedules response
+func CreateListSchedulesResponse() (response *ListSchedulesResponse) {
+	response = &ListSchedulesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

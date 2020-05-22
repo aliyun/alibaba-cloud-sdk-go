@@ -91,7 +91,7 @@ func CreateDeleteFlowRequest() (request *DeleteFlowRequest) {
 	request = &DeleteFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "DeleteFlow", "fnf", "openAPI")
+	request.InitWithApiInfo("fnf", "2019-03-15", "DeleteFlow", "", "")
 	return
 }
 

@@ -96,7 +96,7 @@ func CreateGetExecutionHistoryRequest() (request *GetExecutionHistoryRequest) {
 	request = &GetExecutionHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "GetExecutionHistory", "fnf", "openAPI")
+	request.InitWithApiInfo("fnf", "2019-03-15", "GetExecutionHistory", "", "")
 	return
 }
 

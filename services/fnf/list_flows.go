@@ -94,7 +94,7 @@ func CreateListFlowsRequest() (request *ListFlowsRequest) {
 	request = &ListFlowsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "ListFlows", "fnf", "openAPI")
+	request.InitWithApiInfo("fnf", "2019-03-15", "ListFlows", "", "")
 	return
 }
 

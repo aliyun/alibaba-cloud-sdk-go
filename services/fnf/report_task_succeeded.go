@@ -93,7 +93,7 @@ func CreateReportTaskSucceededRequest() (request *ReportTaskSucceededRequest) {
 	request = &ReportTaskSucceededRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "ReportTaskSucceeded", "fnf", "openAPI")
+	request.InitWithApiInfo("fnf", "2019-03-15", "ReportTaskSucceeded", "", "")
 	return
 }
 

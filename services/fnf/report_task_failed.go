@@ -94,7 +94,7 @@ func CreateReportTaskFailedRequest() (request *ReportTaskFailedRequest) {
 	request = &ReportTaskFailedRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "ReportTaskFailed", "fnf", "openAPI")
+	request.InitWithApiInfo("fnf", "2019-03-15", "ReportTaskFailed", "", "")
 	return
 }
 
