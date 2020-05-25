@@ -19,6 +19,7 @@ package vcs
 type Data struct {
 	TotalPage    int                `json:"TotalPage" xml:"TotalPage"`
 	PageNo       int                `json:"PageNo" xml:"PageNo"`
+	MaxRecordId  string             `json:"MaxRecordId" xml:"MaxRecordId"`
 	TotalCount   int                `json:"TotalCount" xml:"TotalCount"`
 	PageNumber   int                `json:"PageNumber" xml:"PageNumber"`
 	PageSize     int                `json:"PageSize" xml:"PageSize"`

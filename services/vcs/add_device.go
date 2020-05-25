@@ -79,8 +79,8 @@ type AddDeviceRequest struct {
 	DeviceSite       string `position:"Body" name:"DeviceSite"`
 	CorpId           string `position:"Body" name:"CorpId"`
 	GbId             string `position:"Body" name:"GbId"`
+	BitRate          string `position:"Body" name:"BitRate"`
 	DeviceDirection  string `position:"Body" name:"DeviceDirection"`
-	DeviceRate       string `position:"Body" name:"DeviceRate"`
 	DeviceAddress    string `position:"Body" name:"DeviceAddress"`
 	DeviceType       string `position:"Body" name:"DeviceType"`
 	DeviceResolution string `position:"Body" name:"DeviceResolution"`

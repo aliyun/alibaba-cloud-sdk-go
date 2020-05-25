@@ -76,9 +76,8 @@ func (client *Client) GetDeviceLiveUrlWithCallback(request *GetDeviceLiveUrlRequ
 // GetDeviceLiveUrlRequest is the request struct for api GetDeviceLiveUrl
 type GetDeviceLiveUrlRequest struct {
 	*requests.RpcRequest
-	CorpId   string           `position:"Body" name:"CorpId"`
-	GbId     string           `position:"Body" name:"GbId"`
-	DeviceId requests.Integer `position:"Body" name:"DeviceId"`
+	CorpId string `position:"Body" name:"CorpId"`
+	GbId   string `position:"Body" name:"GbId"`
 }
 
 // GetDeviceLiveUrlResponse is the response struct for api GetDeviceLiveUrl
