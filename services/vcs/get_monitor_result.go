@@ -86,16 +86,10 @@ type GetMonitorResultRequest struct {
 // GetMonitorResultResponse is the response struct for api GetMonitorResult
 type GetMonitorResultResponse struct {
 	*responses.BaseResponse
-	Code         string        `json:"Code" xml:"Code"`
-	Message      string        `json:"Message" xml:"Message"`
-	RequestId    string        `json:"RequestId" xml:"RequestId"`
-	Score        string        `json:"Score" xml:"Score"`
-	LeftTopX     string        `json:"LeftTopX" xml:"LeftTopX"`
-	LeftTopY     string        `json:"LeftTopY" xml:"LeftTopY"`
-	RightBottomX string        `json:"RightBottomX" xml:"RightBottomX"`
-	RightBottomY string        `json:"RightBottomY" xml:"RightBottomY"`
-	Data         Data          `json:"Data" xml:"Data"`
-	Records      []RecordsItem `json:"Records" xml:"Records"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateGetMonitorResultRequest creates a request to invoke GetMonitorResult API

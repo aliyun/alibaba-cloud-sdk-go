@@ -17,14 +17,9 @@ package vcs
 
 // Data is a nested struct in vcs response
 type Data struct {
-	TotalPage    int                `json:"TotalPage" xml:"TotalPage"`
-	PageNo       int                `json:"PageNo" xml:"PageNo"`
-	MaxRecordId  string             `json:"MaxRecordId" xml:"MaxRecordId"`
-	TotalCount   int                `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   int                `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int                `json:"PageSize" xml:"PageSize"`
-	Records      []Record           `json:"Records" xml:"Records"`
+	MaxId        string             `json:"MaxId" xml:"MaxId"`
 	ResultObject []ResultObjectItem `json:"ResultObject" xml:"ResultObject"`
+	Records      []RecordsItem      `json:"Records" xml:"Records"`
 	BodyList     []Body             `json:"BodyList" xml:"BodyList"`
 	FaceList     []Face             `json:"FaceList" xml:"FaceList"`
 }

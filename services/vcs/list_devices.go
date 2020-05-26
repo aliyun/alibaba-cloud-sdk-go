@@ -86,10 +86,10 @@ type ListDevicesRequest struct {
 // ListDevicesResponse is the response struct for api ListDevices
 type ListDevicesResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      string            `json:"Code" xml:"Code"`
+	Message   string            `json:"Message" xml:"Message"`
+	RequestId string            `json:"RequestId" xml:"RequestId"`
+	Data      DataInListDevices `json:"Data" xml:"Data"`
 }
 
 // CreateListDevicesRequest creates a request to invoke ListDevices API

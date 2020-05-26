@@ -88,10 +88,10 @@ type SearchFaceRequest struct {
 // SearchFaceResponse is the response struct for api SearchFace
 type SearchFaceResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      string           `json:"Code" xml:"Code"`
+	Message   string           `json:"Message" xml:"Message"`
+	RequestId string           `json:"RequestId" xml:"RequestId"`
+	Data      DataInSearchFace `json:"Data" xml:"Data"`
 }
 
 // CreateSearchFaceRequest creates a request to invoke SearchFace API
