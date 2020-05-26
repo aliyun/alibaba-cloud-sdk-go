@@ -76,8 +76,8 @@ func (client *Client) ModifyRiskCheckStatusWithCallback(request *ModifyRiskCheck
 // ModifyRiskCheckStatusRequest is the request struct for api ModifyRiskCheckStatus
 type ModifyRiskCheckStatusRequest struct {
 	*requests.RpcRequest
-	ItemId          requests.Integer `position:"Query" name:"ItemId"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ItemId          requests.Integer `position:"Query" name:"ItemId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
 	Lang            string           `position:"Query" name:"Lang"`
 	TaskId          requests.Integer `position:"Query" name:"TaskId"`

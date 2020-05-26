@@ -79,10 +79,10 @@ type DescribeWarningMachinesRequest struct {
 	SourceIp    string           `position:"Query" name:"SourceIp"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	MachineName string           `position:"Query" name:"MachineName"`
-	StrategyId  requests.Integer `position:"Query" name:"StrategyId"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
 	Lang        string           `position:"Query" name:"Lang"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
 	RiskId      requests.Integer `position:"Query" name:"RiskId"`
+	StrategyId  requests.Integer `position:"Query" name:"StrategyId"`
 	Uuids       string           `position:"Query" name:"Uuids"`
 }
 

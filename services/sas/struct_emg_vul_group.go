@@ -20,7 +20,10 @@ type EmgVulGroup struct {
 	AliasName    string `json:"AliasName" xml:"AliasName"`
 	PendingCount int    `json:"PendingCount" xml:"PendingCount"`
 	Name         string `json:"Name" xml:"Name"`
-	GmtPublish   int    `json:"GmtPublish" xml:"GmtPublish"`
+	GmtPublish   int64  `json:"GmtPublish" xml:"GmtPublish"`
 	Description  string `json:"Description" xml:"Description"`
 	Type         string `json:"Type" xml:"Type"`
+	Status       int    `json:"Status" xml:"Status"`
+	Progress     int    `json:"Progress" xml:"Progress"`
+	GmtLastCheck int64  `json:"GmtLastCheck" xml:"GmtLastCheck"`
 }

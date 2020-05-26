@@ -77,8 +77,8 @@ func (client *Client) ModifyCreateVulWhitelistWithCallback(request *ModifyCreate
 type ModifyCreateVulWhitelistRequest struct {
 	*requests.RpcRequest
 	Reason    string `position:"Query" name:"Reason"`
-	SourceIp  string `position:"Query" name:"SourceIp"`
 	Whitelist string `position:"Query" name:"Whitelist"`
+	SourceIp  string `position:"Query" name:"SourceIp"`
 }
 
 // ModifyCreateVulWhitelistResponse is the response struct for api ModifyCreateVulWhitelist

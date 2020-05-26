@@ -77,10 +77,10 @@ func (client *Client) ModifySecurityCheckScheduleConfigWithCallback(request *Mod
 type ModifySecurityCheckScheduleConfigRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	DaysOfWeek      string           `position:"Query" name:"DaysOfWeek"`
 	EndTime         requests.Integer `position:"Query" name:"EndTime"`
 	StartTime       requests.Integer `position:"Query" name:"StartTime"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
+	DaysOfWeek      string           `position:"Query" name:"DaysOfWeek"`
 	Lang            string           `position:"Query" name:"Lang"`
 }
 

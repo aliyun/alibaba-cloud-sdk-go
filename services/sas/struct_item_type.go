@@ -17,6 +17,6 @@ package sas
 
 // ItemType is a nested struct in sas response
 type ItemType struct {
-	Id    int    `json:"Id" xml:"Id"`
+	Id    int64  `json:"Id" xml:"Id"`
 	Title string `json:"Title" xml:"Title"`
 }

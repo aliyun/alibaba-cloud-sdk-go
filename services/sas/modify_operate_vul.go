@@ -77,9 +77,9 @@ func (client *Client) ModifyOperateVulWithCallback(request *ModifyOperateVulRequ
 type ModifyOperateVulRequest struct {
 	*requests.RpcRequest
 	Reason      string `position:"Query" name:"Reason"`
+	Type        string `position:"Query" name:"Type"`
 	SourceIp    string `position:"Query" name:"SourceIp"`
 	OperateType string `position:"Query" name:"OperateType"`
-	Type        string `position:"Query" name:"Type"`
 	Info        string `position:"Query" name:"Info"`
 }
 

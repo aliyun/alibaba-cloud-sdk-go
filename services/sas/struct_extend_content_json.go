@@ -20,11 +20,25 @@ type ExtendContentJson struct {
 	Os            string      `json:"Os" xml:"Os"`
 	OsRelease     string      `json:"OsRelease" xml:"OsRelease"`
 	Status        int         `json:"Status" xml:"Status"`
-	LastTs        int         `json:"LastTs" xml:"LastTs"`
+	LastTs        int64       `json:"LastTs" xml:"LastTs"`
 	AliasName     string      `json:"AliasName" xml:"AliasName"`
 	Tag           string      `json:"Tag" xml:"Tag"`
-	PrimaryId     int         `json:"PrimaryId" xml:"PrimaryId"`
+	PrimaryId     int64       `json:"PrimaryId" xml:"PrimaryId"`
 	AbsolutePath  string      `json:"AbsolutePath" xml:"AbsolutePath"`
+	Target        string      `json:"Target" xml:"Target"`
+	EmgProof      string      `json:"EmgProof" xml:"EmgProof"`
+	Reason        string      `json:"Reason" xml:"Reason"`
+	Title         string      `json:"Title" xml:"Title"`
+	Description   string      `json:"Description" xml:"Description"`
+	Ip            string      `json:"Ip" xml:"Ip"`
+	Owasp         string      `json:"Owasp" xml:"Owasp"`
+	Cwe           string      `json:"Cwe" xml:"Cwe"`
+	Wasc          string      `json:"Wasc" xml:"Wasc"`
+	VulType       string      `json:"VulType" xml:"VulType"`
+	Effect        string      `json:"Effect" xml:"Effect"`
+	Solution      string      `json:"Solution" xml:"Solution"`
+	Reference     string      `json:"Reference" xml:"Reference"`
+	Proof         string      `json:"Proof" xml:"Proof"`
 	CveList       []string    `json:"cveList" xml:"cveList"`
 	Necessity     Necessity   `json:"Necessity" xml:"Necessity"`
 	RpmEntityList []RpmEntity `json:"RpmEntityList" xml:"RpmEntityList"`

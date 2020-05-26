@@ -17,8 +17,8 @@ package sas
 
 // PageInfo is a nested struct in sas response
 type PageInfo struct {
-	Count       int `json:"Count" xml:"Count"`
-	PageSize    int `json:"PageSize" xml:"PageSize"`
-	TotalCount  int `json:"TotalCount" xml:"TotalCount"`
 	CurrentPage int `json:"CurrentPage" xml:"CurrentPage"`
+	Count       int `json:"Count" xml:"Count"`
+	TotalCount  int `json:"TotalCount" xml:"TotalCount"`
+	PageSize    int `json:"PageSize" xml:"PageSize"`
 }

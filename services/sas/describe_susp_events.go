@@ -76,15 +76,15 @@ func (client *Client) DescribeSuspEventsWithCallback(request *DescribeSuspEvents
 // DescribeSuspEventsRequest is the request struct for api DescribeSuspEvents
 type DescribeSuspEventsRequest struct {
 	*requests.RpcRequest
-	AlarmUniqueInfo  string `position:"Query" name:"AlarmUniqueInfo"`
-	SourceIp         string `position:"Query" name:"SourceIp"`
-	Name             string `position:"Query" name:"Name"`
-	PageSize         string `position:"Query" name:"PageSize"`
-	Dealed           string `position:"Query" name:"Dealed"`
 	Remark           string `position:"Query" name:"Remark"`
-	CurrentPage      string `position:"Query" name:"CurrentPage"`
+	SourceIp         string `position:"Query" name:"SourceIp"`
+	PageSize         string `position:"Query" name:"PageSize"`
 	From             string `position:"Query" name:"From"`
 	Lang             string `position:"Query" name:"Lang"`
+	AlarmUniqueInfo  string `position:"Query" name:"AlarmUniqueInfo"`
+	Dealed           string `position:"Query" name:"Dealed"`
+	CurrentPage      string `position:"Query" name:"CurrentPage"`
+	Name             string `position:"Query" name:"Name"`
 	Levels           string `position:"Query" name:"Levels"`
 	ParentEventTypes string `position:"Query" name:"ParentEventTypes"`
 }

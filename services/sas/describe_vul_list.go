@@ -76,14 +76,17 @@ func (client *Client) DescribeVulListWithCallback(request *DescribeVulListReques
 // DescribeVulListRequest is the request struct for api DescribeVulList
 type DescribeVulListRequest struct {
 	*requests.RpcRequest
-	AliasName   string           `position:"Query" name:"AliasName"`
+	StatusList  string           `position:"Query" name:"StatusList"`
+	Remark      string           `position:"Query" name:"Remark"`
+	Type        string           `position:"Query" name:"Type"`
 	SourceIp    string           `position:"Query" name:"SourceIp"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	Remark      string           `position:"Query" name:"Remark"`
+	Lang        string           `position:"Query" name:"Lang"`
 	Dealed      string           `position:"Query" name:"Dealed"`
 	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	Lang        string           `position:"Query" name:"Lang"`
-	Type        string           `position:"Query" name:"Type"`
+	AliasName   string           `position:"Query" name:"AliasName"`
+	Name        string           `position:"Query" name:"Name"`
+	Ids         string           `position:"Query" name:"Ids"`
 	Necessity   string           `position:"Query" name:"Necessity"`
 	Uuids       string           `position:"Query" name:"Uuids"`
 }

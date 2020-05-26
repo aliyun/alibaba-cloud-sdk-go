@@ -17,5 +17,5 @@ package sas
 
 // Value is a nested struct in sas response
 type Value struct {
-	ValueItem []ValueItem `json:"ValueItem" xml:"ValueItem"`
+	ValueItem []ValueItem `json:"Value" xml:"Value"`
 }

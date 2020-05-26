@@ -17,5 +17,5 @@ package sas
 
 // SuspEventsInDescribeAlarmEventList is a nested struct in sas response
 type SuspEventsInDescribeAlarmEventList struct {
-	SuspEventsItem []SuspEventsItem `json:"SuspEventsItem" xml:"SuspEventsItem"`
+	SuspEventsItem []SuspEventsItem `json:"SuspEvents" xml:"SuspEvents"`
 }

@@ -77,11 +77,11 @@ func (client *Client) StartBaselineSecurityCheckWithCallback(request *StartBasel
 type StartBaselineSecurityCheckRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ItemIds         *[]string        `position:"Query" name:"ItemIds"  type:"Repeated"`
+	Type            string           `position:"Query" name:"Type"`
 	Assets          *[]string        `position:"Query" name:"Assets"  type:"Repeated"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ItemIds         *[]string        `position:"Query" name:"ItemIds"  type:"Repeated"`
 	Lang            string           `position:"Query" name:"Lang"`
-	Type            string           `position:"Query" name:"Type"`
 }
 
 // StartBaselineSecurityCheckResponse is the response struct for api StartBaselineSecurityCheck

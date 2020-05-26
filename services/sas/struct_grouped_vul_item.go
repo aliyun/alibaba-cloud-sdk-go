@@ -17,9 +17,10 @@ package sas
 
 // GroupedVulItem is a nested struct in sas response
 type GroupedVulItem struct {
+	Name         string `json:"Name" xml:"Name"`
 	AliasName    string `json:"AliasName" xml:"AliasName"`
 	Type         string `json:"Type" xml:"Type"`
-	GmtLast      int    `json:"GmtLast" xml:"GmtLast"`
+	GmtLast      int64  `json:"GmtLast" xml:"GmtLast"`
 	AsapCount    int    `json:"AsapCount" xml:"AsapCount"`
 	LaterCount   int    `json:"LaterCount" xml:"LaterCount"`
 	NntfCount    int    `json:"NntfCount" xml:"NntfCount"`

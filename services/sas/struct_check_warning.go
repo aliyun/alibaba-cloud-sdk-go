@@ -18,8 +18,8 @@ package sas
 // CheckWarning is a nested struct in sas response
 type CheckWarning struct {
 	Uuid           string `json:"Uuid" xml:"Uuid"`
-	CheckId        int    `json:"CheckId" xml:"CheckId"`
-	CheckWarningId int    `json:"CheckWarningId" xml:"CheckWarningId"`
+	CheckId        int64  `json:"CheckId" xml:"CheckId"`
+	CheckWarningId int64  `json:"CheckWarningId" xml:"CheckWarningId"`
 	Level          string `json:"Level" xml:"Level"`
 	Item           string `json:"Item" xml:"Item"`
 	Type           string `json:"Type" xml:"Type"`

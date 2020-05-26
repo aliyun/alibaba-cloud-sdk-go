@@ -17,10 +17,13 @@ package sas
 
 // Group is a nested struct in sas response
 type Group struct {
-	Id            int           `json:"Id" xml:"Id"`
+	GroupId       int           `json:"GroupId" xml:"GroupId"`
 	Title         string        `json:"Title" xml:"Title"`
-	Status        string        `json:"Status" xml:"Status"`
+	GroupFlag     int           `json:"GroupFlag" xml:"GroupFlag"`
 	RemainingTime int           `json:"RemainingTime" xml:"RemainingTime"`
+	GroupName     string        `json:"GroupName" xml:"GroupName"`
+	Id            int64         `json:"Id" xml:"Id"`
+	Status        string        `json:"Status" xml:"Status"`
 	Sort          int           `json:"Sort" xml:"Sort"`
 	CountByStatus []StatusCount `json:"CountByStatus" xml:"CountByStatus"`
 }

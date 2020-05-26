@@ -21,7 +21,7 @@ type PushTaskResult struct {
 	OsVersion    string `json:"OsVersion" xml:"OsVersion"`
 	InstanceName string `json:"InstanceName" xml:"InstanceName"`
 	Success      bool   `json:"Success" xml:"Success"`
-	GroupId      int    `json:"GroupId" xml:"GroupId"`
+	GroupId      int64  `json:"GroupId" xml:"GroupId"`
 	Ip           string `json:"Ip" xml:"Ip"`
 	Online       bool   `json:"Online" xml:"Online"`
 	Message      string `json:"Message" xml:"Message"`

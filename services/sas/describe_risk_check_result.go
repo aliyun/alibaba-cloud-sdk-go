@@ -78,12 +78,16 @@ type DescribeRiskCheckResultRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
-	GroupId         requests.Integer `position:"Query" name:"GroupId"`
-	Name            string           `position:"Query" name:"Name"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
 	Lang            string           `position:"Query" name:"Lang"`
+	AssetType       string           `position:"Query" name:"AssetType"`
+	GroupId         requests.Integer `position:"Query" name:"GroupId"`
+	ItemIds         *[]string        `position:"Query" name:"ItemIds"  type:"Repeated"`
+	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
 	RiskLevel       string           `position:"Query" name:"RiskLevel"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	Name            string           `position:"Query" name:"Name"`
+	Status          string           `position:"Query" name:"Status"`
 }
 
 // DescribeRiskCheckResultResponse is the response struct for api DescribeRiskCheckResult

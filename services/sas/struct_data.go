@@ -17,20 +17,30 @@ package sas
 
 // Data is a nested struct in sas response
 type Data struct {
-	InternetIp          string        `json:"InternetIp" xml:"InternetIp"`
-	Level               string        `json:"Level" xml:"Level"`
-	InstanceName        string        `json:"InstanceName" xml:"InstanceName"`
-	AlarmEventAliasName string        `json:"AlarmEventAliasName" xml:"AlarmEventAliasName"`
-	Type                string        `json:"Type" xml:"Type"`
-	Uuid                string        `json:"Uuid" xml:"Uuid"`
-	Solution            string        `json:"Solution" xml:"Solution"`
-	StartTime           int           `json:"StartTime" xml:"StartTime"`
-	EndTime             int           `json:"EndTime" xml:"EndTime"`
-	AlarmEventDesc      string        `json:"AlarmEventDesc" xml:"AlarmEventDesc"`
-	IntranetIp          string        `json:"IntranetIp" xml:"IntranetIp"`
-	CanBeDealOnLine     bool          `json:"CanBeDealOnLine" xml:"CanBeDealOnLine"`
-	AlarmUniqueInfo     string        `json:"AlarmUniqueInfo" xml:"AlarmUniqueInfo"`
-	DataSource          string        `json:"DataSource" xml:"DataSource"`
-	CanCancelFault      bool          `json:"CanCancelFault" xml:"CanCancelFault"`
-	CauseDetails        []CauseDetail `json:"CauseDetails" xml:"CauseDetails"`
+	DataSource          string         `json:"DataSource" xml:"DataSource"`
+	Account             int            `json:"Account" xml:"Account"`
+	EndTime             int64          `json:"EndTime" xml:"EndTime"`
+	AlarmUniqueInfo     string         `json:"AlarmUniqueInfo" xml:"AlarmUniqueInfo"`
+	Uuid                string         `json:"Uuid" xml:"Uuid"`
+	StartTime           int64          `json:"StartTime" xml:"StartTime"`
+	Vul                 int            `json:"Vul" xml:"Vul"`
+	IntranetIp          string         `json:"IntranetIp" xml:"IntranetIp"`
+	CanCancelFault      bool           `json:"CanCancelFault" xml:"CanCancelFault"`
+	Health              int            `json:"Health" xml:"Health"`
+	Type                string         `json:"Type" xml:"Type"`
+	Solution            string         `json:"Solution" xml:"Solution"`
+	InternetIp          string         `json:"InternetIp" xml:"InternetIp"`
+	Level               string         `json:"Level" xml:"Level"`
+	InstanceName        string         `json:"InstanceName" xml:"InstanceName"`
+	Suspicious          int            `json:"Suspicious" xml:"Suspicious"`
+	NewSuspicious       int            `json:"NewSuspicious" xml:"NewSuspicious"`
+	AlarmEventDesc      string         `json:"AlarmEventDesc" xml:"AlarmEventDesc"`
+	AlarmEventAliasName string         `json:"AlarmEventAliasName" xml:"AlarmEventAliasName"`
+	CanBeDealOnLine     bool           `json:"CanBeDealOnLine" xml:"CanBeDealOnLine"`
+	Trojan              int            `json:"Trojan" xml:"Trojan"`
+	EntityTypeList      []EntityType   `json:"EntityTypeList" xml:"EntityTypeList"`
+	CauseDetails        []CauseDetail  `json:"CauseDetails" xml:"CauseDetails"`
+	VertexList          []Vertex       `json:"VertexList" xml:"VertexList"`
+	RelationTypeList    []RelationType `json:"RelationTypeList" xml:"RelationTypeList"`
+	EdgeList            []Edge         `json:"EdgeList" xml:"EdgeList"`
 }

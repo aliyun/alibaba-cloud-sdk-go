@@ -22,7 +22,9 @@ type RiskCheckSummary struct {
 	ItemCount          int          `json:"ItemCount" xml:"ItemCount"`
 	RiskRate           float64      `json:"RiskRate" xml:"RiskRate"`
 	AffectedAssetCount int          `json:"AffectedAssetCount" xml:"AffectedAssetCount"`
-	PreviousTime       int          `json:"PreviousTime" xml:"PreviousTime"`
+	PreviousTime       int64        `json:"PreviousTime" xml:"PreviousTime"`
+	EnabledRiskCount   int          `json:"EnabledRiskCount" xml:"EnabledRiskCount"`
+	DisabledRiskCount  int          `json:"DisabledRiskCount" xml:"DisabledRiskCount"`
 	RiskLevelCount     []LevelCount `json:"RiskLevelCount" xml:"RiskLevelCount"`
 	Groups             []Group      `json:"Groups" xml:"Groups"`
 }

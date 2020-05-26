@@ -17,15 +17,18 @@ package sas
 
 // RiskCheckResultForDisplay is a nested struct in sas response
 type RiskCheckResultForDisplay struct {
-	ItemId            int                `json:"ItemId" xml:"ItemId"`
-	TaskId            int                `json:"TaskId" xml:"TaskId"`
+	ItemId            int64              `json:"ItemId" xml:"ItemId"`
+	TaskId            int64              `json:"TaskId" xml:"TaskId"`
 	Title             string             `json:"Title" xml:"Title"`
 	RiskLevel         string             `json:"RiskLevel" xml:"RiskLevel"`
 	Status            string             `json:"Status" xml:"Status"`
 	AffectedCount     int                `json:"AffectedCount" xml:"AffectedCount"`
-	CheckTime         int                `json:"CheckTime" xml:"CheckTime"`
+	CheckTime         int64              `json:"CheckTime" xml:"CheckTime"`
 	RemainingTime     int                `json:"RemainingTime" xml:"RemainingTime"`
 	Sort              int                `json:"Sort" xml:"Sort"`
 	Type              string             `json:"Type" xml:"Type"`
+	StartStatus       string             `json:"StartStatus" xml:"StartStatus"`
+	RepairStatus      string             `json:"RepairStatus" xml:"RepairStatus"`
+	RiskAssertType    string             `json:"RiskAssertType" xml:"RiskAssertType"`
 	RiskItemResources []RiskItemResource `json:"RiskItemResources" xml:"RiskItemResources"`
 }

@@ -78,11 +78,11 @@ type DescribeCheckWarningSummaryRequest struct {
 	*requests.RpcRequest
 	RiskName    string           `position:"Query" name:"RiskName"`
 	SourceIp    string           `position:"Query" name:"SourceIp"`
-	RiskStatus  requests.Integer `position:"Query" name:"RiskStatus"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	StrategyId  requests.Integer `position:"Query" name:"StrategyId"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
 	Lang        string           `position:"Query" name:"Lang"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	RiskStatus  requests.Integer `position:"Query" name:"RiskStatus"`
+	StrategyId  requests.Integer `position:"Query" name:"StrategyId"`
 	TypeName    string           `position:"Query" name:"TypeName"`
 	Status      string           `position:"Query" name:"Status"`
 	Uuids       string           `position:"Query" name:"Uuids"`

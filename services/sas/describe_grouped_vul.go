@@ -76,13 +76,15 @@ func (client *Client) DescribeGroupedVulWithCallback(request *DescribeGroupedVul
 // DescribeGroupedVulRequest is the request struct for api DescribeGroupedVul
 type DescribeGroupedVulRequest struct {
 	*requests.RpcRequest
-	AliasName   string           `position:"Query" name:"AliasName"`
+	StatusList  string           `position:"Query" name:"StatusList"`
+	Type        string           `position:"Query" name:"Type"`
 	SourceIp    string           `position:"Query" name:"SourceIp"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	Lang        string           `position:"Query" name:"Lang"`
+	GroupId     string           `position:"Query" name:"GroupId"`
 	Dealed      string           `position:"Query" name:"Dealed"`
 	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	Lang        string           `position:"Query" name:"Lang"`
-	Type        string           `position:"Query" name:"Type"`
+	AliasName   string           `position:"Query" name:"AliasName"`
 	Necessity   string           `position:"Query" name:"Necessity"`
 	Uuids       string           `position:"Query" name:"Uuids"`
 }

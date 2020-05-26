@@ -76,9 +76,10 @@ func (client *Client) DescribeRiskCheckSummaryWithCallback(request *DescribeRisk
 // DescribeRiskCheckSummaryRequest is the request struct for api DescribeRiskCheckSummary
 type DescribeRiskCheckSummaryRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	Lang            string           `position:"Query" name:"Lang"`
+	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SourceIp                   string           `position:"Query" name:"SourceIp"`
+	Lang                       string           `position:"Query" name:"Lang"`
+	ResourceDirectoryAccountId string           `position:"Query" name:"ResourceDirectoryAccountId"`
 }
 
 // DescribeRiskCheckSummaryResponse is the response struct for api DescribeRiskCheckSummary

@@ -76,9 +76,9 @@ func (client *Client) DescribeVulWhitelistWithCallback(request *DescribeVulWhite
 // DescribeVulWhitelistRequest is the request struct for api DescribeVulWhitelist
 type DescribeVulWhitelistRequest struct {
 	*requests.RpcRequest
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
 	SourceIp    string           `position:"Query" name:"SourceIp"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
 }
 
 // DescribeVulWhitelistResponse is the response struct for api DescribeVulWhitelist

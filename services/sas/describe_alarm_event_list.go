@@ -76,16 +76,18 @@ func (client *Client) DescribeAlarmEventListWithCallback(request *DescribeAlarmE
 // DescribeAlarmEventListRequest is the request struct for api DescribeAlarmEventList
 type DescribeAlarmEventListRequest struct {
 	*requests.RpcRequest
-	AlarmEventName string           `position:"Query" name:"AlarmEventName"`
-	SourceIp       string           `position:"Query" name:"SourceIp"`
-	PageSize       string           `position:"Query" name:"PageSize"`
-	AlarmEventType string           `position:"Query" name:"AlarmEventType"`
-	Dealed         string           `position:"Query" name:"Dealed"`
-	From           string           `position:"Query" name:"From"`
-	Remark         string           `position:"Query" name:"Remark"`
-	CurrentPage    requests.Integer `position:"Query" name:"CurrentPage"`
-	Lang           string           `position:"Query" name:"Lang"`
-	Levels         string           `position:"Query" name:"Levels"`
+	AlarmEventType       string           `position:"Query" name:"AlarmEventType"`
+	Remark               string           `position:"Query" name:"Remark"`
+	AlarmEventName       string           `position:"Query" name:"AlarmEventName"`
+	SourceIp             string           `position:"Query" name:"SourceIp"`
+	PageSize             string           `position:"Query" name:"PageSize"`
+	From                 string           `position:"Query" name:"From"`
+	Lang                 string           `position:"Query" name:"Lang"`
+	GroupId              string           `position:"Query" name:"GroupId"`
+	Dealed               string           `position:"Query" name:"Dealed"`
+	CurrentPage          requests.Integer `position:"Query" name:"CurrentPage"`
+	OperateErrorCodeList *[]string        `position:"Query" name:"OperateErrorCodeList"  type:"Repeated"`
+	Levels               string           `position:"Query" name:"Levels"`
 }
 
 // DescribeAlarmEventListResponse is the response struct for api DescribeAlarmEventList

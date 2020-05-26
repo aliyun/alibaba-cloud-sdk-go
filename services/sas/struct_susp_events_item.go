@@ -17,21 +17,28 @@ package sas
 
 // SuspEventsItem is a nested struct in sas response
 type SuspEventsItem struct {
-	AlarmUniqueInfo      string `json:"AlarmUniqueInfo" xml:"AlarmUniqueInfo"`
-	Solution             string `json:"Solution" xml:"Solution"`
-	Level                string `json:"Level" xml:"Level"`
-	CanBeDealOnLine      bool   `json:"CanBeDealOnLine" xml:"CanBeDealOnLine"`
-	Description          string `json:"Description" xml:"Description"`
-	StartTime            int    `json:"StartTime" xml:"StartTime"`
-	EndTime              int    `json:"EndTime" xml:"EndTime"`
-	AlarmEventType       string `json:"AlarmEventType" xml:"AlarmEventType"`
-	SuspiciousEventCount int    `json:"SuspiciousEventCount" xml:"SuspiciousEventCount"`
-	Uuid                 string `json:"Uuid" xml:"Uuid"`
-	InstanceName         string `json:"InstanceName" xml:"InstanceName"`
-	InternetIp           string `json:"InternetIp" xml:"InternetIp"`
-	IntranetIp           string `json:"IntranetIp" xml:"IntranetIp"`
-	AlarmEventName       string `json:"AlarmEventName" xml:"AlarmEventName"`
-	SaleVersion          string `json:"SaleVersion" xml:"SaleVersion"`
-	DataSource           string `json:"DataSource" xml:"DataSource"`
-	CanCancelFault       bool   `json:"CanCancelFault" xml:"CanCancelFault"`
+	AlarmUniqueInfo        string `json:"AlarmUniqueInfo" xml:"AlarmUniqueInfo"`
+	Solution               string `json:"Solution" xml:"Solution"`
+	Level                  string `json:"Level" xml:"Level"`
+	CanBeDealOnLine        bool   `json:"CanBeDealOnLine" xml:"CanBeDealOnLine"`
+	Description            string `json:"Description" xml:"Description"`
+	StartTime              int64  `json:"StartTime" xml:"StartTime"`
+	EndTime                int64  `json:"EndTime" xml:"EndTime"`
+	AlarmEventType         string `json:"AlarmEventType" xml:"AlarmEventType"`
+	SuspiciousEventCount   int    `json:"SuspiciousEventCount" xml:"SuspiciousEventCount"`
+	Uuid                   string `json:"Uuid" xml:"Uuid"`
+	InstanceName           string `json:"InstanceName" xml:"InstanceName"`
+	InternetIp             string `json:"InternetIp" xml:"InternetIp"`
+	IntranetIp             string `json:"IntranetIp" xml:"IntranetIp"`
+	AlarmEventName         string `json:"AlarmEventName" xml:"AlarmEventName"`
+	SaleVersion            string `json:"SaleVersion" xml:"SaleVersion"`
+	DataSource             string `json:"DataSource" xml:"DataSource"`
+	CanCancelFault         bool   `json:"CanCancelFault" xml:"CanCancelFault"`
+	Dealed                 bool   `json:"Dealed" xml:"Dealed"`
+	GmtModified            int64  `json:"GmtModified" xml:"GmtModified"`
+	HasTraceInfo           bool   `json:"HasTraceInfo" xml:"HasTraceInfo"`
+	SecurityEventIds       string `json:"SecurityEventIds" xml:"SecurityEventIds"`
+	OperateErrorCode       string `json:"OperateErrorCode" xml:"OperateErrorCode"`
+	AlarmEventNameOriginal string `json:"AlarmEventNameOriginal" xml:"AlarmEventNameOriginal"`
+	InstanceId             string `json:"InstanceId" xml:"InstanceId"`
 }

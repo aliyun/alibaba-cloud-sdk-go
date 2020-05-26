@@ -17,28 +17,35 @@ package sas
 
 // VulRecord is a nested struct in sas response
 type VulRecord struct {
-	PrimaryId         int               `json:"PrimaryId" xml:"PrimaryId"`
+	PrimaryId         int64             `json:"PrimaryId" xml:"PrimaryId"`
 	Uuid              string            `json:"Uuid" xml:"Uuid"`
 	Name              string            `json:"Name" xml:"Name"`
 	Tag               string            `json:"Tag" xml:"Tag"`
 	Type              string            `json:"Type" xml:"Type"`
 	AliasName         string            `json:"AliasName" xml:"AliasName"`
-	FirstTs           int               `json:"FirstTs" xml:"FirstTs"`
-	LastTs            int               `json:"LastTs" xml:"LastTs"`
-	RepairTs          int               `json:"RepairTs" xml:"RepairTs"`
+	FirstTs           int64             `json:"FirstTs" xml:"FirstTs"`
+	LastTs            int64             `json:"LastTs" xml:"LastTs"`
+	RepairTs          int64             `json:"RepairTs" xml:"RepairTs"`
 	Status            int               `json:"Status" xml:"Status"`
 	Related           string            `json:"Related" xml:"Related"`
+	RecordId          int64             `json:"RecordId" xml:"RecordId"`
 	ResultCode        string            `json:"ResultCode" xml:"ResultCode"`
 	ResultMessage     string            `json:"ResultMessage" xml:"ResultMessage"`
-	ModifyTs          int               `json:"ModifyTs" xml:"ModifyTs"`
+	ModifyTs          int64             `json:"ModifyTs" xml:"ModifyTs"`
 	Necessity         string            `json:"Necessity" xml:"Necessity"`
 	GroupId           int               `json:"GroupId" xml:"GroupId"`
 	InstanceId        string            `json:"InstanceId" xml:"InstanceId"`
 	InstanceName      string            `json:"InstanceName" xml:"InstanceName"`
+	RegionId          string            `json:"RegionId" xml:"RegionId"`
+	Online            bool              `json:"Online" xml:"Online"`
+	Level             string            `json:"Level" xml:"Level"`
 	InternetIp        string            `json:"InternetIp" xml:"InternetIp"`
 	IntranetIp        string            `json:"IntranetIp" xml:"IntranetIp"`
 	Ip                string            `json:"Ip" xml:"Ip"`
 	OsVersion         string            `json:"OsVersion" xml:"OsVersion"`
 	NeedReboot        string            `json:"NeedReboot" xml:"NeedReboot"`
+	Progress          int               `json:"Progress" xml:"Progress"`
+	CanFix            string            `json:"CanFix" xml:"CanFix"`
 	ExtendContentJson ExtendContentJson `json:"ExtendContentJson" xml:"ExtendContentJson"`
+	ProcessInfo       ProcessInfo       `json:"ProcessInfo" xml:"ProcessInfo"`
 }

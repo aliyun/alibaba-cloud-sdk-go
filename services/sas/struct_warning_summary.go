@@ -20,9 +20,10 @@ type WarningSummary struct {
 	Name                string `json:"Name" xml:"Name"`
 	SaleVersion         string `json:"SaleVersion" xml:"SaleVersion"`
 	Desc                string `json:"Desc" xml:"Desc"`
+	UniqueInfo          string `json:"UniqueInfo" xml:"UniqueInfo"`
 	DataSource          string `json:"DataSource" xml:"DataSource"`
 	AlarmUniqueInfo     string `json:"AlarmUniqueInfo" xml:"AlarmUniqueInfo"`
-	RiskId              int    `json:"RiskId" xml:"RiskId"`
+	RiskId              int64  `json:"RiskId" xml:"RiskId"`
 	AlarmEventType      string `json:"AlarmEventType" xml:"AlarmEventType"`
 	Uuid                string `json:"Uuid" xml:"Uuid"`
 	LastTime            string `json:"LastTime" xml:"LastTime"`
@@ -37,9 +38,10 @@ type WarningSummary struct {
 	RiskName            string `json:"RiskName" xml:"RiskName"`
 	Level               string `json:"Level" xml:"Level"`
 	InstanceName        string `json:"InstanceName" xml:"InstanceName"`
-	Id                  int    `json:"Id" xml:"Id"`
+	Id                  int64  `json:"Id" xml:"Id"`
 	AlarmEventName      string `json:"AlarmEventName" xml:"AlarmEventName"`
 	WarningMachineCount int    `json:"WarningMachineCount" xml:"WarningMachineCount"`
+	Advanced            bool   `json:"Advanced" xml:"Advanced"`
 	HighWarningCount    int    `json:"HighWarningCount" xml:"HighWarningCount"`
 	SubTypeAlias        string `json:"SubTypeAlias" xml:"SubTypeAlias"`
 	TypeAlias           string `json:"TypeAlias" xml:"TypeAlias"`

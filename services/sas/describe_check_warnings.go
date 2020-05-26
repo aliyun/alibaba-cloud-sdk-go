@@ -76,12 +76,12 @@ func (client *Client) DescribeCheckWarningsWithCallback(request *DescribeCheckWa
 // DescribeCheckWarningsRequest is the request struct for api DescribeCheckWarnings
 type DescribeCheckWarningsRequest struct {
 	*requests.RpcRequest
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	Lang        string           `position:"Query" name:"Lang"`
 	RiskId      requests.Integer `position:"Query" name:"RiskId"`
 	Uuid        string           `position:"Query" name:"Uuid"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	Lang        string           `position:"Query" name:"Lang"`
 }
 
 // DescribeCheckWarningsResponse is the response struct for api DescribeCheckWarnings

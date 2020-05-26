@@ -76,11 +76,11 @@ func (client *Client) DescribeVulDetailsWithCallback(request *DescribeVulDetails
 // DescribeVulDetailsRequest is the request struct for api DescribeVulDetails
 type DescribeVulDetailsRequest struct {
 	*requests.RpcRequest
+	Type      string `position:"Query" name:"Type"`
 	AliasName string `position:"Query" name:"AliasName"`
 	SourceIp  string `position:"Query" name:"SourceIp"`
 	Name      string `position:"Query" name:"Name"`
 	Lang      string `position:"Query" name:"Lang"`
-	Type      string `position:"Query" name:"Type"`
 }
 
 // DescribeVulDetailsResponse is the response struct for api DescribeVulDetails

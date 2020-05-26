@@ -22,11 +22,11 @@ type Cve struct {
 	Title             string     `json:"Title" xml:"Title"`
 	CvssScore         string     `json:"CvssScore" xml:"CvssScore"`
 	CvssVector        string     `json:"CvssVector" xml:"CvssVector"`
-	ReleaseTime       int        `json:"ReleaseTime" xml:"ReleaseTime"`
+	ReleaseTime       int64      `json:"ReleaseTime" xml:"ReleaseTime"`
 	Complexity        string     `json:"Complexity" xml:"Complexity"`
 	Poc               string     `json:"Poc" xml:"Poc"`
-	PocCreateTime     int        `json:"PocCreateTime" xml:"PocCreateTime"`
-	PocDisclosureTime int        `json:"PocDisclosureTime" xml:"PocDisclosureTime"`
+	PocCreateTime     int64      `json:"PocCreateTime" xml:"PocCreateTime"`
+	PocDisclosureTime int64      `json:"PocDisclosureTime" xml:"PocDisclosureTime"`
 	Summary           string     `json:"Summary" xml:"Summary"`
 	Solution          string     `json:"Solution" xml:"Solution"`
 	Content           string     `json:"Content" xml:"Content"`

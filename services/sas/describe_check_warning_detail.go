@@ -85,7 +85,7 @@ type DescribeCheckWarningDetailRequest struct {
 type DescribeCheckWarningDetailResponse struct {
 	*responses.BaseResponse
 	RequestId   string `json:"RequestId" xml:"RequestId"`
-	CheckId     int    `json:"CheckId" xml:"CheckId"`
+	CheckId     int64  `json:"CheckId" xml:"CheckId"`
 	Level       string `json:"Level" xml:"Level"`
 	Item        string `json:"Item" xml:"Item"`
 	Prompt      string `json:"Prompt" xml:"Prompt"`

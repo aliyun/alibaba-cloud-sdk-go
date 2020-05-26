@@ -85,25 +85,26 @@ type DescribeSuspEventDetailRequest struct {
 // DescribeSuspEventDetailResponse is the response struct for api DescribeSuspEventDetail
 type DescribeSuspEventDetailResponse struct {
 	*responses.BaseResponse
-	RequestId       string      `json:"RequestId" xml:"RequestId"`
-	LastTime        string      `json:"LastTime" xml:"LastTime"`
-	Id              int         `json:"Id" xml:"Id"`
-	InstanceName    string      `json:"InstanceName" xml:"InstanceName"`
-	InternetIp      string      `json:"InternetIp" xml:"InternetIp"`
-	IntranetIp      string      `json:"IntranetIp" xml:"IntranetIp"`
-	Uuid            string      `json:"Uuid" xml:"Uuid"`
-	EventDesc       string      `json:"EventDesc" xml:"EventDesc"`
-	EventTypeDesc   string      `json:"EventTypeDesc" xml:"EventTypeDesc"`
-	Level           string      `json:"Level" xml:"Level"`
-	EventStatus     string      `json:"EventStatus" xml:"EventStatus"`
-	SaleVersion     string      `json:"SaleVersion" xml:"SaleVersion"`
-	DataSource      string      `json:"DataSource" xml:"DataSource"`
-	Type            string      `json:"Type" xml:"Type"`
-	OperateMsg      string      `json:"OperateMsg" xml:"OperateMsg"`
-	SasId           string      `json:"SasId" xml:"SasId"`
-	EventName       string      `json:"EventName" xml:"EventName"`
-	CanBeDealOnLine bool        `json:"CanBeDealOnLine" xml:"CanBeDealOnLine"`
-	Details         []QuaraFile `json:"Details" xml:"Details"`
+	RequestId        string      `json:"RequestId" xml:"RequestId"`
+	LastTime         string      `json:"LastTime" xml:"LastTime"`
+	Id               int         `json:"Id" xml:"Id"`
+	InstanceName     string      `json:"InstanceName" xml:"InstanceName"`
+	InternetIp       string      `json:"InternetIp" xml:"InternetIp"`
+	IntranetIp       string      `json:"IntranetIp" xml:"IntranetIp"`
+	Uuid             string      `json:"Uuid" xml:"Uuid"`
+	EventDesc        string      `json:"EventDesc" xml:"EventDesc"`
+	EventTypeDesc    string      `json:"EventTypeDesc" xml:"EventTypeDesc"`
+	Level            string      `json:"Level" xml:"Level"`
+	EventStatus      string      `json:"EventStatus" xml:"EventStatus"`
+	SaleVersion      string      `json:"SaleVersion" xml:"SaleVersion"`
+	DataSource       string      `json:"DataSource" xml:"DataSource"`
+	Type             string      `json:"Type" xml:"Type"`
+	OperateMsg       string      `json:"OperateMsg" xml:"OperateMsg"`
+	SasId            string      `json:"SasId" xml:"SasId"`
+	EventName        string      `json:"EventName" xml:"EventName"`
+	CanBeDealOnLine  bool        `json:"CanBeDealOnLine" xml:"CanBeDealOnLine"`
+	OperateErrorCode string      `json:"OperateErrorCode" xml:"OperateErrorCode"`
+	Details          []QuaraFile `json:"Details" xml:"Details"`
 }
 
 // CreateDescribeSuspEventDetailRequest creates a request to invoke DescribeSuspEventDetail API
