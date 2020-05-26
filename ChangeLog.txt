@@ -1,3 +1,7 @@
+2020-05-26 Version: v1.61.222
+- Generated 2017-09-12 for `Cbn`.
+- Support Bandwidth Package Tempupgrade.
+
 2020-05-26 Version: v1.61.221
 - Generated 2018-12-03 for `Sas`.
 - Support DescribeAllEntity API.

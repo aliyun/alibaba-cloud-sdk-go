@@ -76,17 +76,18 @@ func (client *Client) DescribeCenChildInstanceRouteEntriesWithCallback(request *
 // DescribeCenChildInstanceRouteEntriesRequest is the request struct for api DescribeCenChildInstanceRouteEntries
 type DescribeCenChildInstanceRouteEntriesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CenId                 string           `position:"Query" name:"CenId"`
-	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize              requests.Integer `position:"Query" name:"PageSize"`
-	ChildInstanceRegionId string           `position:"Query" name:"ChildInstanceRegionId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	ChildInstanceType     string           `position:"Query" name:"ChildInstanceType"`
-	ChildInstanceId       string           `position:"Query" name:"ChildInstanceId"`
-	Status                string           `position:"Query" name:"Status"`
+	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CenId                     string           `position:"Query" name:"CenId"`
+	PageNumber                requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize                  requests.Integer `position:"Query" name:"PageSize"`
+	ChildInstanceRegionId     string           `position:"Query" name:"ChildInstanceRegionId"`
+	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
+	ChildInstanceType         string           `position:"Query" name:"ChildInstanceType"`
+	ChildInstanceId           string           `position:"Query" name:"ChildInstanceId"`
+	ChildInstanceRouteTableId string           `position:"Query" name:"ChildInstanceRouteTableId"`
+	Status                    string           `position:"Query" name:"Status"`
 }
 
 // DescribeCenChildInstanceRouteEntriesResponse is the response struct for api DescribeCenChildInstanceRouteEntries

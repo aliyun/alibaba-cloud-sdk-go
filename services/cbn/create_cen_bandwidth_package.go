@@ -79,6 +79,7 @@ type CreateCenBandwidthPackageRequest struct {
 	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken                string           `position:"Query" name:"ClientToken"`
 	Description                string           `position:"Query" name:"Description"`
+	AutoRenewDuration          requests.Integer `position:"Query" name:"AutoRenewDuration"`
 	BandwidthPackageChargeType string           `position:"Query" name:"BandwidthPackageChargeType"`
 	GeographicRegionBId        string           `position:"Query" name:"GeographicRegionBId"`
 	Period                     requests.Integer `position:"Query" name:"Period"`
@@ -88,6 +89,7 @@ type CreateCenBandwidthPackageRequest struct {
 	Bandwidth                  requests.Integer `position:"Query" name:"Bandwidth"`
 	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
+	AutoRenew                  requests.Boolean `position:"Query" name:"AutoRenew"`
 	Name                       string           `position:"Query" name:"Name"`
 	PricingCycle               string           `position:"Query" name:"PricingCycle"`
 }

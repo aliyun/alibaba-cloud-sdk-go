@@ -79,10 +79,13 @@ type ModifyCenRouteMapRequest struct {
 	ResourceOwnerId                    requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CommunityMatchMode                 string           `position:"Query" name:"CommunityMatchMode"`
 	MapResult                          string           `position:"Query" name:"MapResult"`
+	DestinationRegionIds               *[]string        `position:"Query" name:"DestinationRegionIds"  type:"Repeated"`
 	NextPriority                       requests.Integer `position:"Query" name:"NextPriority"`
 	DestinationCidrBlocks              *[]string        `position:"Query" name:"DestinationCidrBlocks"  type:"Repeated"`
+	OriginalRouteTableIds              *[]string        `position:"Query" name:"OriginalRouteTableIds"  type:"Repeated"`
 	SourceInstanceIds                  *[]string        `position:"Query" name:"SourceInstanceIds"  type:"Repeated"`
 	SourceRegionIds                    *[]string        `position:"Query" name:"SourceRegionIds"  type:"Repeated"`
+	GatewayZoneId                      string           `position:"Query" name:"GatewayZoneId"`
 	MatchAsns                          *[]string        `position:"Query" name:"MatchAsns"  type:"Repeated"`
 	Preference                         requests.Integer `position:"Query" name:"Preference"`
 	OwnerId                            requests.Integer `position:"Query" name:"OwnerId"`
@@ -98,6 +101,7 @@ type ModifyCenRouteMapRequest struct {
 	Description                        string           `position:"Query" name:"Description"`
 	SourceInstanceIdsReverseMatch      requests.Boolean `position:"Query" name:"SourceInstanceIdsReverseMatch"`
 	DestinationRouteTableIds           *[]string        `position:"Query" name:"DestinationRouteTableIds"  type:"Repeated"`
+	SourceZoneIds                      *[]string        `position:"Query" name:"SourceZoneIds"  type:"Repeated"`
 	DestinationInstanceIds             *[]string        `position:"Query" name:"DestinationInstanceIds"  type:"Repeated"`
 	ResourceOwnerAccount               string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                       string           `position:"Query" name:"OwnerAccount"`

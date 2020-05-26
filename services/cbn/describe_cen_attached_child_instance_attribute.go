@@ -76,6 +76,7 @@ func (client *Client) DescribeCenAttachedChildInstanceAttributeWithCallback(requ
 // DescribeCenAttachedChildInstanceAttributeRequest is the request struct for api DescribeCenAttachedChildInstanceAttribute
 type DescribeCenAttachedChildInstanceAttributeRequest struct {
 	*requests.RpcRequest
+	IncludeRouteTable     requests.Boolean `position:"Query" name:"IncludeRouteTable"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CenId                 string           `position:"Query" name:"CenId"`
 	ChildInstanceRegionId string           `position:"Query" name:"ChildInstanceRegionId"`
@@ -89,15 +90,17 @@ type DescribeCenAttachedChildInstanceAttributeRequest struct {
 // DescribeCenAttachedChildInstanceAttributeResponse is the response struct for api DescribeCenAttachedChildInstanceAttribute
 type DescribeCenAttachedChildInstanceAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
-	CenId                   string `json:"CenId" xml:"CenId"`
-	ChildInstanceId         string `json:"ChildInstanceId" xml:"ChildInstanceId"`
-	ChildInstanceType       string `json:"ChildInstanceType" xml:"ChildInstanceType"`
-	ChildInstanceRegionId   string `json:"ChildInstanceRegionId" xml:"ChildInstanceRegionId"`
-	ChildInstanceOwnerId    int64  `json:"ChildInstanceOwnerId" xml:"ChildInstanceOwnerId"`
-	Status                  string `json:"Status" xml:"Status"`
-	ChildInstanceName       string `json:"ChildInstanceName" xml:"ChildInstanceName"`
-	ChildInstanceAttachTime string `json:"ChildInstanceAttachTime" xml:"ChildInstanceAttachTime"`
+	RequestId                string                   `json:"RequestId" xml:"RequestId"`
+	CenId                    string                   `json:"CenId" xml:"CenId"`
+	ChildInstanceId          string                   `json:"ChildInstanceId" xml:"ChildInstanceId"`
+	ChildInstanceType        string                   `json:"ChildInstanceType" xml:"ChildInstanceType"`
+	ChildInstanceRegionId    string                   `json:"ChildInstanceRegionId" xml:"ChildInstanceRegionId"`
+	ChildInstanceOwnerId     int64                    `json:"ChildInstanceOwnerId" xml:"ChildInstanceOwnerId"`
+	Status                   string                   `json:"Status" xml:"Status"`
+	ChildInstanceName        string                   `json:"ChildInstanceName" xml:"ChildInstanceName"`
+	ChildInstanceAttachTime  string                   `json:"ChildInstanceAttachTime" xml:"ChildInstanceAttachTime"`
+	Ipv6StatusInCen          string                   `json:"Ipv6StatusInCen" xml:"Ipv6StatusInCen"`
+	ChildInstanceRouteTables ChildInstanceRouteTables `json:"ChildInstanceRouteTables" xml:"ChildInstanceRouteTables"`
 }
 
 // CreateDescribeCenAttachedChildInstanceAttributeRequest creates a request to invoke DescribeCenAttachedChildInstanceAttribute API

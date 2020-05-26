@@ -77,6 +77,7 @@ func (client *Client) UntagResourcesWithCallback(request *UntagResourcesRequest,
 type UntagResourcesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	All                  requests.Boolean `position:"Query" name:"All"`
 	ResourceId           *[]string        `position:"Query" name:"ResourceId"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

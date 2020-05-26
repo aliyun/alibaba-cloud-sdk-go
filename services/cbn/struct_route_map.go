@@ -33,6 +33,7 @@ type RouteMap struct {
 	TransmitDirection                  string                        `json:"TransmitDirection" xml:"TransmitDirection"`
 	SourceInstanceIdsReverseMatch      bool                          `json:"SourceInstanceIdsReverseMatch" xml:"SourceInstanceIdsReverseMatch"`
 	DestinationInstanceIdsReverseMatch bool                          `json:"DestinationInstanceIdsReverseMatch" xml:"DestinationInstanceIdsReverseMatch"`
+	GatewayZoneId                      string                        `json:"GatewayZoneId" xml:"GatewayZoneId"`
 	SourceInstanceIds                  SourceInstanceIds             `json:"SourceInstanceIds" xml:"SourceInstanceIds"`
 	DestinationInstanceIds             DestinationInstanceIds        `json:"DestinationInstanceIds" xml:"DestinationInstanceIds"`
 	SourceRouteTableIds                SourceRouteTableIds           `json:"SourceRouteTableIds" xml:"SourceRouteTableIds"`
@@ -46,4 +47,7 @@ type RouteMap struct {
 	MatchCommunitySet                  MatchCommunitySet             `json:"MatchCommunitySet" xml:"MatchCommunitySet"`
 	OperateCommunitySet                OperateCommunitySet           `json:"OperateCommunitySet" xml:"OperateCommunitySet"`
 	PrependAsPath                      PrependAsPath                 `json:"PrependAsPath" xml:"PrependAsPath"`
+	DestinationRegionIds               DestinationRegionIds          `json:"DestinationRegionIds" xml:"DestinationRegionIds"`
+	OriginalRouteTableIds              OriginalRouteTableIds         `json:"OriginalRouteTableIds" xml:"OriginalRouteTableIds"`
+	SrcZoneIds                         SrcZoneIds                    `json:"SrcZoneIds" xml:"SrcZoneIds"`
 }

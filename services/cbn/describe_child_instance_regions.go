@@ -77,10 +77,11 @@ func (client *Client) DescribeChildInstanceRegionsWithCallback(request *Describe
 type DescribeChildInstanceRegionsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ProductType          string           `position:"Query" name:"ProductType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ProductType          string           `position:"Query" name:"ProductType"`
+	ChildInstanceOwnerId requests.Integer `position:"Query" name:"ChildInstanceOwnerId"`
 }
 
 // DescribeChildInstanceRegionsResponse is the response struct for api DescribeChildInstanceRegions
