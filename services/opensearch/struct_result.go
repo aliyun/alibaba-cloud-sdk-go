@@ -17,11 +17,39 @@ package opensearch
 
 // Result is a nested struct in opensearch response
 type Result struct {
-	Type       string `json:"type" xml:"type"`
-	Content    string `json:"content" xml:"content"`
-	ModifyTime string `json:"modifyTime" xml:"modifyTime"`
-	Scope      string `json:"scope" xml:"scope"`
-	Version    int64  `json:"version" xml:"version"`
-	Status     string `json:"status" xml:"status"`
-	CreateTime string `json:"createTime" xml:"createTime"`
+	Created                           int      `json:"created" xml:"created"`
+	Scope                             string   `json:"scope" xml:"scope"`
+	LockMode                          string   `json:"lockMode" xml:"lockMode"`
+	AutoSwitch                        bool     `json:"autoSwitch" xml:"autoSwitch"`
+	ChargeType                        string   `json:"chargeType" xml:"chargeType"`
+	Produced                          int      `json:"produced" xml:"produced"`
+	Name                              string   `json:"name" xml:"name"`
+	SwitchedTime                      int      `json:"switchedTime" xml:"switchedTime"`
+	CreateTime                        string   `json:"createTime" xml:"createTime"`
+	Type                              string   `json:"type" xml:"type"`
+	PendingSecondRankAlgoDeploymentId int      `json:"pendingSecondRankAlgoDeploymentId" xml:"pendingSecondRankAlgoDeploymentId"`
+	Updated                           int      `json:"updated" xml:"updated"`
+	Content                           string   `json:"content" xml:"content"`
+	ChargingWay                       int      `json:"chargingWay" xml:"chargingWay"`
+	LockedByExpiration                int      `json:"lockedByExpiration" xml:"lockedByExpiration"`
+	ProgressPercent                   int      `json:"progressPercent" xml:"progressPercent"`
+	AlgoDeploymentId                  int      `json:"algoDeploymentId" xml:"algoDeploymentId"`
+	ExpireOn                          string   `json:"expireOn" xml:"expireOn"`
+	Version                           int64    `json:"version" xml:"version"`
+	InstanceId                        string   `json:"instanceId" xml:"instanceId"`
+	Status                            string   `json:"status" xml:"status"`
+	HasPendingQuotaReviewTask         int      `json:"hasPendingQuotaReviewTask" xml:"hasPendingQuotaReviewTask"`
+	Description                       string   `json:"description" xml:"description"`
+	CurrentVersion                    string   `json:"currentVersion" xml:"currentVersion"`
+	FirstRankAlgoDeploymentId         int      `json:"firstRankAlgoDeploymentId" xml:"firstRankAlgoDeploymentId"`
+	ProjectId                         string   `json:"projectId" xml:"projectId"`
+	ClusterName                       string   `json:"clusterName" xml:"clusterName"`
+	ProcessingOrderId                 string   `json:"processingOrderId" xml:"processingOrderId"`
+	ModifyTime                        string   `json:"modifyTime" xml:"modifyTime"`
+	CommodityCode                     string   `json:"commodityCode" xml:"commodityCode"`
+	Id                                string   `json:"id" xml:"id"`
+	SecondRankAlgoDeploymentId        int      `json:"secondRankAlgoDeploymentId" xml:"secondRankAlgoDeploymentId"`
+	FetchFields                       []string `json:"fetchFields" xml:"fetchFields"`
+	Schema                            Schema   `json:"schema" xml:"schema"`
+	Quota                             Quota    `json:"quota" xml:"quota"`
 }
