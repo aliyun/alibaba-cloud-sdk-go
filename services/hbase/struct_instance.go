@@ -50,5 +50,6 @@ type Instance struct {
 	ParentId             string                  `json:"ParentId" xml:"ParentId"`
 	ModuleId             int                     `json:"ModuleId" xml:"ModuleId"`
 	ModuleStackVersion   string                  `json:"ModuleStackVersion" xml:"ModuleStackVersion"`
+	CoreDiskCount        string                  `json:"CoreDiskCount" xml:"CoreDiskCount"`
 	Tags                 TagsInDescribeInstances `json:"Tags" xml:"Tags"`
 }
