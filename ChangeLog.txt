@@ -1,3 +1,7 @@
+2020-05-28 Version: v1.61.226
+- Generated 2016-08-01 for `Push`.
+- Supported AndroidNotificationXiaomiChannel for Push and MassPush.
+
 2020-05-27 Version: v1.61.225
 - Generated 2017-12-25 for `OpenSearch`.
 - Add app-group-management and quota-updating APIs.
