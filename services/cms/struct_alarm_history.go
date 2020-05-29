@@ -17,7 +17,6 @@ package cms
 
 // AlarmHistory is a nested struct in cms response
 type AlarmHistory struct {
-	Id              string                                  `json:"Id" xml:"Id"`
 	RuleId          string                                  `json:"RuleId" xml:"RuleId"`
 	GroupId         string                                  `json:"GroupId" xml:"GroupId"`
 	Namespace       string                                  `json:"Namespace" xml:"Namespace"`

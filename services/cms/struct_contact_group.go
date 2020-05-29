@@ -17,5 +17,11 @@ package cms
 
 // ContactGroup is a nested struct in cms response
 type ContactGroup struct {
-	Name string `json:"Name" xml:"Name"`
+	Name                string                             `json:"Name" xml:"Name"`
+	EnabledWeeklyReport bool                               `json:"EnabledWeeklyReport" xml:"EnabledWeeklyReport"`
+	EnableSubscribed    bool                               `json:"EnableSubscribed" xml:"EnableSubscribed"`
+	Describe            string                             `json:"Describe" xml:"Describe"`
+	UpdateTime          int64                              `json:"UpdateTime" xml:"UpdateTime"`
+	CreateTime          int64                              `json:"CreateTime" xml:"CreateTime"`
+	Contacts            ContactsInDescribeContactGroupList `json:"Contacts" xml:"Contacts"`
 }

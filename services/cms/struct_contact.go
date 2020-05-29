@@ -17,14 +17,15 @@ package cms
 
 // Contact is a nested struct in cms response
 type Contact struct {
-	Name       string   `json:"Name" xml:"Name"`
-	Message    string   `json:"Message" xml:"Message"`
-	Success    string   `json:"Success" xml:"Success"`
-	Code       string   `json:"Code" xml:"Code"`
-	Desc       string   `json:"Desc" xml:"Desc"`
-	UpdateTime int64    `json:"UpdateTime" xml:"UpdateTime"`
-	RequestId  string   `json:"RequestId" xml:"RequestId"`
-	RuleId     string   `json:"RuleId" xml:"RuleId"`
-	CreateTime int64    `json:"CreateTime" xml:"CreateTime"`
-	Channels   Channels `json:"Channels" xml:"Channels"`
+	Name          string                             `json:"Name" xml:"Name"`
+	Message       string                             `json:"Message" xml:"Message"`
+	Success       string                             `json:"Success" xml:"Success"`
+	Code          string                             `json:"Code" xml:"Code"`
+	Desc          string                             `json:"Desc" xml:"Desc"`
+	UpdateTime    int64                              `json:"UpdateTime" xml:"UpdateTime"`
+	RequestId     string                             `json:"RequestId" xml:"RequestId"`
+	RuleId        string                             `json:"RuleId" xml:"RuleId"`
+	CreateTime    int64                              `json:"CreateTime" xml:"CreateTime"`
+	ContactGroups ContactGroupsInDescribeContactList `json:"ContactGroups" xml:"ContactGroups"`
+	Channels      Channels                           `json:"Channels" xml:"Channels"`
 }

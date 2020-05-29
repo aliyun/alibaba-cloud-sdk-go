@@ -86,6 +86,7 @@ type ModifyGroupMonitoringAgentProcessRequest struct {
 type ModifyGroupMonitoringAgentProcessAlertConfig struct {
 	Times               string `name:"Times"`
 	NoEffectiveInterval string `name:"NoEffectiveInterval"`
+	Webhook             string `name:"Webhook"`
 	SilenceTime         string `name:"SilenceTime"`
 	Threshold           string `name:"Threshold"`
 	EffectiveInterval   string `name:"EffectiveInterval"`

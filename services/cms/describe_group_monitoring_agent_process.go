@@ -85,11 +85,14 @@ type DescribeGroupMonitoringAgentProcessRequest struct {
 // DescribeGroupMonitoringAgentProcessResponse is the response struct for api DescribeGroupMonitoringAgentProcess
 type DescribeGroupMonitoringAgentProcessResponse struct {
 	*responses.BaseResponse
-	Code      string    `json:"Code" xml:"Code"`
-	Message   string    `json:"Message" xml:"Message"`
-	Success   bool      `json:"Success" xml:"Success"`
-	RequestId string    `json:"RequestId" xml:"RequestId"`
-	Processes Processes `json:"Processes" xml:"Processes"`
+	Code       string    `json:"Code" xml:"Code"`
+	Message    string    `json:"Message" xml:"Message"`
+	Success    bool      `json:"Success" xml:"Success"`
+	RequestId  string    `json:"RequestId" xml:"RequestId"`
+	Total      string    `json:"Total" xml:"Total"`
+	PageSize   string    `json:"PageSize" xml:"PageSize"`
+	PageNumber string    `json:"PageNumber" xml:"PageNumber"`
+	Processes  Processes `json:"Processes" xml:"Processes"`
 }
 
 // CreateDescribeGroupMonitoringAgentProcessRequest creates a request to invoke DescribeGroupMonitoringAgentProcess API

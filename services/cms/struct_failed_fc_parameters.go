@@ -17,5 +17,5 @@ package cms
 
 // FailedFcParameters is a nested struct in cms response
 type FailedFcParameters struct {
-	FcParameter []FcParameterInPutEventRuleTargets `json:"FcParameter" xml:"FcParameter"`
+	FcParameter []FcParameter `json:"FcParameter" xml:"FcParameter"`
 }
