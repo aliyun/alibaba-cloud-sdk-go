@@ -99,6 +99,7 @@ func CreateDescribeCustomMetricListRequest() (request *DescribeCustomMetricListR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeCustomMetricList", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

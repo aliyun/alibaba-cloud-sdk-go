@@ -103,6 +103,7 @@ func CreateDescribeSystemEventCountRequest() (request *DescribeSystemEventCountR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeSystemEventCount", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

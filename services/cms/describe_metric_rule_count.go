@@ -96,6 +96,7 @@ func CreateDescribeMetricRuleCountRequest() (request *DescribeMetricRuleCountReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeMetricRuleCount", "cms", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

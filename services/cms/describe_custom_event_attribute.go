@@ -103,6 +103,7 @@ func CreateDescribeCustomEventAttributeRequest() (request *DescribeCustomEventAt
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeCustomEventAttribute", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

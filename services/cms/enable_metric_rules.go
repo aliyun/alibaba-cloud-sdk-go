@@ -94,6 +94,7 @@ func CreateEnableMetricRulesRequest() (request *EnableMetricRulesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "EnableMetricRules", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

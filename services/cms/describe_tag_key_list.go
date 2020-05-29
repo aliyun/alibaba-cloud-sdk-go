@@ -96,6 +96,7 @@ func CreateDescribeTagKeyListRequest() (request *DescribeTagKeyListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeTagKeyList", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

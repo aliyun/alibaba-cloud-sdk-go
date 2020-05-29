@@ -94,6 +94,7 @@ func CreateDeleteEventRulesRequest() (request *DeleteEventRulesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteEventRules", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

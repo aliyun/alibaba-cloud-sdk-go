@@ -101,6 +101,7 @@ func CreatePutCustomEventRequest() (request *PutCustomEventRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "PutCustomEvent", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

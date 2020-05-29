@@ -99,6 +99,7 @@ func CreateDescribeAlertingMetricRuleResourcesRequest() (request *DescribeAlerti
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeAlertingMetricRuleResources", "cms", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

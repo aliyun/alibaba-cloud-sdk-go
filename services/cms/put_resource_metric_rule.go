@@ -118,6 +118,7 @@ func CreatePutResourceMetricRuleRequest() (request *PutResourceMetricRuleRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "PutResourceMetricRule", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

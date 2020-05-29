@@ -98,6 +98,7 @@ func CreateDescribeSiteMonitorStatisticsRequest() (request *DescribeSiteMonitorS
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeSiteMonitorStatistics", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

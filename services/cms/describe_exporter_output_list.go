@@ -98,6 +98,7 @@ func CreateDescribeExporterOutputListRequest() (request *DescribeExporterOutputL
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeExporterOutputList", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

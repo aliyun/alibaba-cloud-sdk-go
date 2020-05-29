@@ -107,6 +107,7 @@ func CreateDescribeAlertHistoryListRequest() (request *DescribeAlertHistoryListR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeAlertHistoryList", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

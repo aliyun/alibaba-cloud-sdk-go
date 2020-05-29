@@ -102,6 +102,7 @@ func CreateCreateSiteMonitorRequest() (request *CreateSiteMonitorRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "CreateSiteMonitor", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

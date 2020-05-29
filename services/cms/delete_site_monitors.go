@@ -96,6 +96,7 @@ func CreateDeleteSiteMonitorsRequest() (request *DeleteSiteMonitorsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteSiteMonitors", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

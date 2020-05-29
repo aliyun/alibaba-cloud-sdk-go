@@ -96,6 +96,7 @@ func CreateDescribeSiteMonitorISPCityListRequest() (request *DescribeSiteMonitor
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeSiteMonitorISPCityList", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -96,6 +96,7 @@ func CreateDeleteMetricRuleTargetsRequest() (request *DeleteMetricRuleTargetsReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteMetricRuleTargets", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

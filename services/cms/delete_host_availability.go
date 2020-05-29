@@ -94,6 +94,7 @@ func CreateDeleteHostAvailabilityRequest() (request *DeleteHostAvailabilityReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteHostAvailability", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

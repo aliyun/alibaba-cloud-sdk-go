@@ -101,6 +101,7 @@ func CreateAddTagsRequest() (request *AddTagsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "AddTags", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

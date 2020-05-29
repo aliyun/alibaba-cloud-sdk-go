@@ -98,6 +98,7 @@ func CreateCreateMonitorGroupNotifyPolicyRequest() (request *CreateMonitorGroupN
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "CreateMonitorGroupNotifyPolicy", "cms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -98,6 +98,7 @@ func CreateDescribeFolderListRequest() (request *DescribeFolderListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeFolderList", "cms", "openAPI")
+	request.Method = requests.GET
 	return
 }
 
