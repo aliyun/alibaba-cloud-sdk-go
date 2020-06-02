@@ -93,6 +93,7 @@ func CreateSetRetcodeShareStatusRequest() (request *SetRetcodeShareStatusRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ARMS", "2019-08-08", "SetRetcodeShareStatus", "arms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

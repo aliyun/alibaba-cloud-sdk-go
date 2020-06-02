@@ -95,6 +95,7 @@ func CreateGetConsistencySnapshotRequest() (request *GetConsistencySnapshotReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ARMS", "2019-08-08", "GetConsistencySnapshot", "arms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

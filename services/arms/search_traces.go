@@ -76,14 +76,21 @@ func (client *Client) SearchTracesWithCallback(request *SearchTracesRequest, cal
 // SearchTracesRequest is the request struct for api SearchTraces
 type SearchTracesRequest struct {
 	*requests.RpcRequest
-	EndTime       requests.Integer   `position:"Query" name:"EndTime"`
-	StartTime     requests.Integer   `position:"Query" name:"StartTime"`
-	Reverse       requests.Boolean   `position:"Query" name:"Reverse"`
-	MinDuration   requests.Integer   `position:"Query" name:"MinDuration"`
-	ServiceIp     string             `position:"Query" name:"ServiceIp"`
-	OperationName string             `position:"Query" name:"OperationName"`
-	ServiceName   string             `position:"Query" name:"ServiceName"`
-	Tag           *[]SearchTracesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	EndTime          requests.Integer                `position:"Query" name:"EndTime"`
+	StartTime        requests.Integer                `position:"Query" name:"StartTime"`
+	Reverse          requests.Boolean                `position:"Query" name:"Reverse"`
+	MinDuration      requests.Integer                `position:"Query" name:"MinDuration"`
+	ServiceIp        string                          `position:"Query" name:"ServiceIp"`
+	ExclusionFilters *[]SearchTracesExclusionFilters `position:"Query" name:"ExclusionFilters"  type:"Repeated"`
+	OperationName    string                          `position:"Query" name:"OperationName"`
+	ServiceName      string                          `position:"Query" name:"ServiceName"`
+	Tag              *[]SearchTracesTag              `position:"Query" name:"Tag"  type:"Repeated"`
+}
+
+// SearchTracesExclusionFilters is a repeated param struct in SearchTracesRequest
+type SearchTracesExclusionFilters struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // SearchTracesTag is a repeated param struct in SearchTracesRequest
@@ -105,6 +112,7 @@ func CreateSearchTracesRequest() (request *SearchTracesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ARMS", "2019-08-08", "SearchTraces", "arms", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

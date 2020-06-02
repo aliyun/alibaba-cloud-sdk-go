@@ -1,3 +1,7 @@
+2020-06-02 Version: v1.61.231
+- Generated 2019-08-08 for `ARMS`.
+- Edit SearchTraces api.
+
 2020-06-02 Version: v1.61.230
 - Generated 2016-06-07 for `cr`.
 
