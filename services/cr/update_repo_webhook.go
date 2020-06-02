@@ -76,8 +76,8 @@ func (client *Client) UpdateRepoWebhookWithCallback(request *UpdateRepoWebhookRe
 // UpdateRepoWebhookRequest is the request struct for api UpdateRepoWebhook
 type UpdateRepoWebhookRequest struct {
 	*requests.RoaRequest
-	RepoNamespace string           `position:"Path" name:"RepoNamespace"`
 	WebhookId     requests.Integer `position:"Path" name:"WebhookId"`
+	RepoNamespace string           `position:"Path" name:"RepoNamespace"`
 	RepoName      string           `position:"Path" name:"RepoName"`
 }
 
@@ -91,7 +91,7 @@ func CreateUpdateRepoWebhookRequest() (request *UpdateRepoWebhookRequest) {
 	request = &UpdateRepoWebhookRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "UpdateRepoWebhook", "/repos/[RepoNamespace]/[RepoName]/webhooks/[WebhookId]", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "UpdateRepoWebhook", "/repos/[RepoNamespace]/[RepoName]/webhooks/[WebhookId]", "acr", "openAPI")
 	request.Method = requests.POST
 	return
 }

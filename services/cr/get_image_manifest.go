@@ -76,10 +76,10 @@ func (client *Client) GetImageManifestWithCallback(request *GetImageManifestRequ
 // GetImageManifestRequest is the request struct for api GetImageManifest
 type GetImageManifestRequest struct {
 	*requests.RoaRequest
+	SchemaVersion requests.Integer `position:"Query" name:"SchemaVersion"`
 	RepoNamespace string           `position:"Path" name:"RepoNamespace"`
 	RepoName      string           `position:"Path" name:"RepoName"`
 	Tag           string           `position:"Path" name:"Tag"`
-	SchemaVersion requests.Integer `position:"Query" name:"SchemaVersion"`
 }
 
 // GetImageManifestResponse is the response struct for api GetImageManifest
@@ -92,7 +92,7 @@ func CreateGetImageManifestRequest() (request *GetImageManifestRequest) {
 	request = &GetImageManifestRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetImageManifest", "/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/manifest", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetImageManifest", "/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/manifest", "acr", "openAPI")
 	request.Method = requests.GET
 	return
 }

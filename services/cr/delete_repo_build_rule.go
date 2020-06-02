@@ -76,9 +76,9 @@ func (client *Client) DeleteRepoBuildRuleWithCallback(request *DeleteRepoBuildRu
 // DeleteRepoBuildRuleRequest is the request struct for api DeleteRepoBuildRule
 type DeleteRepoBuildRuleRequest struct {
 	*requests.RoaRequest
+	BuildRuleId   requests.Integer `position:"Path" name:"BuildRuleId"`
 	RepoNamespace string           `position:"Path" name:"RepoNamespace"`
 	RepoName      string           `position:"Path" name:"RepoName"`
-	BuildRuleId   requests.Integer `position:"Path" name:"BuildRuleId"`
 }
 
 // DeleteRepoBuildRuleResponse is the response struct for api DeleteRepoBuildRule
@@ -91,7 +91,7 @@ func CreateDeleteRepoBuildRuleRequest() (request *DeleteRepoBuildRuleRequest) {
 	request = &DeleteRepoBuildRuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "DeleteRepoBuildRule", "/repos/[RepoNamespace]/[RepoName]/rules/[BuildRuleId]", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "DeleteRepoBuildRule", "/repos/[RepoNamespace]/[RepoName]/rules/[BuildRuleId]", "acr", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

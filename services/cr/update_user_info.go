@@ -88,7 +88,7 @@ func CreateUpdateUserInfoRequest() (request *UpdateUserInfoRequest) {
 	request = &UpdateUserInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "UpdateUserInfo", "/users", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "UpdateUserInfo", "/users", "acr", "openAPI")
 	request.Method = requests.POST
 	return
 }

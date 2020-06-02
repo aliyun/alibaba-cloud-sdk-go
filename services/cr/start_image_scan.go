@@ -91,7 +91,7 @@ func CreateStartImageScanRequest() (request *StartImageScanRequest) {
 	request = &StartImageScanRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "StartImageScan", "/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/scan", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "StartImageScan", "/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/scan", "acr", "openAPI")
 	request.Method = requests.PUT
 	return
 }

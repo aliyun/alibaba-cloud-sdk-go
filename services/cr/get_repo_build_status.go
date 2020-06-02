@@ -76,9 +76,9 @@ func (client *Client) GetRepoBuildStatusWithCallback(request *GetRepoBuildStatus
 // GetRepoBuildStatusRequest is the request struct for api GetRepoBuildStatus
 type GetRepoBuildStatusRequest struct {
 	*requests.RoaRequest
+	BuildId       string `position:"Path" name:"BuildId"`
 	RepoNamespace string `position:"Path" name:"RepoNamespace"`
 	RepoName      string `position:"Path" name:"RepoName"`
-	BuildId       string `position:"Path" name:"BuildId"`
 }
 
 // GetRepoBuildStatusResponse is the response struct for api GetRepoBuildStatus
@@ -91,7 +91,7 @@ func CreateGetRepoBuildStatusRequest() (request *GetRepoBuildStatusRequest) {
 	request = &GetRepoBuildStatusRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoBuildStatus", "/repos/[RepoNamespace]/[RepoName]/build/[BuildId]/status", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoBuildStatus", "/repos/[RepoNamespace]/[RepoName]/build/[BuildId]/status", "acr", "openAPI")
 	request.Method = requests.GET
 	return
 }

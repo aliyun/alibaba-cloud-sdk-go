@@ -76,8 +76,8 @@ func (client *Client) DeleteRepoWebhookWithCallback(request *DeleteRepoWebhookRe
 // DeleteRepoWebhookRequest is the request struct for api DeleteRepoWebhook
 type DeleteRepoWebhookRequest struct {
 	*requests.RoaRequest
-	RepoNamespace string           `position:"Path" name:"RepoNamespace"`
 	WebhookId     requests.Integer `position:"Path" name:"WebhookId"`
+	RepoNamespace string           `position:"Path" name:"RepoNamespace"`
 	RepoName      string           `position:"Path" name:"RepoName"`
 }
 
@@ -91,7 +91,7 @@ func CreateDeleteRepoWebhookRequest() (request *DeleteRepoWebhookRequest) {
 	request = &DeleteRepoWebhookRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "DeleteRepoWebhook", "/repos/[RepoNamespace]/[RepoName]/webhooks/[WebhookId]", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "DeleteRepoWebhook", "/repos/[RepoNamespace]/[RepoName]/webhooks/[WebhookId]", "acr", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

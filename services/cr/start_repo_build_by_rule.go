@@ -76,9 +76,9 @@ func (client *Client) StartRepoBuildByRuleWithCallback(request *StartRepoBuildBy
 // StartRepoBuildByRuleRequest is the request struct for api StartRepoBuildByRule
 type StartRepoBuildByRuleRequest struct {
 	*requests.RoaRequest
+	BuildRuleId   requests.Integer `position:"Path" name:"BuildRuleId"`
 	RepoNamespace string           `position:"Path" name:"RepoNamespace"`
 	RepoName      string           `position:"Path" name:"RepoName"`
-	BuildRuleId   requests.Integer `position:"Path" name:"BuildRuleId"`
 }
 
 // StartRepoBuildByRuleResponse is the response struct for api StartRepoBuildByRule
@@ -91,7 +91,7 @@ func CreateStartRepoBuildByRuleRequest() (request *StartRepoBuildByRuleRequest) 
 	request = &StartRepoBuildByRuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "StartRepoBuildByRule", "/repos/[RepoNamespace]/[RepoName]/rules/[BuildRuleId]/build", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "StartRepoBuildByRule", "/repos/[RepoNamespace]/[RepoName]/rules/[BuildRuleId]/build", "acr", "openAPI")
 	request.Method = requests.PUT
 	return
 }

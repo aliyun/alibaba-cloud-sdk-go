@@ -90,7 +90,7 @@ func CreateCreateRepoBuildRuleRequest() (request *CreateRepoBuildRuleRequest) {
 	request = &CreateRepoBuildRuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "CreateRepoBuildRule", "/repos/[RepoNamespace]/[RepoName]/rules", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "CreateRepoBuildRule", "/repos/[RepoNamespace]/[RepoName]/rules", "acr", "openAPI")
 	request.Method = requests.PUT
 	return
 }

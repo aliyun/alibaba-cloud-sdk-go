@@ -76,9 +76,9 @@ func (client *Client) CancelRepoBuildWithCallback(request *CancelRepoBuildReques
 // CancelRepoBuildRequest is the request struct for api CancelRepoBuild
 type CancelRepoBuildRequest struct {
 	*requests.RoaRequest
+	BuildId       string `position:"Path" name:"BuildId"`
 	RepoNamespace string `position:"Path" name:"RepoNamespace"`
 	RepoName      string `position:"Path" name:"RepoName"`
-	BuildId       string `position:"Path" name:"BuildId"`
 }
 
 // CancelRepoBuildResponse is the response struct for api CancelRepoBuild
@@ -91,7 +91,7 @@ func CreateCancelRepoBuildRequest() (request *CancelRepoBuildRequest) {
 	request = &CancelRepoBuildRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "CancelRepoBuild", "/repos/[RepoNamespace]/[RepoName]/build/[BuildId]/cancel", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "CancelRepoBuild", "/repos/[RepoNamespace]/[RepoName]/build/[BuildId]/cancel", "acr", "openAPI")
 	request.Method = requests.POST
 	return
 }
