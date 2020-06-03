@@ -95,6 +95,7 @@ func CreateDescribeBackupPlanConfigRequest() (request *DescribeBackupPlanConfigR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("HBase", "2019-01-01", "DescribeBackupPlanConfig", "hbase", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

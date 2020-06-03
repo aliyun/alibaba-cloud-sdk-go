@@ -97,6 +97,7 @@ func CreateDescribeRestoreTablesRequest() (request *DescribeRestoreTablesRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("HBase", "2019-01-01", "DescribeRestoreTables", "hbase", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

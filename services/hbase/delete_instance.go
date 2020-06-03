@@ -92,6 +92,7 @@ func CreateDeleteInstanceRequest() (request *DeleteInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("HBase", "2019-01-01", "DeleteInstance", "hbase", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

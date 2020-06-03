@@ -101,6 +101,7 @@ func CreateListTagResourcesRequest() (request *ListTagResourcesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("HBase", "2019-01-01", "ListTagResources", "hbase", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

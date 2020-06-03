@@ -95,6 +95,7 @@ func CreateDescribeRestoreFullDetailsRequest() (request *DescribeRestoreFullDeta
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("HBase", "2019-01-01", "DescribeRestoreFullDetails", "hbase", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

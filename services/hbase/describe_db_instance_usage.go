@@ -92,6 +92,7 @@ func CreateDescribeDBInstanceUsageRequest() (request *DescribeDBInstanceUsageReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("HBase", "2019-01-01", "DescribeDBInstanceUsage", "hbase", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

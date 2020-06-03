@@ -1,3 +1,7 @@
+2020-06-03 Version: v1.61.234
+- Generated 2019-01-01 for `HBase`.
+- Describe describeAvailableResource.
+
 2020-06-03 Version: v1.61.233
 - Generated 2019-01-01 for `Cassandra`.
 

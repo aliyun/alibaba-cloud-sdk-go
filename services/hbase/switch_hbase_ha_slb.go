@@ -94,6 +94,7 @@ func CreateSwitchHbaseHaSlbRequest() (request *SwitchHbaseHaSlbRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("HBase", "2019-01-01", "SwitchHbaseHaSlb", "hbase", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

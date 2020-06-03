@@ -92,6 +92,7 @@ func CreateModifySecurityGroupsRequest() (request *ModifySecurityGroupsRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("HBase", "2019-01-01", "ModifySecurityGroups", "hbase", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

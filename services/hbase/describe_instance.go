@@ -122,6 +122,8 @@ type DescribeInstanceResponse struct {
 	ParentId             string                 `json:"ParentId" xml:"ParentId"`
 	ModuleId             int                    `json:"ModuleId" xml:"ModuleId"`
 	ModuleStackVersion   string                 `json:"ModuleStackVersion" xml:"ModuleStackVersion"`
+	AutoRenewal          bool                   `json:"AutoRenewal" xml:"AutoRenewal"`
+	Duration             int                    `json:"Duration" xml:"Duration"`
 	Tags                 TagsInDescribeInstance `json:"Tags" xml:"Tags"`
 }
 
@@ -131,6 +133,7 @@ func CreateDescribeInstanceRequest() (request *DescribeInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("HBase", "2019-01-01", "DescribeInstance", "hbase", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

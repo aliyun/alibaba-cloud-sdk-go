@@ -93,6 +93,7 @@ func CreateDescribeRecoverableTimeRangeRequest() (request *DescribeRecoverableTi
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("HBase", "2019-01-01", "DescribeRecoverableTimeRange", "hbase", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

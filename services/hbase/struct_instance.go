@@ -17,39 +17,42 @@ package hbase
 
 // Instance is a nested struct in hbase response
 type Instance struct {
-	InstanceId           string                  `json:"InstanceId" xml:"InstanceId"`
-	InstanceName         string                  `json:"InstanceName" xml:"InstanceName"`
-	Status               string                  `json:"Status" xml:"Status"`
-	PayType              string                  `json:"PayType" xml:"PayType"`
-	CreatedTime          string                  `json:"CreatedTime" xml:"CreatedTime"`
-	ExpireTime           string                  `json:"ExpireTime" xml:"ExpireTime"`
-	MajorVersion         string                  `json:"MajorVersion" xml:"MajorVersion"`
 	Engine               string                  `json:"Engine" xml:"Engine"`
-	IsHa                 bool                    `json:"IsHa" xml:"IsHa"`
+	MasterDiskSize       int                     `json:"MasterDiskSize" xml:"MasterDiskSize"`
+	CoreDiskCount        string                  `json:"CoreDiskCount" xml:"CoreDiskCount"`
+	ExpireTimeUTC        string                  `json:"ExpireTimeUTC" xml:"ExpireTimeUTC"`
+	CoreDiskSize         int                     `json:"CoreDiskSize" xml:"CoreDiskSize"`
+	CoreNodeCount        int                     `json:"CoreNodeCount" xml:"CoreNodeCount"`
+	ModuleStackVersion   string                  `json:"ModuleStackVersion" xml:"ModuleStackVersion"`
+	MajorVersion         string                  `json:"MajorVersion" xml:"MajorVersion"`
+	DeleteTime           string                  `json:"DeleteTime" xml:"DeleteTime"`
+	RegionId             string                  `json:"RegionId" xml:"RegionId"`
+	CreatedTime          string                  `json:"CreatedTime" xml:"CreatedTime"`
+	Duration             int                     `json:"Duration" xml:"Duration"`
+	InstanceId           string                  `json:"InstanceId" xml:"InstanceId"`
+	CreatedTimeUTC       string                  `json:"CreatedTimeUTC" xml:"CreatedTimeUTC"`
+	AutoRenewal          bool                    `json:"AutoRenewal" xml:"AutoRenewal"`
+	VswitchId            string                  `json:"VswitchId" xml:"VswitchId"`
+	ExpireTime           string                  `json:"ExpireTime" xml:"ExpireTime"`
+	ClusterName          string                  `json:"ClusterName" xml:"ClusterName"`
 	NetworkType          string                  `json:"NetworkType" xml:"NetworkType"`
 	VpcId                string                  `json:"VpcId" xml:"VpcId"`
-	VswitchId            string                  `json:"VswitchId" xml:"VswitchId"`
-	MasterInstanceType   string                  `json:"MasterInstanceType" xml:"MasterInstanceType"`
-	MasterNodeCount      int                     `json:"MasterNodeCount" xml:"MasterNodeCount"`
-	MasterDiskType       string                  `json:"MasterDiskType" xml:"MasterDiskType"`
-	MasterDiskSize       int                     `json:"MasterDiskSize" xml:"MasterDiskSize"`
-	CoreInstanceType     string                  `json:"CoreInstanceType" xml:"CoreInstanceType"`
-	CoreNodeCount        int                     `json:"CoreNodeCount" xml:"CoreNodeCount"`
-	CoreDiskType         string                  `json:"CoreDiskType" xml:"CoreDiskType"`
-	CoreDiskSize         int                     `json:"CoreDiskSize" xml:"CoreDiskSize"`
-	RegionId             string                  `json:"RegionId" xml:"RegionId"`
-	ZoneId               string                  `json:"ZoneId" xml:"ZoneId"`
-	ColdStorageStatus    string                  `json:"ColdStorageStatus" xml:"ColdStorageStatus"`
-	BackupStatus         string                  `json:"BackupStatus" xml:"BackupStatus"`
-	ClusterType          string                  `json:"ClusterType" xml:"ClusterType"`
-	CreatedTimeUTC       string                  `json:"CreatedTimeUTC" xml:"CreatedTimeUTC"`
-	ExpireTimeUTC        string                  `json:"ExpireTimeUTC" xml:"ExpireTimeUTC"`
-	ClusterId            string                  `json:"ClusterId" xml:"ClusterId"`
-	ClusterName          string                  `json:"ClusterName" xml:"ClusterName"`
 	IsDeletionProtection bool                    `json:"IsDeletionProtection" xml:"IsDeletionProtection"`
+	MasterNodeCount      int                     `json:"MasterNodeCount" xml:"MasterNodeCount"`
+	CoreDiskType         string                  `json:"CoreDiskType" xml:"CoreDiskType"`
+	IsHa                 bool                    `json:"IsHa" xml:"IsHa"`
+	MasterInstanceType   string                  `json:"MasterInstanceType" xml:"MasterInstanceType"`
+	ColdStorageStatus    string                  `json:"ColdStorageStatus" xml:"ColdStorageStatus"`
+	ClusterId            string                  `json:"ClusterId" xml:"ClusterId"`
+	ClusterType          string                  `json:"ClusterType" xml:"ClusterType"`
 	ParentId             string                  `json:"ParentId" xml:"ParentId"`
+	PayType              string                  `json:"PayType" xml:"PayType"`
+	InstanceName         string                  `json:"InstanceName" xml:"InstanceName"`
 	ModuleId             int                     `json:"ModuleId" xml:"ModuleId"`
-	ModuleStackVersion   string                  `json:"ModuleStackVersion" xml:"ModuleStackVersion"`
-	CoreDiskCount        string                  `json:"CoreDiskCount" xml:"CoreDiskCount"`
+	ZoneId               string                  `json:"ZoneId" xml:"ZoneId"`
+	BackupStatus         string                  `json:"BackupStatus" xml:"BackupStatus"`
+	CoreInstanceType     string                  `json:"CoreInstanceType" xml:"CoreInstanceType"`
+	Status               string                  `json:"Status" xml:"Status"`
+	MasterDiskType       string                  `json:"MasterDiskType" xml:"MasterDiskType"`
 	Tags                 TagsInDescribeInstances `json:"Tags" xml:"Tags"`
 }

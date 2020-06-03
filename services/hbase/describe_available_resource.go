@@ -93,6 +93,7 @@ func CreateDescribeAvailableResourceRequest() (request *DescribeAvailableResourc
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("HBase", "2019-01-01", "DescribeAvailableResource", "hbase", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

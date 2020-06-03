@@ -94,6 +94,7 @@ func CreateDescribeBackupStatusRequest() (request *DescribeBackupStatusRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("HBase", "2019-01-01", "DescribeBackupStatus", "hbase", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

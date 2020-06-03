@@ -92,11 +92,11 @@ type DescribeInstancesTag struct {
 // DescribeInstancesResponse is the response struct for api DescribeInstances
 type DescribeInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId  string    `json:"RequestId" xml:"RequestId"`
-	TotalCount int64     `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int       `json:"PageSize" xml:"PageSize"`
-	Instances  Instances `json:"Instances" xml:"Instances"`
+	RequestId  string                       `json:"RequestId" xml:"RequestId"`
+	TotalCount int64                        `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int                          `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                          `json:"PageSize" xml:"PageSize"`
+	Instances  InstancesInDescribeInstances `json:"Instances" xml:"Instances"`
 }
 
 // CreateDescribeInstancesRequest creates a request to invoke DescribeInstances API
@@ -105,6 +105,7 @@ func CreateDescribeInstancesRequest() (request *DescribeInstancesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("HBase", "2019-01-01", "DescribeInstances", "hbase", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

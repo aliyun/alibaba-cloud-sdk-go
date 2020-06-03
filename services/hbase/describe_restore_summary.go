@@ -98,6 +98,7 @@ func CreateDescribeRestoreSummaryRequest() (request *DescribeRestoreSummaryReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("HBase", "2019-01-01", "DescribeRestoreSummary", "hbase", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

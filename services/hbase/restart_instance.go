@@ -92,6 +92,7 @@ func CreateRestartInstanceRequest() (request *RestartInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("HBase", "2019-01-01", "RestartInstance", "hbase", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -99,6 +99,7 @@ func CreateDescribeBackupTablesRequest() (request *DescribeBackupTablesRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("HBase", "2019-01-01", "DescribeBackupTables", "hbase", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

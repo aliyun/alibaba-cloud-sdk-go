@@ -92,6 +92,7 @@ func CreateModifyClusterDeletionProtectionRequest() (request *ModifyClusterDelet
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("HBase", "2019-01-01", "ModifyClusterDeletionProtection", "hbase", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

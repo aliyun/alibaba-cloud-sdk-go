@@ -96,6 +96,7 @@ func CreateCreateRestorePlanRequest() (request *CreateRestorePlanRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("HBase", "2019-01-01", "CreateRestorePlan", "hbase", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

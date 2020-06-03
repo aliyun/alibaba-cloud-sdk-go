@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// AddUserHdfsInfo invokes the hbase.AddUserHdfsInfo API synchronously
-// api document: https://help.aliyun.com/api/hbase/adduserhdfsinfo.html
-func (client *Client) AddUserHdfsInfo(request *AddUserHdfsInfoRequest) (response *AddUserHdfsInfoResponse, err error) {
-	response = CreateAddUserHdfsInfoResponse()
+// PurgeInstance invokes the hbase.PurgeInstance API synchronously
+// api document: https://help.aliyun.com/api/hbase/purgeinstance.html
+func (client *Client) PurgeInstance(request *PurgeInstanceRequest) (response *PurgeInstanceResponse, err error) {
+	response = CreatePurgeInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// AddUserHdfsInfoWithChan invokes the hbase.AddUserHdfsInfo API asynchronously
-// api document: https://help.aliyun.com/api/hbase/adduserhdfsinfo.html
+// PurgeInstanceWithChan invokes the hbase.PurgeInstance API asynchronously
+// api document: https://help.aliyun.com/api/hbase/purgeinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) AddUserHdfsInfoWithChan(request *AddUserHdfsInfoRequest) (<-chan *AddUserHdfsInfoResponse, <-chan error) {
-	responseChan := make(chan *AddUserHdfsInfoResponse, 1)
+func (client *Client) PurgeInstanceWithChan(request *PurgeInstanceRequest) (<-chan *PurgeInstanceResponse, <-chan error) {
+	responseChan := make(chan *PurgeInstanceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.AddUserHdfsInfo(request)
+		response, err := client.PurgeInstance(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) AddUserHdfsInfoWithChan(request *AddUserHdfsInfoRequest) (
 	return responseChan, errChan
 }
 
-// AddUserHdfsInfoWithCallback invokes the hbase.AddUserHdfsInfo API asynchronously
-// api document: https://help.aliyun.com/api/hbase/adduserhdfsinfo.html
+// PurgeInstanceWithCallback invokes the hbase.PurgeInstance API asynchronously
+// api document: https://help.aliyun.com/api/hbase/purgeinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) AddUserHdfsInfoWithCallback(request *AddUserHdfsInfoRequest, callback func(response *AddUserHdfsInfoResponse, err error)) <-chan int {
+func (client *Client) PurgeInstanceWithCallback(request *PurgeInstanceRequest, callback func(response *PurgeInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *AddUserHdfsInfoResponse
+		var response *PurgeInstanceResponse
 		var err error
 		defer close(result)
-		response, err = client.AddUserHdfsInfo(request)
+		response, err = client.PurgeInstance(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,32 +73,31 @@ func (client *Client) AddUserHdfsInfoWithCallback(request *AddUserHdfsInfoReques
 	return result
 }
 
-// AddUserHdfsInfoRequest is the request struct for api AddUserHdfsInfo
-type AddUserHdfsInfoRequest struct {
+// PurgeInstanceRequest is the request struct for api PurgeInstance
+type PurgeInstanceRequest struct {
 	*requests.RpcRequest
-	ExtInfo   string `position:"Query" name:"ExtInfo"`
 	ClusterId string `position:"Query" name:"ClusterId"`
 }
 
-// AddUserHdfsInfoResponse is the response struct for api AddUserHdfsInfo
-type AddUserHdfsInfoResponse struct {
+// PurgeInstanceResponse is the response struct for api PurgeInstance
+type PurgeInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateAddUserHdfsInfoRequest creates a request to invoke AddUserHdfsInfo API
-func CreateAddUserHdfsInfoRequest() (request *AddUserHdfsInfoRequest) {
-	request = &AddUserHdfsInfoRequest{
+// CreatePurgeInstanceRequest creates a request to invoke PurgeInstance API
+func CreatePurgeInstanceRequest() (request *PurgeInstanceRequest) {
+	request = &PurgeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("HBase", "2019-01-01", "AddUserHdfsInfo", "hbase", "openAPI")
+	request.InitWithApiInfo("HBase", "2019-01-01", "PurgeInstance", "hbase", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateAddUserHdfsInfoResponse creates a response to parse from AddUserHdfsInfo response
-func CreateAddUserHdfsInfoResponse() (response *AddUserHdfsInfoResponse) {
-	response = &AddUserHdfsInfoResponse{
+// CreatePurgeInstanceResponse creates a response to parse from PurgeInstance response
+func CreatePurgeInstanceResponse() (response *PurgeInstanceResponse) {
+	response = &PurgeInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
