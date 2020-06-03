@@ -96,7 +96,8 @@ func CreateDescribeImageUrlsRequest() (request *DescribeImageUrlsRequest) {
 	request = &DescribeImageUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("reid", "2019-09-28", "DescribeImageUrls", "", "")
+	request.InitWithApiInfo("reid", "2019-09-28", "DescribeImageUrls", "1.1.7", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

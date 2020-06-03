@@ -94,7 +94,8 @@ func CreateListEmapRequest() (request *ListEmapRequest) {
 	request = &ListEmapRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("reid", "2019-09-28", "ListEmap", "", "")
+	request.InitWithApiInfo("reid", "2019-09-28", "ListEmap", "1.1.7", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

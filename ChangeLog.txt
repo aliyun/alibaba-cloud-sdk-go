@@ -1,3 +1,7 @@
+2020-06-03 Version: v1.61.232
+- Generated 2019-09-28 for `reid`.
+- DescribeCameraStatistics add filed.
+
 2020-06-02 Version: v1.61.231
 - Generated 2019-08-08 for `ARMS`.
 - Edit SearchTraces api.

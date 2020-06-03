@@ -105,7 +105,8 @@ func CreateListMaskDetectionResultsRequest() (request *ListMaskDetectionResultsR
 	request = &ListMaskDetectionResultsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("reid", "2019-09-28", "ListMaskDetectionResults", "", "")
+	request.InitWithApiInfo("reid", "2019-09-28", "ListMaskDetectionResults", "1.1.7", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

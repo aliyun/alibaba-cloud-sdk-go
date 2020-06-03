@@ -100,7 +100,8 @@ func CreateDescribeCameraStatisticsRequest() (request *DescribeCameraStatisticsR
 	request = &DescribeCameraStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("reid", "2019-09-28", "DescribeCameraStatistics", "", "")
+	request.InitWithApiInfo("reid", "2019-09-28", "DescribeCameraStatistics", "1.1.7", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
