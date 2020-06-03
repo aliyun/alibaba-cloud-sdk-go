@@ -95,7 +95,8 @@ func CreateReleaseEipSegmentAddressRequest() (request *ReleaseEipSegmentAddressR
 	request = &ReleaseEipSegmentAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ReleaseEipSegmentAddress", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ReleaseEipSegmentAddress", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

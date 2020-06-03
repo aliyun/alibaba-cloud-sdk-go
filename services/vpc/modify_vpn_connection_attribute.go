@@ -81,6 +81,7 @@ type ModifyVpnConnectionAttributeRequest struct {
 	AutoConfigRoute      requests.Boolean `position:"Query" name:"AutoConfigRoute"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	IpsecConfig          string           `position:"Query" name:"IpsecConfig"`
+	BgpConfig            string           `position:"Query" name:"BgpConfig"`
 	HealthCheckConfig    string           `position:"Query" name:"HealthCheckConfig"`
 	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
 	RemoteSubnet         string           `position:"Query" name:"RemoteSubnet"`
@@ -88,26 +89,31 @@ type ModifyVpnConnectionAttributeRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	EnableDpd            requests.Boolean `position:"Query" name:"EnableDpd"`
 	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
 	Name                 string           `position:"Query" name:"Name"`
+	EnableNatTraversal   requests.Boolean `position:"Query" name:"EnableNatTraversal"`
 }
 
 // ModifyVpnConnectionAttributeResponse is the response struct for api ModifyVpnConnectionAttribute
 type ModifyVpnConnectionAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId         string         `json:"RequestId" xml:"RequestId"`
-	VpnConnectionId   string         `json:"VpnConnectionId" xml:"VpnConnectionId"`
-	CustomerGatewayId string         `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
-	VpnGatewayId      string         `json:"VpnGatewayId" xml:"VpnGatewayId"`
-	Name              string         `json:"Name" xml:"Name"`
-	Description       string         `json:"Description" xml:"Description"`
-	LocalSubnet       string         `json:"LocalSubnet" xml:"LocalSubnet"`
-	RemoteSubnet      string         `json:"RemoteSubnet" xml:"RemoteSubnet"`
-	CreateTime        int64          `json:"CreateTime" xml:"CreateTime"`
-	EffectImmediately bool           `json:"EffectImmediately" xml:"EffectImmediately"`
-	IkeConfig         IkeConfig      `json:"IkeConfig" xml:"IkeConfig"`
-	IpsecConfig       IpsecConfig    `json:"IpsecConfig" xml:"IpsecConfig"`
-	VcoHealthCheck    VcoHealthCheck `json:"VcoHealthCheck" xml:"VcoHealthCheck"`
+	RequestId          string                                     `json:"RequestId" xml:"RequestId"`
+	VpnConnectionId    string                                     `json:"VpnConnectionId" xml:"VpnConnectionId"`
+	CustomerGatewayId  string                                     `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
+	VpnGatewayId       string                                     `json:"VpnGatewayId" xml:"VpnGatewayId"`
+	Name               string                                     `json:"Name" xml:"Name"`
+	Description        string                                     `json:"Description" xml:"Description"`
+	LocalSubnet        string                                     `json:"LocalSubnet" xml:"LocalSubnet"`
+	RemoteSubnet       string                                     `json:"RemoteSubnet" xml:"RemoteSubnet"`
+	CreateTime         int64                                      `json:"CreateTime" xml:"CreateTime"`
+	EffectImmediately  bool                                       `json:"EffectImmediately" xml:"EffectImmediately"`
+	EnableDpd          bool                                       `json:"EnableDpd" xml:"EnableDpd"`
+	EnableNatTraversal bool                                       `json:"EnableNatTraversal" xml:"EnableNatTraversal"`
+	IkeConfig          IkeConfig                                  `json:"IkeConfig" xml:"IkeConfig"`
+	IpsecConfig        IpsecConfig                                `json:"IpsecConfig" xml:"IpsecConfig"`
+	VcoHealthCheck     VcoHealthCheck                             `json:"VcoHealthCheck" xml:"VcoHealthCheck"`
+	VpnBgpConfig       VpnBgpConfigInModifyVpnConnectionAttribute `json:"VpnBgpConfig" xml:"VpnBgpConfig"`
 }
 
 // CreateModifyVpnConnectionAttributeRequest creates a request to invoke ModifyVpnConnectionAttribute API
@@ -115,7 +121,8 @@ func CreateModifyVpnConnectionAttributeRequest() (request *ModifyVpnConnectionAt
 	request = &ModifyVpnConnectionAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyVpnConnectionAttribute", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyVpnConnectionAttribute", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

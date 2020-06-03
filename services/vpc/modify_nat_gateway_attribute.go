@@ -96,7 +96,8 @@ func CreateModifyNatGatewayAttributeRequest() (request *ModifyNatGatewayAttribut
 	request = &ModifyNatGatewayAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyNatGatewayAttribute", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyNatGatewayAttribute", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

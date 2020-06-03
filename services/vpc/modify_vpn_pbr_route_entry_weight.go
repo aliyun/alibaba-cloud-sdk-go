@@ -101,7 +101,8 @@ func CreateModifyVpnPbrRouteEntryWeightRequest() (request *ModifyVpnPbrRouteEntr
 	request = &ModifyVpnPbrRouteEntryWeightRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyVpnPbrRouteEntryWeight", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyVpnPbrRouteEntryWeight", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

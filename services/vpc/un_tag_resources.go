@@ -76,13 +76,21 @@ func (client *Client) UnTagResourcesWithCallback(request *UnTagResourcesRequest,
 // UnTagResourcesRequest is the request struct for api UnTagResources
 type UnTagResourcesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceId           *[]string        `position:"Query" name:"ResourceId"  type:"Repeated"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceType         string           `position:"Query" name:"ResourceType"`
-	TagKey               *[]string        `position:"Query" name:"TagKey"  type:"Repeated"`
+	ResourceOwnerId      requests.Integer     `position:"Query" name:"ResourceOwnerId"`
+	Tag                  *[]UnTagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	All                  requests.Boolean     `position:"Query" name:"All"`
+	ResourceId           *[]string            `position:"Query" name:"ResourceId"  type:"Repeated"`
+	ResourceOwnerAccount string               `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string               `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer     `position:"Query" name:"OwnerId"`
+	ResourceType         string               `position:"Query" name:"ResourceType"`
+	TagKey               *[]string            `position:"Query" name:"TagKey"  type:"Repeated"`
+}
+
+// UnTagResourcesTag is a repeated param struct in UnTagResourcesRequest
+type UnTagResourcesTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // UnTagResourcesResponse is the response struct for api UnTagResources
@@ -96,7 +104,8 @@ func CreateUnTagResourcesRequest() (request *UnTagResourcesRequest) {
 	request = &UnTagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "UnTagResources", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "UnTagResources", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -17,10 +17,14 @@ package vpc
 
 // VpnRouteEntry is a nested struct in vpc response
 type VpnRouteEntry struct {
-	VpnInstanceId string `json:"VpnInstanceId" xml:"VpnInstanceId"`
-	RouteDest     string `json:"RouteDest" xml:"RouteDest"`
-	NextHop       string `json:"NextHop" xml:"NextHop"`
-	Weight        int    `json:"Weight" xml:"Weight"`
-	CreateTime    int64  `json:"CreateTime" xml:"CreateTime"`
-	State         string `json:"State" xml:"State"`
+	VpnInstanceId  string `json:"VpnInstanceId" xml:"VpnInstanceId"`
+	RouteDest      string `json:"RouteDest" xml:"RouteDest"`
+	NextHop        string `json:"NextHop" xml:"NextHop"`
+	Weight         int    `json:"Weight" xml:"Weight"`
+	CreateTime     int64  `json:"CreateTime" xml:"CreateTime"`
+	State          string `json:"State" xml:"State"`
+	AsPath         string `json:"AsPath" xml:"AsPath"`
+	Community      string `json:"Community" xml:"Community"`
+	Source         string `json:"Source" xml:"Source"`
+	RouteEntryType string `json:"RouteEntryType" xml:"RouteEntryType"`
 }

@@ -105,7 +105,8 @@ func CreateCreateExpressCloudConnectionRequest() (request *CreateExpressCloudCon
 	request = &CreateExpressCloudConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateExpressCloudConnection", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateExpressCloudConnection", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -24,6 +24,7 @@ type NetworkAcl struct {
 	VpcId             string                                 `json:"VpcId" xml:"VpcId"`
 	CreationTime      string                                 `json:"CreationTime" xml:"CreationTime"`
 	Status            string                                 `json:"Status" xml:"Status"`
+	OwnerId           int64                                  `json:"OwnerId" xml:"OwnerId"`
 	IngressAclEntries IngressAclEntriesInDescribeNetworkAcls `json:"IngressAclEntries" xml:"IngressAclEntries"`
 	EgressAclEntries  EgressAclEntriesInDescribeNetworkAcls  `json:"EgressAclEntries" xml:"EgressAclEntries"`
 	Resources         ResourcesInDescribeNetworkAcls         `json:"Resources" xml:"Resources"`

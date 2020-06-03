@@ -100,7 +100,8 @@ func CreateCreateHaVipRequest() (request *CreateHaVipRequest) {
 	request = &CreateHaVipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateHaVip", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateHaVip", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

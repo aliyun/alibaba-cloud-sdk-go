@@ -21,4 +21,5 @@ type TagResource struct {
 	TagValue     string `json:"TagValue" xml:"TagValue"`
 	ResourcId    string `json:"ResourcId" xml:"ResourcId"`
 	ResourceType string `json:"ResourceType" xml:"ResourceType"`
+	ResourceId   string `json:"ResourceId" xml:"ResourceId"`
 }

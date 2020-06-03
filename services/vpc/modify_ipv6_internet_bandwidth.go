@@ -97,7 +97,8 @@ func CreateModifyIpv6InternetBandwidthRequest() (request *ModifyIpv6InternetBand
 	request = &ModifyIpv6InternetBandwidthRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyIpv6InternetBandwidth", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyIpv6InternetBandwidth", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

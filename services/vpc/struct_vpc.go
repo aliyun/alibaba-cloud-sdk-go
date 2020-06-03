@@ -17,23 +17,26 @@ package vpc
 
 // Vpc is a nested struct in vpc response
 type Vpc struct {
-	VpcId               string                            `json:"VpcId" xml:"VpcId"`
-	RegionId            string                            `json:"RegionId" xml:"RegionId"`
-	Status              string                            `json:"Status" xml:"Status"`
-	VpcName             string                            `json:"VpcName" xml:"VpcName"`
-	CreationTime        string                            `json:"CreationTime" xml:"CreationTime"`
-	CidrBlock           string                            `json:"CidrBlock" xml:"CidrBlock"`
-	Ipv6CidrBlock       string                            `json:"Ipv6CidrBlock" xml:"Ipv6CidrBlock"`
-	VRouterId           string                            `json:"VRouterId" xml:"VRouterId"`
-	Description         string                            `json:"Description" xml:"Description"`
-	IsDefault           bool                              `json:"IsDefault" xml:"IsDefault"`
-	NetworkAclNum       string                            `json:"NetworkAclNum" xml:"NetworkAclNum"`
-	ResourceGroupId     string                            `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	CenStatus           string                            `json:"CenStatus" xml:"CenStatus"`
-	VSwitchIds          VSwitchIdsInDescribeVpcs          `json:"VSwitchIds" xml:"VSwitchIds"`
-	UserCidrs           UserCidrsInDescribeVpcs           `json:"UserCidrs" xml:"UserCidrs"`
-	NatGatewayIds       NatGatewayIds                     `json:"NatGatewayIds" xml:"NatGatewayIds"`
-	RouterTableIds      RouterTableIds                    `json:"RouterTableIds" xml:"RouterTableIds"`
-	SecondaryCidrBlocks SecondaryCidrBlocksInDescribeVpcs `json:"SecondaryCidrBlocks" xml:"SecondaryCidrBlocks"`
-	Tags                TagsInDescribeVpcs                `json:"Tags" xml:"Tags"`
+	VpcId                  string                            `json:"VpcId" xml:"VpcId"`
+	RegionId               string                            `json:"RegionId" xml:"RegionId"`
+	Status                 string                            `json:"Status" xml:"Status"`
+	VpcName                string                            `json:"VpcName" xml:"VpcName"`
+	CreationTime           string                            `json:"CreationTime" xml:"CreationTime"`
+	CidrBlock              string                            `json:"CidrBlock" xml:"CidrBlock"`
+	Ipv6CidrBlock          string                            `json:"Ipv6CidrBlock" xml:"Ipv6CidrBlock"`
+	VRouterId              string                            `json:"VRouterId" xml:"VRouterId"`
+	Description            string                            `json:"Description" xml:"Description"`
+	IsDefault              bool                              `json:"IsDefault" xml:"IsDefault"`
+	NetworkAclNum          string                            `json:"NetworkAclNum" xml:"NetworkAclNum"`
+	ResourceGroupId        string                            `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	CenStatus              string                            `json:"CenStatus" xml:"CenStatus"`
+	OwnerId                int64                             `json:"OwnerId" xml:"OwnerId"`
+	SupportAdvancedFeature bool                              `json:"SupportAdvancedFeature" xml:"SupportAdvancedFeature"`
+	AdvancedResource       bool                              `json:"AdvancedResource" xml:"AdvancedResource"`
+	VSwitchIds             VSwitchIdsInDescribeVpcs          `json:"VSwitchIds" xml:"VSwitchIds"`
+	UserCidrs              UserCidrsInDescribeVpcs           `json:"UserCidrs" xml:"UserCidrs"`
+	NatGatewayIds          NatGatewayIds                     `json:"NatGatewayIds" xml:"NatGatewayIds"`
+	RouterTableIds         RouterTableIds                    `json:"RouterTableIds" xml:"RouterTableIds"`
+	SecondaryCidrBlocks    SecondaryCidrBlocksInDescribeVpcs `json:"SecondaryCidrBlocks" xml:"SecondaryCidrBlocks"`
+	Tags                   TagsInDescribeVpcs                `json:"Tags" xml:"Tags"`
 }

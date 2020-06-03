@@ -30,6 +30,8 @@ type VSwitch struct {
 	IsDefault               bool                    `json:"IsDefault" xml:"IsDefault"`
 	ResourceGroupId         string                  `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	NetworkAclId            string                  `json:"NetworkAclId" xml:"NetworkAclId"`
+	OwnerId                 int64                   `json:"OwnerId" xml:"OwnerId"`
+	ShareType               string                  `json:"ShareType" xml:"ShareType"`
 	RouteTable              RouteTable              `json:"RouteTable" xml:"RouteTable"`
 	Tags                    TagsInDescribeVSwitches `json:"Tags" xml:"Tags"`
 }

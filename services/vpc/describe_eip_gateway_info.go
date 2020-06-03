@@ -97,7 +97,8 @@ func CreateDescribeEipGatewayInfoRequest() (request *DescribeEipGatewayInfoReque
 	request = &DescribeEipGatewayInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeEipGatewayInfo", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeEipGatewayInfo", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

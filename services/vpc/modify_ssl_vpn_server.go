@@ -96,21 +96,23 @@ type ModifySslVpnServerRequest struct {
 // ModifySslVpnServerResponse is the response struct for api ModifySslVpnServer
 type ModifySslVpnServerResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	RegionId       string `json:"RegionId" xml:"RegionId"`
-	SslVpnServerId string `json:"SslVpnServerId" xml:"SslVpnServerId"`
-	VpnGatewayId   string `json:"VpnGatewayId" xml:"VpnGatewayId"`
-	Name           string `json:"Name" xml:"Name"`
-	LocalSubnet    string `json:"LocalSubnet" xml:"LocalSubnet"`
-	ClientIpPool   string `json:"ClientIpPool" xml:"ClientIpPool"`
-	CreateTime     int64  `json:"CreateTime" xml:"CreateTime"`
-	Cipher         string `json:"Cipher" xml:"Cipher"`
-	Proto          string `json:"Proto" xml:"Proto"`
-	Port           int    `json:"Port" xml:"Port"`
-	Compress       bool   `json:"Compress" xml:"Compress"`
-	Connections    int    `json:"Connections" xml:"Connections"`
-	MaxConnections int    `json:"MaxConnections" xml:"MaxConnections"`
-	InternetIp     string `json:"InternetIp" xml:"InternetIp"`
+	RequestId             string `json:"RequestId" xml:"RequestId"`
+	RegionId              string `json:"RegionId" xml:"RegionId"`
+	SslVpnServerId        string `json:"SslVpnServerId" xml:"SslVpnServerId"`
+	VpnGatewayId          string `json:"VpnGatewayId" xml:"VpnGatewayId"`
+	Name                  string `json:"Name" xml:"Name"`
+	LocalSubnet           string `json:"LocalSubnet" xml:"LocalSubnet"`
+	ClientIpPool          string `json:"ClientIpPool" xml:"ClientIpPool"`
+	CreateTime            int64  `json:"CreateTime" xml:"CreateTime"`
+	Cipher                string `json:"Cipher" xml:"Cipher"`
+	Proto                 string `json:"Proto" xml:"Proto"`
+	Port                  int    `json:"Port" xml:"Port"`
+	Compress              bool   `json:"Compress" xml:"Compress"`
+	Connections           int    `json:"Connections" xml:"Connections"`
+	MaxConnections        int    `json:"MaxConnections" xml:"MaxConnections"`
+	InternetIp            string `json:"InternetIp" xml:"InternetIp"`
+	EnableMultiFactorAuth bool   `json:"EnableMultiFactorAuth" xml:"EnableMultiFactorAuth"`
+	IDaaSInstanceId       string `json:"IDaaSInstanceId" xml:"IDaaSInstanceId"`
 }
 
 // CreateModifySslVpnServerRequest creates a request to invoke ModifySslVpnServer API
@@ -118,7 +120,8 @@ func CreateModifySslVpnServerRequest() (request *ModifySslVpnServerRequest) {
 	request = &ModifySslVpnServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifySslVpnServer", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifySslVpnServer", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

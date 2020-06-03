@@ -98,7 +98,8 @@ func CreateCreateRouteTableRequest() (request *CreateRouteTableRequest) {
 	request = &CreateRouteTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateRouteTable", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateRouteTable", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

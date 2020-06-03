@@ -97,7 +97,8 @@ func CreateAssociateVpcCidrBlockRequest() (request *AssociateVpcCidrBlockRequest
 	request = &AssociateVpcCidrBlockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "AssociateVpcCidrBlock", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "AssociateVpcCidrBlock", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

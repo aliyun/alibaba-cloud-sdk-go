@@ -27,4 +27,8 @@ type AssociatedPhysicalConnection struct {
 	PhysicalConnectionBusinessStatus string `json:"PhysicalConnectionBusinessStatus" xml:"PhysicalConnectionBusinessStatus"`
 	PhysicalConnectionOwnerUid       string `json:"PhysicalConnectionOwnerUid" xml:"PhysicalConnectionOwnerUid"`
 	VlanId                           string `json:"VlanId" xml:"VlanId"`
+	LocalIpv6GatewayIp               string `json:"LocalIpv6GatewayIp" xml:"LocalIpv6GatewayIp"`
+	PeerIpv6GatewayIp                string `json:"PeerIpv6GatewayIp" xml:"PeerIpv6GatewayIp"`
+	PeeringIpv6SubnetMask            string `json:"PeeringIpv6SubnetMask" xml:"PeeringIpv6SubnetMask"`
+	Status                           string `json:"Status" xml:"Status"`
 }

@@ -101,6 +101,8 @@ type DescribeVSwitchAttributesResponse struct {
 	IsDefault               bool                                      `json:"IsDefault" xml:"IsDefault"`
 	ResourceGroupId         string                                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	NetworkAclId            string                                    `json:"NetworkAclId" xml:"NetworkAclId"`
+	OwnerId                 int64                                     `json:"OwnerId" xml:"OwnerId"`
+	ShareType               string                                    `json:"ShareType" xml:"ShareType"`
 	RouteTable              RouteTable                                `json:"RouteTable" xml:"RouteTable"`
 	CloudResources          CloudResourcesInDescribeVSwitchAttributes `json:"CloudResources" xml:"CloudResources"`
 }
@@ -110,7 +112,8 @@ func CreateDescribeVSwitchAttributesRequest() (request *DescribeVSwitchAttribute
 	request = &DescribeVSwitchAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVSwitchAttributes", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVSwitchAttributes", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

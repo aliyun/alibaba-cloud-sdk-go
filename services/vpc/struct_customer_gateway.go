@@ -22,4 +22,5 @@ type CustomerGateway struct {
 	IpAddress         string `json:"IpAddress" xml:"IpAddress"`
 	Description       string `json:"Description" xml:"Description"`
 	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
+	Asn               int    `json:"Asn" xml:"Asn"`
 }

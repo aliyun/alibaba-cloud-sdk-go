@@ -30,4 +30,5 @@ type BgpGroup struct {
 	IsFake      string `json:"IsFake" xml:"IsFake"`
 	RouteLimit  string `json:"RouteLimit" xml:"RouteLimit"`
 	RegionId    string `json:"RegionId" xml:"RegionId"`
+	IpVersion   string `json:"IpVersion" xml:"IpVersion"`
 }

@@ -108,7 +108,8 @@ func CreateDescribeAccessPointsRequest() (request *DescribeAccessPointsRequest) 
 	request = &DescribeAccessPointsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeAccessPoints", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeAccessPoints", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

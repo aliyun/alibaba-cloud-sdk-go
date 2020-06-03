@@ -101,7 +101,8 @@ func CreateModifyBgpGroupAttributeRequest() (request *ModifyBgpGroupAttributeReq
 	request = &ModifyBgpGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyBgpGroupAttribute", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyBgpGroupAttribute", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

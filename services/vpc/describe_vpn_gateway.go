@@ -76,33 +76,38 @@ func (client *Client) DescribeVpnGatewayWithCallback(request *DescribeVpnGateway
 // DescribeVpnGatewayRequest is the request struct for api DescribeVpnGateway
 type DescribeVpnGatewayRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	IncludeReservationData requests.Boolean `position:"Query" name:"IncludeReservationData"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	VpnGatewayId           string           `position:"Query" name:"VpnGatewayId"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeVpnGatewayResponse is the response struct for api DescribeVpnGateway
 type DescribeVpnGatewayResponse struct {
 	*responses.BaseResponse
-	RequestId         string `json:"RequestId" xml:"RequestId"`
-	VpnGatewayId      string `json:"VpnGatewayId" xml:"VpnGatewayId"`
-	VpcId             string `json:"VpcId" xml:"VpcId"`
-	VSwitchId         string `json:"VSwitchId" xml:"VSwitchId"`
-	InternetIp        string `json:"InternetIp" xml:"InternetIp"`
-	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
-	EndTime           int64  `json:"EndTime" xml:"EndTime"`
-	Spec              string `json:"Spec" xml:"Spec"`
-	Name              string `json:"Name" xml:"Name"`
-	Description       string `json:"Description" xml:"Description"`
-	Status            string `json:"Status" xml:"Status"`
-	BusinessStatus    string `json:"BusinessStatus" xml:"BusinessStatus"`
-	ChargeType        string `json:"ChargeType" xml:"ChargeType"`
-	IpsecVpn          string `json:"IpsecVpn" xml:"IpsecVpn"`
-	SslVpn            string `json:"SslVpn" xml:"SslVpn"`
-	SslMaxConnections int64  `json:"SslMaxConnections" xml:"SslMaxConnections"`
-	Tag               string `json:"Tag" xml:"Tag"`
+	RequestId         string                   `json:"RequestId" xml:"RequestId"`
+	VpnGatewayId      string                   `json:"VpnGatewayId" xml:"VpnGatewayId"`
+	VpcId             string                   `json:"VpcId" xml:"VpcId"`
+	VSwitchId         string                   `json:"VSwitchId" xml:"VSwitchId"`
+	InternetIp        string                   `json:"InternetIp" xml:"InternetIp"`
+	CreateTime        int64                    `json:"CreateTime" xml:"CreateTime"`
+	EndTime           int64                    `json:"EndTime" xml:"EndTime"`
+	Spec              string                   `json:"Spec" xml:"Spec"`
+	Name              string                   `json:"Name" xml:"Name"`
+	Description       string                   `json:"Description" xml:"Description"`
+	Status            string                   `json:"Status" xml:"Status"`
+	BusinessStatus    string                   `json:"BusinessStatus" xml:"BusinessStatus"`
+	ChargeType        string                   `json:"ChargeType" xml:"ChargeType"`
+	IpsecVpn          string                   `json:"IpsecVpn" xml:"IpsecVpn"`
+	SslVpn            string                   `json:"SslVpn" xml:"SslVpn"`
+	SslMaxConnections int64                    `json:"SslMaxConnections" xml:"SslMaxConnections"`
+	Tag               string                   `json:"Tag" xml:"Tag"`
+	EnableBgp         bool                     `json:"EnableBgp" xml:"EnableBgp"`
+	AutoPropagate     bool                     `json:"AutoPropagate" xml:"AutoPropagate"`
+	ReservationData   ReservationData          `json:"ReservationData" xml:"ReservationData"`
+	Tags              TagsInDescribeVpnGateway `json:"Tags" xml:"Tags"`
 }
 
 // CreateDescribeVpnGatewayRequest creates a request to invoke DescribeVpnGateway API
@@ -110,7 +115,8 @@ func CreateDescribeVpnGatewayRequest() (request *DescribeVpnGatewayRequest) {
 	request = &DescribeVpnGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpnGateway", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpnGateway", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

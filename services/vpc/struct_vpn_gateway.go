@@ -17,20 +17,24 @@ package vpc
 
 // VpnGateway is a nested struct in vpc response
 type VpnGateway struct {
-	VpnGatewayId      string `json:"VpnGatewayId" xml:"VpnGatewayId"`
-	VpcId             string `json:"VpcId" xml:"VpcId"`
-	VSwitchId         string `json:"VSwitchId" xml:"VSwitchId"`
-	InternetIp        string `json:"InternetIp" xml:"InternetIp"`
-	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
-	EndTime           int64  `json:"EndTime" xml:"EndTime"`
-	Spec              string `json:"Spec" xml:"Spec"`
-	Name              string `json:"Name" xml:"Name"`
-	Description       string `json:"Description" xml:"Description"`
-	Status            string `json:"Status" xml:"Status"`
-	BusinessStatus    string `json:"BusinessStatus" xml:"BusinessStatus"`
-	ChargeType        string `json:"ChargeType" xml:"ChargeType"`
-	IpsecVpn          string `json:"IpsecVpn" xml:"IpsecVpn"`
-	SslVpn            string `json:"SslVpn" xml:"SslVpn"`
-	SslMaxConnections int64  `json:"SslMaxConnections" xml:"SslMaxConnections"`
-	Tag               string `json:"Tag" xml:"Tag"`
+	VpnGatewayId      string                    `json:"VpnGatewayId" xml:"VpnGatewayId"`
+	VpcId             string                    `json:"VpcId" xml:"VpcId"`
+	VSwitchId         string                    `json:"VSwitchId" xml:"VSwitchId"`
+	InternetIp        string                    `json:"InternetIp" xml:"InternetIp"`
+	CreateTime        int64                     `json:"CreateTime" xml:"CreateTime"`
+	EndTime           int64                     `json:"EndTime" xml:"EndTime"`
+	Spec              string                    `json:"Spec" xml:"Spec"`
+	Name              string                    `json:"Name" xml:"Name"`
+	Description       string                    `json:"Description" xml:"Description"`
+	Status            string                    `json:"Status" xml:"Status"`
+	BusinessStatus    string                    `json:"BusinessStatus" xml:"BusinessStatus"`
+	ChargeType        string                    `json:"ChargeType" xml:"ChargeType"`
+	IpsecVpn          string                    `json:"IpsecVpn" xml:"IpsecVpn"`
+	SslVpn            string                    `json:"SslVpn" xml:"SslVpn"`
+	SslMaxConnections int64                     `json:"SslMaxConnections" xml:"SslMaxConnections"`
+	Tag               string                    `json:"Tag" xml:"Tag"`
+	EnableBgp         bool                      `json:"EnableBgp" xml:"EnableBgp"`
+	AutoPropagate     bool                      `json:"AutoPropagate" xml:"AutoPropagate"`
+	ReservationData   ReservationData           `json:"ReservationData" xml:"ReservationData"`
+	Tags              TagsInDescribeVpnGateways `json:"Tags" xml:"Tags"`
 }

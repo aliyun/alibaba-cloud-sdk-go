@@ -102,6 +102,7 @@ type DescribeVpcAttributeResponse struct {
 	ClassicLinkEnabled  bool                                      `json:"ClassicLinkEnabled" xml:"ClassicLinkEnabled"`
 	ResourceGroupId     string                                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	NetworkAclNum       string                                    `json:"NetworkAclNum" xml:"NetworkAclNum"`
+	OwnerId             int64                                     `json:"OwnerId" xml:"OwnerId"`
 	VSwitchIds          VSwitchIdsInDescribeVpcAttribute          `json:"VSwitchIds" xml:"VSwitchIds"`
 	UserCidrs           UserCidrsInDescribeVpcAttribute           `json:"UserCidrs" xml:"UserCidrs"`
 	SecondaryCidrBlocks SecondaryCidrBlocksInDescribeVpcAttribute `json:"SecondaryCidrBlocks" xml:"SecondaryCidrBlocks"`
@@ -114,7 +115,8 @@ func CreateDescribeVpcAttributeRequest() (request *DescribeVpcAttributeRequest) 
 	request = &DescribeVpcAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpcAttribute", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpcAttribute", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

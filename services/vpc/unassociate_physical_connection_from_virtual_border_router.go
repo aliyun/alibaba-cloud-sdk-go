@@ -96,7 +96,8 @@ func CreateUnassociatePhysicalConnectionFromVirtualBorderRouterRequest() (reques
 	request = &UnassociatePhysicalConnectionFromVirtualBorderRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "UnassociatePhysicalConnectionFromVirtualBorderRouter", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "UnassociatePhysicalConnectionFromVirtualBorderRouter", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -77,6 +77,7 @@ func (client *Client) DescribeVpcsWithCallback(request *DescribeVpcsRequest, cal
 type DescribeVpcsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer   `position:"Query" name:"ResourceOwnerId"`
+	VpcOwnerId           requests.Integer   `position:"Query" name:"VpcOwnerId"`
 	PageNumber           requests.Integer   `position:"Query" name:"PageNumber"`
 	VpcName              string             `position:"Query" name:"VpcName"`
 	ResourceGroupId      string             `position:"Query" name:"ResourceGroupId"`
@@ -86,6 +87,7 @@ type DescribeVpcsRequest struct {
 	DryRun               requests.Boolean   `position:"Query" name:"DryRun"`
 	ResourceOwnerAccount string             `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string             `position:"Query" name:"OwnerAccount"`
+	AdvancedFeature      requests.Boolean   `position:"Query" name:"AdvancedFeature"`
 	OwnerId              requests.Integer   `position:"Query" name:"OwnerId"`
 	VpcId                string             `position:"Query" name:"VpcId"`
 }
@@ -111,7 +113,8 @@ func CreateDescribeVpcsRequest() (request *DescribeVpcsRequest) {
 	request = &DescribeVpcsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpcs", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVpcs", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

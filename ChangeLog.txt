@@ -1,3 +1,7 @@
+2020-06-03 Version: v1.61.235
+- Generated 2016-04-28 for `Vpc`.
+- Add enhanced natgateway sdk.
+
 2020-06-03 Version: v1.61.234
 - Generated 2019-01-01 for `HBase`.
 - Describe describeAvailableResource.

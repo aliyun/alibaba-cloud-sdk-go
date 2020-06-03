@@ -80,6 +80,7 @@ type ModifyVpnGatewayAttributeRequest struct {
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	Description          string           `position:"Query" name:"Description"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AutoPropagate        requests.Boolean `position:"Query" name:"AutoPropagate"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -102,6 +103,8 @@ type ModifyVpnGatewayAttributeResponse struct {
 	Description    string `json:"Description" xml:"Description"`
 	Status         string `json:"Status" xml:"Status"`
 	BusinessStatus string `json:"BusinessStatus" xml:"BusinessStatus"`
+	EnableBgp      bool   `json:"EnableBgp" xml:"EnableBgp"`
+	AutoPropagate  bool   `json:"AutoPropagate" xml:"AutoPropagate"`
 }
 
 // CreateModifyVpnGatewayAttributeRequest creates a request to invoke ModifyVpnGatewayAttribute API
@@ -109,7 +112,8 @@ func CreateModifyVpnGatewayAttributeRequest() (request *ModifyVpnGatewayAttribut
 	request = &ModifyVpnGatewayAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyVpnGatewayAttribute", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyVpnGatewayAttribute", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

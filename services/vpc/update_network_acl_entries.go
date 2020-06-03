@@ -122,7 +122,8 @@ func CreateUpdateNetworkAclEntriesRequest() (request *UpdateNetworkAclEntriesReq
 	request = &UpdateNetworkAclEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "UpdateNetworkAclEntries", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "UpdateNetworkAclEntries", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

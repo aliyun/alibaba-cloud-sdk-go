@@ -88,6 +88,7 @@ type DescribeVSwitchesRequest struct {
 	OwnerAccount         string                  `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
 	VSwitchId            string                  `position:"Query" name:"VSwitchId"`
+	VSwitchOwnerId       requests.Integer        `position:"Query" name:"VSwitchOwnerId"`
 	VpcId                string                  `position:"Query" name:"VpcId"`
 	VSwitchName          string                  `position:"Query" name:"VSwitchName"`
 	ZoneId               string                  `position:"Query" name:"ZoneId"`
@@ -114,7 +115,8 @@ func CreateDescribeVSwitchesRequest() (request *DescribeVSwitchesRequest) {
 	request = &DescribeVSwitchesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVSwitches", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeVSwitches", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

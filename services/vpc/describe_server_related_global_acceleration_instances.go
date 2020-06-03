@@ -96,7 +96,8 @@ func CreateDescribeServerRelatedGlobalAccelerationInstancesRequest() (request *D
 	request = &DescribeServerRelatedGlobalAccelerationInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeServerRelatedGlobalAccelerationInstances", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeServerRelatedGlobalAccelerationInstances", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

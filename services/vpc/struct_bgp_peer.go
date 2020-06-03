@@ -34,4 +34,5 @@ type BgpPeer struct {
 	RouteLimit    string `json:"RouteLimit" xml:"RouteLimit"`
 	RegionId      string `json:"RegionId" xml:"RegionId"`
 	EnableBfd     bool   `json:"EnableBfd" xml:"EnableBfd"`
+	IpVersion     string `json:"IpVersion" xml:"IpVersion"`
 }

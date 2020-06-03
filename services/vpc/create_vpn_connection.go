@@ -81,6 +81,7 @@ type CreateVpnConnectionRequest struct {
 	AutoConfigRoute      requests.Boolean `position:"Query" name:"AutoConfigRoute"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	IpsecConfig          string           `position:"Query" name:"IpsecConfig"`
+	BgpConfig            string           `position:"Query" name:"BgpConfig"`
 	HealthCheckConfig    string           `position:"Query" name:"HealthCheckConfig"`
 	CustomerGatewayId    string           `position:"Query" name:"CustomerGatewayId"`
 	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
@@ -90,7 +91,9 @@ type CreateVpnConnectionRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	EnableDpd            requests.Boolean `position:"Query" name:"EnableDpd"`
 	Name                 string           `position:"Query" name:"Name"`
+	EnableNatTraversal   requests.Boolean `position:"Query" name:"EnableNatTraversal"`
 }
 
 // CreateVpnConnectionResponse is the response struct for api CreateVpnConnection
@@ -107,7 +110,8 @@ func CreateCreateVpnConnectionRequest() (request *CreateVpnConnectionRequest) {
 	request = &CreateVpnConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateVpnConnection", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateVpnConnection", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

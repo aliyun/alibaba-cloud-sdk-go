@@ -101,7 +101,8 @@ func CreateCreatePhysicalConnectionSetupOrderRequest() (request *CreatePhysicalC
 	request = &CreatePhysicalConnectionSetupOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreatePhysicalConnectionSetupOrder", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "CreatePhysicalConnectionSetupOrder", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

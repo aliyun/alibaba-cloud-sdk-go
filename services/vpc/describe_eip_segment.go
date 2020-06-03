@@ -101,7 +101,8 @@ func CreateDescribeEipSegmentRequest() (request *DescribeEipSegmentRequest) {
 	request = &DescribeEipSegmentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeEipSegment", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DescribeEipSegment", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

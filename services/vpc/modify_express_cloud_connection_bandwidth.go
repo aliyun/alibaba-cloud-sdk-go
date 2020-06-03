@@ -95,7 +95,8 @@ func CreateModifyExpressCloudConnectionBandwidthRequest() (request *ModifyExpres
 	request = &ModifyExpressCloudConnectionBandwidthRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyExpressCloudConnectionBandwidth", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyExpressCloudConnectionBandwidth", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

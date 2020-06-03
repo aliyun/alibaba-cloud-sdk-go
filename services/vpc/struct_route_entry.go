@@ -28,6 +28,7 @@ type RouteEntry struct {
 	Status                   string                        `json:"Status" xml:"Status"`
 	DestinationCidrBlock     string                        `json:"DestinationCidrBlock" xml:"DestinationCidrBlock"`
 	NextHopRegionId          string                        `json:"NextHopRegionId" xml:"NextHopRegionId"`
+	Description              string                        `json:"Description" xml:"Description"`
 	NextHopOppsiteType       string                        `json:"NextHopOppsiteType" xml:"NextHopOppsiteType"`
 	NextHopOppsiteRegionId   string                        `json:"NextHopOppsiteRegionId" xml:"NextHopOppsiteRegionId"`
 	Type                     string                        `json:"Type" xml:"Type"`

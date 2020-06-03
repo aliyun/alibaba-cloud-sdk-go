@@ -81,17 +81,21 @@ type ModifyVirtualBorderRouterAttributeRequest struct {
 	AssociatedPhysicalConnections string           `position:"Query" name:"AssociatedPhysicalConnections"`
 	VlanId                        requests.Integer `position:"Query" name:"VlanId"`
 	ClientToken                   string           `position:"Query" name:"ClientToken"`
+	EnableIpv6                    requests.Boolean `position:"Query" name:"EnableIpv6"`
 	Description                   string           `position:"Query" name:"Description"`
 	VbrId                         string           `position:"Query" name:"VbrId"`
 	PeerGatewayIp                 string           `position:"Query" name:"PeerGatewayIp"`
+	PeerIpv6GatewayIp             string           `position:"Query" name:"PeerIpv6GatewayIp"`
 	DetectMultiplier              requests.Integer `position:"Query" name:"DetectMultiplier"`
 	PeeringSubnetMask             string           `position:"Query" name:"PeeringSubnetMask"`
 	LocalGatewayIp                string           `position:"Query" name:"LocalGatewayIp"`
 	MinTxInterval                 requests.Integer `position:"Query" name:"MinTxInterval"`
+	PeeringIpv6SubnetMask         string           `position:"Query" name:"PeeringIpv6SubnetMask"`
 	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                  string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
 	MinRxInterval                 requests.Integer `position:"Query" name:"MinRxInterval"`
+	LocalIpv6GatewayIp            string           `position:"Query" name:"LocalIpv6GatewayIp"`
 	Name                          string           `position:"Query" name:"Name"`
 }
 
@@ -106,7 +110,8 @@ func CreateModifyVirtualBorderRouterAttributeRequest() (request *ModifyVirtualBo
 	request = &ModifyVirtualBorderRouterAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyVirtualBorderRouterAttribute", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyVirtualBorderRouterAttribute", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

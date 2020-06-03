@@ -99,7 +99,8 @@ func CreateModifyExpressCloudConnectionAttributeRequest() (request *ModifyExpres
 	request = &ModifyExpressCloudConnectionAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyExpressCloudConnectionAttribute", "Vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyExpressCloudConnectionAttribute", "vpc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -23,6 +23,7 @@ type NetworkAclAttribute struct {
 	CreationTime      string                              `json:"CreationTime" xml:"CreationTime"`
 	VpcId             string                              `json:"VpcId" xml:"VpcId"`
 	Status            string                              `json:"Status" xml:"Status"`
+	OwnerId           int64                               `json:"OwnerId" xml:"OwnerId"`
 	Description       string                              `json:"Description" xml:"Description"`
 	IngressAclEntries IngressAclEntriesInCreateNetworkAcl `json:"IngressAclEntries" xml:"IngressAclEntries"`
 	Resources         ResourcesInCreateNetworkAcl         `json:"Resources" xml:"Resources"`

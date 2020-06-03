@@ -35,4 +35,8 @@ type VirtualBorderRouterForPhysicalConnectionType struct {
 	PConnVbrExpireTime      string `json:"PConnVbrExpireTime" xml:"PConnVbrExpireTime"`
 	PConnVbrBussinessStatus string `json:"PConnVbrBussinessStatus" xml:"PConnVbrBussinessStatus"`
 	Bandwidth               string `json:"Bandwidth" xml:"Bandwidth"`
+	LocalIpv6GatewayIp      string `json:"LocalIpv6GatewayIp" xml:"LocalIpv6GatewayIp"`
+	PeerIpv6GatewayIp       string `json:"PeerIpv6GatewayIp" xml:"PeerIpv6GatewayIp"`
+	PeeringIpv6SubnetMask   string `json:"PeeringIpv6SubnetMask" xml:"PeeringIpv6SubnetMask"`
+	EnableIpv6              bool   `json:"EnableIpv6" xml:"EnableIpv6"`
 }
