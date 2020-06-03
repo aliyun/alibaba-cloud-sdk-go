@@ -93,6 +93,7 @@ func CreateModifyDataCenterRequest() (request *ModifyDataCenterRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cassandra", "2019-01-01", "ModifyDataCenter", "Cassandra", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

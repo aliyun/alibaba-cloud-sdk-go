@@ -101,6 +101,8 @@ type DescribeDataCenterResponse struct {
 	CommodityInstance string `json:"CommodityInstance" xml:"CommodityInstance"`
 	ExpireTime        string `json:"ExpireTime" xml:"ExpireTime"`
 	LockMode          string `json:"LockMode" xml:"LockMode"`
+	AutoRenewal       bool   `json:"AutoRenewal" xml:"AutoRenewal"`
+	AutoRenewPeriod   int    `json:"AutoRenewPeriod" xml:"AutoRenewPeriod"`
 }
 
 // CreateDescribeDataCenterRequest creates a request to invoke DescribeDataCenter API
@@ -109,6 +111,7 @@ func CreateDescribeDataCenterRequest() (request *DescribeDataCenterRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cassandra", "2019-01-01", "DescribeDataCenter", "Cassandra", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

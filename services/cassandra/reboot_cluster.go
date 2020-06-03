@@ -76,7 +76,8 @@ func (client *Client) RebootClusterWithCallback(request *RebootClusterRequest, c
 // RebootClusterRequest is the request struct for api RebootCluster
 type RebootClusterRequest struct {
 	*requests.RpcRequest
-	ClusterId string `position:"Query" name:"ClusterId"`
+	DataCenterId string `position:"Query" name:"DataCenterId"`
+	ClusterId    string `position:"Query" name:"ClusterId"`
 }
 
 // RebootClusterResponse is the response struct for api RebootCluster
@@ -91,6 +92,7 @@ func CreateRebootClusterRequest() (request *RebootClusterRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cassandra", "2019-01-01", "RebootCluster", "Cassandra", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

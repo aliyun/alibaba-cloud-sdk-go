@@ -106,6 +106,7 @@ func CreateCreateDataCenterRequest() (request *CreateDataCenterRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cassandra", "2019-01-01", "CreateDataCenter", "Cassandra", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

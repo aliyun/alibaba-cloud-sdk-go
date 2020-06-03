@@ -93,6 +93,7 @@ func CreateDeleteNodeToolExecutionHistoryRequest() (request *DeleteNodeToolExecu
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cassandra", "2019-01-01", "DeleteNodeToolExecutionHistory", "Cassandra", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

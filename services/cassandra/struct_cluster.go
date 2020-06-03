@@ -20,9 +20,11 @@ type Cluster struct {
 	ClusterId         string                `json:"ClusterId" xml:"ClusterId"`
 	PayType           string                `json:"PayType" xml:"PayType"`
 	MaintainStartTime string                `json:"MaintainStartTime" xml:"MaintainStartTime"`
+	AutoRenewPeriod   int                   `json:"AutoRenewPeriod" xml:"AutoRenewPeriod"`
 	MajorVersion      string                `json:"MajorVersion" xml:"MajorVersion"`
 	CreatedTime       string                `json:"CreatedTime" xml:"CreatedTime"`
 	IsLatestVersion   bool                  `json:"IsLatestVersion" xml:"IsLatestVersion"`
+	AutoRenewal       bool                  `json:"AutoRenewal" xml:"AutoRenewal"`
 	MinorVersion      string                `json:"MinorVersion" xml:"MinorVersion"`
 	MaintainEndTime   string                `json:"MaintainEndTime" xml:"MaintainEndTime"`
 	ExpireTime        string                `json:"ExpireTime" xml:"ExpireTime"`

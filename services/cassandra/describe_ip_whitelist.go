@@ -92,6 +92,7 @@ func CreateDescribeIpWhitelistRequest() (request *DescribeIpWhitelistRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cassandra", "2019-01-01", "DescribeIpWhitelist", "Cassandra", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

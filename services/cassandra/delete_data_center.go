@@ -92,6 +92,7 @@ func CreateDeleteDataCenterRequest() (request *DeleteDataCenterRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cassandra", "2019-01-01", "DeleteDataCenter", "Cassandra", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

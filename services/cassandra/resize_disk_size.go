@@ -93,6 +93,7 @@ func CreateResizeDiskSizeRequest() (request *ResizeDiskSizeRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cassandra", "2019-01-01", "ResizeDiskSize", "Cassandra", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

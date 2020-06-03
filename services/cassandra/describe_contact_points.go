@@ -92,6 +92,7 @@ func CreateDescribeContactPointsRequest() (request *DescribeContactPointsRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cassandra", "2019-01-01", "DescribeContactPoints", "Cassandra", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

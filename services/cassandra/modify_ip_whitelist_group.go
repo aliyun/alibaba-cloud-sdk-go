@@ -94,6 +94,7 @@ func CreateModifyIpWhitelistGroupRequest() (request *ModifyIpWhitelistGroupReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cassandra", "2019-01-01", "ModifyIpWhitelistGroup", "Cassandra", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

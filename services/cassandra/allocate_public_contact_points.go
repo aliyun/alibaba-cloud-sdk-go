@@ -92,6 +92,7 @@ func CreateAllocatePublicContactPointsRequest() (request *AllocatePublicContactP
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cassandra", "2019-01-01", "AllocatePublicContactPoints", "Cassandra", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

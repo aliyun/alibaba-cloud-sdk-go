@@ -92,6 +92,7 @@ func CreateDescribeBackupPlansRequest() (request *DescribeBackupPlansRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cassandra", "2019-01-01", "DescribeBackupPlans", "Cassandra", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -91,6 +91,7 @@ func CreateUpgradeClusterVersionRequest() (request *UpgradeClusterVersionRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cassandra", "2019-01-01", "UpgradeClusterVersion", "Cassandra", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

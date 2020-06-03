@@ -22,10 +22,12 @@ type DataCenter struct {
 	PayType           string `json:"PayType" xml:"PayType"`
 	InstanceType      string `json:"InstanceType" xml:"InstanceType"`
 	DataCenterName    string `json:"DataCenterName" xml:"DataCenterName"`
+	AutoRenewPeriod   int    `json:"AutoRenewPeriod" xml:"AutoRenewPeriod"`
 	NodeCount         int    `json:"NodeCount" xml:"NodeCount"`
 	RegionId          string `json:"RegionId" xml:"RegionId"`
 	CreatedTime       string `json:"CreatedTime" xml:"CreatedTime"`
 	ZoneId            string `json:"ZoneId" xml:"ZoneId"`
+	AutoRenewal       bool   `json:"AutoRenewal" xml:"AutoRenewal"`
 	VswitchId         string `json:"VswitchId" xml:"VswitchId"`
 	DiskSize          int    `json:"DiskSize" xml:"DiskSize"`
 	ExpireTime        string `json:"ExpireTime" xml:"ExpireTime"`
