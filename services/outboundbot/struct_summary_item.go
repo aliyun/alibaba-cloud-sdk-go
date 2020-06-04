@@ -18,11 +18,11 @@ package outboundbot
 // SummaryItem is a nested struct in outboundbot response
 type SummaryItem struct {
 	Category             string `json:"Category" xml:"Category"`
-	SummaryId            string `json:"SummaryId" xml:"SummaryId"`
 	JobId                string `json:"JobId" xml:"JobId"`
+	SummaryId            string `json:"SummaryId" xml:"SummaryId"`
 	JobGroupId           string `json:"JobGroupId" xml:"JobGroupId"`
-	TaskId               string `json:"TaskId" xml:"TaskId"`
 	ConversationDetailId string `json:"ConversationDetailId" xml:"ConversationDetailId"`
+	TaskId               string `json:"TaskId" xml:"TaskId"`
 	Content              string `json:"Content" xml:"Content"`
 	SummaryName          string `json:"SummaryName" xml:"SummaryName"`
 	GroupId              string `json:"GroupId" xml:"GroupId"`

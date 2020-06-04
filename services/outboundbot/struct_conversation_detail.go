@@ -17,12 +17,8 @@ package outboundbot
 
 // ConversationDetail is a nested struct in outboundbot response
 type ConversationDetail struct {
-	NodeId         string        `json:"NodeId" xml:"NodeId"`
-	TaskId         string        `json:"TaskId" xml:"TaskId"`
-	Timestamp      int64         `json:"Timestamp" xml:"Timestamp"`
-	Script         string        `json:"Script" xml:"Script"`
-	Id             string        `json:"Id" xml:"Id"`
-	Speaker        string        `json:"Speaker" xml:"Speaker"`
-	ConversationId string        `json:"ConversationId" xml:"ConversationId"`
-	Summary        []SummaryItem `json:"Summary" xml:"Summary"`
+	Timestamp int64         `json:"Timestamp" xml:"Timestamp"`
+	Script    string        `json:"Script" xml:"Script"`
+	Speaker   string        `json:"Speaker" xml:"Speaker"`
+	Summary   []SummaryItem `json:"Summary" xml:"Summary"`
 }

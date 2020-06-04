@@ -22,11 +22,11 @@ type Progress struct {
 	Cancelled        int            `json:"Cancelled" xml:"Cancelled"`
 	Executing        int            `json:"Executing" xml:"Executing"`
 	TotalNotAnswered int            `json:"TotalNotAnswered" xml:"TotalNotAnswered"`
-	StartTime        int64          `json:"StartTime" xml:"StartTime"`
 	Failed           int            `json:"Failed" xml:"Failed"`
+	StartTime        int64          `json:"StartTime" xml:"StartTime"`
 	Duration         int            `json:"Duration" xml:"Duration"`
-	Status           string         `json:"Status" xml:"Status"`
 	Paused           int            `json:"Paused" xml:"Paused"`
+	Status           string         `json:"Status" xml:"Status"`
 	TotalCompleted   int            `json:"TotalCompleted" xml:"TotalCompleted"`
 	Categories       []KeyValuePair `json:"Categories" xml:"Categories"`
 	Briefs           []KeyValuePair `json:"Briefs" xml:"Briefs"`

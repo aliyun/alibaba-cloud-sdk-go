@@ -83,11 +83,14 @@ type DescribeScriptRequest struct {
 // DescribeScriptResponse is the response struct for api DescribeScript
 type DescribeScriptResponse struct {
 	*responses.BaseResponse
+	Code           string `json:"Code" xml:"Code"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	ChatbotId      string `json:"ChatbotId" xml:"ChatbotId"`
+	AsrConfig      string `json:"AsrConfig" xml:"AsrConfig"`
+	TtsConfig      string `json:"TtsConfig" xml:"TtsConfig"`
 	Script         Script `json:"Script" xml:"Script"`
 }
 
@@ -97,6 +100,7 @@ func CreateDescribeScriptRequest() (request *DescribeScriptRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeScript", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

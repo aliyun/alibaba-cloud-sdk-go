@@ -77,26 +77,26 @@ func (client *Client) DialogueWithCallback(request *DialogueRequest, callback fu
 type DialogueRequest struct {
 	*requests.RpcRequest
 	CallId          string           `position:"Query" name:"CallId"`
-	ActionParams    string           `position:"Query" name:"ActionParams"`
-	CallingNumber   string           `position:"Query" name:"CallingNumber"`
-	InstanceId      string           `position:"Query" name:"InstanceId"`
 	InstanceOwnerId requests.Integer `position:"Query" name:"InstanceOwnerId"`
 	CalledNumber    string           `position:"Query" name:"CalledNumber"`
-	ActionKey       string           `position:"Query" name:"ActionKey"`
 	CallType        string           `position:"Query" name:"CallType"`
 	ScenarioId      string           `position:"Query" name:"ScenarioId"`
 	TaskId          string           `position:"Query" name:"TaskId"`
 	Utterance       string           `position:"Query" name:"Utterance"`
+	ActionParams    string           `position:"Query" name:"ActionParams"`
+	CallingNumber   string           `position:"Query" name:"CallingNumber"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	ActionKey       string           `position:"Query" name:"ActionKey"`
 }
 
 // DialogueResponse is the response struct for api Dialogue
 type DialogueResponse struct {
 	*responses.BaseResponse
+	Code           string   `json:"Code" xml:"Code"`
+	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string   `json:"Message" xml:"Message"`
 	RequestId      string   `json:"RequestId" xml:"RequestId"`
 	Success        bool     `json:"Success" xml:"Success"`
-	Code           string   `json:"Code" xml:"Code"`
-	Message        string   `json:"Message" xml:"Message"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Feedback       Feedback `json:"Feedback" xml:"Feedback"`
 }
 
@@ -106,6 +106,7 @@ func CreateDialogueRequest() (request *DialogueRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "Dialogue", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

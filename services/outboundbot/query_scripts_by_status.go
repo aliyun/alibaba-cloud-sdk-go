@@ -76,20 +76,20 @@ func (client *Client) QueryScriptsByStatusWithCallback(request *QueryScriptsBySt
 // QueryScriptsByStatusRequest is the request struct for api QueryScriptsByStatus
 type QueryScriptsByStatusRequest struct {
 	*requests.RpcRequest
+	StatusList *[]string        `position:"Query" name:"StatusList"  type:"Repeated"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId string           `position:"Query" name:"InstanceId"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	Status     string           `position:"Query" name:"Status"`
 }
 
 // QueryScriptsByStatusResponse is the response struct for api QueryScriptsByStatus
 type QueryScriptsByStatusResponse struct {
 	*responses.BaseResponse
+	Code           string  `json:"Code" xml:"Code"`
+	HttpStatusCode int     `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string  `json:"Message" xml:"Message"`
 	RequestId      string  `json:"RequestId" xml:"RequestId"`
 	Success        bool    `json:"Success" xml:"Success"`
-	Code           string  `json:"Code" xml:"Code"`
-	Message        string  `json:"Message" xml:"Message"`
-	HttpStatusCode int     `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Scripts        Scripts `json:"Scripts" xml:"Scripts"`
 }
 
@@ -99,6 +99,7 @@ func CreateQueryScriptsByStatusRequest() (request *QueryScriptsByStatusRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "QueryScriptsByStatus", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -17,7 +17,7 @@ package outboundbot
 
 // TagHits is a nested struct in outboundbot response
 type TagHits struct {
-	TagName  string `json:"TagName" xml:"TagName"`
 	HitCount int    `json:"HitCount" xml:"HitCount"`
 	TagGroup string `json:"TagGroup" xml:"TagGroup"`
+	TagName  string `json:"TagName" xml:"TagName"`
 }

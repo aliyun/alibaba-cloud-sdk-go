@@ -84,11 +84,11 @@ type DescribeJobGroupRequest struct {
 // DescribeJobGroupResponse is the response struct for api DescribeJobGroup
 type DescribeJobGroupResponse struct {
 	*responses.BaseResponse
+	Code           string   `json:"Code" xml:"Code"`
+	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string   `json:"Message" xml:"Message"`
 	RequestId      string   `json:"RequestId" xml:"RequestId"`
 	Success        bool     `json:"Success" xml:"Success"`
-	Code           string   `json:"Code" xml:"Code"`
-	Message        string   `json:"Message" xml:"Message"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	JobGroup       JobGroup `json:"JobGroup" xml:"JobGroup"`
 }
 
@@ -98,6 +98,7 @@ func CreateDescribeJobGroupRequest() (request *DescribeJobGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeJobGroup", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

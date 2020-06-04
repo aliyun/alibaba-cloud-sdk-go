@@ -17,12 +17,14 @@ package outboundbot
 
 // Instance is a nested struct in outboundbot response
 type Instance struct {
-	InstanceId                string `json:"InstanceId" xml:"InstanceId"`
-	InstanceName              string `json:"InstanceName" xml:"InstanceName"`
-	Owner                     string `json:"Owner" xml:"Owner"`
-	CreationTime              int64  `json:"CreationTime" xml:"CreationTime"`
-	CallCenterInstanceId      string `json:"CallCenterInstanceId" xml:"CallCenterInstanceId"`
-	MaxConcurrentConversation int    `json:"MaxConcurrentConversation" xml:"MaxConcurrentConversation"`
-	InstanceDescription       string `json:"InstanceDescription" xml:"InstanceDescription"`
-	IsTemplateContainer       bool   `json:"IsTemplateContainer" xml:"IsTemplateContainer"`
+	NluServiceType            string     `json:"NluServiceType" xml:"NluServiceType"`
+	InstanceId                string     `json:"InstanceId" xml:"InstanceId"`
+	InstanceName              string     `json:"InstanceName" xml:"InstanceName"`
+	CallCenterInstanceId      string     `json:"CallCenterInstanceId" xml:"CallCenterInstanceId"`
+	CreationTime              int64      `json:"CreationTime" xml:"CreationTime"`
+	Owner                     string     `json:"Owner" xml:"Owner"`
+	MaxConcurrentConversation int        `json:"MaxConcurrentConversation" xml:"MaxConcurrentConversation"`
+	InstanceDescription       string     `json:"InstanceDescription" xml:"InstanceDescription"`
+	IsTemplateContainer       bool       `json:"IsTemplateContainer" xml:"IsTemplateContainer"`
+	NluProfile                NluProfile `json:"NluProfile" xml:"NluProfile"`
 }

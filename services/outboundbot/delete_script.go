@@ -83,11 +83,11 @@ type DeleteScriptRequest struct {
 // DeleteScriptResponse is the response struct for api DeleteScript
 type DeleteScriptResponse struct {
 	*responses.BaseResponse
+	Code           string `json:"Code" xml:"Code"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 // CreateDeleteScriptRequest creates a request to invoke DeleteScript API
@@ -96,6 +96,7 @@ func CreateDeleteScriptRequest() (request *DeleteScriptRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteScript", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

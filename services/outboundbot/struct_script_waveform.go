@@ -17,9 +17,9 @@ package outboundbot
 
 // ScriptWaveform is a nested struct in outboundbot response
 type ScriptWaveform struct {
-	ScriptWaveformId string `json:"ScriptWaveformId" xml:"ScriptWaveformId"`
-	ScriptId         string `json:"ScriptId" xml:"ScriptId"`
-	ScriptContent    string `json:"ScriptContent" xml:"ScriptContent"`
 	FileId           string `json:"FileId" xml:"FileId"`
 	FileName         string `json:"FileName" xml:"FileName"`
+	ScriptContent    string `json:"ScriptContent" xml:"ScriptContent"`
+	ScriptId         string `json:"ScriptId" xml:"ScriptId"`
+	ScriptWaveformId string `json:"ScriptWaveformId" xml:"ScriptWaveformId"`
 }

@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ListMedias invokes the outboundbot.ListMedias API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/listmedias.html
-func (client *Client) ListMedias(request *ListMediasRequest) (response *ListMediasResponse, err error) {
-	response = CreateListMediasResponse()
+// ListMedia invokes the outboundbot.ListMedia API synchronously
+// api document: https://help.aliyun.com/api/outboundbot/listmedia.html
+func (client *Client) ListMedia(request *ListMediaRequest) (response *ListMediaResponse, err error) {
+	response = CreateListMediaResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ListMediasWithChan invokes the outboundbot.ListMedias API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/listmedias.html
+// ListMediaWithChan invokes the outboundbot.ListMedia API asynchronously
+// api document: https://help.aliyun.com/api/outboundbot/listmedia.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ListMediasWithChan(request *ListMediasRequest) (<-chan *ListMediasResponse, <-chan error) {
-	responseChan := make(chan *ListMediasResponse, 1)
+func (client *Client) ListMediaWithChan(request *ListMediaRequest) (<-chan *ListMediaResponse, <-chan error) {
+	responseChan := make(chan *ListMediaResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListMedias(request)
+		response, err := client.ListMedia(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ListMediasWithChan(request *ListMediasRequest) (<-chan *Li
 	return responseChan, errChan
 }
 
-// ListMediasWithCallback invokes the outboundbot.ListMedias API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/listmedias.html
+// ListMediaWithCallback invokes the outboundbot.ListMedia API asynchronously
+// api document: https://help.aliyun.com/api/outboundbot/listmedia.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ListMediasWithCallback(request *ListMediasRequest, callback func(response *ListMediasResponse, err error)) <-chan int {
+func (client *Client) ListMediaWithCallback(request *ListMediaRequest, callback func(response *ListMediaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListMediasResponse
+		var response *ListMediaResponse
 		var err error
 		defer close(result)
-		response, err = client.ListMedias(request)
+		response, err = client.ListMedia(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,8 +73,8 @@ func (client *Client) ListMediasWithCallback(request *ListMediasRequest, callbac
 	return result
 }
 
-// ListMediasRequest is the request struct for api ListMedias
-type ListMediasRequest struct {
+// ListMediaRequest is the request struct for api ListMedia
+type ListMediaRequest struct {
 	*requests.RpcRequest
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId string           `position:"Query" name:"InstanceId"`
@@ -82,32 +82,33 @@ type ListMediasRequest struct {
 	NamePrefix string           `position:"Query" name:"NamePrefix"`
 }
 
-// ListMediasResponse is the response struct for api ListMedias
-type ListMediasResponse struct {
+// ListMediaResponse is the response struct for api ListMedia
+type ListMediaResponse struct {
 	*responses.BaseResponse
-	RequestId      string  `json:"RequestId" xml:"RequestId"`
-	Success        bool    `json:"Success" xml:"Success"`
 	Code           string  `json:"Code" xml:"Code"`
-	Message        string  `json:"Message" xml:"Message"`
 	HttpStatusCode int     `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	TotalCount     int     `json:"TotalCount" xml:"TotalCount"`
+	Message        string  `json:"Message" xml:"Message"`
 	PageNumber     int     `json:"PageNumber" xml:"PageNumber"`
 	PageSize       int     `json:"PageSize" xml:"PageSize"`
+	RequestId      string  `json:"RequestId" xml:"RequestId"`
+	Success        bool    `json:"Success" xml:"Success"`
+	TotalCount     int     `json:"TotalCount" xml:"TotalCount"`
 	MediaList      []Media `json:"MediaList" xml:"MediaList"`
 }
 
-// CreateListMediasRequest creates a request to invoke ListMedias API
-func CreateListMediasRequest() (request *ListMediasRequest) {
-	request = &ListMediasRequest{
+// CreateListMediaRequest creates a request to invoke ListMedia API
+func CreateListMediaRequest() (request *ListMediaRequest) {
+	request = &ListMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListMedias", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListMedia", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
-// CreateListMediasResponse creates a response to parse from ListMedias response
-func CreateListMediasResponse() (response *ListMediasResponse) {
-	response = &ListMediasResponse{
+// CreateListMediaResponse creates a response to parse from ListMedia response
+func CreateListMediaResponse() (response *ListMediaResponse) {
+	response = &ListMediaResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -77,20 +77,24 @@ func (client *Client) ModifyInstanceWithCallback(request *ModifyInstanceRequest,
 type ModifyInstanceRequest struct {
 	*requests.RpcRequest
 	MaxConcurrentConversation requests.Integer `position:"Query" name:"MaxConcurrentConversation"`
+	SecretKey                 string           `position:"Query" name:"SecretKey"`
+	Endpoint                  string           `position:"Query" name:"Endpoint"`
 	InstanceId                string           `position:"Query" name:"InstanceId"`
 	InstanceName              string           `position:"Query" name:"InstanceName"`
 	CallCenterInstanceId      string           `position:"Query" name:"CallCenterInstanceId"`
+	AccessKey                 string           `position:"Query" name:"AccessKey"`
 	InstanceDescription       string           `position:"Query" name:"InstanceDescription"`
+	NluServiceType            string           `position:"Query" name:"NluServiceType"`
 }
 
 // ModifyInstanceResponse is the response struct for api ModifyInstance
 type ModifyInstanceResponse struct {
 	*responses.BaseResponse
+	Code           string   `json:"Code" xml:"Code"`
+	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string   `json:"Message" xml:"Message"`
 	RequestId      string   `json:"RequestId" xml:"RequestId"`
 	Success        bool     `json:"Success" xml:"Success"`
-	Code           string   `json:"Code" xml:"Code"`
-	Message        string   `json:"Message" xml:"Message"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Instance       Instance `json:"Instance" xml:"Instance"`
 }
 
@@ -100,6 +104,7 @@ func CreateModifyInstanceRequest() (request *ModifyInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyInstance", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

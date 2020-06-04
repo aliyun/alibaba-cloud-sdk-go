@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// WithdrawScript invokes the outboundbot.WithdrawScript API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/withdrawscript.html
-func (client *Client) WithdrawScript(request *WithdrawScriptRequest) (response *WithdrawScriptResponse, err error) {
-	response = CreateWithdrawScriptResponse()
+// WithdrawScriptReview invokes the outboundbot.WithdrawScriptReview API synchronously
+// api document: https://help.aliyun.com/api/outboundbot/withdrawscriptreview.html
+func (client *Client) WithdrawScriptReview(request *WithdrawScriptReviewRequest) (response *WithdrawScriptReviewResponse, err error) {
+	response = CreateWithdrawScriptReviewResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// WithdrawScriptWithChan invokes the outboundbot.WithdrawScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/withdrawscript.html
+// WithdrawScriptReviewWithChan invokes the outboundbot.WithdrawScriptReview API asynchronously
+// api document: https://help.aliyun.com/api/outboundbot/withdrawscriptreview.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) WithdrawScriptWithChan(request *WithdrawScriptRequest) (<-chan *WithdrawScriptResponse, <-chan error) {
-	responseChan := make(chan *WithdrawScriptResponse, 1)
+func (client *Client) WithdrawScriptReviewWithChan(request *WithdrawScriptReviewRequest) (<-chan *WithdrawScriptReviewResponse, <-chan error) {
+	responseChan := make(chan *WithdrawScriptReviewResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.WithdrawScript(request)
+		response, err := client.WithdrawScriptReview(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) WithdrawScriptWithChan(request *WithdrawScriptRequest) (<-
 	return responseChan, errChan
 }
 
-// WithdrawScriptWithCallback invokes the outboundbot.WithdrawScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/withdrawscript.html
+// WithdrawScriptReviewWithCallback invokes the outboundbot.WithdrawScriptReview API asynchronously
+// api document: https://help.aliyun.com/api/outboundbot/withdrawscriptreview.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) WithdrawScriptWithCallback(request *WithdrawScriptRequest, callback func(response *WithdrawScriptResponse, err error)) <-chan int {
+func (client *Client) WithdrawScriptReviewWithCallback(request *WithdrawScriptReviewRequest, callback func(response *WithdrawScriptReviewResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *WithdrawScriptResponse
+		var response *WithdrawScriptReviewResponse
 		var err error
 		defer close(result)
-		response, err = client.WithdrawScript(request)
+		response, err = client.WithdrawScriptReview(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,15 +73,15 @@ func (client *Client) WithdrawScriptWithCallback(request *WithdrawScriptRequest,
 	return result
 }
 
-// WithdrawScriptRequest is the request struct for api WithdrawScript
-type WithdrawScriptRequest struct {
+// WithdrawScriptReviewRequest is the request struct for api WithdrawScriptReview
+type WithdrawScriptReviewRequest struct {
 	*requests.RpcRequest
 	ScriptId   string `position:"Query" name:"ScriptId"`
 	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
-// WithdrawScriptResponse is the response struct for api WithdrawScript
-type WithdrawScriptResponse struct {
+// WithdrawScriptReviewResponse is the response struct for api WithdrawScriptReview
+type WithdrawScriptReviewResponse struct {
 	*responses.BaseResponse
 	Code           string `json:"Code" xml:"Code"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
@@ -91,18 +91,19 @@ type WithdrawScriptResponse struct {
 	Script         Script `json:"Script" xml:"Script"`
 }
 
-// CreateWithdrawScriptRequest creates a request to invoke WithdrawScript API
-func CreateWithdrawScriptRequest() (request *WithdrawScriptRequest) {
-	request = &WithdrawScriptRequest{
+// CreateWithdrawScriptReviewRequest creates a request to invoke WithdrawScriptReview API
+func CreateWithdrawScriptReviewRequest() (request *WithdrawScriptReviewRequest) {
+	request = &WithdrawScriptReviewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OutboundBot", "2019-12-26", "WithdrawScript", "outboundbot", "openAPI")
+	request.InitWithApiInfo("OutboundBot", "2019-12-26", "WithdrawScriptReview", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
-// CreateWithdrawScriptResponse creates a response to parse from WithdrawScript response
-func CreateWithdrawScriptResponse() (response *WithdrawScriptResponse) {
-	response = &WithdrawScriptResponse{
+// CreateWithdrawScriptReviewResponse creates a response to parse from WithdrawScriptReview response
+func CreateWithdrawScriptReviewResponse() (response *WithdrawScriptReviewResponse) {
+	response = &WithdrawScriptReviewResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

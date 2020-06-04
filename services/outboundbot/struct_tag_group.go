@@ -17,8 +17,8 @@ package outboundbot
 
 // TagGroup is a nested struct in outboundbot response
 type TagGroup struct {
-	TagGroupIndex int    `json:"TagGroupIndex" xml:"TagGroupIndex"`
 	TagGroup      string `json:"TagGroup" xml:"TagGroup"`
+	TagGroupIndex int    `json:"TagGroupIndex" xml:"TagGroupIndex"`
 	ScriptId      string `json:"ScriptId" xml:"ScriptId"`
 	TagGroupId    string `json:"TagGroupId" xml:"TagGroupId"`
 	Id            string `json:"Id" xml:"Id"`

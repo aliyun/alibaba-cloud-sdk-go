@@ -82,11 +82,11 @@ type DescribeInstanceRequest struct {
 // DescribeInstanceResponse is the response struct for api DescribeInstance
 type DescribeInstanceResponse struct {
 	*responses.BaseResponse
+	Code           string   `json:"Code" xml:"Code"`
+	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string   `json:"Message" xml:"Message"`
 	RequestId      string   `json:"RequestId" xml:"RequestId"`
 	Success        bool     `json:"Success" xml:"Success"`
-	Code           string   `json:"Code" xml:"Code"`
-	Message        string   `json:"Message" xml:"Message"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Instance       Instance `json:"Instance" xml:"Instance"`
 }
 
@@ -96,6 +96,7 @@ func CreateDescribeInstanceRequest() (request *DescribeInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DescribeInstance", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

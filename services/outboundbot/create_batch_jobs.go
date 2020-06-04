@@ -90,11 +90,11 @@ type CreateBatchJobsRequest struct {
 // CreateBatchJobsResponse is the response struct for api CreateBatchJobs
 type CreateBatchJobsResponse struct {
 	*responses.BaseResponse
+	Code           string   `json:"Code" xml:"Code"`
+	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string   `json:"Message" xml:"Message"`
 	RequestId      string   `json:"RequestId" xml:"RequestId"`
 	Success        bool     `json:"Success" xml:"Success"`
-	Code           string   `json:"Code" xml:"Code"`
-	Message        string   `json:"Message" xml:"Message"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	BatchJob       BatchJob `json:"BatchJob" xml:"BatchJob"`
 }
 
@@ -104,6 +104,7 @@ func CreateCreateBatchJobsRequest() (request *CreateBatchJobsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateBatchJobs", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

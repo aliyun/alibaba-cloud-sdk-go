@@ -76,19 +76,20 @@ func (client *Client) PublishScriptWithCallback(request *PublishScriptRequest, c
 // PublishScriptRequest is the request struct for api PublishScript
 type PublishScriptRequest struct {
 	*requests.RpcRequest
-	Description string `position:"Query" name:"Description"`
-	ScriptId    string `position:"Query" name:"ScriptId"`
-	InstanceId  string `position:"Query" name:"InstanceId"`
+	Description     string           `position:"Query" name:"Description"`
+	ScriptId        string           `position:"Query" name:"ScriptId"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	InstanceOwnerId requests.Integer `position:"Query" name:"InstanceOwnerId"`
 }
 
 // PublishScriptResponse is the response struct for api PublishScript
 type PublishScriptResponse struct {
 	*responses.BaseResponse
+	Code           string `json:"Code" xml:"Code"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 // CreatePublishScriptRequest creates a request to invoke PublishScript API
@@ -97,6 +98,7 @@ func CreatePublishScriptRequest() (request *PublishScriptRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "PublishScript", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

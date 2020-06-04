@@ -76,21 +76,25 @@ func (client *Client) CreateScriptWithCallback(request *CreateScriptRequest, cal
 // CreateScriptRequest is the request struct for api CreateScript
 type CreateScriptRequest struct {
 	*requests.RpcRequest
+	TtsConfig         string `position:"Query" name:"TtsConfig"`
 	Industry          string `position:"Query" name:"Industry"`
 	ScriptName        string `position:"Query" name:"ScriptName"`
 	Scene             string `position:"Query" name:"Scene"`
+	ChatbotId         string `position:"Query" name:"ChatbotId"`
 	InstanceId        string `position:"Query" name:"InstanceId"`
+	AsrConfig         string `position:"Query" name:"AsrConfig"`
 	ScriptDescription string `position:"Query" name:"ScriptDescription"`
 }
 
 // CreateScriptResponse is the response struct for api CreateScript
 type CreateScriptResponse struct {
 	*responses.BaseResponse
+	Code           string `json:"Code" xml:"Code"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	ChatbotId      string `json:"ChatbotId" xml:"ChatbotId"`
 	Script         Script `json:"Script" xml:"Script"`
 }
 
@@ -100,6 +104,7 @@ func CreateCreateScriptRequest() (request *CreateScriptRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateScript", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

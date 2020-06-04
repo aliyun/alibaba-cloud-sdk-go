@@ -25,7 +25,6 @@ type JobGroup struct {
 	ScriptId            string   `json:"ScriptId" xml:"ScriptId"`
 	JobGroupDescription string   `json:"JobGroupDescription" xml:"JobGroupDescription"`
 	JobFilePath         string   `json:"JobFilePath" xml:"JobFilePath"`
-	ScenarioName        string   `json:"ScenarioName" xml:"ScenarioName"`
 	CallingNumbers      []string `json:"CallingNumbers" xml:"CallingNumbers"`
 	Strategy            Strategy `json:"Strategy" xml:"Strategy"`
 	Progress            Progress `json:"Progress" xml:"Progress"`

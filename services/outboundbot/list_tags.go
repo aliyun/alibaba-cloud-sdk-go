@@ -83,13 +83,13 @@ type ListTagsRequest struct {
 // ListTagsResponse is the response struct for api ListTags
 type ListTagsResponse struct {
 	*responses.BaseResponse
+	Code           string     `json:"Code" xml:"Code"`
+	HttpStatusCode int        `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string     `json:"Message" xml:"Message"`
 	RequestId      string     `json:"RequestId" xml:"RequestId"`
 	Success        bool       `json:"Success" xml:"Success"`
-	Code           string     `json:"Code" xml:"Code"`
-	Message        string     `json:"Message" xml:"Message"`
-	HttpStatusCode int        `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	Tags           []Tag      `json:"Tags" xml:"Tags"`
 	TagGroups      []TagGroup `json:"TagGroups" xml:"TagGroups"`
+	Tags           []Tag      `json:"Tags" xml:"Tags"`
 }
 
 // CreateListTagsRequest creates a request to invoke ListTags API
@@ -98,6 +98,7 @@ func CreateListTagsRequest() (request *ListTagsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListTags", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

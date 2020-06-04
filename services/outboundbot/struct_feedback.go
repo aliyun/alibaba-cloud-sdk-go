@@ -17,8 +17,8 @@ package outboundbot
 
 // Feedback is a nested struct in outboundbot response
 type Feedback struct {
-	Content       string `json:"Content" xml:"Content"`
 	Action        string `json:"Action" xml:"Action"`
 	ActionParams  string `json:"ActionParams" xml:"ActionParams"`
+	Content       string `json:"Content" xml:"Content"`
 	Interruptible bool   `json:"Interruptible" xml:"Interruptible"`
 }

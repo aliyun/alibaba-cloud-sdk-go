@@ -85,11 +85,11 @@ type ListScriptVoiceConfigsRequest struct {
 // ListScriptVoiceConfigsResponse is the response struct for api ListScriptVoiceConfigs
 type ListScriptVoiceConfigsResponse struct {
 	*responses.BaseResponse
+	Code               string             `json:"Code" xml:"Code"`
+	HttpStatusCode     int                `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message            string             `json:"Message" xml:"Message"`
 	RequestId          string             `json:"RequestId" xml:"RequestId"`
 	Success            bool               `json:"Success" xml:"Success"`
-	Code               string             `json:"Code" xml:"Code"`
-	Message            string             `json:"Message" xml:"Message"`
-	HttpStatusCode     int                `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	ScriptVoiceConfigs ScriptVoiceConfigs `json:"ScriptVoiceConfigs" xml:"ScriptVoiceConfigs"`
 }
 
@@ -99,6 +99,7 @@ func CreateListScriptVoiceConfigsRequest() (request *ListScriptVoiceConfigsReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListScriptVoiceConfigs", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

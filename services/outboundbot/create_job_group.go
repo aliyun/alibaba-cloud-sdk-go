@@ -88,11 +88,11 @@ type CreateJobGroupRequest struct {
 // CreateJobGroupResponse is the response struct for api CreateJobGroup
 type CreateJobGroupResponse struct {
 	*responses.BaseResponse
+	Code           string   `json:"Code" xml:"Code"`
+	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string   `json:"Message" xml:"Message"`
 	RequestId      string   `json:"RequestId" xml:"RequestId"`
 	Success        bool     `json:"Success" xml:"Success"`
-	Code           string   `json:"Code" xml:"Code"`
-	Message        string   `json:"Message" xml:"Message"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	JobGroup       JobGroup `json:"JobGroup" xml:"JobGroup"`
 }
 
@@ -102,6 +102,7 @@ func CreateCreateJobGroupRequest() (request *CreateJobGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateJobGroup", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

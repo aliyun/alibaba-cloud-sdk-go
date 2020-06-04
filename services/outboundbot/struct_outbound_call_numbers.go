@@ -17,8 +17,8 @@ package outboundbot
 
 // OutboundCallNumbers is a nested struct in outboundbot response
 type OutboundCallNumbers struct {
-	TotalCount int                  `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int                  `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int                  `json:"PageSize" xml:"PageSize"`
+	TotalCount int                  `json:"TotalCount" xml:"TotalCount"`
 	List       []OutboundCallNumber `json:"List" xml:"List"`
 }

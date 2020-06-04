@@ -82,17 +82,18 @@ type RecordFailureRequest struct {
 	InstanceId      string           `position:"Query" name:"InstanceId"`
 	DispositionCode string           `position:"Query" name:"DispositionCode"`
 	CalledNumber    string           `position:"Query" name:"CalledNumber"`
+	InstanceOwnerId string           `position:"Query" name:"InstanceOwnerId"`
 	TaskId          string           `position:"Query" name:"TaskId"`
 }
 
 // RecordFailureResponse is the response struct for api RecordFailure
 type RecordFailureResponse struct {
 	*responses.BaseResponse
+	Code           string `json:"Code" xml:"Code"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 // CreateRecordFailureRequest creates a request to invoke RecordFailure API
@@ -101,6 +102,7 @@ func CreateRecordFailureRequest() (request *RecordFailureRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "RecordFailure", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

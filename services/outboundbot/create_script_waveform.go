@@ -86,12 +86,12 @@ type CreateScriptWaveformRequest struct {
 // CreateScriptWaveformResponse is the response struct for api CreateScriptWaveform
 type CreateScriptWaveformResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	Success          bool   `json:"Success" xml:"Success"`
 	Code             string `json:"Code" xml:"Code"`
-	Message          string `json:"Message" xml:"Message"`
 	HttpStatusCode   int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message          string `json:"Message" xml:"Message"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
 	ScriptWaveformId string `json:"ScriptWaveformId" xml:"ScriptWaveformId"`
+	Success          bool   `json:"Success" xml:"Success"`
 }
 
 // CreateCreateScriptWaveformRequest creates a request to invoke CreateScriptWaveform API
@@ -100,6 +100,7 @@ func CreateCreateScriptWaveformRequest() (request *CreateScriptWaveformRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "CreateScriptWaveform", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

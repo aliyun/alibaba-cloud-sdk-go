@@ -18,11 +18,11 @@ package outboundbot
 // BatchJob is a nested struct in outboundbot response
 type BatchJob struct {
 	BatchJobId          string   `json:"BatchJobId" xml:"BatchJobId"`
-	JobGroupName        string   `json:"JobGroupName" xml:"JobGroupName"`
-	JobGroupDescription string   `json:"JobGroupDescription" xml:"JobGroupDescription"`
-	ScenarioId          string   `json:"ScenarioId" xml:"ScenarioId"`
-	JobFilePath         string   `json:"JobFilePath" xml:"JobFilePath"`
 	CreationTime        int64    `json:"CreationTime" xml:"CreationTime"`
+	JobFilePath         string   `json:"JobFilePath" xml:"JobFilePath"`
+	JobGroupDescription string   `json:"JobGroupDescription" xml:"JobGroupDescription"`
+	JobGroupName        string   `json:"JobGroupName" xml:"JobGroupName"`
+	ScenarioId          string   `json:"ScenarioId" xml:"ScenarioId"`
 	CallingNumbers      []string `json:"CallingNumbers" xml:"CallingNumbers"`
 	Strategy            Strategy `json:"Strategy" xml:"Strategy"`
 }

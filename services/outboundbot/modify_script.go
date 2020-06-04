@@ -76,22 +76,26 @@ func (client *Client) ModifyScriptWithCallback(request *ModifyScriptRequest, cal
 // ModifyScriptRequest is the request struct for api ModifyScript
 type ModifyScriptRequest struct {
 	*requests.RpcRequest
+	TtsConfig         string `position:"Query" name:"TtsConfig"`
 	Industry          string `position:"Query" name:"Industry"`
 	ScriptName        string `position:"Query" name:"ScriptName"`
 	Scene             string `position:"Query" name:"Scene"`
 	ScriptId          string `position:"Query" name:"ScriptId"`
+	ChatbotId         string `position:"Query" name:"ChatbotId"`
 	InstanceId        string `position:"Query" name:"InstanceId"`
+	AsrConfig         string `position:"Query" name:"AsrConfig"`
 	ScriptDescription string `position:"Query" name:"ScriptDescription"`
 }
 
 // ModifyScriptResponse is the response struct for api ModifyScript
 type ModifyScriptResponse struct {
 	*responses.BaseResponse
+	Code           string `json:"Code" xml:"Code"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	ChatbotId      string `json:"ChatbotId" xml:"ChatbotId"`
 	Script         Script `json:"Script" xml:"Script"`
 }
 
@@ -101,6 +105,7 @@ func CreateModifyScriptRequest() (request *ModifyScriptRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyScript", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -17,8 +17,8 @@ package outboundbot
 
 // ScriptPublishHistories is a nested struct in outboundbot response
 type ScriptPublishHistories struct {
-	TotalCount int              `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int              `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int              `json:"PageSize" xml:"PageSize"`
+	TotalCount int              `json:"TotalCount" xml:"TotalCount"`
 	List       []PublishHistory `json:"List" xml:"List"`
 }

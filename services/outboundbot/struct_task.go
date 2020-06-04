@@ -21,14 +21,13 @@ type Task struct {
 	Brief         string               `json:"Brief" xml:"Brief"`
 	PlanedTime    int64                `json:"PlanedTime" xml:"PlanedTime"`
 	CallId        string               `json:"CallId" xml:"CallId"`
-	ScenarioId    string               `json:"ScenarioId" xml:"ScenarioId"`
 	CalledNumber  string               `json:"CalledNumber" xml:"CalledNumber"`
-	EndTime       int64                `json:"EndTime" xml:"EndTime"`
+	ScenarioId    string               `json:"ScenarioId" xml:"ScenarioId"`
 	CallingNumber string               `json:"CallingNumber" xml:"CallingNumber"`
 	TaskId        string               `json:"TaskId" xml:"TaskId"`
 	Duration      int                  `json:"Duration" xml:"Duration"`
-	ChatbotId     string               `json:"ChatbotId" xml:"ChatbotId"`
 	ActualTime    int64                `json:"ActualTime" xml:"ActualTime"`
+	ChatbotId     string               `json:"ChatbotId" xml:"ChatbotId"`
 	Status        string               `json:"Status" xml:"Status"`
 	Contact       Contact              `json:"Contact" xml:"Contact"`
 	Conversation  []ConversationDetail `json:"Conversation" xml:"Conversation"`

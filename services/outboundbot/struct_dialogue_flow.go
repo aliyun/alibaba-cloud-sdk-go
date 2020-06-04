@@ -17,10 +17,10 @@ package outboundbot
 
 // DialogueFlow is a nested struct in outboundbot response
 type DialogueFlow struct {
+	DialogueFlowDefinition string `json:"DialogueFlowDefinition" xml:"DialogueFlowDefinition"`
 	DialogueFlowId         string `json:"DialogueFlowId" xml:"DialogueFlowId"`
 	DialogueFlowName       string `json:"DialogueFlowName" xml:"DialogueFlowName"`
+	DialogueFlowType       string `json:"DialogueFlowType" xml:"DialogueFlowType"`
 	ScriptId               string `json:"ScriptId" xml:"ScriptId"`
 	ScriptVersion          string `json:"ScriptVersion" xml:"ScriptVersion"`
-	DialogueFlowType       string `json:"DialogueFlowType" xml:"DialogueFlowType"`
-	DialogueFlowDefinition string `json:"DialogueFlowDefinition" xml:"DialogueFlowDefinition"`
 }

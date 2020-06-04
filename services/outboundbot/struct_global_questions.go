@@ -17,8 +17,8 @@ package outboundbot
 
 // GlobalQuestions is a nested struct in outboundbot response
 type GlobalQuestions struct {
-	TotalCount int              `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int              `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int              `json:"PageSize" xml:"PageSize"`
+	TotalCount int              `json:"TotalCount" xml:"TotalCount"`
 	List       []GlobalQuestion `json:"List" xml:"List"`
 }

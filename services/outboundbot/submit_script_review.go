@@ -84,11 +84,11 @@ type SubmitScriptReviewRequest struct {
 // SubmitScriptReviewResponse is the response struct for api SubmitScriptReview
 type SubmitScriptReviewResponse struct {
 	*responses.BaseResponse
+	Code           string `json:"Code" xml:"Code"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 // CreateSubmitScriptReviewRequest creates a request to invoke SubmitScriptReview API
@@ -97,6 +97,7 @@ func CreateSubmitScriptReviewRequest() (request *SubmitScriptReviewRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "SubmitScriptReview", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

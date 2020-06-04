@@ -17,8 +17,8 @@ package outboundbot
 
 // ScriptVoiceConfigs is a nested struct in outboundbot response
 type ScriptVoiceConfigs struct {
-	TotalCount int                 `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int                 `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int                 `json:"PageSize" xml:"PageSize"`
+	TotalCount int                 `json:"TotalCount" xml:"TotalCount"`
 	List       []ScriptVoiceConfig `json:"List" xml:"List"`
 }

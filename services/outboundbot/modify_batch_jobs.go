@@ -91,11 +91,11 @@ type ModifyBatchJobsRequest struct {
 // ModifyBatchJobsResponse is the response struct for api ModifyBatchJobs
 type ModifyBatchJobsResponse struct {
 	*responses.BaseResponse
+	Code           string   `json:"Code" xml:"Code"`
+	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string   `json:"Message" xml:"Message"`
 	RequestId      string   `json:"RequestId" xml:"RequestId"`
 	Success        bool     `json:"Success" xml:"Success"`
-	Code           string   `json:"Code" xml:"Code"`
-	Message        string   `json:"Message" xml:"Message"`
-	HttpStatusCode int      `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	JobGroup       JobGroup `json:"JobGroup" xml:"JobGroup"`
 }
 
@@ -105,6 +105,7 @@ func CreateModifyBatchJobsRequest() (request *ModifyBatchJobsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyBatchJobs", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

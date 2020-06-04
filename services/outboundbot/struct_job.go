@@ -25,11 +25,10 @@ type Job struct {
 	ScenarioId     string         `json:"ScenarioId" xml:"ScenarioId"`
 	SystemPriority int            `json:"SystemPriority" xml:"SystemPriority"`
 	FailureReason  string         `json:"FailureReason" xml:"FailureReason"`
-	GroupId        string         `json:"GroupId" xml:"GroupId"`
 	Status         string         `json:"Status" xml:"Status"`
 	CallingNumbers []string       `json:"CallingNumbers" xml:"CallingNumbers"`
 	Tasks          []Task         `json:"Tasks" xml:"Tasks"`
-	Summary        []SummaryItem  `json:"Summary" xml:"Summary"`
 	Extras         []KeyValuePair `json:"Extras" xml:"Extras"`
+	Summary        []SummaryItem  `json:"Summary" xml:"Summary"`
 	Contacts       []Contact      `json:"Contacts" xml:"Contacts"`
 }

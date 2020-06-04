@@ -19,8 +19,8 @@ package outboundbot
 type Strategy struct {
 	StrategyName        string      `json:"StrategyName" xml:"StrategyName"`
 	Customized          string      `json:"Customized" xml:"Customized"`
-	StrategyDescription string      `json:"StrategyDescription" xml:"StrategyDescription"`
 	MinAttemptInterval  int         `json:"MinAttemptInterval" xml:"MinAttemptInterval"`
+	StrategyDescription string      `json:"StrategyDescription" xml:"StrategyDescription"`
 	FollowUpStrategy    string      `json:"FollowUpStrategy" xml:"FollowUpStrategy"`
 	StrategyId          string      `json:"StrategyId" xml:"StrategyId"`
 	MaxAttemptsPerDay   int         `json:"MaxAttemptsPerDay" xml:"MaxAttemptsPerDay"`
@@ -29,7 +29,6 @@ type Strategy struct {
 	RepeatBy            string      `json:"RepeatBy" xml:"RepeatBy"`
 	RoutingStrategy     string      `json:"RoutingStrategy" xml:"RoutingStrategy"`
 	IsTemplate          bool        `json:"IsTemplate" xml:"IsTemplate"`
-	Description         string      `json:"Description" xml:"Description"`
 	Type                string      `json:"Type" xml:"Type"`
 	RepeatDays          []string    `json:"RepeatDays" xml:"RepeatDays"`
 	WorkingTime         []TimeFrame `json:"WorkingTime" xml:"WorkingTime"`

@@ -84,11 +84,11 @@ type ListScriptsRequest struct {
 // ListScriptsResponse is the response struct for api ListScripts
 type ListScriptsResponse struct {
 	*responses.BaseResponse
+	Code           string  `json:"Code" xml:"Code"`
+	HttpStatusCode int     `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string  `json:"Message" xml:"Message"`
 	RequestId      string  `json:"RequestId" xml:"RequestId"`
 	Success        bool    `json:"Success" xml:"Success"`
-	Code           string  `json:"Code" xml:"Code"`
-	Message        string  `json:"Message" xml:"Message"`
-	HttpStatusCode int     `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Scripts        Scripts `json:"Scripts" xml:"Scripts"`
 }
 
@@ -98,6 +98,7 @@ func CreateListScriptsRequest() (request *ListScriptsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListScripts", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -84,11 +84,11 @@ type DeleteScriptWaveformRequest struct {
 // DeleteScriptWaveformResponse is the response struct for api DeleteScriptWaveform
 type DeleteScriptWaveformResponse struct {
 	*responses.BaseResponse
+	Code           string `json:"Code" xml:"Code"`
+	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string `json:"Message" xml:"Message"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
-	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
 // CreateDeleteScriptWaveformRequest creates a request to invoke DeleteScriptWaveform API
@@ -97,6 +97,7 @@ func CreateDeleteScriptWaveformRequest() (request *DeleteScriptWaveformRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "DeleteScriptWaveform", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

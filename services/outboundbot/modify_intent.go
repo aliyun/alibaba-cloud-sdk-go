@@ -88,12 +88,12 @@ type ModifyIntentRequest struct {
 // ModifyIntentResponse is the response struct for api ModifyIntent
 type ModifyIntentResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
 	Code           string `json:"Code" xml:"Code"`
-	Message        string `json:"Message" xml:"Message"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	IntentId       string `json:"IntentId" xml:"IntentId"`
+	Message        string `json:"Message" xml:"Message"`
+	RequestId      string `json:"RequestId" xml:"RequestId"`
+	Success        bool   `json:"Success" xml:"Success"`
 }
 
 // CreateModifyIntentRequest creates a request to invoke ModifyIntent API
@@ -102,6 +102,7 @@ func CreateModifyIntentRequest() (request *ModifyIntentRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ModifyIntent", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

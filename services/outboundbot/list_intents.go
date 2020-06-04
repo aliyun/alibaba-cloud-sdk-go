@@ -86,11 +86,11 @@ type ListIntentsRequest struct {
 // ListIntentsResponse is the response struct for api ListIntents
 type ListIntentsResponse struct {
 	*responses.BaseResponse
+	Code           string  `json:"Code" xml:"Code"`
+	HttpStatusCode int     `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	Message        string  `json:"Message" xml:"Message"`
 	RequestId      string  `json:"RequestId" xml:"RequestId"`
 	Success        bool    `json:"Success" xml:"Success"`
-	Code           string  `json:"Code" xml:"Code"`
-	Message        string  `json:"Message" xml:"Message"`
-	HttpStatusCode int     `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	Intents        Intents `json:"Intents" xml:"Intents"`
 }
 
@@ -100,6 +100,7 @@ func CreateListIntentsRequest() (request *ListIntentsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OutboundBot", "2019-12-26", "ListIntents", "outboundbot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
