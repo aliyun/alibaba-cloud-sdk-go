@@ -76,17 +76,18 @@ func (client *Client) UpdateMonitorWithCallback(request *UpdateMonitorRequest, c
 // UpdateMonitorRequest is the request struct for api UpdateMonitor
 type UpdateMonitorRequest struct {
 	*requests.RpcRequest
-	DeviceOperateType    string `position:"Body" name:"DeviceOperateType"`
 	CorpId               string `position:"Body" name:"CorpId"`
-	PicList              string `position:"Body" name:"PicList"`
 	Description          string `position:"Body" name:"Description"`
 	RuleName             string `position:"Body" name:"RuleName"`
 	PicOperateType       string `position:"Body" name:"PicOperateType"`
 	AttributeName        string `position:"Body" name:"AttributeName"`
+	AttributeOperateType string `position:"Body" name:"AttributeOperateType"`
+	RuleExpression       string `position:"Body" name:"RuleExpression"`
+	TaskId               string `position:"Body" name:"TaskId"`
+	DeviceOperateType    string `position:"Body" name:"DeviceOperateType"`
+	PicList              string `position:"Body" name:"PicList"`
 	AttributeValueList   string `position:"Body" name:"AttributeValueList"`
 	DeviceList           string `position:"Body" name:"DeviceList"`
-	AttributeOperateType string `position:"Body" name:"AttributeOperateType"`
-	TaskId               string `position:"Body" name:"TaskId"`
 }
 
 // UpdateMonitorResponse is the response struct for api UpdateMonitor
@@ -104,6 +105,7 @@ func CreateUpdateMonitorRequest() (request *UpdateMonitorRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Vcs", "2020-05-15", "UpdateMonitor", "vcs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

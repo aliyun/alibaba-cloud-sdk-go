@@ -17,6 +17,7 @@ package vcs
 
 // Data is a nested struct in vcs response
 type Data struct {
+	TaskId       string             `json:"TaskId" xml:"TaskId"`
 	MaxId        string             `json:"MaxId" xml:"MaxId"`
 	ResultObject []ResultObjectItem `json:"ResultObject" xml:"ResultObject"`
 	Records      []RecordsItem      `json:"Records" xml:"Records"`

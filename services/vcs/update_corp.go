@@ -98,6 +98,7 @@ func CreateUpdateCorpRequest() (request *UpdateCorpRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Vcs", "2020-05-15", "UpdateCorp", "vcs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

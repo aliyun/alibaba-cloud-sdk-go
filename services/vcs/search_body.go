@@ -100,6 +100,7 @@ func CreateSearchBodyRequest() (request *SearchBodyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Vcs", "2020-05-15", "SearchBody", "vcs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

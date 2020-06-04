@@ -95,6 +95,7 @@ func CreateListCorpsRequest() (request *ListCorpsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Vcs", "2020-05-15", "ListCorps", "vcs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

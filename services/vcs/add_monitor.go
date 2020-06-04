@@ -88,7 +88,7 @@ type AddMonitorResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Data      string `json:"Data" xml:"Data"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateAddMonitorRequest creates a request to invoke AddMonitor API
@@ -97,6 +97,7 @@ func CreateAddMonitorRequest() (request *AddMonitorRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Vcs", "2020-05-15", "AddMonitor", "vcs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
