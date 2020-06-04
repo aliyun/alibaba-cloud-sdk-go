@@ -96,6 +96,7 @@ func CreateSetEditingProjectMaterialsRequest() (request *SetEditingProjectMateri
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "SetEditingProjectMaterials", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -96,6 +96,7 @@ func CreateDeleteVideoRequest() (request *DeleteVideoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "DeleteVideo", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

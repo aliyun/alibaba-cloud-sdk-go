@@ -99,6 +99,7 @@ func CreateRegisterMediaRequest() (request *RegisterMediaRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "RegisterMedia", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

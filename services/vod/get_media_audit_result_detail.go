@@ -96,6 +96,7 @@ func CreateGetMediaAuditResultDetailRequest() (request *GetMediaAuditResultDetai
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "GetMediaAuditResultDetail", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

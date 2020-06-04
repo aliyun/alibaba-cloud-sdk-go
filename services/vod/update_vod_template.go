@@ -97,6 +97,7 @@ func CreateUpdateVodTemplateRequest() (request *UpdateVodTemplateRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "UpdateVodTemplate", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

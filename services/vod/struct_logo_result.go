@@ -17,10 +17,10 @@ package vod
 
 // LogoResult is a nested struct in vod response
 type LogoResult struct {
+	MaxScore     string            `json:"MaxScore" xml:"MaxScore"`
 	Suggestion   string            `json:"Suggestion" xml:"Suggestion"`
 	Label        string            `json:"Label" xml:"Label"`
-	MaxScore     string            `json:"MaxScore" xml:"MaxScore"`
 	AverageScore string            `json:"AverageScore" xml:"AverageScore"`
-	CounterList  []CounterListItem `json:"CounterList" xml:"CounterList"`
 	TopList      []TopListItem     `json:"TopList" xml:"TopList"`
+	CounterList  []CounterListItem `json:"CounterList" xml:"CounterList"`
 }

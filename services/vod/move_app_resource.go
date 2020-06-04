@@ -99,6 +99,7 @@ func CreateMoveAppResourceRequest() (request *MoveAppResourceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "MoveAppResource", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -103,6 +103,7 @@ func CreateProduceEditingProjectVideoRequest() (request *ProduceEditingProjectVi
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "ProduceEditingProjectVideo", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

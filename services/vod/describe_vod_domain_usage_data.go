@@ -104,6 +104,7 @@ func CreateDescribeVodDomainUsageDataRequest() (request *DescribeVodDomainUsageD
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "DescribeVodDomainUsageData", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

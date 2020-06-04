@@ -93,6 +93,7 @@ func CreateSetAuditSecurityIpRequest() (request *SetAuditSecurityIpRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "SetAuditSecurityIp", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

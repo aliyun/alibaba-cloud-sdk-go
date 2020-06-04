@@ -21,6 +21,7 @@ type MediaAuditResult struct {
 	Label           string            `json:"Label" xml:"Label"`
 	Suggestion      string            `json:"Suggestion" xml:"Suggestion"`
 	VideoResult     VideoResult       `json:"VideoResult" xml:"VideoResult"`
+	AudioResult     []AudioResultItem `json:"AudioResult" xml:"AudioResult"`
 	ImageResult     []ImageResultItem `json:"ImageResult" xml:"ImageResult"`
 	TextResult      []TextResultItem  `json:"TextResult" xml:"TextResult"`
 }

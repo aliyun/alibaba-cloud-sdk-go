@@ -96,6 +96,7 @@ func CreateGetTranscodeSummaryRequest() (request *GetTranscodeSummaryRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "GetTranscodeSummary", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

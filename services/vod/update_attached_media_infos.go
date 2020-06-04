@@ -96,6 +96,7 @@ func CreateUpdateAttachedMediaInfosRequest() (request *UpdateAttachedMediaInfosR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "UpdateAttachedMediaInfos", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

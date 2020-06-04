@@ -95,6 +95,7 @@ func CreateDeleteAttachedMediaRequest() (request *DeleteAttachedMediaRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "DeleteAttachedMedia", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

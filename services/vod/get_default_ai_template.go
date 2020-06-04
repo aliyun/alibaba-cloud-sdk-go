@@ -95,6 +95,7 @@ func CreateGetDefaultAITemplateRequest() (request *GetDefaultAITemplateRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "GetDefaultAITemplate", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

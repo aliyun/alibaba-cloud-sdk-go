@@ -98,6 +98,7 @@ func CreateDeleteImageRequest() (request *DeleteImageRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "DeleteImage", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

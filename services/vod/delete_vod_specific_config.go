@@ -94,6 +94,7 @@ func CreateDeleteVodSpecificConfigRequest() (request *DeleteVodSpecificConfigReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "DeleteVodSpecificConfig", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -97,6 +97,7 @@ func CreateSubmitDynamicImageJobRequest() (request *SubmitDynamicImageJobRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "SubmitDynamicImageJob", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

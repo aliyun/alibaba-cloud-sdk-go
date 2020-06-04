@@ -98,6 +98,7 @@ func CreateSetVodDomainCertificateRequest() (request *SetVodDomainCertificateReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "SetVodDomainCertificate", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -17,10 +17,20 @@ package vod
 
 // ListItem is a nested struct in vod response
 type ListItem struct {
+	Text           string `json:"Text" xml:"Text"`
+	Timestamp      string `json:"Timestamp" xml:"Timestamp"`
+	Label          string `json:"Label" xml:"Label"`
 	PornLabel      string `json:"PornLabel" xml:"PornLabel"`
+	EndTime        int64  `json:"EndTime" xml:"EndTime"`
+	Url            string `json:"Url" xml:"Url"`
+	StartTime      int64  `json:"StartTime" xml:"StartTime"`
 	PornScore      string `json:"PornScore" xml:"PornScore"`
 	TerrorismLabel string `json:"TerrorismLabel" xml:"TerrorismLabel"`
 	TerrorismScore string `json:"TerrorismScore" xml:"TerrorismScore"`
-	Timestamp      string `json:"Timestamp" xml:"Timestamp"`
-	Url            string `json:"Url" xml:"Url"`
+	LogoScore      string `json:"LogoScore" xml:"LogoScore"`
+	LiveLabel      string `json:"LiveLabel" xml:"LiveLabel"`
+	LiveScore      string `json:"LiveScore" xml:"LiveScore"`
+	LogoLabel      string `json:"LogoLabel" xml:"LogoLabel"`
+	AdScore        string `json:"AdScore" xml:"AdScore"`
+	AdLabel        string `json:"AdLabel" xml:"AdLabel"`
 }

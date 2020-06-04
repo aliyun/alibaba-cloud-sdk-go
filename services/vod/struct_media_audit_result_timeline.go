@@ -19,4 +19,7 @@ package vod
 type MediaAuditResultTimeline struct {
 	Porn      []PornItem      `json:"Porn" xml:"Porn"`
 	Terrorism []TerrorismItem `json:"Terrorism" xml:"Terrorism"`
+	Logo      []LogoItem      `json:"Logo" xml:"Logo"`
+	Live      []LiveItem      `json:"Live" xml:"Live"`
+	Ad        []AdItem        `json:"Ad" xml:"Ad"`
 }

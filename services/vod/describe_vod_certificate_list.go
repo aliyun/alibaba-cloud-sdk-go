@@ -94,6 +94,7 @@ func CreateDescribeVodCertificateListRequest() (request *DescribeVodCertificateL
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "DescribeVodCertificateList", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

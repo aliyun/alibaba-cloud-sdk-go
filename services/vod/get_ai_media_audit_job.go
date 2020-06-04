@@ -95,6 +95,7 @@ func CreateGetAIMediaAuditJobRequest() (request *GetAIMediaAuditJobRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "GetAIMediaAuditJob", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

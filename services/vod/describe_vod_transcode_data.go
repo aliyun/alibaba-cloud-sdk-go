@@ -81,6 +81,7 @@ type DescribeVodTranscodeDataRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 	Specification string           `position:"Query" name:"Specification"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Interval      string           `position:"Query" name:"Interval"`
 	Region        string           `position:"Query" name:"Region"`
 }
 
@@ -98,6 +99,7 @@ func CreateDescribeVodTranscodeDataRequest() (request *DescribeVodTranscodeDataR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "DescribeVodTranscodeData", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

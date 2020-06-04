@@ -94,6 +94,7 @@ func CreatePreloadVodObjectCachesRequest() (request *PreloadVodObjectCachesReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "PreloadVodObjectCaches", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

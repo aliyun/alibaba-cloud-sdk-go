@@ -97,6 +97,7 @@ func CreateGetImageInfoRequest() (request *GetImageInfoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "GetImageInfo", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

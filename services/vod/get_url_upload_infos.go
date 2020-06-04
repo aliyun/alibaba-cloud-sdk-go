@@ -97,6 +97,7 @@ func CreateGetURLUploadInfosRequest() (request *GetURLUploadInfosRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "GetURLUploadInfos", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

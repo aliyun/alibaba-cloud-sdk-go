@@ -93,6 +93,7 @@ func CreateBatchStartVodDomainRequest() (request *BatchStartVodDomainRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "BatchStartVodDomain", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

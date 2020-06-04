@@ -95,6 +95,7 @@ func CreateDeleteAITemplateRequest() (request *DeleteAITemplateRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "DeleteAITemplate", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -97,6 +97,7 @@ func CreateDescribeVodAIDataRequest() (request *DescribeVodAIDataRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "DescribeVodAIData", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

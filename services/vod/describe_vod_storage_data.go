@@ -81,6 +81,7 @@ type DescribeVodStorageDataRequest struct {
 	StorageType string           `position:"Query" name:"StorageType"`
 	EndTime     string           `position:"Query" name:"EndTime"`
 	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	Interval    string           `position:"Query" name:"Interval"`
 	Region      string           `position:"Query" name:"Region"`
 }
 
@@ -98,6 +99,7 @@ func CreateDescribeVodStorageDataRequest() (request *DescribeVodStorageDataReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "DescribeVodStorageData", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

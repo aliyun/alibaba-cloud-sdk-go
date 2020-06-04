@@ -94,6 +94,7 @@ func CreateDeleteVodDomainRequest() (request *DeleteVodDomainRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "DeleteVodDomain", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

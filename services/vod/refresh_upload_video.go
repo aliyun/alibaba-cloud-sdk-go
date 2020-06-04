@@ -97,6 +97,7 @@ func CreateRefreshUploadVideoRequest() (request *RefreshUploadVideoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "RefreshUploadVideo", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

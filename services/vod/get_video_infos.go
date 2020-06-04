@@ -97,6 +97,7 @@ func CreateGetVideoInfosRequest() (request *GetVideoInfosRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "GetVideoInfos", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

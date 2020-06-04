@@ -98,6 +98,7 @@ func CreateUpdateAppInfoRequest() (request *UpdateAppInfoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "UpdateAppInfo", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

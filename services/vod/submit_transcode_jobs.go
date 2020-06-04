@@ -103,6 +103,7 @@ func CreateSubmitTranscodeJobsRequest() (request *SubmitTranscodeJobsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "SubmitTranscodeJobs", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -95,6 +95,7 @@ func CreateUpdateVodDomainRequest() (request *UpdateVodDomainRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "UpdateVodDomain", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

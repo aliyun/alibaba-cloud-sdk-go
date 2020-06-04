@@ -33,5 +33,7 @@ type TranscodeTemplate struct {
 	TranscodeFileRegular string   `json:"TranscodeFileRegular" xml:"TranscodeFileRegular"`
 	Clip                 string   `json:"Clip" xml:"Clip"`
 	Rotate               string   `json:"Rotate" xml:"Rotate"`
+	Type                 string   `json:"Type" xml:"Type"`
+	UserData             string   `json:"UserData" xml:"UserData"`
 	WatermarkIds         []string `json:"WatermarkIds" xml:"WatermarkIds"`
 }

@@ -97,6 +97,7 @@ func CreateListAppPoliciesForIdentityRequest() (request *ListAppPoliciesForIdent
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "ListAppPoliciesForIdentity", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

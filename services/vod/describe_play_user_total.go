@@ -94,6 +94,7 @@ func CreateDescribePlayUserTotalRequest() (request *DescribePlayUserTotalRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("vod", "2017-03-21", "DescribePlayUserTotal", "vod", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
