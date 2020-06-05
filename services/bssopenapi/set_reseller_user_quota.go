@@ -97,7 +97,8 @@ func CreateSetResellerUserQuotaRequest() (request *SetResellerUserQuotaRequest) 
 	request = &SetResellerUserQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetResellerUserQuota", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetResellerUserQuota", "bssopenapi", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

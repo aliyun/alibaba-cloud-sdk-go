@@ -104,7 +104,8 @@ func CreateQuerySettlementBillRequest() (request *QuerySettlementBillRequest) {
 	request = &QuerySettlementBillRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QuerySettlementBill", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QuerySettlementBill", "bssopenapi", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

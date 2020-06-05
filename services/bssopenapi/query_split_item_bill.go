@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ConvertChargeType invokes the bssopenapi.ConvertChargeType API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/convertchargetype.html
-func (client *Client) ConvertChargeType(request *ConvertChargeTypeRequest) (response *ConvertChargeTypeResponse, err error) {
-	response = CreateConvertChargeTypeResponse()
+// QuerySplitItemBill invokes the bssopenapi.QuerySplitItemBill API synchronously
+// api document: https://help.aliyun.com/api/bssopenapi/querysplititembill.html
+func (client *Client) QuerySplitItemBill(request *QuerySplitItemBillRequest) (response *QuerySplitItemBillResponse, err error) {
+	response = CreateQuerySplitItemBillResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ConvertChargeTypeWithChan invokes the bssopenapi.ConvertChargeType API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/convertchargetype.html
+// QuerySplitItemBillWithChan invokes the bssopenapi.QuerySplitItemBill API asynchronously
+// api document: https://help.aliyun.com/api/bssopenapi/querysplititembill.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ConvertChargeTypeWithChan(request *ConvertChargeTypeRequest) (<-chan *ConvertChargeTypeResponse, <-chan error) {
-	responseChan := make(chan *ConvertChargeTypeResponse, 1)
+func (client *Client) QuerySplitItemBillWithChan(request *QuerySplitItemBillRequest) (<-chan *QuerySplitItemBillResponse, <-chan error) {
+	responseChan := make(chan *QuerySplitItemBillResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ConvertChargeType(request)
+		response, err := client.QuerySplitItemBill(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ConvertChargeTypeWithChan(request *ConvertChargeTypeReques
 	return responseChan, errChan
 }
 
-// ConvertChargeTypeWithCallback invokes the bssopenapi.ConvertChargeType API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/convertchargetype.html
+// QuerySplitItemBillWithCallback invokes the bssopenapi.QuerySplitItemBill API asynchronously
+// api document: https://help.aliyun.com/api/bssopenapi/querysplititembill.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ConvertChargeTypeWithCallback(request *ConvertChargeTypeRequest, callback func(response *ConvertChargeTypeResponse, err error)) <-chan int {
+func (client *Client) QuerySplitItemBillWithCallback(request *QuerySplitItemBillRequest, callback func(response *QuerySplitItemBillResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ConvertChargeTypeResponse
+		var response *QuerySplitItemBillResponse
 		var err error
 		defer close(result)
-		response, err = client.ConvertChargeType(request)
+		response, err = client.QuerySplitItemBill(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,19 +73,20 @@ func (client *Client) ConvertChargeTypeWithCallback(request *ConvertChargeTypeRe
 	return result
 }
 
-// ConvertChargeTypeRequest is the request struct for api ConvertChargeType
-type ConvertChargeTypeRequest struct {
+// QuerySplitItemBillRequest is the request struct for api QuerySplitItemBill
+type QuerySplitItemBillRequest struct {
 	*requests.RpcRequest
-	Period           requests.Integer `position:"Query" name:"Period"`
 	ProductCode      string           `position:"Query" name:"ProductCode"`
 	SubscriptionType string           `position:"Query" name:"SubscriptionType"`
+	BillingCycle     string           `position:"Query" name:"BillingCycle"`
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
+	PageNum          requests.Integer `position:"Query" name:"PageNum"`
 	ProductType      string           `position:"Query" name:"ProductType"`
-	InstanceId       string           `position:"Query" name:"InstanceId"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 }
 
-// ConvertChargeTypeResponse is the response struct for api ConvertChargeType
-type ConvertChargeTypeResponse struct {
+// QuerySplitItemBillResponse is the response struct for api QuerySplitItemBill
+type QuerySplitItemBillResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
@@ -94,19 +95,19 @@ type ConvertChargeTypeResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateConvertChargeTypeRequest creates a request to invoke ConvertChargeType API
-func CreateConvertChargeTypeRequest() (request *ConvertChargeTypeRequest) {
-	request = &ConvertChargeTypeRequest{
+// CreateQuerySplitItemBillRequest creates a request to invoke QuerySplitItemBill API
+func CreateQuerySplitItemBillRequest() (request *QuerySplitItemBillRequest) {
+	request = &QuerySplitItemBillRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "ConvertChargeType", "bssopenapi", "openAPI")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QuerySplitItemBill", "bssopenapi", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateConvertChargeTypeResponse creates a response to parse from ConvertChargeType response
-func CreateConvertChargeTypeResponse() (response *ConvertChargeTypeResponse) {
-	response = &ConvertChargeTypeResponse{
+// CreateQuerySplitItemBillResponse creates a response to parse from QuerySplitItemBill response
+func CreateQuerySplitItemBillResponse() (response *QuerySplitItemBillResponse) {
+	response = &QuerySplitItemBillResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -39,6 +39,7 @@ type Item struct {
 	MybankPaymentAmount         float64 `json:"MybankPaymentAmount" xml:"MybankPaymentAmount"`
 	PretaxGrossAmount           float64 `json:"PretaxGrossAmount" xml:"PretaxGrossAmount"`
 	InstanceID                  string  `json:"InstanceID" xml:"InstanceID"`
+	SplitItemName               string  `json:"SplitItemName" xml:"SplitItemName"`
 	SubscribeBucket             string  `json:"SubscribeBucket" xml:"SubscribeBucket"`
 	RecordID                    string  `json:"RecordID" xml:"RecordID"`
 	Config                      string  `json:"Config" xml:"Config"`
@@ -77,6 +78,7 @@ type Item struct {
 	ListPriceUnit               string  `json:"ListPriceUnit" xml:"ListPriceUnit"`
 	PaymentCurrency             string  `json:"PaymentCurrency" xml:"PaymentCurrency"`
 	UsageUnit                   string  `json:"UsageUnit" xml:"UsageUnit"`
+	SplitItemID                 string  `json:"SplitItemID" xml:"SplitItemID"`
 	SubscribeType               string  `json:"SubscribeType" xml:"SubscribeType"`
 	SubscribeLanguage           string  `json:"SubscribeLanguage" xml:"SubscribeLanguage"`
 	ProductType                 string  `json:"ProductType" xml:"ProductType"`

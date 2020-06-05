@@ -107,7 +107,8 @@ func CreateQueryEvaluateListRequest() (request *QueryEvaluateListRequest) {
 	request = &QueryEvaluateListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryEvaluateList", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryEvaluateList", "bssopenapi", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

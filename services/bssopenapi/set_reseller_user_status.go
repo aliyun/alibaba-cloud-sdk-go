@@ -96,7 +96,8 @@ func CreateSetResellerUserStatusRequest() (request *SetResellerUserStatusRequest
 	request = &SetResellerUserStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetResellerUserStatus", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetResellerUserStatus", "bssopenapi", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

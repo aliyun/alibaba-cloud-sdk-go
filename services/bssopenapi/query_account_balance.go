@@ -93,7 +93,8 @@ func CreateQueryAccountBalanceRequest() (request *QueryAccountBalanceRequest) {
 	request = &QueryAccountBalanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryAccountBalance", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryAccountBalance", "bssopenapi", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -105,7 +105,8 @@ func CreateAllocateCostUnitResourceRequest() (request *AllocateCostUnitResourceR
 	request = &AllocateCostUnitResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "AllocateCostUnitResource", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "AllocateCostUnitResource", "bssopenapi", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

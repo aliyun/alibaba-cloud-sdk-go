@@ -85,11 +85,11 @@ type QueryCostUnitResourceRequest struct {
 // QueryCostUnitResourceResponse is the response struct for api QueryCostUnitResource
 type QueryCostUnitResourceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                      `json:"RequestId" xml:"RequestId"`
+	Success   bool                        `json:"Success" xml:"Success"`
+	Code      string                      `json:"Code" xml:"Code"`
+	Message   string                      `json:"Message" xml:"Message"`
+	Data      DataInQueryCostUnitResource `json:"Data" xml:"Data"`
 }
 
 // CreateQueryCostUnitResourceRequest creates a request to invoke QueryCostUnitResource API
@@ -97,7 +97,8 @@ func CreateQueryCostUnitResourceRequest() (request *QueryCostUnitResourceRequest
 	request = &QueryCostUnitResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryCostUnitResource", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryCostUnitResource", "bssopenapi", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
