@@ -80,6 +80,7 @@ type SetDomainCertificateRequest struct {
 	GroupId               string `position:"Query" name:"GroupId"`
 	DomainName            string `position:"Query" name:"DomainName"`
 	CertificateBody       string `position:"Query" name:"CertificateBody"`
+	CaCertificateBody     string `position:"Query" name:"CaCertificateBody"`
 	SecurityToken         string `position:"Query" name:"SecurityToken"`
 	CertificateName       string `position:"Query" name:"CertificateName"`
 }
@@ -96,6 +97,7 @@ func CreateSetDomainCertificateRequest() (request *SetDomainCertificateRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "SetDomainCertificate", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -79,6 +79,7 @@ type DescribeVpcAccessesRequest struct {
 	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	Name          string           `position:"Query" name:"Name"`
 }
 
 // DescribeVpcAccessesResponse is the response struct for api DescribeVpcAccesses
@@ -97,6 +98,7 @@ func CreateDescribeVpcAccessesRequest() (request *DescribeVpcAccessesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeVpcAccesses", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

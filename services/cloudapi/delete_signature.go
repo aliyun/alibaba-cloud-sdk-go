@@ -92,6 +92,7 @@ func CreateDeleteSignatureRequest() (request *DeleteSignatureRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DeleteSignature", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

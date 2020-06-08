@@ -76,9 +76,11 @@ func (client *Client) SetDomainWithCallback(request *SetDomainRequest, callback 
 // SetDomainRequest is the request struct for api SetDomain
 type SetDomainRequest struct {
 	*requests.RpcRequest
-	GroupId       string `position:"Query" name:"GroupId"`
-	DomainName    string `position:"Query" name:"DomainName"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
+	GroupId       string           `position:"Query" name:"GroupId"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	BindStageName string           `position:"Query" name:"BindStageName"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	IsForce       requests.Boolean `position:"Query" name:"IsForce"`
 }
 
 // SetDomainResponse is the response struct for api SetDomain
@@ -100,6 +102,7 @@ func CreateSetDomainRequest() (request *SetDomainRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "SetDomain", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -100,6 +100,7 @@ func CreateDescribeApiStageRequest() (request *DescribeApiStageRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApiStage", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

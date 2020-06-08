@@ -97,6 +97,7 @@ func CreateCreateApiStageVariableRequest() (request *CreateApiStageVariableReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "CreateApiStageVariable", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -97,6 +97,7 @@ func CreateDescribeApiErrorDataRequest() (request *DescribeApiErrorDataRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApiErrorData", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -92,6 +92,7 @@ func CreateDeleteIpControlRequest() (request *DeleteIpControlRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DeleteIpControl", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

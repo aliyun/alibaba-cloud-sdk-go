@@ -93,6 +93,7 @@ func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeRegions", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

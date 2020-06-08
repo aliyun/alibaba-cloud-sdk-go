@@ -27,4 +27,5 @@ type AppApiRelationInfo struct {
 	AuthorizationSource string `json:"AuthorizationSource" xml:"AuthorizationSource"`
 	Description         string `json:"Description" xml:"Description"`
 	CreatedTime         string `json:"CreatedTime" xml:"CreatedTime"`
+	AuthVaildTime       string `json:"AuthVaildTime" xml:"AuthVaildTime"`
 }

@@ -76,18 +76,21 @@ func (client *Client) ImportSwaggerWithCallback(request *ImportSwaggerRequest, c
 // ImportSwaggerRequest is the request struct for api ImportSwagger
 type ImportSwaggerRequest struct {
 	*requests.RpcRequest
-	DataFormat string           `position:"Query" name:"DataFormat"`
-	Data       string           `position:"Body" name:"Data"`
-	GroupId    string           `position:"Query" name:"GroupId"`
-	Overwrite  requests.Boolean `position:"Query" name:"Overwrite"`
+	DataFormat      string           `position:"Query" name:"DataFormat"`
+	Data            string           `position:"Body" name:"Data"`
+	GroupId         string           `position:"Query" name:"GroupId"`
+	GlobalCondition string           `position:"Query" name:"GlobalCondition"`
+	Overwrite       requests.Boolean `position:"Query" name:"Overwrite"`
 }
 
 // ImportSwaggerResponse is the response struct for api ImportSwagger
 type ImportSwaggerResponse struct {
 	*responses.BaseResponse
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	Success   Success `json:"Success" xml:"Success"`
-	Failed    Failed  `json:"Failed" xml:"Failed"`
+	RequestId    string       `json:"RequestId" xml:"RequestId"`
+	Success      Success      `json:"Success" xml:"Success"`
+	Failed       Failed       `json:"Failed" xml:"Failed"`
+	ModelFailed  ModelFailed  `json:"ModelFailed" xml:"ModelFailed"`
+	ModelSuccess ModelSuccess `json:"ModelSuccess" xml:"ModelSuccess"`
 }
 
 // CreateImportSwaggerRequest creates a request to invoke ImportSwagger API
@@ -96,6 +99,7 @@ func CreateImportSwaggerRequest() (request *ImportSwaggerRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "ImportSwagger", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -103,6 +103,7 @@ func CreateDescribeAuthorizedAppsRequest() (request *DescribeAuthorizedAppsReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeAuthorizedApps", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

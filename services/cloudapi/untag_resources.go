@@ -95,6 +95,7 @@ func CreateUntagResourcesRequest() (request *UntagResourcesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "UntagResources", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

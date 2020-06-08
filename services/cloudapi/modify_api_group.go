@@ -76,11 +76,16 @@ func (client *Client) ModifyApiGroupWithCallback(request *ModifyApiGroupRequest,
 // ModifyApiGroupRequest is the request struct for api ModifyApiGroup
 type ModifyApiGroupRequest struct {
 	*requests.RpcRequest
-	GroupId       string               `position:"Query" name:"GroupId"`
-	Description   string               `position:"Query" name:"Description"`
-	GroupName     string               `position:"Query" name:"GroupName"`
-	SecurityToken string               `position:"Query" name:"SecurityToken"`
-	Tag           *[]ModifyApiGroupTag `position:"Query" name:"Tag"  type:"Repeated"`
+	GroupId            string               `position:"Query" name:"GroupId"`
+	Description        string               `position:"Query" name:"Description"`
+	GroupName          string               `position:"Query" name:"GroupName"`
+	PassthroughHeaders string               `position:"Query" name:"PassthroughHeaders"`
+	SecurityToken      string               `position:"Query" name:"SecurityToken"`
+	CompatibleFlags    string               `position:"Query" name:"CompatibleFlags"`
+	RpcPattern         string               `position:"Query" name:"RpcPattern"`
+	UserLogConfig      string               `position:"Query" name:"UserLogConfig"`
+	Tag                *[]ModifyApiGroupTag `position:"Query" name:"Tag"  type:"Repeated"`
+	CustomTraceConfig  string               `position:"Query" name:"CustomTraceConfig"`
 }
 
 // ModifyApiGroupTag is a repeated param struct in ModifyApiGroupRequest
@@ -105,6 +110,7 @@ func CreateModifyApiGroupRequest() (request *ModifyApiGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "ModifyApiGroup", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

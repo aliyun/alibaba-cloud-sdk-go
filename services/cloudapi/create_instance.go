@@ -100,6 +100,7 @@ func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "CreateInstance", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -1,3 +1,7 @@
+2020-06-08 Version: v1.61.245
+- Generated 2016-07-14 for `CloudAPI`.
+
+
 2020-06-08 Version: v1.61.244
 - Generated 2019-08-08 for `ARMS`.
 - Build 20190808 release go sdk for consistency.

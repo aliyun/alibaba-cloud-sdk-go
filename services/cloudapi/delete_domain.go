@@ -93,6 +93,7 @@ func CreateDeleteDomainRequest() (request *DeleteDomainRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DeleteDomain", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

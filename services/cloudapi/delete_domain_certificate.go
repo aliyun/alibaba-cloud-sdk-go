@@ -94,6 +94,7 @@ func CreateDeleteDomainCertificateRequest() (request *DeleteDomainCertificateReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DeleteDomainCertificate", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

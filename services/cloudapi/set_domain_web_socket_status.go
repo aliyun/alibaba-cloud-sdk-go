@@ -94,6 +94,7 @@ func CreateSetDomainWebSocketStatusRequest() (request *SetDomainWebSocketStatusR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "SetDomainWebSocketStatus", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

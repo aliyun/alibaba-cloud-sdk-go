@@ -92,6 +92,7 @@ func CreateDeleteLogConfigRequest() (request *DeleteLogConfigRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DeleteLogConfig", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

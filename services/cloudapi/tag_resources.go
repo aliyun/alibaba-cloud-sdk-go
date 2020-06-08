@@ -100,6 +100,7 @@ func CreateTagResourcesRequest() (request *TagResourcesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "TagResources", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

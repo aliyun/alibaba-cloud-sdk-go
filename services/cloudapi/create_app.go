@@ -77,6 +77,7 @@ func (client *Client) CreateAppWithCallback(request *CreateAppRequest, callback 
 type CreateAppRequest struct {
 	*requests.RpcRequest
 	Description   string          `position:"Query" name:"Description"`
+	Source        string          `position:"Query" name:"Source"`
 	AppName       string          `position:"Query" name:"AppName"`
 	SecurityToken string          `position:"Query" name:"SecurityToken"`
 	Tag           *[]CreateAppTag `position:"Query" name:"Tag"  type:"Repeated"`
@@ -102,6 +103,7 @@ func CreateCreateAppRequest() (request *CreateAppRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "CreateApp", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

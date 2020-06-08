@@ -100,6 +100,7 @@ func CreateDescribeApiIpControlsRequest() (request *DescribeApiIpControlsRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApiIpControls", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

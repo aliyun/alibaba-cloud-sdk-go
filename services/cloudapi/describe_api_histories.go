@@ -101,6 +101,7 @@ func CreateDescribeApiHistoriesRequest() (request *DescribeApiHistoriesRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApiHistories", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -76,9 +76,10 @@ func (client *Client) DescribeApiWithCallback(request *DescribeApiRequest, callb
 // DescribeApiRequest is the request struct for api DescribeApi
 type DescribeApiRequest struct {
 	*requests.RpcRequest
-	GroupId       string `position:"Query" name:"GroupId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	ApiId         string `position:"Query" name:"ApiId"`
+	GroupId            string `position:"Query" name:"GroupId"`
+	ResourceOwnerToken string `position:"Query" name:"ResourceOwnerToken"`
+	SecurityToken      string `position:"Query" name:"SecurityToken"`
+	ApiId              string `position:"Query" name:"ApiId"`
 }
 
 // DescribeApiResponse is the response struct for api DescribeApi
@@ -105,6 +106,7 @@ type DescribeApiResponse struct {
 	ResultBodyModel        string                              `json:"ResultBodyModel" xml:"ResultBodyModel"`
 	ForceNonceCheck        bool                                `json:"ForceNonceCheck" xml:"ForceNonceCheck"`
 	DisableInternet        bool                                `json:"DisableInternet" xml:"DisableInternet"`
+	AppCodeAuthType        string                              `json:"AppCodeAuthType" xml:"AppCodeAuthType"`
 	RequestConfig          RequestConfig                       `json:"RequestConfig" xml:"RequestConfig"`
 	ServiceConfig          ServiceConfig                       `json:"ServiceConfig" xml:"ServiceConfig"`
 	OpenIdConnectConfig    OpenIdConnectConfig                 `json:"OpenIdConnectConfig" xml:"OpenIdConnectConfig"`
@@ -125,6 +127,7 @@ func CreateDescribeApiRequest() (request *DescribeApiRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApi", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

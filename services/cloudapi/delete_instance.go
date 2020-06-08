@@ -76,8 +76,14 @@ func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest,
 // DeleteInstanceRequest is the request struct for api DeleteInstance
 type DeleteInstanceRequest struct {
 	*requests.RpcRequest
-	Token      string `position:"Query" name:"Token"`
-	InstanceId string `position:"Query" name:"InstanceId"`
+	InstanceId string               `position:"Query" name:"InstanceId"`
+	Tag        *[]DeleteInstanceTag `position:"Query" name:"Tag"  type:"Repeated"`
+}
+
+// DeleteInstanceTag is a repeated param struct in DeleteInstanceRequest
+type DeleteInstanceTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DeleteInstanceResponse is the response struct for api DeleteInstance
@@ -92,6 +98,7 @@ func CreateDeleteInstanceRequest() (request *DeleteInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DeleteInstance", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

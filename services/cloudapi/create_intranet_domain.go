@@ -94,6 +94,7 @@ func CreateCreateIntranetDomainRequest() (request *CreateIntranetDomainRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "CreateIntranetDomain", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

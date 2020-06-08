@@ -17,19 +17,20 @@ package cloudapi
 
 // ServiceConfig is a nested struct in cloudapi response
 type ServiceConfig struct {
-	ServiceVpcEnable      string                           `json:"ServiceVpcEnable" xml:"ServiceVpcEnable"`
-	ContentTypeCatagory   string                           `json:"ContentTypeCatagory" xml:"ContentTypeCatagory"`
-	ServiceHttpMethod     string                           `json:"ServiceHttpMethod" xml:"ServiceHttpMethod"`
-	ServiceAddress        string                           `json:"ServiceAddress" xml:"ServiceAddress"`
-	Mock                  string                           `json:"Mock" xml:"Mock"`
-	MockResult            string                           `json:"MockResult" xml:"MockResult"`
-	ServiceTimeout        int                              `json:"ServiceTimeout" xml:"ServiceTimeout"`
-	AoneAppName           string                           `json:"AoneAppName" xml:"AoneAppName"`
-	ServiceProtocol       string                           `json:"ServiceProtocol" xml:"ServiceProtocol"`
-	ContentTypeValue      string                           `json:"ContentTypeValue" xml:"ContentTypeValue"`
-	ServicePath           string                           `json:"ServicePath" xml:"ServicePath"`
-	MockStatusCode        int                              `json:"MockStatusCode" xml:"MockStatusCode"`
-	VpcConfig             VpcConfig                        `json:"VpcConfig" xml:"VpcConfig"`
-	FunctionComputeConfig FunctionComputeConfig            `json:"FunctionComputeConfig" xml:"FunctionComputeConfig"`
-	MockHeaders           MockHeadersInDescribeDeployedApi `json:"MockHeaders" xml:"MockHeaders"`
+	ContentTypeCatagory   string                   `json:"ContentTypeCatagory" xml:"ContentTypeCatagory"`
+	ServiceVpcEnable      string                   `json:"ServiceVpcEnable" xml:"ServiceVpcEnable"`
+	ServiceHttpMethod     string                   `json:"ServiceHttpMethod" xml:"ServiceHttpMethod"`
+	ServiceAddress        string                   `json:"ServiceAddress" xml:"ServiceAddress"`
+	Mock                  string                   `json:"Mock" xml:"Mock"`
+	MockResult            string                   `json:"MockResult" xml:"MockResult"`
+	ServiceTimeout        int                      `json:"ServiceTimeout" xml:"ServiceTimeout"`
+	AoneAppName           string                   `json:"AoneAppName" xml:"AoneAppName"`
+	ServiceProtocol       string                   `json:"ServiceProtocol" xml:"ServiceProtocol"`
+	ContentTypeValue      string                   `json:"ContentTypeValue" xml:"ContentTypeValue"`
+	ServicePath           string                   `json:"ServicePath" xml:"ServicePath"`
+	VpcId                 string                   `json:"VpcId" xml:"VpcId"`
+	MockStatusCode        int                      `json:"MockStatusCode" xml:"MockStatusCode"`
+	VpcConfig             VpcConfig                `json:"VpcConfig" xml:"VpcConfig"`
+	FunctionComputeConfig FunctionComputeConfig    `json:"FunctionComputeConfig" xml:"FunctionComputeConfig"`
+	MockHeaders           MockHeadersInDescribeApi `json:"MockHeaders" xml:"MockHeaders"`
 }

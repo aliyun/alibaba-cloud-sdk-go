@@ -76,11 +76,11 @@ func (client *Client) DescribeAppsWithCallback(request *DescribeAppsRequest, cal
 // DescribeAppsRequest is the request struct for api DescribeApps
 type DescribeAppsRequest struct {
 	*requests.RpcRequest
+	AppOwner      requests.Integer `position:"Query" name:"AppOwner"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	AppId         requests.Integer `position:"Query" name:"AppId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	AppOwner      requests.Integer `position:"Query" name:"AppOwner"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeAppsResponse is the response struct for api DescribeApps
@@ -99,6 +99,7 @@ func CreateDescribeAppsRequest() (request *DescribeAppsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApps", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

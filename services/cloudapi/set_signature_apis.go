@@ -95,6 +95,7 @@ func CreateSetSignatureApisRequest() (request *SetSignatureApisRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "SetSignatureApis", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

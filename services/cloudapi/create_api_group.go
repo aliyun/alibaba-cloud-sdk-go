@@ -76,12 +76,13 @@ func (client *Client) CreateApiGroupWithCallback(request *CreateApiGroupRequest,
 // CreateApiGroupRequest is the request struct for api CreateApiGroup
 type CreateApiGroupRequest struct {
 	*requests.RpcRequest
-	Description   string               `position:"Query" name:"Description"`
-	Source        string               `position:"Query" name:"Source"`
-	GroupName     string               `position:"Query" name:"GroupName"`
-	InstanceId    string               `position:"Query" name:"InstanceId"`
-	SecurityToken string               `position:"Query" name:"SecurityToken"`
-	Tag           *[]CreateApiGroupTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Description        string               `position:"Query" name:"Description"`
+	Source             string               `position:"Query" name:"Source"`
+	GroupName          string               `position:"Query" name:"GroupName"`
+	ResourceOwnerToken string               `position:"Query" name:"ResourceOwnerToken"`
+	InstanceId         string               `position:"Query" name:"InstanceId"`
+	SecurityToken      string               `position:"Query" name:"SecurityToken"`
+	Tag                *[]CreateApiGroupTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 
 // CreateApiGroupTag is a repeated param struct in CreateApiGroupRequest
@@ -109,6 +110,7 @@ func CreateCreateApiGroupRequest() (request *CreateApiGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "CreateApiGroup", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

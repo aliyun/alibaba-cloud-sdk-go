@@ -86,6 +86,7 @@ type CreateApiRequest struct {
 	AllowSignatureMethod string           `position:"Query" name:"AllowSignatureMethod"`
 	ServiceParameters    string           `position:"Query" name:"ServiceParameters"`
 	FailResultSample     string           `position:"Query" name:"FailResultSample"`
+	ResourceOwnerToken   string           `position:"Query" name:"ResourceOwnerToken"`
 	SystemParameters     string           `position:"Query" name:"SystemParameters"`
 	ServiceParametersMap string           `position:"Query" name:"ServiceParametersMap"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
@@ -116,6 +117,7 @@ func CreateCreateApiRequest() (request *CreateApiRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "CreateApi", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

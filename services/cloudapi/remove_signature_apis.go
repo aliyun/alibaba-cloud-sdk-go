@@ -95,6 +95,7 @@ func CreateRemoveSignatureApisRequest() (request *RemoveSignatureApisRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "RemoveSignatureApis", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

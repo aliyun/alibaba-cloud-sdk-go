@@ -76,11 +76,12 @@ func (client *Client) DescribeApiHistoryWithCallback(request *DescribeApiHistory
 // DescribeApiHistoryRequest is the request struct for api DescribeApiHistory
 type DescribeApiHistoryRequest struct {
 	*requests.RpcRequest
-	StageName      string `position:"Query" name:"StageName"`
-	GroupId        string `position:"Query" name:"GroupId"`
-	SecurityToken  string `position:"Query" name:"SecurityToken"`
-	ApiId          string `position:"Query" name:"ApiId"`
-	HistoryVersion string `position:"Query" name:"HistoryVersion"`
+	StageName          string `position:"Query" name:"StageName"`
+	GroupId            string `position:"Query" name:"GroupId"`
+	ResourceOwnerToken string `position:"Query" name:"ResourceOwnerToken"`
+	SecurityToken      string `position:"Query" name:"SecurityToken"`
+	ApiId              string `position:"Query" name:"ApiId"`
+	HistoryVersion     string `position:"Query" name:"HistoryVersion"`
 }
 
 // DescribeApiHistoryResponse is the response struct for api DescribeApiHistory
@@ -125,6 +126,7 @@ func CreateDescribeApiHistoryRequest() (request *DescribeApiHistoryRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApiHistory", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

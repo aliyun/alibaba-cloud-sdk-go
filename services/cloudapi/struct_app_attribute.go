@@ -22,4 +22,5 @@ type AppAttribute struct {
 	Description  string `json:"Description" xml:"Description"`
 	CreatedTime  string `json:"CreatedTime" xml:"CreatedTime"`
 	ModifiedTime string `json:"ModifiedTime" xml:"ModifiedTime"`
+	Tags         Tags   `json:"Tags" xml:"Tags"`
 }

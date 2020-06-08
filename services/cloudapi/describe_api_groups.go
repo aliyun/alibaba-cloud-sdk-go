@@ -80,6 +80,7 @@ type DescribeApiGroupsRequest struct {
 	EnableTagAuth requests.Boolean        `position:"Query" name:"EnableTagAuth"`
 	GroupName     string                  `position:"Query" name:"GroupName"`
 	PageNumber    requests.Integer        `position:"Query" name:"PageNumber"`
+	InstanceId    string                  `position:"Query" name:"InstanceId"`
 	SecurityToken string                  `position:"Query" name:"SecurityToken"`
 	PageSize      requests.Integer        `position:"Query" name:"PageSize"`
 	Tag           *[]DescribeApiGroupsTag `position:"Query" name:"Tag"  type:"Repeated"`
@@ -107,6 +108,7 @@ func CreateDescribeApiGroupsRequest() (request *DescribeApiGroupsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApiGroups", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

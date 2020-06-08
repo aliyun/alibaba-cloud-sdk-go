@@ -79,6 +79,7 @@ type DescribeApisByAppRequest struct {
 	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	AppId         requests.Integer `position:"Query" name:"AppId"`
+	ApiUid        string           `position:"Query" name:"ApiUid"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 }
 
@@ -98,6 +99,7 @@ func CreateDescribeApisByAppRequest() (request *DescribeApisByAppRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApisByApp", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -32,5 +32,6 @@ type RequestParameter struct {
 	RegularExpression string `json:"RegularExpression" xml:"RegularExpression"`
 	MinValue          int64  `json:"MinValue" xml:"MinValue"`
 	DocShow           string `json:"DocShow" xml:"DocShow"`
+	ArrayItemsType    string `json:"ArrayItemsType" xml:"ArrayItemsType"`
 	Description       string `json:"Description" xml:"Description"`
 }

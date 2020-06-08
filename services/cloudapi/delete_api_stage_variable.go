@@ -94,6 +94,7 @@ func CreateDeleteApiStageVariableRequest() (request *DeleteApiStageVariableReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DeleteApiStageVariable", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

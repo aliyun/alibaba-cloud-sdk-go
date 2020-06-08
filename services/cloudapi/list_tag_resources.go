@@ -103,6 +103,7 @@ func CreateListTagResourcesRequest() (request *ListTagResourcesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "ListTagResources", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

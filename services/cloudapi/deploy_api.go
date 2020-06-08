@@ -76,11 +76,12 @@ func (client *Client) DeployApiWithCallback(request *DeployApiRequest, callback 
 // DeployApiRequest is the request struct for api DeployApi
 type DeployApiRequest struct {
 	*requests.RpcRequest
-	StageName     string `position:"Query" name:"StageName"`
-	GroupId       string `position:"Query" name:"GroupId"`
-	Description   string `position:"Query" name:"Description"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	ApiId         string `position:"Query" name:"ApiId"`
+	StageName          string `position:"Query" name:"StageName"`
+	GroupId            string `position:"Query" name:"GroupId"`
+	Description        string `position:"Query" name:"Description"`
+	ResourceOwnerToken string `position:"Query" name:"ResourceOwnerToken"`
+	SecurityToken      string `position:"Query" name:"SecurityToken"`
+	ApiId              string `position:"Query" name:"ApiId"`
 }
 
 // DeployApiResponse is the response struct for api DeployApi
@@ -95,6 +96,7 @@ func CreateDeployApiRequest() (request *DeployApiRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DeployApi", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

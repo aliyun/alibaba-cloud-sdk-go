@@ -25,4 +25,7 @@ type PurchasedApi struct {
 	StageName     string `json:"StageName" xml:"StageName"`
 	Description   string `json:"Description" xml:"Description"`
 	PurchasedTime string `json:"PurchasedTime" xml:"PurchasedTime"`
+	DeployedTime  string `json:"DeployedTime" xml:"DeployedTime"`
+	ModifiedTime  string `json:"ModifiedTime" xml:"ModifiedTime"`
+	Visibility    string `json:"Visibility" xml:"Visibility"`
 }

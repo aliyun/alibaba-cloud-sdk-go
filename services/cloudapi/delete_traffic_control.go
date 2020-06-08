@@ -92,6 +92,7 @@ func CreateDeleteTrafficControlRequest() (request *DeleteTrafficControlRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DeleteTrafficControl", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

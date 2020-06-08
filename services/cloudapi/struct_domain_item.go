@@ -22,6 +22,7 @@ type DomainItem struct {
 	DomainCNAMEStatus     string `json:"DomainCNAMEStatus" xml:"DomainCNAMEStatus"`
 	CertificateId         string `json:"CertificateId" xml:"CertificateId"`
 	DomainWebSocketStatus string `json:"DomainWebSocketStatus" xml:"DomainWebSocketStatus"`
+	BindStageName         string `json:"BindStageName" xml:"BindStageName"`
 	DomainLegalStatus     string `json:"DomainLegalStatus" xml:"DomainLegalStatus"`
 	CertificateName       string `json:"CertificateName" xml:"CertificateName"`
 	DomainBindingStatus   string `json:"DomainBindingStatus" xml:"DomainBindingStatus"`

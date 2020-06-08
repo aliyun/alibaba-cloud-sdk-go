@@ -96,6 +96,7 @@ func CreateDescribeApiLatencyDataRequest() (request *DescribeApiLatencyDataReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApiLatencyData", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

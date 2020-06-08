@@ -93,6 +93,7 @@ func CreateDeleteApiRequest() (request *DeleteApiRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DeleteApi", "apigateway", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
