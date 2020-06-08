@@ -105,6 +105,7 @@ func CreateDescribeIpv6LocationRequest() (request *DescribeIpv6LocationRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("geoip", "2020-01-01", "DescribeIpv6Location", "geoip", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

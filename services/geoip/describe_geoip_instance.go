@@ -103,6 +103,7 @@ func CreateDescribeGeoipInstanceRequest() (request *DescribeGeoipInstanceRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("geoip", "2020-01-01", "DescribeGeoipInstance", "geoip", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
