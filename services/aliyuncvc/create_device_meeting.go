@@ -99,6 +99,7 @@ func CreateCreateDeviceMeetingRequest() (request *CreateDeviceMeetingRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "CreateDeviceMeeting", "aliyuncvc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -94,6 +94,7 @@ func CreateGetDeviceActiveCodeRequest() (request *GetDeviceActiveCodeRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "GetDeviceActiveCode", "aliyuncvc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

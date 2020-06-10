@@ -97,6 +97,7 @@ func CreateModifyMeetingPasswordInternationalRequest() (request *ModifyMeetingPa
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "ModifyMeetingPasswordInternational", "aliyuncvc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

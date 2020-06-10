@@ -95,6 +95,7 @@ func CreateUpdateDeviceHeartBeatRequest() (request *UpdateDeviceHeartBeatRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "UpdateDeviceHeartBeat", "aliyuncvc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

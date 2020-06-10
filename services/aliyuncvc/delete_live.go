@@ -95,6 +95,7 @@ func CreateDeleteLiveRequest() (request *DeleteLiveRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "DeleteLive", "aliyuncvc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

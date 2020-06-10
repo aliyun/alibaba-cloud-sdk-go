@@ -98,6 +98,7 @@ func CreateCreateMeetingInternationalRequest() (request *CreateMeetingInternatio
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "CreateMeetingInternational", "aliyuncvc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

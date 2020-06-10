@@ -95,6 +95,7 @@ func CreateGetMeetingMemberRequest() (request *GetMeetingMemberRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "GetMeetingMember", "aliyuncvc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

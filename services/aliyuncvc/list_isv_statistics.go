@@ -96,6 +96,7 @@ func CreateListIsvStatisticsRequest() (request *ListIsvStatisticsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "ListIsvStatistics", "aliyuncvc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

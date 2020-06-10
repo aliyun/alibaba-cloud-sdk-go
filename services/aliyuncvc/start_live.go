@@ -95,6 +95,7 @@ func CreateStartLiveRequest() (request *StartLiveRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "StartLive", "aliyuncvc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

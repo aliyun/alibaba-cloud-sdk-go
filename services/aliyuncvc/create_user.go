@@ -96,6 +96,7 @@ func CreateCreateUserRequest() (request *CreateUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "CreateUser", "aliyuncvc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

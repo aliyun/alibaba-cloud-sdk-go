@@ -95,6 +95,7 @@ func CreateEndLiveRequest() (request *EndLiveRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "EndLive", "aliyuncvc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

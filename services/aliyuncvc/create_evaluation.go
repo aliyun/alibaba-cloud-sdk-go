@@ -102,6 +102,7 @@ func CreateCreateEvaluationRequest() (request *CreateEvaluationRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "CreateEvaluation", "aliyuncvc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
