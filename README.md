@@ -116,6 +116,7 @@ func main() {
 * [Concurrent](docs/8-Concurrent-EN.md)
 * [Asynchronous Call](docs/9-Asynchronous-EN.md)
 * [Package Management](docs/10-Package-Management-EN.md)
+* [Endpoint](docs/11-Endpoint-EN.md)
 
 
 ## Issues
