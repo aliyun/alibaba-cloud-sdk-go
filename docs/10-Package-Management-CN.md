@@ -1,4 +1,4 @@
-[← 异步调用](9-Asynchronous-CN.md) | 包管理[(English)](10-Package-Management-EN.md) | [首页 →](../README-CN.md)
+[← 异步调用](9-Asynchronous-CN.md) | 包管理[(English)](10-Package-Management-EN.md) | [域名 →](11-Endpoint-CN.md)
 ***
 ## 包管理
 
@@ -21,4 +21,4 @@ go mod tidy
 ```
 
 ***
-[← 异步调用](9-Asynchronous-CN.md) | 包管理[(English)](10-Package-Management-EN.md) | [首页 →](../README-CN.md)
+[← 异步调用](9-Asynchronous-CN.md) | 包管理[(English)](10-Package-Management-EN.md) | [域名 →](11-Endpoint-CN.md)

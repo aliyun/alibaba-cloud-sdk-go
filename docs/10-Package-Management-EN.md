@@ -1,4 +1,4 @@
-[← Asynchronous Call](9-Asynchronous-EN.md) | Package Management[(中文)](10-Package-Management-CN.md) | [Home →](../README.md)
+[← Asynchronous Call](9-Asynchronous-EN.md) | Package Management[(中文)](10-Package-Management-CN.md) | [Endpoint →](11-Endpoint-EN.md)
 ***
 ## Package Management
 
@@ -21,5 +21,5 @@ go mod tidy
 ```
 
 ***
-[← Asynchronous Call](9-Asynchronous-EN.md) | Package Management[(中文)](10-Package-Management-CN.md) | [Home →](../README.md)
+[← Asynchronous Call](9-Asynchronous-EN.md) | Package Management[(中文)](10-Package-Management-CN.md) | [Endpoint →](11-Endpoint-EN.md)
  
