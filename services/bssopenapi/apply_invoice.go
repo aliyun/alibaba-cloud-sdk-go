@@ -102,7 +102,7 @@ func CreateApplyInvoiceRequest() (request *ApplyInvoiceRequest) {
 	request = &ApplyInvoiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "ApplyInvoice", "bssopenapi", "openAPI")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "ApplyInvoice", "", "")
 	request.Method = requests.POST
 	return
 }

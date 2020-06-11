@@ -101,7 +101,7 @@ func CreateQueryRIUtilizationDetailRequest() (request *QueryRIUtilizationDetailR
 	request = &QueryRIUtilizationDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryRIUtilizationDetail", "bssopenapi", "openAPI")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryRIUtilizationDetail", "", "")
 	request.Method = requests.POST
 	return
 }

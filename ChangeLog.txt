@@ -1,3 +1,7 @@
+2020-06-11 Version: v1.61.250
+- Generated 2017-12-14 for `BssOpenApi`.
+- Support ServicePeriodUnit in QueryInstanceBill.
+
 2020-06-11 Version: v1.61.249
 - Generated 2016-08-01 for `Push`.
 - Supported AndroidNotificationVivoChannel for Push and MassPush.

@@ -27,6 +27,7 @@ type Item struct {
 	Promotion                   string  `json:"Promotion" xml:"Promotion"`
 	Usage                       string  `json:"Usage" xml:"Usage"`
 	Seller                      string  `json:"Seller" xml:"Seller"`
+	ServicePeriodUnit           string  `json:"ServicePeriodUnit" xml:"ServicePeriodUnit"`
 	PretaxAmountLocal           float64 `json:"PretaxAmountLocal" xml:"PretaxAmountLocal"`
 	OwnerName                   string  `json:"OwnerName" xml:"OwnerName"`
 	OutstandingAmount           float64 `json:"OutstandingAmount" xml:"OutstandingAmount"`

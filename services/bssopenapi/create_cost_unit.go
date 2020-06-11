@@ -101,7 +101,7 @@ func CreateCreateCostUnitRequest() (request *CreateCostUnitRequest) {
 	request = &CreateCostUnitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "CreateCostUnit", "bssopenapi", "openAPI")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "CreateCostUnit", "", "")
 	request.Method = requests.POST
 	return
 }
