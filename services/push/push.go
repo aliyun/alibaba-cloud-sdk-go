@@ -91,6 +91,7 @@ type PushRequest struct {
 	IOSMutableContent                requests.Boolean `position:"Query" name:"iOSMutableContent"`
 	AndroidNotificationBarPriority   requests.Integer `position:"Query" name:"AndroidNotificationBarPriority"`
 	ExpireTime                       string           `position:"Query" name:"ExpireTime"`
+	AndroidNotificationVivoChannel   string           `position:"Query" name:"AndroidNotificationVivoChannel"`
 	IOSNotificationCategory          string           `position:"Query" name:"iOSNotificationCategory"`
 	AndroidNotificationXiaomiChannel string           `position:"Query" name:"AndroidNotificationXiaomiChannel"`
 	StoreOffline                     requests.Boolean `position:"Query" name:"StoreOffline"`
@@ -136,6 +137,7 @@ func CreatePushRequest() (request *PushRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Push", "2016-08-01", "Push", "", "")
+	request.Method = requests.POST
 	return
 }
 

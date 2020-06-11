@@ -99,6 +99,7 @@ func CreatePushNoticeToiOSRequest() (request *PushNoticeToiOSRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Push", "2016-08-01", "PushNoticeToiOS", "", "")
+	request.Method = requests.POST
 	return
 }
 

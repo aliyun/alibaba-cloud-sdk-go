@@ -102,6 +102,7 @@ func CreateQueryPushRecordsRequest() (request *QueryPushRecordsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Push", "2016-08-01", "QueryPushRecords", "", "")
+	request.Method = requests.POST
 	return
 }
 

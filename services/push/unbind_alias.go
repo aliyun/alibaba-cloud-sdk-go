@@ -94,6 +94,7 @@ func CreateUnbindAliasRequest() (request *UnbindAliasRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Push", "2016-08-01", "UnbindAlias", "", "")
+	request.Method = requests.POST
 	return
 }
 

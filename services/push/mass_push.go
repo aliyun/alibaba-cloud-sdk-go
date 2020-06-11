@@ -102,6 +102,7 @@ type MassPushPushTask struct {
 	IOSMutableContent                string `name:"iOSMutableContent"`
 	AndroidNotificationBarPriority   string `name:"AndroidNotificationBarPriority"`
 	ExpireTime                       string `name:"ExpireTime"`
+	AndroidNotificationVivoChannel   string `name:"AndroidNotificationVivoChannel"`
 	AndroidPopupBody                 string `name:"AndroidPopupBody"`
 	IOSNotificationCategory          string `name:"iOSNotificationCategory"`
 	AndroidNotificationXiaomiChannel string `name:"AndroidNotificationXiaomiChannel"`
@@ -136,6 +137,7 @@ func CreateMassPushRequest() (request *MassPushRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Push", "2016-08-01", "MassPush", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -93,6 +93,7 @@ func CreateBindPhoneRequest() (request *BindPhoneRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Push", "2016-08-01", "BindPhone", "", "")
+	request.Method = requests.POST
 	return
 }
 

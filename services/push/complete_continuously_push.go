@@ -93,6 +93,7 @@ func CreateCompleteContinuouslyPushRequest() (request *CompleteContinuouslyPushR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Push", "2016-08-01", "CompleteContinuouslyPush", "", "")
+	request.Method = requests.POST
 	return
 }
 

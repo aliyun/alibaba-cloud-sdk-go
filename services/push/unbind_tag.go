@@ -94,6 +94,7 @@ func CreateUnbindTagRequest() (request *UnbindTagRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Push", "2016-08-01", "UnbindTag", "", "")
+	request.Method = requests.POST
 	return
 }
 
