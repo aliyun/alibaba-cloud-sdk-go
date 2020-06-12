@@ -1,3 +1,7 @@
+2020-06-12 Version: v1.61.252
+- Generated 2019-01-01 for `HBase`.
+- Add support for enable hbaseue extra module like lindorm-search or lindorm-sql.
+
 2020-06-12 Version: v1.61.251
 - Generated 2018-10-12 for `Airec`.
 
