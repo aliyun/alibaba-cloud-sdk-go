@@ -1,3 +1,7 @@
+2020-06-12 Version: v1.61.253
+- Generated 2020-05-15 for `Vcs`.
+- Update monitor related API.
+
 2020-06-12 Version: v1.61.252
 - Generated 2019-01-01 for `HBase`.
 - Add support for enable hbaseue extra module like lindorm-search or lindorm-sql.
