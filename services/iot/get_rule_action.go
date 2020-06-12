@@ -97,7 +97,8 @@ func CreateGetRuleActionRequest() (request *GetRuleActionRequest) {
 	request = &GetRuleActionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetRuleAction", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetRuleAction", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

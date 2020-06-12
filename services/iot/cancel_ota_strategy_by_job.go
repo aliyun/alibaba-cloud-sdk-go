@@ -96,7 +96,8 @@ func CreateCancelOTAStrategyByJobRequest() (request *CancelOTAStrategyByJobReque
 	request = &CancelOTAStrategyByJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CancelOTAStrategyByJob", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CancelOTAStrategyByJob", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

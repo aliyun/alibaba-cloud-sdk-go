@@ -96,7 +96,8 @@ func CreateDeleteRuleRequest() (request *DeleteRuleRequest) {
 	request = &DeleteRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteRule", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteRule", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -101,7 +101,8 @@ func CreateCreateEdgeOssPreSignedAddressRequest() (request *CreateEdgeOssPreSign
 	request = &CreateEdgeOssPreSignedAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateEdgeOssPreSignedAddress", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateEdgeOssPreSignedAddress", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -99,7 +99,8 @@ func CreateImportThingModelTslRequest() (request *ImportThingModelTslRequest) {
 	request = &ImportThingModelTslRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ImportThingModelTsl", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ImportThingModelTsl", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

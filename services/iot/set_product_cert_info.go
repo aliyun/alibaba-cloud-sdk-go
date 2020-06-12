@@ -97,7 +97,8 @@ func CreateSetProductCertInfoRequest() (request *SetProductCertInfoRequest) {
 	request = &SetProductCertInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "SetProductCertInfo", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "SetProductCertInfo", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

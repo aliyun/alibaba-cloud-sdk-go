@@ -96,7 +96,8 @@ func CreateCloseEdgeInstanceDeploymentRequest() (request *CloseEdgeInstanceDeplo
 	request = &CloseEdgeInstanceDeploymentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CloseEdgeInstanceDeployment", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CloseEdgeInstanceDeployment", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

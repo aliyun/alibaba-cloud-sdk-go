@@ -65,6 +65,7 @@ type Data struct {
 	DateFormat             string                `json:"DateFormat" xml:"DateFormat"`
 	DeviceOnline           int                   `json:"DeviceOnline" xml:"DeviceOnline"`
 	JobId                  string                `json:"JobId" xml:"JobId"`
+	ProductSecret          string                `json:"ProductSecret" xml:"ProductSecret"`
 	RetryInterval          int                   `json:"RetryInterval" xml:"RetryInterval"`
 	EdgeVersion            string                `json:"EdgeVersion" xml:"EdgeVersion"`
 	JoinEui                string                `json:"JoinEui" xml:"JoinEui"`
@@ -90,7 +91,6 @@ type Data struct {
 	UtcCreatedOn           string                `json:"UtcCreatedOn" xml:"UtcCreatedOn"`
 	UtcModified            string                `json:"UtcModified" xml:"UtcModified"`
 	MessageId              string                `json:"MessageId" xml:"MessageId"`
-	SrcVersions            string                `json:"SrcVersions" xml:"SrcVersions"`
 	Id2                    bool                  `json:"Id2" xml:"Id2"`
 	NodeType               int                   `json:"NodeType" xml:"NodeType"`
 	ConfigCheckRule        string                `json:"ConfigCheckRule" xml:"ConfigCheckRule"`
@@ -116,10 +116,12 @@ type Data struct {
 	VersionState           string                `json:"VersionState" xml:"VersionState"`
 	IotId                  string                `json:"IotId" xml:"IotId"`
 	GroupDesc              string                `json:"GroupDesc" xml:"GroupDesc"`
+	Argument               string                `json:"Argument" xml:"Argument"`
 	GrayPercent            string                `json:"GrayPercent" xml:"GrayPercent"`
+	InvalidDeviceNameList  InvalidDeviceNameList `json:"InvalidDeviceNameList" xml:"InvalidDeviceNameList"`
+	SrcVersions            SrcVersions           `json:"SrcVersions" xml:"SrcVersions"`
 	ResultList             ResultList            `json:"ResultList" xml:"ResultList"`
 	FieldNameList          FieldNameList         `json:"FieldNameList" xml:"FieldNameList"`
-	InvalidDeviceNameList  InvalidDeviceNameList `json:"InvalidDeviceNameList" xml:"InvalidDeviceNameList"`
 	SqlTemplateDTO         SqlTemplateDTO        `json:"SqlTemplateDTO" xml:"SqlTemplateDTO"`
 	TaskList               []Task                `json:"TaskList" xml:"TaskList"`
 	ModelVersions          []ModelVersion        `json:"ModelVersions" xml:"ModelVersions"`

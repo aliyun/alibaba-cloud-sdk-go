@@ -98,7 +98,8 @@ func CreateQueryDeviceGroupByDeviceRequest() (request *QueryDeviceGroupByDeviceR
 	request = &QueryDeviceGroupByDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceGroupByDevice", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceGroupByDevice", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

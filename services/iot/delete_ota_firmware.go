@@ -96,7 +96,8 @@ func CreateDeleteOTAFirmwareRequest() (request *DeleteOTAFirmwareRequest) {
 	request = &DeleteOTAFirmwareRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteOTAFirmware", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteOTAFirmware", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

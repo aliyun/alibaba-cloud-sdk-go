@@ -98,7 +98,8 @@ func CreateCreateEdgeInstanceDeploymentRequest() (request *CreateEdgeInstanceDep
 	request = &CreateEdgeInstanceDeploymentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateEdgeInstanceDeployment", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateEdgeInstanceDeployment", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

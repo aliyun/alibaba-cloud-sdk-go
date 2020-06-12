@@ -99,7 +99,8 @@ func CreatePublishThingModelRequest() (request *PublishThingModelRequest) {
 	request = &PublishThingModelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "PublishThingModel", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "PublishThingModel", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

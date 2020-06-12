@@ -96,7 +96,8 @@ func CreateStopRuleRequest() (request *StopRuleRequest) {
 	request = &StopRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "StopRule", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "StopRule", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

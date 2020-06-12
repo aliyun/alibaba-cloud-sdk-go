@@ -97,7 +97,8 @@ func CreateCreateThingModelRequest() (request *CreateThingModelRequest) {
 	request = &CreateThingModelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateThingModel", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateThingModel", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

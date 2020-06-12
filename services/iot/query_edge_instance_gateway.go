@@ -97,7 +97,8 @@ func CreateQueryEdgeInstanceGatewayRequest() (request *QueryEdgeInstanceGatewayR
 	request = &QueryEdgeInstanceGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryEdgeInstanceGateway", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryEdgeInstanceGateway", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

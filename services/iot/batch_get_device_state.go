@@ -99,7 +99,8 @@ func CreateBatchGetDeviceStateRequest() (request *BatchGetDeviceStateRequest) {
 	request = &BatchGetDeviceStateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "BatchGetDeviceState", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "BatchGetDeviceState", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

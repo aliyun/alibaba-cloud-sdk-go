@@ -98,7 +98,8 @@ func CreateResetThingRequest() (request *ResetThingRequest) {
 	request = &ResetThingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ResetThing", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ResetThing", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

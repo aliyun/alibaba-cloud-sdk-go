@@ -101,7 +101,8 @@ func CreateGetLoraNodesTaskRequest() (request *GetLoraNodesTaskRequest) {
 	request = &GetLoraNodesTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "GetLoraNodesTask", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "GetLoraNodesTask", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

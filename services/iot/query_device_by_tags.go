@@ -109,7 +109,8 @@ func CreateQueryDeviceByTagsRequest() (request *QueryDeviceByTagsRequest) {
 	request = &QueryDeviceByTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceByTags", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceByTags", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

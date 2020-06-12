@@ -28,4 +28,5 @@ type DriverVersion struct {
 	ConfigCheckRule      string `json:"ConfigCheckRule" xml:"ConfigCheckRule"`
 	GmtCreateTimestamp   int64  `json:"GmtCreateTimestamp" xml:"GmtCreateTimestamp"`
 	GmtModifiedTimestamp int64  `json:"GmtModifiedTimestamp" xml:"GmtModifiedTimestamp"`
+	Argument             string `json:"Argument" xml:"Argument"`
 }

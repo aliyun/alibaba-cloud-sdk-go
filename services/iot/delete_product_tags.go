@@ -97,7 +97,8 @@ func CreateDeleteProductTagsRequest() (request *DeleteProductTagsRequest) {
 	request = &DeleteProductTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteProductTags", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "DeleteProductTags", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

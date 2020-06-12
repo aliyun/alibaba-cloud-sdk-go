@@ -97,7 +97,8 @@ func CreateQueryTopicRouteTableRequest() (request *QueryTopicRouteTableRequest) 
 	request = &QueryTopicRouteTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryTopicRouteTable", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryTopicRouteTable", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

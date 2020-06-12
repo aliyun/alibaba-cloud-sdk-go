@@ -17,5 +17,5 @@ package iot
 
 // InvalidList is a nested struct in iot response
 type InvalidList struct {
-	Name []map[string]interface{} `json:"Name" xml:"Name"`
+	Name []string `json:"Name" xml:"Name"`
 }

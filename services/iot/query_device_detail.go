@@ -99,7 +99,8 @@ func CreateQueryDeviceDetailRequest() (request *QueryDeviceDetailRequest) {
 	request = &QueryDeviceDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceDetail", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryDeviceDetail", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

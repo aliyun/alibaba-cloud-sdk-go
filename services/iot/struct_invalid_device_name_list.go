@@ -17,5 +17,5 @@ package iot
 
 // InvalidDeviceNameList is a nested struct in iot response
 type InvalidDeviceNameList struct {
-	InvalidDeviceName []map[string]interface{} `json:"InvalidDeviceName" xml:"InvalidDeviceName"`
+	InvalidDeviceName []string `json:"InvalidDeviceName" xml:"InvalidDeviceName"`
 }

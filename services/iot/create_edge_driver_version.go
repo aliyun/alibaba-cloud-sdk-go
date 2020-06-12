@@ -77,6 +77,7 @@ func (client *Client) CreateEdgeDriverVersionWithCallback(request *CreateEdgeDri
 type CreateEdgeDriverVersionRequest struct {
 	*requests.RpcRequest
 	ConfigCheckRule string `position:"Query" name:"ConfigCheckRule"`
+	Argument        string `position:"Query" name:"Argument"`
 	EdgeVersion     string `position:"Query" name:"EdgeVersion"`
 	Description     string `position:"Query" name:"Description"`
 	DriverId        string `position:"Query" name:"DriverId"`
@@ -103,7 +104,8 @@ func CreateCreateEdgeDriverVersionRequest() (request *CreateEdgeDriverVersionReq
 	request = &CreateEdgeDriverVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateEdgeDriverVersion", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateEdgeDriverVersion", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

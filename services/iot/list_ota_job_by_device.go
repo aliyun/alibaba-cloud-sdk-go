@@ -105,7 +105,8 @@ func CreateListOTAJobByDeviceRequest() (request *ListOTAJobByDeviceRequest) {
 	request = &ListOTAJobByDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListOTAJobByDevice", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListOTAJobByDevice", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

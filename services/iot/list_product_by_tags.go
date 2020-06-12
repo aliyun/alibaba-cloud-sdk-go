@@ -105,7 +105,8 @@ func CreateListProductByTagsRequest() (request *ListProductByTagsRequest) {
 	request = &ListProductByTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ListProductByTags", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ListProductByTags", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

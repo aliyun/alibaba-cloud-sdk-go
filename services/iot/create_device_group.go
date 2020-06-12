@@ -99,7 +99,8 @@ func CreateCreateDeviceGroupRequest() (request *CreateDeviceGroupRequest) {
 	request = &CreateDeviceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "CreateDeviceGroup", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "CreateDeviceGroup", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

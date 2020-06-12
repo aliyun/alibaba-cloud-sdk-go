@@ -98,7 +98,8 @@ func CreateUpdateThingModelRequest() (request *UpdateThingModelRequest) {
 	request = &UpdateThingModelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateThingModel", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "UpdateThingModel", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

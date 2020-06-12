@@ -97,7 +97,8 @@ func CreateClearEdgeInstanceDriverConfigsRequest() (request *ClearEdgeInstanceDr
 	request = &ClearEdgeInstanceDriverConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "ClearEdgeInstanceDriverConfigs", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "ClearEdgeInstanceDriverConfigs", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

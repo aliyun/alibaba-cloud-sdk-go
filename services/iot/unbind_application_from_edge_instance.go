@@ -97,7 +97,8 @@ func CreateUnbindApplicationFromEdgeInstanceRequest() (request *UnbindApplicatio
 	request = &UnbindApplicationFromEdgeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "UnbindApplicationFromEdgeInstance", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "UnbindApplicationFromEdgeInstance", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -101,7 +101,8 @@ func CreateQueryEdgeDriverVersionRequest() (request *QueryEdgeDriverVersionReque
 	request = &QueryEdgeDriverVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryEdgeDriverVersion", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryEdgeDriverVersion", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

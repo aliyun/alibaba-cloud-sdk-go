@@ -100,7 +100,8 @@ func CreateQueryThingModelRequest() (request *QueryThingModelRequest) {
 	request = &QueryThingModelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Iot", "2018-01-20", "QueryThingModel", "Iot", "openAPI")
+	request.InitWithApiInfo("Iot", "2018-01-20", "QueryThingModel", "iot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
