@@ -17,5 +17,5 @@ package airec
 
 // List is a nested struct in airec response
 type List struct {
-	ListItem []ListItem `json:"ListItem" xml:"ListItem"`
+	ListItem []ListItem `json:"List" xml:"List"`
 }

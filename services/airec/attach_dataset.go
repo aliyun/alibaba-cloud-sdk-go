@@ -83,10 +83,10 @@ type AttachDatasetRequest struct {
 // AttachDatasetResponse is the response struct for api AttachDataset
 type AttachDatasetResponse struct {
 	*responses.BaseResponse
-	RequestId string                `json:"RequestId" xml:"RequestId"`
-	Code      string                `json:"Code" xml:"Code"`
-	Message   string                `json:"Message" xml:"Message"`
-	Result    ResultInAttachDataset `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	Result    Result `json:"Result" xml:"Result"`
 }
 
 // CreateAttachDatasetRequest creates a request to invoke AttachDataset API

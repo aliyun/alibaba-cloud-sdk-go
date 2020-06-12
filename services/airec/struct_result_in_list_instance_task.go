@@ -17,5 +17,5 @@ package airec
 
 // ResultInListInstanceTask is a nested struct in airec response
 type ResultInListInstanceTask struct {
-	ResultItem []ResultItem `json:"ResultItem" xml:"ResultItem"`
+	ResultItem []ResultItem `json:"Result" xml:"Result"`
 }

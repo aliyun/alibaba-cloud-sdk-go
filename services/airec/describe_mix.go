@@ -83,10 +83,10 @@ type DescribeMixRequest struct {
 // DescribeMixResponse is the response struct for api DescribeMix
 type DescribeMixResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string              `json:"RequestId" xml:"RequestId"`
+	Code      string              `json:"Code" xml:"Code"`
+	Message   string              `json:"Message" xml:"Message"`
+	Result    ResultInDescribeMix `json:"Result" xml:"Result"`
 }
 
 // CreateDescribeMixRequest creates a request to invoke DescribeMix API

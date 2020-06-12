@@ -82,10 +82,10 @@ type ModifyInstanceRequest struct {
 // ModifyInstanceResponse is the response struct for api ModifyInstance
 type ModifyInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
+	Code      string                 `json:"Code" xml:"Code"`
+	Message   string                 `json:"Message" xml:"Message"`
+	Result    ResultInModifyInstance `json:"Result" xml:"Result"`
 }
 
 // CreateModifyInstanceRequest creates a request to invoke ModifyInstance API

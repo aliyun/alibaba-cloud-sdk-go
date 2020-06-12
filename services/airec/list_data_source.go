@@ -82,10 +82,10 @@ type ListDataSourceRequest struct {
 // ListDataSourceResponse is the response struct for api ListDataSource
 type ListDataSourceResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Code      string       `json:"Code" xml:"Code"`
-	Message   string       `json:"Message" xml:"Message"`
-	Result    []ResultItem `json:"Result" xml:"Result"`
+	RequestId string                       `json:"RequestId" xml:"RequestId"`
+	Code      string                       `json:"Code" xml:"Code"`
+	Message   string                       `json:"Message" xml:"Message"`
+	Result    []ResultItemInListDataSource `json:"Result" xml:"Result"`
 }
 
 // CreateListDataSourceRequest creates a request to invoke ListDataSource API

@@ -17,5 +17,5 @@ package airec
 
 // SubProgressInfos is a nested struct in airec response
 type SubProgressInfos struct {
-	SubProgressInfosItem []SubProgressInfosItem `json:"SubProgressInfosItem" xml:"SubProgressInfosItem"`
+	SubProgressInfosItem []SubProgressInfosItem `json:"SubProgressInfos" xml:"SubProgressInfos"`
 }

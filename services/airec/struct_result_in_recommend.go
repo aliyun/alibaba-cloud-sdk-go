@@ -17,5 +17,5 @@ package airec
 
 // ResultInRecommend is a nested struct in airec response
 type ResultInRecommend struct {
-	ResultItem []ResultItem `json:"ResultItem" xml:"ResultItem"`
+	ResultItem []ResultItem `json:"Result" xml:"Result"`
 }

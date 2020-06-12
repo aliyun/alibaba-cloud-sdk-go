@@ -82,10 +82,10 @@ type CreateDiversifyRequest struct {
 // CreateDiversifyResponse is the response struct for api CreateDiversify
 type CreateDiversifyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                  `json:"RequestId" xml:"RequestId"`
+	Code      string                  `json:"Code" xml:"Code"`
+	Message   string                  `json:"Message" xml:"Message"`
+	Result    ResultInCreateDiversify `json:"Result" xml:"Result"`
 }
 
 // CreateCreateDiversifyRequest creates a request to invoke CreateDiversify API

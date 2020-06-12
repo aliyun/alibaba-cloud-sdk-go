@@ -83,10 +83,10 @@ type StopDataSetRequest struct {
 // StopDataSetResponse is the response struct for api StopDataSet
 type StopDataSetResponse struct {
 	*responses.BaseResponse
-	RequestId string              `json:"RequestId" xml:"RequestId"`
-	Code      string              `json:"Code" xml:"Code"`
-	Message   string              `json:"Message" xml:"Message"`
-	Result    ResultInStopDataSet `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	Result    Result `json:"Result" xml:"Result"`
 }
 
 // CreateStopDataSetRequest creates a request to invoke StopDataSet API

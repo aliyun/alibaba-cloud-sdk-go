@@ -17,5 +17,5 @@ package airec
 
 // ResultInListDiversify is a nested struct in airec response
 type ResultInListDiversify struct {
-	ResultItem []ResultItem `json:"ResultItem" xml:"ResultItem"`
+	ResultItem []ResultItemInListDiversify `json:"Result" xml:"Result"`
 }

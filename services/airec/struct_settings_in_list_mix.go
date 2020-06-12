@@ -17,5 +17,5 @@ package airec
 
 // SettingsInListMix is a nested struct in airec response
 type SettingsInListMix struct {
-	SettingsItem []SettingsItem `json:"SettingsItem" xml:"SettingsItem"`
+	SettingsItem []SettingsItem `json:"Settings" xml:"Settings"`
 }

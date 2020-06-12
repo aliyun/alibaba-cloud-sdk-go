@@ -83,10 +83,10 @@ type DeleteDiversifyRequest struct {
 // DeleteDiversifyResponse is the response struct for api DeleteDiversify
 type DeleteDiversifyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                  `json:"RequestId" xml:"RequestId"`
+	Code      string                  `json:"Code" xml:"Code"`
+	Message   string                  `json:"Message" xml:"Message"`
+	Result    ResultInDeleteDiversify `json:"Result" xml:"Result"`
 }
 
 // CreateDeleteDiversifyRequest creates a request to invoke DeleteDiversify API

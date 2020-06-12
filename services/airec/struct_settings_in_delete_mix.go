@@ -17,5 +17,5 @@ package airec
 
 // SettingsInDeleteMix is a nested struct in airec response
 type SettingsInDeleteMix struct {
-	SettingsItem []SettingsItemInDeleteMix `json:"SettingsItem" xml:"SettingsItem"`
+	SettingsItem []SettingsItemInDeleteMix `json:"Settings" xml:"Settings"`
 }

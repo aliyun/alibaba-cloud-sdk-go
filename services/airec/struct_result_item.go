@@ -18,33 +18,32 @@ package airec
 // ResultItem is a nested struct in airec response
 type ResultItem struct {
 	Name             string                 `json:"Name" xml:"Name"`
-	ChargeType       string                 `json:"ChargeType" xml:"ChargeType"`
 	ErrorLevel       string                 `json:"ErrorLevel" xml:"ErrorLevel"`
+	DefaultDisplay   bool                   `json:"DefaultDisplay" xml:"DefaultDisplay"`
 	ItemType         string                 `json:"ItemType" xml:"ItemType"`
-	GmtCreate        string                 `json:"GmtCreate" xml:"GmtCreate"`
-	DataSetVersion   string                 `json:"DataSetVersion" xml:"DataSetVersion"`
-	RegionId         string                 `json:"RegionId" xml:"RegionId"`
-	TotalProgress    int                    `json:"TotalProgress" xml:"TotalProgress"`
+	SampleDisplay    bool                   `json:"SampleDisplay" xml:"SampleDisplay"`
 	InstanceId       string                 `json:"InstanceId" xml:"InstanceId"`
+	TotalProgress    int                    `json:"TotalProgress" xml:"TotalProgress"`
+	SceneId          string                 `json:"SceneId" xml:"SceneId"`
 	TraceId          string                 `json:"TraceId" xml:"TraceId"`
-	CommodityCode    string                 `json:"CommodityCode" xml:"CommodityCode"`
 	MatchInfo        string                 `json:"MatchInfo" xml:"MatchInfo"`
 	Type             string                 `json:"Type" xml:"Type"`
+	ErrorCount       int                    `json:"ErrorCount" xml:"ErrorCount"`
 	Message          string                 `json:"Message" xml:"Message"`
-	ExpiredTime      string                 `json:"ExpiredTime" xml:"ExpiredTime"`
 	Timestamp        string                 `json:"Timestamp" xml:"Timestamp"`
 	ErrorType        string                 `json:"ErrorType" xml:"ErrorType"`
-	GmtModified      string                 `json:"GmtModified" xml:"GmtModified"`
-	Industry         string                 `json:"Industry" xml:"Industry"`
-	TableName        string                 `json:"TableName" xml:"TableName"`
 	ItemId           string                 `json:"ItemId" xml:"ItemId"`
-	Scene            string                 `json:"Scene" xml:"Scene"`
+	VersionId        string                 `json:"VersionId" xml:"VersionId"`
+	GmtCreate        int64                  `json:"GmtCreate" xml:"GmtCreate"`
+	Platform         string                 `json:"Platform" xml:"Platform"`
+	ErrorPercent     float64                `json:"ErrorPercent" xml:"ErrorPercent"`
+	State            string                 `json:"State" xml:"State"`
+	Appkey           string                 `json:"Appkey" xml:"Appkey"`
+	GmtModified      int64                  `json:"GmtModified" xml:"GmtModified"`
 	TraceInfo        string                 `json:"TraceInfo" xml:"TraceInfo"`
 	Position         int                    `json:"Position" xml:"Position"`
-	Status           string                 `json:"Status" xml:"Status"`
-	LockMode         string                 `json:"LockMode" xml:"LockMode"`
 	Weight           float64                `json:"Weight" xml:"Weight"`
-	Meta             Meta                   `json:"Meta" xml:"Meta"`
-	Parameter        Parameter              `json:"Parameter" xml:"Parameter"`
+	DataPoints       []DataPointsItem       `json:"DataPoints" xml:"DataPoints"`
 	SubProgressInfos []SubProgressInfosItem `json:"SubProgressInfos" xml:"SubProgressInfos"`
+	HistoryData      []HistoryDataItem      `json:"HistoryData" xml:"HistoryData"`
 }

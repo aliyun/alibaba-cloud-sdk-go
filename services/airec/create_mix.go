@@ -82,10 +82,10 @@ type CreateMixRequest struct {
 // CreateMixResponse is the response struct for api CreateMix
 type CreateMixResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string            `json:"RequestId" xml:"RequestId"`
+	Code      string            `json:"Code" xml:"Code"`
+	Message   string            `json:"Message" xml:"Message"`
+	Result    ResultInCreateMix `json:"Result" xml:"Result"`
 }
 
 // CreateCreateMixRequest creates a request to invoke CreateMix API

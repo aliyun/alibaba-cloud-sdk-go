@@ -83,10 +83,10 @@ type ModifyMixRequest struct {
 // ModifyMixResponse is the response struct for api ModifyMix
 type ModifyMixResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string            `json:"RequestId" xml:"RequestId"`
+	Code      string            `json:"Code" xml:"Code"`
+	Message   string            `json:"Message" xml:"Message"`
+	Result    ResultInModifyMix `json:"Result" xml:"Result"`
 }
 
 // CreateModifyMixRequest creates a request to invoke ModifyMix API

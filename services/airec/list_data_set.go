@@ -82,10 +82,10 @@ type ListDataSetRequest struct {
 // ListDataSetResponse is the response struct for api ListDataSet
 type ListDataSetResponse struct {
 	*responses.BaseResponse
-	RequestId string                    `json:"RequestId" xml:"RequestId"`
-	Code      string                    `json:"Code" xml:"Code"`
-	Message   string                    `json:"Message" xml:"Message"`
-	Result    []ResultItemInListDataSet `json:"Result" xml:"Result"`
+	RequestId string       `json:"RequestId" xml:"RequestId"`
+	Code      string       `json:"Code" xml:"Code"`
+	Message   string       `json:"Message" xml:"Message"`
+	Result    []ResultItem `json:"Result" xml:"Result"`
 }
 
 // CreateListDataSetRequest creates a request to invoke ListDataSet API

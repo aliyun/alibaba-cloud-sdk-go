@@ -82,10 +82,10 @@ type ListMixRequest struct {
 // ListMixResponse is the response struct for api ListMix
 type ListMixResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Code      string       `json:"Code" xml:"Code"`
-	Message   string       `json:"Message" xml:"Message"`
-	Result    []ResultItem `json:"Result" xml:"Result"`
+	RequestId string                `json:"RequestId" xml:"RequestId"`
+	Code      string                `json:"Code" xml:"Code"`
+	Message   string                `json:"Message" xml:"Message"`
+	Result    []ResultItemInListMix `json:"Result" xml:"Result"`
 }
 
 // CreateListMixRequest creates a request to invoke ListMix API

@@ -17,36 +17,24 @@ package airec
 
 // Result is a nested struct in airec response
 type Result struct {
-	Name            string       `json:"Name" xml:"Name"`
+	ScenarioBased   bool         `json:"ScenarioBased" xml:"ScenarioBased"`
 	UserCountUsed   int64        `json:"UserCountUsed" xml:"UserCountUsed"`
-	ChargeType      string       `json:"ChargeType" xml:"ChargeType"`
 	ItemCountUsed   int64        `json:"ItemCountUsed" xml:"ItemCountUsed"`
 	CurrentQps      int          `json:"CurrentQps" xml:"CurrentQps"`
-	ItemCount       int64        `json:"ItemCount" xml:"ItemCount"`
-	GmtCreate       string       `json:"GmtCreate" xml:"GmtCreate"`
-	DataSetVersion  string       `json:"DataSetVersion" xml:"DataSetVersion"`
-	RegionId        string       `json:"RegionId" xml:"RegionId"`
-	InstanceId      string       `json:"InstanceId" xml:"InstanceId"`
-	CommodityCode   string       `json:"CommodityCode" xml:"CommodityCode"`
-	Num             int          `json:"Num" xml:"Num"`
-	Type            string       `json:"Type" xml:"Type"`
-	ScenarioBased   bool         `json:"ScenarioBased" xml:"ScenarioBased"`
-	ExpiredTime     string       `json:"ExpiredTime" xml:"ExpiredTime"`
-	GmtModified     string       `json:"GmtModified" xml:"GmtModified"`
-	Industry        string       `json:"Industry" xml:"Industry"`
-	TableName       string       `json:"TableName" xml:"TableName"`
 	UserCount       int64        `json:"UserCount" xml:"UserCount"`
+	VersionId       string       `json:"VersionId" xml:"VersionId"`
+	GmtCreate       int64        `json:"GmtCreate" xml:"GmtCreate"`
+	ItemCount       int64        `json:"ItemCount" xml:"ItemCount"`
+	State           string       `json:"State" xml:"State"`
 	DurationSeconds int          `json:"DurationSeconds" xml:"DurationSeconds"`
-	Scene           string       `json:"Scene" xml:"Scene"`
+	InstanceId      string       `json:"InstanceId" xml:"InstanceId"`
+	GmtModified     int64        `json:"GmtModified" xml:"GmtModified"`
 	Qps             int          `json:"Qps" xml:"Qps"`
-	Status          string       `json:"Status" xml:"Status"`
-	LockMode        string       `json:"LockMode" xml:"LockMode"`
+	Num             int          `json:"Num" xml:"Num"`
 	TraceId         []string     `json:"TraceId" xml:"TraceId"`
 	Uid             []string     `json:"Uid" xml:"Uid"`
 	SceneId         []string     `json:"SceneId" xml:"SceneId"`
-	Meta            Meta         `json:"Meta" xml:"Meta"`
 	Overall         Overall      `json:"Overall" xml:"Overall"`
-	Parameter       Parameter    `json:"Parameter" xml:"Parameter"`
-	List            []ListItem   `json:"List" xml:"List"`
 	Detail          []DetailItem `json:"Detail" xml:"Detail"`
+	List            []ListItem   `json:"List" xml:"List"`
 }

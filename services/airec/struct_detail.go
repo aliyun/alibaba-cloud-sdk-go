@@ -17,5 +17,5 @@ package airec
 
 // Detail is a nested struct in airec response
 type Detail struct {
-	DetailItem []DetailItem `json:"DetailItem" xml:"DetailItem"`
+	DetailItem []DetailItem `json:"Detail" xml:"Detail"`
 }

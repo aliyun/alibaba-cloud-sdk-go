@@ -83,10 +83,10 @@ type DeleteDataSetRequest struct {
 // DeleteDataSetResponse is the response struct for api DeleteDataSet
 type DeleteDataSetResponse struct {
 	*responses.BaseResponse
-	RequestId string                `json:"RequestId" xml:"RequestId"`
-	Code      string                `json:"Code" xml:"Code"`
-	Message   string                `json:"Message" xml:"Message"`
-	Result    ResultInDeleteDataSet `json:"Result" xml:"Result"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	Result    Result `json:"Result" xml:"Result"`
 }
 
 // CreateDeleteDataSetRequest creates a request to invoke DeleteDataSet API

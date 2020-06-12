@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeSchema invokes the airec.DescribeSchema API synchronously
-// api document: https://help.aliyun.com/api/airec/describeschema.html
-func (client *Client) DescribeSchema(request *DescribeSchemaRequest) (response *DescribeSchemaResponse, err error) {
-	response = CreateDescribeSchemaResponse()
+// DowngradeInstance invokes the airec.DowngradeInstance API synchronously
+// api document: https://help.aliyun.com/api/airec/downgradeinstance.html
+func (client *Client) DowngradeInstance(request *DowngradeInstanceRequest) (response *DowngradeInstanceResponse, err error) {
+	response = CreateDowngradeInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeSchemaWithChan invokes the airec.DescribeSchema API asynchronously
-// api document: https://help.aliyun.com/api/airec/describeschema.html
+// DowngradeInstanceWithChan invokes the airec.DowngradeInstance API asynchronously
+// api document: https://help.aliyun.com/api/airec/downgradeinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeSchemaWithChan(request *DescribeSchemaRequest) (<-chan *DescribeSchemaResponse, <-chan error) {
-	responseChan := make(chan *DescribeSchemaResponse, 1)
+func (client *Client) DowngradeInstanceWithChan(request *DowngradeInstanceRequest) (<-chan *DowngradeInstanceResponse, <-chan error) {
+	responseChan := make(chan *DowngradeInstanceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeSchema(request)
+		response, err := client.DowngradeInstance(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DescribeSchemaWithChan(request *DescribeSchemaRequest) (<-
 	return responseChan, errChan
 }
 
-// DescribeSchemaWithCallback invokes the airec.DescribeSchema API asynchronously
-// api document: https://help.aliyun.com/api/airec/describeschema.html
+// DowngradeInstanceWithCallback invokes the airec.DowngradeInstance API asynchronously
+// api document: https://help.aliyun.com/api/airec/downgradeinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeSchemaWithCallback(request *DescribeSchemaRequest, callback func(response *DescribeSchemaResponse, err error)) <-chan int {
+func (client *Client) DowngradeInstanceWithCallback(request *DowngradeInstanceRequest, callback func(response *DowngradeInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeSchemaResponse
+		var response *DowngradeInstanceResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeSchema(request)
+		response, err = client.DowngradeInstance(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,14 +73,14 @@ func (client *Client) DescribeSchemaWithCallback(request *DescribeSchemaRequest,
 	return result
 }
 
-// DescribeSchemaRequest is the request struct for api DescribeSchema
-type DescribeSchemaRequest struct {
+// DowngradeInstanceRequest is the request struct for api DowngradeInstance
+type DowngradeInstanceRequest struct {
 	*requests.RoaRequest
 	InstanceId string `position:"Path" name:"InstanceId"`
 }
 
-// DescribeSchemaResponse is the response struct for api DescribeSchema
-type DescribeSchemaResponse struct {
+// DowngradeInstanceResponse is the response struct for api DowngradeInstance
+type DowngradeInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
@@ -88,19 +88,19 @@ type DescribeSchemaResponse struct {
 	Result    Result `json:"Result" xml:"Result"`
 }
 
-// CreateDescribeSchemaRequest creates a request to invoke DescribeSchema API
-func CreateDescribeSchemaRequest() (request *DescribeSchemaRequest) {
-	request = &DescribeSchemaRequest{
+// CreateDowngradeInstanceRequest creates a request to invoke DowngradeInstance API
+func CreateDowngradeInstanceRequest() (request *DowngradeInstanceRequest) {
+	request = &DowngradeInstanceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "DescribeSchema", "/openapi/instances/[InstanceId]/schema", "airec", "openAPI")
-	request.Method = requests.GET
+	request.InitWithApiInfo("Airec", "2018-10-12", "DowngradeInstance", "/openapi/instances/[InstanceId]/actions/downgrade", "airec", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
-// CreateDescribeSchemaResponse creates a response to parse from DescribeSchema response
-func CreateDescribeSchemaResponse() (response *DescribeSchemaResponse) {
-	response = &DescribeSchemaResponse{
+// CreateDowngradeInstanceResponse creates a response to parse from DowngradeInstance response
+func CreateDowngradeInstanceResponse() (response *DowngradeInstanceResponse) {
+	response = &DowngradeInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

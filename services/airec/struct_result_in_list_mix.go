@@ -17,5 +17,5 @@ package airec
 
 // ResultInListMix is a nested struct in airec response
 type ResultInListMix struct {
-	ResultItem []ResultItem `json:"ResultItem" xml:"ResultItem"`
+	ResultItem []ResultItemInListMix `json:"Result" xml:"Result"`
 }

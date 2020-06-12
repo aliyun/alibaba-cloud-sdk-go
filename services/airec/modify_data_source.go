@@ -83,10 +83,10 @@ type ModifyDataSourceRequest struct {
 // ModifyDataSourceResponse is the response struct for api ModifyDataSource
 type ModifyDataSourceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	Code      string                   `json:"Code" xml:"Code"`
+	Message   string                   `json:"Message" xml:"Message"`
+	Result    ResultInModifyDataSource `json:"Result" xml:"Result"`
 }
 
 // CreateModifyDataSourceRequest creates a request to invoke ModifyDataSource API
