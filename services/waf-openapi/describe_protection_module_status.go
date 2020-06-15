@@ -96,6 +96,7 @@ func CreateDescribeProtectionModuleStatusRequest() (request *DescribeProtectionM
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("waf-openapi", "2019-09-10", "DescribeProtectionModuleStatus", "waf", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

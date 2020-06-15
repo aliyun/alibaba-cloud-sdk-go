@@ -17,13 +17,9 @@ package waf_openapi
 
 // Rule is a nested struct in waf_openapi response
 type Rule struct {
-	Name    string `json:"Name" xml:"Name"`
-	Version int64  `json:"Version" xml:"Version"`
-	Time    int64  `json:"Time" xml:"Time"`
-	Content string `json:"Content" xml:"Content"`
-	Status  int64  `json:"Status" xml:"Status"`
-	Scene   string `json:"Scene" xml:"Scene"`
 	RuleId  int64  `json:"RuleId" xml:"RuleId"`
-	Enabled int    `json:"Enabled" xml:"Enabled"`
-	Origin  string `json:"Origin" xml:"Origin"`
+	Version int64  `json:"Version" xml:"Version"`
+	Content string `json:"Content" xml:"Content"`
+	Time    int64  `json:"Time" xml:"Time"`
+	Status  int64  `json:"Status" xml:"Status"`
 }

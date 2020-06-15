@@ -95,6 +95,7 @@ func CreateModifyLogServiceStatusRequest() (request *ModifyLogServiceStatusReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("waf-openapi", "2019-09-10", "ModifyLogServiceStatus", "waf", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
