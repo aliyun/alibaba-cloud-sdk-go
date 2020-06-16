@@ -76,6 +76,7 @@ func (client *Client) DescribeUserBandWidthDataWithCallback(request *DescribeUse
 // DescribeUserBandWidthDataRequest is the request struct for api DescribeUserBandWidthData
 type DescribeUserBandWidthDataRequest struct {
 	*requests.RpcRequest
+	Isp         string `position:"Query" name:"Isp"`
 	StartTime   string `position:"Query" name:"StartTime"`
 	EnsRegionId string `position:"Query" name:"EnsRegionId"`
 	Period      string `position:"Query" name:"Period"`
@@ -98,6 +99,7 @@ func CreateDescribeUserBandWidthDataRequest() (request *DescribeUserBandWidthDat
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ens", "2017-11-10", "DescribeUserBandWidthData", "ens", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

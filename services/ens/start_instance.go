@@ -93,6 +93,7 @@ func CreateStartInstanceRequest() (request *StartInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ens", "2017-11-10", "StartInstance", "ens", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

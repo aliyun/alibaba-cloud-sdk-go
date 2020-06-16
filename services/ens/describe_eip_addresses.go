@@ -94,6 +94,7 @@ func CreateDescribeEipAddressesRequest() (request *DescribeEipAddressesRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ens", "2017-11-10", "DescribeEipAddresses", "ens", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

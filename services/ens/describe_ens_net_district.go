@@ -84,9 +84,9 @@ type DescribeEnsNetDistrictRequest struct {
 // DescribeEnsNetDistrictResponse is the response struct for api DescribeEnsNetDistrict
 type DescribeEnsNetDistrictResponse struct {
 	*responses.BaseResponse
-	RequestId       string          `json:"RequestId" xml:"RequestId"`
-	Code            int             `json:"Code" xml:"Code"`
-	EnsNetDistricts EnsNetDistricts `json:"EnsNetDistricts" xml:"EnsNetDistricts"`
+	RequestId       string                                  `json:"RequestId" xml:"RequestId"`
+	Code            int                                     `json:"Code" xml:"Code"`
+	EnsNetDistricts EnsNetDistrictsInDescribeEnsNetDistrict `json:"EnsNetDistricts" xml:"EnsNetDistricts"`
 }
 
 // CreateDescribeEnsNetDistrictRequest creates a request to invoke DescribeEnsNetDistrict API
@@ -95,6 +95,7 @@ func CreateDescribeEnsNetDistrictRequest() (request *DescribeEnsNetDistrictReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ens", "2017-11-10", "DescribeEnsNetDistrict", "ens", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

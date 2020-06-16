@@ -103,6 +103,7 @@ func CreateDescribeImagesRequest() (request *DescribeImagesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ens", "2017-11-10", "DescribeImages", "ens", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

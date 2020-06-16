@@ -92,6 +92,7 @@ func CreateReleasePrePaidInstanceRequest() (request *ReleasePrePaidInstanceReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ens", "2017-11-10", "ReleasePrePaidInstance", "ens", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

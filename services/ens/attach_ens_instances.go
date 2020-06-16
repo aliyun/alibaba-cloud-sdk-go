@@ -93,6 +93,7 @@ func CreateAttachEnsInstancesRequest() (request *AttachEnsInstancesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ens", "2017-11-10", "AttachEnsInstances", "ens", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

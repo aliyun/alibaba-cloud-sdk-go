@@ -93,6 +93,7 @@ func CreateDescribeEnsRegionIdIpv6InfoRequest() (request *DescribeEnsRegionIdIpv
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ens", "2017-11-10", "DescribeEnsRegionIdIpv6Info", "ens", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -94,6 +94,7 @@ func CreateExportMeasurementDataRequest() (request *ExportMeasurementDataRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ens", "2017-11-10", "ExportMeasurementData", "ens", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -102,6 +102,7 @@ func CreateDescribePrePaidInstanceStockRequest() (request *DescribePrePaidInstan
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ens", "2017-11-10", "DescribePrePaidInstanceStock", "ens", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

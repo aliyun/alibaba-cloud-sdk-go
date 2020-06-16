@@ -76,6 +76,7 @@ func (client *Client) AllocateEipAddressWithCallback(request *AllocateEipAddress
 // AllocateEipAddressRequest is the request struct for api AllocateEipAddress
 type AllocateEipAddressRequest struct {
 	*requests.RpcRequest
+	MinCount    requests.Integer `position:"Query" name:"MinCount"`
 	EnsRegionId string           `position:"Query" name:"EnsRegionId"`
 	Count       requests.Integer `position:"Query" name:"Count"`
 	Version     string           `position:"Query" name:"Version"`
@@ -84,8 +85,9 @@ type AllocateEipAddressRequest struct {
 // AllocateEipAddressResponse is the response struct for api AllocateEipAddress
 type AllocateEipAddressResponse struct {
 	*responses.BaseResponse
-	RequestId    string                           `json:"RequestId" xml:"RequestId"`
-	EipAddresses EipAddressesInAllocateEipAddress `json:"EipAddresses" xml:"EipAddresses"`
+	RequestId     string                           `json:"RequestId" xml:"RequestId"`
+	BizStatusCode string                           `json:"BizStatusCode" xml:"BizStatusCode"`
+	EipAddresses  EipAddressesInAllocateEipAddress `json:"EipAddresses" xml:"EipAddresses"`
 }
 
 // CreateAllocateEipAddressRequest creates a request to invoke AllocateEipAddress API
@@ -94,6 +96,7 @@ func CreateAllocateEipAddressRequest() (request *AllocateEipAddressRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ens", "2017-11-10", "AllocateEipAddress", "ens", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

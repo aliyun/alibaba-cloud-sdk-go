@@ -77,6 +77,8 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 type CreateInstanceRequest struct {
 	*requests.RpcRequest
 	ImageId            string           `position:"Query" name:"ImageId"`
+	KeyPairName        string           `position:"Query" name:"KeyPairName"`
+	UserData           string           `position:"Query" name:"UserData"`
 	Password           string           `position:"Query" name:"Password"`
 	EnsRegionId        string           `position:"Query" name:"EnsRegionId"`
 	InstanceType       string           `position:"Query" name:"InstanceType"`
@@ -106,6 +108,7 @@ func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ens", "2017-11-10", "CreateInstance", "ens", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

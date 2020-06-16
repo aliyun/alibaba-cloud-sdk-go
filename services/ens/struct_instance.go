@@ -32,6 +32,7 @@ type Instance struct {
 	InstanceResourceType    string                             `json:"InstanceResourceType" xml:"InstanceResourceType"`
 	SpecName                string                             `json:"SpecName" xml:"SpecName"`
 	OSName                  string                             `json:"OSName" xml:"OSName"`
+	SecurityGroupIds        SecurityGroupIds                   `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
 	InnerIpAddress          InnerIpAddress                     `json:"InnerIpAddress" xml:"InnerIpAddress"`
 	PublicIpAddress         PublicIpAddressInDescribeInstances `json:"PublicIpAddress" xml:"PublicIpAddress"`
 	SystemDisk              SystemDisk                         `json:"SystemDisk" xml:"SystemDisk"`

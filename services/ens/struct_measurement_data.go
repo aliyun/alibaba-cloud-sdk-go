@@ -17,10 +17,11 @@ package ens
 
 // MeasurementData is a nested struct in ens response
 type MeasurementData struct {
-	ChargeModel       string            `json:"ChargeModel" xml:"ChargeModel"`
-	CostCycle         string            `json:"CostCycle" xml:"CostCycle"`
-	CostStartTime     string            `json:"CostStartTime" xml:"CostStartTime"`
-	CostEndTime       string            `json:"CostEndTime" xml:"CostEndTime"`
-	ResourceFeeData   ResourceFeeData   `json:"ResourceFeeData" xml:"ResourceFeeData"`
-	BandWidthFeeDatas BandWidthFeeDatas `json:"BandWidthFeeDatas" xml:"BandWidthFeeDatas"`
+	ChargeModel            string                 `json:"ChargeModel" xml:"ChargeModel"`
+	CostCycle              string                 `json:"CostCycle" xml:"CostCycle"`
+	CostStartTime          string                 `json:"CostStartTime" xml:"CostStartTime"`
+	CostEndTime            string                 `json:"CostEndTime" xml:"CostEndTime"`
+	ResourceFeeData        ResourceFeeData        `json:"ResourceFeeData" xml:"ResourceFeeData"`
+	BandWidthFeeDatas      BandWidthFeeDatas      `json:"BandWidthFeeDatas" xml:"BandWidthFeeDatas"`
+	ResourceFeeDataDetails ResourceFeeDataDetails `json:"ResourceFeeDataDetails" xml:"ResourceFeeDataDetails"`
 }

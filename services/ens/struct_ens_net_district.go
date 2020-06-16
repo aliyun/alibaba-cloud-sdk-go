@@ -18,9 +18,10 @@ package ens
 // EnsNetDistrict is a nested struct in ens response
 type EnsNetDistrict struct {
 	NetDistrictCode       string `json:"NetDistrictCode" xml:"NetDistrictCode"`
-	NetDistrictName       string `json:"NetDistrictName" xml:"NetDistrictName"`
-	NetDistrictFatherCode string `json:"NetDistrictFatherCode" xml:"NetDistrictFatherCode"`
-	EnsRegionIdCount      string `json:"EnsRegionIdCount" xml:"EnsRegionIdCount"`
 	NetDistrictLevel      string `json:"NetDistrictLevel" xml:"NetDistrictLevel"`
+	NetDistrictFatherCode string `json:"NetDistrictFatherCode" xml:"NetDistrictFatherCode"`
 	NetDistrictEnName     string `json:"NetDistrictEnName" xml:"NetDistrictEnName"`
+	InstanceCount         string `json:"InstanceCount" xml:"InstanceCount"`
+	NetDistrictName       string `json:"NetDistrictName" xml:"NetDistrictName"`
+	EnsRegionIdCount      string `json:"EnsRegionIdCount" xml:"EnsRegionIdCount"`
 }
