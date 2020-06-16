@@ -104,7 +104,7 @@ func main() {
 ## 文档
 * [Requirements](docs/0-Requirements-CN.md)
 * [Installation](docs/1-Installation-CN.md)
-* [Client](docs/2-Client-CN.md)
+* [Client & Credentials](docs/2-Client-CN.md)
 * [SSL Verify](docs/3-Verify-CN.md)
 * [Proxy](docs/4-Proxy-CN.md)
 * [Timeout](docs/5-Timeout-CN.md)
