@@ -92,6 +92,7 @@ func CreateInstallSoftwareRequest() (request *InstallSoftwareRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "InstallSoftware", "", "")
+	request.Method = requests.GET
 	return
 }
 

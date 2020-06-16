@@ -93,6 +93,7 @@ func CreateDescribeNFSClientStatusRequest() (request *DescribeNFSClientStatusReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribeNFSClientStatus", "", "")
+	request.Method = requests.GET
 	return
 }
 

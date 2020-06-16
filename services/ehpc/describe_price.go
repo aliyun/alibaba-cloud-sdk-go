@@ -109,6 +109,7 @@ func CreateDescribePriceRequest() (request *DescribePriceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "DescribePrice", "", "")
+	request.Method = requests.GET
 	return
 }
 

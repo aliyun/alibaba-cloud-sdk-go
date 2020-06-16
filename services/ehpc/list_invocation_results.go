@@ -105,6 +105,7 @@ func CreateListInvocationResultsRequest() (request *ListInvocationResultsRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "ListInvocationResults", "", "")
+	request.Method = requests.GET
 	return
 }
 

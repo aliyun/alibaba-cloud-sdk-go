@@ -110,6 +110,7 @@ func CreateUpdateClusterVolumesRequest() (request *UpdateClusterVolumesRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "UpdateClusterVolumes", "", "")
+	request.Method = requests.GET
 	return
 }
 

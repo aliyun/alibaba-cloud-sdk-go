@@ -96,6 +96,7 @@ func CreateListClustersMetaRequest() (request *ListClustersMetaRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "ListClustersMeta", "", "")
+	request.Method = requests.GET
 	return
 }
 

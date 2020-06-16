@@ -91,6 +91,7 @@ func CreateStartGWSInstanceRequest() (request *StartGWSInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "StartGWSInstance", "", "")
+	request.Method = requests.GET
 	return
 }
 

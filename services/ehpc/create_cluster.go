@@ -167,6 +167,7 @@ func CreateCreateClusterRequest() (request *CreateClusterRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "CreateCluster", "", "")
+	request.Method = requests.GET
 	return
 }
 

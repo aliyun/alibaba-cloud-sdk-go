@@ -94,6 +94,7 @@ func CreateStartVisualServiceRequest() (request *StartVisualServiceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "StartVisualService", "", "")
+	request.Method = requests.GET
 	return
 }
 

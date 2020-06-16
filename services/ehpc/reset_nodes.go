@@ -97,6 +97,7 @@ func CreateResetNodesRequest() (request *ResetNodesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "ResetNodes", "", "")
+	request.Method = requests.GET
 	return
 }
 

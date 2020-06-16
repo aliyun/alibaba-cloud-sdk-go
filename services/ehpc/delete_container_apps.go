@@ -96,6 +96,7 @@ func CreateDeleteContainerAppsRequest() (request *DeleteContainerAppsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "DeleteContainerApps", "", "")
+	request.Method = requests.GET
 	return
 }
 

@@ -96,6 +96,7 @@ func CreateListFileSystemWithMountTargetsRequest() (request *ListFileSystemWithM
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "ListFileSystemWithMountTargets", "", "")
+	request.Method = requests.GET
 	return
 }
 

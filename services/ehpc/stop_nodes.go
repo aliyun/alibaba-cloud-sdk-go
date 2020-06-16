@@ -98,6 +98,7 @@ func CreateStopNodesRequest() (request *StopNodesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "StopNodes", "", "")
+	request.Method = requests.GET
 	return
 }
 

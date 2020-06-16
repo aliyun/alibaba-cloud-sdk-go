@@ -94,6 +94,7 @@ func CreateCreateGWSClusterRequest() (request *CreateGWSClusterRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "CreateGWSCluster", "", "")
+	request.Method = requests.GET
 	return
 }
 

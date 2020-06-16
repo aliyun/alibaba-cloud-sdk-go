@@ -92,6 +92,7 @@ func CreateStopJobsRequest() (request *StopJobsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "StopJobs", "", "")
+	request.Method = requests.GET
 	return
 }
 

@@ -102,6 +102,7 @@ func CreateEditJobTemplateRequest() (request *EditJobTemplateRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "EditJobTemplate", "", "")
+	request.Method = requests.GET
 	return
 }
 

@@ -107,8 +107,9 @@ type ApplyNodesZoneInfos struct {
 
 // ApplyNodesInstanceTypeModel is a repeated param struct in ApplyNodesRequest
 type ApplyNodesInstanceTypeModel struct {
-	MaxPrice     string `name:"MaxPrice"`
-	InstanceType string `name:"InstanceType"`
+	MaxPrice      string `name:"MaxPrice"`
+	TargetImageId string `name:"TargetImageId"`
+	InstanceType  string `name:"InstanceType"`
 }
 
 // ApplyNodesResponse is the response struct for api ApplyNodes
@@ -126,6 +127,7 @@ func CreateApplyNodesRequest() (request *ApplyNodesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "ApplyNodes", "", "")
+	request.Method = requests.GET
 	return
 }
 

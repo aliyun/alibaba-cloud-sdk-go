@@ -95,6 +95,7 @@ func CreateSetGWSClusterPolicyRequest() (request *SetGWSClusterPolicyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "SetGWSClusterPolicy", "", "")
+	request.Method = requests.POST
 	return
 }
 

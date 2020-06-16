@@ -95,6 +95,7 @@ func CreateBindAccountToClusterUserRequest() (request *BindAccountToClusterUserR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "BindAccountToClusterUser", "", "")
+	request.Method = requests.GET
 	return
 }
 

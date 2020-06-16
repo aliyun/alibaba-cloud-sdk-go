@@ -116,6 +116,7 @@ func CreateAddNodesRequest() (request *AddNodesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "AddNodes", "", "")
+	request.Method = requests.GET
 	return
 }
 

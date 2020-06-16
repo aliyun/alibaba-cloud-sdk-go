@@ -98,6 +98,7 @@ func CreateListClusterLogsRequest() (request *ListClusterLogsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "ListClusterLogs", "", "")
+	request.Method = requests.GET
 	return
 }
 

@@ -93,6 +93,7 @@ func CreateCreateGWSImageRequest() (request *CreateGWSImageRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "CreateGWSImage", "", "")
+	request.Method = requests.GET
 	return
 }
 

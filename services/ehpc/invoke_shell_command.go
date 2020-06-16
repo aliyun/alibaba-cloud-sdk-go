@@ -102,6 +102,7 @@ func CreateInvokeShellCommandRequest() (request *InvokeShellCommandRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "InvokeShellCommand", "", "")
+	request.Method = requests.GET
 	return
 }
 

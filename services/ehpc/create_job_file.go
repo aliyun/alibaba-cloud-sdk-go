@@ -96,6 +96,7 @@ func CreateCreateJobFileRequest() (request *CreateJobFileRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "CreateJobFile", "", "")
+	request.Method = requests.GET
 	return
 }
 

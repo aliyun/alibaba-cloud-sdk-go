@@ -93,6 +93,7 @@ func CreateGetHybridClusterConfigRequest() (request *GetHybridClusterConfigReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "GetHybridClusterConfig", "", "")
+	request.Method = requests.GET
 	return
 }
 

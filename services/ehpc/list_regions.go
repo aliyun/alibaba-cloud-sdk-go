@@ -91,6 +91,7 @@ func CreateListRegionsRequest() (request *ListRegionsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "ListRegions", "", "")
+	request.Method = requests.GET
 	return
 }
 

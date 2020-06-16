@@ -91,6 +91,7 @@ func CreateStopClusterRequest() (request *StopClusterRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "StopCluster", "", "")
+	request.Method = requests.GET
 	return
 }
 

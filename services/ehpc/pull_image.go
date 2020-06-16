@@ -94,6 +94,7 @@ func CreatePullImageRequest() (request *PullImageRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "PullImage", "", "")
+	request.Method = requests.GET
 	return
 }
 

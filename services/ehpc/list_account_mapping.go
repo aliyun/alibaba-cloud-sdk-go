@@ -92,6 +92,7 @@ func CreateListAccountMappingRequest() (request *ListAccountMappingRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "ListAccountMapping", "", "")
+	request.Method = requests.GET
 	return
 }
 

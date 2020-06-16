@@ -92,6 +92,7 @@ func CreateUninstallSoftwareRequest() (request *UninstallSoftwareRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "UninstallSoftware", "", "")
+	request.Method = requests.GET
 	return
 }
 

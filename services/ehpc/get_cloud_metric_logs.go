@@ -100,6 +100,7 @@ func CreateGetCloudMetricLogsRequest() (request *GetCloudMetricLogsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("EHPC", "2018-04-12", "GetCloudMetricLogs", "", "")
+	request.Method = requests.GET
 	return
 }
 
