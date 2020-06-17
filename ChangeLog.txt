@@ -1,3 +1,8 @@
+2020-06-17 Version: v1.61.259
+- Generated 2020-03-30, 2019-10-30 for `aliyuncvc`.
+- Public beta version.
+- Add Api Overseas.
+
 2020-06-16 Version: v1.61.258
 - Generated 2018-04-12 for `EHPC`.
 - Support TargetImageId in ApplyNodes Interface.

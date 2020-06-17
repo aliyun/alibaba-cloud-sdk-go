@@ -85,6 +85,7 @@ type BatchCreateDeviceResponse struct {
 	ErrorCode int    `json:"ErrorCode" xml:"ErrorCode"`
 	Message   string `json:"Message" xml:"Message"`
 	Success   bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 	Devices   []Data `json:"Devices" xml:"Devices"`
 }
 
