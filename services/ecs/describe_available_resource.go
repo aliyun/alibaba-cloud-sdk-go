@@ -110,6 +110,7 @@ func CreateDescribeAvailableResourceRequest() (request *DescribeAvailableResourc
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeAvailableResource", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

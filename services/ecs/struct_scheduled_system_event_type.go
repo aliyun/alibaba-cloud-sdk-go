@@ -21,6 +21,7 @@ type ScheduledSystemEventType struct {
 	EventPublishTime  string            `json:"EventPublishTime" xml:"EventPublishTime"`
 	NotBefore         string            `json:"NotBefore" xml:"NotBefore"`
 	Reason            string            `json:"Reason" xml:"Reason"`
+	ImpactLevel       string            `json:"ImpactLevel" xml:"ImpactLevel"`
 	EventCycleStatus  EventCycleStatus  `json:"EventCycleStatus" xml:"EventCycleStatus"`
 	EventType         EventType         `json:"EventType" xml:"EventType"`
 	ExtendedAttribute ExtendedAttribute `json:"ExtendedAttribute" xml:"ExtendedAttribute"`

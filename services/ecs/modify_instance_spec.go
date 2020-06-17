@@ -105,6 +105,7 @@ func CreateModifyInstanceSpecRequest() (request *ModifyInstanceSpecRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceSpec", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

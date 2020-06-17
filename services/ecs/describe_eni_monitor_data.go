@@ -101,6 +101,7 @@ func CreateDescribeEniMonitorDataRequest() (request *DescribeEniMonitorDataReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeEniMonitorData", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

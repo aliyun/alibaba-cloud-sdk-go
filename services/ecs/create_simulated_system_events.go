@@ -98,6 +98,7 @@ func CreateCreateSimulatedSystemEventsRequest() (request *CreateSimulatedSystemE
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateSimulatedSystemEvents", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

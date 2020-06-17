@@ -97,6 +97,7 @@ func CreateDeleteLaunchTemplateVersionRequest() (request *DeleteLaunchTemplateVe
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteLaunchTemplateVersion", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -100,6 +100,7 @@ func CreateModifyReservedInstanceAttributeRequest() (request *ModifyReservedInst
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyReservedInstanceAttribute", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

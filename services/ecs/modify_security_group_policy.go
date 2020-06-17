@@ -97,6 +97,7 @@ func CreateModifySecurityGroupPolicyRequest() (request *ModifySecurityGroupPolic
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySecurityGroupPolicy", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -76,14 +76,17 @@ func (client *Client) CreateAutoSnapshotPolicyWithCallback(request *CreateAutoSn
 // CreateAutoSnapshotPolicyRequest is the request struct for api CreateAutoSnapshotPolicy
 type CreateAutoSnapshotPolicyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId        requests.Integer               `position:"Query" name:"ResourceOwnerId"`
-	TimePoints             string                         `position:"Query" name:"timePoints"`
-	RepeatWeekdays         string                         `position:"Query" name:"repeatWeekdays"`
-	Tag                    *[]CreateAutoSnapshotPolicyTag `position:"Query" name:"Tag"  type:"Repeated"`
-	ResourceOwnerAccount   string                         `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId                requests.Integer               `position:"Query" name:"OwnerId"`
-	AutoSnapshotPolicyName string                         `position:"Query" name:"autoSnapshotPolicyName"`
-	RetentionDays          requests.Integer               `position:"Query" name:"retentionDays"`
+	ResourceOwnerId              requests.Integer               `position:"Query" name:"ResourceOwnerId"`
+	CopiedSnapshotsRetentionDays requests.Integer               `position:"Query" name:"CopiedSnapshotsRetentionDays"`
+	TimePoints                   string                         `position:"Query" name:"timePoints"`
+	RepeatWeekdays               string                         `position:"Query" name:"repeatWeekdays"`
+	Tag                          *[]CreateAutoSnapshotPolicyTag `position:"Query" name:"Tag"  type:"Repeated"`
+	EnableCrossRegionCopy        requests.Boolean               `position:"Query" name:"EnableCrossRegionCopy"`
+	ResourceOwnerAccount         string                         `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId                      requests.Integer               `position:"Query" name:"OwnerId"`
+	AutoSnapshotPolicyName       string                         `position:"Query" name:"autoSnapshotPolicyName"`
+	RetentionDays                requests.Integer               `position:"Query" name:"retentionDays"`
+	TargetCopyRegions            string                         `position:"Query" name:"TargetCopyRegions"`
 }
 
 // CreateAutoSnapshotPolicyTag is a repeated param struct in CreateAutoSnapshotPolicyRequest
@@ -105,6 +108,7 @@ func CreateCreateAutoSnapshotPolicyRequest() (request *CreateAutoSnapshotPolicyR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateAutoSnapshotPolicy", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -77,6 +77,7 @@ func (client *Client) ModifyInstanceDeploymentWithCallback(request *ModifyInstan
 type ModifyInstanceDeploymentRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DeploymentSetGroupNo requests.Integer `position:"Query" name:"DeploymentSetGroupNo"`
 	InstanceType         string           `position:"Query" name:"InstanceType"`
 	DeploymentSetId      string           `position:"Query" name:"DeploymentSetId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -102,6 +103,7 @@ func CreateModifyInstanceDeploymentRequest() (request *ModifyInstanceDeploymentR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceDeployment", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -76,12 +76,13 @@ func (client *Client) DetachNetworkInterfaceWithCallback(request *DetachNetworkI
 // DetachNetworkInterfaceRequest is the request struct for api DetachNetworkInterface
 type DetachNetworkInterfaceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	NetworkInterfaceId   string           `position:"Query" name:"NetworkInterfaceId"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	TrunkNetworkInstanceId string           `position:"Query" name:"TrunkNetworkInstanceId"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId             string           `position:"Query" name:"InstanceId"`
+	NetworkInterfaceId     string           `position:"Query" name:"NetworkInterfaceId"`
 }
 
 // DetachNetworkInterfaceResponse is the response struct for api DetachNetworkInterface
@@ -96,6 +97,7 @@ func CreateDetachNetworkInterfaceRequest() (request *DetachNetworkInterfaceReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachNetworkInterface", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

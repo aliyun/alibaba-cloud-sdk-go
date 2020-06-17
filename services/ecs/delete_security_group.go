@@ -95,6 +95,7 @@ func CreateDeleteSecurityGroupRequest() (request *DeleteSecurityGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteSecurityGroup", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

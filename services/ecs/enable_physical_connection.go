@@ -97,6 +97,7 @@ func CreateEnablePhysicalConnectionRequest() (request *EnablePhysicalConnectionR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "EnablePhysicalConnection", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

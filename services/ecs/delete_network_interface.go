@@ -95,6 +95,7 @@ func CreateDeleteNetworkInterfaceRequest() (request *DeleteNetworkInterfaceReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteNetworkInterface", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

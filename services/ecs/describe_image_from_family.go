@@ -96,6 +96,7 @@ func CreateDescribeImageFromFamilyRequest() (request *DescribeImageFromFamilyReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeImageFromFamily", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

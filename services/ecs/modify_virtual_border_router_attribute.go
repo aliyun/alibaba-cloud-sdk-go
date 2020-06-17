@@ -104,6 +104,7 @@ func CreateModifyVirtualBorderRouterAttributeRequest() (request *ModifyVirtualBo
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyVirtualBorderRouterAttribute", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

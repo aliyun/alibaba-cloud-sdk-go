@@ -77,6 +77,7 @@ func (client *Client) AssignPrivateIpAddressesWithCallback(request *AssignPrivat
 type AssignPrivateIpAddressesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId                requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken                    string           `position:"Query" name:"ClientToken"`
 	SecondaryPrivateIpAddressCount requests.Integer `position:"Query" name:"SecondaryPrivateIpAddressCount"`
 	ResourceOwnerAccount           string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                   string           `position:"Query" name:"OwnerAccount"`
@@ -88,7 +89,8 @@ type AssignPrivateIpAddressesRequest struct {
 // AssignPrivateIpAddressesResponse is the response struct for api AssignPrivateIpAddresses
 type AssignPrivateIpAddressesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId                     string                        `json:"RequestId" xml:"RequestId"`
+	AssignedPrivateIpAddressesSet AssignedPrivateIpAddressesSet `json:"AssignedPrivateIpAddressesSet" xml:"AssignedPrivateIpAddressesSet"`
 }
 
 // CreateAssignPrivateIpAddressesRequest creates a request to invoke AssignPrivateIpAddresses API
@@ -97,6 +99,7 @@ func CreateAssignPrivateIpAddressesRequest() (request *AssignPrivateIpAddressesR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "AssignPrivateIpAddresses", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

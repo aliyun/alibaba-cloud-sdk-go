@@ -98,6 +98,7 @@ func CreateResizeDiskRequest() (request *ResizeDiskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ResizeDisk", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

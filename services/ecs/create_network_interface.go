@@ -83,6 +83,7 @@ type CreateNetworkInterfaceRequest struct {
 	SecondaryPrivateIpAddressCount requests.Integer             `position:"Query" name:"SecondaryPrivateIpAddressCount"`
 	BusinessType                   string                       `position:"Query" name:"BusinessType"`
 	ResourceGroupId                string                       `position:"Query" name:"ResourceGroupId"`
+	InstanceType                   string                       `position:"Query" name:"InstanceType"`
 	Tag                            *[]CreateNetworkInterfaceTag `position:"Query" name:"Tag"  type:"Repeated"`
 	NetworkInterfaceName           string                       `position:"Query" name:"NetworkInterfaceName"`
 	Visible                        requests.Boolean             `position:"Query" name:"Visible"`
@@ -104,8 +105,24 @@ type CreateNetworkInterfaceTag struct {
 // CreateNetworkInterfaceResponse is the response struct for api CreateNetworkInterface
 type CreateNetworkInterfaceResponse struct {
 	*responses.BaseResponse
-	RequestId          string `json:"RequestId" xml:"RequestId"`
-	NetworkInterfaceId string `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
+	RequestId            string                                   `json:"RequestId" xml:"RequestId"`
+	NetworkInterfaceId   string                                   `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
+	Status               string                                   `json:"Status" xml:"Status"`
+	Type                 string                                   `json:"Type" xml:"Type"`
+	VpcId                string                                   `json:"VpcId" xml:"VpcId"`
+	VSwitchId            string                                   `json:"VSwitchId" xml:"VSwitchId"`
+	ZoneId               string                                   `json:"ZoneId" xml:"ZoneId"`
+	PrivateIpAddress     string                                   `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
+	MacAddress           string                                   `json:"MacAddress" xml:"MacAddress"`
+	NetworkInterfaceName string                                   `json:"NetworkInterfaceName" xml:"NetworkInterfaceName"`
+	Description          string                                   `json:"Description" xml:"Description"`
+	ResourceGroupId      string                                   `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ServiceID            int64                                    `json:"ServiceID" xml:"ServiceID"`
+	ServiceManaged       bool                                     `json:"ServiceManaged" xml:"ServiceManaged"`
+	OwnerId              string                                   `json:"OwnerId" xml:"OwnerId"`
+	SecurityGroupIds     SecurityGroupIdsInCreateNetworkInterface `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
+	PrivateIpSets        PrivateIpSetsInCreateNetworkInterface    `json:"PrivateIpSets" xml:"PrivateIpSets"`
+	Tags                 TagsInCreateNetworkInterface             `json:"Tags" xml:"Tags"`
 }
 
 // CreateCreateNetworkInterfaceRequest creates a request to invoke CreateNetworkInterface API
@@ -114,6 +131,7 @@ func CreateCreateNetworkInterfaceRequest() (request *CreateNetworkInterfaceReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateNetworkInterface", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

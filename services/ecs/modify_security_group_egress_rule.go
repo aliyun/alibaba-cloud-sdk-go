@@ -110,6 +110,7 @@ func CreateModifySecurityGroupEgressRuleRequest() (request *ModifySecurityGroupE
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifySecurityGroupEgressRule", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

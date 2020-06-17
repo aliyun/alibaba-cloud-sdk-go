@@ -99,6 +99,7 @@ func CreateAttachKeyPairRequest() (request *AttachKeyPairRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachKeyPair", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -24,6 +24,7 @@ type Disk struct {
 	DeleteAutoSnapshot            bool                          `json:"DeleteAutoSnapshot" xml:"DeleteAutoSnapshot"`
 	EnableAutomatedSnapshotPolicy bool                          `json:"EnableAutomatedSnapshotPolicy" xml:"EnableAutomatedSnapshotPolicy"`
 	DiskId                        string                        `json:"DiskId" xml:"DiskId"`
+	SerialNumber                  string                        `json:"SerialNumber" xml:"SerialNumber"`
 	Size                          int                           `json:"Size" xml:"Size"`
 	IOPS                          int                           `json:"IOPS" xml:"IOPS"`
 	RegionId                      string                        `json:"RegionId" xml:"RegionId"`

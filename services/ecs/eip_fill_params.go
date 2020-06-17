@@ -101,6 +101,7 @@ func CreateEipFillParamsRequest() (request *EipFillParamsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "EipFillParams", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

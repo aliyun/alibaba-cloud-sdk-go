@@ -97,6 +97,7 @@ func CreateModifyStorageCapacityUnitAttributeRequest() (request *ModifyStorageCa
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyStorageCapacityUnitAttribute", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

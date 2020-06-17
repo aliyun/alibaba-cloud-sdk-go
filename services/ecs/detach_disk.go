@@ -97,6 +97,7 @@ func CreateDetachDiskRequest() (request *DetachDiskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DetachDisk", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

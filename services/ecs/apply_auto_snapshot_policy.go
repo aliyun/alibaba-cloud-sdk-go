@@ -95,6 +95,7 @@ func CreateApplyAutoSnapshotPolicyRequest() (request *ApplyAutoSnapshotPolicyReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ApplyAutoSnapshotPolicy", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

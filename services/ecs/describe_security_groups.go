@@ -91,6 +91,7 @@ type DescribeSecurityGroupsRequest struct {
 	OwnerAccount         string                       `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer             `position:"Query" name:"OwnerId"`
 	SecurityGroupIds     string                       `position:"Query" name:"SecurityGroupIds"`
+	SecurityGroupType    string                       `position:"Query" name:"SecurityGroupType"`
 	VpcId                string                       `position:"Query" name:"VpcId"`
 }
 
@@ -117,6 +118,7 @@ func CreateDescribeSecurityGroupsRequest() (request *DescribeSecurityGroupsReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSecurityGroups", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

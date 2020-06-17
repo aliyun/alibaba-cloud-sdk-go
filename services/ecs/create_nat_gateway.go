@@ -109,6 +109,7 @@ func CreateCreateNatGatewayRequest() (request *CreateNatGatewayRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateNatGateway", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

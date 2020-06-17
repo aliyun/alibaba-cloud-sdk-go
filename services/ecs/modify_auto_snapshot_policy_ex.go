@@ -76,14 +76,17 @@ func (client *Client) ModifyAutoSnapshotPolicyExWithCallback(request *ModifyAuto
 // ModifyAutoSnapshotPolicyExRequest is the request struct for api ModifyAutoSnapshotPolicyEx
 type ModifyAutoSnapshotPolicyExRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AutoSnapshotPolicyId   string           `position:"Query" name:"autoSnapshotPolicyId"`
-	TimePoints             string           `position:"Query" name:"timePoints"`
-	RepeatWeekdays         string           `position:"Query" name:"repeatWeekdays"`
-	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	AutoSnapshotPolicyName string           `position:"Query" name:"autoSnapshotPolicyName"`
-	RetentionDays          requests.Integer `position:"Query" name:"retentionDays"`
+	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AutoSnapshotPolicyId         string           `position:"Query" name:"autoSnapshotPolicyId"`
+	CopiedSnapshotsRetentionDays requests.Integer `position:"Query" name:"CopiedSnapshotsRetentionDays"`
+	TimePoints                   string           `position:"Query" name:"timePoints"`
+	RepeatWeekdays               string           `position:"Query" name:"repeatWeekdays"`
+	EnableCrossRegionCopy        requests.Boolean `position:"Query" name:"EnableCrossRegionCopy"`
+	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
+	AutoSnapshotPolicyName       string           `position:"Query" name:"autoSnapshotPolicyName"`
+	RetentionDays                requests.Integer `position:"Query" name:"retentionDays"`
+	TargetCopyRegions            string           `position:"Query" name:"TargetCopyRegions"`
 }
 
 // ModifyAutoSnapshotPolicyExResponse is the response struct for api ModifyAutoSnapshotPolicyEx
@@ -98,6 +101,7 @@ func CreateModifyAutoSnapshotPolicyExRequest() (request *ModifyAutoSnapshotPolic
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyAutoSnapshotPolicyEx", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

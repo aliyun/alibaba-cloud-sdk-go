@@ -79,6 +79,7 @@ type CreateDeploymentSetRequest struct {
 	ResourceOwnerId                  requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken                      string           `position:"Query" name:"ClientToken"`
 	Description                      string           `position:"Query" name:"Description"`
+	GroupCount                       requests.Integer `position:"Query" name:"GroupCount"`
 	ResourceOwnerAccount             string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                     string           `position:"Query" name:"OwnerAccount"`
 	DeploymentSetName                string           `position:"Query" name:"DeploymentSetName"`
@@ -102,6 +103,7 @@ func CreateCreateDeploymentSetRequest() (request *CreateDeploymentSetRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateDeploymentSet", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -96,6 +96,7 @@ func CreateUnassignIpv6AddressesRequest() (request *UnassignIpv6AddressesRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "UnassignIpv6Addresses", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

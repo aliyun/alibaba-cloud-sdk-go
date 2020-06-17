@@ -99,6 +99,7 @@ func CreateDeleteInstancesRequest() (request *DeleteInstancesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteInstances", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

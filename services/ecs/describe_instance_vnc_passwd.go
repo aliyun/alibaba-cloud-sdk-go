@@ -96,6 +96,7 @@ func CreateDescribeInstanceVncPasswdRequest() (request *DescribeInstanceVncPassw
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceVncPasswd", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

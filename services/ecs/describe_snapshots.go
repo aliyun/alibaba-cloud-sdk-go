@@ -99,6 +99,7 @@ type DescribeSnapshotsRequest struct {
 	Encrypted            requests.Boolean        `position:"Query" name:"Encrypted"`
 	SnapshotType         string                  `position:"Query" name:"SnapshotType"`
 	KMSKeyId             string                  `position:"Query" name:"KMSKeyId"`
+	Category             string                  `position:"Query" name:"Category"`
 	Status               string                  `position:"Query" name:"Status"`
 }
 
@@ -124,6 +125,7 @@ func CreateDescribeSnapshotsRequest() (request *DescribeSnapshotsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSnapshots", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

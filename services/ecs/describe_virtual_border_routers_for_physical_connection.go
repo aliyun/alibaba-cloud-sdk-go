@@ -107,6 +107,7 @@ func CreateDescribeVirtualBorderRoutersForPhysicalConnectionRequest() (request *
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVirtualBorderRoutersForPhysicalConnection", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -97,6 +97,7 @@ func CreateRecoverVirtualBorderRouterRequest() (request *RecoverVirtualBorderRou
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "RecoverVirtualBorderRouter", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -101,6 +101,7 @@ func CreateDescribeInstanceMaintenanceAttributesRequest() (request *DescribeInst
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceMaintenanceAttributes", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

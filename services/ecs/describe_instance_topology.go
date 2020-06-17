@@ -95,6 +95,7 @@ func CreateDescribeInstanceTopologyRequest() (request *DescribeInstanceTopologyR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceTopology", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

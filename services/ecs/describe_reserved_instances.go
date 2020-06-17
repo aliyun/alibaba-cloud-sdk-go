@@ -110,6 +110,7 @@ func CreateDescribeReservedInstancesRequest() (request *DescribeReservedInstance
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeReservedInstances", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

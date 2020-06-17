@@ -106,6 +106,7 @@ func CreateCreateRouteEntryRequest() (request *CreateRouteEntryRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateRouteEntry", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

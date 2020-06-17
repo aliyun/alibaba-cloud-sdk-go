@@ -96,6 +96,7 @@ func CreateModifyDedicatedHostAutoReleaseTimeRequest() (request *ModifyDedicated
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDedicatedHostAutoReleaseTime", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

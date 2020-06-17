@@ -77,12 +77,14 @@ func (client *Client) ModifyInstanceVpcAttributeWithCallback(request *ModifyInst
 type ModifyInstanceVpcAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecurityGroupId      *[]string        `position:"Query" name:"SecurityGroupId"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress     string           `position:"Query" name:"PrivateIpAddress"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	VpcId                string           `position:"Query" name:"VpcId"`
 }
 
 // ModifyInstanceVpcAttributeResponse is the response struct for api ModifyInstanceVpcAttribute
@@ -97,6 +99,7 @@ func CreateModifyInstanceVpcAttributeRequest() (request *ModifyInstanceVpcAttrib
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceVpcAttribute", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

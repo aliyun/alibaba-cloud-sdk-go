@@ -98,6 +98,7 @@ func CreateUnassociateHaVipRequest() (request *UnassociateHaVipRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "UnassociateHaVip", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

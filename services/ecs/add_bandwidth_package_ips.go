@@ -97,6 +97,7 @@ func CreateAddBandwidthPackageIpsRequest() (request *AddBandwidthPackageIpsReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "AddBandwidthPackageIps", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

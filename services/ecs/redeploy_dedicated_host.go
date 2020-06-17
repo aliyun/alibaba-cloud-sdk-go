@@ -95,6 +95,7 @@ func CreateRedeployDedicatedHostRequest() (request *RedeployDedicatedHostRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "RedeployDedicatedHost", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

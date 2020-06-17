@@ -110,6 +110,7 @@ func CreateDescribeLaunchTemplatesRequest() (request *DescribeLaunchTemplatesReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeLaunchTemplates", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

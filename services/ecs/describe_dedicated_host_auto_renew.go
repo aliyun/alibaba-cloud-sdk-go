@@ -96,6 +96,7 @@ func CreateDescribeDedicatedHostAutoRenewRequest() (request *DescribeDedicatedHo
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeDedicatedHostAutoRenew", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

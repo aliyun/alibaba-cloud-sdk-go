@@ -24,6 +24,7 @@ type DeploymentSet struct {
 	DeploymentStrategy       string      `json:"DeploymentStrategy" xml:"DeploymentStrategy"`
 	Domain                   string      `json:"Domain" xml:"Domain"`
 	Granularity              string      `json:"Granularity" xml:"Granularity"`
+	GroupCount               int         `json:"GroupCount" xml:"GroupCount"`
 	InstanceAmount           int         `json:"InstanceAmount" xml:"InstanceAmount"`
 	CreationTime             string      `json:"CreationTime" xml:"CreationTime"`
 	InstanceIds              InstanceIds `json:"InstanceIds" xml:"InstanceIds"`

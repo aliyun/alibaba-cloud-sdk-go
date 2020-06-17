@@ -110,6 +110,7 @@ func CreateAuthorizeSecurityGroupRequest() (request *AuthorizeSecurityGroupReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "AuthorizeSecurityGroup", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

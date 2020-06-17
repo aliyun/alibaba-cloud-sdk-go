@@ -89,6 +89,7 @@ type RunInstancesRequest struct {
 	ResourceGroupId                string                          `position:"Query" name:"ResourceGroupId"`
 	HostName                       string                          `position:"Query" name:"HostName"`
 	Password                       string                          `position:"Query" name:"Password"`
+	DeploymentSetGroupNo           requests.Integer                `position:"Query" name:"DeploymentSetGroupNo"`
 	StorageSetPartitionNumber      requests.Integer                `position:"Query" name:"StorageSetPartitionNumber"`
 	Tag                            *[]RunInstancesTag              `position:"Query" name:"Tag"  type:"Repeated"`
 	SystemDiskAutoSnapshotPolicyId string                          `position:"Query" name:"SystemDisk.AutoSnapshotPolicyId"`
@@ -197,6 +198,7 @@ func CreateRunInstancesRequest() (request *RunInstancesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "RunInstances", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

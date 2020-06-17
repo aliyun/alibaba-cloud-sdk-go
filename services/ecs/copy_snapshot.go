@@ -106,6 +106,7 @@ func CreateCopySnapshotRequest() (request *CopySnapshotRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "CopySnapshot", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

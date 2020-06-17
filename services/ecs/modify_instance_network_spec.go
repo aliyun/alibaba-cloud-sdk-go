@@ -104,6 +104,7 @@ func CreateModifyInstanceNetworkSpecRequest() (request *ModifyInstanceNetworkSpe
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

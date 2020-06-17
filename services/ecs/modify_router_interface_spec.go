@@ -99,6 +99,7 @@ func CreateModifyRouterInterfaceSpecRequest() (request *ModifyRouterInterfaceSpe
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyRouterInterfaceSpec", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

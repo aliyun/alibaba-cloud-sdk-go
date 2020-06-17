@@ -101,6 +101,7 @@ func CreateReportInstancesStatusRequest() (request *ReportInstancesStatusRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ReportInstancesStatus", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

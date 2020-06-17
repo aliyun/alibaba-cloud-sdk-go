@@ -96,6 +96,7 @@ func CreateResetDiskRequest() (request *ResetDiskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ResetDisk", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

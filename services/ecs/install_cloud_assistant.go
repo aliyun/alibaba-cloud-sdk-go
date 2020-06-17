@@ -95,6 +95,7 @@ func CreateInstallCloudAssistantRequest() (request *InstallCloudAssistantRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "InstallCloudAssistant", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

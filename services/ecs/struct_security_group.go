@@ -26,5 +26,7 @@ type SecurityGroup struct {
 	AvailableInstanceAmount int                          `json:"AvailableInstanceAmount" xml:"AvailableInstanceAmount"`
 	EcsCount                int                          `json:"EcsCount" xml:"EcsCount"`
 	ResourceGroupId         string                       `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ServiceID               int64                        `json:"ServiceID" xml:"ServiceID"`
+	ServiceManaged          bool                         `json:"ServiceManaged" xml:"ServiceManaged"`
 	Tags                    TagsInDescribeSecurityGroups `json:"Tags" xml:"Tags"`
 }

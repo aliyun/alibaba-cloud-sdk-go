@@ -80,6 +80,7 @@ type DescribeInstanceHistoryEventsRequest struct {
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	EventCycleStatus         string           `position:"Query" name:"EventCycleStatus"`
 	PageNumber               requests.Integer `position:"Query" name:"PageNumber"`
+	ImpactLevel              string           `position:"Query" name:"ImpactLevel"`
 	PageSize                 requests.Integer `position:"Query" name:"PageSize"`
 	InstanceEventCycleStatus *[]string        `position:"Query" name:"InstanceEventCycleStatus"  type:"Repeated"`
 	EventPublishTimeEnd      string           `position:"Query" name:"EventPublishTime.End"`
@@ -110,6 +111,7 @@ func CreateDescribeInstanceHistoryEventsRequest() (request *DescribeInstanceHist
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceHistoryEvents", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

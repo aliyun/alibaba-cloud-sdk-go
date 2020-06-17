@@ -101,6 +101,7 @@ func CreateAttachDiskRequest() (request *AttachDiskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "AttachDisk", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

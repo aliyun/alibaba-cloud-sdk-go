@@ -97,6 +97,7 @@ func CreateAssociateEipAddressRequest() (request *AssociateEipAddressRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "AssociateEipAddress", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

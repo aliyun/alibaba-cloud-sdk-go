@@ -79,6 +79,7 @@ type DescribeInvocationResultsRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CommandId            string           `position:"Query" name:"CommandId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ContentEncoding      string           `position:"Query" name:"ContentEncoding"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	InvokeId             string           `position:"Query" name:"InvokeId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -102,6 +103,7 @@ func CreateDescribeInvocationResultsRequest() (request *DescribeInvocationResult
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInvocationResults", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

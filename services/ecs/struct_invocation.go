@@ -29,6 +29,7 @@ type Invocation struct {
 	InvokeId          string            `json:"InvokeId" xml:"InvokeId"`
 	InvokeStatus      string            `json:"InvokeStatus" xml:"InvokeStatus"`
 	CommandContent    string            `json:"CommandContent" xml:"CommandContent"`
+	InvocationStatus  string            `json:"InvocationStatus" xml:"InvocationStatus"`
 	CommandType       string            `json:"CommandType" xml:"CommandType"`
 	InvokeInstances   InvokeInstances   `json:"InvokeInstances" xml:"InvokeInstances"`
 	InvocationResults InvocationResults `json:"InvocationResults" xml:"InvocationResults"`

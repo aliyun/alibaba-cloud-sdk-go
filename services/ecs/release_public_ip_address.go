@@ -96,6 +96,7 @@ func CreateReleasePublicIpAddressRequest() (request *ReleasePublicIpAddressReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ReleasePublicIpAddress", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -97,6 +97,7 @@ func CreateModifyLaunchTemplateDefaultVersionRequest() (request *ModifyLaunchTem
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyLaunchTemplateDefaultVersion", "ecs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

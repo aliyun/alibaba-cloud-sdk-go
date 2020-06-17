@@ -29,6 +29,7 @@ type Instance struct {
 	InstanceChargeType         string                               `json:"InstanceChargeType" xml:"InstanceChargeType"`
 	ClusterId                  string                               `json:"ClusterId" xml:"ClusterId"`
 	InstanceName               string                               `json:"InstanceName" xml:"InstanceName"`
+	DeploymentSetGroupNo       int                                  `json:"DeploymentSetGroupNo" xml:"DeploymentSetGroupNo"`
 	CreditSpecification        string                               `json:"CreditSpecification" xml:"CreditSpecification"`
 	GPUAmount                  int                                  `json:"GPUAmount" xml:"GPUAmount"`
 	StartTime                  string                               `json:"StartTime" xml:"StartTime"`
