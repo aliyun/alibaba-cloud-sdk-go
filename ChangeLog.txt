@@ -1,3 +1,8 @@
+2020-06-18 Version: v1.61.261
+- Generated 2020-03-30, 2019-10-30, 2019-09-19 for `aliyuncvc`.
+- Public beta version.
+- Add Api Overseas.
+
 2020-06-17 Version: v1.61.260
 - Generated 2014-05-26 for `Ecs`.
 - Supported sync create eni and assign private ip.

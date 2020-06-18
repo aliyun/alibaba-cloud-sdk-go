@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateUser invokes the aliyuncvc.CreateUser API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createuser.html
-func (client *Client) CreateUser(request *CreateUserRequest) (response *CreateUserResponse, err error) {
-	response = CreateCreateUserResponse()
+// ListDevices invokes the aliyuncvc.ListDevices API synchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/listdevices.html
+func (client *Client) ListDevices(request *ListDevicesRequest) (response *ListDevicesResponse, err error) {
+	response = CreateListDevicesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateUserWithChan invokes the aliyuncvc.CreateUser API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createuser.html
+// ListDevicesWithChan invokes the aliyuncvc.ListDevices API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/listdevices.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateUserWithChan(request *CreateUserRequest) (<-chan *CreateUserResponse, <-chan error) {
-	responseChan := make(chan *CreateUserResponse, 1)
+func (client *Client) ListDevicesWithChan(request *ListDevicesRequest) (<-chan *ListDevicesResponse, <-chan error) {
+	responseChan := make(chan *ListDevicesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateUser(request)
+		response, err := client.ListDevices(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateUserWithChan(request *CreateUserRequest) (<-chan *Cr
 	return responseChan, errChan
 }
 
-// CreateUserWithCallback invokes the aliyuncvc.CreateUser API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createuser.html
+// ListDevicesWithCallback invokes the aliyuncvc.ListDevices API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/listdevices.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateUserWithCallback(request *CreateUserRequest, callback func(response *CreateUserResponse, err error)) <-chan int {
+func (client *Client) ListDevicesWithCallback(request *ListDevicesRequest, callback func(response *ListDevicesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateUserResponse
+		var response *ListDevicesResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateUser(request)
+		response, err = client.ListDevices(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,38 @@ func (client *Client) CreateUserWithCallback(request *CreateUserRequest, callbac
 	return result
 }
 
-// CreateUserRequest is the request struct for api CreateUser
-type CreateUserRequest struct {
+// ListDevicesRequest is the request struct for api ListDevices
+type ListDevicesRequest struct {
 	*requests.RpcRequest
-	Count    requests.Integer `position:"Body" name:"Count"`
-	UserInfo string           `position:"Body" name:"UserInfo"`
+	CastScreenCode string           `position:"Query" name:"CastScreenCode"`
+	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	SN             string           `position:"Query" name:"SN"`
 }
 
-// CreateUserResponse is the response struct for api CreateUser
-type CreateUserResponse struct {
+// ListDevicesResponse is the response struct for api ListDevices
+type ListDevicesResponse struct {
 	*responses.BaseResponse
 	ErrorCode int    `json:"ErrorCode" xml:"ErrorCode"`
 	Message   string `json:"Message" xml:"Message"`
 	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateCreateUserRequest creates a request to invoke CreateUser API
-func CreateCreateUserRequest() (request *CreateUserRequest) {
-	request = &CreateUserRequest{
+// CreateListDevicesRequest creates a request to invoke ListDevices API
+func CreateListDevicesRequest() (request *ListDevicesRequest) {
+	request = &ListDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-09-19", "CreateUser", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-09-19", "ListDevices", "aliyuncvc", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateUserResponse creates a response to parse from CreateUser response
-func CreateCreateUserResponse() (response *CreateUserResponse) {
-	response = &CreateUserResponse{
+// CreateListDevicesResponse creates a response to parse from ListDevices response
+func CreateListDevicesResponse() (response *ListDevicesResponse) {
+	response = &ListDevicesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

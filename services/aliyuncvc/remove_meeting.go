@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateUser invokes the aliyuncvc.CreateUser API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createuser.html
-func (client *Client) CreateUser(request *CreateUserRequest) (response *CreateUserResponse, err error) {
-	response = CreateCreateUserResponse()
+// RemoveMeeting invokes the aliyuncvc.RemoveMeeting API synchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/removemeeting.html
+func (client *Client) RemoveMeeting(request *RemoveMeetingRequest) (response *RemoveMeetingResponse, err error) {
+	response = CreateRemoveMeetingResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateUserWithChan invokes the aliyuncvc.CreateUser API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createuser.html
+// RemoveMeetingWithChan invokes the aliyuncvc.RemoveMeeting API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/removemeeting.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateUserWithChan(request *CreateUserRequest) (<-chan *CreateUserResponse, <-chan error) {
-	responseChan := make(chan *CreateUserResponse, 1)
+func (client *Client) RemoveMeetingWithChan(request *RemoveMeetingRequest) (<-chan *RemoveMeetingResponse, <-chan error) {
+	responseChan := make(chan *RemoveMeetingResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateUser(request)
+		response, err := client.RemoveMeeting(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateUserWithChan(request *CreateUserRequest) (<-chan *Cr
 	return responseChan, errChan
 }
 
-// CreateUserWithCallback invokes the aliyuncvc.CreateUser API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createuser.html
+// RemoveMeetingWithCallback invokes the aliyuncvc.RemoveMeeting API asynchronously
+// api document: https://help.aliyun.com/api/aliyuncvc/removemeeting.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateUserWithCallback(request *CreateUserRequest, callback func(response *CreateUserResponse, err error)) <-chan int {
+func (client *Client) RemoveMeetingWithCallback(request *RemoveMeetingRequest, callback func(response *RemoveMeetingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateUserResponse
+		var response *RemoveMeetingResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateUser(request)
+		response, err = client.RemoveMeeting(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,15 +73,14 @@ func (client *Client) CreateUserWithCallback(request *CreateUserRequest, callbac
 	return result
 }
 
-// CreateUserRequest is the request struct for api CreateUser
-type CreateUserRequest struct {
+// RemoveMeetingRequest is the request struct for api RemoveMeeting
+type RemoveMeetingRequest struct {
 	*requests.RpcRequest
-	Count    requests.Integer `position:"Body" name:"Count"`
-	UserInfo string           `position:"Body" name:"UserInfo"`
+	MeetingUUID string `position:"Body" name:"MeetingUUID"`
 }
 
-// CreateUserResponse is the response struct for api CreateUser
-type CreateUserResponse struct {
+// RemoveMeetingResponse is the response struct for api RemoveMeeting
+type RemoveMeetingResponse struct {
 	*responses.BaseResponse
 	ErrorCode int    `json:"ErrorCode" xml:"ErrorCode"`
 	Message   string `json:"Message" xml:"Message"`
@@ -89,19 +88,19 @@ type CreateUserResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateCreateUserRequest creates a request to invoke CreateUser API
-func CreateCreateUserRequest() (request *CreateUserRequest) {
-	request = &CreateUserRequest{
+// CreateRemoveMeetingRequest creates a request to invoke RemoveMeeting API
+func CreateRemoveMeetingRequest() (request *RemoveMeetingRequest) {
+	request = &RemoveMeetingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-09-19", "CreateUser", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-09-19", "RemoveMeeting", "aliyuncvc", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateUserResponse creates a response to parse from CreateUser response
-func CreateCreateUserResponse() (response *CreateUserResponse) {
-	response = &CreateUserResponse{
+// CreateRemoveMeetingResponse creates a response to parse from RemoveMeeting response
+func CreateRemoveMeetingResponse() (response *RemoveMeetingResponse) {
+	response = &RemoveMeetingResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

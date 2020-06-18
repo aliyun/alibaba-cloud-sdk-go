@@ -17,9 +17,9 @@ package aliyuncvc
 
 // MemberListItem is a nested struct in aliyuncvc response
 type MemberListItem struct {
-	MemberUUID    string `json:"MemberUUID" xml:"MemberUUID"`
 	UserAvatarUrl string `json:"UserAvatarUrl" xml:"UserAvatarUrl"`
-	UserId        string `json:"UserId" xml:"UserId"`
+	MemberUUID    string `json:"MemberUUID" xml:"MemberUUID"`
 	UserName      string `json:"UserName" xml:"UserName"`
+	UserId        string `json:"UserId" xml:"UserId"`
 	Status        string `json:"Status" xml:"Status"`
 }

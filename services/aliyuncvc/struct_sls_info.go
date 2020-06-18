@@ -17,7 +17,7 @@ package aliyuncvc
 
 // SlsInfo is a nested struct in aliyuncvc response
 type SlsInfo struct {
-	Project            string `json:"Project" xml:"Project"`
-	Logstore           string `json:"Logstore" xml:"Logstore"`
 	LogServiceEndpoint string `json:"LogServiceEndpoint" xml:"LogServiceEndpoint"`
+	Logstore           string `json:"Logstore" xml:"Logstore"`
+	Project            string `json:"Project" xml:"Project"`
 }

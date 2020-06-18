@@ -17,7 +17,7 @@ package aliyuncvc
 
 // Total is a nested struct in aliyuncvc response
 type Total struct {
-	MeetingNumber int `json:"MeetingNumber" xml:"MeetingNumber"`
+	MeetingNum    int `json:"MeetingNum" xml:"MeetingNum"`
 	MeetingLength int `json:"MeetingLength" xml:"MeetingLength"`
-	MemberNumber  int `json:"MemberNumber" xml:"MemberNumber"`
+	MemberNum     int `json:"MemberNum" xml:"MemberNum"`
 }
