@@ -1,3 +1,7 @@
+2020-06-18 Version: v1.61.262
+- Generated 2017-05-25 for `Dypnsapi`.
+- Add GetAuthToken OpenAPI.
+
 2020-06-18 Version: v1.61.261
 - Generated 2020-03-30, 2019-10-30, 2019-09-19 for `aliyuncvc`.
 - Public beta version.

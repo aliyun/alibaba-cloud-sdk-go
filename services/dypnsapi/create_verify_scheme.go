@@ -101,7 +101,8 @@ func CreateCreateVerifySchemeRequest() (request *CreateVerifySchemeRequest) {
 	request = &CreateVerifySchemeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "CreateVerifyScheme", "dypnsapi", "openAPI")
+	request.InitWithApiInfo("Dypnsapi", "2017-05-25", "CreateVerifyScheme", "dypns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
