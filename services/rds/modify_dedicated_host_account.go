@@ -96,6 +96,7 @@ func CreateModifyDedicatedHostAccountRequest() (request *ModifyDedicatedHostAcco
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDedicatedHostAccount", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

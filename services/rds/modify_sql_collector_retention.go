@@ -77,6 +77,7 @@ func (client *Client) ModifySQLCollectorRetentionWithCallback(request *ModifySQL
 type ModifySQLCollectorRetentionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -97,6 +98,7 @@ func CreateModifySQLCollectorRetentionRequest() (request *ModifySQLCollectorRete
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "ModifySQLCollectorRetention", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

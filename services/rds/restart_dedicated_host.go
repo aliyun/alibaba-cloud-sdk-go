@@ -97,6 +97,7 @@ func CreateRestartDedicatedHostRequest() (request *RestartDedicatedHostRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "RestartDedicatedHost", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -96,6 +96,7 @@ func CreateDescribeBackupDatabaseRequest() (request *DescribeBackupDatabaseReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackupDatabase", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

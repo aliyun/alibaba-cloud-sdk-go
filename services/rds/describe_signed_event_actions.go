@@ -100,6 +100,7 @@ func CreateDescribeSignedEventActionsRequest() (request *DescribeSignedEventActi
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSignedEventActions", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

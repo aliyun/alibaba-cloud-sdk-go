@@ -100,9 +100,9 @@ type DescribePriceRequest struct {
 // DescribePriceResponse is the response struct for api DescribePrice
 type DescribePriceResponse struct {
 	*responses.BaseResponse
-	RequestId string                   `json:"RequestId" xml:"RequestId"`
-	PriceInfo PriceInfoInDescribePrice `json:"PriceInfo" xml:"PriceInfo"`
-	Rules     RulesInDescribePrice     `json:"Rules" xml:"Rules"`
+	RequestId string               `json:"RequestId" xml:"RequestId"`
+	PriceInfo PriceInfo            `json:"PriceInfo" xml:"PriceInfo"`
+	Rules     RulesInDescribePrice `json:"Rules" xml:"Rules"`
 }
 
 // CreateDescribePriceRequest creates a request to invoke DescribePrice API
@@ -111,6 +111,7 @@ func CreateDescribePriceRequest() (request *DescribePriceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribePrice", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

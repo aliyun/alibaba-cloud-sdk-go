@@ -17,5 +17,5 @@ package rds
 
 // ItemsInDescribeDBInstancesForClone is a nested struct in rds response
 type ItemsInDescribeDBInstancesForClone struct {
-	DBInstance []DBInstanceInDescribeDBInstancesForClone `json:"DBInstance" xml:"DBInstance"`
+	DBInstance []DBInstance `json:"DBInstance" xml:"DBInstance"`
 }

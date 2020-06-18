@@ -17,5 +17,5 @@ package rds
 
 // DBInstanceWeights is a nested struct in rds response
 type DBInstanceWeights struct {
-	DBInstanceWeight []DBInstanceWeightInDescribeDBInstanceNetInfo `json:"DBInstanceWeight" xml:"DBInstanceWeight"`
+	DBInstanceWeight []DBInstanceWeight `json:"DBInstanceWeight" xml:"DBInstanceWeight"`
 }

@@ -109,6 +109,7 @@ func CreateDescribeDetachedBackupsRequest() (request *DescribeDetachedBackupsReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDetachedBackups", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

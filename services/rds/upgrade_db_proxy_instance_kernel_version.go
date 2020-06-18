@@ -99,6 +99,7 @@ func CreateUpgradeDBProxyInstanceKernelVersionRequest() (request *UpgradeDBProxy
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "UpgradeDBProxyInstanceKernelVersion", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -97,6 +97,7 @@ func CreateDescribeDBInstanceProxyConfigurationRequest() (request *DescribeDBIns
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceProxyConfiguration", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

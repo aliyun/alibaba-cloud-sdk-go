@@ -79,6 +79,8 @@ type MigrateDBInstanceRequest struct {
 	ResourceOwnerId                requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SpecifiedTime                  string           `position:"Query" name:"SpecifiedTime"`
 	TargetDedicatedHostIdForSlave  string           `position:"Query" name:"TargetDedicatedHostIdForSlave"`
+	ZoneIdSlave1                   string           `position:"Query" name:"ZoneIdSlave1"`
+	ZoneIdSlave2                   string           `position:"Query" name:"ZoneIdSlave2"`
 	EngineVersion                  string           `position:"Query" name:"EngineVersion"`
 	Storage                        requests.Integer `position:"Query" name:"Storage"`
 	EffectiveTime                  string           `position:"Query" name:"EffectiveTime"`
@@ -108,6 +110,7 @@ func CreateMigrateDBInstanceRequest() (request *MigrateDBInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "MigrateDBInstance", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

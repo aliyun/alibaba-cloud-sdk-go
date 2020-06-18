@@ -17,5 +17,5 @@ package rds
 
 // QPSTopNItemsInDescribeSQLLogReports is a nested struct in rds response
 type QPSTopNItemsInDescribeSQLLogReports struct {
-	QPSTopNItem []QPSTopNItemInDescribeSQLLogReports `json:"QPSTopNItem" xml:"QPSTopNItem"`
+	QPSTopNItem []QPSTopNItem `json:"QPSTopNItem" xml:"QPSTopNItem"`
 }

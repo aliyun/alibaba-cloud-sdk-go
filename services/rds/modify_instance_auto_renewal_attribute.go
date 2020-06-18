@@ -98,6 +98,7 @@ func CreateModifyInstanceAutoRenewalAttributeRequest() (request *ModifyInstanceA
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyInstanceAutoRenewalAttribute", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

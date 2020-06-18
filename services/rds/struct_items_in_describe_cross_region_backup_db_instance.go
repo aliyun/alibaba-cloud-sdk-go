@@ -17,5 +17,5 @@ package rds
 
 // ItemsInDescribeCrossRegionBackupDBInstance is a nested struct in rds response
 type ItemsInDescribeCrossRegionBackupDBInstance struct {
-	Item []ItemInDescribeCrossRegionBackupDBInstance `json:"Item" xml:"Item"`
+	Item []Item `json:"Item" xml:"Item"`
 }

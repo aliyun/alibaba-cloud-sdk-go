@@ -98,6 +98,7 @@ func CreateDescribeDBInstanceIpHostnameRequest() (request *DescribeDBInstanceIpH
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstanceIpHostname", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

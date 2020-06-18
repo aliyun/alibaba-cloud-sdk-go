@@ -96,6 +96,7 @@ func CreateDescribeAvailableDedicatedHostClassesRequest() (request *DescribeAvai
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAvailableDedicatedHostClasses", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -17,5 +17,5 @@ package rds
 
 // ParamGroup is a nested struct in rds response
 type ParamGroup struct {
-	ParameterGroup []ParameterGroupInDescribeParameterGroup `json:"ParameterGroup" xml:"ParameterGroup"`
+	ParameterGroup []ParameterGroup `json:"ParameterGroup" xml:"ParameterGroup"`
 }

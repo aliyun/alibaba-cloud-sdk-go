@@ -17,5 +17,5 @@ package rds
 
 // LatencyTopNItemsInDescribeSQLReports is a nested struct in rds response
 type LatencyTopNItemsInDescribeSQLReports struct {
-	LatencyTopNItem []LatencyTopNItemInDescribeSQLReports `json:"LatencyTopNItem" xml:"LatencyTopNItem"`
+	LatencyTopNItem []LatencyTopNItem `json:"LatencyTopNItem" xml:"LatencyTopNItem"`
 }

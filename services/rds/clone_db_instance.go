@@ -123,6 +123,7 @@ func CreateCloneDBInstanceRequest() (request *CloneDBInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "CloneDBInstance", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

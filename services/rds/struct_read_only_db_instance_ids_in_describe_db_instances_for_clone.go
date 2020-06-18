@@ -17,5 +17,5 @@ package rds
 
 // ReadOnlyDBInstanceIdsInDescribeDBInstancesForClone is a nested struct in rds response
 type ReadOnlyDBInstanceIdsInDescribeDBInstancesForClone struct {
-	ReadOnlyDBInstanceId []ReadOnlyDBInstanceIdInDescribeDBInstancesForClone `json:"ReadOnlyDBInstanceId" xml:"ReadOnlyDBInstanceId"`
+	ReadOnlyDBInstanceId []ReadOnlyDBInstanceId `json:"ReadOnlyDBInstanceId" xml:"ReadOnlyDBInstanceId"`
 }

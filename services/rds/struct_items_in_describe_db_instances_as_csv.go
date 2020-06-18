@@ -17,5 +17,5 @@ package rds
 
 // ItemsInDescribeDBInstancesAsCsv is a nested struct in rds response
 type ItemsInDescribeDBInstancesAsCsv struct {
-	DBInstanceAttribute []DBInstanceAttributeInDescribeDBInstancesAsCsv `json:"DBInstanceAttribute" xml:"DBInstanceAttribute"`
+	DBInstanceAttribute []DBInstanceAttribute `json:"DBInstanceAttribute" xml:"DBInstanceAttribute"`
 }

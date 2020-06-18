@@ -99,6 +99,7 @@ func CreateCreateOnlineDatabaseTaskRequest() (request *CreateOnlineDatabaseTaskR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "CreateOnlineDatabaseTask", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

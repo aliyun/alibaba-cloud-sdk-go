@@ -79,6 +79,7 @@ type DescribeDedicatedHostGroupsRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ImageCategory        string           `position:"Query" name:"ImageCategory"`
 	DedicatedHostGroupId string           `position:"Query" name:"DedicatedHostGroupId"`
 }
 
@@ -95,6 +96,7 @@ func CreateDescribeDedicatedHostGroupsRequest() (request *DescribeDedicatedHostG
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDedicatedHostGroups", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

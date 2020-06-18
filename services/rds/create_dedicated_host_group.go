@@ -82,6 +82,7 @@ type CreateDedicatedHostGroupRequest struct {
 	Engine               string           `position:"Query" name:"Engine"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DiskAllocationRatio  requests.Integer `position:"Query" name:"DiskAllocationRatio"`
+	OpenPermission       requests.Integer `position:"Query" name:"OpenPermission"`
 	MemAllocationRatio   requests.Integer `position:"Query" name:"MemAllocationRatio"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	HostReplacePolicy    string           `position:"Query" name:"HostReplacePolicy"`
@@ -102,6 +103,7 @@ func CreateCreateDedicatedHostGroupRequest() (request *CreateDedicatedHostGroupR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDedicatedHostGroup", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

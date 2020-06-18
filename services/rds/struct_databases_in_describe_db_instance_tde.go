@@ -17,5 +17,5 @@ package rds
 
 // DatabasesInDescribeDBInstanceTDE is a nested struct in rds response
 type DatabasesInDescribeDBInstanceTDE struct {
-	Database []DatabaseInDescribeDBInstanceTDE `json:"Database" xml:"Database"`
+	Database []Database `json:"Database" xml:"Database"`
 }

@@ -83,6 +83,7 @@ type DescribeAvailableResourceRequest struct {
 	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
 	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
 	InstanceChargeType    string           `position:"Query" name:"InstanceChargeType"`
+	DispenseMode          requests.Integer `position:"Query" name:"DispenseMode"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	CommodityCode         string           `position:"Query" name:"CommodityCode"`
@@ -106,6 +107,7 @@ func CreateDescribeAvailableResourceRequest() (request *DescribeAvailableResourc
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAvailableResource", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -97,6 +97,7 @@ func CreateCheckAccountNameAvailableRequest() (request *CheckAccountNameAvailabl
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "CheckAccountNameAvailable", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

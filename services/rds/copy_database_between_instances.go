@@ -104,6 +104,7 @@ func CreateCopyDatabaseBetweenInstancesRequest() (request *CopyDatabaseBetweenIn
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "CopyDatabaseBetweenInstances", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

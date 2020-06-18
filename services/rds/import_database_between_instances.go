@@ -98,6 +98,7 @@ func CreateImportDatabaseBetweenInstancesRequest() (request *ImportDatabaseBetwe
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "ImportDatabaseBetweenInstances", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

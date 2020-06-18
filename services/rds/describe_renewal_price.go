@@ -96,9 +96,9 @@ type DescribeRenewalPriceRequest struct {
 // DescribeRenewalPriceResponse is the response struct for api DescribeRenewalPrice
 type DescribeRenewalPriceResponse struct {
 	*responses.BaseResponse
-	RequestId string                          `json:"RequestId" xml:"RequestId"`
-	PriceInfo PriceInfoInDescribeRenewalPrice `json:"PriceInfo" xml:"PriceInfo"`
-	Rules     RulesInDescribeRenewalPrice     `json:"Rules" xml:"Rules"`
+	RequestId string                      `json:"RequestId" xml:"RequestId"`
+	PriceInfo PriceInfo                   `json:"PriceInfo" xml:"PriceInfo"`
+	Rules     RulesInDescribeRenewalPrice `json:"Rules" xml:"Rules"`
 }
 
 // CreateDescribeRenewalPriceRequest creates a request to invoke DescribeRenewalPrice API
@@ -107,6 +107,7 @@ func CreateDescribeRenewalPriceRequest() (request *DescribeRenewalPriceRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeRenewalPrice", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

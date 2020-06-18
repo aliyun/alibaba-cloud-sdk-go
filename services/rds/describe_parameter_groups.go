@@ -95,6 +95,7 @@ func CreateDescribeParameterGroupsRequest() (request *DescribeParameterGroupsReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeParameterGroups", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

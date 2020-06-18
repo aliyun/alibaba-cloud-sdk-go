@@ -17,5 +17,5 @@ package rds
 
 // EventItemsInDescribeSignedEventActions is a nested struct in rds response
 type EventItemsInDescribeSignedEventActions struct {
-	EventItemsItem []EventItemsItemInDescribeSignedEventActions `json:"EventItems" xml:"EventItems"`
+	EventItemsItem []EventItemsItem `json:"EventItems" xml:"EventItems"`
 }

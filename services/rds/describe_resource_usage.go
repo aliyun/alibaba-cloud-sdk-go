@@ -98,6 +98,10 @@ type DescribeResourceUsageResponse struct {
 	BackupOssLogSize  int64  `json:"BackupOssLogSize" xml:"BackupOssLogSize"`
 	SQLSize           int64  `json:"SQLSize" xml:"SQLSize"`
 	ColdBackupSize    int64  `json:"ColdBackupSize" xml:"ColdBackupSize"`
+	BackupDataSize    int64  `json:"BackupDataSize" xml:"BackupDataSize"`
+	BackupLogSize     int64  `json:"BackupLogSize" xml:"BackupLogSize"`
+	PaidBackupSize    int64  `json:"PaidBackupSize" xml:"PaidBackupSize"`
+	ArchiveBackupSize int64  `json:"ArchiveBackupSize" xml:"ArchiveBackupSize"`
 }
 
 // CreateDescribeResourceUsageRequest creates a request to invoke DescribeResourceUsage API
@@ -106,6 +110,7 @@ func CreateDescribeResourceUsageRequest() (request *DescribeResourceUsageRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeResourceUsage", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

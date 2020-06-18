@@ -17,5 +17,5 @@ package rds
 
 // ItemsInDescribeOssDownloadsForSQLServer is a nested struct in rds response
 type ItemsInDescribeOssDownloadsForSQLServer struct {
-	OssDownload []OssDownloadInDescribeOssDownloadsForSQLServer `json:"OssDownload" xml:"OssDownload"`
+	OssDownload []OssDownload `json:"OssDownload" xml:"OssDownload"`
 }

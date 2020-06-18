@@ -101,6 +101,7 @@ func CreateDescribeReadDBInstanceDelayRequest() (request *DescribeReadDBInstance
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeReadDBInstanceDelay", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

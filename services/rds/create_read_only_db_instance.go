@@ -76,26 +76,27 @@ func (client *Client) CreateReadOnlyDBInstanceWithCallback(request *CreateReadOn
 // CreateReadOnlyDBInstanceRequest is the request struct for api CreateReadOnlyDBInstance
 type CreateReadOnlyDBInstanceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
-	EngineVersion         string           `position:"Query" name:"EngineVersion"`
-	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
-	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
-	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
-	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
-	DedicatedHostGroupId  string           `position:"Query" name:"DedicatedHostGroupId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
-	VSwitchId             string           `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
-	VPCId                 string           `position:"Query" name:"VPCId"`
-	ZoneId                string           `position:"Query" name:"ZoneId"`
-	Category              string           `position:"Query" name:"Category"`
-	PayType               string           `position:"Query" name:"PayType"`
-	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
+	ResourceOwnerId                requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceStorage              requests.Integer `position:"Query" name:"DBInstanceStorage"`
+	ClientToken                    string           `position:"Query" name:"ClientToken"`
+	EngineVersion                  string           `position:"Query" name:"EngineVersion"`
+	ResourceGroupId                string           `position:"Query" name:"ResourceGroupId"`
+	TargetDedicatedHostIdForMaster string           `position:"Query" name:"TargetDedicatedHostIdForMaster"`
+	DBInstanceId                   string           `position:"Query" name:"DBInstanceId"`
+	DBInstanceDescription          string           `position:"Query" name:"DBInstanceDescription"`
+	DBInstanceStorageType          string           `position:"Query" name:"DBInstanceStorageType"`
+	DedicatedHostGroupId           string           `position:"Query" name:"DedicatedHostGroupId"`
+	ResourceOwnerAccount           string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                   string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                        requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceClass                string           `position:"Query" name:"DBInstanceClass"`
+	VSwitchId                      string           `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress               string           `position:"Query" name:"PrivateIpAddress"`
+	VPCId                          string           `position:"Query" name:"VPCId"`
+	ZoneId                         string           `position:"Query" name:"ZoneId"`
+	Category                       string           `position:"Query" name:"Category"`
+	PayType                        string           `position:"Query" name:"PayType"`
+	InstanceNetworkType            string           `position:"Query" name:"InstanceNetworkType"`
 }
 
 // CreateReadOnlyDBInstanceResponse is the response struct for api CreateReadOnlyDBInstance
@@ -114,6 +115,7 @@ func CreateCreateReadOnlyDBInstanceRequest() (request *CreateReadOnlyDBInstanceR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

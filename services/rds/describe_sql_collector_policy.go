@@ -77,11 +77,12 @@ func (client *Client) DescribeSQLCollectorPolicyWithCallback(request *DescribeSQ
 type DescribeSQLCollectorPolicyRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 // DescribeSQLCollectorPolicyResponse is the response struct for api DescribeSQLCollectorPolicy
@@ -98,6 +99,7 @@ func CreateDescribeSQLCollectorPolicyRequest() (request *DescribeSQLCollectorPol
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLCollectorPolicy", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

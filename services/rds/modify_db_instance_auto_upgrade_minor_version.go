@@ -96,6 +96,7 @@ func CreateModifyDBInstanceAutoUpgradeMinorVersionRequest() (request *ModifyDBIn
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceAutoUpgradeMinorVersion", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

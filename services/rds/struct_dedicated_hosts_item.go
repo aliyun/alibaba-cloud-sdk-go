@@ -36,4 +36,11 @@ type DedicatedHostsItem struct {
 	BastionInstanceId   string `json:"BastionInstanceId" xml:"BastionInstanceId"`
 	OpenPermission      string `json:"OpenPermission" xml:"OpenPermission"`
 	AccountName         string `json:"AccountName" xml:"AccountName"`
+	HostCPU             string `json:"HostCPU" xml:"HostCPU"`
+	HostMem             string `json:"HostMem" xml:"HostMem"`
+	HostStorage         string `json:"HostStorage" xml:"HostStorage"`
+	CpuUsed             string `json:"CpuUsed" xml:"CpuUsed"`
+	MemoryUsed          string `json:"MemoryUsed" xml:"MemoryUsed"`
+	StorageUsed         string `json:"StorageUsed" xml:"StorageUsed"`
+	ImageCategory       string `json:"ImageCategory" xml:"ImageCategory"`
 }

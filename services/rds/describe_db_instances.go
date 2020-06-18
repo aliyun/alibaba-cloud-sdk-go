@@ -95,6 +95,7 @@ type DescribeDBInstancesRequest struct {
 	InstanceNetworkType  string           `position:"Query" name:"InstanceNetworkType"`
 	ConnectionMode       string           `position:"Query" name:"ConnectionMode"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	InstanceLevel        requests.Integer `position:"Query" name:"InstanceLevel"`
 	SearchKey            string           `position:"Query" name:"SearchKey"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	Expired              string           `position:"Query" name:"Expired"`
@@ -130,6 +131,7 @@ func CreateDescribeDBInstancesRequest() (request *DescribeDBInstancesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstances", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

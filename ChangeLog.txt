@@ -1,3 +1,7 @@
+2020-06-18 Version: v1.61.263
+- Generated 2014-08-15 for `Rds`.
+- Supported TransformDBInstancePayType API.
+
 2020-06-18 Version: v1.61.262
 - Generated 2017-05-25 for `Dypnsapi`.
 - Add GetAuthToken OpenAPI.

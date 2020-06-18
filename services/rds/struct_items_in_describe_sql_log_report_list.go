@@ -17,5 +17,5 @@ package rds
 
 // ItemsInDescribeSQLLogReportList is a nested struct in rds response
 type ItemsInDescribeSQLLogReportList struct {
-	Item []ItemInDescribeSQLLogReportList `json:"Item" xml:"Item"`
+	Item []Item `json:"Item" xml:"Item"`
 }

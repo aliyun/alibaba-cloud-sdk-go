@@ -79,6 +79,7 @@ type ModifySQLCollectorPolicyRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	StoragePeriod        requests.Integer `position:"Query" name:"StoragePeriod"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SQLCollectorStatus   string           `position:"Query" name:"SQLCollectorStatus"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -98,6 +99,7 @@ func CreateModifySQLCollectorPolicyRequest() (request *ModifySQLCollectorPolicyR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "ModifySQLCollectorPolicy", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

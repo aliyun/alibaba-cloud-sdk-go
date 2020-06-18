@@ -17,5 +17,5 @@ package rds
 
 // ValuesInDescribeDBInstancePerformance is a nested struct in rds response
 type ValuesInDescribeDBInstancePerformance struct {
-	PerformanceValue []PerformanceValueInDescribeDBInstancePerformance `json:"PerformanceValue" xml:"PerformanceValue"`
+	PerformanceValue []PerformanceValue `json:"PerformanceValue" xml:"PerformanceValue"`
 }

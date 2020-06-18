@@ -17,5 +17,5 @@ package rds
 
 // ItemsInDescribeDBInstances is a nested struct in rds response
 type ItemsInDescribeDBInstances struct {
-	DBInstance []DBInstanceInDescribeDBInstances `json:"DBInstance" xml:"DBInstance"`
+	DBInstance []DBInstance `json:"DBInstance" xml:"DBInstance"`
 }

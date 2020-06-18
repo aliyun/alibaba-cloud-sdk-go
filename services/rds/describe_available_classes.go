@@ -87,6 +87,7 @@ type DescribeAvailableClassesRequest struct {
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	CommodityCode         string           `position:"Query" name:"CommodityCode"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	EvaluateResource      requests.Boolean `position:"Query" name:"EvaluateResource"`
 	ZoneId                string           `position:"Query" name:"ZoneId"`
 	Category              string           `position:"Query" name:"Category"`
 	OrderType             string           `position:"Query" name:"OrderType"`
@@ -105,6 +106,7 @@ func CreateDescribeAvailableClassesRequest() (request *DescribeAvailableClassesR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAvailableClasses", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

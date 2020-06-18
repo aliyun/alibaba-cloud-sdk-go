@@ -118,6 +118,7 @@ type DescribeDedicatedHostAttributeResponse struct {
 	HostType               string `json:"HostType" xml:"HostType"`
 	AccountName            string `json:"AccountName" xml:"AccountName"`
 	OpenPermission         string `json:"OpenPermission" xml:"OpenPermission"`
+	ImageCategory          string `json:"ImageCategory" xml:"ImageCategory"`
 }
 
 // CreateDescribeDedicatedHostAttributeRequest creates a request to invoke DescribeDedicatedHostAttribute API
@@ -126,6 +127,7 @@ func CreateDescribeDedicatedHostAttributeRequest() (request *DescribeDedicatedHo
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDedicatedHostAttribute", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

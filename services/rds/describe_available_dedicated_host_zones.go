@@ -94,6 +94,7 @@ func CreateDescribeAvailableDedicatedHostZonesRequest() (request *DescribeAvaila
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeAvailableDedicatedHostZones", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

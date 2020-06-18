@@ -80,6 +80,7 @@ type DescribeLocalAvailableRecoveryTimeRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	Region               string           `position:"Query" name:"Region"`
 }
 
 // DescribeLocalAvailableRecoveryTimeResponse is the response struct for api DescribeLocalAvailableRecoveryTime
@@ -97,6 +98,7 @@ func CreateDescribeLocalAvailableRecoveryTimeRequest() (request *DescribeLocalAv
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeLocalAvailableRecoveryTime", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

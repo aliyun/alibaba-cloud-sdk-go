@@ -94,12 +94,13 @@ type DescribeBackupsRequest struct {
 // DescribeBackupsResponse is the response struct for api DescribeBackups
 type DescribeBackupsResponse struct {
 	*responses.BaseResponse
-	RequestId        string                 `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount string                 `json:"TotalRecordCount" xml:"TotalRecordCount"`
-	PageNumber       string                 `json:"PageNumber" xml:"PageNumber"`
-	PageRecordCount  string                 `json:"PageRecordCount" xml:"PageRecordCount"`
-	TotalBackupSize  int64                  `json:"TotalBackupSize" xml:"TotalBackupSize"`
-	Items            ItemsInDescribeBackups `json:"Items" xml:"Items"`
+	RequestId            string                 `json:"RequestId" xml:"RequestId"`
+	TotalRecordCount     string                 `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	PageNumber           string                 `json:"PageNumber" xml:"PageNumber"`
+	PageRecordCount      string                 `json:"PageRecordCount" xml:"PageRecordCount"`
+	TotalBackupSize      int64                  `json:"TotalBackupSize" xml:"TotalBackupSize"`
+	TotalEcsSnapshotSize int64                  `json:"TotalEcsSnapshotSize" xml:"TotalEcsSnapshotSize"`
+	Items                ItemsInDescribeBackups `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeBackupsRequest creates a request to invoke DescribeBackups API
@@ -108,6 +109,7 @@ func CreateDescribeBackupsRequest() (request *DescribeBackupsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeBackups", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

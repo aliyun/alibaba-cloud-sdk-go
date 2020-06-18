@@ -79,6 +79,7 @@ type CreateDdrInstanceRequest struct {
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
 	SystemDBCharset       string           `position:"Query" name:"SystemDBCharset"`
+	BinlogRole            string           `position:"Query" name:"BinlogRole"`
 	EngineVersion         string           `position:"Query" name:"EngineVersion"`
 	UserBakSetURL         string           `position:"Query" name:"UserBakSetURL"`
 	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
@@ -91,6 +92,7 @@ type CreateDdrInstanceRequest struct {
 	SecurityIPList        string           `position:"Query" name:"SecurityIPList"`
 	VSwitchId             string           `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
+	BinlogName            string           `position:"Query" name:"BinlogName"`
 	TunnelId              string           `position:"Query" name:"TunnelId"`
 	ZoneId                string           `position:"Query" name:"ZoneId"`
 	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
@@ -107,6 +109,7 @@ type CreateDdrInstanceRequest struct {
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	UsedTime              string           `position:"Query" name:"UsedTime"`
+	BinlogPosition        string           `position:"Query" name:"BinlogPosition"`
 	RestoreType           string           `position:"Query" name:"RestoreType"`
 	VPCId                 string           `position:"Query" name:"VPCId"`
 	PayType               string           `position:"Query" name:"PayType"`
@@ -129,6 +132,7 @@ func CreateCreateDdrInstanceRequest() (request *CreateDdrInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDdrInstance", "rds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
