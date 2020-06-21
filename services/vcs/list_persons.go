@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// StopMonitor invokes the vcs.StopMonitor API synchronously
-// api document: https://help.aliyun.com/api/vcs/stopmonitor.html
-func (client *Client) StopMonitor(request *StopMonitorRequest) (response *StopMonitorResponse, err error) {
-	response = CreateStopMonitorResponse()
+// ListPersons invokes the vcs.ListPersons API synchronously
+// api document: https://help.aliyun.com/api/vcs/listpersons.html
+func (client *Client) ListPersons(request *ListPersonsRequest) (response *ListPersonsResponse, err error) {
+	response = CreateListPersonsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// StopMonitorWithChan invokes the vcs.StopMonitor API asynchronously
-// api document: https://help.aliyun.com/api/vcs/stopmonitor.html
+// ListPersonsWithChan invokes the vcs.ListPersons API asynchronously
+// api document: https://help.aliyun.com/api/vcs/listpersons.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) StopMonitorWithChan(request *StopMonitorRequest) (<-chan *StopMonitorResponse, <-chan error) {
-	responseChan := make(chan *StopMonitorResponse, 1)
+func (client *Client) ListPersonsWithChan(request *ListPersonsRequest) (<-chan *ListPersonsResponse, <-chan error) {
+	responseChan := make(chan *ListPersonsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.StopMonitor(request)
+		response, err := client.ListPersons(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) StopMonitorWithChan(request *StopMonitorRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// StopMonitorWithCallback invokes the vcs.StopMonitor API asynchronously
-// api document: https://help.aliyun.com/api/vcs/stopmonitor.html
+// ListPersonsWithCallback invokes the vcs.ListPersons API asynchronously
+// api document: https://help.aliyun.com/api/vcs/listpersons.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) StopMonitorWithCallback(request *StopMonitorRequest, callback func(response *StopMonitorResponse, err error)) <-chan int {
+func (client *Client) ListPersonsWithCallback(request *ListPersonsRequest, callback func(response *ListPersonsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *StopMonitorResponse
+		var response *ListPersonsResponse
 		var err error
 		defer close(result)
-		response, err = client.StopMonitor(request)
+		response, err = client.ListPersons(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,36 @@ func (client *Client) StopMonitorWithCallback(request *StopMonitorRequest, callb
 	return result
 }
 
-// StopMonitorRequest is the request struct for api StopMonitor
-type StopMonitorRequest struct {
+// ListPersonsRequest is the request struct for api ListPersons
+type ListPersonsRequest struct {
 	*requests.RpcRequest
-	AlgorithmVendor string `position:"Body" name:"AlgorithmVendor"`
-	TaskId          string `position:"Body" name:"TaskId"`
+	CorpId   string `position:"Body" name:"CorpId"`
+	PageNo   string `position:"Body" name:"PageNo"`
+	PageSize string `position:"Body" name:"PageSize"`
 }
 
-// StopMonitorResponse is the response struct for api StopMonitor
-type StopMonitorResponse struct {
+// ListPersonsResponse is the response struct for api ListPersons
+type ListPersonsResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
-	Data      string `json:"Data" xml:"Data"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateStopMonitorRequest creates a request to invoke StopMonitor API
-func CreateStopMonitorRequest() (request *StopMonitorRequest) {
-	request = &StopMonitorRequest{
+// CreateListPersonsRequest creates a request to invoke ListPersons API
+func CreateListPersonsRequest() (request *ListPersonsRequest) {
+	request = &ListPersonsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "StopMonitor", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListPersons", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateStopMonitorResponse creates a response to parse from StopMonitor response
-func CreateStopMonitorResponse() (response *StopMonitorResponse) {
-	response = &StopMonitorResponse{
+// CreateListPersonsResponse creates a response to parse from ListPersons response
+func CreateListPersonsResponse() (response *ListPersonsResponse) {
+	response = &ListPersonsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

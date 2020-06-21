@@ -76,11 +76,12 @@ func (client *Client) GetMonitorResultWithCallback(request *GetMonitorResultRequ
 // GetMonitorResultRequest is the request struct for api GetMonitorResult
 type GetMonitorResultRequest struct {
 	*requests.RpcRequest
-	CorpId      string           `position:"Body" name:"CorpId"`
-	EndTime     requests.Integer `position:"Body" name:"EndTime"`
-	StartTime   requests.Integer `position:"Body" name:"StartTime"`
-	MinRecordId string           `position:"Body" name:"MinRecordId"`
-	TaskId      string           `position:"Body" name:"TaskId"`
+	CorpId          string           `position:"Body" name:"CorpId"`
+	EndTime         requests.Integer `position:"Body" name:"EndTime"`
+	StartTime       requests.Integer `position:"Body" name:"StartTime"`
+	AlgorithmVendor string           `position:"Body" name:"AlgorithmVendor"`
+	MinRecordId     string           `position:"Body" name:"MinRecordId"`
+	TaskId          string           `position:"Body" name:"TaskId"`
 }
 
 // GetMonitorResultResponse is the response struct for api GetMonitorResult

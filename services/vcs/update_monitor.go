@@ -88,6 +88,7 @@ type UpdateMonitorRequest struct {
 	PicList              string `position:"Body" name:"PicList"`
 	AttributeValueList   string `position:"Body" name:"AttributeValueList"`
 	DeviceList           string `position:"Body" name:"DeviceList"`
+	AlgorithmVendor      string `position:"Body" name:"AlgorithmVendor"`
 }
 
 // UpdateMonitorResponse is the response struct for api UpdateMonitor

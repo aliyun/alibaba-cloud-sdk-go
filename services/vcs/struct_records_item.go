@@ -17,13 +17,16 @@ package vcs
 
 // RecordsItem is a nested struct in vcs response
 type RecordsItem struct {
-	RightBottomY  string `json:"RightBottomY" xml:"RightBottomY"`
-	RightBottomX  string `json:"RightBottomX" xml:"RightBottomX"`
-	LeftUpY       string `json:"LeftUpY" xml:"LeftUpY"`
-	LeftUpX       string `json:"LeftUpX" xml:"LeftUpX"`
-	GbId          string `json:"GbId" xml:"GbId"`
-	Score         string `json:"Score" xml:"Score"`
-	PicUrl        string `json:"PicUrl" xml:"PicUrl"`
-	ShotTime      string `json:"ShotTime" xml:"ShotTime"`
-	MonitorPicUrl string `json:"MonitorPicUrl" xml:"MonitorPicUrl"`
+	LeftUpX         string        `json:"LeftUpX" xml:"LeftUpX"`
+	Score           string        `json:"Score" xml:"Score"`
+	ShotTime        string        `json:"ShotTime" xml:"ShotTime"`
+	GbId            string        `json:"GbId" xml:"GbId"`
+	RightBottomY    string        `json:"RightBottomY" xml:"RightBottomY"`
+	LeftUpY         string        `json:"LeftUpY" xml:"LeftUpY"`
+	FirstAppearTime string        `json:"FirstAppearTime" xml:"FirstAppearTime"`
+	PersonId        string        `json:"PersonId" xml:"PersonId"`
+	PicUrl          string        `json:"PicUrl" xml:"PicUrl"`
+	RightBottomX    string        `json:"RightBottomX" xml:"RightBottomX"`
+	MonitorPicUrl   string        `json:"MonitorPicUrl" xml:"MonitorPicUrl"`
+	TagList         []TagListItem `json:"TagList" xml:"TagList"`
 }

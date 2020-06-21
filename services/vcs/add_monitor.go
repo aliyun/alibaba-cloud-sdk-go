@@ -76,10 +76,11 @@ func (client *Client) AddMonitorWithCallback(request *AddMonitorRequest, callbac
 // AddMonitorRequest is the request struct for api AddMonitor
 type AddMonitorRequest struct {
 	*requests.RpcRequest
-	MonitorType    string           `position:"Body" name:"MonitorType"`
-	CorpId         string           `position:"Body" name:"CorpId"`
-	Description    string           `position:"Body" name:"Description"`
-	BatchIndicator requests.Integer `position:"Body" name:"BatchIndicator"`
+	MonitorType     string           `position:"Body" name:"MonitorType"`
+	CorpId          string           `position:"Body" name:"CorpId"`
+	Description     string           `position:"Body" name:"Description"`
+	BatchIndicator  requests.Integer `position:"Body" name:"BatchIndicator"`
+	AlgorithmVendor string           `position:"Body" name:"AlgorithmVendor"`
 }
 
 // AddMonitorResponse is the response struct for api AddMonitor
