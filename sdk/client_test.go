@@ -177,7 +177,7 @@ func Test_DoActionWithProxy(t *testing.T) {
 
 	// Test when host is in no_proxy, proxy is invalid
 	envNoProxy := os.Getenv("no_proxy")
-	os.Setenv("no_proxy", "ecs.aliyuncs.com")
+	os.Setenv("no_proxy", ".aliyuncs.com")
 	envHttpProxy := os.Getenv("http_proxy")
 	os.Setenv("http_proxy", "http://127.0.0.1:8888")
 	err = client.DoAction(request, response)
@@ -185,7 +185,25 @@ func Test_DoActionWithProxy(t *testing.T) {
 	trans, _ = client.httpClient.Transport.(*http.Transport)
 	assert.Nil(t, trans.Proxy)
 
-	client.SetNoProxy("ecs.testaliyuncs.com")
+	os.Setenv("no_proxy", "*.aliyuncs.com")
+	err = client.DoAction(request, response)
+	assert.Nil(t, err)
+	trans, _ = client.httpClient.Transport.(*http.Transport)
+	assert.Nil(t, trans.Proxy)
+
+	os.Setenv("no_proxy", "*")
+	err = client.DoAction(request, response)
+	assert.Nil(t, err)
+	trans, _ = client.httpClient.Transport.(*http.Transport)
+	assert.Nil(t, trans.Proxy)
+
+	os.Setenv("no_proxy", ".testaliyuncs.com,.aliyuncs.com, ")
+	err = client.DoAction(request, response)
+	assert.Nil(t, err)
+	trans, _ = client.httpClient.Transport.(*http.Transport)
+	assert.Nil(t, trans.Proxy)
+
+	client.SetNoProxy(".testaliyuncs.com")
 	err = client.DoAction(request, response)
 	assert.Nil(t, err)
 	trans, _ = client.httpClient.Transport.(*http.Transport)
