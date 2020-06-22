@@ -1,3 +1,7 @@
+2020-06-22 Version: v1.61.266
+- Generated 2017-03-21 for `vod`.
+- Add support cn-shenzhen region.
+
 2020-06-22 Version: v1.61.265
 - Generated 2019-08-08 for `ARMS`.
 - Add GetMultipleTrace api.
