@@ -17,6 +17,7 @@ package arms
 
 // PageBean is a nested struct in arms response
 type PageBean struct {
+	Total          int               `json:"Total" xml:"Total"`
 	TotalCount     int               `json:"TotalCount" xml:"TotalCount"`
 	PageNumber     int               `json:"PageNumber" xml:"PageNumber"`
 	PageSize       int               `json:"PageSize" xml:"PageSize"`
@@ -26,4 +27,5 @@ type PageBean struct {
 	Event          []EventItem       `json:"Event" xml:"Event"`
 	TraceApps      []TraceApp        `json:"TraceApps" xml:"TraceApps"`
 	AlarmHistories []AlarmHistory    `json:"AlarmHistories" xml:"AlarmHistories"`
+	TraceInfos     []TraceInfo       `json:"TraceInfos" xml:"TraceInfos"`
 }

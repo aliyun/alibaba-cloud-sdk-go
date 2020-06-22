@@ -17,16 +17,16 @@ package arms
 
 // Span is a nested struct in arms response
 type Span struct {
+	ResultCode    string     `json:"ResultCode" xml:"ResultCode"`
+	RpcType       int        `json:"RpcType" xml:"RpcType"`
+	Timestamp     int64      `json:"Timestamp" xml:"Timestamp"`
+	HaveStack     bool       `json:"HaveStack" xml:"HaveStack"`
 	TraceID       string     `json:"TraceID" xml:"TraceID"`
+	RpcId         string     `json:"RpcId" xml:"RpcId"`
 	OperationName string     `json:"OperationName" xml:"OperationName"`
 	Duration      int64      `json:"Duration" xml:"Duration"`
 	ServiceName   string     `json:"ServiceName" xml:"ServiceName"`
 	ServiceIp     string     `json:"ServiceIp" xml:"ServiceIp"`
-	Timestamp     int64      `json:"Timestamp" xml:"Timestamp"`
-	RpcId         string     `json:"RpcId" xml:"RpcId"`
-	ResultCode    string     `json:"ResultCode" xml:"ResultCode"`
-	HaveStack     bool       `json:"HaveStack" xml:"HaveStack"`
-	RpcType       int        `json:"RpcType" xml:"RpcType"`
-	TagEntryList  []TagEntry `json:"TagEntryList" xml:"TagEntryList"`
 	LogEventList  []LogEvent `json:"LogEventList" xml:"LogEventList"`
+	TagEntryList  []TagEntry `json:"TagEntryList" xml:"TagEntryList"`
 }
