@@ -17,6 +17,7 @@ package vcs
 
 // Record is a nested struct in vcs response
 type Record struct {
+	MatchSuggestion    string  `json:"MatchSuggestion" xml:"MatchSuggestion"`
 	CorpName           string  `json:"CorpName" xml:"CorpName"`
 	ParentCorpId       string  `json:"ParentCorpId" xml:"ParentCorpId"`
 	Score              float64 `json:"Score" xml:"Score"`
