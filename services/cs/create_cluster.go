@@ -76,12 +76,55 @@ func (client *Client) CreateClusterWithCallback(request *CreateClusterRequest, c
 // CreateClusterRequest is the request struct for api CreateCluster
 type CreateClusterRequest struct {
 	*requests.RoaRequest
+	ProxyMode                string           `position:"Body" name:"proxy_mode"`
+	MasterSystemDiskCategory string           `position:"Body" name:"master_system_disk_category"`
+	CloudMonitorFlags        requests.Boolean `position:"Body" name:"cloud_monitor_flags"`
+	MasterPeriod             requests.Integer `position:"Body" name:"master_period"`
+	SshFlags                 requests.Boolean `position:"Body" name:"ssh_flags"`
+	SecurityGroupId          string           `position:"Body" name:"security_group_id"`
+	ContainerCidr            string           `position:"Body" name:"container_cidr"`
+	ClusterType              string           `position:"Body" name:"cluster_type"`
+	EndpointPublicAccess     requests.Boolean `position:"Body" name:"endpoint_public_access"`
+	WorkerAutoRenew          requests.Boolean `position:"Body" name:"worker_auto_renew"`
+	Platform                 string           `position:"Body" name:"platform"`
+	NodePortRange            string           `position:"Body" name:"node_port_range"`
+	ServiceCidr              string           `position:"Body" name:"service_cidr"`
+	LoginPassword            string           `position:"Body" name:"login_password"`
+	KubernetesVersion        string           `position:"Body" name:"kubernetes_version"`
+	MasterPeriodUnit         string           `position:"Body" name:"master_period_unit"`
+	MasterSystemDiskSize     requests.Integer `position:"Body" name:"master_system_disk_size"`
+	MasterCount              requests.Integer `position:"Body" name:"master_count"`
+	NumOfNodes               requests.Integer `position:"Body" name:"num_of_nodes"`
+	DeletionProtection       requests.Boolean `position:"Body" name:"deletion_protection"`
+	KeyPair                  string           `position:"Body" name:"key_pair"`
+	WorkerDataDisk           requests.Boolean `position:"Body" name:"worker_data_disk"`
+	MasterAutoRenew          requests.Boolean `position:"Body" name:"master_auto_renew"`
+	RegionId                 string           `position:"Body" name:"region_id"`
+	SnatEntry                requests.Boolean `position:"Body" name:"snat_entry"`
+	WorkerSystemDiskCategory string           `position:"Body" name:"worker_system_disk_category"`
+	Runtime                  string           `position:"Body" name:"runtime"`
+	WorkerPeriodUnit         string           `position:"Body" name:"worker_period_unit"`
+	MasterInstanceChargeType string           `position:"Body" name:"master_instance_charge_type"`
+	NodeCidrMask             string           `position:"Body" name:"node_cidr_mask"`
+	WorkerAutoRenewPeriod    requests.Integer `position:"Body" name:"worker_auto_renew_period"`
+	MasterAutoRenewPeriod    requests.Integer `position:"Body" name:"master_auto_renew_period"`
+	WorkerPeriod             requests.Integer `position:"Body" name:"worker_period"`
+	TimeoutMins              requests.Integer `position:"Body" name:"timeout_mins"`
+	WorkerSystemDiskSize     requests.Integer `position:"Body" name:"worker_system_disk_size"`
+	OsType                   string           `position:"Body" name:"os_type"`
+	CpuPolicy                string           `position:"Body" name:"cpu_policy"`
+	Vpcid                    string           `position:"Body" name:"vpcid"`
+	Name                     string           `position:"Body" name:"name"`
+	DisableRollback          requests.Boolean `position:"Body" name:"disable_rollback"`
+	WorkerInstanceChargeType string           `position:"Body" name:"worker_instance_charge_type"`
 }
 
 // CreateClusterResponse is the response struct for api CreateCluster
 type CreateClusterResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	ClusterId string `json:"cluster_id" xml:"cluster_id"`
+	RequestId string `json:"request_id" xml:"request_id"`
+	TaskId    string `json:"task_id" xml:"task_id"`
 }
 
 // CreateCreateClusterRequest creates a request to invoke CreateCluster API
@@ -89,7 +132,7 @@ func CreateCreateClusterRequest() (request *CreateClusterRequest) {
 	request = &CreateClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "CreateCluster", "/clusters", "csk", "openAPI")
+	request.InitWithApiInfo("CS", "2015-12-15", "CreateCluster", "/clusters", "", "")
 	request.Method = requests.POST
 	return
 }

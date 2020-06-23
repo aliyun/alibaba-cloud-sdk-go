@@ -89,7 +89,7 @@ func CreateRemoveWorkflowRequest() (request *RemoveWorkflowRequest) {
 	request = &RemoveWorkflowRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "RemoveWorkflow", "/gs/workflow/[workflowName]", "csk", "openAPI")
+	request.InitWithApiInfo("CS", "2015-12-15", "RemoveWorkflow", "/gs/workflow/[workflowName]", "", "")
 	request.Method = requests.DELETE
 	return
 }

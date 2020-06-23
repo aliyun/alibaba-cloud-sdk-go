@@ -91,7 +91,7 @@ func CreateDescribeClusterV2UserKubeconfigRequest() (request *DescribeClusterV2U
 	request = &DescribeClusterV2UserKubeconfigRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusterV2UserKubeconfig", "/api/v2/k8s/[ClusterId]/user_config", "csk", "openAPI")
+	request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusterV2UserKubeconfig", "/api/v2/k8s/[ClusterId]/user_config", "", "")
 	request.Method = requests.GET
 	return
 }

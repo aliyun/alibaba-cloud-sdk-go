@@ -76,6 +76,7 @@ func (client *Client) UnInstallClusterAddonsWithCallback(request *UnInstallClust
 // UnInstallClusterAddonsRequest is the request struct for api UnInstallClusterAddons
 type UnInstallClusterAddonsRequest struct {
 	*requests.RoaRequest
+	Name      string `position:"Body" name:"name"`
 	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
@@ -90,7 +91,7 @@ func CreateUnInstallClusterAddonsRequest() (request *UnInstallClusterAddonsReque
 	request = &UnInstallClusterAddonsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "UnInstallClusterAddons", "/clusters/[ClusterId]/components/uninstall", "csk", "openAPI")
+	request.InitWithApiInfo("CS", "2015-12-15", "UnInstallClusterAddons", "/clusters/[ClusterId]/components/uninstall", "", "")
 	request.Method = requests.POST
 	return
 }

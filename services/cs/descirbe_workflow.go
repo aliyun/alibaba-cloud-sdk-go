@@ -89,7 +89,7 @@ func CreateDescirbeWorkflowRequest() (request *DescirbeWorkflowRequest) {
 	request = &DescirbeWorkflowRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DescirbeWorkflow", "/gs/workflow/[workflowName]", "csk", "openAPI")
+	request.InitWithApiInfo("CS", "2015-12-15", "DescirbeWorkflow", "/gs/workflow/[workflowName]", "", "")
 	request.Method = requests.GET
 	return
 }

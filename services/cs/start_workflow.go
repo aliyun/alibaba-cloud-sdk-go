@@ -88,7 +88,7 @@ func CreateStartWorkflowRequest() (request *StartWorkflowRequest) {
 	request = &StartWorkflowRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "StartWorkflow", "/gs/workflow", "csk", "openAPI")
+	request.InitWithApiInfo("CS", "2015-12-15", "StartWorkflow", "/gs/workflow", "", "")
 	request.Method = requests.POST
 	return
 }

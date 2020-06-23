@@ -76,12 +76,19 @@ func (client *Client) AttachInstancesWithCallback(request *AttachInstancesReques
 // AttachInstancesRequest is the request struct for api AttachInstances
 type AttachInstancesRequest struct {
 	*requests.RoaRequest
-	ClusterId string `position:"Path" name:"ClusterId"`
+	Password         string           `position:"Body" name:"password"`
+	KeepInstanceName requests.Boolean `position:"Body" name:"keep_instance_name"`
+	KeyPair          string           `position:"Body" name:"key_pair"`
+	CpuPolicy        string           `position:"Body" name:"cpu_policy"`
+	ClusterId        string           `position:"Path" name:"ClusterId"`
+	FormatDisk       requests.Boolean `position:"Body" name:"format_disk"`
 }
 
 // AttachInstancesResponse is the response struct for api AttachInstances
 type AttachInstancesResponse struct {
 	*responses.BaseResponse
+	TaskId string     `json:"task_id" xml:"task_id"`
+	List   []ListItem `json:"list" xml:"list"`
 }
 
 // CreateAttachInstancesRequest creates a request to invoke AttachInstances API
@@ -89,7 +96,7 @@ func CreateAttachInstancesRequest() (request *AttachInstancesRequest) {
 	request = &AttachInstancesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "AttachInstances", "/clusters/[ClusterId]/attach", "csk", "openAPI")
+	request.InitWithApiInfo("CS", "2015-12-15", "AttachInstances", "/clusters/[ClusterId]/attach", "", "")
 	request.Method = requests.POST
 	return
 }

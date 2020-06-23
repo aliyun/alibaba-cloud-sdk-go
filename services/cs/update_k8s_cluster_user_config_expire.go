@@ -89,7 +89,7 @@ func CreateUpdateK8sClusterUserConfigExpireRequest() (request *UpdateK8sClusterU
 	request = &UpdateK8sClusterUserConfigExpireRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "UpdateK8sClusterUserConfigExpire", "/k8s/[ClusterId]/user_config/expire", "csk", "openAPI")
+	request.InitWithApiInfo("CS", "2015-12-15", "UpdateK8sClusterUserConfigExpire", "/k8s/[ClusterId]/user_config/expire", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -89,7 +89,7 @@ func CreateCancelWorkflowRequest() (request *CancelWorkflowRequest) {
 	request = &CancelWorkflowRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "CancelWorkflow", "/gs/workflow/[workflowName]", "csk", "openAPI")
+	request.InitWithApiInfo("CS", "2015-12-15", "CancelWorkflow", "/gs/workflow/[workflowName]", "", "")
 	request.Method = requests.PUT
 	return
 }

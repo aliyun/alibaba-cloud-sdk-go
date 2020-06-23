@@ -82,6 +82,7 @@ type DeleteClusterRequest struct {
 // DeleteClusterResponse is the response struct for api DeleteCluster
 type DeleteClusterResponse struct {
 	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteClusterRequest creates a request to invoke DeleteCluster API
@@ -89,7 +90,7 @@ func CreateDeleteClusterRequest() (request *DeleteClusterRequest) {
 	request = &DeleteClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DeleteCluster", "/clusters/[ClusterId]", "csk", "openAPI")
+	request.InitWithApiInfo("CS", "2015-12-15", "DeleteCluster", "/clusters/[ClusterId]", "", "")
 	request.Method = requests.DELETE
 	return
 }
