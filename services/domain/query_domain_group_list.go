@@ -76,10 +76,10 @@ func (client *Client) QueryDomainGroupListWithCallback(request *QueryDomainGroup
 // QueryDomainGroupListRequest is the request struct for api QueryDomainGroupList
 type QueryDomainGroupListRequest struct {
 	*requests.RpcRequest
+	ShowDeletingGroup requests.Boolean `position:"Query" name:"ShowDeletingGroup"`
 	UserClientIp      string           `position:"Query" name:"UserClientIp"`
 	DomainGroupName   string           `position:"Query" name:"DomainGroupName"`
 	Lang              string           `position:"Query" name:"Lang"`
-	ShowDeletingGroup requests.Boolean `position:"Query" name:"ShowDeletingGroup"`
 }
 
 // QueryDomainGroupListResponse is the response struct for api QueryDomainGroupList
@@ -94,7 +94,8 @@ func CreateQueryDomainGroupListRequest() (request *QueryDomainGroupListRequest) 
 	request = &QueryDomainGroupListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainGroupList", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainGroupList", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

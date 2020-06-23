@@ -76,9 +76,9 @@ func (client *Client) DeleteDomainGroupWithCallback(request *DeleteDomainGroupRe
 // DeleteDomainGroupRequest is the request struct for api DeleteDomainGroup
 type DeleteDomainGroupRequest struct {
 	*requests.RpcRequest
+	DomainGroupId requests.Integer `position:"Query" name:"DomainGroupId"`
 	UserClientIp  string           `position:"Query" name:"UserClientIp"`
 	Lang          string           `position:"Query" name:"Lang"`
-	DomainGroupId requests.Integer `position:"Query" name:"DomainGroupId"`
 }
 
 // DeleteDomainGroupResponse is the response struct for api DeleteDomainGroup
@@ -92,7 +92,8 @@ func CreateDeleteDomainGroupRequest() (request *DeleteDomainGroupRequest) {
 	request = &DeleteDomainGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "DeleteDomainGroup", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "DeleteDomainGroup", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

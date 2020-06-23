@@ -76,11 +76,11 @@ func (client *Client) QueryFailingReasonListForQualificationWithCallback(request
 // QueryFailingReasonListForQualificationRequest is the request struct for api QueryFailingReasonListForQualification
 type QueryFailingReasonListForQualificationRequest struct {
 	*requests.RpcRequest
+	QualificationType string           `position:"Query" name:"QualificationType"`
 	InstanceId        string           `position:"Query" name:"InstanceId"`
 	UserClientIp      string           `position:"Query" name:"UserClientIp"`
 	Limit             requests.Integer `position:"Query" name:"Limit"`
 	Lang              string           `position:"Query" name:"Lang"`
-	QualificationType string           `position:"Query" name:"QualificationType"`
 }
 
 // QueryFailingReasonListForQualificationResponse is the response struct for api QueryFailingReasonListForQualification
@@ -95,7 +95,8 @@ func CreateQueryFailingReasonListForQualificationRequest() (request *QueryFailin
 	request = &QueryFailingReasonListForQualificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryFailingReasonListForQualification", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryFailingReasonListForQualification", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

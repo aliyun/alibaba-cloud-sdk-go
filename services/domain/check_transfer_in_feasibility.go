@@ -76,9 +76,9 @@ func (client *Client) CheckTransferInFeasibilityWithCallback(request *CheckTrans
 // CheckTransferInFeasibilityRequest is the request struct for api CheckTransferInFeasibility
 type CheckTransferInFeasibilityRequest struct {
 	*requests.RpcRequest
+	DomainName                string `position:"Query" name:"DomainName"`
 	TransferAuthorizationCode string `position:"Query" name:"TransferAuthorizationCode"`
 	UserClientIp              string `position:"Query" name:"UserClientIp"`
-	DomainName                string `position:"Query" name:"DomainName"`
 	Lang                      string `position:"Query" name:"Lang"`
 }
 
@@ -97,7 +97,8 @@ func CreateCheckTransferInFeasibilityRequest() (request *CheckTransferInFeasibil
 	request = &CheckTransferInFeasibilityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "CheckTransferInFeasibility", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "CheckTransferInFeasibility", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

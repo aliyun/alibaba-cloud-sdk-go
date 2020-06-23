@@ -77,8 +77,8 @@ func (client *Client) QueryRegistrantProfileRealNameVerificationInfoWithCallback
 type QueryRegistrantProfileRealNameVerificationInfoRequest struct {
 	*requests.RpcRequest
 	FetchImage          requests.Boolean `position:"Query" name:"FetchImage"`
-	UserClientIp        string           `position:"Query" name:"UserClientIp"`
 	RegistrantProfileId requests.Integer `position:"Query" name:"RegistrantProfileId"`
+	UserClientIp        string           `position:"Query" name:"UserClientIp"`
 	Lang                string           `position:"Query" name:"Lang"`
 }
 
@@ -100,7 +100,8 @@ func CreateQueryRegistrantProfileRealNameVerificationInfoRequest() (request *Que
 	request = &QueryRegistrantProfileRealNameVerificationInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryRegistrantProfileRealNameVerificationInfo", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryRegistrantProfileRealNameVerificationInfo", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

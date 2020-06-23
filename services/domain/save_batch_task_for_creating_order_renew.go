@@ -76,11 +76,11 @@ func (client *Client) SaveBatchTaskForCreatingOrderRenewWithCallback(request *Sa
 // SaveBatchTaskForCreatingOrderRenewRequest is the request struct for api SaveBatchTaskForCreatingOrderRenew
 type SaveBatchTaskForCreatingOrderRenewRequest struct {
 	*requests.RpcRequest
+	CouponNo        string                                               `position:"Query" name:"CouponNo"`
+	UseCoupon       requests.Boolean                                     `position:"Query" name:"UseCoupon"`
 	PromotionNo     string                                               `position:"Query" name:"PromotionNo"`
 	UserClientIp    string                                               `position:"Query" name:"UserClientIp"`
 	OrderRenewParam *[]SaveBatchTaskForCreatingOrderRenewOrderRenewParam `position:"Query" name:"OrderRenewParam"  type:"Repeated"`
-	CouponNo        string                                               `position:"Query" name:"CouponNo"`
-	UseCoupon       requests.Boolean                                     `position:"Query" name:"UseCoupon"`
 	Lang            string                                               `position:"Query" name:"Lang"`
 	UsePromotion    requests.Boolean                                     `position:"Query" name:"UsePromotion"`
 }
@@ -104,7 +104,8 @@ func CreateSaveBatchTaskForCreatingOrderRenewRequest() (request *SaveBatchTaskFo
 	request = &SaveBatchTaskForCreatingOrderRenewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderRenew", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderRenew", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

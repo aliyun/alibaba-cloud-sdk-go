@@ -76,17 +76,17 @@ func (client *Client) SaveSingleTaskForSaveArtExtensionWithCallback(request *Sav
 // SaveSingleTaskForSaveArtExtensionRequest is the request struct for api SaveSingleTaskForSaveArtExtension
 type SaveSingleTaskForSaveArtExtensionRequest struct {
 	*requests.RpcRequest
+	Subject                 string `position:"Query" name:"Subject"`
+	Title                   string `position:"Query" name:"Title"`
+	DateOrPeriod            string `position:"Query" name:"DateOrPeriod"`
 	Reference               string `position:"Query" name:"Reference"`
 	Features                string `position:"Query" name:"Features"`
 	InscriptionsAndMarkings string `position:"Query" name:"InscriptionsAndMarkings"`
-	Subject                 string `position:"Query" name:"Subject"`
+	ObjectType              string `position:"Query" name:"ObjectType"`
+	Lang                    string `position:"Query" name:"Lang"`
 	DomainName              string `position:"Query" name:"DomainName"`
 	Maker                   string `position:"Query" name:"Maker"`
-	ObjectType              string `position:"Query" name:"ObjectType"`
-	Title                   string `position:"Query" name:"Title"`
-	Lang                    string `position:"Query" name:"Lang"`
 	MaterialsAndTechniques  string `position:"Query" name:"MaterialsAndTechniques"`
-	DateOrPeriod            string `position:"Query" name:"DateOrPeriod"`
 	Dimensions              string `position:"Query" name:"Dimensions"`
 }
 
@@ -102,7 +102,8 @@ func CreateSaveSingleTaskForSaveArtExtensionRequest() (request *SaveSingleTaskFo
 	request = &SaveSingleTaskForSaveArtExtensionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForSaveArtExtension", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForSaveArtExtension", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

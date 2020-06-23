@@ -76,10 +76,10 @@ func (client *Client) SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDWith
 // SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest is the request struct for api SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID
 type SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest struct {
 	*requests.RpcRequest
-	UserClientIp          string           `position:"Query" name:"UserClientIp"`
 	RegistrantProfileId   requests.Integer `position:"Query" name:"RegistrantProfileId"`
 	DomainName            *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
 	TransferOutProhibited requests.Boolean `position:"Query" name:"TransferOutProhibited"`
+	UserClientIp          string           `position:"Query" name:"UserClientIp"`
 	Lang                  string           `position:"Query" name:"Lang"`
 }
 
@@ -95,7 +95,8 @@ func CreateSaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest() (requ
 	request = &SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

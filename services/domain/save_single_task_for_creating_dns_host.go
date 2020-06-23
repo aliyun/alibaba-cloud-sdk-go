@@ -76,8 +76,8 @@ func (client *Client) SaveSingleTaskForCreatingDnsHostWithCallback(request *Save
 // SaveSingleTaskForCreatingDnsHostRequest is the request struct for api SaveSingleTaskForCreatingDnsHost
 type SaveSingleTaskForCreatingDnsHostRequest struct {
 	*requests.RpcRequest
-	InstanceId   string    `position:"Query" name:"InstanceId"`
 	Ip           *[]string `position:"Query" name:"Ip"  type:"Repeated"`
+	InstanceId   string    `position:"Query" name:"InstanceId"`
 	DnsName      string    `position:"Query" name:"DnsName"`
 	UserClientIp string    `position:"Query" name:"UserClientIp"`
 	Lang         string    `position:"Query" name:"Lang"`
@@ -95,7 +95,8 @@ func CreateSaveSingleTaskForCreatingDnsHostRequest() (request *SaveSingleTaskFor
 	request = &SaveSingleTaskForCreatingDnsHostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCreatingDnsHost", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCreatingDnsHost", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

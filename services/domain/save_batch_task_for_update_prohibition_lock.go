@@ -76,8 +76,8 @@ func (client *Client) SaveBatchTaskForUpdateProhibitionLockWithCallback(request 
 // SaveBatchTaskForUpdateProhibitionLockRequest is the request struct for api SaveBatchTaskForUpdateProhibitionLock
 type SaveBatchTaskForUpdateProhibitionLockRequest struct {
 	*requests.RpcRequest
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	DomainName   *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	Lang         string           `position:"Query" name:"Lang"`
 	Status       requests.Boolean `position:"Query" name:"Status"`
 }
@@ -94,7 +94,8 @@ func CreateSaveBatchTaskForUpdateProhibitionLockRequest() (request *SaveBatchTas
 	request = &SaveBatchTaskForUpdateProhibitionLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForUpdateProhibitionLock", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForUpdateProhibitionLock", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

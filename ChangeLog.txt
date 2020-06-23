@@ -1,3 +1,12 @@
+2020-06-23 Version: v1.61.268
+- Generated 2018-01-29, 2018-02-08 for `Domain`.
+- Support SubmitOperationAuditInfo for Support self-service submission of approval information.
+- Support SubmitOperationCredentials for self-service submission of certificate information.
+- Support CancelOperationAudit for cancel audit.
+- Support GetOperationOssUploadPolic for get oss policy.
+- Support QueryOperationAuditInfoLis for query audit list.
+- Support QueryOperationAuditInfoDetail for query audit details.
+
 2020-06-23 Version: v1.61.267
 - Generated 2018-08-28 for `Tag`.
 

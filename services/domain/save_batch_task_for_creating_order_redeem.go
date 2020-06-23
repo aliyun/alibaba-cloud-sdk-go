@@ -76,11 +76,11 @@ func (client *Client) SaveBatchTaskForCreatingOrderRedeemWithCallback(request *S
 // SaveBatchTaskForCreatingOrderRedeemRequest is the request struct for api SaveBatchTaskForCreatingOrderRedeem
 type SaveBatchTaskForCreatingOrderRedeemRequest struct {
 	*requests.RpcRequest
+	CouponNo         string                                                 `position:"Query" name:"CouponNo"`
+	UseCoupon        requests.Boolean                                       `position:"Query" name:"UseCoupon"`
 	PromotionNo      string                                                 `position:"Query" name:"PromotionNo"`
 	OrderRedeemParam *[]SaveBatchTaskForCreatingOrderRedeemOrderRedeemParam `position:"Query" name:"OrderRedeemParam"  type:"Repeated"`
 	UserClientIp     string                                                 `position:"Query" name:"UserClientIp"`
-	CouponNo         string                                                 `position:"Query" name:"CouponNo"`
-	UseCoupon        requests.Boolean                                       `position:"Query" name:"UseCoupon"`
 	Lang             string                                                 `position:"Query" name:"Lang"`
 	UsePromotion     requests.Boolean                                       `position:"Query" name:"UsePromotion"`
 }
@@ -103,7 +103,8 @@ func CreateSaveBatchTaskForCreatingOrderRedeemRequest() (request *SaveBatchTaskF
 	request = &SaveBatchTaskForCreatingOrderRedeemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderRedeem", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderRedeem", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

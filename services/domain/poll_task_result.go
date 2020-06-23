@@ -76,14 +76,14 @@ func (client *Client) PollTaskResultWithCallback(request *PollTaskResultRequest,
 // PollTaskResultRequest is the request struct for api PollTaskResult
 type PollTaskResultRequest struct {
 	*requests.RpcRequest
+	DomainName       string           `position:"Query" name:"DomainName"`
+	PageNum          requests.Integer `position:"Query" name:"PageNum"`
+	TaskResultStatus requests.Integer `position:"Query" name:"TaskResultStatus"`
 	InstanceId       string           `position:"Query" name:"InstanceId"`
 	UserClientIp     string           `position:"Query" name:"UserClientIp"`
 	TaskNo           string           `position:"Query" name:"TaskNo"`
-	DomainName       string           `position:"Query" name:"DomainName"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 	Lang             string           `position:"Query" name:"Lang"`
-	PageNum          requests.Integer `position:"Query" name:"PageNum"`
-	TaskResultStatus requests.Integer `position:"Query" name:"TaskResultStatus"`
 }
 
 // PollTaskResultResponse is the response struct for api PollTaskResult
@@ -104,7 +104,8 @@ func CreatePollTaskResultRequest() (request *PollTaskResultRequest) {
 	request = &PollTaskResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "PollTaskResult", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "PollTaskResult", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

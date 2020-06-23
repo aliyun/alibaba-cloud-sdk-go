@@ -76,8 +76,8 @@ func (client *Client) QueryDomainByDomainNameWithCallback(request *QueryDomainBy
 // QueryDomainByDomainNameRequest is the request struct for api QueryDomainByDomainName
 type QueryDomainByDomainNameRequest struct {
 	*requests.RpcRequest
-	UserClientIp string `position:"Query" name:"UserClientIp"`
 	DomainName   string `position:"Query" name:"DomainName"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
 }
 
@@ -116,7 +116,8 @@ func CreateQueryDomainByDomainNameRequest() (request *QueryDomainByDomainNameReq
 	request = &QueryDomainByDomainNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainByDomainName", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainByDomainName", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

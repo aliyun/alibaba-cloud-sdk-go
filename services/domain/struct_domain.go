@@ -17,25 +17,25 @@ package domain
 
 // Domain is a nested struct in domain response
 type Domain struct {
-	RegistrationDate         string                    `json:"RegistrationDate" xml:"RegistrationDate"`
-	RegistrationDateLong     int64                     `json:"RegistrationDateLong" xml:"RegistrationDateLong"`
-	ZhRegistrantOrganization string                    `json:"ZhRegistrantOrganization" xml:"ZhRegistrantOrganization"`
-	DomainStatus             string                    `json:"DomainStatus" xml:"DomainStatus"`
-	Email                    string                    `json:"Email" xml:"Email"`
-	DomainType               string                    `json:"DomainType" xml:"DomainType"`
-	Remark                   string                    `json:"Remark" xml:"Remark"`
-	DomainName               string                    `json:"DomainName" xml:"DomainName"`
-	ProductId                string                    `json:"ProductId" xml:"ProductId"`
-	ExpirationDateStatus     string                    `json:"ExpirationDateStatus" xml:"ExpirationDateStatus"`
-	ExpirationDateLong       int64                     `json:"ExpirationDateLong" xml:"ExpirationDateLong"`
-	RegistrantType           string                    `json:"RegistrantType" xml:"RegistrantType"`
-	ExpirationDate           string                    `json:"ExpirationDate" xml:"ExpirationDate"`
-	Premium                  bool                      `json:"Premium" xml:"Premium"`
-	DomainAuditStatus        string                    `json:"DomainAuditStatus" xml:"DomainAuditStatus"`
-	DomainGroupName          string                    `json:"DomainGroupName" xml:"DomainGroupName"`
-	InstanceId               string                    `json:"InstanceId" xml:"InstanceId"`
-	ExpirationCurrDateDiff   int                       `json:"ExpirationCurrDateDiff" xml:"ExpirationCurrDateDiff"`
-	RegistrantOrganization   string                    `json:"RegistrantOrganization" xml:"RegistrantOrganization"`
-	DomainGroupId            string                    `json:"DomainGroupId" xml:"DomainGroupId"`
-	DnsList                  DnsListInScrollDomainList `json:"DnsList" xml:"DnsList"`
+	RegistrationDate         string                           `json:"RegistrationDate" xml:"RegistrationDate"`
+	RegistrationDateLong     int64                            `json:"RegistrationDateLong" xml:"RegistrationDateLong"`
+	ZhRegistrantOrganization string                           `json:"ZhRegistrantOrganization" xml:"ZhRegistrantOrganization"`
+	DomainStatus             string                           `json:"DomainStatus" xml:"DomainStatus"`
+	Email                    string                           `json:"Email" xml:"Email"`
+	DomainType               string                           `json:"DomainType" xml:"DomainType"`
+	Remark                   string                           `json:"Remark" xml:"Remark"`
+	DomainName               string                           `json:"DomainName" xml:"DomainName"`
+	ProductId                string                           `json:"ProductId" xml:"ProductId"`
+	ExpirationDateStatus     string                           `json:"ExpirationDateStatus" xml:"ExpirationDateStatus"`
+	ExpirationDateLong       int64                            `json:"ExpirationDateLong" xml:"ExpirationDateLong"`
+	RegistrantType           string                           `json:"RegistrantType" xml:"RegistrantType"`
+	ExpirationDate           string                           `json:"ExpirationDate" xml:"ExpirationDate"`
+	Premium                  bool                             `json:"Premium" xml:"Premium"`
+	DomainAuditStatus        string                           `json:"DomainAuditStatus" xml:"DomainAuditStatus"`
+	DomainGroupName          string                           `json:"DomainGroupName" xml:"DomainGroupName"`
+	InstanceId               string                           `json:"InstanceId" xml:"InstanceId"`
+	ExpirationCurrDateDiff   int                              `json:"ExpirationCurrDateDiff" xml:"ExpirationCurrDateDiff"`
+	RegistrantOrganization   string                           `json:"RegistrantOrganization" xml:"RegistrantOrganization"`
+	DomainGroupId            string                           `json:"DomainGroupId" xml:"DomainGroupId"`
+	DnsList                  DnsListInQueryAdvancedDomainList `json:"DnsList" xml:"DnsList"`
 }

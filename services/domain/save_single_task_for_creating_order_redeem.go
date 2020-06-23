@@ -76,12 +76,12 @@ func (client *Client) SaveSingleTaskForCreatingOrderRedeemWithCallback(request *
 // SaveSingleTaskForCreatingOrderRedeemRequest is the request struct for api SaveSingleTaskForCreatingOrderRedeem
 type SaveSingleTaskForCreatingOrderRedeemRequest struct {
 	*requests.RpcRequest
-	PromotionNo           string           `position:"Query" name:"PromotionNo"`
-	CurrentExpirationDate requests.Integer `position:"Query" name:"CurrentExpirationDate"`
-	UserClientIp          string           `position:"Query" name:"UserClientIp"`
 	DomainName            string           `position:"Query" name:"DomainName"`
 	CouponNo              string           `position:"Query" name:"CouponNo"`
 	UseCoupon             requests.Boolean `position:"Query" name:"UseCoupon"`
+	PromotionNo           string           `position:"Query" name:"PromotionNo"`
+	CurrentExpirationDate requests.Integer `position:"Query" name:"CurrentExpirationDate"`
+	UserClientIp          string           `position:"Query" name:"UserClientIp"`
 	Lang                  string           `position:"Query" name:"Lang"`
 	UsePromotion          requests.Boolean `position:"Query" name:"UsePromotion"`
 }
@@ -98,7 +98,8 @@ func CreateSaveSingleTaskForCreatingOrderRedeemRequest() (request *SaveSingleTas
 	request = &SaveSingleTaskForCreatingOrderRedeemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderRedeem", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderRedeem", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -94,7 +94,8 @@ func CreateRequestPayDemandRequest() (request *RequestPayDemandRequest) {
 	request = &RequestPayDemandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "RequestPayDemand", "", "")
+	request.InitWithApiInfo("Domain", "2018-02-08", "RequestPayDemand", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

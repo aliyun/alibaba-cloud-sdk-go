@@ -122,7 +122,8 @@ func CreateQueryAdvancedDomainListRequest() (request *QueryAdvancedDomainListReq
 	request = &QueryAdvancedDomainListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryAdvancedDomainList", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryAdvancedDomainList", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

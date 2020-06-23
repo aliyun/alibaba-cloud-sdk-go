@@ -77,10 +77,10 @@ func (client *Client) SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdWi
 type SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest struct {
 	*requests.RpcRequest
 	ContactType           string           `position:"Query" name:"ContactType"`
-	UserClientIp          string           `position:"Query" name:"UserClientIp"`
 	RegistrantProfileId   requests.Integer `position:"Query" name:"RegistrantProfileId"`
 	DomainName            *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
 	TransferOutProhibited requests.Boolean `position:"Query" name:"TransferOutProhibited"`
+	UserClientIp          string           `position:"Query" name:"UserClientIp"`
 	Lang                  string           `position:"Query" name:"Lang"`
 }
 
@@ -96,7 +96,8 @@ func CreateSaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest() (re
 	request = &SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForUpdatingContactInfoByRegistrantProfileId", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForUpdatingContactInfoByRegistrantProfileId", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

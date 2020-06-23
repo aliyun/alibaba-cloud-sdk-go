@@ -97,7 +97,8 @@ func CreateSaveSingleTaskForModifyingDSRecordRequest() (request *SaveSingleTaskF
 	request = &SaveSingleTaskForModifyingDSRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForModifyingDSRecord", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForModifyingDSRecord", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

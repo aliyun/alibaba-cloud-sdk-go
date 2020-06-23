@@ -91,7 +91,8 @@ func CreateFailDemandRequest() (request *FailDemandRequest) {
 	request = &FailDemandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-02-08", "FailDemand", "", "")
+	request.InitWithApiInfo("Domain", "2018-02-08", "FailDemand", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

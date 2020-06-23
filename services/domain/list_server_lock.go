@@ -77,16 +77,16 @@ func (client *Client) ListServerLockWithCallback(request *ListServerLockRequest,
 type ListServerLockRequest struct {
 	*requests.RpcRequest
 	LockProductId    string           `position:"Query" name:"LockProductId"`
-	EndStartDate     requests.Integer `position:"Query" name:"EndStartDate"`
-	ServerLockStatus requests.Integer `position:"Query" name:"ServerLockStatus"`
-	StartExpireDate  requests.Integer `position:"Query" name:"StartExpireDate"`
-	DomainName       string           `position:"Query" name:"DomainName"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	UserClientIp     string           `position:"Query" name:"UserClientIp"`
 	EndExpireDate    requests.Integer `position:"Query" name:"EndExpireDate"`
 	PageNum          requests.Integer `position:"Query" name:"PageNum"`
-	Lang             string           `position:"Query" name:"Lang"`
 	BeginStartDate   requests.Integer `position:"Query" name:"BeginStartDate"`
+	ServerLockStatus requests.Integer `position:"Query" name:"ServerLockStatus"`
+	StartExpireDate  requests.Integer `position:"Query" name:"StartExpireDate"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	Lang             string           `position:"Query" name:"Lang"`
+	DomainName       string           `position:"Query" name:"DomainName"`
+	EndStartDate     requests.Integer `position:"Query" name:"EndStartDate"`
+	UserClientIp     string           `position:"Query" name:"UserClientIp"`
 }
 
 // ListServerLockResponse is the response struct for api ListServerLock
@@ -107,7 +107,8 @@ func CreateListServerLockRequest() (request *ListServerLockRequest) {
 	request = &ListServerLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "ListServerLock", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "ListServerLock", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -76,9 +76,9 @@ func (client *Client) QueryFailReasonForDomainRealNameVerificationWithCallback(r
 // QueryFailReasonForDomainRealNameVerificationRequest is the request struct for api QueryFailReasonForDomainRealNameVerification
 type QueryFailReasonForDomainRealNameVerificationRequest struct {
 	*requests.RpcRequest
+	DomainName                 string `position:"Query" name:"DomainName"`
 	RealNameVerificationAction string `position:"Query" name:"RealNameVerificationAction"`
 	UserClientIp               string `position:"Query" name:"UserClientIp"`
-	DomainName                 string `position:"Query" name:"DomainName"`
 	Lang                       string `position:"Query" name:"Lang"`
 }
 
@@ -94,7 +94,8 @@ func CreateQueryFailReasonForDomainRealNameVerificationRequest() (request *Query
 	request = &QueryFailReasonForDomainRealNameVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryFailReasonForDomainRealNameVerification", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryFailReasonForDomainRealNameVerification", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

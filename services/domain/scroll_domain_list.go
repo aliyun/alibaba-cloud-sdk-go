@@ -76,26 +76,26 @@ func (client *Client) ScrollDomainListWithCallback(request *ScrollDomainListRequ
 // ScrollDomainListRequest is the request struct for api ScrollDomainList
 type ScrollDomainListRequest struct {
 	*requests.RpcRequest
-	EndExpirationDate     requests.Integer `position:"Query" name:"EndExpirationDate"`
 	ProductDomainType     string           `position:"Query" name:"ProductDomainType"`
+	Excluded              string           `position:"Query" name:"Excluded"`
+	StartLength           requests.Integer `position:"Query" name:"StartLength"`
+	ExcludedSuffix        requests.Boolean `position:"Query" name:"ExcludedSuffix"`
+	PageSize              requests.Integer `position:"Query" name:"PageSize"`
+	Lang                  string           `position:"Query" name:"Lang"`
+	ExcludedPrefix        requests.Boolean `position:"Query" name:"ExcludedPrefix"`
+	KeyWord               string           `position:"Query" name:"KeyWord"`
+	EndExpirationDate     requests.Integer `position:"Query" name:"EndExpirationDate"`
 	Suffixs               string           `position:"Query" name:"Suffixs"`
 	StartExpirationDate   requests.Integer `position:"Query" name:"StartExpirationDate"`
 	DomainStatus          requests.Integer `position:"Query" name:"DomainStatus"`
 	DomainGroupId         requests.Integer `position:"Query" name:"DomainGroupId"`
 	KeyWordSuffix         requests.Boolean `position:"Query" name:"KeyWordSuffix"`
 	ScrollId              string           `position:"Query" name:"ScrollId"`
-	Excluded              string           `position:"Query" name:"Excluded"`
 	KeyWordPrefix         requests.Boolean `position:"Query" name:"KeyWordPrefix"`
-	StartLength           requests.Integer `position:"Query" name:"StartLength"`
 	TradeType             requests.Integer `position:"Query" name:"TradeType"`
-	ExcludedSuffix        requests.Boolean `position:"Query" name:"ExcludedSuffix"`
 	EndRegistrationDate   requests.Integer `position:"Query" name:"EndRegistrationDate"`
 	Form                  requests.Integer `position:"Query" name:"Form"`
 	UserClientIp          string           `position:"Query" name:"UserClientIp"`
-	PageSize              requests.Integer `position:"Query" name:"PageSize"`
-	Lang                  string           `position:"Query" name:"Lang"`
-	ExcludedPrefix        requests.Boolean `position:"Query" name:"ExcludedPrefix"`
-	KeyWord               string           `position:"Query" name:"KeyWord"`
 	StartRegistrationDate requests.Integer `position:"Query" name:"StartRegistrationDate"`
 	EndLength             requests.Integer `position:"Query" name:"EndLength"`
 }
@@ -115,7 +115,8 @@ func CreateScrollDomainListRequest() (request *ScrollDomainListRequest) {
 	request = &ScrollDomainListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "ScrollDomainList", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "ScrollDomainList", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

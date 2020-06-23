@@ -76,10 +76,10 @@ func (client *Client) QueryQualificationDetailWithCallback(request *QueryQualifi
 // QueryQualificationDetailRequest is the request struct for api QueryQualificationDetail
 type QueryQualificationDetailRequest struct {
 	*requests.RpcRequest
+	QualificationType string `position:"Query" name:"QualificationType"`
 	InstanceId        string `position:"Query" name:"InstanceId"`
 	UserClientIp      string `position:"Query" name:"UserClientIp"`
 	Lang              string `position:"Query" name:"Lang"`
-	QualificationType string `position:"Query" name:"QualificationType"`
 }
 
 // QueryQualificationDetailResponse is the response struct for api QueryQualificationDetail
@@ -96,7 +96,8 @@ func CreateQueryQualificationDetailRequest() (request *QueryQualificationDetailR
 	request = &QueryQualificationDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryQualificationDetail", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryQualificationDetail", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

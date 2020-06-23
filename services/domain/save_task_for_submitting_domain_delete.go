@@ -93,7 +93,8 @@ func CreateSaveTaskForSubmittingDomainDeleteRequest() (request *SaveTaskForSubmi
 	request = &SaveTaskForSubmittingDomainDeleteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForSubmittingDomainDelete", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForSubmittingDomainDelete", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

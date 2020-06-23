@@ -76,8 +76,8 @@ func (client *Client) SaveSingleTaskForTransferProhibitionLockWithCallback(reque
 // SaveSingleTaskForTransferProhibitionLockRequest is the request struct for api SaveSingleTaskForTransferProhibitionLock
 type SaveSingleTaskForTransferProhibitionLockRequest struct {
 	*requests.RpcRequest
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	DomainName   string           `position:"Query" name:"DomainName"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	Lang         string           `position:"Query" name:"Lang"`
 	Status       requests.Boolean `position:"Query" name:"Status"`
 }
@@ -94,7 +94,8 @@ func CreateSaveSingleTaskForTransferProhibitionLockRequest() (request *SaveSingl
 	request = &SaveSingleTaskForTransferProhibitionLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForTransferProhibitionLock", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForTransferProhibitionLock", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

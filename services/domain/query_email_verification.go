@@ -102,7 +102,8 @@ func CreateQueryEmailVerificationRequest() (request *QueryEmailVerificationReque
 	request = &QueryEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryEmailVerification", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryEmailVerification", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

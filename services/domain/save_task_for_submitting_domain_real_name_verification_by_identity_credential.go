@@ -77,9 +77,9 @@ func (client *Client) SaveTaskForSubmittingDomainRealNameVerificationByIdentityC
 type SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest struct {
 	*requests.RpcRequest
 	IdentityCredentialType string    `position:"Query" name:"IdentityCredentialType"`
-	UserClientIp           string    `position:"Query" name:"UserClientIp"`
 	IdentityCredential     string    `position:"Body" name:"IdentityCredential"`
 	DomainName             *[]string `position:"Query" name:"DomainName"  type:"Repeated"`
+	UserClientIp           string    `position:"Query" name:"UserClientIp"`
 	Lang                   string    `position:"Query" name:"Lang"`
 	IdentityCredentialNo   string    `position:"Query" name:"IdentityCredentialNo"`
 }
@@ -96,7 +96,8 @@ func CreateSaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRe
 	request = &SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

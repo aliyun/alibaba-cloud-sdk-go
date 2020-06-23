@@ -76,8 +76,8 @@ func (client *Client) SaveSingleTaskForDomainNameProxyServiceWithCallback(reques
 // SaveSingleTaskForDomainNameProxyServiceRequest is the request struct for api SaveSingleTaskForDomainNameProxyService
 type SaveSingleTaskForDomainNameProxyServiceRequest struct {
 	*requests.RpcRequest
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	DomainName   string           `position:"Query" name:"DomainName"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	Lang         string           `position:"Query" name:"Lang"`
 	Status       requests.Boolean `position:"Query" name:"Status"`
 }
@@ -94,7 +94,8 @@ func CreateSaveSingleTaskForDomainNameProxyServiceRequest() (request *SaveSingle
 	request = &SaveSingleTaskForDomainNameProxyServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForDomainNameProxyService", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForDomainNameProxyService", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

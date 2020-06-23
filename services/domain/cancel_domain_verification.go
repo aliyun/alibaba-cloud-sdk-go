@@ -93,7 +93,8 @@ func CreateCancelDomainVerificationRequest() (request *CancelDomainVerificationR
 	request = &CancelDomainVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "CancelDomainVerification", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "CancelDomainVerification", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

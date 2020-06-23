@@ -76,9 +76,9 @@ func (client *Client) VerifyEmailWithCallback(request *VerifyEmailRequest, callb
 // VerifyEmailRequest is the request struct for api VerifyEmail
 type VerifyEmailRequest struct {
 	*requests.RpcRequest
+	Token        string `position:"Query" name:"Token"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
-	Token        string `position:"Query" name:"Token"`
 }
 
 // VerifyEmailResponse is the response struct for api VerifyEmail
@@ -92,7 +92,8 @@ func CreateVerifyEmailRequest() (request *VerifyEmailRequest) {
 	request = &VerifyEmailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "VerifyEmail", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "VerifyEmail", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

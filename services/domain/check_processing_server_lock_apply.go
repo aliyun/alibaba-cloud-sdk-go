@@ -76,8 +76,8 @@ func (client *Client) CheckProcessingServerLockApplyWithCallback(request *CheckP
 // CheckProcessingServerLockApplyRequest is the request struct for api CheckProcessingServerLockApply
 type CheckProcessingServerLockApplyRequest struct {
 	*requests.RpcRequest
-	FeePeriod    requests.Integer `position:"Query" name:"FeePeriod"`
 	DomainName   string           `position:"Query" name:"DomainName"`
+	FeePeriod    requests.Integer `position:"Query" name:"FeePeriod"`
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	Lang         string           `position:"Query" name:"Lang"`
 }
@@ -94,7 +94,8 @@ func CreateCheckProcessingServerLockApplyRequest() (request *CheckProcessingServ
 	request = &CheckProcessingServerLockApplyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "CheckProcessingServerLockApply", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "CheckProcessingServerLockApply", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

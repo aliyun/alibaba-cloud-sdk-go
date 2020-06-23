@@ -77,9 +77,9 @@ func (client *Client) RegistrantProfileRealNameVerificationWithCallback(request 
 type RegistrantProfileRealNameVerificationRequest struct {
 	*requests.RpcRequest
 	IdentityCredentialType string           `position:"Query" name:"IdentityCredentialType"`
-	UserClientIp           string           `position:"Query" name:"UserClientIp"`
 	RegistrantProfileID    requests.Integer `position:"Query" name:"RegistrantProfileID"`
 	IdentityCredential     string           `position:"Body" name:"IdentityCredential"`
+	UserClientIp           string           `position:"Query" name:"UserClientIp"`
 	Lang                   string           `position:"Query" name:"Lang"`
 	IdentityCredentialNo   string           `position:"Query" name:"IdentityCredentialNo"`
 }
@@ -95,7 +95,8 @@ func CreateRegistrantProfileRealNameVerificationRequest() (request *RegistrantPr
 	request = &RegistrantProfileRealNameVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "RegistrantProfileRealNameVerification", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "RegistrantProfileRealNameVerification", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

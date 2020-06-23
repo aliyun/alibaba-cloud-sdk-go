@@ -76,10 +76,10 @@ func (client *Client) CancelQualificationVerificationWithCallback(request *Cance
 // CancelQualificationVerificationRequest is the request struct for api CancelQualificationVerification
 type CancelQualificationVerificationRequest struct {
 	*requests.RpcRequest
+	QualificationType string `position:"Query" name:"QualificationType"`
 	InstanceId        string `position:"Query" name:"InstanceId"`
 	UserClientIp      string `position:"Query" name:"UserClientIp"`
 	Lang              string `position:"Query" name:"Lang"`
-	QualificationType string `position:"Query" name:"QualificationType"`
 }
 
 // CancelQualificationVerificationResponse is the response struct for api CancelQualificationVerification
@@ -93,7 +93,8 @@ func CreateCancelQualificationVerificationRequest() (request *CancelQualificatio
 	request = &CancelQualificationVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "CancelQualificationVerification", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "CancelQualificationVerification", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

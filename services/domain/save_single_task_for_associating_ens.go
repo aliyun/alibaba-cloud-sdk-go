@@ -77,8 +77,8 @@ func (client *Client) SaveSingleTaskForAssociatingEnsWithCallback(request *SaveS
 type SaveSingleTaskForAssociatingEnsRequest struct {
 	*requests.RpcRequest
 	Address      string `position:"Query" name:"Address"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
 	DomainName   string `position:"Query" name:"DomainName"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
 }
 
@@ -94,7 +94,8 @@ func CreateSaveSingleTaskForAssociatingEnsRequest() (request *SaveSingleTaskForA
 	request = &SaveSingleTaskForAssociatingEnsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForAssociatingEns", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForAssociatingEns", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

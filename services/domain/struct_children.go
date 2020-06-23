@@ -17,5 +17,5 @@ package domain
 
 // Children is a nested struct in domain response
 type Children struct {
-	ChildrenItem []ChildrenItem `json:"ChildrenItem" xml:"ChildrenItem"`
+	ChildrenItem []ChildrenItem `json:"Children" xml:"Children"`
 }

@@ -77,13 +77,13 @@ func (client *Client) QueryTransferInListWithCallback(request *QueryTransferInLi
 type QueryTransferInListRequest struct {
 	*requests.RpcRequest
 	SubmissionStartDate    requests.Integer `position:"Query" name:"SubmissionStartDate"`
-	UserClientIp           string           `position:"Query" name:"UserClientIp"`
 	SubmissionEndDate      requests.Integer `position:"Query" name:"SubmissionEndDate"`
 	DomainName             string           `position:"Query" name:"DomainName"`
+	PageNum                requests.Integer `position:"Query" name:"PageNum"`
+	UserClientIp           string           `position:"Query" name:"UserClientIp"`
 	SimpleTransferInStatus string           `position:"Query" name:"SimpleTransferInStatus"`
 	PageSize               requests.Integer `position:"Query" name:"PageSize"`
 	Lang                   string           `position:"Query" name:"Lang"`
-	PageNum                requests.Integer `position:"Query" name:"PageNum"`
 }
 
 // QueryTransferInListResponse is the response struct for api QueryTransferInList
@@ -104,7 +104,8 @@ func CreateQueryTransferInListRequest() (request *QueryTransferInListRequest) {
 	request = &QueryTransferInListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTransferInList", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTransferInList", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

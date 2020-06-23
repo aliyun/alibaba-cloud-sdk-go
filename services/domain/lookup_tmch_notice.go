@@ -97,7 +97,8 @@ func CreateLookupTmchNoticeRequest() (request *LookupTmchNoticeRequest) {
 	request = &LookupTmchNoticeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "LookupTmchNotice", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "LookupTmchNotice", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

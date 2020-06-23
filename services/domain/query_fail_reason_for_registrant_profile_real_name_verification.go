@@ -76,8 +76,8 @@ func (client *Client) QueryFailReasonForRegistrantProfileRealNameVerificationWit
 // QueryFailReasonForRegistrantProfileRealNameVerificationRequest is the request struct for api QueryFailReasonForRegistrantProfileRealNameVerification
 type QueryFailReasonForRegistrantProfileRealNameVerificationRequest struct {
 	*requests.RpcRequest
-	UserClientIp        string           `position:"Query" name:"UserClientIp"`
 	RegistrantProfileID requests.Integer `position:"Query" name:"RegistrantProfileID"`
+	UserClientIp        string           `position:"Query" name:"UserClientIp"`
 	Lang                string           `position:"Query" name:"Lang"`
 }
 
@@ -93,7 +93,8 @@ func CreateQueryFailReasonForRegistrantProfileRealNameVerificationRequest() (req
 	request = &QueryFailReasonForRegistrantProfileRealNameVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryFailReasonForRegistrantProfileRealNameVerification", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryFailReasonForRegistrantProfileRealNameVerification", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

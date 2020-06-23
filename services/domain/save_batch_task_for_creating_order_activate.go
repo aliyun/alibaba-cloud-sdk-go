@@ -77,10 +77,10 @@ func (client *Client) SaveBatchTaskForCreatingOrderActivateWithCallback(request 
 type SaveBatchTaskForCreatingOrderActivateRequest struct {
 	*requests.RpcRequest
 	OrderActivateParam *[]SaveBatchTaskForCreatingOrderActivateOrderActivateParam `position:"Query" name:"OrderActivateParam"  type:"Repeated"`
-	PromotionNo        string                                                     `position:"Query" name:"PromotionNo"`
-	UserClientIp       string                                                     `position:"Query" name:"UserClientIp"`
 	CouponNo           string                                                     `position:"Query" name:"CouponNo"`
 	UseCoupon          requests.Boolean                                           `position:"Query" name:"UseCoupon"`
+	PromotionNo        string                                                     `position:"Query" name:"PromotionNo"`
+	UserClientIp       string                                                     `position:"Query" name:"UserClientIp"`
 	Lang               string                                                     `position:"Query" name:"Lang"`
 	UsePromotion       requests.Boolean                                           `position:"Query" name:"UsePromotion"`
 }
@@ -127,7 +127,8 @@ func CreateSaveBatchTaskForCreatingOrderActivateRequest() (request *SaveBatchTas
 	request = &SaveBatchTaskForCreatingOrderActivateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderActivate", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForCreatingOrderActivate", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

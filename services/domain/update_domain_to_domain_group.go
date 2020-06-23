@@ -76,13 +76,13 @@ func (client *Client) UpdateDomainToDomainGroupWithCallback(request *UpdateDomai
 // UpdateDomainToDomainGroupRequest is the request struct for api UpdateDomainToDomainGroup
 type UpdateDomainToDomainGroupRequest struct {
 	*requests.RpcRequest
-	DataSource    requests.Integer `position:"Query" name:"DataSource"`
-	UserClientIp  string           `position:"Query" name:"UserClientIp"`
 	FileToUpload  string           `position:"Body" name:"FileToUpload"`
 	DomainName    *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
 	Replace       requests.Boolean `position:"Query" name:"Replace"`
-	Lang          string           `position:"Query" name:"Lang"`
 	DomainGroupId requests.Integer `position:"Query" name:"DomainGroupId"`
+	DataSource    requests.Integer `position:"Query" name:"DataSource"`
+	UserClientIp  string           `position:"Query" name:"UserClientIp"`
+	Lang          string           `position:"Query" name:"Lang"`
 }
 
 // UpdateDomainToDomainGroupResponse is the response struct for api UpdateDomainToDomainGroup
@@ -96,7 +96,8 @@ func CreateUpdateDomainToDomainGroupRequest() (request *UpdateDomainToDomainGrou
 	request = &UpdateDomainToDomainGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "UpdateDomainToDomainGroup", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "UpdateDomainToDomainGroup", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -76,8 +76,8 @@ func (client *Client) QueryLocalEnsAssociationWithCallback(request *QueryLocalEn
 // QueryLocalEnsAssociationRequest is the request struct for api QueryLocalEnsAssociation
 type QueryLocalEnsAssociationRequest struct {
 	*requests.RpcRequest
-	UserClientIp string `position:"Query" name:"UserClientIp"`
 	DomainName   string `position:"Query" name:"DomainName"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
 }
 
@@ -93,7 +93,8 @@ func CreateQueryLocalEnsAssociationRequest() (request *QueryLocalEnsAssociationR
 	request = &QueryLocalEnsAssociationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryLocalEnsAssociation", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryLocalEnsAssociation", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -76,8 +76,8 @@ func (client *Client) SaveBatchTaskForDomainNameProxyServiceWithCallback(request
 // SaveBatchTaskForDomainNameProxyServiceRequest is the request struct for api SaveBatchTaskForDomainNameProxyService
 type SaveBatchTaskForDomainNameProxyServiceRequest struct {
 	*requests.RpcRequest
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	DomainName   *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	Lang         string           `position:"Query" name:"Lang"`
 	Status       requests.Boolean `position:"Query" name:"Status"`
 }
@@ -94,7 +94,8 @@ func CreateSaveBatchTaskForDomainNameProxyServiceRequest() (request *SaveBatchTa
 	request = &SaveBatchTaskForDomainNameProxyServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForDomainNameProxyService", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForDomainNameProxyService", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

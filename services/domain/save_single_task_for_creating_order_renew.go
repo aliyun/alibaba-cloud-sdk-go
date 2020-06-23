@@ -77,13 +77,13 @@ func (client *Client) SaveSingleTaskForCreatingOrderRenewWithCallback(request *S
 type SaveSingleTaskForCreatingOrderRenewRequest struct {
 	*requests.RpcRequest
 	SubscriptionDuration  requests.Integer `position:"Query" name:"SubscriptionDuration"`
-	PromotionNo           string           `position:"Query" name:"PromotionNo"`
-	CurrentExpirationDate requests.Integer `position:"Query" name:"CurrentExpirationDate"`
-	UserClientIp          string           `position:"Query" name:"UserClientIp"`
-	DomainName            string           `position:"Query" name:"DomainName"`
 	CouponNo              string           `position:"Query" name:"CouponNo"`
-	UseCoupon             requests.Boolean `position:"Query" name:"UseCoupon"`
+	CurrentExpirationDate requests.Integer `position:"Query" name:"CurrentExpirationDate"`
 	Lang                  string           `position:"Query" name:"Lang"`
+	DomainName            string           `position:"Query" name:"DomainName"`
+	UseCoupon             requests.Boolean `position:"Query" name:"UseCoupon"`
+	PromotionNo           string           `position:"Query" name:"PromotionNo"`
+	UserClientIp          string           `position:"Query" name:"UserClientIp"`
 	UsePromotion          requests.Boolean `position:"Query" name:"UsePromotion"`
 }
 
@@ -99,7 +99,8 @@ func CreateSaveSingleTaskForCreatingOrderRenewRequest() (request *SaveSingleTask
 	request = &SaveSingleTaskForCreatingOrderRenewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderRenew", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCreatingOrderRenew", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

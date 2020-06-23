@@ -95,7 +95,8 @@ func CreateFuzzyMatchDomainSensitiveWordRequest() (request *FuzzyMatchDomainSens
 	request = &FuzzyMatchDomainSensitiveWordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "FuzzyMatchDomainSensitiveWord", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "FuzzyMatchDomainSensitiveWord", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

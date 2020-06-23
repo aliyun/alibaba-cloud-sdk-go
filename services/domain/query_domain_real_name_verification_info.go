@@ -77,8 +77,8 @@ func (client *Client) QueryDomainRealNameVerificationInfoWithCallback(request *Q
 type QueryDomainRealNameVerificationInfoRequest struct {
 	*requests.RpcRequest
 	FetchImage   requests.Boolean `position:"Query" name:"FetchImage"`
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	DomainName   string           `position:"Query" name:"DomainName"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	Lang         string           `position:"Query" name:"Lang"`
 }
 
@@ -100,7 +100,8 @@ func CreateQueryDomainRealNameVerificationInfoRequest() (request *QueryDomainRea
 	request = &QueryDomainRealNameVerificationInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainRealNameVerificationInfo", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainRealNameVerificationInfo", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

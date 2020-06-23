@@ -21,8 +21,8 @@ type PrePageCursor struct {
 	TaskDetailNo        string `json:"TaskDetailNo" xml:"TaskDetailNo"`
 	UpdateTime          string `json:"UpdateTime" xml:"UpdateTime"`
 	CreateTimeLong      int64  `json:"CreateTimeLong" xml:"CreateTimeLong"`
-	TaskStatusCode      int    `json:"TaskStatusCode" xml:"TaskStatusCode"`
 	DomainName          string `json:"DomainName" xml:"DomainName"`
+	TaskStatusCode      int    `json:"TaskStatusCode" xml:"TaskStatusCode"`
 	CreateTime          string `json:"CreateTime" xml:"CreateTime"`
 	TaskTypeDescription string `json:"TaskTypeDescription" xml:"TaskTypeDescription"`
 	TaskStatus          string `json:"TaskStatus" xml:"TaskStatus"`

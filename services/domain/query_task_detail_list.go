@@ -76,14 +76,14 @@ func (client *Client) QueryTaskDetailListWithCallback(request *QueryTaskDetailLi
 // QueryTaskDetailListRequest is the request struct for api QueryTaskDetailList
 type QueryTaskDetailListRequest struct {
 	*requests.RpcRequest
+	DomainName   string           `position:"Query" name:"DomainName"`
+	PageNum      requests.Integer `position:"Query" name:"PageNum"`
 	TaskStatus   requests.Integer `position:"Query" name:"TaskStatus"`
 	InstanceId   string           `position:"Query" name:"InstanceId"`
 	TaskNo       string           `position:"Query" name:"TaskNo"`
-	DomainName   string           `position:"Query" name:"DomainName"`
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	Lang         string           `position:"Query" name:"Lang"`
-	PageNum      requests.Integer `position:"Query" name:"PageNum"`
 }
 
 // QueryTaskDetailListResponse is the response struct for api QueryTaskDetailList
@@ -104,7 +104,8 @@ func CreateQueryTaskDetailListRequest() (request *QueryTaskDetailListRequest) {
 	request = &QueryTaskDetailListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTaskDetailList", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTaskDetailList", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

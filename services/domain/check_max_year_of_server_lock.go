@@ -94,7 +94,8 @@ func CreateCheckMaxYearOfServerLockRequest() (request *CheckMaxYearOfServerLockR
 	request = &CheckMaxYearOfServerLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "CheckMaxYearOfServerLock", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "CheckMaxYearOfServerLock", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -76,14 +76,14 @@ func (client *Client) ListEmailVerificationWithCallback(request *ListEmailVerifi
 // ListEmailVerificationRequest is the request struct for api ListEmailVerification
 type ListEmailVerificationRequest struct {
 	*requests.RpcRequest
-	BeginCreateTime    requests.Integer `position:"Query" name:"BeginCreateTime"`
 	EndCreateTime      requests.Integer `position:"Query" name:"EndCreateTime"`
+	PageNum            requests.Integer `position:"Query" name:"PageNum"`
+	VerificationStatus requests.Integer `position:"Query" name:"VerificationStatus"`
+	BeginCreateTime    requests.Integer `position:"Query" name:"BeginCreateTime"`
 	PageSize           requests.Integer `position:"Query" name:"PageSize"`
 	UserClientIp       string           `position:"Query" name:"UserClientIp"`
 	Lang               string           `position:"Query" name:"Lang"`
-	PageNum            requests.Integer `position:"Query" name:"PageNum"`
 	Email              string           `position:"Query" name:"Email"`
-	VerificationStatus requests.Integer `position:"Query" name:"VerificationStatus"`
 }
 
 // ListEmailVerificationResponse is the response struct for api ListEmailVerification
@@ -104,7 +104,8 @@ func CreateListEmailVerificationRequest() (request *ListEmailVerificationRequest
 	request = &ListEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "ListEmailVerification", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "ListEmailVerification", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

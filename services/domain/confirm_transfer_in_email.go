@@ -76,8 +76,8 @@ func (client *Client) ConfirmTransferInEmailWithCallback(request *ConfirmTransfe
 // ConfirmTransferInEmailRequest is the request struct for api ConfirmTransferInEmail
 type ConfirmTransferInEmailRequest struct {
 	*requests.RpcRequest
-	UserClientIp string    `position:"Query" name:"UserClientIp"`
 	DomainName   *[]string `position:"Query" name:"DomainName"  type:"Repeated"`
+	UserClientIp string    `position:"Query" name:"UserClientIp"`
 	Lang         string    `position:"Query" name:"Lang"`
 	Email        string    `position:"Query" name:"Email"`
 }
@@ -95,7 +95,8 @@ func CreateConfirmTransferInEmailRequest() (request *ConfirmTransferInEmailReque
 	request = &ConfirmTransferInEmailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "ConfirmTransferInEmail", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "ConfirmTransferInEmail", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -93,7 +93,8 @@ func CreateSaveSingleTaskForCancelingTransferInRequest() (request *SaveSingleTas
 	request = &SaveSingleTaskForCancelingTransferInRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCancelingTransferIn", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForCancelingTransferIn", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

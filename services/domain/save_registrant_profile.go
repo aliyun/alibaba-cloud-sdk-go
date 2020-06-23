@@ -77,27 +77,27 @@ func (client *Client) SaveRegistrantProfileWithCallback(request *SaveRegistrantP
 type SaveRegistrantProfileRequest struct {
 	*requests.RpcRequest
 	Country                  string           `position:"Query" name:"Country"`
-	Address                  string           `position:"Query" name:"Address"`
-	TelArea                  string           `position:"Query" name:"TelArea"`
 	City                     string           `position:"Query" name:"City"`
 	RegistrantProfileId      requests.Integer `position:"Query" name:"RegistrantProfileId"`
+	ZhCity                   string           `position:"Query" name:"ZhCity"`
+	TelExt                   string           `position:"Query" name:"TelExt"`
+	Province                 string           `position:"Query" name:"Province"`
+	ZhRegistrantName         string           `position:"Query" name:"ZhRegistrantName"`
+	PostalCode               string           `position:"Query" name:"PostalCode"`
+	Lang                     string           `position:"Query" name:"Lang"`
+	Email                    string           `position:"Query" name:"Email"`
+	ZhRegistrantOrganization string           `position:"Query" name:"ZhRegistrantOrganization"`
+	Address                  string           `position:"Query" name:"Address"`
+	TelArea                  string           `position:"Query" name:"TelArea"`
 	ZhAddress                string           `position:"Query" name:"ZhAddress"`
 	RegistrantType           string           `position:"Query" name:"RegistrantType"`
 	RegistrantProfileType    string           `position:"Query" name:"RegistrantProfileType"`
 	Telephone                string           `position:"Query" name:"Telephone"`
 	DefaultRegistrantProfile requests.Boolean `position:"Query" name:"DefaultRegistrantProfile"`
-	ZhCity                   string           `position:"Query" name:"ZhCity"`
 	ZhProvince               string           `position:"Query" name:"ZhProvince"`
 	RegistrantOrganization   string           `position:"Query" name:"RegistrantOrganization"`
-	TelExt                   string           `position:"Query" name:"TelExt"`
-	Province                 string           `position:"Query" name:"Province"`
-	ZhRegistrantName         string           `position:"Query" name:"ZhRegistrantName"`
-	PostalCode               string           `position:"Query" name:"PostalCode"`
 	UserClientIp             string           `position:"Query" name:"UserClientIp"`
-	Lang                     string           `position:"Query" name:"Lang"`
-	Email                    string           `position:"Query" name:"Email"`
 	RegistrantName           string           `position:"Query" name:"RegistrantName"`
-	ZhRegistrantOrganization string           `position:"Query" name:"ZhRegistrantOrganization"`
 }
 
 // SaveRegistrantProfileResponse is the response struct for api SaveRegistrantProfile
@@ -112,7 +112,8 @@ func CreateSaveRegistrantProfileRequest() (request *SaveRegistrantProfileRequest
 	request = &SaveRegistrantProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveRegistrantProfile", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveRegistrantProfile", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

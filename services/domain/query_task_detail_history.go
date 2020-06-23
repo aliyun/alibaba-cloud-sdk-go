@@ -76,10 +76,10 @@ func (client *Client) QueryTaskDetailHistoryWithCallback(request *QueryTaskDetai
 // QueryTaskDetailHistoryRequest is the request struct for api QueryTaskDetailHistory
 type QueryTaskDetailHistoryRequest struct {
 	*requests.RpcRequest
+	DomainName         string           `position:"Query" name:"DomainName"`
 	TaskStatus         requests.Integer `position:"Query" name:"TaskStatus"`
 	UserClientIp       string           `position:"Query" name:"UserClientIp"`
 	TaskNo             string           `position:"Query" name:"TaskNo"`
-	DomainName         string           `position:"Query" name:"DomainName"`
 	PageSize           requests.Integer `position:"Query" name:"PageSize"`
 	TaskDetailNoCursor string           `position:"Query" name:"TaskDetailNoCursor"`
 	Lang               string           `position:"Query" name:"Lang"`
@@ -102,7 +102,8 @@ func CreateQueryTaskDetailHistoryRequest() (request *QueryTaskDetailHistoryReque
 	request = &QueryTaskDetailHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTaskDetailHistory", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryTaskDetailHistory", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

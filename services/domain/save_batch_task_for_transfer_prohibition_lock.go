@@ -76,8 +76,8 @@ func (client *Client) SaveBatchTaskForTransferProhibitionLockWithCallback(reques
 // SaveBatchTaskForTransferProhibitionLockRequest is the request struct for api SaveBatchTaskForTransferProhibitionLock
 type SaveBatchTaskForTransferProhibitionLockRequest struct {
 	*requests.RpcRequest
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	DomainName   *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	Lang         string           `position:"Query" name:"Lang"`
 	Status       requests.Boolean `position:"Query" name:"Status"`
 }
@@ -94,7 +94,8 @@ func CreateSaveBatchTaskForTransferProhibitionLockRequest() (request *SaveBatchT
 	request = &SaveBatchTaskForTransferProhibitionLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForTransferProhibitionLock", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForTransferProhibitionLock", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

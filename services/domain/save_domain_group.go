@@ -76,10 +76,10 @@ func (client *Client) SaveDomainGroupWithCallback(request *SaveDomainGroupReques
 // SaveDomainGroupRequest is the request struct for api SaveDomainGroup
 type SaveDomainGroupRequest struct {
 	*requests.RpcRequest
+	DomainGroupId   requests.Integer `position:"Query" name:"DomainGroupId"`
 	UserClientIp    string           `position:"Query" name:"UserClientIp"`
 	DomainGroupName string           `position:"Query" name:"DomainGroupName"`
 	Lang            string           `position:"Query" name:"Lang"`
-	DomainGroupId   requests.Integer `position:"Query" name:"DomainGroupId"`
 }
 
 // SaveDomainGroupResponse is the response struct for api SaveDomainGroup
@@ -100,7 +100,8 @@ func CreateSaveDomainGroupRequest() (request *SaveDomainGroupRequest) {
 	request = &SaveDomainGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveDomainGroup", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveDomainGroup", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

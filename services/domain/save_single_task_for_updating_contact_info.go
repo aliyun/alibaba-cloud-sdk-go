@@ -76,12 +76,12 @@ func (client *Client) SaveSingleTaskForUpdatingContactInfoWithCallback(request *
 // SaveSingleTaskForUpdatingContactInfoRequest is the request struct for api SaveSingleTaskForUpdatingContactInfo
 type SaveSingleTaskForUpdatingContactInfoRequest struct {
 	*requests.RpcRequest
-	InstanceId          string           `position:"Query" name:"InstanceId"`
 	ContactType         string           `position:"Query" name:"ContactType"`
-	UserClientIp        string           `position:"Query" name:"UserClientIp"`
 	DomainName          string           `position:"Query" name:"DomainName"`
 	RegistrantProfileId requests.Integer `position:"Query" name:"RegistrantProfileId"`
 	AddTransferLock     requests.Boolean `position:"Query" name:"AddTransferLock"`
+	InstanceId          string           `position:"Query" name:"InstanceId"`
+	UserClientIp        string           `position:"Query" name:"UserClientIp"`
 	Lang                string           `position:"Query" name:"Lang"`
 }
 
@@ -97,7 +97,8 @@ func CreateSaveSingleTaskForUpdatingContactInfoRequest() (request *SaveSingleTas
 	request = &SaveSingleTaskForUpdatingContactInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForUpdatingContactInfo", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveSingleTaskForUpdatingContactInfo", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

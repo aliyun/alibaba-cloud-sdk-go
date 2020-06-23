@@ -77,8 +77,8 @@ func (client *Client) QueryContactInfoWithCallback(request *QueryContactInfoRequ
 type QueryContactInfoRequest struct {
 	*requests.RpcRequest
 	ContactType  string `position:"Query" name:"ContactType"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
 	DomainName   string `position:"Query" name:"DomainName"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
 }
 
@@ -110,7 +110,8 @@ func CreateQueryContactInfoRequest() (request *QueryContactInfoRequest) {
 	request = &QueryContactInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryContactInfo", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryContactInfo", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -93,7 +93,8 @@ func CreateQueryEnsAssociationRequest() (request *QueryEnsAssociationRequest) {
 	request = &QueryEnsAssociationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryEnsAssociation", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryEnsAssociation", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

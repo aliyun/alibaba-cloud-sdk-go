@@ -76,19 +76,19 @@ func (client *Client) QueryDomainListWithCallback(request *QueryDomainListReques
 // QueryDomainListRequest is the request struct for api QueryDomainList
 type QueryDomainListRequest struct {
 	*requests.RpcRequest
-	EndExpirationDate     requests.Integer `position:"Query" name:"EndExpirationDate"`
 	ProductDomainType     string           `position:"Query" name:"ProductDomainType"`
 	OrderKeyType          string           `position:"Query" name:"OrderKeyType"`
-	DomainName            string           `position:"Query" name:"DomainName"`
-	StartExpirationDate   requests.Integer `position:"Query" name:"StartExpirationDate"`
 	PageNum               requests.Integer `position:"Query" name:"PageNum"`
 	OrderByType           string           `position:"Query" name:"OrderByType"`
-	DomainGroupId         string           `position:"Query" name:"DomainGroupId"`
-	EndRegistrationDate   requests.Integer `position:"Query" name:"EndRegistrationDate"`
-	UserClientIp          string           `position:"Query" name:"UserClientIp"`
 	PageSize              requests.Integer `position:"Query" name:"PageSize"`
 	Lang                  string           `position:"Query" name:"Lang"`
 	QueryType             string           `position:"Query" name:"QueryType"`
+	EndExpirationDate     requests.Integer `position:"Query" name:"EndExpirationDate"`
+	DomainName            string           `position:"Query" name:"DomainName"`
+	StartExpirationDate   requests.Integer `position:"Query" name:"StartExpirationDate"`
+	DomainGroupId         string           `position:"Query" name:"DomainGroupId"`
+	EndRegistrationDate   requests.Integer `position:"Query" name:"EndRegistrationDate"`
+	UserClientIp          string           `position:"Query" name:"UserClientIp"`
 	StartRegistrationDate requests.Integer `position:"Query" name:"StartRegistrationDate"`
 }
 
@@ -110,7 +110,8 @@ func CreateQueryDomainListRequest() (request *QueryDomainListRequest) {
 	request = &QueryDomainListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainList", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "QueryDomainList", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

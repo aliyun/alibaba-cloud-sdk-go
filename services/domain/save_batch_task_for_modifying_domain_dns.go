@@ -76,11 +76,11 @@ func (client *Client) SaveBatchTaskForModifyingDomainDnsWithCallback(request *Sa
 // SaveBatchTaskForModifyingDomainDnsRequest is the request struct for api SaveBatchTaskForModifyingDomainDns
 type SaveBatchTaskForModifyingDomainDnsRequest struct {
 	*requests.RpcRequest
-	UserClientIp     string           `position:"Query" name:"UserClientIp"`
 	DomainName       *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
+	AliyunDns        requests.Boolean `position:"Query" name:"AliyunDns"`
+	UserClientIp     string           `position:"Query" name:"UserClientIp"`
 	DomainNameServer *[]string        `position:"Query" name:"DomainNameServer"  type:"Repeated"`
 	Lang             string           `position:"Query" name:"Lang"`
-	AliyunDns        requests.Boolean `position:"Query" name:"AliyunDns"`
 }
 
 // SaveBatchTaskForModifyingDomainDnsResponse is the response struct for api SaveBatchTaskForModifyingDomainDns
@@ -95,7 +95,8 @@ func CreateSaveBatchTaskForModifyingDomainDnsRequest() (request *SaveBatchTaskFo
 	request = &SaveBatchTaskForModifyingDomainDnsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForModifyingDomainDns", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "SaveBatchTaskForModifyingDomainDns", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

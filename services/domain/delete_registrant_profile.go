@@ -76,8 +76,8 @@ func (client *Client) DeleteRegistrantProfileWithCallback(request *DeleteRegistr
 // DeleteRegistrantProfileRequest is the request struct for api DeleteRegistrantProfile
 type DeleteRegistrantProfileRequest struct {
 	*requests.RpcRequest
-	UserClientIp        string           `position:"Query" name:"UserClientIp"`
 	RegistrantProfileId requests.Integer `position:"Query" name:"RegistrantProfileId"`
+	UserClientIp        string           `position:"Query" name:"UserClientIp"`
 	Lang                string           `position:"Query" name:"Lang"`
 }
 
@@ -92,7 +92,8 @@ func CreateDeleteRegistrantProfileRequest() (request *DeleteRegistrantProfileReq
 	request = &DeleteRegistrantProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain", "2018-01-29", "DeleteRegistrantProfile", "", "")
+	request.InitWithApiInfo("Domain", "2018-01-29", "DeleteRegistrantProfile", "domain", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
