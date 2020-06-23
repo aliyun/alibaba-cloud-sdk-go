@@ -24,7 +24,9 @@ type Data struct {
 	TotalPage    string             `json:"TotalPage" xml:"TotalPage"`
 	PageSize     string             `json:"PageSize" xml:"PageSize"`
 	TaskId       string             `json:"TaskId" xml:"TaskId"`
+	QualityScore string             `json:"QualityScore" xml:"QualityScore"`
 	PicUrl       string             `json:"PicUrl" xml:"PicUrl"`
+	Description  string             `json:"Description" xml:"Description"`
 	ResultObject []ResultObjectItem `json:"ResultObject" xml:"ResultObject"`
 	Records      []RecordsItem      `json:"Records" xml:"Records"`
 	TagList      []TagListItem      `json:"TagList" xml:"TagList"`
