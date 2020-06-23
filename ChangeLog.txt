@@ -1,3 +1,7 @@
+2020-06-23 Version: v1.61.267
+- Generated 2018-08-28 for `Tag`.
+
+
 2020-06-22 Version: v1.61.266
 - Generated 2017-03-21 for `vod`.
 - Add support cn-shenzhen region.
