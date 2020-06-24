@@ -105,6 +105,7 @@ func CreateDescribeBackupSetDownloadTaskListRequest() (request *DescribeBackupSe
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeBackupSetDownloadTaskList", "cbs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

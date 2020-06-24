@@ -86,19 +86,23 @@ type ConfigureBackupPlanRequest struct {
 	DuplicationInfrequentAccessPeriod requests.Integer `position:"Query" name:"DuplicationInfrequentAccessPeriod"`
 	BackupStartTime                   string           `position:"Query" name:"BackupStartTime"`
 	SourceEndpointIP                  string           `position:"Query" name:"SourceEndpointIP"`
+	CrossRoleName                     string           `position:"Query" name:"CrossRoleName"`
 	EnableBackupLog                   requests.Boolean `position:"Query" name:"EnableBackupLog"`
 	BackupStorageType                 string           `position:"Query" name:"BackupStorageType"`
 	DuplicationArchivePeriod          requests.Integer `position:"Query" name:"DuplicationArchivePeriod"`
+	CrossAliyunId                     string           `position:"Query" name:"CrossAliyunId"`
 	SourceEndpointPassword            string           `position:"Query" name:"SourceEndpointPassword"`
 	BackupObjects                     string           `position:"Query" name:"BackupObjects"`
 	OwnerId                           string           `position:"Query" name:"OwnerId"`
 	SourceEndpointPort                requests.Integer `position:"Query" name:"SourceEndpointPort"`
 	BackupRetentionPeriod             requests.Integer `position:"Query" name:"BackupRetentionPeriod"`
 	BackupPeriod                      string           `position:"Query" name:"BackupPeriod"`
+	BackupSpeedLimit                  requests.Integer `position:"Query" name:"BackupSpeedLimit"`
 	SourceEndpointInstanceType        string           `position:"Query" name:"SourceEndpointInstanceType"`
 	BackupPlanName                    string           `position:"Query" name:"BackupPlanName"`
 	SourceEndpointOracleSID           string           `position:"Query" name:"SourceEndpointOracleSID"`
 	OSSBucketName                     string           `position:"Query" name:"OSSBucketName"`
+	BackupStrategyType                string           `position:"Query" name:"BackupStrategyType"`
 }
 
 // ConfigureBackupPlanResponse is the response struct for api ConfigureBackupPlan
@@ -118,6 +122,7 @@ func CreateConfigureBackupPlanRequest() (request *ConfigureBackupPlanRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dbs", "2019-03-06", "ConfigureBackupPlan", "cbs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

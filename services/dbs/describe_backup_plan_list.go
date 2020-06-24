@@ -76,12 +76,14 @@ func (client *Client) DescribeBackupPlanListWithCallback(request *DescribeBackup
 // DescribeBackupPlanListRequest is the request struct for api DescribeBackupPlanList
 type DescribeBackupPlanListRequest struct {
 	*requests.RpcRequest
-	ClientToken  string           `position:"Query" name:"ClientToken"`
-	BackupPlanId string           `position:"Query" name:"BackupPlanId"`
-	PageNum      requests.Integer `position:"Query" name:"PageNum"`
-	OwnerId      string           `position:"Query" name:"OwnerId"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	Region       string           `position:"Query" name:"Region"`
+	ClientToken      string           `position:"Query" name:"ClientToken"`
+	BackupPlanId     string           `position:"Query" name:"BackupPlanId"`
+	PageNum          requests.Integer `position:"Query" name:"PageNum"`
+	OwnerId          string           `position:"Query" name:"OwnerId"`
+	BackupPlanStatus string           `position:"Query" name:"BackupPlanStatus"`
+	BackupPlanName   string           `position:"Query" name:"BackupPlanName"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	Region           string           `position:"Query" name:"Region"`
 }
 
 // DescribeBackupPlanListResponse is the response struct for api DescribeBackupPlanList
@@ -105,6 +107,7 @@ func CreateDescribeBackupPlanListRequest() (request *DescribeBackupPlanListReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeBackupPlanList", "cbs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

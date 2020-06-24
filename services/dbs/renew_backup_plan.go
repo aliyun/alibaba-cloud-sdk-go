@@ -101,6 +101,7 @@ func CreateRenewBackupPlanRequest() (request *RenewBackupPlanRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dbs", "2019-03-06", "RenewBackupPlan", "cbs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

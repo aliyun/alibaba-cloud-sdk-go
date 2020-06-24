@@ -99,6 +99,7 @@ func CreateStopBackupPlanRequest() (request *StopBackupPlanRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dbs", "2019-03-06", "StopBackupPlan", "cbs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

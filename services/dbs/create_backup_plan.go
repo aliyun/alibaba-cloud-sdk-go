@@ -83,6 +83,7 @@ type CreateBackupPlanRequest struct {
 	DatabaseRegion string           `position:"Query" name:"DatabaseRegion"`
 	InstanceType   string           `position:"Query" name:"InstanceType"`
 	Period         string           `position:"Query" name:"Period"`
+	FromApp        string           `position:"Query" name:"FromApp"`
 	OwnerId        string           `position:"Query" name:"OwnerId"`
 	UsedTime       requests.Integer `position:"Query" name:"UsedTime"`
 	BackupMethod   string           `position:"Query" name:"BackupMethod"`
@@ -109,6 +110,7 @@ func CreateCreateBackupPlanRequest() (request *CreateBackupPlanRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dbs", "2019-03-06", "CreateBackupPlan", "cbs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

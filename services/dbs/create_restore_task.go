@@ -81,12 +81,14 @@ type CreateRestoreTaskRequest struct {
 	ClientToken                     string           `position:"Query" name:"ClientToken"`
 	BackupPlanId                    string           `position:"Query" name:"BackupPlanId"`
 	DestinationEndpointRegion       string           `position:"Query" name:"DestinationEndpointRegion"`
+	CrossRoleName                   string           `position:"Query" name:"CrossRoleName"`
 	DestinationEndpointUserName     string           `position:"Query" name:"DestinationEndpointUserName"`
 	RestoreObjects                  string           `position:"Query" name:"RestoreObjects"`
 	RestoreTaskName                 string           `position:"Query" name:"RestoreTaskName"`
 	RestoreHome                     string           `position:"Query" name:"RestoreHome"`
 	DestinationEndpointOracleSID    string           `position:"Query" name:"DestinationEndpointOracleSID"`
 	RestoreTime                     requests.Integer `position:"Query" name:"RestoreTime"`
+	CrossAliyunId                   string           `position:"Query" name:"CrossAliyunId"`
 	DestinationEndpointInstanceID   string           `position:"Query" name:"DestinationEndpointInstanceID"`
 	DestinationEndpointPort         requests.Integer `position:"Query" name:"DestinationEndpointPort"`
 	BackupSetId                     string           `position:"Query" name:"BackupSetId"`
@@ -115,6 +117,7 @@ func CreateCreateRestoreTaskRequest() (request *CreateRestoreTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dbs", "2019-03-06", "CreateRestoreTask", "cbs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

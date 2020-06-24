@@ -17,10 +17,24 @@ package dbs
 
 // Item is a nested struct in dbs response
 type Item struct {
-	JobId        string `json:"JobId" xml:"JobId"`
-	Language     string `json:"Language" xml:"Language"`
-	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	JobType      string `json:"JobType" xml:"JobType"`
-	JobState     string `json:"JobState" xml:"JobState"`
+	BuyCreateTimestamp   int64  `json:"BuyCreateTimestamp" xml:"BuyCreateTimestamp"`
+	IsExpired            bool   `json:"IsExpired" xml:"IsExpired"`
+	JobId                string `json:"JobId" xml:"JobId"`
+	QuotaStartTimestamp  int64  `json:"QuotaStartTimestamp" xml:"QuotaStartTimestamp"`
+	QuotaEndTimestamp    int64  `json:"QuotaEndTimestamp" xml:"QuotaEndTimestamp"`
+	ErrorMessage         string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Language             string `json:"Language" xml:"Language"`
+	TotalFreeBytes       int64  `json:"TotalFreeBytes" xml:"TotalFreeBytes"`
+	UsedFullBytes        int64  `json:"UsedFullBytes" xml:"UsedFullBytes"`
+	BuySpec              string `json:"BuySpec" xml:"BuySpec"`
+	BuyChargeType        string `json:"BuyChargeType" xml:"BuyChargeType"`
+	IsFreeBytesUnlimited bool   `json:"IsFreeBytesUnlimited" xml:"IsFreeBytesUnlimited"`
+	UsedIncrementBytes   int64  `json:"UsedIncrementBytes" xml:"UsedIncrementBytes"`
+	JobState             string `json:"JobState" xml:"JobState"`
+	PaiedBytes           int64  `json:"PaiedBytes" xml:"PaiedBytes"`
+	FullStorageSize      int64  `json:"FullStorageSize" xml:"FullStorageSize"`
+	ContStorageSize      int64  `json:"ContStorageSize" xml:"ContStorageSize"`
+	BuyExpiredTimestamp  int64  `json:"BuyExpiredTimestamp" xml:"BuyExpiredTimestamp"`
+	JobType              string `json:"JobType" xml:"JobType"`
+	ErrorCode            string `json:"ErrorCode" xml:"ErrorCode"`
 }

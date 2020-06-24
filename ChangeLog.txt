@@ -1,3 +1,14 @@
+2020-06-24 Version: v1.61.277
+- Generated 2019-03-06 for `Dbs`.
+- Add DescribeBackupPlanBilling.
+- Modify ConfigureBackupPlan.
+- Modify CreateBackupPlan.
+- Modify CreateRestoreTask.
+- Modify DescribeRestoreTaskList.
+- Modify DescribeBackupPlanList.
+- Modify ModifyBackupSourceEndpoint.
+- Modify ModifyBackupStrategy.
+
 2020-06-24 Version: v1.61.276
 - Generated 2018-12-01 for `cr_ee`.
 

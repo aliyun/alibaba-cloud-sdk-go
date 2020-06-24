@@ -39,5 +39,7 @@ type RestoreTaskDetail struct {
 	FullDataRestoreProgress         int    `json:"FullDataRestoreProgress" xml:"FullDataRestoreProgress"`
 	ContinuousRestoreProgress       int    `json:"ContinuousRestoreProgress" xml:"ContinuousRestoreProgress"`
 	FullStruAfterRestoreProgress    int    `json:"FullStruAfterRestoreProgress" xml:"FullStruAfterRestoreProgress"`
+	CrossAliyunId                   string `json:"CrossAliyunId" xml:"CrossAliyunId"`
+	CrossRoleName                   string `json:"CrossRoleName" xml:"CrossRoleName"`
 	ErrMessage                      string `json:"ErrMessage" xml:"ErrMessage"`
 }

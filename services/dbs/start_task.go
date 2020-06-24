@@ -99,6 +99,7 @@ func CreateStartTaskRequest() (request *StartTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dbs", "2019-03-06", "StartTask", "cbs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

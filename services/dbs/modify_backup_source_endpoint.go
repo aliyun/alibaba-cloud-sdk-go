@@ -84,6 +84,8 @@ type ModifyBackupSourceEndpointRequest struct {
 	BackupPlanId               string           `position:"Query" name:"BackupPlanId"`
 	SourceEndpointDatabaseName string           `position:"Query" name:"SourceEndpointDatabaseName"`
 	SourceEndpointIP           string           `position:"Query" name:"SourceEndpointIP"`
+	CrossRoleName              string           `position:"Query" name:"CrossRoleName"`
+	CrossAliyunId              string           `position:"Query" name:"CrossAliyunId"`
 	SourceEndpointPassword     string           `position:"Query" name:"SourceEndpointPassword"`
 	BackupObjects              string           `position:"Query" name:"BackupObjects"`
 	OwnerId                    string           `position:"Query" name:"OwnerId"`
@@ -110,6 +112,7 @@ func CreateModifyBackupSourceEndpointRequest() (request *ModifyBackupSourceEndpo
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dbs", "2019-03-06", "ModifyBackupSourceEndpoint", "cbs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

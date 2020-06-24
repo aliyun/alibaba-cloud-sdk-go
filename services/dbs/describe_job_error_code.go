@@ -99,6 +99,7 @@ func CreateDescribeJobErrorCodeRequest() (request *DescribeJobErrorCodeRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dbs", "2019-03-06", "DescribeJobErrorCode", "cbs", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
