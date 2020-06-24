@@ -76,29 +76,30 @@ func (client *Client) CreateFpgaImageTaskWithCallback(request *CreateFpgaImageTa
 // CreateFpgaImageTaskRequest is the request struct for api CreateFpgaImageTask
 type CreateFpgaImageTaskRequest struct {
 	*requests.RpcRequest
-	Description string           `position:"Query" name:"Description"`
-	KeyId       string           `position:"Query" name:"KeyId"`
-	ShellUUID   string           `position:"Query" name:"ShellUUID"`
-	Tags        string           `position:"Query" name:"Tags"`
-	Bucket      string           `position:"Query" name:"Bucket"`
-	Encrypted   requests.Boolean `position:"Query" name:"Encrypted"`
-	RoleArn     string           `position:"Query" name:"RoleArn"`
-	Name        string           `position:"Query" name:"Name"`
-	FpgaType    string           `position:"Query" name:"FpgaType"`
-	Email       string           `position:"Query" name:"Email"`
-	Object      string           `position:"Query" name:"Object"`
+	ToolsVersion  string           `position:"Query" name:"ToolsVersion"`
+	OssEndpoint   string           `position:"Query" name:"OssEndpoint"`
+	Description   string           `position:"Query" name:"Description"`
+	KeyId         string           `position:"Query" name:"KeyId"`
+	Tags          string           `position:"Query" name:"Tags"`
+	Bucket        string           `position:"Query" name:"Bucket"`
+	ShellUniqueId string           `position:"Query" name:"ShellUniqueId"`
+	Encryption    requests.Boolean `position:"Query" name:"Encryption"`
+	Name          string           `position:"Query" name:"Name"`
+	FpgaType      string           `position:"Query" name:"FpgaType"`
+	Email         string           `position:"Query" name:"Email"`
+	Object        string           `position:"Query" name:"Object"`
 }
 
 // CreateFpgaImageTaskResponse is the response struct for api CreateFpgaImageTask
 type CreateFpgaImageTaskResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	Name          string `json:"Name" xml:"Name"`
-	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-	ShellUUID     string `json:"ShellUUID" xml:"ShellUUID"`
-	State         string `json:"State" xml:"State"`
-	Description   string `json:"Description" xml:"Description"`
-	FpgaImageUUID string `json:"FpgaImageUUID" xml:"FpgaImageUUID"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	FpgaImageUniqueId string `json:"FpgaImageUniqueId" xml:"FpgaImageUniqueId"`
+	Name              string `json:"Name" xml:"Name"`
+	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
+	Description       string `json:"Description" xml:"Description"`
+	ShellUniqueId     string `json:"ShellUniqueId" xml:"ShellUniqueId"`
+	State             string `json:"State" xml:"State"`
 }
 
 // CreateCreateFpgaImageTaskRequest creates a request to invoke CreateFpgaImageTask API
@@ -106,7 +107,8 @@ func CreateCreateFpgaImageTaskRequest() (request *CreateFpgaImageTaskRequest) {
 	request = &CreateFpgaImageTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("faas", "2017-08-24", "CreateFpgaImageTask", "faas", "openAPI")
+	request.InitWithApiInfo("faas", "2020-02-17", "CreateFpgaImageTask", "faas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

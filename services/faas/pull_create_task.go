@@ -93,6 +93,7 @@ func CreatePullCreateTaskRequest() (request *PullCreateTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("faas", "2017-08-24", "PullCreateTask", "faas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

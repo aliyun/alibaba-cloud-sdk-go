@@ -96,6 +96,7 @@ func CreateUpdateCreateTaskRequest() (request *UpdateCreateTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("faas", "2017-08-24", "UpdateCreateTask", "faas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -76,18 +76,20 @@ func (client *Client) UpdateImageAttributeWithCallback(request *UpdateImageAttri
 // UpdateImageAttributeRequest is the request struct for api UpdateImageAttribute
 type UpdateImageAttributeRequest struct {
 	*requests.RpcRequest
-	Name          string           `position:"Query" name:"Name"`
-	Description   string           `position:"Query" name:"Description"`
-	FpgaImageUUID string           `position:"Query" name:"FpgaImageUUID"`
-	CallerUid     requests.Integer `position:"Query" name:"callerUid"`
-	Tags          string           `position:"Query" name:"Tags"`
+	Name              string `position:"Query" name:"Name"`
+	Description       string `position:"Query" name:"Description"`
+	FpgaImageUniqueId string `position:"Query" name:"FpgaImageUniqueId"`
+	Tags              string `position:"Query" name:"Tags"`
 }
 
 // UpdateImageAttributeResponse is the response struct for api UpdateImageAttribute
 type UpdateImageAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Message   string `json:"Message" xml:"Message"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	Name              string `json:"Name" xml:"Name"`
+	Description       string `json:"Description" xml:"Description"`
+	Tags              string `json:"Tags" xml:"Tags"`
+	FpgaImageUniqueId string `json:"FpgaImageUniqueId" xml:"FpgaImageUniqueId"`
 }
 
 // CreateUpdateImageAttributeRequest creates a request to invoke UpdateImageAttribute API
@@ -95,7 +97,8 @@ func CreateUpdateImageAttributeRequest() (request *UpdateImageAttributeRequest) 
 	request = &UpdateImageAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("faas", "2017-08-24", "UpdateImageAttribute", "faas", "openAPI")
+	request.InitWithApiInfo("faas", "2020-02-17", "UpdateImageAttribute", "faas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

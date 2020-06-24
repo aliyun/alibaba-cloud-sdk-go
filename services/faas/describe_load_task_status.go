@@ -101,6 +101,7 @@ func CreateDescribeLoadTaskStatusRequest() (request *DescribeLoadTaskStatusReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("faas", "2017-08-24", "DescribeLoadTaskStatus", "faas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

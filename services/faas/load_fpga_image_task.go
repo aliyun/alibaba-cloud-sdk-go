@@ -76,26 +76,21 @@ func (client *Client) LoadFpgaImageTaskWithCallback(request *LoadFpgaImageTaskRe
 // LoadFpgaImageTaskRequest is the request struct for api LoadFpgaImageTask
 type LoadFpgaImageTaskRequest struct {
 	*requests.RpcRequest
-	FpgaImageType string `position:"Query" name:"FpgaImageType"`
-	FpgaImageUUID string `position:"Query" name:"FpgaImageUUID"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
-	FpgaType      string `position:"Query" name:"FpgaType"`
-	FpgaUUID      string `position:"Query" name:"FpgaUUID"`
-	ShellUUID     string `position:"Query" name:"ShellUUID"`
-	OwnerAlias    string `position:"Query" name:"OwnerAlias"`
-	InstanceId    string `position:"Query" name:"InstanceId"`
-	RoleArn       string `position:"Query" name:"RoleArn"`
-	Object        string `position:"Query" name:"Object"`
+	InstanceId        string `position:"Query" name:"InstanceId"`
+	Bdf               string `position:"Query" name:"Bdf"`
+	FpgaImageUniqueId string `position:"Query" name:"FpgaImageUniqueId"`
 }
 
 // LoadFpgaImageTaskResponse is the response struct for api LoadFpgaImageTask
 type LoadFpgaImageTaskResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	FpgaUUID      string `json:"FpgaUUID" xml:"FpgaUUID"`
-	FpgaImageUUID string `json:"FpgaImageUUID" xml:"FpgaImageUUID"`
-	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
-	TaskStatus    string `json:"TaskStatus" xml:"TaskStatus"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	BDFInECS          string `json:"BDFInECS" xml:"BDFInECS"`
+	FpgaUniqueId      string `json:"FpgaUniqueId" xml:"FpgaUniqueId"`
+	FpgaImageUniqueId string `json:"FpgaImageUniqueId" xml:"FpgaImageUniqueId"`
+	InstanceId        string `json:"InstanceId" xml:"InstanceId"`
+	TaskId            string `json:"TaskId" xml:"TaskId"`
+	TaskStatus        string `json:"TaskStatus" xml:"TaskStatus"`
 }
 
 // CreateLoadFpgaImageTaskRequest creates a request to invoke LoadFpgaImageTask API
@@ -103,7 +98,8 @@ func CreateLoadFpgaImageTaskRequest() (request *LoadFpgaImageTaskRequest) {
 	request = &LoadFpgaImageTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("faas", "2017-08-24", "LoadFpgaImageTask", "faas", "openAPI")
+	request.InitWithApiInfo("faas", "2020-02-17", "LoadFpgaImageTask", "faas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

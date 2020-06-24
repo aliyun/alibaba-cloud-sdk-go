@@ -94,6 +94,7 @@ func CreateDescribeFpgaInstancesRequest() (request *DescribeFpgaInstancesRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("faas", "2017-08-24", "DescribeFpgaInstances", "faas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

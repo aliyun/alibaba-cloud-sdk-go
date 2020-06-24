@@ -96,6 +96,7 @@ func CreateDeletePublishFpgaImageRequest() (request *DeletePublishFpgaImageReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("faas", "2017-08-24", "DeletePublishFpgaImage", "faas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

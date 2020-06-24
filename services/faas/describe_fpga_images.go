@@ -76,14 +76,15 @@ func (client *Client) DescribeFpgaImagesWithCallback(request *DescribeFpgaImages
 // DescribeFpgaImagesRequest is the request struct for api DescribeFpgaImages
 type DescribeFpgaImagesRequest struct {
 	*requests.RpcRequest
-	CallerUid requests.Integer `position:"Query" name:"callerUid"`
+	ECSImageId string `position:"Query" name:"ECSImageId"`
+	OwnerAlias string `position:"Query" name:"OwnerAlias"`
 }
 
 // DescribeFpgaImagesResponse is the response struct for api DescribeFpgaImages
 type DescribeFpgaImagesResponse struct {
 	*responses.BaseResponse
-	RequestId  string                         `json:"RequestId" xml:"RequestId"`
-	FpgaImages FpgaImagesInDescribeFpgaImages `json:"FpgaImages" xml:"FpgaImages"`
+	RequestId  string      `json:"RequestId" xml:"RequestId"`
+	FpgaImages []FpgaImage `json:"FpgaImages" xml:"FpgaImages"`
 }
 
 // CreateDescribeFpgaImagesRequest creates a request to invoke DescribeFpgaImages API
@@ -91,7 +92,8 @@ func CreateDescribeFpgaImagesRequest() (request *DescribeFpgaImagesRequest) {
 	request = &DescribeFpgaImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("faas", "2017-08-24", "DescribeFpgaImages", "faas", "openAPI")
+	request.InitWithApiInfo("faas", "2020-02-17", "DescribeFpgaImages", "faas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

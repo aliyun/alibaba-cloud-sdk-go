@@ -76,17 +76,16 @@ func (client *Client) DeleteFpgaImageWithCallback(request *DeleteFpgaImageReques
 // DeleteFpgaImageRequest is the request struct for api DeleteFpgaImage
 type DeleteFpgaImageRequest struct {
 	*requests.RpcRequest
-	FpgaImageUUID string           `position:"Query" name:"FpgaImageUUID"`
-	CallerUid     requests.Integer `position:"Query" name:"callerUid"`
+	FpgaImageUniqueId string `position:"Query" name:"FpgaImageUniqueId"`
+	ECSImageId        string `position:"Query" name:"ECSImageId"`
+	OwnerAlias        string `position:"Query" name:"OwnerAlias"`
 }
 
 // DeleteFpgaImageResponse is the response struct for api DeleteFpgaImage
 type DeleteFpgaImageResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	Status        string `json:"Status" xml:"Status"`
-	FpgaImageUUID string `json:"FpgaImageUUID" xml:"FpgaImageUUID"`
-	Message       string `json:"Message" xml:"Message"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	FpgaImageUniqueId string `json:"FpgaImageUniqueId" xml:"FpgaImageUniqueId"`
 }
 
 // CreateDeleteFpgaImageRequest creates a request to invoke DeleteFpgaImage API
@@ -94,7 +93,8 @@ func CreateDeleteFpgaImageRequest() (request *DeleteFpgaImageRequest) {
 	request = &DeleteFpgaImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("faas", "2017-08-24", "DeleteFpgaImage", "faas", "openAPI")
+	request.InitWithApiInfo("faas", "2020-02-17", "DeleteFpgaImage", "faas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

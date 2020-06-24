@@ -76,17 +76,18 @@ func (client *Client) PublishFpgaImageWithCallback(request *PublishFpgaImageRequ
 // PublishFpgaImageRequest is the request struct for api PublishFpgaImage
 type PublishFpgaImageRequest struct {
 	*requests.RpcRequest
-	ImageID       string           `position:"Query" name:"ImageID"`
-	FpgaImageUUID string           `position:"Query" name:"FpgaImageUUID"`
-	CallerUid     requests.Integer `position:"Query" name:"callerUid"`
+	Description       string `position:"Query" name:"Description"`
+	FpgaImageUniqueId string `position:"Query" name:"FpgaImageUniqueId"`
+	ECSImageId        string `position:"Query" name:"ECSImageId"`
 }
 
 // PublishFpgaImageResponse is the response struct for api PublishFpgaImage
 type PublishFpgaImageResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Status    string `json:"Status" xml:"Status"`
-	Message   string `json:"Message" xml:"Message"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	FpgaImageUniqueId string `json:"FpgaImageUniqueId" xml:"FpgaImageUniqueId"`
+	Message           string `json:"Message" xml:"Message"`
+	ImageId           string `json:"ImageId" xml:"ImageId"`
 }
 
 // CreatePublishFpgaImageRequest creates a request to invoke PublishFpgaImage API
@@ -94,7 +95,8 @@ func CreatePublishFpgaImageRequest() (request *PublishFpgaImageRequest) {
 	request = &PublishFpgaImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("faas", "2017-08-24", "PublishFpgaImage", "faas", "openAPI")
+	request.InitWithApiInfo("faas", "2020-02-17", "PublishFpgaImage", "faas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
