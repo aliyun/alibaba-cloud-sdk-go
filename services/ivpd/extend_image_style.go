@@ -94,7 +94,8 @@ func CreateExtendImageStyleRequest() (request *ExtendImageStyleRequest) {
 	request = &ExtendImageStyleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "ExtendImageStyle", "", "")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "ExtendImageStyle", "ivpd", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -104,7 +104,8 @@ func CreatePreviewModelForPackageDesignRequest() (request *PreviewModelForPackag
 	request = &PreviewModelForPackageDesignRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "PreviewModelForPackageDesign", "", "")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "PreviewModelForPackageDesign", "ivpd", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

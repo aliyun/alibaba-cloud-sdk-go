@@ -93,7 +93,8 @@ func CreateSegmentBodyRequest() (request *SegmentBodyRequest) {
 	request = &SegmentBodyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "SegmentBody", "", "")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "SegmentBody", "ivpd", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

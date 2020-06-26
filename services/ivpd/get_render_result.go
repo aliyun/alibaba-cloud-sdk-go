@@ -93,7 +93,8 @@ func CreateGetRenderResultRequest() (request *GetRenderResultRequest) {
 	request = &GetRenderResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "GetRenderResult", "", "")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "GetRenderResult", "ivpd", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

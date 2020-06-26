@@ -26,6 +26,7 @@ type Data struct {
 	ImageUrl          string          `json:"ImageUrl" xml:"ImageUrl"`
 	BatchSize         int             `json:"BatchSize" xml:"BatchSize"`
 	Status            string          `json:"Status" xml:"Status"`
+	VideoUrl          string          `json:"VideoUrl" xml:"VideoUrl"`
 	Completed         bool            `json:"Completed" xml:"Completed"`
 	Styles            []string        `json:"Styles" xml:"Styles"`
 	ImageList         []string        `json:"ImageList" xml:"ImageList"`

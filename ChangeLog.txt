@@ -1,3 +1,7 @@
+2020-06-26 Version: v1.61.279
+- Generated 2019-06-25 for `ivpd`.
+- Supported Api EraseLogoInVideo.
+
 2020-06-24 Version: v1.61.278
 - Generated 2017-08-24, 2020-02-17 for `faas`.
 - Support faas2-0.

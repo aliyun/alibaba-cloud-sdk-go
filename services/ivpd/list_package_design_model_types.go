@@ -92,7 +92,8 @@ func CreateListPackageDesignModelTypesRequest() (request *ListPackageDesignModel
 	request = &ListPackageDesignModelTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "ListPackageDesignModelTypes", "", "")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "ListPackageDesignModelTypes", "ivpd", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
