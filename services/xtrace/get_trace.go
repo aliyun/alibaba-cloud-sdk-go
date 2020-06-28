@@ -92,7 +92,8 @@ func CreateGetTraceRequest() (request *GetTraceRequest) {
 	request = &GetTraceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("xtrace", "2019-08-08", "GetTrace", "xtrace", "openAPI")
+	request.InitWithApiInfo("xtrace", "2019-08-08", "GetTrace", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -94,7 +94,8 @@ func CreateGetTagKeyRequest() (request *GetTagKeyRequest) {
 	request = &GetTagKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("xtrace", "2019-08-08", "GetTagKey", "xtrace", "openAPI")
+	request.InitWithApiInfo("xtrace", "2019-08-08", "GetTagKey", "", "")
+	request.Method = requests.POST
 	return
 }
 

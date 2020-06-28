@@ -80,6 +80,7 @@ type QueryMetricRequest struct {
 	OrderBy       string                `position:"Query" name:"OrderBy"`
 	StartTime     requests.Integer      `position:"Query" name:"StartTime"`
 	Filters       *[]QueryMetricFilters `position:"Query" name:"Filters"  type:"Repeated"`
+	ProxyUserId   string                `position:"Query" name:"ProxyUserId"`
 	Measures      *[]string             `position:"Query" name:"Measures"  type:"Repeated"`
 	IntervalInSec requests.Integer      `position:"Query" name:"IntervalInSec"`
 	Metric        string                `position:"Query" name:"Metric"`
@@ -106,7 +107,8 @@ func CreateQueryMetricRequest() (request *QueryMetricRequest) {
 	request = &QueryMetricRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("xtrace", "2019-08-08", "QueryMetric", "xtrace", "openAPI")
+	request.InitWithApiInfo("xtrace", "2019-08-08", "QueryMetric", "", "")
+	request.Method = requests.POST
 	return
 }
 

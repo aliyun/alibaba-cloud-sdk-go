@@ -95,7 +95,8 @@ func CreateGetTagValRequest() (request *GetTagValRequest) {
 	request = &GetTagValRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("xtrace", "2019-08-08", "GetTagVal", "xtrace", "openAPI")
+	request.InitWithApiInfo("xtrace", "2019-08-08", "GetTagVal", "", "")
+	request.Method = requests.POST
 	return
 }
 

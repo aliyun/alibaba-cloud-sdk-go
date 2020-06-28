@@ -91,7 +91,8 @@ func CreateListServicesRequest() (request *ListServicesRequest) {
 	request = &ListServicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("xtrace", "2019-08-08", "ListServices", "xtrace", "openAPI")
+	request.InitWithApiInfo("xtrace", "2019-08-08", "ListServices", "", "")
+	request.Method = requests.POST
 	return
 }
 

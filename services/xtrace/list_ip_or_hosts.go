@@ -93,7 +93,8 @@ func CreateListIpOrHostsRequest() (request *ListIpOrHostsRequest) {
 	request = &ListIpOrHostsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("xtrace", "2019-08-08", "ListIpOrHosts", "xtrace", "openAPI")
+	request.InitWithApiInfo("xtrace", "2019-08-08", "ListIpOrHosts", "", "")
+	request.Method = requests.POST
 	return
 }
 

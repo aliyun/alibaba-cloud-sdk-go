@@ -93,7 +93,8 @@ func CreateListSpanNamesRequest() (request *ListSpanNamesRequest) {
 	request = &ListSpanNamesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("xtrace", "2019-08-08", "ListSpanNames", "xtrace", "openAPI")
+	request.InitWithApiInfo("xtrace", "2019-08-08", "ListSpanNames", "", "")
+	request.Method = requests.POST
 	return
 }
 

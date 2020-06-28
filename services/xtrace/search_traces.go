@@ -107,7 +107,8 @@ func CreateSearchTracesRequest() (request *SearchTracesRequest) {
 	request = &SearchTracesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("xtrace", "2019-08-08", "SearchTraces", "xtrace", "openAPI")
+	request.InitWithApiInfo("xtrace", "2019-08-08", "SearchTraces", "", "")
+	request.Method = requests.POST
 	return
 }
 

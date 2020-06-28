@@ -91,7 +91,8 @@ func CreateGetTokenRequest() (request *GetTokenRequest) {
 	request = &GetTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("xtrace", "2019-08-08", "GetToken", "xtrace", "openAPI")
+	request.InitWithApiInfo("xtrace", "2019-08-08", "GetToken", "", "")
+	request.Method = requests.POST
 	return
 }
 
