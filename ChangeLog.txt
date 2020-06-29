@@ -1,3 +1,7 @@
+2020-06-29 Version: v1.61.283
+- Generated 2019-12-26 for `OutboundBot`.
+
+
 2020-06-29 Version: v1.61.282
 - Generated 2017-09-06 for `imm`.
 - Supported Rotate.

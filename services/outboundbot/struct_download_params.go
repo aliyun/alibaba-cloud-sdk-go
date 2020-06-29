@@ -18,4 +18,5 @@ package outboundbot
 // DownloadParams is a nested struct in outboundbot response
 type DownloadParams struct {
 	SignatureUrl string `json:"SignatureUrl" xml:"SignatureUrl"`
+	FileName     string `json:"FileName" xml:"FileName"`
 }
