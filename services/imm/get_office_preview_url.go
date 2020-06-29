@@ -105,6 +105,7 @@ func CreateGetOfficePreviewURLRequest() (request *GetOfficePreviewURLRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("imm", "2017-09-06", "GetOfficePreviewURL", "imm", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -97,6 +97,7 @@ func CreateCreateImageProcessTaskRequest() (request *CreateImageProcessTaskReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("imm", "2017-09-06", "CreateImageProcessTask", "imm", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

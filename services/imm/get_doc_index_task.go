@@ -97,6 +97,7 @@ func CreateGetDocIndexTaskRequest() (request *GetDocIndexTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("imm", "2017-09-06", "GetDocIndexTask", "imm", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

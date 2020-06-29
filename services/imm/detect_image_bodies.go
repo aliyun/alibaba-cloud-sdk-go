@@ -94,6 +94,7 @@ func CreateDetectImageBodiesRequest() (request *DetectImageBodiesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageBodies", "imm", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -95,6 +95,7 @@ func CreateDetectImageFacesRequest() (request *DetectImageFacesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageFaces", "imm", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

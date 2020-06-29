@@ -122,6 +122,7 @@ func CreateFindImagesRequest() (request *FindImagesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("imm", "2017-09-06", "FindImages", "imm", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

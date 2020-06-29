@@ -97,6 +97,7 @@ func CreateUpdateSetRequest() (request *UpdateSetRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("imm", "2017-09-06", "UpdateSet", "imm", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -1,3 +1,7 @@
+2020-06-29 Version: v1.61.282
+- Generated 2017-09-06 for `imm`.
+- Supported Rotate.
+
 2020-06-29 Version: v1.61.281
 - Generated 2019-03-07, 2018-09-16 for `Cloudauth`.
 - Add Model Parameter For InitFaceVerify API.

@@ -111,6 +111,7 @@ func CreateConvertOfficeFormatRequest() (request *ConvertOfficeFormatRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("imm", "2017-09-06", "ConvertOfficeFormat", "imm", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

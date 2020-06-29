@@ -98,6 +98,7 @@ func CreateListFaceGroupsRequest() (request *ListFaceGroupsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("imm", "2017-09-06", "ListFaceGroups", "imm", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -93,6 +93,7 @@ func CreateDeleteDocIndexRequest() (request *DeleteDocIndexRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("imm", "2017-09-06", "DeleteDocIndex", "imm", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

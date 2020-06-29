@@ -91,6 +91,7 @@ func CreateDeleteProjectRequest() (request *DeleteProjectRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("imm", "2017-09-06", "DeleteProject", "imm", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
