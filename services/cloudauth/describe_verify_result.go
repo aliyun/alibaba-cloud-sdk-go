@@ -76,9 +76,8 @@ func (client *Client) DescribeVerifyResultWithCallback(request *DescribeVerifyRe
 // DescribeVerifyResultRequest is the request struct for api DescribeVerifyResult
 type DescribeVerifyResultRequest struct {
 	*requests.RpcRequest
-	BizType  string `position:"Query" name:"BizType"`
-	SourceIp string `position:"Query" name:"SourceIp"`
-	BizId    string `position:"Query" name:"BizId"`
+	BizType string `position:"Query" name:"BizType"`
+	BizId   string `position:"Query" name:"BizId"`
 }
 
 // DescribeVerifyResultResponse is the response struct for api DescribeVerifyResult
@@ -98,6 +97,7 @@ func CreateDescribeVerifyResultRequest() (request *DescribeVerifyResultRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeVerifyResult", "cloudauth", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

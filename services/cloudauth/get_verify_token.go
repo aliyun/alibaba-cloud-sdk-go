@@ -76,13 +76,11 @@ func (client *Client) GetVerifyTokenWithCallback(request *GetVerifyTokenRequest,
 // GetVerifyTokenRequest is the request struct for api GetVerifyToken
 type GetVerifyTokenRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Binding         string           `position:"Body" name:"Binding"`
-	VerifyConfigs   string           `position:"Query" name:"VerifyConfigs"`
-	UserData        string           `position:"Query" name:"UserData"`
-	Biz             string           `position:"Query" name:"Biz"`
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	TicketId        string           `position:"Query" name:"TicketId"`
+	Binding       string `position:"Body" name:"Binding"`
+	VerifyConfigs string `position:"Query" name:"VerifyConfigs"`
+	UserData      string `position:"Query" name:"UserData"`
+	Biz           string `position:"Query" name:"Biz"`
+	TicketId      string `position:"Query" name:"TicketId"`
 }
 
 // GetVerifyTokenResponse is the response struct for api GetVerifyToken
@@ -101,6 +99,7 @@ func CreateGetVerifyTokenRequest() (request *GetVerifyTokenRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cloudauth", "2018-09-16", "GetVerifyToken", "cloudauth", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

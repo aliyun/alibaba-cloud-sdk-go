@@ -84,6 +84,7 @@ type InitFaceVerifyRequest struct {
 	OuterOrderNo           string           `position:"Query" name:"OuterOrderNo"`
 	CertType               string           `position:"Query" name:"CertType"`
 	FaceContrastPictureUrl string           `position:"Query" name:"FaceContrastPictureUrl"`
+	Model                  string           `position:"Body" name:"Model"`
 	MetaInfo               string           `position:"Query" name:"MetaInfo"`
 	OssObjectName          string           `position:"Query" name:"OssObjectName"`
 	CertName               string           `position:"Query" name:"CertName"`
@@ -109,6 +110,7 @@ func CreateInitFaceVerifyRequest() (request *InitFaceVerifyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cloudauth", "2019-03-07", "InitFaceVerify", "cloudauth", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

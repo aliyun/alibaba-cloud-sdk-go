@@ -78,7 +78,6 @@ type DescribeVerifyTokenRequest struct {
 	*requests.RpcRequest
 	FaceRetainedImageUrl string           `position:"Query" name:"FaceRetainedImageUrl"`
 	UserId               string           `position:"Query" name:"UserId"`
-	SourceIp             string           `position:"Query" name:"SourceIp"`
 	CallbackSeed         string           `position:"Query" name:"CallbackSeed"`
 	UserIp               string           `position:"Query" name:"UserIp"`
 	IdCardBackImageUrl   string           `position:"Query" name:"IdCardBackImageUrl"`
@@ -109,6 +108,7 @@ func CreateDescribeVerifyTokenRequest() (request *DescribeVerifyTokenRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeVerifyToken", "cloudauth", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

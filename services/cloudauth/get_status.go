@@ -76,10 +76,8 @@ func (client *Client) GetStatusWithCallback(request *GetStatusRequest, callback 
 // GetStatusRequest is the request struct for api GetStatus
 type GetStatusRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Biz             string           `position:"Query" name:"Biz"`
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	TicketId        string           `position:"Query" name:"TicketId"`
+	Biz      string `position:"Query" name:"Biz"`
+	TicketId string `position:"Query" name:"TicketId"`
 }
 
 // GetStatusResponse is the response struct for api GetStatus
@@ -98,6 +96,7 @@ func CreateGetStatusRequest() (request *GetStatusRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cloudauth", "2018-09-16", "GetStatus", "cloudauth", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

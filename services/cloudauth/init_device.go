@@ -104,6 +104,7 @@ func CreateInitDeviceRequest() (request *InitDeviceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cloudauth", "2019-03-07", "InitDevice", "cloudauth", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

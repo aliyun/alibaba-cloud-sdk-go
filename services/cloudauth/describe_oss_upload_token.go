@@ -92,6 +92,7 @@ func CreateDescribeOssUploadTokenRequest() (request *DescribeOssUploadTokenReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cloudauth", "2019-03-07", "DescribeOssUploadToken", "cloudauth", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

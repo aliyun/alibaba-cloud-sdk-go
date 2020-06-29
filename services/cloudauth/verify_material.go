@@ -78,7 +78,6 @@ type VerifyMaterialRequest struct {
 	*requests.RpcRequest
 	FaceImageUrl        string `position:"Query" name:"FaceImageUrl"`
 	UserId              string `position:"Query" name:"UserId"`
-	SourceIp            string `position:"Query" name:"SourceIp"`
 	IdCardBackImageUrl  string `position:"Query" name:"IdCardBackImageUrl"`
 	IdCardNumber        string `position:"Query" name:"IdCardNumber"`
 	IdCardFrontImageUrl string `position:"Query" name:"IdCardFrontImageUrl"`
@@ -105,6 +104,7 @@ func CreateVerifyMaterialRequest() (request *VerifyMaterialRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cloudauth", "2019-03-07", "VerifyMaterial", "cloudauth", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

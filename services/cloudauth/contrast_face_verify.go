@@ -108,6 +108,7 @@ func CreateContrastFaceVerifyRequest() (request *ContrastFaceVerifyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cloudauth", "2019-03-07", "ContrastFaceVerify", "cloudauth", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
