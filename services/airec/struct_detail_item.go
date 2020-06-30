@@ -17,14 +17,29 @@ package airec
 
 // DetailItem is a nested struct in airec response
 type DetailItem struct {
-	BizDate    int64   `json:"BizDate" xml:"BizDate"`
-	Pv         int64   `json:"Pv" xml:"Pv"`
-	Uv         int64   `json:"Uv" xml:"Uv"`
-	Click      int64   `json:"Click" xml:"Click"`
-	Ctr        float64 `json:"Ctr" xml:"Ctr"`
-	UvCtr      float64 `json:"UvCtr" xml:"UvCtr"`
-	PerUvBhv   float64 `json:"PerUvBhv" xml:"PerUvBhv"`
-	PerUvClick float64 `json:"PerUvClick" xml:"PerUvClick"`
-	ClickUser  int64   `json:"ClickUser" xml:"ClickUser"`
-	ActiveItem int64   `json:"ActiveItem" xml:"ActiveItem"`
+	Title        string  `json:"Title" xml:"Title"`
+	PerUvBhv     float64 `json:"PerUvBhv" xml:"PerUvBhv"`
+	Author       string  `json:"Author" xml:"Author"`
+	ShopId       string  `json:"ShopId" xml:"ShopId"`
+	ItemType     string  `json:"ItemType" xml:"ItemType"`
+	Uv           int64   `json:"Uv" xml:"Uv"`
+	ClickUser    int64   `json:"ClickUser" xml:"ClickUser"`
+	PubTime      string  `json:"PubTime" xml:"PubTime"`
+	BizDate      int64   `json:"BizDate" xml:"BizDate"`
+	ActiveItem   int64   `json:"ActiveItem" xml:"ActiveItem"`
+	Val          string  `json:"Val" xml:"Val"`
+	UvCtr        float64 `json:"UvCtr" xml:"UvCtr"`
+	ExpireTime   string  `json:"ExpireTime" xml:"ExpireTime"`
+	Click        int64   `json:"Click" xml:"Click"`
+	BrandId      string  `json:"BrandId" xml:"BrandId"`
+	Pv           int64   `json:"Pv" xml:"Pv"`
+	ItemId       string  `json:"ItemId" xml:"ItemId"`
+	CategoryPath string  `json:"CategoryPath" xml:"CategoryPath"`
+	StartTime    string  `json:"StartTime" xml:"StartTime"`
+	EndTime      string  `json:"EndTime" xml:"EndTime"`
+	Duration     string  `json:"Duration" xml:"Duration"`
+	Channel      string  `json:"Channel" xml:"Channel"`
+	Ctr          float64 `json:"Ctr" xml:"Ctr"`
+	PerUvClick   float64 `json:"PerUvClick" xml:"PerUvClick"`
+	Status       string  `json:"Status" xml:"Status"`
 }

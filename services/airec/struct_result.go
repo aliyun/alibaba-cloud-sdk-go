@@ -17,24 +17,30 @@ package airec
 
 // Result is a nested struct in airec response
 type Result struct {
-	ScenarioBased   bool         `json:"ScenarioBased" xml:"ScenarioBased"`
-	UserCountUsed   int64        `json:"UserCountUsed" xml:"UserCountUsed"`
-	ItemCountUsed   int64        `json:"ItemCountUsed" xml:"ItemCountUsed"`
-	CurrentQps      int          `json:"CurrentQps" xml:"CurrentQps"`
-	UserCount       int64        `json:"UserCount" xml:"UserCount"`
-	VersionId       string       `json:"VersionId" xml:"VersionId"`
-	GmtCreate       int64        `json:"GmtCreate" xml:"GmtCreate"`
-	ItemCount       int64        `json:"ItemCount" xml:"ItemCount"`
-	State           string       `json:"State" xml:"State"`
-	DurationSeconds int          `json:"DurationSeconds" xml:"DurationSeconds"`
-	InstanceId      string       `json:"InstanceId" xml:"InstanceId"`
-	GmtModified     int64        `json:"GmtModified" xml:"GmtModified"`
-	Qps             int          `json:"Qps" xml:"Qps"`
-	Num             int          `json:"Num" xml:"Num"`
-	TraceId         []string     `json:"TraceId" xml:"TraceId"`
-	Uid             []string     `json:"Uid" xml:"Uid"`
-	SceneId         []string     `json:"SceneId" xml:"SceneId"`
-	Overall         Overall      `json:"Overall" xml:"Overall"`
-	Detail          []DetailItem `json:"Detail" xml:"Detail"`
-	List            []ListItem   `json:"List" xml:"List"`
+	FinishRate      int              `json:"FinishRate" xml:"FinishRate"`
+	UserCountUsed   int64            `json:"UserCountUsed" xml:"UserCountUsed"`
+	ItemCountUsed   int64            `json:"ItemCountUsed" xml:"ItemCountUsed"`
+	CurrentQps      int              `json:"CurrentQps" xml:"CurrentQps"`
+	RuleId          string           `json:"RuleId" xml:"RuleId"`
+	ItemCount       int64            `json:"ItemCount" xml:"ItemCount"`
+	InstanceId      string           `json:"InstanceId" xml:"InstanceId"`
+	SceneId         string           `json:"SceneId" xml:"SceneId"`
+	Num             int              `json:"Num" xml:"Num"`
+	ScenarioBased   bool             `json:"ScenarioBased" xml:"ScenarioBased"`
+	MetricType      string           `json:"MetricType" xml:"MetricType"`
+	PvCount         int64            `json:"PvCount" xml:"PvCount"`
+	FinishTime      int              `json:"FinishTime" xml:"FinishTime"`
+	UserCount       int64            `json:"UserCount" xml:"UserCount"`
+	VersionId       string           `json:"VersionId" xml:"VersionId"`
+	GmtCreate       int64            `json:"GmtCreate" xml:"GmtCreate"`
+	State           string           `json:"State" xml:"State"`
+	DurationSeconds int              `json:"DurationSeconds" xml:"DurationSeconds"`
+	GmtModified     int64            `json:"GmtModified" xml:"GmtModified"`
+	Qps             int              `json:"Qps" xml:"Qps"`
+	Uid             []string         `json:"Uid" xml:"Uid"`
+	Overall         Overall          `json:"Overall" xml:"Overall"`
+	Total           Total            `json:"Total" xml:"Total"`
+	Detail          []DetailItem     `json:"Detail" xml:"Detail"`
+	MetricData      []MetricDataItem `json:"MetricData" xml:"MetricData"`
+	List            []ListItem       `json:"List" xml:"List"`
 }

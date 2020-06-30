@@ -82,10 +82,10 @@ type ListDashboardParametersRequest struct {
 // ListDashboardParametersResponse is the response struct for api ListDashboardParameters
 type ListDashboardParametersResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Result    Result `json:"Result" xml:"Result"`
+	RequestId string                          `json:"RequestId" xml:"RequestId"`
+	Code      string                          `json:"Code" xml:"Code"`
+	Message   string                          `json:"Message" xml:"Message"`
+	Result    ResultInListDashboardParameters `json:"Result" xml:"Result"`
 }
 
 // CreateListDashboardParametersRequest creates a request to invoke ListDashboardParameters API
