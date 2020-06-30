@@ -17,14 +17,14 @@ package vcs
 
 // Data is a nested struct in vcs response
 type Data struct {
-	TotalCount   string             `json:"TotalCount" xml:"TotalCount"`
+	TotalPage    int                `json:"TotalPage" xml:"TotalPage"`
 	MaxId        string             `json:"MaxId" xml:"MaxId"`
-	PageNo       string             `json:"PageNo" xml:"PageNo"`
 	PersonId     string             `json:"PersonId" xml:"PersonId"`
-	TotalPage    string             `json:"TotalPage" xml:"TotalPage"`
-	PageSize     string             `json:"PageSize" xml:"PageSize"`
+	PageSize     int                `json:"PageSize" xml:"PageSize"`
 	TaskId       string             `json:"TaskId" xml:"TaskId"`
+	TotalCount   int                `json:"TotalCount" xml:"TotalCount"`
 	QualityScore string             `json:"QualityScore" xml:"QualityScore"`
+	PageNumber   int                `json:"PageNumber" xml:"PageNumber"`
 	PicUrl       string             `json:"PicUrl" xml:"PicUrl"`
 	Description  string             `json:"Description" xml:"Description"`
 	ResultObject []ResultObjectItem `json:"ResultObject" xml:"ResultObject"`
