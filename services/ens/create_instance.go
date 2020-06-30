@@ -89,6 +89,8 @@ type CreateInstanceRequest struct {
 	IpType             string           `position:"Query" name:"IpType"`
 	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
 	Version            string           `position:"Query" name:"Version"`
+	VSwitchId          string           `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress   string           `position:"Query" name:"PrivateIpAddress"`
 	SystemDiskSize     string           `position:"Query" name:"SystemDisk.Size"`
 	AutoRenew          string           `position:"Query" name:"AutoRenew"`
 	InternetChargeType string           `position:"Query" name:"InternetChargeType"`
