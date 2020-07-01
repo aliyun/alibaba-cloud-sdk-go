@@ -76,9 +76,11 @@ func (client *Client) DescribeContactListWithCallback(request *DescribeContactLi
 // DescribeContactListRequest is the request struct for api DescribeContactList
 type DescribeContactListRequest struct {
 	*requests.RpcRequest
+	ChanelType  string           `position:"Query" name:"ChanelType"`
 	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
 	ContactName string           `position:"Query" name:"ContactName"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	ChanelValue string           `position:"Query" name:"ChanelValue"`
 }
 
 // DescribeContactListResponse is the response struct for api DescribeContactList

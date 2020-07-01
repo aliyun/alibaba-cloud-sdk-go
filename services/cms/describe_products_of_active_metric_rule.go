@@ -81,11 +81,12 @@ type DescribeProductsOfActiveMetricRuleRequest struct {
 // DescribeProductsOfActiveMetricRuleResponse is the response struct for api DescribeProductsOfActiveMetricRule
 type DescribeProductsOfActiveMetricRuleResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Success    bool   `json:"Success" xml:"Success"`
-	Code       int    `json:"Code" xml:"Code"`
-	Message    string `json:"Message" xml:"Message"`
-	Datapoints string `json:"Datapoints" xml:"Datapoints"`
+	RequestId                    string                       `json:"RequestId" xml:"RequestId"`
+	Success                      bool                         `json:"Success" xml:"Success"`
+	Code                         int                          `json:"Code" xml:"Code"`
+	Message                      string                       `json:"Message" xml:"Message"`
+	Datapoints                   string                       `json:"Datapoints" xml:"Datapoints"`
+	AllProductInitMetricRuleList AllProductInitMetricRuleList `json:"AllProductInitMetricRuleList" xml:"AllProductInitMetricRuleList"`
 }
 
 // CreateDescribeProductsOfActiveMetricRuleRequest creates a request to invoke DescribeProductsOfActiveMetricRule API

@@ -87,6 +87,7 @@ type DescribeActiveMetricRuleListResponse struct {
 	Message    string                                   `json:"Message" xml:"Message"`
 	RequestId  string                                   `json:"RequestId" xml:"RequestId"`
 	Datapoints DatapointsInDescribeActiveMetricRuleList `json:"Datapoints" xml:"Datapoints"`
+	AlertList  AlertList                                `json:"AlertList" xml:"AlertList"`
 }
 
 // CreateDescribeActiveMetricRuleListRequest creates a request to invoke DescribeActiveMetricRuleList API
@@ -95,7 +96,7 @@ func CreateDescribeActiveMetricRuleListRequest() (request *DescribeActiveMetricR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cms", "2019-01-01", "DescribeActiveMetricRuleList", "cms", "openAPI")
-	request.Method = requests.POST
+	request.Method = requests.GET
 	return
 }
 

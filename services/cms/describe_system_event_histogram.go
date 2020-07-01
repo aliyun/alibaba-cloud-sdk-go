@@ -76,17 +76,15 @@ func (client *Client) DescribeSystemEventHistogramWithCallback(request *Describe
 // DescribeSystemEventHistogramRequest is the request struct for api DescribeSystemEventHistogram
 type DescribeSystemEventHistogramRequest struct {
 	*requests.RpcRequest
-	StartTime      string           `position:"Query" name:"StartTime"`
-	SearchKeywords string           `position:"Query" name:"SearchKeywords"`
-	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize       requests.Integer `position:"Query" name:"PageSize"`
-	Product        string           `position:"Query" name:"Product"`
-	Level          string           `position:"Query" name:"Level"`
-	GroupId        string           `position:"Query" name:"GroupId"`
-	EndTime        string           `position:"Query" name:"EndTime"`
-	Name           string           `position:"Query" name:"Name"`
-	EventType      string           `position:"Query" name:"EventType"`
-	Status         string           `position:"Query" name:"Status"`
+	StartTime      string `position:"Query" name:"StartTime"`
+	SearchKeywords string `position:"Query" name:"SearchKeywords"`
+	Product        string `position:"Query" name:"Product"`
+	Level          string `position:"Query" name:"Level"`
+	GroupId        string `position:"Query" name:"GroupId"`
+	EndTime        string `position:"Query" name:"EndTime"`
+	Name           string `position:"Query" name:"Name"`
+	EventType      string `position:"Query" name:"EventType"`
+	Status         string `position:"Query" name:"Status"`
 }
 
 // DescribeSystemEventHistogramResponse is the response struct for api DescribeSystemEventHistogram

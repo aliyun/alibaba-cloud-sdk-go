@@ -28,4 +28,5 @@ type Contact struct {
 	CreateTime    int64                              `json:"CreateTime" xml:"CreateTime"`
 	ContactGroups ContactGroupsInDescribeContactList `json:"ContactGroups" xml:"ContactGroups"`
 	Channels      Channels                           `json:"Channels" xml:"Channels"`
+	ChannelsState ChannelsState                      `json:"ChannelsState" xml:"ChannelsState"`
 }
