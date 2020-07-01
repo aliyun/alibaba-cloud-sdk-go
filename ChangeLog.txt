@@ -1,3 +1,7 @@
+2020-07-01 Version: v1.61.293
+- Generated 2020-05-15 for `Vcs`.
+- Add ListFace-MotorAlgorithmResults API.
+
 2020-07-01 Version: v1.61.292
 - Generated 2019-09-10 for `waf-openapi`.
 
