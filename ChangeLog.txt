@@ -1,3 +1,7 @@
+2020-07-01 Version: v1.61.292
+- Generated 2019-09-10 for `waf-openapi`.
+
+
 2020-07-01 Version: v1.61.291
 - Generated 2019-01-01 for `Cms`.
 - Added API for modifying non Alibaba Cloud host names.
