@@ -94,7 +94,8 @@ func CreateExecuteRequestRequest() (request *ExecuteRequestRequest) {
 	request = &ExecuteRequestRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("saf", "2019-05-21", "ExecuteRequest", "saf", "openAPI")
+	request.InitWithApiInfo("saf", "2019-05-21", "ExecuteRequest", "SAF", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -94,7 +94,8 @@ func CreateExecuteRequestSGRequest() (request *ExecuteRequestSGRequest) {
 	request = &ExecuteRequestSGRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("saf", "2019-05-21", "ExecuteRequestSG", "saf", "openAPI")
+	request.InitWithApiInfo("saf", "2019-05-21", "ExecuteRequestSG", "SAF", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
