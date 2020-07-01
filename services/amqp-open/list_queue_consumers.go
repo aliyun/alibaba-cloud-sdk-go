@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ListExchanges invokes the amqp_open.ListExchanges API synchronously
-// api document: https://help.aliyun.com/api/amqp-open/listexchanges.html
-func (client *Client) ListExchanges(request *ListExchangesRequest) (response *ListExchangesResponse, err error) {
-	response = CreateListExchangesResponse()
+// ListQueueConsumers invokes the amqp_open.ListQueueConsumers API synchronously
+// api document: https://help.aliyun.com/api/amqp-open/listqueueconsumers.html
+func (client *Client) ListQueueConsumers(request *ListQueueConsumersRequest) (response *ListQueueConsumersResponse, err error) {
+	response = CreateListQueueConsumersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ListExchangesWithChan invokes the amqp_open.ListExchanges API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/listexchanges.html
+// ListQueueConsumersWithChan invokes the amqp_open.ListQueueConsumers API asynchronously
+// api document: https://help.aliyun.com/api/amqp-open/listqueueconsumers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ListExchangesWithChan(request *ListExchangesRequest) (<-chan *ListExchangesResponse, <-chan error) {
-	responseChan := make(chan *ListExchangesResponse, 1)
+func (client *Client) ListQueueConsumersWithChan(request *ListQueueConsumersRequest) (<-chan *ListQueueConsumersResponse, <-chan error) {
+	responseChan := make(chan *ListQueueConsumersResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListExchanges(request)
+		response, err := client.ListQueueConsumers(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ListExchangesWithChan(request *ListExchangesRequest) (<-ch
 	return responseChan, errChan
 }
 
-// ListExchangesWithCallback invokes the amqp_open.ListExchanges API asynchronously
-// api document: https://help.aliyun.com/api/amqp-open/listexchanges.html
+// ListQueueConsumersWithCallback invokes the amqp_open.ListQueueConsumers API asynchronously
+// api document: https://help.aliyun.com/api/amqp-open/listqueueconsumers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ListExchangesWithCallback(request *ListExchangesRequest, callback func(response *ListExchangesResponse, err error)) <-chan int {
+func (client *Client) ListQueueConsumersWithCallback(request *ListQueueConsumersRequest, callback func(response *ListQueueConsumersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListExchangesResponse
+		var response *ListQueueConsumersResponse
 		var err error
 		defer close(result)
-		response, err = client.ListExchanges(request)
+		response, err = client.ListQueueConsumers(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,36 @@ func (client *Client) ListExchangesWithCallback(request *ListExchangesRequest, c
 	return result
 }
 
-// ListExchangesRequest is the request struct for api ListExchanges
-type ListExchangesRequest struct {
+// ListQueueConsumersRequest is the request struct for api ListQueueConsumers
+type ListQueueConsumersRequest struct {
 	*requests.RpcRequest
 	InstanceId  string           `position:"Query" name:"InstanceId"`
 	NextToken   string           `position:"Query" name:"NextToken"`
-	MaxResults  requests.Integer `position:"Query" name:"MaxResults"`
+	QueryCount  requests.Integer `position:"Query" name:"QueryCount"`
 	VirtualHost string           `position:"Query" name:"VirtualHost"`
+	Queue       string           `position:"Query" name:"Queue"`
 }
 
-// ListExchangesResponse is the response struct for api ListExchanges
-type ListExchangesResponse struct {
+// ListQueueConsumersResponse is the response struct for api ListQueueConsumers
+type ListQueueConsumersResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateListExchangesRequest creates a request to invoke ListExchanges API
-func CreateListExchangesRequest() (request *ListExchangesRequest) {
-	request = &ListExchangesRequest{
+// CreateListQueueConsumersRequest creates a request to invoke ListQueueConsumers API
+func CreateListQueueConsumersRequest() (request *ListQueueConsumersRequest) {
+	request = &ListQueueConsumersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("amqp-open", "2019-12-12", "ListExchanges", "onsproxy", "openAPI")
+	request.InitWithApiInfo("amqp-open", "2019-12-12", "ListQueueConsumers", "onsproxy", "openAPI")
 	request.Method = requests.GET
 	return
 }
 
-// CreateListExchangesResponse creates a response to parse from ListExchanges response
-func CreateListExchangesResponse() (response *ListExchangesResponse) {
-	response = &ListExchangesResponse{
+// CreateListQueueConsumersResponse creates a response to parse from ListQueueConsumers response
+func CreateListQueueConsumersResponse() (response *ListQueueConsumersResponse) {
+	response = &ListQueueConsumersResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

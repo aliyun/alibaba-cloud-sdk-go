@@ -93,6 +93,7 @@ func CreateDeleteExchangeRequest() (request *DeleteExchangeRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("amqp-open", "2019-12-12", "DeleteExchange", "onsproxy", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

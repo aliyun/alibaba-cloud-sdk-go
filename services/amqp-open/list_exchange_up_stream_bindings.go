@@ -99,6 +99,7 @@ func CreateListExchangeUpStreamBindingsRequest() (request *ListExchangeUpStreamB
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("amqp-open", "2019-12-12", "ListExchangeUpStreamBindings", "onsproxy", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

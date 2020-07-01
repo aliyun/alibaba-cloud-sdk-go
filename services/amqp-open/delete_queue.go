@@ -93,6 +93,7 @@ func CreateDeleteQueueRequest() (request *DeleteQueueRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("amqp-open", "2019-12-12", "DeleteQueue", "onsproxy", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -101,6 +101,7 @@ func CreateCreateQueueRequest() (request *CreateQueueRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("amqp-open", "2019-12-12", "CreateQueue", "onsproxy", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

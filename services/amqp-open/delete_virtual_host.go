@@ -92,6 +92,7 @@ func CreateDeleteVirtualHostRequest() (request *DeleteVirtualHostRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("amqp-open", "2019-12-12", "DeleteVirtualHost", "onsproxy", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -1,3 +1,7 @@
+2020-07-01 Version: v1.61.290
+- Generated 2019-12-12 for `amqp-open`.
+- Add API for GetMetadataAmount.
+
 2020-07-01 Version: v1.61.289
 - Generated 2019-05-21 for `saf`.
 - Support Saf For ExecuteExtendService.

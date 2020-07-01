@@ -95,6 +95,7 @@ func CreateListBindingsRequest() (request *ListBindingsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("amqp-open", "2019-12-12", "ListBindings", "onsproxy", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

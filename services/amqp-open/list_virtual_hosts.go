@@ -94,6 +94,7 @@ func CreateListVirtualHostsRequest() (request *ListVirtualHostsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("amqp-open", "2019-12-12", "ListVirtualHosts", "onsproxy", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

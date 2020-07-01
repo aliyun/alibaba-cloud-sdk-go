@@ -17,11 +17,18 @@ package amqp_open
 
 // Data is a nested struct in amqp_open response
 type Data struct {
-	NextToken    string       `json:"NextToken" xml:"NextToken"`
-	MaxResults   int          `json:"MaxResults" xml:"MaxResults"`
-	Instances    []InstanceVO `json:"Instances" xml:"Instances"`
-	Queues       []QueueVO    `json:"Queues" xml:"Queues"`
-	Bindings     []BindingDO  `json:"Bindings" xml:"Bindings"`
-	Exchanges    []ExchangeVO `json:"Exchanges" xml:"Exchanges"`
-	VirtualHosts []VhostVO    `json:"VirtualHosts" xml:"VirtualHosts"`
+	CurrentVirtualHosts int               `json:"CurrentVirtualHosts" xml:"CurrentVirtualHosts"`
+	MaxQueues           int               `json:"MaxQueues" xml:"MaxQueues"`
+	MaxVirtualHosts     int               `json:"MaxVirtualHosts" xml:"MaxVirtualHosts"`
+	MaxExchanges        int               `json:"MaxExchanges" xml:"MaxExchanges"`
+	NextToken           string            `json:"NextToken" xml:"NextToken"`
+	CurrentExchanges    int               `json:"CurrentExchanges" xml:"CurrentExchanges"`
+	CurrentQueues       int               `json:"CurrentQueues" xml:"CurrentQueues"`
+	MaxResults          int               `json:"MaxResults" xml:"MaxResults"`
+	Instances           []InstanceVO      `json:"Instances" xml:"Instances"`
+	Queues              []QueueVO         `json:"Queues" xml:"Queues"`
+	Exchanges           []ExchangeVO      `json:"Exchanges" xml:"Exchanges"`
+	Consumers           []QueueConsumerVO `json:"Consumers" xml:"Consumers"`
+	Bindings            []BindingDO       `json:"Bindings" xml:"Bindings"`
+	VirtualHosts        []VhostVO         `json:"VirtualHosts" xml:"VirtualHosts"`
 }

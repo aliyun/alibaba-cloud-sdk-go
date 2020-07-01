@@ -92,6 +92,7 @@ func CreateCreateVirtualHostRequest() (request *CreateVirtualHostRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("amqp-open", "2019-12-12", "CreateVirtualHost", "onsproxy", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

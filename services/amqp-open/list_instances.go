@@ -93,6 +93,7 @@ func CreateListInstancesRequest() (request *ListInstancesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("amqp-open", "2019-12-12", "ListInstances", "onsproxy", "openAPI")
+	request.Method = requests.GET
 	return
 }
 
