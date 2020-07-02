@@ -81,11 +81,14 @@ type CreateReadOnlyDBInstanceRequest struct {
 	ClientToken                    string           `position:"Query" name:"ClientToken"`
 	EngineVersion                  string           `position:"Query" name:"EngineVersion"`
 	ResourceGroupId                string           `position:"Query" name:"ResourceGroupId"`
+	TddlRegionConfig               string           `position:"Query" name:"TddlRegionConfig"`
 	TargetDedicatedHostIdForMaster string           `position:"Query" name:"TargetDedicatedHostIdForMaster"`
 	DBInstanceId                   string           `position:"Query" name:"DBInstanceId"`
 	DBInstanceDescription          string           `position:"Query" name:"DBInstanceDescription"`
+	GdnInstanceName                string           `position:"Query" name:"GdnInstanceName"`
 	DBInstanceStorageType          string           `position:"Query" name:"DBInstanceStorageType"`
 	DedicatedHostGroupId           string           `position:"Query" name:"DedicatedHostGroupId"`
+	TddlBizType                    string           `position:"Query" name:"TddlBizType"`
 	ResourceOwnerAccount           string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                   string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                        requests.Integer `position:"Query" name:"OwnerId"`

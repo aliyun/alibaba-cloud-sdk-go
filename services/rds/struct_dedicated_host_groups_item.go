@@ -33,5 +33,15 @@ type DedicatedHostGroupsItem struct {
 	DedicatedHostCountGroupByHostType map[string]interface{} `json:"DedicatedHostCountGroupByHostType" xml:"DedicatedHostCountGroupByHostType"`
 	BastionInstanceId                 string                 `json:"BastionInstanceId" xml:"BastionInstanceId"`
 	OpenPermission                    string                 `json:"OpenPermission" xml:"OpenPermission"`
+	MemUtility                        float64                `json:"MemUtility" xml:"MemUtility"`
+	MemUsedAmount                     float64                `json:"MemUsedAmount" xml:"MemUsedAmount"`
+	DiskUtility                       float64                `json:"DiskUtility" xml:"DiskUtility"`
+	DiskUsedAmount                    float64                `json:"DiskUsedAmount" xml:"DiskUsedAmount"`
+	CpuAllocateRation                 float64                `json:"CpuAllocateRation" xml:"CpuAllocateRation"`
+	CpuAllocatedAmount                float64                `json:"CpuAllocatedAmount" xml:"CpuAllocatedAmount"`
+	MemAllocateRation                 float64                `json:"MemAllocateRation" xml:"MemAllocateRation"`
+	MemAllocatedAmount                float64                `json:"MemAllocatedAmount" xml:"MemAllocatedAmount"`
+	DiskAllocateRation                float64                `json:"DiskAllocateRation" xml:"DiskAllocateRation"`
+	DiskAllocatedAmount               float64                `json:"DiskAllocatedAmount" xml:"DiskAllocatedAmount"`
 	ZoneIDList                        ZoneIDList             `json:"ZoneIDList" xml:"ZoneIDList"`
 }

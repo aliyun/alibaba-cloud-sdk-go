@@ -83,6 +83,7 @@ type DescribeDedicatedHostsRequest struct {
 	DedicatedHostGroupId string           `position:"Query" name:"DedicatedHostGroupId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OrderId              requests.Integer `position:"Query" name:"OrderId"`
+	DedicatedHostId      string           `position:"Query" name:"DedicatedHostId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 }

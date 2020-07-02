@@ -100,6 +100,7 @@ type ModifyBackupPolicyRequest struct {
 	BackupRetentionPeriod         string           `position:"Query" name:"BackupRetentionPeriod"`
 	DuplicationLocation           string           `position:"Query" name:"DuplicationLocation"`
 	ArchiveBackupRetentionPeriod  string           `position:"Query" name:"ArchiveBackupRetentionPeriod"`
+	Category                      string           `position:"Query" name:"Category"`
 	LogBackupRetentionPeriod      string           `position:"Query" name:"LogBackupRetentionPeriod"`
 }
 

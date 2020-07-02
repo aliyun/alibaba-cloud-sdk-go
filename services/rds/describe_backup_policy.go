@@ -108,6 +108,7 @@ type DescribeBackupPolicyResponse struct {
 	ArchiveBackupKeepCount        string              `json:"ArchiveBackupKeepCount" xml:"ArchiveBackupKeepCount"`
 	ReleasedKeepPolicy            string              `json:"ReleasedKeepPolicy" xml:"ReleasedKeepPolicy"`
 	LogBackupLocalRetentionNumber int                 `json:"LogBackupLocalRetentionNumber" xml:"LogBackupLocalRetentionNumber"`
+	Category                      string              `json:"Category" xml:"Category"`
 	DuplicationLocation           DuplicationLocation `json:"DuplicationLocation" xml:"DuplicationLocation"`
 }
 
