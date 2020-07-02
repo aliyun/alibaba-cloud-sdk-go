@@ -1,3 +1,9 @@
+2020-07-02 Version: v1.61.300
+- Generated 2019-09-28 for `reid`.
+- Add GetFootwearPosition.
+- Add PullTakeShoesEvent.
+- Add PullTryOnShoesEvent.
+
 2020-07-02 Version: v1.61.299
 - Generated 2019-09-10 for `waf-openapi`.
 

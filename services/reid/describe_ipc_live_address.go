@@ -102,7 +102,7 @@ func CreateDescribeIpcLiveAddressRequest() (request *DescribeIpcLiveAddressReque
 	request = &DescribeIpcLiveAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("reid", "2019-09-28", "DescribeIpcLiveAddress", "1.1.7", "openAPI")
+	request.InitWithApiInfo("reid", "2019-09-28", "DescribeIpcLiveAddress", "1.1.8", "openAPI")
 	request.Method = requests.POST
 	return
 }
