@@ -77,6 +77,7 @@ func (client *Client) RecognizeImageWithCallback(request *RecognizeImageRequest,
 type RecognizeImageRequest struct {
 	*requests.RpcRequest
 	CorpId     string `position:"Body" name:"CorpId"`
+	PicUrl     string `position:"Body" name:"PicUrl"`
 	PicContent string `position:"Body" name:"PicContent"`
 	PicFormat  string `position:"Body" name:"PicFormat"`
 }
