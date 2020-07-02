@@ -1,3 +1,7 @@
+2020-07-02 Version: v1.61.295
+- Generated 2019-09-10 for `waf-openapi`.
+
+
 2020-07-02 Version: v1.61.294
 - Generated 2014-08-15 for `Rds`.
 
