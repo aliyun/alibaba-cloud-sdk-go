@@ -84,6 +84,7 @@ type ModifyParametersRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Parameters           string           `position:"Query" name:"Parameters"`
+	CharacterType        string           `position:"Query" name:"CharacterType"`
 }
 
 // ModifyParametersResponse is the response struct for api ModifyParameters
@@ -97,7 +98,8 @@ func CreateModifyParametersRequest() (request *ModifyParametersRequest) {
 	request = &ModifyParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyParameters", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyParameters", "Dds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

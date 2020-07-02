@@ -97,7 +97,8 @@ func CreateModifyAccountDescriptionRequest() (request *ModifyAccountDescriptionR
 	request = &ModifyAccountDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyAccountDescription", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyAccountDescription", "Dds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

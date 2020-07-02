@@ -96,7 +96,8 @@ func CreateModifyDBInstanceMonitorRequest() (request *ModifyDBInstanceMonitorReq
 	request = &ModifyDBInstanceMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyDBInstanceMonitor", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyDBInstanceMonitor", "Dds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

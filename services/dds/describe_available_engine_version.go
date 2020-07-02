@@ -96,7 +96,8 @@ func CreateDescribeAvailableEngineVersionRequest() (request *DescribeAvailableEn
 	request = &DescribeAvailableEngineVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeAvailableEngineVersion", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeAvailableEngineVersion", "Dds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

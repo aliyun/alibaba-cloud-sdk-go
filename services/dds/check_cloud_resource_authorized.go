@@ -98,7 +98,8 @@ func CreateCheckCloudResourceAuthorizedRequest() (request *CheckCloudResourceAut
 	request = &CheckCloudResourceAuthorizedRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "CheckCloudResourceAuthorized", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "CheckCloudResourceAuthorized", "Dds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

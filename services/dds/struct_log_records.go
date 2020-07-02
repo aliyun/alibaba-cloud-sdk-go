@@ -22,6 +22,7 @@ type LogRecords struct {
 	HostAddress        string `json:"HostAddress" xml:"HostAddress"`
 	CreateTime         string `json:"CreateTime" xml:"CreateTime"`
 	QueryTimes         string `json:"QueryTimes" xml:"QueryTimes"`
+	TableName          string `json:"TableName" xml:"TableName"`
 	SQLText            string `json:"SQLText" xml:"SQLText"`
 	ConnInfo           string `json:"ConnInfo" xml:"ConnInfo"`
 	ExecutionStartTime string `json:"ExecutionStartTime" xml:"ExecutionStartTime"`

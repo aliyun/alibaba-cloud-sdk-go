@@ -85,6 +85,7 @@ type DescribeParameterModificationHistoryRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	CharacterType        string           `position:"Query" name:"CharacterType"`
 }
 
 // DescribeParameterModificationHistoryResponse is the response struct for api DescribeParameterModificationHistory
@@ -99,7 +100,8 @@ func CreateDescribeParameterModificationHistoryRequest() (request *DescribeParam
 	request = &DescribeParameterModificationHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeParameterModificationHistory", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeParameterModificationHistory", "Dds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

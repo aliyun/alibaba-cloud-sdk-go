@@ -81,6 +81,7 @@ type DescribeDBInstancesRequest struct {
 	NetworkType           string                    `position:"Query" name:"NetworkType"`
 	PageNumber            requests.Integer          `position:"Query" name:"PageNumber"`
 	ReplicationFactor     string                    `position:"Query" name:"ReplicationFactor"`
+	ResourceGroupId       string                    `position:"Query" name:"ResourceGroupId"`
 	Expired               string                    `position:"Query" name:"Expired"`
 	SecurityToken         string                    `position:"Query" name:"SecurityToken"`
 	Engine                string                    `position:"Query" name:"Engine"`
@@ -122,7 +123,8 @@ func CreateDescribeDBInstancesRequest() (request *DescribeDBInstancesRequest) {
 	request = &DescribeDBInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeDBInstances", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeDBInstances", "Dds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

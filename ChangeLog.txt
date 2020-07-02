@@ -1,3 +1,8 @@
+2020-07-02 Version: v1.61.296
+- Generated 2015-12-01 for `Dds`.
+- CreateShardingDBInstance add ProtocolType, to support DynamoDB.
+- DescribeDBInstances add return ResourceGroupId.
+
 2020-07-02 Version: v1.61.295
 - Generated 2019-09-10 for `waf-openapi`.
 

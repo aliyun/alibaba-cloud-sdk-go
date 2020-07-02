@@ -97,7 +97,8 @@ func CreateMigrateToOtherZoneRequest() (request *MigrateToOtherZoneRequest) {
 	request = &MigrateToOtherZoneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "MigrateToOtherZone", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "MigrateToOtherZone", "Dds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -90,6 +90,7 @@ type DescribeRunningLogRecordsRequest struct {
 	EndTime              string           `position:"Query" name:"EndTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	DBName               string           `position:"Query" name:"DBName"`
+	OrderType            string           `position:"Query" name:"OrderType"`
 }
 
 // DescribeRunningLogRecordsResponse is the response struct for api DescribeRunningLogRecords
@@ -108,7 +109,8 @@ func CreateDescribeRunningLogRecordsRequest() (request *DescribeRunningLogRecord
 	request = &DescribeRunningLogRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeRunningLogRecords", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeRunningLogRecords", "Dds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

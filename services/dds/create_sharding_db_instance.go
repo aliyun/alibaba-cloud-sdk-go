@@ -99,6 +99,7 @@ type CreateShardingDBInstanceRequest struct {
 	AutoRenew             string                                  `position:"Query" name:"AutoRenew"`
 	VpcId                 string                                  `position:"Query" name:"VpcId"`
 	ZoneId                string                                  `position:"Query" name:"ZoneId"`
+	ProtocolType          string                                  `position:"Query" name:"ProtocolType"`
 	ChargeType            string                                  `position:"Query" name:"ChargeType"`
 }
 
@@ -122,9 +123,9 @@ type CreateShardingDBInstanceMongos struct {
 // CreateShardingDBInstanceResponse is the response struct for api CreateShardingDBInstance
 type CreateShardingDBInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	OrderId      string `json:"OrderId" xml:"OrderId"`
 	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
+	OrderId      string `json:"OrderId" xml:"OrderId"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateShardingDBInstanceRequest creates a request to invoke CreateShardingDBInstance API
@@ -132,7 +133,8 @@ func CreateCreateShardingDBInstanceRequest() (request *CreateShardingDBInstanceR
 	request = &CreateShardingDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "CreateShardingDBInstance", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "CreateShardingDBInstance", "Dds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

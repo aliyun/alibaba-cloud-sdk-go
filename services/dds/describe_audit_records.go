@@ -91,6 +91,7 @@ type DescribeAuditRecordsRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Form                 string           `position:"Query" name:"Form"`
 	User                 string           `position:"Query" name:"User"`
+	OrderType            string           `position:"Query" name:"OrderType"`
 }
 
 // DescribeAuditRecordsResponse is the response struct for api DescribeAuditRecords
@@ -108,7 +109,8 @@ func CreateDescribeAuditRecordsRequest() (request *DescribeAuditRecordsRequest) 
 	request = &DescribeAuditRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeAuditRecords", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeAuditRecords", "Dds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -89,6 +89,7 @@ type ModifyNodeSpecRequest struct {
 	NodeStorage          requests.Integer `position:"Query" name:"NodeStorage"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OrderType            string           `position:"Query" name:"OrderType"`
 }
 
 // ModifyNodeSpecResponse is the response struct for api ModifyNodeSpec
@@ -103,7 +104,8 @@ func CreateModifyNodeSpecRequest() (request *ModifyNodeSpecRequest) {
 	request = &ModifyNodeSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyNodeSpec", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyNodeSpec", "Dds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

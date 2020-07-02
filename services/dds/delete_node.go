@@ -98,7 +98,8 @@ func CreateDeleteNodeRequest() (request *DeleteNodeRequest) {
 	request = &DeleteNodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DeleteNode", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DeleteNode", "Dds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

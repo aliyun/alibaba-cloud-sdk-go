@@ -104,7 +104,8 @@ func CreateDescribeDBInstanceEncryptionKeyRequest() (request *DescribeDBInstance
 	request = &DescribeDBInstanceEncryptionKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeDBInstanceEncryptionKey", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeDBInstanceEncryptionKey", "Dds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

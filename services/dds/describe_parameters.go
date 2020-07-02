@@ -83,6 +83,7 @@ type DescribeParametersRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	CharacterType        string           `position:"Query" name:"CharacterType"`
 }
 
 // DescribeParametersResponse is the response struct for api DescribeParameters
@@ -100,7 +101,8 @@ func CreateDescribeParametersRequest() (request *DescribeParametersRequest) {
 	request = &DescribeParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeParameters", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DescribeParameters", "Dds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

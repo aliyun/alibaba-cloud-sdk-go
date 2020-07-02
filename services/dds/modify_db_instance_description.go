@@ -97,7 +97,8 @@ func CreateModifyDBInstanceDescriptionRequest() (request *ModifyDBInstanceDescri
 	request = &ModifyDBInstanceDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyDBInstanceDescription", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "ModifyDBInstanceDescription", "Dds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

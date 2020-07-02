@@ -97,7 +97,8 @@ func CreateDestroyInstanceRequest() (request *DestroyInstanceRequest) {
 	request = &DestroyInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dds", "2015-12-01", "DestroyInstance", "dds", "openAPI")
+	request.InitWithApiInfo("Dds", "2015-12-01", "DestroyInstance", "Dds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
