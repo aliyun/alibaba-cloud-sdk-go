@@ -94,7 +94,7 @@ func CreateRecognizeImageColorRequest() (request *RecognizeImageColorRequest) {
 	request = &RecognizeImageColorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "RecognizeImageColor", "ivpd", "openAPI")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "RecognizeImageColor", "", "")
 	request.Method = requests.POST
 	return
 }

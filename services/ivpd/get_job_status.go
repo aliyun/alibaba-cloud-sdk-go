@@ -93,7 +93,7 @@ func CreateGetJobStatusRequest() (request *GetJobStatusRequest) {
 	request = &GetJobStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "GetJobStatus", "ivpd", "openAPI")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "GetJobStatus", "", "")
 	request.Method = requests.POST
 	return
 }

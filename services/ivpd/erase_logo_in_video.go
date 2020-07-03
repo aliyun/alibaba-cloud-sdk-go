@@ -104,7 +104,7 @@ func CreateEraseLogoInVideoRequest() (request *EraseLogoInVideoRequest) {
 	request = &EraseLogoInVideoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "EraseLogoInVideo", "ivpd", "openAPI")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "EraseLogoInVideo", "", "")
 	request.Method = requests.POST
 	return
 }
