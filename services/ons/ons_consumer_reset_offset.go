@@ -96,6 +96,7 @@ func CreateOnsConsumerResetOffsetRequest() (request *OnsConsumerResetOffsetReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ons", "2019-02-14", "OnsConsumerResetOffset", "ons", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

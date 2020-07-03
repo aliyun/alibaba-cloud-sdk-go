@@ -17,12 +17,13 @@ package ons
 
 // SubscribeInfoDo is a nested struct in ons response
 type SubscribeInfoDo struct {
-	Owner             string `json:"Owner" xml:"Owner"`
-	GroupId           string `json:"GroupId" xml:"GroupId"`
-	UpdateTime        int64  `json:"UpdateTime" xml:"UpdateTime"`
-	Remark            string `json:"Remark" xml:"Remark"`
-	InstanceId        string `json:"InstanceId" xml:"InstanceId"`
-	IndependentNaming bool   `json:"IndependentNaming" xml:"IndependentNaming"`
-	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
-	GroupType         string `json:"GroupType" xml:"GroupType"`
+	Owner             string             `json:"Owner" xml:"Owner"`
+	GroupId           string             `json:"GroupId" xml:"GroupId"`
+	UpdateTime        int64              `json:"UpdateTime" xml:"UpdateTime"`
+	Remark            string             `json:"Remark" xml:"Remark"`
+	InstanceId        string             `json:"InstanceId" xml:"InstanceId"`
+	IndependentNaming bool               `json:"IndependentNaming" xml:"IndependentNaming"`
+	CreateTime        int64              `json:"CreateTime" xml:"CreateTime"`
+	GroupType         string             `json:"GroupType" xml:"GroupType"`
+	Tags              TagsInOnsGroupList `json:"Tags" xml:"Tags"`
 }

@@ -96,6 +96,7 @@ func CreateOnsMqttQueryHistoryOnlineRequest() (request *OnsMqttQueryHistoryOnlin
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttQueryHistoryOnline", "ons", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

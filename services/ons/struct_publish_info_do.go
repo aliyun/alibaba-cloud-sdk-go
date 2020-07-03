@@ -17,13 +17,14 @@ package ons
 
 // PublishInfoDo is a nested struct in ons response
 type PublishInfoDo struct {
-	Topic             string `json:"Topic" xml:"Topic"`
-	Owner             string `json:"Owner" xml:"Owner"`
-	Relation          int    `json:"Relation" xml:"Relation"`
-	RelationName      string `json:"RelationName" xml:"RelationName"`
-	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
-	Remark            string `json:"Remark" xml:"Remark"`
-	MessageType       int    `json:"MessageType" xml:"MessageType"`
-	InstanceId        string `json:"InstanceId" xml:"InstanceId"`
-	IndependentNaming bool   `json:"IndependentNaming" xml:"IndependentNaming"`
+	Topic             string             `json:"Topic" xml:"Topic"`
+	Owner             string             `json:"Owner" xml:"Owner"`
+	Relation          int                `json:"Relation" xml:"Relation"`
+	RelationName      string             `json:"RelationName" xml:"RelationName"`
+	CreateTime        int64              `json:"CreateTime" xml:"CreateTime"`
+	Remark            string             `json:"Remark" xml:"Remark"`
+	MessageType       int                `json:"MessageType" xml:"MessageType"`
+	InstanceId        string             `json:"InstanceId" xml:"InstanceId"`
+	IndependentNaming bool               `json:"IndependentNaming" xml:"IndependentNaming"`
+	Tags              TagsInOnsTopicList `json:"Tags" xml:"Tags"`
 }

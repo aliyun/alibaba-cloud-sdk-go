@@ -76,9 +76,16 @@ func (client *Client) OnsGroupListWithCallback(request *OnsGroupListRequest, cal
 // OnsGroupListRequest is the request struct for api OnsGroupList
 type OnsGroupListRequest struct {
 	*requests.RpcRequest
-	GroupId    string `position:"Query" name:"GroupId"`
-	InstanceId string `position:"Query" name:"InstanceId"`
-	GroupType  string `position:"Query" name:"GroupType"`
+	GroupId    string             `position:"Query" name:"GroupId"`
+	InstanceId string             `position:"Query" name:"InstanceId"`
+	GroupType  string             `position:"Query" name:"GroupType"`
+	Tag        *[]OnsGroupListTag `position:"Query" name:"Tag"  type:"Repeated"`
+}
+
+// OnsGroupListTag is a repeated param struct in OnsGroupListRequest
+type OnsGroupListTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // OnsGroupListResponse is the response struct for api OnsGroupList
@@ -95,6 +102,7 @@ func CreateOnsGroupListRequest() (request *OnsGroupListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ons", "2019-02-14", "OnsGroupList", "ons", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

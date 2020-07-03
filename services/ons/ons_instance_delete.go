@@ -92,6 +92,7 @@ func CreateOnsInstanceDeleteRequest() (request *OnsInstanceDeleteRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ons", "2019-02-14", "OnsInstanceDelete", "ons", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

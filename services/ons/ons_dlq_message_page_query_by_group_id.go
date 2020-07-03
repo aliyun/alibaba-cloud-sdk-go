@@ -99,6 +99,7 @@ func CreateOnsDLQMessagePageQueryByGroupIdRequest() (request *OnsDLQMessagePageQ
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ons", "2019-02-14", "OnsDLQMessagePageQueryByGroupId", "ons", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

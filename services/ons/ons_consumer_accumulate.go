@@ -95,6 +95,7 @@ func CreateOnsConsumerAccumulateRequest() (request *OnsConsumerAccumulateRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ons", "2019-02-14", "OnsConsumerAccumulate", "ons", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

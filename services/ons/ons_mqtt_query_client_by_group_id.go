@@ -94,6 +94,7 @@ func CreateOnsMqttQueryClientByGroupIdRequest() (request *OnsMqttQueryClientByGr
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttQueryClientByGroupId", "ons", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

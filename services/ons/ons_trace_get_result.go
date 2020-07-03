@@ -93,6 +93,7 @@ func CreateOnsTraceGetResultRequest() (request *OnsTraceGetResultRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTraceGetResult", "ons", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

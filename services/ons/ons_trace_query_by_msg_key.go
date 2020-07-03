@@ -97,6 +97,7 @@ func CreateOnsTraceQueryByMsgKeyRequest() (request *OnsTraceQueryByMsgKeyRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTraceQueryByMsgKey", "ons", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

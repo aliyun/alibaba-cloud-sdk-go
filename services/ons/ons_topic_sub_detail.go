@@ -93,6 +93,7 @@ func CreateOnsTopicSubDetailRequest() (request *OnsTopicSubDetailRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTopicSubDetail", "ons", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

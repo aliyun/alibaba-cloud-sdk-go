@@ -76,8 +76,15 @@ func (client *Client) OnsTopicListWithCallback(request *OnsTopicListRequest, cal
 // OnsTopicListRequest is the request struct for api OnsTopicList
 type OnsTopicListRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
-	Topic      string `position:"Query" name:"Topic"`
+	InstanceId string             `position:"Query" name:"InstanceId"`
+	Topic      string             `position:"Query" name:"Topic"`
+	Tag        *[]OnsTopicListTag `position:"Query" name:"Tag"  type:"Repeated"`
+}
+
+// OnsTopicListTag is a repeated param struct in OnsTopicListRequest
+type OnsTopicListTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // OnsTopicListResponse is the response struct for api OnsTopicList
@@ -94,6 +101,7 @@ func CreateOnsTopicListRequest() (request *OnsTopicListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTopicList", "ons", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

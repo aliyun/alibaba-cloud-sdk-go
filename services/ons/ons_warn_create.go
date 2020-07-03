@@ -100,6 +100,7 @@ func CreateOnsWarnCreateRequest() (request *OnsWarnCreateRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ons", "2019-02-14", "OnsWarnCreate", "ons", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

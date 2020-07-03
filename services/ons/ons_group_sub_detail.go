@@ -93,6 +93,7 @@ func CreateOnsGroupSubDetailRequest() (request *OnsGroupSubDetailRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ons", "2019-02-14", "OnsGroupSubDetail", "ons", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

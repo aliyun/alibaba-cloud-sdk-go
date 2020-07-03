@@ -98,6 +98,7 @@ func CreateOnsTrendTopicInputTpsRequest() (request *OnsTrendTopicInputTpsRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTrendTopicInputTps", "ons", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

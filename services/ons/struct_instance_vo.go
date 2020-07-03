@@ -17,10 +17,11 @@ package ons
 
 // InstanceVO is a nested struct in ons response
 type InstanceVO struct {
-	InstanceId        string `json:"InstanceId" xml:"InstanceId"`
-	InstanceStatus    int    `json:"InstanceStatus" xml:"InstanceStatus"`
-	ReleaseTime       int64  `json:"ReleaseTime" xml:"ReleaseTime"`
-	InstanceType      int    `json:"InstanceType" xml:"InstanceType"`
-	InstanceName      string `json:"InstanceName" xml:"InstanceName"`
-	IndependentNaming bool   `json:"IndependentNaming" xml:"IndependentNaming"`
+	InstanceId        string                         `json:"InstanceId" xml:"InstanceId"`
+	InstanceStatus    int                            `json:"InstanceStatus" xml:"InstanceStatus"`
+	ReleaseTime       int64                          `json:"ReleaseTime" xml:"ReleaseTime"`
+	InstanceType      int                            `json:"InstanceType" xml:"InstanceType"`
+	InstanceName      string                         `json:"InstanceName" xml:"InstanceName"`
+	IndependentNaming bool                           `json:"IndependentNaming" xml:"IndependentNaming"`
+	Tags              TagsInOnsInstanceInServiceList `json:"Tags" xml:"Tags"`
 }

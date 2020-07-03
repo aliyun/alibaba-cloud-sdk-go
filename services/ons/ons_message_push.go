@@ -96,6 +96,7 @@ func CreateOnsMessagePushRequest() (request *OnsMessagePushRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMessagePush", "ons", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -99,6 +99,7 @@ func CreateOnsMessagePageQueryByTopicRequest() (request *OnsMessagePageQueryByTo
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMessagePageQueryByTopic", "ons", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

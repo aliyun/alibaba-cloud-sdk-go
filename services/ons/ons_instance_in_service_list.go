@@ -76,6 +76,13 @@ func (client *Client) OnsInstanceInServiceListWithCallback(request *OnsInstanceI
 // OnsInstanceInServiceListRequest is the request struct for api OnsInstanceInServiceList
 type OnsInstanceInServiceListRequest struct {
 	*requests.RpcRequest
+	Tag *[]OnsInstanceInServiceListTag `position:"Query" name:"Tag"  type:"Repeated"`
+}
+
+// OnsInstanceInServiceListTag is a repeated param struct in OnsInstanceInServiceListRequest
+type OnsInstanceInServiceListTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // OnsInstanceInServiceListResponse is the response struct for api OnsInstanceInServiceList
@@ -92,6 +99,7 @@ func CreateOnsInstanceInServiceListRequest() (request *OnsInstanceInServiceListR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ons", "2019-02-14", "OnsInstanceInServiceList", "ons", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

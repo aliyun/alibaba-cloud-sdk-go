@@ -94,6 +94,7 @@ func CreateOnsInstanceCreateRequest() (request *OnsInstanceCreateRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ons", "2019-02-14", "OnsInstanceCreate", "ons", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
