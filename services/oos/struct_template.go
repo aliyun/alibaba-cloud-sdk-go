@@ -19,6 +19,7 @@ package oos
 type Template struct {
 	TemplateId          string                 `json:"TemplateId" xml:"TemplateId"`
 	Category            string                 `json:"Category" xml:"Category"`
+	VersionName         string                 `json:"VersionName" xml:"VersionName"`
 	TotalExecutionCount int                    `json:"TotalExecutionCount" xml:"TotalExecutionCount"`
 	TemplateName        string                 `json:"TemplateName" xml:"TemplateName"`
 	Hash                string                 `json:"Hash" xml:"Hash"`

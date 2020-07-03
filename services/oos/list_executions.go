@@ -85,6 +85,7 @@ type ListExecutionsRequest struct {
 	TemplateName          string                 `position:"Query" name:"TemplateName"`
 	EndDateBefore         string                 `position:"Query" name:"EndDateBefore"`
 	SortOrder             string                 `position:"Query" name:"SortOrder"`
+	ResourceId            string                 `position:"Query" name:"ResourceId"`
 	StartDateAfter        string                 `position:"Query" name:"StartDateAfter"`
 	StartDateBefore       string                 `position:"Query" name:"StartDateBefore"`
 	Tags                  map[string]interface{} `position:"Query" name:"Tags"`
@@ -93,6 +94,7 @@ type ListExecutionsRequest struct {
 	MaxResults            requests.Integer       `position:"Query" name:"MaxResults"`
 	SortField             string                 `position:"Query" name:"SortField"`
 	Category              string                 `position:"Query" name:"Category"`
+	ResourceTemplateName  string                 `position:"Query" name:"ResourceTemplateName"`
 	Status                string                 `position:"Query" name:"Status"`
 }
 
@@ -110,7 +112,8 @@ func CreateListExecutionsRequest() (request *ListExecutionsRequest) {
 	request = &ListExecutionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListExecutions", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListExecutions", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -96,7 +96,8 @@ func CreateListTagValuesRequest() (request *ListTagValuesRequest) {
 	request = &ListTagValuesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListTagValues", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListTagValues", "", "")
+	request.Method = requests.POST
 	return
 }
 
