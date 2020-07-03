@@ -1,3 +1,7 @@
+2020-07-03 Version: v1.61.303
+- Generated 2020-05-15 for `Vcs`.
+- Add PicUrl parameter for picture related API.
+
 2020-07-03 Version: v1.61.302
 - Generated 2020-05-15 for `Vcs`.
 - Add PicUrl parameter for picture related API.
