@@ -77,6 +77,7 @@ func (client *Client) CreateFileWithCallback(request *CreateFileRequest, callbac
 type CreateFileRequest struct {
 	*requests.RpcRequest
 	FileType                requests.Integer `position:"Body" name:"FileType"`
+	DependentNodeIdList     string           `position:"Body" name:"DependentNodeIdList"`
 	Content                 string           `position:"Body" name:"Content"`
 	ProjectIdentifier       string           `position:"Body" name:"ProjectIdentifier"`
 	ProjectId               requests.Integer `position:"Body" name:"ProjectId"`
@@ -84,7 +85,6 @@ type CreateFileRequest struct {
 	CycleType               string           `position:"Body" name:"CycleType"`
 	Owner                   string           `position:"Body" name:"Owner"`
 	AutoRerunIntervalMillis requests.Integer `position:"Body" name:"AutoRerunIntervalMillis"`
-	DependentCloudUuidList  string           `position:"Body" name:"DependentCloudUuidList"`
 	InputList               string           `position:"Body" name:"InputList"`
 	RerunMode               string           `position:"Body" name:"RerunMode"`
 	ParaValue               string           `position:"Body" name:"ParaValue"`

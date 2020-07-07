@@ -17,8 +17,8 @@ package dataworks_public
 
 // NodeConfiguration is a nested struct in dataworks_public response
 type NodeConfiguration struct {
-	TaskRerunTime           int               `json:"TaskRerunTime" xml:"TaskRerunTime"`
-	TaskRerunIntervalMillis int               `json:"TaskRerunIntervalMillis" xml:"TaskRerunIntervalMillis"`
+	AutoRerunTimes          int               `json:"AutoRerunTimes" xml:"AutoRerunTimes"`
+	AutoRerunIntervalMillis int               `json:"AutoRerunIntervalMillis" xml:"AutoRerunIntervalMillis"`
 	RerunMode               string            `json:"RerunMode" xml:"RerunMode"`
 	Stop                    bool              `json:"Stop" xml:"Stop"`
 	ParaValue               string            `json:"ParaValue" xml:"ParaValue"`

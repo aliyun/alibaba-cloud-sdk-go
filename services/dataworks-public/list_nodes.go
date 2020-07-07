@@ -76,9 +76,9 @@ func (client *Client) ListNodesWithCallback(request *ListNodesRequest, callback 
 // ListNodesRequest is the request struct for api ListNodes
 type ListNodesRequest struct {
 	*requests.RpcRequest
+	Owner       string           `position:"Body" name:"Owner"`
 	ProjectEnv  string           `position:"Body" name:"ProjectEnv"`
 	BizName     string           `position:"Body" name:"BizName"`
-	OwnerId     string           `position:"Body" name:"OwnerId"`
 	PageNumber  requests.Integer `position:"Body" name:"PageNumber"`
 	NodeName    string           `position:"Body" name:"NodeName"`
 	ProgramType string           `position:"Body" name:"ProgramType"`

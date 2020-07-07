@@ -34,4 +34,5 @@ type ConnectionsItem struct {
 	Id                  int    `json:"Id" xml:"Id"`
 	ProjectId           int    `json:"ProjectId" xml:"ProjectId"`
 	Status              int    `json:"Status" xml:"Status"`
+	Content             string `json:"Content" xml:"Content"`
 }

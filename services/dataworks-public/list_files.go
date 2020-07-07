@@ -84,7 +84,7 @@ type ListFilesRequest struct {
 	PageSize          requests.Integer `position:"Body" name:"PageSize"`
 	Keyword           string           `position:"Body" name:"Keyword"`
 	ProjectId         requests.Integer `position:"Body" name:"ProjectId"`
-	UseType           requests.Integer `position:"Body" name:"UseType"`
+	UseType           string           `position:"Body" name:"UseType"`
 }
 
 // ListFilesResponse is the response struct for api ListFiles

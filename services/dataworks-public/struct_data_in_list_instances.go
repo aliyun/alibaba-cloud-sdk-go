@@ -17,8 +17,8 @@ package dataworks_public
 
 // DataInListInstances is a nested struct in dataworks_public response
 type DataInListInstances struct {
-	PageNumber int                            `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int                            `json:"PageSize" xml:"PageSize"`
-	TotalCount int                            `json:"TotalCount" xml:"TotalCount"`
-	Instances  []InstancesItemInListInstances `json:"Instances" xml:"Instances"`
+	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int        `json:"PageSize" xml:"PageSize"`
+	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
+	Instances  []Instance `json:"Instances" xml:"Instances"`
 }

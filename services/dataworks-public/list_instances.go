@@ -77,12 +77,12 @@ func (client *Client) ListInstancesWithCallback(request *ListInstancesRequest, c
 type ListInstancesRequest struct {
 	*requests.RpcRequest
 	ProjectEnv  string           `position:"Body" name:"ProjectEnv"`
+	Owner       string           `position:"Body" name:"Owner"`
 	BizName     string           `position:"Body" name:"BizName"`
-	OwnerId     string           `position:"Body" name:"OwnerId"`
-	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
+	PageNumber  requests.Integer `position:"Body" name:"PageNumber"`
 	NodeName    string           `position:"Body" name:"NodeName"`
 	ProgramType string           `position:"Body" name:"ProgramType"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	PageSize    requests.Integer `position:"Body" name:"PageSize"`
 	NodeId      requests.Integer `position:"Body" name:"NodeId"`
 	ProjectId   requests.Integer `position:"Body" name:"ProjectId"`
 }

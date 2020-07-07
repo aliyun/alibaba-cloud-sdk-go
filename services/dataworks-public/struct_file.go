@@ -29,9 +29,9 @@ type File struct {
 	Content         string `json:"Content" xml:"Content"`
 	NodeId          int64  `json:"NodeId" xml:"NodeId"`
 	CreateUser      string `json:"CreateUser" xml:"CreateUser"`
-	UseType         int    `json:"UseType" xml:"UseType"`
 	LastEditUser    string `json:"LastEditUser" xml:"LastEditUser"`
 	FileName        string `json:"FileName" xml:"FileName"`
+	UseType         string `json:"UseType" xml:"UseType"`
 	ParentId        int64  `json:"ParentId" xml:"ParentId"`
 	IsMaxCompute    bool   `json:"IsMaxCompute" xml:"IsMaxCompute"`
 	CommitStatus    int    `json:"CommitStatus" xml:"CommitStatus"`

@@ -77,8 +77,8 @@ func (client *Client) ListNodeIOWithCallback(request *ListNodeIORequest, callbac
 type ListNodeIORequest struct {
 	*requests.RpcRequest
 	ProjectEnv string           `position:"Body" name:"ProjectEnv"`
-	Type       string           `position:"Body" name:"Type"`
 	NodeId     requests.Integer `position:"Body" name:"NodeId"`
+	IoType     string           `position:"Body" name:"IoType"`
 }
 
 // ListNodeIOResponse is the response struct for api ListNodeIO

@@ -17,5 +17,5 @@ package dataworks_public
 
 // InstancesInListInstances is a nested struct in dataworks_public response
 type InstancesInListInstances struct {
-	InstancesItem []InstancesItemInListInstances `json:"Instances" xml:"Instances"`
+	Instance []Instance `json:"Instance" xml:"Instance"`
 }

@@ -18,26 +18,16 @@ package dataworks_public
 // DataInGetProjectDetail is a nested struct in dataworks_public response
 type DataInGetProjectDetail struct {
 	GmtModified                      string   `json:"GmtModified" xml:"GmtModified"`
-	MaxFlowNode                      int      `json:"MaxFlowNode" xml:"MaxFlowNode"`
 	DefaultDiResourceGroupIdentifier string   `json:"DefaultDiResourceGroupIdentifier" xml:"DefaultDiResourceGroupIdentifier"`
-	Destination                      int      `json:"Destination" xml:"Destination"`
 	IsAllowDownload                  int      `json:"IsAllowDownload" xml:"IsAllowDownload"`
-	ProdStorageQuota                 string   `json:"ProdStorageQuota" xml:"ProdStorageQuota"`
 	SchedulerRetryInterval           int      `json:"SchedulerRetryInterval" xml:"SchedulerRetryInterval"`
 	ResidentArea                     string   `json:"ResidentArea" xml:"ResidentArea"`
-	TablePrivacyMode                 int      `json:"TablePrivacyMode" xml:"TablePrivacyMode"`
 	ProjectOwnerBaseId               string   `json:"ProjectOwnerBaseId" xml:"ProjectOwnerBaseId"`
-	UseProxyOdpsAccount              bool     `json:"UseProxyOdpsAccount" xml:"UseProxyOdpsAccount"`
-	DisableDevelopment               bool     `json:"DisableDevelopment" xml:"DisableDevelopment"`
 	ProjectMode                      int      `json:"ProjectMode" xml:"ProjectMode"`
 	GmtCreate                        string   `json:"GmtCreate" xml:"GmtCreate"`
-	DevStorageQuota                  string   `json:"DevStorageQuota" xml:"DevStorageQuota"`
-	IsDefault                        int      `json:"IsDefault" xml:"IsDefault"`
 	ProtectedMode                    int      `json:"ProtectedMode" xml:"ProtectedMode"`
-	BaseProject                      bool     `json:"BaseProject" xml:"BaseProject"`
 	TenantId                         int64    `json:"TenantId" xml:"TenantId"`
 	ProjectDescription               string   `json:"ProjectDescription" xml:"ProjectDescription"`
-	Appkey                           string   `json:"Appkey" xml:"Appkey"`
 	SchedulerMaxRetryTimes           int      `json:"SchedulerMaxRetryTimes" xml:"SchedulerMaxRetryTimes"`
 	ProjectName                      string   `json:"ProjectName" xml:"ProjectName"`
 	ProjectIdentifier                string   `json:"ProjectIdentifier" xml:"ProjectIdentifier"`
