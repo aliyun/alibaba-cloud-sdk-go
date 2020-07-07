@@ -28,4 +28,6 @@ type RecordsItemInListMotorAlgorithmResults struct {
 	RightBottomY     float64 `json:"RightBottomY" xml:"RightBottomY"`
 	ShotTime         string  `json:"ShotTime" xml:"ShotTime"`
 	TargetPicUrlPath string  `json:"TargetPicUrlPath" xml:"TargetPicUrlPath"`
+	MotorStyle       string  `json:"MotorStyle" xml:"MotorStyle"`
+	MotorModel       string  `json:"MotorModel" xml:"MotorModel"`
 }
