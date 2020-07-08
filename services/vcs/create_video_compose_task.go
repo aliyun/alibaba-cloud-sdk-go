@@ -76,23 +76,24 @@ func (client *Client) CreateVideoComposeTaskWithCallback(request *CreateVideoCom
 // CreateVideoComposeTaskRequest is the request struct for api CreateVideoComposeTask
 type CreateVideoComposeTaskRequest struct {
 	*requests.RpcRequest
-	CorpId          string `position:"Body" name:"CorpId"`
-	DomainName      string `position:"Body" name:"DomainName"`
-	PicUrlList      string `position:"Body" name:"PicUrlList"`
-	AudioUrl        string `position:"Body" name:"AudioUrl"`
-	BucketName      string `position:"Body" name:"BucketName"`
-	ImageParameters string `position:"Body" name:"ImageParameters"`
-	VideoRate       string `position:"Body" name:"VideoRate"`
-	VideoFormat     string `position:"Body" name:"VideoFormat"`
+	CorpId          string           `position:"Body" name:"CorpId"`
+	DomainName      string           `position:"Body" name:"DomainName"`
+	VideoFrameRate  requests.Integer `position:"Body" name:"VideoFrameRate"`
+	ImageFileNames  string           `position:"Body" name:"ImageFileNames"`
+	AudioFileName   string           `position:"Body" name:"AudioFileName"`
+	BucketName      string           `position:"Body" name:"BucketName"`
+	ImageParameters string           `position:"Body" name:"ImageParameters"`
+	VideoFormat     string           `position:"Body" name:"VideoFormat"`
 }
 
 // CreateVideoComposeTaskResponse is the response struct for api CreateVideoComposeTask
 type CreateVideoComposeTaskResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code       string `json:"Code" xml:"Code"`
+	Message    string `json:"Message" xml:"Message"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	DomainName string `json:"DomainName" xml:"DomainName"`
+	BucketName string `json:"BucketName" xml:"BucketName"`
 }
 
 // CreateCreateVideoComposeTaskRequest creates a request to invoke CreateVideoComposeTask API
@@ -100,7 +101,7 @@ func CreateCreateVideoComposeTaskRequest() (request *CreateVideoComposeTaskReque
 	request = &CreateVideoComposeTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "CreateVideoComposeTask", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "CreateVideoComposeTask", "", "")
 	request.Method = requests.POST
 	return
 }

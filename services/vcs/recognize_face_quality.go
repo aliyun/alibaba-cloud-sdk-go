@@ -96,7 +96,7 @@ func CreateRecognizeFaceQualityRequest() (request *RecognizeFaceQualityRequest) 
 	request = &RecognizeFaceQualityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "RecognizeFaceQuality", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "RecognizeFaceQuality", "", "")
 	request.Method = requests.POST
 	return
 }

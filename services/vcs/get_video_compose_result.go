@@ -86,6 +86,8 @@ type GetVideoComposeResultResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	VideoUrl  string `json:"VideoUrl" xml:"VideoUrl"`
+	Code      string `json:"Code" xml:"Code"`
+	Status    string `json:"Status" xml:"Status"`
 }
 
 // CreateGetVideoComposeResultRequest creates a request to invoke GetVideoComposeResult API
@@ -93,7 +95,7 @@ func CreateGetVideoComposeResultRequest() (request *GetVideoComposeResultRequest
 	request = &GetVideoComposeResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "GetVideoComposeResult", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetVideoComposeResult", "", "")
 	request.Method = requests.POST
 	return
 }

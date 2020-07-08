@@ -19,7 +19,6 @@ package vcs
 type Data struct {
 	TotalPage    int                                      `json:"TotalPage" xml:"TotalPage"`
 	DataSourceId string                                   `json:"DataSourceId" xml:"DataSourceId"`
-	DomainName   int                                      `json:"DomainName" xml:"DomainName"`
 	MaxId        string                                   `json:"MaxId" xml:"MaxId"`
 	PersonId     string                                   `json:"PersonId" xml:"PersonId"`
 	KafkaTopic   string                                   `json:"KafkaTopic" xml:"KafkaTopic"`
@@ -31,7 +30,6 @@ type Data struct {
 	PageNumber   int                                      `json:"PageNumber" xml:"PageNumber"`
 	PicUrl       string                                   `json:"PicUrl" xml:"PicUrl"`
 	Description  string                                   `json:"Description" xml:"Description"`
-	BucketName   int                                      `json:"BucketName" xml:"BucketName"`
 	ResultObject []ResultObjectItem                       `json:"ResultObject" xml:"ResultObject"`
 	Records      []RecordsItemInListMotorAlgorithmResults `json:"Records" xml:"Records"`
 	TagList      []TagListItem                            `json:"TagList" xml:"TagList"`

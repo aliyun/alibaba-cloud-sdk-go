@@ -94,7 +94,7 @@ func CreateGetVideoSummaryTaskResultRequest() (request *GetVideoSummaryTaskResul
 	request = &GetVideoSummaryTaskResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "GetVideoSummaryTaskResult", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetVideoSummaryTaskResult", "", "")
 	request.Method = requests.POST
 	return
 }
