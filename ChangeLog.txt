@@ -1,3 +1,7 @@
+2020-07-08 Version: v1.61.310
+- Generated 2017-12-25 for `OpenSearch`.
+- Support hotword and hint.
+
 2020-07-08 Version: v1.61.309
 - Generated 2020-05-15 for `Vcs`.
 - Add video summarization related API.
