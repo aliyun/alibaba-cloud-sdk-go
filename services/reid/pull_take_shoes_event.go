@@ -103,7 +103,7 @@ func CreatePullTakeShoesEventRequest() (request *PullTakeShoesEventRequest) {
 	request = &PullTakeShoesEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("reid", "2019-09-28", "PullTakeShoesEvent", "1.1.8", "openAPI")
+	request.InitWithApiInfo("reid", "2019-09-28", "PullTakeShoesEvent", "1.1.8.2", "openAPI")
 	request.Method = requests.POST
 	return
 }

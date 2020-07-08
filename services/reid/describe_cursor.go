@@ -95,7 +95,7 @@ func CreateDescribeCursorRequest() (request *DescribeCursorRequest) {
 	request = &DescribeCursorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("reid", "2019-09-28", "DescribeCursor", "1.1.8", "openAPI")
+	request.InitWithApiInfo("reid", "2019-09-28", "DescribeCursor", "1.1.8.2", "openAPI")
 	request.Method = requests.POST
 	return
 }

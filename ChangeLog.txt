@@ -1,3 +1,9 @@
+2020-07-08 Version: v1.61.313
+- Generated 2019-09-28 for `reid`.
+- Remove GetFootwearPosition PullTakeShoesEvent PullTryOnShoesEvent.
+- Add GetFootwearEvent.
+- Please ignore the pd s pot.
+
 2020-07-08 Version: v1.61.312
 - Generated 2020-05-15 for `Vcs`.
 - Add video compose api.
