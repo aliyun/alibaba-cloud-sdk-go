@@ -146,6 +146,7 @@ func Test_DoActionWithProxy(t *testing.T) {
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
 	assert.Equal(t, true, client.isRunning)
+
 	request := requests.NewCommonRequest()
 	request.Domain = "ecs.aliyuncs.com"
 	request.Version = "2014-05-26"
@@ -162,6 +163,12 @@ func Test_DoActionWithProxy(t *testing.T) {
 			return mockResponse(200, "", nil)
 		}
 	}
+	client.Network = "公有"
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	assert.Equal(t, "netWork contains invalid characters", err.Error())
+
+	client.Network = ""
 	err = client.DoAction(request, response)
 	assert.Nil(t, err)
 	assert.Equal(t, 200, response.GetHttpStatus())
@@ -762,6 +769,10 @@ func TestClient_NewClientWithStsRoleNameOnEcs(t *testing.T) {
 }
 
 func TestClient_NewClientWithStsRoleArn(t *testing.T) {
+	_, err := NewClientWithStsRoleArn("域名", "acesskeyid", "accesskeysecret", "rolearn", "rolesessionname")
+	assert.NotNil(t, err)
+	assert.Equal(t, err.Error(), "regionId contains invalid characters")
+
 	client, err := NewClientWithStsRoleArn("regionid", "acesskeyid", "accesskeysecret", "rolearn", "rolesessionname")
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
