@@ -77,7 +77,6 @@ func (client *Client) DescribeCustomEventCountWithCallback(request *DescribeCust
 type DescribeCustomEventCountRequest struct {
 	*requests.RpcRequest
 	EventId        string `position:"Query" name:"EventId"`
-	Level          string `position:"Query" name:"Level"`
 	GroupId        string `position:"Query" name:"GroupId"`
 	EndTime        string `position:"Query" name:"EndTime"`
 	StartTime      string `position:"Query" name:"StartTime"`

@@ -76,7 +76,6 @@ func (client *Client) ModifyHostInfoWithCallback(request *ModifyHostInfoRequest,
 // ModifyHostInfoRequest is the request struct for api ModifyHostInfo
 type ModifyHostInfoRequest struct {
 	*requests.RpcRequest
-	IP         string `position:"Query" name:"IP"`
 	HostName   string `position:"Query" name:"HostName"`
 	InstanceId string `position:"Query" name:"InstanceId"`
 }

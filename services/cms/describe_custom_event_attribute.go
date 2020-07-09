@@ -81,7 +81,6 @@ type DescribeCustomEventAttributeRequest struct {
 	SearchKeywords string           `position:"Query" name:"SearchKeywords"`
 	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
-	Level          string           `position:"Query" name:"Level"`
 	GroupId        string           `position:"Query" name:"GroupId"`
 	EndTime        string           `position:"Query" name:"EndTime"`
 	Name           string           `position:"Query" name:"Name"`

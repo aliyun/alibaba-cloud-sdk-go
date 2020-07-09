@@ -1,3 +1,8 @@
+2020-07-09 Version: v1.61.314
+- Generated 2019-01-01 for `Cms`.
+- Add Log Monitoring API.
+- Add and modify non Alibaba Cloud host name API.
+
 2020-07-08 Version: v1.61.313
 - Generated 2019-09-28 for `reid`.
 - Remove GetFootwearPosition PullTakeShoesEvent PullTryOnShoesEvent.

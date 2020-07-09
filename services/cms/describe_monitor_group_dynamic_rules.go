@@ -82,14 +82,11 @@ type DescribeMonitorGroupDynamicRulesRequest struct {
 // DescribeMonitorGroupDynamicRulesResponse is the response struct for api DescribeMonitorGroupDynamicRules
 type DescribeMonitorGroupDynamicRulesResponse struct {
 	*responses.BaseResponse
-	RequestId  string                                     `json:"RequestId" xml:"RequestId"`
-	Success    bool                                       `json:"Success" xml:"Success"`
-	Code       int                                        `json:"Code" xml:"Code"`
-	Message    string                                     `json:"Message" xml:"Message"`
-	PageNumber int                                        `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int                                        `json:"PageSize" xml:"PageSize"`
-	Total      int                                        `json:"Total" xml:"Total"`
-	Resource   ResourceInDescribeMonitorGroupDynamicRules `json:"Resource" xml:"Resource"`
+	RequestId string                                     `json:"RequestId" xml:"RequestId"`
+	Success   bool                                       `json:"Success" xml:"Success"`
+	Code      int                                        `json:"Code" xml:"Code"`
+	Message   string                                     `json:"Message" xml:"Message"`
+	Resource  ResourceInDescribeMonitorGroupDynamicRules `json:"Resource" xml:"Resource"`
 }
 
 // CreateDescribeMonitorGroupDynamicRulesRequest creates a request to invoke DescribeMonitorGroupDynamicRules API
