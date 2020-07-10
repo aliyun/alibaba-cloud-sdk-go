@@ -95,7 +95,7 @@ func CreateAddDataSourceRequest() (request *AddDataSourceRequest) {
 	request = &AddDataSourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "AddDataSource", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "AddDataSource", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

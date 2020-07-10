@@ -94,7 +94,7 @@ func CreateGetPersonDetailRequest() (request *GetPersonDetailRequest) {
 	request = &GetPersonDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "GetPersonDetail", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetPersonDetail", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

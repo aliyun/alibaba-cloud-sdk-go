@@ -99,7 +99,7 @@ func CreateListMetricsRequest() (request *ListMetricsRequest) {
 	request = &ListMetricsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListMetrics", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListMetrics", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ListMotorAlgorithmResults invokes the vcs.ListMotorAlgorithmResults API synchronously
-// api document: https://help.aliyun.com/api/vcs/listmotoralgorithmresults.html
-func (client *Client) ListMotorAlgorithmResults(request *ListMotorAlgorithmResultsRequest) (response *ListMotorAlgorithmResultsResponse, err error) {
-	response = CreateListMotorAlgorithmResultsResponse()
+// ListBodyAlgorithmResults invokes the vcs.ListBodyAlgorithmResults API synchronously
+// api document: https://help.aliyun.com/api/vcs/listbodyalgorithmresults.html
+func (client *Client) ListBodyAlgorithmResults(request *ListBodyAlgorithmResultsRequest) (response *ListBodyAlgorithmResultsResponse, err error) {
+	response = CreateListBodyAlgorithmResultsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ListMotorAlgorithmResultsWithChan invokes the vcs.ListMotorAlgorithmResults API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listmotoralgorithmresults.html
+// ListBodyAlgorithmResultsWithChan invokes the vcs.ListBodyAlgorithmResults API asynchronously
+// api document: https://help.aliyun.com/api/vcs/listbodyalgorithmresults.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ListMotorAlgorithmResultsWithChan(request *ListMotorAlgorithmResultsRequest) (<-chan *ListMotorAlgorithmResultsResponse, <-chan error) {
-	responseChan := make(chan *ListMotorAlgorithmResultsResponse, 1)
+func (client *Client) ListBodyAlgorithmResultsWithChan(request *ListBodyAlgorithmResultsRequest) (<-chan *ListBodyAlgorithmResultsResponse, <-chan error) {
+	responseChan := make(chan *ListBodyAlgorithmResultsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListMotorAlgorithmResults(request)
+		response, err := client.ListBodyAlgorithmResults(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ListMotorAlgorithmResultsWithChan(request *ListMotorAlgori
 	return responseChan, errChan
 }
 
-// ListMotorAlgorithmResultsWithCallback invokes the vcs.ListMotorAlgorithmResults API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listmotoralgorithmresults.html
+// ListBodyAlgorithmResultsWithCallback invokes the vcs.ListBodyAlgorithmResults API asynchronously
+// api document: https://help.aliyun.com/api/vcs/listbodyalgorithmresults.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ListMotorAlgorithmResultsWithCallback(request *ListMotorAlgorithmResultsRequest, callback func(response *ListMotorAlgorithmResultsResponse, err error)) <-chan int {
+func (client *Client) ListBodyAlgorithmResultsWithCallback(request *ListBodyAlgorithmResultsRequest, callback func(response *ListBodyAlgorithmResultsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListMotorAlgorithmResultsResponse
+		var response *ListBodyAlgorithmResultsResponse
 		var err error
 		defer close(result)
-		response, err = client.ListMotorAlgorithmResults(request)
+		response, err = client.ListBodyAlgorithmResults(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,21 +73,21 @@ func (client *Client) ListMotorAlgorithmResultsWithCallback(request *ListMotorAl
 	return result
 }
 
-// ListMotorAlgorithmResultsRequest is the request struct for api ListMotorAlgorithmResults
-type ListMotorAlgorithmResultsRequest struct {
+// ListBodyAlgorithmResultsRequest is the request struct for api ListBodyAlgorithmResults
+type ListBodyAlgorithmResultsRequest struct {
 	*requests.RpcRequest
 	AlgorithmType string `position:"Body" name:"AlgorithmType"`
 	CorpId        string `position:"Body" name:"CorpId"`
+	CapStyle      string `position:"Body" name:"CapStyle"`
 	EndTime       string `position:"Body" name:"EndTime"`
 	StartTime     string `position:"Body" name:"StartTime"`
 	PageNumber    string `position:"Body" name:"PageNumber"`
-	PlateNumber   string `position:"Body" name:"PlateNumber"`
 	DataSourceId  string `position:"Body" name:"DataSourceId"`
 	PageSize      string `position:"Body" name:"PageSize"`
 }
 
-// ListMotorAlgorithmResultsResponse is the response struct for api ListMotorAlgorithmResults
-type ListMotorAlgorithmResultsResponse struct {
+// ListBodyAlgorithmResultsResponse is the response struct for api ListBodyAlgorithmResults
+type ListBodyAlgorithmResultsResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
@@ -95,19 +95,19 @@ type ListMotorAlgorithmResultsResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateListMotorAlgorithmResultsRequest creates a request to invoke ListMotorAlgorithmResults API
-func CreateListMotorAlgorithmResultsRequest() (request *ListMotorAlgorithmResultsRequest) {
-	request = &ListMotorAlgorithmResultsRequest{
+// CreateListBodyAlgorithmResultsRequest creates a request to invoke ListBodyAlgorithmResults API
+func CreateListBodyAlgorithmResultsRequest() (request *ListBodyAlgorithmResultsRequest) {
+	request = &ListBodyAlgorithmResultsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListMotorAlgorithmResults", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListBodyAlgorithmResults", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateListMotorAlgorithmResultsResponse creates a response to parse from ListMotorAlgorithmResults response
-func CreateListMotorAlgorithmResultsResponse() (response *ListMotorAlgorithmResultsResponse) {
-	response = &ListMotorAlgorithmResultsResponse{
+// CreateListBodyAlgorithmResultsResponse creates a response to parse from ListBodyAlgorithmResults response
+func CreateListBodyAlgorithmResultsResponse() (response *ListBodyAlgorithmResultsResponse) {
+	response = &ListBodyAlgorithmResultsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
