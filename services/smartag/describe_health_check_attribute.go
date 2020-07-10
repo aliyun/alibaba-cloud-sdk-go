@@ -112,6 +112,7 @@ func CreateDescribeHealthCheckAttributeRequest() (request *DescribeHealthCheckAt
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DescribeHealthCheckAttribute", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

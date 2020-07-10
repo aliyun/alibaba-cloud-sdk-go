@@ -95,6 +95,7 @@ func CreateDeactiveFlowLogRequest() (request *DeactiveFlowLogRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DeactiveFlowLog", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

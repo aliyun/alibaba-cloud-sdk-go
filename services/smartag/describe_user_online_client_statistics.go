@@ -97,6 +97,7 @@ func CreateDescribeUserOnlineClientStatisticsRequest() (request *DescribeUserOnl
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DescribeUserOnlineClientStatistics", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

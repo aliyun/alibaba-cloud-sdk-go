@@ -96,6 +96,7 @@ func CreateKickOutClientsRequest() (request *KickOutClientsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "KickOutClients", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

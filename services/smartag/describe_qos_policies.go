@@ -104,6 +104,7 @@ func CreateDescribeQosPoliciesRequest() (request *DescribeQosPoliciesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DescribeQosPolicies", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

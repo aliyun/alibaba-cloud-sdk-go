@@ -96,6 +96,7 @@ func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DescribeRegions", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

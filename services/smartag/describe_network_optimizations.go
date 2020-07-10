@@ -103,6 +103,7 @@ func CreateDescribeNetworkOptimizationsRequest() (request *DescribeNetworkOptimi
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DescribeNetworkOptimizations", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

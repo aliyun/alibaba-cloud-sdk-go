@@ -101,10 +101,23 @@ type DescribeSmartAccessGatewayAttributeResponse struct {
 	InstanceType          string                                     `json:"InstanceType" xml:"InstanceType"`
 	SerialNumber          string                                     `json:"SerialNumber" xml:"SerialNumber"`
 	SecurityLockThreshold int                                        `json:"SecurityLockThreshold" xml:"SecurityLockThreshold"`
-	AclIds                string                                     `json:"AclIds" xml:"AclIds"`
 	DataPlan              int64                                      `json:"DataPlan" xml:"DataPlan"`
 	UserCount             int                                        `json:"UserCount" xml:"UserCount"`
 	RoutingStrategy       string                                     `json:"RoutingStrategy" xml:"RoutingStrategy"`
+	IpsecStatus           string                                     `json:"IpsecStatus" xml:"IpsecStatus"`
+	VpnStatus             string                                     `json:"VpnStatus" xml:"VpnStatus"`
+	TrafficMasterSn       string                                     `json:"TrafficMasterSn" xml:"TrafficMasterSn"`
+	BoxControllerIp       string                                     `json:"BoxControllerIp" xml:"BoxControllerIp"`
+	BackupBoxControllerIp string                                     `json:"BackupBoxControllerIp" xml:"BackupBoxControllerIp"`
+	UpBandwidthWan        int                                        `json:"UpBandwidthWan" xml:"UpBandwidthWan"`
+	UpBandwidth4G         int                                        `json:"UpBandwidth4G" xml:"UpBandwidth4G"`
+	EnableOptimization    bool                                       `json:"EnableOptimization" xml:"EnableOptimization"`
+	OptimizationType      bool                                       `json:"OptimizationType" xml:"OptimizationType"`
+	ResourceGroupId       string                                     `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	AccessPointId         string                                     `json:"AccessPointId" xml:"AccessPointId"`
+	AclIds                AclIds                                     `json:"AclIds" xml:"AclIds"`
+	QosIds                QosIds                                     `json:"QosIds" xml:"QosIds"`
+	FlowLogIds            FlowLogIds                                 `json:"FlowLogIds" xml:"FlowLogIds"`
 	Links                 LinksInDescribeSmartAccessGatewayAttribute `json:"Links" xml:"Links"`
 	Devices               Devices                                    `json:"Devices" xml:"Devices"`
 }
@@ -115,6 +128,7 @@ func CreateDescribeSmartAccessGatewayAttributeRequest() (request *DescribeSmartA
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DescribeSmartAccessGatewayAttribute", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

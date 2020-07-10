@@ -115,6 +115,7 @@ func CreateUnicomOrderConfirmRequest() (request *UnicomOrderConfirmRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "UnicomOrderConfirm", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

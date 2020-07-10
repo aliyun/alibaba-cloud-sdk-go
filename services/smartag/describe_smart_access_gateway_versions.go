@@ -81,6 +81,7 @@ type DescribeSmartAccessGatewayVersionsRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	SmartAGId            string           `position:"Query" name:"SmartAGId"`
+	SmartAGSn            string           `position:"Query" name:"SmartAGSn"`
 }
 
 // DescribeSmartAccessGatewayVersionsResponse is the response struct for api DescribeSmartAccessGatewayVersions
@@ -96,6 +97,7 @@ func CreateDescribeSmartAccessGatewayVersionsRequest() (request *DescribeSmartAc
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DescribeSmartAccessGatewayVersions", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

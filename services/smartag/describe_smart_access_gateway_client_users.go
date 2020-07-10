@@ -81,6 +81,7 @@ type DescribeSmartAccessGatewayClientUsersRequest struct {
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	UserMail             string           `position:"Query" name:"UserMail"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 	UserName             string           `position:"Query" name:"UserName"`
@@ -102,6 +103,7 @@ func CreateDescribeSmartAccessGatewayClientUsersRequest() (request *DescribeSmar
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DescribeSmartAccessGatewayClientUsers", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

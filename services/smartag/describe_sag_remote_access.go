@@ -101,6 +101,7 @@ func CreateDescribeSagRemoteAccessRequest() (request *DescribeSagRemoteAccessReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DescribeSagRemoteAccess", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -77,6 +77,7 @@ func (client *Client) ModifySmartAccessGatewayClientUserWithCallback(request *Mo
 type ModifySmartAccessGatewayClientUserRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Email                string           `position:"Query" name:"Email"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -101,6 +102,7 @@ func CreateModifySmartAccessGatewayClientUserRequest() (request *ModifySmartAcce
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "ModifySmartAccessGatewayClientUser", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

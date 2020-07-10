@@ -109,6 +109,7 @@ func CreateDescribeCloudConnectNetworksRequest() (request *DescribeCloudConnectN
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DescribeCloudConnectNetworks", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

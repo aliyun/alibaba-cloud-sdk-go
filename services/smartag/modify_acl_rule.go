@@ -92,6 +92,7 @@ type ModifyACLRuleRequest struct {
 	Priority             requests.Integer `position:"Query" name:"Priority"`
 	AcrId                string           `position:"Query" name:"AcrId"`
 	DestPortRange        string           `position:"Query" name:"DestPortRange"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // ModifyACLRuleResponse is the response struct for api ModifyACLRule
@@ -110,6 +111,7 @@ type ModifyACLRuleResponse struct {
 	Policy          string `json:"Policy" xml:"Policy"`
 	Priority        int    `json:"Priority" xml:"Priority"`
 	GmtCreate       int64  `json:"GmtCreate" xml:"GmtCreate"`
+	Name            string `json:"Name" xml:"Name"`
 }
 
 // CreateModifyACLRuleRequest creates a request to invoke ModifyACLRule API
@@ -118,6 +120,7 @@ func CreateModifyACLRuleRequest() (request *ModifyACLRuleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "ModifyACLRule", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

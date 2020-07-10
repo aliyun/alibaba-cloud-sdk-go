@@ -102,6 +102,7 @@ func CreateDescribeACLsRequest() (request *DescribeACLsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DescribeACLs", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

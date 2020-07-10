@@ -96,6 +96,7 @@ func CreateGetCloudConnectNetworkUseLimitRequest() (request *GetCloudConnectNetw
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "GetCloudConnectNetworkUseLimit", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

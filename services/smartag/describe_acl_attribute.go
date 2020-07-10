@@ -85,6 +85,7 @@ type DescribeACLAttributeRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // DescribeACLAttributeResponse is the response struct for api DescribeACLAttribute
@@ -103,6 +104,7 @@ func CreateDescribeACLAttributeRequest() (request *DescribeACLAttributeRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DescribeACLAttribute", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -96,6 +96,7 @@ func CreateRevokeSagInstanceFromCcnRequest() (request *RevokeSagInstanceFromCcnR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "RevokeSagInstanceFromCcn", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

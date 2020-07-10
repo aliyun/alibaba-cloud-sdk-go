@@ -96,6 +96,7 @@ func CreateAssociateFlowLogRequest() (request *AssociateFlowLogRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "AssociateFlowLog", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -17,15 +17,20 @@ package smartag
 
 // GrantRule is a nested struct in smartag response
 type GrantRule struct {
-	GmtCreate     int64  `json:"GmtCreate" xml:"GmtCreate"`
 	CcnUid        int64  `json:"CcnUid" xml:"CcnUid"`
-	RegionId      string `json:"RegionId" xml:"RegionId"`
 	GrantRuleId   string `json:"GrantRuleId" xml:"GrantRuleId"`
+	VbrRegionId   string `json:"VbrRegionId" xml:"VbrRegionId"`
+	CcnInstanceId string `json:"CcnInstanceId" xml:"CcnInstanceId"`
+	CreateTime    int64  `json:"CreateTime" xml:"CreateTime"`
+	Bound         bool   `json:"Bound" xml:"Bound"`
+	SmartAGUid    int64  `json:"SmartAGUid" xml:"SmartAGUid"`
+	GmtCreate     int64  `json:"GmtCreate" xml:"GmtCreate"`
+	VbrUid        int64  `json:"VbrUid" xml:"VbrUid"`
+	RegionId      string `json:"RegionId" xml:"RegionId"`
 	CenInstanceId string `json:"CenInstanceId" xml:"CenInstanceId"`
 	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
-	CcnInstanceId string `json:"CcnInstanceId" xml:"CcnInstanceId"`
 	GmtModified   int64  `json:"GmtModified" xml:"GmtModified"`
 	CenUid        int64  `json:"CenUid" xml:"CenUid"`
-	CreateTime    int64  `json:"CreateTime" xml:"CreateTime"`
+	VbrInstanceId string `json:"VbrInstanceId" xml:"VbrInstanceId"`
 	SmartAGId     string `json:"SmartAGId" xml:"SmartAGId"`
 }

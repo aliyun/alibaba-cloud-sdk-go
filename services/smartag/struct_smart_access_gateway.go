@@ -23,12 +23,15 @@ type SmartAccessGateway struct {
 	CreateTime            int64                              `json:"CreateTime" xml:"CreateTime"`
 	EndTime               int64                              `json:"EndTime" xml:"EndTime"`
 	SerialNumber          string                             `json:"SerialNumber" xml:"SerialNumber"`
+	ResourceGroupId       string                             `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	AclIds                string                             `json:"AclIds" xml:"AclIds"`
 	InstanceId            string                             `json:"InstanceId" xml:"InstanceId"`
 	SecurityLockThreshold int                                `json:"SecurityLockThreshold" xml:"SecurityLockThreshold"`
 	UserCount             int                                `json:"UserCount" xml:"UserCount"`
+	VpnStatus             string                             `json:"VpnStatus" xml:"VpnStatus"`
 	CidrBlock             string                             `json:"CidrBlock" xml:"CidrBlock"`
 	Description           string                             `json:"Description" xml:"Description"`
+	IpsecStatus           string                             `json:"IpsecStatus" xml:"IpsecStatus"`
 	UpBandwidth4G         int                                `json:"UpBandwidth4G" xml:"UpBandwidth4G"`
 	SoftwareVersion       string                             `json:"SoftwareVersion" xml:"SoftwareVersion"`
 	City                  string                             `json:"City" xml:"City"`

@@ -97,6 +97,7 @@ func CreateUpdateSmartAccessGatewayVersionRequest() (request *UpdateSmartAccessG
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "UpdateSmartAccessGatewayVersion", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

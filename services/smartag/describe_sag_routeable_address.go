@@ -97,6 +97,7 @@ func CreateDescribeSagRouteableAddressRequest() (request *DescribeSagRouteableAd
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DescribeSagRouteableAddress", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

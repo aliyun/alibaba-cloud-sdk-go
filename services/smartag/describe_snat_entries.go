@@ -101,6 +101,7 @@ func CreateDescribeSnatEntriesRequest() (request *DescribeSnatEntriesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DescribeSnatEntries", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

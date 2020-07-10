@@ -96,6 +96,7 @@ func CreateUnbindSerialNumberRequest() (request *UnbindSerialNumberRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "UnbindSerialNumber", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

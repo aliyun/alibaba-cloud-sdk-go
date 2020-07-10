@@ -1,3 +1,7 @@
+2020-07-10 Version: v1.61.318
+- Generated 2018-03-13 for `Smartag`.
+- Supported qos,nat,flowlog for smartag.
+
 2020-07-10 Version: v1.61.317
 - Generated 2020-05-15 for `Vcs`.
 - Add ListBodyAlgorithmResult API.

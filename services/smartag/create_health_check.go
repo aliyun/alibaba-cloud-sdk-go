@@ -125,6 +125,7 @@ func CreateCreateHealthCheckRequest() (request *CreateHealthCheckRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "CreateHealthCheck", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

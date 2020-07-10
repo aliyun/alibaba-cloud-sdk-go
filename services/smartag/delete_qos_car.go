@@ -96,6 +96,7 @@ func CreateDeleteQosCarRequest() (request *DeleteQosCarRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DeleteQosCar", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

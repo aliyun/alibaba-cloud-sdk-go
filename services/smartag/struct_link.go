@@ -20,6 +20,7 @@ type Link struct {
 	CommodityType          string `json:"CommodityType" xml:"CommodityType"`
 	InstanceId             string `json:"InstanceId" xml:"InstanceId"`
 	Bandwidth              string `json:"Bandwidth" xml:"Bandwidth"`
+	HealthCheckTargetIp    string `json:"HealthCheckTargetIp" xml:"HealthCheckTargetIp"`
 	RelateInstanceRegionId string `json:"RelateInstanceRegionId" xml:"RelateInstanceRegionId"`
 	Status                 string `json:"Status" xml:"Status"`
 	RelateInstanceId       string `json:"RelateInstanceId" xml:"RelateInstanceId"`

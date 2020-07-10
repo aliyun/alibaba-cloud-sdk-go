@@ -95,6 +95,7 @@ func CreateDeleteHealthCheckRequest() (request *DeleteHealthCheckRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DeleteHealthCheck", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

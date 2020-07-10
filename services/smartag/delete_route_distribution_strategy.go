@@ -98,6 +98,7 @@ func CreateDeleteRouteDistributionStrategyRequest() (request *DeleteRouteDistrib
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DeleteRouteDistributionStrategy", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

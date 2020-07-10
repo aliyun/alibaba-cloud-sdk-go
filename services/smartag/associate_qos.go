@@ -96,6 +96,7 @@ func CreateAssociateQosRequest() (request *AssociateQosRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "AssociateQos", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

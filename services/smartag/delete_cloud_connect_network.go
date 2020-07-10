@@ -95,6 +95,7 @@ func CreateDeleteCloudConnectNetworkRequest() (request *DeleteCloudConnectNetwor
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DeleteCloudConnectNetwork", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

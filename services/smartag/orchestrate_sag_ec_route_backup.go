@@ -94,6 +94,7 @@ func CreateOrchestrateSagECRouteBackupRequest() (request *OrchestrateSagECRouteB
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "OrchestrateSagECRouteBackup", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

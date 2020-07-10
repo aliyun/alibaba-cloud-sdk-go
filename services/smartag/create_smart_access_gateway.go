@@ -99,6 +99,7 @@ type CreateSmartAccessGatewayRequest struct {
 	ReceiverName         string           `position:"Query" name:"ReceiverName"`
 	HaType               string           `position:"Query" name:"HaType"`
 	Name                 string           `position:"Query" name:"Name"`
+	AlreadyHaveSag       requests.Boolean `position:"Query" name:"AlreadyHaveSag"`
 	ReceiverCountry      string           `position:"Query" name:"ReceiverCountry"`
 	ChargeType           string           `position:"Query" name:"ChargeType"`
 	DataPlan             requests.Integer `position:"Query" name:"DataPlan"`
@@ -121,6 +122,7 @@ func CreateCreateSmartAccessGatewayRequest() (request *CreateSmartAccessGatewayR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "CreateSmartAccessGateway", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -106,6 +106,7 @@ func CreateUnicomSignConfirmRequest() (request *UnicomSignConfirmRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "UnicomSignConfirm", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

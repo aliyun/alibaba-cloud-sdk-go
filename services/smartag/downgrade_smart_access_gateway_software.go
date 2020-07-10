@@ -99,6 +99,7 @@ func CreateDowngradeSmartAccessGatewaySoftwareRequest() (request *DowngradeSmart
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DowngradeSmartAccessGatewaySoftware", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -79,15 +79,20 @@ type DescribeSmartAccessGatewaysRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	AclIds               string           `position:"Query" name:"AclIds"`
 	CanAssociateQos      requests.Boolean `position:"Query" name:"CanAssociateQos"`
+	SoftwareVersion      string           `position:"Query" name:"SoftwareVersion"`
 	UnboundAclIds        string           `position:"Query" name:"UnboundAclIds"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	VersionComparator    string           `position:"Query" name:"VersionComparator"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	InstanceType         string           `position:"Query" name:"InstanceType"`
+	HardwareType         string           `position:"Query" name:"HardwareType"`
 	SerialNumber         string           `position:"Query" name:"SerialNumber"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	AssociatedCcnId      string           `position:"Query" name:"AssociatedCcnId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	BusinessState        string           `position:"Query" name:"BusinessState"`
 	Name                 string           `position:"Query" name:"Name"`
 	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 	Status               string           `position:"Query" name:"Status"`
@@ -109,6 +114,7 @@ func CreateDescribeSmartAccessGatewaysRequest() (request *DescribeSmartAccessGat
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DescribeSmartAccessGateways", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

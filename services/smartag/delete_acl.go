@@ -95,6 +95,7 @@ func CreateDeleteACLRequest() (request *DeleteACLRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DeleteACL", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

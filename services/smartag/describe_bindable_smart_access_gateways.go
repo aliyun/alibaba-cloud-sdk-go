@@ -84,6 +84,8 @@ type DescribeBindableSmartAccessGatewaysRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	CrossAccount         requests.Boolean `position:"Query" name:"CrossAccount"`
+	Name                 string           `position:"Query" name:"Name"`
+	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 }
 
 // DescribeBindableSmartAccessGatewaysResponse is the response struct for api DescribeBindableSmartAccessGateways
@@ -102,6 +104,7 @@ func CreateDescribeBindableSmartAccessGatewaysRequest() (request *DescribeBindab
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DescribeBindableSmartAccessGateways", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

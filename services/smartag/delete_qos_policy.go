@@ -96,6 +96,7 @@ func CreateDeleteQosPolicyRequest() (request *DeleteQosPolicyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DeleteQosPolicy", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

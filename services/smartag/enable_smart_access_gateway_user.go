@@ -96,6 +96,7 @@ func CreateEnableSmartAccessGatewayUserRequest() (request *EnableSmartAccessGate
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "EnableSmartAccessGatewayUser", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

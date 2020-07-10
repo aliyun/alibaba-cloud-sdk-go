@@ -101,6 +101,7 @@ func CreateDescribeGrantRulesRequest() (request *DescribeGrantRulesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DescribeGrantRules", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

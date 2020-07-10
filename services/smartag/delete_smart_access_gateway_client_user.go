@@ -96,6 +96,7 @@ func CreateDeleteSmartAccessGatewayClientUserRequest() (request *DeleteSmartAcce
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DeleteSmartAccessGatewayClientUser", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

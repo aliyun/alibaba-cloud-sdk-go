@@ -96,6 +96,7 @@ func CreateCreateACLRequest() (request *CreateACLRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "CreateACL", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

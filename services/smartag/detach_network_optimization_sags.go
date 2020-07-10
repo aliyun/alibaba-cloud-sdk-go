@@ -96,6 +96,7 @@ func CreateDetachNetworkOptimizationSagsRequest() (request *DetachNetworkOptimiz
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DetachNetworkOptimizationSags", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -101,6 +101,7 @@ func CreateDescribeSmartAccessGatewayHaRequest() (request *DescribeSmartAccessGa
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DescribeSmartAccessGatewayHa", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -82,6 +82,7 @@ type UnbindVbrRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SmartAGUid           requests.Integer `position:"Query" name:"SmartAGUid"`
 	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 }
 
@@ -97,6 +98,7 @@ func CreateUnbindVbrRequest() (request *UnbindVbrRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "UnbindVbr", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -77,6 +77,7 @@ func (client *Client) ResetSmartAccessGatewayClientUserPasswordWithCallback(requ
 type ResetSmartAccessGatewayClientUserPasswordRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Password             string           `position:"Query" name:"Password"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -96,6 +97,7 @@ func CreateResetSmartAccessGatewayClientUserPasswordRequest() (request *ResetSma
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "ResetSmartAccessGatewayClientUserPassword", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

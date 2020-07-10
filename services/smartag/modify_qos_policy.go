@@ -106,6 +106,7 @@ func CreateModifyQosPolicyRequest() (request *ModifyQosPolicyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "ModifyQosPolicy", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

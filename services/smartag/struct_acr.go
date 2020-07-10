@@ -30,4 +30,5 @@ type Acr struct {
 	GmtCreate       int64  `json:"GmtCreate" xml:"GmtCreate"`
 	AclId           string `json:"AclId" xml:"AclId"`
 	Type            string `json:"Type" xml:"Type"`
+	Name            string `json:"Name" xml:"Name"`
 }

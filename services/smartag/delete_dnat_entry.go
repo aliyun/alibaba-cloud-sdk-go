@@ -96,6 +96,7 @@ func CreateDeleteDnatEntryRequest() (request *DeleteDnatEntryRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DeleteDnatEntry", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

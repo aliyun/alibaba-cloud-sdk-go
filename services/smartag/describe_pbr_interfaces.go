@@ -97,6 +97,7 @@ func CreateDescribePbrInterfacesRequest() (request *DescribePbrInterfacesRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "DescribePbrInterfaces", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

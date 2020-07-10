@@ -97,6 +97,7 @@ func CreateModifySagCidrRequest() (request *ModifySagCidrRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "ModifySagCidr", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

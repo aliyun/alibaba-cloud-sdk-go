@@ -91,6 +91,7 @@ type AddACLRuleRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Priority             requests.Integer `position:"Query" name:"Priority"`
 	DestPortRange        string           `position:"Query" name:"DestPortRange"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // AddACLRuleResponse is the response struct for api AddACLRule
@@ -110,6 +111,7 @@ type AddACLRuleResponse struct {
 	Priority        int    `json:"Priority" xml:"Priority"`
 	GmtCreate       int64  `json:"GmtCreate" xml:"GmtCreate"`
 	Type            string `json:"Type" xml:"Type"`
+	Name            string `json:"Name" xml:"Name"`
 }
 
 // CreateAddACLRuleRequest creates a request to invoke AddACLRule API
@@ -118,6 +120,7 @@ func CreateAddACLRuleRequest() (request *AddACLRuleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Smartag", "2018-03-13", "AddACLRule", "smartag", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
