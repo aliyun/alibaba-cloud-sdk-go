@@ -1,3 +1,7 @@
+2020-07-14 Version: v1.61.325
+- Generated 2020-05-15 for `Vcs`.
+- Add ListEventAlgorithmResult API.
+
 2020-07-14 Version: v1.61.324
 - Generated 2020-05-15 for `Vcs`.
 - Add ListEventAlgorithmResult API.
