@@ -19,24 +19,27 @@ package cloudauth
 type ResultObject struct {
 	VerifyScore       float64 `json:"VerifyScore" xml:"VerifyScore"`
 	ValidationRetCode string  `json:"ValidationRetCode" xml:"ValidationRetCode"`
-	Message           string  `json:"Message" xml:"Message"`
-	Protocol          string  `json:"Protocol" xml:"Protocol"`
-	ExtParams         string  `json:"ExtParams" xml:"ExtParams"`
-	OssEndPoint       string  `json:"OssEndPoint" xml:"OssEndPoint"`
-	RetCodeSub        string  `json:"RetCodeSub" xml:"RetCodeSub"`
+	PresignedUrl      string  `json:"PresignedUrl" xml:"PresignedUrl"`
 	FileNamePrefix    string  `json:"FileNamePrefix" xml:"FileNamePrefix"`
-	SubCode           string  `json:"SubCode" xml:"SubCode"`
-	RetMessageSub     string  `json:"RetMessageSub" xml:"RetMessageSub"`
 	ProductRetCode    string  `json:"ProductRetCode" xml:"ProductRetCode"`
 	DeviceToken       string  `json:"DeviceToken" xml:"DeviceToken"`
 	RetCode           string  `json:"RetCode" xml:"RetCode"`
 	Passed            string  `json:"Passed" xml:"Passed"`
 	MaterialInfo      string  `json:"MaterialInfo" xml:"MaterialInfo"`
-	AccessKeyId       string  `json:"AccessKeyId" xml:"AccessKeyId"`
-	AccessKeySecret   string  `json:"AccessKeySecret" xml:"AccessKeySecret"`
 	IdentityInfo      string  `json:"IdentityInfo" xml:"IdentityInfo"`
 	CertifyId         string  `json:"CertifyId" xml:"CertifyId"`
-	BucketName        string  `json:"BucketName" xml:"BucketName"`
+	FileName          string  `json:"FileName" xml:"FileName"`
 	SecurityToken     string  `json:"SecurityToken" xml:"SecurityToken"`
+	Message           string  `json:"Message" xml:"Message"`
+	Protocol          string  `json:"Protocol" xml:"Protocol"`
+	ExtParams         string  `json:"ExtParams" xml:"ExtParams"`
+	OssEndPoint       string  `json:"OssEndPoint" xml:"OssEndPoint"`
+	RetCodeSub        string  `json:"RetCodeSub" xml:"RetCodeSub"`
+	SubCode           string  `json:"SubCode" xml:"SubCode"`
+	RetMessageSub     string  `json:"RetMessageSub" xml:"RetMessageSub"`
+	AccessKeyId       string  `json:"AccessKeyId" xml:"AccessKeyId"`
+	AccessKeySecret   string  `json:"AccessKeySecret" xml:"AccessKeySecret"`
+	CertifyUrl        string  `json:"CertifyUrl" xml:"CertifyUrl"`
+	BucketName        string  `json:"BucketName" xml:"BucketName"`
 	HasNext           string  `json:"HasNext" xml:"HasNext"`
 }

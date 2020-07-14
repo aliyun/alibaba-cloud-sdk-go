@@ -82,8 +82,10 @@ type InitDeviceRequest struct {
 	AppVersion       string `position:"Query" name:"AppVersion"`
 	DeviceToken      string `position:"Query" name:"DeviceToken"`
 	CertifyId        string `position:"Query" name:"CertifyId"`
+	WebUmidToken     string `position:"Body" name:"WebUmidToken"`
 	OuterOrderNo     string `position:"Query" name:"OuterOrderNo"`
 	ProduceNode      string `position:"Query" name:"ProduceNode"`
+	UaToken          string `position:"Body" name:"UaToken"`
 	ProductName      string `position:"Query" name:"ProductName"`
 	CertifyPrincipal string `position:"Query" name:"CertifyPrincipal"`
 	MetaInfo         string `position:"Query" name:"MetaInfo"`
