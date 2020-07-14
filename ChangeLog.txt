@@ -1,3 +1,7 @@
+2020-07-14 Version: v1.61.322
+- Generated 2020-05-15 for `Vcs`.
+- Add ListBodyAlgorithmResult API.
+
 2020-07-14 Version: v1.61.321
 - Generated 2019-03-07, 2018-09-16 for `Cloudauth`.
 - Support Web SDK.
