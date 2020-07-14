@@ -1,3 +1,7 @@
+2020-07-14 Version: v1.61.320
+- Generated 2020-05-15 for `Vcs`.
+- Add ListBodyAlgorithmResult API.
+
 2020-07-13 Version: v1.61.319
 - Generated 2020-01-16 for `DAS`.
 - Supported Open API for Instance Report.

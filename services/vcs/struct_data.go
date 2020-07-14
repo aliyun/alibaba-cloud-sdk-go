@@ -30,6 +30,7 @@ type Data struct {
 	PageNumber   int                                      `json:"PageNumber" xml:"PageNumber"`
 	PicUrl       string                                   `json:"PicUrl" xml:"PicUrl"`
 	Description  string                                   `json:"Description" xml:"Description"`
+	Attributes   Attributes                               `json:"Attributes" xml:"Attributes"`
 	ResultObject []ResultObjectItem                       `json:"ResultObject" xml:"ResultObject"`
 	Records      []RecordsItemInListMotorAlgorithmResults `json:"Records" xml:"Records"`
 	TagList      []TagListItem                            `json:"TagList" xml:"TagList"`
