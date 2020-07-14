@@ -1,3 +1,9 @@
+2020-07-14 Version: v1.61.326
+- Generated 2018-01-20 for `Iot`.
+- Add Dynamic Registration APIs, including TransformClientId, DeleteClientIds, QueryClientIds, etc.
+- Update OTA API, including CreateOTAStaticUpgradeJob and QueryOTAJob.
+- Update Device Shadow API UpdateDeviceShadow.
+
 2020-07-14 Version: v1.61.325
 - Generated 2020-05-15 for `Vcs`.
 - Add ListEventAlgorithmResult API.

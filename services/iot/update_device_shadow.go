@@ -76,12 +76,13 @@ func (client *Client) UpdateDeviceShadowWithCallback(request *UpdateDeviceShadow
 // UpdateDeviceShadowRequest is the request struct for api UpdateDeviceShadow
 type UpdateDeviceShadowRequest struct {
 	*requests.RpcRequest
-	ShadowMessage string `position:"Query" name:"ShadowMessage"`
-	IotInstanceId string `position:"Query" name:"IotInstanceId"`
-	ProductKey    string `position:"Query" name:"ProductKey"`
-	ApiProduct    string `position:"Body" name:"ApiProduct"`
-	ApiRevision   string `position:"Body" name:"ApiRevision"`
-	DeviceName    string `position:"Query" name:"DeviceName"`
+	ShadowMessage string           `position:"Query" name:"ShadowMessage"`
+	IotInstanceId string           `position:"Query" name:"IotInstanceId"`
+	ProductKey    string           `position:"Query" name:"ProductKey"`
+	DeltaUpdate   requests.Boolean `position:"Query" name:"DeltaUpdate"`
+	ApiProduct    string           `position:"Body" name:"ApiProduct"`
+	ApiRevision   string           `position:"Body" name:"ApiRevision"`
+	DeviceName    string           `position:"Query" name:"DeviceName"`
 }
 
 // UpdateDeviceShadowResponse is the response struct for api UpdateDeviceShadow

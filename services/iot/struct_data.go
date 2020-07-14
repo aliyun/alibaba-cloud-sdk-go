@@ -87,6 +87,7 @@ type Data struct {
 	PageNo                 int                   `json:"PageNo" xml:"PageNo"`
 	DriverConfig           string                `json:"DriverConfig" xml:"DriverConfig"`
 	RoleArn                string                `json:"RoleArn" xml:"RoleArn"`
+	UtcScheduleFinishTime  string                `json:"UtcScheduleFinishTime" xml:"UtcScheduleFinishTime"`
 	Tags                   string                `json:"Tags" xml:"Tags"`
 	UtcCreatedOn           string                `json:"UtcCreatedOn" xml:"UtcCreatedOn"`
 	UtcModified            string                `json:"UtcModified" xml:"UtcModified"`
@@ -126,4 +127,5 @@ type Data struct {
 	TaskList               []Task                `json:"TaskList" xml:"TaskList"`
 	ModelVersions          []ModelVersion        `json:"ModelVersions" xml:"ModelVersions"`
 	List                   ListInGetThingTopo    `json:"List" xml:"List"`
+	DynamicRegClientIds    []DynamicRegClientId  `json:"DynamicRegClientIds" xml:"DynamicRegClientIds"`
 }

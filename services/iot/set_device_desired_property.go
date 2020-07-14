@@ -89,11 +89,12 @@ type SetDeviceDesiredPropertyRequest struct {
 // SetDeviceDesiredPropertyResponse is the response struct for api SetDeviceDesiredProperty
 type SetDeviceDesiredPropertyResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Code         string `json:"Code" xml:"Code"`
-	Data         Data   `json:"Data" xml:"Data"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	Success          bool   `json:"Success" xml:"Success"`
+	ErrorMessage     string `json:"ErrorMessage" xml:"ErrorMessage"`
+	Code             string `json:"Code" xml:"Code"`
+	MessageArguments string `json:"MessageArguments" xml:"MessageArguments"`
+	Data             Data   `json:"Data" xml:"Data"`
 }
 
 // CreateSetDeviceDesiredPropertyRequest creates a request to invoke SetDeviceDesiredProperty API

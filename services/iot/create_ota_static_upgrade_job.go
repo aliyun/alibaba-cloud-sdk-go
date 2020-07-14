@@ -76,20 +76,21 @@ func (client *Client) CreateOTAStaticUpgradeJobWithCallback(request *CreateOTASt
 // CreateOTAStaticUpgradeJobRequest is the request struct for api CreateOTAStaticUpgradeJob
 type CreateOTAStaticUpgradeJobRequest struct {
 	*requests.RpcRequest
-	RetryCount       requests.Integer `position:"Query" name:"RetryCount"`
-	TimeoutInMinutes requests.Integer `position:"Query" name:"TimeoutInMinutes"`
-	IotInstanceId    string           `position:"Query" name:"IotInstanceId"`
-	TargetSelection  string           `position:"Query" name:"TargetSelection"`
-	GrayPercent      string           `position:"Query" name:"GrayPercent"`
-	FirmwareId       string           `position:"Query" name:"FirmwareId"`
-	ProductKey       string           `position:"Query" name:"ProductKey"`
-	RetryInterval    requests.Integer `position:"Query" name:"RetryInterval"`
-	SrcVersion       *[]string        `position:"Query" name:"SrcVersion"  type:"Repeated"`
-	ScheduleTime     requests.Integer `position:"Query" name:"ScheduleTime"`
-	ApiProduct       string           `position:"Body" name:"ApiProduct"`
-	ApiRevision      string           `position:"Body" name:"ApiRevision"`
-	MaximumPerMinute requests.Integer `position:"Query" name:"MaximumPerMinute"`
-	TargetDeviceName *[]string        `position:"Query" name:"TargetDeviceName"  type:"Repeated"`
+	RetryCount         requests.Integer `position:"Query" name:"RetryCount"`
+	TimeoutInMinutes   requests.Integer `position:"Query" name:"TimeoutInMinutes"`
+	IotInstanceId      string           `position:"Query" name:"IotInstanceId"`
+	TargetSelection    string           `position:"Query" name:"TargetSelection"`
+	ScheduleFinishTime requests.Integer `position:"Query" name:"ScheduleFinishTime"`
+	GrayPercent        string           `position:"Query" name:"GrayPercent"`
+	FirmwareId         string           `position:"Query" name:"FirmwareId"`
+	ProductKey         string           `position:"Query" name:"ProductKey"`
+	RetryInterval      requests.Integer `position:"Query" name:"RetryInterval"`
+	SrcVersion         *[]string        `position:"Query" name:"SrcVersion"  type:"Repeated"`
+	ScheduleTime       requests.Integer `position:"Query" name:"ScheduleTime"`
+	ApiProduct         string           `position:"Body" name:"ApiProduct"`
+	ApiRevision        string           `position:"Body" name:"ApiRevision"`
+	MaximumPerMinute   requests.Integer `position:"Query" name:"MaximumPerMinute"`
+	TargetDeviceName   *[]string        `position:"Query" name:"TargetDeviceName"  type:"Repeated"`
 }
 
 // CreateOTAStaticUpgradeJobResponse is the response struct for api CreateOTAStaticUpgradeJob
