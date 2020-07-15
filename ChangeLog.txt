@@ -1,3 +1,8 @@
+2020-07-15 Version: v1.61.327
+- Generated 2014-05-26 for `Ecs`.
+- Support ModifyImageAttribute by LaunchPermission.
+- Support ImageFamily.
+
 2020-07-14 Version: v1.61.326
 - Generated 2018-01-20 for `Iot`.
 - Add Dynamic Registration APIs, including TransformClientId, DeleteClientIds, QueryClientIds, etc.
