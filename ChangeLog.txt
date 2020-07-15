@@ -1,3 +1,9 @@
+2020-07-15 Version: v1.61.328
+- Generated 2019-08-08 for `ARMS`.
+- Edit ListTraceApp api.
+- Edit SearchTraceAppByName api.
+- Edut SearchTraceAppByPage api.
+
 2020-07-15 Version: v1.61.327
 - Generated 2014-05-26 for `Ecs`.
 - Support ModifyImageAttribute by LaunchPermission.
