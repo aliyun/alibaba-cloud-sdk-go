@@ -1,3 +1,7 @@
+2020-07-16 Version: v1.61.329
+- Generated 2017-12-25 for `OpenSearch`.
+- Add more OpenAPIs related to QueryProcessor, FirstRank, SecondRank, etc.
+
 2020-07-15 Version: v1.61.328
 - Generated 2019-08-08 for `ARMS`.
 - Edit ListTraceApp api.

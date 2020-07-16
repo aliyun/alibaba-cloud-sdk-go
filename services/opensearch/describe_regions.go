@@ -76,15 +76,13 @@ func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsReques
 // DescribeRegionsRequest is the request struct for api DescribeRegions
 type DescribeRegionsRequest struct {
 	*requests.RoaRequest
-	AcceptLanguage string `position:"Query" name:"accept_language"`
 }
 
 // DescribeRegionsResponse is the response struct for api DescribeRegions
 type DescribeRegionsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"request_id" xml:"request_id"`
-	Status    string `json:"status" xml:"status"`
-	Errors    Errors `json:"errors" xml:"errors"`
+	RequestId string       `json:"requestId" xml:"requestId"`
+	Result    []ResultItem `json:"result" xml:"result"`
 }
 
 // CreateDescribeRegionsRequest creates a request to invoke DescribeRegions API
