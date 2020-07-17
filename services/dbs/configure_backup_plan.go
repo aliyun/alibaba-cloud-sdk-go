@@ -91,6 +91,7 @@ type ConfigureBackupPlanRequest struct {
 	BackupStorageType                 string           `position:"Query" name:"BackupStorageType"`
 	DuplicationArchivePeriod          requests.Integer `position:"Query" name:"DuplicationArchivePeriod"`
 	CrossAliyunId                     string           `position:"Query" name:"CrossAliyunId"`
+	AutoStartBackup                   requests.Boolean `position:"Query" name:"AutoStartBackup"`
 	SourceEndpointPassword            string           `position:"Query" name:"SourceEndpointPassword"`
 	BackupObjects                     string           `position:"Query" name:"BackupObjects"`
 	OwnerId                           string           `position:"Query" name:"OwnerId"`

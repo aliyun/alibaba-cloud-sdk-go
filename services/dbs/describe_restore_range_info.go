@@ -81,6 +81,7 @@ type DescribeRestoreRangeInfoRequest struct {
 	ClientToken              string           `position:"Query" name:"ClientToken"`
 	BackupPlanId             string           `position:"Query" name:"BackupPlanId"`
 	OwnerId                  string           `position:"Query" name:"OwnerId"`
+	RecentlyRestore          requests.Boolean `position:"Query" name:"RecentlyRestore"`
 }
 
 // DescribeRestoreRangeInfoResponse is the response struct for api DescribeRestoreRangeInfo

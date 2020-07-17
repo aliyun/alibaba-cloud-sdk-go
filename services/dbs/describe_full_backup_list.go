@@ -78,6 +78,7 @@ type DescribeFullBackupListRequest struct {
 	*requests.RpcRequest
 	ClientToken     string           `position:"Query" name:"ClientToken"`
 	BackupPlanId    string           `position:"Query" name:"BackupPlanId"`
+	BackupSetId     string           `position:"Query" name:"BackupSetId"`
 	PageNum         requests.Integer `position:"Query" name:"PageNum"`
 	OwnerId         string           `position:"Query" name:"OwnerId"`
 	ShowStorageType requests.Boolean `position:"Query" name:"ShowStorageType"`

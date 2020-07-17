@@ -51,4 +51,5 @@ type BackupPlanDetail struct {
 	CrossAliyunId                        string `json:"CrossAliyunId" xml:"CrossAliyunId"`
 	CrossRoleName                        string `json:"CrossRoleName" xml:"CrossRoleName"`
 	BackupStorageType                    string `json:"BackupStorageType" xml:"BackupStorageType"`
+	ErrMessage                           string `json:"ErrMessage" xml:"ErrMessage"`
 }

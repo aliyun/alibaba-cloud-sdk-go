@@ -1,3 +1,10 @@
+2020-07-17 Version: v1.61.332
+- Generated 2019-03-06 for `Dbs`.
+- Add DescribeRegions.
+- Modify DescribeFullBackupList.
+- Modify DescribeBackupPlanList.
+- Modify DescribeRestoreRangeInfo.
+
 2020-07-17 Version: v1.61.331
 - Generated 2020-03-03 for `devops-rdc`.
 - Add actions.
