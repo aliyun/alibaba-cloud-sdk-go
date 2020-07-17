@@ -97,6 +97,7 @@ func CreateRevokeAccountPrivilegeRequest() (request *RevokeAccountPrivilegeReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("polardb", "2017-08-01", "RevokeAccountPrivilege", "polardb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

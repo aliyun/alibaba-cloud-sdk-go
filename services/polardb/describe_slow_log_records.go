@@ -107,6 +107,7 @@ func CreateDescribeSlowLogRecordsRequest() (request *DescribeSlowLogRecordsReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeSlowLogRecords", "polardb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

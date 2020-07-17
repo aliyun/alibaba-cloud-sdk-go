@@ -106,6 +106,7 @@ func CreateListTagResourcesRequest() (request *ListTagResourcesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("polardb", "2017-08-01", "ListTagResources", "polardb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

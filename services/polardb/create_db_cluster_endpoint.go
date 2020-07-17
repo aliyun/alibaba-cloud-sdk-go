@@ -101,6 +101,7 @@ func CreateCreateDBClusterEndpointRequest() (request *CreateDBClusterEndpointReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("polardb", "2017-08-01", "CreateDBClusterEndpoint", "polardb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

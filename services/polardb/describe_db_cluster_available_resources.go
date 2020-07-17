@@ -100,6 +100,7 @@ func CreateDescribeDBClusterAvailableResourcesRequest() (request *DescribeDBClus
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterAvailableResources", "polardb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

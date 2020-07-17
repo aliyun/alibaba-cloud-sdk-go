@@ -98,6 +98,7 @@ func CreateCreateDBEndpointAddressRequest() (request *CreateDBEndpointAddressReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("polardb", "2017-08-01", "CreateDBEndpointAddress", "polardb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

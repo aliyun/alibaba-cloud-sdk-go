@@ -101,6 +101,7 @@ func CreateModifyDBClusterAccessWhitelistRequest() (request *ModifyDBClusterAcce
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBClusterAccessWhitelist", "polardb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

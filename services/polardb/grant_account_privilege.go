@@ -98,6 +98,7 @@ func CreateGrantAccountPrivilegeRequest() (request *GrantAccountPrivilegeRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("polardb", "2017-08-01", "GrantAccountPrivilege", "polardb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -96,6 +96,7 @@ func CreateDescribeDBClusterMonitorRequest() (request *DescribeDBClusterMonitorR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterMonitor", "polardb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

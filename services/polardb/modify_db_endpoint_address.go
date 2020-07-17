@@ -85,6 +85,7 @@ type ModifyDBEndpointAddressRequest struct {
 	DBClusterId              string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
+	Port                     string           `position:"Query" name:"Port"`
 	NetType                  string           `position:"Query" name:"NetType"`
 }
 
@@ -100,6 +101,7 @@ func CreateModifyDBEndpointAddressRequest() (request *ModifyDBEndpointAddressReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBEndpointAddress", "polardb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

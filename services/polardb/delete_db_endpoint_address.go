@@ -97,6 +97,7 @@ func CreateDeleteDBEndpointAddressRequest() (request *DeleteDBEndpointAddressReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("polardb", "2017-08-01", "DeleteDBEndpointAddress", "polardb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

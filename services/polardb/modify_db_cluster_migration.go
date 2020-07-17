@@ -83,6 +83,7 @@ type ModifyDBClusterMigrationRequest struct {
 	DBClusterId           string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	SourceRDSDBInstanceId string           `position:"Query" name:"SourceRDSDBInstanceId"`
+	SwapConnectionString  string           `position:"Query" name:"SwapConnectionString"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 }
 
@@ -98,6 +99,7 @@ func CreateModifyDBClusterMigrationRequest() (request *ModifyDBClusterMigrationR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBClusterMigration", "polardb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

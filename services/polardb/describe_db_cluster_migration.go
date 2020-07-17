@@ -86,16 +86,18 @@ type DescribeDBClusterMigrationRequest struct {
 // DescribeDBClusterMigrationResponse is the response struct for api DescribeDBClusterMigration
 type DescribeDBClusterMigrationResponse struct {
 	*responses.BaseResponse
-	RequestId              string `json:"RequestId" xml:"RequestId"`
-	DBClusterId            string `json:"DBClusterId" xml:"DBClusterId"`
-	SourceRDSDBInstanceId  string `json:"SourceRDSDBInstanceId" xml:"SourceRDSDBInstanceId"`
-	MigrationStatus        string `json:"MigrationStatus" xml:"MigrationStatus"`
-	Topologies             string `json:"Topologies" xml:"Topologies"`
-	DelayedSeconds         int    `json:"DelayedSeconds" xml:"DelayedSeconds"`
-	ExpiredTime            string `json:"ExpiredTime" xml:"ExpiredTime"`
-	RdsReadWriteMode       string `json:"RdsReadWriteMode" xml:"RdsReadWriteMode"`
-	DBClusterReadWriteMode string `json:"DBClusterReadWriteMode" xml:"DBClusterReadWriteMode"`
-	Comment                string `json:"Comment" xml:"Comment"`
+	RequestId              string              `json:"RequestId" xml:"RequestId"`
+	DBClusterId            string              `json:"DBClusterId" xml:"DBClusterId"`
+	SourceRDSDBInstanceId  string              `json:"SourceRDSDBInstanceId" xml:"SourceRDSDBInstanceId"`
+	MigrationStatus        string              `json:"MigrationStatus" xml:"MigrationStatus"`
+	Topologies             string              `json:"Topologies" xml:"Topologies"`
+	DelayedSeconds         int                 `json:"DelayedSeconds" xml:"DelayedSeconds"`
+	ExpiredTime            string              `json:"ExpiredTime" xml:"ExpiredTime"`
+	RdsReadWriteMode       string              `json:"RdsReadWriteMode" xml:"RdsReadWriteMode"`
+	DBClusterReadWriteMode string              `json:"DBClusterReadWriteMode" xml:"DBClusterReadWriteMode"`
+	Comment                string              `json:"Comment" xml:"Comment"`
+	DBClusterEndpointList  []DBClusterEndpoint `json:"DBClusterEndpointList" xml:"DBClusterEndpointList"`
+	RdsEndpointList        []RdsEndpoint       `json:"RdsEndpointList" xml:"RdsEndpointList"`
 }
 
 // CreateDescribeDBClusterMigrationRequest creates a request to invoke DescribeDBClusterMigration API
@@ -104,6 +106,7 @@ func CreateDescribeDBClusterMigrationRequest() (request *DescribeDBClusterMigrat
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeDBClusterMigration", "polardb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
