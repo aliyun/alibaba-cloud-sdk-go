@@ -23,13 +23,17 @@ type Data struct {
 	ExtSlbId          string                    `json:"ExtSlbId" xml:"ExtSlbId"`
 	ExtSlbName        string                    `json:"ExtSlbName" xml:"ExtSlbName"`
 	OversoldFactor    int                       `json:"OversoldFactor" xml:"OversoldFactor"`
+	PageSize          int                       `json:"PageSize" xml:"PageSize"`
 	SlbName           string                    `json:"SlbName" xml:"SlbName"`
 	VServerGroupId    string                    `json:"VServerGroupId" xml:"VServerGroupId"`
+	CurrentPage       int                       `json:"CurrentPage" xml:"CurrentPage"`
 	ExtVServerGroupId string                    `json:"ExtVServerGroupId" xml:"ExtVServerGroupId"`
 	SlbPort           int                       `json:"SlbPort" xml:"SlbPort"`
 	SlbId             string                    `json:"SlbId" xml:"SlbId"`
 	ClusterType       int                       `json:"ClusterType" xml:"ClusterType"`
 	VpcId             string                    `json:"VpcId" xml:"VpcId"`
+	TotalSize         int                       `json:"TotalSize" xml:"TotalSize"`
 	SlbIp             string                    `json:"SlbIp" xml:"SlbIp"`
 	RuleList          RuleListInGetScalingRules `json:"RuleList" xml:"RuleList"`
+	Result            []Stack                   `json:"Result" xml:"Result"`
 }

@@ -76,11 +76,15 @@ func (client *Client) UpdateK8sApplicationConfigWithCallback(request *UpdateK8sA
 // UpdateK8sApplicationConfigRequest is the request struct for api UpdateK8sApplicationConfig
 type UpdateK8sApplicationConfigRequest struct {
 	*requests.RoaRequest
-	AppId       string `position:"Query" name:"AppId"`
-	MemoryLimit string `position:"Query" name:"MemoryLimit"`
-	ClusterId   string `position:"Query" name:"ClusterId"`
-	CpuLimit    string `position:"Query" name:"CpuLimit"`
-	McpuLimit   string `position:"Query" name:"McpuLimit"`
+	MemoryRequest string           `position:"Query" name:"MemoryRequest"`
+	AppId         string           `position:"Query" name:"AppId"`
+	CpuRequest    string           `position:"Query" name:"CpuRequest"`
+	MemoryLimit   string           `position:"Query" name:"MemoryLimit"`
+	ClusterId     string           `position:"Query" name:"ClusterId"`
+	CpuLimit      string           `position:"Query" name:"CpuLimit"`
+	McpuLimit     string           `position:"Query" name:"McpuLimit"`
+	McpuRequest   string           `position:"Query" name:"McpuRequest"`
+	Timeout       requests.Integer `position:"Query" name:"Timeout"`
 }
 
 // UpdateK8sApplicationConfigResponse is the response struct for api UpdateK8sApplicationConfig
@@ -97,7 +101,7 @@ func CreateUpdateK8sApplicationConfigRequest() (request *UpdateK8sApplicationCon
 	request = &UpdateK8sApplicationConfigRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "/pop/v5/k8s/acs/k8s_app_configuration", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "/pop/v5/k8s/acs/k8s_app_configuration", "edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

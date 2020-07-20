@@ -94,7 +94,7 @@ func CreateGetContainerConfigurationRequest() (request *GetContainerConfiguratio
 	request = &GetContainerConfigurationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetContainerConfiguration", "/pop/v5/app/container_config", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetContainerConfiguration", "/pop/v5/app/container_config", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -93,7 +93,7 @@ func CreateUpdateSlsLogStoreRequest() (request *UpdateSlsLogStoreRequest) {
 	request = &UpdateSlsLogStoreRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateSlsLogStore", "/pop/v5/k8s/sls/update_sls_log_store", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateSlsLogStore", "/pop/v5/k8s/sls/update_sls_log_store", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

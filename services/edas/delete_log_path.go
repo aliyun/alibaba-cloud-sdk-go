@@ -93,7 +93,7 @@ func CreateDeleteLogPathRequest() (request *DeleteLogPathRequest) {
 	request = &DeleteLogPathRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteLogPath", "/pop/v5/log/popListLogDirs", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteLogPath", "/pop/v5/log/popListLogDirs", "edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

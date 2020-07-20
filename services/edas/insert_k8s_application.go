@@ -80,7 +80,9 @@ type InsertK8sApplicationRequest struct {
 	RepoId                 string           `position:"Query" name:"RepoId"`
 	InternetTargetPort     requests.Integer `position:"Query" name:"InternetTargetPort"`
 	WebContainer           string           `position:"Query" name:"WebContainer"`
+	EnableAhas             requests.Boolean `position:"Query" name:"EnableAhas"`
 	IntranetSlbId          string           `position:"Query" name:"IntranetSlbId"`
+	SlsConfigs             string           `position:"Query" name:"SlsConfigs"`
 	CommandArgs            string           `position:"Query" name:"CommandArgs"`
 	Readiness              string           `position:"Query" name:"Readiness"`
 	Liveness               string           `position:"Query" name:"Liveness"`
@@ -89,6 +91,7 @@ type InsertK8sApplicationRequest struct {
 	RequestsMem            requests.Integer `position:"Query" name:"RequestsMem"`
 	PackageVersion         string           `position:"Query" name:"PackageVersion"`
 	StorageType            string           `position:"Query" name:"StorageType"`
+	Timeout                requests.Integer `position:"Query" name:"Timeout"`
 	LimitMem               requests.Integer `position:"Query" name:"LimitMem"`
 	LimitmCpu              requests.Integer `position:"Query" name:"LimitmCpu"`
 	EdasContainerVersion   string           `position:"Query" name:"EdasContainerVersion"`
@@ -104,6 +107,7 @@ type InsertK8sApplicationRequest struct {
 	MountDescs             string           `position:"Query" name:"MountDescs"`
 	Replicas               requests.Integer `position:"Query" name:"Replicas"`
 	LimitCpu               requests.Integer `position:"Query" name:"LimitCpu"`
+	WebContainerConfig     string           `position:"Query" name:"WebContainerConfig"`
 	ClusterId              string           `position:"Query" name:"ClusterId"`
 	IntranetTargetPort     requests.Integer `position:"Query" name:"IntranetTargetPort"`
 	LocalVolume            string           `position:"Query" name:"LocalVolume"`
@@ -119,6 +123,7 @@ type InsertK8sApplicationRequest struct {
 	RuntimeClassName       string           `position:"Query" name:"RuntimeClassName"`
 	RequestsCpu            requests.Integer `position:"Query" name:"RequestsCpu"`
 	PostStart              string           `position:"Query" name:"PostStart"`
+	JavaStartUpConfig      string           `position:"Query" name:"JavaStartUpConfig"`
 }
 
 // InsertK8sApplicationResponse is the response struct for api InsertK8sApplication
@@ -135,7 +140,7 @@ func CreateInsertK8sApplicationRequest() (request *InsertK8sApplicationRequest) 
 	request = &InsertK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertK8sApplication", "/pop/v5/k8s/acs/create_k8s_app", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertK8sApplication", "/pop/v5/k8s/acs/create_k8s_app", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

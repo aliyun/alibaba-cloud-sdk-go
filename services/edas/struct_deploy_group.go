@@ -24,6 +24,7 @@ type DeployGroup struct {
 	MemoryLimit           string     `json:"MemoryLimit" xml:"MemoryLimit"`
 	CreateTime            int64      `json:"CreateTime" xml:"CreateTime"`
 	PackageVersion        string     `json:"PackageVersion" xml:"PackageVersion"`
+	MemoryRequest         string     `json:"MemoryRequest" xml:"MemoryRequest"`
 	PackagePublicUrl      string     `json:"PackagePublicUrl" xml:"PackagePublicUrl"`
 	Selector              string     `json:"Selector" xml:"Selector"`
 	Strategy              string     `json:"Strategy" xml:"Strategy"`
@@ -42,6 +43,7 @@ type DeployGroup struct {
 	GroupType             int        `json:"GroupType" xml:"GroupType"`
 	AppId                 string     `json:"AppId" xml:"AppId"`
 	CpuLimit              string     `json:"CpuLimit" xml:"CpuLimit"`
+	CpuRequest            string     `json:"CpuRequest" xml:"CpuRequest"`
 	Labels                string     `json:"Labels" xml:"Labels"`
 	Status                string     `json:"Status" xml:"Status"`
 	PackageUrl            string     `json:"PackageUrl" xml:"PackageUrl"`

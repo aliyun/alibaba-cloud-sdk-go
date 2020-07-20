@@ -97,7 +97,7 @@ func CreateInsertOrUpdateRegionRequest() (request *InsertOrUpdateRegionRequest) 
 	request = &InsertOrUpdateRegionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertOrUpdateRegion", "/pop/v5/user_region_def", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertOrUpdateRegion", "/pop/v5/user_region_def", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

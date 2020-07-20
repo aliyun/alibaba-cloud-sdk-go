@@ -78,6 +78,7 @@ type ScaleK8sApplicationRequest struct {
 	*requests.RoaRequest
 	Replicas requests.Integer `position:"Query" name:"Replicas"`
 	AppId    string           `position:"Query" name:"AppId"`
+	Timeout  requests.Integer `position:"Query" name:"Timeout"`
 }
 
 // ScaleK8sApplicationResponse is the response struct for api ScaleK8sApplication
@@ -94,7 +95,7 @@ func CreateScaleK8sApplicationRequest() (request *ScaleK8sApplicationRequest) {
 	request = &ScaleK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleK8sApplication", "/pop/v5/k8s/acs/k8s_apps", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleK8sApplication", "/pop/v5/k8s/acs/k8s_apps", "edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

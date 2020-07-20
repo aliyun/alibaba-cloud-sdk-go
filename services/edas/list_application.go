@@ -76,6 +76,7 @@ func (client *Client) ListApplicationWithCallback(request *ListApplicationReques
 // ListApplicationRequest is the request struct for api ListApplication
 type ListApplicationRequest struct {
 	*requests.RoaRequest
+	ClusterId string `position:"Query" name:"ClusterId"`
 }
 
 // ListApplicationResponse is the response struct for api ListApplication
@@ -92,7 +93,7 @@ func CreateListApplicationRequest() (request *ListApplicationRequest) {
 	request = &ListApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListApplication", "/pop/v5/app/app_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListApplication", "/pop/v5/app/app_list", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

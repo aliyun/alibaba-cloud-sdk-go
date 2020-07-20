@@ -94,7 +94,7 @@ func CreateDeleteClusterMemberRequest() (request *DeleteClusterMemberRequest) {
 	request = &DeleteClusterMemberRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteClusterMember", "/pop/v5/resource/cluster_member", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteClusterMember", "/pop/v5/resource/cluster_member", "edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

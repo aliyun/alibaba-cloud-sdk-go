@@ -94,7 +94,7 @@ func CreateStopApplicationRequest() (request *StopApplicationRequest) {
 	request = &StopApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "StopApplication", "/pop/v5/changeorder/co_stop", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "StopApplication", "/pop/v5/changeorder/co_stop", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

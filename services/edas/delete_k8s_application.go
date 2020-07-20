@@ -93,7 +93,7 @@ func CreateDeleteK8sApplicationRequest() (request *DeleteK8sApplicationRequest) 
 	request = &DeleteK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteK8sApplication", "/pop/v5/k8s/acs/k8s_apps", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteK8sApplication", "/pop/v5/k8s/acs/k8s_apps", "edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

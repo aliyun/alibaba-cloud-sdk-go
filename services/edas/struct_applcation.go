@@ -45,8 +45,8 @@ type Applcation struct {
 	Cpu                  int          `json:"Cpu" xml:"Cpu"`
 	RunningInstanceCount int          `json:"RunningInstanceCount" xml:"RunningInstanceCount"`
 	SlbIp                string       `json:"SlbIp" xml:"SlbIp"`
+	App                  App          `json:"App" xml:"App"`
 	Conf                 Conf         `json:"Conf" xml:"Conf"`
 	ImageInfo            ImageInfo    `json:"ImageInfo" xml:"ImageInfo"`
-	App                  App          `json:"App" xml:"App"`
 	DeployGroups         DeployGroups `json:"DeployGroups" xml:"DeployGroups"`
 }

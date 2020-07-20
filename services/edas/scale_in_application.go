@@ -94,7 +94,7 @@ func CreateScaleInApplicationRequest() (request *ScaleInApplicationRequest) {
 	request = &ScaleInApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleInApplication", "/pop/v5/changeorder/co_scale_in", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleInApplication", "/pop/v5/changeorder/co_scale_in", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -93,7 +93,7 @@ func CreateQueryApplicationStatusRequest() (request *QueryApplicationStatusReque
 	request = &QueryApplicationStatusRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "QueryApplicationStatus", "/pop/v5/app/app_status", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "QueryApplicationStatus", "/pop/v5/app/app_status", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }
