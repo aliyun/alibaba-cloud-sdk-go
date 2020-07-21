@@ -77,6 +77,7 @@ func (client *Client) CreateAccountWithCallback(request *CreateAccountRequest, c
 type CreateAccountRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AccountType          string           `position:"Query" name:"AccountType"`
 	AccountDescription   string           `position:"Query" name:"AccountDescription"`
 	AccountName          string           `position:"Query" name:"AccountName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -89,7 +90,9 @@ type CreateAccountRequest struct {
 // CreateAccountResponse is the response struct for api CreateAccount
 type CreateAccountResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	DBClusterId string `json:"DBClusterId" xml:"DBClusterId"`
+	TaskId      int    `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateCreateAccountRequest creates a request to invoke CreateAccount API
@@ -98,6 +101,7 @@ func CreateCreateAccountRequest() (request *CreateAccountRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "CreateAccount", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

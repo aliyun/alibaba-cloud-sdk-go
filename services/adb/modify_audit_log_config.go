@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeAccounts invokes the adb.DescribeAccounts API synchronously
-// api document: https://help.aliyun.com/api/adb/describeaccounts.html
-func (client *Client) DescribeAccounts(request *DescribeAccountsRequest) (response *DescribeAccountsResponse, err error) {
-	response = CreateDescribeAccountsResponse()
+// ModifyAuditLogConfig invokes the adb.ModifyAuditLogConfig API synchronously
+// api document: https://help.aliyun.com/api/adb/modifyauditlogconfig.html
+func (client *Client) ModifyAuditLogConfig(request *ModifyAuditLogConfigRequest) (response *ModifyAuditLogConfigResponse, err error) {
+	response = CreateModifyAuditLogConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeAccountsWithChan invokes the adb.DescribeAccounts API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeaccounts.html
+// ModifyAuditLogConfigWithChan invokes the adb.ModifyAuditLogConfig API asynchronously
+// api document: https://help.aliyun.com/api/adb/modifyauditlogconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeAccountsWithChan(request *DescribeAccountsRequest) (<-chan *DescribeAccountsResponse, <-chan error) {
-	responseChan := make(chan *DescribeAccountsResponse, 1)
+func (client *Client) ModifyAuditLogConfigWithChan(request *ModifyAuditLogConfigRequest) (<-chan *ModifyAuditLogConfigResponse, <-chan error) {
+	responseChan := make(chan *ModifyAuditLogConfigResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeAccounts(request)
+		response, err := client.ModifyAuditLogConfig(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DescribeAccountsWithChan(request *DescribeAccountsRequest)
 	return responseChan, errChan
 }
 
-// DescribeAccountsWithCallback invokes the adb.DescribeAccounts API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeaccounts.html
+// ModifyAuditLogConfigWithCallback invokes the adb.ModifyAuditLogConfig API asynchronously
+// api document: https://help.aliyun.com/api/adb/modifyauditlogconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeAccountsWithCallback(request *DescribeAccountsRequest, callback func(response *DescribeAccountsResponse, err error)) <-chan int {
+func (client *Client) ModifyAuditLogConfigWithCallback(request *ModifyAuditLogConfigRequest, callback func(response *ModifyAuditLogConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeAccountsResponse
+		var response *ModifyAuditLogConfigResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeAccounts(request)
+		response, err = client.ModifyAuditLogConfig(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,38 +73,36 @@ func (client *Client) DescribeAccountsWithCallback(request *DescribeAccountsRequ
 	return result
 }
 
-// DescribeAccountsRequest is the request struct for api DescribeAccounts
-type DescribeAccountsRequest struct {
+// ModifyAuditLogConfigRequest is the request struct for api ModifyAuditLogConfig
+type ModifyAuditLogConfigRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AccountType          string           `position:"Query" name:"AccountType"`
-	AccountName          string           `position:"Query" name:"AccountName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AuditLogStatus       string           `position:"Query" name:"AuditLogStatus"`
 }
 
-// DescribeAccountsResponse is the response struct for api DescribeAccounts
-type DescribeAccountsResponse struct {
+// ModifyAuditLogConfigResponse is the response struct for api ModifyAuditLogConfig
+type ModifyAuditLogConfigResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	AccountList AccountList `json:"AccountList" xml:"AccountList"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDescribeAccountsRequest creates a request to invoke DescribeAccounts API
-func CreateDescribeAccountsRequest() (request *DescribeAccountsRequest) {
-	request = &DescribeAccountsRequest{
+// CreateModifyAuditLogConfigRequest creates a request to invoke ModifyAuditLogConfig API
+func CreateModifyAuditLogConfigRequest() (request *ModifyAuditLogConfigRequest) {
+	request = &ModifyAuditLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("adb", "2019-03-15", "DescribeAccounts", "ads", "openAPI")
+	request.InitWithApiInfo("adb", "2019-03-15", "ModifyAuditLogConfig", "ads", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDescribeAccountsResponse creates a response to parse from DescribeAccounts response
-func CreateDescribeAccountsResponse() (response *DescribeAccountsResponse) {
-	response = &DescribeAccountsResponse{
+// CreateModifyAuditLogConfigResponse creates a response to parse from ModifyAuditLogConfig response
+func CreateModifyAuditLogConfigResponse() (response *ModifyAuditLogConfigResponse) {
+	response = &ModifyAuditLogConfigResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

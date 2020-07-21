@@ -17,6 +17,6 @@ package adb
 
 // AvailableZone is a nested struct in adb response
 type AvailableZone struct {
-	ZoneId              string            `json:"ZoneId" xml:"ZoneId"`
-	SupportedSerialList []SupportedSerial `json:"SupportedSerialList" xml:"SupportedSerialList"`
+	ZoneId        string              `json:"ZoneId" xml:"ZoneId"`
+	SupportedMode []SupportedModeItem `json:"SupportedMode" xml:"SupportedMode"`
 }

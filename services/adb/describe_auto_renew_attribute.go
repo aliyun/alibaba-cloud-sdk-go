@@ -78,6 +78,7 @@ type DescribeAutoRenewAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -101,6 +102,7 @@ func CreateDescribeAutoRenewAttributeRequest() (request *DescribeAutoRenewAttrib
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "DescribeAutoRenewAttribute", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -97,6 +97,7 @@ func CreateGrantOperatorPermissionRequest() (request *GrantOperatorPermissionReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "GrantOperatorPermission", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

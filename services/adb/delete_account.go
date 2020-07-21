@@ -77,6 +77,7 @@ func (client *Client) DeleteAccountWithCallback(request *DeleteAccountRequest, c
 type DeleteAccountRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AccountType          string           `position:"Query" name:"AccountType"`
 	AccountName          string           `position:"Query" name:"AccountName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
@@ -96,6 +97,7 @@ func CreateDeleteAccountRequest() (request *DeleteAccountRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "DeleteAccount", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

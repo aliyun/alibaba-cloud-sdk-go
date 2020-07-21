@@ -17,13 +17,22 @@ package adb
 
 // SlowLogRecord is a nested struct in adb response
 type SlowLogRecord struct {
-	HostAddress        string `json:"HostAddress" xml:"HostAddress"`
-	DBName             string `json:"DBName" xml:"DBName"`
-	SQLText            string `json:"SQLText" xml:"SQLText"`
+	QueueTime          int64  `json:"QueueTime" xml:"QueueTime"`
 	QueryTime          int64  `json:"QueryTime" xml:"QueryTime"`
-	ReturnRowCounts    int64  `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
-	ExecutionStartTime string `json:"ExecutionStartTime" xml:"ExecutionStartTime"`
+	HostAddress        string `json:"HostAddress" xml:"HostAddress"`
+	ScanSize           string `json:"ScanSize" xml:"ScanSize"`
 	ParseRowCounts     int64  `json:"ParseRowCounts" xml:"ParseRowCounts"`
+	SQLText            string `json:"SQLText" xml:"SQLText"`
+	ExecuteTime        string `json:"ExecuteTime" xml:"ExecuteTime"`
+	ExecutionStartTime string `json:"ExecutionStartTime" xml:"ExecutionStartTime"`
 	ProcessID          string `json:"ProcessID" xml:"ProcessID"`
+	ReturnRowCounts    int64  `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
+	State              string `json:"State" xml:"State"`
+	PeakMemoryUsage    string `json:"PeakMemoryUsage" xml:"PeakMemoryUsage"`
+	TotalTime          string `json:"TotalTime" xml:"TotalTime"`
+	SQLType            string `json:"SQLType" xml:"SQLType"`
+	DBName             string `json:"DBName" xml:"DBName"`
 	UserName           string `json:"UserName" xml:"UserName"`
+	Succeed            string `json:"Succeed" xml:"Succeed"`
+	ConnId             string `json:"ConnId" xml:"ConnId"`
 }

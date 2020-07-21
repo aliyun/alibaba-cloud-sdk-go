@@ -76,8 +76,13 @@ func (client *Client) DescribeAvailableResourceWithCallback(request *DescribeAva
 // DescribeAvailableResourceRequest is the request struct for api DescribeAvailableResource
 type DescribeAvailableResourceRequest struct {
 	*requests.RpcRequest
-	ZoneId     string `position:"Query" name:"ZoneId"`
-	ChargeType string `position:"Query" name:"ChargeType"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	ChargeType           string           `position:"Query" name:"ChargeType"`
 }
 
 // DescribeAvailableResourceResponse is the response struct for api DescribeAvailableResource
@@ -94,6 +99,7 @@ func CreateDescribeAvailableResourceRequest() (request *DescribeAvailableResourc
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "DescribeAvailableResource", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

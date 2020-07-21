@@ -17,5 +17,5 @@ package adb
 
 // SupportedSerialList is a nested struct in adb response
 type SupportedSerialList struct {
-	SupportedSerial []SupportedSerial `json:"SupportedSerial" xml:"SupportedSerial"`
+	SupportedSerialListItem []SupportedSerialListItem `json:"SupportedSerialList" xml:"SupportedSerialList"`
 }

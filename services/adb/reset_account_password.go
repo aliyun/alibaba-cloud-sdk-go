@@ -77,6 +77,7 @@ func (client *Client) ResetAccountPasswordWithCallback(request *ResetAccountPass
 type ResetAccountPasswordRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AccountType          string           `position:"Query" name:"AccountType"`
 	AccountName          string           `position:"Query" name:"AccountName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
@@ -88,7 +89,9 @@ type ResetAccountPasswordRequest struct {
 // ResetAccountPasswordResponse is the response struct for api ResetAccountPassword
 type ResetAccountPasswordResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	DBClusterId string `json:"DBClusterId" xml:"DBClusterId"`
+	TaskId      int    `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateResetAccountPasswordRequest creates a request to invoke ResetAccountPassword API
@@ -97,6 +100,7 @@ func CreateResetAccountPasswordRequest() (request *ResetAccountPasswordRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "ResetAccountPassword", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

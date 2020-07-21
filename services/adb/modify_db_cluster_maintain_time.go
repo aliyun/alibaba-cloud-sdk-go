@@ -96,6 +96,7 @@ func CreateModifyDBClusterMaintainTimeRequest() (request *ModifyDBClusterMaintai
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "ModifyDBClusterMaintainTime", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

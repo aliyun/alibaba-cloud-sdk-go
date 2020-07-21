@@ -96,6 +96,7 @@ func CreateModifyDBClusterDescriptionRequest() (request *ModifyDBClusterDescript
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "ModifyDBClusterDescription", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

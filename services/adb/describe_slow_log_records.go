@@ -105,6 +105,7 @@ func CreateDescribeSlowLogRecordsRequest() (request *DescribeSlowLogRecordsReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "DescribeSlowLogRecords", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

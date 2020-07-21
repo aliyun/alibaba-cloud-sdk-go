@@ -103,6 +103,7 @@ func CreateTagResourcesRequest() (request *TagResourcesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "TagResources", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

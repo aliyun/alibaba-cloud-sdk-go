@@ -96,6 +96,7 @@ func CreateDescribeSchemasRequest() (request *DescribeSchemasRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "DescribeSchemas", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

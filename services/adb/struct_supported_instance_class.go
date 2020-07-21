@@ -20,4 +20,5 @@ type SupportedInstanceClass struct {
 	InstanceClass          string               `json:"InstanceClass" xml:"InstanceClass"`
 	Tips                   string               `json:"Tips" xml:"Tips"`
 	SupportedNodeCountList []SupportedNodeCount `json:"SupportedNodeCountList" xml:"SupportedNodeCountList"`
+	SupportedExecutorList  []SupportedExecutor  `json:"SupportedExecutorList" xml:"SupportedExecutorList"`
 }

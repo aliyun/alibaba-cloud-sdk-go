@@ -77,6 +77,7 @@ func (client *Client) ModifyDBClusterWithCallback(request *ModifyDBClusterReques
 type ModifyDBClusterRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	StorageResource      string           `position:"Query" name:"StorageResource"`
 	DBNodeClass          string           `position:"Query" name:"DBNodeClass"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
@@ -84,7 +85,9 @@ type ModifyDBClusterRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	DBNodeGroupCount     string           `position:"Query" name:"DBNodeGroupCount"`
 	DBNodeStorage        string           `position:"Query" name:"DBNodeStorage"`
+	ExecutorCount        string           `position:"Query" name:"ExecutorCount"`
 	ModifyType           string           `position:"Query" name:"ModifyType"`
+	ComputeResource      string           `position:"Query" name:"ComputeResource"`
 }
 
 // ModifyDBClusterResponse is the response struct for api ModifyDBCluster
@@ -101,6 +104,7 @@ func CreateModifyDBClusterRequest() (request *ModifyDBClusterRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "ModifyDBCluster", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

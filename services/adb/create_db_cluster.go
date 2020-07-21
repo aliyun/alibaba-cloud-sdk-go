@@ -79,6 +79,10 @@ type CreateDBClusterRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBClusterDescription string           `position:"Query" name:"DBClusterDescription"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	StorageType          string           `position:"Query" name:"StorageType"`
+	Mode                 string           `position:"Query" name:"Mode"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	StorageResource      string           `position:"Query" name:"StorageResource"`
 	DBClusterCategory    string           `position:"Query" name:"DBClusterCategory"`
 	DBClusterNetworkType string           `position:"Query" name:"DBClusterNetworkType"`
 	Period               string           `position:"Query" name:"Period"`
@@ -91,17 +95,20 @@ type CreateDBClusterRequest struct {
 	UsedTime             string           `position:"Query" name:"UsedTime"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	DBNodeStorage        string           `position:"Query" name:"DBNodeStorage"`
+	ExecutorCount        string           `position:"Query" name:"ExecutorCount"`
 	VPCId                string           `position:"Query" name:"VPCId"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
+	ComputeResource      string           `position:"Query" name:"ComputeResource"`
 	PayType              string           `position:"Query" name:"PayType"`
 }
 
 // CreateDBClusterResponse is the response struct for api CreateDBCluster
 type CreateDBClusterResponse struct {
 	*responses.BaseResponse
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	DBClusterId string `json:"DBClusterId" xml:"DBClusterId"`
-	OrderId     string `json:"OrderId" xml:"OrderId"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	DBClusterId     string `json:"DBClusterId" xml:"DBClusterId"`
+	OrderId         string `json:"OrderId" xml:"OrderId"`
+	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }
 
 // CreateCreateDBClusterRequest creates a request to invoke CreateDBCluster API
@@ -110,6 +117,7 @@ func CreateCreateDBClusterRequest() (request *CreateDBClusterRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "CreateDBCluster", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

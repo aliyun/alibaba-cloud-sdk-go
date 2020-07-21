@@ -96,6 +96,7 @@ func CreateAllocateClusterPublicConnectionRequest() (request *AllocateClusterPub
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "AllocateClusterPublicConnection", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

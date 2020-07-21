@@ -17,6 +17,6 @@ package adb
 
 // SupportedNodeCount is a nested struct in adb response
 type SupportedNodeCount struct {
-	NodeCount   string   `json:"NodeCount" xml:"NodeCount"`
-	StorageSize []string `json:"StorageSize" xml:"StorageSize"`
+	StorageSize []string  `json:"StorageSize" xml:"StorageSize"`
+	NodeCount   NodeCount `json:"NodeCount" xml:"NodeCount"`
 }

@@ -22,25 +22,34 @@ type DBCluster struct {
 	DBNodeClass          string                           `json:"DBNodeClass" xml:"DBNodeClass"`
 	VPCCloudInstanceId   string                           `json:"VPCCloudInstanceId" xml:"VPCCloudInstanceId"`
 	Engine               string                           `json:"Engine" xml:"Engine"`
-	CreateTime           string                           `json:"CreateTime" xml:"CreateTime"`
 	DBClusterNetworkType string                           `json:"DBClusterNetworkType" xml:"DBClusterNetworkType"`
+	Mode                 string                           `json:"Mode" xml:"Mode"`
 	RegionId             string                           `json:"RegionId" xml:"RegionId"`
+	StorageResource      string                           `json:"StorageResource" xml:"StorageResource"`
+	ResourceGroupId      string                           `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	DtsJobId             string                           `json:"DtsJobId" xml:"DtsJobId"`
 	ExpireTime           string                           `json:"ExpireTime" xml:"ExpireTime"`
 	CommodityCode        string                           `json:"CommodityCode" xml:"CommodityCode"`
 	Expired              string                           `json:"Expired" xml:"Expired"`
 	DBVersion            string                           `json:"DBVersion" xml:"DBVersion"`
+	Port                 int                              `json:"Port" xml:"Port"`
 	DBClusterType        string                           `json:"DBClusterType" xml:"DBClusterType"`
 	DBNodeStorage        int64                            `json:"DBNodeStorage" xml:"DBNodeStorage"`
 	MaintainTime         string                           `json:"MaintainTime" xml:"MaintainTime"`
 	VPCId                string                           `json:"VPCId" xml:"VPCId"`
+	ExecutorCount        string                           `json:"ExecutorCount" xml:"ExecutorCount"`
 	PayType              string                           `json:"PayType" xml:"PayType"`
 	VSwitchId            string                           `json:"VSwitchId" xml:"VSwitchId"`
+	DiskType             string                           `json:"DiskType" xml:"DiskType"`
 	DBNodeCount          int64                            `json:"DBNodeCount" xml:"DBNodeCount"`
 	CreationTime         string                           `json:"CreationTime" xml:"CreationTime"`
 	DBClusterId          string                           `json:"DBClusterId" xml:"DBClusterId"`
 	DBClusterStatus      string                           `json:"DBClusterStatus" xml:"DBClusterStatus"`
+	ComputeResource      string                           `json:"ComputeResource" xml:"ComputeResource"`
 	ZoneId               string                           `json:"ZoneId" xml:"ZoneId"`
+	RdsInstanceId        string                           `json:"RdsInstanceId" xml:"RdsInstanceId"`
 	DBClusterDescription string                           `json:"DBClusterDescription" xml:"DBClusterDescription"`
+	ConnectionString     string                           `json:"ConnectionString" xml:"ConnectionString"`
 	LockMode             string                           `json:"LockMode" xml:"LockMode"`
 	Tags                 TagsInDescribeDBClusterAttribute `json:"Tags" xml:"Tags"`
 }

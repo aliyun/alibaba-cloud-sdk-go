@@ -96,6 +96,7 @@ func CreateDescribeDBClusterAccessWhiteListRequest() (request *DescribeDBCluster
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "DescribeDBClusterAccessWhiteList", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

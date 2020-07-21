@@ -98,6 +98,7 @@ func CreateDescribeColumnsRequest() (request *DescribeColumnsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "DescribeColumns", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

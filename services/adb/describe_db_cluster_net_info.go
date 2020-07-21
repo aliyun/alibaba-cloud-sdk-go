@@ -97,6 +97,7 @@ func CreateDescribeDBClusterNetInfoRequest() (request *DescribeDBClusterNetInfoR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "DescribeDBClusterNetInfo", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

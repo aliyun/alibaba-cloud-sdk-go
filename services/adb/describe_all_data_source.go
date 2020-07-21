@@ -100,6 +100,7 @@ func CreateDescribeAllDataSourceRequest() (request *DescribeAllDataSourceRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "DescribeAllDataSource", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

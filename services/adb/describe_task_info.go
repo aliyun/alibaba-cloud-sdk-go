@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeAccounts invokes the adb.DescribeAccounts API synchronously
-// api document: https://help.aliyun.com/api/adb/describeaccounts.html
-func (client *Client) DescribeAccounts(request *DescribeAccountsRequest) (response *DescribeAccountsResponse, err error) {
-	response = CreateDescribeAccountsResponse()
+// DescribeTaskInfo invokes the adb.DescribeTaskInfo API synchronously
+// api document: https://help.aliyun.com/api/adb/describetaskinfo.html
+func (client *Client) DescribeTaskInfo(request *DescribeTaskInfoRequest) (response *DescribeTaskInfoResponse, err error) {
+	response = CreateDescribeTaskInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeAccountsWithChan invokes the adb.DescribeAccounts API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeaccounts.html
+// DescribeTaskInfoWithChan invokes the adb.DescribeTaskInfo API asynchronously
+// api document: https://help.aliyun.com/api/adb/describetaskinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeAccountsWithChan(request *DescribeAccountsRequest) (<-chan *DescribeAccountsResponse, <-chan error) {
-	responseChan := make(chan *DescribeAccountsResponse, 1)
+func (client *Client) DescribeTaskInfoWithChan(request *DescribeTaskInfoRequest) (<-chan *DescribeTaskInfoResponse, <-chan error) {
+	responseChan := make(chan *DescribeTaskInfoResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeAccounts(request)
+		response, err := client.DescribeTaskInfo(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DescribeAccountsWithChan(request *DescribeAccountsRequest)
 	return responseChan, errChan
 }
 
-// DescribeAccountsWithCallback invokes the adb.DescribeAccounts API asynchronously
-// api document: https://help.aliyun.com/api/adb/describeaccounts.html
+// DescribeTaskInfoWithCallback invokes the adb.DescribeTaskInfo API asynchronously
+// api document: https://help.aliyun.com/api/adb/describetaskinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeAccountsWithCallback(request *DescribeAccountsRequest, callback func(response *DescribeAccountsResponse, err error)) <-chan int {
+func (client *Client) DescribeTaskInfoWithCallback(request *DescribeTaskInfoRequest, callback func(response *DescribeTaskInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeAccountsResponse
+		var response *DescribeTaskInfoResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeAccounts(request)
+		response, err = client.DescribeTaskInfo(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,38 +73,37 @@ func (client *Client) DescribeAccountsWithCallback(request *DescribeAccountsRequ
 	return result
 }
 
-// DescribeAccountsRequest is the request struct for api DescribeAccounts
-type DescribeAccountsRequest struct {
+// DescribeTaskInfoRequest is the request struct for api DescribeTaskInfo
+type DescribeTaskInfoRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AccountType          string           `position:"Query" name:"AccountType"`
-	AccountName          string           `position:"Query" name:"AccountName"`
+	TaskId               requests.Integer `position:"Query" name:"TaskId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// DescribeAccountsResponse is the response struct for api DescribeAccounts
-type DescribeAccountsResponse struct {
+// DescribeTaskInfoResponse is the response struct for api DescribeTaskInfo
+type DescribeTaskInfoResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	AccountList AccountList `json:"AccountList" xml:"AccountList"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	TaskInfo  TaskInfo `json:"TaskInfo" xml:"TaskInfo"`
 }
 
-// CreateDescribeAccountsRequest creates a request to invoke DescribeAccounts API
-func CreateDescribeAccountsRequest() (request *DescribeAccountsRequest) {
-	request = &DescribeAccountsRequest{
+// CreateDescribeTaskInfoRequest creates a request to invoke DescribeTaskInfo API
+func CreateDescribeTaskInfoRequest() (request *DescribeTaskInfoRequest) {
+	request = &DescribeTaskInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("adb", "2019-03-15", "DescribeAccounts", "ads", "openAPI")
+	request.InitWithApiInfo("adb", "2019-03-15", "DescribeTaskInfo", "ads", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDescribeAccountsResponse creates a response to parse from DescribeAccounts response
-func CreateDescribeAccountsResponse() (response *DescribeAccountsResponse) {
-	response = &DescribeAccountsResponse{
+// CreateDescribeTaskInfoResponse creates a response to parse from DescribeTaskInfo response
+func CreateDescribeTaskInfoResponse() (response *DescribeTaskInfoResponse) {
+	response = &DescribeTaskInfoResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

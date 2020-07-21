@@ -95,6 +95,7 @@ func CreateDeleteDBClusterRequest() (request *DeleteDBClusterRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "DeleteDBCluster", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

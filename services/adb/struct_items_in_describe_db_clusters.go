@@ -17,5 +17,5 @@ package adb
 
 // ItemsInDescribeDBClusters is a nested struct in adb response
 type ItemsInDescribeDBClusters struct {
-	DBCluster []DBCluster `json:"DBCluster" xml:"DBCluster"`
+	DBCluster []DBClusterInDescribeDBClusters `json:"DBCluster" xml:"DBCluster"`
 }

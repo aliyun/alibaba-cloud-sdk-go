@@ -104,6 +104,7 @@ func CreateDescribeBackupsRequest() (request *DescribeBackupsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "DescribeBackups", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

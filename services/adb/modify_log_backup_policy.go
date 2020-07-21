@@ -97,6 +97,7 @@ func CreateModifyLogBackupPolicyRequest() (request *ModifyLogBackupPolicyRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "ModifyLogBackupPolicy", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

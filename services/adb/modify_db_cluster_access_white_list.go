@@ -90,7 +90,9 @@ type ModifyDBClusterAccessWhiteListRequest struct {
 // ModifyDBClusterAccessWhiteListResponse is the response struct for api ModifyDBClusterAccessWhiteList
 type ModifyDBClusterAccessWhiteListResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	DBClusterId string `json:"DBClusterId" xml:"DBClusterId"`
+	TaskId      int    `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateModifyDBClusterAccessWhiteListRequest creates a request to invoke ModifyDBClusterAccessWhiteList API
@@ -99,6 +101,7 @@ func CreateModifyDBClusterAccessWhiteListRequest() (request *ModifyDBClusterAcce
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("adb", "2019-03-15", "ModifyDBClusterAccessWhiteList", "ads", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
