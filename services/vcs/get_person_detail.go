@@ -76,8 +76,9 @@ func (client *Client) GetPersonDetailWithCallback(request *GetPersonDetailReques
 // GetPersonDetailRequest is the request struct for api GetPersonDetail
 type GetPersonDetailRequest struct {
 	*requests.RpcRequest
-	CorpId   string `position:"Body" name:"CorpId"`
-	PersonID string `position:"Body" name:"PersonID"`
+	AlgorithmType string `position:"Body" name:"AlgorithmType"`
+	CorpId        string `position:"Body" name:"CorpId"`
+	PersonID      string `position:"Body" name:"PersonID"`
 }
 
 // GetPersonDetailResponse is the response struct for api GetPersonDetail
@@ -94,7 +95,7 @@ func CreateGetPersonDetailRequest() (request *GetPersonDetailRequest) {
 	request = &GetPersonDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "GetPersonDetail", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetPersonDetail", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -93,7 +93,7 @@ func CreateGetBodyOptionsRequest() (request *GetBodyOptionsRequest) {
 	request = &GetBodyOptionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "GetBodyOptions", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetBodyOptions", "", "")
 	request.Method = requests.POST
 	return
 }

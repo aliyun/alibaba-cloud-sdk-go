@@ -32,4 +32,10 @@ type RecordsItemInListBodyAlgorithmResults struct {
 	RightBottomY     float64 `json:"RightBottomY" xml:"RightBottomY"`
 	ShotTime         string  `json:"ShotTime" xml:"ShotTime"`
 	TargetPicUrlPath string  `json:"TargetPicUrlPath" xml:"TargetPicUrlPath"`
+	CoatLength       string  `json:"CoatLength" xml:"CoatLength"`
+	CoatStyle        string  `json:"CoatStyle" xml:"CoatStyle"`
+	TrousersLength   string  `json:"TrousersLength" xml:"TrousersLength"`
+	TrousersStyle    string  `json:"TrousersStyle" xml:"TrousersStyle"`
+	CoatColor        string  `json:"CoatColor" xml:"CoatColor"`
+	TrousersColor    string  `json:"TrousersColor" xml:"TrousersColor"`
 }

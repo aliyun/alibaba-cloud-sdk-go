@@ -30,4 +30,11 @@ type RecordsItemInListMotorAlgorithmResults struct {
 	TargetPicUrlPath string  `json:"TargetPicUrlPath" xml:"TargetPicUrlPath"`
 	MotorStyle       string  `json:"MotorStyle" xml:"MotorStyle"`
 	MotorModel       string  `json:"MotorModel" xml:"MotorModel"`
+	MotorColor       string  `json:"MotorColor" xml:"MotorColor"`
+	MotorClass       string  `json:"MotorClass" xml:"MotorClass"`
+	MotorBrand       string  `json:"MotorBrand" xml:"MotorBrand"`
+	PlateColor       string  `json:"PlateColor" xml:"PlateColor"`
+	PlateClass       string  `json:"PlateClass" xml:"PlateClass"`
+	SafetyBelt       string  `json:"SafetyBelt" xml:"SafetyBelt"`
+	Calling          string  `json:"Calling" xml:"Calling"`
 }

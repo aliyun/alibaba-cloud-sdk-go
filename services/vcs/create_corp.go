@@ -76,10 +76,11 @@ func (client *Client) CreateCorpWithCallback(request *CreateCorpRequest, callbac
 // CreateCorpRequest is the request struct for api CreateCorp
 type CreateCorpRequest struct {
 	*requests.RpcRequest
-	ParentCorpId string `position:"Body" name:"ParentCorpId"`
-	Description  string `position:"Body" name:"Description"`
-	AppName      string `position:"Body" name:"AppName"`
-	CorpName     string `position:"Body" name:"CorpName"`
+	AlgorithmType string `position:"Body" name:"AlgorithmType"`
+	ParentCorpId  string `position:"Body" name:"ParentCorpId"`
+	Description   string `position:"Body" name:"Description"`
+	AppName       string `position:"Body" name:"AppName"`
+	CorpName      string `position:"Body" name:"CorpName"`
 }
 
 // CreateCorpResponse is the response struct for api CreateCorp
@@ -96,7 +97,7 @@ func CreateCreateCorpRequest() (request *CreateCorpRequest) {
 	request = &CreateCorpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "CreateCorp", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "CreateCorp", "", "")
 	request.Method = requests.POST
 	return
 }

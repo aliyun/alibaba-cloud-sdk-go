@@ -76,12 +76,12 @@ func (client *Client) CreateVideoSummaryTaskWithCallback(request *CreateVideoSum
 // CreateVideoSummaryTaskRequest is the request struct for api CreateVideoSummaryTask
 type CreateVideoSummaryTaskRequest struct {
 	*requests.RpcRequest
-	CorpId           string `position:"Body" name:"CorpId"`
-	LiveVideoSummary string `position:"Body" name:"LiveVideoSummary"`
-	StartTimeStamp   string `position:"Body" name:"StartTimeStamp"`
-	DeviceId         string `position:"Body" name:"DeviceId"`
-	EndTimeStamp     string `position:"Body" name:"EndTimeStamp"`
-	OptionList       string `position:"Body" name:"OptionList"`
+	CorpId           string           `position:"Body" name:"CorpId"`
+	LiveVideoSummary string           `position:"Body" name:"LiveVideoSummary"`
+	StartTimeStamp   requests.Integer `position:"Body" name:"StartTimeStamp"`
+	DeviceId         string           `position:"Body" name:"DeviceId"`
+	EndTimeStamp     requests.Integer `position:"Body" name:"EndTimeStamp"`
+	OptionList       string           `position:"Body" name:"OptionList"`
 }
 
 // CreateVideoSummaryTaskResponse is the response struct for api CreateVideoSummaryTask
@@ -98,7 +98,7 @@ func CreateCreateVideoSummaryTaskRequest() (request *CreateVideoSummaryTaskReque
 	request = &CreateVideoSummaryTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "CreateVideoSummaryTask", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "CreateVideoSummaryTask", "", "")
 	request.Method = requests.POST
 	return
 }

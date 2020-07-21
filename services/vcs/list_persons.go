@@ -76,9 +76,12 @@ func (client *Client) ListPersonsWithCallback(request *ListPersonsRequest, callb
 // ListPersonsRequest is the request struct for api ListPersons
 type ListPersonsRequest struct {
 	*requests.RpcRequest
-	CorpId   string `position:"Body" name:"CorpId"`
-	PageNo   string `position:"Body" name:"PageNo"`
-	PageSize string `position:"Body" name:"PageSize"`
+	AlgorithmType string `position:"Body" name:"AlgorithmType"`
+	CorpId        string `position:"Body" name:"CorpId"`
+	EndTime       string `position:"Body" name:"EndTime"`
+	StartTime     string `position:"Body" name:"StartTime"`
+	PageNo        string `position:"Body" name:"PageNo"`
+	PageSize      string `position:"Body" name:"PageSize"`
 }
 
 // ListPersonsResponse is the response struct for api ListPersons
@@ -95,7 +98,7 @@ func CreateListPersonsRequest() (request *ListPersonsRequest) {
 	request = &ListPersonsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListPersons", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListPersons", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -34,6 +34,7 @@ type RecordsItem struct {
 	CorpId           string        `json:"CorpId" xml:"CorpId"`
 	DateTime         string        `json:"DateTime" xml:"DateTime"`
 	TagValue         string        `json:"TagValue" xml:"TagValue"`
+	RecordId         string        `json:"RecordId" xml:"RecordId"`
 	PicUrlPath       string        `json:"PicUrlPath" xml:"PicUrlPath"`
 	PicUrl           string        `json:"PicUrl" xml:"PicUrl"`
 	FaceCount        string        `json:"FaceCount" xml:"FaceCount"`
