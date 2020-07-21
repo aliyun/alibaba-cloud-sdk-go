@@ -76,10 +76,11 @@ func (client *Client) AddDataSourceWithCallback(request *AddDataSourceRequest, c
 // AddDataSourceRequest is the request struct for api AddDataSource
 type AddDataSourceRequest struct {
 	*requests.RpcRequest
-	DataSourceType string `position:"Body" name:"DataSourceType"`
-	CorpId         string `position:"Body" name:"CorpId"`
-	Description    string `position:"Body" name:"Description"`
-	DataSourceName string `position:"Body" name:"DataSourceName"`
+	DataSourceType    string           `position:"Body" name:"DataSourceType"`
+	CorpId            string           `position:"Body" name:"CorpId"`
+	Description       string           `position:"Body" name:"Description"`
+	DataSourceName    string           `position:"Body" name:"DataSourceName"`
+	FileRetentionDays requests.Integer `position:"Body" name:"FileRetentionDays"`
 }
 
 // AddDataSourceResponse is the response struct for api AddDataSource

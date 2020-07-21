@@ -89,10 +89,10 @@ type UploadFileRequest struct {
 // UploadFileResponse is the response struct for api UploadFile
 type UploadFileResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Data      string `json:"Data" xml:"Data"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string           `json:"Code" xml:"Code"`
+	Message   string           `json:"Message" xml:"Message"`
+	RequestId string           `json:"RequestId" xml:"RequestId"`
+	Data      DataInUploadFile `json:"Data" xml:"Data"`
 }
 
 // CreateUploadFileRequest creates a request to invoke UploadFile API
