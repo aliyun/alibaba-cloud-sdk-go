@@ -94,7 +94,7 @@ func CreateDeleteVideoSummaryTaskRequest() (request *DeleteVideoSummaryTaskReque
 	request = &DeleteVideoSummaryTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "DeleteVideoSummaryTask", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "DeleteVideoSummaryTask", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -98,7 +98,7 @@ func CreateListPersonsRequest() (request *ListPersonsRequest) {
 	request = &ListPersonsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListPersons", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListPersons", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }
