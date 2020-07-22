@@ -93,7 +93,7 @@ func CreateUpdateLogstashRequest() (request *UpdateLogstashRequest) {
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("elasticsearch", "2017-06-13", "UpdateLogstash", "/openapi/logstashes/[InstanceId]", "elasticsearch", "openAPI")
-	request.Method = requests.GET
+	request.Method = requests.PUT
 	return
 }
 

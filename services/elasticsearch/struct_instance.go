@@ -17,21 +17,23 @@ package elasticsearch
 
 // Instance is a nested struct in elasticsearch response
 type Instance struct {
-	DedicateMaster         bool                `json:"dedicateMaster" xml:"dedicateMaster"`
-	UpdatedAt              string              `json:"updatedAt" xml:"updatedAt"`
-	NodeAmount             int                 `json:"nodeAmount" xml:"nodeAmount"`
-	InstanceId             string              `json:"instanceId" xml:"instanceId"`
-	Status                 string              `json:"status" xml:"status"`
-	Description            string              `json:"description" xml:"description"`
-	AdvancedDedicateMaster bool                `json:"advancedDedicateMaster" xml:"advancedDedicateMaster"`
-	Version                string              `json:"version" xml:"version"`
-	EsVersion              string              `json:"esVersion" xml:"esVersion"`
-	PaymentType            string              `json:"paymentType" xml:"paymentType"`
-	ResourceGroupId        string              `json:"resourceGroupId" xml:"resourceGroupId"`
-	CreatedAt              string              `json:"createdAt" xml:"createdAt"`
-	NetworkConfig          NetworkConfig       `json:"networkConfig" xml:"networkConfig"`
-	MasterConfiguration    MasterConfiguration `json:"masterConfiguration" xml:"masterConfiguration"`
-	NodeSpec               NodeSpec            `json:"nodeSpec" xml:"nodeSpec"`
-	KibanaConfiguration    KibanaConfiguration `json:"kibanaConfiguration" xml:"kibanaConfiguration"`
-	Tags                   []Tag               `json:"tags" xml:"tags"`
+	DedicateMaster               bool                         `json:"dedicateMaster" xml:"dedicateMaster"`
+	UpdatedAt                    string                       `json:"updatedAt" xml:"updatedAt"`
+	NodeAmount                   int                          `json:"nodeAmount" xml:"nodeAmount"`
+	InstanceId                   string                       `json:"instanceId" xml:"instanceId"`
+	Status                       string                       `json:"status" xml:"status"`
+	Description                  string                       `json:"description" xml:"description"`
+	AdvancedDedicateMaster       bool                         `json:"advancedDedicateMaster" xml:"advancedDedicateMaster"`
+	Version                      string                       `json:"version" xml:"version"`
+	EsVersion                    string                       `json:"esVersion" xml:"esVersion"`
+	PaymentType                  string                       `json:"paymentType" xml:"paymentType"`
+	ResourceGroupId              string                       `json:"resourceGroupId" xml:"resourceGroupId"`
+	CreatedAt                    string                       `json:"createdAt" xml:"createdAt"`
+	NetworkConfig                NetworkConfig                `json:"networkConfig" xml:"networkConfig"`
+	MasterConfiguration          MasterConfiguration          `json:"masterConfiguration" xml:"masterConfiguration"`
+	ElasticDataNodeConfiguration ElasticDataNodeConfiguration `json:"elasticDataNodeConfiguration" xml:"elasticDataNodeConfiguration"`
+	NodeSpec                     NodeSpec                     `json:"nodeSpec" xml:"nodeSpec"`
+	ClientNodeConfiguration      ClientNodeConfiguration      `json:"clientNodeConfiguration" xml:"clientNodeConfiguration"`
+	KibanaConfiguration          KibanaConfiguration          `json:"kibanaConfiguration" xml:"kibanaConfiguration"`
+	Tags                         []Tag                        `json:"tags" xml:"tags"`
 }

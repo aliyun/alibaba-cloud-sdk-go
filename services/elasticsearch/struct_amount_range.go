@@ -17,6 +17,6 @@ package elasticsearch
 
 // AmountRange is a nested struct in elasticsearch response
 type AmountRange struct {
-	MinAmount int `json:"minAmount" xml:"minAmount"`
 	MaxAmount int `json:"maxAmount" xml:"maxAmount"`
+	MinAmount int `json:"minAmount" xml:"minAmount"`
 }

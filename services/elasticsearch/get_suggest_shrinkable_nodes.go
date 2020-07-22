@@ -76,9 +76,10 @@ func (client *Client) GetSuggestShrinkableNodesWithCallback(request *GetSuggestS
 // GetSuggestShrinkableNodesRequest is the request struct for api GetSuggestShrinkableNodes
 type GetSuggestShrinkableNodesRequest struct {
 	*requests.RoaRequest
-	InstanceId string           `position:"Path" name:"InstanceId"`
-	NodeType   string           `position:"Query" name:"nodeType"`
-	Count      requests.Integer `position:"Query" name:"count"`
+	IgnoreStatus requests.Boolean `position:"Query" name:"ignoreStatus"`
+	InstanceId   string           `position:"Path" name:"InstanceId"`
+	NodeType     string           `position:"Query" name:"nodeType"`
+	Count        requests.Integer `position:"Query" name:"count"`
 }
 
 // GetSuggestShrinkableNodesResponse is the response struct for api GetSuggestShrinkableNodes

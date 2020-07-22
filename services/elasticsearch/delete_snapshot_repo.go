@@ -76,8 +76,9 @@ func (client *Client) DeleteSnapshotRepoWithCallback(request *DeleteSnapshotRepo
 // DeleteSnapshotRepoRequest is the request struct for api DeleteSnapshotRepo
 type DeleteSnapshotRepoRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
-	RepoPath   string `position:"Query" name:"repoPath"`
+	InstanceId  string `position:"Path" name:"InstanceId"`
+	ClientToken string `position:"Query" name:"clientToken"`
+	RepoPath    string `position:"Query" name:"repoPath"`
 }
 
 // DeleteSnapshotRepoResponse is the response struct for api DeleteSnapshotRepo

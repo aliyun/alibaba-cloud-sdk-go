@@ -76,9 +76,10 @@ func (client *Client) ShrinkNodeWithCallback(request *ShrinkNodeRequest, callbac
 // ShrinkNodeRequest is the request struct for api ShrinkNode
 type ShrinkNodeRequest struct {
 	*requests.RoaRequest
-	InstanceId  string `position:"Path" name:"InstanceId"`
-	NodeType    string `position:"Query" name:"nodeType"`
-	ClientToken string `position:"Query" name:"clientToken"`
+	IgnoreStatus requests.Boolean `position:"Query" name:"ignoreStatus"`
+	InstanceId   string           `position:"Path" name:"InstanceId"`
+	NodeType     string           `position:"Query" name:"nodeType"`
+	ClientToken  string           `position:"Query" name:"clientToken"`
 }
 
 // ShrinkNodeResponse is the response struct for api ShrinkNode

@@ -76,8 +76,9 @@ func (client *Client) ValidateShrinkNodesWithCallback(request *ValidateShrinkNod
 // ValidateShrinkNodesRequest is the request struct for api ValidateShrinkNodes
 type ValidateShrinkNodesRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
-	NodeType   string `position:"Query" name:"nodeType"`
+	IgnoreStatus requests.Boolean `position:"Query" name:"ignoreStatus"`
+	InstanceId   string           `position:"Path" name:"InstanceId"`
+	NodeType     string           `position:"Query" name:"nodeType"`
 }
 
 // ValidateShrinkNodesResponse is the response struct for api ValidateShrinkNodes
