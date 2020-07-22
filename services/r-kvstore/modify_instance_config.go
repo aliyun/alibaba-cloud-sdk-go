@@ -97,6 +97,7 @@ func CreateModifyInstanceConfigRequest() (request *ModifyInstanceConfigRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceConfig", "redisa", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

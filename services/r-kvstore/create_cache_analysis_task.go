@@ -96,6 +96,7 @@ func CreateCreateCacheAnalysisTaskRequest() (request *CreateCacheAnalysisTaskReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateCacheAnalysisTask", "redisa", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -97,6 +97,7 @@ func CreateReleaseInstancePublicConnectionRequest() (request *ReleaseInstancePub
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ReleaseInstancePublicConnection", "redisa", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

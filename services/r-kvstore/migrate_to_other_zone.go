@@ -99,6 +99,7 @@ func CreateMigrateToOtherZoneRequest() (request *MigrateToOtherZoneRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("R-kvstore", "2015-01-01", "MigrateToOtherZone", "redisa", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

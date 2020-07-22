@@ -98,6 +98,7 @@ func CreateGrantAccountPrivilegeRequest() (request *GrantAccountPrivilegeRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("R-kvstore", "2015-01-01", "GrantAccountPrivilege", "redisa", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

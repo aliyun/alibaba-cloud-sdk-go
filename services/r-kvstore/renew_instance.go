@@ -106,6 +106,7 @@ func CreateRenewInstanceRequest() (request *RenewInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RenewInstance", "redisa", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

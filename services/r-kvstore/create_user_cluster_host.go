@@ -109,6 +109,7 @@ func CreateCreateUserClusterHostRequest() (request *CreateUserClusterHostRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateUserClusterHost", "redisa", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

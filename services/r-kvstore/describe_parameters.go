@@ -101,6 +101,7 @@ func CreateDescribeParametersRequest() (request *DescribeParametersRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeParameters", "redisa", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

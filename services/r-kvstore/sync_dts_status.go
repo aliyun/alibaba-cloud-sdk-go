@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ModifyAuditLogConfig invokes the r_kvstore.ModifyAuditLogConfig API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyauditlogconfig.html
-func (client *Client) ModifyAuditLogConfig(request *ModifyAuditLogConfigRequest) (response *ModifyAuditLogConfigResponse, err error) {
-	response = CreateModifyAuditLogConfigResponse()
+// SyncDtsStatus invokes the r_kvstore.SyncDtsStatus API synchronously
+// api document: https://help.aliyun.com/api/r-kvstore/syncdtsstatus.html
+func (client *Client) SyncDtsStatus(request *SyncDtsStatusRequest) (response *SyncDtsStatusResponse, err error) {
+	response = CreateSyncDtsStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ModifyAuditLogConfigWithChan invokes the r_kvstore.ModifyAuditLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyauditlogconfig.html
+// SyncDtsStatusWithChan invokes the r_kvstore.SyncDtsStatus API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/syncdtsstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ModifyAuditLogConfigWithChan(request *ModifyAuditLogConfigRequest) (<-chan *ModifyAuditLogConfigResponse, <-chan error) {
-	responseChan := make(chan *ModifyAuditLogConfigResponse, 1)
+func (client *Client) SyncDtsStatusWithChan(request *SyncDtsStatusRequest) (<-chan *SyncDtsStatusResponse, <-chan error) {
+	responseChan := make(chan *SyncDtsStatusResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ModifyAuditLogConfig(request)
+		response, err := client.SyncDtsStatus(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ModifyAuditLogConfigWithChan(request *ModifyAuditLogConfig
 	return responseChan, errChan
 }
 
-// ModifyAuditLogConfigWithCallback invokes the r_kvstore.ModifyAuditLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyauditlogconfig.html
+// SyncDtsStatusWithCallback invokes the r_kvstore.SyncDtsStatus API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/syncdtsstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ModifyAuditLogConfigWithCallback(request *ModifyAuditLogConfigRequest, callback func(response *ModifyAuditLogConfigResponse, err error)) <-chan int {
+func (client *Client) SyncDtsStatusWithCallback(request *SyncDtsStatusRequest, callback func(response *SyncDtsStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ModifyAuditLogConfigResponse
+		var response *SyncDtsStatusResponse
 		var err error
 		defer close(result)
-		response, err = client.ModifyAuditLogConfig(request)
+		response, err = client.SyncDtsStatus(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,37 +73,37 @@ func (client *Client) ModifyAuditLogConfigWithCallback(request *ModifyAuditLogCo
 	return result
 }
 
-// ModifyAuditLogConfigRequest is the request struct for api ModifyAuditLogConfig
-type ModifyAuditLogConfigRequest struct {
+// SyncDtsStatusRequest is the request struct for api SyncDtsStatus
+type SyncDtsStatusRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	AuditCommand         string           `position:"Query" name:"AuditCommand"`
-	Retention            string           `position:"Query" name:"Retention"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	Status               string           `position:"Query" name:"Status"`
 }
 
-// ModifyAuditLogConfigResponse is the response struct for api ModifyAuditLogConfig
-type ModifyAuditLogConfigResponse struct {
+// SyncDtsStatusResponse is the response struct for api SyncDtsStatus
+type SyncDtsStatusResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateModifyAuditLogConfigRequest creates a request to invoke ModifyAuditLogConfig API
-func CreateModifyAuditLogConfigRequest() (request *ModifyAuditLogConfigRequest) {
-	request = &ModifyAuditLogConfigRequest{
+// CreateSyncDtsStatusRequest creates a request to invoke SyncDtsStatus API
+func CreateSyncDtsStatusRequest() (request *SyncDtsStatusRequest) {
+	request = &SyncDtsStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyAuditLogConfig", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "SyncDtsStatus", "redisa", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
-// CreateModifyAuditLogConfigResponse creates a response to parse from ModifyAuditLogConfig response
-func CreateModifyAuditLogConfigResponse() (response *ModifyAuditLogConfigResponse) {
-	response = &ModifyAuditLogConfigResponse{
+// CreateSyncDtsStatusResponse creates a response to parse from SyncDtsStatus response
+func CreateSyncDtsStatusResponse() (response *SyncDtsStatusResponse) {
+	response = &SyncDtsStatusResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

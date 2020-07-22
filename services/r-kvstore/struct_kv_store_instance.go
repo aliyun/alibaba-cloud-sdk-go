@@ -50,5 +50,6 @@ type KVStoreInstance struct {
 	DestroyTime         string                  `json:"DestroyTime" xml:"DestroyTime"`
 	ConnectionMode      string                  `json:"ConnectionMode" xml:"ConnectionMode"`
 	VpcCloudInstanceId  string                  `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
+	ResourceGroupId     string                  `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	Tags                TagsInDescribeInstances `json:"Tags" xml:"Tags"`
 }

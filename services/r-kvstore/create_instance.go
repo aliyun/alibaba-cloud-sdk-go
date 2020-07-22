@@ -98,6 +98,7 @@ type CreateInstanceRequest struct {
 	InstanceClass        string           `position:"Query" name:"InstanceClass"`
 	Capacity             requests.Integer `position:"Query" name:"Capacity"`
 	InstanceType         string           `position:"Query" name:"InstanceType"`
+	DedicatedHostGroupId string           `position:"Query" name:"DedicatedHostGroupId"`
 	RestoreTime          string           `position:"Query" name:"RestoreTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	SrcDBInstanceId      string           `position:"Query" name:"SrcDBInstanceId"`
@@ -140,6 +141,7 @@ func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateInstance", "redisa", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

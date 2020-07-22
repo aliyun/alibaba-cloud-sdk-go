@@ -107,6 +107,7 @@ func CreateDescribeUserClusterHostInstanceRequest() (request *DescribeUserCluste
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeUserClusterHostInstance", "redisa", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

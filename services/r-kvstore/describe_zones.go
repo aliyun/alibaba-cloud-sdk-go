@@ -97,6 +97,7 @@ func CreateDescribeZonesRequest() (request *DescribeZonesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeZones", "redisa", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

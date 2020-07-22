@@ -97,6 +97,7 @@ func CreateModifyResourceGroupRequest() (request *ModifyResourceGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyResourceGroup", "redisa", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

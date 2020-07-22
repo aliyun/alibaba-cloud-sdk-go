@@ -99,6 +99,7 @@ func CreateRestoreInstanceRequest() (request *RestoreInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RestoreInstance", "redisa", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -103,6 +103,7 @@ func CreateTagResourcesRequest() (request *TagResourcesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("R-kvstore", "2015-01-01", "TagResources", "redisa", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

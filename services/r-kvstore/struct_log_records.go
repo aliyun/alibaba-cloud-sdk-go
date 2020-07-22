@@ -31,5 +31,6 @@ type LogRecords struct {
 	NodeId       string `json:"NodeId" xml:"NodeId"`
 	Content      string `json:"Content" xml:"Content"`
 	AccountName  string `json:"AccountName" xml:"AccountName"`
+	InstanceId   string `json:"InstanceId" xml:"InstanceId"`
 	DBName       string `json:"DBName" xml:"DBName"`
 }

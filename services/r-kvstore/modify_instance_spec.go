@@ -105,6 +105,7 @@ func CreateModifyInstanceSpecRequest() (request *ModifyInstanceSpecRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceSpec", "redisa", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -100,6 +100,7 @@ func CreateModifyUserClusterHostRequest() (request *ModifyUserClusterHostRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyUserClusterHost", "redisa", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -97,6 +97,7 @@ func CreateModifySecurityGroupConfigurationRequest() (request *ModifySecurityGro
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifySecurityGroupConfiguration", "redisa", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

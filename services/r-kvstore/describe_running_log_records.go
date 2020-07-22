@@ -87,10 +87,13 @@ type DescribeRunningLogRecordsRequest struct {
 	SQLId                requests.Integer `position:"Query" name:"SQLId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	QueryKeyword         string           `position:"Query" name:"QueryKeyword"`
 	EndTime              string           `position:"Query" name:"EndTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	DBName               string           `position:"Query" name:"DBName"`
+	CharacterType        string           `position:"Query" name:"CharacterType"`
+	OrderType            string           `position:"Query" name:"OrderType"`
 }
 
 // DescribeRunningLogRecordsResponse is the response struct for api DescribeRunningLogRecords
@@ -113,6 +116,7 @@ func CreateDescribeRunningLogRecordsRequest() (request *DescribeRunningLogRecord
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeRunningLogRecords", "redisa", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
