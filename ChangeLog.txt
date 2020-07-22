@@ -1,3 +1,7 @@
+2020-07-22 Version: v1.61.339
+- Generated 2020-05-15 for `Vcs`.
+- Add SourceId for SearchFace.
+
 2020-07-22 Version: v1.61.338
 - Generated 2020-05-15 for `Vcs`.
 - Add source id for file uploader.

@@ -40,6 +40,7 @@ type Record struct {
 	SipGBId            string  `json:"SipGBId" xml:"SipGBId"`
 	SipServerPort      string  `json:"SipServerPort" xml:"SipServerPort"`
 	Longitude          string  `json:"Longitude" xml:"Longitude"`
+	SourceId           string  `json:"SourceId" xml:"SourceId"`
 	DeviceName         string  `json:"DeviceName" xml:"DeviceName"`
 	CreateDate         string  `json:"CreateDate" xml:"CreateDate"`
 	GbId               string  `json:"GbId" xml:"GbId"`
