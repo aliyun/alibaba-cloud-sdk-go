@@ -1,3 +1,7 @@
+2020-07-23 Version: v1.61.345
+- Generated 2018-01-20 for `Iot`.
+- Update OTA API, including GenerateOTAUploadURL.
+
 2020-07-23 Version: v1.61.344
 - Generated 2017-05-25 for `Dyplsapi`.
 - Add AddSecretBlacklist and DeleteSecretBlacklist.

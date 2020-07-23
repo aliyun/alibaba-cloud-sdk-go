@@ -72,6 +72,7 @@ type Data struct {
 	DriverId               string                `json:"DriverId" xml:"DriverId"`
 	CurrentPage            int                   `json:"CurrentPage" xml:"CurrentPage"`
 	Signature              string                `json:"Signature" xml:"Signature"`
+	ObjectStorage          string                `json:"ObjectStorage" xml:"ObjectStorage"`
 	DeviceCount            int                   `json:"DeviceCount" xml:"DeviceCount"`
 	ProtocolType           string                `json:"ProtocolType" xml:"ProtocolType"`
 	AuthType               string                `json:"AuthType" xml:"AuthType"`
