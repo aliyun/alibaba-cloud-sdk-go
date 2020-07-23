@@ -91,7 +91,8 @@ func CreateListResourceTagsRequest() (request *ListResourceTagsRequest) {
 	request = &ListResourceTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "ListResourceTags", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "ListResourceTags", "kms-service", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

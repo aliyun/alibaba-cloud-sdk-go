@@ -90,7 +90,8 @@ func CreateDeleteKeyMaterialRequest() (request *DeleteKeyMaterialRequest) {
 	request = &DeleteKeyMaterialRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "DeleteKeyMaterial", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "DeleteKeyMaterial", "kms-service", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

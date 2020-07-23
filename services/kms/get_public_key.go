@@ -94,7 +94,8 @@ func CreateGetPublicKeyRequest() (request *GetPublicKeyRequest) {
 	request = &GetPublicKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "GetPublicKey", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "GetPublicKey", "kms-service", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

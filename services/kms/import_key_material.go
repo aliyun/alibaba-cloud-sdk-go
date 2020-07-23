@@ -93,7 +93,8 @@ func CreateImportKeyMaterialRequest() (request *ImportKeyMaterialRequest) {
 	request = &ImportKeyMaterialRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "ImportKeyMaterial", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "ImportKeyMaterial", "kms-service", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

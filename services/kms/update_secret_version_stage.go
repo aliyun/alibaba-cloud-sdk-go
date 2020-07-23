@@ -94,7 +94,8 @@ func CreateUpdateSecretVersionStageRequest() (request *UpdateSecretVersionStageR
 	request = &UpdateSecretVersionStageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "UpdateSecretVersionStage", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "UpdateSecretVersionStage", "kms-service", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

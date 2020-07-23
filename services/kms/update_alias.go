@@ -91,7 +91,8 @@ func CreateUpdateAliasRequest() (request *UpdateAliasRequest) {
 	request = &UpdateAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "UpdateAlias", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "UpdateAlias", "kms-service", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

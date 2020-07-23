@@ -96,7 +96,8 @@ func CreateListAliasesByKeyIdRequest() (request *ListAliasesByKeyIdRequest) {
 	request = &ListAliasesByKeyIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "ListAliasesByKeyId", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "ListAliasesByKeyId", "kms-service", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

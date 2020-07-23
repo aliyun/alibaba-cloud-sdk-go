@@ -96,7 +96,8 @@ func CreateListSecretsRequest() (request *ListSecretsRequest) {
 	request = &ListSecretsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "ListSecrets", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "ListSecrets", "kms-service", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -91,7 +91,8 @@ func CreateUpdateKeyDescriptionRequest() (request *UpdateKeyDescriptionRequest) 
 	request = &UpdateKeyDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "UpdateKeyDescription", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "UpdateKeyDescription", "kms-service", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

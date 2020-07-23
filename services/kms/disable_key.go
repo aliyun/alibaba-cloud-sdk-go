@@ -90,7 +90,8 @@ func CreateDisableKeyRequest() (request *DisableKeyRequest) {
 	request = &DisableKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "DisableKey", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "DisableKey", "kms-service", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

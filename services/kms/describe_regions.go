@@ -90,7 +90,8 @@ func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 	request = &DescribeRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "DescribeRegions", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "DescribeRegions", "kms-service", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

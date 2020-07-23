@@ -97,7 +97,8 @@ func CreateGenerateDataKeyRequest() (request *GenerateDataKeyRequest) {
 	request = &GenerateDataKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "GenerateDataKey", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "GenerateDataKey", "kms-service", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
