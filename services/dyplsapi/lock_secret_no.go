@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// OperateAxgGroup invokes the dyplsapi.OperateAxgGroup API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/operateaxggroup.html
-func (client *Client) OperateAxgGroup(request *OperateAxgGroupRequest) (response *OperateAxgGroupResponse, err error) {
-	response = CreateOperateAxgGroupResponse()
+// LockSecretNo invokes the dyplsapi.LockSecretNo API synchronously
+// api document: https://help.aliyun.com/api/dyplsapi/locksecretno.html
+func (client *Client) LockSecretNo(request *LockSecretNoRequest) (response *LockSecretNoResponse, err error) {
+	response = CreateLockSecretNoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// OperateAxgGroupWithChan invokes the dyplsapi.OperateAxgGroup API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/operateaxggroup.html
+// LockSecretNoWithChan invokes the dyplsapi.LockSecretNo API asynchronously
+// api document: https://help.aliyun.com/api/dyplsapi/locksecretno.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) OperateAxgGroupWithChan(request *OperateAxgGroupRequest) (<-chan *OperateAxgGroupResponse, <-chan error) {
-	responseChan := make(chan *OperateAxgGroupResponse, 1)
+func (client *Client) LockSecretNoWithChan(request *LockSecretNoRequest) (<-chan *LockSecretNoResponse, <-chan error) {
+	responseChan := make(chan *LockSecretNoResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.OperateAxgGroup(request)
+		response, err := client.LockSecretNo(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) OperateAxgGroupWithChan(request *OperateAxgGroupRequest) (
 	return responseChan, errChan
 }
 
-// OperateAxgGroupWithCallback invokes the dyplsapi.OperateAxgGroup API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/operateaxggroup.html
+// LockSecretNoWithCallback invokes the dyplsapi.LockSecretNo API asynchronously
+// api document: https://help.aliyun.com/api/dyplsapi/locksecretno.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) OperateAxgGroupWithCallback(request *OperateAxgGroupRequest, callback func(response *OperateAxgGroupResponse, err error)) <-chan int {
+func (client *Client) LockSecretNoWithCallback(request *LockSecretNoRequest, callback func(response *LockSecretNoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *OperateAxgGroupResponse
+		var response *LockSecretNoResponse
 		var err error
 		defer close(result)
-		response, err = client.OperateAxgGroup(request)
+		response, err = client.LockSecretNo(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,39 +73,37 @@ func (client *Client) OperateAxgGroupWithCallback(request *OperateAxgGroupReques
 	return result
 }
 
-// OperateAxgGroupRequest is the request struct for api OperateAxgGroup
-type OperateAxgGroupRequest struct {
+// LockSecretNoRequest is the request struct for api LockSecretNo
+type LockSecretNoRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Numbers              string           `position:"Query" name:"Numbers"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	GroupId              requests.Integer `position:"Query" name:"GroupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PoolKey              string           `position:"Query" name:"PoolKey"`
-	OperateType          string           `position:"Query" name:"OperateType"`
+	SecretNo             string           `position:"Query" name:"SecretNo"`
 }
 
-// OperateAxgGroupResponse is the response struct for api OperateAxgGroup
-type OperateAxgGroupResponse struct {
+// LockSecretNoResponse is the response struct for api LockSecretNo
+type LockSecretNoResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateOperateAxgGroupRequest creates a request to invoke OperateAxgGroup API
-func CreateOperateAxgGroupRequest() (request *OperateAxgGroupRequest) {
-	request = &OperateAxgGroupRequest{
+// CreateLockSecretNoRequest creates a request to invoke LockSecretNo API
+func CreateLockSecretNoRequest() (request *LockSecretNoRequest) {
+	request = &LockSecretNoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "OperateAxgGroup", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "LockSecretNo", "dypls", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateOperateAxgGroupResponse creates a response to parse from OperateAxgGroup response
-func CreateOperateAxgGroupResponse() (response *OperateAxgGroupResponse) {
-	response = &OperateAxgGroupResponse{
+// CreateLockSecretNoResponse creates a response to parse from LockSecretNo response
+func CreateLockSecretNoResponse() (response *LockSecretNoResponse) {
+	response = &LockSecretNoResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

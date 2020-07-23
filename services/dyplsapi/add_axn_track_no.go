@@ -99,6 +99,7 @@ func CreateAddAxnTrackNoRequest() (request *AddAxnTrackNoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "AddAxnTrackNo", "dypls", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

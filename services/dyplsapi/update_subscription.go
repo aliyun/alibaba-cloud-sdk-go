@@ -82,6 +82,7 @@ type UpdateSubscriptionRequest struct {
 	SubsId               string           `position:"Query" name:"SubsId"`
 	PhoneNoX             string           `position:"Query" name:"PhoneNoX"`
 	RingConfig           string           `position:"Query" name:"RingConfig"`
+	ASRStatus            requests.Boolean `position:"Query" name:"ASRStatus"`
 	PhoneNoB             string           `position:"Query" name:"PhoneNoB"`
 	PhoneNoA             string           `position:"Query" name:"PhoneNoA"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -92,6 +93,7 @@ type UpdateSubscriptionRequest struct {
 	OutId                string           `position:"Query" name:"OutId"`
 	IsRecordingEnabled   requests.Boolean `position:"Query" name:"IsRecordingEnabled"`
 	OperateType          string           `position:"Query" name:"OperateType"`
+	ASRModelId           string           `position:"Query" name:"ASRModelId"`
 	CallRestrict         string           `position:"Query" name:"CallRestrict"`
 }
 
@@ -109,6 +111,7 @@ func CreateUpdateSubscriptionRequest() (request *UpdateSubscriptionRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "UpdateSubscription", "dypls", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// OperateAxgGroup invokes the dyplsapi.OperateAxgGroup API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/operateaxggroup.html
-func (client *Client) OperateAxgGroup(request *OperateAxgGroupRequest) (response *OperateAxgGroupResponse, err error) {
-	response = CreateOperateAxgGroupResponse()
+// AddSecretBlacklist invokes the dyplsapi.AddSecretBlacklist API synchronously
+// api document: https://help.aliyun.com/api/dyplsapi/addsecretblacklist.html
+func (client *Client) AddSecretBlacklist(request *AddSecretBlacklistRequest) (response *AddSecretBlacklistResponse, err error) {
+	response = CreateAddSecretBlacklistResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// OperateAxgGroupWithChan invokes the dyplsapi.OperateAxgGroup API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/operateaxggroup.html
+// AddSecretBlacklistWithChan invokes the dyplsapi.AddSecretBlacklist API asynchronously
+// api document: https://help.aliyun.com/api/dyplsapi/addsecretblacklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) OperateAxgGroupWithChan(request *OperateAxgGroupRequest) (<-chan *OperateAxgGroupResponse, <-chan error) {
-	responseChan := make(chan *OperateAxgGroupResponse, 1)
+func (client *Client) AddSecretBlacklistWithChan(request *AddSecretBlacklistRequest) (<-chan *AddSecretBlacklistResponse, <-chan error) {
+	responseChan := make(chan *AddSecretBlacklistResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.OperateAxgGroup(request)
+		response, err := client.AddSecretBlacklist(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) OperateAxgGroupWithChan(request *OperateAxgGroupRequest) (
 	return responseChan, errChan
 }
 
-// OperateAxgGroupWithCallback invokes the dyplsapi.OperateAxgGroup API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/operateaxggroup.html
+// AddSecretBlacklistWithCallback invokes the dyplsapi.AddSecretBlacklist API asynchronously
+// api document: https://help.aliyun.com/api/dyplsapi/addsecretblacklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) OperateAxgGroupWithCallback(request *OperateAxgGroupRequest, callback func(response *OperateAxgGroupResponse, err error)) <-chan int {
+func (client *Client) AddSecretBlacklistWithCallback(request *AddSecretBlacklistRequest, callback func(response *AddSecretBlacklistResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *OperateAxgGroupResponse
+		var response *AddSecretBlacklistResponse
 		var err error
 		defer close(result)
-		response, err = client.OperateAxgGroup(request)
+		response, err = client.AddSecretBlacklist(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,39 +73,39 @@ func (client *Client) OperateAxgGroupWithCallback(request *OperateAxgGroupReques
 	return result
 }
 
-// OperateAxgGroupRequest is the request struct for api OperateAxgGroup
-type OperateAxgGroupRequest struct {
+// AddSecretBlacklistRequest is the request struct for api AddSecretBlacklist
+type AddSecretBlacklistRequest struct {
 	*requests.RpcRequest
+	BlackType            string           `position:"Query" name:"BlackType"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Numbers              string           `position:"Query" name:"Numbers"`
+	Remark               string           `position:"Query" name:"Remark"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	GroupId              requests.Integer `position:"Query" name:"GroupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PoolKey              string           `position:"Query" name:"PoolKey"`
-	OperateType          string           `position:"Query" name:"OperateType"`
+	BlackNo              string           `position:"Query" name:"BlackNo"`
 }
 
-// OperateAxgGroupResponse is the response struct for api OperateAxgGroup
-type OperateAxgGroupResponse struct {
+// AddSecretBlacklistResponse is the response struct for api AddSecretBlacklist
+type AddSecretBlacklistResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateOperateAxgGroupRequest creates a request to invoke OperateAxgGroup API
-func CreateOperateAxgGroupRequest() (request *OperateAxgGroupRequest) {
-	request = &OperateAxgGroupRequest{
+// CreateAddSecretBlacklistRequest creates a request to invoke AddSecretBlacklist API
+func CreateAddSecretBlacklistRequest() (request *AddSecretBlacklistRequest) {
+	request = &AddSecretBlacklistRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "OperateAxgGroup", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "AddSecretBlacklist", "dypls", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateOperateAxgGroupResponse creates a response to parse from OperateAxgGroup response
-func CreateOperateAxgGroupResponse() (response *OperateAxgGroupResponse) {
-	response = &OperateAxgGroupResponse{
+// CreateAddSecretBlacklistResponse creates a response to parse from AddSecretBlacklist response
+func CreateAddSecretBlacklistResponse() (response *AddSecretBlacklistResponse) {
+	response = &AddSecretBlacklistResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

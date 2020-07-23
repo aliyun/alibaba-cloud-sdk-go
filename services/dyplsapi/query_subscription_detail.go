@@ -100,6 +100,7 @@ func CreateQuerySubscriptionDetailRequest() (request *QuerySubscriptionDetailReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "QuerySubscriptionDetail", "dypls", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

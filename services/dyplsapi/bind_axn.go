@@ -80,6 +80,7 @@ type BindAxnRequest struct {
 	CallDisplayType      requests.Integer `position:"Query" name:"CallDisplayType"`
 	PhoneNoX             string           `position:"Query" name:"PhoneNoX"`
 	RingConfig           string           `position:"Query" name:"RingConfig"`
+	ASRStatus            requests.Boolean `position:"Query" name:"ASRStatus"`
 	PhoneNoB             string           `position:"Query" name:"PhoneNoB"`
 	PhoneNoA             string           `position:"Query" name:"PhoneNoA"`
 	ExpectCity           string           `position:"Query" name:"ExpectCity"`
@@ -91,6 +92,7 @@ type BindAxnRequest struct {
 	IsRecordingEnabled   requests.Boolean `position:"Query" name:"IsRecordingEnabled"`
 	OutId                string           `position:"Query" name:"OutId"`
 	NoType               string           `position:"Query" name:"NoType"`
+	ASRModelId           string           `position:"Query" name:"ASRModelId"`
 }
 
 // BindAxnResponse is the response struct for api BindAxn
@@ -108,6 +110,7 @@ func CreateBindAxnRequest() (request *BindAxnRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "BindAxn", "dypls", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

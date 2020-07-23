@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateAxgGroup invokes the dyplsapi.CreateAxgGroup API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/createaxggroup.html
-func (client *Client) CreateAxgGroup(request *CreateAxgGroupRequest) (response *CreateAxgGroupResponse, err error) {
-	response = CreateCreateAxgGroupResponse()
+// DeleteSecretBlacklist invokes the dyplsapi.DeleteSecretBlacklist API synchronously
+// api document: https://help.aliyun.com/api/dyplsapi/deletesecretblacklist.html
+func (client *Client) DeleteSecretBlacklist(request *DeleteSecretBlacklistRequest) (response *DeleteSecretBlacklistResponse, err error) {
+	response = CreateDeleteSecretBlacklistResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateAxgGroupWithChan invokes the dyplsapi.CreateAxgGroup API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/createaxggroup.html
+// DeleteSecretBlacklistWithChan invokes the dyplsapi.DeleteSecretBlacklist API asynchronously
+// api document: https://help.aliyun.com/api/dyplsapi/deletesecretblacklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateAxgGroupWithChan(request *CreateAxgGroupRequest) (<-chan *CreateAxgGroupResponse, <-chan error) {
-	responseChan := make(chan *CreateAxgGroupResponse, 1)
+func (client *Client) DeleteSecretBlacklistWithChan(request *DeleteSecretBlacklistRequest) (<-chan *DeleteSecretBlacklistResponse, <-chan error) {
+	responseChan := make(chan *DeleteSecretBlacklistResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateAxgGroup(request)
+		response, err := client.DeleteSecretBlacklist(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateAxgGroupWithChan(request *CreateAxgGroupRequest) (<-
 	return responseChan, errChan
 }
 
-// CreateAxgGroupWithCallback invokes the dyplsapi.CreateAxgGroup API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/createaxggroup.html
+// DeleteSecretBlacklistWithCallback invokes the dyplsapi.DeleteSecretBlacklist API asynchronously
+// api document: https://help.aliyun.com/api/dyplsapi/deletesecretblacklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateAxgGroupWithCallback(request *CreateAxgGroupRequest, callback func(response *CreateAxgGroupResponse, err error)) <-chan int {
+func (client *Client) DeleteSecretBlacklistWithCallback(request *DeleteSecretBlacklistRequest, callback func(response *DeleteSecretBlacklistResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateAxgGroupResponse
+		var response *DeleteSecretBlacklistResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateAxgGroup(request)
+		response, err = client.DeleteSecretBlacklist(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,40 +73,39 @@ func (client *Client) CreateAxgGroupWithCallback(request *CreateAxgGroupRequest,
 	return result
 }
 
-// CreateAxgGroupRequest is the request struct for api CreateAxgGroup
-type CreateAxgGroupRequest struct {
+// DeleteSecretBlacklistRequest is the request struct for api DeleteSecretBlacklist
+type DeleteSecretBlacklistRequest struct {
 	*requests.RpcRequest
+	BlackType            string           `position:"Query" name:"BlackType"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Numbers              string           `position:"Query" name:"Numbers"`
 	Remark               string           `position:"Query" name:"Remark"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PoolKey              string           `position:"Query" name:"PoolKey"`
-	Name                 string           `position:"Query" name:"Name"`
+	BlackNo              string           `position:"Query" name:"BlackNo"`
 }
 
-// CreateAxgGroupResponse is the response struct for api CreateAxgGroup
-type CreateAxgGroupResponse struct {
+// DeleteSecretBlacklistResponse is the response struct for api DeleteSecretBlacklist
+type DeleteSecretBlacklistResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	GroupId   int64  `json:"GroupId" xml:"GroupId"`
 }
 
-// CreateCreateAxgGroupRequest creates a request to invoke CreateAxgGroup API
-func CreateCreateAxgGroupRequest() (request *CreateAxgGroupRequest) {
-	request = &CreateAxgGroupRequest{
+// CreateDeleteSecretBlacklistRequest creates a request to invoke DeleteSecretBlacklist API
+func CreateDeleteSecretBlacklistRequest() (request *DeleteSecretBlacklistRequest) {
+	request = &DeleteSecretBlacklistRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "CreateAxgGroup", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "DeleteSecretBlacklist", "dypls", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateAxgGroupResponse creates a response to parse from CreateAxgGroup response
-func CreateCreateAxgGroupResponse() (response *CreateAxgGroupResponse) {
-	response = &CreateAxgGroupResponse{
+// CreateDeleteSecretBlacklistResponse creates a response to parse from DeleteSecretBlacklist response
+func CreateDeleteSecretBlacklistResponse() (response *DeleteSecretBlacklistResponse) {
+	response = &DeleteSecretBlacklistResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -97,6 +97,7 @@ func CreateReleaseSecretNoRequest() (request *ReleaseSecretNoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "ReleaseSecretNo", "dypls", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

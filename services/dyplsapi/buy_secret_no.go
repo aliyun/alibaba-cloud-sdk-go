@@ -101,6 +101,7 @@ func CreateBuySecretNoRequest() (request *BuySecretNoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "BuySecretNo", "dypls", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -98,6 +98,7 @@ func CreateQuerySubsIdRequest() (request *QuerySubsIdRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "QuerySubsId", "dypls", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

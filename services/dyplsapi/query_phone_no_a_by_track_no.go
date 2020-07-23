@@ -98,6 +98,7 @@ func CreateQueryPhoneNoAByTrackNoRequest() (request *QueryPhoneNoAByTrackNoReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "QueryPhoneNoAByTrackNo", "dypls", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

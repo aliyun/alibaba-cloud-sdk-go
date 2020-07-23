@@ -28,4 +28,6 @@ type SecretBindDetailDTO struct {
 	NeedRecord   bool   `json:"NeedRecord" xml:"NeedRecord"`
 	CallRestrict string `json:"CallRestrict" xml:"CallRestrict"`
 	Status       int64  `json:"Status" xml:"Status"`
+	ASRStatus    bool   `json:"ASRStatus" xml:"ASRStatus"`
+	ASRModelId   string `json:"ASRModelId" xml:"ASRModelId"`
 }

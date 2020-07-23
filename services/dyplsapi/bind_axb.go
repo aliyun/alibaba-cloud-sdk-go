@@ -80,6 +80,7 @@ type BindAxbRequest struct {
 	CallDisplayType      requests.Integer `position:"Query" name:"CallDisplayType"`
 	PhoneNoX             string           `position:"Query" name:"PhoneNoX"`
 	RingConfig           string           `position:"Query" name:"RingConfig"`
+	ASRStatus            requests.Boolean `position:"Query" name:"ASRStatus"`
 	PhoneNoB             string           `position:"Query" name:"PhoneNoB"`
 	PhoneNoA             string           `position:"Query" name:"PhoneNoA"`
 	ExpectCity           string           `position:"Query" name:"ExpectCity"`
@@ -90,6 +91,7 @@ type BindAxbRequest struct {
 	Expiration           string           `position:"Query" name:"Expiration"`
 	IsRecordingEnabled   requests.Boolean `position:"Query" name:"IsRecordingEnabled"`
 	OutId                string           `position:"Query" name:"OutId"`
+	ASRModelId           string           `position:"Query" name:"ASRModelId"`
 	CallRestrict         string           `position:"Query" name:"CallRestrict"`
 }
 
@@ -108,6 +110,7 @@ func CreateBindAxbRequest() (request *BindAxbRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "BindAxb", "dypls", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

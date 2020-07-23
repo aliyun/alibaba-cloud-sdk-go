@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// OperateAxgGroup invokes the dyplsapi.OperateAxgGroup API synchronously
-// api document: https://help.aliyun.com/api/dyplsapi/operateaxggroup.html
-func (client *Client) OperateAxgGroup(request *OperateAxgGroupRequest) (response *OperateAxgGroupResponse, err error) {
-	response = CreateOperateAxgGroupResponse()
+// GetSecretAsrDetail invokes the dyplsapi.GetSecretAsrDetail API synchronously
+// api document: https://help.aliyun.com/api/dyplsapi/getsecretasrdetail.html
+func (client *Client) GetSecretAsrDetail(request *GetSecretAsrDetailRequest) (response *GetSecretAsrDetailResponse, err error) {
+	response = CreateGetSecretAsrDetailResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// OperateAxgGroupWithChan invokes the dyplsapi.OperateAxgGroup API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/operateaxggroup.html
+// GetSecretAsrDetailWithChan invokes the dyplsapi.GetSecretAsrDetail API asynchronously
+// api document: https://help.aliyun.com/api/dyplsapi/getsecretasrdetail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) OperateAxgGroupWithChan(request *OperateAxgGroupRequest) (<-chan *OperateAxgGroupResponse, <-chan error) {
-	responseChan := make(chan *OperateAxgGroupResponse, 1)
+func (client *Client) GetSecretAsrDetailWithChan(request *GetSecretAsrDetailRequest) (<-chan *GetSecretAsrDetailResponse, <-chan error) {
+	responseChan := make(chan *GetSecretAsrDetailResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.OperateAxgGroup(request)
+		response, err := client.GetSecretAsrDetail(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) OperateAxgGroupWithChan(request *OperateAxgGroupRequest) (
 	return responseChan, errChan
 }
 
-// OperateAxgGroupWithCallback invokes the dyplsapi.OperateAxgGroup API asynchronously
-// api document: https://help.aliyun.com/api/dyplsapi/operateaxggroup.html
+// GetSecretAsrDetailWithCallback invokes the dyplsapi.GetSecretAsrDetail API asynchronously
+// api document: https://help.aliyun.com/api/dyplsapi/getsecretasrdetail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) OperateAxgGroupWithCallback(request *OperateAxgGroupRequest, callback func(response *OperateAxgGroupResponse, err error)) <-chan int {
+func (client *Client) GetSecretAsrDetailWithCallback(request *GetSecretAsrDetailRequest, callback func(response *GetSecretAsrDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *OperateAxgGroupResponse
+		var response *GetSecretAsrDetailResponse
 		var err error
 		defer close(result)
-		response, err = client.OperateAxgGroup(request)
+		response, err = client.GetSecretAsrDetail(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,39 +73,39 @@ func (client *Client) OperateAxgGroupWithCallback(request *OperateAxgGroupReques
 	return result
 }
 
-// OperateAxgGroupRequest is the request struct for api OperateAxgGroup
-type OperateAxgGroupRequest struct {
+// GetSecretAsrDetailRequest is the request struct for api GetSecretAsrDetail
+type GetSecretAsrDetailRequest struct {
 	*requests.RpcRequest
+	CallId               string           `position:"Query" name:"CallId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Numbers              string           `position:"Query" name:"Numbers"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	GroupId              requests.Integer `position:"Query" name:"GroupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	CallTime             string           `position:"Query" name:"CallTime"`
 	PoolKey              string           `position:"Query" name:"PoolKey"`
-	OperateType          string           `position:"Query" name:"OperateType"`
 }
 
-// OperateAxgGroupResponse is the response struct for api OperateAxgGroup
-type OperateAxgGroupResponse struct {
+// GetSecretAsrDetailResponse is the response struct for api GetSecretAsrDetail
+type GetSecretAsrDetailResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	Data      string `json:"Data" xml:"Data"`
 }
 
-// CreateOperateAxgGroupRequest creates a request to invoke OperateAxgGroup API
-func CreateOperateAxgGroupRequest() (request *OperateAxgGroupRequest) {
-	request = &OperateAxgGroupRequest{
+// CreateGetSecretAsrDetailRequest creates a request to invoke GetSecretAsrDetail API
+func CreateGetSecretAsrDetailRequest() (request *GetSecretAsrDetailRequest) {
+	request = &GetSecretAsrDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "OperateAxgGroup", "dypls", "openAPI")
+	request.InitWithApiInfo("Dyplsapi", "2017-05-25", "GetSecretAsrDetail", "dypls", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateOperateAxgGroupResponse creates a response to parse from OperateAxgGroup response
-func CreateOperateAxgGroupResponse() (response *OperateAxgGroupResponse) {
-	response = &OperateAxgGroupResponse{
+// CreateGetSecretAsrDetailResponse creates a response to parse from GetSecretAsrDetail response
+func CreateGetSecretAsrDetailResponse() (response *GetSecretAsrDetailResponse) {
+	response = &GetSecretAsrDetailResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
