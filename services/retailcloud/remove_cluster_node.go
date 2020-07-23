@@ -96,6 +96,7 @@ func CreateRemoveClusterNodeRequest() (request *RemoveClusterNodeRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("retailcloud", "2018-03-13", "RemoveClusterNode", "retailcloud", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

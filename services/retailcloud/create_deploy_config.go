@@ -84,6 +84,7 @@ type CreateDeployConfigRequest struct {
 	EnvType       string           `position:"Query" name:"EnvType"`
 	Name          string           `position:"Query" name:"Name"`
 	SecretList    *[]string        `position:"Query" name:"SecretList"  type:"Repeated"`
+	CronJob       string           `position:"Query" name:"CronJob"`
 	Deployment    string           `position:"Query" name:"Deployment"`
 }
 
@@ -102,6 +103,7 @@ func CreateCreateDeployConfigRequest() (request *CreateDeployConfigRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateDeployConfig", "retailcloud", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

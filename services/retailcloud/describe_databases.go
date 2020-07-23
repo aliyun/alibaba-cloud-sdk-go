@@ -94,6 +94,7 @@ func CreateDescribeDatabasesRequest() (request *DescribeDatabasesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeDatabases", "retailcloud", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

@@ -99,6 +99,7 @@ func CreateCreateEnvironmentRequest() (request *CreateEnvironmentRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateEnvironment", "retailcloud", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

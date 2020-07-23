@@ -102,6 +102,7 @@ func CreateCreatePersistentVolumeRequest() (request *CreatePersistentVolumeReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreatePersistentVolume", "retailcloud", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -34,6 +34,7 @@ type Result struct {
 	Id                      int64                `json:"Id" xml:"Id"`
 	DeployOrderId           int64                `json:"DeployOrderId" xml:"DeployOrderId"`
 	TotalBackupSize         int64                `json:"TotalBackupSize" xml:"TotalBackupSize"`
+	PodName                 string               `json:"PodName" xml:"PodName"`
 	Success                 bool                 `json:"Success" xml:"Success"`
 	Admitted                bool                 `json:"Admitted" xml:"Admitted"`
 	ServiceId               int64                `json:"ServiceId" xml:"ServiceId"`
@@ -62,6 +63,7 @@ type Result struct {
 	DeployOrderName         string               `json:"DeployOrderName" xml:"DeployOrderName"`
 	PageNumber              string               `json:"PageNumber" xml:"PageNumber"`
 	EstablishedTimeout      int                  `json:"EstablishedTimeout" xml:"EstablishedTimeout"`
+	JobLog                  string               `json:"JobLog" xml:"JobLog"`
 	Protocol                string               `json:"Protocol" xml:"Protocol"`
 	EnvName                 string               `json:"EnvName" xml:"EnvName"`
 	AppSchemaId             int64                `json:"AppSchemaId" xml:"AppSchemaId"`
@@ -82,6 +84,7 @@ type Result struct {
 	Accounts                []AccountsItem       `json:"Accounts" xml:"Accounts"`
 	DeployStepList          []DeployLogStepRC    `json:"DeployStepList" xml:"DeployStepList"`
 	Items                   []Backup             `json:"Items" xml:"Items"`
+	Events                  []Event              `json:"Events" xml:"Events"`
 	MiddleWareInfoList      []MiddleWareInfo     `json:"MiddleWareInfoList" xml:"MiddleWareInfoList"`
 	Databases               []DatabasesItem      `json:"Databases" xml:"Databases"`
 }

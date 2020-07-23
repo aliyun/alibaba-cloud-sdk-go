@@ -96,6 +96,7 @@ func CreateAddClusterNodeRequest() (request *AddClusterNodeRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("retailcloud", "2018-03-13", "AddClusterNode", "retailcloud", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

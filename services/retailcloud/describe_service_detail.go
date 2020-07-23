@@ -95,6 +95,7 @@ func CreateDescribeServiceDetailRequest() (request *DescribeServiceDetailRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeServiceDetail", "retailcloud", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

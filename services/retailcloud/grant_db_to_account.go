@@ -96,6 +96,7 @@ func CreateGrantDbToAccountRequest() (request *GrantDbToAccountRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("retailcloud", "2018-03-13", "GrantDbToAccount", "retailcloud", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

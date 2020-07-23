@@ -94,6 +94,7 @@ func CreateResumeDeployRequest() (request *ResumeDeployRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("retailcloud", "2018-03-13", "ResumeDeploy", "retailcloud", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

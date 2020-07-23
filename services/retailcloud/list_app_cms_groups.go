@@ -100,6 +100,7 @@ func CreateListAppCmsGroupsRequest() (request *ListAppCmsGroupsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListAppCmsGroups", "retailcloud", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

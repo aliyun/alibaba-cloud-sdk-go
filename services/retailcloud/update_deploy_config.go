@@ -83,6 +83,7 @@ type UpdateDeployConfigRequest struct {
 	AppId         requests.Integer `position:"Query" name:"AppId"`
 	SecretList    *[]string        `position:"Query" name:"SecretList"  type:"Repeated"`
 	Id            requests.Integer `position:"Query" name:"Id"`
+	CronJob       string           `position:"Query" name:"CronJob"`
 	Deployment    string           `position:"Query" name:"Deployment"`
 }
 
@@ -101,6 +102,7 @@ func CreateUpdateDeployConfigRequest() (request *UpdateDeployConfigRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("retailcloud", "2018-03-13", "UpdateDeployConfig", "retailcloud", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

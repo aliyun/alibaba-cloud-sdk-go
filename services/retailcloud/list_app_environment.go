@@ -101,6 +101,7 @@ func CreateListAppEnvironmentRequest() (request *ListAppEnvironmentRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListAppEnvironment", "retailcloud", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

@@ -96,6 +96,7 @@ func CreateBatchAddServersRequest() (request *BatchAddServersRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("retailcloud", "2018-03-13", "BatchAddServers", "retailcloud", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

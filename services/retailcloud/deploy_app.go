@@ -102,6 +102,7 @@ func CreateDeployAppRequest() (request *DeployAppRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeployApp", "retailcloud", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

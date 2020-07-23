@@ -101,6 +101,7 @@ func CreateListPodsRequest() (request *ListPodsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListPods", "retailcloud", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
