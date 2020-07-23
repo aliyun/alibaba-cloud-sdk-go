@@ -1,3 +1,7 @@
+2020-07-23 Version: v1.61.343
+- Generated 2016-01-20 for `Kms`.
+- Add GenerateAndExportDataKey, ExportDataKey, ReEncrypt api.
+
 2020-07-23 Version: v1.61.342
 - Generated 2016-01-20 for `Kms`.
 - Add GenerateAndExportDataKey, ExportDataKey, ReEncrypt api.
