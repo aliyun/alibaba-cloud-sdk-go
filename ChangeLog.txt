@@ -1,3 +1,7 @@
+2020-07-24 Version: v1.61.349
+- Generated 2019-09-16 for `alikafka`.
+- Support security group param when start instance.
+
 2020-07-24 Version: v1.61.348
 - Generated 2020-04-14 for `codeup`.
 - First build.

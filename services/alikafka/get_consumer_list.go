@@ -97,6 +97,7 @@ func CreateGetConsumerListRequest() (request *GetConsumerListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("alikafka", "2019-09-16", "GetConsumerList", "alikafka", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

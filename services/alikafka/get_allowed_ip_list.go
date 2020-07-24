@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetTopicStatus invokes the alikafka.GetTopicStatus API synchronously
-// api document: https://help.aliyun.com/api/alikafka/gettopicstatus.html
-func (client *Client) GetTopicStatus(request *GetTopicStatusRequest) (response *GetTopicStatusResponse, err error) {
-	response = CreateGetTopicStatusResponse()
+// GetAllowedIpList invokes the alikafka.GetAllowedIpList API synchronously
+// api document: https://help.aliyun.com/api/alikafka/getallowediplist.html
+func (client *Client) GetAllowedIpList(request *GetAllowedIpListRequest) (response *GetAllowedIpListResponse, err error) {
+	response = CreateGetAllowedIpListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetTopicStatusWithChan invokes the alikafka.GetTopicStatus API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/gettopicstatus.html
+// GetAllowedIpListWithChan invokes the alikafka.GetAllowedIpList API asynchronously
+// api document: https://help.aliyun.com/api/alikafka/getallowediplist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) GetTopicStatusWithChan(request *GetTopicStatusRequest) (<-chan *GetTopicStatusResponse, <-chan error) {
-	responseChan := make(chan *GetTopicStatusResponse, 1)
+func (client *Client) GetAllowedIpListWithChan(request *GetAllowedIpListRequest) (<-chan *GetAllowedIpListResponse, <-chan error) {
+	responseChan := make(chan *GetAllowedIpListResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetTopicStatus(request)
+		response, err := client.GetAllowedIpList(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) GetTopicStatusWithChan(request *GetTopicStatusRequest) (<-
 	return responseChan, errChan
 }
 
-// GetTopicStatusWithCallback invokes the alikafka.GetTopicStatus API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/gettopicstatus.html
+// GetAllowedIpListWithCallback invokes the alikafka.GetAllowedIpList API asynchronously
+// api document: https://help.aliyun.com/api/alikafka/getallowediplist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) GetTopicStatusWithCallback(request *GetTopicStatusRequest, callback func(response *GetTopicStatusResponse, err error)) <-chan int {
+func (client *Client) GetAllowedIpListWithCallback(request *GetAllowedIpListRequest, callback func(response *GetAllowedIpListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetTopicStatusResponse
+		var response *GetAllowedIpListResponse
 		var err error
 		defer close(result)
-		response, err = client.GetTopicStatus(request)
+		response, err = client.GetAllowedIpList(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,36 +73,35 @@ func (client *Client) GetTopicStatusWithCallback(request *GetTopicStatusRequest,
 	return result
 }
 
-// GetTopicStatusRequest is the request struct for api GetTopicStatus
-type GetTopicStatusRequest struct {
+// GetAllowedIpListRequest is the request struct for api GetAllowedIpList
+type GetAllowedIpListRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
-	Topic      string `position:"Query" name:"Topic"`
 }
 
-// GetTopicStatusResponse is the response struct for api GetTopicStatus
-type GetTopicStatusResponse struct {
+// GetAllowedIpListResponse is the response struct for api GetAllowedIpList
+type GetAllowedIpListResponse struct {
 	*responses.BaseResponse
 	Success     bool        `json:"Success" xml:"Success"`
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	Code        int         `json:"Code" xml:"Code"`
 	Message     string      `json:"Message" xml:"Message"`
-	TopicStatus TopicStatus `json:"TopicStatus" xml:"TopicStatus"`
+	AllowedList AllowedList `json:"AllowedList" xml:"AllowedList"`
 }
 
-// CreateGetTopicStatusRequest creates a request to invoke GetTopicStatus API
-func CreateGetTopicStatusRequest() (request *GetTopicStatusRequest) {
-	request = &GetTopicStatusRequest{
+// CreateGetAllowedIpListRequest creates a request to invoke GetAllowedIpList API
+func CreateGetAllowedIpListRequest() (request *GetAllowedIpListRequest) {
+	request = &GetAllowedIpListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2019-09-16", "GetTopicStatus", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "GetAllowedIpList", "alikafka", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetTopicStatusResponse creates a response to parse from GetTopicStatus response
-func CreateGetTopicStatusResponse() (response *GetTopicStatusResponse) {
-	response = &GetTopicStatusResponse{
+// CreateGetAllowedIpListResponse creates a response to parse from GetAllowedIpList response
+func CreateGetAllowedIpListResponse() (response *GetAllowedIpListResponse) {
+	response = &GetAllowedIpListResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

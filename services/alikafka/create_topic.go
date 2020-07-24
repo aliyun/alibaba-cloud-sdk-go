@@ -99,6 +99,7 @@ func CreateCreateTopicRequest() (request *CreateTopicRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("alikafka", "2019-09-16", "CreateTopic", "alikafka", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

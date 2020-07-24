@@ -99,6 +99,7 @@ func CreateTagResourcesRequest() (request *TagResourcesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("alikafka", "2019-09-16", "TagResources", "alikafka", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

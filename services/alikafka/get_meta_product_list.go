@@ -95,6 +95,7 @@ func CreateGetMetaProductListRequest() (request *GetMetaProductListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("alikafka", "2019-09-16", "GetMetaProductList", "alikafka", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

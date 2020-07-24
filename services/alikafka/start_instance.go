@@ -77,12 +77,14 @@ func (client *Client) StartInstanceWithCallback(request *StartInstanceRequest, c
 type StartInstanceRequest struct {
 	*requests.RpcRequest
 	IsEipInner           requests.Boolean `position:"Query" name:"IsEipInner"`
+	SecurityGroup        string           `position:"Query" name:"SecurityGroup"`
 	DeployModule         string           `position:"Query" name:"DeployModule"`
 	IsSetUserAndPassword requests.Boolean `position:"Query" name:"IsSetUserAndPassword"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	Password             string           `position:"Query" name:"Password"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	VpcId                string           `position:"Query" name:"VpcId"`
+	CrossZone            requests.Boolean `position:"Query" name:"CrossZone"`
 	Name                 string           `position:"Query" name:"Name"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 	Username             string           `position:"Query" name:"Username"`
@@ -103,6 +105,7 @@ func CreateStartInstanceRequest() (request *StartInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("alikafka", "2019-09-16", "StartInstance", "alikafka", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

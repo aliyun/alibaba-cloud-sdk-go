@@ -96,6 +96,7 @@ func CreateModifyTopicRemarkRequest() (request *ModifyTopicRemarkRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("alikafka", "2019-09-16", "ModifyTopicRemark", "alikafka", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

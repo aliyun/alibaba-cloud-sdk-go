@@ -96,6 +96,7 @@ func CreateGetConsumerProgressRequest() (request *GetConsumerProgressRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("alikafka", "2019-09-16", "GetConsumerProgress", "alikafka", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

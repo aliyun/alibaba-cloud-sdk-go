@@ -96,6 +96,7 @@ func CreateCreateConsumerGroupRequest() (request *CreateConsumerGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("alikafka", "2019-09-16", "CreateConsumerGroup", "alikafka", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

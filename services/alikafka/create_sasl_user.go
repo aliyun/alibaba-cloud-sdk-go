@@ -76,6 +76,7 @@ func (client *Client) CreateSaslUserWithCallback(request *CreateSaslUserRequest,
 // CreateSaslUserRequest is the request struct for api CreateSaslUser
 type CreateSaslUserRequest struct {
 	*requests.RpcRequest
+	Type       string `position:"Query" name:"Type"`
 	Password   string `position:"Query" name:"Password"`
 	InstanceId string `position:"Query" name:"InstanceId"`
 	Username   string `position:"Query" name:"Username"`
@@ -96,6 +97,7 @@ func CreateCreateSaslUserRequest() (request *CreateSaslUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("alikafka", "2019-09-16", "CreateSaslUser", "alikafka", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

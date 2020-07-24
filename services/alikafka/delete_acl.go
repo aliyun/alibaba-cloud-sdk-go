@@ -99,6 +99,7 @@ func CreateDeleteAclRequest() (request *DeleteAclRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("alikafka", "2019-09-16", "DeleteAcl", "alikafka", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

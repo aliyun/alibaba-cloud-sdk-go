@@ -76,6 +76,7 @@ func (client *Client) DeleteSaslUserWithCallback(request *DeleteSaslUserRequest,
 // DeleteSaslUserRequest is the request struct for api DeleteSaslUser
 type DeleteSaslUserRequest struct {
 	*requests.RpcRequest
+	Type       string `position:"Query" name:"Type"`
 	InstanceId string `position:"Query" name:"InstanceId"`
 	Username   string `position:"Query" name:"Username"`
 }
@@ -95,6 +96,7 @@ func CreateDeleteSaslUserRequest() (request *DeleteSaslUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("alikafka", "2019-09-16", "DeleteSaslUser", "alikafka", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

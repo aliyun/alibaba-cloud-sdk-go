@@ -99,6 +99,7 @@ func CreateCreateAclRequest() (request *CreateAclRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("alikafka", "2019-09-16", "CreateAcl", "alikafka", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
