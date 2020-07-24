@@ -1,3 +1,7 @@
+2020-07-24 Version: v1.61.351
+- Generated 2020-05-15 for `Vcs`.
+- Change version number.
+
 2020-07-24 Version: v1.61.350
 - Generated 2017-09-06 for `imm`.
 - Support GetImageCroppingSuggestions API.
