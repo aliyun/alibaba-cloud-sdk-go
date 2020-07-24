@@ -93,7 +93,7 @@ func CreateGetMediaMetaRequest() (request *GetMediaMetaRequest) {
 	request = &GetMediaMetaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetMediaMeta", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetMediaMeta", "", "")
 	request.Method = requests.POST
 	return
 }

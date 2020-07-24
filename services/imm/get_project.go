@@ -91,6 +91,7 @@ type GetProjectResponse struct {
 	Type        string `json:"Type" xml:"Type"`
 	CU          int    `json:"CU" xml:"CU"`
 	BillingType string `json:"BillingType" xml:"BillingType"`
+	RegionId    string `json:"RegionId" xml:"RegionId"`
 }
 
 // CreateGetProjectRequest creates a request to invoke GetProject API
@@ -98,7 +99,7 @@ func CreateGetProjectRequest() (request *GetProjectRequest) {
 	request = &GetProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetProject", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetProject", "", "")
 	request.Method = requests.POST
 	return
 }

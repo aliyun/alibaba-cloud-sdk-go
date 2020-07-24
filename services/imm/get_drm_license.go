@@ -93,7 +93,7 @@ func CreateGetDRMLicenseRequest() (request *GetDRMLicenseRequest) {
 	request = &GetDRMLicenseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetDRMLicense", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetDRMLicense", "", "")
 	request.Method = requests.POST
 	return
 }

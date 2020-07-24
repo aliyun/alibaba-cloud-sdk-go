@@ -76,12 +76,19 @@ func (client *Client) ListFaceGroupsWithCallback(request *ListFaceGroupsRequest,
 // ListFaceGroupsRequest is the request struct for api ListFaceGroups
 type ListFaceGroupsRequest struct {
 	*requests.RpcRequest
-	Project string           `position:"Query" name:"Project"`
-	Limit   requests.Integer `position:"Query" name:"Limit"`
-	Order   string           `position:"Query" name:"Order"`
-	OrderBy string           `position:"Query" name:"OrderBy"`
-	Marker  string           `position:"Query" name:"Marker"`
-	SetId   string           `position:"Query" name:"SetId"`
+	Project            string           `position:"Query" name:"Project"`
+	RemarksBQuery      string           `position:"Query" name:"RemarksBQuery"`
+	ExternalId         string           `position:"Query" name:"ExternalId"`
+	Limit              requests.Integer `position:"Query" name:"Limit"`
+	RemarksArrayBQuery string           `position:"Query" name:"RemarksArrayBQuery"`
+	Order              string           `position:"Query" name:"Order"`
+	RemarksAQuery      string           `position:"Query" name:"RemarksAQuery"`
+	OrderBy            string           `position:"Query" name:"OrderBy"`
+	RemarksDQuery      string           `position:"Query" name:"RemarksDQuery"`
+	RemarksArrayAQuery string           `position:"Query" name:"RemarksArrayAQuery"`
+	Marker             string           `position:"Query" name:"Marker"`
+	SetId              string           `position:"Query" name:"SetId"`
+	RemarksCQuery      string           `position:"Query" name:"RemarksCQuery"`
 }
 
 // ListFaceGroupsResponse is the response struct for api ListFaceGroups
@@ -97,7 +104,7 @@ func CreateListFaceGroupsRequest() (request *ListFaceGroupsRequest) {
 	request = &ListFaceGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListFaceGroups", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListFaceGroups", "", "")
 	request.Method = requests.POST
 	return
 }

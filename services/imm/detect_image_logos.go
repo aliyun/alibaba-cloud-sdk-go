@@ -93,7 +93,7 @@ func CreateDetectImageLogosRequest() (request *DetectImageLogosRequest) {
 	request = &DetectImageLogosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageLogos", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageLogos", "", "")
 	request.Method = requests.POST
 	return
 }

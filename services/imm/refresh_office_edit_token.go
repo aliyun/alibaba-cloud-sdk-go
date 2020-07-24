@@ -96,7 +96,7 @@ func CreateRefreshOfficeEditTokenRequest() (request *RefreshOfficeEditTokenReque
 	request = &RefreshOfficeEditTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "RefreshOfficeEditToken", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "RefreshOfficeEditToken", "", "")
 	request.Method = requests.POST
 	return
 }

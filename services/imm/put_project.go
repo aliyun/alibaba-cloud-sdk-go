@@ -95,6 +95,7 @@ type PutProjectResponse struct {
 	Type        string `json:"Type" xml:"Type"`
 	Endpoint    string `json:"Endpoint" xml:"Endpoint"`
 	BillingType string `json:"BillingType" xml:"BillingType"`
+	RegionId    string `json:"RegionId" xml:"RegionId"`
 }
 
 // CreatePutProjectRequest creates a request to invoke PutProject API
@@ -102,7 +103,7 @@ func CreatePutProjectRequest() (request *PutProjectRequest) {
 	request = &PutProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "PutProject", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "PutProject", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -82,6 +82,7 @@ type EncodeBlindWatermarkRequest struct {
 	Content         string `position:"Query" name:"Content"`
 	WatermarkType   string `position:"Query" name:"WatermarkType"`
 	TargetUri       string `position:"Query" name:"TargetUri"`
+	Model           string `position:"Query" name:"Model"`
 	TargetImageType string `position:"Query" name:"TargetImageType"`
 	ImageUri        string `position:"Query" name:"ImageUri"`
 }
@@ -99,7 +100,7 @@ func CreateEncodeBlindWatermarkRequest() (request *EncodeBlindWatermarkRequest) 
 	request = &EncodeBlindWatermarkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "EncodeBlindWatermark", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "EncodeBlindWatermark", "", "")
 	request.Method = requests.POST
 	return
 }

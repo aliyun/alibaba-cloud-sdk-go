@@ -1,3 +1,9 @@
+2020-07-24 Version: v1.61.350
+- Generated 2017-09-06 for `imm`.
+- Support GetImageCroppingSuggestions API.
+- Add Remarks to face group related APIs.
+- Add Model parameter to blind watermark related APIs.
+
 2020-07-24 Version: v1.61.349
 - Generated 2019-09-16 for `alikafka`.
 - Support security group param when start instance.

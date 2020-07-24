@@ -118,7 +118,7 @@ func CreateIndexVideoRequest() (request *IndexVideoRequest) {
 	request = &IndexVideoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "IndexVideo", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "IndexVideo", "", "")
 	request.Method = requests.POST
 	return
 }

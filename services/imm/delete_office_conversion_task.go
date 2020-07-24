@@ -91,7 +91,7 @@ func CreateDeleteOfficeConversionTaskRequest() (request *DeleteOfficeConversionT
 	request = &DeleteOfficeConversionTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DeleteOfficeConversionTask", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "DeleteOfficeConversionTask", "", "")
 	request.Method = requests.POST
 	return
 }

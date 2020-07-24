@@ -22,5 +22,13 @@ type FaceGroupsItem struct {
 	FaceCount      int            `json:"FaceCount" xml:"FaceCount"`
 	CreateTime     string         `json:"CreateTime" xml:"CreateTime"`
 	ModifyTime     string         `json:"ModifyTime" xml:"ModifyTime"`
+	RemarksA       string         `json:"RemarksA" xml:"RemarksA"`
+	RemarksB       string         `json:"RemarksB" xml:"RemarksB"`
+	RemarksC       string         `json:"RemarksC" xml:"RemarksC"`
+	RemarksD       string         `json:"RemarksD" xml:"RemarksD"`
+	RemarksArrayA  string         `json:"RemarksArrayA" xml:"RemarksArrayA"`
+	RemarksArrayB  string         `json:"RemarksArrayB" xml:"RemarksArrayB"`
+	ExternalId     string         `json:"ExternalId" xml:"ExternalId"`
+	ImageCount     int            `json:"ImageCount" xml:"ImageCount"`
 	GroupCoverFace GroupCoverFace `json:"GroupCoverFace" xml:"GroupCoverFace"`
 }

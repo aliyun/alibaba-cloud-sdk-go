@@ -104,7 +104,7 @@ func CreateGetOfficeEditURLRequest() (request *GetOfficeEditURLRequest) {
 	request = &GetOfficeEditURLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetOfficeEditURL", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetOfficeEditURL", "", "")
 	request.Method = requests.POST
 	return
 }

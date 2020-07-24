@@ -103,7 +103,7 @@ func CreateGetImageJobRequest() (request *GetImageJobRequest) {
 	request = &GetImageJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetImageJob", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetImageJob", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -77,8 +77,15 @@ func (client *Client) UpdateFaceGroupWithCallback(request *UpdateFaceGroupReques
 type UpdateFaceGroupRequest struct {
 	*requests.RpcRequest
 	Project          string `position:"Query" name:"Project"`
+	ExternalId       string `position:"Query" name:"ExternalId"`
 	GroupId          string `position:"Query" name:"GroupId"`
+	RemarksB         string `position:"Query" name:"RemarksB"`
+	RemarksA         string `position:"Query" name:"RemarksA"`
 	GroupName        string `position:"Query" name:"GroupName"`
+	RemarksArrayA    string `position:"Query" name:"RemarksArrayA"`
+	RemarksArrayB    string `position:"Query" name:"RemarksArrayB"`
+	RemarksD         string `position:"Query" name:"RemarksD"`
+	RemarksC         string `position:"Query" name:"RemarksC"`
 	SetId            string `position:"Query" name:"SetId"`
 	GroupCoverFaceId string `position:"Query" name:"GroupCoverFaceId"`
 }
@@ -96,7 +103,7 @@ func CreateUpdateFaceGroupRequest() (request *UpdateFaceGroupRequest) {
 	request = &UpdateFaceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "UpdateFaceGroup", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "UpdateFaceGroup", "", "")
 	request.Method = requests.POST
 	return
 }

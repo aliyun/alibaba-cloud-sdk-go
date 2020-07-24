@@ -91,6 +91,7 @@ type UpdateProjectResponse struct {
 	ServiceRole string `json:"ServiceRole" xml:"ServiceRole"`
 	CU          int    `json:"CU" xml:"CU"`
 	Type        string `json:"Type" xml:"Type"`
+	RegionId    string `json:"RegionId" xml:"RegionId"`
 }
 
 // CreateUpdateProjectRequest creates a request to invoke UpdateProject API
@@ -98,7 +99,7 @@ func CreateUpdateProjectRequest() (request *UpdateProjectRequest) {
 	request = &UpdateProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "UpdateProject", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "UpdateProject", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -99,7 +99,7 @@ func CreateCompareImageFacesRequest() (request *CompareImageFacesRequest) {
 	request = &CompareImageFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CompareImageFaces", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "CompareImageFaces", "", "")
 	request.Method = requests.POST
 	return
 }

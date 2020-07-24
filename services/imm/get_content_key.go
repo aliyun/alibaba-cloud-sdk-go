@@ -95,7 +95,7 @@ func CreateGetContentKeyRequest() (request *GetContentKeyRequest) {
 	request = &GetContentKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetContentKey", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetContentKey", "", "")
 	request.Method = requests.POST
 	return
 }

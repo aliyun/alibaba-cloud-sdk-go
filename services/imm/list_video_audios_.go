@@ -97,7 +97,7 @@ func CreateListVideoAudiosRequest() (request *ListVideoAudiosRequest) {
 	request = &ListVideoAudiosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListVideoAudios", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListVideoAudios", "", "")
 	request.Method = requests.POST
 	return
 }

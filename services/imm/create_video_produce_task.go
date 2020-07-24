@@ -101,7 +101,7 @@ func CreateCreateVideoProduceTaskRequest() (request *CreateVideoProduceTaskReque
 	request = &CreateVideoProduceTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateVideoProduceTask", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateVideoProduceTask", "", "")
 	request.Method = requests.POST
 	return
 }
