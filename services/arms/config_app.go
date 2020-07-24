@@ -76,8 +76,8 @@ func (client *Client) ConfigAppWithCallback(request *ConfigAppRequest, callback 
 // ConfigAppRequest is the request struct for api ConfigApp
 type ConfigAppRequest struct {
 	*requests.RpcRequest
-	AppIds string           `position:"Query" name:"AppIds"`
-	Enable requests.Boolean `position:"Query" name:"Enable"`
+	AppIds string `position:"Query" name:"AppIds"`
+	Enable string `position:"Query" name:"Enable"`
 }
 
 // ConfigAppResponse is the response struct for api ConfigApp
