@@ -81,6 +81,7 @@ type ModifyBackupPolicyRequest struct {
 	LogBackupFrequency            string           `position:"Query" name:"LogBackupFrequency"`
 	ArchiveBackupKeepCount        string           `position:"Query" name:"ArchiveBackupKeepCount"`
 	BackupLog                     string           `position:"Query" name:"BackupLog"`
+	BackupInterval                string           `position:"Query" name:"BackupInterval"`
 	DuplicationContent            string           `position:"Query" name:"DuplicationContent"`
 	HighSpaceUsageProtection      string           `position:"Query" name:"HighSpaceUsageProtection"`
 	LogBackupLocalRetentionNumber requests.Integer `position:"Query" name:"LogBackupLocalRetentionNumber"`

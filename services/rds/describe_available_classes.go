@@ -85,7 +85,6 @@ type DescribeAvailableClassesRequest struct {
 	InstanceChargeType    string           `position:"Query" name:"InstanceChargeType"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	CommodityCode         string           `position:"Query" name:"CommodityCode"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	EvaluateResource      requests.Boolean `position:"Query" name:"EvaluateResource"`
 	ZoneId                string           `position:"Query" name:"ZoneId"`

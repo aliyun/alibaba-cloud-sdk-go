@@ -22,4 +22,5 @@ type DBInstanceExpireTime struct {
 	ExpireTime            string `json:"ExpireTime" xml:"ExpireTime"`
 	DBInstanceStatus      string `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
 	LockMode              string `json:"LockMode" xml:"LockMode"`
+	PayType               string `json:"PayType" xml:"PayType"`
 }

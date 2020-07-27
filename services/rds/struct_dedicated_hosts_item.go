@@ -44,4 +44,5 @@ type DedicatedHostsItem struct {
 	StorageUsed          string `json:"StorageUsed" xml:"StorageUsed"`
 	ImageCategory        string `json:"ImageCategory" xml:"ImageCategory"`
 	DedicatedHostGroupId string `json:"DedicatedHostGroupId" xml:"DedicatedHostGroupId"`
+	Engine               string `json:"Engine" xml:"Engine"`
 }

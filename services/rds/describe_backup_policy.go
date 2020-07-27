@@ -79,6 +79,7 @@ type DescribeBackupPolicyRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	BackupPolicyMode     string           `position:"Query" name:"BackupPolicyMode"`
+	ReleasedKeepPolicy   string           `position:"Query" name:"ReleasedKeepPolicy"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	CompressType         string           `position:"Query" name:"CompressType"`
@@ -109,6 +110,8 @@ type DescribeBackupPolicyResponse struct {
 	ReleasedKeepPolicy            string              `json:"ReleasedKeepPolicy" xml:"ReleasedKeepPolicy"`
 	LogBackupLocalRetentionNumber int                 `json:"LogBackupLocalRetentionNumber" xml:"LogBackupLocalRetentionNumber"`
 	Category                      string              `json:"Category" xml:"Category"`
+	SupportReleasedKeep           int                 `json:"SupportReleasedKeep" xml:"SupportReleasedKeep"`
+	BackupInterval                string              `json:"BackupInterval" xml:"BackupInterval"`
 	DuplicationLocation           DuplicationLocation `json:"DuplicationLocation" xml:"DuplicationLocation"`
 }
 

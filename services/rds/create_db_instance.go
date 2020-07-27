@@ -97,6 +97,7 @@ type CreateDBInstanceRequest struct {
 	RoleARN                        string           `position:"Query" name:"RoleARN"`
 	TunnelId                       string           `position:"Query" name:"TunnelId"`
 	ZoneId                         string           `position:"Query" name:"ZoneId"`
+	StorageAutoScale               string           `position:"Query" name:"StorageAutoScale"`
 	InstanceNetworkType            string           `position:"Query" name:"InstanceNetworkType"`
 	ConnectionMode                 string           `position:"Query" name:"ConnectionMode"`
 	ClientToken                    string           `position:"Query" name:"ClientToken"`
@@ -112,6 +113,8 @@ type CreateDBInstanceRequest struct {
 	ResourceOwnerAccount           string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                   string           `position:"Query" name:"OwnerAccount"`
 	UsedTime                       string           `position:"Query" name:"UsedTime"`
+	StorageUpperBound              requests.Integer `position:"Query" name:"StorageUpperBound"`
+	StorageThreshold               requests.Integer `position:"Query" name:"StorageThreshold"`
 	VPCId                          string           `position:"Query" name:"VPCId"`
 	Category                       string           `position:"Query" name:"Category"`
 	PayType                        string           `position:"Query" name:"PayType"`
