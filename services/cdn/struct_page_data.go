@@ -27,5 +27,6 @@ type PageData struct {
 	SslProtocol     string  `json:"SslProtocol" xml:"SslProtocol"`
 	ResourceGroupId string  `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	Sandbox         string  `json:"Sandbox" xml:"Sandbox"`
+	Coverage        string  `json:"Coverage" xml:"Coverage"`
 	Sources         Sources `json:"Sources" xml:"Sources"`
 }

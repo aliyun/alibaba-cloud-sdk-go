@@ -94,6 +94,7 @@ func CreateDescribeIllegalUrlExportTaskRequest() (request *DescribeIllegalUrlExp
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeIllegalUrlExportTask", "", "")
+	request.Method = requests.POST
 	return
 }
 

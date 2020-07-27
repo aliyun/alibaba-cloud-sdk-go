@@ -97,6 +97,7 @@ func CreateSetWaitingRoomConfigRequest() (request *SetWaitingRoomConfigRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "SetWaitingRoomConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -100,6 +100,7 @@ func CreateBatchAddCdnDomainRequest() (request *BatchAddCdnDomainRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "BatchAddCdnDomain", "", "")
+	request.Method = requests.POST
 	return
 }
 

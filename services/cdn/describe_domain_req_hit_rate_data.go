@@ -100,6 +100,7 @@ func CreateDescribeDomainReqHitRateDataRequest() (request *DescribeDomainReqHitR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainReqHitRateData", "", "")
+	request.Method = requests.POST
 	return
 }
 

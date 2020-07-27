@@ -94,6 +94,7 @@ func CreateDescribeLiveRecordConfigRequest() (request *DescribeLiveRecordConfigR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeLiveRecordConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

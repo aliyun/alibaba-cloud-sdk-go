@@ -95,6 +95,7 @@ func CreateListRealtimeLogDeliveryDomainsRequest() (request *ListRealtimeLogDeli
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "ListRealtimeLogDeliveryDomains", "", "")
+	request.Method = requests.GET
 	return
 }
 

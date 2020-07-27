@@ -94,6 +94,7 @@ func CreateDescribeCdnTypesRequest() (request *DescribeCdnTypesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeCdnTypes", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -94,6 +94,7 @@ func CreateDescribeL2VipsByDynamicDomainRequest() (request *DescribeL2VipsByDyna
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeL2VipsByDynamicDomain", "", "")
+	request.Method = requests.GET
 	return
 }
 

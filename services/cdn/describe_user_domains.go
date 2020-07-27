@@ -85,6 +85,7 @@ type DescribeUserDomainsRequest struct {
 	PageSize         requests.Integer          `position:"Query" name:"PageSize"`
 	Tag              *[]DescribeUserDomainsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	FuncFilter       string                    `position:"Query" name:"FuncFilter"`
+	Coverage         string                    `position:"Query" name:"Coverage"`
 	DomainName       string                    `position:"Query" name:"DomainName"`
 	OwnerId          requests.Integer          `position:"Query" name:"OwnerId"`
 	FuncId           string                    `position:"Query" name:"FuncId"`
@@ -115,6 +116,7 @@ func CreateDescribeUserDomainsRequest() (request *DescribeUserDomainsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeUserDomains", "", "")
+	request.Method = requests.POST
 	return
 }
 

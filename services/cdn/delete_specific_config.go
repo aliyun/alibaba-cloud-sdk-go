@@ -94,6 +94,7 @@ func CreateDeleteSpecificConfigRequest() (request *DeleteSpecificConfigRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DeleteSpecificConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

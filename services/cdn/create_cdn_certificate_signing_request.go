@@ -102,6 +102,7 @@ func CreateCreateCdnCertificateSigningRequestRequest() (request *CreateCdnCertif
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "CreateCdnCertificateSigningRequest", "", "")
+	request.Method = requests.POST
 	return
 }
 

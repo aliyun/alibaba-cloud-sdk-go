@@ -92,6 +92,7 @@ func CreateDisableRealtimeLogDeliveryRequest() (request *DisableRealtimeLogDeliv
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DisableRealtimeLogDelivery", "", "")
+	request.Method = requests.GET
 	return
 }
 

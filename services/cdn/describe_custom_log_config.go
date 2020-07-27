@@ -95,6 +95,7 @@ func CreateDescribeCustomLogConfigRequest() (request *DescribeCustomLogConfigReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCustomLogConfig", "", "")
+	request.Method = requests.GET
 	return
 }
 

@@ -98,6 +98,7 @@ func CreateDescribeDomainTopClientIpVisitRequest() (request *DescribeDomainTopCl
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainTopClientIpVisit", "", "")
+	request.Method = requests.POST
 	return
 }
 

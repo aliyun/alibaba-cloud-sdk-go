@@ -92,6 +92,7 @@ func CreateDeleteFCTriggerRequest() (request *DeleteFCTriggerRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DeleteFCTrigger", "", "")
+	request.Method = requests.POST
 	return
 }
 

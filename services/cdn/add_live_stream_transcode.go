@@ -98,6 +98,7 @@ func CreateAddLiveStreamTranscodeRequest() (request *AddLiveStreamTranscodeReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "AddLiveStreamTranscode", "", "")
+	request.Method = requests.POST
 	return
 }
 

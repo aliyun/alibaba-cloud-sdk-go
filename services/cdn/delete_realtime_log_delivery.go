@@ -95,6 +95,7 @@ func CreateDeleteRealtimeLogDeliveryRequest() (request *DeleteRealtimeLogDeliver
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DeleteRealtimeLogDelivery", "", "")
+	request.Method = requests.GET
 	return
 }
 

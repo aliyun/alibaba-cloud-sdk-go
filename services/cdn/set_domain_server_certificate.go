@@ -85,7 +85,6 @@ type SetDomainServerCertificateRequest struct {
 	CertName                string           `position:"Query" name:"CertName"`
 	DomainName              string           `position:"Query" name:"DomainName"`
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	Region                  string           `position:"Query" name:"Region"`
 }
 
 // SetDomainServerCertificateResponse is the response struct for api SetDomainServerCertificate
@@ -100,6 +99,7 @@ func CreateSetDomainServerCertificateRequest() (request *SetDomainServerCertific
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "SetDomainServerCertificate", "", "")
+	request.Method = requests.POST
 	return
 }
 

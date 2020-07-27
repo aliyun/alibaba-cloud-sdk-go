@@ -101,6 +101,7 @@ func CreateDescribeCdnUserQuotaRequest() (request *DescribeCdnUserQuotaRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnUserQuota", "", "")
+	request.Method = requests.POST
 	return
 }
 

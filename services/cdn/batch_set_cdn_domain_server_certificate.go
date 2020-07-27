@@ -100,6 +100,7 @@ func CreateBatchSetCdnDomainServerCertificateRequest() (request *BatchSetCdnDoma
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "BatchSetCdnDomainServerCertificate", "", "")
+	request.Method = requests.POST
 	return
 }
 

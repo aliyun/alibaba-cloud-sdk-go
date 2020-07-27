@@ -94,6 +94,7 @@ func CreateSetOptimizeConfigRequest() (request *SetOptimizeConfigRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "SetOptimizeConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

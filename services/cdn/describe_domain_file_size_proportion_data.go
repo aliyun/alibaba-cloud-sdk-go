@@ -100,6 +100,7 @@ func CreateDescribeDomainFileSizeProportionDataRequest() (request *DescribeDomai
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainFileSizeProportionData", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -98,6 +98,7 @@ func CreateAddFCTriggerRequest() (request *AddFCTriggerRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "AddFCTrigger", "", "")
+	request.Method = requests.POST
 	return
 }
 

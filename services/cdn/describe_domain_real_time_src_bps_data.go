@@ -99,6 +99,7 @@ func CreateDescribeDomainRealTimeSrcBpsDataRequest() (request *DescribeDomainRea
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainRealTimeSrcBpsData", "", "")
+	request.Method = requests.POST
 	return
 }
 

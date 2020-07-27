@@ -93,6 +93,7 @@ func CreateDescribeCdnUserResourcePackageRequest() (request *DescribeCdnUserReso
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnUserResourcePackage", "", "")
+	request.Method = requests.POST
 	return
 }
 

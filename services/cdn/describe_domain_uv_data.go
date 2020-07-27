@@ -100,6 +100,7 @@ func CreateDescribeDomainUvDataRequest() (request *DescribeDomainUvDataRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainUvData", "", "")
+	request.Method = requests.POST
 	return
 }
 

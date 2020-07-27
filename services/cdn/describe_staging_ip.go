@@ -92,6 +92,7 @@ func CreateDescribeStagingIpRequest() (request *DescribeStagingIpRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeStagingIp", "", "")
+	request.Method = requests.POST
 	return
 }
 

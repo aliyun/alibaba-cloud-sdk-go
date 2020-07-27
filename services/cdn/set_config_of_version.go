@@ -99,6 +99,7 @@ func CreateSetConfigOfVersionRequest() (request *SetConfigOfVersionRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "SetConfigOfVersion", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -101,6 +101,7 @@ func CreateDescribeDomainRealTimeSrcHttpCodeDataRequest() (request *DescribeDoma
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainRealTimeSrcHttpCodeData", "", "")
+	request.Method = requests.POST
 	return
 }
 

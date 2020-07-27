@@ -93,6 +93,7 @@ func CreateRollbackStagingConfigRequest() (request *RollbackStagingConfigRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "RollbackStagingConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

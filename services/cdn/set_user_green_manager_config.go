@@ -94,6 +94,7 @@ func CreateSetUserGreenManagerConfigRequest() (request *SetUserGreenManagerConfi
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "SetUserGreenManagerConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

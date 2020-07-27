@@ -95,6 +95,7 @@ func CreateDescribeL2VipsByDomainRequest() (request *DescribeL2VipsByDomainReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeL2VipsByDomain", "", "")
+	request.Method = requests.POST
 	return
 }
 

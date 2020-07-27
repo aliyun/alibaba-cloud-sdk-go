@@ -95,6 +95,7 @@ func CreateSetCcConfigRequest() (request *SetCcConfigRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "SetCcConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

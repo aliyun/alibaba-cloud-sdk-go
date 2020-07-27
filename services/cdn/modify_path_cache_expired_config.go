@@ -97,6 +97,7 @@ func CreateModifyPathCacheExpiredConfigRequest() (request *ModifyPathCacheExpire
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "ModifyPathCacheExpiredConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

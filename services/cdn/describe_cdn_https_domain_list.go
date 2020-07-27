@@ -96,6 +96,7 @@ func CreateDescribeCdnHttpsDomainListRequest() (request *DescribeCdnHttpsDomainL
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnHttpsDomainList", "", "")
+	request.Method = requests.POST
 	return
 }
 

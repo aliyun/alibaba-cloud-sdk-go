@@ -96,6 +96,7 @@ func CreateSetForwardSchemeConfigRequest() (request *SetForwardSchemeConfigReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "SetForwardSchemeConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

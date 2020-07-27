@@ -99,6 +99,7 @@ func CreateDescribeCdnUserBillPredictionRequest() (request *DescribeCdnUserBillP
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnUserBillPrediction", "", "")
+	request.Method = requests.POST
 	return
 }
 

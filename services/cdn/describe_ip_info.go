@@ -98,6 +98,7 @@ func CreateDescribeIpInfoRequest() (request *DescribeIpInfoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeIpInfo", "", "")
+	request.Method = requests.POST
 	return
 }
 

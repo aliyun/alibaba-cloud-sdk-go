@@ -96,6 +96,7 @@ func CreateSetFileCacheExpiredConfigRequest() (request *SetFileCacheExpiredConfi
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "SetFileCacheExpiredConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

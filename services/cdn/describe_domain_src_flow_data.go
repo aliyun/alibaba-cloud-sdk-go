@@ -102,6 +102,7 @@ func CreateDescribeDomainSrcFlowDataRequest() (request *DescribeDomainSrcFlowDat
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainSrcFlowData", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -100,6 +100,7 @@ func CreateDescribeDomainRealTimeDetailDataRequest() (request *DescribeDomainRea
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainRealTimeDetailData", "", "")
+	request.Method = requests.GET
 	return
 }
 

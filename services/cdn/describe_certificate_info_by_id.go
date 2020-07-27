@@ -93,6 +93,7 @@ func CreateDescribeCertificateInfoByIDRequest() (request *DescribeCertificateInf
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCertificateInfoByID", "", "")
+	request.Method = requests.GET
 	return
 }
 

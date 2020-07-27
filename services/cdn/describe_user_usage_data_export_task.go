@@ -94,6 +94,7 @@ func CreateDescribeUserUsageDataExportTaskRequest() (request *DescribeUserUsageD
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeUserUsageDataExportTask", "", "")
+	request.Method = requests.POST
 	return
 }
 

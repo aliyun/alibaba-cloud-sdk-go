@@ -93,6 +93,7 @@ func CreateSetCdnDomainCSRCertificateRequest() (request *SetCdnDomainCSRCertific
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "SetCdnDomainCSRCertificate", "", "")
+	request.Method = requests.POST
 	return
 }
 

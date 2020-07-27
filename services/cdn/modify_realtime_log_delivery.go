@@ -95,6 +95,7 @@ func CreateModifyRealtimeLogDeliveryRequest() (request *ModifyRealtimeLogDeliver
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "ModifyRealtimeLogDelivery", "", "")
+	request.Method = requests.GET
 	return
 }
 

@@ -94,6 +94,7 @@ func CreateDescribeCdnDomainStagingConfigRequest() (request *DescribeCdnDomainSt
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnDomainStagingConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

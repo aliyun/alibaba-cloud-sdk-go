@@ -98,6 +98,7 @@ func CreateDescribeDomainBpsDataByTimeStampRequest() (request *DescribeDomainBps
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainBpsDataByTimeStamp", "", "")
+	request.Method = requests.POST
 	return
 }
 
