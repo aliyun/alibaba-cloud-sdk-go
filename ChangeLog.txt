@@ -1,3 +1,8 @@
+2020-07-28 Version: v1.61.357
+- Generated 2020-04-07 for `cas`.
+- Publish SDK For Go and Java.
+- Add a certificate package.
+
 2020-07-28 Version: v1.61.356
 - Generated 2018-10-12 for `Airec`.
 
