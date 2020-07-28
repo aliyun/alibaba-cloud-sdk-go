@@ -728,7 +728,11 @@ func TestClient_AppendUserAgent(t *testing.T) {
 }
 
 func TestClient_ProcessCommonRequestWithSigner_Error(t *testing.T) {
-	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
+	client, err := NewClientWithAccessKey("", "acesskeyid", "accesskeysecret")
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
+
+	client, err = NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
 	assert.Equal(t, true, client.isRunning)
