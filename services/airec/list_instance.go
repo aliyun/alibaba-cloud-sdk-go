@@ -76,8 +76,11 @@ func (client *Client) ListInstanceWithCallback(request *ListInstanceRequest, cal
 // ListInstanceRequest is the request struct for api ListInstance
 type ListInstanceRequest struct {
 	*requests.RoaRequest
-	Size requests.Integer `position:"Query" name:"size"`
-	Page requests.Integer `position:"Query" name:"page"`
+	Size        requests.Integer `position:"Query" name:"size"`
+	Name        string           `position:"Query" name:"Name"`
+	ExpiredTime string           `position:"Query" name:"ExpiredTime"`
+	Page        requests.Integer `position:"Query" name:"page"`
+	Status      string           `position:"Query" name:"Status"`
 }
 
 // ListInstanceResponse is the response struct for api ListInstance

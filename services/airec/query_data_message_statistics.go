@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QueryDataMessage invokes the airec.QueryDataMessage API synchronously
-// api document: https://help.aliyun.com/api/airec/querydatamessage.html
-func (client *Client) QueryDataMessage(request *QueryDataMessageRequest) (response *QueryDataMessageResponse, err error) {
-	response = CreateQueryDataMessageResponse()
+// QueryDataMessageStatistics invokes the airec.QueryDataMessageStatistics API synchronously
+// api document: https://help.aliyun.com/api/airec/querydatamessagestatistics.html
+func (client *Client) QueryDataMessageStatistics(request *QueryDataMessageStatisticsRequest) (response *QueryDataMessageStatisticsResponse, err error) {
+	response = CreateQueryDataMessageStatisticsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QueryDataMessageWithChan invokes the airec.QueryDataMessage API asynchronously
-// api document: https://help.aliyun.com/api/airec/querydatamessage.html
+// QueryDataMessageStatisticsWithChan invokes the airec.QueryDataMessageStatistics API asynchronously
+// api document: https://help.aliyun.com/api/airec/querydatamessagestatistics.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryDataMessageWithChan(request *QueryDataMessageRequest) (<-chan *QueryDataMessageResponse, <-chan error) {
-	responseChan := make(chan *QueryDataMessageResponse, 1)
+func (client *Client) QueryDataMessageStatisticsWithChan(request *QueryDataMessageStatisticsRequest) (<-chan *QueryDataMessageStatisticsResponse, <-chan error) {
+	responseChan := make(chan *QueryDataMessageStatisticsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryDataMessage(request)
+		response, err := client.QueryDataMessageStatistics(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) QueryDataMessageWithChan(request *QueryDataMessageRequest)
 	return responseChan, errChan
 }
 
-// QueryDataMessageWithCallback invokes the airec.QueryDataMessage API asynchronously
-// api document: https://help.aliyun.com/api/airec/querydatamessage.html
+// QueryDataMessageStatisticsWithCallback invokes the airec.QueryDataMessageStatistics API asynchronously
+// api document: https://help.aliyun.com/api/airec/querydatamessagestatistics.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryDataMessageWithCallback(request *QueryDataMessageRequest, callback func(response *QueryDataMessageResponse, err error)) <-chan int {
+func (client *Client) QueryDataMessageStatisticsWithCallback(request *QueryDataMessageStatisticsRequest, callback func(response *QueryDataMessageStatisticsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryDataMessageResponse
+		var response *QueryDataMessageStatisticsResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryDataMessage(request)
+		response, err = client.QueryDataMessageStatistics(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,8 +73,8 @@ func (client *Client) QueryDataMessageWithCallback(request *QueryDataMessageRequ
 	return result
 }
 
-// QueryDataMessageRequest is the request struct for api QueryDataMessage
-type QueryDataMessageRequest struct {
+// QueryDataMessageStatisticsRequest is the request struct for api QueryDataMessageStatistics
+type QueryDataMessageStatisticsRequest struct {
 	*requests.RoaRequest
 	TraceId    string           `position:"Query" name:"TraceId"`
 	EndTime    requests.Integer `position:"Query" name:"EndTime"`
@@ -85,15 +85,13 @@ type QueryDataMessageRequest struct {
 	InstanceId string           `position:"Path" name:"InstanceId"`
 	ItemType   string           `position:"Query" name:"ItemType"`
 	CmdType    string           `position:"Query" name:"CmdType"`
-	Size       requests.Integer `position:"Query" name:"Size"`
 	SceneId    string           `position:"Query" name:"SceneId"`
 	BhvType    string           `position:"Query" name:"BhvType"`
-	Page       requests.Integer `position:"Query" name:"Page"`
 	Table      string           `position:"Path" name:"Table"`
 }
 
-// QueryDataMessageResponse is the response struct for api QueryDataMessage
-type QueryDataMessageResponse struct {
+// QueryDataMessageStatisticsResponse is the response struct for api QueryDataMessageStatistics
+type QueryDataMessageStatisticsResponse struct {
 	*responses.BaseResponse
 	RequestId string                 `json:"RequestId" xml:"RequestId"`
 	Code      string                 `json:"Code" xml:"Code"`
@@ -101,19 +99,19 @@ type QueryDataMessageResponse struct {
 	Result    map[string]interface{} `json:"Result" xml:"Result"`
 }
 
-// CreateQueryDataMessageRequest creates a request to invoke QueryDataMessage API
-func CreateQueryDataMessageRequest() (request *QueryDataMessageRequest) {
-	request = &QueryDataMessageRequest{
+// CreateQueryDataMessageStatisticsRequest creates a request to invoke QueryDataMessageStatistics API
+func CreateQueryDataMessageStatisticsRequest() (request *QueryDataMessageStatisticsRequest) {
+	request = &QueryDataMessageStatisticsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "QueryDataMessage", "/openapi/instances/[InstanceId]/tables/[Table]/data-message", "airec", "openAPI")
+	request.InitWithApiInfo("Airec", "2018-10-12", "QueryDataMessageStatistics", "/openapi/instances/[InstanceId]/tables/[Table]/data-message-statistics", "airec", "openAPI")
 	request.Method = requests.GET
 	return
 }
 
-// CreateQueryDataMessageResponse creates a response to parse from QueryDataMessage response
-func CreateQueryDataMessageResponse() (response *QueryDataMessageResponse) {
-	response = &QueryDataMessageResponse{
+// CreateQueryDataMessageStatisticsResponse creates a response to parse from QueryDataMessageStatistics response
+func CreateQueryDataMessageStatisticsResponse() (response *QueryDataMessageStatisticsResponse) {
+	response = &QueryDataMessageStatisticsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

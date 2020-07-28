@@ -89,8 +89,8 @@ type ListRulesRequest struct {
 // ListRulesResponse is the response struct for api ListRules
 type ListRulesResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Result    []ResultItem `json:"Result" xml:"Result"`
+	RequestId string                  `json:"RequestId" xml:"RequestId"`
+	Result    []ResultItemInListRules `json:"Result" xml:"Result"`
 }
 
 // CreateListRulesRequest creates a request to invoke ListRules API

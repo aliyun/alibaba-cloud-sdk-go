@@ -77,6 +77,7 @@ func (client *Client) ListScenesWithCallback(request *ListScenesRequest, callbac
 type ListScenesRequest struct {
 	*requests.RoaRequest
 	InstanceId string `position:"Path" name:"InstanceId"`
+	Status     string `position:"Query" name:"Status"`
 }
 
 // ListScenesResponse is the response struct for api ListScenes

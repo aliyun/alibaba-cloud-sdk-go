@@ -21,7 +21,6 @@ type ResultItem struct {
 	ErrorLevel         string                 `json:"ErrorLevel" xml:"ErrorLevel"`
 	DefaultDisplay     bool                   `json:"DefaultDisplay" xml:"DefaultDisplay"`
 	ItemType           string                 `json:"ItemType" xml:"ItemType"`
-	RuleId             string                 `json:"RuleId" xml:"RuleId"`
 	SampleDisplay      bool                   `json:"SampleDisplay" xml:"SampleDisplay"`
 	InstanceId         string                 `json:"InstanceId" xml:"InstanceId"`
 	TotalProgress      int                    `json:"TotalProgress" xml:"TotalProgress"`
@@ -48,7 +47,6 @@ type ResultItem struct {
 	GmtModified        int64                  `json:"GmtModified" xml:"GmtModified"`
 	TraceInfo          string                 `json:"TraceInfo" xml:"TraceInfo"`
 	Total              map[string]interface{} `json:"Total" xml:"Total"`
-	Status             string                 `json:"Status" xml:"Status"`
 	Position           int                    `json:"Position" xml:"Position"`
 	Weight             float64                `json:"Weight" xml:"Weight"`
 	MetricRes          MetricRes              `json:"MetricRes" xml:"MetricRes"`
