@@ -23,6 +23,7 @@ type File struct {
 	CreateTime      int64  `json:"CreateTime" xml:"CreateTime"`
 	FileFolderId    string `json:"FileFolderId" xml:"FileFolderId"`
 	FileDescription string `json:"FileDescription" xml:"FileDescription"`
+	FileId          int64  `json:"FileId" xml:"FileId"`
 	BizId           int64  `json:"BizId" xml:"BizId"`
 	CurrentVersion  int    `json:"CurrentVersion" xml:"CurrentVersion"`
 	FileType        int    `json:"FileType" xml:"FileType"`
