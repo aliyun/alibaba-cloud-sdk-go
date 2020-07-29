@@ -101,6 +101,7 @@ func CreateAddSearchVideoTaskRequest() (request *AddSearchVideoTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("videosearch", "2020-02-25", "AddSearchVideoTask", "", "")
+	request.Method = requests.POST
 	return
 }
 

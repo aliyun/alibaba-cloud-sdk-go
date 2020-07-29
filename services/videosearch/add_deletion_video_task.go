@@ -94,6 +94,7 @@ func CreateAddDeletionVideoTaskRequest() (request *AddDeletionVideoTaskRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("videosearch", "2020-02-25", "AddDeletionVideoTask", "", "")
+	request.Method = requests.POST
 	return
 }
 

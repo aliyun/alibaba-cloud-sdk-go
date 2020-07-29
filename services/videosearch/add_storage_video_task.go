@@ -97,6 +97,7 @@ func CreateAddStorageVideoTaskRequest() (request *AddStorageVideoTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("videosearch", "2020-02-25", "AddStorageVideoTask", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -84,8 +84,9 @@ type GetTaskStatusRequest struct {
 // GetTaskStatusResponse is the response struct for api GetTaskStatus
 type GetTaskStatusResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      int    `json:"Data" xml:"Data"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Data      int      `json:"Data" xml:"Data"`
+	TaskInfo  TaskInfo `json:"TaskInfo" xml:"TaskInfo"`
 }
 
 // CreateGetTaskStatusRequest creates a request to invoke GetTaskStatus API
@@ -94,6 +95,7 @@ func CreateGetTaskStatusRequest() (request *GetTaskStatusRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("videosearch", "2020-02-25", "GetTaskStatus", "", "")
+	request.Method = requests.POST
 	return
 }
 
