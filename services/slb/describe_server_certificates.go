@@ -96,8 +96,8 @@ type DescribeServerCertificatesTag struct {
 // DescribeServerCertificatesResponse is the response struct for api DescribeServerCertificates
 type DescribeServerCertificatesResponse struct {
 	*responses.BaseResponse
-	RequestId          string             `json:"RequestId" xml:"RequestId"`
-	ServerCertificates ServerCertificates `json:"ServerCertificates" xml:"ServerCertificates"`
+	RequestId          string                                         `json:"RequestId" xml:"RequestId"`
+	ServerCertificates ServerCertificatesInDescribeServerCertificates `json:"ServerCertificates" xml:"ServerCertificates"`
 }
 
 // CreateDescribeServerCertificatesRequest creates a request to invoke DescribeServerCertificates API
@@ -106,6 +106,7 @@ func CreateDescribeServerCertificatesRequest() (request *DescribeServerCertifica
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeServerCertificates", "slb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

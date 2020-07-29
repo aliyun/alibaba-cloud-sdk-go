@@ -90,6 +90,7 @@ type DescribeLoadBalancersRequest struct {
 	SlaveZoneId           string                      `position:"Query" name:"SlaveZoneId"`
 	Tag                   *[]DescribeLoadBalancersTag `position:"Query" name:"Tag"  type:"Repeated"`
 	Fuzzy                 string                      `position:"Query" name:"Fuzzy"`
+	BusinessStatus        string                      `position:"Query" name:"BusinessStatus"`
 	Address               string                      `position:"Query" name:"Address"`
 	ResourceOwnerAccount  string                      `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string                      `position:"Query" name:"OwnerAccount"`
@@ -127,6 +128,7 @@ func CreateDescribeLoadBalancersRequest() (request *DescribeLoadBalancersRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancers", "slb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

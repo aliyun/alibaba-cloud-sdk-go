@@ -119,6 +119,7 @@ func CreateDescribeRuleAttributeRequest() (request *DescribeRuleAttributeRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeRuleAttribute", "slb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

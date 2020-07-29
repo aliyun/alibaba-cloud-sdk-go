@@ -97,6 +97,7 @@ func CreateDeleteAccessControlListRequest() (request *DeleteAccessControlListReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Slb", "2014-05-15", "DeleteAccessControlList", "slb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

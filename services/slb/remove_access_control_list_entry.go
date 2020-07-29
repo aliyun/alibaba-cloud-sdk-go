@@ -98,6 +98,7 @@ func CreateRemoveAccessControlListEntryRequest() (request *RemoveAccessControlLi
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Slb", "2014-05-15", "RemoveAccessControlListEntry", "slb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

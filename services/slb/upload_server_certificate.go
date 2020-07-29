@@ -85,6 +85,7 @@ type UploadServerCertificateRequest struct {
 	ResourceGroupId             string           `position:"Query" name:"ResourceGroupId"`
 	ResourceOwnerAccount        string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                string           `position:"Query" name:"OwnerAccount"`
+	StandardType                string           `position:"Query" name:"StandardType"`
 	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
 	Tags                        string           `position:"Query" name:"Tags"`
 	AliCloudCertificateRegionId string           `position:"Query" name:"AliCloudCertificateRegionId"`
@@ -118,6 +119,7 @@ func CreateUploadServerCertificateRequest() (request *UploadServerCertificateReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Slb", "2014-05-15", "UploadServerCertificate", "slb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

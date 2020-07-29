@@ -130,7 +130,11 @@ type DescribeLoadBalancerAttributeResponse struct {
 	TunnelType                     string                                        `json:"TunnelType" xml:"TunnelType"`
 	CloudInstanceUid               int64                                         `json:"CloudInstanceUid" xml:"CloudInstanceUid"`
 	SupportPrivateLink             bool                                          `json:"SupportPrivateLink" xml:"SupportPrivateLink"`
+	BusinessStatus                 string                                        `json:"BusinessStatus" xml:"BusinessStatus"`
+	ModificationProtectionStatus   string                                        `json:"ModificationProtectionStatus" xml:"ModificationProtectionStatus"`
+	ModificationProtectionReason   string                                        `json:"ModificationProtectionReason" xml:"ModificationProtectionReason"`
 	ListenerPorts                  ListenerPorts                                 `json:"ListenerPorts" xml:"ListenerPorts"`
+	Labels                         Labels                                        `json:"Labels" xml:"Labels"`
 	ListenerPortsAndProtocal       ListenerPortsAndProtocal                      `json:"ListenerPortsAndProtocal" xml:"ListenerPortsAndProtocal"`
 	ListenerPortsAndProtocol       ListenerPortsAndProtocol                      `json:"ListenerPortsAndProtocol" xml:"ListenerPortsAndProtocol"`
 	BackendServers                 BackendServersInDescribeLoadBalancerAttribute `json:"BackendServers" xml:"BackendServers"`
@@ -142,6 +146,7 @@ func CreateDescribeLoadBalancerAttributeRequest() (request *DescribeLoadBalancer
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeLoadBalancerAttribute", "slb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

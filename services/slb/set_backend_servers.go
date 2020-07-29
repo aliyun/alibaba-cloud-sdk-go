@@ -100,6 +100,7 @@ func CreateSetBackendServersRequest() (request *SetBackendServersRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Slb", "2014-05-15", "SetBackendServers", "slb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

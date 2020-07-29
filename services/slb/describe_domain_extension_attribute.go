@@ -88,12 +88,14 @@ type DescribeDomainExtensionAttributeRequest struct {
 // DescribeDomainExtensionAttributeResponse is the response struct for api DescribeDomainExtensionAttribute
 type DescribeDomainExtensionAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId           string `json:"RequestId" xml:"RequestId"`
-	DomainExtensionId   string `json:"DomainExtensionId" xml:"DomainExtensionId"`
-	Domain              string `json:"Domain" xml:"Domain"`
-	ServerCertificateId string `json:"ServerCertificateId" xml:"ServerCertificateId"`
-	LoadBalancerId      string `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	ListenerPort        int    `json:"ListenerPort" xml:"ListenerPort"`
+	RequestId           string                                               `json:"RequestId" xml:"RequestId"`
+	DomainExtensionId   string                                               `json:"DomainExtensionId" xml:"DomainExtensionId"`
+	Domain              string                                               `json:"Domain" xml:"Domain"`
+	ServerCertificateId string                                               `json:"ServerCertificateId" xml:"ServerCertificateId"`
+	LoadBalancerId      string                                               `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	ListenerPort        int                                                  `json:"ListenerPort" xml:"ListenerPort"`
+	Certificates        CertificatesInDescribeDomainExtensionAttribute       `json:"Certificates" xml:"Certificates"`
+	ServerCertificates  ServerCertificatesInDescribeDomainExtensionAttribute `json:"ServerCertificates" xml:"ServerCertificates"`
 }
 
 // CreateDescribeDomainExtensionAttributeRequest creates a request to invoke DescribeDomainExtensionAttribute API
@@ -102,6 +104,7 @@ func CreateDescribeDomainExtensionAttributeRequest() (request *DescribeDomainExt
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Slb", "2014-05-15", "DescribeDomainExtensionAttribute", "slb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

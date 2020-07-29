@@ -83,6 +83,7 @@ type UploadCACertificateRequest struct {
 	CACertificate        string           `position:"Query" name:"CACertificate"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	StandardType         string           `position:"Query" name:"StandardType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
@@ -107,6 +108,7 @@ func CreateUploadCACertificateRequest() (request *UploadCACertificateRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Slb", "2014-05-15", "UploadCACertificate", "slb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

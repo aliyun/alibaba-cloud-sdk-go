@@ -76,16 +76,25 @@ func (client *Client) CreateDomainExtensionWithCallback(request *CreateDomainExt
 // CreateDomainExtensionRequest is the request struct for api CreateDomainExtension
 type CreateDomainExtensionRequest struct {
 	*requests.RpcRequest
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ServerCertificateId  string           `position:"Query" name:"ServerCertificateId"`
-	Tags                 string           `position:"Query" name:"Tags"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
-	Domain               string           `position:"Query" name:"Domain"`
+	AccessKeyId          string                                    `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer                          `position:"Query" name:"ResourceOwnerId"`
+	ServerCertificate    *[]CreateDomainExtensionServerCertificate `position:"Query" name:"ServerCertificate"  type:"Repeated"`
+	ListenerPort         requests.Integer                          `position:"Query" name:"ListenerPort"`
+	ResourceOwnerAccount string                                    `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                                    `position:"Query" name:"OwnerAccount"`
+	CertificateId        *[]string                                 `position:"Query" name:"CertificateId"  type:"Repeated"`
+	OwnerId              requests.Integer                          `position:"Query" name:"OwnerId"`
+	ServerCertificateId  string                                    `position:"Query" name:"ServerCertificateId"`
+	Tags                 string                                    `position:"Query" name:"Tags"`
+	LoadBalancerId       string                                    `position:"Query" name:"LoadBalancerId"`
+	Domain               string                                    `position:"Query" name:"Domain"`
+}
+
+// CreateDomainExtensionServerCertificate is a repeated param struct in CreateDomainExtensionRequest
+type CreateDomainExtensionServerCertificate struct {
+	BindingType   string `name:"BindingType"`
+	CertificateId string `name:"CertificateId"`
+	StandardType  string `name:"StandardType"`
 }
 
 // CreateDomainExtensionResponse is the response struct for api CreateDomainExtension
@@ -102,6 +111,7 @@ func CreateCreateDomainExtensionRequest() (request *CreateDomainExtensionRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Slb", "2014-05-15", "CreateDomainExtension", "slb", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
