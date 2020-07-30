@@ -1,3 +1,7 @@
+2020-07-30 Version: v1.61.366
+- Generated 2020-03-20 for `videoenhan`.
+- Add ChangeVideoSize.
+
 2020-07-30 Version: v1.61.365
 - Generated 2019-12-30 for `imageseg`.
 - Add SegmentLogo SegmentScene.
