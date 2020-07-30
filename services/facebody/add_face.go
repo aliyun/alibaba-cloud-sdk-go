@@ -95,6 +95,7 @@ func CreateAddFaceRequest() (request *AddFaceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("facebody", "2019-12-30", "AddFace", "facebody", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

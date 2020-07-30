@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// BodyPosture invokes the facebody.BodyPosture API synchronously
-// api document: https://help.aliyun.com/api/facebody/bodyposture.html
-func (client *Client) BodyPosture(request *BodyPostureRequest) (response *BodyPostureResponse, err error) {
-	response = CreateBodyPostureResponse()
+// DetectCelebrity invokes the facebody.DetectCelebrity API synchronously
+// api document: https://help.aliyun.com/api/facebody/detectcelebrity.html
+func (client *Client) DetectCelebrity(request *DetectCelebrityRequest) (response *DetectCelebrityResponse, err error) {
+	response = CreateDetectCelebrityResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// BodyPostureWithChan invokes the facebody.BodyPosture API asynchronously
-// api document: https://help.aliyun.com/api/facebody/bodyposture.html
+// DetectCelebrityWithChan invokes the facebody.DetectCelebrity API asynchronously
+// api document: https://help.aliyun.com/api/facebody/detectcelebrity.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) BodyPostureWithChan(request *BodyPostureRequest) (<-chan *BodyPostureResponse, <-chan error) {
-	responseChan := make(chan *BodyPostureResponse, 1)
+func (client *Client) DetectCelebrityWithChan(request *DetectCelebrityRequest) (<-chan *DetectCelebrityResponse, <-chan error) {
+	responseChan := make(chan *DetectCelebrityResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.BodyPosture(request)
+		response, err := client.DetectCelebrity(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) BodyPostureWithChan(request *BodyPostureRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// BodyPostureWithCallback invokes the facebody.BodyPosture API asynchronously
-// api document: https://help.aliyun.com/api/facebody/bodyposture.html
+// DetectCelebrityWithCallback invokes the facebody.DetectCelebrity API asynchronously
+// api document: https://help.aliyun.com/api/facebody/detectcelebrity.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) BodyPostureWithCallback(request *BodyPostureRequest, callback func(response *BodyPostureResponse, err error)) <-chan int {
+func (client *Client) DetectCelebrityWithCallback(request *DetectCelebrityRequest, callback func(response *DetectCelebrityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *BodyPostureResponse
+		var response *DetectCelebrityResponse
 		var err error
 		defer close(result)
-		response, err = client.BodyPosture(request)
+		response, err = client.DetectCelebrity(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,32 +73,32 @@ func (client *Client) BodyPostureWithCallback(request *BodyPostureRequest, callb
 	return result
 }
 
-// BodyPostureRequest is the request struct for api BodyPosture
-type BodyPostureRequest struct {
+// DetectCelebrityRequest is the request struct for api DetectCelebrity
+type DetectCelebrityRequest struct {
 	*requests.RpcRequest
 	ImageURL string `position:"Body" name:"ImageURL"`
 }
 
-// BodyPostureResponse is the response struct for api BodyPosture
-type BodyPostureResponse struct {
+// DetectCelebrityResponse is the response struct for api DetectCelebrity
+type DetectCelebrityResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateBodyPostureRequest creates a request to invoke BodyPosture API
-func CreateBodyPostureRequest() (request *BodyPostureRequest) {
-	request = &BodyPostureRequest{
+// CreateDetectCelebrityRequest creates a request to invoke DetectCelebrity API
+func CreateDetectCelebrityRequest() (request *DetectCelebrityRequest) {
+	request = &DetectCelebrityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "BodyPosture", "facebody", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("facebody", "2019-12-30", "DetectCelebrity", "facebody", "openAPI")
+	request.Method = requests.GET
 	return
 }
 
-// CreateBodyPostureResponse creates a response to parse from BodyPosture response
-func CreateBodyPostureResponse() (response *BodyPostureResponse) {
-	response = &BodyPostureResponse{
+// CreateDetectCelebrityResponse creates a response to parse from DetectCelebrity response
+func CreateDetectCelebrityResponse() (response *DetectCelebrityResponse) {
+	response = &DetectCelebrityResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

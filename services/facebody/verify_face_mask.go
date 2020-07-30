@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// BodyPosture invokes the facebody.BodyPosture API synchronously
-// api document: https://help.aliyun.com/api/facebody/bodyposture.html
-func (client *Client) BodyPosture(request *BodyPostureRequest) (response *BodyPostureResponse, err error) {
-	response = CreateBodyPostureResponse()
+// VerifyFaceMask invokes the facebody.VerifyFaceMask API synchronously
+// api document: https://help.aliyun.com/api/facebody/verifyfacemask.html
+func (client *Client) VerifyFaceMask(request *VerifyFaceMaskRequest) (response *VerifyFaceMaskResponse, err error) {
+	response = CreateVerifyFaceMaskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// BodyPostureWithChan invokes the facebody.BodyPosture API asynchronously
-// api document: https://help.aliyun.com/api/facebody/bodyposture.html
+// VerifyFaceMaskWithChan invokes the facebody.VerifyFaceMask API asynchronously
+// api document: https://help.aliyun.com/api/facebody/verifyfacemask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) BodyPostureWithChan(request *BodyPostureRequest) (<-chan *BodyPostureResponse, <-chan error) {
-	responseChan := make(chan *BodyPostureResponse, 1)
+func (client *Client) VerifyFaceMaskWithChan(request *VerifyFaceMaskRequest) (<-chan *VerifyFaceMaskResponse, <-chan error) {
+	responseChan := make(chan *VerifyFaceMaskResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.BodyPosture(request)
+		response, err := client.VerifyFaceMask(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) BodyPostureWithChan(request *BodyPostureRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// BodyPostureWithCallback invokes the facebody.BodyPosture API asynchronously
-// api document: https://help.aliyun.com/api/facebody/bodyposture.html
+// VerifyFaceMaskWithCallback invokes the facebody.VerifyFaceMask API asynchronously
+// api document: https://help.aliyun.com/api/facebody/verifyfacemask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) BodyPostureWithCallback(request *BodyPostureRequest, callback func(response *BodyPostureResponse, err error)) <-chan int {
+func (client *Client) VerifyFaceMaskWithCallback(request *VerifyFaceMaskRequest, callback func(response *VerifyFaceMaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *BodyPostureResponse
+		var response *VerifyFaceMaskResponse
 		var err error
 		defer close(result)
-		response, err = client.BodyPosture(request)
+		response, err = client.VerifyFaceMask(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,32 +73,33 @@ func (client *Client) BodyPostureWithCallback(request *BodyPostureRequest, callb
 	return result
 }
 
-// BodyPostureRequest is the request struct for api BodyPosture
-type BodyPostureRequest struct {
+// VerifyFaceMaskRequest is the request struct for api VerifyFaceMask
+type VerifyFaceMaskRequest struct {
 	*requests.RpcRequest
 	ImageURL string `position:"Body" name:"ImageURL"`
+	RefUrl   string `position:"Body" name:"RefUrl"`
 }
 
-// BodyPostureResponse is the response struct for api BodyPosture
-type BodyPostureResponse struct {
+// VerifyFaceMaskResponse is the response struct for api VerifyFaceMask
+type VerifyFaceMaskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateBodyPostureRequest creates a request to invoke BodyPosture API
-func CreateBodyPostureRequest() (request *BodyPostureRequest) {
-	request = &BodyPostureRequest{
+// CreateVerifyFaceMaskRequest creates a request to invoke VerifyFaceMask API
+func CreateVerifyFaceMaskRequest() (request *VerifyFaceMaskRequest) {
+	request = &VerifyFaceMaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "BodyPosture", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "VerifyFaceMask", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateBodyPostureResponse creates a response to parse from BodyPosture response
-func CreateBodyPostureResponse() (response *BodyPostureResponse) {
-	response = &BodyPostureResponse{
+// CreateVerifyFaceMaskResponse creates a response to parse from VerifyFaceMask response
+func CreateVerifyFaceMaskResponse() (response *VerifyFaceMaskResponse) {
+	response = &VerifyFaceMaskResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

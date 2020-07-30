@@ -97,6 +97,7 @@ func CreateRecognizePublicFaceRequest() (request *RecognizePublicFaceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("facebody", "2019-12-30", "RecognizePublicFace", "facebody", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
