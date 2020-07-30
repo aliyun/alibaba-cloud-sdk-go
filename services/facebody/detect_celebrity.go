@@ -92,7 +92,7 @@ func CreateDetectCelebrityRequest() (request *DetectCelebrityRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("facebody", "2019-12-30", "DetectCelebrity", "facebody", "openAPI")
-	request.Method = requests.GET
+	request.Method = requests.POST
 	return
 }
 

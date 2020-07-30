@@ -1,3 +1,7 @@
+2020-07-30 Version: v1.61.369
+- Generated 2019-12-30 for `facebody`.
+- Update DetectCelebrity.
+
 2020-07-30 Version: v1.61.368
 - Generated 2019-03-07, 2018-09-16, 2020-06-18 for `Cloudauth`.
 - Add Smart Cloudauth API.
