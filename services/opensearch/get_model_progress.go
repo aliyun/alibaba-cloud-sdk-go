@@ -83,8 +83,8 @@ type GetModelProgressRequest struct {
 // GetModelProgressResponse is the response struct for api GetModelProgress
 type GetModelProgressResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
-	Result    Result `json:"result" xml:"result"`
+	RequestId string                   `json:"requestId" xml:"requestId"`
+	Result    ResultInGetModelProgress `json:"result" xml:"result"`
 }
 
 // CreateGetModelProgressRequest creates a request to invoke GetModelProgress API

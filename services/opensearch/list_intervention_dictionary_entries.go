@@ -83,8 +83,9 @@ type ListInterventionDictionaryEntriesRequest struct {
 // ListInterventionDictionaryEntriesResponse is the response struct for api ListInterventionDictionaryEntries
 type ListInterventionDictionaryEntriesResponse struct {
 	*responses.BaseResponse
-	RequestId string     `json:"requestId" xml:"requestId"`
-	Result    []WordItem `json:"result" xml:"result"`
+	RequestId  string     `json:"requestId" xml:"requestId"`
+	TotalCount int        `json:"totalCount" xml:"totalCount"`
+	Result     []WordItem `json:"result" xml:"result"`
 }
 
 // CreateListInterventionDictionaryEntriesRequest creates a request to invoke ListInterventionDictionaryEntries API

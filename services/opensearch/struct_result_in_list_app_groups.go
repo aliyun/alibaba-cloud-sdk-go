@@ -17,5 +17,5 @@ package opensearch
 
 // ResultInListAppGroups is a nested struct in opensearch response
 type ResultInListAppGroups struct {
-	ResultItem []ResultItem `json:"result" xml:"result"`
+	ResultItem []ResultItemInListAppGroups `json:"result" xml:"result"`
 }

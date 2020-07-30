@@ -82,8 +82,8 @@ type CreateDataCollectionRequest struct {
 // CreateDataCollectionResponse is the response struct for api CreateDataCollection
 type CreateDataCollectionResponse struct {
 	*responses.BaseResponse
-	RequestId string                       `json:"requestId" xml:"requestId"`
-	Result    ResultInCreateDataCollection `json:"result" xml:"result"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Result    Result `json:"result" xml:"result"`
 }
 
 // CreateCreateDataCollectionRequest creates a request to invoke CreateDataCollection API

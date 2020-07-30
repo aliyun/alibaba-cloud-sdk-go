@@ -84,8 +84,8 @@ type GetSortScriptRequest struct {
 // GetSortScriptResponse is the response struct for api GetSortScript
 type GetSortScriptResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
-	Result    Result `json:"result" xml:"result"`
+	RequestId string                `json:"requestId" xml:"requestId"`
+	Result    ResultInGetSortScript `json:"result" xml:"result"`
 }
 
 // CreateGetSortScriptRequest creates a request to invoke GetSortScript API

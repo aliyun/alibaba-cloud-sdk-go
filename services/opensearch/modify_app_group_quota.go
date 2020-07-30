@@ -82,8 +82,8 @@ type ModifyAppGroupQuotaRequest struct {
 // ModifyAppGroupQuotaResponse is the response struct for api ModifyAppGroupQuota
 type ModifyAppGroupQuotaResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
-	Result    Result `json:"result" xml:"result"`
+	RequestId string                      `json:"requestId" xml:"requestId"`
+	Result    ResultInModifyAppGroupQuota `json:"result" xml:"result"`
 }
 
 // CreateModifyAppGroupQuotaRequest creates a request to invoke ModifyAppGroupQuota API

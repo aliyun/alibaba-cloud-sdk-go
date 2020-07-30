@@ -82,8 +82,8 @@ type ReplaceAppGroupCommodityCodeRequest struct {
 // ReplaceAppGroupCommodityCodeResponse is the response struct for api ReplaceAppGroupCommodityCode
 type ReplaceAppGroupCommodityCodeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
-	Result    Result `json:"result" xml:"result"`
+	RequestId string                               `json:"requestId" xml:"requestId"`
+	Result    ResultInReplaceAppGroupCommodityCode `json:"result" xml:"result"`
 }
 
 // CreateReplaceAppGroupCommodityCodeRequest creates a request to invoke ReplaceAppGroupCommodityCode API

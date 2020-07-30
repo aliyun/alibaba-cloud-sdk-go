@@ -23,4 +23,5 @@ type WordItem struct {
 	Updated   int64                  `json:"updated" xml:"updated"`
 	Status    string                 `json:"status" xml:"status"`
 	Relevance map[string]interface{} `json:"relevance" xml:"relevance"`
+	Tokens    []Token                `json:"tokens" xml:"tokens"`
 }

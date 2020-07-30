@@ -83,8 +83,8 @@ type DescribeDataCollctionRequest struct {
 // DescribeDataCollctionResponse is the response struct for api DescribeDataCollction
 type DescribeDataCollctionResponse struct {
 	*responses.BaseResponse
-	RequestId string                        `json:"requestId" xml:"requestId"`
-	Result    ResultInDescribeDataCollction `json:"result" xml:"result"`
+	RequestId string `json:"requestId" xml:"requestId"`
+	Result    Result `json:"result" xml:"result"`
 }
 
 // CreateDescribeDataCollctionRequest creates a request to invoke DescribeDataCollction API

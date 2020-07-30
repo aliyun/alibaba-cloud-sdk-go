@@ -1,3 +1,10 @@
+2020-07-30 Version: v1.61.367
+- Generated 2017-12-25 for `OpenSearch`.
+- Add ABTest-related APIs.
+- Add UserAnalyzer-related APIs.
+- Add API ListSortExpressions.
+- Fix property tag_label of response of ListInterventionDictionaryEntries.
+
 2020-07-30 Version: v1.61.366
 - Generated 2020-03-20 for `videoenhan`.
 - Add ChangeVideoSize.

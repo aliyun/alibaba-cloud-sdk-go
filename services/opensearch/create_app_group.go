@@ -81,8 +81,8 @@ type CreateAppGroupRequest struct {
 // CreateAppGroupResponse is the response struct for api CreateAppGroup
 type CreateAppGroupResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
-	Result    Result `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
+	Result    ResultInCreateAppGroup `json:"result" xml:"result"`
 }
 
 // CreateCreateAppGroupRequest creates a request to invoke CreateAppGroup API

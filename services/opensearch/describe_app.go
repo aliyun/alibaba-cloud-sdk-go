@@ -83,8 +83,8 @@ type DescribeAppRequest struct {
 // DescribeAppResponse is the response struct for api DescribeApp
 type DescribeAppResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
-	Result    Result `json:"result" xml:"result"`
+	RequestId string              `json:"requestId" xml:"requestId"`
+	Result    ResultInDescribeApp `json:"result" xml:"result"`
 }
 
 // CreateDescribeAppRequest creates a request to invoke DescribeApp API

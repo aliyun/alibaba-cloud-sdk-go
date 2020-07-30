@@ -82,8 +82,8 @@ type DescribeAppGroupRequest struct {
 // DescribeAppGroupResponse is the response struct for api DescribeAppGroup
 type DescribeAppGroupResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
-	Result    Result `json:"result" xml:"result"`
+	RequestId string                   `json:"requestId" xml:"requestId"`
+	Result    ResultInDescribeAppGroup `json:"result" xml:"result"`
 }
 
 // CreateDescribeAppGroupRequest creates a request to invoke DescribeAppGroup API

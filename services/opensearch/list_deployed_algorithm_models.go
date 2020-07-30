@@ -84,8 +84,8 @@ type ListDeployedAlgorithmModelsRequest struct {
 // ListDeployedAlgorithmModelsResponse is the response struct for api ListDeployedAlgorithmModels
 type ListDeployedAlgorithmModelsResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"requestId" xml:"requestId"`
-	Result    []ResultItem `json:"result" xml:"result"`
+	RequestId string                                    `json:"requestId" xml:"requestId"`
+	Result    []ResultItemInListDeployedAlgorithmModels `json:"result" xml:"result"`
 }
 
 // CreateListDeployedAlgorithmModelsRequest creates a request to invoke ListDeployedAlgorithmModels API

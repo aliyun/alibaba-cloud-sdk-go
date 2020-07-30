@@ -17,10 +17,10 @@ package opensearch
 
 // FirstRankItem is a nested struct in opensearch response
 type FirstRankItem struct {
-	Name        string                     `json:"name" xml:"name"`
 	Description string                     `json:"description" xml:"description"`
-	Active      bool                       `json:"active" xml:"active"`
-	Created     int                        `json:"created" xml:"created"`
 	Updated     int                        `json:"updated" xml:"updated"`
+	Created     int                        `json:"created" xml:"created"`
+	Name        string                     `json:"name" xml:"name"`
+	Active      bool                       `json:"active" xml:"active"`
 	Meta        []MetaItemInListFirstRanks `json:"meta" xml:"meta"`
 }

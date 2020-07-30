@@ -82,8 +82,8 @@ type ModifyAppGroupRequest struct {
 // ModifyAppGroupResponse is the response struct for api ModifyAppGroup
 type ModifyAppGroupResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
-	Result    Result `json:"result" xml:"result"`
+	RequestId string                 `json:"requestId" xml:"requestId"`
+	Result    ResultInModifyAppGroup `json:"result" xml:"result"`
 }
 
 // CreateModifyAppGroupRequest creates a request to invoke ModifyAppGroup API

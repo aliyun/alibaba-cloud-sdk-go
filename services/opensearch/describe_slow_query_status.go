@@ -82,8 +82,8 @@ type DescribeSlowQueryStatusRequest struct {
 // DescribeSlowQueryStatusResponse is the response struct for api DescribeSlowQueryStatus
 type DescribeSlowQueryStatusResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
-	Result    Result `json:"result" xml:"result"`
+	RequestId string                          `json:"requestId" xml:"requestId"`
+	Result    ResultInDescribeSlowQueryStatus `json:"result" xml:"result"`
 }
 
 // CreateDescribeSlowQueryStatusRequest creates a request to invoke DescribeSlowQueryStatus API

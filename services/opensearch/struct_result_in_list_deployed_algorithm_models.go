@@ -17,5 +17,5 @@ package opensearch
 
 // ResultInListDeployedAlgorithmModels is a nested struct in opensearch response
 type ResultInListDeployedAlgorithmModels struct {
-	ResultItem []ResultItem `json:"result" xml:"result"`
+	ResultItem []ResultItemInListDeployedAlgorithmModels `json:"result" xml:"result"`
 }

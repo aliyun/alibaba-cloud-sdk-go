@@ -84,9 +84,9 @@ type ListDataCollectionsRequest struct {
 // ListDataCollectionsResponse is the response struct for api ListDataCollections
 type ListDataCollectionsResponse struct {
 	*responses.BaseResponse
-	RequestId  string                            `json:"requestId" xml:"requestId"`
-	TotalCount int                               `json:"totalCount" xml:"totalCount"`
-	Result     []ResultItemInListDataCollections `json:"result" xml:"result"`
+	RequestId  string       `json:"requestId" xml:"requestId"`
+	TotalCount int          `json:"totalCount" xml:"totalCount"`
+	Result     []ResultItem `json:"result" xml:"result"`
 }
 
 // CreateListDataCollectionsRequest creates a request to invoke ListDataCollections API

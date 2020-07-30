@@ -87,9 +87,9 @@ type ListAppGroupsRequest struct {
 // ListAppGroupsResponse is the response struct for api ListAppGroups
 type ListAppGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId  string       `json:"requestId" xml:"requestId"`
-	TotalCount int          `json:"totalCount" xml:"totalCount"`
-	Result     []ResultItem `json:"result" xml:"result"`
+	RequestId  string                      `json:"requestId" xml:"requestId"`
+	TotalCount int                         `json:"totalCount" xml:"totalCount"`
+	Result     []ResultItemInListAppGroups `json:"result" xml:"result"`
 }
 
 // CreateListAppGroupsRequest creates a request to invoke ListAppGroups API

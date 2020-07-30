@@ -17,5 +17,5 @@ package opensearch
 
 // ResultInListDataCollections is a nested struct in opensearch response
 type ResultInListDataCollections struct {
-	ResultItem []ResultItemInListDataCollections `json:"result" xml:"result"`
+	ResultItem []ResultItem `json:"result" xml:"result"`
 }
