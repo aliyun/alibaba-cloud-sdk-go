@@ -17,9 +17,12 @@ package cloudauth
 
 // Material is a nested struct in cloudauth response
 type Material struct {
-	FaceImageUrl string     `json:"FaceImageUrl" xml:"FaceImageUrl"`
-	IdCardNumber string     `json:"IdCardNumber" xml:"IdCardNumber"`
-	IdCardName   string     `json:"IdCardName" xml:"IdCardName"`
-	VideoUrls    []string   `json:"VideoUrls" xml:"VideoUrls"`
-	IdCardInfo   IdCardInfo `json:"IdCardInfo" xml:"IdCardInfo"`
+	FaceImageUrl  string     `json:"FaceImageUrl" xml:"FaceImageUrl"`
+	FaceQuality   string     `json:"FaceQuality" xml:"FaceQuality"`
+	FaceGlobalUrl string     `json:"FaceGlobalUrl" xml:"FaceGlobalUrl"`
+	FaceMask      bool       `json:"FaceMask" xml:"FaceMask"`
+	IdCardNumber  string     `json:"IdCardNumber" xml:"IdCardNumber"`
+	IdCardName    string     `json:"IdCardName" xml:"IdCardName"`
+	VideoUrls     []string   `json:"VideoUrls" xml:"VideoUrls"`
+	IdCardInfo    IdCardInfo `json:"IdCardInfo" xml:"IdCardInfo"`
 }

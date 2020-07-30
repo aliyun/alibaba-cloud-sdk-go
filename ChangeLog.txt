@@ -1,3 +1,7 @@
+2020-07-30 Version: v1.61.368
+- Generated 2019-03-07, 2018-09-16, 2020-06-18 for `Cloudauth`.
+- Add Smart Cloudauth API.
+
 2020-07-30 Version: v1.61.367
 - Generated 2017-12-25 for `OpenSearch`.
 - Add ABTest-related APIs.
