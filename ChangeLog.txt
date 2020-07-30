@@ -1,3 +1,7 @@
+2020-07-30 Version: v1.61.363
+- Generated 2020-06-06 for `cams`.
+- Supported ChatApp for SDK.
+
 2020-07-29 Version: v1.61.362
 - Generated 2014-05-15 for `Slb`.
 - Support ModificationProtection.
