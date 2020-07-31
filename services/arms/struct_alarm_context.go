@@ -19,4 +19,6 @@ package arms
 type AlarmContext struct {
 	AlarmContentTemplate string `json:"AlarmContentTemplate" xml:"AlarmContentTemplate"`
 	AlarmContentSubTitle string `json:"AlarmContentSubTitle" xml:"AlarmContentSubTitle"`
+	Content              string `json:"Content" xml:"Content"`
+	SubTitle             string `json:"SubTitle" xml:"SubTitle"`
 }

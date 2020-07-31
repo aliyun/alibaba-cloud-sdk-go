@@ -17,5 +17,6 @@ package arms
 
 // ExtInfo is a nested struct in arms response
 type ExtInfo struct {
-	ExtInfoItem []ExtInfoItem `json:"ExtInfo" xml:"ExtInfo"`
+	Type string `json:"Type" xml:"Type"`
+	Info string `json:"Info" xml:"Info"`
 }

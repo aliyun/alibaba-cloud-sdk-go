@@ -78,6 +78,7 @@ type GetStackRequest struct {
 	*requests.RpcRequest
 	TraceID string `position:"Query" name:"TraceID"`
 	RpcID   string `position:"Query" name:"RpcID"`
+	Pid     string `position:"Query" name:"Pid"`
 }
 
 // GetStackResponse is the response struct for api GetStack

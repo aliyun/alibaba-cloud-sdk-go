@@ -1,3 +1,7 @@
+2020-07-31 Version: v1.61.370
+- Generated 2019-08-08 for `ARMS`.
+- Edit GetStack api.
+
 2020-07-30 Version: v1.61.369
 - Generated 2019-12-30 for `facebody`.
 - Update DetectCelebrity.

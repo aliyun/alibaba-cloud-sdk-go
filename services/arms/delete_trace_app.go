@@ -77,6 +77,7 @@ func (client *Client) DeleteTraceAppWithCallback(request *DeleteTraceAppRequest,
 type DeleteTraceAppRequest struct {
 	*requests.RpcRequest
 	AppId string `position:"Query" name:"AppId"`
+	Pid   string `position:"Query" name:"Pid"`
 	Type  string `position:"Query" name:"Type"`
 }
 

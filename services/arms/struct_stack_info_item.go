@@ -17,12 +17,12 @@ package arms
 
 // StackInfoItem is a nested struct in arms response
 type StackInfoItem struct {
-	StartTime   int64         `json:"StartTime" xml:"StartTime"`
-	Duration    int64         `json:"Duration" xml:"Duration"`
-	RpcId       string        `json:"RpcId" xml:"RpcId"`
-	ServiceName string        `json:"ServiceName" xml:"ServiceName"`
-	Api         string        `json:"Api" xml:"Api"`
-	Exception   string        `json:"Exception" xml:"Exception"`
-	Line        string        `json:"Line" xml:"Line"`
-	ExtInfo     []ExtInfoItem `json:"ExtInfo" xml:"ExtInfo"`
+	StartTime   int64   `json:"StartTime" xml:"StartTime"`
+	Duration    int64   `json:"Duration" xml:"Duration"`
+	RpcId       string  `json:"RpcId" xml:"RpcId"`
+	ServiceName string  `json:"ServiceName" xml:"ServiceName"`
+	Api         string  `json:"Api" xml:"Api"`
+	Exception   string  `json:"Exception" xml:"Exception"`
+	Line        string  `json:"Line" xml:"Line"`
+	ExtInfo     ExtInfo `json:"ExtInfo" xml:"ExtInfo"`
 }
