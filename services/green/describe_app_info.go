@@ -100,6 +100,7 @@ func CreateDescribeAppInfoRequest() (request *DescribeAppInfoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "DescribeAppInfo", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

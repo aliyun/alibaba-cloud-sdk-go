@@ -92,6 +92,7 @@ func CreateUpdateAuditRangeRequest() (request *UpdateAuditRangeRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "UpdateAuditRange", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -97,6 +97,7 @@ func CreateUpdateAppPackageRequest() (request *UpdateAppPackageRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "UpdateAppPackage", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

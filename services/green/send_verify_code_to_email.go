@@ -93,6 +93,7 @@ func CreateSendVerifyCodeToEmailRequest() (request *SendVerifyCodeToEmailRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "SendVerifyCodeToEmail", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

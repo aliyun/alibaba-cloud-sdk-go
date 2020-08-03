@@ -111,6 +111,7 @@ func CreateDescribeOssResultItemsRequest() (request *DescribeOssResultItemsReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "DescribeOssResultItems", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

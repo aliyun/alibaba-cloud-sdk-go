@@ -77,6 +77,7 @@ func (client *Client) UploadImageToLibWithCallback(request *UploadImageToLibRequ
 type UploadImageToLibRequest struct {
 	*requests.RpcRequest
 	Images     string           `position:"Query" name:"Images"`
+	Urls       string           `position:"Query" name:"Urls"`
 	SourceIp   string           `position:"Query" name:"SourceIp"`
 	ImageLibId requests.Integer `position:"Query" name:"ImageLibId"`
 }
@@ -93,6 +94,7 @@ func CreateUploadImageToLibRequest() (request *UploadImageToLibRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "UploadImageToLib", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

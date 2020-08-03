@@ -102,6 +102,7 @@ func CreateCreateKeywordLibRequest() (request *CreateKeywordLibRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "CreateKeywordLib", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

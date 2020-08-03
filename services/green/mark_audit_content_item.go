@@ -95,6 +95,7 @@ func CreateMarkAuditContentItemRequest() (request *MarkAuditContentItemRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "MarkAuditContentItem", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

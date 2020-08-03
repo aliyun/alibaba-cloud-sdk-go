@@ -88,6 +88,7 @@ type DescribeBizTypeSettingResponse struct {
 	Terrorism Terrorism `json:"Terrorism" xml:"Terrorism"`
 	Porn      Porn      `json:"Porn" xml:"Porn"`
 	Antispam  Antispam  `json:"Antispam" xml:"Antispam"`
+	Ad        Ad        `json:"Ad" xml:"Ad"`
 }
 
 // CreateDescribeBizTypeSettingRequest creates a request to invoke DescribeBizTypeSetting API
@@ -96,6 +97,7 @@ func CreateDescribeBizTypeSettingRequest() (request *DescribeBizTypeSettingReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "DescribeBizTypeSetting", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

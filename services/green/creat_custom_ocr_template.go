@@ -95,6 +95,7 @@ func CreateCreatCustomOcrTemplateRequest() (request *CreatCustomOcrTemplateReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "CreatCustomOcrTemplate", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

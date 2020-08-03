@@ -96,6 +96,7 @@ func CreateDescribeOpenApiUsageRequest() (request *DescribeOpenApiUsageRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "DescribeOpenApiUsage", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

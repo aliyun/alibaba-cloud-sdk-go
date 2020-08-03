@@ -77,11 +77,12 @@ func (client *Client) UpdateBizTypeSettingWithCallback(request *UpdateBizTypeSet
 type UpdateBizTypeSettingRequest struct {
 	*requests.RpcRequest
 	Antispam     string `position:"Query" name:"Antispam"`
-	ResourceType string `position:"Query" name:"ResourceType"`
 	Porn         string `position:"Query" name:"Porn"`
 	SourceIp     string `position:"Query" name:"SourceIp"`
 	Terrorism    string `position:"Query" name:"Terrorism"`
 	BizTypeName  string `position:"Query" name:"BizTypeName"`
+	Ad           string `position:"Query" name:"Ad"`
+	ResourceType string `position:"Query" name:"ResourceType"`
 }
 
 // UpdateBizTypeSettingResponse is the response struct for api UpdateBizTypeSetting
@@ -96,6 +97,7 @@ func CreateUpdateBizTypeSettingRequest() (request *UpdateBizTypeSettingRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "UpdateBizTypeSetting", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

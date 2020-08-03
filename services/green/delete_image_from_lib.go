@@ -92,6 +92,7 @@ func CreateDeleteImageFromLibRequest() (request *DeleteImageFromLibRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "DeleteImageFromLib", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

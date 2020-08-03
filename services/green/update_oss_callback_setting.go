@@ -97,6 +97,7 @@ func CreateUpdateOssCallbackSettingRequest() (request *UpdateOssCallbackSettingR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "UpdateOssCallbackSetting", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

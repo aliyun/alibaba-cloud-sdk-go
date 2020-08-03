@@ -93,6 +93,7 @@ func CreateDeleteNotificationContactsRequest() (request *DeleteNotificationConta
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "DeleteNotificationContacts", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

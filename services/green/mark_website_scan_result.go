@@ -93,6 +93,7 @@ func CreateMarkWebsiteScanResultRequest() (request *MarkWebsiteScanResultRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "MarkWebsiteScanResult", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

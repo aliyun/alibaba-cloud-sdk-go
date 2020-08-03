@@ -76,10 +76,11 @@ func (client *Client) CreateBizTypeWithCallback(request *CreateBizTypeRequest, c
 // CreateBizTypeRequest is the request struct for api CreateBizType
 type CreateBizTypeRequest struct {
 	*requests.RpcRequest
-	BizTypeImport string `position:"Query" name:"BizTypeImport"`
-	SourceIp      string `position:"Query" name:"SourceIp"`
-	IndustryInfo  string `position:"Query" name:"IndustryInfo"`
-	BizTypeName   string `position:"Query" name:"BizTypeName"`
+	BizTypeImport string           `position:"Query" name:"BizTypeImport"`
+	CiteTemplate  requests.Boolean `position:"Query" name:"CiteTemplate"`
+	SourceIp      string           `position:"Query" name:"SourceIp"`
+	IndustryInfo  string           `position:"Query" name:"IndustryInfo"`
+	BizTypeName   string           `position:"Query" name:"BizTypeName"`
 }
 
 // CreateBizTypeResponse is the response struct for api CreateBizType
@@ -94,6 +95,7 @@ func CreateCreateBizTypeRequest() (request *CreateBizTypeRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "CreateBizType", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -92,6 +92,7 @@ func CreateDeleteBizTypeRequest() (request *DeleteBizTypeRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "DeleteBizType", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

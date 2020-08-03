@@ -94,6 +94,7 @@ func CreateUpdateAuditSettingRequest() (request *UpdateAuditSettingRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "UpdateAuditSetting", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

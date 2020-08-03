@@ -94,6 +94,7 @@ func CreateDescribeWebsiteStatRequest() (request *DescribeWebsiteStatRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "DescribeWebsiteStat", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

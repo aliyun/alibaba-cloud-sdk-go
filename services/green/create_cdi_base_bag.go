@@ -100,6 +100,7 @@ func CreateCreateCdiBaseBagRequest() (request *CreateCdiBaseBagRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "CreateCdiBaseBag", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

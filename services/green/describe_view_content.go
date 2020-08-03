@@ -111,6 +111,7 @@ func CreateDescribeViewContentRequest() (request *DescribeViewContentRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "DescribeViewContent", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

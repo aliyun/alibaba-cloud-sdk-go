@@ -18,8 +18,11 @@ package green
 // Item is a nested struct in green response
 type Item struct {
 	Name          string `json:"Name" xml:"Name"`
+	CiteTemplate  bool   `json:"CiteTemplate" xml:"CiteTemplate"`
 	X             int    `json:"X" xml:"X"`
 	BizType       string `json:"BizType" xml:"BizType"`
+	Code          string `json:"Code" xml:"Code"`
+	IndustryInfo  string `json:"IndustryInfo" xml:"IndustryInfo"`
 	Y             int    `json:"Y" xml:"Y"`
 	Width         int    `json:"Width" xml:"Width"`
 	Height        int    `json:"Height" xml:"Height"`

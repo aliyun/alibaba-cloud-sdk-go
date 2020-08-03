@@ -20,4 +20,6 @@ type ImageAutoFreeze struct {
 	Enabled   bool   `json:"Enabled" xml:"Enabled"`
 	Porn      string `json:"Porn" xml:"Porn"`
 	Terrorism string `json:"Terrorism" xml:"Terrorism"`
+	Ad        string `json:"Ad" xml:"Ad"`
+	Live      string `json:"Live" xml:"Live"`
 }

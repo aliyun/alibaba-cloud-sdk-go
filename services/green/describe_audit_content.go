@@ -112,6 +112,7 @@ func CreateDescribeAuditContentRequest() (request *DescribeAuditContentRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "DescribeAuditContent", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

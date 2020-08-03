@@ -98,6 +98,7 @@ func CreateDescribeOssIncrementStatsRequest() (request *DescribeOssIncrementStat
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Green", "2017-08-23", "DescribeOssIncrementStats", "green", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
