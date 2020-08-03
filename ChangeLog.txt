@@ -1,3 +1,7 @@
+2020-08-03 Version: v1.61.372
+- Generated 2019-12-30 for `facebody`.
+- Add ExtractPedestrianFeatureAttribute.
+
 2020-08-03 Version: v1.61.371
 - Generated 2019-05-31 for `mse`.
 
