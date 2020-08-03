@@ -18,18 +18,19 @@ package vcs
 // Data is a nested struct in vcs response
 type Data struct {
 	TotalPage    int                `json:"TotalPage" xml:"TotalPage"`
-	DataSourceId string             `json:"DataSourceId" xml:"DataSourceId"`
 	MaxId        string             `json:"MaxId" xml:"MaxId"`
-	PersonId     string             `json:"PersonId" xml:"PersonId"`
-	KafkaTopic   string             `json:"KafkaTopic" xml:"KafkaTopic"`
 	PageSize     int                `json:"PageSize" xml:"PageSize"`
 	OssPath      string             `json:"OssPath" xml:"OssPath"`
 	TaskId       string             `json:"TaskId" xml:"TaskId"`
 	TotalCount   int                `json:"TotalCount" xml:"TotalCount"`
-	QualityScore string             `json:"QualityScore" xml:"QualityScore"`
 	PageNumber   int                `json:"PageNumber" xml:"PageNumber"`
-	PicUrl       string             `json:"PicUrl" xml:"PicUrl"`
 	Description  string             `json:"Description" xml:"Description"`
+	DataSourceId string             `json:"DataSourceId" xml:"DataSourceId"`
+	PersonId     string             `json:"PersonId" xml:"PersonId"`
+	KafkaTopic   string             `json:"KafkaTopic" xml:"KafkaTopic"`
+	StructList   string             `json:"StructList" xml:"StructList"`
+	QualityScore string             `json:"QualityScore" xml:"QualityScore"`
+	PicUrl       string             `json:"PicUrl" xml:"PicUrl"`
 	Attributes   Attributes         `json:"Attributes" xml:"Attributes"`
 	Records      []RecordsItem      `json:"Records" xml:"Records"`
 	ResultObject []ResultObjectItem `json:"ResultObject" xml:"ResultObject"`

@@ -18,26 +18,27 @@ package vcs
 // RecordsItem is a nested struct in vcs response
 type RecordsItem struct {
 	LeftUpX          string        `json:"LeftUpX" xml:"LeftUpX"`
-	DataSourceId     string        `json:"DataSourceId" xml:"DataSourceId"`
 	RightBottomY     string        `json:"RightBottomY" xml:"RightBottomY"`
-	LeftUpY          string        `json:"LeftUpY" xml:"LeftUpY"`
 	FirstAppearTime  string        `json:"FirstAppearTime" xml:"FirstAppearTime"`
-	PersonId         string        `json:"PersonId" xml:"PersonId"`
 	TargetPicUrlPath string        `json:"TargetPicUrlPath" xml:"TargetPicUrlPath"`
 	CapStyle         string        `json:"CapStyle" xml:"CapStyle"`
 	Score            string        `json:"Score" xml:"Score"`
-	ShotTime         string        `json:"ShotTime" xml:"ShotTime"`
-	TagCode          string        `json:"TagCode" xml:"TagCode"`
-	GbId             string        `json:"GbId" xml:"GbId"`
-	TagMetric        string        `json:"TagMetric" xml:"TagMetric"`
-	EventType        string        `json:"EventType" xml:"EventType"`
+	TargetPicUrl     string        `json:"TargetPicUrl" xml:"TargetPicUrl"`
 	CorpId           string        `json:"CorpId" xml:"CorpId"`
 	DateTime         string        `json:"DateTime" xml:"DateTime"`
 	TagValue         string        `json:"TagValue" xml:"TagValue"`
 	RecordId         string        `json:"RecordId" xml:"RecordId"`
 	PicUrlPath       string        `json:"PicUrlPath" xml:"PicUrlPath"`
-	PicUrl           string        `json:"PicUrl" xml:"PicUrl"`
 	FaceCount        string        `json:"FaceCount" xml:"FaceCount"`
+	DataSourceId     string        `json:"DataSourceId" xml:"DataSourceId"`
+	LeftUpY          string        `json:"LeftUpY" xml:"LeftUpY"`
+	PersonId         string        `json:"PersonId" xml:"PersonId"`
+	ShotTime         string        `json:"ShotTime" xml:"ShotTime"`
+	TagCode          string        `json:"TagCode" xml:"TagCode"`
+	GbId             string        `json:"GbId" xml:"GbId"`
+	TagMetric        string        `json:"TagMetric" xml:"TagMetric"`
+	EventType        string        `json:"EventType" xml:"EventType"`
+	PicUrl           string        `json:"PicUrl" xml:"PicUrl"`
 	RightBottomX     string        `json:"RightBottomX" xml:"RightBottomX"`
 	MonitorPicUrl    string        `json:"MonitorPicUrl" xml:"MonitorPicUrl"`
 	TagList          []TagListItem `json:"TagList" xml:"TagList"`
