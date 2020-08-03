@@ -78,6 +78,7 @@ type InvokeMotorModelRequest struct {
 	*requests.RpcRequest
 	PicPath string `position:"Body" name:"PicPath"`
 	CorpId  string `position:"Body" name:"CorpId"`
+	PicUrl  string `position:"Body" name:"PicUrl"`
 	PicId   string `position:"Body" name:"PicId"`
 }
 

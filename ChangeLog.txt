@@ -1,3 +1,7 @@
+2020-08-03 Version: v1.61.376
+- Generated 2020-05-15 for `Vcs`.
+- Add source picture url for Monitor.
+
 2020-08-03 Version: v1.61.375
 - Generated 2017-08-23, 2018-05-09, 2016-12-22 for `Green`.
 - Fix Some API Response Define.
