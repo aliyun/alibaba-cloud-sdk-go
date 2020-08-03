@@ -21,7 +21,6 @@ type Item struct {
 	CiteTemplate  bool   `json:"CiteTemplate" xml:"CiteTemplate"`
 	X             int    `json:"X" xml:"X"`
 	BizType       string `json:"BizType" xml:"BizType"`
-	Code          string `json:"Code" xml:"Code"`
 	IndustryInfo  string `json:"IndustryInfo" xml:"IndustryInfo"`
 	Y             int    `json:"Y" xml:"Y"`
 	Width         int    `json:"Width" xml:"Width"`
