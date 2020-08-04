@@ -76,14 +76,15 @@ func (client *Client) DeployAppWithCallback(request *DeployAppRequest, callback 
 // DeployAppRequest is the request struct for api DeployApp
 type DeployAppRequest struct {
 	*requests.RpcRequest
-	DeployPacketId  requests.Integer `position:"Query" name:"DeployPacketId"`
-	DeployPacketUrl string           `position:"Query" name:"DeployPacketUrl"`
-	TotalPartitions requests.Integer `position:"Query" name:"TotalPartitions"`
-	Name            string           `position:"Query" name:"Name"`
-	Description     string           `position:"Query" name:"Description"`
-	EnvId           requests.Integer `position:"Query" name:"EnvId"`
-	PauseType       string           `position:"Query" name:"PauseType"`
-	ArmsFlag        requests.Boolean `position:"Query" name:"ArmsFlag"`
+	DeployPacketId     requests.Integer `position:"Query" name:"DeployPacketId"`
+	DeployPacketUrl    string           `position:"Query" name:"DeployPacketUrl"`
+	TotalPartitions    requests.Integer `position:"Query" name:"TotalPartitions"`
+	Name               string           `position:"Query" name:"Name"`
+	Description        string           `position:"Query" name:"Description"`
+	EnvId              requests.Integer `position:"Query" name:"EnvId"`
+	UpdateStrategyType string           `position:"Query" name:"UpdateStrategyType"`
+	PauseType          string           `position:"Query" name:"PauseType"`
+	ArmsFlag           requests.Boolean `position:"Query" name:"ArmsFlag"`
 }
 
 // DeployAppResponse is the response struct for api DeployApp
