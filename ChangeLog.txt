@@ -1,3 +1,7 @@
+2020-08-04 Version: v1.61.378
+- Generated 2020-05-15 for `Vcs`.
+- Add Image Url parameter for invoke motor algorithm.
+
 2020-08-04 Version: v1.61.377
 - Generated 2020-05-15 for `Vcs`.
 - Add source picture url for Monitor.
