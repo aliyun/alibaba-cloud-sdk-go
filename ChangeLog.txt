@@ -1,3 +1,7 @@
+2020-08-04 Version: v1.61.377
+- Generated 2020-05-15 for `Vcs`.
+- Add source picture url for Monitor.
+
 2020-08-03 Version: v1.61.376
 - Generated 2020-05-15 for `Vcs`.
 - Add source picture url for Monitor.
