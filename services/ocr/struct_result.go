@@ -17,7 +17,11 @@ package ocr
 
 // Result is a nested struct in ocr response
 type Result struct {
-	Probability    float64         `json:"Probability" xml:"Probability"`
-	Text           string          `json:"Text" xml:"Text"`
-	TextRectangles []TextRectangle `json:"TextRectangles" xml:"TextRectangles"`
+	Rate           float64        `json:"Rate" xml:"Rate"`
+	Text           string         `json:"Text" xml:"Text"`
+	Label          string         `json:"Label" xml:"Label"`
+	Suggestion     string         `json:"Suggestion" xml:"Suggestion"`
+	Probability    float64        `json:"Probability" xml:"Probability"`
+	QrCodesData    []string       `json:"QrCodesData" xml:"QrCodesData"`
+	TextRectangles TextRectangles `json:"TextRectangles" xml:"TextRectangles"`
 }

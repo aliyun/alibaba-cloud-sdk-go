@@ -93,6 +93,7 @@ func CreateRecognizeAccountPageRequest() (request *RecognizeAccountPageRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ocr", "2019-12-30", "RecognizeAccountPage", "ocr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

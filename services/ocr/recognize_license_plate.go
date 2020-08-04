@@ -93,6 +93,7 @@ func CreateRecognizeLicensePlateRequest() (request *RecognizeLicensePlateRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ocr", "2019-12-30", "RecognizeLicensePlate", "ocr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

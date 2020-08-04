@@ -94,6 +94,7 @@ func CreateRecognizeIdentityCardRequest() (request *RecognizeIdentityCardRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ocr", "2019-12-30", "RecognizeIdentityCard", "ocr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

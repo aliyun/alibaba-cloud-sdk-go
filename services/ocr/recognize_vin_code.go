@@ -93,6 +93,7 @@ func CreateRecognizeVINCodeRequest() (request *RecognizeVINCodeRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ocr", "2019-12-30", "RecognizeVINCode", "ocr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

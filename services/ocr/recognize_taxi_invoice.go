@@ -93,6 +93,7 @@ func CreateRecognizeTaxiInvoiceRequest() (request *RecognizeTaxiInvoiceRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ocr", "2019-12-30", "RecognizeTaxiInvoice", "ocr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

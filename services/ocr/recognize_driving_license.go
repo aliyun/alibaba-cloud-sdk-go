@@ -94,6 +94,7 @@ func CreateRecognizeDrivingLicenseRequest() (request *RecognizeDrivingLicenseReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ocr", "2019-12-30", "RecognizeDrivingLicense", "ocr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

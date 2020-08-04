@@ -93,6 +93,7 @@ func CreateRecognizeBusinessCardRequest() (request *RecognizeBusinessCardRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ocr", "2019-12-30", "RecognizeBusinessCard", "ocr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

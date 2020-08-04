@@ -17,44 +17,72 @@ package ocr
 
 // Data is a nested struct in ocr response
 type Data struct {
+	ExpiryDate          string               `json:"ExpiryDate" xml:"ExpiryDate"`
+	Date                string               `json:"Date" xml:"Date"`
+	ExpiryDay           string               `json:"ExpiryDay" xml:"ExpiryDay"`
+	Seat                string               `json:"Seat" xml:"Seat"`
+	FileContent         string               `json:"FileContent" xml:"FileContent"`
+	Type                string               `json:"Type" xml:"Type"`
+	NameChineseRaw      string               `json:"NameChineseRaw" xml:"NameChineseRaw"`
+	NativePlace         string               `json:"NativePlace" xml:"NativePlace"`
+	IssuePlaceRaw       string               `json:"IssuePlaceRaw" xml:"IssuePlaceRaw"`
+	Destination         string               `json:"Destination" xml:"Destination"`
+	Price               float64              `json:"Price" xml:"Price"`
+	Relation            string               `json:"Relation" xml:"Relation"`
+	BirthPlaceRaw       string               `json:"BirthPlaceRaw" xml:"BirthPlaceRaw"`
+	DepartureStation    string               `json:"DepartureStation" xml:"DepartureStation"`
+	Gender              string               `json:"Gender" xml:"Gender"`
+	BirthDay            string               `json:"BirthDay" xml:"BirthDay"`
+	PassportNo          string               `json:"PassportNo" xml:"PassportNo"`
+	Success             bool                 `json:"Success" xml:"Success"`
+	IssueDate           string               `json:"IssueDate" xml:"IssueDate"`
+	Status              string               `json:"Status" xml:"Status"`
 	Name                string               `json:"Name" xml:"Name"`
 	BankName            string               `json:"BankName" xml:"BankName"`
 	IDNumber            string               `json:"IDNumber" xml:"IDNumber"`
-	Date                string               `json:"Date" xml:"Date"`
-	Seat                string               `json:"Seat" xml:"Seat"`
-	FileContent         string               `json:"FileContent" xml:"FileContent"`
+	ErrorMessage        string               `json:"ErrorMessage" xml:"ErrorMessage"`
+	Sex                 string               `json:"Sex" xml:"Sex"`
+	LineOne             string               `json:"LineOne" xml:"LineOne"`
+	Authority           string               `json:"Authority" xml:"Authority"`
 	CardNumber          string               `json:"CardNumber" xml:"CardNumber"`
 	VinCode             string               `json:"VinCode" xml:"VinCode"`
+	ErrorCode           string               `json:"ErrorCode" xml:"ErrorCode"`
 	Angle               float64              `json:"Angle" xml:"Angle"`
+	Country             string               `json:"Country" xml:"Country"`
+	JobId               string               `json:"JobId" xml:"JobId"`
 	BirthPlace          string               `json:"BirthPlace" xml:"BirthPlace"`
+	Result              string               `json:"Result" xml:"Result"`
 	Nationality         string               `json:"Nationality" xml:"Nationality"`
-	NativePlace         string               `json:"NativePlace" xml:"NativePlace"`
 	ValidDate           string               `json:"ValidDate" xml:"ValidDate"`
-	Destination         string               `json:"Destination" xml:"Destination"`
 	Level               string               `json:"Level" xml:"Level"`
-	Price               float64              `json:"Price" xml:"Price"`
-	Relation            string               `json:"Relation" xml:"Relation"`
+	PersonId            string               `json:"PersonId" xml:"PersonId"`
+	SourceCountry       string               `json:"SourceCountry" xml:"SourceCountry"`
+	NameChinese         string               `json:"NameChinese" xml:"NameChinese"`
 	Number              string               `json:"Number" xml:"Number"`
-	DepartureStation    string               `json:"DepartureStation" xml:"DepartureStation"`
-	Gender              string               `json:"Gender" xml:"Gender"`
 	BirthDate           string               `json:"BirthDate" xml:"BirthDate"`
-	OfficePhoneNumbers  []string             `json:"OfficePhoneNumbers" xml:"OfficePhoneNumbers"`
+	LineZero            string               `json:"LineZero" xml:"LineZero"`
+	IssuePlace          string               `json:"IssuePlace" xml:"IssuePlace"`
 	Departments         []string             `json:"Departments" xml:"Departments"`
 	Companies           []string             `json:"Companies" xml:"Companies"`
-	Titles              []string             `json:"Titles" xml:"Titles"`
 	Emails              []string             `json:"Emails" xml:"Emails"`
 	CellPhoneNumbers    []string             `json:"CellPhoneNumbers" xml:"CellPhoneNumbers"`
+	OfficePhoneNumbers  []string             `json:"OfficePhoneNumbers" xml:"OfficePhoneNumbers"`
+	Titles              []string             `json:"Titles" xml:"Titles"`
 	Addresses           []string             `json:"Addresses" xml:"Addresses"`
-	BackResult          BackResult           `json:"BackResult" xml:"BackResult"`
-	TitleArea           TitleArea            `json:"TitleArea" xml:"TitleArea"`
+	Box                 Box                  `json:"Box" xml:"Box"`
 	FaceResult          FaceResult           `json:"FaceResult" xml:"FaceResult"`
+	Content             Content              `json:"Content" xml:"Content"`
+	BackResult          BackResult           `json:"BackResult" xml:"BackResult"`
 	FrontResult         FrontResult          `json:"FrontResult" xml:"FrontResult"`
-	UndertakeStampAreas []UndertakeStampArea `json:"UndertakeStampAreas" xml:"UndertakeStampAreas"`
+	TitleArea           TitleArea            `json:"TitleArea" xml:"TitleArea"`
+	Regions             []Region             `json:"Regions" xml:"Regions"`
 	Tables              []Table              `json:"Tables" xml:"Tables"`
 	InvalidStampAreas   []InvalidStampArea   `json:"InvalidStampAreas" xml:"InvalidStampAreas"`
 	Invoices            []Invoice            `json:"Invoices" xml:"Invoices"`
 	RegisterStampAreas  []RegisterStampArea  `json:"RegisterStampAreas" xml:"RegisterStampAreas"`
 	Results             []Result             `json:"Results" xml:"Results"`
+	Elements            []Element            `json:"Elements" xml:"Elements"`
 	OtherStampAreas     []OtherStampArea     `json:"OtherStampAreas" xml:"OtherStampAreas"`
+	UndertakeStampAreas []UndertakeStampArea `json:"UndertakeStampAreas" xml:"UndertakeStampAreas"`
 	Plates              []Plate              `json:"Plates" xml:"Plates"`
 }

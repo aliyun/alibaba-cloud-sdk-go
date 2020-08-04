@@ -93,6 +93,7 @@ func CreateRecognizeTrainTicketRequest() (request *RecognizeTrainTicketRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ocr", "2019-12-30", "RecognizeTrainTicket", "ocr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

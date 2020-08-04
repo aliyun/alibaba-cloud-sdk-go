@@ -95,6 +95,7 @@ func CreateRecognizeCharacterRequest() (request *RecognizeCharacterRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ocr", "2019-12-30", "RecognizeCharacter", "ocr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -93,6 +93,7 @@ func CreateRecognizeStampRequest() (request *RecognizeStampRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ocr", "2019-12-30", "RecognizeStamp", "ocr", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
