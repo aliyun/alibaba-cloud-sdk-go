@@ -89,12 +89,12 @@ type VerifyMaterialRequest struct {
 // VerifyMaterialResponse is the response struct for api VerifyMaterial
 type VerifyMaterialResponse struct {
 	*responses.BaseResponse
-	RequestId                 string   `json:"RequestId" xml:"RequestId"`
-	VerifyToken               string   `json:"VerifyToken" xml:"VerifyToken"`
-	VerifyStatus              int      `json:"VerifyStatus" xml:"VerifyStatus"`
-	AuthorityComparisionScore float64  `json:"AuthorityComparisionScore" xml:"AuthorityComparisionScore"`
-	IdCardFaceComparisonScore float64  `json:"IdCardFaceComparisonScore" xml:"IdCardFaceComparisonScore"`
-	Material                  Material `json:"Material" xml:"Material"`
+	RequestId                 string                   `json:"RequestId" xml:"RequestId"`
+	VerifyToken               string                   `json:"VerifyToken" xml:"VerifyToken"`
+	VerifyStatus              int                      `json:"VerifyStatus" xml:"VerifyStatus"`
+	AuthorityComparisionScore float64                  `json:"AuthorityComparisionScore" xml:"AuthorityComparisionScore"`
+	IdCardFaceComparisonScore float64                  `json:"IdCardFaceComparisonScore" xml:"IdCardFaceComparisonScore"`
+	Material                  MaterialInVerifyMaterial `json:"Material" xml:"Material"`
 }
 
 // CreateVerifyMaterialRequest creates a request to invoke VerifyMaterial API
