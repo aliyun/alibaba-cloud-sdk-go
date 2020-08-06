@@ -76,13 +76,16 @@ func (client *Client) CreateTrailWithCallback(request *CreateTrailRequest, callb
 // CreateTrailRequest is the request struct for api CreateTrail
 type CreateTrailRequest struct {
 	*requests.RpcRequest
-	SlsProjectArn   string `position:"Query" name:"SlsProjectArn"`
-	SlsWriteRoleArn string `position:"Query" name:"SlsWriteRoleArn"`
-	OssKeyPrefix    string `position:"Query" name:"OssKeyPrefix"`
-	RoleName        string `position:"Query" name:"RoleName"`
-	EventRW         string `position:"Query" name:"EventRW"`
-	Name            string `position:"Query" name:"Name"`
-	OssBucketName   string `position:"Query" name:"OssBucketName"`
+	SlsProjectArn       string           `position:"Query" name:"SlsProjectArn"`
+	SlsWriteRoleArn     string           `position:"Query" name:"SlsWriteRoleArn"`
+	IsOrganizationTrail requests.Boolean `position:"Query" name:"IsOrganizationTrail"`
+	OssKeyPrefix        string           `position:"Query" name:"OssKeyPrefix"`
+	MnsTopicArn         string           `position:"Query" name:"MnsTopicArn"`
+	RoleName            string           `position:"Query" name:"RoleName"`
+	EventRW             string           `position:"Query" name:"EventRW"`
+	Name                string           `position:"Query" name:"Name"`
+	OssBucketName       string           `position:"Query" name:"OssBucketName"`
+	TrailRegion         string           `position:"Query" name:"TrailRegion"`
 }
 
 // CreateTrailResponse is the response struct for api CreateTrail
@@ -97,6 +100,8 @@ type CreateTrailResponse struct {
 	SlsProjectArn   string `json:"SlsProjectArn" xml:"SlsProjectArn"`
 	SlsWriteRoleArn string `json:"SlsWriteRoleArn" xml:"SlsWriteRoleArn"`
 	EventRW         string `json:"EventRW" xml:"EventRW"`
+	TrailRegion     string `json:"TrailRegion" xml:"TrailRegion"`
+	MnsTopicArn     string `json:"MnsTopicArn" xml:"MnsTopicArn"`
 }
 
 // CreateCreateTrailRequest creates a request to invoke CreateTrail API
@@ -105,6 +110,7 @@ func CreateCreateTrailRequest() (request *CreateTrailRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Actiontrail", "2017-12-04", "CreateTrail", "actiontrail", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

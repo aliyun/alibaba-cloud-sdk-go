@@ -93,6 +93,7 @@ func CreateStartLoggingRequest() (request *StartLoggingRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Actiontrail", "2017-12-04", "StartLogging", "actiontrail", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

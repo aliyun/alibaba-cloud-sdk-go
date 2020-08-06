@@ -91,6 +91,7 @@ func CreateDeleteTrailRequest() (request *DeleteTrailRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Actiontrail", "2017-12-04", "DeleteTrail", "actiontrail", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -17,13 +17,20 @@ package actiontrail
 
 // TrailListItem is a nested struct in actiontrail response
 type TrailListItem struct {
-	Name            string `json:"Name" xml:"Name"`
-	HomeRegion      string `json:"HomeRegion" xml:"HomeRegion"`
-	RoleName        string `json:"RoleName" xml:"RoleName"`
-	OssBucketName   string `json:"OssBucketName" xml:"OssBucketName"`
-	OssKeyPrefix    string `json:"OssKeyPrefix" xml:"OssKeyPrefix"`
-	EventRW         string `json:"EventRW" xml:"EventRW"`
-	SlsWriteRoleArn string `json:"SlsWriteRoleArn" xml:"SlsWriteRoleArn"`
-	SlsProjectArn   string `json:"SlsProjectArn" xml:"SlsProjectArn"`
-	Status          string `json:"Status" xml:"Status"`
+	Name                string `json:"Name" xml:"Name"`
+	HomeRegion          string `json:"HomeRegion" xml:"HomeRegion"`
+	RoleName            string `json:"RoleName" xml:"RoleName"`
+	OssBucketName       string `json:"OssBucketName" xml:"OssBucketName"`
+	OssKeyPrefix        string `json:"OssKeyPrefix" xml:"OssKeyPrefix"`
+	EventRW             string `json:"EventRW" xml:"EventRW"`
+	SlsWriteRoleArn     string `json:"SlsWriteRoleArn" xml:"SlsWriteRoleArn"`
+	SlsProjectArn       string `json:"SlsProjectArn" xml:"SlsProjectArn"`
+	Status              string `json:"Status" xml:"Status"`
+	TrailRegion         string `json:"TrailRegion" xml:"TrailRegion"`
+	CreateTime          string `json:"CreateTime" xml:"CreateTime"`
+	UpdateTime          string `json:"UpdateTime" xml:"UpdateTime"`
+	StartLoggingTime    string `json:"StartLoggingTime" xml:"StartLoggingTime"`
+	StopLoggingTime     string `json:"StopLoggingTime" xml:"StopLoggingTime"`
+	MnsTopicArn         string `json:"MnsTopicArn" xml:"MnsTopicArn"`
+	IsOrganizationTrail bool   `json:"IsOrganizationTrail" xml:"IsOrganizationTrail"`
 }

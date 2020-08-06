@@ -76,7 +76,8 @@ func (client *Client) GetTrailStatusWithCallback(request *GetTrailStatusRequest,
 // GetTrailStatusRequest is the request struct for api GetTrailStatus
 type GetTrailStatusRequest struct {
 	*requests.RpcRequest
-	Name string `position:"Query" name:"Name"`
+	Name                string           `position:"Query" name:"Name"`
+	IsOrganizationTrail requests.Boolean `position:"Query" name:"IsOrganizationTrail"`
 }
 
 // GetTrailStatusResponse is the response struct for api GetTrailStatus
@@ -96,6 +97,7 @@ func CreateGetTrailStatusRequest() (request *GetTrailStatusRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Actiontrail", "2017-12-04", "GetTrailStatus", "actiontrail", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
