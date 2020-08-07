@@ -97,7 +97,8 @@ func CreateCreateDocTranslateTaskRequest() (request *CreateDocTranslateTaskReque
 	request = &CreateDocTranslateTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "CreateDocTranslateTask", "alimt", "openAPI")
+	request.InitWithApiInfo("alimt", "2018-10-12", "CreateDocTranslateTask", "", "")
+	request.Method = requests.POST
 	return
 }
 

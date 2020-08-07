@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// Translate invokes the alimt.Translate API synchronously
-// api document: https://help.aliyun.com/api/alimt/translate.html
-func (client *Client) Translate(request *TranslateRequest) (response *TranslateResponse, err error) {
-	response = CreateTranslateResponse()
+// GetImageDiagnose invokes the alimt.GetImageDiagnose API synchronously
+// api document: https://help.aliyun.com/api/alimt/getimagediagnose.html
+func (client *Client) GetImageDiagnose(request *GetImageDiagnoseRequest) (response *GetImageDiagnoseResponse, err error) {
+	response = CreateGetImageDiagnoseResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// TranslateWithChan invokes the alimt.Translate API asynchronously
-// api document: https://help.aliyun.com/api/alimt/translate.html
+// GetImageDiagnoseWithChan invokes the alimt.GetImageDiagnose API asynchronously
+// api document: https://help.aliyun.com/api/alimt/getimagediagnose.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) TranslateWithChan(request *TranslateRequest) (<-chan *TranslateResponse, <-chan error) {
-	responseChan := make(chan *TranslateResponse, 1)
+func (client *Client) GetImageDiagnoseWithChan(request *GetImageDiagnoseRequest) (<-chan *GetImageDiagnoseResponse, <-chan error) {
+	responseChan := make(chan *GetImageDiagnoseResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.Translate(request)
+		response, err := client.GetImageDiagnose(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) TranslateWithChan(request *TranslateRequest) (<-chan *Tran
 	return responseChan, errChan
 }
 
-// TranslateWithCallback invokes the alimt.Translate API asynchronously
-// api document: https://help.aliyun.com/api/alimt/translate.html
+// GetImageDiagnoseWithCallback invokes the alimt.GetImageDiagnose API asynchronously
+// api document: https://help.aliyun.com/api/alimt/getimagediagnose.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) TranslateWithCallback(request *TranslateRequest, callback func(response *TranslateResponse, err error)) <-chan int {
+func (client *Client) GetImageDiagnoseWithCallback(request *GetImageDiagnoseRequest, callback func(response *GetImageDiagnoseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *TranslateResponse
+		var response *GetImageDiagnoseResponse
 		var err error
 		defer close(result)
-		response, err = client.Translate(request)
+		response, err = client.GetImageDiagnose(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,18 +73,15 @@ func (client *Client) TranslateWithCallback(request *TranslateRequest, callback 
 	return result
 }
 
-// TranslateRequest is the request struct for api Translate
-type TranslateRequest struct {
+// GetImageDiagnoseRequest is the request struct for api GetImageDiagnose
+type GetImageDiagnoseRequest struct {
 	*requests.RpcRequest
-	SourceLanguage string `position:"Body" name:"SourceLanguage"`
-	SourceText     string `position:"Body" name:"SourceText"`
-	FormatType     string `position:"Body" name:"FormatType"`
-	Scene          string `position:"Body" name:"Scene"`
-	TargetLanguage string `position:"Body" name:"TargetLanguage"`
+	Url   string `position:"Body" name:"Url"`
+	Extra string `position:"Body" name:"Extra"`
 }
 
-// TranslateResponse is the response struct for api Translate
-type TranslateResponse struct {
+// GetImageDiagnoseResponse is the response struct for api GetImageDiagnose
+type GetImageDiagnoseResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
@@ -92,19 +89,19 @@ type TranslateResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateTranslateRequest creates a request to invoke Translate API
-func CreateTranslateRequest() (request *TranslateRequest) {
-	request = &TranslateRequest{
+// CreateGetImageDiagnoseRequest creates a request to invoke GetImageDiagnose API
+func CreateGetImageDiagnoseRequest() (request *GetImageDiagnoseRequest) {
+	request = &GetImageDiagnoseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "Translate", "", "")
+	request.InitWithApiInfo("alimt", "2018-10-12", "GetImageDiagnose", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateTranslateResponse creates a response to parse from Translate response
-func CreateTranslateResponse() (response *TranslateResponse) {
-	response = &TranslateResponse{
+// CreateGetImageDiagnoseResponse creates a response to parse from GetImageDiagnose response
+func CreateGetImageDiagnoseResponse() (response *GetImageDiagnoseResponse) {
+	response = &GetImageDiagnoseResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

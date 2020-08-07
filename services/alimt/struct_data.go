@@ -17,6 +17,19 @@ package alimt
 
 // Data is a nested struct in alimt response
 type Data struct {
-	Translated       string                        `json:"Translated" xml:"Translated"`
-	TranslatedValues []CertificateTranslateItemDTO `json:"TranslatedValues" xml:"TranslatedValues"`
+	Translated              string                        `json:"Translated" xml:"Translated"`
+	WordSpelledCorrectError string                        `json:"WordSpelledCorrectError" xml:"WordSpelledCorrectError"`
+	ContainCoreClasses      string                        `json:"ContainCoreClasses" xml:"ContainCoreClasses"`
+	OverLengthLimit         string                        `json:"OverLengthLimit" xml:"OverLengthLimit"`
+	Titles                  string                        `json:"Titles" xml:"Titles"`
+	Language                string                        `json:"Language" xml:"Language"`
+	NoFirstUppercaseList    string                        `json:"NoFirstUppercaseList" xml:"NoFirstUppercaseList"`
+	DuplicateWords          string                        `json:"DuplicateWords" xml:"DuplicateWords"`
+	AllUppercaseWords       string                        `json:"AllUppercaseWords" xml:"AllUppercaseWords"`
+	Url                     string                        `json:"Url" xml:"Url"`
+	LanguageQualityScore    string                        `json:"LanguageQualityScore" xml:"LanguageQualityScore"`
+	WordCount               string                        `json:"WordCount" xml:"WordCount"`
+	TotalScore              string                        `json:"TotalScore" xml:"TotalScore"`
+	DisableWords            string                        `json:"DisableWords" xml:"DisableWords"`
+	TranslatedValues        []CertificateTranslateItemDTO `json:"TranslatedValues" xml:"TranslatedValues"`
 }

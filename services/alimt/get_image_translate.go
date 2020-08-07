@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// TranslateECommerce invokes the alimt.TranslateECommerce API synchronously
-// api document: https://help.aliyun.com/api/alimt/translateecommerce.html
-func (client *Client) TranslateECommerce(request *TranslateECommerceRequest) (response *TranslateECommerceResponse, err error) {
-	response = CreateTranslateECommerceResponse()
+// GetImageTranslate invokes the alimt.GetImageTranslate API synchronously
+// api document: https://help.aliyun.com/api/alimt/getimagetranslate.html
+func (client *Client) GetImageTranslate(request *GetImageTranslateRequest) (response *GetImageTranslateResponse, err error) {
+	response = CreateGetImageTranslateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// TranslateECommerceWithChan invokes the alimt.TranslateECommerce API asynchronously
-// api document: https://help.aliyun.com/api/alimt/translateecommerce.html
+// GetImageTranslateWithChan invokes the alimt.GetImageTranslate API asynchronously
+// api document: https://help.aliyun.com/api/alimt/getimagetranslate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) TranslateECommerceWithChan(request *TranslateECommerceRequest) (<-chan *TranslateECommerceResponse, <-chan error) {
-	responseChan := make(chan *TranslateECommerceResponse, 1)
+func (client *Client) GetImageTranslateWithChan(request *GetImageTranslateRequest) (<-chan *GetImageTranslateResponse, <-chan error) {
+	responseChan := make(chan *GetImageTranslateResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.TranslateECommerce(request)
+		response, err := client.GetImageTranslate(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) TranslateECommerceWithChan(request *TranslateECommerceRequ
 	return responseChan, errChan
 }
 
-// TranslateECommerceWithCallback invokes the alimt.TranslateECommerce API asynchronously
-// api document: https://help.aliyun.com/api/alimt/translateecommerce.html
+// GetImageTranslateWithCallback invokes the alimt.GetImageTranslate API asynchronously
+// api document: https://help.aliyun.com/api/alimt/getimagetranslate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) TranslateECommerceWithCallback(request *TranslateECommerceRequest, callback func(response *TranslateECommerceResponse, err error)) <-chan int {
+func (client *Client) GetImageTranslateWithCallback(request *GetImageTranslateRequest, callback func(response *GetImageTranslateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *TranslateECommerceResponse
+		var response *GetImageTranslateResponse
 		var err error
 		defer close(result)
-		response, err = client.TranslateECommerce(request)
+		response, err = client.GetImageTranslate(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,18 +73,17 @@ func (client *Client) TranslateECommerceWithCallback(request *TranslateECommerce
 	return result
 }
 
-// TranslateECommerceRequest is the request struct for api TranslateECommerce
-type TranslateECommerceRequest struct {
+// GetImageTranslateRequest is the request struct for api GetImageTranslate
+type GetImageTranslateRequest struct {
 	*requests.RpcRequest
 	SourceLanguage string `position:"Body" name:"SourceLanguage"`
-	SourceText     string `position:"Body" name:"SourceText"`
-	FormatType     string `position:"Body" name:"FormatType"`
-	Scene          string `position:"Body" name:"Scene"`
+	Url            string `position:"Body" name:"Url"`
+	Extra          string `position:"Body" name:"Extra"`
 	TargetLanguage string `position:"Body" name:"TargetLanguage"`
 }
 
-// TranslateECommerceResponse is the response struct for api TranslateECommerce
-type TranslateECommerceResponse struct {
+// GetImageTranslateResponse is the response struct for api GetImageTranslate
+type GetImageTranslateResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
@@ -92,19 +91,19 @@ type TranslateECommerceResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateTranslateECommerceRequest creates a request to invoke TranslateECommerce API
-func CreateTranslateECommerceRequest() (request *TranslateECommerceRequest) {
-	request = &TranslateECommerceRequest{
+// CreateGetImageTranslateRequest creates a request to invoke GetImageTranslate API
+func CreateGetImageTranslateRequest() (request *GetImageTranslateRequest) {
+	request = &GetImageTranslateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "TranslateECommerce", "", "")
+	request.InitWithApiInfo("alimt", "2018-10-12", "GetImageTranslate", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateTranslateECommerceResponse creates a response to parse from TranslateECommerce response
-func CreateTranslateECommerceResponse() (response *TranslateECommerceResponse) {
-	response = &TranslateECommerceResponse{
+// CreateGetImageTranslateResponse creates a response to parse from GetImageTranslate response
+func CreateGetImageTranslateResponse() (response *GetImageTranslateResponse) {
+	response = &GetImageTranslateResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -97,7 +97,8 @@ func CreateTranslateGeneralRequest() (request *TranslateGeneralRequest) {
 	request = &TranslateGeneralRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "TranslateGeneral", "alimt", "openAPI")
+	request.InitWithApiInfo("alimt", "2018-10-12", "TranslateGeneral", "", "")
+	request.Method = requests.POST
 	return
 }
 
