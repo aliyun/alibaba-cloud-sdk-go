@@ -96,6 +96,7 @@ func CreateFindCredentialsListRequest() (request *FindCredentialsListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "FindCredentialsList", "", "")
+	request.Method = requests.GET
 	return
 }
 

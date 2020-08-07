@@ -95,6 +95,7 @@ func CreateGetOrderRequest() (request *GetOrderRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "GetOrder", "", "")
+	request.Method = requests.GET
 	return
 }
 

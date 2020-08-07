@@ -94,6 +94,7 @@ func CreateFindAllLinkRuleRequest() (request *FindAllLinkRuleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "FindAllLinkRule", "", "")
+	request.Method = requests.GET
 	return
 }
 

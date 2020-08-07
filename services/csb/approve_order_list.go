@@ -93,6 +93,7 @@ func CreateApproveOrderListRequest() (request *ApproveOrderListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "ApproveOrderList", "", "")
+	request.Method = requests.POST
 	return
 }
 

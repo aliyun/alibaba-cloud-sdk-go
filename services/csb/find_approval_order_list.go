@@ -76,13 +76,14 @@ func (client *Client) FindApprovalOrderListWithCallback(request *FindApprovalOrd
 // FindApprovalOrderListRequest is the request struct for api FindApprovalOrderList
 type FindApprovalOrderListRequest struct {
 	*requests.RpcRequest
-	ProjectName string           `position:"Query" name:"ProjectName"`
-	CsbId       requests.Integer `position:"Query" name:"CsbId"`
-	PageNum     requests.Integer `position:"Query" name:"PageNum"`
-	Alias       string           `position:"Query" name:"Alias"`
-	ServiceName string           `position:"Query" name:"ServiceName"`
-	ServiceId   requests.Integer `position:"Query" name:"ServiceId"`
-	OnlyPending requests.Boolean `position:"Query" name:"OnlyPending"`
+	ProjectName         string           `position:"Query" name:"ProjectName"`
+	CsbId               requests.Integer `position:"Query" name:"CsbId"`
+	PageNum             requests.Integer `position:"Query" name:"PageNum"`
+	CredentialGroupName string           `position:"Query" name:"CredentialGroupName"`
+	Alias               string           `position:"Query" name:"Alias"`
+	ServiceName         string           `position:"Query" name:"ServiceName"`
+	ServiceId           requests.Integer `position:"Query" name:"ServiceId"`
+	OnlyPending         requests.Boolean `position:"Query" name:"OnlyPending"`
 }
 
 // FindApprovalOrderListResponse is the response struct for api FindApprovalOrderList
@@ -100,6 +101,7 @@ func CreateFindApprovalOrderListRequest() (request *FindApprovalOrderListRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "FindApprovalOrderList", "", "")
+	request.Method = requests.GET
 	return
 }
 

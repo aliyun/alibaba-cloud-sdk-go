@@ -95,6 +95,7 @@ func CreateDeleteCredentialsListRequest() (request *DeleteCredentialsListRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "DeleteCredentialsList", "", "")
+	request.Method = requests.POST
 	return
 }
 

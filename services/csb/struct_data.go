@@ -25,15 +25,15 @@ type Data struct {
 	Exist            bool                     `json:"Exist" xml:"Exist"`
 	ProjectNameList  []string                 `json:"ProjectNameList" xml:"ProjectNameList"`
 	Credentials      Credentials              `json:"Credentials" xml:"Credentials"`
-	Order            Order                    `json:"Order" xml:"Order"`
 	Service          Service                  `json:"Service" xml:"Service"`
+	Order            Order                    `json:"Order" xml:"Order"`
 	Instance         Instance                 `json:"Instance" xml:"Instance"`
 	RegionList       []Region                 `json:"RegionList" xml:"RegionList"`
+	ServiceList      []Service                `json:"ServiceList" xml:"ServiceList"`
 	ProjectList      []Project                `json:"ProjectList" xml:"ProjectList"`
 	LinkRuleList     []LinkRuleListItem       `json:"LinkRuleList" xml:"LinkRuleList"`
+	ItemList         []Item                   `json:"ItemList" xml:"ItemList"`
 	CredentialList   []Credential             `json:"CredentialList" xml:"CredentialList"`
 	OrderList        []OrderInFindOrderedList `json:"OrderList" xml:"OrderList"`
-	ItemList         []Item                   `json:"ItemList" xml:"ItemList"`
-	ServiceList      []Service                `json:"ServiceList" xml:"ServiceList"`
 	InstanceNodeList []InstanceNode           `json:"InstanceNodeList" xml:"InstanceNodeList"`
 }

@@ -93,6 +93,7 @@ func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "DescribeRegions", "", "")
+	request.Method = requests.GET
 	return
 }
 

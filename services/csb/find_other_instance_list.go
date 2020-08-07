@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// FindInstanceList invokes the csb.FindInstanceList API synchronously
-// api document: https://help.aliyun.com/api/csb/findinstancelist.html
-func (client *Client) FindInstanceList(request *FindInstanceListRequest) (response *FindInstanceListResponse, err error) {
-	response = CreateFindInstanceListResponse()
+// FindOtherInstanceList invokes the csb.FindOtherInstanceList API synchronously
+// api document: https://help.aliyun.com/api/csb/findotherinstancelist.html
+func (client *Client) FindOtherInstanceList(request *FindOtherInstanceListRequest) (response *FindOtherInstanceListResponse, err error) {
+	response = CreateFindOtherInstanceListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// FindInstanceListWithChan invokes the csb.FindInstanceList API asynchronously
-// api document: https://help.aliyun.com/api/csb/findinstancelist.html
+// FindOtherInstanceListWithChan invokes the csb.FindOtherInstanceList API asynchronously
+// api document: https://help.aliyun.com/api/csb/findotherinstancelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) FindInstanceListWithChan(request *FindInstanceListRequest) (<-chan *FindInstanceListResponse, <-chan error) {
-	responseChan := make(chan *FindInstanceListResponse, 1)
+func (client *Client) FindOtherInstanceListWithChan(request *FindOtherInstanceListRequest) (<-chan *FindOtherInstanceListResponse, <-chan error) {
+	responseChan := make(chan *FindOtherInstanceListResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.FindInstanceList(request)
+		response, err := client.FindOtherInstanceList(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) FindInstanceListWithChan(request *FindInstanceListRequest)
 	return responseChan, errChan
 }
 
-// FindInstanceListWithCallback invokes the csb.FindInstanceList API asynchronously
-// api document: https://help.aliyun.com/api/csb/findinstancelist.html
+// FindOtherInstanceListWithCallback invokes the csb.FindOtherInstanceList API asynchronously
+// api document: https://help.aliyun.com/api/csb/findotherinstancelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) FindInstanceListWithCallback(request *FindInstanceListRequest, callback func(response *FindInstanceListResponse, err error)) <-chan int {
+func (client *Client) FindOtherInstanceListWithCallback(request *FindOtherInstanceListRequest, callback func(response *FindOtherInstanceListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *FindInstanceListResponse
+		var response *FindOtherInstanceListResponse
 		var err error
 		defer close(result)
-		response, err = client.FindInstanceList(request)
+		response, err = client.FindOtherInstanceList(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,17 +73,16 @@ func (client *Client) FindInstanceListWithCallback(request *FindInstanceListRequ
 	return result
 }
 
-// FindInstanceListRequest is the request struct for api FindInstanceList
-type FindInstanceListRequest struct {
+// FindOtherInstanceListRequest is the request struct for api FindOtherInstanceList
+type FindOtherInstanceListRequest struct {
 	*requests.RpcRequest
-	CsbId     requests.Integer `position:"Query" name:"CsbId"`
 	PageNum   requests.Integer `position:"Query" name:"PageNum"`
 	SearchTxt string           `position:"Query" name:"SearchTxt"`
-	Status    requests.Integer `position:"Query" name:"Status"`
+	PageSize  requests.Integer `position:"Query" name:"PageSize"`
 }
 
-// FindInstanceListResponse is the response struct for api FindInstanceList
-type FindInstanceListResponse struct {
+// FindOtherInstanceListResponse is the response struct for api FindOtherInstanceList
+type FindOtherInstanceListResponse struct {
 	*responses.BaseResponse
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
@@ -91,19 +90,19 @@ type FindInstanceListResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateFindInstanceListRequest creates a request to invoke FindInstanceList API
-func CreateFindInstanceListRequest() (request *FindInstanceListRequest) {
-	request = &FindInstanceListRequest{
+// CreateFindOtherInstanceListRequest creates a request to invoke FindOtherInstanceList API
+func CreateFindOtherInstanceListRequest() (request *FindOtherInstanceListRequest) {
+	request = &FindOtherInstanceListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "FindInstanceList", "", "")
+	request.InitWithApiInfo("CSB", "2017-11-18", "FindOtherInstanceList", "", "")
 	request.Method = requests.GET
 	return
 }
 
-// CreateFindInstanceListResponse creates a response to parse from FindInstanceList response
-func CreateFindInstanceListResponse() (response *FindInstanceListResponse) {
-	response = &FindInstanceListResponse{
+// CreateFindOtherInstanceListResponse creates a response to parse from FindOtherInstanceList response
+func CreateFindOtherInstanceListResponse() (response *FindOtherInstanceListResponse) {
+	response = &FindOtherInstanceListResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

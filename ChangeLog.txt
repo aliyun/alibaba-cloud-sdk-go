@@ -1,3 +1,7 @@
+2020-08-07 Version: v1.61.383
+- Generated 2017-11-18 for `CSB`.
+- Add FindServiceList and GetService qps.
+
 2020-08-06 Version: v1.61.382
 - Generated 2017-12-04 for `Actiontrail`.
 - Bugfix for DescribeTrails.

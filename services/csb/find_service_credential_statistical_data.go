@@ -98,6 +98,7 @@ func CreateFindServiceCredentialStatisticalDataRequest() (request *FindServiceCr
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "FindServiceCredentialStatisticalData", "", "")
+	request.Method = requests.GET
 	return
 }
 

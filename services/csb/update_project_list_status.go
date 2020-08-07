@@ -94,6 +94,7 @@ func CreateUpdateProjectListStatusRequest() (request *UpdateProjectListStatusReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "UpdateProjectListStatus", "", "")
+	request.Method = requests.POST
 	return
 }
 

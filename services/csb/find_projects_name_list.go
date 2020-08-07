@@ -95,6 +95,7 @@ func CreateFindProjectsNameListRequest() (request *FindProjectsNameListRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "FindProjectsNameList", "", "")
+	request.Method = requests.GET
 	return
 }
 

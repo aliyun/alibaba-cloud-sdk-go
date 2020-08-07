@@ -93,6 +93,7 @@ func CreateGetMetaServerSLORequest() (request *GetMetaServerSLORequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "GetMetaServerSLO", "", "")
+	request.Method = requests.GET
 	return
 }
 

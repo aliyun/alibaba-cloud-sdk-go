@@ -17,14 +17,17 @@ package csb
 
 // Item is a nested struct in csb response
 type Item struct {
-	Description      string `json:"Description" xml:"Description"`
-	FrontStatus      string `json:"FrontStatus" xml:"FrontStatus"`
-	GmtCreate        int64  `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified      int64  `json:"GmtModified" xml:"GmtModified"`
-	Id               int64  `json:"Id" xml:"Id"`
-	InstanceCategory int    `json:"InstanceCategory" xml:"InstanceCategory"`
 	Name             string `json:"Name" xml:"Name"`
-	StatusCode       int    `json:"StatusCode" xml:"StatusCode"`
-	Visible          bool   `json:"Visible" xml:"Visible"`
 	VpcName          string `json:"VpcName" xml:"VpcName"`
+	RunStatus        string `json:"RunStatus" xml:"RunStatus"`
+	Id               int64  `json:"Id" xml:"Id"`
+	OwnerId          int64  `json:"OwnerId" xml:"OwnerId"`
+	GmtCreate        int64  `json:"GmtCreate" xml:"GmtCreate"`
+	Visible          bool   `json:"Visible" xml:"Visible"`
+	FrontStatus      string `json:"FrontStatus" xml:"FrontStatus"`
+	StatusStr        string `json:"StatusStr" xml:"StatusStr"`
+	GmtModified      int64  `json:"GmtModified" xml:"GmtModified"`
+	StatusCode       int    `json:"StatusCode" xml:"StatusCode"`
+	Description      string `json:"Description" xml:"Description"`
+	InstanceCategory int    `json:"InstanceCategory" xml:"InstanceCategory"`
 }

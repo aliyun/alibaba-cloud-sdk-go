@@ -94,6 +94,7 @@ func CreateUpdateOrderListRequest() (request *UpdateOrderListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "UpdateOrderList", "", "")
+	request.Method = requests.POST
 	return
 }
 

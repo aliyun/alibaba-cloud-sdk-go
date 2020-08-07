@@ -93,6 +93,7 @@ func CreateDeleteOrderListRequest() (request *DeleteOrderListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "DeleteOrderList", "", "")
+	request.Method = requests.POST
 	return
 }
 

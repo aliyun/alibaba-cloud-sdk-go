@@ -76,7 +76,9 @@ func (client *Client) FindBrokerSLOHisListWithCallback(request *FindBrokerSLOHis
 // FindBrokerSLOHisListRequest is the request struct for api FindBrokerSLOHisList
 type FindBrokerSLOHisListRequest struct {
 	*requests.RpcRequest
-	CsbId requests.Integer `position:"Query" name:"CsbId"`
+	CsbId       requests.Integer `position:"Query" name:"CsbId"`
+	BeginDdHHmm string           `position:"Query" name:"BeginDdHHmm"`
+	EndDdHHmm   string           `position:"Query" name:"EndDdHHmm"`
 }
 
 // FindBrokerSLOHisListResponse is the response struct for api FindBrokerSLOHisList
@@ -94,6 +96,7 @@ func CreateFindBrokerSLOHisListRequest() (request *FindBrokerSLOHisListRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "FindBrokerSLOHisList", "", "")
+	request.Method = requests.GET
 	return
 }
 

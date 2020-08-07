@@ -76,14 +76,15 @@ func (client *Client) FindOrderedListWithCallback(request *FindOrderedListReques
 // FindOrderedListRequest is the request struct for api FindOrderedList
 type FindOrderedListRequest struct {
 	*requests.RpcRequest
-	ProjectName  string           `position:"Query" name:"ProjectName"`
-	ShowDelOrder requests.Boolean `position:"Query" name:"ShowDelOrder"`
-	CsbId        requests.Integer `position:"Query" name:"CsbId"`
-	PageNum      requests.Integer `position:"Query" name:"PageNum"`
-	Alias        string           `position:"Query" name:"Alias"`
-	ServiceName  string           `position:"Query" name:"ServiceName"`
-	ServiceId    requests.Integer `position:"Query" name:"ServiceId"`
-	Status       string           `position:"Query" name:"Status"`
+	ProjectName         string           `position:"Query" name:"ProjectName"`
+	ShowDelOrder        requests.Boolean `position:"Query" name:"ShowDelOrder"`
+	CsbId               requests.Integer `position:"Query" name:"CsbId"`
+	PageNum             requests.Integer `position:"Query" name:"PageNum"`
+	CredentialGroupName string           `position:"Query" name:"CredentialGroupName"`
+	Alias               string           `position:"Query" name:"Alias"`
+	ServiceName         string           `position:"Query" name:"ServiceName"`
+	ServiceId           requests.Integer `position:"Query" name:"ServiceId"`
+	Status              string           `position:"Query" name:"Status"`
 }
 
 // FindOrderedListResponse is the response struct for api FindOrderedList
@@ -101,6 +102,7 @@ func CreateFindOrderedListRequest() (request *FindOrderedListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "FindOrderedList", "", "")
+	request.Method = requests.GET
 	return
 }
 

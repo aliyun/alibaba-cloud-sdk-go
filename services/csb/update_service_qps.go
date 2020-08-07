@@ -94,6 +94,7 @@ func CreateUpdateServiceQPSRequest() (request *UpdateServiceQPSRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "UpdateServiceQPS", "", "")
+	request.Method = requests.POST
 	return
 }
 

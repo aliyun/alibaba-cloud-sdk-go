@@ -95,6 +95,7 @@ func CreateGetServiceRequest() (request *GetServiceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "GetService", "", "")
+	request.Method = requests.GET
 	return
 }
 

@@ -17,11 +17,15 @@ package csb
 
 // InstanceNode is a nested struct in csb response
 type InstanceNode struct {
-	Id             int64  `json:"Id" xml:"Id"`
-	InstanceName   string `json:"InstanceName" xml:"InstanceName"`
-	IsImported     bool   `json:"IsImported" xml:"IsImported"`
-	GroupAddress   string `json:"GroupAddress" xml:"GroupAddress"`
-	BrokerAddress  string `json:"BrokerAddress" xml:"BrokerAddress"`
-	EdasTenantInfo string `json:"EdasTenantInfo" xml:"EdasTenantInfo"`
-	ImportedName   string `json:"ImportedName" xml:"ImportedName"`
+	Id               int64  `json:"Id" xml:"Id"`
+	InstanceName     string `json:"InstanceName" xml:"InstanceName"`
+	IsImported       bool   `json:"IsImported" xml:"IsImported"`
+	GroupAddress     string `json:"GroupAddress" xml:"GroupAddress"`
+	BrokerAddress    string `json:"BrokerAddress" xml:"BrokerAddress"`
+	EdasTenantInfo   string `json:"EdasTenantInfo" xml:"EdasTenantInfo"`
+	ImportedName     string `json:"ImportedName" xml:"ImportedName"`
+	CsbId            int64  `json:"CsbId" xml:"CsbId"`
+	Deleted          int    `json:"Deleted" xml:"Deleted"`
+	OwnerId          string `json:"OwnerId" xml:"OwnerId"`
+	BrokerCmdAddress string `json:"BrokerCmdAddress" xml:"BrokerCmdAddress"`
 }

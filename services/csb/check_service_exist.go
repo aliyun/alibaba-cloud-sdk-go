@@ -95,6 +95,7 @@ func CreateCheckServiceExistRequest() (request *CheckServiceExistRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "CheckServiceExist", "", "")
+	request.Method = requests.POST
 	return
 }
 

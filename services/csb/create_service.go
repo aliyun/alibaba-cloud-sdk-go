@@ -95,6 +95,7 @@ func CreateCreateServiceRequest() (request *CreateServiceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "CreateService", "", "")
+	request.Method = requests.POST
 	return
 }
 

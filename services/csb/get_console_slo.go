@@ -93,6 +93,7 @@ func CreateGetConsoleSLORequest() (request *GetConsoleSLORequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "GetConsoleSLO", "", "")
+	request.Method = requests.GET
 	return
 }
 

@@ -94,6 +94,7 @@ func CreateDeleteServiceListRequest() (request *DeleteServiceListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "DeleteServiceList", "", "")
+	request.Method = requests.POST
 	return
 }
 

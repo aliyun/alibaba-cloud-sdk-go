@@ -94,6 +94,7 @@ func CreateFindBrokerSLOListRequest() (request *FindBrokerSLOListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "FindBrokerSLOList", "", "")
+	request.Method = requests.GET
 	return
 }
 

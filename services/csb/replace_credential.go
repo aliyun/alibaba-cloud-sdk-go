@@ -94,6 +94,7 @@ func CreateReplaceCredentialRequest() (request *ReplaceCredentialRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "ReplaceCredential", "", "")
+	request.Method = requests.POST
 	return
 }
 

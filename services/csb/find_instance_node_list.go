@@ -97,6 +97,7 @@ func CreateFindInstanceNodeListRequest() (request *FindInstanceNodeListRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "FindInstanceNodeList", "", "")
+	request.Method = requests.GET
 	return
 }
 

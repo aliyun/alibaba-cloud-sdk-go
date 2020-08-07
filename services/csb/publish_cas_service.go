@@ -94,6 +94,7 @@ func CreatePublishCasServiceRequest() (request *PublishCasServiceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CSB", "2017-11-18", "PublishCasService", "", "")
+	request.Method = requests.POST
 	return
 }
 
