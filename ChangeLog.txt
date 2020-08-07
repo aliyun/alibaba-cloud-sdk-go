@@ -1,3 +1,7 @@
+2020-08-07 Version: v1.61.387
+- Generated 2018-10-12 for `alimt`.
+- GetTitleDiagnose GetTitleGenerate GetImageTranslate supported.
+
 2020-08-07 Version: v1.61.386
 - Generated 2020-05-18 for `dataworks-public`.
 

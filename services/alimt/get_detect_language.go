@@ -91,7 +91,7 @@ func CreateGetDetectLanguageRequest() (request *GetDetectLanguageRequest) {
 	request = &GetDetectLanguageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "GetDetectLanguage", "", "")
+	request.InitWithApiInfo("alimt", "2018-10-12", "GetDetectLanguage", "alimt", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -99,7 +99,7 @@ func CreateGetTitleGenerateRequest() (request *GetTitleGenerateRequest) {
 	request = &GetTitleGenerateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "GetTitleGenerate", "", "")
+	request.InitWithApiInfo("alimt", "2018-10-12", "GetTitleGenerate", "alimt", "openAPI")
 	request.Method = requests.POST
 	return
 }

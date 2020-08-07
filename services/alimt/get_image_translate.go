@@ -96,7 +96,7 @@ func CreateGetImageTranslateRequest() (request *GetImageTranslateRequest) {
 	request = &GetImageTranslateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "GetImageTranslate", "", "")
+	request.InitWithApiInfo("alimt", "2018-10-12", "GetImageTranslate", "alimt", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateGetImageDiagnoseRequest() (request *GetImageDiagnoseRequest) {
 	request = &GetImageDiagnoseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "GetImageDiagnose", "", "")
+	request.InitWithApiInfo("alimt", "2018-10-12", "GetImageDiagnose", "alimt", "openAPI")
 	request.Method = requests.POST
 	return
 }

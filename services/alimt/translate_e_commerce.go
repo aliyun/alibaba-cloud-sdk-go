@@ -97,7 +97,7 @@ func CreateTranslateECommerceRequest() (request *TranslateECommerceRequest) {
 	request = &TranslateECommerceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "TranslateECommerce", "", "")
+	request.InitWithApiInfo("alimt", "2018-10-12", "TranslateECommerce", "alimt", "openAPI")
 	request.Method = requests.POST
 	return
 }

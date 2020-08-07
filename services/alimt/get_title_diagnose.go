@@ -97,7 +97,7 @@ func CreateGetTitleDiagnoseRequest() (request *GetTitleDiagnoseRequest) {
 	request = &GetTitleDiagnoseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alimt", "2018-10-12", "GetTitleDiagnose", "", "")
+	request.InitWithApiInfo("alimt", "2018-10-12", "GetTitleDiagnose", "alimt", "openAPI")
 	request.Method = requests.POST
 	return
 }
