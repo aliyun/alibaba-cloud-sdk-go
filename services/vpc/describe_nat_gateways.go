@@ -84,6 +84,7 @@ type DescribeNatGatewaysRequest struct {
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
 	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
+	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

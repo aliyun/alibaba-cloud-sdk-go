@@ -1,3 +1,7 @@
+2020-08-07 Version: v1.61.388
+- Generated 2016-04-28 for `Vpc`.
+- Supported for eip operation idempotence.
+
 2020-08-07 Version: v1.61.387
 - Generated 2018-10-12 for `alimt`.
 - GetTitleDiagnose GetTitleGenerate GetImageTranslate supported.

@@ -33,6 +33,8 @@ type Vpc struct {
 	OwnerId                int64                             `json:"OwnerId" xml:"OwnerId"`
 	SupportAdvancedFeature bool                              `json:"SupportAdvancedFeature" xml:"SupportAdvancedFeature"`
 	AdvancedResource       bool                              `json:"AdvancedResource" xml:"AdvancedResource"`
+	DhcpOptionsSetId       string                            `json:"DhcpOptionsSetId" xml:"DhcpOptionsSetId"`
+	DhcpOptionsSetStatus   string                            `json:"DhcpOptionsSetStatus" xml:"DhcpOptionsSetStatus"`
 	VSwitchIds             VSwitchIdsInDescribeVpcs          `json:"VSwitchIds" xml:"VSwitchIds"`
 	UserCidrs              UserCidrsInDescribeVpcs           `json:"UserCidrs" xml:"UserCidrs"`
 	NatGatewayIds          NatGatewayIds                     `json:"NatGatewayIds" xml:"NatGatewayIds"`

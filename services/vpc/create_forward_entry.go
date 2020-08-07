@@ -87,6 +87,7 @@ type CreateForwardEntryRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InternalPort         string           `position:"Query" name:"InternalPort"`
+	PortBreak            requests.Boolean `position:"Query" name:"PortBreak"`
 	ExternalPort         string           `position:"Query" name:"ExternalPort"`
 }
 

@@ -88,26 +88,28 @@ type DescribeVpcAttributeRequest struct {
 // DescribeVpcAttributeResponse is the response struct for api DescribeVpcAttribute
 type DescribeVpcAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId           string                                    `json:"RequestId" xml:"RequestId"`
-	VpcId               string                                    `json:"VpcId" xml:"VpcId"`
-	RegionId            string                                    `json:"RegionId" xml:"RegionId"`
-	Status              string                                    `json:"Status" xml:"Status"`
-	VpcName             string                                    `json:"VpcName" xml:"VpcName"`
-	CreationTime        string                                    `json:"CreationTime" xml:"CreationTime"`
-	CidrBlock           string                                    `json:"CidrBlock" xml:"CidrBlock"`
-	Ipv6CidrBlock       string                                    `json:"Ipv6CidrBlock" xml:"Ipv6CidrBlock"`
-	VRouterId           string                                    `json:"VRouterId" xml:"VRouterId"`
-	Description         string                                    `json:"Description" xml:"Description"`
-	IsDefault           bool                                      `json:"IsDefault" xml:"IsDefault"`
-	ClassicLinkEnabled  bool                                      `json:"ClassicLinkEnabled" xml:"ClassicLinkEnabled"`
-	ResourceGroupId     string                                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	NetworkAclNum       string                                    `json:"NetworkAclNum" xml:"NetworkAclNum"`
-	OwnerId             int64                                     `json:"OwnerId" xml:"OwnerId"`
-	VSwitchIds          VSwitchIdsInDescribeVpcAttribute          `json:"VSwitchIds" xml:"VSwitchIds"`
-	UserCidrs           UserCidrsInDescribeVpcAttribute           `json:"UserCidrs" xml:"UserCidrs"`
-	SecondaryCidrBlocks SecondaryCidrBlocksInDescribeVpcAttribute `json:"SecondaryCidrBlocks" xml:"SecondaryCidrBlocks"`
-	AssociatedCens      AssociatedCensInDescribeVpcAttribute      `json:"AssociatedCens" xml:"AssociatedCens"`
-	CloudResources      CloudResourcesInDescribeVpcAttribute      `json:"CloudResources" xml:"CloudResources"`
+	RequestId            string                                    `json:"RequestId" xml:"RequestId"`
+	VpcId                string                                    `json:"VpcId" xml:"VpcId"`
+	RegionId             string                                    `json:"RegionId" xml:"RegionId"`
+	Status               string                                    `json:"Status" xml:"Status"`
+	VpcName              string                                    `json:"VpcName" xml:"VpcName"`
+	CreationTime         string                                    `json:"CreationTime" xml:"CreationTime"`
+	CidrBlock            string                                    `json:"CidrBlock" xml:"CidrBlock"`
+	Ipv6CidrBlock        string                                    `json:"Ipv6CidrBlock" xml:"Ipv6CidrBlock"`
+	VRouterId            string                                    `json:"VRouterId" xml:"VRouterId"`
+	Description          string                                    `json:"Description" xml:"Description"`
+	IsDefault            bool                                      `json:"IsDefault" xml:"IsDefault"`
+	ClassicLinkEnabled   bool                                      `json:"ClassicLinkEnabled" xml:"ClassicLinkEnabled"`
+	ResourceGroupId      string                                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	NetworkAclNum        string                                    `json:"NetworkAclNum" xml:"NetworkAclNum"`
+	OwnerId              int64                                     `json:"OwnerId" xml:"OwnerId"`
+	DhcpOptionsSetId     string                                    `json:"DhcpOptionsSetId" xml:"DhcpOptionsSetId"`
+	DhcpOptionsSetStatus string                                    `json:"DhcpOptionsSetStatus" xml:"DhcpOptionsSetStatus"`
+	VSwitchIds           VSwitchIdsInDescribeVpcAttribute          `json:"VSwitchIds" xml:"VSwitchIds"`
+	UserCidrs            UserCidrsInDescribeVpcAttribute           `json:"UserCidrs" xml:"UserCidrs"`
+	SecondaryCidrBlocks  SecondaryCidrBlocksInDescribeVpcAttribute `json:"SecondaryCidrBlocks" xml:"SecondaryCidrBlocks"`
+	AssociatedCens       AssociatedCensInDescribeVpcAttribute      `json:"AssociatedCens" xml:"AssociatedCens"`
+	CloudResources       CloudResourcesInDescribeVpcAttribute      `json:"CloudResources" xml:"CloudResources"`
 }
 
 // CreateDescribeVpcAttributeRequest creates a request to invoke DescribeVpcAttribute API

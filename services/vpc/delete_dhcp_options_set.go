@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateBgpPeer invokes the vpc.CreateBgpPeer API synchronously
-// api document: https://help.aliyun.com/api/vpc/createbgppeer.html
-func (client *Client) CreateBgpPeer(request *CreateBgpPeerRequest) (response *CreateBgpPeerResponse, err error) {
-	response = CreateCreateBgpPeerResponse()
+// DeleteDhcpOptionsSet invokes the vpc.DeleteDhcpOptionsSet API synchronously
+// api document: https://help.aliyun.com/api/vpc/deletedhcpoptionsset.html
+func (client *Client) DeleteDhcpOptionsSet(request *DeleteDhcpOptionsSetRequest) (response *DeleteDhcpOptionsSetResponse, err error) {
+	response = CreateDeleteDhcpOptionsSetResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateBgpPeerWithChan invokes the vpc.CreateBgpPeer API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createbgppeer.html
+// DeleteDhcpOptionsSetWithChan invokes the vpc.DeleteDhcpOptionsSet API asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletedhcpoptionsset.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateBgpPeerWithChan(request *CreateBgpPeerRequest) (<-chan *CreateBgpPeerResponse, <-chan error) {
-	responseChan := make(chan *CreateBgpPeerResponse, 1)
+func (client *Client) DeleteDhcpOptionsSetWithChan(request *DeleteDhcpOptionsSetRequest) (<-chan *DeleteDhcpOptionsSetResponse, <-chan error) {
+	responseChan := make(chan *DeleteDhcpOptionsSetResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateBgpPeer(request)
+		response, err := client.DeleteDhcpOptionsSet(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateBgpPeerWithChan(request *CreateBgpPeerRequest) (<-ch
 	return responseChan, errChan
 }
 
-// CreateBgpPeerWithCallback invokes the vpc.CreateBgpPeer API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createbgppeer.html
+// DeleteDhcpOptionsSetWithCallback invokes the vpc.DeleteDhcpOptionsSet API asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletedhcpoptionsset.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateBgpPeerWithCallback(request *CreateBgpPeerRequest, callback func(response *CreateBgpPeerResponse, err error)) <-chan int {
+func (client *Client) DeleteDhcpOptionsSetWithCallback(request *DeleteDhcpOptionsSetRequest, callback func(response *DeleteDhcpOptionsSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateBgpPeerResponse
+		var response *DeleteDhcpOptionsSetResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateBgpPeer(request)
+		response, err = client.DeleteDhcpOptionsSet(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,41 +73,37 @@ func (client *Client) CreateBgpPeerWithCallback(request *CreateBgpPeerRequest, c
 	return result
 }
 
-// CreateBgpPeerRequest is the request struct for api CreateBgpPeer
-type CreateBgpPeerRequest struct {
+// DeleteDhcpOptionsSetRequest is the request struct for api DeleteDhcpOptionsSet
+type DeleteDhcpOptionsSetRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	BgpGroupId           string           `position:"Query" name:"BgpGroupId"`
-	PeerIpAddress        string           `position:"Query" name:"PeerIpAddress"`
-	BfdMultiHop          requests.Integer `position:"Query" name:"BfdMultiHop"`
-	IpVersion            string           `position:"Query" name:"IpVersion"`
-	EnableBfd            requests.Boolean `position:"Query" name:"EnableBfd"`
+	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
+	DhcpOptionsSetId     string           `position:"Query" name:"DhcpOptionsSetId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// CreateBgpPeerResponse is the response struct for api CreateBgpPeer
-type CreateBgpPeerResponse struct {
+// DeleteDhcpOptionsSetResponse is the response struct for api DeleteDhcpOptionsSet
+type DeleteDhcpOptionsSetResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	BgpPeerId string `json:"BgpPeerId" xml:"BgpPeerId"`
 }
 
-// CreateCreateBgpPeerRequest creates a request to invoke CreateBgpPeer API
-func CreateCreateBgpPeerRequest() (request *CreateBgpPeerRequest) {
-	request = &CreateBgpPeerRequest{
+// CreateDeleteDhcpOptionsSetRequest creates a request to invoke DeleteDhcpOptionsSet API
+func CreateDeleteDhcpOptionsSetRequest() (request *DeleteDhcpOptionsSetRequest) {
+	request = &DeleteDhcpOptionsSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateBgpPeer", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteDhcpOptionsSet", "vpc", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateBgpPeerResponse creates a response to parse from CreateBgpPeer response
-func CreateCreateBgpPeerResponse() (response *CreateBgpPeerResponse) {
-	response = &CreateBgpPeerResponse{
+// CreateDeleteDhcpOptionsSetResponse creates a response to parse from DeleteDhcpOptionsSet response
+func CreateDeleteDhcpOptionsSetResponse() (response *DeleteDhcpOptionsSetResponse) {
+	response = &DeleteDhcpOptionsSetResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

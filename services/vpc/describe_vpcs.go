@@ -85,6 +85,7 @@ type DescribeVpcsRequest struct {
 	Tag                  *[]DescribeVpcsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	IsDefault            requests.Boolean   `position:"Query" name:"IsDefault"`
 	DryRun               requests.Boolean   `position:"Query" name:"DryRun"`
+	DhcpOptionsSetId     string             `position:"Query" name:"DhcpOptionsSetId"`
 	ResourceOwnerAccount string             `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string             `position:"Query" name:"OwnerAccount"`
 	AdvancedFeature      requests.Boolean   `position:"Query" name:"AdvancedFeature"`
