@@ -97,6 +97,7 @@ func CreateListImagesRequest() (request *ListImagesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("imgsearch", "2020-03-20", "ListImages", "imgsearch", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -92,6 +92,7 @@ func CreateDeleteImageRequest() (request *DeleteImageRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("imgsearch", "2020-03-20", "DeleteImage", "imgsearch", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

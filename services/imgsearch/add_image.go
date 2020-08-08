@@ -95,6 +95,7 @@ func CreateAddImageRequest() (request *AddImageRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("imgsearch", "2020-03-20", "AddImage", "imgsearch", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -1,3 +1,7 @@
+2020-08-08 Version: v1.61.389
+- Generated 2020-03-20 for `imgsearch`.
+- Update SearchImage.
+
 2020-08-07 Version: v1.61.388
 - Generated 2016-04-28 for `Vpc`.
 - Supported for eip operation idempotence.
