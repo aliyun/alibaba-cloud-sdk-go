@@ -32,8 +32,8 @@ type Data struct {
 	QualityScore string             `json:"QualityScore" xml:"QualityScore"`
 	PicUrl       string             `json:"PicUrl" xml:"PicUrl"`
 	Attributes   Attributes         `json:"Attributes" xml:"Attributes"`
-	Records      []RecordsItem      `json:"Records" xml:"Records"`
 	ResultObject []ResultObjectItem `json:"ResultObject" xml:"ResultObject"`
+	Records      []RecordsItem      `json:"Records" xml:"Records"`
 	TagList      []TagListItem      `json:"TagList" xml:"TagList"`
 	FaceList     []Face             `json:"FaceList" xml:"FaceList"`
 	BodyList     []Body             `json:"BodyList" xml:"BodyList"`

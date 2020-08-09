@@ -17,6 +17,7 @@ package vcs
 
 // RecordsItem is a nested struct in vcs response
 type RecordsItem struct {
+	ExtendValueThree string        `json:"ExtendValueThree" xml:"ExtendValueThree"`
 	LeftUpX          string        `json:"LeftUpX" xml:"LeftUpX"`
 	RightBottomY     string        `json:"RightBottomY" xml:"RightBottomY"`
 	FirstAppearTime  string        `json:"FirstAppearTime" xml:"FirstAppearTime"`
@@ -25,11 +26,13 @@ type RecordsItem struct {
 	Score            string        `json:"Score" xml:"Score"`
 	TargetPicUrl     string        `json:"TargetPicUrl" xml:"TargetPicUrl"`
 	CorpId           string        `json:"CorpId" xml:"CorpId"`
+	ExtendValue      string        `json:"ExtendValue" xml:"ExtendValue"`
 	DateTime         string        `json:"DateTime" xml:"DateTime"`
 	TagValue         string        `json:"TagValue" xml:"TagValue"`
 	RecordId         string        `json:"RecordId" xml:"RecordId"`
 	PicUrlPath       string        `json:"PicUrlPath" xml:"PicUrlPath"`
 	FaceCount        string        `json:"FaceCount" xml:"FaceCount"`
+	ExtendValueTwo   string        `json:"ExtendValueTwo" xml:"ExtendValueTwo"`
 	DataSourceId     string        `json:"DataSourceId" xml:"DataSourceId"`
 	LeftUpY          string        `json:"LeftUpY" xml:"LeftUpY"`
 	PersonId         string        `json:"PersonId" xml:"PersonId"`

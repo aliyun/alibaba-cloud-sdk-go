@@ -76,10 +76,10 @@ func (client *Client) RegisterDeviceWithCallback(request *RegisterDeviceRequest,
 // RegisterDeviceRequest is the request struct for api RegisterDevice
 type RegisterDeviceRequest struct {
 	*requests.RpcRequest
-	DeviceTimeStamp    string `position:"Body" name:"DeviceTimeStamp"`
-	DeviceId           string `position:"Body" name:"DeviceId"`
-	ServerId           string `position:"Body" name:"ServerId"`
-	DeviceSerialNumber string `position:"Body" name:"DeviceSerialNumber"`
+	DeviceTimeStamp string `position:"Body" name:"DeviceTimeStamp"`
+	DeviceSn        string `position:"Body" name:"DeviceSn"`
+	DeviceId        string `position:"Body" name:"DeviceId"`
+	ServerId        string `position:"Body" name:"ServerId"`
 }
 
 // RegisterDeviceResponse is the response struct for api RegisterDevice

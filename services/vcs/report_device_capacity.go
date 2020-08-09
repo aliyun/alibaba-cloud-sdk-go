@@ -87,11 +87,12 @@ type ReportDeviceCapacityRequest struct {
 
 // ReportDeviceCapacityStreamCapacities is a repeated param struct in ReportDeviceCapacityRequest
 type ReportDeviceCapacityStreamCapacities struct {
-	BitrateRange string `name:"BitrateRange"`
-	MaxStream    string `name:"MaxStream"`
-	EncodeFormat string `name:"EncodeFormat"`
-	MaxFrameRate string `name:"MaxFrameRate"`
-	Resolution   string `name:"Resolution"`
+	BitrateRange   string `name:"BitrateRange"`
+	MaxStream      string `name:"MaxStream"`
+	EncodeFormat   string `name:"EncodeFormat"`
+	MaxFrameRate   string `name:"MaxFrameRate"`
+	GovLengthRange string `name:"GovLengthRange"`
+	Resolution     string `name:"Resolution"`
 }
 
 // ReportDeviceCapacityResponse is the response struct for api ReportDeviceCapacity

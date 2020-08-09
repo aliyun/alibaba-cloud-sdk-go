@@ -102,6 +102,13 @@ type GetDeviceConfigResponse struct {
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	Resolution    string        `json:"Resolution" xml:"Resolution"`
 	RetryInterval string        `json:"RetryInterval" xml:"RetryInterval"`
+	DeviceId      string        `json:"DeviceId" xml:"DeviceId"`
+	UserName      string        `json:"UserName" xml:"UserName"`
+	PassWord      string        `json:"PassWord" xml:"PassWord"`
+	Protocol      string        `json:"Protocol" xml:"Protocol"`
+	ServerId      string        `json:"ServerId" xml:"ServerId"`
+	ServerPort    string        `json:"ServerPort" xml:"ServerPort"`
+	ServerIp      string        `json:"ServerIp" xml:"ServerIp"`
 	OSDList       []OSDListItem `json:"OSDList" xml:"OSDList"`
 }
 

@@ -77,6 +77,7 @@ func (client *Client) ListEventAlgorithmResultsWithCallback(request *ListEventAl
 type ListEventAlgorithmResultsRequest struct {
 	*requests.RpcRequest
 	CorpId       string `position:"Body" name:"CorpId"`
+	ExtendValue  string `position:"Body" name:"ExtendValue"`
 	EndTime      string `position:"Body" name:"EndTime"`
 	StartTime    string `position:"Body" name:"StartTime"`
 	PageNumber   string `position:"Body" name:"PageNumber"`
@@ -88,10 +89,11 @@ type ListEventAlgorithmResultsRequest struct {
 // ListEventAlgorithmResultsResponse is the response struct for api ListEventAlgorithmResults
 type ListEventAlgorithmResultsResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code        string `json:"Code" xml:"Code"`
+	Message     string `json:"Message" xml:"Message"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	ExtendValue string `json:"ExtendValue" xml:"ExtendValue"`
+	Data        Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListEventAlgorithmResultsRequest creates a request to invoke ListEventAlgorithmResults API

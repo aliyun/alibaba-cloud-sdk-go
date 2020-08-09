@@ -1,3 +1,7 @@
+2020-08-09 Version: v1.61.390
+- Generated 2020-05-15 for `Vcs`.
+- Add extend value for list event detail.
+
 2020-08-08 Version: v1.61.389
 - Generated 2020-03-20 for `imgsearch`.
 - Update SearchImage.
