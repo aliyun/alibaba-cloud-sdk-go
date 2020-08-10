@@ -76,19 +76,16 @@ func (client *Client) ListProjectMembersWithCallback(request *ListProjectMembers
 // ListProjectMembersRequest is the request struct for api ListProjectMembers
 type ListProjectMembersRequest struct {
 	*requests.RpcRequest
-	PageSize  requests.Integer `position:"Query" name:"PageSize"`
-	PageNum   requests.Integer `position:"Query" name:"PageNum"`
-	ProjectId requests.Integer `position:"Query" name:"ProjectId"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	ProjectId  requests.Integer `position:"Query" name:"ProjectId"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListProjectMembersResponse is the response struct for api ListProjectMembers
 type ListProjectMembersResponse struct {
 	*responses.BaseResponse
-	PageNum           int             `json:"PageNum" xml:"PageNum"`
-	PageSize          int             `json:"PageSize" xml:"PageSize"`
-	RequestId         string          `json:"RequestId" xml:"RequestId"`
-	TotalNum          int             `json:"TotalNum" xml:"TotalNum"`
-	ProjectMemberList []ProjectMember `json:"ProjectMemberList" xml:"ProjectMemberList"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	Data      DataInListProjectMembers `json:"Data" xml:"Data"`
 }
 
 // CreateListProjectMembersRequest creates a request to invoke ListProjectMembers API

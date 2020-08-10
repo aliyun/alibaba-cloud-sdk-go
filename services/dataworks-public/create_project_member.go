@@ -76,6 +76,7 @@ func (client *Client) CreateProjectMemberWithCallback(request *CreateProjectMemb
 // CreateProjectMemberRequest is the request struct for api CreateProjectMember
 type CreateProjectMemberRequest struct {
 	*requests.RpcRequest
+	RoleCode    string           `position:"Query" name:"RoleCode"`
 	ClientToken string           `position:"Query" name:"ClientToken"`
 	ProjectId   requests.Integer `position:"Query" name:"ProjectId"`
 	UserId      string           `position:"Query" name:"UserId"`
