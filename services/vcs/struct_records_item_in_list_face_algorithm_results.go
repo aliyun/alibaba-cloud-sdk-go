@@ -32,4 +32,5 @@ type RecordsItemInListFaceAlgorithmResults struct {
 	RightBottomY     float64 `json:"RightBottomY" xml:"RightBottomY"`
 	PicUrlPath       string  `json:"PicUrlPath" xml:"PicUrlPath"`
 	TargetPicUrlPath string  `json:"TargetPicUrlPath" xml:"TargetPicUrlPath"`
+	SourceId         string  `json:"SourceId" xml:"SourceId"`
 }

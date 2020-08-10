@@ -1,3 +1,7 @@
+2020-08-10 Version: v1.61.392
+- Generated 2020-05-15 for `Vcs`.
+- Add source id for list face detail.
+
 2020-08-10 Version: v1.61.391
 - Generated 2020-05-15 for `Vcs`.
 - Add extend value for list event detail.

@@ -37,4 +37,5 @@ type RecordsItemInListMotorAlgorithmResults struct {
 	PlateClass       string  `json:"PlateClass" xml:"PlateClass"`
 	SafetyBelt       string  `json:"SafetyBelt" xml:"SafetyBelt"`
 	Calling          string  `json:"Calling" xml:"Calling"`
+	SourceId         string  `json:"SourceId" xml:"SourceId"`
 }

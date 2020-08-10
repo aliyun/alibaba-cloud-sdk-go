@@ -17,24 +17,24 @@ package vcs
 
 // Data is a nested struct in vcs response
 type Data struct {
-	TotalPage    int                `json:"TotalPage" xml:"TotalPage"`
-	MaxId        string             `json:"MaxId" xml:"MaxId"`
-	PageSize     int                `json:"PageSize" xml:"PageSize"`
-	OssPath      string             `json:"OssPath" xml:"OssPath"`
-	TaskId       string             `json:"TaskId" xml:"TaskId"`
-	TotalCount   int                `json:"TotalCount" xml:"TotalCount"`
-	PageNumber   int                `json:"PageNumber" xml:"PageNumber"`
-	Description  string             `json:"Description" xml:"Description"`
-	DataSourceId string             `json:"DataSourceId" xml:"DataSourceId"`
-	PersonId     string             `json:"PersonId" xml:"PersonId"`
-	KafkaTopic   string             `json:"KafkaTopic" xml:"KafkaTopic"`
-	StructList   string             `json:"StructList" xml:"StructList"`
-	QualityScore string             `json:"QualityScore" xml:"QualityScore"`
-	PicUrl       string             `json:"PicUrl" xml:"PicUrl"`
-	Attributes   Attributes         `json:"Attributes" xml:"Attributes"`
-	ResultObject []ResultObjectItem `json:"ResultObject" xml:"ResultObject"`
-	Records      []RecordsItem      `json:"Records" xml:"Records"`
-	TagList      []TagListItem      `json:"TagList" xml:"TagList"`
-	FaceList     []Face             `json:"FaceList" xml:"FaceList"`
-	BodyList     []Body             `json:"BodyList" xml:"BodyList"`
+	TotalPage    int                                     `json:"TotalPage" xml:"TotalPage"`
+	MaxId        string                                  `json:"MaxId" xml:"MaxId"`
+	PageSize     int                                     `json:"PageSize" xml:"PageSize"`
+	OssPath      string                                  `json:"OssPath" xml:"OssPath"`
+	TaskId       string                                  `json:"TaskId" xml:"TaskId"`
+	TotalCount   int                                     `json:"TotalCount" xml:"TotalCount"`
+	PageNumber   int                                     `json:"PageNumber" xml:"PageNumber"`
+	Description  string                                  `json:"Description" xml:"Description"`
+	DataSourceId string                                  `json:"DataSourceId" xml:"DataSourceId"`
+	PersonId     string                                  `json:"PersonId" xml:"PersonId"`
+	KafkaTopic   string                                  `json:"KafkaTopic" xml:"KafkaTopic"`
+	StructList   string                                  `json:"StructList" xml:"StructList"`
+	QualityScore string                                  `json:"QualityScore" xml:"QualityScore"`
+	PicUrl       string                                  `json:"PicUrl" xml:"PicUrl"`
+	Attributes   Attributes                              `json:"Attributes" xml:"Attributes"`
+	Records      []RecordsItemInListBodyAlgorithmResults `json:"Records" xml:"Records"`
+	ResultObject []ResultObjectItem                      `json:"ResultObject" xml:"ResultObject"`
+	TagList      []TagListItem                           `json:"TagList" xml:"TagList"`
+	FaceList     []Face                                  `json:"FaceList" xml:"FaceList"`
+	BodyList     []Body                                  `json:"BodyList" xml:"BodyList"`
 }

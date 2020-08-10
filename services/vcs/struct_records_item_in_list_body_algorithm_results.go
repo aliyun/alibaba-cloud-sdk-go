@@ -38,4 +38,5 @@ type RecordsItemInListBodyAlgorithmResults struct {
 	TrousersStyle    string  `json:"TrousersStyle" xml:"TrousersStyle"`
 	CoatColor        string  `json:"CoatColor" xml:"CoatColor"`
 	TrousersColor    string  `json:"TrousersColor" xml:"TrousersColor"`
+	SourceId         string  `json:"SourceId" xml:"SourceId"`
 }

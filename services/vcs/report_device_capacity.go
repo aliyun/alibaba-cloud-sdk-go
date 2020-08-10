@@ -79,6 +79,7 @@ type ReportDeviceCapacityRequest struct {
 	StreamCapacities *[]ReportDeviceCapacityStreamCapacities `position:"Body" name:"StreamCapacities"  type:"Repeated"`
 	Latitude         string                                  `position:"Body" name:"Latitude"`
 	PresetNum        string                                  `position:"Body" name:"PresetNum"`
+	DeviceTimeStamp  string                                  `position:"Body" name:"DeviceTimeStamp"`
 	DeviceSn         string                                  `position:"Body" name:"DeviceSn"`
 	AudioFormat      string                                  `position:"Body" name:"AudioFormat"`
 	PTZCapacity      string                                  `position:"Body" name:"PTZCapacity"`
