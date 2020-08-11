@@ -80,6 +80,7 @@ type CreateSnapshotRequest struct {
 	ClientToken          string               `position:"Query" name:"ClientToken"`
 	Description          string               `position:"Query" name:"Description"`
 	SnapshotName         string               `position:"Query" name:"SnapshotName"`
+	ResourceGroupId      string               `position:"Query" name:"ResourceGroupId"`
 	DiskId               string               `position:"Query" name:"DiskId"`
 	Tag                  *[]CreateSnapshotTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceOwnerAccount string               `position:"Query" name:"ResourceOwnerAccount"`

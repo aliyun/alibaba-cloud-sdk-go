@@ -27,4 +27,5 @@ type ResourceTypeCount struct {
 	Eni            int `json:"Eni" xml:"Eni"`
 	Ddh            int `json:"Ddh" xml:"Ddh"`
 	KeyPair        int `json:"KeyPair" xml:"KeyPair"`
+	SnapshotPolicy int `json:"SnapshotPolicy" xml:"SnapshotPolicy"`
 }

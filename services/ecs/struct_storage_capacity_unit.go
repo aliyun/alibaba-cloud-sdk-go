@@ -26,4 +26,5 @@ type StorageCapacityUnit struct {
 	ExpiredTime           string `json:"ExpiredTime" xml:"ExpiredTime"`
 	StartTime             string `json:"StartTime" xml:"StartTime"`
 	Description           string `json:"Description" xml:"Description"`
+	AllocationStatus      string `json:"AllocationStatus" xml:"AllocationStatus"`
 }
