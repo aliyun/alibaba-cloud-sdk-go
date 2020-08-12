@@ -76,11 +76,11 @@ func (client *Client) CreateCredentialWithCallback(request *CreateCredentialRequ
 // CreateCredentialRequest is the request struct for api CreateCredential
 type CreateCredentialRequest struct {
 	*requests.RpcRequest
-	Password string `position:"Body" name:"Password"`
-	Name     string `position:"Body" name:"Name"`
 	Type     string `position:"Body" name:"Type"`
 	UserPk   string `position:"Body" name:"UserPk"`
 	OrgId    string `position:"Body" name:"OrgId"`
+	Password string `position:"Body" name:"Password"`
+	Name     string `position:"Body" name:"Name"`
 	UserName string `position:"Body" name:"UserName"`
 }
 
