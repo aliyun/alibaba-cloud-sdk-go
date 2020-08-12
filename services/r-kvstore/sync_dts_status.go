@@ -78,6 +78,7 @@ type SyncDtsStatusRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	TaskId               string           `position:"Query" name:"TaskId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

@@ -1,3 +1,8 @@
+2020-08-12 Version: v1.61.397
+- Generated 2015-01-01 for `R-kvstore`.
+- Generated 2015-01-01 for `R-kvstore`.
+- SyncDtsStatus API add TaskId parameter.
+
 2020-08-11 Version: v1.61.396
 - Generated 2017-01-01 for `Oam`.
 - S.
