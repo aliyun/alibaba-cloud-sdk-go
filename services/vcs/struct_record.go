@@ -22,6 +22,7 @@ type Record struct {
 	ParentCorpId       string  `json:"ParentCorpId" xml:"ParentCorpId"`
 	Score              float64 `json:"Score" xml:"Score"`
 	CreateTime         string  `json:"CreateTime" xml:"CreateTime"`
+	IsvSubId           string  `json:"IsvSubId" xml:"IsvSubId"`
 	DeviceType         string  `json:"DeviceType" xml:"DeviceType"`
 	SipServerIp        string  `json:"SipServerIp" xml:"SipServerIp"`
 	DeviceSite         string  `json:"DeviceSite" xml:"DeviceSite"`

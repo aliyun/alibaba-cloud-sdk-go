@@ -1,3 +1,7 @@
+2020-08-12 Version: v1.61.399
+- Generated 2020-05-15 for `Vcs`.
+- Support corp group api.
+
 2020-08-12 Version: v1.61.398
 - Generated 2020-03-03 for `devops-rdc`.
 - Add pipeline status api.

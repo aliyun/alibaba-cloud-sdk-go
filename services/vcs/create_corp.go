@@ -77,6 +77,7 @@ func (client *Client) CreateCorpWithCallback(request *CreateCorpRequest, callbac
 type CreateCorpRequest struct {
 	*requests.RpcRequest
 	AlgorithmType string `position:"Body" name:"AlgorithmType"`
+	IsvSubId      string `position:"Body" name:"IsvSubId"`
 	ParentCorpId  string `position:"Body" name:"ParentCorpId"`
 	Description   string `position:"Body" name:"Description"`
 	AppName       string `position:"Body" name:"AppName"`

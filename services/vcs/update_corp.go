@@ -76,6 +76,7 @@ func (client *Client) UpdateCorpWithCallback(request *UpdateCorpRequest, callbac
 // UpdateCorpRequest is the request struct for api UpdateCorp
 type UpdateCorpRequest struct {
 	*requests.RpcRequest
+	IsvSubId     string `position:"Body" name:"IsvSubId"`
 	CorpId       string `position:"Body" name:"CorpId"`
 	ParentCorpId string `position:"Body" name:"ParentCorpId"`
 	Description  string `position:"Body" name:"Description"`
