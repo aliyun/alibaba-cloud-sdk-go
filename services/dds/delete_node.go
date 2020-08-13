@@ -91,6 +91,7 @@ type DeleteNodeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    int    `json:"TaskId" xml:"TaskId"`
+	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateDeleteNodeRequest creates a request to invoke DeleteNode API

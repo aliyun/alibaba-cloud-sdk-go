@@ -93,6 +93,7 @@ type DescribeDBInstancesRequest struct {
 	ExpireTime            string                    `position:"Query" name:"ExpireTime"`
 	ResourceOwnerAccount  string                    `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string                    `position:"Query" name:"OwnerAccount"`
+	ConnectionDomain      string                    `position:"Query" name:"ConnectionDomain"`
 	OwnerId               requests.Integer          `position:"Query" name:"OwnerId"`
 	DBInstanceType        string                    `position:"Query" name:"DBInstanceType"`
 	DBInstanceClass       string                    `position:"Query" name:"DBInstanceClass"`

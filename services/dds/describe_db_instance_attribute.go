@@ -77,6 +77,7 @@ func (client *Client) DescribeDBInstanceAttributeWithCallback(request *DescribeD
 type DescribeDBInstanceAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	Engine               string           `position:"Query" name:"Engine"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`

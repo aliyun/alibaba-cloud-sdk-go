@@ -17,10 +17,10 @@ package dds
 
 // Order is a nested struct in dds response
 type Order struct {
-	TradeAmount    float64                `json:"TradeAmount" xml:"TradeAmount"`
-	OriginalAmount float64                `json:"OriginalAmount" xml:"OriginalAmount"`
+	TradeAmount    string                 `json:"TradeAmount" xml:"TradeAmount"`
+	OriginalAmount string                 `json:"OriginalAmount" xml:"OriginalAmount"`
 	Currency       string                 `json:"Currency" xml:"Currency"`
-	DiscountAmount float64                `json:"DiscountAmount" xml:"DiscountAmount"`
+	DiscountAmount string                 `json:"DiscountAmount" xml:"DiscountAmount"`
 	RuleIds        RuleIdsInDescribePrice `json:"RuleIds" xml:"RuleIds"`
 	Coupons        CouponsInDescribePrice `json:"Coupons" xml:"Coupons"`
 }

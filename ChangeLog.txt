@@ -1,3 +1,8 @@
+2020-08-13 Version: v1.61.401
+- Generated 2015-12-01 for `Dds`.
+- DescribePrice update amount parameters type, float to string.
+- Add ResourceGroupId parameter to support resource group.
+
 2020-08-13 Version: v1.61.400
 - Generated 2020-03-20 for `videoseg`.
 - Release SegmentHalfBody.

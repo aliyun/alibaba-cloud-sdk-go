@@ -77,13 +77,12 @@ func (client *Client) DescribeTagsWithCallback(request *DescribeTagsRequest, cal
 type DescribeTagsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	NextToken            string           `position:"Query" name:"NextToken"`
-	Product              string           `position:"Query" name:"Product"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceType         string           `position:"Query" name:"ResourceType"`
-	Category             string           `position:"Query" name:"Category"`
 }
 
 // DescribeTagsResponse is the response struct for api DescribeTags

@@ -77,6 +77,7 @@ func (client *Client) SwitchDBInstanceHAWithCallback(request *SwitchDBInstanceHA
 type SwitchDBInstanceHARequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SwitchMode           requests.Integer `position:"Query" name:"SwitchMode"`
 	RoleIds              string           `position:"Query" name:"RoleIds"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`

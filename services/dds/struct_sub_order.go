@@ -17,9 +17,9 @@ package dds
 
 // SubOrder is a nested struct in dds response
 type SubOrder struct {
+	TradeAmount    string                 `json:"TradeAmount" xml:"TradeAmount"`
+	OriginalAmount string                 `json:"OriginalAmount" xml:"OriginalAmount"`
 	InstanceId     string                 `json:"InstanceId" xml:"InstanceId"`
-	TradeAmount    float64                `json:"TradeAmount" xml:"TradeAmount"`
-	OriginalAmount float64                `json:"OriginalAmount" xml:"OriginalAmount"`
-	DiscountAmount float64                `json:"DiscountAmount" xml:"DiscountAmount"`
+	DiscountAmount string                 `json:"DiscountAmount" xml:"DiscountAmount"`
 	RuleIds        RuleIdsInDescribePrice `json:"RuleIds" xml:"RuleIds"`
 }

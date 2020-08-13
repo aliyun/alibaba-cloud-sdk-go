@@ -82,6 +82,7 @@ type DescribeUserEncryptionKeyListRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TargetRegionId       string           `position:"Query" name:"TargetRegionId"`
 }
 
 // DescribeUserEncryptionKeyListResponse is the response struct for api DescribeUserEncryptionKeyList
