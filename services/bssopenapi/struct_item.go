@@ -21,6 +21,7 @@ type Item struct {
 	PreviousBillingCycleBalance float64 `json:"PreviousBillingCycleBalance" xml:"PreviousBillingCycleBalance"`
 	PayerAccount                string  `json:"PayerAccount" xml:"PayerAccount"`
 	UsageStartTime              string  `json:"UsageStartTime" xml:"UsageStartTime"`
+	CommodityCode               string  `json:"CommodityCode" xml:"CommodityCode"`
 	SuborderID                  string  `json:"SuborderID" xml:"SuborderID"`
 	SolutionCode                string  `json:"SolutionCode" xml:"SolutionCode"`
 	ProductDetail               string  `json:"ProductDetail" xml:"ProductDetail"`
@@ -32,6 +33,7 @@ type Item struct {
 	OwnerName                   string  `json:"OwnerName" xml:"OwnerName"`
 	OutstandingAmount           float64 `json:"OutstandingAmount" xml:"OutstandingAmount"`
 	DeductedByResourcePackage   string  `json:"DeductedByResourcePackage" xml:"DeductedByResourcePackage"`
+	PipCode                     string  `json:"PipCode" xml:"PipCode"`
 	ProductCode                 string  `json:"ProductCode" xml:"ProductCode"`
 	ListPrice                   string  `json:"ListPrice" xml:"ListPrice"`
 	Quantity                    string  `json:"Quantity" xml:"Quantity"`

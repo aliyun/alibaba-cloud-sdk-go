@@ -81,6 +81,7 @@ type QuerySplitItemBillRequest struct {
 	BillingCycle     string           `position:"Query" name:"BillingCycle"`
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 	PageNum          requests.Integer `position:"Query" name:"PageNum"`
+	BillOwnerId      requests.Integer `position:"Query" name:"BillOwnerId"`
 	ProductType      string           `position:"Query" name:"ProductType"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 }

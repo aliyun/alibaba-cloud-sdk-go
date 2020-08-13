@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QueryBill invokes the bssopenapi.QueryBill API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querybill.html
-func (client *Client) QueryBill(request *QueryBillRequest) (response *QueryBillResponse, err error) {
-	response = CreateQueryBillResponse()
+// QuerySettleBill invokes the bssopenapi.QuerySettleBill API synchronously
+// api document: https://help.aliyun.com/api/bssopenapi/querysettlebill.html
+func (client *Client) QuerySettleBill(request *QuerySettleBillRequest) (response *QuerySettleBillResponse, err error) {
+	response = CreateQuerySettleBillResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QueryBillWithChan invokes the bssopenapi.QueryBill API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querybill.html
+// QuerySettleBillWithChan invokes the bssopenapi.QuerySettleBill API asynchronously
+// api document: https://help.aliyun.com/api/bssopenapi/querysettlebill.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryBillWithChan(request *QueryBillRequest) (<-chan *QueryBillResponse, <-chan error) {
-	responseChan := make(chan *QueryBillResponse, 1)
+func (client *Client) QuerySettleBillWithChan(request *QuerySettleBillRequest) (<-chan *QuerySettleBillResponse, <-chan error) {
+	responseChan := make(chan *QuerySettleBillResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryBill(request)
+		response, err := client.QuerySettleBill(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) QueryBillWithChan(request *QueryBillRequest) (<-chan *Quer
 	return responseChan, errChan
 }
 
-// QueryBillWithCallback invokes the bssopenapi.QueryBill API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/querybill.html
+// QuerySettleBillWithCallback invokes the bssopenapi.QuerySettleBill API asynchronously
+// api document: https://help.aliyun.com/api/bssopenapi/querysettlebill.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryBillWithCallback(request *QueryBillRequest, callback func(response *QueryBillResponse, err error)) <-chan int {
+func (client *Client) QuerySettleBillWithCallback(request *QuerySettleBillRequest, callback func(response *QuerySettleBillResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryBillResponse
+		var response *QuerySettleBillResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryBill(request)
+		response, err = client.QuerySettleBill(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,8 +73,8 @@ func (client *Client) QueryBillWithCallback(request *QueryBillRequest, callback 
 	return result
 }
 
-// QueryBillRequest is the request struct for api QueryBill
-type QueryBillRequest struct {
+// QuerySettleBillRequest is the request struct for api QuerySettleBill
+type QuerySettleBillRequest struct {
 	*requests.RpcRequest
 	ProductCode            string           `position:"Query" name:"ProductCode"`
 	IsHideZeroCharge       requests.Boolean `position:"Query" name:"IsHideZeroCharge"`
@@ -83,14 +83,14 @@ type QueryBillRequest struct {
 	BillingCycle           string           `position:"Query" name:"BillingCycle"`
 	Type                   string           `position:"Query" name:"Type"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	PageNum                requests.Integer `position:"Query" name:"PageNum"`
 	BillOwnerId            requests.Integer `position:"Query" name:"BillOwnerId"`
 	ProductType            string           `position:"Query" name:"ProductType"`
-	PageSize               requests.Integer `position:"Query" name:"PageSize"`
+	NextToken              string           `position:"Query" name:"NextToken"`
+	MaxResults             requests.Integer `position:"Query" name:"MaxResults"`
 }
 
-// QueryBillResponse is the response struct for api QueryBill
-type QueryBillResponse struct {
+// QuerySettleBillResponse is the response struct for api QuerySettleBill
+type QuerySettleBillResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
@@ -99,19 +99,19 @@ type QueryBillResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateQueryBillRequest creates a request to invoke QueryBill API
-func CreateQueryBillRequest() (request *QueryBillRequest) {
-	request = &QueryBillRequest{
+// CreateQuerySettleBillRequest creates a request to invoke QuerySettleBill API
+func CreateQuerySettleBillRequest() (request *QuerySettleBillRequest) {
+	request = &QuerySettleBillRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryBill", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QuerySettleBill", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateQueryBillResponse creates a response to parse from QueryBill response
-func CreateQueryBillResponse() (response *QueryBillResponse) {
-	response = &QueryBillResponse{
+// CreateQuerySettleBillResponse creates a response to parse from QuerySettleBill response
+func CreateQuerySettleBillResponse() (response *QuerySettleBillResponse) {
+	response = &QuerySettleBillResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

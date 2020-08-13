@@ -88,6 +88,7 @@ type AllocateCostUnitResourceResourceInstanceList struct {
 	ResourceId     string `name:"ResourceId"`
 	CommodityCode  string `name:"CommodityCode"`
 	ResourceUserId string `name:"ResourceUserId"`
+	ApportionCode  string `name:"ApportionCode"`
 }
 
 // AllocateCostUnitResourceResponse is the response struct for api AllocateCostUnitResource

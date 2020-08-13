@@ -76,10 +76,11 @@ func (client *Client) QueryBillOverviewWithCallback(request *QueryBillOverviewRe
 // QueryBillOverviewRequest is the request struct for api QueryBillOverview
 type QueryBillOverviewRequest struct {
 	*requests.RpcRequest
-	ProductCode      string `position:"Query" name:"ProductCode"`
-	SubscriptionType string `position:"Query" name:"SubscriptionType"`
-	BillingCycle     string `position:"Query" name:"BillingCycle"`
-	ProductType      string `position:"Query" name:"ProductType"`
+	ProductCode      string           `position:"Query" name:"ProductCode"`
+	SubscriptionType string           `position:"Query" name:"SubscriptionType"`
+	BillingCycle     string           `position:"Query" name:"BillingCycle"`
+	BillOwnerId      requests.Integer `position:"Query" name:"BillOwnerId"`
+	ProductType      string           `position:"Query" name:"ProductType"`
 }
 
 // QueryBillOverviewResponse is the response struct for api QueryBillOverview

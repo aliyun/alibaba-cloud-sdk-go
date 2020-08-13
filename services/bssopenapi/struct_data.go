@@ -27,6 +27,7 @@ type Data struct {
 	HostingStatus               string                               `json:"HostingStatus" xml:"HostingStatus"`
 	TotalCount                  int                                  `json:"TotalCount" xml:"TotalCount"`
 	CreditLimitStatus           string                               `json:"CreditLimitStatus" xml:"CreditLimitStatus"`
+	MaxResults                  int                                  `json:"MaxResults" xml:"MaxResults"`
 	BillingCycle                string                               `json:"BillingCycle" xml:"BillingCycle"`
 	OutstandingAmount           float64                              `json:"OutstandingAmount" xml:"OutstandingAmount"`
 	Quantity                    int                                  `json:"Quantity" xml:"Quantity"`
@@ -54,6 +55,7 @@ type Data struct {
 	LoginEmail                  string                               `json:"LoginEmail" xml:"LoginEmail"`
 	DiscountPrice               float64                              `json:"DiscountPrice" xml:"DiscountPrice"`
 	AccountName                 string                               `json:"AccountName" xml:"AccountName"`
+	NextToken                   string                               `json:"NextToken" xml:"NextToken"`
 	Mpk                         int64                                `json:"Mpk" xml:"Mpk"`
 	UidList                     UidList                              `json:"UidList" xml:"UidList"`
 	OmsData                     OmsData                              `json:"OmsData" xml:"OmsData"`
@@ -63,8 +65,8 @@ type Data struct {
 	InstanceList                []Instance                           `json:"InstanceList" xml:"InstanceList"`
 	OrderList                   OrderListInQueryOrders               `json:"OrderList" xml:"OrderList"`
 	Modules                     Modules                              `json:"Modules" xml:"Modules"`
-	Items                       ItemsInQueryAccountBill              `json:"Items" xml:"Items"`
 	ResourcePackages            ResourcePackages                     `json:"ResourcePackages" xml:"ResourcePackages"`
+	Items                       ItemsInQueryBillOverview             `json:"Items" xml:"Items"`
 	ProductList                 ProductList                          `json:"ProductList" xml:"ProductList"`
 	ModuleDetails               ModuleDetailsInGetPayAsYouGoPrice    `json:"ModuleDetails" xml:"ModuleDetails"`
 	PromotionDetails            PromotionDetailsInGetPayAsYouGoPrice `json:"PromotionDetails" xml:"PromotionDetails"`
