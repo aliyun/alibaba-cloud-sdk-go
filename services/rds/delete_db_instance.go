@@ -89,6 +89,7 @@ type DeleteDBInstanceRequest struct {
 type DeleteDBInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	RegionId  string `json:"RegionId" xml:"RegionId"`
 }
 
 // CreateDeleteDBInstanceRequest creates a request to invoke DeleteDBInstance API

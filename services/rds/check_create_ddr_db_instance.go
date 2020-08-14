@@ -80,6 +80,7 @@ type CheckCreateDdrDBInstanceRequest struct {
 	DBInstanceStorage    requests.Integer `position:"Query" name:"DBInstanceStorage"`
 	SourceDBInstanceName string           `position:"Query" name:"SourceDBInstanceName"`
 	HostType             string           `position:"Query" name:"HostType"`
+	BinlogRole           string           `position:"Query" name:"BinlogRole"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	UserBakSetURL        string           `position:"Query" name:"UserBakSetURL"`
 	Engine               string           `position:"Query" name:"Engine"`
@@ -90,8 +91,10 @@ type CheckCreateDdrDBInstanceRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	BackupSetId          string           `position:"Query" name:"BackupSetId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	BinlogPosition       string           `position:"Query" name:"BinlogPosition"`
 	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
 	RestoreType          string           `position:"Query" name:"RestoreType"`
+	BinlogName           string           `position:"Query" name:"BinlogName"`
 	SourceRegion         string           `position:"Query" name:"SourceRegion"`
 }
 

@@ -113,6 +113,7 @@ type CreateDBInstanceRequest struct {
 	ResourceOwnerAccount           string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                   string           `position:"Query" name:"OwnerAccount"`
 	UsedTime                       string           `position:"Query" name:"UsedTime"`
+	TargetMinorVersion             string           `position:"Query" name:"TargetMinorVersion"`
 	StorageUpperBound              requests.Integer `position:"Query" name:"StorageUpperBound"`
 	StorageThreshold               requests.Integer `position:"Query" name:"StorageThreshold"`
 	VPCId                          string           `position:"Query" name:"VPCId"`

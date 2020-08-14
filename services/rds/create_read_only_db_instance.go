@@ -79,6 +79,7 @@ type CreateReadOnlyDBInstanceRequest struct {
 	ResourceOwnerId                requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceStorage              requests.Integer `position:"Query" name:"DBInstanceStorage"`
 	ClientToken                    string           `position:"Query" name:"ClientToken"`
+	InstructionSetArch             string           `position:"Query" name:"InstructionSetArch"`
 	EngineVersion                  string           `position:"Query" name:"EngineVersion"`
 	ResourceGroupId                string           `position:"Query" name:"ResourceGroupId"`
 	TddlRegionConfig               string           `position:"Query" name:"TddlRegionConfig"`

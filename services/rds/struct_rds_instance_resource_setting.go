@@ -25,4 +25,5 @@ type RdsInstanceResourceSetting struct {
 	PoppedUpButtonType string `json:"PoppedUpButtonType" xml:"PoppedUpButtonType"`
 	PoppedUpButtonUrl  string `json:"PoppedUpButtonUrl" xml:"PoppedUpButtonUrl"`
 	PoppedUpContent    string `json:"PoppedUpContent" xml:"PoppedUpContent"`
+	IsTop              string `json:"IsTop" xml:"IsTop"`
 }
