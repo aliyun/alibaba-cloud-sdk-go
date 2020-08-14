@@ -68,6 +68,7 @@ type Data struct {
 	FaceProbabilityList  []float64             `json:"FaceProbabilityList" xml:"FaceProbabilityList"`
 	Expressions          []int                 `json:"Expressions" xml:"Expressions"`
 	MetaObject           MetaObject            `json:"MetaObject" xml:"MetaObject"`
+	ImageInfoList        []ImageInfoListItem   `json:"ImageInfoList" xml:"ImageInfoList"`
 	Outputs              []Output              `json:"Outputs" xml:"Outputs"`
 	Elements             []Element             `json:"Elements" xml:"Elements"`
 	Faces                []Face                `json:"Faces" xml:"Faces"`

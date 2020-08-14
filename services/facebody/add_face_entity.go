@@ -92,7 +92,7 @@ func CreateAddFaceEntityRequest() (request *AddFaceEntityRequest) {
 	request = &AddFaceEntityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "AddFaceEntity", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "AddFaceEntity", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -91,7 +91,7 @@ func CreateBodyPostureRequest() (request *BodyPostureRequest) {
 	request = &BodyPostureRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "BodyPosture", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "BodyPosture", "", "")
 	request.Method = requests.POST
 	return
 }

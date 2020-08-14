@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteFace invokes the facebody.DeleteFace API synchronously
-// api document: https://help.aliyun.com/api/facebody/deleteface.html
-func (client *Client) DeleteFace(request *DeleteFaceRequest) (response *DeleteFaceResponse, err error) {
-	response = CreateDeleteFaceResponse()
+// BlurFace invokes the facebody.BlurFace API synchronously
+// api document: https://help.aliyun.com/api/facebody/blurface.html
+func (client *Client) BlurFace(request *BlurFaceRequest) (response *BlurFaceResponse, err error) {
+	response = CreateBlurFaceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteFaceWithChan invokes the facebody.DeleteFace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/deleteface.html
+// BlurFaceWithChan invokes the facebody.BlurFace API asynchronously
+// api document: https://help.aliyun.com/api/facebody/blurface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteFaceWithChan(request *DeleteFaceRequest) (<-chan *DeleteFaceResponse, <-chan error) {
-	responseChan := make(chan *DeleteFaceResponse, 1)
+func (client *Client) BlurFaceWithChan(request *BlurFaceRequest) (<-chan *BlurFaceResponse, <-chan error) {
+	responseChan := make(chan *BlurFaceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteFace(request)
+		response, err := client.BlurFace(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteFaceWithChan(request *DeleteFaceRequest) (<-chan *De
 	return responseChan, errChan
 }
 
-// DeleteFaceWithCallback invokes the facebody.DeleteFace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/deleteface.html
+// BlurFaceWithCallback invokes the facebody.BlurFace API asynchronously
+// api document: https://help.aliyun.com/api/facebody/blurface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteFaceWithCallback(request *DeleteFaceRequest, callback func(response *DeleteFaceResponse, err error)) <-chan int {
+func (client *Client) BlurFaceWithCallback(request *BlurFaceRequest, callback func(response *BlurFaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteFaceResponse
+		var response *BlurFaceResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteFace(request)
+		response, err = client.BlurFace(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,32 +73,32 @@ func (client *Client) DeleteFaceWithCallback(request *DeleteFaceRequest, callbac
 	return result
 }
 
-// DeleteFaceRequest is the request struct for api DeleteFace
-type DeleteFaceRequest struct {
+// BlurFaceRequest is the request struct for api BlurFace
+type BlurFaceRequest struct {
 	*requests.RpcRequest
-	FaceId string `position:"Body" name:"FaceId"`
-	DbName string `position:"Body" name:"DbName"`
+	ImageURL string `position:"Body" name:"ImageURL"`
 }
 
-// DeleteFaceResponse is the response struct for api DeleteFace
-type DeleteFaceResponse struct {
+// BlurFaceResponse is the response struct for api BlurFace
+type BlurFaceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateDeleteFaceRequest creates a request to invoke DeleteFace API
-func CreateDeleteFaceRequest() (request *DeleteFaceRequest) {
-	request = &DeleteFaceRequest{
+// CreateBlurFaceRequest creates a request to invoke BlurFace API
+func CreateBlurFaceRequest() (request *BlurFaceRequest) {
+	request = &BlurFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DeleteFace", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "BlurFace", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteFaceResponse creates a response to parse from DeleteFace response
-func CreateDeleteFaceResponse() (response *DeleteFaceResponse) {
-	response = &DeleteFaceResponse{
+// CreateBlurFaceResponse creates a response to parse from BlurFace response
+func CreateBlurFaceResponse() (response *BlurFaceResponse) {
+	response = &BlurFaceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

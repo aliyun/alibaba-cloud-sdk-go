@@ -90,7 +90,7 @@ func CreateDeleteFaceDbRequest() (request *DeleteFaceDbRequest) {
 	request = &DeleteFaceDbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DeleteFaceDb", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "DeleteFaceDb", "", "")
 	request.Method = requests.POST
 	return
 }

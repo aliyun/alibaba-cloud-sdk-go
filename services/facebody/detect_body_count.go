@@ -91,7 +91,7 @@ func CreateDetectBodyCountRequest() (request *DetectBodyCountRequest) {
 	request = &DetectBodyCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DetectBodyCount", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "DetectBodyCount", "", "")
 	request.Method = requests.POST
 	return
 }

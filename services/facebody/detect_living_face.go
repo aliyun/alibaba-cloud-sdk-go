@@ -96,7 +96,7 @@ func CreateDetectLivingFaceRequest() (request *DetectLivingFaceRequest) {
 	request = &DetectLivingFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DetectLivingFace", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "DetectLivingFace", "", "")
 	request.Method = requests.POST
 	return
 }

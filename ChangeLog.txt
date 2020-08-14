@@ -1,3 +1,7 @@
+2020-08-14 Version: v1.61.408
+- Generated 2019-12-30 for `facebody`.
+- Supported Api DetectIPCPedestrian.
+
 2020-08-14 Version: v1.61.407
 - Generated 2014-08-15 for `Rds`.
 - Supported CheckCloudResourceAuthorized API.

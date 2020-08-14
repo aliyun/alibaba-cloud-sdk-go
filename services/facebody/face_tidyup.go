@@ -93,7 +93,7 @@ func CreateFaceTidyupRequest() (request *FaceTidyupRequest) {
 	request = &FaceTidyupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "FaceTidyup", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "FaceTidyup", "", "")
 	request.Method = requests.POST
 	return
 }
