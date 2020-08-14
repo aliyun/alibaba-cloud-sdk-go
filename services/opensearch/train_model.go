@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateModel invokes the opensearch.CreateModel API synchronously
-// api document: https://help.aliyun.com/api/opensearch/createmodel.html
-func (client *Client) CreateModel(request *CreateModelRequest) (response *CreateModelResponse, err error) {
-	response = CreateCreateModelResponse()
+// TrainModel invokes the opensearch.TrainModel API synchronously
+// api document: https://help.aliyun.com/api/opensearch/trainmodel.html
+func (client *Client) TrainModel(request *TrainModelRequest) (response *TrainModelResponse, err error) {
+	response = CreateTrainModelResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateModelWithChan invokes the opensearch.CreateModel API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/createmodel.html
+// TrainModelWithChan invokes the opensearch.TrainModel API asynchronously
+// api document: https://help.aliyun.com/api/opensearch/trainmodel.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateModelWithChan(request *CreateModelRequest) (<-chan *CreateModelResponse, <-chan error) {
-	responseChan := make(chan *CreateModelResponse, 1)
+func (client *Client) TrainModelWithChan(request *TrainModelRequest) (<-chan *TrainModelResponse, <-chan error) {
+	responseChan := make(chan *TrainModelResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateModel(request)
+		response, err := client.TrainModel(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateModelWithChan(request *CreateModelRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// CreateModelWithCallback invokes the opensearch.CreateModel API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/createmodel.html
+// TrainModelWithCallback invokes the opensearch.TrainModel API asynchronously
+// api document: https://help.aliyun.com/api/opensearch/trainmodel.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateModelWithCallback(request *CreateModelRequest, callback func(response *CreateModelResponse, err error)) <-chan int {
+func (client *Client) TrainModelWithCallback(request *TrainModelRequest, callback func(response *TrainModelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateModelResponse
+		var response *TrainModelResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateModel(request)
+		response, err = client.TrainModel(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,32 +73,33 @@ func (client *Client) CreateModelWithCallback(request *CreateModelRequest, callb
 	return result
 }
 
-// CreateModelRequest is the request struct for api CreateModel
-type CreateModelRequest struct {
+// TrainModelRequest is the request struct for api TrainModel
+type TrainModelRequest struct {
 	*requests.RoaRequest
+	ModelName        string `position:"Path" name:"modelName"`
 	AppGroupIdentity string `position:"Path" name:"appGroupIdentity"`
 }
 
-// CreateModelResponse is the response struct for api CreateModel
-type CreateModelResponse struct {
+// TrainModelResponse is the response struct for api TrainModel
+type TrainModelResponse struct {
 	*responses.BaseResponse
 	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
 }
 
-// CreateCreateModelRequest creates a request to invoke CreateModel API
-func CreateCreateModelRequest() (request *CreateModelRequest) {
-	request = &CreateModelRequest{
+// CreateTrainModelRequest creates a request to invoke TrainModel API
+func CreateTrainModelRequest() (request *TrainModelRequest) {
+	request = &TrainModelRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateModel", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "TrainModel", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/actions/train", "opensearch", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateModelResponse creates a response to parse from CreateModel response
-func CreateCreateModelResponse() (response *CreateModelResponse) {
-	response = &CreateModelResponse{
+// CreateTrainModelResponse creates a response to parse from TrainModel response
+func CreateTrainModelResponse() (response *TrainModelResponse) {
+	response = &TrainModelResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

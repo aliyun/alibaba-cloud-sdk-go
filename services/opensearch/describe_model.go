@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateModel invokes the opensearch.CreateModel API synchronously
-// api document: https://help.aliyun.com/api/opensearch/createmodel.html
-func (client *Client) CreateModel(request *CreateModelRequest) (response *CreateModelResponse, err error) {
-	response = CreateCreateModelResponse()
+// DescribeModel invokes the opensearch.DescribeModel API synchronously
+// api document: https://help.aliyun.com/api/opensearch/describemodel.html
+func (client *Client) DescribeModel(request *DescribeModelRequest) (response *DescribeModelResponse, err error) {
+	response = CreateDescribeModelResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateModelWithChan invokes the opensearch.CreateModel API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/createmodel.html
+// DescribeModelWithChan invokes the opensearch.DescribeModel API asynchronously
+// api document: https://help.aliyun.com/api/opensearch/describemodel.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateModelWithChan(request *CreateModelRequest) (<-chan *CreateModelResponse, <-chan error) {
-	responseChan := make(chan *CreateModelResponse, 1)
+func (client *Client) DescribeModelWithChan(request *DescribeModelRequest) (<-chan *DescribeModelResponse, <-chan error) {
+	responseChan := make(chan *DescribeModelResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateModel(request)
+		response, err := client.DescribeModel(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateModelWithChan(request *CreateModelRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// CreateModelWithCallback invokes the opensearch.CreateModel API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/createmodel.html
+// DescribeModelWithCallback invokes the opensearch.DescribeModel API asynchronously
+// api document: https://help.aliyun.com/api/opensearch/describemodel.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateModelWithCallback(request *CreateModelRequest, callback func(response *CreateModelResponse, err error)) <-chan int {
+func (client *Client) DescribeModelWithCallback(request *DescribeModelRequest, callback func(response *DescribeModelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateModelResponse
+		var response *DescribeModelResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateModel(request)
+		response, err = client.DescribeModel(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,32 +73,33 @@ func (client *Client) CreateModelWithCallback(request *CreateModelRequest, callb
 	return result
 }
 
-// CreateModelRequest is the request struct for api CreateModel
-type CreateModelRequest struct {
+// DescribeModelRequest is the request struct for api DescribeModel
+type DescribeModelRequest struct {
 	*requests.RoaRequest
+	ModelName        string `position:"Path" name:"modelName"`
 	AppGroupIdentity string `position:"Path" name:"appGroupIdentity"`
 }
 
-// CreateModelResponse is the response struct for api CreateModel
-type CreateModelResponse struct {
+// DescribeModelResponse is the response struct for api DescribeModel
+type DescribeModelResponse struct {
 	*responses.BaseResponse
 	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
 }
 
-// CreateCreateModelRequest creates a request to invoke CreateModel API
-func CreateCreateModelRequest() (request *CreateModelRequest) {
-	request = &CreateModelRequest{
+// CreateDescribeModelRequest creates a request to invoke DescribeModel API
+func CreateDescribeModelRequest() (request *DescribeModelRequest) {
+	request = &DescribeModelRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "CreateModel", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models", "opensearch", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DescribeModel", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]", "opensearch", "openAPI")
+	request.Method = requests.GET
 	return
 }
 
-// CreateCreateModelResponse creates a response to parse from CreateModel response
-func CreateCreateModelResponse() (response *CreateModelResponse) {
-	response = &CreateModelResponse{
+// CreateDescribeModelResponse creates a response to parse from DescribeModel response
+func CreateDescribeModelResponse() (response *DescribeModelResponse) {
+	response = &DescribeModelResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

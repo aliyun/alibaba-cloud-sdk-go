@@ -1,3 +1,7 @@
+2020-08-14 Version: v1.61.410
+- Generated 2017-12-25 for `OpenSearch`.
+- Add POP-Model-related APIs.
+
 2020-08-14 Version: v1.61.409
 - Generated 2020-02-26 for `teambition-aliyun`.
 - Add sdk.
