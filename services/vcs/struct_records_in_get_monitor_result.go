@@ -17,5 +17,5 @@ package vcs
 
 // RecordsInGetMonitorResult is a nested struct in vcs response
 type RecordsInGetMonitorResult struct {
-	RecordsItem []RecordsItem `json:"Records" xml:"Records"`
+	RecordsItem []RecordsItemInGetMonitorResult `json:"Records" xml:"Records"`
 }

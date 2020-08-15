@@ -17,5 +17,5 @@ package vcs
 
 // RecordsInListEventAlgorithmResults is a nested struct in vcs response
 type RecordsInListEventAlgorithmResults struct {
-	RecordsItem []RecordsItem `json:"Records" xml:"Records"`
+	RecordsItem []RecordsItemInListEventAlgorithmResults `json:"Records" xml:"Records"`
 }
