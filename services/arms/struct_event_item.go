@@ -20,7 +20,7 @@ type EventItem struct {
 	Id         int64    `json:"Id" xml:"Id"`
 	EventTime  int64    `json:"EventTime" xml:"EventTime"`
 	AlertType  int      `json:"AlertType" xml:"AlertType"`
-	EventLevel int      `json:"EventLevel" xml:"EventLevel"`
+	EventLevel string   `json:"EventLevel" xml:"EventLevel"`
 	Message    string   `json:"Message" xml:"Message"`
 	AlertId    int64    `json:"AlertId" xml:"AlertId"`
 	AlertName  string   `json:"AlertName" xml:"AlertName"`

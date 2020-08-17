@@ -77,9 +77,10 @@ func (client *Client) ImportCustomAlertRulesWithCallback(request *ImportCustomAl
 type ImportCustomAlertRulesRequest struct {
 	*requests.RpcRequest
 	IsAutoStart         requests.Boolean `position:"Query" name:"IsAutoStart"`
+	ProxyUserId         string           `position:"Query" name:"ProxyUserId"`
 	ContactGroupIds     string           `position:"Query" name:"ContactGroupIds"`
 	TemplateAlertConfig string           `position:"Query" name:"TemplateAlertConfig"`
-	ProxyUserId         string           `position:"Query" name:"ProxyUserId"`
+	TemplageAlertConfig string           `position:"Query" name:"TemplageAlertConfig"`
 }
 
 // ImportCustomAlertRulesResponse is the response struct for api ImportCustomAlertRules

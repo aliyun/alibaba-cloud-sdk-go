@@ -17,13 +17,13 @@ package arms
 
 // Contact is a nested struct in arms response
 type Contact struct {
-	ContactId   int64  `json:"ContactId" xml:"ContactId"`
 	ContactName string `json:"ContactName" xml:"ContactName"`
-	Phone       string `json:"Phone" xml:"Phone"`
 	Email       string `json:"Email" xml:"Email"`
+	UpdateTime  int64  `json:"UpdateTime" xml:"UpdateTime"`
 	UserId      string `json:"UserId" xml:"UserId"`
 	DingRobot   string `json:"DingRobot" xml:"DingRobot"`
 	CreateTime  int64  `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime  int64  `json:"UpdateTime" xml:"UpdateTime"`
+	ContactId   int64  `json:"ContactId" xml:"ContactId"`
+	Phone       string `json:"Phone" xml:"Phone"`
 	SystemNoc   bool   `json:"SystemNoc" xml:"SystemNoc"`
 }

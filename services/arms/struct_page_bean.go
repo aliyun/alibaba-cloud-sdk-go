@@ -23,9 +23,9 @@ type PageBean struct {
 	PageSize       int               `json:"PageSize" xml:"PageSize"`
 	RetcodeApps    []RetcodeApp      `json:"RetcodeApps" xml:"RetcodeApps"`
 	Contacts       []Contact         `json:"Contacts" xml:"Contacts"`
-	AlertRules     []AlertRuleEntity `json:"AlertRules" xml:"AlertRules"`
-	TraceApps      []TraceApp        `json:"TraceApps" xml:"TraceApps"`
 	Event          []EventItem       `json:"Event" xml:"Event"`
+	TraceApps      []TraceApp        `json:"TraceApps" xml:"TraceApps"`
+	AlertRules     []AlertRuleEntity `json:"AlertRules" xml:"AlertRules"`
 	AlarmHistories []AlarmHistory    `json:"AlarmHistories" xml:"AlarmHistories"`
 	TraceInfos     []TraceInfo       `json:"TraceInfos" xml:"TraceInfos"`
 }

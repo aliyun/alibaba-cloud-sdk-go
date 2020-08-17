@@ -17,5 +17,5 @@ package arms
 
 // AlertWay is a nested struct in arms response
 type AlertWay struct {
-	AlertWay []string `json:"AlertWay" xml:"AlertWay"`
+	NocWay []string `json:"NocWay" xml:"NocWay"`
 }
