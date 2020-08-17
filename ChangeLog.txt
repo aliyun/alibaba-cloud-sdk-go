@@ -1,3 +1,7 @@
+2020-08-17 Version: v1.61.419
+- Generated 2020-03-03 for `devops-rdc`.
+- Add pipeline status api.
+
 2020-08-17 Version: v1.61.418
 - Generated 2019-06-25 for `ivpd`.
 - Add Api HighlightGameVideo.
