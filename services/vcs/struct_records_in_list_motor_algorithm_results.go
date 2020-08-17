@@ -17,5 +17,5 @@ package vcs
 
 // RecordsInListMotorAlgorithmResults is a nested struct in vcs response
 type RecordsInListMotorAlgorithmResults struct {
-	RecordsItem []RecordsItemInListMotorAlgorithmResults `json:"Records" xml:"Records"`
+	RecordsItem []RecordsItem `json:"Records" xml:"Records"`
 }
