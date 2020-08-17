@@ -17,21 +17,26 @@ package ivpd
 
 // Data is a nested struct in ivpd response
 type Data struct {
-	JobId             string          `json:"JobId" xml:"JobId"`
-	MajorUrl          string          `json:"MajorUrl" xml:"MajorUrl"`
-	TotalUsedTime     int64           `json:"TotalUsedTime" xml:"TotalUsedTime"`
-	PreviewUrl        string          `json:"PreviewUrl" xml:"PreviewUrl"`
-	Url               string          `json:"Url" xml:"Url"`
-	Progress          int             `json:"Progress" xml:"Progress"`
-	ImageUrl          string          `json:"ImageUrl" xml:"ImageUrl"`
-	BatchSize         int             `json:"BatchSize" xml:"BatchSize"`
-	Status            string          `json:"Status" xml:"Status"`
-	VideoUrl          string          `json:"VideoUrl" xml:"VideoUrl"`
-	Completed         bool            `json:"Completed" xml:"Completed"`
-	Styles            []string        `json:"Styles" xml:"Styles"`
-	ImageList         []string        `json:"ImageList" xml:"ImageList"`
-	ModelTypeList     []ModelType     `json:"ModelTypeList" xml:"ModelTypeList"`
-	Elements          []Element       `json:"Elements" xml:"Elements"`
-	ResultList        []Result        `json:"ResultList" xml:"ResultList"`
-	ColorTemplateList []ColorTemplate `json:"ColorTemplateList" xml:"ColorTemplateList"`
+	JobId             string              `json:"JobId" xml:"JobId"`
+	MajorUrl          string              `json:"MajorUrl" xml:"MajorUrl"`
+	Result            string              `json:"Result" xml:"Result"`
+	ErrorMessage      string              `json:"ErrorMessage" xml:"ErrorMessage"`
+	TotalUsedTime     int64               `json:"TotalUsedTime" xml:"TotalUsedTime"`
+	PreviewUrl        string              `json:"PreviewUrl" xml:"PreviewUrl"`
+	Url               string              `json:"Url" xml:"Url"`
+	Progress          int                 `json:"Progress" xml:"Progress"`
+	ImageUrl          string              `json:"ImageUrl" xml:"ImageUrl"`
+	BatchSize         int                 `json:"BatchSize" xml:"BatchSize"`
+	Status            string              `json:"Status" xml:"Status"`
+	VideoUrl          string              `json:"VideoUrl" xml:"VideoUrl"`
+	ErrorCode         string              `json:"ErrorCode" xml:"ErrorCode"`
+	Completed         bool                `json:"Completed" xml:"Completed"`
+	Styles            []string            `json:"Styles" xml:"Styles"`
+	ImageList         []string            `json:"ImageList" xml:"ImageList"`
+	ModelTypeList     []ModelType         `json:"ModelTypeList" xml:"ModelTypeList"`
+	Elements          []Element           `json:"Elements" xml:"Elements"`
+	GameList          []GameListItem      `json:"GameList" xml:"GameList"`
+	HighlightList     []HighlightListItem `json:"HighlightList" xml:"HighlightList"`
+	ResultList        []Result            `json:"ResultList" xml:"ResultList"`
+	ColorTemplateList []ColorTemplate     `json:"ColorTemplateList" xml:"ColorTemplateList"`
 }

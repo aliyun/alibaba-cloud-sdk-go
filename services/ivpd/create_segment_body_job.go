@@ -102,7 +102,7 @@ func CreateCreateSegmentBodyJobRequest() (request *CreateSegmentBodyJobRequest) 
 	request = &CreateSegmentBodyJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "CreateSegmentBodyJob", "", "")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "CreateSegmentBodyJob", "ivpd", "openAPI")
 	request.Method = requests.POST
 	return
 }

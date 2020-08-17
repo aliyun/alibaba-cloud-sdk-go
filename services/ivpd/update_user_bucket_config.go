@@ -99,7 +99,7 @@ func CreateUpdateUserBucketConfigRequest() (request *UpdateUserBucketConfigReque
 	request = &UpdateUserBucketConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "UpdateUserBucketConfig", "", "")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "UpdateUserBucketConfig", "ivpd", "openAPI")
 	request.Method = requests.POST
 	return
 }

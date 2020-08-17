@@ -93,7 +93,7 @@ func CreateDetectImageElementsRequest() (request *DetectImageElementsRequest) {
 	request = &DetectImageElementsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "DetectImageElements", "", "")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "DetectImageElements", "ivpd", "openAPI")
 	request.Method = requests.POST
 	return
 }

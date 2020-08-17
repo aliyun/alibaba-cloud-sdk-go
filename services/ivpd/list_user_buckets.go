@@ -98,7 +98,7 @@ func CreateListUserBucketsRequest() (request *ListUserBucketsRequest) {
 	request = &ListUserBucketsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "ListUserBuckets", "", "")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "ListUserBuckets", "ivpd", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -93,7 +93,7 @@ func CreateRecognizeImageStyleRequest() (request *RecognizeImageStyleRequest) {
 	request = &RecognizeImageStyleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "RecognizeImageStyle", "", "")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "RecognizeImageStyle", "ivpd", "openAPI")
 	request.Method = requests.POST
 	return
 }

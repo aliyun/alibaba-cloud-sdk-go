@@ -92,7 +92,7 @@ func CreateGetUserBucketConfigRequest() (request *GetUserBucketConfigRequest) {
 	request = &GetUserBucketConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "GetUserBucketConfig", "", "")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "GetUserBucketConfig", "ivpd", "openAPI")
 	request.Method = requests.POST
 	return
 }

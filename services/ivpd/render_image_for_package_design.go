@@ -107,7 +107,7 @@ func CreateRenderImageForPackageDesignRequest() (request *RenderImageForPackageD
 	request = &RenderImageForPackageDesignRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "RenderImageForPackageDesign", "", "")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "RenderImageForPackageDesign", "ivpd", "openAPI")
 	request.Method = requests.POST
 	return
 }

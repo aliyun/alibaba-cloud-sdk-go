@@ -102,7 +102,7 @@ func CreateRecolorImageRequest() (request *RecolorImageRequest) {
 	request = &RecolorImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "RecolorImage", "", "")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "RecolorImage", "ivpd", "openAPI")
 	request.Method = requests.POST
 	return
 }

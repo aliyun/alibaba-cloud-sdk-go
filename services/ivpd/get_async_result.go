@@ -93,7 +93,7 @@ func CreateGetAsyncResultRequest() (request *GetAsyncResultRequest) {
 	request = &GetAsyncResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ivpd", "2019-06-25", "GetAsyncResult", "", "")
+	request.InitWithApiInfo("ivpd", "2019-06-25", "GetAsyncResult", "ivpd", "openAPI")
 	request.Method = requests.POST
 	return
 }
