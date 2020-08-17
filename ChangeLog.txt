@@ -1,3 +1,7 @@
+2020-08-17 Version: v1.61.412
+- Generated 2020-05-15 for `Vcs`.
+- Add new tags for corp group.
+
 2020-08-16 Version: v1.61.411
 - Generated 2020-05-15 for `Vcs`.
 - Add new tags for corp group.
