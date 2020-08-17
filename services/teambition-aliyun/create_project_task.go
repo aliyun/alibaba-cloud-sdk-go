@@ -79,6 +79,7 @@ type CreateProjectTaskRequest struct {
 	Note                  string           `position:"Body" name:"Note"`
 	Visible               string           `position:"Body" name:"Visible"`
 	ExecutorId            string           `position:"Body" name:"ExecutorId"`
+	TaskFlowStatusId      string           `position:"Body" name:"TaskFlowStatusId"`
 	StartDate             string           `position:"Body" name:"StartDate"`
 	Priority              requests.Integer `position:"Body" name:"Priority"`
 	ParentTaskId          string           `position:"Body" name:"ParentTaskId"`
@@ -86,7 +87,6 @@ type CreateProjectTaskRequest struct {
 	Content               string           `position:"Body" name:"Content"`
 	SprintId              string           `position:"Body" name:"SprintId"`
 	DueDate               string           `position:"Body" name:"DueDate"`
-	TasFlowStatusId       string           `position:"Body" name:"TasFlowStatusId"`
 	ScenarioFieldConfigId string           `position:"Body" name:"ScenarioFieldConfigId"`
 	ProjectId             string           `position:"Body" name:"ProjectId"`
 	TaskListId            string           `position:"Body" name:"TaskListId"`
