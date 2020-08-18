@@ -17,6 +17,6 @@ package hbase
 
 // SupportedStorageType is a nested struct in hbase response
 type SupportedStorageType struct {
-	StorageType   string        `json:"StorageType" xml:"StorageType"`
-	CoreResources CoreResources `json:"CoreResources" xml:"CoreResources"`
+	StorageType   string                                   `json:"StorageType" xml:"StorageType"`
+	CoreResources CoreResourcesInDescribeAvailableResource `json:"CoreResources" xml:"CoreResources"`
 }

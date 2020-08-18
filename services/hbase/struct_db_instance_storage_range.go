@@ -17,7 +17,7 @@ package hbase
 
 // DBInstanceStorageRange is a nested struct in hbase response
 type DBInstanceStorageRange struct {
-	MaxSize  int `json:"MaxSize" xml:"MaxSize"`
-	MinSize  int `json:"MinSize" xml:"MinSize"`
 	StepSize int `json:"StepSize" xml:"StepSize"`
+	MinSize  int `json:"MinSize" xml:"MinSize"`
+	MaxSize  int `json:"MaxSize" xml:"MaxSize"`
 }

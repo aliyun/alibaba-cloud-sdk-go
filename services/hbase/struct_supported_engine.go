@@ -17,6 +17,6 @@ package hbase
 
 // SupportedEngine is a nested struct in hbase response
 type SupportedEngine struct {
-	Engine                  string                  `json:"Engine" xml:"Engine"`
-	SupportedEngineVersions SupportedEngineVersions `json:"SupportedEngineVersions" xml:"SupportedEngineVersions"`
+	Engine                  string                                             `json:"Engine" xml:"Engine"`
+	SupportedEngineVersions SupportedEngineVersionsInDescribeAvailableResource `json:"SupportedEngineVersions" xml:"SupportedEngineVersions"`
 }

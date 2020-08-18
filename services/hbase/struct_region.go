@@ -17,8 +17,9 @@ package hbase
 
 // Region is a nested struct in hbase response
 type Region struct {
-	RegionId       string `json:"RegionId" xml:"RegionId"`
-	LocalName      string `json:"LocalName" xml:"LocalName"`
-	RegionEndpoint string `json:"RegionEndpoint" xml:"RegionEndpoint"`
-	Zones          Zones  `json:"Zones" xml:"Zones"`
+	RegionId          string                 `json:"RegionId" xml:"RegionId"`
+	LocalName         string                 `json:"LocalName" xml:"LocalName"`
+	RegionEndpoint    string                 `json:"RegionEndpoint" xml:"RegionEndpoint"`
+	AvailableCombines AvailableCombines      `json:"AvailableCombines" xml:"AvailableCombines"`
+	Zones             ZonesInDescribeRegions `json:"Zones" xml:"Zones"`
 }

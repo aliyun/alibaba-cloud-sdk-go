@@ -17,8 +17,8 @@ package hbase
 
 // CoreResource is a nested struct in hbase response
 type CoreResource struct {
-	InstanceType           string                 `json:"InstanceType" xml:"InstanceType"`
 	MaxCoreCount           int                    `json:"MaxCoreCount" xml:"MaxCoreCount"`
+	InstanceType           string                 `json:"InstanceType" xml:"InstanceType"`
 	DBInstanceStorageRange DBInstanceStorageRange `json:"DBInstanceStorageRange" xml:"DBInstanceStorageRange"`
 	InstanceTypeDetail     InstanceTypeDetail     `json:"InstanceTypeDetail" xml:"InstanceTypeDetail"`
 }

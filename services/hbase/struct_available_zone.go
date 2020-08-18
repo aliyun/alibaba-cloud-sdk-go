@@ -17,8 +17,9 @@ package hbase
 
 // AvailableZone is a nested struct in hbase response
 type AvailableZone struct {
-	RegionId         string           `json:"RegionId" xml:"RegionId"`
-	ZoneId           string           `json:"ZoneId" xml:"ZoneId"`
-	SupportedEngines SupportedEngines `json:"SupportedEngines" xml:"SupportedEngines"`
-	MasterResources  MasterResources  `json:"MasterResources" xml:"MasterResources"`
+	RegionId         string                                      `json:"RegionId" xml:"RegionId"`
+	ZoneId           string                                      `json:"ZoneId" xml:"ZoneId"`
+	ZoneCombination  string                                      `json:"ZoneCombination" xml:"ZoneCombination"`
+	SupportedEngines SupportedEnginesInDescribeAvailableResource `json:"SupportedEngines" xml:"SupportedEngines"`
+	MasterResources  MasterResourcesInDescribeAvailableResource  `json:"MasterResources" xml:"MasterResources"`
 }

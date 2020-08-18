@@ -1,3 +1,7 @@
+2020-08-18 Version: v1.61.426
+- Generated 2019-01-01 for `HBase`.
+- Support for describe hbaseue multi-zone model.
+
 2020-08-18 Version: v1.61.425
 - Generated 2017-12-25 for `OpenSearch`.
 - Add API RenewAppGroup.
