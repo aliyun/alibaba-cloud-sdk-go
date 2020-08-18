@@ -92,6 +92,7 @@ func CreateRevokeTokenRequest() (request *RevokeTokenRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OnsMqtt", "2020-04-20", "RevokeToken", "onsmqtt", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

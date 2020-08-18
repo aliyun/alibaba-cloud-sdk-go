@@ -93,6 +93,7 @@ func CreateQueryTokenRequest() (request *QueryTokenRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OnsMqtt", "2020-04-20", "QueryToken", "onsmqtt", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

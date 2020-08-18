@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteGroupId invokes the onsmqtt.DeleteGroupId API synchronously
-// api document: https://help.aliyun.com/api/onsmqtt/deletegroupid.html
-func (client *Client) DeleteGroupId(request *DeleteGroupIdRequest) (response *DeleteGroupIdResponse, err error) {
-	response = CreateDeleteGroupIdResponse()
+// SendMessage invokes the onsmqtt.SendMessage API synchronously
+// api document: https://help.aliyun.com/api/onsmqtt/sendmessage.html
+func (client *Client) SendMessage(request *SendMessageRequest) (response *SendMessageResponse, err error) {
+	response = CreateSendMessageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteGroupIdWithChan invokes the onsmqtt.DeleteGroupId API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/deletegroupid.html
+// SendMessageWithChan invokes the onsmqtt.SendMessage API asynchronously
+// api document: https://help.aliyun.com/api/onsmqtt/sendmessage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteGroupIdWithChan(request *DeleteGroupIdRequest) (<-chan *DeleteGroupIdResponse, <-chan error) {
-	responseChan := make(chan *DeleteGroupIdResponse, 1)
+func (client *Client) SendMessageWithChan(request *SendMessageRequest) (<-chan *SendMessageResponse, <-chan error) {
+	responseChan := make(chan *SendMessageResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteGroupId(request)
+		response, err := client.SendMessage(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteGroupIdWithChan(request *DeleteGroupIdRequest) (<-ch
 	return responseChan, errChan
 }
 
-// DeleteGroupIdWithCallback invokes the onsmqtt.DeleteGroupId API asynchronously
-// api document: https://help.aliyun.com/api/onsmqtt/deletegroupid.html
+// SendMessageWithCallback invokes the onsmqtt.SendMessage API asynchronously
+// api document: https://help.aliyun.com/api/onsmqtt/sendmessage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteGroupIdWithCallback(request *DeleteGroupIdRequest, callback func(response *DeleteGroupIdResponse, err error)) <-chan int {
+func (client *Client) SendMessageWithCallback(request *SendMessageRequest, callback func(response *SendMessageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteGroupIdResponse
+		var response *SendMessageResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteGroupId(request)
+		response, err = client.SendMessage(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,33 +73,34 @@ func (client *Client) DeleteGroupIdWithCallback(request *DeleteGroupIdRequest, c
 	return result
 }
 
-// DeleteGroupIdRequest is the request struct for api DeleteGroupId
-type DeleteGroupIdRequest struct {
+// SendMessageRequest is the request struct for api SendMessage
+type SendMessageRequest struct {
 	*requests.RpcRequest
-	GroupId    string `position:"Query" name:"GroupId"`
+	MqttTopic  string `position:"Query" name:"MqttTopic"`
 	InstanceId string `position:"Query" name:"InstanceId"`
+	Payload    string `position:"Query" name:"Payload"`
 }
 
-// DeleteGroupIdResponse is the response struct for api DeleteGroupId
-type DeleteGroupIdResponse struct {
+// SendMessageResponse is the response struct for api SendMessage
+type SendMessageResponse struct {
 	*responses.BaseResponse
-	HelpUrl   string `json:"HelpUrl" xml:"HelpUrl"`
+	MsgId     string `json:"MsgId" xml:"MsgId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDeleteGroupIdRequest creates a request to invoke DeleteGroupId API
-func CreateDeleteGroupIdRequest() (request *DeleteGroupIdRequest) {
-	request = &DeleteGroupIdRequest{
+// CreateSendMessageRequest creates a request to invoke SendMessage API
+func CreateSendMessageRequest() (request *SendMessageRequest) {
+	request = &SendMessageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("OnsMqtt", "2020-04-20", "DeleteGroupId", "onsmqtt", "openAPI")
+	request.InitWithApiInfo("OnsMqtt", "2020-04-20", "SendMessage", "onsmqtt", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteGroupIdResponse creates a response to parse from DeleteGroupId response
-func CreateDeleteGroupIdResponse() (response *DeleteGroupIdResponse) {
-	response = &DeleteGroupIdResponse{
+// CreateSendMessageResponse creates a response to parse from SendMessage response
+func CreateSendMessageResponse() (response *SendMessageResponse) {
+	response = &SendMessageResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

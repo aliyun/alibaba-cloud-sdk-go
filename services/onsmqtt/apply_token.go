@@ -95,6 +95,7 @@ func CreateApplyTokenRequest() (request *ApplyTokenRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("OnsMqtt", "2020-04-20", "ApplyToken", "onsmqtt", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
