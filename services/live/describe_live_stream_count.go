@@ -92,7 +92,8 @@ func CreateDescribeLiveStreamCountRequest() (request *DescribeLiveStreamCountReq
 	request = &DescribeLiveStreamCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamCount", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamCount", "", "")
+	request.Method = requests.GET
 	return
 }
 

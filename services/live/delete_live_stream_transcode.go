@@ -94,7 +94,8 @@ func CreateDeleteLiveStreamTranscodeRequest() (request *DeleteLiveStreamTranscod
 	request = &DeleteLiveStreamTranscodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveStreamTranscode", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveStreamTranscode", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -93,7 +93,8 @@ func CreateAddLiveAudioAuditNotifyConfigRequest() (request *AddLiveAudioAuditNot
 	request = &AddLiveAudioAuditNotifyConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddLiveAudioAuditNotifyConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "AddLiveAudioAuditNotifyConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -98,7 +98,8 @@ func CreateJoinBoardRequest() (request *JoinBoardRequest) {
 	request = &JoinBoardRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "JoinBoard", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "JoinBoard", "", "")
+	request.Method = requests.POST
 	return
 }
 

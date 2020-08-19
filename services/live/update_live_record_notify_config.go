@@ -95,7 +95,8 @@ func CreateUpdateLiveRecordNotifyConfigRequest() (request *UpdateLiveRecordNotif
 	request = &UpdateLiveRecordNotifyConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "UpdateLiveRecordNotifyConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "UpdateLiveRecordNotifyConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

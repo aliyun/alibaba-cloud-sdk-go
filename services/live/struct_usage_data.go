@@ -17,6 +17,6 @@ package live
 
 // UsageData is a nested struct in live response
 type UsageData struct {
-	TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
-	Value     Value  `json:"Value" xml:"Value"`
+	TimeStamp string                                        `json:"TimeStamp" xml:"TimeStamp"`
+	Value     ValueInDescribeLiveDomainRealTimeHttpCodeData `json:"Value" xml:"Value"`
 }

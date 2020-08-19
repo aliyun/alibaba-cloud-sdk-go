@@ -94,7 +94,8 @@ func CreateDescribeBoardsRequest() (request *DescribeBoardsRequest) {
 	request = &DescribeBoardsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeBoards", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeBoards", "", "")
+	request.Method = requests.POST
 	return
 }
 

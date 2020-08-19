@@ -105,7 +105,8 @@ func CreateDescribeLiveStreamsPublishListRequest() (request *DescribeLiveStreams
 	request = &DescribeLiveStreamsPublishListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamsPublishList", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamsPublishList", "", "")
+	request.Method = requests.POST
 	return
 }
 

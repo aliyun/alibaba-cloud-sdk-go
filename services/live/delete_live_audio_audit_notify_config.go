@@ -91,7 +91,8 @@ func CreateDeleteLiveAudioAuditNotifyConfigRequest() (request *DeleteLiveAudioAu
 	request = &DeleteLiveAudioAuditNotifyConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveAudioAuditNotifyConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveAudioAuditNotifyConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

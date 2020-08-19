@@ -94,7 +94,8 @@ func CreateUnTagLiveResourcesRequest() (request *UnTagLiveResourcesRequest) {
 	request = &UnTagLiveResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "UnTagLiveResources", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "UnTagLiveResources", "", "")
+	request.Method = requests.POST
 	return
 }
 

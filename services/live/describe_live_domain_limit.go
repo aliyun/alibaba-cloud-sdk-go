@@ -76,8 +76,9 @@ func (client *Client) DescribeLiveDomainLimitWithCallback(request *DescribeLiveD
 // DescribeLiveDomainLimitRequest is the request struct for api DescribeLiveDomainLimit
 type DescribeLiveDomainLimitRequest struct {
 	*requests.RpcRequest
-	DomainName string           `position:"Query" name:"DomainName"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	LiveapiRequestFrom string           `position:"Query" name:"LiveapiRequestFrom"`
+	DomainName         string           `position:"Query" name:"DomainName"`
+	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeLiveDomainLimitResponse is the response struct for api DescribeLiveDomainLimit
@@ -92,7 +93,8 @@ func CreateDescribeLiveDomainLimitRequest() (request *DescribeLiveDomainLimitReq
 	request = &DescribeLiveDomainLimitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainLimit", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainLimit", "", "")
+	request.Method = requests.POST
 	return
 }
 

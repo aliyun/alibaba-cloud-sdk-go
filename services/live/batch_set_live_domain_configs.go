@@ -94,7 +94,8 @@ func CreateBatchSetLiveDomainConfigsRequest() (request *BatchSetLiveDomainConfig
 	request = &BatchSetLiveDomainConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "BatchSetLiveDomainConfigs", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "BatchSetLiveDomainConfigs", "", "")
+	request.Method = requests.POST
 	return
 }
 

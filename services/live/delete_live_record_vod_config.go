@@ -93,7 +93,8 @@ func CreateDeleteLiveRecordVodConfigRequest() (request *DeleteLiveRecordVodConfi
 	request = &DeleteLiveRecordVodConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveRecordVodConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveRecordVodConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

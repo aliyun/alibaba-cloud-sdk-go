@@ -94,7 +94,8 @@ func CreateDeleteLiveAppRecordConfigRequest() (request *DeleteLiveAppRecordConfi
 	request = &DeleteLiveAppRecordConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveAppRecordConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveAppRecordConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

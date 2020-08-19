@@ -91,7 +91,8 @@ func CreateDeleteLiveStreamsNotifyUrlConfigRequest() (request *DeleteLiveStreams
 	request = &DeleteLiveStreamsNotifyUrlConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

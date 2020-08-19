@@ -26,10 +26,12 @@ type DataModule struct {
 	TrafficValue      string `json:"TrafficValue" xml:"TrafficValue"`
 	Scene             string `json:"Scene" xml:"Scene"`
 	Count             int64  `json:"Count" xml:"Count"`
+	Size              string `json:"Size" xml:"Size"`
 	TimeStamp         string `json:"TimeStamp" xml:"TimeStamp"`
 	HttpBpsValue      string `json:"HttpBpsValue" xml:"HttpBpsValue"`
 	Fee               string `json:"Fee" xml:"Fee"`
 	HttpsBpsValue     string `json:"HttpsBpsValue" xml:"HttpsBpsValue"`
 	HttpTrafficValue  string `json:"HttpTrafficValue" xml:"HttpTrafficValue"`
 	Stream            string `json:"Stream" xml:"Stream"`
+	Type              string `json:"Type" xml:"Type"`
 }

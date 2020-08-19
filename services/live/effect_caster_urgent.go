@@ -92,7 +92,8 @@ func CreateEffectCasterUrgentRequest() (request *EffectCasterUrgentRequest) {
 	request = &EffectCasterUrgentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "EffectCasterUrgent", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "EffectCasterUrgent", "", "")
+	request.Method = requests.POST
 	return
 }
 

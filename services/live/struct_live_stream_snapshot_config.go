@@ -25,4 +25,5 @@ type LiveStreamSnapshotConfig struct {
 	OverwriteOssObject string `json:"OverwriteOssObject" xml:"OverwriteOssObject"`
 	SequenceOssObject  string `json:"SequenceOssObject" xml:"SequenceOssObject"`
 	CreateTime         string `json:"CreateTime" xml:"CreateTime"`
+	Callback           string `json:"Callback" xml:"Callback"`
 }

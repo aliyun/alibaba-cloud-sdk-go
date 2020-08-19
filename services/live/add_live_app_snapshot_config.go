@@ -85,6 +85,7 @@ type AddLiveAppSnapshotConfigRequest struct {
 	DomainName         string           `position:"Query" name:"DomainName"`
 	SequenceOssObject  string           `position:"Query" name:"SequenceOssObject"`
 	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
+	Callback           string           `position:"Query" name:"Callback"`
 }
 
 // AddLiveAppSnapshotConfigResponse is the response struct for api AddLiveAppSnapshotConfig
@@ -98,7 +99,8 @@ func CreateAddLiveAppSnapshotConfigRequest() (request *AddLiveAppSnapshotConfigR
 	request = &AddLiveAppSnapshotConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddLiveAppSnapshotConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "AddLiveAppSnapshotConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -93,7 +93,8 @@ func CreateDescribeCasterVideoResourcesRequest() (request *DescribeCasterVideoRe
 	request = &DescribeCasterVideoResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeCasterVideoResources", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeCasterVideoResources", "", "")
+	request.Method = requests.POST
 	return
 }
 

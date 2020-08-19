@@ -96,7 +96,8 @@ func CreateEditHtmlResourceRequest() (request *EditHtmlResourceRequest) {
 	request = &EditHtmlResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "EditHtmlResource", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "EditHtmlResource", "", "")
+	request.Method = requests.POST
 	return
 }
 

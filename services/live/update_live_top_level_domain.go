@@ -93,7 +93,8 @@ func CreateUpdateLiveTopLevelDomainRequest() (request *UpdateLiveTopLevelDomainR
 	request = &UpdateLiveTopLevelDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "UpdateLiveTopLevelDomain", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "UpdateLiveTopLevelDomain", "", "")
+	request.Method = requests.POST
 	return
 }
 

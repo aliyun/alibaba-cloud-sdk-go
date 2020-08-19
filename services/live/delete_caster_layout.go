@@ -94,7 +94,8 @@ func CreateDeleteCasterLayoutRequest() (request *DeleteCasterLayoutRequest) {
 	request = &DeleteCasterLayoutRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterLayout", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterLayout", "", "")
+	request.Method = requests.POST
 	return
 }
 

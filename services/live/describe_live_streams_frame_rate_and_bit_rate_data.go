@@ -97,7 +97,8 @@ func CreateDescribeLiveStreamsFrameRateAndBitRateDataRequest() (request *Describ
 	request = &DescribeLiveStreamsFrameRateAndBitRateDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamsFrameRateAndBitRateData", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamsFrameRateAndBitRateData", "", "")
+	request.Method = requests.POST
 	return
 }
 

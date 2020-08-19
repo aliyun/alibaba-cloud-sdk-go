@@ -93,7 +93,8 @@ func CreateDeleteHtmlResourceRequest() (request *DeleteHtmlResourceRequest) {
 	request = &DeleteHtmlResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteHtmlResource", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteHtmlResource", "", "")
+	request.Method = requests.POST
 	return
 }
 

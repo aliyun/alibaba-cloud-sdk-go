@@ -94,7 +94,8 @@ func CreateDeleteCasterEpisodeRequest() (request *DeleteCasterEpisodeRequest) {
 	request = &DeleteCasterEpisodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterEpisode", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterEpisode", "", "")
+	request.Method = requests.POST
 	return
 }
 

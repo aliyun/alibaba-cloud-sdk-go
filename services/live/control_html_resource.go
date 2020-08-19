@@ -95,7 +95,8 @@ func CreateControlHtmlResourceRequest() (request *ControlHtmlResourceRequest) {
 	request = &ControlHtmlResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ControlHtmlResource", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "ControlHtmlResource", "", "")
+	request.Method = requests.POST
 	return
 }
 

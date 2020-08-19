@@ -95,7 +95,8 @@ func CreateDescribeLiveDomainRealtimeLogDeliveryRequest() (request *DescribeLive
 	request = &DescribeLiveDomainRealtimeLogDeliveryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainRealtimeLogDelivery", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainRealtimeLogDelivery", "", "")
+	request.Method = requests.GET
 	return
 }
 

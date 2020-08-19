@@ -98,7 +98,8 @@ func CreateSetLiveDomainCertificateRequest() (request *SetLiveDomainCertificateR
 	request = &SetLiveDomainCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "SetLiveDomainCertificate", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "SetLiveDomainCertificate", "", "")
+	request.Method = requests.POST
 	return
 }
 

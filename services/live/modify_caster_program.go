@@ -105,7 +105,8 @@ func CreateModifyCasterProgramRequest() (request *ModifyCasterProgramRequest) {
 	request = &ModifyCasterProgramRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ModifyCasterProgram", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "ModifyCasterProgram", "", "")
+	request.Method = requests.POST
 	return
 }
 

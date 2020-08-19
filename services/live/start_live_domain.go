@@ -92,7 +92,8 @@ func CreateStartLiveDomainRequest() (request *StartLiveDomainRequest) {
 	request = &StartLiveDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "StartLiveDomain", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "StartLiveDomain", "", "")
+	request.Method = requests.POST
 	return
 }
 

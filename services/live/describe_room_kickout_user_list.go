@@ -98,7 +98,8 @@ func CreateDescribeRoomKickoutUserListRequest() (request *DescribeRoomKickoutUse
 	request = &DescribeRoomKickoutUserListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeRoomKickoutUserList", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeRoomKickoutUserList", "", "")
+	request.Method = requests.POST
 	return
 }
 

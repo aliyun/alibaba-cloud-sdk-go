@@ -92,7 +92,8 @@ func CreateStopLiveDomainRequest() (request *StopLiveDomainRequest) {
 	request = &StopLiveDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "StopLiveDomain", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "StopLiveDomain", "", "")
+	request.Method = requests.POST
 	return
 }
 

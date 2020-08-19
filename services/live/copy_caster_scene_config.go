@@ -93,7 +93,8 @@ func CreateCopyCasterSceneConfigRequest() (request *CopyCasterSceneConfigRequest
 	request = &CopyCasterSceneConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "CopyCasterSceneConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "CopyCasterSceneConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

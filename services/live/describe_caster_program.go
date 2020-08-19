@@ -103,7 +103,8 @@ func CreateDescribeCasterProgramRequest() (request *DescribeCasterProgramRequest
 	request = &DescribeCasterProgramRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeCasterProgram", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeCasterProgram", "", "")
+	request.Method = requests.POST
 	return
 }
 

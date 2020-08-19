@@ -92,7 +92,8 @@ func CreateStopCasterSceneRequest() (request *StopCasterSceneRequest) {
 	request = &StopCasterSceneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "StopCasterScene", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "StopCasterScene", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -98,7 +98,8 @@ func CreateAddLiveRecordVodConfigRequest() (request *AddLiveRecordVodConfigReque
 	request = &AddLiveRecordVodConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddLiveRecordVodConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "AddLiveRecordVodConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

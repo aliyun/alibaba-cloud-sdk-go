@@ -96,7 +96,8 @@ func CreateRealTimeSnapshotCommandRequest() (request *RealTimeSnapshotCommandReq
 	request = &RealTimeSnapshotCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "RealTimeSnapshotCommand", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "RealTimeSnapshotCommand", "", "")
+	request.Method = requests.POST
 	return
 }
 

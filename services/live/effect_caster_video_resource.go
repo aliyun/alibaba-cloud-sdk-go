@@ -93,7 +93,8 @@ func CreateEffectCasterVideoResourceRequest() (request *EffectCasterVideoResourc
 	request = &EffectCasterVideoResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "EffectCasterVideoResource", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "EffectCasterVideoResource", "", "")
+	request.Method = requests.POST
 	return
 }
 

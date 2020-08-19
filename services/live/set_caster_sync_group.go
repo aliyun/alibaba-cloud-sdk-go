@@ -83,9 +83,10 @@ type SetCasterSyncGroupRequest struct {
 
 // SetCasterSyncGroupSyncGroup is a repeated param struct in SetCasterSyncGroupRequest
 type SetCasterSyncGroupSyncGroup struct {
-	Mode           string    `name:"Mode"`
-	HostResourceId string    `name:"HostResourceId"`
-	ResourceIds    *[]string `name:"ResourceIds" type:"Repeated"`
+	Mode               string    `name:"Mode"`
+	SyncDelayThreshold string    `name:"SyncDelayThreshold"`
+	HostResourceId     string    `name:"HostResourceId"`
+	ResourceIds        *[]string `name:"ResourceIds" type:"Repeated"`
 }
 
 // SetCasterSyncGroupResponse is the response struct for api SetCasterSyncGroup
@@ -99,7 +100,8 @@ func CreateSetCasterSyncGroupRequest() (request *SetCasterSyncGroupRequest) {
 	request = &SetCasterSyncGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "SetCasterSyncGroup", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "SetCasterSyncGroup", "", "")
+	request.Method = requests.POST
 	return
 }
 

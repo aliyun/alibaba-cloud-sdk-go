@@ -94,7 +94,8 @@ func CreateDescribeLiveLazyPullStreamConfigRequest() (request *DescribeLiveLazyP
 	request = &DescribeLiveLazyPullStreamConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveLazyPullStreamConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveLazyPullStreamConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -93,7 +93,8 @@ func CreateDeleteLiveSnapshotDetectPornConfigRequest() (request *DeleteLiveSnaps
 	request = &DeleteLiveSnapshotDetectPornConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveSnapshotDetectPornConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveSnapshotDetectPornConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

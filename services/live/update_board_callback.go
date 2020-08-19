@@ -96,7 +96,8 @@ func CreateUpdateBoardCallbackRequest() (request *UpdateBoardCallbackRequest) {
 	request = &UpdateBoardCallbackRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "UpdateBoardCallback", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "UpdateBoardCallback", "", "")
+	request.Method = requests.POST
 	return
 }
 

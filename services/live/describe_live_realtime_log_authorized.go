@@ -92,7 +92,8 @@ func CreateDescribeLiveRealtimeLogAuthorizedRequest() (request *DescribeLiveReal
 	request = &DescribeLiveRealtimeLogAuthorizedRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveRealtimeLogAuthorized", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveRealtimeLogAuthorized", "", "")
+	request.Method = requests.GET
 	return
 }
 

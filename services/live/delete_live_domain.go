@@ -93,7 +93,8 @@ func CreateDeleteLiveDomainRequest() (request *DeleteLiveDomainRequest) {
 	request = &DeleteLiveDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveDomain", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveDomain", "", "")
+	request.Method = requests.POST
 	return
 }
 

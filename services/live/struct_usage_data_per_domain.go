@@ -17,6 +17,6 @@ package live
 
 // UsageDataPerDomain is a nested struct in live response
 type UsageDataPerDomain struct {
-	DomainName  string       `json:"DomainName" xml:"DomainName"`
-	StreamInfos []StreamInfo `json:"StreamInfos" xml:"StreamInfos"`
+	DomainName  string                                             `json:"DomainName" xml:"DomainName"`
+	StreamInfos []StreamInfoInDescribeHlsLiveStreamRealTimeBpsData `json:"StreamInfos" xml:"StreamInfos"`
 }

@@ -99,7 +99,8 @@ func CreateTagLiveResourcesRequest() (request *TagLiveResourcesRequest) {
 	request = &TagLiveResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "TagLiveResources", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "TagLiveResources", "", "")
+	request.Method = requests.POST
 	return
 }
 

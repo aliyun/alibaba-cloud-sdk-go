@@ -100,7 +100,8 @@ func CreateDescribeLiveDomainRealTimeBpsDataRequest() (request *DescribeLiveDoma
 	request = &DescribeLiveDomainRealTimeBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainRealTimeBpsData", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainRealTimeBpsData", "", "")
+	request.Method = requests.GET
 	return
 }
 

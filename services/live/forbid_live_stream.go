@@ -97,7 +97,8 @@ func CreateForbidLiveStreamRequest() (request *ForbidLiveStreamRequest) {
 	request = &ForbidLiveStreamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ForbidLiveStream", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "ForbidLiveStream", "", "")
+	request.Method = requests.POST
 	return
 }
 

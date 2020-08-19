@@ -96,7 +96,8 @@ func CreateDescribeUpBpsPeakOfLineRequest() (request *DescribeUpBpsPeakOfLineReq
 	request = &DescribeUpBpsPeakOfLineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeUpBpsPeakOfLine", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeUpBpsPeakOfLine", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -93,7 +93,8 @@ func CreateAddLiveDetectNotifyConfigRequest() (request *AddLiveDetectNotifyConfi
 	request = &AddLiveDetectNotifyConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddLiveDetectNotifyConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "AddLiveDetectNotifyConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

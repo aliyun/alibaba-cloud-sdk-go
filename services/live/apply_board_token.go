@@ -95,7 +95,8 @@ func CreateApplyBoardTokenRequest() (request *ApplyBoardTokenRequest) {
 	request = &ApplyBoardTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ApplyBoardToken", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "ApplyBoardToken", "", "")
+	request.Method = requests.POST
 	return
 }
 

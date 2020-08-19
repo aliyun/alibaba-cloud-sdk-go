@@ -94,7 +94,8 @@ func CreateDescribeHlsLiveStreamRealTimeBpsDataRequest() (request *DescribeHlsLi
 	request = &DescribeHlsLiveStreamRealTimeBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeHlsLiveStreamRealTimeBpsData", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeHlsLiveStreamRealTimeBpsData", "", "")
+	request.Method = requests.GET
 	return
 }
 

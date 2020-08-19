@@ -79,6 +79,7 @@ type AddLivePullStreamInfoConfigRequest struct {
 	StartTime  string           `position:"Query" name:"StartTime"`
 	AppName    string           `position:"Query" name:"AppName"`
 	StreamName string           `position:"Query" name:"StreamName"`
+	PullAlways string           `position:"Query" name:"PullAlways"`
 	DomainName string           `position:"Query" name:"DomainName"`
 	EndTime    string           `position:"Query" name:"EndTime"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
@@ -96,7 +97,8 @@ func CreateAddLivePullStreamInfoConfigRequest() (request *AddLivePullStreamInfoC
 	request = &AddLivePullStreamInfoConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddLivePullStreamInfoConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "AddLivePullStreamInfoConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

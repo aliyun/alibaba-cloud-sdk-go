@@ -96,7 +96,8 @@ func CreateDescribeCasterSceneAudioRequest() (request *DescribeCasterSceneAudioR
 	request = &DescribeCasterSceneAudioRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeCasterSceneAudio", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeCasterSceneAudio", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -102,7 +102,8 @@ func CreateModifyCasterVideoResourceRequest() (request *ModifyCasterVideoResourc
 	request = &ModifyCasterVideoResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ModifyCasterVideoResource", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "ModifyCasterVideoResource", "", "")
+	request.Method = requests.POST
 	return
 }
 

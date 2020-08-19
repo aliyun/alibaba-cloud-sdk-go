@@ -81,6 +81,7 @@ type SetCasterChannelRequest struct {
 	ResourceId string           `position:"Query" name:"ResourceId"`
 	CasterId   string           `position:"Query" name:"CasterId"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	ReloadFlag requests.Integer `position:"Query" name:"ReloadFlag"`
 	ChannelId  string           `position:"Query" name:"ChannelId"`
 }
 
@@ -95,7 +96,8 @@ func CreateSetCasterChannelRequest() (request *SetCasterChannelRequest) {
 	request = &SetCasterChannelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "SetCasterChannel", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "SetCasterChannel", "", "")
+	request.Method = requests.POST
 	return
 }
 

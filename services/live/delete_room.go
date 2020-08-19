@@ -92,7 +92,8 @@ func CreateDeleteRoomRequest() (request *DeleteRoomRequest) {
 	request = &DeleteRoomRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteRoom", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteRoom", "", "")
+	request.Method = requests.POST
 	return
 }
 

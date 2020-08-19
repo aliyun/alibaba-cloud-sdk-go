@@ -94,7 +94,8 @@ func CreateSetLiveStreamOptimizedFeatureConfigRequest() (request *SetLiveStreamO
 	request = &SetLiveStreamOptimizedFeatureConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "SetLiveStreamOptimizedFeatureConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "SetLiveStreamOptimizedFeatureConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

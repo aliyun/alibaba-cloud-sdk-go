@@ -93,7 +93,8 @@ func CreateDescribeCasterSyncGroupRequest() (request *DescribeCasterSyncGroupReq
 	request = &DescribeCasterSyncGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeCasterSyncGroup", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeCasterSyncGroup", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -93,7 +93,8 @@ func CreateDescribeLiveCertificateListRequest() (request *DescribeLiveCertificat
 	request = &DescribeLiveCertificateListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveCertificateList", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveCertificateList", "", "")
+	request.Method = requests.POST
 	return
 }
 

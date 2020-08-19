@@ -88,12 +88,12 @@ type DescribeLiveDomainTrafficDataRequest struct {
 // DescribeLiveDomainTrafficDataResponse is the response struct for api DescribeLiveDomainTrafficData
 type DescribeLiveDomainTrafficDataResponse struct {
 	*responses.BaseResponse
-	RequestId              string                 `json:"RequestId" xml:"RequestId"`
-	DomainName             string                 `json:"DomainName" xml:"DomainName"`
-	StartTime              string                 `json:"StartTime" xml:"StartTime"`
-	EndTime                string                 `json:"EndTime" xml:"EndTime"`
-	DataInterval           string                 `json:"DataInterval" xml:"DataInterval"`
-	TrafficDataPerInterval TrafficDataPerInterval `json:"TrafficDataPerInterval" xml:"TrafficDataPerInterval"`
+	RequestId              string                                                `json:"RequestId" xml:"RequestId"`
+	DomainName             string                                                `json:"DomainName" xml:"DomainName"`
+	StartTime              string                                                `json:"StartTime" xml:"StartTime"`
+	EndTime                string                                                `json:"EndTime" xml:"EndTime"`
+	DataInterval           string                                                `json:"DataInterval" xml:"DataInterval"`
+	TrafficDataPerInterval TrafficDataPerIntervalInDescribeLiveDomainTrafficData `json:"TrafficDataPerInterval" xml:"TrafficDataPerInterval"`
 }
 
 // CreateDescribeLiveDomainTrafficDataRequest creates a request to invoke DescribeLiveDomainTrafficData API
@@ -101,7 +101,8 @@ func CreateDescribeLiveDomainTrafficDataRequest() (request *DescribeLiveDomainTr
 	request = &DescribeLiveDomainTrafficDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainTrafficData", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainTrafficData", "", "")
+	request.Method = requests.POST
 	return
 }
 

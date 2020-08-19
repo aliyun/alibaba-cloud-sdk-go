@@ -92,7 +92,8 @@ func CreateDeleteBoardRequest() (request *DeleteBoardRequest) {
 	request = &DeleteBoardRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteBoard", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteBoard", "", "")
+	request.Method = requests.POST
 	return
 }
 

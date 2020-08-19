@@ -76,8 +76,10 @@ func (client *Client) AddCasterComponentWithCallback(request *AddCasterComponent
 // AddCasterComponentRequest is the request struct for api AddCasterComponent
 type AddCasterComponentRequest struct {
 	*requests.RpcRequest
+	HtmlLayerContent    string           `position:"Query" name:"HtmlLayerContent"`
 	ImageLayerContent   string           `position:"Query" name:"ImageLayerContent"`
 	ComponentName       string           `position:"Query" name:"ComponentName"`
+	LayerOrder          string           `position:"Query" name:"LayerOrder"`
 	CasterId            string           `position:"Query" name:"CasterId"`
 	ComponentLayer      string           `position:"Query" name:"ComponentLayer"`
 	OwnerId             requests.Integer `position:"Query" name:"OwnerId"`
@@ -100,7 +102,8 @@ func CreateAddCasterComponentRequest() (request *AddCasterComponentRequest) {
 	request = &AddCasterComponentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddCasterComponent", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "AddCasterComponent", "", "")
+	request.Method = requests.POST
 	return
 }
 

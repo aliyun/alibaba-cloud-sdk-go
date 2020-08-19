@@ -98,7 +98,8 @@ func CreateCreateCasterRequest() (request *CreateCasterRequest) {
 	request = &CreateCasterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "CreateCaster", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "CreateCaster", "", "")
+	request.Method = requests.POST
 	return
 }
 

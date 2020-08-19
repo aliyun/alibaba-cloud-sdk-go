@@ -92,7 +92,8 @@ func CreateAllowPushStreamRequest() (request *AllowPushStreamRequest) {
 	request = &AllowPushStreamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AllowPushStream", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "AllowPushStream", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -97,7 +97,8 @@ func CreateAddTrancodeSEIRequest() (request *AddTrancodeSEIRequest) {
 	request = &AddTrancodeSEIRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddTrancodeSEI", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "AddTrancodeSEI", "", "")
+	request.Method = requests.POST
 	return
 }
 

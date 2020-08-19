@@ -94,7 +94,8 @@ func CreateDescribeLiveStreamDelayConfigRequest() (request *DescribeLiveStreamDe
 	request = &DescribeLiveStreamDelayConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamDelayConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamDelayConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

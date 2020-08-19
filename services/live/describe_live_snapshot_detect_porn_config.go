@@ -102,7 +102,8 @@ func CreateDescribeLiveSnapshotDetectPornConfigRequest() (request *DescribeLiveS
 	request = &DescribeLiveSnapshotDetectPornConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveSnapshotDetectPornConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveSnapshotDetectPornConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

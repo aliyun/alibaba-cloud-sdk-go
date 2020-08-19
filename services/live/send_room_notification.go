@@ -96,7 +96,8 @@ func CreateSendRoomNotificationRequest() (request *SendRoomNotificationRequest) 
 	request = &SendRoomNotificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "SendRoomNotification", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "SendRoomNotification", "", "")
+	request.Method = requests.POST
 	return
 }
 

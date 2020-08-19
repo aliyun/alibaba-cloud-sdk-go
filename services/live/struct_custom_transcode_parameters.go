@@ -17,6 +17,8 @@ package live
 
 // CustomTranscodeParameters is a nested struct in live response
 type CustomTranscodeParameters struct {
+	RtsFlag         string `json:"RtsFlag" xml:"RtsFlag"`
+	Bframes         string `json:"Bframes" xml:"Bframes"`
 	VideoBitrate    int    `json:"VideoBitrate" xml:"VideoBitrate"`
 	FPS             int    `json:"FPS" xml:"FPS"`
 	Height          int    `json:"Height" xml:"Height"`

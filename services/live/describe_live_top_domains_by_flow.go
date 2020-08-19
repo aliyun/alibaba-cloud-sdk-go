@@ -98,7 +98,8 @@ func CreateDescribeLiveTopDomainsByFlowRequest() (request *DescribeLiveTopDomain
 	request = &DescribeLiveTopDomainsByFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveTopDomainsByFlow", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveTopDomainsByFlow", "", "")
+	request.Method = requests.POST
 	return
 }
 

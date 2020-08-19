@@ -94,7 +94,8 @@ func CreateRealTimeRecordCommandRequest() (request *RealTimeRecordCommandRequest
 	request = &RealTimeRecordCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "RealTimeRecordCommand", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "RealTimeRecordCommand", "", "")
+	request.Method = requests.POST
 	return
 }
 

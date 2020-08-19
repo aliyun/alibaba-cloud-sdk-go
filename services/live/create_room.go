@@ -98,7 +98,8 @@ func CreateCreateRoomRequest() (request *CreateRoomRequest) {
 	request = &CreateRoomRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "CreateRoom", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "CreateRoom", "", "")
+	request.Method = requests.POST
 	return
 }
 

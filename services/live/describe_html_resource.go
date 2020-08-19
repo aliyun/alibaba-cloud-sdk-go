@@ -94,7 +94,8 @@ func CreateDescribeHtmlResourceRequest() (request *DescribeHtmlResourceRequest) 
 	request = &DescribeHtmlResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeHtmlResource", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeHtmlResource", "", "")
+	request.Method = requests.POST
 	return
 }
 

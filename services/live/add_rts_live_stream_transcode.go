@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// AddCustomLiveStreamTranscode invokes the live.AddCustomLiveStreamTranscode API synchronously
-// api document: https://help.aliyun.com/api/live/addcustomlivestreamtranscode.html
-func (client *Client) AddCustomLiveStreamTranscode(request *AddCustomLiveStreamTranscodeRequest) (response *AddCustomLiveStreamTranscodeResponse, err error) {
-	response = CreateAddCustomLiveStreamTranscodeResponse()
+// AddRtsLiveStreamTranscode invokes the live.AddRtsLiveStreamTranscode API synchronously
+// api document: https://help.aliyun.com/api/live/addrtslivestreamtranscode.html
+func (client *Client) AddRtsLiveStreamTranscode(request *AddRtsLiveStreamTranscodeRequest) (response *AddRtsLiveStreamTranscodeResponse, err error) {
+	response = CreateAddRtsLiveStreamTranscodeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// AddCustomLiveStreamTranscodeWithChan invokes the live.AddCustomLiveStreamTranscode API asynchronously
-// api document: https://help.aliyun.com/api/live/addcustomlivestreamtranscode.html
+// AddRtsLiveStreamTranscodeWithChan invokes the live.AddRtsLiveStreamTranscode API asynchronously
+// api document: https://help.aliyun.com/api/live/addrtslivestreamtranscode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) AddCustomLiveStreamTranscodeWithChan(request *AddCustomLiveStreamTranscodeRequest) (<-chan *AddCustomLiveStreamTranscodeResponse, <-chan error) {
-	responseChan := make(chan *AddCustomLiveStreamTranscodeResponse, 1)
+func (client *Client) AddRtsLiveStreamTranscodeWithChan(request *AddRtsLiveStreamTranscodeRequest) (<-chan *AddRtsLiveStreamTranscodeResponse, <-chan error) {
+	responseChan := make(chan *AddRtsLiveStreamTranscodeResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.AddCustomLiveStreamTranscode(request)
+		response, err := client.AddRtsLiveStreamTranscode(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) AddCustomLiveStreamTranscodeWithChan(request *AddCustomLiv
 	return responseChan, errChan
 }
 
-// AddCustomLiveStreamTranscodeWithCallback invokes the live.AddCustomLiveStreamTranscode API asynchronously
-// api document: https://help.aliyun.com/api/live/addcustomlivestreamtranscode.html
+// AddRtsLiveStreamTranscodeWithCallback invokes the live.AddRtsLiveStreamTranscode API asynchronously
+// api document: https://help.aliyun.com/api/live/addrtslivestreamtranscode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) AddCustomLiveStreamTranscodeWithCallback(request *AddCustomLiveStreamTranscodeRequest, callback func(response *AddCustomLiveStreamTranscodeResponse, err error)) <-chan int {
+func (client *Client) AddRtsLiveStreamTranscodeWithCallback(request *AddRtsLiveStreamTranscodeRequest, callback func(response *AddRtsLiveStreamTranscodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *AddCustomLiveStreamTranscodeResponse
+		var response *AddRtsLiveStreamTranscodeResponse
 		var err error
 		defer close(result)
-		response, err = client.AddCustomLiveStreamTranscode(request)
+		response, err = client.AddRtsLiveStreamTranscode(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,11 +73,13 @@ func (client *Client) AddCustomLiveStreamTranscodeWithCallback(request *AddCusto
 	return result
 }
 
-// AddCustomLiveStreamTranscodeRequest is the request struct for api AddCustomLiveStreamTranscode
-type AddCustomLiveStreamTranscodeRequest struct {
+// AddRtsLiveStreamTranscodeRequest is the request struct for api AddRtsLiveStreamTranscode
+type AddRtsLiveStreamTranscodeRequest struct {
 	*requests.RpcRequest
 	Template        string           `position:"Query" name:"Template"`
+	DeleteBframes   requests.Boolean `position:"Query" name:"DeleteBframes"`
 	Gop             string           `position:"Query" name:"Gop"`
+	Opus            requests.Boolean `position:"Query" name:"Opus"`
 	AudioCodec      string           `position:"Query" name:"AudioCodec"`
 	TemplateType    string           `position:"Query" name:"TemplateType"`
 	AudioProfile    string           `position:"Query" name:"AudioProfile"`
@@ -94,25 +96,25 @@ type AddCustomLiveStreamTranscodeRequest struct {
 	VideoBitrate    requests.Integer `position:"Query" name:"VideoBitrate"`
 }
 
-// AddCustomLiveStreamTranscodeResponse is the response struct for api AddCustomLiveStreamTranscode
-type AddCustomLiveStreamTranscodeResponse struct {
+// AddRtsLiveStreamTranscodeResponse is the response struct for api AddRtsLiveStreamTranscode
+type AddRtsLiveStreamTranscodeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateAddCustomLiveStreamTranscodeRequest creates a request to invoke AddCustomLiveStreamTranscode API
-func CreateAddCustomLiveStreamTranscodeRequest() (request *AddCustomLiveStreamTranscodeRequest) {
-	request = &AddCustomLiveStreamTranscodeRequest{
+// CreateAddRtsLiveStreamTranscodeRequest creates a request to invoke AddRtsLiveStreamTranscode API
+func CreateAddRtsLiveStreamTranscodeRequest() (request *AddRtsLiveStreamTranscodeRequest) {
+	request = &AddRtsLiveStreamTranscodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddCustomLiveStreamTranscode", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "AddRtsLiveStreamTranscode", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateAddCustomLiveStreamTranscodeResponse creates a response to parse from AddCustomLiveStreamTranscode response
-func CreateAddCustomLiveStreamTranscodeResponse() (response *AddCustomLiveStreamTranscodeResponse) {
-	response = &AddCustomLiveStreamTranscodeResponse{
+// CreateAddRtsLiveStreamTranscodeResponse creates a response to parse from AddRtsLiveStreamTranscode response
+func CreateAddRtsLiveStreamTranscodeResponse() (response *AddRtsLiveStreamTranscodeResponse) {
+	response = &AddRtsLiveStreamTranscodeResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

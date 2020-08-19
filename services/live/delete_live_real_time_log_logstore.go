@@ -93,7 +93,8 @@ func CreateDeleteLiveRealTimeLogLogstoreRequest() (request *DeleteLiveRealTimeLo
 	request = &DeleteLiveRealTimeLogLogstoreRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveRealTimeLogLogstore", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveRealTimeLogLogstore", "", "")
+	request.Method = requests.GET
 	return
 }
 

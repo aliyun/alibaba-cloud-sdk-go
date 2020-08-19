@@ -103,7 +103,8 @@ func CreateSetCasterConfigRequest() (request *SetCasterConfigRequest) {
 	request = &SetCasterConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "SetCasterConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "SetCasterConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -99,7 +99,8 @@ func CreateAddCasterEpisodeRequest() (request *AddCasterEpisodeRequest) {
 	request = &AddCasterEpisodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddCasterEpisode", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "AddCasterEpisode", "", "")
+	request.Method = requests.POST
 	return
 }
 

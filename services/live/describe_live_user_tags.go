@@ -91,7 +91,8 @@ func CreateDescribeLiveUserTagsRequest() (request *DescribeLiveUserTagsRequest) 
 	request = &DescribeLiveUserTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveUserTags", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveUserTags", "", "")
+	request.Method = requests.POST
 	return
 }
 

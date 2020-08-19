@@ -93,7 +93,8 @@ func CreateDeleteCasterSceneConfigRequest() (request *DeleteCasterSceneConfigReq
 	request = &DeleteCasterSceneConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterSceneConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterSceneConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

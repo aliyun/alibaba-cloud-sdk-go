@@ -94,7 +94,8 @@ func CreateDescribeCasterLayoutsRequest() (request *DescribeCasterLayoutsRequest
 	request = &DescribeCasterLayoutsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeCasterLayouts", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeCasterLayouts", "", "")
+	request.Method = requests.POST
 	return
 }
 

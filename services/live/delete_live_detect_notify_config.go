@@ -92,7 +92,8 @@ func CreateDeleteLiveDetectNotifyConfigRequest() (request *DeleteLiveDetectNotif
 	request = &DeleteLiveDetectNotifyConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveDetectNotifyConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveDetectNotifyConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

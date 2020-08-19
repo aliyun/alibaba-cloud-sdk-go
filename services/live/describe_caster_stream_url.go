@@ -94,7 +94,8 @@ func CreateDescribeCasterStreamUrlRequest() (request *DescribeCasterStreamUrlReq
 	request = &DescribeCasterStreamUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeCasterStreamUrl", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeCasterStreamUrl", "", "")
+	request.Method = requests.POST
 	return
 }
 

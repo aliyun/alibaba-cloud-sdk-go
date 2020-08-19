@@ -113,7 +113,8 @@ func CreateAddCasterLayoutRequest() (request *AddCasterLayoutRequest) {
 	request = &AddCasterLayoutRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddCasterLayout", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "AddCasterLayout", "", "")
+	request.Method = requests.POST
 	return
 }
 

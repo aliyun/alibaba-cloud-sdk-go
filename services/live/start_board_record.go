@@ -94,7 +94,8 @@ func CreateStartBoardRecordRequest() (request *StartBoardRecordRequest) {
 	request = &StartBoardRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "StartBoardRecord", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "StartBoardRecord", "", "")
+	request.Method = requests.POST
 	return
 }
 

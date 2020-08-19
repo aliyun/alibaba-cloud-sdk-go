@@ -94,7 +94,8 @@ func CreateStopLiveIndexRequest() (request *StopLiveIndexRequest) {
 	request = &StopLiveIndexRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "StopLiveIndex", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "StopLiveIndex", "", "")
+	request.Method = requests.POST
 	return
 }
 

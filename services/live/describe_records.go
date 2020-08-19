@@ -95,7 +95,8 @@ func CreateDescribeRecordsRequest() (request *DescribeRecordsRequest) {
 	request = &DescribeRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeRecords", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeRecords", "", "")
+	request.Method = requests.POST
 	return
 }
 

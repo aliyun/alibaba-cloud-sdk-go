@@ -100,7 +100,8 @@ func CreateModifyCasterEpisodeRequest() (request *ModifyCasterEpisodeRequest) {
 	request = &ModifyCasterEpisodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ModifyCasterEpisode", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "ModifyCasterEpisode", "", "")
+	request.Method = requests.POST
 	return
 }
 

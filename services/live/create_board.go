@@ -93,7 +93,8 @@ func CreateCreateBoardRequest() (request *CreateBoardRequest) {
 	request = &CreateBoardRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "CreateBoard", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "CreateBoard", "", "")
+	request.Method = requests.POST
 	return
 }
 

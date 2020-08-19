@@ -92,7 +92,8 @@ func CreateModifyLiveDomainSchdmByPropertyRequest() (request *ModifyLiveDomainSc
 	request = &ModifyLiveDomainSchdmByPropertyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ModifyLiveDomainSchdmByProperty", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "ModifyLiveDomainSchdmByProperty", "", "")
+	request.Method = requests.POST
 	return
 }
 

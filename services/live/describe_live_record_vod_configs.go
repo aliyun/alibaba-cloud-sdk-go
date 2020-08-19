@@ -99,7 +99,8 @@ func CreateDescribeLiveRecordVodConfigsRequest() (request *DescribeLiveRecordVod
 	request = &DescribeLiveRecordVodConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveRecordVodConfigs", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveRecordVodConfigs", "", "")
+	request.Method = requests.POST
 	return
 }
 

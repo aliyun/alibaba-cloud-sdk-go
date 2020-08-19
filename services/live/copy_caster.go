@@ -94,7 +94,8 @@ func CreateCopyCasterRequest() (request *CopyCasterRequest) {
 	request = &CopyCasterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "CopyCaster", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "CopyCaster", "", "")
+	request.Method = requests.POST
 	return
 }
 

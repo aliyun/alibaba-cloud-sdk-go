@@ -76,15 +76,22 @@ func (client *Client) DescribeLiveUserDomainsWithCallback(request *DescribeLiveU
 // DescribeLiveUserDomainsRequest is the request struct for api DescribeLiveUserDomains
 type DescribeLiveUserDomainsRequest struct {
 	*requests.RpcRequest
-	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
-	SecurityToken    string           `position:"Query" name:"SecurityToken"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	RegionName       string           `position:"Query" name:"RegionName"`
-	DomainName       string           `position:"Query" name:"DomainName"`
-	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
-	DomainStatus     string           `position:"Query" name:"DomainStatus"`
-	DomainSearchType string           `position:"Query" name:"DomainSearchType"`
-	LiveDomainType   string           `position:"Query" name:"LiveDomainType"`
+	PageNumber       requests.Integer              `position:"Query" name:"PageNumber"`
+	SecurityToken    string                        `position:"Query" name:"SecurityToken"`
+	PageSize         requests.Integer              `position:"Query" name:"PageSize"`
+	RegionName       string                        `position:"Query" name:"RegionName"`
+	Tag              *[]DescribeLiveUserDomainsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	DomainName       string                        `position:"Query" name:"DomainName"`
+	OwnerId          requests.Integer              `position:"Query" name:"OwnerId"`
+	DomainStatus     string                        `position:"Query" name:"DomainStatus"`
+	DomainSearchType string                        `position:"Query" name:"DomainSearchType"`
+	LiveDomainType   string                        `position:"Query" name:"LiveDomainType"`
+}
+
+// DescribeLiveUserDomainsTag is a repeated param struct in DescribeLiveUserDomainsRequest
+type DescribeLiveUserDomainsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeLiveUserDomainsResponse is the response struct for api DescribeLiveUserDomains
@@ -102,7 +109,8 @@ func CreateDescribeLiveUserDomainsRequest() (request *DescribeLiveUserDomainsReq
 	request = &DescribeLiveUserDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveUserDomains", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveUserDomains", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -17,15 +17,14 @@ package live
 
 // LiveAppRecord is a nested struct in live response
 type LiveAppRecord struct {
+	DomainName       string           `json:"DomainName" xml:"DomainName"`
+	AppName          string           `json:"AppName" xml:"AppName"`
+	StreamName       string           `json:"StreamName" xml:"StreamName"`
+	OssEndpoint      string           `json:"OssEndpoint" xml:"OssEndpoint"`
+	OssBucket        string           `json:"OssBucket" xml:"OssBucket"`
+	CreateTime       string           `json:"CreateTime" xml:"CreateTime"`
 	StartTime        string           `json:"StartTime" xml:"StartTime"`
 	EndTime          string           `json:"EndTime" xml:"EndTime"`
-	DomainName       string           `json:"DomainName" xml:"DomainName"`
 	OnDemond         int              `json:"OnDemond" xml:"OnDemond"`
-	CreateTime       string           `json:"CreateTime" xml:"CreateTime"`
-	OssEndpoint      string           `json:"OssEndpoint" xml:"OssEndpoint"`
-	AppName          string           `json:"AppName" xml:"AppName"`
-	SourceUrl        string           `json:"SourceUrl" xml:"SourceUrl"`
-	StreamName       string           `json:"StreamName" xml:"StreamName"`
-	OssBucket        string           `json:"OssBucket" xml:"OssBucket"`
 	RecordFormatList RecordFormatList `json:"RecordFormatList" xml:"RecordFormatList"`
 }

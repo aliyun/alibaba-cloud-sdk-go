@@ -91,7 +91,8 @@ func CreateEnableLiveRealtimeLogDeliveryRequest() (request *EnableLiveRealtimeLo
 	request = &EnableLiveRealtimeLogDeliveryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "EnableLiveRealtimeLogDelivery", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "EnableLiveRealtimeLogDelivery", "", "")
+	request.Method = requests.GET
 	return
 }
 

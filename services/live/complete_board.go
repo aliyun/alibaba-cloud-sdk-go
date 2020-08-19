@@ -92,7 +92,8 @@ func CreateCompleteBoardRequest() (request *CompleteBoardRequest) {
 	request = &CompleteBoardRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "CompleteBoard", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "CompleteBoard", "", "")
+	request.Method = requests.POST
 	return
 }
 

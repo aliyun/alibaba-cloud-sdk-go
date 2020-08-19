@@ -97,7 +97,8 @@ func CreateDescribeLiveDomainBpsDataByTimeStampRequest() (request *DescribeLiveD
 	request = &DescribeLiveDomainBpsDataByTimeStampRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainBpsDataByTimeStamp", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainBpsDataByTimeStamp", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -100,7 +100,8 @@ func CreateDescribeLiveDetectPornDataRequest() (request *DescribeLiveDetectPornD
 	request = &DescribeLiveDetectPornDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDetectPornData", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDetectPornData", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -93,7 +93,8 @@ func CreateDescribeLiveDomainDetailRequest() (request *DescribeLiveDomainDetailR
 	request = &DescribeLiveDomainDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainDetail", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainDetail", "", "")
+	request.Method = requests.POST
 	return
 }
 

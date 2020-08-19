@@ -89,13 +89,13 @@ type DescribeLiveRecordConfigRequest struct {
 // DescribeLiveRecordConfigResponse is the response struct for api DescribeLiveRecordConfig
 type DescribeLiveRecordConfigResponse struct {
 	*responses.BaseResponse
-	RequestId         string                                      `json:"RequestId" xml:"RequestId"`
-	PageNum           int                                         `json:"PageNum" xml:"PageNum"`
-	PageSize          int                                         `json:"PageSize" xml:"PageSize"`
-	Order             string                                      `json:"Order" xml:"Order"`
-	TotalNum          int                                         `json:"TotalNum" xml:"TotalNum"`
-	TotalPage         int                                         `json:"TotalPage" xml:"TotalPage"`
-	LiveAppRecordList LiveAppRecordListInDescribeLiveRecordConfig `json:"LiveAppRecordList" xml:"LiveAppRecordList"`
+	RequestId         string            `json:"RequestId" xml:"RequestId"`
+	PageNum           int               `json:"PageNum" xml:"PageNum"`
+	PageSize          int               `json:"PageSize" xml:"PageSize"`
+	Order             string            `json:"Order" xml:"Order"`
+	TotalNum          int               `json:"TotalNum" xml:"TotalNum"`
+	TotalPage         int               `json:"TotalPage" xml:"TotalPage"`
+	LiveAppRecordList LiveAppRecordList `json:"LiveAppRecordList" xml:"LiveAppRecordList"`
 }
 
 // CreateDescribeLiveRecordConfigRequest creates a request to invoke DescribeLiveRecordConfig API
@@ -103,7 +103,8 @@ func CreateDescribeLiveRecordConfigRequest() (request *DescribeLiveRecordConfigR
 	request = &DescribeLiveRecordConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveRecordConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveRecordConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

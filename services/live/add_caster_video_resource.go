@@ -79,6 +79,7 @@ type AddCasterVideoResourceRequest struct {
 	EndOffset           requests.Integer `position:"Query" name:"EndOffset"`
 	MaterialId          string           `position:"Query" name:"MaterialId"`
 	VodUrl              string           `position:"Query" name:"VodUrl"`
+	StreamId            string           `position:"Query" name:"StreamId"`
 	CasterId            string           `position:"Query" name:"CasterId"`
 	OwnerId             requests.Integer `position:"Query" name:"OwnerId"`
 	BeginOffset         requests.Integer `position:"Query" name:"BeginOffset"`
@@ -101,7 +102,8 @@ func CreateAddCasterVideoResourceRequest() (request *AddCasterVideoResourceReque
 	request = &AddCasterVideoResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddCasterVideoResource", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "AddCasterVideoResource", "", "")
+	request.Method = requests.POST
 	return
 }
 

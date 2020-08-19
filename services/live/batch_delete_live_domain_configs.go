@@ -94,7 +94,8 @@ func CreateBatchDeleteLiveDomainConfigsRequest() (request *BatchDeleteLiveDomain
 	request = &BatchDeleteLiveDomainConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "BatchDeleteLiveDomainConfigs", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "BatchDeleteLiveDomainConfigs", "", "")
+	request.Method = requests.POST
 	return
 }
 

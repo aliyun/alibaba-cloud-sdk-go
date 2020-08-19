@@ -88,12 +88,12 @@ type DescribeLiveDomainBpsDataRequest struct {
 // DescribeLiveDomainBpsDataResponse is the response struct for api DescribeLiveDomainBpsData
 type DescribeLiveDomainBpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId          string             `json:"RequestId" xml:"RequestId"`
-	DomainName         string             `json:"DomainName" xml:"DomainName"`
-	StartTime          string             `json:"StartTime" xml:"StartTime"`
-	EndTime            string             `json:"EndTime" xml:"EndTime"`
-	DataInterval       string             `json:"DataInterval" xml:"DataInterval"`
-	BpsDataPerInterval BpsDataPerInterval `json:"BpsDataPerInterval" xml:"BpsDataPerInterval"`
+	RequestId          string                                        `json:"RequestId" xml:"RequestId"`
+	DomainName         string                                        `json:"DomainName" xml:"DomainName"`
+	StartTime          string                                        `json:"StartTime" xml:"StartTime"`
+	EndTime            string                                        `json:"EndTime" xml:"EndTime"`
+	DataInterval       string                                        `json:"DataInterval" xml:"DataInterval"`
+	BpsDataPerInterval BpsDataPerIntervalInDescribeLiveDomainBpsData `json:"BpsDataPerInterval" xml:"BpsDataPerInterval"`
 }
 
 // CreateDescribeLiveDomainBpsDataRequest creates a request to invoke DescribeLiveDomainBpsData API
@@ -101,7 +101,8 @@ func CreateDescribeLiveDomainBpsDataRequest() (request *DescribeLiveDomainBpsDat
 	request = &DescribeLiveDomainBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainBpsData", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainBpsData", "", "")
+	request.Method = requests.POST
 	return
 }
 

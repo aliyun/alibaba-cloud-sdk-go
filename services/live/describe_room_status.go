@@ -93,7 +93,8 @@ func CreateDescribeRoomStatusRequest() (request *DescribeRoomStatusRequest) {
 	request = &DescribeRoomStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeRoomStatus", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeRoomStatus", "", "")
+	request.Method = requests.POST
 	return
 }
 

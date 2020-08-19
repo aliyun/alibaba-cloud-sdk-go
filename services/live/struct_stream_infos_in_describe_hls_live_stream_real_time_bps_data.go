@@ -17,5 +17,5 @@ package live
 
 // StreamInfosInDescribeHlsLiveStreamRealTimeBpsData is a nested struct in live response
 type StreamInfosInDescribeHlsLiveStreamRealTimeBpsData struct {
-	StreamInfo []StreamInfo `json:"StreamInfo" xml:"StreamInfo"`
+	StreamInfo []StreamInfoInDescribeHlsLiveStreamRealTimeBpsData `json:"StreamInfo" xml:"StreamInfo"`
 }

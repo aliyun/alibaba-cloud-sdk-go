@@ -97,7 +97,8 @@ func CreateDescribeForbidPushStreamRoomListRequest() (request *DescribeForbidPus
 	request = &DescribeForbidPushStreamRoomListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeForbidPushStreamRoomList", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeForbidPushStreamRoomList", "", "")
+	request.Method = requests.POST
 	return
 }
 

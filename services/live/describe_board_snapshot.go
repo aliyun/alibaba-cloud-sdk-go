@@ -93,7 +93,8 @@ func CreateDescribeBoardSnapshotRequest() (request *DescribeBoardSnapshotRequest
 	request = &DescribeBoardSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeBoardSnapshot", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeBoardSnapshot", "", "")
+	request.Method = requests.POST
 	return
 }
 

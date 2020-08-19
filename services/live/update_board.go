@@ -92,7 +92,8 @@ func CreateUpdateBoardRequest() (request *UpdateBoardRequest) {
 	request = &UpdateBoardRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "UpdateBoard", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "UpdateBoard", "", "")
+	request.Method = requests.POST
 	return
 }
 

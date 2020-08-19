@@ -93,7 +93,8 @@ func CreateDescribeLiveDetectNotifyConfigRequest() (request *DescribeLiveDetectN
 	request = &DescribeLiveDetectNotifyConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDetectNotifyConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDetectNotifyConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

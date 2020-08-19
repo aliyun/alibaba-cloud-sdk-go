@@ -101,7 +101,8 @@ func CreateDescribeLiveDomainPushTrafficDataRequest() (request *DescribeLiveDoma
 	request = &DescribeLiveDomainPushTrafficDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainPushTrafficData", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainPushTrafficData", "", "")
+	request.Method = requests.POST
 	return
 }
 

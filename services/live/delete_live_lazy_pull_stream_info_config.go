@@ -92,7 +92,8 @@ func CreateDeleteLiveLazyPullStreamInfoConfigRequest() (request *DeleteLiveLazyP
 	request = &DeleteLiveLazyPullStreamInfoConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveLazyPullStreamInfoConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveLazyPullStreamInfoConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

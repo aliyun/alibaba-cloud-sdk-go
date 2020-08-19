@@ -95,7 +95,8 @@ func CreateApplyRecordTokenRequest() (request *ApplyRecordTokenRequest) {
 	request = &ApplyRecordTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ApplyRecordToken", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "ApplyRecordToken", "", "")
+	request.Method = requests.POST
 	return
 }
 

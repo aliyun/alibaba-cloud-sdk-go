@@ -94,7 +94,8 @@ func CreateUpdateCasterSceneConfigRequest() (request *UpdateCasterSceneConfigReq
 	request = &UpdateCasterSceneConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "UpdateCasterSceneConfig", "live", "openAPI")
+	request.InitWithApiInfo("live", "2016-11-01", "UpdateCasterSceneConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

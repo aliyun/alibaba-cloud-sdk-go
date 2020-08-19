@@ -17,5 +17,5 @@ package live
 
 // RecordFormatInDescribeCasterConfig is a nested struct in live response
 type RecordFormatInDescribeCasterConfig struct {
-	RecordFormatItem []RecordFormatItem `json:"RecordFormatItem" xml:"RecordFormatItem"`
+	RecordFormatItem []RecordFormatItem `json:"RecordFormat" xml:"RecordFormat"`
 }
