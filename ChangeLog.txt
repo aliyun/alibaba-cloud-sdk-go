@@ -1,3 +1,7 @@
+2020-08-19 Version: v1.61.427
+- Generated 2020-08-01 for `SmartHosting`.
+
+
 2020-08-18 Version: v1.61.426
 - Generated 2019-01-01 for `HBase`.
 - Support for describe hbaseue multi-zone model.
