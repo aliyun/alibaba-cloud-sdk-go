@@ -17,22 +17,29 @@ package vcs
 
 // Datas is a nested struct in vcs response
 type Datas struct {
-	CorpId           string `json:"CorpId" xml:"CorpId"`
-	DataSourceId     string `json:"DataSourceId" xml:"DataSourceId"`
-	EventType        string `json:"EventType" xml:"EventType"`
-	EventValue       string `json:"EventValue" xml:"EventValue"`
-	ExtendValue      string `json:"ExtendValue" xml:"ExtendValue"`
-	ExtraExtendValue string `json:"ExtraExtendValue" xml:"ExtraExtendValue"`
-	FaceCount        string `json:"FaceCount" xml:"FaceCount"`
-	LeftTopX         string `json:"LeftTopX" xml:"LeftTopX"`
 	LeftTopY         string `json:"LeftTopY" xml:"LeftTopY"`
-	PicUrlPath       string `json:"PicUrlPath" xml:"PicUrlPath"`
-	PointX           string `json:"PointX" xml:"PointX"`
-	PointY           string `json:"PointY" xml:"PointY"`
-	RecordId         string `json:"RecordId" xml:"RecordId"`
-	RightBottomX     string `json:"RightBottomX" xml:"RightBottomX"`
+	TagMetrics       string `json:"TagMetrics" xml:"TagMetrics"`
 	RightBottomY     string `json:"RightBottomY" xml:"RightBottomY"`
-	ShotTime         string `json:"ShotTime" xml:"ShotTime"`
-	SourceId         string `json:"SourceId" xml:"SourceId"`
 	TargetPicUrlPath string `json:"TargetPicUrlPath" xml:"TargetPicUrlPath"`
+	DayId            string `json:"DayId" xml:"DayId"`
+	CorpId           string `json:"CorpId" xml:"CorpId"`
+	DeviceId         string `json:"DeviceId" xml:"DeviceId"`
+	ExtendValue      string `json:"ExtendValue" xml:"ExtendValue"`
+	PointX           string `json:"PointX" xml:"PointX"`
+	RecordId         string `json:"RecordId" xml:"RecordId"`
+	PicUrlPath       string `json:"PicUrlPath" xml:"PicUrlPath"`
+	GroupId          string `json:"GroupId" xml:"GroupId"`
+	FaceCount        string `json:"FaceCount" xml:"FaceCount"`
+	ExtraExtendValue string `json:"ExtraExtendValue" xml:"ExtraExtendValue"`
+	HourId           string `json:"HourId" xml:"HourId"`
+	DataSourceId     string `json:"DataSourceId" xml:"DataSourceId"`
+	PersonId         string `json:"PersonId" xml:"PersonId"`
+	SourceId         string `json:"SourceId" xml:"SourceId"`
+	EventValue       string `json:"EventValue" xml:"EventValue"`
+	ShotTime         string `json:"ShotTime" xml:"ShotTime"`
+	TagCode          string `json:"TagCode" xml:"TagCode"`
+	EventType        string `json:"EventType" xml:"EventType"`
+	LeftTopX         string `json:"LeftTopX" xml:"LeftTopX"`
+	PointY           string `json:"PointY" xml:"PointY"`
+	RightBottomX     string `json:"RightBottomX" xml:"RightBottomX"`
 }
