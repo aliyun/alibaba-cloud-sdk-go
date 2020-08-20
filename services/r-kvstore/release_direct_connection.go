@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteInstance invokes the r_kvstore.DeleteInstance API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteinstance.html
-func (client *Client) DeleteInstance(request *DeleteInstanceRequest) (response *DeleteInstanceResponse, err error) {
-	response = CreateDeleteInstanceResponse()
+// ReleaseDirectConnection invokes the r_kvstore.ReleaseDirectConnection API synchronously
+// api document: https://help.aliyun.com/api/r-kvstore/releasedirectconnection.html
+func (client *Client) ReleaseDirectConnection(request *ReleaseDirectConnectionRequest) (response *ReleaseDirectConnectionResponse, err error) {
+	response = CreateReleaseDirectConnectionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteInstanceWithChan invokes the r_kvstore.DeleteInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteinstance.html
+// ReleaseDirectConnectionWithChan invokes the r_kvstore.ReleaseDirectConnection API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/releasedirectconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-chan *DeleteInstanceResponse, <-chan error) {
-	responseChan := make(chan *DeleteInstanceResponse, 1)
+func (client *Client) ReleaseDirectConnectionWithChan(request *ReleaseDirectConnectionRequest) (<-chan *ReleaseDirectConnectionResponse, <-chan error) {
+	responseChan := make(chan *ReleaseDirectConnectionResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteInstance(request)
+		response, err := client.ReleaseDirectConnection(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-
 	return responseChan, errChan
 }
 
-// DeleteInstanceWithCallback invokes the r_kvstore.DeleteInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteinstance.html
+// ReleaseDirectConnectionWithCallback invokes the r_kvstore.ReleaseDirectConnection API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/releasedirectconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest, callback func(response *DeleteInstanceResponse, err error)) <-chan int {
+func (client *Client) ReleaseDirectConnectionWithCallback(request *ReleaseDirectConnectionRequest, callback func(response *ReleaseDirectConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteInstanceResponse
+		var response *ReleaseDirectConnectionResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteInstance(request)
+		response, err = client.ReleaseDirectConnection(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,38 +73,36 @@ func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest,
 	return result
 }
 
-// DeleteInstanceRequest is the request struct for api DeleteInstance
-type DeleteInstanceRequest struct {
+// ReleaseDirectConnectionRequest is the request struct for api ReleaseDirectConnection
+type ReleaseDirectConnectionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ReleaseSubInstance   requests.Boolean `position:"Query" name:"ReleaseSubInstance"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	GlobalInstanceId     string           `position:"Query" name:"GlobalInstanceId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
-// DeleteInstanceResponse is the response struct for api DeleteInstance
-type DeleteInstanceResponse struct {
+// ReleaseDirectConnectionResponse is the response struct for api ReleaseDirectConnection
+type ReleaseDirectConnectionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDeleteInstanceRequest creates a request to invoke DeleteInstance API
-func CreateDeleteInstanceRequest() (request *DeleteInstanceRequest) {
-	request = &DeleteInstanceRequest{
+// CreateReleaseDirectConnectionRequest creates a request to invoke ReleaseDirectConnection API
+func CreateReleaseDirectConnectionRequest() (request *ReleaseDirectConnectionRequest) {
+	request = &ReleaseDirectConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteInstance", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ReleaseDirectConnection", "redisa", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteInstanceResponse creates a response to parse from DeleteInstance response
-func CreateDeleteInstanceResponse() (response *DeleteInstanceResponse) {
-	response = &DeleteInstanceResponse{
+// CreateReleaseDirectConnectionResponse creates a response to parse from ReleaseDirectConnection response
+func CreateReleaseDirectConnectionResponse() (response *ReleaseDirectConnectionResponse) {
+	response = &ReleaseDirectConnectionResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

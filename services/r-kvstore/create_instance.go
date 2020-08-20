@@ -84,6 +84,7 @@ type CreateInstanceRequest struct {
 	Password             string           `position:"Query" name:"Password"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
+	ShardCount           requests.Integer `position:"Query" name:"ShardCount"`
 	AutoRenewPeriod      string           `position:"Query" name:"AutoRenewPeriod"`
 	Period               string           `position:"Query" name:"Period"`
 	BackupId             string           `position:"Query" name:"BackupId"`
@@ -103,7 +104,9 @@ type CreateInstanceRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	SrcDBInstanceId      string           `position:"Query" name:"SrcDBInstanceId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	GlobalInstance       requests.Boolean `position:"Query" name:"GlobalInstance"`
 	Token                string           `position:"Query" name:"Token"`
+	GlobalInstanceId     string           `position:"Query" name:"GlobalInstanceId"`
 	VpcId                string           `position:"Query" name:"VpcId"`
 	ChargeType           string           `position:"Query" name:"ChargeType"`
 	Config               string           `position:"Query" name:"Config"`

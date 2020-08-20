@@ -1,3 +1,8 @@
+2020-08-20 Version: v1.61.430
+- Generated 2015-01-01 for `R-kvstore`.
+- Added Global Distribute Cache OpenAPIs.
+- Added direct connection OpenAPIs.
+
 2020-08-19 Version: v1.61.429
 - Generated 2016-11-01 for `live`.
 - Add DescribeLiveDomainCertificateInfo.
