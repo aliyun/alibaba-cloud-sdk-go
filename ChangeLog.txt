@@ -1,3 +1,7 @@
+2020-08-24 Version: v1.61.434
+- Generated 2019-08-08 for `ARMS`.
+- Edit QueryMetricByPage api.
+
 2020-08-21 Version: v1.61.433
 - Generated 2018-12-12, 2018-12-07 for `UniMkt`.
 
