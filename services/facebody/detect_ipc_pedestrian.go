@@ -101,7 +101,7 @@ func CreateDetectIPCPedestrianRequest() (request *DetectIPCPedestrianRequest) {
 	request = &DetectIPCPedestrianRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "DetectIPCPedestrian", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "DetectIPCPedestrian", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -97,7 +97,7 @@ func CreateListFaceEntitiesRequest() (request *ListFaceEntitiesRequest) {
 	request = &ListFaceEntitiesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "ListFaceEntities", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "ListFaceEntities", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

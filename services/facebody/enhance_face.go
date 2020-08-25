@@ -91,7 +91,7 @@ func CreateEnhanceFaceRequest() (request *EnhanceFaceRequest) {
 	request = &EnhanceFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "EnhanceFace", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "EnhanceFace", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

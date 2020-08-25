@@ -93,7 +93,7 @@ func CreateFaceFilterRequest() (request *FaceFilterRequest) {
 	request = &FaceFilterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "FaceFilter", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "FaceFilter", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }

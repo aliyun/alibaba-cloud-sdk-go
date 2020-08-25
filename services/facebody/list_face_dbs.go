@@ -90,7 +90,7 @@ func CreateListFaceDbsRequest() (request *ListFaceDbsRequest) {
 	request = &ListFaceDbsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "ListFaceDbs", "", "")
+	request.InitWithApiInfo("facebody", "2019-12-30", "ListFaceDbs", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }
