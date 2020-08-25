@@ -96,7 +96,7 @@ func CreateUpdateManagedHostAttributesRequest() (request *UpdateManagedHostAttri
 	request = &UpdateManagedHostAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("SmartHosting", "2020-08-01", "UpdateManagedHostAttributes", "SmartHosting", "openAPI")
+	request.InitWithApiInfo("SmartHosting", "2020-08-01", "UpdateManagedHostAttributes", "smarthosting", "openAPI")
 	request.Method = requests.POST
 	return
 }

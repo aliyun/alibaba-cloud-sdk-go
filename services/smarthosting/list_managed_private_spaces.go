@@ -109,7 +109,7 @@ func CreateListManagedPrivateSpacesRequest() (request *ListManagedPrivateSpacesR
 	request = &ListManagedPrivateSpacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("SmartHosting", "2020-08-01", "ListManagedPrivateSpaces", "SmartHosting", "openAPI")
+	request.InitWithApiInfo("SmartHosting", "2020-08-01", "ListManagedPrivateSpaces", "smarthosting", "openAPI")
 	request.Method = requests.POST
 	return
 }

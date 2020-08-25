@@ -114,7 +114,7 @@ func CreateListManagedHostsRequest() (request *ListManagedHostsRequest) {
 	request = &ListManagedHostsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("SmartHosting", "2020-08-01", "ListManagedHosts", "SmartHosting", "openAPI")
+	request.InitWithApiInfo("SmartHosting", "2020-08-01", "ListManagedHosts", "smarthosting", "openAPI")
 	request.Method = requests.POST
 	return
 }

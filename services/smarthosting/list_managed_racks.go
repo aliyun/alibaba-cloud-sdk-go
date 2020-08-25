@@ -103,7 +103,7 @@ func CreateListManagedRacksRequest() (request *ListManagedRacksRequest) {
 	request = &ListManagedRacksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("SmartHosting", "2020-08-01", "ListManagedRacks", "SmartHosting", "openAPI")
+	request.InitWithApiInfo("SmartHosting", "2020-08-01", "ListManagedRacks", "smarthosting", "openAPI")
 	request.Method = requests.POST
 	return
 }
