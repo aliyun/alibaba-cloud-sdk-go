@@ -1,3 +1,7 @@
+2020-08-25 Version: v1.61.436
+- Generated 2019-08-10 for `multimediaai`.
+- Video Content analytics template introduced to this SDK.
+
 2020-08-24 Version: v1.61.435
 - Generated 2020-03-03 for `devops-rdc`.
 - Add project api.

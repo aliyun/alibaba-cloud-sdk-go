@@ -98,6 +98,7 @@ func CreateListFacePersonsRequest() (request *ListFacePersonsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("multimediaai", "2019-08-10", "ListFacePersons", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -98,6 +98,7 @@ func CreateGetTemplateRequest() (request *GetTemplateRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("multimediaai", "2019-08-10", "GetTemplate", "", "")
+	request.Method = requests.POST
 	return
 }
 

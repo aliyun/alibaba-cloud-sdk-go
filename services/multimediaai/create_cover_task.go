@@ -78,6 +78,7 @@ type CreateCoverTaskRequest struct {
 	*requests.RpcRequest
 	TemplateId    requests.Integer `position:"Query" name:"TemplateId"`
 	VideoUrl      string           `position:"Query" name:"VideoUrl"`
+	Scales        string           `position:"Body" name:"Scales"`
 	VideoName     string           `position:"Query" name:"VideoName"`
 	CallbackUrl   string           `position:"Query" name:"CallbackUrl"`
 	ApplicationId string           `position:"Query" name:"ApplicationId"`
@@ -96,6 +97,7 @@ func CreateCreateCoverTaskRequest() (request *CreateCoverTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("multimediaai", "2019-08-10", "CreateCoverTask", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -93,6 +93,7 @@ func CreateDeleteFaceImageRequest() (request *DeleteFaceImageRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("multimediaai", "2019-08-10", "DeleteFaceImage", "", "")
+	request.Method = requests.POST
 	return
 }
 

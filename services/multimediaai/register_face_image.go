@@ -84,7 +84,8 @@ type RegisterFaceImageRequest struct {
 // RegisterFaceImageResponse is the response struct for api RegisterFaceImage
 type RegisterFaceImageResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId  string      `json:"RequestId" xml:"RequestId"`
+	FaceImages []FaceImage `json:"FaceImages" xml:"FaceImages"`
 }
 
 // CreateRegisterFaceImageRequest creates a request to invoke RegisterFaceImage API
@@ -93,6 +94,7 @@ func CreateRegisterFaceImageRequest() (request *RegisterFaceImageRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("multimediaai", "2019-08-10", "RegisterFaceImage", "", "")
+	request.Method = requests.POST
 	return
 }
 

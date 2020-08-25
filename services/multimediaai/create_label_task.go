@@ -96,6 +96,7 @@ func CreateCreateLabelTaskRequest() (request *CreateLabelTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("multimediaai", "2019-08-10", "CreateLabelTask", "", "")
+	request.Method = requests.POST
 	return
 }
 

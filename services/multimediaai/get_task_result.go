@@ -93,6 +93,7 @@ func CreateGetTaskResultRequest() (request *GetTaskResultRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("multimediaai", "2019-08-10", "GetTaskResult", "", "")
+	request.Method = requests.POST
 	return
 }
 

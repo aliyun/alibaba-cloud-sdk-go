@@ -100,6 +100,7 @@ func CreateListTemplatesRequest() (request *ListTemplatesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("multimediaai", "2019-08-10", "ListTemplates", "", "")
+	request.Method = requests.POST
 	return
 }
 
