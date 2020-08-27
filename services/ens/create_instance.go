@@ -76,24 +76,27 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 // CreateInstanceRequest is the request struct for api CreateInstance
 type CreateInstanceRequest struct {
 	*requests.RpcRequest
-	ImageId            string           `position:"Query" name:"ImageId"`
+	UniqueSuffix       requests.Boolean `position:"Query" name:"UniqueSuffix"`
 	KeyPairName        string           `position:"Query" name:"KeyPairName"`
-	UserData           string           `position:"Query" name:"UserData"`
 	Password           string           `position:"Query" name:"Password"`
+	HostName           string           `position:"Query" name:"HostName"`
 	EnsRegionId        string           `position:"Query" name:"EnsRegionId"`
-	InstanceType       string           `position:"Query" name:"InstanceType"`
-	DataDisk1Size      string           `position:"Query" name:"DataDisk.1.Size"`
 	AutoRenewPeriod    string           `position:"Query" name:"AutoRenewPeriod"`
 	Period             string           `position:"Query" name:"Period"`
-	Quantity           string           `position:"Query" name:"Quantity"`
-	IpType             string           `position:"Query" name:"IpType"`
 	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
-	Version            string           `position:"Query" name:"Version"`
 	VSwitchId          string           `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress   string           `position:"Query" name:"PrivateIpAddress"`
-	SystemDiskSize     string           `position:"Query" name:"SystemDisk.Size"`
+	InstanceName       string           `position:"Query" name:"InstanceName"`
 	AutoRenew          string           `position:"Query" name:"AutoRenew"`
 	InternetChargeType string           `position:"Query" name:"InternetChargeType"`
+	ImageId            string           `position:"Query" name:"ImageId"`
+	UserData           string           `position:"Query" name:"UserData"`
+	InstanceType       string           `position:"Query" name:"InstanceType"`
+	DataDisk1Size      string           `position:"Query" name:"DataDisk.1.Size"`
+	Quantity           string           `position:"Query" name:"Quantity"`
+	IpType             string           `position:"Query" name:"IpType"`
+	SystemDiskSize     string           `position:"Query" name:"SystemDisk.Size"`
+	PaymentType        string           `position:"Query" name:"PaymentType"`
 }
 
 // CreateInstanceResponse is the response struct for api CreateInstance

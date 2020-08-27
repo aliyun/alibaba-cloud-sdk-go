@@ -88,11 +88,11 @@ type DescribeVSwitchesRequest struct {
 // DescribeVSwitchesResponse is the response struct for api DescribeVSwitches
 type DescribeVSwitchesResponse struct {
 	*responses.BaseResponse
-	RequestId  string    `json:"RequestId" xml:"RequestId"`
-	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int       `json:"PageSize" xml:"PageSize"`
-	VSwitches  VSwitches `json:"VSwitches" xml:"VSwitches"`
+	RequestId  string                       `json:"RequestId" xml:"RequestId"`
+	TotalCount int                          `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int                          `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                          `json:"PageSize" xml:"PageSize"`
+	VSwitches  VSwitchesInDescribeVSwitches `json:"VSwitches" xml:"VSwitches"`
 }
 
 // CreateDescribeVSwitchesRequest creates a request to invoke DescribeVSwitches API

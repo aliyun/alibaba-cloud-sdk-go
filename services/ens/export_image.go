@@ -87,7 +87,8 @@ type ExportImageRequest struct {
 // ExportImageResponse is the response struct for api ExportImage
 type ExportImageResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	ExportedImageURL string `json:"ExportedImageURL" xml:"ExportedImageURL"`
 }
 
 // CreateExportImageRequest creates a request to invoke ExportImage API

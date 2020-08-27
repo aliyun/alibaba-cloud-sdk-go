@@ -17,26 +17,30 @@ package ens
 
 // Instance is a nested struct in ens response
 type Instance struct {
+	SpecName                string                             `json:"SpecName" xml:"SpecName"`
+	InstanceResourceType    string                             `json:"InstanceResourceType" xml:"InstanceResourceType"`
+	ImageId                 string                             `json:"ImageId" xml:"ImageId"`
+	OSName                  string                             `json:"OSName" xml:"OSName"`
+	InternetMaxBandwidthOut int                                `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
 	InstanceId              string                             `json:"InstanceId" xml:"InstanceId"`
+	StatusDescrip           string                             `json:"StatusDescrip" xml:"StatusDescrip"`
+	Cpu                     string                             `json:"Cpu" xml:"Cpu"`
+	ExpiredTime             string                             `json:"ExpiredTime" xml:"ExpiredTime"`
+	UpdateTime              string                             `json:"UpdateTime" xml:"UpdateTime"`
+	Memory                  int                                `json:"Memory" xml:"Memory"`
 	InstanceName            string                             `json:"InstanceName" xml:"InstanceName"`
 	EnsRegionId             string                             `json:"EnsRegionId" xml:"EnsRegionId"`
-	Cpu                     string                             `json:"Cpu" xml:"Cpu"`
-	Memory                  int                                `json:"Memory" xml:"Memory"`
-	Disk                    int                                `json:"Disk" xml:"Disk"`
-	InternetMaxBandwidthIn  int                                `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
-	InternetMaxBandwidthOut int                                `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
 	CreationTime            string                             `json:"CreationTime" xml:"CreationTime"`
+	StartTime               string                             `json:"StartTime" xml:"StartTime"`
+	InternetMaxBandwidthIn  int                                `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
+	Disk                    int                                `json:"Disk" xml:"Disk"`
+	HostName                string                             `json:"HostName" xml:"HostName"`
 	Status                  string                             `json:"Status" xml:"Status"`
-	ImageId                 string                             `json:"ImageId" xml:"ImageId"`
-	ExpiredTime             string                             `json:"ExpiredTime" xml:"ExpiredTime"`
-	InstanceResourceType    string                             `json:"InstanceResourceType" xml:"InstanceResourceType"`
-	SpecName                string                             `json:"SpecName" xml:"SpecName"`
-	OSName                  string                             `json:"OSName" xml:"OSName"`
 	SecurityGroupIds        SecurityGroupIds                   `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
 	InnerIpAddress          InnerIpAddress                     `json:"InnerIpAddress" xml:"InnerIpAddress"`
 	PublicIpAddress         PublicIpAddressInDescribeInstances `json:"PublicIpAddress" xml:"PublicIpAddress"`
 	SystemDisk              SystemDisk                         `json:"SystemDisk" xml:"SystemDisk"`
-	DataDisk                DataDisk                           `json:"DataDisk" xml:"DataDisk"`
 	PublicIpAddresses       PublicIpAddresses                  `json:"PublicIpAddresses" xml:"PublicIpAddresses"`
 	PrivateIpAddresses      PrivateIpAddresses                 `json:"PrivateIpAddresses" xml:"PrivateIpAddresses"`
+	DataDisk                DataDisk                           `json:"DataDisk" xml:"DataDisk"`
 }
