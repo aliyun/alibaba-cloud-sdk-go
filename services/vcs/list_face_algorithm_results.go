@@ -88,10 +88,10 @@ type ListFaceAlgorithmResultsRequest struct {
 // ListFaceAlgorithmResultsResponse is the response struct for api ListFaceAlgorithmResults
 type ListFaceAlgorithmResultsResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      string                         `json:"Code" xml:"Code"`
+	Message   string                         `json:"Message" xml:"Message"`
+	RequestId string                         `json:"RequestId" xml:"RequestId"`
+	Data      DataInListFaceAlgorithmResults `json:"Data" xml:"Data"`
 }
 
 // CreateListFaceAlgorithmResultsRequest creates a request to invoke ListFaceAlgorithmResults API
@@ -99,7 +99,7 @@ func CreateListFaceAlgorithmResultsRequest() (request *ListFaceAlgorithmResultsR
 	request = &ListFaceAlgorithmResultsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListFaceAlgorithmResults", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListFaceAlgorithmResults", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -17,48 +17,58 @@ package vcs
 
 // RecordsItem is a nested struct in vcs response
 type RecordsItem struct {
-	MotorBrand       string        `json:"MotorBrand" xml:"MotorBrand"`
 	MotorStyle       string        `json:"MotorStyle" xml:"MotorStyle"`
 	PlateNumber      string        `json:"PlateNumber" xml:"PlateNumber"`
-	GlassColor       int           `json:"GlassColor" xml:"GlassColor"`
-	FirstAppearTime  string        `json:"FirstAppearTime" xml:"FirstAppearTime"`
+	Attachment       string        `json:"Attachment" xml:"Attachment"`
+	UserId           int           `json:"UserId" xml:"UserId"`
 	FaceStyle        string        `json:"FaceStyle" xml:"FaceStyle"`
 	RespiratorColor  int           `json:"RespiratorColor" xml:"RespiratorColor"`
-	AgeLowerLimit    int           `json:"AgeLowerLimit" xml:"AgeLowerLimit"`
+	Age              string        `json:"Age" xml:"Age"`
 	TargetPicUrlPath string        `json:"TargetPicUrlPath" xml:"TargetPicUrlPath"`
 	CapStyle         int           `json:"CapStyle" xml:"CapStyle"`
-	MotorColor       string        `json:"MotorColor" xml:"MotorColor"`
 	MotorClass       string        `json:"MotorClass" xml:"MotorClass"`
 	Calling          string        `json:"Calling" xml:"Calling"`
 	LeftTopX         float64       `json:"LeftTopX" xml:"LeftTopX"`
-	AgeUpLimit       int           `json:"AgeUpLimit" xml:"AgeUpLimit"`
 	CorpId           string        `json:"CorpId" xml:"CorpId"`
-	DateTime         string        `json:"DateTime" xml:"DateTime"`
-	TagValue         string        `json:"TagValue" xml:"TagValue"`
 	RightBottomX     float64       `json:"RightBottomX" xml:"RightBottomX"`
 	PicUrlPath       string        `json:"PicUrlPath" xml:"PicUrlPath"`
-	SafetyBelt       string        `json:"SafetyBelt" xml:"SafetyBelt"`
-	SkinColor        int           `json:"SkinColor" xml:"SkinColor"`
-	EthicCode        int           `json:"EthicCode" xml:"EthicCode"`
 	CapColor         int           `json:"CapColor" xml:"CapColor"`
 	GenderCode       int           `json:"GenderCode" xml:"GenderCode"`
 	PlateColor       string        `json:"PlateColor" xml:"PlateColor"`
-	DataSourceId     string        `json:"DataSourceId" xml:"DataSourceId"`
 	MotorId          string        `json:"MotorId" xml:"MotorId"`
 	PlateClass       string        `json:"PlateClass" xml:"PlateClass"`
+	UserGroupId      int           `json:"UserGroupId" xml:"UserGroupId"`
+	GlassStyle       int           `json:"GlassStyle" xml:"GlassStyle"`
+	TagCode          string        `json:"TagCode" xml:"TagCode"`
+	TagMetric        string        `json:"TagMetric" xml:"TagMetric"`
+	Gender           string        `json:"Gender" xml:"Gender"`
+	PicUrl           string        `json:"PicUrl" xml:"PicUrl"`
+	HairColor        int           `json:"HairColor" xml:"HairColor"`
+	MotorBrand       string        `json:"MotorBrand" xml:"MotorBrand"`
+	GlassColor       int           `json:"GlassColor" xml:"GlassColor"`
+	FirstAppearTime  string        `json:"FirstAppearTime" xml:"FirstAppearTime"`
+	AgeLowerLimit    int           `json:"AgeLowerLimit" xml:"AgeLowerLimit"`
+	IsvSubId         string        `json:"IsvSubId" xml:"IsvSubId"`
+	BizId            string        `json:"BizId" xml:"BizId"`
+	MotorColor       string        `json:"MotorColor" xml:"MotorColor"`
+	AgeUpLimit       int           `json:"AgeUpLimit" xml:"AgeUpLimit"`
+	DateTime         string        `json:"DateTime" xml:"DateTime"`
+	TagValue         string        `json:"TagValue" xml:"TagValue"`
+	SafetyBelt       string        `json:"SafetyBelt" xml:"SafetyBelt"`
+	SkinColor        int           `json:"SkinColor" xml:"SkinColor"`
+	EthicCode        int           `json:"EthicCode" xml:"EthicCode"`
+	DataSourceId     string        `json:"DataSourceId" xml:"DataSourceId"`
 	MustacheStyle    string        `json:"MustacheStyle" xml:"MustacheStyle"`
 	PersonId         string        `json:"PersonId" xml:"PersonId"`
-	GlassStyle       int           `json:"GlassStyle" xml:"GlassStyle"`
+	FaceImageUrl     string        `json:"FaceImageUrl" xml:"FaceImageUrl"`
 	SourceId         string        `json:"SourceId" xml:"SourceId"`
-	TagCode          string        `json:"TagCode" xml:"TagCode"`
+	IdNumber         string        `json:"IdNumber" xml:"IdNumber"`
 	ShotTime         string        `json:"ShotTime" xml:"ShotTime"`
 	MotorModel       string        `json:"MotorModel" xml:"MotorModel"`
-	TagMetric        string        `json:"TagMetric" xml:"TagMetric"`
 	HairStyle        int           `json:"HairStyle" xml:"HairStyle"`
+	UserName         string        `json:"UserName" xml:"UserName"`
 	RightBottomY     float64       `json:"RightBottomY" xml:"RightBottomY"`
-	PicUrl           string        `json:"PicUrl" xml:"PicUrl"`
 	LeftTopY         float64       `json:"LeftTopY" xml:"LeftTopY"`
-	HairColor        int           `json:"HairColor" xml:"HairColor"`
 	FeatureData      []float64     `json:"FeatureData" xml:"FeatureData"`
 	TagList          []TagListItem `json:"TagList" xml:"TagList"`
 }

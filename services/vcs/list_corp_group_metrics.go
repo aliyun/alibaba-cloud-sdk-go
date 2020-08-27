@@ -76,25 +76,29 @@ func (client *Client) ListCorpGroupMetricsWithCallback(request *ListCorpGroupMet
 // ListCorpGroupMetricsRequest is the request struct for api ListCorpGroupMetrics
 type ListCorpGroupMetricsRequest struct {
 	*requests.RpcRequest
-	GroupId    string `position:"Body" name:"GroupId"`
-	EndTime    string `position:"Body" name:"EndTime"`
-	StartTime  string `position:"Body" name:"StartTime"`
-	PageNumber string `position:"Body" name:"PageNumber"`
-	TagCode    string `position:"Body" name:"TagCode"`
-	PageSize   string `position:"Body" name:"PageSize"`
+	CorpId      string `position:"Body" name:"CorpId"`
+	GroupId     string `position:"Body" name:"GroupId"`
+	EndTime     string `position:"Body" name:"EndTime"`
+	StartTime   string `position:"Body" name:"StartTime"`
+	DeviceId    string `position:"Body" name:"DeviceId"`
+	PageNumber  string `position:"Body" name:"PageNumber"`
+	DeviceGroup string `position:"Body" name:"DeviceGroup"`
+	TagCode     string `position:"Body" name:"TagCode"`
+	PageSize    string `position:"Body" name:"PageSize"`
+	UserGroup   string `position:"Body" name:"UserGroup"`
 }
 
 // ListCorpGroupMetricsResponse is the response struct for api ListCorpGroupMetrics
 type ListCorpGroupMetricsResponse struct {
 	*responses.BaseResponse
-	Code       string `json:"Code" xml:"Code"`
-	Message    string `json:"Message" xml:"Message"`
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	Success    string `json:"Success" xml:"Success"`
-	Data       []Day  `json:"Data" xml:"Data"`
+	Code       string     `json:"Code" xml:"Code"`
+	Message    string     `json:"Message" xml:"Message"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int        `json:"PageSize" xml:"PageSize"`
+	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
+	Success    string     `json:"Success" xml:"Success"`
+	Data       []DataItem `json:"Data" xml:"Data"`
 }
 
 // CreateListCorpGroupMetricsRequest creates a request to invoke ListCorpGroupMetrics API
@@ -102,7 +106,7 @@ func CreateListCorpGroupMetricsRequest() (request *ListCorpGroupMetricsRequest) 
 	request = &ListCorpGroupMetricsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListCorpGroupMetrics", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListCorpGroupMetrics", "", "")
 	request.Method = requests.POST
 	return
 }

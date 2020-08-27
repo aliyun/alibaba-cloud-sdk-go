@@ -1,3 +1,7 @@
+2020-08-27 Version: v1.61.440
+- Generated 2020-05-15 for `Vcs`.
+- Update parameter.
+
 2020-08-25 Version: v1.61.439
 - Generated 2019-12-30 for `facebody`.
 - Release ExtractPedestrianFeatureAttribute and BlurFace.

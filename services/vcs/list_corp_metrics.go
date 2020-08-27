@@ -76,12 +76,15 @@ func (client *Client) ListCorpMetricsWithCallback(request *ListCorpMetricsReques
 // ListCorpMetricsRequest is the request struct for api ListCorpMetrics
 type ListCorpMetricsRequest struct {
 	*requests.RpcRequest
-	CorpId     string `position:"Body" name:"CorpId"`
-	EndTime    string `position:"Body" name:"EndTime"`
-	StartTime  string `position:"Body" name:"StartTime"`
-	PageNumber string `position:"Body" name:"PageNumber"`
-	TagCode    string `position:"Body" name:"TagCode"`
-	PageSize   string `position:"Body" name:"PageSize"`
+	CorpId          string `position:"Body" name:"CorpId"`
+	EndTime         string `position:"Body" name:"EndTime"`
+	StartTime       string `position:"Body" name:"StartTime"`
+	PageNumber      string `position:"Body" name:"PageNumber"`
+	DeviceGroupList string `position:"Body" name:"DeviceGroupList"`
+	TagCode         string `position:"Body" name:"TagCode"`
+	UserGroupList   string `position:"Body" name:"UserGroupList"`
+	PageSize        string `position:"Body" name:"PageSize"`
+	DeviceIdList    string `position:"Body" name:"DeviceIdList"`
 }
 
 // ListCorpMetricsResponse is the response struct for api ListCorpMetrics
@@ -102,7 +105,7 @@ func CreateListCorpMetricsRequest() (request *ListCorpMetricsRequest) {
 	request = &ListCorpMetricsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListCorpMetrics", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListCorpMetrics", "", "")
 	request.Method = requests.POST
 	return
 }

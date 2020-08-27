@@ -88,10 +88,10 @@ type ListMetricsRequest struct {
 // ListMetricsResponse is the response struct for api ListMetrics
 type ListMetricsResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      string            `json:"Code" xml:"Code"`
+	Message   string            `json:"Message" xml:"Message"`
+	RequestId string            `json:"RequestId" xml:"RequestId"`
+	Data      DataInListMetrics `json:"Data" xml:"Data"`
 }
 
 // CreateListMetricsRequest creates a request to invoke ListMetrics API
@@ -99,7 +99,7 @@ func CreateListMetricsRequest() (request *ListMetricsRequest) {
 	request = &ListMetricsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListMetrics", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListMetrics", "", "")
 	request.Method = requests.POST
 	return
 }

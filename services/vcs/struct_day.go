@@ -17,19 +17,15 @@ package vcs
 
 // Day is a nested struct in vcs response
 type Day struct {
-	StartSourceImage string `json:"StartSourceImage" xml:"StartSourceImage"`
-	TagMetrics       string `json:"TagMetrics" xml:"TagMetrics"`
-	EndTargetImage   string `json:"EndTargetImage" xml:"EndTargetImage"`
-	PersonId         string `json:"PersonId" xml:"PersonId"`
 	Date             string `json:"Date" xml:"Date"`
-	TagCode          string `json:"TagCode" xml:"TagCode"`
+	LastTime         string `json:"LastTime" xml:"LastTime"`
 	StartTime        string `json:"StartTime" xml:"StartTime"`
 	EndSourceImage   string `json:"EndSourceImage" xml:"EndSourceImage"`
-	StartTargetImage string `json:"StartTargetImage" xml:"StartTargetImage"`
-	CorpId           string `json:"CorpId" xml:"CorpId"`
-	LastTime         string `json:"LastTime" xml:"LastTime"`
 	DeviceId         string `json:"DeviceId" xml:"DeviceId"`
-	TagValue         string `json:"TagValue" xml:"TagValue"`
-	CheckedTime      string `json:"CheckedTime" xml:"CheckedTime"`
+	StartTargetImage string `json:"StartTargetImage" xml:"StartTargetImage"`
 	GroupId          string `json:"GroupId" xml:"GroupId"`
+	PersonId         string `json:"PersonId" xml:"PersonId"`
+	StartSourceImage string `json:"StartSourceImage" xml:"StartSourceImage"`
+	CorpId           string `json:"CorpId" xml:"CorpId"`
+	EndTargetImage   string `json:"EndTargetImage" xml:"EndTargetImage"`
 }

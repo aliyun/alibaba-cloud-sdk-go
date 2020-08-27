@@ -89,11 +89,11 @@ type ListEventAlgorithmResultsRequest struct {
 // ListEventAlgorithmResultsResponse is the response struct for api ListEventAlgorithmResults
 type ListEventAlgorithmResultsResponse struct {
 	*responses.BaseResponse
-	Code        string `json:"Code" xml:"Code"`
-	Message     string `json:"Message" xml:"Message"`
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	ExtendValue string `json:"ExtendValue" xml:"ExtendValue"`
-	Data        Data   `json:"Data" xml:"Data"`
+	Code        string                          `json:"Code" xml:"Code"`
+	Message     string                          `json:"Message" xml:"Message"`
+	RequestId   string                          `json:"RequestId" xml:"RequestId"`
+	ExtendValue string                          `json:"ExtendValue" xml:"ExtendValue"`
+	Data        DataInListEventAlgorithmResults `json:"Data" xml:"Data"`
 }
 
 // CreateListEventAlgorithmResultsRequest creates a request to invoke ListEventAlgorithmResults API
@@ -101,7 +101,7 @@ func CreateListEventAlgorithmResultsRequest() (request *ListEventAlgorithmResult
 	request = &ListEventAlgorithmResultsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListEventAlgorithmResults", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListEventAlgorithmResults", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -89,10 +89,10 @@ type ListBodyAlgorithmResultsRequest struct {
 // ListBodyAlgorithmResultsResponse is the response struct for api ListBodyAlgorithmResults
 type ListBodyAlgorithmResultsResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      string                         `json:"Code" xml:"Code"`
+	Message   string                         `json:"Message" xml:"Message"`
+	RequestId string                         `json:"RequestId" xml:"RequestId"`
+	Data      DataInListBodyAlgorithmResults `json:"Data" xml:"Data"`
 }
 
 // CreateListBodyAlgorithmResultsRequest creates a request to invoke ListBodyAlgorithmResults API
@@ -100,7 +100,7 @@ func CreateListBodyAlgorithmResultsRequest() (request *ListBodyAlgorithmResultsR
 	request = &ListBodyAlgorithmResultsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListBodyAlgorithmResults", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListBodyAlgorithmResults", "", "")
 	request.Method = requests.POST
 	return
 }

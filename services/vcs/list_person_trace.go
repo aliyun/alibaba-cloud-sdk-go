@@ -104,7 +104,7 @@ func CreateListPersonTraceRequest() (request *ListPersonTraceRequest) {
 	request = &ListPersonTraceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListPersonTrace", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListPersonTrace", "", "")
 	request.Method = requests.POST
 	return
 }

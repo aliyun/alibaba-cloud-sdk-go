@@ -17,11 +17,18 @@ package vcs
 
 // DataItem is a nested struct in vcs response
 type DataItem struct {
-	Key        string           `json:"Key" xml:"Key"`
-	Name       string           `json:"Name" xml:"Name"`
-	TagCode    string           `json:"TagCode" xml:"TagCode"`
-	TagMetrics string           `json:"TagMetrics" xml:"TagMetrics"`
-	CorpId     string           `json:"CorpId" xml:"CorpId"`
-	TagValue   string           `json:"TagValue" xml:"TagValue"`
-	OptionList []OptionListItem `json:"OptionList" xml:"OptionList"`
+	Name          string           `json:"Name" xml:"Name"`
+	TagMetrics    string           `json:"TagMetrics" xml:"TagMetrics"`
+	DateId        string           `json:"DateId" xml:"DateId"`
+	UserGroupId   string           `json:"UserGroupId" xml:"UserGroupId"`
+	PersonID      string           `json:"PersonID" xml:"PersonID"`
+	PersonId      string           `json:"PersonId" xml:"PersonId"`
+	Key           string           `json:"Key" xml:"Key"`
+	TagCode       string           `json:"TagCode" xml:"TagCode"`
+	DeviceGroupId string           `json:"DeviceGroupId" xml:"DeviceGroupId"`
+	CorpId        string           `json:"CorpId" xml:"CorpId"`
+	DeviceId      string           `json:"DeviceId" xml:"DeviceId"`
+	TagValue      string           `json:"TagValue" xml:"TagValue"`
+	CorpGroupId   string           `json:"CorpGroupId" xml:"CorpGroupId"`
+	OptionList    []OptionListItem `json:"OptionList" xml:"OptionList"`
 }

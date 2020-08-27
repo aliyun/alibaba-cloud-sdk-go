@@ -89,10 +89,10 @@ type ListMotorAlgorithmResultsRequest struct {
 // ListMotorAlgorithmResultsResponse is the response struct for api ListMotorAlgorithmResults
 type ListMotorAlgorithmResultsResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      string                          `json:"Code" xml:"Code"`
+	Message   string                          `json:"Message" xml:"Message"`
+	RequestId string                          `json:"RequestId" xml:"RequestId"`
+	Data      DataInListMotorAlgorithmResults `json:"Data" xml:"Data"`
 }
 
 // CreateListMotorAlgorithmResultsRequest creates a request to invoke ListMotorAlgorithmResults API
@@ -100,7 +100,7 @@ func CreateListMotorAlgorithmResultsRequest() (request *ListMotorAlgorithmResult
 	request = &ListMotorAlgorithmResultsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListMotorAlgorithmResults", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListMotorAlgorithmResults", "", "")
 	request.Method = requests.POST
 	return
 }

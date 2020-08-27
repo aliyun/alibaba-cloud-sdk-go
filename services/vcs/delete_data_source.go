@@ -93,7 +93,7 @@ func CreateDeleteDataSourceRequest() (request *DeleteDataSourceRequest) {
 	request = &DeleteDataSourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "DeleteDataSource", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "DeleteDataSource", "", "")
 	request.Method = requests.POST
 	return
 }

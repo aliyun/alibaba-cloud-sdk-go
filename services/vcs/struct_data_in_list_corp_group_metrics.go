@@ -17,5 +17,5 @@ package vcs
 
 // DataInListCorpGroupMetrics is a nested struct in vcs response
 type DataInListCorpGroupMetrics struct {
-	Day []Day `json:"Day" xml:"Day"`
+	DataItem []DataItem `json:"Data" xml:"Data"`
 }
