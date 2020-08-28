@@ -83,6 +83,7 @@ type StartClusterRequest struct {
 type StartClusterResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateStartClusterRequest creates a request to invoke StartCluster API

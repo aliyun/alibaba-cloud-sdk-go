@@ -93,6 +93,7 @@ type CreateHybridClusterRequest struct {
 	VolumeId                    string                                  `position:"Query" name:"VolumeId"`
 	ZoneId                      string                                  `position:"Query" name:"ZoneId"`
 	ImageId                     string                                  `position:"Query" name:"ImageId"`
+	ClientToken                 string                                  `position:"Query" name:"ClientToken"`
 	EhpcVersion                 string                                  `position:"Query" name:"EhpcVersion"`
 	SecurityGroupId             string                                  `position:"Query" name:"SecurityGroupId"`
 	Description                 string                                  `position:"Query" name:"Description"`
@@ -137,6 +138,7 @@ type CreateHybridClusterResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	ClusterId string `json:"ClusterId" xml:"ClusterId"`
+	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateCreateHybridClusterRequest creates a request to invoke CreateHybridCluster API

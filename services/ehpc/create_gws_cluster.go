@@ -77,6 +77,7 @@ func (client *Client) CreateGWSClusterWithCallback(request *CreateGWSClusterRequ
 type CreateGWSClusterRequest struct {
 	*requests.RpcRequest
 	ClusterType string `position:"Query" name:"ClusterType"`
+	VSwitchId   string `position:"Query" name:"VSwitchId"`
 	VpcId       string `position:"Query" name:"VpcId"`
 	Name        string `position:"Query" name:"Name"`
 }

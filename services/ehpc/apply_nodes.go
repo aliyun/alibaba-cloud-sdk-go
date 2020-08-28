@@ -118,6 +118,7 @@ type ApplyNodesResponse struct {
 	RequestId       string                  `json:"RequestId" xml:"RequestId"`
 	Detail          string                  `json:"Detail" xml:"Detail"`
 	SatisfiedAmount int                     `json:"SatisfiedAmount" xml:"SatisfiedAmount"`
+	TaskId          string                  `json:"TaskId" xml:"TaskId"`
 	InstanceIds     InstanceIdsInApplyNodes `json:"InstanceIds" xml:"InstanceIds"`
 }
 

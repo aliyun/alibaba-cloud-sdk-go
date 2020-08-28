@@ -87,6 +87,7 @@ type CreateGWSInstanceRequest struct {
 	Period                  string           `position:"Query" name:"Period"`
 	ClusterId               string           `position:"Query" name:"ClusterId"`
 	WorkMode                string           `position:"Query" name:"WorkMode"`
+	VSwitchId               string           `position:"Query" name:"VSwitchId"`
 	PeriodUnit              string           `position:"Query" name:"PeriodUnit"`
 	AutoRenew               requests.Boolean `position:"Query" name:"AutoRenew"`
 	InternetChargeType      string           `position:"Query" name:"InternetChargeType"`

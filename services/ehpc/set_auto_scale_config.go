@@ -101,6 +101,7 @@ type SetAutoScaleConfigQueues struct {
 	InstanceTypes    *[]SetAutoScaleConfigInstanceTypes `name:"InstanceTypes" type:"Repeated"`
 	MaxNodesInQueue  string                             `name:"MaxNodesInQueue"`
 	InstanceType     string                             `name:"InstanceType"`
+	QueueImageId     string                             `name:"QueueImageId"`
 	EnableAutoGrow   string                             `name:"EnableAutoGrow"`
 	SpotPriceLimit   string                             `name:"SpotPriceLimit"`
 	EnableAutoShrink string                             `name:"EnableAutoShrink"`

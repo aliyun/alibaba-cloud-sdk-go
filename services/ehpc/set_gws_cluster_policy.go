@@ -76,11 +76,13 @@ func (client *Client) SetGWSClusterPolicyWithCallback(request *SetGWSClusterPoli
 // SetGWSClusterPolicyRequest is the request struct for api SetGWSClusterPolicy
 type SetGWSClusterPolicyRequest struct {
 	*requests.RpcRequest
-	Watermark   string `position:"Query" name:"Watermark"`
-	LocalDrive  string `position:"Query" name:"LocalDrive"`
-	ClusterId   string `position:"Query" name:"ClusterId"`
-	Clipboard   string `position:"Query" name:"Clipboard"`
-	UsbRedirect string `position:"Query" name:"UsbRedirect"`
+	Watermark   string           `position:"Query" name:"Watermark"`
+	LocalDrive  string           `position:"Query" name:"LocalDrive"`
+	ClusterId   string           `position:"Query" name:"ClusterId"`
+	Clipboard   string           `position:"Query" name:"Clipboard"`
+	UsbRedirect string           `position:"Query" name:"UsbRedirect"`
+	AsyncMode   requests.Boolean `position:"Query" name:"AsyncMode"`
+	UdpPort     string           `position:"Query" name:"UdpPort"`
 }
 
 // SetGWSClusterPolicyResponse is the response struct for api SetGWSClusterPolicy

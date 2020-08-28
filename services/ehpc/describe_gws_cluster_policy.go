@@ -76,7 +76,9 @@ func (client *Client) DescribeGWSClusterPolicyWithCallback(request *DescribeGWSC
 // DescribeGWSClusterPolicyRequest is the request struct for api DescribeGWSClusterPolicy
 type DescribeGWSClusterPolicyRequest struct {
 	*requests.RpcRequest
-	ClusterId string `position:"Query" name:"ClusterId"`
+	ClusterId string           `position:"Query" name:"ClusterId"`
+	AsyncMode requests.Boolean `position:"Query" name:"AsyncMode"`
+	TaskId    string           `position:"Query" name:"TaskId"`
 }
 
 // DescribeGWSClusterPolicyResponse is the response struct for api DescribeGWSClusterPolicy

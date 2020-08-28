@@ -86,6 +86,7 @@ type CreateClusterRequest struct {
 	ResourceGroupId             string                            `position:"Query" name:"ResourceGroupId"`
 	Password                    string                            `position:"Query" name:"Password"`
 	EcsOrderLoginCount          requests.Integer                  `position:"Query" name:"EcsOrder.Login.Count"`
+	WithoutElasticIp            requests.Boolean                  `position:"Query" name:"WithoutElasticIp"`
 	RemoteVisEnable             string                            `position:"Query" name:"RemoteVisEnable"`
 	SystemDiskSize              requests.Integer                  `position:"Query" name:"SystemDiskSize"`
 	ComputeSpotPriceLimit       string                            `position:"Query" name:"ComputeSpotPriceLimit"`
@@ -104,6 +105,7 @@ type CreateClusterRequest struct {
 	ZoneId                      string                            `position:"Query" name:"ZoneId"`
 	SccClusterId                string                            `position:"Query" name:"SccClusterId"`
 	ImageId                     string                            `position:"Query" name:"ImageId"`
+	ClientToken                 string                            `position:"Query" name:"ClientToken"`
 	EhpcVersion                 string                            `position:"Query" name:"EhpcVersion"`
 	AccountType                 string                            `position:"Query" name:"AccountType"`
 	SecurityGroupId             string                            `position:"Query" name:"SecurityGroupId"`
@@ -159,6 +161,7 @@ type CreateClusterResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	ClusterId string `json:"ClusterId" xml:"ClusterId"`
+	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateCreateClusterRequest creates a request to invoke CreateCluster API

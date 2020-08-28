@@ -83,6 +83,7 @@ type StopClusterRequest struct {
 type StopClusterResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateStopClusterRequest creates a request to invoke StopCluster API

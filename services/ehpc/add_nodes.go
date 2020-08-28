@@ -77,6 +77,7 @@ func (client *Client) AddNodesWithCallback(request *AddNodesRequest, callback fu
 type AddNodesRequest struct {
 	*requests.RpcRequest
 	ImageId                 string           `position:"Query" name:"ImageId"`
+	ClientToken             string           `position:"Query" name:"ClientToken"`
 	AllocatePublicAddress   requests.Boolean `position:"Query" name:"AllocatePublicAddress"`
 	InternetMaxBandWidthOut requests.Integer `position:"Query" name:"InternetMaxBandWidthOut"`
 	JobQueue                string           `position:"Query" name:"JobQueue"`
@@ -107,6 +108,7 @@ type AddNodesRequest struct {
 type AddNodesResponse struct {
 	*responses.BaseResponse
 	RequestId   string                `json:"RequestId" xml:"RequestId"`
+	TaskId      string                `json:"TaskId" xml:"TaskId"`
 	InstanceIds InstanceIdsInAddNodes `json:"InstanceIds" xml:"InstanceIds"`
 }
 

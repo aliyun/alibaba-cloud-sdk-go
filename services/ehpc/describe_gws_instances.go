@@ -80,6 +80,8 @@ type DescribeGWSInstancesRequest struct {
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId string           `position:"Query" name:"InstanceId"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	UserUid    requests.Integer `position:"Query" name:"UserUid"`
+	UserName   string           `position:"Query" name:"UserName"`
 }
 
 // DescribeGWSInstancesResponse is the response struct for api DescribeGWSInstances
