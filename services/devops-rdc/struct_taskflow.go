@@ -19,4 +19,5 @@ package devops_rdc
 type Taskflow struct {
 	Id   string `json:"Id" xml:"Id"`
 	Type string `json:"Type" xml:"Type"`
+	Name string `json:"Name" xml:"Name"`
 }
