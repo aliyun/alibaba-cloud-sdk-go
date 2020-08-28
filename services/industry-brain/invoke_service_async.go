@@ -96,7 +96,8 @@ func CreateInvokeServiceAsyncRequest() (request *InvokeServiceAsyncRequest) {
 	request = &InvokeServiceAsyncRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("industry-brain", "2018-07-12", "InvokeServiceAsync", "", "")
+	request.InitWithApiInfo("industry-brain", "2019-06-29", "InvokeServiceAsync", "", "")
+	request.Method = requests.POST
 	return
 }
 

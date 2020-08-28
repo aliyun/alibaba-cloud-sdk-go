@@ -1,3 +1,7 @@
+2020-08-28 Version: v1.61.442
+- Generated 2019-06-29 for `industry-brain`.
+- Supported Add GetAlgorithmHistoryResult.
+
 2020-08-27 Version: v1.61.441
 - Generated 2017-11-10 for `Ens`.
 - Add Edge-Edge NetWork apis.

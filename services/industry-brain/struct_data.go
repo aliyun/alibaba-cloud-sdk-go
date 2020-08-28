@@ -17,7 +17,5 @@ package industry_brain
 
 // Data is a nested struct in industry_brain response
 type Data struct {
-	Property       string `json:"Property" xml:"Property"`
-	VariableType   string `json:"VariableType" xml:"VariableType"`
-	SelectieFilter string `json:"SelectieFilter" xml:"SelectieFilter"`
+	Region []Region `json:"Region" xml:"Region"`
 }

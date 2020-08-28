@@ -76,10 +76,13 @@ func (client *Client) InvokeServiceWithCallback(request *InvokeServiceRequest, c
 // InvokeServiceRequest is the request struct for api InvokeService
 type InvokeServiceRequest struct {
 	*requests.RpcRequest
-	RequestParams string           `position:"Query" name:"RequestParams"`
-	ServiceId     string           `position:"Query" name:"ServiceId"`
-	RequestData   string           `position:"Query" name:"RequestData"`
-	ShowParams    requests.Boolean `position:"Query" name:"ShowParams"`
+	RequestParams            string           `position:"Query" name:"RequestParams"`
+	ShowBizInfo              requests.Boolean `position:"Query" name:"ShowBizInfo"`
+	ForceInvokeConfiguration requests.Boolean `position:"Query" name:"ForceInvokeConfiguration"`
+	Context                  string           `position:"Query" name:"Context"`
+	ServiceId                string           `position:"Query" name:"ServiceId"`
+	RequestData              string           `position:"Query" name:"RequestData"`
+	ShowParams               requests.Boolean `position:"Query" name:"ShowParams"`
 }
 
 // InvokeServiceResponse is the response struct for api InvokeService
@@ -96,7 +99,8 @@ func CreateInvokeServiceRequest() (request *InvokeServiceRequest) {
 	request = &InvokeServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("industry-brain", "2018-07-12", "InvokeService", "", "")
+	request.InitWithApiInfo("industry-brain", "2019-06-29", "InvokeService", "", "")
+	request.Method = requests.POST
 	return
 }
 

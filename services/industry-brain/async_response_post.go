@@ -77,6 +77,7 @@ func (client *Client) AsyncResponsePostWithCallback(request *AsyncResponsePostRe
 type AsyncResponsePostRequest struct {
 	*requests.RpcRequest
 	Data     string         `position:"Query" name:"Data"`
+	Context  string         `position:"Query" name:"Context"`
 	Progress requests.Float `position:"Query" name:"Progress"`
 	Message  string         `position:"Query" name:"Message"`
 	TaskId   string         `position:"Query" name:"TaskId"`
@@ -98,7 +99,8 @@ func CreateAsyncResponsePostRequest() (request *AsyncResponsePostRequest) {
 	request = &AsyncResponsePostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("industry-brain", "2018-07-12", "AsyncResponsePost", "", "")
+	request.InitWithApiInfo("industry-brain", "2019-06-29", "AsyncResponsePost", "", "")
+	request.Method = requests.POST
 	return
 }
 
