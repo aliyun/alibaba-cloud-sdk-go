@@ -77,6 +77,7 @@ func (client *Client) InvokeServiceAsyncWithCallback(request *InvokeServiceAsync
 type InvokeServiceAsyncRequest struct {
 	*requests.RpcRequest
 	IsShowInput requests.Boolean `position:"Query" name:"IsShowInput"`
+	Context     string           `position:"Query" name:"Context"`
 	ServiceId   string           `position:"Query" name:"ServiceId"`
 	Params      string           `position:"Query" name:"Params"`
 	RequestData string           `position:"Query" name:"RequestData"`
@@ -96,7 +97,7 @@ func CreateInvokeServiceAsyncRequest() (request *InvokeServiceAsyncRequest) {
 	request = &InvokeServiceAsyncRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("industry-brain", "2019-06-29", "InvokeServiceAsync", "", "")
+	request.InitWithApiInfo("industry-brain", "2019-06-30", "InvokeServiceAsync", "", "")
 	request.Method = requests.POST
 	return
 }

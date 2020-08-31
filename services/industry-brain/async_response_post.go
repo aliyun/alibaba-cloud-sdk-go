@@ -99,7 +99,7 @@ func CreateAsyncResponsePostRequest() (request *AsyncResponsePostRequest) {
 	request = &AsyncResponsePostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("industry-brain", "2019-06-29", "AsyncResponsePost", "", "")
+	request.InitWithApiInfo("industry-brain", "2019-06-30", "AsyncResponsePost", "", "")
 	request.Method = requests.POST
 	return
 }

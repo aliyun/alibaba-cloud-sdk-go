@@ -96,7 +96,7 @@ func CreateGetAlgorithmHistoryResultRequest() (request *GetAlgorithmHistoryResul
 	request = &GetAlgorithmHistoryResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("industry-brain", "2019-06-29", "GetAlgorithmHistoryResult", "", "")
+	request.InitWithApiInfo("industry-brain", "2019-06-30", "GetAlgorithmHistoryResult", "", "")
 	request.Method = requests.GET
 	return
 }

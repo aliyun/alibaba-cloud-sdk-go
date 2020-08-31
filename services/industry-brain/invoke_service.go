@@ -99,7 +99,7 @@ func CreateInvokeServiceRequest() (request *InvokeServiceRequest) {
 	request = &InvokeServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("industry-brain", "2019-06-29", "InvokeService", "", "")
+	request.InitWithApiInfo("industry-brain", "2019-06-30", "InvokeService", "", "")
 	request.Method = requests.POST
 	return
 }

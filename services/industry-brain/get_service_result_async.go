@@ -94,8 +94,8 @@ func CreateGetServiceResultAsyncRequest() (request *GetServiceResultAsyncRequest
 	request = &GetServiceResultAsyncRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("industry-brain", "2019-06-29", "GetServiceResultAsync", "", "")
-	request.Method = requests.POST
+	request.InitWithApiInfo("industry-brain", "2019-06-30", "GetServiceResultAsync", "", "")
+	request.Method = requests.GET
 	return
 }
 
