@@ -29,7 +29,6 @@ type Data struct {
 	Age          string                          `json:"Age" xml:"Age"`
 	OssPath      string                          `json:"OssPath" xml:"OssPath"`
 	BizId        string                          `json:"BizId" xml:"BizId"`
-	Success      int64                           `json:"Success" xml:"Success"`
 	TaskId       string                          `json:"TaskId" xml:"TaskId"`
 	Description  string                          `json:"Description" xml:"Description"`
 	LiveAddress  string                          `json:"LiveAddress" xml:"LiveAddress"`
@@ -45,6 +44,7 @@ type Data struct {
 	FaceImageUrl string                          `json:"FaceImageUrl" xml:"FaceImageUrl"`
 	IdNumber     string                          `json:"IdNumber" xml:"IdNumber"`
 	Gender       string                          `json:"Gender" xml:"Gender"`
+	Success      bool                            `json:"Success" xml:"Success"`
 	QualityScore string                          `json:"QualityScore" xml:"QualityScore"`
 	UserName     string                          `json:"UserName" xml:"UserName"`
 	PicUrl       string                          `json:"PicUrl" xml:"PicUrl"`
