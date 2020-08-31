@@ -105,7 +105,7 @@ func CreateUpdateMonitorRequest() (request *UpdateMonitorRequest) {
 	request = &UpdateMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "UpdateMonitor", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "UpdateMonitor", "", "")
 	request.Method = requests.POST
 	return
 }

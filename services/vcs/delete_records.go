@@ -97,7 +97,7 @@ func CreateDeleteRecordsRequest() (request *DeleteRecordsRequest) {
 	request = &DeleteRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "DeleteRecords", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "DeleteRecords", "", "")
 	request.Method = requests.POST
 	return
 }

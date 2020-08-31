@@ -78,10 +78,13 @@ type ListPersonVisitCountRequest struct {
 	*requests.RpcRequest
 	CorpId            string           `position:"Body" name:"CorpId"`
 	EndTime           string           `position:"Body" name:"EndTime"`
+	CountType         string           `position:"Body" name:"CountType"`
 	StartTime         string           `position:"Body" name:"StartTime"`
 	PageNumber        requests.Integer `position:"Body" name:"PageNumber"`
 	TimeAggregateType string           `position:"Body" name:"TimeAggregateType"`
+	MaxVal            string           `position:"Body" name:"MaxVal"`
 	TagCode           string           `position:"Body" name:"TagCode"`
+	MinVal            string           `position:"Body" name:"MinVal"`
 	PageSize          requests.Integer `position:"Body" name:"PageSize"`
 	AggregateType     string           `position:"Body" name:"AggregateType"`
 }
@@ -104,7 +107,7 @@ func CreateListPersonVisitCountRequest() (request *ListPersonVisitCountRequest) 
 	request = &ListPersonVisitCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListPersonVisitCount", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListPersonVisitCount", "", "")
 	request.Method = requests.POST
 	return
 }

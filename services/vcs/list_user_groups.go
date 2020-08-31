@@ -94,7 +94,7 @@ func CreateListUserGroupsRequest() (request *ListUserGroupsRequest) {
 	request = &ListUserGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListUserGroups", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListUserGroups", "", "")
 	request.Method = requests.POST
 	return
 }

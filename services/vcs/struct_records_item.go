@@ -41,6 +41,7 @@ type RecordsItem struct {
 	MotorId            string        `json:"MotorId" xml:"MotorId"`
 	PlateClass         string        `json:"PlateClass" xml:"PlateClass"`
 	UserGroupId        int           `json:"UserGroupId" xml:"UserGroupId"`
+	LastShotTime       int64         `json:"LastShotTime" xml:"LastShotTime"`
 	GlassStyle         int           `json:"GlassStyle" xml:"GlassStyle"`
 	TagCode            string        `json:"TagCode" xml:"TagCode"`
 	Gender             string        `json:"Gender" xml:"Gender"`

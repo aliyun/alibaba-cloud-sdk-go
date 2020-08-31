@@ -96,7 +96,7 @@ func CreateUpdateUserGroupRequest() (request *UpdateUserGroupRequest) {
 	request = &UpdateUserGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "UpdateUserGroup", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "UpdateUserGroup", "", "")
 	request.Method = requests.POST
 	return
 }

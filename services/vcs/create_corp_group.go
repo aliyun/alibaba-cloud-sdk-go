@@ -95,7 +95,7 @@ func CreateCreateCorpGroupRequest() (request *CreateCorpGroupRequest) {
 	request = &CreateCorpGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "CreateCorpGroup", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "CreateCorpGroup", "", "")
 	request.Method = requests.POST
 	return
 }
