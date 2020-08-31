@@ -97,7 +97,7 @@ func CreateSyncDeviceTimeRequest() (request *SyncDeviceTimeRequest) {
 	request = &SyncDeviceTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "SyncDeviceTime", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "SyncDeviceTime", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

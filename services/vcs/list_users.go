@@ -76,30 +76,33 @@ func (client *Client) ListUsersWithCallback(request *ListUsersRequest, callback 
 // ListUsersRequest is the request struct for api ListUsers
 type ListUsersRequest struct {
 	*requests.RpcRequest
-	CorpId       string           `position:"Body" name:"CorpId"`
-	Gender       requests.Integer `position:"Body" name:"Gender"`
-	PlateNo      string           `position:"Body" name:"PlateNo"`
-	IdNumber     string           `position:"Body" name:"IdNumber"`
-	FaceImageUrl string           `position:"Body" name:"FaceImageUrl"`
-	PageNumber   requests.Integer `position:"Body" name:"PageNumber"`
-	Attachment   string           `position:"Body" name:"Attachment"`
-	PageSize     requests.Integer `position:"Body" name:"PageSize"`
-	IsvSubId     string           `position:"Body" name:"IsvSubId"`
-	Address      string           `position:"Body" name:"Address"`
-	UserGroupId  requests.Integer `position:"Body" name:"UserGroupId"`
-	PhoneNo      string           `position:"Body" name:"PhoneNo"`
-	BizId        string           `position:"Body" name:"BizId"`
-	Age          requests.Integer `position:"Body" name:"Age"`
-	UserName     string           `position:"Body" name:"UserName"`
+	UserList              map[string]interface{} `position:"Body" name:"UserList"`
+	CorpId                string                 `position:"Body" name:"CorpId"`
+	Gender                requests.Integer       `position:"Body" name:"Gender"`
+	PlateNo               string                 `position:"Body" name:"PlateNo"`
+	IdNumber              string                 `position:"Body" name:"IdNumber"`
+	FaceImageUrl          string                 `position:"Body" name:"FaceImageUrl"`
+	PersonList            map[string]interface{} `position:"Body" name:"PersonList"`
+	PageNumber            requests.Integer       `position:"Body" name:"PageNumber"`
+	Attachment            string                 `position:"Body" name:"Attachment"`
+	PageSize              requests.Integer       `position:"Body" name:"PageSize"`
+	IsvSubId              string                 `position:"Body" name:"IsvSubId"`
+	Address               string                 `position:"Body" name:"Address"`
+	UserGroupId           requests.Integer       `position:"Body" name:"UserGroupId"`
+	PhoneNo               string                 `position:"Body" name:"PhoneNo"`
+	BizId                 string                 `position:"Body" name:"BizId"`
+	Age                   requests.Integer       `position:"Body" name:"Age"`
+	MatchingRateThreshold string                 `position:"Body" name:"MatchingRateThreshold"`
+	UserName              string                 `position:"Body" name:"UserName"`
 }
 
 // ListUsersResponse is the response struct for api ListUsers
 type ListUsersResponse struct {
 	*responses.BaseResponse
-	Code      string          `json:"Code" xml:"Code"`
-	Message   string          `json:"Message" xml:"Message"`
-	RequestId string          `json:"RequestId" xml:"RequestId"`
-	Data      DataInListUsers `json:"Data" xml:"Data"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateListUsersRequest creates a request to invoke ListUsers API
@@ -107,7 +110,7 @@ func CreateListUsersRequest() (request *ListUsersRequest) {
 	request = &ListUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListUsers", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListUsers", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

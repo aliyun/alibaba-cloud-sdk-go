@@ -96,7 +96,7 @@ func CreateInvokeMotorModelRequest() (request *InvokeMotorModelRequest) {
 	request = &InvokeMotorModelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "InvokeMotorModel", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "InvokeMotorModel", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

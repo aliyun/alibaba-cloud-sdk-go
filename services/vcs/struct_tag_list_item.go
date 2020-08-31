@@ -17,11 +17,8 @@ package vcs
 
 // TagListItem is a nested struct in vcs response
 type TagListItem struct {
-	TagCodeName string `json:"TagCodeName" xml:"TagCodeName"`
-	Value       string `json:"Value" xml:"Value"`
-	TagCode     string `json:"TagCode" xml:"TagCode"`
-	TagName     string `json:"TagName" xml:"TagName"`
-	TagValueId  string `json:"TagValueId" xml:"TagValueId"`
-	Code        string `json:"Code" xml:"Code"`
-	TagValue    string `json:"TagValue" xml:"TagValue"`
+	TagCode    string `json:"TagCode" xml:"TagCode"`
+	TagName    string `json:"TagName" xml:"TagName"`
+	TagValueId string `json:"TagValueId" xml:"TagValueId"`
+	TagValue   string `json:"TagValue" xml:"TagValue"`
 }

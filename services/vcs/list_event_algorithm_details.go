@@ -107,7 +107,7 @@ func CreateListEventAlgorithmDetailsRequest() (request *ListEventAlgorithmDetail
 	request = &ListEventAlgorithmDetailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListEventAlgorithmDetails", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListEventAlgorithmDetails", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -95,7 +95,7 @@ func CreateDeleteUserGroupRequest() (request *DeleteUserGroupRequest) {
 	request = &DeleteUserGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "DeleteUserGroup", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "DeleteUserGroup", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

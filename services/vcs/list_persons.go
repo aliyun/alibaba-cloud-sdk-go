@@ -87,10 +87,10 @@ type ListPersonsRequest struct {
 // ListPersonsResponse is the response struct for api ListPersons
 type ListPersonsResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      string            `json:"Code" xml:"Code"`
+	Message   string            `json:"Message" xml:"Message"`
+	RequestId string            `json:"RequestId" xml:"RequestId"`
+	Data      DataInListPersons `json:"Data" xml:"Data"`
 }
 
 // CreateListPersonsRequest creates a request to invoke ListPersons API
@@ -98,7 +98,7 @@ func CreateListPersonsRequest() (request *ListPersonsRequest) {
 	request = &ListPersonsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListPersons", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListPersons", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

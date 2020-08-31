@@ -100,7 +100,7 @@ func CreateListBodyAlgorithmResultsRequest() (request *ListBodyAlgorithmResultsR
 	request = &ListBodyAlgorithmResultsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListBodyAlgorithmResults", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListBodyAlgorithmResults", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

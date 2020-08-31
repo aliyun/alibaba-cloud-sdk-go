@@ -76,10 +76,13 @@ func (client *Client) GetPersonListWithCallback(request *GetPersonListRequest, c
 // GetPersonListRequest is the request struct for api GetPersonList
 type GetPersonListRequest struct {
 	*requests.RpcRequest
-	FaceImageUrl string `position:"Body" name:"FaceImageUrl"`
-	PageNumber   string `position:"Body" name:"PageNumber"`
-	CorpIdList   string `position:"Body" name:"CorpIdList"`
-	PageSize     string `position:"Body" name:"PageSize"`
+	CorpId                    string                 `position:"Body" name:"CorpId"`
+	FaceMatchingRateThreshold string                 `position:"Body" name:"FaceMatchingRateThreshold"`
+	PageNumber                requests.Integer       `position:"Body" name:"PageNumber"`
+	CorpIdList                map[string]interface{} `position:"Body" name:"CorpIdList"`
+	FaceUrl                   string                 `position:"Body" name:"FaceUrl"`
+	PageSize                  requests.Integer       `position:"Body" name:"PageSize"`
+	PersonIdList              map[string]interface{} `position:"Body" name:"PersonIdList"`
 }
 
 // GetPersonListResponse is the response struct for api GetPersonList
@@ -96,7 +99,7 @@ func CreateGetPersonListRequest() (request *GetPersonListRequest) {
 	request = &GetPersonListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "GetPersonList", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetPersonList", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

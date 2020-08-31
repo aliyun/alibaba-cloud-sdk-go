@@ -104,7 +104,7 @@ func CreateListPersonVisitCountRequest() (request *ListPersonVisitCountRequest) 
 	request = &ListPersonVisitCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListPersonVisitCount", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListPersonVisitCount", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }
