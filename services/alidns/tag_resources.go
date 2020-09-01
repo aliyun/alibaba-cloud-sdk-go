@@ -102,6 +102,7 @@ func CreateTagResourcesRequest() (request *TagResourcesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "TagResources", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

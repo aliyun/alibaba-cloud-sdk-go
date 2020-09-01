@@ -97,6 +97,7 @@ func CreateDescribeRecordStatisticsRequest() (request *DescribeRecordStatisticsR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeRecordStatistics", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

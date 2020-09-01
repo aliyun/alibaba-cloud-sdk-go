@@ -102,6 +102,7 @@ func CreateDescribeSubDomainRecordsRequest() (request *DescribeSubDomainRecordsR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeSubDomainRecords", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -96,6 +96,7 @@ func CreateUpdateDNSSLBWeightRequest() (request *UpdateDNSSLBWeightRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "UpdateDNSSLBWeight", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

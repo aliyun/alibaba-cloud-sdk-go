@@ -101,6 +101,7 @@ func CreateDescribeCustomLineRequest() (request *DescribeCustomLineRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeCustomLine", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

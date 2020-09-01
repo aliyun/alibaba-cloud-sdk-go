@@ -102,6 +102,7 @@ func CreateDescribeTransferDomainsRequest() (request *DescribeTransferDomainsReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeTransferDomains", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

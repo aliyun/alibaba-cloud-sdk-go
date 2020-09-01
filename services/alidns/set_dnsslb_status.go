@@ -98,6 +98,7 @@ func CreateSetDNSSLBStatusRequest() (request *SetDNSSLBStatusRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "SetDNSSLBStatus", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

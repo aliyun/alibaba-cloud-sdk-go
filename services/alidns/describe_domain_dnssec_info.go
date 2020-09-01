@@ -102,6 +102,7 @@ func CreateDescribeDomainDnssecInfoRequest() (request *DescribeDomainDnssecInfoR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDomainDnssecInfo", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

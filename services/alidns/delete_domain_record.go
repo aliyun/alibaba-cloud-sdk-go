@@ -94,6 +94,7 @@ func CreateDeleteDomainRecordRequest() (request *DeleteDomainRecordRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "DeleteDomainRecord", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

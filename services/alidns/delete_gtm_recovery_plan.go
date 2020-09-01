@@ -93,6 +93,7 @@ func CreateDeleteGtmRecoveryPlanRequest() (request *DeleteGtmRecoveryPlanRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "DeleteGtmRecoveryPlan", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

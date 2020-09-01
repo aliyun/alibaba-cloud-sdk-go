@@ -108,6 +108,7 @@ func CreateDescribeGtmAccessStrategyRequest() (request *DescribeGtmAccessStrateg
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeGtmAccessStrategy", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -100,6 +100,7 @@ func CreateDescribeGtmRecoveryPlansRequest() (request *DescribeGtmRecoveryPlansR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeGtmRecoveryPlans", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -93,6 +93,7 @@ func CreateExecuteGtmRecoveryPlanRequest() (request *ExecuteGtmRecoveryPlanReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "ExecuteGtmRecoveryPlan", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

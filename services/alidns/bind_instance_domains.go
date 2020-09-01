@@ -96,6 +96,7 @@ func CreateBindInstanceDomainsRequest() (request *BindInstanceDomainsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "BindInstanceDomains", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

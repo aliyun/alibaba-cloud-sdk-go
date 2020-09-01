@@ -104,6 +104,7 @@ func CreateDescribeGtmMonitorConfigRequest() (request *DescribeGtmMonitorConfigR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeGtmMonitorConfig", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

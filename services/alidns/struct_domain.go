@@ -34,6 +34,7 @@ type Domain struct {
 	Starmark        bool                        `json:"Starmark" xml:"Starmark"`
 	CreateTime      string                      `json:"CreateTime" xml:"CreateTime"`
 	CreateTimestamp int64                       `json:"CreateTimestamp" xml:"CreateTimestamp"`
+	ResourceGroupId string                      `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DnsServers      DnsServersInDescribeDomains `json:"DnsServers" xml:"DnsServers"`
 	Tags            TagsInDescribeDomains       `json:"Tags" xml:"Tags"`
 }

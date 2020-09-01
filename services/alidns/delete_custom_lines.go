@@ -93,6 +93,7 @@ func CreateDeleteCustomLinesRequest() (request *DeleteCustomLinesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "DeleteCustomLines", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

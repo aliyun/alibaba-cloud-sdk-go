@@ -103,6 +103,7 @@ func CreateDescribeGtmLogsRequest() (request *DescribeGtmLogsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeGtmLogs", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -94,6 +94,7 @@ func CreateUpdateDomainRecordRemarkRequest() (request *UpdateDomainRecordRemarkR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "UpdateDomainRecordRemark", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

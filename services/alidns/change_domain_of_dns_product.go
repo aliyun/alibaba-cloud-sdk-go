@@ -96,6 +96,7 @@ func CreateChangeDomainOfDnsProductRequest() (request *ChangeDomainOfDnsProductR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "ChangeDomainOfDnsProduct", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

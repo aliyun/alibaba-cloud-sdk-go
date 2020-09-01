@@ -96,6 +96,7 @@ func CreateUnbindInstanceDomainsRequest() (request *UnbindInstanceDomainsRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "UnbindInstanceDomains", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

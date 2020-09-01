@@ -95,6 +95,7 @@ func CreateCopyGtmConfigRequest() (request *CopyGtmConfigRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "CopyGtmConfig", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

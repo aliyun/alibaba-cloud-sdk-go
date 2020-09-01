@@ -103,6 +103,7 @@ type DescribeDomainInfoResponse struct {
 	InBlackHole        bool                            `json:"InBlackHole" xml:"InBlackHole"`
 	InClean            bool                            `json:"InClean" xml:"InClean"`
 	SlaveDns           bool                            `json:"SlaveDns" xml:"SlaveDns"`
+	ResourceGroupId    string                          `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DnsServers         DnsServersInDescribeDomainInfo  `json:"DnsServers" xml:"DnsServers"`
 	AvailableTtls      AvailableTtls                   `json:"AvailableTtls" xml:"AvailableTtls"`
 	RecordLines        RecordLinesInDescribeDomainInfo `json:"RecordLines" xml:"RecordLines"`
@@ -114,6 +115,7 @@ func CreateDescribeDomainInfoRequest() (request *DescribeDomainInfoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDomainInfo", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

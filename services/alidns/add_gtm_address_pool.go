@@ -119,6 +119,7 @@ func CreateAddGtmAddressPoolRequest() (request *AddGtmAddressPoolRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Alidns", "2015-01-09", "AddGtmAddressPool", "alidns", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
