@@ -77,13 +77,16 @@ func (client *Client) InitSmartVerifyWithCallback(request *InitSmartVerifyReques
 type InitSmartVerifyRequest struct {
 	*requests.RpcRequest
 	Ip           string           `position:"Body" name:"Ip"`
+	CertName     string           `position:"Body" name:"CertName"`
 	Mobile       string           `position:"Body" name:"Mobile"`
 	UserId       string           `position:"Body" name:"UserId"`
 	Mode         string           `position:"Body" name:"Mode"`
+	CertNo       string           `position:"Body" name:"CertNo"`
 	OuterOrderNo string           `position:"Body" name:"OuterOrderNo"`
 	CertType     string           `position:"Body" name:"CertType"`
 	SceneId      requests.Integer `position:"Body" name:"SceneId"`
 	MetaInfo     string           `position:"Body" name:"MetaInfo"`
+	Ocr          string           `position:"Body" name:"Ocr"`
 }
 
 // InitSmartVerifyResponse is the response struct for api InitSmartVerify
