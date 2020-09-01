@@ -82,9 +82,9 @@ type ListPersonVisitCountRequest struct {
 	StartTime         string           `position:"Body" name:"StartTime"`
 	PageNumber        requests.Integer `position:"Body" name:"PageNumber"`
 	TimeAggregateType string           `position:"Body" name:"TimeAggregateType"`
-	MaxVal            string           `position:"Body" name:"MaxVal"`
+	MaxVal            requests.Integer `position:"Body" name:"MaxVal"`
 	TagCode           string           `position:"Body" name:"TagCode"`
-	MinVal            string           `position:"Body" name:"MinVal"`
+	MinVal            requests.Integer `position:"Body" name:"MinVal"`
 	PageSize          requests.Integer `position:"Body" name:"PageSize"`
 	AggregateType     string           `position:"Body" name:"AggregateType"`
 }
