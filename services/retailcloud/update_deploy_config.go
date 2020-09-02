@@ -101,7 +101,7 @@ func CreateUpdateDeployConfigRequest() (request *UpdateDeployConfigRequest) {
 	request = &UpdateDeployConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "UpdateDeployConfig", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "UpdateDeployConfig", "", "")
 	request.Method = requests.POST
 	return
 }

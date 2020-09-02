@@ -107,7 +107,7 @@ func CreateUpdateAppRequest() (request *UpdateAppRequest) {
 	request = &UpdateAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "UpdateApp", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "UpdateApp", "", "")
 	request.Method = requests.POST
 	return
 }

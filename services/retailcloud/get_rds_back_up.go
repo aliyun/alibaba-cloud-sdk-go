@@ -97,7 +97,7 @@ func CreateGetRdsBackUpRequest() (request *GetRdsBackUpRequest) {
 	request = &GetRdsBackUpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "GetRdsBackUp", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "GetRdsBackUp", "", "")
 	request.Method = requests.POST
 	return
 }

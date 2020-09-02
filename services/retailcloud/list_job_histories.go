@@ -100,7 +100,7 @@ func CreateListJobHistoriesRequest() (request *ListJobHistoriesRequest) {
 	request = &ListJobHistoriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListJobHistories", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListJobHistories", "", "")
 	request.Method = requests.GET
 	return
 }

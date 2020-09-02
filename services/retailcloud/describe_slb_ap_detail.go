@@ -94,7 +94,7 @@ func CreateDescribeSlbAPDetailRequest() (request *DescribeSlbAPDetailRequest) {
 	request = &DescribeSlbAPDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeSlbAPDetail", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeSlbAPDetail", "", "")
 	request.Method = requests.POST
 	return
 }

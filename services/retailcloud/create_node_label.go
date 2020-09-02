@@ -96,7 +96,7 @@ func CreateCreateNodeLabelRequest() (request *CreateNodeLabelRequest) {
 	request = &CreateNodeLabelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateNodeLabel", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "CreateNodeLabel", "", "")
 	request.Method = requests.POST
 	return
 }

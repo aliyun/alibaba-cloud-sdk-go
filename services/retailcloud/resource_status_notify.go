@@ -89,7 +89,7 @@ func CreateResourceStatusNotifyRequest() (request *ResourceStatusNotifyRequest) 
 	request = &ResourceStatusNotifyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ResourceStatusNotify", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ResourceStatusNotify", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -94,7 +94,7 @@ func CreateDescribeRdsAccountsRequest() (request *DescribeRdsAccountsRequest) {
 	request = &DescribeRdsAccountsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeRdsAccounts", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeRdsAccounts", "", "")
 	request.Method = requests.GET
 	return
 }

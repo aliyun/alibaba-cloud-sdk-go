@@ -96,7 +96,7 @@ func CreateUnbindNodeLabelRequest() (request *UnbindNodeLabelRequest) {
 	request = &UnbindNodeLabelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "UnbindNodeLabel", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "UnbindNodeLabel", "", "")
 	request.Method = requests.POST
 	return
 }

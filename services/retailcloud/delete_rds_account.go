@@ -94,7 +94,7 @@ func CreateDeleteRdsAccountRequest() (request *DeleteRdsAccountRequest) {
 	request = &DeleteRdsAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteRdsAccount", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteRdsAccount", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -95,7 +95,7 @@ func CreateDescribeJobLogRequest() (request *DescribeJobLogRequest) {
 	request = &DescribeJobLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeJobLog", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DescribeJobLog", "", "")
 	request.Method = requests.GET
 	return
 }

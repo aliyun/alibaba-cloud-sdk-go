@@ -42,6 +42,7 @@ type Result struct {
 	PersistentVolumeClaimId int64                `json:"PersistentVolumeClaimId" xml:"PersistentVolumeClaimId"`
 	SlbId                   string               `json:"SlbId" xml:"SlbId"`
 	ClusterIP               string               `json:"ClusterIP" xml:"ClusterIP"`
+	ConfigData              string               `json:"ConfigData" xml:"ConfigData"`
 	Name                    string               `json:"Name" xml:"Name"`
 	Region                  string               `json:"Region" xml:"Region"`
 	BizTitle                string               `json:"BizTitle" xml:"BizTitle"`

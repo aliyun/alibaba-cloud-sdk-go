@@ -94,7 +94,7 @@ func CreateDeleteAppDetailRequest() (request *DeleteAppDetailRequest) {
 	request = &DeleteAppDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteAppDetail", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteAppDetail", "", "")
 	request.Method = requests.GET
 	return
 }

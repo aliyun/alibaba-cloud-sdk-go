@@ -95,7 +95,7 @@ func CreateDeletePersistentVolumeClaimRequest() (request *DeletePersistentVolume
 	request = &DeletePersistentVolumeClaimRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeletePersistentVolumeClaim", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeletePersistentVolumeClaim", "", "")
 	request.Method = requests.POST
 	return
 }

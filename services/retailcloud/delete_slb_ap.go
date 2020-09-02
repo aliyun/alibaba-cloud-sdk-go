@@ -93,7 +93,7 @@ func CreateDeleteSlbAPRequest() (request *DeleteSlbAPRequest) {
 	request = &DeleteSlbAPRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteSlbAP", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "DeleteSlbAP", "", "")
 	request.Method = requests.POST
 	return
 }

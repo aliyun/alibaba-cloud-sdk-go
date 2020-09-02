@@ -95,7 +95,7 @@ func CreateListAppRequest() (request *ListAppRequest) {
 	request = &ListAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListApp", "retailcloud", "openAPI")
+	request.InitWithApiInfo("retailcloud", "2018-03-13", "ListApp", "", "")
 	request.Method = requests.GET
 	return
 }
