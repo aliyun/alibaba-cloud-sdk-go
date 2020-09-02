@@ -82,6 +82,7 @@ type PushRequest struct {
 	DeviceType                       string           `position:"Query" name:"DeviceType"`
 	PushTime                         string           `position:"Query" name:"PushTime"`
 	SendSpeed                        requests.Integer `position:"Query" name:"SendSpeed"`
+	AndroidNotificationHuaweiChannel string           `position:"Query" name:"AndroidNotificationHuaweiChannel"`
 	AndroidPopupActivity             string           `position:"Query" name:"AndroidPopupActivity"`
 	IOSRemindBody                    string           `position:"Query" name:"iOSRemindBody"`
 	AndroidNotifyType                string           `position:"Query" name:"AndroidNotifyType"`

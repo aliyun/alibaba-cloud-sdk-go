@@ -92,6 +92,7 @@ type MassPushPushTask struct {
 	DeviceType                       string `name:"DeviceType"`
 	PushTime                         string `name:"PushTime"`
 	SendSpeed                        string `name:"SendSpeed"`
+	AndroidNotificationHuaweiChannel string `name:"AndroidNotificationHuaweiChannel"`
 	AndroidPopupActivity             string `name:"AndroidPopupActivity"`
 	IOSRemindBody                    string `name:"iOSRemindBody"`
 	IOSExtParameters                 string `name:"iOSExtParameters"`
