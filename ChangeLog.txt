@@ -1,3 +1,7 @@
+2020-09-02 Version: v1.61.459
+- Generated 2016-08-01 for `Push`.
+- Supported AndroidNotificationHuaweiChannel for Push and MassPush.
+
 2020-09-01 Version: v1.61.458
 - Generated 2019-03-07, 2018-09-16, 2020-06-18 for `Cloudauth`.
 - Add Smart Verify API.
