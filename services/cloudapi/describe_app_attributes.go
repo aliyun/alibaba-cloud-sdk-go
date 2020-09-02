@@ -76,6 +76,7 @@ func (client *Client) DescribeAppAttributesWithCallback(request *DescribeAppAttr
 // DescribeAppAttributesRequest is the request struct for api DescribeAppAttributes
 type DescribeAppAttributesRequest struct {
 	*requests.RpcRequest
+	Sort          string                      `position:"Query" name:"Sort"`
 	EnableTagAuth requests.Boolean            `position:"Query" name:"EnableTagAuth"`
 	PageNumber    requests.Integer            `position:"Query" name:"PageNumber"`
 	AppName       string                      `position:"Query" name:"AppName"`

@@ -90,32 +90,34 @@ type DescribeApiGroupTag struct {
 // DescribeApiGroupResponse is the response struct for api DescribeApiGroup
 type DescribeApiGroupResponse struct {
 	*responses.BaseResponse
-	RequestId           string        `json:"RequestId" xml:"RequestId"`
-	GroupId             string        `json:"GroupId" xml:"GroupId"`
-	GroupName           string        `json:"GroupName" xml:"GroupName"`
-	SubDomain           string        `json:"SubDomain" xml:"SubDomain"`
-	Description         string        `json:"Description" xml:"Description"`
-	CreatedTime         string        `json:"CreatedTime" xml:"CreatedTime"`
-	ModifiedTime        string        `json:"ModifiedTime" xml:"ModifiedTime"`
-	RegionId            string        `json:"RegionId" xml:"RegionId"`
-	Status              string        `json:"Status" xml:"Status"`
-	BillingStatus       string        `json:"BillingStatus" xml:"BillingStatus"`
-	IllegalStatus       string        `json:"IllegalStatus" xml:"IllegalStatus"`
-	Ipv6Status          string        `json:"Ipv6Status" xml:"Ipv6Status"`
-	TrafficLimit        int           `json:"TrafficLimit" xml:"TrafficLimit"`
-	VpcDomain           string        `json:"VpcDomain" xml:"VpcDomain"`
-	InstanceType        string        `json:"InstanceType" xml:"InstanceType"`
-	InstanceId          string        `json:"InstanceId" xml:"InstanceId"`
-	InstanceVipList     string        `json:"InstanceVipList" xml:"InstanceVipList"`
-	HttpsPolicy         string        `json:"HttpsPolicy" xml:"HttpsPolicy"`
-	UserLogConfig       string        `json:"UserLogConfig" xml:"UserLogConfig"`
-	CustomTraceConfig   string        `json:"CustomTraceConfig" xml:"CustomTraceConfig"`
-	PassthroughHeaders  string        `json:"PassthroughHeaders" xml:"PassthroughHeaders"`
-	RpcPattern          string        `json:"RpcPattern" xml:"RpcPattern"`
-	CompatibleFlags     string        `json:"CompatibleFlags" xml:"CompatibleFlags"`
-	ClassicVpcSubDomain string        `json:"ClassicVpcSubDomain" xml:"ClassicVpcSubDomain"`
-	CustomDomains       CustomDomains `json:"CustomDomains" xml:"CustomDomains"`
-	StageItems          StageItems    `json:"StageItems" xml:"StageItems"`
+	RequestId            string        `json:"RequestId" xml:"RequestId"`
+	GroupId              string        `json:"GroupId" xml:"GroupId"`
+	GroupName            string        `json:"GroupName" xml:"GroupName"`
+	SubDomain            string        `json:"SubDomain" xml:"SubDomain"`
+	Description          string        `json:"Description" xml:"Description"`
+	CreatedTime          string        `json:"CreatedTime" xml:"CreatedTime"`
+	ModifiedTime         string        `json:"ModifiedTime" xml:"ModifiedTime"`
+	RegionId             string        `json:"RegionId" xml:"RegionId"`
+	Status               string        `json:"Status" xml:"Status"`
+	BillingStatus        string        `json:"BillingStatus" xml:"BillingStatus"`
+	IllegalStatus        string        `json:"IllegalStatus" xml:"IllegalStatus"`
+	Ipv6Status           string        `json:"Ipv6Status" xml:"Ipv6Status"`
+	TrafficLimit         int           `json:"TrafficLimit" xml:"TrafficLimit"`
+	VpcDomain            string        `json:"VpcDomain" xml:"VpcDomain"`
+	InstanceType         string        `json:"InstanceType" xml:"InstanceType"`
+	InstanceId           string        `json:"InstanceId" xml:"InstanceId"`
+	InstanceVipList      string        `json:"InstanceVipList" xml:"InstanceVipList"`
+	HttpsPolicy          string        `json:"HttpsPolicy" xml:"HttpsPolicy"`
+	UserLogConfig        string        `json:"UserLogConfig" xml:"UserLogConfig"`
+	CustomTraceConfig    string        `json:"CustomTraceConfig" xml:"CustomTraceConfig"`
+	PassthroughHeaders   string        `json:"PassthroughHeaders" xml:"PassthroughHeaders"`
+	DefaultDomain        string        `json:"DefaultDomain" xml:"DefaultDomain"`
+	RpcPattern           string        `json:"RpcPattern" xml:"RpcPattern"`
+	CompatibleFlags      string        `json:"CompatibleFlags" xml:"CompatibleFlags"`
+	ClassicVpcSubDomain  string        `json:"ClassicVpcSubDomain" xml:"ClassicVpcSubDomain"`
+	VpcSlbIntranetDomain string        `json:"VpcSlbIntranetDomain" xml:"VpcSlbIntranetDomain"`
+	CustomDomains        CustomDomains `json:"CustomDomains" xml:"CustomDomains"`
+	StageItems           StageItems    `json:"StageItems" xml:"StageItems"`
 }
 
 // CreateDescribeApiGroupRequest creates a request to invoke DescribeApiGroup API

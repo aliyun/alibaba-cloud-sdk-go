@@ -76,14 +76,17 @@ func (client *Client) DescribeApiGroupsWithCallback(request *DescribeApiGroupsRe
 // DescribeApiGroupsRequest is the request struct for api DescribeApiGroups
 type DescribeApiGroupsRequest struct {
 	*requests.RpcRequest
-	GroupId       string                  `position:"Query" name:"GroupId"`
-	EnableTagAuth requests.Boolean        `position:"Query" name:"EnableTagAuth"`
-	GroupName     string                  `position:"Query" name:"GroupName"`
-	PageNumber    requests.Integer        `position:"Query" name:"PageNumber"`
-	InstanceId    string                  `position:"Query" name:"InstanceId"`
-	SecurityToken string                  `position:"Query" name:"SecurityToken"`
-	PageSize      requests.Integer        `position:"Query" name:"PageSize"`
-	Tag           *[]DescribeApiGroupsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	GroupId               string                  `position:"Query" name:"GroupId"`
+	Sort                  string                  `position:"Query" name:"Sort"`
+	EnableTagAuth         requests.Boolean        `position:"Query" name:"EnableTagAuth"`
+	GroupName             string                  `position:"Query" name:"GroupName"`
+	PageNumber            requests.Integer        `position:"Query" name:"PageNumber"`
+	DisableAuthForConsole requests.Boolean        `position:"Query" name:"DisableAuthForConsole"`
+	InstanceId            string                  `position:"Query" name:"InstanceId"`
+	SecurityToken         string                  `position:"Query" name:"SecurityToken"`
+	PageSize              requests.Integer        `position:"Query" name:"PageSize"`
+	Tag                   *[]DescribeApiGroupsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	NotClassic            requests.Boolean        `position:"Query" name:"NotClassic"`
 }
 
 // DescribeApiGroupsTag is a repeated param struct in DescribeApiGroupsRequest

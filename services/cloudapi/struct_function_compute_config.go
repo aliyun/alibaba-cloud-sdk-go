@@ -17,8 +17,15 @@ package cloudapi
 
 // FunctionComputeConfig is a nested struct in cloudapi response
 type FunctionComputeConfig struct {
-	RegionId     string `json:"RegionId" xml:"RegionId"`
-	ServiceName  string `json:"ServiceName" xml:"ServiceName"`
-	RoleArn      string `json:"RoleArn" xml:"RoleArn"`
-	FunctionName string `json:"FunctionName" xml:"FunctionName"`
+	FcType              string `json:"FcType" xml:"FcType"`
+	Qualifier           string `json:"Qualifier" xml:"Qualifier"`
+	Path                string `json:"Path" xml:"Path"`
+	ContentTypeCatagory string `json:"ContentTypeCatagory" xml:"ContentTypeCatagory"`
+	RegionId            string `json:"RegionId" xml:"RegionId"`
+	ContentTypeValue    string `json:"ContentTypeValue" xml:"ContentTypeValue"`
+	Method              string `json:"Method" xml:"Method"`
+	FcBaseUrl           string `json:"FcBaseUrl" xml:"FcBaseUrl"`
+	ServiceName         string `json:"ServiceName" xml:"ServiceName"`
+	RoleArn             string `json:"RoleArn" xml:"RoleArn"`
+	FunctionName        string `json:"FunctionName" xml:"FunctionName"`
 }

@@ -17,17 +17,18 @@ package cloudapi
 
 // ApiGroupAttribute is a nested struct in cloudapi response
 type ApiGroupAttribute struct {
-	GroupId       string `json:"GroupId" xml:"GroupId"`
-	GroupName     string `json:"GroupName" xml:"GroupName"`
-	SubDomain     string `json:"SubDomain" xml:"SubDomain"`
-	Description   string `json:"Description" xml:"Description"`
-	CreatedTime   string `json:"CreatedTime" xml:"CreatedTime"`
-	ModifiedTime  string `json:"ModifiedTime" xml:"ModifiedTime"`
-	RegionId      string `json:"RegionId" xml:"RegionId"`
-	TrafficLimit  int    `json:"TrafficLimit" xml:"TrafficLimit"`
-	BillingStatus string `json:"BillingStatus" xml:"BillingStatus"`
-	IllegalStatus string `json:"IllegalStatus" xml:"IllegalStatus"`
-	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
-	InstanceType  string `json:"InstanceType" xml:"InstanceType"`
-	HttpsPolicy   string `json:"HttpsPolicy" xml:"HttpsPolicy"`
+	GroupId       string                  `json:"GroupId" xml:"GroupId"`
+	GroupName     string                  `json:"GroupName" xml:"GroupName"`
+	SubDomain     string                  `json:"SubDomain" xml:"SubDomain"`
+	Description   string                  `json:"Description" xml:"Description"`
+	CreatedTime   string                  `json:"CreatedTime" xml:"CreatedTime"`
+	ModifiedTime  string                  `json:"ModifiedTime" xml:"ModifiedTime"`
+	RegionId      string                  `json:"RegionId" xml:"RegionId"`
+	TrafficLimit  int                     `json:"TrafficLimit" xml:"TrafficLimit"`
+	BillingStatus string                  `json:"BillingStatus" xml:"BillingStatus"`
+	IllegalStatus string                  `json:"IllegalStatus" xml:"IllegalStatus"`
+	InstanceId    string                  `json:"InstanceId" xml:"InstanceId"`
+	InstanceType  string                  `json:"InstanceType" xml:"InstanceType"`
+	HttpsPolicy   string                  `json:"HttpsPolicy" xml:"HttpsPolicy"`
+	Tags          TagsInDescribeApiGroups `json:"Tags" xml:"Tags"`
 }

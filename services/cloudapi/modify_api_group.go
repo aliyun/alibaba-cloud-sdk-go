@@ -76,15 +76,16 @@ func (client *Client) ModifyApiGroupWithCallback(request *ModifyApiGroupRequest,
 // ModifyApiGroupRequest is the request struct for api ModifyApiGroup
 type ModifyApiGroupRequest struct {
 	*requests.RpcRequest
-	GroupId            string               `position:"Query" name:"GroupId"`
+	DefaultDomain      string               `position:"Query" name:"DefaultDomain"`
 	Description        string               `position:"Query" name:"Description"`
-	GroupName          string               `position:"Query" name:"GroupName"`
-	PassthroughHeaders string               `position:"Query" name:"PassthroughHeaders"`
 	SecurityToken      string               `position:"Query" name:"SecurityToken"`
-	CompatibleFlags    string               `position:"Query" name:"CompatibleFlags"`
 	RpcPattern         string               `position:"Query" name:"RpcPattern"`
 	UserLogConfig      string               `position:"Query" name:"UserLogConfig"`
 	Tag                *[]ModifyApiGroupTag `position:"Query" name:"Tag"  type:"Repeated"`
+	GroupId            string               `position:"Query" name:"GroupId"`
+	GroupName          string               `position:"Query" name:"GroupName"`
+	PassthroughHeaders string               `position:"Query" name:"PassthroughHeaders"`
+	CompatibleFlags    string               `position:"Query" name:"CompatibleFlags"`
 	CustomTraceConfig  string               `position:"Query" name:"CustomTraceConfig"`
 }
 

@@ -76,8 +76,10 @@ func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest,
 // DeleteInstanceRequest is the request struct for api DeleteInstance
 type DeleteInstanceRequest struct {
 	*requests.RpcRequest
-	InstanceId string               `position:"Query" name:"InstanceId"`
-	Tag        *[]DeleteInstanceTag `position:"Query" name:"Tag"  type:"Repeated"`
+	HardDelete  string               `position:"Query" name:"HardDelete"`
+	InstanceId  string               `position:"Query" name:"InstanceId"`
+	ForceDelete string               `position:"Query" name:"ForceDelete"`
+	Tag         *[]DeleteInstanceTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 
 // DeleteInstanceTag is a repeated param struct in DeleteInstanceRequest
