@@ -97,7 +97,7 @@ func CreateExecuteExtendServiceRequest() (request *ExecuteExtendServiceRequest) 
 	request = &ExecuteExtendServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("saf", "2019-05-21", "ExecuteExtendService", "SAF", "openAPI")
+	request.InitWithApiInfo("saf", "2019-05-21", "ExecuteExtendService", "saf", "openAPI")
 	request.Method = requests.POST
 	return
 }
