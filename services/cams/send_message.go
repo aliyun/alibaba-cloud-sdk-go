@@ -77,14 +77,18 @@ func (client *Client) SendMessageWithCallback(request *SendMessageRequest, callb
 type SendMessageRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	TemplateBodyParams   string           `position:"Query" name:"TemplateBodyParams"`
-	Type                 string           `position:"Query" name:"Type"`
-	ChannelType          string           `position:"Query" name:"ChannelType"`
-	From                 string           `position:"Query" name:"From"`
+	TemplateBodyParams   string           `position:"Body" name:"TemplateBodyParams"`
+	Link                 string           `position:"Body" name:"Link"`
+	Caption              string           `position:"Body" name:"Caption"`
+	Type                 string           `position:"Body" name:"Type"`
+	Body                 string           `position:"Body" name:"Body"`
+	ChannelType          string           `position:"Body" name:"ChannelType"`
+	From                 string           `position:"Body" name:"From"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	To                   string           `position:"Query" name:"To"`
-	TemplateCode         string           `position:"Query" name:"TemplateCode"`
+	To                   string           `position:"Body" name:"To"`
+	TemplateCode         string           `position:"Body" name:"TemplateCode"`
+	MediaType            string           `position:"Body" name:"MediaType"`
 }
 
 // SendMessageResponse is the response struct for api SendMessage

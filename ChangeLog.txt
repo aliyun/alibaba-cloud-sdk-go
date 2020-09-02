@@ -1,3 +1,8 @@
+2020-09-02 Version: v1.61.463
+- Generated 2020-06-06 for `cams`.
+- ChatApp second version.
+- Support new message fomat.
+
 2020-09-02 Version: v1.61.462
 - Generated 2016-07-14 for `CloudAPI`.
 - Support auto open service.
