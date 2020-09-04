@@ -95,6 +95,7 @@ func CreateUpdateScdnDomainRequest() (request *UpdateScdnDomainRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("scdn", "2017-11-15", "UpdateScdnDomain", "", "")
+	request.Method = requests.POST
 	return
 }
 

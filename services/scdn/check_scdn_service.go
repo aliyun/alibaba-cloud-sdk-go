@@ -96,6 +96,7 @@ func CreateCheckScdnServiceRequest() (request *CheckScdnServiceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("scdn", "2017-11-15", "CheckScdnService", "", "")
+	request.Method = requests.POST
 	return
 }
 

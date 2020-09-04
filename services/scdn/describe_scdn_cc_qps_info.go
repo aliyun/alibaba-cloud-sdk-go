@@ -97,6 +97,7 @@ func CreateDescribeScdnCcQpsInfoRequest() (request *DescribeScdnCcQpsInfoRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnCcQpsInfo", "", "")
+	request.Method = requests.GET
 	return
 }
 

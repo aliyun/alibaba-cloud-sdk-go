@@ -92,6 +92,7 @@ func CreateSetScdnCcInfoRequest() (request *SetScdnCcInfoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("scdn", "2017-11-15", "SetScdnCcInfo", "", "")
+	request.Method = requests.GET
 	return
 }
 

@@ -99,6 +99,7 @@ func CreateDescribeScdnDdosTrafficInfoRequest() (request *DescribeScdnDdosTraffi
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDdosTrafficInfo", "", "")
+	request.Method = requests.GET
 	return
 }
 

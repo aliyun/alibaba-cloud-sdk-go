@@ -102,6 +102,7 @@ func CreateDescribeScdnDomainBpsDataRequest() (request *DescribeScdnDomainBpsDat
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDomainBpsData", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -93,6 +93,7 @@ func CreateStartScdnDomainRequest() (request *StartScdnDomainRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("scdn", "2017-11-15", "StartScdnDomain", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -99,6 +99,7 @@ func CreateDescribeScdnCcTopUrlRequest() (request *DescribeScdnCcTopUrlRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnCcTopUrl", "", "")
+	request.Method = requests.GET
 	return
 }
 

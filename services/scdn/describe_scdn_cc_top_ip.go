@@ -99,6 +99,7 @@ func CreateDescribeScdnCcTopIpRequest() (request *DescribeScdnCcTopIpRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnCcTopIp", "", "")
+	request.Method = requests.GET
 	return
 }
 

@@ -94,6 +94,7 @@ func CreateSetScdnBotInfoRequest() (request *SetScdnBotInfoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("scdn", "2017-11-15", "SetScdnBotInfo", "", "")
+	request.Method = requests.GET
 	return
 }
 

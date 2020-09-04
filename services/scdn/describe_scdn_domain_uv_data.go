@@ -97,6 +97,7 @@ func CreateDescribeScdnDomainUvDataRequest() (request *DescribeScdnDomainUvDataR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDomainUvData", "", "")
+	request.Method = requests.POST
 	return
 }
 

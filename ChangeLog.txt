@@ -1,3 +1,7 @@
+2020-09-04 Version: v1.61.469
+- Generated 2017-11-15 for `scdn`.
+- Update Scdn API.
+
 2020-09-04 Version: v1.61.468
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Update domain API.
