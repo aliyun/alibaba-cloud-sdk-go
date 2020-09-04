@@ -17,16 +17,16 @@ package cdn
 
 // PageData is a nested struct in cdn response
 type PageData struct {
-	DomainName      string  `json:"DomainName" xml:"DomainName"`
-	Cname           string  `json:"Cname" xml:"Cname"`
-	CdnType         string  `json:"CdnType" xml:"CdnType"`
-	DomainStatus    string  `json:"DomainStatus" xml:"DomainStatus"`
-	GmtCreated      string  `json:"GmtCreated" xml:"GmtCreated"`
-	GmtModified     string  `json:"GmtModified" xml:"GmtModified"`
-	Description     string  `json:"Description" xml:"Description"`
-	SslProtocol     string  `json:"SslProtocol" xml:"SslProtocol"`
-	ResourceGroupId string  `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	Sandbox         string  `json:"Sandbox" xml:"Sandbox"`
-	Coverage        string  `json:"Coverage" xml:"Coverage"`
-	Sources         Sources `json:"Sources" xml:"Sources"`
+	Cname           string                                `json:"Cname" xml:"Cname"`
+	CdnType         string                                `json:"CdnType" xml:"CdnType"`
+	Sandbox         string                                `json:"Sandbox" xml:"Sandbox"`
+	DomainStatus    string                                `json:"DomainStatus" xml:"DomainStatus"`
+	ResourceGroupId string                                `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	DomainName      string                                `json:"DomainName" xml:"DomainName"`
+	Coverage        string                                `json:"Coverage" xml:"Coverage"`
+	GmtModified     string                                `json:"GmtModified" xml:"GmtModified"`
+	GmtCreated      string                                `json:"GmtCreated" xml:"GmtCreated"`
+	Description     string                                `json:"Description" xml:"Description"`
+	SslProtocol     string                                `json:"SslProtocol" xml:"SslProtocol"`
+	Sources         SourcesInDescribeCdnUserDomainsByFunc `json:"Sources" xml:"Sources"`
 }

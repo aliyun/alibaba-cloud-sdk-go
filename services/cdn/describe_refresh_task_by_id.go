@@ -76,18 +76,14 @@ func (client *Client) DescribeRefreshTaskByIdWithCallback(request *DescribeRefre
 // DescribeRefreshTaskByIdRequest is the request struct for api DescribeRefreshTaskById
 type DescribeRefreshTaskByIdRequest struct {
 	*requests.RpcRequest
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	TaskId     string           `position:"Query" name:"TaskId"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	TaskId  string           `position:"Query" name:"TaskId"`
+	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeRefreshTaskByIdResponse is the response struct for api DescribeRefreshTaskById
 type DescribeRefreshTaskByIdResponse struct {
 	*responses.BaseResponse
 	RequestId  string    `json:"RequestId" xml:"RequestId"`
-	PageNumber int64     `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int64     `json:"PageSize" xml:"PageSize"`
 	TotalCount int64     `json:"TotalCount" xml:"TotalCount"`
 	Tasks      []CDNTask `json:"Tasks" xml:"Tasks"`
 }
