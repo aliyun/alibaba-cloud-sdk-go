@@ -39,7 +39,7 @@ type EipAddress struct {
 	BandwidthPackageType          string                               `json:"BandwidthPackageType" xml:"BandwidthPackageType"`
 	BandwidthPackageBandwidth     string                               `json:"BandwidthPackageBandwidth" xml:"BandwidthPackageBandwidth"`
 	ResourceGroupId               string                               `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	HasReservationData            string                               `json:"HasReservationData" xml:"HasReservationData"`
+	HasReservationData            bool                                 `json:"HasReservationData" xml:"HasReservationData"`
 	ReservationBandwidth          string                               `json:"ReservationBandwidth" xml:"ReservationBandwidth"`
 	ReservationInternetChargeType string                               `json:"ReservationInternetChargeType" xml:"ReservationInternetChargeType"`
 	ReservationActiveTime         string                               `json:"ReservationActiveTime" xml:"ReservationActiveTime"`
