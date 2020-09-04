@@ -30,5 +30,9 @@ type FaceGroupsItem struct {
 	RemarksArrayB  string         `json:"RemarksArrayB" xml:"RemarksArrayB"`
 	ExternalId     string         `json:"ExternalId" xml:"ExternalId"`
 	ImageCount     int            `json:"ImageCount" xml:"ImageCount"`
+	Gender         string         `json:"Gender" xml:"Gender"`
+	MaxAge         float64        `json:"MaxAge" xml:"MaxAge"`
+	AverageAge     float64        `json:"AverageAge" xml:"AverageAge"`
+	MinAge         float64        `json:"MinAge" xml:"MinAge"`
 	GroupCoverFace GroupCoverFace `json:"GroupCoverFace" xml:"GroupCoverFace"`
 }

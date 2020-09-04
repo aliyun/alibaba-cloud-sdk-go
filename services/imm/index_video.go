@@ -76,20 +76,22 @@ func (client *Client) IndexVideoWithCallback(request *IndexVideoRequest, callbac
 // IndexVideoRequest is the request struct for api IndexVideo
 type IndexVideoRequest struct {
 	*requests.RpcRequest
-	GrabType   string           `position:"Query" name:"GrabType"`
-	Project    string           `position:"Query" name:"Project"`
-	ExternalId string           `position:"Query" name:"ExternalId"`
-	StartTime  string           `position:"Query" name:"StartTime"`
-	RemarksB   string           `position:"Query" name:"RemarksB"`
-	RemarksA   string           `position:"Query" name:"RemarksA"`
-	EndTime    string           `position:"Query" name:"EndTime"`
-	VideoUri   string           `position:"Query" name:"VideoUri"`
-	SaveType   requests.Boolean `position:"Query" name:"SaveType"`
-	RemarksD   string           `position:"Query" name:"RemarksD"`
-	RemarksC   string           `position:"Query" name:"RemarksC"`
-	SetId      string           `position:"Query" name:"SetId"`
-	Interval   string           `position:"Query" name:"Interval"`
-	TgtUri     string           `position:"Query" name:"TgtUri"`
+	GrabType        string           `position:"Query" name:"GrabType"`
+	Project         string           `position:"Query" name:"Project"`
+	ExternalId      string           `position:"Query" name:"ExternalId"`
+	StartTime       string           `position:"Query" name:"StartTime"`
+	NotifyEndpoint  string           `position:"Query" name:"NotifyEndpoint"`
+	NotifyTopicName string           `position:"Query" name:"NotifyTopicName"`
+	RemarksB        string           `position:"Query" name:"RemarksB"`
+	RemarksA        string           `position:"Query" name:"RemarksA"`
+	EndTime         string           `position:"Query" name:"EndTime"`
+	VideoUri        string           `position:"Query" name:"VideoUri"`
+	SaveType        requests.Boolean `position:"Query" name:"SaveType"`
+	RemarksD        string           `position:"Query" name:"RemarksD"`
+	RemarksC        string           `position:"Query" name:"RemarksC"`
+	SetId           string           `position:"Query" name:"SetId"`
+	Interval        string           `position:"Query" name:"Interval"`
+	TgtUri          string           `position:"Query" name:"TgtUri"`
 }
 
 // IndexVideoResponse is the response struct for api IndexVideo

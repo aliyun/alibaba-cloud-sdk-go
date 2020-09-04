@@ -18,6 +18,7 @@ package imm
 // VideoTagsItem is a nested struct in imm response
 type VideoTagsItem struct {
 	VideoTagName       string  `json:"VideoTagName" xml:"VideoTagName"`
+	VideoTagLevel      int     `json:"VideoTagLevel" xml:"VideoTagLevel"`
 	VideoTagConfidence float64 `json:"VideoTagConfidence" xml:"VideoTagConfidence"`
 	VideoTagEnName     string  `json:"VideoTagEnName" xml:"VideoTagEnName"`
 }
