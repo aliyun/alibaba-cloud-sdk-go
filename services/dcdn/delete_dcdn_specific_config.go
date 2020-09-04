@@ -94,6 +94,7 @@ func CreateDeleteDcdnSpecificConfigRequest() (request *DeleteDcdnSpecificConfigR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dcdn", "2018-01-15", "DeleteDcdnSpecificConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

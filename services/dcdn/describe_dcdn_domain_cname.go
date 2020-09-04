@@ -93,6 +93,7 @@ func CreateDescribeDcdnDomainCnameRequest() (request *DescribeDcdnDomainCnameReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainCname", "", "")
+	request.Method = requests.GET
 	return
 }
 

@@ -95,6 +95,7 @@ func CreateDescribeDcdnDomainRealTimeByteHitRateDataRequest() (request *Describe
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainRealTimeByteHitRateData", "", "")
+	request.Method = requests.GET
 	return
 }
 

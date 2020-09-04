@@ -102,6 +102,7 @@ func CreateDescribeDcdnDomainTrafficDataRequest() (request *DescribeDcdnDomainTr
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainTrafficData", "", "")
+	request.Method = requests.POST
 	return
 }
 

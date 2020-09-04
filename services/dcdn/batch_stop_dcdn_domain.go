@@ -93,6 +93,7 @@ func CreateBatchStopDcdnDomainRequest() (request *BatchStopDcdnDomainRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dcdn", "2018-01-15", "BatchStopDcdnDomain", "", "")
+	request.Method = requests.POST
 	return
 }
 

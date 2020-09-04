@@ -95,6 +95,7 @@ func CreateBatchSetDcdnIpaDomainConfigsRequest() (request *BatchSetDcdnIpaDomain
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dcdn", "2018-01-15", "BatchSetDcdnIpaDomainConfigs", "", "")
+	request.Method = requests.POST
 	return
 }
 

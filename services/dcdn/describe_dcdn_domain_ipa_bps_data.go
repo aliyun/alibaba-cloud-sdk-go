@@ -104,6 +104,7 @@ func CreateDescribeDcdnDomainIpaBpsDataRequest() (request *DescribeDcdnDomainIpa
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainIpaBpsData", "", "")
+	request.Method = requests.POST
 	return
 }
 

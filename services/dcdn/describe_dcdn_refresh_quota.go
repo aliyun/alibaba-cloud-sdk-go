@@ -100,6 +100,7 @@ func CreateDescribeDcdnRefreshQuotaRequest() (request *DescribeDcdnRefreshQuotaR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnRefreshQuota", "", "")
+	request.Method = requests.POST
 	return
 }
 

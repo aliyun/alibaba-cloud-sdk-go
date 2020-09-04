@@ -100,6 +100,7 @@ func CreateDescribeDcdnDomainPvDataRequest() (request *DescribeDcdnDomainPvDataR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainPvData", "", "")
+	request.Method = requests.POST
 	return
 }
 

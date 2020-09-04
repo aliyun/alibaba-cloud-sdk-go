@@ -99,6 +99,7 @@ func CreateDescribeDcdnTopDomainsByFlowRequest() (request *DescribeDcdnTopDomain
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnTopDomainsByFlow", "", "")
+	request.Method = requests.POST
 	return
 }
 

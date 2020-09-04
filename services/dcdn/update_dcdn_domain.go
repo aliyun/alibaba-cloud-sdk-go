@@ -96,6 +96,7 @@ func CreateUpdateDcdnDomainRequest() (request *UpdateDcdnDomainRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dcdn", "2018-01-15", "UpdateDcdnDomain", "", "")
+	request.Method = requests.POST
 	return
 }
 

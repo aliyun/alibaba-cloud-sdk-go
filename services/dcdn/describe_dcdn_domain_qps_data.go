@@ -102,6 +102,7 @@ func CreateDescribeDcdnDomainQpsDataRequest() (request *DescribeDcdnDomainQpsDat
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainQpsData", "", "")
+	request.Method = requests.POST
 	return
 }
 

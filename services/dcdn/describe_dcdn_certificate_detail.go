@@ -97,6 +97,7 @@ func CreateDescribeDcdnCertificateDetailRequest() (request *DescribeDcdnCertific
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnCertificateDetail", "", "")
+	request.Method = requests.POST
 	return
 }
 

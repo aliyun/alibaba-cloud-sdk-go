@@ -96,6 +96,7 @@ func CreateDescribeUserDcdnStatusRequest() (request *DescribeUserDcdnStatusReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeUserDcdnStatus", "", "")
+	request.Method = requests.POST
 	return
 }
 

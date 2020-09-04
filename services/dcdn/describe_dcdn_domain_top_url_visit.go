@@ -102,6 +102,7 @@ func CreateDescribeDcdnDomainTopUrlVisitRequest() (request *DescribeDcdnDomainTo
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainTopUrlVisit", "", "")
+	request.Method = requests.POST
 	return
 }
 

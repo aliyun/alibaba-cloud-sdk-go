@@ -96,6 +96,7 @@ func CreateDescribeDcdnHttpsDomainListRequest() (request *DescribeDcdnHttpsDomai
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnHttpsDomainList", "", "")
+	request.Method = requests.POST
 	return
 }
 
