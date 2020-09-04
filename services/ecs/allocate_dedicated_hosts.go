@@ -79,8 +79,10 @@ type AllocateDedicatedHostsRequest struct {
 	ResourceOwnerId                requests.Integer             `position:"Query" name:"ResourceOwnerId"`
 	ClientToken                    string                       `position:"Query" name:"ClientToken"`
 	Description                    string                       `position:"Query" name:"Description"`
+	CpuOverCommitRatio             requests.Float               `position:"Query" name:"CpuOverCommitRatio"`
 	ResourceGroupId                string                       `position:"Query" name:"ResourceGroupId"`
 	ActionOnMaintenance            string                       `position:"Query" name:"ActionOnMaintenance"`
+	DedicatedHostClusterId         string                       `position:"Query" name:"DedicatedHostClusterId"`
 	Tag                            *[]AllocateDedicatedHostsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	DedicatedHostType              string                       `position:"Query" name:"DedicatedHostType"`
 	AutoRenewPeriod                requests.Integer             `position:"Query" name:"AutoRenewPeriod"`

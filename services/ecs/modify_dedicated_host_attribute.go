@@ -78,7 +78,9 @@ type ModifyDedicatedHostAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId                requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Description                    string           `position:"Query" name:"Description"`
+	CpuOverCommitRatio             requests.Float   `position:"Query" name:"CpuOverCommitRatio"`
 	ActionOnMaintenance            string           `position:"Query" name:"ActionOnMaintenance"`
+	DedicatedHostClusterId         string           `position:"Query" name:"DedicatedHostClusterId"`
 	DedicatedHostName              string           `position:"Query" name:"DedicatedHostName"`
 	ResourceOwnerAccount           string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                   string           `position:"Query" name:"OwnerAccount"`

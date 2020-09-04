@@ -99,6 +99,7 @@ type RunInstancesRequest struct {
 	Affinity                       string                          `position:"Query" name:"Affinity"`
 	ImageId                        string                          `position:"Query" name:"ImageId"`
 	SpotInterruptionBehavior       string                          `position:"Query" name:"SpotInterruptionBehavior"`
+	NetworkInterfaceQueueNumber    requests.Integer                `position:"Query" name:"NetworkInterfaceQueueNumber"`
 	IoOptimized                    string                          `position:"Query" name:"IoOptimized"`
 	SecurityGroupId                string                          `position:"Query" name:"SecurityGroupId"`
 	SystemDiskPerformanceLevel     string                          `position:"Query" name:"SystemDisk.PerformanceLevel"`
@@ -106,6 +107,7 @@ type RunInstancesRequest struct {
 	InstanceType                   string                          `position:"Query" name:"InstanceType"`
 	HibernationConfigured          requests.Boolean                `position:"Query" name:"HibernationConfigured"`
 	Arn                            *[]RunInstancesArn              `position:"Query" name:"Arn"  type:"Repeated"`
+	SchedulerOptions               map[string]interface{}          `position:"Query" name:"SchedulerOptions"`
 	ResourceOwnerAccount           string                          `position:"Query" name:"ResourceOwnerAccount"`
 	SystemDiskDiskName             string                          `position:"Query" name:"SystemDisk.DiskName"`
 	DedicatedHostId                string                          `position:"Query" name:"DedicatedHostId"`
@@ -174,6 +176,7 @@ type RunInstancesNetworkInterface struct {
 	SecurityGroupIds     *[]string `name:"SecurityGroupIds" type:"Repeated"`
 	NetworkInterfaceName string    `name:"NetworkInterfaceName"`
 	Description          string    `name:"Description"`
+	QueueNumber          string    `name:"QueueNumber"`
 }
 
 // RunInstancesDataDisk is a repeated param struct in RunInstancesRequest

@@ -28,6 +28,8 @@ type DedicatedHostType struct {
 	LocalStorageAmount            int                                                       `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
 	LocalStorageCategory          string                                                    `json:"LocalStorageCategory" xml:"LocalStorageCategory"`
 	GPUSpec                       string                                                    `json:"GPUSpec" xml:"GPUSpec"`
+	SupportCpuOverCommitRatio     bool                                                      `json:"SupportCpuOverCommitRatio" xml:"SupportCpuOverCommitRatio"`
+	CpuOverCommitRatioRange       string                                                    `json:"CpuOverCommitRatioRange" xml:"CpuOverCommitRatioRange"`
 	SupportedInstanceTypeFamilies SupportedInstanceTypeFamiliesInDescribeDedicatedHostTypes `json:"SupportedInstanceTypeFamilies" xml:"SupportedInstanceTypeFamilies"`
 	SupportedInstanceTypesList    SupportedInstanceTypesListInDescribeDedicatedHostTypes    `json:"SupportedInstanceTypesList" xml:"SupportedInstanceTypesList"`
 }

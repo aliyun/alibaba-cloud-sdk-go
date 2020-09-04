@@ -94,9 +94,11 @@ type DescribeDisksRequest struct {
 	AdditionalAttributes          *[]string           `position:"Query" name:"AdditionalAttributes"  type:"Repeated"`
 	InstanceId                    string              `position:"Query" name:"InstanceId"`
 	ZoneId                        string              `position:"Query" name:"ZoneId"`
+	MaxResults                    requests.Integer    `position:"Query" name:"MaxResults"`
 	Status                        string              `position:"Query" name:"Status"`
 	SnapshotId                    string              `position:"Query" name:"SnapshotId"`
 	PageNumber                    requests.Integer    `position:"Query" name:"PageNumber"`
+	NextToken                     string              `position:"Query" name:"NextToken"`
 	PageSize                      requests.Integer    `position:"Query" name:"PageSize"`
 	DiskIds                       string              `position:"Query" name:"DiskIds"`
 	DeleteWithInstance            requests.Boolean    `position:"Query" name:"DeleteWithInstance"`
@@ -124,6 +126,7 @@ type DescribeDisksResponse struct {
 	TotalCount int                  `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int                  `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int                  `json:"PageSize" xml:"PageSize"`
+	NextToken  string               `json:"NextToken" xml:"NextToken"`
 	Disks      DisksInDescribeDisks `json:"Disks" xml:"Disks"`
 }
 

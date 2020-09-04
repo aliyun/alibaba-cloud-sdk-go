@@ -34,4 +34,5 @@ type ReservedInstance struct {
 	ResourceGroupId      string                                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	AllocationStatus     string                                    `json:"AllocationStatus" xml:"AllocationStatus"`
 	OperationLocks       OperationLocksInDescribeReservedInstances `json:"OperationLocks" xml:"OperationLocks"`
+	Tags                 TagsInDescribeReservedInstances           `json:"Tags" xml:"Tags"`
 }

@@ -76,6 +76,7 @@ func (client *Client) CreateNetworkInterfaceWithCallback(request *CreateNetworkI
 // CreateNetworkInterfaceRequest is the request struct for api CreateNetworkInterface
 type CreateNetworkInterfaceRequest struct {
 	*requests.RpcRequest
+	QueueNumber                    requests.Integer             `position:"Query" name:"QueueNumber"`
 	ResourceOwnerId                requests.Integer             `position:"Query" name:"ResourceOwnerId"`
 	ClientToken                    string                       `position:"Query" name:"ClientToken"`
 	SecurityGroupId                string                       `position:"Query" name:"SecurityGroupId"`
