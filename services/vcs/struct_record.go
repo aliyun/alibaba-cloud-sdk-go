@@ -20,6 +20,7 @@ type Record struct {
 	MatchSuggestion    string  `json:"MatchSuggestion" xml:"MatchSuggestion"`
 	CorpName           string  `json:"CorpName" xml:"CorpName"`
 	ParentCorpId       string  `json:"ParentCorpId" xml:"ParentCorpId"`
+	InProtocol         string  `json:"InProtocol" xml:"InProtocol"`
 	Score              float64 `json:"Score" xml:"Score"`
 	CreateTime         string  `json:"CreateTime" xml:"CreateTime"`
 	IsvSubId           string  `json:"IsvSubId" xml:"IsvSubId"`
@@ -32,6 +33,7 @@ type Record struct {
 	CorpId             string  `json:"CorpId" xml:"CorpId"`
 	ImageUrl           string  `json:"ImageUrl" xml:"ImageUrl"`
 	DeviceAddress      string  `json:"DeviceAddress" xml:"DeviceAddress"`
+	DeviceId           string  `json:"DeviceId" xml:"DeviceId"`
 	DeviceDirection    string  `json:"DeviceDirection" xml:"DeviceDirection"`
 	BitRate            string  `json:"BitRate" xml:"BitRate"`
 	RightBottomX       float64 `json:"RightBottomX" xml:"RightBottomX"`

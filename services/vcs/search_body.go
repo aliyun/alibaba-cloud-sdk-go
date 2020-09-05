@@ -88,10 +88,10 @@ type SearchBodyRequest struct {
 // SearchBodyResponse is the response struct for api SearchBody
 type SearchBodyResponse struct {
 	*responses.BaseResponse
-	Code      string           `json:"Code" xml:"Code"`
-	Message   string           `json:"Message" xml:"Message"`
-	RequestId string           `json:"RequestId" xml:"RequestId"`
-	Data      DataInSearchBody `json:"Data" xml:"Data"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateSearchBodyRequest creates a request to invoke SearchBody API
@@ -99,7 +99,7 @@ func CreateSearchBodyRequest() (request *SearchBodyRequest) {
 	request = &SearchBodyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "SearchBody", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "SearchBody", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

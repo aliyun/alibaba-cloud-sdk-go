@@ -84,10 +84,10 @@ type GetFaceModelResultRequest struct {
 // GetFaceModelResultResponse is the response struct for api GetFaceModelResult
 type GetFaceModelResultResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      string                   `json:"Code" xml:"Code"`
+	Message   string                   `json:"Message" xml:"Message"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	Data      DataInGetFaceModelResult `json:"Data" xml:"Data"`
 }
 
 // CreateGetFaceModelResultRequest creates a request to invoke GetFaceModelResult API
@@ -95,7 +95,7 @@ func CreateGetFaceModelResultRequest() (request *GetFaceModelResultRequest) {
 	request = &GetFaceModelResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "GetFaceModelResult", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetFaceModelResult", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

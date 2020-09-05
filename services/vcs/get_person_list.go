@@ -88,10 +88,10 @@ type GetPersonListRequest struct {
 // GetPersonListResponse is the response struct for api GetPersonList
 type GetPersonListResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      string              `json:"Code" xml:"Code"`
+	Message   string              `json:"Message" xml:"Message"`
+	RequestId string              `json:"RequestId" xml:"RequestId"`
+	Data      DataInGetPersonList `json:"Data" xml:"Data"`
 }
 
 // CreateGetPersonListRequest creates a request to invoke GetPersonList API
@@ -99,7 +99,7 @@ func CreateGetPersonListRequest() (request *GetPersonListRequest) {
 	request = &GetPersonListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "GetPersonList", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetPersonList", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

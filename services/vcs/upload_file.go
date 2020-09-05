@@ -100,7 +100,7 @@ func CreateUploadFileRequest() (request *UploadFileRequest) {
 	request = &UploadFileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "UploadFile", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "UploadFile", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

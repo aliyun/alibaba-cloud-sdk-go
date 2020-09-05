@@ -82,6 +82,7 @@ type GetProfileListRequest struct {
 	PlateNo               string                 `position:"Body" name:"PlateNo"`
 	IdNumber              string                 `position:"Body" name:"IdNumber"`
 	PageNumber            requests.Integer       `position:"Body" name:"PageNumber"`
+	FaceImageId           string                 `position:"Body" name:"FaceImageId"`
 	FaceUrl               string                 `position:"Body" name:"FaceUrl"`
 	PageSize              requests.Integer       `position:"Body" name:"PageSize"`
 	PersonIdList          map[string]interface{} `position:"Body" name:"PersonIdList"`
@@ -98,10 +99,10 @@ type GetProfileListRequest struct {
 // GetProfileListResponse is the response struct for api GetProfileList
 type GetProfileListResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      string               `json:"Code" xml:"Code"`
+	Message   string               `json:"Message" xml:"Message"`
+	RequestId string               `json:"RequestId" xml:"RequestId"`
+	Data      DataInGetProfileList `json:"Data" xml:"Data"`
 }
 
 // CreateGetProfileListRequest creates a request to invoke GetProfileList API
@@ -109,7 +110,7 @@ func CreateGetProfileListRequest() (request *GetProfileListRequest) {
 	request = &GetProfileListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "GetProfileList", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetProfileList", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

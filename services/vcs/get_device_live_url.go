@@ -76,17 +76,22 @@ func (client *Client) GetDeviceLiveUrlWithCallback(request *GetDeviceLiveUrlRequ
 // GetDeviceLiveUrlRequest is the request struct for api GetDeviceLiveUrl
 type GetDeviceLiveUrlRequest struct {
 	*requests.RpcRequest
-	CorpId string `position:"Body" name:"CorpId"`
-	GbId   string `position:"Body" name:"GbId"`
+	OutProtocol string           `position:"Body" name:"OutProtocol"`
+	StreamType  requests.Integer `position:"Body" name:"StreamType"`
+	CorpId      string           `position:"Body" name:"CorpId"`
+	GbId        string           `position:"Body" name:"GbId"`
+	DeviceId    string           `position:"Body" name:"DeviceId"`
 }
 
 // GetDeviceLiveUrlResponse is the response struct for api GetDeviceLiveUrl
 type GetDeviceLiveUrlResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Url       string `json:"Url" xml:"Url"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code        string `json:"Code" xml:"Code"`
+	Message     string `json:"Message" xml:"Message"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	Url         string `json:"Url" xml:"Url"`
+	OutProtocol string `json:"OutProtocol" xml:"OutProtocol"`
+	StreamType  int    `json:"StreamType" xml:"StreamType"`
 }
 
 // CreateGetDeviceLiveUrlRequest creates a request to invoke GetDeviceLiveUrl API
@@ -94,7 +99,7 @@ func CreateGetDeviceLiveUrlRequest() (request *GetDeviceLiveUrlRequest) {
 	request = &GetDeviceLiveUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "GetDeviceLiveUrl", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetDeviceLiveUrl", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

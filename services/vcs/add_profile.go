@@ -104,7 +104,7 @@ func CreateAddProfileRequest() (request *AddProfileRequest) {
 	request = &AddProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "AddProfile", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "AddProfile", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

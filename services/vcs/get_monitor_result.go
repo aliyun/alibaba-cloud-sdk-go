@@ -87,10 +87,10 @@ type GetMonitorResultRequest struct {
 // GetMonitorResultResponse is the response struct for api GetMonitorResult
 type GetMonitorResultResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      string                 `json:"Code" xml:"Code"`
+	Message   string                 `json:"Message" xml:"Message"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
+	Data      DataInGetMonitorResult `json:"Data" xml:"Data"`
 }
 
 // CreateGetMonitorResultRequest creates a request to invoke GetMonitorResult API
@@ -98,7 +98,7 @@ func CreateGetMonitorResultRequest() (request *GetMonitorResultRequest) {
 	request = &GetMonitorResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "GetMonitorResult", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetMonitorResult", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

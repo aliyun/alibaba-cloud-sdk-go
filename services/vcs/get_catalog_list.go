@@ -94,7 +94,7 @@ func CreateGetCatalogListRequest() (request *GetCatalogListRequest) {
 	request = &GetCatalogListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "GetCatalogList", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetCatalogList", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -95,7 +95,7 @@ func CreateUnbindPersonRequest() (request *UnbindPersonRequest) {
 	request = &UnbindPersonRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "UnbindPerson", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "UnbindPerson", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -76,19 +76,22 @@ func (client *Client) GetDeviceVideoUrlWithCallback(request *GetDeviceVideoUrlRe
 // GetDeviceVideoUrlRequest is the request struct for api GetDeviceVideoUrl
 type GetDeviceVideoUrlRequest struct {
 	*requests.RpcRequest
-	CorpId    string           `position:"Body" name:"CorpId"`
-	GbId      string           `position:"Body" name:"GbId"`
-	EndTime   requests.Integer `position:"Body" name:"EndTime"`
-	StartTime requests.Integer `position:"Body" name:"StartTime"`
+	OutProtocol string           `position:"Body" name:"OutProtocol"`
+	CorpId      string           `position:"Body" name:"CorpId"`
+	GbId        string           `position:"Body" name:"GbId"`
+	EndTime     requests.Integer `position:"Body" name:"EndTime"`
+	StartTime   requests.Integer `position:"Body" name:"StartTime"`
+	DeviceId    string           `position:"Body" name:"DeviceId"`
 }
 
 // GetDeviceVideoUrlResponse is the response struct for api GetDeviceVideoUrl
 type GetDeviceVideoUrlResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Url       string `json:"Url" xml:"Url"`
+	Code        string `json:"Code" xml:"Code"`
+	Message     string `json:"Message" xml:"Message"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	Url         string `json:"Url" xml:"Url"`
+	OutProtocol string `json:"OutProtocol" xml:"OutProtocol"`
 }
 
 // CreateGetDeviceVideoUrlRequest creates a request to invoke GetDeviceVideoUrl API
@@ -96,7 +99,7 @@ func CreateGetDeviceVideoUrlRequest() (request *GetDeviceVideoUrlRequest) {
 	request = &GetDeviceVideoUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "GetDeviceVideoUrl", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetDeviceVideoUrl", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

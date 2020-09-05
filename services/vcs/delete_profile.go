@@ -95,7 +95,7 @@ func CreateDeleteProfileRequest() (request *DeleteProfileRequest) {
 	request = &DeleteProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "DeleteProfile", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "DeleteProfile", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }

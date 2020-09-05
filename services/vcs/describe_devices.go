@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ListDevices invokes the vcs.ListDevices API synchronously
-// api document: https://help.aliyun.com/api/vcs/listdevices.html
-func (client *Client) ListDevices(request *ListDevicesRequest) (response *ListDevicesResponse, err error) {
-	response = CreateListDevicesResponse()
+// DescribeDevices invokes the vcs.DescribeDevices API synchronously
+// api document: https://help.aliyun.com/api/vcs/describedevices.html
+func (client *Client) DescribeDevices(request *DescribeDevicesRequest) (response *DescribeDevicesResponse, err error) {
+	response = CreateDescribeDevicesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ListDevicesWithChan invokes the vcs.ListDevices API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listdevices.html
+// DescribeDevicesWithChan invokes the vcs.DescribeDevices API asynchronously
+// api document: https://help.aliyun.com/api/vcs/describedevices.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ListDevicesWithChan(request *ListDevicesRequest) (<-chan *ListDevicesResponse, <-chan error) {
-	responseChan := make(chan *ListDevicesResponse, 1)
+func (client *Client) DescribeDevicesWithChan(request *DescribeDevicesRequest) (<-chan *DescribeDevicesResponse, <-chan error) {
+	responseChan := make(chan *DescribeDevicesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListDevices(request)
+		response, err := client.DescribeDevices(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ListDevicesWithChan(request *ListDevicesRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// ListDevicesWithCallback invokes the vcs.ListDevices API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listdevices.html
+// DescribeDevicesWithCallback invokes the vcs.DescribeDevices API asynchronously
+// api document: https://help.aliyun.com/api/vcs/describedevices.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ListDevicesWithCallback(request *ListDevicesRequest, callback func(response *ListDevicesResponse, err error)) <-chan int {
+func (client *Client) DescribeDevicesWithCallback(request *DescribeDevicesRequest, callback func(response *DescribeDevicesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListDevicesResponse
+		var response *DescribeDevicesResponse
 		var err error
 		defer close(result)
-		response, err = client.ListDevices(request)
+		response, err = client.DescribeDevices(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,18 +73,16 @@ func (client *Client) ListDevicesWithCallback(request *ListDevicesRequest, callb
 	return result
 }
 
-// ListDevicesRequest is the request struct for api ListDevices
-type ListDevicesRequest struct {
+// DescribeDevicesRequest is the request struct for api DescribeDevices
+type DescribeDevicesRequest struct {
 	*requests.RpcRequest
-	CorpId     string           `position:"Body" name:"CorpId"`
-	GbId       string           `position:"Body" name:"GbId"`
-	PageNumber requests.Integer `position:"Body" name:"PageNumber"`
+	PageNum    requests.Integer `position:"Body" name:"PageNum"`
+	CorpIdList string           `position:"Body" name:"CorpIdList"`
 	PageSize   requests.Integer `position:"Body" name:"PageSize"`
-	DeviceName string           `position:"Body" name:"DeviceName"`
 }
 
-// ListDevicesResponse is the response struct for api ListDevices
-type ListDevicesResponse struct {
+// DescribeDevicesResponse is the response struct for api DescribeDevices
+type DescribeDevicesResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
@@ -92,19 +90,19 @@ type ListDevicesResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateListDevicesRequest creates a request to invoke ListDevices API
-func CreateListDevicesRequest() (request *ListDevicesRequest) {
-	request = &ListDevicesRequest{
+// CreateDescribeDevicesRequest creates a request to invoke DescribeDevices API
+func CreateDescribeDevicesRequest() (request *DescribeDevicesRequest) {
+	request = &DescribeDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListDevices", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "DescribeDevices", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateListDevicesResponse creates a response to parse from ListDevices response
-func CreateListDevicesResponse() (response *ListDevicesResponse) {
-	response = &ListDevicesResponse{
+// CreateDescribeDevicesResponse creates a response to parse from DescribeDevices response
+func CreateDescribeDevicesResponse() (response *DescribeDevicesResponse) {
+	response = &DescribeDevicesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

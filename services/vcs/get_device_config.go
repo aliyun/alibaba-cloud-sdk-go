@@ -117,7 +117,7 @@ func CreateGetDeviceConfigRequest() (request *GetDeviceConfigRequest) {
 	request = &GetDeviceConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "GetDeviceConfig", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetDeviceConfig", "vcs", "openAPI")
 	request.Method = requests.POST
 	return
 }
