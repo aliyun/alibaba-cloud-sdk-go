@@ -82,10 +82,10 @@ type ListClusterRequest struct {
 // ListClusterResponse is the response struct for api ListCluster
 type ListClusterResponse struct {
 	*responses.BaseResponse
-	Code        int         `json:"Code" xml:"Code"`
-	Message     string      `json:"Message" xml:"Message"`
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	ClusterList ClusterList `json:"ClusterList" xml:"ClusterList"`
+	Code        int                      `json:"Code" xml:"Code"`
+	Message     string                   `json:"Message" xml:"Message"`
+	RequestId   string                   `json:"RequestId" xml:"RequestId"`
+	ClusterList ClusterListInListCluster `json:"ClusterList" xml:"ClusterList"`
 }
 
 // CreateListClusterRequest creates a request to invoke ListCluster API
@@ -93,7 +93,7 @@ func CreateListClusterRequest() (request *ListClusterRequest) {
 	request = &ListClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListCluster", "/pop/v5/resource/cluster_list", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListCluster", "/pop/v5/resource/cluster_list", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

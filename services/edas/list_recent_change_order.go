@@ -93,7 +93,7 @@ func CreateListRecentChangeOrderRequest() (request *ListRecentChangeOrderRequest
 	request = &ListRecentChangeOrderRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListRecentChangeOrder", "/pop/v5/changeorder/change_order_list", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListRecentChangeOrder", "/pop/v5/changeorder/change_order_list", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

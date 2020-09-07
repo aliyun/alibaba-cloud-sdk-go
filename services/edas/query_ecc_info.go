@@ -93,7 +93,7 @@ func CreateQueryEccInfoRequest() (request *QueryEccInfoRequest) {
 	request = &QueryEccInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "QueryEccInfo", "/pop/v5/ecc", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "QueryEccInfo", "/pop/v5/ecc", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -93,7 +93,7 @@ func CreateDeleteFlowControlRequest() (request *DeleteFlowControlRequest) {
 	request = &DeleteFlowControlRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteFlowControl", "/pop/v5/flowControl", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteFlowControl", "/pop/v5/flowControl", "Edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

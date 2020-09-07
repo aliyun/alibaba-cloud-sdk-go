@@ -94,7 +94,7 @@ func CreateListMethodsRequest() (request *ListMethodsRequest) {
 	request = &ListMethodsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListMethods", "/pop/v5/service/list_methods", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListMethods", "/pop/v5/service/list_methods", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

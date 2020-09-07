@@ -95,7 +95,7 @@ func CreateQueryConfigCenterRequest() (request *QueryConfigCenterRequest) {
 	request = &QueryConfigCenterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "QueryConfigCenter", "/pop/v5/configCenter", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "QueryConfigCenter", "/pop/v5/configCenter", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

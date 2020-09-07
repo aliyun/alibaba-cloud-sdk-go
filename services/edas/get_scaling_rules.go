@@ -96,7 +96,7 @@ func CreateGetScalingRulesRequest() (request *GetScalingRulesRequest) {
 	request = &GetScalingRulesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetScalingRules", "/pop/v5/app/scalingRules", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetScalingRules", "/pop/v5/app/scalingRules", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

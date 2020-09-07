@@ -17,17 +17,21 @@ package edas
 
 // Cluster is a nested struct in edas response
 type Cluster struct {
+	SubNetCidr          string `json:"SubNetCidr" xml:"SubNetCidr"`
 	ClusterId           string `json:"ClusterId" xml:"ClusterId"`
 	NodeNum             int    `json:"NodeNum" xml:"NodeNum"`
 	CsClusterId         string `json:"CsClusterId" xml:"CsClusterId"`
 	UpdateTime          int64  `json:"UpdateTime" xml:"UpdateTime"`
 	Mem                 int    `json:"Mem" xml:"Mem"`
+	CsClusterStatus     string `json:"CsClusterStatus" xml:"CsClusterStatus"`
 	CreateTime          int64  `json:"CreateTime" xml:"CreateTime"`
 	OversoldFactor      int    `json:"OversoldFactor" xml:"OversoldFactor"`
 	MemUsed             int    `json:"MemUsed" xml:"MemUsed"`
 	NetworkMode         int    `json:"NetworkMode" xml:"NetworkMode"`
 	ClusterImportStatus int    `json:"ClusterImportStatus" xml:"ClusterImportStatus"`
+	ClusterStatus       int    `json:"ClusterStatus" xml:"ClusterStatus"`
 	RegionId            string `json:"RegionId" xml:"RegionId"`
+	VswitchId           string `json:"VswitchId" xml:"VswitchId"`
 	ClusterName         string `json:"ClusterName" xml:"ClusterName"`
 	CpuUsed             int    `json:"CpuUsed" xml:"CpuUsed"`
 	IaasProvider        string `json:"IaasProvider" xml:"IaasProvider"`
