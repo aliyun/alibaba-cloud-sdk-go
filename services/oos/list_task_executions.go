@@ -107,7 +107,7 @@ func CreateListTaskExecutionsRequest() (request *ListTaskExecutionsRequest) {
 	request = &ListTaskExecutionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListTaskExecutions", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListTaskExecutions", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

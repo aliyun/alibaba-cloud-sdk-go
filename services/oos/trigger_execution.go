@@ -93,7 +93,7 @@ func CreateTriggerExecutionRequest() (request *TriggerExecutionRequest) {
 	request = &TriggerExecutionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "TriggerExecution", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "TriggerExecution", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -95,7 +95,7 @@ func CreateListActionsRequest() (request *ListActionsRequest) {
 	request = &ListActionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListActions", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListActions", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

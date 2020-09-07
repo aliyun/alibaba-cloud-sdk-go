@@ -96,7 +96,7 @@ func CreateListTemplateVersionsRequest() (request *ListTemplateVersionsRequest) 
 	request = &ListTemplateVersionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ListTemplateVersions", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ListTemplateVersions", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }

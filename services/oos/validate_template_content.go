@@ -94,7 +94,7 @@ func CreateValidateTemplateContentRequest() (request *ValidateTemplateContentReq
 	request = &ValidateTemplateContentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "ValidateTemplateContent", "", "")
+	request.InitWithApiInfo("oos", "2019-06-01", "ValidateTemplateContent", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }
