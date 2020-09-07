@@ -52,8 +52,8 @@ type Data struct {
 	PlateNo      string             `json:"PlateNo" xml:"PlateNo"`
 	ProfileId    int                `json:"ProfileId" xml:"ProfileId"`
 	Attributes   Attributes         `json:"Attributes" xml:"Attributes"`
-	Records      []Record           `json:"Records" xml:"Records"`
 	ResultObject []ResultObjectItem `json:"ResultObject" xml:"ResultObject"`
+	Records      []Record           `json:"Records" xml:"Records"`
 	TagList      []TagListItem      `json:"TagList" xml:"TagList"`
 	FaceList     []Face             `json:"FaceList" xml:"FaceList"`
 	BodyList     []Body             `json:"BodyList" xml:"BodyList"`

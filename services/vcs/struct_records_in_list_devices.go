@@ -17,5 +17,5 @@ package vcs
 
 // RecordsInListDevices is a nested struct in vcs response
 type RecordsInListDevices struct {
-	Record []Record `json:"Record" xml:"Record"`
+	Record []RecordInListDevices `json:"Record" xml:"Record"`
 }
