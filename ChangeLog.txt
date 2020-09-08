@@ -1,3 +1,7 @@
+2020-09-08 Version: v1.61.480
+- Generated 2020-01-01 for `tdsr`.
+- Supported backend interface for ICBU.
+
 2020-09-08 Version: v1.61.479
 - Generated 2017-08-01 for `polardb`.
 - Add DescribeActiveOperationTask.
