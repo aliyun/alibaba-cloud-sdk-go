@@ -21,7 +21,6 @@ import (
 )
 
 // SearchFace invokes the facebody.SearchFace API synchronously
-// api document: https://help.aliyun.com/api/facebody/searchface.html
 func (client *Client) SearchFace(request *SearchFaceRequest) (response *SearchFaceResponse, err error) {
 	response = CreateSearchFaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchFace(request *SearchFaceRequest) (response *SearchFa
 }
 
 // SearchFaceWithChan invokes the facebody.SearchFace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/searchface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchFaceWithChan(request *SearchFaceRequest) (<-chan *SearchFaceResponse, <-chan error) {
 	responseChan := make(chan *SearchFaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchFaceWithChan(request *SearchFaceRequest) (<-chan *Se
 }
 
 // SearchFaceWithCallback invokes the facebody.SearchFace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/searchface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchFaceWithCallback(request *SearchFaceRequest, callback func(response *SearchFaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

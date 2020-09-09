@@ -21,7 +21,6 @@ import (
 )
 
 // BlurFace invokes the facebody.BlurFace API synchronously
-// api document: https://help.aliyun.com/api/facebody/blurface.html
 func (client *Client) BlurFace(request *BlurFaceRequest) (response *BlurFaceResponse, err error) {
 	response = CreateBlurFaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BlurFace(request *BlurFaceRequest) (response *BlurFaceResp
 }
 
 // BlurFaceWithChan invokes the facebody.BlurFace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/blurface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BlurFaceWithChan(request *BlurFaceRequest) (<-chan *BlurFaceResponse, <-chan error) {
 	responseChan := make(chan *BlurFaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BlurFaceWithChan(request *BlurFaceRequest) (<-chan *BlurFa
 }
 
 // BlurFaceWithCallback invokes the facebody.BlurFace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/blurface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BlurFaceWithCallback(request *BlurFaceRequest, callback func(response *BlurFaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

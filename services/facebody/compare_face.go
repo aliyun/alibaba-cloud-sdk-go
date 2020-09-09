@@ -21,7 +21,6 @@ import (
 )
 
 // CompareFace invokes the facebody.CompareFace API synchronously
-// api document: https://help.aliyun.com/api/facebody/compareface.html
 func (client *Client) CompareFace(request *CompareFaceRequest) (response *CompareFaceResponse, err error) {
 	response = CreateCompareFaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CompareFace(request *CompareFaceRequest) (response *Compar
 }
 
 // CompareFaceWithChan invokes the facebody.CompareFace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/compareface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CompareFaceWithChan(request *CompareFaceRequest) (<-chan *CompareFaceResponse, <-chan error) {
 	responseChan := make(chan *CompareFaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CompareFaceWithChan(request *CompareFaceRequest) (<-chan *
 }
 
 // CompareFaceWithCallback invokes the facebody.CompareFace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/compareface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CompareFaceWithCallback(request *CompareFaceRequest, callback func(response *CompareFaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

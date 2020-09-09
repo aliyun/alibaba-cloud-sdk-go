@@ -21,7 +21,6 @@ import (
 )
 
 // DetectCelebrity invokes the facebody.DetectCelebrity API synchronously
-// api document: https://help.aliyun.com/api/facebody/detectcelebrity.html
 func (client *Client) DetectCelebrity(request *DetectCelebrityRequest) (response *DetectCelebrityResponse, err error) {
 	response = CreateDetectCelebrityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetectCelebrity(request *DetectCelebrityRequest) (response
 }
 
 // DetectCelebrityWithChan invokes the facebody.DetectCelebrity API asynchronously
-// api document: https://help.aliyun.com/api/facebody/detectcelebrity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectCelebrityWithChan(request *DetectCelebrityRequest) (<-chan *DetectCelebrityResponse, <-chan error) {
 	responseChan := make(chan *DetectCelebrityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetectCelebrityWithChan(request *DetectCelebrityRequest) (
 }
 
 // DetectCelebrityWithCallback invokes the facebody.DetectCelebrity API asynchronously
-// api document: https://help.aliyun.com/api/facebody/detectcelebrity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectCelebrityWithCallback(request *DetectCelebrityRequest, callback func(response *DetectCelebrityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

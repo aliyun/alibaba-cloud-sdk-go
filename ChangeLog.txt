@@ -1,3 +1,7 @@
+2020-09-09 Version: v1.61.482
+- Generated 2019-12-30 for `facebody`.
+- Release DetectChefCap.
+
 2020-09-09 Version: v1.61.481
 - Generated 2020-03-20 for `imageprocess`.
 - Release DetectKneeKeypointXRay, DetectHipKeypointXRay, CalcCACS, RunCTRegistration, ClassifyFNF.

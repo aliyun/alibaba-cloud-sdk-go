@@ -70,10 +70,10 @@ type Data struct {
 	MetaObject           MetaObject            `json:"MetaObject" xml:"MetaObject"`
 	ImageInfoList        []ImageInfoListItem   `json:"ImageInfoList" xml:"ImageInfoList"`
 	Outputs              []Output              `json:"Outputs" xml:"Outputs"`
-	Elements             []Element             `json:"Elements" xml:"Elements"`
 	Faces                []Face                `json:"Faces" xml:"Faces"`
 	Entities             []Entity              `json:"Entities" xml:"Entities"`
 	DbList               []DbListItem          `json:"DbList" xml:"DbList"`
+	Elements             []ElementsItem        `json:"Elements" xml:"Elements"`
 	FaceRecognizeResults []FaceRecognizeResult `json:"FaceRecognizeResults" xml:"FaceRecognizeResults"`
 	MatchList            []MatchListItem       `json:"MatchList" xml:"MatchList"`
 }

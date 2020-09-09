@@ -21,7 +21,6 @@ import (
 )
 
 // CreateFaceDb invokes the facebody.CreateFaceDb API synchronously
-// api document: https://help.aliyun.com/api/facebody/createfacedb.html
 func (client *Client) CreateFaceDb(request *CreateFaceDbRequest) (response *CreateFaceDbResponse, err error) {
 	response = CreateCreateFaceDbResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateFaceDb(request *CreateFaceDbRequest) (response *Crea
 }
 
 // CreateFaceDbWithChan invokes the facebody.CreateFaceDb API asynchronously
-// api document: https://help.aliyun.com/api/facebody/createfacedb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFaceDbWithChan(request *CreateFaceDbRequest) (<-chan *CreateFaceDbResponse, <-chan error) {
 	responseChan := make(chan *CreateFaceDbResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateFaceDbWithChan(request *CreateFaceDbRequest) (<-chan
 }
 
 // CreateFaceDbWithCallback invokes the facebody.CreateFaceDb API asynchronously
-// api document: https://help.aliyun.com/api/facebody/createfacedb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFaceDbWithCallback(request *CreateFaceDbRequest, callback func(response *CreateFaceDbResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

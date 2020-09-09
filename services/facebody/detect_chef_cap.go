@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// FaceFilter invokes the facebody.FaceFilter API synchronously
-func (client *Client) FaceFilter(request *FaceFilterRequest) (response *FaceFilterResponse, err error) {
-	response = CreateFaceFilterResponse()
+// DetectChefCap invokes the facebody.DetectChefCap API synchronously
+func (client *Client) DetectChefCap(request *DetectChefCapRequest) (response *DetectChefCapResponse, err error) {
+	response = CreateDetectChefCapResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// FaceFilterWithChan invokes the facebody.FaceFilter API asynchronously
-func (client *Client) FaceFilterWithChan(request *FaceFilterRequest) (<-chan *FaceFilterResponse, <-chan error) {
-	responseChan := make(chan *FaceFilterResponse, 1)
+// DetectChefCapWithChan invokes the facebody.DetectChefCap API asynchronously
+func (client *Client) DetectChefCapWithChan(request *DetectChefCapRequest) (<-chan *DetectChefCapResponse, <-chan error) {
+	responseChan := make(chan *DetectChefCapResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.FaceFilter(request)
+		response, err := client.DetectChefCap(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) FaceFilterWithChan(request *FaceFilterRequest) (<-chan *Fa
 	return responseChan, errChan
 }
 
-// FaceFilterWithCallback invokes the facebody.FaceFilter API asynchronously
-func (client *Client) FaceFilterWithCallback(request *FaceFilterRequest, callback func(response *FaceFilterResponse, err error)) <-chan int {
+// DetectChefCapWithCallback invokes the facebody.DetectChefCap API asynchronously
+func (client *Client) DetectChefCapWithCallback(request *DetectChefCapRequest, callback func(response *DetectChefCapResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *FaceFilterResponse
+		var response *DetectChefCapResponse
 		var err error
 		defer close(result)
-		response, err = client.FaceFilter(request)
+		response, err = client.DetectChefCap(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,34 +68,32 @@ func (client *Client) FaceFilterWithCallback(request *FaceFilterRequest, callbac
 	return result
 }
 
-// FaceFilterRequest is the request struct for api FaceFilter
-type FaceFilterRequest struct {
+// DetectChefCapRequest is the request struct for api DetectChefCap
+type DetectChefCapRequest struct {
 	*requests.RpcRequest
-	Strength     requests.Float `position:"Body" name:"Strength"`
-	ResourceType string         `position:"Body" name:"ResourceType"`
-	ImageURL     string         `position:"Body" name:"ImageURL"`
+	ImageURL string `position:"Body" name:"ImageURL"`
 }
 
-// FaceFilterResponse is the response struct for api FaceFilter
-type FaceFilterResponse struct {
+// DetectChefCapResponse is the response struct for api DetectChefCap
+type DetectChefCapResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateFaceFilterRequest creates a request to invoke FaceFilter API
-func CreateFaceFilterRequest() (request *FaceFilterRequest) {
-	request = &FaceFilterRequest{
+// CreateDetectChefCapRequest creates a request to invoke DetectChefCap API
+func CreateDetectChefCapRequest() (request *DetectChefCapRequest) {
+	request = &DetectChefCapRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("facebody", "2019-12-30", "FaceFilter", "facebody", "openAPI")
+	request.InitWithApiInfo("facebody", "2019-12-30", "DetectChefCap", "facebody", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateFaceFilterResponse creates a response to parse from FaceFilter response
-func CreateFaceFilterResponse() (response *FaceFilterResponse) {
-	response = &FaceFilterResponse{
+// CreateDetectChefCapResponse creates a response to parse from DetectChefCap response
+func CreateDetectChefCapResponse() (response *DetectChefCapResponse) {
+	response = &DetectChefCapResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

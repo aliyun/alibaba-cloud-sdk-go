@@ -21,7 +21,6 @@ import (
 )
 
 // EnhanceFace invokes the facebody.EnhanceFace API synchronously
-// api document: https://help.aliyun.com/api/facebody/enhanceface.html
 func (client *Client) EnhanceFace(request *EnhanceFaceRequest) (response *EnhanceFaceResponse, err error) {
 	response = CreateEnhanceFaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnhanceFace(request *EnhanceFaceRequest) (response *Enhanc
 }
 
 // EnhanceFaceWithChan invokes the facebody.EnhanceFace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/enhanceface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnhanceFaceWithChan(request *EnhanceFaceRequest) (<-chan *EnhanceFaceResponse, <-chan error) {
 	responseChan := make(chan *EnhanceFaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnhanceFaceWithChan(request *EnhanceFaceRequest) (<-chan *
 }
 
 // EnhanceFaceWithCallback invokes the facebody.EnhanceFace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/enhanceface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnhanceFaceWithCallback(request *EnhanceFaceRequest, callback func(response *EnhanceFaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

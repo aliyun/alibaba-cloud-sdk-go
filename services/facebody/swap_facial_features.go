@@ -21,7 +21,6 @@ import (
 )
 
 // SwapFacialFeatures invokes the facebody.SwapFacialFeatures API synchronously
-// api document: https://help.aliyun.com/api/facebody/swapfacialfeatures.html
 func (client *Client) SwapFacialFeatures(request *SwapFacialFeaturesRequest) (response *SwapFacialFeaturesResponse, err error) {
 	response = CreateSwapFacialFeaturesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SwapFacialFeatures(request *SwapFacialFeaturesRequest) (re
 }
 
 // SwapFacialFeaturesWithChan invokes the facebody.SwapFacialFeatures API asynchronously
-// api document: https://help.aliyun.com/api/facebody/swapfacialfeatures.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwapFacialFeaturesWithChan(request *SwapFacialFeaturesRequest) (<-chan *SwapFacialFeaturesResponse, <-chan error) {
 	responseChan := make(chan *SwapFacialFeaturesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SwapFacialFeaturesWithChan(request *SwapFacialFeaturesRequ
 }
 
 // SwapFacialFeaturesWithCallback invokes the facebody.SwapFacialFeatures API asynchronously
-// api document: https://help.aliyun.com/api/facebody/swapfacialfeatures.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwapFacialFeaturesWithCallback(request *SwapFacialFeaturesRequest, callback func(response *SwapFacialFeaturesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

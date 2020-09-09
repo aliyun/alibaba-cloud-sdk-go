@@ -21,7 +21,6 @@ import (
 )
 
 // FaceMakeup invokes the facebody.FaceMakeup API synchronously
-// api document: https://help.aliyun.com/api/facebody/facemakeup.html
 func (client *Client) FaceMakeup(request *FaceMakeupRequest) (response *FaceMakeupResponse, err error) {
 	response = CreateFaceMakeupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FaceMakeup(request *FaceMakeupRequest) (response *FaceMake
 }
 
 // FaceMakeupWithChan invokes the facebody.FaceMakeup API asynchronously
-// api document: https://help.aliyun.com/api/facebody/facemakeup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FaceMakeupWithChan(request *FaceMakeupRequest) (<-chan *FaceMakeupResponse, <-chan error) {
 	responseChan := make(chan *FaceMakeupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FaceMakeupWithChan(request *FaceMakeupRequest) (<-chan *Fa
 }
 
 // FaceMakeupWithCallback invokes the facebody.FaceMakeup API asynchronously
-// api document: https://help.aliyun.com/api/facebody/facemakeup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FaceMakeupWithCallback(request *FaceMakeupRequest, callback func(response *FaceMakeupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

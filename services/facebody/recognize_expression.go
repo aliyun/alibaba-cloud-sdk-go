@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeExpression invokes the facebody.RecognizeExpression API synchronously
-// api document: https://help.aliyun.com/api/facebody/recognizeexpression.html
 func (client *Client) RecognizeExpression(request *RecognizeExpressionRequest) (response *RecognizeExpressionResponse, err error) {
 	response = CreateRecognizeExpressionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeExpression(request *RecognizeExpressionRequest) (
 }
 
 // RecognizeExpressionWithChan invokes the facebody.RecognizeExpression API asynchronously
-// api document: https://help.aliyun.com/api/facebody/recognizeexpression.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeExpressionWithChan(request *RecognizeExpressionRequest) (<-chan *RecognizeExpressionResponse, <-chan error) {
 	responseChan := make(chan *RecognizeExpressionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeExpressionWithChan(request *RecognizeExpressionRe
 }
 
 // RecognizeExpressionWithCallback invokes the facebody.RecognizeExpression API asynchronously
-// api document: https://help.aliyun.com/api/facebody/recognizeexpression.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeExpressionWithCallback(request *RecognizeExpressionRequest, callback func(response *RecognizeExpressionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,8 +77,8 @@ type RecognizeExpressionRequest struct {
 // RecognizeExpressionResponse is the response struct for api RecognizeExpression
 type RecognizeExpressionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                    `json:"RequestId" xml:"RequestId"`
+	Data      DataInRecognizeExpression `json:"Data" xml:"Data"`
 }
 
 // CreateRecognizeExpressionRequest creates a request to invoke RecognizeExpression API

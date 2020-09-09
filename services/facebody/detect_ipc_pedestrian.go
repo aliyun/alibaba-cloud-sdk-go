@@ -21,7 +21,6 @@ import (
 )
 
 // DetectIPCPedestrian invokes the facebody.DetectIPCPedestrian API synchronously
-// api document: https://help.aliyun.com/api/facebody/detectipcpedestrian.html
 func (client *Client) DetectIPCPedestrian(request *DetectIPCPedestrianRequest) (response *DetectIPCPedestrianResponse, err error) {
 	response = CreateDetectIPCPedestrianResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetectIPCPedestrian(request *DetectIPCPedestrianRequest) (
 }
 
 // DetectIPCPedestrianWithChan invokes the facebody.DetectIPCPedestrian API asynchronously
-// api document: https://help.aliyun.com/api/facebody/detectipcpedestrian.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectIPCPedestrianWithChan(request *DetectIPCPedestrianRequest) (<-chan *DetectIPCPedestrianResponse, <-chan error) {
 	responseChan := make(chan *DetectIPCPedestrianResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetectIPCPedestrianWithChan(request *DetectIPCPedestrianRe
 }
 
 // DetectIPCPedestrianWithCallback invokes the facebody.DetectIPCPedestrian API asynchronously
-// api document: https://help.aliyun.com/api/facebody/detectipcpedestrian.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectIPCPedestrianWithCallback(request *DetectIPCPedestrianRequest, callback func(response *DetectIPCPedestrianResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

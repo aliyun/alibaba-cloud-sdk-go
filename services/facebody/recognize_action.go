@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeAction invokes the facebody.RecognizeAction API synchronously
-// api document: https://help.aliyun.com/api/facebody/recognizeaction.html
 func (client *Client) RecognizeAction(request *RecognizeActionRequest) (response *RecognizeActionResponse, err error) {
 	response = CreateRecognizeActionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeAction(request *RecognizeActionRequest) (response
 }
 
 // RecognizeActionWithChan invokes the facebody.RecognizeAction API asynchronously
-// api document: https://help.aliyun.com/api/facebody/recognizeaction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeActionWithChan(request *RecognizeActionRequest) (<-chan *RecognizeActionResponse, <-chan error) {
 	responseChan := make(chan *RecognizeActionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeActionWithChan(request *RecognizeActionRequest) (
 }
 
 // RecognizeActionWithCallback invokes the facebody.RecognizeAction API asynchronously
-// api document: https://help.aliyun.com/api/facebody/recognizeaction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeActionWithCallback(request *RecognizeActionRequest, callback func(response *RecognizeActionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,8 +84,8 @@ type RecognizeActionURLList struct {
 // RecognizeActionResponse is the response struct for api RecognizeAction
 type RecognizeActionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                `json:"RequestId" xml:"RequestId"`
+	Data      DataInRecognizeAction `json:"Data" xml:"Data"`
 }
 
 // CreateRecognizeActionRequest creates a request to invoke RecognizeAction API

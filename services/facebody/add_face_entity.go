@@ -21,7 +21,6 @@ import (
 )
 
 // AddFaceEntity invokes the facebody.AddFaceEntity API synchronously
-// api document: https://help.aliyun.com/api/facebody/addfaceentity.html
 func (client *Client) AddFaceEntity(request *AddFaceEntityRequest) (response *AddFaceEntityResponse, err error) {
 	response = CreateAddFaceEntityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddFaceEntity(request *AddFaceEntityRequest) (response *Ad
 }
 
 // AddFaceEntityWithChan invokes the facebody.AddFaceEntity API asynchronously
-// api document: https://help.aliyun.com/api/facebody/addfaceentity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddFaceEntityWithChan(request *AddFaceEntityRequest) (<-chan *AddFaceEntityResponse, <-chan error) {
 	responseChan := make(chan *AddFaceEntityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddFaceEntityWithChan(request *AddFaceEntityRequest) (<-ch
 }
 
 // AddFaceEntityWithCallback invokes the facebody.AddFaceEntity API asynchronously
-// api document: https://help.aliyun.com/api/facebody/addfaceentity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddFaceEntityWithCallback(request *AddFaceEntityRequest, callback func(response *AddFaceEntityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

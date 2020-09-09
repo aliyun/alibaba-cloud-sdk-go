@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteFaceDb invokes the facebody.DeleteFaceDb API synchronously
-// api document: https://help.aliyun.com/api/facebody/deletefacedb.html
 func (client *Client) DeleteFaceDb(request *DeleteFaceDbRequest) (response *DeleteFaceDbResponse, err error) {
 	response = CreateDeleteFaceDbResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteFaceDb(request *DeleteFaceDbRequest) (response *Dele
 }
 
 // DeleteFaceDbWithChan invokes the facebody.DeleteFaceDb API asynchronously
-// api document: https://help.aliyun.com/api/facebody/deletefacedb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFaceDbWithChan(request *DeleteFaceDbRequest) (<-chan *DeleteFaceDbResponse, <-chan error) {
 	responseChan := make(chan *DeleteFaceDbResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteFaceDbWithChan(request *DeleteFaceDbRequest) (<-chan
 }
 
 // DeleteFaceDbWithCallback invokes the facebody.DeleteFaceDb API asynchronously
-// api document: https://help.aliyun.com/api/facebody/deletefacedb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFaceDbWithCallback(request *DeleteFaceDbRequest, callback func(response *DeleteFaceDbResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

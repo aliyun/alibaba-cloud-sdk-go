@@ -21,7 +21,6 @@ import (
 )
 
 // ListFaceDbs invokes the facebody.ListFaceDbs API synchronously
-// api document: https://help.aliyun.com/api/facebody/listfacedbs.html
 func (client *Client) ListFaceDbs(request *ListFaceDbsRequest) (response *ListFaceDbsResponse, err error) {
 	response = CreateListFaceDbsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFaceDbs(request *ListFaceDbsRequest) (response *ListFa
 }
 
 // ListFaceDbsWithChan invokes the facebody.ListFaceDbs API asynchronously
-// api document: https://help.aliyun.com/api/facebody/listfacedbs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFaceDbsWithChan(request *ListFaceDbsRequest) (<-chan *ListFaceDbsResponse, <-chan error) {
 	responseChan := make(chan *ListFaceDbsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFaceDbsWithChan(request *ListFaceDbsRequest) (<-chan *
 }
 
 // ListFaceDbsWithCallback invokes the facebody.ListFaceDbs API asynchronously
-// api document: https://help.aliyun.com/api/facebody/listfacedbs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFaceDbsWithCallback(request *ListFaceDbsRequest, callback func(response *ListFaceDbsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

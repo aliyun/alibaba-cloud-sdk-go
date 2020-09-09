@@ -21,7 +21,6 @@ import (
 )
 
 // DetectMask invokes the facebody.DetectMask API synchronously
-// api document: https://help.aliyun.com/api/facebody/detectmask.html
 func (client *Client) DetectMask(request *DetectMaskRequest) (response *DetectMaskResponse, err error) {
 	response = CreateDetectMaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetectMask(request *DetectMaskRequest) (response *DetectMa
 }
 
 // DetectMaskWithChan invokes the facebody.DetectMask API asynchronously
-// api document: https://help.aliyun.com/api/facebody/detectmask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectMaskWithChan(request *DetectMaskRequest) (<-chan *DetectMaskResponse, <-chan error) {
 	responseChan := make(chan *DetectMaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetectMaskWithChan(request *DetectMaskRequest) (<-chan *De
 }
 
 // DetectMaskWithCallback invokes the facebody.DetectMask API asynchronously
-// api document: https://help.aliyun.com/api/facebody/detectmask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectMaskWithCallback(request *DetectMaskRequest, callback func(response *DetectMaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

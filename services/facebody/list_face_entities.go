@@ -21,7 +21,6 @@ import (
 )
 
 // ListFaceEntities invokes the facebody.ListFaceEntities API synchronously
-// api document: https://help.aliyun.com/api/facebody/listfaceentities.html
 func (client *Client) ListFaceEntities(request *ListFaceEntitiesRequest) (response *ListFaceEntitiesResponse, err error) {
 	response = CreateListFaceEntitiesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFaceEntities(request *ListFaceEntitiesRequest) (respon
 }
 
 // ListFaceEntitiesWithChan invokes the facebody.ListFaceEntities API asynchronously
-// api document: https://help.aliyun.com/api/facebody/listfaceentities.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFaceEntitiesWithChan(request *ListFaceEntitiesRequest) (<-chan *ListFaceEntitiesResponse, <-chan error) {
 	responseChan := make(chan *ListFaceEntitiesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFaceEntitiesWithChan(request *ListFaceEntitiesRequest)
 }
 
 // ListFaceEntitiesWithCallback invokes the facebody.ListFaceEntities API asynchronously
-// api document: https://help.aliyun.com/api/facebody/listfaceentities.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFaceEntitiesWithCallback(request *ListFaceEntitiesRequest, callback func(response *ListFaceEntitiesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

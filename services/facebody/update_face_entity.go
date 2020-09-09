@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateFaceEntity invokes the facebody.UpdateFaceEntity API synchronously
-// api document: https://help.aliyun.com/api/facebody/updatefaceentity.html
 func (client *Client) UpdateFaceEntity(request *UpdateFaceEntityRequest) (response *UpdateFaceEntityResponse, err error) {
 	response = CreateUpdateFaceEntityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateFaceEntity(request *UpdateFaceEntityRequest) (respon
 }
 
 // UpdateFaceEntityWithChan invokes the facebody.UpdateFaceEntity API asynchronously
-// api document: https://help.aliyun.com/api/facebody/updatefaceentity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateFaceEntityWithChan(request *UpdateFaceEntityRequest) (<-chan *UpdateFaceEntityResponse, <-chan error) {
 	responseChan := make(chan *UpdateFaceEntityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateFaceEntityWithChan(request *UpdateFaceEntityRequest)
 }
 
 // UpdateFaceEntityWithCallback invokes the facebody.UpdateFaceEntity API asynchronously
-// api document: https://help.aliyun.com/api/facebody/updatefaceentity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateFaceEntityWithCallback(request *UpdateFaceEntityRequest, callback func(response *UpdateFaceEntityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

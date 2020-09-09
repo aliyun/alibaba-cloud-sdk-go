@@ -21,7 +21,6 @@ import (
 )
 
 // FaceTidyup invokes the facebody.FaceTidyup API synchronously
-// api document: https://help.aliyun.com/api/facebody/facetidyup.html
 func (client *Client) FaceTidyup(request *FaceTidyupRequest) (response *FaceTidyupResponse, err error) {
 	response = CreateFaceTidyupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FaceTidyup(request *FaceTidyupRequest) (response *FaceTidy
 }
 
 // FaceTidyupWithChan invokes the facebody.FaceTidyup API asynchronously
-// api document: https://help.aliyun.com/api/facebody/facetidyup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FaceTidyupWithChan(request *FaceTidyupRequest) (<-chan *FaceTidyupResponse, <-chan error) {
 	responseChan := make(chan *FaceTidyupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FaceTidyupWithChan(request *FaceTidyupRequest) (<-chan *Fa
 }
 
 // FaceTidyupWithCallback invokes the facebody.FaceTidyup API asynchronously
-// api document: https://help.aliyun.com/api/facebody/facetidyup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FaceTidyupWithCallback(request *FaceTidyupRequest, callback func(response *FaceTidyupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DetectVideoLivingFace invokes the facebody.DetectVideoLivingFace API synchronously
-// api document: https://help.aliyun.com/api/facebody/detectvideolivingface.html
 func (client *Client) DetectVideoLivingFace(request *DetectVideoLivingFaceRequest) (response *DetectVideoLivingFaceResponse, err error) {
 	response = CreateDetectVideoLivingFaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetectVideoLivingFace(request *DetectVideoLivingFaceReques
 }
 
 // DetectVideoLivingFaceWithChan invokes the facebody.DetectVideoLivingFace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/detectvideolivingface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectVideoLivingFaceWithChan(request *DetectVideoLivingFaceRequest) (<-chan *DetectVideoLivingFaceResponse, <-chan error) {
 	responseChan := make(chan *DetectVideoLivingFaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetectVideoLivingFaceWithChan(request *DetectVideoLivingFa
 }
 
 // DetectVideoLivingFaceWithCallback invokes the facebody.DetectVideoLivingFace API asynchronously
-// api document: https://help.aliyun.com/api/facebody/detectvideolivingface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectVideoLivingFaceWithCallback(request *DetectVideoLivingFaceRequest, callback func(response *DetectVideoLivingFaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,8 +77,8 @@ type DetectVideoLivingFaceRequest struct {
 // DetectVideoLivingFaceResponse is the response struct for api DetectVideoLivingFace
 type DetectVideoLivingFaceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                      `json:"RequestId" xml:"RequestId"`
+	Data      DataInDetectVideoLivingFace `json:"Data" xml:"Data"`
 }
 
 // CreateDetectVideoLivingFaceRequest creates a request to invoke DetectVideoLivingFace API
