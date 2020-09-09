@@ -21,7 +21,6 @@ import (
 )
 
 // SegmentBody invokes the imageseg.SegmentBody API synchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentbody.html
 func (client *Client) SegmentBody(request *SegmentBodyRequest) (response *SegmentBodyResponse, err error) {
 	response = CreateSegmentBodyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SegmentBody(request *SegmentBodyRequest) (response *Segmen
 }
 
 // SegmentBodyWithChan invokes the imageseg.SegmentBody API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentbody.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentBodyWithChan(request *SegmentBodyRequest) (<-chan *SegmentBodyResponse, <-chan error) {
 	responseChan := make(chan *SegmentBodyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SegmentBodyWithChan(request *SegmentBodyRequest) (<-chan *
 }
 
 // SegmentBodyWithCallback invokes the imageseg.SegmentBody API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentbody.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentBodyWithCallback(request *SegmentBodyRequest, callback func(response *SegmentBodyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

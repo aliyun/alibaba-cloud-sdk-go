@@ -21,7 +21,6 @@ import (
 )
 
 // SegmentLogo invokes the imageseg.SegmentLogo API synchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentlogo.html
 func (client *Client) SegmentLogo(request *SegmentLogoRequest) (response *SegmentLogoResponse, err error) {
 	response = CreateSegmentLogoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SegmentLogo(request *SegmentLogoRequest) (response *Segmen
 }
 
 // SegmentLogoWithChan invokes the imageseg.SegmentLogo API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentlogo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentLogoWithChan(request *SegmentLogoRequest) (<-chan *SegmentLogoResponse, <-chan error) {
 	responseChan := make(chan *SegmentLogoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SegmentLogoWithChan(request *SegmentLogoRequest) (<-chan *
 }
 
 // SegmentLogoWithCallback invokes the imageseg.SegmentLogo API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentlogo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentLogoWithCallback(request *SegmentLogoRequest, callback func(response *SegmentLogoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

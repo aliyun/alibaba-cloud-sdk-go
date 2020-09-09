@@ -21,7 +21,6 @@ import (
 )
 
 // SegmentAnimal invokes the imageseg.SegmentAnimal API synchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentanimal.html
 func (client *Client) SegmentAnimal(request *SegmentAnimalRequest) (response *SegmentAnimalResponse, err error) {
 	response = CreateSegmentAnimalResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SegmentAnimal(request *SegmentAnimalRequest) (response *Se
 }
 
 // SegmentAnimalWithChan invokes the imageseg.SegmentAnimal API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentanimal.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentAnimalWithChan(request *SegmentAnimalRequest) (<-chan *SegmentAnimalResponse, <-chan error) {
 	responseChan := make(chan *SegmentAnimalResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SegmentAnimalWithChan(request *SegmentAnimalRequest) (<-ch
 }
 
 // SegmentAnimalWithCallback invokes the imageseg.SegmentAnimal API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentanimal.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentAnimalWithCallback(request *SegmentAnimalRequest, callback func(response *SegmentAnimalResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

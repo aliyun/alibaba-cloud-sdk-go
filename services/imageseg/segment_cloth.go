@@ -21,7 +21,6 @@ import (
 )
 
 // SegmentCloth invokes the imageseg.SegmentCloth API synchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentcloth.html
 func (client *Client) SegmentCloth(request *SegmentClothRequest) (response *SegmentClothResponse, err error) {
 	response = CreateSegmentClothResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SegmentCloth(request *SegmentClothRequest) (response *Segm
 }
 
 // SegmentClothWithChan invokes the imageseg.SegmentCloth API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentcloth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentClothWithChan(request *SegmentClothRequest) (<-chan *SegmentClothResponse, <-chan error) {
 	responseChan := make(chan *SegmentClothResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SegmentClothWithChan(request *SegmentClothRequest) (<-chan
 }
 
 // SegmentClothWithCallback invokes the imageseg.SegmentCloth API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentcloth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentClothWithCallback(request *SegmentClothRequest, callback func(response *SegmentClothResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

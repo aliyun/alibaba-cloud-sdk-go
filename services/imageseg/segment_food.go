@@ -21,7 +21,6 @@ import (
 )
 
 // SegmentFood invokes the imageseg.SegmentFood API synchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentfood.html
 func (client *Client) SegmentFood(request *SegmentFoodRequest) (response *SegmentFoodResponse, err error) {
 	response = CreateSegmentFoodResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SegmentFood(request *SegmentFoodRequest) (response *Segmen
 }
 
 // SegmentFoodWithChan invokes the imageseg.SegmentFood API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentfood.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentFoodWithChan(request *SegmentFoodRequest) (<-chan *SegmentFoodResponse, <-chan error) {
 	responseChan := make(chan *SegmentFoodResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SegmentFoodWithChan(request *SegmentFoodRequest) (<-chan *
 }
 
 // SegmentFoodWithCallback invokes the imageseg.SegmentFood API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentfood.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentFoodWithCallback(request *SegmentFoodRequest, callback func(response *SegmentFoodResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

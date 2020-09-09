@@ -21,7 +21,6 @@ import (
 )
 
 // ParseFace invokes the imageseg.ParseFace API synchronously
-// api document: https://help.aliyun.com/api/imageseg/parseface.html
 func (client *Client) ParseFace(request *ParseFaceRequest) (response *ParseFaceResponse, err error) {
 	response = CreateParseFaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ParseFace(request *ParseFaceRequest) (response *ParseFaceR
 }
 
 // ParseFaceWithChan invokes the imageseg.ParseFace API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/parseface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ParseFaceWithChan(request *ParseFaceRequest) (<-chan *ParseFaceResponse, <-chan error) {
 	responseChan := make(chan *ParseFaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ParseFaceWithChan(request *ParseFaceRequest) (<-chan *Pars
 }
 
 // ParseFaceWithCallback invokes the imageseg.ParseFace API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/parseface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ParseFaceWithCallback(request *ParseFaceRequest, callback func(response *ParseFaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

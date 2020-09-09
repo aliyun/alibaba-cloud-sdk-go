@@ -21,7 +21,6 @@ import (
 )
 
 // SegmentVehicle invokes the imageseg.SegmentVehicle API synchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentvehicle.html
 func (client *Client) SegmentVehicle(request *SegmentVehicleRequest) (response *SegmentVehicleResponse, err error) {
 	response = CreateSegmentVehicleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SegmentVehicle(request *SegmentVehicleRequest) (response *
 }
 
 // SegmentVehicleWithChan invokes the imageseg.SegmentVehicle API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentvehicle.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentVehicleWithChan(request *SegmentVehicleRequest) (<-chan *SegmentVehicleResponse, <-chan error) {
 	responseChan := make(chan *SegmentVehicleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SegmentVehicleWithChan(request *SegmentVehicleRequest) (<-
 }
 
 // SegmentVehicleWithCallback invokes the imageseg.SegmentVehicle API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentvehicle.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentVehicleWithCallback(request *SegmentVehicleRequest, callback func(response *SegmentVehicleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

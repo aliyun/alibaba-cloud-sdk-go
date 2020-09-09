@@ -21,7 +21,6 @@ import (
 )
 
 // SegmentHDBody invokes the imageseg.SegmentHDBody API synchronously
-// api document: https://help.aliyun.com/api/imageseg/segmenthdbody.html
 func (client *Client) SegmentHDBody(request *SegmentHDBodyRequest) (response *SegmentHDBodyResponse, err error) {
 	response = CreateSegmentHDBodyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SegmentHDBody(request *SegmentHDBodyRequest) (response *Se
 }
 
 // SegmentHDBodyWithChan invokes the imageseg.SegmentHDBody API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmenthdbody.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentHDBodyWithChan(request *SegmentHDBodyRequest) (<-chan *SegmentHDBodyResponse, <-chan error) {
 	responseChan := make(chan *SegmentHDBodyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SegmentHDBodyWithChan(request *SegmentHDBodyRequest) (<-ch
 }
 
 // SegmentHDBodyWithCallback invokes the imageseg.SegmentHDBody API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmenthdbody.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentHDBodyWithCallback(request *SegmentHDBodyRequest, callback func(response *SegmentHDBodyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

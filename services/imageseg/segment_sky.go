@@ -21,7 +21,6 @@ import (
 )
 
 // SegmentSky invokes the imageseg.SegmentSky API synchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentsky.html
 func (client *Client) SegmentSky(request *SegmentSkyRequest) (response *SegmentSkyResponse, err error) {
 	response = CreateSegmentSkyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SegmentSky(request *SegmentSkyRequest) (response *SegmentS
 }
 
 // SegmentSkyWithChan invokes the imageseg.SegmentSky API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentsky.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentSkyWithChan(request *SegmentSkyRequest) (<-chan *SegmentSkyResponse, <-chan error) {
 	responseChan := make(chan *SegmentSkyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SegmentSkyWithChan(request *SegmentSkyRequest) (<-chan *Se
 }
 
 // SegmentSkyWithCallback invokes the imageseg.SegmentSky API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentsky.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentSkyWithCallback(request *SegmentSkyRequest, callback func(response *SegmentSkyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

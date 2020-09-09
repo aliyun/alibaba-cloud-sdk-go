@@ -21,7 +21,6 @@ import (
 )
 
 // SegmentCommonImage invokes the imageseg.SegmentCommonImage API synchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentcommonimage.html
 func (client *Client) SegmentCommonImage(request *SegmentCommonImageRequest) (response *SegmentCommonImageResponse, err error) {
 	response = CreateSegmentCommonImageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SegmentCommonImage(request *SegmentCommonImageRequest) (re
 }
 
 // SegmentCommonImageWithChan invokes the imageseg.SegmentCommonImage API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentcommonimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentCommonImageWithChan(request *SegmentCommonImageRequest) (<-chan *SegmentCommonImageResponse, <-chan error) {
 	responseChan := make(chan *SegmentCommonImageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SegmentCommonImageWithChan(request *SegmentCommonImageRequ
 }
 
 // SegmentCommonImageWithCallback invokes the imageseg.SegmentCommonImage API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentcommonimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentCommonImageWithCallback(request *SegmentCommonImageRequest, callback func(response *SegmentCommonImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

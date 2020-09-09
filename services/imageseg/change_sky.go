@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SegmentHair invokes the imageseg.SegmentHair API synchronously
-func (client *Client) SegmentHair(request *SegmentHairRequest) (response *SegmentHairResponse, err error) {
-	response = CreateSegmentHairResponse()
+// ChangeSky invokes the imageseg.ChangeSky API synchronously
+func (client *Client) ChangeSky(request *ChangeSkyRequest) (response *ChangeSkyResponse, err error) {
+	response = CreateChangeSkyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SegmentHairWithChan invokes the imageseg.SegmentHair API asynchronously
-func (client *Client) SegmentHairWithChan(request *SegmentHairRequest) (<-chan *SegmentHairResponse, <-chan error) {
-	responseChan := make(chan *SegmentHairResponse, 1)
+// ChangeSkyWithChan invokes the imageseg.ChangeSky API asynchronously
+func (client *Client) ChangeSkyWithChan(request *ChangeSkyRequest) (<-chan *ChangeSkyResponse, <-chan error) {
+	responseChan := make(chan *ChangeSkyResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SegmentHair(request)
+		response, err := client.ChangeSky(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) SegmentHairWithChan(request *SegmentHairRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// SegmentHairWithCallback invokes the imageseg.SegmentHair API asynchronously
-func (client *Client) SegmentHairWithCallback(request *SegmentHairRequest, callback func(response *SegmentHairResponse, err error)) <-chan int {
+// ChangeSkyWithCallback invokes the imageseg.ChangeSky API asynchronously
+func (client *Client) ChangeSkyWithCallback(request *ChangeSkyRequest, callback func(response *ChangeSkyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SegmentHairResponse
+		var response *ChangeSkyResponse
 		var err error
 		defer close(result)
-		response, err = client.SegmentHair(request)
+		response, err = client.ChangeSky(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,32 +68,33 @@ func (client *Client) SegmentHairWithCallback(request *SegmentHairRequest, callb
 	return result
 }
 
-// SegmentHairRequest is the request struct for api SegmentHair
-type SegmentHairRequest struct {
+// ChangeSkyRequest is the request struct for api ChangeSky
+type ChangeSkyRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Query" name:"ImageURL"`
+	ReplaceImageURL string `position:"Query" name:"ReplaceImageURL"`
+	ImageURL        string `position:"Query" name:"ImageURL"`
 }
 
-// SegmentHairResponse is the response struct for api SegmentHair
-type SegmentHairResponse struct {
+// ChangeSkyResponse is the response struct for api ChangeSky
+type ChangeSkyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateSegmentHairRequest creates a request to invoke SegmentHair API
-func CreateSegmentHairRequest() (request *SegmentHairRequest) {
-	request = &SegmentHairRequest{
+// CreateChangeSkyRequest creates a request to invoke ChangeSky API
+func CreateChangeSkyRequest() (request *ChangeSkyRequest) {
+	request = &ChangeSkyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageseg", "2019-12-30", "SegmentHair", "imageseg", "openAPI")
+	request.InitWithApiInfo("imageseg", "2019-12-30", "ChangeSky", "imageseg", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateSegmentHairResponse creates a response to parse from SegmentHair response
-func CreateSegmentHairResponse() (response *SegmentHairResponse) {
-	response = &SegmentHairResponse{
+// CreateChangeSkyResponse creates a response to parse from ChangeSky response
+func CreateChangeSkyResponse() (response *ChangeSkyResponse) {
+	response = &ChangeSkyResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

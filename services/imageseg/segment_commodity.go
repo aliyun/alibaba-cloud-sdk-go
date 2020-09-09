@@ -21,7 +21,6 @@ import (
 )
 
 // SegmentCommodity invokes the imageseg.SegmentCommodity API synchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentcommodity.html
 func (client *Client) SegmentCommodity(request *SegmentCommodityRequest) (response *SegmentCommodityResponse, err error) {
 	response = CreateSegmentCommodityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SegmentCommodity(request *SegmentCommodityRequest) (respon
 }
 
 // SegmentCommodityWithChan invokes the imageseg.SegmentCommodity API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentcommodity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentCommodityWithChan(request *SegmentCommodityRequest) (<-chan *SegmentCommodityResponse, <-chan error) {
 	responseChan := make(chan *SegmentCommodityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SegmentCommodityWithChan(request *SegmentCommodityRequest)
 }
 
 // SegmentCommodityWithCallback invokes the imageseg.SegmentCommodity API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/segmentcommodity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentCommodityWithCallback(request *SegmentCommodityRequest, callback func(response *SegmentCommodityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

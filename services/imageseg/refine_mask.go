@@ -21,7 +21,6 @@ import (
 )
 
 // RefineMask invokes the imageseg.RefineMask API synchronously
-// api document: https://help.aliyun.com/api/imageseg/refinemask.html
 func (client *Client) RefineMask(request *RefineMaskRequest) (response *RefineMaskResponse, err error) {
 	response = CreateRefineMaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RefineMask(request *RefineMaskRequest) (response *RefineMa
 }
 
 // RefineMaskWithChan invokes the imageseg.RefineMask API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/refinemask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefineMaskWithChan(request *RefineMaskRequest) (<-chan *RefineMaskResponse, <-chan error) {
 	responseChan := make(chan *RefineMaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RefineMaskWithChan(request *RefineMaskRequest) (<-chan *Re
 }
 
 // RefineMaskWithCallback invokes the imageseg.RefineMask API asynchronously
-// api document: https://help.aliyun.com/api/imageseg/refinemask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefineMaskWithCallback(request *RefineMaskRequest, callback func(response *RefineMaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
