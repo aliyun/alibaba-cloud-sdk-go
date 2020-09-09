@@ -21,7 +21,6 @@ import (
 )
 
 // BatchSetVodDomainConfigs invokes the vod.BatchSetVodDomainConfigs API synchronously
-// api document: https://help.aliyun.com/api/vod/batchsetvoddomainconfigs.html
 func (client *Client) BatchSetVodDomainConfigs(request *BatchSetVodDomainConfigsRequest) (response *BatchSetVodDomainConfigsResponse, err error) {
 	response = CreateBatchSetVodDomainConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchSetVodDomainConfigs(request *BatchSetVodDomainConfigs
 }
 
 // BatchSetVodDomainConfigsWithChan invokes the vod.BatchSetVodDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/vod/batchsetvoddomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchSetVodDomainConfigsWithChan(request *BatchSetVodDomainConfigsRequest) (<-chan *BatchSetVodDomainConfigsResponse, <-chan error) {
 	responseChan := make(chan *BatchSetVodDomainConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchSetVodDomainConfigsWithChan(request *BatchSetVodDomai
 }
 
 // BatchSetVodDomainConfigsWithCallback invokes the vod.BatchSetVodDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/vod/batchsetvoddomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchSetVodDomainConfigsWithCallback(request *BatchSetVodDomainConfigsRequest, callback func(response *BatchSetVodDomainConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

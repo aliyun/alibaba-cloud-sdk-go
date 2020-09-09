@@ -21,7 +21,6 @@ import (
 )
 
 // SetMessageCallback invokes the vod.SetMessageCallback API synchronously
-// api document: https://help.aliyun.com/api/vod/setmessagecallback.html
 func (client *Client) SetMessageCallback(request *SetMessageCallbackRequest) (response *SetMessageCallbackResponse, err error) {
 	response = CreateSetMessageCallbackResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetMessageCallback(request *SetMessageCallbackRequest) (re
 }
 
 // SetMessageCallbackWithChan invokes the vod.SetMessageCallback API asynchronously
-// api document: https://help.aliyun.com/api/vod/setmessagecallback.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetMessageCallbackWithChan(request *SetMessageCallbackRequest) (<-chan *SetMessageCallbackResponse, <-chan error) {
 	responseChan := make(chan *SetMessageCallbackResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetMessageCallbackWithChan(request *SetMessageCallbackRequ
 }
 
 // SetMessageCallbackWithCallback invokes the vod.SetMessageCallback API asynchronously
-// api document: https://help.aliyun.com/api/vod/setmessagecallback.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetMessageCallbackWithCallback(request *SetMessageCallbackRequest, callback func(response *SetMessageCallbackResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

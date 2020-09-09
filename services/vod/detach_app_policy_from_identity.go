@@ -21,7 +21,6 @@ import (
 )
 
 // DetachAppPolicyFromIdentity invokes the vod.DetachAppPolicyFromIdentity API synchronously
-// api document: https://help.aliyun.com/api/vod/detachapppolicyfromidentity.html
 func (client *Client) DetachAppPolicyFromIdentity(request *DetachAppPolicyFromIdentityRequest) (response *DetachAppPolicyFromIdentityResponse, err error) {
 	response = CreateDetachAppPolicyFromIdentityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetachAppPolicyFromIdentity(request *DetachAppPolicyFromId
 }
 
 // DetachAppPolicyFromIdentityWithChan invokes the vod.DetachAppPolicyFromIdentity API asynchronously
-// api document: https://help.aliyun.com/api/vod/detachapppolicyfromidentity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachAppPolicyFromIdentityWithChan(request *DetachAppPolicyFromIdentityRequest) (<-chan *DetachAppPolicyFromIdentityResponse, <-chan error) {
 	responseChan := make(chan *DetachAppPolicyFromIdentityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetachAppPolicyFromIdentityWithChan(request *DetachAppPoli
 }
 
 // DetachAppPolicyFromIdentityWithCallback invokes the vod.DetachAppPolicyFromIdentity API asynchronously
-// api document: https://help.aliyun.com/api/vod/detachapppolicyfromidentity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachAppPolicyFromIdentityWithCallback(request *DetachAppPolicyFromIdentityRequest, callback func(response *DetachAppPolicyFromIdentityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

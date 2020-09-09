@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteEditingProject invokes the vod.DeleteEditingProject API synchronously
-// api document: https://help.aliyun.com/api/vod/deleteeditingproject.html
 func (client *Client) DeleteEditingProject(request *DeleteEditingProjectRequest) (response *DeleteEditingProjectResponse, err error) {
 	response = CreateDeleteEditingProjectResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteEditingProject(request *DeleteEditingProjectRequest)
 }
 
 // DeleteEditingProjectWithChan invokes the vod.DeleteEditingProject API asynchronously
-// api document: https://help.aliyun.com/api/vod/deleteeditingproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEditingProjectWithChan(request *DeleteEditingProjectRequest) (<-chan *DeleteEditingProjectResponse, <-chan error) {
 	responseChan := make(chan *DeleteEditingProjectResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteEditingProjectWithChan(request *DeleteEditingProject
 }
 
 // DeleteEditingProjectWithCallback invokes the vod.DeleteEditingProject API asynchronously
-// api document: https://help.aliyun.com/api/vod/deleteeditingproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEditingProjectWithCallback(request *DeleteEditingProjectRequest, callback func(response *DeleteEditingProjectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

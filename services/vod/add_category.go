@@ -21,7 +21,6 @@ import (
 )
 
 // AddCategory invokes the vod.AddCategory API synchronously
-// api document: https://help.aliyun.com/api/vod/addcategory.html
 func (client *Client) AddCategory(request *AddCategoryRequest) (response *AddCategoryResponse, err error) {
 	response = CreateAddCategoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddCategory(request *AddCategoryRequest) (response *AddCat
 }
 
 // AddCategoryWithChan invokes the vod.AddCategory API asynchronously
-// api document: https://help.aliyun.com/api/vod/addcategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCategoryWithChan(request *AddCategoryRequest) (<-chan *AddCategoryResponse, <-chan error) {
 	responseChan := make(chan *AddCategoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddCategoryWithChan(request *AddCategoryRequest) (<-chan *
 }
 
 // AddCategoryWithCallback invokes the vod.AddCategory API asynchronously
-// api document: https://help.aliyun.com/api/vod/addcategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCategoryWithCallback(request *AddCategoryRequest, callback func(response *AddCategoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

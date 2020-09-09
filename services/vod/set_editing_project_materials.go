@@ -21,7 +21,6 @@ import (
 )
 
 // SetEditingProjectMaterials invokes the vod.SetEditingProjectMaterials API synchronously
-// api document: https://help.aliyun.com/api/vod/seteditingprojectmaterials.html
 func (client *Client) SetEditingProjectMaterials(request *SetEditingProjectMaterialsRequest) (response *SetEditingProjectMaterialsResponse, err error) {
 	response = CreateSetEditingProjectMaterialsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetEditingProjectMaterials(request *SetEditingProjectMater
 }
 
 // SetEditingProjectMaterialsWithChan invokes the vod.SetEditingProjectMaterials API asynchronously
-// api document: https://help.aliyun.com/api/vod/seteditingprojectmaterials.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetEditingProjectMaterialsWithChan(request *SetEditingProjectMaterialsRequest) (<-chan *SetEditingProjectMaterialsResponse, <-chan error) {
 	responseChan := make(chan *SetEditingProjectMaterialsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetEditingProjectMaterialsWithChan(request *SetEditingProj
 }
 
 // SetEditingProjectMaterialsWithCallback invokes the vod.SetEditingProjectMaterials API asynchronously
-// api document: https://help.aliyun.com/api/vod/seteditingprojectmaterials.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetEditingProjectMaterialsWithCallback(request *SetEditingProjectMaterialsRequest, callback func(response *SetEditingProjectMaterialsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

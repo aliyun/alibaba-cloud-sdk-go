@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitAIJob invokes the vod.SubmitAIJob API synchronously
-// api document: https://help.aliyun.com/api/vod/submitaijob.html
 func (client *Client) SubmitAIJob(request *SubmitAIJobRequest) (response *SubmitAIJobResponse, err error) {
 	response = CreateSubmitAIJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitAIJob(request *SubmitAIJobRequest) (response *Submit
 }
 
 // SubmitAIJobWithChan invokes the vod.SubmitAIJob API asynchronously
-// api document: https://help.aliyun.com/api/vod/submitaijob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAIJobWithChan(request *SubmitAIJobRequest) (<-chan *SubmitAIJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitAIJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitAIJobWithChan(request *SubmitAIJobRequest) (<-chan *
 }
 
 // SubmitAIJobWithCallback invokes the vod.SubmitAIJob API asynchronously
-// api document: https://help.aliyun.com/api/vod/submitaijob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAIJobWithCallback(request *SubmitAIJobRequest, callback func(response *SubmitAIJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

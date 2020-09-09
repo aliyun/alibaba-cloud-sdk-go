@@ -21,7 +21,6 @@ import (
 )
 
 // ListTranscodeTask invokes the vod.ListTranscodeTask API synchronously
-// api document: https://help.aliyun.com/api/vod/listtranscodetask.html
 func (client *Client) ListTranscodeTask(request *ListTranscodeTaskRequest) (response *ListTranscodeTaskResponse, err error) {
 	response = CreateListTranscodeTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListTranscodeTask(request *ListTranscodeTaskRequest) (resp
 }
 
 // ListTranscodeTaskWithChan invokes the vod.ListTranscodeTask API asynchronously
-// api document: https://help.aliyun.com/api/vod/listtranscodetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTranscodeTaskWithChan(request *ListTranscodeTaskRequest) (<-chan *ListTranscodeTaskResponse, <-chan error) {
 	responseChan := make(chan *ListTranscodeTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListTranscodeTaskWithChan(request *ListTranscodeTaskReques
 }
 
 // ListTranscodeTaskWithCallback invokes the vod.ListTranscodeTask API asynchronously
-// api document: https://help.aliyun.com/api/vod/listtranscodetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTranscodeTaskWithCallback(request *ListTranscodeTaskRequest, callback func(response *ListTranscodeTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

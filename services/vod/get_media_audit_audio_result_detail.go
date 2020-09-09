@@ -21,7 +21,6 @@ import (
 )
 
 // GetMediaAuditAudioResultDetail invokes the vod.GetMediaAuditAudioResultDetail API synchronously
-// api document: https://help.aliyun.com/api/vod/getmediaauditaudioresultdetail.html
 func (client *Client) GetMediaAuditAudioResultDetail(request *GetMediaAuditAudioResultDetailRequest) (response *GetMediaAuditAudioResultDetailResponse, err error) {
 	response = CreateGetMediaAuditAudioResultDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetMediaAuditAudioResultDetail(request *GetMediaAuditAudio
 }
 
 // GetMediaAuditAudioResultDetailWithChan invokes the vod.GetMediaAuditAudioResultDetail API asynchronously
-// api document: https://help.aliyun.com/api/vod/getmediaauditaudioresultdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMediaAuditAudioResultDetailWithChan(request *GetMediaAuditAudioResultDetailRequest) (<-chan *GetMediaAuditAudioResultDetailResponse, <-chan error) {
 	responseChan := make(chan *GetMediaAuditAudioResultDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetMediaAuditAudioResultDetailWithChan(request *GetMediaAu
 }
 
 // GetMediaAuditAudioResultDetailWithCallback invokes the vod.GetMediaAuditAudioResultDetail API asynchronously
-// api document: https://help.aliyun.com/api/vod/getmediaauditaudioresultdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMediaAuditAudioResultDetailWithCallback(request *GetMediaAuditAudioResultDetailRequest, callback func(response *GetMediaAuditAudioResultDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // UploadMediaByURL invokes the vod.UploadMediaByURL API synchronously
-// api document: https://help.aliyun.com/api/vod/uploadmediabyurl.html
 func (client *Client) UploadMediaByURL(request *UploadMediaByURLRequest) (response *UploadMediaByURLResponse, err error) {
 	response = CreateUploadMediaByURLResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UploadMediaByURL(request *UploadMediaByURLRequest) (respon
 }
 
 // UploadMediaByURLWithChan invokes the vod.UploadMediaByURL API asynchronously
-// api document: https://help.aliyun.com/api/vod/uploadmediabyurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadMediaByURLWithChan(request *UploadMediaByURLRequest) (<-chan *UploadMediaByURLResponse, <-chan error) {
 	responseChan := make(chan *UploadMediaByURLResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UploadMediaByURLWithChan(request *UploadMediaByURLRequest)
 }
 
 // UploadMediaByURLWithCallback invokes the vod.UploadMediaByURL API asynchronously
-// api document: https://help.aliyun.com/api/vod/uploadmediabyurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadMediaByURLWithCallback(request *UploadMediaByURLRequest, callback func(response *UploadMediaByURLResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ListLiveRecordVideo invokes the vod.ListLiveRecordVideo API synchronously
-// api document: https://help.aliyun.com/api/vod/listliverecordvideo.html
 func (client *Client) ListLiveRecordVideo(request *ListLiveRecordVideoRequest) (response *ListLiveRecordVideoResponse, err error) {
 	response = CreateListLiveRecordVideoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListLiveRecordVideo(request *ListLiveRecordVideoRequest) (
 }
 
 // ListLiveRecordVideoWithChan invokes the vod.ListLiveRecordVideo API asynchronously
-// api document: https://help.aliyun.com/api/vod/listliverecordvideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListLiveRecordVideoWithChan(request *ListLiveRecordVideoRequest) (<-chan *ListLiveRecordVideoResponse, <-chan error) {
 	responseChan := make(chan *ListLiveRecordVideoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListLiveRecordVideoWithChan(request *ListLiveRecordVideoRe
 }
 
 // ListLiveRecordVideoWithCallback invokes the vod.ListLiveRecordVideo API asynchronously
-// api document: https://help.aliyun.com/api/vod/listliverecordvideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListLiveRecordVideoWithCallback(request *ListLiveRecordVideoRequest, callback func(response *ListLiveRecordVideoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ListAITemplate invokes the vod.ListAITemplate API synchronously
-// api document: https://help.aliyun.com/api/vod/listaitemplate.html
 func (client *Client) ListAITemplate(request *ListAITemplateRequest) (response *ListAITemplateResponse, err error) {
 	response = CreateListAITemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAITemplate(request *ListAITemplateRequest) (response *
 }
 
 // ListAITemplateWithChan invokes the vod.ListAITemplate API asynchronously
-// api document: https://help.aliyun.com/api/vod/listaitemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAITemplateWithChan(request *ListAITemplateRequest) (<-chan *ListAITemplateResponse, <-chan error) {
 	responseChan := make(chan *ListAITemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAITemplateWithChan(request *ListAITemplateRequest) (<-
 }
 
 // ListAITemplateWithCallback invokes the vod.ListAITemplate API asynchronously
-// api document: https://help.aliyun.com/api/vod/listaitemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAITemplateWithCallback(request *ListAITemplateRequest, callback func(response *ListAITemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

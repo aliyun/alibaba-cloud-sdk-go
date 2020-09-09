@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateAppInfo invokes the vod.UpdateAppInfo API synchronously
-// api document: https://help.aliyun.com/api/vod/updateappinfo.html
 func (client *Client) UpdateAppInfo(request *UpdateAppInfoRequest) (response *UpdateAppInfoResponse, err error) {
 	response = CreateUpdateAppInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateAppInfo(request *UpdateAppInfoRequest) (response *Up
 }
 
 // UpdateAppInfoWithChan invokes the vod.UpdateAppInfo API asynchronously
-// api document: https://help.aliyun.com/api/vod/updateappinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAppInfoWithChan(request *UpdateAppInfoRequest) (<-chan *UpdateAppInfoResponse, <-chan error) {
 	responseChan := make(chan *UpdateAppInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateAppInfoWithChan(request *UpdateAppInfoRequest) (<-ch
 }
 
 // UpdateAppInfoWithCallback invokes the vod.UpdateAppInfo API asynchronously
-// api document: https://help.aliyun.com/api/vod/updateappinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAppInfoWithCallback(request *UpdateAppInfoRequest, callback func(response *UpdateAppInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

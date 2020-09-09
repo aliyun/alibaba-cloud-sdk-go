@@ -21,7 +21,6 @@ import (
 )
 
 // PreloadVodObjectCaches invokes the vod.PreloadVodObjectCaches API synchronously
-// api document: https://help.aliyun.com/api/vod/preloadvodobjectcaches.html
 func (client *Client) PreloadVodObjectCaches(request *PreloadVodObjectCachesRequest) (response *PreloadVodObjectCachesResponse, err error) {
 	response = CreatePreloadVodObjectCachesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PreloadVodObjectCaches(request *PreloadVodObjectCachesRequ
 }
 
 // PreloadVodObjectCachesWithChan invokes the vod.PreloadVodObjectCaches API asynchronously
-// api document: https://help.aliyun.com/api/vod/preloadvodobjectcaches.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PreloadVodObjectCachesWithChan(request *PreloadVodObjectCachesRequest) (<-chan *PreloadVodObjectCachesResponse, <-chan error) {
 	responseChan := make(chan *PreloadVodObjectCachesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PreloadVodObjectCachesWithChan(request *PreloadVodObjectCa
 }
 
 // PreloadVodObjectCachesWithCallback invokes the vod.PreloadVodObjectCaches API asynchronously
-// api document: https://help.aliyun.com/api/vod/preloadvodobjectcaches.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PreloadVodObjectCachesWithCallback(request *PreloadVodObjectCachesRequest, callback func(response *PreloadVodObjectCachesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

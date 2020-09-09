@@ -21,7 +21,6 @@ import (
 )
 
 // SetAuditSecurityIp invokes the vod.SetAuditSecurityIp API synchronously
-// api document: https://help.aliyun.com/api/vod/setauditsecurityip.html
 func (client *Client) SetAuditSecurityIp(request *SetAuditSecurityIpRequest) (response *SetAuditSecurityIpResponse, err error) {
 	response = CreateSetAuditSecurityIpResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetAuditSecurityIp(request *SetAuditSecurityIpRequest) (re
 }
 
 // SetAuditSecurityIpWithChan invokes the vod.SetAuditSecurityIp API asynchronously
-// api document: https://help.aliyun.com/api/vod/setauditsecurityip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAuditSecurityIpWithChan(request *SetAuditSecurityIpRequest) (<-chan *SetAuditSecurityIpResponse, <-chan error) {
 	responseChan := make(chan *SetAuditSecurityIpResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetAuditSecurityIpWithChan(request *SetAuditSecurityIpRequ
 }
 
 // SetAuditSecurityIpWithCallback invokes the vod.SetAuditSecurityIp API asynchronously
-// api document: https://help.aliyun.com/api/vod/setauditsecurityip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAuditSecurityIpWithCallback(request *SetAuditSecurityIpRequest, callback func(response *SetAuditSecurityIpResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

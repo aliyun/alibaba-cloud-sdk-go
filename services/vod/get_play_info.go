@@ -21,7 +21,6 @@ import (
 )
 
 // GetPlayInfo invokes the vod.GetPlayInfo API synchronously
-// api document: https://help.aliyun.com/api/vod/getplayinfo.html
 func (client *Client) GetPlayInfo(request *GetPlayInfoRequest) (response *GetPlayInfoResponse, err error) {
 	response = CreateGetPlayInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetPlayInfo(request *GetPlayInfoRequest) (response *GetPla
 }
 
 // GetPlayInfoWithChan invokes the vod.GetPlayInfo API asynchronously
-// api document: https://help.aliyun.com/api/vod/getplayinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPlayInfoWithChan(request *GetPlayInfoRequest) (<-chan *GetPlayInfoResponse, <-chan error) {
 	responseChan := make(chan *GetPlayInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetPlayInfoWithChan(request *GetPlayInfoRequest) (<-chan *
 }
 
 // GetPlayInfoWithCallback invokes the vod.GetPlayInfo API asynchronously
-// api document: https://help.aliyun.com/api/vod/getplayinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPlayInfoWithCallback(request *GetPlayInfoRequest, callback func(response *GetPlayInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

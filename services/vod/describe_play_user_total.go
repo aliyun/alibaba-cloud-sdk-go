@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePlayUserTotal invokes the vod.DescribePlayUserTotal API synchronously
-// api document: https://help.aliyun.com/api/vod/describeplayusertotal.html
 func (client *Client) DescribePlayUserTotal(request *DescribePlayUserTotalRequest) (response *DescribePlayUserTotalResponse, err error) {
 	response = CreateDescribePlayUserTotalResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePlayUserTotal(request *DescribePlayUserTotalReques
 }
 
 // DescribePlayUserTotalWithChan invokes the vod.DescribePlayUserTotal API asynchronously
-// api document: https://help.aliyun.com/api/vod/describeplayusertotal.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePlayUserTotalWithChan(request *DescribePlayUserTotalRequest) (<-chan *DescribePlayUserTotalResponse, <-chan error) {
 	responseChan := make(chan *DescribePlayUserTotalResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePlayUserTotalWithChan(request *DescribePlayUserTot
 }
 
 // DescribePlayUserTotalWithCallback invokes the vod.DescribePlayUserTotal API asynchronously
-// api document: https://help.aliyun.com/api/vod/describeplayusertotal.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePlayUserTotalWithCallback(request *DescribePlayUserTotalRequest, callback func(response *DescribePlayUserTotalResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

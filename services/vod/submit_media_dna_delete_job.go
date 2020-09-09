@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitMediaDNADeleteJob invokes the vod.SubmitMediaDNADeleteJob API synchronously
-// api document: https://help.aliyun.com/api/vod/submitmediadnadeletejob.html
 func (client *Client) SubmitMediaDNADeleteJob(request *SubmitMediaDNADeleteJobRequest) (response *SubmitMediaDNADeleteJobResponse, err error) {
 	response = CreateSubmitMediaDNADeleteJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitMediaDNADeleteJob(request *SubmitMediaDNADeleteJobRe
 }
 
 // SubmitMediaDNADeleteJobWithChan invokes the vod.SubmitMediaDNADeleteJob API asynchronously
-// api document: https://help.aliyun.com/api/vod/submitmediadnadeletejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitMediaDNADeleteJobWithChan(request *SubmitMediaDNADeleteJobRequest) (<-chan *SubmitMediaDNADeleteJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitMediaDNADeleteJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitMediaDNADeleteJobWithChan(request *SubmitMediaDNADel
 }
 
 // SubmitMediaDNADeleteJobWithCallback invokes the vod.SubmitMediaDNADeleteJob API asynchronously
-// api document: https://help.aliyun.com/api/vod/submitmediadnadeletejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitMediaDNADeleteJobWithCallback(request *SubmitMediaDNADeleteJobRequest, callback func(response *SubmitMediaDNADeleteJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

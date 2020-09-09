@@ -21,7 +21,6 @@ import (
 )
 
 // ListAppInfo invokes the vod.ListAppInfo API synchronously
-// api document: https://help.aliyun.com/api/vod/listappinfo.html
 func (client *Client) ListAppInfo(request *ListAppInfoRequest) (response *ListAppInfoResponse, err error) {
 	response = CreateListAppInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAppInfo(request *ListAppInfoRequest) (response *ListAp
 }
 
 // ListAppInfoWithChan invokes the vod.ListAppInfo API asynchronously
-// api document: https://help.aliyun.com/api/vod/listappinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAppInfoWithChan(request *ListAppInfoRequest) (<-chan *ListAppInfoResponse, <-chan error) {
 	responseChan := make(chan *ListAppInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAppInfoWithChan(request *ListAppInfoRequest) (<-chan *
 }
 
 // ListAppInfoWithCallback invokes the vod.ListAppInfo API asynchronously
-// api document: https://help.aliyun.com/api/vod/listappinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAppInfoWithCallback(request *ListAppInfoRequest, callback func(response *ListAppInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

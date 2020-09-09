@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateVideoInfo invokes the vod.UpdateVideoInfo API synchronously
-// api document: https://help.aliyun.com/api/vod/updatevideoinfo.html
 func (client *Client) UpdateVideoInfo(request *UpdateVideoInfoRequest) (response *UpdateVideoInfoResponse, err error) {
 	response = CreateUpdateVideoInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateVideoInfo(request *UpdateVideoInfoRequest) (response
 }
 
 // UpdateVideoInfoWithChan invokes the vod.UpdateVideoInfo API asynchronously
-// api document: https://help.aliyun.com/api/vod/updatevideoinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateVideoInfoWithChan(request *UpdateVideoInfoRequest) (<-chan *UpdateVideoInfoResponse, <-chan error) {
 	responseChan := make(chan *UpdateVideoInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateVideoInfoWithChan(request *UpdateVideoInfoRequest) (
 }
 
 // UpdateVideoInfoWithCallback invokes the vod.UpdateVideoInfo API asynchronously
-// api document: https://help.aliyun.com/api/vod/updatevideoinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateVideoInfoWithCallback(request *UpdateVideoInfoRequest, callback func(response *UpdateVideoInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

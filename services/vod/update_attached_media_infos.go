@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateAttachedMediaInfos invokes the vod.UpdateAttachedMediaInfos API synchronously
-// api document: https://help.aliyun.com/api/vod/updateattachedmediainfos.html
 func (client *Client) UpdateAttachedMediaInfos(request *UpdateAttachedMediaInfosRequest) (response *UpdateAttachedMediaInfosResponse, err error) {
 	response = CreateUpdateAttachedMediaInfosResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateAttachedMediaInfos(request *UpdateAttachedMediaInfos
 }
 
 // UpdateAttachedMediaInfosWithChan invokes the vod.UpdateAttachedMediaInfos API asynchronously
-// api document: https://help.aliyun.com/api/vod/updateattachedmediainfos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAttachedMediaInfosWithChan(request *UpdateAttachedMediaInfosRequest) (<-chan *UpdateAttachedMediaInfosResponse, <-chan error) {
 	responseChan := make(chan *UpdateAttachedMediaInfosResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateAttachedMediaInfosWithChan(request *UpdateAttachedMe
 }
 
 // UpdateAttachedMediaInfosWithCallback invokes the vod.UpdateAttachedMediaInfos API asynchronously
-// api document: https://help.aliyun.com/api/vod/updateattachedmediainfos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAttachedMediaInfosWithCallback(request *UpdateAttachedMediaInfosRequest, callback func(response *UpdateAttachedMediaInfosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

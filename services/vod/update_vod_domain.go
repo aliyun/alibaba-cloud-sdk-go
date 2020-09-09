@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateVodDomain invokes the vod.UpdateVodDomain API synchronously
-// api document: https://help.aliyun.com/api/vod/updatevoddomain.html
 func (client *Client) UpdateVodDomain(request *UpdateVodDomainRequest) (response *UpdateVodDomainResponse, err error) {
 	response = CreateUpdateVodDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateVodDomain(request *UpdateVodDomainRequest) (response
 }
 
 // UpdateVodDomainWithChan invokes the vod.UpdateVodDomain API asynchronously
-// api document: https://help.aliyun.com/api/vod/updatevoddomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateVodDomainWithChan(request *UpdateVodDomainRequest) (<-chan *UpdateVodDomainResponse, <-chan error) {
 	responseChan := make(chan *UpdateVodDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateVodDomainWithChan(request *UpdateVodDomainRequest) (
 }
 
 // UpdateVodDomainWithCallback invokes the vod.UpdateVodDomain API asynchronously
-// api document: https://help.aliyun.com/api/vod/updatevoddomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateVodDomainWithCallback(request *UpdateVodDomainRequest, callback func(response *UpdateVodDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

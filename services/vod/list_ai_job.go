@@ -21,7 +21,6 @@ import (
 )
 
 // ListAIJob invokes the vod.ListAIJob API synchronously
-// api document: https://help.aliyun.com/api/vod/listaijob.html
 func (client *Client) ListAIJob(request *ListAIJobRequest) (response *ListAIJobResponse, err error) {
 	response = CreateListAIJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAIJob(request *ListAIJobRequest) (response *ListAIJobR
 }
 
 // ListAIJobWithChan invokes the vod.ListAIJob API asynchronously
-// api document: https://help.aliyun.com/api/vod/listaijob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAIJobWithChan(request *ListAIJobRequest) (<-chan *ListAIJobResponse, <-chan error) {
 	responseChan := make(chan *ListAIJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAIJobWithChan(request *ListAIJobRequest) (<-chan *List
 }
 
 // ListAIJobWithCallback invokes the vod.ListAIJob API asynchronously
-// api document: https://help.aliyun.com/api/vod/listaijob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAIJobWithCallback(request *ListAIJobRequest, callback func(response *ListAIJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

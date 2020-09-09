@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteAttachedMedia invokes the vod.DeleteAttachedMedia API synchronously
-// api document: https://help.aliyun.com/api/vod/deleteattachedmedia.html
 func (client *Client) DeleteAttachedMedia(request *DeleteAttachedMediaRequest) (response *DeleteAttachedMediaResponse, err error) {
 	response = CreateDeleteAttachedMediaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteAttachedMedia(request *DeleteAttachedMediaRequest) (
 }
 
 // DeleteAttachedMediaWithChan invokes the vod.DeleteAttachedMedia API asynchronously
-// api document: https://help.aliyun.com/api/vod/deleteattachedmedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAttachedMediaWithChan(request *DeleteAttachedMediaRequest) (<-chan *DeleteAttachedMediaResponse, <-chan error) {
 	responseChan := make(chan *DeleteAttachedMediaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteAttachedMediaWithChan(request *DeleteAttachedMediaRe
 }
 
 // DeleteAttachedMediaWithCallback invokes the vod.DeleteAttachedMedia API asynchronously
-// api document: https://help.aliyun.com/api/vod/deleteattachedmedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAttachedMediaWithCallback(request *DeleteAttachedMediaRequest, callback func(response *DeleteAttachedMediaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

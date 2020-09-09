@@ -21,7 +21,6 @@ import (
 )
 
 // ListAppPoliciesForIdentity invokes the vod.ListAppPoliciesForIdentity API synchronously
-// api document: https://help.aliyun.com/api/vod/listapppoliciesforidentity.html
 func (client *Client) ListAppPoliciesForIdentity(request *ListAppPoliciesForIdentityRequest) (response *ListAppPoliciesForIdentityResponse, err error) {
 	response = CreateListAppPoliciesForIdentityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAppPoliciesForIdentity(request *ListAppPoliciesForIden
 }
 
 // ListAppPoliciesForIdentityWithChan invokes the vod.ListAppPoliciesForIdentity API asynchronously
-// api document: https://help.aliyun.com/api/vod/listapppoliciesforidentity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAppPoliciesForIdentityWithChan(request *ListAppPoliciesForIdentityRequest) (<-chan *ListAppPoliciesForIdentityResponse, <-chan error) {
 	responseChan := make(chan *ListAppPoliciesForIdentityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAppPoliciesForIdentityWithChan(request *ListAppPolicie
 }
 
 // ListAppPoliciesForIdentityWithCallback invokes the vod.ListAppPoliciesForIdentity API asynchronously
-// api document: https://help.aliyun.com/api/vod/listapppoliciesforidentity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAppPoliciesForIdentityWithCallback(request *ListAppPoliciesForIdentityRequest, callback func(response *ListAppPoliciesForIdentityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

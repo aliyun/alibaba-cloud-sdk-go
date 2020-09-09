@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVodDomainDetail invokes the vod.DescribeVodDomainDetail API synchronously
-// api document: https://help.aliyun.com/api/vod/describevoddomaindetail.html
 func (client *Client) DescribeVodDomainDetail(request *DescribeVodDomainDetailRequest) (response *DescribeVodDomainDetailResponse, err error) {
 	response = CreateDescribeVodDomainDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVodDomainDetail(request *DescribeVodDomainDetailRe
 }
 
 // DescribeVodDomainDetailWithChan invokes the vod.DescribeVodDomainDetail API asynchronously
-// api document: https://help.aliyun.com/api/vod/describevoddomaindetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVodDomainDetailWithChan(request *DescribeVodDomainDetailRequest) (<-chan *DescribeVodDomainDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeVodDomainDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVodDomainDetailWithChan(request *DescribeVodDomain
 }
 
 // DescribeVodDomainDetailWithCallback invokes the vod.DescribeVodDomainDetail API asynchronously
-// api document: https://help.aliyun.com/api/vod/describevoddomaindetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVodDomainDetailWithCallback(request *DescribeVodDomainDetailRequest, callback func(response *DescribeVodDomainDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

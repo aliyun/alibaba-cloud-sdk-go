@@ -21,7 +21,6 @@ import (
 )
 
 // GetMediaDNAResult invokes the vod.GetMediaDNAResult API synchronously
-// api document: https://help.aliyun.com/api/vod/getmediadnaresult.html
 func (client *Client) GetMediaDNAResult(request *GetMediaDNAResultRequest) (response *GetMediaDNAResultResponse, err error) {
 	response = CreateGetMediaDNAResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetMediaDNAResult(request *GetMediaDNAResultRequest) (resp
 }
 
 // GetMediaDNAResultWithChan invokes the vod.GetMediaDNAResult API asynchronously
-// api document: https://help.aliyun.com/api/vod/getmediadnaresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMediaDNAResultWithChan(request *GetMediaDNAResultRequest) (<-chan *GetMediaDNAResultResponse, <-chan error) {
 	responseChan := make(chan *GetMediaDNAResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetMediaDNAResultWithChan(request *GetMediaDNAResultReques
 }
 
 // GetMediaDNAResultWithCallback invokes the vod.GetMediaDNAResult API asynchronously
-// api document: https://help.aliyun.com/api/vod/getmediadnaresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMediaDNAResultWithCallback(request *GetMediaDNAResultRequest, callback func(response *GetMediaDNAResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

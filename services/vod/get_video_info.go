@@ -21,7 +21,6 @@ import (
 )
 
 // GetVideoInfo invokes the vod.GetVideoInfo API synchronously
-// api document: https://help.aliyun.com/api/vod/getvideoinfo.html
 func (client *Client) GetVideoInfo(request *GetVideoInfoRequest) (response *GetVideoInfoResponse, err error) {
 	response = CreateGetVideoInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetVideoInfo(request *GetVideoInfoRequest) (response *GetV
 }
 
 // GetVideoInfoWithChan invokes the vod.GetVideoInfo API asynchronously
-// api document: https://help.aliyun.com/api/vod/getvideoinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetVideoInfoWithChan(request *GetVideoInfoRequest) (<-chan *GetVideoInfoResponse, <-chan error) {
 	responseChan := make(chan *GetVideoInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetVideoInfoWithChan(request *GetVideoInfoRequest) (<-chan
 }
 
 // GetVideoInfoWithCallback invokes the vod.GetVideoInfo API asynchronously
-// api document: https://help.aliyun.com/api/vod/getvideoinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetVideoInfoWithCallback(request *GetVideoInfoRequest, callback func(response *GetVideoInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

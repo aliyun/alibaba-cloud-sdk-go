@@ -21,7 +21,6 @@ import (
 )
 
 // SearchMedia invokes the vod.SearchMedia API synchronously
-// api document: https://help.aliyun.com/api/vod/searchmedia.html
 func (client *Client) SearchMedia(request *SearchMediaRequest) (response *SearchMediaResponse, err error) {
 	response = CreateSearchMediaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchMedia(request *SearchMediaRequest) (response *Search
 }
 
 // SearchMediaWithChan invokes the vod.SearchMedia API asynchronously
-// api document: https://help.aliyun.com/api/vod/searchmedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchMediaWithChan(request *SearchMediaRequest) (<-chan *SearchMediaResponse, <-chan error) {
 	responseChan := make(chan *SearchMediaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchMediaWithChan(request *SearchMediaRequest) (<-chan *
 }
 
 // SearchMediaWithCallback invokes the vod.SearchMedia API asynchronously
-// api document: https://help.aliyun.com/api/vod/searchmedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchMediaWithCallback(request *SearchMediaRequest, callback func(response *SearchMediaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

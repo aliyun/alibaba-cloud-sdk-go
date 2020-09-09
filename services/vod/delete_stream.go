@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteStream invokes the vod.DeleteStream API synchronously
-// api document: https://help.aliyun.com/api/vod/deletestream.html
 func (client *Client) DeleteStream(request *DeleteStreamRequest) (response *DeleteStreamResponse, err error) {
 	response = CreateDeleteStreamResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteStream(request *DeleteStreamRequest) (response *Dele
 }
 
 // DeleteStreamWithChan invokes the vod.DeleteStream API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletestream.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteStreamWithChan(request *DeleteStreamRequest) (<-chan *DeleteStreamResponse, <-chan error) {
 	responseChan := make(chan *DeleteStreamResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteStreamWithChan(request *DeleteStreamRequest) (<-chan
 }
 
 // DeleteStreamWithCallback invokes the vod.DeleteStream API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletestream.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteStreamWithCallback(request *DeleteStreamRequest, callback func(response *DeleteStreamResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

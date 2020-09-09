@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitSnapshotJob invokes the vod.SubmitSnapshotJob API synchronously
-// api document: https://help.aliyun.com/api/vod/submitsnapshotjob.html
 func (client *Client) SubmitSnapshotJob(request *SubmitSnapshotJobRequest) (response *SubmitSnapshotJobResponse, err error) {
 	response = CreateSubmitSnapshotJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitSnapshotJob(request *SubmitSnapshotJobRequest) (resp
 }
 
 // SubmitSnapshotJobWithChan invokes the vod.SubmitSnapshotJob API asynchronously
-// api document: https://help.aliyun.com/api/vod/submitsnapshotjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSnapshotJobWithChan(request *SubmitSnapshotJobRequest) (<-chan *SubmitSnapshotJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitSnapshotJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitSnapshotJobWithChan(request *SubmitSnapshotJobReques
 }
 
 // SubmitSnapshotJobWithCallback invokes the vod.SubmitSnapshotJob API asynchronously
-// api document: https://help.aliyun.com/api/vod/submitsnapshotjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSnapshotJobWithCallback(request *SubmitSnapshotJobRequest, callback func(response *SubmitSnapshotJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

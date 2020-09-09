@@ -21,7 +21,6 @@ import (
 )
 
 // CreateAppInfo invokes the vod.CreateAppInfo API synchronously
-// api document: https://help.aliyun.com/api/vod/createappinfo.html
 func (client *Client) CreateAppInfo(request *CreateAppInfoRequest) (response *CreateAppInfoResponse, err error) {
 	response = CreateCreateAppInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateAppInfo(request *CreateAppInfoRequest) (response *Cr
 }
 
 // CreateAppInfoWithChan invokes the vod.CreateAppInfo API asynchronously
-// api document: https://help.aliyun.com/api/vod/createappinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAppInfoWithChan(request *CreateAppInfoRequest) (<-chan *CreateAppInfoResponse, <-chan error) {
 	responseChan := make(chan *CreateAppInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateAppInfoWithChan(request *CreateAppInfoRequest) (<-ch
 }
 
 // CreateAppInfoWithCallback invokes the vod.CreateAppInfo API asynchronously
-// api document: https://help.aliyun.com/api/vod/createappinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAppInfoWithCallback(request *CreateAppInfoRequest, callback func(response *CreateAppInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateAudit invokes the vod.CreateAudit API synchronously
-// api document: https://help.aliyun.com/api/vod/createaudit.html
 func (client *Client) CreateAudit(request *CreateAuditRequest) (response *CreateAuditResponse, err error) {
 	response = CreateCreateAuditResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateAudit(request *CreateAuditRequest) (response *Create
 }
 
 // CreateAuditWithChan invokes the vod.CreateAudit API asynchronously
-// api document: https://help.aliyun.com/api/vod/createaudit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAuditWithChan(request *CreateAuditRequest) (<-chan *CreateAuditResponse, <-chan error) {
 	responseChan := make(chan *CreateAuditResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateAuditWithChan(request *CreateAuditRequest) (<-chan *
 }
 
 // CreateAuditWithCallback invokes the vod.CreateAudit API asynchronously
-// api document: https://help.aliyun.com/api/vod/createaudit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAuditWithCallback(request *CreateAuditRequest, callback func(response *CreateAuditResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

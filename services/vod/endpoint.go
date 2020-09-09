@@ -13,7 +13,6 @@ func GetEndpointMap() map[string]string {
 			"cn-shanghai-internal-test-1": "vod.aliyuncs.com",
 			"cn-beijing-gov-1":            "vod.aliyuncs.com",
 			"cn-shenzhen-su18-b01":        "vod.aliyuncs.com",
-			"cn-beijing":                  "vod.cn-shanghai.aliyuncs.com",
 			"cn-wulanchabu":               "vod.aliyuncs.com",
 			"cn-shanghai-inner":           "vod.aliyuncs.com",
 			"cn-shenzhen-st4-d01":         "vod.aliyuncs.com",

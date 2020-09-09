@@ -21,7 +21,6 @@ import (
 )
 
 // AddEditingProject invokes the vod.AddEditingProject API synchronously
-// api document: https://help.aliyun.com/api/vod/addeditingproject.html
 func (client *Client) AddEditingProject(request *AddEditingProjectRequest) (response *AddEditingProjectResponse, err error) {
 	response = CreateAddEditingProjectResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddEditingProject(request *AddEditingProjectRequest) (resp
 }
 
 // AddEditingProjectWithChan invokes the vod.AddEditingProject API asynchronously
-// api document: https://help.aliyun.com/api/vod/addeditingproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddEditingProjectWithChan(request *AddEditingProjectRequest) (<-chan *AddEditingProjectResponse, <-chan error) {
 	responseChan := make(chan *AddEditingProjectResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddEditingProjectWithChan(request *AddEditingProjectReques
 }
 
 // AddEditingProjectWithCallback invokes the vod.AddEditingProject API asynchronously
-// api document: https://help.aliyun.com/api/vod/addeditingproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddEditingProjectWithCallback(request *AddEditingProjectRequest, callback func(response *AddEditingProjectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

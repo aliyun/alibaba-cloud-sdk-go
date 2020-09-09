@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteMezzanines invokes the vod.DeleteMezzanines API synchronously
-// api document: https://help.aliyun.com/api/vod/deletemezzanines.html
 func (client *Client) DeleteMezzanines(request *DeleteMezzaninesRequest) (response *DeleteMezzaninesResponse, err error) {
 	response = CreateDeleteMezzaninesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteMezzanines(request *DeleteMezzaninesRequest) (respon
 }
 
 // DeleteMezzaninesWithChan invokes the vod.DeleteMezzanines API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletemezzanines.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMezzaninesWithChan(request *DeleteMezzaninesRequest) (<-chan *DeleteMezzaninesResponse, <-chan error) {
 	responseChan := make(chan *DeleteMezzaninesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteMezzaninesWithChan(request *DeleteMezzaninesRequest)
 }
 
 // DeleteMezzaninesWithCallback invokes the vod.DeleteMezzanines API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletemezzanines.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMezzaninesWithCallback(request *DeleteMezzaninesRequest, callback func(response *DeleteMezzaninesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

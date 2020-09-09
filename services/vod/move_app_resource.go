@@ -21,7 +21,6 @@ import (
 )
 
 // MoveAppResource invokes the vod.MoveAppResource API synchronously
-// api document: https://help.aliyun.com/api/vod/moveappresource.html
 func (client *Client) MoveAppResource(request *MoveAppResourceRequest) (response *MoveAppResourceResponse, err error) {
 	response = CreateMoveAppResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) MoveAppResource(request *MoveAppResourceRequest) (response
 }
 
 // MoveAppResourceWithChan invokes the vod.MoveAppResource API asynchronously
-// api document: https://help.aliyun.com/api/vod/moveappresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MoveAppResourceWithChan(request *MoveAppResourceRequest) (<-chan *MoveAppResourceResponse, <-chan error) {
 	responseChan := make(chan *MoveAppResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) MoveAppResourceWithChan(request *MoveAppResourceRequest) (
 }
 
 // MoveAppResourceWithCallback invokes the vod.MoveAppResource API asynchronously
-// api document: https://help.aliyun.com/api/vod/moveappresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MoveAppResourceWithCallback(request *MoveAppResourceRequest, callback func(response *MoveAppResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

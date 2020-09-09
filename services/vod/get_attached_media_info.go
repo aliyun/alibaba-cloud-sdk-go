@@ -21,7 +21,6 @@ import (
 )
 
 // GetAttachedMediaInfo invokes the vod.GetAttachedMediaInfo API synchronously
-// api document: https://help.aliyun.com/api/vod/getattachedmediainfo.html
 func (client *Client) GetAttachedMediaInfo(request *GetAttachedMediaInfoRequest) (response *GetAttachedMediaInfoResponse, err error) {
 	response = CreateGetAttachedMediaInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetAttachedMediaInfo(request *GetAttachedMediaInfoRequest)
 }
 
 // GetAttachedMediaInfoWithChan invokes the vod.GetAttachedMediaInfo API asynchronously
-// api document: https://help.aliyun.com/api/vod/getattachedmediainfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAttachedMediaInfoWithChan(request *GetAttachedMediaInfoRequest) (<-chan *GetAttachedMediaInfoResponse, <-chan error) {
 	responseChan := make(chan *GetAttachedMediaInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetAttachedMediaInfoWithChan(request *GetAttachedMediaInfo
 }
 
 // GetAttachedMediaInfoWithCallback invokes the vod.GetAttachedMediaInfo API asynchronously
-// api document: https://help.aliyun.com/api/vod/getattachedmediainfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAttachedMediaInfoWithCallback(request *GetAttachedMediaInfoRequest, callback func(response *GetAttachedMediaInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

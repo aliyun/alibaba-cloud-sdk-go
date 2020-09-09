@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVodRefreshQuota invokes the vod.DescribeVodRefreshQuota API synchronously
-// api document: https://help.aliyun.com/api/vod/describevodrefreshquota.html
 func (client *Client) DescribeVodRefreshQuota(request *DescribeVodRefreshQuotaRequest) (response *DescribeVodRefreshQuotaResponse, err error) {
 	response = CreateDescribeVodRefreshQuotaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVodRefreshQuota(request *DescribeVodRefreshQuotaRe
 }
 
 // DescribeVodRefreshQuotaWithChan invokes the vod.DescribeVodRefreshQuota API asynchronously
-// api document: https://help.aliyun.com/api/vod/describevodrefreshquota.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVodRefreshQuotaWithChan(request *DescribeVodRefreshQuotaRequest) (<-chan *DescribeVodRefreshQuotaResponse, <-chan error) {
 	responseChan := make(chan *DescribeVodRefreshQuotaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVodRefreshQuotaWithChan(request *DescribeVodRefres
 }
 
 // DescribeVodRefreshQuotaWithCallback invokes the vod.DescribeVodRefreshQuota API asynchronously
-// api document: https://help.aliyun.com/api/vod/describevodrefreshquota.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVodRefreshQuotaWithCallback(request *DescribeVodRefreshQuotaRequest, callback func(response *DescribeVodRefreshQuotaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVodDomainTrafficData invokes the vod.DescribeVodDomainTrafficData API synchronously
-// api document: https://help.aliyun.com/api/vod/describevoddomaintrafficdata.html
 func (client *Client) DescribeVodDomainTrafficData(request *DescribeVodDomainTrafficDataRequest) (response *DescribeVodDomainTrafficDataResponse, err error) {
 	response = CreateDescribeVodDomainTrafficDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVodDomainTrafficData(request *DescribeVodDomainTra
 }
 
 // DescribeVodDomainTrafficDataWithChan invokes the vod.DescribeVodDomainTrafficData API asynchronously
-// api document: https://help.aliyun.com/api/vod/describevoddomaintrafficdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVodDomainTrafficDataWithChan(request *DescribeVodDomainTrafficDataRequest) (<-chan *DescribeVodDomainTrafficDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeVodDomainTrafficDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVodDomainTrafficDataWithChan(request *DescribeVodD
 }
 
 // DescribeVodDomainTrafficDataWithCallback invokes the vod.DescribeVodDomainTrafficData API asynchronously
-// api document: https://help.aliyun.com/api/vod/describevoddomaintrafficdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVodDomainTrafficDataWithCallback(request *DescribeVodDomainTrafficDataRequest, callback func(response *DescribeVodDomainTrafficDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

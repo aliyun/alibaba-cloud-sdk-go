@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteTranscodeTemplateGroup invokes the vod.DeleteTranscodeTemplateGroup API synchronously
-// api document: https://help.aliyun.com/api/vod/deletetranscodetemplategroup.html
 func (client *Client) DeleteTranscodeTemplateGroup(request *DeleteTranscodeTemplateGroupRequest) (response *DeleteTranscodeTemplateGroupResponse, err error) {
 	response = CreateDeleteTranscodeTemplateGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteTranscodeTemplateGroup(request *DeleteTranscodeTempl
 }
 
 // DeleteTranscodeTemplateGroupWithChan invokes the vod.DeleteTranscodeTemplateGroup API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletetranscodetemplategroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTranscodeTemplateGroupWithChan(request *DeleteTranscodeTemplateGroupRequest) (<-chan *DeleteTranscodeTemplateGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteTranscodeTemplateGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteTranscodeTemplateGroupWithChan(request *DeleteTransc
 }
 
 // DeleteTranscodeTemplateGroupWithCallback invokes the vod.DeleteTranscodeTemplateGroup API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletetranscodetemplategroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTranscodeTemplateGroupWithCallback(request *DeleteTranscodeTemplateGroupRequest, callback func(response *DeleteTranscodeTemplateGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

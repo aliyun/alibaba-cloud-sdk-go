@@ -21,7 +21,6 @@ import (
 )
 
 // RefreshVodObjectCaches invokes the vod.RefreshVodObjectCaches API synchronously
-// api document: https://help.aliyun.com/api/vod/refreshvodobjectcaches.html
 func (client *Client) RefreshVodObjectCaches(request *RefreshVodObjectCachesRequest) (response *RefreshVodObjectCachesResponse, err error) {
 	response = CreateRefreshVodObjectCachesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RefreshVodObjectCaches(request *RefreshVodObjectCachesRequ
 }
 
 // RefreshVodObjectCachesWithChan invokes the vod.RefreshVodObjectCaches API asynchronously
-// api document: https://help.aliyun.com/api/vod/refreshvodobjectcaches.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshVodObjectCachesWithChan(request *RefreshVodObjectCachesRequest) (<-chan *RefreshVodObjectCachesResponse, <-chan error) {
 	responseChan := make(chan *RefreshVodObjectCachesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RefreshVodObjectCachesWithChan(request *RefreshVodObjectCa
 }
 
 // RefreshVodObjectCachesWithCallback invokes the vod.RefreshVodObjectCaches API asynchronously
-// api document: https://help.aliyun.com/api/vod/refreshvodobjectcaches.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshVodObjectCachesWithCallback(request *RefreshVodObjectCachesRequest, callback func(response *RefreshVodObjectCachesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

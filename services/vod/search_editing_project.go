@@ -21,7 +21,6 @@ import (
 )
 
 // SearchEditingProject invokes the vod.SearchEditingProject API synchronously
-// api document: https://help.aliyun.com/api/vod/searcheditingproject.html
 func (client *Client) SearchEditingProject(request *SearchEditingProjectRequest) (response *SearchEditingProjectResponse, err error) {
 	response = CreateSearchEditingProjectResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchEditingProject(request *SearchEditingProjectRequest)
 }
 
 // SearchEditingProjectWithChan invokes the vod.SearchEditingProject API asynchronously
-// api document: https://help.aliyun.com/api/vod/searcheditingproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchEditingProjectWithChan(request *SearchEditingProjectRequest) (<-chan *SearchEditingProjectResponse, <-chan error) {
 	responseChan := make(chan *SearchEditingProjectResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchEditingProjectWithChan(request *SearchEditingProject
 }
 
 // SearchEditingProjectWithCallback invokes the vod.SearchEditingProject API asynchronously
-// api document: https://help.aliyun.com/api/vod/searcheditingproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchEditingProjectWithCallback(request *SearchEditingProjectRequest, callback func(response *SearchEditingProjectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

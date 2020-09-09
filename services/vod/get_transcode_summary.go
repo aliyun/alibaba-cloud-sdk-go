@@ -21,7 +21,6 @@ import (
 )
 
 // GetTranscodeSummary invokes the vod.GetTranscodeSummary API synchronously
-// api document: https://help.aliyun.com/api/vod/gettranscodesummary.html
 func (client *Client) GetTranscodeSummary(request *GetTranscodeSummaryRequest) (response *GetTranscodeSummaryResponse, err error) {
 	response = CreateGetTranscodeSummaryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetTranscodeSummary(request *GetTranscodeSummaryRequest) (
 }
 
 // GetTranscodeSummaryWithChan invokes the vod.GetTranscodeSummary API asynchronously
-// api document: https://help.aliyun.com/api/vod/gettranscodesummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTranscodeSummaryWithChan(request *GetTranscodeSummaryRequest) (<-chan *GetTranscodeSummaryResponse, <-chan error) {
 	responseChan := make(chan *GetTranscodeSummaryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetTranscodeSummaryWithChan(request *GetTranscodeSummaryRe
 }
 
 // GetTranscodeSummaryWithCallback invokes the vod.GetTranscodeSummary API asynchronously
-// api document: https://help.aliyun.com/api/vod/gettranscodesummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTranscodeSummaryWithCallback(request *GetTranscodeSummaryRequest, callback func(response *GetTranscodeSummaryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ListMediaDNADeleteJob invokes the vod.ListMediaDNADeleteJob API synchronously
-// api document: https://help.aliyun.com/api/vod/listmediadnadeletejob.html
 func (client *Client) ListMediaDNADeleteJob(request *ListMediaDNADeleteJobRequest) (response *ListMediaDNADeleteJobResponse, err error) {
 	response = CreateListMediaDNADeleteJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListMediaDNADeleteJob(request *ListMediaDNADeleteJobReques
 }
 
 // ListMediaDNADeleteJobWithChan invokes the vod.ListMediaDNADeleteJob API asynchronously
-// api document: https://help.aliyun.com/api/vod/listmediadnadeletejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMediaDNADeleteJobWithChan(request *ListMediaDNADeleteJobRequest) (<-chan *ListMediaDNADeleteJobResponse, <-chan error) {
 	responseChan := make(chan *ListMediaDNADeleteJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListMediaDNADeleteJobWithChan(request *ListMediaDNADeleteJ
 }
 
 // ListMediaDNADeleteJobWithCallback invokes the vod.ListMediaDNADeleteJob API asynchronously
-// api document: https://help.aliyun.com/api/vod/listmediadnadeletejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMediaDNADeleteJobWithCallback(request *ListMediaDNADeleteJobRequest, callback func(response *ListMediaDNADeleteJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

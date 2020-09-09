@@ -21,7 +21,6 @@ import (
 )
 
 // ListSnapshots invokes the vod.ListSnapshots API synchronously
-// api document: https://help.aliyun.com/api/vod/listsnapshots.html
 func (client *Client) ListSnapshots(request *ListSnapshotsRequest) (response *ListSnapshotsResponse, err error) {
 	response = CreateListSnapshotsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSnapshots(request *ListSnapshotsRequest) (response *Li
 }
 
 // ListSnapshotsWithChan invokes the vod.ListSnapshots API asynchronously
-// api document: https://help.aliyun.com/api/vod/listsnapshots.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSnapshotsWithChan(request *ListSnapshotsRequest) (<-chan *ListSnapshotsResponse, <-chan error) {
 	responseChan := make(chan *ListSnapshotsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSnapshotsWithChan(request *ListSnapshotsRequest) (<-ch
 }
 
 // ListSnapshotsWithCallback invokes the vod.ListSnapshots API asynchronously
-// api document: https://help.aliyun.com/api/vod/listsnapshots.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSnapshotsWithCallback(request *ListSnapshotsRequest, callback func(response *ListSnapshotsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

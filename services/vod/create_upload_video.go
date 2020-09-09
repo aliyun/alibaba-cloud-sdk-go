@@ -21,7 +21,6 @@ import (
 )
 
 // CreateUploadVideo invokes the vod.CreateUploadVideo API synchronously
-// api document: https://help.aliyun.com/api/vod/createuploadvideo.html
 func (client *Client) CreateUploadVideo(request *CreateUploadVideoRequest) (response *CreateUploadVideoResponse, err error) {
 	response = CreateCreateUploadVideoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateUploadVideo(request *CreateUploadVideoRequest) (resp
 }
 
 // CreateUploadVideoWithChan invokes the vod.CreateUploadVideo API asynchronously
-// api document: https://help.aliyun.com/api/vod/createuploadvideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUploadVideoWithChan(request *CreateUploadVideoRequest) (<-chan *CreateUploadVideoResponse, <-chan error) {
 	responseChan := make(chan *CreateUploadVideoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateUploadVideoWithChan(request *CreateUploadVideoReques
 }
 
 // CreateUploadVideoWithCallback invokes the vod.CreateUploadVideo API asynchronously
-// api document: https://help.aliyun.com/api/vod/createuploadvideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUploadVideoWithCallback(request *CreateUploadVideoRequest, callback func(response *CreateUploadVideoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

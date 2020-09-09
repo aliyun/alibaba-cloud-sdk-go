@@ -21,7 +21,6 @@ import (
 )
 
 // CreateUploadAttachedMedia invokes the vod.CreateUploadAttachedMedia API synchronously
-// api document: https://help.aliyun.com/api/vod/createuploadattachedmedia.html
 func (client *Client) CreateUploadAttachedMedia(request *CreateUploadAttachedMediaRequest) (response *CreateUploadAttachedMediaResponse, err error) {
 	response = CreateCreateUploadAttachedMediaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateUploadAttachedMedia(request *CreateUploadAttachedMed
 }
 
 // CreateUploadAttachedMediaWithChan invokes the vod.CreateUploadAttachedMedia API asynchronously
-// api document: https://help.aliyun.com/api/vod/createuploadattachedmedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUploadAttachedMediaWithChan(request *CreateUploadAttachedMediaRequest) (<-chan *CreateUploadAttachedMediaResponse, <-chan error) {
 	responseChan := make(chan *CreateUploadAttachedMediaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateUploadAttachedMediaWithChan(request *CreateUploadAtt
 }
 
 // CreateUploadAttachedMediaWithCallback invokes the vod.CreateUploadAttachedMedia API asynchronously
-// api document: https://help.aliyun.com/api/vod/createuploadattachedmedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUploadAttachedMediaWithCallback(request *CreateUploadAttachedMediaRequest, callback func(response *CreateUploadAttachedMediaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

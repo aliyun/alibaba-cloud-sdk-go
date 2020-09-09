@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitPreprocessJobs invokes the vod.SubmitPreprocessJobs API synchronously
-// api document: https://help.aliyun.com/api/vod/submitpreprocessjobs.html
 func (client *Client) SubmitPreprocessJobs(request *SubmitPreprocessJobsRequest) (response *SubmitPreprocessJobsResponse, err error) {
 	response = CreateSubmitPreprocessJobsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitPreprocessJobs(request *SubmitPreprocessJobsRequest)
 }
 
 // SubmitPreprocessJobsWithChan invokes the vod.SubmitPreprocessJobs API asynchronously
-// api document: https://help.aliyun.com/api/vod/submitpreprocessjobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitPreprocessJobsWithChan(request *SubmitPreprocessJobsRequest) (<-chan *SubmitPreprocessJobsResponse, <-chan error) {
 	responseChan := make(chan *SubmitPreprocessJobsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitPreprocessJobsWithChan(request *SubmitPreprocessJobs
 }
 
 // SubmitPreprocessJobsWithCallback invokes the vod.SubmitPreprocessJobs API asynchronously
-// api document: https://help.aliyun.com/api/vod/submitpreprocessjobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitPreprocessJobsWithCallback(request *SubmitPreprocessJobsRequest, callback func(response *SubmitPreprocessJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

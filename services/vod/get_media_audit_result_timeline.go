@@ -21,7 +21,6 @@ import (
 )
 
 // GetMediaAuditResultTimeline invokes the vod.GetMediaAuditResultTimeline API synchronously
-// api document: https://help.aliyun.com/api/vod/getmediaauditresulttimeline.html
 func (client *Client) GetMediaAuditResultTimeline(request *GetMediaAuditResultTimelineRequest) (response *GetMediaAuditResultTimelineResponse, err error) {
 	response = CreateGetMediaAuditResultTimelineResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetMediaAuditResultTimeline(request *GetMediaAuditResultTi
 }
 
 // GetMediaAuditResultTimelineWithChan invokes the vod.GetMediaAuditResultTimeline API asynchronously
-// api document: https://help.aliyun.com/api/vod/getmediaauditresulttimeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMediaAuditResultTimelineWithChan(request *GetMediaAuditResultTimelineRequest) (<-chan *GetMediaAuditResultTimelineResponse, <-chan error) {
 	responseChan := make(chan *GetMediaAuditResultTimelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetMediaAuditResultTimelineWithChan(request *GetMediaAudit
 }
 
 // GetMediaAuditResultTimelineWithCallback invokes the vod.GetMediaAuditResultTimeline API asynchronously
-// api document: https://help.aliyun.com/api/vod/getmediaauditresulttimeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMediaAuditResultTimelineWithCallback(request *GetMediaAuditResultTimelineRequest, callback func(response *GetMediaAuditResultTimelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

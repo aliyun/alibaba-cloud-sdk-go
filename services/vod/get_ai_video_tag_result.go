@@ -21,7 +21,6 @@ import (
 )
 
 // GetAIVideoTagResult invokes the vod.GetAIVideoTagResult API synchronously
-// api document: https://help.aliyun.com/api/vod/getaivideotagresult.html
 func (client *Client) GetAIVideoTagResult(request *GetAIVideoTagResultRequest) (response *GetAIVideoTagResultResponse, err error) {
 	response = CreateGetAIVideoTagResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetAIVideoTagResult(request *GetAIVideoTagResultRequest) (
 }
 
 // GetAIVideoTagResultWithChan invokes the vod.GetAIVideoTagResult API asynchronously
-// api document: https://help.aliyun.com/api/vod/getaivideotagresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAIVideoTagResultWithChan(request *GetAIVideoTagResultRequest) (<-chan *GetAIVideoTagResultResponse, <-chan error) {
 	responseChan := make(chan *GetAIVideoTagResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetAIVideoTagResultWithChan(request *GetAIVideoTagResultRe
 }
 
 // GetAIVideoTagResultWithCallback invokes the vod.GetAIVideoTagResult API asynchronously
-// api document: https://help.aliyun.com/api/vod/getaivideotagresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAIVideoTagResultWithCallback(request *GetAIVideoTagResultRequest, callback func(response *GetAIVideoTagResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

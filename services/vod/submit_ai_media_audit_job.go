@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitAIMediaAuditJob invokes the vod.SubmitAIMediaAuditJob API synchronously
-// api document: https://help.aliyun.com/api/vod/submitaimediaauditjob.html
 func (client *Client) SubmitAIMediaAuditJob(request *SubmitAIMediaAuditJobRequest) (response *SubmitAIMediaAuditJobResponse, err error) {
 	response = CreateSubmitAIMediaAuditJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitAIMediaAuditJob(request *SubmitAIMediaAuditJobReques
 }
 
 // SubmitAIMediaAuditJobWithChan invokes the vod.SubmitAIMediaAuditJob API asynchronously
-// api document: https://help.aliyun.com/api/vod/submitaimediaauditjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAIMediaAuditJobWithChan(request *SubmitAIMediaAuditJobRequest) (<-chan *SubmitAIMediaAuditJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitAIMediaAuditJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitAIMediaAuditJobWithChan(request *SubmitAIMediaAuditJ
 }
 
 // SubmitAIMediaAuditJobWithCallback invokes the vod.SubmitAIMediaAuditJob API asynchronously
-// api document: https://help.aliyun.com/api/vod/submitaimediaauditjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAIMediaAuditJobWithCallback(request *SubmitAIMediaAuditJobRequest, callback func(response *SubmitAIMediaAuditJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,13 +71,14 @@ func (client *Client) SubmitAIMediaAuditJobWithCallback(request *SubmitAIMediaAu
 // SubmitAIMediaAuditJobRequest is the request struct for api SubmitAIMediaAuditJob
 type SubmitAIMediaAuditJobRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	UserData             string           `position:"Query" name:"UserData"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              string           `position:"Query" name:"OwnerId"`
-	MediaId              string           `position:"Query" name:"MediaId"`
-	TemplateId           string           `position:"Query" name:"TemplateId"`
-	MediaType            string           `position:"Query" name:"MediaType"`
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	UserData                string           `position:"Query" name:"UserData"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId                 string           `position:"Query" name:"OwnerId"`
+	MediaId                 string           `position:"Query" name:"MediaId"`
+	TemplateId              string           `position:"Query" name:"TemplateId"`
+	MediaAuditConfiguration string           `position:"Query" name:"MediaAuditConfiguration"`
+	MediaType               string           `position:"Query" name:"MediaType"`
 }
 
 // SubmitAIMediaAuditJobResponse is the response struct for api SubmitAIMediaAuditJob

@@ -21,7 +21,6 @@ import (
 )
 
 // ListWatermark invokes the vod.ListWatermark API synchronously
-// api document: https://help.aliyun.com/api/vod/listwatermark.html
 func (client *Client) ListWatermark(request *ListWatermarkRequest) (response *ListWatermarkResponse, err error) {
 	response = CreateListWatermarkResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListWatermark(request *ListWatermarkRequest) (response *Li
 }
 
 // ListWatermarkWithChan invokes the vod.ListWatermark API asynchronously
-// api document: https://help.aliyun.com/api/vod/listwatermark.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListWatermarkWithChan(request *ListWatermarkRequest) (<-chan *ListWatermarkResponse, <-chan error) {
 	responseChan := make(chan *ListWatermarkResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListWatermarkWithChan(request *ListWatermarkRequest) (<-ch
 }
 
 // ListWatermarkWithCallback invokes the vod.ListWatermark API asynchronously
-// api document: https://help.aliyun.com/api/vod/listwatermark.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListWatermarkWithCallback(request *ListWatermarkRequest, callback func(response *ListWatermarkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

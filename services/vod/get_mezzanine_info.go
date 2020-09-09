@@ -21,7 +21,6 @@ import (
 )
 
 // GetMezzanineInfo invokes the vod.GetMezzanineInfo API synchronously
-// api document: https://help.aliyun.com/api/vod/getmezzanineinfo.html
 func (client *Client) GetMezzanineInfo(request *GetMezzanineInfoRequest) (response *GetMezzanineInfoResponse, err error) {
 	response = CreateGetMezzanineInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetMezzanineInfo(request *GetMezzanineInfoRequest) (respon
 }
 
 // GetMezzanineInfoWithChan invokes the vod.GetMezzanineInfo API asynchronously
-// api document: https://help.aliyun.com/api/vod/getmezzanineinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMezzanineInfoWithChan(request *GetMezzanineInfoRequest) (<-chan *GetMezzanineInfoResponse, <-chan error) {
 	responseChan := make(chan *GetMezzanineInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetMezzanineInfoWithChan(request *GetMezzanineInfoRequest)
 }
 
 // GetMezzanineInfoWithCallback invokes the vod.GetMezzanineInfo API asynchronously
-// api document: https://help.aliyun.com/api/vod/getmezzanineinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMezzanineInfoWithCallback(request *GetMezzanineInfoRequest, callback func(response *GetMezzanineInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

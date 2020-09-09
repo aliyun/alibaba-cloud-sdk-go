@@ -21,7 +21,6 @@ import (
 )
 
 // GetImageInfo invokes the vod.GetImageInfo API synchronously
-// api document: https://help.aliyun.com/api/vod/getimageinfo.html
 func (client *Client) GetImageInfo(request *GetImageInfoRequest) (response *GetImageInfoResponse, err error) {
 	response = CreateGetImageInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetImageInfo(request *GetImageInfoRequest) (response *GetI
 }
 
 // GetImageInfoWithChan invokes the vod.GetImageInfo API asynchronously
-// api document: https://help.aliyun.com/api/vod/getimageinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetImageInfoWithChan(request *GetImageInfoRequest) (<-chan *GetImageInfoResponse, <-chan error) {
 	responseChan := make(chan *GetImageInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetImageInfoWithChan(request *GetImageInfoRequest) (<-chan
 }
 
 // GetImageInfoWithCallback invokes the vod.GetImageInfo API asynchronously
-// api document: https://help.aliyun.com/api/vod/getimageinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetImageInfoWithCallback(request *GetImageInfoRequest, callback func(response *GetImageInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

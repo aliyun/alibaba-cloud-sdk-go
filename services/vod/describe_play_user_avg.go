@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePlayUserAvg invokes the vod.DescribePlayUserAvg API synchronously
-// api document: https://help.aliyun.com/api/vod/describeplayuseravg.html
 func (client *Client) DescribePlayUserAvg(request *DescribePlayUserAvgRequest) (response *DescribePlayUserAvgResponse, err error) {
 	response = CreateDescribePlayUserAvgResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePlayUserAvg(request *DescribePlayUserAvgRequest) (
 }
 
 // DescribePlayUserAvgWithChan invokes the vod.DescribePlayUserAvg API asynchronously
-// api document: https://help.aliyun.com/api/vod/describeplayuseravg.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePlayUserAvgWithChan(request *DescribePlayUserAvgRequest) (<-chan *DescribePlayUserAvgResponse, <-chan error) {
 	responseChan := make(chan *DescribePlayUserAvgResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePlayUserAvgWithChan(request *DescribePlayUserAvgRe
 }
 
 // DescribePlayUserAvgWithCallback invokes the vod.DescribePlayUserAvg API asynchronously
-// api document: https://help.aliyun.com/api/vod/describeplayuseravg.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePlayUserAvgWithCallback(request *DescribePlayUserAvgRequest, callback func(response *DescribePlayUserAvgResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

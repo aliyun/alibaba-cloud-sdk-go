@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitDynamicImageJob invokes the vod.SubmitDynamicImageJob API synchronously
-// api document: https://help.aliyun.com/api/vod/submitdynamicimagejob.html
 func (client *Client) SubmitDynamicImageJob(request *SubmitDynamicImageJobRequest) (response *SubmitDynamicImageJobResponse, err error) {
 	response = CreateSubmitDynamicImageJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitDynamicImageJob(request *SubmitDynamicImageJobReques
 }
 
 // SubmitDynamicImageJobWithChan invokes the vod.SubmitDynamicImageJob API asynchronously
-// api document: https://help.aliyun.com/api/vod/submitdynamicimagejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitDynamicImageJobWithChan(request *SubmitDynamicImageJobRequest) (<-chan *SubmitDynamicImageJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitDynamicImageJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitDynamicImageJobWithChan(request *SubmitDynamicImageJ
 }
 
 // SubmitDynamicImageJobWithCallback invokes the vod.SubmitDynamicImageJob API asynchronously
-// api document: https://help.aliyun.com/api/vod/submitdynamicimagejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitDynamicImageJobWithCallback(request *SubmitDynamicImageJobRequest, callback func(response *SubmitDynamicImageJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

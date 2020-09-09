@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteWatermark invokes the vod.DeleteWatermark API synchronously
-// api document: https://help.aliyun.com/api/vod/deletewatermark.html
 func (client *Client) DeleteWatermark(request *DeleteWatermarkRequest) (response *DeleteWatermarkResponse, err error) {
 	response = CreateDeleteWatermarkResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteWatermark(request *DeleteWatermarkRequest) (response
 }
 
 // DeleteWatermarkWithChan invokes the vod.DeleteWatermark API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletewatermark.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteWatermarkWithChan(request *DeleteWatermarkRequest) (<-chan *DeleteWatermarkResponse, <-chan error) {
 	responseChan := make(chan *DeleteWatermarkResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteWatermarkWithChan(request *DeleteWatermarkRequest) (
 }
 
 // DeleteWatermarkWithCallback invokes the vod.DeleteWatermark API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletewatermark.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteWatermarkWithCallback(request *DeleteWatermarkRequest, callback func(response *DeleteWatermarkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

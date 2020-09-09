@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteVodDomain invokes the vod.DeleteVodDomain API synchronously
-// api document: https://help.aliyun.com/api/vod/deletevoddomain.html
 func (client *Client) DeleteVodDomain(request *DeleteVodDomainRequest) (response *DeleteVodDomainResponse, err error) {
 	response = CreateDeleteVodDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteVodDomain(request *DeleteVodDomainRequest) (response
 }
 
 // DeleteVodDomainWithChan invokes the vod.DeleteVodDomain API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletevoddomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVodDomainWithChan(request *DeleteVodDomainRequest) (<-chan *DeleteVodDomainResponse, <-chan error) {
 	responseChan := make(chan *DeleteVodDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteVodDomainWithChan(request *DeleteVodDomainRequest) (
 }
 
 // DeleteVodDomainWithCallback invokes the vod.DeleteVodDomain API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletevoddomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVodDomainWithCallback(request *DeleteVodDomainRequest, callback func(response *DeleteVodDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // BatchStartVodDomain invokes the vod.BatchStartVodDomain API synchronously
-// api document: https://help.aliyun.com/api/vod/batchstartvoddomain.html
 func (client *Client) BatchStartVodDomain(request *BatchStartVodDomainRequest) (response *BatchStartVodDomainResponse, err error) {
 	response = CreateBatchStartVodDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchStartVodDomain(request *BatchStartVodDomainRequest) (
 }
 
 // BatchStartVodDomainWithChan invokes the vod.BatchStartVodDomain API asynchronously
-// api document: https://help.aliyun.com/api/vod/batchstartvoddomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchStartVodDomainWithChan(request *BatchStartVodDomainRequest) (<-chan *BatchStartVodDomainResponse, <-chan error) {
 	responseChan := make(chan *BatchStartVodDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchStartVodDomainWithChan(request *BatchStartVodDomainRe
 }
 
 // BatchStartVodDomainWithCallback invokes the vod.BatchStartVodDomain API asynchronously
-// api document: https://help.aliyun.com/api/vod/batchstartvoddomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchStartVodDomainWithCallback(request *BatchStartVodDomainRequest, callback func(response *BatchStartVodDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

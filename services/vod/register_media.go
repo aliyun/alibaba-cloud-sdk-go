@@ -21,7 +21,6 @@ import (
 )
 
 // RegisterMedia invokes the vod.RegisterMedia API synchronously
-// api document: https://help.aliyun.com/api/vod/registermedia.html
 func (client *Client) RegisterMedia(request *RegisterMediaRequest) (response *RegisterMediaResponse, err error) {
 	response = CreateRegisterMediaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RegisterMedia(request *RegisterMediaRequest) (response *Re
 }
 
 // RegisterMediaWithChan invokes the vod.RegisterMedia API asynchronously
-// api document: https://help.aliyun.com/api/vod/registermedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterMediaWithChan(request *RegisterMediaRequest) (<-chan *RegisterMediaResponse, <-chan error) {
 	responseChan := make(chan *RegisterMediaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RegisterMediaWithChan(request *RegisterMediaRequest) (<-ch
 }
 
 // RegisterMediaWithCallback invokes the vod.RegisterMedia API asynchronously
-// api document: https://help.aliyun.com/api/vod/registermedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterMediaWithCallback(request *RegisterMediaRequest, callback func(response *RegisterMediaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

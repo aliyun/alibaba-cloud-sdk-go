@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitTranscodeJobs invokes the vod.SubmitTranscodeJobs API synchronously
-// api document: https://help.aliyun.com/api/vod/submittranscodejobs.html
 func (client *Client) SubmitTranscodeJobs(request *SubmitTranscodeJobsRequest) (response *SubmitTranscodeJobsResponse, err error) {
 	response = CreateSubmitTranscodeJobsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitTranscodeJobs(request *SubmitTranscodeJobsRequest) (
 }
 
 // SubmitTranscodeJobsWithChan invokes the vod.SubmitTranscodeJobs API asynchronously
-// api document: https://help.aliyun.com/api/vod/submittranscodejobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitTranscodeJobsWithChan(request *SubmitTranscodeJobsRequest) (<-chan *SubmitTranscodeJobsResponse, <-chan error) {
 	responseChan := make(chan *SubmitTranscodeJobsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitTranscodeJobsWithChan(request *SubmitTranscodeJobsRe
 }
 
 // SubmitTranscodeJobsWithCallback invokes the vod.SubmitTranscodeJobs API asynchronously
-// api document: https://help.aliyun.com/api/vod/submittranscodejobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitTranscodeJobsWithCallback(request *SubmitTranscodeJobsRequest, callback func(response *SubmitTranscodeJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

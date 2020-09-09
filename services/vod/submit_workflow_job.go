@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitWorkflowJob invokes the vod.SubmitWorkflowJob API synchronously
-// api document: https://help.aliyun.com/api/vod/submitworkflowjob.html
 func (client *Client) SubmitWorkflowJob(request *SubmitWorkflowJobRequest) (response *SubmitWorkflowJobResponse, err error) {
 	response = CreateSubmitWorkflowJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitWorkflowJob(request *SubmitWorkflowJobRequest) (resp
 }
 
 // SubmitWorkflowJobWithChan invokes the vod.SubmitWorkflowJob API asynchronously
-// api document: https://help.aliyun.com/api/vod/submitworkflowjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitWorkflowJobWithChan(request *SubmitWorkflowJobRequest) (<-chan *SubmitWorkflowJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitWorkflowJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitWorkflowJobWithChan(request *SubmitWorkflowJobReques
 }
 
 // SubmitWorkflowJobWithCallback invokes the vod.SubmitWorkflowJob API asynchronously
-// api document: https://help.aliyun.com/api/vod/submitworkflowjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitWorkflowJobWithCallback(request *SubmitWorkflowJobRequest, callback func(response *SubmitWorkflowJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteVodTemplate invokes the vod.DeleteVodTemplate API synchronously
-// api document: https://help.aliyun.com/api/vod/deletevodtemplate.html
 func (client *Client) DeleteVodTemplate(request *DeleteVodTemplateRequest) (response *DeleteVodTemplateResponse, err error) {
 	response = CreateDeleteVodTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteVodTemplate(request *DeleteVodTemplateRequest) (resp
 }
 
 // DeleteVodTemplateWithChan invokes the vod.DeleteVodTemplate API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletevodtemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVodTemplateWithChan(request *DeleteVodTemplateRequest) (<-chan *DeleteVodTemplateResponse, <-chan error) {
 	responseChan := make(chan *DeleteVodTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteVodTemplateWithChan(request *DeleteVodTemplateReques
 }
 
 // DeleteVodTemplateWithCallback invokes the vod.DeleteVodTemplate API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletevodtemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVodTemplateWithCallback(request *DeleteVodTemplateRequest, callback func(response *DeleteVodTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

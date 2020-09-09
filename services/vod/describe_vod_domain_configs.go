@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVodDomainConfigs invokes the vod.DescribeVodDomainConfigs API synchronously
-// api document: https://help.aliyun.com/api/vod/describevoddomainconfigs.html
 func (client *Client) DescribeVodDomainConfigs(request *DescribeVodDomainConfigsRequest) (response *DescribeVodDomainConfigsResponse, err error) {
 	response = CreateDescribeVodDomainConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVodDomainConfigs(request *DescribeVodDomainConfigs
 }
 
 // DescribeVodDomainConfigsWithChan invokes the vod.DescribeVodDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/vod/describevoddomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVodDomainConfigsWithChan(request *DescribeVodDomainConfigsRequest) (<-chan *DescribeVodDomainConfigsResponse, <-chan error) {
 	responseChan := make(chan *DescribeVodDomainConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVodDomainConfigsWithChan(request *DescribeVodDomai
 }
 
 // DescribeVodDomainConfigsWithCallback invokes the vod.DescribeVodDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/vod/describevoddomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVodDomainConfigsWithCallback(request *DescribeVodDomainConfigsRequest, callback func(response *DescribeVodDomainConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // SetDefaultAITemplate invokes the vod.SetDefaultAITemplate API synchronously
-// api document: https://help.aliyun.com/api/vod/setdefaultaitemplate.html
 func (client *Client) SetDefaultAITemplate(request *SetDefaultAITemplateRequest) (response *SetDefaultAITemplateResponse, err error) {
 	response = CreateSetDefaultAITemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetDefaultAITemplate(request *SetDefaultAITemplateRequest)
 }
 
 // SetDefaultAITemplateWithChan invokes the vod.SetDefaultAITemplate API asynchronously
-// api document: https://help.aliyun.com/api/vod/setdefaultaitemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDefaultAITemplateWithChan(request *SetDefaultAITemplateRequest) (<-chan *SetDefaultAITemplateResponse, <-chan error) {
 	responseChan := make(chan *SetDefaultAITemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetDefaultAITemplateWithChan(request *SetDefaultAITemplate
 }
 
 // SetDefaultAITemplateWithCallback invokes the vod.SetDefaultAITemplate API asynchronously
-// api document: https://help.aliyun.com/api/vod/setdefaultaitemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDefaultAITemplateWithCallback(request *SetDefaultAITemplateRequest, callback func(response *SetDefaultAITemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

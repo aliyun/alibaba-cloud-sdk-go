@@ -21,7 +21,6 @@ import (
 )
 
 // SetVodDomainCertificate invokes the vod.SetVodDomainCertificate API synchronously
-// api document: https://help.aliyun.com/api/vod/setvoddomaincertificate.html
 func (client *Client) SetVodDomainCertificate(request *SetVodDomainCertificateRequest) (response *SetVodDomainCertificateResponse, err error) {
 	response = CreateSetVodDomainCertificateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetVodDomainCertificate(request *SetVodDomainCertificateRe
 }
 
 // SetVodDomainCertificateWithChan invokes the vod.SetVodDomainCertificate API asynchronously
-// api document: https://help.aliyun.com/api/vod/setvoddomaincertificate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetVodDomainCertificateWithChan(request *SetVodDomainCertificateRequest) (<-chan *SetVodDomainCertificateResponse, <-chan error) {
 	responseChan := make(chan *SetVodDomainCertificateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetVodDomainCertificateWithChan(request *SetVodDomainCerti
 }
 
 // SetVodDomainCertificateWithCallback invokes the vod.SetVodDomainCertificate API asynchronously
-// api document: https://help.aliyun.com/api/vod/setvoddomaincertificate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetVodDomainCertificateWithCallback(request *SetVodDomainCertificateRequest, callback func(response *SetVodDomainCertificateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

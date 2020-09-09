@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVodDomainUsageData invokes the vod.DescribeVodDomainUsageData API synchronously
-// api document: https://help.aliyun.com/api/vod/describevoddomainusagedata.html
 func (client *Client) DescribeVodDomainUsageData(request *DescribeVodDomainUsageDataRequest) (response *DescribeVodDomainUsageDataResponse, err error) {
 	response = CreateDescribeVodDomainUsageDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVodDomainUsageData(request *DescribeVodDomainUsage
 }
 
 // DescribeVodDomainUsageDataWithChan invokes the vod.DescribeVodDomainUsageData API asynchronously
-// api document: https://help.aliyun.com/api/vod/describevoddomainusagedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVodDomainUsageDataWithChan(request *DescribeVodDomainUsageDataRequest) (<-chan *DescribeVodDomainUsageDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeVodDomainUsageDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVodDomainUsageDataWithChan(request *DescribeVodDom
 }
 
 // DescribeVodDomainUsageDataWithCallback invokes the vod.DescribeVodDomainUsageData API asynchronously
-// api document: https://help.aliyun.com/api/vod/describevoddomainusagedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVodDomainUsageDataWithCallback(request *DescribeVodDomainUsageDataRequest, callback func(response *DescribeVodDomainUsageDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // GetAppInfos invokes the vod.GetAppInfos API synchronously
-// api document: https://help.aliyun.com/api/vod/getappinfos.html
 func (client *Client) GetAppInfos(request *GetAppInfosRequest) (response *GetAppInfosResponse, err error) {
 	response = CreateGetAppInfosResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetAppInfos(request *GetAppInfosRequest) (response *GetApp
 }
 
 // GetAppInfosWithChan invokes the vod.GetAppInfos API asynchronously
-// api document: https://help.aliyun.com/api/vod/getappinfos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAppInfosWithChan(request *GetAppInfosRequest) (<-chan *GetAppInfosResponse, <-chan error) {
 	responseChan := make(chan *GetAppInfosResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetAppInfosWithChan(request *GetAppInfosRequest) (<-chan *
 }
 
 // GetAppInfosWithCallback invokes the vod.GetAppInfos API asynchronously
-// api document: https://help.aliyun.com/api/vod/getappinfos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAppInfosWithCallback(request *GetAppInfosRequest, callback func(response *GetAppInfosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

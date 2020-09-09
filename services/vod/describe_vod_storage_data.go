@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVodStorageData invokes the vod.DescribeVodStorageData API synchronously
-// api document: https://help.aliyun.com/api/vod/describevodstoragedata.html
 func (client *Client) DescribeVodStorageData(request *DescribeVodStorageDataRequest) (response *DescribeVodStorageDataResponse, err error) {
 	response = CreateDescribeVodStorageDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVodStorageData(request *DescribeVodStorageDataRequ
 }
 
 // DescribeVodStorageDataWithChan invokes the vod.DescribeVodStorageData API asynchronously
-// api document: https://help.aliyun.com/api/vod/describevodstoragedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVodStorageDataWithChan(request *DescribeVodStorageDataRequest) (<-chan *DescribeVodStorageDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeVodStorageDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVodStorageDataWithChan(request *DescribeVodStorage
 }
 
 // DescribeVodStorageDataWithCallback invokes the vod.DescribeVodStorageData API asynchronously
-// api document: https://help.aliyun.com/api/vod/describevodstoragedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVodStorageDataWithCallback(request *DescribeVodStorageDataRequest, callback func(response *DescribeVodStorageDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

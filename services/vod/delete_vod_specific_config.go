@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteVodSpecificConfig invokes the vod.DeleteVodSpecificConfig API synchronously
-// api document: https://help.aliyun.com/api/vod/deletevodspecificconfig.html
 func (client *Client) DeleteVodSpecificConfig(request *DeleteVodSpecificConfigRequest) (response *DeleteVodSpecificConfigResponse, err error) {
 	response = CreateDeleteVodSpecificConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteVodSpecificConfig(request *DeleteVodSpecificConfigRe
 }
 
 // DeleteVodSpecificConfigWithChan invokes the vod.DeleteVodSpecificConfig API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletevodspecificconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVodSpecificConfigWithChan(request *DeleteVodSpecificConfigRequest) (<-chan *DeleteVodSpecificConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteVodSpecificConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteVodSpecificConfigWithChan(request *DeleteVodSpecific
 }
 
 // DeleteVodSpecificConfigWithCallback invokes the vod.DeleteVodSpecificConfig API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletevodspecificconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVodSpecificConfigWithCallback(request *DeleteVodSpecificConfigRequest, callback func(response *DeleteVodSpecificConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

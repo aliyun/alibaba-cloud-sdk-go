@@ -21,7 +21,6 @@ import (
 )
 
 // GetUploadDetails invokes the vod.GetUploadDetails API synchronously
-// api document: https://help.aliyun.com/api/vod/getuploaddetails.html
 func (client *Client) GetUploadDetails(request *GetUploadDetailsRequest) (response *GetUploadDetailsResponse, err error) {
 	response = CreateGetUploadDetailsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetUploadDetails(request *GetUploadDetailsRequest) (respon
 }
 
 // GetUploadDetailsWithChan invokes the vod.GetUploadDetails API asynchronously
-// api document: https://help.aliyun.com/api/vod/getuploaddetails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUploadDetailsWithChan(request *GetUploadDetailsRequest) (<-chan *GetUploadDetailsResponse, <-chan error) {
 	responseChan := make(chan *GetUploadDetailsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetUploadDetailsWithChan(request *GetUploadDetailsRequest)
 }
 
 // GetUploadDetailsWithCallback invokes the vod.GetUploadDetails API asynchronously
-// api document: https://help.aliyun.com/api/vod/getuploaddetails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUploadDetailsWithCallback(request *GetUploadDetailsRequest, callback func(response *GetUploadDetailsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

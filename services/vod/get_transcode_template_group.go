@@ -21,7 +21,6 @@ import (
 )
 
 // GetTranscodeTemplateGroup invokes the vod.GetTranscodeTemplateGroup API synchronously
-// api document: https://help.aliyun.com/api/vod/gettranscodetemplategroup.html
 func (client *Client) GetTranscodeTemplateGroup(request *GetTranscodeTemplateGroupRequest) (response *GetTranscodeTemplateGroupResponse, err error) {
 	response = CreateGetTranscodeTemplateGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetTranscodeTemplateGroup(request *GetTranscodeTemplateGro
 }
 
 // GetTranscodeTemplateGroupWithChan invokes the vod.GetTranscodeTemplateGroup API asynchronously
-// api document: https://help.aliyun.com/api/vod/gettranscodetemplategroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTranscodeTemplateGroupWithChan(request *GetTranscodeTemplateGroupRequest) (<-chan *GetTranscodeTemplateGroupResponse, <-chan error) {
 	responseChan := make(chan *GetTranscodeTemplateGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetTranscodeTemplateGroupWithChan(request *GetTranscodeTem
 }
 
 // GetTranscodeTemplateGroupWithCallback invokes the vod.GetTranscodeTemplateGroup API asynchronously
-// api document: https://help.aliyun.com/api/vod/gettranscodetemplategroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTranscodeTemplateGroupWithCallback(request *GetTranscodeTemplateGroupRequest, callback func(response *GetTranscodeTemplateGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // AttachAppPolicyToIdentity invokes the vod.AttachAppPolicyToIdentity API synchronously
-// api document: https://help.aliyun.com/api/vod/attachapppolicytoidentity.html
 func (client *Client) AttachAppPolicyToIdentity(request *AttachAppPolicyToIdentityRequest) (response *AttachAppPolicyToIdentityResponse, err error) {
 	response = CreateAttachAppPolicyToIdentityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AttachAppPolicyToIdentity(request *AttachAppPolicyToIdenti
 }
 
 // AttachAppPolicyToIdentityWithChan invokes the vod.AttachAppPolicyToIdentity API asynchronously
-// api document: https://help.aliyun.com/api/vod/attachapppolicytoidentity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachAppPolicyToIdentityWithChan(request *AttachAppPolicyToIdentityRequest) (<-chan *AttachAppPolicyToIdentityResponse, <-chan error) {
 	responseChan := make(chan *AttachAppPolicyToIdentityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AttachAppPolicyToIdentityWithChan(request *AttachAppPolicy
 }
 
 // AttachAppPolicyToIdentityWithCallback invokes the vod.AttachAppPolicyToIdentity API asynchronously
-// api document: https://help.aliyun.com/api/vod/attachapppolicytoidentity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachAppPolicyToIdentityWithCallback(request *AttachAppPolicyToIdentityRequest, callback func(response *AttachAppPolicyToIdentityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

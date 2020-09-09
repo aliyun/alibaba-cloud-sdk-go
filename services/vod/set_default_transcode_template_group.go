@@ -21,7 +21,6 @@ import (
 )
 
 // SetDefaultTranscodeTemplateGroup invokes the vod.SetDefaultTranscodeTemplateGroup API synchronously
-// api document: https://help.aliyun.com/api/vod/setdefaulttranscodetemplategroup.html
 func (client *Client) SetDefaultTranscodeTemplateGroup(request *SetDefaultTranscodeTemplateGroupRequest) (response *SetDefaultTranscodeTemplateGroupResponse, err error) {
 	response = CreateSetDefaultTranscodeTemplateGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetDefaultTranscodeTemplateGroup(request *SetDefaultTransc
 }
 
 // SetDefaultTranscodeTemplateGroupWithChan invokes the vod.SetDefaultTranscodeTemplateGroup API asynchronously
-// api document: https://help.aliyun.com/api/vod/setdefaulttranscodetemplategroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDefaultTranscodeTemplateGroupWithChan(request *SetDefaultTranscodeTemplateGroupRequest) (<-chan *SetDefaultTranscodeTemplateGroupResponse, <-chan error) {
 	responseChan := make(chan *SetDefaultTranscodeTemplateGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetDefaultTranscodeTemplateGroupWithChan(request *SetDefau
 }
 
 // SetDefaultTranscodeTemplateGroupWithCallback invokes the vod.SetDefaultTranscodeTemplateGroup API asynchronously
-// api document: https://help.aliyun.com/api/vod/setdefaulttranscodetemplategroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDefaultTranscodeTemplateGroupWithCallback(request *SetDefaultTranscodeTemplateGroupRequest, callback func(response *SetDefaultTranscodeTemplateGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

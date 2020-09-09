@@ -21,7 +21,6 @@ import (
 )
 
 // GetVodTemplate invokes the vod.GetVodTemplate API synchronously
-// api document: https://help.aliyun.com/api/vod/getvodtemplate.html
 func (client *Client) GetVodTemplate(request *GetVodTemplateRequest) (response *GetVodTemplateResponse, err error) {
 	response = CreateGetVodTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetVodTemplate(request *GetVodTemplateRequest) (response *
 }
 
 // GetVodTemplateWithChan invokes the vod.GetVodTemplate API asynchronously
-// api document: https://help.aliyun.com/api/vod/getvodtemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetVodTemplateWithChan(request *GetVodTemplateRequest) (<-chan *GetVodTemplateResponse, <-chan error) {
 	responseChan := make(chan *GetVodTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetVodTemplateWithChan(request *GetVodTemplateRequest) (<-
 }
 
 // GetVodTemplateWithCallback invokes the vod.GetVodTemplate API asynchronously
-// api document: https://help.aliyun.com/api/vod/getvodtemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetVodTemplateWithCallback(request *GetVodTemplateRequest, callback func(response *GetVodTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // GetAIMediaAuditJob invokes the vod.GetAIMediaAuditJob API synchronously
-// api document: https://help.aliyun.com/api/vod/getaimediaauditjob.html
 func (client *Client) GetAIMediaAuditJob(request *GetAIMediaAuditJobRequest) (response *GetAIMediaAuditJobResponse, err error) {
 	response = CreateGetAIMediaAuditJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetAIMediaAuditJob(request *GetAIMediaAuditJobRequest) (re
 }
 
 // GetAIMediaAuditJobWithChan invokes the vod.GetAIMediaAuditJob API asynchronously
-// api document: https://help.aliyun.com/api/vod/getaimediaauditjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAIMediaAuditJobWithChan(request *GetAIMediaAuditJobRequest) (<-chan *GetAIMediaAuditJobResponse, <-chan error) {
 	responseChan := make(chan *GetAIMediaAuditJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetAIMediaAuditJobWithChan(request *GetAIMediaAuditJobRequ
 }
 
 // GetAIMediaAuditJobWithCallback invokes the vod.GetAIMediaAuditJob API asynchronously
-// api document: https://help.aliyun.com/api/vod/getaimediaauditjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAIMediaAuditJobWithCallback(request *GetAIMediaAuditJobRequest, callback func(response *GetAIMediaAuditJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

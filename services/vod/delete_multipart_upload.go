@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteMultipartUpload invokes the vod.DeleteMultipartUpload API synchronously
-// api document: https://help.aliyun.com/api/vod/deletemultipartupload.html
 func (client *Client) DeleteMultipartUpload(request *DeleteMultipartUploadRequest) (response *DeleteMultipartUploadResponse, err error) {
 	response = CreateDeleteMultipartUploadResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteMultipartUpload(request *DeleteMultipartUploadReques
 }
 
 // DeleteMultipartUploadWithChan invokes the vod.DeleteMultipartUpload API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletemultipartupload.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMultipartUploadWithChan(request *DeleteMultipartUploadRequest) (<-chan *DeleteMultipartUploadResponse, <-chan error) {
 	responseChan := make(chan *DeleteMultipartUploadResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteMultipartUploadWithChan(request *DeleteMultipartUplo
 }
 
 // DeleteMultipartUploadWithCallback invokes the vod.DeleteMultipartUpload API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletemultipartupload.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMultipartUploadWithCallback(request *DeleteMultipartUploadRequest, callback func(response *DeleteMultipartUploadResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // GetCategories invokes the vod.GetCategories API synchronously
-// api document: https://help.aliyun.com/api/vod/getcategories.html
 func (client *Client) GetCategories(request *GetCategoriesRequest) (response *GetCategoriesResponse, err error) {
 	response = CreateGetCategoriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetCategories(request *GetCategoriesRequest) (response *Ge
 }
 
 // GetCategoriesWithChan invokes the vod.GetCategories API asynchronously
-// api document: https://help.aliyun.com/api/vod/getcategories.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCategoriesWithChan(request *GetCategoriesRequest) (<-chan *GetCategoriesResponse, <-chan error) {
 	responseChan := make(chan *GetCategoriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetCategoriesWithChan(request *GetCategoriesRequest) (<-ch
 }
 
 // GetCategoriesWithCallback invokes the vod.GetCategories API asynchronously
-// api document: https://help.aliyun.com/api/vod/getcategories.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCategoriesWithCallback(request *GetCategoriesRequest, callback func(response *GetCategoriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVodAIData invokes the vod.DescribeVodAIData API synchronously
-// api document: https://help.aliyun.com/api/vod/describevodaidata.html
 func (client *Client) DescribeVodAIData(request *DescribeVodAIDataRequest) (response *DescribeVodAIDataResponse, err error) {
 	response = CreateDescribeVodAIDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVodAIData(request *DescribeVodAIDataRequest) (resp
 }
 
 // DescribeVodAIDataWithChan invokes the vod.DescribeVodAIData API asynchronously
-// api document: https://help.aliyun.com/api/vod/describevodaidata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVodAIDataWithChan(request *DescribeVodAIDataRequest) (<-chan *DescribeVodAIDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeVodAIDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVodAIDataWithChan(request *DescribeVodAIDataReques
 }
 
 // DescribeVodAIDataWithCallback invokes the vod.DescribeVodAIData API asynchronously
-// api document: https://help.aliyun.com/api/vod/describevodaidata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVodAIDataWithCallback(request *DescribeVodAIDataRequest, callback func(response *DescribeVodAIDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

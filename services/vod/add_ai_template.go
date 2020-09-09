@@ -21,7 +21,6 @@ import (
 )
 
 // AddAITemplate invokes the vod.AddAITemplate API synchronously
-// api document: https://help.aliyun.com/api/vod/addaitemplate.html
 func (client *Client) AddAITemplate(request *AddAITemplateRequest) (response *AddAITemplateResponse, err error) {
 	response = CreateAddAITemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddAITemplate(request *AddAITemplateRequest) (response *Ad
 }
 
 // AddAITemplateWithChan invokes the vod.AddAITemplate API asynchronously
-// api document: https://help.aliyun.com/api/vod/addaitemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddAITemplateWithChan(request *AddAITemplateRequest) (<-chan *AddAITemplateResponse, <-chan error) {
 	responseChan := make(chan *AddAITemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddAITemplateWithChan(request *AddAITemplateRequest) (<-ch
 }
 
 // AddAITemplateWithCallback invokes the vod.AddAITemplate API asynchronously
-// api document: https://help.aliyun.com/api/vod/addaitemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddAITemplateWithCallback(request *AddAITemplateRequest, callback func(response *AddAITemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

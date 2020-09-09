@@ -21,7 +21,6 @@ import (
 )
 
 // GetAuditHistory invokes the vod.GetAuditHistory API synchronously
-// api document: https://help.aliyun.com/api/vod/getaudithistory.html
 func (client *Client) GetAuditHistory(request *GetAuditHistoryRequest) (response *GetAuditHistoryResponse, err error) {
 	response = CreateGetAuditHistoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetAuditHistory(request *GetAuditHistoryRequest) (response
 }
 
 // GetAuditHistoryWithChan invokes the vod.GetAuditHistory API asynchronously
-// api document: https://help.aliyun.com/api/vod/getaudithistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAuditHistoryWithChan(request *GetAuditHistoryRequest) (<-chan *GetAuditHistoryResponse, <-chan error) {
 	responseChan := make(chan *GetAuditHistoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetAuditHistoryWithChan(request *GetAuditHistoryRequest) (
 }
 
 // GetAuditHistoryWithCallback invokes the vod.GetAuditHistory API asynchronously
-// api document: https://help.aliyun.com/api/vod/getaudithistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAuditHistoryWithCallback(request *GetAuditHistoryRequest, callback func(response *GetAuditHistoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

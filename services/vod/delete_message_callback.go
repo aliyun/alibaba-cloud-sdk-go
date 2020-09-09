@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteMessageCallback invokes the vod.DeleteMessageCallback API synchronously
-// api document: https://help.aliyun.com/api/vod/deletemessagecallback.html
 func (client *Client) DeleteMessageCallback(request *DeleteMessageCallbackRequest) (response *DeleteMessageCallbackResponse, err error) {
 	response = CreateDeleteMessageCallbackResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteMessageCallback(request *DeleteMessageCallbackReques
 }
 
 // DeleteMessageCallbackWithChan invokes the vod.DeleteMessageCallback API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletemessagecallback.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMessageCallbackWithChan(request *DeleteMessageCallbackRequest) (<-chan *DeleteMessageCallbackResponse, <-chan error) {
 	responseChan := make(chan *DeleteMessageCallbackResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteMessageCallbackWithChan(request *DeleteMessageCallba
 }
 
 // DeleteMessageCallbackWithCallback invokes the vod.DeleteMessageCallback API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletemessagecallback.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMessageCallbackWithCallback(request *DeleteMessageCallbackRequest, callback func(response *DeleteMessageCallbackResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVodDomainBpsData invokes the vod.DescribeVodDomainBpsData API synchronously
-// api document: https://help.aliyun.com/api/vod/describevoddomainbpsdata.html
 func (client *Client) DescribeVodDomainBpsData(request *DescribeVodDomainBpsDataRequest) (response *DescribeVodDomainBpsDataResponse, err error) {
 	response = CreateDescribeVodDomainBpsDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVodDomainBpsData(request *DescribeVodDomainBpsData
 }
 
 // DescribeVodDomainBpsDataWithChan invokes the vod.DescribeVodDomainBpsData API asynchronously
-// api document: https://help.aliyun.com/api/vod/describevoddomainbpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVodDomainBpsDataWithChan(request *DescribeVodDomainBpsDataRequest) (<-chan *DescribeVodDomainBpsDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeVodDomainBpsDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVodDomainBpsDataWithChan(request *DescribeVodDomai
 }
 
 // DescribeVodDomainBpsDataWithCallback invokes the vod.DescribeVodDomainBpsData API asynchronously
-// api document: https://help.aliyun.com/api/vod/describevoddomainbpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVodDomainBpsDataWithCallback(request *DescribeVodDomainBpsDataRequest, callback func(response *DescribeVodDomainBpsDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

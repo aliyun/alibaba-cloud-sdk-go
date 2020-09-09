@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVodUserDomains invokes the vod.DescribeVodUserDomains API synchronously
-// api document: https://help.aliyun.com/api/vod/describevoduserdomains.html
 func (client *Client) DescribeVodUserDomains(request *DescribeVodUserDomainsRequest) (response *DescribeVodUserDomainsResponse, err error) {
 	response = CreateDescribeVodUserDomainsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVodUserDomains(request *DescribeVodUserDomainsRequ
 }
 
 // DescribeVodUserDomainsWithChan invokes the vod.DescribeVodUserDomains API asynchronously
-// api document: https://help.aliyun.com/api/vod/describevoduserdomains.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVodUserDomainsWithChan(request *DescribeVodUserDomainsRequest) (<-chan *DescribeVodUserDomainsResponse, <-chan error) {
 	responseChan := make(chan *DescribeVodUserDomainsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVodUserDomainsWithChan(request *DescribeVodUserDom
 }
 
 // DescribeVodUserDomainsWithCallback invokes the vod.DescribeVodUserDomains API asynchronously
-// api document: https://help.aliyun.com/api/vod/describevoduserdomains.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVodUserDomainsWithCallback(request *DescribeVodUserDomainsRequest, callback func(response *DescribeVodUserDomainsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,24 @@ func (client *Client) DescribeVodUserDomainsWithCallback(request *DescribeVodUse
 // DescribeVodUserDomainsRequest is the request struct for api DescribeVodUserDomains
 type DescribeVodUserDomainsRequest struct {
 	*requests.RpcRequest
-	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
-	CheckDomainShow  requests.Boolean `position:"Query" name:"CheckDomainShow"`
-	SecurityToken    string           `position:"Query" name:"SecurityToken"`
-	CdnType          string           `position:"Query" name:"CdnType"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	FuncFilter       string           `position:"Query" name:"FuncFilter"`
-	DomainName       string           `position:"Query" name:"DomainName"`
-	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
-	FuncId           string           `position:"Query" name:"FuncId"`
-	DomainStatus     string           `position:"Query" name:"DomainStatus"`
-	DomainSearchType string           `position:"Query" name:"DomainSearchType"`
+	PageNumber       requests.Integer             `position:"Query" name:"PageNumber"`
+	CheckDomainShow  requests.Boolean             `position:"Query" name:"CheckDomainShow"`
+	SecurityToken    string                       `position:"Query" name:"SecurityToken"`
+	CdnType          string                       `position:"Query" name:"CdnType"`
+	PageSize         requests.Integer             `position:"Query" name:"PageSize"`
+	Tag              *[]DescribeVodUserDomainsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	FuncFilter       string                       `position:"Query" name:"FuncFilter"`
+	DomainName       string                       `position:"Query" name:"DomainName"`
+	OwnerId          requests.Integer             `position:"Query" name:"OwnerId"`
+	FuncId           string                       `position:"Query" name:"FuncId"`
+	DomainStatus     string                       `position:"Query" name:"DomainStatus"`
+	DomainSearchType string                       `position:"Query" name:"DomainSearchType"`
+}
+
+// DescribeVodUserDomainsTag is a repeated param struct in DescribeVodUserDomainsRequest
+type DescribeVodUserDomainsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeVodUserDomainsResponse is the response struct for api DescribeVodUserDomains

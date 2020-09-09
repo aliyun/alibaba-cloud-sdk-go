@@ -21,7 +21,6 @@ import (
 )
 
 // ProduceEditingProjectVideo invokes the vod.ProduceEditingProjectVideo API synchronously
-// api document: https://help.aliyun.com/api/vod/produceeditingprojectvideo.html
 func (client *Client) ProduceEditingProjectVideo(request *ProduceEditingProjectVideoRequest) (response *ProduceEditingProjectVideoResponse, err error) {
 	response = CreateProduceEditingProjectVideoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ProduceEditingProjectVideo(request *ProduceEditingProjectV
 }
 
 // ProduceEditingProjectVideoWithChan invokes the vod.ProduceEditingProjectVideo API asynchronously
-// api document: https://help.aliyun.com/api/vod/produceeditingprojectvideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ProduceEditingProjectVideoWithChan(request *ProduceEditingProjectVideoRequest) (<-chan *ProduceEditingProjectVideoResponse, <-chan error) {
 	responseChan := make(chan *ProduceEditingProjectVideoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ProduceEditingProjectVideoWithChan(request *ProduceEditing
 }
 
 // ProduceEditingProjectVideoWithCallback invokes the vod.ProduceEditingProjectVideo API asynchronously
-// api document: https://help.aliyun.com/api/vod/produceeditingprojectvideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ProduceEditingProjectVideoWithCallback(request *ProduceEditingProjectVideoRequest, callback func(response *ProduceEditingProjectVideoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // GetVideoPlayAuth invokes the vod.GetVideoPlayAuth API synchronously
-// api document: https://help.aliyun.com/api/vod/getvideoplayauth.html
 func (client *Client) GetVideoPlayAuth(request *GetVideoPlayAuthRequest) (response *GetVideoPlayAuthResponse, err error) {
 	response = CreateGetVideoPlayAuthResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetVideoPlayAuth(request *GetVideoPlayAuthRequest) (respon
 }
 
 // GetVideoPlayAuthWithChan invokes the vod.GetVideoPlayAuth API asynchronously
-// api document: https://help.aliyun.com/api/vod/getvideoplayauth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetVideoPlayAuthWithChan(request *GetVideoPlayAuthRequest) (<-chan *GetVideoPlayAuthResponse, <-chan error) {
 	responseChan := make(chan *GetVideoPlayAuthResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetVideoPlayAuthWithChan(request *GetVideoPlayAuthRequest)
 }
 
 // GetVideoPlayAuthWithCallback invokes the vod.GetVideoPlayAuth API asynchronously
-// api document: https://help.aliyun.com/api/vod/getvideoplayauth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetVideoPlayAuthWithCallback(request *GetVideoPlayAuthRequest, callback func(response *GetVideoPlayAuthResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
