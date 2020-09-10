@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyBackupSourceEndpoint invokes the dbs.ModifyBackupSourceEndpoint API synchronously
-// api document: https://help.aliyun.com/api/dbs/modifybackupsourceendpoint.html
 func (client *Client) ModifyBackupSourceEndpoint(request *ModifyBackupSourceEndpointRequest) (response *ModifyBackupSourceEndpointResponse, err error) {
 	response = CreateModifyBackupSourceEndpointResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyBackupSourceEndpoint(request *ModifyBackupSourceEndp
 }
 
 // ModifyBackupSourceEndpointWithChan invokes the dbs.ModifyBackupSourceEndpoint API asynchronously
-// api document: https://help.aliyun.com/api/dbs/modifybackupsourceendpoint.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBackupSourceEndpointWithChan(request *ModifyBackupSourceEndpointRequest) (<-chan *ModifyBackupSourceEndpointResponse, <-chan error) {
 	responseChan := make(chan *ModifyBackupSourceEndpointResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyBackupSourceEndpointWithChan(request *ModifyBackupSo
 }
 
 // ModifyBackupSourceEndpointWithCallback invokes the dbs.ModifyBackupSourceEndpoint API asynchronously
-// api document: https://help.aliyun.com/api/dbs/modifybackupsourceendpoint.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBackupSourceEndpointWithCallback(request *ModifyBackupSourceEndpointRequest, callback func(response *ModifyBackupSourceEndpointResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeNodeCidrList invokes the dbs.DescribeNodeCidrList API synchronously
-// api document: https://help.aliyun.com/api/dbs/describenodecidrlist.html
 func (client *Client) DescribeNodeCidrList(request *DescribeNodeCidrListRequest) (response *DescribeNodeCidrListResponse, err error) {
 	response = CreateDescribeNodeCidrListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeNodeCidrList(request *DescribeNodeCidrListRequest)
 }
 
 // DescribeNodeCidrListWithChan invokes the dbs.DescribeNodeCidrList API asynchronously
-// api document: https://help.aliyun.com/api/dbs/describenodecidrlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNodeCidrListWithChan(request *DescribeNodeCidrListRequest) (<-chan *DescribeNodeCidrListResponse, <-chan error) {
 	responseChan := make(chan *DescribeNodeCidrListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeNodeCidrListWithChan(request *DescribeNodeCidrList
 }
 
 // DescribeNodeCidrListWithCallback invokes the dbs.DescribeNodeCidrList API asynchronously
-// api document: https://help.aliyun.com/api/dbs/describenodecidrlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNodeCidrListWithCallback(request *DescribeNodeCidrListRequest, callback func(response *DescribeNodeCidrListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

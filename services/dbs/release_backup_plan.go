@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// StartTask invokes the dbs.StartTask API synchronously
-func (client *Client) StartTask(request *StartTaskRequest) (response *StartTaskResponse, err error) {
-	response = CreateStartTaskResponse()
+// ReleaseBackupPlan invokes the dbs.ReleaseBackupPlan API synchronously
+func (client *Client) ReleaseBackupPlan(request *ReleaseBackupPlanRequest) (response *ReleaseBackupPlanResponse, err error) {
+	response = CreateReleaseBackupPlanResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// StartTaskWithChan invokes the dbs.StartTask API asynchronously
-func (client *Client) StartTaskWithChan(request *StartTaskRequest) (<-chan *StartTaskResponse, <-chan error) {
-	responseChan := make(chan *StartTaskResponse, 1)
+// ReleaseBackupPlanWithChan invokes the dbs.ReleaseBackupPlan API asynchronously
+func (client *Client) ReleaseBackupPlanWithChan(request *ReleaseBackupPlanRequest) (<-chan *ReleaseBackupPlanResponse, <-chan error) {
+	responseChan := make(chan *ReleaseBackupPlanResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.StartTask(request)
+		response, err := client.ReleaseBackupPlan(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) StartTaskWithChan(request *StartTaskRequest) (<-chan *Star
 	return responseChan, errChan
 }
 
-// StartTaskWithCallback invokes the dbs.StartTask API asynchronously
-func (client *Client) StartTaskWithCallback(request *StartTaskRequest, callback func(response *StartTaskResponse, err error)) <-chan int {
+// ReleaseBackupPlanWithCallback invokes the dbs.ReleaseBackupPlan API asynchronously
+func (client *Client) ReleaseBackupPlanWithCallback(request *ReleaseBackupPlanRequest, callback func(response *ReleaseBackupPlanResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *StartTaskResponse
+		var response *ReleaseBackupPlanResponse
 		var err error
 		defer close(result)
-		response, err = client.StartTask(request)
+		response, err = client.ReleaseBackupPlan(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,39 +68,38 @@ func (client *Client) StartTaskWithCallback(request *StartTaskRequest, callback 
 	return result
 }
 
-// StartTaskRequest is the request struct for api StartTask
-type StartTaskRequest struct {
+// ReleaseBackupPlanRequest is the request struct for api ReleaseBackupPlan
+type ReleaseBackupPlanRequest struct {
 	*requests.RpcRequest
-	ClientToken string `position:"Query" name:"ClientToken"`
-	OwnerId     string `position:"Query" name:"OwnerId"`
-	TaskId      string `position:"Query" name:"TaskId"`
+	ClientToken  string `position:"Query" name:"ClientToken"`
+	BackupPlanId string `position:"Query" name:"BackupPlanId"`
+	OwnerId      string `position:"Query" name:"OwnerId"`
 }
 
-// StartTaskResponse is the response struct for api StartTask
-type StartTaskResponse struct {
+// ReleaseBackupPlanResponse is the response struct for api ReleaseBackupPlan
+type ReleaseBackupPlanResponse struct {
 	*responses.BaseResponse
 	Success        bool   `json:"Success" xml:"Success"`
 	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
 	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
-	TaskId         string `json:"TaskId" xml:"TaskId"`
-	JobTypeName    string `json:"JobTypeName" xml:"JobTypeName"`
+	BackupPlanId   string `json:"BackupPlanId" xml:"BackupPlanId"`
 }
 
-// CreateStartTaskRequest creates a request to invoke StartTask API
-func CreateStartTaskRequest() (request *StartTaskRequest) {
-	request = &StartTaskRequest{
+// CreateReleaseBackupPlanRequest creates a request to invoke ReleaseBackupPlan API
+func CreateReleaseBackupPlanRequest() (request *ReleaseBackupPlanRequest) {
+	request = &ReleaseBackupPlanRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "StartTask", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "ReleaseBackupPlan", "cbs", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateStartTaskResponse creates a response to parse from StartTask response
-func CreateStartTaskResponse() (response *StartTaskResponse) {
-	response = &StartTaskResponse{
+// CreateReleaseBackupPlanResponse creates a response to parse from ReleaseBackupPlan response
+func CreateReleaseBackupPlanResponse() (response *ReleaseBackupPlanResponse) {
+	response = &ReleaseBackupPlanResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

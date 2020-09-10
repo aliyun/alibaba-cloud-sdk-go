@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBackupPlanBilling invokes the dbs.DescribeBackupPlanBilling API synchronously
-// api document: https://help.aliyun.com/api/dbs/describebackupplanbilling.html
 func (client *Client) DescribeBackupPlanBilling(request *DescribeBackupPlanBillingRequest) (response *DescribeBackupPlanBillingResponse, err error) {
 	response = CreateDescribeBackupPlanBillingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBackupPlanBilling(request *DescribeBackupPlanBilli
 }
 
 // DescribeBackupPlanBillingWithChan invokes the dbs.DescribeBackupPlanBilling API asynchronously
-// api document: https://help.aliyun.com/api/dbs/describebackupplanbilling.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupPlanBillingWithChan(request *DescribeBackupPlanBillingRequest) (<-chan *DescribeBackupPlanBillingResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackupPlanBillingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBackupPlanBillingWithChan(request *DescribeBackupP
 }
 
 // DescribeBackupPlanBillingWithCallback invokes the dbs.DescribeBackupPlanBilling API asynchronously
-// api document: https://help.aliyun.com/api/dbs/describebackupplanbilling.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupPlanBillingWithCallback(request *DescribeBackupPlanBillingRequest, callback func(response *DescribeBackupPlanBillingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

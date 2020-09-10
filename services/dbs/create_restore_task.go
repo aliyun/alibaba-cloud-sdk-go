@@ -21,7 +21,6 @@ import (
 )
 
 // CreateRestoreTask invokes the dbs.CreateRestoreTask API synchronously
-// api document: https://help.aliyun.com/api/dbs/createrestoretask.html
 func (client *Client) CreateRestoreTask(request *CreateRestoreTaskRequest) (response *CreateRestoreTaskResponse, err error) {
 	response = CreateCreateRestoreTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateRestoreTask(request *CreateRestoreTaskRequest) (resp
 }
 
 // CreateRestoreTaskWithChan invokes the dbs.CreateRestoreTask API asynchronously
-// api document: https://help.aliyun.com/api/dbs/createrestoretask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRestoreTaskWithChan(request *CreateRestoreTaskRequest) (<-chan *CreateRestoreTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateRestoreTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateRestoreTaskWithChan(request *CreateRestoreTaskReques
 }
 
 // CreateRestoreTaskWithCallback invokes the dbs.CreateRestoreTask API asynchronously
-// api document: https://help.aliyun.com/api/dbs/createrestoretask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRestoreTaskWithCallback(request *CreateRestoreTaskRequest, callback func(response *CreateRestoreTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

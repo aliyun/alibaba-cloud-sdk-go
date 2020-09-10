@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeJobErrorCode invokes the dbs.DescribeJobErrorCode API synchronously
-// api document: https://help.aliyun.com/api/dbs/describejoberrorcode.html
 func (client *Client) DescribeJobErrorCode(request *DescribeJobErrorCodeRequest) (response *DescribeJobErrorCodeResponse, err error) {
 	response = CreateDescribeJobErrorCodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeJobErrorCode(request *DescribeJobErrorCodeRequest)
 }
 
 // DescribeJobErrorCodeWithChan invokes the dbs.DescribeJobErrorCode API asynchronously
-// api document: https://help.aliyun.com/api/dbs/describejoberrorcode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeJobErrorCodeWithChan(request *DescribeJobErrorCodeRequest) (<-chan *DescribeJobErrorCodeResponse, <-chan error) {
 	responseChan := make(chan *DescribeJobErrorCodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeJobErrorCodeWithChan(request *DescribeJobErrorCode
 }
 
 // DescribeJobErrorCodeWithCallback invokes the dbs.DescribeJobErrorCode API asynchronously
-// api document: https://help.aliyun.com/api/dbs/describejoberrorcode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeJobErrorCodeWithCallback(request *DescribeJobErrorCodeRequest, callback func(response *DescribeJobErrorCodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

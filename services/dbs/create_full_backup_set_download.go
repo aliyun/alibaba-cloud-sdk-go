@@ -21,7 +21,6 @@ import (
 )
 
 // CreateFullBackupSetDownload invokes the dbs.CreateFullBackupSetDownload API synchronously
-// api document: https://help.aliyun.com/api/dbs/createfullbackupsetdownload.html
 func (client *Client) CreateFullBackupSetDownload(request *CreateFullBackupSetDownloadRequest) (response *CreateFullBackupSetDownloadResponse, err error) {
 	response = CreateCreateFullBackupSetDownloadResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateFullBackupSetDownload(request *CreateFullBackupSetDo
 }
 
 // CreateFullBackupSetDownloadWithChan invokes the dbs.CreateFullBackupSetDownload API asynchronously
-// api document: https://help.aliyun.com/api/dbs/createfullbackupsetdownload.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFullBackupSetDownloadWithChan(request *CreateFullBackupSetDownloadRequest) (<-chan *CreateFullBackupSetDownloadResponse, <-chan error) {
 	responseChan := make(chan *CreateFullBackupSetDownloadResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateFullBackupSetDownloadWithChan(request *CreateFullBac
 }
 
 // CreateFullBackupSetDownloadWithCallback invokes the dbs.CreateFullBackupSetDownload API asynchronously
-// api document: https://help.aliyun.com/api/dbs/createfullbackupsetdownload.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFullBackupSetDownloadWithCallback(request *CreateFullBackupSetDownloadRequest, callback func(response *CreateFullBackupSetDownloadResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

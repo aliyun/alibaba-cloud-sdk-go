@@ -21,7 +21,6 @@ import (
 )
 
 // RenewBackupPlan invokes the dbs.RenewBackupPlan API synchronously
-// api document: https://help.aliyun.com/api/dbs/renewbackupplan.html
 func (client *Client) RenewBackupPlan(request *RenewBackupPlanRequest) (response *RenewBackupPlanResponse, err error) {
 	response = CreateRenewBackupPlanResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RenewBackupPlan(request *RenewBackupPlanRequest) (response
 }
 
 // RenewBackupPlanWithChan invokes the dbs.RenewBackupPlan API asynchronously
-// api document: https://help.aliyun.com/api/dbs/renewbackupplan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenewBackupPlanWithChan(request *RenewBackupPlanRequest) (<-chan *RenewBackupPlanResponse, <-chan error) {
 	responseChan := make(chan *RenewBackupPlanResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RenewBackupPlanWithChan(request *RenewBackupPlanRequest) (
 }
 
 // RenewBackupPlanWithCallback invokes the dbs.RenewBackupPlan API asynchronously
-// api document: https://help.aliyun.com/api/dbs/renewbackupplan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenewBackupPlanWithCallback(request *RenewBackupPlanRequest, callback func(response *RenewBackupPlanResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

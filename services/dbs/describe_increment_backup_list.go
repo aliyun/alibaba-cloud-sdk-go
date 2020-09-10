@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeIncrementBackupList invokes the dbs.DescribeIncrementBackupList API synchronously
-// api document: https://help.aliyun.com/api/dbs/describeincrementbackuplist.html
 func (client *Client) DescribeIncrementBackupList(request *DescribeIncrementBackupListRequest) (response *DescribeIncrementBackupListResponse, err error) {
 	response = CreateDescribeIncrementBackupListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeIncrementBackupList(request *DescribeIncrementBack
 }
 
 // DescribeIncrementBackupListWithChan invokes the dbs.DescribeIncrementBackupList API asynchronously
-// api document: https://help.aliyun.com/api/dbs/describeincrementbackuplist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIncrementBackupListWithChan(request *DescribeIncrementBackupListRequest) (<-chan *DescribeIncrementBackupListResponse, <-chan error) {
 	responseChan := make(chan *DescribeIncrementBackupListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeIncrementBackupListWithChan(request *DescribeIncre
 }
 
 // DescribeIncrementBackupListWithCallback invokes the dbs.DescribeIncrementBackupList API asynchronously
-// api document: https://help.aliyun.com/api/dbs/describeincrementbackuplist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIncrementBackupListWithCallback(request *DescribeIncrementBackupListRequest, callback func(response *DescribeIncrementBackupListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

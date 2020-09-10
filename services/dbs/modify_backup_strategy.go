@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyBackupStrategy invokes the dbs.ModifyBackupStrategy API synchronously
-// api document: https://help.aliyun.com/api/dbs/modifybackupstrategy.html
 func (client *Client) ModifyBackupStrategy(request *ModifyBackupStrategyRequest) (response *ModifyBackupStrategyResponse, err error) {
 	response = CreateModifyBackupStrategyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyBackupStrategy(request *ModifyBackupStrategyRequest)
 }
 
 // ModifyBackupStrategyWithChan invokes the dbs.ModifyBackupStrategy API asynchronously
-// api document: https://help.aliyun.com/api/dbs/modifybackupstrategy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBackupStrategyWithChan(request *ModifyBackupStrategyRequest) (<-chan *ModifyBackupStrategyResponse, <-chan error) {
 	responseChan := make(chan *ModifyBackupStrategyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyBackupStrategyWithChan(request *ModifyBackupStrategy
 }
 
 // ModifyBackupStrategyWithCallback invokes the dbs.ModifyBackupStrategy API asynchronously
-// api document: https://help.aliyun.com/api/dbs/modifybackupstrategy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBackupStrategyWithCallback(request *ModifyBackupStrategyRequest, callback func(response *ModifyBackupStrategyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,12 +71,13 @@ func (client *Client) ModifyBackupStrategyWithCallback(request *ModifyBackupStra
 // ModifyBackupStrategyRequest is the request struct for api ModifyBackupStrategy
 type ModifyBackupStrategyRequest struct {
 	*requests.RpcRequest
-	ClientToken        string `position:"Query" name:"ClientToken"`
-	BackupPlanId       string `position:"Query" name:"BackupPlanId"`
-	OwnerId            string `position:"Query" name:"OwnerId"`
-	BackupPeriod       string `position:"Query" name:"BackupPeriod"`
-	BackupStartTime    string `position:"Query" name:"BackupStartTime"`
-	BackupStrategyType string `position:"Query" name:"BackupStrategyType"`
+	BackupLogIntervalSeconds requests.Integer `position:"Query" name:"BackupLogIntervalSeconds"`
+	ClientToken              string           `position:"Query" name:"ClientToken"`
+	BackupPlanId             string           `position:"Query" name:"BackupPlanId"`
+	OwnerId                  string           `position:"Query" name:"OwnerId"`
+	BackupPeriod             string           `position:"Query" name:"BackupPeriod"`
+	BackupStartTime          string           `position:"Query" name:"BackupStartTime"`
+	BackupStrategyType       string           `position:"Query" name:"BackupStrategyType"`
 }
 
 // ModifyBackupStrategyResponse is the response struct for api ModifyBackupStrategy

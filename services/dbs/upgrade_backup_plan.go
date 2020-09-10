@@ -21,7 +21,6 @@ import (
 )
 
 // UpgradeBackupPlan invokes the dbs.UpgradeBackupPlan API synchronously
-// api document: https://help.aliyun.com/api/dbs/upgradebackupplan.html
 func (client *Client) UpgradeBackupPlan(request *UpgradeBackupPlanRequest) (response *UpgradeBackupPlanResponse, err error) {
 	response = CreateUpgradeBackupPlanResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpgradeBackupPlan(request *UpgradeBackupPlanRequest) (resp
 }
 
 // UpgradeBackupPlanWithChan invokes the dbs.UpgradeBackupPlan API asynchronously
-// api document: https://help.aliyun.com/api/dbs/upgradebackupplan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeBackupPlanWithChan(request *UpgradeBackupPlanRequest) (<-chan *UpgradeBackupPlanResponse, <-chan error) {
 	responseChan := make(chan *UpgradeBackupPlanResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpgradeBackupPlanWithChan(request *UpgradeBackupPlanReques
 }
 
 // UpgradeBackupPlanWithCallback invokes the dbs.UpgradeBackupPlan API asynchronously
-// api document: https://help.aliyun.com/api/dbs/upgradebackupplan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeBackupPlanWithCallback(request *UpgradeBackupPlanRequest, callback func(response *UpgradeBackupPlanResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

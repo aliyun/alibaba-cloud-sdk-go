@@ -21,7 +21,6 @@ import (
 )
 
 // GetDBListFromAgent invokes the dbs.GetDBListFromAgent API synchronously
-// api document: https://help.aliyun.com/api/dbs/getdblistfromagent.html
 func (client *Client) GetDBListFromAgent(request *GetDBListFromAgentRequest) (response *GetDBListFromAgentResponse, err error) {
 	response = CreateGetDBListFromAgentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetDBListFromAgent(request *GetDBListFromAgentRequest) (re
 }
 
 // GetDBListFromAgentWithChan invokes the dbs.GetDBListFromAgent API asynchronously
-// api document: https://help.aliyun.com/api/dbs/getdblistfromagent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDBListFromAgentWithChan(request *GetDBListFromAgentRequest) (<-chan *GetDBListFromAgentResponse, <-chan error) {
 	responseChan := make(chan *GetDBListFromAgentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetDBListFromAgentWithChan(request *GetDBListFromAgentRequ
 }
 
 // GetDBListFromAgentWithCallback invokes the dbs.GetDBListFromAgent API asynchronously
-// api document: https://help.aliyun.com/api/dbs/getdblistfromagent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDBListFromAgentWithCallback(request *GetDBListFromAgentRequest, callback func(response *GetDBListFromAgentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

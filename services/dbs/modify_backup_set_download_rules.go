@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyBackupSetDownloadRules invokes the dbs.ModifyBackupSetDownloadRules API synchronously
-// api document: https://help.aliyun.com/api/dbs/modifybackupsetdownloadrules.html
 func (client *Client) ModifyBackupSetDownloadRules(request *ModifyBackupSetDownloadRulesRequest) (response *ModifyBackupSetDownloadRulesResponse, err error) {
 	response = CreateModifyBackupSetDownloadRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyBackupSetDownloadRules(request *ModifyBackupSetDownl
 }
 
 // ModifyBackupSetDownloadRulesWithChan invokes the dbs.ModifyBackupSetDownloadRules API asynchronously
-// api document: https://help.aliyun.com/api/dbs/modifybackupsetdownloadrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBackupSetDownloadRulesWithChan(request *ModifyBackupSetDownloadRulesRequest) (<-chan *ModifyBackupSetDownloadRulesResponse, <-chan error) {
 	responseChan := make(chan *ModifyBackupSetDownloadRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyBackupSetDownloadRulesWithChan(request *ModifyBackup
 }
 
 // ModifyBackupSetDownloadRulesWithCallback invokes the dbs.ModifyBackupSetDownloadRules API asynchronously
-// api document: https://help.aliyun.com/api/dbs/modifybackupsetdownloadrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBackupSetDownloadRulesWithCallback(request *ModifyBackupSetDownloadRulesRequest, callback func(response *ModifyBackupSetDownloadRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,15 +71,16 @@ func (client *Client) ModifyBackupSetDownloadRulesWithCallback(request *ModifyBa
 // ModifyBackupSetDownloadRulesRequest is the request struct for api ModifyBackupSetDownloadRules
 type ModifyBackupSetDownloadRulesRequest struct {
 	*requests.RpcRequest
-	FullDataFormat              string           `position:"Query" name:"FullDataFormat"`
-	BackupGatewayId             requests.Integer `position:"Query" name:"BackupGatewayId"`
-	ClientToken                 string           `position:"Query" name:"ClientToken"`
-	BackupSetDownloadTargetType string           `position:"Query" name:"BackupSetDownloadTargetType"`
-	BackupPlanId                string           `position:"Query" name:"BackupPlanId"`
-	OwnerId                     string           `position:"Query" name:"OwnerId"`
-	OpenAutoDownload            requests.Boolean `position:"Query" name:"OpenAutoDownload"`
-	IncrementDataFormat         string           `position:"Query" name:"IncrementDataFormat"`
-	BackupSetDownloadDir        string           `position:"Query" name:"BackupSetDownloadDir"`
+	FullDataFormat                      string           `position:"Query" name:"FullDataFormat"`
+	BackupGatewayId                     requests.Integer `position:"Query" name:"BackupGatewayId"`
+	ClientToken                         string           `position:"Query" name:"ClientToken"`
+	BackupSetDownloadTargetType         string           `position:"Query" name:"BackupSetDownloadTargetType"`
+	BackupPlanId                        string           `position:"Query" name:"BackupPlanId"`
+	OwnerId                             string           `position:"Query" name:"OwnerId"`
+	OpenAutoDownload                    requests.Boolean `position:"Query" name:"OpenAutoDownload"`
+	IncrementDataFormat                 string           `position:"Query" name:"IncrementDataFormat"`
+	BackupSetDownloadTargetTypeLocation string           `position:"Query" name:"BackupSetDownloadTargetTypeLocation"`
+	BackupSetDownloadDir                string           `position:"Query" name:"BackupSetDownloadDir"`
 }
 
 // ModifyBackupSetDownloadRulesResponse is the response struct for api ModifyBackupSetDownloadRules

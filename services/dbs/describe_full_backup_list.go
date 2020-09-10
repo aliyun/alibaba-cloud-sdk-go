@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFullBackupList invokes the dbs.DescribeFullBackupList API synchronously
-// api document: https://help.aliyun.com/api/dbs/describefullbackuplist.html
 func (client *Client) DescribeFullBackupList(request *DescribeFullBackupListRequest) (response *DescribeFullBackupListResponse, err error) {
 	response = CreateDescribeFullBackupListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFullBackupList(request *DescribeFullBackupListRequ
 }
 
 // DescribeFullBackupListWithChan invokes the dbs.DescribeFullBackupList API asynchronously
-// api document: https://help.aliyun.com/api/dbs/describefullbackuplist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFullBackupListWithChan(request *DescribeFullBackupListRequest) (<-chan *DescribeFullBackupListResponse, <-chan error) {
 	responseChan := make(chan *DescribeFullBackupListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFullBackupListWithChan(request *DescribeFullBackup
 }
 
 // DescribeFullBackupListWithCallback invokes the dbs.DescribeFullBackupList API asynchronously
-// api document: https://help.aliyun.com/api/dbs/describefullbackuplist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFullBackupListWithCallback(request *DescribeFullBackupListRequest, callback func(response *DescribeFullBackupListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// StartTask invokes the dbs.StartTask API synchronously
-func (client *Client) StartTask(request *StartTaskRequest) (response *StartTaskResponse, err error) {
-	response = CreateStartTaskResponse()
+// EnableBackupLog invokes the dbs.EnableBackupLog API synchronously
+func (client *Client) EnableBackupLog(request *EnableBackupLogRequest) (response *EnableBackupLogResponse, err error) {
+	response = CreateEnableBackupLogResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// StartTaskWithChan invokes the dbs.StartTask API asynchronously
-func (client *Client) StartTaskWithChan(request *StartTaskRequest) (<-chan *StartTaskResponse, <-chan error) {
-	responseChan := make(chan *StartTaskResponse, 1)
+// EnableBackupLogWithChan invokes the dbs.EnableBackupLog API asynchronously
+func (client *Client) EnableBackupLogWithChan(request *EnableBackupLogRequest) (<-chan *EnableBackupLogResponse, <-chan error) {
+	responseChan := make(chan *EnableBackupLogResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.StartTask(request)
+		response, err := client.EnableBackupLog(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) StartTaskWithChan(request *StartTaskRequest) (<-chan *Star
 	return responseChan, errChan
 }
 
-// StartTaskWithCallback invokes the dbs.StartTask API asynchronously
-func (client *Client) StartTaskWithCallback(request *StartTaskRequest, callback func(response *StartTaskResponse, err error)) <-chan int {
+// EnableBackupLogWithCallback invokes the dbs.EnableBackupLog API asynchronously
+func (client *Client) EnableBackupLogWithCallback(request *EnableBackupLogRequest, callback func(response *EnableBackupLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *StartTaskResponse
+		var response *EnableBackupLogResponse
 		var err error
 		defer close(result)
-		response, err = client.StartTask(request)
+		response, err = client.EnableBackupLog(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,39 +68,39 @@ func (client *Client) StartTaskWithCallback(request *StartTaskRequest, callback 
 	return result
 }
 
-// StartTaskRequest is the request struct for api StartTask
-type StartTaskRequest struct {
+// EnableBackupLogRequest is the request struct for api EnableBackupLog
+type EnableBackupLogRequest struct {
 	*requests.RpcRequest
-	ClientToken string `position:"Query" name:"ClientToken"`
-	OwnerId     string `position:"Query" name:"OwnerId"`
-	TaskId      string `position:"Query" name:"TaskId"`
+	ClientToken  string `position:"Query" name:"ClientToken"`
+	BackupPlanId string `position:"Query" name:"BackupPlanId"`
+	OwnerId      string `position:"Query" name:"OwnerId"`
 }
 
-// StartTaskResponse is the response struct for api StartTask
-type StartTaskResponse struct {
+// EnableBackupLogResponse is the response struct for api EnableBackupLog
+type EnableBackupLogResponse struct {
 	*responses.BaseResponse
 	Success        bool   `json:"Success" xml:"Success"`
 	ErrCode        string `json:"ErrCode" xml:"ErrCode"`
 	ErrMessage     string `json:"ErrMessage" xml:"ErrMessage"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
-	TaskId         string `json:"TaskId" xml:"TaskId"`
-	JobTypeName    string `json:"JobTypeName" xml:"JobTypeName"`
+	BackupPlanId   string `json:"BackupPlanId" xml:"BackupPlanId"`
+	NeedPrecheck   bool   `json:"NeedPrecheck" xml:"NeedPrecheck"`
 }
 
-// CreateStartTaskRequest creates a request to invoke StartTask API
-func CreateStartTaskRequest() (request *StartTaskRequest) {
-	request = &StartTaskRequest{
+// CreateEnableBackupLogRequest creates a request to invoke EnableBackupLog API
+func CreateEnableBackupLogRequest() (request *EnableBackupLogRequest) {
+	request = &EnableBackupLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dbs", "2019-03-06", "StartTask", "cbs", "openAPI")
+	request.InitWithApiInfo("Dbs", "2019-03-06", "EnableBackupLog", "cbs", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateStartTaskResponse creates a response to parse from StartTask response
-func CreateStartTaskResponse() (response *StartTaskResponse) {
-	response = &StartTaskResponse{
+// CreateEnableBackupLogResponse creates a response to parse from EnableBackupLog response
+func CreateEnableBackupLogResponse() (response *EnableBackupLogResponse) {
+	response = &EnableBackupLogResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

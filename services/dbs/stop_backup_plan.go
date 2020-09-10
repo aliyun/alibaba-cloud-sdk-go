@@ -21,7 +21,6 @@ import (
 )
 
 // StopBackupPlan invokes the dbs.StopBackupPlan API synchronously
-// api document: https://help.aliyun.com/api/dbs/stopbackupplan.html
 func (client *Client) StopBackupPlan(request *StopBackupPlanRequest) (response *StopBackupPlanResponse, err error) {
 	response = CreateStopBackupPlanResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopBackupPlan(request *StopBackupPlanRequest) (response *
 }
 
 // StopBackupPlanWithChan invokes the dbs.StopBackupPlan API asynchronously
-// api document: https://help.aliyun.com/api/dbs/stopbackupplan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopBackupPlanWithChan(request *StopBackupPlanRequest) (<-chan *StopBackupPlanResponse, <-chan error) {
 	responseChan := make(chan *StopBackupPlanResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopBackupPlanWithChan(request *StopBackupPlanRequest) (<-
 }
 
 // StopBackupPlanWithCallback invokes the dbs.StopBackupPlan API asynchronously
-// api document: https://help.aliyun.com/api/dbs/stopbackupplan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopBackupPlanWithCallback(request *StopBackupPlanRequest, callback func(response *StopBackupPlanResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

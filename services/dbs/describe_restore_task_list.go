@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRestoreTaskList invokes the dbs.DescribeRestoreTaskList API synchronously
-// api document: https://help.aliyun.com/api/dbs/describerestoretasklist.html
 func (client *Client) DescribeRestoreTaskList(request *DescribeRestoreTaskListRequest) (response *DescribeRestoreTaskListResponse, err error) {
 	response = CreateDescribeRestoreTaskListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRestoreTaskList(request *DescribeRestoreTaskListRe
 }
 
 // DescribeRestoreTaskListWithChan invokes the dbs.DescribeRestoreTaskList API asynchronously
-// api document: https://help.aliyun.com/api/dbs/describerestoretasklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRestoreTaskListWithChan(request *DescribeRestoreTaskListRequest) (<-chan *DescribeRestoreTaskListResponse, <-chan error) {
 	responseChan := make(chan *DescribeRestoreTaskListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRestoreTaskListWithChan(request *DescribeRestoreTa
 }
 
 // DescribeRestoreTaskListWithCallback invokes the dbs.DescribeRestoreTaskList API asynchronously
-// api document: https://help.aliyun.com/api/dbs/describerestoretasklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRestoreTaskListWithCallback(request *DescribeRestoreTaskListRequest, callback func(response *DescribeRestoreTaskListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

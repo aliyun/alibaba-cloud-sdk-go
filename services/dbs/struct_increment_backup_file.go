@@ -18,6 +18,7 @@ package dbs
 // IncrementBackupFile is a nested struct in dbs response
 type IncrementBackupFile struct {
 	BackupSetId          string `json:"BackupSetId" xml:"BackupSetId"`
+	BackupSetJobId       string `json:"BackupSetJobId" xml:"BackupSetJobId"`
 	SourceEndpointIpPort string `json:"SourceEndpointIpPort" xml:"SourceEndpointIpPort"`
 	StartTime            int64  `json:"StartTime" xml:"StartTime"`
 	EndTime              int64  `json:"EndTime" xml:"EndTime"`

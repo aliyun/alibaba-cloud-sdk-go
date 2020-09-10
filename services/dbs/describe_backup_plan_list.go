@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBackupPlanList invokes the dbs.DescribeBackupPlanList API synchronously
-// api document: https://help.aliyun.com/api/dbs/describebackupplanlist.html
 func (client *Client) DescribeBackupPlanList(request *DescribeBackupPlanListRequest) (response *DescribeBackupPlanListResponse, err error) {
 	response = CreateDescribeBackupPlanListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBackupPlanList(request *DescribeBackupPlanListRequ
 }
 
 // DescribeBackupPlanListWithChan invokes the dbs.DescribeBackupPlanList API asynchronously
-// api document: https://help.aliyun.com/api/dbs/describebackupplanlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupPlanListWithChan(request *DescribeBackupPlanListRequest) (<-chan *DescribeBackupPlanListResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackupPlanListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBackupPlanListWithChan(request *DescribeBackupPlan
 }
 
 // DescribeBackupPlanListWithCallback invokes the dbs.DescribeBackupPlanList API asynchronously
-// api document: https://help.aliyun.com/api/dbs/describebackupplanlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupPlanListWithCallback(request *DescribeBackupPlanListRequest, callback func(response *DescribeBackupPlanListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

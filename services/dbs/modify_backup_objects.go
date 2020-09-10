@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyBackupObjects invokes the dbs.ModifyBackupObjects API synchronously
-// api document: https://help.aliyun.com/api/dbs/modifybackupobjects.html
 func (client *Client) ModifyBackupObjects(request *ModifyBackupObjectsRequest) (response *ModifyBackupObjectsResponse, err error) {
 	response = CreateModifyBackupObjectsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyBackupObjects(request *ModifyBackupObjectsRequest) (
 }
 
 // ModifyBackupObjectsWithChan invokes the dbs.ModifyBackupObjects API asynchronously
-// api document: https://help.aliyun.com/api/dbs/modifybackupobjects.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBackupObjectsWithChan(request *ModifyBackupObjectsRequest) (<-chan *ModifyBackupObjectsResponse, <-chan error) {
 	responseChan := make(chan *ModifyBackupObjectsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyBackupObjectsWithChan(request *ModifyBackupObjectsRe
 }
 
 // ModifyBackupObjectsWithCallback invokes the dbs.ModifyBackupObjects API asynchronously
-// api document: https://help.aliyun.com/api/dbs/modifybackupobjects.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBackupObjectsWithCallback(request *ModifyBackupObjectsRequest, callback func(response *ModifyBackupObjectsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

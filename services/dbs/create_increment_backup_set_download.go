@@ -21,7 +21,6 @@ import (
 )
 
 // CreateIncrementBackupSetDownload invokes the dbs.CreateIncrementBackupSetDownload API synchronously
-// api document: https://help.aliyun.com/api/dbs/createincrementbackupsetdownload.html
 func (client *Client) CreateIncrementBackupSetDownload(request *CreateIncrementBackupSetDownloadRequest) (response *CreateIncrementBackupSetDownloadResponse, err error) {
 	response = CreateCreateIncrementBackupSetDownloadResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateIncrementBackupSetDownload(request *CreateIncrementB
 }
 
 // CreateIncrementBackupSetDownloadWithChan invokes the dbs.CreateIncrementBackupSetDownload API asynchronously
-// api document: https://help.aliyun.com/api/dbs/createincrementbackupsetdownload.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateIncrementBackupSetDownloadWithChan(request *CreateIncrementBackupSetDownloadRequest) (<-chan *CreateIncrementBackupSetDownloadResponse, <-chan error) {
 	responseChan := make(chan *CreateIncrementBackupSetDownloadResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateIncrementBackupSetDownloadWithChan(request *CreateIn
 }
 
 // CreateIncrementBackupSetDownloadWithCallback invokes the dbs.CreateIncrementBackupSetDownload API asynchronously
-// api document: https://help.aliyun.com/api/dbs/createincrementbackupsetdownload.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateIncrementBackupSetDownloadWithCallback(request *CreateIncrementBackupSetDownloadRequest, callback func(response *CreateIncrementBackupSetDownloadResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

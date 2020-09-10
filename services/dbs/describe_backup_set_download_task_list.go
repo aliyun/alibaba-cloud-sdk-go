@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBackupSetDownloadTaskList invokes the dbs.DescribeBackupSetDownloadTaskList API synchronously
-// api document: https://help.aliyun.com/api/dbs/describebackupsetdownloadtasklist.html
 func (client *Client) DescribeBackupSetDownloadTaskList(request *DescribeBackupSetDownloadTaskListRequest) (response *DescribeBackupSetDownloadTaskListResponse, err error) {
 	response = CreateDescribeBackupSetDownloadTaskListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBackupSetDownloadTaskList(request *DescribeBackupS
 }
 
 // DescribeBackupSetDownloadTaskListWithChan invokes the dbs.DescribeBackupSetDownloadTaskList API asynchronously
-// api document: https://help.aliyun.com/api/dbs/describebackupsetdownloadtasklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupSetDownloadTaskListWithChan(request *DescribeBackupSetDownloadTaskListRequest) (<-chan *DescribeBackupSetDownloadTaskListResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackupSetDownloadTaskListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBackupSetDownloadTaskListWithChan(request *Describ
 }
 
 // DescribeBackupSetDownloadTaskListWithCallback invokes the dbs.DescribeBackupSetDownloadTaskList API asynchronously
-// api document: https://help.aliyun.com/api/dbs/describebackupsetdownloadtasklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupSetDownloadTaskListWithCallback(request *DescribeBackupSetDownloadTaskListRequest, callback func(response *DescribeBackupSetDownloadTaskListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

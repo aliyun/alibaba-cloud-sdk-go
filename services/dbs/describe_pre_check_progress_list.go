@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePreCheckProgressList invokes the dbs.DescribePreCheckProgressList API synchronously
-// api document: https://help.aliyun.com/api/dbs/describeprecheckprogresslist.html
 func (client *Client) DescribePreCheckProgressList(request *DescribePreCheckProgressListRequest) (response *DescribePreCheckProgressListResponse, err error) {
 	response = CreateDescribePreCheckProgressListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePreCheckProgressList(request *DescribePreCheckProg
 }
 
 // DescribePreCheckProgressListWithChan invokes the dbs.DescribePreCheckProgressList API asynchronously
-// api document: https://help.aliyun.com/api/dbs/describeprecheckprogresslist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePreCheckProgressListWithChan(request *DescribePreCheckProgressListRequest) (<-chan *DescribePreCheckProgressListResponse, <-chan error) {
 	responseChan := make(chan *DescribePreCheckProgressListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePreCheckProgressListWithChan(request *DescribePreC
 }
 
 // DescribePreCheckProgressListWithCallback invokes the dbs.DescribePreCheckProgressList API asynchronously
-// api document: https://help.aliyun.com/api/dbs/describeprecheckprogresslist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePreCheckProgressListWithCallback(request *DescribePreCheckProgressListRequest, callback func(response *DescribePreCheckProgressListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
