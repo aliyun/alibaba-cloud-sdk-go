@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstanceSSL invokes the r_kvstore.DescribeInstanceSSL API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describeinstancessl.html
 func (client *Client) DescribeInstanceSSL(request *DescribeInstanceSSLRequest) (response *DescribeInstanceSSLResponse, err error) {
 	response = CreateDescribeInstanceSSLResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstanceSSL(request *DescribeInstanceSSLRequest) (
 }
 
 // DescribeInstanceSSLWithChan invokes the r_kvstore.DescribeInstanceSSL API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describeinstancessl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceSSLWithChan(request *DescribeInstanceSSLRequest) (<-chan *DescribeInstanceSSLResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceSSLResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceSSLWithChan(request *DescribeInstanceSSLRe
 }
 
 // DescribeInstanceSSLWithCallback invokes the r_kvstore.DescribeInstanceSSL API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describeinstancessl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceSSLWithCallback(request *DescribeInstanceSSLRequest, callback func(response *DescribeInstanceSSLResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

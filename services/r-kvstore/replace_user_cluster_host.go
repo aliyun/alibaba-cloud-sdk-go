@@ -21,7 +21,6 @@ import (
 )
 
 // ReplaceUserClusterHost invokes the r_kvstore.ReplaceUserClusterHost API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/replaceuserclusterhost.html
 func (client *Client) ReplaceUserClusterHost(request *ReplaceUserClusterHostRequest) (response *ReplaceUserClusterHostResponse, err error) {
 	response = CreateReplaceUserClusterHostResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReplaceUserClusterHost(request *ReplaceUserClusterHostRequ
 }
 
 // ReplaceUserClusterHostWithChan invokes the r_kvstore.ReplaceUserClusterHost API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/replaceuserclusterhost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReplaceUserClusterHostWithChan(request *ReplaceUserClusterHostRequest) (<-chan *ReplaceUserClusterHostResponse, <-chan error) {
 	responseChan := make(chan *ReplaceUserClusterHostResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReplaceUserClusterHostWithChan(request *ReplaceUserCluster
 }
 
 // ReplaceUserClusterHostWithCallback invokes the r_kvstore.ReplaceUserClusterHost API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/replaceuserclusterhost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReplaceUserClusterHostWithCallback(request *ReplaceUserClusterHostRequest, callback func(response *ReplaceUserClusterHostResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

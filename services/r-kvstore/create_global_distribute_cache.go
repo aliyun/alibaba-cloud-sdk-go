@@ -21,7 +21,6 @@ import (
 )
 
 // CreateGlobalDistributeCache invokes the r_kvstore.CreateGlobalDistributeCache API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/createglobaldistributecache.html
 func (client *Client) CreateGlobalDistributeCache(request *CreateGlobalDistributeCacheRequest) (response *CreateGlobalDistributeCacheResponse, err error) {
 	response = CreateCreateGlobalDistributeCacheResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateGlobalDistributeCache(request *CreateGlobalDistribut
 }
 
 // CreateGlobalDistributeCacheWithChan invokes the r_kvstore.CreateGlobalDistributeCache API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/createglobaldistributecache.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGlobalDistributeCacheWithChan(request *CreateGlobalDistributeCacheRequest) (<-chan *CreateGlobalDistributeCacheResponse, <-chan error) {
 	responseChan := make(chan *CreateGlobalDistributeCacheResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateGlobalDistributeCacheWithChan(request *CreateGlobalD
 }
 
 // CreateGlobalDistributeCacheWithCallback invokes the r_kvstore.CreateGlobalDistributeCache API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/createglobaldistributecache.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGlobalDistributeCacheWithCallback(request *CreateGlobalDistributeCacheRequest, callback func(response *CreateGlobalDistributeCacheResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) CreateGlobalDistributeCacheWithCallback(request *CreateGlo
 type CreateGlobalDistributeCacheRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

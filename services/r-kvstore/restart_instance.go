@@ -21,7 +21,6 @@ import (
 )
 
 // RestartInstance invokes the r_kvstore.RestartInstance API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/restartinstance.html
 func (client *Client) RestartInstance(request *RestartInstanceRequest) (response *RestartInstanceResponse, err error) {
 	response = CreateRestartInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RestartInstance(request *RestartInstanceRequest) (response
 }
 
 // RestartInstanceWithChan invokes the r_kvstore.RestartInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/restartinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartInstanceWithChan(request *RestartInstanceRequest) (<-chan *RestartInstanceResponse, <-chan error) {
 	responseChan := make(chan *RestartInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RestartInstanceWithChan(request *RestartInstanceRequest) (
 }
 
 // RestartInstanceWithCallback invokes the r_kvstore.RestartInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/restartinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartInstanceWithCallback(request *RestartInstanceRequest, callback func(response *RestartInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

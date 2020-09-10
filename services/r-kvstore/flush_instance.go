@@ -21,7 +21,6 @@ import (
 )
 
 // FlushInstance invokes the r_kvstore.FlushInstance API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/flushinstance.html
 func (client *Client) FlushInstance(request *FlushInstanceRequest) (response *FlushInstanceResponse, err error) {
 	response = CreateFlushInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FlushInstance(request *FlushInstanceRequest) (response *Fl
 }
 
 // FlushInstanceWithChan invokes the r_kvstore.FlushInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/flushinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FlushInstanceWithChan(request *FlushInstanceRequest) (<-chan *FlushInstanceResponse, <-chan error) {
 	responseChan := make(chan *FlushInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FlushInstanceWithChan(request *FlushInstanceRequest) (<-ch
 }
 
 // FlushInstanceWithCallback invokes the r_kvstore.FlushInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/flushinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FlushInstanceWithCallback(request *FlushInstanceRequest, callback func(response *FlushInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

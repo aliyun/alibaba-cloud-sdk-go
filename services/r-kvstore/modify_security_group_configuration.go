@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySecurityGroupConfiguration invokes the r_kvstore.ModifySecurityGroupConfiguration API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifysecuritygroupconfiguration.html
 func (client *Client) ModifySecurityGroupConfiguration(request *ModifySecurityGroupConfigurationRequest) (response *ModifySecurityGroupConfigurationResponse, err error) {
 	response = CreateModifySecurityGroupConfigurationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySecurityGroupConfiguration(request *ModifySecurityGr
 }
 
 // ModifySecurityGroupConfigurationWithChan invokes the r_kvstore.ModifySecurityGroupConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifysecuritygroupconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupConfigurationWithChan(request *ModifySecurityGroupConfigurationRequest) (<-chan *ModifySecurityGroupConfigurationResponse, <-chan error) {
 	responseChan := make(chan *ModifySecurityGroupConfigurationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySecurityGroupConfigurationWithChan(request *ModifySe
 }
 
 // ModifySecurityGroupConfigurationWithCallback invokes the r_kvstore.ModifySecurityGroupConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifysecuritygroupconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupConfigurationWithCallback(request *ModifySecurityGroupConfigurationRequest, callback func(response *ModifySecurityGroupConfigurationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

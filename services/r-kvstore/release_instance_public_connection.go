@@ -21,7 +21,6 @@ import (
 )
 
 // ReleaseInstancePublicConnection invokes the r_kvstore.ReleaseInstancePublicConnection API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/releaseinstancepublicconnection.html
 func (client *Client) ReleaseInstancePublicConnection(request *ReleaseInstancePublicConnectionRequest) (response *ReleaseInstancePublicConnectionResponse, err error) {
 	response = CreateReleaseInstancePublicConnectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReleaseInstancePublicConnection(request *ReleaseInstancePu
 }
 
 // ReleaseInstancePublicConnectionWithChan invokes the r_kvstore.ReleaseInstancePublicConnection API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/releaseinstancepublicconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseInstancePublicConnectionWithChan(request *ReleaseInstancePublicConnectionRequest) (<-chan *ReleaseInstancePublicConnectionResponse, <-chan error) {
 	responseChan := make(chan *ReleaseInstancePublicConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReleaseInstancePublicConnectionWithChan(request *ReleaseIn
 }
 
 // ReleaseInstancePublicConnectionWithCallback invokes the r_kvstore.ReleaseInstancePublicConnection API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/releaseinstancepublicconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseInstancePublicConnectionWithCallback(request *ReleaseInstancePublicConnectionRequest, callback func(response *ReleaseInstancePublicConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

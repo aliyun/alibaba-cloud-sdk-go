@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDedicatedUserCluster invokes the r_kvstore.DeleteDedicatedUserCluster API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deletededicatedusercluster.html
 func (client *Client) DeleteDedicatedUserCluster(request *DeleteDedicatedUserClusterRequest) (response *DeleteDedicatedUserClusterResponse, err error) {
 	response = CreateDeleteDedicatedUserClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDedicatedUserCluster(request *DeleteDedicatedUserClu
 }
 
 // DeleteDedicatedUserClusterWithChan invokes the r_kvstore.DeleteDedicatedUserCluster API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deletededicatedusercluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDedicatedUserClusterWithChan(request *DeleteDedicatedUserClusterRequest) (<-chan *DeleteDedicatedUserClusterResponse, <-chan error) {
 	responseChan := make(chan *DeleteDedicatedUserClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDedicatedUserClusterWithChan(request *DeleteDedicate
 }
 
 // DeleteDedicatedUserClusterWithCallback invokes the r_kvstore.DeleteDedicatedUserCluster API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deletededicatedusercluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDedicatedUserClusterWithCallback(request *DeleteDedicatedUserClusterRequest, callback func(response *DeleteDedicatedUserClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyIntranetAttribute invokes the r_kvstore.ModifyIntranetAttribute API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyintranetattribute.html
 func (client *Client) ModifyIntranetAttribute(request *ModifyIntranetAttributeRequest) (response *ModifyIntranetAttributeResponse, err error) {
 	response = CreateModifyIntranetAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyIntranetAttribute(request *ModifyIntranetAttributeRe
 }
 
 // ModifyIntranetAttributeWithChan invokes the r_kvstore.ModifyIntranetAttribute API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyintranetattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIntranetAttributeWithChan(request *ModifyIntranetAttributeRequest) (<-chan *ModifyIntranetAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyIntranetAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyIntranetAttributeWithChan(request *ModifyIntranetAtt
 }
 
 // ModifyIntranetAttributeWithCallback invokes the r_kvstore.ModifyIntranetAttribute API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyintranetattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIntranetAttributeWithCallback(request *ModifyIntranetAttributeRequest, callback func(response *ModifyIntranetAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

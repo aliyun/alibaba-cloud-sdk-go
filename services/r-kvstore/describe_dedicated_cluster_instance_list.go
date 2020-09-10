@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDedicatedClusterInstanceList invokes the r_kvstore.DescribeDedicatedClusterInstanceList API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describededicatedclusterinstancelist.html
 func (client *Client) DescribeDedicatedClusterInstanceList(request *DescribeDedicatedClusterInstanceListRequest) (response *DescribeDedicatedClusterInstanceListResponse, err error) {
 	response = CreateDescribeDedicatedClusterInstanceListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDedicatedClusterInstanceList(request *DescribeDedi
 }
 
 // DescribeDedicatedClusterInstanceListWithChan invokes the r_kvstore.DescribeDedicatedClusterInstanceList API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describededicatedclusterinstancelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDedicatedClusterInstanceListWithChan(request *DescribeDedicatedClusterInstanceListRequest) (<-chan *DescribeDedicatedClusterInstanceListResponse, <-chan error) {
 	responseChan := make(chan *DescribeDedicatedClusterInstanceListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDedicatedClusterInstanceListWithChan(request *Desc
 }
 
 // DescribeDedicatedClusterInstanceListWithCallback invokes the r_kvstore.DescribeDedicatedClusterInstanceList API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describededicatedclusterinstancelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDedicatedClusterInstanceListWithCallback(request *DescribeDedicatedClusterInstanceListRequest, callback func(response *DescribeDedicatedClusterInstanceListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

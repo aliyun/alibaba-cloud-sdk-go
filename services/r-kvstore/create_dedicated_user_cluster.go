@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDedicatedUserCluster invokes the r_kvstore.CreateDedicatedUserCluster API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/creatededicatedusercluster.html
 func (client *Client) CreateDedicatedUserCluster(request *CreateDedicatedUserClusterRequest) (response *CreateDedicatedUserClusterResponse, err error) {
 	response = CreateCreateDedicatedUserClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDedicatedUserCluster(request *CreateDedicatedUserClu
 }
 
 // CreateDedicatedUserClusterWithChan invokes the r_kvstore.CreateDedicatedUserCluster API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/creatededicatedusercluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDedicatedUserClusterWithChan(request *CreateDedicatedUserClusterRequest) (<-chan *CreateDedicatedUserClusterResponse, <-chan error) {
 	responseChan := make(chan *CreateDedicatedUserClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDedicatedUserClusterWithChan(request *CreateDedicate
 }
 
 // CreateDedicatedUserClusterWithCallback invokes the r_kvstore.CreateDedicatedUserCluster API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/creatededicatedusercluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDedicatedUserClusterWithCallback(request *CreateDedicatedUserClusterRequest, callback func(response *CreateDedicatedUserClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

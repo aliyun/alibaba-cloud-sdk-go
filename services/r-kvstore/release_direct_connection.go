@@ -21,7 +21,6 @@ import (
 )
 
 // ReleaseDirectConnection invokes the r_kvstore.ReleaseDirectConnection API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/releasedirectconnection.html
 func (client *Client) ReleaseDirectConnection(request *ReleaseDirectConnectionRequest) (response *ReleaseDirectConnectionResponse, err error) {
 	response = CreateReleaseDirectConnectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReleaseDirectConnection(request *ReleaseDirectConnectionRe
 }
 
 // ReleaseDirectConnectionWithChan invokes the r_kvstore.ReleaseDirectConnection API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/releasedirectconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseDirectConnectionWithChan(request *ReleaseDirectConnectionRequest) (<-chan *ReleaseDirectConnectionResponse, <-chan error) {
 	responseChan := make(chan *ReleaseDirectConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReleaseDirectConnectionWithChan(request *ReleaseDirectConn
 }
 
 // ReleaseDirectConnectionWithCallback invokes the r_kvstore.ReleaseDirectConnection API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/releasedirectconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseDirectConnectionWithCallback(request *ReleaseDirectConnectionRequest, callback func(response *ReleaseDirectConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

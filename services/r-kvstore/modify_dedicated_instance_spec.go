@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDedicatedInstanceSpec invokes the r_kvstore.ModifyDedicatedInstanceSpec API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifydedicatedinstancespec.html
 func (client *Client) ModifyDedicatedInstanceSpec(request *ModifyDedicatedInstanceSpecRequest) (response *ModifyDedicatedInstanceSpecResponse, err error) {
 	response = CreateModifyDedicatedInstanceSpecResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDedicatedInstanceSpec(request *ModifyDedicatedInstan
 }
 
 // ModifyDedicatedInstanceSpecWithChan invokes the r_kvstore.ModifyDedicatedInstanceSpec API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifydedicatedinstancespec.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDedicatedInstanceSpecWithChan(request *ModifyDedicatedInstanceSpecRequest) (<-chan *ModifyDedicatedInstanceSpecResponse, <-chan error) {
 	responseChan := make(chan *ModifyDedicatedInstanceSpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDedicatedInstanceSpecWithChan(request *ModifyDedicat
 }
 
 // ModifyDedicatedInstanceSpecWithCallback invokes the r_kvstore.ModifyDedicatedInstanceSpec API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifydedicatedinstancespec.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDedicatedInstanceSpecWithCallback(request *ModifyDedicatedInstanceSpecRequest, callback func(response *ModifyDedicatedInstanceSpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

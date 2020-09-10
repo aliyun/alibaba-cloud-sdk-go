@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyInstanceAttribute invokes the r_kvstore.ModifyInstanceAttribute API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyinstanceattribute.html
 func (client *Client) ModifyInstanceAttribute(request *ModifyInstanceAttributeRequest) (response *ModifyInstanceAttributeResponse, err error) {
 	response = CreateModifyInstanceAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyInstanceAttribute(request *ModifyInstanceAttributeRe
 }
 
 // ModifyInstanceAttributeWithChan invokes the r_kvstore.ModifyInstanceAttribute API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyinstanceattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceAttributeWithChan(request *ModifyInstanceAttributeRequest) (<-chan *ModifyInstanceAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyInstanceAttributeWithChan(request *ModifyInstanceAtt
 }
 
 // ModifyInstanceAttributeWithCallback invokes the r_kvstore.ModifyInstanceAttribute API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyinstanceattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceAttributeWithCallback(request *ModifyInstanceAttributeRequest, callback func(response *ModifyInstanceAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

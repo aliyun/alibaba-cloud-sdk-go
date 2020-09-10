@@ -21,7 +21,6 @@ import (
 )
 
 // AllocateDirectConnection invokes the r_kvstore.AllocateDirectConnection API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/allocatedirectconnection.html
 func (client *Client) AllocateDirectConnection(request *AllocateDirectConnectionRequest) (response *AllocateDirectConnectionResponse, err error) {
 	response = CreateAllocateDirectConnectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AllocateDirectConnection(request *AllocateDirectConnection
 }
 
 // AllocateDirectConnectionWithChan invokes the r_kvstore.AllocateDirectConnection API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/allocatedirectconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateDirectConnectionWithChan(request *AllocateDirectConnectionRequest) (<-chan *AllocateDirectConnectionResponse, <-chan error) {
 	responseChan := make(chan *AllocateDirectConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AllocateDirectConnectionWithChan(request *AllocateDirectCo
 }
 
 // AllocateDirectConnectionWithCallback invokes the r_kvstore.AllocateDirectConnection API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/allocatedirectconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateDirectConnectionWithCallback(request *AllocateDirectConnectionRequest, callback func(response *AllocateDirectConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

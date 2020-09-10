@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBInstanceNetInfo invokes the r_kvstore.DescribeDBInstanceNetInfo API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describedbinstancenetinfo.html
 func (client *Client) DescribeDBInstanceNetInfo(request *DescribeDBInstanceNetInfoRequest) (response *DescribeDBInstanceNetInfoResponse, err error) {
 	response = CreateDescribeDBInstanceNetInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBInstanceNetInfo(request *DescribeDBInstanceNetIn
 }
 
 // DescribeDBInstanceNetInfoWithChan invokes the r_kvstore.DescribeDBInstanceNetInfo API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describedbinstancenetinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceNetInfoWithChan(request *DescribeDBInstanceNetInfoRequest) (<-chan *DescribeDBInstanceNetInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstanceNetInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBInstanceNetInfoWithChan(request *DescribeDBInsta
 }
 
 // DescribeDBInstanceNetInfoWithCallback invokes the r_kvstore.DescribeDBInstanceNetInfo API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describedbinstancenetinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceNetInfoWithCallback(request *DescribeDBInstanceNetInfoRequest, callback func(response *DescribeDBInstanceNetInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

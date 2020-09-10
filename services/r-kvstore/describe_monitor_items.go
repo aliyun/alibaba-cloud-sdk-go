@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMonitorItems invokes the r_kvstore.DescribeMonitorItems API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describemonitoritems.html
 func (client *Client) DescribeMonitorItems(request *DescribeMonitorItemsRequest) (response *DescribeMonitorItemsResponse, err error) {
 	response = CreateDescribeMonitorItemsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMonitorItems(request *DescribeMonitorItemsRequest)
 }
 
 // DescribeMonitorItemsWithChan invokes the r_kvstore.DescribeMonitorItems API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describemonitoritems.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMonitorItemsWithChan(request *DescribeMonitorItemsRequest) (<-chan *DescribeMonitorItemsResponse, <-chan error) {
 	responseChan := make(chan *DescribeMonitorItemsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMonitorItemsWithChan(request *DescribeMonitorItems
 }
 
 // DescribeMonitorItemsWithCallback invokes the r_kvstore.DescribeMonitorItems API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describemonitoritems.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMonitorItemsWithCallback(request *DescribeMonitorItemsRequest, callback func(response *DescribeMonitorItemsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

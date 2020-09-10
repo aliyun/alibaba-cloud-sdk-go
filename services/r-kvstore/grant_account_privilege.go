@@ -21,7 +21,6 @@ import (
 )
 
 // GrantAccountPrivilege invokes the r_kvstore.GrantAccountPrivilege API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/grantaccountprivilege.html
 func (client *Client) GrantAccountPrivilege(request *GrantAccountPrivilegeRequest) (response *GrantAccountPrivilegeResponse, err error) {
 	response = CreateGrantAccountPrivilegeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GrantAccountPrivilege(request *GrantAccountPrivilegeReques
 }
 
 // GrantAccountPrivilegeWithChan invokes the r_kvstore.GrantAccountPrivilege API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/grantaccountprivilege.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantAccountPrivilegeWithChan(request *GrantAccountPrivilegeRequest) (<-chan *GrantAccountPrivilegeResponse, <-chan error) {
 	responseChan := make(chan *GrantAccountPrivilegeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GrantAccountPrivilegeWithChan(request *GrantAccountPrivile
 }
 
 // GrantAccountPrivilegeWithCallback invokes the r_kvstore.GrantAccountPrivilege API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/grantaccountprivilege.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantAccountPrivilegeWithCallback(request *GrantAccountPrivilegeRequest, callback func(response *GrantAccountPrivilegeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

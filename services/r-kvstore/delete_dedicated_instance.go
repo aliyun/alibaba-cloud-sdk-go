@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDedicatedInstance invokes the r_kvstore.DeleteDedicatedInstance API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deletededicatedinstance.html
 func (client *Client) DeleteDedicatedInstance(request *DeleteDedicatedInstanceRequest) (response *DeleteDedicatedInstanceResponse, err error) {
 	response = CreateDeleteDedicatedInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDedicatedInstance(request *DeleteDedicatedInstanceRe
 }
 
 // DeleteDedicatedInstanceWithChan invokes the r_kvstore.DeleteDedicatedInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deletededicatedinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDedicatedInstanceWithChan(request *DeleteDedicatedInstanceRequest) (<-chan *DeleteDedicatedInstanceResponse, <-chan error) {
 	responseChan := make(chan *DeleteDedicatedInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDedicatedInstanceWithChan(request *DeleteDedicatedIn
 }
 
 // DeleteDedicatedInstanceWithCallback invokes the r_kvstore.DeleteDedicatedInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deletededicatedinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDedicatedInstanceWithCallback(request *DeleteDedicatedInstanceRequest, callback func(response *DeleteDedicatedInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

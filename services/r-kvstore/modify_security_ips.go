@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySecurityIps invokes the r_kvstore.ModifySecurityIps API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifysecurityips.html
 func (client *Client) ModifySecurityIps(request *ModifySecurityIpsRequest) (response *ModifySecurityIpsResponse, err error) {
 	response = CreateModifySecurityIpsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySecurityIps(request *ModifySecurityIpsRequest) (resp
 }
 
 // ModifySecurityIpsWithChan invokes the r_kvstore.ModifySecurityIps API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifysecurityips.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityIpsWithChan(request *ModifySecurityIpsRequest) (<-chan *ModifySecurityIpsResponse, <-chan error) {
 	responseChan := make(chan *ModifySecurityIpsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySecurityIpsWithChan(request *ModifySecurityIpsReques
 }
 
 // ModifySecurityIpsWithCallback invokes the r_kvstore.ModifySecurityIps API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifysecurityips.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityIpsWithCallback(request *ModifySecurityIpsRequest, callback func(response *ModifySecurityIpsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

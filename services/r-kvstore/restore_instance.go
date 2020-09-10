@@ -21,7 +21,6 @@ import (
 )
 
 // RestoreInstance invokes the r_kvstore.RestoreInstance API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/restoreinstance.html
 func (client *Client) RestoreInstance(request *RestoreInstanceRequest) (response *RestoreInstanceResponse, err error) {
 	response = CreateRestoreInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RestoreInstance(request *RestoreInstanceRequest) (response
 }
 
 // RestoreInstanceWithChan invokes the r_kvstore.RestoreInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/restoreinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestoreInstanceWithChan(request *RestoreInstanceRequest) (<-chan *RestoreInstanceResponse, <-chan error) {
 	responseChan := make(chan *RestoreInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RestoreInstanceWithChan(request *RestoreInstanceRequest) (
 }
 
 // RestoreInstanceWithCallback invokes the r_kvstore.RestoreInstance API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/restoreinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestoreInstanceWithCallback(request *RestoreInstanceRequest, callback func(response *RestoreInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

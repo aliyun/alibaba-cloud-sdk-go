@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeIntranetAttribute invokes the r_kvstore.DescribeIntranetAttribute API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describeintranetattribute.html
 func (client *Client) DescribeIntranetAttribute(request *DescribeIntranetAttributeRequest) (response *DescribeIntranetAttributeResponse, err error) {
 	response = CreateDescribeIntranetAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeIntranetAttribute(request *DescribeIntranetAttribu
 }
 
 // DescribeIntranetAttributeWithChan invokes the r_kvstore.DescribeIntranetAttribute API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describeintranetattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIntranetAttributeWithChan(request *DescribeIntranetAttributeRequest) (<-chan *DescribeIntranetAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeIntranetAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeIntranetAttributeWithChan(request *DescribeIntrane
 }
 
 // DescribeIntranetAttributeWithCallback invokes the r_kvstore.DescribeIntranetAttribute API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describeintranetattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIntranetAttributeWithCallback(request *DescribeIntranetAttributeRequest, callback func(response *DescribeIntranetAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // FlushExpireKeys invokes the r_kvstore.FlushExpireKeys API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/flushexpirekeys.html
 func (client *Client) FlushExpireKeys(request *FlushExpireKeysRequest) (response *FlushExpireKeysResponse, err error) {
 	response = CreateFlushExpireKeysResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FlushExpireKeys(request *FlushExpireKeysRequest) (response
 }
 
 // FlushExpireKeysWithChan invokes the r_kvstore.FlushExpireKeys API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/flushexpirekeys.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FlushExpireKeysWithChan(request *FlushExpireKeysRequest) (<-chan *FlushExpireKeysResponse, <-chan error) {
 	responseChan := make(chan *FlushExpireKeysResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FlushExpireKeysWithChan(request *FlushExpireKeysRequest) (
 }
 
 // FlushExpireKeysWithCallback invokes the r_kvstore.FlushExpireKeys API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/flushexpirekeys.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FlushExpireKeysWithCallback(request *FlushExpireKeysRequest, callback func(response *FlushExpireKeysResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // SwitchNetwork invokes the r_kvstore.SwitchNetwork API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/switchnetwork.html
 func (client *Client) SwitchNetwork(request *SwitchNetworkRequest) (response *SwitchNetworkResponse, err error) {
 	response = CreateSwitchNetworkResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SwitchNetwork(request *SwitchNetworkRequest) (response *Sw
 }
 
 // SwitchNetworkWithChan invokes the r_kvstore.SwitchNetwork API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/switchnetwork.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchNetworkWithChan(request *SwitchNetworkRequest) (<-chan *SwitchNetworkResponse, <-chan error) {
 	responseChan := make(chan *SwitchNetworkResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SwitchNetworkWithChan(request *SwitchNetworkRequest) (<-ch
 }
 
 // SwitchNetworkWithCallback invokes the r_kvstore.SwitchNetwork API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/switchnetwork.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchNetworkWithCallback(request *SwitchNetworkRequest, callback func(response *SwitchNetworkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

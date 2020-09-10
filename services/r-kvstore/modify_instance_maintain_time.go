@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyInstanceMaintainTime invokes the r_kvstore.ModifyInstanceMaintainTime API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyinstancemaintaintime.html
 func (client *Client) ModifyInstanceMaintainTime(request *ModifyInstanceMaintainTimeRequest) (response *ModifyInstanceMaintainTimeResponse, err error) {
 	response = CreateModifyInstanceMaintainTimeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyInstanceMaintainTime(request *ModifyInstanceMaintain
 }
 
 // ModifyInstanceMaintainTimeWithChan invokes the r_kvstore.ModifyInstanceMaintainTime API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyinstancemaintaintime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceMaintainTimeWithChan(request *ModifyInstanceMaintainTimeRequest) (<-chan *ModifyInstanceMaintainTimeResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceMaintainTimeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyInstanceMaintainTimeWithChan(request *ModifyInstance
 }
 
 // ModifyInstanceMaintainTimeWithCallback invokes the r_kvstore.ModifyInstanceMaintainTime API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyinstancemaintaintime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceMaintainTimeWithCallback(request *ModifyInstanceMaintainTimeRequest, callback func(response *ModifyInstanceMaintainTimeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

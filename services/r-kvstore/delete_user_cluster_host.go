@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteUserClusterHost invokes the r_kvstore.DeleteUserClusterHost API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteuserclusterhost.html
 func (client *Client) DeleteUserClusterHost(request *DeleteUserClusterHostRequest) (response *DeleteUserClusterHostResponse, err error) {
 	response = CreateDeleteUserClusterHostResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteUserClusterHost(request *DeleteUserClusterHostReques
 }
 
 // DeleteUserClusterHostWithChan invokes the r_kvstore.DeleteUserClusterHost API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteuserclusterhost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUserClusterHostWithChan(request *DeleteUserClusterHostRequest) (<-chan *DeleteUserClusterHostResponse, <-chan error) {
 	responseChan := make(chan *DeleteUserClusterHostResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteUserClusterHostWithChan(request *DeleteUserClusterHo
 }
 
 // DeleteUserClusterHostWithCallback invokes the r_kvstore.DeleteUserClusterHost API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteuserclusterhost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUserClusterHostWithCallback(request *DeleteUserClusterHostRequest, callback func(response *DeleteUserClusterHostResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

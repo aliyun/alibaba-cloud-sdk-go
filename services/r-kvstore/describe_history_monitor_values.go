@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeHistoryMonitorValues invokes the r_kvstore.DescribeHistoryMonitorValues API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describehistorymonitorvalues.html
 func (client *Client) DescribeHistoryMonitorValues(request *DescribeHistoryMonitorValuesRequest) (response *DescribeHistoryMonitorValuesResponse, err error) {
 	response = CreateDescribeHistoryMonitorValuesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeHistoryMonitorValues(request *DescribeHistoryMonit
 }
 
 // DescribeHistoryMonitorValuesWithChan invokes the r_kvstore.DescribeHistoryMonitorValues API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describehistorymonitorvalues.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHistoryMonitorValuesWithChan(request *DescribeHistoryMonitorValuesRequest) (<-chan *DescribeHistoryMonitorValuesResponse, <-chan error) {
 	responseChan := make(chan *DescribeHistoryMonitorValuesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeHistoryMonitorValuesWithChan(request *DescribeHist
 }
 
 // DescribeHistoryMonitorValuesWithCallback invokes the r_kvstore.DescribeHistoryMonitorValues API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describehistorymonitorvalues.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHistoryMonitorValuesWithCallback(request *DescribeHistoryMonitorValuesRequest, callback func(response *DescribeHistoryMonitorValuesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCacheAnalysisTask invokes the r_kvstore.CreateCacheAnalysisTask API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/createcacheanalysistask.html
 func (client *Client) CreateCacheAnalysisTask(request *CreateCacheAnalysisTaskRequest) (response *CreateCacheAnalysisTaskResponse, err error) {
 	response = CreateCreateCacheAnalysisTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCacheAnalysisTask(request *CreateCacheAnalysisTaskRe
 }
 
 // CreateCacheAnalysisTaskWithChan invokes the r_kvstore.CreateCacheAnalysisTask API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/createcacheanalysistask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCacheAnalysisTaskWithChan(request *CreateCacheAnalysisTaskRequest) (<-chan *CreateCacheAnalysisTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateCacheAnalysisTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateCacheAnalysisTaskWithChan(request *CreateCacheAnalys
 }
 
 // CreateCacheAnalysisTaskWithCallback invokes the r_kvstore.CreateCacheAnalysisTask API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/createcacheanalysistask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCacheAnalysisTaskWithCallback(request *CreateCacheAnalysisTaskRequest, callback func(response *CreateCacheAnalysisTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

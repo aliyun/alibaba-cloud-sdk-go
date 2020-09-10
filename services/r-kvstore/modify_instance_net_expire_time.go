@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyInstanceNetExpireTime invokes the r_kvstore.ModifyInstanceNetExpireTime API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyinstancenetexpiretime.html
 func (client *Client) ModifyInstanceNetExpireTime(request *ModifyInstanceNetExpireTimeRequest) (response *ModifyInstanceNetExpireTimeResponse, err error) {
 	response = CreateModifyInstanceNetExpireTimeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyInstanceNetExpireTime(request *ModifyInstanceNetExpi
 }
 
 // ModifyInstanceNetExpireTimeWithChan invokes the r_kvstore.ModifyInstanceNetExpireTime API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyinstancenetexpiretime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceNetExpireTimeWithChan(request *ModifyInstanceNetExpireTimeRequest) (<-chan *ModifyInstanceNetExpireTimeResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceNetExpireTimeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyInstanceNetExpireTimeWithChan(request *ModifyInstanc
 }
 
 // ModifyInstanceNetExpireTimeWithCallback invokes the r_kvstore.ModifyInstanceNetExpireTime API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyinstancenetexpiretime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceNetExpireTimeWithCallback(request *ModifyInstanceNetExpireTimeRequest, callback func(response *ModifyInstanceNetExpireTimeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

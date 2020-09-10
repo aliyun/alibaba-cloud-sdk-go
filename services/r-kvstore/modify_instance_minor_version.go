@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyInstanceMinorVersion invokes the r_kvstore.ModifyInstanceMinorVersion API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyinstanceminorversion.html
 func (client *Client) ModifyInstanceMinorVersion(request *ModifyInstanceMinorVersionRequest) (response *ModifyInstanceMinorVersionResponse, err error) {
 	response = CreateModifyInstanceMinorVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyInstanceMinorVersion(request *ModifyInstanceMinorVer
 }
 
 // ModifyInstanceMinorVersionWithChan invokes the r_kvstore.ModifyInstanceMinorVersion API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyinstanceminorversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceMinorVersionWithChan(request *ModifyInstanceMinorVersionRequest) (<-chan *ModifyInstanceMinorVersionResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceMinorVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyInstanceMinorVersionWithChan(request *ModifyInstance
 }
 
 // ModifyInstanceMinorVersionWithCallback invokes the r_kvstore.ModifyInstanceMinorVersion API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyinstanceminorversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceMinorVersionWithCallback(request *ModifyInstanceMinorVersionRequest, callback func(response *ModifyInstanceMinorVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

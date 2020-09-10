@@ -21,7 +21,6 @@ import (
 )
 
 // SyncDtsStatus invokes the r_kvstore.SyncDtsStatus API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/syncdtsstatus.html
 func (client *Client) SyncDtsStatus(request *SyncDtsStatusRequest) (response *SyncDtsStatusResponse, err error) {
 	response = CreateSyncDtsStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SyncDtsStatus(request *SyncDtsStatusRequest) (response *Sy
 }
 
 // SyncDtsStatusWithChan invokes the r_kvstore.SyncDtsStatus API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/syncdtsstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SyncDtsStatusWithChan(request *SyncDtsStatusRequest) (<-chan *SyncDtsStatusResponse, <-chan error) {
 	responseChan := make(chan *SyncDtsStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SyncDtsStatusWithChan(request *SyncDtsStatusRequest) (<-ch
 }
 
 // SyncDtsStatusWithCallback invokes the r_kvstore.SyncDtsStatus API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/syncdtsstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SyncDtsStatusWithCallback(request *SyncDtsStatusRequest, callback func(response *SyncDtsStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

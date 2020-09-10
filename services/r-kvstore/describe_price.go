@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePrice invokes the r_kvstore.DescribePrice API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describeprice.html
 func (client *Client) DescribePrice(request *DescribePriceRequest) (response *DescribePriceResponse, err error) {
 	response = CreateDescribePriceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePrice(request *DescribePriceRequest) (response *De
 }
 
 // DescribePriceWithChan invokes the r_kvstore.DescribePrice API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describeprice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePriceWithChan(request *DescribePriceRequest) (<-chan *DescribePriceResponse, <-chan error) {
 	responseChan := make(chan *DescribePriceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePriceWithChan(request *DescribePriceRequest) (<-ch
 }
 
 // DescribePriceWithCallback invokes the r_kvstore.DescribePrice API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describeprice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePriceWithCallback(request *DescribePriceRequest, callback func(response *DescribePriceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

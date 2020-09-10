@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCacheAnalysisReport invokes the r_kvstore.DescribeCacheAnalysisReport API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describecacheanalysisreport.html
 func (client *Client) DescribeCacheAnalysisReport(request *DescribeCacheAnalysisReportRequest) (response *DescribeCacheAnalysisReportResponse, err error) {
 	response = CreateDescribeCacheAnalysisReportResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCacheAnalysisReport(request *DescribeCacheAnalysis
 }
 
 // DescribeCacheAnalysisReportWithChan invokes the r_kvstore.DescribeCacheAnalysisReport API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describecacheanalysisreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCacheAnalysisReportWithChan(request *DescribeCacheAnalysisReportRequest) (<-chan *DescribeCacheAnalysisReportResponse, <-chan error) {
 	responseChan := make(chan *DescribeCacheAnalysisReportResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCacheAnalysisReportWithChan(request *DescribeCache
 }
 
 // DescribeCacheAnalysisReportWithCallback invokes the r_kvstore.DescribeCacheAnalysisReport API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describecacheanalysisreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCacheAnalysisReportWithCallback(request *DescribeCacheAnalysisReportRequest, callback func(response *DescribeCacheAnalysisReportResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

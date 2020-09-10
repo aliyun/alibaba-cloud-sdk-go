@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLogicInstanceTopology invokes the r_kvstore.DescribeLogicInstanceTopology API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describelogicinstancetopology.html
 func (client *Client) DescribeLogicInstanceTopology(request *DescribeLogicInstanceTopologyRequest) (response *DescribeLogicInstanceTopologyResponse, err error) {
 	response = CreateDescribeLogicInstanceTopologyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLogicInstanceTopology(request *DescribeLogicInstan
 }
 
 // DescribeLogicInstanceTopologyWithChan invokes the r_kvstore.DescribeLogicInstanceTopology API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describelogicinstancetopology.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLogicInstanceTopologyWithChan(request *DescribeLogicInstanceTopologyRequest) (<-chan *DescribeLogicInstanceTopologyResponse, <-chan error) {
 	responseChan := make(chan *DescribeLogicInstanceTopologyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLogicInstanceTopologyWithChan(request *DescribeLog
 }
 
 // DescribeLogicInstanceTopologyWithCallback invokes the r_kvstore.DescribeLogicInstanceTopology API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describelogicinstancetopology.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLogicInstanceTopologyWithCallback(request *DescribeLogicInstanceTopologyRequest, callback func(response *DescribeLogicInstanceTopologyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

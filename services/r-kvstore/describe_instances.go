@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstances invokes the r_kvstore.DescribeInstances API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describeinstances.html
 func (client *Client) DescribeInstances(request *DescribeInstancesRequest) (response *DescribeInstancesResponse, err error) {
 	response = CreateDescribeInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstances(request *DescribeInstancesRequest) (resp
 }
 
 // DescribeInstancesWithChan invokes the r_kvstore.DescribeInstances API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describeinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancesWithChan(request *DescribeInstancesRequest) (<-chan *DescribeInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstancesWithChan(request *DescribeInstancesReques
 }
 
 // DescribeInstancesWithCallback invokes the r_kvstore.DescribeInstances API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describeinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancesWithCallback(request *DescribeInstancesRequest, callback func(response *DescribeInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +82,7 @@ type DescribeInstancesRequest struct {
 	SecurityToken        string                  `position:"Query" name:"SecurityToken"`
 	PageSize             requests.Integer        `position:"Query" name:"PageSize"`
 	InstanceType         string                  `position:"Query" name:"InstanceType"`
+	EditionType          string                  `position:"Query" name:"EditionType"`
 	Tag                  *[]DescribeInstancesTag `position:"Query" name:"Tag"  type:"Repeated"`
 	InstanceStatus       string                  `position:"Query" name:"InstanceStatus"`
 	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`

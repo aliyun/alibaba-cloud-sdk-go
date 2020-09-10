@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeGlobalDistributeCache invokes the r_kvstore.DescribeGlobalDistributeCache API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describeglobaldistributecache.html
 func (client *Client) DescribeGlobalDistributeCache(request *DescribeGlobalDistributeCacheRequest) (response *DescribeGlobalDistributeCacheResponse, err error) {
 	response = CreateDescribeGlobalDistributeCacheResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeGlobalDistributeCache(request *DescribeGlobalDistr
 }
 
 // DescribeGlobalDistributeCacheWithChan invokes the r_kvstore.DescribeGlobalDistributeCache API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describeglobaldistributecache.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGlobalDistributeCacheWithChan(request *DescribeGlobalDistributeCacheRequest) (<-chan *DescribeGlobalDistributeCacheResponse, <-chan error) {
 	responseChan := make(chan *DescribeGlobalDistributeCacheResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeGlobalDistributeCacheWithChan(request *DescribeGlo
 }
 
 // DescribeGlobalDistributeCacheWithCallback invokes the r_kvstore.DescribeGlobalDistributeCache API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describeglobaldistributecache.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGlobalDistributeCacheWithCallback(request *DescribeGlobalDistributeCacheRequest, callback func(response *DescribeGlobalDistributeCacheResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

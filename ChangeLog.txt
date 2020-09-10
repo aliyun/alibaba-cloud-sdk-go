@@ -1,3 +1,7 @@
+2020-09-10 Version: v1.61.485
+- Generated 2015-01-01 for `R-kvstore`.
+- Update HasRenewChangeOrder type to Boolean in DescribeInstances.
+
 2020-09-09 Version: v1.61.484
 - Generated 2017-03-21 for `vod`.
 - Add support cn-beijing service region.

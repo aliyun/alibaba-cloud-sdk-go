@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyInstanceMajorVersion invokes the r_kvstore.ModifyInstanceMajorVersion API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyinstancemajorversion.html
 func (client *Client) ModifyInstanceMajorVersion(request *ModifyInstanceMajorVersionRequest) (response *ModifyInstanceMajorVersionResponse, err error) {
 	response = CreateModifyInstanceMajorVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyInstanceMajorVersion(request *ModifyInstanceMajorVer
 }
 
 // ModifyInstanceMajorVersionWithChan invokes the r_kvstore.ModifyInstanceMajorVersion API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyinstancemajorversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceMajorVersionWithChan(request *ModifyInstanceMajorVersionRequest) (<-chan *ModifyInstanceMajorVersionResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceMajorVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyInstanceMajorVersionWithChan(request *ModifyInstance
 }
 
 // ModifyInstanceMajorVersionWithCallback invokes the r_kvstore.ModifyInstanceMajorVersion API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyinstancemajorversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceMajorVersionWithCallback(request *ModifyInstanceMajorVersionRequest, callback func(response *ModifyInstanceMajorVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

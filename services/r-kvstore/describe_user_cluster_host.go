@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUserClusterHost invokes the r_kvstore.DescribeUserClusterHost API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describeuserclusterhost.html
 func (client *Client) DescribeUserClusterHost(request *DescribeUserClusterHostRequest) (response *DescribeUserClusterHostResponse, err error) {
 	response = CreateDescribeUserClusterHostResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUserClusterHost(request *DescribeUserClusterHostRe
 }
 
 // DescribeUserClusterHostWithChan invokes the r_kvstore.DescribeUserClusterHost API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describeuserclusterhost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserClusterHostWithChan(request *DescribeUserClusterHostRequest) (<-chan *DescribeUserClusterHostResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserClusterHostResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUserClusterHostWithChan(request *DescribeUserClust
 }
 
 // DescribeUserClusterHostWithCallback invokes the r_kvstore.DescribeUserClusterHost API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/describeuserclusterhost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserClusterHostWithCallback(request *DescribeUserClusterHostRequest, callback func(response *DescribeUserClusterHostResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
