@@ -21,7 +21,6 @@ import (
 )
 
 // SearchTable invokes the dms_enterprise.SearchTable API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/searchtable.html
 func (client *Client) SearchTable(request *SearchTableRequest) (response *SearchTableResponse, err error) {
 	response = CreateSearchTableResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchTable(request *SearchTableRequest) (response *Search
 }
 
 // SearchTableWithChan invokes the dms_enterprise.SearchTable API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/searchtable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchTableWithChan(request *SearchTableRequest) (<-chan *SearchTableResponse, <-chan error) {
 	responseChan := make(chan *SearchTableResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchTableWithChan(request *SearchTableRequest) (<-chan *
 }
 
 // SearchTableWithCallback invokes the dms_enterprise.SearchTable API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/searchtable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchTableWithCallback(request *SearchTableRequest, callback func(response *SearchTableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,6 +97,7 @@ func CreateSearchTableRequest() (request *SearchTableRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SearchTable", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

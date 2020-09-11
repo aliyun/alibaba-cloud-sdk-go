@@ -21,7 +21,6 @@ import (
 )
 
 // ListLogicDatabases invokes the dms_enterprise.ListLogicDatabases API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listlogicdatabases.html
 func (client *Client) ListLogicDatabases(request *ListLogicDatabasesRequest) (response *ListLogicDatabasesResponse, err error) {
 	response = CreateListLogicDatabasesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListLogicDatabases(request *ListLogicDatabasesRequest) (re
 }
 
 // ListLogicDatabasesWithChan invokes the dms_enterprise.ListLogicDatabases API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listlogicdatabases.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListLogicDatabasesWithChan(request *ListLogicDatabasesRequest) (<-chan *ListLogicDatabasesResponse, <-chan error) {
 	responseChan := make(chan *ListLogicDatabasesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListLogicDatabasesWithChan(request *ListLogicDatabasesRequ
 }
 
 // ListLogicDatabasesWithCallback invokes the dms_enterprise.ListLogicDatabases API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listlogicdatabases.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListLogicDatabasesWithCallback(request *ListLogicDatabasesRequest, callback func(response *ListLogicDatabasesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateListLogicDatabasesRequest() (request *ListLogicDatabasesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListLogicDatabases", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

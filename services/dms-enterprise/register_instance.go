@@ -21,7 +21,6 @@ import (
 )
 
 // RegisterInstance invokes the dms_enterprise.RegisterInstance API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/registerinstance.html
 func (client *Client) RegisterInstance(request *RegisterInstanceRequest) (response *RegisterInstanceResponse, err error) {
 	response = CreateRegisterInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RegisterInstance(request *RegisterInstanceRequest) (respon
 }
 
 // RegisterInstanceWithChan invokes the dms_enterprise.RegisterInstance API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/registerinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterInstanceWithChan(request *RegisterInstanceRequest) (<-chan *RegisterInstanceResponse, <-chan error) {
 	responseChan := make(chan *RegisterInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RegisterInstanceWithChan(request *RegisterInstanceRequest)
 }
 
 // RegisterInstanceWithCallback invokes the dms_enterprise.RegisterInstance API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/registerinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterInstanceWithCallback(request *RegisterInstanceRequest, callback func(response *RegisterInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -114,6 +109,7 @@ func CreateRegisterInstanceRequest() (request *RegisterInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "RegisterInstance", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

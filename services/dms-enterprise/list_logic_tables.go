@@ -21,7 +21,6 @@ import (
 )
 
 // ListLogicTables invokes the dms_enterprise.ListLogicTables API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listlogictables.html
 func (client *Client) ListLogicTables(request *ListLogicTablesRequest) (response *ListLogicTablesResponse, err error) {
 	response = CreateListLogicTablesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListLogicTables(request *ListLogicTablesRequest) (response
 }
 
 // ListLogicTablesWithChan invokes the dms_enterprise.ListLogicTables API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listlogictables.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListLogicTablesWithChan(request *ListLogicTablesRequest) (<-chan *ListLogicTablesResponse, <-chan error) {
 	responseChan := make(chan *ListLogicTablesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListLogicTablesWithChan(request *ListLogicTablesRequest) (
 }
 
 // ListLogicTablesWithCallback invokes the dms_enterprise.ListLogicTables API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listlogictables.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListLogicTablesWithCallback(request *ListLogicTablesRequest, callback func(response *ListLogicTablesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateListLogicTablesRequest() (request *ListLogicTablesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListLogicTables", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

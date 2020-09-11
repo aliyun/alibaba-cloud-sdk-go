@@ -21,7 +21,6 @@ import (
 )
 
 // ListDatabaseUserPermssions invokes the dms_enterprise.ListDatabaseUserPermssions API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listdatabaseuserpermssions.html
 func (client *Client) ListDatabaseUserPermssions(request *ListDatabaseUserPermssionsRequest) (response *ListDatabaseUserPermssionsResponse, err error) {
 	response = CreateListDatabaseUserPermssionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDatabaseUserPermssions(request *ListDatabaseUserPermss
 }
 
 // ListDatabaseUserPermssionsWithChan invokes the dms_enterprise.ListDatabaseUserPermssions API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listdatabaseuserpermssions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDatabaseUserPermssionsWithChan(request *ListDatabaseUserPermssionsRequest) (<-chan *ListDatabaseUserPermssionsResponse, <-chan error) {
 	responseChan := make(chan *ListDatabaseUserPermssionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDatabaseUserPermssionsWithChan(request *ListDatabaseUs
 }
 
 // ListDatabaseUserPermssionsWithCallback invokes the dms_enterprise.ListDatabaseUserPermssions API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listdatabaseuserpermssions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDatabaseUserPermssionsWithCallback(request *ListDatabaseUserPermssionsRequest, callback func(response *ListDatabaseUserPermssionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,6 +97,7 @@ func CreateListDatabaseUserPermssionsRequest() (request *ListDatabaseUserPermssi
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListDatabaseUserPermssions", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

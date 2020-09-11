@@ -21,7 +21,6 @@ import (
 )
 
 // CreateOrder invokes the dms_enterprise.CreateOrder API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/createorder.html
 func (client *Client) CreateOrder(request *CreateOrderRequest) (response *CreateOrderResponse, err error) {
 	response = CreateCreateOrderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateOrder(request *CreateOrderRequest) (response *Create
 }
 
 // CreateOrderWithChan invokes the dms_enterprise.CreateOrder API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/createorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOrderWithChan(request *CreateOrderRequest) (<-chan *CreateOrderResponse, <-chan error) {
 	responseChan := make(chan *CreateOrderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateOrderWithChan(request *CreateOrderRequest) (<-chan *
 }
 
 // CreateOrderWithCallback invokes the dms_enterprise.CreateOrder API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/createorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOrderWithCallback(request *CreateOrderRequest, callback func(response *CreateOrderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateCreateOrderRequest() (request *CreateOrderRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "CreateOrder", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

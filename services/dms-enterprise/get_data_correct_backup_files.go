@@ -21,7 +21,6 @@ import (
 )
 
 // GetDataCorrectBackupFiles invokes the dms_enterprise.GetDataCorrectBackupFiles API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getdatacorrectbackupfiles.html
 func (client *Client) GetDataCorrectBackupFiles(request *GetDataCorrectBackupFilesRequest) (response *GetDataCorrectBackupFilesResponse, err error) {
 	response = CreateGetDataCorrectBackupFilesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetDataCorrectBackupFiles(request *GetDataCorrectBackupFil
 }
 
 // GetDataCorrectBackupFilesWithChan invokes the dms_enterprise.GetDataCorrectBackupFiles API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getdatacorrectbackupfiles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDataCorrectBackupFilesWithChan(request *GetDataCorrectBackupFilesRequest) (<-chan *GetDataCorrectBackupFilesResponse, <-chan error) {
 	responseChan := make(chan *GetDataCorrectBackupFilesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetDataCorrectBackupFilesWithChan(request *GetDataCorrectB
 }
 
 // GetDataCorrectBackupFilesWithCallback invokes the dms_enterprise.GetDataCorrectBackupFiles API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getdatacorrectbackupfiles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDataCorrectBackupFilesWithCallback(request *GetDataCorrectBackupFilesRequest, callback func(response *GetDataCorrectBackupFilesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateGetDataCorrectBackupFilesRequest() (request *GetDataCorrectBackupFile
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataCorrectBackupFiles", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

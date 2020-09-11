@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateUser invokes the dms_enterprise.UpdateUser API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/updateuser.html
 func (client *Client) UpdateUser(request *UpdateUserRequest) (response *UpdateUserResponse, err error) {
 	response = CreateUpdateUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateUser(request *UpdateUserRequest) (response *UpdateUs
 }
 
 // UpdateUserWithChan invokes the dms_enterprise.UpdateUser API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/updateuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateUserWithChan(request *UpdateUserRequest) (<-chan *UpdateUserResponse, <-chan error) {
 	responseChan := make(chan *UpdateUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateUserWithChan(request *UpdateUserRequest) (<-chan *Up
 }
 
 // UpdateUserWithCallback invokes the dms_enterprise.UpdateUser API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/updateuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateUserWithCallback(request *UpdateUserRequest, callback func(response *UpdateUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateUpdateUserRequest() (request *UpdateUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "UpdateUser", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

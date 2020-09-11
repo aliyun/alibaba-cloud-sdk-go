@@ -21,7 +21,6 @@ import (
 )
 
 // ListDatabases invokes the dms_enterprise.ListDatabases API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listdatabases.html
 func (client *Client) ListDatabases(request *ListDatabasesRequest) (response *ListDatabasesResponse, err error) {
 	response = CreateListDatabasesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDatabases(request *ListDatabasesRequest) (response *Li
 }
 
 // ListDatabasesWithChan invokes the dms_enterprise.ListDatabases API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listdatabases.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDatabasesWithChan(request *ListDatabasesRequest) (<-chan *ListDatabasesResponse, <-chan error) {
 	responseChan := make(chan *ListDatabasesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDatabasesWithChan(request *ListDatabasesRequest) (<-ch
 }
 
 // ListDatabasesWithCallback invokes the dms_enterprise.ListDatabases API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listdatabases.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDatabasesWithCallback(request *ListDatabasesRequest, callback func(response *ListDatabasesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateListDatabasesRequest() (request *ListDatabasesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListDatabases", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

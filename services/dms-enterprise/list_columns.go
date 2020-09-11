@@ -21,7 +21,6 @@ import (
 )
 
 // ListColumns invokes the dms_enterprise.ListColumns API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listcolumns.html
 func (client *Client) ListColumns(request *ListColumnsRequest) (response *ListColumnsResponse, err error) {
 	response = CreateListColumnsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListColumns(request *ListColumnsRequest) (response *ListCo
 }
 
 // ListColumnsWithChan invokes the dms_enterprise.ListColumns API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listcolumns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListColumnsWithChan(request *ListColumnsRequest) (<-chan *ListColumnsResponse, <-chan error) {
 	responseChan := make(chan *ListColumnsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListColumnsWithChan(request *ListColumnsRequest) (<-chan *
 }
 
 // ListColumnsWithCallback invokes the dms_enterprise.ListColumns API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listcolumns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListColumnsWithCallback(request *ListColumnsRequest, callback func(response *ListColumnsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateListColumnsRequest() (request *ListColumnsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListColumns", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

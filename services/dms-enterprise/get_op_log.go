@@ -21,7 +21,6 @@ import (
 )
 
 // GetOpLog invokes the dms_enterprise.GetOpLog API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getoplog.html
 func (client *Client) GetOpLog(request *GetOpLogRequest) (response *GetOpLogResponse, err error) {
 	response = CreateGetOpLogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetOpLog(request *GetOpLogRequest) (response *GetOpLogResp
 }
 
 // GetOpLogWithChan invokes the dms_enterprise.GetOpLog API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getoplog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetOpLogWithChan(request *GetOpLogRequest) (<-chan *GetOpLogResponse, <-chan error) {
 	responseChan := make(chan *GetOpLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetOpLogWithChan(request *GetOpLogRequest) (<-chan *GetOpL
 }
 
 // GetOpLogWithCallback invokes the dms_enterprise.GetOpLog API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getoplog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetOpLogWithCallback(request *GetOpLogRequest, callback func(response *GetOpLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +96,7 @@ func CreateGetOpLogRequest() (request *GetOpLogRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetOpLog", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

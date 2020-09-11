@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitOrderApproval invokes the dms_enterprise.SubmitOrderApproval API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/submitorderapproval.html
 func (client *Client) SubmitOrderApproval(request *SubmitOrderApprovalRequest) (response *SubmitOrderApprovalResponse, err error) {
 	response = CreateSubmitOrderApprovalResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitOrderApproval(request *SubmitOrderApprovalRequest) (
 }
 
 // SubmitOrderApprovalWithChan invokes the dms_enterprise.SubmitOrderApproval API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/submitorderapproval.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitOrderApprovalWithChan(request *SubmitOrderApprovalRequest) (<-chan *SubmitOrderApprovalResponse, <-chan error) {
 	responseChan := make(chan *SubmitOrderApprovalResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitOrderApprovalWithChan(request *SubmitOrderApprovalRe
 }
 
 // SubmitOrderApprovalWithCallback invokes the dms_enterprise.SubmitOrderApproval API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/submitorderapproval.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitOrderApprovalWithCallback(request *SubmitOrderApprovalRequest, callback func(response *SubmitOrderApprovalResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateSubmitOrderApprovalRequest() (request *SubmitOrderApprovalRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SubmitOrderApproval", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

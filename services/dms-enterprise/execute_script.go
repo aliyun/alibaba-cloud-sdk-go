@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetDatabase invokes the dms_enterprise.GetDatabase API synchronously
-func (client *Client) GetDatabase(request *GetDatabaseRequest) (response *GetDatabaseResponse, err error) {
-	response = CreateGetDatabaseResponse()
+// ExecuteScript invokes the dms_enterprise.ExecuteScript API synchronously
+func (client *Client) ExecuteScript(request *ExecuteScriptRequest) (response *ExecuteScriptResponse, err error) {
+	response = CreateExecuteScriptResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetDatabaseWithChan invokes the dms_enterprise.GetDatabase API asynchronously
-func (client *Client) GetDatabaseWithChan(request *GetDatabaseRequest) (<-chan *GetDatabaseResponse, <-chan error) {
-	responseChan := make(chan *GetDatabaseResponse, 1)
+// ExecuteScriptWithChan invokes the dms_enterprise.ExecuteScript API asynchronously
+func (client *Client) ExecuteScriptWithChan(request *ExecuteScriptRequest) (<-chan *ExecuteScriptResponse, <-chan error) {
+	responseChan := make(chan *ExecuteScriptResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetDatabase(request)
+		response, err := client.ExecuteScript(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetDatabaseWithChan(request *GetDatabaseRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// GetDatabaseWithCallback invokes the dms_enterprise.GetDatabase API asynchronously
-func (client *Client) GetDatabaseWithCallback(request *GetDatabaseRequest, callback func(response *GetDatabaseResponse, err error)) <-chan int {
+// ExecuteScriptWithCallback invokes the dms_enterprise.ExecuteScript API asynchronously
+func (client *Client) ExecuteScriptWithCallback(request *ExecuteScriptRequest, callback func(response *ExecuteScriptResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetDatabaseResponse
+		var response *ExecuteScriptResponse
 		var err error
 		defer close(result)
-		response, err = client.GetDatabase(request)
+		response, err = client.ExecuteScript(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,39 +68,38 @@ func (client *Client) GetDatabaseWithCallback(request *GetDatabaseRequest, callb
 	return result
 }
 
-// GetDatabaseRequest is the request struct for api GetDatabase
-type GetDatabaseRequest struct {
+// ExecuteScriptRequest is the request struct for api ExecuteScript
+type ExecuteScriptRequest struct {
 	*requests.RpcRequest
-	SchemaName string           `position:"Query" name:"SchemaName"`
-	Port       requests.Integer `position:"Query" name:"Port"`
-	Host       string           `position:"Query" name:"Host"`
-	Tid        requests.Integer `position:"Query" name:"Tid"`
-	Sid        string           `position:"Query" name:"Sid"`
+	DbId   requests.Integer `position:"Query" name:"DbId"`
+	Logic  requests.Boolean `position:"Query" name:"Logic"`
+	Script string           `position:"Query" name:"Script"`
+	Tid    requests.Integer `position:"Query" name:"Tid"`
 }
 
-// GetDatabaseResponse is the response struct for api GetDatabase
-type GetDatabaseResponse struct {
+// ExecuteScriptResponse is the response struct for api ExecuteScript
+type ExecuteScriptResponse struct {
 	*responses.BaseResponse
 	RequestId    string   `json:"RequestId" xml:"RequestId"`
 	Success      bool     `json:"Success" xml:"Success"`
 	ErrorMessage string   `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode    string   `json:"ErrorCode" xml:"ErrorCode"`
-	Database     Database `json:"Database" xml:"Database"`
+	Results      []Result `json:"Results" xml:"Results"`
 }
 
-// CreateGetDatabaseRequest creates a request to invoke GetDatabase API
-func CreateGetDatabaseRequest() (request *GetDatabaseRequest) {
-	request = &GetDatabaseRequest{
+// CreateExecuteScriptRequest creates a request to invoke ExecuteScript API
+func CreateExecuteScriptRequest() (request *ExecuteScriptRequest) {
+	request = &ExecuteScriptRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDatabase", "dmsenterprise", "openAPI")
+	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ExecuteScript", "dmsenterprise", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetDatabaseResponse creates a response to parse from GetDatabase response
-func CreateGetDatabaseResponse() (response *GetDatabaseResponse) {
-	response = &GetDatabaseResponse{
+// CreateExecuteScriptResponse creates a response to parse from ExecuteScript response
+func CreateExecuteScriptResponse() (response *ExecuteScriptResponse) {
+	response = &ExecuteScriptResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

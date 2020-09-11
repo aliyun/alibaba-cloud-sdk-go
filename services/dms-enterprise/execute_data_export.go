@@ -21,7 +21,6 @@ import (
 )
 
 // ExecuteDataExport invokes the dms_enterprise.ExecuteDataExport API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/executedataexport.html
 func (client *Client) ExecuteDataExport(request *ExecuteDataExportRequest) (response *ExecuteDataExportResponse, err error) {
 	response = CreateExecuteDataExportResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExecuteDataExport(request *ExecuteDataExportRequest) (resp
 }
 
 // ExecuteDataExportWithChan invokes the dms_enterprise.ExecuteDataExport API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/executedataexport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteDataExportWithChan(request *ExecuteDataExportRequest) (<-chan *ExecuteDataExportResponse, <-chan error) {
 	responseChan := make(chan *ExecuteDataExportResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExecuteDataExportWithChan(request *ExecuteDataExportReques
 }
 
 // ExecuteDataExportWithCallback invokes the dms_enterprise.ExecuteDataExport API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/executedataexport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteDataExportWithCallback(request *ExecuteDataExportRequest, callback func(response *ExecuteDataExportResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateExecuteDataExportRequest() (request *ExecuteDataExportRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ExecuteDataExport", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // SetOwners invokes the dms_enterprise.SetOwners API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/setowners.html
 func (client *Client) SetOwners(request *SetOwnersRequest) (response *SetOwnersResponse, err error) {
 	response = CreateSetOwnersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetOwners(request *SetOwnersRequest) (response *SetOwnersR
 }
 
 // SetOwnersWithChan invokes the dms_enterprise.SetOwners API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/setowners.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetOwnersWithChan(request *SetOwnersRequest) (<-chan *SetOwnersResponse, <-chan error) {
 	responseChan := make(chan *SetOwnersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetOwnersWithChan(request *SetOwnersRequest) (<-chan *SetO
 }
 
 // SetOwnersWithCallback invokes the dms_enterprise.SetOwners API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/setowners.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetOwnersWithCallback(request *SetOwnersRequest, callback func(response *SetOwnersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateSetOwnersRequest() (request *SetOwnersRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SetOwners", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

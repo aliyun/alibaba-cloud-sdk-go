@@ -21,7 +21,6 @@ import (
 )
 
 // GetOrderBaseInfo invokes the dms_enterprise.GetOrderBaseInfo API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getorderbaseinfo.html
 func (client *Client) GetOrderBaseInfo(request *GetOrderBaseInfoRequest) (response *GetOrderBaseInfoResponse, err error) {
 	response = CreateGetOrderBaseInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetOrderBaseInfo(request *GetOrderBaseInfoRequest) (respon
 }
 
 // GetOrderBaseInfoWithChan invokes the dms_enterprise.GetOrderBaseInfo API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getorderbaseinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetOrderBaseInfoWithChan(request *GetOrderBaseInfoRequest) (<-chan *GetOrderBaseInfoResponse, <-chan error) {
 	responseChan := make(chan *GetOrderBaseInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetOrderBaseInfoWithChan(request *GetOrderBaseInfoRequest)
 }
 
 // GetOrderBaseInfoWithCallback invokes the dms_enterprise.GetOrderBaseInfo API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getorderbaseinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetOrderBaseInfoWithCallback(request *GetOrderBaseInfoRequest, callback func(response *GetOrderBaseInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateGetOrderBaseInfoRequest() (request *GetOrderBaseInfoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetOrderBaseInfo", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

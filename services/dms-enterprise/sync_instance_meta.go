@@ -21,7 +21,6 @@ import (
 )
 
 // SyncInstanceMeta invokes the dms_enterprise.SyncInstanceMeta API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/syncinstancemeta.html
 func (client *Client) SyncInstanceMeta(request *SyncInstanceMetaRequest) (response *SyncInstanceMetaResponse, err error) {
 	response = CreateSyncInstanceMetaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SyncInstanceMeta(request *SyncInstanceMetaRequest) (respon
 }
 
 // SyncInstanceMetaWithChan invokes the dms_enterprise.SyncInstanceMeta API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/syncinstancemeta.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SyncInstanceMetaWithChan(request *SyncInstanceMetaRequest) (<-chan *SyncInstanceMetaResponse, <-chan error) {
 	responseChan := make(chan *SyncInstanceMetaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SyncInstanceMetaWithChan(request *SyncInstanceMetaRequest)
 }
 
 // SyncInstanceMetaWithCallback invokes the dms_enterprise.SyncInstanceMeta API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/syncinstancemeta.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SyncInstanceMetaWithCallback(request *SyncInstanceMetaRequest, callback func(response *SyncInstanceMetaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateSyncInstanceMetaRequest() (request *SyncInstanceMetaRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SyncInstanceMeta", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

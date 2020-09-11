@@ -21,7 +21,6 @@ import (
 )
 
 // ListWorkFlowTemplates invokes the dms_enterprise.ListWorkFlowTemplates API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listworkflowtemplates.html
 func (client *Client) ListWorkFlowTemplates(request *ListWorkFlowTemplatesRequest) (response *ListWorkFlowTemplatesResponse, err error) {
 	response = CreateListWorkFlowTemplatesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListWorkFlowTemplates(request *ListWorkFlowTemplatesReques
 }
 
 // ListWorkFlowTemplatesWithChan invokes the dms_enterprise.ListWorkFlowTemplates API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listworkflowtemplates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListWorkFlowTemplatesWithChan(request *ListWorkFlowTemplatesRequest) (<-chan *ListWorkFlowTemplatesResponse, <-chan error) {
 	responseChan := make(chan *ListWorkFlowTemplatesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListWorkFlowTemplatesWithChan(request *ListWorkFlowTemplat
 }
 
 // ListWorkFlowTemplatesWithCallback invokes the dms_enterprise.ListWorkFlowTemplates API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listworkflowtemplates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListWorkFlowTemplatesWithCallback(request *ListWorkFlowTemplatesRequest, callback func(response *ListWorkFlowTemplatesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateListWorkFlowTemplatesRequest() (request *ListWorkFlowTemplatesRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListWorkFlowTemplates", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

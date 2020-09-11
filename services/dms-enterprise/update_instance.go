@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateInstance invokes the dms_enterprise.UpdateInstance API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/updateinstance.html
 func (client *Client) UpdateInstance(request *UpdateInstanceRequest) (response *UpdateInstanceResponse, err error) {
 	response = CreateUpdateInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateInstance(request *UpdateInstanceRequest) (response *
 }
 
 // UpdateInstanceWithChan invokes the dms_enterprise.UpdateInstance API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/updateinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateInstanceWithChan(request *UpdateInstanceRequest) (<-chan *UpdateInstanceResponse, <-chan error) {
 	responseChan := make(chan *UpdateInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateInstanceWithChan(request *UpdateInstanceRequest) (<-
 }
 
 // UpdateInstanceWithCallback invokes the dms_enterprise.UpdateInstance API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/updateinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateInstanceWithCallback(request *UpdateInstanceRequest, callback func(response *UpdateInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -114,6 +109,7 @@ func CreateUpdateInstanceRequest() (request *UpdateInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "UpdateInstance", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

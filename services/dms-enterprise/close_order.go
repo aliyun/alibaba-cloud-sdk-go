@@ -21,7 +21,6 @@ import (
 )
 
 // CloseOrder invokes the dms_enterprise.CloseOrder API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/closeorder.html
 func (client *Client) CloseOrder(request *CloseOrderRequest) (response *CloseOrderResponse, err error) {
 	response = CreateCloseOrderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CloseOrder(request *CloseOrderRequest) (response *CloseOrd
 }
 
 // CloseOrderWithChan invokes the dms_enterprise.CloseOrder API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/closeorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloseOrderWithChan(request *CloseOrderRequest) (<-chan *CloseOrderResponse, <-chan error) {
 	responseChan := make(chan *CloseOrderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CloseOrderWithChan(request *CloseOrderRequest) (<-chan *Cl
 }
 
 // CloseOrderWithCallback invokes the dms_enterprise.CloseOrder API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/closeorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloseOrderWithCallback(request *CloseOrderRequest, callback func(response *CloseOrderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateCloseOrderRequest() (request *CloseOrderRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "CloseOrder", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

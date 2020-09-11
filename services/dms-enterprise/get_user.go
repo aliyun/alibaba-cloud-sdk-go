@@ -21,7 +21,6 @@ import (
 )
 
 // GetUser invokes the dms_enterprise.GetUser API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getuser.html
 func (client *Client) GetUser(request *GetUserRequest) (response *GetUserResponse, err error) {
 	response = CreateGetUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetUser(request *GetUserRequest) (response *GetUserRespons
 }
 
 // GetUserWithChan invokes the dms_enterprise.GetUser API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserWithChan(request *GetUserRequest) (<-chan *GetUserResponse, <-chan error) {
 	responseChan := make(chan *GetUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetUserWithChan(request *GetUserRequest) (<-chan *GetUserR
 }
 
 // GetUserWithCallback invokes the dms_enterprise.GetUser API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserWithCallback(request *GetUserRequest, callback func(response *GetUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateGetUserRequest() (request *GetUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetUser", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

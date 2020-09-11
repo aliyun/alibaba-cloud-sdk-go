@@ -21,7 +21,6 @@ import (
 )
 
 // GetApprovalDetail invokes the dms_enterprise.GetApprovalDetail API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getapprovaldetail.html
 func (client *Client) GetApprovalDetail(request *GetApprovalDetailRequest) (response *GetApprovalDetailResponse, err error) {
 	response = CreateGetApprovalDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetApprovalDetail(request *GetApprovalDetailRequest) (resp
 }
 
 // GetApprovalDetailWithChan invokes the dms_enterprise.GetApprovalDetail API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getapprovaldetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetApprovalDetailWithChan(request *GetApprovalDetailRequest) (<-chan *GetApprovalDetailResponse, <-chan error) {
 	responseChan := make(chan *GetApprovalDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetApprovalDetailWithChan(request *GetApprovalDetailReques
 }
 
 // GetApprovalDetailWithCallback invokes the dms_enterprise.GetApprovalDetail API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getapprovaldetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetApprovalDetailWithCallback(request *GetApprovalDetailRequest, callback func(response *GetApprovalDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateGetApprovalDetailRequest() (request *GetApprovalDetailRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetApprovalDetail", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

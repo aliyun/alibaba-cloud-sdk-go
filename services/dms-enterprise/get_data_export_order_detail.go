@@ -21,7 +21,6 @@ import (
 )
 
 // GetDataExportOrderDetail invokes the dms_enterprise.GetDataExportOrderDetail API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getdataexportorderdetail.html
 func (client *Client) GetDataExportOrderDetail(request *GetDataExportOrderDetailRequest) (response *GetDataExportOrderDetailResponse, err error) {
 	response = CreateGetDataExportOrderDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetDataExportOrderDetail(request *GetDataExportOrderDetail
 }
 
 // GetDataExportOrderDetailWithChan invokes the dms_enterprise.GetDataExportOrderDetail API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getdataexportorderdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDataExportOrderDetailWithChan(request *GetDataExportOrderDetailRequest) (<-chan *GetDataExportOrderDetailResponse, <-chan error) {
 	responseChan := make(chan *GetDataExportOrderDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetDataExportOrderDetailWithChan(request *GetDataExportOrd
 }
 
 // GetDataExportOrderDetailWithCallback invokes the dms_enterprise.GetDataExportOrderDetail API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getdataexportorderdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDataExportOrderDetailWithCallback(request *GetDataExportOrderDetailRequest, callback func(response *GetDataExportOrderDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateGetDataExportOrderDetailRequest() (request *GetDataExportOrderDetailR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetDataExportOrderDetail", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

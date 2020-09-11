@@ -21,7 +21,6 @@ import (
 )
 
 // SyncDatabaseMeta invokes the dms_enterprise.SyncDatabaseMeta API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/syncdatabasemeta.html
 func (client *Client) SyncDatabaseMeta(request *SyncDatabaseMetaRequest) (response *SyncDatabaseMetaResponse, err error) {
 	response = CreateSyncDatabaseMetaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SyncDatabaseMeta(request *SyncDatabaseMetaRequest) (respon
 }
 
 // SyncDatabaseMetaWithChan invokes the dms_enterprise.SyncDatabaseMeta API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/syncdatabasemeta.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SyncDatabaseMetaWithChan(request *SyncDatabaseMetaRequest) (<-chan *SyncDatabaseMetaResponse, <-chan error) {
 	responseChan := make(chan *SyncDatabaseMetaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SyncDatabaseMetaWithChan(request *SyncDatabaseMetaRequest)
 }
 
 // SyncDatabaseMetaWithCallback invokes the dms_enterprise.SyncDatabaseMeta API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/syncdatabasemeta.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SyncDatabaseMetaWithCallback(request *SyncDatabaseMetaRequest, callback func(response *SyncDatabaseMetaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateSyncDatabaseMetaRequest() (request *SyncDatabaseMetaRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SyncDatabaseMeta", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

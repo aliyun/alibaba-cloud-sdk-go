@@ -21,7 +21,6 @@ import (
 )
 
 // SearchDatabase invokes the dms_enterprise.SearchDatabase API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/searchdatabase.html
 func (client *Client) SearchDatabase(request *SearchDatabaseRequest) (response *SearchDatabaseResponse, err error) {
 	response = CreateSearchDatabaseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchDatabase(request *SearchDatabaseRequest) (response *
 }
 
 // SearchDatabaseWithChan invokes the dms_enterprise.SearchDatabase API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/searchdatabase.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchDatabaseWithChan(request *SearchDatabaseRequest) (<-chan *SearchDatabaseResponse, <-chan error) {
 	responseChan := make(chan *SearchDatabaseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchDatabaseWithChan(request *SearchDatabaseRequest) (<-
 }
 
 // SearchDatabaseWithCallback invokes the dms_enterprise.SearchDatabase API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/searchdatabase.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchDatabaseWithCallback(request *SearchDatabaseRequest, callback func(response *SearchDatabaseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,6 +98,7 @@ func CreateSearchDatabaseRequest() (request *SearchDatabaseRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "SearchDatabase", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

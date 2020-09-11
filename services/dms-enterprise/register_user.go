@@ -21,7 +21,6 @@ import (
 )
 
 // RegisterUser invokes the dms_enterprise.RegisterUser API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/registeruser.html
 func (client *Client) RegisterUser(request *RegisterUserRequest) (response *RegisterUserResponse, err error) {
 	response = CreateRegisterUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RegisterUser(request *RegisterUserRequest) (response *Regi
 }
 
 // RegisterUserWithChan invokes the dms_enterprise.RegisterUser API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/registeruser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterUserWithChan(request *RegisterUserRequest) (<-chan *RegisterUserResponse, <-chan error) {
 	responseChan := make(chan *RegisterUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RegisterUserWithChan(request *RegisterUserRequest) (<-chan
 }
 
 // RegisterUserWithCallback invokes the dms_enterprise.RegisterUser API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/registeruser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterUserWithCallback(request *RegisterUserRequest, callback func(response *RegisterUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateRegisterUserRequest() (request *RegisterUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "RegisterUser", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

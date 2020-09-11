@@ -21,7 +21,6 @@ import (
 )
 
 // ListSensitiveColumnsDetail invokes the dms_enterprise.ListSensitiveColumnsDetail API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listsensitivecolumnsdetail.html
 func (client *Client) ListSensitiveColumnsDetail(request *ListSensitiveColumnsDetailRequest) (response *ListSensitiveColumnsDetailResponse, err error) {
 	response = CreateListSensitiveColumnsDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSensitiveColumnsDetail(request *ListSensitiveColumnsDe
 }
 
 // ListSensitiveColumnsDetailWithChan invokes the dms_enterprise.ListSensitiveColumnsDetail API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listsensitivecolumnsdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSensitiveColumnsDetailWithChan(request *ListSensitiveColumnsDetailRequest) (<-chan *ListSensitiveColumnsDetailResponse, <-chan error) {
 	responseChan := make(chan *ListSensitiveColumnsDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSensitiveColumnsDetailWithChan(request *ListSensitiveC
 }
 
 // ListSensitiveColumnsDetailWithCallback invokes the dms_enterprise.ListSensitiveColumnsDetail API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listsensitivecolumnsdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSensitiveColumnsDetailWithCallback(request *ListSensitiveColumnsDetailRequest, callback func(response *ListSensitiveColumnsDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateListSensitiveColumnsDetailRequest() (request *ListSensitiveColumnsDet
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListSensitiveColumnsDetail", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

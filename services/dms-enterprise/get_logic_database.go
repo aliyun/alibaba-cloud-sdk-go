@@ -21,7 +21,6 @@ import (
 )
 
 // GetLogicDatabase invokes the dms_enterprise.GetLogicDatabase API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getlogicdatabase.html
 func (client *Client) GetLogicDatabase(request *GetLogicDatabaseRequest) (response *GetLogicDatabaseResponse, err error) {
 	response = CreateGetLogicDatabaseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetLogicDatabase(request *GetLogicDatabaseRequest) (respon
 }
 
 // GetLogicDatabaseWithChan invokes the dms_enterprise.GetLogicDatabase API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getlogicdatabase.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLogicDatabaseWithChan(request *GetLogicDatabaseRequest) (<-chan *GetLogicDatabaseResponse, <-chan error) {
 	responseChan := make(chan *GetLogicDatabaseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetLogicDatabaseWithChan(request *GetLogicDatabaseRequest)
 }
 
 // GetLogicDatabaseWithCallback invokes the dms_enterprise.GetLogicDatabase API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/getlogicdatabase.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLogicDatabaseWithCallback(request *GetLogicDatabaseRequest, callback func(response *GetLogicDatabaseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateGetLogicDatabaseRequest() (request *GetLogicDatabaseRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GetLogicDatabase", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

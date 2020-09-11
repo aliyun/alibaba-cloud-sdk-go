@@ -21,7 +21,6 @@ import (
 )
 
 // ExecuteDataCorrect invokes the dms_enterprise.ExecuteDataCorrect API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/executedatacorrect.html
 func (client *Client) ExecuteDataCorrect(request *ExecuteDataCorrectRequest) (response *ExecuteDataCorrectResponse, err error) {
 	response = CreateExecuteDataCorrectResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExecuteDataCorrect(request *ExecuteDataCorrectRequest) (re
 }
 
 // ExecuteDataCorrectWithChan invokes the dms_enterprise.ExecuteDataCorrect API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/executedatacorrect.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteDataCorrectWithChan(request *ExecuteDataCorrectRequest) (<-chan *ExecuteDataCorrectResponse, <-chan error) {
 	responseChan := make(chan *ExecuteDataCorrectResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExecuteDataCorrectWithChan(request *ExecuteDataCorrectRequ
 }
 
 // ExecuteDataCorrectWithCallback invokes the dms_enterprise.ExecuteDataCorrect API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/executedatacorrect.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteDataCorrectWithCallback(request *ExecuteDataCorrectRequest, callback func(response *ExecuteDataCorrectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateExecuteDataCorrectRequest() (request *ExecuteDataCorrectRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ExecuteDataCorrect", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

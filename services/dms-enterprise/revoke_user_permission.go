@@ -21,7 +21,6 @@ import (
 )
 
 // RevokeUserPermission invokes the dms_enterprise.RevokeUserPermission API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/revokeuserpermission.html
 func (client *Client) RevokeUserPermission(request *RevokeUserPermissionRequest) (response *RevokeUserPermissionResponse, err error) {
 	response = CreateRevokeUserPermissionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RevokeUserPermission(request *RevokeUserPermissionRequest)
 }
 
 // RevokeUserPermissionWithChan invokes the dms_enterprise.RevokeUserPermission API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/revokeuserpermission.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeUserPermissionWithChan(request *RevokeUserPermissionRequest) (<-chan *RevokeUserPermissionResponse, <-chan error) {
 	responseChan := make(chan *RevokeUserPermissionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RevokeUserPermissionWithChan(request *RevokeUserPermission
 }
 
 // RevokeUserPermissionWithCallback invokes the dms_enterprise.RevokeUserPermission API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/revokeuserpermission.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeUserPermissionWithCallback(request *RevokeUserPermissionRequest, callback func(response *RevokeUserPermissionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,6 +97,7 @@ func CreateRevokeUserPermissionRequest() (request *RevokeUserPermissionRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "RevokeUserPermission", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

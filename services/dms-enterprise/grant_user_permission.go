@@ -21,7 +21,6 @@ import (
 )
 
 // GrantUserPermission invokes the dms_enterprise.GrantUserPermission API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/grantuserpermission.html
 func (client *Client) GrantUserPermission(request *GrantUserPermissionRequest) (response *GrantUserPermissionResponse, err error) {
 	response = CreateGrantUserPermissionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GrantUserPermission(request *GrantUserPermissionRequest) (
 }
 
 // GrantUserPermissionWithChan invokes the dms_enterprise.GrantUserPermission API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/grantuserpermission.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantUserPermissionWithChan(request *GrantUserPermissionRequest) (<-chan *GrantUserPermissionResponse, <-chan error) {
 	responseChan := make(chan *GrantUserPermissionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GrantUserPermissionWithChan(request *GrantUserPermissionRe
 }
 
 // GrantUserPermissionWithCallback invokes the dms_enterprise.GrantUserPermission API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/grantuserpermission.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantUserPermissionWithCallback(request *GrantUserPermissionRequest, callback func(response *GrantUserPermissionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,6 +97,7 @@ func CreateGrantUserPermissionRequest() (request *GrantUserPermissionRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "GrantUserPermission", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

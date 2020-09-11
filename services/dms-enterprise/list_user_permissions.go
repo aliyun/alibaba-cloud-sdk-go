@@ -21,7 +21,6 @@ import (
 )
 
 // ListUserPermissions invokes the dms_enterprise.ListUserPermissions API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listuserpermissions.html
 func (client *Client) ListUserPermissions(request *ListUserPermissionsRequest) (response *ListUserPermissionsResponse, err error) {
 	response = CreateListUserPermissionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListUserPermissions(request *ListUserPermissionsRequest) (
 }
 
 // ListUserPermissionsWithChan invokes the dms_enterprise.ListUserPermissions API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listuserpermissions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUserPermissionsWithChan(request *ListUserPermissionsRequest) (<-chan *ListUserPermissionsResponse, <-chan error) {
 	responseChan := make(chan *ListUserPermissionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListUserPermissionsWithChan(request *ListUserPermissionsRe
 }
 
 // ListUserPermissionsWithCallback invokes the dms_enterprise.ListUserPermissions API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listuserpermissions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUserPermissionsWithCallback(request *ListUserPermissionsRequest, callback func(response *ListUserPermissionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,6 +99,7 @@ func CreateListUserPermissionsRequest() (request *ListUserPermissionsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListUserPermissions", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

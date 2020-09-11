@@ -21,7 +21,6 @@ import (
 )
 
 // ListTables invokes the dms_enterprise.ListTables API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listtables.html
 func (client *Client) ListTables(request *ListTablesRequest) (response *ListTablesResponse, err error) {
 	response = CreateListTablesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListTables(request *ListTablesRequest) (response *ListTabl
 }
 
 // ListTablesWithChan invokes the dms_enterprise.ListTables API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listtables.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTablesWithChan(request *ListTablesRequest) (<-chan *ListTablesResponse, <-chan error) {
 	responseChan := make(chan *ListTablesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListTablesWithChan(request *ListTablesRequest) (<-chan *Li
 }
 
 // ListTablesWithCallback invokes the dms_enterprise.ListTables API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listtables.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTablesWithCallback(request *ListTablesRequest, callback func(response *ListTablesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateListTablesRequest() (request *ListTablesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListTables", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

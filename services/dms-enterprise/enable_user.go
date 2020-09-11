@@ -21,7 +21,6 @@ import (
 )
 
 // EnableUser invokes the dms_enterprise.EnableUser API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/enableuser.html
 func (client *Client) EnableUser(request *EnableUserRequest) (response *EnableUserResponse, err error) {
 	response = CreateEnableUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnableUser(request *EnableUserRequest) (response *EnableUs
 }
 
 // EnableUserWithChan invokes the dms_enterprise.EnableUser API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/enableuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableUserWithChan(request *EnableUserRequest) (<-chan *EnableUserResponse, <-chan error) {
 	responseChan := make(chan *EnableUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnableUserWithChan(request *EnableUserRequest) (<-chan *En
 }
 
 // EnableUserWithCallback invokes the dms_enterprise.EnableUser API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/enableuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableUserWithCallback(request *EnableUserRequest, callback func(response *EnableUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateEnableUserRequest() (request *EnableUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "EnableUser", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

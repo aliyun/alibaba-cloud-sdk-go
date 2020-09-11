@@ -21,7 +21,6 @@ import (
 )
 
 // ListSensitiveColumns invokes the dms_enterprise.ListSensitiveColumns API synchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listsensitivecolumns.html
 func (client *Client) ListSensitiveColumns(request *ListSensitiveColumnsRequest) (response *ListSensitiveColumnsResponse, err error) {
 	response = CreateListSensitiveColumnsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSensitiveColumns(request *ListSensitiveColumnsRequest)
 }
 
 // ListSensitiveColumnsWithChan invokes the dms_enterprise.ListSensitiveColumns API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listsensitivecolumns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSensitiveColumnsWithChan(request *ListSensitiveColumnsRequest) (<-chan *ListSensitiveColumnsResponse, <-chan error) {
 	responseChan := make(chan *ListSensitiveColumnsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSensitiveColumnsWithChan(request *ListSensitiveColumns
 }
 
 // ListSensitiveColumnsWithCallback invokes the dms_enterprise.ListSensitiveColumns API asynchronously
-// api document: https://help.aliyun.com/api/dms-enterprise/listsensitivecolumns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSensitiveColumnsWithCallback(request *ListSensitiveColumnsRequest, callback func(response *ListSensitiveColumnsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,6 +97,7 @@ func CreateListSensitiveColumnsRequest() (request *ListSensitiveColumnsRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("dms-enterprise", "2018-11-01", "ListSensitiveColumns", "dmsenterprise", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
