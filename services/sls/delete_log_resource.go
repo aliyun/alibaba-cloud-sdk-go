@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// AnalyzeAppLog invokes the sls.AnalyzeAppLog API synchronously
-func (client *Client) AnalyzeAppLog(request *AnalyzeAppLogRequest) (response *AnalyzeAppLogResponse, err error) {
-	response = CreateAnalyzeAppLogResponse()
+// DeleteLogResource invokes the sls.DeleteLogResource API synchronously
+func (client *Client) DeleteLogResource(request *DeleteLogResourceRequest) (response *DeleteLogResourceResponse, err error) {
+	response = CreateDeleteLogResourceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// AnalyzeAppLogWithChan invokes the sls.AnalyzeAppLog API asynchronously
-func (client *Client) AnalyzeAppLogWithChan(request *AnalyzeAppLogRequest) (<-chan *AnalyzeAppLogResponse, <-chan error) {
-	responseChan := make(chan *AnalyzeAppLogResponse, 1)
+// DeleteLogResourceWithChan invokes the sls.DeleteLogResource API asynchronously
+func (client *Client) DeleteLogResourceWithChan(request *DeleteLogResourceRequest) (<-chan *DeleteLogResourceResponse, <-chan error) {
+	responseChan := make(chan *DeleteLogResourceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.AnalyzeAppLog(request)
+		response, err := client.DeleteLogResource(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) AnalyzeAppLogWithChan(request *AnalyzeAppLogRequest) (<-ch
 	return responseChan, errChan
 }
 
-// AnalyzeAppLogWithCallback invokes the sls.AnalyzeAppLog API asynchronously
-func (client *Client) AnalyzeAppLogWithCallback(request *AnalyzeAppLogRequest, callback func(response *AnalyzeAppLogResponse, err error)) <-chan int {
+// DeleteLogResourceWithCallback invokes the sls.DeleteLogResource API asynchronously
+func (client *Client) DeleteLogResourceWithCallback(request *DeleteLogResourceRequest, callback func(response *DeleteLogResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *AnalyzeAppLogResponse
+		var response *DeleteLogResourceResponse
 		var err error
 		defer close(result)
-		response, err = client.AnalyzeAppLog(request)
+		response, err = client.DeleteLogResource(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,16 +68,16 @@ func (client *Client) AnalyzeAppLogWithCallback(request *AnalyzeAppLogRequest, c
 	return result
 }
 
-// AnalyzeAppLogRequest is the request struct for api AnalyzeAppLog
-type AnalyzeAppLogRequest struct {
+// DeleteLogResourceRequest is the request struct for api DeleteLogResource
+type DeleteLogResourceRequest struct {
 	*requests.RpcRequest
-	AppType     string `position:"Query" name:"AppType"`
-	VariableMap string `position:"Query" name:"VariableMap"`
-	DisplayName string `position:"Query" name:"DisplayName"`
+	Project  string `position:"Query" name:"Project"`
+	Region   string `position:"Query" name:"Region"`
+	Logstore string `position:"Query" name:"Logstore"`
 }
 
-// AnalyzeAppLogResponse is the response struct for api AnalyzeAppLog
-type AnalyzeAppLogResponse struct {
+// DeleteLogResourceResponse is the response struct for api DeleteLogResource
+type DeleteLogResourceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
@@ -85,19 +85,19 @@ type AnalyzeAppLogResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateAnalyzeAppLogRequest creates a request to invoke AnalyzeAppLog API
-func CreateAnalyzeAppLogRequest() (request *AnalyzeAppLogRequest) {
-	request = &AnalyzeAppLogRequest{
+// CreateDeleteLogResourceRequest creates a request to invoke DeleteLogResource API
+func CreateDeleteLogResourceRequest() (request *DeleteLogResourceRequest) {
+	request = &DeleteLogResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "AnalyzeAppLog", "", "")
+	request.InitWithApiInfo("Sls", "2018-06-13", "DeleteLogResource", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateAnalyzeAppLogResponse creates a response to parse from AnalyzeAppLog response
-func CreateAnalyzeAppLogResponse() (response *AnalyzeAppLogResponse) {
-	response = &AnalyzeAppLogResponse{
+// CreateDeleteLogResourceResponse creates a response to parse from DeleteLogResource response
+func CreateDeleteLogResourceResponse() (response *DeleteLogResourceResponse) {
+	response = &DeleteLogResourceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

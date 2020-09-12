@@ -21,7 +21,6 @@ import (
 )
 
 // AnalyzeProductLog invokes the sls.AnalyzeProductLog API synchronously
-// api document: https://help.aliyun.com/api/sls/analyzeproductlog.html
 func (client *Client) AnalyzeProductLog(request *AnalyzeProductLogRequest) (response *AnalyzeProductLogResponse, err error) {
 	response = CreateAnalyzeProductLogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AnalyzeProductLog(request *AnalyzeProductLogRequest) (resp
 }
 
 // AnalyzeProductLogWithChan invokes the sls.AnalyzeProductLog API asynchronously
-// api document: https://help.aliyun.com/api/sls/analyzeproductlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AnalyzeProductLogWithChan(request *AnalyzeProductLogRequest) (<-chan *AnalyzeProductLogResponse, <-chan error) {
 	responseChan := make(chan *AnalyzeProductLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AnalyzeProductLogWithChan(request *AnalyzeProductLogReques
 }
 
 // AnalyzeProductLogWithCallback invokes the sls.AnalyzeProductLog API asynchronously
-// api document: https://help.aliyun.com/api/sls/analyzeproductlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AnalyzeProductLogWithCallback(request *AnalyzeProductLogRequest, callback func(response *AnalyzeProductLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,8 @@ func CreateAnalyzeProductLogRequest() (request *AnalyzeProductLogRequest) {
 	request = &AnalyzeProductLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "AnalyzeProductLog", "sls", "openAPI")
+	request.InitWithApiInfo("Sls", "2019-10-23", "AnalyzeProductLog", "", "")
+	request.Method = requests.POST
 	return
 }
 

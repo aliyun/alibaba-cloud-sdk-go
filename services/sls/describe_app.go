@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApp invokes the sls.DescribeApp API synchronously
-// api document: https://help.aliyun.com/api/sls/describeapp.html
 func (client *Client) DescribeApp(request *DescribeAppRequest) (response *DescribeAppResponse, err error) {
 	response = CreateDescribeAppResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApp(request *DescribeAppRequest) (response *Descri
 }
 
 // DescribeAppWithChan invokes the sls.DescribeApp API asynchronously
-// api document: https://help.aliyun.com/api/sls/describeapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppWithChan(request *DescribeAppRequest) (<-chan *DescribeAppResponse, <-chan error) {
 	responseChan := make(chan *DescribeAppResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAppWithChan(request *DescribeAppRequest) (<-chan *
 }
 
 // DescribeAppWithCallback invokes the sls.DescribeApp API asynchronously
-// api document: https://help.aliyun.com/api/sls/describeapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppWithCallback(request *DescribeAppRequest, callback func(response *DescribeAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateDescribeAppRequest() (request *DescribeAppRequest) {
 	request = &DescribeAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "DescribeApp", "sls", "openAPI")
+	request.InitWithApiInfo("Sls", "2019-10-23", "DescribeApp", "", "")
+	request.Method = requests.POST
 	return
 }
 

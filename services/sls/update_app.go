@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateApp invokes the sls.UpdateApp API synchronously
-// api document: https://help.aliyun.com/api/sls/updateapp.html
 func (client *Client) UpdateApp(request *UpdateAppRequest) (response *UpdateAppResponse, err error) {
 	response = CreateUpdateAppResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateApp(request *UpdateAppRequest) (response *UpdateAppR
 }
 
 // UpdateAppWithChan invokes the sls.UpdateApp API asynchronously
-// api document: https://help.aliyun.com/api/sls/updateapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAppWithChan(request *UpdateAppRequest) (<-chan *UpdateAppResponse, <-chan error) {
 	responseChan := make(chan *UpdateAppResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateAppWithChan(request *UpdateAppRequest) (<-chan *Upda
 }
 
 // UpdateAppWithCallback invokes the sls.UpdateApp API asynchronously
-// api document: https://help.aliyun.com/api/sls/updateapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAppWithCallback(request *UpdateAppRequest, callback func(response *UpdateAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateUpdateAppRequest() (request *UpdateAppRequest) {
 	request = &UpdateAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "UpdateApp", "sls", "openAPI")
+	request.InitWithApiInfo("Sls", "2019-10-23", "UpdateApp", "", "")
+	request.Method = requests.POST
 	return
 }
 

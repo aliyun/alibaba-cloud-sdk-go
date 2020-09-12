@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteApp invokes the sls.DeleteApp API synchronously
-func (client *Client) DeleteApp(request *DeleteAppRequest) (response *DeleteAppResponse, err error) {
-	response = CreateDeleteAppResponse()
+// OpenSlsService invokes the sls.OpenSlsService API synchronously
+func (client *Client) OpenSlsService(request *OpenSlsServiceRequest) (response *OpenSlsServiceResponse, err error) {
+	response = CreateOpenSlsServiceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteAppWithChan invokes the sls.DeleteApp API asynchronously
-func (client *Client) DeleteAppWithChan(request *DeleteAppRequest) (<-chan *DeleteAppResponse, <-chan error) {
-	responseChan := make(chan *DeleteAppResponse, 1)
+// OpenSlsServiceWithChan invokes the sls.OpenSlsService API asynchronously
+func (client *Client) OpenSlsServiceWithChan(request *OpenSlsServiceRequest) (<-chan *OpenSlsServiceResponse, <-chan error) {
+	responseChan := make(chan *OpenSlsServiceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteApp(request)
+		response, err := client.OpenSlsService(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteAppWithChan(request *DeleteAppRequest) (<-chan *Dele
 	return responseChan, errChan
 }
 
-// DeleteAppWithCallback invokes the sls.DeleteApp API asynchronously
-func (client *Client) DeleteAppWithCallback(request *DeleteAppRequest, callback func(response *DeleteAppResponse, err error)) <-chan int {
+// OpenSlsServiceWithCallback invokes the sls.OpenSlsService API asynchronously
+func (client *Client) OpenSlsServiceWithCallback(request *OpenSlsServiceRequest, callback func(response *OpenSlsServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteAppResponse
+		var response *OpenSlsServiceResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteApp(request)
+		response, err = client.OpenSlsService(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,34 +68,33 @@ func (client *Client) DeleteAppWithCallback(request *DeleteAppRequest, callback 
 	return result
 }
 
-// DeleteAppRequest is the request struct for api DeleteApp
-type DeleteAppRequest struct {
+// OpenSlsServiceRequest is the request struct for api OpenSlsService
+type OpenSlsServiceRequest struct {
 	*requests.RpcRequest
-	AppName string `position:"Query" name:"AppName"`
 }
 
-// DeleteAppResponse is the response struct for api DeleteApp
-type DeleteAppResponse struct {
+// OpenSlsServiceResponse is the response struct for api OpenSlsService
+type OpenSlsServiceResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Success   string `json:"Success" xml:"Success"`
-	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Message   string `json:"Message" xml:"Message"`
+	Code      string `json:"Code" xml:"Code"`
 }
 
-// CreateDeleteAppRequest creates a request to invoke DeleteApp API
-func CreateDeleteAppRequest() (request *DeleteAppRequest) {
-	request = &DeleteAppRequest{
+// CreateOpenSlsServiceRequest creates a request to invoke OpenSlsService API
+func CreateOpenSlsServiceRequest() (request *OpenSlsServiceRequest) {
+	request = &OpenSlsServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "DeleteApp", "", "")
+	request.InitWithApiInfo("Sls", "2019-10-23", "OpenSlsService", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteAppResponse creates a response to parse from DeleteApp response
-func CreateDeleteAppResponse() (response *DeleteAppResponse) {
-	response = &DeleteAppResponse{
+// CreateOpenSlsServiceResponse creates a response to parse from OpenSlsService response
+func CreateOpenSlsServiceResponse() (response *OpenSlsServiceResponse) {
+	response = &OpenSlsServiceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

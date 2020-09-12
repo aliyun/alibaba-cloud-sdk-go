@@ -21,7 +21,6 @@ import (
 )
 
 // CreateApp invokes the sls.CreateApp API synchronously
-// api document: https://help.aliyun.com/api/sls/createapp.html
 func (client *Client) CreateApp(request *CreateAppRequest) (response *CreateAppResponse, err error) {
 	response = CreateCreateAppResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateApp(request *CreateAppRequest) (response *CreateAppR
 }
 
 // CreateAppWithChan invokes the sls.CreateApp API asynchronously
-// api document: https://help.aliyun.com/api/sls/createapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAppWithChan(request *CreateAppRequest) (<-chan *CreateAppResponse, <-chan error) {
 	responseChan := make(chan *CreateAppResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateAppWithChan(request *CreateAppRequest) (<-chan *Crea
 }
 
 // CreateAppWithCallback invokes the sls.CreateApp API asynchronously
-// api document: https://help.aliyun.com/api/sls/createapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAppWithCallback(request *CreateAppRequest, callback func(response *CreateAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateCreateAppRequest() (request *CreateAppRequest) {
 	request = &CreateAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sls", "2019-10-23", "CreateApp", "sls", "openAPI")
+	request.InitWithApiInfo("Sls", "2019-10-23", "CreateApp", "", "")
+	request.Method = requests.POST
 	return
 }
 
