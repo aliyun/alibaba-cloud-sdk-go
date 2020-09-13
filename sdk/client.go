@@ -22,6 +22,7 @@ import (
 
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials/provider"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/endpoints"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
@@ -67,6 +68,19 @@ func (client *Client) Init() (err error) {
 // SetHTTPDoHook ...
 func (client *Client) SetHTTPDoHook(hook HTTPDoHook) {
 	client.httpDoHook = hook
+}
+
+// InitWithProviderChain will get credential from the providerChain,
+// the RsaKeyPairCredential Only applicable to regionID `ap-northeast-1`,
+// if your providerChain may return a credential type with RsaKeyPairCredential,
+// please ensure your regionID is `ap-northeast-1`.
+func (client *Client) InitWithProviderChain(regionId string, provider provider.Provider) (err error) {
+	config := client.InitClientConfig()
+	credential, err := provider.Resolve()
+	if err != nil {
+		return
+	}
+	return client.InitWithOptions(regionId, config, credential)
 }
 
 func (client *Client) InitWithOptions(regionId string, config *Config, credential auth.Credential) (err error) {
@@ -137,6 +151,18 @@ func (client *Client) InitWithRamRoleArn(regionId, accessKeyId, accessKeySecret,
 		AccessKeySecret: accessKeySecret,
 		RoleArn:         roleArn,
 		RoleSessionName: roleSessionName,
+	}
+	return client.InitWithOptions(regionId, config, credential)
+}
+
+func (client *Client) InitWithRamRoleArnAndPolicy(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName, policy string) (err error) {
+	config := client.InitClientConfig()
+	credential := &credentials.RamRoleArnCredential{
+		AccessKeyId:     accessKeyId,
+		AccessKeySecret: accessKeySecret,
+		RoleArn:         roleArn,
+		RoleSessionName: roleSessionName,
+		Policy:          policy,
 	}
 	return client.InitWithOptions(regionId, config, credential)
 }
@@ -315,6 +341,18 @@ func (client *Client) GetConfig() *Config {
 func NewClient() (client *Client, err error) {
 	client = &Client{}
 	err = client.Init()
+	return
+}
+
+func NewClientWithProvider(regionId string, providers ...provider.Provider) (client *Client, err error) {
+	client = &Client{}
+	var pc provider.Provider
+	if len(providers) == 0 {
+		pc = provider.DefaultChain
+	} else {
+		pc = provider.NewProviderChain(providers)
+	}
+	err = client.InitWithProviderChain(regionId, pc)
 	return
 }
 
