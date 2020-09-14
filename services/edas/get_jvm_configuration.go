@@ -21,7 +21,6 @@ import (
 )
 
 // GetJvmConfiguration invokes the edas.GetJvmConfiguration API synchronously
-// api document: https://help.aliyun.com/api/edas/getjvmconfiguration.html
 func (client *Client) GetJvmConfiguration(request *GetJvmConfigurationRequest) (response *GetJvmConfigurationResponse, err error) {
 	response = CreateGetJvmConfigurationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetJvmConfiguration(request *GetJvmConfigurationRequest) (
 }
 
 // GetJvmConfigurationWithChan invokes the edas.GetJvmConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/edas/getjvmconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJvmConfigurationWithChan(request *GetJvmConfigurationRequest) (<-chan *GetJvmConfigurationResponse, <-chan error) {
 	responseChan := make(chan *GetJvmConfigurationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetJvmConfigurationWithChan(request *GetJvmConfigurationRe
 }
 
 // GetJvmConfigurationWithCallback invokes the edas.GetJvmConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/edas/getjvmconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJvmConfigurationWithCallback(request *GetJvmConfigurationRequest, callback func(response *GetJvmConfigurationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateGetJvmConfigurationRequest() (request *GetJvmConfigurationRequest) {
 	request = &GetJvmConfigurationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetJvmConfiguration", "/pop/v5/app/app_jvm_config", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetJvmConfiguration", "/pop/v5/app/app_jvm_config", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

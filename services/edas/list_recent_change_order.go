@@ -21,7 +21,6 @@ import (
 )
 
 // ListRecentChangeOrder invokes the edas.ListRecentChangeOrder API synchronously
-// api document: https://help.aliyun.com/api/edas/listrecentchangeorder.html
 func (client *Client) ListRecentChangeOrder(request *ListRecentChangeOrderRequest) (response *ListRecentChangeOrderResponse, err error) {
 	response = CreateListRecentChangeOrderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListRecentChangeOrder(request *ListRecentChangeOrderReques
 }
 
 // ListRecentChangeOrderWithChan invokes the edas.ListRecentChangeOrder API asynchronously
-// api document: https://help.aliyun.com/api/edas/listrecentchangeorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRecentChangeOrderWithChan(request *ListRecentChangeOrderRequest) (<-chan *ListRecentChangeOrderResponse, <-chan error) {
 	responseChan := make(chan *ListRecentChangeOrderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListRecentChangeOrderWithChan(request *ListRecentChangeOrd
 }
 
 // ListRecentChangeOrderWithCallback invokes the edas.ListRecentChangeOrder API asynchronously
-// api document: https://help.aliyun.com/api/edas/listrecentchangeorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRecentChangeOrderWithCallback(request *ListRecentChangeOrderRequest, callback func(response *ListRecentChangeOrderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateListRecentChangeOrderRequest() (request *ListRecentChangeOrderRequest
 	request = &ListRecentChangeOrderRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListRecentChangeOrder", "/pop/v5/changeorder/change_order_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListRecentChangeOrder", "/pop/v5/changeorder/change_order_list", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

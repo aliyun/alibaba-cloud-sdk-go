@@ -21,7 +21,6 @@ import (
 )
 
 // QueryMigrateRegionList invokes the edas.QueryMigrateRegionList API synchronously
-// api document: https://help.aliyun.com/api/edas/querymigrateregionlist.html
 func (client *Client) QueryMigrateRegionList(request *QueryMigrateRegionListRequest) (response *QueryMigrateRegionListResponse, err error) {
 	response = CreateQueryMigrateRegionListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryMigrateRegionList(request *QueryMigrateRegionListRequ
 }
 
 // QueryMigrateRegionListWithChan invokes the edas.QueryMigrateRegionList API asynchronously
-// api document: https://help.aliyun.com/api/edas/querymigrateregionlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMigrateRegionListWithChan(request *QueryMigrateRegionListRequest) (<-chan *QueryMigrateRegionListResponse, <-chan error) {
 	responseChan := make(chan *QueryMigrateRegionListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryMigrateRegionListWithChan(request *QueryMigrateRegion
 }
 
 // QueryMigrateRegionListWithCallback invokes the edas.QueryMigrateRegionList API asynchronously
-// api document: https://help.aliyun.com/api/edas/querymigrateregionlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMigrateRegionListWithCallback(request *QueryMigrateRegionListRequest, callback func(response *QueryMigrateRegionListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateQueryMigrateRegionListRequest() (request *QueryMigrateRegionListReque
 	request = &QueryMigrateRegionListRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "QueryMigrateRegionList", "/pop/v5/resource/migrate_region_select", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "QueryMigrateRegionList", "/pop/v5/resource/migrate_region_select", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

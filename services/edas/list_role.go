@@ -21,7 +21,6 @@ import (
 )
 
 // ListRole invokes the edas.ListRole API synchronously
-// api document: https://help.aliyun.com/api/edas/listrole.html
 func (client *Client) ListRole(request *ListRoleRequest) (response *ListRoleResponse, err error) {
 	response = CreateListRoleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListRole(request *ListRoleRequest) (response *ListRoleResp
 }
 
 // ListRoleWithChan invokes the edas.ListRole API asynchronously
-// api document: https://help.aliyun.com/api/edas/listrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRoleWithChan(request *ListRoleRequest) (<-chan *ListRoleResponse, <-chan error) {
 	responseChan := make(chan *ListRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListRoleWithChan(request *ListRoleRequest) (<-chan *ListRo
 }
 
 // ListRoleWithCallback invokes the edas.ListRole API asynchronously
-// api document: https://help.aliyun.com/api/edas/listrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRoleWithCallback(request *ListRoleRequest, callback func(response *ListRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateListRoleRequest() (request *ListRoleRequest) {
 	request = &ListRoleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListRole", "/pop/v5/account/role_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListRole", "/pop/v5/account/role_list", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

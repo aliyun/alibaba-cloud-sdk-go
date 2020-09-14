@@ -21,7 +21,6 @@ import (
 )
 
 // QueryMonitorInfo invokes the edas.QueryMonitorInfo API synchronously
-// api document: https://help.aliyun.com/api/edas/querymonitorinfo.html
 func (client *Client) QueryMonitorInfo(request *QueryMonitorInfoRequest) (response *QueryMonitorInfoResponse, err error) {
 	response = CreateQueryMonitorInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryMonitorInfo(request *QueryMonitorInfoRequest) (respon
 }
 
 // QueryMonitorInfoWithChan invokes the edas.QueryMonitorInfo API asynchronously
-// api document: https://help.aliyun.com/api/edas/querymonitorinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMonitorInfoWithChan(request *QueryMonitorInfoRequest) (<-chan *QueryMonitorInfoResponse, <-chan error) {
 	responseChan := make(chan *QueryMonitorInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryMonitorInfoWithChan(request *QueryMonitorInfoRequest)
 }
 
 // QueryMonitorInfoWithCallback invokes the edas.QueryMonitorInfo API asynchronously
-// api document: https://help.aliyun.com/api/edas/querymonitorinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMonitorInfoWithCallback(request *QueryMonitorInfoRequest, callback func(response *QueryMonitorInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateQueryMonitorInfoRequest() (request *QueryMonitorInfoRequest) {
 	request = &QueryMonitorInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "QueryMonitorInfo", "/pop/v5/monitor/queryMonitorInfo", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "QueryMonitorInfo", "/pop/v5/monitor/queryMonitorInfo", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

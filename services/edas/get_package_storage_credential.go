@@ -21,7 +21,6 @@ import (
 )
 
 // GetPackageStorageCredential invokes the edas.GetPackageStorageCredential API synchronously
-// api document: https://help.aliyun.com/api/edas/getpackagestoragecredential.html
 func (client *Client) GetPackageStorageCredential(request *GetPackageStorageCredentialRequest) (response *GetPackageStorageCredentialResponse, err error) {
 	response = CreateGetPackageStorageCredentialResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetPackageStorageCredential(request *GetPackageStorageCred
 }
 
 // GetPackageStorageCredentialWithChan invokes the edas.GetPackageStorageCredential API asynchronously
-// api document: https://help.aliyun.com/api/edas/getpackagestoragecredential.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPackageStorageCredentialWithChan(request *GetPackageStorageCredentialRequest) (<-chan *GetPackageStorageCredentialResponse, <-chan error) {
 	responseChan := make(chan *GetPackageStorageCredentialResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetPackageStorageCredentialWithChan(request *GetPackageSto
 }
 
 // GetPackageStorageCredentialWithCallback invokes the edas.GetPackageStorageCredential API asynchronously
-// api document: https://help.aliyun.com/api/edas/getpackagestoragecredential.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPackageStorageCredentialWithCallback(request *GetPackageStorageCredentialRequest, callback func(response *GetPackageStorageCredentialResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateGetPackageStorageCredentialRequest() (request *GetPackageStorageCrede
 	request = &GetPackageStorageCredentialRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetPackageStorageCredential", "/pop/v5/package_storage_credential", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetPackageStorageCredential", "/pop/v5/package_storage_credential", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

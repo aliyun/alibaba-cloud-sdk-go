@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteK8sApplication invokes the edas.DeleteK8sApplication API synchronously
-// api document: https://help.aliyun.com/api/edas/deletek8sapplication.html
 func (client *Client) DeleteK8sApplication(request *DeleteK8sApplicationRequest) (response *DeleteK8sApplicationResponse, err error) {
 	response = CreateDeleteK8sApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteK8sApplication(request *DeleteK8sApplicationRequest)
 }
 
 // DeleteK8sApplicationWithChan invokes the edas.DeleteK8sApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/deletek8sapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteK8sApplicationWithChan(request *DeleteK8sApplicationRequest) (<-chan *DeleteK8sApplicationResponse, <-chan error) {
 	responseChan := make(chan *DeleteK8sApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteK8sApplicationWithChan(request *DeleteK8sApplication
 }
 
 // DeleteK8sApplicationWithCallback invokes the edas.DeleteK8sApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/deletek8sapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteK8sApplicationWithCallback(request *DeleteK8sApplicationRequest, callback func(response *DeleteK8sApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDeleteK8sApplicationRequest() (request *DeleteK8sApplicationRequest) 
 	request = &DeleteK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteK8sApplication", "/pop/v5/k8s/acs/k8s_apps", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteK8sApplication", "/pop/v5/k8s/acs/k8s_apps", "edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

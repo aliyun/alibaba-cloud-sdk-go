@@ -21,7 +21,6 @@ import (
 )
 
 // InsertCluster invokes the edas.InsertCluster API synchronously
-// api document: https://help.aliyun.com/api/edas/insertcluster.html
 func (client *Client) InsertCluster(request *InsertClusterRequest) (response *InsertClusterResponse, err error) {
 	response = CreateInsertClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InsertCluster(request *InsertClusterRequest) (response *In
 }
 
 // InsertClusterWithChan invokes the edas.InsertCluster API asynchronously
-// api document: https://help.aliyun.com/api/edas/insertcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertClusterWithChan(request *InsertClusterRequest) (<-chan *InsertClusterResponse, <-chan error) {
 	responseChan := make(chan *InsertClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InsertClusterWithChan(request *InsertClusterRequest) (<-ch
 }
 
 // InsertClusterWithCallback invokes the edas.InsertCluster API asynchronously
-// api document: https://help.aliyun.com/api/edas/insertcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertClusterWithCallback(request *InsertClusterRequest, callback func(response *InsertClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateInsertClusterRequest() (request *InsertClusterRequest) {
 	request = &InsertClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertCluster", "/pop/v5/resource/cluster", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertCluster", "/pop/v5/resource/cluster", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

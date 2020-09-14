@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateSlsLogStore invokes the edas.UpdateSlsLogStore API synchronously
-// api document: https://help.aliyun.com/api/edas/updateslslogstore.html
 func (client *Client) UpdateSlsLogStore(request *UpdateSlsLogStoreRequest) (response *UpdateSlsLogStoreResponse, err error) {
 	response = CreateUpdateSlsLogStoreResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateSlsLogStore(request *UpdateSlsLogStoreRequest) (resp
 }
 
 // UpdateSlsLogStoreWithChan invokes the edas.UpdateSlsLogStore API asynchronously
-// api document: https://help.aliyun.com/api/edas/updateslslogstore.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSlsLogStoreWithChan(request *UpdateSlsLogStoreRequest) (<-chan *UpdateSlsLogStoreResponse, <-chan error) {
 	responseChan := make(chan *UpdateSlsLogStoreResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateSlsLogStoreWithChan(request *UpdateSlsLogStoreReques
 }
 
 // UpdateSlsLogStoreWithCallback invokes the edas.UpdateSlsLogStore API asynchronously
-// api document: https://help.aliyun.com/api/edas/updateslslogstore.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSlsLogStoreWithCallback(request *UpdateSlsLogStoreRequest, callback func(response *UpdateSlsLogStoreResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateUpdateSlsLogStoreRequest() (request *UpdateSlsLogStoreRequest) {
 	request = &UpdateSlsLogStoreRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateSlsLogStore", "/pop/v5/k8s/sls/update_sls_log_store", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateSlsLogStore", "/pop/v5/k8s/sls/update_sls_log_store", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

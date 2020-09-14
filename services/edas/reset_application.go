@@ -21,7 +21,6 @@ import (
 )
 
 // ResetApplication invokes the edas.ResetApplication API synchronously
-// api document: https://help.aliyun.com/api/edas/resetapplication.html
 func (client *Client) ResetApplication(request *ResetApplicationRequest) (response *ResetApplicationResponse, err error) {
 	response = CreateResetApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResetApplication(request *ResetApplicationRequest) (respon
 }
 
 // ResetApplicationWithChan invokes the edas.ResetApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/resetapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetApplicationWithChan(request *ResetApplicationRequest) (<-chan *ResetApplicationResponse, <-chan error) {
 	responseChan := make(chan *ResetApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResetApplicationWithChan(request *ResetApplicationRequest)
 }
 
 // ResetApplicationWithCallback invokes the edas.ResetApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/resetapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetApplicationWithCallback(request *ResetApplicationRequest, callback func(response *ResetApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateResetApplicationRequest() (request *ResetApplicationRequest) {
 	request = &ResetApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ResetApplication", "/pop/v5/changeorder/co_reset", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ResetApplication", "/pop/v5/changeorder/co_reset", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

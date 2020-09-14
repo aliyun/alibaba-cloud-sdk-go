@@ -21,7 +21,6 @@ import (
 )
 
 // StopK8sApplication invokes the edas.StopK8sApplication API synchronously
-// api document: https://help.aliyun.com/api/edas/stopk8sapplication.html
 func (client *Client) StopK8sApplication(request *StopK8sApplicationRequest) (response *StopK8sApplicationResponse, err error) {
 	response = CreateStopK8sApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopK8sApplication(request *StopK8sApplicationRequest) (re
 }
 
 // StopK8sApplicationWithChan invokes the edas.StopK8sApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/stopk8sapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopK8sApplicationWithChan(request *StopK8sApplicationRequest) (<-chan *StopK8sApplicationResponse, <-chan error) {
 	responseChan := make(chan *StopK8sApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopK8sApplicationWithChan(request *StopK8sApplicationRequ
 }
 
 // StopK8sApplicationWithCallback invokes the edas.StopK8sApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/stopk8sapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopK8sApplicationWithCallback(request *StopK8sApplicationRequest, callback func(response *StopK8sApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateStopK8sApplicationRequest() (request *StopK8sApplicationRequest) {
 	request = &StopK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "StopK8sApplication", "/pop/v5/k8s/acs/stop_k8s_app", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "StopK8sApplication", "/pop/v5/k8s/acs/stop_k8s_app", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

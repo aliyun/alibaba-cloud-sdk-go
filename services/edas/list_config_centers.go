@@ -21,7 +21,6 @@ import (
 )
 
 // ListConfigCenters invokes the edas.ListConfigCenters API synchronously
-// api document: https://help.aliyun.com/api/edas/listconfigcenters.html
 func (client *Client) ListConfigCenters(request *ListConfigCentersRequest) (response *ListConfigCentersResponse, err error) {
 	response = CreateListConfigCentersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListConfigCenters(request *ListConfigCentersRequest) (resp
 }
 
 // ListConfigCentersWithChan invokes the edas.ListConfigCenters API asynchronously
-// api document: https://help.aliyun.com/api/edas/listconfigcenters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListConfigCentersWithChan(request *ListConfigCentersRequest) (<-chan *ListConfigCentersResponse, <-chan error) {
 	responseChan := make(chan *ListConfigCentersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListConfigCentersWithChan(request *ListConfigCentersReques
 }
 
 // ListConfigCentersWithCallback invokes the edas.ListConfigCenters API asynchronously
-// api document: https://help.aliyun.com/api/edas/listconfigcenters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListConfigCentersWithCallback(request *ListConfigCentersRequest, callback func(response *ListConfigCentersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateListConfigCentersRequest() (request *ListConfigCentersRequest) {
 	request = &ListConfigCentersRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListConfigCenters", "/pop/v5/configCenters", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListConfigCenters", "/pop/v5/configCenters", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

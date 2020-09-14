@@ -17,27 +17,11 @@ package edas
 
 // Application is a nested struct in edas response
 type Application struct {
-	Name                 string `json:"Name" xml:"Name"`
-	ClusterId            string `json:"ClusterId" xml:"ClusterId"`
-	Port                 int    `json:"Port" xml:"Port"`
-	ExtSlbIp             string `json:"ExtSlbIp" xml:"ExtSlbIp"`
-	BuildPackageId       int64  `json:"BuildPackageId" xml:"BuildPackageId"`
-	Memory               int    `json:"Memory" xml:"Memory"`
-	ExtSlbId             string `json:"ExtSlbId" xml:"ExtSlbId"`
-	Owner                string `json:"Owner" xml:"Owner"`
-	CreateTime           int64  `json:"CreateTime" xml:"CreateTime"`
-	Dockerize            bool   `json:"Dockerize" xml:"Dockerize"`
-	AppId                string `json:"AppId" xml:"AppId"`
-	RegionId             string `json:"RegionId" xml:"RegionId"`
-	InstanceCount        int    `json:"InstanceCount" xml:"InstanceCount"`
-	SlbPort              int    `json:"SlbPort" xml:"SlbPort"`
-	HealthCheckUrl       string `json:"HealthCheckUrl" xml:"HealthCheckUrl"`
-	UserId               string `json:"UserId" xml:"UserId"`
-	SlbId                string `json:"SlbId" xml:"SlbId"`
-	ApplicationType      string `json:"ApplicationType" xml:"ApplicationType"`
-	ClusterType          int    `json:"ClusterType" xml:"ClusterType"`
-	Cpu                  int    `json:"Cpu" xml:"Cpu"`
-	Description          string `json:"Description" xml:"Description"`
-	RunningInstanceCount int    `json:"RunningInstanceCount" xml:"RunningInstanceCount"`
-	SlbIp                string `json:"SlbIp" xml:"SlbIp"`
+	Name            string `json:"Name" xml:"Name"`
+	AppId           string `json:"AppId" xml:"AppId"`
+	ClusterId       string `json:"ClusterId" xml:"ClusterId"`
+	RegionId        string `json:"RegionId" xml:"RegionId"`
+	BuildPackageId  int64  `json:"BuildPackageId" xml:"BuildPackageId"`
+	ApplicationType string `json:"ApplicationType" xml:"ApplicationType"`
+	ClusterType     int    `json:"ClusterType" xml:"ClusterType"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // QueryApplicationStatus invokes the edas.QueryApplicationStatus API synchronously
-// api document: https://help.aliyun.com/api/edas/queryapplicationstatus.html
 func (client *Client) QueryApplicationStatus(request *QueryApplicationStatusRequest) (response *QueryApplicationStatusResponse, err error) {
 	response = CreateQueryApplicationStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryApplicationStatus(request *QueryApplicationStatusRequ
 }
 
 // QueryApplicationStatusWithChan invokes the edas.QueryApplicationStatus API asynchronously
-// api document: https://help.aliyun.com/api/edas/queryapplicationstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryApplicationStatusWithChan(request *QueryApplicationStatusRequest) (<-chan *QueryApplicationStatusResponse, <-chan error) {
 	responseChan := make(chan *QueryApplicationStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryApplicationStatusWithChan(request *QueryApplicationSt
 }
 
 // QueryApplicationStatusWithCallback invokes the edas.QueryApplicationStatus API asynchronously
-// api document: https://help.aliyun.com/api/edas/queryapplicationstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryApplicationStatusWithCallback(request *QueryApplicationStatusRequest, callback func(response *QueryApplicationStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateQueryApplicationStatusRequest() (request *QueryApplicationStatusReque
 	request = &QueryApplicationStatusRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "QueryApplicationStatus", "/pop/v5/app/app_status", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "QueryApplicationStatus", "/pop/v5/app/app_status", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

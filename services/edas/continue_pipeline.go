@@ -21,7 +21,6 @@ import (
 )
 
 // ContinuePipeline invokes the edas.ContinuePipeline API synchronously
-// api document: https://help.aliyun.com/api/edas/continuepipeline.html
 func (client *Client) ContinuePipeline(request *ContinuePipelineRequest) (response *ContinuePipelineResponse, err error) {
 	response = CreateContinuePipelineResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ContinuePipeline(request *ContinuePipelineRequest) (respon
 }
 
 // ContinuePipelineWithChan invokes the edas.ContinuePipeline API asynchronously
-// api document: https://help.aliyun.com/api/edas/continuepipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ContinuePipelineWithChan(request *ContinuePipelineRequest) (<-chan *ContinuePipelineResponse, <-chan error) {
 	responseChan := make(chan *ContinuePipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ContinuePipelineWithChan(request *ContinuePipelineRequest)
 }
 
 // ContinuePipelineWithCallback invokes the edas.ContinuePipeline API asynchronously
-// api document: https://help.aliyun.com/api/edas/continuepipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ContinuePipelineWithCallback(request *ContinuePipelineRequest, callback func(response *ContinuePipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateContinuePipelineRequest() (request *ContinuePipelineRequest) {
 	request = &ContinuePipelineRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ContinuePipeline", "/pop/v5/changeorder/pipeline_batch_confirm", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ContinuePipeline", "/pop/v5/changeorder/pipeline_batch_confirm", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // ListAliyunRegion invokes the edas.ListAliyunRegion API synchronously
-// api document: https://help.aliyun.com/api/edas/listaliyunregion.html
 func (client *Client) ListAliyunRegion(request *ListAliyunRegionRequest) (response *ListAliyunRegionResponse, err error) {
 	response = CreateListAliyunRegionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAliyunRegion(request *ListAliyunRegionRequest) (respon
 }
 
 // ListAliyunRegionWithChan invokes the edas.ListAliyunRegion API asynchronously
-// api document: https://help.aliyun.com/api/edas/listaliyunregion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAliyunRegionWithChan(request *ListAliyunRegionRequest) (<-chan *ListAliyunRegionResponse, <-chan error) {
 	responseChan := make(chan *ListAliyunRegionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAliyunRegionWithChan(request *ListAliyunRegionRequest)
 }
 
 // ListAliyunRegionWithCallback invokes the edas.ListAliyunRegion API asynchronously
-// api document: https://help.aliyun.com/api/edas/listaliyunregion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAliyunRegionWithCallback(request *ListAliyunRegionRequest, callback func(response *ListAliyunRegionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateListAliyunRegionRequest() (request *ListAliyunRegionRequest) {
 	request = &ListAliyunRegionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListAliyunRegion", "/pop/v5/resource/region_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListAliyunRegion", "/pop/v5/resource/region_list", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

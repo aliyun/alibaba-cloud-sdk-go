@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteEcu invokes the edas.DeleteEcu API synchronously
-// api document: https://help.aliyun.com/api/edas/deleteecu.html
 func (client *Client) DeleteEcu(request *DeleteEcuRequest) (response *DeleteEcuResponse, err error) {
 	response = CreateDeleteEcuResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteEcu(request *DeleteEcuRequest) (response *DeleteEcuR
 }
 
 // DeleteEcuWithChan invokes the edas.DeleteEcu API asynchronously
-// api document: https://help.aliyun.com/api/edas/deleteecu.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEcuWithChan(request *DeleteEcuRequest) (<-chan *DeleteEcuResponse, <-chan error) {
 	responseChan := make(chan *DeleteEcuResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteEcuWithChan(request *DeleteEcuRequest) (<-chan *Dele
 }
 
 // DeleteEcuWithCallback invokes the edas.DeleteEcu API asynchronously
-// api document: https://help.aliyun.com/api/edas/deleteecu.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEcuWithCallback(request *DeleteEcuRequest, callback func(response *DeleteEcuResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDeleteEcuRequest() (request *DeleteEcuRequest) {
 	request = &DeleteEcuRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteEcu", "/pop/v5/resource/delete_ecu", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteEcu", "/pop/v5/resource/delete_ecu", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

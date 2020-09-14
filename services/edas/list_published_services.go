@@ -21,7 +21,6 @@ import (
 )
 
 // ListPublishedServices invokes the edas.ListPublishedServices API synchronously
-// api document: https://help.aliyun.com/api/edas/listpublishedservices.html
 func (client *Client) ListPublishedServices(request *ListPublishedServicesRequest) (response *ListPublishedServicesResponse, err error) {
 	response = CreateListPublishedServicesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListPublishedServices(request *ListPublishedServicesReques
 }
 
 // ListPublishedServicesWithChan invokes the edas.ListPublishedServices API asynchronously
-// api document: https://help.aliyun.com/api/edas/listpublishedservices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPublishedServicesWithChan(request *ListPublishedServicesRequest) (<-chan *ListPublishedServicesResponse, <-chan error) {
 	responseChan := make(chan *ListPublishedServicesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListPublishedServicesWithChan(request *ListPublishedServic
 }
 
 // ListPublishedServicesWithCallback invokes the edas.ListPublishedServices API asynchronously
-// api document: https://help.aliyun.com/api/edas/listpublishedservices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPublishedServicesWithCallback(request *ListPublishedServicesRequest, callback func(response *ListPublishedServicesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateListPublishedServicesRequest() (request *ListPublishedServicesRequest
 	request = &ListPublishedServicesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListPublishedServices", "/pop/v5/service/listPublishedServices", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListPublishedServices", "/pop/v5/service/listPublishedServices", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

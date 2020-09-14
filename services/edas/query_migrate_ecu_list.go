@@ -21,7 +21,6 @@ import (
 )
 
 // QueryMigrateEcuList invokes the edas.QueryMigrateEcuList API synchronously
-// api document: https://help.aliyun.com/api/edas/querymigrateeculist.html
 func (client *Client) QueryMigrateEcuList(request *QueryMigrateEcuListRequest) (response *QueryMigrateEcuListResponse, err error) {
 	response = CreateQueryMigrateEcuListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryMigrateEcuList(request *QueryMigrateEcuListRequest) (
 }
 
 // QueryMigrateEcuListWithChan invokes the edas.QueryMigrateEcuList API asynchronously
-// api document: https://help.aliyun.com/api/edas/querymigrateeculist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMigrateEcuListWithChan(request *QueryMigrateEcuListRequest) (<-chan *QueryMigrateEcuListResponse, <-chan error) {
 	responseChan := make(chan *QueryMigrateEcuListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryMigrateEcuListWithChan(request *QueryMigrateEcuListRe
 }
 
 // QueryMigrateEcuListWithCallback invokes the edas.QueryMigrateEcuList API asynchronously
-// api document: https://help.aliyun.com/api/edas/querymigrateeculist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMigrateEcuListWithCallback(request *QueryMigrateEcuListRequest, callback func(response *QueryMigrateEcuListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateQueryMigrateEcuListRequest() (request *QueryMigrateEcuListRequest) {
 	request = &QueryMigrateEcuListRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "QueryMigrateEcuList", "/pop/v5/resource/migrate_ecu_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "QueryMigrateEcuList", "/pop/v5/resource/migrate_ecu_list", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

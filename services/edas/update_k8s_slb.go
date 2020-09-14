@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateK8sSlb invokes the edas.UpdateK8sSlb API synchronously
-// api document: https://help.aliyun.com/api/edas/updatek8sslb.html
 func (client *Client) UpdateK8sSlb(request *UpdateK8sSlbRequest) (response *UpdateK8sSlbResponse, err error) {
 	response = CreateUpdateK8sSlbResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateK8sSlb(request *UpdateK8sSlbRequest) (response *Upda
 }
 
 // UpdateK8sSlbWithChan invokes the edas.UpdateK8sSlb API asynchronously
-// api document: https://help.aliyun.com/api/edas/updatek8sslb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateK8sSlbWithChan(request *UpdateK8sSlbRequest) (<-chan *UpdateK8sSlbResponse, <-chan error) {
 	responseChan := make(chan *UpdateK8sSlbResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateK8sSlbWithChan(request *UpdateK8sSlbRequest) (<-chan
 }
 
 // UpdateK8sSlbWithCallback invokes the edas.UpdateK8sSlb API asynchronously
-// api document: https://help.aliyun.com/api/edas/updatek8sslb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateK8sSlbWithCallback(request *UpdateK8sSlbRequest, callback func(response *UpdateK8sSlbResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateUpdateK8sSlbRequest() (request *UpdateK8sSlbRequest) {
 	request = &UpdateK8sSlbRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sSlb", "/pop/v5/k8s/acs/k8s_slb_binding", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sSlb", "/pop/v5/k8s/acs/k8s_slb_binding", "edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

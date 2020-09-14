@@ -21,7 +21,6 @@ import (
 )
 
 // ListRootStacks invokes the edas.ListRootStacks API synchronously
-// api document: https://help.aliyun.com/api/edas/listrootstacks.html
 func (client *Client) ListRootStacks(request *ListRootStacksRequest) (response *ListRootStacksResponse, err error) {
 	response = CreateListRootStacksResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListRootStacks(request *ListRootStacksRequest) (response *
 }
 
 // ListRootStacksWithChan invokes the edas.ListRootStacks API asynchronously
-// api document: https://help.aliyun.com/api/edas/listrootstacks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRootStacksWithChan(request *ListRootStacksRequest) (<-chan *ListRootStacksResponse, <-chan error) {
 	responseChan := make(chan *ListRootStacksResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListRootStacksWithChan(request *ListRootStacksRequest) (<-
 }
 
 // ListRootStacksWithCallback invokes the edas.ListRootStacks API asynchronously
-// api document: https://help.aliyun.com/api/edas/listrootstacks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRootStacksWithCallback(request *ListRootStacksRequest, callback func(response *ListRootStacksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateListRootStacksRequest() (request *ListRootStacksRequest) {
 	request = &ListRootStacksRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListRootStacks", "/pop/v5/s2i/list_root_stack", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListRootStacks", "/pop/v5/s2i/list_root_stack", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

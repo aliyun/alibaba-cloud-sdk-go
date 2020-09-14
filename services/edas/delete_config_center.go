@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteConfigCenter invokes the edas.DeleteConfigCenter API synchronously
-// api document: https://help.aliyun.com/api/edas/deleteconfigcenter.html
 func (client *Client) DeleteConfigCenter(request *DeleteConfigCenterRequest) (response *DeleteConfigCenterResponse, err error) {
 	response = CreateDeleteConfigCenterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteConfigCenter(request *DeleteConfigCenterRequest) (re
 }
 
 // DeleteConfigCenterWithChan invokes the edas.DeleteConfigCenter API asynchronously
-// api document: https://help.aliyun.com/api/edas/deleteconfigcenter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteConfigCenterWithChan(request *DeleteConfigCenterRequest) (<-chan *DeleteConfigCenterResponse, <-chan error) {
 	responseChan := make(chan *DeleteConfigCenterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteConfigCenterWithChan(request *DeleteConfigCenterRequ
 }
 
 // DeleteConfigCenterWithCallback invokes the edas.DeleteConfigCenter API asynchronously
-// api document: https://help.aliyun.com/api/edas/deleteconfigcenter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteConfigCenterWithCallback(request *DeleteConfigCenterRequest, callback func(response *DeleteConfigCenterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDeleteConfigCenterRequest() (request *DeleteConfigCenterRequest) {
 	request = &DeleteConfigCenterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteConfigCenter", "/pop/v5/configCenter", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteConfigCenter", "/pop/v5/configCenter", "edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

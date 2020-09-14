@@ -21,7 +21,6 @@ import (
 )
 
 // ListFlowControls invokes the edas.ListFlowControls API synchronously
-// api document: https://help.aliyun.com/api/edas/listflowcontrols.html
 func (client *Client) ListFlowControls(request *ListFlowControlsRequest) (response *ListFlowControlsResponse, err error) {
 	response = CreateListFlowControlsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFlowControls(request *ListFlowControlsRequest) (respon
 }
 
 // ListFlowControlsWithChan invokes the edas.ListFlowControls API asynchronously
-// api document: https://help.aliyun.com/api/edas/listflowcontrols.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowControlsWithChan(request *ListFlowControlsRequest) (<-chan *ListFlowControlsResponse, <-chan error) {
 	responseChan := make(chan *ListFlowControlsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFlowControlsWithChan(request *ListFlowControlsRequest)
 }
 
 // ListFlowControlsWithCallback invokes the edas.ListFlowControls API asynchronously
-// api document: https://help.aliyun.com/api/edas/listflowcontrols.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowControlsWithCallback(request *ListFlowControlsRequest, callback func(response *ListFlowControlsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateListFlowControlsRequest() (request *ListFlowControlsRequest) {
 	request = &ListFlowControlsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListFlowControls", "/pop/v5/app/flowControls", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListFlowControls", "/pop/v5/app/flowControls", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

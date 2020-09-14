@@ -21,7 +21,6 @@ import (
 )
 
 // CreateIDCImportCommand invokes the edas.CreateIDCImportCommand API synchronously
-// api document: https://help.aliyun.com/api/edas/createidcimportcommand.html
 func (client *Client) CreateIDCImportCommand(request *CreateIDCImportCommandRequest) (response *CreateIDCImportCommandResponse, err error) {
 	response = CreateCreateIDCImportCommandResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateIDCImportCommand(request *CreateIDCImportCommandRequ
 }
 
 // CreateIDCImportCommandWithChan invokes the edas.CreateIDCImportCommand API asynchronously
-// api document: https://help.aliyun.com/api/edas/createidcimportcommand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateIDCImportCommandWithChan(request *CreateIDCImportCommandRequest) (<-chan *CreateIDCImportCommandResponse, <-chan error) {
 	responseChan := make(chan *CreateIDCImportCommandResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateIDCImportCommandWithChan(request *CreateIDCImportCom
 }
 
 // CreateIDCImportCommandWithCallback invokes the edas.CreateIDCImportCommand API asynchronously
-// api document: https://help.aliyun.com/api/edas/createidcimportcommand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateIDCImportCommandWithCallback(request *CreateIDCImportCommandRequest, callback func(response *CreateIDCImportCommandResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateCreateIDCImportCommandRequest() (request *CreateIDCImportCommandReque
 	request = &CreateIDCImportCommandRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "CreateIDCImportCommand", "/pop/v5/create_idc_import_command", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "CreateIDCImportCommand", "/pop/v5/create_idc_import_command", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

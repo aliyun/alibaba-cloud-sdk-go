@@ -21,7 +21,6 @@ import (
 )
 
 // ListCluster invokes the edas.ListCluster API synchronously
-// api document: https://help.aliyun.com/api/edas/listcluster.html
 func (client *Client) ListCluster(request *ListClusterRequest) (response *ListClusterResponse, err error) {
 	response = CreateListClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListCluster(request *ListClusterRequest) (response *ListCl
 }
 
 // ListClusterWithChan invokes the edas.ListCluster API asynchronously
-// api document: https://help.aliyun.com/api/edas/listcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterWithChan(request *ListClusterRequest) (<-chan *ListClusterResponse, <-chan error) {
 	responseChan := make(chan *ListClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListClusterWithChan(request *ListClusterRequest) (<-chan *
 }
 
 // ListClusterWithCallback invokes the edas.ListCluster API asynchronously
-// api document: https://help.aliyun.com/api/edas/listcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterWithCallback(request *ListClusterRequest, callback func(response *ListClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateListClusterRequest() (request *ListClusterRequest) {
 	request = &ListClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListCluster", "/pop/v5/resource/cluster_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListCluster", "/pop/v5/resource/cluster_list", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

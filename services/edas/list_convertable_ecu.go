@@ -21,7 +21,6 @@ import (
 )
 
 // ListConvertableEcu invokes the edas.ListConvertableEcu API synchronously
-// api document: https://help.aliyun.com/api/edas/listconvertableecu.html
 func (client *Client) ListConvertableEcu(request *ListConvertableEcuRequest) (response *ListConvertableEcuResponse, err error) {
 	response = CreateListConvertableEcuResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListConvertableEcu(request *ListConvertableEcuRequest) (re
 }
 
 // ListConvertableEcuWithChan invokes the edas.ListConvertableEcu API asynchronously
-// api document: https://help.aliyun.com/api/edas/listconvertableecu.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListConvertableEcuWithChan(request *ListConvertableEcuRequest) (<-chan *ListConvertableEcuResponse, <-chan error) {
 	responseChan := make(chan *ListConvertableEcuResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListConvertableEcuWithChan(request *ListConvertableEcuRequ
 }
 
 // ListConvertableEcuWithCallback invokes the edas.ListConvertableEcu API asynchronously
-// api document: https://help.aliyun.com/api/edas/listconvertableecu.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListConvertableEcuWithCallback(request *ListConvertableEcuRequest, callback func(response *ListConvertableEcuResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateListConvertableEcuRequest() (request *ListConvertableEcuRequest) {
 	request = &ListConvertableEcuRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListConvertableEcu", "/pop/v5/resource/convertable_ecu_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListConvertableEcu", "/pop/v5/resource/convertable_ecu_list", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

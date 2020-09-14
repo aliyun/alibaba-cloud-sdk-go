@@ -21,7 +21,6 @@ import (
 )
 
 // RestartApplication invokes the edas.RestartApplication API synchronously
-// api document: https://help.aliyun.com/api/edas/restartapplication.html
 func (client *Client) RestartApplication(request *RestartApplicationRequest) (response *RestartApplicationResponse, err error) {
 	response = CreateRestartApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RestartApplication(request *RestartApplicationRequest) (re
 }
 
 // RestartApplicationWithChan invokes the edas.RestartApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/restartapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartApplicationWithChan(request *RestartApplicationRequest) (<-chan *RestartApplicationResponse, <-chan error) {
 	responseChan := make(chan *RestartApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RestartApplicationWithChan(request *RestartApplicationRequ
 }
 
 // RestartApplicationWithCallback invokes the edas.RestartApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/restartapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartApplicationWithCallback(request *RestartApplicationRequest, callback func(response *RestartApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateRestartApplicationRequest() (request *RestartApplicationRequest) {
 	request = &RestartApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "RestartApplication", "/pop/v5/changeorder/co_restart", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "RestartApplication", "/pop/v5/changeorder/co_restart", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

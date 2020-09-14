@@ -21,7 +21,6 @@ import (
 )
 
 // QueryConfigCenter invokes the edas.QueryConfigCenter API synchronously
-// api document: https://help.aliyun.com/api/edas/queryconfigcenter.html
 func (client *Client) QueryConfigCenter(request *QueryConfigCenterRequest) (response *QueryConfigCenterResponse, err error) {
 	response = CreateQueryConfigCenterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryConfigCenter(request *QueryConfigCenterRequest) (resp
 }
 
 // QueryConfigCenterWithChan invokes the edas.QueryConfigCenter API asynchronously
-// api document: https://help.aliyun.com/api/edas/queryconfigcenter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryConfigCenterWithChan(request *QueryConfigCenterRequest) (<-chan *QueryConfigCenterResponse, <-chan error) {
 	responseChan := make(chan *QueryConfigCenterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryConfigCenterWithChan(request *QueryConfigCenterReques
 }
 
 // QueryConfigCenterWithCallback invokes the edas.QueryConfigCenter API asynchronously
-// api document: https://help.aliyun.com/api/edas/queryconfigcenter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryConfigCenterWithCallback(request *QueryConfigCenterRequest, callback func(response *QueryConfigCenterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateQueryConfigCenterRequest() (request *QueryConfigCenterRequest) {
 	request = &QueryConfigCenterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "QueryConfigCenter", "/pop/v5/configCenter", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "QueryConfigCenter", "/pop/v5/configCenter", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

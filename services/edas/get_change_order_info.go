@@ -21,7 +21,6 @@ import (
 )
 
 // GetChangeOrderInfo invokes the edas.GetChangeOrderInfo API synchronously
-// api document: https://help.aliyun.com/api/edas/getchangeorderinfo.html
 func (client *Client) GetChangeOrderInfo(request *GetChangeOrderInfoRequest) (response *GetChangeOrderInfoResponse, err error) {
 	response = CreateGetChangeOrderInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetChangeOrderInfo(request *GetChangeOrderInfoRequest) (re
 }
 
 // GetChangeOrderInfoWithChan invokes the edas.GetChangeOrderInfo API asynchronously
-// api document: https://help.aliyun.com/api/edas/getchangeorderinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetChangeOrderInfoWithChan(request *GetChangeOrderInfoRequest) (<-chan *GetChangeOrderInfoResponse, <-chan error) {
 	responseChan := make(chan *GetChangeOrderInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetChangeOrderInfoWithChan(request *GetChangeOrderInfoRequ
 }
 
 // GetChangeOrderInfoWithCallback invokes the edas.GetChangeOrderInfo API asynchronously
-// api document: https://help.aliyun.com/api/edas/getchangeorderinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetChangeOrderInfoWithCallback(request *GetChangeOrderInfoRequest, callback func(response *GetChangeOrderInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateGetChangeOrderInfoRequest() (request *GetChangeOrderInfoRequest) {
 	request = &GetChangeOrderInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetChangeOrderInfo", "/pop/v5/changeorder/change_order_info", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetChangeOrderInfo", "/pop/v5/changeorder/change_order_info", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

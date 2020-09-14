@@ -21,7 +21,6 @@ import (
 )
 
 // ListHistoryDeployVersion invokes the edas.ListHistoryDeployVersion API synchronously
-// api document: https://help.aliyun.com/api/edas/listhistorydeployversion.html
 func (client *Client) ListHistoryDeployVersion(request *ListHistoryDeployVersionRequest) (response *ListHistoryDeployVersionResponse, err error) {
 	response = CreateListHistoryDeployVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListHistoryDeployVersion(request *ListHistoryDeployVersion
 }
 
 // ListHistoryDeployVersionWithChan invokes the edas.ListHistoryDeployVersion API asynchronously
-// api document: https://help.aliyun.com/api/edas/listhistorydeployversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListHistoryDeployVersionWithChan(request *ListHistoryDeployVersionRequest) (<-chan *ListHistoryDeployVersionResponse, <-chan error) {
 	responseChan := make(chan *ListHistoryDeployVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListHistoryDeployVersionWithChan(request *ListHistoryDeplo
 }
 
 // ListHistoryDeployVersionWithCallback invokes the edas.ListHistoryDeployVersion API asynchronously
-// api document: https://help.aliyun.com/api/edas/listhistorydeployversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListHistoryDeployVersionWithCallback(request *ListHistoryDeployVersionRequest, callback func(response *ListHistoryDeployVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateListHistoryDeployVersionRequest() (request *ListHistoryDeployVersionR
 	request = &ListHistoryDeployVersionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListHistoryDeployVersion", "/pop/v5/app/deploy_history_version_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListHistoryDeployVersion", "/pop/v5/app/deploy_history_version_list", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

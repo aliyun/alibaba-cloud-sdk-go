@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateApplicationBaseInfo invokes the edas.UpdateApplicationBaseInfo API synchronously
-// api document: https://help.aliyun.com/api/edas/updateapplicationbaseinfo.html
 func (client *Client) UpdateApplicationBaseInfo(request *UpdateApplicationBaseInfoRequest) (response *UpdateApplicationBaseInfoResponse, err error) {
 	response = CreateUpdateApplicationBaseInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateApplicationBaseInfo(request *UpdateApplicationBaseIn
 }
 
 // UpdateApplicationBaseInfoWithChan invokes the edas.UpdateApplicationBaseInfo API asynchronously
-// api document: https://help.aliyun.com/api/edas/updateapplicationbaseinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateApplicationBaseInfoWithChan(request *UpdateApplicationBaseInfoRequest) (<-chan *UpdateApplicationBaseInfoResponse, <-chan error) {
 	responseChan := make(chan *UpdateApplicationBaseInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateApplicationBaseInfoWithChan(request *UpdateApplicati
 }
 
 // UpdateApplicationBaseInfoWithCallback invokes the edas.UpdateApplicationBaseInfo API asynchronously
-// api document: https://help.aliyun.com/api/edas/updateapplicationbaseinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateApplicationBaseInfoWithCallback(request *UpdateApplicationBaseInfoRequest, callback func(response *UpdateApplicationBaseInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateUpdateApplicationBaseInfoRequest() (request *UpdateApplicationBaseInf
 	request = &UpdateApplicationBaseInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateApplicationBaseInfo", "/pop/v5/app/update_app_info", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateApplicationBaseInfo", "/pop/v5/app/update_app_info", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

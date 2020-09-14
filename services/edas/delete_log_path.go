@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLogPath invokes the edas.DeleteLogPath API synchronously
-// api document: https://help.aliyun.com/api/edas/deletelogpath.html
 func (client *Client) DeleteLogPath(request *DeleteLogPathRequest) (response *DeleteLogPathResponse, err error) {
 	response = CreateDeleteLogPathResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLogPath(request *DeleteLogPathRequest) (response *De
 }
 
 // DeleteLogPathWithChan invokes the edas.DeleteLogPath API asynchronously
-// api document: https://help.aliyun.com/api/edas/deletelogpath.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLogPathWithChan(request *DeleteLogPathRequest) (<-chan *DeleteLogPathResponse, <-chan error) {
 	responseChan := make(chan *DeleteLogPathResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLogPathWithChan(request *DeleteLogPathRequest) (<-ch
 }
 
 // DeleteLogPathWithCallback invokes the edas.DeleteLogPath API asynchronously
-// api document: https://help.aliyun.com/api/edas/deletelogpath.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLogPathWithCallback(request *DeleteLogPathRequest, callback func(response *DeleteLogPathResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDeleteLogPathRequest() (request *DeleteLogPathRequest) {
 	request = &DeleteLogPathRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteLogPath", "/pop/v5/log/popListLogDirs", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteLogPath", "/pop/v5/log/popListLogDirs", "edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // BindK8sSlb invokes the edas.BindK8sSlb API synchronously
-// api document: https://help.aliyun.com/api/edas/bindk8sslb.html
 func (client *Client) BindK8sSlb(request *BindK8sSlbRequest) (response *BindK8sSlbResponse, err error) {
 	response = CreateBindK8sSlbResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindK8sSlb(request *BindK8sSlbRequest) (response *BindK8sS
 }
 
 // BindK8sSlbWithChan invokes the edas.BindK8sSlb API asynchronously
-// api document: https://help.aliyun.com/api/edas/bindk8sslb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindK8sSlbWithChan(request *BindK8sSlbRequest) (<-chan *BindK8sSlbResponse, <-chan error) {
 	responseChan := make(chan *BindK8sSlbResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindK8sSlbWithChan(request *BindK8sSlbRequest) (<-chan *Bi
 }
 
 // BindK8sSlbWithCallback invokes the edas.BindK8sSlb API asynchronously
-// api document: https://help.aliyun.com/api/edas/bindk8sslb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindK8sSlbWithCallback(request *BindK8sSlbRequest, callback func(response *BindK8sSlbResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateBindK8sSlbRequest() (request *BindK8sSlbRequest) {
 	request = &BindK8sSlbRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "BindK8sSlb", "/pop/v5/k8s/acs/k8s_slb_binding", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "BindK8sSlb", "/pop/v5/k8s/acs/k8s_slb_binding", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

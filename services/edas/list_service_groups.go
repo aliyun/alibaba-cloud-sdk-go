@@ -21,7 +21,6 @@ import (
 )
 
 // ListServiceGroups invokes the edas.ListServiceGroups API synchronously
-// api document: https://help.aliyun.com/api/edas/listservicegroups.html
 func (client *Client) ListServiceGroups(request *ListServiceGroupsRequest) (response *ListServiceGroupsResponse, err error) {
 	response = CreateListServiceGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListServiceGroups(request *ListServiceGroupsRequest) (resp
 }
 
 // ListServiceGroupsWithChan invokes the edas.ListServiceGroups API asynchronously
-// api document: https://help.aliyun.com/api/edas/listservicegroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListServiceGroupsWithChan(request *ListServiceGroupsRequest) (<-chan *ListServiceGroupsResponse, <-chan error) {
 	responseChan := make(chan *ListServiceGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListServiceGroupsWithChan(request *ListServiceGroupsReques
 }
 
 // ListServiceGroupsWithCallback invokes the edas.ListServiceGroups API asynchronously
-// api document: https://help.aliyun.com/api/edas/listservicegroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListServiceGroupsWithCallback(request *ListServiceGroupsRequest, callback func(response *ListServiceGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateListServiceGroupsRequest() (request *ListServiceGroupsRequest) {
 	request = &ListServiceGroupsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListServiceGroups", "/pop/v5/service/serviceGroups", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListServiceGroups", "/pop/v5/service/serviceGroups", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

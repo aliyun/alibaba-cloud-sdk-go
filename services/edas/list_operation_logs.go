@@ -21,7 +21,6 @@ import (
 )
 
 // ListOperationLogs invokes the edas.ListOperationLogs API synchronously
-// api document: https://help.aliyun.com/api/edas/listoperationlogs.html
 func (client *Client) ListOperationLogs(request *ListOperationLogsRequest) (response *ListOperationLogsResponse, err error) {
 	response = CreateListOperationLogsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListOperationLogs(request *ListOperationLogsRequest) (resp
 }
 
 // ListOperationLogsWithChan invokes the edas.ListOperationLogs API asynchronously
-// api document: https://help.aliyun.com/api/edas/listoperationlogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListOperationLogsWithChan(request *ListOperationLogsRequest) (<-chan *ListOperationLogsResponse, <-chan error) {
 	responseChan := make(chan *ListOperationLogsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListOperationLogsWithChan(request *ListOperationLogsReques
 }
 
 // ListOperationLogsWithCallback invokes the edas.ListOperationLogs API asynchronously
-// api document: https://help.aliyun.com/api/edas/listoperationlogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListOperationLogsWithCallback(request *ListOperationLogsRequest, callback func(response *ListOperationLogsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,7 @@ func CreateListOperationLogsRequest() (request *ListOperationLogsRequest) {
 	request = &ListOperationLogsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListOperationLogs", "/pop/v5/operationlog/log_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListOperationLogs", "/pop/v5/operationlog/log_list", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

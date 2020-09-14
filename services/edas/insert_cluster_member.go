@@ -21,7 +21,6 @@ import (
 )
 
 // InsertClusterMember invokes the edas.InsertClusterMember API synchronously
-// api document: https://help.aliyun.com/api/edas/insertclustermember.html
 func (client *Client) InsertClusterMember(request *InsertClusterMemberRequest) (response *InsertClusterMemberResponse, err error) {
 	response = CreateInsertClusterMemberResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InsertClusterMember(request *InsertClusterMemberRequest) (
 }
 
 // InsertClusterMemberWithChan invokes the edas.InsertClusterMember API asynchronously
-// api document: https://help.aliyun.com/api/edas/insertclustermember.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertClusterMemberWithChan(request *InsertClusterMemberRequest) (<-chan *InsertClusterMemberResponse, <-chan error) {
 	responseChan := make(chan *InsertClusterMemberResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InsertClusterMemberWithChan(request *InsertClusterMemberRe
 }
 
 // InsertClusterMemberWithCallback invokes the edas.InsertClusterMember API asynchronously
-// api document: https://help.aliyun.com/api/edas/insertclustermember.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertClusterMemberWithCallback(request *InsertClusterMemberRequest, callback func(response *InsertClusterMemberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateInsertClusterMemberRequest() (request *InsertClusterMemberRequest) {
 	request = &InsertClusterMemberRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertClusterMember", "/pop/v5/resource/cluster_member", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertClusterMember", "/pop/v5/resource/cluster_member", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

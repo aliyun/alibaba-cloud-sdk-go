@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteClusterMember invokes the edas.DeleteClusterMember API synchronously
-// api document: https://help.aliyun.com/api/edas/deleteclustermember.html
 func (client *Client) DeleteClusterMember(request *DeleteClusterMemberRequest) (response *DeleteClusterMemberResponse, err error) {
 	response = CreateDeleteClusterMemberResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteClusterMember(request *DeleteClusterMemberRequest) (
 }
 
 // DeleteClusterMemberWithChan invokes the edas.DeleteClusterMember API asynchronously
-// api document: https://help.aliyun.com/api/edas/deleteclustermember.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteClusterMemberWithChan(request *DeleteClusterMemberRequest) (<-chan *DeleteClusterMemberResponse, <-chan error) {
 	responseChan := make(chan *DeleteClusterMemberResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteClusterMemberWithChan(request *DeleteClusterMemberRe
 }
 
 // DeleteClusterMemberWithCallback invokes the edas.DeleteClusterMember API asynchronously
-// api document: https://help.aliyun.com/api/edas/deleteclustermember.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteClusterMemberWithCallback(request *DeleteClusterMemberRequest, callback func(response *DeleteClusterMemberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDeleteClusterMemberRequest() (request *DeleteClusterMemberRequest) {
 	request = &DeleteClusterMemberRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteClusterMember", "/pop/v5/resource/cluster_member", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteClusterMember", "/pop/v5/resource/cluster_member", "edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

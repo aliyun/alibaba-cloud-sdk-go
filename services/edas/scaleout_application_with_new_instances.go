@@ -21,7 +21,6 @@ import (
 )
 
 // ScaleoutApplicationWithNewInstances invokes the edas.ScaleoutApplicationWithNewInstances API synchronously
-// api document: https://help.aliyun.com/api/edas/scaleoutapplicationwithnewinstances.html
 func (client *Client) ScaleoutApplicationWithNewInstances(request *ScaleoutApplicationWithNewInstancesRequest) (response *ScaleoutApplicationWithNewInstancesResponse, err error) {
 	response = CreateScaleoutApplicationWithNewInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ScaleoutApplicationWithNewInstances(request *ScaleoutAppli
 }
 
 // ScaleoutApplicationWithNewInstancesWithChan invokes the edas.ScaleoutApplicationWithNewInstances API asynchronously
-// api document: https://help.aliyun.com/api/edas/scaleoutapplicationwithnewinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScaleoutApplicationWithNewInstancesWithChan(request *ScaleoutApplicationWithNewInstancesRequest) (<-chan *ScaleoutApplicationWithNewInstancesResponse, <-chan error) {
 	responseChan := make(chan *ScaleoutApplicationWithNewInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ScaleoutApplicationWithNewInstancesWithChan(request *Scale
 }
 
 // ScaleoutApplicationWithNewInstancesWithCallback invokes the edas.ScaleoutApplicationWithNewInstances API asynchronously
-// api document: https://help.aliyun.com/api/edas/scaleoutapplicationwithnewinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScaleoutApplicationWithNewInstancesWithCallback(request *ScaleoutApplicationWithNewInstancesRequest, callback func(response *ScaleoutApplicationWithNewInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateScaleoutApplicationWithNewInstancesRequest() (request *ScaleoutApplic
 	request = &ScaleoutApplicationWithNewInstancesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleoutApplicationWithNewInstances", "/pop/v5/scaling/scale_out", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleoutApplicationWithNewInstances", "/pop/v5/scaling/scale_out", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

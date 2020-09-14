@@ -21,7 +21,6 @@ import (
 )
 
 // DisableDegradeControl invokes the edas.DisableDegradeControl API synchronously
-// api document: https://help.aliyun.com/api/edas/disabledegradecontrol.html
 func (client *Client) DisableDegradeControl(request *DisableDegradeControlRequest) (response *DisableDegradeControlResponse, err error) {
 	response = CreateDisableDegradeControlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisableDegradeControl(request *DisableDegradeControlReques
 }
 
 // DisableDegradeControlWithChan invokes the edas.DisableDegradeControl API asynchronously
-// api document: https://help.aliyun.com/api/edas/disabledegradecontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableDegradeControlWithChan(request *DisableDegradeControlRequest) (<-chan *DisableDegradeControlResponse, <-chan error) {
 	responseChan := make(chan *DisableDegradeControlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisableDegradeControlWithChan(request *DisableDegradeContr
 }
 
 // DisableDegradeControlWithCallback invokes the edas.DisableDegradeControl API asynchronously
-// api document: https://help.aliyun.com/api/edas/disabledegradecontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableDegradeControlWithCallback(request *DisableDegradeControlRequest, callback func(response *DisableDegradeControlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDisableDegradeControlRequest() (request *DisableDegradeControlRequest
 	request = &DisableDegradeControlRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DisableDegradeControl", "/pop/v5/degradecontrol/disable", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DisableDegradeControl", "/pop/v5/degradecontrol/disable", "edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

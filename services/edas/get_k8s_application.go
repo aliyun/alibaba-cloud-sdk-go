@@ -21,7 +21,6 @@ import (
 )
 
 // GetK8sApplication invokes the edas.GetK8sApplication API synchronously
-// api document: https://help.aliyun.com/api/edas/getk8sapplication.html
 func (client *Client) GetK8sApplication(request *GetK8sApplicationRequest) (response *GetK8sApplicationResponse, err error) {
 	response = CreateGetK8sApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetK8sApplication(request *GetK8sApplicationRequest) (resp
 }
 
 // GetK8sApplicationWithChan invokes the edas.GetK8sApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/getk8sapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetK8sApplicationWithChan(request *GetK8sApplicationRequest) (<-chan *GetK8sApplicationResponse, <-chan error) {
 	responseChan := make(chan *GetK8sApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetK8sApplicationWithChan(request *GetK8sApplicationReques
 }
 
 // GetK8sApplicationWithCallback invokes the edas.GetK8sApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/getk8sapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetK8sApplicationWithCallback(request *GetK8sApplicationRequest, callback func(response *GetK8sApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateGetK8sApplicationRequest() (request *GetK8sApplicationRequest) {
 	request = &GetK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetK8sApplication", "/pop/v5/changeorder/co_application", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetK8sApplication", "/pop/v5/changeorder/co_application", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

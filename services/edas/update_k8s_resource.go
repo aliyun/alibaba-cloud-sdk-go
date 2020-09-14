@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateK8sResource invokes the edas.UpdateK8sResource API synchronously
-// api document: https://help.aliyun.com/api/edas/updatek8sresource.html
 func (client *Client) UpdateK8sResource(request *UpdateK8sResourceRequest) (response *UpdateK8sResourceResponse, err error) {
 	response = CreateUpdateK8sResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateK8sResource(request *UpdateK8sResourceRequest) (resp
 }
 
 // UpdateK8sResourceWithChan invokes the edas.UpdateK8sResource API asynchronously
-// api document: https://help.aliyun.com/api/edas/updatek8sresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateK8sResourceWithChan(request *UpdateK8sResourceRequest) (<-chan *UpdateK8sResourceResponse, <-chan error) {
 	responseChan := make(chan *UpdateK8sResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateK8sResourceWithChan(request *UpdateK8sResourceReques
 }
 
 // UpdateK8sResourceWithCallback invokes the edas.UpdateK8sResource API asynchronously
-// api document: https://help.aliyun.com/api/edas/updatek8sresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateK8sResourceWithCallback(request *UpdateK8sResourceRequest, callback func(response *UpdateK8sResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateUpdateK8sResourceRequest() (request *UpdateK8sResourceRequest) {
 	request = &UpdateK8sResourceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sResource", "/pop/v5/oam/update_k8s_resource_config", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sResource", "/pop/v5/oam/update_k8s_resource_config", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // EnableDegradeControl invokes the edas.EnableDegradeControl API synchronously
-// api document: https://help.aliyun.com/api/edas/enabledegradecontrol.html
 func (client *Client) EnableDegradeControl(request *EnableDegradeControlRequest) (response *EnableDegradeControlResponse, err error) {
 	response = CreateEnableDegradeControlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnableDegradeControl(request *EnableDegradeControlRequest)
 }
 
 // EnableDegradeControlWithChan invokes the edas.EnableDegradeControl API asynchronously
-// api document: https://help.aliyun.com/api/edas/enabledegradecontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableDegradeControlWithChan(request *EnableDegradeControlRequest) (<-chan *EnableDegradeControlResponse, <-chan error) {
 	responseChan := make(chan *EnableDegradeControlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnableDegradeControlWithChan(request *EnableDegradeControl
 }
 
 // EnableDegradeControlWithCallback invokes the edas.EnableDegradeControl API asynchronously
-// api document: https://help.aliyun.com/api/edas/enabledegradecontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableDegradeControlWithCallback(request *EnableDegradeControlRequest, callback func(response *EnableDegradeControlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateEnableDegradeControlRequest() (request *EnableDegradeControlRequest) 
 	request = &EnableDegradeControlRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "EnableDegradeControl", "/pop/v5/degradecontrol/enable", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "EnableDegradeControl", "/pop/v5/degradecontrol/enable", "edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

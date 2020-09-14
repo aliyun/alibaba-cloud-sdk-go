@@ -21,7 +21,6 @@ import (
 )
 
 // ListDeployGroup invokes the edas.ListDeployGroup API synchronously
-// api document: https://help.aliyun.com/api/edas/listdeploygroup.html
 func (client *Client) ListDeployGroup(request *ListDeployGroupRequest) (response *ListDeployGroupResponse, err error) {
 	response = CreateListDeployGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDeployGroup(request *ListDeployGroupRequest) (response
 }
 
 // ListDeployGroupWithChan invokes the edas.ListDeployGroup API asynchronously
-// api document: https://help.aliyun.com/api/edas/listdeploygroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDeployGroupWithChan(request *ListDeployGroupRequest) (<-chan *ListDeployGroupResponse, <-chan error) {
 	responseChan := make(chan *ListDeployGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDeployGroupWithChan(request *ListDeployGroupRequest) (
 }
 
 // ListDeployGroupWithCallback invokes the edas.ListDeployGroup API asynchronously
-// api document: https://help.aliyun.com/api/edas/listdeploygroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDeployGroupWithCallback(request *ListDeployGroupRequest, callback func(response *ListDeployGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,10 +77,12 @@ type ListDeployGroupRequest struct {
 // ListDeployGroupResponse is the response struct for api ListDeployGroup
 type ListDeployGroupResponse struct {
 	*responses.BaseResponse
-	Code            int             `json:"Code" xml:"Code"`
-	Message         string          `json:"Message" xml:"Message"`
-	RequestId       string          `json:"RequestId" xml:"RequestId"`
-	DeployGroupList DeployGroupList `json:"DeployGroupList" xml:"DeployGroupList"`
+	Code              int             `json:"Code" xml:"Code"`
+	Message           string          `json:"Message" xml:"Message"`
+	RequestId         string          `json:"RequestId" xml:"RequestId"`
+	VServerGroupId    string          `json:"VServerGroupId" xml:"VServerGroupId"`
+	VExtServerGroupId string          `json:"VExtServerGroupId" xml:"VExtServerGroupId"`
+	DeployGroupList   DeployGroupList `json:"DeployGroupList" xml:"DeployGroupList"`
 }
 
 // CreateListDeployGroupRequest creates a request to invoke ListDeployGroup API
@@ -93,7 +90,7 @@ func CreateListDeployGroupRequest() (request *ListDeployGroupRequest) {
 	request = &ListDeployGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListDeployGroup", "/pop/v5/app/deploy_group_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListDeployGroup", "/pop/v5/app/deploy_group_list", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

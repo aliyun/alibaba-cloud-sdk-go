@@ -21,7 +21,6 @@ import (
 )
 
 // ListScaleOutEcu invokes the edas.ListScaleOutEcu API synchronously
-// api document: https://help.aliyun.com/api/edas/listscaleoutecu.html
 func (client *Client) ListScaleOutEcu(request *ListScaleOutEcuRequest) (response *ListScaleOutEcuResponse, err error) {
 	response = CreateListScaleOutEcuResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListScaleOutEcu(request *ListScaleOutEcuRequest) (response
 }
 
 // ListScaleOutEcuWithChan invokes the edas.ListScaleOutEcu API asynchronously
-// api document: https://help.aliyun.com/api/edas/listscaleoutecu.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListScaleOutEcuWithChan(request *ListScaleOutEcuRequest) (<-chan *ListScaleOutEcuResponse, <-chan error) {
 	responseChan := make(chan *ListScaleOutEcuResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListScaleOutEcuWithChan(request *ListScaleOutEcuRequest) (
 }
 
 // ListScaleOutEcuWithCallback invokes the edas.ListScaleOutEcu API asynchronously
-// api document: https://help.aliyun.com/api/edas/listscaleoutecu.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListScaleOutEcuWithCallback(request *ListScaleOutEcuRequest, callback func(response *ListScaleOutEcuResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateListScaleOutEcuRequest() (request *ListScaleOutEcuRequest) {
 	request = &ListScaleOutEcuRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListScaleOutEcu", "/pop/v5/resource/scale_out_ecu_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListScaleOutEcu", "/pop/v5/resource/scale_out_ecu_list", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDegradeControl invokes the edas.DeleteDegradeControl API synchronously
-// api document: https://help.aliyun.com/api/edas/deletedegradecontrol.html
 func (client *Client) DeleteDegradeControl(request *DeleteDegradeControlRequest) (response *DeleteDegradeControlResponse, err error) {
 	response = CreateDeleteDegradeControlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDegradeControl(request *DeleteDegradeControlRequest)
 }
 
 // DeleteDegradeControlWithChan invokes the edas.DeleteDegradeControl API asynchronously
-// api document: https://help.aliyun.com/api/edas/deletedegradecontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDegradeControlWithChan(request *DeleteDegradeControlRequest) (<-chan *DeleteDegradeControlResponse, <-chan error) {
 	responseChan := make(chan *DeleteDegradeControlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDegradeControlWithChan(request *DeleteDegradeControl
 }
 
 // DeleteDegradeControlWithCallback invokes the edas.DeleteDegradeControl API asynchronously
-// api document: https://help.aliyun.com/api/edas/deletedegradecontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDegradeControlWithCallback(request *DeleteDegradeControlRequest, callback func(response *DeleteDegradeControlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDeleteDegradeControlRequest() (request *DeleteDegradeControlRequest) 
 	request = &DeleteDegradeControlRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteDegradeControl", "/pop/v5/degradeControl", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteDegradeControl", "/pop/v5/degradeControl", "edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

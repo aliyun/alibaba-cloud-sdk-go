@@ -21,7 +21,6 @@ import (
 )
 
 // AuthorizeRole invokes the edas.AuthorizeRole API synchronously
-// api document: https://help.aliyun.com/api/edas/authorizerole.html
 func (client *Client) AuthorizeRole(request *AuthorizeRoleRequest) (response *AuthorizeRoleResponse, err error) {
 	response = CreateAuthorizeRoleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AuthorizeRole(request *AuthorizeRoleRequest) (response *Au
 }
 
 // AuthorizeRoleWithChan invokes the edas.AuthorizeRole API asynchronously
-// api document: https://help.aliyun.com/api/edas/authorizerole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AuthorizeRoleWithChan(request *AuthorizeRoleRequest) (<-chan *AuthorizeRoleResponse, <-chan error) {
 	responseChan := make(chan *AuthorizeRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AuthorizeRoleWithChan(request *AuthorizeRoleRequest) (<-ch
 }
 
 // AuthorizeRoleWithCallback invokes the edas.AuthorizeRole API asynchronously
-// api document: https://help.aliyun.com/api/edas/authorizerole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AuthorizeRoleWithCallback(request *AuthorizeRoleRequest, callback func(response *AuthorizeRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateAuthorizeRoleRequest() (request *AuthorizeRoleRequest) {
 	request = &AuthorizeRoleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "AuthorizeRole", "/pop/v5/account/authorize_role", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "AuthorizeRole", "/pop/v5/account/authorize_role", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

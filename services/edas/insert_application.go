@@ -21,7 +21,6 @@ import (
 )
 
 // InsertApplication invokes the edas.InsertApplication API synchronously
-// api document: https://help.aliyun.com/api/edas/insertapplication.html
 func (client *Client) InsertApplication(request *InsertApplicationRequest) (response *InsertApplicationResponse, err error) {
 	response = CreateInsertApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InsertApplication(request *InsertApplicationRequest) (resp
 }
 
 // InsertApplicationWithChan invokes the edas.InsertApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/insertapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertApplicationWithChan(request *InsertApplicationRequest) (<-chan *InsertApplicationResponse, <-chan error) {
 	responseChan := make(chan *InsertApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InsertApplicationWithChan(request *InsertApplicationReques
 }
 
 // InsertApplicationWithCallback invokes the edas.InsertApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/insertapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertApplicationWithCallback(request *InsertApplicationRequest, callback func(response *InsertApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -106,7 +101,7 @@ func CreateInsertApplicationRequest() (request *InsertApplicationRequest) {
 	request = &InsertApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertApplication", "/pop/v5/changeorder/co_create_app", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertApplication", "/pop/v5/changeorder/co_create_app", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteApplication invokes the edas.DeleteApplication API synchronously
-// api document: https://help.aliyun.com/api/edas/deleteapplication.html
 func (client *Client) DeleteApplication(request *DeleteApplicationRequest) (response *DeleteApplicationResponse, err error) {
 	response = CreateDeleteApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteApplication(request *DeleteApplicationRequest) (resp
 }
 
 // DeleteApplicationWithChan invokes the edas.DeleteApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/deleteapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteApplicationWithChan(request *DeleteApplicationRequest) (<-chan *DeleteApplicationResponse, <-chan error) {
 	responseChan := make(chan *DeleteApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteApplicationWithChan(request *DeleteApplicationReques
 }
 
 // DeleteApplicationWithCallback invokes the edas.DeleteApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/deleteapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteApplicationWithCallback(request *DeleteApplicationRequest, callback func(response *DeleteApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDeleteApplicationRequest() (request *DeleteApplicationRequest) {
 	request = &DeleteApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteApplication", "/pop/v5/changeorder/co_delete_app", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteApplication", "/pop/v5/changeorder/co_delete_app", "edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

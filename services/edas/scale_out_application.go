@@ -21,7 +21,6 @@ import (
 )
 
 // ScaleOutApplication invokes the edas.ScaleOutApplication API synchronously
-// api document: https://help.aliyun.com/api/edas/scaleoutapplication.html
 func (client *Client) ScaleOutApplication(request *ScaleOutApplicationRequest) (response *ScaleOutApplicationResponse, err error) {
 	response = CreateScaleOutApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ScaleOutApplication(request *ScaleOutApplicationRequest) (
 }
 
 // ScaleOutApplicationWithChan invokes the edas.ScaleOutApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/scaleoutapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScaleOutApplicationWithChan(request *ScaleOutApplicationRequest) (<-chan *ScaleOutApplicationResponse, <-chan error) {
 	responseChan := make(chan *ScaleOutApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ScaleOutApplicationWithChan(request *ScaleOutApplicationRe
 }
 
 // ScaleOutApplicationWithCallback invokes the edas.ScaleOutApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/scaleoutapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScaleOutApplicationWithCallback(request *ScaleOutApplicationRequest, callback func(response *ScaleOutApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateScaleOutApplicationRequest() (request *ScaleOutApplicationRequest) {
 	request = &ScaleOutApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleOutApplication", "/pop/v5/changeorder/co_scale_out", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleOutApplication", "/pop/v5/changeorder/co_scale_out", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

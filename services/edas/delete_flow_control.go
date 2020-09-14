@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteFlowControl invokes the edas.DeleteFlowControl API synchronously
-// api document: https://help.aliyun.com/api/edas/deleteflowcontrol.html
 func (client *Client) DeleteFlowControl(request *DeleteFlowControlRequest) (response *DeleteFlowControlResponse, err error) {
 	response = CreateDeleteFlowControlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteFlowControl(request *DeleteFlowControlRequest) (resp
 }
 
 // DeleteFlowControlWithChan invokes the edas.DeleteFlowControl API asynchronously
-// api document: https://help.aliyun.com/api/edas/deleteflowcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFlowControlWithChan(request *DeleteFlowControlRequest) (<-chan *DeleteFlowControlResponse, <-chan error) {
 	responseChan := make(chan *DeleteFlowControlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteFlowControlWithChan(request *DeleteFlowControlReques
 }
 
 // DeleteFlowControlWithCallback invokes the edas.DeleteFlowControl API asynchronously
-// api document: https://help.aliyun.com/api/edas/deleteflowcontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFlowControlWithCallback(request *DeleteFlowControlRequest, callback func(response *DeleteFlowControlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDeleteFlowControlRequest() (request *DeleteFlowControlRequest) {
 	request = &DeleteFlowControlRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteFlowControl", "/pop/v5/flowControl", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteFlowControl", "/pop/v5/flowControl", "edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

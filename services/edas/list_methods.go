@@ -21,7 +21,6 @@ import (
 )
 
 // ListMethods invokes the edas.ListMethods API synchronously
-// api document: https://help.aliyun.com/api/edas/listmethods.html
 func (client *Client) ListMethods(request *ListMethodsRequest) (response *ListMethodsResponse, err error) {
 	response = CreateListMethodsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListMethods(request *ListMethodsRequest) (response *ListMe
 }
 
 // ListMethodsWithChan invokes the edas.ListMethods API asynchronously
-// api document: https://help.aliyun.com/api/edas/listmethods.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMethodsWithChan(request *ListMethodsRequest) (<-chan *ListMethodsResponse, <-chan error) {
 	responseChan := make(chan *ListMethodsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListMethodsWithChan(request *ListMethodsRequest) (<-chan *
 }
 
 // ListMethodsWithCallback invokes the edas.ListMethods API asynchronously
-// api document: https://help.aliyun.com/api/edas/listmethods.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMethodsWithCallback(request *ListMethodsRequest, callback func(response *ListMethodsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateListMethodsRequest() (request *ListMethodsRequest) {
 	request = &ListMethodsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListMethods", "/pop/v5/service/list_methods", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListMethods", "/pop/v5/service/list_methods", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

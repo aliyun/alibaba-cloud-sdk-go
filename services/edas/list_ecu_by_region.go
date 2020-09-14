@@ -21,7 +21,6 @@ import (
 )
 
 // ListEcuByRegion invokes the edas.ListEcuByRegion API synchronously
-// api document: https://help.aliyun.com/api/edas/listecubyregion.html
 func (client *Client) ListEcuByRegion(request *ListEcuByRegionRequest) (response *ListEcuByRegionResponse, err error) {
 	response = CreateListEcuByRegionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListEcuByRegion(request *ListEcuByRegionRequest) (response
 }
 
 // ListEcuByRegionWithChan invokes the edas.ListEcuByRegion API asynchronously
-// api document: https://help.aliyun.com/api/edas/listecubyregion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEcuByRegionWithChan(request *ListEcuByRegionRequest) (<-chan *ListEcuByRegionResponse, <-chan error) {
 	responseChan := make(chan *ListEcuByRegionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListEcuByRegionWithChan(request *ListEcuByRegionRequest) (
 }
 
 // ListEcuByRegionWithCallback invokes the edas.ListEcuByRegion API asynchronously
-// api document: https://help.aliyun.com/api/edas/listecubyregion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEcuByRegionWithCallback(request *ListEcuByRegionRequest, callback func(response *ListEcuByRegionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateListEcuByRegionRequest() (request *ListEcuByRegionRequest) {
 	request = &ListEcuByRegionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListEcuByRegion", "/pop/v5/resource/ecu_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListEcuByRegion", "/pop/v5/resource/ecu_list", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

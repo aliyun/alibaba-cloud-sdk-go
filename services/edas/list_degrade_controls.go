@@ -21,7 +21,6 @@ import (
 )
 
 // ListDegradeControls invokes the edas.ListDegradeControls API synchronously
-// api document: https://help.aliyun.com/api/edas/listdegradecontrols.html
 func (client *Client) ListDegradeControls(request *ListDegradeControlsRequest) (response *ListDegradeControlsResponse, err error) {
 	response = CreateListDegradeControlsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDegradeControls(request *ListDegradeControlsRequest) (
 }
 
 // ListDegradeControlsWithChan invokes the edas.ListDegradeControls API asynchronously
-// api document: https://help.aliyun.com/api/edas/listdegradecontrols.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDegradeControlsWithChan(request *ListDegradeControlsRequest) (<-chan *ListDegradeControlsResponse, <-chan error) {
 	responseChan := make(chan *ListDegradeControlsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDegradeControlsWithChan(request *ListDegradeControlsRe
 }
 
 // ListDegradeControlsWithCallback invokes the edas.ListDegradeControls API asynchronously
-// api document: https://help.aliyun.com/api/edas/listdegradecontrols.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDegradeControlsWithCallback(request *ListDegradeControlsRequest, callback func(response *ListDegradeControlsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateListDegradeControlsRequest() (request *ListDegradeControlsRequest) {
 	request = &ListDegradeControlsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListDegradeControls", "/pop/v5/app/degradeControls", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListDegradeControls", "/pop/v5/app/degradeControls", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

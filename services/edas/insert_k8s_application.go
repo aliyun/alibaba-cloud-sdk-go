@@ -21,7 +21,6 @@ import (
 )
 
 // InsertK8sApplication invokes the edas.InsertK8sApplication API synchronously
-// api document: https://help.aliyun.com/api/edas/insertk8sapplication.html
 func (client *Client) InsertK8sApplication(request *InsertK8sApplicationRequest) (response *InsertK8sApplicationResponse, err error) {
 	response = CreateInsertK8sApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InsertK8sApplication(request *InsertK8sApplicationRequest)
 }
 
 // InsertK8sApplicationWithChan invokes the edas.InsertK8sApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/insertk8sapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertK8sApplicationWithChan(request *InsertK8sApplicationRequest) (<-chan *InsertK8sApplicationResponse, <-chan error) {
 	responseChan := make(chan *InsertK8sApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InsertK8sApplicationWithChan(request *InsertK8sApplication
 }
 
 // InsertK8sApplicationWithCallback invokes the edas.InsertK8sApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/insertk8sapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertK8sApplicationWithCallback(request *InsertK8sApplicationRequest, callback func(response *InsertK8sApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -140,7 +135,7 @@ func CreateInsertK8sApplicationRequest() (request *InsertK8sApplicationRequest) 
 	request = &InsertK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertK8sApplication", "/pop/v5/k8s/acs/create_k8s_app", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertK8sApplication", "/pop/v5/k8s/acs/create_k8s_app", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

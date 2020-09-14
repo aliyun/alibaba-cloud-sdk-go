@@ -21,7 +21,6 @@ import (
 )
 
 // ScaleInApplication invokes the edas.ScaleInApplication API synchronously
-// api document: https://help.aliyun.com/api/edas/scaleinapplication.html
 func (client *Client) ScaleInApplication(request *ScaleInApplicationRequest) (response *ScaleInApplicationResponse, err error) {
 	response = CreateScaleInApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ScaleInApplication(request *ScaleInApplicationRequest) (re
 }
 
 // ScaleInApplicationWithChan invokes the edas.ScaleInApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/scaleinapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScaleInApplicationWithChan(request *ScaleInApplicationRequest) (<-chan *ScaleInApplicationResponse, <-chan error) {
 	responseChan := make(chan *ScaleInApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ScaleInApplicationWithChan(request *ScaleInApplicationRequ
 }
 
 // ScaleInApplicationWithCallback invokes the edas.ScaleInApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/scaleinapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScaleInApplicationWithCallback(request *ScaleInApplicationRequest, callback func(response *ScaleInApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateScaleInApplicationRequest() (request *ScaleInApplicationRequest) {
 	request = &ScaleInApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleInApplication", "/pop/v5/changeorder/co_scale_in", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleInApplication", "/pop/v5/changeorder/co_scale_in", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

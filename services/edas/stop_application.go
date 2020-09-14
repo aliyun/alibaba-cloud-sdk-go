@@ -21,7 +21,6 @@ import (
 )
 
 // StopApplication invokes the edas.StopApplication API synchronously
-// api document: https://help.aliyun.com/api/edas/stopapplication.html
 func (client *Client) StopApplication(request *StopApplicationRequest) (response *StopApplicationResponse, err error) {
 	response = CreateStopApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopApplication(request *StopApplicationRequest) (response
 }
 
 // StopApplicationWithChan invokes the edas.StopApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/stopapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopApplicationWithChan(request *StopApplicationRequest) (<-chan *StopApplicationResponse, <-chan error) {
 	responseChan := make(chan *StopApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopApplicationWithChan(request *StopApplicationRequest) (
 }
 
 // StopApplicationWithCallback invokes the edas.StopApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/stopapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopApplicationWithCallback(request *StopApplicationRequest, callback func(response *StopApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateStopApplicationRequest() (request *StopApplicationRequest) {
 	request = &StopApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "StopApplication", "/pop/v5/changeorder/co_stop", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "StopApplication", "/pop/v5/changeorder/co_stop", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

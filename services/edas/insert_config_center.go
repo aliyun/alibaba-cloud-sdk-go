@@ -21,7 +21,6 @@ import (
 )
 
 // InsertConfigCenter invokes the edas.InsertConfigCenter API synchronously
-// api document: https://help.aliyun.com/api/edas/insertconfigcenter.html
 func (client *Client) InsertConfigCenter(request *InsertConfigCenterRequest) (response *InsertConfigCenterResponse, err error) {
 	response = CreateInsertConfigCenterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InsertConfigCenter(request *InsertConfigCenterRequest) (re
 }
 
 // InsertConfigCenterWithChan invokes the edas.InsertConfigCenter API asynchronously
-// api document: https://help.aliyun.com/api/edas/insertconfigcenter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertConfigCenterWithChan(request *InsertConfigCenterRequest) (<-chan *InsertConfigCenterResponse, <-chan error) {
 	responseChan := make(chan *InsertConfigCenterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InsertConfigCenterWithChan(request *InsertConfigCenterRequ
 }
 
 // InsertConfigCenterWithCallback invokes the edas.InsertConfigCenter API asynchronously
-// api document: https://help.aliyun.com/api/edas/insertconfigcenter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertConfigCenterWithCallback(request *InsertConfigCenterRequest, callback func(response *InsertConfigCenterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateInsertConfigCenterRequest() (request *InsertConfigCenterRequest) {
 	request = &InsertConfigCenterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertConfigCenter", "/pop/v5/configCenter", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertConfigCenter", "/pop/v5/configCenter", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

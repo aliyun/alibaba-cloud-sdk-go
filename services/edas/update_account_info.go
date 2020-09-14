@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateAccountInfo invokes the edas.UpdateAccountInfo API synchronously
-// api document: https://help.aliyun.com/api/edas/updateaccountinfo.html
 func (client *Client) UpdateAccountInfo(request *UpdateAccountInfoRequest) (response *UpdateAccountInfoResponse, err error) {
 	response = CreateUpdateAccountInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateAccountInfo(request *UpdateAccountInfoRequest) (resp
 }
 
 // UpdateAccountInfoWithChan invokes the edas.UpdateAccountInfo API asynchronously
-// api document: https://help.aliyun.com/api/edas/updateaccountinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAccountInfoWithChan(request *UpdateAccountInfoRequest) (<-chan *UpdateAccountInfoResponse, <-chan error) {
 	responseChan := make(chan *UpdateAccountInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateAccountInfoWithChan(request *UpdateAccountInfoReques
 }
 
 // UpdateAccountInfoWithCallback invokes the edas.UpdateAccountInfo API asynchronously
-// api document: https://help.aliyun.com/api/edas/updateaccountinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAccountInfoWithCallback(request *UpdateAccountInfoRequest, callback func(response *UpdateAccountInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateUpdateAccountInfoRequest() (request *UpdateAccountInfoRequest) {
 	request = &UpdateAccountInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateAccountInfo", "/pop/v5/account/edit_account_info", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateAccountInfo", "/pop/v5/account/edit_account_info", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

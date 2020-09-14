@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateRole invokes the edas.UpdateRole API synchronously
-// api document: https://help.aliyun.com/api/edas/updaterole.html
 func (client *Client) UpdateRole(request *UpdateRoleRequest) (response *UpdateRoleResponse, err error) {
 	response = CreateUpdateRoleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateRole(request *UpdateRoleRequest) (response *UpdateRo
 }
 
 // UpdateRoleWithChan invokes the edas.UpdateRole API asynchronously
-// api document: https://help.aliyun.com/api/edas/updaterole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateRoleWithChan(request *UpdateRoleRequest) (<-chan *UpdateRoleResponse, <-chan error) {
 	responseChan := make(chan *UpdateRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateRoleWithChan(request *UpdateRoleRequest) (<-chan *Up
 }
 
 // UpdateRoleWithCallback invokes the edas.UpdateRole API asynchronously
-// api document: https://help.aliyun.com/api/edas/updaterole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateRoleWithCallback(request *UpdateRoleRequest, callback func(response *UpdateRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateUpdateRoleRequest() (request *UpdateRoleRequest) {
 	request = &UpdateRoleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateRole", "/pop/v5/account/edit_role", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateRole", "/pop/v5/account/edit_role", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // GetSubAccountInfo invokes the edas.GetSubAccountInfo API synchronously
-// api document: https://help.aliyun.com/api/edas/getsubaccountinfo.html
 func (client *Client) GetSubAccountInfo(request *GetSubAccountInfoRequest) (response *GetSubAccountInfoResponse, err error) {
 	response = CreateGetSubAccountInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetSubAccountInfo(request *GetSubAccountInfoRequest) (resp
 }
 
 // GetSubAccountInfoWithChan invokes the edas.GetSubAccountInfo API asynchronously
-// api document: https://help.aliyun.com/api/edas/getsubaccountinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSubAccountInfoWithChan(request *GetSubAccountInfoRequest) (<-chan *GetSubAccountInfoResponse, <-chan error) {
 	responseChan := make(chan *GetSubAccountInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetSubAccountInfoWithChan(request *GetSubAccountInfoReques
 }
 
 // GetSubAccountInfoWithCallback invokes the edas.GetSubAccountInfo API asynchronously
-// api document: https://help.aliyun.com/api/edas/getsubaccountinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSubAccountInfoWithCallback(request *GetSubAccountInfoRequest, callback func(response *GetSubAccountInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateGetSubAccountInfoRequest() (request *GetSubAccountInfoRequest) {
 	request = &GetSubAccountInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetSubAccountInfo", "/pop/v5/account/sub_account_info", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetSubAccountInfo", "/pop/v5/account/sub_account_info", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // ListEcsNotInCluster invokes the edas.ListEcsNotInCluster API synchronously
-// api document: https://help.aliyun.com/api/edas/listecsnotincluster.html
 func (client *Client) ListEcsNotInCluster(request *ListEcsNotInClusterRequest) (response *ListEcsNotInClusterResponse, err error) {
 	response = CreateListEcsNotInClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListEcsNotInCluster(request *ListEcsNotInClusterRequest) (
 }
 
 // ListEcsNotInClusterWithChan invokes the edas.ListEcsNotInCluster API asynchronously
-// api document: https://help.aliyun.com/api/edas/listecsnotincluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEcsNotInClusterWithChan(request *ListEcsNotInClusterRequest) (<-chan *ListEcsNotInClusterResponse, <-chan error) {
 	responseChan := make(chan *ListEcsNotInClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListEcsNotInClusterWithChan(request *ListEcsNotInClusterRe
 }
 
 // ListEcsNotInClusterWithCallback invokes the edas.ListEcsNotInCluster API asynchronously
-// api document: https://help.aliyun.com/api/edas/listecsnotincluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEcsNotInClusterWithCallback(request *ListEcsNotInClusterRequest, callback func(response *ListEcsNotInClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateListEcsNotInClusterRequest() (request *ListEcsNotInClusterRequest) {
 	request = &ListEcsNotInClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListEcsNotInCluster", "/pop/v5/resource/ecs_not_in_cluster", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListEcsNotInCluster", "/pop/v5/resource/ecs_not_in_cluster", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

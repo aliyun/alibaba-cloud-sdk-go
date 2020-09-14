@@ -21,7 +21,6 @@ import (
 )
 
 // ImportK8sCluster invokes the edas.ImportK8sCluster API synchronously
-// api document: https://help.aliyun.com/api/edas/importk8scluster.html
 func (client *Client) ImportK8sCluster(request *ImportK8sClusterRequest) (response *ImportK8sClusterResponse, err error) {
 	response = CreateImportK8sClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ImportK8sCluster(request *ImportK8sClusterRequest) (respon
 }
 
 // ImportK8sClusterWithChan invokes the edas.ImportK8sCluster API asynchronously
-// api document: https://help.aliyun.com/api/edas/importk8scluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportK8sClusterWithChan(request *ImportK8sClusterRequest) (<-chan *ImportK8sClusterResponse, <-chan error) {
 	responseChan := make(chan *ImportK8sClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ImportK8sClusterWithChan(request *ImportK8sClusterRequest)
 }
 
 // ImportK8sClusterWithCallback invokes the edas.ImportK8sCluster API asynchronously
-// api document: https://help.aliyun.com/api/edas/importk8scluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportK8sClusterWithCallback(request *ImportK8sClusterRequest, callback func(response *ImportK8sClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) ImportK8sClusterWithCallback(request *ImportK8sClusterRequ
 type ImportK8sClusterRequest struct {
 	*requests.RoaRequest
 	Mode        requests.Integer `position:"Query" name:"Mode"`
+	EnableAsm   requests.Boolean `position:"Query" name:"EnableAsm"`
 	NamespaceId string           `position:"Query" name:"NamespaceId"`
 	ClusterId   string           `position:"Query" name:"ClusterId"`
 }
@@ -95,7 +91,7 @@ func CreateImportK8sClusterRequest() (request *ImportK8sClusterRequest) {
 	request = &ImportK8sClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ImportK8sCluster", "/pop/v5/import_k8s_cluster", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ImportK8sCluster", "/pop/v5/import_k8s_cluster", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

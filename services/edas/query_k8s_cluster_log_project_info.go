@@ -21,7 +21,6 @@ import (
 )
 
 // QueryK8sClusterLogProjectInfo invokes the edas.QueryK8sClusterLogProjectInfo API synchronously
-// api document: https://help.aliyun.com/api/edas/queryk8sclusterlogprojectinfo.html
 func (client *Client) QueryK8sClusterLogProjectInfo(request *QueryK8sClusterLogProjectInfoRequest) (response *QueryK8sClusterLogProjectInfoResponse, err error) {
 	response = CreateQueryK8sClusterLogProjectInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryK8sClusterLogProjectInfo(request *QueryK8sClusterLogP
 }
 
 // QueryK8sClusterLogProjectInfoWithChan invokes the edas.QueryK8sClusterLogProjectInfo API asynchronously
-// api document: https://help.aliyun.com/api/edas/queryk8sclusterlogprojectinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryK8sClusterLogProjectInfoWithChan(request *QueryK8sClusterLogProjectInfoRequest) (<-chan *QueryK8sClusterLogProjectInfoResponse, <-chan error) {
 	responseChan := make(chan *QueryK8sClusterLogProjectInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryK8sClusterLogProjectInfoWithChan(request *QueryK8sClu
 }
 
 // QueryK8sClusterLogProjectInfoWithCallback invokes the edas.QueryK8sClusterLogProjectInfo API asynchronously
-// api document: https://help.aliyun.com/api/edas/queryk8sclusterlogprojectinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryK8sClusterLogProjectInfoWithCallback(request *QueryK8sClusterLogProjectInfoRequest, callback func(response *QueryK8sClusterLogProjectInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateQueryK8sClusterLogProjectInfoRequest() (request *QueryK8sClusterLogPr
 	request = &QueryK8sClusterLogProjectInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "QueryK8sClusterLogProjectInfo", "/pop/v5/k8s/sls/project", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "QueryK8sClusterLogProjectInfo", "/pop/v5/k8s/sls/project", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

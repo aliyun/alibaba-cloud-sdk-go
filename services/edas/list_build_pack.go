@@ -21,7 +21,6 @@ import (
 )
 
 // ListBuildPack invokes the edas.ListBuildPack API synchronously
-// api document: https://help.aliyun.com/api/edas/listbuildpack.html
 func (client *Client) ListBuildPack(request *ListBuildPackRequest) (response *ListBuildPackResponse, err error) {
 	response = CreateListBuildPackResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListBuildPack(request *ListBuildPackRequest) (response *Li
 }
 
 // ListBuildPackWithChan invokes the edas.ListBuildPack API asynchronously
-// api document: https://help.aliyun.com/api/edas/listbuildpack.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListBuildPackWithChan(request *ListBuildPackRequest) (<-chan *ListBuildPackResponse, <-chan error) {
 	responseChan := make(chan *ListBuildPackResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListBuildPackWithChan(request *ListBuildPackRequest) (<-ch
 }
 
 // ListBuildPackWithCallback invokes the edas.ListBuildPack API asynchronously
-// api document: https://help.aliyun.com/api/edas/listbuildpack.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListBuildPackWithCallback(request *ListBuildPackRequest, callback func(response *ListBuildPackResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateListBuildPackRequest() (request *ListBuildPackRequest) {
 	request = &ListBuildPackRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListBuildPack", "/pop/v5/app/build_pack_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListBuildPack", "/pop/v5/app/build_pack_list", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

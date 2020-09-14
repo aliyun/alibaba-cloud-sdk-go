@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateDegradeControl invokes the edas.UpdateDegradeControl API synchronously
-// api document: https://help.aliyun.com/api/edas/updatedegradecontrol.html
 func (client *Client) UpdateDegradeControl(request *UpdateDegradeControlRequest) (response *UpdateDegradeControlResponse, err error) {
 	response = CreateUpdateDegradeControlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateDegradeControl(request *UpdateDegradeControlRequest)
 }
 
 // UpdateDegradeControlWithChan invokes the edas.UpdateDegradeControl API asynchronously
-// api document: https://help.aliyun.com/api/edas/updatedegradecontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDegradeControlWithChan(request *UpdateDegradeControlRequest) (<-chan *UpdateDegradeControlResponse, <-chan error) {
 	responseChan := make(chan *UpdateDegradeControlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateDegradeControlWithChan(request *UpdateDegradeControl
 }
 
 // UpdateDegradeControlWithCallback invokes the edas.UpdateDegradeControl API asynchronously
-// api document: https://help.aliyun.com/api/edas/updatedegradecontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDegradeControlWithCallback(request *UpdateDegradeControlRequest, callback func(response *UpdateDegradeControlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateUpdateDegradeControlRequest() (request *UpdateDegradeControlRequest) 
 	request = &UpdateDegradeControlRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateDegradeControl", "/pop/v5/degradeControl", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateDegradeControl", "/pop/v5/degradeControl", "edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

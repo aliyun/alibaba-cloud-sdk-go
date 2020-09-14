@@ -21,7 +21,6 @@ import (
 )
 
 // AbortAndRollbackChangeOrder invokes the edas.AbortAndRollbackChangeOrder API synchronously
-// api document: https://help.aliyun.com/api/edas/abortandrollbackchangeorder.html
 func (client *Client) AbortAndRollbackChangeOrder(request *AbortAndRollbackChangeOrderRequest) (response *AbortAndRollbackChangeOrderResponse, err error) {
 	response = CreateAbortAndRollbackChangeOrderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AbortAndRollbackChangeOrder(request *AbortAndRollbackChang
 }
 
 // AbortAndRollbackChangeOrderWithChan invokes the edas.AbortAndRollbackChangeOrder API asynchronously
-// api document: https://help.aliyun.com/api/edas/abortandrollbackchangeorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AbortAndRollbackChangeOrderWithChan(request *AbortAndRollbackChangeOrderRequest) (<-chan *AbortAndRollbackChangeOrderResponse, <-chan error) {
 	responseChan := make(chan *AbortAndRollbackChangeOrderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AbortAndRollbackChangeOrderWithChan(request *AbortAndRollb
 }
 
 // AbortAndRollbackChangeOrderWithCallback invokes the edas.AbortAndRollbackChangeOrder API asynchronously
-// api document: https://help.aliyun.com/api/edas/abortandrollbackchangeorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AbortAndRollbackChangeOrderWithCallback(request *AbortAndRollbackChangeOrderRequest, callback func(response *AbortAndRollbackChangeOrderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateAbortAndRollbackChangeOrderRequest() (request *AbortAndRollbackChange
 	request = &AbortAndRollbackChangeOrderRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "AbortAndRollbackChangeOrder", "/pop/v5/changeorder/change_order_abort_and_rollback", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "AbortAndRollbackChangeOrder", "/pop/v5/changeorder/change_order_abort_and_rollback", "edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

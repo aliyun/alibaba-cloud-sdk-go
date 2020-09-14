@@ -21,7 +21,6 @@ import (
 )
 
 // ListClusterMembers invokes the edas.ListClusterMembers API synchronously
-// api document: https://help.aliyun.com/api/edas/listclustermembers.html
 func (client *Client) ListClusterMembers(request *ListClusterMembersRequest) (response *ListClusterMembersResponse, err error) {
 	response = CreateListClusterMembersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListClusterMembers(request *ListClusterMembersRequest) (re
 }
 
 // ListClusterMembersWithChan invokes the edas.ListClusterMembers API asynchronously
-// api document: https://help.aliyun.com/api/edas/listclustermembers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterMembersWithChan(request *ListClusterMembersRequest) (<-chan *ListClusterMembersResponse, <-chan error) {
 	responseChan := make(chan *ListClusterMembersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListClusterMembersWithChan(request *ListClusterMembersRequ
 }
 
 // ListClusterMembersWithCallback invokes the edas.ListClusterMembers API asynchronously
-// api document: https://help.aliyun.com/api/edas/listclustermembers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterMembersWithCallback(request *ListClusterMembersRequest, callback func(response *ListClusterMembersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateListClusterMembersRequest() (request *ListClusterMembersRequest) {
 	request = &ListClusterMembersRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListClusterMembers", "/pop/v5/resource/cluster_member_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListClusterMembers", "/pop/v5/resource/cluster_member_list", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // AuthorizeResourceGroup invokes the edas.AuthorizeResourceGroup API synchronously
-// api document: https://help.aliyun.com/api/edas/authorizeresourcegroup.html
 func (client *Client) AuthorizeResourceGroup(request *AuthorizeResourceGroupRequest) (response *AuthorizeResourceGroupResponse, err error) {
 	response = CreateAuthorizeResourceGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AuthorizeResourceGroup(request *AuthorizeResourceGroupRequ
 }
 
 // AuthorizeResourceGroupWithChan invokes the edas.AuthorizeResourceGroup API asynchronously
-// api document: https://help.aliyun.com/api/edas/authorizeresourcegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AuthorizeResourceGroupWithChan(request *AuthorizeResourceGroupRequest) (<-chan *AuthorizeResourceGroupResponse, <-chan error) {
 	responseChan := make(chan *AuthorizeResourceGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AuthorizeResourceGroupWithChan(request *AuthorizeResourceG
 }
 
 // AuthorizeResourceGroupWithCallback invokes the edas.AuthorizeResourceGroup API asynchronously
-// api document: https://help.aliyun.com/api/edas/authorizeresourcegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AuthorizeResourceGroupWithCallback(request *AuthorizeResourceGroupRequest, callback func(response *AuthorizeResourceGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateAuthorizeResourceGroupRequest() (request *AuthorizeResourceGroupReque
 	request = &AuthorizeResourceGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "AuthorizeResourceGroup", "/pop/v5/account/authorize_res_group", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "AuthorizeResourceGroup", "/pop/v5/account/authorize_res_group", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

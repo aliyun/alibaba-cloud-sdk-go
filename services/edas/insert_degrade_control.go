@@ -21,7 +21,6 @@ import (
 )
 
 // InsertDegradeControl invokes the edas.InsertDegradeControl API synchronously
-// api document: https://help.aliyun.com/api/edas/insertdegradecontrol.html
 func (client *Client) InsertDegradeControl(request *InsertDegradeControlRequest) (response *InsertDegradeControlResponse, err error) {
 	response = CreateInsertDegradeControlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InsertDegradeControl(request *InsertDegradeControlRequest)
 }
 
 // InsertDegradeControlWithChan invokes the edas.InsertDegradeControl API asynchronously
-// api document: https://help.aliyun.com/api/edas/insertdegradecontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertDegradeControlWithChan(request *InsertDegradeControlRequest) (<-chan *InsertDegradeControlResponse, <-chan error) {
 	responseChan := make(chan *InsertDegradeControlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InsertDegradeControlWithChan(request *InsertDegradeControl
 }
 
 // InsertDegradeControlWithCallback invokes the edas.InsertDegradeControl API asynchronously
-// api document: https://help.aliyun.com/api/edas/insertdegradecontrol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertDegradeControlWithCallback(request *InsertDegradeControlRequest, callback func(response *InsertDegradeControlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateInsertDegradeControlRequest() (request *InsertDegradeControlRequest) 
 	request = &InsertDegradeControlRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertDegradeControl", "/pop/v5/degradeControl", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertDegradeControl", "/pop/v5/degradeControl", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

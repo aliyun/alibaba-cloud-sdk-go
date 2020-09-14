@@ -21,7 +21,6 @@ import (
 )
 
 // ChangeDeployGroup invokes the edas.ChangeDeployGroup API synchronously
-// api document: https://help.aliyun.com/api/edas/changedeploygroup.html
 func (client *Client) ChangeDeployGroup(request *ChangeDeployGroupRequest) (response *ChangeDeployGroupResponse, err error) {
 	response = CreateChangeDeployGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ChangeDeployGroup(request *ChangeDeployGroupRequest) (resp
 }
 
 // ChangeDeployGroupWithChan invokes the edas.ChangeDeployGroup API asynchronously
-// api document: https://help.aliyun.com/api/edas/changedeploygroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangeDeployGroupWithChan(request *ChangeDeployGroupRequest) (<-chan *ChangeDeployGroupResponse, <-chan error) {
 	responseChan := make(chan *ChangeDeployGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ChangeDeployGroupWithChan(request *ChangeDeployGroupReques
 }
 
 // ChangeDeployGroupWithCallback invokes the edas.ChangeDeployGroup API asynchronously
-// api document: https://help.aliyun.com/api/edas/changedeploygroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangeDeployGroupWithCallback(request *ChangeDeployGroupRequest, callback func(response *ChangeDeployGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateChangeDeployGroupRequest() (request *ChangeDeployGroupRequest) {
 	request = &ChangeDeployGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ChangeDeployGroup", "/pop/v5/changeorder/co_change_group", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ChangeDeployGroup", "/pop/v5/changeorder/co_change_group", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

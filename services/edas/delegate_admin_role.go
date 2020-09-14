@@ -21,7 +21,6 @@ import (
 )
 
 // DelegateAdminRole invokes the edas.DelegateAdminRole API synchronously
-// api document: https://help.aliyun.com/api/edas/delegateadminrole.html
 func (client *Client) DelegateAdminRole(request *DelegateAdminRoleRequest) (response *DelegateAdminRoleResponse, err error) {
 	response = CreateDelegateAdminRoleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DelegateAdminRole(request *DelegateAdminRoleRequest) (resp
 }
 
 // DelegateAdminRoleWithChan invokes the edas.DelegateAdminRole API asynchronously
-// api document: https://help.aliyun.com/api/edas/delegateadminrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DelegateAdminRoleWithChan(request *DelegateAdminRoleRequest) (<-chan *DelegateAdminRoleResponse, <-chan error) {
 	responseChan := make(chan *DelegateAdminRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DelegateAdminRoleWithChan(request *DelegateAdminRoleReques
 }
 
 // DelegateAdminRoleWithCallback invokes the edas.DelegateAdminRole API asynchronously
-// api document: https://help.aliyun.com/api/edas/delegateadminrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DelegateAdminRoleWithCallback(request *DelegateAdminRoleRequest, callback func(response *DelegateAdminRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDelegateAdminRoleRequest() (request *DelegateAdminRoleRequest) {
 	request = &DelegateAdminRoleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DelegateAdminRole", "/pop/v5/account/delegate_admin_role", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DelegateAdminRole", "/pop/v5/account/delegate_admin_role", "edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

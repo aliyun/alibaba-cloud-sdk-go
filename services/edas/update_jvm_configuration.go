@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateJvmConfiguration invokes the edas.UpdateJvmConfiguration API synchronously
-// api document: https://help.aliyun.com/api/edas/updatejvmconfiguration.html
 func (client *Client) UpdateJvmConfiguration(request *UpdateJvmConfigurationRequest) (response *UpdateJvmConfigurationResponse, err error) {
 	response = CreateUpdateJvmConfigurationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateJvmConfiguration(request *UpdateJvmConfigurationRequ
 }
 
 // UpdateJvmConfigurationWithChan invokes the edas.UpdateJvmConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/edas/updatejvmconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateJvmConfigurationWithChan(request *UpdateJvmConfigurationRequest) (<-chan *UpdateJvmConfigurationResponse, <-chan error) {
 	responseChan := make(chan *UpdateJvmConfigurationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateJvmConfigurationWithChan(request *UpdateJvmConfigura
 }
 
 // UpdateJvmConfigurationWithCallback invokes the edas.UpdateJvmConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/edas/updatejvmconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateJvmConfigurationWithCallback(request *UpdateJvmConfigurationRequest, callback func(response *UpdateJvmConfigurationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateUpdateJvmConfigurationRequest() (request *UpdateJvmConfigurationReque
 	request = &UpdateJvmConfigurationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateJvmConfiguration", "/pop/v5/app/app_jvm_config", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateJvmConfiguration", "/pop/v5/app/app_jvm_config", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

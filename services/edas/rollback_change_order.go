@@ -21,7 +21,6 @@ import (
 )
 
 // RollbackChangeOrder invokes the edas.RollbackChangeOrder API synchronously
-// api document: https://help.aliyun.com/api/edas/rollbackchangeorder.html
 func (client *Client) RollbackChangeOrder(request *RollbackChangeOrderRequest) (response *RollbackChangeOrderResponse, err error) {
 	response = CreateRollbackChangeOrderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RollbackChangeOrder(request *RollbackChangeOrderRequest) (
 }
 
 // RollbackChangeOrderWithChan invokes the edas.RollbackChangeOrder API asynchronously
-// api document: https://help.aliyun.com/api/edas/rollbackchangeorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RollbackChangeOrderWithChan(request *RollbackChangeOrderRequest) (<-chan *RollbackChangeOrderResponse, <-chan error) {
 	responseChan := make(chan *RollbackChangeOrderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RollbackChangeOrderWithChan(request *RollbackChangeOrderRe
 }
 
 // RollbackChangeOrderWithCallback invokes the edas.RollbackChangeOrder API asynchronously
-// api document: https://help.aliyun.com/api/edas/rollbackchangeorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RollbackChangeOrderWithCallback(request *RollbackChangeOrderRequest, callback func(response *RollbackChangeOrderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateRollbackChangeOrderRequest() (request *RollbackChangeOrderRequest) {
 	request = &RollbackChangeOrderRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "RollbackChangeOrder", "/pop/v5/oam/changeorder/rollback", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "RollbackChangeOrder", "/pop/v5/oam/changeorder/rollback", "edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

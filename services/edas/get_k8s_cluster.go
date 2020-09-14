@@ -21,7 +21,6 @@ import (
 )
 
 // GetK8sCluster invokes the edas.GetK8sCluster API synchronously
-// api document: https://help.aliyun.com/api/edas/getk8scluster.html
 func (client *Client) GetK8sCluster(request *GetK8sClusterRequest) (response *GetK8sClusterResponse, err error) {
 	response = CreateGetK8sClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetK8sCluster(request *GetK8sClusterRequest) (response *Ge
 }
 
 // GetK8sClusterWithChan invokes the edas.GetK8sCluster API asynchronously
-// api document: https://help.aliyun.com/api/edas/getk8scluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetK8sClusterWithChan(request *GetK8sClusterRequest) (<-chan *GetK8sClusterResponse, <-chan error) {
 	responseChan := make(chan *GetK8sClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetK8sClusterWithChan(request *GetK8sClusterRequest) (<-ch
 }
 
 // GetK8sClusterWithCallback invokes the edas.GetK8sCluster API asynchronously
-// api document: https://help.aliyun.com/api/edas/getk8scluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetK8sClusterWithCallback(request *GetK8sClusterRequest, callback func(response *GetK8sClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateGetK8sClusterRequest() (request *GetK8sClusterRequest) {
 	request = &GetK8sClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetK8sCluster", "/pop/v5/k8s_clusters", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetK8sCluster", "/pop/v5/k8s_clusters", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

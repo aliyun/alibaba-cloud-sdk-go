@@ -21,7 +21,6 @@ import (
 )
 
 // SynchronizeResource invokes the edas.SynchronizeResource API synchronously
-// api document: https://help.aliyun.com/api/edas/synchronizeresource.html
 func (client *Client) SynchronizeResource(request *SynchronizeResourceRequest) (response *SynchronizeResourceResponse, err error) {
 	response = CreateSynchronizeResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SynchronizeResource(request *SynchronizeResourceRequest) (
 }
 
 // SynchronizeResourceWithChan invokes the edas.SynchronizeResource API asynchronously
-// api document: https://help.aliyun.com/api/edas/synchronizeresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SynchronizeResourceWithChan(request *SynchronizeResourceRequest) (<-chan *SynchronizeResourceResponse, <-chan error) {
 	responseChan := make(chan *SynchronizeResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SynchronizeResourceWithChan(request *SynchronizeResourceRe
 }
 
 // SynchronizeResourceWithCallback invokes the edas.SynchronizeResource API asynchronously
-// api document: https://help.aliyun.com/api/edas/synchronizeresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SynchronizeResourceWithCallback(request *SynchronizeResourceRequest, callback func(response *SynchronizeResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateSynchronizeResourceRequest() (request *SynchronizeResourceRequest) {
 	request = &SynchronizeResourceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "SynchronizeResource", "/pop/v5/resource/pop_sync_resource", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "SynchronizeResource", "/pop/v5/resource/pop_sync_resource", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

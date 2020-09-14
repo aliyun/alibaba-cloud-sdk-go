@@ -21,7 +21,6 @@ import (
 )
 
 // GetSecureToken invokes the edas.GetSecureToken API synchronously
-// api document: https://help.aliyun.com/api/edas/getsecuretoken.html
 func (client *Client) GetSecureToken(request *GetSecureTokenRequest) (response *GetSecureTokenResponse, err error) {
 	response = CreateGetSecureTokenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetSecureToken(request *GetSecureTokenRequest) (response *
 }
 
 // GetSecureTokenWithChan invokes the edas.GetSecureToken API asynchronously
-// api document: https://help.aliyun.com/api/edas/getsecuretoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSecureTokenWithChan(request *GetSecureTokenRequest) (<-chan *GetSecureTokenResponse, <-chan error) {
 	responseChan := make(chan *GetSecureTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetSecureTokenWithChan(request *GetSecureTokenRequest) (<-
 }
 
 // GetSecureTokenWithCallback invokes the edas.GetSecureToken API asynchronously
-// api document: https://help.aliyun.com/api/edas/getsecuretoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSecureTokenWithCallback(request *GetSecureTokenRequest, callback func(response *GetSecureTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateGetSecureTokenRequest() (request *GetSecureTokenRequest) {
 	request = &GetSecureTokenRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetSecureToken", "/pop/v5/secure_token", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetSecureToken", "/pop/v5/secure_token", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

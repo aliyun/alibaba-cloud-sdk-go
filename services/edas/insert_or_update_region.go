@@ -21,7 +21,6 @@ import (
 )
 
 // InsertOrUpdateRegion invokes the edas.InsertOrUpdateRegion API synchronously
-// api document: https://help.aliyun.com/api/edas/insertorupdateregion.html
 func (client *Client) InsertOrUpdateRegion(request *InsertOrUpdateRegionRequest) (response *InsertOrUpdateRegionResponse, err error) {
 	response = CreateInsertOrUpdateRegionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InsertOrUpdateRegion(request *InsertOrUpdateRegionRequest)
 }
 
 // InsertOrUpdateRegionWithChan invokes the edas.InsertOrUpdateRegion API asynchronously
-// api document: https://help.aliyun.com/api/edas/insertorupdateregion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertOrUpdateRegionWithChan(request *InsertOrUpdateRegionRequest) (<-chan *InsertOrUpdateRegionResponse, <-chan error) {
 	responseChan := make(chan *InsertOrUpdateRegionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InsertOrUpdateRegionWithChan(request *InsertOrUpdateRegion
 }
 
 // InsertOrUpdateRegionWithCallback invokes the edas.InsertOrUpdateRegion API asynchronously
-// api document: https://help.aliyun.com/api/edas/insertorupdateregion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertOrUpdateRegionWithCallback(request *InsertOrUpdateRegionRequest, callback func(response *InsertOrUpdateRegionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateInsertOrUpdateRegionRequest() (request *InsertOrUpdateRegionRequest) 
 	request = &InsertOrUpdateRegionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertOrUpdateRegion", "/pop/v5/user_region_def", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertOrUpdateRegion", "/pop/v5/user_region_def", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

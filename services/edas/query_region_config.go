@@ -21,7 +21,6 @@ import (
 )
 
 // QueryRegionConfig invokes the edas.QueryRegionConfig API synchronously
-// api document: https://help.aliyun.com/api/edas/queryregionconfig.html
 func (client *Client) QueryRegionConfig(request *QueryRegionConfigRequest) (response *QueryRegionConfigResponse, err error) {
 	response = CreateQueryRegionConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryRegionConfig(request *QueryRegionConfigRequest) (resp
 }
 
 // QueryRegionConfigWithChan invokes the edas.QueryRegionConfig API asynchronously
-// api document: https://help.aliyun.com/api/edas/queryregionconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryRegionConfigWithChan(request *QueryRegionConfigRequest) (<-chan *QueryRegionConfigResponse, <-chan error) {
 	responseChan := make(chan *QueryRegionConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryRegionConfigWithChan(request *QueryRegionConfigReques
 }
 
 // QueryRegionConfigWithCallback invokes the edas.QueryRegionConfig API asynchronously
-// api document: https://help.aliyun.com/api/edas/queryregionconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryRegionConfigWithCallback(request *QueryRegionConfigRequest, callback func(response *QueryRegionConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateQueryRegionConfigRequest() (request *QueryRegionConfigRequest) {
 	request = &QueryRegionConfigRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "QueryRegionConfig", "/pop/v5/region_config", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "QueryRegionConfig", "/pop/v5/region_config", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

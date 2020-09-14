@@ -21,7 +21,6 @@ import (
 )
 
 // ListUserDefineRegion invokes the edas.ListUserDefineRegion API synchronously
-// api document: https://help.aliyun.com/api/edas/listuserdefineregion.html
 func (client *Client) ListUserDefineRegion(request *ListUserDefineRegionRequest) (response *ListUserDefineRegionResponse, err error) {
 	response = CreateListUserDefineRegionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListUserDefineRegion(request *ListUserDefineRegionRequest)
 }
 
 // ListUserDefineRegionWithChan invokes the edas.ListUserDefineRegion API asynchronously
-// api document: https://help.aliyun.com/api/edas/listuserdefineregion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUserDefineRegionWithChan(request *ListUserDefineRegionRequest) (<-chan *ListUserDefineRegionResponse, <-chan error) {
 	responseChan := make(chan *ListUserDefineRegionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListUserDefineRegionWithChan(request *ListUserDefineRegion
 }
 
 // ListUserDefineRegionWithCallback invokes the edas.ListUserDefineRegion API asynchronously
-// api document: https://help.aliyun.com/api/edas/listuserdefineregion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUserDefineRegionWithCallback(request *ListUserDefineRegionRequest, callback func(response *ListUserDefineRegionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateListUserDefineRegionRequest() (request *ListUserDefineRegionRequest) 
 	request = &ListUserDefineRegionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListUserDefineRegion", "/pop/v5/user_region_defs", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListUserDefineRegion", "/pop/v5/user_region_defs", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

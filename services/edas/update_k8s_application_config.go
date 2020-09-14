@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateK8sApplicationConfig invokes the edas.UpdateK8sApplicationConfig API synchronously
-// api document: https://help.aliyun.com/api/edas/updatek8sapplicationconfig.html
 func (client *Client) UpdateK8sApplicationConfig(request *UpdateK8sApplicationConfigRequest) (response *UpdateK8sApplicationConfigResponse, err error) {
 	response = CreateUpdateK8sApplicationConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateK8sApplicationConfig(request *UpdateK8sApplicationCo
 }
 
 // UpdateK8sApplicationConfigWithChan invokes the edas.UpdateK8sApplicationConfig API asynchronously
-// api document: https://help.aliyun.com/api/edas/updatek8sapplicationconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateK8sApplicationConfigWithChan(request *UpdateK8sApplicationConfigRequest) (<-chan *UpdateK8sApplicationConfigResponse, <-chan error) {
 	responseChan := make(chan *UpdateK8sApplicationConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateK8sApplicationConfigWithChan(request *UpdateK8sAppli
 }
 
 // UpdateK8sApplicationConfigWithCallback invokes the edas.UpdateK8sApplicationConfig API asynchronously
-// api document: https://help.aliyun.com/api/edas/updatek8sapplicationconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateK8sApplicationConfigWithCallback(request *UpdateK8sApplicationConfigRequest, callback func(response *UpdateK8sApplicationConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,7 @@ func CreateUpdateK8sApplicationConfigRequest() (request *UpdateK8sApplicationCon
 	request = &UpdateK8sApplicationConfigRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "/pop/v5/k8s/acs/k8s_app_configuration", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateK8sApplicationConfig", "/pop/v5/k8s/acs/k8s_app_configuration", "edas", "openAPI")
 	request.Method = requests.PUT
 	return
 }

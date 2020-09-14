@@ -21,7 +21,6 @@ import (
 )
 
 // InsertRole invokes the edas.InsertRole API synchronously
-// api document: https://help.aliyun.com/api/edas/insertrole.html
 func (client *Client) InsertRole(request *InsertRoleRequest) (response *InsertRoleResponse, err error) {
 	response = CreateInsertRoleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InsertRole(request *InsertRoleRequest) (response *InsertRo
 }
 
 // InsertRoleWithChan invokes the edas.InsertRole API asynchronously
-// api document: https://help.aliyun.com/api/edas/insertrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertRoleWithChan(request *InsertRoleRequest) (<-chan *InsertRoleResponse, <-chan error) {
 	responseChan := make(chan *InsertRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InsertRoleWithChan(request *InsertRoleRequest) (<-chan *In
 }
 
 // InsertRoleWithCallback invokes the edas.InsertRole API asynchronously
-// api document: https://help.aliyun.com/api/edas/insertrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertRoleWithCallback(request *InsertRoleRequest, callback func(response *InsertRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateInsertRoleRequest() (request *InsertRoleRequest) {
 	request = &InsertRoleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertRole", "/pop/v5/account/create_role", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertRole", "/pop/v5/account/create_role", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

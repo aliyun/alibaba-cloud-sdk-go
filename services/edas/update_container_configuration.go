@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateContainerConfiguration invokes the edas.UpdateContainerConfiguration API synchronously
-// api document: https://help.aliyun.com/api/edas/updatecontainerconfiguration.html
 func (client *Client) UpdateContainerConfiguration(request *UpdateContainerConfigurationRequest) (response *UpdateContainerConfigurationResponse, err error) {
 	response = CreateUpdateContainerConfigurationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateContainerConfiguration(request *UpdateContainerConfi
 }
 
 // UpdateContainerConfigurationWithChan invokes the edas.UpdateContainerConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/edas/updatecontainerconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateContainerConfigurationWithChan(request *UpdateContainerConfigurationRequest) (<-chan *UpdateContainerConfigurationResponse, <-chan error) {
 	responseChan := make(chan *UpdateContainerConfigurationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateContainerConfigurationWithChan(request *UpdateContai
 }
 
 // UpdateContainerConfigurationWithCallback invokes the edas.UpdateContainerConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/edas/updatecontainerconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateContainerConfigurationWithCallback(request *UpdateContainerConfigurationRequest, callback func(response *UpdateContainerConfigurationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateUpdateContainerConfigurationRequest() (request *UpdateContainerConfig
 	request = &UpdateContainerConfigurationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateContainerConfiguration", "/pop/v5/app/container_config", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateContainerConfiguration", "/pop/v5/app/container_config", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

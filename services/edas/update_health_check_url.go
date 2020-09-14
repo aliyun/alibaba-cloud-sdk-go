@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateHealthCheckUrl invokes the edas.UpdateHealthCheckUrl API synchronously
-// api document: https://help.aliyun.com/api/edas/updatehealthcheckurl.html
 func (client *Client) UpdateHealthCheckUrl(request *UpdateHealthCheckUrlRequest) (response *UpdateHealthCheckUrlResponse, err error) {
 	response = CreateUpdateHealthCheckUrlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateHealthCheckUrl(request *UpdateHealthCheckUrlRequest)
 }
 
 // UpdateHealthCheckUrlWithChan invokes the edas.UpdateHealthCheckUrl API asynchronously
-// api document: https://help.aliyun.com/api/edas/updatehealthcheckurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateHealthCheckUrlWithChan(request *UpdateHealthCheckUrlRequest) (<-chan *UpdateHealthCheckUrlResponse, <-chan error) {
 	responseChan := make(chan *UpdateHealthCheckUrlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateHealthCheckUrlWithChan(request *UpdateHealthCheckUrl
 }
 
 // UpdateHealthCheckUrlWithCallback invokes the edas.UpdateHealthCheckUrl API asynchronously
-// api document: https://help.aliyun.com/api/edas/updatehealthcheckurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateHealthCheckUrlWithCallback(request *UpdateHealthCheckUrlRequest, callback func(response *UpdateHealthCheckUrlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateUpdateHealthCheckUrlRequest() (request *UpdateHealthCheckUrlRequest) 
 	request = &UpdateHealthCheckUrlRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateHealthCheckUrl", "/pop/v5/app/modify_hc_url", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateHealthCheckUrl", "/pop/v5/app/modify_hc_url", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // ListVpc invokes the edas.ListVpc API synchronously
-// api document: https://help.aliyun.com/api/edas/listvpc.html
 func (client *Client) ListVpc(request *ListVpcRequest) (response *ListVpcResponse, err error) {
 	response = CreateListVpcResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListVpc(request *ListVpcRequest) (response *ListVpcRespons
 }
 
 // ListVpcWithChan invokes the edas.ListVpc API asynchronously
-// api document: https://help.aliyun.com/api/edas/listvpc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVpcWithChan(request *ListVpcRequest) (<-chan *ListVpcResponse, <-chan error) {
 	responseChan := make(chan *ListVpcResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListVpcWithChan(request *ListVpcRequest) (<-chan *ListVpcR
 }
 
 // ListVpcWithCallback invokes the edas.ListVpc API asynchronously
-// api document: https://help.aliyun.com/api/edas/listvpc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVpcWithCallback(request *ListVpcRequest, callback func(response *ListVpcResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateListVpcRequest() (request *ListVpcRequest) {
 	request = &ListVpcRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListVpc", "/pop/v5/vpc_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListVpc", "/pop/v5/vpc_list", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

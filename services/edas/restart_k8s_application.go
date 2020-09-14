@@ -21,7 +21,6 @@ import (
 )
 
 // RestartK8sApplication invokes the edas.RestartK8sApplication API synchronously
-// api document: https://help.aliyun.com/api/edas/restartk8sapplication.html
 func (client *Client) RestartK8sApplication(request *RestartK8sApplicationRequest) (response *RestartK8sApplicationResponse, err error) {
 	response = CreateRestartK8sApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RestartK8sApplication(request *RestartK8sApplicationReques
 }
 
 // RestartK8sApplicationWithChan invokes the edas.RestartK8sApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/restartk8sapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartK8sApplicationWithChan(request *RestartK8sApplicationRequest) (<-chan *RestartK8sApplicationResponse, <-chan error) {
 	responseChan := make(chan *RestartK8sApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RestartK8sApplicationWithChan(request *RestartK8sApplicati
 }
 
 // RestartK8sApplicationWithCallback invokes the edas.RestartK8sApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/restartk8sapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartK8sApplicationWithCallback(request *RestartK8sApplicationRequest, callback func(response *RestartK8sApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateRestartK8sApplicationRequest() (request *RestartK8sApplicationRequest
 	request = &RestartK8sApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "RestartK8sApplication", "/pop/v5/k8s/acs/restart_k8s_app", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "RestartK8sApplication", "/pop/v5/k8s/acs/restart_k8s_app", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

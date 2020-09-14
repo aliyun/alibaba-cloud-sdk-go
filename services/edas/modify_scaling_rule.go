@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyScalingRule invokes the edas.ModifyScalingRule API synchronously
-// api document: https://help.aliyun.com/api/edas/modifyscalingrule.html
 func (client *Client) ModifyScalingRule(request *ModifyScalingRuleRequest) (response *ModifyScalingRuleResponse, err error) {
 	response = CreateModifyScalingRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyScalingRule(request *ModifyScalingRuleRequest) (resp
 }
 
 // ModifyScalingRuleWithChan invokes the edas.ModifyScalingRule API asynchronously
-// api document: https://help.aliyun.com/api/edas/modifyscalingrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyScalingRuleWithChan(request *ModifyScalingRuleRequest) (<-chan *ModifyScalingRuleResponse, <-chan error) {
 	responseChan := make(chan *ModifyScalingRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyScalingRuleWithChan(request *ModifyScalingRuleReques
 }
 
 // ModifyScalingRuleWithCallback invokes the edas.ModifyScalingRule API asynchronously
-// api document: https://help.aliyun.com/api/edas/modifyscalingrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyScalingRuleWithCallback(request *ModifyScalingRuleRequest, callback func(response *ModifyScalingRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -121,7 +116,7 @@ func CreateModifyScalingRuleRequest() (request *ModifyScalingRuleRequest) {
 	request = &ModifyScalingRuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ModifyScalingRule", "/pop/v5/app/scaling_rules", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ModifyScalingRule", "/pop/v5/app/scaling_rules", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

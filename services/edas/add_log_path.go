@@ -21,7 +21,6 @@ import (
 )
 
 // AddLogPath invokes the edas.AddLogPath API synchronously
-// api document: https://help.aliyun.com/api/edas/addlogpath.html
 func (client *Client) AddLogPath(request *AddLogPathRequest) (response *AddLogPathResponse, err error) {
 	response = CreateAddLogPathResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddLogPath(request *AddLogPathRequest) (response *AddLogPa
 }
 
 // AddLogPathWithChan invokes the edas.AddLogPath API asynchronously
-// api document: https://help.aliyun.com/api/edas/addlogpath.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLogPathWithChan(request *AddLogPathRequest) (<-chan *AddLogPathResponse, <-chan error) {
 	responseChan := make(chan *AddLogPathResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddLogPathWithChan(request *AddLogPathRequest) (<-chan *Ad
 }
 
 // AddLogPathWithCallback invokes the edas.AddLogPath API asynchronously
-// api document: https://help.aliyun.com/api/edas/addlogpath.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLogPathWithCallback(request *AddLogPathRequest, callback func(response *AddLogPathResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateAddLogPathRequest() (request *AddLogPathRequest) {
 	request = &AddLogPathRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "AddLogPath", "/pop/v5/log/popListLogDirs", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "AddLogPath", "/pop/v5/log/popListLogDirs", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

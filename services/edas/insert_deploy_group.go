@@ -21,7 +21,6 @@ import (
 )
 
 // InsertDeployGroup invokes the edas.InsertDeployGroup API synchronously
-// api document: https://help.aliyun.com/api/edas/insertdeploygroup.html
 func (client *Client) InsertDeployGroup(request *InsertDeployGroupRequest) (response *InsertDeployGroupResponse, err error) {
 	response = CreateInsertDeployGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InsertDeployGroup(request *InsertDeployGroupRequest) (resp
 }
 
 // InsertDeployGroupWithChan invokes the edas.InsertDeployGroup API asynchronously
-// api document: https://help.aliyun.com/api/edas/insertdeploygroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertDeployGroupWithChan(request *InsertDeployGroupRequest) (<-chan *InsertDeployGroupResponse, <-chan error) {
 	responseChan := make(chan *InsertDeployGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InsertDeployGroupWithChan(request *InsertDeployGroupReques
 }
 
 // InsertDeployGroupWithCallback invokes the edas.InsertDeployGroup API asynchronously
-// api document: https://help.aliyun.com/api/edas/insertdeploygroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertDeployGroupWithCallback(request *InsertDeployGroupRequest, callback func(response *InsertDeployGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,9 @@ func (client *Client) InsertDeployGroupWithCallback(request *InsertDeployGroupRe
 // InsertDeployGroupRequest is the request struct for api InsertDeployGroup
 type InsertDeployGroupRequest struct {
 	*requests.RoaRequest
-	AppId     string `position:"Query" name:"AppId"`
-	GroupName string `position:"Query" name:"GroupName"`
+	AppId                string `position:"Query" name:"AppId"`
+	GroupName            string `position:"Query" name:"GroupName"`
+	InitPackageVersionId string `position:"Query" name:"InitPackageVersionId"`
 }
 
 // InsertDeployGroupResponse is the response struct for api InsertDeployGroup
@@ -94,7 +90,7 @@ func CreateInsertDeployGroupRequest() (request *InsertDeployGroupRequest) {
 	request = &InsertDeployGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertDeployGroup", "/pop/v5/deploy_group", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertDeployGroup", "/pop/v5/deploy_group", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

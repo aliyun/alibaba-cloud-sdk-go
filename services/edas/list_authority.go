@@ -21,7 +21,6 @@ import (
 )
 
 // ListAuthority invokes the edas.ListAuthority API synchronously
-// api document: https://help.aliyun.com/api/edas/listauthority.html
 func (client *Client) ListAuthority(request *ListAuthorityRequest) (response *ListAuthorityResponse, err error) {
 	response = CreateListAuthorityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAuthority(request *ListAuthorityRequest) (response *Li
 }
 
 // ListAuthorityWithChan invokes the edas.ListAuthority API asynchronously
-// api document: https://help.aliyun.com/api/edas/listauthority.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAuthorityWithChan(request *ListAuthorityRequest) (<-chan *ListAuthorityResponse, <-chan error) {
 	responseChan := make(chan *ListAuthorityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAuthorityWithChan(request *ListAuthorityRequest) (<-ch
 }
 
 // ListAuthorityWithCallback invokes the edas.ListAuthority API asynchronously
-// api document: https://help.aliyun.com/api/edas/listauthority.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAuthorityWithCallback(request *ListAuthorityRequest, callback func(response *ListAuthorityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateListAuthorityRequest() (request *ListAuthorityRequest) {
 	request = &ListAuthorityRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListAuthority", "/pop/v5/account/authority_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListAuthority", "/pop/v5/account/authority_list", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

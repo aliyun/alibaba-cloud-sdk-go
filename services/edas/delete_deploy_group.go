@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDeployGroup invokes the edas.DeleteDeployGroup API synchronously
-// api document: https://help.aliyun.com/api/edas/deletedeploygroup.html
 func (client *Client) DeleteDeployGroup(request *DeleteDeployGroupRequest) (response *DeleteDeployGroupResponse, err error) {
 	response = CreateDeleteDeployGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDeployGroup(request *DeleteDeployGroupRequest) (resp
 }
 
 // DeleteDeployGroupWithChan invokes the edas.DeleteDeployGroup API asynchronously
-// api document: https://help.aliyun.com/api/edas/deletedeploygroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDeployGroupWithChan(request *DeleteDeployGroupRequest) (<-chan *DeleteDeployGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteDeployGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDeployGroupWithChan(request *DeleteDeployGroupReques
 }
 
 // DeleteDeployGroupWithCallback invokes the edas.DeleteDeployGroup API asynchronously
-// api document: https://help.aliyun.com/api/edas/deletedeploygroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDeployGroupWithCallback(request *DeleteDeployGroupRequest, callback func(response *DeleteDeployGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDeleteDeployGroupRequest() (request *DeleteDeployGroupRequest) {
 	request = &DeleteDeployGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteDeployGroup", "/pop/v5/deploy_group", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteDeployGroup", "/pop/v5/deploy_group", "edas", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

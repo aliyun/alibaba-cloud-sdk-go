@@ -21,7 +21,6 @@ import (
 )
 
 // ListConsumedServices invokes the edas.ListConsumedServices API synchronously
-// api document: https://help.aliyun.com/api/edas/listconsumedservices.html
 func (client *Client) ListConsumedServices(request *ListConsumedServicesRequest) (response *ListConsumedServicesResponse, err error) {
 	response = CreateListConsumedServicesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListConsumedServices(request *ListConsumedServicesRequest)
 }
 
 // ListConsumedServicesWithChan invokes the edas.ListConsumedServices API asynchronously
-// api document: https://help.aliyun.com/api/edas/listconsumedservices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListConsumedServicesWithChan(request *ListConsumedServicesRequest) (<-chan *ListConsumedServicesResponse, <-chan error) {
 	responseChan := make(chan *ListConsumedServicesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListConsumedServicesWithChan(request *ListConsumedServices
 }
 
 // ListConsumedServicesWithCallback invokes the edas.ListConsumedServices API asynchronously
-// api document: https://help.aliyun.com/api/edas/listconsumedservices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListConsumedServicesWithCallback(request *ListConsumedServicesRequest, callback func(response *ListConsumedServicesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateListConsumedServicesRequest() (request *ListConsumedServicesRequest) 
 	request = &ListConsumedServicesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListConsumedServices", "/pop/v5/service/listConsumedServices", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListConsumedServices", "/pop/v5/service/listConsumedServices", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

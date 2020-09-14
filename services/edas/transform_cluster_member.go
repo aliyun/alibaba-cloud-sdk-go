@@ -21,7 +21,6 @@ import (
 )
 
 // TransformClusterMember invokes the edas.TransformClusterMember API synchronously
-// api document: https://help.aliyun.com/api/edas/transformclustermember.html
 func (client *Client) TransformClusterMember(request *TransformClusterMemberRequest) (response *TransformClusterMemberResponse, err error) {
 	response = CreateTransformClusterMemberResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TransformClusterMember(request *TransformClusterMemberRequ
 }
 
 // TransformClusterMemberWithChan invokes the edas.TransformClusterMember API asynchronously
-// api document: https://help.aliyun.com/api/edas/transformclustermember.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TransformClusterMemberWithChan(request *TransformClusterMemberRequest) (<-chan *TransformClusterMemberResponse, <-chan error) {
 	responseChan := make(chan *TransformClusterMemberResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TransformClusterMemberWithChan(request *TransformClusterMe
 }
 
 // TransformClusterMemberWithCallback invokes the edas.TransformClusterMember API asynchronously
-// api document: https://help.aliyun.com/api/edas/transformclustermember.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TransformClusterMemberWithCallback(request *TransformClusterMemberRequest, callback func(response *TransformClusterMemberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateTransformClusterMemberRequest() (request *TransformClusterMemberReque
 	request = &TransformClusterMemberRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "TransformClusterMember", "/pop/v5/resource/transform_cluster_member", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "TransformClusterMember", "/pop/v5/resource/transform_cluster_member", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

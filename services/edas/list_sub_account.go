@@ -21,7 +21,6 @@ import (
 )
 
 // ListSubAccount invokes the edas.ListSubAccount API synchronously
-// api document: https://help.aliyun.com/api/edas/listsubaccount.html
 func (client *Client) ListSubAccount(request *ListSubAccountRequest) (response *ListSubAccountResponse, err error) {
 	response = CreateListSubAccountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSubAccount(request *ListSubAccountRequest) (response *
 }
 
 // ListSubAccountWithChan invokes the edas.ListSubAccount API asynchronously
-// api document: https://help.aliyun.com/api/edas/listsubaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSubAccountWithChan(request *ListSubAccountRequest) (<-chan *ListSubAccountResponse, <-chan error) {
 	responseChan := make(chan *ListSubAccountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSubAccountWithChan(request *ListSubAccountRequest) (<-
 }
 
 // ListSubAccountWithCallback invokes the edas.ListSubAccount API asynchronously
-// api document: https://help.aliyun.com/api/edas/listsubaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSubAccountWithCallback(request *ListSubAccountRequest, callback func(response *ListSubAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateListSubAccountRequest() (request *ListSubAccountRequest) {
 	request = &ListSubAccountRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListSubAccount", "/pop/v5/account/sub_account_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListSubAccount", "/pop/v5/account/sub_account_list", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

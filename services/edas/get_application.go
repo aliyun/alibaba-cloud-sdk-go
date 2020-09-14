@@ -21,7 +21,6 @@ import (
 )
 
 // GetApplication invokes the edas.GetApplication API synchronously
-// api document: https://help.aliyun.com/api/edas/getapplication.html
 func (client *Client) GetApplication(request *GetApplicationRequest) (response *GetApplicationResponse, err error) {
 	response = CreateGetApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetApplication(request *GetApplicationRequest) (response *
 }
 
 // GetApplicationWithChan invokes the edas.GetApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/getapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetApplicationWithChan(request *GetApplicationRequest) (<-chan *GetApplicationResponse, <-chan error) {
 	responseChan := make(chan *GetApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetApplicationWithChan(request *GetApplicationRequest) (<-
 }
 
 // GetApplicationWithCallback invokes the edas.GetApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/getapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetApplicationWithCallback(request *GetApplicationRequest, callback func(response *GetApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateGetApplicationRequest() (request *GetApplicationRequest) {
 	request = &GetApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetApplication", "/pop/v5/app/app_info", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetApplication", "/pop/v5/app/app_info", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

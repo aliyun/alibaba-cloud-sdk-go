@@ -21,7 +21,6 @@ import (
 )
 
 // ListComponents invokes the edas.ListComponents API synchronously
-// api document: https://help.aliyun.com/api/edas/listcomponents.html
 func (client *Client) ListComponents(request *ListComponentsRequest) (response *ListComponentsResponse, err error) {
 	response = CreateListComponentsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListComponents(request *ListComponentsRequest) (response *
 }
 
 // ListComponentsWithChan invokes the edas.ListComponents API asynchronously
-// api document: https://help.aliyun.com/api/edas/listcomponents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListComponentsWithChan(request *ListComponentsRequest) (<-chan *ListComponentsResponse, <-chan error) {
 	responseChan := make(chan *ListComponentsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListComponentsWithChan(request *ListComponentsRequest) (<-
 }
 
 // ListComponentsWithCallback invokes the edas.ListComponents API asynchronously
-// api document: https://help.aliyun.com/api/edas/listcomponents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListComponentsWithCallback(request *ListComponentsRequest, callback func(response *ListComponentsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +78,8 @@ type ListComponentsResponse struct {
 	*responses.BaseResponse
 	Code          int           `json:"Code" xml:"Code"`
 	Message       string        `json:"Message" xml:"Message"`
+	ComponentKey  string        `json:"ComponentKey" xml:"ComponentKey"`
+	Desc          string        `json:"Desc" xml:"Desc"`
 	ComponentList ComponentList `json:"ComponentList" xml:"ComponentList"`
 }
 
@@ -91,7 +88,7 @@ func CreateListComponentsRequest() (request *ListComponentsRequest) {
 	request = &ListComponentsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListComponents", "/pop/v5/resource/components", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListComponents", "/pop/v5/resource/components", "edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

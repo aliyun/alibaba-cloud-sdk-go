@@ -21,7 +21,6 @@ import (
 )
 
 // ListApplication invokes the edas.ListApplication API synchronously
-// api document: https://help.aliyun.com/api/edas/listapplication.html
 func (client *Client) ListApplication(request *ListApplicationRequest) (response *ListApplicationResponse, err error) {
 	response = CreateListApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListApplication(request *ListApplicationRequest) (response
 }
 
 // ListApplicationWithChan invokes the edas.ListApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/listapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListApplicationWithChan(request *ListApplicationRequest) (<-chan *ListApplicationResponse, <-chan error) {
 	responseChan := make(chan *ListApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListApplicationWithChan(request *ListApplicationRequest) (
 }
 
 // ListApplicationWithCallback invokes the edas.ListApplication API asynchronously
-// api document: https://help.aliyun.com/api/edas/listapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListApplicationWithCallback(request *ListApplicationRequest, callback func(response *ListApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,7 +71,9 @@ func (client *Client) ListApplicationWithCallback(request *ListApplicationReques
 // ListApplicationRequest is the request struct for api ListApplication
 type ListApplicationRequest struct {
 	*requests.RoaRequest
-	ClusterId string `position:"Query" name:"ClusterId"`
+	AppName         string `position:"Query" name:"AppName"`
+	LogicalRegionId string `position:"Query" name:"LogicalRegionId"`
+	ClusterId       string `position:"Query" name:"ClusterId"`
 }
 
 // ListApplicationResponse is the response struct for api ListApplication
@@ -93,7 +90,7 @@ func CreateListApplicationRequest() (request *ListApplicationRequest) {
 	request = &ListApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListApplication", "/pop/v5/app/app_list", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListApplication", "/pop/v5/app/app_list", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

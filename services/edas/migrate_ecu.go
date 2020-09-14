@@ -21,7 +21,6 @@ import (
 )
 
 // MigrateEcu invokes the edas.MigrateEcu API synchronously
-// api document: https://help.aliyun.com/api/edas/migrateecu.html
 func (client *Client) MigrateEcu(request *MigrateEcuRequest) (response *MigrateEcuResponse, err error) {
 	response = CreateMigrateEcuResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) MigrateEcu(request *MigrateEcuRequest) (response *MigrateE
 }
 
 // MigrateEcuWithChan invokes the edas.MigrateEcu API asynchronously
-// api document: https://help.aliyun.com/api/edas/migrateecu.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MigrateEcuWithChan(request *MigrateEcuRequest) (<-chan *MigrateEcuResponse, <-chan error) {
 	responseChan := make(chan *MigrateEcuResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) MigrateEcuWithChan(request *MigrateEcuRequest) (<-chan *Mi
 }
 
 // MigrateEcuWithCallback invokes the edas.MigrateEcu API asynchronously
-// api document: https://help.aliyun.com/api/edas/migrateecu.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MigrateEcuWithCallback(request *MigrateEcuRequest, callback func(response *MigrateEcuResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateMigrateEcuRequest() (request *MigrateEcuRequest) {
 	request = &MigrateEcuRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "MigrateEcu", "/pop/v5/resource/migrate_ecu", "Edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "MigrateEcu", "/pop/v5/resource/migrate_ecu", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }
