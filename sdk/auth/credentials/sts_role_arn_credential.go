@@ -15,6 +15,7 @@ type RamRoleArnCredential struct {
 	RoleArn               string
 	RoleSessionName       string
 	RoleSessionExpiration int
+	Policy                string
 }
 
 // Deprecated: Use RamRoleArnCredential in this package instead.
