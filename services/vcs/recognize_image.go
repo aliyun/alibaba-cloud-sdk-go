@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeImage invokes the vcs.RecognizeImage API synchronously
-// api document: https://help.aliyun.com/api/vcs/recognizeimage.html
 func (client *Client) RecognizeImage(request *RecognizeImageRequest) (response *RecognizeImageResponse, err error) {
 	response = CreateRecognizeImageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeImage(request *RecognizeImageRequest) (response *
 }
 
 // RecognizeImageWithChan invokes the vcs.RecognizeImage API asynchronously
-// api document: https://help.aliyun.com/api/vcs/recognizeimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeImageWithChan(request *RecognizeImageRequest) (<-chan *RecognizeImageResponse, <-chan error) {
 	responseChan := make(chan *RecognizeImageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeImageWithChan(request *RecognizeImageRequest) (<-
 }
 
 // RecognizeImageWithCallback invokes the vcs.RecognizeImage API asynchronously
-// api document: https://help.aliyun.com/api/vcs/recognizeimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeImageWithCallback(request *RecognizeImageRequest, callback func(response *RecognizeImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

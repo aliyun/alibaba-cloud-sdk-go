@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteCorpGroup invokes the vcs.DeleteCorpGroup API synchronously
-// api document: https://help.aliyun.com/api/vcs/deletecorpgroup.html
 func (client *Client) DeleteCorpGroup(request *DeleteCorpGroupRequest) (response *DeleteCorpGroupResponse, err error) {
 	response = CreateDeleteCorpGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteCorpGroup(request *DeleteCorpGroupRequest) (response
 }
 
 // DeleteCorpGroupWithChan invokes the vcs.DeleteCorpGroup API asynchronously
-// api document: https://help.aliyun.com/api/vcs/deletecorpgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCorpGroupWithChan(request *DeleteCorpGroupRequest) (<-chan *DeleteCorpGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteCorpGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteCorpGroupWithChan(request *DeleteCorpGroupRequest) (
 }
 
 // DeleteCorpGroupWithCallback invokes the vcs.DeleteCorpGroup API asynchronously
-// api document: https://help.aliyun.com/api/vcs/deletecorpgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCorpGroupWithCallback(request *DeleteCorpGroupRequest, callback func(response *DeleteCorpGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

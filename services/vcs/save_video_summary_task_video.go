@@ -21,7 +21,6 @@ import (
 )
 
 // SaveVideoSummaryTaskVideo invokes the vcs.SaveVideoSummaryTaskVideo API synchronously
-// api document: https://help.aliyun.com/api/vcs/savevideosummarytaskvideo.html
 func (client *Client) SaveVideoSummaryTaskVideo(request *SaveVideoSummaryTaskVideoRequest) (response *SaveVideoSummaryTaskVideoResponse, err error) {
 	response = CreateSaveVideoSummaryTaskVideoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveVideoSummaryTaskVideo(request *SaveVideoSummaryTaskVid
 }
 
 // SaveVideoSummaryTaskVideoWithChan invokes the vcs.SaveVideoSummaryTaskVideo API asynchronously
-// api document: https://help.aliyun.com/api/vcs/savevideosummarytaskvideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveVideoSummaryTaskVideoWithChan(request *SaveVideoSummaryTaskVideoRequest) (<-chan *SaveVideoSummaryTaskVideoResponse, <-chan error) {
 	responseChan := make(chan *SaveVideoSummaryTaskVideoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveVideoSummaryTaskVideoWithChan(request *SaveVideoSummar
 }
 
 // SaveVideoSummaryTaskVideoWithCallback invokes the vcs.SaveVideoSummaryTaskVideo API asynchronously
-// api document: https://help.aliyun.com/api/vcs/savevideosummarytaskvideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveVideoSummaryTaskVideoWithCallback(request *SaveVideoSummaryTaskVideoRequest, callback func(response *SaveVideoSummaryTaskVideoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

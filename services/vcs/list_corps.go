@@ -21,7 +21,6 @@ import (
 )
 
 // ListCorps invokes the vcs.ListCorps API synchronously
-// api document: https://help.aliyun.com/api/vcs/listcorps.html
 func (client *Client) ListCorps(request *ListCorpsRequest) (response *ListCorpsResponse, err error) {
 	response = CreateListCorpsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListCorps(request *ListCorpsRequest) (response *ListCorpsR
 }
 
 // ListCorpsWithChan invokes the vcs.ListCorps API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listcorps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCorpsWithChan(request *ListCorpsRequest) (<-chan *ListCorpsResponse, <-chan error) {
 	responseChan := make(chan *ListCorpsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListCorpsWithChan(request *ListCorpsRequest) (<-chan *List
 }
 
 // ListCorpsWithCallback invokes the vcs.ListCorps API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listcorps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCorpsWithCallback(request *ListCorpsRequest, callback func(response *ListCorpsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type ListCorpsRequest struct {
 	*requests.RpcRequest
 	PageNumber requests.Integer `position:"Body" name:"PageNumber"`
 	PageSize   requests.Integer `position:"Body" name:"PageSize"`
+	CorpName   string           `position:"Body" name:"CorpName"`
 }
 
 // ListCorpsResponse is the response struct for api ListCorps

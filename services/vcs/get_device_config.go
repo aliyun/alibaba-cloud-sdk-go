@@ -21,7 +21,6 @@ import (
 )
 
 // GetDeviceConfig invokes the vcs.GetDeviceConfig API synchronously
-// api document: https://help.aliyun.com/api/vcs/getdeviceconfig.html
 func (client *Client) GetDeviceConfig(request *GetDeviceConfigRequest) (response *GetDeviceConfigResponse, err error) {
 	response = CreateGetDeviceConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetDeviceConfig(request *GetDeviceConfigRequest) (response
 }
 
 // GetDeviceConfigWithChan invokes the vcs.GetDeviceConfig API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getdeviceconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDeviceConfigWithChan(request *GetDeviceConfigRequest) (<-chan *GetDeviceConfigResponse, <-chan error) {
 	responseChan := make(chan *GetDeviceConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetDeviceConfigWithChan(request *GetDeviceConfigRequest) (
 }
 
 // GetDeviceConfigWithCallback invokes the vcs.GetDeviceConfig API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getdeviceconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDeviceConfigWithCallback(request *GetDeviceConfigRequest, callback func(response *GetDeviceConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

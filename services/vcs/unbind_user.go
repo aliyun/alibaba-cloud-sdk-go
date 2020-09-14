@@ -21,7 +21,6 @@ import (
 )
 
 // UnbindUser invokes the vcs.UnbindUser API synchronously
-// api document: https://help.aliyun.com/api/vcs/unbinduser.html
 func (client *Client) UnbindUser(request *UnbindUserRequest) (response *UnbindUserResponse, err error) {
 	response = CreateUnbindUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnbindUser(request *UnbindUserRequest) (response *UnbindUs
 }
 
 // UnbindUserWithChan invokes the vcs.UnbindUser API asynchronously
-// api document: https://help.aliyun.com/api/vcs/unbinduser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindUserWithChan(request *UnbindUserRequest) (<-chan *UnbindUserResponse, <-chan error) {
 	responseChan := make(chan *UnbindUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnbindUserWithChan(request *UnbindUserRequest) (<-chan *Un
 }
 
 // UnbindUserWithCallback invokes the vcs.UnbindUser API asynchronously
-// api document: https://help.aliyun.com/api/vcs/unbinduser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindUserWithCallback(request *UnbindUserRequest, callback func(response *UnbindUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

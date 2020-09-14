@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDataSource invokes the vcs.DeleteDataSource API synchronously
-// api document: https://help.aliyun.com/api/vcs/deletedatasource.html
 func (client *Client) DeleteDataSource(request *DeleteDataSourceRequest) (response *DeleteDataSourceResponse, err error) {
 	response = CreateDeleteDataSourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDataSource(request *DeleteDataSourceRequest) (respon
 }
 
 // DeleteDataSourceWithChan invokes the vcs.DeleteDataSource API asynchronously
-// api document: https://help.aliyun.com/api/vcs/deletedatasource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDataSourceWithChan(request *DeleteDataSourceRequest) (<-chan *DeleteDataSourceResponse, <-chan error) {
 	responseChan := make(chan *DeleteDataSourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDataSourceWithChan(request *DeleteDataSourceRequest)
 }
 
 // DeleteDataSourceWithCallback invokes the vcs.DeleteDataSource API asynchronously
-// api document: https://help.aliyun.com/api/vcs/deletedatasource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDataSourceWithCallback(request *DeleteDataSourceRequest, callback func(response *DeleteDataSourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

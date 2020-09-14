@@ -21,7 +21,6 @@ import (
 )
 
 // GetDeviceVideoUrl invokes the vcs.GetDeviceVideoUrl API synchronously
-// api document: https://help.aliyun.com/api/vcs/getdevicevideourl.html
 func (client *Client) GetDeviceVideoUrl(request *GetDeviceVideoUrlRequest) (response *GetDeviceVideoUrlResponse, err error) {
 	response = CreateGetDeviceVideoUrlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetDeviceVideoUrl(request *GetDeviceVideoUrlRequest) (resp
 }
 
 // GetDeviceVideoUrlWithChan invokes the vcs.GetDeviceVideoUrl API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getdevicevideourl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDeviceVideoUrlWithChan(request *GetDeviceVideoUrlRequest) (<-chan *GetDeviceVideoUrlResponse, <-chan error) {
 	responseChan := make(chan *GetDeviceVideoUrlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetDeviceVideoUrlWithChan(request *GetDeviceVideoUrlReques
 }
 
 // GetDeviceVideoUrlWithCallback invokes the vcs.GetDeviceVideoUrl API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getdevicevideourl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDeviceVideoUrlWithCallback(request *GetDeviceVideoUrlRequest, callback func(response *GetDeviceVideoUrlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

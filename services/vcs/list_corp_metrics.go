@@ -21,7 +21,6 @@ import (
 )
 
 // ListCorpMetrics invokes the vcs.ListCorpMetrics API synchronously
-// api document: https://help.aliyun.com/api/vcs/listcorpmetrics.html
 func (client *Client) ListCorpMetrics(request *ListCorpMetricsRequest) (response *ListCorpMetricsResponse, err error) {
 	response = CreateListCorpMetricsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListCorpMetrics(request *ListCorpMetricsRequest) (response
 }
 
 // ListCorpMetricsWithChan invokes the vcs.ListCorpMetrics API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listcorpmetrics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCorpMetricsWithChan(request *ListCorpMetricsRequest) (<-chan *ListCorpMetricsResponse, <-chan error) {
 	responseChan := make(chan *ListCorpMetricsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListCorpMetricsWithChan(request *ListCorpMetricsRequest) (
 }
 
 // ListCorpMetricsWithCallback invokes the vcs.ListCorpMetrics API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listcorpmetrics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCorpMetricsWithCallback(request *ListCorpMetricsRequest, callback func(response *ListCorpMetricsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

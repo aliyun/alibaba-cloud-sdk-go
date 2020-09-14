@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeFaceQuality invokes the vcs.RecognizeFaceQuality API synchronously
-// api document: https://help.aliyun.com/api/vcs/recognizefacequality.html
 func (client *Client) RecognizeFaceQuality(request *RecognizeFaceQualityRequest) (response *RecognizeFaceQualityResponse, err error) {
 	response = CreateRecognizeFaceQualityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeFaceQuality(request *RecognizeFaceQualityRequest)
 }
 
 // RecognizeFaceQualityWithChan invokes the vcs.RecognizeFaceQuality API asynchronously
-// api document: https://help.aliyun.com/api/vcs/recognizefacequality.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeFaceQualityWithChan(request *RecognizeFaceQualityRequest) (<-chan *RecognizeFaceQualityResponse, <-chan error) {
 	responseChan := make(chan *RecognizeFaceQualityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeFaceQualityWithChan(request *RecognizeFaceQuality
 }
 
 // RecognizeFaceQualityWithCallback invokes the vcs.RecognizeFaceQuality API asynchronously
-// api document: https://help.aliyun.com/api/vcs/recognizefacequality.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeFaceQualityWithCallback(request *RecognizeFaceQualityRequest, callback func(response *RecognizeFaceQualityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

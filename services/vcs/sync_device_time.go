@@ -21,7 +21,6 @@ import (
 )
 
 // SyncDeviceTime invokes the vcs.SyncDeviceTime API synchronously
-// api document: https://help.aliyun.com/api/vcs/syncdevicetime.html
 func (client *Client) SyncDeviceTime(request *SyncDeviceTimeRequest) (response *SyncDeviceTimeResponse, err error) {
 	response = CreateSyncDeviceTimeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SyncDeviceTime(request *SyncDeviceTimeRequest) (response *
 }
 
 // SyncDeviceTimeWithChan invokes the vcs.SyncDeviceTime API asynchronously
-// api document: https://help.aliyun.com/api/vcs/syncdevicetime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SyncDeviceTimeWithChan(request *SyncDeviceTimeRequest) (<-chan *SyncDeviceTimeResponse, <-chan error) {
 	responseChan := make(chan *SyncDeviceTimeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SyncDeviceTimeWithChan(request *SyncDeviceTimeRequest) (<-
 }
 
 // SyncDeviceTimeWithCallback invokes the vcs.SyncDeviceTime API asynchronously
-// api document: https://help.aliyun.com/api/vcs/syncdevicetime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SyncDeviceTimeWithCallback(request *SyncDeviceTimeRequest, callback func(response *SyncDeviceTimeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

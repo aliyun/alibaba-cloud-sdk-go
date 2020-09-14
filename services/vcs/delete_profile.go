@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteProfile invokes the vcs.DeleteProfile API synchronously
-// api document: https://help.aliyun.com/api/vcs/deleteprofile.html
 func (client *Client) DeleteProfile(request *DeleteProfileRequest) (response *DeleteProfileResponse, err error) {
 	response = CreateDeleteProfileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteProfile(request *DeleteProfileRequest) (response *De
 }
 
 // DeleteProfileWithChan invokes the vcs.DeleteProfile API asynchronously
-// api document: https://help.aliyun.com/api/vcs/deleteprofile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteProfileWithChan(request *DeleteProfileRequest) (<-chan *DeleteProfileResponse, <-chan error) {
 	responseChan := make(chan *DeleteProfileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteProfileWithChan(request *DeleteProfileRequest) (<-ch
 }
 
 // DeleteProfileWithCallback invokes the vcs.DeleteProfile API asynchronously
-// api document: https://help.aliyun.com/api/vcs/deleteprofile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteProfileWithCallback(request *DeleteProfileRequest, callback func(response *DeleteProfileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

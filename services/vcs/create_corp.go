@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCorp invokes the vcs.CreateCorp API synchronously
-// api document: https://help.aliyun.com/api/vcs/createcorp.html
 func (client *Client) CreateCorp(request *CreateCorpRequest) (response *CreateCorpResponse, err error) {
 	response = CreateCreateCorpResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCorp(request *CreateCorpRequest) (response *CreateCo
 }
 
 // CreateCorpWithChan invokes the vcs.CreateCorp API asynchronously
-// api document: https://help.aliyun.com/api/vcs/createcorp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCorpWithChan(request *CreateCorpRequest) (<-chan *CreateCorpResponse, <-chan error) {
 	responseChan := make(chan *CreateCorpResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateCorpWithChan(request *CreateCorpRequest) (<-chan *Cr
 }
 
 // CreateCorpWithCallback invokes the vcs.CreateCorp API asynchronously
-// api document: https://help.aliyun.com/api/vcs/createcorp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCorpWithCallback(request *CreateCorpRequest, callback func(response *CreateCorpResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

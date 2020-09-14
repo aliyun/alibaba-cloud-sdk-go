@@ -21,7 +21,6 @@ import (
 )
 
 // CreateUserGroup invokes the vcs.CreateUserGroup API synchronously
-// api document: https://help.aliyun.com/api/vcs/createusergroup.html
 func (client *Client) CreateUserGroup(request *CreateUserGroupRequest) (response *CreateUserGroupResponse, err error) {
 	response = CreateCreateUserGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateUserGroup(request *CreateUserGroupRequest) (response
 }
 
 // CreateUserGroupWithChan invokes the vcs.CreateUserGroup API asynchronously
-// api document: https://help.aliyun.com/api/vcs/createusergroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserGroupWithChan(request *CreateUserGroupRequest) (<-chan *CreateUserGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateUserGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateUserGroupWithChan(request *CreateUserGroupRequest) (
 }
 
 // CreateUserGroupWithCallback invokes the vcs.CreateUserGroup API asynchronously
-// api document: https://help.aliyun.com/api/vcs/createusergroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserGroupWithCallback(request *CreateUserGroupRequest, callback func(response *CreateUserGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

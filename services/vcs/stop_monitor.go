@@ -21,7 +21,6 @@ import (
 )
 
 // StopMonitor invokes the vcs.StopMonitor API synchronously
-// api document: https://help.aliyun.com/api/vcs/stopmonitor.html
 func (client *Client) StopMonitor(request *StopMonitorRequest) (response *StopMonitorResponse, err error) {
 	response = CreateStopMonitorResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopMonitor(request *StopMonitorRequest) (response *StopMo
 }
 
 // StopMonitorWithChan invokes the vcs.StopMonitor API asynchronously
-// api document: https://help.aliyun.com/api/vcs/stopmonitor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopMonitorWithChan(request *StopMonitorRequest) (<-chan *StopMonitorResponse, <-chan error) {
 	responseChan := make(chan *StopMonitorResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopMonitorWithChan(request *StopMonitorRequest) (<-chan *
 }
 
 // StopMonitorWithCallback invokes the vcs.StopMonitor API asynchronously
-// api document: https://help.aliyun.com/api/vcs/stopmonitor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopMonitorWithCallback(request *StopMonitorRequest, callback func(response *StopMonitorResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

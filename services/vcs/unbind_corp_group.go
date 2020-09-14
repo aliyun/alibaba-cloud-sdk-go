@@ -21,7 +21,6 @@ import (
 )
 
 // UnbindCorpGroup invokes the vcs.UnbindCorpGroup API synchronously
-// api document: https://help.aliyun.com/api/vcs/unbindcorpgroup.html
 func (client *Client) UnbindCorpGroup(request *UnbindCorpGroupRequest) (response *UnbindCorpGroupResponse, err error) {
 	response = CreateUnbindCorpGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnbindCorpGroup(request *UnbindCorpGroupRequest) (response
 }
 
 // UnbindCorpGroupWithChan invokes the vcs.UnbindCorpGroup API asynchronously
-// api document: https://help.aliyun.com/api/vcs/unbindcorpgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindCorpGroupWithChan(request *UnbindCorpGroupRequest) (<-chan *UnbindCorpGroupResponse, <-chan error) {
 	responseChan := make(chan *UnbindCorpGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnbindCorpGroupWithChan(request *UnbindCorpGroupRequest) (
 }
 
 // UnbindCorpGroupWithCallback invokes the vcs.UnbindCorpGroup API asynchronously
-// api document: https://help.aliyun.com/api/vcs/unbindcorpgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindCorpGroupWithCallback(request *UnbindCorpGroupRequest, callback func(response *UnbindCorpGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

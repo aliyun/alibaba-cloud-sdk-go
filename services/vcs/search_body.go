@@ -21,7 +21,6 @@ import (
 )
 
 // SearchBody invokes the vcs.SearchBody API synchronously
-// api document: https://help.aliyun.com/api/vcs/searchbody.html
 func (client *Client) SearchBody(request *SearchBodyRequest) (response *SearchBodyResponse, err error) {
 	response = CreateSearchBodyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchBody(request *SearchBodyRequest) (response *SearchBo
 }
 
 // SearchBodyWithChan invokes the vcs.SearchBody API asynchronously
-// api document: https://help.aliyun.com/api/vcs/searchbody.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchBodyWithChan(request *SearchBodyRequest) (<-chan *SearchBodyResponse, <-chan error) {
 	responseChan := make(chan *SearchBodyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchBodyWithChan(request *SearchBodyRequest) (<-chan *Se
 }
 
 // SearchBodyWithCallback invokes the vcs.SearchBody API asynchronously
-// api document: https://help.aliyun.com/api/vcs/searchbody.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchBodyWithCallback(request *SearchBodyRequest, callback func(response *SearchBodyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

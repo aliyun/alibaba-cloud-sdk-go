@@ -21,7 +21,6 @@ import (
 )
 
 // ListBodyAlgorithmResults invokes the vcs.ListBodyAlgorithmResults API synchronously
-// api document: https://help.aliyun.com/api/vcs/listbodyalgorithmresults.html
 func (client *Client) ListBodyAlgorithmResults(request *ListBodyAlgorithmResultsRequest) (response *ListBodyAlgorithmResultsResponse, err error) {
 	response = CreateListBodyAlgorithmResultsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListBodyAlgorithmResults(request *ListBodyAlgorithmResults
 }
 
 // ListBodyAlgorithmResultsWithChan invokes the vcs.ListBodyAlgorithmResults API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listbodyalgorithmresults.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListBodyAlgorithmResultsWithChan(request *ListBodyAlgorithmResultsRequest) (<-chan *ListBodyAlgorithmResultsResponse, <-chan error) {
 	responseChan := make(chan *ListBodyAlgorithmResultsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListBodyAlgorithmResultsWithChan(request *ListBodyAlgorith
 }
 
 // ListBodyAlgorithmResultsWithCallback invokes the vcs.ListBodyAlgorithmResults API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listbodyalgorithmresults.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListBodyAlgorithmResultsWithCallback(request *ListBodyAlgorithmResultsRequest, callback func(response *ListBodyAlgorithmResultsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

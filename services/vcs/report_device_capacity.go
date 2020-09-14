@@ -21,7 +21,6 @@ import (
 )
 
 // ReportDeviceCapacity invokes the vcs.ReportDeviceCapacity API synchronously
-// api document: https://help.aliyun.com/api/vcs/reportdevicecapacity.html
 func (client *Client) ReportDeviceCapacity(request *ReportDeviceCapacityRequest) (response *ReportDeviceCapacityResponse, err error) {
 	response = CreateReportDeviceCapacityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReportDeviceCapacity(request *ReportDeviceCapacityRequest)
 }
 
 // ReportDeviceCapacityWithChan invokes the vcs.ReportDeviceCapacity API asynchronously
-// api document: https://help.aliyun.com/api/vcs/reportdevicecapacity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportDeviceCapacityWithChan(request *ReportDeviceCapacityRequest) (<-chan *ReportDeviceCapacityResponse, <-chan error) {
 	responseChan := make(chan *ReportDeviceCapacityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReportDeviceCapacityWithChan(request *ReportDeviceCapacity
 }
 
 // ReportDeviceCapacityWithCallback invokes the vcs.ReportDeviceCapacity API asynchronously
-// api document: https://help.aliyun.com/api/vcs/reportdevicecapacity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportDeviceCapacityWithCallback(request *ReportDeviceCapacityRequest, callback func(response *ReportDeviceCapacityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // GetMonitorResult invokes the vcs.GetMonitorResult API synchronously
-// api document: https://help.aliyun.com/api/vcs/getmonitorresult.html
 func (client *Client) GetMonitorResult(request *GetMonitorResultRequest) (response *GetMonitorResultResponse, err error) {
 	response = CreateGetMonitorResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetMonitorResult(request *GetMonitorResultRequest) (respon
 }
 
 // GetMonitorResultWithChan invokes the vcs.GetMonitorResult API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getmonitorresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMonitorResultWithChan(request *GetMonitorResultRequest) (<-chan *GetMonitorResultResponse, <-chan error) {
 	responseChan := make(chan *GetMonitorResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetMonitorResultWithChan(request *GetMonitorResultRequest)
 }
 
 // GetMonitorResultWithCallback invokes the vcs.GetMonitorResult API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getmonitorresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMonitorResultWithCallback(request *GetMonitorResultRequest, callback func(response *GetMonitorResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

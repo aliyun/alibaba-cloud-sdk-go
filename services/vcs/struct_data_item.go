@@ -17,23 +17,28 @@ package vcs
 
 // DataItem is a nested struct in vcs response
 type DataItem struct {
-	Name            string           `json:"Name" xml:"Name"`
-	TagMetrics      string           `json:"TagMetrics" xml:"TagMetrics"`
-	DateId          string           `json:"DateId" xml:"DateId"`
-	UserGroupId     string           `json:"UserGroupId" xml:"UserGroupId"`
-	PersonID        string           `json:"PersonID" xml:"PersonID"`
-	PersonId        string           `json:"PersonId" xml:"PersonId"`
-	IsvSubId        string           `json:"IsvSubId" xml:"IsvSubId"`
-	CatalogId       int64            `json:"CatalogId" xml:"CatalogId"`
-	Key             string           `json:"Key" xml:"Key"`
-	TagCode         string           `json:"TagCode" xml:"TagCode"`
-	DeviceGroupId   string           `json:"DeviceGroupId" xml:"DeviceGroupId"`
-	ProfileCount    int64            `json:"ProfileCount" xml:"ProfileCount"`
-	CatalogName     string           `json:"CatalogName" xml:"CatalogName"`
-	CorpId          string           `json:"CorpId" xml:"CorpId"`
-	DeviceId        string           `json:"DeviceId" xml:"DeviceId"`
-	TagValue        string           `json:"TagValue" xml:"TagValue"`
-	CorpGroupId     string           `json:"CorpGroupId" xml:"CorpGroupId"`
-	ParentCatalogId int64            `json:"ParentCatalogId" xml:"ParentCatalogId"`
-	OptionList      []OptionListItem `json:"OptionList" xml:"OptionList"`
+	Name            string                      `json:"Name" xml:"Name"`
+	TotalPage       int                         `json:"TotalPage" xml:"TotalPage"`
+	TagMetrics      string                      `json:"TagMetrics" xml:"TagMetrics"`
+	DateId          string                      `json:"DateId" xml:"DateId"`
+	UserGroupId     string                      `json:"UserGroupId" xml:"UserGroupId"`
+	PersonID        string                      `json:"PersonID" xml:"PersonID"`
+	PersonId        string                      `json:"PersonId" xml:"PersonId"`
+	IsvSubId        string                      `json:"IsvSubId" xml:"IsvSubId"`
+	CatalogId       int64                       `json:"CatalogId" xml:"CatalogId"`
+	PageSize        int                         `json:"PageSize" xml:"PageSize"`
+	Key             string                      `json:"Key" xml:"Key"`
+	TagCode         string                      `json:"TagCode" xml:"TagCode"`
+	DeviceGroupId   string                      `json:"DeviceGroupId" xml:"DeviceGroupId"`
+	ProfileCount    int64                       `json:"ProfileCount" xml:"ProfileCount"`
+	CatalogName     string                      `json:"CatalogName" xml:"CatalogName"`
+	CorpId          string                      `json:"CorpId" xml:"CorpId"`
+	TotalCount      int                         `json:"TotalCount" xml:"TotalCount"`
+	DeviceId        string                      `json:"DeviceId" xml:"DeviceId"`
+	TagValue        string                      `json:"TagValue" xml:"TagValue"`
+	CorpGroupId     string                      `json:"CorpGroupId" xml:"CorpGroupId"`
+	PageNumber      int                         `json:"PageNumber" xml:"PageNumber"`
+	ParentCatalogId int64                       `json:"ParentCatalogId" xml:"ParentCatalogId"`
+	Records         []RecordsItemInSearchObject `json:"Records" xml:"Records"`
+	OptionList      []OptionListItem            `json:"OptionList" xml:"OptionList"`
 }

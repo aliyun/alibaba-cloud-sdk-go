@@ -21,7 +21,6 @@ import (
 )
 
 // GetPersonDetail invokes the vcs.GetPersonDetail API synchronously
-// api document: https://help.aliyun.com/api/vcs/getpersondetail.html
 func (client *Client) GetPersonDetail(request *GetPersonDetailRequest) (response *GetPersonDetailResponse, err error) {
 	response = CreateGetPersonDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetPersonDetail(request *GetPersonDetailRequest) (response
 }
 
 // GetPersonDetailWithChan invokes the vcs.GetPersonDetail API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getpersondetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPersonDetailWithChan(request *GetPersonDetailRequest) (<-chan *GetPersonDetailResponse, <-chan error) {
 	responseChan := make(chan *GetPersonDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetPersonDetailWithChan(request *GetPersonDetailRequest) (
 }
 
 // GetPersonDetailWithCallback invokes the vcs.GetPersonDetail API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getpersondetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPersonDetailWithCallback(request *GetPersonDetailRequest, callback func(response *GetPersonDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

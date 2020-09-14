@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDevices invokes the vcs.DescribeDevices API synchronously
-// api document: https://help.aliyun.com/api/vcs/describedevices.html
 func (client *Client) DescribeDevices(request *DescribeDevicesRequest) (response *DescribeDevicesResponse, err error) {
 	response = CreateDescribeDevicesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDevices(request *DescribeDevicesRequest) (response
 }
 
 // DescribeDevicesWithChan invokes the vcs.DescribeDevices API asynchronously
-// api document: https://help.aliyun.com/api/vcs/describedevices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDevicesWithChan(request *DescribeDevicesRequest) (<-chan *DescribeDevicesResponse, <-chan error) {
 	responseChan := make(chan *DescribeDevicesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDevicesWithChan(request *DescribeDevicesRequest) (
 }
 
 // DescribeDevicesWithCallback invokes the vcs.DescribeDevices API asynchronously
-// api document: https://help.aliyun.com/api/vcs/describedevices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDevicesWithCallback(request *DescribeDevicesRequest, callback func(response *DescribeDevicesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

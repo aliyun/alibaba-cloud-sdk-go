@@ -21,7 +21,6 @@ import (
 )
 
 // RegisterDevice invokes the vcs.RegisterDevice API synchronously
-// api document: https://help.aliyun.com/api/vcs/registerdevice.html
 func (client *Client) RegisterDevice(request *RegisterDeviceRequest) (response *RegisterDeviceResponse, err error) {
 	response = CreateRegisterDeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RegisterDevice(request *RegisterDeviceRequest) (response *
 }
 
 // RegisterDeviceWithChan invokes the vcs.RegisterDevice API asynchronously
-// api document: https://help.aliyun.com/api/vcs/registerdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterDeviceWithChan(request *RegisterDeviceRequest) (<-chan *RegisterDeviceResponse, <-chan error) {
 	responseChan := make(chan *RegisterDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RegisterDeviceWithChan(request *RegisterDeviceRequest) (<-
 }
 
 // RegisterDeviceWithCallback invokes the vcs.RegisterDevice API asynchronously
-// api document: https://help.aliyun.com/api/vcs/registerdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterDeviceWithCallback(request *RegisterDeviceRequest, callback func(response *RegisterDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

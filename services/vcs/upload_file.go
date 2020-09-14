@@ -21,7 +21,6 @@ import (
 )
 
 // UploadFile invokes the vcs.UploadFile API synchronously
-// api document: https://help.aliyun.com/api/vcs/uploadfile.html
 func (client *Client) UploadFile(request *UploadFileRequest) (response *UploadFileResponse, err error) {
 	response = CreateUploadFileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UploadFile(request *UploadFileRequest) (response *UploadFi
 }
 
 // UploadFileWithChan invokes the vcs.UploadFile API asynchronously
-// api document: https://help.aliyun.com/api/vcs/uploadfile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadFileWithChan(request *UploadFileRequest) (<-chan *UploadFileResponse, <-chan error) {
 	responseChan := make(chan *UploadFileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UploadFileWithChan(request *UploadFileRequest) (<-chan *Up
 }
 
 // UploadFileWithCallback invokes the vcs.UploadFile API asynchronously
-// api document: https://help.aliyun.com/api/vcs/uploadfile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadFileWithCallback(request *UploadFileRequest, callback func(response *UploadFileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

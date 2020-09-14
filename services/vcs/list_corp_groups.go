@@ -21,7 +21,6 @@ import (
 )
 
 // ListCorpGroups invokes the vcs.ListCorpGroups API synchronously
-// api document: https://help.aliyun.com/api/vcs/listcorpgroups.html
 func (client *Client) ListCorpGroups(request *ListCorpGroupsRequest) (response *ListCorpGroupsResponse, err error) {
 	response = CreateListCorpGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListCorpGroups(request *ListCorpGroupsRequest) (response *
 }
 
 // ListCorpGroupsWithChan invokes the vcs.ListCorpGroups API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listcorpgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCorpGroupsWithChan(request *ListCorpGroupsRequest) (<-chan *ListCorpGroupsResponse, <-chan error) {
 	responseChan := make(chan *ListCorpGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListCorpGroupsWithChan(request *ListCorpGroupsRequest) (<-
 }
 
 // ListCorpGroupsWithCallback invokes the vcs.ListCorpGroups API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listcorpgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCorpGroupsWithCallback(request *ListCorpGroupsRequest, callback func(response *ListCorpGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateUserGroup invokes the vcs.UpdateUserGroup API synchronously
-// api document: https://help.aliyun.com/api/vcs/updateusergroup.html
 func (client *Client) UpdateUserGroup(request *UpdateUserGroupRequest) (response *UpdateUserGroupResponse, err error) {
 	response = CreateUpdateUserGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateUserGroup(request *UpdateUserGroupRequest) (response
 }
 
 // UpdateUserGroupWithChan invokes the vcs.UpdateUserGroup API asynchronously
-// api document: https://help.aliyun.com/api/vcs/updateusergroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateUserGroupWithChan(request *UpdateUserGroupRequest) (<-chan *UpdateUserGroupResponse, <-chan error) {
 	responseChan := make(chan *UpdateUserGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateUserGroupWithChan(request *UpdateUserGroupRequest) (
 }
 
 // UpdateUserGroupWithCallback invokes the vcs.UpdateUserGroup API asynchronously
-// api document: https://help.aliyun.com/api/vcs/updateusergroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateUserGroupWithCallback(request *UpdateUserGroupRequest, callback func(response *UpdateUserGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

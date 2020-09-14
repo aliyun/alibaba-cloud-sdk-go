@@ -21,7 +21,6 @@ import (
 )
 
 // ListPersonTrace invokes the vcs.ListPersonTrace API synchronously
-// api document: https://help.aliyun.com/api/vcs/listpersontrace.html
 func (client *Client) ListPersonTrace(request *ListPersonTraceRequest) (response *ListPersonTraceResponse, err error) {
 	response = CreateListPersonTraceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListPersonTrace(request *ListPersonTraceRequest) (response
 }
 
 // ListPersonTraceWithChan invokes the vcs.ListPersonTrace API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listpersontrace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPersonTraceWithChan(request *ListPersonTraceRequest) (<-chan *ListPersonTraceResponse, <-chan error) {
 	responseChan := make(chan *ListPersonTraceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListPersonTraceWithChan(request *ListPersonTraceRequest) (
 }
 
 // ListPersonTraceWithCallback invokes the vcs.ListPersonTrace API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listpersontrace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPersonTraceWithCallback(request *ListPersonTraceRequest, callback func(response *ListPersonTraceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

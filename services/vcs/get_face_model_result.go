@@ -21,7 +21,6 @@ import (
 )
 
 // GetFaceModelResult invokes the vcs.GetFaceModelResult API synchronously
-// api document: https://help.aliyun.com/api/vcs/getfacemodelresult.html
 func (client *Client) GetFaceModelResult(request *GetFaceModelResultRequest) (response *GetFaceModelResultResponse, err error) {
 	response = CreateGetFaceModelResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetFaceModelResult(request *GetFaceModelResultRequest) (re
 }
 
 // GetFaceModelResultWithChan invokes the vcs.GetFaceModelResult API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getfacemodelresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetFaceModelResultWithChan(request *GetFaceModelResultRequest) (<-chan *GetFaceModelResultResponse, <-chan error) {
 	responseChan := make(chan *GetFaceModelResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetFaceModelResultWithChan(request *GetFaceModelResultRequ
 }
 
 // GetFaceModelResultWithCallback invokes the vcs.GetFaceModelResult API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getfacemodelresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetFaceModelResultWithCallback(request *GetFaceModelResultRequest, callback func(response *GetFaceModelResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

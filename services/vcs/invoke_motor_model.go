@@ -21,7 +21,6 @@ import (
 )
 
 // InvokeMotorModel invokes the vcs.InvokeMotorModel API synchronously
-// api document: https://help.aliyun.com/api/vcs/invokemotormodel.html
 func (client *Client) InvokeMotorModel(request *InvokeMotorModelRequest) (response *InvokeMotorModelResponse, err error) {
 	response = CreateInvokeMotorModelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InvokeMotorModel(request *InvokeMotorModelRequest) (respon
 }
 
 // InvokeMotorModelWithChan invokes the vcs.InvokeMotorModel API asynchronously
-// api document: https://help.aliyun.com/api/vcs/invokemotormodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InvokeMotorModelWithChan(request *InvokeMotorModelRequest) (<-chan *InvokeMotorModelResponse, <-chan error) {
 	responseChan := make(chan *InvokeMotorModelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InvokeMotorModelWithChan(request *InvokeMotorModelRequest)
 }
 
 // InvokeMotorModelWithCallback invokes the vcs.InvokeMotorModel API asynchronously
-// api document: https://help.aliyun.com/api/vcs/invokemotormodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InvokeMotorModelWithCallback(request *InvokeMotorModelRequest, callback func(response *InvokeMotorModelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

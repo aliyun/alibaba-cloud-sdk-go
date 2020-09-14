@@ -21,7 +21,6 @@ import (
 )
 
 // GetInventory invokes the vcs.GetInventory API synchronously
-// api document: https://help.aliyun.com/api/vcs/getinventory.html
 func (client *Client) GetInventory(request *GetInventoryRequest) (response *GetInventoryResponse, err error) {
 	response = CreateGetInventoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetInventory(request *GetInventoryRequest) (response *GetI
 }
 
 // GetInventoryWithChan invokes the vcs.GetInventory API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getinventory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInventoryWithChan(request *GetInventoryRequest) (<-chan *GetInventoryResponse, <-chan error) {
 	responseChan := make(chan *GetInventoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetInventoryWithChan(request *GetInventoryRequest) (<-chan
 }
 
 // GetInventoryWithCallback invokes the vcs.GetInventory API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getinventory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInventoryWithCallback(request *GetInventoryRequest, callback func(response *GetInventoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

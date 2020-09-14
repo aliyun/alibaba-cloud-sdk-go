@@ -21,7 +21,6 @@ import (
 )
 
 // GetCatalogList invokes the vcs.GetCatalogList API synchronously
-// api document: https://help.aliyun.com/api/vcs/getcataloglist.html
 func (client *Client) GetCatalogList(request *GetCatalogListRequest) (response *GetCatalogListResponse, err error) {
 	response = CreateGetCatalogListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetCatalogList(request *GetCatalogListRequest) (response *
 }
 
 // GetCatalogListWithChan invokes the vcs.GetCatalogList API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getcataloglist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCatalogListWithChan(request *GetCatalogListRequest) (<-chan *GetCatalogListResponse, <-chan error) {
 	responseChan := make(chan *GetCatalogListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetCatalogListWithChan(request *GetCatalogListRequest) (<-
 }
 
 // GetCatalogListWithCallback invokes the vcs.GetCatalogList API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getcataloglist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCatalogListWithCallback(request *GetCatalogListRequest, callback func(response *GetCatalogListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

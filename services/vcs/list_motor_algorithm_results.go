@@ -21,7 +21,6 @@ import (
 )
 
 // ListMotorAlgorithmResults invokes the vcs.ListMotorAlgorithmResults API synchronously
-// api document: https://help.aliyun.com/api/vcs/listmotoralgorithmresults.html
 func (client *Client) ListMotorAlgorithmResults(request *ListMotorAlgorithmResultsRequest) (response *ListMotorAlgorithmResultsResponse, err error) {
 	response = CreateListMotorAlgorithmResultsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListMotorAlgorithmResults(request *ListMotorAlgorithmResul
 }
 
 // ListMotorAlgorithmResultsWithChan invokes the vcs.ListMotorAlgorithmResults API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listmotoralgorithmresults.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMotorAlgorithmResultsWithChan(request *ListMotorAlgorithmResultsRequest) (<-chan *ListMotorAlgorithmResultsResponse, <-chan error) {
 	responseChan := make(chan *ListMotorAlgorithmResultsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListMotorAlgorithmResultsWithChan(request *ListMotorAlgori
 }
 
 // ListMotorAlgorithmResultsWithCallback invokes the vcs.ListMotorAlgorithmResults API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listmotoralgorithmresults.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMotorAlgorithmResultsWithCallback(request *ListMotorAlgorithmResultsRequest, callback func(response *ListMotorAlgorithmResultsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

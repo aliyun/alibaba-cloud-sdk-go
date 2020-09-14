@@ -21,7 +21,6 @@ import (
 )
 
 // ListFaceAlgorithmResults invokes the vcs.ListFaceAlgorithmResults API synchronously
-// api document: https://help.aliyun.com/api/vcs/listfacealgorithmresults.html
 func (client *Client) ListFaceAlgorithmResults(request *ListFaceAlgorithmResultsRequest) (response *ListFaceAlgorithmResultsResponse, err error) {
 	response = CreateListFaceAlgorithmResultsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFaceAlgorithmResults(request *ListFaceAlgorithmResults
 }
 
 // ListFaceAlgorithmResultsWithChan invokes the vcs.ListFaceAlgorithmResults API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listfacealgorithmresults.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFaceAlgorithmResultsWithChan(request *ListFaceAlgorithmResultsRequest) (<-chan *ListFaceAlgorithmResultsResponse, <-chan error) {
 	responseChan := make(chan *ListFaceAlgorithmResultsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFaceAlgorithmResultsWithChan(request *ListFaceAlgorith
 }
 
 // ListFaceAlgorithmResultsWithCallback invokes the vcs.ListFaceAlgorithmResults API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listfacealgorithmresults.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFaceAlgorithmResultsWithCallback(request *ListFaceAlgorithmResultsRequest, callback func(response *ListFaceAlgorithmResultsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

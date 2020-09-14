@@ -21,7 +21,6 @@ import (
 )
 
 // GetPersonList invokes the vcs.GetPersonList API synchronously
-// api document: https://help.aliyun.com/api/vcs/getpersonlist.html
 func (client *Client) GetPersonList(request *GetPersonListRequest) (response *GetPersonListResponse, err error) {
 	response = CreateGetPersonListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetPersonList(request *GetPersonListRequest) (response *Ge
 }
 
 // GetPersonListWithChan invokes the vcs.GetPersonList API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getpersonlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPersonListWithChan(request *GetPersonListRequest) (<-chan *GetPersonListResponse, <-chan error) {
 	responseChan := make(chan *GetPersonListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetPersonListWithChan(request *GetPersonListRequest) (<-ch
 }
 
 // GetPersonListWithCallback invokes the vcs.GetPersonList API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getpersonlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPersonListWithCallback(request *GetPersonListRequest, callback func(response *GetPersonListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

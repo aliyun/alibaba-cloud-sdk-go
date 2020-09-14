@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteRecords invokes the vcs.DeleteRecords API synchronously
-// api document: https://help.aliyun.com/api/vcs/deleterecords.html
 func (client *Client) DeleteRecords(request *DeleteRecordsRequest) (response *DeleteRecordsResponse, err error) {
 	response = CreateDeleteRecordsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteRecords(request *DeleteRecordsRequest) (response *De
 }
 
 // DeleteRecordsWithChan invokes the vcs.DeleteRecords API asynchronously
-// api document: https://help.aliyun.com/api/vcs/deleterecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRecordsWithChan(request *DeleteRecordsRequest) (<-chan *DeleteRecordsResponse, <-chan error) {
 	responseChan := make(chan *DeleteRecordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteRecordsWithChan(request *DeleteRecordsRequest) (<-ch
 }
 
 // DeleteRecordsWithCallback invokes the vcs.DeleteRecords API asynchronously
-// api document: https://help.aliyun.com/api/vcs/deleterecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRecordsWithCallback(request *DeleteRecordsRequest, callback func(response *DeleteRecordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

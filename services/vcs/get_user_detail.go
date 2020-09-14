@@ -21,7 +21,6 @@ import (
 )
 
 // GetUserDetail invokes the vcs.GetUserDetail API synchronously
-// api document: https://help.aliyun.com/api/vcs/getuserdetail.html
 func (client *Client) GetUserDetail(request *GetUserDetailRequest) (response *GetUserDetailResponse, err error) {
 	response = CreateGetUserDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetUserDetail(request *GetUserDetailRequest) (response *Ge
 }
 
 // GetUserDetailWithChan invokes the vcs.GetUserDetail API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getuserdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserDetailWithChan(request *GetUserDetailRequest) (<-chan *GetUserDetailResponse, <-chan error) {
 	responseChan := make(chan *GetUserDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetUserDetailWithChan(request *GetUserDetailRequest) (<-ch
 }
 
 // GetUserDetailWithCallback invokes the vcs.GetUserDetail API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getuserdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserDetailWithCallback(request *GetUserDetailRequest, callback func(response *GetUserDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

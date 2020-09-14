@@ -21,7 +21,6 @@ import (
 )
 
 // CreateVideoComposeTask invokes the vcs.CreateVideoComposeTask API synchronously
-// api document: https://help.aliyun.com/api/vcs/createvideocomposetask.html
 func (client *Client) CreateVideoComposeTask(request *CreateVideoComposeTaskRequest) (response *CreateVideoComposeTaskResponse, err error) {
 	response = CreateCreateVideoComposeTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateVideoComposeTask(request *CreateVideoComposeTaskRequ
 }
 
 // CreateVideoComposeTaskWithChan invokes the vcs.CreateVideoComposeTask API asynchronously
-// api document: https://help.aliyun.com/api/vcs/createvideocomposetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVideoComposeTaskWithChan(request *CreateVideoComposeTaskRequest) (<-chan *CreateVideoComposeTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateVideoComposeTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateVideoComposeTaskWithChan(request *CreateVideoCompose
 }
 
 // CreateVideoComposeTaskWithCallback invokes the vcs.CreateVideoComposeTask API asynchronously
-// api document: https://help.aliyun.com/api/vcs/createvideocomposetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVideoComposeTaskWithCallback(request *CreateVideoComposeTaskRequest, callback func(response *CreateVideoComposeTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

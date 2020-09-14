@@ -21,7 +21,6 @@ import (
 )
 
 // GetDeviceLiveUrl invokes the vcs.GetDeviceLiveUrl API synchronously
-// api document: https://help.aliyun.com/api/vcs/getdeviceliveurl.html
 func (client *Client) GetDeviceLiveUrl(request *GetDeviceLiveUrlRequest) (response *GetDeviceLiveUrlResponse, err error) {
 	response = CreateGetDeviceLiveUrlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetDeviceLiveUrl(request *GetDeviceLiveUrlRequest) (respon
 }
 
 // GetDeviceLiveUrlWithChan invokes the vcs.GetDeviceLiveUrl API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getdeviceliveurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDeviceLiveUrlWithChan(request *GetDeviceLiveUrlRequest) (<-chan *GetDeviceLiveUrlResponse, <-chan error) {
 	responseChan := make(chan *GetDeviceLiveUrlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetDeviceLiveUrlWithChan(request *GetDeviceLiveUrlRequest)
 }
 
 // GetDeviceLiveUrlWithCallback invokes the vcs.GetDeviceLiveUrl API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getdeviceliveurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDeviceLiveUrlWithCallback(request *GetDeviceLiveUrlRequest, callback func(response *GetDeviceLiveUrlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

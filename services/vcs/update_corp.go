@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateCorp invokes the vcs.UpdateCorp API synchronously
-// api document: https://help.aliyun.com/api/vcs/updatecorp.html
 func (client *Client) UpdateCorp(request *UpdateCorpRequest) (response *UpdateCorpResponse, err error) {
 	response = CreateUpdateCorpResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateCorp(request *UpdateCorpRequest) (response *UpdateCo
 }
 
 // UpdateCorpWithChan invokes the vcs.UpdateCorp API asynchronously
-// api document: https://help.aliyun.com/api/vcs/updatecorp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCorpWithChan(request *UpdateCorpRequest) (<-chan *UpdateCorpResponse, <-chan error) {
 	responseChan := make(chan *UpdateCorpResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateCorpWithChan(request *UpdateCorpRequest) (<-chan *Up
 }
 
 // UpdateCorpWithCallback invokes the vcs.UpdateCorp API asynchronously
-// api document: https://help.aliyun.com/api/vcs/updatecorp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCorpWithCallback(request *UpdateCorpRequest, callback func(response *UpdateCorpResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

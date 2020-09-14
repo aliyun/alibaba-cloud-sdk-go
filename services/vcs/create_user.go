@@ -21,7 +21,6 @@ import (
 )
 
 // CreateUser invokes the vcs.CreateUser API synchronously
-// api document: https://help.aliyun.com/api/vcs/createuser.html
 func (client *Client) CreateUser(request *CreateUserRequest) (response *CreateUserResponse, err error) {
 	response = CreateCreateUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateUser(request *CreateUserRequest) (response *CreateUs
 }
 
 // CreateUserWithChan invokes the vcs.CreateUser API asynchronously
-// api document: https://help.aliyun.com/api/vcs/createuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserWithChan(request *CreateUserRequest) (<-chan *CreateUserResponse, <-chan error) {
 	responseChan := make(chan *CreateUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateUserWithChan(request *CreateUserRequest) (<-chan *Cr
 }
 
 // CreateUserWithCallback invokes the vcs.CreateUser API asynchronously
-// api document: https://help.aliyun.com/api/vcs/createuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserWithCallback(request *CreateUserRequest, callback func(response *CreateUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

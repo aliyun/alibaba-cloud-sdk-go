@@ -21,7 +21,6 @@ import (
 )
 
 // GetFaceOptions invokes the vcs.GetFaceOptions API synchronously
-// api document: https://help.aliyun.com/api/vcs/getfaceoptions.html
 func (client *Client) GetFaceOptions(request *GetFaceOptionsRequest) (response *GetFaceOptionsResponse, err error) {
 	response = CreateGetFaceOptionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetFaceOptions(request *GetFaceOptionsRequest) (response *
 }
 
 // GetFaceOptionsWithChan invokes the vcs.GetFaceOptions API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getfaceoptions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetFaceOptionsWithChan(request *GetFaceOptionsRequest) (<-chan *GetFaceOptionsResponse, <-chan error) {
 	responseChan := make(chan *GetFaceOptionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetFaceOptionsWithChan(request *GetFaceOptionsRequest) (<-
 }
 
 // GetFaceOptionsWithCallback invokes the vcs.GetFaceOptions API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getfaceoptions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetFaceOptionsWithCallback(request *GetFaceOptionsRequest, callback func(response *GetFaceOptionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

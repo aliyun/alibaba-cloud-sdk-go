@@ -21,7 +21,6 @@ import (
 )
 
 // GetProfileList invokes the vcs.GetProfileList API synchronously
-// api document: https://help.aliyun.com/api/vcs/getprofilelist.html
 func (client *Client) GetProfileList(request *GetProfileListRequest) (response *GetProfileListResponse, err error) {
 	response = CreateGetProfileListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetProfileList(request *GetProfileListRequest) (response *
 }
 
 // GetProfileListWithChan invokes the vcs.GetProfileList API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getprofilelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetProfileListWithChan(request *GetProfileListRequest) (<-chan *GetProfileListResponse, <-chan error) {
 	responseChan := make(chan *GetProfileListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetProfileListWithChan(request *GetProfileListRequest) (<-
 }
 
 // GetProfileListWithCallback invokes the vcs.GetProfileList API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getprofilelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetProfileListWithCallback(request *GetProfileListRequest, callback func(response *GetProfileListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateDevice invokes the vcs.UpdateDevice API synchronously
-// api document: https://help.aliyun.com/api/vcs/updatedevice.html
 func (client *Client) UpdateDevice(request *UpdateDeviceRequest) (response *UpdateDeviceResponse, err error) {
 	response = CreateUpdateDeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateDevice(request *UpdateDeviceRequest) (response *Upda
 }
 
 // UpdateDeviceWithChan invokes the vcs.UpdateDevice API asynchronously
-// api document: https://help.aliyun.com/api/vcs/updatedevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDeviceWithChan(request *UpdateDeviceRequest) (<-chan *UpdateDeviceResponse, <-chan error) {
 	responseChan := make(chan *UpdateDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateDeviceWithChan(request *UpdateDeviceRequest) (<-chan
 }
 
 // UpdateDeviceWithCallback invokes the vcs.UpdateDevice API asynchronously
-// api document: https://help.aliyun.com/api/vcs/updatedevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDeviceWithCallback(request *UpdateDeviceRequest, callback func(response *UpdateDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

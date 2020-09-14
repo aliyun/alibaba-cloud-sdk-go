@@ -21,7 +21,6 @@ import (
 )
 
 // ListEventAlgorithmResults invokes the vcs.ListEventAlgorithmResults API synchronously
-// api document: https://help.aliyun.com/api/vcs/listeventalgorithmresults.html
 func (client *Client) ListEventAlgorithmResults(request *ListEventAlgorithmResultsRequest) (response *ListEventAlgorithmResultsResponse, err error) {
 	response = CreateListEventAlgorithmResultsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListEventAlgorithmResults(request *ListEventAlgorithmResul
 }
 
 // ListEventAlgorithmResultsWithChan invokes the vcs.ListEventAlgorithmResults API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listeventalgorithmresults.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEventAlgorithmResultsWithChan(request *ListEventAlgorithmResultsRequest) (<-chan *ListEventAlgorithmResultsResponse, <-chan error) {
 	responseChan := make(chan *ListEventAlgorithmResultsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListEventAlgorithmResultsWithChan(request *ListEventAlgori
 }
 
 // ListEventAlgorithmResultsWithCallback invokes the vcs.ListEventAlgorithmResults API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listeventalgorithmresults.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEventAlgorithmResultsWithCallback(request *ListEventAlgorithmResultsRequest, callback func(response *ListEventAlgorithmResultsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

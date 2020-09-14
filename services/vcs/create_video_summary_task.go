@@ -21,7 +21,6 @@ import (
 )
 
 // CreateVideoSummaryTask invokes the vcs.CreateVideoSummaryTask API synchronously
-// api document: https://help.aliyun.com/api/vcs/createvideosummarytask.html
 func (client *Client) CreateVideoSummaryTask(request *CreateVideoSummaryTaskRequest) (response *CreateVideoSummaryTaskResponse, err error) {
 	response = CreateCreateVideoSummaryTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateVideoSummaryTask(request *CreateVideoSummaryTaskRequ
 }
 
 // CreateVideoSummaryTaskWithChan invokes the vcs.CreateVideoSummaryTask API asynchronously
-// api document: https://help.aliyun.com/api/vcs/createvideosummarytask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVideoSummaryTaskWithChan(request *CreateVideoSummaryTaskRequest) (<-chan *CreateVideoSummaryTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateVideoSummaryTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateVideoSummaryTaskWithChan(request *CreateVideoSummary
 }
 
 // CreateVideoSummaryTaskWithCallback invokes the vcs.CreateVideoSummaryTask API asynchronously
-// api document: https://help.aliyun.com/api/vcs/createvideosummarytask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVideoSummaryTaskWithCallback(request *CreateVideoSummaryTaskRequest, callback func(response *CreateVideoSummaryTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

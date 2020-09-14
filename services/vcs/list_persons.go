@@ -21,7 +21,6 @@ import (
 )
 
 // ListPersons invokes the vcs.ListPersons API synchronously
-// api document: https://help.aliyun.com/api/vcs/listpersons.html
 func (client *Client) ListPersons(request *ListPersonsRequest) (response *ListPersonsResponse, err error) {
 	response = CreateListPersonsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListPersons(request *ListPersonsRequest) (response *ListPe
 }
 
 // ListPersonsWithChan invokes the vcs.ListPersons API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listpersons.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPersonsWithChan(request *ListPersonsRequest) (<-chan *ListPersonsResponse, <-chan error) {
 	responseChan := make(chan *ListPersonsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListPersonsWithChan(request *ListPersonsRequest) (<-chan *
 }
 
 // ListPersonsWithCallback invokes the vcs.ListPersons API asynchronously
-// api document: https://help.aliyun.com/api/vcs/listpersons.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPersonsWithCallback(request *ListPersonsRequest, callback func(response *ListPersonsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

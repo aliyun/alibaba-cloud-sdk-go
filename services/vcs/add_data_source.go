@@ -21,7 +21,6 @@ import (
 )
 
 // AddDataSource invokes the vcs.AddDataSource API synchronously
-// api document: https://help.aliyun.com/api/vcs/adddatasource.html
 func (client *Client) AddDataSource(request *AddDataSourceRequest) (response *AddDataSourceResponse, err error) {
 	response = CreateAddDataSourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddDataSource(request *AddDataSourceRequest) (response *Ad
 }
 
 // AddDataSourceWithChan invokes the vcs.AddDataSource API asynchronously
-// api document: https://help.aliyun.com/api/vcs/adddatasource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddDataSourceWithChan(request *AddDataSourceRequest) (<-chan *AddDataSourceResponse, <-chan error) {
 	responseChan := make(chan *AddDataSourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddDataSourceWithChan(request *AddDataSourceRequest) (<-ch
 }
 
 // AddDataSourceWithCallback invokes the vcs.AddDataSource API asynchronously
-// api document: https://help.aliyun.com/api/vcs/adddatasource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddDataSourceWithCallback(request *AddDataSourceRequest, callback func(response *AddDataSourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // GetBodyOptions invokes the vcs.GetBodyOptions API synchronously
-// api document: https://help.aliyun.com/api/vcs/getbodyoptions.html
 func (client *Client) GetBodyOptions(request *GetBodyOptionsRequest) (response *GetBodyOptionsResponse, err error) {
 	response = CreateGetBodyOptionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetBodyOptions(request *GetBodyOptionsRequest) (response *
 }
 
 // GetBodyOptionsWithChan invokes the vcs.GetBodyOptions API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getbodyoptions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetBodyOptionsWithChan(request *GetBodyOptionsRequest) (<-chan *GetBodyOptionsResponse, <-chan error) {
 	responseChan := make(chan *GetBodyOptionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetBodyOptionsWithChan(request *GetBodyOptionsRequest) (<-
 }
 
 // GetBodyOptionsWithCallback invokes the vcs.GetBodyOptions API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getbodyoptions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetBodyOptionsWithCallback(request *GetBodyOptionsRequest, callback func(response *GetBodyOptionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

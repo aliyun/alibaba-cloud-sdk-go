@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteVideoSummaryTask invokes the vcs.DeleteVideoSummaryTask API synchronously
-// api document: https://help.aliyun.com/api/vcs/deletevideosummarytask.html
 func (client *Client) DeleteVideoSummaryTask(request *DeleteVideoSummaryTaskRequest) (response *DeleteVideoSummaryTaskResponse, err error) {
 	response = CreateDeleteVideoSummaryTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteVideoSummaryTask(request *DeleteVideoSummaryTaskRequ
 }
 
 // DeleteVideoSummaryTaskWithChan invokes the vcs.DeleteVideoSummaryTask API asynchronously
-// api document: https://help.aliyun.com/api/vcs/deletevideosummarytask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVideoSummaryTaskWithChan(request *DeleteVideoSummaryTaskRequest) (<-chan *DeleteVideoSummaryTaskResponse, <-chan error) {
 	responseChan := make(chan *DeleteVideoSummaryTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteVideoSummaryTaskWithChan(request *DeleteVideoSummary
 }
 
 // DeleteVideoSummaryTaskWithCallback invokes the vcs.DeleteVideoSummaryTask API asynchronously
-// api document: https://help.aliyun.com/api/vcs/deletevideosummarytask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVideoSummaryTaskWithCallback(request *DeleteVideoSummaryTaskRequest, callback func(response *DeleteVideoSummaryTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

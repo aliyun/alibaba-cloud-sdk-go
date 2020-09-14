@@ -21,7 +21,6 @@ import (
 )
 
 // BindPerson invokes the vcs.BindPerson API synchronously
-// api document: https://help.aliyun.com/api/vcs/bindperson.html
 func (client *Client) BindPerson(request *BindPersonRequest) (response *BindPersonResponse, err error) {
 	response = CreateBindPersonResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindPerson(request *BindPersonRequest) (response *BindPers
 }
 
 // BindPersonWithChan invokes the vcs.BindPerson API asynchronously
-// api document: https://help.aliyun.com/api/vcs/bindperson.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindPersonWithChan(request *BindPersonRequest) (<-chan *BindPersonResponse, <-chan error) {
 	responseChan := make(chan *BindPersonResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindPersonWithChan(request *BindPersonRequest) (<-chan *Bi
 }
 
 // BindPersonWithCallback invokes the vcs.BindPerson API asynchronously
-// api document: https://help.aliyun.com/api/vcs/bindperson.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindPersonWithCallback(request *BindPersonRequest, callback func(response *BindPersonResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

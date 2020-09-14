@@ -21,7 +21,6 @@ import (
 )
 
 // GetVideoComposeResult invokes the vcs.GetVideoComposeResult API synchronously
-// api document: https://help.aliyun.com/api/vcs/getvideocomposeresult.html
 func (client *Client) GetVideoComposeResult(request *GetVideoComposeResultRequest) (response *GetVideoComposeResultResponse, err error) {
 	response = CreateGetVideoComposeResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetVideoComposeResult(request *GetVideoComposeResultReques
 }
 
 // GetVideoComposeResultWithChan invokes the vcs.GetVideoComposeResult API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getvideocomposeresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetVideoComposeResultWithChan(request *GetVideoComposeResultRequest) (<-chan *GetVideoComposeResultResponse, <-chan error) {
 	responseChan := make(chan *GetVideoComposeResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetVideoComposeResultWithChan(request *GetVideoComposeResu
 }
 
 // GetVideoComposeResultWithCallback invokes the vcs.GetVideoComposeResult API asynchronously
-// api document: https://help.aliyun.com/api/vcs/getvideocomposeresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetVideoComposeResultWithCallback(request *GetVideoComposeResultRequest, callback func(response *GetVideoComposeResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

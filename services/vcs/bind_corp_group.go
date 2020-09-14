@@ -21,7 +21,6 @@ import (
 )
 
 // BindCorpGroup invokes the vcs.BindCorpGroup API synchronously
-// api document: https://help.aliyun.com/api/vcs/bindcorpgroup.html
 func (client *Client) BindCorpGroup(request *BindCorpGroupRequest) (response *BindCorpGroupResponse, err error) {
 	response = CreateBindCorpGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindCorpGroup(request *BindCorpGroupRequest) (response *Bi
 }
 
 // BindCorpGroupWithChan invokes the vcs.BindCorpGroup API asynchronously
-// api document: https://help.aliyun.com/api/vcs/bindcorpgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindCorpGroupWithChan(request *BindCorpGroupRequest) (<-chan *BindCorpGroupResponse, <-chan error) {
 	responseChan := make(chan *BindCorpGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindCorpGroupWithChan(request *BindCorpGroupRequest) (<-ch
 }
 
 // BindCorpGroupWithCallback invokes the vcs.BindCorpGroup API asynchronously
-// api document: https://help.aliyun.com/api/vcs/bindcorpgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindCorpGroupWithCallback(request *BindCorpGroupRequest, callback func(response *BindCorpGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteUserGroup invokes the vcs.DeleteUserGroup API synchronously
-// api document: https://help.aliyun.com/api/vcs/deleteusergroup.html
 func (client *Client) DeleteUserGroup(request *DeleteUserGroupRequest) (response *DeleteUserGroupResponse, err error) {
 	response = CreateDeleteUserGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteUserGroup(request *DeleteUserGroupRequest) (response
 }
 
 // DeleteUserGroupWithChan invokes the vcs.DeleteUserGroup API asynchronously
-// api document: https://help.aliyun.com/api/vcs/deleteusergroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUserGroupWithChan(request *DeleteUserGroupRequest) (<-chan *DeleteUserGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteUserGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteUserGroupWithChan(request *DeleteUserGroupRequest) (
 }
 
 // DeleteUserGroupWithCallback invokes the vcs.DeleteUserGroup API asynchronously
-// api document: https://help.aliyun.com/api/vcs/deleteusergroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUserGroupWithCallback(request *DeleteUserGroupRequest, callback func(response *DeleteUserGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

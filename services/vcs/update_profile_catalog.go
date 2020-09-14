@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateProfileCatalog invokes the vcs.UpdateProfileCatalog API synchronously
-// api document: https://help.aliyun.com/api/vcs/updateprofilecatalog.html
 func (client *Client) UpdateProfileCatalog(request *UpdateProfileCatalogRequest) (response *UpdateProfileCatalogResponse, err error) {
 	response = CreateUpdateProfileCatalogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateProfileCatalog(request *UpdateProfileCatalogRequest)
 }
 
 // UpdateProfileCatalogWithChan invokes the vcs.UpdateProfileCatalog API asynchronously
-// api document: https://help.aliyun.com/api/vcs/updateprofilecatalog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateProfileCatalogWithChan(request *UpdateProfileCatalogRequest) (<-chan *UpdateProfileCatalogResponse, <-chan error) {
 	responseChan := make(chan *UpdateProfileCatalogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateProfileCatalogWithChan(request *UpdateProfileCatalog
 }
 
 // UpdateProfileCatalogWithCallback invokes the vcs.UpdateProfileCatalog API asynchronously
-// api document: https://help.aliyun.com/api/vcs/updateprofilecatalog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateProfileCatalogWithCallback(request *UpdateProfileCatalogRequest, callback func(response *UpdateProfileCatalogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
