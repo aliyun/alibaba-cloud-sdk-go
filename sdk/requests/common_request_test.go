@@ -41,6 +41,8 @@ func Test_CommonRequest_String(t *testing.T) {
 	expected := `GET /? /1.1
 Host: domain
 Accept-Encoding: identity
+x-acs-action: 
+x-acs-version: 
 x-sdk-client: golang/1.0.0
 x-sdk-invoke-type: common
 
@@ -52,6 +54,8 @@ x-sdk-invoke-type: common
 	expected = `GET /? /1.1
 Host: domain
 Accept-Encoding: identity
+x-acs-action: 
+x-acs-version: 
 x-sdk-client: golang/1.0.0
 x-sdk-invoke-type: common
 
