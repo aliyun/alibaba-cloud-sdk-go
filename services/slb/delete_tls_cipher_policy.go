@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteTLSCipherPolicy invokes the slb.DeleteTLSCipherPolicy API synchronously
-// api document: https://help.aliyun.com/api/slb/deletetlscipherpolicy.html
 func (client *Client) DeleteTLSCipherPolicy(request *DeleteTLSCipherPolicyRequest) (response *DeleteTLSCipherPolicyResponse, err error) {
 	response = CreateDeleteTLSCipherPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteTLSCipherPolicy(request *DeleteTLSCipherPolicyReques
 }
 
 // DeleteTLSCipherPolicyWithChan invokes the slb.DeleteTLSCipherPolicy API asynchronously
-// api document: https://help.aliyun.com/api/slb/deletetlscipherpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTLSCipherPolicyWithChan(request *DeleteTLSCipherPolicyRequest) (<-chan *DeleteTLSCipherPolicyResponse, <-chan error) {
 	responseChan := make(chan *DeleteTLSCipherPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteTLSCipherPolicyWithChan(request *DeleteTLSCipherPoli
 }
 
 // DeleteTLSCipherPolicyWithCallback invokes the slb.DeleteTLSCipherPolicy API asynchronously
-// api document: https://help.aliyun.com/api/slb/deletetlscipherpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTLSCipherPolicyWithCallback(request *DeleteTLSCipherPolicyRequest, callback func(response *DeleteTLSCipherPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

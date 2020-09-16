@@ -21,7 +21,6 @@ import (
 )
 
 // UploadCACertificate invokes the slb.UploadCACertificate API synchronously
-// api document: https://help.aliyun.com/api/slb/uploadcacertificate.html
 func (client *Client) UploadCACertificate(request *UploadCACertificateRequest) (response *UploadCACertificateResponse, err error) {
 	response = CreateUploadCACertificateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UploadCACertificate(request *UploadCACertificateRequest) (
 }
 
 // UploadCACertificateWithChan invokes the slb.UploadCACertificate API asynchronously
-// api document: https://help.aliyun.com/api/slb/uploadcacertificate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadCACertificateWithChan(request *UploadCACertificateRequest) (<-chan *UploadCACertificateResponse, <-chan error) {
 	responseChan := make(chan *UploadCACertificateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UploadCACertificateWithChan(request *UploadCACertificateRe
 }
 
 // UploadCACertificateWithCallback invokes the slb.UploadCACertificate API asynchronously
-// api document: https://help.aliyun.com/api/slb/uploadcacertificate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadCACertificateWithCallback(request *UploadCACertificateRequest, callback func(response *UploadCACertificateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

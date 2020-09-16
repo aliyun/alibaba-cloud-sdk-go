@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeServerCertificates invokes the slb.DescribeServerCertificates API synchronously
-// api document: https://help.aliyun.com/api/slb/describeservercertificates.html
 func (client *Client) DescribeServerCertificates(request *DescribeServerCertificatesRequest) (response *DescribeServerCertificatesResponse, err error) {
 	response = CreateDescribeServerCertificatesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeServerCertificates(request *DescribeServerCertific
 }
 
 // DescribeServerCertificatesWithChan invokes the slb.DescribeServerCertificates API asynchronously
-// api document: https://help.aliyun.com/api/slb/describeservercertificates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServerCertificatesWithChan(request *DescribeServerCertificatesRequest) (<-chan *DescribeServerCertificatesResponse, <-chan error) {
 	responseChan := make(chan *DescribeServerCertificatesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeServerCertificatesWithChan(request *DescribeServer
 }
 
 // DescribeServerCertificatesWithCallback invokes the slb.DescribeServerCertificates API asynchronously
-// api document: https://help.aliyun.com/api/slb/describeservercertificates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServerCertificatesWithCallback(request *DescribeServerCertificatesRequest, callback func(response *DescribeServerCertificatesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

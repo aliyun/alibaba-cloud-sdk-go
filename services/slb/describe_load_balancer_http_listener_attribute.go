@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLoadBalancerHTTPListenerAttribute invokes the slb.DescribeLoadBalancerHTTPListenerAttribute API synchronously
-// api document: https://help.aliyun.com/api/slb/describeloadbalancerhttplistenerattribute.html
 func (client *Client) DescribeLoadBalancerHTTPListenerAttribute(request *DescribeLoadBalancerHTTPListenerAttributeRequest) (response *DescribeLoadBalancerHTTPListenerAttributeResponse, err error) {
 	response = CreateDescribeLoadBalancerHTTPListenerAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLoadBalancerHTTPListenerAttribute(request *Describ
 }
 
 // DescribeLoadBalancerHTTPListenerAttributeWithChan invokes the slb.DescribeLoadBalancerHTTPListenerAttribute API asynchronously
-// api document: https://help.aliyun.com/api/slb/describeloadbalancerhttplistenerattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancerHTTPListenerAttributeWithChan(request *DescribeLoadBalancerHTTPListenerAttributeRequest) (<-chan *DescribeLoadBalancerHTTPListenerAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeLoadBalancerHTTPListenerAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLoadBalancerHTTPListenerAttributeWithChan(request 
 }
 
 // DescribeLoadBalancerHTTPListenerAttributeWithCallback invokes the slb.DescribeLoadBalancerHTTPListenerAttribute API asynchronously
-// api document: https://help.aliyun.com/api/slb/describeloadbalancerhttplistenerattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancerHTTPListenerAttributeWithCallback(request *DescribeLoadBalancerHTTPListenerAttributeRequest, callback func(response *DescribeLoadBalancerHTTPListenerAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

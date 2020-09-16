@@ -21,7 +21,6 @@ import (
 )
 
 // SetTLSCipherPolicyAttribute invokes the slb.SetTLSCipherPolicyAttribute API synchronously
-// api document: https://help.aliyun.com/api/slb/settlscipherpolicyattribute.html
 func (client *Client) SetTLSCipherPolicyAttribute(request *SetTLSCipherPolicyAttributeRequest) (response *SetTLSCipherPolicyAttributeResponse, err error) {
 	response = CreateSetTLSCipherPolicyAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetTLSCipherPolicyAttribute(request *SetTLSCipherPolicyAtt
 }
 
 // SetTLSCipherPolicyAttributeWithChan invokes the slb.SetTLSCipherPolicyAttribute API asynchronously
-// api document: https://help.aliyun.com/api/slb/settlscipherpolicyattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetTLSCipherPolicyAttributeWithChan(request *SetTLSCipherPolicyAttributeRequest) (<-chan *SetTLSCipherPolicyAttributeResponse, <-chan error) {
 	responseChan := make(chan *SetTLSCipherPolicyAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetTLSCipherPolicyAttributeWithChan(request *SetTLSCipherP
 }
 
 // SetTLSCipherPolicyAttributeWithCallback invokes the slb.SetTLSCipherPolicyAttribute API asynchronously
-// api document: https://help.aliyun.com/api/slb/settlscipherpolicyattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetTLSCipherPolicyAttributeWithCallback(request *SetTLSCipherPolicyAttributeRequest, callback func(response *SetTLSCipherPolicyAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

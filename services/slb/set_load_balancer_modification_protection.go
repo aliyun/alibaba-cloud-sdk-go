@@ -21,7 +21,6 @@ import (
 )
 
 // SetLoadBalancerModificationProtection invokes the slb.SetLoadBalancerModificationProtection API synchronously
-// api document: https://help.aliyun.com/api/slb/setloadbalancermodificationprotection.html
 func (client *Client) SetLoadBalancerModificationProtection(request *SetLoadBalancerModificationProtectionRequest) (response *SetLoadBalancerModificationProtectionResponse, err error) {
 	response = CreateSetLoadBalancerModificationProtectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetLoadBalancerModificationProtection(request *SetLoadBala
 }
 
 // SetLoadBalancerModificationProtectionWithChan invokes the slb.SetLoadBalancerModificationProtection API asynchronously
-// api document: https://help.aliyun.com/api/slb/setloadbalancermodificationprotection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLoadBalancerModificationProtectionWithChan(request *SetLoadBalancerModificationProtectionRequest) (<-chan *SetLoadBalancerModificationProtectionResponse, <-chan error) {
 	responseChan := make(chan *SetLoadBalancerModificationProtectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetLoadBalancerModificationProtectionWithChan(request *Set
 }
 
 // SetLoadBalancerModificationProtectionWithCallback invokes the slb.SetLoadBalancerModificationProtection API asynchronously
-// api document: https://help.aliyun.com/api/slb/setloadbalancermodificationprotection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLoadBalancerModificationProtectionWithCallback(request *SetLoadBalancerModificationProtectionRequest, callback func(response *SetLoadBalancerModificationProtectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

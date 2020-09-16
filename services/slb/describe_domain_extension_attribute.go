@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainExtensionAttribute invokes the slb.DescribeDomainExtensionAttribute API synchronously
-// api document: https://help.aliyun.com/api/slb/describedomainextensionattribute.html
 func (client *Client) DescribeDomainExtensionAttribute(request *DescribeDomainExtensionAttributeRequest) (response *DescribeDomainExtensionAttributeResponse, err error) {
 	response = CreateDescribeDomainExtensionAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainExtensionAttribute(request *DescribeDomainEx
 }
 
 // DescribeDomainExtensionAttributeWithChan invokes the slb.DescribeDomainExtensionAttribute API asynchronously
-// api document: https://help.aliyun.com/api/slb/describedomainextensionattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainExtensionAttributeWithChan(request *DescribeDomainExtensionAttributeRequest) (<-chan *DescribeDomainExtensionAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainExtensionAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainExtensionAttributeWithChan(request *Describe
 }
 
 // DescribeDomainExtensionAttributeWithCallback invokes the slb.DescribeDomainExtensionAttribute API asynchronously
-// api document: https://help.aliyun.com/api/slb/describedomainextensionattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainExtensionAttributeWithCallback(request *DescribeDomainExtensionAttributeRequest, callback func(response *DescribeDomainExtensionAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

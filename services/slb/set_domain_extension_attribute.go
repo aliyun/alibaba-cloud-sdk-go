@@ -21,7 +21,6 @@ import (
 )
 
 // SetDomainExtensionAttribute invokes the slb.SetDomainExtensionAttribute API synchronously
-// api document: https://help.aliyun.com/api/slb/setdomainextensionattribute.html
 func (client *Client) SetDomainExtensionAttribute(request *SetDomainExtensionAttributeRequest) (response *SetDomainExtensionAttributeResponse, err error) {
 	response = CreateSetDomainExtensionAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetDomainExtensionAttribute(request *SetDomainExtensionAtt
 }
 
 // SetDomainExtensionAttributeWithChan invokes the slb.SetDomainExtensionAttribute API asynchronously
-// api document: https://help.aliyun.com/api/slb/setdomainextensionattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDomainExtensionAttributeWithChan(request *SetDomainExtensionAttributeRequest) (<-chan *SetDomainExtensionAttributeResponse, <-chan error) {
 	responseChan := make(chan *SetDomainExtensionAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetDomainExtensionAttributeWithChan(request *SetDomainExte
 }
 
 // SetDomainExtensionAttributeWithCallback invokes the slb.SetDomainExtensionAttribute API asynchronously
-// api document: https://help.aliyun.com/api/slb/setdomainextensionattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDomainExtensionAttributeWithCallback(request *SetDomainExtensionAttributeRequest, callback func(response *SetDomainExtensionAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

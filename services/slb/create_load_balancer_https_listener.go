@@ -21,7 +21,6 @@ import (
 )
 
 // CreateLoadBalancerHTTPSListener invokes the slb.CreateLoadBalancerHTTPSListener API synchronously
-// api document: https://help.aliyun.com/api/slb/createloadbalancerhttpslistener.html
 func (client *Client) CreateLoadBalancerHTTPSListener(request *CreateLoadBalancerHTTPSListenerRequest) (response *CreateLoadBalancerHTTPSListenerResponse, err error) {
 	response = CreateCreateLoadBalancerHTTPSListenerResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateLoadBalancerHTTPSListener(request *CreateLoadBalance
 }
 
 // CreateLoadBalancerHTTPSListenerWithChan invokes the slb.CreateLoadBalancerHTTPSListener API asynchronously
-// api document: https://help.aliyun.com/api/slb/createloadbalancerhttpslistener.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLoadBalancerHTTPSListenerWithChan(request *CreateLoadBalancerHTTPSListenerRequest) (<-chan *CreateLoadBalancerHTTPSListenerResponse, <-chan error) {
 	responseChan := make(chan *CreateLoadBalancerHTTPSListenerResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateLoadBalancerHTTPSListenerWithChan(request *CreateLoa
 }
 
 // CreateLoadBalancerHTTPSListenerWithCallback invokes the slb.CreateLoadBalancerHTTPSListener API asynchronously
-// api document: https://help.aliyun.com/api/slb/createloadbalancerhttpslistener.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLoadBalancerHTTPSListenerWithCallback(request *CreateLoadBalancerHTTPSListenerRequest, callback func(response *CreateLoadBalancerHTTPSListenerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
