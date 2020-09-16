@@ -21,7 +21,6 @@ import (
 )
 
 // InvokeServiceAsync invokes the industry_brain.InvokeServiceAsync API synchronously
-// api document: https://help.aliyun.com/api/industry-brain/invokeserviceasync.html
 func (client *Client) InvokeServiceAsync(request *InvokeServiceAsyncRequest) (response *InvokeServiceAsyncResponse, err error) {
 	response = CreateInvokeServiceAsyncResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InvokeServiceAsync(request *InvokeServiceAsyncRequest) (re
 }
 
 // InvokeServiceAsyncWithChan invokes the industry_brain.InvokeServiceAsync API asynchronously
-// api document: https://help.aliyun.com/api/industry-brain/invokeserviceasync.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InvokeServiceAsyncWithChan(request *InvokeServiceAsyncRequest) (<-chan *InvokeServiceAsyncResponse, <-chan error) {
 	responseChan := make(chan *InvokeServiceAsyncResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InvokeServiceAsyncWithChan(request *InvokeServiceAsyncRequ
 }
 
 // InvokeServiceAsyncWithCallback invokes the industry_brain.InvokeServiceAsync API asynchronously
-// api document: https://help.aliyun.com/api/industry-brain/invokeserviceasync.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InvokeServiceAsyncWithCallback(request *InvokeServiceAsyncRequest, callback func(response *InvokeServiceAsyncResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,7 +72,6 @@ func (client *Client) InvokeServiceAsyncWithCallback(request *InvokeServiceAsync
 type InvokeServiceAsyncRequest struct {
 	*requests.RpcRequest
 	IsShowInput requests.Boolean `position:"Query" name:"IsShowInput"`
-	Context     string           `position:"Query" name:"Context"`
 	ServiceId   string           `position:"Query" name:"ServiceId"`
 	Params      string           `position:"Query" name:"Params"`
 	RequestData string           `position:"Query" name:"RequestData"`
@@ -97,7 +91,7 @@ func CreateInvokeServiceAsyncRequest() (request *InvokeServiceAsyncRequest) {
 	request = &InvokeServiceAsyncRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("industry-brain", "2019-06-30", "InvokeServiceAsync", "", "")
+	request.InitWithApiInfo("industry-brain", "2019-06-29", "InvokeServiceAsync", "", "")
 	request.Method = requests.POST
 	return
 }

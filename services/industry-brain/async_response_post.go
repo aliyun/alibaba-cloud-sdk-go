@@ -21,7 +21,6 @@ import (
 )
 
 // AsyncResponsePost invokes the industry_brain.AsyncResponsePost API synchronously
-// api document: https://help.aliyun.com/api/industry-brain/asyncresponsepost.html
 func (client *Client) AsyncResponsePost(request *AsyncResponsePostRequest) (response *AsyncResponsePostResponse, err error) {
 	response = CreateAsyncResponsePostResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AsyncResponsePost(request *AsyncResponsePostRequest) (resp
 }
 
 // AsyncResponsePostWithChan invokes the industry_brain.AsyncResponsePost API asynchronously
-// api document: https://help.aliyun.com/api/industry-brain/asyncresponsepost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AsyncResponsePostWithChan(request *AsyncResponsePostRequest) (<-chan *AsyncResponsePostResponse, <-chan error) {
 	responseChan := make(chan *AsyncResponsePostResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AsyncResponsePostWithChan(request *AsyncResponsePostReques
 }
 
 // AsyncResponsePostWithCallback invokes the industry_brain.AsyncResponsePost API asynchronously
-// api document: https://help.aliyun.com/api/industry-brain/asyncresponsepost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AsyncResponsePostWithCallback(request *AsyncResponsePostRequest, callback func(response *AsyncResponsePostResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateAsyncResponsePostRequest() (request *AsyncResponsePostRequest) {
 	request = &AsyncResponsePostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("industry-brain", "2019-06-30", "AsyncResponsePost", "", "")
+	request.InitWithApiInfo("industry-brain", "2019-06-29", "AsyncResponsePost", "", "")
 	request.Method = requests.POST
 	return
 }

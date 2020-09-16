@@ -21,7 +21,6 @@ import (
 )
 
 // InvokeService invokes the industry_brain.InvokeService API synchronously
-// api document: https://help.aliyun.com/api/industry-brain/invokeservice.html
 func (client *Client) InvokeService(request *InvokeServiceRequest) (response *InvokeServiceResponse, err error) {
 	response = CreateInvokeServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InvokeService(request *InvokeServiceRequest) (response *In
 }
 
 // InvokeServiceWithChan invokes the industry_brain.InvokeService API asynchronously
-// api document: https://help.aliyun.com/api/industry-brain/invokeservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InvokeServiceWithChan(request *InvokeServiceRequest) (<-chan *InvokeServiceResponse, <-chan error) {
 	responseChan := make(chan *InvokeServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InvokeServiceWithChan(request *InvokeServiceRequest) (<-ch
 }
 
 // InvokeServiceWithCallback invokes the industry_brain.InvokeService API asynchronously
-// api document: https://help.aliyun.com/api/industry-brain/invokeservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InvokeServiceWithCallback(request *InvokeServiceRequest, callback func(response *InvokeServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ type InvokeServiceResponse struct {
 	Data      string `json:"Data" xml:"Data"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
+	Context   string `json:"Context" xml:"Context"`
 }
 
 // CreateInvokeServiceRequest creates a request to invoke InvokeService API
@@ -99,7 +95,7 @@ func CreateInvokeServiceRequest() (request *InvokeServiceRequest) {
 	request = &InvokeServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("industry-brain", "2019-06-30", "InvokeService", "", "")
+	request.InitWithApiInfo("industry-brain", "2019-06-29", "InvokeService", "", "")
 	request.Method = requests.POST
 	return
 }

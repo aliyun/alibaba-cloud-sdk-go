@@ -21,7 +21,6 @@ import (
 )
 
 // GetServiceResultAsync invokes the industry_brain.GetServiceResultAsync API synchronously
-// api document: https://help.aliyun.com/api/industry-brain/getserviceresultasync.html
 func (client *Client) GetServiceResultAsync(request *GetServiceResultAsyncRequest) (response *GetServiceResultAsyncResponse, err error) {
 	response = CreateGetServiceResultAsyncResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetServiceResultAsync(request *GetServiceResultAsyncReques
 }
 
 // GetServiceResultAsyncWithChan invokes the industry_brain.GetServiceResultAsync API asynchronously
-// api document: https://help.aliyun.com/api/industry-brain/getserviceresultasync.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetServiceResultAsyncWithChan(request *GetServiceResultAsyncRequest) (<-chan *GetServiceResultAsyncResponse, <-chan error) {
 	responseChan := make(chan *GetServiceResultAsyncResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetServiceResultAsyncWithChan(request *GetServiceResultAsy
 }
 
 // GetServiceResultAsyncWithCallback invokes the industry_brain.GetServiceResultAsync API asynchronously
-// api document: https://help.aliyun.com/api/industry-brain/getserviceresultasync.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetServiceResultAsyncWithCallback(request *GetServiceResultAsyncRequest, callback func(response *GetServiceResultAsyncResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,8 +89,8 @@ func CreateGetServiceResultAsyncRequest() (request *GetServiceResultAsyncRequest
 	request = &GetServiceResultAsyncRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("industry-brain", "2019-06-30", "GetServiceResultAsync", "", "")
-	request.Method = requests.GET
+	request.InitWithApiInfo("industry-brain", "2019-06-29", "GetServiceResultAsync", "", "")
+	request.Method = requests.POST
 	return
 }
 

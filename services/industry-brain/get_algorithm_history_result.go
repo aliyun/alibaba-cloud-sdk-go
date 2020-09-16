@@ -21,7 +21,6 @@ import (
 )
 
 // GetAlgorithmHistoryResult invokes the industry_brain.GetAlgorithmHistoryResult API synchronously
-// api document: https://help.aliyun.com/api/industry-brain/getalgorithmhistoryresult.html
 func (client *Client) GetAlgorithmHistoryResult(request *GetAlgorithmHistoryResultRequest) (response *GetAlgorithmHistoryResultResponse, err error) {
 	response = CreateGetAlgorithmHistoryResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetAlgorithmHistoryResult(request *GetAlgorithmHistoryResu
 }
 
 // GetAlgorithmHistoryResultWithChan invokes the industry_brain.GetAlgorithmHistoryResult API asynchronously
-// api document: https://help.aliyun.com/api/industry-brain/getalgorithmhistoryresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAlgorithmHistoryResultWithChan(request *GetAlgorithmHistoryResultRequest) (<-chan *GetAlgorithmHistoryResultResponse, <-chan error) {
 	responseChan := make(chan *GetAlgorithmHistoryResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetAlgorithmHistoryResultWithChan(request *GetAlgorithmHis
 }
 
 // GetAlgorithmHistoryResultWithCallback invokes the industry_brain.GetAlgorithmHistoryResult API asynchronously
-// api document: https://help.aliyun.com/api/industry-brain/getalgorithmhistoryresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAlgorithmHistoryResultWithCallback(request *GetAlgorithmHistoryResultRequest, callback func(response *GetAlgorithmHistoryResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateGetAlgorithmHistoryResultRequest() (request *GetAlgorithmHistoryResul
 	request = &GetAlgorithmHistoryResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("industry-brain", "2019-06-30", "GetAlgorithmHistoryResult", "", "")
+	request.InitWithApiInfo("industry-brain", "2019-06-29", "GetAlgorithmHistoryResult", "", "")
 	request.Method = requests.GET
 	return
 }
