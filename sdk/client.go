@@ -364,7 +364,8 @@ func (client *Client) buildRequestWithSigner(request requests.AcsRequest, signer
 		endpoint = endpoints.GetEndpointFromMap(regionId, request.GetProduct())
 	}
 
-	if endpoint == "" && client.EndpointType != "" && request.GetProduct() != "Sts" {
+	if endpoint == "" && client.EndpointType != "" &&
+		(request.GetProduct() != "Sts" || len(request.GetQueryParams()) == 0) {
 		if client.EndpointMap != nil && client.Network == "" || client.Network == "public" {
 			endpoint = client.EndpointMap[regionId]
 		}
