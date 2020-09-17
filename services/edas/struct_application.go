@@ -17,11 +17,12 @@ package edas
 
 // Application is a nested struct in edas response
 type Application struct {
-	Name            string `json:"Name" xml:"Name"`
-	AppId           string `json:"AppId" xml:"AppId"`
-	ClusterId       string `json:"ClusterId" xml:"ClusterId"`
-	RegionId        string `json:"RegionId" xml:"RegionId"`
-	BuildPackageId  int64  `json:"BuildPackageId" xml:"BuildPackageId"`
-	ApplicationType string `json:"ApplicationType" xml:"ApplicationType"`
-	ClusterType     int    `json:"ClusterType" xml:"ClusterType"`
+	Name                 string `json:"Name" xml:"Name"`
+	AppId                string `json:"AppId" xml:"AppId"`
+	ClusterId            string `json:"ClusterId" xml:"ClusterId"`
+	RegionId             string `json:"RegionId" xml:"RegionId"`
+	BuildPackageId       int64  `json:"BuildPackageId" xml:"BuildPackageId"`
+	ApplicationType      string `json:"ApplicationType" xml:"ApplicationType"`
+	ClusterType          int    `json:"ClusterType" xml:"ClusterType"`
+	RunningInstanceCount int    `json:"RunningInstanceCount" xml:"RunningInstanceCount"`
 }

@@ -77,12 +77,10 @@ type ListDeployGroupRequest struct {
 // ListDeployGroupResponse is the response struct for api ListDeployGroup
 type ListDeployGroupResponse struct {
 	*responses.BaseResponse
-	Code              int             `json:"Code" xml:"Code"`
-	Message           string          `json:"Message" xml:"Message"`
-	RequestId         string          `json:"RequestId" xml:"RequestId"`
-	VServerGroupId    string          `json:"VServerGroupId" xml:"VServerGroupId"`
-	VExtServerGroupId string          `json:"VExtServerGroupId" xml:"VExtServerGroupId"`
-	DeployGroupList   DeployGroupList `json:"DeployGroupList" xml:"DeployGroupList"`
+	Code            int             `json:"Code" xml:"Code"`
+	Message         string          `json:"Message" xml:"Message"`
+	RequestId       string          `json:"RequestId" xml:"RequestId"`
+	DeployGroupList DeployGroupList `json:"DeployGroupList" xml:"DeployGroupList"`
 }
 
 // CreateListDeployGroupRequest creates a request to invoke ListDeployGroup API

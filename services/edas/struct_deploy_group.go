@@ -27,6 +27,7 @@ type DeployGroup struct {
 	MemoryRequest         string     `json:"MemoryRequest" xml:"MemoryRequest"`
 	PackagePublicUrl      string     `json:"PackagePublicUrl" xml:"PackagePublicUrl"`
 	Selector              string     `json:"Selector" xml:"Selector"`
+	VExtServerGroupId     string     `json:"VExtServerGroupId" xml:"VExtServerGroupId"`
 	Strategy              string     `json:"Strategy" xml:"Strategy"`
 	PackageVersionId      string     `json:"PackageVersionId" xml:"PackageVersionId"`
 	ClusterName           string     `json:"ClusterName" xml:"ClusterName"`
@@ -41,6 +42,7 @@ type DeployGroup struct {
 	NameSpace             string     `json:"NameSpace" xml:"NameSpace"`
 	PostStart             string     `json:"PostStart" xml:"PostStart"`
 	GroupType             int        `json:"GroupType" xml:"GroupType"`
+	VServerGroupId        string     `json:"VServerGroupId" xml:"VServerGroupId"`
 	AppId                 string     `json:"AppId" xml:"AppId"`
 	CpuLimit              string     `json:"CpuLimit" xml:"CpuLimit"`
 	CpuRequest            string     `json:"CpuRequest" xml:"CpuRequest"`

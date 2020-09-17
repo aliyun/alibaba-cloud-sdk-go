@@ -78,8 +78,6 @@ type ListComponentsResponse struct {
 	*responses.BaseResponse
 	Code          int           `json:"Code" xml:"Code"`
 	Message       string        `json:"Message" xml:"Message"`
-	ComponentKey  string        `json:"ComponentKey" xml:"ComponentKey"`
-	Desc          string        `json:"Desc" xml:"Desc"`
 	ComponentList ComponentList `json:"ComponentList" xml:"ComponentList"`
 }
 

@@ -17,8 +17,10 @@ package edas
 
 // Component is a nested struct in edas response
 type Component struct {
-	ComponentId string `json:"ComponentId" xml:"ComponentId"`
-	Type        string `json:"Type" xml:"Type"`
-	Version     string `json:"Version" xml:"Version"`
-	Expired     bool   `json:"Expired" xml:"Expired"`
+	ComponentId  string `json:"ComponentId" xml:"ComponentId"`
+	Type         string `json:"Type" xml:"Type"`
+	Version      string `json:"Version" xml:"Version"`
+	Expired      bool   `json:"Expired" xml:"Expired"`
+	ComponentKey string `json:"ComponentKey" xml:"ComponentKey"`
+	Desc         string `json:"Desc" xml:"Desc"`
 }
