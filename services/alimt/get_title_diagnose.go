@@ -21,7 +21,6 @@ import (
 )
 
 // GetTitleDiagnose invokes the alimt.GetTitleDiagnose API synchronously
-// api document: https://help.aliyun.com/api/alimt/gettitlediagnose.html
 func (client *Client) GetTitleDiagnose(request *GetTitleDiagnoseRequest) (response *GetTitleDiagnoseResponse, err error) {
 	response = CreateGetTitleDiagnoseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetTitleDiagnose(request *GetTitleDiagnoseRequest) (respon
 }
 
 // GetTitleDiagnoseWithChan invokes the alimt.GetTitleDiagnose API asynchronously
-// api document: https://help.aliyun.com/api/alimt/gettitlediagnose.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTitleDiagnoseWithChan(request *GetTitleDiagnoseRequest) (<-chan *GetTitleDiagnoseResponse, <-chan error) {
 	responseChan := make(chan *GetTitleDiagnoseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetTitleDiagnoseWithChan(request *GetTitleDiagnoseRequest)
 }
 
 // GetTitleDiagnoseWithCallback invokes the alimt.GetTitleDiagnose API asynchronously
-// api document: https://help.aliyun.com/api/alimt/gettitlediagnose.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTitleDiagnoseWithCallback(request *GetTitleDiagnoseRequest, callback func(response *GetTitleDiagnoseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

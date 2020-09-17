@@ -21,7 +21,6 @@ import (
 )
 
 // GetImageTranslate invokes the alimt.GetImageTranslate API synchronously
-// api document: https://help.aliyun.com/api/alimt/getimagetranslate.html
 func (client *Client) GetImageTranslate(request *GetImageTranslateRequest) (response *GetImageTranslateResponse, err error) {
 	response = CreateGetImageTranslateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetImageTranslate(request *GetImageTranslateRequest) (resp
 }
 
 // GetImageTranslateWithChan invokes the alimt.GetImageTranslate API asynchronously
-// api document: https://help.aliyun.com/api/alimt/getimagetranslate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetImageTranslateWithChan(request *GetImageTranslateRequest) (<-chan *GetImageTranslateResponse, <-chan error) {
 	responseChan := make(chan *GetImageTranslateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetImageTranslateWithChan(request *GetImageTranslateReques
 }
 
 // GetImageTranslateWithCallback invokes the alimt.GetImageTranslate API asynchronously
-// api document: https://help.aliyun.com/api/alimt/getimagetranslate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetImageTranslateWithCallback(request *GetImageTranslateRequest, callback func(response *GetImageTranslateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

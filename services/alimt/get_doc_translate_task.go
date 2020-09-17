@@ -21,7 +21,6 @@ import (
 )
 
 // GetDocTranslateTask invokes the alimt.GetDocTranslateTask API synchronously
-// api document: https://help.aliyun.com/api/alimt/getdoctranslatetask.html
 func (client *Client) GetDocTranslateTask(request *GetDocTranslateTaskRequest) (response *GetDocTranslateTaskResponse, err error) {
 	response = CreateGetDocTranslateTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetDocTranslateTask(request *GetDocTranslateTaskRequest) (
 }
 
 // GetDocTranslateTaskWithChan invokes the alimt.GetDocTranslateTask API asynchronously
-// api document: https://help.aliyun.com/api/alimt/getdoctranslatetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDocTranslateTaskWithChan(request *GetDocTranslateTaskRequest) (<-chan *GetDocTranslateTaskResponse, <-chan error) {
 	responseChan := make(chan *GetDocTranslateTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetDocTranslateTaskWithChan(request *GetDocTranslateTaskRe
 }
 
 // GetDocTranslateTaskWithCallback invokes the alimt.GetDocTranslateTask API asynchronously
-// api document: https://help.aliyun.com/api/alimt/getdoctranslatetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDocTranslateTaskWithCallback(request *GetDocTranslateTaskRequest, callback func(response *GetDocTranslateTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

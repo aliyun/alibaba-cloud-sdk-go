@@ -21,7 +21,6 @@ import (
 )
 
 // GetDetectLanguage invokes the alimt.GetDetectLanguage API synchronously
-// api document: https://help.aliyun.com/api/alimt/getdetectlanguage.html
 func (client *Client) GetDetectLanguage(request *GetDetectLanguageRequest) (response *GetDetectLanguageResponse, err error) {
 	response = CreateGetDetectLanguageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetDetectLanguage(request *GetDetectLanguageRequest) (resp
 }
 
 // GetDetectLanguageWithChan invokes the alimt.GetDetectLanguage API asynchronously
-// api document: https://help.aliyun.com/api/alimt/getdetectlanguage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDetectLanguageWithChan(request *GetDetectLanguageRequest) (<-chan *GetDetectLanguageResponse, <-chan error) {
 	responseChan := make(chan *GetDetectLanguageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetDetectLanguageWithChan(request *GetDetectLanguageReques
 }
 
 // GetDetectLanguageWithCallback invokes the alimt.GetDetectLanguage API asynchronously
-// api document: https://help.aliyun.com/api/alimt/getdetectlanguage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDetectLanguageWithCallback(request *GetDetectLanguageRequest, callback func(response *GetDetectLanguageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

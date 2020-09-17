@@ -21,7 +21,6 @@ import (
 )
 
 // Translate invokes the alimt.Translate API synchronously
-// api document: https://help.aliyun.com/api/alimt/translate.html
 func (client *Client) Translate(request *TranslateRequest) (response *TranslateResponse, err error) {
 	response = CreateTranslateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) Translate(request *TranslateRequest) (response *TranslateR
 }
 
 // TranslateWithChan invokes the alimt.Translate API asynchronously
-// api document: https://help.aliyun.com/api/alimt/translate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TranslateWithChan(request *TranslateRequest) (<-chan *TranslateResponse, <-chan error) {
 	responseChan := make(chan *TranslateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TranslateWithChan(request *TranslateRequest) (<-chan *Tran
 }
 
 // TranslateWithCallback invokes the alimt.Translate API asynchronously
-// api document: https://help.aliyun.com/api/alimt/translate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TranslateWithCallback(request *TranslateRequest, callback func(response *TranslateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

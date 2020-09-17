@@ -21,7 +21,6 @@ import (
 )
 
 // GetImageDiagnose invokes the alimt.GetImageDiagnose API synchronously
-// api document: https://help.aliyun.com/api/alimt/getimagediagnose.html
 func (client *Client) GetImageDiagnose(request *GetImageDiagnoseRequest) (response *GetImageDiagnoseResponse, err error) {
 	response = CreateGetImageDiagnoseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetImageDiagnose(request *GetImageDiagnoseRequest) (respon
 }
 
 // GetImageDiagnoseWithChan invokes the alimt.GetImageDiagnose API asynchronously
-// api document: https://help.aliyun.com/api/alimt/getimagediagnose.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetImageDiagnoseWithChan(request *GetImageDiagnoseRequest) (<-chan *GetImageDiagnoseResponse, <-chan error) {
 	responseChan := make(chan *GetImageDiagnoseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetImageDiagnoseWithChan(request *GetImageDiagnoseRequest)
 }
 
 // GetImageDiagnoseWithCallback invokes the alimt.GetImageDiagnose API asynchronously
-// api document: https://help.aliyun.com/api/alimt/getimagediagnose.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetImageDiagnoseWithCallback(request *GetImageDiagnoseRequest, callback func(response *GetImageDiagnoseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // TranslateECommerce invokes the alimt.TranslateECommerce API synchronously
-// api document: https://help.aliyun.com/api/alimt/translateecommerce.html
 func (client *Client) TranslateECommerce(request *TranslateECommerceRequest) (response *TranslateECommerceResponse, err error) {
 	response = CreateTranslateECommerceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TranslateECommerce(request *TranslateECommerceRequest) (re
 }
 
 // TranslateECommerceWithChan invokes the alimt.TranslateECommerce API asynchronously
-// api document: https://help.aliyun.com/api/alimt/translateecommerce.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TranslateECommerceWithChan(request *TranslateECommerceRequest) (<-chan *TranslateECommerceResponse, <-chan error) {
 	responseChan := make(chan *TranslateECommerceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TranslateECommerceWithChan(request *TranslateECommerceRequ
 }
 
 // TranslateECommerceWithCallback invokes the alimt.TranslateECommerce API asynchronously
-// api document: https://help.aliyun.com/api/alimt/translateecommerce.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TranslateECommerceWithCallback(request *TranslateECommerceRequest, callback func(response *TranslateECommerceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // TranslateCertificate invokes the alimt.TranslateCertificate API synchronously
-// api document: https://help.aliyun.com/api/alimt/translatecertificate.html
 func (client *Client) TranslateCertificate(request *TranslateCertificateRequest) (response *TranslateCertificateResponse, err error) {
 	response = CreateTranslateCertificateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TranslateCertificate(request *TranslateCertificateRequest)
 }
 
 // TranslateCertificateWithChan invokes the alimt.TranslateCertificate API asynchronously
-// api document: https://help.aliyun.com/api/alimt/translatecertificate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TranslateCertificateWithChan(request *TranslateCertificateRequest) (<-chan *TranslateCertificateResponse, <-chan error) {
 	responseChan := make(chan *TranslateCertificateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TranslateCertificateWithChan(request *TranslateCertificate
 }
 
 // TranslateCertificateWithCallback invokes the alimt.TranslateCertificate API asynchronously
-// api document: https://help.aliyun.com/api/alimt/translatecertificate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TranslateCertificateWithCallback(request *TranslateCertificateRequest, callback func(response *TranslateCertificateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

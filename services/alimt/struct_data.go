@@ -28,6 +28,7 @@ type Data struct {
 	AllUppercaseWords       string                        `json:"AllUppercaseWords" xml:"AllUppercaseWords"`
 	Url                     string                        `json:"Url" xml:"Url"`
 	LanguageQualityScore    string                        `json:"LanguageQualityScore" xml:"LanguageQualityScore"`
+	Orc                     string                        `json:"Orc" xml:"Orc"`
 	WordCount               string                        `json:"WordCount" xml:"WordCount"`
 	TotalScore              string                        `json:"TotalScore" xml:"TotalScore"`
 	DisableWords            string                        `json:"DisableWords" xml:"DisableWords"`

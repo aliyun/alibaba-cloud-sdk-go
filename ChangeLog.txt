@@ -1,3 +1,7 @@
+2020-09-17 Version: v1.61.500
+- Generated 2018-10-12 for `alimt`.
+- GetTitleIntelligence add interface.
+
 2020-09-17 Version: v1.61.499
 - Generated 2017-08-01 for `polardb`.
 - Fix endpoint.
