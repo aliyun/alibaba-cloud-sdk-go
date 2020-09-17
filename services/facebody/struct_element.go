@@ -17,16 +17,6 @@ package facebody
 
 // Element is a nested struct in facebody response
 type Element struct {
-	FaceConfidence  float64       `json:"FaceConfidence" xml:"FaceConfidence"`
-	LiveConfidence  float64       `json:"LiveConfidence" xml:"LiveConfidence"`
-	Score           float64       `json:"Score" xml:"Score"`
-	TaskId          string        `json:"TaskId" xml:"TaskId"`
-	ImageURL        string        `json:"ImageURL" xml:"ImageURL"`
-	Expression      string        `json:"Expression" xml:"Expression"`
-	FaceProbability float64       `json:"FaceProbability" xml:"FaceProbability"`
-	Type            string        `json:"Type" xml:"Type"`
-	Boxes           []int         `json:"Boxes" xml:"Boxes"`
-	Rect            []int         `json:"Rect" xml:"Rect"`
-	FaceRectangle   FaceRectangle `json:"FaceRectangle" xml:"FaceRectangle"`
-	Results         []Result      `json:"Results" xml:"Results"`
+	Score float64 `json:"Score" xml:"Score"`
+	Boxes []int64 `json:"Boxes" xml:"Boxes"`
 }

@@ -1,3 +1,7 @@
+2020-09-17 Version: v1.61.501
+- Generated 2020-09-10 for `facebody`.
+- Add Api DetectIPCPedestrianOptimized.
+
 2020-09-17 Version: v1.61.500
 - Generated 2018-10-12 for `alimt`.
 - GetTitleIntelligence add interface.
