@@ -21,7 +21,6 @@ import (
 )
 
 // ResetAccount invokes the polardb.ResetAccount API synchronously
-// api document: https://help.aliyun.com/api/polardb/resetaccount.html
 func (client *Client) ResetAccount(request *ResetAccountRequest) (response *ResetAccountResponse, err error) {
 	response = CreateResetAccountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResetAccount(request *ResetAccountRequest) (response *Rese
 }
 
 // ResetAccountWithChan invokes the polardb.ResetAccount API asynchronously
-// api document: https://help.aliyun.com/api/polardb/resetaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAccountWithChan(request *ResetAccountRequest) (<-chan *ResetAccountResponse, <-chan error) {
 	responseChan := make(chan *ResetAccountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResetAccountWithChan(request *ResetAccountRequest) (<-chan
 }
 
 // ResetAccountWithCallback invokes the polardb.ResetAccount API asynchronously
-// api document: https://help.aliyun.com/api/polardb/resetaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAccountWithCallback(request *ResetAccountRequest, callback func(response *ResetAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

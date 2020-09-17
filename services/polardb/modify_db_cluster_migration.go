@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBClusterMigration invokes the polardb.ModifyDBClusterMigration API synchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbclustermigration.html
 func (client *Client) ModifyDBClusterMigration(request *ModifyDBClusterMigrationRequest) (response *ModifyDBClusterMigrationResponse, err error) {
 	response = CreateModifyDBClusterMigrationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBClusterMigration(request *ModifyDBClusterMigration
 }
 
 // ModifyDBClusterMigrationWithChan invokes the polardb.ModifyDBClusterMigration API asynchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbclustermigration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBClusterMigrationWithChan(request *ModifyDBClusterMigrationRequest) (<-chan *ModifyDBClusterMigrationResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBClusterMigrationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBClusterMigrationWithChan(request *ModifyDBClusterM
 }
 
 // ModifyDBClusterMigrationWithCallback invokes the polardb.ModifyDBClusterMigration API asynchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbclustermigration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBClusterMigrationWithCallback(request *ModifyDBClusterMigrationRequest, callback func(response *ModifyDBClusterMigrationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

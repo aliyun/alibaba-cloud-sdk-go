@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDBCluster invokes the polardb.DeleteDBCluster API synchronously
-// api document: https://help.aliyun.com/api/polardb/deletedbcluster.html
 func (client *Client) DeleteDBCluster(request *DeleteDBClusterRequest) (response *DeleteDBClusterResponse, err error) {
 	response = CreateDeleteDBClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDBCluster(request *DeleteDBClusterRequest) (response
 }
 
 // DeleteDBClusterWithChan invokes the polardb.DeleteDBCluster API asynchronously
-// api document: https://help.aliyun.com/api/polardb/deletedbcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDBClusterWithChan(request *DeleteDBClusterRequest) (<-chan *DeleteDBClusterResponse, <-chan error) {
 	responseChan := make(chan *DeleteDBClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDBClusterWithChan(request *DeleteDBClusterRequest) (
 }
 
 // DeleteDBClusterWithCallback invokes the polardb.DeleteDBCluster API asynchronously
-// api document: https://help.aliyun.com/api/polardb/deletedbcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDBClusterWithCallback(request *DeleteDBClusterRequest, callback func(response *DeleteDBClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

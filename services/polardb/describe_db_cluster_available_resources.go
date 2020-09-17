@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBClusterAvailableResources invokes the polardb.DescribeDBClusterAvailableResources API synchronously
-// api document: https://help.aliyun.com/api/polardb/describedbclusteravailableresources.html
 func (client *Client) DescribeDBClusterAvailableResources(request *DescribeDBClusterAvailableResourcesRequest) (response *DescribeDBClusterAvailableResourcesResponse, err error) {
 	response = CreateDescribeDBClusterAvailableResourcesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBClusterAvailableResources(request *DescribeDBClu
 }
 
 // DescribeDBClusterAvailableResourcesWithChan invokes the polardb.DescribeDBClusterAvailableResources API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describedbclusteravailableresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBClusterAvailableResourcesWithChan(request *DescribeDBClusterAvailableResourcesRequest) (<-chan *DescribeDBClusterAvailableResourcesResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBClusterAvailableResourcesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBClusterAvailableResourcesWithChan(request *Descr
 }
 
 // DescribeDBClusterAvailableResourcesWithCallback invokes the polardb.DescribeDBClusterAvailableResources API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describedbclusteravailableresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBClusterAvailableResourcesWithCallback(request *DescribeDBClusterAvailableResourcesRequest, callback func(response *DescribeDBClusterAvailableResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBClusterAccessWhitelist invokes the polardb.ModifyDBClusterAccessWhitelist API synchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbclusteraccesswhitelist.html
 func (client *Client) ModifyDBClusterAccessWhitelist(request *ModifyDBClusterAccessWhitelistRequest) (response *ModifyDBClusterAccessWhitelistResponse, err error) {
 	response = CreateModifyDBClusterAccessWhitelistResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBClusterAccessWhitelist(request *ModifyDBClusterAcc
 }
 
 // ModifyDBClusterAccessWhitelistWithChan invokes the polardb.ModifyDBClusterAccessWhitelist API asynchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbclusteraccesswhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBClusterAccessWhitelistWithChan(request *ModifyDBClusterAccessWhitelistRequest) (<-chan *ModifyDBClusterAccessWhitelistResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBClusterAccessWhitelistResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBClusterAccessWhitelistWithChan(request *ModifyDBCl
 }
 
 // ModifyDBClusterAccessWhitelistWithCallback invokes the polardb.ModifyDBClusterAccessWhitelist API asynchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbclusteraccesswhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBClusterAccessWhitelistWithCallback(request *ModifyDBClusterAccessWhitelistRequest, callback func(response *ModifyDBClusterAccessWhitelistResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

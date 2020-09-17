@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBClusterSSL invokes the polardb.ModifyDBClusterSSL API synchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbclusterssl.html
 func (client *Client) ModifyDBClusterSSL(request *ModifyDBClusterSSLRequest) (response *ModifyDBClusterSSLResponse, err error) {
 	response = CreateModifyDBClusterSSLResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBClusterSSL(request *ModifyDBClusterSSLRequest) (re
 }
 
 // ModifyDBClusterSSLWithChan invokes the polardb.ModifyDBClusterSSL API asynchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbclusterssl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBClusterSSLWithChan(request *ModifyDBClusterSSLRequest) (<-chan *ModifyDBClusterSSLResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBClusterSSLResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBClusterSSLWithChan(request *ModifyDBClusterSSLRequ
 }
 
 // ModifyDBClusterSSLWithCallback invokes the polardb.ModifyDBClusterSSL API asynchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbclusterssl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBClusterSSLWithCallback(request *ModifyDBClusterSSLRequest, callback func(response *ModifyDBClusterSSLResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

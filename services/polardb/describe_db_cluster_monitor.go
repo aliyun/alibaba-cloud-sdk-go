@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBClusterMonitor invokes the polardb.DescribeDBClusterMonitor API synchronously
-// api document: https://help.aliyun.com/api/polardb/describedbclustermonitor.html
 func (client *Client) DescribeDBClusterMonitor(request *DescribeDBClusterMonitorRequest) (response *DescribeDBClusterMonitorResponse, err error) {
 	response = CreateDescribeDBClusterMonitorResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBClusterMonitor(request *DescribeDBClusterMonitor
 }
 
 // DescribeDBClusterMonitorWithChan invokes the polardb.DescribeDBClusterMonitor API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describedbclustermonitor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBClusterMonitorWithChan(request *DescribeDBClusterMonitorRequest) (<-chan *DescribeDBClusterMonitorResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBClusterMonitorResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBClusterMonitorWithChan(request *DescribeDBCluste
 }
 
 // DescribeDBClusterMonitorWithCallback invokes the polardb.DescribeDBClusterMonitor API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describedbclustermonitor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBClusterMonitorWithCallback(request *DescribeDBClusterMonitorRequest, callback func(response *DescribeDBClusterMonitorResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

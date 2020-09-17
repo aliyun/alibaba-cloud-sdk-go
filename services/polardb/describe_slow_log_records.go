@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSlowLogRecords invokes the polardb.DescribeSlowLogRecords API synchronously
-// api document: https://help.aliyun.com/api/polardb/describeslowlogrecords.html
 func (client *Client) DescribeSlowLogRecords(request *DescribeSlowLogRecordsRequest) (response *DescribeSlowLogRecordsResponse, err error) {
 	response = CreateDescribeSlowLogRecordsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSlowLogRecords(request *DescribeSlowLogRecordsRequ
 }
 
 // DescribeSlowLogRecordsWithChan invokes the polardb.DescribeSlowLogRecords API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describeslowlogrecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlowLogRecordsWithChan(request *DescribeSlowLogRecordsRequest) (<-chan *DescribeSlowLogRecordsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSlowLogRecordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSlowLogRecordsWithChan(request *DescribeSlowLogRec
 }
 
 // DescribeSlowLogRecordsWithCallback invokes the polardb.DescribeSlowLogRecords API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describeslowlogrecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlowLogRecordsWithCallback(request *DescribeSlowLogRecordsRequest, callback func(response *DescribeSlowLogRecordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

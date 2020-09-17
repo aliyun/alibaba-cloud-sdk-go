@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBClusterEndpoint invokes the polardb.ModifyDBClusterEndpoint API synchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbclusterendpoint.html
 func (client *Client) ModifyDBClusterEndpoint(request *ModifyDBClusterEndpointRequest) (response *ModifyDBClusterEndpointResponse, err error) {
 	response = CreateModifyDBClusterEndpointResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBClusterEndpoint(request *ModifyDBClusterEndpointRe
 }
 
 // ModifyDBClusterEndpointWithChan invokes the polardb.ModifyDBClusterEndpoint API asynchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbclusterendpoint.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBClusterEndpointWithChan(request *ModifyDBClusterEndpointRequest) (<-chan *ModifyDBClusterEndpointResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBClusterEndpointResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBClusterEndpointWithChan(request *ModifyDBClusterEn
 }
 
 // ModifyDBClusterEndpointWithCallback invokes the polardb.ModifyDBClusterEndpoint API asynchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbclusterendpoint.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBClusterEndpointWithCallback(request *ModifyDBClusterEndpointRequest, callback func(response *ModifyDBClusterEndpointResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,16 +71,17 @@ func (client *Client) ModifyDBClusterEndpointWithCallback(request *ModifyDBClust
 // ModifyDBClusterEndpointRequest is the request struct for api ModifyDBClusterEndpoint
 type ModifyDBClusterEndpointRequest struct {
 	*requests.RpcRequest
-	AutoAddNewNodes      string           `position:"Query" name:"AutoAddNewNodes"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBEndpointId         string           `position:"Query" name:"DBEndpointId"`
-	ReadWriteMode        string           `position:"Query" name:"ReadWriteMode"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBClusterId          string           `position:"Query" name:"DBClusterId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EndpointConfig       string           `position:"Query" name:"EndpointConfig"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Nodes                string           `position:"Query" name:"Nodes"`
+	AutoAddNewNodes       string           `position:"Query" name:"AutoAddNewNodes"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBEndpointId          string           `position:"Query" name:"DBEndpointId"`
+	ReadWriteMode         string           `position:"Query" name:"ReadWriteMode"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	DBClusterId           string           `position:"Query" name:"DBClusterId"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	EndpointConfig        string           `position:"Query" name:"EndpointConfig"`
+	DBEndpointDescription string           `position:"Query" name:"DBEndpointDescription"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	Nodes                 string           `position:"Query" name:"Nodes"`
 }
 
 // ModifyDBClusterEndpointResponse is the response struct for api ModifyDBClusterEndpoint

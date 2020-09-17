@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBClusterEndpoints invokes the polardb.DescribeDBClusterEndpoints API synchronously
-// api document: https://help.aliyun.com/api/polardb/describedbclusterendpoints.html
 func (client *Client) DescribeDBClusterEndpoints(request *DescribeDBClusterEndpointsRequest) (response *DescribeDBClusterEndpointsResponse, err error) {
 	response = CreateDescribeDBClusterEndpointsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBClusterEndpoints(request *DescribeDBClusterEndpo
 }
 
 // DescribeDBClusterEndpointsWithChan invokes the polardb.DescribeDBClusterEndpoints API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describedbclusterendpoints.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBClusterEndpointsWithChan(request *DescribeDBClusterEndpointsRequest) (<-chan *DescribeDBClusterEndpointsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBClusterEndpointsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBClusterEndpointsWithChan(request *DescribeDBClus
 }
 
 // DescribeDBClusterEndpointsWithCallback invokes the polardb.DescribeDBClusterEndpoints API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describedbclusterendpoints.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBClusterEndpointsWithCallback(request *DescribeDBClusterEndpointsRequest, callback func(response *DescribeDBClusterEndpointsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

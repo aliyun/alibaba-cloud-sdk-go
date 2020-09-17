@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBClustersWithBackups invokes the polardb.DescribeDBClustersWithBackups API synchronously
-// api document: https://help.aliyun.com/api/polardb/describedbclusterswithbackups.html
 func (client *Client) DescribeDBClustersWithBackups(request *DescribeDBClustersWithBackupsRequest) (response *DescribeDBClustersWithBackupsResponse, err error) {
 	response = CreateDescribeDBClustersWithBackupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBClustersWithBackups(request *DescribeDBClustersW
 }
 
 // DescribeDBClustersWithBackupsWithChan invokes the polardb.DescribeDBClustersWithBackups API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describedbclusterswithbackups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBClustersWithBackupsWithChan(request *DescribeDBClustersWithBackupsRequest) (<-chan *DescribeDBClustersWithBackupsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBClustersWithBackupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBClustersWithBackupsWithChan(request *DescribeDBC
 }
 
 // DescribeDBClustersWithBackupsWithCallback invokes the polardb.DescribeDBClustersWithBackups API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describedbclusterswithbackups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBClustersWithBackupsWithCallback(request *DescribeDBClustersWithBackupsRequest, callback func(response *DescribeDBClustersWithBackupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

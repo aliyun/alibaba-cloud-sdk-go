@@ -21,7 +21,6 @@ import (
 )
 
 // RestartDBNode invokes the polardb.RestartDBNode API synchronously
-// api document: https://help.aliyun.com/api/polardb/restartdbnode.html
 func (client *Client) RestartDBNode(request *RestartDBNodeRequest) (response *RestartDBNodeResponse, err error) {
 	response = CreateRestartDBNodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RestartDBNode(request *RestartDBNodeRequest) (response *Re
 }
 
 // RestartDBNodeWithChan invokes the polardb.RestartDBNode API asynchronously
-// api document: https://help.aliyun.com/api/polardb/restartdbnode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartDBNodeWithChan(request *RestartDBNodeRequest) (<-chan *RestartDBNodeResponse, <-chan error) {
 	responseChan := make(chan *RestartDBNodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RestartDBNodeWithChan(request *RestartDBNodeRequest) (<-ch
 }
 
 // RestartDBNodeWithCallback invokes the polardb.RestartDBNode API asynchronously
-// api document: https://help.aliyun.com/api/polardb/restartdbnode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartDBNodeWithCallback(request *RestartDBNodeRequest, callback func(response *RestartDBNodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

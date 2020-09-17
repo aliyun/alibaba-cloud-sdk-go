@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDBEndpointAddress invokes the polardb.DeleteDBEndpointAddress API synchronously
-// api document: https://help.aliyun.com/api/polardb/deletedbendpointaddress.html
 func (client *Client) DeleteDBEndpointAddress(request *DeleteDBEndpointAddressRequest) (response *DeleteDBEndpointAddressResponse, err error) {
 	response = CreateDeleteDBEndpointAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDBEndpointAddress(request *DeleteDBEndpointAddressRe
 }
 
 // DeleteDBEndpointAddressWithChan invokes the polardb.DeleteDBEndpointAddress API asynchronously
-// api document: https://help.aliyun.com/api/polardb/deletedbendpointaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDBEndpointAddressWithChan(request *DeleteDBEndpointAddressRequest) (<-chan *DeleteDBEndpointAddressResponse, <-chan error) {
 	responseChan := make(chan *DeleteDBEndpointAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDBEndpointAddressWithChan(request *DeleteDBEndpointA
 }
 
 // DeleteDBEndpointAddressWithCallback invokes the polardb.DeleteDBEndpointAddress API asynchronously
-// api document: https://help.aliyun.com/api/polardb/deletedbendpointaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDBEndpointAddressWithCallback(request *DeleteDBEndpointAddressRequest, callback func(response *DeleteDBEndpointAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

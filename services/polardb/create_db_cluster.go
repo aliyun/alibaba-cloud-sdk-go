@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDBCluster invokes the polardb.CreateDBCluster API synchronously
-// api document: https://help.aliyun.com/api/polardb/createdbcluster.html
 func (client *Client) CreateDBCluster(request *CreateDBClusterRequest) (response *CreateDBClusterResponse, err error) {
 	response = CreateCreateDBClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDBCluster(request *CreateDBClusterRequest) (response
 }
 
 // CreateDBClusterWithChan invokes the polardb.CreateDBCluster API asynchronously
-// api document: https://help.aliyun.com/api/polardb/createdbcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDBClusterWithChan(request *CreateDBClusterRequest) (<-chan *CreateDBClusterResponse, <-chan error) {
 	responseChan := make(chan *CreateDBClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDBClusterWithChan(request *CreateDBClusterRequest) (
 }
 
 // CreateDBClusterWithCallback invokes the polardb.CreateDBCluster API asynchronously
-// api document: https://help.aliyun.com/api/polardb/createdbcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDBClusterWithCallback(request *CreateDBClusterRequest, callback func(response *CreateDBClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

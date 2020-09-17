@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDBEndpointAddress invokes the polardb.CreateDBEndpointAddress API synchronously
-// api document: https://help.aliyun.com/api/polardb/createdbendpointaddress.html
 func (client *Client) CreateDBEndpointAddress(request *CreateDBEndpointAddressRequest) (response *CreateDBEndpointAddressResponse, err error) {
 	response = CreateCreateDBEndpointAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDBEndpointAddress(request *CreateDBEndpointAddressRe
 }
 
 // CreateDBEndpointAddressWithChan invokes the polardb.CreateDBEndpointAddress API asynchronously
-// api document: https://help.aliyun.com/api/polardb/createdbendpointaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDBEndpointAddressWithChan(request *CreateDBEndpointAddressRequest) (<-chan *CreateDBEndpointAddressResponse, <-chan error) {
 	responseChan := make(chan *CreateDBEndpointAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDBEndpointAddressWithChan(request *CreateDBEndpointA
 }
 
 // CreateDBEndpointAddressWithCallback invokes the polardb.CreateDBEndpointAddress API asynchronously
-// api document: https://help.aliyun.com/api/polardb/createdbendpointaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDBEndpointAddressWithCallback(request *CreateDBEndpointAddressRequest, callback func(response *CreateDBEndpointAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBNodeClass invokes the polardb.ModifyDBNodeClass API synchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbnodeclass.html
 func (client *Client) ModifyDBNodeClass(request *ModifyDBNodeClassRequest) (response *ModifyDBNodeClassResponse, err error) {
 	response = CreateModifyDBNodeClassResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBNodeClass(request *ModifyDBNodeClassRequest) (resp
 }
 
 // ModifyDBNodeClassWithChan invokes the polardb.ModifyDBNodeClass API asynchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbnodeclass.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBNodeClassWithChan(request *ModifyDBNodeClassRequest) (<-chan *ModifyDBNodeClassResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBNodeClassResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBNodeClassWithChan(request *ModifyDBNodeClassReques
 }
 
 // ModifyDBNodeClassWithCallback invokes the polardb.ModifyDBNodeClass API asynchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbnodeclass.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBNodeClassWithCallback(request *ModifyDBNodeClassRequest, callback func(response *ModifyDBNodeClassResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

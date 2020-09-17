@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBNodePerformance invokes the polardb.DescribeDBNodePerformance API synchronously
-// api document: https://help.aliyun.com/api/polardb/describedbnodeperformance.html
 func (client *Client) DescribeDBNodePerformance(request *DescribeDBNodePerformanceRequest) (response *DescribeDBNodePerformanceResponse, err error) {
 	response = CreateDescribeDBNodePerformanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBNodePerformance(request *DescribeDBNodePerforman
 }
 
 // DescribeDBNodePerformanceWithChan invokes the polardb.DescribeDBNodePerformance API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describedbnodeperformance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBNodePerformanceWithChan(request *DescribeDBNodePerformanceRequest) (<-chan *DescribeDBNodePerformanceResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBNodePerformanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBNodePerformanceWithChan(request *DescribeDBNodeP
 }
 
 // DescribeDBNodePerformanceWithCallback invokes the polardb.DescribeDBNodePerformance API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describedbnodeperformance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBNodePerformanceWithCallback(request *DescribeDBNodePerformanceRequest, callback func(response *DescribeDBNodePerformanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

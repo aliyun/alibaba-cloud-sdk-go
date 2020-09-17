@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBackupTasks invokes the polardb.DescribeBackupTasks API synchronously
-// api document: https://help.aliyun.com/api/polardb/describebackuptasks.html
 func (client *Client) DescribeBackupTasks(request *DescribeBackupTasksRequest) (response *DescribeBackupTasksResponse, err error) {
 	response = CreateDescribeBackupTasksResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBackupTasks(request *DescribeBackupTasksRequest) (
 }
 
 // DescribeBackupTasksWithChan invokes the polardb.DescribeBackupTasks API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describebackuptasks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupTasksWithChan(request *DescribeBackupTasksRequest) (<-chan *DescribeBackupTasksResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackupTasksResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBackupTasksWithChan(request *DescribeBackupTasksRe
 }
 
 // DescribeBackupTasksWithCallback invokes the polardb.DescribeBackupTasks API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describebackuptasks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupTasksWithCallback(request *DescribeBackupTasksRequest, callback func(response *DescribeBackupTasksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

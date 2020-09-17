@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDBNodes invokes the polardb.CreateDBNodes API synchronously
-// api document: https://help.aliyun.com/api/polardb/createdbnodes.html
 func (client *Client) CreateDBNodes(request *CreateDBNodesRequest) (response *CreateDBNodesResponse, err error) {
 	response = CreateCreateDBNodesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDBNodes(request *CreateDBNodesRequest) (response *Cr
 }
 
 // CreateDBNodesWithChan invokes the polardb.CreateDBNodes API asynchronously
-// api document: https://help.aliyun.com/api/polardb/createdbnodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDBNodesWithChan(request *CreateDBNodesRequest) (<-chan *CreateDBNodesResponse, <-chan error) {
 	responseChan := make(chan *CreateDBNodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDBNodesWithChan(request *CreateDBNodesRequest) (<-ch
 }
 
 // CreateDBNodesWithCallback invokes the polardb.CreateDBNodes API asynchronously
-// api document: https://help.aliyun.com/api/polardb/createdbnodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDBNodesWithCallback(request *CreateDBNodesRequest, callback func(response *CreateDBNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateBackup invokes the polardb.CreateBackup API synchronously
-// api document: https://help.aliyun.com/api/polardb/createbackup.html
 func (client *Client) CreateBackup(request *CreateBackupRequest) (response *CreateBackupResponse, err error) {
 	response = CreateCreateBackupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateBackup(request *CreateBackupRequest) (response *Crea
 }
 
 // CreateBackupWithChan invokes the polardb.CreateBackup API asynchronously
-// api document: https://help.aliyun.com/api/polardb/createbackup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBackupWithChan(request *CreateBackupRequest) (<-chan *CreateBackupResponse, <-chan error) {
 	responseChan := make(chan *CreateBackupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateBackupWithChan(request *CreateBackupRequest) (<-chan
 }
 
 // CreateBackupWithCallback invokes the polardb.CreateBackup API asynchronously
-// api document: https://help.aliyun.com/api/polardb/createbackup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBackupWithCallback(request *CreateBackupRequest, callback func(response *CreateBackupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

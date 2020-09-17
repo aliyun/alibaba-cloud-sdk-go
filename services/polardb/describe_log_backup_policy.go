@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLogBackupPolicy invokes the polardb.DescribeLogBackupPolicy API synchronously
-// api document: https://help.aliyun.com/api/polardb/describelogbackuppolicy.html
 func (client *Client) DescribeLogBackupPolicy(request *DescribeLogBackupPolicyRequest) (response *DescribeLogBackupPolicyResponse, err error) {
 	response = CreateDescribeLogBackupPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLogBackupPolicy(request *DescribeLogBackupPolicyRe
 }
 
 // DescribeLogBackupPolicyWithChan invokes the polardb.DescribeLogBackupPolicy API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describelogbackuppolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLogBackupPolicyWithChan(request *DescribeLogBackupPolicyRequest) (<-chan *DescribeLogBackupPolicyResponse, <-chan error) {
 	responseChan := make(chan *DescribeLogBackupPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLogBackupPolicyWithChan(request *DescribeLogBackup
 }
 
 // DescribeLogBackupPolicyWithCallback invokes the polardb.DescribeLogBackupPolicy API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describelogbackuppolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLogBackupPolicyWithCallback(request *DescribeLogBackupPolicyRequest, callback func(response *DescribeLogBackupPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CloseDBClusterMigration invokes the polardb.CloseDBClusterMigration API synchronously
-// api document: https://help.aliyun.com/api/polardb/closedbclustermigration.html
 func (client *Client) CloseDBClusterMigration(request *CloseDBClusterMigrationRequest) (response *CloseDBClusterMigrationResponse, err error) {
 	response = CreateCloseDBClusterMigrationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CloseDBClusterMigration(request *CloseDBClusterMigrationRe
 }
 
 // CloseDBClusterMigrationWithChan invokes the polardb.CloseDBClusterMigration API asynchronously
-// api document: https://help.aliyun.com/api/polardb/closedbclustermigration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloseDBClusterMigrationWithChan(request *CloseDBClusterMigrationRequest) (<-chan *CloseDBClusterMigrationResponse, <-chan error) {
 	responseChan := make(chan *CloseDBClusterMigrationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CloseDBClusterMigrationWithChan(request *CloseDBClusterMig
 }
 
 // CloseDBClusterMigrationWithCallback invokes the polardb.CloseDBClusterMigration API asynchronously
-// api document: https://help.aliyun.com/api/polardb/closedbclustermigration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloseDBClusterMigrationWithCallback(request *CloseDBClusterMigrationRequest, callback func(response *CloseDBClusterMigrationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

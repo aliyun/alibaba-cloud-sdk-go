@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyAccountPassword invokes the polardb.ModifyAccountPassword API synchronously
-// api document: https://help.aliyun.com/api/polardb/modifyaccountpassword.html
 func (client *Client) ModifyAccountPassword(request *ModifyAccountPasswordRequest) (response *ModifyAccountPasswordResponse, err error) {
 	response = CreateModifyAccountPasswordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyAccountPassword(request *ModifyAccountPasswordReques
 }
 
 // ModifyAccountPasswordWithChan invokes the polardb.ModifyAccountPassword API asynchronously
-// api document: https://help.aliyun.com/api/polardb/modifyaccountpassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccountPasswordWithChan(request *ModifyAccountPasswordRequest) (<-chan *ModifyAccountPasswordResponse, <-chan error) {
 	responseChan := make(chan *ModifyAccountPasswordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyAccountPasswordWithChan(request *ModifyAccountPasswo
 }
 
 // ModifyAccountPasswordWithCallback invokes the polardb.ModifyAccountPassword API asynchronously
-// api document: https://help.aliyun.com/api/polardb/modifyaccountpassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccountPasswordWithCallback(request *ModifyAccountPasswordRequest, callback func(response *ModifyAccountPasswordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

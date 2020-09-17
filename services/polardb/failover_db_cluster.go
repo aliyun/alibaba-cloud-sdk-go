@@ -21,7 +21,6 @@ import (
 )
 
 // FailoverDBCluster invokes the polardb.FailoverDBCluster API synchronously
-// api document: https://help.aliyun.com/api/polardb/failoverdbcluster.html
 func (client *Client) FailoverDBCluster(request *FailoverDBClusterRequest) (response *FailoverDBClusterResponse, err error) {
 	response = CreateFailoverDBClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FailoverDBCluster(request *FailoverDBClusterRequest) (resp
 }
 
 // FailoverDBClusterWithChan invokes the polardb.FailoverDBCluster API asynchronously
-// api document: https://help.aliyun.com/api/polardb/failoverdbcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FailoverDBClusterWithChan(request *FailoverDBClusterRequest) (<-chan *FailoverDBClusterResponse, <-chan error) {
 	responseChan := make(chan *FailoverDBClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FailoverDBClusterWithChan(request *FailoverDBClusterReques
 }
 
 // FailoverDBClusterWithCallback invokes the polardb.FailoverDBCluster API asynchronously
-// api document: https://help.aliyun.com/api/polardb/failoverdbcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FailoverDBClusterWithCallback(request *FailoverDBClusterRequest, callback func(response *FailoverDBClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

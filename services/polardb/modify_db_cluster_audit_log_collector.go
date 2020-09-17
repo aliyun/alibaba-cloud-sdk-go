@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBClusterAuditLogCollector invokes the polardb.ModifyDBClusterAuditLogCollector API synchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbclusterauditlogcollector.html
 func (client *Client) ModifyDBClusterAuditLogCollector(request *ModifyDBClusterAuditLogCollectorRequest) (response *ModifyDBClusterAuditLogCollectorResponse, err error) {
 	response = CreateModifyDBClusterAuditLogCollectorResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBClusterAuditLogCollector(request *ModifyDBClusterA
 }
 
 // ModifyDBClusterAuditLogCollectorWithChan invokes the polardb.ModifyDBClusterAuditLogCollector API asynchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbclusterauditlogcollector.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBClusterAuditLogCollectorWithChan(request *ModifyDBClusterAuditLogCollectorRequest) (<-chan *ModifyDBClusterAuditLogCollectorResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBClusterAuditLogCollectorResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBClusterAuditLogCollectorWithChan(request *ModifyDB
 }
 
 // ModifyDBClusterAuditLogCollectorWithCallback invokes the polardb.ModifyDBClusterAuditLogCollector API asynchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbclusterauditlogcollector.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBClusterAuditLogCollectorWithCallback(request *ModifyDBClusterAuditLogCollectorRequest, callback func(response *ModifyDBClusterAuditLogCollectorResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

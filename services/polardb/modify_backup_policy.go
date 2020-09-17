@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyBackupPolicy invokes the polardb.ModifyBackupPolicy API synchronously
-// api document: https://help.aliyun.com/api/polardb/modifybackuppolicy.html
 func (client *Client) ModifyBackupPolicy(request *ModifyBackupPolicyRequest) (response *ModifyBackupPolicyResponse, err error) {
 	response = CreateModifyBackupPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyBackupPolicy(request *ModifyBackupPolicyRequest) (re
 }
 
 // ModifyBackupPolicyWithChan invokes the polardb.ModifyBackupPolicy API asynchronously
-// api document: https://help.aliyun.com/api/polardb/modifybackuppolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBackupPolicyWithChan(request *ModifyBackupPolicyRequest) (<-chan *ModifyBackupPolicyResponse, <-chan error) {
 	responseChan := make(chan *ModifyBackupPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyBackupPolicyWithChan(request *ModifyBackupPolicyRequ
 }
 
 // ModifyBackupPolicyWithCallback invokes the polardb.ModifyBackupPolicy API asynchronously
-// api document: https://help.aliyun.com/api/polardb/modifybackuppolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBackupPolicyWithCallback(request *ModifyBackupPolicyRequest, callback func(response *ModifyBackupPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

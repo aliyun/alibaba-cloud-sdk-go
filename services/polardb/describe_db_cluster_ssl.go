@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBClusterSSL invokes the polardb.DescribeDBClusterSSL API synchronously
-// api document: https://help.aliyun.com/api/polardb/describedbclusterssl.html
 func (client *Client) DescribeDBClusterSSL(request *DescribeDBClusterSSLRequest) (response *DescribeDBClusterSSLResponse, err error) {
 	response = CreateDescribeDBClusterSSLResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBClusterSSL(request *DescribeDBClusterSSLRequest)
 }
 
 // DescribeDBClusterSSLWithChan invokes the polardb.DescribeDBClusterSSL API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describedbclusterssl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBClusterSSLWithChan(request *DescribeDBClusterSSLRequest) (<-chan *DescribeDBClusterSSLResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBClusterSSLResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBClusterSSLWithChan(request *DescribeDBClusterSSL
 }
 
 // DescribeDBClusterSSLWithCallback invokes the polardb.DescribeDBClusterSSL API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describedbclusterssl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBClusterSSLWithCallback(request *DescribeDBClusterSSLRequest, callback func(response *DescribeDBClusterSSLResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

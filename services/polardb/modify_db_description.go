@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBDescription invokes the polardb.ModifyDBDescription API synchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbdescription.html
 func (client *Client) ModifyDBDescription(request *ModifyDBDescriptionRequest) (response *ModifyDBDescriptionResponse, err error) {
 	response = CreateModifyDBDescriptionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBDescription(request *ModifyDBDescriptionRequest) (
 }
 
 // ModifyDBDescriptionWithChan invokes the polardb.ModifyDBDescription API asynchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbdescription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBDescriptionWithChan(request *ModifyDBDescriptionRequest) (<-chan *ModifyDBDescriptionResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBDescriptionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBDescriptionWithChan(request *ModifyDBDescriptionRe
 }
 
 // ModifyDBDescriptionWithCallback invokes the polardb.ModifyDBDescription API asynchronously
-// api document: https://help.aliyun.com/api/polardb/modifydbdescription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBDescriptionWithCallback(request *ModifyDBDescriptionRequest, callback func(response *ModifyDBDescriptionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

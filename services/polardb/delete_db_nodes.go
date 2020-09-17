@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDBNodes invokes the polardb.DeleteDBNodes API synchronously
-// api document: https://help.aliyun.com/api/polardb/deletedbnodes.html
 func (client *Client) DeleteDBNodes(request *DeleteDBNodesRequest) (response *DeleteDBNodesResponse, err error) {
 	response = CreateDeleteDBNodesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDBNodes(request *DeleteDBNodesRequest) (response *De
 }
 
 // DeleteDBNodesWithChan invokes the polardb.DeleteDBNodes API asynchronously
-// api document: https://help.aliyun.com/api/polardb/deletedbnodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDBNodesWithChan(request *DeleteDBNodesRequest) (<-chan *DeleteDBNodesResponse, <-chan error) {
 	responseChan := make(chan *DeleteDBNodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDBNodesWithChan(request *DeleteDBNodesRequest) (<-ch
 }
 
 // DeleteDBNodesWithCallback invokes the polardb.DeleteDBNodes API asynchronously
-// api document: https://help.aliyun.com/api/polardb/deletedbnodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDBNodesWithCallback(request *DeleteDBNodesRequest, callback func(response *DeleteDBNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

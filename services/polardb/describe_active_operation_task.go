@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeActiveOperationTask invokes the polardb.DescribeActiveOperationTask API synchronously
-// api document: https://help.aliyun.com/api/polardb/describeactiveoperationtask.html
 func (client *Client) DescribeActiveOperationTask(request *DescribeActiveOperationTaskRequest) (response *DescribeActiveOperationTaskResponse, err error) {
 	response = CreateDescribeActiveOperationTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeActiveOperationTask(request *DescribeActiveOperati
 }
 
 // DescribeActiveOperationTaskWithChan invokes the polardb.DescribeActiveOperationTask API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describeactiveoperationtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeActiveOperationTaskWithChan(request *DescribeActiveOperationTaskRequest) (<-chan *DescribeActiveOperationTaskResponse, <-chan error) {
 	responseChan := make(chan *DescribeActiveOperationTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeActiveOperationTaskWithChan(request *DescribeActiv
 }
 
 // DescribeActiveOperationTaskWithCallback invokes the polardb.DescribeActiveOperationTask API asynchronously
-// api document: https://help.aliyun.com/api/polardb/describeactiveoperationtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeActiveOperationTaskWithCallback(request *DescribeActiveOperationTaskRequest, callback func(response *DescribeActiveOperationTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

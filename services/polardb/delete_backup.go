@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteBackup invokes the polardb.DeleteBackup API synchronously
-// api document: https://help.aliyun.com/api/polardb/deletebackup.html
 func (client *Client) DeleteBackup(request *DeleteBackupRequest) (response *DeleteBackupResponse, err error) {
 	response = CreateDeleteBackupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteBackup(request *DeleteBackupRequest) (response *Dele
 }
 
 // DeleteBackupWithChan invokes the polardb.DeleteBackup API asynchronously
-// api document: https://help.aliyun.com/api/polardb/deletebackup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBackupWithChan(request *DeleteBackupRequest) (<-chan *DeleteBackupResponse, <-chan error) {
 	responseChan := make(chan *DeleteBackupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteBackupWithChan(request *DeleteBackupRequest) (<-chan
 }
 
 // DeleteBackupWithCallback invokes the polardb.DeleteBackup API asynchronously
-// api document: https://help.aliyun.com/api/polardb/deletebackup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBackupWithCallback(request *DeleteBackupRequest, callback func(response *DeleteBackupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
