@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMonitorGroupInstanceAttribute invokes the cms.DescribeMonitorGroupInstanceAttribute API synchronously
-// api document: https://help.aliyun.com/api/cms/describemonitorgroupinstanceattribute.html
 func (client *Client) DescribeMonitorGroupInstanceAttribute(request *DescribeMonitorGroupInstanceAttributeRequest) (response *DescribeMonitorGroupInstanceAttributeResponse, err error) {
 	response = CreateDescribeMonitorGroupInstanceAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMonitorGroupInstanceAttribute(request *DescribeMon
 }
 
 // DescribeMonitorGroupInstanceAttributeWithChan invokes the cms.DescribeMonitorGroupInstanceAttribute API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemonitorgroupinstanceattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMonitorGroupInstanceAttributeWithChan(request *DescribeMonitorGroupInstanceAttributeRequest) (<-chan *DescribeMonitorGroupInstanceAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeMonitorGroupInstanceAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMonitorGroupInstanceAttributeWithChan(request *Des
 }
 
 // DescribeMonitorGroupInstanceAttributeWithCallback invokes the cms.DescribeMonitorGroupInstanceAttribute API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemonitorgroupinstanceattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMonitorGroupInstanceAttributeWithCallback(request *DescribeMonitorGroupInstanceAttributeRequest, callback func(response *DescribeMonitorGroupInstanceAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

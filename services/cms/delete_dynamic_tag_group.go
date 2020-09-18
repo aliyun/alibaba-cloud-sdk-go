@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDynamicTagGroup invokes the cms.DeleteDynamicTagGroup API synchronously
-// api document: https://help.aliyun.com/api/cms/deletedynamictaggroup.html
 func (client *Client) DeleteDynamicTagGroup(request *DeleteDynamicTagGroupRequest) (response *DeleteDynamicTagGroupResponse, err error) {
 	response = CreateDeleteDynamicTagGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDynamicTagGroup(request *DeleteDynamicTagGroupReques
 }
 
 // DeleteDynamicTagGroupWithChan invokes the cms.DeleteDynamicTagGroup API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletedynamictaggroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDynamicTagGroupWithChan(request *DeleteDynamicTagGroupRequest) (<-chan *DeleteDynamicTagGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteDynamicTagGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDynamicTagGroupWithChan(request *DeleteDynamicTagGro
 }
 
 // DeleteDynamicTagGroupWithCallback invokes the cms.DeleteDynamicTagGroup API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletedynamictaggroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDynamicTagGroupWithCallback(request *DeleteDynamicTagGroupRequest, callback func(response *DeleteDynamicTagGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

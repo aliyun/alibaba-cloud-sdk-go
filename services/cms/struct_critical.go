@@ -18,6 +18,7 @@ package cms
 // Critical is a nested struct in cms response
 type Critical struct {
 	ComparisonOperator string `json:"ComparisonOperator" xml:"ComparisonOperator"`
+	PreCondition       string `json:"PreCondition" xml:"PreCondition"`
 	Times              string `json:"Times" xml:"Times"`
 	Statistics         string `json:"Statistics" xml:"Statistics"`
 	Threshold          string `json:"Threshold" xml:"Threshold"`

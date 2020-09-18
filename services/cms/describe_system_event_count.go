@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSystemEventCount invokes the cms.DescribeSystemEventCount API synchronously
-// api document: https://help.aliyun.com/api/cms/describesystemeventcount.html
 func (client *Client) DescribeSystemEventCount(request *DescribeSystemEventCountRequest) (response *DescribeSystemEventCountResponse, err error) {
 	response = CreateDescribeSystemEventCountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSystemEventCount(request *DescribeSystemEventCount
 }
 
 // DescribeSystemEventCountWithChan invokes the cms.DescribeSystemEventCount API asynchronously
-// api document: https://help.aliyun.com/api/cms/describesystemeventcount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSystemEventCountWithChan(request *DescribeSystemEventCountRequest) (<-chan *DescribeSystemEventCountResponse, <-chan error) {
 	responseChan := make(chan *DescribeSystemEventCountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSystemEventCountWithChan(request *DescribeSystemEv
 }
 
 // DescribeSystemEventCountWithCallback invokes the cms.DescribeSystemEventCount API asynchronously
-// api document: https://help.aliyun.com/api/cms/describesystemeventcount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSystemEventCountWithCallback(request *DescribeSystemEventCountRequest, callback func(response *DescribeSystemEventCountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

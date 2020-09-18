@@ -17,18 +17,20 @@ package cms
 
 // IspCity is a nested struct in cms response
 type IspCity struct {
-	Region       string `json:"Region" xml:"Region"`
-	Country      string `json:"Country" xml:"Country"`
-	IspNameZhCN  string `json:"IspName.zh_CN" xml:"IspName.zh_CN"`
-	CityNameZhCN string `json:"CityName.zh_CN" xml:"CityName.zh_CN"`
-	IspName      string `json:"IspName" xml:"IspName"`
-	CountryEn    string `json:"Country.en" xml:"Country.en"`
-	City         string `json:"City" xml:"City"`
-	IspNameEn    string `json:"IspName.en" xml:"IspName.en"`
-	RegionZhCN   string `json:"Region.zh_CN" xml:"Region.zh_CN"`
-	CountryZhCN  string `json:"Country.zh_CN" xml:"Country.zh_CN"`
-	CityNameEn   string `json:"CityName.en" xml:"CityName.en"`
-	CityName     string `json:"CityName" xml:"CityName"`
-	Isp          string `json:"Isp" xml:"Isp"`
-	RegionEn     string `json:"Region.en" xml:"Region.en"`
+	Region         string `json:"Region" xml:"Region"`
+	Country        string `json:"Country" xml:"Country"`
+	IPV4ProbeCount string `json:"IPV4ProbeCount" xml:"IPV4ProbeCount"`
+	IspNameZhCN    string `json:"IspName.zh_CN" xml:"IspName.zh_CN"`
+	CityNameZhCN   string `json:"CityName.zh_CN" xml:"CityName.zh_CN"`
+	IspName        string `json:"IspName" xml:"IspName"`
+	CountryEn      string `json:"Country.en" xml:"Country.en"`
+	City           string `json:"City" xml:"City"`
+	IspNameEn      string `json:"IspName.en" xml:"IspName.en"`
+	RegionZhCN     string `json:"Region.zh_CN" xml:"Region.zh_CN"`
+	CountryZhCN    string `json:"Country.zh_CN" xml:"Country.zh_CN"`
+	CityNameEn     string `json:"CityName.en" xml:"CityName.en"`
+	CityName       string `json:"CityName" xml:"CityName"`
+	Isp            string `json:"Isp" xml:"Isp"`
+	RegionEn       string `json:"Region.en" xml:"Region.en"`
+	IPV6ProbeCount string `json:"IPV6ProbeCount" xml:"IPV6ProbeCount"`
 }

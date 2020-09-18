@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyMonitorGroupInstances invokes the cms.ModifyMonitorGroupInstances API synchronously
-// api document: https://help.aliyun.com/api/cms/modifymonitorgroupinstances.html
 func (client *Client) ModifyMonitorGroupInstances(request *ModifyMonitorGroupInstancesRequest) (response *ModifyMonitorGroupInstancesResponse, err error) {
 	response = CreateModifyMonitorGroupInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyMonitorGroupInstances(request *ModifyMonitorGroupIns
 }
 
 // ModifyMonitorGroupInstancesWithChan invokes the cms.ModifyMonitorGroupInstances API asynchronously
-// api document: https://help.aliyun.com/api/cms/modifymonitorgroupinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyMonitorGroupInstancesWithChan(request *ModifyMonitorGroupInstancesRequest) (<-chan *ModifyMonitorGroupInstancesResponse, <-chan error) {
 	responseChan := make(chan *ModifyMonitorGroupInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyMonitorGroupInstancesWithChan(request *ModifyMonitor
 }
 
 // ModifyMonitorGroupInstancesWithCallback invokes the cms.ModifyMonitorGroupInstances API asynchronously
-// api document: https://help.aliyun.com/api/cms/modifymonitorgroupinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyMonitorGroupInstancesWithCallback(request *ModifyMonitorGroupInstancesRequest, callback func(response *ModifyMonitorGroupInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

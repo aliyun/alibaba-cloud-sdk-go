@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteExporterRule invokes the cms.DeleteExporterRule API synchronously
-// api document: https://help.aliyun.com/api/cms/deleteexporterrule.html
 func (client *Client) DeleteExporterRule(request *DeleteExporterRuleRequest) (response *DeleteExporterRuleResponse, err error) {
 	response = CreateDeleteExporterRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteExporterRule(request *DeleteExporterRuleRequest) (re
 }
 
 // DeleteExporterRuleWithChan invokes the cms.DeleteExporterRule API asynchronously
-// api document: https://help.aliyun.com/api/cms/deleteexporterrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteExporterRuleWithChan(request *DeleteExporterRuleRequest) (<-chan *DeleteExporterRuleResponse, <-chan error) {
 	responseChan := make(chan *DeleteExporterRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteExporterRuleWithChan(request *DeleteExporterRuleRequ
 }
 
 // DeleteExporterRuleWithCallback invokes the cms.DeleteExporterRule API asynchronously
-// api document: https://help.aliyun.com/api/cms/deleteexporterrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteExporterRuleWithCallback(request *DeleteExporterRuleRequest, callback func(response *DeleteExporterRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

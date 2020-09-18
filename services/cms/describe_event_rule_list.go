@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEventRuleList invokes the cms.DescribeEventRuleList API synchronously
-// api document: https://help.aliyun.com/api/cms/describeeventrulelist.html
 func (client *Client) DescribeEventRuleList(request *DescribeEventRuleListRequest) (response *DescribeEventRuleListResponse, err error) {
 	response = CreateDescribeEventRuleListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEventRuleList(request *DescribeEventRuleListReques
 }
 
 // DescribeEventRuleListWithChan invokes the cms.DescribeEventRuleList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describeeventrulelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEventRuleListWithChan(request *DescribeEventRuleListRequest) (<-chan *DescribeEventRuleListResponse, <-chan error) {
 	responseChan := make(chan *DescribeEventRuleListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEventRuleListWithChan(request *DescribeEventRuleLi
 }
 
 // DescribeEventRuleListWithCallback invokes the cms.DescribeEventRuleList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describeeventrulelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEventRuleListWithCallback(request *DescribeEventRuleListRequest, callback func(response *DescribeEventRuleListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

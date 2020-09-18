@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMetricRuleTargets invokes the cms.DescribeMetricRuleTargets API synchronously
-// api document: https://help.aliyun.com/api/cms/describemetricruletargets.html
 func (client *Client) DescribeMetricRuleTargets(request *DescribeMetricRuleTargetsRequest) (response *DescribeMetricRuleTargetsResponse, err error) {
 	response = CreateDescribeMetricRuleTargetsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMetricRuleTargets(request *DescribeMetricRuleTarge
 }
 
 // DescribeMetricRuleTargetsWithChan invokes the cms.DescribeMetricRuleTargets API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemetricruletargets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMetricRuleTargetsWithChan(request *DescribeMetricRuleTargetsRequest) (<-chan *DescribeMetricRuleTargetsResponse, <-chan error) {
 	responseChan := make(chan *DescribeMetricRuleTargetsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMetricRuleTargetsWithChan(request *DescribeMetricR
 }
 
 // DescribeMetricRuleTargetsWithCallback invokes the cms.DescribeMetricRuleTargets API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemetricruletargets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMetricRuleTargetsWithCallback(request *DescribeMetricRuleTargetsRequest, callback func(response *DescribeMetricRuleTargetsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

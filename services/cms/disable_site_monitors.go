@@ -21,7 +21,6 @@ import (
 )
 
 // DisableSiteMonitors invokes the cms.DisableSiteMonitors API synchronously
-// api document: https://help.aliyun.com/api/cms/disablesitemonitors.html
 func (client *Client) DisableSiteMonitors(request *DisableSiteMonitorsRequest) (response *DisableSiteMonitorsResponse, err error) {
 	response = CreateDisableSiteMonitorsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisableSiteMonitors(request *DisableSiteMonitorsRequest) (
 }
 
 // DisableSiteMonitorsWithChan invokes the cms.DisableSiteMonitors API asynchronously
-// api document: https://help.aliyun.com/api/cms/disablesitemonitors.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableSiteMonitorsWithChan(request *DisableSiteMonitorsRequest) (<-chan *DisableSiteMonitorsResponse, <-chan error) {
 	responseChan := make(chan *DisableSiteMonitorsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisableSiteMonitorsWithChan(request *DisableSiteMonitorsRe
 }
 
 // DisableSiteMonitorsWithCallback invokes the cms.DisableSiteMonitors API asynchronously
-// api document: https://help.aliyun.com/api/cms/disablesitemonitors.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableSiteMonitorsWithCallback(request *DisableSiteMonitorsRequest, callback func(response *DisableSiteMonitorsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

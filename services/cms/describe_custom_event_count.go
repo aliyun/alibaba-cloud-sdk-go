@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCustomEventCount invokes the cms.DescribeCustomEventCount API synchronously
-// api document: https://help.aliyun.com/api/cms/describecustomeventcount.html
 func (client *Client) DescribeCustomEventCount(request *DescribeCustomEventCountRequest) (response *DescribeCustomEventCountResponse, err error) {
 	response = CreateDescribeCustomEventCountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCustomEventCount(request *DescribeCustomEventCount
 }
 
 // DescribeCustomEventCountWithChan invokes the cms.DescribeCustomEventCount API asynchronously
-// api document: https://help.aliyun.com/api/cms/describecustomeventcount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomEventCountWithChan(request *DescribeCustomEventCountRequest) (<-chan *DescribeCustomEventCountResponse, <-chan error) {
 	responseChan := make(chan *DescribeCustomEventCountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCustomEventCountWithChan(request *DescribeCustomEv
 }
 
 // DescribeCustomEventCountWithCallback invokes the cms.DescribeCustomEventCount API asynchronously
-// api document: https://help.aliyun.com/api/cms/describecustomeventcount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomEventCountWithCallback(request *DescribeCustomEventCountRequest, callback func(response *DescribeCustomEventCountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

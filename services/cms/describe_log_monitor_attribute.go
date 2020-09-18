@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLogMonitorAttribute invokes the cms.DescribeLogMonitorAttribute API synchronously
-// api document: https://help.aliyun.com/api/cms/describelogmonitorattribute.html
 func (client *Client) DescribeLogMonitorAttribute(request *DescribeLogMonitorAttributeRequest) (response *DescribeLogMonitorAttributeResponse, err error) {
 	response = CreateDescribeLogMonitorAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLogMonitorAttribute(request *DescribeLogMonitorAtt
 }
 
 // DescribeLogMonitorAttributeWithChan invokes the cms.DescribeLogMonitorAttribute API asynchronously
-// api document: https://help.aliyun.com/api/cms/describelogmonitorattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLogMonitorAttributeWithChan(request *DescribeLogMonitorAttributeRequest) (<-chan *DescribeLogMonitorAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeLogMonitorAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLogMonitorAttributeWithChan(request *DescribeLogMo
 }
 
 // DescribeLogMonitorAttributeWithCallback invokes the cms.DescribeLogMonitorAttribute API asynchronously
-// api document: https://help.aliyun.com/api/cms/describelogmonitorattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLogMonitorAttributeWithCallback(request *DescribeLogMonitorAttributeRequest, callback func(response *DescribeLogMonitorAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

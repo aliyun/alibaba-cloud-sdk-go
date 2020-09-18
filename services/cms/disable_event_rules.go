@@ -21,7 +21,6 @@ import (
 )
 
 // DisableEventRules invokes the cms.DisableEventRules API synchronously
-// api document: https://help.aliyun.com/api/cms/disableeventrules.html
 func (client *Client) DisableEventRules(request *DisableEventRulesRequest) (response *DisableEventRulesResponse, err error) {
 	response = CreateDisableEventRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisableEventRules(request *DisableEventRulesRequest) (resp
 }
 
 // DisableEventRulesWithChan invokes the cms.DisableEventRules API asynchronously
-// api document: https://help.aliyun.com/api/cms/disableeventrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableEventRulesWithChan(request *DisableEventRulesRequest) (<-chan *DisableEventRulesResponse, <-chan error) {
 	responseChan := make(chan *DisableEventRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisableEventRulesWithChan(request *DisableEventRulesReques
 }
 
 // DisableEventRulesWithCallback invokes the cms.DisableEventRules API asynchronously
-// api document: https://help.aliyun.com/api/cms/disableeventrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableEventRulesWithCallback(request *DisableEventRulesRequest, callback func(response *DisableEventRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

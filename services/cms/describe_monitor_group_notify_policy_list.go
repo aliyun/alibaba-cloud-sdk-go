@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMonitorGroupNotifyPolicyList invokes the cms.DescribeMonitorGroupNotifyPolicyList API synchronously
-// api document: https://help.aliyun.com/api/cms/describemonitorgroupnotifypolicylist.html
 func (client *Client) DescribeMonitorGroupNotifyPolicyList(request *DescribeMonitorGroupNotifyPolicyListRequest) (response *DescribeMonitorGroupNotifyPolicyListResponse, err error) {
 	response = CreateDescribeMonitorGroupNotifyPolicyListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMonitorGroupNotifyPolicyList(request *DescribeMoni
 }
 
 // DescribeMonitorGroupNotifyPolicyListWithChan invokes the cms.DescribeMonitorGroupNotifyPolicyList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemonitorgroupnotifypolicylist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMonitorGroupNotifyPolicyListWithChan(request *DescribeMonitorGroupNotifyPolicyListRequest) (<-chan *DescribeMonitorGroupNotifyPolicyListResponse, <-chan error) {
 	responseChan := make(chan *DescribeMonitorGroupNotifyPolicyListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMonitorGroupNotifyPolicyListWithChan(request *Desc
 }
 
 // DescribeMonitorGroupNotifyPolicyListWithCallback invokes the cms.DescribeMonitorGroupNotifyPolicyList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemonitorgroupnotifypolicylist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMonitorGroupNotifyPolicyListWithCallback(request *DescribeMonitorGroupNotifyPolicyListRequest, callback func(response *DescribeMonitorGroupNotifyPolicyListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

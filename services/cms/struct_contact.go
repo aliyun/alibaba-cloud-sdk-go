@@ -19,14 +19,15 @@ package cms
 type Contact struct {
 	Name          string                             `json:"Name" xml:"Name"`
 	Message       string                             `json:"Message" xml:"Message"`
-	Success       string                             `json:"Success" xml:"Success"`
 	Code          string                             `json:"Code" xml:"Code"`
 	Desc          string                             `json:"Desc" xml:"Desc"`
 	UpdateTime    int64                              `json:"UpdateTime" xml:"UpdateTime"`
-	RequestId     string                             `json:"RequestId" xml:"RequestId"`
 	RuleId        string                             `json:"RuleId" xml:"RuleId"`
 	CreateTime    int64                              `json:"CreateTime" xml:"CreateTime"`
+	Lang          string                             `json:"Lang" xml:"Lang"`
+	Success       string                             `json:"Success" xml:"Success"`
+	RequestId     string                             `json:"RequestId" xml:"RequestId"`
 	ContactGroups ContactGroupsInDescribeContactList `json:"ContactGroups" xml:"ContactGroups"`
-	Channels      Channels                           `json:"Channels" xml:"Channels"`
 	ChannelsState ChannelsState                      `json:"ChannelsState" xml:"ChannelsState"`
+	Channels      Channels                           `json:"Channels" xml:"Channels"`
 }

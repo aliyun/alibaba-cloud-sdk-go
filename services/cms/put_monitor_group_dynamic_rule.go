@@ -21,7 +21,6 @@ import (
 )
 
 // PutMonitorGroupDynamicRule invokes the cms.PutMonitorGroupDynamicRule API synchronously
-// api document: https://help.aliyun.com/api/cms/putmonitorgroupdynamicrule.html
 func (client *Client) PutMonitorGroupDynamicRule(request *PutMonitorGroupDynamicRuleRequest) (response *PutMonitorGroupDynamicRuleResponse, err error) {
 	response = CreatePutMonitorGroupDynamicRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PutMonitorGroupDynamicRule(request *PutMonitorGroupDynamic
 }
 
 // PutMonitorGroupDynamicRuleWithChan invokes the cms.PutMonitorGroupDynamicRule API asynchronously
-// api document: https://help.aliyun.com/api/cms/putmonitorgroupdynamicrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutMonitorGroupDynamicRuleWithChan(request *PutMonitorGroupDynamicRuleRequest) (<-chan *PutMonitorGroupDynamicRuleResponse, <-chan error) {
 	responseChan := make(chan *PutMonitorGroupDynamicRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PutMonitorGroupDynamicRuleWithChan(request *PutMonitorGrou
 }
 
 // PutMonitorGroupDynamicRuleWithCallback invokes the cms.PutMonitorGroupDynamicRule API asynchronously
-// api document: https://help.aliyun.com/api/cms/putmonitorgroupdynamicrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutMonitorGroupDynamicRuleWithCallback(request *PutMonitorGroupDynamicRuleRequest, callback func(response *PutMonitorGroupDynamicRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

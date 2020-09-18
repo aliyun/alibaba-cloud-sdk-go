@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeExporterRuleList invokes the cms.DescribeExporterRuleList API synchronously
-// api document: https://help.aliyun.com/api/cms/describeexporterrulelist.html
 func (client *Client) DescribeExporterRuleList(request *DescribeExporterRuleListRequest) (response *DescribeExporterRuleListResponse, err error) {
 	response = CreateDescribeExporterRuleListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeExporterRuleList(request *DescribeExporterRuleList
 }
 
 // DescribeExporterRuleListWithChan invokes the cms.DescribeExporterRuleList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describeexporterrulelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExporterRuleListWithChan(request *DescribeExporterRuleListRequest) (<-chan *DescribeExporterRuleListResponse, <-chan error) {
 	responseChan := make(chan *DescribeExporterRuleListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeExporterRuleListWithChan(request *DescribeExporter
 }
 
 // DescribeExporterRuleListWithCallback invokes the cms.DescribeExporterRuleList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describeexporterrulelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExporterRuleListWithCallback(request *DescribeExporterRuleListRequest, callback func(response *DescribeExporterRuleListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

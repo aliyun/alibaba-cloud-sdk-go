@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteMonitorGroup invokes the cms.DeleteMonitorGroup API synchronously
-// api document: https://help.aliyun.com/api/cms/deletemonitorgroup.html
 func (client *Client) DeleteMonitorGroup(request *DeleteMonitorGroupRequest) (response *DeleteMonitorGroupResponse, err error) {
 	response = CreateDeleteMonitorGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteMonitorGroup(request *DeleteMonitorGroupRequest) (re
 }
 
 // DeleteMonitorGroupWithChan invokes the cms.DeleteMonitorGroup API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletemonitorgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMonitorGroupWithChan(request *DeleteMonitorGroupRequest) (<-chan *DeleteMonitorGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteMonitorGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteMonitorGroupWithChan(request *DeleteMonitorGroupRequ
 }
 
 // DeleteMonitorGroupWithCallback invokes the cms.DeleteMonitorGroup API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletemonitorgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMonitorGroupWithCallback(request *DeleteMonitorGroupRequest, callback func(response *DeleteMonitorGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

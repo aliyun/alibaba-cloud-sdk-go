@@ -21,7 +21,6 @@ import (
 )
 
 // SendDryRunSystemEvent invokes the cms.SendDryRunSystemEvent API synchronously
-// api document: https://help.aliyun.com/api/cms/senddryrunsystemevent.html
 func (client *Client) SendDryRunSystemEvent(request *SendDryRunSystemEventRequest) (response *SendDryRunSystemEventResponse, err error) {
 	response = CreateSendDryRunSystemEventResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SendDryRunSystemEvent(request *SendDryRunSystemEventReques
 }
 
 // SendDryRunSystemEventWithChan invokes the cms.SendDryRunSystemEvent API asynchronously
-// api document: https://help.aliyun.com/api/cms/senddryrunsystemevent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendDryRunSystemEventWithChan(request *SendDryRunSystemEventRequest) (<-chan *SendDryRunSystemEventResponse, <-chan error) {
 	responseChan := make(chan *SendDryRunSystemEventResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SendDryRunSystemEventWithChan(request *SendDryRunSystemEve
 }
 
 // SendDryRunSystemEventWithCallback invokes the cms.SendDryRunSystemEvent API asynchronously
-// api document: https://help.aliyun.com/api/cms/senddryrunsystemevent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendDryRunSystemEventWithCallback(request *SendDryRunSystemEventRequest, callback func(response *SendDryRunSystemEventResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

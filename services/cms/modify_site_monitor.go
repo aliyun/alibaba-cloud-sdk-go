@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySiteMonitor invokes the cms.ModifySiteMonitor API synchronously
-// api document: https://help.aliyun.com/api/cms/modifysitemonitor.html
 func (client *Client) ModifySiteMonitor(request *ModifySiteMonitorRequest) (response *ModifySiteMonitorResponse, err error) {
 	response = CreateModifySiteMonitorResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySiteMonitor(request *ModifySiteMonitorRequest) (resp
 }
 
 // ModifySiteMonitorWithChan invokes the cms.ModifySiteMonitor API asynchronously
-// api document: https://help.aliyun.com/api/cms/modifysitemonitor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySiteMonitorWithChan(request *ModifySiteMonitorRequest) (<-chan *ModifySiteMonitorResponse, <-chan error) {
 	responseChan := make(chan *ModifySiteMonitorResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySiteMonitorWithChan(request *ModifySiteMonitorReques
 }
 
 // ModifySiteMonitorWithCallback invokes the cms.ModifySiteMonitor API asynchronously
-// api document: https://help.aliyun.com/api/cms/modifysitemonitor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySiteMonitorWithCallback(request *ModifySiteMonitorRequest, callback func(response *ModifySiteMonitorResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

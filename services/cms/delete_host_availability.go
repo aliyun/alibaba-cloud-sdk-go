@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteHostAvailability invokes the cms.DeleteHostAvailability API synchronously
-// api document: https://help.aliyun.com/api/cms/deletehostavailability.html
 func (client *Client) DeleteHostAvailability(request *DeleteHostAvailabilityRequest) (response *DeleteHostAvailabilityResponse, err error) {
 	response = CreateDeleteHostAvailabilityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteHostAvailability(request *DeleteHostAvailabilityRequ
 }
 
 // DeleteHostAvailabilityWithChan invokes the cms.DeleteHostAvailability API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletehostavailability.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHostAvailabilityWithChan(request *DeleteHostAvailabilityRequest) (<-chan *DeleteHostAvailabilityResponse, <-chan error) {
 	responseChan := make(chan *DeleteHostAvailabilityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteHostAvailabilityWithChan(request *DeleteHostAvailabi
 }
 
 // DeleteHostAvailabilityWithCallback invokes the cms.DeleteHostAvailability API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletehostavailability.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHostAvailabilityWithCallback(request *DeleteHostAvailabilityRequest, callback func(response *DeleteHostAvailabilityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

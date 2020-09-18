@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCustomMetricList invokes the cms.DescribeCustomMetricList API synchronously
-// api document: https://help.aliyun.com/api/cms/describecustommetriclist.html
 func (client *Client) DescribeCustomMetricList(request *DescribeCustomMetricListRequest) (response *DescribeCustomMetricListResponse, err error) {
 	response = CreateDescribeCustomMetricListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCustomMetricList(request *DescribeCustomMetricList
 }
 
 // DescribeCustomMetricListWithChan invokes the cms.DescribeCustomMetricList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describecustommetriclist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomMetricListWithChan(request *DescribeCustomMetricListRequest) (<-chan *DescribeCustomMetricListResponse, <-chan error) {
 	responseChan := make(chan *DescribeCustomMetricListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCustomMetricListWithChan(request *DescribeCustomMe
 }
 
 // DescribeCustomMetricListWithCallback invokes the cms.DescribeCustomMetricList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describecustommetriclist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomMetricListWithCallback(request *DescribeCustomMetricListRequest, callback func(response *DescribeCustomMetricListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMonitoringConfig invokes the cms.DescribeMonitoringConfig API synchronously
-// api document: https://help.aliyun.com/api/cms/describemonitoringconfig.html
 func (client *Client) DescribeMonitoringConfig(request *DescribeMonitoringConfigRequest) (response *DescribeMonitoringConfigResponse, err error) {
 	response = CreateDescribeMonitoringConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMonitoringConfig(request *DescribeMonitoringConfig
 }
 
 // DescribeMonitoringConfigWithChan invokes the cms.DescribeMonitoringConfig API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemonitoringconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMonitoringConfigWithChan(request *DescribeMonitoringConfigRequest) (<-chan *DescribeMonitoringConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeMonitoringConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMonitoringConfigWithChan(request *DescribeMonitori
 }
 
 // DescribeMonitoringConfigWithCallback invokes the cms.DescribeMonitoringConfig API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemonitoringconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMonitoringConfigWithCallback(request *DescribeMonitoringConfigRequest, callback func(response *DescribeMonitoringConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMonitoringAgentStatuses invokes the cms.DescribeMonitoringAgentStatuses API synchronously
-// api document: https://help.aliyun.com/api/cms/describemonitoringagentstatuses.html
 func (client *Client) DescribeMonitoringAgentStatuses(request *DescribeMonitoringAgentStatusesRequest) (response *DescribeMonitoringAgentStatusesResponse, err error) {
 	response = CreateDescribeMonitoringAgentStatusesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMonitoringAgentStatuses(request *DescribeMonitorin
 }
 
 // DescribeMonitoringAgentStatusesWithChan invokes the cms.DescribeMonitoringAgentStatuses API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemonitoringagentstatuses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMonitoringAgentStatusesWithChan(request *DescribeMonitoringAgentStatusesRequest) (<-chan *DescribeMonitoringAgentStatusesResponse, <-chan error) {
 	responseChan := make(chan *DescribeMonitoringAgentStatusesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMonitoringAgentStatusesWithChan(request *DescribeM
 }
 
 // DescribeMonitoringAgentStatusesWithCallback invokes the cms.DescribeMonitoringAgentStatuses API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemonitoringagentstatuses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMonitoringAgentStatusesWithCallback(request *DescribeMonitoringAgentStatusesRequest, callback func(response *DescribeMonitoringAgentStatusesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

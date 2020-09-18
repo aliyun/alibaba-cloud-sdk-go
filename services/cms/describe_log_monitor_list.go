@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLogMonitorList invokes the cms.DescribeLogMonitorList API synchronously
-// api document: https://help.aliyun.com/api/cms/describelogmonitorlist.html
 func (client *Client) DescribeLogMonitorList(request *DescribeLogMonitorListRequest) (response *DescribeLogMonitorListResponse, err error) {
 	response = CreateDescribeLogMonitorListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLogMonitorList(request *DescribeLogMonitorListRequ
 }
 
 // DescribeLogMonitorListWithChan invokes the cms.DescribeLogMonitorList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describelogmonitorlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLogMonitorListWithChan(request *DescribeLogMonitorListRequest) (<-chan *DescribeLogMonitorListResponse, <-chan error) {
 	responseChan := make(chan *DescribeLogMonitorListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLogMonitorListWithChan(request *DescribeLogMonitor
 }
 
 // DescribeLogMonitorListWithCallback invokes the cms.DescribeLogMonitorList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describelogmonitorlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLogMonitorListWithCallback(request *DescribeLogMonitorListRequest, callback func(response *DescribeLogMonitorListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

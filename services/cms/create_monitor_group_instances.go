@@ -21,7 +21,6 @@ import (
 )
 
 // CreateMonitorGroupInstances invokes the cms.CreateMonitorGroupInstances API synchronously
-// api document: https://help.aliyun.com/api/cms/createmonitorgroupinstances.html
 func (client *Client) CreateMonitorGroupInstances(request *CreateMonitorGroupInstancesRequest) (response *CreateMonitorGroupInstancesResponse, err error) {
 	response = CreateCreateMonitorGroupInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateMonitorGroupInstances(request *CreateMonitorGroupIns
 }
 
 // CreateMonitorGroupInstancesWithChan invokes the cms.CreateMonitorGroupInstances API asynchronously
-// api document: https://help.aliyun.com/api/cms/createmonitorgroupinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMonitorGroupInstancesWithChan(request *CreateMonitorGroupInstancesRequest) (<-chan *CreateMonitorGroupInstancesResponse, <-chan error) {
 	responseChan := make(chan *CreateMonitorGroupInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateMonitorGroupInstancesWithChan(request *CreateMonitor
 }
 
 // CreateMonitorGroupInstancesWithCallback invokes the cms.CreateMonitorGroupInstances API asynchronously
-// api document: https://help.aliyun.com/api/cms/createmonitorgroupinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMonitorGroupInstancesWithCallback(request *CreateMonitorGroupInstancesRequest, callback func(response *CreateMonitorGroupInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

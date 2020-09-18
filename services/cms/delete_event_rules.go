@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteEventRules invokes the cms.DeleteEventRules API synchronously
-// api document: https://help.aliyun.com/api/cms/deleteeventrules.html
 func (client *Client) DeleteEventRules(request *DeleteEventRulesRequest) (response *DeleteEventRulesResponse, err error) {
 	response = CreateDeleteEventRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteEventRules(request *DeleteEventRulesRequest) (respon
 }
 
 // DeleteEventRulesWithChan invokes the cms.DeleteEventRules API asynchronously
-// api document: https://help.aliyun.com/api/cms/deleteeventrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEventRulesWithChan(request *DeleteEventRulesRequest) (<-chan *DeleteEventRulesResponse, <-chan error) {
 	responseChan := make(chan *DeleteEventRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteEventRulesWithChan(request *DeleteEventRulesRequest)
 }
 
 // DeleteEventRulesWithCallback invokes the cms.DeleteEventRules API asynchronously
-// api document: https://help.aliyun.com/api/cms/deleteeventrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEventRulesWithCallback(request *DeleteEventRulesRequest, callback func(response *DeleteEventRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

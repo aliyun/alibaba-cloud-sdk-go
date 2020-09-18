@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCustomEventAttribute invokes the cms.DescribeCustomEventAttribute API synchronously
-// api document: https://help.aliyun.com/api/cms/describecustomeventattribute.html
 func (client *Client) DescribeCustomEventAttribute(request *DescribeCustomEventAttributeRequest) (response *DescribeCustomEventAttributeResponse, err error) {
 	response = CreateDescribeCustomEventAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCustomEventAttribute(request *DescribeCustomEventA
 }
 
 // DescribeCustomEventAttributeWithChan invokes the cms.DescribeCustomEventAttribute API asynchronously
-// api document: https://help.aliyun.com/api/cms/describecustomeventattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomEventAttributeWithChan(request *DescribeCustomEventAttributeRequest) (<-chan *DescribeCustomEventAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeCustomEventAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCustomEventAttributeWithChan(request *DescribeCust
 }
 
 // DescribeCustomEventAttributeWithCallback invokes the cms.DescribeCustomEventAttribute API asynchronously
-// api document: https://help.aliyun.com/api/cms/describecustomeventattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomEventAttributeWithCallback(request *DescribeCustomEventAttributeRequest, callback func(response *DescribeCustomEventAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

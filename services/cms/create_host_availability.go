@@ -21,7 +21,6 @@ import (
 )
 
 // CreateHostAvailability invokes the cms.CreateHostAvailability API synchronously
-// api document: https://help.aliyun.com/api/cms/createhostavailability.html
 func (client *Client) CreateHostAvailability(request *CreateHostAvailabilityRequest) (response *CreateHostAvailabilityResponse, err error) {
 	response = CreateCreateHostAvailabilityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateHostAvailability(request *CreateHostAvailabilityRequ
 }
 
 // CreateHostAvailabilityWithChan invokes the cms.CreateHostAvailability API asynchronously
-// api document: https://help.aliyun.com/api/cms/createhostavailability.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateHostAvailabilityWithChan(request *CreateHostAvailabilityRequest) (<-chan *CreateHostAvailabilityResponse, <-chan error) {
 	responseChan := make(chan *CreateHostAvailabilityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateHostAvailabilityWithChan(request *CreateHostAvailabi
 }
 
 // CreateHostAvailabilityWithCallback invokes the cms.CreateHostAvailability API asynchronously
-// api document: https://help.aliyun.com/api/cms/createhostavailability.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateHostAvailabilityWithCallback(request *CreateHostAvailabilityRequest, callback func(response *CreateHostAvailabilityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

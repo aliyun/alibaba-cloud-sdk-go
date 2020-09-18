@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAlertingMetricRuleResources invokes the cms.DescribeAlertingMetricRuleResources API synchronously
-// api document: https://help.aliyun.com/api/cms/describealertingmetricruleresources.html
 func (client *Client) DescribeAlertingMetricRuleResources(request *DescribeAlertingMetricRuleResourcesRequest) (response *DescribeAlertingMetricRuleResourcesResponse, err error) {
 	response = CreateDescribeAlertingMetricRuleResourcesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAlertingMetricRuleResources(request *DescribeAlert
 }
 
 // DescribeAlertingMetricRuleResourcesWithChan invokes the cms.DescribeAlertingMetricRuleResources API asynchronously
-// api document: https://help.aliyun.com/api/cms/describealertingmetricruleresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAlertingMetricRuleResourcesWithChan(request *DescribeAlertingMetricRuleResourcesRequest) (<-chan *DescribeAlertingMetricRuleResourcesResponse, <-chan error) {
 	responseChan := make(chan *DescribeAlertingMetricRuleResourcesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAlertingMetricRuleResourcesWithChan(request *Descr
 }
 
 // DescribeAlertingMetricRuleResourcesWithCallback invokes the cms.DescribeAlertingMetricRuleResources API asynchronously
-// api document: https://help.aliyun.com/api/cms/describealertingmetricruleresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAlertingMetricRuleResourcesWithCallback(request *DescribeAlertingMetricRuleResourcesRequest, callback func(response *DescribeAlertingMetricRuleResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

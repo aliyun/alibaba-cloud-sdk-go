@@ -21,7 +21,6 @@ import (
 )
 
 // InstallMonitoringAgent invokes the cms.InstallMonitoringAgent API synchronously
-// api document: https://help.aliyun.com/api/cms/installmonitoringagent.html
 func (client *Client) InstallMonitoringAgent(request *InstallMonitoringAgentRequest) (response *InstallMonitoringAgentResponse, err error) {
 	response = CreateInstallMonitoringAgentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InstallMonitoringAgent(request *InstallMonitoringAgentRequ
 }
 
 // InstallMonitoringAgentWithChan invokes the cms.InstallMonitoringAgent API asynchronously
-// api document: https://help.aliyun.com/api/cms/installmonitoringagent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InstallMonitoringAgentWithChan(request *InstallMonitoringAgentRequest) (<-chan *InstallMonitoringAgentResponse, <-chan error) {
 	responseChan := make(chan *InstallMonitoringAgentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InstallMonitoringAgentWithChan(request *InstallMonitoringA
 }
 
 // InstallMonitoringAgentWithCallback invokes the cms.InstallMonitoringAgent API asynchronously
-// api document: https://help.aliyun.com/api/cms/installmonitoringagent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InstallMonitoringAgentWithCallback(request *InstallMonitoringAgentRequest, callback func(response *InstallMonitoringAgentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

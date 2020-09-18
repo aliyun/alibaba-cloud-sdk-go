@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSystemEventHistogram invokes the cms.DescribeSystemEventHistogram API synchronously
-// api document: https://help.aliyun.com/api/cms/describesystemeventhistogram.html
 func (client *Client) DescribeSystemEventHistogram(request *DescribeSystemEventHistogramRequest) (response *DescribeSystemEventHistogramResponse, err error) {
 	response = CreateDescribeSystemEventHistogramResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSystemEventHistogram(request *DescribeSystemEventH
 }
 
 // DescribeSystemEventHistogramWithChan invokes the cms.DescribeSystemEventHistogram API asynchronously
-// api document: https://help.aliyun.com/api/cms/describesystemeventhistogram.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSystemEventHistogramWithChan(request *DescribeSystemEventHistogramRequest) (<-chan *DescribeSystemEventHistogramResponse, <-chan error) {
 	responseChan := make(chan *DescribeSystemEventHistogramResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSystemEventHistogramWithChan(request *DescribeSyst
 }
 
 // DescribeSystemEventHistogramWithCallback invokes the cms.DescribeSystemEventHistogram API asynchronously
-// api document: https://help.aliyun.com/api/cms/describesystemeventhistogram.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSystemEventHistogramWithCallback(request *DescribeSystemEventHistogramRequest, callback func(response *DescribeSystemEventHistogramResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteMetricRuleTemplate invokes the cms.DeleteMetricRuleTemplate API synchronously
-// api document: https://help.aliyun.com/api/cms/deletemetricruletemplate.html
 func (client *Client) DeleteMetricRuleTemplate(request *DeleteMetricRuleTemplateRequest) (response *DeleteMetricRuleTemplateResponse, err error) {
 	response = CreateDeleteMetricRuleTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteMetricRuleTemplate(request *DeleteMetricRuleTemplate
 }
 
 // DeleteMetricRuleTemplateWithChan invokes the cms.DeleteMetricRuleTemplate API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletemetricruletemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMetricRuleTemplateWithChan(request *DeleteMetricRuleTemplateRequest) (<-chan *DeleteMetricRuleTemplateResponse, <-chan error) {
 	responseChan := make(chan *DeleteMetricRuleTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteMetricRuleTemplateWithChan(request *DeleteMetricRule
 }
 
 // DeleteMetricRuleTemplateWithCallback invokes the cms.DeleteMetricRuleTemplate API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletemetricruletemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMetricRuleTemplateWithCallback(request *DeleteMetricRuleTemplateRequest, callback func(response *DeleteMetricRuleTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

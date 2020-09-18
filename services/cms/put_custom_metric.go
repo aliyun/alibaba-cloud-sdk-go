@@ -21,7 +21,6 @@ import (
 )
 
 // PutCustomMetric invokes the cms.PutCustomMetric API synchronously
-// api document: https://help.aliyun.com/api/cms/putcustommetric.html
 func (client *Client) PutCustomMetric(request *PutCustomMetricRequest) (response *PutCustomMetricResponse, err error) {
 	response = CreatePutCustomMetricResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PutCustomMetric(request *PutCustomMetricRequest) (response
 }
 
 // PutCustomMetricWithChan invokes the cms.PutCustomMetric API asynchronously
-// api document: https://help.aliyun.com/api/cms/putcustommetric.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutCustomMetricWithChan(request *PutCustomMetricRequest) (<-chan *PutCustomMetricResponse, <-chan error) {
 	responseChan := make(chan *PutCustomMetricResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PutCustomMetricWithChan(request *PutCustomMetricRequest) (
 }
 
 // PutCustomMetricWithCallback invokes the cms.PutCustomMetric API asynchronously
-// api document: https://help.aliyun.com/api/cms/putcustommetric.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutCustomMetricWithCallback(request *PutCustomMetricRequest, callback func(response *PutCustomMetricResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

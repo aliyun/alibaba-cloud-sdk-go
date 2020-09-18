@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeProductsOfActiveMetricRule invokes the cms.DescribeProductsOfActiveMetricRule API synchronously
-// api document: https://help.aliyun.com/api/cms/describeproductsofactivemetricrule.html
 func (client *Client) DescribeProductsOfActiveMetricRule(request *DescribeProductsOfActiveMetricRuleRequest) (response *DescribeProductsOfActiveMetricRuleResponse, err error) {
 	response = CreateDescribeProductsOfActiveMetricRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeProductsOfActiveMetricRule(request *DescribeProduc
 }
 
 // DescribeProductsOfActiveMetricRuleWithChan invokes the cms.DescribeProductsOfActiveMetricRule API asynchronously
-// api document: https://help.aliyun.com/api/cms/describeproductsofactivemetricrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeProductsOfActiveMetricRuleWithChan(request *DescribeProductsOfActiveMetricRuleRequest) (<-chan *DescribeProductsOfActiveMetricRuleResponse, <-chan error) {
 	responseChan := make(chan *DescribeProductsOfActiveMetricRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeProductsOfActiveMetricRuleWithChan(request *Descri
 }
 
 // DescribeProductsOfActiveMetricRuleWithCallback invokes the cms.DescribeProductsOfActiveMetricRule API asynchronously
-// api document: https://help.aliyun.com/api/cms/describeproductsofactivemetricrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeProductsOfActiveMetricRuleWithCallback(request *DescribeProductsOfActiveMetricRuleRequest, callback func(response *DescribeProductsOfActiveMetricRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

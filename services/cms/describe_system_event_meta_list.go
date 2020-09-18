@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSystemEventMetaList invokes the cms.DescribeSystemEventMetaList API synchronously
-// api document: https://help.aliyun.com/api/cms/describesystemeventmetalist.html
 func (client *Client) DescribeSystemEventMetaList(request *DescribeSystemEventMetaListRequest) (response *DescribeSystemEventMetaListResponse, err error) {
 	response = CreateDescribeSystemEventMetaListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSystemEventMetaList(request *DescribeSystemEventMe
 }
 
 // DescribeSystemEventMetaListWithChan invokes the cms.DescribeSystemEventMetaList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describesystemeventmetalist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSystemEventMetaListWithChan(request *DescribeSystemEventMetaListRequest) (<-chan *DescribeSystemEventMetaListResponse, <-chan error) {
 	responseChan := make(chan *DescribeSystemEventMetaListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSystemEventMetaListWithChan(request *DescribeSyste
 }
 
 // DescribeSystemEventMetaListWithCallback invokes the cms.DescribeSystemEventMetaList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describesystemeventmetalist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSystemEventMetaListWithCallback(request *DescribeSystemEventMetaListRequest, callback func(response *DescribeSystemEventMetaListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateMonitorGroupNotifyPolicy invokes the cms.CreateMonitorGroupNotifyPolicy API synchronously
-// api document: https://help.aliyun.com/api/cms/createmonitorgroupnotifypolicy.html
 func (client *Client) CreateMonitorGroupNotifyPolicy(request *CreateMonitorGroupNotifyPolicyRequest) (response *CreateMonitorGroupNotifyPolicyResponse, err error) {
 	response = CreateCreateMonitorGroupNotifyPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateMonitorGroupNotifyPolicy(request *CreateMonitorGroup
 }
 
 // CreateMonitorGroupNotifyPolicyWithChan invokes the cms.CreateMonitorGroupNotifyPolicy API asynchronously
-// api document: https://help.aliyun.com/api/cms/createmonitorgroupnotifypolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMonitorGroupNotifyPolicyWithChan(request *CreateMonitorGroupNotifyPolicyRequest) (<-chan *CreateMonitorGroupNotifyPolicyResponse, <-chan error) {
 	responseChan := make(chan *CreateMonitorGroupNotifyPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateMonitorGroupNotifyPolicyWithChan(request *CreateMoni
 }
 
 // CreateMonitorGroupNotifyPolicyWithCallback invokes the cms.CreateMonitorGroupNotifyPolicy API asynchronously
-// api document: https://help.aliyun.com/api/cms/createmonitorgroupnotifypolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMonitorGroupNotifyPolicyWithCallback(request *CreateMonitorGroupNotifyPolicyRequest, callback func(response *CreateMonitorGroupNotifyPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

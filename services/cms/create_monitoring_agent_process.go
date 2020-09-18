@@ -21,7 +21,6 @@ import (
 )
 
 // CreateMonitoringAgentProcess invokes the cms.CreateMonitoringAgentProcess API synchronously
-// api document: https://help.aliyun.com/api/cms/createmonitoringagentprocess.html
 func (client *Client) CreateMonitoringAgentProcess(request *CreateMonitoringAgentProcessRequest) (response *CreateMonitoringAgentProcessResponse, err error) {
 	response = CreateCreateMonitoringAgentProcessResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateMonitoringAgentProcess(request *CreateMonitoringAgen
 }
 
 // CreateMonitoringAgentProcessWithChan invokes the cms.CreateMonitoringAgentProcess API asynchronously
-// api document: https://help.aliyun.com/api/cms/createmonitoringagentprocess.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMonitoringAgentProcessWithChan(request *CreateMonitoringAgentProcessRequest) (<-chan *CreateMonitoringAgentProcessResponse, <-chan error) {
 	responseChan := make(chan *CreateMonitoringAgentProcessResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateMonitoringAgentProcessWithChan(request *CreateMonito
 }
 
 // CreateMonitoringAgentProcessWithCallback invokes the cms.CreateMonitoringAgentProcess API asynchronously
-// api document: https://help.aliyun.com/api/cms/createmonitoringagentprocess.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMonitoringAgentProcessWithCallback(request *CreateMonitoringAgentProcessRequest, callback func(response *CreateMonitoringAgentProcessResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

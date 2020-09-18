@@ -21,7 +21,6 @@ import (
 )
 
 // EnableMetricRules invokes the cms.EnableMetricRules API synchronously
-// api document: https://help.aliyun.com/api/cms/enablemetricrules.html
 func (client *Client) EnableMetricRules(request *EnableMetricRulesRequest) (response *EnableMetricRulesResponse, err error) {
 	response = CreateEnableMetricRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnableMetricRules(request *EnableMetricRulesRequest) (resp
 }
 
 // EnableMetricRulesWithChan invokes the cms.EnableMetricRules API asynchronously
-// api document: https://help.aliyun.com/api/cms/enablemetricrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableMetricRulesWithChan(request *EnableMetricRulesRequest) (<-chan *EnableMetricRulesResponse, <-chan error) {
 	responseChan := make(chan *EnableMetricRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnableMetricRulesWithChan(request *EnableMetricRulesReques
 }
 
 // EnableMetricRulesWithCallback invokes the cms.EnableMetricRules API asynchronously
-// api document: https://help.aliyun.com/api/cms/enablemetricrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableMetricRulesWithCallback(request *EnableMetricRulesRequest, callback func(response *EnableMetricRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

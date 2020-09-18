@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSiteMonitors invokes the cms.DeleteSiteMonitors API synchronously
-// api document: https://help.aliyun.com/api/cms/deletesitemonitors.html
 func (client *Client) DeleteSiteMonitors(request *DeleteSiteMonitorsRequest) (response *DeleteSiteMonitorsResponse, err error) {
 	response = CreateDeleteSiteMonitorsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSiteMonitors(request *DeleteSiteMonitorsRequest) (re
 }
 
 // DeleteSiteMonitorsWithChan invokes the cms.DeleteSiteMonitors API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletesitemonitors.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSiteMonitorsWithChan(request *DeleteSiteMonitorsRequest) (<-chan *DeleteSiteMonitorsResponse, <-chan error) {
 	responseChan := make(chan *DeleteSiteMonitorsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSiteMonitorsWithChan(request *DeleteSiteMonitorsRequ
 }
 
 // DeleteSiteMonitorsWithCallback invokes the cms.DeleteSiteMonitors API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletesitemonitors.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSiteMonitorsWithCallback(request *DeleteSiteMonitorsRequest, callback func(response *DeleteSiteMonitorsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

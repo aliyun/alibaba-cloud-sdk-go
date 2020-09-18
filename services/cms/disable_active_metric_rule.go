@@ -21,7 +21,6 @@ import (
 )
 
 // DisableActiveMetricRule invokes the cms.DisableActiveMetricRule API synchronously
-// api document: https://help.aliyun.com/api/cms/disableactivemetricrule.html
 func (client *Client) DisableActiveMetricRule(request *DisableActiveMetricRuleRequest) (response *DisableActiveMetricRuleResponse, err error) {
 	response = CreateDisableActiveMetricRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisableActiveMetricRule(request *DisableActiveMetricRuleRe
 }
 
 // DisableActiveMetricRuleWithChan invokes the cms.DisableActiveMetricRule API asynchronously
-// api document: https://help.aliyun.com/api/cms/disableactivemetricrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableActiveMetricRuleWithChan(request *DisableActiveMetricRuleRequest) (<-chan *DisableActiveMetricRuleResponse, <-chan error) {
 	responseChan := make(chan *DisableActiveMetricRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisableActiveMetricRuleWithChan(request *DisableActiveMetr
 }
 
 // DisableActiveMetricRuleWithCallback invokes the cms.DisableActiveMetricRule API asynchronously
-// api document: https://help.aliyun.com/api/cms/disableactivemetricrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableActiveMetricRuleWithCallback(request *DisableActiveMetricRuleRequest, callback func(response *DisableActiveMetricRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

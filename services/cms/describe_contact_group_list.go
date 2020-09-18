@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeContactGroupList invokes the cms.DescribeContactGroupList API synchronously
-// api document: https://help.aliyun.com/api/cms/describecontactgrouplist.html
 func (client *Client) DescribeContactGroupList(request *DescribeContactGroupListRequest) (response *DescribeContactGroupListResponse, err error) {
 	response = CreateDescribeContactGroupListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeContactGroupList(request *DescribeContactGroupList
 }
 
 // DescribeContactGroupListWithChan invokes the cms.DescribeContactGroupList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describecontactgrouplist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeContactGroupListWithChan(request *DescribeContactGroupListRequest) (<-chan *DescribeContactGroupListResponse, <-chan error) {
 	responseChan := make(chan *DescribeContactGroupListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeContactGroupListWithChan(request *DescribeContactG
 }
 
 // DescribeContactGroupListWithCallback invokes the cms.DescribeContactGroupList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describecontactgrouplist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeContactGroupListWithCallback(request *DescribeContactGroupListRequest, callback func(response *DescribeContactGroupListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

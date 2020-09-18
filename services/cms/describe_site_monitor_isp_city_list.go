@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSiteMonitorISPCityList invokes the cms.DescribeSiteMonitorISPCityList API synchronously
-// api document: https://help.aliyun.com/api/cms/describesitemonitorispcitylist.html
 func (client *Client) DescribeSiteMonitorISPCityList(request *DescribeSiteMonitorISPCityListRequest) (response *DescribeSiteMonitorISPCityListResponse, err error) {
 	response = CreateDescribeSiteMonitorISPCityListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSiteMonitorISPCityList(request *DescribeSiteMonito
 }
 
 // DescribeSiteMonitorISPCityListWithChan invokes the cms.DescribeSiteMonitorISPCityList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describesitemonitorispcitylist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSiteMonitorISPCityListWithChan(request *DescribeSiteMonitorISPCityListRequest) (<-chan *DescribeSiteMonitorISPCityListResponse, <-chan error) {
 	responseChan := make(chan *DescribeSiteMonitorISPCityListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSiteMonitorISPCityListWithChan(request *DescribeSi
 }
 
 // DescribeSiteMonitorISPCityListWithCallback invokes the cms.DescribeSiteMonitorISPCityList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describesitemonitorispcitylist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSiteMonitorISPCityListWithCallback(request *DescribeSiteMonitorISPCityListRequest, callback func(response *DescribeSiteMonitorISPCityListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,10 @@ func (client *Client) DescribeSiteMonitorISPCityListWithCallback(request *Descri
 // DescribeSiteMonitorISPCityListRequest is the request struct for api DescribeSiteMonitorISPCityList
 type DescribeSiteMonitorISPCityListRequest struct {
 	*requests.RpcRequest
-	City string `position:"Query" name:"City"`
-	Isp  string `position:"Query" name:"Isp"`
+	City string           `position:"Query" name:"City"`
+	Isp  string           `position:"Query" name:"Isp"`
+	IPV4 requests.Boolean `position:"Query" name:"IPV4"`
+	IPV6 requests.Boolean `position:"Query" name:"IPV6"`
 }
 
 // DescribeSiteMonitorISPCityListResponse is the response struct for api DescribeSiteMonitorISPCityList

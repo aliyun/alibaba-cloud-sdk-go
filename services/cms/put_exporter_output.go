@@ -21,7 +21,6 @@ import (
 )
 
 // PutExporterOutput invokes the cms.PutExporterOutput API synchronously
-// api document: https://help.aliyun.com/api/cms/putexporteroutput.html
 func (client *Client) PutExporterOutput(request *PutExporterOutputRequest) (response *PutExporterOutputResponse, err error) {
 	response = CreatePutExporterOutputResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PutExporterOutput(request *PutExporterOutputRequest) (resp
 }
 
 // PutExporterOutputWithChan invokes the cms.PutExporterOutput API asynchronously
-// api document: https://help.aliyun.com/api/cms/putexporteroutput.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutExporterOutputWithChan(request *PutExporterOutputRequest) (<-chan *PutExporterOutputResponse, <-chan error) {
 	responseChan := make(chan *PutExporterOutputResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PutExporterOutputWithChan(request *PutExporterOutputReques
 }
 
 // PutExporterOutputWithCallback invokes the cms.PutExporterOutput API asynchronously
-// api document: https://help.aliyun.com/api/cms/putexporteroutput.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutExporterOutputWithCallback(request *PutExporterOutputRequest, callback func(response *PutExporterOutputResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

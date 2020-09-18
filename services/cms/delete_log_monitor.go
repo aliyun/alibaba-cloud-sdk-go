@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLogMonitor invokes the cms.DeleteLogMonitor API synchronously
-// api document: https://help.aliyun.com/api/cms/deletelogmonitor.html
 func (client *Client) DeleteLogMonitor(request *DeleteLogMonitorRequest) (response *DeleteLogMonitorResponse, err error) {
 	response = CreateDeleteLogMonitorResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLogMonitor(request *DeleteLogMonitorRequest) (respon
 }
 
 // DeleteLogMonitorWithChan invokes the cms.DeleteLogMonitor API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletelogmonitor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLogMonitorWithChan(request *DeleteLogMonitorRequest) (<-chan *DeleteLogMonitorResponse, <-chan error) {
 	responseChan := make(chan *DeleteLogMonitorResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLogMonitorWithChan(request *DeleteLogMonitorRequest)
 }
 
 // DeleteLogMonitorWithCallback invokes the cms.DeleteLogMonitor API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletelogmonitor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLogMonitorWithCallback(request *DeleteLogMonitorRequest, callback func(response *DeleteLogMonitorResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

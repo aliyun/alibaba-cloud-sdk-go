@@ -35,6 +35,7 @@ type Resource struct {
 	Level          string                                      `json:"Level" xml:"Level"`
 	Dimension      string                                      `json:"Dimension" xml:"Dimension"`
 	Id             int64                                       `json:"Id" xml:"Id"`
+	NameDescEn     string                                      `json:"NameDesc.En" xml:"NameDesc.En"`
 	EventType      string                                      `json:"EventType" xml:"EventType"`
 	Namespace      string                                      `json:"Namespace" xml:"Namespace"`
 	GroupId        int64                                       `json:"GroupId" xml:"GroupId"`

@@ -21,7 +21,6 @@ import (
 )
 
 // PutMonitoringConfig invokes the cms.PutMonitoringConfig API synchronously
-// api document: https://help.aliyun.com/api/cms/putmonitoringconfig.html
 func (client *Client) PutMonitoringConfig(request *PutMonitoringConfigRequest) (response *PutMonitoringConfigResponse, err error) {
 	response = CreatePutMonitoringConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PutMonitoringConfig(request *PutMonitoringConfigRequest) (
 }
 
 // PutMonitoringConfigWithChan invokes the cms.PutMonitoringConfig API asynchronously
-// api document: https://help.aliyun.com/api/cms/putmonitoringconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutMonitoringConfigWithChan(request *PutMonitoringConfigRequest) (<-chan *PutMonitoringConfigResponse, <-chan error) {
 	responseChan := make(chan *PutMonitoringConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PutMonitoringConfigWithChan(request *PutMonitoringConfigRe
 }
 
 // PutMonitoringConfigWithCallback invokes the cms.PutMonitoringConfig API asynchronously
-// api document: https://help.aliyun.com/api/cms/putmonitoringconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutMonitoringConfigWithCallback(request *PutMonitoringConfigRequest, callback func(response *PutMonitoringConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateGroupMetricRules invokes the cms.CreateGroupMetricRules API synchronously
-// api document: https://help.aliyun.com/api/cms/creategroupmetricrules.html
 func (client *Client) CreateGroupMetricRules(request *CreateGroupMetricRulesRequest) (response *CreateGroupMetricRulesResponse, err error) {
 	response = CreateCreateGroupMetricRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateGroupMetricRules(request *CreateGroupMetricRulesRequ
 }
 
 // CreateGroupMetricRulesWithChan invokes the cms.CreateGroupMetricRules API asynchronously
-// api document: https://help.aliyun.com/api/cms/creategroupmetricrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGroupMetricRulesWithChan(request *CreateGroupMetricRulesRequest) (<-chan *CreateGroupMetricRulesResponse, <-chan error) {
 	responseChan := make(chan *CreateGroupMetricRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateGroupMetricRulesWithChan(request *CreateGroupMetricR
 }
 
 // CreateGroupMetricRulesWithCallback invokes the cms.CreateGroupMetricRules API asynchronously
-// api document: https://help.aliyun.com/api/cms/creategroupmetricrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGroupMetricRulesWithCallback(request *CreateGroupMetricRulesRequest, callback func(response *CreateGroupMetricRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

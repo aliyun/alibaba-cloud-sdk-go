@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeExporterOutputList invokes the cms.DescribeExporterOutputList API synchronously
-// api document: https://help.aliyun.com/api/cms/describeexporteroutputlist.html
 func (client *Client) DescribeExporterOutputList(request *DescribeExporterOutputListRequest) (response *DescribeExporterOutputListResponse, err error) {
 	response = CreateDescribeExporterOutputListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeExporterOutputList(request *DescribeExporterOutput
 }
 
 // DescribeExporterOutputListWithChan invokes the cms.DescribeExporterOutputList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describeexporteroutputlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExporterOutputListWithChan(request *DescribeExporterOutputListRequest) (<-chan *DescribeExporterOutputListResponse, <-chan error) {
 	responseChan := make(chan *DescribeExporterOutputListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeExporterOutputListWithChan(request *DescribeExport
 }
 
 // DescribeExporterOutputListWithCallback invokes the cms.DescribeExporterOutputList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describeexporteroutputlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExporterOutputListWithCallback(request *DescribeExporterOutputListRequest, callback func(response *DescribeExporterOutputListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeTagKeyList invokes the cms.DescribeTagKeyList API synchronously
-// api document: https://help.aliyun.com/api/cms/describetagkeylist.html
 func (client *Client) DescribeTagKeyList(request *DescribeTagKeyListRequest) (response *DescribeTagKeyListResponse, err error) {
 	response = CreateDescribeTagKeyListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeTagKeyList(request *DescribeTagKeyListRequest) (re
 }
 
 // DescribeTagKeyListWithChan invokes the cms.DescribeTagKeyList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describetagkeylist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTagKeyListWithChan(request *DescribeTagKeyListRequest) (<-chan *DescribeTagKeyListResponse, <-chan error) {
 	responseChan := make(chan *DescribeTagKeyListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeTagKeyListWithChan(request *DescribeTagKeyListRequ
 }
 
 // DescribeTagKeyListWithCallback invokes the cms.DescribeTagKeyList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describetagkeylist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTagKeyListWithCallback(request *DescribeTagKeyListRequest, callback func(response *DescribeTagKeyListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

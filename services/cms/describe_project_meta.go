@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeProjectMeta invokes the cms.DescribeProjectMeta API synchronously
-// api document: https://help.aliyun.com/api/cms/describeprojectmeta.html
 func (client *Client) DescribeProjectMeta(request *DescribeProjectMetaRequest) (response *DescribeProjectMetaResponse, err error) {
 	response = CreateDescribeProjectMetaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeProjectMeta(request *DescribeProjectMetaRequest) (
 }
 
 // DescribeProjectMetaWithChan invokes the cms.DescribeProjectMeta API asynchronously
-// api document: https://help.aliyun.com/api/cms/describeprojectmeta.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeProjectMetaWithChan(request *DescribeProjectMetaRequest) (<-chan *DescribeProjectMetaResponse, <-chan error) {
 	responseChan := make(chan *DescribeProjectMetaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeProjectMetaWithChan(request *DescribeProjectMetaRe
 }
 
 // DescribeProjectMetaWithCallback invokes the cms.DescribeProjectMeta API asynchronously
-// api document: https://help.aliyun.com/api/cms/describeprojectmeta.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeProjectMetaWithCallback(request *DescribeProjectMetaRequest, callback func(response *DescribeProjectMetaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

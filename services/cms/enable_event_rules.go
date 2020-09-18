@@ -21,7 +21,6 @@ import (
 )
 
 // EnableEventRules invokes the cms.EnableEventRules API synchronously
-// api document: https://help.aliyun.com/api/cms/enableeventrules.html
 func (client *Client) EnableEventRules(request *EnableEventRulesRequest) (response *EnableEventRulesResponse, err error) {
 	response = CreateEnableEventRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnableEventRules(request *EnableEventRulesRequest) (respon
 }
 
 // EnableEventRulesWithChan invokes the cms.EnableEventRules API asynchronously
-// api document: https://help.aliyun.com/api/cms/enableeventrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableEventRulesWithChan(request *EnableEventRulesRequest) (<-chan *EnableEventRulesResponse, <-chan error) {
 	responseChan := make(chan *EnableEventRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnableEventRulesWithChan(request *EnableEventRulesRequest)
 }
 
 // EnableEventRulesWithCallback invokes the cms.EnableEventRules API asynchronously
-// api document: https://help.aliyun.com/api/cms/enableeventrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableEventRulesWithCallback(request *EnableEventRulesRequest, callback func(response *EnableEventRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

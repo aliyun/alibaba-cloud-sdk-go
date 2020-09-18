@@ -21,7 +21,6 @@ import (
 )
 
 // CreateGroupMonitoringAgentProcess invokes the cms.CreateGroupMonitoringAgentProcess API synchronously
-// api document: https://help.aliyun.com/api/cms/creategroupmonitoringagentprocess.html
 func (client *Client) CreateGroupMonitoringAgentProcess(request *CreateGroupMonitoringAgentProcessRequest) (response *CreateGroupMonitoringAgentProcessResponse, err error) {
 	response = CreateCreateGroupMonitoringAgentProcessResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateGroupMonitoringAgentProcess(request *CreateGroupMoni
 }
 
 // CreateGroupMonitoringAgentProcessWithChan invokes the cms.CreateGroupMonitoringAgentProcess API asynchronously
-// api document: https://help.aliyun.com/api/cms/creategroupmonitoringagentprocess.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGroupMonitoringAgentProcessWithChan(request *CreateGroupMonitoringAgentProcessRequest) (<-chan *CreateGroupMonitoringAgentProcessResponse, <-chan error) {
 	responseChan := make(chan *CreateGroupMonitoringAgentProcessResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateGroupMonitoringAgentProcessWithChan(request *CreateG
 }
 
 // CreateGroupMonitoringAgentProcessWithCallback invokes the cms.CreateGroupMonitoringAgentProcess API asynchronously
-// api document: https://help.aliyun.com/api/cms/creategroupmonitoringagentprocess.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGroupMonitoringAgentProcessWithCallback(request *CreateGroupMonitoringAgentProcessRequest, callback func(response *CreateGroupMonitoringAgentProcessResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

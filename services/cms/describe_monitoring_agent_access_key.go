@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMonitoringAgentAccessKey invokes the cms.DescribeMonitoringAgentAccessKey API synchronously
-// api document: https://help.aliyun.com/api/cms/describemonitoringagentaccesskey.html
 func (client *Client) DescribeMonitoringAgentAccessKey(request *DescribeMonitoringAgentAccessKeyRequest) (response *DescribeMonitoringAgentAccessKeyResponse, err error) {
 	response = CreateDescribeMonitoringAgentAccessKeyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMonitoringAgentAccessKey(request *DescribeMonitori
 }
 
 // DescribeMonitoringAgentAccessKeyWithChan invokes the cms.DescribeMonitoringAgentAccessKey API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemonitoringagentaccesskey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMonitoringAgentAccessKeyWithChan(request *DescribeMonitoringAgentAccessKeyRequest) (<-chan *DescribeMonitoringAgentAccessKeyResponse, <-chan error) {
 	responseChan := make(chan *DescribeMonitoringAgentAccessKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMonitoringAgentAccessKeyWithChan(request *Describe
 }
 
 // DescribeMonitoringAgentAccessKeyWithCallback invokes the cms.DescribeMonitoringAgentAccessKey API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemonitoringagentaccesskey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMonitoringAgentAccessKeyWithCallback(request *DescribeMonitoringAgentAccessKeyRequest, callback func(response *DescribeMonitoringAgentAccessKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

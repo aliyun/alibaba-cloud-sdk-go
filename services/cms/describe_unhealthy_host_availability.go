@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUnhealthyHostAvailability invokes the cms.DescribeUnhealthyHostAvailability API synchronously
-// api document: https://help.aliyun.com/api/cms/describeunhealthyhostavailability.html
 func (client *Client) DescribeUnhealthyHostAvailability(request *DescribeUnhealthyHostAvailabilityRequest) (response *DescribeUnhealthyHostAvailabilityResponse, err error) {
 	response = CreateDescribeUnhealthyHostAvailabilityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUnhealthyHostAvailability(request *DescribeUnhealt
 }
 
 // DescribeUnhealthyHostAvailabilityWithChan invokes the cms.DescribeUnhealthyHostAvailability API asynchronously
-// api document: https://help.aliyun.com/api/cms/describeunhealthyhostavailability.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUnhealthyHostAvailabilityWithChan(request *DescribeUnhealthyHostAvailabilityRequest) (<-chan *DescribeUnhealthyHostAvailabilityResponse, <-chan error) {
 	responseChan := make(chan *DescribeUnhealthyHostAvailabilityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUnhealthyHostAvailabilityWithChan(request *Describ
 }
 
 // DescribeUnhealthyHostAvailabilityWithCallback invokes the cms.DescribeUnhealthyHostAvailability API asynchronously
-// api document: https://help.aliyun.com/api/cms/describeunhealthyhostavailability.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUnhealthyHostAvailabilityWithCallback(request *DescribeUnhealthyHostAvailabilityRequest, callback func(response *DescribeUnhealthyHostAvailabilityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSystemEventAttribute invokes the cms.DescribeSystemEventAttribute API synchronously
-// api document: https://help.aliyun.com/api/cms/describesystemeventattribute.html
 func (client *Client) DescribeSystemEventAttribute(request *DescribeSystemEventAttributeRequest) (response *DescribeSystemEventAttributeResponse, err error) {
 	response = CreateDescribeSystemEventAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSystemEventAttribute(request *DescribeSystemEventA
 }
 
 // DescribeSystemEventAttributeWithChan invokes the cms.DescribeSystemEventAttribute API asynchronously
-// api document: https://help.aliyun.com/api/cms/describesystemeventattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSystemEventAttributeWithChan(request *DescribeSystemEventAttributeRequest) (<-chan *DescribeSystemEventAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeSystemEventAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSystemEventAttributeWithChan(request *DescribeSyst
 }
 
 // DescribeSystemEventAttributeWithCallback invokes the cms.DescribeSystemEventAttribute API asynchronously
-// api document: https://help.aliyun.com/api/cms/describesystemeventattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSystemEventAttributeWithCallback(request *DescribeSystemEventAttributeRequest, callback func(response *DescribeSystemEventAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

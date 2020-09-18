@@ -21,7 +21,6 @@ import (
 )
 
 // PutResourceMetricRules invokes the cms.PutResourceMetricRules API synchronously
-// api document: https://help.aliyun.com/api/cms/putresourcemetricrules.html
 func (client *Client) PutResourceMetricRules(request *PutResourceMetricRulesRequest) (response *PutResourceMetricRulesResponse, err error) {
 	response = CreatePutResourceMetricRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PutResourceMetricRules(request *PutResourceMetricRulesRequ
 }
 
 // PutResourceMetricRulesWithChan invokes the cms.PutResourceMetricRules API asynchronously
-// api document: https://help.aliyun.com/api/cms/putresourcemetricrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutResourceMetricRulesWithChan(request *PutResourceMetricRulesRequest) (<-chan *PutResourceMetricRulesResponse, <-chan error) {
 	responseChan := make(chan *PutResourceMetricRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PutResourceMetricRulesWithChan(request *PutResourceMetricR
 }
 
 // PutResourceMetricRulesWithCallback invokes the cms.PutResourceMetricRules API asynchronously
-// api document: https://help.aliyun.com/api/cms/putresourcemetricrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutResourceMetricRulesWithCallback(request *PutResourceMetricRulesRequest, callback func(response *PutResourceMetricRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

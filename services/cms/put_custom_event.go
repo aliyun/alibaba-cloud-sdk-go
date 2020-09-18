@@ -21,7 +21,6 @@ import (
 )
 
 // PutCustomEvent invokes the cms.PutCustomEvent API synchronously
-// api document: https://help.aliyun.com/api/cms/putcustomevent.html
 func (client *Client) PutCustomEvent(request *PutCustomEventRequest) (response *PutCustomEventResponse, err error) {
 	response = CreatePutCustomEventResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PutCustomEvent(request *PutCustomEventRequest) (response *
 }
 
 // PutCustomEventWithChan invokes the cms.PutCustomEvent API asynchronously
-// api document: https://help.aliyun.com/api/cms/putcustomevent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutCustomEventWithChan(request *PutCustomEventRequest) (<-chan *PutCustomEventResponse, <-chan error) {
 	responseChan := make(chan *PutCustomEventResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PutCustomEventWithChan(request *PutCustomEventRequest) (<-
 }
 
 // PutCustomEventWithCallback invokes the cms.PutCustomEvent API asynchronously
-// api document: https://help.aliyun.com/api/cms/putcustomevent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutCustomEventWithCallback(request *PutCustomEventRequest, callback func(response *PutCustomEventResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

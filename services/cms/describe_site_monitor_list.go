@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSiteMonitorList invokes the cms.DescribeSiteMonitorList API synchronously
-// api document: https://help.aliyun.com/api/cms/describesitemonitorlist.html
 func (client *Client) DescribeSiteMonitorList(request *DescribeSiteMonitorListRequest) (response *DescribeSiteMonitorListResponse, err error) {
 	response = CreateDescribeSiteMonitorListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSiteMonitorList(request *DescribeSiteMonitorListRe
 }
 
 // DescribeSiteMonitorListWithChan invokes the cms.DescribeSiteMonitorList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describesitemonitorlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSiteMonitorListWithChan(request *DescribeSiteMonitorListRequest) (<-chan *DescribeSiteMonitorListResponse, <-chan error) {
 	responseChan := make(chan *DescribeSiteMonitorListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSiteMonitorListWithChan(request *DescribeSiteMonit
 }
 
 // DescribeSiteMonitorListWithCallback invokes the cms.DescribeSiteMonitorList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describesitemonitorlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSiteMonitorListWithCallback(request *DescribeSiteMonitorListRequest, callback func(response *DescribeSiteMonitorListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

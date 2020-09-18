@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCustomEventHistogram invokes the cms.DescribeCustomEventHistogram API synchronously
-// api document: https://help.aliyun.com/api/cms/describecustomeventhistogram.html
 func (client *Client) DescribeCustomEventHistogram(request *DescribeCustomEventHistogramRequest) (response *DescribeCustomEventHistogramResponse, err error) {
 	response = CreateDescribeCustomEventHistogramResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCustomEventHistogram(request *DescribeCustomEventH
 }
 
 // DescribeCustomEventHistogramWithChan invokes the cms.DescribeCustomEventHistogram API asynchronously
-// api document: https://help.aliyun.com/api/cms/describecustomeventhistogram.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomEventHistogramWithChan(request *DescribeCustomEventHistogramRequest) (<-chan *DescribeCustomEventHistogramResponse, <-chan error) {
 	responseChan := make(chan *DescribeCustomEventHistogramResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCustomEventHistogramWithChan(request *DescribeCust
 }
 
 // DescribeCustomEventHistogramWithCallback invokes the cms.DescribeCustomEventHistogram API asynchronously
-// api document: https://help.aliyun.com/api/cms/describecustomeventhistogram.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomEventHistogramWithCallback(request *DescribeCustomEventHistogramRequest, callback func(response *DescribeCustomEventHistogramResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

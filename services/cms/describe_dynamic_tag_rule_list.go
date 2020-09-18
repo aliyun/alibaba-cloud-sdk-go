@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDynamicTagRuleList invokes the cms.DescribeDynamicTagRuleList API synchronously
-// api document: https://help.aliyun.com/api/cms/describedynamictagrulelist.html
 func (client *Client) DescribeDynamicTagRuleList(request *DescribeDynamicTagRuleListRequest) (response *DescribeDynamicTagRuleListResponse, err error) {
 	response = CreateDescribeDynamicTagRuleListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDynamicTagRuleList(request *DescribeDynamicTagRule
 }
 
 // DescribeDynamicTagRuleListWithChan invokes the cms.DescribeDynamicTagRuleList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describedynamictagrulelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDynamicTagRuleListWithChan(request *DescribeDynamicTagRuleListRequest) (<-chan *DescribeDynamicTagRuleListResponse, <-chan error) {
 	responseChan := make(chan *DescribeDynamicTagRuleListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDynamicTagRuleListWithChan(request *DescribeDynami
 }
 
 // DescribeDynamicTagRuleListWithCallback invokes the cms.DescribeDynamicTagRuleList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describedynamictagrulelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDynamicTagRuleListWithCallback(request *DescribeDynamicTagRuleListRequest, callback func(response *DescribeDynamicTagRuleListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

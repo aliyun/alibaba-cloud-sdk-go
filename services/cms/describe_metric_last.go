@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMetricLast invokes the cms.DescribeMetricLast API synchronously
-// api document: https://help.aliyun.com/api/cms/describemetriclast.html
 func (client *Client) DescribeMetricLast(request *DescribeMetricLastRequest) (response *DescribeMetricLastResponse, err error) {
 	response = CreateDescribeMetricLastResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMetricLast(request *DescribeMetricLastRequest) (re
 }
 
 // DescribeMetricLastWithChan invokes the cms.DescribeMetricLast API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemetriclast.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMetricLastWithChan(request *DescribeMetricLastRequest) (<-chan *DescribeMetricLastResponse, <-chan error) {
 	responseChan := make(chan *DescribeMetricLastResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMetricLastWithChan(request *DescribeMetricLastRequ
 }
 
 // DescribeMetricLastWithCallback invokes the cms.DescribeMetricLast API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemetriclast.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMetricLastWithCallback(request *DescribeMetricLastRequest, callback func(response *DescribeMetricLastResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

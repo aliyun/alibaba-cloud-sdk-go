@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSiteMonitorQuota invokes the cms.DescribeSiteMonitorQuota API synchronously
-// api document: https://help.aliyun.com/api/cms/describesitemonitorquota.html
 func (client *Client) DescribeSiteMonitorQuota(request *DescribeSiteMonitorQuotaRequest) (response *DescribeSiteMonitorQuotaResponse, err error) {
 	response = CreateDescribeSiteMonitorQuotaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSiteMonitorQuota(request *DescribeSiteMonitorQuota
 }
 
 // DescribeSiteMonitorQuotaWithChan invokes the cms.DescribeSiteMonitorQuota API asynchronously
-// api document: https://help.aliyun.com/api/cms/describesitemonitorquota.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSiteMonitorQuotaWithChan(request *DescribeSiteMonitorQuotaRequest) (<-chan *DescribeSiteMonitorQuotaResponse, <-chan error) {
 	responseChan := make(chan *DescribeSiteMonitorQuotaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSiteMonitorQuotaWithChan(request *DescribeSiteMoni
 }
 
 // DescribeSiteMonitorQuotaWithCallback invokes the cms.DescribeSiteMonitorQuota API asynchronously
-// api document: https://help.aliyun.com/api/cms/describesitemonitorquota.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSiteMonitorQuotaWithCallback(request *DescribeSiteMonitorQuotaRequest, callback func(response *DescribeSiteMonitorQuotaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

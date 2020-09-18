@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyHostInfo invokes the cms.ModifyHostInfo API synchronously
-// api document: https://help.aliyun.com/api/cms/modifyhostinfo.html
 func (client *Client) ModifyHostInfo(request *ModifyHostInfoRequest) (response *ModifyHostInfoResponse, err error) {
 	response = CreateModifyHostInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyHostInfo(request *ModifyHostInfoRequest) (response *
 }
 
 // ModifyHostInfoWithChan invokes the cms.ModifyHostInfo API asynchronously
-// api document: https://help.aliyun.com/api/cms/modifyhostinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHostInfoWithChan(request *ModifyHostInfoRequest) (<-chan *ModifyHostInfoResponse, <-chan error) {
 	responseChan := make(chan *ModifyHostInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyHostInfoWithChan(request *ModifyHostInfoRequest) (<-
 }
 
 // ModifyHostInfoWithCallback invokes the cms.ModifyHostInfo API asynchronously
-// api document: https://help.aliyun.com/api/cms/modifyhostinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHostInfoWithCallback(request *ModifyHostInfoRequest, callback func(response *ModifyHostInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

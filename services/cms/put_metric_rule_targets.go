@@ -21,7 +21,6 @@ import (
 )
 
 // PutMetricRuleTargets invokes the cms.PutMetricRuleTargets API synchronously
-// api document: https://help.aliyun.com/api/cms/putmetricruletargets.html
 func (client *Client) PutMetricRuleTargets(request *PutMetricRuleTargetsRequest) (response *PutMetricRuleTargetsResponse, err error) {
 	response = CreatePutMetricRuleTargetsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PutMetricRuleTargets(request *PutMetricRuleTargetsRequest)
 }
 
 // PutMetricRuleTargetsWithChan invokes the cms.PutMetricRuleTargets API asynchronously
-// api document: https://help.aliyun.com/api/cms/putmetricruletargets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutMetricRuleTargetsWithChan(request *PutMetricRuleTargetsRequest) (<-chan *PutMetricRuleTargetsResponse, <-chan error) {
 	responseChan := make(chan *PutMetricRuleTargetsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PutMetricRuleTargetsWithChan(request *PutMetricRuleTargets
 }
 
 // PutMetricRuleTargetsWithCallback invokes the cms.PutMetricRuleTargets API asynchronously
-// api document: https://help.aliyun.com/api/cms/putmetricruletargets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutMetricRuleTargetsWithCallback(request *PutMetricRuleTargetsRequest, callback func(response *PutMetricRuleTargetsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

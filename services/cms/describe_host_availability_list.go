@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeHostAvailabilityList invokes the cms.DescribeHostAvailabilityList API synchronously
-// api document: https://help.aliyun.com/api/cms/describehostavailabilitylist.html
 func (client *Client) DescribeHostAvailabilityList(request *DescribeHostAvailabilityListRequest) (response *DescribeHostAvailabilityListResponse, err error) {
 	response = CreateDescribeHostAvailabilityListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeHostAvailabilityList(request *DescribeHostAvailabi
 }
 
 // DescribeHostAvailabilityListWithChan invokes the cms.DescribeHostAvailabilityList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describehostavailabilitylist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHostAvailabilityListWithChan(request *DescribeHostAvailabilityListRequest) (<-chan *DescribeHostAvailabilityListResponse, <-chan error) {
 	responseChan := make(chan *DescribeHostAvailabilityListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeHostAvailabilityListWithChan(request *DescribeHost
 }
 
 // DescribeHostAvailabilityListWithCallback invokes the cms.DescribeHostAvailabilityList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describehostavailabilitylist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHostAvailabilityListWithCallback(request *DescribeHostAvailabilityListRequest, callback func(response *DescribeHostAvailabilityListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

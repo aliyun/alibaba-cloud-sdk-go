@@ -21,7 +21,6 @@ import (
 )
 
 // CreateSiteMonitor invokes the cms.CreateSiteMonitor API synchronously
-// api document: https://help.aliyun.com/api/cms/createsitemonitor.html
 func (client *Client) CreateSiteMonitor(request *CreateSiteMonitorRequest) (response *CreateSiteMonitorResponse, err error) {
 	response = CreateCreateSiteMonitorResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateSiteMonitor(request *CreateSiteMonitorRequest) (resp
 }
 
 // CreateSiteMonitorWithChan invokes the cms.CreateSiteMonitor API asynchronously
-// api document: https://help.aliyun.com/api/cms/createsitemonitor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSiteMonitorWithChan(request *CreateSiteMonitorRequest) (<-chan *CreateSiteMonitorResponse, <-chan error) {
 	responseChan := make(chan *CreateSiteMonitorResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateSiteMonitorWithChan(request *CreateSiteMonitorReques
 }
 
 // CreateSiteMonitorWithCallback invokes the cms.CreateSiteMonitor API asynchronously
-// api document: https://help.aliyun.com/api/cms/createsitemonitor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSiteMonitorWithCallback(request *CreateSiteMonitorRequest, callback func(response *CreateSiteMonitorResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMetricRuleList invokes the cms.DescribeMetricRuleList API synchronously
-// api document: https://help.aliyun.com/api/cms/describemetricrulelist.html
 func (client *Client) DescribeMetricRuleList(request *DescribeMetricRuleListRequest) (response *DescribeMetricRuleListResponse, err error) {
 	response = CreateDescribeMetricRuleListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMetricRuleList(request *DescribeMetricRuleListRequ
 }
 
 // DescribeMetricRuleListWithChan invokes the cms.DescribeMetricRuleList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemetricrulelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMetricRuleListWithChan(request *DescribeMetricRuleListRequest) (<-chan *DescribeMetricRuleListResponse, <-chan error) {
 	responseChan := make(chan *DescribeMetricRuleListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMetricRuleListWithChan(request *DescribeMetricRule
 }
 
 // DescribeMetricRuleListWithCallback invokes the cms.DescribeMetricRuleList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemetricrulelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMetricRuleListWithCallback(request *DescribeMetricRuleListRequest, callback func(response *DescribeMetricRuleListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

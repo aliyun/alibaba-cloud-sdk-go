@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteContactGroup invokes the cms.DeleteContactGroup API synchronously
-// api document: https://help.aliyun.com/api/cms/deletecontactgroup.html
 func (client *Client) DeleteContactGroup(request *DeleteContactGroupRequest) (response *DeleteContactGroupResponse, err error) {
 	response = CreateDeleteContactGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteContactGroup(request *DeleteContactGroupRequest) (re
 }
 
 // DeleteContactGroupWithChan invokes the cms.DeleteContactGroup API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletecontactgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteContactGroupWithChan(request *DeleteContactGroupRequest) (<-chan *DeleteContactGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteContactGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteContactGroupWithChan(request *DeleteContactGroupRequ
 }
 
 // DeleteContactGroupWithCallback invokes the cms.DeleteContactGroup API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletecontactgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteContactGroupWithCallback(request *DeleteContactGroupRequest, callback func(response *DeleteContactGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

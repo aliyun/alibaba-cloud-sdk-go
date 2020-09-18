@@ -21,7 +21,6 @@ import (
 )
 
 // PutEventRuleTargets invokes the cms.PutEventRuleTargets API synchronously
-// api document: https://help.aliyun.com/api/cms/puteventruletargets.html
 func (client *Client) PutEventRuleTargets(request *PutEventRuleTargetsRequest) (response *PutEventRuleTargetsResponse, err error) {
 	response = CreatePutEventRuleTargetsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PutEventRuleTargets(request *PutEventRuleTargetsRequest) (
 }
 
 // PutEventRuleTargetsWithChan invokes the cms.PutEventRuleTargets API asynchronously
-// api document: https://help.aliyun.com/api/cms/puteventruletargets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutEventRuleTargetsWithChan(request *PutEventRuleTargetsRequest) (<-chan *PutEventRuleTargetsResponse, <-chan error) {
 	responseChan := make(chan *PutEventRuleTargetsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PutEventRuleTargetsWithChan(request *PutEventRuleTargetsRe
 }
 
 // PutEventRuleTargetsWithCallback invokes the cms.PutEventRuleTargets API asynchronously
-// api document: https://help.aliyun.com/api/cms/puteventruletargets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutEventRuleTargetsWithCallback(request *PutEventRuleTargetsRequest, callback func(response *PutEventRuleTargetsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMonitoringAgentHosts invokes the cms.DescribeMonitoringAgentHosts API synchronously
-// api document: https://help.aliyun.com/api/cms/describemonitoringagenthosts.html
 func (client *Client) DescribeMonitoringAgentHosts(request *DescribeMonitoringAgentHostsRequest) (response *DescribeMonitoringAgentHostsResponse, err error) {
 	response = CreateDescribeMonitoringAgentHostsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMonitoringAgentHosts(request *DescribeMonitoringAg
 }
 
 // DescribeMonitoringAgentHostsWithChan invokes the cms.DescribeMonitoringAgentHosts API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemonitoringagenthosts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMonitoringAgentHostsWithChan(request *DescribeMonitoringAgentHostsRequest) (<-chan *DescribeMonitoringAgentHostsResponse, <-chan error) {
 	responseChan := make(chan *DescribeMonitoringAgentHostsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMonitoringAgentHostsWithChan(request *DescribeMoni
 }
 
 // DescribeMonitoringAgentHostsWithCallback invokes the cms.DescribeMonitoringAgentHosts API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemonitoringagenthosts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMonitoringAgentHostsWithCallback(request *DescribeMonitoringAgentHostsRequest, callback func(response *DescribeMonitoringAgentHostsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,22 +74,26 @@ type DescribeMonitoringAgentHostsRequest struct {
 	SerialNumbers    string           `position:"Query" name:"SerialNumbers"`
 	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 	HostName         string           `position:"Query" name:"HostName"`
-	InstanceIds      string           `position:"Query" name:"InstanceIds"`
 	InstanceRegionId string           `position:"Query" name:"InstanceRegionId"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	AliyunHost       requests.Boolean `position:"Query" name:"AliyunHost"`
 	KeyWord          string           `position:"Query" name:"KeyWord"`
+	InstanceIds      string           `position:"Query" name:"InstanceIds"`
+	Status           string           `position:"Query" name:"Status"`
 }
 
 // DescribeMonitoringAgentHostsResponse is the response struct for api DescribeMonitoringAgentHosts
 type DescribeMonitoringAgentHostsResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	PageTotal int    `json:"PageTotal" xml:"PageTotal"`
-	Total     int    `json:"Total" xml:"Total"`
-	Hosts     Hosts  `json:"Hosts" xml:"Hosts"`
+	Code       string `json:"Code" xml:"Code"`
+	Message    string `json:"Message" xml:"Message"`
+	Success    bool   `json:"Success" xml:"Success"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	PageTotal  int    `json:"PageTotal" xml:"PageTotal"`
+	Total      int    `json:"Total" xml:"Total"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	Hosts      Hosts  `json:"Hosts" xml:"Hosts"`
 }
 
 // CreateDescribeMonitoringAgentHostsRequest creates a request to invoke DescribeMonitoringAgentHosts API

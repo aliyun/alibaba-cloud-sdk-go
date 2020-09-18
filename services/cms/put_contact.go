@@ -21,7 +21,6 @@ import (
 )
 
 // PutContact invokes the cms.PutContact API synchronously
-// api document: https://help.aliyun.com/api/cms/putcontact.html
 func (client *Client) PutContact(request *PutContactRequest) (response *PutContactResponse, err error) {
 	response = CreatePutContactResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PutContact(request *PutContactRequest) (response *PutConta
 }
 
 // PutContactWithChan invokes the cms.PutContact API asynchronously
-// api document: https://help.aliyun.com/api/cms/putcontact.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutContactWithChan(request *PutContactRequest) (<-chan *PutContactResponse, <-chan error) {
 	responseChan := make(chan *PutContactResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PutContactWithChan(request *PutContactRequest) (<-chan *Pu
 }
 
 // PutContactWithCallback invokes the cms.PutContact API asynchronously
-// api document: https://help.aliyun.com/api/cms/putcontact.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutContactWithCallback(request *PutContactRequest, callback func(response *PutContactResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +76,7 @@ type PutContactRequest struct {
 	ChannelsMail        string `position:"Query" name:"Channels.Mail"`
 	ChannelsAliIM       string `position:"Query" name:"Channels.AliIM"`
 	Describe            string `position:"Query" name:"Describe"`
+	Lang                string `position:"Query" name:"Lang"`
 	ChannelsSMS         string `position:"Query" name:"Channels.SMS"`
 }
 

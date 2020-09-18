@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteMonitorGroupNotifyPolicy invokes the cms.DeleteMonitorGroupNotifyPolicy API synchronously
-// api document: https://help.aliyun.com/api/cms/deletemonitorgroupnotifypolicy.html
 func (client *Client) DeleteMonitorGroupNotifyPolicy(request *DeleteMonitorGroupNotifyPolicyRequest) (response *DeleteMonitorGroupNotifyPolicyResponse, err error) {
 	response = CreateDeleteMonitorGroupNotifyPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteMonitorGroupNotifyPolicy(request *DeleteMonitorGroup
 }
 
 // DeleteMonitorGroupNotifyPolicyWithChan invokes the cms.DeleteMonitorGroupNotifyPolicy API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletemonitorgroupnotifypolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMonitorGroupNotifyPolicyWithChan(request *DeleteMonitorGroupNotifyPolicyRequest) (<-chan *DeleteMonitorGroupNotifyPolicyResponse, <-chan error) {
 	responseChan := make(chan *DeleteMonitorGroupNotifyPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteMonitorGroupNotifyPolicyWithChan(request *DeleteMoni
 }
 
 // DeleteMonitorGroupNotifyPolicyWithCallback invokes the cms.DeleteMonitorGroupNotifyPolicy API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletemonitorgroupnotifypolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMonitorGroupNotifyPolicyWithCallback(request *DeleteMonitorGroupNotifyPolicyRequest, callback func(response *DeleteMonitorGroupNotifyPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

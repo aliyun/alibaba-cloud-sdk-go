@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteEventRuleTargets invokes the cms.DeleteEventRuleTargets API synchronously
-// api document: https://help.aliyun.com/api/cms/deleteeventruletargets.html
 func (client *Client) DeleteEventRuleTargets(request *DeleteEventRuleTargetsRequest) (response *DeleteEventRuleTargetsResponse, err error) {
 	response = CreateDeleteEventRuleTargetsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteEventRuleTargets(request *DeleteEventRuleTargetsRequ
 }
 
 // DeleteEventRuleTargetsWithChan invokes the cms.DeleteEventRuleTargets API asynchronously
-// api document: https://help.aliyun.com/api/cms/deleteeventruletargets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEventRuleTargetsWithChan(request *DeleteEventRuleTargetsRequest) (<-chan *DeleteEventRuleTargetsResponse, <-chan error) {
 	responseChan := make(chan *DeleteEventRuleTargetsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteEventRuleTargetsWithChan(request *DeleteEventRuleTar
 }
 
 // DeleteEventRuleTargetsWithCallback invokes the cms.DeleteEventRuleTargets API asynchronously
-// api document: https://help.aliyun.com/api/cms/deleteeventruletargets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEventRuleTargetsWithCallback(request *DeleteEventRuleTargetsRequest, callback func(response *DeleteEventRuleTargetsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

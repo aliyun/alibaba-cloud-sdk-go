@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteMonitoringAgentProcess invokes the cms.DeleteMonitoringAgentProcess API synchronously
-// api document: https://help.aliyun.com/api/cms/deletemonitoringagentprocess.html
 func (client *Client) DeleteMonitoringAgentProcess(request *DeleteMonitoringAgentProcessRequest) (response *DeleteMonitoringAgentProcessResponse, err error) {
 	response = CreateDeleteMonitoringAgentProcessResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteMonitoringAgentProcess(request *DeleteMonitoringAgen
 }
 
 // DeleteMonitoringAgentProcessWithChan invokes the cms.DeleteMonitoringAgentProcess API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletemonitoringagentprocess.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMonitoringAgentProcessWithChan(request *DeleteMonitoringAgentProcessRequest) (<-chan *DeleteMonitoringAgentProcessResponse, <-chan error) {
 	responseChan := make(chan *DeleteMonitoringAgentProcessResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteMonitoringAgentProcessWithChan(request *DeleteMonito
 }
 
 // DeleteMonitoringAgentProcessWithCallback invokes the cms.DeleteMonitoringAgentProcess API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletemonitoringagentprocess.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMonitoringAgentProcessWithCallback(request *DeleteMonitoringAgentProcessRequest, callback func(response *DeleteMonitoringAgentProcessResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

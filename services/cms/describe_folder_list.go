@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFolderList invokes the cms.DescribeFolderList API synchronously
-// api document: https://help.aliyun.com/api/cms/describefolderlist.html
 func (client *Client) DescribeFolderList(request *DescribeFolderListRequest) (response *DescribeFolderListResponse, err error) {
 	response = CreateDescribeFolderListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFolderList(request *DescribeFolderListRequest) (re
 }
 
 // DescribeFolderListWithChan invokes the cms.DescribeFolderList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describefolderlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFolderListWithChan(request *DescribeFolderListRequest) (<-chan *DescribeFolderListResponse, <-chan error) {
 	responseChan := make(chan *DescribeFolderListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFolderListWithChan(request *DescribeFolderListRequ
 }
 
 // DescribeFolderListWithCallback invokes the cms.DescribeFolderList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describefolderlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFolderListWithCallback(request *DescribeFolderListRequest, callback func(response *DescribeFolderListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

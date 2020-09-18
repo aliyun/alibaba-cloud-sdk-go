@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEventRuleAttribute invokes the cms.DescribeEventRuleAttribute API synchronously
-// api document: https://help.aliyun.com/api/cms/describeeventruleattribute.html
 func (client *Client) DescribeEventRuleAttribute(request *DescribeEventRuleAttributeRequest) (response *DescribeEventRuleAttributeResponse, err error) {
 	response = CreateDescribeEventRuleAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEventRuleAttribute(request *DescribeEventRuleAttri
 }
 
 // DescribeEventRuleAttributeWithChan invokes the cms.DescribeEventRuleAttribute API asynchronously
-// api document: https://help.aliyun.com/api/cms/describeeventruleattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEventRuleAttributeWithChan(request *DescribeEventRuleAttributeRequest) (<-chan *DescribeEventRuleAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeEventRuleAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEventRuleAttributeWithChan(request *DescribeEventR
 }
 
 // DescribeEventRuleAttributeWithCallback invokes the cms.DescribeEventRuleAttribute API asynchronously
-// api document: https://help.aliyun.com/api/cms/describeeventruleattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEventRuleAttributeWithCallback(request *DescribeEventRuleAttributeRequest, callback func(response *DescribeEventRuleAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

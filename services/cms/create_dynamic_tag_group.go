@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDynamicTagGroup invokes the cms.CreateDynamicTagGroup API synchronously
-// api document: https://help.aliyun.com/api/cms/createdynamictaggroup.html
 func (client *Client) CreateDynamicTagGroup(request *CreateDynamicTagGroupRequest) (response *CreateDynamicTagGroupResponse, err error) {
 	response = CreateCreateDynamicTagGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDynamicTagGroup(request *CreateDynamicTagGroupReques
 }
 
 // CreateDynamicTagGroupWithChan invokes the cms.CreateDynamicTagGroup API asynchronously
-// api document: https://help.aliyun.com/api/cms/createdynamictaggroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDynamicTagGroupWithChan(request *CreateDynamicTagGroupRequest) (<-chan *CreateDynamicTagGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateDynamicTagGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDynamicTagGroupWithChan(request *CreateDynamicTagGro
 }
 
 // CreateDynamicTagGroupWithCallback invokes the cms.CreateDynamicTagGroup API asynchronously
-// api document: https://help.aliyun.com/api/cms/createdynamictaggroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDynamicTagGroupWithCallback(request *CreateDynamicTagGroupRequest, callback func(response *CreateDynamicTagGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

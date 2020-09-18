@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMetricTop invokes the cms.DescribeMetricTop API synchronously
-// api document: https://help.aliyun.com/api/cms/describemetrictop.html
 func (client *Client) DescribeMetricTop(request *DescribeMetricTopRequest) (response *DescribeMetricTopResponse, err error) {
 	response = CreateDescribeMetricTopResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMetricTop(request *DescribeMetricTopRequest) (resp
 }
 
 // DescribeMetricTopWithChan invokes the cms.DescribeMetricTop API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemetrictop.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMetricTopWithChan(request *DescribeMetricTopRequest) (<-chan *DescribeMetricTopResponse, <-chan error) {
 	responseChan := make(chan *DescribeMetricTopResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMetricTopWithChan(request *DescribeMetricTopReques
 }
 
 // DescribeMetricTopWithCallback invokes the cms.DescribeMetricTop API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemetrictop.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMetricTopWithCallback(request *DescribeMetricTopRequest, callback func(response *DescribeMetricTopResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

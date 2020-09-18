@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeProductResourceTagKeyList invokes the cms.DescribeProductResourceTagKeyList API synchronously
-// api document: https://help.aliyun.com/api/cms/describeproductresourcetagkeylist.html
 func (client *Client) DescribeProductResourceTagKeyList(request *DescribeProductResourceTagKeyListRequest) (response *DescribeProductResourceTagKeyListResponse, err error) {
 	response = CreateDescribeProductResourceTagKeyListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeProductResourceTagKeyList(request *DescribeProduct
 }
 
 // DescribeProductResourceTagKeyListWithChan invokes the cms.DescribeProductResourceTagKeyList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describeproductresourcetagkeylist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeProductResourceTagKeyListWithChan(request *DescribeProductResourceTagKeyListRequest) (<-chan *DescribeProductResourceTagKeyListResponse, <-chan error) {
 	responseChan := make(chan *DescribeProductResourceTagKeyListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeProductResourceTagKeyListWithChan(request *Describ
 }
 
 // DescribeProductResourceTagKeyListWithCallback invokes the cms.DescribeProductResourceTagKeyList API asynchronously
-// api document: https://help.aliyun.com/api/cms/describeproductresourcetagkeylist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeProductResourceTagKeyListWithCallback(request *DescribeProductResourceTagKeyListRequest, callback func(response *DescribeProductResourceTagKeyListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // PutContactGroup invokes the cms.PutContactGroup API synchronously
-// api document: https://help.aliyun.com/api/cms/putcontactgroup.html
 func (client *Client) PutContactGroup(request *PutContactGroupRequest) (response *PutContactGroupResponse, err error) {
 	response = CreatePutContactGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PutContactGroup(request *PutContactGroupRequest) (response
 }
 
 // PutContactGroupWithChan invokes the cms.PutContactGroup API asynchronously
-// api document: https://help.aliyun.com/api/cms/putcontactgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutContactGroupWithChan(request *PutContactGroupRequest) (<-chan *PutContactGroupResponse, <-chan error) {
 	responseChan := make(chan *PutContactGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PutContactGroupWithChan(request *PutContactGroupRequest) (
 }
 
 // PutContactGroupWithCallback invokes the cms.PutContactGroup API asynchronously
-// api document: https://help.aliyun.com/api/cms/putcontactgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutContactGroupWithCallback(request *PutContactGroupRequest, callback func(response *PutContactGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,11 @@ func (client *Client) PutContactGroupWithCallback(request *PutContactGroupReques
 // PutContactGroupRequest is the request struct for api PutContactGroup
 type PutContactGroupRequest struct {
 	*requests.RpcRequest
-	ContactGroupName string    `position:"Query" name:"ContactGroupName"`
-	Describe         string    `position:"Query" name:"Describe"`
-	ContactNames     *[]string `position:"Query" name:"ContactNames"  type:"Repeated"`
+	EnableSubscribed    requests.Boolean `position:"Query" name:"EnableSubscribed"`
+	ContactGroupName    string           `position:"Query" name:"ContactGroupName"`
+	EnabledWeeklyReport requests.Boolean `position:"Query" name:"EnabledWeeklyReport"`
+	Describe            string           `position:"Query" name:"Describe"`
+	ContactNames        *[]string        `position:"Query" name:"ContactNames"  type:"Repeated"`
 }
 
 // PutContactGroupResponse is the response struct for api PutContactGroup

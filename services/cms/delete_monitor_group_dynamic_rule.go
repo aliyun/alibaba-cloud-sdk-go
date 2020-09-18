@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteMonitorGroupDynamicRule invokes the cms.DeleteMonitorGroupDynamicRule API synchronously
-// api document: https://help.aliyun.com/api/cms/deletemonitorgroupdynamicrule.html
 func (client *Client) DeleteMonitorGroupDynamicRule(request *DeleteMonitorGroupDynamicRuleRequest) (response *DeleteMonitorGroupDynamicRuleResponse, err error) {
 	response = CreateDeleteMonitorGroupDynamicRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteMonitorGroupDynamicRule(request *DeleteMonitorGroupD
 }
 
 // DeleteMonitorGroupDynamicRuleWithChan invokes the cms.DeleteMonitorGroupDynamicRule API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletemonitorgroupdynamicrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMonitorGroupDynamicRuleWithChan(request *DeleteMonitorGroupDynamicRuleRequest) (<-chan *DeleteMonitorGroupDynamicRuleResponse, <-chan error) {
 	responseChan := make(chan *DeleteMonitorGroupDynamicRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteMonitorGroupDynamicRuleWithChan(request *DeleteMonit
 }
 
 // DeleteMonitorGroupDynamicRuleWithCallback invokes the cms.DeleteMonitorGroupDynamicRule API asynchronously
-// api document: https://help.aliyun.com/api/cms/deletemonitorgroupdynamicrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMonitorGroupDynamicRuleWithCallback(request *DeleteMonitorGroupDynamicRuleRequest, callback func(response *DeleteMonitorGroupDynamicRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

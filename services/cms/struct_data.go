@@ -17,6 +17,7 @@ package cms
 
 // Data is a nested struct in cms response
 type Data struct {
+	SecondMonitor                 bool              `json:"SecondMonitor" xml:"SecondMonitor"`
 	SiteMonitorVersion            string            `json:"SiteMonitorVersion" xml:"SiteMonitorVersion"`
 	SiteMonitorIdcQuota           int               `json:"SiteMonitorIdcQuota" xml:"SiteMonitorIdcQuota"`
 	SiteMonitorOperatorQuotaQuota int               `json:"SiteMonitorOperatorQuotaQuota" xml:"SiteMonitorOperatorQuotaQuota"`

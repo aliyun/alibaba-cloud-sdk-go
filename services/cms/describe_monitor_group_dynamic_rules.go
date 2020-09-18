@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMonitorGroupDynamicRules invokes the cms.DescribeMonitorGroupDynamicRules API synchronously
-// api document: https://help.aliyun.com/api/cms/describemonitorgroupdynamicrules.html
 func (client *Client) DescribeMonitorGroupDynamicRules(request *DescribeMonitorGroupDynamicRulesRequest) (response *DescribeMonitorGroupDynamicRulesResponse, err error) {
 	response = CreateDescribeMonitorGroupDynamicRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMonitorGroupDynamicRules(request *DescribeMonitorG
 }
 
 // DescribeMonitorGroupDynamicRulesWithChan invokes the cms.DescribeMonitorGroupDynamicRules API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemonitorgroupdynamicrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMonitorGroupDynamicRulesWithChan(request *DescribeMonitorGroupDynamicRulesRequest) (<-chan *DescribeMonitorGroupDynamicRulesResponse, <-chan error) {
 	responseChan := make(chan *DescribeMonitorGroupDynamicRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMonitorGroupDynamicRulesWithChan(request *Describe
 }
 
 // DescribeMonitorGroupDynamicRulesWithCallback invokes the cms.DescribeMonitorGroupDynamicRules API asynchronously
-// api document: https://help.aliyun.com/api/cms/describemonitorgroupdynamicrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMonitorGroupDynamicRulesWithCallback(request *DescribeMonitorGroupDynamicRulesRequest, callback func(response *DescribeMonitorGroupDynamicRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

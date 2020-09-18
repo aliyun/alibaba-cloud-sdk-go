@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyMetricRuleTemplate invokes the cms.ModifyMetricRuleTemplate API synchronously
-// api document: https://help.aliyun.com/api/cms/modifymetricruletemplate.html
 func (client *Client) ModifyMetricRuleTemplate(request *ModifyMetricRuleTemplateRequest) (response *ModifyMetricRuleTemplateResponse, err error) {
 	response = CreateModifyMetricRuleTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyMetricRuleTemplate(request *ModifyMetricRuleTemplate
 }
 
 // ModifyMetricRuleTemplateWithChan invokes the cms.ModifyMetricRuleTemplate API asynchronously
-// api document: https://help.aliyun.com/api/cms/modifymetricruletemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyMetricRuleTemplateWithChan(request *ModifyMetricRuleTemplateRequest) (<-chan *ModifyMetricRuleTemplateResponse, <-chan error) {
 	responseChan := make(chan *ModifyMetricRuleTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyMetricRuleTemplateWithChan(request *ModifyMetricRule
 }
 
 // ModifyMetricRuleTemplateWithCallback invokes the cms.ModifyMetricRuleTemplate API asynchronously
-// api document: https://help.aliyun.com/api/cms/modifymetricruletemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyMetricRuleTemplateWithCallback(request *ModifyMetricRuleTemplateRequest, callback func(response *ModifyMetricRuleTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
