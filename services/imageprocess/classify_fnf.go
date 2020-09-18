@@ -21,7 +21,6 @@ import (
 )
 
 // ClassifyFNF invokes the imageprocess.ClassifyFNF API synchronously
-// api document: https://help.aliyun.com/api/imageprocess/classifyfnf.html
 func (client *Client) ClassifyFNF(request *ClassifyFNFRequest) (response *ClassifyFNFResponse, err error) {
 	response = CreateClassifyFNFResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ClassifyFNF(request *ClassifyFNFRequest) (response *Classi
 }
 
 // ClassifyFNFWithChan invokes the imageprocess.ClassifyFNF API asynchronously
-// api document: https://help.aliyun.com/api/imageprocess/classifyfnf.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClassifyFNFWithChan(request *ClassifyFNFRequest) (<-chan *ClassifyFNFResponse, <-chan error) {
 	responseChan := make(chan *ClassifyFNFResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ClassifyFNFWithChan(request *ClassifyFNFRequest) (<-chan *
 }
 
 // ClassifyFNFWithCallback invokes the imageprocess.ClassifyFNF API asynchronously
-// api document: https://help.aliyun.com/api/imageprocess/classifyfnf.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClassifyFNFWithCallback(request *ClassifyFNFRequest, callback func(response *ClassifyFNFResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

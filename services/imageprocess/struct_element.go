@@ -25,4 +25,7 @@ type Element struct {
 	X          float64 `json:"X" xml:"X"`
 	Z          float64 `json:"Z" xml:"Z"`
 	Y          float64 `json:"Y" xml:"Y"`
+	ImageX     float64 `json:"ImageX" xml:"ImageX"`
+	ImageY     float64 `json:"ImageY" xml:"ImageY"`
+	ImageZ     float64 `json:"ImageZ" xml:"ImageZ"`
 }

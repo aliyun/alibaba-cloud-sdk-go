@@ -21,7 +21,6 @@ import (
 )
 
 // CalcCACS invokes the imageprocess.CalcCACS API synchronously
-// api document: https://help.aliyun.com/api/imageprocess/calccacs.html
 func (client *Client) CalcCACS(request *CalcCACSRequest) (response *CalcCACSResponse, err error) {
 	response = CreateCalcCACSResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CalcCACS(request *CalcCACSRequest) (response *CalcCACSResp
 }
 
 // CalcCACSWithChan invokes the imageprocess.CalcCACS API asynchronously
-// api document: https://help.aliyun.com/api/imageprocess/calccacs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CalcCACSWithChan(request *CalcCACSRequest) (<-chan *CalcCACSResponse, <-chan error) {
 	responseChan := make(chan *CalcCACSResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CalcCACSWithChan(request *CalcCACSRequest) (<-chan *CalcCA
 }
 
 // CalcCACSWithCallback invokes the imageprocess.CalcCACS API asynchronously
-// api document: https://help.aliyun.com/api/imageprocess/calccacs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CalcCACSWithCallback(request *CalcCACSRequest, callback func(response *CalcCACSResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

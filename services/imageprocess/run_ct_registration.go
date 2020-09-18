@@ -21,7 +21,6 @@ import (
 )
 
 // RunCTRegistration invokes the imageprocess.RunCTRegistration API synchronously
-// api document: https://help.aliyun.com/api/imageprocess/runctregistration.html
 func (client *Client) RunCTRegistration(request *RunCTRegistrationRequest) (response *RunCTRegistrationResponse, err error) {
 	response = CreateRunCTRegistrationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RunCTRegistration(request *RunCTRegistrationRequest) (resp
 }
 
 // RunCTRegistrationWithChan invokes the imageprocess.RunCTRegistration API asynchronously
-// api document: https://help.aliyun.com/api/imageprocess/runctregistration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunCTRegistrationWithChan(request *RunCTRegistrationRequest) (<-chan *RunCTRegistrationResponse, <-chan error) {
 	responseChan := make(chan *RunCTRegistrationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RunCTRegistrationWithChan(request *RunCTRegistrationReques
 }
 
 // RunCTRegistrationWithCallback invokes the imageprocess.RunCTRegistration API asynchronously
-// api document: https://help.aliyun.com/api/imageprocess/runctregistration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunCTRegistrationWithCallback(request *RunCTRegistrationRequest, callback func(response *RunCTRegistrationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

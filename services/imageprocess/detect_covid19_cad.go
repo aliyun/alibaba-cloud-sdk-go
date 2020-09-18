@@ -21,7 +21,6 @@ import (
 )
 
 // DetectCovid19Cad invokes the imageprocess.DetectCovid19Cad API synchronously
-// api document: https://help.aliyun.com/api/imageprocess/detectcovid19cad.html
 func (client *Client) DetectCovid19Cad(request *DetectCovid19CadRequest) (response *DetectCovid19CadResponse, err error) {
 	response = CreateDetectCovid19CadResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetectCovid19Cad(request *DetectCovid19CadRequest) (respon
 }
 
 // DetectCovid19CadWithChan invokes the imageprocess.DetectCovid19Cad API asynchronously
-// api document: https://help.aliyun.com/api/imageprocess/detectcovid19cad.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectCovid19CadWithChan(request *DetectCovid19CadRequest) (<-chan *DetectCovid19CadResponse, <-chan error) {
 	responseChan := make(chan *DetectCovid19CadResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetectCovid19CadWithChan(request *DetectCovid19CadRequest)
 }
 
 // DetectCovid19CadWithCallback invokes the imageprocess.DetectCovid19Cad API asynchronously
-// api document: https://help.aliyun.com/api/imageprocess/detectcovid19cad.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectCovid19CadWithCallback(request *DetectCovid19CadRequest, callback func(response *DetectCovid19CadResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,11 @@ func (client *Client) DetectCovid19CadWithCallback(request *DetectCovid19CadRequ
 // DetectCovid19CadRequest is the request struct for api DetectCovid19Cad
 type DetectCovid19CadRequest struct {
 	*requests.RpcRequest
-	URLList *[]DetectCovid19CadURLList `position:"Body" name:"URLList"  type:"Repeated"`
-	Async   requests.Boolean           `position:"Body" name:"Async"`
+	DataFormat string                     `position:"Body" name:"DataFormat"`
+	URLList    *[]DetectCovid19CadURLList `position:"Body" name:"URLList"  type:"Repeated"`
+	OrgId      string                     `position:"Body" name:"OrgId"`
+	Async      requests.Boolean           `position:"Body" name:"Async"`
+	OrgName    string                     `position:"Body" name:"OrgName"`
 }
 
 // DetectCovid19CadURLList is a repeated param struct in DetectCovid19CadRequest

@@ -21,7 +21,6 @@ import (
 )
 
 // DetectKneeXRay invokes the imageprocess.DetectKneeXRay API synchronously
-// api document: https://help.aliyun.com/api/imageprocess/detectkneexray.html
 func (client *Client) DetectKneeXRay(request *DetectKneeXRayRequest) (response *DetectKneeXRayResponse, err error) {
 	response = CreateDetectKneeXRayResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetectKneeXRay(request *DetectKneeXRayRequest) (response *
 }
 
 // DetectKneeXRayWithChan invokes the imageprocess.DetectKneeXRay API asynchronously
-// api document: https://help.aliyun.com/api/imageprocess/detectkneexray.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectKneeXRayWithChan(request *DetectKneeXRayRequest) (<-chan *DetectKneeXRayResponse, <-chan error) {
 	responseChan := make(chan *DetectKneeXRayResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetectKneeXRayWithChan(request *DetectKneeXRayRequest) (<-
 }
 
 // DetectKneeXRayWithCallback invokes the imageprocess.DetectKneeXRay API asynchronously
-// api document: https://help.aliyun.com/api/imageprocess/detectkneexray.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectKneeXRayWithCallback(request *DetectKneeXRayRequest, callback func(response *DetectKneeXRayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,8 @@ type DetectKneeXRayRequest struct {
 	*requests.RpcRequest
 	DataFormat string `position:"Body" name:"DataFormat"`
 	Url        string `position:"Body" name:"Url"`
+	OrgId      string `position:"Body" name:"OrgId"`
+	OrgName    string `position:"Body" name:"OrgName"`
 }
 
 // DetectKneeXRayResponse is the response struct for api DetectKneeXRay

@@ -21,7 +21,6 @@ import (
 )
 
 // DetectHipKeypointXRay invokes the imageprocess.DetectHipKeypointXRay API synchronously
-// api document: https://help.aliyun.com/api/imageprocess/detecthipkeypointxray.html
 func (client *Client) DetectHipKeypointXRay(request *DetectHipKeypointXRayRequest) (response *DetectHipKeypointXRayResponse, err error) {
 	response = CreateDetectHipKeypointXRayResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetectHipKeypointXRay(request *DetectHipKeypointXRayReques
 }
 
 // DetectHipKeypointXRayWithChan invokes the imageprocess.DetectHipKeypointXRay API asynchronously
-// api document: https://help.aliyun.com/api/imageprocess/detecthipkeypointxray.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectHipKeypointXRayWithChan(request *DetectHipKeypointXRayRequest) (<-chan *DetectHipKeypointXRayResponse, <-chan error) {
 	responseChan := make(chan *DetectHipKeypointXRayResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetectHipKeypointXRayWithChan(request *DetectHipKeypointXR
 }
 
 // DetectHipKeypointXRayWithCallback invokes the imageprocess.DetectHipKeypointXRay API asynchronously
-// api document: https://help.aliyun.com/api/imageprocess/detecthipkeypointxray.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectHipKeypointXRayWithCallback(request *DetectHipKeypointXRayRequest, callback func(response *DetectHipKeypointXRayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

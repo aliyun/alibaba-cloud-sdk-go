@@ -21,7 +21,6 @@ import (
 )
 
 // TranslateMed invokes the imageprocess.TranslateMed API synchronously
-// api document: https://help.aliyun.com/api/imageprocess/translatemed.html
 func (client *Client) TranslateMed(request *TranslateMedRequest) (response *TranslateMedResponse, err error) {
 	response = CreateTranslateMedResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TranslateMed(request *TranslateMedRequest) (response *Tran
 }
 
 // TranslateMedWithChan invokes the imageprocess.TranslateMed API asynchronously
-// api document: https://help.aliyun.com/api/imageprocess/translatemed.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TranslateMedWithChan(request *TranslateMedRequest) (<-chan *TranslateMedResponse, <-chan error) {
 	responseChan := make(chan *TranslateMedResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TranslateMedWithChan(request *TranslateMedRequest) (<-chan
 }
 
 // TranslateMedWithCallback invokes the imageprocess.TranslateMed API asynchronously
-// api document: https://help.aliyun.com/api/imageprocess/translatemed.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TranslateMedWithCallback(request *TranslateMedRequest, callback func(response *TranslateMedResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

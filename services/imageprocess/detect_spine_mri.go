@@ -21,7 +21,6 @@ import (
 )
 
 // DetectSpineMRI invokes the imageprocess.DetectSpineMRI API synchronously
-// api document: https://help.aliyun.com/api/imageprocess/detectspinemri.html
 func (client *Client) DetectSpineMRI(request *DetectSpineMRIRequest) (response *DetectSpineMRIResponse, err error) {
 	response = CreateDetectSpineMRIResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetectSpineMRI(request *DetectSpineMRIRequest) (response *
 }
 
 // DetectSpineMRIWithChan invokes the imageprocess.DetectSpineMRI API asynchronously
-// api document: https://help.aliyun.com/api/imageprocess/detectspinemri.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectSpineMRIWithChan(request *DetectSpineMRIRequest) (<-chan *DetectSpineMRIResponse, <-chan error) {
 	responseChan := make(chan *DetectSpineMRIResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetectSpineMRIWithChan(request *DetectSpineMRIRequest) (<-
 }
 
 // DetectSpineMRIWithCallback invokes the imageprocess.DetectSpineMRI API asynchronously
-// api document: https://help.aliyun.com/api/imageprocess/detectspinemri.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectSpineMRIWithCallback(request *DetectSpineMRIRequest, callback func(response *DetectSpineMRIResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,7 +71,10 @@ func (client *Client) DetectSpineMRIWithCallback(request *DetectSpineMRIRequest,
 // DetectSpineMRIRequest is the request struct for api DetectSpineMRI
 type DetectSpineMRIRequest struct {
 	*requests.RpcRequest
-	URLList *[]DetectSpineMRIURLList `position:"Body" name:"URLList"  type:"Repeated"`
+	DataFormat string                   `position:"Body" name:"DataFormat"`
+	URLList    *[]DetectSpineMRIURLList `position:"Body" name:"URLList"  type:"Repeated"`
+	OrgId      string                   `position:"Body" name:"OrgId"`
+	OrgName    string                   `position:"Body" name:"OrgName"`
 }
 
 // DetectSpineMRIURLList is a repeated param struct in DetectSpineMRIRequest

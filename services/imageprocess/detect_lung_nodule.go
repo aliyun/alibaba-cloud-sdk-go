@@ -21,7 +21,6 @@ import (
 )
 
 // DetectLungNodule invokes the imageprocess.DetectLungNodule API synchronously
-// api document: https://help.aliyun.com/api/imageprocess/detectlungnodule.html
 func (client *Client) DetectLungNodule(request *DetectLungNoduleRequest) (response *DetectLungNoduleResponse, err error) {
 	response = CreateDetectLungNoduleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetectLungNodule(request *DetectLungNoduleRequest) (respon
 }
 
 // DetectLungNoduleWithChan invokes the imageprocess.DetectLungNodule API asynchronously
-// api document: https://help.aliyun.com/api/imageprocess/detectlungnodule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectLungNoduleWithChan(request *DetectLungNoduleRequest) (<-chan *DetectLungNoduleResponse, <-chan error) {
 	responseChan := make(chan *DetectLungNoduleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetectLungNoduleWithChan(request *DetectLungNoduleRequest)
 }
 
 // DetectLungNoduleWithCallback invokes the imageprocess.DetectLungNodule API asynchronously
-// api document: https://help.aliyun.com/api/imageprocess/detectlungnodule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectLungNoduleWithCallback(request *DetectLungNoduleRequest, callback func(response *DetectLungNoduleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,11 @@ func (client *Client) DetectLungNoduleWithCallback(request *DetectLungNoduleRequ
 // DetectLungNoduleRequest is the request struct for api DetectLungNodule
 type DetectLungNoduleRequest struct {
 	*requests.RpcRequest
-	URLList *[]DetectLungNoduleURLList `position:"Body" name:"URLList"  type:"Repeated"`
-	Async   requests.Boolean           `position:"Body" name:"Async"`
+	DataFormat string                     `position:"Body" name:"DataFormat"`
+	URLList    *[]DetectLungNoduleURLList `position:"Body" name:"URLList"  type:"Repeated"`
+	OrgId      string                     `position:"Body" name:"OrgId"`
+	Async      requests.Boolean           `position:"Body" name:"Async"`
+	OrgName    string                     `position:"Body" name:"OrgName"`
 }
 
 // DetectLungNoduleURLList is a repeated param struct in DetectLungNoduleRequest
