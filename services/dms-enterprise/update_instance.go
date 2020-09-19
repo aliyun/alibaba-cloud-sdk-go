@@ -92,6 +92,7 @@ type UpdateInstanceRequest struct {
 	InstanceId       string           `position:"Query" name:"InstanceId"`
 	Port             requests.Integer `position:"Query" name:"Port"`
 	VpcId            string           `position:"Query" name:"VpcId"`
+	SkipTest         requests.Boolean `position:"Query" name:"SkipTest"`
 }
 
 // UpdateInstanceResponse is the response struct for api UpdateInstance

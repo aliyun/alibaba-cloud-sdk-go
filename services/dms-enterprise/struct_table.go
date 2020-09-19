@@ -17,15 +17,17 @@ package dms_enterprise
 
 // Table is a nested struct in dms_enterprise response
 type Table struct {
-	TableId         string                    `json:"TableId" xml:"TableId"`
-	DatabaseId      string                    `json:"DatabaseId" xml:"DatabaseId"`
-	TableName       string                    `json:"TableName" xml:"TableName"`
-	TableSchemaName string                    `json:"TableSchemaName" xml:"TableSchemaName"`
-	Engine          string                    `json:"Engine" xml:"Engine"`
-	Encoding        string                    `json:"Encoding" xml:"Encoding"`
-	TableType       string                    `json:"TableType" xml:"TableType"`
-	NumRows         int64                     `json:"NumRows" xml:"NumRows"`
-	StoreCapacity   int64                     `json:"StoreCapacity" xml:"StoreCapacity"`
-	OwnerIdList     OwnerIdListInListTables   `json:"OwnerIdList" xml:"OwnerIdList"`
-	OwnerNameList   OwnerNameListInListTables `json:"OwnerNameList" xml:"OwnerNameList"`
+	StoreCapacity   int64    `json:"StoreCapacity" xml:"StoreCapacity"`
+	Engine          string   `json:"Engine" xml:"Engine"`
+	NumRows         int64    `json:"NumRows" xml:"NumRows"`
+	TableName       string   `json:"TableName" xml:"TableName"`
+	TableId         string   `json:"TableId" xml:"TableId"`
+	TableType       string   `json:"TableType" xml:"TableType"`
+	TableSchemaName string   `json:"TableSchemaName" xml:"TableSchemaName"`
+	DatabaseId      string   `json:"DatabaseId" xml:"DatabaseId"`
+	Encoding        string   `json:"Encoding" xml:"Encoding"`
+	TableGuid       string   `json:"TableGuid" xml:"TableGuid"`
+	Description     string   `json:"Description" xml:"Description"`
+	OwnerNameList   []string `json:"OwnerNameList" xml:"OwnerNameList"`
+	OwnerIdList     []string `json:"OwnerIdList" xml:"OwnerIdList"`
 }

@@ -26,6 +26,10 @@ type SearchTable struct {
 	Logic           bool                       `json:"Logic" xml:"Logic"`
 	EnvType         string                     `json:"EnvType" xml:"EnvType"`
 	DBSearchName    string                     `json:"DBSearchName" xml:"DBSearchName"`
+	DbType          string                     `json:"DbType" xml:"DbType"`
+	Description     string                     `json:"Description" xml:"Description"`
+	DbName          string                     `json:"DbName" xml:"DbName"`
+	TableGuid       string                     `json:"TableGuid" xml:"TableGuid"`
 	OwnerIdList     OwnerIdListInSearchTable   `json:"OwnerIdList" xml:"OwnerIdList"`
 	OwnerNameList   OwnerNameListInSearchTable `json:"OwnerNameList" xml:"OwnerNameList"`
 }

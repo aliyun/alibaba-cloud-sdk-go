@@ -23,6 +23,8 @@ type LogicTable struct {
 	Logic         bool                           `json:"Logic" xml:"Logic"`
 	TableExpr     string                         `json:"TableExpr" xml:"TableExpr"`
 	TableCount    string                         `json:"TableCount" xml:"TableCount"`
+	TableGuid     string                         `json:"TableGuid" xml:"TableGuid"`
+	SchemaName    string                         `json:"SchemaName" xml:"SchemaName"`
 	OwnerIdList   OwnerIdListInListLogicTables   `json:"OwnerIdList" xml:"OwnerIdList"`
 	OwnerNameList OwnerNameListInListLogicTables `json:"OwnerNameList" xml:"OwnerNameList"`
 }

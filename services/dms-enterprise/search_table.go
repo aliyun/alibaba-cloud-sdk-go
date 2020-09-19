@@ -71,13 +71,15 @@ func (client *Client) SearchTableWithCallback(request *SearchTableRequest, callb
 // SearchTableRequest is the request struct for api SearchTable
 type SearchTableRequest struct {
 	*requests.RpcRequest
-	SearchTarget string           `position:"Query" name:"SearchTarget"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	EnvType      string           `position:"Query" name:"EnvType"`
+	ReturnGuid   requests.Boolean `position:"Query" name:"ReturnGuid"`
 	SearchKey    string           `position:"Query" name:"SearchKey"`
 	SearchRange  string           `position:"Query" name:"SearchRange"`
 	Tid          requests.Integer `position:"Query" name:"Tid"`
 	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	SearchTarget string           `position:"Query" name:"SearchTarget"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	EnvType      string           `position:"Query" name:"EnvType"`
+	DbType       string           `position:"Query" name:"DbType"`
 }
 
 // SearchTableResponse is the response struct for api SearchTable

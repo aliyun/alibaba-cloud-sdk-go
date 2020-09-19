@@ -1,3 +1,8 @@
+2020-09-19 Version: v1.61.504
+- Generated 2018-11-01 for `dms-enterprise`.
+- Support query user tenant list and current active tenant.
+- Support query table meta information via table GUID.
+
 2020-09-18 Version: v1.61.503
 - Generated 2020-03-20 for `imageprocess`.
 - Update DetectLungNodule, DetectSpineMRI, DetectKneeXRay, DetectCovid19Cad.

@@ -72,6 +72,7 @@ func (client *Client) ListTablesWithCallback(request *ListTablesRequest, callbac
 type ListTablesRequest struct {
 	*requests.RpcRequest
 	SearchName string           `position:"Query" name:"SearchName"`
+	ReturnGuid requests.Boolean `position:"Query" name:"ReturnGuid"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	DatabaseId string           `position:"Query" name:"DatabaseId"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
@@ -81,12 +82,12 @@ type ListTablesRequest struct {
 // ListTablesResponse is the response struct for api ListTables
 type ListTablesResponse struct {
 	*responses.BaseResponse
-	RequestId    string    `json:"RequestId" xml:"RequestId"`
-	Success      bool      `json:"Success" xml:"Success"`
-	ErrorMessage string    `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode    string    `json:"ErrorCode" xml:"ErrorCode"`
-	TotalCount   int64     `json:"TotalCount" xml:"TotalCount"`
-	TableList    TableList `json:"TableList" xml:"TableList"`
+	RequestId    string                `json:"RequestId" xml:"RequestId"`
+	Success      bool                  `json:"Success" xml:"Success"`
+	ErrorMessage string                `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode    string                `json:"ErrorCode" xml:"ErrorCode"`
+	TotalCount   int64                 `json:"TotalCount" xml:"TotalCount"`
+	TableList    TableListInListTables `json:"TableList" xml:"TableList"`
 }
 
 // CreateListTablesRequest creates a request to invoke ListTables API

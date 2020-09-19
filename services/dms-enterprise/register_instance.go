@@ -91,6 +91,7 @@ type RegisterInstanceRequest struct {
 	Port             requests.Integer `position:"Query" name:"Port"`
 	VpcId            string           `position:"Query" name:"VpcId"`
 	DbaUid           requests.Integer `position:"Query" name:"DbaUid"`
+	SkipTest         requests.Boolean `position:"Query" name:"SkipTest"`
 	SafeRule         string           `position:"Query" name:"SafeRule"`
 }
 

@@ -79,11 +79,11 @@ type ListColumnsRequest struct {
 // ListColumnsResponse is the response struct for api ListColumns
 type ListColumnsResponse struct {
 	*responses.BaseResponse
-	RequestId    string     `json:"RequestId" xml:"RequestId"`
-	Success      bool       `json:"Success" xml:"Success"`
-	ErrorMessage string     `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode    string     `json:"ErrorCode" xml:"ErrorCode"`
-	ColumnList   ColumnList `json:"ColumnList" xml:"ColumnList"`
+	RequestId    string                  `json:"RequestId" xml:"RequestId"`
+	Success      bool                    `json:"Success" xml:"Success"`
+	ErrorMessage string                  `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode    string                  `json:"ErrorCode" xml:"ErrorCode"`
+	ColumnList   ColumnListInListColumns `json:"ColumnList" xml:"ColumnList"`
 }
 
 // CreateListColumnsRequest creates a request to invoke ListColumns API

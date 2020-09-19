@@ -72,6 +72,7 @@ func (client *Client) ListLogicTablesWithCallback(request *ListLogicTablesReques
 type ListLogicTablesRequest struct {
 	*requests.RpcRequest
 	SearchName string           `position:"Query" name:"SearchName"`
+	ReturnGuid requests.Boolean `position:"Query" name:"ReturnGuid"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	DatabaseId string           `position:"Query" name:"DatabaseId"`
 	Tid        requests.Integer `position:"Query" name:"Tid"`
