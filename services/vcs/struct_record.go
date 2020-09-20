@@ -34,11 +34,13 @@ type Record struct {
 	RightBottomX    float64 `json:"RightBottomX" xml:"RightBottomX"`
 	Vendor          string  `json:"Vendor" xml:"Vendor"`
 	Description     string  `json:"Description" xml:"Description"`
+	IconPath        string  `json:"IconPath" xml:"IconPath"`
 	Longitude       string  `json:"Longitude" xml:"Longitude"`
 	SourceId        string  `json:"SourceId" xml:"SourceId"`
 	DeviceName      string  `json:"DeviceName" xml:"DeviceName"`
 	CreateDate      string  `json:"CreateDate" xml:"CreateDate"`
 	GbId            string  `json:"GbId" xml:"GbId"`
+	AcuUsed         int     `json:"AcuUsed" xml:"AcuUsed"`
 	DeviceCount     int     `json:"DeviceCount" xml:"DeviceCount"`
 	Status          string  `json:"Status" xml:"Status"`
 	AppName         string  `json:"AppName" xml:"AppName"`

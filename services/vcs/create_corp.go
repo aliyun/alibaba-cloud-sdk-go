@@ -75,6 +75,7 @@ type CreateCorpRequest struct {
 	IsvSubId      string `position:"Body" name:"IsvSubId"`
 	ParentCorpId  string `position:"Body" name:"ParentCorpId"`
 	Description   string `position:"Body" name:"Description"`
+	IconPath      string `position:"Body" name:"IconPath"`
 	AppName       string `position:"Body" name:"AppName"`
 	CorpName      string `position:"Body" name:"CorpName"`
 }

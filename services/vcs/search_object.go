@@ -71,27 +71,26 @@ func (client *Client) SearchObjectWithCallback(request *SearchObjectRequest, cal
 // SearchObjectRequest is the request struct for api SearchObject
 type SearchObjectRequest struct {
 	*requests.RpcRequest
+	AlgorithmType string                 `position:"Body" name:"AlgorithmType"`
 	CorpId        string                 `position:"Body" name:"CorpId"`
+	EndTime       requests.Integer       `position:"Body" name:"EndTime"`
 	StartTime     requests.Integer       `position:"Body" name:"StartTime"`
 	PageNumber    requests.Integer       `position:"Body" name:"PageNumber"`
-	PicContent    string                 `position:"Body" name:"PicContent"`
-	PageSize      requests.Integer       `position:"Body" name:"PageSize"`
-	ObjectType    string                 `position:"Body" name:"ObjectType"`
-	AlgorithmType string                 `position:"Body" name:"AlgorithmType"`
-	EndTime       requests.Integer       `position:"Body" name:"EndTime"`
 	DeviceList    map[string]interface{} `position:"Body" name:"DeviceList"`
 	PicUrl        string                 `position:"Body" name:"PicUrl"`
 	ImagePath     string                 `position:"Body" name:"ImagePath"`
+	PageSize      requests.Integer       `position:"Body" name:"PageSize"`
+	ObjectType    string                 `position:"Body" name:"ObjectType"`
 	Conditions    string                 `position:"Body" name:"Conditions"`
 }
 
 // SearchObjectResponse is the response struct for api SearchObject
 type SearchObjectResponse struct {
 	*responses.BaseResponse
-	Code      string     `json:"Code" xml:"Code"`
-	Message   string     `json:"Message" xml:"Message"`
-	RequestId string     `json:"RequestId" xml:"RequestId"`
-	Data      []DataItem `json:"Data" xml:"Data"`
+	Code      string                   `json:"Code" xml:"Code"`
+	Message   string                   `json:"Message" xml:"Message"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	Data      []DataItemInSearchObject `json:"Data" xml:"Data"`
 }
 
 // CreateSearchObjectRequest creates a request to invoke SearchObject API

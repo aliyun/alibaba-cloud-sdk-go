@@ -1,3 +1,7 @@
+2020-09-20 Version: v1.61.505
+- Generated 2020-05-15 for `Vcs`.
+- Add describe devices to return device status.
+
 2020-09-19 Version: v1.61.504
 - Generated 2018-11-01 for `dms-enterprise`.
 - Support query user tenant list and current active tenant.
