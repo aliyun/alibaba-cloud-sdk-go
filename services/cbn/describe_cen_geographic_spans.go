@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCenGeographicSpans invokes the cbn.DescribeCenGeographicSpans API synchronously
-// api document: https://help.aliyun.com/api/cbn/describecengeographicspans.html
 func (client *Client) DescribeCenGeographicSpans(request *DescribeCenGeographicSpansRequest) (response *DescribeCenGeographicSpansResponse, err error) {
 	response = CreateDescribeCenGeographicSpansResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCenGeographicSpans(request *DescribeCenGeographicS
 }
 
 // DescribeCenGeographicSpansWithChan invokes the cbn.DescribeCenGeographicSpans API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecengeographicspans.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenGeographicSpansWithChan(request *DescribeCenGeographicSpansRequest) (<-chan *DescribeCenGeographicSpansResponse, <-chan error) {
 	responseChan := make(chan *DescribeCenGeographicSpansResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCenGeographicSpansWithChan(request *DescribeCenGeo
 }
 
 // DescribeCenGeographicSpansWithCallback invokes the cbn.DescribeCenGeographicSpans API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecengeographicspans.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenGeographicSpansWithCallback(request *DescribeCenGeographicSpansRequest, callback func(response *DescribeCenGeographicSpansResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,8 @@ func CreateDescribeCenGeographicSpansRequest() (request *DescribeCenGeographicSp
 	request = &DescribeCenGeographicSpansRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenGeographicSpans", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenGeographicSpans", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

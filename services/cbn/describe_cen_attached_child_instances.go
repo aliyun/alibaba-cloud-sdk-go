@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCenAttachedChildInstances invokes the cbn.DescribeCenAttachedChildInstances API synchronously
-// api document: https://help.aliyun.com/api/cbn/describecenattachedchildinstances.html
 func (client *Client) DescribeCenAttachedChildInstances(request *DescribeCenAttachedChildInstancesRequest) (response *DescribeCenAttachedChildInstancesResponse, err error) {
 	response = CreateDescribeCenAttachedChildInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCenAttachedChildInstances(request *DescribeCenAtta
 }
 
 // DescribeCenAttachedChildInstancesWithChan invokes the cbn.DescribeCenAttachedChildInstances API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecenattachedchildinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenAttachedChildInstancesWithChan(request *DescribeCenAttachedChildInstancesRequest) (<-chan *DescribeCenAttachedChildInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeCenAttachedChildInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCenAttachedChildInstancesWithChan(request *Describ
 }
 
 // DescribeCenAttachedChildInstancesWithCallback invokes the cbn.DescribeCenAttachedChildInstances API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecenattachedchildinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenAttachedChildInstancesWithCallback(request *DescribeCenAttachedChildInstancesRequest, callback func(response *DescribeCenAttachedChildInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,8 @@ func CreateDescribeCenAttachedChildInstancesRequest() (request *DescribeCenAttac
 	request = &DescribeCenAttachedChildInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstances", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstances", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

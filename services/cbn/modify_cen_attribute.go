@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyCenAttribute invokes the cbn.ModifyCenAttribute API synchronously
-// api document: https://help.aliyun.com/api/cbn/modifycenattribute.html
 func (client *Client) ModifyCenAttribute(request *ModifyCenAttributeRequest) (response *ModifyCenAttributeResponse, err error) {
 	response = CreateModifyCenAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyCenAttribute(request *ModifyCenAttributeRequest) (re
 }
 
 // ModifyCenAttributeWithChan invokes the cbn.ModifyCenAttribute API asynchronously
-// api document: https://help.aliyun.com/api/cbn/modifycenattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCenAttributeWithChan(request *ModifyCenAttributeRequest) (<-chan *ModifyCenAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyCenAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyCenAttributeWithChan(request *ModifyCenAttributeRequ
 }
 
 // ModifyCenAttributeWithCallback invokes the cbn.ModifyCenAttribute API asynchronously
-// api document: https://help.aliyun.com/api/cbn/modifycenattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCenAttributeWithCallback(request *ModifyCenAttributeRequest, callback func(response *ModifyCenAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateModifyCenAttributeRequest() (request *ModifyCenAttributeRequest) {
 	request = &ModifyCenAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyCenAttribute", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyCenAttribute", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

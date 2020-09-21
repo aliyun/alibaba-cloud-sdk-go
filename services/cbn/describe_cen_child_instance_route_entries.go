@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCenChildInstanceRouteEntries invokes the cbn.DescribeCenChildInstanceRouteEntries API synchronously
-// api document: https://help.aliyun.com/api/cbn/describecenchildinstancerouteentries.html
 func (client *Client) DescribeCenChildInstanceRouteEntries(request *DescribeCenChildInstanceRouteEntriesRequest) (response *DescribeCenChildInstanceRouteEntriesResponse, err error) {
 	response = CreateDescribeCenChildInstanceRouteEntriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCenChildInstanceRouteEntries(request *DescribeCenC
 }
 
 // DescribeCenChildInstanceRouteEntriesWithChan invokes the cbn.DescribeCenChildInstanceRouteEntries API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecenchildinstancerouteentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenChildInstanceRouteEntriesWithChan(request *DescribeCenChildInstanceRouteEntriesRequest) (<-chan *DescribeCenChildInstanceRouteEntriesResponse, <-chan error) {
 	responseChan := make(chan *DescribeCenChildInstanceRouteEntriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCenChildInstanceRouteEntriesWithChan(request *Desc
 }
 
 // DescribeCenChildInstanceRouteEntriesWithCallback invokes the cbn.DescribeCenChildInstanceRouteEntries API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecenchildinstancerouteentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenChildInstanceRouteEntriesWithCallback(request *DescribeCenChildInstanceRouteEntriesRequest, callback func(response *DescribeCenChildInstanceRouteEntriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +78,7 @@ type DescribeCenChildInstanceRouteEntriesRequest struct {
 	ChildInstanceRegionId     string           `position:"Query" name:"ChildInstanceRegionId"`
 	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
+	DestinationCidrBlock      string           `position:"Query" name:"DestinationCidrBlock"`
 	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
 	ChildInstanceType         string           `position:"Query" name:"ChildInstanceType"`
 	ChildInstanceId           string           `position:"Query" name:"ChildInstanceId"`
@@ -105,7 +101,8 @@ func CreateDescribeCenChildInstanceRouteEntriesRequest() (request *DescribeCenCh
 	request = &DescribeCenChildInstanceRouteEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenChildInstanceRouteEntries", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenChildInstanceRouteEntries", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

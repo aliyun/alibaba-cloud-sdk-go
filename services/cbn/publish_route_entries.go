@@ -21,7 +21,6 @@ import (
 )
 
 // PublishRouteEntries invokes the cbn.PublishRouteEntries API synchronously
-// api document: https://help.aliyun.com/api/cbn/publishrouteentries.html
 func (client *Client) PublishRouteEntries(request *PublishRouteEntriesRequest) (response *PublishRouteEntriesResponse, err error) {
 	response = CreatePublishRouteEntriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PublishRouteEntries(request *PublishRouteEntriesRequest) (
 }
 
 // PublishRouteEntriesWithChan invokes the cbn.PublishRouteEntries API asynchronously
-// api document: https://help.aliyun.com/api/cbn/publishrouteentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PublishRouteEntriesWithChan(request *PublishRouteEntriesRequest) (<-chan *PublishRouteEntriesResponse, <-chan error) {
 	responseChan := make(chan *PublishRouteEntriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PublishRouteEntriesWithChan(request *PublishRouteEntriesRe
 }
 
 // PublishRouteEntriesWithCallback invokes the cbn.PublishRouteEntries API asynchronously
-// api document: https://help.aliyun.com/api/cbn/publishrouteentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PublishRouteEntriesWithCallback(request *PublishRouteEntriesRequest, callback func(response *PublishRouteEntriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreatePublishRouteEntriesRequest() (request *PublishRouteEntriesRequest) {
 	request = &PublishRouteEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "PublishRouteEntries", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "PublishRouteEntries", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

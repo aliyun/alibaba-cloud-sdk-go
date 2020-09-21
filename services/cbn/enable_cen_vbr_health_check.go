@@ -21,7 +21,6 @@ import (
 )
 
 // EnableCenVbrHealthCheck invokes the cbn.EnableCenVbrHealthCheck API synchronously
-// api document: https://help.aliyun.com/api/cbn/enablecenvbrhealthcheck.html
 func (client *Client) EnableCenVbrHealthCheck(request *EnableCenVbrHealthCheckRequest) (response *EnableCenVbrHealthCheckResponse, err error) {
 	response = CreateEnableCenVbrHealthCheckResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnableCenVbrHealthCheck(request *EnableCenVbrHealthCheckRe
 }
 
 // EnableCenVbrHealthCheckWithChan invokes the cbn.EnableCenVbrHealthCheck API asynchronously
-// api document: https://help.aliyun.com/api/cbn/enablecenvbrhealthcheck.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableCenVbrHealthCheckWithChan(request *EnableCenVbrHealthCheckRequest) (<-chan *EnableCenVbrHealthCheckResponse, <-chan error) {
 	responseChan := make(chan *EnableCenVbrHealthCheckResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnableCenVbrHealthCheckWithChan(request *EnableCenVbrHealt
 }
 
 // EnableCenVbrHealthCheckWithCallback invokes the cbn.EnableCenVbrHealthCheck API asynchronously
-// api document: https://help.aliyun.com/api/cbn/enablecenvbrhealthcheck.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableCenVbrHealthCheckWithCallback(request *EnableCenVbrHealthCheckRequest, callback func(response *EnableCenVbrHealthCheckResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,8 @@ func CreateEnableCenVbrHealthCheckRequest() (request *EnableCenVbrHealthCheckReq
 	request = &EnableCenVbrHealthCheckRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "EnableCenVbrHealthCheck", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "EnableCenVbrHealthCheck", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

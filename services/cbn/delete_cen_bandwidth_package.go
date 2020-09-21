@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteCenBandwidthPackage invokes the cbn.DeleteCenBandwidthPackage API synchronously
-// api document: https://help.aliyun.com/api/cbn/deletecenbandwidthpackage.html
 func (client *Client) DeleteCenBandwidthPackage(request *DeleteCenBandwidthPackageRequest) (response *DeleteCenBandwidthPackageResponse, err error) {
 	response = CreateDeleteCenBandwidthPackageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteCenBandwidthPackage(request *DeleteCenBandwidthPacka
 }
 
 // DeleteCenBandwidthPackageWithChan invokes the cbn.DeleteCenBandwidthPackage API asynchronously
-// api document: https://help.aliyun.com/api/cbn/deletecenbandwidthpackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCenBandwidthPackageWithChan(request *DeleteCenBandwidthPackageRequest) (<-chan *DeleteCenBandwidthPackageResponse, <-chan error) {
 	responseChan := make(chan *DeleteCenBandwidthPackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteCenBandwidthPackageWithChan(request *DeleteCenBandwi
 }
 
 // DeleteCenBandwidthPackageWithCallback invokes the cbn.DeleteCenBandwidthPackage API asynchronously
-// api document: https://help.aliyun.com/api/cbn/deletecenbandwidthpackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCenBandwidthPackageWithCallback(request *DeleteCenBandwidthPackageRequest, callback func(response *DeleteCenBandwidthPackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateDeleteCenBandwidthPackageRequest() (request *DeleteCenBandwidthPackag
 	request = &DeleteCenBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenBandwidthPackage", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenBandwidthPackage", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

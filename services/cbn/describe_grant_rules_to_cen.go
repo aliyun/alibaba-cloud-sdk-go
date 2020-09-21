@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeGrantRulesToCen invokes the cbn.DescribeGrantRulesToCen API synchronously
-// api document: https://help.aliyun.com/api/cbn/describegrantrulestocen.html
 func (client *Client) DescribeGrantRulesToCen(request *DescribeGrantRulesToCenRequest) (response *DescribeGrantRulesToCenResponse, err error) {
 	response = CreateDescribeGrantRulesToCenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeGrantRulesToCen(request *DescribeGrantRulesToCenRe
 }
 
 // DescribeGrantRulesToCenWithChan invokes the cbn.DescribeGrantRulesToCen API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describegrantrulestocen.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGrantRulesToCenWithChan(request *DescribeGrantRulesToCenRequest) (<-chan *DescribeGrantRulesToCenResponse, <-chan error) {
 	responseChan := make(chan *DescribeGrantRulesToCenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeGrantRulesToCenWithChan(request *DescribeGrantRule
 }
 
 // DescribeGrantRulesToCenWithCallback invokes the cbn.DescribeGrantRulesToCen API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describegrantrulestocen.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGrantRulesToCenWithCallback(request *DescribeGrantRulesToCenRequest, callback func(response *DescribeGrantRulesToCenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateDescribeGrantRulesToCenRequest() (request *DescribeGrantRulesToCenReq
 	request = &DescribeGrantRulesToCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGrantRulesToCen", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGrantRulesToCen", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

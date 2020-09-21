@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRouteServicesInCen invokes the cbn.DescribeRouteServicesInCen API synchronously
-// api document: https://help.aliyun.com/api/cbn/describerouteservicesincen.html
 func (client *Client) DescribeRouteServicesInCen(request *DescribeRouteServicesInCenRequest) (response *DescribeRouteServicesInCenResponse, err error) {
 	response = CreateDescribeRouteServicesInCenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRouteServicesInCen(request *DescribeRouteServicesI
 }
 
 // DescribeRouteServicesInCenWithChan invokes the cbn.DescribeRouteServicesInCen API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describerouteservicesincen.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouteServicesInCenWithChan(request *DescribeRouteServicesInCenRequest) (<-chan *DescribeRouteServicesInCenResponse, <-chan error) {
 	responseChan := make(chan *DescribeRouteServicesInCenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRouteServicesInCenWithChan(request *DescribeRouteS
 }
 
 // DescribeRouteServicesInCenWithCallback invokes the cbn.DescribeRouteServicesInCen API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describerouteservicesincen.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouteServicesInCenWithCallback(request *DescribeRouteServicesInCenRequest, callback func(response *DescribeRouteServicesInCenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,7 +99,8 @@ func CreateDescribeRouteServicesInCenRequest() (request *DescribeRouteServicesIn
 	request = &DescribeRouteServicesInCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeRouteServicesInCen", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeRouteServicesInCen", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

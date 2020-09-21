@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteCen invokes the cbn.DeleteCen API synchronously
-// api document: https://help.aliyun.com/api/cbn/deletecen.html
 func (client *Client) DeleteCen(request *DeleteCenRequest) (response *DeleteCenResponse, err error) {
 	response = CreateDeleteCenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteCen(request *DeleteCenRequest) (response *DeleteCenR
 }
 
 // DeleteCenWithChan invokes the cbn.DeleteCen API asynchronously
-// api document: https://help.aliyun.com/api/cbn/deletecen.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCenWithChan(request *DeleteCenRequest) (<-chan *DeleteCenResponse, <-chan error) {
 	responseChan := make(chan *DeleteCenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteCenWithChan(request *DeleteCenRequest) (<-chan *Dele
 }
 
 // DeleteCenWithCallback invokes the cbn.DeleteCen API asynchronously
-// api document: https://help.aliyun.com/api/cbn/deletecen.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCenWithCallback(request *DeleteCenRequest, callback func(response *DeleteCenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateDeleteCenRequest() (request *DeleteCenRequest) {
 	request = &DeleteCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCen", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCen", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // UnassociateCenBandwidthPackage invokes the cbn.UnassociateCenBandwidthPackage API synchronously
-// api document: https://help.aliyun.com/api/cbn/unassociatecenbandwidthpackage.html
 func (client *Client) UnassociateCenBandwidthPackage(request *UnassociateCenBandwidthPackageRequest) (response *UnassociateCenBandwidthPackageResponse, err error) {
 	response = CreateUnassociateCenBandwidthPackageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnassociateCenBandwidthPackage(request *UnassociateCenBand
 }
 
 // UnassociateCenBandwidthPackageWithChan invokes the cbn.UnassociateCenBandwidthPackage API asynchronously
-// api document: https://help.aliyun.com/api/cbn/unassociatecenbandwidthpackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassociateCenBandwidthPackageWithChan(request *UnassociateCenBandwidthPackageRequest) (<-chan *UnassociateCenBandwidthPackageResponse, <-chan error) {
 	responseChan := make(chan *UnassociateCenBandwidthPackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnassociateCenBandwidthPackageWithChan(request *Unassociat
 }
 
 // UnassociateCenBandwidthPackageWithCallback invokes the cbn.UnassociateCenBandwidthPackage API asynchronously
-// api document: https://help.aliyun.com/api/cbn/unassociatecenbandwidthpackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassociateCenBandwidthPackageWithCallback(request *UnassociateCenBandwidthPackageRequest, callback func(response *UnassociateCenBandwidthPackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateUnassociateCenBandwidthPackageRequest() (request *UnassociateCenBandw
 	request = &UnassociateCenBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "UnassociateCenBandwidthPackage", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "UnassociateCenBandwidthPackage", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

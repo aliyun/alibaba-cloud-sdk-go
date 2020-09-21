@@ -21,7 +21,6 @@ import (
 )
 
 // DisableCenVbrHealthCheck invokes the cbn.DisableCenVbrHealthCheck API synchronously
-// api document: https://help.aliyun.com/api/cbn/disablecenvbrhealthcheck.html
 func (client *Client) DisableCenVbrHealthCheck(request *DisableCenVbrHealthCheckRequest) (response *DisableCenVbrHealthCheckResponse, err error) {
 	response = CreateDisableCenVbrHealthCheckResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisableCenVbrHealthCheck(request *DisableCenVbrHealthCheck
 }
 
 // DisableCenVbrHealthCheckWithChan invokes the cbn.DisableCenVbrHealthCheck API asynchronously
-// api document: https://help.aliyun.com/api/cbn/disablecenvbrhealthcheck.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableCenVbrHealthCheckWithChan(request *DisableCenVbrHealthCheckRequest) (<-chan *DisableCenVbrHealthCheckResponse, <-chan error) {
 	responseChan := make(chan *DisableCenVbrHealthCheckResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisableCenVbrHealthCheckWithChan(request *DisableCenVbrHea
 }
 
 // DisableCenVbrHealthCheckWithCallback invokes the cbn.DisableCenVbrHealthCheck API asynchronously
-// api document: https://help.aliyun.com/api/cbn/disablecenvbrhealthcheck.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableCenVbrHealthCheckWithCallback(request *DisableCenVbrHealthCheckRequest, callback func(response *DisableCenVbrHealthCheckResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateDisableCenVbrHealthCheckRequest() (request *DisableCenVbrHealthCheckR
 	request = &DisableCenVbrHealthCheckRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DisableCenVbrHealthCheck", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DisableCenVbrHealthCheck", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCenVbrHealthCheck invokes the cbn.DescribeCenVbrHealthCheck API synchronously
-// api document: https://help.aliyun.com/api/cbn/describecenvbrhealthcheck.html
 func (client *Client) DescribeCenVbrHealthCheck(request *DescribeCenVbrHealthCheckRequest) (response *DescribeCenVbrHealthCheckResponse, err error) {
 	response = CreateDescribeCenVbrHealthCheckResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCenVbrHealthCheck(request *DescribeCenVbrHealthChe
 }
 
 // DescribeCenVbrHealthCheckWithChan invokes the cbn.DescribeCenVbrHealthCheck API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecenvbrhealthcheck.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenVbrHealthCheckWithChan(request *DescribeCenVbrHealthCheckRequest) (<-chan *DescribeCenVbrHealthCheckResponse, <-chan error) {
 	responseChan := make(chan *DescribeCenVbrHealthCheckResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCenVbrHealthCheckWithChan(request *DescribeCenVbrH
 }
 
 // DescribeCenVbrHealthCheckWithCallback invokes the cbn.DescribeCenVbrHealthCheck API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecenvbrhealthcheck.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenVbrHealthCheckWithCallback(request *DescribeCenVbrHealthCheckRequest, callback func(response *DescribeCenVbrHealthCheckResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,7 +98,8 @@ func CreateDescribeCenVbrHealthCheckRequest() (request *DescribeCenVbrHealthChec
 	request = &DescribeCenVbrHealthCheckRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenVbrHealthCheck", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenVbrHealthCheck", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

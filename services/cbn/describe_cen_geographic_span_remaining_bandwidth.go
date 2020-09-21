@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCenGeographicSpanRemainingBandwidth invokes the cbn.DescribeCenGeographicSpanRemainingBandwidth API synchronously
-// api document: https://help.aliyun.com/api/cbn/describecengeographicspanremainingbandwidth.html
 func (client *Client) DescribeCenGeographicSpanRemainingBandwidth(request *DescribeCenGeographicSpanRemainingBandwidthRequest) (response *DescribeCenGeographicSpanRemainingBandwidthResponse, err error) {
 	response = CreateDescribeCenGeographicSpanRemainingBandwidthResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCenGeographicSpanRemainingBandwidth(request *Descr
 }
 
 // DescribeCenGeographicSpanRemainingBandwidthWithChan invokes the cbn.DescribeCenGeographicSpanRemainingBandwidth API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecengeographicspanremainingbandwidth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenGeographicSpanRemainingBandwidthWithChan(request *DescribeCenGeographicSpanRemainingBandwidthRequest) (<-chan *DescribeCenGeographicSpanRemainingBandwidthResponse, <-chan error) {
 	responseChan := make(chan *DescribeCenGeographicSpanRemainingBandwidthResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCenGeographicSpanRemainingBandwidthWithChan(reques
 }
 
 // DescribeCenGeographicSpanRemainingBandwidthWithCallback invokes the cbn.DescribeCenGeographicSpanRemainingBandwidth API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecengeographicspanremainingbandwidth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenGeographicSpanRemainingBandwidthWithCallback(request *DescribeCenGeographicSpanRemainingBandwidthRequest, callback func(response *DescribeCenGeographicSpanRemainingBandwidthResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,8 @@ func CreateDescribeCenGeographicSpanRemainingBandwidthRequest() (request *Descri
 	request = &DescribeCenGeographicSpanRemainingBandwidthRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenGeographicSpanRemainingBandwidth", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenGeographicSpanRemainingBandwidth", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

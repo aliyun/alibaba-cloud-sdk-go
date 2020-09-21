@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCenRouteMaps invokes the cbn.DescribeCenRouteMaps API synchronously
-// api document: https://help.aliyun.com/api/cbn/describecenroutemaps.html
 func (client *Client) DescribeCenRouteMaps(request *DescribeCenRouteMapsRequest) (response *DescribeCenRouteMapsResponse, err error) {
 	response = CreateDescribeCenRouteMapsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCenRouteMaps(request *DescribeCenRouteMapsRequest)
 }
 
 // DescribeCenRouteMapsWithChan invokes the cbn.DescribeCenRouteMaps API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecenroutemaps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenRouteMapsWithChan(request *DescribeCenRouteMapsRequest) (<-chan *DescribeCenRouteMapsResponse, <-chan error) {
 	responseChan := make(chan *DescribeCenRouteMapsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCenRouteMapsWithChan(request *DescribeCenRouteMaps
 }
 
 // DescribeCenRouteMapsWithCallback invokes the cbn.DescribeCenRouteMaps API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecenroutemaps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenRouteMapsWithCallback(request *DescribeCenRouteMapsRequest, callback func(response *DescribeCenRouteMapsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -110,7 +105,8 @@ func CreateDescribeCenRouteMapsRequest() (request *DescribeCenRouteMapsRequest) 
 	request = &DescribeCenRouteMapsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenRouteMaps", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenRouteMaps", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

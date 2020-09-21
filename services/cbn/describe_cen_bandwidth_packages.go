@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCenBandwidthPackages invokes the cbn.DescribeCenBandwidthPackages API synchronously
-// api document: https://help.aliyun.com/api/cbn/describecenbandwidthpackages.html
 func (client *Client) DescribeCenBandwidthPackages(request *DescribeCenBandwidthPackagesRequest) (response *DescribeCenBandwidthPackagesResponse, err error) {
 	response = CreateDescribeCenBandwidthPackagesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCenBandwidthPackages(request *DescribeCenBandwidth
 }
 
 // DescribeCenBandwidthPackagesWithChan invokes the cbn.DescribeCenBandwidthPackages API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecenbandwidthpackages.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenBandwidthPackagesWithChan(request *DescribeCenBandwidthPackagesRequest) (<-chan *DescribeCenBandwidthPackagesResponse, <-chan error) {
 	responseChan := make(chan *DescribeCenBandwidthPackagesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCenBandwidthPackagesWithChan(request *DescribeCenB
 }
 
 // DescribeCenBandwidthPackagesWithCallback invokes the cbn.DescribeCenBandwidthPackages API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecenbandwidthpackages.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenBandwidthPackagesWithCallback(request *DescribeCenBandwidthPackagesRequest, callback func(response *DescribeCenBandwidthPackagesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -108,7 +103,8 @@ func CreateDescribeCenBandwidthPackagesRequest() (request *DescribeCenBandwidthP
 	request = &DescribeCenBandwidthPackagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenBandwidthPackages", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenBandwidthPackages", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DetachCenChildInstance invokes the cbn.DetachCenChildInstance API synchronously
-// api document: https://help.aliyun.com/api/cbn/detachcenchildinstance.html
 func (client *Client) DetachCenChildInstance(request *DetachCenChildInstanceRequest) (response *DetachCenChildInstanceResponse, err error) {
 	response = CreateDetachCenChildInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetachCenChildInstance(request *DetachCenChildInstanceRequ
 }
 
 // DetachCenChildInstanceWithChan invokes the cbn.DetachCenChildInstance API asynchronously
-// api document: https://help.aliyun.com/api/cbn/detachcenchildinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachCenChildInstanceWithChan(request *DetachCenChildInstanceRequest) (<-chan *DetachCenChildInstanceResponse, <-chan error) {
 	responseChan := make(chan *DetachCenChildInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetachCenChildInstanceWithChan(request *DetachCenChildInst
 }
 
 // DetachCenChildInstanceWithCallback invokes the cbn.DetachCenChildInstance API asynchronously
-// api document: https://help.aliyun.com/api/cbn/detachcenchildinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachCenChildInstanceWithCallback(request *DetachCenChildInstanceRequest, callback func(response *DetachCenChildInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,8 @@ func CreateDetachCenChildInstanceRequest() (request *DetachCenChildInstanceReque
 	request = &DetachCenChildInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DetachCenChildInstance", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DetachCenChildInstance", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

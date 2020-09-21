@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeGeographicRegionMembership invokes the cbn.DescribeGeographicRegionMembership API synchronously
-// api document: https://help.aliyun.com/api/cbn/describegeographicregionmembership.html
 func (client *Client) DescribeGeographicRegionMembership(request *DescribeGeographicRegionMembershipRequest) (response *DescribeGeographicRegionMembershipResponse, err error) {
 	response = CreateDescribeGeographicRegionMembershipResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeGeographicRegionMembership(request *DescribeGeogra
 }
 
 // DescribeGeographicRegionMembershipWithChan invokes the cbn.DescribeGeographicRegionMembership API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describegeographicregionmembership.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGeographicRegionMembershipWithChan(request *DescribeGeographicRegionMembershipRequest) (<-chan *DescribeGeographicRegionMembershipResponse, <-chan error) {
 	responseChan := make(chan *DescribeGeographicRegionMembershipResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeGeographicRegionMembershipWithChan(request *Descri
 }
 
 // DescribeGeographicRegionMembershipWithCallback invokes the cbn.DescribeGeographicRegionMembership API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describegeographicregionmembership.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGeographicRegionMembershipWithCallback(request *DescribeGeographicRegionMembershipRequest, callback func(response *DescribeGeographicRegionMembershipResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,8 @@ func CreateDescribeGeographicRegionMembershipRequest() (request *DescribeGeograp
 	request = &DescribeGeographicRegionMembershipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGeographicRegionMembership", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeGeographicRegionMembership", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

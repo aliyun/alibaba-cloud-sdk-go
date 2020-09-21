@@ -21,7 +21,6 @@ import (
 )
 
 // TempUpgradeCenBandwidthPackageSpec invokes the cbn.TempUpgradeCenBandwidthPackageSpec API synchronously
-// api document: https://help.aliyun.com/api/cbn/tempupgradecenbandwidthpackagespec.html
 func (client *Client) TempUpgradeCenBandwidthPackageSpec(request *TempUpgradeCenBandwidthPackageSpecRequest) (response *TempUpgradeCenBandwidthPackageSpecResponse, err error) {
 	response = CreateTempUpgradeCenBandwidthPackageSpecResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TempUpgradeCenBandwidthPackageSpec(request *TempUpgradeCen
 }
 
 // TempUpgradeCenBandwidthPackageSpecWithChan invokes the cbn.TempUpgradeCenBandwidthPackageSpec API asynchronously
-// api document: https://help.aliyun.com/api/cbn/tempupgradecenbandwidthpackagespec.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TempUpgradeCenBandwidthPackageSpecWithChan(request *TempUpgradeCenBandwidthPackageSpecRequest) (<-chan *TempUpgradeCenBandwidthPackageSpecResponse, <-chan error) {
 	responseChan := make(chan *TempUpgradeCenBandwidthPackageSpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TempUpgradeCenBandwidthPackageSpecWithChan(request *TempUp
 }
 
 // TempUpgradeCenBandwidthPackageSpecWithCallback invokes the cbn.TempUpgradeCenBandwidthPackageSpec API asynchronously
-// api document: https://help.aliyun.com/api/cbn/tempupgradecenbandwidthpackagespec.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TempUpgradeCenBandwidthPackageSpecWithCallback(request *TempUpgradeCenBandwidthPackageSpecRequest, callback func(response *TempUpgradeCenBandwidthPackageSpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateTempUpgradeCenBandwidthPackageSpecRequest() (request *TempUpgradeCenB
 	request = &TempUpgradeCenBandwidthPackageSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "TempUpgradeCenBandwidthPackageSpec", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "TempUpgradeCenBandwidthPackageSpec", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

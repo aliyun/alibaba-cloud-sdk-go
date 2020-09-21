@@ -21,7 +21,6 @@ import (
 )
 
 // RoutePrivateZoneInCenToVpc invokes the cbn.RoutePrivateZoneInCenToVpc API synchronously
-// api document: https://help.aliyun.com/api/cbn/routeprivatezoneincentovpc.html
 func (client *Client) RoutePrivateZoneInCenToVpc(request *RoutePrivateZoneInCenToVpcRequest) (response *RoutePrivateZoneInCenToVpcResponse, err error) {
 	response = CreateRoutePrivateZoneInCenToVpcResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RoutePrivateZoneInCenToVpc(request *RoutePrivateZoneInCenT
 }
 
 // RoutePrivateZoneInCenToVpcWithChan invokes the cbn.RoutePrivateZoneInCenToVpc API asynchronously
-// api document: https://help.aliyun.com/api/cbn/routeprivatezoneincentovpc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RoutePrivateZoneInCenToVpcWithChan(request *RoutePrivateZoneInCenToVpcRequest) (<-chan *RoutePrivateZoneInCenToVpcResponse, <-chan error) {
 	responseChan := make(chan *RoutePrivateZoneInCenToVpcResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RoutePrivateZoneInCenToVpcWithChan(request *RoutePrivateZo
 }
 
 // RoutePrivateZoneInCenToVpcWithCallback invokes the cbn.RoutePrivateZoneInCenToVpc API asynchronously
-// api document: https://help.aliyun.com/api/cbn/routeprivatezoneincentovpc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RoutePrivateZoneInCenToVpcWithCallback(request *RoutePrivateZoneInCenToVpcRequest, callback func(response *RoutePrivateZoneInCenToVpcResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateRoutePrivateZoneInCenToVpcRequest() (request *RoutePrivateZoneInCenTo
 	request = &RoutePrivateZoneInCenToVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "RoutePrivateZoneInCenToVpc", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "RoutePrivateZoneInCenToVpc", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

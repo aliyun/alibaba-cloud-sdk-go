@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePublishedRouteEntries invokes the cbn.DescribePublishedRouteEntries API synchronously
-// api document: https://help.aliyun.com/api/cbn/describepublishedrouteentries.html
 func (client *Client) DescribePublishedRouteEntries(request *DescribePublishedRouteEntriesRequest) (response *DescribePublishedRouteEntriesResponse, err error) {
 	response = CreateDescribePublishedRouteEntriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePublishedRouteEntries(request *DescribePublishedRo
 }
 
 // DescribePublishedRouteEntriesWithChan invokes the cbn.DescribePublishedRouteEntries API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describepublishedrouteentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePublishedRouteEntriesWithChan(request *DescribePublishedRouteEntriesRequest) (<-chan *DescribePublishedRouteEntriesResponse, <-chan error) {
 	responseChan := make(chan *DescribePublishedRouteEntriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePublishedRouteEntriesWithChan(request *DescribePub
 }
 
 // DescribePublishedRouteEntriesWithCallback invokes the cbn.DescribePublishedRouteEntries API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describepublishedrouteentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePublishedRouteEntriesWithCallback(request *DescribePublishedRouteEntriesRequest, callback func(response *DescribePublishedRouteEntriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,7 +98,8 @@ func CreateDescribePublishedRouteEntriesRequest() (request *DescribePublishedRou
 	request = &DescribePublishedRouteEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribePublishedRouteEntries", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribePublishedRouteEntries", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

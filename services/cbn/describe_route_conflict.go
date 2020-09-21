@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRouteConflict invokes the cbn.DescribeRouteConflict API synchronously
-// api document: https://help.aliyun.com/api/cbn/describerouteconflict.html
 func (client *Client) DescribeRouteConflict(request *DescribeRouteConflictRequest) (response *DescribeRouteConflictResponse, err error) {
 	response = CreateDescribeRouteConflictResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRouteConflict(request *DescribeRouteConflictReques
 }
 
 // DescribeRouteConflictWithChan invokes the cbn.DescribeRouteConflict API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describerouteconflict.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouteConflictWithChan(request *DescribeRouteConflictRequest) (<-chan *DescribeRouteConflictResponse, <-chan error) {
 	responseChan := make(chan *DescribeRouteConflictResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRouteConflictWithChan(request *DescribeRouteConfli
 }
 
 // DescribeRouteConflictWithCallback invokes the cbn.DescribeRouteConflict API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describerouteconflict.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouteConflictWithCallback(request *DescribeRouteConflictRequest, callback func(response *DescribeRouteConflictResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,7 +99,8 @@ func CreateDescribeRouteConflictRequest() (request *DescribeRouteConflictRequest
 	request = &DescribeRouteConflictRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeRouteConflict", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeRouteConflict", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

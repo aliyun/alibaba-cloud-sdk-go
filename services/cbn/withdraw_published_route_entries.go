@@ -21,7 +21,6 @@ import (
 )
 
 // WithdrawPublishedRouteEntries invokes the cbn.WithdrawPublishedRouteEntries API synchronously
-// api document: https://help.aliyun.com/api/cbn/withdrawpublishedrouteentries.html
 func (client *Client) WithdrawPublishedRouteEntries(request *WithdrawPublishedRouteEntriesRequest) (response *WithdrawPublishedRouteEntriesResponse, err error) {
 	response = CreateWithdrawPublishedRouteEntriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) WithdrawPublishedRouteEntries(request *WithdrawPublishedRo
 }
 
 // WithdrawPublishedRouteEntriesWithChan invokes the cbn.WithdrawPublishedRouteEntries API asynchronously
-// api document: https://help.aliyun.com/api/cbn/withdrawpublishedrouteentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) WithdrawPublishedRouteEntriesWithChan(request *WithdrawPublishedRouteEntriesRequest) (<-chan *WithdrawPublishedRouteEntriesResponse, <-chan error) {
 	responseChan := make(chan *WithdrawPublishedRouteEntriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) WithdrawPublishedRouteEntriesWithChan(request *WithdrawPub
 }
 
 // WithdrawPublishedRouteEntriesWithCallback invokes the cbn.WithdrawPublishedRouteEntries API asynchronously
-// api document: https://help.aliyun.com/api/cbn/withdrawpublishedrouteentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) WithdrawPublishedRouteEntriesWithCallback(request *WithdrawPublishedRouteEntriesRequest, callback func(response *WithdrawPublishedRouteEntriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateWithdrawPublishedRouteEntriesRequest() (request *WithdrawPublishedRou
 	request = &WithdrawPublishedRouteEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "WithdrawPublishedRouteEntries", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "WithdrawPublishedRouteEntries", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

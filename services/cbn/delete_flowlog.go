@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteFlowlog invokes the cbn.DeleteFlowlog API synchronously
-// api document: https://help.aliyun.com/api/cbn/deleteflowlog.html
 func (client *Client) DeleteFlowlog(request *DeleteFlowlogRequest) (response *DeleteFlowlogResponse, err error) {
 	response = CreateDeleteFlowlogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteFlowlog(request *DeleteFlowlogRequest) (response *De
 }
 
 // DeleteFlowlogWithChan invokes the cbn.DeleteFlowlog API asynchronously
-// api document: https://help.aliyun.com/api/cbn/deleteflowlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFlowlogWithChan(request *DeleteFlowlogRequest) (<-chan *DeleteFlowlogResponse, <-chan error) {
 	responseChan := make(chan *DeleteFlowlogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteFlowlogWithChan(request *DeleteFlowlogRequest) (<-ch
 }
 
 // DeleteFlowlogWithCallback invokes the cbn.DeleteFlowlog API asynchronously
-// api document: https://help.aliyun.com/api/cbn/deleteflowlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFlowlogWithCallback(request *DeleteFlowlogRequest, callback func(response *DeleteFlowlogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateDeleteFlowlogRequest() (request *DeleteFlowlogRequest) {
 	request = &DeleteFlowlogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteFlowlog", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteFlowlog", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateFlowlog invokes the cbn.CreateFlowlog API synchronously
-// api document: https://help.aliyun.com/api/cbn/createflowlog.html
 func (client *Client) CreateFlowlog(request *CreateFlowlogRequest) (response *CreateFlowlogResponse, err error) {
 	response = CreateCreateFlowlogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateFlowlog(request *CreateFlowlogRequest) (response *Cr
 }
 
 // CreateFlowlogWithChan invokes the cbn.CreateFlowlog API asynchronously
-// api document: https://help.aliyun.com/api/cbn/createflowlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFlowlogWithChan(request *CreateFlowlogRequest) (<-chan *CreateFlowlogResponse, <-chan error) {
 	responseChan := make(chan *CreateFlowlogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateFlowlogWithChan(request *CreateFlowlogRequest) (<-ch
 }
 
 // CreateFlowlogWithCallback invokes the cbn.CreateFlowlog API asynchronously
-// api document: https://help.aliyun.com/api/cbn/createflowlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFlowlogWithCallback(request *CreateFlowlogRequest, callback func(response *CreateFlowlogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,8 @@ func CreateCreateFlowlogRequest() (request *CreateFlowlogRequest) {
 	request = &CreateFlowlogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateFlowlog", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateFlowlog", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

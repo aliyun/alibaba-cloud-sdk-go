@@ -1,3 +1,7 @@
+2020-09-21 Version: v1.61.508
+- Generated 2017-09-12 for `Cbn`.
+- VbrHealthCheck add param VbrInstanceRegionId.
+
 2020-09-21 Version: v1.61.507
 - Generated 2018-10-12 for `alimt`.
 - Interface add column wordCount.

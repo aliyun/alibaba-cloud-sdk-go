@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCenInterRegionBandwidthLimits invokes the cbn.DescribeCenInterRegionBandwidthLimits API synchronously
-// api document: https://help.aliyun.com/api/cbn/describeceninterregionbandwidthlimits.html
 func (client *Client) DescribeCenInterRegionBandwidthLimits(request *DescribeCenInterRegionBandwidthLimitsRequest) (response *DescribeCenInterRegionBandwidthLimitsResponse, err error) {
 	response = CreateDescribeCenInterRegionBandwidthLimitsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCenInterRegionBandwidthLimits(request *DescribeCen
 }
 
 // DescribeCenInterRegionBandwidthLimitsWithChan invokes the cbn.DescribeCenInterRegionBandwidthLimits API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describeceninterregionbandwidthlimits.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenInterRegionBandwidthLimitsWithChan(request *DescribeCenInterRegionBandwidthLimitsRequest) (<-chan *DescribeCenInterRegionBandwidthLimitsResponse, <-chan error) {
 	responseChan := make(chan *DescribeCenInterRegionBandwidthLimitsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCenInterRegionBandwidthLimitsWithChan(request *Des
 }
 
 // DescribeCenInterRegionBandwidthLimitsWithCallback invokes the cbn.DescribeCenInterRegionBandwidthLimits API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describeceninterregionbandwidthlimits.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenInterRegionBandwidthLimitsWithCallback(request *DescribeCenInterRegionBandwidthLimitsRequest, callback func(response *DescribeCenInterRegionBandwidthLimitsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,8 @@ func CreateDescribeCenInterRegionBandwidthLimitsRequest() (request *DescribeCenI
 	request = &DescribeCenInterRegionBandwidthLimitsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenInterRegionBandwidthLimits", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenInterRegionBandwidthLimits", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteCenRouteMap invokes the cbn.DeleteCenRouteMap API synchronously
-// api document: https://help.aliyun.com/api/cbn/deletecenroutemap.html
 func (client *Client) DeleteCenRouteMap(request *DeleteCenRouteMapRequest) (response *DeleteCenRouteMapResponse, err error) {
 	response = CreateDeleteCenRouteMapResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteCenRouteMap(request *DeleteCenRouteMapRequest) (resp
 }
 
 // DeleteCenRouteMapWithChan invokes the cbn.DeleteCenRouteMap API asynchronously
-// api document: https://help.aliyun.com/api/cbn/deletecenroutemap.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCenRouteMapWithChan(request *DeleteCenRouteMapRequest) (<-chan *DeleteCenRouteMapResponse, <-chan error) {
 	responseChan := make(chan *DeleteCenRouteMapResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteCenRouteMapWithChan(request *DeleteCenRouteMapReques
 }
 
 // DeleteCenRouteMapWithCallback invokes the cbn.DeleteCenRouteMap API asynchronously
-// api document: https://help.aliyun.com/api/cbn/deletecenroutemap.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCenRouteMapWithCallback(request *DeleteCenRouteMapRequest, callback func(response *DeleteCenRouteMapResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateDeleteCenRouteMapRequest() (request *DeleteCenRouteMapRequest) {
 	request = &DeleteCenRouteMapRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenRouteMap", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteCenRouteMap", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

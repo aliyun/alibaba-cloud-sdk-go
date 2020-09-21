@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteRouteServiceInCen invokes the cbn.DeleteRouteServiceInCen API synchronously
-// api document: https://help.aliyun.com/api/cbn/deleterouteserviceincen.html
 func (client *Client) DeleteRouteServiceInCen(request *DeleteRouteServiceInCenRequest) (response *DeleteRouteServiceInCenResponse, err error) {
 	response = CreateDeleteRouteServiceInCenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteRouteServiceInCen(request *DeleteRouteServiceInCenRe
 }
 
 // DeleteRouteServiceInCenWithChan invokes the cbn.DeleteRouteServiceInCen API asynchronously
-// api document: https://help.aliyun.com/api/cbn/deleterouteserviceincen.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRouteServiceInCenWithChan(request *DeleteRouteServiceInCenRequest) (<-chan *DeleteRouteServiceInCenResponse, <-chan error) {
 	responseChan := make(chan *DeleteRouteServiceInCenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteRouteServiceInCenWithChan(request *DeleteRouteServic
 }
 
 // DeleteRouteServiceInCenWithCallback invokes the cbn.DeleteRouteServiceInCen API asynchronously
-// api document: https://help.aliyun.com/api/cbn/deleterouteserviceincen.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRouteServiceInCenWithCallback(request *DeleteRouteServiceInCenRequest, callback func(response *DeleteRouteServiceInCenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateDeleteRouteServiceInCenRequest() (request *DeleteRouteServiceInCenReq
 	request = &DeleteRouteServiceInCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteRouteServiceInCen", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DeleteRouteServiceInCen", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

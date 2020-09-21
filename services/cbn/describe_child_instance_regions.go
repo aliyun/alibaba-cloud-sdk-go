@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeChildInstanceRegions invokes the cbn.DescribeChildInstanceRegions API synchronously
-// api document: https://help.aliyun.com/api/cbn/describechildinstanceregions.html
 func (client *Client) DescribeChildInstanceRegions(request *DescribeChildInstanceRegionsRequest) (response *DescribeChildInstanceRegionsResponse, err error) {
 	response = CreateDescribeChildInstanceRegionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeChildInstanceRegions(request *DescribeChildInstanc
 }
 
 // DescribeChildInstanceRegionsWithChan invokes the cbn.DescribeChildInstanceRegions API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describechildinstanceregions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeChildInstanceRegionsWithChan(request *DescribeChildInstanceRegionsRequest) (<-chan *DescribeChildInstanceRegionsResponse, <-chan error) {
 	responseChan := make(chan *DescribeChildInstanceRegionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeChildInstanceRegionsWithChan(request *DescribeChil
 }
 
 // DescribeChildInstanceRegionsWithCallback invokes the cbn.DescribeChildInstanceRegions API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describechildinstanceregions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeChildInstanceRegionsWithCallback(request *DescribeChildInstanceRegionsRequest, callback func(response *DescribeChildInstanceRegionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateDescribeChildInstanceRegionsRequest() (request *DescribeChildInstance
 	request = &DescribeChildInstanceRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeChildInstanceRegions", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeChildInstanceRegions", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

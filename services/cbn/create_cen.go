@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCen invokes the cbn.CreateCen API synchronously
-// api document: https://help.aliyun.com/api/cbn/createcen.html
 func (client *Client) CreateCen(request *CreateCenRequest) (response *CreateCenResponse, err error) {
 	response = CreateCreateCenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCen(request *CreateCenRequest) (response *CreateCenR
 }
 
 // CreateCenWithChan invokes the cbn.CreateCen API asynchronously
-// api document: https://help.aliyun.com/api/cbn/createcen.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCenWithChan(request *CreateCenRequest) (<-chan *CreateCenResponse, <-chan error) {
 	responseChan := make(chan *CreateCenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateCenWithChan(request *CreateCenRequest) (<-chan *Crea
 }
 
 // CreateCenWithCallback invokes the cbn.CreateCen API asynchronously
-// api document: https://help.aliyun.com/api/cbn/createcen.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCenWithCallback(request *CreateCenRequest, callback func(response *CreateCenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,8 @@ func CreateCreateCenRequest() (request *CreateCenRequest) {
 	request = &CreateCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCen", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "CreateCen", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

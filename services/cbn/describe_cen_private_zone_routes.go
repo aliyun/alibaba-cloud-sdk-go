@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCenPrivateZoneRoutes invokes the cbn.DescribeCenPrivateZoneRoutes API synchronously
-// api document: https://help.aliyun.com/api/cbn/describecenprivatezoneroutes.html
 func (client *Client) DescribeCenPrivateZoneRoutes(request *DescribeCenPrivateZoneRoutesRequest) (response *DescribeCenPrivateZoneRoutesResponse, err error) {
 	response = CreateDescribeCenPrivateZoneRoutesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCenPrivateZoneRoutes(request *DescribeCenPrivateZo
 }
 
 // DescribeCenPrivateZoneRoutesWithChan invokes the cbn.DescribeCenPrivateZoneRoutes API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecenprivatezoneroutes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenPrivateZoneRoutesWithChan(request *DescribeCenPrivateZoneRoutesRequest) (<-chan *DescribeCenPrivateZoneRoutesResponse, <-chan error) {
 	responseChan := make(chan *DescribeCenPrivateZoneRoutesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCenPrivateZoneRoutesWithChan(request *DescribeCenP
 }
 
 // DescribeCenPrivateZoneRoutesWithCallback invokes the cbn.DescribeCenPrivateZoneRoutes API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecenprivatezoneroutes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenPrivateZoneRoutesWithCallback(request *DescribeCenPrivateZoneRoutesRequest, callback func(response *DescribeCenPrivateZoneRoutesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,8 @@ func CreateDescribeCenPrivateZoneRoutesRequest() (request *DescribeCenPrivateZon
 	request = &DescribeCenPrivateZoneRoutesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenPrivateZoneRoutes", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenPrivateZoneRoutes", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

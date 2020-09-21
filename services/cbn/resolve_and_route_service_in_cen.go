@@ -21,7 +21,6 @@ import (
 )
 
 // ResolveAndRouteServiceInCen invokes the cbn.ResolveAndRouteServiceInCen API synchronously
-// api document: https://help.aliyun.com/api/cbn/resolveandrouteserviceincen.html
 func (client *Client) ResolveAndRouteServiceInCen(request *ResolveAndRouteServiceInCenRequest) (response *ResolveAndRouteServiceInCenResponse, err error) {
 	response = CreateResolveAndRouteServiceInCenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResolveAndRouteServiceInCen(request *ResolveAndRouteServic
 }
 
 // ResolveAndRouteServiceInCenWithChan invokes the cbn.ResolveAndRouteServiceInCen API asynchronously
-// api document: https://help.aliyun.com/api/cbn/resolveandrouteserviceincen.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResolveAndRouteServiceInCenWithChan(request *ResolveAndRouteServiceInCenRequest) (<-chan *ResolveAndRouteServiceInCenResponse, <-chan error) {
 	responseChan := make(chan *ResolveAndRouteServiceInCenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResolveAndRouteServiceInCenWithChan(request *ResolveAndRou
 }
 
 // ResolveAndRouteServiceInCenWithCallback invokes the cbn.ResolveAndRouteServiceInCen API asynchronously
-// api document: https://help.aliyun.com/api/cbn/resolveandrouteserviceincen.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResolveAndRouteServiceInCenWithCallback(request *ResolveAndRouteServiceInCenRequest, callback func(response *ResolveAndRouteServiceInCenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,8 @@ func CreateResolveAndRouteServiceInCenRequest() (request *ResolveAndRouteService
 	request = &ResolveAndRouteServiceInCenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ResolveAndRouteServiceInCen", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ResolveAndRouteServiceInCen", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

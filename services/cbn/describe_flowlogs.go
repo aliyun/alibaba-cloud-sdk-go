@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFlowlogs invokes the cbn.DescribeFlowlogs API synchronously
-// api document: https://help.aliyun.com/api/cbn/describeflowlogs.html
 func (client *Client) DescribeFlowlogs(request *DescribeFlowlogsRequest) (response *DescribeFlowlogsResponse, err error) {
 	response = CreateDescribeFlowlogsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFlowlogs(request *DescribeFlowlogsRequest) (respon
 }
 
 // DescribeFlowlogsWithChan invokes the cbn.DescribeFlowlogs API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describeflowlogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowlogsWithChan(request *DescribeFlowlogsRequest) (<-chan *DescribeFlowlogsResponse, <-chan error) {
 	responseChan := make(chan *DescribeFlowlogsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFlowlogsWithChan(request *DescribeFlowlogsRequest)
 }
 
 // DescribeFlowlogsWithCallback invokes the cbn.DescribeFlowlogs API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describeflowlogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowlogsWithCallback(request *DescribeFlowlogsRequest, callback func(response *DescribeFlowlogsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -108,7 +103,8 @@ func CreateDescribeFlowlogsRequest() (request *DescribeFlowlogsRequest) {
 	request = &DescribeFlowlogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeFlowlogs", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeFlowlogs", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

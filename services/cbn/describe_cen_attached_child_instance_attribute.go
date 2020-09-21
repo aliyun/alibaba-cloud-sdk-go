@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCenAttachedChildInstanceAttribute invokes the cbn.DescribeCenAttachedChildInstanceAttribute API synchronously
-// api document: https://help.aliyun.com/api/cbn/describecenattachedchildinstanceattribute.html
 func (client *Client) DescribeCenAttachedChildInstanceAttribute(request *DescribeCenAttachedChildInstanceAttributeRequest) (response *DescribeCenAttachedChildInstanceAttributeResponse, err error) {
 	response = CreateDescribeCenAttachedChildInstanceAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCenAttachedChildInstanceAttribute(request *Describ
 }
 
 // DescribeCenAttachedChildInstanceAttributeWithChan invokes the cbn.DescribeCenAttachedChildInstanceAttribute API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecenattachedchildinstanceattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenAttachedChildInstanceAttributeWithChan(request *DescribeCenAttachedChildInstanceAttributeRequest) (<-chan *DescribeCenAttachedChildInstanceAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeCenAttachedChildInstanceAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCenAttachedChildInstanceAttributeWithChan(request 
 }
 
 // DescribeCenAttachedChildInstanceAttributeWithCallback invokes the cbn.DescribeCenAttachedChildInstanceAttribute API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecenattachedchildinstanceattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenAttachedChildInstanceAttributeWithCallback(request *DescribeCenAttachedChildInstanceAttributeRequest, callback func(response *DescribeCenAttachedChildInstanceAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -108,7 +103,8 @@ func CreateDescribeCenAttachedChildInstanceAttributeRequest() (request *Describe
 	request = &DescribeCenAttachedChildInstanceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstanceAttribute", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenAttachedChildInstanceAttribute", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

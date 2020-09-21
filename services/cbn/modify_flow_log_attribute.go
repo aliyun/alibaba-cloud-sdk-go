@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyFlowLogAttribute invokes the cbn.ModifyFlowLogAttribute API synchronously
-// api document: https://help.aliyun.com/api/cbn/modifyflowlogattribute.html
 func (client *Client) ModifyFlowLogAttribute(request *ModifyFlowLogAttributeRequest) (response *ModifyFlowLogAttributeResponse, err error) {
 	response = CreateModifyFlowLogAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyFlowLogAttribute(request *ModifyFlowLogAttributeRequ
 }
 
 // ModifyFlowLogAttributeWithChan invokes the cbn.ModifyFlowLogAttribute API asynchronously
-// api document: https://help.aliyun.com/api/cbn/modifyflowlogattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFlowLogAttributeWithChan(request *ModifyFlowLogAttributeRequest) (<-chan *ModifyFlowLogAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyFlowLogAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyFlowLogAttributeWithChan(request *ModifyFlowLogAttri
 }
 
 // ModifyFlowLogAttributeWithCallback invokes the cbn.ModifyFlowLogAttribute API asynchronously
-// api document: https://help.aliyun.com/api/cbn/modifyflowlogattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFlowLogAttributeWithCallback(request *ModifyFlowLogAttributeRequest, callback func(response *ModifyFlowLogAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,8 @@ func CreateModifyFlowLogAttributeRequest() (request *ModifyFlowLogAttributeReque
 	request = &ModifyFlowLogAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyFlowLogAttribute", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "ModifyFlowLogAttribute", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

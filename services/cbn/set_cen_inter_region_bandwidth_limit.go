@@ -21,7 +21,6 @@ import (
 )
 
 // SetCenInterRegionBandwidthLimit invokes the cbn.SetCenInterRegionBandwidthLimit API synchronously
-// api document: https://help.aliyun.com/api/cbn/setceninterregionbandwidthlimit.html
 func (client *Client) SetCenInterRegionBandwidthLimit(request *SetCenInterRegionBandwidthLimitRequest) (response *SetCenInterRegionBandwidthLimitResponse, err error) {
 	response = CreateSetCenInterRegionBandwidthLimitResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetCenInterRegionBandwidthLimit(request *SetCenInterRegion
 }
 
 // SetCenInterRegionBandwidthLimitWithChan invokes the cbn.SetCenInterRegionBandwidthLimit API asynchronously
-// api document: https://help.aliyun.com/api/cbn/setceninterregionbandwidthlimit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCenInterRegionBandwidthLimitWithChan(request *SetCenInterRegionBandwidthLimitRequest) (<-chan *SetCenInterRegionBandwidthLimitResponse, <-chan error) {
 	responseChan := make(chan *SetCenInterRegionBandwidthLimitResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetCenInterRegionBandwidthLimitWithChan(request *SetCenInt
 }
 
 // SetCenInterRegionBandwidthLimitWithCallback invokes the cbn.SetCenInterRegionBandwidthLimit API asynchronously
-// api document: https://help.aliyun.com/api/cbn/setceninterregionbandwidthlimit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCenInterRegionBandwidthLimitWithCallback(request *SetCenInterRegionBandwidthLimitRequest, callback func(response *SetCenInterRegionBandwidthLimitResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateSetCenInterRegionBandwidthLimitRequest() (request *SetCenInterRegionB
 	request = &SetCenInterRegionBandwidthLimitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "SetCenInterRegionBandwidthLimit", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "SetCenInterRegionBandwidthLimit", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCenRegionDomainRouteEntries invokes the cbn.DescribeCenRegionDomainRouteEntries API synchronously
-// api document: https://help.aliyun.com/api/cbn/describecenregiondomainrouteentries.html
 func (client *Client) DescribeCenRegionDomainRouteEntries(request *DescribeCenRegionDomainRouteEntriesRequest) (response *DescribeCenRegionDomainRouteEntriesResponse, err error) {
 	response = CreateDescribeCenRegionDomainRouteEntriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCenRegionDomainRouteEntries(request *DescribeCenRe
 }
 
 // DescribeCenRegionDomainRouteEntriesWithChan invokes the cbn.DescribeCenRegionDomainRouteEntries API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecenregiondomainrouteentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenRegionDomainRouteEntriesWithChan(request *DescribeCenRegionDomainRouteEntriesRequest) (<-chan *DescribeCenRegionDomainRouteEntriesResponse, <-chan error) {
 	responseChan := make(chan *DescribeCenRegionDomainRouteEntriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCenRegionDomainRouteEntriesWithChan(request *Descr
 }
 
 // DescribeCenRegionDomainRouteEntriesWithCallback invokes the cbn.DescribeCenRegionDomainRouteEntries API asynchronously
-// api document: https://help.aliyun.com/api/cbn/describecenregiondomainrouteentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCenRegionDomainRouteEntriesWithCallback(request *DescribeCenRegionDomainRouteEntriesRequest, callback func(response *DescribeCenRegionDomainRouteEntriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +77,7 @@ type DescribeCenRegionDomainRouteEntriesRequest struct {
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DestinationCidrBlock string           `position:"Query" name:"DestinationCidrBlock"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	CenRegionId          string           `position:"Query" name:"CenRegionId"`
 	Status               string           `position:"Query" name:"Status"`
@@ -102,7 +98,8 @@ func CreateDescribeCenRegionDomainRouteEntriesRequest() (request *DescribeCenReg
 	request = &DescribeCenRegionDomainRouteEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenRegionDomainRouteEntries", "Cbn", "openAPI")
+	request.InitWithApiInfo("Cbn", "2017-09-12", "DescribeCenRegionDomainRouteEntries", "cbn", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

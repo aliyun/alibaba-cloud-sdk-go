@@ -26,4 +26,5 @@ type VbrHealthCheck struct {
 	Delay               int64  `json:"Delay" xml:"Delay"`
 	HealthCheckInterval int    `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
 	HealthyThreshold    int    `json:"HealthyThreshold" xml:"HealthyThreshold"`
+	VbrInstanceRegionId string `json:"VbrInstanceRegionId" xml:"VbrInstanceRegionId"`
 }
