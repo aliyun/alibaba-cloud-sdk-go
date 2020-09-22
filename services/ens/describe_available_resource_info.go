@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAvailableResourceInfo invokes the ens.DescribeAvailableResourceInfo API synchronously
-// api document: https://help.aliyun.com/api/ens/describeavailableresourceinfo.html
 func (client *Client) DescribeAvailableResourceInfo(request *DescribeAvailableResourceInfoRequest) (response *DescribeAvailableResourceInfoResponse, err error) {
 	response = CreateDescribeAvailableResourceInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAvailableResourceInfo(request *DescribeAvailableRe
 }
 
 // DescribeAvailableResourceInfoWithChan invokes the ens.DescribeAvailableResourceInfo API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeavailableresourceinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableResourceInfoWithChan(request *DescribeAvailableResourceInfoRequest) (<-chan *DescribeAvailableResourceInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeAvailableResourceInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAvailableResourceInfoWithChan(request *DescribeAva
 }
 
 // DescribeAvailableResourceInfoWithCallback invokes the ens.DescribeAvailableResourceInfo API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeavailableresourceinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableResourceInfoWithCallback(request *DescribeAvailableResourceInfoRequest, callback func(response *DescribeAvailableResourceInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

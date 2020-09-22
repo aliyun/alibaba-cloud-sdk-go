@@ -21,7 +21,6 @@ import (
 )
 
 // RunServiceSchedule invokes the ens.RunServiceSchedule API synchronously
-// api document: https://help.aliyun.com/api/ens/runserviceschedule.html
 func (client *Client) RunServiceSchedule(request *RunServiceScheduleRequest) (response *RunServiceScheduleResponse, err error) {
 	response = CreateRunServiceScheduleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RunServiceSchedule(request *RunServiceScheduleRequest) (re
 }
 
 // RunServiceScheduleWithChan invokes the ens.RunServiceSchedule API asynchronously
-// api document: https://help.aliyun.com/api/ens/runserviceschedule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunServiceScheduleWithChan(request *RunServiceScheduleRequest) (<-chan *RunServiceScheduleResponse, <-chan error) {
 	responseChan := make(chan *RunServiceScheduleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RunServiceScheduleWithChan(request *RunServiceScheduleRequ
 }
 
 // RunServiceScheduleWithCallback invokes the ens.RunServiceSchedule API asynchronously
-// api document: https://help.aliyun.com/api/ens/runserviceschedule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunServiceScheduleWithCallback(request *RunServiceScheduleRequest, callback func(response *RunServiceScheduleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

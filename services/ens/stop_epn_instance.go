@@ -21,7 +21,6 @@ import (
 )
 
 // StopEpnInstance invokes the ens.StopEpnInstance API synchronously
-// api document: https://help.aliyun.com/api/ens/stopepninstance.html
 func (client *Client) StopEpnInstance(request *StopEpnInstanceRequest) (response *StopEpnInstanceResponse, err error) {
 	response = CreateStopEpnInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopEpnInstance(request *StopEpnInstanceRequest) (response
 }
 
 // StopEpnInstanceWithChan invokes the ens.StopEpnInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/stopepninstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopEpnInstanceWithChan(request *StopEpnInstanceRequest) (<-chan *StopEpnInstanceResponse, <-chan error) {
 	responseChan := make(chan *StopEpnInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopEpnInstanceWithChan(request *StopEpnInstanceRequest) (
 }
 
 // StopEpnInstanceWithCallback invokes the ens.StopEpnInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/stopepninstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopEpnInstanceWithCallback(request *StopEpnInstanceRequest, callback func(response *StopEpnInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

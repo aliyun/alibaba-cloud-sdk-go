@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEnsRegions invokes the ens.DescribeEnsRegions API synchronously
-// api document: https://help.aliyun.com/api/ens/describeensregions.html
 func (client *Client) DescribeEnsRegions(request *DescribeEnsRegionsRequest) (response *DescribeEnsRegionsResponse, err error) {
 	response = CreateDescribeEnsRegionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEnsRegions(request *DescribeEnsRegionsRequest) (re
 }
 
 // DescribeEnsRegionsWithChan invokes the ens.DescribeEnsRegions API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeensregions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEnsRegionsWithChan(request *DescribeEnsRegionsRequest) (<-chan *DescribeEnsRegionsResponse, <-chan error) {
 	responseChan := make(chan *DescribeEnsRegionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEnsRegionsWithChan(request *DescribeEnsRegionsRequ
 }
 
 // DescribeEnsRegionsWithCallback invokes the ens.DescribeEnsRegions API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeensregions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEnsRegionsWithCallback(request *DescribeEnsRegionsRequest, callback func(response *DescribeEnsRegionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

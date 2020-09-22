@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeServcieSchedule invokes the ens.DescribeServcieSchedule API synchronously
-// api document: https://help.aliyun.com/api/ens/describeservcieschedule.html
 func (client *Client) DescribeServcieSchedule(request *DescribeServcieScheduleRequest) (response *DescribeServcieScheduleResponse, err error) {
 	response = CreateDescribeServcieScheduleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeServcieSchedule(request *DescribeServcieScheduleRe
 }
 
 // DescribeServcieScheduleWithChan invokes the ens.DescribeServcieSchedule API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeservcieschedule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServcieScheduleWithChan(request *DescribeServcieScheduleRequest) (<-chan *DescribeServcieScheduleResponse, <-chan error) {
 	responseChan := make(chan *DescribeServcieScheduleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeServcieScheduleWithChan(request *DescribeServcieSc
 }
 
 // DescribeServcieScheduleWithCallback invokes the ens.DescribeServcieSchedule API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeservcieschedule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServcieScheduleWithCallback(request *DescribeServcieScheduleRequest, callback func(response *DescribeServcieScheduleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

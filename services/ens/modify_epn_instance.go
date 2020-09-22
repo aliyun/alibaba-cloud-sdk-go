@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyEpnInstance invokes the ens.ModifyEpnInstance API synchronously
-// api document: https://help.aliyun.com/api/ens/modifyepninstance.html
 func (client *Client) ModifyEpnInstance(request *ModifyEpnInstanceRequest) (response *ModifyEpnInstanceResponse, err error) {
 	response = CreateModifyEpnInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyEpnInstance(request *ModifyEpnInstanceRequest) (resp
 }
 
 // ModifyEpnInstanceWithChan invokes the ens.ModifyEpnInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/modifyepninstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyEpnInstanceWithChan(request *ModifyEpnInstanceRequest) (<-chan *ModifyEpnInstanceResponse, <-chan error) {
 	responseChan := make(chan *ModifyEpnInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyEpnInstanceWithChan(request *ModifyEpnInstanceReques
 }
 
 // ModifyEpnInstanceWithCallback invokes the ens.ModifyEpnInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/modifyepninstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyEpnInstanceWithCallback(request *ModifyEpnInstanceRequest, callback func(response *ModifyEpnInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

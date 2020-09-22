@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteEpnInstance invokes the ens.DeleteEpnInstance API synchronously
-// api document: https://help.aliyun.com/api/ens/deleteepninstance.html
 func (client *Client) DeleteEpnInstance(request *DeleteEpnInstanceRequest) (response *DeleteEpnInstanceResponse, err error) {
 	response = CreateDeleteEpnInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteEpnInstance(request *DeleteEpnInstanceRequest) (resp
 }
 
 // DeleteEpnInstanceWithChan invokes the ens.DeleteEpnInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/deleteepninstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEpnInstanceWithChan(request *DeleteEpnInstanceRequest) (<-chan *DeleteEpnInstanceResponse, <-chan error) {
 	responseChan := make(chan *DeleteEpnInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteEpnInstanceWithChan(request *DeleteEpnInstanceReques
 }
 
 // DeleteEpnInstanceWithCallback invokes the ens.DeleteEpnInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/deleteepninstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEpnInstanceWithCallback(request *DeleteEpnInstanceRequest, callback func(response *DeleteEpnInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

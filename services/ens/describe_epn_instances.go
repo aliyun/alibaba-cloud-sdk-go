@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEpnInstances invokes the ens.DescribeEpnInstances API synchronously
-// api document: https://help.aliyun.com/api/ens/describeepninstances.html
 func (client *Client) DescribeEpnInstances(request *DescribeEpnInstancesRequest) (response *DescribeEpnInstancesResponse, err error) {
 	response = CreateDescribeEpnInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEpnInstances(request *DescribeEpnInstancesRequest)
 }
 
 // DescribeEpnInstancesWithChan invokes the ens.DescribeEpnInstances API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeepninstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEpnInstancesWithChan(request *DescribeEpnInstancesRequest) (<-chan *DescribeEpnInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeEpnInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEpnInstancesWithChan(request *DescribeEpnInstances
 }
 
 // DescribeEpnInstancesWithCallback invokes the ens.DescribeEpnInstances API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeepninstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEpnInstancesWithCallback(request *DescribeEpnInstancesRequest, callback func(response *DescribeEpnInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

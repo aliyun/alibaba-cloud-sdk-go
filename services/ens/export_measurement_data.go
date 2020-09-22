@@ -21,7 +21,6 @@ import (
 )
 
 // ExportMeasurementData invokes the ens.ExportMeasurementData API synchronously
-// api document: https://help.aliyun.com/api/ens/exportmeasurementdata.html
 func (client *Client) ExportMeasurementData(request *ExportMeasurementDataRequest) (response *ExportMeasurementDataResponse, err error) {
 	response = CreateExportMeasurementDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExportMeasurementData(request *ExportMeasurementDataReques
 }
 
 // ExportMeasurementDataWithChan invokes the ens.ExportMeasurementData API asynchronously
-// api document: https://help.aliyun.com/api/ens/exportmeasurementdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportMeasurementDataWithChan(request *ExportMeasurementDataRequest) (<-chan *ExportMeasurementDataResponse, <-chan error) {
 	responseChan := make(chan *ExportMeasurementDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExportMeasurementDataWithChan(request *ExportMeasurementDa
 }
 
 // ExportMeasurementDataWithCallback invokes the ens.ExportMeasurementData API asynchronously
-// api document: https://help.aliyun.com/api/ens/exportmeasurementdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportMeasurementDataWithCallback(request *ExportMeasurementDataRequest, callback func(response *ExportMeasurementDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

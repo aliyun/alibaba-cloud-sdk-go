@@ -21,7 +21,6 @@ import (
 )
 
 // UpgradeApplication invokes the ens.UpgradeApplication API synchronously
-// api document: https://help.aliyun.com/api/ens/upgradeapplication.html
 func (client *Client) UpgradeApplication(request *UpgradeApplicationRequest) (response *UpgradeApplicationResponse, err error) {
 	response = CreateUpgradeApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpgradeApplication(request *UpgradeApplicationRequest) (re
 }
 
 // UpgradeApplicationWithChan invokes the ens.UpgradeApplication API asynchronously
-// api document: https://help.aliyun.com/api/ens/upgradeapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeApplicationWithChan(request *UpgradeApplicationRequest) (<-chan *UpgradeApplicationResponse, <-chan error) {
 	responseChan := make(chan *UpgradeApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpgradeApplicationWithChan(request *UpgradeApplicationRequ
 }
 
 // UpgradeApplicationWithCallback invokes the ens.UpgradeApplication API asynchronously
-// api document: https://help.aliyun.com/api/ens/upgradeapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeApplicationWithCallback(request *UpgradeApplicationRequest, callback func(response *UpgradeApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeReservedResource invokes the ens.DescribeReservedResource API synchronously
-// api document: https://help.aliyun.com/api/ens/describereservedresource.html
 func (client *Client) DescribeReservedResource(request *DescribeReservedResourceRequest) (response *DescribeReservedResourceResponse, err error) {
 	response = CreateDescribeReservedResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeReservedResource(request *DescribeReservedResource
 }
 
 // DescribeReservedResourceWithChan invokes the ens.DescribeReservedResource API asynchronously
-// api document: https://help.aliyun.com/api/ens/describereservedresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReservedResourceWithChan(request *DescribeReservedResourceRequest) (<-chan *DescribeReservedResourceResponse, <-chan error) {
 	responseChan := make(chan *DescribeReservedResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeReservedResourceWithChan(request *DescribeReserved
 }
 
 // DescribeReservedResourceWithCallback invokes the ens.DescribeReservedResource API asynchronously
-// api document: https://help.aliyun.com/api/ens/describereservedresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReservedResourceWithCallback(request *DescribeReservedResourceRequest, callback func(response *DescribeReservedResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

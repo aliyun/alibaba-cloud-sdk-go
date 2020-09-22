@@ -21,7 +21,6 @@ import (
 )
 
 // ExportBillDetailData invokes the ens.ExportBillDetailData API synchronously
-// api document: https://help.aliyun.com/api/ens/exportbilldetaildata.html
 func (client *Client) ExportBillDetailData(request *ExportBillDetailDataRequest) (response *ExportBillDetailDataResponse, err error) {
 	response = CreateExportBillDetailDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExportBillDetailData(request *ExportBillDetailDataRequest)
 }
 
 // ExportBillDetailDataWithChan invokes the ens.ExportBillDetailData API asynchronously
-// api document: https://help.aliyun.com/api/ens/exportbilldetaildata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportBillDetailDataWithChan(request *ExportBillDetailDataRequest) (<-chan *ExportBillDetailDataResponse, <-chan error) {
 	responseChan := make(chan *ExportBillDetailDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExportBillDetailDataWithChan(request *ExportBillDetailData
 }
 
 // ExportBillDetailDataWithCallback invokes the ens.ExportBillDetailData API asynchronously
-// api document: https://help.aliyun.com/api/ens/exportbilldetaildata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportBillDetailDataWithCallback(request *ExportBillDetailDataRequest, callback func(response *ExportBillDetailDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

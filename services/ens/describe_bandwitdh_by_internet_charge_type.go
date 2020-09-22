@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBandwitdhByInternetChargeType invokes the ens.DescribeBandwitdhByInternetChargeType API synchronously
-// api document: https://help.aliyun.com/api/ens/describebandwitdhbyinternetchargetype.html
 func (client *Client) DescribeBandwitdhByInternetChargeType(request *DescribeBandwitdhByInternetChargeTypeRequest) (response *DescribeBandwitdhByInternetChargeTypeResponse, err error) {
 	response = CreateDescribeBandwitdhByInternetChargeTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBandwitdhByInternetChargeType(request *DescribeBan
 }
 
 // DescribeBandwitdhByInternetChargeTypeWithChan invokes the ens.DescribeBandwitdhByInternetChargeType API asynchronously
-// api document: https://help.aliyun.com/api/ens/describebandwitdhbyinternetchargetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBandwitdhByInternetChargeTypeWithChan(request *DescribeBandwitdhByInternetChargeTypeRequest) (<-chan *DescribeBandwitdhByInternetChargeTypeResponse, <-chan error) {
 	responseChan := make(chan *DescribeBandwitdhByInternetChargeTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBandwitdhByInternetChargeTypeWithChan(request *Des
 }
 
 // DescribeBandwitdhByInternetChargeTypeWithCallback invokes the ens.DescribeBandwitdhByInternetChargeType API asynchronously
-// api document: https://help.aliyun.com/api/ens/describebandwitdhbyinternetchargetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBandwitdhByInternetChargeTypeWithCallback(request *DescribeBandwitdhByInternetChargeTypeRequest, callback func(response *DescribeBandwitdhByInternetChargeTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

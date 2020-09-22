@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEnsNetSaleDistrict invokes the ens.DescribeEnsNetSaleDistrict API synchronously
-// api document: https://help.aliyun.com/api/ens/describeensnetsaledistrict.html
 func (client *Client) DescribeEnsNetSaleDistrict(request *DescribeEnsNetSaleDistrictRequest) (response *DescribeEnsNetSaleDistrictResponse, err error) {
 	response = CreateDescribeEnsNetSaleDistrictResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEnsNetSaleDistrict(request *DescribeEnsNetSaleDist
 }
 
 // DescribeEnsNetSaleDistrictWithChan invokes the ens.DescribeEnsNetSaleDistrict API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeensnetsaledistrict.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEnsNetSaleDistrictWithChan(request *DescribeEnsNetSaleDistrictRequest) (<-chan *DescribeEnsNetSaleDistrictResponse, <-chan error) {
 	responseChan := make(chan *DescribeEnsNetSaleDistrictResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEnsNetSaleDistrictWithChan(request *DescribeEnsNet
 }
 
 // DescribeEnsNetSaleDistrictWithCallback invokes the ens.DescribeEnsNetSaleDistrict API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeensnetsaledistrict.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEnsNetSaleDistrictWithCallback(request *DescribeEnsNetSaleDistrictRequest, callback func(response *DescribeEnsNetSaleDistrictResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeExportImageInfo invokes the ens.DescribeExportImageInfo API synchronously
-// api document: https://help.aliyun.com/api/ens/describeexportimageinfo.html
 func (client *Client) DescribeExportImageInfo(request *DescribeExportImageInfoRequest) (response *DescribeExportImageInfoResponse, err error) {
 	response = CreateDescribeExportImageInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeExportImageInfo(request *DescribeExportImageInfoRe
 }
 
 // DescribeExportImageInfoWithChan invokes the ens.DescribeExportImageInfo API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeexportimageinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExportImageInfoWithChan(request *DescribeExportImageInfoRequest) (<-chan *DescribeExportImageInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeExportImageInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeExportImageInfoWithChan(request *DescribeExportIma
 }
 
 // DescribeExportImageInfoWithCallback invokes the ens.DescribeExportImageInfo API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeexportimageinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExportImageInfoWithCallback(request *DescribeExportImageInfoRequest, callback func(response *DescribeExportImageInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

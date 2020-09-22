@@ -21,7 +21,6 @@ import (
 )
 
 // CreateApplication invokes the ens.CreateApplication API synchronously
-// api document: https://help.aliyun.com/api/ens/createapplication.html
 func (client *Client) CreateApplication(request *CreateApplicationRequest) (response *CreateApplicationResponse, err error) {
 	response = CreateCreateApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateApplication(request *CreateApplicationRequest) (resp
 }
 
 // CreateApplicationWithChan invokes the ens.CreateApplication API asynchronously
-// api document: https://help.aliyun.com/api/ens/createapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateApplicationWithChan(request *CreateApplicationRequest) (<-chan *CreateApplicationResponse, <-chan error) {
 	responseChan := make(chan *CreateApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateApplicationWithChan(request *CreateApplicationReques
 }
 
 // CreateApplicationWithCallback invokes the ens.CreateApplication API asynchronously
-// api document: https://help.aliyun.com/api/ens/createapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateApplicationWithCallback(request *CreateApplicationRequest, callback func(response *CreateApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

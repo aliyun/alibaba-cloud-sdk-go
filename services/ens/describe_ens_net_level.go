@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEnsNetLevel invokes the ens.DescribeEnsNetLevel API synchronously
-// api document: https://help.aliyun.com/api/ens/describeensnetlevel.html
 func (client *Client) DescribeEnsNetLevel(request *DescribeEnsNetLevelRequest) (response *DescribeEnsNetLevelResponse, err error) {
 	response = CreateDescribeEnsNetLevelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEnsNetLevel(request *DescribeEnsNetLevelRequest) (
 }
 
 // DescribeEnsNetLevelWithChan invokes the ens.DescribeEnsNetLevel API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeensnetlevel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEnsNetLevelWithChan(request *DescribeEnsNetLevelRequest) (<-chan *DescribeEnsNetLevelResponse, <-chan error) {
 	responseChan := make(chan *DescribeEnsNetLevelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEnsNetLevelWithChan(request *DescribeEnsNetLevelRe
 }
 
 // DescribeEnsNetLevelWithCallback invokes the ens.DescribeEnsNetLevel API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeensnetlevel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEnsNetLevelWithCallback(request *DescribeEnsNetLevelRequest, callback func(response *DescribeEnsNetLevelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

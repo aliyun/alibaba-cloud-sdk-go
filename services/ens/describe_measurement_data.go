@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMeasurementData invokes the ens.DescribeMeasurementData API synchronously
-// api document: https://help.aliyun.com/api/ens/describemeasurementdata.html
 func (client *Client) DescribeMeasurementData(request *DescribeMeasurementDataRequest) (response *DescribeMeasurementDataResponse, err error) {
 	response = CreateDescribeMeasurementDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMeasurementData(request *DescribeMeasurementDataRe
 }
 
 // DescribeMeasurementDataWithChan invokes the ens.DescribeMeasurementData API asynchronously
-// api document: https://help.aliyun.com/api/ens/describemeasurementdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMeasurementDataWithChan(request *DescribeMeasurementDataRequest) (<-chan *DescribeMeasurementDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeMeasurementDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMeasurementDataWithChan(request *DescribeMeasureme
 }
 
 // DescribeMeasurementDataWithCallback invokes the ens.DescribeMeasurementData API asynchronously
-// api document: https://help.aliyun.com/api/ens/describemeasurementdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMeasurementDataWithCallback(request *DescribeMeasurementDataRequest, callback func(response *DescribeMeasurementDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

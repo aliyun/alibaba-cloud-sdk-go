@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBandWithdChargeType invokes the ens.DescribeBandWithdChargeType API synchronously
-// api document: https://help.aliyun.com/api/ens/describebandwithdchargetype.html
 func (client *Client) DescribeBandWithdChargeType(request *DescribeBandWithdChargeTypeRequest) (response *DescribeBandWithdChargeTypeResponse, err error) {
 	response = CreateDescribeBandWithdChargeTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBandWithdChargeType(request *DescribeBandWithdChar
 }
 
 // DescribeBandWithdChargeTypeWithChan invokes the ens.DescribeBandWithdChargeType API asynchronously
-// api document: https://help.aliyun.com/api/ens/describebandwithdchargetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBandWithdChargeTypeWithChan(request *DescribeBandWithdChargeTypeRequest) (<-chan *DescribeBandWithdChargeTypeResponse, <-chan error) {
 	responseChan := make(chan *DescribeBandWithdChargeTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBandWithdChargeTypeWithChan(request *DescribeBandW
 }
 
 // DescribeBandWithdChargeTypeWithCallback invokes the ens.DescribeBandWithdChargeType API asynchronously
-// api document: https://help.aliyun.com/api/ens/describebandwithdchargetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBandWithdChargeTypeWithCallback(request *DescribeBandWithdChargeTypeRequest, callback func(response *DescribeBandWithdChargeTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

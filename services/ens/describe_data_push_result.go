@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDataPushResult invokes the ens.DescribeDataPushResult API synchronously
-// api document: https://help.aliyun.com/api/ens/describedatapushresult.html
 func (client *Client) DescribeDataPushResult(request *DescribeDataPushResultRequest) (response *DescribeDataPushResultResponse, err error) {
 	response = CreateDescribeDataPushResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDataPushResult(request *DescribeDataPushResultRequ
 }
 
 // DescribeDataPushResultWithChan invokes the ens.DescribeDataPushResult API asynchronously
-// api document: https://help.aliyun.com/api/ens/describedatapushresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataPushResultWithChan(request *DescribeDataPushResultRequest) (<-chan *DescribeDataPushResultResponse, <-chan error) {
 	responseChan := make(chan *DescribeDataPushResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDataPushResultWithChan(request *DescribeDataPushRe
 }
 
 // DescribeDataPushResultWithCallback invokes the ens.DescribeDataPushResult API asynchronously
-// api document: https://help.aliyun.com/api/ens/describedatapushresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataPushResultWithCallback(request *DescribeDataPushResultRequest, callback func(response *DescribeDataPushResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

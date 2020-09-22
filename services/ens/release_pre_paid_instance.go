@@ -21,7 +21,6 @@ import (
 )
 
 // ReleasePrePaidInstance invokes the ens.ReleasePrePaidInstance API synchronously
-// api document: https://help.aliyun.com/api/ens/releaseprepaidinstance.html
 func (client *Client) ReleasePrePaidInstance(request *ReleasePrePaidInstanceRequest) (response *ReleasePrePaidInstanceResponse, err error) {
 	response = CreateReleasePrePaidInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReleasePrePaidInstance(request *ReleasePrePaidInstanceRequ
 }
 
 // ReleasePrePaidInstanceWithChan invokes the ens.ReleasePrePaidInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/releaseprepaidinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleasePrePaidInstanceWithChan(request *ReleasePrePaidInstanceRequest) (<-chan *ReleasePrePaidInstanceResponse, <-chan error) {
 	responseChan := make(chan *ReleasePrePaidInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReleasePrePaidInstanceWithChan(request *ReleasePrePaidInst
 }
 
 // ReleasePrePaidInstanceWithCallback invokes the ens.ReleasePrePaidInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/releaseprepaidinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleasePrePaidInstanceWithCallback(request *ReleasePrePaidInstanceRequest, callback func(response *ReleasePrePaidInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

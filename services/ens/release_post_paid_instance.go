@@ -21,7 +21,6 @@ import (
 )
 
 // ReleasePostPaidInstance invokes the ens.ReleasePostPaidInstance API synchronously
-// api document: https://help.aliyun.com/api/ens/releasepostpaidinstance.html
 func (client *Client) ReleasePostPaidInstance(request *ReleasePostPaidInstanceRequest) (response *ReleasePostPaidInstanceResponse, err error) {
 	response = CreateReleasePostPaidInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReleasePostPaidInstance(request *ReleasePostPaidInstanceRe
 }
 
 // ReleasePostPaidInstanceWithChan invokes the ens.ReleasePostPaidInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/releasepostpaidinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleasePostPaidInstanceWithChan(request *ReleasePostPaidInstanceRequest) (<-chan *ReleasePostPaidInstanceResponse, <-chan error) {
 	responseChan := make(chan *ReleasePostPaidInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReleasePostPaidInstanceWithChan(request *ReleasePostPaidIn
 }
 
 // ReleasePostPaidInstanceWithCallback invokes the ens.ReleasePostPaidInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/releasepostpaidinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleasePostPaidInstanceWithCallback(request *ReleasePostPaidInstanceRequest, callback func(response *ReleasePostPaidInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

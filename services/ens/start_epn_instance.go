@@ -21,7 +21,6 @@ import (
 )
 
 // StartEpnInstance invokes the ens.StartEpnInstance API synchronously
-// api document: https://help.aliyun.com/api/ens/startepninstance.html
 func (client *Client) StartEpnInstance(request *StartEpnInstanceRequest) (response *StartEpnInstanceResponse, err error) {
 	response = CreateStartEpnInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartEpnInstance(request *StartEpnInstanceRequest) (respon
 }
 
 // StartEpnInstanceWithChan invokes the ens.StartEpnInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/startepninstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartEpnInstanceWithChan(request *StartEpnInstanceRequest) (<-chan *StartEpnInstanceResponse, <-chan error) {
 	responseChan := make(chan *StartEpnInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartEpnInstanceWithChan(request *StartEpnInstanceRequest)
 }
 
 // StartEpnInstanceWithCallback invokes the ens.StartEpnInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/startepninstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartEpnInstanceWithCallback(request *StartEpnInstanceRequest, callback func(response *StartEpnInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

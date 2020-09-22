@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDataDistResult invokes the ens.DescribeDataDistResult API synchronously
-// api document: https://help.aliyun.com/api/ens/describedatadistresult.html
 func (client *Client) DescribeDataDistResult(request *DescribeDataDistResultRequest) (response *DescribeDataDistResultResponse, err error) {
 	response = CreateDescribeDataDistResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDataDistResult(request *DescribeDataDistResultRequ
 }
 
 // DescribeDataDistResultWithChan invokes the ens.DescribeDataDistResult API asynchronously
-// api document: https://help.aliyun.com/api/ens/describedatadistresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataDistResultWithChan(request *DescribeDataDistResultRequest) (<-chan *DescribeDataDistResultResponse, <-chan error) {
 	responseChan := make(chan *DescribeDataDistResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDataDistResultWithChan(request *DescribeDataDistRe
 }
 
 // DescribeDataDistResultWithCallback invokes the ens.DescribeDataDistResult API asynchronously
-// api document: https://help.aliyun.com/api/ens/describedatadistresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataDistResultWithCallback(request *DescribeDataDistResultRequest, callback func(response *DescribeDataDistResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

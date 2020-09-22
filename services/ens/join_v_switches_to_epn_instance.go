@@ -21,7 +21,6 @@ import (
 )
 
 // JoinVSwitchesToEpnInstance invokes the ens.JoinVSwitchesToEpnInstance API synchronously
-// api document: https://help.aliyun.com/api/ens/joinvswitchestoepninstance.html
 func (client *Client) JoinVSwitchesToEpnInstance(request *JoinVSwitchesToEpnInstanceRequest) (response *JoinVSwitchesToEpnInstanceResponse, err error) {
 	response = CreateJoinVSwitchesToEpnInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) JoinVSwitchesToEpnInstance(request *JoinVSwitchesToEpnInst
 }
 
 // JoinVSwitchesToEpnInstanceWithChan invokes the ens.JoinVSwitchesToEpnInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/joinvswitchestoepninstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinVSwitchesToEpnInstanceWithChan(request *JoinVSwitchesToEpnInstanceRequest) (<-chan *JoinVSwitchesToEpnInstanceResponse, <-chan error) {
 	responseChan := make(chan *JoinVSwitchesToEpnInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) JoinVSwitchesToEpnInstanceWithChan(request *JoinVSwitchesT
 }
 
 // JoinVSwitchesToEpnInstanceWithCallback invokes the ens.JoinVSwitchesToEpnInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/joinvswitchestoepninstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinVSwitchesToEpnInstanceWithCallback(request *JoinVSwitchesToEpnInstanceRequest, callback func(response *JoinVSwitchesToEpnInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

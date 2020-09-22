@@ -21,7 +21,6 @@ import (
 )
 
 // RemovePublicIpsFromEpnInstance invokes the ens.RemovePublicIpsFromEpnInstance API synchronously
-// api document: https://help.aliyun.com/api/ens/removepublicipsfromepninstance.html
 func (client *Client) RemovePublicIpsFromEpnInstance(request *RemovePublicIpsFromEpnInstanceRequest) (response *RemovePublicIpsFromEpnInstanceResponse, err error) {
 	response = CreateRemovePublicIpsFromEpnInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemovePublicIpsFromEpnInstance(request *RemovePublicIpsFro
 }
 
 // RemovePublicIpsFromEpnInstanceWithChan invokes the ens.RemovePublicIpsFromEpnInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/removepublicipsfromepninstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemovePublicIpsFromEpnInstanceWithChan(request *RemovePublicIpsFromEpnInstanceRequest) (<-chan *RemovePublicIpsFromEpnInstanceResponse, <-chan error) {
 	responseChan := make(chan *RemovePublicIpsFromEpnInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemovePublicIpsFromEpnInstanceWithChan(request *RemovePubl
 }
 
 // RemovePublicIpsFromEpnInstanceWithCallback invokes the ens.RemovePublicIpsFromEpnInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/removepublicipsfromepninstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemovePublicIpsFromEpnInstanceWithCallback(request *RemovePublicIpsFromEpnInstanceRequest, callback func(response *RemovePublicIpsFromEpnInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

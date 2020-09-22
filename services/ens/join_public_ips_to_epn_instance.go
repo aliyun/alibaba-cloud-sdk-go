@@ -21,7 +21,6 @@ import (
 )
 
 // JoinPublicIpsToEpnInstance invokes the ens.JoinPublicIpsToEpnInstance API synchronously
-// api document: https://help.aliyun.com/api/ens/joinpublicipstoepninstance.html
 func (client *Client) JoinPublicIpsToEpnInstance(request *JoinPublicIpsToEpnInstanceRequest) (response *JoinPublicIpsToEpnInstanceResponse, err error) {
 	response = CreateJoinPublicIpsToEpnInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) JoinPublicIpsToEpnInstance(request *JoinPublicIpsToEpnInst
 }
 
 // JoinPublicIpsToEpnInstanceWithChan invokes the ens.JoinPublicIpsToEpnInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/joinpublicipstoepninstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinPublicIpsToEpnInstanceWithChan(request *JoinPublicIpsToEpnInstanceRequest) (<-chan *JoinPublicIpsToEpnInstanceResponse, <-chan error) {
 	responseChan := make(chan *JoinPublicIpsToEpnInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) JoinPublicIpsToEpnInstanceWithChan(request *JoinPublicIpsT
 }
 
 // JoinPublicIpsToEpnInstanceWithCallback invokes the ens.JoinPublicIpsToEpnInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/joinpublicipstoepninstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinPublicIpsToEpnInstanceWithCallback(request *JoinPublicIpsToEpnInstanceRequest, callback func(response *JoinPublicIpsToEpnInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

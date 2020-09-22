@@ -21,7 +21,6 @@ import (
 )
 
 // PushApplicationData invokes the ens.PushApplicationData API synchronously
-// api document: https://help.aliyun.com/api/ens/pushapplicationdata.html
 func (client *Client) PushApplicationData(request *PushApplicationDataRequest) (response *PushApplicationDataResponse, err error) {
 	response = CreatePushApplicationDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PushApplicationData(request *PushApplicationDataRequest) (
 }
 
 // PushApplicationDataWithChan invokes the ens.PushApplicationData API asynchronously
-// api document: https://help.aliyun.com/api/ens/pushapplicationdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushApplicationDataWithChan(request *PushApplicationDataRequest) (<-chan *PushApplicationDataResponse, <-chan error) {
 	responseChan := make(chan *PushApplicationDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PushApplicationDataWithChan(request *PushApplicationDataRe
 }
 
 // PushApplicationDataWithCallback invokes the ens.PushApplicationData API asynchronously
-// api document: https://help.aliyun.com/api/ens/pushapplicationdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushApplicationDataWithCallback(request *PushApplicationDataRequest, callback func(response *PushApplicationDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

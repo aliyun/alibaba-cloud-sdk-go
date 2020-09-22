@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApplicationResourceSummary invokes the ens.DescribeApplicationResourceSummary API synchronously
-// api document: https://help.aliyun.com/api/ens/describeapplicationresourcesummary.html
 func (client *Client) DescribeApplicationResourceSummary(request *DescribeApplicationResourceSummaryRequest) (response *DescribeApplicationResourceSummaryResponse, err error) {
 	response = CreateDescribeApplicationResourceSummaryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApplicationResourceSummary(request *DescribeApplic
 }
 
 // DescribeApplicationResourceSummaryWithChan invokes the ens.DescribeApplicationResourceSummary API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeapplicationresourcesummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApplicationResourceSummaryWithChan(request *DescribeApplicationResourceSummaryRequest) (<-chan *DescribeApplicationResourceSummaryResponse, <-chan error) {
 	responseChan := make(chan *DescribeApplicationResourceSummaryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApplicationResourceSummaryWithChan(request *Descri
 }
 
 // DescribeApplicationResourceSummaryWithCallback invokes the ens.DescribeApplicationResourceSummary API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeapplicationresourcesummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApplicationResourceSummaryWithCallback(request *DescribeApplicationResourceSummaryRequest, callback func(response *DescribeApplicationResourceSummaryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

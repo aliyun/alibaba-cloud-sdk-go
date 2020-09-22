@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveVSwitchesFromEpnInstance invokes the ens.RemoveVSwitchesFromEpnInstance API synchronously
-// api document: https://help.aliyun.com/api/ens/removevswitchesfromepninstance.html
 func (client *Client) RemoveVSwitchesFromEpnInstance(request *RemoveVSwitchesFromEpnInstanceRequest) (response *RemoveVSwitchesFromEpnInstanceResponse, err error) {
 	response = CreateRemoveVSwitchesFromEpnInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveVSwitchesFromEpnInstance(request *RemoveVSwitchesFro
 }
 
 // RemoveVSwitchesFromEpnInstanceWithChan invokes the ens.RemoveVSwitchesFromEpnInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/removevswitchesfromepninstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveVSwitchesFromEpnInstanceWithChan(request *RemoveVSwitchesFromEpnInstanceRequest) (<-chan *RemoveVSwitchesFromEpnInstanceResponse, <-chan error) {
 	responseChan := make(chan *RemoveVSwitchesFromEpnInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveVSwitchesFromEpnInstanceWithChan(request *RemoveVSwi
 }
 
 // RemoveVSwitchesFromEpnInstanceWithCallback invokes the ens.RemoveVSwitchesFromEpnInstance API asynchronously
-// api document: https://help.aliyun.com/api/ens/removevswitchesfromepninstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveVSwitchesFromEpnInstanceWithCallback(request *RemoveVSwitchesFromEpnInstanceRequest, callback func(response *RemoveVSwitchesFromEpnInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

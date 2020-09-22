@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEnsRegionIdIpv6Info invokes the ens.DescribeEnsRegionIdIpv6Info API synchronously
-// api document: https://help.aliyun.com/api/ens/describeensregionidipv6info.html
 func (client *Client) DescribeEnsRegionIdIpv6Info(request *DescribeEnsRegionIdIpv6InfoRequest) (response *DescribeEnsRegionIdIpv6InfoResponse, err error) {
 	response = CreateDescribeEnsRegionIdIpv6InfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEnsRegionIdIpv6Info(request *DescribeEnsRegionIdIp
 }
 
 // DescribeEnsRegionIdIpv6InfoWithChan invokes the ens.DescribeEnsRegionIdIpv6Info API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeensregionidipv6info.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEnsRegionIdIpv6InfoWithChan(request *DescribeEnsRegionIdIpv6InfoRequest) (<-chan *DescribeEnsRegionIdIpv6InfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeEnsRegionIdIpv6InfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEnsRegionIdIpv6InfoWithChan(request *DescribeEnsRe
 }
 
 // DescribeEnsRegionIdIpv6InfoWithCallback invokes the ens.DescribeEnsRegionIdIpv6Info API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeensregionidipv6info.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEnsRegionIdIpv6InfoWithCallback(request *DescribeEnsRegionIdIpv6InfoRequest, callback func(response *DescribeEnsRegionIdIpv6InfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

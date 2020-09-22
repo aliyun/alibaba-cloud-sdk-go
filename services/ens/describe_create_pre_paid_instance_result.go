@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCreatePrePaidInstanceResult invokes the ens.DescribeCreatePrePaidInstanceResult API synchronously
-// api document: https://help.aliyun.com/api/ens/describecreateprepaidinstanceresult.html
 func (client *Client) DescribeCreatePrePaidInstanceResult(request *DescribeCreatePrePaidInstanceResultRequest) (response *DescribeCreatePrePaidInstanceResultResponse, err error) {
 	response = CreateDescribeCreatePrePaidInstanceResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCreatePrePaidInstanceResult(request *DescribeCreat
 }
 
 // DescribeCreatePrePaidInstanceResultWithChan invokes the ens.DescribeCreatePrePaidInstanceResult API asynchronously
-// api document: https://help.aliyun.com/api/ens/describecreateprepaidinstanceresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCreatePrePaidInstanceResultWithChan(request *DescribeCreatePrePaidInstanceResultRequest) (<-chan *DescribeCreatePrePaidInstanceResultResponse, <-chan error) {
 	responseChan := make(chan *DescribeCreatePrePaidInstanceResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCreatePrePaidInstanceResultWithChan(request *Descr
 }
 
 // DescribeCreatePrePaidInstanceResultWithCallback invokes the ens.DescribeCreatePrePaidInstanceResult API asynchronously
-// api document: https://help.aliyun.com/api/ens/describecreateprepaidinstanceresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCreatePrePaidInstanceResultWithCallback(request *DescribeCreatePrePaidInstanceResultRequest, callback func(response *DescribeCreatePrePaidInstanceResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // AttachEnsInstances invokes the ens.AttachEnsInstances API synchronously
-// api document: https://help.aliyun.com/api/ens/attachensinstances.html
 func (client *Client) AttachEnsInstances(request *AttachEnsInstancesRequest) (response *AttachEnsInstancesResponse, err error) {
 	response = CreateAttachEnsInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AttachEnsInstances(request *AttachEnsInstancesRequest) (re
 }
 
 // AttachEnsInstancesWithChan invokes the ens.AttachEnsInstances API asynchronously
-// api document: https://help.aliyun.com/api/ens/attachensinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachEnsInstancesWithChan(request *AttachEnsInstancesRequest) (<-chan *AttachEnsInstancesResponse, <-chan error) {
 	responseChan := make(chan *AttachEnsInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AttachEnsInstancesWithChan(request *AttachEnsInstancesRequ
 }
 
 // AttachEnsInstancesWithCallback invokes the ens.AttachEnsInstances API asynchronously
-// api document: https://help.aliyun.com/api/ens/attachensinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachEnsInstancesWithCallback(request *AttachEnsInstancesRequest, callback func(response *AttachEnsInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

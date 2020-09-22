@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateEpnInstance invokes the ens.CreateEpnInstance API synchronously
-func (client *Client) CreateEpnInstance(request *CreateEpnInstanceRequest) (response *CreateEpnInstanceResponse, err error) {
-	response = CreateCreateEpnInstanceResponse()
+// CreateEPInstance invokes the ens.CreateEPInstance API synchronously
+func (client *Client) CreateEPInstance(request *CreateEPInstanceRequest) (response *CreateEPInstanceResponse, err error) {
+	response = CreateCreateEPInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateEpnInstanceWithChan invokes the ens.CreateEpnInstance API asynchronously
-func (client *Client) CreateEpnInstanceWithChan(request *CreateEpnInstanceRequest) (<-chan *CreateEpnInstanceResponse, <-chan error) {
-	responseChan := make(chan *CreateEpnInstanceResponse, 1)
+// CreateEPInstanceWithChan invokes the ens.CreateEPInstance API asynchronously
+func (client *Client) CreateEPInstanceWithChan(request *CreateEPInstanceRequest) (<-chan *CreateEPInstanceResponse, <-chan error) {
+	responseChan := make(chan *CreateEPInstanceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateEpnInstance(request)
+		response, err := client.CreateEPInstance(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateEpnInstanceWithChan(request *CreateEpnInstanceReques
 	return responseChan, errChan
 }
 
-// CreateEpnInstanceWithCallback invokes the ens.CreateEpnInstance API asynchronously
-func (client *Client) CreateEpnInstanceWithCallback(request *CreateEpnInstanceRequest, callback func(response *CreateEpnInstanceResponse, err error)) <-chan int {
+// CreateEPInstanceWithCallback invokes the ens.CreateEPInstance API asynchronously
+func (client *Client) CreateEPInstanceWithCallback(request *CreateEPInstanceRequest, callback func(response *CreateEPInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateEpnInstanceResponse
+		var response *CreateEPInstanceResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateEpnInstance(request)
+		response, err = client.CreateEPInstance(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,8 +68,8 @@ func (client *Client) CreateEpnInstanceWithCallback(request *CreateEpnInstanceRe
 	return result
 }
 
-// CreateEpnInstanceRequest is the request struct for api CreateEpnInstance
-type CreateEpnInstanceRequest struct {
+// CreateEPInstanceRequest is the request struct for api CreateEPInstance
+type CreateEPInstanceRequest struct {
 	*requests.RpcRequest
 	NetworkingModel         string           `position:"Query" name:"NetworkingModel"`
 	InternetMaxBandwidthOut requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
@@ -78,26 +78,26 @@ type CreateEpnInstanceRequest struct {
 	EPNInstanceName         string           `position:"Query" name:"EPNInstanceName"`
 }
 
-// CreateEpnInstanceResponse is the response struct for api CreateEpnInstance
-type CreateEpnInstanceResponse struct {
+// CreateEPInstanceResponse is the response struct for api CreateEPInstance
+type CreateEPInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId     string `json:"RequestId" xml:"RequestId"`
 	EPNInstanceId string `json:"EPNInstanceId" xml:"EPNInstanceId"`
 }
 
-// CreateCreateEpnInstanceRequest creates a request to invoke CreateEpnInstance API
-func CreateCreateEpnInstanceRequest() (request *CreateEpnInstanceRequest) {
-	request = &CreateEpnInstanceRequest{
+// CreateCreateEPInstanceRequest creates a request to invoke CreateEPInstance API
+func CreateCreateEPInstanceRequest() (request *CreateEPInstanceRequest) {
+	request = &CreateEPInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ens", "2017-11-10", "CreateEpnInstance", "ens", "openAPI")
+	request.InitWithApiInfo("Ens", "2017-11-10", "CreateEPInstance", "ens", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateEpnInstanceResponse creates a response to parse from CreateEpnInstance response
-func CreateCreateEpnInstanceResponse() (response *CreateEpnInstanceResponse) {
-	response = &CreateEpnInstanceResponse{
+// CreateCreateEPInstanceResponse creates a response to parse from CreateEPInstance response
+func CreateCreateEPInstanceResponse() (response *CreateEPInstanceResponse) {
+	response = &CreateEPInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

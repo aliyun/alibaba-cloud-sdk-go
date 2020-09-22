@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeImageInfos invokes the ens.DescribeImageInfos API synchronously
-// api document: https://help.aliyun.com/api/ens/describeimageinfos.html
 func (client *Client) DescribeImageInfos(request *DescribeImageInfosRequest) (response *DescribeImageInfosResponse, err error) {
 	response = CreateDescribeImageInfosResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeImageInfos(request *DescribeImageInfosRequest) (re
 }
 
 // DescribeImageInfosWithChan invokes the ens.DescribeImageInfos API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeimageinfos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImageInfosWithChan(request *DescribeImageInfosRequest) (<-chan *DescribeImageInfosResponse, <-chan error) {
 	responseChan := make(chan *DescribeImageInfosResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeImageInfosWithChan(request *DescribeImageInfosRequ
 }
 
 // DescribeImageInfosWithCallback invokes the ens.DescribeImageInfos API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeimageinfos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImageInfosWithCallback(request *DescribeImageInfosRequest, callback func(response *DescribeImageInfosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

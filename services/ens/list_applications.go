@@ -21,7 +21,6 @@ import (
 )
 
 // ListApplications invokes the ens.ListApplications API synchronously
-// api document: https://help.aliyun.com/api/ens/listapplications.html
 func (client *Client) ListApplications(request *ListApplicationsRequest) (response *ListApplicationsResponse, err error) {
 	response = CreateListApplicationsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListApplications(request *ListApplicationsRequest) (respon
 }
 
 // ListApplicationsWithChan invokes the ens.ListApplications API asynchronously
-// api document: https://help.aliyun.com/api/ens/listapplications.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListApplicationsWithChan(request *ListApplicationsRequest) (<-chan *ListApplicationsResponse, <-chan error) {
 	responseChan := make(chan *ListApplicationsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListApplicationsWithChan(request *ListApplicationsRequest)
 }
 
 // ListApplicationsWithCallback invokes the ens.ListApplications API asynchronously
-// api document: https://help.aliyun.com/api/ens/listapplications.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListApplicationsWithCallback(request *ListApplicationsRequest, callback func(response *ListApplicationsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

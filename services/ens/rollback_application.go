@@ -21,7 +21,6 @@ import (
 )
 
 // RollbackApplication invokes the ens.RollbackApplication API synchronously
-// api document: https://help.aliyun.com/api/ens/rollbackapplication.html
 func (client *Client) RollbackApplication(request *RollbackApplicationRequest) (response *RollbackApplicationResponse, err error) {
 	response = CreateRollbackApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RollbackApplication(request *RollbackApplicationRequest) (
 }
 
 // RollbackApplicationWithChan invokes the ens.RollbackApplication API asynchronously
-// api document: https://help.aliyun.com/api/ens/rollbackapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RollbackApplicationWithChan(request *RollbackApplicationRequest) (<-chan *RollbackApplicationResponse, <-chan error) {
 	responseChan := make(chan *RollbackApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RollbackApplicationWithChan(request *RollbackApplicationRe
 }
 
 // RollbackApplicationWithCallback invokes the ens.RollbackApplication API asynchronously
-// api document: https://help.aliyun.com/api/ens/rollbackapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RollbackApplicationWithCallback(request *RollbackApplicationRequest, callback func(response *RollbackApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

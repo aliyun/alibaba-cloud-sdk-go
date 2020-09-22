@@ -21,7 +21,6 @@ import (
 )
 
 // PreCreateEnsService invokes the ens.PreCreateEnsService API synchronously
-// api document: https://help.aliyun.com/api/ens/precreateensservice.html
 func (client *Client) PreCreateEnsService(request *PreCreateEnsServiceRequest) (response *PreCreateEnsServiceResponse, err error) {
 	response = CreatePreCreateEnsServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PreCreateEnsService(request *PreCreateEnsServiceRequest) (
 }
 
 // PreCreateEnsServiceWithChan invokes the ens.PreCreateEnsService API asynchronously
-// api document: https://help.aliyun.com/api/ens/precreateensservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PreCreateEnsServiceWithChan(request *PreCreateEnsServiceRequest) (<-chan *PreCreateEnsServiceResponse, <-chan error) {
 	responseChan := make(chan *PreCreateEnsServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PreCreateEnsServiceWithChan(request *PreCreateEnsServiceRe
 }
 
 // PreCreateEnsServiceWithCallback invokes the ens.PreCreateEnsService API asynchronously
-// api document: https://help.aliyun.com/api/ens/precreateensservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PreCreateEnsServiceWithCallback(request *PreCreateEnsServiceRequest, callback func(response *PreCreateEnsServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateEnsService invokes the ens.CreateEnsService API synchronously
-// api document: https://help.aliyun.com/api/ens/createensservice.html
 func (client *Client) CreateEnsService(request *CreateEnsServiceRequest) (response *CreateEnsServiceResponse, err error) {
 	response = CreateCreateEnsServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateEnsService(request *CreateEnsServiceRequest) (respon
 }
 
 // CreateEnsServiceWithChan invokes the ens.CreateEnsService API asynchronously
-// api document: https://help.aliyun.com/api/ens/createensservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEnsServiceWithChan(request *CreateEnsServiceRequest) (<-chan *CreateEnsServiceResponse, <-chan error) {
 	responseChan := make(chan *CreateEnsServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateEnsServiceWithChan(request *CreateEnsServiceRequest)
 }
 
 // CreateEnsServiceWithCallback invokes the ens.CreateEnsService API asynchronously
-// api document: https://help.aliyun.com/api/ens/createensservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEnsServiceWithCallback(request *CreateEnsServiceRequest, callback func(response *CreateEnsServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

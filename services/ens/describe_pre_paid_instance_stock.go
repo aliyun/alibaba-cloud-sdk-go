@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePrePaidInstanceStock invokes the ens.DescribePrePaidInstanceStock API synchronously
-// api document: https://help.aliyun.com/api/ens/describeprepaidinstancestock.html
 func (client *Client) DescribePrePaidInstanceStock(request *DescribePrePaidInstanceStockRequest) (response *DescribePrePaidInstanceStockResponse, err error) {
 	response = CreateDescribePrePaidInstanceStockResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePrePaidInstanceStock(request *DescribePrePaidInsta
 }
 
 // DescribePrePaidInstanceStockWithChan invokes the ens.DescribePrePaidInstanceStock API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeprepaidinstancestock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePrePaidInstanceStockWithChan(request *DescribePrePaidInstanceStockRequest) (<-chan *DescribePrePaidInstanceStockResponse, <-chan error) {
 	responseChan := make(chan *DescribePrePaidInstanceStockResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePrePaidInstanceStockWithChan(request *DescribePreP
 }
 
 // DescribePrePaidInstanceStockWithCallback invokes the ens.DescribePrePaidInstanceStock API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeprepaidinstancestock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePrePaidInstanceStockWithCallback(request *DescribePrePaidInstanceStockRequest, callback func(response *DescribePrePaidInstanceStockResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

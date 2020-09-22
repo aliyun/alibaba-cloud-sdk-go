@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUserBandWidthData invokes the ens.DescribeUserBandWidthData API synchronously
-// api document: https://help.aliyun.com/api/ens/describeuserbandwidthdata.html
 func (client *Client) DescribeUserBandWidthData(request *DescribeUserBandWidthDataRequest) (response *DescribeUserBandWidthDataResponse, err error) {
 	response = CreateDescribeUserBandWidthDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUserBandWidthData(request *DescribeUserBandWidthDa
 }
 
 // DescribeUserBandWidthDataWithChan invokes the ens.DescribeUserBandWidthData API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeuserbandwidthdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserBandWidthDataWithChan(request *DescribeUserBandWidthDataRequest) (<-chan *DescribeUserBandWidthDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserBandWidthDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUserBandWidthDataWithChan(request *DescribeUserBan
 }
 
 // DescribeUserBandWidthDataWithCallback invokes the ens.DescribeUserBandWidthData API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeuserbandwidthdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserBandWidthDataWithCallback(request *DescribeUserBandWidthDataRequest, callback func(response *DescribeUserBandWidthDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

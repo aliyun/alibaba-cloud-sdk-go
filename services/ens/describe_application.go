@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApplication invokes the ens.DescribeApplication API synchronously
-// api document: https://help.aliyun.com/api/ens/describeapplication.html
 func (client *Client) DescribeApplication(request *DescribeApplicationRequest) (response *DescribeApplicationResponse, err error) {
 	response = CreateDescribeApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApplication(request *DescribeApplicationRequest) (
 }
 
 // DescribeApplicationWithChan invokes the ens.DescribeApplication API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApplicationWithChan(request *DescribeApplicationRequest) (<-chan *DescribeApplicationResponse, <-chan error) {
 	responseChan := make(chan *DescribeApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApplicationWithChan(request *DescribeApplicationRe
 }
 
 // DescribeApplicationWithCallback invokes the ens.DescribeApplication API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApplicationWithCallback(request *DescribeApplicationRequest, callback func(response *DescribeApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

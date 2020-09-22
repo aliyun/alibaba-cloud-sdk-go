@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstanceSpec invokes the ens.DescribeInstanceSpec API synchronously
-// api document: https://help.aliyun.com/api/ens/describeinstancespec.html
 func (client *Client) DescribeInstanceSpec(request *DescribeInstanceSpecRequest) (response *DescribeInstanceSpecResponse, err error) {
 	response = CreateDescribeInstanceSpecResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstanceSpec(request *DescribeInstanceSpecRequest)
 }
 
 // DescribeInstanceSpecWithChan invokes the ens.DescribeInstanceSpec API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeinstancespec.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceSpecWithChan(request *DescribeInstanceSpecRequest) (<-chan *DescribeInstanceSpecResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceSpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceSpecWithChan(request *DescribeInstanceSpec
 }
 
 // DescribeInstanceSpecWithCallback invokes the ens.DescribeInstanceSpec API asynchronously
-// api document: https://help.aliyun.com/api/ens/describeinstancespec.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceSpecWithCallback(request *DescribeInstanceSpecRequest, callback func(response *DescribeInstanceSpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
