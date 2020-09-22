@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteCasterEpisode invokes the live.DeleteCasterEpisode API synchronously
-// api document: https://help.aliyun.com/api/live/deletecasterepisode.html
 func (client *Client) DeleteCasterEpisode(request *DeleteCasterEpisodeRequest) (response *DeleteCasterEpisodeResponse, err error) {
 	response = CreateDeleteCasterEpisodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteCasterEpisode(request *DeleteCasterEpisodeRequest) (
 }
 
 // DeleteCasterEpisodeWithChan invokes the live.DeleteCasterEpisode API asynchronously
-// api document: https://help.aliyun.com/api/live/deletecasterepisode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCasterEpisodeWithChan(request *DeleteCasterEpisodeRequest) (<-chan *DeleteCasterEpisodeResponse, <-chan error) {
 	responseChan := make(chan *DeleteCasterEpisodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteCasterEpisodeWithChan(request *DeleteCasterEpisodeRe
 }
 
 // DeleteCasterEpisodeWithCallback invokes the live.DeleteCasterEpisode API asynchronously
-// api document: https://help.aliyun.com/api/live/deletecasterepisode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCasterEpisodeWithCallback(request *DeleteCasterEpisodeRequest, callback func(response *DeleteCasterEpisodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDeleteCasterEpisodeRequest() (request *DeleteCasterEpisodeRequest) {
 	request = &DeleteCasterEpisodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterEpisode", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterEpisode", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

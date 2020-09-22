@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveStreamDelayConfig invokes the live.DescribeLiveStreamDelayConfig API synchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamdelayconfig.html
 func (client *Client) DescribeLiveStreamDelayConfig(request *DescribeLiveStreamDelayConfigRequest) (response *DescribeLiveStreamDelayConfigResponse, err error) {
 	response = CreateDescribeLiveStreamDelayConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveStreamDelayConfig(request *DescribeLiveStreamD
 }
 
 // DescribeLiveStreamDelayConfigWithChan invokes the live.DescribeLiveStreamDelayConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamdelayconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamDelayConfigWithChan(request *DescribeLiveStreamDelayConfigRequest) (<-chan *DescribeLiveStreamDelayConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamDelayConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveStreamDelayConfigWithChan(request *DescribeLiv
 }
 
 // DescribeLiveStreamDelayConfigWithCallback invokes the live.DescribeLiveStreamDelayConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamdelayconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamDelayConfigWithCallback(request *DescribeLiveStreamDelayConfigRequest, callback func(response *DescribeLiveStreamDelayConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDescribeLiveStreamDelayConfigRequest() (request *DescribeLiveStreamDe
 	request = &DescribeLiveStreamDelayConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamDelayConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamDelayConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

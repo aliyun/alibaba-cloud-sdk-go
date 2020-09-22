@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteCasterProgram invokes the live.DeleteCasterProgram API synchronously
-// api document: https://help.aliyun.com/api/live/deletecasterprogram.html
 func (client *Client) DeleteCasterProgram(request *DeleteCasterProgramRequest) (response *DeleteCasterProgramResponse, err error) {
 	response = CreateDeleteCasterProgramResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteCasterProgram(request *DeleteCasterProgramRequest) (
 }
 
 // DeleteCasterProgramWithChan invokes the live.DeleteCasterProgram API asynchronously
-// api document: https://help.aliyun.com/api/live/deletecasterprogram.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCasterProgramWithChan(request *DeleteCasterProgramRequest) (<-chan *DeleteCasterProgramResponse, <-chan error) {
 	responseChan := make(chan *DeleteCasterProgramResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteCasterProgramWithChan(request *DeleteCasterProgramRe
 }
 
 // DeleteCasterProgramWithCallback invokes the live.DeleteCasterProgram API asynchronously
-// api document: https://help.aliyun.com/api/live/deletecasterprogram.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCasterProgramWithCallback(request *DeleteCasterProgramRequest, callback func(response *DeleteCasterProgramResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDeleteCasterProgramRequest() (request *DeleteCasterProgramRequest) {
 	request = &DeleteCasterProgramRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterProgram", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterProgram", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

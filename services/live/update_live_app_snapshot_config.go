@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateLiveAppSnapshotConfig invokes the live.UpdateLiveAppSnapshotConfig API synchronously
-// api document: https://help.aliyun.com/api/live/updateliveappsnapshotconfig.html
 func (client *Client) UpdateLiveAppSnapshotConfig(request *UpdateLiveAppSnapshotConfigRequest) (response *UpdateLiveAppSnapshotConfigResponse, err error) {
 	response = CreateUpdateLiveAppSnapshotConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateLiveAppSnapshotConfig(request *UpdateLiveAppSnapshot
 }
 
 // UpdateLiveAppSnapshotConfigWithChan invokes the live.UpdateLiveAppSnapshotConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/updateliveappsnapshotconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLiveAppSnapshotConfigWithChan(request *UpdateLiveAppSnapshotConfigRequest) (<-chan *UpdateLiveAppSnapshotConfigResponse, <-chan error) {
 	responseChan := make(chan *UpdateLiveAppSnapshotConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateLiveAppSnapshotConfigWithChan(request *UpdateLiveApp
 }
 
 // UpdateLiveAppSnapshotConfigWithCallback invokes the live.UpdateLiveAppSnapshotConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/updateliveappsnapshotconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLiveAppSnapshotConfigWithCallback(request *UpdateLiveAppSnapshotConfigRequest, callback func(response *UpdateLiveAppSnapshotConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateUpdateLiveAppSnapshotConfigRequest() (request *UpdateLiveAppSnapshotC
 	request = &UpdateLiveAppSnapshotConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "UpdateLiveAppSnapshotConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "UpdateLiveAppSnapshotConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

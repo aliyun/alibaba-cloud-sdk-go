@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveUserDomains invokes the live.DescribeLiveUserDomains API synchronously
-// api document: https://help.aliyun.com/api/live/describeliveuserdomains.html
 func (client *Client) DescribeLiveUserDomains(request *DescribeLiveUserDomainsRequest) (response *DescribeLiveUserDomainsResponse, err error) {
 	response = CreateDescribeLiveUserDomainsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveUserDomains(request *DescribeLiveUserDomainsRe
 }
 
 // DescribeLiveUserDomainsWithChan invokes the live.DescribeLiveUserDomains API asynchronously
-// api document: https://help.aliyun.com/api/live/describeliveuserdomains.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveUserDomainsWithChan(request *DescribeLiveUserDomainsRequest) (<-chan *DescribeLiveUserDomainsResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveUserDomainsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveUserDomainsWithChan(request *DescribeLiveUserD
 }
 
 // DescribeLiveUserDomainsWithCallback invokes the live.DescribeLiveUserDomains API asynchronously
-// api document: https://help.aliyun.com/api/live/describeliveuserdomains.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveUserDomainsWithCallback(request *DescribeLiveUserDomainsRequest, callback func(response *DescribeLiveUserDomainsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -109,7 +104,7 @@ func CreateDescribeLiveUserDomainsRequest() (request *DescribeLiveUserDomainsReq
 	request = &DescribeLiveUserDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveUserDomains", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveUserDomains", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

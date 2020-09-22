@@ -21,7 +21,6 @@ import (
 )
 
 // SetCasterChannel invokes the live.SetCasterChannel API synchronously
-// api document: https://help.aliyun.com/api/live/setcasterchannel.html
 func (client *Client) SetCasterChannel(request *SetCasterChannelRequest) (response *SetCasterChannelResponse, err error) {
 	response = CreateSetCasterChannelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetCasterChannel(request *SetCasterChannelRequest) (respon
 }
 
 // SetCasterChannelWithChan invokes the live.SetCasterChannel API asynchronously
-// api document: https://help.aliyun.com/api/live/setcasterchannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCasterChannelWithChan(request *SetCasterChannelRequest) (<-chan *SetCasterChannelResponse, <-chan error) {
 	responseChan := make(chan *SetCasterChannelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetCasterChannelWithChan(request *SetCasterChannelRequest)
 }
 
 // SetCasterChannelWithCallback invokes the live.SetCasterChannel API asynchronously
-// api document: https://help.aliyun.com/api/live/setcasterchannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCasterChannelWithCallback(request *SetCasterChannelRequest, callback func(response *SetCasterChannelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateSetCasterChannelRequest() (request *SetCasterChannelRequest) {
 	request = &SetCasterChannelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "SetCasterChannel", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "SetCasterChannel", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // CopyCaster invokes the live.CopyCaster API synchronously
-// api document: https://help.aliyun.com/api/live/copycaster.html
 func (client *Client) CopyCaster(request *CopyCasterRequest) (response *CopyCasterResponse, err error) {
 	response = CreateCopyCasterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CopyCaster(request *CopyCasterRequest) (response *CopyCast
 }
 
 // CopyCasterWithChan invokes the live.CopyCaster API asynchronously
-// api document: https://help.aliyun.com/api/live/copycaster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyCasterWithChan(request *CopyCasterRequest) (<-chan *CopyCasterResponse, <-chan error) {
 	responseChan := make(chan *CopyCasterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CopyCasterWithChan(request *CopyCasterRequest) (<-chan *Co
 }
 
 // CopyCasterWithCallback invokes the live.CopyCaster API asynchronously
-// api document: https://help.aliyun.com/api/live/copycaster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyCasterWithCallback(request *CopyCasterRequest, callback func(response *CopyCasterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateCopyCasterRequest() (request *CopyCasterRequest) {
 	request = &CopyCasterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "CopyCaster", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "CopyCaster", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

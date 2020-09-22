@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveAudioAuditNotifyConfig invokes the live.DescribeLiveAudioAuditNotifyConfig API synchronously
-// api document: https://help.aliyun.com/api/live/describeliveaudioauditnotifyconfig.html
 func (client *Client) DescribeLiveAudioAuditNotifyConfig(request *DescribeLiveAudioAuditNotifyConfigRequest) (response *DescribeLiveAudioAuditNotifyConfigResponse, err error) {
 	response = CreateDescribeLiveAudioAuditNotifyConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveAudioAuditNotifyConfig(request *DescribeLiveAu
 }
 
 // DescribeLiveAudioAuditNotifyConfigWithChan invokes the live.DescribeLiveAudioAuditNotifyConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describeliveaudioauditnotifyconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveAudioAuditNotifyConfigWithChan(request *DescribeLiveAudioAuditNotifyConfigRequest) (<-chan *DescribeLiveAudioAuditNotifyConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveAudioAuditNotifyConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveAudioAuditNotifyConfigWithChan(request *Descri
 }
 
 // DescribeLiveAudioAuditNotifyConfigWithCallback invokes the live.DescribeLiveAudioAuditNotifyConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describeliveaudioauditnotifyconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveAudioAuditNotifyConfigWithCallback(request *DescribeLiveAudioAuditNotifyConfigRequest, callback func(response *DescribeLiveAudioAuditNotifyConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDescribeLiveAudioAuditNotifyConfigRequest() (request *DescribeLiveAud
 	request = &DescribeLiveAudioAuditNotifyConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveAudioAuditNotifyConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveAudioAuditNotifyConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

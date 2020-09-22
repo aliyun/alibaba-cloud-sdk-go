@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveDomainRealTimeHttpCodeData invokes the live.DescribeLiveDomainRealTimeHttpCodeData API synchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainrealtimehttpcodedata.html
 func (client *Client) DescribeLiveDomainRealTimeHttpCodeData(request *DescribeLiveDomainRealTimeHttpCodeDataRequest) (response *DescribeLiveDomainRealTimeHttpCodeDataResponse, err error) {
 	response = CreateDescribeLiveDomainRealTimeHttpCodeDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveDomainRealTimeHttpCodeData(request *DescribeLi
 }
 
 // DescribeLiveDomainRealTimeHttpCodeDataWithChan invokes the live.DescribeLiveDomainRealTimeHttpCodeData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainrealtimehttpcodedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainRealTimeHttpCodeDataWithChan(request *DescribeLiveDomainRealTimeHttpCodeDataRequest) (<-chan *DescribeLiveDomainRealTimeHttpCodeDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveDomainRealTimeHttpCodeDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveDomainRealTimeHttpCodeDataWithChan(request *De
 }
 
 // DescribeLiveDomainRealTimeHttpCodeDataWithCallback invokes the live.DescribeLiveDomainRealTimeHttpCodeData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainrealtimehttpcodedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainRealTimeHttpCodeDataWithCallback(request *DescribeLiveDomainRealTimeHttpCodeDataRequest, callback func(response *DescribeLiveDomainRealTimeHttpCodeDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateDescribeLiveDomainRealTimeHttpCodeDataRequest() (request *DescribeLiv
 	request = &DescribeLiveDomainRealTimeHttpCodeDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainRealTimeHttpCodeData", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainRealTimeHttpCodeData", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

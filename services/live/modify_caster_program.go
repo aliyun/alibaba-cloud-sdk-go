@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyCasterProgram invokes the live.ModifyCasterProgram API synchronously
-// api document: https://help.aliyun.com/api/live/modifycasterprogram.html
 func (client *Client) ModifyCasterProgram(request *ModifyCasterProgramRequest) (response *ModifyCasterProgramResponse, err error) {
 	response = CreateModifyCasterProgramResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyCasterProgram(request *ModifyCasterProgramRequest) (
 }
 
 // ModifyCasterProgramWithChan invokes the live.ModifyCasterProgram API asynchronously
-// api document: https://help.aliyun.com/api/live/modifycasterprogram.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCasterProgramWithChan(request *ModifyCasterProgramRequest) (<-chan *ModifyCasterProgramResponse, <-chan error) {
 	responseChan := make(chan *ModifyCasterProgramResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyCasterProgramWithChan(request *ModifyCasterProgramRe
 }
 
 // ModifyCasterProgramWithCallback invokes the live.ModifyCasterProgram API asynchronously
-// api document: https://help.aliyun.com/api/live/modifycasterprogram.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCasterProgramWithCallback(request *ModifyCasterProgramRequest, callback func(response *ModifyCasterProgramResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -105,7 +100,7 @@ func CreateModifyCasterProgramRequest() (request *ModifyCasterProgramRequest) {
 	request = &ModifyCasterProgramRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ModifyCasterProgram", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "ModifyCasterProgram", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveDomainFrameRateAndBitRateData invokes the live.DescribeLiveDomainFrameRateAndBitRateData API synchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainframerateandbitratedata.html
 func (client *Client) DescribeLiveDomainFrameRateAndBitRateData(request *DescribeLiveDomainFrameRateAndBitRateDataRequest) (response *DescribeLiveDomainFrameRateAndBitRateDataResponse, err error) {
 	response = CreateDescribeLiveDomainFrameRateAndBitRateDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveDomainFrameRateAndBitRateData(request *Describ
 }
 
 // DescribeLiveDomainFrameRateAndBitRateDataWithChan invokes the live.DescribeLiveDomainFrameRateAndBitRateData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainframerateandbitratedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainFrameRateAndBitRateDataWithChan(request *DescribeLiveDomainFrameRateAndBitRateDataRequest) (<-chan *DescribeLiveDomainFrameRateAndBitRateDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveDomainFrameRateAndBitRateDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveDomainFrameRateAndBitRateDataWithChan(request 
 }
 
 // DescribeLiveDomainFrameRateAndBitRateDataWithCallback invokes the live.DescribeLiveDomainFrameRateAndBitRateData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainframerateandbitratedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainFrameRateAndBitRateDataWithCallback(request *DescribeLiveDomainFrameRateAndBitRateDataRequest, callback func(response *DescribeLiveDomainFrameRateAndBitRateDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDescribeLiveDomainFrameRateAndBitRateDataRequest() (request *Describe
 	request = &DescribeLiveDomainFrameRateAndBitRateDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainFrameRateAndBitRateData", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainFrameRateAndBitRateData", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

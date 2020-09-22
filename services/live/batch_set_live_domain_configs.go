@@ -21,7 +21,6 @@ import (
 )
 
 // BatchSetLiveDomainConfigs invokes the live.BatchSetLiveDomainConfigs API synchronously
-// api document: https://help.aliyun.com/api/live/batchsetlivedomainconfigs.html
 func (client *Client) BatchSetLiveDomainConfigs(request *BatchSetLiveDomainConfigsRequest) (response *BatchSetLiveDomainConfigsResponse, err error) {
 	response = CreateBatchSetLiveDomainConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchSetLiveDomainConfigs(request *BatchSetLiveDomainConfi
 }
 
 // BatchSetLiveDomainConfigsWithChan invokes the live.BatchSetLiveDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/live/batchsetlivedomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchSetLiveDomainConfigsWithChan(request *BatchSetLiveDomainConfigsRequest) (<-chan *BatchSetLiveDomainConfigsResponse, <-chan error) {
 	responseChan := make(chan *BatchSetLiveDomainConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchSetLiveDomainConfigsWithChan(request *BatchSetLiveDom
 }
 
 // BatchSetLiveDomainConfigsWithCallback invokes the live.BatchSetLiveDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/live/batchsetlivedomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchSetLiveDomainConfigsWithCallback(request *BatchSetLiveDomainConfigsRequest, callback func(response *BatchSetLiveDomainConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateBatchSetLiveDomainConfigsRequest() (request *BatchSetLiveDomainConfig
 	request = &BatchSetLiveDomainConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "BatchSetLiveDomainConfigs", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "BatchSetLiveDomainConfigs", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveStreamsFrameRateAndBitRateData invokes the live.DescribeLiveStreamsFrameRateAndBitRateData API synchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamsframerateandbitratedata.html
 func (client *Client) DescribeLiveStreamsFrameRateAndBitRateData(request *DescribeLiveStreamsFrameRateAndBitRateDataRequest) (response *DescribeLiveStreamsFrameRateAndBitRateDataResponse, err error) {
 	response = CreateDescribeLiveStreamsFrameRateAndBitRateDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveStreamsFrameRateAndBitRateData(request *Descri
 }
 
 // DescribeLiveStreamsFrameRateAndBitRateDataWithChan invokes the live.DescribeLiveStreamsFrameRateAndBitRateData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamsframerateandbitratedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsFrameRateAndBitRateDataWithChan(request *DescribeLiveStreamsFrameRateAndBitRateDataRequest) (<-chan *DescribeLiveStreamsFrameRateAndBitRateDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamsFrameRateAndBitRateDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveStreamsFrameRateAndBitRateDataWithChan(request
 }
 
 // DescribeLiveStreamsFrameRateAndBitRateDataWithCallback invokes the live.DescribeLiveStreamsFrameRateAndBitRateData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamsframerateandbitratedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsFrameRateAndBitRateDataWithCallback(request *DescribeLiveStreamsFrameRateAndBitRateDataRequest, callback func(response *DescribeLiveStreamsFrameRateAndBitRateDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateDescribeLiveStreamsFrameRateAndBitRateDataRequest() (request *Describ
 	request = &DescribeLiveStreamsFrameRateAndBitRateDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamsFrameRateAndBitRateData", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamsFrameRateAndBitRateData", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

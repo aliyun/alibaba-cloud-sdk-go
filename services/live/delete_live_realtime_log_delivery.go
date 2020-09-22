@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLiveRealtimeLogDelivery invokes the live.DeleteLiveRealtimeLogDelivery API synchronously
-// api document: https://help.aliyun.com/api/live/deleteliverealtimelogdelivery.html
 func (client *Client) DeleteLiveRealtimeLogDelivery(request *DeleteLiveRealtimeLogDeliveryRequest) (response *DeleteLiveRealtimeLogDeliveryResponse, err error) {
 	response = CreateDeleteLiveRealtimeLogDeliveryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLiveRealtimeLogDelivery(request *DeleteLiveRealtimeL
 }
 
 // DeleteLiveRealtimeLogDeliveryWithChan invokes the live.DeleteLiveRealtimeLogDelivery API asynchronously
-// api document: https://help.aliyun.com/api/live/deleteliverealtimelogdelivery.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveRealtimeLogDeliveryWithChan(request *DeleteLiveRealtimeLogDeliveryRequest) (<-chan *DeleteLiveRealtimeLogDeliveryResponse, <-chan error) {
 	responseChan := make(chan *DeleteLiveRealtimeLogDeliveryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLiveRealtimeLogDeliveryWithChan(request *DeleteLiveR
 }
 
 // DeleteLiveRealtimeLogDeliveryWithCallback invokes the live.DeleteLiveRealtimeLogDelivery API asynchronously
-// api document: https://help.aliyun.com/api/live/deleteliverealtimelogdelivery.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveRealtimeLogDeliveryWithCallback(request *DeleteLiveRealtimeLogDeliveryRequest, callback func(response *DeleteLiveRealtimeLogDeliveryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDeleteLiveRealtimeLogDeliveryRequest() (request *DeleteLiveRealtimeLo
 	request = &DeleteLiveRealtimeLogDeliveryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveRealtimeLogDelivery", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveRealtimeLogDelivery", "live", "openAPI")
 	request.Method = requests.GET
 	return
 }

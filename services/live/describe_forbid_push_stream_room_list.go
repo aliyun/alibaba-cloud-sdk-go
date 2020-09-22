@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeForbidPushStreamRoomList invokes the live.DescribeForbidPushStreamRoomList API synchronously
-// api document: https://help.aliyun.com/api/live/describeforbidpushstreamroomlist.html
 func (client *Client) DescribeForbidPushStreamRoomList(request *DescribeForbidPushStreamRoomListRequest) (response *DescribeForbidPushStreamRoomListResponse, err error) {
 	response = CreateDescribeForbidPushStreamRoomListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeForbidPushStreamRoomList(request *DescribeForbidPu
 }
 
 // DescribeForbidPushStreamRoomListWithChan invokes the live.DescribeForbidPushStreamRoomList API asynchronously
-// api document: https://help.aliyun.com/api/live/describeforbidpushstreamroomlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeForbidPushStreamRoomListWithChan(request *DescribeForbidPushStreamRoomListRequest) (<-chan *DescribeForbidPushStreamRoomListResponse, <-chan error) {
 	responseChan := make(chan *DescribeForbidPushStreamRoomListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeForbidPushStreamRoomListWithChan(request *Describe
 }
 
 // DescribeForbidPushStreamRoomListWithCallback invokes the live.DescribeForbidPushStreamRoomList API asynchronously
-// api document: https://help.aliyun.com/api/live/describeforbidpushstreamroomlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeForbidPushStreamRoomListWithCallback(request *DescribeForbidPushStreamRoomListRequest, callback func(response *DescribeForbidPushStreamRoomListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateDescribeForbidPushStreamRoomListRequest() (request *DescribeForbidPus
 	request = &DescribeForbidPushStreamRoomListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeForbidPushStreamRoomList", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeForbidPushStreamRoomList", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

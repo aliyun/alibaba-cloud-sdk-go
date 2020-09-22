@@ -21,7 +21,6 @@ import (
 )
 
 // AddLiveDomain invokes the live.AddLiveDomain API synchronously
-// api document: https://help.aliyun.com/api/live/addlivedomain.html
 func (client *Client) AddLiveDomain(request *AddLiveDomainRequest) (response *AddLiveDomainResponse, err error) {
 	response = CreateAddLiveDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddLiveDomain(request *AddLiveDomainRequest) (response *Ad
 }
 
 // AddLiveDomainWithChan invokes the live.AddLiveDomain API asynchronously
-// api document: https://help.aliyun.com/api/live/addlivedomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveDomainWithChan(request *AddLiveDomainRequest) (<-chan *AddLiveDomainResponse, <-chan error) {
 	responseChan := make(chan *AddLiveDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddLiveDomainWithChan(request *AddLiveDomainRequest) (<-ch
 }
 
 // AddLiveDomainWithCallback invokes the live.AddLiveDomain API asynchronously
-// api document: https://help.aliyun.com/api/live/addlivedomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveDomainWithCallback(request *AddLiveDomainRequest, callback func(response *AddLiveDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateAddLiveDomainRequest() (request *AddLiveDomainRequest) {
 	request = &AddLiveDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddLiveDomain", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "AddLiveDomain", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

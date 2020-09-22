@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBoards invokes the live.DescribeBoards API synchronously
-// api document: https://help.aliyun.com/api/live/describeboards.html
 func (client *Client) DescribeBoards(request *DescribeBoardsRequest) (response *DescribeBoardsResponse, err error) {
 	response = CreateDescribeBoardsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBoards(request *DescribeBoardsRequest) (response *
 }
 
 // DescribeBoardsWithChan invokes the live.DescribeBoards API asynchronously
-// api document: https://help.aliyun.com/api/live/describeboards.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBoardsWithChan(request *DescribeBoardsRequest) (<-chan *DescribeBoardsResponse, <-chan error) {
 	responseChan := make(chan *DescribeBoardsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBoardsWithChan(request *DescribeBoardsRequest) (<-
 }
 
 // DescribeBoardsWithCallback invokes the live.DescribeBoards API asynchronously
-// api document: https://help.aliyun.com/api/live/describeboards.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBoardsWithCallback(request *DescribeBoardsRequest, callback func(response *DescribeBoardsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDescribeBoardsRequest() (request *DescribeBoardsRequest) {
 	request = &DescribeBoardsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeBoards", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeBoards", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

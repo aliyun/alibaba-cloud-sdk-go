@@ -21,7 +21,6 @@ import (
 )
 
 // AddCasterLayout invokes the live.AddCasterLayout API synchronously
-// api document: https://help.aliyun.com/api/live/addcasterlayout.html
 func (client *Client) AddCasterLayout(request *AddCasterLayoutRequest) (response *AddCasterLayoutResponse, err error) {
 	response = CreateAddCasterLayoutResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddCasterLayout(request *AddCasterLayoutRequest) (response
 }
 
 // AddCasterLayoutWithChan invokes the live.AddCasterLayout API asynchronously
-// api document: https://help.aliyun.com/api/live/addcasterlayout.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCasterLayoutWithChan(request *AddCasterLayoutRequest) (<-chan *AddCasterLayoutResponse, <-chan error) {
 	responseChan := make(chan *AddCasterLayoutResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddCasterLayoutWithChan(request *AddCasterLayoutRequest) (
 }
 
 // AddCasterLayoutWithCallback invokes the live.AddCasterLayout API asynchronously
-// api document: https://help.aliyun.com/api/live/addcasterlayout.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCasterLayoutWithCallback(request *AddCasterLayoutRequest, callback func(response *AddCasterLayoutResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -113,7 +108,7 @@ func CreateAddCasterLayoutRequest() (request *AddCasterLayoutRequest) {
 	request = &AddCasterLayoutRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddCasterLayout", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "AddCasterLayout", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

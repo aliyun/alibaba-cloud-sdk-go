@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLiveAudioAuditConfig invokes the live.DeleteLiveAudioAuditConfig API synchronously
-// api document: https://help.aliyun.com/api/live/deleteliveaudioauditconfig.html
 func (client *Client) DeleteLiveAudioAuditConfig(request *DeleteLiveAudioAuditConfigRequest) (response *DeleteLiveAudioAuditConfigResponse, err error) {
 	response = CreateDeleteLiveAudioAuditConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLiveAudioAuditConfig(request *DeleteLiveAudioAuditCo
 }
 
 // DeleteLiveAudioAuditConfigWithChan invokes the live.DeleteLiveAudioAuditConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deleteliveaudioauditconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveAudioAuditConfigWithChan(request *DeleteLiveAudioAuditConfigRequest) (<-chan *DeleteLiveAudioAuditConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteLiveAudioAuditConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLiveAudioAuditConfigWithChan(request *DeleteLiveAudi
 }
 
 // DeleteLiveAudioAuditConfigWithCallback invokes the live.DeleteLiveAudioAuditConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deleteliveaudioauditconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveAudioAuditConfigWithCallback(request *DeleteLiveAudioAuditConfigRequest, callback func(response *DeleteLiveAudioAuditConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDeleteLiveAudioAuditConfigRequest() (request *DeleteLiveAudioAuditCon
 	request = &DeleteLiveAudioAuditConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveAudioAuditConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveAudioAuditConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveStreamSnapshotInfo invokes the live.DescribeLiveStreamSnapshotInfo API synchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamsnapshotinfo.html
 func (client *Client) DescribeLiveStreamSnapshotInfo(request *DescribeLiveStreamSnapshotInfoRequest) (response *DescribeLiveStreamSnapshotInfoResponse, err error) {
 	response = CreateDescribeLiveStreamSnapshotInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveStreamSnapshotInfo(request *DescribeLiveStream
 }
 
 // DescribeLiveStreamSnapshotInfoWithChan invokes the live.DescribeLiveStreamSnapshotInfo API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamsnapshotinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamSnapshotInfoWithChan(request *DescribeLiveStreamSnapshotInfoRequest) (<-chan *DescribeLiveStreamSnapshotInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamSnapshotInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveStreamSnapshotInfoWithChan(request *DescribeLi
 }
 
 // DescribeLiveStreamSnapshotInfoWithCallback invokes the live.DescribeLiveStreamSnapshotInfo API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamsnapshotinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamSnapshotInfoWithCallback(request *DescribeLiveStreamSnapshotInfoRequest, callback func(response *DescribeLiveStreamSnapshotInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateDescribeLiveStreamSnapshotInfoRequest() (request *DescribeLiveStreamS
 	request = &DescribeLiveStreamSnapshotInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamSnapshotInfo", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamSnapshotInfo", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

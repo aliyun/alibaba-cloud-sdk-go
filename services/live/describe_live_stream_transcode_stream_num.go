@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveStreamTranscodeStreamNum invokes the live.DescribeLiveStreamTranscodeStreamNum API synchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamtranscodestreamnum.html
 func (client *Client) DescribeLiveStreamTranscodeStreamNum(request *DescribeLiveStreamTranscodeStreamNumRequest) (response *DescribeLiveStreamTranscodeStreamNumResponse, err error) {
 	response = CreateDescribeLiveStreamTranscodeStreamNumResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveStreamTranscodeStreamNum(request *DescribeLive
 }
 
 // DescribeLiveStreamTranscodeStreamNumWithChan invokes the live.DescribeLiveStreamTranscodeStreamNum API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamtranscodestreamnum.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamTranscodeStreamNumWithChan(request *DescribeLiveStreamTranscodeStreamNumRequest) (<-chan *DescribeLiveStreamTranscodeStreamNumResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamTranscodeStreamNumResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveStreamTranscodeStreamNumWithChan(request *Desc
 }
 
 // DescribeLiveStreamTranscodeStreamNumWithCallback invokes the live.DescribeLiveStreamTranscodeStreamNum API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamtranscodestreamnum.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamTranscodeStreamNumWithCallback(request *DescribeLiveStreamTranscodeStreamNumRequest, callback func(response *DescribeLiveStreamTranscodeStreamNumResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateDescribeLiveStreamTranscodeStreamNumRequest() (request *DescribeLiveS
 	request = &DescribeLiveStreamTranscodeStreamNumRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamTranscodeStreamNum", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamTranscodeStreamNum", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

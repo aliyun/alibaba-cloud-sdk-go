@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveDomainRecordData invokes the live.DescribeLiveDomainRecordData API synchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainrecorddata.html
 func (client *Client) DescribeLiveDomainRecordData(request *DescribeLiveDomainRecordDataRequest) (response *DescribeLiveDomainRecordDataResponse, err error) {
 	response = CreateDescribeLiveDomainRecordDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveDomainRecordData(request *DescribeLiveDomainRe
 }
 
 // DescribeLiveDomainRecordDataWithChan invokes the live.DescribeLiveDomainRecordData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainrecorddata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainRecordDataWithChan(request *DescribeLiveDomainRecordDataRequest) (<-chan *DescribeLiveDomainRecordDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveDomainRecordDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveDomainRecordDataWithChan(request *DescribeLive
 }
 
 // DescribeLiveDomainRecordDataWithCallback invokes the live.DescribeLiveDomainRecordData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainrecorddata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainRecordDataWithCallback(request *DescribeLiveDomainRecordDataRequest, callback func(response *DescribeLiveDomainRecordDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateDescribeLiveDomainRecordDataRequest() (request *DescribeLiveDomainRec
 	request = &DescribeLiveDomainRecordDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainRecordData", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainRecordData", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

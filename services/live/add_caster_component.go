@@ -21,7 +21,6 @@ import (
 )
 
 // AddCasterComponent invokes the live.AddCasterComponent API synchronously
-// api document: https://help.aliyun.com/api/live/addcastercomponent.html
 func (client *Client) AddCasterComponent(request *AddCasterComponentRequest) (response *AddCasterComponentResponse, err error) {
 	response = CreateAddCasterComponentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddCasterComponent(request *AddCasterComponentRequest) (re
 }
 
 // AddCasterComponentWithChan invokes the live.AddCasterComponent API asynchronously
-// api document: https://help.aliyun.com/api/live/addcastercomponent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCasterComponentWithChan(request *AddCasterComponentRequest) (<-chan *AddCasterComponentResponse, <-chan error) {
 	responseChan := make(chan *AddCasterComponentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddCasterComponentWithChan(request *AddCasterComponentRequ
 }
 
 // AddCasterComponentWithCallback invokes the live.AddCasterComponent API asynchronously
-// api document: https://help.aliyun.com/api/live/addcastercomponent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCasterComponentWithCallback(request *AddCasterComponentRequest, callback func(response *AddCasterComponentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,7 @@ func CreateAddCasterComponentRequest() (request *AddCasterComponentRequest) {
 	request = &AddCasterComponentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddCasterComponent", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "AddCasterComponent", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

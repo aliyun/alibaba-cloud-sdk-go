@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveUserTags invokes the live.DescribeLiveUserTags API synchronously
-// api document: https://help.aliyun.com/api/live/describeliveusertags.html
 func (client *Client) DescribeLiveUserTags(request *DescribeLiveUserTagsRequest) (response *DescribeLiveUserTagsResponse, err error) {
 	response = CreateDescribeLiveUserTagsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveUserTags(request *DescribeLiveUserTagsRequest)
 }
 
 // DescribeLiveUserTagsWithChan invokes the live.DescribeLiveUserTags API asynchronously
-// api document: https://help.aliyun.com/api/live/describeliveusertags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveUserTagsWithChan(request *DescribeLiveUserTagsRequest) (<-chan *DescribeLiveUserTagsResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveUserTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveUserTagsWithChan(request *DescribeLiveUserTags
 }
 
 // DescribeLiveUserTagsWithCallback invokes the live.DescribeLiveUserTags API asynchronously
-// api document: https://help.aliyun.com/api/live/describeliveusertags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveUserTagsWithCallback(request *DescribeLiveUserTagsRequest, callback func(response *DescribeLiveUserTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateDescribeLiveUserTagsRequest() (request *DescribeLiveUserTagsRequest) 
 	request = &DescribeLiveUserTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveUserTags", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveUserTags", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

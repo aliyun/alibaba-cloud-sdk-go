@@ -21,7 +21,6 @@ import (
 )
 
 // TagLiveResources invokes the live.TagLiveResources API synchronously
-// api document: https://help.aliyun.com/api/live/tagliveresources.html
 func (client *Client) TagLiveResources(request *TagLiveResourcesRequest) (response *TagLiveResourcesResponse, err error) {
 	response = CreateTagLiveResourcesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TagLiveResources(request *TagLiveResourcesRequest) (respon
 }
 
 // TagLiveResourcesWithChan invokes the live.TagLiveResources API asynchronously
-// api document: https://help.aliyun.com/api/live/tagliveresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TagLiveResourcesWithChan(request *TagLiveResourcesRequest) (<-chan *TagLiveResourcesResponse, <-chan error) {
 	responseChan := make(chan *TagLiveResourcesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TagLiveResourcesWithChan(request *TagLiveResourcesRequest)
 }
 
 // TagLiveResourcesWithCallback invokes the live.TagLiveResources API asynchronously
-// api document: https://help.aliyun.com/api/live/tagliveresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TagLiveResourcesWithCallback(request *TagLiveResourcesRequest, callback func(response *TagLiveResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateTagLiveResourcesRequest() (request *TagLiveResourcesRequest) {
 	request = &TagLiveResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "TagLiveResources", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "TagLiveResources", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // EffectCasterUrgent invokes the live.EffectCasterUrgent API synchronously
-// api document: https://help.aliyun.com/api/live/effectcasterurgent.html
 func (client *Client) EffectCasterUrgent(request *EffectCasterUrgentRequest) (response *EffectCasterUrgentResponse, err error) {
 	response = CreateEffectCasterUrgentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EffectCasterUrgent(request *EffectCasterUrgentRequest) (re
 }
 
 // EffectCasterUrgentWithChan invokes the live.EffectCasterUrgent API asynchronously
-// api document: https://help.aliyun.com/api/live/effectcasterurgent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EffectCasterUrgentWithChan(request *EffectCasterUrgentRequest) (<-chan *EffectCasterUrgentResponse, <-chan error) {
 	responseChan := make(chan *EffectCasterUrgentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EffectCasterUrgentWithChan(request *EffectCasterUrgentRequ
 }
 
 // EffectCasterUrgentWithCallback invokes the live.EffectCasterUrgent API asynchronously
-// api document: https://help.aliyun.com/api/live/effectcasterurgent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EffectCasterUrgentWithCallback(request *EffectCasterUrgentRequest, callback func(response *EffectCasterUrgentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateEffectCasterUrgentRequest() (request *EffectCasterUrgentRequest) {
 	request = &EffectCasterUrgentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "EffectCasterUrgent", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "EffectCasterUrgent", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

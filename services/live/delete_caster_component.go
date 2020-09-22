@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteCasterComponent invokes the live.DeleteCasterComponent API synchronously
-// api document: https://help.aliyun.com/api/live/deletecastercomponent.html
 func (client *Client) DeleteCasterComponent(request *DeleteCasterComponentRequest) (response *DeleteCasterComponentResponse, err error) {
 	response = CreateDeleteCasterComponentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteCasterComponent(request *DeleteCasterComponentReques
 }
 
 // DeleteCasterComponentWithChan invokes the live.DeleteCasterComponent API asynchronously
-// api document: https://help.aliyun.com/api/live/deletecastercomponent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCasterComponentWithChan(request *DeleteCasterComponentRequest) (<-chan *DeleteCasterComponentResponse, <-chan error) {
 	responseChan := make(chan *DeleteCasterComponentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteCasterComponentWithChan(request *DeleteCasterCompone
 }
 
 // DeleteCasterComponentWithCallback invokes the live.DeleteCasterComponent API asynchronously
-// api document: https://help.aliyun.com/api/live/deletecastercomponent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCasterComponentWithCallback(request *DeleteCasterComponentRequest, callback func(response *DeleteCasterComponentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDeleteCasterComponentRequest() (request *DeleteCasterComponentRequest
 	request = &DeleteCasterComponentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterComponent", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterComponent", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyLiveDomainSchdmByProperty invokes the live.ModifyLiveDomainSchdmByProperty API synchronously
-// api document: https://help.aliyun.com/api/live/modifylivedomainschdmbyproperty.html
 func (client *Client) ModifyLiveDomainSchdmByProperty(request *ModifyLiveDomainSchdmByPropertyRequest) (response *ModifyLiveDomainSchdmByPropertyResponse, err error) {
 	response = CreateModifyLiveDomainSchdmByPropertyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyLiveDomainSchdmByProperty(request *ModifyLiveDomainS
 }
 
 // ModifyLiveDomainSchdmByPropertyWithChan invokes the live.ModifyLiveDomainSchdmByProperty API asynchronously
-// api document: https://help.aliyun.com/api/live/modifylivedomainschdmbyproperty.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyLiveDomainSchdmByPropertyWithChan(request *ModifyLiveDomainSchdmByPropertyRequest) (<-chan *ModifyLiveDomainSchdmByPropertyResponse, <-chan error) {
 	responseChan := make(chan *ModifyLiveDomainSchdmByPropertyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyLiveDomainSchdmByPropertyWithChan(request *ModifyLiv
 }
 
 // ModifyLiveDomainSchdmByPropertyWithCallback invokes the live.ModifyLiveDomainSchdmByProperty API asynchronously
-// api document: https://help.aliyun.com/api/live/modifylivedomainschdmbyproperty.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyLiveDomainSchdmByPropertyWithCallback(request *ModifyLiveDomainSchdmByPropertyRequest, callback func(response *ModifyLiveDomainSchdmByPropertyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateModifyLiveDomainSchdmByPropertyRequest() (request *ModifyLiveDomainSc
 	request = &ModifyLiveDomainSchdmByPropertyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ModifyLiveDomainSchdmByProperty", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "ModifyLiveDomainSchdmByProperty", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

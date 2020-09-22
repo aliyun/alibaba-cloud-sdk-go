@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveDomainTimeShiftData invokes the live.DescribeLiveDomainTimeShiftData API synchronously
-// api document: https://help.aliyun.com/api/live/describelivedomaintimeshiftdata.html
 func (client *Client) DescribeLiveDomainTimeShiftData(request *DescribeLiveDomainTimeShiftDataRequest) (response *DescribeLiveDomainTimeShiftDataResponse, err error) {
 	response = CreateDescribeLiveDomainTimeShiftDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveDomainTimeShiftData(request *DescribeLiveDomai
 }
 
 // DescribeLiveDomainTimeShiftDataWithChan invokes the live.DescribeLiveDomainTimeShiftData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomaintimeshiftdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainTimeShiftDataWithChan(request *DescribeLiveDomainTimeShiftDataRequest) (<-chan *DescribeLiveDomainTimeShiftDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveDomainTimeShiftDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveDomainTimeShiftDataWithChan(request *DescribeL
 }
 
 // DescribeLiveDomainTimeShiftDataWithCallback invokes the live.DescribeLiveDomainTimeShiftData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomaintimeshiftdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainTimeShiftDataWithCallback(request *DescribeLiveDomainTimeShiftDataRequest, callback func(response *DescribeLiveDomainTimeShiftDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateDescribeLiveDomainTimeShiftDataRequest() (request *DescribeLiveDomain
 	request = &DescribeLiveDomainTimeShiftDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainTimeShiftData", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainTimeShiftData", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

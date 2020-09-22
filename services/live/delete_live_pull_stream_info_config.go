@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLivePullStreamInfoConfig invokes the live.DeleteLivePullStreamInfoConfig API synchronously
-// api document: https://help.aliyun.com/api/live/deletelivepullstreaminfoconfig.html
 func (client *Client) DeleteLivePullStreamInfoConfig(request *DeleteLivePullStreamInfoConfigRequest) (response *DeleteLivePullStreamInfoConfigResponse, err error) {
 	response = CreateDeleteLivePullStreamInfoConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLivePullStreamInfoConfig(request *DeleteLivePullStre
 }
 
 // DeleteLivePullStreamInfoConfigWithChan invokes the live.DeleteLivePullStreamInfoConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deletelivepullstreaminfoconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLivePullStreamInfoConfigWithChan(request *DeleteLivePullStreamInfoConfigRequest) (<-chan *DeleteLivePullStreamInfoConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteLivePullStreamInfoConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLivePullStreamInfoConfigWithChan(request *DeleteLive
 }
 
 // DeleteLivePullStreamInfoConfigWithCallback invokes the live.DeleteLivePullStreamInfoConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deletelivepullstreaminfoconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLivePullStreamInfoConfigWithCallback(request *DeleteLivePullStreamInfoConfigRequest, callback func(response *DeleteLivePullStreamInfoConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDeleteLivePullStreamInfoConfigRequest() (request *DeleteLivePullStrea
 	request = &DeleteLivePullStreamInfoConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLivePullStreamInfoConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLivePullStreamInfoConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveDomainRealTimeTrafficData invokes the live.DescribeLiveDomainRealTimeTrafficData API synchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainrealtimetrafficdata.html
 func (client *Client) DescribeLiveDomainRealTimeTrafficData(request *DescribeLiveDomainRealTimeTrafficDataRequest) (response *DescribeLiveDomainRealTimeTrafficDataResponse, err error) {
 	response = CreateDescribeLiveDomainRealTimeTrafficDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveDomainRealTimeTrafficData(request *DescribeLiv
 }
 
 // DescribeLiveDomainRealTimeTrafficDataWithChan invokes the live.DescribeLiveDomainRealTimeTrafficData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainrealtimetrafficdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainRealTimeTrafficDataWithChan(request *DescribeLiveDomainRealTimeTrafficDataRequest) (<-chan *DescribeLiveDomainRealTimeTrafficDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveDomainRealTimeTrafficDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveDomainRealTimeTrafficDataWithChan(request *Des
 }
 
 // DescribeLiveDomainRealTimeTrafficDataWithCallback invokes the live.DescribeLiveDomainRealTimeTrafficData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainrealtimetrafficdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainRealTimeTrafficDataWithCallback(request *DescribeLiveDomainRealTimeTrafficDataRequest, callback func(response *DescribeLiveDomainRealTimeTrafficDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateDescribeLiveDomainRealTimeTrafficDataRequest() (request *DescribeLive
 	request = &DescribeLiveDomainRealTimeTrafficDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainRealTimeTrafficData", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainRealTimeTrafficData", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

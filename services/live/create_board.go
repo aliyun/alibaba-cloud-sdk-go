@@ -21,7 +21,6 @@ import (
 )
 
 // CreateBoard invokes the live.CreateBoard API synchronously
-// api document: https://help.aliyun.com/api/live/createboard.html
 func (client *Client) CreateBoard(request *CreateBoardRequest) (response *CreateBoardResponse, err error) {
 	response = CreateCreateBoardResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateBoard(request *CreateBoardRequest) (response *Create
 }
 
 // CreateBoardWithChan invokes the live.CreateBoard API asynchronously
-// api document: https://help.aliyun.com/api/live/createboard.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBoardWithChan(request *CreateBoardRequest) (<-chan *CreateBoardResponse, <-chan error) {
 	responseChan := make(chan *CreateBoardResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateBoardWithChan(request *CreateBoardRequest) (<-chan *
 }
 
 // CreateBoardWithCallback invokes the live.CreateBoard API asynchronously
-// api document: https://help.aliyun.com/api/live/createboard.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBoardWithCallback(request *CreateBoardRequest, callback func(response *CreateBoardResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateCreateBoardRequest() (request *CreateBoardRequest) {
 	request = &CreateBoardRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "CreateBoard", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "CreateBoard", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveStreamCount invokes the live.DescribeLiveStreamCount API synchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamcount.html
 func (client *Client) DescribeLiveStreamCount(request *DescribeLiveStreamCountRequest) (response *DescribeLiveStreamCountResponse, err error) {
 	response = CreateDescribeLiveStreamCountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveStreamCount(request *DescribeLiveStreamCountRe
 }
 
 // DescribeLiveStreamCountWithChan invokes the live.DescribeLiveStreamCount API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamcount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamCountWithChan(request *DescribeLiveStreamCountRequest) (<-chan *DescribeLiveStreamCountResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamCountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveStreamCountWithChan(request *DescribeLiveStrea
 }
 
 // DescribeLiveStreamCountWithCallback invokes the live.DescribeLiveStreamCount API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamcount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamCountWithCallback(request *DescribeLiveStreamCountRequest, callback func(response *DescribeLiveStreamCountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDescribeLiveStreamCountRequest() (request *DescribeLiveStreamCountReq
 	request = &DescribeLiveStreamCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamCount", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamCount", "live", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLiveDomain invokes the live.DeleteLiveDomain API synchronously
-// api document: https://help.aliyun.com/api/live/deletelivedomain.html
 func (client *Client) DeleteLiveDomain(request *DeleteLiveDomainRequest) (response *DeleteLiveDomainResponse, err error) {
 	response = CreateDeleteLiveDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLiveDomain(request *DeleteLiveDomainRequest) (respon
 }
 
 // DeleteLiveDomainWithChan invokes the live.DeleteLiveDomain API asynchronously
-// api document: https://help.aliyun.com/api/live/deletelivedomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveDomainWithChan(request *DeleteLiveDomainRequest) (<-chan *DeleteLiveDomainResponse, <-chan error) {
 	responseChan := make(chan *DeleteLiveDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLiveDomainWithChan(request *DeleteLiveDomainRequest)
 }
 
 // DeleteLiveDomainWithCallback invokes the live.DeleteLiveDomain API asynchronously
-// api document: https://help.aliyun.com/api/live/deletelivedomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveDomainWithCallback(request *DeleteLiveDomainRequest, callback func(response *DeleteLiveDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDeleteLiveDomainRequest() (request *DeleteLiveDomainRequest) {
 	request = &DeleteLiveDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveDomain", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveDomain", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

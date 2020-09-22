@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveStreamsBlockList invokes the live.DescribeLiveStreamsBlockList API synchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamsblocklist.html
 func (client *Client) DescribeLiveStreamsBlockList(request *DescribeLiveStreamsBlockListRequest) (response *DescribeLiveStreamsBlockListResponse, err error) {
 	response = CreateDescribeLiveStreamsBlockListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveStreamsBlockList(request *DescribeLiveStreamsB
 }
 
 // DescribeLiveStreamsBlockListWithChan invokes the live.DescribeLiveStreamsBlockList API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamsblocklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsBlockListWithChan(request *DescribeLiveStreamsBlockListRequest) (<-chan *DescribeLiveStreamsBlockListResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamsBlockListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveStreamsBlockListWithChan(request *DescribeLive
 }
 
 // DescribeLiveStreamsBlockListWithCallback invokes the live.DescribeLiveStreamsBlockList API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamsblocklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsBlockListWithCallback(request *DescribeLiveStreamsBlockListRequest, callback func(response *DescribeLiveStreamsBlockListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateDescribeLiveStreamsBlockListRequest() (request *DescribeLiveStreamsBl
 	request = &DescribeLiveStreamsBlockListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamsBlockList", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamsBlockList", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

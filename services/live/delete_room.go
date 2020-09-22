@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteRoom invokes the live.DeleteRoom API synchronously
-// api document: https://help.aliyun.com/api/live/deleteroom.html
 func (client *Client) DeleteRoom(request *DeleteRoomRequest) (response *DeleteRoomResponse, err error) {
 	response = CreateDeleteRoomResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteRoom(request *DeleteRoomRequest) (response *DeleteRo
 }
 
 // DeleteRoomWithChan invokes the live.DeleteRoom API asynchronously
-// api document: https://help.aliyun.com/api/live/deleteroom.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRoomWithChan(request *DeleteRoomRequest) (<-chan *DeleteRoomResponse, <-chan error) {
 	responseChan := make(chan *DeleteRoomResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteRoomWithChan(request *DeleteRoomRequest) (<-chan *De
 }
 
 // DeleteRoomWithCallback invokes the live.DeleteRoom API asynchronously
-// api document: https://help.aliyun.com/api/live/deleteroom.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRoomWithCallback(request *DeleteRoomRequest, callback func(response *DeleteRoomResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDeleteRoomRequest() (request *DeleteRoomRequest) {
 	request = &DeleteRoomRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteRoom", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteRoom", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

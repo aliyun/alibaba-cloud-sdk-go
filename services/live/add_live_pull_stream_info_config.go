@@ -21,7 +21,6 @@ import (
 )
 
 // AddLivePullStreamInfoConfig invokes the live.AddLivePullStreamInfoConfig API synchronously
-// api document: https://help.aliyun.com/api/live/addlivepullstreaminfoconfig.html
 func (client *Client) AddLivePullStreamInfoConfig(request *AddLivePullStreamInfoConfigRequest) (response *AddLivePullStreamInfoConfigResponse, err error) {
 	response = CreateAddLivePullStreamInfoConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddLivePullStreamInfoConfig(request *AddLivePullStreamInfo
 }
 
 // AddLivePullStreamInfoConfigWithChan invokes the live.AddLivePullStreamInfoConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/addlivepullstreaminfoconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLivePullStreamInfoConfigWithChan(request *AddLivePullStreamInfoConfigRequest) (<-chan *AddLivePullStreamInfoConfigResponse, <-chan error) {
 	responseChan := make(chan *AddLivePullStreamInfoConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddLivePullStreamInfoConfigWithChan(request *AddLivePullSt
 }
 
 // AddLivePullStreamInfoConfigWithCallback invokes the live.AddLivePullStreamInfoConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/addlivepullstreaminfoconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLivePullStreamInfoConfigWithCallback(request *AddLivePullStreamInfoConfigRequest, callback func(response *AddLivePullStreamInfoConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateAddLivePullStreamInfoConfigRequest() (request *AddLivePullStreamInfoC
 	request = &AddLivePullStreamInfoConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddLivePullStreamInfoConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "AddLivePullStreamInfoConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

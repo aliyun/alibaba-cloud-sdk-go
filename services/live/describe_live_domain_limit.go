@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveDomainLimit invokes the live.DescribeLiveDomainLimit API synchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainlimit.html
 func (client *Client) DescribeLiveDomainLimit(request *DescribeLiveDomainLimitRequest) (response *DescribeLiveDomainLimitResponse, err error) {
 	response = CreateDescribeLiveDomainLimitResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveDomainLimit(request *DescribeLiveDomainLimitRe
 }
 
 // DescribeLiveDomainLimitWithChan invokes the live.DescribeLiveDomainLimit API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainlimit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainLimitWithChan(request *DescribeLiveDomainLimitRequest) (<-chan *DescribeLiveDomainLimitResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveDomainLimitResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveDomainLimitWithChan(request *DescribeLiveDomai
 }
 
 // DescribeLiveDomainLimitWithCallback invokes the live.DescribeLiveDomainLimit API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainlimit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainLimitWithCallback(request *DescribeLiveDomainLimitRequest, callback func(response *DescribeLiveDomainLimitResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDescribeLiveDomainLimitRequest() (request *DescribeLiveDomainLimitReq
 	request = &DescribeLiveDomainLimitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainLimit", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainLimit", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

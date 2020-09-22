@@ -21,7 +21,6 @@ import (
 )
 
 // AddLiveDetectNotifyConfig invokes the live.AddLiveDetectNotifyConfig API synchronously
-// api document: https://help.aliyun.com/api/live/addlivedetectnotifyconfig.html
 func (client *Client) AddLiveDetectNotifyConfig(request *AddLiveDetectNotifyConfigRequest) (response *AddLiveDetectNotifyConfigResponse, err error) {
 	response = CreateAddLiveDetectNotifyConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddLiveDetectNotifyConfig(request *AddLiveDetectNotifyConf
 }
 
 // AddLiveDetectNotifyConfigWithChan invokes the live.AddLiveDetectNotifyConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/addlivedetectnotifyconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveDetectNotifyConfigWithChan(request *AddLiveDetectNotifyConfigRequest) (<-chan *AddLiveDetectNotifyConfigResponse, <-chan error) {
 	responseChan := make(chan *AddLiveDetectNotifyConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddLiveDetectNotifyConfigWithChan(request *AddLiveDetectNo
 }
 
 // AddLiveDetectNotifyConfigWithCallback invokes the live.AddLiveDetectNotifyConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/addlivedetectnotifyconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveDetectNotifyConfigWithCallback(request *AddLiveDetectNotifyConfigRequest, callback func(response *AddLiveDetectNotifyConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateAddLiveDetectNotifyConfigRequest() (request *AddLiveDetectNotifyConfi
 	request = &AddLiveDetectNotifyConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddLiveDetectNotifyConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "AddLiveDetectNotifyConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

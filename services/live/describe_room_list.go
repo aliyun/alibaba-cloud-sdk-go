@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRoomList invokes the live.DescribeRoomList API synchronously
-// api document: https://help.aliyun.com/api/live/describeroomlist.html
 func (client *Client) DescribeRoomList(request *DescribeRoomListRequest) (response *DescribeRoomListResponse, err error) {
 	response = CreateDescribeRoomListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRoomList(request *DescribeRoomListRequest) (respon
 }
 
 // DescribeRoomListWithChan invokes the live.DescribeRoomList API asynchronously
-// api document: https://help.aliyun.com/api/live/describeroomlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRoomListWithChan(request *DescribeRoomListRequest) (<-chan *DescribeRoomListResponse, <-chan error) {
 	responseChan := make(chan *DescribeRoomListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRoomListWithChan(request *DescribeRoomListRequest)
 }
 
 // DescribeRoomListWithCallback invokes the live.DescribeRoomList API asynchronously
-// api document: https://help.aliyun.com/api/live/describeroomlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRoomListWithCallback(request *DescribeRoomListRequest, callback func(response *DescribeRoomListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,7 @@ func CreateDescribeRoomListRequest() (request *DescribeRoomListRequest) {
 	request = &DescribeRoomListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeRoomList", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeRoomList", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

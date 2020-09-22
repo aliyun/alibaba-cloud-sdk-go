@@ -21,7 +21,6 @@ import (
 )
 
 // DisableLiveRealtimeLogDelivery invokes the live.DisableLiveRealtimeLogDelivery API synchronously
-// api document: https://help.aliyun.com/api/live/disableliverealtimelogdelivery.html
 func (client *Client) DisableLiveRealtimeLogDelivery(request *DisableLiveRealtimeLogDeliveryRequest) (response *DisableLiveRealtimeLogDeliveryResponse, err error) {
 	response = CreateDisableLiveRealtimeLogDeliveryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisableLiveRealtimeLogDelivery(request *DisableLiveRealtim
 }
 
 // DisableLiveRealtimeLogDeliveryWithChan invokes the live.DisableLiveRealtimeLogDelivery API asynchronously
-// api document: https://help.aliyun.com/api/live/disableliverealtimelogdelivery.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableLiveRealtimeLogDeliveryWithChan(request *DisableLiveRealtimeLogDeliveryRequest) (<-chan *DisableLiveRealtimeLogDeliveryResponse, <-chan error) {
 	responseChan := make(chan *DisableLiveRealtimeLogDeliveryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisableLiveRealtimeLogDeliveryWithChan(request *DisableLiv
 }
 
 // DisableLiveRealtimeLogDeliveryWithCallback invokes the live.DisableLiveRealtimeLogDelivery API asynchronously
-// api document: https://help.aliyun.com/api/live/disableliverealtimelogdelivery.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableLiveRealtimeLogDeliveryWithCallback(request *DisableLiveRealtimeLogDeliveryRequest, callback func(response *DisableLiveRealtimeLogDeliveryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateDisableLiveRealtimeLogDeliveryRequest() (request *DisableLiveRealtime
 	request = &DisableLiveRealtimeLogDeliveryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DisableLiveRealtimeLogDelivery", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DisableLiveRealtimeLogDelivery", "live", "openAPI")
 	request.Method = requests.GET
 	return
 }

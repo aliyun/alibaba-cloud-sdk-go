@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLiveRecordVodConfig invokes the live.DeleteLiveRecordVodConfig API synchronously
-// api document: https://help.aliyun.com/api/live/deleteliverecordvodconfig.html
 func (client *Client) DeleteLiveRecordVodConfig(request *DeleteLiveRecordVodConfigRequest) (response *DeleteLiveRecordVodConfigResponse, err error) {
 	response = CreateDeleteLiveRecordVodConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLiveRecordVodConfig(request *DeleteLiveRecordVodConf
 }
 
 // DeleteLiveRecordVodConfigWithChan invokes the live.DeleteLiveRecordVodConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deleteliverecordvodconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveRecordVodConfigWithChan(request *DeleteLiveRecordVodConfigRequest) (<-chan *DeleteLiveRecordVodConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteLiveRecordVodConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLiveRecordVodConfigWithChan(request *DeleteLiveRecor
 }
 
 // DeleteLiveRecordVodConfigWithCallback invokes the live.DeleteLiveRecordVodConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deleteliverecordvodconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveRecordVodConfigWithCallback(request *DeleteLiveRecordVodConfigRequest, callback func(response *DeleteLiveRecordVodConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDeleteLiveRecordVodConfigRequest() (request *DeleteLiveRecordVodConfi
 	request = &DeleteLiveRecordVodConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveRecordVodConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveRecordVodConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveDomainBpsDataByTimeStamp invokes the live.DescribeLiveDomainBpsDataByTimeStamp API synchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainbpsdatabytimestamp.html
 func (client *Client) DescribeLiveDomainBpsDataByTimeStamp(request *DescribeLiveDomainBpsDataByTimeStampRequest) (response *DescribeLiveDomainBpsDataByTimeStampResponse, err error) {
 	response = CreateDescribeLiveDomainBpsDataByTimeStampResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveDomainBpsDataByTimeStamp(request *DescribeLive
 }
 
 // DescribeLiveDomainBpsDataByTimeStampWithChan invokes the live.DescribeLiveDomainBpsDataByTimeStamp API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainbpsdatabytimestamp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainBpsDataByTimeStampWithChan(request *DescribeLiveDomainBpsDataByTimeStampRequest) (<-chan *DescribeLiveDomainBpsDataByTimeStampResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveDomainBpsDataByTimeStampResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveDomainBpsDataByTimeStampWithChan(request *Desc
 }
 
 // DescribeLiveDomainBpsDataByTimeStampWithCallback invokes the live.DescribeLiveDomainBpsDataByTimeStamp API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainbpsdatabytimestamp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainBpsDataByTimeStampWithCallback(request *DescribeLiveDomainBpsDataByTimeStampRequest, callback func(response *DescribeLiveDomainBpsDataByTimeStampResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateDescribeLiveDomainBpsDataByTimeStampRequest() (request *DescribeLiveD
 	request = &DescribeLiveDomainBpsDataByTimeStampRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainBpsDataByTimeStamp", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainBpsDataByTimeStamp", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

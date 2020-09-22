@@ -21,7 +21,6 @@ import (
 )
 
 // AllowPushStream invokes the live.AllowPushStream API synchronously
-// api document: https://help.aliyun.com/api/live/allowpushstream.html
 func (client *Client) AllowPushStream(request *AllowPushStreamRequest) (response *AllowPushStreamResponse, err error) {
 	response = CreateAllowPushStreamResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AllowPushStream(request *AllowPushStreamRequest) (response
 }
 
 // AllowPushStreamWithChan invokes the live.AllowPushStream API asynchronously
-// api document: https://help.aliyun.com/api/live/allowpushstream.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllowPushStreamWithChan(request *AllowPushStreamRequest) (<-chan *AllowPushStreamResponse, <-chan error) {
 	responseChan := make(chan *AllowPushStreamResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AllowPushStreamWithChan(request *AllowPushStreamRequest) (
 }
 
 // AllowPushStreamWithCallback invokes the live.AllowPushStream API asynchronously
-// api document: https://help.aliyun.com/api/live/allowpushstream.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllowPushStreamWithCallback(request *AllowPushStreamRequest, callback func(response *AllowPushStreamResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateAllowPushStreamRequest() (request *AllowPushStreamRequest) {
 	request = &AllowPushStreamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AllowPushStream", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "AllowPushStream", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

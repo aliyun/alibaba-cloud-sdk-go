@@ -21,7 +21,6 @@ import (
 )
 
 // CreateRoom invokes the live.CreateRoom API synchronously
-// api document: https://help.aliyun.com/api/live/createroom.html
 func (client *Client) CreateRoom(request *CreateRoomRequest) (response *CreateRoomResponse, err error) {
 	response = CreateCreateRoomResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateRoom(request *CreateRoomRequest) (response *CreateRo
 }
 
 // CreateRoomWithChan invokes the live.CreateRoom API asynchronously
-// api document: https://help.aliyun.com/api/live/createroom.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRoomWithChan(request *CreateRoomRequest) (<-chan *CreateRoomResponse, <-chan error) {
 	responseChan := make(chan *CreateRoomResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateRoomWithChan(request *CreateRoomRequest) (<-chan *Cr
 }
 
 // CreateRoomWithCallback invokes the live.CreateRoom API asynchronously
-// api document: https://help.aliyun.com/api/live/createroom.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRoomWithCallback(request *CreateRoomRequest, callback func(response *CreateRoomResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateCreateRoomRequest() (request *CreateRoomRequest) {
 	request = &CreateRoomRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "CreateRoom", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "CreateRoom", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

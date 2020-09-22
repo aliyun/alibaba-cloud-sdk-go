@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRecords invokes the live.DescribeRecords API synchronously
-// api document: https://help.aliyun.com/api/live/describerecords.html
 func (client *Client) DescribeRecords(request *DescribeRecordsRequest) (response *DescribeRecordsResponse, err error) {
 	response = CreateDescribeRecordsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRecords(request *DescribeRecordsRequest) (response
 }
 
 // DescribeRecordsWithChan invokes the live.DescribeRecords API asynchronously
-// api document: https://help.aliyun.com/api/live/describerecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecordsWithChan(request *DescribeRecordsRequest) (<-chan *DescribeRecordsResponse, <-chan error) {
 	responseChan := make(chan *DescribeRecordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRecordsWithChan(request *DescribeRecordsRequest) (
 }
 
 // DescribeRecordsWithCallback invokes the live.DescribeRecords API asynchronously
-// api document: https://help.aliyun.com/api/live/describerecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecordsWithCallback(request *DescribeRecordsRequest, callback func(response *DescribeRecordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateDescribeRecordsRequest() (request *DescribeRecordsRequest) {
 	request = &DescribeRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeRecords", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeRecords", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

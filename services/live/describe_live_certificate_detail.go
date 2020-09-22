@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveCertificateDetail invokes the live.DescribeLiveCertificateDetail API synchronously
-// api document: https://help.aliyun.com/api/live/describelivecertificatedetail.html
 func (client *Client) DescribeLiveCertificateDetail(request *DescribeLiveCertificateDetailRequest) (response *DescribeLiveCertificateDetailResponse, err error) {
 	response = CreateDescribeLiveCertificateDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveCertificateDetail(request *DescribeLiveCertifi
 }
 
 // DescribeLiveCertificateDetailWithChan invokes the live.DescribeLiveCertificateDetail API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivecertificatedetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveCertificateDetailWithChan(request *DescribeLiveCertificateDetailRequest) (<-chan *DescribeLiveCertificateDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveCertificateDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveCertificateDetailWithChan(request *DescribeLiv
 }
 
 // DescribeLiveCertificateDetailWithCallback invokes the live.DescribeLiveCertificateDetail API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivecertificatedetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveCertificateDetailWithCallback(request *DescribeLiveCertificateDetailRequest, callback func(response *DescribeLiveCertificateDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateDescribeLiveCertificateDetailRequest() (request *DescribeLiveCertific
 	request = &DescribeLiveCertificateDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveCertificateDetail", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveCertificateDetail", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

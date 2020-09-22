@@ -21,7 +21,6 @@ import (
 )
 
 // JoinBoard invokes the live.JoinBoard API synchronously
-// api document: https://help.aliyun.com/api/live/joinboard.html
 func (client *Client) JoinBoard(request *JoinBoardRequest) (response *JoinBoardResponse, err error) {
 	response = CreateJoinBoardResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) JoinBoard(request *JoinBoardRequest) (response *JoinBoardR
 }
 
 // JoinBoardWithChan invokes the live.JoinBoard API asynchronously
-// api document: https://help.aliyun.com/api/live/joinboard.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinBoardWithChan(request *JoinBoardRequest) (<-chan *JoinBoardResponse, <-chan error) {
 	responseChan := make(chan *JoinBoardResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) JoinBoardWithChan(request *JoinBoardRequest) (<-chan *Join
 }
 
 // JoinBoardWithCallback invokes the live.JoinBoard API asynchronously
-// api document: https://help.aliyun.com/api/live/joinboard.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinBoardWithCallback(request *JoinBoardRequest, callback func(response *JoinBoardResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateJoinBoardRequest() (request *JoinBoardRequest) {
 	request = &JoinBoardRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "JoinBoard", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "JoinBoard", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

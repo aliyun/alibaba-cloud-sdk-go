@@ -21,7 +21,6 @@ import (
 )
 
 // AddCasterVideoResource invokes the live.AddCasterVideoResource API synchronously
-// api document: https://help.aliyun.com/api/live/addcastervideoresource.html
 func (client *Client) AddCasterVideoResource(request *AddCasterVideoResourceRequest) (response *AddCasterVideoResourceResponse, err error) {
 	response = CreateAddCasterVideoResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddCasterVideoResource(request *AddCasterVideoResourceRequ
 }
 
 // AddCasterVideoResourceWithChan invokes the live.AddCasterVideoResource API asynchronously
-// api document: https://help.aliyun.com/api/live/addcastervideoresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCasterVideoResourceWithChan(request *AddCasterVideoResourceRequest) (<-chan *AddCasterVideoResourceResponse, <-chan error) {
 	responseChan := make(chan *AddCasterVideoResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddCasterVideoResourceWithChan(request *AddCasterVideoReso
 }
 
 // AddCasterVideoResourceWithCallback invokes the live.AddCasterVideoResource API asynchronously
-// api document: https://help.aliyun.com/api/live/addcastervideoresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCasterVideoResourceWithCallback(request *AddCasterVideoResourceRequest, callback func(response *AddCasterVideoResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,7 @@ func CreateAddCasterVideoResourceRequest() (request *AddCasterVideoResourceReque
 	request = &AddCasterVideoResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddCasterVideoResource", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "AddCasterVideoResource", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

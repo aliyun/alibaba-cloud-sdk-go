@@ -21,7 +21,6 @@ import (
 )
 
 // AddLiveAudioAuditConfig invokes the live.AddLiveAudioAuditConfig API synchronously
-// api document: https://help.aliyun.com/api/live/addliveaudioauditconfig.html
 func (client *Client) AddLiveAudioAuditConfig(request *AddLiveAudioAuditConfigRequest) (response *AddLiveAudioAuditConfigResponse, err error) {
 	response = CreateAddLiveAudioAuditConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddLiveAudioAuditConfig(request *AddLiveAudioAuditConfigRe
 }
 
 // AddLiveAudioAuditConfigWithChan invokes the live.AddLiveAudioAuditConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/addliveaudioauditconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveAudioAuditConfigWithChan(request *AddLiveAudioAuditConfigRequest) (<-chan *AddLiveAudioAuditConfigResponse, <-chan error) {
 	responseChan := make(chan *AddLiveAudioAuditConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddLiveAudioAuditConfigWithChan(request *AddLiveAudioAudit
 }
 
 // AddLiveAudioAuditConfigWithCallback invokes the live.AddLiveAudioAuditConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/addliveaudioauditconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveAudioAuditConfigWithCallback(request *AddLiveAudioAuditConfigRequest, callback func(response *AddLiveAudioAuditConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateAddLiveAudioAuditConfigRequest() (request *AddLiveAudioAuditConfigReq
 	request = &AddLiveAudioAuditConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddLiveAudioAuditConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "AddLiveAudioAuditConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

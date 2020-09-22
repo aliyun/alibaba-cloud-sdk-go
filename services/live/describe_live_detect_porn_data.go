@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveDetectPornData invokes the live.DescribeLiveDetectPornData API synchronously
-// api document: https://help.aliyun.com/api/live/describelivedetectporndata.html
 func (client *Client) DescribeLiveDetectPornData(request *DescribeLiveDetectPornDataRequest) (response *DescribeLiveDetectPornDataResponse, err error) {
 	response = CreateDescribeLiveDetectPornDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveDetectPornData(request *DescribeLiveDetectPorn
 }
 
 // DescribeLiveDetectPornDataWithChan invokes the live.DescribeLiveDetectPornData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedetectporndata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDetectPornDataWithChan(request *DescribeLiveDetectPornDataRequest) (<-chan *DescribeLiveDetectPornDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveDetectPornDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveDetectPornDataWithChan(request *DescribeLiveDe
 }
 
 // DescribeLiveDetectPornDataWithCallback invokes the live.DescribeLiveDetectPornData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedetectporndata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDetectPornDataWithCallback(request *DescribeLiveDetectPornDataRequest, callback func(response *DescribeLiveDetectPornDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateDescribeLiveDetectPornDataRequest() (request *DescribeLiveDetectPornD
 	request = &DescribeLiveDetectPornDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDetectPornData", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDetectPornData", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

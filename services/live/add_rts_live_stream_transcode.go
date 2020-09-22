@@ -21,7 +21,6 @@ import (
 )
 
 // AddRtsLiveStreamTranscode invokes the live.AddRtsLiveStreamTranscode API synchronously
-// api document: https://help.aliyun.com/api/live/addrtslivestreamtranscode.html
 func (client *Client) AddRtsLiveStreamTranscode(request *AddRtsLiveStreamTranscodeRequest) (response *AddRtsLiveStreamTranscodeResponse, err error) {
 	response = CreateAddRtsLiveStreamTranscodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddRtsLiveStreamTranscode(request *AddRtsLiveStreamTransco
 }
 
 // AddRtsLiveStreamTranscodeWithChan invokes the live.AddRtsLiveStreamTranscode API asynchronously
-// api document: https://help.aliyun.com/api/live/addrtslivestreamtranscode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddRtsLiveStreamTranscodeWithChan(request *AddRtsLiveStreamTranscodeRequest) (<-chan *AddRtsLiveStreamTranscodeResponse, <-chan error) {
 	responseChan := make(chan *AddRtsLiveStreamTranscodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddRtsLiveStreamTranscodeWithChan(request *AddRtsLiveStrea
 }
 
 // AddRtsLiveStreamTranscodeWithCallback invokes the live.AddRtsLiveStreamTranscode API asynchronously
-// api document: https://help.aliyun.com/api/live/addrtslivestreamtranscode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddRtsLiveStreamTranscodeWithCallback(request *AddRtsLiveStreamTranscodeRequest, callback func(response *AddRtsLiveStreamTranscodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type AddRtsLiveStreamTranscodeRequest struct {
 	*requests.RpcRequest
 	Template        string           `position:"Query" name:"Template"`
 	DeleteBframes   requests.Boolean `position:"Query" name:"DeleteBframes"`
+	Lazy            string           `position:"Query" name:"Lazy"`
 	Gop             string           `position:"Query" name:"Gop"`
 	Opus            requests.Boolean `position:"Query" name:"Opus"`
 	AudioCodec      string           `position:"Query" name:"AudioCodec"`
@@ -107,7 +103,7 @@ func CreateAddRtsLiveStreamTranscodeRequest() (request *AddRtsLiveStreamTranscod
 	request = &AddRtsLiveStreamTranscodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddRtsLiveStreamTranscode", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "AddRtsLiveStreamTranscode", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

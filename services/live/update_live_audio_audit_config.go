@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateLiveAudioAuditConfig invokes the live.UpdateLiveAudioAuditConfig API synchronously
-// api document: https://help.aliyun.com/api/live/updateliveaudioauditconfig.html
 func (client *Client) UpdateLiveAudioAuditConfig(request *UpdateLiveAudioAuditConfigRequest) (response *UpdateLiveAudioAuditConfigResponse, err error) {
 	response = CreateUpdateLiveAudioAuditConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateLiveAudioAuditConfig(request *UpdateLiveAudioAuditCo
 }
 
 // UpdateLiveAudioAuditConfigWithChan invokes the live.UpdateLiveAudioAuditConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/updateliveaudioauditconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLiveAudioAuditConfigWithChan(request *UpdateLiveAudioAuditConfigRequest) (<-chan *UpdateLiveAudioAuditConfigResponse, <-chan error) {
 	responseChan := make(chan *UpdateLiveAudioAuditConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateLiveAudioAuditConfigWithChan(request *UpdateLiveAudi
 }
 
 // UpdateLiveAudioAuditConfigWithCallback invokes the live.UpdateLiveAudioAuditConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/updateliveaudioauditconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLiveAudioAuditConfigWithCallback(request *UpdateLiveAudioAuditConfigRequest, callback func(response *UpdateLiveAudioAuditConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateUpdateLiveAudioAuditConfigRequest() (request *UpdateLiveAudioAuditCon
 	request = &UpdateLiveAudioAuditConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "UpdateLiveAudioAuditConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "UpdateLiveAudioAuditConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

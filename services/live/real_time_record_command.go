@@ -21,7 +21,6 @@ import (
 )
 
 // RealTimeRecordCommand invokes the live.RealTimeRecordCommand API synchronously
-// api document: https://help.aliyun.com/api/live/realtimerecordcommand.html
 func (client *Client) RealTimeRecordCommand(request *RealTimeRecordCommandRequest) (response *RealTimeRecordCommandResponse, err error) {
 	response = CreateRealTimeRecordCommandResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RealTimeRecordCommand(request *RealTimeRecordCommandReques
 }
 
 // RealTimeRecordCommandWithChan invokes the live.RealTimeRecordCommand API asynchronously
-// api document: https://help.aliyun.com/api/live/realtimerecordcommand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RealTimeRecordCommandWithChan(request *RealTimeRecordCommandRequest) (<-chan *RealTimeRecordCommandResponse, <-chan error) {
 	responseChan := make(chan *RealTimeRecordCommandResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RealTimeRecordCommandWithChan(request *RealTimeRecordComma
 }
 
 // RealTimeRecordCommandWithCallback invokes the live.RealTimeRecordCommand API asynchronously
-// api document: https://help.aliyun.com/api/live/realtimerecordcommand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RealTimeRecordCommandWithCallback(request *RealTimeRecordCommandRequest, callback func(response *RealTimeRecordCommandResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateRealTimeRecordCommandRequest() (request *RealTimeRecordCommandRequest
 	request = &RealTimeRecordCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "RealTimeRecordCommand", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "RealTimeRecordCommand", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

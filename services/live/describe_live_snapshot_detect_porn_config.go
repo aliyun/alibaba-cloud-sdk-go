@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveSnapshotDetectPornConfig invokes the live.DescribeLiveSnapshotDetectPornConfig API synchronously
-// api document: https://help.aliyun.com/api/live/describelivesnapshotdetectpornconfig.html
 func (client *Client) DescribeLiveSnapshotDetectPornConfig(request *DescribeLiveSnapshotDetectPornConfigRequest) (response *DescribeLiveSnapshotDetectPornConfigResponse, err error) {
 	response = CreateDescribeLiveSnapshotDetectPornConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveSnapshotDetectPornConfig(request *DescribeLive
 }
 
 // DescribeLiveSnapshotDetectPornConfigWithChan invokes the live.DescribeLiveSnapshotDetectPornConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivesnapshotdetectpornconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveSnapshotDetectPornConfigWithChan(request *DescribeLiveSnapshotDetectPornConfigRequest) (<-chan *DescribeLiveSnapshotDetectPornConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveSnapshotDetectPornConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveSnapshotDetectPornConfigWithChan(request *Desc
 }
 
 // DescribeLiveSnapshotDetectPornConfigWithCallback invokes the live.DescribeLiveSnapshotDetectPornConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivesnapshotdetectpornconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveSnapshotDetectPornConfigWithCallback(request *DescribeLiveSnapshotDetectPornConfigRequest, callback func(response *DescribeLiveSnapshotDetectPornConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,7 @@ func CreateDescribeLiveSnapshotDetectPornConfigRequest() (request *DescribeLiveS
 	request = &DescribeLiveSnapshotDetectPornConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveSnapshotDetectPornConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveSnapshotDetectPornConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

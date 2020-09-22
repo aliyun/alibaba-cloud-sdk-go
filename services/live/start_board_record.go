@@ -21,7 +21,6 @@ import (
 )
 
 // StartBoardRecord invokes the live.StartBoardRecord API synchronously
-// api document: https://help.aliyun.com/api/live/startboardrecord.html
 func (client *Client) StartBoardRecord(request *StartBoardRecordRequest) (response *StartBoardRecordResponse, err error) {
 	response = CreateStartBoardRecordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartBoardRecord(request *StartBoardRecordRequest) (respon
 }
 
 // StartBoardRecordWithChan invokes the live.StartBoardRecord API asynchronously
-// api document: https://help.aliyun.com/api/live/startboardrecord.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartBoardRecordWithChan(request *StartBoardRecordRequest) (<-chan *StartBoardRecordResponse, <-chan error) {
 	responseChan := make(chan *StartBoardRecordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartBoardRecordWithChan(request *StartBoardRecordRequest)
 }
 
 // StartBoardRecordWithCallback invokes the live.StartBoardRecord API asynchronously
-// api document: https://help.aliyun.com/api/live/startboardrecord.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartBoardRecordWithCallback(request *StartBoardRecordRequest, callback func(response *StartBoardRecordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateStartBoardRecordRequest() (request *StartBoardRecordRequest) {
 	request = &StartBoardRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "StartBoardRecord", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "StartBoardRecord", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

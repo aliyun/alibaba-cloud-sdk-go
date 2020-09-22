@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveRecordNotifyConfig invokes the live.DescribeLiveRecordNotifyConfig API synchronously
-// api document: https://help.aliyun.com/api/live/describeliverecordnotifyconfig.html
 func (client *Client) DescribeLiveRecordNotifyConfig(request *DescribeLiveRecordNotifyConfigRequest) (response *DescribeLiveRecordNotifyConfigResponse, err error) {
 	response = CreateDescribeLiveRecordNotifyConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveRecordNotifyConfig(request *DescribeLiveRecord
 }
 
 // DescribeLiveRecordNotifyConfigWithChan invokes the live.DescribeLiveRecordNotifyConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describeliverecordnotifyconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveRecordNotifyConfigWithChan(request *DescribeLiveRecordNotifyConfigRequest) (<-chan *DescribeLiveRecordNotifyConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveRecordNotifyConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveRecordNotifyConfigWithChan(request *DescribeLi
 }
 
 // DescribeLiveRecordNotifyConfigWithCallback invokes the live.DescribeLiveRecordNotifyConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describeliverecordnotifyconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveRecordNotifyConfigWithCallback(request *DescribeLiveRecordNotifyConfigRequest, callback func(response *DescribeLiveRecordNotifyConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDescribeLiveRecordNotifyConfigRequest() (request *DescribeLiveRecordN
 	request = &DescribeLiveRecordNotifyConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveRecordNotifyConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveRecordNotifyConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

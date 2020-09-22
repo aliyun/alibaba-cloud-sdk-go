@@ -21,7 +21,6 @@ import (
 )
 
 // SetBoardCallback invokes the live.SetBoardCallback API synchronously
-// api document: https://help.aliyun.com/api/live/setboardcallback.html
 func (client *Client) SetBoardCallback(request *SetBoardCallbackRequest) (response *SetBoardCallbackResponse, err error) {
 	response = CreateSetBoardCallbackResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetBoardCallback(request *SetBoardCallbackRequest) (respon
 }
 
 // SetBoardCallbackWithChan invokes the live.SetBoardCallback API asynchronously
-// api document: https://help.aliyun.com/api/live/setboardcallback.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetBoardCallbackWithChan(request *SetBoardCallbackRequest) (<-chan *SetBoardCallbackResponse, <-chan error) {
 	responseChan := make(chan *SetBoardCallbackResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetBoardCallbackWithChan(request *SetBoardCallbackRequest)
 }
 
 // SetBoardCallbackWithCallback invokes the live.SetBoardCallback API asynchronously
-// api document: https://help.aliyun.com/api/live/setboardcallback.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetBoardCallbackWithCallback(request *SetBoardCallbackRequest, callback func(response *SetBoardCallbackResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateSetBoardCallbackRequest() (request *SetBoardCallbackRequest) {
 	request = &SetBoardCallbackRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "SetBoardCallback", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "SetBoardCallback", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

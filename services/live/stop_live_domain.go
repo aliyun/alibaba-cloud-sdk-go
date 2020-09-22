@@ -21,7 +21,6 @@ import (
 )
 
 // StopLiveDomain invokes the live.StopLiveDomain API synchronously
-// api document: https://help.aliyun.com/api/live/stoplivedomain.html
 func (client *Client) StopLiveDomain(request *StopLiveDomainRequest) (response *StopLiveDomainResponse, err error) {
 	response = CreateStopLiveDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopLiveDomain(request *StopLiveDomainRequest) (response *
 }
 
 // StopLiveDomainWithChan invokes the live.StopLiveDomain API asynchronously
-// api document: https://help.aliyun.com/api/live/stoplivedomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopLiveDomainWithChan(request *StopLiveDomainRequest) (<-chan *StopLiveDomainResponse, <-chan error) {
 	responseChan := make(chan *StopLiveDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopLiveDomainWithChan(request *StopLiveDomainRequest) (<-
 }
 
 // StopLiveDomainWithCallback invokes the live.StopLiveDomain API asynchronously
-// api document: https://help.aliyun.com/api/live/stoplivedomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopLiveDomainWithCallback(request *StopLiveDomainRequest, callback func(response *StopLiveDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateStopLiveDomainRequest() (request *StopLiveDomainRequest) {
 	request = &StopLiveDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "StopLiveDomain", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "StopLiveDomain", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

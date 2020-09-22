@@ -21,7 +21,6 @@ import (
 )
 
 // AddLiveAudioAuditNotifyConfig invokes the live.AddLiveAudioAuditNotifyConfig API synchronously
-// api document: https://help.aliyun.com/api/live/addliveaudioauditnotifyconfig.html
 func (client *Client) AddLiveAudioAuditNotifyConfig(request *AddLiveAudioAuditNotifyConfigRequest) (response *AddLiveAudioAuditNotifyConfigResponse, err error) {
 	response = CreateAddLiveAudioAuditNotifyConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddLiveAudioAuditNotifyConfig(request *AddLiveAudioAuditNo
 }
 
 // AddLiveAudioAuditNotifyConfigWithChan invokes the live.AddLiveAudioAuditNotifyConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/addliveaudioauditnotifyconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveAudioAuditNotifyConfigWithChan(request *AddLiveAudioAuditNotifyConfigRequest) (<-chan *AddLiveAudioAuditNotifyConfigResponse, <-chan error) {
 	responseChan := make(chan *AddLiveAudioAuditNotifyConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddLiveAudioAuditNotifyConfigWithChan(request *AddLiveAudi
 }
 
 // AddLiveAudioAuditNotifyConfigWithCallback invokes the live.AddLiveAudioAuditNotifyConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/addliveaudioauditnotifyconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveAudioAuditNotifyConfigWithCallback(request *AddLiveAudioAuditNotifyConfigRequest, callback func(response *AddLiveAudioAuditNotifyConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateAddLiveAudioAuditNotifyConfigRequest() (request *AddLiveAudioAuditNot
 	request = &AddLiveAudioAuditNotifyConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddLiveAudioAuditNotifyConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "AddLiveAudioAuditNotifyConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

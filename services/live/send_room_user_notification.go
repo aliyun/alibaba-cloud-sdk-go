@@ -21,7 +21,6 @@ import (
 )
 
 // SendRoomUserNotification invokes the live.SendRoomUserNotification API synchronously
-// api document: https://help.aliyun.com/api/live/sendroomusernotification.html
 func (client *Client) SendRoomUserNotification(request *SendRoomUserNotificationRequest) (response *SendRoomUserNotificationResponse, err error) {
 	response = CreateSendRoomUserNotificationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SendRoomUserNotification(request *SendRoomUserNotification
 }
 
 // SendRoomUserNotificationWithChan invokes the live.SendRoomUserNotification API asynchronously
-// api document: https://help.aliyun.com/api/live/sendroomusernotification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendRoomUserNotificationWithChan(request *SendRoomUserNotificationRequest) (<-chan *SendRoomUserNotificationResponse, <-chan error) {
 	responseChan := make(chan *SendRoomUserNotificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SendRoomUserNotificationWithChan(request *SendRoomUserNoti
 }
 
 // SendRoomUserNotificationWithCallback invokes the live.SendRoomUserNotification API asynchronously
-// api document: https://help.aliyun.com/api/live/sendroomusernotification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendRoomUserNotificationWithCallback(request *SendRoomUserNotificationRequest, callback func(response *SendRoomUserNotificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateSendRoomUserNotificationRequest() (request *SendRoomUserNotificationR
 	request = &SendRoomUserNotificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "SendRoomUserNotification", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "SendRoomUserNotification", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

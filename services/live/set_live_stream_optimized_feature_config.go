@@ -21,7 +21,6 @@ import (
 )
 
 // SetLiveStreamOptimizedFeatureConfig invokes the live.SetLiveStreamOptimizedFeatureConfig API synchronously
-// api document: https://help.aliyun.com/api/live/setlivestreamoptimizedfeatureconfig.html
 func (client *Client) SetLiveStreamOptimizedFeatureConfig(request *SetLiveStreamOptimizedFeatureConfigRequest) (response *SetLiveStreamOptimizedFeatureConfigResponse, err error) {
 	response = CreateSetLiveStreamOptimizedFeatureConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetLiveStreamOptimizedFeatureConfig(request *SetLiveStream
 }
 
 // SetLiveStreamOptimizedFeatureConfigWithChan invokes the live.SetLiveStreamOptimizedFeatureConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/setlivestreamoptimizedfeatureconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLiveStreamOptimizedFeatureConfigWithChan(request *SetLiveStreamOptimizedFeatureConfigRequest) (<-chan *SetLiveStreamOptimizedFeatureConfigResponse, <-chan error) {
 	responseChan := make(chan *SetLiveStreamOptimizedFeatureConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetLiveStreamOptimizedFeatureConfigWithChan(request *SetLi
 }
 
 // SetLiveStreamOptimizedFeatureConfigWithCallback invokes the live.SetLiveStreamOptimizedFeatureConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/setlivestreamoptimizedfeatureconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLiveStreamOptimizedFeatureConfigWithCallback(request *SetLiveStreamOptimizedFeatureConfigRequest, callback func(response *SetLiveStreamOptimizedFeatureConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateSetLiveStreamOptimizedFeatureConfigRequest() (request *SetLiveStreamO
 	request = &SetLiveStreamOptimizedFeatureConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "SetLiveStreamOptimizedFeatureConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "SetLiveStreamOptimizedFeatureConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

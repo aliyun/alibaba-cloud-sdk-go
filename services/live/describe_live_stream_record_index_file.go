@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveStreamRecordIndexFile invokes the live.DescribeLiveStreamRecordIndexFile API synchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamrecordindexfile.html
 func (client *Client) DescribeLiveStreamRecordIndexFile(request *DescribeLiveStreamRecordIndexFileRequest) (response *DescribeLiveStreamRecordIndexFileResponse, err error) {
 	response = CreateDescribeLiveStreamRecordIndexFileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveStreamRecordIndexFile(request *DescribeLiveStr
 }
 
 // DescribeLiveStreamRecordIndexFileWithChan invokes the live.DescribeLiveStreamRecordIndexFile API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamrecordindexfile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRecordIndexFileWithChan(request *DescribeLiveStreamRecordIndexFileRequest) (<-chan *DescribeLiveStreamRecordIndexFileResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamRecordIndexFileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveStreamRecordIndexFileWithChan(request *Describ
 }
 
 // DescribeLiveStreamRecordIndexFileWithCallback invokes the live.DescribeLiveStreamRecordIndexFile API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamrecordindexfile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRecordIndexFileWithCallback(request *DescribeLiveStreamRecordIndexFileRequest, callback func(response *DescribeLiveStreamRecordIndexFileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateDescribeLiveStreamRecordIndexFileRequest() (request *DescribeLiveStre
 	request = &DescribeLiveStreamRecordIndexFileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamRecordIndexFile", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamRecordIndexFile", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCaster invokes the live.CreateCaster API synchronously
-// api document: https://help.aliyun.com/api/live/createcaster.html
 func (client *Client) CreateCaster(request *CreateCasterRequest) (response *CreateCasterResponse, err error) {
 	response = CreateCreateCasterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCaster(request *CreateCasterRequest) (response *Crea
 }
 
 // CreateCasterWithChan invokes the live.CreateCaster API asynchronously
-// api document: https://help.aliyun.com/api/live/createcaster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCasterWithChan(request *CreateCasterRequest) (<-chan *CreateCasterResponse, <-chan error) {
 	responseChan := make(chan *CreateCasterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateCasterWithChan(request *CreateCasterRequest) (<-chan
 }
 
 // CreateCasterWithCallback invokes the live.CreateCaster API asynchronously
-// api document: https://help.aliyun.com/api/live/createcaster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCasterWithCallback(request *CreateCasterRequest, callback func(response *CreateCasterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateCreateCasterRequest() (request *CreateCasterRequest) {
 	request = &CreateCasterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "CreateCaster", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "CreateCaster", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

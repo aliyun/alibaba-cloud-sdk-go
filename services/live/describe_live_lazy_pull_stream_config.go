@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveLazyPullStreamConfig invokes the live.DescribeLiveLazyPullStreamConfig API synchronously
-// api document: https://help.aliyun.com/api/live/describelivelazypullstreamconfig.html
 func (client *Client) DescribeLiveLazyPullStreamConfig(request *DescribeLiveLazyPullStreamConfigRequest) (response *DescribeLiveLazyPullStreamConfigResponse, err error) {
 	response = CreateDescribeLiveLazyPullStreamConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveLazyPullStreamConfig(request *DescribeLiveLazy
 }
 
 // DescribeLiveLazyPullStreamConfigWithChan invokes the live.DescribeLiveLazyPullStreamConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivelazypullstreamconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveLazyPullStreamConfigWithChan(request *DescribeLiveLazyPullStreamConfigRequest) (<-chan *DescribeLiveLazyPullStreamConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveLazyPullStreamConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveLazyPullStreamConfigWithChan(request *Describe
 }
 
 // DescribeLiveLazyPullStreamConfigWithCallback invokes the live.DescribeLiveLazyPullStreamConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivelazypullstreamconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveLazyPullStreamConfigWithCallback(request *DescribeLiveLazyPullStreamConfigRequest, callback func(response *DescribeLiveLazyPullStreamConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDescribeLiveLazyPullStreamConfigRequest() (request *DescribeLiveLazyP
 	request = &DescribeLiveLazyPullStreamConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveLazyPullStreamConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveLazyPullStreamConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

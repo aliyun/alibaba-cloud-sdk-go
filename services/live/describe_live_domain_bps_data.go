@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveDomainBpsData invokes the live.DescribeLiveDomainBpsData API synchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainbpsdata.html
 func (client *Client) DescribeLiveDomainBpsData(request *DescribeLiveDomainBpsDataRequest) (response *DescribeLiveDomainBpsDataResponse, err error) {
 	response = CreateDescribeLiveDomainBpsDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveDomainBpsData(request *DescribeLiveDomainBpsDa
 }
 
 // DescribeLiveDomainBpsDataWithChan invokes the live.DescribeLiveDomainBpsData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainbpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainBpsDataWithChan(request *DescribeLiveDomainBpsDataRequest) (<-chan *DescribeLiveDomainBpsDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveDomainBpsDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveDomainBpsDataWithChan(request *DescribeLiveDom
 }
 
 // DescribeLiveDomainBpsDataWithCallback invokes the live.DescribeLiveDomainBpsData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainbpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainBpsDataWithCallback(request *DescribeLiveDomainBpsDataRequest, callback func(response *DescribeLiveDomainBpsDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,7 @@ func CreateDescribeLiveDomainBpsDataRequest() (request *DescribeLiveDomainBpsDat
 	request = &DescribeLiveDomainBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainBpsData", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainBpsData", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveRecordVodConfigs invokes the live.DescribeLiveRecordVodConfigs API synchronously
-// api document: https://help.aliyun.com/api/live/describeliverecordvodconfigs.html
 func (client *Client) DescribeLiveRecordVodConfigs(request *DescribeLiveRecordVodConfigsRequest) (response *DescribeLiveRecordVodConfigsResponse, err error) {
 	response = CreateDescribeLiveRecordVodConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveRecordVodConfigs(request *DescribeLiveRecordVo
 }
 
 // DescribeLiveRecordVodConfigsWithChan invokes the live.DescribeLiveRecordVodConfigs API asynchronously
-// api document: https://help.aliyun.com/api/live/describeliverecordvodconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveRecordVodConfigsWithChan(request *DescribeLiveRecordVodConfigsRequest) (<-chan *DescribeLiveRecordVodConfigsResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveRecordVodConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveRecordVodConfigsWithChan(request *DescribeLive
 }
 
 // DescribeLiveRecordVodConfigsWithCallback invokes the live.DescribeLiveRecordVodConfigs API asynchronously
-// api document: https://help.aliyun.com/api/live/describeliverecordvodconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveRecordVodConfigsWithCallback(request *DescribeLiveRecordVodConfigsRequest, callback func(response *DescribeLiveRecordVodConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateDescribeLiveRecordVodConfigsRequest() (request *DescribeLiveRecordVod
 	request = &DescribeLiveRecordVodConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveRecordVodConfigs", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveRecordVodConfigs", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

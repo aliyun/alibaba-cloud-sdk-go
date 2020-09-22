@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveStreamsOnlineList invokes the live.DescribeLiveStreamsOnlineList API synchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamsonlinelist.html
 func (client *Client) DescribeLiveStreamsOnlineList(request *DescribeLiveStreamsOnlineListRequest) (response *DescribeLiveStreamsOnlineListResponse, err error) {
 	response = CreateDescribeLiveStreamsOnlineListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveStreamsOnlineList(request *DescribeLiveStreams
 }
 
 // DescribeLiveStreamsOnlineListWithChan invokes the live.DescribeLiveStreamsOnlineList API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamsonlinelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsOnlineListWithChan(request *DescribeLiveStreamsOnlineListRequest) (<-chan *DescribeLiveStreamsOnlineListResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamsOnlineListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveStreamsOnlineListWithChan(request *DescribeLiv
 }
 
 // DescribeLiveStreamsOnlineListWithCallback invokes the live.DescribeLiveStreamsOnlineList API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamsonlinelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsOnlineListWithCallback(request *DescribeLiveStreamsOnlineListRequest, callback func(response *DescribeLiveStreamsOnlineListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -105,7 +100,7 @@ func CreateDescribeLiveStreamsOnlineListRequest() (request *DescribeLiveStreamsO
 	request = &DescribeLiveStreamsOnlineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamsOnlineList", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamsOnlineList", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // ListLiveRealtimeLogDelivery invokes the live.ListLiveRealtimeLogDelivery API synchronously
-// api document: https://help.aliyun.com/api/live/listliverealtimelogdelivery.html
 func (client *Client) ListLiveRealtimeLogDelivery(request *ListLiveRealtimeLogDeliveryRequest) (response *ListLiveRealtimeLogDeliveryResponse, err error) {
 	response = CreateListLiveRealtimeLogDeliveryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListLiveRealtimeLogDelivery(request *ListLiveRealtimeLogDe
 }
 
 // ListLiveRealtimeLogDeliveryWithChan invokes the live.ListLiveRealtimeLogDelivery API asynchronously
-// api document: https://help.aliyun.com/api/live/listliverealtimelogdelivery.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListLiveRealtimeLogDeliveryWithChan(request *ListLiveRealtimeLogDeliveryRequest) (<-chan *ListLiveRealtimeLogDeliveryResponse, <-chan error) {
 	responseChan := make(chan *ListLiveRealtimeLogDeliveryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListLiveRealtimeLogDeliveryWithChan(request *ListLiveRealt
 }
 
 // ListLiveRealtimeLogDeliveryWithCallback invokes the live.ListLiveRealtimeLogDelivery API asynchronously
-// api document: https://help.aliyun.com/api/live/listliverealtimelogdelivery.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListLiveRealtimeLogDeliveryWithCallback(request *ListLiveRealtimeLogDeliveryRequest, callback func(response *ListLiveRealtimeLogDeliveryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateListLiveRealtimeLogDeliveryRequest() (request *ListLiveRealtimeLogDel
 	request = &ListLiveRealtimeLogDeliveryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ListLiveRealtimeLogDelivery", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "ListLiveRealtimeLogDelivery", "live", "openAPI")
 	request.Method = requests.GET
 	return
 }

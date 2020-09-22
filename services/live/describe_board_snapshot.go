@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBoardSnapshot invokes the live.DescribeBoardSnapshot API synchronously
-// api document: https://help.aliyun.com/api/live/describeboardsnapshot.html
 func (client *Client) DescribeBoardSnapshot(request *DescribeBoardSnapshotRequest) (response *DescribeBoardSnapshotResponse, err error) {
 	response = CreateDescribeBoardSnapshotResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBoardSnapshot(request *DescribeBoardSnapshotReques
 }
 
 // DescribeBoardSnapshotWithChan invokes the live.DescribeBoardSnapshot API asynchronously
-// api document: https://help.aliyun.com/api/live/describeboardsnapshot.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBoardSnapshotWithChan(request *DescribeBoardSnapshotRequest) (<-chan *DescribeBoardSnapshotResponse, <-chan error) {
 	responseChan := make(chan *DescribeBoardSnapshotResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBoardSnapshotWithChan(request *DescribeBoardSnapsh
 }
 
 // DescribeBoardSnapshotWithCallback invokes the live.DescribeBoardSnapshot API asynchronously
-// api document: https://help.aliyun.com/api/live/describeboardsnapshot.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBoardSnapshotWithCallback(request *DescribeBoardSnapshotRequest, callback func(response *DescribeBoardSnapshotResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDescribeBoardSnapshotRequest() (request *DescribeBoardSnapshotRequest
 	request = &DescribeBoardSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeBoardSnapshot", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeBoardSnapshot", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

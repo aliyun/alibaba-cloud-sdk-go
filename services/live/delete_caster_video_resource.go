@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteCasterVideoResource invokes the live.DeleteCasterVideoResource API synchronously
-// api document: https://help.aliyun.com/api/live/deletecastervideoresource.html
 func (client *Client) DeleteCasterVideoResource(request *DeleteCasterVideoResourceRequest) (response *DeleteCasterVideoResourceResponse, err error) {
 	response = CreateDeleteCasterVideoResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteCasterVideoResource(request *DeleteCasterVideoResour
 }
 
 // DeleteCasterVideoResourceWithChan invokes the live.DeleteCasterVideoResource API asynchronously
-// api document: https://help.aliyun.com/api/live/deletecastervideoresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCasterVideoResourceWithChan(request *DeleteCasterVideoResourceRequest) (<-chan *DeleteCasterVideoResourceResponse, <-chan error) {
 	responseChan := make(chan *DeleteCasterVideoResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteCasterVideoResourceWithChan(request *DeleteCasterVid
 }
 
 // DeleteCasterVideoResourceWithCallback invokes the live.DeleteCasterVideoResource API asynchronously
-// api document: https://help.aliyun.com/api/live/deletecastervideoresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCasterVideoResourceWithCallback(request *DeleteCasterVideoResourceRequest, callback func(response *DeleteCasterVideoResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDeleteCasterVideoResourceRequest() (request *DeleteCasterVideoResourc
 	request = &DeleteCasterVideoResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterVideoResource", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterVideoResource", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

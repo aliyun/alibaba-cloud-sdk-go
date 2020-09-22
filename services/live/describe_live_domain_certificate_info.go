@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveDomainCertificateInfo invokes the live.DescribeLiveDomainCertificateInfo API synchronously
-// api document: https://help.aliyun.com/api/live/describelivedomaincertificateinfo.html
 func (client *Client) DescribeLiveDomainCertificateInfo(request *DescribeLiveDomainCertificateInfoRequest) (response *DescribeLiveDomainCertificateInfoResponse, err error) {
 	response = CreateDescribeLiveDomainCertificateInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveDomainCertificateInfo(request *DescribeLiveDom
 }
 
 // DescribeLiveDomainCertificateInfoWithChan invokes the live.DescribeLiveDomainCertificateInfo API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomaincertificateinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainCertificateInfoWithChan(request *DescribeLiveDomainCertificateInfoRequest) (<-chan *DescribeLiveDomainCertificateInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveDomainCertificateInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveDomainCertificateInfoWithChan(request *Describ
 }
 
 // DescribeLiveDomainCertificateInfoWithCallback invokes the live.DescribeLiveDomainCertificateInfo API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomaincertificateinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainCertificateInfoWithCallback(request *DescribeLiveDomainCertificateInfoRequest, callback func(response *DescribeLiveDomainCertificateInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDescribeLiveDomainCertificateInfoRequest() (request *DescribeLiveDoma
 	request = &DescribeLiveDomainCertificateInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainCertificateInfo", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainCertificateInfo", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

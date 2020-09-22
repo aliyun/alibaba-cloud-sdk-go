@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateLiveTopLevelDomain invokes the live.UpdateLiveTopLevelDomain API synchronously
-// api document: https://help.aliyun.com/api/live/updatelivetopleveldomain.html
 func (client *Client) UpdateLiveTopLevelDomain(request *UpdateLiveTopLevelDomainRequest) (response *UpdateLiveTopLevelDomainResponse, err error) {
 	response = CreateUpdateLiveTopLevelDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateLiveTopLevelDomain(request *UpdateLiveTopLevelDomain
 }
 
 // UpdateLiveTopLevelDomainWithChan invokes the live.UpdateLiveTopLevelDomain API asynchronously
-// api document: https://help.aliyun.com/api/live/updatelivetopleveldomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLiveTopLevelDomainWithChan(request *UpdateLiveTopLevelDomainRequest) (<-chan *UpdateLiveTopLevelDomainResponse, <-chan error) {
 	responseChan := make(chan *UpdateLiveTopLevelDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateLiveTopLevelDomainWithChan(request *UpdateLiveTopLev
 }
 
 // UpdateLiveTopLevelDomainWithCallback invokes the live.UpdateLiveTopLevelDomain API asynchronously
-// api document: https://help.aliyun.com/api/live/updatelivetopleveldomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLiveTopLevelDomainWithCallback(request *UpdateLiveTopLevelDomainRequest, callback func(response *UpdateLiveTopLevelDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateUpdateLiveTopLevelDomainRequest() (request *UpdateLiveTopLevelDomainR
 	request = &UpdateLiveTopLevelDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "UpdateLiveTopLevelDomain", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "UpdateLiveTopLevelDomain", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // AddTrancodeSEI invokes the live.AddTrancodeSEI API synchronously
-// api document: https://help.aliyun.com/api/live/addtrancodesei.html
 func (client *Client) AddTrancodeSEI(request *AddTrancodeSEIRequest) (response *AddTrancodeSEIResponse, err error) {
 	response = CreateAddTrancodeSEIResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddTrancodeSEI(request *AddTrancodeSEIRequest) (response *
 }
 
 // AddTrancodeSEIWithChan invokes the live.AddTrancodeSEI API asynchronously
-// api document: https://help.aliyun.com/api/live/addtrancodesei.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTrancodeSEIWithChan(request *AddTrancodeSEIRequest) (<-chan *AddTrancodeSEIResponse, <-chan error) {
 	responseChan := make(chan *AddTrancodeSEIResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddTrancodeSEIWithChan(request *AddTrancodeSEIRequest) (<-
 }
 
 // AddTrancodeSEIWithCallback invokes the live.AddTrancodeSEI API asynchronously
-// api document: https://help.aliyun.com/api/live/addtrancodesei.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTrancodeSEIWithCallback(request *AddTrancodeSEIRequest, callback func(response *AddTrancodeSEIResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateAddTrancodeSEIRequest() (request *AddTrancodeSEIRequest) {
 	request = &AddTrancodeSEIRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddTrancodeSEI", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "AddTrancodeSEI", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // AddCasterEpisodeGroupContent invokes the live.AddCasterEpisodeGroupContent API synchronously
-// api document: https://help.aliyun.com/api/live/addcasterepisodegroupcontent.html
 func (client *Client) AddCasterEpisodeGroupContent(request *AddCasterEpisodeGroupContentRequest) (response *AddCasterEpisodeGroupContentResponse, err error) {
 	response = CreateAddCasterEpisodeGroupContentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddCasterEpisodeGroupContent(request *AddCasterEpisodeGrou
 }
 
 // AddCasterEpisodeGroupContentWithChan invokes the live.AddCasterEpisodeGroupContent API asynchronously
-// api document: https://help.aliyun.com/api/live/addcasterepisodegroupcontent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCasterEpisodeGroupContentWithChan(request *AddCasterEpisodeGroupContentRequest) (<-chan *AddCasterEpisodeGroupContentResponse, <-chan error) {
 	responseChan := make(chan *AddCasterEpisodeGroupContentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddCasterEpisodeGroupContentWithChan(request *AddCasterEpi
 }
 
 // AddCasterEpisodeGroupContentWithCallback invokes the live.AddCasterEpisodeGroupContent API asynchronously
-// api document: https://help.aliyun.com/api/live/addcasterepisodegroupcontent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCasterEpisodeGroupContentWithCallback(request *AddCasterEpisodeGroupContentRequest, callback func(response *AddCasterEpisodeGroupContentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateAddCasterEpisodeGroupContentRequest() (request *AddCasterEpisodeGroup
 	request = &AddCasterEpisodeGroupContentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddCasterEpisodeGroupContent", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "AddCasterEpisodeGroupContent", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

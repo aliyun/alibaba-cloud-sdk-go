@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveDomainTranscodeData invokes the live.DescribeLiveDomainTranscodeData API synchronously
-// api document: https://help.aliyun.com/api/live/describelivedomaintranscodedata.html
 func (client *Client) DescribeLiveDomainTranscodeData(request *DescribeLiveDomainTranscodeDataRequest) (response *DescribeLiveDomainTranscodeDataResponse, err error) {
 	response = CreateDescribeLiveDomainTranscodeDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveDomainTranscodeData(request *DescribeLiveDomai
 }
 
 // DescribeLiveDomainTranscodeDataWithChan invokes the live.DescribeLiveDomainTranscodeData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomaintranscodedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainTranscodeDataWithChan(request *DescribeLiveDomainTranscodeDataRequest) (<-chan *DescribeLiveDomainTranscodeDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveDomainTranscodeDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveDomainTranscodeDataWithChan(request *DescribeL
 }
 
 // DescribeLiveDomainTranscodeDataWithCallback invokes the live.DescribeLiveDomainTranscodeData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomaintranscodedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainTranscodeDataWithCallback(request *DescribeLiveDomainTranscodeDataRequest, callback func(response *DescribeLiveDomainTranscodeDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDescribeLiveDomainTranscodeDataRequest() (request *DescribeLiveDomain
 	request = &DescribeLiveDomainTranscodeDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainTranscodeData", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainTranscodeData", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

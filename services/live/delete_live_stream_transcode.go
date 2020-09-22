@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLiveStreamTranscode invokes the live.DeleteLiveStreamTranscode API synchronously
-// api document: https://help.aliyun.com/api/live/deletelivestreamtranscode.html
 func (client *Client) DeleteLiveStreamTranscode(request *DeleteLiveStreamTranscodeRequest) (response *DeleteLiveStreamTranscodeResponse, err error) {
 	response = CreateDeleteLiveStreamTranscodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLiveStreamTranscode(request *DeleteLiveStreamTransco
 }
 
 // DeleteLiveStreamTranscodeWithChan invokes the live.DeleteLiveStreamTranscode API asynchronously
-// api document: https://help.aliyun.com/api/live/deletelivestreamtranscode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveStreamTranscodeWithChan(request *DeleteLiveStreamTranscodeRequest) (<-chan *DeleteLiveStreamTranscodeResponse, <-chan error) {
 	responseChan := make(chan *DeleteLiveStreamTranscodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLiveStreamTranscodeWithChan(request *DeleteLiveStrea
 }
 
 // DeleteLiveStreamTranscodeWithCallback invokes the live.DeleteLiveStreamTranscode API asynchronously
-// api document: https://help.aliyun.com/api/live/deletelivestreamtranscode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveStreamTranscodeWithCallback(request *DeleteLiveStreamTranscodeRequest, callback func(response *DeleteLiveStreamTranscodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDeleteLiveStreamTranscodeRequest() (request *DeleteLiveStreamTranscod
 	request = &DeleteLiveStreamTranscodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveStreamTranscode", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveStreamTranscode", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

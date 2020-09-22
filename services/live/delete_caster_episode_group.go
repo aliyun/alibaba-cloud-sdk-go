@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteCasterEpisodeGroup invokes the live.DeleteCasterEpisodeGroup API synchronously
-// api document: https://help.aliyun.com/api/live/deletecasterepisodegroup.html
 func (client *Client) DeleteCasterEpisodeGroup(request *DeleteCasterEpisodeGroupRequest) (response *DeleteCasterEpisodeGroupResponse, err error) {
 	response = CreateDeleteCasterEpisodeGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteCasterEpisodeGroup(request *DeleteCasterEpisodeGroup
 }
 
 // DeleteCasterEpisodeGroupWithChan invokes the live.DeleteCasterEpisodeGroup API asynchronously
-// api document: https://help.aliyun.com/api/live/deletecasterepisodegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCasterEpisodeGroupWithChan(request *DeleteCasterEpisodeGroupRequest) (<-chan *DeleteCasterEpisodeGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteCasterEpisodeGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteCasterEpisodeGroupWithChan(request *DeleteCasterEpis
 }
 
 // DeleteCasterEpisodeGroupWithCallback invokes the live.DeleteCasterEpisodeGroup API asynchronously
-// api document: https://help.aliyun.com/api/live/deletecasterepisodegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCasterEpisodeGroupWithCallback(request *DeleteCasterEpisodeGroupRequest, callback func(response *DeleteCasterEpisodeGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateDeleteCasterEpisodeGroupRequest() (request *DeleteCasterEpisodeGroupR
 	request = &DeleteCasterEpisodeGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterEpisodeGroup", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterEpisodeGroup", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

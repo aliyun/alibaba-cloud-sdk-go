@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUpBpsPeakData invokes the live.DescribeUpBpsPeakData API synchronously
-// api document: https://help.aliyun.com/api/live/describeupbpspeakdata.html
 func (client *Client) DescribeUpBpsPeakData(request *DescribeUpBpsPeakDataRequest) (response *DescribeUpBpsPeakDataResponse, err error) {
 	response = CreateDescribeUpBpsPeakDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUpBpsPeakData(request *DescribeUpBpsPeakDataReques
 }
 
 // DescribeUpBpsPeakDataWithChan invokes the live.DescribeUpBpsPeakData API asynchronously
-// api document: https://help.aliyun.com/api/live/describeupbpspeakdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUpBpsPeakDataWithChan(request *DescribeUpBpsPeakDataRequest) (<-chan *DescribeUpBpsPeakDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeUpBpsPeakDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUpBpsPeakDataWithChan(request *DescribeUpBpsPeakDa
 }
 
 // DescribeUpBpsPeakDataWithCallback invokes the live.DescribeUpBpsPeakData API asynchronously
-// api document: https://help.aliyun.com/api/live/describeupbpspeakdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUpBpsPeakDataWithCallback(request *DescribeUpBpsPeakDataRequest, callback func(response *DescribeUpBpsPeakDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateDescribeUpBpsPeakDataRequest() (request *DescribeUpBpsPeakDataRequest
 	request = &DescribeUpBpsPeakDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeUpBpsPeakData", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeUpBpsPeakData", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

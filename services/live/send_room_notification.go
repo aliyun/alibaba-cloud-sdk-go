@@ -21,7 +21,6 @@ import (
 )
 
 // SendRoomNotification invokes the live.SendRoomNotification API synchronously
-// api document: https://help.aliyun.com/api/live/sendroomnotification.html
 func (client *Client) SendRoomNotification(request *SendRoomNotificationRequest) (response *SendRoomNotificationResponse, err error) {
 	response = CreateSendRoomNotificationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SendRoomNotification(request *SendRoomNotificationRequest)
 }
 
 // SendRoomNotificationWithChan invokes the live.SendRoomNotification API asynchronously
-// api document: https://help.aliyun.com/api/live/sendroomnotification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendRoomNotificationWithChan(request *SendRoomNotificationRequest) (<-chan *SendRoomNotificationResponse, <-chan error) {
 	responseChan := make(chan *SendRoomNotificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SendRoomNotificationWithChan(request *SendRoomNotification
 }
 
 // SendRoomNotificationWithCallback invokes the live.SendRoomNotification API asynchronously
-// api document: https://help.aliyun.com/api/live/sendroomnotification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendRoomNotificationWithCallback(request *SendRoomNotificationRequest, callback func(response *SendRoomNotificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateSendRoomNotificationRequest() (request *SendRoomNotificationRequest) 
 	request = &SendRoomNotificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "SendRoomNotification", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "SendRoomNotification", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

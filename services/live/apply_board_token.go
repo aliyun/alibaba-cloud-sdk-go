@@ -21,7 +21,6 @@ import (
 )
 
 // ApplyBoardToken invokes the live.ApplyBoardToken API synchronously
-// api document: https://help.aliyun.com/api/live/applyboardtoken.html
 func (client *Client) ApplyBoardToken(request *ApplyBoardTokenRequest) (response *ApplyBoardTokenResponse, err error) {
 	response = CreateApplyBoardTokenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ApplyBoardToken(request *ApplyBoardTokenRequest) (response
 }
 
 // ApplyBoardTokenWithChan invokes the live.ApplyBoardToken API asynchronously
-// api document: https://help.aliyun.com/api/live/applyboardtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApplyBoardTokenWithChan(request *ApplyBoardTokenRequest) (<-chan *ApplyBoardTokenResponse, <-chan error) {
 	responseChan := make(chan *ApplyBoardTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ApplyBoardTokenWithChan(request *ApplyBoardTokenRequest) (
 }
 
 // ApplyBoardTokenWithCallback invokes the live.ApplyBoardToken API asynchronously
-// api document: https://help.aliyun.com/api/live/applyboardtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApplyBoardTokenWithCallback(request *ApplyBoardTokenRequest, callback func(response *ApplyBoardTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateApplyBoardTokenRequest() (request *ApplyBoardTokenRequest) {
 	request = &ApplyBoardTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ApplyBoardToken", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "ApplyBoardToken", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

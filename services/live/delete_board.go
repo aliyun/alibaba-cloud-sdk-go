@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteBoard invokes the live.DeleteBoard API synchronously
-// api document: https://help.aliyun.com/api/live/deleteboard.html
 func (client *Client) DeleteBoard(request *DeleteBoardRequest) (response *DeleteBoardResponse, err error) {
 	response = CreateDeleteBoardResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteBoard(request *DeleteBoardRequest) (response *Delete
 }
 
 // DeleteBoardWithChan invokes the live.DeleteBoard API asynchronously
-// api document: https://help.aliyun.com/api/live/deleteboard.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBoardWithChan(request *DeleteBoardRequest) (<-chan *DeleteBoardResponse, <-chan error) {
 	responseChan := make(chan *DeleteBoardResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteBoardWithChan(request *DeleteBoardRequest) (<-chan *
 }
 
 // DeleteBoardWithCallback invokes the live.DeleteBoard API asynchronously
-// api document: https://help.aliyun.com/api/live/deleteboard.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBoardWithCallback(request *DeleteBoardRequest, callback func(response *DeleteBoardResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDeleteBoardRequest() (request *DeleteBoardRequest) {
 	request = &DeleteBoardRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteBoard", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteBoard", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // ListLiveRealtimeLogDeliveryInfos invokes the live.ListLiveRealtimeLogDeliveryInfos API synchronously
-// api document: https://help.aliyun.com/api/live/listliverealtimelogdeliveryinfos.html
 func (client *Client) ListLiveRealtimeLogDeliveryInfos(request *ListLiveRealtimeLogDeliveryInfosRequest) (response *ListLiveRealtimeLogDeliveryInfosResponse, err error) {
 	response = CreateListLiveRealtimeLogDeliveryInfosResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListLiveRealtimeLogDeliveryInfos(request *ListLiveRealtime
 }
 
 // ListLiveRealtimeLogDeliveryInfosWithChan invokes the live.ListLiveRealtimeLogDeliveryInfos API asynchronously
-// api document: https://help.aliyun.com/api/live/listliverealtimelogdeliveryinfos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListLiveRealtimeLogDeliveryInfosWithChan(request *ListLiveRealtimeLogDeliveryInfosRequest) (<-chan *ListLiveRealtimeLogDeliveryInfosResponse, <-chan error) {
 	responseChan := make(chan *ListLiveRealtimeLogDeliveryInfosResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListLiveRealtimeLogDeliveryInfosWithChan(request *ListLive
 }
 
 // ListLiveRealtimeLogDeliveryInfosWithCallback invokes the live.ListLiveRealtimeLogDeliveryInfos API asynchronously
-// api document: https://help.aliyun.com/api/live/listliverealtimelogdeliveryinfos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListLiveRealtimeLogDeliveryInfosWithCallback(request *ListLiveRealtimeLogDeliveryInfosRequest, callback func(response *ListLiveRealtimeLogDeliveryInfosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateListLiveRealtimeLogDeliveryInfosRequest() (request *ListLiveRealtimeL
 	request = &ListLiveRealtimeLogDeliveryInfosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ListLiveRealtimeLogDeliveryInfos", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "ListLiveRealtimeLogDeliveryInfos", "live", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCasterConfig invokes the live.DescribeCasterConfig API synchronously
-// api document: https://help.aliyun.com/api/live/describecasterconfig.html
 func (client *Client) DescribeCasterConfig(request *DescribeCasterConfigRequest) (response *DescribeCasterConfigResponse, err error) {
 	response = CreateDescribeCasterConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCasterConfig(request *DescribeCasterConfigRequest)
 }
 
 // DescribeCasterConfigWithChan invokes the live.DescribeCasterConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describecasterconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCasterConfigWithChan(request *DescribeCasterConfigRequest) (<-chan *DescribeCasterConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeCasterConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCasterConfigWithChan(request *DescribeCasterConfig
 }
 
 // DescribeCasterConfigWithCallback invokes the live.DescribeCasterConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describecasterconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCasterConfigWithCallback(request *DescribeCasterConfigRequest, callback func(response *DescribeCasterConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,7 +98,7 @@ func CreateDescribeCasterConfigRequest() (request *DescribeCasterConfigRequest) 
 	request = &DescribeCasterConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeCasterConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeCasterConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

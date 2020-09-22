@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUpBpsPeakOfLine invokes the live.DescribeUpBpsPeakOfLine API synchronously
-// api document: https://help.aliyun.com/api/live/describeupbpspeakofline.html
 func (client *Client) DescribeUpBpsPeakOfLine(request *DescribeUpBpsPeakOfLineRequest) (response *DescribeUpBpsPeakOfLineResponse, err error) {
 	response = CreateDescribeUpBpsPeakOfLineResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUpBpsPeakOfLine(request *DescribeUpBpsPeakOfLineRe
 }
 
 // DescribeUpBpsPeakOfLineWithChan invokes the live.DescribeUpBpsPeakOfLine API asynchronously
-// api document: https://help.aliyun.com/api/live/describeupbpspeakofline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUpBpsPeakOfLineWithChan(request *DescribeUpBpsPeakOfLineRequest) (<-chan *DescribeUpBpsPeakOfLineResponse, <-chan error) {
 	responseChan := make(chan *DescribeUpBpsPeakOfLineResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUpBpsPeakOfLineWithChan(request *DescribeUpBpsPeak
 }
 
 // DescribeUpBpsPeakOfLineWithCallback invokes the live.DescribeUpBpsPeakOfLine API asynchronously
-// api document: https://help.aliyun.com/api/live/describeupbpspeakofline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUpBpsPeakOfLineWithCallback(request *DescribeUpBpsPeakOfLineRequest, callback func(response *DescribeUpBpsPeakOfLineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateDescribeUpBpsPeakOfLineRequest() (request *DescribeUpBpsPeakOfLineReq
 	request = &DescribeUpBpsPeakOfLineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeUpBpsPeakOfLine", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeUpBpsPeakOfLine", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

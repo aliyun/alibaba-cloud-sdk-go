@@ -21,7 +21,6 @@ import (
 )
 
 // ForbidPushStream invokes the live.ForbidPushStream API synchronously
-// api document: https://help.aliyun.com/api/live/forbidpushstream.html
 func (client *Client) ForbidPushStream(request *ForbidPushStreamRequest) (response *ForbidPushStreamResponse, err error) {
 	response = CreateForbidPushStreamResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ForbidPushStream(request *ForbidPushStreamRequest) (respon
 }
 
 // ForbidPushStreamWithChan invokes the live.ForbidPushStream API asynchronously
-// api document: https://help.aliyun.com/api/live/forbidpushstream.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ForbidPushStreamWithChan(request *ForbidPushStreamRequest) (<-chan *ForbidPushStreamResponse, <-chan error) {
 	responseChan := make(chan *ForbidPushStreamResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ForbidPushStreamWithChan(request *ForbidPushStreamRequest)
 }
 
 // ForbidPushStreamWithCallback invokes the live.ForbidPushStream API asynchronously
-// api document: https://help.aliyun.com/api/live/forbidpushstream.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ForbidPushStreamWithCallback(request *ForbidPushStreamRequest, callback func(response *ForbidPushStreamResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateForbidPushStreamRequest() (request *ForbidPushStreamRequest) {
 	request = &ForbidPushStreamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ForbidPushStream", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "ForbidPushStream", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

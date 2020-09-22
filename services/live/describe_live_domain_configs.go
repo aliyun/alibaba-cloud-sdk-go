@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveDomainConfigs invokes the live.DescribeLiveDomainConfigs API synchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainconfigs.html
 func (client *Client) DescribeLiveDomainConfigs(request *DescribeLiveDomainConfigsRequest) (response *DescribeLiveDomainConfigsResponse, err error) {
 	response = CreateDescribeLiveDomainConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveDomainConfigs(request *DescribeLiveDomainConfi
 }
 
 // DescribeLiveDomainConfigsWithChan invokes the live.DescribeLiveDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainConfigsWithChan(request *DescribeLiveDomainConfigsRequest) (<-chan *DescribeLiveDomainConfigsResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveDomainConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveDomainConfigsWithChan(request *DescribeLiveDom
 }
 
 // DescribeLiveDomainConfigsWithCallback invokes the live.DescribeLiveDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainConfigsWithCallback(request *DescribeLiveDomainConfigsRequest, callback func(response *DescribeLiveDomainConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDescribeLiveDomainConfigsRequest() (request *DescribeLiveDomainConfig
 	request = &DescribeLiveDomainConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainConfigs", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainConfigs", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

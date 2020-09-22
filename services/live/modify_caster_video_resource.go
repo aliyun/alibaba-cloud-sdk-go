@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyCasterVideoResource invokes the live.ModifyCasterVideoResource API synchronously
-// api document: https://help.aliyun.com/api/live/modifycastervideoresource.html
 func (client *Client) ModifyCasterVideoResource(request *ModifyCasterVideoResourceRequest) (response *ModifyCasterVideoResourceResponse, err error) {
 	response = CreateModifyCasterVideoResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyCasterVideoResource(request *ModifyCasterVideoResour
 }
 
 // ModifyCasterVideoResourceWithChan invokes the live.ModifyCasterVideoResource API asynchronously
-// api document: https://help.aliyun.com/api/live/modifycastervideoresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCasterVideoResourceWithChan(request *ModifyCasterVideoResourceRequest) (<-chan *ModifyCasterVideoResourceResponse, <-chan error) {
 	responseChan := make(chan *ModifyCasterVideoResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyCasterVideoResourceWithChan(request *ModifyCasterVid
 }
 
 // ModifyCasterVideoResourceWithCallback invokes the live.ModifyCasterVideoResource API asynchronously
-// api document: https://help.aliyun.com/api/live/modifycastervideoresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCasterVideoResourceWithCallback(request *ModifyCasterVideoResourceRequest, callback func(response *ModifyCasterVideoResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,7 @@ func CreateModifyCasterVideoResourceRequest() (request *ModifyCasterVideoResourc
 	request = &ModifyCasterVideoResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ModifyCasterVideoResource", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "ModifyCasterVideoResource", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

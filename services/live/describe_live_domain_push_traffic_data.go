@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveDomainPushTrafficData invokes the live.DescribeLiveDomainPushTrafficData API synchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainpushtrafficdata.html
 func (client *Client) DescribeLiveDomainPushTrafficData(request *DescribeLiveDomainPushTrafficDataRequest) (response *DescribeLiveDomainPushTrafficDataResponse, err error) {
 	response = CreateDescribeLiveDomainPushTrafficDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveDomainPushTrafficData(request *DescribeLiveDom
 }
 
 // DescribeLiveDomainPushTrafficDataWithChan invokes the live.DescribeLiveDomainPushTrafficData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainpushtrafficdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainPushTrafficDataWithChan(request *DescribeLiveDomainPushTrafficDataRequest) (<-chan *DescribeLiveDomainPushTrafficDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveDomainPushTrafficDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveDomainPushTrafficDataWithChan(request *Describ
 }
 
 // DescribeLiveDomainPushTrafficDataWithCallback invokes the live.DescribeLiveDomainPushTrafficData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainpushtrafficdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainPushTrafficDataWithCallback(request *DescribeLiveDomainPushTrafficDataRequest, callback func(response *DescribeLiveDomainPushTrafficDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,7 @@ func CreateDescribeLiveDomainPushTrafficDataRequest() (request *DescribeLiveDoma
 	request = &DescribeLiveDomainPushTrafficDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainPushTrafficData", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainPushTrafficData", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

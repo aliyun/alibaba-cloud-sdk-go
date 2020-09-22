@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveRealtimeLogAuthorized invokes the live.DescribeLiveRealtimeLogAuthorized API synchronously
-// api document: https://help.aliyun.com/api/live/describeliverealtimelogauthorized.html
 func (client *Client) DescribeLiveRealtimeLogAuthorized(request *DescribeLiveRealtimeLogAuthorizedRequest) (response *DescribeLiveRealtimeLogAuthorizedResponse, err error) {
 	response = CreateDescribeLiveRealtimeLogAuthorizedResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveRealtimeLogAuthorized(request *DescribeLiveRea
 }
 
 // DescribeLiveRealtimeLogAuthorizedWithChan invokes the live.DescribeLiveRealtimeLogAuthorized API asynchronously
-// api document: https://help.aliyun.com/api/live/describeliverealtimelogauthorized.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveRealtimeLogAuthorizedWithChan(request *DescribeLiveRealtimeLogAuthorizedRequest) (<-chan *DescribeLiveRealtimeLogAuthorizedResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveRealtimeLogAuthorizedResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveRealtimeLogAuthorizedWithChan(request *Describ
 }
 
 // DescribeLiveRealtimeLogAuthorizedWithCallback invokes the live.DescribeLiveRealtimeLogAuthorized API asynchronously
-// api document: https://help.aliyun.com/api/live/describeliverealtimelogauthorized.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveRealtimeLogAuthorizedWithCallback(request *DescribeLiveRealtimeLogAuthorizedRequest, callback func(response *DescribeLiveRealtimeLogAuthorizedResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDescribeLiveRealtimeLogAuthorizedRequest() (request *DescribeLiveReal
 	request = &DescribeLiveRealtimeLogAuthorizedRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveRealtimeLogAuthorized", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveRealtimeLogAuthorized", "live", "openAPI")
 	request.Method = requests.GET
 	return
 }

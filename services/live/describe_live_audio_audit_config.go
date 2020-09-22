@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveAudioAuditConfig invokes the live.DescribeLiveAudioAuditConfig API synchronously
-// api document: https://help.aliyun.com/api/live/describeliveaudioauditconfig.html
 func (client *Client) DescribeLiveAudioAuditConfig(request *DescribeLiveAudioAuditConfigRequest) (response *DescribeLiveAudioAuditConfigResponse, err error) {
 	response = CreateDescribeLiveAudioAuditConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveAudioAuditConfig(request *DescribeLiveAudioAud
 }
 
 // DescribeLiveAudioAuditConfigWithChan invokes the live.DescribeLiveAudioAuditConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describeliveaudioauditconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveAudioAuditConfigWithChan(request *DescribeLiveAudioAuditConfigRequest) (<-chan *DescribeLiveAudioAuditConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveAudioAuditConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveAudioAuditConfigWithChan(request *DescribeLive
 }
 
 // DescribeLiveAudioAuditConfigWithCallback invokes the live.DescribeLiveAudioAuditConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describeliveaudioauditconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveAudioAuditConfigWithCallback(request *DescribeLiveAudioAuditConfigRequest, callback func(response *DescribeLiveAudioAuditConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDescribeLiveAudioAuditConfigRequest() (request *DescribeLiveAudioAudi
 	request = &DescribeLiveAudioAuditConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveAudioAuditConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveAudioAuditConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

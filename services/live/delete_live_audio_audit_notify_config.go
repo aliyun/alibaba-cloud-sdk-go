@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLiveAudioAuditNotifyConfig invokes the live.DeleteLiveAudioAuditNotifyConfig API synchronously
-// api document: https://help.aliyun.com/api/live/deleteliveaudioauditnotifyconfig.html
 func (client *Client) DeleteLiveAudioAuditNotifyConfig(request *DeleteLiveAudioAuditNotifyConfigRequest) (response *DeleteLiveAudioAuditNotifyConfigResponse, err error) {
 	response = CreateDeleteLiveAudioAuditNotifyConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLiveAudioAuditNotifyConfig(request *DeleteLiveAudioA
 }
 
 // DeleteLiveAudioAuditNotifyConfigWithChan invokes the live.DeleteLiveAudioAuditNotifyConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deleteliveaudioauditnotifyconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveAudioAuditNotifyConfigWithChan(request *DeleteLiveAudioAuditNotifyConfigRequest) (<-chan *DeleteLiveAudioAuditNotifyConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteLiveAudioAuditNotifyConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLiveAudioAuditNotifyConfigWithChan(request *DeleteLi
 }
 
 // DeleteLiveAudioAuditNotifyConfigWithCallback invokes the live.DeleteLiveAudioAuditNotifyConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deleteliveaudioauditnotifyconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveAudioAuditNotifyConfigWithCallback(request *DeleteLiveAudioAuditNotifyConfigRequest, callback func(response *DeleteLiveAudioAuditNotifyConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateDeleteLiveAudioAuditNotifyConfigRequest() (request *DeleteLiveAudioAu
 	request = &DeleteLiveAudioAuditNotifyConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveAudioAuditNotifyConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveAudioAuditNotifyConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

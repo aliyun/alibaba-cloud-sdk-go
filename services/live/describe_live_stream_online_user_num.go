@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveStreamOnlineUserNum invokes the live.DescribeLiveStreamOnlineUserNum API synchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamonlineusernum.html
 func (client *Client) DescribeLiveStreamOnlineUserNum(request *DescribeLiveStreamOnlineUserNumRequest) (response *DescribeLiveStreamOnlineUserNumResponse, err error) {
 	response = CreateDescribeLiveStreamOnlineUserNumResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveStreamOnlineUserNum(request *DescribeLiveStrea
 }
 
 // DescribeLiveStreamOnlineUserNumWithChan invokes the live.DescribeLiveStreamOnlineUserNum API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamonlineusernum.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamOnlineUserNumWithChan(request *DescribeLiveStreamOnlineUserNumRequest) (<-chan *DescribeLiveStreamOnlineUserNumResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamOnlineUserNumResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveStreamOnlineUserNumWithChan(request *DescribeL
 }
 
 // DescribeLiveStreamOnlineUserNumWithCallback invokes the live.DescribeLiveStreamOnlineUserNum API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamonlineusernum.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamOnlineUserNumWithCallback(request *DescribeLiveStreamOnlineUserNumRequest, callback func(response *DescribeLiveStreamOnlineUserNumResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateDescribeLiveStreamOnlineUserNumRequest() (request *DescribeLiveStream
 	request = &DescribeLiveStreamOnlineUserNumRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamOnlineUserNum", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamOnlineUserNum", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

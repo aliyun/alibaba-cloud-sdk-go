@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLiveStreamsNotifyUrlConfig invokes the live.DeleteLiveStreamsNotifyUrlConfig API synchronously
-// api document: https://help.aliyun.com/api/live/deletelivestreamsnotifyurlconfig.html
 func (client *Client) DeleteLiveStreamsNotifyUrlConfig(request *DeleteLiveStreamsNotifyUrlConfigRequest) (response *DeleteLiveStreamsNotifyUrlConfigResponse, err error) {
 	response = CreateDeleteLiveStreamsNotifyUrlConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLiveStreamsNotifyUrlConfig(request *DeleteLiveStream
 }
 
 // DeleteLiveStreamsNotifyUrlConfigWithChan invokes the live.DeleteLiveStreamsNotifyUrlConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deletelivestreamsnotifyurlconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveStreamsNotifyUrlConfigWithChan(request *DeleteLiveStreamsNotifyUrlConfigRequest) (<-chan *DeleteLiveStreamsNotifyUrlConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteLiveStreamsNotifyUrlConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLiveStreamsNotifyUrlConfigWithChan(request *DeleteLi
 }
 
 // DeleteLiveStreamsNotifyUrlConfigWithCallback invokes the live.DeleteLiveStreamsNotifyUrlConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deletelivestreamsnotifyurlconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveStreamsNotifyUrlConfigWithCallback(request *DeleteLiveStreamsNotifyUrlConfigRequest, callback func(response *DeleteLiveStreamsNotifyUrlConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateDeleteLiveStreamsNotifyUrlConfigRequest() (request *DeleteLiveStreams
 	request = &DeleteLiveStreamsNotifyUrlConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveStreamsNotifyUrlConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

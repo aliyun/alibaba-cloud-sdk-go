@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRoomKickoutUserList invokes the live.DescribeRoomKickoutUserList API synchronously
-// api document: https://help.aliyun.com/api/live/describeroomkickoutuserlist.html
 func (client *Client) DescribeRoomKickoutUserList(request *DescribeRoomKickoutUserListRequest) (response *DescribeRoomKickoutUserListResponse, err error) {
 	response = CreateDescribeRoomKickoutUserListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRoomKickoutUserList(request *DescribeRoomKickoutUs
 }
 
 // DescribeRoomKickoutUserListWithChan invokes the live.DescribeRoomKickoutUserList API asynchronously
-// api document: https://help.aliyun.com/api/live/describeroomkickoutuserlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRoomKickoutUserListWithChan(request *DescribeRoomKickoutUserListRequest) (<-chan *DescribeRoomKickoutUserListResponse, <-chan error) {
 	responseChan := make(chan *DescribeRoomKickoutUserListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRoomKickoutUserListWithChan(request *DescribeRoomK
 }
 
 // DescribeRoomKickoutUserListWithCallback invokes the live.DescribeRoomKickoutUserList API asynchronously
-// api document: https://help.aliyun.com/api/live/describeroomkickoutuserlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRoomKickoutUserListWithCallback(request *DescribeRoomKickoutUserListRequest, callback func(response *DescribeRoomKickoutUserListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateDescribeRoomKickoutUserListRequest() (request *DescribeRoomKickoutUse
 	request = &DescribeRoomKickoutUserListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeRoomKickoutUserList", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeRoomKickoutUserList", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

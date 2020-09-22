@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateLiveAudioAuditNotifyConfig invokes the live.UpdateLiveAudioAuditNotifyConfig API synchronously
-// api document: https://help.aliyun.com/api/live/updateliveaudioauditnotifyconfig.html
 func (client *Client) UpdateLiveAudioAuditNotifyConfig(request *UpdateLiveAudioAuditNotifyConfigRequest) (response *UpdateLiveAudioAuditNotifyConfigResponse, err error) {
 	response = CreateUpdateLiveAudioAuditNotifyConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateLiveAudioAuditNotifyConfig(request *UpdateLiveAudioA
 }
 
 // UpdateLiveAudioAuditNotifyConfigWithChan invokes the live.UpdateLiveAudioAuditNotifyConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/updateliveaudioauditnotifyconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLiveAudioAuditNotifyConfigWithChan(request *UpdateLiveAudioAuditNotifyConfigRequest) (<-chan *UpdateLiveAudioAuditNotifyConfigResponse, <-chan error) {
 	responseChan := make(chan *UpdateLiveAudioAuditNotifyConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateLiveAudioAuditNotifyConfigWithChan(request *UpdateLi
 }
 
 // UpdateLiveAudioAuditNotifyConfigWithCallback invokes the live.UpdateLiveAudioAuditNotifyConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/updateliveaudioauditnotifyconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLiveAudioAuditNotifyConfigWithCallback(request *UpdateLiveAudioAuditNotifyConfigRequest, callback func(response *UpdateLiveAudioAuditNotifyConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateUpdateLiveAudioAuditNotifyConfigRequest() (request *UpdateLiveAudioAu
 	request = &UpdateLiveAudioAuditNotifyConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "UpdateLiveAudioAuditNotifyConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "UpdateLiveAudioAuditNotifyConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

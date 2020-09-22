@@ -21,7 +21,6 @@ import (
 )
 
 // CompleteBoard invokes the live.CompleteBoard API synchronously
-// api document: https://help.aliyun.com/api/live/completeboard.html
 func (client *Client) CompleteBoard(request *CompleteBoardRequest) (response *CompleteBoardResponse, err error) {
 	response = CreateCompleteBoardResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CompleteBoard(request *CompleteBoardRequest) (response *Co
 }
 
 // CompleteBoardWithChan invokes the live.CompleteBoard API asynchronously
-// api document: https://help.aliyun.com/api/live/completeboard.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CompleteBoardWithChan(request *CompleteBoardRequest) (<-chan *CompleteBoardResponse, <-chan error) {
 	responseChan := make(chan *CompleteBoardResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CompleteBoardWithChan(request *CompleteBoardRequest) (<-ch
 }
 
 // CompleteBoardWithCallback invokes the live.CompleteBoard API asynchronously
-// api document: https://help.aliyun.com/api/live/completeboard.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CompleteBoardWithCallback(request *CompleteBoardRequest, callback func(response *CompleteBoardResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateCompleteBoardRequest() (request *CompleteBoardRequest) {
 	request = &CompleteBoardRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "CompleteBoard", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "CompleteBoard", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

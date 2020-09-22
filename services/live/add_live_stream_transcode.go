@@ -21,7 +21,6 @@ import (
 )
 
 // AddLiveStreamTranscode invokes the live.AddLiveStreamTranscode API synchronously
-// api document: https://help.aliyun.com/api/live/addlivestreamtranscode.html
 func (client *Client) AddLiveStreamTranscode(request *AddLiveStreamTranscodeRequest) (response *AddLiveStreamTranscodeResponse, err error) {
 	response = CreateAddLiveStreamTranscodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddLiveStreamTranscode(request *AddLiveStreamTranscodeRequ
 }
 
 // AddLiveStreamTranscodeWithChan invokes the live.AddLiveStreamTranscode API asynchronously
-// api document: https://help.aliyun.com/api/live/addlivestreamtranscode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveStreamTranscodeWithChan(request *AddLiveStreamTranscodeRequest) (<-chan *AddLiveStreamTranscodeResponse, <-chan error) {
 	responseChan := make(chan *AddLiveStreamTranscodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddLiveStreamTranscodeWithChan(request *AddLiveStreamTrans
 }
 
 // AddLiveStreamTranscodeWithCallback invokes the live.AddLiveStreamTranscode API asynchronously
-// api document: https://help.aliyun.com/api/live/addlivestreamtranscode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveStreamTranscodeWithCallback(request *AddLiveStreamTranscodeRequest, callback func(response *AddLiveStreamTranscodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,11 +71,15 @@ func (client *Client) AddLiveStreamTranscodeWithCallback(request *AddLiveStreamT
 // AddLiveStreamTranscodeRequest is the request struct for api AddLiveStreamTranscode
 type AddLiveStreamTranscodeRequest struct {
 	*requests.RpcRequest
-	Template      string           `position:"Query" name:"Template"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	App           string           `position:"Query" name:"App"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	Domain        string           `position:"Query" name:"Domain"`
+	Template     string           `position:"Query" name:"Template"`
+	Lazy         string           `position:"Query" name:"Lazy"`
+	Mix          string           `position:"Query" name:"Mix"`
+	App          string           `position:"Query" name:"App"`
+	Watermark    string           `position:"Query" name:"Watermark"`
+	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
+	Domain       string           `position:"Query" name:"Domain"`
+	WaterPattern string           `position:"Query" name:"WaterPattern"`
+	OnlyAudio    string           `position:"Query" name:"OnlyAudio"`
 }
 
 // AddLiveStreamTranscodeResponse is the response struct for api AddLiveStreamTranscode
@@ -94,7 +93,7 @@ func CreateAddLiveStreamTranscodeRequest() (request *AddLiveStreamTranscodeReque
 	request = &AddLiveStreamTranscodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddLiveStreamTranscode", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "AddLiveStreamTranscode", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

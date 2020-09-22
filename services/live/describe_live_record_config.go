@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveRecordConfig invokes the live.DescribeLiveRecordConfig API synchronously
-// api document: https://help.aliyun.com/api/live/describeliverecordconfig.html
 func (client *Client) DescribeLiveRecordConfig(request *DescribeLiveRecordConfigRequest) (response *DescribeLiveRecordConfigResponse, err error) {
 	response = CreateDescribeLiveRecordConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveRecordConfig(request *DescribeLiveRecordConfig
 }
 
 // DescribeLiveRecordConfigWithChan invokes the live.DescribeLiveRecordConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describeliverecordconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveRecordConfigWithChan(request *DescribeLiveRecordConfigRequest) (<-chan *DescribeLiveRecordConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveRecordConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveRecordConfigWithChan(request *DescribeLiveReco
 }
 
 // DescribeLiveRecordConfigWithCallback invokes the live.DescribeLiveRecordConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describeliverecordconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveRecordConfigWithCallback(request *DescribeLiveRecordConfigRequest, callback func(response *DescribeLiveRecordConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,13 +84,13 @@ type DescribeLiveRecordConfigRequest struct {
 // DescribeLiveRecordConfigResponse is the response struct for api DescribeLiveRecordConfig
 type DescribeLiveRecordConfigResponse struct {
 	*responses.BaseResponse
-	RequestId         string            `json:"RequestId" xml:"RequestId"`
-	PageNum           int               `json:"PageNum" xml:"PageNum"`
-	PageSize          int               `json:"PageSize" xml:"PageSize"`
-	Order             string            `json:"Order" xml:"Order"`
-	TotalNum          int               `json:"TotalNum" xml:"TotalNum"`
-	TotalPage         int               `json:"TotalPage" xml:"TotalPage"`
-	LiveAppRecordList LiveAppRecordList `json:"LiveAppRecordList" xml:"LiveAppRecordList"`
+	RequestId         string                                      `json:"RequestId" xml:"RequestId"`
+	PageNum           int                                         `json:"PageNum" xml:"PageNum"`
+	PageSize          int                                         `json:"PageSize" xml:"PageSize"`
+	Order             string                                      `json:"Order" xml:"Order"`
+	TotalNum          int                                         `json:"TotalNum" xml:"TotalNum"`
+	TotalPage         int                                         `json:"TotalPage" xml:"TotalPage"`
+	LiveAppRecordList LiveAppRecordListInDescribeLiveRecordConfig `json:"LiveAppRecordList" xml:"LiveAppRecordList"`
 }
 
 // CreateDescribeLiveRecordConfigRequest creates a request to invoke DescribeLiveRecordConfig API
@@ -103,7 +98,7 @@ func CreateDescribeLiveRecordConfigRequest() (request *DescribeLiveRecordConfigR
 	request = &DescribeLiveRecordConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveRecordConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveRecordConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLiveAppSnapshotConfig invokes the live.DeleteLiveAppSnapshotConfig API synchronously
-// api document: https://help.aliyun.com/api/live/deleteliveappsnapshotconfig.html
 func (client *Client) DeleteLiveAppSnapshotConfig(request *DeleteLiveAppSnapshotConfigRequest) (response *DeleteLiveAppSnapshotConfigResponse, err error) {
 	response = CreateDeleteLiveAppSnapshotConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLiveAppSnapshotConfig(request *DeleteLiveAppSnapshot
 }
 
 // DeleteLiveAppSnapshotConfigWithChan invokes the live.DeleteLiveAppSnapshotConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deleteliveappsnapshotconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveAppSnapshotConfigWithChan(request *DeleteLiveAppSnapshotConfigRequest) (<-chan *DeleteLiveAppSnapshotConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteLiveAppSnapshotConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLiveAppSnapshotConfigWithChan(request *DeleteLiveApp
 }
 
 // DeleteLiveAppSnapshotConfigWithCallback invokes the live.DeleteLiveAppSnapshotConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deleteliveappsnapshotconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveAppSnapshotConfigWithCallback(request *DeleteLiveAppSnapshotConfigRequest, callback func(response *DeleteLiveAppSnapshotConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDeleteLiveAppSnapshotConfigRequest() (request *DeleteLiveAppSnapshotC
 	request = &DeleteLiveAppSnapshotConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveAppSnapshotConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveAppSnapshotConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

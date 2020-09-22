@@ -21,7 +21,6 @@ import (
 )
 
 // BatchDeleteLiveDomainConfigs invokes the live.BatchDeleteLiveDomainConfigs API synchronously
-// api document: https://help.aliyun.com/api/live/batchdeletelivedomainconfigs.html
 func (client *Client) BatchDeleteLiveDomainConfigs(request *BatchDeleteLiveDomainConfigsRequest) (response *BatchDeleteLiveDomainConfigsResponse, err error) {
 	response = CreateBatchDeleteLiveDomainConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchDeleteLiveDomainConfigs(request *BatchDeleteLiveDomai
 }
 
 // BatchDeleteLiveDomainConfigsWithChan invokes the live.BatchDeleteLiveDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/live/batchdeletelivedomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchDeleteLiveDomainConfigsWithChan(request *BatchDeleteLiveDomainConfigsRequest) (<-chan *BatchDeleteLiveDomainConfigsResponse, <-chan error) {
 	responseChan := make(chan *BatchDeleteLiveDomainConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchDeleteLiveDomainConfigsWithChan(request *BatchDeleteL
 }
 
 // BatchDeleteLiveDomainConfigsWithCallback invokes the live.BatchDeleteLiveDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/live/batchdeletelivedomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchDeleteLiveDomainConfigsWithCallback(request *BatchDeleteLiveDomainConfigsRequest, callback func(response *BatchDeleteLiveDomainConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateBatchDeleteLiveDomainConfigsRequest() (request *BatchDeleteLiveDomain
 	request = &BatchDeleteLiveDomainConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "BatchDeleteLiveDomainConfigs", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "BatchDeleteLiveDomainConfigs", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

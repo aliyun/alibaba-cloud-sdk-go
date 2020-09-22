@@ -21,7 +21,6 @@ import (
 )
 
 // ListLiveRealtimeLogDeliveryDomains invokes the live.ListLiveRealtimeLogDeliveryDomains API synchronously
-// api document: https://help.aliyun.com/api/live/listliverealtimelogdeliverydomains.html
 func (client *Client) ListLiveRealtimeLogDeliveryDomains(request *ListLiveRealtimeLogDeliveryDomainsRequest) (response *ListLiveRealtimeLogDeliveryDomainsResponse, err error) {
 	response = CreateListLiveRealtimeLogDeliveryDomainsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListLiveRealtimeLogDeliveryDomains(request *ListLiveRealti
 }
 
 // ListLiveRealtimeLogDeliveryDomainsWithChan invokes the live.ListLiveRealtimeLogDeliveryDomains API asynchronously
-// api document: https://help.aliyun.com/api/live/listliverealtimelogdeliverydomains.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListLiveRealtimeLogDeliveryDomainsWithChan(request *ListLiveRealtimeLogDeliveryDomainsRequest) (<-chan *ListLiveRealtimeLogDeliveryDomainsResponse, <-chan error) {
 	responseChan := make(chan *ListLiveRealtimeLogDeliveryDomainsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListLiveRealtimeLogDeliveryDomainsWithChan(request *ListLi
 }
 
 // ListLiveRealtimeLogDeliveryDomainsWithCallback invokes the live.ListLiveRealtimeLogDeliveryDomains API asynchronously
-// api document: https://help.aliyun.com/api/live/listliverealtimelogdeliverydomains.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListLiveRealtimeLogDeliveryDomainsWithCallback(request *ListLiveRealtimeLogDeliveryDomainsRequest, callback func(response *ListLiveRealtimeLogDeliveryDomainsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateListLiveRealtimeLogDeliveryDomainsRequest() (request *ListLiveRealtim
 	request = &ListLiveRealtimeLogDeliveryDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ListLiveRealtimeLogDeliveryDomains", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "ListLiveRealtimeLogDeliveryDomains", "live", "openAPI")
 	request.Method = requests.GET
 	return
 }

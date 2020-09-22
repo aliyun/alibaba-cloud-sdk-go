@@ -21,7 +21,6 @@ import (
 )
 
 // ControlHtmlResource invokes the live.ControlHtmlResource API synchronously
-// api document: https://help.aliyun.com/api/live/controlhtmlresource.html
 func (client *Client) ControlHtmlResource(request *ControlHtmlResourceRequest) (response *ControlHtmlResourceResponse, err error) {
 	response = CreateControlHtmlResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ControlHtmlResource(request *ControlHtmlResourceRequest) (
 }
 
 // ControlHtmlResourceWithChan invokes the live.ControlHtmlResource API asynchronously
-// api document: https://help.aliyun.com/api/live/controlhtmlresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ControlHtmlResourceWithChan(request *ControlHtmlResourceRequest) (<-chan *ControlHtmlResourceResponse, <-chan error) {
 	responseChan := make(chan *ControlHtmlResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ControlHtmlResourceWithChan(request *ControlHtmlResourceRe
 }
 
 // ControlHtmlResourceWithCallback invokes the live.ControlHtmlResource API asynchronously
-// api document: https://help.aliyun.com/api/live/controlhtmlresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ControlHtmlResourceWithCallback(request *ControlHtmlResourceRequest, callback func(response *ControlHtmlResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateControlHtmlResourceRequest() (request *ControlHtmlResourceRequest) {
 	request = &ControlHtmlResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ControlHtmlResource", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "ControlHtmlResource", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

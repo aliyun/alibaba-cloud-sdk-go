@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCasterVideoResources invokes the live.DescribeCasterVideoResources API synchronously
-// api document: https://help.aliyun.com/api/live/describecastervideoresources.html
 func (client *Client) DescribeCasterVideoResources(request *DescribeCasterVideoResourcesRequest) (response *DescribeCasterVideoResourcesResponse, err error) {
 	response = CreateDescribeCasterVideoResourcesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCasterVideoResources(request *DescribeCasterVideoR
 }
 
 // DescribeCasterVideoResourcesWithChan invokes the live.DescribeCasterVideoResources API asynchronously
-// api document: https://help.aliyun.com/api/live/describecastervideoresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCasterVideoResourcesWithChan(request *DescribeCasterVideoResourcesRequest) (<-chan *DescribeCasterVideoResourcesResponse, <-chan error) {
 	responseChan := make(chan *DescribeCasterVideoResourcesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCasterVideoResourcesWithChan(request *DescribeCast
 }
 
 // DescribeCasterVideoResourcesWithCallback invokes the live.DescribeCasterVideoResources API asynchronously
-// api document: https://help.aliyun.com/api/live/describecastervideoresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCasterVideoResourcesWithCallback(request *DescribeCasterVideoResourcesRequest, callback func(response *DescribeCasterVideoResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDescribeCasterVideoResourcesRequest() (request *DescribeCasterVideoRe
 	request = &DescribeCasterVideoResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeCasterVideoResources", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeCasterVideoResources", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

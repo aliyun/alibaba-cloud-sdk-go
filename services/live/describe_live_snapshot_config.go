@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveSnapshotConfig invokes the live.DescribeLiveSnapshotConfig API synchronously
-// api document: https://help.aliyun.com/api/live/describelivesnapshotconfig.html
 func (client *Client) DescribeLiveSnapshotConfig(request *DescribeLiveSnapshotConfigRequest) (response *DescribeLiveSnapshotConfigResponse, err error) {
 	response = CreateDescribeLiveSnapshotConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveSnapshotConfig(request *DescribeLiveSnapshotCo
 }
 
 // DescribeLiveSnapshotConfigWithChan invokes the live.DescribeLiveSnapshotConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivesnapshotconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveSnapshotConfigWithChan(request *DescribeLiveSnapshotConfigRequest) (<-chan *DescribeLiveSnapshotConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveSnapshotConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveSnapshotConfigWithChan(request *DescribeLiveSn
 }
 
 // DescribeLiveSnapshotConfigWithCallback invokes the live.DescribeLiveSnapshotConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivesnapshotconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveSnapshotConfigWithCallback(request *DescribeLiveSnapshotConfigRequest, callback func(response *DescribeLiveSnapshotConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,7 @@ func CreateDescribeLiveSnapshotConfigRequest() (request *DescribeLiveSnapshotCon
 	request = &DescribeLiveSnapshotConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveSnapshotConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveSnapshotConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

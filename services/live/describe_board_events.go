@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBoardEvents invokes the live.DescribeBoardEvents API synchronously
-// api document: https://help.aliyun.com/api/live/describeboardevents.html
 func (client *Client) DescribeBoardEvents(request *DescribeBoardEventsRequest) (response *DescribeBoardEventsResponse, err error) {
 	response = CreateDescribeBoardEventsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBoardEvents(request *DescribeBoardEventsRequest) (
 }
 
 // DescribeBoardEventsWithChan invokes the live.DescribeBoardEvents API asynchronously
-// api document: https://help.aliyun.com/api/live/describeboardevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBoardEventsWithChan(request *DescribeBoardEventsRequest) (<-chan *DescribeBoardEventsResponse, <-chan error) {
 	responseChan := make(chan *DescribeBoardEventsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBoardEventsWithChan(request *DescribeBoardEventsRe
 }
 
 // DescribeBoardEventsWithCallback invokes the live.DescribeBoardEvents API asynchronously
-// api document: https://help.aliyun.com/api/live/describeboardevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBoardEventsWithCallback(request *DescribeBoardEventsRequest, callback func(response *DescribeBoardEventsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateDescribeBoardEventsRequest() (request *DescribeBoardEventsRequest) {
 	request = &DescribeBoardEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeBoardEvents", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeBoardEvents", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

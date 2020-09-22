@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveTopDomainsByFlow invokes the live.DescribeLiveTopDomainsByFlow API synchronously
-// api document: https://help.aliyun.com/api/live/describelivetopdomainsbyflow.html
 func (client *Client) DescribeLiveTopDomainsByFlow(request *DescribeLiveTopDomainsByFlowRequest) (response *DescribeLiveTopDomainsByFlowResponse, err error) {
 	response = CreateDescribeLiveTopDomainsByFlowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveTopDomainsByFlow(request *DescribeLiveTopDomai
 }
 
 // DescribeLiveTopDomainsByFlowWithChan invokes the live.DescribeLiveTopDomainsByFlow API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivetopdomainsbyflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveTopDomainsByFlowWithChan(request *DescribeLiveTopDomainsByFlowRequest) (<-chan *DescribeLiveTopDomainsByFlowResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveTopDomainsByFlowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveTopDomainsByFlowWithChan(request *DescribeLive
 }
 
 // DescribeLiveTopDomainsByFlowWithCallback invokes the live.DescribeLiveTopDomainsByFlow API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivetopdomainsbyflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveTopDomainsByFlowWithCallback(request *DescribeLiveTopDomainsByFlowRequest, callback func(response *DescribeLiveTopDomainsByFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateDescribeLiveTopDomainsByFlowRequest() (request *DescribeLiveTopDomain
 	request = &DescribeLiveTopDomainsByFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveTopDomainsByFlow", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveTopDomainsByFlow", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

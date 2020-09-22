@@ -21,7 +21,6 @@ import (
 )
 
 // ApplyRecordToken invokes the live.ApplyRecordToken API synchronously
-// api document: https://help.aliyun.com/api/live/applyrecordtoken.html
 func (client *Client) ApplyRecordToken(request *ApplyRecordTokenRequest) (response *ApplyRecordTokenResponse, err error) {
 	response = CreateApplyRecordTokenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ApplyRecordToken(request *ApplyRecordTokenRequest) (respon
 }
 
 // ApplyRecordTokenWithChan invokes the live.ApplyRecordToken API asynchronously
-// api document: https://help.aliyun.com/api/live/applyrecordtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApplyRecordTokenWithChan(request *ApplyRecordTokenRequest) (<-chan *ApplyRecordTokenResponse, <-chan error) {
 	responseChan := make(chan *ApplyRecordTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ApplyRecordTokenWithChan(request *ApplyRecordTokenRequest)
 }
 
 // ApplyRecordTokenWithCallback invokes the live.ApplyRecordToken API asynchronously
-// api document: https://help.aliyun.com/api/live/applyrecordtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApplyRecordTokenWithCallback(request *ApplyRecordTokenRequest, callback func(response *ApplyRecordTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateApplyRecordTokenRequest() (request *ApplyRecordTokenRequest) {
 	request = &ApplyRecordTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ApplyRecordToken", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "ApplyRecordToken", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

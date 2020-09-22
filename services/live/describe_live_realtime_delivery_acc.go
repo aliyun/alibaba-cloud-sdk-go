@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveRealtimeDeliveryAcc invokes the live.DescribeLiveRealtimeDeliveryAcc API synchronously
-// api document: https://help.aliyun.com/api/live/describeliverealtimedeliveryacc.html
 func (client *Client) DescribeLiveRealtimeDeliveryAcc(request *DescribeLiveRealtimeDeliveryAccRequest) (response *DescribeLiveRealtimeDeliveryAccResponse, err error) {
 	response = CreateDescribeLiveRealtimeDeliveryAccResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveRealtimeDeliveryAcc(request *DescribeLiveRealt
 }
 
 // DescribeLiveRealtimeDeliveryAccWithChan invokes the live.DescribeLiveRealtimeDeliveryAcc API asynchronously
-// api document: https://help.aliyun.com/api/live/describeliverealtimedeliveryacc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveRealtimeDeliveryAccWithChan(request *DescribeLiveRealtimeDeliveryAccRequest) (<-chan *DescribeLiveRealtimeDeliveryAccResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveRealtimeDeliveryAccResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveRealtimeDeliveryAccWithChan(request *DescribeL
 }
 
 // DescribeLiveRealtimeDeliveryAccWithCallback invokes the live.DescribeLiveRealtimeDeliveryAcc API asynchronously
-// api document: https://help.aliyun.com/api/live/describeliverealtimedeliveryacc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveRealtimeDeliveryAccWithCallback(request *DescribeLiveRealtimeDeliveryAccRequest, callback func(response *DescribeLiveRealtimeDeliveryAccResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateDescribeLiveRealtimeDeliveryAccRequest() (request *DescribeLiveRealti
 	request = &DescribeLiveRealtimeDeliveryAccRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveRealtimeDeliveryAcc", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveRealtimeDeliveryAcc", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateBoard invokes the live.UpdateBoard API synchronously
-// api document: https://help.aliyun.com/api/live/updateboard.html
 func (client *Client) UpdateBoard(request *UpdateBoardRequest) (response *UpdateBoardResponse, err error) {
 	response = CreateUpdateBoardResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateBoard(request *UpdateBoardRequest) (response *Update
 }
 
 // UpdateBoardWithChan invokes the live.UpdateBoard API asynchronously
-// api document: https://help.aliyun.com/api/live/updateboard.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateBoardWithChan(request *UpdateBoardRequest) (<-chan *UpdateBoardResponse, <-chan error) {
 	responseChan := make(chan *UpdateBoardResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateBoardWithChan(request *UpdateBoardRequest) (<-chan *
 }
 
 // UpdateBoardWithCallback invokes the live.UpdateBoard API asynchronously
-// api document: https://help.aliyun.com/api/live/updateboard.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateBoardWithCallback(request *UpdateBoardRequest, callback func(response *UpdateBoardResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateUpdateBoardRequest() (request *UpdateBoardRequest) {
 	request = &UpdateBoardRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "UpdateBoard", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "UpdateBoard", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

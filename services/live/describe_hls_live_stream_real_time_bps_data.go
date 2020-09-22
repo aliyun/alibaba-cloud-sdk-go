@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeHlsLiveStreamRealTimeBpsData invokes the live.DescribeHlsLiveStreamRealTimeBpsData API synchronously
-// api document: https://help.aliyun.com/api/live/describehlslivestreamrealtimebpsdata.html
 func (client *Client) DescribeHlsLiveStreamRealTimeBpsData(request *DescribeHlsLiveStreamRealTimeBpsDataRequest) (response *DescribeHlsLiveStreamRealTimeBpsDataResponse, err error) {
 	response = CreateDescribeHlsLiveStreamRealTimeBpsDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeHlsLiveStreamRealTimeBpsData(request *DescribeHlsL
 }
 
 // DescribeHlsLiveStreamRealTimeBpsDataWithChan invokes the live.DescribeHlsLiveStreamRealTimeBpsData API asynchronously
-// api document: https://help.aliyun.com/api/live/describehlslivestreamrealtimebpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHlsLiveStreamRealTimeBpsDataWithChan(request *DescribeHlsLiveStreamRealTimeBpsDataRequest) (<-chan *DescribeHlsLiveStreamRealTimeBpsDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeHlsLiveStreamRealTimeBpsDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeHlsLiveStreamRealTimeBpsDataWithChan(request *Desc
 }
 
 // DescribeHlsLiveStreamRealTimeBpsDataWithCallback invokes the live.DescribeHlsLiveStreamRealTimeBpsData API asynchronously
-// api document: https://help.aliyun.com/api/live/describehlslivestreamrealtimebpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHlsLiveStreamRealTimeBpsDataWithCallback(request *DescribeHlsLiveStreamRealTimeBpsDataRequest, callback func(response *DescribeHlsLiveStreamRealTimeBpsDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDescribeHlsLiveStreamRealTimeBpsDataRequest() (request *DescribeHlsLi
 	request = &DescribeHlsLiveStreamRealTimeBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeHlsLiveStreamRealTimeBpsData", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeHlsLiveStreamRealTimeBpsData", "live", "openAPI")
 	request.Method = requests.GET
 	return
 }

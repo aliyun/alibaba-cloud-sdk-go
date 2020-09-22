@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveDomainMapping invokes the live.DescribeLiveDomainMapping API synchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainmapping.html
 func (client *Client) DescribeLiveDomainMapping(request *DescribeLiveDomainMappingRequest) (response *DescribeLiveDomainMappingResponse, err error) {
 	response = CreateDescribeLiveDomainMappingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveDomainMapping(request *DescribeLiveDomainMappi
 }
 
 // DescribeLiveDomainMappingWithChan invokes the live.DescribeLiveDomainMapping API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainmapping.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainMappingWithChan(request *DescribeLiveDomainMappingRequest) (<-chan *DescribeLiveDomainMappingResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveDomainMappingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveDomainMappingWithChan(request *DescribeLiveDom
 }
 
 // DescribeLiveDomainMappingWithCallback invokes the live.DescribeLiveDomainMapping API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainmapping.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainMappingWithCallback(request *DescribeLiveDomainMappingRequest, callback func(response *DescribeLiveDomainMappingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDescribeLiveDomainMappingRequest() (request *DescribeLiveDomainMappin
 	request = &DescribeLiveDomainMappingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainMapping", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainMapping", "live", "openAPI")
 	request.Method = requests.GET
 	return
 }

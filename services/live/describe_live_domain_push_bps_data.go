@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveDomainPushBpsData invokes the live.DescribeLiveDomainPushBpsData API synchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainpushbpsdata.html
 func (client *Client) DescribeLiveDomainPushBpsData(request *DescribeLiveDomainPushBpsDataRequest) (response *DescribeLiveDomainPushBpsDataResponse, err error) {
 	response = CreateDescribeLiveDomainPushBpsDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveDomainPushBpsData(request *DescribeLiveDomainP
 }
 
 // DescribeLiveDomainPushBpsDataWithChan invokes the live.DescribeLiveDomainPushBpsData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainpushbpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainPushBpsDataWithChan(request *DescribeLiveDomainPushBpsDataRequest) (<-chan *DescribeLiveDomainPushBpsDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveDomainPushBpsDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveDomainPushBpsDataWithChan(request *DescribeLiv
 }
 
 // DescribeLiveDomainPushBpsDataWithCallback invokes the live.DescribeLiveDomainPushBpsData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainpushbpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainPushBpsDataWithCallback(request *DescribeLiveDomainPushBpsDataRequest, callback func(response *DescribeLiveDomainPushBpsDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,7 @@ func CreateDescribeLiveDomainPushBpsDataRequest() (request *DescribeLiveDomainPu
 	request = &DescribeLiveDomainPushBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainPushBpsData", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainPushBpsData", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

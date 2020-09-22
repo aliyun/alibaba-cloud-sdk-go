@@ -21,7 +21,6 @@ import (
 )
 
 // SetCasterSceneConfig invokes the live.SetCasterSceneConfig API synchronously
-// api document: https://help.aliyun.com/api/live/setcastersceneconfig.html
 func (client *Client) SetCasterSceneConfig(request *SetCasterSceneConfigRequest) (response *SetCasterSceneConfigResponse, err error) {
 	response = CreateSetCasterSceneConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetCasterSceneConfig(request *SetCasterSceneConfigRequest)
 }
 
 // SetCasterSceneConfigWithChan invokes the live.SetCasterSceneConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/setcastersceneconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCasterSceneConfigWithChan(request *SetCasterSceneConfigRequest) (<-chan *SetCasterSceneConfigResponse, <-chan error) {
 	responseChan := make(chan *SetCasterSceneConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetCasterSceneConfigWithChan(request *SetCasterSceneConfig
 }
 
 // SetCasterSceneConfigWithCallback invokes the live.SetCasterSceneConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/setcastersceneconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCasterSceneConfigWithCallback(request *SetCasterSceneConfigRequest, callback func(response *SetCasterSceneConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateSetCasterSceneConfigRequest() (request *SetCasterSceneConfigRequest) 
 	request = &SetCasterSceneConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "SetCasterSceneConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "SetCasterSceneConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

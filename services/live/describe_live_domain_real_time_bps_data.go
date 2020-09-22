@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveDomainRealTimeBpsData invokes the live.DescribeLiveDomainRealTimeBpsData API synchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainrealtimebpsdata.html
 func (client *Client) DescribeLiveDomainRealTimeBpsData(request *DescribeLiveDomainRealTimeBpsDataRequest) (response *DescribeLiveDomainRealTimeBpsDataResponse, err error) {
 	response = CreateDescribeLiveDomainRealTimeBpsDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveDomainRealTimeBpsData(request *DescribeLiveDom
 }
 
 // DescribeLiveDomainRealTimeBpsDataWithChan invokes the live.DescribeLiveDomainRealTimeBpsData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainrealtimebpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainRealTimeBpsDataWithChan(request *DescribeLiveDomainRealTimeBpsDataRequest) (<-chan *DescribeLiveDomainRealTimeBpsDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveDomainRealTimeBpsDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveDomainRealTimeBpsDataWithChan(request *Describ
 }
 
 // DescribeLiveDomainRealTimeBpsDataWithCallback invokes the live.DescribeLiveDomainRealTimeBpsData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainrealtimebpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainRealTimeBpsDataWithCallback(request *DescribeLiveDomainRealTimeBpsDataRequest, callback func(response *DescribeLiveDomainRealTimeBpsDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateDescribeLiveDomainRealTimeBpsDataRequest() (request *DescribeLiveDoma
 	request = &DescribeLiveDomainRealTimeBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainRealTimeBpsData", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainRealTimeBpsData", "live", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // SetLiveStreamDelayConfig invokes the live.SetLiveStreamDelayConfig API synchronously
-// api document: https://help.aliyun.com/api/live/setlivestreamdelayconfig.html
 func (client *Client) SetLiveStreamDelayConfig(request *SetLiveStreamDelayConfigRequest) (response *SetLiveStreamDelayConfigResponse, err error) {
 	response = CreateSetLiveStreamDelayConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetLiveStreamDelayConfig(request *SetLiveStreamDelayConfig
 }
 
 // SetLiveStreamDelayConfigWithChan invokes the live.SetLiveStreamDelayConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/setlivestreamdelayconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLiveStreamDelayConfigWithChan(request *SetLiveStreamDelayConfigRequest) (<-chan *SetLiveStreamDelayConfigResponse, <-chan error) {
 	responseChan := make(chan *SetLiveStreamDelayConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetLiveStreamDelayConfigWithChan(request *SetLiveStreamDel
 }
 
 // SetLiveStreamDelayConfigWithCallback invokes the live.SetLiveStreamDelayConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/setlivestreamdelayconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLiveStreamDelayConfigWithCallback(request *SetLiveStreamDelayConfigRequest, callback func(response *SetLiveStreamDelayConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateSetLiveStreamDelayConfigRequest() (request *SetLiveStreamDelayConfigR
 	request = &SetLiveStreamDelayConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "SetLiveStreamDelayConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "SetLiveStreamDelayConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

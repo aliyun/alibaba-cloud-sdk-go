@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveStreamTranscodeInfo invokes the live.DescribeLiveStreamTranscodeInfo API synchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamtranscodeinfo.html
 func (client *Client) DescribeLiveStreamTranscodeInfo(request *DescribeLiveStreamTranscodeInfoRequest) (response *DescribeLiveStreamTranscodeInfoResponse, err error) {
 	response = CreateDescribeLiveStreamTranscodeInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveStreamTranscodeInfo(request *DescribeLiveStrea
 }
 
 // DescribeLiveStreamTranscodeInfoWithChan invokes the live.DescribeLiveStreamTranscodeInfo API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamtranscodeinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamTranscodeInfoWithChan(request *DescribeLiveStreamTranscodeInfoRequest) (<-chan *DescribeLiveStreamTranscodeInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamTranscodeInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveStreamTranscodeInfoWithChan(request *DescribeL
 }
 
 // DescribeLiveStreamTranscodeInfoWithCallback invokes the live.DescribeLiveStreamTranscodeInfo API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamtranscodeinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamTranscodeInfoWithCallback(request *DescribeLiveStreamTranscodeInfoRequest, callback func(response *DescribeLiveStreamTranscodeInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDescribeLiveStreamTranscodeInfoRequest() (request *DescribeLiveStream
 	request = &DescribeLiveStreamTranscodeInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamTranscodeInfo", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamTranscodeInfo", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

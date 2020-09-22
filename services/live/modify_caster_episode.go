@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyCasterEpisode invokes the live.ModifyCasterEpisode API synchronously
-// api document: https://help.aliyun.com/api/live/modifycasterepisode.html
 func (client *Client) ModifyCasterEpisode(request *ModifyCasterEpisodeRequest) (response *ModifyCasterEpisodeResponse, err error) {
 	response = CreateModifyCasterEpisodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyCasterEpisode(request *ModifyCasterEpisodeRequest) (
 }
 
 // ModifyCasterEpisodeWithChan invokes the live.ModifyCasterEpisode API asynchronously
-// api document: https://help.aliyun.com/api/live/modifycasterepisode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCasterEpisodeWithChan(request *ModifyCasterEpisodeRequest) (<-chan *ModifyCasterEpisodeResponse, <-chan error) {
 	responseChan := make(chan *ModifyCasterEpisodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyCasterEpisodeWithChan(request *ModifyCasterEpisodeRe
 }
 
 // ModifyCasterEpisodeWithCallback invokes the live.ModifyCasterEpisode API asynchronously
-// api document: https://help.aliyun.com/api/live/modifycasterepisode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCasterEpisodeWithCallback(request *ModifyCasterEpisodeRequest, callback func(response *ModifyCasterEpisodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateModifyCasterEpisodeRequest() (request *ModifyCasterEpisodeRequest) {
 	request = &ModifyCasterEpisodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "ModifyCasterEpisode", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "ModifyCasterEpisode", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteCasterLayout invokes the live.DeleteCasterLayout API synchronously
-// api document: https://help.aliyun.com/api/live/deletecasterlayout.html
 func (client *Client) DeleteCasterLayout(request *DeleteCasterLayoutRequest) (response *DeleteCasterLayoutResponse, err error) {
 	response = CreateDeleteCasterLayoutResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteCasterLayout(request *DeleteCasterLayoutRequest) (re
 }
 
 // DeleteCasterLayoutWithChan invokes the live.DeleteCasterLayout API asynchronously
-// api document: https://help.aliyun.com/api/live/deletecasterlayout.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCasterLayoutWithChan(request *DeleteCasterLayoutRequest) (<-chan *DeleteCasterLayoutResponse, <-chan error) {
 	responseChan := make(chan *DeleteCasterLayoutResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteCasterLayoutWithChan(request *DeleteCasterLayoutRequ
 }
 
 // DeleteCasterLayoutWithCallback invokes the live.DeleteCasterLayout API asynchronously
-// api document: https://help.aliyun.com/api/live/deletecasterlayout.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCasterLayoutWithCallback(request *DeleteCasterLayoutRequest, callback func(response *DeleteCasterLayoutResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDeleteCasterLayoutRequest() (request *DeleteCasterLayoutRequest) {
 	request = &DeleteCasterLayoutRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterLayout", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterLayout", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

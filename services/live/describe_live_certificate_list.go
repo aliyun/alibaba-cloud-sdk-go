@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveCertificateList invokes the live.DescribeLiveCertificateList API synchronously
-// api document: https://help.aliyun.com/api/live/describelivecertificatelist.html
 func (client *Client) DescribeLiveCertificateList(request *DescribeLiveCertificateListRequest) (response *DescribeLiveCertificateListResponse, err error) {
 	response = CreateDescribeLiveCertificateListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveCertificateList(request *DescribeLiveCertifica
 }
 
 // DescribeLiveCertificateListWithChan invokes the live.DescribeLiveCertificateList API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivecertificatelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveCertificateListWithChan(request *DescribeLiveCertificateListRequest) (<-chan *DescribeLiveCertificateListResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveCertificateListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveCertificateListWithChan(request *DescribeLiveC
 }
 
 // DescribeLiveCertificateListWithCallback invokes the live.DescribeLiveCertificateList API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivecertificatelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveCertificateListWithCallback(request *DescribeLiveCertificateListRequest, callback func(response *DescribeLiveCertificateListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDescribeLiveCertificateListRequest() (request *DescribeLiveCertificat
 	request = &DescribeLiveCertificateListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveCertificateList", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveCertificateList", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // SetCasterSyncGroup invokes the live.SetCasterSyncGroup API synchronously
-// api document: https://help.aliyun.com/api/live/setcastersyncgroup.html
 func (client *Client) SetCasterSyncGroup(request *SetCasterSyncGroupRequest) (response *SetCasterSyncGroupResponse, err error) {
 	response = CreateSetCasterSyncGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetCasterSyncGroup(request *SetCasterSyncGroupRequest) (re
 }
 
 // SetCasterSyncGroupWithChan invokes the live.SetCasterSyncGroup API asynchronously
-// api document: https://help.aliyun.com/api/live/setcastersyncgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCasterSyncGroupWithChan(request *SetCasterSyncGroupRequest) (<-chan *SetCasterSyncGroupResponse, <-chan error) {
 	responseChan := make(chan *SetCasterSyncGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetCasterSyncGroupWithChan(request *SetCasterSyncGroupRequ
 }
 
 // SetCasterSyncGroupWithCallback invokes the live.SetCasterSyncGroup API asynchronously
-// api document: https://help.aliyun.com/api/live/setcastersyncgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCasterSyncGroupWithCallback(request *SetCasterSyncGroupRequest, callback func(response *SetCasterSyncGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateSetCasterSyncGroupRequest() (request *SetCasterSyncGroupRequest) {
 	request = &SetCasterSyncGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "SetCasterSyncGroup", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "SetCasterSyncGroup", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

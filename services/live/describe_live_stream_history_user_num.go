@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveStreamHistoryUserNum invokes the live.DescribeLiveStreamHistoryUserNum API synchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamhistoryusernum.html
 func (client *Client) DescribeLiveStreamHistoryUserNum(request *DescribeLiveStreamHistoryUserNumRequest) (response *DescribeLiveStreamHistoryUserNumResponse, err error) {
 	response = CreateDescribeLiveStreamHistoryUserNumResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveStreamHistoryUserNum(request *DescribeLiveStre
 }
 
 // DescribeLiveStreamHistoryUserNumWithChan invokes the live.DescribeLiveStreamHistoryUserNum API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamhistoryusernum.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamHistoryUserNumWithChan(request *DescribeLiveStreamHistoryUserNumRequest) (<-chan *DescribeLiveStreamHistoryUserNumResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamHistoryUserNumResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveStreamHistoryUserNumWithChan(request *Describe
 }
 
 // DescribeLiveStreamHistoryUserNumWithCallback invokes the live.DescribeLiveStreamHistoryUserNum API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamhistoryusernum.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamHistoryUserNumWithCallback(request *DescribeLiveStreamHistoryUserNumRequest, callback func(response *DescribeLiveStreamHistoryUserNumResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateDescribeLiveStreamHistoryUserNumRequest() (request *DescribeLiveStrea
 	request = &DescribeLiveStreamHistoryUserNumRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamHistoryUserNum", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamHistoryUserNum", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

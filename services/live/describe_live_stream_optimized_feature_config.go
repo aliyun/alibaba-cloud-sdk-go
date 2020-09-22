@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveStreamOptimizedFeatureConfig invokes the live.DescribeLiveStreamOptimizedFeatureConfig API synchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamoptimizedfeatureconfig.html
 func (client *Client) DescribeLiveStreamOptimizedFeatureConfig(request *DescribeLiveStreamOptimizedFeatureConfigRequest) (response *DescribeLiveStreamOptimizedFeatureConfigResponse, err error) {
 	response = CreateDescribeLiveStreamOptimizedFeatureConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveStreamOptimizedFeatureConfig(request *Describe
 }
 
 // DescribeLiveStreamOptimizedFeatureConfigWithChan invokes the live.DescribeLiveStreamOptimizedFeatureConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamoptimizedfeatureconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamOptimizedFeatureConfigWithChan(request *DescribeLiveStreamOptimizedFeatureConfigRequest) (<-chan *DescribeLiveStreamOptimizedFeatureConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamOptimizedFeatureConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveStreamOptimizedFeatureConfigWithChan(request *
 }
 
 // DescribeLiveStreamOptimizedFeatureConfigWithCallback invokes the live.DescribeLiveStreamOptimizedFeatureConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivestreamoptimizedfeatureconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamOptimizedFeatureConfigWithCallback(request *DescribeLiveStreamOptimizedFeatureConfigRequest, callback func(response *DescribeLiveStreamOptimizedFeatureConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDescribeLiveStreamOptimizedFeatureConfigRequest() (request *DescribeL
 	request = &DescribeLiveStreamOptimizedFeatureConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamOptimizedFeatureConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveStreamOptimizedFeatureConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

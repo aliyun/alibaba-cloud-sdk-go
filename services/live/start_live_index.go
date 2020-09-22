@@ -21,7 +21,6 @@ import (
 )
 
 // StartLiveIndex invokes the live.StartLiveIndex API synchronously
-// api document: https://help.aliyun.com/api/live/startliveindex.html
 func (client *Client) StartLiveIndex(request *StartLiveIndexRequest) (response *StartLiveIndexResponse, err error) {
 	response = CreateStartLiveIndexResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartLiveIndex(request *StartLiveIndexRequest) (response *
 }
 
 // StartLiveIndexWithChan invokes the live.StartLiveIndex API asynchronously
-// api document: https://help.aliyun.com/api/live/startliveindex.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartLiveIndexWithChan(request *StartLiveIndexRequest) (<-chan *StartLiveIndexResponse, <-chan error) {
 	responseChan := make(chan *StartLiveIndexResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartLiveIndexWithChan(request *StartLiveIndexRequest) (<-
 }
 
 // StartLiveIndexWithCallback invokes the live.StartLiveIndex API asynchronously
-// api document: https://help.aliyun.com/api/live/startliveindex.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartLiveIndexWithCallback(request *StartLiveIndexRequest, callback func(response *StartLiveIndexResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,7 @@ func CreateStartLiveIndexRequest() (request *StartLiveIndexRequest) {
 	request = &StartLiveIndexRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "StartLiveIndex", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "StartLiveIndex", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

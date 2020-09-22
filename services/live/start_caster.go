@@ -21,7 +21,6 @@ import (
 )
 
 // StartCaster invokes the live.StartCaster API synchronously
-// api document: https://help.aliyun.com/api/live/startcaster.html
 func (client *Client) StartCaster(request *StartCasterRequest) (response *StartCasterResponse, err error) {
 	response = CreateStartCasterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartCaster(request *StartCasterRequest) (response *StartC
 }
 
 // StartCasterWithChan invokes the live.StartCaster API asynchronously
-// api document: https://help.aliyun.com/api/live/startcaster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartCasterWithChan(request *StartCasterRequest) (<-chan *StartCasterResponse, <-chan error) {
 	responseChan := make(chan *StartCasterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartCasterWithChan(request *StartCasterRequest) (<-chan *
 }
 
 // StartCasterWithCallback invokes the live.StartCaster API asynchronously
-// api document: https://help.aliyun.com/api/live/startcaster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartCasterWithCallback(request *StartCasterRequest, callback func(response *StartCasterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateStartCasterRequest() (request *StartCasterRequest) {
 	request = &StartCasterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "StartCaster", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "StartCaster", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

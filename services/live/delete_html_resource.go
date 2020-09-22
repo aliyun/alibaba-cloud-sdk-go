@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteHtmlResource invokes the live.DeleteHtmlResource API synchronously
-// api document: https://help.aliyun.com/api/live/deletehtmlresource.html
 func (client *Client) DeleteHtmlResource(request *DeleteHtmlResourceRequest) (response *DeleteHtmlResourceResponse, err error) {
 	response = CreateDeleteHtmlResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteHtmlResource(request *DeleteHtmlResourceRequest) (re
 }
 
 // DeleteHtmlResourceWithChan invokes the live.DeleteHtmlResource API asynchronously
-// api document: https://help.aliyun.com/api/live/deletehtmlresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHtmlResourceWithChan(request *DeleteHtmlResourceRequest) (<-chan *DeleteHtmlResourceResponse, <-chan error) {
 	responseChan := make(chan *DeleteHtmlResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteHtmlResourceWithChan(request *DeleteHtmlResourceRequ
 }
 
 // DeleteHtmlResourceWithCallback invokes the live.DeleteHtmlResource API asynchronously
-// api document: https://help.aliyun.com/api/live/deletehtmlresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHtmlResourceWithCallback(request *DeleteHtmlResourceRequest, callback func(response *DeleteHtmlResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDeleteHtmlResourceRequest() (request *DeleteHtmlResourceRequest) {
 	request = &DeleteHtmlResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteHtmlResource", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteHtmlResource", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

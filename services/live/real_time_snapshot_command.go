@@ -21,7 +21,6 @@ import (
 )
 
 // RealTimeSnapshotCommand invokes the live.RealTimeSnapshotCommand API synchronously
-// api document: https://help.aliyun.com/api/live/realtimesnapshotcommand.html
 func (client *Client) RealTimeSnapshotCommand(request *RealTimeSnapshotCommandRequest) (response *RealTimeSnapshotCommandResponse, err error) {
 	response = CreateRealTimeSnapshotCommandResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RealTimeSnapshotCommand(request *RealTimeSnapshotCommandRe
 }
 
 // RealTimeSnapshotCommandWithChan invokes the live.RealTimeSnapshotCommand API asynchronously
-// api document: https://help.aliyun.com/api/live/realtimesnapshotcommand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RealTimeSnapshotCommandWithChan(request *RealTimeSnapshotCommandRequest) (<-chan *RealTimeSnapshotCommandResponse, <-chan error) {
 	responseChan := make(chan *RealTimeSnapshotCommandResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RealTimeSnapshotCommandWithChan(request *RealTimeSnapshotC
 }
 
 // RealTimeSnapshotCommandWithCallback invokes the live.RealTimeSnapshotCommand API asynchronously
-// api document: https://help.aliyun.com/api/live/realtimesnapshotcommand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RealTimeSnapshotCommandWithCallback(request *RealTimeSnapshotCommandRequest, callback func(response *RealTimeSnapshotCommandResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateRealTimeSnapshotCommandRequest() (request *RealTimeSnapshotCommandReq
 	request = &RealTimeSnapshotCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "RealTimeSnapshotCommand", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "RealTimeSnapshotCommand", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

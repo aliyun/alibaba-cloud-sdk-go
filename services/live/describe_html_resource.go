@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeHtmlResource invokes the live.DescribeHtmlResource API synchronously
-// api document: https://help.aliyun.com/api/live/describehtmlresource.html
 func (client *Client) DescribeHtmlResource(request *DescribeHtmlResourceRequest) (response *DescribeHtmlResourceResponse, err error) {
 	response = CreateDescribeHtmlResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeHtmlResource(request *DescribeHtmlResourceRequest)
 }
 
 // DescribeHtmlResourceWithChan invokes the live.DescribeHtmlResource API asynchronously
-// api document: https://help.aliyun.com/api/live/describehtmlresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHtmlResourceWithChan(request *DescribeHtmlResourceRequest) (<-chan *DescribeHtmlResourceResponse, <-chan error) {
 	responseChan := make(chan *DescribeHtmlResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeHtmlResourceWithChan(request *DescribeHtmlResource
 }
 
 // DescribeHtmlResourceWithCallback invokes the live.DescribeHtmlResource API asynchronously
-// api document: https://help.aliyun.com/api/live/describehtmlresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHtmlResourceWithCallback(request *DescribeHtmlResourceRequest, callback func(response *DescribeHtmlResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDescribeHtmlResourceRequest() (request *DescribeHtmlResourceRequest) 
 	request = &DescribeHtmlResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeHtmlResource", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeHtmlResource", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

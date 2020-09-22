@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveTagResources invokes the live.DescribeLiveTagResources API synchronously
-// api document: https://help.aliyun.com/api/live/describelivetagresources.html
 func (client *Client) DescribeLiveTagResources(request *DescribeLiveTagResourcesRequest) (response *DescribeLiveTagResourcesResponse, err error) {
 	response = CreateDescribeLiveTagResourcesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveTagResources(request *DescribeLiveTagResources
 }
 
 // DescribeLiveTagResourcesWithChan invokes the live.DescribeLiveTagResources API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivetagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveTagResourcesWithChan(request *DescribeLiveTagResourcesRequest) (<-chan *DescribeLiveTagResourcesResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveTagResourcesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveTagResourcesWithChan(request *DescribeLiveTagR
 }
 
 // DescribeLiveTagResourcesWithCallback invokes the live.DescribeLiveTagResources API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivetagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveTagResourcesWithCallback(request *DescribeLiveTagResourcesRequest, callback func(response *DescribeLiveTagResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,7 @@ func CreateDescribeLiveTagResourcesRequest() (request *DescribeLiveTagResourcesR
 	request = &DescribeLiveTagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveTagResources", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveTagResources", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

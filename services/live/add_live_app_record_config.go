@@ -21,7 +21,6 @@ import (
 )
 
 // AddLiveAppRecordConfig invokes the live.AddLiveAppRecordConfig API synchronously
-// api document: https://help.aliyun.com/api/live/addliveapprecordconfig.html
 func (client *Client) AddLiveAppRecordConfig(request *AddLiveAppRecordConfigRequest) (response *AddLiveAppRecordConfigResponse, err error) {
 	response = CreateAddLiveAppRecordConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddLiveAppRecordConfig(request *AddLiveAppRecordConfigRequ
 }
 
 // AddLiveAppRecordConfigWithChan invokes the live.AddLiveAppRecordConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/addliveapprecordconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveAppRecordConfigWithChan(request *AddLiveAppRecordConfigRequest) (<-chan *AddLiveAppRecordConfigResponse, <-chan error) {
 	responseChan := make(chan *AddLiveAppRecordConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddLiveAppRecordConfigWithChan(request *AddLiveAppRecordCo
 }
 
 // AddLiveAppRecordConfigWithCallback invokes the live.AddLiveAppRecordConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/addliveapprecordconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveAppRecordConfigWithCallback(request *AddLiveAppRecordConfigRequest, callback func(response *AddLiveAppRecordConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -108,7 +103,7 @@ func CreateAddLiveAppRecordConfigRequest() (request *AddLiveAppRecordConfigReque
 	request = &AddLiveAppRecordConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddLiveAppRecordConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "AddLiveAppRecordConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

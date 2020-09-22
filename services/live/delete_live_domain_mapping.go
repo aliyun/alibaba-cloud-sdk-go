@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLiveDomainMapping invokes the live.DeleteLiveDomainMapping API synchronously
-// api document: https://help.aliyun.com/api/live/deletelivedomainmapping.html
 func (client *Client) DeleteLiveDomainMapping(request *DeleteLiveDomainMappingRequest) (response *DeleteLiveDomainMappingResponse, err error) {
 	response = CreateDeleteLiveDomainMappingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLiveDomainMapping(request *DeleteLiveDomainMappingRe
 }
 
 // DeleteLiveDomainMappingWithChan invokes the live.DeleteLiveDomainMapping API asynchronously
-// api document: https://help.aliyun.com/api/live/deletelivedomainmapping.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveDomainMappingWithChan(request *DeleteLiveDomainMappingRequest) (<-chan *DeleteLiveDomainMappingResponse, <-chan error) {
 	responseChan := make(chan *DeleteLiveDomainMappingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLiveDomainMappingWithChan(request *DeleteLiveDomainM
 }
 
 // DeleteLiveDomainMappingWithCallback invokes the live.DeleteLiveDomainMapping API asynchronously
-// api document: https://help.aliyun.com/api/live/deletelivedomainmapping.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveDomainMappingWithCallback(request *DeleteLiveDomainMappingRequest, callback func(response *DeleteLiveDomainMappingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDeleteLiveDomainMappingRequest() (request *DeleteLiveDomainMappingReq
 	request = &DeleteLiveDomainMappingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveDomainMapping", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveDomainMapping", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

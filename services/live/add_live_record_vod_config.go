@@ -21,7 +21,6 @@ import (
 )
 
 // AddLiveRecordVodConfig invokes the live.AddLiveRecordVodConfig API synchronously
-// api document: https://help.aliyun.com/api/live/addliverecordvodconfig.html
 func (client *Client) AddLiveRecordVodConfig(request *AddLiveRecordVodConfigRequest) (response *AddLiveRecordVodConfigResponse, err error) {
 	response = CreateAddLiveRecordVodConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddLiveRecordVodConfig(request *AddLiveRecordVodConfigRequ
 }
 
 // AddLiveRecordVodConfigWithChan invokes the live.AddLiveRecordVodConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/addliverecordvodconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveRecordVodConfigWithChan(request *AddLiveRecordVodConfigRequest) (<-chan *AddLiveRecordVodConfigResponse, <-chan error) {
 	responseChan := make(chan *AddLiveRecordVodConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddLiveRecordVodConfigWithChan(request *AddLiveRecordVodCo
 }
 
 // AddLiveRecordVodConfigWithCallback invokes the live.AddLiveRecordVodConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/addliverecordvodconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveRecordVodConfigWithCallback(request *AddLiveRecordVodConfigRequest, callback func(response *AddLiveRecordVodConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateAddLiveRecordVodConfigRequest() (request *AddLiveRecordVodConfigReque
 	request = &AddLiveRecordVodConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "AddLiveRecordVodConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "AddLiveRecordVodConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

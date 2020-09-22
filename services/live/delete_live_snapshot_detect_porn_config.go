@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLiveSnapshotDetectPornConfig invokes the live.DeleteLiveSnapshotDetectPornConfig API synchronously
-// api document: https://help.aliyun.com/api/live/deletelivesnapshotdetectpornconfig.html
 func (client *Client) DeleteLiveSnapshotDetectPornConfig(request *DeleteLiveSnapshotDetectPornConfigRequest) (response *DeleteLiveSnapshotDetectPornConfigResponse, err error) {
 	response = CreateDeleteLiveSnapshotDetectPornConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLiveSnapshotDetectPornConfig(request *DeleteLiveSnap
 }
 
 // DeleteLiveSnapshotDetectPornConfigWithChan invokes the live.DeleteLiveSnapshotDetectPornConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deletelivesnapshotdetectpornconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveSnapshotDetectPornConfigWithChan(request *DeleteLiveSnapshotDetectPornConfigRequest) (<-chan *DeleteLiveSnapshotDetectPornConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteLiveSnapshotDetectPornConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLiveSnapshotDetectPornConfigWithChan(request *Delete
 }
 
 // DeleteLiveSnapshotDetectPornConfigWithCallback invokes the live.DeleteLiveSnapshotDetectPornConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deletelivesnapshotdetectpornconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveSnapshotDetectPornConfigWithCallback(request *DeleteLiveSnapshotDetectPornConfigRequest, callback func(response *DeleteLiveSnapshotDetectPornConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDeleteLiveSnapshotDetectPornConfigRequest() (request *DeleteLiveSnaps
 	request = &DeleteLiveSnapshotDetectPornConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveSnapshotDetectPornConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveSnapshotDetectPornConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

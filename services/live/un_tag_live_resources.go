@@ -21,7 +21,6 @@ import (
 )
 
 // UnTagLiveResources invokes the live.UnTagLiveResources API synchronously
-// api document: https://help.aliyun.com/api/live/untagliveresources.html
 func (client *Client) UnTagLiveResources(request *UnTagLiveResourcesRequest) (response *UnTagLiveResourcesResponse, err error) {
 	response = CreateUnTagLiveResourcesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnTagLiveResources(request *UnTagLiveResourcesRequest) (re
 }
 
 // UnTagLiveResourcesWithChan invokes the live.UnTagLiveResources API asynchronously
-// api document: https://help.aliyun.com/api/live/untagliveresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnTagLiveResourcesWithChan(request *UnTagLiveResourcesRequest) (<-chan *UnTagLiveResourcesResponse, <-chan error) {
 	responseChan := make(chan *UnTagLiveResourcesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnTagLiveResourcesWithChan(request *UnTagLiveResourcesRequ
 }
 
 // UnTagLiveResourcesWithCallback invokes the live.UnTagLiveResources API asynchronously
-// api document: https://help.aliyun.com/api/live/untagliveresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnTagLiveResourcesWithCallback(request *UnTagLiveResourcesRequest, callback func(response *UnTagLiveResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateUnTagLiveResourcesRequest() (request *UnTagLiveResourcesRequest) {
 	request = &UnTagLiveResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "UnTagLiveResources", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "UnTagLiveResources", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

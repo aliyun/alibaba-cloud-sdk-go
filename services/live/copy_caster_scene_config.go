@@ -21,7 +21,6 @@ import (
 )
 
 // CopyCasterSceneConfig invokes the live.CopyCasterSceneConfig API synchronously
-// api document: https://help.aliyun.com/api/live/copycastersceneconfig.html
 func (client *Client) CopyCasterSceneConfig(request *CopyCasterSceneConfigRequest) (response *CopyCasterSceneConfigResponse, err error) {
 	response = CreateCopyCasterSceneConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CopyCasterSceneConfig(request *CopyCasterSceneConfigReques
 }
 
 // CopyCasterSceneConfigWithChan invokes the live.CopyCasterSceneConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/copycastersceneconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyCasterSceneConfigWithChan(request *CopyCasterSceneConfigRequest) (<-chan *CopyCasterSceneConfigResponse, <-chan error) {
 	responseChan := make(chan *CopyCasterSceneConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CopyCasterSceneConfigWithChan(request *CopyCasterSceneConf
 }
 
 // CopyCasterSceneConfigWithCallback invokes the live.CopyCasterSceneConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/copycastersceneconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyCasterSceneConfigWithCallback(request *CopyCasterSceneConfigRequest, callback func(response *CopyCasterSceneConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateCopyCasterSceneConfigRequest() (request *CopyCasterSceneConfigRequest
 	request = &CopyCasterSceneConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "CopyCasterSceneConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "CopyCasterSceneConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

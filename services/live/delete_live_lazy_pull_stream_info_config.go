@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLiveLazyPullStreamInfoConfig invokes the live.DeleteLiveLazyPullStreamInfoConfig API synchronously
-// api document: https://help.aliyun.com/api/live/deletelivelazypullstreaminfoconfig.html
 func (client *Client) DeleteLiveLazyPullStreamInfoConfig(request *DeleteLiveLazyPullStreamInfoConfigRequest) (response *DeleteLiveLazyPullStreamInfoConfigResponse, err error) {
 	response = CreateDeleteLiveLazyPullStreamInfoConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLiveLazyPullStreamInfoConfig(request *DeleteLiveLazy
 }
 
 // DeleteLiveLazyPullStreamInfoConfigWithChan invokes the live.DeleteLiveLazyPullStreamInfoConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deletelivelazypullstreaminfoconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveLazyPullStreamInfoConfigWithChan(request *DeleteLiveLazyPullStreamInfoConfigRequest) (<-chan *DeleteLiveLazyPullStreamInfoConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteLiveLazyPullStreamInfoConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLiveLazyPullStreamInfoConfigWithChan(request *Delete
 }
 
 // DeleteLiveLazyPullStreamInfoConfigWithCallback invokes the live.DeleteLiveLazyPullStreamInfoConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deletelivelazypullstreaminfoconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveLazyPullStreamInfoConfigWithCallback(request *DeleteLiveLazyPullStreamInfoConfigRequest, callback func(response *DeleteLiveLazyPullStreamInfoConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDeleteLiveLazyPullStreamInfoConfigRequest() (request *DeleteLiveLazyP
 	request = &DeleteLiveLazyPullStreamInfoConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveLazyPullStreamInfoConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveLazyPullStreamInfoConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

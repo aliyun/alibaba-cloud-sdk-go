@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteCasterSceneConfig invokes the live.DeleteCasterSceneConfig API synchronously
-// api document: https://help.aliyun.com/api/live/deletecastersceneconfig.html
 func (client *Client) DeleteCasterSceneConfig(request *DeleteCasterSceneConfigRequest) (response *DeleteCasterSceneConfigResponse, err error) {
 	response = CreateDeleteCasterSceneConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteCasterSceneConfig(request *DeleteCasterSceneConfigRe
 }
 
 // DeleteCasterSceneConfigWithChan invokes the live.DeleteCasterSceneConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deletecastersceneconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCasterSceneConfigWithChan(request *DeleteCasterSceneConfigRequest) (<-chan *DeleteCasterSceneConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteCasterSceneConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteCasterSceneConfigWithChan(request *DeleteCasterScene
 }
 
 // DeleteCasterSceneConfigWithCallback invokes the live.DeleteCasterSceneConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deletecastersceneconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCasterSceneConfigWithCallback(request *DeleteCasterSceneConfigRequest, callback func(response *DeleteCasterSceneConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDeleteCasterSceneConfigRequest() (request *DeleteCasterSceneConfigReq
 	request = &DeleteCasterSceneConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterSceneConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteCasterSceneConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

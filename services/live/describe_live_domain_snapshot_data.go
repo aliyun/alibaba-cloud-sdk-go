@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveDomainSnapshotData invokes the live.DescribeLiveDomainSnapshotData API synchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainsnapshotdata.html
 func (client *Client) DescribeLiveDomainSnapshotData(request *DescribeLiveDomainSnapshotDataRequest) (response *DescribeLiveDomainSnapshotDataResponse, err error) {
 	response = CreateDescribeLiveDomainSnapshotDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveDomainSnapshotData(request *DescribeLiveDomain
 }
 
 // DescribeLiveDomainSnapshotDataWithChan invokes the live.DescribeLiveDomainSnapshotData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainsnapshotdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainSnapshotDataWithChan(request *DescribeLiveDomainSnapshotDataRequest) (<-chan *DescribeLiveDomainSnapshotDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveDomainSnapshotDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveDomainSnapshotDataWithChan(request *DescribeLi
 }
 
 // DescribeLiveDomainSnapshotDataWithCallback invokes the live.DescribeLiveDomainSnapshotData API asynchronously
-// api document: https://help.aliyun.com/api/live/describelivedomainsnapshotdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveDomainSnapshotDataWithCallback(request *DescribeLiveDomainSnapshotDataRequest, callback func(response *DescribeLiveDomainSnapshotDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateDescribeLiveDomainSnapshotDataRequest() (request *DescribeLiveDomainS
 	request = &DescribeLiveDomainSnapshotDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainSnapshotData", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DescribeLiveDomainSnapshotData", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

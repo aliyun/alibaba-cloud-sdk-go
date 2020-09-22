@@ -21,7 +21,6 @@ import (
 )
 
 // StopCasterScene invokes the live.StopCasterScene API synchronously
-// api document: https://help.aliyun.com/api/live/stopcasterscene.html
 func (client *Client) StopCasterScene(request *StopCasterSceneRequest) (response *StopCasterSceneResponse, err error) {
 	response = CreateStopCasterSceneResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopCasterScene(request *StopCasterSceneRequest) (response
 }
 
 // StopCasterSceneWithChan invokes the live.StopCasterScene API asynchronously
-// api document: https://help.aliyun.com/api/live/stopcasterscene.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopCasterSceneWithChan(request *StopCasterSceneRequest) (<-chan *StopCasterSceneResponse, <-chan error) {
 	responseChan := make(chan *StopCasterSceneResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopCasterSceneWithChan(request *StopCasterSceneRequest) (
 }
 
 // StopCasterSceneWithCallback invokes the live.StopCasterScene API asynchronously
-// api document: https://help.aliyun.com/api/live/stopcasterscene.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopCasterSceneWithCallback(request *StopCasterSceneRequest, callback func(response *StopCasterSceneResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateStopCasterSceneRequest() (request *StopCasterSceneRequest) {
 	request = &StopCasterSceneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "StopCasterScene", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "StopCasterScene", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

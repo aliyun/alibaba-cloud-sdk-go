@@ -21,7 +21,6 @@ import (
 )
 
 // EditHtmlResource invokes the live.EditHtmlResource API synchronously
-// api document: https://help.aliyun.com/api/live/edithtmlresource.html
 func (client *Client) EditHtmlResource(request *EditHtmlResourceRequest) (response *EditHtmlResourceResponse, err error) {
 	response = CreateEditHtmlResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EditHtmlResource(request *EditHtmlResourceRequest) (respon
 }
 
 // EditHtmlResourceWithChan invokes the live.EditHtmlResource API asynchronously
-// api document: https://help.aliyun.com/api/live/edithtmlresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditHtmlResourceWithChan(request *EditHtmlResourceRequest) (<-chan *EditHtmlResourceResponse, <-chan error) {
 	responseChan := make(chan *EditHtmlResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EditHtmlResourceWithChan(request *EditHtmlResourceRequest)
 }
 
 // EditHtmlResourceWithCallback invokes the live.EditHtmlResource API asynchronously
-// api document: https://help.aliyun.com/api/live/edithtmlresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditHtmlResourceWithCallback(request *EditHtmlResourceRequest, callback func(response *EditHtmlResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateEditHtmlResourceRequest() (request *EditHtmlResourceRequest) {
 	request = &EditHtmlResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "EditHtmlResource", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "EditHtmlResource", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }

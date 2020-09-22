@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLiveDetectNotifyConfig invokes the live.DeleteLiveDetectNotifyConfig API synchronously
-// api document: https://help.aliyun.com/api/live/deletelivedetectnotifyconfig.html
 func (client *Client) DeleteLiveDetectNotifyConfig(request *DeleteLiveDetectNotifyConfigRequest) (response *DeleteLiveDetectNotifyConfigResponse, err error) {
 	response = CreateDeleteLiveDetectNotifyConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLiveDetectNotifyConfig(request *DeleteLiveDetectNoti
 }
 
 // DeleteLiveDetectNotifyConfigWithChan invokes the live.DeleteLiveDetectNotifyConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deletelivedetectnotifyconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveDetectNotifyConfigWithChan(request *DeleteLiveDetectNotifyConfigRequest) (<-chan *DeleteLiveDetectNotifyConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteLiveDetectNotifyConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLiveDetectNotifyConfigWithChan(request *DeleteLiveDe
 }
 
 // DeleteLiveDetectNotifyConfigWithCallback invokes the live.DeleteLiveDetectNotifyConfig API asynchronously
-// api document: https://help.aliyun.com/api/live/deletelivedetectnotifyconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveDetectNotifyConfigWithCallback(request *DeleteLiveDetectNotifyConfigRequest, callback func(response *DeleteLiveDetectNotifyConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDeleteLiveDetectNotifyConfigRequest() (request *DeleteLiveDetectNotif
 	request = &DeleteLiveDetectNotifyConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveDetectNotifyConfig", "", "")
+	request.InitWithApiInfo("live", "2016-11-01", "DeleteLiveDetectNotifyConfig", "live", "openAPI")
 	request.Method = requests.POST
 	return
 }
