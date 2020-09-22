@@ -74,6 +74,7 @@ type ModifyInstanceMinorVersionRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	EffectTime           string           `position:"Query" name:"EffectTime"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Minorversion         string           `position:"Query" name:"Minorversion"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

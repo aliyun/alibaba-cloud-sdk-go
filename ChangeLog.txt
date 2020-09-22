@@ -1,3 +1,7 @@
+2020-09-22 Version: v1.61.513
+- Generated 2015-01-01 for `R-kvstore`.
+- DescribePrice update amount type to string.
+
 2020-09-22 Version: v1.61.512
 - Generated 2019-03-08 for `ivision`.
 

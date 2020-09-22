@@ -74,6 +74,7 @@ type ModifyInstanceMajorVersionRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	EffectTime           string           `position:"Query" name:"EffectTime"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	MajorVersion         string           `position:"Query" name:"MajorVersion"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
