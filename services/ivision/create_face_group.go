@@ -21,7 +21,6 @@ import (
 )
 
 // CreateFaceGroup invokes the ivision.CreateFaceGroup API synchronously
-// api document: https://help.aliyun.com/api/ivision/createfacegroup.html
 func (client *Client) CreateFaceGroup(request *CreateFaceGroupRequest) (response *CreateFaceGroupResponse, err error) {
 	response = CreateCreateFaceGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateFaceGroup(request *CreateFaceGroupRequest) (response
 }
 
 // CreateFaceGroupWithChan invokes the ivision.CreateFaceGroup API asynchronously
-// api document: https://help.aliyun.com/api/ivision/createfacegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFaceGroupWithChan(request *CreateFaceGroupRequest) (<-chan *CreateFaceGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateFaceGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateFaceGroupWithChan(request *CreateFaceGroupRequest) (
 }
 
 // CreateFaceGroupWithCallback invokes the ivision.CreateFaceGroup API asynchronously
-// api document: https://help.aliyun.com/api/ivision/createfacegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFaceGroupWithCallback(request *CreateFaceGroupRequest, callback func(response *CreateFaceGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateCreateFaceGroupRequest() (request *CreateFaceGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ivision", "2019-03-08", "CreateFaceGroup", "ivision", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

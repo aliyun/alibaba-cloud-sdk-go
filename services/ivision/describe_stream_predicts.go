@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeStreamPredicts invokes the ivision.DescribeStreamPredicts API synchronously
-// api document: https://help.aliyun.com/api/ivision/describestreampredicts.html
 func (client *Client) DescribeStreamPredicts(request *DescribeStreamPredictsRequest) (response *DescribeStreamPredictsResponse, err error) {
 	response = CreateDescribeStreamPredictsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeStreamPredicts(request *DescribeStreamPredictsRequ
 }
 
 // DescribeStreamPredictsWithChan invokes the ivision.DescribeStreamPredicts API asynchronously
-// api document: https://help.aliyun.com/api/ivision/describestreampredicts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStreamPredictsWithChan(request *DescribeStreamPredictsRequest) (<-chan *DescribeStreamPredictsResponse, <-chan error) {
 	responseChan := make(chan *DescribeStreamPredictsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeStreamPredictsWithChan(request *DescribeStreamPred
 }
 
 // DescribeStreamPredictsWithCallback invokes the ivision.DescribeStreamPredicts API asynchronously
-// api document: https://help.aliyun.com/api/ivision/describestreampredicts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStreamPredictsWithCallback(request *DescribeStreamPredictsRequest, callback func(response *DescribeStreamPredictsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,6 +97,7 @@ func CreateDescribeStreamPredictsRequest() (request *DescribeStreamPredictsReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ivision", "2019-03-08", "DescribeStreamPredicts", "ivision", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

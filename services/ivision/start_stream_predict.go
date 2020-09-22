@@ -21,7 +21,6 @@ import (
 )
 
 // StartStreamPredict invokes the ivision.StartStreamPredict API synchronously
-// api document: https://help.aliyun.com/api/ivision/startstreampredict.html
 func (client *Client) StartStreamPredict(request *StartStreamPredictRequest) (response *StartStreamPredictResponse, err error) {
 	response = CreateStartStreamPredictResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartStreamPredict(request *StartStreamPredictRequest) (re
 }
 
 // StartStreamPredictWithChan invokes the ivision.StartStreamPredict API asynchronously
-// api document: https://help.aliyun.com/api/ivision/startstreampredict.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartStreamPredictWithChan(request *StartStreamPredictRequest) (<-chan *StartStreamPredictResponse, <-chan error) {
 	responseChan := make(chan *StartStreamPredictResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartStreamPredictWithChan(request *StartStreamPredictRequ
 }
 
 // StartStreamPredictWithCallback invokes the ivision.StartStreamPredict API asynchronously
-// api document: https://help.aliyun.com/api/ivision/startstreampredict.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartStreamPredictWithCallback(request *StartStreamPredictRequest, callback func(response *StartStreamPredictResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateStartStreamPredictRequest() (request *StartStreamPredictRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ivision", "2019-03-08", "StartStreamPredict", "ivision", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

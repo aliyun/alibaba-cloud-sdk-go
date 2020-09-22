@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteStreamPredict invokes the ivision.DeleteStreamPredict API synchronously
-// api document: https://help.aliyun.com/api/ivision/deletestreampredict.html
 func (client *Client) DeleteStreamPredict(request *DeleteStreamPredictRequest) (response *DeleteStreamPredictResponse, err error) {
 	response = CreateDeleteStreamPredictResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteStreamPredict(request *DeleteStreamPredictRequest) (
 }
 
 // DeleteStreamPredictWithChan invokes the ivision.DeleteStreamPredict API asynchronously
-// api document: https://help.aliyun.com/api/ivision/deletestreampredict.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteStreamPredictWithChan(request *DeleteStreamPredictRequest) (<-chan *DeleteStreamPredictResponse, <-chan error) {
 	responseChan := make(chan *DeleteStreamPredictResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteStreamPredictWithChan(request *DeleteStreamPredictRe
 }
 
 // DeleteStreamPredictWithCallback invokes the ivision.DeleteStreamPredict API asynchronously
-// api document: https://help.aliyun.com/api/ivision/deletestreampredict.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteStreamPredictWithCallback(request *DeleteStreamPredictRequest, callback func(response *DeleteStreamPredictResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDeleteStreamPredictRequest() (request *DeleteStreamPredictRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ivision", "2019-03-08", "DeleteStreamPredict", "ivision", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

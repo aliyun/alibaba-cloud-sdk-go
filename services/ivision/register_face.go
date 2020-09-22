@@ -21,7 +21,6 @@ import (
 )
 
 // RegisterFace invokes the ivision.RegisterFace API synchronously
-// api document: https://help.aliyun.com/api/ivision/registerface.html
 func (client *Client) RegisterFace(request *RegisterFaceRequest) (response *RegisterFaceResponse, err error) {
 	response = CreateRegisterFaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RegisterFace(request *RegisterFaceRequest) (response *Regi
 }
 
 // RegisterFaceWithChan invokes the ivision.RegisterFace API asynchronously
-// api document: https://help.aliyun.com/api/ivision/registerface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterFaceWithChan(request *RegisterFaceRequest) (<-chan *RegisterFaceResponse, <-chan error) {
 	responseChan := make(chan *RegisterFaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RegisterFaceWithChan(request *RegisterFaceRequest) (<-chan
 }
 
 // RegisterFaceWithCallback invokes the ivision.RegisterFace API asynchronously
-// api document: https://help.aliyun.com/api/ivision/registerface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterFaceWithCallback(request *RegisterFaceRequest, callback func(response *RegisterFaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateRegisterFaceRequest() (request *RegisterFaceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ivision", "2019-03-08", "RegisterFace", "ivision", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

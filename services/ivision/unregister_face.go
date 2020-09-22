@@ -21,7 +21,6 @@ import (
 )
 
 // UnregisterFace invokes the ivision.UnregisterFace API synchronously
-// api document: https://help.aliyun.com/api/ivision/unregisterface.html
 func (client *Client) UnregisterFace(request *UnregisterFaceRequest) (response *UnregisterFaceResponse, err error) {
 	response = CreateUnregisterFaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnregisterFace(request *UnregisterFaceRequest) (response *
 }
 
 // UnregisterFaceWithChan invokes the ivision.UnregisterFace API asynchronously
-// api document: https://help.aliyun.com/api/ivision/unregisterface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnregisterFaceWithChan(request *UnregisterFaceRequest) (<-chan *UnregisterFaceResponse, <-chan error) {
 	responseChan := make(chan *UnregisterFaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnregisterFaceWithChan(request *UnregisterFaceRequest) (<-
 }
 
 // UnregisterFaceWithCallback invokes the ivision.UnregisterFace API asynchronously
-// api document: https://help.aliyun.com/api/ivision/unregisterface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnregisterFaceWithCallback(request *UnregisterFaceRequest, callback func(response *UnregisterFaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateUnregisterFaceRequest() (request *UnregisterFaceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ivision", "2019-03-08", "UnregisterFace", "ivision", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

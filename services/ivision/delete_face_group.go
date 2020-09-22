@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteFaceGroup invokes the ivision.DeleteFaceGroup API synchronously
-// api document: https://help.aliyun.com/api/ivision/deletefacegroup.html
 func (client *Client) DeleteFaceGroup(request *DeleteFaceGroupRequest) (response *DeleteFaceGroupResponse, err error) {
 	response = CreateDeleteFaceGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteFaceGroup(request *DeleteFaceGroupRequest) (response
 }
 
 // DeleteFaceGroupWithChan invokes the ivision.DeleteFaceGroup API asynchronously
-// api document: https://help.aliyun.com/api/ivision/deletefacegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFaceGroupWithChan(request *DeleteFaceGroupRequest) (<-chan *DeleteFaceGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteFaceGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteFaceGroupWithChan(request *DeleteFaceGroupRequest) (
 }
 
 // DeleteFaceGroupWithCallback invokes the ivision.DeleteFaceGroup API asynchronously
-// api document: https://help.aliyun.com/api/ivision/deletefacegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFaceGroupWithCallback(request *DeleteFaceGroupRequest, callback func(response *DeleteFaceGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDeleteFaceGroupRequest() (request *DeleteFaceGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ivision", "2019-03-08", "DeleteFaceGroup", "ivision", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

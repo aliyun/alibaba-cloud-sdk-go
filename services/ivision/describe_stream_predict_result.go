@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeStreamPredictResult invokes the ivision.DescribeStreamPredictResult API synchronously
-// api document: https://help.aliyun.com/api/ivision/describestreampredictresult.html
 func (client *Client) DescribeStreamPredictResult(request *DescribeStreamPredictResultRequest) (response *DescribeStreamPredictResultResponse, err error) {
 	response = CreateDescribeStreamPredictResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeStreamPredictResult(request *DescribeStreamPredict
 }
 
 // DescribeStreamPredictResultWithChan invokes the ivision.DescribeStreamPredictResult API asynchronously
-// api document: https://help.aliyun.com/api/ivision/describestreampredictresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStreamPredictResultWithChan(request *DescribeStreamPredictResultRequest) (<-chan *DescribeStreamPredictResultResponse, <-chan error) {
 	responseChan := make(chan *DescribeStreamPredictResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeStreamPredictResultWithChan(request *DescribeStrea
 }
 
 // DescribeStreamPredictResultWithCallback invokes the ivision.DescribeStreamPredictResult API asynchronously
-// api document: https://help.aliyun.com/api/ivision/describestreampredictresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStreamPredictResultWithCallback(request *DescribeStreamPredictResultRequest, callback func(response *DescribeStreamPredictResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -105,6 +100,7 @@ func CreateDescribeStreamPredictResultRequest() (request *DescribeStreamPredictR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ivision", "2019-03-08", "DescribeStreamPredictResult", "ivision", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

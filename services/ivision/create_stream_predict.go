@@ -21,7 +21,6 @@ import (
 )
 
 // CreateStreamPredict invokes the ivision.CreateStreamPredict API synchronously
-// api document: https://help.aliyun.com/api/ivision/createstreampredict.html
 func (client *Client) CreateStreamPredict(request *CreateStreamPredictRequest) (response *CreateStreamPredictResponse, err error) {
 	response = CreateCreateStreamPredictResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateStreamPredict(request *CreateStreamPredictRequest) (
 }
 
 // CreateStreamPredictWithChan invokes the ivision.CreateStreamPredict API asynchronously
-// api document: https://help.aliyun.com/api/ivision/createstreampredict.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateStreamPredictWithChan(request *CreateStreamPredictRequest) (<-chan *CreateStreamPredictResponse, <-chan error) {
 	responseChan := make(chan *CreateStreamPredictResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateStreamPredictWithChan(request *CreateStreamPredictRe
 }
 
 // CreateStreamPredictWithCallback invokes the ivision.CreateStreamPredict API asynchronously
-// api document: https://help.aliyun.com/api/ivision/createstreampredict.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateStreamPredictWithCallback(request *CreateStreamPredictRequest, callback func(response *CreateStreamPredictResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +79,7 @@ type CreateStreamPredictRequest struct {
 	StreamType            string           `position:"Query" name:"StreamType"`
 	FaceGroupId           string           `position:"Query" name:"FaceGroupId"`
 	StreamId              string           `position:"Query" name:"StreamId"`
+	PredictTemplateId     string           `position:"Query" name:"PredictTemplateId"`
 	DetectIntervals       string           `position:"Query" name:"DetectIntervals"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	ProbabilityThresholds string           `position:"Query" name:"ProbabilityThresholds"`
@@ -104,6 +100,7 @@ func CreateCreateStreamPredictRequest() (request *CreateStreamPredictRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ivision", "2019-03-08", "CreateStreamPredict", "ivision", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ImagePredict invokes the ivision.ImagePredict API synchronously
-// api document: https://help.aliyun.com/api/ivision/imagepredict.html
 func (client *Client) ImagePredict(request *ImagePredictRequest) (response *ImagePredictResponse, err error) {
 	response = CreateImagePredictResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ImagePredict(request *ImagePredictRequest) (response *Imag
 }
 
 // ImagePredictWithChan invokes the ivision.ImagePredict API asynchronously
-// api document: https://help.aliyun.com/api/ivision/imagepredict.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImagePredictWithChan(request *ImagePredictRequest) (<-chan *ImagePredictResponse, <-chan error) {
 	responseChan := make(chan *ImagePredictResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ImagePredictWithChan(request *ImagePredictRequest) (<-chan
 }
 
 // ImagePredictWithCallback invokes the ivision.ImagePredict API asynchronously
-// api document: https://help.aliyun.com/api/ivision/imagepredict.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImagePredictWithCallback(request *ImagePredictRequest, callback func(response *ImagePredictResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateImagePredictRequest() (request *ImagePredictRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ivision", "2019-03-08", "ImagePredict", "ivision", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

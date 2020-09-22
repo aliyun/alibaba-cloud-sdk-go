@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFaceGroups invokes the ivision.DescribeFaceGroups API synchronously
-// api document: https://help.aliyun.com/api/ivision/describefacegroups.html
 func (client *Client) DescribeFaceGroups(request *DescribeFaceGroupsRequest) (response *DescribeFaceGroupsResponse, err error) {
 	response = CreateDescribeFaceGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFaceGroups(request *DescribeFaceGroupsRequest) (re
 }
 
 // DescribeFaceGroupsWithChan invokes the ivision.DescribeFaceGroups API asynchronously
-// api document: https://help.aliyun.com/api/ivision/describefacegroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFaceGroupsWithChan(request *DescribeFaceGroupsRequest) (<-chan *DescribeFaceGroupsResponse, <-chan error) {
 	responseChan := make(chan *DescribeFaceGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFaceGroupsWithChan(request *DescribeFaceGroupsRequ
 }
 
 // DescribeFaceGroupsWithCallback invokes the ivision.DescribeFaceGroups API asynchronously
-// api document: https://help.aliyun.com/api/ivision/describefacegroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFaceGroupsWithCallback(request *DescribeFaceGroupsRequest, callback func(response *DescribeFaceGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateDescribeFaceGroupsRequest() (request *DescribeFaceGroupsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("ivision", "2019-03-08", "DescribeFaceGroups", "ivision", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

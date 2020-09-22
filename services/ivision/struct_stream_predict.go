@@ -18,6 +18,7 @@ package ivision
 // StreamPredict is a nested struct in ivision response
 type StreamPredict struct {
 	PredictId             string `json:"PredictId" xml:"PredictId"`
+	PredictTemplateId     string `json:"PredictTemplateId" xml:"PredictTemplateId"`
 	StreamType            string `json:"StreamType" xml:"StreamType"`
 	StreamId              string `json:"StreamId" xml:"StreamId"`
 	ModelIds              string `json:"ModelIds" xml:"ModelIds"`
@@ -26,6 +27,9 @@ type StreamPredict struct {
 	Output                string `json:"Output" xml:"Output"`
 	Notify                string `json:"Notify" xml:"Notify"`
 	UserData              string `json:"UserData" xml:"UserData"`
+	FaceGroupId           string `json:"FaceGroupId" xml:"FaceGroupId"`
+	ModelUserData         string `json:"ModelUserData" xml:"ModelUserData"`
 	CreationTime          string `json:"CreationTime" xml:"CreationTime"`
+	AutoStart             string `json:"AutoStart" xml:"AutoStart"`
 	Status                string `json:"Status" xml:"Status"`
 }
