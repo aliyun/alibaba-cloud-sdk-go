@@ -97,6 +97,7 @@ func CreateEncryptRequest() (request *EncryptRequest) {
 	}
 	request.InitWithApiInfo("Kms", "2016-01-20", "Encrypt", "kms-service", "openAPI")
 	request.Method = requests.POST
+	request.Scheme = requests.HTTPS
 	return
 }
 
