@@ -21,7 +21,6 @@ import (
 )
 
 // CreateConference invokes the rtc.CreateConference API synchronously
-// api document: https://help.aliyun.com/api/rtc/createconference.html
 func (client *Client) CreateConference(request *CreateConferenceRequest) (response *CreateConferenceResponse, err error) {
 	response = CreateCreateConferenceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateConference(request *CreateConferenceRequest) (respon
 }
 
 // CreateConferenceWithChan invokes the rtc.CreateConference API asynchronously
-// api document: https://help.aliyun.com/api/rtc/createconference.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateConferenceWithChan(request *CreateConferenceRequest) (<-chan *CreateConferenceResponse, <-chan error) {
 	responseChan := make(chan *CreateConferenceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateConferenceWithChan(request *CreateConferenceRequest)
 }
 
 // CreateConferenceWithCallback invokes the rtc.CreateConference API asynchronously
-// api document: https://help.aliyun.com/api/rtc/createconference.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateConferenceWithCallback(request *CreateConferenceRequest, callback func(response *CreateConferenceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +75,7 @@ type CreateConferenceRequest struct {
 	StartTime      string           `position:"Query" name:"StartTime"`
 	Type           string           `position:"Query" name:"Type"`
 	ConferenceName string           `position:"Query" name:"ConferenceName"`
+	ShowLog        string           `position:"Query" name:"ShowLog"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	AppId          string           `position:"Query" name:"AppId"`
 	RemindNotice   requests.Integer `position:"Query" name:"RemindNotice"`
@@ -88,9 +84,9 @@ type CreateConferenceRequest struct {
 // CreateConferenceResponse is the response struct for api CreateConference
 type CreateConferenceResponse struct {
 	*responses.BaseResponse
-	RequestId    string                     `json:"RequestId" xml:"RequestId"`
-	ConferenceId string                     `json:"ConferenceId" xml:"ConferenceId"`
-	AuthInfo     AuthInfoInCreateConference `json:"AuthInfo" xml:"AuthInfo"`
+	RequestId    string   `json:"RequestId" xml:"RequestId"`
+	ConferenceId string   `json:"ConferenceId" xml:"ConferenceId"`
+	AuthInfo     AuthInfo `json:"AuthInfo" xml:"AuthInfo"`
 }
 
 // CreateCreateConferenceRequest creates a request to invoke CreateConference API
@@ -99,6 +95,7 @@ func CreateCreateConferenceRequest() (request *CreateConferenceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "CreateConference", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRtcUserList invokes the rtc.DescribeRtcUserList API synchronously
-// api document: https://help.aliyun.com/api/rtc/describertcuserlist.html
 func (client *Client) DescribeRtcUserList(request *DescribeRtcUserListRequest) (response *DescribeRtcUserListResponse, err error) {
 	response = CreateDescribeRtcUserListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRtcUserList(request *DescribeRtcUserListRequest) (
 }
 
 // DescribeRtcUserListWithChan invokes the rtc.DescribeRtcUserList API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describertcuserlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRtcUserListWithChan(request *DescribeRtcUserListRequest) (<-chan *DescribeRtcUserListResponse, <-chan error) {
 	responseChan := make(chan *DescribeRtcUserListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRtcUserListWithChan(request *DescribeRtcUserListRe
 }
 
 // DescribeRtcUserListWithCallback invokes the rtc.DescribeRtcUserList API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describertcuserlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRtcUserListWithCallback(request *DescribeRtcUserListRequest, callback func(response *DescribeRtcUserListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,8 +72,11 @@ func (client *Client) DescribeRtcUserListWithCallback(request *DescribeRtcUserLi
 type DescribeRtcUserListRequest struct {
 	*requests.RpcRequest
 	StartTime string           `position:"Query" name:"StartTime"`
+	ShowLog   string           `position:"Query" name:"ShowLog"`
+	SubUser   string           `position:"Query" name:"SubUser"`
 	EndTime   string           `position:"Query" name:"EndTime"`
 	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
+	PubUser   string           `position:"Query" name:"PubUser"`
 	AppId     string           `position:"Query" name:"AppId"`
 	ChannelId string           `position:"Query" name:"ChannelId"`
 }
@@ -96,6 +94,7 @@ func CreateDescribeRtcUserListRequest() (request *DescribeRtcUserListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRtcUserList", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

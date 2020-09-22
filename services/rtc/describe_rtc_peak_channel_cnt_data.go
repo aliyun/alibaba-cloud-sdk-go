@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRtcPeakChannelCntData invokes the rtc.DescribeRtcPeakChannelCntData API synchronously
-// api document: https://help.aliyun.com/api/rtc/describertcpeakchannelcntdata.html
 func (client *Client) DescribeRtcPeakChannelCntData(request *DescribeRtcPeakChannelCntDataRequest) (response *DescribeRtcPeakChannelCntDataResponse, err error) {
 	response = CreateDescribeRtcPeakChannelCntDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRtcPeakChannelCntData(request *DescribeRtcPeakChan
 }
 
 // DescribeRtcPeakChannelCntDataWithChan invokes the rtc.DescribeRtcPeakChannelCntData API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describertcpeakchannelcntdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRtcPeakChannelCntDataWithChan(request *DescribeRtcPeakChannelCntDataRequest) (<-chan *DescribeRtcPeakChannelCntDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeRtcPeakChannelCntDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRtcPeakChannelCntDataWithChan(request *DescribeRtc
 }
 
 // DescribeRtcPeakChannelCntDataWithCallback invokes the rtc.DescribeRtcPeakChannelCntData API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describertcpeakchannelcntdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRtcPeakChannelCntDataWithCallback(request *DescribeRtcPeakChannelCntDataRequest, callback func(response *DescribeRtcPeakChannelCntDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type DescribeRtcPeakChannelCntDataRequest struct {
 	*requests.RpcRequest
 	StartTime   string           `position:"Query" name:"StartTime"`
 	ServiceArea string           `position:"Query" name:"ServiceArea"`
+	ShowLog     string           `position:"Query" name:"ShowLog"`
 	EndTime     string           `position:"Query" name:"EndTime"`
 	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 	AppId       string           `position:"Query" name:"AppId"`
@@ -97,6 +93,7 @@ func CreateDescribeRtcPeakChannelCntDataRequest() (request *DescribeRtcPeakChann
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRtcPeakChannelCntData", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

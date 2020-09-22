@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRtcChannelCntData invokes the rtc.DescribeRtcChannelCntData API synchronously
-// api document: https://help.aliyun.com/api/rtc/describertcchannelcntdata.html
 func (client *Client) DescribeRtcChannelCntData(request *DescribeRtcChannelCntDataRequest) (response *DescribeRtcChannelCntDataResponse, err error) {
 	response = CreateDescribeRtcChannelCntDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRtcChannelCntData(request *DescribeRtcChannelCntDa
 }
 
 // DescribeRtcChannelCntDataWithChan invokes the rtc.DescribeRtcChannelCntData API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describertcchannelcntdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRtcChannelCntDataWithChan(request *DescribeRtcChannelCntDataRequest) (<-chan *DescribeRtcChannelCntDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeRtcChannelCntDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRtcChannelCntDataWithChan(request *DescribeRtcChan
 }
 
 // DescribeRtcChannelCntDataWithCallback invokes the rtc.DescribeRtcChannelCntData API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describertcchannelcntdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRtcChannelCntDataWithCallback(request *DescribeRtcChannelCntDataRequest, callback func(response *DescribeRtcChannelCntDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type DescribeRtcChannelCntDataRequest struct {
 	*requests.RpcRequest
 	StartTime   string           `position:"Query" name:"StartTime"`
 	ServiceArea string           `position:"Query" name:"ServiceArea"`
+	ShowLog     string           `position:"Query" name:"ShowLog"`
 	EndTime     string           `position:"Query" name:"EndTime"`
 	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 	AppId       string           `position:"Query" name:"AppId"`
@@ -97,6 +93,7 @@ func CreateDescribeRtcChannelCntDataRequest() (request *DescribeRtcChannelCntDat
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRtcChannelCntData", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

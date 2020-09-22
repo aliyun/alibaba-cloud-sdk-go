@@ -17,5 +17,5 @@ package rtc
 
 // EventsInDescribeRtcQualityMetric is a nested struct in rtc response
 type EventsInDescribeRtcQualityMetric struct {
-	EventsItem []EventsItemInDescribeRtcQualityMetric `json:"Events" xml:"Events"`
+	EventsItem []EventsItem `json:"Events" xml:"Events"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyApp invokes the rtc.ModifyApp API synchronously
-// api document: https://help.aliyun.com/api/rtc/modifyapp.html
 func (client *Client) ModifyApp(request *ModifyAppRequest) (response *ModifyAppResponse, err error) {
 	response = CreateModifyAppResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyApp(request *ModifyAppRequest) (response *ModifyAppR
 }
 
 // ModifyAppWithChan invokes the rtc.ModifyApp API asynchronously
-// api document: https://help.aliyun.com/api/rtc/modifyapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAppWithChan(request *ModifyAppRequest) (<-chan *ModifyAppResponse, <-chan error) {
 	responseChan := make(chan *ModifyAppResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyAppWithChan(request *ModifyAppRequest) (<-chan *Modi
 }
 
 // ModifyAppWithCallback invokes the rtc.ModifyApp API asynchronously
-// api document: https://help.aliyun.com/api/rtc/modifyapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAppWithCallback(request *ModifyAppRequest, callback func(response *ModifyAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,9 @@ func (client *Client) ModifyAppWithCallback(request *ModifyAppRequest, callback 
 // ModifyAppRequest is the request struct for api ModifyApp
 type ModifyAppRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 	AppName string           `position:"Query" name:"AppName"`
+	ShowLog string           `position:"Query" name:"ShowLog"`
+	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 	AppId   string           `position:"Query" name:"AppId"`
 }
 
@@ -93,6 +89,7 @@ func CreateModifyAppRequest() (request *ModifyAppRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "ModifyApp", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

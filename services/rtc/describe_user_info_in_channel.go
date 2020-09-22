@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUserInfoInChannel invokes the rtc.DescribeUserInfoInChannel API synchronously
-// api document: https://help.aliyun.com/api/rtc/describeuserinfoinchannel.html
 func (client *Client) DescribeUserInfoInChannel(request *DescribeUserInfoInChannelRequest) (response *DescribeUserInfoInChannelResponse, err error) {
 	response = CreateDescribeUserInfoInChannelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUserInfoInChannel(request *DescribeUserInfoInChann
 }
 
 // DescribeUserInfoInChannelWithChan invokes the rtc.DescribeUserInfoInChannel API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describeuserinfoinchannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserInfoInChannelWithChan(request *DescribeUserInfoInChannelRequest) (<-chan *DescribeUserInfoInChannelResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserInfoInChannelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUserInfoInChannelWithChan(request *DescribeUserInf
 }
 
 // DescribeUserInfoInChannelWithCallback invokes the rtc.DescribeUserInfoInChannel API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describeuserinfoinchannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserInfoInChannelWithCallback(request *DescribeUserInfoInChannelRequest, callback func(response *DescribeUserInfoInChannelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) DescribeUserInfoInChannelWithCallback(request *DescribeUse
 type DescribeUserInfoInChannelRequest struct {
 	*requests.RpcRequest
 	UserId    string           `position:"Query" name:"UserId"`
+	ShowLog   string           `position:"Query" name:"ShowLog"`
 	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 	AppId     string           `position:"Query" name:"AppId"`
 	ChannelId string           `position:"Query" name:"ChannelId"`
@@ -98,6 +94,7 @@ func CreateDescribeUserInfoInChannelRequest() (request *DescribeUserInfoInChanne
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeUserInfoInChannel", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

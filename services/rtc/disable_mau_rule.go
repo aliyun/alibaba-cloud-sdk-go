@@ -21,7 +21,6 @@ import (
 )
 
 // DisableMAURule invokes the rtc.DisableMAURule API synchronously
-// api document: https://help.aliyun.com/api/rtc/disablemaurule.html
 func (client *Client) DisableMAURule(request *DisableMAURuleRequest) (response *DisableMAURuleResponse, err error) {
 	response = CreateDisableMAURuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisableMAURule(request *DisableMAURuleRequest) (response *
 }
 
 // DisableMAURuleWithChan invokes the rtc.DisableMAURule API asynchronously
-// api document: https://help.aliyun.com/api/rtc/disablemaurule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableMAURuleWithChan(request *DisableMAURuleRequest) (<-chan *DisableMAURuleResponse, <-chan error) {
 	responseChan := make(chan *DisableMAURuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisableMAURuleWithChan(request *DisableMAURuleRequest) (<-
 }
 
 // DisableMAURuleWithCallback invokes the rtc.DisableMAURule API asynchronously
-// api document: https://help.aliyun.com/api/rtc/disablemaurule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableMAURuleWithCallback(request *DisableMAURuleRequest, callback func(response *DisableMAURuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) DisableMAURuleWithCallback(request *DisableMAURuleRequest,
 // DisableMAURuleRequest is the request struct for api DisableMAURule
 type DisableMAURuleRequest struct {
 	*requests.RpcRequest
+	ShowLog string           `position:"Query" name:"ShowLog"`
 	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 	AppId   string           `position:"Query" name:"AppId"`
 	RuleId  requests.Integer `position:"Query" name:"RuleId"`
@@ -93,6 +89,7 @@ func CreateDisableMAURuleRequest() (request *DisableMAURuleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "DisableMAURule", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

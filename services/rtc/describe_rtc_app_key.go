@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRTCAppKey invokes the rtc.DescribeRTCAppKey API synchronously
-// api document: https://help.aliyun.com/api/rtc/describertcappkey.html
 func (client *Client) DescribeRTCAppKey(request *DescribeRTCAppKeyRequest) (response *DescribeRTCAppKeyResponse, err error) {
 	response = CreateDescribeRTCAppKeyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRTCAppKey(request *DescribeRTCAppKeyRequest) (resp
 }
 
 // DescribeRTCAppKeyWithChan invokes the rtc.DescribeRTCAppKey API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describertcappkey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRTCAppKeyWithChan(request *DescribeRTCAppKeyRequest) (<-chan *DescribeRTCAppKeyResponse, <-chan error) {
 	responseChan := make(chan *DescribeRTCAppKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRTCAppKeyWithChan(request *DescribeRTCAppKeyReques
 }
 
 // DescribeRTCAppKeyWithCallback invokes the rtc.DescribeRTCAppKey API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describertcappkey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRTCAppKeyWithCallback(request *DescribeRTCAppKeyRequest, callback func(response *DescribeRTCAppKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) DescribeRTCAppKeyWithCallback(request *DescribeRTCAppKeyRe
 // DescribeRTCAppKeyRequest is the request struct for api DescribeRTCAppKey
 type DescribeRTCAppKeyRequest struct {
 	*requests.RpcRequest
+	ShowLog string           `position:"Query" name:"ShowLog"`
 	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 	AppId   string           `position:"Query" name:"AppId"`
 }
@@ -93,6 +89,7 @@ func CreateDescribeRTCAppKeyRequest() (request *DescribeRTCAppKeyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRTCAppKey", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // StartMPUTask invokes the rtc.StartMPUTask API synchronously
-// api document: https://help.aliyun.com/api/rtc/startmputask.html
 func (client *Client) StartMPUTask(request *StartMPUTaskRequest) (response *StartMPUTaskResponse, err error) {
 	response = CreateStartMPUTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartMPUTask(request *StartMPUTaskRequest) (response *Star
 }
 
 // StartMPUTaskWithChan invokes the rtc.StartMPUTask API asynchronously
-// api document: https://help.aliyun.com/api/rtc/startmputask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartMPUTaskWithChan(request *StartMPUTaskRequest) (<-chan *StartMPUTaskResponse, <-chan error) {
 	responseChan := make(chan *StartMPUTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartMPUTaskWithChan(request *StartMPUTaskRequest) (<-chan
 }
 
 // StartMPUTaskWithCallback invokes the rtc.StartMPUTask API asynchronously
-// api document: https://help.aliyun.com/api/rtc/startmputask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartMPUTaskWithCallback(request *StartMPUTaskRequest, callback func(response *StartMPUTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,16 +71,22 @@ func (client *Client) StartMPUTaskWithCallback(request *StartMPUTaskRequest, cal
 // StartMPUTaskRequest is the request struct for api StartMPUTask
 type StartMPUTaskRequest struct {
 	*requests.RpcRequest
+	PayloadType     requests.Integer         `position:"Query" name:"PayloadType"`
 	UserPanes       *[]StartMPUTaskUserPanes `position:"Query" name:"UserPanes"  type:"Repeated"`
+	RtpExtInfo      requests.Integer         `position:"Query" name:"RtpExtInfo"`
 	BackgroundColor requests.Integer         `position:"Query" name:"BackgroundColor"`
 	CropMode        requests.Integer         `position:"Query" name:"CropMode"`
+	ReportVad       requests.Integer         `position:"Query" name:"ReportVad"`
 	TaskProfile     string                   `position:"Query" name:"TaskProfile"`
 	LayoutIds       *[]string                `position:"Query" name:"LayoutIds"  type:"Repeated"`
 	TaskId          string                   `position:"Query" name:"TaskId"`
+	ShowLog         string                   `position:"Query" name:"ShowLog"`
 	StreamURL       string                   `position:"Query" name:"StreamURL"`
+	VadInterval     requests.Integer         `position:"Query" name:"VadInterval"`
 	OwnerId         requests.Integer         `position:"Query" name:"OwnerId"`
 	SubSpecUsers    *[]string                `position:"Query" name:"SubSpecUsers"  type:"Repeated"`
 	AppId           string                   `position:"Query" name:"AppId"`
+	TimeStampRef    requests.Integer         `position:"Query" name:"TimeStampRef"`
 	MediaEncode     requests.Integer         `position:"Query" name:"MediaEncode"`
 	ChannelId       string                   `position:"Query" name:"ChannelId"`
 }
@@ -109,6 +110,7 @@ func CreateStartMPUTaskRequest() (request *StartMPUTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "StartMPUTask", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

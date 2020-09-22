@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateChannel invokes the rtc.UpdateChannel API synchronously
-// api document: https://help.aliyun.com/api/rtc/updatechannel.html
 func (client *Client) UpdateChannel(request *UpdateChannelRequest) (response *UpdateChannelResponse, err error) {
 	response = CreateUpdateChannelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateChannel(request *UpdateChannelRequest) (response *Up
 }
 
 // UpdateChannelWithChan invokes the rtc.UpdateChannel API asynchronously
-// api document: https://help.aliyun.com/api/rtc/updatechannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateChannelWithChan(request *UpdateChannelRequest) (<-chan *UpdateChannelResponse, <-chan error) {
 	responseChan := make(chan *UpdateChannelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateChannelWithChan(request *UpdateChannelRequest) (<-ch
 }
 
 // UpdateChannelWithCallback invokes the rtc.UpdateChannel API asynchronously
-// api document: https://help.aliyun.com/api/rtc/updatechannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateChannelWithCallback(request *UpdateChannelRequest, callback func(response *UpdateChannelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) UpdateChannelWithCallback(request *UpdateChannelRequest, c
 // UpdateChannelRequest is the request struct for api UpdateChannel
 type UpdateChannelRequest struct {
 	*requests.RpcRequest
+	ShowLog   string           `position:"Query" name:"ShowLog"`
 	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 	Nonce     string           `position:"Query" name:"Nonce"`
 	AppId     string           `position:"Query" name:"AppId"`
@@ -96,6 +92,7 @@ func CreateUpdateChannelRequest() (request *UpdateChannelRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "UpdateChannel", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

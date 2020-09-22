@@ -21,7 +21,6 @@ import (
 )
 
 // ReceiveNotify invokes the rtc.ReceiveNotify API synchronously
-// api document: https://help.aliyun.com/api/rtc/receivenotify.html
 func (client *Client) ReceiveNotify(request *ReceiveNotifyRequest) (response *ReceiveNotifyResponse, err error) {
 	response = CreateReceiveNotifyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReceiveNotify(request *ReceiveNotifyRequest) (response *Re
 }
 
 // ReceiveNotifyWithChan invokes the rtc.ReceiveNotify API asynchronously
-// api document: https://help.aliyun.com/api/rtc/receivenotify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReceiveNotifyWithChan(request *ReceiveNotifyRequest) (<-chan *ReceiveNotifyResponse, <-chan error) {
 	responseChan := make(chan *ReceiveNotifyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReceiveNotifyWithChan(request *ReceiveNotifyRequest) (<-ch
 }
 
 // ReceiveNotifyWithCallback invokes the rtc.ReceiveNotify API asynchronously
-// api document: https://help.aliyun.com/api/rtc/receivenotify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReceiveNotifyWithCallback(request *ReceiveNotifyRequest, callback func(response *ReceiveNotifyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +74,7 @@ type ReceiveNotifyRequest struct {
 	TraceId     string           `position:"Query" name:"TraceId"`
 	Content     string           `position:"Query" name:"Content"`
 	Event       string           `position:"Query" name:"Event"`
+	ShowLog     string           `position:"Query" name:"ShowLog"`
 	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 	ContentType string           `position:"Query" name:"ContentType"`
 	BizId       string           `position:"Query" name:"BizId"`
@@ -97,6 +93,7 @@ func CreateReceiveNotifyRequest() (request *ReceiveNotifyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "ReceiveNotify", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

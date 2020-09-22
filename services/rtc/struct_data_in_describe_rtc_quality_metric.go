@@ -17,5 +17,5 @@ package rtc
 
 // DataInDescribeRtcQualityMetric is a nested struct in rtc response
 type DataInDescribeRtcQualityMetric struct {
-	DataItem []DataItemInDescribeRtcQualityMetric `json:"Data" xml:"Data"`
+	DataItem []DataItem `json:"Data" xml:"Data"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // StopMPUTask invokes the rtc.StopMPUTask API synchronously
-// api document: https://help.aliyun.com/api/rtc/stopmputask.html
 func (client *Client) StopMPUTask(request *StopMPUTaskRequest) (response *StopMPUTaskResponse, err error) {
 	response = CreateStopMPUTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopMPUTask(request *StopMPUTaskRequest) (response *StopMP
 }
 
 // StopMPUTaskWithChan invokes the rtc.StopMPUTask API asynchronously
-// api document: https://help.aliyun.com/api/rtc/stopmputask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopMPUTaskWithChan(request *StopMPUTaskRequest) (<-chan *StopMPUTaskResponse, <-chan error) {
 	responseChan := make(chan *StopMPUTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopMPUTaskWithChan(request *StopMPUTaskRequest) (<-chan *
 }
 
 // StopMPUTaskWithCallback invokes the rtc.StopMPUTask API asynchronously
-// api document: https://help.aliyun.com/api/rtc/stopmputask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopMPUTaskWithCallback(request *StopMPUTaskRequest, callback func(response *StopMPUTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,10 @@ func (client *Client) StopMPUTaskWithCallback(request *StopMPUTaskRequest, callb
 // StopMPUTaskRequest is the request struct for api StopMPUTask
 type StopMPUTaskRequest struct {
 	*requests.RpcRequest
+	TaskId  string           `position:"Query" name:"TaskId"`
+	ShowLog string           `position:"Query" name:"ShowLog"`
 	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 	AppId   string           `position:"Query" name:"AppId"`
-	TaskId  string           `position:"Query" name:"TaskId"`
 }
 
 // StopMPUTaskResponse is the response struct for api StopMPUTask
@@ -93,6 +89,7 @@ func CreateStopMPUTaskRequest() (request *StopMPUTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "StopMPUTask", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

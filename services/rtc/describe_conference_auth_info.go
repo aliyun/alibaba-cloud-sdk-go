@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeConferenceAuthInfo invokes the rtc.DescribeConferenceAuthInfo API synchronously
-// api document: https://help.aliyun.com/api/rtc/describeconferenceauthinfo.html
 func (client *Client) DescribeConferenceAuthInfo(request *DescribeConferenceAuthInfoRequest) (response *DescribeConferenceAuthInfoResponse, err error) {
 	response = CreateDescribeConferenceAuthInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeConferenceAuthInfo(request *DescribeConferenceAuth
 }
 
 // DescribeConferenceAuthInfoWithChan invokes the rtc.DescribeConferenceAuthInfo API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describeconferenceauthinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeConferenceAuthInfoWithChan(request *DescribeConferenceAuthInfoRequest) (<-chan *DescribeConferenceAuthInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeConferenceAuthInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeConferenceAuthInfoWithChan(request *DescribeConfer
 }
 
 // DescribeConferenceAuthInfoWithCallback invokes the rtc.DescribeConferenceAuthInfo API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describeconferenceauthinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeConferenceAuthInfoWithCallback(request *DescribeConferenceAuthInfoRequest, callback func(response *DescribeConferenceAuthInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,18 @@ func (client *Client) DescribeConferenceAuthInfoWithCallback(request *DescribeCo
 // DescribeConferenceAuthInfoRequest is the request struct for api DescribeConferenceAuthInfo
 type DescribeConferenceAuthInfoRequest struct {
 	*requests.RpcRequest
-	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
 	ConferenceId string           `position:"Query" name:"ConferenceId"`
+	ShowLog      string           `position:"Query" name:"ShowLog"`
+	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
 	AppId        string           `position:"Query" name:"AppId"`
 }
 
 // DescribeConferenceAuthInfoResponse is the response struct for api DescribeConferenceAuthInfo
 type DescribeConferenceAuthInfoResponse struct {
 	*responses.BaseResponse
-	RequestId    string                               `json:"RequestId" xml:"RequestId"`
-	ConferenceId string                               `json:"ConferenceId" xml:"ConferenceId"`
-	AuthInfo     AuthInfoInDescribeConferenceAuthInfo `json:"AuthInfo" xml:"AuthInfo"`
+	RequestId    string   `json:"RequestId" xml:"RequestId"`
+	ConferenceId string   `json:"ConferenceId" xml:"ConferenceId"`
+	AuthInfo     AuthInfo `json:"AuthInfo" xml:"AuthInfo"`
 }
 
 // CreateDescribeConferenceAuthInfoRequest creates a request to invoke DescribeConferenceAuthInfo API
@@ -95,6 +91,7 @@ func CreateDescribeConferenceAuthInfoRequest() (request *DescribeConferenceAuthI
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeConferenceAuthInfo", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

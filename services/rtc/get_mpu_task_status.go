@@ -21,7 +21,6 @@ import (
 )
 
 // GetMPUTaskStatus invokes the rtc.GetMPUTaskStatus API synchronously
-// api document: https://help.aliyun.com/api/rtc/getmputaskstatus.html
 func (client *Client) GetMPUTaskStatus(request *GetMPUTaskStatusRequest) (response *GetMPUTaskStatusResponse, err error) {
 	response = CreateGetMPUTaskStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetMPUTaskStatus(request *GetMPUTaskStatusRequest) (respon
 }
 
 // GetMPUTaskStatusWithChan invokes the rtc.GetMPUTaskStatus API asynchronously
-// api document: https://help.aliyun.com/api/rtc/getmputaskstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMPUTaskStatusWithChan(request *GetMPUTaskStatusRequest) (<-chan *GetMPUTaskStatusResponse, <-chan error) {
 	responseChan := make(chan *GetMPUTaskStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetMPUTaskStatusWithChan(request *GetMPUTaskStatusRequest)
 }
 
 // GetMPUTaskStatusWithCallback invokes the rtc.GetMPUTaskStatus API asynchronously
-// api document: https://help.aliyun.com/api/rtc/getmputaskstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMPUTaskStatusWithCallback(request *GetMPUTaskStatusRequest, callback func(response *GetMPUTaskStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) GetMPUTaskStatusWithCallback(request *GetMPUTaskStatusRequ
 type GetMPUTaskStatusRequest struct {
 	*requests.RpcRequest
 	TaskId  string           `position:"Query" name:"TaskId"`
+	ShowLog string           `position:"Query" name:"ShowLog"`
 	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 	AppId   string           `position:"Query" name:"AppId"`
 }
@@ -94,6 +90,7 @@ func CreateGetMPUTaskStatusRequest() (request *GetMPUTaskStatusRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "GetMPUTaskStatus", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

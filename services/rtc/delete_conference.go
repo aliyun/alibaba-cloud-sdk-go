@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteConference invokes the rtc.DeleteConference API synchronously
-// api document: https://help.aliyun.com/api/rtc/deleteconference.html
 func (client *Client) DeleteConference(request *DeleteConferenceRequest) (response *DeleteConferenceResponse, err error) {
 	response = CreateDeleteConferenceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteConference(request *DeleteConferenceRequest) (respon
 }
 
 // DeleteConferenceWithChan invokes the rtc.DeleteConference API asynchronously
-// api document: https://help.aliyun.com/api/rtc/deleteconference.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteConferenceWithChan(request *DeleteConferenceRequest) (<-chan *DeleteConferenceResponse, <-chan error) {
 	responseChan := make(chan *DeleteConferenceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteConferenceWithChan(request *DeleteConferenceRequest)
 }
 
 // DeleteConferenceWithCallback invokes the rtc.DeleteConference API asynchronously
-// api document: https://help.aliyun.com/api/rtc/deleteconference.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteConferenceWithCallback(request *DeleteConferenceRequest, callback func(response *DeleteConferenceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) DeleteConferenceWithCallback(request *DeleteConferenceRequ
 type DeleteConferenceRequest struct {
 	*requests.RpcRequest
 	ConferenceId string           `position:"Query" name:"ConferenceId"`
+	ShowLog      string           `position:"Query" name:"ShowLog"`
 	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
 	AppId        string           `position:"Query" name:"AppId"`
 }
@@ -93,6 +89,7 @@ func CreateDeleteConferenceRequest() (request *DeleteConferenceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "DeleteConference", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

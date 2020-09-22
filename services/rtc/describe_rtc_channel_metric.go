@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRtcChannelMetric invokes the rtc.DescribeRtcChannelMetric API synchronously
-// api document: https://help.aliyun.com/api/rtc/describertcchannelmetric.html
 func (client *Client) DescribeRtcChannelMetric(request *DescribeRtcChannelMetricRequest) (response *DescribeRtcChannelMetricResponse, err error) {
 	response = CreateDescribeRtcChannelMetricResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRtcChannelMetric(request *DescribeRtcChannelMetric
 }
 
 // DescribeRtcChannelMetricWithChan invokes the rtc.DescribeRtcChannelMetric API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describertcchannelmetric.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRtcChannelMetricWithChan(request *DescribeRtcChannelMetricRequest) (<-chan *DescribeRtcChannelMetricResponse, <-chan error) {
 	responseChan := make(chan *DescribeRtcChannelMetricResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRtcChannelMetricWithChan(request *DescribeRtcChann
 }
 
 // DescribeRtcChannelMetricWithCallback invokes the rtc.DescribeRtcChannelMetric API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describertcchannelmetric.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRtcChannelMetricWithCallback(request *DescribeRtcChannelMetricRequest, callback func(response *DescribeRtcChannelMetricResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) DescribeRtcChannelMetricWithCallback(request *DescribeRtcC
 // DescribeRtcChannelMetricRequest is the request struct for api DescribeRtcChannelMetric
 type DescribeRtcChannelMetricRequest struct {
 	*requests.RpcRequest
+	ShowLog   string           `position:"Query" name:"ShowLog"`
 	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 	AppId     string           `position:"Query" name:"AppId"`
 	ChannelId string           `position:"Query" name:"ChannelId"`
@@ -95,6 +91,7 @@ func CreateDescribeRtcChannelMetricRequest() (request *DescribeRtcChannelMetricR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRtcChannelMetric", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

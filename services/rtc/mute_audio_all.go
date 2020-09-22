@@ -21,7 +21,6 @@ import (
 )
 
 // MuteAudioAll invokes the rtc.MuteAudioAll API synchronously
-// api document: https://help.aliyun.com/api/rtc/muteaudioall.html
 func (client *Client) MuteAudioAll(request *MuteAudioAllRequest) (response *MuteAudioAllResponse, err error) {
 	response = CreateMuteAudioAllResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) MuteAudioAll(request *MuteAudioAllRequest) (response *Mute
 }
 
 // MuteAudioAllWithChan invokes the rtc.MuteAudioAll API asynchronously
-// api document: https://help.aliyun.com/api/rtc/muteaudioall.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MuteAudioAllWithChan(request *MuteAudioAllRequest) (<-chan *MuteAudioAllResponse, <-chan error) {
 	responseChan := make(chan *MuteAudioAllResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) MuteAudioAllWithChan(request *MuteAudioAllRequest) (<-chan
 }
 
 // MuteAudioAllWithCallback invokes the rtc.MuteAudioAll API asynchronously
-// api document: https://help.aliyun.com/api/rtc/muteaudioall.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MuteAudioAllWithCallback(request *MuteAudioAllRequest, callback func(response *MuteAudioAllResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) MuteAudioAllWithCallback(request *MuteAudioAllRequest, cal
 type MuteAudioAllRequest struct {
 	*requests.RpcRequest
 	ConferenceId  string           `position:"Query" name:"ConferenceId"`
+	ShowLog       string           `position:"Query" name:"ShowLog"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	ParticipantId string           `position:"Query" name:"ParticipantId"`
 	AppId         string           `position:"Query" name:"AppId"`
@@ -96,6 +92,7 @@ func CreateMuteAudioAllRequest() (request *MuteAudioAllRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "MuteAudioAll", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveParticipants invokes the rtc.RemoveParticipants API synchronously
-// api document: https://help.aliyun.com/api/rtc/removeparticipants.html
 func (client *Client) RemoveParticipants(request *RemoveParticipantsRequest) (response *RemoveParticipantsResponse, err error) {
 	response = CreateRemoveParticipantsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveParticipants(request *RemoveParticipantsRequest) (re
 }
 
 // RemoveParticipantsWithChan invokes the rtc.RemoveParticipants API asynchronously
-// api document: https://help.aliyun.com/api/rtc/removeparticipants.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveParticipantsWithChan(request *RemoveParticipantsRequest) (<-chan *RemoveParticipantsResponse, <-chan error) {
 	responseChan := make(chan *RemoveParticipantsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveParticipantsWithChan(request *RemoveParticipantsRequ
 }
 
 // RemoveParticipantsWithCallback invokes the rtc.RemoveParticipants API asynchronously
-// api document: https://help.aliyun.com/api/rtc/removeparticipants.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveParticipantsWithCallback(request *RemoveParticipantsRequest, callback func(response *RemoveParticipantsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type RemoveParticipantsRequest struct {
 	*requests.RpcRequest
 	ParticipantIds *[]string        `position:"Query" name:"ParticipantIds"  type:"Repeated"`
 	ConferenceId   string           `position:"Query" name:"ConferenceId"`
+	ShowLog        string           `position:"Query" name:"ShowLog"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	AppId          string           `position:"Query" name:"AppId"`
 }
@@ -96,6 +92,7 @@ func CreateRemoveParticipantsRequest() (request *RemoveParticipantsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "RemoveParticipants", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

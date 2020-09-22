@@ -21,7 +21,6 @@ import (
 )
 
 // SetChannelProperty invokes the rtc.SetChannelProperty API synchronously
-// api document: https://help.aliyun.com/api/rtc/setchannelproperty.html
 func (client *Client) SetChannelProperty(request *SetChannelPropertyRequest) (response *SetChannelPropertyResponse, err error) {
 	response = CreateSetChannelPropertyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetChannelProperty(request *SetChannelPropertyRequest) (re
 }
 
 // SetChannelPropertyWithChan invokes the rtc.SetChannelProperty API asynchronously
-// api document: https://help.aliyun.com/api/rtc/setchannelproperty.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetChannelPropertyWithChan(request *SetChannelPropertyRequest) (<-chan *SetChannelPropertyResponse, <-chan error) {
 	responseChan := make(chan *SetChannelPropertyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetChannelPropertyWithChan(request *SetChannelPropertyRequ
 }
 
 // SetChannelPropertyWithCallback invokes the rtc.SetChannelProperty API asynchronously
-// api document: https://help.aliyun.com/api/rtc/setchannelproperty.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetChannelPropertyWithCallback(request *SetChannelPropertyRequest, callback func(response *SetChannelPropertyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +74,7 @@ type SetChannelPropertyRequest struct {
 	StartTime  requests.Integer `position:"Query" name:"StartTime"`
 	MaxUserNum requests.Integer `position:"Query" name:"MaxUserNum"`
 	Duration   requests.Integer `position:"Query" name:"Duration"`
+	ShowLog    string           `position:"Query" name:"ShowLog"`
 	Topics     string           `position:"Query" name:"Topics"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 	Priority   string           `position:"Query" name:"Priority"`
@@ -98,6 +94,7 @@ func CreateSetChannelPropertyRequest() (request *SetChannelPropertyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "SetChannelProperty", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

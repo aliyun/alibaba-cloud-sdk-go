@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMAURule invokes the rtc.DescribeMAURule API synchronously
-// api document: https://help.aliyun.com/api/rtc/describemaurule.html
 func (client *Client) DescribeMAURule(request *DescribeMAURuleRequest) (response *DescribeMAURuleResponse, err error) {
 	response = CreateDescribeMAURuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMAURule(request *DescribeMAURuleRequest) (response
 }
 
 // DescribeMAURuleWithChan invokes the rtc.DescribeMAURule API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describemaurule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMAURuleWithChan(request *DescribeMAURuleRequest) (<-chan *DescribeMAURuleResponse, <-chan error) {
 	responseChan := make(chan *DescribeMAURuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMAURuleWithChan(request *DescribeMAURuleRequest) (
 }
 
 // DescribeMAURuleWithCallback invokes the rtc.DescribeMAURule API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describemaurule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMAURuleWithCallback(request *DescribeMAURuleRequest, callback func(response *DescribeMAURuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) DescribeMAURuleWithCallback(request *DescribeMAURuleReques
 // DescribeMAURuleRequest is the request struct for api DescribeMAURule
 type DescribeMAURuleRequest struct {
 	*requests.RpcRequest
+	ShowLog string           `position:"Query" name:"ShowLog"`
 	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 	AppId   string           `position:"Query" name:"AppId"`
 }
@@ -93,6 +89,7 @@ func CreateDescribeMAURuleRequest() (request *DescribeMAURuleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeMAURule", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

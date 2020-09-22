@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyConference invokes the rtc.ModifyConference API synchronously
-// api document: https://help.aliyun.com/api/rtc/modifyconference.html
 func (client *Client) ModifyConference(request *ModifyConferenceRequest) (response *ModifyConferenceResponse, err error) {
 	response = CreateModifyConferenceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyConference(request *ModifyConferenceRequest) (respon
 }
 
 // ModifyConferenceWithChan invokes the rtc.ModifyConference API asynchronously
-// api document: https://help.aliyun.com/api/rtc/modifyconference.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyConferenceWithChan(request *ModifyConferenceRequest) (<-chan *ModifyConferenceResponse, <-chan error) {
 	responseChan := make(chan *ModifyConferenceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyConferenceWithChan(request *ModifyConferenceRequest)
 }
 
 // ModifyConferenceWithCallback invokes the rtc.ModifyConference API asynchronously
-// api document: https://help.aliyun.com/api/rtc/modifyconference.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyConferenceWithCallback(request *ModifyConferenceRequest, callback func(response *ModifyConferenceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +75,7 @@ type ModifyConferenceRequest struct {
 	Type           string           `position:"Query" name:"Type"`
 	ConferenceId   string           `position:"Query" name:"ConferenceId"`
 	ConferenceName string           `position:"Query" name:"ConferenceName"`
+	ShowLog        string           `position:"Query" name:"ShowLog"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	AppId          string           `position:"Query" name:"AppId"`
 	RemindNotice   requests.Integer `position:"Query" name:"RemindNotice"`
@@ -98,6 +94,7 @@ func CreateModifyConferenceRequest() (request *ModifyConferenceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "ModifyConference", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

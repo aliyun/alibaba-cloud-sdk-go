@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRtcUserCntData invokes the rtc.DescribeRtcUserCntData API synchronously
-// api document: https://help.aliyun.com/api/rtc/describertcusercntdata.html
 func (client *Client) DescribeRtcUserCntData(request *DescribeRtcUserCntDataRequest) (response *DescribeRtcUserCntDataResponse, err error) {
 	response = CreateDescribeRtcUserCntDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRtcUserCntData(request *DescribeRtcUserCntDataRequ
 }
 
 // DescribeRtcUserCntDataWithChan invokes the rtc.DescribeRtcUserCntData API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describertcusercntdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRtcUserCntDataWithChan(request *DescribeRtcUserCntDataRequest) (<-chan *DescribeRtcUserCntDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeRtcUserCntDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRtcUserCntDataWithChan(request *DescribeRtcUserCnt
 }
 
 // DescribeRtcUserCntDataWithCallback invokes the rtc.DescribeRtcUserCntData API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describertcusercntdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRtcUserCntDataWithCallback(request *DescribeRtcUserCntDataRequest, callback func(response *DescribeRtcUserCntDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type DescribeRtcUserCntDataRequest struct {
 	*requests.RpcRequest
 	StartTime   string           `position:"Query" name:"StartTime"`
 	ServiceArea string           `position:"Query" name:"ServiceArea"`
+	ShowLog     string           `position:"Query" name:"ShowLog"`
 	EndTime     string           `position:"Query" name:"EndTime"`
 	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 	AppId       string           `position:"Query" name:"AppId"`
@@ -97,6 +93,7 @@ func CreateDescribeRtcUserCntDataRequest() (request *DescribeRtcUserCntDataReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRtcUserCntData", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

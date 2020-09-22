@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteChannel invokes the rtc.DeleteChannel API synchronously
-// api document: https://help.aliyun.com/api/rtc/deletechannel.html
 func (client *Client) DeleteChannel(request *DeleteChannelRequest) (response *DeleteChannelResponse, err error) {
 	response = CreateDeleteChannelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteChannel(request *DeleteChannelRequest) (response *De
 }
 
 // DeleteChannelWithChan invokes the rtc.DeleteChannel API asynchronously
-// api document: https://help.aliyun.com/api/rtc/deletechannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteChannelWithChan(request *DeleteChannelRequest) (<-chan *DeleteChannelResponse, <-chan error) {
 	responseChan := make(chan *DeleteChannelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteChannelWithChan(request *DeleteChannelRequest) (<-ch
 }
 
 // DeleteChannelWithCallback invokes the rtc.DeleteChannel API asynchronously
-// api document: https://help.aliyun.com/api/rtc/deletechannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteChannelWithCallback(request *DeleteChannelRequest, callback func(response *DeleteChannelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) DeleteChannelWithCallback(request *DeleteChannelRequest, c
 // DeleteChannelRequest is the request struct for api DeleteChannel
 type DeleteChannelRequest struct {
 	*requests.RpcRequest
+	ShowLog   string           `position:"Query" name:"ShowLog"`
 	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 	AppId     string           `position:"Query" name:"AppId"`
 	ChannelId string           `position:"Query" name:"ChannelId"`
@@ -93,6 +89,7 @@ func CreateDeleteChannelRequest() (request *DeleteChannelRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "DeleteChannel", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteMAURule invokes the rtc.DeleteMAURule API synchronously
-// api document: https://help.aliyun.com/api/rtc/deletemaurule.html
 func (client *Client) DeleteMAURule(request *DeleteMAURuleRequest) (response *DeleteMAURuleResponse, err error) {
 	response = CreateDeleteMAURuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteMAURule(request *DeleteMAURuleRequest) (response *De
 }
 
 // DeleteMAURuleWithChan invokes the rtc.DeleteMAURule API asynchronously
-// api document: https://help.aliyun.com/api/rtc/deletemaurule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMAURuleWithChan(request *DeleteMAURuleRequest) (<-chan *DeleteMAURuleResponse, <-chan error) {
 	responseChan := make(chan *DeleteMAURuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteMAURuleWithChan(request *DeleteMAURuleRequest) (<-ch
 }
 
 // DeleteMAURuleWithCallback invokes the rtc.DeleteMAURule API asynchronously
-// api document: https://help.aliyun.com/api/rtc/deletemaurule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMAURuleWithCallback(request *DeleteMAURuleRequest, callback func(response *DeleteMAURuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) DeleteMAURuleWithCallback(request *DeleteMAURuleRequest, c
 // DeleteMAURuleRequest is the request struct for api DeleteMAURule
 type DeleteMAURuleRequest struct {
 	*requests.RpcRequest
+	ShowLog string           `position:"Query" name:"ShowLog"`
 	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 	AppId   string           `position:"Query" name:"AppId"`
 	RuleId  requests.Integer `position:"Query" name:"RuleId"`
@@ -93,6 +89,7 @@ func CreateDeleteMAURuleRequest() (request *DeleteMAURuleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "DeleteMAURule", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

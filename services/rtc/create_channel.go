@@ -21,7 +21,6 @@ import (
 )
 
 // CreateChannel invokes the rtc.CreateChannel API synchronously
-// api document: https://help.aliyun.com/api/rtc/createchannel.html
 func (client *Client) CreateChannel(request *CreateChannelRequest) (response *CreateChannelResponse, err error) {
 	response = CreateCreateChannelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateChannel(request *CreateChannelRequest) (response *Cr
 }
 
 // CreateChannelWithChan invokes the rtc.CreateChannel API asynchronously
-// api document: https://help.aliyun.com/api/rtc/createchannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateChannelWithChan(request *CreateChannelRequest) (<-chan *CreateChannelResponse, <-chan error) {
 	responseChan := make(chan *CreateChannelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateChannelWithChan(request *CreateChannelRequest) (<-ch
 }
 
 // CreateChannelWithCallback invokes the rtc.CreateChannel API asynchronously
-// api document: https://help.aliyun.com/api/rtc/createchannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateChannelWithCallback(request *CreateChannelRequest, callback func(response *CreateChannelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) CreateChannelWithCallback(request *CreateChannelRequest, c
 // CreateChannelRequest is the request struct for api CreateChannel
 type CreateChannelRequest struct {
 	*requests.RpcRequest
+	ShowLog   string           `position:"Query" name:"ShowLog"`
 	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 	AppId     string           `position:"Query" name:"AppId"`
 	ChannelId string           `position:"Query" name:"ChannelId"`
@@ -96,6 +92,7 @@ func CreateCreateChannelRequest() (request *CreateChannelRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "CreateChannel", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

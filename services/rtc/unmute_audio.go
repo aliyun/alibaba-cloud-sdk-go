@@ -21,7 +21,6 @@ import (
 )
 
 // UnmuteAudio invokes the rtc.UnmuteAudio API synchronously
-// api document: https://help.aliyun.com/api/rtc/unmuteaudio.html
 func (client *Client) UnmuteAudio(request *UnmuteAudioRequest) (response *UnmuteAudioResponse, err error) {
 	response = CreateUnmuteAudioResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnmuteAudio(request *UnmuteAudioRequest) (response *Unmute
 }
 
 // UnmuteAudioWithChan invokes the rtc.UnmuteAudio API asynchronously
-// api document: https://help.aliyun.com/api/rtc/unmuteaudio.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnmuteAudioWithChan(request *UnmuteAudioRequest) (<-chan *UnmuteAudioResponse, <-chan error) {
 	responseChan := make(chan *UnmuteAudioResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnmuteAudioWithChan(request *UnmuteAudioRequest) (<-chan *
 }
 
 // UnmuteAudioWithCallback invokes the rtc.UnmuteAudio API asynchronously
-// api document: https://help.aliyun.com/api/rtc/unmuteaudio.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnmuteAudioWithCallback(request *UnmuteAudioRequest, callback func(response *UnmuteAudioResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type UnmuteAudioRequest struct {
 	*requests.RpcRequest
 	ParticipantIds *[]string        `position:"Query" name:"ParticipantIds"  type:"Repeated"`
 	ConferenceId   string           `position:"Query" name:"ConferenceId"`
+	ShowLog        string           `position:"Query" name:"ShowLog"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	AppId          string           `position:"Query" name:"AppId"`
 }
@@ -96,6 +92,7 @@ func CreateUnmuteAudioRequest() (request *UnmuteAudioRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "UnmuteAudio", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateMPULayout invokes the rtc.UpdateMPULayout API synchronously
-// api document: https://help.aliyun.com/api/rtc/updatempulayout.html
 func (client *Client) UpdateMPULayout(request *UpdateMPULayoutRequest) (response *UpdateMPULayoutResponse, err error) {
 	response = CreateUpdateMPULayoutResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateMPULayout(request *UpdateMPULayoutRequest) (response
 }
 
 // UpdateMPULayoutWithChan invokes the rtc.UpdateMPULayout API asynchronously
-// api document: https://help.aliyun.com/api/rtc/updatempulayout.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMPULayoutWithChan(request *UpdateMPULayoutRequest) (<-chan *UpdateMPULayoutResponse, <-chan error) {
 	responseChan := make(chan *UpdateMPULayoutResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateMPULayoutWithChan(request *UpdateMPULayoutRequest) (
 }
 
 // UpdateMPULayoutWithCallback invokes the rtc.UpdateMPULayout API asynchronously
-// api document: https://help.aliyun.com/api/rtc/updatempulayout.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMPULayoutWithCallback(request *UpdateMPULayoutRequest, callback func(response *UpdateMPULayoutResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +76,7 @@ type UpdateMPULayoutRequest struct {
 	CropMode        requests.Integer            `position:"Query" name:"CropMode"`
 	LayoutIds       *[]string                   `position:"Query" name:"LayoutIds"  type:"Repeated"`
 	TaskId          string                      `position:"Query" name:"TaskId"`
+	ShowLog         string                      `position:"Query" name:"ShowLog"`
 	OwnerId         requests.Integer            `position:"Query" name:"OwnerId"`
 	AppId           string                      `position:"Query" name:"AppId"`
 }
@@ -104,6 +100,7 @@ func CreateUpdateMPULayoutRequest() (request *UpdateMPULayoutRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "UpdateMPULayout", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

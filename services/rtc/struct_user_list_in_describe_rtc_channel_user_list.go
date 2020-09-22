@@ -17,5 +17,5 @@ package rtc
 
 // UserListInDescribeRtcChannelUserList is a nested struct in rtc response
 type UserListInDescribeRtcChannelUserList struct {
-	UserListItem []UserListItemInDescribeRtcChannelUserList `json:"UserList" xml:"UserList"`
+	UserListItem []UserListItem `json:"UserList" xml:"UserList"`
 }

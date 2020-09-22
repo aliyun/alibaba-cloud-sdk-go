@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveTerminals invokes the rtc.RemoveTerminals API synchronously
-// api document: https://help.aliyun.com/api/rtc/removeterminals.html
 func (client *Client) RemoveTerminals(request *RemoveTerminalsRequest) (response *RemoveTerminalsResponse, err error) {
 	response = CreateRemoveTerminalsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveTerminals(request *RemoveTerminalsRequest) (response
 }
 
 // RemoveTerminalsWithChan invokes the rtc.RemoveTerminals API asynchronously
-// api document: https://help.aliyun.com/api/rtc/removeterminals.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveTerminalsWithChan(request *RemoveTerminalsRequest) (<-chan *RemoveTerminalsResponse, <-chan error) {
 	responseChan := make(chan *RemoveTerminalsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveTerminalsWithChan(request *RemoveTerminalsRequest) (
 }
 
 // RemoveTerminalsWithCallback invokes the rtc.RemoveTerminals API asynchronously
-// api document: https://help.aliyun.com/api/rtc/removeterminals.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveTerminalsWithCallback(request *RemoveTerminalsRequest, callback func(response *RemoveTerminalsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) RemoveTerminalsWithCallback(request *RemoveTerminalsReques
 type RemoveTerminalsRequest struct {
 	*requests.RpcRequest
 	TerminalIds *[]string        `position:"Query" name:"TerminalIds"  type:"Repeated"`
+	ShowLog     string           `position:"Query" name:"ShowLog"`
 	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 	AppId       string           `position:"Query" name:"AppId"`
 	ChannelId   string           `position:"Query" name:"ChannelId"`
@@ -95,6 +91,7 @@ func CreateRemoveTerminalsRequest() (request *RemoveTerminalsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "RemoveTerminals", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

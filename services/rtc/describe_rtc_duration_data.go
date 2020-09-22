@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRtcDurationData invokes the rtc.DescribeRtcDurationData API synchronously
-// api document: https://help.aliyun.com/api/rtc/describertcdurationdata.html
 func (client *Client) DescribeRtcDurationData(request *DescribeRtcDurationDataRequest) (response *DescribeRtcDurationDataResponse, err error) {
 	response = CreateDescribeRtcDurationDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRtcDurationData(request *DescribeRtcDurationDataRe
 }
 
 // DescribeRtcDurationDataWithChan invokes the rtc.DescribeRtcDurationData API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describertcdurationdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRtcDurationDataWithChan(request *DescribeRtcDurationDataRequest) (<-chan *DescribeRtcDurationDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeRtcDurationDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRtcDurationDataWithChan(request *DescribeRtcDurati
 }
 
 // DescribeRtcDurationDataWithCallback invokes the rtc.DescribeRtcDurationData API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describertcdurationdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRtcDurationDataWithCallback(request *DescribeRtcDurationDataRequest, callback func(response *DescribeRtcDurationDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type DescribeRtcDurationDataRequest struct {
 	*requests.RpcRequest
 	StartTime   string           `position:"Query" name:"StartTime"`
 	ServiceArea string           `position:"Query" name:"ServiceArea"`
+	ShowLog     string           `position:"Query" name:"ShowLog"`
 	EndTime     string           `position:"Query" name:"EndTime"`
 	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 	AppId       string           `position:"Query" name:"AppId"`
@@ -97,6 +93,7 @@ func CreateDescribeRtcDurationDataRequest() (request *DescribeRtcDurationDataReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRtcDurationData", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

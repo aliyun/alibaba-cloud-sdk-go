@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeChannelParticipants invokes the rtc.DescribeChannelParticipants API synchronously
-// api document: https://help.aliyun.com/api/rtc/describechannelparticipants.html
 func (client *Client) DescribeChannelParticipants(request *DescribeChannelParticipantsRequest) (response *DescribeChannelParticipantsResponse, err error) {
 	response = CreateDescribeChannelParticipantsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeChannelParticipants(request *DescribeChannelPartic
 }
 
 // DescribeChannelParticipantsWithChan invokes the rtc.DescribeChannelParticipants API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describechannelparticipants.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeChannelParticipantsWithChan(request *DescribeChannelParticipantsRequest) (<-chan *DescribeChannelParticipantsResponse, <-chan error) {
 	responseChan := make(chan *DescribeChannelParticipantsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeChannelParticipantsWithChan(request *DescribeChann
 }
 
 // DescribeChannelParticipantsWithCallback invokes the rtc.DescribeChannelParticipants API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describechannelparticipants.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeChannelParticipantsWithCallback(request *DescribeChannelParticipantsRequest, callback func(response *DescribeChannelParticipantsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type DescribeChannelParticipantsRequest struct {
 	*requests.RpcRequest
 	PageNum   requests.Integer `position:"Query" name:"PageNum"`
 	PageSize  requests.Integer `position:"Query" name:"PageSize"`
+	ShowLog   string           `position:"Query" name:"ShowLog"`
 	Order     string           `position:"Query" name:"Order"`
 	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 	AppId     string           `position:"Query" name:"AppId"`
@@ -100,6 +96,7 @@ func CreateDescribeChannelParticipantsRequest() (request *DescribeChannelPartici
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeChannelParticipants", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

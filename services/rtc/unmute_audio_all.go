@@ -21,7 +21,6 @@ import (
 )
 
 // UnmuteAudioAll invokes the rtc.UnmuteAudioAll API synchronously
-// api document: https://help.aliyun.com/api/rtc/unmuteaudioall.html
 func (client *Client) UnmuteAudioAll(request *UnmuteAudioAllRequest) (response *UnmuteAudioAllResponse, err error) {
 	response = CreateUnmuteAudioAllResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnmuteAudioAll(request *UnmuteAudioAllRequest) (response *
 }
 
 // UnmuteAudioAllWithChan invokes the rtc.UnmuteAudioAll API asynchronously
-// api document: https://help.aliyun.com/api/rtc/unmuteaudioall.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnmuteAudioAllWithChan(request *UnmuteAudioAllRequest) (<-chan *UnmuteAudioAllResponse, <-chan error) {
 	responseChan := make(chan *UnmuteAudioAllResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnmuteAudioAllWithChan(request *UnmuteAudioAllRequest) (<-
 }
 
 // UnmuteAudioAllWithCallback invokes the rtc.UnmuteAudioAll API asynchronously
-// api document: https://help.aliyun.com/api/rtc/unmuteaudioall.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnmuteAudioAllWithCallback(request *UnmuteAudioAllRequest, callback func(response *UnmuteAudioAllResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) UnmuteAudioAllWithCallback(request *UnmuteAudioAllRequest,
 type UnmuteAudioAllRequest struct {
 	*requests.RpcRequest
 	ConferenceId  string           `position:"Query" name:"ConferenceId"`
+	ShowLog       string           `position:"Query" name:"ShowLog"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	ParticipantId string           `position:"Query" name:"ParticipantId"`
 	AppId         string           `position:"Query" name:"AppId"`
@@ -96,6 +92,7 @@ func CreateUnmuteAudioAllRequest() (request *UnmuteAudioAllRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "UnmuteAudioAll", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

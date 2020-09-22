@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRtcQualityMetric invokes the rtc.DescribeRtcQualityMetric API synchronously
-// api document: https://help.aliyun.com/api/rtc/describertcqualitymetric.html
 func (client *Client) DescribeRtcQualityMetric(request *DescribeRtcQualityMetricRequest) (response *DescribeRtcQualityMetricResponse, err error) {
 	response = CreateDescribeRtcQualityMetricResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRtcQualityMetric(request *DescribeRtcQualityMetric
 }
 
 // DescribeRtcQualityMetricWithChan invokes the rtc.DescribeRtcQualityMetric API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describertcqualitymetric.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRtcQualityMetricWithChan(request *DescribeRtcQualityMetricRequest) (<-chan *DescribeRtcQualityMetricResponse, <-chan error) {
 	responseChan := make(chan *DescribeRtcQualityMetricResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRtcQualityMetricWithChan(request *DescribeRtcQuali
 }
 
 // DescribeRtcQualityMetricWithCallback invokes the rtc.DescribeRtcQualityMetric API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describertcqualitymetric.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRtcQualityMetricWithCallback(request *DescribeRtcQualityMetricRequest, callback func(response *DescribeRtcQualityMetricResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) DescribeRtcQualityMetricWithCallback(request *DescribeRtcQ
 type DescribeRtcQualityMetricRequest struct {
 	*requests.RpcRequest
 	StartTime string           `position:"Query" name:"StartTime"`
+	ShowLog   string           `position:"Query" name:"ShowLog"`
 	SubUser   string           `position:"Query" name:"SubUser"`
 	EndTime   string           `position:"Query" name:"EndTime"`
 	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
@@ -98,6 +94,7 @@ func CreateDescribeRtcQualityMetricRequest() (request *DescribeRtcQualityMetricR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeRtcQualityMetric", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

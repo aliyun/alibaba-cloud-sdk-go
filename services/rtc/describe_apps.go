@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApps invokes the rtc.DescribeApps API synchronously
-// api document: https://help.aliyun.com/api/rtc/describeapps.html
 func (client *Client) DescribeApps(request *DescribeAppsRequest) (response *DescribeAppsResponse, err error) {
 	response = CreateDescribeAppsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApps(request *DescribeAppsRequest) (response *Desc
 }
 
 // DescribeAppsWithChan invokes the rtc.DescribeApps API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describeapps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppsWithChan(request *DescribeAppsRequest) (<-chan *DescribeAppsResponse, <-chan error) {
 	responseChan := make(chan *DescribeAppsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAppsWithChan(request *DescribeAppsRequest) (<-chan
 }
 
 // DescribeAppsWithCallback invokes the rtc.DescribeApps API asynchronously
-// api document: https://help.aliyun.com/api/rtc/describeapps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppsWithCallback(request *DescribeAppsRequest, callback func(response *DescribeAppsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type DescribeAppsRequest struct {
 	*requests.RpcRequest
 	PageNum  requests.Integer `position:"Query" name:"PageNum"`
 	PageSize requests.Integer `position:"Query" name:"PageSize"`
+	ShowLog  string           `position:"Query" name:"ShowLog"`
 	Order    string           `position:"Query" name:"Order"`
 	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
 	AppId    string           `position:"Query" name:"AppId"`
@@ -99,6 +95,7 @@ func CreateDescribeAppsRequest() (request *DescribeAppsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "DescribeApps", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

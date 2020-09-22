@@ -21,7 +21,6 @@ import (
 )
 
 // MuteAudio invokes the rtc.MuteAudio API synchronously
-// api document: https://help.aliyun.com/api/rtc/muteaudio.html
 func (client *Client) MuteAudio(request *MuteAudioRequest) (response *MuteAudioResponse, err error) {
 	response = CreateMuteAudioResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) MuteAudio(request *MuteAudioRequest) (response *MuteAudioR
 }
 
 // MuteAudioWithChan invokes the rtc.MuteAudio API asynchronously
-// api document: https://help.aliyun.com/api/rtc/muteaudio.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MuteAudioWithChan(request *MuteAudioRequest) (<-chan *MuteAudioResponse, <-chan error) {
 	responseChan := make(chan *MuteAudioResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) MuteAudioWithChan(request *MuteAudioRequest) (<-chan *Mute
 }
 
 // MuteAudioWithCallback invokes the rtc.MuteAudio API asynchronously
-// api document: https://help.aliyun.com/api/rtc/muteaudio.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MuteAudioWithCallback(request *MuteAudioRequest, callback func(response *MuteAudioResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type MuteAudioRequest struct {
 	*requests.RpcRequest
 	ParticipantIds *[]string        `position:"Query" name:"ParticipantIds"  type:"Repeated"`
 	ConferenceId   string           `position:"Query" name:"ConferenceId"`
+	ShowLog        string           `position:"Query" name:"ShowLog"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	AppId          string           `position:"Query" name:"AppId"`
 }
@@ -96,6 +92,7 @@ func CreateMuteAudioRequest() (request *MuteAudioRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("rtc", "2018-01-11", "MuteAudio", "rtc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
