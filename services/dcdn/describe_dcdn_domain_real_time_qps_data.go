@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDcdnDomainRealTimeQpsData invokes the dcdn.DescribeDcdnDomainRealTimeQpsData API synchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainrealtimeqpsdata.html
 func (client *Client) DescribeDcdnDomainRealTimeQpsData(request *DescribeDcdnDomainRealTimeQpsDataRequest) (response *DescribeDcdnDomainRealTimeQpsDataResponse, err error) {
 	response = CreateDescribeDcdnDomainRealTimeQpsDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDcdnDomainRealTimeQpsData(request *DescribeDcdnDom
 }
 
 // DescribeDcdnDomainRealTimeQpsDataWithChan invokes the dcdn.DescribeDcdnDomainRealTimeQpsData API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainrealtimeqpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnDomainRealTimeQpsDataWithChan(request *DescribeDcdnDomainRealTimeQpsDataRequest) (<-chan *DescribeDcdnDomainRealTimeQpsDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDcdnDomainRealTimeQpsDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDcdnDomainRealTimeQpsDataWithChan(request *Describ
 }
 
 // DescribeDcdnDomainRealTimeQpsDataWithCallback invokes the dcdn.DescribeDcdnDomainRealTimeQpsData API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainrealtimeqpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnDomainRealTimeQpsDataWithCallback(request *DescribeDcdnDomainRealTimeQpsDataRequest, callback func(response *DescribeDcdnDomainRealTimeQpsDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

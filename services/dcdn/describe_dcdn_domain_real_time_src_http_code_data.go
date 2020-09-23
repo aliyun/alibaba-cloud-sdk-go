@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDcdnDomainRealTimeSrcHttpCodeData invokes the dcdn.DescribeDcdnDomainRealTimeSrcHttpCodeData API synchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainrealtimesrchttpcodedata.html
 func (client *Client) DescribeDcdnDomainRealTimeSrcHttpCodeData(request *DescribeDcdnDomainRealTimeSrcHttpCodeDataRequest) (response *DescribeDcdnDomainRealTimeSrcHttpCodeDataResponse, err error) {
 	response = CreateDescribeDcdnDomainRealTimeSrcHttpCodeDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDcdnDomainRealTimeSrcHttpCodeData(request *Describ
 }
 
 // DescribeDcdnDomainRealTimeSrcHttpCodeDataWithChan invokes the dcdn.DescribeDcdnDomainRealTimeSrcHttpCodeData API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainrealtimesrchttpcodedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnDomainRealTimeSrcHttpCodeDataWithChan(request *DescribeDcdnDomainRealTimeSrcHttpCodeDataRequest) (<-chan *DescribeDcdnDomainRealTimeSrcHttpCodeDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDcdnDomainRealTimeSrcHttpCodeDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDcdnDomainRealTimeSrcHttpCodeDataWithChan(request 
 }
 
 // DescribeDcdnDomainRealTimeSrcHttpCodeDataWithCallback invokes the dcdn.DescribeDcdnDomainRealTimeSrcHttpCodeData API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainrealtimesrchttpcodedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnDomainRealTimeSrcHttpCodeDataWithCallback(request *DescribeDcdnDomainRealTimeSrcHttpCodeDataRequest, callback func(response *DescribeDcdnDomainRealTimeSrcHttpCodeDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

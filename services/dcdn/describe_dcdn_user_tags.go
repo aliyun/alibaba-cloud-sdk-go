@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDcdnUserTags invokes the dcdn.DescribeDcdnUserTags API synchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnusertags.html
 func (client *Client) DescribeDcdnUserTags(request *DescribeDcdnUserTagsRequest) (response *DescribeDcdnUserTagsResponse, err error) {
 	response = CreateDescribeDcdnUserTagsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDcdnUserTags(request *DescribeDcdnUserTagsRequest)
 }
 
 // DescribeDcdnUserTagsWithChan invokes the dcdn.DescribeDcdnUserTags API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnusertags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnUserTagsWithChan(request *DescribeDcdnUserTagsRequest) (<-chan *DescribeDcdnUserTagsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDcdnUserTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDcdnUserTagsWithChan(request *DescribeDcdnUserTags
 }
 
 // DescribeDcdnUserTagsWithCallback invokes the dcdn.DescribeDcdnUserTags API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnusertags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnUserTagsWithCallback(request *DescribeDcdnUserTagsRequest, callback func(response *DescribeDcdnUserTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

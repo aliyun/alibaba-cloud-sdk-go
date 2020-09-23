@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDcdnIpaDomainConfigs invokes the dcdn.DescribeDcdnIpaDomainConfigs API synchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnipadomainconfigs.html
 func (client *Client) DescribeDcdnIpaDomainConfigs(request *DescribeDcdnIpaDomainConfigsRequest) (response *DescribeDcdnIpaDomainConfigsResponse, err error) {
 	response = CreateDescribeDcdnIpaDomainConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDcdnIpaDomainConfigs(request *DescribeDcdnIpaDomai
 }
 
 // DescribeDcdnIpaDomainConfigsWithChan invokes the dcdn.DescribeDcdnIpaDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnipadomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnIpaDomainConfigsWithChan(request *DescribeDcdnIpaDomainConfigsRequest) (<-chan *DescribeDcdnIpaDomainConfigsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDcdnIpaDomainConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDcdnIpaDomainConfigsWithChan(request *DescribeDcdn
 }
 
 // DescribeDcdnIpaDomainConfigsWithCallback invokes the dcdn.DescribeDcdnIpaDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnipadomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnIpaDomainConfigsWithCallback(request *DescribeDcdnIpaDomainConfigsRequest, callback func(response *DescribeDcdnIpaDomainConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

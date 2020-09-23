@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UpdateDcdnDomain invokes the dcdn.UpdateDcdnDomain API synchronously
-func (client *Client) UpdateDcdnDomain(request *UpdateDcdnDomainRequest) (response *UpdateDcdnDomainResponse, err error) {
-	response = CreateUpdateDcdnDomainResponse()
+// BatchAddDcdnDomain invokes the dcdn.BatchAddDcdnDomain API synchronously
+func (client *Client) BatchAddDcdnDomain(request *BatchAddDcdnDomainRequest) (response *BatchAddDcdnDomainResponse, err error) {
+	response = CreateBatchAddDcdnDomainResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UpdateDcdnDomainWithChan invokes the dcdn.UpdateDcdnDomain API asynchronously
-func (client *Client) UpdateDcdnDomainWithChan(request *UpdateDcdnDomainRequest) (<-chan *UpdateDcdnDomainResponse, <-chan error) {
-	responseChan := make(chan *UpdateDcdnDomainResponse, 1)
+// BatchAddDcdnDomainWithChan invokes the dcdn.BatchAddDcdnDomain API asynchronously
+func (client *Client) BatchAddDcdnDomainWithChan(request *BatchAddDcdnDomainRequest) (<-chan *BatchAddDcdnDomainResponse, <-chan error) {
+	responseChan := make(chan *BatchAddDcdnDomainResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UpdateDcdnDomain(request)
+		response, err := client.BatchAddDcdnDomain(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) UpdateDcdnDomainWithChan(request *UpdateDcdnDomainRequest)
 	return responseChan, errChan
 }
 
-// UpdateDcdnDomainWithCallback invokes the dcdn.UpdateDcdnDomain API asynchronously
-func (client *Client) UpdateDcdnDomainWithCallback(request *UpdateDcdnDomainRequest, callback func(response *UpdateDcdnDomainResponse, err error)) <-chan int {
+// BatchAddDcdnDomainWithCallback invokes the dcdn.BatchAddDcdnDomain API asynchronously
+func (client *Client) BatchAddDcdnDomainWithCallback(request *BatchAddDcdnDomainRequest, callback func(response *BatchAddDcdnDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UpdateDcdnDomainResponse
+		var response *BatchAddDcdnDomainResponse
 		var err error
 		defer close(result)
-		response, err = client.UpdateDcdnDomain(request)
+		response, err = client.BatchAddDcdnDomain(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,39 @@ func (client *Client) UpdateDcdnDomainWithCallback(request *UpdateDcdnDomainRequ
 	return result
 }
 
-// UpdateDcdnDomainRequest is the request struct for api UpdateDcdnDomain
-type UpdateDcdnDomainRequest struct {
+// BatchAddDcdnDomainRequest is the request struct for api BatchAddDcdnDomain
+type BatchAddDcdnDomainRequest struct {
 	*requests.RpcRequest
 	Sources         string           `position:"Query" name:"Sources"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken   string           `position:"Query" name:"SecurityToken"`
+	Scope           string           `position:"Query" name:"Scope"`
 	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
+	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
 	DomainName      string           `position:"Query" name:"DomainName"`
 	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
+	CheckUrl        string           `position:"Query" name:"CheckUrl"`
 }
 
-// UpdateDcdnDomainResponse is the response struct for api UpdateDcdnDomain
-type UpdateDcdnDomainResponse struct {
+// BatchAddDcdnDomainResponse is the response struct for api BatchAddDcdnDomain
+type BatchAddDcdnDomainResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateUpdateDcdnDomainRequest creates a request to invoke UpdateDcdnDomain API
-func CreateUpdateDcdnDomainRequest() (request *UpdateDcdnDomainRequest) {
-	request = &UpdateDcdnDomainRequest{
+// CreateBatchAddDcdnDomainRequest creates a request to invoke BatchAddDcdnDomain API
+func CreateBatchAddDcdnDomainRequest() (request *BatchAddDcdnDomainRequest) {
+	request = &BatchAddDcdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "UpdateDcdnDomain", "", "")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "BatchAddDcdnDomain", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateUpdateDcdnDomainResponse creates a response to parse from UpdateDcdnDomain response
-func CreateUpdateDcdnDomainResponse() (response *UpdateDcdnDomainResponse) {
-	response = &UpdateDcdnDomainResponse{
+// CreateBatchAddDcdnDomainResponse creates a response to parse from BatchAddDcdnDomain response
+func CreateBatchAddDcdnDomainResponse() (response *BatchAddDcdnDomainResponse) {
+	response = &BatchAddDcdnDomainResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

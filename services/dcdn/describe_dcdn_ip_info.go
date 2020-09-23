@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDcdnIpInfo invokes the dcdn.DescribeDcdnIpInfo API synchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnipinfo.html
 func (client *Client) DescribeDcdnIpInfo(request *DescribeDcdnIpInfoRequest) (response *DescribeDcdnIpInfoResponse, err error) {
 	response = CreateDescribeDcdnIpInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDcdnIpInfo(request *DescribeDcdnIpInfoRequest) (re
 }
 
 // DescribeDcdnIpInfoWithChan invokes the dcdn.DescribeDcdnIpInfo API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnipinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnIpInfoWithChan(request *DescribeDcdnIpInfoRequest) (<-chan *DescribeDcdnIpInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeDcdnIpInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDcdnIpInfoWithChan(request *DescribeDcdnIpInfoRequ
 }
 
 // DescribeDcdnIpInfoWithCallback invokes the dcdn.DescribeDcdnIpInfo API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnipinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnIpInfoWithCallback(request *DescribeDcdnIpInfoRequest, callback func(response *DescribeDcdnIpInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

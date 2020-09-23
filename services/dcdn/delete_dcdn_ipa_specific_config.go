@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDcdnIpaSpecificConfig invokes the dcdn.DeleteDcdnIpaSpecificConfig API synchronously
-// api document: https://help.aliyun.com/api/dcdn/deletedcdnipaspecificconfig.html
 func (client *Client) DeleteDcdnIpaSpecificConfig(request *DeleteDcdnIpaSpecificConfigRequest) (response *DeleteDcdnIpaSpecificConfigResponse, err error) {
 	response = CreateDeleteDcdnIpaSpecificConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDcdnIpaSpecificConfig(request *DeleteDcdnIpaSpecific
 }
 
 // DeleteDcdnIpaSpecificConfigWithChan invokes the dcdn.DeleteDcdnIpaSpecificConfig API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/deletedcdnipaspecificconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDcdnIpaSpecificConfigWithChan(request *DeleteDcdnIpaSpecificConfigRequest) (<-chan *DeleteDcdnIpaSpecificConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteDcdnIpaSpecificConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDcdnIpaSpecificConfigWithChan(request *DeleteDcdnIpa
 }
 
 // DeleteDcdnIpaSpecificConfigWithCallback invokes the dcdn.DeleteDcdnIpaSpecificConfig API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/deletedcdnipaspecificconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDcdnIpaSpecificConfigWithCallback(request *DeleteDcdnIpaSpecificConfigRequest, callback func(response *DeleteDcdnIpaSpecificConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

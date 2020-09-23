@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDcdnTopDomainsByFlow invokes the dcdn.DescribeDcdnTopDomainsByFlow API synchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdntopdomainsbyflow.html
 func (client *Client) DescribeDcdnTopDomainsByFlow(request *DescribeDcdnTopDomainsByFlowRequest) (response *DescribeDcdnTopDomainsByFlowResponse, err error) {
 	response = CreateDescribeDcdnTopDomainsByFlowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDcdnTopDomainsByFlow(request *DescribeDcdnTopDomai
 }
 
 // DescribeDcdnTopDomainsByFlowWithChan invokes the dcdn.DescribeDcdnTopDomainsByFlow API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdntopdomainsbyflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnTopDomainsByFlowWithChan(request *DescribeDcdnTopDomainsByFlowRequest) (<-chan *DescribeDcdnTopDomainsByFlowResponse, <-chan error) {
 	responseChan := make(chan *DescribeDcdnTopDomainsByFlowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDcdnTopDomainsByFlowWithChan(request *DescribeDcdn
 }
 
 // DescribeDcdnTopDomainsByFlowWithCallback invokes the dcdn.DescribeDcdnTopDomainsByFlow API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdntopdomainsbyflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnTopDomainsByFlowWithCallback(request *DescribeDcdnTopDomainsByFlowRequest, callback func(response *DescribeDcdnTopDomainsByFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

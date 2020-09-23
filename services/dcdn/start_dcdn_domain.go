@@ -21,7 +21,6 @@ import (
 )
 
 // StartDcdnDomain invokes the dcdn.StartDcdnDomain API synchronously
-// api document: https://help.aliyun.com/api/dcdn/startdcdndomain.html
 func (client *Client) StartDcdnDomain(request *StartDcdnDomainRequest) (response *StartDcdnDomainResponse, err error) {
 	response = CreateStartDcdnDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartDcdnDomain(request *StartDcdnDomainRequest) (response
 }
 
 // StartDcdnDomainWithChan invokes the dcdn.StartDcdnDomain API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/startdcdndomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartDcdnDomainWithChan(request *StartDcdnDomainRequest) (<-chan *StartDcdnDomainResponse, <-chan error) {
 	responseChan := make(chan *StartDcdnDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartDcdnDomainWithChan(request *StartDcdnDomainRequest) (
 }
 
 // StartDcdnDomainWithCallback invokes the dcdn.StartDcdnDomain API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/startdcdndomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartDcdnDomainWithCallback(request *StartDcdnDomainRequest, callback func(response *StartDcdnDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

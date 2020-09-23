@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDcdnDomainHitRateData invokes the dcdn.DescribeDcdnDomainHitRateData API synchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainhitratedata.html
 func (client *Client) DescribeDcdnDomainHitRateData(request *DescribeDcdnDomainHitRateDataRequest) (response *DescribeDcdnDomainHitRateDataResponse, err error) {
 	response = CreateDescribeDcdnDomainHitRateDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDcdnDomainHitRateData(request *DescribeDcdnDomainH
 }
 
 // DescribeDcdnDomainHitRateDataWithChan invokes the dcdn.DescribeDcdnDomainHitRateData API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainhitratedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnDomainHitRateDataWithChan(request *DescribeDcdnDomainHitRateDataRequest) (<-chan *DescribeDcdnDomainHitRateDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDcdnDomainHitRateDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDcdnDomainHitRateDataWithChan(request *DescribeDcd
 }
 
 // DescribeDcdnDomainHitRateDataWithCallback invokes the dcdn.DescribeDcdnDomainHitRateData API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainhitratedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnDomainHitRateDataWithCallback(request *DescribeDcdnDomainHitRateDataRequest, callback func(response *DescribeDcdnDomainHitRateDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // PublishDcdnStagingConfigToProduction invokes the dcdn.PublishDcdnStagingConfigToProduction API synchronously
-// api document: https://help.aliyun.com/api/dcdn/publishdcdnstagingconfigtoproduction.html
 func (client *Client) PublishDcdnStagingConfigToProduction(request *PublishDcdnStagingConfigToProductionRequest) (response *PublishDcdnStagingConfigToProductionResponse, err error) {
 	response = CreatePublishDcdnStagingConfigToProductionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PublishDcdnStagingConfigToProduction(request *PublishDcdnS
 }
 
 // PublishDcdnStagingConfigToProductionWithChan invokes the dcdn.PublishDcdnStagingConfigToProduction API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/publishdcdnstagingconfigtoproduction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PublishDcdnStagingConfigToProductionWithChan(request *PublishDcdnStagingConfigToProductionRequest) (<-chan *PublishDcdnStagingConfigToProductionResponse, <-chan error) {
 	responseChan := make(chan *PublishDcdnStagingConfigToProductionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PublishDcdnStagingConfigToProductionWithChan(request *Publ
 }
 
 // PublishDcdnStagingConfigToProductionWithCallback invokes the dcdn.PublishDcdnStagingConfigToProduction API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/publishdcdnstagingconfigtoproduction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PublishDcdnStagingConfigToProductionWithCallback(request *PublishDcdnStagingConfigToProductionRequest, callback func(response *PublishDcdnStagingConfigToProductionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

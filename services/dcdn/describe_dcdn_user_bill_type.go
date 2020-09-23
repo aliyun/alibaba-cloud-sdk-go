@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDcdnUserBillType invokes the dcdn.DescribeDcdnUserBillType API synchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnuserbilltype.html
 func (client *Client) DescribeDcdnUserBillType(request *DescribeDcdnUserBillTypeRequest) (response *DescribeDcdnUserBillTypeResponse, err error) {
 	response = CreateDescribeDcdnUserBillTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDcdnUserBillType(request *DescribeDcdnUserBillType
 }
 
 // DescribeDcdnUserBillTypeWithChan invokes the dcdn.DescribeDcdnUserBillType API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnuserbilltype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnUserBillTypeWithChan(request *DescribeDcdnUserBillTypeRequest) (<-chan *DescribeDcdnUserBillTypeResponse, <-chan error) {
 	responseChan := make(chan *DescribeDcdnUserBillTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDcdnUserBillTypeWithChan(request *DescribeDcdnUser
 }
 
 // DescribeDcdnUserBillTypeWithCallback invokes the dcdn.DescribeDcdnUserBillType API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnuserbilltype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnUserBillTypeWithCallback(request *DescribeDcdnUserBillTypeRequest, callback func(response *DescribeDcdnUserBillTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

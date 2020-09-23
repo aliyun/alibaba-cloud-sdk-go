@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDcdnDomainUvData invokes the dcdn.DescribeDcdnDomainUvData API synchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainuvdata.html
 func (client *Client) DescribeDcdnDomainUvData(request *DescribeDcdnDomainUvDataRequest) (response *DescribeDcdnDomainUvDataResponse, err error) {
 	response = CreateDescribeDcdnDomainUvDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDcdnDomainUvData(request *DescribeDcdnDomainUvData
 }
 
 // DescribeDcdnDomainUvDataWithChan invokes the dcdn.DescribeDcdnDomainUvData API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainuvdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnDomainUvDataWithChan(request *DescribeDcdnDomainUvDataRequest) (<-chan *DescribeDcdnDomainUvDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDcdnDomainUvDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDcdnDomainUvDataWithChan(request *DescribeDcdnDoma
 }
 
 // DescribeDcdnDomainUvDataWithCallback invokes the dcdn.DescribeDcdnDomainUvData API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainuvdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnDomainUvDataWithCallback(request *DescribeDcdnDomainUvDataRequest, callback func(response *DescribeDcdnDomainUvDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

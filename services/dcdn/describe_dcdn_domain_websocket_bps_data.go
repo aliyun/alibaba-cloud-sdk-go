@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDcdnDomainWebsocketBpsData invokes the dcdn.DescribeDcdnDomainWebsocketBpsData API synchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainwebsocketbpsdata.html
 func (client *Client) DescribeDcdnDomainWebsocketBpsData(request *DescribeDcdnDomainWebsocketBpsDataRequest) (response *DescribeDcdnDomainWebsocketBpsDataResponse, err error) {
 	response = CreateDescribeDcdnDomainWebsocketBpsDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDcdnDomainWebsocketBpsData(request *DescribeDcdnDo
 }
 
 // DescribeDcdnDomainWebsocketBpsDataWithChan invokes the dcdn.DescribeDcdnDomainWebsocketBpsData API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainwebsocketbpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnDomainWebsocketBpsDataWithChan(request *DescribeDcdnDomainWebsocketBpsDataRequest) (<-chan *DescribeDcdnDomainWebsocketBpsDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDcdnDomainWebsocketBpsDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDcdnDomainWebsocketBpsDataWithChan(request *Descri
 }
 
 // DescribeDcdnDomainWebsocketBpsDataWithCallback invokes the dcdn.DescribeDcdnDomainWebsocketBpsData API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainwebsocketbpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnDomainWebsocketBpsDataWithCallback(request *DescribeDcdnDomainWebsocketBpsDataRequest, callback func(response *DescribeDcdnDomainWebsocketBpsDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

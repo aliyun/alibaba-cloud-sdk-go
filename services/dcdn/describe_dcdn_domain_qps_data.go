@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDcdnDomainQpsData invokes the dcdn.DescribeDcdnDomainQpsData API synchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainqpsdata.html
 func (client *Client) DescribeDcdnDomainQpsData(request *DescribeDcdnDomainQpsDataRequest) (response *DescribeDcdnDomainQpsDataResponse, err error) {
 	response = CreateDescribeDcdnDomainQpsDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDcdnDomainQpsData(request *DescribeDcdnDomainQpsDa
 }
 
 // DescribeDcdnDomainQpsDataWithChan invokes the dcdn.DescribeDcdnDomainQpsData API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainqpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnDomainQpsDataWithChan(request *DescribeDcdnDomainQpsDataRequest) (<-chan *DescribeDcdnDomainQpsDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDcdnDomainQpsDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDcdnDomainQpsDataWithChan(request *DescribeDcdnDom
 }
 
 // DescribeDcdnDomainQpsDataWithCallback invokes the dcdn.DescribeDcdnDomainQpsData API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainqpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnDomainQpsDataWithCallback(request *DescribeDcdnDomainQpsDataRequest, callback func(response *DescribeDcdnDomainQpsDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

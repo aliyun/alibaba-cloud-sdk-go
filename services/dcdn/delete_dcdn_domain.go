@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDcdnDomain invokes the dcdn.DeleteDcdnDomain API synchronously
-// api document: https://help.aliyun.com/api/dcdn/deletedcdndomain.html
 func (client *Client) DeleteDcdnDomain(request *DeleteDcdnDomainRequest) (response *DeleteDcdnDomainResponse, err error) {
 	response = CreateDeleteDcdnDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDcdnDomain(request *DeleteDcdnDomainRequest) (respon
 }
 
 // DeleteDcdnDomainWithChan invokes the dcdn.DeleteDcdnDomain API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/deletedcdndomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDcdnDomainWithChan(request *DeleteDcdnDomainRequest) (<-chan *DeleteDcdnDomainResponse, <-chan error) {
 	responseChan := make(chan *DeleteDcdnDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDcdnDomainWithChan(request *DeleteDcdnDomainRequest)
 }
 
 // DeleteDcdnDomainWithCallback invokes the dcdn.DeleteDcdnDomain API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/deletedcdndomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDcdnDomainWithCallback(request *DeleteDcdnDomainRequest, callback func(response *DeleteDcdnDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDcdnRefreshTasks invokes the dcdn.DescribeDcdnRefreshTasks API synchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnrefreshtasks.html
 func (client *Client) DescribeDcdnRefreshTasks(request *DescribeDcdnRefreshTasksRequest) (response *DescribeDcdnRefreshTasksResponse, err error) {
 	response = CreateDescribeDcdnRefreshTasksResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDcdnRefreshTasks(request *DescribeDcdnRefreshTasks
 }
 
 // DescribeDcdnRefreshTasksWithChan invokes the dcdn.DescribeDcdnRefreshTasks API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnrefreshtasks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnRefreshTasksWithChan(request *DescribeDcdnRefreshTasksRequest) (<-chan *DescribeDcdnRefreshTasksResponse, <-chan error) {
 	responseChan := make(chan *DescribeDcdnRefreshTasksResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDcdnRefreshTasksWithChan(request *DescribeDcdnRefr
 }
 
 // DescribeDcdnRefreshTasksWithCallback invokes the dcdn.DescribeDcdnRefreshTasks API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnrefreshtasks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnRefreshTasksWithCallback(request *DescribeDcdnRefreshTasksRequest, callback func(response *DescribeDcdnRefreshTasksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

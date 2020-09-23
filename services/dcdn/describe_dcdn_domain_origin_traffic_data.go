@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDcdnDomainOriginTrafficData invokes the dcdn.DescribeDcdnDomainOriginTrafficData API synchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainorigintrafficdata.html
 func (client *Client) DescribeDcdnDomainOriginTrafficData(request *DescribeDcdnDomainOriginTrafficDataRequest) (response *DescribeDcdnDomainOriginTrafficDataResponse, err error) {
 	response = CreateDescribeDcdnDomainOriginTrafficDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDcdnDomainOriginTrafficData(request *DescribeDcdnD
 }
 
 // DescribeDcdnDomainOriginTrafficDataWithChan invokes the dcdn.DescribeDcdnDomainOriginTrafficData API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainorigintrafficdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnDomainOriginTrafficDataWithChan(request *DescribeDcdnDomainOriginTrafficDataRequest) (<-chan *DescribeDcdnDomainOriginTrafficDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDcdnDomainOriginTrafficDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDcdnDomainOriginTrafficDataWithChan(request *Descr
 }
 
 // DescribeDcdnDomainOriginTrafficDataWithCallback invokes the dcdn.DescribeDcdnDomainOriginTrafficData API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainorigintrafficdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnDomainOriginTrafficDataWithCallback(request *DescribeDcdnDomainOriginTrafficDataRequest, callback func(response *DescribeDcdnDomainOriginTrafficDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

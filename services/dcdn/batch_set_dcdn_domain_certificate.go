@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SetDcdnDomainCertificate invokes the dcdn.SetDcdnDomainCertificate API synchronously
-func (client *Client) SetDcdnDomainCertificate(request *SetDcdnDomainCertificateRequest) (response *SetDcdnDomainCertificateResponse, err error) {
-	response = CreateSetDcdnDomainCertificateResponse()
+// BatchSetDcdnDomainCertificate invokes the dcdn.BatchSetDcdnDomainCertificate API synchronously
+func (client *Client) BatchSetDcdnDomainCertificate(request *BatchSetDcdnDomainCertificateRequest) (response *BatchSetDcdnDomainCertificateResponse, err error) {
+	response = CreateBatchSetDcdnDomainCertificateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SetDcdnDomainCertificateWithChan invokes the dcdn.SetDcdnDomainCertificate API asynchronously
-func (client *Client) SetDcdnDomainCertificateWithChan(request *SetDcdnDomainCertificateRequest) (<-chan *SetDcdnDomainCertificateResponse, <-chan error) {
-	responseChan := make(chan *SetDcdnDomainCertificateResponse, 1)
+// BatchSetDcdnDomainCertificateWithChan invokes the dcdn.BatchSetDcdnDomainCertificate API asynchronously
+func (client *Client) BatchSetDcdnDomainCertificateWithChan(request *BatchSetDcdnDomainCertificateRequest) (<-chan *BatchSetDcdnDomainCertificateResponse, <-chan error) {
+	responseChan := make(chan *BatchSetDcdnDomainCertificateResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SetDcdnDomainCertificate(request)
+		response, err := client.BatchSetDcdnDomainCertificate(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) SetDcdnDomainCertificateWithChan(request *SetDcdnDomainCer
 	return responseChan, errChan
 }
 
-// SetDcdnDomainCertificateWithCallback invokes the dcdn.SetDcdnDomainCertificate API asynchronously
-func (client *Client) SetDcdnDomainCertificateWithCallback(request *SetDcdnDomainCertificateRequest, callback func(response *SetDcdnDomainCertificateResponse, err error)) <-chan int {
+// BatchSetDcdnDomainCertificateWithCallback invokes the dcdn.BatchSetDcdnDomainCertificate API asynchronously
+func (client *Client) BatchSetDcdnDomainCertificateWithCallback(request *BatchSetDcdnDomainCertificateRequest, callback func(response *BatchSetDcdnDomainCertificateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SetDcdnDomainCertificateResponse
+		var response *BatchSetDcdnDomainCertificateResponse
 		var err error
 		defer close(result)
-		response, err = client.SetDcdnDomainCertificate(request)
+		response, err = client.BatchSetDcdnDomainCertificate(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,14 +68,13 @@ func (client *Client) SetDcdnDomainCertificateWithCallback(request *SetDcdnDomai
 	return result
 }
 
-// SetDcdnDomainCertificateRequest is the request struct for api SetDcdnDomainCertificate
-type SetDcdnDomainCertificateRequest struct {
+// BatchSetDcdnDomainCertificateRequest is the request struct for api BatchSetDcdnDomainCertificate
+type BatchSetDcdnDomainCertificateRequest struct {
 	*requests.RpcRequest
 	SSLProtocol   string           `position:"Query" name:"SSLProtocol"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	CertType      string           `position:"Query" name:"CertType"`
 	SSLPri        string           `position:"Query" name:"SSLPri"`
-	ForceSet      string           `position:"Query" name:"ForceSet"`
 	CertName      string           `position:"Query" name:"CertName"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,25 +82,25 @@ type SetDcdnDomainCertificateRequest struct {
 	Region        string           `position:"Query" name:"Region"`
 }
 
-// SetDcdnDomainCertificateResponse is the response struct for api SetDcdnDomainCertificate
-type SetDcdnDomainCertificateResponse struct {
+// BatchSetDcdnDomainCertificateResponse is the response struct for api BatchSetDcdnDomainCertificate
+type BatchSetDcdnDomainCertificateResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateSetDcdnDomainCertificateRequest creates a request to invoke SetDcdnDomainCertificate API
-func CreateSetDcdnDomainCertificateRequest() (request *SetDcdnDomainCertificateRequest) {
-	request = &SetDcdnDomainCertificateRequest{
+// CreateBatchSetDcdnDomainCertificateRequest creates a request to invoke BatchSetDcdnDomainCertificate API
+func CreateBatchSetDcdnDomainCertificateRequest() (request *BatchSetDcdnDomainCertificateRequest) {
+	request = &BatchSetDcdnDomainCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "SetDcdnDomainCertificate", "", "")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "BatchSetDcdnDomainCertificate", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateSetDcdnDomainCertificateResponse creates a response to parse from SetDcdnDomainCertificate response
-func CreateSetDcdnDomainCertificateResponse() (response *SetDcdnDomainCertificateResponse) {
-	response = &SetDcdnDomainCertificateResponse{
+// CreateBatchSetDcdnDomainCertificateResponse creates a response to parse from BatchSetDcdnDomainCertificate response
+func CreateBatchSetDcdnDomainCertificateResponse() (response *BatchSetDcdnDomainCertificateResponse) {
+	response = &BatchSetDcdnDomainCertificateResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

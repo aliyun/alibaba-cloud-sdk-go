@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDcdnDomainMultiUsageData invokes the dcdn.DescribeDcdnDomainMultiUsageData API synchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainmultiusagedata.html
 func (client *Client) DescribeDcdnDomainMultiUsageData(request *DescribeDcdnDomainMultiUsageDataRequest) (response *DescribeDcdnDomainMultiUsageDataResponse, err error) {
 	response = CreateDescribeDcdnDomainMultiUsageDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDcdnDomainMultiUsageData(request *DescribeDcdnDoma
 }
 
 // DescribeDcdnDomainMultiUsageDataWithChan invokes the dcdn.DescribeDcdnDomainMultiUsageData API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainmultiusagedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnDomainMultiUsageDataWithChan(request *DescribeDcdnDomainMultiUsageDataRequest) (<-chan *DescribeDcdnDomainMultiUsageDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDcdnDomainMultiUsageDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDcdnDomainMultiUsageDataWithChan(request *Describe
 }
 
 // DescribeDcdnDomainMultiUsageDataWithCallback invokes the dcdn.DescribeDcdnDomainMultiUsageData API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainmultiusagedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnDomainMultiUsageDataWithCallback(request *DescribeDcdnDomainMultiUsageDataRequest, callback func(response *DescribeDcdnDomainMultiUsageDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

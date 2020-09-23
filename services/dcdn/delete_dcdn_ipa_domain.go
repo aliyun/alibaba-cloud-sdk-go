@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDcdnIpaDomain invokes the dcdn.DeleteDcdnIpaDomain API synchronously
-// api document: https://help.aliyun.com/api/dcdn/deletedcdnipadomain.html
 func (client *Client) DeleteDcdnIpaDomain(request *DeleteDcdnIpaDomainRequest) (response *DeleteDcdnIpaDomainResponse, err error) {
 	response = CreateDeleteDcdnIpaDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDcdnIpaDomain(request *DeleteDcdnIpaDomainRequest) (
 }
 
 // DeleteDcdnIpaDomainWithChan invokes the dcdn.DeleteDcdnIpaDomain API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/deletedcdnipadomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDcdnIpaDomainWithChan(request *DeleteDcdnIpaDomainRequest) (<-chan *DeleteDcdnIpaDomainResponse, <-chan error) {
 	responseChan := make(chan *DeleteDcdnIpaDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDcdnIpaDomainWithChan(request *DeleteDcdnIpaDomainRe
 }
 
 // DeleteDcdnIpaDomainWithCallback invokes the dcdn.DeleteDcdnIpaDomain API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/deletedcdnipadomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDcdnIpaDomainWithCallback(request *DeleteDcdnIpaDomainRequest, callback func(response *DeleteDcdnIpaDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

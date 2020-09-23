@@ -21,7 +21,6 @@ import (
 )
 
 // UntagDcdnResources invokes the dcdn.UntagDcdnResources API synchronously
-// api document: https://help.aliyun.com/api/dcdn/untagdcdnresources.html
 func (client *Client) UntagDcdnResources(request *UntagDcdnResourcesRequest) (response *UntagDcdnResourcesResponse, err error) {
 	response = CreateUntagDcdnResourcesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UntagDcdnResources(request *UntagDcdnResourcesRequest) (re
 }
 
 // UntagDcdnResourcesWithChan invokes the dcdn.UntagDcdnResources API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/untagdcdnresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UntagDcdnResourcesWithChan(request *UntagDcdnResourcesRequest) (<-chan *UntagDcdnResourcesResponse, <-chan error) {
 	responseChan := make(chan *UntagDcdnResourcesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UntagDcdnResourcesWithChan(request *UntagDcdnResourcesRequ
 }
 
 // UntagDcdnResourcesWithCallback invokes the dcdn.UntagDcdnResources API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/untagdcdnresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UntagDcdnResourcesWithCallback(request *UntagDcdnResourcesRequest, callback func(response *UntagDcdnResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) UntagDcdnResourcesWithCallback(request *UntagDcdnResources
 // UntagDcdnResourcesRequest is the request struct for api UntagDcdnResources
 type UntagDcdnResourcesRequest struct {
 	*requests.RpcRequest
+	All          requests.Boolean `position:"Query" name:"All"`
 	ResourceId   *[]string        `position:"Query" name:"ResourceId"  type:"Repeated"`
 	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceType string           `position:"Query" name:"ResourceType"`

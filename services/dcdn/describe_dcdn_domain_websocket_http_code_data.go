@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDcdnDomainWebsocketHttpCodeData invokes the dcdn.DescribeDcdnDomainWebsocketHttpCodeData API synchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainwebsockethttpcodedata.html
 func (client *Client) DescribeDcdnDomainWebsocketHttpCodeData(request *DescribeDcdnDomainWebsocketHttpCodeDataRequest) (response *DescribeDcdnDomainWebsocketHttpCodeDataResponse, err error) {
 	response = CreateDescribeDcdnDomainWebsocketHttpCodeDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDcdnDomainWebsocketHttpCodeData(request *DescribeD
 }
 
 // DescribeDcdnDomainWebsocketHttpCodeDataWithChan invokes the dcdn.DescribeDcdnDomainWebsocketHttpCodeData API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainwebsockethttpcodedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnDomainWebsocketHttpCodeDataWithChan(request *DescribeDcdnDomainWebsocketHttpCodeDataRequest) (<-chan *DescribeDcdnDomainWebsocketHttpCodeDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDcdnDomainWebsocketHttpCodeDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDcdnDomainWebsocketHttpCodeDataWithChan(request *D
 }
 
 // DescribeDcdnDomainWebsocketHttpCodeDataWithCallback invokes the dcdn.DescribeDcdnDomainWebsocketHttpCodeData API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdndomainwebsockethttpcodedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnDomainWebsocketHttpCodeDataWithCallback(request *DescribeDcdnDomainWebsocketHttpCodeDataRequest, callback func(response *DescribeDcdnDomainWebsocketHttpCodeDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

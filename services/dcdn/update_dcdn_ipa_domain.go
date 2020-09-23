@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateDcdnIpaDomain invokes the dcdn.UpdateDcdnIpaDomain API synchronously
-// api document: https://help.aliyun.com/api/dcdn/updatedcdnipadomain.html
 func (client *Client) UpdateDcdnIpaDomain(request *UpdateDcdnIpaDomainRequest) (response *UpdateDcdnIpaDomainResponse, err error) {
 	response = CreateUpdateDcdnIpaDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateDcdnIpaDomain(request *UpdateDcdnIpaDomainRequest) (
 }
 
 // UpdateDcdnIpaDomainWithChan invokes the dcdn.UpdateDcdnIpaDomain API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/updatedcdnipadomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDcdnIpaDomainWithChan(request *UpdateDcdnIpaDomainRequest) (<-chan *UpdateDcdnIpaDomainResponse, <-chan error) {
 	responseChan := make(chan *UpdateDcdnIpaDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateDcdnIpaDomainWithChan(request *UpdateDcdnIpaDomainRe
 }
 
 // UpdateDcdnIpaDomainWithCallback invokes the dcdn.UpdateDcdnIpaDomain API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/updatedcdnipadomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDcdnIpaDomainWithCallback(request *UpdateDcdnIpaDomainRequest, callback func(response *UpdateDcdnIpaDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // PreloadDcdnObjectCaches invokes the dcdn.PreloadDcdnObjectCaches API synchronously
-// api document: https://help.aliyun.com/api/dcdn/preloaddcdnobjectcaches.html
 func (client *Client) PreloadDcdnObjectCaches(request *PreloadDcdnObjectCachesRequest) (response *PreloadDcdnObjectCachesResponse, err error) {
 	response = CreatePreloadDcdnObjectCachesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PreloadDcdnObjectCaches(request *PreloadDcdnObjectCachesRe
 }
 
 // PreloadDcdnObjectCachesWithChan invokes the dcdn.PreloadDcdnObjectCaches API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/preloaddcdnobjectcaches.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PreloadDcdnObjectCachesWithChan(request *PreloadDcdnObjectCachesRequest) (<-chan *PreloadDcdnObjectCachesResponse, <-chan error) {
 	responseChan := make(chan *PreloadDcdnObjectCachesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PreloadDcdnObjectCachesWithChan(request *PreloadDcdnObject
 }
 
 // PreloadDcdnObjectCachesWithCallback invokes the dcdn.PreloadDcdnObjectCaches API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/preloaddcdnobjectcaches.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PreloadDcdnObjectCachesWithCallback(request *PreloadDcdnObjectCachesRequest, callback func(response *PreloadDcdnObjectCachesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

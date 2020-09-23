@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDcdnConfigOfVersion invokes the dcdn.DescribeDcdnConfigOfVersion API synchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnconfigofversion.html
 func (client *Client) DescribeDcdnConfigOfVersion(request *DescribeDcdnConfigOfVersionRequest) (response *DescribeDcdnConfigOfVersionResponse, err error) {
 	response = CreateDescribeDcdnConfigOfVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDcdnConfigOfVersion(request *DescribeDcdnConfigOfV
 }
 
 // DescribeDcdnConfigOfVersionWithChan invokes the dcdn.DescribeDcdnConfigOfVersion API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnconfigofversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnConfigOfVersionWithChan(request *DescribeDcdnConfigOfVersionRequest) (<-chan *DescribeDcdnConfigOfVersionResponse, <-chan error) {
 	responseChan := make(chan *DescribeDcdnConfigOfVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDcdnConfigOfVersionWithChan(request *DescribeDcdnC
 }
 
 // DescribeDcdnConfigOfVersionWithCallback invokes the dcdn.DescribeDcdnConfigOfVersion API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnconfigofversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnConfigOfVersionWithCallback(request *DescribeDcdnConfigOfVersionRequest, callback func(response *DescribeDcdnConfigOfVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

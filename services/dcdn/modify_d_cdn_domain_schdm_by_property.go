@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDCdnDomainSchdmByProperty invokes the dcdn.ModifyDCdnDomainSchdmByProperty API synchronously
-// api document: https://help.aliyun.com/api/dcdn/modifydcdndomainschdmbyproperty.html
 func (client *Client) ModifyDCdnDomainSchdmByProperty(request *ModifyDCdnDomainSchdmByPropertyRequest) (response *ModifyDCdnDomainSchdmByPropertyResponse, err error) {
 	response = CreateModifyDCdnDomainSchdmByPropertyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDCdnDomainSchdmByProperty(request *ModifyDCdnDomainS
 }
 
 // ModifyDCdnDomainSchdmByPropertyWithChan invokes the dcdn.ModifyDCdnDomainSchdmByProperty API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/modifydcdndomainschdmbyproperty.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDCdnDomainSchdmByPropertyWithChan(request *ModifyDCdnDomainSchdmByPropertyRequest) (<-chan *ModifyDCdnDomainSchdmByPropertyResponse, <-chan error) {
 	responseChan := make(chan *ModifyDCdnDomainSchdmByPropertyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDCdnDomainSchdmByPropertyWithChan(request *ModifyDCd
 }
 
 // ModifyDCdnDomainSchdmByPropertyWithCallback invokes the dcdn.ModifyDCdnDomainSchdmByProperty API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/modifydcdndomainschdmbyproperty.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDCdnDomainSchdmByPropertyWithCallback(request *ModifyDCdnDomainSchdmByPropertyRequest, callback func(response *ModifyDCdnDomainSchdmByPropertyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // BatchSetDcdnIpaDomainConfigs invokes the dcdn.BatchSetDcdnIpaDomainConfigs API synchronously
-// api document: https://help.aliyun.com/api/dcdn/batchsetdcdnipadomainconfigs.html
 func (client *Client) BatchSetDcdnIpaDomainConfigs(request *BatchSetDcdnIpaDomainConfigsRequest) (response *BatchSetDcdnIpaDomainConfigsResponse, err error) {
 	response = CreateBatchSetDcdnIpaDomainConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchSetDcdnIpaDomainConfigs(request *BatchSetDcdnIpaDomai
 }
 
 // BatchSetDcdnIpaDomainConfigsWithChan invokes the dcdn.BatchSetDcdnIpaDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/batchsetdcdnipadomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchSetDcdnIpaDomainConfigsWithChan(request *BatchSetDcdnIpaDomainConfigsRequest) (<-chan *BatchSetDcdnIpaDomainConfigsResponse, <-chan error) {
 	responseChan := make(chan *BatchSetDcdnIpaDomainConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchSetDcdnIpaDomainConfigsWithChan(request *BatchSetDcdn
 }
 
 // BatchSetDcdnIpaDomainConfigsWithCallback invokes the dcdn.BatchSetDcdnIpaDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/batchsetdcdnipadomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchSetDcdnIpaDomainConfigsWithCallback(request *BatchSetDcdnIpaDomainConfigsRequest, callback func(response *BatchSetDcdnIpaDomainConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

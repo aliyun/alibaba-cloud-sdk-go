@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDcdnStagingIp invokes the dcdn.DescribeDcdnStagingIp API synchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnstagingip.html
 func (client *Client) DescribeDcdnStagingIp(request *DescribeDcdnStagingIpRequest) (response *DescribeDcdnStagingIpResponse, err error) {
 	response = CreateDescribeDcdnStagingIpResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDcdnStagingIp(request *DescribeDcdnStagingIpReques
 }
 
 // DescribeDcdnStagingIpWithChan invokes the dcdn.DescribeDcdnStagingIp API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnstagingip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnStagingIpWithChan(request *DescribeDcdnStagingIpRequest) (<-chan *DescribeDcdnStagingIpResponse, <-chan error) {
 	responseChan := make(chan *DescribeDcdnStagingIpResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDcdnStagingIpWithChan(request *DescribeDcdnStaging
 }
 
 // DescribeDcdnStagingIpWithCallback invokes the dcdn.DescribeDcdnStagingIp API asynchronously
-// api document: https://help.aliyun.com/api/dcdn/describedcdnstagingip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDcdnStagingIpWithCallback(request *DescribeDcdnStagingIpRequest, callback func(response *DescribeDcdnStagingIpResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
