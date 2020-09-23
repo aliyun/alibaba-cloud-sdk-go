@@ -21,7 +21,6 @@ import (
 )
 
 // RefreshScdnObjectCaches invokes the scdn.RefreshScdnObjectCaches API synchronously
-// api document: https://help.aliyun.com/api/scdn/refreshscdnobjectcaches.html
 func (client *Client) RefreshScdnObjectCaches(request *RefreshScdnObjectCachesRequest) (response *RefreshScdnObjectCachesResponse, err error) {
 	response = CreateRefreshScdnObjectCachesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RefreshScdnObjectCaches(request *RefreshScdnObjectCachesRe
 }
 
 // RefreshScdnObjectCachesWithChan invokes the scdn.RefreshScdnObjectCaches API asynchronously
-// api document: https://help.aliyun.com/api/scdn/refreshscdnobjectcaches.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshScdnObjectCachesWithChan(request *RefreshScdnObjectCachesRequest) (<-chan *RefreshScdnObjectCachesResponse, <-chan error) {
 	responseChan := make(chan *RefreshScdnObjectCachesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RefreshScdnObjectCachesWithChan(request *RefreshScdnObject
 }
 
 // RefreshScdnObjectCachesWithCallback invokes the scdn.RefreshScdnObjectCaches API asynchronously
-// api document: https://help.aliyun.com/api/scdn/refreshscdnobjectcaches.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshScdnObjectCachesWithCallback(request *RefreshScdnObjectCachesRequest, callback func(response *RefreshScdnObjectCachesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

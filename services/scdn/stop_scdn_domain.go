@@ -21,7 +21,6 @@ import (
 )
 
 // StopScdnDomain invokes the scdn.StopScdnDomain API synchronously
-// api document: https://help.aliyun.com/api/scdn/stopscdndomain.html
 func (client *Client) StopScdnDomain(request *StopScdnDomainRequest) (response *StopScdnDomainResponse, err error) {
 	response = CreateStopScdnDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopScdnDomain(request *StopScdnDomainRequest) (response *
 }
 
 // StopScdnDomainWithChan invokes the scdn.StopScdnDomain API asynchronously
-// api document: https://help.aliyun.com/api/scdn/stopscdndomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopScdnDomainWithChan(request *StopScdnDomainRequest) (<-chan *StopScdnDomainResponse, <-chan error) {
 	responseChan := make(chan *StopScdnDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopScdnDomainWithChan(request *StopScdnDomainRequest) (<-
 }
 
 // StopScdnDomainWithCallback invokes the scdn.StopScdnDomain API asynchronously
-// api document: https://help.aliyun.com/api/scdn/stopscdndomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopScdnDomainWithCallback(request *StopScdnDomainRequest, callback func(response *StopScdnDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

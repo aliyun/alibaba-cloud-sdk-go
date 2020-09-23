@@ -21,7 +21,6 @@ import (
 )
 
 // SetScdnBotInfo invokes the scdn.SetScdnBotInfo API synchronously
-// api document: https://help.aliyun.com/api/scdn/setscdnbotinfo.html
 func (client *Client) SetScdnBotInfo(request *SetScdnBotInfoRequest) (response *SetScdnBotInfoResponse, err error) {
 	response = CreateSetScdnBotInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetScdnBotInfo(request *SetScdnBotInfoRequest) (response *
 }
 
 // SetScdnBotInfoWithChan invokes the scdn.SetScdnBotInfo API asynchronously
-// api document: https://help.aliyun.com/api/scdn/setscdnbotinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetScdnBotInfoWithChan(request *SetScdnBotInfoRequest) (<-chan *SetScdnBotInfoResponse, <-chan error) {
 	responseChan := make(chan *SetScdnBotInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetScdnBotInfoWithChan(request *SetScdnBotInfoRequest) (<-
 }
 
 // SetScdnBotInfoWithCallback invokes the scdn.SetScdnBotInfo API asynchronously
-// api document: https://help.aliyun.com/api/scdn/setscdnbotinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetScdnBotInfoWithCallback(request *SetScdnBotInfoRequest, callback func(response *SetScdnBotInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

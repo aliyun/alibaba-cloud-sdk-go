@@ -21,7 +21,6 @@ import (
 )
 
 // BatchSetScdnDomainConfigs invokes the scdn.BatchSetScdnDomainConfigs API synchronously
-// api document: https://help.aliyun.com/api/scdn/batchsetscdndomainconfigs.html
 func (client *Client) BatchSetScdnDomainConfigs(request *BatchSetScdnDomainConfigsRequest) (response *BatchSetScdnDomainConfigsResponse, err error) {
 	response = CreateBatchSetScdnDomainConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchSetScdnDomainConfigs(request *BatchSetScdnDomainConfi
 }
 
 // BatchSetScdnDomainConfigsWithChan invokes the scdn.BatchSetScdnDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/scdn/batchsetscdndomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchSetScdnDomainConfigsWithChan(request *BatchSetScdnDomainConfigsRequest) (<-chan *BatchSetScdnDomainConfigsResponse, <-chan error) {
 	responseChan := make(chan *BatchSetScdnDomainConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchSetScdnDomainConfigsWithChan(request *BatchSetScdnDom
 }
 
 // BatchSetScdnDomainConfigsWithCallback invokes the scdn.BatchSetScdnDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/scdn/batchsetscdndomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchSetScdnDomainConfigsWithCallback(request *BatchSetScdnDomainConfigsRequest, callback func(response *BatchSetScdnDomainConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

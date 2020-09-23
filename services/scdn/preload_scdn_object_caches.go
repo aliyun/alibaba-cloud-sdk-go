@@ -21,7 +21,6 @@ import (
 )
 
 // PreloadScdnObjectCaches invokes the scdn.PreloadScdnObjectCaches API synchronously
-// api document: https://help.aliyun.com/api/scdn/preloadscdnobjectcaches.html
 func (client *Client) PreloadScdnObjectCaches(request *PreloadScdnObjectCachesRequest) (response *PreloadScdnObjectCachesResponse, err error) {
 	response = CreatePreloadScdnObjectCachesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PreloadScdnObjectCaches(request *PreloadScdnObjectCachesRe
 }
 
 // PreloadScdnObjectCachesWithChan invokes the scdn.PreloadScdnObjectCaches API asynchronously
-// api document: https://help.aliyun.com/api/scdn/preloadscdnobjectcaches.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PreloadScdnObjectCachesWithChan(request *PreloadScdnObjectCachesRequest) (<-chan *PreloadScdnObjectCachesResponse, <-chan error) {
 	responseChan := make(chan *PreloadScdnObjectCachesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PreloadScdnObjectCachesWithChan(request *PreloadScdnObject
 }
 
 // PreloadScdnObjectCachesWithCallback invokes the scdn.PreloadScdnObjectCaches API asynchronously
-// api document: https://help.aliyun.com/api/scdn/preloadscdnobjectcaches.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PreloadScdnObjectCachesWithCallback(request *PreloadScdnObjectCachesRequest, callback func(response *PreloadScdnObjectCachesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CheckScdnService invokes the scdn.CheckScdnService API synchronously
-// api document: https://help.aliyun.com/api/scdn/checkscdnservice.html
 func (client *Client) CheckScdnService(request *CheckScdnServiceRequest) (response *CheckScdnServiceResponse, err error) {
 	response = CreateCheckScdnServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckScdnService(request *CheckScdnServiceRequest) (respon
 }
 
 // CheckScdnServiceWithChan invokes the scdn.CheckScdnService API asynchronously
-// api document: https://help.aliyun.com/api/scdn/checkscdnservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckScdnServiceWithChan(request *CheckScdnServiceRequest) (<-chan *CheckScdnServiceResponse, <-chan error) {
 	responseChan := make(chan *CheckScdnServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckScdnServiceWithChan(request *CheckScdnServiceRequest)
 }
 
 // CheckScdnServiceWithCallback invokes the scdn.CheckScdnService API asynchronously
-// api document: https://help.aliyun.com/api/scdn/checkscdnservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckScdnServiceWithCallback(request *CheckScdnServiceRequest, callback func(response *CheckScdnServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

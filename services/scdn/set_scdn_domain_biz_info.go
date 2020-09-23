@@ -21,7 +21,6 @@ import (
 )
 
 // SetScdnDomainBizInfo invokes the scdn.SetScdnDomainBizInfo API synchronously
-// api document: https://help.aliyun.com/api/scdn/setscdndomainbizinfo.html
 func (client *Client) SetScdnDomainBizInfo(request *SetScdnDomainBizInfoRequest) (response *SetScdnDomainBizInfoResponse, err error) {
 	response = CreateSetScdnDomainBizInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetScdnDomainBizInfo(request *SetScdnDomainBizInfoRequest)
 }
 
 // SetScdnDomainBizInfoWithChan invokes the scdn.SetScdnDomainBizInfo API asynchronously
-// api document: https://help.aliyun.com/api/scdn/setscdndomainbizinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetScdnDomainBizInfoWithChan(request *SetScdnDomainBizInfoRequest) (<-chan *SetScdnDomainBizInfoResponse, <-chan error) {
 	responseChan := make(chan *SetScdnDomainBizInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetScdnDomainBizInfoWithChan(request *SetScdnDomainBizInfo
 }
 
 // SetScdnDomainBizInfoWithCallback invokes the scdn.SetScdnDomainBizInfo API asynchronously
-// api document: https://help.aliyun.com/api/scdn/setscdndomainbizinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetScdnDomainBizInfoWithCallback(request *SetScdnDomainBizInfoRequest, callback func(response *SetScdnDomainBizInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeScdnCcQpsInfo invokes the scdn.DescribeScdnCcQpsInfo API synchronously
-// api document: https://help.aliyun.com/api/scdn/describescdnccqpsinfo.html
 func (client *Client) DescribeScdnCcQpsInfo(request *DescribeScdnCcQpsInfoRequest) (response *DescribeScdnCcQpsInfoResponse, err error) {
 	response = CreateDescribeScdnCcQpsInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeScdnCcQpsInfo(request *DescribeScdnCcQpsInfoReques
 }
 
 // DescribeScdnCcQpsInfoWithChan invokes the scdn.DescribeScdnCcQpsInfo API asynchronously
-// api document: https://help.aliyun.com/api/scdn/describescdnccqpsinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScdnCcQpsInfoWithChan(request *DescribeScdnCcQpsInfoRequest) (<-chan *DescribeScdnCcQpsInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeScdnCcQpsInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeScdnCcQpsInfoWithChan(request *DescribeScdnCcQpsIn
 }
 
 // DescribeScdnCcQpsInfoWithCallback invokes the scdn.DescribeScdnCcQpsInfo API asynchronously
-// api document: https://help.aliyun.com/api/scdn/describescdnccqpsinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScdnCcQpsInfoWithCallback(request *DescribeScdnCcQpsInfoRequest, callback func(response *DescribeScdnCcQpsInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

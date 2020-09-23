@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeScdnDomainRealTimeTrafficData invokes the scdn.DescribeScdnDomainRealTimeTrafficData API synchronously
-// api document: https://help.aliyun.com/api/scdn/describescdndomainrealtimetrafficdata.html
 func (client *Client) DescribeScdnDomainRealTimeTrafficData(request *DescribeScdnDomainRealTimeTrafficDataRequest) (response *DescribeScdnDomainRealTimeTrafficDataResponse, err error) {
 	response = CreateDescribeScdnDomainRealTimeTrafficDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeScdnDomainRealTimeTrafficData(request *DescribeScd
 }
 
 // DescribeScdnDomainRealTimeTrafficDataWithChan invokes the scdn.DescribeScdnDomainRealTimeTrafficData API asynchronously
-// api document: https://help.aliyun.com/api/scdn/describescdndomainrealtimetrafficdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScdnDomainRealTimeTrafficDataWithChan(request *DescribeScdnDomainRealTimeTrafficDataRequest) (<-chan *DescribeScdnDomainRealTimeTrafficDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeScdnDomainRealTimeTrafficDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeScdnDomainRealTimeTrafficDataWithChan(request *Des
 }
 
 // DescribeScdnDomainRealTimeTrafficDataWithCallback invokes the scdn.DescribeScdnDomainRealTimeTrafficData API asynchronously
-// api document: https://help.aliyun.com/api/scdn/describescdndomainrealtimetrafficdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScdnDomainRealTimeTrafficDataWithCallback(request *DescribeScdnDomainRealTimeTrafficDataRequest, callback func(response *DescribeScdnDomainRealTimeTrafficDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

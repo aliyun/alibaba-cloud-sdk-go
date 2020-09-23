@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeScdnDomainIspData invokes the scdn.DescribeScdnDomainIspData API synchronously
-// api document: https://help.aliyun.com/api/scdn/describescdndomainispdata.html
 func (client *Client) DescribeScdnDomainIspData(request *DescribeScdnDomainIspDataRequest) (response *DescribeScdnDomainIspDataResponse, err error) {
 	response = CreateDescribeScdnDomainIspDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeScdnDomainIspData(request *DescribeScdnDomainIspDa
 }
 
 // DescribeScdnDomainIspDataWithChan invokes the scdn.DescribeScdnDomainIspData API asynchronously
-// api document: https://help.aliyun.com/api/scdn/describescdndomainispdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScdnDomainIspDataWithChan(request *DescribeScdnDomainIspDataRequest) (<-chan *DescribeScdnDomainIspDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeScdnDomainIspDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeScdnDomainIspDataWithChan(request *DescribeScdnDom
 }
 
 // DescribeScdnDomainIspDataWithCallback invokes the scdn.DescribeScdnDomainIspData API asynchronously
-// api document: https://help.aliyun.com/api/scdn/describescdndomainispdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScdnDomainIspDataWithCallback(request *DescribeScdnDomainIspDataRequest, callback func(response *DescribeScdnDomainIspDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

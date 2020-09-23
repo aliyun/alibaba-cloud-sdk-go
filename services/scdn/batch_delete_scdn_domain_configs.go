@@ -21,7 +21,6 @@ import (
 )
 
 // BatchDeleteScdnDomainConfigs invokes the scdn.BatchDeleteScdnDomainConfigs API synchronously
-// api document: https://help.aliyun.com/api/scdn/batchdeletescdndomainconfigs.html
 func (client *Client) BatchDeleteScdnDomainConfigs(request *BatchDeleteScdnDomainConfigsRequest) (response *BatchDeleteScdnDomainConfigsResponse, err error) {
 	response = CreateBatchDeleteScdnDomainConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchDeleteScdnDomainConfigs(request *BatchDeleteScdnDomai
 }
 
 // BatchDeleteScdnDomainConfigsWithChan invokes the scdn.BatchDeleteScdnDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/scdn/batchdeletescdndomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchDeleteScdnDomainConfigsWithChan(request *BatchDeleteScdnDomainConfigsRequest) (<-chan *BatchDeleteScdnDomainConfigsResponse, <-chan error) {
 	responseChan := make(chan *BatchDeleteScdnDomainConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchDeleteScdnDomainConfigsWithChan(request *BatchDeleteS
 }
 
 // BatchDeleteScdnDomainConfigsWithCallback invokes the scdn.BatchDeleteScdnDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/scdn/batchdeletescdndomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchDeleteScdnDomainConfigsWithCallback(request *BatchDeleteScdnDomainConfigsRequest, callback func(response *BatchDeleteScdnDomainConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

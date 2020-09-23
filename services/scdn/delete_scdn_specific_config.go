@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteScdnSpecificConfig invokes the scdn.DeleteScdnSpecificConfig API synchronously
-// api document: https://help.aliyun.com/api/scdn/deletescdnspecificconfig.html
 func (client *Client) DeleteScdnSpecificConfig(request *DeleteScdnSpecificConfigRequest) (response *DeleteScdnSpecificConfigResponse, err error) {
 	response = CreateDeleteScdnSpecificConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteScdnSpecificConfig(request *DeleteScdnSpecificConfig
 }
 
 // DeleteScdnSpecificConfigWithChan invokes the scdn.DeleteScdnSpecificConfig API asynchronously
-// api document: https://help.aliyun.com/api/scdn/deletescdnspecificconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScdnSpecificConfigWithChan(request *DeleteScdnSpecificConfigRequest) (<-chan *DeleteScdnSpecificConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteScdnSpecificConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteScdnSpecificConfigWithChan(request *DeleteScdnSpecif
 }
 
 // DeleteScdnSpecificConfigWithCallback invokes the scdn.DeleteScdnSpecificConfig API asynchronously
-// api document: https://help.aliyun.com/api/scdn/deletescdnspecificconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScdnSpecificConfigWithCallback(request *DeleteScdnSpecificConfigRequest, callback func(response *DeleteScdnSpecificConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

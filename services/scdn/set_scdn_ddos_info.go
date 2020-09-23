@@ -21,7 +21,6 @@ import (
 )
 
 // SetScdnDdosInfo invokes the scdn.SetScdnDdosInfo API synchronously
-// api document: https://help.aliyun.com/api/scdn/setscdnddosinfo.html
 func (client *Client) SetScdnDdosInfo(request *SetScdnDdosInfoRequest) (response *SetScdnDdosInfoResponse, err error) {
 	response = CreateSetScdnDdosInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetScdnDdosInfo(request *SetScdnDdosInfoRequest) (response
 }
 
 // SetScdnDdosInfoWithChan invokes the scdn.SetScdnDdosInfo API asynchronously
-// api document: https://help.aliyun.com/api/scdn/setscdnddosinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetScdnDdosInfoWithChan(request *SetScdnDdosInfoRequest) (<-chan *SetScdnDdosInfoResponse, <-chan error) {
 	responseChan := make(chan *SetScdnDdosInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetScdnDdosInfoWithChan(request *SetScdnDdosInfoRequest) (
 }
 
 // SetScdnDdosInfoWithCallback invokes the scdn.SetScdnDdosInfo API asynchronously
-// api document: https://help.aliyun.com/api/scdn/setscdnddosinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetScdnDdosInfoWithCallback(request *SetScdnDdosInfoRequest, callback func(response *SetScdnDdosInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

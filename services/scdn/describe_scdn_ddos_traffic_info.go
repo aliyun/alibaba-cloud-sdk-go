@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeScdnDdosTrafficInfo invokes the scdn.DescribeScdnDdosTrafficInfo API synchronously
-// api document: https://help.aliyun.com/api/scdn/describescdnddostrafficinfo.html
 func (client *Client) DescribeScdnDdosTrafficInfo(request *DescribeScdnDdosTrafficInfoRequest) (response *DescribeScdnDdosTrafficInfoResponse, err error) {
 	response = CreateDescribeScdnDdosTrafficInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeScdnDdosTrafficInfo(request *DescribeScdnDdosTraff
 }
 
 // DescribeScdnDdosTrafficInfoWithChan invokes the scdn.DescribeScdnDdosTrafficInfo API asynchronously
-// api document: https://help.aliyun.com/api/scdn/describescdnddostrafficinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScdnDdosTrafficInfoWithChan(request *DescribeScdnDdosTrafficInfoRequest) (<-chan *DescribeScdnDdosTrafficInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeScdnDdosTrafficInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeScdnDdosTrafficInfoWithChan(request *DescribeScdnD
 }
 
 // DescribeScdnDdosTrafficInfoWithCallback invokes the scdn.DescribeScdnDdosTrafficInfo API asynchronously
-// api document: https://help.aliyun.com/api/scdn/describescdnddostrafficinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScdnDdosTrafficInfoWithCallback(request *DescribeScdnDdosTrafficInfoRequest, callback func(response *DescribeScdnDdosTrafficInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeScdnDomainRealTimeByteHitRateData invokes the scdn.DescribeScdnDomainRealTimeByteHitRateData API synchronously
-// api document: https://help.aliyun.com/api/scdn/describescdndomainrealtimebytehitratedata.html
 func (client *Client) DescribeScdnDomainRealTimeByteHitRateData(request *DescribeScdnDomainRealTimeByteHitRateDataRequest) (response *DescribeScdnDomainRealTimeByteHitRateDataResponse, err error) {
 	response = CreateDescribeScdnDomainRealTimeByteHitRateDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeScdnDomainRealTimeByteHitRateData(request *Describ
 }
 
 // DescribeScdnDomainRealTimeByteHitRateDataWithChan invokes the scdn.DescribeScdnDomainRealTimeByteHitRateData API asynchronously
-// api document: https://help.aliyun.com/api/scdn/describescdndomainrealtimebytehitratedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScdnDomainRealTimeByteHitRateDataWithChan(request *DescribeScdnDomainRealTimeByteHitRateDataRequest) (<-chan *DescribeScdnDomainRealTimeByteHitRateDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeScdnDomainRealTimeByteHitRateDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeScdnDomainRealTimeByteHitRateDataWithChan(request 
 }
 
 // DescribeScdnDomainRealTimeByteHitRateDataWithCallback invokes the scdn.DescribeScdnDomainRealTimeByteHitRateData API asynchronously
-// api document: https://help.aliyun.com/api/scdn/describescdndomainrealtimebytehitratedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScdnDomainRealTimeByteHitRateDataWithCallback(request *DescribeScdnDomainRealTimeByteHitRateDataRequest, callback func(response *DescribeScdnDomainRealTimeByteHitRateDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

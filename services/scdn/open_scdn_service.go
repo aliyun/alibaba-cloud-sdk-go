@@ -21,7 +21,6 @@ import (
 )
 
 // OpenScdnService invokes the scdn.OpenScdnService API synchronously
-// api document: https://help.aliyun.com/api/scdn/openscdnservice.html
 func (client *Client) OpenScdnService(request *OpenScdnServiceRequest) (response *OpenScdnServiceResponse, err error) {
 	response = CreateOpenScdnServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OpenScdnService(request *OpenScdnServiceRequest) (response
 }
 
 // OpenScdnServiceWithChan invokes the scdn.OpenScdnService API asynchronously
-// api document: https://help.aliyun.com/api/scdn/openscdnservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OpenScdnServiceWithChan(request *OpenScdnServiceRequest) (<-chan *OpenScdnServiceResponse, <-chan error) {
 	responseChan := make(chan *OpenScdnServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OpenScdnServiceWithChan(request *OpenScdnServiceRequest) (
 }
 
 // OpenScdnServiceWithCallback invokes the scdn.OpenScdnService API asynchronously
-// api document: https://help.aliyun.com/api/scdn/openscdnservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OpenScdnServiceWithCallback(request *OpenScdnServiceRequest, callback func(response *OpenScdnServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

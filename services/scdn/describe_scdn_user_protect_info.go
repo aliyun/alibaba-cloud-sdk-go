@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeScdnUserProtectInfo invokes the scdn.DescribeScdnUserProtectInfo API synchronously
-// api document: https://help.aliyun.com/api/scdn/describescdnuserprotectinfo.html
 func (client *Client) DescribeScdnUserProtectInfo(request *DescribeScdnUserProtectInfoRequest) (response *DescribeScdnUserProtectInfoResponse, err error) {
 	response = CreateDescribeScdnUserProtectInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeScdnUserProtectInfo(request *DescribeScdnUserProte
 }
 
 // DescribeScdnUserProtectInfoWithChan invokes the scdn.DescribeScdnUserProtectInfo API asynchronously
-// api document: https://help.aliyun.com/api/scdn/describescdnuserprotectinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScdnUserProtectInfoWithChan(request *DescribeScdnUserProtectInfoRequest) (<-chan *DescribeScdnUserProtectInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeScdnUserProtectInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeScdnUserProtectInfoWithChan(request *DescribeScdnU
 }
 
 // DescribeScdnUserProtectInfoWithCallback invokes the scdn.DescribeScdnUserProtectInfo API asynchronously
-// api document: https://help.aliyun.com/api/scdn/describescdnuserprotectinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScdnUserProtectInfoWithCallback(request *DescribeScdnUserProtectInfoRequest, callback func(response *DescribeScdnUserProtectInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateScdnDomain invokes the scdn.UpdateScdnDomain API synchronously
-// api document: https://help.aliyun.com/api/scdn/updatescdndomain.html
 func (client *Client) UpdateScdnDomain(request *UpdateScdnDomainRequest) (response *UpdateScdnDomainResponse, err error) {
 	response = CreateUpdateScdnDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateScdnDomain(request *UpdateScdnDomainRequest) (respon
 }
 
 // UpdateScdnDomainWithChan invokes the scdn.UpdateScdnDomain API asynchronously
-// api document: https://help.aliyun.com/api/scdn/updatescdndomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateScdnDomainWithChan(request *UpdateScdnDomainRequest) (<-chan *UpdateScdnDomainResponse, <-chan error) {
 	responseChan := make(chan *UpdateScdnDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateScdnDomainWithChan(request *UpdateScdnDomainRequest)
 }
 
 // UpdateScdnDomainWithCallback invokes the scdn.UpdateScdnDomain API asynchronously
-// api document: https://help.aliyun.com/api/scdn/updatescdndomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateScdnDomainWithCallback(request *UpdateScdnDomainRequest, callback func(response *UpdateScdnDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

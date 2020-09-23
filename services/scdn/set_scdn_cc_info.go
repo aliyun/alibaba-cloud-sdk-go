@@ -21,7 +21,6 @@ import (
 )
 
 // SetScdnCcInfo invokes the scdn.SetScdnCcInfo API synchronously
-// api document: https://help.aliyun.com/api/scdn/setscdnccinfo.html
 func (client *Client) SetScdnCcInfo(request *SetScdnCcInfoRequest) (response *SetScdnCcInfoResponse, err error) {
 	response = CreateSetScdnCcInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetScdnCcInfo(request *SetScdnCcInfoRequest) (response *Se
 }
 
 // SetScdnCcInfoWithChan invokes the scdn.SetScdnCcInfo API asynchronously
-// api document: https://help.aliyun.com/api/scdn/setscdnccinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetScdnCcInfoWithChan(request *SetScdnCcInfoRequest) (<-chan *SetScdnCcInfoResponse, <-chan error) {
 	responseChan := make(chan *SetScdnCcInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetScdnCcInfoWithChan(request *SetScdnCcInfoRequest) (<-ch
 }
 
 // SetScdnCcInfoWithCallback invokes the scdn.SetScdnCcInfo API asynchronously
-// api document: https://help.aliyun.com/api/scdn/setscdnccinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetScdnCcInfoWithCallback(request *SetScdnCcInfoRequest, callback func(response *SetScdnCcInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
