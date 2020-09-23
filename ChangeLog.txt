@@ -1,3 +1,7 @@
+2020-09-23 Version: v1.61.521
+- Generated 2019-09-16 for `alikafka`.
+- Support security group param when start instance.
+
 2020-09-23 Version: v1.61.520
 - Generated 2019-09-16 for `alikafka`.
 - Support security group param when start instance.
