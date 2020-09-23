@@ -21,7 +21,6 @@ import (
 )
 
 // SetErrorPageConfig invokes the cdn.SetErrorPageConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/seterrorpageconfig.html
 func (client *Client) SetErrorPageConfig(request *SetErrorPageConfigRequest) (response *SetErrorPageConfigResponse, err error) {
 	response = CreateSetErrorPageConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetErrorPageConfig(request *SetErrorPageConfigRequest) (re
 }
 
 // SetErrorPageConfigWithChan invokes the cdn.SetErrorPageConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/seterrorpageconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetErrorPageConfigWithChan(request *SetErrorPageConfigRequest) (<-chan *SetErrorPageConfigResponse, <-chan error) {
 	responseChan := make(chan *SetErrorPageConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetErrorPageConfigWithChan(request *SetErrorPageConfigRequ
 }
 
 // SetErrorPageConfigWithCallback invokes the cdn.SetErrorPageConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/seterrorpageconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetErrorPageConfigWithCallback(request *SetErrorPageConfigRequest, callback func(response *SetErrorPageConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

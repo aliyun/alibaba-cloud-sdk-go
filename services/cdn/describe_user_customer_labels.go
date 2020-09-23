@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUserCustomerLabels invokes the cdn.DescribeUserCustomerLabels API synchronously
-// api document: https://help.aliyun.com/api/cdn/describeusercustomerlabels.html
 func (client *Client) DescribeUserCustomerLabels(request *DescribeUserCustomerLabelsRequest) (response *DescribeUserCustomerLabelsResponse, err error) {
 	response = CreateDescribeUserCustomerLabelsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUserCustomerLabels(request *DescribeUserCustomerLa
 }
 
 // DescribeUserCustomerLabelsWithChan invokes the cdn.DescribeUserCustomerLabels API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describeusercustomerlabels.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserCustomerLabelsWithChan(request *DescribeUserCustomerLabelsRequest) (<-chan *DescribeUserCustomerLabelsResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserCustomerLabelsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUserCustomerLabelsWithChan(request *DescribeUserCu
 }
 
 // DescribeUserCustomerLabelsWithCallback invokes the cdn.DescribeUserCustomerLabels API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describeusercustomerlabels.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserCustomerLabelsWithCallback(request *DescribeUserCustomerLabelsRequest, callback func(response *DescribeUserCustomerLabelsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

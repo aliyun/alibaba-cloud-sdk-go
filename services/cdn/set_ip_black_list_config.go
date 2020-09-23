@@ -21,7 +21,6 @@ import (
 )
 
 // SetIpBlackListConfig invokes the cdn.SetIpBlackListConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/setipblacklistconfig.html
 func (client *Client) SetIpBlackListConfig(request *SetIpBlackListConfigRequest) (response *SetIpBlackListConfigResponse, err error) {
 	response = CreateSetIpBlackListConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetIpBlackListConfig(request *SetIpBlackListConfigRequest)
 }
 
 // SetIpBlackListConfigWithChan invokes the cdn.SetIpBlackListConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setipblacklistconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetIpBlackListConfigWithChan(request *SetIpBlackListConfigRequest) (<-chan *SetIpBlackListConfigResponse, <-chan error) {
 	responseChan := make(chan *SetIpBlackListConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetIpBlackListConfigWithChan(request *SetIpBlackListConfig
 }
 
 // SetIpBlackListConfigWithCallback invokes the cdn.SetIpBlackListConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setipblacklistconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetIpBlackListConfigWithCallback(request *SetIpBlackListConfigRequest, callback func(response *SetIpBlackListConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

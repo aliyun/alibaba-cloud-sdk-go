@@ -21,7 +21,6 @@ import (
 )
 
 // CreateRealTimeLogDelivery invokes the cdn.CreateRealTimeLogDelivery API synchronously
-// api document: https://help.aliyun.com/api/cdn/createrealtimelogdelivery.html
 func (client *Client) CreateRealTimeLogDelivery(request *CreateRealTimeLogDeliveryRequest) (response *CreateRealTimeLogDeliveryResponse, err error) {
 	response = CreateCreateRealTimeLogDeliveryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateRealTimeLogDelivery(request *CreateRealTimeLogDelive
 }
 
 // CreateRealTimeLogDeliveryWithChan invokes the cdn.CreateRealTimeLogDelivery API asynchronously
-// api document: https://help.aliyun.com/api/cdn/createrealtimelogdelivery.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRealTimeLogDeliveryWithChan(request *CreateRealTimeLogDeliveryRequest) (<-chan *CreateRealTimeLogDeliveryResponse, <-chan error) {
 	responseChan := make(chan *CreateRealTimeLogDeliveryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateRealTimeLogDeliveryWithChan(request *CreateRealTimeL
 }
 
 // CreateRealTimeLogDeliveryWithCallback invokes the cdn.CreateRealTimeLogDelivery API asynchronously
-// api document: https://help.aliyun.com/api/cdn/createrealtimelogdelivery.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRealTimeLogDeliveryWithCallback(request *CreateRealTimeLogDeliveryRequest, callback func(response *CreateRealTimeLogDeliveryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

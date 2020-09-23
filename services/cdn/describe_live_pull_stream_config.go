@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLivePullStreamConfig invokes the cdn.DescribeLivePullStreamConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/describelivepullstreamconfig.html
 func (client *Client) DescribeLivePullStreamConfig(request *DescribeLivePullStreamConfigRequest) (response *DescribeLivePullStreamConfigResponse, err error) {
 	response = CreateDescribeLivePullStreamConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLivePullStreamConfig(request *DescribeLivePullStre
 }
 
 // DescribeLivePullStreamConfigWithChan invokes the cdn.DescribeLivePullStreamConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describelivepullstreamconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLivePullStreamConfigWithChan(request *DescribeLivePullStreamConfigRequest) (<-chan *DescribeLivePullStreamConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeLivePullStreamConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLivePullStreamConfigWithChan(request *DescribeLive
 }
 
 // DescribeLivePullStreamConfigWithCallback invokes the cdn.DescribeLivePullStreamConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describelivepullstreamconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLivePullStreamConfigWithCallback(request *DescribeLivePullStreamConfigRequest, callback func(response *DescribeLivePullStreamConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

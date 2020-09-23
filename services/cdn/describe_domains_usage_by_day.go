@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainsUsageByDay invokes the cdn.DescribeDomainsUsageByDay API synchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainsusagebyday.html
 func (client *Client) DescribeDomainsUsageByDay(request *DescribeDomainsUsageByDayRequest) (response *DescribeDomainsUsageByDayResponse, err error) {
 	response = CreateDescribeDomainsUsageByDayResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainsUsageByDay(request *DescribeDomainsUsageByD
 }
 
 // DescribeDomainsUsageByDayWithChan invokes the cdn.DescribeDomainsUsageByDay API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainsusagebyday.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainsUsageByDayWithChan(request *DescribeDomainsUsageByDayRequest) (<-chan *DescribeDomainsUsageByDayResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainsUsageByDayResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainsUsageByDayWithChan(request *DescribeDomains
 }
 
 // DescribeDomainsUsageByDayWithCallback invokes the cdn.DescribeDomainsUsageByDay API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainsusagebyday.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainsUsageByDayWithCallback(request *DescribeDomainsUsageByDayRequest, callback func(response *DescribeDomainsUsageByDayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // SetCcConfig invokes the cdn.SetCcConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/setccconfig.html
 func (client *Client) SetCcConfig(request *SetCcConfigRequest) (response *SetCcConfigResponse, err error) {
 	response = CreateSetCcConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetCcConfig(request *SetCcConfigRequest) (response *SetCcC
 }
 
 // SetCcConfigWithChan invokes the cdn.SetCcConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setccconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCcConfigWithChan(request *SetCcConfigRequest) (<-chan *SetCcConfigResponse, <-chan error) {
 	responseChan := make(chan *SetCcConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetCcConfigWithChan(request *SetCcConfigRequest) (<-chan *
 }
 
 // SetCcConfigWithCallback invokes the cdn.SetCcConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setccconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCcConfigWithCallback(request *SetCcConfigRequest, callback func(response *SetCcConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

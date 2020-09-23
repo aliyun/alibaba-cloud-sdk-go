@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCdnCertificateDetail invokes the cdn.DescribeCdnCertificateDetail API synchronously
-// api document: https://help.aliyun.com/api/cdn/describecdncertificatedetail.html
 func (client *Client) DescribeCdnCertificateDetail(request *DescribeCdnCertificateDetailRequest) (response *DescribeCdnCertificateDetailResponse, err error) {
 	response = CreateDescribeCdnCertificateDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCdnCertificateDetail(request *DescribeCdnCertifica
 }
 
 // DescribeCdnCertificateDetailWithChan invokes the cdn.DescribeCdnCertificateDetail API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describecdncertificatedetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnCertificateDetailWithChan(request *DescribeCdnCertificateDetailRequest) (<-chan *DescribeCdnCertificateDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeCdnCertificateDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCdnCertificateDetailWithChan(request *DescribeCdnC
 }
 
 // DescribeCdnCertificateDetailWithCallback invokes the cdn.DescribeCdnCertificateDetail API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describecdncertificatedetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnCertificateDetailWithCallback(request *DescribeCdnCertificateDetailRequest, callback func(response *DescribeCdnCertificateDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

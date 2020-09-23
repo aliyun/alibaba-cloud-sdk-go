@@ -21,7 +21,6 @@ import (
 )
 
 // SetDomainServerCertificate invokes the cdn.SetDomainServerCertificate API synchronously
-// api document: https://help.aliyun.com/api/cdn/setdomainservercertificate.html
 func (client *Client) SetDomainServerCertificate(request *SetDomainServerCertificateRequest) (response *SetDomainServerCertificateResponse, err error) {
 	response = CreateSetDomainServerCertificateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetDomainServerCertificate(request *SetDomainServerCertifi
 }
 
 // SetDomainServerCertificateWithChan invokes the cdn.SetDomainServerCertificate API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setdomainservercertificate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDomainServerCertificateWithChan(request *SetDomainServerCertificateRequest) (<-chan *SetDomainServerCertificateResponse, <-chan error) {
 	responseChan := make(chan *SetDomainServerCertificateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetDomainServerCertificateWithChan(request *SetDomainServe
 }
 
 // SetDomainServerCertificateWithCallback invokes the cdn.SetDomainServerCertificate API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setdomainservercertificate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDomainServerCertificateWithCallback(request *SetDomainServerCertificateRequest, callback func(response *SetDomainServerCertificateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

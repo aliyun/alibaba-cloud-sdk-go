@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainRealTimeSrcBpsData invokes the cdn.DescribeDomainRealTimeSrcBpsData API synchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainrealtimesrcbpsdata.html
 func (client *Client) DescribeDomainRealTimeSrcBpsData(request *DescribeDomainRealTimeSrcBpsDataRequest) (response *DescribeDomainRealTimeSrcBpsDataResponse, err error) {
 	response = CreateDescribeDomainRealTimeSrcBpsDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainRealTimeSrcBpsData(request *DescribeDomainRe
 }
 
 // DescribeDomainRealTimeSrcBpsDataWithChan invokes the cdn.DescribeDomainRealTimeSrcBpsData API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainrealtimesrcbpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRealTimeSrcBpsDataWithChan(request *DescribeDomainRealTimeSrcBpsDataRequest) (<-chan *DescribeDomainRealTimeSrcBpsDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainRealTimeSrcBpsDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainRealTimeSrcBpsDataWithChan(request *Describe
 }
 
 // DescribeDomainRealTimeSrcBpsDataWithCallback invokes the cdn.DescribeDomainRealTimeSrcBpsData API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainrealtimesrcbpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRealTimeSrcBpsDataWithCallback(request *DescribeDomainRealTimeSrcBpsDataRequest, callback func(response *DescribeDomainRealTimeSrcBpsDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVerifyContent invokes the cdn.DescribeVerifyContent API synchronously
-// api document: https://help.aliyun.com/api/cdn/describeverifycontent.html
 func (client *Client) DescribeVerifyContent(request *DescribeVerifyContentRequest) (response *DescribeVerifyContentResponse, err error) {
 	response = CreateDescribeVerifyContentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVerifyContent(request *DescribeVerifyContentReques
 }
 
 // DescribeVerifyContentWithChan invokes the cdn.DescribeVerifyContent API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describeverifycontent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVerifyContentWithChan(request *DescribeVerifyContentRequest) (<-chan *DescribeVerifyContentResponse, <-chan error) {
 	responseChan := make(chan *DescribeVerifyContentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVerifyContentWithChan(request *DescribeVerifyConte
 }
 
 // DescribeVerifyContentWithCallback invokes the cdn.DescribeVerifyContent API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describeverifycontent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVerifyContentWithCallback(request *DescribeVerifyContentRequest, callback func(response *DescribeVerifyContentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

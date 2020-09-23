@@ -21,7 +21,6 @@ import (
 )
 
 // SetLiveStreamsNotifyUrlConfig invokes the cdn.SetLiveStreamsNotifyUrlConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/setlivestreamsnotifyurlconfig.html
 func (client *Client) SetLiveStreamsNotifyUrlConfig(request *SetLiveStreamsNotifyUrlConfigRequest) (response *SetLiveStreamsNotifyUrlConfigResponse, err error) {
 	response = CreateSetLiveStreamsNotifyUrlConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetLiveStreamsNotifyUrlConfig(request *SetLiveStreamsNotif
 }
 
 // SetLiveStreamsNotifyUrlConfigWithChan invokes the cdn.SetLiveStreamsNotifyUrlConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setlivestreamsnotifyurlconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLiveStreamsNotifyUrlConfigWithChan(request *SetLiveStreamsNotifyUrlConfigRequest) (<-chan *SetLiveStreamsNotifyUrlConfigResponse, <-chan error) {
 	responseChan := make(chan *SetLiveStreamsNotifyUrlConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetLiveStreamsNotifyUrlConfigWithChan(request *SetLiveStre
 }
 
 // SetLiveStreamsNotifyUrlConfigWithCallback invokes the cdn.SetLiveStreamsNotifyUrlConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setlivestreamsnotifyurlconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLiveStreamsNotifyUrlConfigWithCallback(request *SetLiveStreamsNotifyUrlConfigRequest, callback func(response *SetLiveStreamsNotifyUrlConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

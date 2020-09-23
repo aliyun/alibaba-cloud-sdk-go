@@ -21,7 +21,6 @@ import (
 )
 
 // SetForceRedirectConfig invokes the cdn.SetForceRedirectConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/setforceredirectconfig.html
 func (client *Client) SetForceRedirectConfig(request *SetForceRedirectConfigRequest) (response *SetForceRedirectConfigResponse, err error) {
 	response = CreateSetForceRedirectConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetForceRedirectConfig(request *SetForceRedirectConfigRequ
 }
 
 // SetForceRedirectConfigWithChan invokes the cdn.SetForceRedirectConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setforceredirectconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetForceRedirectConfigWithChan(request *SetForceRedirectConfigRequest) (<-chan *SetForceRedirectConfigResponse, <-chan error) {
 	responseChan := make(chan *SetForceRedirectConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetForceRedirectConfigWithChan(request *SetForceRedirectCo
 }
 
 // SetForceRedirectConfigWithCallback invokes the cdn.SetForceRedirectConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setforceredirectconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetForceRedirectConfigWithCallback(request *SetForceRedirectConfigRequest, callback func(response *SetForceRedirectConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

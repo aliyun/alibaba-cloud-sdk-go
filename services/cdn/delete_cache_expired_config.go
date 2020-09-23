@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteCacheExpiredConfig invokes the cdn.DeleteCacheExpiredConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/deletecacheexpiredconfig.html
 func (client *Client) DeleteCacheExpiredConfig(request *DeleteCacheExpiredConfigRequest) (response *DeleteCacheExpiredConfigResponse, err error) {
 	response = CreateDeleteCacheExpiredConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteCacheExpiredConfig(request *DeleteCacheExpiredConfig
 }
 
 // DeleteCacheExpiredConfigWithChan invokes the cdn.DeleteCacheExpiredConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/deletecacheexpiredconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCacheExpiredConfigWithChan(request *DeleteCacheExpiredConfigRequest) (<-chan *DeleteCacheExpiredConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteCacheExpiredConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteCacheExpiredConfigWithChan(request *DeleteCacheExpir
 }
 
 // DeleteCacheExpiredConfigWithCallback invokes the cdn.DeleteCacheExpiredConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/deletecacheexpiredconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCacheExpiredConfigWithCallback(request *DeleteCacheExpiredConfigRequest, callback func(response *DeleteCacheExpiredConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

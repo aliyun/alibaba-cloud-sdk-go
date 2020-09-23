@@ -21,7 +21,6 @@ import (
 )
 
 // BatchStopCdnDomain invokes the cdn.BatchStopCdnDomain API synchronously
-// api document: https://help.aliyun.com/api/cdn/batchstopcdndomain.html
 func (client *Client) BatchStopCdnDomain(request *BatchStopCdnDomainRequest) (response *BatchStopCdnDomainResponse, err error) {
 	response = CreateBatchStopCdnDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchStopCdnDomain(request *BatchStopCdnDomainRequest) (re
 }
 
 // BatchStopCdnDomainWithChan invokes the cdn.BatchStopCdnDomain API asynchronously
-// api document: https://help.aliyun.com/api/cdn/batchstopcdndomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchStopCdnDomainWithChan(request *BatchStopCdnDomainRequest) (<-chan *BatchStopCdnDomainResponse, <-chan error) {
 	responseChan := make(chan *BatchStopCdnDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchStopCdnDomainWithChan(request *BatchStopCdnDomainRequ
 }
 
 // BatchStopCdnDomainWithCallback invokes the cdn.BatchStopCdnDomain API asynchronously
-// api document: https://help.aliyun.com/api/cdn/batchstopcdndomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchStopCdnDomainWithCallback(request *BatchStopCdnDomainRequest, callback func(response *BatchStopCdnDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

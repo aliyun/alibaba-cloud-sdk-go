@@ -21,7 +21,6 @@ import (
 )
 
 // AddLiveDomainMapping invokes the cdn.AddLiveDomainMapping API synchronously
-// api document: https://help.aliyun.com/api/cdn/addlivedomainmapping.html
 func (client *Client) AddLiveDomainMapping(request *AddLiveDomainMappingRequest) (response *AddLiveDomainMappingResponse, err error) {
 	response = CreateAddLiveDomainMappingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddLiveDomainMapping(request *AddLiveDomainMappingRequest)
 }
 
 // AddLiveDomainMappingWithChan invokes the cdn.AddLiveDomainMapping API asynchronously
-// api document: https://help.aliyun.com/api/cdn/addlivedomainmapping.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveDomainMappingWithChan(request *AddLiveDomainMappingRequest) (<-chan *AddLiveDomainMappingResponse, <-chan error) {
 	responseChan := make(chan *AddLiveDomainMappingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddLiveDomainMappingWithChan(request *AddLiveDomainMapping
 }
 
 // AddLiveDomainMappingWithCallback invokes the cdn.AddLiveDomainMapping API asynchronously
-// api document: https://help.aliyun.com/api/cdn/addlivedomainmapping.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveDomainMappingWithCallback(request *AddLiveDomainMappingRequest, callback func(response *AddLiveDomainMappingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

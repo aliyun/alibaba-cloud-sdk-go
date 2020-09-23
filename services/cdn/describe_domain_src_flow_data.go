@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainSrcFlowData invokes the cdn.DescribeDomainSrcFlowData API synchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainsrcflowdata.html
 func (client *Client) DescribeDomainSrcFlowData(request *DescribeDomainSrcFlowDataRequest) (response *DescribeDomainSrcFlowDataResponse, err error) {
 	response = CreateDescribeDomainSrcFlowDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainSrcFlowData(request *DescribeDomainSrcFlowDa
 }
 
 // DescribeDomainSrcFlowDataWithChan invokes the cdn.DescribeDomainSrcFlowData API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainsrcflowdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainSrcFlowDataWithChan(request *DescribeDomainSrcFlowDataRequest) (<-chan *DescribeDomainSrcFlowDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainSrcFlowDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainSrcFlowDataWithChan(request *DescribeDomainS
 }
 
 // DescribeDomainSrcFlowDataWithCallback invokes the cdn.DescribeDomainSrcFlowData API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainsrcflowdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainSrcFlowDataWithCallback(request *DescribeDomainSrcFlowDataRequest, callback func(response *DescribeDomainSrcFlowDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveStreamsFrameRateAndBitRateData invokes the cdn.DescribeLiveStreamsFrameRateAndBitRateData API synchronously
-// api document: https://help.aliyun.com/api/cdn/describelivestreamsframerateandbitratedata.html
 func (client *Client) DescribeLiveStreamsFrameRateAndBitRateData(request *DescribeLiveStreamsFrameRateAndBitRateDataRequest) (response *DescribeLiveStreamsFrameRateAndBitRateDataResponse, err error) {
 	response = CreateDescribeLiveStreamsFrameRateAndBitRateDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveStreamsFrameRateAndBitRateData(request *Descri
 }
 
 // DescribeLiveStreamsFrameRateAndBitRateDataWithChan invokes the cdn.DescribeLiveStreamsFrameRateAndBitRateData API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describelivestreamsframerateandbitratedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsFrameRateAndBitRateDataWithChan(request *DescribeLiveStreamsFrameRateAndBitRateDataRequest) (<-chan *DescribeLiveStreamsFrameRateAndBitRateDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamsFrameRateAndBitRateDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveStreamsFrameRateAndBitRateDataWithChan(request
 }
 
 // DescribeLiveStreamsFrameRateAndBitRateDataWithCallback invokes the cdn.DescribeLiveStreamsFrameRateAndBitRateData API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describelivestreamsframerateandbitratedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsFrameRateAndBitRateDataWithCallback(request *DescribeLiveStreamsFrameRateAndBitRateDataRequest, callback func(response *DescribeLiveStreamsFrameRateAndBitRateDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

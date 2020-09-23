@@ -21,7 +21,6 @@ import (
 )
 
 // SetPathCacheExpiredConfig invokes the cdn.SetPathCacheExpiredConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/setpathcacheexpiredconfig.html
 func (client *Client) SetPathCacheExpiredConfig(request *SetPathCacheExpiredConfigRequest) (response *SetPathCacheExpiredConfigResponse, err error) {
 	response = CreateSetPathCacheExpiredConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetPathCacheExpiredConfig(request *SetPathCacheExpiredConf
 }
 
 // SetPathCacheExpiredConfigWithChan invokes the cdn.SetPathCacheExpiredConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setpathcacheexpiredconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPathCacheExpiredConfigWithChan(request *SetPathCacheExpiredConfigRequest) (<-chan *SetPathCacheExpiredConfigResponse, <-chan error) {
 	responseChan := make(chan *SetPathCacheExpiredConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetPathCacheExpiredConfigWithChan(request *SetPathCacheExp
 }
 
 // SetPathCacheExpiredConfigWithCallback invokes the cdn.SetPathCacheExpiredConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setpathcacheexpiredconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPathCacheExpiredConfigWithCallback(request *SetPathCacheExpiredConfigRequest, callback func(response *SetPathCacheExpiredConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

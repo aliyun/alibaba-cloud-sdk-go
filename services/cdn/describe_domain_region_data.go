@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainRegionData invokes the cdn.DescribeDomainRegionData API synchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainregiondata.html
 func (client *Client) DescribeDomainRegionData(request *DescribeDomainRegionDataRequest) (response *DescribeDomainRegionDataResponse, err error) {
 	response = CreateDescribeDomainRegionDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainRegionData(request *DescribeDomainRegionData
 }
 
 // DescribeDomainRegionDataWithChan invokes the cdn.DescribeDomainRegionData API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainregiondata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRegionDataWithChan(request *DescribeDomainRegionDataRequest) (<-chan *DescribeDomainRegionDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainRegionDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainRegionDataWithChan(request *DescribeDomainRe
 }
 
 // DescribeDomainRegionDataWithCallback invokes the cdn.DescribeDomainRegionData API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainregiondata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRegionDataWithCallback(request *DescribeDomainRegionDataRequest, callback func(response *DescribeDomainRegionDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

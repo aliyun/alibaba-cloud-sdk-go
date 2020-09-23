@@ -21,7 +21,6 @@ import (
 )
 
 // SetCdnDomainStagingConfig invokes the cdn.SetCdnDomainStagingConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/setcdndomainstagingconfig.html
 func (client *Client) SetCdnDomainStagingConfig(request *SetCdnDomainStagingConfigRequest) (response *SetCdnDomainStagingConfigResponse, err error) {
 	response = CreateSetCdnDomainStagingConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetCdnDomainStagingConfig(request *SetCdnDomainStagingConf
 }
 
 // SetCdnDomainStagingConfigWithChan invokes the cdn.SetCdnDomainStagingConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setcdndomainstagingconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCdnDomainStagingConfigWithChan(request *SetCdnDomainStagingConfigRequest) (<-chan *SetCdnDomainStagingConfigResponse, <-chan error) {
 	responseChan := make(chan *SetCdnDomainStagingConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetCdnDomainStagingConfigWithChan(request *SetCdnDomainSta
 }
 
 // SetCdnDomainStagingConfigWithCallback invokes the cdn.SetCdnDomainStagingConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setcdndomainstagingconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCdnDomainStagingConfigWithCallback(request *SetCdnDomainStagingConfigRequest, callback func(response *SetCdnDomainStagingConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

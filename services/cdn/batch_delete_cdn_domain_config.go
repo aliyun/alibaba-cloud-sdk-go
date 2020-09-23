@@ -21,7 +21,6 @@ import (
 )
 
 // BatchDeleteCdnDomainConfig invokes the cdn.BatchDeleteCdnDomainConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/batchdeletecdndomainconfig.html
 func (client *Client) BatchDeleteCdnDomainConfig(request *BatchDeleteCdnDomainConfigRequest) (response *BatchDeleteCdnDomainConfigResponse, err error) {
 	response = CreateBatchDeleteCdnDomainConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchDeleteCdnDomainConfig(request *BatchDeleteCdnDomainCo
 }
 
 // BatchDeleteCdnDomainConfigWithChan invokes the cdn.BatchDeleteCdnDomainConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/batchdeletecdndomainconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchDeleteCdnDomainConfigWithChan(request *BatchDeleteCdnDomainConfigRequest) (<-chan *BatchDeleteCdnDomainConfigResponse, <-chan error) {
 	responseChan := make(chan *BatchDeleteCdnDomainConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchDeleteCdnDomainConfigWithChan(request *BatchDeleteCdn
 }
 
 // BatchDeleteCdnDomainConfigWithCallback invokes the cdn.BatchDeleteCdnDomainConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/batchdeletecdndomainconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchDeleteCdnDomainConfigWithCallback(request *BatchDeleteCdnDomainConfigRequest, callback func(response *BatchDeleteCdnDomainConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateBatchDeleteCdnDomainConfigRequest() (request *BatchDeleteCdnDomainCon
 	request = &BatchDeleteCdnDomainConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "BatchDeleteCdnDomainConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "BatchDeleteCdnDomainConfig", "", "")
 	request.Method = requests.POST
 	return
 }

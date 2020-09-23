@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCdnUserQuota invokes the cdn.DescribeCdnUserQuota API synchronously
-// api document: https://help.aliyun.com/api/cdn/describecdnuserquota.html
 func (client *Client) DescribeCdnUserQuota(request *DescribeCdnUserQuotaRequest) (response *DescribeCdnUserQuotaResponse, err error) {
 	response = CreateDescribeCdnUserQuotaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCdnUserQuota(request *DescribeCdnUserQuotaRequest)
 }
 
 // DescribeCdnUserQuotaWithChan invokes the cdn.DescribeCdnUserQuota API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describecdnuserquota.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnUserQuotaWithChan(request *DescribeCdnUserQuotaRequest) (<-chan *DescribeCdnUserQuotaResponse, <-chan error) {
 	responseChan := make(chan *DescribeCdnUserQuotaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCdnUserQuotaWithChan(request *DescribeCdnUserQuota
 }
 
 // DescribeCdnUserQuotaWithCallback invokes the cdn.DescribeCdnUserQuota API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describecdnuserquota.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnUserQuotaWithCallback(request *DescribeCdnUserQuotaRequest, callback func(response *DescribeCdnUserQuotaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

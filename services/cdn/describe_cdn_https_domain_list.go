@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCdnHttpsDomainList invokes the cdn.DescribeCdnHttpsDomainList API synchronously
-// api document: https://help.aliyun.com/api/cdn/describecdnhttpsdomainlist.html
 func (client *Client) DescribeCdnHttpsDomainList(request *DescribeCdnHttpsDomainListRequest) (response *DescribeCdnHttpsDomainListResponse, err error) {
 	response = CreateDescribeCdnHttpsDomainListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCdnHttpsDomainList(request *DescribeCdnHttpsDomain
 }
 
 // DescribeCdnHttpsDomainListWithChan invokes the cdn.DescribeCdnHttpsDomainList API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describecdnhttpsdomainlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnHttpsDomainListWithChan(request *DescribeCdnHttpsDomainListRequest) (<-chan *DescribeCdnHttpsDomainListResponse, <-chan error) {
 	responseChan := make(chan *DescribeCdnHttpsDomainListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCdnHttpsDomainListWithChan(request *DescribeCdnHtt
 }
 
 // DescribeCdnHttpsDomainListWithCallback invokes the cdn.DescribeCdnHttpsDomainList API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describecdnhttpsdomainlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnHttpsDomainListWithCallback(request *DescribeCdnHttpsDomainListRequest, callback func(response *DescribeCdnHttpsDomainListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

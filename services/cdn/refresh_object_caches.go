@@ -21,7 +21,6 @@ import (
 )
 
 // RefreshObjectCaches invokes the cdn.RefreshObjectCaches API synchronously
-// api document: https://help.aliyun.com/api/cdn/refreshobjectcaches.html
 func (client *Client) RefreshObjectCaches(request *RefreshObjectCachesRequest) (response *RefreshObjectCachesResponse, err error) {
 	response = CreateRefreshObjectCachesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RefreshObjectCaches(request *RefreshObjectCachesRequest) (
 }
 
 // RefreshObjectCachesWithChan invokes the cdn.RefreshObjectCaches API asynchronously
-// api document: https://help.aliyun.com/api/cdn/refreshobjectcaches.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshObjectCachesWithChan(request *RefreshObjectCachesRequest) (<-chan *RefreshObjectCachesResponse, <-chan error) {
 	responseChan := make(chan *RefreshObjectCachesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RefreshObjectCachesWithChan(request *RefreshObjectCachesRe
 }
 
 // RefreshObjectCachesWithCallback invokes the cdn.RefreshObjectCaches API asynchronously
-// api document: https://help.aliyun.com/api/cdn/refreshobjectcaches.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshObjectCachesWithCallback(request *RefreshObjectCachesRequest, callback func(response *RefreshObjectCachesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

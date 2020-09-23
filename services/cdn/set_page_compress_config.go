@@ -21,7 +21,6 @@ import (
 )
 
 // SetPageCompressConfig invokes the cdn.SetPageCompressConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/setpagecompressconfig.html
 func (client *Client) SetPageCompressConfig(request *SetPageCompressConfigRequest) (response *SetPageCompressConfigResponse, err error) {
 	response = CreateSetPageCompressConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetPageCompressConfig(request *SetPageCompressConfigReques
 }
 
 // SetPageCompressConfigWithChan invokes the cdn.SetPageCompressConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setpagecompressconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPageCompressConfigWithChan(request *SetPageCompressConfigRequest) (<-chan *SetPageCompressConfigResponse, <-chan error) {
 	responseChan := make(chan *SetPageCompressConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetPageCompressConfigWithChan(request *SetPageCompressConf
 }
 
 // SetPageCompressConfigWithCallback invokes the cdn.SetPageCompressConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setpagecompressconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPageCompressConfigWithCallback(request *SetPageCompressConfigRequest, callback func(response *SetPageCompressConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

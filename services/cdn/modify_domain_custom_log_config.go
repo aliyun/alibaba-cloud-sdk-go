@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDomainCustomLogConfig invokes the cdn.ModifyDomainCustomLogConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/modifydomaincustomlogconfig.html
 func (client *Client) ModifyDomainCustomLogConfig(request *ModifyDomainCustomLogConfigRequest) (response *ModifyDomainCustomLogConfigResponse, err error) {
 	response = CreateModifyDomainCustomLogConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDomainCustomLogConfig(request *ModifyDomainCustomLog
 }
 
 // ModifyDomainCustomLogConfigWithChan invokes the cdn.ModifyDomainCustomLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/modifydomaincustomlogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDomainCustomLogConfigWithChan(request *ModifyDomainCustomLogConfigRequest) (<-chan *ModifyDomainCustomLogConfigResponse, <-chan error) {
 	responseChan := make(chan *ModifyDomainCustomLogConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDomainCustomLogConfigWithChan(request *ModifyDomainC
 }
 
 // ModifyDomainCustomLogConfigWithCallback invokes the cdn.ModifyDomainCustomLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/modifydomaincustomlogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDomainCustomLogConfigWithCallback(request *ModifyDomainCustomLogConfigRequest, callback func(response *ModifyDomainCustomLogConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

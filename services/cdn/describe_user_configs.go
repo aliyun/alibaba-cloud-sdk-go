@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUserConfigs invokes the cdn.DescribeUserConfigs API synchronously
-// api document: https://help.aliyun.com/api/cdn/describeuserconfigs.html
 func (client *Client) DescribeUserConfigs(request *DescribeUserConfigsRequest) (response *DescribeUserConfigsResponse, err error) {
 	response = CreateDescribeUserConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUserConfigs(request *DescribeUserConfigsRequest) (
 }
 
 // DescribeUserConfigsWithChan invokes the cdn.DescribeUserConfigs API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describeuserconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserConfigsWithChan(request *DescribeUserConfigsRequest) (<-chan *DescribeUserConfigsResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUserConfigsWithChan(request *DescribeUserConfigsRe
 }
 
 // DescribeUserConfigsWithCallback invokes the cdn.DescribeUserConfigs API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describeuserconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserConfigsWithCallback(request *DescribeUserConfigsRequest, callback func(response *DescribeUserConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

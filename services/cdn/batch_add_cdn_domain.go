@@ -21,7 +21,6 @@ import (
 )
 
 // BatchAddCdnDomain invokes the cdn.BatchAddCdnDomain API synchronously
-// api document: https://help.aliyun.com/api/cdn/batchaddcdndomain.html
 func (client *Client) BatchAddCdnDomain(request *BatchAddCdnDomainRequest) (response *BatchAddCdnDomainResponse, err error) {
 	response = CreateBatchAddCdnDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchAddCdnDomain(request *BatchAddCdnDomainRequest) (resp
 }
 
 // BatchAddCdnDomainWithChan invokes the cdn.BatchAddCdnDomain API asynchronously
-// api document: https://help.aliyun.com/api/cdn/batchaddcdndomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchAddCdnDomainWithChan(request *BatchAddCdnDomainRequest) (<-chan *BatchAddCdnDomainResponse, <-chan error) {
 	responseChan := make(chan *BatchAddCdnDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchAddCdnDomainWithChan(request *BatchAddCdnDomainReques
 }
 
 // BatchAddCdnDomainWithCallback invokes the cdn.BatchAddCdnDomain API asynchronously
-// api document: https://help.aliyun.com/api/cdn/batchaddcdndomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchAddCdnDomainWithCallback(request *BatchAddCdnDomainRequest, callback func(response *BatchAddCdnDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainHttpCodeDataByLayer invokes the cdn.DescribeDomainHttpCodeDataByLayer API synchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainhttpcodedatabylayer.html
 func (client *Client) DescribeDomainHttpCodeDataByLayer(request *DescribeDomainHttpCodeDataByLayerRequest) (response *DescribeDomainHttpCodeDataByLayerResponse, err error) {
 	response = CreateDescribeDomainHttpCodeDataByLayerResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainHttpCodeDataByLayer(request *DescribeDomainH
 }
 
 // DescribeDomainHttpCodeDataByLayerWithChan invokes the cdn.DescribeDomainHttpCodeDataByLayer API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainhttpcodedatabylayer.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainHttpCodeDataByLayerWithChan(request *DescribeDomainHttpCodeDataByLayerRequest) (<-chan *DescribeDomainHttpCodeDataByLayerResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainHttpCodeDataByLayerResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainHttpCodeDataByLayerWithChan(request *Describ
 }
 
 // DescribeDomainHttpCodeDataByLayerWithCallback invokes the cdn.DescribeDomainHttpCodeDataByLayer API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainhttpcodedatabylayer.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainHttpCodeDataByLayerWithCallback(request *DescribeDomainHttpCodeDataByLayerRequest, callback func(response *DescribeDomainHttpCodeDataByLayerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

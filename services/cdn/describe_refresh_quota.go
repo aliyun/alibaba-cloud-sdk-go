@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRefreshQuota invokes the cdn.DescribeRefreshQuota API synchronously
-// api document: https://help.aliyun.com/api/cdn/describerefreshquota.html
 func (client *Client) DescribeRefreshQuota(request *DescribeRefreshQuotaRequest) (response *DescribeRefreshQuotaResponse, err error) {
 	response = CreateDescribeRefreshQuotaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRefreshQuota(request *DescribeRefreshQuotaRequest)
 }
 
 // DescribeRefreshQuotaWithChan invokes the cdn.DescribeRefreshQuota API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describerefreshquota.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRefreshQuotaWithChan(request *DescribeRefreshQuotaRequest) (<-chan *DescribeRefreshQuotaResponse, <-chan error) {
 	responseChan := make(chan *DescribeRefreshQuotaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRefreshQuotaWithChan(request *DescribeRefreshQuota
 }
 
 // DescribeRefreshQuotaWithCallback invokes the cdn.DescribeRefreshQuota API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describerefreshquota.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRefreshQuotaWithCallback(request *DescribeRefreshQuotaRequest, callback func(response *DescribeRefreshQuotaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

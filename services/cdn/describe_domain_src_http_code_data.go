@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainSrcHttpCodeData invokes the cdn.DescribeDomainSrcHttpCodeData API synchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainsrchttpcodedata.html
 func (client *Client) DescribeDomainSrcHttpCodeData(request *DescribeDomainSrcHttpCodeDataRequest) (response *DescribeDomainSrcHttpCodeDataResponse, err error) {
 	response = CreateDescribeDomainSrcHttpCodeDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainSrcHttpCodeData(request *DescribeDomainSrcHt
 }
 
 // DescribeDomainSrcHttpCodeDataWithChan invokes the cdn.DescribeDomainSrcHttpCodeData API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainsrchttpcodedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainSrcHttpCodeDataWithChan(request *DescribeDomainSrcHttpCodeDataRequest) (<-chan *DescribeDomainSrcHttpCodeDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainSrcHttpCodeDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainSrcHttpCodeDataWithChan(request *DescribeDom
 }
 
 // DescribeDomainSrcHttpCodeDataWithCallback invokes the cdn.DescribeDomainSrcHttpCodeData API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainsrchttpcodedata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainSrcHttpCodeDataWithCallback(request *DescribeDomainSrcHttpCodeDataRequest, callback func(response *DescribeDomainSrcHttpCodeDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveStreamRecordIndexFiles invokes the cdn.DescribeLiveStreamRecordIndexFiles API synchronously
-// api document: https://help.aliyun.com/api/cdn/describelivestreamrecordindexfiles.html
 func (client *Client) DescribeLiveStreamRecordIndexFiles(request *DescribeLiveStreamRecordIndexFilesRequest) (response *DescribeLiveStreamRecordIndexFilesResponse, err error) {
 	response = CreateDescribeLiveStreamRecordIndexFilesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveStreamRecordIndexFiles(request *DescribeLiveSt
 }
 
 // DescribeLiveStreamRecordIndexFilesWithChan invokes the cdn.DescribeLiveStreamRecordIndexFiles API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describelivestreamrecordindexfiles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRecordIndexFilesWithChan(request *DescribeLiveStreamRecordIndexFilesRequest) (<-chan *DescribeLiveStreamRecordIndexFilesResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamRecordIndexFilesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveStreamRecordIndexFilesWithChan(request *Descri
 }
 
 // DescribeLiveStreamRecordIndexFilesWithCallback invokes the cdn.DescribeLiveStreamRecordIndexFiles API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describelivestreamrecordindexfiles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRecordIndexFilesWithCallback(request *DescribeLiveStreamRecordIndexFilesRequest, callback func(response *DescribeLiveStreamRecordIndexFilesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

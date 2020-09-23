@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteFCTrigger invokes the cdn.DeleteFCTrigger API synchronously
-// api document: https://help.aliyun.com/api/cdn/deletefctrigger.html
 func (client *Client) DeleteFCTrigger(request *DeleteFCTriggerRequest) (response *DeleteFCTriggerResponse, err error) {
 	response = CreateDeleteFCTriggerResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteFCTrigger(request *DeleteFCTriggerRequest) (response
 }
 
 // DeleteFCTriggerWithChan invokes the cdn.DeleteFCTrigger API asynchronously
-// api document: https://help.aliyun.com/api/cdn/deletefctrigger.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFCTriggerWithChan(request *DeleteFCTriggerRequest) (<-chan *DeleteFCTriggerResponse, <-chan error) {
 	responseChan := make(chan *DeleteFCTriggerResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteFCTriggerWithChan(request *DeleteFCTriggerRequest) (
 }
 
 // DeleteFCTriggerWithCallback invokes the cdn.DeleteFCTrigger API asynchronously
-// api document: https://help.aliyun.com/api/cdn/deletefctrigger.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFCTriggerWithCallback(request *DeleteFCTriggerRequest, callback func(response *DeleteFCTriggerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

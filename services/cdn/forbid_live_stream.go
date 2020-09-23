@@ -21,7 +21,6 @@ import (
 )
 
 // ForbidLiveStream invokes the cdn.ForbidLiveStream API synchronously
-// api document: https://help.aliyun.com/api/cdn/forbidlivestream.html
 func (client *Client) ForbidLiveStream(request *ForbidLiveStreamRequest) (response *ForbidLiveStreamResponse, err error) {
 	response = CreateForbidLiveStreamResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ForbidLiveStream(request *ForbidLiveStreamRequest) (respon
 }
 
 // ForbidLiveStreamWithChan invokes the cdn.ForbidLiveStream API asynchronously
-// api document: https://help.aliyun.com/api/cdn/forbidlivestream.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ForbidLiveStreamWithChan(request *ForbidLiveStreamRequest) (<-chan *ForbidLiveStreamResponse, <-chan error) {
 	responseChan := make(chan *ForbidLiveStreamResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ForbidLiveStreamWithChan(request *ForbidLiveStreamRequest)
 }
 
 // ForbidLiveStreamWithCallback invokes the cdn.ForbidLiveStream API asynchronously
-// api document: https://help.aliyun.com/api/cdn/forbidlivestream.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ForbidLiveStreamWithCallback(request *ForbidLiveStreamRequest, callback func(response *ForbidLiveStreamResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

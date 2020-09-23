@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainTopReferVisit invokes the cdn.DescribeDomainTopReferVisit API synchronously
-// api document: https://help.aliyun.com/api/cdn/describedomaintoprefervisit.html
 func (client *Client) DescribeDomainTopReferVisit(request *DescribeDomainTopReferVisitRequest) (response *DescribeDomainTopReferVisitResponse, err error) {
 	response = CreateDescribeDomainTopReferVisitResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainTopReferVisit(request *DescribeDomainTopRefe
 }
 
 // DescribeDomainTopReferVisitWithChan invokes the cdn.DescribeDomainTopReferVisit API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomaintoprefervisit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainTopReferVisitWithChan(request *DescribeDomainTopReferVisitRequest) (<-chan *DescribeDomainTopReferVisitResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainTopReferVisitResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainTopReferVisitWithChan(request *DescribeDomai
 }
 
 // DescribeDomainTopReferVisitWithCallback invokes the cdn.DescribeDomainTopReferVisit API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomaintoprefervisit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainTopReferVisitWithCallback(request *DescribeDomainTopReferVisitRequest, callback func(response *DescribeDomainTopReferVisitResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

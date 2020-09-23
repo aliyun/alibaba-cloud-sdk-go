@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainTopClientIpVisit invokes the cdn.DescribeDomainTopClientIpVisit API synchronously
-// api document: https://help.aliyun.com/api/cdn/describedomaintopclientipvisit.html
 func (client *Client) DescribeDomainTopClientIpVisit(request *DescribeDomainTopClientIpVisitRequest) (response *DescribeDomainTopClientIpVisitResponse, err error) {
 	response = CreateDescribeDomainTopClientIpVisitResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainTopClientIpVisit(request *DescribeDomainTopC
 }
 
 // DescribeDomainTopClientIpVisitWithChan invokes the cdn.DescribeDomainTopClientIpVisit API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomaintopclientipvisit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainTopClientIpVisitWithChan(request *DescribeDomainTopClientIpVisitRequest) (<-chan *DescribeDomainTopClientIpVisitResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainTopClientIpVisitResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainTopClientIpVisitWithChan(request *DescribeDo
 }
 
 // DescribeDomainTopClientIpVisitWithCallback invokes the cdn.DescribeDomainTopClientIpVisit API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomaintopclientipvisit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainTopClientIpVisitWithCallback(request *DescribeDomainTopClientIpVisitRequest, callback func(response *DescribeDomainTopClientIpVisitResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

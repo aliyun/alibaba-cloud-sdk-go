@@ -21,7 +21,6 @@ import (
 )
 
 // SetRefererConfig invokes the cdn.SetRefererConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/setrefererconfig.html
 func (client *Client) SetRefererConfig(request *SetRefererConfigRequest) (response *SetRefererConfigResponse, err error) {
 	response = CreateSetRefererConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetRefererConfig(request *SetRefererConfigRequest) (respon
 }
 
 // SetRefererConfigWithChan invokes the cdn.SetRefererConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setrefererconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRefererConfigWithChan(request *SetRefererConfigRequest) (<-chan *SetRefererConfigResponse, <-chan error) {
 	responseChan := make(chan *SetRefererConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetRefererConfigWithChan(request *SetRefererConfigRequest)
 }
 
 // SetRefererConfigWithCallback invokes the cdn.SetRefererConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setrefererconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRefererConfigWithCallback(request *SetRefererConfigRequest, callback func(response *SetRefererConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

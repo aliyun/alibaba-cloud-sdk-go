@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainCcActivityLog invokes the cdn.DescribeDomainCcActivityLog API synchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainccactivitylog.html
 func (client *Client) DescribeDomainCcActivityLog(request *DescribeDomainCcActivityLogRequest) (response *DescribeDomainCcActivityLogResponse, err error) {
 	response = CreateDescribeDomainCcActivityLogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainCcActivityLog(request *DescribeDomainCcActiv
 }
 
 // DescribeDomainCcActivityLogWithChan invokes the cdn.DescribeDomainCcActivityLog API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainccactivitylog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainCcActivityLogWithChan(request *DescribeDomainCcActivityLogRequest) (<-chan *DescribeDomainCcActivityLogResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainCcActivityLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainCcActivityLogWithChan(request *DescribeDomai
 }
 
 // DescribeDomainCcActivityLogWithCallback invokes the cdn.DescribeDomainCcActivityLog API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainccactivitylog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainCcActivityLogWithCallback(request *DescribeDomainCcActivityLogRequest, callback func(response *DescribeDomainCcActivityLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

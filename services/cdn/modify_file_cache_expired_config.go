@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyFileCacheExpiredConfig invokes the cdn.ModifyFileCacheExpiredConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/modifyfilecacheexpiredconfig.html
 func (client *Client) ModifyFileCacheExpiredConfig(request *ModifyFileCacheExpiredConfigRequest) (response *ModifyFileCacheExpiredConfigResponse, err error) {
 	response = CreateModifyFileCacheExpiredConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyFileCacheExpiredConfig(request *ModifyFileCacheExpir
 }
 
 // ModifyFileCacheExpiredConfigWithChan invokes the cdn.ModifyFileCacheExpiredConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/modifyfilecacheexpiredconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFileCacheExpiredConfigWithChan(request *ModifyFileCacheExpiredConfigRequest) (<-chan *ModifyFileCacheExpiredConfigResponse, <-chan error) {
 	responseChan := make(chan *ModifyFileCacheExpiredConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyFileCacheExpiredConfigWithChan(request *ModifyFileCa
 }
 
 // ModifyFileCacheExpiredConfigWithCallback invokes the cdn.ModifyFileCacheExpiredConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/modifyfilecacheexpiredconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFileCacheExpiredConfigWithCallback(request *ModifyFileCacheExpiredConfigRequest, callback func(response *ModifyFileCacheExpiredConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

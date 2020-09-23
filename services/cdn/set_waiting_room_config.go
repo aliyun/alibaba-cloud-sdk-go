@@ -21,7 +21,6 @@ import (
 )
 
 // SetWaitingRoomConfig invokes the cdn.SetWaitingRoomConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/setwaitingroomconfig.html
 func (client *Client) SetWaitingRoomConfig(request *SetWaitingRoomConfigRequest) (response *SetWaitingRoomConfigResponse, err error) {
 	response = CreateSetWaitingRoomConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetWaitingRoomConfig(request *SetWaitingRoomConfigRequest)
 }
 
 // SetWaitingRoomConfigWithChan invokes the cdn.SetWaitingRoomConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setwaitingroomconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetWaitingRoomConfigWithChan(request *SetWaitingRoomConfigRequest) (<-chan *SetWaitingRoomConfigResponse, <-chan error) {
 	responseChan := make(chan *SetWaitingRoomConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetWaitingRoomConfigWithChan(request *SetWaitingRoomConfig
 }
 
 // SetWaitingRoomConfigWithCallback invokes the cdn.SetWaitingRoomConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setwaitingroomconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetWaitingRoomConfigWithCallback(request *SetWaitingRoomConfigRequest, callback func(response *SetWaitingRoomConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

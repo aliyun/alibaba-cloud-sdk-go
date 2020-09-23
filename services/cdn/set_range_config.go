@@ -21,7 +21,6 @@ import (
 )
 
 // SetRangeConfig invokes the cdn.SetRangeConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/setrangeconfig.html
 func (client *Client) SetRangeConfig(request *SetRangeConfigRequest) (response *SetRangeConfigResponse, err error) {
 	response = CreateSetRangeConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetRangeConfig(request *SetRangeConfigRequest) (response *
 }
 
 // SetRangeConfigWithChan invokes the cdn.SetRangeConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setrangeconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRangeConfigWithChan(request *SetRangeConfigRequest) (<-chan *SetRangeConfigResponse, <-chan error) {
 	responseChan := make(chan *SetRangeConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetRangeConfigWithChan(request *SetRangeConfigRequest) (<-
 }
 
 // SetRangeConfigWithCallback invokes the cdn.SetRangeConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setrangeconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRangeConfigWithCallback(request *SetRangeConfigRequest, callback func(response *SetRangeConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

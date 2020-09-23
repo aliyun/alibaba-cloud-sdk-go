@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSpecificStagingConfig invokes the cdn.DeleteSpecificStagingConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/deletespecificstagingconfig.html
 func (client *Client) DeleteSpecificStagingConfig(request *DeleteSpecificStagingConfigRequest) (response *DeleteSpecificStagingConfigResponse, err error) {
 	response = CreateDeleteSpecificStagingConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSpecificStagingConfig(request *DeleteSpecificStaging
 }
 
 // DeleteSpecificStagingConfigWithChan invokes the cdn.DeleteSpecificStagingConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/deletespecificstagingconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSpecificStagingConfigWithChan(request *DeleteSpecificStagingConfigRequest) (<-chan *DeleteSpecificStagingConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteSpecificStagingConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSpecificStagingConfigWithChan(request *DeleteSpecifi
 }
 
 // DeleteSpecificStagingConfigWithCallback invokes the cdn.DeleteSpecificStagingConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/deletespecificstagingconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSpecificStagingConfigWithCallback(request *DeleteSpecificStagingConfigRequest, callback func(response *DeleteSpecificStagingConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

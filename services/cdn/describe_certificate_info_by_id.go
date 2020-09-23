@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCertificateInfoByID invokes the cdn.DescribeCertificateInfoByID API synchronously
-// api document: https://help.aliyun.com/api/cdn/describecertificateinfobyid.html
 func (client *Client) DescribeCertificateInfoByID(request *DescribeCertificateInfoByIDRequest) (response *DescribeCertificateInfoByIDResponse, err error) {
 	response = CreateDescribeCertificateInfoByIDResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCertificateInfoByID(request *DescribeCertificateIn
 }
 
 // DescribeCertificateInfoByIDWithChan invokes the cdn.DescribeCertificateInfoByID API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describecertificateinfobyid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCertificateInfoByIDWithChan(request *DescribeCertificateInfoByIDRequest) (<-chan *DescribeCertificateInfoByIDResponse, <-chan error) {
 	responseChan := make(chan *DescribeCertificateInfoByIDResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCertificateInfoByIDWithChan(request *DescribeCerti
 }
 
 // DescribeCertificateInfoByIDWithCallback invokes the cdn.DescribeCertificateInfoByID API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describecertificateinfobyid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCertificateInfoByIDWithCallback(request *DescribeCertificateInfoByIDRequest, callback func(response *DescribeCertificateInfoByIDResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

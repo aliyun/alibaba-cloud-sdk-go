@@ -21,7 +21,6 @@ import (
 )
 
 // StopCdnDomain invokes the cdn.StopCdnDomain API synchronously
-// api document: https://help.aliyun.com/api/cdn/stopcdndomain.html
 func (client *Client) StopCdnDomain(request *StopCdnDomainRequest) (response *StopCdnDomainResponse, err error) {
 	response = CreateStopCdnDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopCdnDomain(request *StopCdnDomainRequest) (response *St
 }
 
 // StopCdnDomainWithChan invokes the cdn.StopCdnDomain API asynchronously
-// api document: https://help.aliyun.com/api/cdn/stopcdndomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopCdnDomainWithChan(request *StopCdnDomainRequest) (<-chan *StopCdnDomainResponse, <-chan error) {
 	responseChan := make(chan *StopCdnDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopCdnDomainWithChan(request *StopCdnDomainRequest) (<-ch
 }
 
 // StopCdnDomainWithCallback invokes the cdn.StopCdnDomain API asynchronously
-// api document: https://help.aliyun.com/api/cdn/stopcdndomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopCdnDomainWithCallback(request *StopCdnDomainRequest, callback func(response *StopCdnDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

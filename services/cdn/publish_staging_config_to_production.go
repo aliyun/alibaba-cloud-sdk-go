@@ -21,7 +21,6 @@ import (
 )
 
 // PublishStagingConfigToProduction invokes the cdn.PublishStagingConfigToProduction API synchronously
-// api document: https://help.aliyun.com/api/cdn/publishstagingconfigtoproduction.html
 func (client *Client) PublishStagingConfigToProduction(request *PublishStagingConfigToProductionRequest) (response *PublishStagingConfigToProductionResponse, err error) {
 	response = CreatePublishStagingConfigToProductionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PublishStagingConfigToProduction(request *PublishStagingCo
 }
 
 // PublishStagingConfigToProductionWithChan invokes the cdn.PublishStagingConfigToProduction API asynchronously
-// api document: https://help.aliyun.com/api/cdn/publishstagingconfigtoproduction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PublishStagingConfigToProductionWithChan(request *PublishStagingConfigToProductionRequest) (<-chan *PublishStagingConfigToProductionResponse, <-chan error) {
 	responseChan := make(chan *PublishStagingConfigToProductionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PublishStagingConfigToProductionWithChan(request *PublishS
 }
 
 // PublishStagingConfigToProductionWithCallback invokes the cdn.PublishStagingConfigToProduction API asynchronously
-// api document: https://help.aliyun.com/api/cdn/publishstagingconfigtoproduction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PublishStagingConfigToProductionWithCallback(request *PublishStagingConfigToProductionRequest, callback func(response *PublishStagingConfigToProductionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

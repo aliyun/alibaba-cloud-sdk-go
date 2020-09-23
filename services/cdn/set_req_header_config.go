@@ -21,7 +21,6 @@ import (
 )
 
 // SetReqHeaderConfig invokes the cdn.SetReqHeaderConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/setreqheaderconfig.html
 func (client *Client) SetReqHeaderConfig(request *SetReqHeaderConfigRequest) (response *SetReqHeaderConfigResponse, err error) {
 	response = CreateSetReqHeaderConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetReqHeaderConfig(request *SetReqHeaderConfigRequest) (re
 }
 
 // SetReqHeaderConfigWithChan invokes the cdn.SetReqHeaderConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setreqheaderconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetReqHeaderConfigWithChan(request *SetReqHeaderConfigRequest) (<-chan *SetReqHeaderConfigResponse, <-chan error) {
 	responseChan := make(chan *SetReqHeaderConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetReqHeaderConfigWithChan(request *SetReqHeaderConfigRequ
 }
 
 // SetReqHeaderConfigWithCallback invokes the cdn.SetReqHeaderConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setreqheaderconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetReqHeaderConfigWithCallback(request *SetReqHeaderConfigRequest, callback func(response *SetReqHeaderConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

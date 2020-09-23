@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeActiveVersionOfConfigGroup invokes the cdn.DescribeActiveVersionOfConfigGroup API synchronously
-// api document: https://help.aliyun.com/api/cdn/describeactiveversionofconfiggroup.html
 func (client *Client) DescribeActiveVersionOfConfigGroup(request *DescribeActiveVersionOfConfigGroupRequest) (response *DescribeActiveVersionOfConfigGroupResponse, err error) {
 	response = CreateDescribeActiveVersionOfConfigGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeActiveVersionOfConfigGroup(request *DescribeActive
 }
 
 // DescribeActiveVersionOfConfigGroupWithChan invokes the cdn.DescribeActiveVersionOfConfigGroup API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describeactiveversionofconfiggroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeActiveVersionOfConfigGroupWithChan(request *DescribeActiveVersionOfConfigGroupRequest) (<-chan *DescribeActiveVersionOfConfigGroupResponse, <-chan error) {
 	responseChan := make(chan *DescribeActiveVersionOfConfigGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeActiveVersionOfConfigGroupWithChan(request *Descri
 }
 
 // DescribeActiveVersionOfConfigGroupWithCallback invokes the cdn.DescribeActiveVersionOfConfigGroup API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describeactiveversionofconfiggroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeActiveVersionOfConfigGroupWithCallback(request *DescribeActiveVersionOfConfigGroupRequest, callback func(response *DescribeActiveVersionOfConfigGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

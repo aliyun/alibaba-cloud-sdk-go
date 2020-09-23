@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCdnUserBillPrediction invokes the cdn.DescribeCdnUserBillPrediction API synchronously
-// api document: https://help.aliyun.com/api/cdn/describecdnuserbillprediction.html
 func (client *Client) DescribeCdnUserBillPrediction(request *DescribeCdnUserBillPredictionRequest) (response *DescribeCdnUserBillPredictionResponse, err error) {
 	response = CreateDescribeCdnUserBillPredictionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCdnUserBillPrediction(request *DescribeCdnUserBill
 }
 
 // DescribeCdnUserBillPredictionWithChan invokes the cdn.DescribeCdnUserBillPrediction API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describecdnuserbillprediction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnUserBillPredictionWithChan(request *DescribeCdnUserBillPredictionRequest) (<-chan *DescribeCdnUserBillPredictionResponse, <-chan error) {
 	responseChan := make(chan *DescribeCdnUserBillPredictionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCdnUserBillPredictionWithChan(request *DescribeCdn
 }
 
 // DescribeCdnUserBillPredictionWithCallback invokes the cdn.DescribeCdnUserBillPrediction API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describecdnuserbillprediction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnUserBillPredictionWithCallback(request *DescribeCdnUserBillPredictionRequest, callback func(response *DescribeCdnUserBillPredictionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

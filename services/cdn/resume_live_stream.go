@@ -21,7 +21,6 @@ import (
 )
 
 // ResumeLiveStream invokes the cdn.ResumeLiveStream API synchronously
-// api document: https://help.aliyun.com/api/cdn/resumelivestream.html
 func (client *Client) ResumeLiveStream(request *ResumeLiveStreamRequest) (response *ResumeLiveStreamResponse, err error) {
 	response = CreateResumeLiveStreamResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResumeLiveStream(request *ResumeLiveStreamRequest) (respon
 }
 
 // ResumeLiveStreamWithChan invokes the cdn.ResumeLiveStream API asynchronously
-// api document: https://help.aliyun.com/api/cdn/resumelivestream.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeLiveStreamWithChan(request *ResumeLiveStreamRequest) (<-chan *ResumeLiveStreamResponse, <-chan error) {
 	responseChan := make(chan *ResumeLiveStreamResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResumeLiveStreamWithChan(request *ResumeLiveStreamRequest)
 }
 
 // ResumeLiveStreamWithCallback invokes the cdn.ResumeLiveStream API asynchronously
-// api document: https://help.aliyun.com/api/cdn/resumelivestream.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeLiveStreamWithCallback(request *ResumeLiveStreamRequest, callback func(response *ResumeLiveStreamResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

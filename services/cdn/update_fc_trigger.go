@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateFCTrigger invokes the cdn.UpdateFCTrigger API synchronously
-// api document: https://help.aliyun.com/api/cdn/updatefctrigger.html
 func (client *Client) UpdateFCTrigger(request *UpdateFCTriggerRequest) (response *UpdateFCTriggerResponse, err error) {
 	response = CreateUpdateFCTriggerResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateFCTrigger(request *UpdateFCTriggerRequest) (response
 }
 
 // UpdateFCTriggerWithChan invokes the cdn.UpdateFCTrigger API asynchronously
-// api document: https://help.aliyun.com/api/cdn/updatefctrigger.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateFCTriggerWithChan(request *UpdateFCTriggerRequest) (<-chan *UpdateFCTriggerResponse, <-chan error) {
 	responseChan := make(chan *UpdateFCTriggerResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateFCTriggerWithChan(request *UpdateFCTriggerRequest) (
 }
 
 // UpdateFCTriggerWithCallback invokes the cdn.UpdateFCTrigger API asynchronously
-// api document: https://help.aliyun.com/api/cdn/updatefctrigger.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateFCTriggerWithCallback(request *UpdateFCTriggerRequest, callback func(response *UpdateFCTriggerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

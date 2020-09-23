@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainPvData invokes the cdn.DescribeDomainPvData API synchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainpvdata.html
 func (client *Client) DescribeDomainPvData(request *DescribeDomainPvDataRequest) (response *DescribeDomainPvDataResponse, err error) {
 	response = CreateDescribeDomainPvDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainPvData(request *DescribeDomainPvDataRequest)
 }
 
 // DescribeDomainPvDataWithChan invokes the cdn.DescribeDomainPvData API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainpvdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainPvDataWithChan(request *DescribeDomainPvDataRequest) (<-chan *DescribeDomainPvDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainPvDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainPvDataWithChan(request *DescribeDomainPvData
 }
 
 // DescribeDomainPvDataWithCallback invokes the cdn.DescribeDomainPvData API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainpvdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainPvDataWithCallback(request *DescribeDomainPvDataRequest, callback func(response *DescribeDomainPvDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

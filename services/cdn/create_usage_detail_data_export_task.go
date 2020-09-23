@@ -21,7 +21,6 @@ import (
 )
 
 // CreateUsageDetailDataExportTask invokes the cdn.CreateUsageDetailDataExportTask API synchronously
-// api document: https://help.aliyun.com/api/cdn/createusagedetaildataexporttask.html
 func (client *Client) CreateUsageDetailDataExportTask(request *CreateUsageDetailDataExportTaskRequest) (response *CreateUsageDetailDataExportTaskResponse, err error) {
 	response = CreateCreateUsageDetailDataExportTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateUsageDetailDataExportTask(request *CreateUsageDetail
 }
 
 // CreateUsageDetailDataExportTaskWithChan invokes the cdn.CreateUsageDetailDataExportTask API asynchronously
-// api document: https://help.aliyun.com/api/cdn/createusagedetaildataexporttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUsageDetailDataExportTaskWithChan(request *CreateUsageDetailDataExportTaskRequest) (<-chan *CreateUsageDetailDataExportTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateUsageDetailDataExportTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateUsageDetailDataExportTaskWithChan(request *CreateUsa
 }
 
 // CreateUsageDetailDataExportTaskWithCallback invokes the cdn.CreateUsageDetailDataExportTask API asynchronously
-// api document: https://help.aliyun.com/api/cdn/createusagedetaildataexporttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUsageDetailDataExportTaskWithCallback(request *CreateUsageDetailDataExportTaskRequest, callback func(response *CreateUsageDetailDataExportTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

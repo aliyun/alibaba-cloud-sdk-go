@@ -21,7 +21,6 @@ import (
 )
 
 // SetL2OssKeyConfig invokes the cdn.SetL2OssKeyConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/setl2osskeyconfig.html
 func (client *Client) SetL2OssKeyConfig(request *SetL2OssKeyConfigRequest) (response *SetL2OssKeyConfigResponse, err error) {
 	response = CreateSetL2OssKeyConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetL2OssKeyConfig(request *SetL2OssKeyConfigRequest) (resp
 }
 
 // SetL2OssKeyConfigWithChan invokes the cdn.SetL2OssKeyConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setl2osskeyconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetL2OssKeyConfigWithChan(request *SetL2OssKeyConfigRequest) (<-chan *SetL2OssKeyConfigResponse, <-chan error) {
 	responseChan := make(chan *SetL2OssKeyConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetL2OssKeyConfigWithChan(request *SetL2OssKeyConfigReques
 }
 
 // SetL2OssKeyConfigWithCallback invokes the cdn.SetL2OssKeyConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setl2osskeyconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetL2OssKeyConfigWithCallback(request *SetL2OssKeyConfigRequest, callback func(response *SetL2OssKeyConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

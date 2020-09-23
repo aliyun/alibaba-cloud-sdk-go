@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainTrafficData invokes the cdn.DescribeDomainTrafficData API synchronously
-// api document: https://help.aliyun.com/api/cdn/describedomaintrafficdata.html
 func (client *Client) DescribeDomainTrafficData(request *DescribeDomainTrafficDataRequest) (response *DescribeDomainTrafficDataResponse, err error) {
 	response = CreateDescribeDomainTrafficDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainTrafficData(request *DescribeDomainTrafficDa
 }
 
 // DescribeDomainTrafficDataWithChan invokes the cdn.DescribeDomainTrafficData API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomaintrafficdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainTrafficDataWithChan(request *DescribeDomainTrafficDataRequest) (<-chan *DescribeDomainTrafficDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainTrafficDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainTrafficDataWithChan(request *DescribeDomainT
 }
 
 // DescribeDomainTrafficDataWithCallback invokes the cdn.DescribeDomainTrafficData API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomaintrafficdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainTrafficDataWithCallback(request *DescribeDomainTrafficDataRequest, callback func(response *DescribeDomainTrafficDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

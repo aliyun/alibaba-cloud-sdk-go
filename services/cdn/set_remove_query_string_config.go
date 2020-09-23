@@ -21,7 +21,6 @@ import (
 )
 
 // SetRemoveQueryStringConfig invokes the cdn.SetRemoveQueryStringConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/setremovequerystringconfig.html
 func (client *Client) SetRemoveQueryStringConfig(request *SetRemoveQueryStringConfigRequest) (response *SetRemoveQueryStringConfigResponse, err error) {
 	response = CreateSetRemoveQueryStringConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetRemoveQueryStringConfig(request *SetRemoveQueryStringCo
 }
 
 // SetRemoveQueryStringConfigWithChan invokes the cdn.SetRemoveQueryStringConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setremovequerystringconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRemoveQueryStringConfigWithChan(request *SetRemoveQueryStringConfigRequest) (<-chan *SetRemoveQueryStringConfigResponse, <-chan error) {
 	responseChan := make(chan *SetRemoveQueryStringConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetRemoveQueryStringConfigWithChan(request *SetRemoveQuery
 }
 
 // SetRemoveQueryStringConfigWithCallback invokes the cdn.SetRemoveQueryStringConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setremovequerystringconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRemoveQueryStringConfigWithCallback(request *SetRemoveQueryStringConfigRequest, callback func(response *SetRemoveQueryStringConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

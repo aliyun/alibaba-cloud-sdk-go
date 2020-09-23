@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainQpsDataByLayer invokes the cdn.DescribeDomainQpsDataByLayer API synchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainqpsdatabylayer.html
 func (client *Client) DescribeDomainQpsDataByLayer(request *DescribeDomainQpsDataByLayerRequest) (response *DescribeDomainQpsDataByLayerResponse, err error) {
 	response = CreateDescribeDomainQpsDataByLayerResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainQpsDataByLayer(request *DescribeDomainQpsDat
 }
 
 // DescribeDomainQpsDataByLayerWithChan invokes the cdn.DescribeDomainQpsDataByLayer API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainqpsdatabylayer.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainQpsDataByLayerWithChan(request *DescribeDomainQpsDataByLayerRequest) (<-chan *DescribeDomainQpsDataByLayerResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainQpsDataByLayerResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainQpsDataByLayerWithChan(request *DescribeDoma
 }
 
 // DescribeDomainQpsDataByLayerWithCallback invokes the cdn.DescribeDomainQpsDataByLayer API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainqpsdatabylayer.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainQpsDataByLayerWithCallback(request *DescribeDomainQpsDataByLayerRequest, callback func(response *DescribeDomainQpsDataByLayerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

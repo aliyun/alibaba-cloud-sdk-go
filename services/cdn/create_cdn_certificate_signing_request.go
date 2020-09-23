@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCdnCertificateSigningRequest invokes the cdn.CreateCdnCertificateSigningRequest API synchronously
-// api document: https://help.aliyun.com/api/cdn/createcdncertificatesigningrequest.html
 func (client *Client) CreateCdnCertificateSigningRequest(request *CreateCdnCertificateSigningRequestRequest) (response *CreateCdnCertificateSigningRequestResponse, err error) {
 	response = CreateCreateCdnCertificateSigningRequestResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCdnCertificateSigningRequest(request *CreateCdnCerti
 }
 
 // CreateCdnCertificateSigningRequestWithChan invokes the cdn.CreateCdnCertificateSigningRequest API asynchronously
-// api document: https://help.aliyun.com/api/cdn/createcdncertificatesigningrequest.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCdnCertificateSigningRequestWithChan(request *CreateCdnCertificateSigningRequestRequest) (<-chan *CreateCdnCertificateSigningRequestResponse, <-chan error) {
 	responseChan := make(chan *CreateCdnCertificateSigningRequestResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateCdnCertificateSigningRequestWithChan(request *Create
 }
 
 // CreateCdnCertificateSigningRequestWithCallback invokes the cdn.CreateCdnCertificateSigningRequest API asynchronously
-// api document: https://help.aliyun.com/api/cdn/createcdncertificatesigningrequest.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCdnCertificateSigningRequestWithCallback(request *CreateCdnCertificateSigningRequestRequest, callback func(response *CreateCdnCertificateSigningRequestResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

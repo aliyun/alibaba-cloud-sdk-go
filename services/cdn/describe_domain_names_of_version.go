@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainNamesOfVersion invokes the cdn.DescribeDomainNamesOfVersion API synchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainnamesofversion.html
 func (client *Client) DescribeDomainNamesOfVersion(request *DescribeDomainNamesOfVersionRequest) (response *DescribeDomainNamesOfVersionResponse, err error) {
 	response = CreateDescribeDomainNamesOfVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainNamesOfVersion(request *DescribeDomainNamesO
 }
 
 // DescribeDomainNamesOfVersionWithChan invokes the cdn.DescribeDomainNamesOfVersion API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainnamesofversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainNamesOfVersionWithChan(request *DescribeDomainNamesOfVersionRequest) (<-chan *DescribeDomainNamesOfVersionResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainNamesOfVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainNamesOfVersionWithChan(request *DescribeDoma
 }
 
 // DescribeDomainNamesOfVersionWithCallback invokes the cdn.DescribeDomainNamesOfVersion API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainnamesofversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainNamesOfVersionWithCallback(request *DescribeDomainNamesOfVersionRequest, callback func(response *DescribeDomainNamesOfVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

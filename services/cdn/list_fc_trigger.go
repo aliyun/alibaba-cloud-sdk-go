@@ -21,7 +21,6 @@ import (
 )
 
 // ListFCTrigger invokes the cdn.ListFCTrigger API synchronously
-// api document: https://help.aliyun.com/api/cdn/listfctrigger.html
 func (client *Client) ListFCTrigger(request *ListFCTriggerRequest) (response *ListFCTriggerResponse, err error) {
 	response = CreateListFCTriggerResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFCTrigger(request *ListFCTriggerRequest) (response *Li
 }
 
 // ListFCTriggerWithChan invokes the cdn.ListFCTrigger API asynchronously
-// api document: https://help.aliyun.com/api/cdn/listfctrigger.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFCTriggerWithChan(request *ListFCTriggerRequest) (<-chan *ListFCTriggerResponse, <-chan error) {
 	responseChan := make(chan *ListFCTriggerResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFCTriggerWithChan(request *ListFCTriggerRequest) (<-ch
 }
 
 // ListFCTriggerWithCallback invokes the cdn.ListFCTrigger API asynchronously
-// api document: https://help.aliyun.com/api/cdn/listfctrigger.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFCTriggerWithCallback(request *ListFCTriggerRequest, callback func(response *ListFCTriggerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // SetVideoSeekConfig invokes the cdn.SetVideoSeekConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/setvideoseekconfig.html
 func (client *Client) SetVideoSeekConfig(request *SetVideoSeekConfigRequest) (response *SetVideoSeekConfigResponse, err error) {
 	response = CreateSetVideoSeekConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetVideoSeekConfig(request *SetVideoSeekConfigRequest) (re
 }
 
 // SetVideoSeekConfigWithChan invokes the cdn.SetVideoSeekConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setvideoseekconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetVideoSeekConfigWithChan(request *SetVideoSeekConfigRequest) (<-chan *SetVideoSeekConfigResponse, <-chan error) {
 	responseChan := make(chan *SetVideoSeekConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetVideoSeekConfigWithChan(request *SetVideoSeekConfigRequ
 }
 
 // SetVideoSeekConfigWithCallback invokes the cdn.SetVideoSeekConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setvideoseekconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetVideoSeekConfigWithCallback(request *SetVideoSeekConfigRequest, callback func(response *SetVideoSeekConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

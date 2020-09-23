@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainISPData invokes the cdn.DescribeDomainISPData API synchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainispdata.html
 func (client *Client) DescribeDomainISPData(request *DescribeDomainISPDataRequest) (response *DescribeDomainISPDataResponse, err error) {
 	response = CreateDescribeDomainISPDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainISPData(request *DescribeDomainISPDataReques
 }
 
 // DescribeDomainISPDataWithChan invokes the cdn.DescribeDomainISPData API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainispdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainISPDataWithChan(request *DescribeDomainISPDataRequest) (<-chan *DescribeDomainISPDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainISPDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainISPDataWithChan(request *DescribeDomainISPDa
 }
 
 // DescribeDomainISPDataWithCallback invokes the cdn.DescribeDomainISPData API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainispdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainISPDataWithCallback(request *DescribeDomainISPDataRequest, callback func(response *DescribeDomainISPDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

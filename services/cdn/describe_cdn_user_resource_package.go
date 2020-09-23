@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCdnUserResourcePackage invokes the cdn.DescribeCdnUserResourcePackage API synchronously
-// api document: https://help.aliyun.com/api/cdn/describecdnuserresourcepackage.html
 func (client *Client) DescribeCdnUserResourcePackage(request *DescribeCdnUserResourcePackageRequest) (response *DescribeCdnUserResourcePackageResponse, err error) {
 	response = CreateDescribeCdnUserResourcePackageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCdnUserResourcePackage(request *DescribeCdnUserRes
 }
 
 // DescribeCdnUserResourcePackageWithChan invokes the cdn.DescribeCdnUserResourcePackage API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describecdnuserresourcepackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnUserResourcePackageWithChan(request *DescribeCdnUserResourcePackageRequest) (<-chan *DescribeCdnUserResourcePackageResponse, <-chan error) {
 	responseChan := make(chan *DescribeCdnUserResourcePackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCdnUserResourcePackageWithChan(request *DescribeCd
 }
 
 // DescribeCdnUserResourcePackageWithCallback invokes the cdn.DescribeCdnUserResourcePackage API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describecdnuserresourcepackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnUserResourcePackageWithCallback(request *DescribeCdnUserResourcePackageRequest, callback func(response *DescribeCdnUserResourcePackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // RollbackStagingConfig invokes the cdn.RollbackStagingConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/rollbackstagingconfig.html
 func (client *Client) RollbackStagingConfig(request *RollbackStagingConfigRequest) (response *RollbackStagingConfigResponse, err error) {
 	response = CreateRollbackStagingConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RollbackStagingConfig(request *RollbackStagingConfigReques
 }
 
 // RollbackStagingConfigWithChan invokes the cdn.RollbackStagingConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/rollbackstagingconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RollbackStagingConfigWithChan(request *RollbackStagingConfigRequest) (<-chan *RollbackStagingConfigResponse, <-chan error) {
 	responseChan := make(chan *RollbackStagingConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RollbackStagingConfigWithChan(request *RollbackStagingConf
 }
 
 // RollbackStagingConfigWithCallback invokes the cdn.RollbackStagingConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/rollbackstagingconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RollbackStagingConfigWithCallback(request *RollbackStagingConfigRequest, callback func(response *RollbackStagingConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

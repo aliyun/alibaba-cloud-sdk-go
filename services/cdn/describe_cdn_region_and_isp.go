@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCdnRegionAndIsp invokes the cdn.DescribeCdnRegionAndIsp API synchronously
-// api document: https://help.aliyun.com/api/cdn/describecdnregionandisp.html
 func (client *Client) DescribeCdnRegionAndIsp(request *DescribeCdnRegionAndIspRequest) (response *DescribeCdnRegionAndIspResponse, err error) {
 	response = CreateDescribeCdnRegionAndIspResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCdnRegionAndIsp(request *DescribeCdnRegionAndIspRe
 }
 
 // DescribeCdnRegionAndIspWithChan invokes the cdn.DescribeCdnRegionAndIsp API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describecdnregionandisp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnRegionAndIspWithChan(request *DescribeCdnRegionAndIspRequest) (<-chan *DescribeCdnRegionAndIspResponse, <-chan error) {
 	responseChan := make(chan *DescribeCdnRegionAndIspResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCdnRegionAndIspWithChan(request *DescribeCdnRegion
 }
 
 // DescribeCdnRegionAndIspWithCallback invokes the cdn.DescribeCdnRegionAndIsp API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describecdnregionandisp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnRegionAndIspWithCallback(request *DescribeCdnRegionAndIspRequest, callback func(response *DescribeCdnRegionAndIspResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

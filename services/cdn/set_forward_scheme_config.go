@@ -21,7 +21,6 @@ import (
 )
 
 // SetForwardSchemeConfig invokes the cdn.SetForwardSchemeConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/setforwardschemeconfig.html
 func (client *Client) SetForwardSchemeConfig(request *SetForwardSchemeConfigRequest) (response *SetForwardSchemeConfigResponse, err error) {
 	response = CreateSetForwardSchemeConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetForwardSchemeConfig(request *SetForwardSchemeConfigRequ
 }
 
 // SetForwardSchemeConfigWithChan invokes the cdn.SetForwardSchemeConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setforwardschemeconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetForwardSchemeConfigWithChan(request *SetForwardSchemeConfigRequest) (<-chan *SetForwardSchemeConfigResponse, <-chan error) {
 	responseChan := make(chan *SetForwardSchemeConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetForwardSchemeConfigWithChan(request *SetForwardSchemeCo
 }
 
 // SetForwardSchemeConfigWithCallback invokes the cdn.SetForwardSchemeConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setforwardschemeconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetForwardSchemeConfigWithCallback(request *SetForwardSchemeConfigRequest, callback func(response *SetForwardSchemeConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ListDomainsByLogConfigId invokes the cdn.ListDomainsByLogConfigId API synchronously
-// api document: https://help.aliyun.com/api/cdn/listdomainsbylogconfigid.html
 func (client *Client) ListDomainsByLogConfigId(request *ListDomainsByLogConfigIdRequest) (response *ListDomainsByLogConfigIdResponse, err error) {
 	response = CreateListDomainsByLogConfigIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDomainsByLogConfigId(request *ListDomainsByLogConfigId
 }
 
 // ListDomainsByLogConfigIdWithChan invokes the cdn.ListDomainsByLogConfigId API asynchronously
-// api document: https://help.aliyun.com/api/cdn/listdomainsbylogconfigid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDomainsByLogConfigIdWithChan(request *ListDomainsByLogConfigIdRequest) (<-chan *ListDomainsByLogConfigIdResponse, <-chan error) {
 	responseChan := make(chan *ListDomainsByLogConfigIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDomainsByLogConfigIdWithChan(request *ListDomainsByLog
 }
 
 // ListDomainsByLogConfigIdWithCallback invokes the cdn.ListDomainsByLogConfigId API asynchronously
-// api document: https://help.aliyun.com/api/cdn/listdomainsbylogconfigid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDomainsByLogConfigIdWithCallback(request *ListDomainsByLogConfigIdRequest, callback func(response *ListDomainsByLogConfigIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

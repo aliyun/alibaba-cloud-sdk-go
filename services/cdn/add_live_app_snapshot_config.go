@@ -21,7 +21,6 @@ import (
 )
 
 // AddLiveAppSnapshotConfig invokes the cdn.AddLiveAppSnapshotConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/addliveappsnapshotconfig.html
 func (client *Client) AddLiveAppSnapshotConfig(request *AddLiveAppSnapshotConfigRequest) (response *AddLiveAppSnapshotConfigResponse, err error) {
 	response = CreateAddLiveAppSnapshotConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddLiveAppSnapshotConfig(request *AddLiveAppSnapshotConfig
 }
 
 // AddLiveAppSnapshotConfigWithChan invokes the cdn.AddLiveAppSnapshotConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/addliveappsnapshotconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveAppSnapshotConfigWithChan(request *AddLiveAppSnapshotConfigRequest) (<-chan *AddLiveAppSnapshotConfigResponse, <-chan error) {
 	responseChan := make(chan *AddLiveAppSnapshotConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddLiveAppSnapshotConfigWithChan(request *AddLiveAppSnapsh
 }
 
 // AddLiveAppSnapshotConfigWithCallback invokes the cdn.AddLiveAppSnapshotConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/addliveappsnapshotconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveAppSnapshotConfigWithCallback(request *AddLiveAppSnapshotConfigRequest, callback func(response *AddLiveAppSnapshotConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

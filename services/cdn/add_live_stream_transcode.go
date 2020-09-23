@@ -21,7 +21,6 @@ import (
 )
 
 // AddLiveStreamTranscode invokes the cdn.AddLiveStreamTranscode API synchronously
-// api document: https://help.aliyun.com/api/cdn/addlivestreamtranscode.html
 func (client *Client) AddLiveStreamTranscode(request *AddLiveStreamTranscodeRequest) (response *AddLiveStreamTranscodeResponse, err error) {
 	response = CreateAddLiveStreamTranscodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddLiveStreamTranscode(request *AddLiveStreamTranscodeRequ
 }
 
 // AddLiveStreamTranscodeWithChan invokes the cdn.AddLiveStreamTranscode API asynchronously
-// api document: https://help.aliyun.com/api/cdn/addlivestreamtranscode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveStreamTranscodeWithChan(request *AddLiveStreamTranscodeRequest) (<-chan *AddLiveStreamTranscodeResponse, <-chan error) {
 	responseChan := make(chan *AddLiveStreamTranscodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddLiveStreamTranscodeWithChan(request *AddLiveStreamTrans
 }
 
 // AddLiveStreamTranscodeWithCallback invokes the cdn.AddLiveStreamTranscode API asynchronously
-// api document: https://help.aliyun.com/api/cdn/addlivestreamtranscode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveStreamTranscodeWithCallback(request *AddLiveStreamTranscodeRequest, callback func(response *AddLiveStreamTranscodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

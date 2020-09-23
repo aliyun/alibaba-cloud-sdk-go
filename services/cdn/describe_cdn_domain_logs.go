@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCdnDomainLogs invokes the cdn.DescribeCdnDomainLogs API synchronously
-// api document: https://help.aliyun.com/api/cdn/describecdndomainlogs.html
 func (client *Client) DescribeCdnDomainLogs(request *DescribeCdnDomainLogsRequest) (response *DescribeCdnDomainLogsResponse, err error) {
 	response = CreateDescribeCdnDomainLogsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCdnDomainLogs(request *DescribeCdnDomainLogsReques
 }
 
 // DescribeCdnDomainLogsWithChan invokes the cdn.DescribeCdnDomainLogs API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describecdndomainlogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnDomainLogsWithChan(request *DescribeCdnDomainLogsRequest) (<-chan *DescribeCdnDomainLogsResponse, <-chan error) {
 	responseChan := make(chan *DescribeCdnDomainLogsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCdnDomainLogsWithChan(request *DescribeCdnDomainLo
 }
 
 // DescribeCdnDomainLogsWithCallback invokes the cdn.DescribeCdnDomainLogs API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describecdndomainlogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnDomainLogsWithCallback(request *DescribeCdnDomainLogsRequest, callback func(response *DescribeCdnDomainLogsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

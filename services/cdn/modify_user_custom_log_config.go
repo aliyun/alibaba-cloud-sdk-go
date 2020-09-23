@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyUserCustomLogConfig invokes the cdn.ModifyUserCustomLogConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/modifyusercustomlogconfig.html
 func (client *Client) ModifyUserCustomLogConfig(request *ModifyUserCustomLogConfigRequest) (response *ModifyUserCustomLogConfigResponse, err error) {
 	response = CreateModifyUserCustomLogConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyUserCustomLogConfig(request *ModifyUserCustomLogConf
 }
 
 // ModifyUserCustomLogConfigWithChan invokes the cdn.ModifyUserCustomLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/modifyusercustomlogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserCustomLogConfigWithChan(request *ModifyUserCustomLogConfigRequest) (<-chan *ModifyUserCustomLogConfigResponse, <-chan error) {
 	responseChan := make(chan *ModifyUserCustomLogConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyUserCustomLogConfigWithChan(request *ModifyUserCusto
 }
 
 // ModifyUserCustomLogConfigWithCallback invokes the cdn.ModifyUserCustomLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/modifyusercustomlogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserCustomLogConfigWithCallback(request *ModifyUserCustomLogConfigRequest, callback func(response *ModifyUserCustomLogConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

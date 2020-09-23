@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUserVipsByDomain invokes the cdn.DescribeUserVipsByDomain API synchronously
-// api document: https://help.aliyun.com/api/cdn/describeuservipsbydomain.html
 func (client *Client) DescribeUserVipsByDomain(request *DescribeUserVipsByDomainRequest) (response *DescribeUserVipsByDomainResponse, err error) {
 	response = CreateDescribeUserVipsByDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUserVipsByDomain(request *DescribeUserVipsByDomain
 }
 
 // DescribeUserVipsByDomainWithChan invokes the cdn.DescribeUserVipsByDomain API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describeuservipsbydomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserVipsByDomainWithChan(request *DescribeUserVipsByDomainRequest) (<-chan *DescribeUserVipsByDomainResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserVipsByDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUserVipsByDomainWithChan(request *DescribeUserVips
 }
 
 // DescribeUserVipsByDomainWithCallback invokes the cdn.DescribeUserVipsByDomain API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describeuservipsbydomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserVipsByDomainWithCallback(request *DescribeUserVipsByDomainRequest, callback func(response *DescribeUserVipsByDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

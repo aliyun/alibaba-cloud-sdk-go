@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteHttpHeaderConfig invokes the cdn.DeleteHttpHeaderConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/deletehttpheaderconfig.html
 func (client *Client) DeleteHttpHeaderConfig(request *DeleteHttpHeaderConfigRequest) (response *DeleteHttpHeaderConfigResponse, err error) {
 	response = CreateDeleteHttpHeaderConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteHttpHeaderConfig(request *DeleteHttpHeaderConfigRequ
 }
 
 // DeleteHttpHeaderConfigWithChan invokes the cdn.DeleteHttpHeaderConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/deletehttpheaderconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHttpHeaderConfigWithChan(request *DeleteHttpHeaderConfigRequest) (<-chan *DeleteHttpHeaderConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteHttpHeaderConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteHttpHeaderConfigWithChan(request *DeleteHttpHeaderCo
 }
 
 // DeleteHttpHeaderConfigWithCallback invokes the cdn.DeleteHttpHeaderConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/deletehttpheaderconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHttpHeaderConfigWithCallback(request *DeleteHttpHeaderConfigRequest, callback func(response *DeleteHttpHeaderConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

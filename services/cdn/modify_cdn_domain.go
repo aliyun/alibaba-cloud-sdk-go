@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyCdnDomain invokes the cdn.ModifyCdnDomain API synchronously
-// api document: https://help.aliyun.com/api/cdn/modifycdndomain.html
 func (client *Client) ModifyCdnDomain(request *ModifyCdnDomainRequest) (response *ModifyCdnDomainResponse, err error) {
 	response = CreateModifyCdnDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyCdnDomain(request *ModifyCdnDomainRequest) (response
 }
 
 // ModifyCdnDomainWithChan invokes the cdn.ModifyCdnDomain API asynchronously
-// api document: https://help.aliyun.com/api/cdn/modifycdndomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCdnDomainWithChan(request *ModifyCdnDomainRequest) (<-chan *ModifyCdnDomainResponse, <-chan error) {
 	responseChan := make(chan *ModifyCdnDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyCdnDomainWithChan(request *ModifyCdnDomainRequest) (
 }
 
 // ModifyCdnDomainWithCallback invokes the cdn.ModifyCdnDomain API asynchronously
-// api document: https://help.aliyun.com/api/cdn/modifycdndomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCdnDomainWithCallback(request *ModifyCdnDomainRequest, callback func(response *ModifyCdnDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

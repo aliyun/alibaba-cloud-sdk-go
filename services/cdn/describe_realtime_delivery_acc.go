@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRealtimeDeliveryAcc invokes the cdn.DescribeRealtimeDeliveryAcc API synchronously
-// api document: https://help.aliyun.com/api/cdn/describerealtimedeliveryacc.html
 func (client *Client) DescribeRealtimeDeliveryAcc(request *DescribeRealtimeDeliveryAccRequest) (response *DescribeRealtimeDeliveryAccResponse, err error) {
 	response = CreateDescribeRealtimeDeliveryAccResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRealtimeDeliveryAcc(request *DescribeRealtimeDeliv
 }
 
 // DescribeRealtimeDeliveryAccWithChan invokes the cdn.DescribeRealtimeDeliveryAcc API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describerealtimedeliveryacc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRealtimeDeliveryAccWithChan(request *DescribeRealtimeDeliveryAccRequest) (<-chan *DescribeRealtimeDeliveryAccResponse, <-chan error) {
 	responseChan := make(chan *DescribeRealtimeDeliveryAccResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRealtimeDeliveryAccWithChan(request *DescribeRealt
 }
 
 // DescribeRealtimeDeliveryAccWithCallback invokes the cdn.DescribeRealtimeDeliveryAcc API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describerealtimedeliveryacc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRealtimeDeliveryAccWithCallback(request *DescribeRealtimeDeliveryAccRequest, callback func(response *DescribeRealtimeDeliveryAccResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

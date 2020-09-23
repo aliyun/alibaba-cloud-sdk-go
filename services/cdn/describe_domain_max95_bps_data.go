@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainMax95BpsData invokes the cdn.DescribeDomainMax95BpsData API synchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainmax95bpsdata.html
 func (client *Client) DescribeDomainMax95BpsData(request *DescribeDomainMax95BpsDataRequest) (response *DescribeDomainMax95BpsDataResponse, err error) {
 	response = CreateDescribeDomainMax95BpsDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainMax95BpsData(request *DescribeDomainMax95Bps
 }
 
 // DescribeDomainMax95BpsDataWithChan invokes the cdn.DescribeDomainMax95BpsData API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainmax95bpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainMax95BpsDataWithChan(request *DescribeDomainMax95BpsDataRequest) (<-chan *DescribeDomainMax95BpsDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainMax95BpsDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainMax95BpsDataWithChan(request *DescribeDomain
 }
 
 // DescribeDomainMax95BpsDataWithCallback invokes the cdn.DescribeDomainMax95BpsData API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainmax95bpsdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainMax95BpsDataWithCallback(request *DescribeDomainMax95BpsDataRequest, callback func(response *DescribeDomainMax95BpsDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

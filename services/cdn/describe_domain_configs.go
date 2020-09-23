@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainConfigs invokes the cdn.DescribeDomainConfigs API synchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainconfigs.html
 func (client *Client) DescribeDomainConfigs(request *DescribeDomainConfigsRequest) (response *DescribeDomainConfigsResponse, err error) {
 	response = CreateDescribeDomainConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainConfigs(request *DescribeDomainConfigsReques
 }
 
 // DescribeDomainConfigsWithChan invokes the cdn.DescribeDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainConfigsWithChan(request *DescribeDomainConfigsRequest) (<-chan *DescribeDomainConfigsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainConfigsWithChan(request *DescribeDomainConfi
 }
 
 // DescribeDomainConfigsWithCallback invokes the cdn.DescribeDomainConfigs API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainConfigsWithCallback(request *DescribeDomainConfigsRequest, callback func(response *DescribeDomainConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

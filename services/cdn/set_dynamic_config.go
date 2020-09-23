@@ -21,7 +21,6 @@ import (
 )
 
 // SetDynamicConfig invokes the cdn.SetDynamicConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/setdynamicconfig.html
 func (client *Client) SetDynamicConfig(request *SetDynamicConfigRequest) (response *SetDynamicConfigResponse, err error) {
 	response = CreateSetDynamicConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetDynamicConfig(request *SetDynamicConfigRequest) (respon
 }
 
 // SetDynamicConfigWithChan invokes the cdn.SetDynamicConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setdynamicconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDynamicConfigWithChan(request *SetDynamicConfigRequest) (<-chan *SetDynamicConfigResponse, <-chan error) {
 	responseChan := make(chan *SetDynamicConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetDynamicConfigWithChan(request *SetDynamicConfigRequest)
 }
 
 // SetDynamicConfigWithCallback invokes the cdn.SetDynamicConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setdynamicconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDynamicConfigWithCallback(request *SetDynamicConfigRequest, callback func(response *SetDynamicConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

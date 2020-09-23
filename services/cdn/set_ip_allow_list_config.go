@@ -21,7 +21,6 @@ import (
 )
 
 // SetIpAllowListConfig invokes the cdn.SetIpAllowListConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/setipallowlistconfig.html
 func (client *Client) SetIpAllowListConfig(request *SetIpAllowListConfigRequest) (response *SetIpAllowListConfigResponse, err error) {
 	response = CreateSetIpAllowListConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetIpAllowListConfig(request *SetIpAllowListConfigRequest)
 }
 
 // SetIpAllowListConfigWithChan invokes the cdn.SetIpAllowListConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setipallowlistconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetIpAllowListConfigWithChan(request *SetIpAllowListConfigRequest) (<-chan *SetIpAllowListConfigResponse, <-chan error) {
 	responseChan := make(chan *SetIpAllowListConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetIpAllowListConfigWithChan(request *SetIpAllowListConfig
 }
 
 // SetIpAllowListConfigWithCallback invokes the cdn.SetIpAllowListConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setipallowlistconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetIpAllowListConfigWithCallback(request *SetIpAllowListConfigRequest, callback func(response *SetIpAllowListConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

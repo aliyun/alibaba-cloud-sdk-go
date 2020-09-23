@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFCTrigger invokes the cdn.DescribeFCTrigger API synchronously
-// api document: https://help.aliyun.com/api/cdn/describefctrigger.html
 func (client *Client) DescribeFCTrigger(request *DescribeFCTriggerRequest) (response *DescribeFCTriggerResponse, err error) {
 	response = CreateDescribeFCTriggerResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFCTrigger(request *DescribeFCTriggerRequest) (resp
 }
 
 // DescribeFCTriggerWithChan invokes the cdn.DescribeFCTrigger API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describefctrigger.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFCTriggerWithChan(request *DescribeFCTriggerRequest) (<-chan *DescribeFCTriggerResponse, <-chan error) {
 	responseChan := make(chan *DescribeFCTriggerResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFCTriggerWithChan(request *DescribeFCTriggerReques
 }
 
 // DescribeFCTriggerWithCallback invokes the cdn.DescribeFCTrigger API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describefctrigger.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFCTriggerWithCallback(request *DescribeFCTriggerRequest, callback func(response *DescribeFCTriggerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

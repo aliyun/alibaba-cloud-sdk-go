@@ -21,7 +21,6 @@ import (
 )
 
 // SetSourceHostConfig invokes the cdn.SetSourceHostConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/setsourcehostconfig.html
 func (client *Client) SetSourceHostConfig(request *SetSourceHostConfigRequest) (response *SetSourceHostConfigResponse, err error) {
 	response = CreateSetSourceHostConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetSourceHostConfig(request *SetSourceHostConfigRequest) (
 }
 
 // SetSourceHostConfigWithChan invokes the cdn.SetSourceHostConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setsourcehostconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetSourceHostConfigWithChan(request *SetSourceHostConfigRequest) (<-chan *SetSourceHostConfigResponse, <-chan error) {
 	responseChan := make(chan *SetSourceHostConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetSourceHostConfigWithChan(request *SetSourceHostConfigRe
 }
 
 // SetSourceHostConfigWithCallback invokes the cdn.SetSourceHostConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setsourcehostconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetSourceHostConfigWithCallback(request *SetSourceHostConfigRequest, callback func(response *SetSourceHostConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

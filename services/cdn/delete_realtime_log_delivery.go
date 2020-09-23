@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteRealtimeLogDelivery invokes the cdn.DeleteRealtimeLogDelivery API synchronously
-// api document: https://help.aliyun.com/api/cdn/deleterealtimelogdelivery.html
 func (client *Client) DeleteRealtimeLogDelivery(request *DeleteRealtimeLogDeliveryRequest) (response *DeleteRealtimeLogDeliveryResponse, err error) {
 	response = CreateDeleteRealtimeLogDeliveryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteRealtimeLogDelivery(request *DeleteRealtimeLogDelive
 }
 
 // DeleteRealtimeLogDeliveryWithChan invokes the cdn.DeleteRealtimeLogDelivery API asynchronously
-// api document: https://help.aliyun.com/api/cdn/deleterealtimelogdelivery.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRealtimeLogDeliveryWithChan(request *DeleteRealtimeLogDeliveryRequest) (<-chan *DeleteRealtimeLogDeliveryResponse, <-chan error) {
 	responseChan := make(chan *DeleteRealtimeLogDeliveryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteRealtimeLogDeliveryWithChan(request *DeleteRealtimeL
 }
 
 // DeleteRealtimeLogDeliveryWithCallback invokes the cdn.DeleteRealtimeLogDelivery API asynchronously
-// api document: https://help.aliyun.com/api/cdn/deleterealtimelogdelivery.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRealtimeLogDeliveryWithCallback(request *DeleteRealtimeLogDeliveryRequest, callback func(response *DeleteRealtimeLogDeliveryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainAverageResponseTime invokes the cdn.DescribeDomainAverageResponseTime API synchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainaverageresponsetime.html
 func (client *Client) DescribeDomainAverageResponseTime(request *DescribeDomainAverageResponseTimeRequest) (response *DescribeDomainAverageResponseTimeResponse, err error) {
 	response = CreateDescribeDomainAverageResponseTimeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainAverageResponseTime(request *DescribeDomainA
 }
 
 // DescribeDomainAverageResponseTimeWithChan invokes the cdn.DescribeDomainAverageResponseTime API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainaverageresponsetime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainAverageResponseTimeWithChan(request *DescribeDomainAverageResponseTimeRequest) (<-chan *DescribeDomainAverageResponseTimeResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainAverageResponseTimeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainAverageResponseTimeWithChan(request *Describ
 }
 
 // DescribeDomainAverageResponseTimeWithCallback invokes the cdn.DescribeDomainAverageResponseTime API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describedomainaverageresponsetime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainAverageResponseTimeWithCallback(request *DescribeDomainAverageResponseTimeRequest, callback func(response *DescribeDomainAverageResponseTimeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

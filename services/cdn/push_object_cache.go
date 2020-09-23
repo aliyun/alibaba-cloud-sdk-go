@@ -21,7 +21,6 @@ import (
 )
 
 // PushObjectCache invokes the cdn.PushObjectCache API synchronously
-// api document: https://help.aliyun.com/api/cdn/pushobjectcache.html
 func (client *Client) PushObjectCache(request *PushObjectCacheRequest) (response *PushObjectCacheResponse, err error) {
 	response = CreatePushObjectCacheResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PushObjectCache(request *PushObjectCacheRequest) (response
 }
 
 // PushObjectCacheWithChan invokes the cdn.PushObjectCache API asynchronously
-// api document: https://help.aliyun.com/api/cdn/pushobjectcache.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushObjectCacheWithChan(request *PushObjectCacheRequest) (<-chan *PushObjectCacheResponse, <-chan error) {
 	responseChan := make(chan *PushObjectCacheResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PushObjectCacheWithChan(request *PushObjectCacheRequest) (
 }
 
 // PushObjectCacheWithCallback invokes the cdn.PushObjectCache API asynchronously
-// api document: https://help.aliyun.com/api/cdn/pushobjectcache.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushObjectCacheWithCallback(request *PushObjectCacheRequest, callback func(response *PushObjectCacheResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

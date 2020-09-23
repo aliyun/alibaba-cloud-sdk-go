@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeTagResources invokes the cdn.DescribeTagResources API synchronously
-// api document: https://help.aliyun.com/api/cdn/describetagresources.html
 func (client *Client) DescribeTagResources(request *DescribeTagResourcesRequest) (response *DescribeTagResourcesResponse, err error) {
 	response = CreateDescribeTagResourcesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeTagResources(request *DescribeTagResourcesRequest)
 }
 
 // DescribeTagResourcesWithChan invokes the cdn.DescribeTagResources API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describetagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTagResourcesWithChan(request *DescribeTagResourcesRequest) (<-chan *DescribeTagResourcesResponse, <-chan error) {
 	responseChan := make(chan *DescribeTagResourcesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeTagResourcesWithChan(request *DescribeTagResources
 }
 
 // DescribeTagResourcesWithCallback invokes the cdn.DescribeTagResources API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describetagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTagResourcesWithCallback(request *DescribeTagResourcesRequest, callback func(response *DescribeTagResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

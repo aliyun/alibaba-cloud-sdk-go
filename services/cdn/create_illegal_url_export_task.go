@@ -21,7 +21,6 @@ import (
 )
 
 // CreateIllegalUrlExportTask invokes the cdn.CreateIllegalUrlExportTask API synchronously
-// api document: https://help.aliyun.com/api/cdn/createillegalurlexporttask.html
 func (client *Client) CreateIllegalUrlExportTask(request *CreateIllegalUrlExportTaskRequest) (response *CreateIllegalUrlExportTaskResponse, err error) {
 	response = CreateCreateIllegalUrlExportTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateIllegalUrlExportTask(request *CreateIllegalUrlExport
 }
 
 // CreateIllegalUrlExportTaskWithChan invokes the cdn.CreateIllegalUrlExportTask API asynchronously
-// api document: https://help.aliyun.com/api/cdn/createillegalurlexporttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateIllegalUrlExportTaskWithChan(request *CreateIllegalUrlExportTaskRequest) (<-chan *CreateIllegalUrlExportTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateIllegalUrlExportTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateIllegalUrlExportTaskWithChan(request *CreateIllegalU
 }
 
 // CreateIllegalUrlExportTaskWithCallback invokes the cdn.CreateIllegalUrlExportTask API asynchronously
-// api document: https://help.aliyun.com/api/cdn/createillegalurlexporttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateIllegalUrlExportTaskWithCallback(request *CreateIllegalUrlExportTaskRequest, callback func(response *CreateIllegalUrlExportTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

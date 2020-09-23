@@ -21,7 +21,6 @@ import (
 )
 
 // StartCdnDomain invokes the cdn.StartCdnDomain API synchronously
-// api document: https://help.aliyun.com/api/cdn/startcdndomain.html
 func (client *Client) StartCdnDomain(request *StartCdnDomainRequest) (response *StartCdnDomainResponse, err error) {
 	response = CreateStartCdnDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartCdnDomain(request *StartCdnDomainRequest) (response *
 }
 
 // StartCdnDomainWithChan invokes the cdn.StartCdnDomain API asynchronously
-// api document: https://help.aliyun.com/api/cdn/startcdndomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartCdnDomainWithChan(request *StartCdnDomainRequest) (<-chan *StartCdnDomainResponse, <-chan error) {
 	responseChan := make(chan *StartCdnDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartCdnDomainWithChan(request *StartCdnDomainRequest) (<-
 }
 
 // StartCdnDomainWithCallback invokes the cdn.StartCdnDomain API asynchronously
-// api document: https://help.aliyun.com/api/cdn/startcdndomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartCdnDomainWithCallback(request *StartCdnDomainRequest, callback func(response *StartCdnDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

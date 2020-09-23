@@ -21,7 +21,6 @@ import (
 )
 
 // BatchSetCdnDomainServerCertificate invokes the cdn.BatchSetCdnDomainServerCertificate API synchronously
-// api document: https://help.aliyun.com/api/cdn/batchsetcdndomainservercertificate.html
 func (client *Client) BatchSetCdnDomainServerCertificate(request *BatchSetCdnDomainServerCertificateRequest) (response *BatchSetCdnDomainServerCertificateResponse, err error) {
 	response = CreateBatchSetCdnDomainServerCertificateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchSetCdnDomainServerCertificate(request *BatchSetCdnDom
 }
 
 // BatchSetCdnDomainServerCertificateWithChan invokes the cdn.BatchSetCdnDomainServerCertificate API asynchronously
-// api document: https://help.aliyun.com/api/cdn/batchsetcdndomainservercertificate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchSetCdnDomainServerCertificateWithChan(request *BatchSetCdnDomainServerCertificateRequest) (<-chan *BatchSetCdnDomainServerCertificateResponse, <-chan error) {
 	responseChan := make(chan *BatchSetCdnDomainServerCertificateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchSetCdnDomainServerCertificateWithChan(request *BatchS
 }
 
 // BatchSetCdnDomainServerCertificateWithCallback invokes the cdn.BatchSetCdnDomainServerCertificate API asynchronously
-// api document: https://help.aliyun.com/api/cdn/batchsetcdndomainservercertificate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchSetCdnDomainServerCertificateWithCallback(request *BatchSetCdnDomainServerCertificateRequest, callback func(response *BatchSetCdnDomainServerCertificateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

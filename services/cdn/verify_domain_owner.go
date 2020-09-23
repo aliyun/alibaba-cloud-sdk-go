@@ -21,7 +21,6 @@ import (
 )
 
 // VerifyDomainOwner invokes the cdn.VerifyDomainOwner API synchronously
-// api document: https://help.aliyun.com/api/cdn/verifydomainowner.html
 func (client *Client) VerifyDomainOwner(request *VerifyDomainOwnerRequest) (response *VerifyDomainOwnerResponse, err error) {
 	response = CreateVerifyDomainOwnerResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VerifyDomainOwner(request *VerifyDomainOwnerRequest) (resp
 }
 
 // VerifyDomainOwnerWithChan invokes the cdn.VerifyDomainOwner API asynchronously
-// api document: https://help.aliyun.com/api/cdn/verifydomainowner.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyDomainOwnerWithChan(request *VerifyDomainOwnerRequest) (<-chan *VerifyDomainOwnerResponse, <-chan error) {
 	responseChan := make(chan *VerifyDomainOwnerResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VerifyDomainOwnerWithChan(request *VerifyDomainOwnerReques
 }
 
 // VerifyDomainOwnerWithCallback invokes the cdn.VerifyDomainOwner API asynchronously
-// api document: https://help.aliyun.com/api/cdn/verifydomainowner.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyDomainOwnerWithCallback(request *VerifyDomainOwnerRequest, callback func(response *VerifyDomainOwnerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLiveStreamsPublishList invokes the cdn.DescribeLiveStreamsPublishList API synchronously
-// api document: https://help.aliyun.com/api/cdn/describelivestreamspublishlist.html
 func (client *Client) DescribeLiveStreamsPublishList(request *DescribeLiveStreamsPublishListRequest) (response *DescribeLiveStreamsPublishListResponse, err error) {
 	response = CreateDescribeLiveStreamsPublishListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLiveStreamsPublishList(request *DescribeLiveStream
 }
 
 // DescribeLiveStreamsPublishListWithChan invokes the cdn.DescribeLiveStreamsPublishList API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describelivestreamspublishlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsPublishListWithChan(request *DescribeLiveStreamsPublishListRequest) (<-chan *DescribeLiveStreamsPublishListResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamsPublishListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLiveStreamsPublishListWithChan(request *DescribeLi
 }
 
 // DescribeLiveStreamsPublishListWithCallback invokes the cdn.DescribeLiveStreamsPublishList API asynchronously
-// api document: https://help.aliyun.com/api/cdn/describelivestreamspublishlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsPublishListWithCallback(request *DescribeLiveStreamsPublishListRequest, callback func(response *DescribeLiveStreamsPublishListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSpecificConfig invokes the cdn.DeleteSpecificConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/deletespecificconfig.html
 func (client *Client) DeleteSpecificConfig(request *DeleteSpecificConfigRequest) (response *DeleteSpecificConfigResponse, err error) {
 	response = CreateDeleteSpecificConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSpecificConfig(request *DeleteSpecificConfigRequest)
 }
 
 // DeleteSpecificConfigWithChan invokes the cdn.DeleteSpecificConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/deletespecificconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSpecificConfigWithChan(request *DeleteSpecificConfigRequest) (<-chan *DeleteSpecificConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteSpecificConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSpecificConfigWithChan(request *DeleteSpecificConfig
 }
 
 // DeleteSpecificConfigWithCallback invokes the cdn.DeleteSpecificConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/deletespecificconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSpecificConfigWithCallback(request *DeleteSpecificConfigRequest, callback func(response *DeleteSpecificConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // SetConfigOfVersion invokes the cdn.SetConfigOfVersion API synchronously
-// api document: https://help.aliyun.com/api/cdn/setconfigofversion.html
 func (client *Client) SetConfigOfVersion(request *SetConfigOfVersionRequest) (response *SetConfigOfVersionResponse, err error) {
 	response = CreateSetConfigOfVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetConfigOfVersion(request *SetConfigOfVersionRequest) (re
 }
 
 // SetConfigOfVersionWithChan invokes the cdn.SetConfigOfVersion API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setconfigofversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetConfigOfVersionWithChan(request *SetConfigOfVersionRequest) (<-chan *SetConfigOfVersionResponse, <-chan error) {
 	responseChan := make(chan *SetConfigOfVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetConfigOfVersionWithChan(request *SetConfigOfVersionRequ
 }
 
 // SetConfigOfVersionWithCallback invokes the cdn.SetConfigOfVersion API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setconfigofversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetConfigOfVersionWithCallback(request *SetConfigOfVersionRequest, callback func(response *SetConfigOfVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

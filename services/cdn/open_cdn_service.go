@@ -21,7 +21,6 @@ import (
 )
 
 // OpenCdnService invokes the cdn.OpenCdnService API synchronously
-// api document: https://help.aliyun.com/api/cdn/opencdnservice.html
 func (client *Client) OpenCdnService(request *OpenCdnServiceRequest) (response *OpenCdnServiceResponse, err error) {
 	response = CreateOpenCdnServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OpenCdnService(request *OpenCdnServiceRequest) (response *
 }
 
 // OpenCdnServiceWithChan invokes the cdn.OpenCdnService API asynchronously
-// api document: https://help.aliyun.com/api/cdn/opencdnservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OpenCdnServiceWithChan(request *OpenCdnServiceRequest) (<-chan *OpenCdnServiceResponse, <-chan error) {
 	responseChan := make(chan *OpenCdnServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OpenCdnServiceWithChan(request *OpenCdnServiceRequest) (<-
 }
 
 // OpenCdnServiceWithCallback invokes the cdn.OpenCdnService API asynchronously
-// api document: https://help.aliyun.com/api/cdn/opencdnservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OpenCdnServiceWithCallback(request *OpenCdnServiceRequest, callback func(response *OpenCdnServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

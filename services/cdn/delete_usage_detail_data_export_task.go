@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteUsageDetailDataExportTask invokes the cdn.DeleteUsageDetailDataExportTask API synchronously
-// api document: https://help.aliyun.com/api/cdn/deleteusagedetaildataexporttask.html
 func (client *Client) DeleteUsageDetailDataExportTask(request *DeleteUsageDetailDataExportTaskRequest) (response *DeleteUsageDetailDataExportTaskResponse, err error) {
 	response = CreateDeleteUsageDetailDataExportTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteUsageDetailDataExportTask(request *DeleteUsageDetail
 }
 
 // DeleteUsageDetailDataExportTaskWithChan invokes the cdn.DeleteUsageDetailDataExportTask API asynchronously
-// api document: https://help.aliyun.com/api/cdn/deleteusagedetaildataexporttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUsageDetailDataExportTaskWithChan(request *DeleteUsageDetailDataExportTaskRequest) (<-chan *DeleteUsageDetailDataExportTaskResponse, <-chan error) {
 	responseChan := make(chan *DeleteUsageDetailDataExportTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteUsageDetailDataExportTaskWithChan(request *DeleteUsa
 }
 
 // DeleteUsageDetailDataExportTaskWithCallback invokes the cdn.DeleteUsageDetailDataExportTask API asynchronously
-// api document: https://help.aliyun.com/api/cdn/deleteusagedetaildataexporttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUsageDetailDataExportTaskWithCallback(request *DeleteUsageDetailDataExportTaskRequest, callback func(response *DeleteUsageDetailDataExportTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

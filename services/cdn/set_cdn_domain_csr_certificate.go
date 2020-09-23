@@ -21,7 +21,6 @@ import (
 )
 
 // SetCdnDomainCSRCertificate invokes the cdn.SetCdnDomainCSRCertificate API synchronously
-// api document: https://help.aliyun.com/api/cdn/setcdndomaincsrcertificate.html
 func (client *Client) SetCdnDomainCSRCertificate(request *SetCdnDomainCSRCertificateRequest) (response *SetCdnDomainCSRCertificateResponse, err error) {
 	response = CreateSetCdnDomainCSRCertificateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetCdnDomainCSRCertificate(request *SetCdnDomainCSRCertifi
 }
 
 // SetCdnDomainCSRCertificateWithChan invokes the cdn.SetCdnDomainCSRCertificate API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setcdndomaincsrcertificate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCdnDomainCSRCertificateWithChan(request *SetCdnDomainCSRCertificateRequest) (<-chan *SetCdnDomainCSRCertificateResponse, <-chan error) {
 	responseChan := make(chan *SetCdnDomainCSRCertificateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetCdnDomainCSRCertificateWithChan(request *SetCdnDomainCS
 }
 
 // SetCdnDomainCSRCertificateWithCallback invokes the cdn.SetCdnDomainCSRCertificate API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setcdndomaincsrcertificate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCdnDomainCSRCertificateWithCallback(request *SetCdnDomainCSRCertificateRequest, callback func(response *SetCdnDomainCSRCertificateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
