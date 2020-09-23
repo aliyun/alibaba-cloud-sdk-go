@@ -17,7 +17,7 @@ package cs
 
 // ListItem is a nested struct in cs response
 type ListItem struct {
-	Code       string `json:"code" xml:"code"`
 	InstanceId string `json:"instanceId" xml:"instanceId"`
+	Code       string `json:"code" xml:"code"`
 	Message    string `json:"message" xml:"message"`
 }

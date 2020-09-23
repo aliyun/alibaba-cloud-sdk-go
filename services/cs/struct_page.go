@@ -17,7 +17,7 @@ package cs
 
 // Page is a nested struct in cs response
 type Page struct {
-	PageSize   int `json:"page_size" xml:"page_size"`
 	PageNumber int `json:"page_number" xml:"page_number"`
 	TotalCount int `json:"total_count" xml:"total_count"`
+	PageSize   int `json:"page_size" xml:"page_size"`
 }

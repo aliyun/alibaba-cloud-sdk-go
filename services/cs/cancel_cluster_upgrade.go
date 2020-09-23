@@ -21,7 +21,6 @@ import (
 )
 
 // CancelClusterUpgrade invokes the cs.CancelClusterUpgrade API synchronously
-// api document: https://help.aliyun.com/api/cs/cancelclusterupgrade.html
 func (client *Client) CancelClusterUpgrade(request *CancelClusterUpgradeRequest) (response *CancelClusterUpgradeResponse, err error) {
 	response = CreateCancelClusterUpgradeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CancelClusterUpgrade(request *CancelClusterUpgradeRequest)
 }
 
 // CancelClusterUpgradeWithChan invokes the cs.CancelClusterUpgrade API asynchronously
-// api document: https://help.aliyun.com/api/cs/cancelclusterupgrade.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelClusterUpgradeWithChan(request *CancelClusterUpgradeRequest) (<-chan *CancelClusterUpgradeResponse, <-chan error) {
 	responseChan := make(chan *CancelClusterUpgradeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CancelClusterUpgradeWithChan(request *CancelClusterUpgrade
 }
 
 // CancelClusterUpgradeWithCallback invokes the cs.CancelClusterUpgrade API asynchronously
-// api document: https://help.aliyun.com/api/cs/cancelclusterupgrade.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelClusterUpgradeWithCallback(request *CancelClusterUpgradeRequest, callback func(response *CancelClusterUpgradeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,7 +77,6 @@ type CancelClusterUpgradeRequest struct {
 // CancelClusterUpgradeResponse is the response struct for api CancelClusterUpgrade
 type CancelClusterUpgradeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCancelClusterUpgradeRequest creates a request to invoke CancelClusterUpgrade API

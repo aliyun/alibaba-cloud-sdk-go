@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeExternalAgent invokes the cs.DescribeExternalAgent API synchronously
-// api document: https://help.aliyun.com/api/cs/describeexternalagent.html
 func (client *Client) DescribeExternalAgent(request *DescribeExternalAgentRequest) (response *DescribeExternalAgentResponse, err error) {
 	response = CreateDescribeExternalAgentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeExternalAgent(request *DescribeExternalAgentReques
 }
 
 // DescribeExternalAgentWithChan invokes the cs.DescribeExternalAgent API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeexternalagent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExternalAgentWithChan(request *DescribeExternalAgentRequest) (<-chan *DescribeExternalAgentResponse, <-chan error) {
 	responseChan := make(chan *DescribeExternalAgentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeExternalAgentWithChan(request *DescribeExternalAge
 }
 
 // DescribeExternalAgentWithCallback invokes the cs.DescribeExternalAgent API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeexternalagent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExternalAgentWithCallback(request *DescribeExternalAgentRequest, callback func(response *DescribeExternalAgentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

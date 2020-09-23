@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveWorkflow invokes the cs.RemoveWorkflow API synchronously
-// api document: https://help.aliyun.com/api/cs/removeworkflow.html
 func (client *Client) RemoveWorkflow(request *RemoveWorkflowRequest) (response *RemoveWorkflowResponse, err error) {
 	response = CreateRemoveWorkflowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveWorkflow(request *RemoveWorkflowRequest) (response *
 }
 
 // RemoveWorkflowWithChan invokes the cs.RemoveWorkflow API asynchronously
-// api document: https://help.aliyun.com/api/cs/removeworkflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveWorkflowWithChan(request *RemoveWorkflowRequest) (<-chan *RemoveWorkflowResponse, <-chan error) {
 	responseChan := make(chan *RemoveWorkflowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveWorkflowWithChan(request *RemoveWorkflowRequest) (<-
 }
 
 // RemoveWorkflowWithCallback invokes the cs.RemoveWorkflow API asynchronously
-// api document: https://help.aliyun.com/api/cs/removeworkflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveWorkflowWithCallback(request *RemoveWorkflowRequest, callback func(response *RemoveWorkflowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

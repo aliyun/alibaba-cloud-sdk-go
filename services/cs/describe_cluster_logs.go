@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeClusterLogs invokes the cs.DescribeClusterLogs API synchronously
-// api document: https://help.aliyun.com/api/cs/describeclusterlogs.html
 func (client *Client) DescribeClusterLogs(request *DescribeClusterLogsRequest) (response *DescribeClusterLogsResponse, err error) {
 	response = CreateDescribeClusterLogsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeClusterLogs(request *DescribeClusterLogsRequest) (
 }
 
 // DescribeClusterLogsWithChan invokes the cs.DescribeClusterLogs API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeclusterlogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterLogsWithChan(request *DescribeClusterLogsRequest) (<-chan *DescribeClusterLogsResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterLogsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeClusterLogsWithChan(request *DescribeClusterLogsRe
 }
 
 // DescribeClusterLogsWithCallback invokes the cs.DescribeClusterLogs API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeclusterlogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterLogsWithCallback(request *DescribeClusterLogsRequest, callback func(response *DescribeClusterLogsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,8 +79,10 @@ type DescribeClusterLogsResponse struct {
 	*responses.BaseResponse
 	ClusterId  string `json:"cluster_id" xml:"cluster_id"`
 	ClusterLog string `json:"cluster_log" xml:"cluster_log"`
-	LogLevel   string `json:"log_level" xml:"log_level"`
 	Created    string `json:"created" xml:"created"`
+	LogLevel   string `json:"log_level" xml:"log_level"`
+	ID         string `json:"ID" xml:"ID"`
+	Updated    string `json:"updated" xml:"updated"`
 }
 
 // CreateDescribeClusterLogsRequest creates a request to invoke DescribeClusterLogs API

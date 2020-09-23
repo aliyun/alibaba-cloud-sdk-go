@@ -17,5 +17,5 @@ package cs
 
 // Default is a nested struct in cs response
 type Default struct {
-	Default_addon_name []string `json:"default_addon_name" xml:"default_addon_name"`
+	ComponentName []string `json:"ComponentName" xml:"ComponentName"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeClusterDetail invokes the cs.DescribeClusterDetail API synchronously
-// api document: https://help.aliyun.com/api/cs/describeclusterdetail.html
 func (client *Client) DescribeClusterDetail(request *DescribeClusterDetailRequest) (response *DescribeClusterDetailResponse, err error) {
 	response = CreateDescribeClusterDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeClusterDetail(request *DescribeClusterDetailReques
 }
 
 // DescribeClusterDetailWithChan invokes the cs.DescribeClusterDetail API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeclusterdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterDetailWithChan(request *DescribeClusterDetailRequest) (<-chan *DescribeClusterDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeClusterDetailWithChan(request *DescribeClusterDeta
 }
 
 // DescribeClusterDetailWithCallback invokes the cs.DescribeClusterDetail API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeclusterdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterDetailWithCallback(request *DescribeClusterDetailRequest, callback func(response *DescribeClusterDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,29 +77,27 @@ type DescribeClusterDetailRequest struct {
 // DescribeClusterDetailResponse is the response struct for api DescribeClusterDetail
 type DescribeClusterDetailResponse struct {
 	*responses.BaseResponse
-	Name                   string     `json:"name" xml:"name"`
-	ClusterId              string     `json:"cluster_id" xml:"cluster_id"`
-	RegionId               string     `json:"region_id" xml:"region_id"`
-	State                  string     `json:"state" xml:"state"`
-	ClusterType            string     `json:"cluster_type" xml:"cluster_type"`
-	CurrentVersion         string     `json:"current_version" xml:"current_version"`
-	MetaData               string     `json:"meta_data" xml:"meta_data"`
 	ResourceGroupId        string     `json:"resource_group_id" xml:"resource_group_id"`
-	InstanceType           string     `json:"instance_type" xml:"instance_type"`
 	VpcId                  string     `json:"vpc_id" xml:"vpc_id"`
-	VswitchId              string     `json:"vswitch_id" xml:"vswitch_id"`
-	VswitchCidr            string     `json:"vswitch_cidr" xml:"vswitch_cidr"`
-	DataDiskSize           int        `json:"data_disk_size" xml:"data_disk_size"`
-	DataDiskCategory       string     `json:"data_disk_category" xml:"data_disk_category"`
-	SecurityGroupId        string     `json:"security_group_id" xml:"security_group_id"`
-	ZoneId                 string     `json:"zone_id" xml:"zone_id"`
-	NetworkMode            string     `json:"network_mode" xml:"network_mode"`
-	DockerVersion          string     `json:"docker_version" xml:"docker_version"`
 	DeletionProtection     bool       `json:"deletion_protection" xml:"deletion_protection"`
-	ExternalLoadbalancerId string     `json:"external_loadbalancer_id" xml:"external_loadbalancer_id"`
 	Created                string     `json:"created" xml:"created"`
+	NetworkMode            string     `json:"network_mode" xml:"network_mode"`
+	RegionId               string     `json:"region_id" xml:"region_id"`
+	SecurityGroupId        string     `json:"security_group_id" xml:"security_group_id"`
+	CurrentVersion         string     `json:"current_version" xml:"current_version"`
+	ClusterType            string     `json:"cluster_type" xml:"cluster_type"`
+	DockerVersion          string     `json:"docker_version" xml:"docker_version"`
+	VswitchCidr            string     `json:"vswitch_cidr" xml:"vswitch_cidr"`
+	ZoneId                 string     `json:"zone_id" xml:"zone_id"`
+	ClusterId              string     `json:"cluster_id" xml:"cluster_id"`
+	Size                   int        `json:"size" xml:"size"`
+	ExternalLoadbalancerId string     `json:"external_loadbalancer_id" xml:"external_loadbalancer_id"`
+	VswitchId              string     `json:"vswitch_id" xml:"vswitch_id"`
+	Name                   string     `json:"name" xml:"name"`
+	MetaData               string     `json:"meta_data" xml:"meta_data"`
+	State                  string     `json:"state" xml:"state"`
 	Updated                string     `json:"updated" xml:"updated"`
-	Size                   string     `json:"size" xml:"size"`
+	InstanceType           string     `json:"instance_type" xml:"instance_type"`
 	Tags                   []TagsItem `json:"tags" xml:"tags"`
 }
 

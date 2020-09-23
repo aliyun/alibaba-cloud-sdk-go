@@ -21,7 +21,6 @@ import (
 )
 
 // CancelComponentUpgrade invokes the cs.CancelComponentUpgrade API synchronously
-// api document: https://help.aliyun.com/api/cs/cancelcomponentupgrade.html
 func (client *Client) CancelComponentUpgrade(request *CancelComponentUpgradeRequest) (response *CancelComponentUpgradeResponse, err error) {
 	response = CreateCancelComponentUpgradeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CancelComponentUpgrade(request *CancelComponentUpgradeRequ
 }
 
 // CancelComponentUpgradeWithChan invokes the cs.CancelComponentUpgrade API asynchronously
-// api document: https://help.aliyun.com/api/cs/cancelcomponentupgrade.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelComponentUpgradeWithChan(request *CancelComponentUpgradeRequest) (<-chan *CancelComponentUpgradeResponse, <-chan error) {
 	responseChan := make(chan *CancelComponentUpgradeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CancelComponentUpgradeWithChan(request *CancelComponentUpg
 }
 
 // CancelComponentUpgradeWithCallback invokes the cs.CancelComponentUpgrade API asynchronously
-// api document: https://help.aliyun.com/api/cs/cancelcomponentupgrade.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelComponentUpgradeWithCallback(request *CancelComponentUpgradeRequest, callback func(response *CancelComponentUpgradeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,7 +78,6 @@ type CancelComponentUpgradeRequest struct {
 // CancelComponentUpgradeResponse is the response struct for api CancelComponentUpgrade
 type CancelComponentUpgradeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCancelComponentUpgradeRequest creates a request to invoke CancelComponentUpgrade API

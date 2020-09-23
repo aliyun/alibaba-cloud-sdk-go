@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeClusterAttachScripts invokes the cs.DescribeClusterAttachScripts API synchronously
-// api document: https://help.aliyun.com/api/cs/describeclusterattachscripts.html
 func (client *Client) DescribeClusterAttachScripts(request *DescribeClusterAttachScriptsRequest) (response *DescribeClusterAttachScriptsResponse, err error) {
 	response = CreateDescribeClusterAttachScriptsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeClusterAttachScripts(request *DescribeClusterAttac
 }
 
 // DescribeClusterAttachScriptsWithChan invokes the cs.DescribeClusterAttachScripts API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeclusterattachscripts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterAttachScriptsWithChan(request *DescribeClusterAttachScriptsRequest) (<-chan *DescribeClusterAttachScriptsResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterAttachScriptsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeClusterAttachScriptsWithChan(request *DescribeClus
 }
 
 // DescribeClusterAttachScriptsWithCallback invokes the cs.DescribeClusterAttachScripts API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeclusterattachscripts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterAttachScriptsWithCallback(request *DescribeClusterAttachScriptsRequest, callback func(response *DescribeClusterAttachScriptsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) DescribeClusterAttachScriptsWithCallback(request *Describe
 type DescribeClusterAttachScriptsRequest struct {
 	*requests.RoaRequest
 	ClusterId string `position:"Path" name:"ClusterId"`
+	Arch      string `position:"Body" name:"arch"`
 }
 
 // DescribeClusterAttachScriptsResponse is the response struct for api DescribeClusterAttachScripts

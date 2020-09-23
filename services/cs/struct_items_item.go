@@ -17,9 +17,9 @@ package cs
 
 // ItemsItem is a nested struct in cs response
 type ItemsItem struct {
-	Name     string `json:"name" xml:"name"`
-	Config   string `json:"config" xml:"config"`
-	Required string `json:"required" xml:"required"`
-	Disabled bool   `json:"disabled" xml:"disabled"`
-	Version  string `json:"version" xml:"version"`
+	Name        string `json:"name" xml:"name"`
+	Description string `json:"description" xml:"description"`
+	Disabled    bool   `json:"disabled" xml:"disabled"`
+	Version     string `json:"version" xml:"version"`
+	Required    string `json:"required" xml:"required"`
 }

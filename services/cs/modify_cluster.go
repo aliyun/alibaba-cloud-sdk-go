@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyCluster invokes the cs.ModifyCluster API synchronously
-// api document: https://help.aliyun.com/api/cs/modifycluster.html
 func (client *Client) ModifyCluster(request *ModifyClusterRequest) (response *ModifyClusterResponse, err error) {
 	response = CreateModifyClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyCluster(request *ModifyClusterRequest) (response *Mo
 }
 
 // ModifyClusterWithChan invokes the cs.ModifyCluster API asynchronously
-// api document: https://help.aliyun.com/api/cs/modifycluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterWithChan(request *ModifyClusterRequest) (<-chan *ModifyClusterResponse, <-chan error) {
 	responseChan := make(chan *ModifyClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyClusterWithChan(request *ModifyClusterRequest) (<-ch
 }
 
 // ModifyClusterWithCallback invokes the cs.ModifyCluster API asynchronously
-// api document: https://help.aliyun.com/api/cs/modifycluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterWithCallback(request *ModifyClusterRequest, callback func(response *ModifyClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,10 +83,9 @@ type ModifyClusterRequest struct {
 // ModifyClusterResponse is the response struct for api ModifyCluster
 type ModifyClusterResponse struct {
 	*responses.BaseResponse
-	ClusterId  string `json:"cluster_id" xml:"cluster_id"`
-	RequestId  string `json:"request_id" xml:"request_id"`
-	TaskId     string `json:"task_id" xml:"task_id"`
-	InstanceId string `json:"instanceId" xml:"instanceId"`
+	ClusterId string `json:"cluster_id" xml:"cluster_id"`
+	TaskId    string `json:"task_id" xml:"task_id"`
+	RequestId string `json:"request_id" xml:"request_id"`
 }
 
 // CreateModifyClusterRequest creates a request to invoke ModifyCluster API

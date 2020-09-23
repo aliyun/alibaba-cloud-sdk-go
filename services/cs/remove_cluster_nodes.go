@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveClusterNodes invokes the cs.RemoveClusterNodes API synchronously
-// api document: https://help.aliyun.com/api/cs/removeclusternodes.html
 func (client *Client) RemoveClusterNodes(request *RemoveClusterNodesRequest) (response *RemoveClusterNodesResponse, err error) {
 	response = CreateRemoveClusterNodesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveClusterNodes(request *RemoveClusterNodesRequest) (re
 }
 
 // RemoveClusterNodesWithChan invokes the cs.RemoveClusterNodes API asynchronously
-// api document: https://help.aliyun.com/api/cs/removeclusternodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveClusterNodesWithChan(request *RemoveClusterNodesRequest) (<-chan *RemoveClusterNodesResponse, <-chan error) {
 	responseChan := make(chan *RemoveClusterNodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveClusterNodesWithChan(request *RemoveClusterNodesRequ
 }
 
 // RemoveClusterNodesWithCallback invokes the cs.RemoveClusterNodes API asynchronously
-// api document: https://help.aliyun.com/api/cs/removeclusternodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveClusterNodesWithCallback(request *RemoveClusterNodesRequest, callback func(response *RemoveClusterNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

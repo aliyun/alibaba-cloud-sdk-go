@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUserQuota invokes the cs.DescribeUserQuota API synchronously
-// api document: https://help.aliyun.com/api/cs/describeuserquota.html
 func (client *Client) DescribeUserQuota(request *DescribeUserQuotaRequest) (response *DescribeUserQuotaResponse, err error) {
 	response = CreateDescribeUserQuotaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUserQuota(request *DescribeUserQuotaRequest) (resp
 }
 
 // DescribeUserQuotaWithChan invokes the cs.DescribeUserQuota API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeuserquota.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserQuotaWithChan(request *DescribeUserQuotaRequest) (<-chan *DescribeUserQuotaResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserQuotaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUserQuotaWithChan(request *DescribeUserQuotaReques
 }
 
 // DescribeUserQuotaWithCallback invokes the cs.DescribeUserQuota API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeuserquota.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserQuotaWithCallback(request *DescribeUserQuotaRequest, callback func(response *DescribeUserQuotaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,10 +76,11 @@ type DescribeUserQuotaRequest struct {
 // DescribeUserQuotaResponse is the response struct for api DescribeUserQuota
 type DescribeUserQuotaResponse struct {
 	*responses.BaseResponse
-	ClusterQuota    int `json:"cluster_quota" xml:"cluster_quota"`
-	NodeQuota       int `json:"node_quota" xml:"node_quota"`
-	AskClusterQuota int `json:"ask_cluster_quota" xml:"ask_cluster_quota"`
-	AmkClusterQuota int `json:"amk_cluster_quota" xml:"amk_cluster_quota"`
+	ClusterNodepoolQuota int64 `json:"cluster_nodepool_quota" xml:"cluster_nodepool_quota"`
+	AmkClusterQuota      int64 `json:"amk_cluster_quota" xml:"amk_cluster_quota"`
+	ClusterQuota         int64 `json:"cluster_quota" xml:"cluster_quota"`
+	NodeQuota            int64 `json:"node_quota" xml:"node_quota"`
+	AskClusterQuota      int64 `json:"ask_cluster_quota" xml:"ask_cluster_quota"`
 }
 
 // CreateDescribeUserQuotaRequest creates a request to invoke DescribeUserQuota API

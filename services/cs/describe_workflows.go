@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeWorkflows invokes the cs.DescribeWorkflows API synchronously
-// api document: https://help.aliyun.com/api/cs/describeworkflows.html
 func (client *Client) DescribeWorkflows(request *DescribeWorkflowsRequest) (response *DescribeWorkflowsResponse, err error) {
 	response = CreateDescribeWorkflowsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeWorkflows(request *DescribeWorkflowsRequest) (resp
 }
 
 // DescribeWorkflowsWithChan invokes the cs.DescribeWorkflows API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeworkflows.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWorkflowsWithChan(request *DescribeWorkflowsRequest) (<-chan *DescribeWorkflowsResponse, <-chan error) {
 	responseChan := make(chan *DescribeWorkflowsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeWorkflowsWithChan(request *DescribeWorkflowsReques
 }
 
 // DescribeWorkflowsWithCallback invokes the cs.DescribeWorkflows API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeworkflows.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWorkflowsWithCallback(request *DescribeWorkflowsRequest, callback func(response *DescribeWorkflowsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

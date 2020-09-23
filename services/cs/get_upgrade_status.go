@@ -21,7 +21,6 @@ import (
 )
 
 // GetUpgradeStatus invokes the cs.GetUpgradeStatus API synchronously
-// api document: https://help.aliyun.com/api/cs/getupgradestatus.html
 func (client *Client) GetUpgradeStatus(request *GetUpgradeStatusRequest) (response *GetUpgradeStatusResponse, err error) {
 	response = CreateGetUpgradeStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetUpgradeStatus(request *GetUpgradeStatusRequest) (respon
 }
 
 // GetUpgradeStatusWithChan invokes the cs.GetUpgradeStatus API asynchronously
-// api document: https://help.aliyun.com/api/cs/getupgradestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUpgradeStatusWithChan(request *GetUpgradeStatusRequest) (<-chan *GetUpgradeStatusResponse, <-chan error) {
 	responseChan := make(chan *GetUpgradeStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetUpgradeStatusWithChan(request *GetUpgradeStatusRequest)
 }
 
 // GetUpgradeStatusWithCallback invokes the cs.GetUpgradeStatus API asynchronously
-// api document: https://help.aliyun.com/api/cs/getupgradestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUpgradeStatusWithCallback(request *GetUpgradeStatusRequest, callback func(response *GetUpgradeStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,10 +77,10 @@ type GetUpgradeStatusRequest struct {
 // GetUpgradeStatusResponse is the response struct for api GetUpgradeStatus
 type GetUpgradeStatusResponse struct {
 	*responses.BaseResponse
-	Status           string `json:"status" xml:"status"`
+	ErrorMessage     string `json:"error_message" xml:"error_message"`
 	PrecheckReportId string `json:"precheck_report_id" xml:"precheck_report_id"`
 	UpgradeStep      string `json:"upgrade_step" xml:"upgrade_step"`
-	ErrorMessage     string `json:"error_message" xml:"error_message"`
+	Status           string `json:"status" xml:"status"`
 }
 
 // CreateGetUpgradeStatusRequest creates a request to invoke GetUpgradeStatus API

@@ -21,7 +21,6 @@ import (
 )
 
 // PauseComponentUpgrade invokes the cs.PauseComponentUpgrade API synchronously
-// api document: https://help.aliyun.com/api/cs/pausecomponentupgrade.html
 func (client *Client) PauseComponentUpgrade(request *PauseComponentUpgradeRequest) (response *PauseComponentUpgradeResponse, err error) {
 	response = CreatePauseComponentUpgradeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PauseComponentUpgrade(request *PauseComponentUpgradeReques
 }
 
 // PauseComponentUpgradeWithChan invokes the cs.PauseComponentUpgrade API asynchronously
-// api document: https://help.aliyun.com/api/cs/pausecomponentupgrade.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PauseComponentUpgradeWithChan(request *PauseComponentUpgradeRequest) (<-chan *PauseComponentUpgradeResponse, <-chan error) {
 	responseChan := make(chan *PauseComponentUpgradeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PauseComponentUpgradeWithChan(request *PauseComponentUpgra
 }
 
 // PauseComponentUpgradeWithCallback invokes the cs.PauseComponentUpgrade API asynchronously
-// api document: https://help.aliyun.com/api/cs/pausecomponentupgrade.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PauseComponentUpgradeWithCallback(request *PauseComponentUpgradeRequest, callback func(response *PauseComponentUpgradeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,7 +78,6 @@ type PauseComponentUpgradeRequest struct {
 // PauseComponentUpgradeResponse is the response struct for api PauseComponentUpgrade
 type PauseComponentUpgradeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreatePauseComponentUpgradeRequest creates a request to invoke PauseComponentUpgrade API

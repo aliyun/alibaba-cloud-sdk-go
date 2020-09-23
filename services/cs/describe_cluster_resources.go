@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeClusterResources invokes the cs.DescribeClusterResources API synchronously
-// api document: https://help.aliyun.com/api/cs/describeclusterresources.html
 func (client *Client) DescribeClusterResources(request *DescribeClusterResourcesRequest) (response *DescribeClusterResourcesResponse, err error) {
 	response = CreateDescribeClusterResourcesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeClusterResources(request *DescribeClusterResources
 }
 
 // DescribeClusterResourcesWithChan invokes the cs.DescribeClusterResources API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeclusterresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterResourcesWithChan(request *DescribeClusterResourcesRequest) (<-chan *DescribeClusterResourcesResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterResourcesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeClusterResourcesWithChan(request *DescribeClusterR
 }
 
 // DescribeClusterResourcesWithCallback invokes the cs.DescribeClusterResources API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeclusterresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterResourcesWithCallback(request *DescribeClusterResourcesRequest, callback func(response *DescribeClusterResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,7 +77,6 @@ type DescribeClusterResourcesRequest struct {
 // DescribeClusterResourcesResponse is the response struct for api DescribeClusterResources
 type DescribeClusterResourcesResponse struct {
 	*responses.BaseResponse
-	Resources []ResourcesItem `json:"resources" xml:"resources"`
 }
 
 // CreateDescribeClusterResourcesRequest creates a request to invoke DescribeClusterResources API

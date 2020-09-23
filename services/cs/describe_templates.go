@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeTemplates invokes the cs.DescribeTemplates API synchronously
-// api document: https://help.aliyun.com/api/cs/describetemplates.html
 func (client *Client) DescribeTemplates(request *DescribeTemplatesRequest) (response *DescribeTemplatesResponse, err error) {
 	response = CreateDescribeTemplatesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeTemplates(request *DescribeTemplatesRequest) (resp
 }
 
 // DescribeTemplatesWithChan invokes the cs.DescribeTemplates API asynchronously
-// api document: https://help.aliyun.com/api/cs/describetemplates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTemplatesWithChan(request *DescribeTemplatesRequest) (<-chan *DescribeTemplatesResponse, <-chan error) {
 	responseChan := make(chan *DescribeTemplatesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeTemplatesWithChan(request *DescribeTemplatesReques
 }
 
 // DescribeTemplatesWithCallback invokes the cs.DescribeTemplates API asynchronously
-// api document: https://help.aliyun.com/api/cs/describetemplates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTemplatesWithCallback(request *DescribeTemplatesRequest, callback func(response *DescribeTemplatesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,12 +77,8 @@ type DescribeTemplatesRequest struct {
 // DescribeTemplatesResponse is the response struct for api DescribeTemplates
 type DescribeTemplatesResponse struct {
 	*responses.BaseResponse
-	Template     string `json:"template" xml:"template"`
-	Acl          string `json:"acl" xml:"acl"`
-	Name         string `json:"name" xml:"name"`
-	Tags         string `json:"tags" xml:"tags"`
-	TemplateType string `json:"template_type" xml:"template_type"`
-	Description  string `json:"description" xml:"description"`
+	PageInfo  PageInfoInDescribeTemplates `json:"page_info" xml:"page_info"`
+	Templates Templates                   `json:"templates" xml:"templates"`
 }
 
 // CreateDescribeTemplatesRequest creates a request to invoke DescribeTemplates API

@@ -21,7 +21,6 @@ import (
 )
 
 // DescirbeWorkflow invokes the cs.DescirbeWorkflow API synchronously
-// api document: https://help.aliyun.com/api/cs/descirbeworkflow.html
 func (client *Client) DescirbeWorkflow(request *DescirbeWorkflowRequest) (response *DescirbeWorkflowResponse, err error) {
 	response = CreateDescirbeWorkflowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescirbeWorkflow(request *DescirbeWorkflowRequest) (respon
 }
 
 // DescirbeWorkflowWithChan invokes the cs.DescirbeWorkflow API asynchronously
-// api document: https://help.aliyun.com/api/cs/descirbeworkflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescirbeWorkflowWithChan(request *DescirbeWorkflowRequest) (<-chan *DescirbeWorkflowResponse, <-chan error) {
 	responseChan := make(chan *DescirbeWorkflowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescirbeWorkflowWithChan(request *DescirbeWorkflowRequest)
 }
 
 // DescirbeWorkflowWithCallback invokes the cs.DescirbeWorkflow API asynchronously
-// api document: https://help.aliyun.com/api/cs/descirbeworkflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescirbeWorkflowWithCallback(request *DescirbeWorkflowRequest, callback func(response *DescirbeWorkflowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // PauseClusterUpgrade invokes the cs.PauseClusterUpgrade API synchronously
-// api document: https://help.aliyun.com/api/cs/pauseclusterupgrade.html
 func (client *Client) PauseClusterUpgrade(request *PauseClusterUpgradeRequest) (response *PauseClusterUpgradeResponse, err error) {
 	response = CreatePauseClusterUpgradeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PauseClusterUpgrade(request *PauseClusterUpgradeRequest) (
 }
 
 // PauseClusterUpgradeWithChan invokes the cs.PauseClusterUpgrade API asynchronously
-// api document: https://help.aliyun.com/api/cs/pauseclusterupgrade.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PauseClusterUpgradeWithChan(request *PauseClusterUpgradeRequest) (<-chan *PauseClusterUpgradeResponse, <-chan error) {
 	responseChan := make(chan *PauseClusterUpgradeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PauseClusterUpgradeWithChan(request *PauseClusterUpgradeRe
 }
 
 // PauseClusterUpgradeWithCallback invokes the cs.PauseClusterUpgrade API asynchronously
-// api document: https://help.aliyun.com/api/cs/pauseclusterupgrade.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PauseClusterUpgradeWithCallback(request *PauseClusterUpgradeRequest, callback func(response *PauseClusterUpgradeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

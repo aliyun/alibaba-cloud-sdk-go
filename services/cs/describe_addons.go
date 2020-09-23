@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAddons invokes the cs.DescribeAddons API synchronously
-// api document: https://help.aliyun.com/api/cs/describeaddons.html
 func (client *Client) DescribeAddons(request *DescribeAddonsRequest) (response *DescribeAddonsResponse, err error) {
 	response = CreateDescribeAddonsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAddons(request *DescribeAddonsRequest) (response *
 }
 
 // DescribeAddonsWithChan invokes the cs.DescribeAddons API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeaddons.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAddonsWithChan(request *DescribeAddonsRequest) (<-chan *DescribeAddonsResponse, <-chan error) {
 	responseChan := make(chan *DescribeAddonsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAddonsWithChan(request *DescribeAddonsRequest) (<-
 }
 
 // DescribeAddonsWithCallback invokes the cs.DescribeAddons API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeaddons.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAddonsWithCallback(request *DescribeAddonsRequest, callback func(response *DescribeAddonsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

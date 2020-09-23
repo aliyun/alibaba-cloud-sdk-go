@@ -21,7 +21,6 @@ import (
 )
 
 // ScaleCluster invokes the cs.ScaleCluster API synchronously
-// api document: https://help.aliyun.com/api/cs/scalecluster.html
 func (client *Client) ScaleCluster(request *ScaleClusterRequest) (response *ScaleClusterResponse, err error) {
 	response = CreateScaleClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ScaleCluster(request *ScaleClusterRequest) (response *Scal
 }
 
 // ScaleClusterWithChan invokes the cs.ScaleCluster API asynchronously
-// api document: https://help.aliyun.com/api/cs/scalecluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScaleClusterWithChan(request *ScaleClusterRequest) (<-chan *ScaleClusterResponse, <-chan error) {
 	responseChan := make(chan *ScaleClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ScaleClusterWithChan(request *ScaleClusterRequest) (<-chan
 }
 
 // ScaleClusterWithCallback invokes the cs.ScaleCluster API asynchronously
-// api document: https://help.aliyun.com/api/cs/scalecluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScaleClusterWithCallback(request *ScaleClusterRequest, callback func(response *ScaleClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,13 +71,29 @@ func (client *Client) ScaleClusterWithCallback(request *ScaleClusterRequest, cal
 // ScaleClusterRequest is the request struct for api ScaleCluster
 type ScaleClusterRequest struct {
 	*requests.RoaRequest
-	ClusterId string `position:"Path" name:"ClusterId"`
+	KeyPair                  string           `position:"Body" name:"key_pair"`
+	WorkerDataDisk           requests.Boolean `position:"Body" name:"worker_data_disk"`
+	Count                    requests.Integer `position:"Body" name:"count"`
+	WorkerSystemDiskCategory string           `position:"Body" name:"worker_system_disk_category"`
+	CloudMonitorFlags        requests.Boolean `position:"Body" name:"cloud_monitor_flags"`
+	ClusterId                string           `position:"Path" name:"ClusterId"`
+	WorkerPeriodUnit         string           `position:"Body" name:"worker_period_unit"`
+	WorkerAutoRenew          requests.Boolean `position:"Body" name:"worker_auto_renew"`
+	WorkerAutoRenewPeriod    requests.Integer `position:"Body" name:"worker_auto_renew_period"`
+	WorkerPeriod             requests.Integer `position:"Body" name:"worker_period"`
+	LoginPassword            string           `position:"Body" name:"login_password"`
+	WorkerSystemDiskSize     requests.Integer `position:"Body" name:"worker_system_disk_size"`
+	CpuPolicy                string           `position:"Body" name:"cpu_policy"`
+	DisableRollback          requests.Boolean `position:"Body" name:"disable_rollback"`
+	WorkerInstanceChargeType string           `position:"Body" name:"worker_instance_charge_type"`
 }
 
 // ScaleClusterResponse is the response struct for api ScaleCluster
 type ScaleClusterResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	ClusterId string `json:"cluster_id" xml:"cluster_id"`
+	TaskId    string `json:"task_id" xml:"task_id"`
+	RequestId string `json:"request_id" xml:"request_id"`
 }
 
 // CreateScaleClusterRequest creates a request to invoke ScaleCluster API

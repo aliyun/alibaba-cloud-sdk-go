@@ -21,7 +21,6 @@ import (
 )
 
 // ResumeComponentUpgrade invokes the cs.ResumeComponentUpgrade API synchronously
-// api document: https://help.aliyun.com/api/cs/resumecomponentupgrade.html
 func (client *Client) ResumeComponentUpgrade(request *ResumeComponentUpgradeRequest) (response *ResumeComponentUpgradeResponse, err error) {
 	response = CreateResumeComponentUpgradeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResumeComponentUpgrade(request *ResumeComponentUpgradeRequ
 }
 
 // ResumeComponentUpgradeWithChan invokes the cs.ResumeComponentUpgrade API asynchronously
-// api document: https://help.aliyun.com/api/cs/resumecomponentupgrade.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeComponentUpgradeWithChan(request *ResumeComponentUpgradeRequest) (<-chan *ResumeComponentUpgradeResponse, <-chan error) {
 	responseChan := make(chan *ResumeComponentUpgradeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResumeComponentUpgradeWithChan(request *ResumeComponentUpg
 }
 
 // ResumeComponentUpgradeWithCallback invokes the cs.ResumeComponentUpgrade API asynchronously
-// api document: https://help.aliyun.com/api/cs/resumecomponentupgrade.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeComponentUpgradeWithCallback(request *ResumeComponentUpgradeRequest, callback func(response *ResumeComponentUpgradeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,7 +78,6 @@ type ResumeComponentUpgradeRequest struct {
 // ResumeComponentUpgradeResponse is the response struct for api ResumeComponentUpgrade
 type ResumeComponentUpgradeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateResumeComponentUpgradeRequest creates a request to invoke ResumeComponentUpgrade API

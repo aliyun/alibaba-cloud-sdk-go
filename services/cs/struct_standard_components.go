@@ -17,5 +17,5 @@ package cs
 
 // StandardComponents is a nested struct in cs response
 type StandardComponents struct {
-	AddonName Addon_name `json:"addon_name" xml:"addon_name"`
+	ComponentName map[string]interface{} `json:"ComponentName" xml:"ComponentName"`
 }

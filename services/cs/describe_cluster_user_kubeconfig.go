@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeClusterUserKubeconfig invokes the cs.DescribeClusterUserKubeconfig API synchronously
-// api document: https://help.aliyun.com/api/cs/describeclusteruserkubeconfig.html
 func (client *Client) DescribeClusterUserKubeconfig(request *DescribeClusterUserKubeconfigRequest) (response *DescribeClusterUserKubeconfigResponse, err error) {
 	response = CreateDescribeClusterUserKubeconfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeClusterUserKubeconfig(request *DescribeClusterUser
 }
 
 // DescribeClusterUserKubeconfigWithChan invokes the cs.DescribeClusterUserKubeconfig API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeclusteruserkubeconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterUserKubeconfigWithChan(request *DescribeClusterUserKubeconfigRequest) (<-chan *DescribeClusterUserKubeconfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterUserKubeconfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeClusterUserKubeconfigWithChan(request *DescribeClu
 }
 
 // DescribeClusterUserKubeconfigWithCallback invokes the cs.DescribeClusterUserKubeconfig API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeclusteruserkubeconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterUserKubeconfigWithCallback(request *DescribeClusterUserKubeconfigRequest, callback func(response *DescribeClusterUserKubeconfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

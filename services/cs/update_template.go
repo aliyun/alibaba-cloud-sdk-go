@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateTemplate invokes the cs.CreateTemplate API synchronously
-func (client *Client) CreateTemplate(request *CreateTemplateRequest) (response *CreateTemplateResponse, err error) {
-	response = CreateCreateTemplateResponse()
+// UpdateTemplate invokes the cs.UpdateTemplate API synchronously
+func (client *Client) UpdateTemplate(request *UpdateTemplateRequest) (response *UpdateTemplateResponse, err error) {
+	response = CreateUpdateTemplateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateTemplateWithChan invokes the cs.CreateTemplate API asynchronously
-func (client *Client) CreateTemplateWithChan(request *CreateTemplateRequest) (<-chan *CreateTemplateResponse, <-chan error) {
-	responseChan := make(chan *CreateTemplateResponse, 1)
+// UpdateTemplateWithChan invokes the cs.UpdateTemplate API asynchronously
+func (client *Client) UpdateTemplateWithChan(request *UpdateTemplateRequest) (<-chan *UpdateTemplateResponse, <-chan error) {
+	responseChan := make(chan *UpdateTemplateResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateTemplate(request)
+		response, err := client.UpdateTemplate(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateTemplateWithChan(request *CreateTemplateRequest) (<-
 	return responseChan, errChan
 }
 
-// CreateTemplateWithCallback invokes the cs.CreateTemplate API asynchronously
-func (client *Client) CreateTemplateWithCallback(request *CreateTemplateRequest, callback func(response *CreateTemplateResponse, err error)) <-chan int {
+// UpdateTemplateWithCallback invokes the cs.UpdateTemplate API asynchronously
+func (client *Client) UpdateTemplateWithCallback(request *UpdateTemplateRequest, callback func(response *UpdateTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateTemplateResponse
+		var response *UpdateTemplateResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateTemplate(request)
+		response, err = client.UpdateTemplate(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,34 +68,35 @@ func (client *Client) CreateTemplateWithCallback(request *CreateTemplateRequest,
 	return result
 }
 
-// CreateTemplateRequest is the request struct for api CreateTemplate
-type CreateTemplateRequest struct {
+// UpdateTemplateRequest is the request struct for api UpdateTemplate
+type UpdateTemplateRequest struct {
 	*requests.RoaRequest
 	Template     string `position:"Body" name:"template"`
 	Name         string `position:"Body" name:"name"`
+	Description  string `position:"Body" name:"description"`
 	TemplateType string `position:"Body" name:"template_type"`
+	TemplateId   string `position:"Path" name:"TemplateId"`
 	Tags         string `position:"Body" name:"tags"`
 }
 
-// CreateTemplateResponse is the response struct for api CreateTemplate
-type CreateTemplateResponse struct {
+// UpdateTemplateResponse is the response struct for api UpdateTemplate
+type UpdateTemplateResponse struct {
 	*responses.BaseResponse
-	TemplateId string `json:"template_id" xml:"template_id"`
 }
 
-// CreateCreateTemplateRequest creates a request to invoke CreateTemplate API
-func CreateCreateTemplateRequest() (request *CreateTemplateRequest) {
-	request = &CreateTemplateRequest{
+// CreateUpdateTemplateRequest creates a request to invoke UpdateTemplate API
+func CreateUpdateTemplateRequest() (request *UpdateTemplateRequest) {
+	request = &UpdateTemplateRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "CreateTemplate", "/templates", "", "")
-	request.Method = requests.POST
+	request.InitWithApiInfo("CS", "2015-12-15", "UpdateTemplate", "/templates/[TemplateId]", "", "")
+	request.Method = requests.PUT
 	return
 }
 
-// CreateCreateTemplateResponse creates a response to parse from CreateTemplate response
-func CreateCreateTemplateResponse() (response *CreateTemplateResponse) {
-	response = &CreateTemplateResponse{
+// CreateUpdateTemplateResponse creates a response to parse from UpdateTemplate response
+func CreateUpdateTemplateResponse() (response *UpdateTemplateResponse) {
+	response = &UpdateTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyClusterTags invokes the cs.ModifyClusterTags API synchronously
-// api document: https://help.aliyun.com/api/cs/modifyclustertags.html
 func (client *Client) ModifyClusterTags(request *ModifyClusterTagsRequest) (response *ModifyClusterTagsResponse, err error) {
 	response = CreateModifyClusterTagsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyClusterTags(request *ModifyClusterTagsRequest) (resp
 }
 
 // ModifyClusterTagsWithChan invokes the cs.ModifyClusterTags API asynchronously
-// api document: https://help.aliyun.com/api/cs/modifyclustertags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterTagsWithChan(request *ModifyClusterTagsRequest) (<-chan *ModifyClusterTagsResponse, <-chan error) {
 	responseChan := make(chan *ModifyClusterTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyClusterTagsWithChan(request *ModifyClusterTagsReques
 }
 
 // ModifyClusterTagsWithCallback invokes the cs.ModifyClusterTags API asynchronously
-// api document: https://help.aliyun.com/api/cs/modifyclustertags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterTagsWithCallback(request *ModifyClusterTagsRequest, callback func(response *ModifyClusterTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,14 +72,11 @@ func (client *Client) ModifyClusterTagsWithCallback(request *ModifyClusterTagsRe
 type ModifyClusterTagsRequest struct {
 	*requests.RoaRequest
 	ClusterId string `position:"Path" name:"ClusterId"`
-	Value     string `position:"Body" name:"value"`
-	Key       string `position:"Body" name:"key"`
 }
 
 // ModifyClusterTagsResponse is the response struct for api ModifyClusterTags
 type ModifyClusterTagsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"requestId" xml:"requestId"`
 }
 
 // CreateModifyClusterTagsRequest creates a request to invoke ModifyClusterTags API

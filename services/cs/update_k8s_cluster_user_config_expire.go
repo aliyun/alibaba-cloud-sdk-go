@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateK8sClusterUserConfigExpire invokes the cs.UpdateK8sClusterUserConfigExpire API synchronously
-// api document: https://help.aliyun.com/api/cs/updatek8sclusteruserconfigexpire.html
 func (client *Client) UpdateK8sClusterUserConfigExpire(request *UpdateK8sClusterUserConfigExpireRequest) (response *UpdateK8sClusterUserConfigExpireResponse, err error) {
 	response = CreateUpdateK8sClusterUserConfigExpireResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateK8sClusterUserConfigExpire(request *UpdateK8sCluster
 }
 
 // UpdateK8sClusterUserConfigExpireWithChan invokes the cs.UpdateK8sClusterUserConfigExpire API asynchronously
-// api document: https://help.aliyun.com/api/cs/updatek8sclusteruserconfigexpire.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateK8sClusterUserConfigExpireWithChan(request *UpdateK8sClusterUserConfigExpireRequest) (<-chan *UpdateK8sClusterUserConfigExpireResponse, <-chan error) {
 	responseChan := make(chan *UpdateK8sClusterUserConfigExpireResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateK8sClusterUserConfigExpireWithChan(request *UpdateK8
 }
 
 // UpdateK8sClusterUserConfigExpireWithCallback invokes the cs.UpdateK8sClusterUserConfigExpire API asynchronously
-// api document: https://help.aliyun.com/api/cs/updatek8sclusteruserconfigexpire.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateK8sClusterUserConfigExpireWithCallback(request *UpdateK8sClusterUserConfigExpireRequest, callback func(response *UpdateK8sClusterUserConfigExpireResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

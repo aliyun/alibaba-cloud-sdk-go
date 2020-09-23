@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeClusterAddonUpgradeStatus invokes the cs.DescribeClusterAddonUpgradeStatus API synchronously
-// api document: https://help.aliyun.com/api/cs/describeclusteraddonupgradestatus.html
 func (client *Client) DescribeClusterAddonUpgradeStatus(request *DescribeClusterAddonUpgradeStatusRequest) (response *DescribeClusterAddonUpgradeStatusResponse, err error) {
 	response = CreateDescribeClusterAddonUpgradeStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeClusterAddonUpgradeStatus(request *DescribeCluster
 }
 
 // DescribeClusterAddonUpgradeStatusWithChan invokes the cs.DescribeClusterAddonUpgradeStatus API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeclusteraddonupgradestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterAddonUpgradeStatusWithChan(request *DescribeClusterAddonUpgradeStatusRequest) (<-chan *DescribeClusterAddonUpgradeStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterAddonUpgradeStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeClusterAddonUpgradeStatusWithChan(request *Describ
 }
 
 // DescribeClusterAddonUpgradeStatusWithCallback invokes the cs.DescribeClusterAddonUpgradeStatus API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeclusteraddonupgradestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterAddonUpgradeStatusWithCallback(request *DescribeClusterAddonUpgradeStatusRequest, callback func(response *DescribeClusterAddonUpgradeStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

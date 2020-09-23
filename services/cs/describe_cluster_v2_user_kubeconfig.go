@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeClusterV2UserKubeconfig invokes the cs.DescribeClusterV2UserKubeconfig API synchronously
-// api document: https://help.aliyun.com/api/cs/describeclusterv2userkubeconfig.html
 func (client *Client) DescribeClusterV2UserKubeconfig(request *DescribeClusterV2UserKubeconfigRequest) (response *DescribeClusterV2UserKubeconfigResponse, err error) {
 	response = CreateDescribeClusterV2UserKubeconfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeClusterV2UserKubeconfig(request *DescribeClusterV2
 }
 
 // DescribeClusterV2UserKubeconfigWithChan invokes the cs.DescribeClusterV2UserKubeconfig API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeclusterv2userkubeconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterV2UserKubeconfigWithChan(request *DescribeClusterV2UserKubeconfigRequest) (<-chan *DescribeClusterV2UserKubeconfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterV2UserKubeconfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeClusterV2UserKubeconfigWithChan(request *DescribeC
 }
 
 // DescribeClusterV2UserKubeconfigWithCallback invokes the cs.DescribeClusterV2UserKubeconfig API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeclusterv2userkubeconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterV2UserKubeconfigWithCallback(request *DescribeClusterV2UserKubeconfigRequest, callback func(response *DescribeClusterV2UserKubeconfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,7 +78,7 @@ type DescribeClusterV2UserKubeconfigRequest struct {
 // DescribeClusterV2UserKubeconfigResponse is the response struct for api DescribeClusterV2UserKubeconfig
 type DescribeClusterV2UserKubeconfigResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	Config string `json:"config" xml:"config"`
 }
 
 // CreateDescribeClusterV2UserKubeconfigRequest creates a request to invoke DescribeClusterV2UserKubeconfig API

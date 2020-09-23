@@ -21,7 +21,6 @@ import (
 )
 
 // StartWorkflow invokes the cs.StartWorkflow API synchronously
-// api document: https://help.aliyun.com/api/cs/startworkflow.html
 func (client *Client) StartWorkflow(request *StartWorkflowRequest) (response *StartWorkflowResponse, err error) {
 	response = CreateStartWorkflowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartWorkflow(request *StartWorkflowRequest) (response *St
 }
 
 // StartWorkflowWithChan invokes the cs.StartWorkflow API asynchronously
-// api document: https://help.aliyun.com/api/cs/startworkflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartWorkflowWithChan(request *StartWorkflowRequest) (<-chan *StartWorkflowResponse, <-chan error) {
 	responseChan := make(chan *StartWorkflowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartWorkflowWithChan(request *StartWorkflowRequest) (<-ch
 }
 
 // StartWorkflowWithCallback invokes the cs.StartWorkflow API asynchronously
-// api document: https://help.aliyun.com/api/cs/startworkflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartWorkflowWithCallback(request *StartWorkflowRequest, callback func(response *StartWorkflowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

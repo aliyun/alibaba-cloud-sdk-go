@@ -21,7 +21,6 @@ import (
 )
 
 // UpgradeClusterAddons invokes the cs.UpgradeClusterAddons API synchronously
-// api document: https://help.aliyun.com/api/cs/upgradeclusteraddons.html
 func (client *Client) UpgradeClusterAddons(request *UpgradeClusterAddonsRequest) (response *UpgradeClusterAddonsResponse, err error) {
 	response = CreateUpgradeClusterAddonsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpgradeClusterAddons(request *UpgradeClusterAddonsRequest)
 }
 
 // UpgradeClusterAddonsWithChan invokes the cs.UpgradeClusterAddons API asynchronously
-// api document: https://help.aliyun.com/api/cs/upgradeclusteraddons.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeClusterAddonsWithChan(request *UpgradeClusterAddonsRequest) (<-chan *UpgradeClusterAddonsResponse, <-chan error) {
 	responseChan := make(chan *UpgradeClusterAddonsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpgradeClusterAddonsWithChan(request *UpgradeClusterAddons
 }
 
 // UpgradeClusterAddonsWithCallback invokes the cs.UpgradeClusterAddons API asynchronously
-// api document: https://help.aliyun.com/api/cs/upgradeclusteraddons.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeClusterAddonsWithCallback(request *UpgradeClusterAddonsRequest, callback func(response *UpgradeClusterAddonsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,7 @@ func (client *Client) UpgradeClusterAddonsWithCallback(request *UpgradeClusterAd
 // UpgradeClusterAddonsRequest is the request struct for api UpgradeClusterAddons
 type UpgradeClusterAddonsRequest struct {
 	*requests.RoaRequest
-	ComponentName string `position:"Body" name:"component_name"`
-	ClusterId     string `position:"Path" name:"ClusterId"`
-	Version       string `position:"Body" name:"version"`
+	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
 // UpgradeClusterAddonsResponse is the response struct for api UpgradeClusterAddons

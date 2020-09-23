@@ -21,7 +21,6 @@ import (
 )
 
 // ScaleOutCluster invokes the cs.ScaleOutCluster API synchronously
-// api document: https://help.aliyun.com/api/cs/scaleoutcluster.html
 func (client *Client) ScaleOutCluster(request *ScaleOutClusterRequest) (response *ScaleOutClusterResponse, err error) {
 	response = CreateScaleOutClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ScaleOutCluster(request *ScaleOutClusterRequest) (response
 }
 
 // ScaleOutClusterWithChan invokes the cs.ScaleOutCluster API asynchronously
-// api document: https://help.aliyun.com/api/cs/scaleoutcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScaleOutClusterWithChan(request *ScaleOutClusterRequest) (<-chan *ScaleOutClusterResponse, <-chan error) {
 	responseChan := make(chan *ScaleOutClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ScaleOutClusterWithChan(request *ScaleOutClusterRequest) (
 }
 
 // ScaleOutClusterWithCallback invokes the cs.ScaleOutCluster API asynchronously
-// api document: https://help.aliyun.com/api/cs/scaleoutcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScaleOutClusterWithCallback(request *ScaleOutClusterRequest, callback func(response *ScaleOutClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +77,7 @@ type ScaleOutClusterRequest struct {
 	WorkerSystemDiskCategory string           `position:"Body" name:"worker_system_disk_category"`
 	CloudMonitorFlags        requests.Boolean `position:"Body" name:"cloud_monitor_flags"`
 	ClusterId                string           `position:"Path" name:"ClusterId"`
+	UserData                 string           `position:"Body" name:"user_data"`
 	WorkerPeriodUnit         string           `position:"Body" name:"worker_period_unit"`
 	WorkerAutoRenew          requests.Boolean `position:"Body" name:"worker_auto_renew"`
 	WorkerAutoRenewPeriod    requests.Integer `position:"Body" name:"worker_auto_renew_period"`
@@ -90,16 +86,16 @@ type ScaleOutClusterRequest struct {
 	WorkerSystemDiskSize     requests.Integer `position:"Body" name:"worker_system_disk_size"`
 	CpuPolicy                string           `position:"Body" name:"cpu_policy"`
 	DisableRollback          requests.Boolean `position:"Body" name:"disable_rollback"`
+	ImageId                  string           `position:"Body" name:"image_id"`
 	WorkerInstanceChargeType string           `position:"Body" name:"worker_instance_charge_type"`
 }
 
 // ScaleOutClusterResponse is the response struct for api ScaleOutCluster
 type ScaleOutClusterResponse struct {
 	*responses.BaseResponse
-	ClusterId  string `json:"cluster_id" xml:"cluster_id"`
-	RequestId  string `json:"request_id" xml:"request_id"`
-	TaskId     string `json:"task_id" xml:"task_id"`
-	InstanceId string `json:"instanceId" xml:"instanceId"`
+	ClusterId string `json:"cluster_id" xml:"cluster_id"`
+	TaskId    string `json:"task_id" xml:"task_id"`
+	RequestId string `json:"request_id" xml:"request_id"`
 }
 
 // CreateScaleOutClusterRequest creates a request to invoke ScaleOutCluster API

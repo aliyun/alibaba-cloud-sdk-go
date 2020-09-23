@@ -21,7 +21,6 @@ import (
 )
 
 // InstallClusterAddons invokes the cs.InstallClusterAddons API synchronously
-// api document: https://help.aliyun.com/api/cs/installclusteraddons.html
 func (client *Client) InstallClusterAddons(request *InstallClusterAddonsRequest) (response *InstallClusterAddonsResponse, err error) {
 	response = CreateInstallClusterAddonsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InstallClusterAddons(request *InstallClusterAddonsRequest)
 }
 
 // InstallClusterAddonsWithChan invokes the cs.InstallClusterAddons API asynchronously
-// api document: https://help.aliyun.com/api/cs/installclusteraddons.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InstallClusterAddonsWithChan(request *InstallClusterAddonsRequest) (<-chan *InstallClusterAddonsResponse, <-chan error) {
 	responseChan := make(chan *InstallClusterAddonsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InstallClusterAddonsWithChan(request *InstallClusterAddons
 }
 
 // InstallClusterAddonsWithCallback invokes the cs.InstallClusterAddons API asynchronously
-// api document: https://help.aliyun.com/api/cs/installclusteraddons.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InstallClusterAddonsWithCallback(request *InstallClusterAddonsRequest, callback func(response *InstallClusterAddonsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,12 +71,7 @@ func (client *Client) InstallClusterAddonsWithCallback(request *InstallClusterAd
 // InstallClusterAddonsRequest is the request struct for api InstallClusterAddons
 type InstallClusterAddonsRequest struct {
 	*requests.RoaRequest
-	Name      string           `position:"Body" name:"name"`
-	Disabled  requests.Boolean `position:"Body" name:"disabled"`
-	ClusterId string           `position:"Path" name:"ClusterId"`
-	Version   string           `position:"Body" name:"version"`
-	Config    string           `position:"Body" name:"config"`
-	Required  string           `position:"Body" name:"required"`
+	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
 // InstallClusterAddonsResponse is the response struct for api InstallClusterAddons

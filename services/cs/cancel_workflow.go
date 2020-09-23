@@ -21,7 +21,6 @@ import (
 )
 
 // CancelWorkflow invokes the cs.CancelWorkflow API synchronously
-// api document: https://help.aliyun.com/api/cs/cancelworkflow.html
 func (client *Client) CancelWorkflow(request *CancelWorkflowRequest) (response *CancelWorkflowResponse, err error) {
 	response = CreateCancelWorkflowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CancelWorkflow(request *CancelWorkflowRequest) (response *
 }
 
 // CancelWorkflowWithChan invokes the cs.CancelWorkflow API asynchronously
-// api document: https://help.aliyun.com/api/cs/cancelworkflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelWorkflowWithChan(request *CancelWorkflowRequest) (<-chan *CancelWorkflowResponse, <-chan error) {
 	responseChan := make(chan *CancelWorkflowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CancelWorkflowWithChan(request *CancelWorkflowRequest) (<-
 }
 
 // CancelWorkflowWithCallback invokes the cs.CancelWorkflow API asynchronously
-// api document: https://help.aliyun.com/api/cs/cancelworkflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelWorkflowWithCallback(request *CancelWorkflowRequest, callback func(response *CancelWorkflowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

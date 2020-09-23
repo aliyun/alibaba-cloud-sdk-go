@@ -17,9 +17,9 @@ package cs
 
 // Addon_info is a nested struct in cs response
 type Addon_info struct {
+	ComponentName string `json:"component_name" xml:"component_name"`
 	Message       string `json:"message" xml:"message"`
 	Category      string `json:"category" xml:"category"`
-	Yaml          string `json:"yaml" xml:"yaml"`
-	ComponentName string `json:"component_name" xml:"component_name"`
 	Version       string `json:"version" xml:"version"`
+	Yaml          string `json:"yaml" xml:"yaml"`
 }

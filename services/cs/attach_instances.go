@@ -21,7 +21,6 @@ import (
 )
 
 // AttachInstances invokes the cs.AttachInstances API synchronously
-// api document: https://help.aliyun.com/api/cs/attachinstances.html
 func (client *Client) AttachInstances(request *AttachInstancesRequest) (response *AttachInstancesResponse, err error) {
 	response = CreateAttachInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AttachInstances(request *AttachInstancesRequest) (response
 }
 
 // AttachInstancesWithChan invokes the cs.AttachInstances API asynchronously
-// api document: https://help.aliyun.com/api/cs/attachinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachInstancesWithChan(request *AttachInstancesRequest) (<-chan *AttachInstancesResponse, <-chan error) {
 	responseChan := make(chan *AttachInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AttachInstancesWithChan(request *AttachInstancesRequest) (
 }
 
 // AttachInstancesWithCallback invokes the cs.AttachInstances API asynchronously
-// api document: https://help.aliyun.com/api/cs/attachinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachInstancesWithCallback(request *AttachInstancesRequest, callback func(response *AttachInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,8 +75,12 @@ type AttachInstancesRequest struct {
 	KeepInstanceName requests.Boolean `position:"Body" name:"keep_instance_name"`
 	KeyPair          string           `position:"Body" name:"key_pair"`
 	CpuPolicy        string           `position:"Body" name:"cpu_policy"`
+	IsEdgeWorker     requests.Boolean `position:"Body" name:"is_edge_worker"`
 	ClusterId        string           `position:"Path" name:"ClusterId"`
+	UserData         string           `position:"Body" name:"user_data"`
+	ImageId          string           `position:"Body" name:"image_id"`
 	FormatDisk       requests.Boolean `position:"Body" name:"format_disk"`
+	NodepoolId       string           `position:"Body" name:"nodepool_id"`
 }
 
 // AttachInstancesResponse is the response struct for api AttachInstances

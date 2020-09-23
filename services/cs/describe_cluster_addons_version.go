@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeClusterAddonsVersion invokes the cs.DescribeClusterAddonsVersion API synchronously
-// api document: https://help.aliyun.com/api/cs/describeclusteraddonsversion.html
 func (client *Client) DescribeClusterAddonsVersion(request *DescribeClusterAddonsVersionRequest) (response *DescribeClusterAddonsVersionResponse, err error) {
 	response = CreateDescribeClusterAddonsVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeClusterAddonsVersion(request *DescribeClusterAddon
 }
 
 // DescribeClusterAddonsVersionWithChan invokes the cs.DescribeClusterAddonsVersion API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeclusteraddonsversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterAddonsVersionWithChan(request *DescribeClusterAddonsVersionRequest) (<-chan *DescribeClusterAddonsVersionResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterAddonsVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeClusterAddonsVersionWithChan(request *DescribeClus
 }
 
 // DescribeClusterAddonsVersionWithCallback invokes the cs.DescribeClusterAddonsVersion API asynchronously
-// api document: https://help.aliyun.com/api/cs/describeclusteraddonsversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterAddonsVersionWithCallback(request *DescribeClusterAddonsVersionRequest, callback func(response *DescribeClusterAddonsVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,14 +77,7 @@ type DescribeClusterAddonsVersionRequest struct {
 // DescribeClusterAddonsVersionResponse is the response struct for api DescribeClusterAddonsVersion
 type DescribeClusterAddonsVersionResponse struct {
 	*responses.BaseResponse
-	Template      string `json:"template" xml:"template"`
-	NextVersion   string `json:"next_version" xml:"next_version"`
-	CanUpgrade    bool   `json:"can_upgrade" xml:"can_upgrade"`
-	ComponentName string `json:"component_name" xml:"component_name"`
-	Version       string `json:"version" xml:"version"`
-	Changed       string `json:"changed" xml:"changed"`
-	Message       string `json:"message" xml:"message"`
-	Required      bool   `json:"required" xml:"required"`
+	AddonsName map[string]interface{} `json:"AddonsName" xml:"AddonsName"`
 }
 
 // CreateDescribeClusterAddonsVersionRequest creates a request to invoke DescribeClusterAddonsVersion API

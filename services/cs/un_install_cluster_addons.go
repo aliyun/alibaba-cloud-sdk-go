@@ -21,7 +21,6 @@ import (
 )
 
 // UnInstallClusterAddons invokes the cs.UnInstallClusterAddons API synchronously
-// api document: https://help.aliyun.com/api/cs/uninstallclusteraddons.html
 func (client *Client) UnInstallClusterAddons(request *UnInstallClusterAddonsRequest) (response *UnInstallClusterAddonsResponse, err error) {
 	response = CreateUnInstallClusterAddonsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnInstallClusterAddons(request *UnInstallClusterAddonsRequ
 }
 
 // UnInstallClusterAddonsWithChan invokes the cs.UnInstallClusterAddons API asynchronously
-// api document: https://help.aliyun.com/api/cs/uninstallclusteraddons.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnInstallClusterAddonsWithChan(request *UnInstallClusterAddonsRequest) (<-chan *UnInstallClusterAddonsResponse, <-chan error) {
 	responseChan := make(chan *UnInstallClusterAddonsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnInstallClusterAddonsWithChan(request *UnInstallClusterAd
 }
 
 // UnInstallClusterAddonsWithCallback invokes the cs.UnInstallClusterAddons API asynchronously
-// api document: https://help.aliyun.com/api/cs/uninstallclusteraddons.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnInstallClusterAddonsWithCallback(request *UnInstallClusterAddonsRequest, callback func(response *UnInstallClusterAddonsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,14 +71,12 @@ func (client *Client) UnInstallClusterAddonsWithCallback(request *UnInstallClust
 // UnInstallClusterAddonsRequest is the request struct for api UnInstallClusterAddons
 type UnInstallClusterAddonsRequest struct {
 	*requests.RoaRequest
-	Name      string `position:"Body" name:"name"`
 	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
 // UnInstallClusterAddonsResponse is the response struct for api UnInstallClusterAddons
 type UnInstallClusterAddonsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateUnInstallClusterAddonsRequest creates a request to invoke UnInstallClusterAddons API

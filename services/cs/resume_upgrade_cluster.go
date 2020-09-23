@@ -21,7 +21,6 @@ import (
 )
 
 // ResumeUpgradeCluster invokes the cs.ResumeUpgradeCluster API synchronously
-// api document: https://help.aliyun.com/api/cs/resumeupgradecluster.html
 func (client *Client) ResumeUpgradeCluster(request *ResumeUpgradeClusterRequest) (response *ResumeUpgradeClusterResponse, err error) {
 	response = CreateResumeUpgradeClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResumeUpgradeCluster(request *ResumeUpgradeClusterRequest)
 }
 
 // ResumeUpgradeClusterWithChan invokes the cs.ResumeUpgradeCluster API asynchronously
-// api document: https://help.aliyun.com/api/cs/resumeupgradecluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeUpgradeClusterWithChan(request *ResumeUpgradeClusterRequest) (<-chan *ResumeUpgradeClusterResponse, <-chan error) {
 	responseChan := make(chan *ResumeUpgradeClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResumeUpgradeClusterWithChan(request *ResumeUpgradeCluster
 }
 
 // ResumeUpgradeClusterWithCallback invokes the cs.ResumeUpgradeCluster API asynchronously
-// api document: https://help.aliyun.com/api/cs/resumeupgradecluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeUpgradeClusterWithCallback(request *ResumeUpgradeClusterRequest, callback func(response *ResumeUpgradeClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
