@@ -21,7 +21,6 @@ import (
 )
 
 // CreateTopic invokes the alikafka.CreateTopic API synchronously
-// api document: https://help.aliyun.com/api/alikafka/createtopic.html
 func (client *Client) CreateTopic(request *CreateTopicRequest) (response *CreateTopicResponse, err error) {
 	response = CreateCreateTopicResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateTopic(request *CreateTopicRequest) (response *Create
 }
 
 // CreateTopicWithChan invokes the alikafka.CreateTopic API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/createtopic.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTopicWithChan(request *CreateTopicRequest) (<-chan *CreateTopicResponse, <-chan error) {
 	responseChan := make(chan *CreateTopicResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateTopicWithChan(request *CreateTopicRequest) (<-chan *
 }
 
 // CreateTopicWithCallback invokes the alikafka.CreateTopic API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/createtopic.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTopicWithCallback(request *CreateTopicRequest, callback func(response *CreateTopicResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

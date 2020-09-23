@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSaslUser invokes the alikafka.DeleteSaslUser API synchronously
-// api document: https://help.aliyun.com/api/alikafka/deletesasluser.html
 func (client *Client) DeleteSaslUser(request *DeleteSaslUserRequest) (response *DeleteSaslUserResponse, err error) {
 	response = CreateDeleteSaslUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSaslUser(request *DeleteSaslUserRequest) (response *
 }
 
 // DeleteSaslUserWithChan invokes the alikafka.DeleteSaslUser API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/deletesasluser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSaslUserWithChan(request *DeleteSaslUserRequest) (<-chan *DeleteSaslUserResponse, <-chan error) {
 	responseChan := make(chan *DeleteSaslUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSaslUserWithChan(request *DeleteSaslUserRequest) (<-
 }
 
 // DeleteSaslUserWithCallback invokes the alikafka.DeleteSaslUser API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/deletesasluser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSaslUserWithCallback(request *DeleteSaslUserRequest, callback func(response *DeleteSaslUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

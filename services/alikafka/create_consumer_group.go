@@ -21,7 +21,6 @@ import (
 )
 
 // CreateConsumerGroup invokes the alikafka.CreateConsumerGroup API synchronously
-// api document: https://help.aliyun.com/api/alikafka/createconsumergroup.html
 func (client *Client) CreateConsumerGroup(request *CreateConsumerGroupRequest) (response *CreateConsumerGroupResponse, err error) {
 	response = CreateCreateConsumerGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateConsumerGroup(request *CreateConsumerGroupRequest) (
 }
 
 // CreateConsumerGroupWithChan invokes the alikafka.CreateConsumerGroup API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/createconsumergroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateConsumerGroupWithChan(request *CreateConsumerGroupRequest) (<-chan *CreateConsumerGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateConsumerGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateConsumerGroupWithChan(request *CreateConsumerGroupRe
 }
 
 // CreateConsumerGroupWithCallback invokes the alikafka.CreateConsumerGroup API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/createconsumergroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateConsumerGroupWithCallback(request *CreateConsumerGroupRequest, callback func(response *CreateConsumerGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

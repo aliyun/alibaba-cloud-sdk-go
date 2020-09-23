@@ -21,7 +21,6 @@ import (
 )
 
 // GetTopicStatus invokes the alikafka.GetTopicStatus API synchronously
-// api document: https://help.aliyun.com/api/alikafka/gettopicstatus.html
 func (client *Client) GetTopicStatus(request *GetTopicStatusRequest) (response *GetTopicStatusResponse, err error) {
 	response = CreateGetTopicStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetTopicStatus(request *GetTopicStatusRequest) (response *
 }
 
 // GetTopicStatusWithChan invokes the alikafka.GetTopicStatus API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/gettopicstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTopicStatusWithChan(request *GetTopicStatusRequest) (<-chan *GetTopicStatusResponse, <-chan error) {
 	responseChan := make(chan *GetTopicStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetTopicStatusWithChan(request *GetTopicStatusRequest) (<-
 }
 
 // GetTopicStatusWithCallback invokes the alikafka.GetTopicStatus API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/gettopicstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTopicStatusWithCallback(request *GetTopicStatusRequest, callback func(response *GetTopicStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

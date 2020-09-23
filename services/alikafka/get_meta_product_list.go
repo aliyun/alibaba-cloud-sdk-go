@@ -21,7 +21,6 @@ import (
 )
 
 // GetMetaProductList invokes the alikafka.GetMetaProductList API synchronously
-// api document: https://help.aliyun.com/api/alikafka/getmetaproductlist.html
 func (client *Client) GetMetaProductList(request *GetMetaProductListRequest) (response *GetMetaProductListResponse, err error) {
 	response = CreateGetMetaProductListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetMetaProductList(request *GetMetaProductListRequest) (re
 }
 
 // GetMetaProductListWithChan invokes the alikafka.GetMetaProductList API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/getmetaproductlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMetaProductListWithChan(request *GetMetaProductListRequest) (<-chan *GetMetaProductListResponse, <-chan error) {
 	responseChan := make(chan *GetMetaProductListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetMetaProductListWithChan(request *GetMetaProductListRequ
 }
 
 // GetMetaProductListWithCallback invokes the alikafka.GetMetaProductList API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/getmetaproductlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMetaProductListWithCallback(request *GetMetaProductListRequest, callback func(response *GetMetaProductListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

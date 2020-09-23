@@ -21,7 +21,6 @@ import (
 )
 
 // GetConsumerProgress invokes the alikafka.GetConsumerProgress API synchronously
-// api document: https://help.aliyun.com/api/alikafka/getconsumerprogress.html
 func (client *Client) GetConsumerProgress(request *GetConsumerProgressRequest) (response *GetConsumerProgressResponse, err error) {
 	response = CreateGetConsumerProgressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetConsumerProgress(request *GetConsumerProgressRequest) (
 }
 
 // GetConsumerProgressWithChan invokes the alikafka.GetConsumerProgress API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/getconsumerprogress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetConsumerProgressWithChan(request *GetConsumerProgressRequest) (<-chan *GetConsumerProgressResponse, <-chan error) {
 	responseChan := make(chan *GetConsumerProgressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetConsumerProgressWithChan(request *GetConsumerProgressRe
 }
 
 // GetConsumerProgressWithCallback invokes the alikafka.GetConsumerProgress API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/getconsumerprogress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetConsumerProgressWithCallback(request *GetConsumerProgressRequest, callback func(response *GetConsumerProgressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

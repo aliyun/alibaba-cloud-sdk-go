@@ -21,7 +21,6 @@ import (
 )
 
 // GetInstanceList invokes the alikafka.GetInstanceList API synchronously
-// api document: https://help.aliyun.com/api/alikafka/getinstancelist.html
 func (client *Client) GetInstanceList(request *GetInstanceListRequest) (response *GetInstanceListResponse, err error) {
 	response = CreateGetInstanceListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetInstanceList(request *GetInstanceListRequest) (response
 }
 
 // GetInstanceListWithChan invokes the alikafka.GetInstanceList API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/getinstancelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceListWithChan(request *GetInstanceListRequest) (<-chan *GetInstanceListResponse, <-chan error) {
 	responseChan := make(chan *GetInstanceListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetInstanceListWithChan(request *GetInstanceListRequest) (
 }
 
 // GetInstanceListWithCallback invokes the alikafka.GetInstanceList API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/getinstancelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceListWithCallback(request *GetInstanceListRequest, callback func(response *GetInstanceListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

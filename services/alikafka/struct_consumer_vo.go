@@ -20,5 +20,6 @@ type ConsumerVO struct {
 	RegionId   string                `json:"RegionId" xml:"RegionId"`
 	InstanceId string                `json:"InstanceId" xml:"InstanceId"`
 	ConsumerId string                `json:"ConsumerId" xml:"ConsumerId"`
+	Remark     string                `json:"Remark" xml:"Remark"`
 	Tags       TagsInGetConsumerList `json:"Tags" xml:"Tags"`
 }

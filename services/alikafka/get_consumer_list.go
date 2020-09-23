@@ -21,7 +21,6 @@ import (
 )
 
 // GetConsumerList invokes the alikafka.GetConsumerList API synchronously
-// api document: https://help.aliyun.com/api/alikafka/getconsumerlist.html
 func (client *Client) GetConsumerList(request *GetConsumerListRequest) (response *GetConsumerListResponse, err error) {
 	response = CreateGetConsumerListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetConsumerList(request *GetConsumerListRequest) (response
 }
 
 // GetConsumerListWithChan invokes the alikafka.GetConsumerList API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/getconsumerlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetConsumerListWithChan(request *GetConsumerListRequest) (<-chan *GetConsumerListResponse, <-chan error) {
 	responseChan := make(chan *GetConsumerListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetConsumerListWithChan(request *GetConsumerListRequest) (
 }
 
 // GetConsumerListWithCallback invokes the alikafka.GetConsumerList API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/getconsumerlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetConsumerListWithCallback(request *GetConsumerListRequest, callback func(response *GetConsumerListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

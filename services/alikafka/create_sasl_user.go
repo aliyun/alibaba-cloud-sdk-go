@@ -21,7 +21,6 @@ import (
 )
 
 // CreateSaslUser invokes the alikafka.CreateSaslUser API synchronously
-// api document: https://help.aliyun.com/api/alikafka/createsasluser.html
 func (client *Client) CreateSaslUser(request *CreateSaslUserRequest) (response *CreateSaslUserResponse, err error) {
 	response = CreateCreateSaslUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateSaslUser(request *CreateSaslUserRequest) (response *
 }
 
 // CreateSaslUserWithChan invokes the alikafka.CreateSaslUser API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/createsasluser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSaslUserWithChan(request *CreateSaslUserRequest) (<-chan *CreateSaslUserResponse, <-chan error) {
 	responseChan := make(chan *CreateSaslUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateSaslUserWithChan(request *CreateSaslUserRequest) (<-
 }
 
 // CreateSaslUserWithCallback invokes the alikafka.CreateSaslUser API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/createsasluser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSaslUserWithCallback(request *CreateSaslUserRequest, callback func(response *CreateSaslUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

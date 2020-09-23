@@ -21,7 +21,6 @@ import (
 )
 
 // ReleaseInstance invokes the alikafka.ReleaseInstance API synchronously
-// api document: https://help.aliyun.com/api/alikafka/releaseinstance.html
 func (client *Client) ReleaseInstance(request *ReleaseInstanceRequest) (response *ReleaseInstanceResponse, err error) {
 	response = CreateReleaseInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReleaseInstance(request *ReleaseInstanceRequest) (response
 }
 
 // ReleaseInstanceWithChan invokes the alikafka.ReleaseInstance API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/releaseinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseInstanceWithChan(request *ReleaseInstanceRequest) (<-chan *ReleaseInstanceResponse, <-chan error) {
 	responseChan := make(chan *ReleaseInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReleaseInstanceWithChan(request *ReleaseInstanceRequest) (
 }
 
 // ReleaseInstanceWithCallback invokes the alikafka.ReleaseInstance API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/releaseinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseInstanceWithCallback(request *ReleaseInstanceRequest, callback func(response *ReleaseInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

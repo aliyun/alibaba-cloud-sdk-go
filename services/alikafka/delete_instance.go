@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteInstance invokes the alikafka.DeleteInstance API synchronously
-// api document: https://help.aliyun.com/api/alikafka/deleteinstance.html
 func (client *Client) DeleteInstance(request *DeleteInstanceRequest) (response *DeleteInstanceResponse, err error) {
 	response = CreateDeleteInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteInstance(request *DeleteInstanceRequest) (response *
 }
 
 // DeleteInstanceWithChan invokes the alikafka.DeleteInstance API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/deleteinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-chan *DeleteInstanceResponse, <-chan error) {
 	responseChan := make(chan *DeleteInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-
 }
 
 // DeleteInstanceWithCallback invokes the alikafka.DeleteInstance API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/deleteinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest, callback func(response *DeleteInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

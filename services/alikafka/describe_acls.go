@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAcls invokes the alikafka.DescribeAcls API synchronously
-// api document: https://help.aliyun.com/api/alikafka/describeacls.html
 func (client *Client) DescribeAcls(request *DescribeAclsRequest) (response *DescribeAclsResponse, err error) {
 	response = CreateDescribeAclsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAcls(request *DescribeAclsRequest) (response *Desc
 }
 
 // DescribeAclsWithChan invokes the alikafka.DescribeAcls API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/describeacls.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAclsWithChan(request *DescribeAclsRequest) (<-chan *DescribeAclsResponse, <-chan error) {
 	responseChan := make(chan *DescribeAclsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAclsWithChan(request *DescribeAclsRequest) (<-chan
 }
 
 // DescribeAclsWithCallback invokes the alikafka.DescribeAcls API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/describeacls.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAclsWithCallback(request *DescribeAclsRequest, callback func(response *DescribeAclsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

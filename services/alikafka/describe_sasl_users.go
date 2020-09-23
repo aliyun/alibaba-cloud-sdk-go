@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSaslUsers invokes the alikafka.DescribeSaslUsers API synchronously
-// api document: https://help.aliyun.com/api/alikafka/describesaslusers.html
 func (client *Client) DescribeSaslUsers(request *DescribeSaslUsersRequest) (response *DescribeSaslUsersResponse, err error) {
 	response = CreateDescribeSaslUsersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSaslUsers(request *DescribeSaslUsersRequest) (resp
 }
 
 // DescribeSaslUsersWithChan invokes the alikafka.DescribeSaslUsers API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/describesaslusers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSaslUsersWithChan(request *DescribeSaslUsersRequest) (<-chan *DescribeSaslUsersResponse, <-chan error) {
 	responseChan := make(chan *DescribeSaslUsersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSaslUsersWithChan(request *DescribeSaslUsersReques
 }
 
 // DescribeSaslUsersWithCallback invokes the alikafka.DescribeSaslUsers API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/describesaslusers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSaslUsersWithCallback(request *DescribeSaslUsersRequest, callback func(response *DescribeSaslUsersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

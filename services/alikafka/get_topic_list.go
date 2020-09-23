@@ -21,7 +21,6 @@ import (
 )
 
 // GetTopicList invokes the alikafka.GetTopicList API synchronously
-// api document: https://help.aliyun.com/api/alikafka/gettopiclist.html
 func (client *Client) GetTopicList(request *GetTopicListRequest) (response *GetTopicListResponse, err error) {
 	response = CreateGetTopicListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetTopicList(request *GetTopicListRequest) (response *GetT
 }
 
 // GetTopicListWithChan invokes the alikafka.GetTopicList API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/gettopiclist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTopicListWithChan(request *GetTopicListRequest) (<-chan *GetTopicListResponse, <-chan error) {
 	responseChan := make(chan *GetTopicListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetTopicListWithChan(request *GetTopicListRequest) (<-chan
 }
 
 // GetTopicListWithCallback invokes the alikafka.GetTopicList API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/gettopiclist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTopicListWithCallback(request *GetTopicListRequest, callback func(response *GetTopicListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

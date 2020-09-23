@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteTopic invokes the alikafka.DeleteTopic API synchronously
-// api document: https://help.aliyun.com/api/alikafka/deletetopic.html
 func (client *Client) DeleteTopic(request *DeleteTopicRequest) (response *DeleteTopicResponse, err error) {
 	response = CreateDeleteTopicResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteTopic(request *DeleteTopicRequest) (response *Delete
 }
 
 // DeleteTopicWithChan invokes the alikafka.DeleteTopic API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/deletetopic.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTopicWithChan(request *DeleteTopicRequest) (<-chan *DeleteTopicResponse, <-chan error) {
 	responseChan := make(chan *DeleteTopicResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteTopicWithChan(request *DeleteTopicRequest) (<-chan *
 }
 
 // DeleteTopicWithCallback invokes the alikafka.DeleteTopic API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/deletetopic.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTopicWithCallback(request *DeleteTopicRequest, callback func(response *DeleteTopicResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

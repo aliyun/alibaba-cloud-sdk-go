@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyPartitionNum invokes the alikafka.ModifyPartitionNum API synchronously
-// api document: https://help.aliyun.com/api/alikafka/modifypartitionnum.html
 func (client *Client) ModifyPartitionNum(request *ModifyPartitionNumRequest) (response *ModifyPartitionNumResponse, err error) {
 	response = CreateModifyPartitionNumResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyPartitionNum(request *ModifyPartitionNumRequest) (re
 }
 
 // ModifyPartitionNumWithChan invokes the alikafka.ModifyPartitionNum API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/modifypartitionnum.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPartitionNumWithChan(request *ModifyPartitionNumRequest) (<-chan *ModifyPartitionNumResponse, <-chan error) {
 	responseChan := make(chan *ModifyPartitionNumResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyPartitionNumWithChan(request *ModifyPartitionNumRequ
 }
 
 // ModifyPartitionNumWithCallback invokes the alikafka.ModifyPartitionNum API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/modifypartitionnum.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPartitionNumWithCallback(request *ModifyPartitionNumRequest, callback func(response *ModifyPartitionNumResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

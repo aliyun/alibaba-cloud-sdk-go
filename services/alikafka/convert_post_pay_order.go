@@ -21,7 +21,6 @@ import (
 )
 
 // ConvertPostPayOrder invokes the alikafka.ConvertPostPayOrder API synchronously
-// api document: https://help.aliyun.com/api/alikafka/convertpostpayorder.html
 func (client *Client) ConvertPostPayOrder(request *ConvertPostPayOrderRequest) (response *ConvertPostPayOrderResponse, err error) {
 	response = CreateConvertPostPayOrderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ConvertPostPayOrder(request *ConvertPostPayOrderRequest) (
 }
 
 // ConvertPostPayOrderWithChan invokes the alikafka.ConvertPostPayOrder API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/convertpostpayorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConvertPostPayOrderWithChan(request *ConvertPostPayOrderRequest) (<-chan *ConvertPostPayOrderResponse, <-chan error) {
 	responseChan := make(chan *ConvertPostPayOrderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ConvertPostPayOrderWithChan(request *ConvertPostPayOrderRe
 }
 
 // ConvertPostPayOrderWithCallback invokes the alikafka.ConvertPostPayOrder API asynchronously
-// api document: https://help.aliyun.com/api/alikafka/convertpostpayorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConvertPostPayOrderWithCallback(request *ConvertPostPayOrderRequest, callback func(response *ConvertPostPayOrderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
