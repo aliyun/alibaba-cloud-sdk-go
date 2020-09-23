@@ -21,7 +21,6 @@ import (
 )
 
 // AllocateDedicatedHosts invokes the ecs.AllocateDedicatedHosts API synchronously
-// api document: https://help.aliyun.com/api/ecs/allocatededicatedhosts.html
 func (client *Client) AllocateDedicatedHosts(request *AllocateDedicatedHostsRequest) (response *AllocateDedicatedHostsResponse, err error) {
 	response = CreateAllocateDedicatedHostsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AllocateDedicatedHosts(request *AllocateDedicatedHostsRequ
 }
 
 // AllocateDedicatedHostsWithChan invokes the ecs.AllocateDedicatedHosts API asynchronously
-// api document: https://help.aliyun.com/api/ecs/allocatededicatedhosts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateDedicatedHostsWithChan(request *AllocateDedicatedHostsRequest) (<-chan *AllocateDedicatedHostsResponse, <-chan error) {
 	responseChan := make(chan *AllocateDedicatedHostsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AllocateDedicatedHostsWithChan(request *AllocateDedicatedH
 }
 
 // AllocateDedicatedHostsWithCallback invokes the ecs.AllocateDedicatedHosts API asynchronously
-// api document: https://help.aliyun.com/api/ecs/allocatededicatedhosts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateDedicatedHostsWithCallback(request *AllocateDedicatedHostsRequest, callback func(response *AllocateDedicatedHostsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

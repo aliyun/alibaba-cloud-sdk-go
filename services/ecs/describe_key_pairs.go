@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeKeyPairs invokes the ecs.DescribeKeyPairs API synchronously
-// api document: https://help.aliyun.com/api/ecs/describekeypairs.html
 func (client *Client) DescribeKeyPairs(request *DescribeKeyPairsRequest) (response *DescribeKeyPairsResponse, err error) {
 	response = CreateDescribeKeyPairsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeKeyPairs(request *DescribeKeyPairsRequest) (respon
 }
 
 // DescribeKeyPairsWithChan invokes the ecs.DescribeKeyPairs API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describekeypairs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeKeyPairsWithChan(request *DescribeKeyPairsRequest) (<-chan *DescribeKeyPairsResponse, <-chan error) {
 	responseChan := make(chan *DescribeKeyPairsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeKeyPairsWithChan(request *DescribeKeyPairsRequest)
 }
 
 // DescribeKeyPairsWithCallback invokes the ecs.DescribeKeyPairs API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describekeypairs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeKeyPairsWithCallback(request *DescribeKeyPairsRequest, callback func(response *DescribeKeyPairsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

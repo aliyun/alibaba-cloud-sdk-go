@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDedicatedHostsChargeType invokes the ecs.ModifyDedicatedHostsChargeType API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifydedicatedhostschargetype.html
 func (client *Client) ModifyDedicatedHostsChargeType(request *ModifyDedicatedHostsChargeTypeRequest) (response *ModifyDedicatedHostsChargeTypeResponse, err error) {
 	response = CreateModifyDedicatedHostsChargeTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDedicatedHostsChargeType(request *ModifyDedicatedHos
 }
 
 // ModifyDedicatedHostsChargeTypeWithChan invokes the ecs.ModifyDedicatedHostsChargeType API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifydedicatedhostschargetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDedicatedHostsChargeTypeWithChan(request *ModifyDedicatedHostsChargeTypeRequest) (<-chan *ModifyDedicatedHostsChargeTypeResponse, <-chan error) {
 	responseChan := make(chan *ModifyDedicatedHostsChargeTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDedicatedHostsChargeTypeWithChan(request *ModifyDedi
 }
 
 // ModifyDedicatedHostsChargeTypeWithCallback invokes the ecs.ModifyDedicatedHostsChargeType API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifydedicatedhostschargetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDedicatedHostsChargeTypeWithCallback(request *ModifyDedicatedHostsChargeTypeRequest, callback func(response *ModifyDedicatedHostsChargeTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

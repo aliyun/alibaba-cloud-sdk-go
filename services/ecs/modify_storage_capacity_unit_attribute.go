@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyStorageCapacityUnitAttribute invokes the ecs.ModifyStorageCapacityUnitAttribute API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifystoragecapacityunitattribute.html
 func (client *Client) ModifyStorageCapacityUnitAttribute(request *ModifyStorageCapacityUnitAttributeRequest) (response *ModifyStorageCapacityUnitAttributeResponse, err error) {
 	response = CreateModifyStorageCapacityUnitAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyStorageCapacityUnitAttribute(request *ModifyStorageC
 }
 
 // ModifyStorageCapacityUnitAttributeWithChan invokes the ecs.ModifyStorageCapacityUnitAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifystoragecapacityunitattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyStorageCapacityUnitAttributeWithChan(request *ModifyStorageCapacityUnitAttributeRequest) (<-chan *ModifyStorageCapacityUnitAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyStorageCapacityUnitAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyStorageCapacityUnitAttributeWithChan(request *Modify
 }
 
 // ModifyStorageCapacityUnitAttributeWithCallback invokes the ecs.ModifyStorageCapacityUnitAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifystoragecapacityunitattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyStorageCapacityUnitAttributeWithCallback(request *ModifyStorageCapacityUnitAttributeRequest, callback func(response *ModifyStorageCapacityUnitAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

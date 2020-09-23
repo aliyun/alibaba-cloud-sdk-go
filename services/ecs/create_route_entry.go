@@ -21,7 +21,6 @@ import (
 )
 
 // CreateRouteEntry invokes the ecs.CreateRouteEntry API synchronously
-// api document: https://help.aliyun.com/api/ecs/createrouteentry.html
 func (client *Client) CreateRouteEntry(request *CreateRouteEntryRequest) (response *CreateRouteEntryResponse, err error) {
 	response = CreateCreateRouteEntryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateRouteEntry(request *CreateRouteEntryRequest) (respon
 }
 
 // CreateRouteEntryWithChan invokes the ecs.CreateRouteEntry API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createrouteentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRouteEntryWithChan(request *CreateRouteEntryRequest) (<-chan *CreateRouteEntryResponse, <-chan error) {
 	responseChan := make(chan *CreateRouteEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateRouteEntryWithChan(request *CreateRouteEntryRequest)
 }
 
 // CreateRouteEntryWithCallback invokes the ecs.CreateRouteEntry API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createrouteentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRouteEntryWithCallback(request *CreateRouteEntryRequest, callback func(response *CreateRouteEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

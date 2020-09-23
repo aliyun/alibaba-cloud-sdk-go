@@ -21,7 +21,6 @@ import (
 )
 
 // CreateKeyPair invokes the ecs.CreateKeyPair API synchronously
-// api document: https://help.aliyun.com/api/ecs/createkeypair.html
 func (client *Client) CreateKeyPair(request *CreateKeyPairRequest) (response *CreateKeyPairResponse, err error) {
 	response = CreateCreateKeyPairResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateKeyPair(request *CreateKeyPairRequest) (response *Cr
 }
 
 // CreateKeyPairWithChan invokes the ecs.CreateKeyPair API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createkeypair.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateKeyPairWithChan(request *CreateKeyPairRequest) (<-chan *CreateKeyPairResponse, <-chan error) {
 	responseChan := make(chan *CreateKeyPairResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateKeyPairWithChan(request *CreateKeyPairRequest) (<-ch
 }
 
 // CreateKeyPairWithCallback invokes the ecs.CreateKeyPair API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createkeypair.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateKeyPairWithCallback(request *CreateKeyPairRequest, callback func(response *CreateKeyPairResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyStorageSetAttribute invokes the ecs.ModifyStorageSetAttribute API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifystoragesetattribute.html
 func (client *Client) ModifyStorageSetAttribute(request *ModifyStorageSetAttributeRequest) (response *ModifyStorageSetAttributeResponse, err error) {
 	response = CreateModifyStorageSetAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyStorageSetAttribute(request *ModifyStorageSetAttribu
 }
 
 // ModifyStorageSetAttributeWithChan invokes the ecs.ModifyStorageSetAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifystoragesetattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyStorageSetAttributeWithChan(request *ModifyStorageSetAttributeRequest) (<-chan *ModifyStorageSetAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyStorageSetAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyStorageSetAttributeWithChan(request *ModifyStorageSe
 }
 
 // ModifyStorageSetAttributeWithCallback invokes the ecs.ModifyStorageSetAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifystoragesetattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyStorageSetAttributeWithCallback(request *ModifyStorageSetAttributeRequest, callback func(response *ModifyStorageSetAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

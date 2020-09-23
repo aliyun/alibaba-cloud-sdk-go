@@ -21,7 +21,6 @@ import (
 )
 
 // DeletePhysicalConnection invokes the ecs.DeletePhysicalConnection API synchronously
-// api document: https://help.aliyun.com/api/ecs/deletephysicalconnection.html
 func (client *Client) DeletePhysicalConnection(request *DeletePhysicalConnectionRequest) (response *DeletePhysicalConnectionResponse, err error) {
 	response = CreateDeletePhysicalConnectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeletePhysicalConnection(request *DeletePhysicalConnection
 }
 
 // DeletePhysicalConnectionWithChan invokes the ecs.DeletePhysicalConnection API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deletephysicalconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePhysicalConnectionWithChan(request *DeletePhysicalConnectionRequest) (<-chan *DeletePhysicalConnectionResponse, <-chan error) {
 	responseChan := make(chan *DeletePhysicalConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeletePhysicalConnectionWithChan(request *DeletePhysicalCo
 }
 
 // DeletePhysicalConnectionWithCallback invokes the ecs.DeletePhysicalConnection API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deletephysicalconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePhysicalConnectionWithCallback(request *DeletePhysicalConnectionRequest, callback func(response *DeletePhysicalConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

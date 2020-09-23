@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstanceMaintenanceAttributes invokes the ecs.DescribeInstanceMaintenanceAttributes API synchronously
-// api document: https://help.aliyun.com/api/ecs/describeinstancemaintenanceattributes.html
 func (client *Client) DescribeInstanceMaintenanceAttributes(request *DescribeInstanceMaintenanceAttributesRequest) (response *DescribeInstanceMaintenanceAttributesResponse, err error) {
 	response = CreateDescribeInstanceMaintenanceAttributesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstanceMaintenanceAttributes(request *DescribeIns
 }
 
 // DescribeInstanceMaintenanceAttributesWithChan invokes the ecs.DescribeInstanceMaintenanceAttributes API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describeinstancemaintenanceattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceMaintenanceAttributesWithChan(request *DescribeInstanceMaintenanceAttributesRequest) (<-chan *DescribeInstanceMaintenanceAttributesResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceMaintenanceAttributesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceMaintenanceAttributesWithChan(request *Des
 }
 
 // DescribeInstanceMaintenanceAttributesWithCallback invokes the ecs.DescribeInstanceMaintenanceAttributes API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describeinstancemaintenanceattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceMaintenanceAttributesWithCallback(request *DescribeInstanceMaintenanceAttributesRequest, callback func(response *DescribeInstanceMaintenanceAttributesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

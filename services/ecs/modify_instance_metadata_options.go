@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyInstanceMetadataOptions invokes the ecs.ModifyInstanceMetadataOptions API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifyinstancemetadataoptions.html
 func (client *Client) ModifyInstanceMetadataOptions(request *ModifyInstanceMetadataOptionsRequest) (response *ModifyInstanceMetadataOptionsResponse, err error) {
 	response = CreateModifyInstanceMetadataOptionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyInstanceMetadataOptions(request *ModifyInstanceMetad
 }
 
 // ModifyInstanceMetadataOptionsWithChan invokes the ecs.ModifyInstanceMetadataOptions API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyinstancemetadataoptions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceMetadataOptionsWithChan(request *ModifyInstanceMetadataOptionsRequest) (<-chan *ModifyInstanceMetadataOptionsResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceMetadataOptionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyInstanceMetadataOptionsWithChan(request *ModifyInsta
 }
 
 // ModifyInstanceMetadataOptionsWithCallback invokes the ecs.ModifyInstanceMetadataOptions API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyinstancemetadataoptions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceMetadataOptionsWithCallback(request *ModifyInstanceMetadataOptionsRequest, callback func(response *ModifyInstanceMetadataOptionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // AttachDisk invokes the ecs.AttachDisk API synchronously
-// api document: https://help.aliyun.com/api/ecs/attachdisk.html
 func (client *Client) AttachDisk(request *AttachDiskRequest) (response *AttachDiskResponse, err error) {
 	response = CreateAttachDiskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AttachDisk(request *AttachDiskRequest) (response *AttachDi
 }
 
 // AttachDiskWithChan invokes the ecs.AttachDisk API asynchronously
-// api document: https://help.aliyun.com/api/ecs/attachdisk.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachDiskWithChan(request *AttachDiskRequest) (<-chan *AttachDiskResponse, <-chan error) {
 	responseChan := make(chan *AttachDiskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AttachDiskWithChan(request *AttachDiskRequest) (<-chan *At
 }
 
 // AttachDiskWithCallback invokes the ecs.AttachDisk API asynchronously
-// api document: https://help.aliyun.com/api/ecs/attachdisk.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachDiskWithCallback(request *AttachDiskRequest, callback func(response *AttachDiskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

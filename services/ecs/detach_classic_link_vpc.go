@@ -21,7 +21,6 @@ import (
 )
 
 // DetachClassicLinkVpc invokes the ecs.DetachClassicLinkVpc API synchronously
-// api document: https://help.aliyun.com/api/ecs/detachclassiclinkvpc.html
 func (client *Client) DetachClassicLinkVpc(request *DetachClassicLinkVpcRequest) (response *DetachClassicLinkVpcResponse, err error) {
 	response = CreateDetachClassicLinkVpcResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetachClassicLinkVpc(request *DetachClassicLinkVpcRequest)
 }
 
 // DetachClassicLinkVpcWithChan invokes the ecs.DetachClassicLinkVpc API asynchronously
-// api document: https://help.aliyun.com/api/ecs/detachclassiclinkvpc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachClassicLinkVpcWithChan(request *DetachClassicLinkVpcRequest) (<-chan *DetachClassicLinkVpcResponse, <-chan error) {
 	responseChan := make(chan *DetachClassicLinkVpcResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetachClassicLinkVpcWithChan(request *DetachClassicLinkVpc
 }
 
 // DetachClassicLinkVpcWithCallback invokes the ecs.DetachClassicLinkVpc API asynchronously
-// api document: https://help.aliyun.com/api/ecs/detachclassiclinkvpc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachClassicLinkVpcWithCallback(request *DetachClassicLinkVpcRequest, callback func(response *DetachClassicLinkVpcResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyRouterInterfaceSpec invokes the ecs.ModifyRouterInterfaceSpec API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifyrouterinterfacespec.html
 func (client *Client) ModifyRouterInterfaceSpec(request *ModifyRouterInterfaceSpecRequest) (response *ModifyRouterInterfaceSpecResponse, err error) {
 	response = CreateModifyRouterInterfaceSpecResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyRouterInterfaceSpec(request *ModifyRouterInterfaceSp
 }
 
 // ModifyRouterInterfaceSpecWithChan invokes the ecs.ModifyRouterInterfaceSpec API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyrouterinterfacespec.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRouterInterfaceSpecWithChan(request *ModifyRouterInterfaceSpecRequest) (<-chan *ModifyRouterInterfaceSpecResponse, <-chan error) {
 	responseChan := make(chan *ModifyRouterInterfaceSpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyRouterInterfaceSpecWithChan(request *ModifyRouterInt
 }
 
 // ModifyRouterInterfaceSpecWithCallback invokes the ecs.ModifyRouterInterfaceSpec API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyrouterinterfacespec.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRouterInterfaceSpecWithCallback(request *ModifyRouterInterfaceSpecRequest, callback func(response *ModifyRouterInterfaceSpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

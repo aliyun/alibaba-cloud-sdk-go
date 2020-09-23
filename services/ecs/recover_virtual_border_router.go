@@ -21,7 +21,6 @@ import (
 )
 
 // RecoverVirtualBorderRouter invokes the ecs.RecoverVirtualBorderRouter API synchronously
-// api document: https://help.aliyun.com/api/ecs/recovervirtualborderrouter.html
 func (client *Client) RecoverVirtualBorderRouter(request *RecoverVirtualBorderRouterRequest) (response *RecoverVirtualBorderRouterResponse, err error) {
 	response = CreateRecoverVirtualBorderRouterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecoverVirtualBorderRouter(request *RecoverVirtualBorderRo
 }
 
 // RecoverVirtualBorderRouterWithChan invokes the ecs.RecoverVirtualBorderRouter API asynchronously
-// api document: https://help.aliyun.com/api/ecs/recovervirtualborderrouter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecoverVirtualBorderRouterWithChan(request *RecoverVirtualBorderRouterRequest) (<-chan *RecoverVirtualBorderRouterResponse, <-chan error) {
 	responseChan := make(chan *RecoverVirtualBorderRouterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecoverVirtualBorderRouterWithChan(request *RecoverVirtual
 }
 
 // RecoverVirtualBorderRouterWithCallback invokes the ecs.RecoverVirtualBorderRouter API asynchronously
-// api document: https://help.aliyun.com/api/ecs/recovervirtualborderrouter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecoverVirtualBorderRouterWithCallback(request *RecoverVirtualBorderRouterRequest, callback func(response *RecoverVirtualBorderRouterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

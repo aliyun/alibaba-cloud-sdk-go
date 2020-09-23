@@ -21,7 +21,6 @@ import (
 )
 
 // CreateSnapshot invokes the ecs.CreateSnapshot API synchronously
-// api document: https://help.aliyun.com/api/ecs/createsnapshot.html
 func (client *Client) CreateSnapshot(request *CreateSnapshotRequest) (response *CreateSnapshotResponse, err error) {
 	response = CreateCreateSnapshotResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateSnapshot(request *CreateSnapshotRequest) (response *
 }
 
 // CreateSnapshotWithChan invokes the ecs.CreateSnapshot API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createsnapshot.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSnapshotWithChan(request *CreateSnapshotRequest) (<-chan *CreateSnapshotResponse, <-chan error) {
 	responseChan := make(chan *CreateSnapshotResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateSnapshotWithChan(request *CreateSnapshotRequest) (<-
 }
 
 // CreateSnapshotWithCallback invokes the ecs.CreateSnapshot API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createsnapshot.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSnapshotWithCallback(request *CreateSnapshotRequest, callback func(response *CreateSnapshotResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeStorageSetDetails invokes the ecs.DescribeStorageSetDetails API synchronously
-// api document: https://help.aliyun.com/api/ecs/describestoragesetdetails.html
 func (client *Client) DescribeStorageSetDetails(request *DescribeStorageSetDetailsRequest) (response *DescribeStorageSetDetailsResponse, err error) {
 	response = CreateDescribeStorageSetDetailsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeStorageSetDetails(request *DescribeStorageSetDetai
 }
 
 // DescribeStorageSetDetailsWithChan invokes the ecs.DescribeStorageSetDetails API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describestoragesetdetails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStorageSetDetailsWithChan(request *DescribeStorageSetDetailsRequest) (<-chan *DescribeStorageSetDetailsResponse, <-chan error) {
 	responseChan := make(chan *DescribeStorageSetDetailsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeStorageSetDetailsWithChan(request *DescribeStorage
 }
 
 // DescribeStorageSetDetailsWithCallback invokes the ecs.DescribeStorageSetDetails API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describestoragesetdetails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStorageSetDetailsWithCallback(request *DescribeStorageSetDetailsRequest, callback func(response *DescribeStorageSetDetailsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

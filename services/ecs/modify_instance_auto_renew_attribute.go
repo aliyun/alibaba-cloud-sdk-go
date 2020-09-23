@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyInstanceAutoRenewAttribute invokes the ecs.ModifyInstanceAutoRenewAttribute API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifyinstanceautorenewattribute.html
 func (client *Client) ModifyInstanceAutoRenewAttribute(request *ModifyInstanceAutoRenewAttributeRequest) (response *ModifyInstanceAutoRenewAttributeResponse, err error) {
 	response = CreateModifyInstanceAutoRenewAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyInstanceAutoRenewAttribute(request *ModifyInstanceAu
 }
 
 // ModifyInstanceAutoRenewAttributeWithChan invokes the ecs.ModifyInstanceAutoRenewAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyinstanceautorenewattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceAutoRenewAttributeWithChan(request *ModifyInstanceAutoRenewAttributeRequest) (<-chan *ModifyInstanceAutoRenewAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceAutoRenewAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyInstanceAutoRenewAttributeWithChan(request *ModifyIn
 }
 
 // ModifyInstanceAutoRenewAttributeWithCallback invokes the ecs.ModifyInstanceAutoRenewAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyinstanceautorenewattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceAutoRenewAttributeWithCallback(request *ModifyInstanceAutoRenewAttributeRequest, callback func(response *ModifyInstanceAutoRenewAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

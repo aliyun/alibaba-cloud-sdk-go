@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyImageAttribute invokes the ecs.ModifyImageAttribute API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifyimageattribute.html
 func (client *Client) ModifyImageAttribute(request *ModifyImageAttributeRequest) (response *ModifyImageAttributeResponse, err error) {
 	response = CreateModifyImageAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyImageAttribute(request *ModifyImageAttributeRequest)
 }
 
 // ModifyImageAttributeWithChan invokes the ecs.ModifyImageAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyimageattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyImageAttributeWithChan(request *ModifyImageAttributeRequest) (<-chan *ModifyImageAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyImageAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyImageAttributeWithChan(request *ModifyImageAttribute
 }
 
 // ModifyImageAttributeWithCallback invokes the ecs.ModifyImageAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyimageattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyImageAttributeWithCallback(request *ModifyImageAttributeRequest, callback func(response *ModifyImageAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

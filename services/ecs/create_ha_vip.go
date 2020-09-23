@@ -21,7 +21,6 @@ import (
 )
 
 // CreateHaVip invokes the ecs.CreateHaVip API synchronously
-// api document: https://help.aliyun.com/api/ecs/createhavip.html
 func (client *Client) CreateHaVip(request *CreateHaVipRequest) (response *CreateHaVipResponse, err error) {
 	response = CreateCreateHaVipResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateHaVip(request *CreateHaVipRequest) (response *Create
 }
 
 // CreateHaVipWithChan invokes the ecs.CreateHaVip API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createhavip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateHaVipWithChan(request *CreateHaVipRequest) (<-chan *CreateHaVipResponse, <-chan error) {
 	responseChan := make(chan *CreateHaVipResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateHaVipWithChan(request *CreateHaVipRequest) (<-chan *
 }
 
 // CreateHaVipWithCallback invokes the ecs.CreateHaVip API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createhavip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateHaVipWithCallback(request *CreateHaVipRequest, callback func(response *CreateHaVipResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSnapshotMonitorData invokes the ecs.DescribeSnapshotMonitorData API synchronously
-// api document: https://help.aliyun.com/api/ecs/describesnapshotmonitordata.html
 func (client *Client) DescribeSnapshotMonitorData(request *DescribeSnapshotMonitorDataRequest) (response *DescribeSnapshotMonitorDataResponse, err error) {
 	response = CreateDescribeSnapshotMonitorDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSnapshotMonitorData(request *DescribeSnapshotMonit
 }
 
 // DescribeSnapshotMonitorDataWithChan invokes the ecs.DescribeSnapshotMonitorData API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describesnapshotmonitordata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotMonitorDataWithChan(request *DescribeSnapshotMonitorDataRequest) (<-chan *DescribeSnapshotMonitorDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeSnapshotMonitorDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSnapshotMonitorDataWithChan(request *DescribeSnaps
 }
 
 // DescribeSnapshotMonitorDataWithCallback invokes the ecs.DescribeSnapshotMonitorData API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describesnapshotmonitordata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotMonitorDataWithCallback(request *DescribeSnapshotMonitorDataRequest, callback func(response *DescribeSnapshotMonitorDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEipAddresses invokes the ecs.DescribeEipAddresses API synchronously
-// api document: https://help.aliyun.com/api/ecs/describeeipaddresses.html
 func (client *Client) DescribeEipAddresses(request *DescribeEipAddressesRequest) (response *DescribeEipAddressesResponse, err error) {
 	response = CreateDescribeEipAddressesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEipAddresses(request *DescribeEipAddressesRequest)
 }
 
 // DescribeEipAddressesWithChan invokes the ecs.DescribeEipAddresses API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describeeipaddresses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEipAddressesWithChan(request *DescribeEipAddressesRequest) (<-chan *DescribeEipAddressesResponse, <-chan error) {
 	responseChan := make(chan *DescribeEipAddressesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEipAddressesWithChan(request *DescribeEipAddresses
 }
 
 // DescribeEipAddressesWithCallback invokes the ecs.DescribeEipAddresses API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describeeipaddresses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEipAddressesWithCallback(request *DescribeEipAddressesRequest, callback func(response *DescribeEipAddressesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

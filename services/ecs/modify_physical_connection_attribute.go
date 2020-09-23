@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyPhysicalConnectionAttribute invokes the ecs.ModifyPhysicalConnectionAttribute API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifyphysicalconnectionattribute.html
 func (client *Client) ModifyPhysicalConnectionAttribute(request *ModifyPhysicalConnectionAttributeRequest) (response *ModifyPhysicalConnectionAttributeResponse, err error) {
 	response = CreateModifyPhysicalConnectionAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyPhysicalConnectionAttribute(request *ModifyPhysicalC
 }
 
 // ModifyPhysicalConnectionAttributeWithChan invokes the ecs.ModifyPhysicalConnectionAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyphysicalconnectionattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPhysicalConnectionAttributeWithChan(request *ModifyPhysicalConnectionAttributeRequest) (<-chan *ModifyPhysicalConnectionAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyPhysicalConnectionAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyPhysicalConnectionAttributeWithChan(request *ModifyP
 }
 
 // ModifyPhysicalConnectionAttributeWithCallback invokes the ecs.ModifyPhysicalConnectionAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyphysicalconnectionattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPhysicalConnectionAttributeWithCallback(request *ModifyPhysicalConnectionAttributeRequest, callback func(response *ModifyPhysicalConnectionAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

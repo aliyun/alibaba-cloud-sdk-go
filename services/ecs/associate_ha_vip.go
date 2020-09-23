@@ -21,7 +21,6 @@ import (
 )
 
 // AssociateHaVip invokes the ecs.AssociateHaVip API synchronously
-// api document: https://help.aliyun.com/api/ecs/associatehavip.html
 func (client *Client) AssociateHaVip(request *AssociateHaVipRequest) (response *AssociateHaVipResponse, err error) {
 	response = CreateAssociateHaVipResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AssociateHaVip(request *AssociateHaVipRequest) (response *
 }
 
 // AssociateHaVipWithChan invokes the ecs.AssociateHaVip API asynchronously
-// api document: https://help.aliyun.com/api/ecs/associatehavip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociateHaVipWithChan(request *AssociateHaVipRequest) (<-chan *AssociateHaVipResponse, <-chan error) {
 	responseChan := make(chan *AssociateHaVipResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AssociateHaVipWithChan(request *AssociateHaVipRequest) (<-
 }
 
 // AssociateHaVipWithCallback invokes the ecs.AssociateHaVip API asynchronously
-// api document: https://help.aliyun.com/api/ecs/associatehavip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociateHaVipWithCallback(request *AssociateHaVipRequest, callback func(response *AssociateHaVipResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

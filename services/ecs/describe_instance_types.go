@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstanceTypes invokes the ecs.DescribeInstanceTypes API synchronously
-// api document: https://help.aliyun.com/api/ecs/describeinstancetypes.html
 func (client *Client) DescribeInstanceTypes(request *DescribeInstanceTypesRequest) (response *DescribeInstanceTypesResponse, err error) {
 	response = CreateDescribeInstanceTypesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstanceTypes(request *DescribeInstanceTypesReques
 }
 
 // DescribeInstanceTypesWithChan invokes the ecs.DescribeInstanceTypes API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describeinstancetypes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceTypesWithChan(request *DescribeInstanceTypesRequest) (<-chan *DescribeInstanceTypesResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceTypesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceTypesWithChan(request *DescribeInstanceTyp
 }
 
 // DescribeInstanceTypesWithCallback invokes the ecs.DescribeInstanceTypes API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describeinstancetypes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceTypesWithCallback(request *DescribeInstanceTypesRequest, callback func(response *DescribeInstanceTypesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

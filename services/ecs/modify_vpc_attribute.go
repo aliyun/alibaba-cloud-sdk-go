@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyVpcAttribute invokes the ecs.ModifyVpcAttribute API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifyvpcattribute.html
 func (client *Client) ModifyVpcAttribute(request *ModifyVpcAttributeRequest) (response *ModifyVpcAttributeResponse, err error) {
 	response = CreateModifyVpcAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyVpcAttribute(request *ModifyVpcAttributeRequest) (re
 }
 
 // ModifyVpcAttributeWithChan invokes the ecs.ModifyVpcAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyvpcattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVpcAttributeWithChan(request *ModifyVpcAttributeRequest) (<-chan *ModifyVpcAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyVpcAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyVpcAttributeWithChan(request *ModifyVpcAttributeRequ
 }
 
 // ModifyVpcAttributeWithCallback invokes the ecs.ModifyVpcAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyvpcattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVpcAttributeWithCallback(request *ModifyVpcAttributeRequest, callback func(response *ModifyVpcAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

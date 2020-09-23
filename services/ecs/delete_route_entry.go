@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteRouteEntry invokes the ecs.DeleteRouteEntry API synchronously
-// api document: https://help.aliyun.com/api/ecs/deleterouteentry.html
 func (client *Client) DeleteRouteEntry(request *DeleteRouteEntryRequest) (response *DeleteRouteEntryResponse, err error) {
 	response = CreateDeleteRouteEntryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteRouteEntry(request *DeleteRouteEntryRequest) (respon
 }
 
 // DeleteRouteEntryWithChan invokes the ecs.DeleteRouteEntry API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deleterouteentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRouteEntryWithChan(request *DeleteRouteEntryRequest) (<-chan *DeleteRouteEntryResponse, <-chan error) {
 	responseChan := make(chan *DeleteRouteEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteRouteEntryWithChan(request *DeleteRouteEntryRequest)
 }
 
 // DeleteRouteEntryWithCallback invokes the ecs.DeleteRouteEntry API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deleterouteentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRouteEntryWithCallback(request *DeleteRouteEntryRequest, callback func(response *DeleteRouteEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // AttachClassicLinkVpc invokes the ecs.AttachClassicLinkVpc API synchronously
-// api document: https://help.aliyun.com/api/ecs/attachclassiclinkvpc.html
 func (client *Client) AttachClassicLinkVpc(request *AttachClassicLinkVpcRequest) (response *AttachClassicLinkVpcResponse, err error) {
 	response = CreateAttachClassicLinkVpcResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AttachClassicLinkVpc(request *AttachClassicLinkVpcRequest)
 }
 
 // AttachClassicLinkVpcWithChan invokes the ecs.AttachClassicLinkVpc API asynchronously
-// api document: https://help.aliyun.com/api/ecs/attachclassiclinkvpc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachClassicLinkVpcWithChan(request *AttachClassicLinkVpcRequest) (<-chan *AttachClassicLinkVpcResponse, <-chan error) {
 	responseChan := make(chan *AttachClassicLinkVpcResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AttachClassicLinkVpcWithChan(request *AttachClassicLinkVpc
 }
 
 // AttachClassicLinkVpcWithCallback invokes the ecs.AttachClassicLinkVpc API asynchronously
-// api document: https://help.aliyun.com/api/ecs/attachclassiclinkvpc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachClassicLinkVpcWithCallback(request *AttachClassicLinkVpcRequest, callback func(response *AttachClassicLinkVpcResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

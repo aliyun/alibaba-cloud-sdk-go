@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRouterInterfaces invokes the ecs.DescribeRouterInterfaces API synchronously
-// api document: https://help.aliyun.com/api/ecs/describerouterinterfaces.html
 func (client *Client) DescribeRouterInterfaces(request *DescribeRouterInterfacesRequest) (response *DescribeRouterInterfacesResponse, err error) {
 	response = CreateDescribeRouterInterfacesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRouterInterfaces(request *DescribeRouterInterfaces
 }
 
 // DescribeRouterInterfacesWithChan invokes the ecs.DescribeRouterInterfaces API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describerouterinterfaces.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouterInterfacesWithChan(request *DescribeRouterInterfacesRequest) (<-chan *DescribeRouterInterfacesResponse, <-chan error) {
 	responseChan := make(chan *DescribeRouterInterfacesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRouterInterfacesWithChan(request *DescribeRouterIn
 }
 
 // DescribeRouterInterfacesWithCallback invokes the ecs.DescribeRouterInterfaces API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describerouterinterfaces.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouterInterfacesWithCallback(request *DescribeRouterInterfacesRequest, callback func(response *DescribeRouterInterfacesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

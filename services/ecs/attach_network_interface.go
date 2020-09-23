@@ -21,7 +21,6 @@ import (
 )
 
 // AttachNetworkInterface invokes the ecs.AttachNetworkInterface API synchronously
-// api document: https://help.aliyun.com/api/ecs/attachnetworkinterface.html
 func (client *Client) AttachNetworkInterface(request *AttachNetworkInterfaceRequest) (response *AttachNetworkInterfaceResponse, err error) {
 	response = CreateAttachNetworkInterfaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AttachNetworkInterface(request *AttachNetworkInterfaceRequ
 }
 
 // AttachNetworkInterfaceWithChan invokes the ecs.AttachNetworkInterface API asynchronously
-// api document: https://help.aliyun.com/api/ecs/attachnetworkinterface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachNetworkInterfaceWithChan(request *AttachNetworkInterfaceRequest) (<-chan *AttachNetworkInterfaceResponse, <-chan error) {
 	responseChan := make(chan *AttachNetworkInterfaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AttachNetworkInterfaceWithChan(request *AttachNetworkInter
 }
 
 // AttachNetworkInterfaceWithCallback invokes the ecs.AttachNetworkInterface API asynchronously
-// api document: https://help.aliyun.com/api/ecs/attachnetworkinterface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachNetworkInterfaceWithCallback(request *AttachNetworkInterfaceRequest, callback func(response *AttachNetworkInterfaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

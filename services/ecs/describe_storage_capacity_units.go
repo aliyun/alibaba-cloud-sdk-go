@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeStorageCapacityUnits invokes the ecs.DescribeStorageCapacityUnits API synchronously
-// api document: https://help.aliyun.com/api/ecs/describestoragecapacityunits.html
 func (client *Client) DescribeStorageCapacityUnits(request *DescribeStorageCapacityUnitsRequest) (response *DescribeStorageCapacityUnitsResponse, err error) {
 	response = CreateDescribeStorageCapacityUnitsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeStorageCapacityUnits(request *DescribeStorageCapac
 }
 
 // DescribeStorageCapacityUnitsWithChan invokes the ecs.DescribeStorageCapacityUnits API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describestoragecapacityunits.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStorageCapacityUnitsWithChan(request *DescribeStorageCapacityUnitsRequest) (<-chan *DescribeStorageCapacityUnitsResponse, <-chan error) {
 	responseChan := make(chan *DescribeStorageCapacityUnitsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeStorageCapacityUnitsWithChan(request *DescribeStor
 }
 
 // DescribeStorageCapacityUnitsWithCallback invokes the ecs.DescribeStorageCapacityUnits API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describestoragecapacityunits.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStorageCapacityUnitsWithCallback(request *DescribeStorageCapacityUnitsRequest, callback func(response *DescribeStorageCapacityUnitsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

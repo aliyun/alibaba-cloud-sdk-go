@@ -21,7 +21,6 @@ import (
 )
 
 // CreateLaunchTemplateVersion invokes the ecs.CreateLaunchTemplateVersion API synchronously
-// api document: https://help.aliyun.com/api/ecs/createlaunchtemplateversion.html
 func (client *Client) CreateLaunchTemplateVersion(request *CreateLaunchTemplateVersionRequest) (response *CreateLaunchTemplateVersionResponse, err error) {
 	response = CreateCreateLaunchTemplateVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateLaunchTemplateVersion(request *CreateLaunchTemplateV
 }
 
 // CreateLaunchTemplateVersionWithChan invokes the ecs.CreateLaunchTemplateVersion API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createlaunchtemplateversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLaunchTemplateVersionWithChan(request *CreateLaunchTemplateVersionRequest) (<-chan *CreateLaunchTemplateVersionResponse, <-chan error) {
 	responseChan := make(chan *CreateLaunchTemplateVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateLaunchTemplateVersionWithChan(request *CreateLaunchT
 }
 
 // CreateLaunchTemplateVersionWithCallback invokes the ecs.CreateLaunchTemplateVersion API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createlaunchtemplateversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLaunchTemplateVersionWithCallback(request *CreateLaunchTemplateVersionRequest, callback func(response *CreateLaunchTemplateVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

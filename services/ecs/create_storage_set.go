@@ -21,7 +21,6 @@ import (
 )
 
 // CreateStorageSet invokes the ecs.CreateStorageSet API synchronously
-// api document: https://help.aliyun.com/api/ecs/createstorageset.html
 func (client *Client) CreateStorageSet(request *CreateStorageSetRequest) (response *CreateStorageSetResponse, err error) {
 	response = CreateCreateStorageSetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateStorageSet(request *CreateStorageSetRequest) (respon
 }
 
 // CreateStorageSetWithChan invokes the ecs.CreateStorageSet API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createstorageset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateStorageSetWithChan(request *CreateStorageSetRequest) (<-chan *CreateStorageSetResponse, <-chan error) {
 	responseChan := make(chan *CreateStorageSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateStorageSetWithChan(request *CreateStorageSetRequest)
 }
 
 // CreateStorageSetWithCallback invokes the ecs.CreateStorageSet API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createstorageset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateStorageSetWithCallback(request *CreateStorageSetRequest, callback func(response *CreateStorageSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

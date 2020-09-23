@@ -21,7 +21,6 @@ import (
 )
 
 // CreateAutoSnapshotPolicy invokes the ecs.CreateAutoSnapshotPolicy API synchronously
-// api document: https://help.aliyun.com/api/ecs/createautosnapshotpolicy.html
 func (client *Client) CreateAutoSnapshotPolicy(request *CreateAutoSnapshotPolicyRequest) (response *CreateAutoSnapshotPolicyResponse, err error) {
 	response = CreateCreateAutoSnapshotPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateAutoSnapshotPolicy(request *CreateAutoSnapshotPolicy
 }
 
 // CreateAutoSnapshotPolicyWithChan invokes the ecs.CreateAutoSnapshotPolicy API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createautosnapshotpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAutoSnapshotPolicyWithChan(request *CreateAutoSnapshotPolicyRequest) (<-chan *CreateAutoSnapshotPolicyResponse, <-chan error) {
 	responseChan := make(chan *CreateAutoSnapshotPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateAutoSnapshotPolicyWithChan(request *CreateAutoSnapsh
 }
 
 // CreateAutoSnapshotPolicyWithCallback invokes the ecs.CreateAutoSnapshotPolicy API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createautosnapshotpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAutoSnapshotPolicyWithCallback(request *CreateAutoSnapshotPolicyRequest, callback func(response *CreateAutoSnapshotPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

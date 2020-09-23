@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDiskChargeType invokes the ecs.ModifyDiskChargeType API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifydiskchargetype.html
 func (client *Client) ModifyDiskChargeType(request *ModifyDiskChargeTypeRequest) (response *ModifyDiskChargeTypeResponse, err error) {
 	response = CreateModifyDiskChargeTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDiskChargeType(request *ModifyDiskChargeTypeRequest)
 }
 
 // ModifyDiskChargeTypeWithChan invokes the ecs.ModifyDiskChargeType API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifydiskchargetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDiskChargeTypeWithChan(request *ModifyDiskChargeTypeRequest) (<-chan *ModifyDiskChargeTypeResponse, <-chan error) {
 	responseChan := make(chan *ModifyDiskChargeTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDiskChargeTypeWithChan(request *ModifyDiskChargeType
 }
 
 // ModifyDiskChargeTypeWithCallback invokes the ecs.ModifyDiskChargeType API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifydiskchargetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDiskChargeTypeWithCallback(request *ModifyDiskChargeTypeRequest, callback func(response *ModifyDiskChargeTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

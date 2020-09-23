@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeReservedInstances invokes the ecs.DescribeReservedInstances API synchronously
-// api document: https://help.aliyun.com/api/ecs/describereservedinstances.html
 func (client *Client) DescribeReservedInstances(request *DescribeReservedInstancesRequest) (response *DescribeReservedInstancesResponse, err error) {
 	response = CreateDescribeReservedInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeReservedInstances(request *DescribeReservedInstanc
 }
 
 // DescribeReservedInstancesWithChan invokes the ecs.DescribeReservedInstances API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describereservedinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReservedInstancesWithChan(request *DescribeReservedInstancesRequest) (<-chan *DescribeReservedInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeReservedInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeReservedInstancesWithChan(request *DescribeReserve
 }
 
 // DescribeReservedInstancesWithCallback invokes the ecs.DescribeReservedInstances API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describereservedinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReservedInstancesWithCallback(request *DescribeReservedInstancesRequest, callback func(response *DescribeReservedInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

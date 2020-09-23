@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDedicatedHostClusters invokes the ecs.DescribeDedicatedHostClusters API synchronously
-// api document: https://help.aliyun.com/api/ecs/describededicatedhostclusters.html
 func (client *Client) DescribeDedicatedHostClusters(request *DescribeDedicatedHostClustersRequest) (response *DescribeDedicatedHostClustersResponse, err error) {
 	response = CreateDescribeDedicatedHostClustersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDedicatedHostClusters(request *DescribeDedicatedHo
 }
 
 // DescribeDedicatedHostClustersWithChan invokes the ecs.DescribeDedicatedHostClusters API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describededicatedhostclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDedicatedHostClustersWithChan(request *DescribeDedicatedHostClustersRequest) (<-chan *DescribeDedicatedHostClustersResponse, <-chan error) {
 	responseChan := make(chan *DescribeDedicatedHostClustersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDedicatedHostClustersWithChan(request *DescribeDed
 }
 
 // DescribeDedicatedHostClustersWithCallback invokes the ecs.DescribeDedicatedHostClusters API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describededicatedhostclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDedicatedHostClustersWithCallback(request *DescribeDedicatedHostClustersRequest, callback func(response *DescribeDedicatedHostClustersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

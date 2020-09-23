@@ -21,7 +21,6 @@ import (
 )
 
 // CreatePhysicalConnection invokes the ecs.CreatePhysicalConnection API synchronously
-// api document: https://help.aliyun.com/api/ecs/createphysicalconnection.html
 func (client *Client) CreatePhysicalConnection(request *CreatePhysicalConnectionRequest) (response *CreatePhysicalConnectionResponse, err error) {
 	response = CreateCreatePhysicalConnectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreatePhysicalConnection(request *CreatePhysicalConnection
 }
 
 // CreatePhysicalConnectionWithChan invokes the ecs.CreatePhysicalConnection API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createphysicalconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePhysicalConnectionWithChan(request *CreatePhysicalConnectionRequest) (<-chan *CreatePhysicalConnectionResponse, <-chan error) {
 	responseChan := make(chan *CreatePhysicalConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreatePhysicalConnectionWithChan(request *CreatePhysicalCo
 }
 
 // CreatePhysicalConnectionWithCallback invokes the ecs.CreatePhysicalConnection API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createphysicalconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePhysicalConnectionWithCallback(request *CreatePhysicalConnectionRequest, callback func(response *CreatePhysicalConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

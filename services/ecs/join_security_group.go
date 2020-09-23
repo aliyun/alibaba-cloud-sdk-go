@@ -21,7 +21,6 @@ import (
 )
 
 // JoinSecurityGroup invokes the ecs.JoinSecurityGroup API synchronously
-// api document: https://help.aliyun.com/api/ecs/joinsecuritygroup.html
 func (client *Client) JoinSecurityGroup(request *JoinSecurityGroupRequest) (response *JoinSecurityGroupResponse, err error) {
 	response = CreateJoinSecurityGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) JoinSecurityGroup(request *JoinSecurityGroupRequest) (resp
 }
 
 // JoinSecurityGroupWithChan invokes the ecs.JoinSecurityGroup API asynchronously
-// api document: https://help.aliyun.com/api/ecs/joinsecuritygroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinSecurityGroupWithChan(request *JoinSecurityGroupRequest) (<-chan *JoinSecurityGroupResponse, <-chan error) {
 	responseChan := make(chan *JoinSecurityGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) JoinSecurityGroupWithChan(request *JoinSecurityGroupReques
 }
 
 // JoinSecurityGroupWithCallback invokes the ecs.JoinSecurityGroup API asynchronously
-// api document: https://help.aliyun.com/api/ecs/joinsecuritygroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinSecurityGroupWithCallback(request *JoinSecurityGroupRequest, callback func(response *JoinSecurityGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

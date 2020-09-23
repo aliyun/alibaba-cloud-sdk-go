@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSecurityGroupAttribute invokes the ecs.DescribeSecurityGroupAttribute API synchronously
-// api document: https://help.aliyun.com/api/ecs/describesecuritygroupattribute.html
 func (client *Client) DescribeSecurityGroupAttribute(request *DescribeSecurityGroupAttributeRequest) (response *DescribeSecurityGroupAttributeResponse, err error) {
 	response = CreateDescribeSecurityGroupAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSecurityGroupAttribute(request *DescribeSecurityGr
 }
 
 // DescribeSecurityGroupAttributeWithChan invokes the ecs.DescribeSecurityGroupAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describesecuritygroupattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupAttributeWithChan(request *DescribeSecurityGroupAttributeRequest) (<-chan *DescribeSecurityGroupAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeSecurityGroupAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSecurityGroupAttributeWithChan(request *DescribeSe
 }
 
 // DescribeSecurityGroupAttributeWithCallback invokes the ecs.DescribeSecurityGroupAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describesecuritygroupattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupAttributeWithCallback(request *DescribeSecurityGroupAttributeRequest, callback func(response *DescribeSecurityGroupAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

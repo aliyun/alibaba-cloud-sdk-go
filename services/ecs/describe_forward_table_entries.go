@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeForwardTableEntries invokes the ecs.DescribeForwardTableEntries API synchronously
-// api document: https://help.aliyun.com/api/ecs/describeforwardtableentries.html
 func (client *Client) DescribeForwardTableEntries(request *DescribeForwardTableEntriesRequest) (response *DescribeForwardTableEntriesResponse, err error) {
 	response = CreateDescribeForwardTableEntriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeForwardTableEntries(request *DescribeForwardTableE
 }
 
 // DescribeForwardTableEntriesWithChan invokes the ecs.DescribeForwardTableEntries API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describeforwardtableentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeForwardTableEntriesWithChan(request *DescribeForwardTableEntriesRequest) (<-chan *DescribeForwardTableEntriesResponse, <-chan error) {
 	responseChan := make(chan *DescribeForwardTableEntriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeForwardTableEntriesWithChan(request *DescribeForwa
 }
 
 // DescribeForwardTableEntriesWithCallback invokes the ecs.DescribeForwardTableEntries API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describeforwardtableentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeForwardTableEntriesWithCallback(request *DescribeForwardTableEntriesRequest, callback func(response *DescribeForwardTableEntriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

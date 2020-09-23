@@ -21,7 +21,6 @@ import (
 )
 
 // StartInstance invokes the ecs.StartInstance API synchronously
-// api document: https://help.aliyun.com/api/ecs/startinstance.html
 func (client *Client) StartInstance(request *StartInstanceRequest) (response *StartInstanceResponse, err error) {
 	response = CreateStartInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartInstance(request *StartInstanceRequest) (response *St
 }
 
 // StartInstanceWithChan invokes the ecs.StartInstance API asynchronously
-// api document: https://help.aliyun.com/api/ecs/startinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartInstanceWithChan(request *StartInstanceRequest) (<-chan *StartInstanceResponse, <-chan error) {
 	responseChan := make(chan *StartInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartInstanceWithChan(request *StartInstanceRequest) (<-ch
 }
 
 // StartInstanceWithCallback invokes the ecs.StartInstance API asynchronously
-// api document: https://help.aliyun.com/api/ecs/startinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartInstanceWithCallback(request *StartInstanceRequest, callback func(response *StartInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

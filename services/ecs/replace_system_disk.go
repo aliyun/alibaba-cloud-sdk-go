@@ -21,7 +21,6 @@ import (
 )
 
 // ReplaceSystemDisk invokes the ecs.ReplaceSystemDisk API synchronously
-// api document: https://help.aliyun.com/api/ecs/replacesystemdisk.html
 func (client *Client) ReplaceSystemDisk(request *ReplaceSystemDiskRequest) (response *ReplaceSystemDiskResponse, err error) {
 	response = CreateReplaceSystemDiskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReplaceSystemDisk(request *ReplaceSystemDiskRequest) (resp
 }
 
 // ReplaceSystemDiskWithChan invokes the ecs.ReplaceSystemDisk API asynchronously
-// api document: https://help.aliyun.com/api/ecs/replacesystemdisk.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReplaceSystemDiskWithChan(request *ReplaceSystemDiskRequest) (<-chan *ReplaceSystemDiskResponse, <-chan error) {
 	responseChan := make(chan *ReplaceSystemDiskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReplaceSystemDiskWithChan(request *ReplaceSystemDiskReques
 }
 
 // ReplaceSystemDiskWithCallback invokes the ecs.ReplaceSystemDisk API asynchronously
-// api document: https://help.aliyun.com/api/ecs/replacesystemdisk.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReplaceSystemDiskWithCallback(request *ReplaceSystemDiskRequest, callback func(response *ReplaceSystemDiskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

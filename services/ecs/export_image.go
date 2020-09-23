@@ -21,7 +21,6 @@ import (
 )
 
 // ExportImage invokes the ecs.ExportImage API synchronously
-// api document: https://help.aliyun.com/api/ecs/exportimage.html
 func (client *Client) ExportImage(request *ExportImageRequest) (response *ExportImageResponse, err error) {
 	response = CreateExportImageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExportImage(request *ExportImageRequest) (response *Export
 }
 
 // ExportImageWithChan invokes the ecs.ExportImage API asynchronously
-// api document: https://help.aliyun.com/api/ecs/exportimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportImageWithChan(request *ExportImageRequest) (<-chan *ExportImageResponse, <-chan error) {
 	responseChan := make(chan *ExportImageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExportImageWithChan(request *ExportImageRequest) (<-chan *
 }
 
 // ExportImageWithCallback invokes the ecs.ExportImage API asynchronously
-// api document: https://help.aliyun.com/api/ecs/exportimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportImageWithCallback(request *ExportImageRequest, callback func(response *ExportImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

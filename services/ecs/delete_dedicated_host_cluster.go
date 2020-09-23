@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDedicatedHostCluster invokes the ecs.DeleteDedicatedHostCluster API synchronously
-// api document: https://help.aliyun.com/api/ecs/deletededicatedhostcluster.html
 func (client *Client) DeleteDedicatedHostCluster(request *DeleteDedicatedHostClusterRequest) (response *DeleteDedicatedHostClusterResponse, err error) {
 	response = CreateDeleteDedicatedHostClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDedicatedHostCluster(request *DeleteDedicatedHostClu
 }
 
 // DeleteDedicatedHostClusterWithChan invokes the ecs.DeleteDedicatedHostCluster API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deletededicatedhostcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDedicatedHostClusterWithChan(request *DeleteDedicatedHostClusterRequest) (<-chan *DeleteDedicatedHostClusterResponse, <-chan error) {
 	responseChan := make(chan *DeleteDedicatedHostClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDedicatedHostClusterWithChan(request *DeleteDedicate
 }
 
 // DeleteDedicatedHostClusterWithCallback invokes the ecs.DeleteDedicatedHostCluster API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deletededicatedhostcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDedicatedHostClusterWithCallback(request *DeleteDedicatedHostClusterRequest, callback func(response *DeleteDedicatedHostClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

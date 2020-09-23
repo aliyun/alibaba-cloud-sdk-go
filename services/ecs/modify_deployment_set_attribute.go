@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDeploymentSetAttribute invokes the ecs.ModifyDeploymentSetAttribute API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifydeploymentsetattribute.html
 func (client *Client) ModifyDeploymentSetAttribute(request *ModifyDeploymentSetAttributeRequest) (response *ModifyDeploymentSetAttributeResponse, err error) {
 	response = CreateModifyDeploymentSetAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDeploymentSetAttribute(request *ModifyDeploymentSetA
 }
 
 // ModifyDeploymentSetAttributeWithChan invokes the ecs.ModifyDeploymentSetAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifydeploymentsetattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDeploymentSetAttributeWithChan(request *ModifyDeploymentSetAttributeRequest) (<-chan *ModifyDeploymentSetAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyDeploymentSetAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDeploymentSetAttributeWithChan(request *ModifyDeploy
 }
 
 // ModifyDeploymentSetAttributeWithCallback invokes the ecs.ModifyDeploymentSetAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifydeploymentsetattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDeploymentSetAttributeWithCallback(request *ModifyDeploymentSetAttributeRequest, callback func(response *ModifyDeploymentSetAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

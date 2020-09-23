@@ -21,7 +21,6 @@ import (
 )
 
 // CreateRouterInterface invokes the ecs.CreateRouterInterface API synchronously
-// api document: https://help.aliyun.com/api/ecs/createrouterinterface.html
 func (client *Client) CreateRouterInterface(request *CreateRouterInterfaceRequest) (response *CreateRouterInterfaceResponse, err error) {
 	response = CreateCreateRouterInterfaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateRouterInterface(request *CreateRouterInterfaceReques
 }
 
 // CreateRouterInterfaceWithChan invokes the ecs.CreateRouterInterface API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createrouterinterface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRouterInterfaceWithChan(request *CreateRouterInterfaceRequest) (<-chan *CreateRouterInterfaceResponse, <-chan error) {
 	responseChan := make(chan *CreateRouterInterfaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateRouterInterfaceWithChan(request *CreateRouterInterfa
 }
 
 // CreateRouterInterfaceWithCallback invokes the ecs.CreateRouterInterface API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createrouterinterface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRouterInterfaceWithCallback(request *CreateRouterInterfaceRequest, callback func(response *CreateRouterInterfaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

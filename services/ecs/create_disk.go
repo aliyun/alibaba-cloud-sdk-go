@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDisk invokes the ecs.CreateDisk API synchronously
-// api document: https://help.aliyun.com/api/ecs/createdisk.html
 func (client *Client) CreateDisk(request *CreateDiskRequest) (response *CreateDiskResponse, err error) {
 	response = CreateCreateDiskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDisk(request *CreateDiskRequest) (response *CreateDi
 }
 
 // CreateDiskWithChan invokes the ecs.CreateDisk API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createdisk.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDiskWithChan(request *CreateDiskRequest) (<-chan *CreateDiskResponse, <-chan error) {
 	responseChan := make(chan *CreateDiskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDiskWithChan(request *CreateDiskRequest) (<-chan *Cr
 }
 
 // CreateDiskWithCallback invokes the ecs.CreateDisk API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createdisk.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDiskWithCallback(request *CreateDiskRequest, callback func(response *CreateDiskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

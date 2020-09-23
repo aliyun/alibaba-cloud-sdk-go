@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyAutoSnapshotPolicyEx invokes the ecs.ModifyAutoSnapshotPolicyEx API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifyautosnapshotpolicyex.html
 func (client *Client) ModifyAutoSnapshotPolicyEx(request *ModifyAutoSnapshotPolicyExRequest) (response *ModifyAutoSnapshotPolicyExResponse, err error) {
 	response = CreateModifyAutoSnapshotPolicyExResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyAutoSnapshotPolicyEx(request *ModifyAutoSnapshotPoli
 }
 
 // ModifyAutoSnapshotPolicyExWithChan invokes the ecs.ModifyAutoSnapshotPolicyEx API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyautosnapshotpolicyex.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAutoSnapshotPolicyExWithChan(request *ModifyAutoSnapshotPolicyExRequest) (<-chan *ModifyAutoSnapshotPolicyExResponse, <-chan error) {
 	responseChan := make(chan *ModifyAutoSnapshotPolicyExResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyAutoSnapshotPolicyExWithChan(request *ModifyAutoSnap
 }
 
 // ModifyAutoSnapshotPolicyExWithCallback invokes the ecs.ModifyAutoSnapshotPolicyEx API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyautosnapshotpolicyex.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAutoSnapshotPolicyExWithCallback(request *ModifyAutoSnapshotPolicyExRequest, callback func(response *ModifyAutoSnapshotPolicyExResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

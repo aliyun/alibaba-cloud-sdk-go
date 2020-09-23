@@ -21,7 +21,6 @@ import (
 )
 
 // AllocateEipAddress invokes the ecs.AllocateEipAddress API synchronously
-// api document: https://help.aliyun.com/api/ecs/allocateeipaddress.html
 func (client *Client) AllocateEipAddress(request *AllocateEipAddressRequest) (response *AllocateEipAddressResponse, err error) {
 	response = CreateAllocateEipAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AllocateEipAddress(request *AllocateEipAddressRequest) (re
 }
 
 // AllocateEipAddressWithChan invokes the ecs.AllocateEipAddress API asynchronously
-// api document: https://help.aliyun.com/api/ecs/allocateeipaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateEipAddressWithChan(request *AllocateEipAddressRequest) (<-chan *AllocateEipAddressResponse, <-chan error) {
 	responseChan := make(chan *AllocateEipAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AllocateEipAddressWithChan(request *AllocateEipAddressRequ
 }
 
 // AllocateEipAddressWithCallback invokes the ecs.AllocateEipAddress API asynchronously
-// api document: https://help.aliyun.com/api/ecs/allocateeipaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateEipAddressWithCallback(request *AllocateEipAddressRequest, callback func(response *AllocateEipAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

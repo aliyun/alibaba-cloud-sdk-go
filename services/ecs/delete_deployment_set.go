@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDeploymentSet invokes the ecs.DeleteDeploymentSet API synchronously
-// api document: https://help.aliyun.com/api/ecs/deletedeploymentset.html
 func (client *Client) DeleteDeploymentSet(request *DeleteDeploymentSetRequest) (response *DeleteDeploymentSetResponse, err error) {
 	response = CreateDeleteDeploymentSetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDeploymentSet(request *DeleteDeploymentSetRequest) (
 }
 
 // DeleteDeploymentSetWithChan invokes the ecs.DeleteDeploymentSet API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deletedeploymentset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDeploymentSetWithChan(request *DeleteDeploymentSetRequest) (<-chan *DeleteDeploymentSetResponse, <-chan error) {
 	responseChan := make(chan *DeleteDeploymentSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDeploymentSetWithChan(request *DeleteDeploymentSetRe
 }
 
 // DeleteDeploymentSetWithCallback invokes the ecs.DeleteDeploymentSet API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deletedeploymentset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDeploymentSetWithCallback(request *DeleteDeploymentSetRequest, callback func(response *DeleteDeploymentSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

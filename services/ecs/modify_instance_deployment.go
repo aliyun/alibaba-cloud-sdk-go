@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyInstanceDeployment invokes the ecs.ModifyInstanceDeployment API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifyinstancedeployment.html
 func (client *Client) ModifyInstanceDeployment(request *ModifyInstanceDeploymentRequest) (response *ModifyInstanceDeploymentResponse, err error) {
 	response = CreateModifyInstanceDeploymentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyInstanceDeployment(request *ModifyInstanceDeployment
 }
 
 // ModifyInstanceDeploymentWithChan invokes the ecs.ModifyInstanceDeployment API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyinstancedeployment.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceDeploymentWithChan(request *ModifyInstanceDeploymentRequest) (<-chan *ModifyInstanceDeploymentResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceDeploymentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyInstanceDeploymentWithChan(request *ModifyInstanceDe
 }
 
 // ModifyInstanceDeploymentWithCallback invokes the ecs.ModifyInstanceDeployment API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyinstancedeployment.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceDeploymentWithCallback(request *ModifyInstanceDeploymentRequest, callback func(response *ModifyInstanceDeploymentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

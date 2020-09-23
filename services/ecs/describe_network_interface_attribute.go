@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeNetworkInterfaceAttribute invokes the ecs.DescribeNetworkInterfaceAttribute API synchronously
-// api document: https://help.aliyun.com/api/ecs/describenetworkinterfaceattribute.html
 func (client *Client) DescribeNetworkInterfaceAttribute(request *DescribeNetworkInterfaceAttributeRequest) (response *DescribeNetworkInterfaceAttributeResponse, err error) {
 	response = CreateDescribeNetworkInterfaceAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeNetworkInterfaceAttribute(request *DescribeNetwork
 }
 
 // DescribeNetworkInterfaceAttributeWithChan invokes the ecs.DescribeNetworkInterfaceAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describenetworkinterfaceattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNetworkInterfaceAttributeWithChan(request *DescribeNetworkInterfaceAttributeRequest) (<-chan *DescribeNetworkInterfaceAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeNetworkInterfaceAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeNetworkInterfaceAttributeWithChan(request *Describ
 }
 
 // DescribeNetworkInterfaceAttributeWithCallback invokes the ecs.DescribeNetworkInterfaceAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describenetworkinterfaceattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNetworkInterfaceAttributeWithCallback(request *DescribeNetworkInterfaceAttributeRequest, callback func(response *DescribeNetworkInterfaceAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

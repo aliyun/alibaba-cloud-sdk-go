@@ -21,7 +21,6 @@ import (
 )
 
 // DetachInstanceRamRole invokes the ecs.DetachInstanceRamRole API synchronously
-// api document: https://help.aliyun.com/api/ecs/detachinstanceramrole.html
 func (client *Client) DetachInstanceRamRole(request *DetachInstanceRamRoleRequest) (response *DetachInstanceRamRoleResponse, err error) {
 	response = CreateDetachInstanceRamRoleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetachInstanceRamRole(request *DetachInstanceRamRoleReques
 }
 
 // DetachInstanceRamRoleWithChan invokes the ecs.DetachInstanceRamRole API asynchronously
-// api document: https://help.aliyun.com/api/ecs/detachinstanceramrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachInstanceRamRoleWithChan(request *DetachInstanceRamRoleRequest) (<-chan *DetachInstanceRamRoleResponse, <-chan error) {
 	responseChan := make(chan *DetachInstanceRamRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetachInstanceRamRoleWithChan(request *DetachInstanceRamRo
 }
 
 // DetachInstanceRamRoleWithCallback invokes the ecs.DetachInstanceRamRole API asynchronously
-// api document: https://help.aliyun.com/api/ecs/detachinstanceramrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachInstanceRamRoleWithCallback(request *DetachInstanceRamRoleRequest, callback func(response *DetachInstanceRamRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

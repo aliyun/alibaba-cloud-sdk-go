@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDedicatedHostCluster invokes the ecs.CreateDedicatedHostCluster API synchronously
-// api document: https://help.aliyun.com/api/ecs/creatededicatedhostcluster.html
 func (client *Client) CreateDedicatedHostCluster(request *CreateDedicatedHostClusterRequest) (response *CreateDedicatedHostClusterResponse, err error) {
 	response = CreateCreateDedicatedHostClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDedicatedHostCluster(request *CreateDedicatedHostClu
 }
 
 // CreateDedicatedHostClusterWithChan invokes the ecs.CreateDedicatedHostCluster API asynchronously
-// api document: https://help.aliyun.com/api/ecs/creatededicatedhostcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDedicatedHostClusterWithChan(request *CreateDedicatedHostClusterRequest) (<-chan *CreateDedicatedHostClusterResponse, <-chan error) {
 	responseChan := make(chan *CreateDedicatedHostClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDedicatedHostClusterWithChan(request *CreateDedicate
 }
 
 // CreateDedicatedHostClusterWithCallback invokes the ecs.CreateDedicatedHostCluster API asynchronously
-// api document: https://help.aliyun.com/api/ecs/creatededicatedhostcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDedicatedHostClusterWithCallback(request *CreateDedicatedHostClusterRequest, callback func(response *CreateDedicatedHostClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

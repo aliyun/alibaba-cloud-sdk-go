@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeClassicLinkInstances invokes the ecs.DescribeClassicLinkInstances API synchronously
-// api document: https://help.aliyun.com/api/ecs/describeclassiclinkinstances.html
 func (client *Client) DescribeClassicLinkInstances(request *DescribeClassicLinkInstancesRequest) (response *DescribeClassicLinkInstancesResponse, err error) {
 	response = CreateDescribeClassicLinkInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeClassicLinkInstances(request *DescribeClassicLinkI
 }
 
 // DescribeClassicLinkInstancesWithChan invokes the ecs.DescribeClassicLinkInstances API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describeclassiclinkinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClassicLinkInstancesWithChan(request *DescribeClassicLinkInstancesRequest) (<-chan *DescribeClassicLinkInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeClassicLinkInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeClassicLinkInstancesWithChan(request *DescribeClas
 }
 
 // DescribeClassicLinkInstancesWithCallback invokes the ecs.DescribeClassicLinkInstances API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describeclassiclinkinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClassicLinkInstancesWithCallback(request *DescribeClassicLinkInstancesRequest, callback func(response *DescribeClassicLinkInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

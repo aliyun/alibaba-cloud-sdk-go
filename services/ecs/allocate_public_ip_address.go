@@ -21,7 +21,6 @@ import (
 )
 
 // AllocatePublicIpAddress invokes the ecs.AllocatePublicIpAddress API synchronously
-// api document: https://help.aliyun.com/api/ecs/allocatepublicipaddress.html
 func (client *Client) AllocatePublicIpAddress(request *AllocatePublicIpAddressRequest) (response *AllocatePublicIpAddressResponse, err error) {
 	response = CreateAllocatePublicIpAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AllocatePublicIpAddress(request *AllocatePublicIpAddressRe
 }
 
 // AllocatePublicIpAddressWithChan invokes the ecs.AllocatePublicIpAddress API asynchronously
-// api document: https://help.aliyun.com/api/ecs/allocatepublicipaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocatePublicIpAddressWithChan(request *AllocatePublicIpAddressRequest) (<-chan *AllocatePublicIpAddressResponse, <-chan error) {
 	responseChan := make(chan *AllocatePublicIpAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AllocatePublicIpAddressWithChan(request *AllocatePublicIpA
 }
 
 // AllocatePublicIpAddressWithCallback invokes the ecs.AllocatePublicIpAddress API asynchronously
-// api document: https://help.aliyun.com/api/ecs/allocatepublicipaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocatePublicIpAddressWithCallback(request *AllocatePublicIpAddressRequest, callback func(response *AllocatePublicIpAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

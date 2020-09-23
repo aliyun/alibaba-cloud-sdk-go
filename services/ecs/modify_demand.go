@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDemand invokes the ecs.ModifyDemand API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifydemand.html
 func (client *Client) ModifyDemand(request *ModifyDemandRequest) (response *ModifyDemandResponse, err error) {
 	response = CreateModifyDemandResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDemand(request *ModifyDemandRequest) (response *Modi
 }
 
 // ModifyDemandWithChan invokes the ecs.ModifyDemand API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifydemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDemandWithChan(request *ModifyDemandRequest) (<-chan *ModifyDemandResponse, <-chan error) {
 	responseChan := make(chan *ModifyDemandResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDemandWithChan(request *ModifyDemandRequest) (<-chan
 }
 
 // ModifyDemandWithCallback invokes the ecs.ModifyDemand API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifydemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDemandWithCallback(request *ModifyDemandRequest, callback func(response *ModifyDemandResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

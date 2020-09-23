@@ -21,7 +21,6 @@ import (
 )
 
 // TerminatePhysicalConnection invokes the ecs.TerminatePhysicalConnection API synchronously
-// api document: https://help.aliyun.com/api/ecs/terminatephysicalconnection.html
 func (client *Client) TerminatePhysicalConnection(request *TerminatePhysicalConnectionRequest) (response *TerminatePhysicalConnectionResponse, err error) {
 	response = CreateTerminatePhysicalConnectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TerminatePhysicalConnection(request *TerminatePhysicalConn
 }
 
 // TerminatePhysicalConnectionWithChan invokes the ecs.TerminatePhysicalConnection API asynchronously
-// api document: https://help.aliyun.com/api/ecs/terminatephysicalconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TerminatePhysicalConnectionWithChan(request *TerminatePhysicalConnectionRequest) (<-chan *TerminatePhysicalConnectionResponse, <-chan error) {
 	responseChan := make(chan *TerminatePhysicalConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TerminatePhysicalConnectionWithChan(request *TerminatePhys
 }
 
 // TerminatePhysicalConnectionWithCallback invokes the ecs.TerminatePhysicalConnection API asynchronously
-// api document: https://help.aliyun.com/api/ecs/terminatephysicalconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TerminatePhysicalConnectionWithCallback(request *TerminatePhysicalConnectionRequest, callback func(response *TerminatePhysicalConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDiskAttribute invokes the ecs.ModifyDiskAttribute API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifydiskattribute.html
 func (client *Client) ModifyDiskAttribute(request *ModifyDiskAttributeRequest) (response *ModifyDiskAttributeResponse, err error) {
 	response = CreateModifyDiskAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDiskAttribute(request *ModifyDiskAttributeRequest) (
 }
 
 // ModifyDiskAttributeWithChan invokes the ecs.ModifyDiskAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifydiskattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDiskAttributeWithChan(request *ModifyDiskAttributeRequest) (<-chan *ModifyDiskAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyDiskAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDiskAttributeWithChan(request *ModifyDiskAttributeRe
 }
 
 // ModifyDiskAttributeWithCallback invokes the ecs.ModifyDiskAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifydiskattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDiskAttributeWithCallback(request *ModifyDiskAttributeRequest, callback func(response *ModifyDiskAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // RebootInstances invokes the ecs.RebootInstances API synchronously
-// api document: https://help.aliyun.com/api/ecs/rebootinstances.html
 func (client *Client) RebootInstances(request *RebootInstancesRequest) (response *RebootInstancesResponse, err error) {
 	response = CreateRebootInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RebootInstances(request *RebootInstancesRequest) (response
 }
 
 // RebootInstancesWithChan invokes the ecs.RebootInstances API asynchronously
-// api document: https://help.aliyun.com/api/ecs/rebootinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RebootInstancesWithChan(request *RebootInstancesRequest) (<-chan *RebootInstancesResponse, <-chan error) {
 	responseChan := make(chan *RebootInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RebootInstancesWithChan(request *RebootInstancesRequest) (
 }
 
 // RebootInstancesWithCallback invokes the ecs.RebootInstances API asynchronously
-// api document: https://help.aliyun.com/api/ecs/rebootinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RebootInstancesWithCallback(request *RebootInstancesRequest, callback func(response *RebootInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

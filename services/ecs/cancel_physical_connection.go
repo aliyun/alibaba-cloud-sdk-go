@@ -21,7 +21,6 @@ import (
 )
 
 // CancelPhysicalConnection invokes the ecs.CancelPhysicalConnection API synchronously
-// api document: https://help.aliyun.com/api/ecs/cancelphysicalconnection.html
 func (client *Client) CancelPhysicalConnection(request *CancelPhysicalConnectionRequest) (response *CancelPhysicalConnectionResponse, err error) {
 	response = CreateCancelPhysicalConnectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CancelPhysicalConnection(request *CancelPhysicalConnection
 }
 
 // CancelPhysicalConnectionWithChan invokes the ecs.CancelPhysicalConnection API asynchronously
-// api document: https://help.aliyun.com/api/ecs/cancelphysicalconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelPhysicalConnectionWithChan(request *CancelPhysicalConnectionRequest) (<-chan *CancelPhysicalConnectionResponse, <-chan error) {
 	responseChan := make(chan *CancelPhysicalConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CancelPhysicalConnectionWithChan(request *CancelPhysicalCo
 }
 
 // CancelPhysicalConnectionWithCallback invokes the ecs.CancelPhysicalConnection API asynchronously
-// api document: https://help.aliyun.com/api/ecs/cancelphysicalconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelPhysicalConnectionWithCallback(request *CancelPhysicalConnectionRequest, callback func(response *CancelPhysicalConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

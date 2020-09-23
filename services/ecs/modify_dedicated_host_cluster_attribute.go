@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDedicatedHostClusterAttribute invokes the ecs.ModifyDedicatedHostClusterAttribute API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifydedicatedhostclusterattribute.html
 func (client *Client) ModifyDedicatedHostClusterAttribute(request *ModifyDedicatedHostClusterAttributeRequest) (response *ModifyDedicatedHostClusterAttributeResponse, err error) {
 	response = CreateModifyDedicatedHostClusterAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDedicatedHostClusterAttribute(request *ModifyDedicat
 }
 
 // ModifyDedicatedHostClusterAttributeWithChan invokes the ecs.ModifyDedicatedHostClusterAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifydedicatedhostclusterattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDedicatedHostClusterAttributeWithChan(request *ModifyDedicatedHostClusterAttributeRequest) (<-chan *ModifyDedicatedHostClusterAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyDedicatedHostClusterAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDedicatedHostClusterAttributeWithChan(request *Modif
 }
 
 // ModifyDedicatedHostClusterAttributeWithCallback invokes the ecs.ModifyDedicatedHostClusterAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifydedicatedhostclusterattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDedicatedHostClusterAttributeWithCallback(request *ModifyDedicatedHostClusterAttributeRequest, callback func(response *ModifyDedicatedHostClusterAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

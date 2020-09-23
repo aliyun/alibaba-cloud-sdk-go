@@ -65,6 +65,7 @@ type Instance struct {
 	VlanId                     string                               `json:"VlanId" xml:"VlanId"`
 	StoppedMode                string                               `json:"StoppedMode" xml:"StoppedMode"`
 	SpotStrategy               string                               `json:"SpotStrategy" xml:"SpotStrategy"`
+	SpotDuration               int                                  `json:"SpotDuration" xml:"SpotDuration"`
 	DeletionProtection         bool                                 `json:"DeletionProtection" xml:"DeletionProtection"`
 	SecurityGroupIds           SecurityGroupIdsInDescribeInstances  `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
 	InnerIpAddress             InnerIpAddressInDescribeInstances    `json:"InnerIpAddress" xml:"InnerIpAddress"`

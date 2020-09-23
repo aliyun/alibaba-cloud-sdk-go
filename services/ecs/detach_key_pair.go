@@ -21,7 +21,6 @@ import (
 )
 
 // DetachKeyPair invokes the ecs.DetachKeyPair API synchronously
-// api document: https://help.aliyun.com/api/ecs/detachkeypair.html
 func (client *Client) DetachKeyPair(request *DetachKeyPairRequest) (response *DetachKeyPairResponse, err error) {
 	response = CreateDetachKeyPairResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetachKeyPair(request *DetachKeyPairRequest) (response *De
 }
 
 // DetachKeyPairWithChan invokes the ecs.DetachKeyPair API asynchronously
-// api document: https://help.aliyun.com/api/ecs/detachkeypair.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachKeyPairWithChan(request *DetachKeyPairRequest) (<-chan *DetachKeyPairResponse, <-chan error) {
 	responseChan := make(chan *DetachKeyPairResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetachKeyPairWithChan(request *DetachKeyPairRequest) (<-ch
 }
 
 // DetachKeyPairWithCallback invokes the ecs.DetachKeyPair API asynchronously
-// api document: https://help.aliyun.com/api/ecs/detachkeypair.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachKeyPairWithCallback(request *DetachKeyPairRequest, callback func(response *DetachKeyPairResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

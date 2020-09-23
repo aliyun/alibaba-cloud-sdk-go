@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyImageSharePermission invokes the ecs.ModifyImageSharePermission API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifyimagesharepermission.html
 func (client *Client) ModifyImageSharePermission(request *ModifyImageSharePermissionRequest) (response *ModifyImageSharePermissionResponse, err error) {
 	response = CreateModifyImageSharePermissionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyImageSharePermission(request *ModifyImageSharePermis
 }
 
 // ModifyImageSharePermissionWithChan invokes the ecs.ModifyImageSharePermission API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyimagesharepermission.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyImageSharePermissionWithChan(request *ModifyImageSharePermissionRequest) (<-chan *ModifyImageSharePermissionResponse, <-chan error) {
 	responseChan := make(chan *ModifyImageSharePermissionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyImageSharePermissionWithChan(request *ModifyImageSha
 }
 
 // ModifyImageSharePermissionWithCallback invokes the ecs.ModifyImageSharePermission API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyimagesharepermission.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyImageSharePermissionWithCallback(request *ModifyImageSharePermissionRequest, callback func(response *ModifyImageSharePermissionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ReActivateInstances invokes the ecs.ReActivateInstances API synchronously
-// api document: https://help.aliyun.com/api/ecs/reactivateinstances.html
 func (client *Client) ReActivateInstances(request *ReActivateInstancesRequest) (response *ReActivateInstancesResponse, err error) {
 	response = CreateReActivateInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReActivateInstances(request *ReActivateInstancesRequest) (
 }
 
 // ReActivateInstancesWithChan invokes the ecs.ReActivateInstances API asynchronously
-// api document: https://help.aliyun.com/api/ecs/reactivateinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReActivateInstancesWithChan(request *ReActivateInstancesRequest) (<-chan *ReActivateInstancesResponse, <-chan error) {
 	responseChan := make(chan *ReActivateInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReActivateInstancesWithChan(request *ReActivateInstancesRe
 }
 
 // ReActivateInstancesWithCallback invokes the ecs.ReActivateInstances API asynchronously
-// api document: https://help.aliyun.com/api/ecs/reactivateinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReActivateInstancesWithCallback(request *ReActivateInstancesRequest, callback func(response *ReActivateInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

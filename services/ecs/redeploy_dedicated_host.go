@@ -21,7 +21,6 @@ import (
 )
 
 // RedeployDedicatedHost invokes the ecs.RedeployDedicatedHost API synchronously
-// api document: https://help.aliyun.com/api/ecs/redeploydedicatedhost.html
 func (client *Client) RedeployDedicatedHost(request *RedeployDedicatedHostRequest) (response *RedeployDedicatedHostResponse, err error) {
 	response = CreateRedeployDedicatedHostResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RedeployDedicatedHost(request *RedeployDedicatedHostReques
 }
 
 // RedeployDedicatedHostWithChan invokes the ecs.RedeployDedicatedHost API asynchronously
-// api document: https://help.aliyun.com/api/ecs/redeploydedicatedhost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RedeployDedicatedHostWithChan(request *RedeployDedicatedHostRequest) (<-chan *RedeployDedicatedHostResponse, <-chan error) {
 	responseChan := make(chan *RedeployDedicatedHostResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RedeployDedicatedHostWithChan(request *RedeployDedicatedHo
 }
 
 // RedeployDedicatedHostWithCallback invokes the ecs.RedeployDedicatedHost API asynchronously
-// api document: https://help.aliyun.com/api/ecs/redeploydedicatedhost.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RedeployDedicatedHostWithCallback(request *RedeployDedicatedHostRequest, callback func(response *RedeployDedicatedHostResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

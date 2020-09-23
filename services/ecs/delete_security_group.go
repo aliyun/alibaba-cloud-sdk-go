@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSecurityGroup invokes the ecs.DeleteSecurityGroup API synchronously
-// api document: https://help.aliyun.com/api/ecs/deletesecuritygroup.html
 func (client *Client) DeleteSecurityGroup(request *DeleteSecurityGroupRequest) (response *DeleteSecurityGroupResponse, err error) {
 	response = CreateDeleteSecurityGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSecurityGroup(request *DeleteSecurityGroupRequest) (
 }
 
 // DeleteSecurityGroupWithChan invokes the ecs.DeleteSecurityGroup API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deletesecuritygroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSecurityGroupWithChan(request *DeleteSecurityGroupRequest) (<-chan *DeleteSecurityGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteSecurityGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSecurityGroupWithChan(request *DeleteSecurityGroupRe
 }
 
 // DeleteSecurityGroupWithCallback invokes the ecs.DeleteSecurityGroup API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deletesecuritygroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSecurityGroupWithCallback(request *DeleteSecurityGroupRequest, callback func(response *DeleteSecurityGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // PurchaseReservedInstancesOffering invokes the ecs.PurchaseReservedInstancesOffering API synchronously
-// api document: https://help.aliyun.com/api/ecs/purchasereservedinstancesoffering.html
 func (client *Client) PurchaseReservedInstancesOffering(request *PurchaseReservedInstancesOfferingRequest) (response *PurchaseReservedInstancesOfferingResponse, err error) {
 	response = CreatePurchaseReservedInstancesOfferingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PurchaseReservedInstancesOffering(request *PurchaseReserve
 }
 
 // PurchaseReservedInstancesOfferingWithChan invokes the ecs.PurchaseReservedInstancesOffering API asynchronously
-// api document: https://help.aliyun.com/api/ecs/purchasereservedinstancesoffering.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PurchaseReservedInstancesOfferingWithChan(request *PurchaseReservedInstancesOfferingRequest) (<-chan *PurchaseReservedInstancesOfferingResponse, <-chan error) {
 	responseChan := make(chan *PurchaseReservedInstancesOfferingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PurchaseReservedInstancesOfferingWithChan(request *Purchas
 }
 
 // PurchaseReservedInstancesOfferingWithCallback invokes the ecs.PurchaseReservedInstancesOffering API asynchronously
-// api document: https://help.aliyun.com/api/ecs/purchasereservedinstancesoffering.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PurchaseReservedInstancesOfferingWithCallback(request *PurchaseReservedInstancesOfferingRequest, callback func(response *PurchaseReservedInstancesOfferingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

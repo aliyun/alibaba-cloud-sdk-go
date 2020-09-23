@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDeploymentSets invokes the ecs.DescribeDeploymentSets API synchronously
-// api document: https://help.aliyun.com/api/ecs/describedeploymentsets.html
 func (client *Client) DescribeDeploymentSets(request *DescribeDeploymentSetsRequest) (response *DescribeDeploymentSetsResponse, err error) {
 	response = CreateDescribeDeploymentSetsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDeploymentSets(request *DescribeDeploymentSetsRequ
 }
 
 // DescribeDeploymentSetsWithChan invokes the ecs.DescribeDeploymentSets API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describedeploymentsets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeploymentSetsWithChan(request *DescribeDeploymentSetsRequest) (<-chan *DescribeDeploymentSetsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDeploymentSetsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDeploymentSetsWithChan(request *DescribeDeployment
 }
 
 // DescribeDeploymentSetsWithCallback invokes the ecs.DescribeDeploymentSets API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describedeploymentsets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeploymentSetsWithCallback(request *DescribeDeploymentSetsRequest, callback func(response *DescribeDeploymentSetsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

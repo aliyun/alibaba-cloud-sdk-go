@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstanceTopology invokes the ecs.DescribeInstanceTopology API synchronously
-// api document: https://help.aliyun.com/api/ecs/describeinstancetopology.html
 func (client *Client) DescribeInstanceTopology(request *DescribeInstanceTopologyRequest) (response *DescribeInstanceTopologyResponse, err error) {
 	response = CreateDescribeInstanceTopologyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstanceTopology(request *DescribeInstanceTopology
 }
 
 // DescribeInstanceTopologyWithChan invokes the ecs.DescribeInstanceTopology API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describeinstancetopology.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceTopologyWithChan(request *DescribeInstanceTopologyRequest) (<-chan *DescribeInstanceTopologyResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceTopologyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceTopologyWithChan(request *DescribeInstance
 }
 
 // DescribeInstanceTopologyWithCallback invokes the ecs.DescribeInstanceTopology API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describeinstancetopology.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceTopologyWithCallback(request *DescribeInstanceTopologyRequest, callback func(response *DescribeInstanceTopologyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // EipFillParams invokes the ecs.EipFillParams API synchronously
-// api document: https://help.aliyun.com/api/ecs/eipfillparams.html
 func (client *Client) EipFillParams(request *EipFillParamsRequest) (response *EipFillParamsResponse, err error) {
 	response = CreateEipFillParamsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EipFillParams(request *EipFillParamsRequest) (response *Ei
 }
 
 // EipFillParamsWithChan invokes the ecs.EipFillParams API asynchronously
-// api document: https://help.aliyun.com/api/ecs/eipfillparams.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EipFillParamsWithChan(request *EipFillParamsRequest) (<-chan *EipFillParamsResponse, <-chan error) {
 	responseChan := make(chan *EipFillParamsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EipFillParamsWithChan(request *EipFillParamsRequest) (<-ch
 }
 
 // EipFillParamsWithCallback invokes the ecs.EipFillParams API asynchronously
-// api document: https://help.aliyun.com/api/ecs/eipfillparams.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EipFillParamsWithCallback(request *EipFillParamsRequest, callback func(response *EipFillParamsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

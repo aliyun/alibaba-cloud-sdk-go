@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyInstanceChargeType invokes the ecs.ModifyInstanceChargeType API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifyinstancechargetype.html
 func (client *Client) ModifyInstanceChargeType(request *ModifyInstanceChargeTypeRequest) (response *ModifyInstanceChargeTypeResponse, err error) {
 	response = CreateModifyInstanceChargeTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyInstanceChargeType(request *ModifyInstanceChargeType
 }
 
 // ModifyInstanceChargeTypeWithChan invokes the ecs.ModifyInstanceChargeType API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyinstancechargetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceChargeTypeWithChan(request *ModifyInstanceChargeTypeRequest) (<-chan *ModifyInstanceChargeTypeResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceChargeTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyInstanceChargeTypeWithChan(request *ModifyInstanceCh
 }
 
 // ModifyInstanceChargeTypeWithCallback invokes the ecs.ModifyInstanceChargeType API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyinstancechargetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceChargeTypeWithCallback(request *ModifyInstanceChargeTypeRequest, callback func(response *ModifyInstanceChargeTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

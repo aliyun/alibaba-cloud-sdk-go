@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDemands invokes the ecs.DescribeDemands API synchronously
-// api document: https://help.aliyun.com/api/ecs/describedemands.html
 func (client *Client) DescribeDemands(request *DescribeDemandsRequest) (response *DescribeDemandsResponse, err error) {
 	response = CreateDescribeDemandsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDemands(request *DescribeDemandsRequest) (response
 }
 
 // DescribeDemandsWithChan invokes the ecs.DescribeDemands API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describedemands.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDemandsWithChan(request *DescribeDemandsRequest) (<-chan *DescribeDemandsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDemandsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDemandsWithChan(request *DescribeDemandsRequest) (
 }
 
 // DescribeDemandsWithCallback invokes the ecs.DescribeDemands API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describedemands.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDemandsWithCallback(request *DescribeDemandsRequest, callback func(response *DescribeDemandsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

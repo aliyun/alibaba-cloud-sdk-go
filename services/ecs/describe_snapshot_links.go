@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSnapshotLinks invokes the ecs.DescribeSnapshotLinks API synchronously
-// api document: https://help.aliyun.com/api/ecs/describesnapshotlinks.html
 func (client *Client) DescribeSnapshotLinks(request *DescribeSnapshotLinksRequest) (response *DescribeSnapshotLinksResponse, err error) {
 	response = CreateDescribeSnapshotLinksResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSnapshotLinks(request *DescribeSnapshotLinksReques
 }
 
 // DescribeSnapshotLinksWithChan invokes the ecs.DescribeSnapshotLinks API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describesnapshotlinks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotLinksWithChan(request *DescribeSnapshotLinksRequest) (<-chan *DescribeSnapshotLinksResponse, <-chan error) {
 	responseChan := make(chan *DescribeSnapshotLinksResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSnapshotLinksWithChan(request *DescribeSnapshotLin
 }
 
 // DescribeSnapshotLinksWithCallback invokes the ecs.DescribeSnapshotLinks API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describesnapshotlinks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotLinksWithCallback(request *DescribeSnapshotLinksRequest, callback func(response *DescribeSnapshotLinksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

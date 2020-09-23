@@ -21,7 +21,6 @@ import (
 )
 
 // ReInitDisk invokes the ecs.ReInitDisk API synchronously
-// api document: https://help.aliyun.com/api/ecs/reinitdisk.html
 func (client *Client) ReInitDisk(request *ReInitDiskRequest) (response *ReInitDiskResponse, err error) {
 	response = CreateReInitDiskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReInitDisk(request *ReInitDiskRequest) (response *ReInitDi
 }
 
 // ReInitDiskWithChan invokes the ecs.ReInitDisk API asynchronously
-// api document: https://help.aliyun.com/api/ecs/reinitdisk.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReInitDiskWithChan(request *ReInitDiskRequest) (<-chan *ReInitDiskResponse, <-chan error) {
 	responseChan := make(chan *ReInitDiskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReInitDiskWithChan(request *ReInitDiskRequest) (<-chan *Re
 }
 
 // ReInitDiskWithCallback invokes the ecs.ReInitDisk API asynchronously
-// api document: https://help.aliyun.com/api/ecs/reinitdisk.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReInitDiskWithCallback(request *ReInitDiskRequest, callback func(response *ReInitDiskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

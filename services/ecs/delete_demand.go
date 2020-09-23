@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDemand invokes the ecs.DeleteDemand API synchronously
-// api document: https://help.aliyun.com/api/ecs/deletedemand.html
 func (client *Client) DeleteDemand(request *DeleteDemandRequest) (response *DeleteDemandResponse, err error) {
 	response = CreateDeleteDemandResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDemand(request *DeleteDemandRequest) (response *Dele
 }
 
 // DeleteDemandWithChan invokes the ecs.DeleteDemand API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deletedemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDemandWithChan(request *DeleteDemandRequest) (<-chan *DeleteDemandResponse, <-chan error) {
 	responseChan := make(chan *DeleteDemandResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDemandWithChan(request *DeleteDemandRequest) (<-chan
 }
 
 // DeleteDemandWithCallback invokes the ecs.DeleteDemand API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deletedemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDemandWithCallback(request *DeleteDemandRequest, callback func(response *DeleteDemandResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

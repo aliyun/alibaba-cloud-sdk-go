@@ -21,7 +21,6 @@ import (
 )
 
 // CreateNetworkInterface invokes the ecs.CreateNetworkInterface API synchronously
-// api document: https://help.aliyun.com/api/ecs/createnetworkinterface.html
 func (client *Client) CreateNetworkInterface(request *CreateNetworkInterfaceRequest) (response *CreateNetworkInterfaceResponse, err error) {
 	response = CreateCreateNetworkInterfaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateNetworkInterface(request *CreateNetworkInterfaceRequ
 }
 
 // CreateNetworkInterfaceWithChan invokes the ecs.CreateNetworkInterface API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createnetworkinterface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNetworkInterfaceWithChan(request *CreateNetworkInterfaceRequest) (<-chan *CreateNetworkInterfaceResponse, <-chan error) {
 	responseChan := make(chan *CreateNetworkInterfaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateNetworkInterfaceWithChan(request *CreateNetworkInter
 }
 
 // CreateNetworkInterfaceWithCallback invokes the ecs.CreateNetworkInterface API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createnetworkinterface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNetworkInterfaceWithCallback(request *CreateNetworkInterfaceRequest, callback func(response *CreateNetworkInterfaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // AssignPrivateIpAddresses invokes the ecs.AssignPrivateIpAddresses API synchronously
-// api document: https://help.aliyun.com/api/ecs/assignprivateipaddresses.html
 func (client *Client) AssignPrivateIpAddresses(request *AssignPrivateIpAddressesRequest) (response *AssignPrivateIpAddressesResponse, err error) {
 	response = CreateAssignPrivateIpAddressesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AssignPrivateIpAddresses(request *AssignPrivateIpAddresses
 }
 
 // AssignPrivateIpAddressesWithChan invokes the ecs.AssignPrivateIpAddresses API asynchronously
-// api document: https://help.aliyun.com/api/ecs/assignprivateipaddresses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssignPrivateIpAddressesWithChan(request *AssignPrivateIpAddressesRequest) (<-chan *AssignPrivateIpAddressesResponse, <-chan error) {
 	responseChan := make(chan *AssignPrivateIpAddressesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AssignPrivateIpAddressesWithChan(request *AssignPrivateIpA
 }
 
 // AssignPrivateIpAddressesWithCallback invokes the ecs.AssignPrivateIpAddresses API asynchronously
-// api document: https://help.aliyun.com/api/ecs/assignprivateipaddresses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssignPrivateIpAddressesWithCallback(request *AssignPrivateIpAddressesRequest, callback func(response *AssignPrivateIpAddressesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyInstanceMaintenanceAttributes invokes the ecs.ModifyInstanceMaintenanceAttributes API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifyinstancemaintenanceattributes.html
 func (client *Client) ModifyInstanceMaintenanceAttributes(request *ModifyInstanceMaintenanceAttributesRequest) (response *ModifyInstanceMaintenanceAttributesResponse, err error) {
 	response = CreateModifyInstanceMaintenanceAttributesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyInstanceMaintenanceAttributes(request *ModifyInstanc
 }
 
 // ModifyInstanceMaintenanceAttributesWithChan invokes the ecs.ModifyInstanceMaintenanceAttributes API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyinstancemaintenanceattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceMaintenanceAttributesWithChan(request *ModifyInstanceMaintenanceAttributesRequest) (<-chan *ModifyInstanceMaintenanceAttributesResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceMaintenanceAttributesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyInstanceMaintenanceAttributesWithChan(request *Modif
 }
 
 // ModifyInstanceMaintenanceAttributesWithCallback invokes the ecs.ModifyInstanceMaintenanceAttributes API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyinstancemaintenanceattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceMaintenanceAttributesWithCallback(request *ModifyInstanceMaintenanceAttributesRequest, callback func(response *ModifyInstanceMaintenanceAttributesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

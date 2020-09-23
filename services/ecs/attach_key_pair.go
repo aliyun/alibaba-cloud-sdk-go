@@ -21,7 +21,6 @@ import (
 )
 
 // AttachKeyPair invokes the ecs.AttachKeyPair API synchronously
-// api document: https://help.aliyun.com/api/ecs/attachkeypair.html
 func (client *Client) AttachKeyPair(request *AttachKeyPairRequest) (response *AttachKeyPairResponse, err error) {
 	response = CreateAttachKeyPairResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AttachKeyPair(request *AttachKeyPairRequest) (response *At
 }
 
 // AttachKeyPairWithChan invokes the ecs.AttachKeyPair API asynchronously
-// api document: https://help.aliyun.com/api/ecs/attachkeypair.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachKeyPairWithChan(request *AttachKeyPairRequest) (<-chan *AttachKeyPairResponse, <-chan error) {
 	responseChan := make(chan *AttachKeyPairResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AttachKeyPairWithChan(request *AttachKeyPairRequest) (<-ch
 }
 
 // AttachKeyPairWithCallback invokes the ecs.AttachKeyPair API asynchronously
-// api document: https://help.aliyun.com/api/ecs/attachkeypair.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachKeyPairWithCallback(request *AttachKeyPairRequest, callback func(response *AttachKeyPairResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

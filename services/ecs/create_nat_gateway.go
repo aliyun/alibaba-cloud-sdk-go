@@ -21,7 +21,6 @@ import (
 )
 
 // CreateNatGateway invokes the ecs.CreateNatGateway API synchronously
-// api document: https://help.aliyun.com/api/ecs/createnatgateway.html
 func (client *Client) CreateNatGateway(request *CreateNatGatewayRequest) (response *CreateNatGatewayResponse, err error) {
 	response = CreateCreateNatGatewayResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateNatGateway(request *CreateNatGatewayRequest) (respon
 }
 
 // CreateNatGatewayWithChan invokes the ecs.CreateNatGateway API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createnatgateway.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNatGatewayWithChan(request *CreateNatGatewayRequest) (<-chan *CreateNatGatewayResponse, <-chan error) {
 	responseChan := make(chan *CreateNatGatewayResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateNatGatewayWithChan(request *CreateNatGatewayRequest)
 }
 
 // CreateNatGatewayWithCallback invokes the ecs.CreateNatGateway API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createnatgateway.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNatGatewayWithCallback(request *CreateNatGatewayRequest, callback func(response *CreateNatGatewayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

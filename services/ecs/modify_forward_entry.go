@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyForwardEntry invokes the ecs.ModifyForwardEntry API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifyforwardentry.html
 func (client *Client) ModifyForwardEntry(request *ModifyForwardEntryRequest) (response *ModifyForwardEntryResponse, err error) {
 	response = CreateModifyForwardEntryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyForwardEntry(request *ModifyForwardEntryRequest) (re
 }
 
 // ModifyForwardEntryWithChan invokes the ecs.ModifyForwardEntry API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyforwardentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyForwardEntryWithChan(request *ModifyForwardEntryRequest) (<-chan *ModifyForwardEntryResponse, <-chan error) {
 	responseChan := make(chan *ModifyForwardEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyForwardEntryWithChan(request *ModifyForwardEntryRequ
 }
 
 // ModifyForwardEntryWithCallback invokes the ecs.ModifyForwardEntry API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyforwardentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyForwardEntryWithCallback(request *ModifyForwardEntryRequest, callback func(response *ModifyForwardEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

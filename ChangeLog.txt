@@ -1,3 +1,7 @@
+2020-09-23 Version: v1.61.519
+- Generated 2014-05-26 for `Ecs`.
+- Add spotDuration support.
+
 2020-09-23 Version: v1.61.518
 - Generated 2015-12-15 for `CS`.
 - Some new parameters are supported.

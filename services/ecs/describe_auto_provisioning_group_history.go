@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAutoProvisioningGroupHistory invokes the ecs.DescribeAutoProvisioningGroupHistory API synchronously
-// api document: https://help.aliyun.com/api/ecs/describeautoprovisioninggrouphistory.html
 func (client *Client) DescribeAutoProvisioningGroupHistory(request *DescribeAutoProvisioningGroupHistoryRequest) (response *DescribeAutoProvisioningGroupHistoryResponse, err error) {
 	response = CreateDescribeAutoProvisioningGroupHistoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAutoProvisioningGroupHistory(request *DescribeAuto
 }
 
 // DescribeAutoProvisioningGroupHistoryWithChan invokes the ecs.DescribeAutoProvisioningGroupHistory API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describeautoprovisioninggrouphistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAutoProvisioningGroupHistoryWithChan(request *DescribeAutoProvisioningGroupHistoryRequest) (<-chan *DescribeAutoProvisioningGroupHistoryResponse, <-chan error) {
 	responseChan := make(chan *DescribeAutoProvisioningGroupHistoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAutoProvisioningGroupHistoryWithChan(request *Desc
 }
 
 // DescribeAutoProvisioningGroupHistoryWithCallback invokes the ecs.DescribeAutoProvisioningGroupHistory API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describeautoprovisioninggrouphistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAutoProvisioningGroupHistoryWithCallback(request *DescribeAutoProvisioningGroupHistoryRequest, callback func(response *DescribeAutoProvisioningGroupHistoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

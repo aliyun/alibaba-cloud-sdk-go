@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSnapshot invokes the ecs.DeleteSnapshot API synchronously
-// api document: https://help.aliyun.com/api/ecs/deletesnapshot.html
 func (client *Client) DeleteSnapshot(request *DeleteSnapshotRequest) (response *DeleteSnapshotResponse, err error) {
 	response = CreateDeleteSnapshotResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSnapshot(request *DeleteSnapshotRequest) (response *
 }
 
 // DeleteSnapshotWithChan invokes the ecs.DeleteSnapshot API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deletesnapshot.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSnapshotWithChan(request *DeleteSnapshotRequest) (<-chan *DeleteSnapshotResponse, <-chan error) {
 	responseChan := make(chan *DeleteSnapshotResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSnapshotWithChan(request *DeleteSnapshotRequest) (<-
 }
 
 // DeleteSnapshotWithCallback invokes the ecs.DeleteSnapshot API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deletesnapshot.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSnapshotWithCallback(request *DeleteSnapshotRequest, callback func(response *DeleteSnapshotResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

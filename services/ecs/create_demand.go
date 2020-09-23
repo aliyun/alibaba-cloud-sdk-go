@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDemand invokes the ecs.CreateDemand API synchronously
-// api document: https://help.aliyun.com/api/ecs/createdemand.html
 func (client *Client) CreateDemand(request *CreateDemandRequest) (response *CreateDemandResponse, err error) {
 	response = CreateCreateDemandResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDemand(request *CreateDemandRequest) (response *Crea
 }
 
 // CreateDemandWithChan invokes the ecs.CreateDemand API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createdemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDemandWithChan(request *CreateDemandRequest) (<-chan *CreateDemandResponse, <-chan error) {
 	responseChan := make(chan *CreateDemandResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDemandWithChan(request *CreateDemandRequest) (<-chan
 }
 
 // CreateDemandWithCallback invokes the ecs.CreateDemand API asynchronously
-// api document: https://help.aliyun.com/api/ecs/createdemand.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDemandWithCallback(request *CreateDemandRequest, callback func(response *CreateDemandResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

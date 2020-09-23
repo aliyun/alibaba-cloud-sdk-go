@@ -21,7 +21,6 @@ import (
 )
 
 // ReleasePublicIpAddress invokes the ecs.ReleasePublicIpAddress API synchronously
-// api document: https://help.aliyun.com/api/ecs/releasepublicipaddress.html
 func (client *Client) ReleasePublicIpAddress(request *ReleasePublicIpAddressRequest) (response *ReleasePublicIpAddressResponse, err error) {
 	response = CreateReleasePublicIpAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReleasePublicIpAddress(request *ReleasePublicIpAddressRequ
 }
 
 // ReleasePublicIpAddressWithChan invokes the ecs.ReleasePublicIpAddress API asynchronously
-// api document: https://help.aliyun.com/api/ecs/releasepublicipaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleasePublicIpAddressWithChan(request *ReleasePublicIpAddressRequest) (<-chan *ReleasePublicIpAddressResponse, <-chan error) {
 	responseChan := make(chan *ReleasePublicIpAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReleasePublicIpAddressWithChan(request *ReleasePublicIpAdd
 }
 
 // ReleasePublicIpAddressWithCallback invokes the ecs.ReleasePublicIpAddress API asynchronously
-// api document: https://help.aliyun.com/api/ecs/releasepublicipaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleasePublicIpAddressWithCallback(request *ReleasePublicIpAddressRequest, callback func(response *ReleasePublicIpAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

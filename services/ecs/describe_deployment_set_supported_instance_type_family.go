@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDeploymentSetSupportedInstanceTypeFamily invokes the ecs.DescribeDeploymentSetSupportedInstanceTypeFamily API synchronously
-// api document: https://help.aliyun.com/api/ecs/describedeploymentsetsupportedinstancetypefamily.html
 func (client *Client) DescribeDeploymentSetSupportedInstanceTypeFamily(request *DescribeDeploymentSetSupportedInstanceTypeFamilyRequest) (response *DescribeDeploymentSetSupportedInstanceTypeFamilyResponse, err error) {
 	response = CreateDescribeDeploymentSetSupportedInstanceTypeFamilyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDeploymentSetSupportedInstanceTypeFamily(request *
 }
 
 // DescribeDeploymentSetSupportedInstanceTypeFamilyWithChan invokes the ecs.DescribeDeploymentSetSupportedInstanceTypeFamily API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describedeploymentsetsupportedinstancetypefamily.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeploymentSetSupportedInstanceTypeFamilyWithChan(request *DescribeDeploymentSetSupportedInstanceTypeFamilyRequest) (<-chan *DescribeDeploymentSetSupportedInstanceTypeFamilyResponse, <-chan error) {
 	responseChan := make(chan *DescribeDeploymentSetSupportedInstanceTypeFamilyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDeploymentSetSupportedInstanceTypeFamilyWithChan(r
 }
 
 // DescribeDeploymentSetSupportedInstanceTypeFamilyWithCallback invokes the ecs.DescribeDeploymentSetSupportedInstanceTypeFamily API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describedeploymentsetsupportedinstancetypefamily.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeploymentSetSupportedInstanceTypeFamilyWithCallback(request *DescribeDeploymentSetSupportedInstanceTypeFamilyRequest, callback func(response *DescribeDeploymentSetSupportedInstanceTypeFamilyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

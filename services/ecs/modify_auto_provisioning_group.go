@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyAutoProvisioningGroup invokes the ecs.ModifyAutoProvisioningGroup API synchronously
-// api document: https://help.aliyun.com/api/ecs/modifyautoprovisioninggroup.html
 func (client *Client) ModifyAutoProvisioningGroup(request *ModifyAutoProvisioningGroupRequest) (response *ModifyAutoProvisioningGroupResponse, err error) {
 	response = CreateModifyAutoProvisioningGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyAutoProvisioningGroup(request *ModifyAutoProvisionin
 }
 
 // ModifyAutoProvisioningGroupWithChan invokes the ecs.ModifyAutoProvisioningGroup API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyautoprovisioninggroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAutoProvisioningGroupWithChan(request *ModifyAutoProvisioningGroupRequest) (<-chan *ModifyAutoProvisioningGroupResponse, <-chan error) {
 	responseChan := make(chan *ModifyAutoProvisioningGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyAutoProvisioningGroupWithChan(request *ModifyAutoPro
 }
 
 // ModifyAutoProvisioningGroupWithCallback invokes the ecs.ModifyAutoProvisioningGroup API asynchronously
-// api document: https://help.aliyun.com/api/ecs/modifyautoprovisioninggroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAutoProvisioningGroupWithCallback(request *ModifyAutoProvisioningGroupRequest, callback func(response *ModifyAutoProvisioningGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

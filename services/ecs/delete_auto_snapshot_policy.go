@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteAutoSnapshotPolicy invokes the ecs.DeleteAutoSnapshotPolicy API synchronously
-// api document: https://help.aliyun.com/api/ecs/deleteautosnapshotpolicy.html
 func (client *Client) DeleteAutoSnapshotPolicy(request *DeleteAutoSnapshotPolicyRequest) (response *DeleteAutoSnapshotPolicyResponse, err error) {
 	response = CreateDeleteAutoSnapshotPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteAutoSnapshotPolicy(request *DeleteAutoSnapshotPolicy
 }
 
 // DeleteAutoSnapshotPolicyWithChan invokes the ecs.DeleteAutoSnapshotPolicy API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deleteautosnapshotpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAutoSnapshotPolicyWithChan(request *DeleteAutoSnapshotPolicyRequest) (<-chan *DeleteAutoSnapshotPolicyResponse, <-chan error) {
 	responseChan := make(chan *DeleteAutoSnapshotPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteAutoSnapshotPolicyWithChan(request *DeleteAutoSnapsh
 }
 
 // DeleteAutoSnapshotPolicyWithCallback invokes the ecs.DeleteAutoSnapshotPolicy API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deleteautosnapshotpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAutoSnapshotPolicyWithCallback(request *DeleteAutoSnapshotPolicyRequest, callback func(response *DeleteAutoSnapshotPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteImage invokes the ecs.DeleteImage API synchronously
-// api document: https://help.aliyun.com/api/ecs/deleteimage.html
 func (client *Client) DeleteImage(request *DeleteImageRequest) (response *DeleteImageResponse, err error) {
 	response = CreateDeleteImageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteImage(request *DeleteImageRequest) (response *Delete
 }
 
 // DeleteImageWithChan invokes the ecs.DeleteImage API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deleteimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteImageWithChan(request *DeleteImageRequest) (<-chan *DeleteImageResponse, <-chan error) {
 	responseChan := make(chan *DeleteImageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteImageWithChan(request *DeleteImageRequest) (<-chan *
 }
 
 // DeleteImageWithCallback invokes the ecs.DeleteImage API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deleteimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteImageWithCallback(request *DeleteImageRequest, callback func(response *DeleteImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

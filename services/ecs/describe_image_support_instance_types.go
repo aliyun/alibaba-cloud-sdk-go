@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeImageSupportInstanceTypes invokes the ecs.DescribeImageSupportInstanceTypes API synchronously
-// api document: https://help.aliyun.com/api/ecs/describeimagesupportinstancetypes.html
 func (client *Client) DescribeImageSupportInstanceTypes(request *DescribeImageSupportInstanceTypesRequest) (response *DescribeImageSupportInstanceTypesResponse, err error) {
 	response = CreateDescribeImageSupportInstanceTypesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeImageSupportInstanceTypes(request *DescribeImageSu
 }
 
 // DescribeImageSupportInstanceTypesWithChan invokes the ecs.DescribeImageSupportInstanceTypes API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describeimagesupportinstancetypes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImageSupportInstanceTypesWithChan(request *DescribeImageSupportInstanceTypesRequest) (<-chan *DescribeImageSupportInstanceTypesResponse, <-chan error) {
 	responseChan := make(chan *DescribeImageSupportInstanceTypesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeImageSupportInstanceTypesWithChan(request *Describ
 }
 
 // DescribeImageSupportInstanceTypesWithCallback invokes the ecs.DescribeImageSupportInstanceTypes API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describeimagesupportinstancetypes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImageSupportInstanceTypesWithCallback(request *DescribeImageSupportInstanceTypesRequest, callback func(response *DescribeImageSupportInstanceTypesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

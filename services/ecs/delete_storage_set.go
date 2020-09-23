@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteStorageSet invokes the ecs.DeleteStorageSet API synchronously
-// api document: https://help.aliyun.com/api/ecs/deletestorageset.html
 func (client *Client) DeleteStorageSet(request *DeleteStorageSetRequest) (response *DeleteStorageSetResponse, err error) {
 	response = CreateDeleteStorageSetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteStorageSet(request *DeleteStorageSetRequest) (respon
 }
 
 // DeleteStorageSetWithChan invokes the ecs.DeleteStorageSet API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deletestorageset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteStorageSetWithChan(request *DeleteStorageSetRequest) (<-chan *DeleteStorageSetResponse, <-chan error) {
 	responseChan := make(chan *DeleteStorageSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteStorageSetWithChan(request *DeleteStorageSetRequest)
 }
 
 // DeleteStorageSetWithCallback invokes the ecs.DeleteStorageSet API asynchronously
-// api document: https://help.aliyun.com/api/ecs/deletestorageset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteStorageSetWithCallback(request *DeleteStorageSetRequest, callback func(response *DeleteStorageSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

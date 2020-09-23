@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeImageFromFamily invokes the ecs.DescribeImageFromFamily API synchronously
-// api document: https://help.aliyun.com/api/ecs/describeimagefromfamily.html
 func (client *Client) DescribeImageFromFamily(request *DescribeImageFromFamilyRequest) (response *DescribeImageFromFamilyResponse, err error) {
 	response = CreateDescribeImageFromFamilyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeImageFromFamily(request *DescribeImageFromFamilyRe
 }
 
 // DescribeImageFromFamilyWithChan invokes the ecs.DescribeImageFromFamily API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describeimagefromfamily.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImageFromFamilyWithChan(request *DescribeImageFromFamilyRequest) (<-chan *DescribeImageFromFamilyResponse, <-chan error) {
 	responseChan := make(chan *DescribeImageFromFamilyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeImageFromFamilyWithChan(request *DescribeImageFrom
 }
 
 // DescribeImageFromFamilyWithCallback invokes the ecs.DescribeImageFromFamily API asynchronously
-// api document: https://help.aliyun.com/api/ecs/describeimagefromfamily.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImageFromFamilyWithCallback(request *DescribeImageFromFamilyRequest, callback func(response *DescribeImageFromFamilyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
