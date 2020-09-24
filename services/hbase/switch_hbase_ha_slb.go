@@ -21,7 +21,6 @@ import (
 )
 
 // SwitchHbaseHaSlb invokes the hbase.SwitchHbaseHaSlb API synchronously
-// api document: https://help.aliyun.com/api/hbase/switchhbasehaslb.html
 func (client *Client) SwitchHbaseHaSlb(request *SwitchHbaseHaSlbRequest) (response *SwitchHbaseHaSlbResponse, err error) {
 	response = CreateSwitchHbaseHaSlbResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SwitchHbaseHaSlb(request *SwitchHbaseHaSlbRequest) (respon
 }
 
 // SwitchHbaseHaSlbWithChan invokes the hbase.SwitchHbaseHaSlb API asynchronously
-// api document: https://help.aliyun.com/api/hbase/switchhbasehaslb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchHbaseHaSlbWithChan(request *SwitchHbaseHaSlbRequest) (<-chan *SwitchHbaseHaSlbResponse, <-chan error) {
 	responseChan := make(chan *SwitchHbaseHaSlbResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SwitchHbaseHaSlbWithChan(request *SwitchHbaseHaSlbRequest)
 }
 
 // SwitchHbaseHaSlbWithCallback invokes the hbase.SwitchHbaseHaSlb API asynchronously
-// api document: https://help.aliyun.com/api/hbase/switchhbasehaslb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchHbaseHaSlbWithCallback(request *SwitchHbaseHaSlbRequest, callback func(response *SwitchHbaseHaSlbResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

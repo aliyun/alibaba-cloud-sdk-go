@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBackupPlanConfig invokes the hbase.DescribeBackupPlanConfig API synchronously
-// api document: https://help.aliyun.com/api/hbase/describebackupplanconfig.html
 func (client *Client) DescribeBackupPlanConfig(request *DescribeBackupPlanConfigRequest) (response *DescribeBackupPlanConfigResponse, err error) {
 	response = CreateDescribeBackupPlanConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBackupPlanConfig(request *DescribeBackupPlanConfig
 }
 
 // DescribeBackupPlanConfigWithChan invokes the hbase.DescribeBackupPlanConfig API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describebackupplanconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupPlanConfigWithChan(request *DescribeBackupPlanConfigRequest) (<-chan *DescribeBackupPlanConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackupPlanConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBackupPlanConfigWithChan(request *DescribeBackupPl
 }
 
 // DescribeBackupPlanConfigWithCallback invokes the hbase.DescribeBackupPlanConfig API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describebackupplanconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupPlanConfigWithCallback(request *DescribeBackupPlanConfigRequest, callback func(response *DescribeBackupPlanConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

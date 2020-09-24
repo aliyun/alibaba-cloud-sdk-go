@@ -21,7 +21,6 @@ import (
 )
 
 // AddUserHdfsInfo invokes the hbase.AddUserHdfsInfo API synchronously
-// api document: https://help.aliyun.com/api/hbase/adduserhdfsinfo.html
 func (client *Client) AddUserHdfsInfo(request *AddUserHdfsInfoRequest) (response *AddUserHdfsInfoResponse, err error) {
 	response = CreateAddUserHdfsInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddUserHdfsInfo(request *AddUserHdfsInfoRequest) (response
 }
 
 // AddUserHdfsInfoWithChan invokes the hbase.AddUserHdfsInfo API asynchronously
-// api document: https://help.aliyun.com/api/hbase/adduserhdfsinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddUserHdfsInfoWithChan(request *AddUserHdfsInfoRequest) (<-chan *AddUserHdfsInfoResponse, <-chan error) {
 	responseChan := make(chan *AddUserHdfsInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddUserHdfsInfoWithChan(request *AddUserHdfsInfoRequest) (
 }
 
 // AddUserHdfsInfoWithCallback invokes the hbase.AddUserHdfsInfo API asynchronously
-// api document: https://help.aliyun.com/api/hbase/adduserhdfsinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddUserHdfsInfoWithCallback(request *AddUserHdfsInfoRequest, callback func(response *AddUserHdfsInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

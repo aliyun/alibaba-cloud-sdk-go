@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyClusterDeletionProtection invokes the hbase.ModifyClusterDeletionProtection API synchronously
-// api document: https://help.aliyun.com/api/hbase/modifyclusterdeletionprotection.html
 func (client *Client) ModifyClusterDeletionProtection(request *ModifyClusterDeletionProtectionRequest) (response *ModifyClusterDeletionProtectionResponse, err error) {
 	response = CreateModifyClusterDeletionProtectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyClusterDeletionProtection(request *ModifyClusterDele
 }
 
 // ModifyClusterDeletionProtectionWithChan invokes the hbase.ModifyClusterDeletionProtection API asynchronously
-// api document: https://help.aliyun.com/api/hbase/modifyclusterdeletionprotection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterDeletionProtectionWithChan(request *ModifyClusterDeletionProtectionRequest) (<-chan *ModifyClusterDeletionProtectionResponse, <-chan error) {
 	responseChan := make(chan *ModifyClusterDeletionProtectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyClusterDeletionProtectionWithChan(request *ModifyClu
 }
 
 // ModifyClusterDeletionProtectionWithCallback invokes the hbase.ModifyClusterDeletionProtection API asynchronously
-// api document: https://help.aliyun.com/api/hbase/modifyclusterdeletionprotection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterDeletionProtectionWithCallback(request *ModifyClusterDeletionProtectionRequest, callback func(response *ModifyClusterDeletionProtectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

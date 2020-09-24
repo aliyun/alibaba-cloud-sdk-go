@@ -21,7 +21,6 @@ import (
 )
 
 // QueryHBaseHaDB invokes the hbase.QueryHBaseHaDB API synchronously
-// api document: https://help.aliyun.com/api/hbase/queryhbasehadb.html
 func (client *Client) QueryHBaseHaDB(request *QueryHBaseHaDBRequest) (response *QueryHBaseHaDBResponse, err error) {
 	response = CreateQueryHBaseHaDBResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryHBaseHaDB(request *QueryHBaseHaDBRequest) (response *
 }
 
 // QueryHBaseHaDBWithChan invokes the hbase.QueryHBaseHaDB API asynchronously
-// api document: https://help.aliyun.com/api/hbase/queryhbasehadb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryHBaseHaDBWithChan(request *QueryHBaseHaDBRequest) (<-chan *QueryHBaseHaDBResponse, <-chan error) {
 	responseChan := make(chan *QueryHBaseHaDBResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryHBaseHaDBWithChan(request *QueryHBaseHaDBRequest) (<-
 }
 
 // QueryHBaseHaDBWithCallback invokes the hbase.QueryHBaseHaDB API asynchronously
-// api document: https://help.aliyun.com/api/hbase/queryhbasehadb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryHBaseHaDBWithCallback(request *QueryHBaseHaDBRequest, callback func(response *QueryHBaseHaDBResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

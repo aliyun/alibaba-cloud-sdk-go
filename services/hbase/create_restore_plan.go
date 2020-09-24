@@ -21,7 +21,6 @@ import (
 )
 
 // CreateRestorePlan invokes the hbase.CreateRestorePlan API synchronously
-// api document: https://help.aliyun.com/api/hbase/createrestoreplan.html
 func (client *Client) CreateRestorePlan(request *CreateRestorePlanRequest) (response *CreateRestorePlanResponse, err error) {
 	response = CreateCreateRestorePlanResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateRestorePlan(request *CreateRestorePlanRequest) (resp
 }
 
 // CreateRestorePlanWithChan invokes the hbase.CreateRestorePlan API asynchronously
-// api document: https://help.aliyun.com/api/hbase/createrestoreplan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRestorePlanWithChan(request *CreateRestorePlanRequest) (<-chan *CreateRestorePlanResponse, <-chan error) {
 	responseChan := make(chan *CreateRestorePlanResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateRestorePlanWithChan(request *CreateRestorePlanReques
 }
 
 // CreateRestorePlanWithCallback invokes the hbase.CreateRestorePlan API asynchronously
-// api document: https://help.aliyun.com/api/hbase/createrestoreplan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRestorePlanWithCallback(request *CreateRestorePlanRequest, callback func(response *CreateRestorePlanResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

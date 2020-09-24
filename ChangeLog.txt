@@ -1,3 +1,7 @@
+2020-09-24 Version: v1.61.526
+- Generated 2019-01-01 for `HBase`.
+- Support create for serverlesshbase.
+
 2020-09-24 Version: v1.61.525
 - Generated 2019-03-07, 2018-09-16, 2020-06-18 for `Cloudauth`.
 - ContrastFaceVerify API Add Model Parameter.

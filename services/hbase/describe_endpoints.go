@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEndpoints invokes the hbase.DescribeEndpoints API synchronously
-// api document: https://help.aliyun.com/api/hbase/describeendpoints.html
 func (client *Client) DescribeEndpoints(request *DescribeEndpointsRequest) (response *DescribeEndpointsResponse, err error) {
 	response = CreateDescribeEndpointsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEndpoints(request *DescribeEndpointsRequest) (resp
 }
 
 // DescribeEndpointsWithChan invokes the hbase.DescribeEndpoints API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describeendpoints.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEndpointsWithChan(request *DescribeEndpointsRequest) (<-chan *DescribeEndpointsResponse, <-chan error) {
 	responseChan := make(chan *DescribeEndpointsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEndpointsWithChan(request *DescribeEndpointsReques
 }
 
 // DescribeEndpointsWithCallback invokes the hbase.DescribeEndpoints API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describeendpoints.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEndpointsWithCallback(request *DescribeEndpointsRequest, callback func(response *DescribeEndpointsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyInstanceName invokes the hbase.ModifyInstanceName API synchronously
-// api document: https://help.aliyun.com/api/hbase/modifyinstancename.html
 func (client *Client) ModifyInstanceName(request *ModifyInstanceNameRequest) (response *ModifyInstanceNameResponse, err error) {
 	response = CreateModifyInstanceNameResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyInstanceName(request *ModifyInstanceNameRequest) (re
 }
 
 // ModifyInstanceNameWithChan invokes the hbase.ModifyInstanceName API asynchronously
-// api document: https://help.aliyun.com/api/hbase/modifyinstancename.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceNameWithChan(request *ModifyInstanceNameRequest) (<-chan *ModifyInstanceNameResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceNameResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyInstanceNameWithChan(request *ModifyInstanceNameRequ
 }
 
 // ModifyInstanceNameWithCallback invokes the hbase.ModifyInstanceName API asynchronously
-// api document: https://help.aliyun.com/api/hbase/modifyinstancename.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceNameWithCallback(request *ModifyInstanceNameRequest, callback func(response *ModifyInstanceNameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

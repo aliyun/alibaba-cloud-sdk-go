@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRestoreTables invokes the hbase.DescribeRestoreTables API synchronously
-// api document: https://help.aliyun.com/api/hbase/describerestoretables.html
 func (client *Client) DescribeRestoreTables(request *DescribeRestoreTablesRequest) (response *DescribeRestoreTablesResponse, err error) {
 	response = CreateDescribeRestoreTablesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRestoreTables(request *DescribeRestoreTablesReques
 }
 
 // DescribeRestoreTablesWithChan invokes the hbase.DescribeRestoreTables API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describerestoretables.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRestoreTablesWithChan(request *DescribeRestoreTablesRequest) (<-chan *DescribeRestoreTablesResponse, <-chan error) {
 	responseChan := make(chan *DescribeRestoreTablesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRestoreTablesWithChan(request *DescribeRestoreTabl
 }
 
 // DescribeRestoreTablesWithCallback invokes the hbase.DescribeRestoreTables API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describerestoretables.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRestoreTablesWithCallback(request *DescribeRestoreTablesRequest, callback func(response *DescribeRestoreTablesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

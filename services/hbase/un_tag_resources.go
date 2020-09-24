@@ -21,7 +21,6 @@ import (
 )
 
 // UnTagResources invokes the hbase.UnTagResources API synchronously
-// api document: https://help.aliyun.com/api/hbase/untagresources.html
 func (client *Client) UnTagResources(request *UnTagResourcesRequest) (response *UnTagResourcesResponse, err error) {
 	response = CreateUnTagResourcesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnTagResources(request *UnTagResourcesRequest) (response *
 }
 
 // UnTagResourcesWithChan invokes the hbase.UnTagResources API asynchronously
-// api document: https://help.aliyun.com/api/hbase/untagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnTagResourcesWithChan(request *UnTagResourcesRequest) (<-chan *UnTagResourcesResponse, <-chan error) {
 	responseChan := make(chan *UnTagResourcesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnTagResourcesWithChan(request *UnTagResourcesRequest) (<-
 }
 
 // UnTagResourcesWithCallback invokes the hbase.UnTagResources API asynchronously
-// api document: https://help.aliyun.com/api/hbase/untagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnTagResourcesWithCallback(request *UnTagResourcesRequest, callback func(response *UnTagResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

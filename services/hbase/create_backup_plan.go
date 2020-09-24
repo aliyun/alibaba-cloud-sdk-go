@@ -21,7 +21,6 @@ import (
 )
 
 // CreateBackupPlan invokes the hbase.CreateBackupPlan API synchronously
-// api document: https://help.aliyun.com/api/hbase/createbackupplan.html
 func (client *Client) CreateBackupPlan(request *CreateBackupPlanRequest) (response *CreateBackupPlanResponse, err error) {
 	response = CreateCreateBackupPlanResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateBackupPlan(request *CreateBackupPlanRequest) (respon
 }
 
 // CreateBackupPlanWithChan invokes the hbase.CreateBackupPlan API asynchronously
-// api document: https://help.aliyun.com/api/hbase/createbackupplan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBackupPlanWithChan(request *CreateBackupPlanRequest) (<-chan *CreateBackupPlanResponse, <-chan error) {
 	responseChan := make(chan *CreateBackupPlanResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateBackupPlanWithChan(request *CreateBackupPlanRequest)
 }
 
 // CreateBackupPlanWithCallback invokes the hbase.CreateBackupPlan API asynchronously
-// api document: https://help.aliyun.com/api/hbase/createbackupplan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBackupPlanWithCallback(request *CreateBackupPlanRequest, callback func(response *CreateBackupPlanResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

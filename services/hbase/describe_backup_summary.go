@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBackupSummary invokes the hbase.DescribeBackupSummary API synchronously
-// api document: https://help.aliyun.com/api/hbase/describebackupsummary.html
 func (client *Client) DescribeBackupSummary(request *DescribeBackupSummaryRequest) (response *DescribeBackupSummaryResponse, err error) {
 	response = CreateDescribeBackupSummaryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBackupSummary(request *DescribeBackupSummaryReques
 }
 
 // DescribeBackupSummaryWithChan invokes the hbase.DescribeBackupSummary API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describebackupsummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupSummaryWithChan(request *DescribeBackupSummaryRequest) (<-chan *DescribeBackupSummaryResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackupSummaryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBackupSummaryWithChan(request *DescribeBackupSumma
 }
 
 // DescribeBackupSummaryWithCallback invokes the hbase.DescribeBackupSummary API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describebackupsummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupSummaryWithCallback(request *DescribeBackupSummaryRequest, callback func(response *DescribeBackupSummaryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ConvertInstance invokes the hbase.ConvertInstance API synchronously
-// api document: https://help.aliyun.com/api/hbase/convertinstance.html
 func (client *Client) ConvertInstance(request *ConvertInstanceRequest) (response *ConvertInstanceResponse, err error) {
 	response = CreateConvertInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ConvertInstance(request *ConvertInstanceRequest) (response
 }
 
 // ConvertInstanceWithChan invokes the hbase.ConvertInstance API asynchronously
-// api document: https://help.aliyun.com/api/hbase/convertinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConvertInstanceWithChan(request *ConvertInstanceRequest) (<-chan *ConvertInstanceResponse, <-chan error) {
 	responseChan := make(chan *ConvertInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ConvertInstanceWithChan(request *ConvertInstanceRequest) (
 }
 
 // ConvertInstanceWithCallback invokes the hbase.ConvertInstance API asynchronously
-// api document: https://help.aliyun.com/api/hbase/convertinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConvertInstanceWithCallback(request *ConvertInstanceRequest, callback func(response *ConvertInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

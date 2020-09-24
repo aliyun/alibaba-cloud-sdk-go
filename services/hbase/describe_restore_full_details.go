@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRestoreFullDetails invokes the hbase.DescribeRestoreFullDetails API synchronously
-// api document: https://help.aliyun.com/api/hbase/describerestorefulldetails.html
 func (client *Client) DescribeRestoreFullDetails(request *DescribeRestoreFullDetailsRequest) (response *DescribeRestoreFullDetailsResponse, err error) {
 	response = CreateDescribeRestoreFullDetailsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRestoreFullDetails(request *DescribeRestoreFullDet
 }
 
 // DescribeRestoreFullDetailsWithChan invokes the hbase.DescribeRestoreFullDetails API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describerestorefulldetails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRestoreFullDetailsWithChan(request *DescribeRestoreFullDetailsRequest) (<-chan *DescribeRestoreFullDetailsResponse, <-chan error) {
 	responseChan := make(chan *DescribeRestoreFullDetailsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRestoreFullDetailsWithChan(request *DescribeRestor
 }
 
 // DescribeRestoreFullDetailsWithCallback invokes the hbase.DescribeRestoreFullDetails API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describerestorefulldetails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRestoreFullDetailsWithCallback(request *DescribeRestoreFullDetailsRequest, callback func(response *DescribeRestoreFullDetailsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

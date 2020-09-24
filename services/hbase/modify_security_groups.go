@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySecurityGroups invokes the hbase.ModifySecurityGroups API synchronously
-// api document: https://help.aliyun.com/api/hbase/modifysecuritygroups.html
 func (client *Client) ModifySecurityGroups(request *ModifySecurityGroupsRequest) (response *ModifySecurityGroupsResponse, err error) {
 	response = CreateModifySecurityGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySecurityGroups(request *ModifySecurityGroupsRequest)
 }
 
 // ModifySecurityGroupsWithChan invokes the hbase.ModifySecurityGroups API asynchronously
-// api document: https://help.aliyun.com/api/hbase/modifysecuritygroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupsWithChan(request *ModifySecurityGroupsRequest) (<-chan *ModifySecurityGroupsResponse, <-chan error) {
 	responseChan := make(chan *ModifySecurityGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySecurityGroupsWithChan(request *ModifySecurityGroups
 }
 
 // ModifySecurityGroupsWithCallback invokes the hbase.ModifySecurityGroups API asynchronously
-// api document: https://help.aliyun.com/api/hbase/modifysecuritygroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupsWithCallback(request *ModifySecurityGroupsRequest, callback func(response *ModifySecurityGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

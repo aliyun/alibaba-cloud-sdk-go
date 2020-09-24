@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDeletedInstances invokes the hbase.DescribeDeletedInstances API synchronously
-// api document: https://help.aliyun.com/api/hbase/describedeletedinstances.html
 func (client *Client) DescribeDeletedInstances(request *DescribeDeletedInstancesRequest) (response *DescribeDeletedInstancesResponse, err error) {
 	response = CreateDescribeDeletedInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDeletedInstances(request *DescribeDeletedInstances
 }
 
 // DescribeDeletedInstancesWithChan invokes the hbase.DescribeDeletedInstances API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describedeletedinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeletedInstancesWithChan(request *DescribeDeletedInstancesRequest) (<-chan *DescribeDeletedInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeDeletedInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDeletedInstancesWithChan(request *DescribeDeletedI
 }
 
 // DescribeDeletedInstancesWithCallback invokes the hbase.DescribeDeletedInstances API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describedeletedinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeletedInstancesWithCallback(request *DescribeDeletedInstancesRequest, callback func(response *DescribeDeletedInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAvailableResource invokes the hbase.DescribeAvailableResource API synchronously
-// api document: https://help.aliyun.com/api/hbase/describeavailableresource.html
 func (client *Client) DescribeAvailableResource(request *DescribeAvailableResourceRequest) (response *DescribeAvailableResourceResponse, err error) {
 	response = CreateDescribeAvailableResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAvailableResource(request *DescribeAvailableResour
 }
 
 // DescribeAvailableResourceWithChan invokes the hbase.DescribeAvailableResource API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describeavailableresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableResourceWithChan(request *DescribeAvailableResourceRequest) (<-chan *DescribeAvailableResourceResponse, <-chan error) {
 	responseChan := make(chan *DescribeAvailableResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAvailableResourceWithChan(request *DescribeAvailab
 }
 
 // DescribeAvailableResourceWithCallback invokes the hbase.DescribeAvailableResource API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describeavailableresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableResourceWithCallback(request *DescribeAvailableResourceRequest, callback func(response *DescribeAvailableResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteMultiZoneCluster invokes the hbase.DeleteMultiZoneCluster API synchronously
-// api document: https://help.aliyun.com/api/hbase/deletemultizonecluster.html
 func (client *Client) DeleteMultiZoneCluster(request *DeleteMultiZoneClusterRequest) (response *DeleteMultiZoneClusterResponse, err error) {
 	response = CreateDeleteMultiZoneClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteMultiZoneCluster(request *DeleteMultiZoneClusterRequ
 }
 
 // DeleteMultiZoneClusterWithChan invokes the hbase.DeleteMultiZoneCluster API asynchronously
-// api document: https://help.aliyun.com/api/hbase/deletemultizonecluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMultiZoneClusterWithChan(request *DeleteMultiZoneClusterRequest) (<-chan *DeleteMultiZoneClusterResponse, <-chan error) {
 	responseChan := make(chan *DeleteMultiZoneClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteMultiZoneClusterWithChan(request *DeleteMultiZoneClu
 }
 
 // DeleteMultiZoneClusterWithCallback invokes the hbase.DeleteMultiZoneCluster API asynchronously
-// api document: https://help.aliyun.com/api/hbase/deletemultizonecluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMultiZoneClusterWithCallback(request *DeleteMultiZoneClusterRequest, callback func(response *DeleteMultiZoneClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

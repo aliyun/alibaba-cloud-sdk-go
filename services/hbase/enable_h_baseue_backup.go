@@ -21,7 +21,6 @@ import (
 )
 
 // EnableHBaseueBackup invokes the hbase.EnableHBaseueBackup API synchronously
-// api document: https://help.aliyun.com/api/hbase/enablehbaseuebackup.html
 func (client *Client) EnableHBaseueBackup(request *EnableHBaseueBackupRequest) (response *EnableHBaseueBackupResponse, err error) {
 	response = CreateEnableHBaseueBackupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnableHBaseueBackup(request *EnableHBaseueBackupRequest) (
 }
 
 // EnableHBaseueBackupWithChan invokes the hbase.EnableHBaseueBackup API asynchronously
-// api document: https://help.aliyun.com/api/hbase/enablehbaseuebackup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableHBaseueBackupWithChan(request *EnableHBaseueBackupRequest) (<-chan *EnableHBaseueBackupResponse, <-chan error) {
 	responseChan := make(chan *EnableHBaseueBackupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnableHBaseueBackupWithChan(request *EnableHBaseueBackupRe
 }
 
 // EnableHBaseueBackupWithCallback invokes the hbase.EnableHBaseueBackup API asynchronously
-// api document: https://help.aliyun.com/api/hbase/enablehbaseuebackup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableHBaseueBackupWithCallback(request *EnableHBaseueBackupRequest, callback func(response *EnableHBaseueBackupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

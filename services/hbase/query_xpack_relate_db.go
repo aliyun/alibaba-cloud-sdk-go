@@ -21,7 +21,6 @@ import (
 )
 
 // QueryXpackRelateDB invokes the hbase.QueryXpackRelateDB API synchronously
-// api document: https://help.aliyun.com/api/hbase/queryxpackrelatedb.html
 func (client *Client) QueryXpackRelateDB(request *QueryXpackRelateDBRequest) (response *QueryXpackRelateDBResponse, err error) {
 	response = CreateQueryXpackRelateDBResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryXpackRelateDB(request *QueryXpackRelateDBRequest) (re
 }
 
 // QueryXpackRelateDBWithChan invokes the hbase.QueryXpackRelateDB API asynchronously
-// api document: https://help.aliyun.com/api/hbase/queryxpackrelatedb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryXpackRelateDBWithChan(request *QueryXpackRelateDBRequest) (<-chan *QueryXpackRelateDBResponse, <-chan error) {
 	responseChan := make(chan *QueryXpackRelateDBResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryXpackRelateDBWithChan(request *QueryXpackRelateDBRequ
 }
 
 // QueryXpackRelateDBWithCallback invokes the hbase.QueryXpackRelateDB API asynchronously
-// api document: https://help.aliyun.com/api/hbase/queryxpackrelatedb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryXpackRelateDBWithCallback(request *QueryXpackRelateDBRequest, callback func(response *QueryXpackRelateDBResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

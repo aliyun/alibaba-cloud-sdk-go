@@ -21,7 +21,6 @@ import (
 )
 
 // XpackRelateDB invokes the hbase.XpackRelateDB API synchronously
-// api document: https://help.aliyun.com/api/hbase/xpackrelatedb.html
 func (client *Client) XpackRelateDB(request *XpackRelateDBRequest) (response *XpackRelateDBResponse, err error) {
 	response = CreateXpackRelateDBResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) XpackRelateDB(request *XpackRelateDBRequest) (response *Xp
 }
 
 // XpackRelateDBWithChan invokes the hbase.XpackRelateDB API asynchronously
-// api document: https://help.aliyun.com/api/hbase/xpackrelatedb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) XpackRelateDBWithChan(request *XpackRelateDBRequest) (<-chan *XpackRelateDBResponse, <-chan error) {
 	responseChan := make(chan *XpackRelateDBResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) XpackRelateDBWithChan(request *XpackRelateDBRequest) (<-ch
 }
 
 // XpackRelateDBWithCallback invokes the hbase.XpackRelateDB API asynchronously
-// api document: https://help.aliyun.com/api/hbase/xpackrelatedb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) XpackRelateDBWithCallback(request *XpackRelateDBRequest, callback func(response *XpackRelateDBResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

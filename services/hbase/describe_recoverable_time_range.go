@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRecoverableTimeRange invokes the hbase.DescribeRecoverableTimeRange API synchronously
-// api document: https://help.aliyun.com/api/hbase/describerecoverabletimerange.html
 func (client *Client) DescribeRecoverableTimeRange(request *DescribeRecoverableTimeRangeRequest) (response *DescribeRecoverableTimeRangeResponse, err error) {
 	response = CreateDescribeRecoverableTimeRangeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRecoverableTimeRange(request *DescribeRecoverableT
 }
 
 // DescribeRecoverableTimeRangeWithChan invokes the hbase.DescribeRecoverableTimeRange API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describerecoverabletimerange.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecoverableTimeRangeWithChan(request *DescribeRecoverableTimeRangeRequest) (<-chan *DescribeRecoverableTimeRangeResponse, <-chan error) {
 	responseChan := make(chan *DescribeRecoverableTimeRangeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRecoverableTimeRangeWithChan(request *DescribeReco
 }
 
 // DescribeRecoverableTimeRangeWithCallback invokes the hbase.DescribeRecoverableTimeRange API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describerecoverabletimerange.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecoverableTimeRangeWithCallback(request *DescribeRecoverableTimeRangeRequest, callback func(response *DescribeRecoverableTimeRangeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

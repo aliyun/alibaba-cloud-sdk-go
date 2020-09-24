@@ -21,7 +21,6 @@ import (
 )
 
 // CreateMultiZoneCluster invokes the hbase.CreateMultiZoneCluster API synchronously
-// api document: https://help.aliyun.com/api/hbase/createmultizonecluster.html
 func (client *Client) CreateMultiZoneCluster(request *CreateMultiZoneClusterRequest) (response *CreateMultiZoneClusterResponse, err error) {
 	response = CreateCreateMultiZoneClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateMultiZoneCluster(request *CreateMultiZoneClusterRequ
 }
 
 // CreateMultiZoneClusterWithChan invokes the hbase.CreateMultiZoneCluster API asynchronously
-// api document: https://help.aliyun.com/api/hbase/createmultizonecluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMultiZoneClusterWithChan(request *CreateMultiZoneClusterRequest) (<-chan *CreateMultiZoneClusterResponse, <-chan error) {
 	responseChan := make(chan *CreateMultiZoneClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateMultiZoneClusterWithChan(request *CreateMultiZoneClu
 }
 
 // CreateMultiZoneClusterWithCallback invokes the hbase.CreateMultiZoneCluster API asynchronously
-// api document: https://help.aliyun.com/api/hbase/createmultizonecluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMultiZoneClusterWithCallback(request *CreateMultiZoneClusterRequest, callback func(response *CreateMultiZoneClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

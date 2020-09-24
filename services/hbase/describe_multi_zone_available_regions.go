@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMultiZoneAvailableRegions invokes the hbase.DescribeMultiZoneAvailableRegions API synchronously
-// api document: https://help.aliyun.com/api/hbase/describemultizoneavailableregions.html
 func (client *Client) DescribeMultiZoneAvailableRegions(request *DescribeMultiZoneAvailableRegionsRequest) (response *DescribeMultiZoneAvailableRegionsResponse, err error) {
 	response = CreateDescribeMultiZoneAvailableRegionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMultiZoneAvailableRegions(request *DescribeMultiZo
 }
 
 // DescribeMultiZoneAvailableRegionsWithChan invokes the hbase.DescribeMultiZoneAvailableRegions API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describemultizoneavailableregions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMultiZoneAvailableRegionsWithChan(request *DescribeMultiZoneAvailableRegionsRequest) (<-chan *DescribeMultiZoneAvailableRegionsResponse, <-chan error) {
 	responseChan := make(chan *DescribeMultiZoneAvailableRegionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMultiZoneAvailableRegionsWithChan(request *Describ
 }
 
 // DescribeMultiZoneAvailableRegionsWithCallback invokes the hbase.DescribeMultiZoneAvailableRegions API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describemultizoneavailableregions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMultiZoneAvailableRegionsWithCallback(request *DescribeMultiZoneAvailableRegionsRequest, callback func(response *DescribeMultiZoneAvailableRegionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

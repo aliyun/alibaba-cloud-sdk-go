@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteHBaseHaDB invokes the hbase.DeleteHBaseHaDB API synchronously
-// api document: https://help.aliyun.com/api/hbase/deletehbasehadb.html
 func (client *Client) DeleteHBaseHaDB(request *DeleteHBaseHaDBRequest) (response *DeleteHBaseHaDBResponse, err error) {
 	response = CreateDeleteHBaseHaDBResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteHBaseHaDB(request *DeleteHBaseHaDBRequest) (response
 }
 
 // DeleteHBaseHaDBWithChan invokes the hbase.DeleteHBaseHaDB API asynchronously
-// api document: https://help.aliyun.com/api/hbase/deletehbasehadb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHBaseHaDBWithChan(request *DeleteHBaseHaDBRequest) (<-chan *DeleteHBaseHaDBResponse, <-chan error) {
 	responseChan := make(chan *DeleteHBaseHaDBResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteHBaseHaDBWithChan(request *DeleteHBaseHaDBRequest) (
 }
 
 // DeleteHBaseHaDBWithCallback invokes the hbase.DeleteHBaseHaDB API asynchronously
-// api document: https://help.aliyun.com/api/hbase/deletehbasehadb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHBaseHaDBWithCallback(request *DeleteHBaseHaDBRequest, callback func(response *DeleteHBaseHaDBResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

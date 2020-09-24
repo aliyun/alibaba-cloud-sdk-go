@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyUIAccountPassword invokes the hbase.ModifyUIAccountPassword API synchronously
-// api document: https://help.aliyun.com/api/hbase/modifyuiaccountpassword.html
 func (client *Client) ModifyUIAccountPassword(request *ModifyUIAccountPasswordRequest) (response *ModifyUIAccountPasswordResponse, err error) {
 	response = CreateModifyUIAccountPasswordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyUIAccountPassword(request *ModifyUIAccountPasswordRe
 }
 
 // ModifyUIAccountPasswordWithChan invokes the hbase.ModifyUIAccountPassword API asynchronously
-// api document: https://help.aliyun.com/api/hbase/modifyuiaccountpassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUIAccountPasswordWithChan(request *ModifyUIAccountPasswordRequest) (<-chan *ModifyUIAccountPasswordResponse, <-chan error) {
 	responseChan := make(chan *ModifyUIAccountPasswordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyUIAccountPasswordWithChan(request *ModifyUIAccountPa
 }
 
 // ModifyUIAccountPasswordWithCallback invokes the hbase.ModifyUIAccountPassword API asynchronously
-// api document: https://help.aliyun.com/api/hbase/modifyuiaccountpassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUIAccountPasswordWithCallback(request *ModifyUIAccountPasswordRequest, callback func(response *ModifyUIAccountPasswordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

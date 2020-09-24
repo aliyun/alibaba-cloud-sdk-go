@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteUserHdfsInfo invokes the hbase.DeleteUserHdfsInfo API synchronously
-// api document: https://help.aliyun.com/api/hbase/deleteuserhdfsinfo.html
 func (client *Client) DeleteUserHdfsInfo(request *DeleteUserHdfsInfoRequest) (response *DeleteUserHdfsInfoResponse, err error) {
 	response = CreateDeleteUserHdfsInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteUserHdfsInfo(request *DeleteUserHdfsInfoRequest) (re
 }
 
 // DeleteUserHdfsInfoWithChan invokes the hbase.DeleteUserHdfsInfo API asynchronously
-// api document: https://help.aliyun.com/api/hbase/deleteuserhdfsinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUserHdfsInfoWithChan(request *DeleteUserHdfsInfoRequest) (<-chan *DeleteUserHdfsInfoResponse, <-chan error) {
 	responseChan := make(chan *DeleteUserHdfsInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteUserHdfsInfoWithChan(request *DeleteUserHdfsInfoRequ
 }
 
 // DeleteUserHdfsInfoWithCallback invokes the hbase.DeleteUserHdfsInfo API asynchronously
-// api document: https://help.aliyun.com/api/hbase/deleteuserhdfsinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUserHdfsInfoWithCallback(request *DeleteUserHdfsInfoRequest, callback func(response *DeleteUserHdfsInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

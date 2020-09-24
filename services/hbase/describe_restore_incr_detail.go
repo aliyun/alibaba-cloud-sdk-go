@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRestoreIncrDetail invokes the hbase.DescribeRestoreIncrDetail API synchronously
-// api document: https://help.aliyun.com/api/hbase/describerestoreincrdetail.html
 func (client *Client) DescribeRestoreIncrDetail(request *DescribeRestoreIncrDetailRequest) (response *DescribeRestoreIncrDetailResponse, err error) {
 	response = CreateDescribeRestoreIncrDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRestoreIncrDetail(request *DescribeRestoreIncrDeta
 }
 
 // DescribeRestoreIncrDetailWithChan invokes the hbase.DescribeRestoreIncrDetail API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describerestoreincrdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRestoreIncrDetailWithChan(request *DescribeRestoreIncrDetailRequest) (<-chan *DescribeRestoreIncrDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeRestoreIncrDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRestoreIncrDetailWithChan(request *DescribeRestore
 }
 
 // DescribeRestoreIncrDetailWithCallback invokes the hbase.DescribeRestoreIncrDetail API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describerestoreincrdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRestoreIncrDetailWithCallback(request *DescribeRestoreIncrDetailRequest, callback func(response *DescribeRestoreIncrDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

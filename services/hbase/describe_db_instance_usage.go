@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBInstanceUsage invokes the hbase.DescribeDBInstanceUsage API synchronously
-// api document: https://help.aliyun.com/api/hbase/describedbinstanceusage.html
 func (client *Client) DescribeDBInstanceUsage(request *DescribeDBInstanceUsageRequest) (response *DescribeDBInstanceUsageResponse, err error) {
 	response = CreateDescribeDBInstanceUsageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBInstanceUsage(request *DescribeDBInstanceUsageRe
 }
 
 // DescribeDBInstanceUsageWithChan invokes the hbase.DescribeDBInstanceUsage API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describedbinstanceusage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceUsageWithChan(request *DescribeDBInstanceUsageRequest) (<-chan *DescribeDBInstanceUsageResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstanceUsageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBInstanceUsageWithChan(request *DescribeDBInstanc
 }
 
 // DescribeDBInstanceUsageWithCallback invokes the hbase.DescribeDBInstanceUsage API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describedbinstanceusage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceUsageWithCallback(request *DescribeDBInstanceUsageRequest, callback func(response *DescribeDBInstanceUsageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

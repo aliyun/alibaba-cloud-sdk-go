@@ -21,7 +21,6 @@ import (
 )
 
 // EnableHBaseueModule invokes the hbase.EnableHBaseueModule API synchronously
-// api document: https://help.aliyun.com/api/hbase/enablehbaseuemodule.html
 func (client *Client) EnableHBaseueModule(request *EnableHBaseueModuleRequest) (response *EnableHBaseueModuleResponse, err error) {
 	response = CreateEnableHBaseueModuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnableHBaseueModule(request *EnableHBaseueModuleRequest) (
 }
 
 // EnableHBaseueModuleWithChan invokes the hbase.EnableHBaseueModule API asynchronously
-// api document: https://help.aliyun.com/api/hbase/enablehbaseuemodule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableHBaseueModuleWithChan(request *EnableHBaseueModuleRequest) (<-chan *EnableHBaseueModuleResponse, <-chan error) {
 	responseChan := make(chan *EnableHBaseueModuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnableHBaseueModuleWithChan(request *EnableHBaseueModuleRe
 }
 
 // EnableHBaseueModuleWithCallback invokes the hbase.EnableHBaseueModule API asynchronously
-// api document: https://help.aliyun.com/api/hbase/enablehbaseuemodule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableHBaseueModuleWithCallback(request *EnableHBaseueModuleRequest, callback func(response *EnableHBaseueModuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

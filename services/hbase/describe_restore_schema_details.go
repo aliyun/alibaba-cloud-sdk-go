@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRestoreSchemaDetails invokes the hbase.DescribeRestoreSchemaDetails API synchronously
-// api document: https://help.aliyun.com/api/hbase/describerestoreschemadetails.html
 func (client *Client) DescribeRestoreSchemaDetails(request *DescribeRestoreSchemaDetailsRequest) (response *DescribeRestoreSchemaDetailsResponse, err error) {
 	response = CreateDescribeRestoreSchemaDetailsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRestoreSchemaDetails(request *DescribeRestoreSchem
 }
 
 // DescribeRestoreSchemaDetailsWithChan invokes the hbase.DescribeRestoreSchemaDetails API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describerestoreschemadetails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRestoreSchemaDetailsWithChan(request *DescribeRestoreSchemaDetailsRequest) (<-chan *DescribeRestoreSchemaDetailsResponse, <-chan error) {
 	responseChan := make(chan *DescribeRestoreSchemaDetailsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRestoreSchemaDetailsWithChan(request *DescribeRest
 }
 
 // DescribeRestoreSchemaDetailsWithCallback invokes the hbase.DescribeRestoreSchemaDetails API asynchronously
-// api document: https://help.aliyun.com/api/hbase/describerestoreschemadetails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRestoreSchemaDetailsWithCallback(request *DescribeRestoreSchemaDetailsRequest, callback func(response *DescribeRestoreSchemaDetailsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
