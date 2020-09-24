@@ -71,13 +71,14 @@ func (client *Client) AddVodDomainWithCallback(request *AddVodDomainRequest, cal
 // AddVodDomainRequest is the request struct for api AddVodDomain
 type AddVodDomainRequest struct {
 	*requests.RpcRequest
-	Sources       string           `position:"Query" name:"Sources"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	Scope         string           `position:"Query" name:"Scope"`
-	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	CheckUrl      string           `position:"Query" name:"CheckUrl"`
+	Sources        string           `position:"Query" name:"Sources"`
+	SecurityToken  string           `position:"Query" name:"SecurityToken"`
+	Scope          string           `position:"Query" name:"Scope"`
+	TopLevelDomain string           `position:"Query" name:"TopLevelDomain"`
+	OwnerAccount   string           `position:"Query" name:"OwnerAccount"`
+	DomainName     string           `position:"Query" name:"DomainName"`
+	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
+	CheckUrl       string           `position:"Query" name:"CheckUrl"`
 }
 
 // AddVodDomainResponse is the response struct for api AddVodDomain
