@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainNs invokes the alidns.DescribeDomainNs API synchronously
-// api document: https://help.aliyun.com/api/alidns/describedomainns.html
 func (client *Client) DescribeDomainNs(request *DescribeDomainNsRequest) (response *DescribeDomainNsResponse, err error) {
 	response = CreateDescribeDomainNsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainNs(request *DescribeDomainNsRequest) (respon
 }
 
 // DescribeDomainNsWithChan invokes the alidns.DescribeDomainNs API asynchronously
-// api document: https://help.aliyun.com/api/alidns/describedomainns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainNsWithChan(request *DescribeDomainNsRequest) (<-chan *DescribeDomainNsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainNsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainNsWithChan(request *DescribeDomainNsRequest)
 }
 
 // DescribeDomainNsWithCallback invokes the alidns.DescribeDomainNs API asynchronously
-// api document: https://help.aliyun.com/api/alidns/describedomainns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainNsWithCallback(request *DescribeDomainNsRequest, callback func(response *DescribeDomainNsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

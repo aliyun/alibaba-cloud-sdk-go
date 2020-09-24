@@ -1,3 +1,7 @@
+2020-09-24 Version: v1.61.524
+- Generated 2015-01-09 for `Alidns`.
+- Supported PaymentType for DescribeDnsProductInstance.
+
 2020-09-24 Version: v1.61.523
 - Generated 2017-03-21 for `vod`.
 - Add a new api named SubmitAIImageAuditJob to submit image ai detection job.

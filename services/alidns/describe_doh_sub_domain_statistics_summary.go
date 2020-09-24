@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDohSubDomainStatisticsSummary invokes the alidns.DescribeDohSubDomainStatisticsSummary API synchronously
-// api document: https://help.aliyun.com/api/alidns/describedohsubdomainstatisticssummary.html
 func (client *Client) DescribeDohSubDomainStatisticsSummary(request *DescribeDohSubDomainStatisticsSummaryRequest) (response *DescribeDohSubDomainStatisticsSummaryResponse, err error) {
 	response = CreateDescribeDohSubDomainStatisticsSummaryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDohSubDomainStatisticsSummary(request *DescribeDoh
 }
 
 // DescribeDohSubDomainStatisticsSummaryWithChan invokes the alidns.DescribeDohSubDomainStatisticsSummary API asynchronously
-// api document: https://help.aliyun.com/api/alidns/describedohsubdomainstatisticssummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDohSubDomainStatisticsSummaryWithChan(request *DescribeDohSubDomainStatisticsSummaryRequest) (<-chan *DescribeDohSubDomainStatisticsSummaryResponse, <-chan error) {
 	responseChan := make(chan *DescribeDohSubDomainStatisticsSummaryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDohSubDomainStatisticsSummaryWithChan(request *Des
 }
 
 // DescribeDohSubDomainStatisticsSummaryWithCallback invokes the alidns.DescribeDohSubDomainStatisticsSummary API asynchronously
-// api document: https://help.aliyun.com/api/alidns/describedohsubdomainstatisticssummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDohSubDomainStatisticsSummaryWithCallback(request *DescribeDohSubDomainStatisticsSummaryRequest, callback func(response *DescribeDohSubDomainStatisticsSummaryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

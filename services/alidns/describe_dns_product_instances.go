@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDnsProductInstances invokes the alidns.DescribeDnsProductInstances API synchronously
-// api document: https://help.aliyun.com/api/alidns/describednsproductinstances.html
 func (client *Client) DescribeDnsProductInstances(request *DescribeDnsProductInstancesRequest) (response *DescribeDnsProductInstancesResponse, err error) {
 	response = CreateDescribeDnsProductInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDnsProductInstances(request *DescribeDnsProductIns
 }
 
 // DescribeDnsProductInstancesWithChan invokes the alidns.DescribeDnsProductInstances API asynchronously
-// api document: https://help.aliyun.com/api/alidns/describednsproductinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDnsProductInstancesWithChan(request *DescribeDnsProductInstancesRequest) (<-chan *DescribeDnsProductInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeDnsProductInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDnsProductInstancesWithChan(request *DescribeDnsPr
 }
 
 // DescribeDnsProductInstancesWithCallback invokes the alidns.DescribeDnsProductInstances API asynchronously
-// api document: https://help.aliyun.com/api/alidns/describednsproductinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDnsProductInstancesWithCallback(request *DescribeDnsProductInstancesRequest, callback func(response *DescribeDnsProductInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

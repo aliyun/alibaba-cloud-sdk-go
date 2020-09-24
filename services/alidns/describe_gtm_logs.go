@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeGtmLogs invokes the alidns.DescribeGtmLogs API synchronously
-// api document: https://help.aliyun.com/api/alidns/describegtmlogs.html
 func (client *Client) DescribeGtmLogs(request *DescribeGtmLogsRequest) (response *DescribeGtmLogsResponse, err error) {
 	response = CreateDescribeGtmLogsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeGtmLogs(request *DescribeGtmLogsRequest) (response
 }
 
 // DescribeGtmLogsWithChan invokes the alidns.DescribeGtmLogs API asynchronously
-// api document: https://help.aliyun.com/api/alidns/describegtmlogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGtmLogsWithChan(request *DescribeGtmLogsRequest) (<-chan *DescribeGtmLogsResponse, <-chan error) {
 	responseChan := make(chan *DescribeGtmLogsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeGtmLogsWithChan(request *DescribeGtmLogsRequest) (
 }
 
 // DescribeGtmLogsWithCallback invokes the alidns.DescribeGtmLogs API asynchronously
-// api document: https://help.aliyun.com/api/alidns/describegtmlogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGtmLogsWithCallback(request *DescribeGtmLogsRequest, callback func(response *DescribeGtmLogsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

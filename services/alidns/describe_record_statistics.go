@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRecordStatistics invokes the alidns.DescribeRecordStatistics API synchronously
-// api document: https://help.aliyun.com/api/alidns/describerecordstatistics.html
 func (client *Client) DescribeRecordStatistics(request *DescribeRecordStatisticsRequest) (response *DescribeRecordStatisticsResponse, err error) {
 	response = CreateDescribeRecordStatisticsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRecordStatistics(request *DescribeRecordStatistics
 }
 
 // DescribeRecordStatisticsWithChan invokes the alidns.DescribeRecordStatistics API asynchronously
-// api document: https://help.aliyun.com/api/alidns/describerecordstatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecordStatisticsWithChan(request *DescribeRecordStatisticsRequest) (<-chan *DescribeRecordStatisticsResponse, <-chan error) {
 	responseChan := make(chan *DescribeRecordStatisticsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRecordStatisticsWithChan(request *DescribeRecordSt
 }
 
 // DescribeRecordStatisticsWithCallback invokes the alidns.DescribeRecordStatistics API asynchronously
-// api document: https://help.aliyun.com/api/alidns/describerecordstatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecordStatisticsWithCallback(request *DescribeRecordStatisticsRequest, callback func(response *DescribeRecordStatisticsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

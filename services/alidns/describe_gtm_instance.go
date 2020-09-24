@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeGtmInstance invokes the alidns.DescribeGtmInstance API synchronously
-// api document: https://help.aliyun.com/api/alidns/describegtminstance.html
 func (client *Client) DescribeGtmInstance(request *DescribeGtmInstanceRequest) (response *DescribeGtmInstanceResponse, err error) {
 	response = CreateDescribeGtmInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeGtmInstance(request *DescribeGtmInstanceRequest) (
 }
 
 // DescribeGtmInstanceWithChan invokes the alidns.DescribeGtmInstance API asynchronously
-// api document: https://help.aliyun.com/api/alidns/describegtminstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGtmInstanceWithChan(request *DescribeGtmInstanceRequest) (<-chan *DescribeGtmInstanceResponse, <-chan error) {
 	responseChan := make(chan *DescribeGtmInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeGtmInstanceWithChan(request *DescribeGtmInstanceRe
 }
 
 // DescribeGtmInstanceWithCallback invokes the alidns.DescribeGtmInstance API asynchronously
-// api document: https://help.aliyun.com/api/alidns/describegtminstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGtmInstanceWithCallback(request *DescribeGtmInstanceRequest, callback func(response *DescribeGtmInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

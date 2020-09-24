@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDNSSLBSubDomains invokes the alidns.DescribeDNSSLBSubDomains API synchronously
-// api document: https://help.aliyun.com/api/alidns/describednsslbsubdomains.html
 func (client *Client) DescribeDNSSLBSubDomains(request *DescribeDNSSLBSubDomainsRequest) (response *DescribeDNSSLBSubDomainsResponse, err error) {
 	response = CreateDescribeDNSSLBSubDomainsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDNSSLBSubDomains(request *DescribeDNSSLBSubDomains
 }
 
 // DescribeDNSSLBSubDomainsWithChan invokes the alidns.DescribeDNSSLBSubDomains API asynchronously
-// api document: https://help.aliyun.com/api/alidns/describednsslbsubdomains.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDNSSLBSubDomainsWithChan(request *DescribeDNSSLBSubDomainsRequest) (<-chan *DescribeDNSSLBSubDomainsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDNSSLBSubDomainsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDNSSLBSubDomainsWithChan(request *DescribeDNSSLBSu
 }
 
 // DescribeDNSSLBSubDomainsWithCallback invokes the alidns.DescribeDNSSLBSubDomains API asynchronously
-// api document: https://help.aliyun.com/api/alidns/describednsslbsubdomains.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDNSSLBSubDomainsWithCallback(request *DescribeDNSSLBSubDomainsRequest, callback func(response *DescribeDNSSLBSubDomainsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

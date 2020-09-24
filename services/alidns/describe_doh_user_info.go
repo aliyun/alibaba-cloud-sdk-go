@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDohUserInfo invokes the alidns.DescribeDohUserInfo API synchronously
-// api document: https://help.aliyun.com/api/alidns/describedohuserinfo.html
 func (client *Client) DescribeDohUserInfo(request *DescribeDohUserInfoRequest) (response *DescribeDohUserInfoResponse, err error) {
 	response = CreateDescribeDohUserInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDohUserInfo(request *DescribeDohUserInfoRequest) (
 }
 
 // DescribeDohUserInfoWithChan invokes the alidns.DescribeDohUserInfo API asynchronously
-// api document: https://help.aliyun.com/api/alidns/describedohuserinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDohUserInfoWithChan(request *DescribeDohUserInfoRequest) (<-chan *DescribeDohUserInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeDohUserInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDohUserInfoWithChan(request *DescribeDohUserInfoRe
 }
 
 // DescribeDohUserInfoWithCallback invokes the alidns.DescribeDohUserInfo API asynchronously
-// api document: https://help.aliyun.com/api/alidns/describedohuserinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDohUserInfoWithCallback(request *DescribeDohUserInfoRequest, callback func(response *DescribeDohUserInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
