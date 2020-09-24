@@ -21,7 +21,6 @@ import (
 )
 
 // CompareFaces invokes the cloudauth.CompareFaces API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/comparefaces.html
 func (client *Client) CompareFaces(request *CompareFacesRequest) (response *CompareFacesResponse, err error) {
 	response = CreateCompareFacesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CompareFaces(request *CompareFacesRequest) (response *Comp
 }
 
 // CompareFacesWithChan invokes the cloudauth.CompareFaces API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/comparefaces.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CompareFacesWithChan(request *CompareFacesRequest) (<-chan *CompareFacesResponse, <-chan error) {
 	responseChan := make(chan *CompareFacesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CompareFacesWithChan(request *CompareFacesRequest) (<-chan
 }
 
 // CompareFacesWithCallback invokes the cloudauth.CompareFaces API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/comparefaces.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CompareFacesWithCallback(request *CompareFacesRequest, callback func(response *CompareFacesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

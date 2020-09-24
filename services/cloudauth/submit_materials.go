@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitMaterials invokes the cloudauth.SubmitMaterials API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/submitmaterials.html
 func (client *Client) SubmitMaterials(request *SubmitMaterialsRequest) (response *SubmitMaterialsResponse, err error) {
 	response = CreateSubmitMaterialsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitMaterials(request *SubmitMaterialsRequest) (response
 }
 
 // SubmitMaterialsWithChan invokes the cloudauth.SubmitMaterials API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/submitmaterials.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitMaterialsWithChan(request *SubmitMaterialsRequest) (<-chan *SubmitMaterialsResponse, <-chan error) {
 	responseChan := make(chan *SubmitMaterialsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitMaterialsWithChan(request *SubmitMaterialsRequest) (
 }
 
 // SubmitMaterialsWithCallback invokes the cloudauth.SubmitMaterials API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/submitmaterials.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitMaterialsWithCallback(request *SubmitMaterialsRequest, callback func(response *SubmitMaterialsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

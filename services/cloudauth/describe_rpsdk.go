@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRPSDK invokes the cloudauth.DescribeRPSDK API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/describerpsdk.html
 func (client *Client) DescribeRPSDK(request *DescribeRPSDKRequest) (response *DescribeRPSDKResponse, err error) {
 	response = CreateDescribeRPSDKResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRPSDK(request *DescribeRPSDKRequest) (response *De
 }
 
 // DescribeRPSDKWithChan invokes the cloudauth.DescribeRPSDK API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/describerpsdk.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRPSDKWithChan(request *DescribeRPSDKRequest) (<-chan *DescribeRPSDKResponse, <-chan error) {
 	responseChan := make(chan *DescribeRPSDKResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRPSDKWithChan(request *DescribeRPSDKRequest) (<-ch
 }
 
 // DescribeRPSDKWithCallback invokes the cloudauth.DescribeRPSDK API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/describerpsdk.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRPSDKWithCallback(request *DescribeRPSDKRequest, callback func(response *DescribeRPSDKResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

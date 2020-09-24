@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSmartVerify invokes the cloudauth.DescribeSmartVerify API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/describesmartverify.html
 func (client *Client) DescribeSmartVerify(request *DescribeSmartVerifyRequest) (response *DescribeSmartVerifyResponse, err error) {
 	response = CreateDescribeSmartVerifyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSmartVerify(request *DescribeSmartVerifyRequest) (
 }
 
 // DescribeSmartVerifyWithChan invokes the cloudauth.DescribeSmartVerify API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/describesmartverify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSmartVerifyWithChan(request *DescribeSmartVerifyRequest) (<-chan *DescribeSmartVerifyResponse, <-chan error) {
 	responseChan := make(chan *DescribeSmartVerifyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSmartVerifyWithChan(request *DescribeSmartVerifyRe
 }
 
 // DescribeSmartVerifyWithCallback invokes the cloudauth.DescribeSmartVerify API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/describesmartverify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSmartVerifyWithCallback(request *DescribeSmartVerifyRequest, callback func(response *DescribeSmartVerifyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

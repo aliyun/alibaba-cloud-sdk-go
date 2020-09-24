@@ -1,3 +1,7 @@
+2020-09-24 Version: v1.61.525
+- Generated 2019-03-07, 2018-09-16, 2020-06-18 for `Cloudauth`.
+- ContrastFaceVerify API Add Model Parameter.
+
 2020-09-24 Version: v1.61.524
 - Generated 2015-01-09 for `Alidns`.
 - Supported PaymentType for DescribeDnsProductInstance.

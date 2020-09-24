@@ -21,7 +21,6 @@ import (
 )
 
 // CreateVerifySetting invokes the cloudauth.CreateVerifySetting API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/createverifysetting.html
 func (client *Client) CreateVerifySetting(request *CreateVerifySettingRequest) (response *CreateVerifySettingResponse, err error) {
 	response = CreateCreateVerifySettingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateVerifySetting(request *CreateVerifySettingRequest) (
 }
 
 // CreateVerifySettingWithChan invokes the cloudauth.CreateVerifySetting API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/createverifysetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVerifySettingWithChan(request *CreateVerifySettingRequest) (<-chan *CreateVerifySettingResponse, <-chan error) {
 	responseChan := make(chan *CreateVerifySettingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateVerifySettingWithChan(request *CreateVerifySettingRe
 }
 
 // CreateVerifySettingWithCallback invokes the cloudauth.CreateVerifySetting API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/createverifysetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVerifySettingWithCallback(request *CreateVerifySettingRequest, callback func(response *CreateVerifySettingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

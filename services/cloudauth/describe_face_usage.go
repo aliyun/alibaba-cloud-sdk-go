@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFaceUsage invokes the cloudauth.DescribeFaceUsage API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/describefaceusage.html
 func (client *Client) DescribeFaceUsage(request *DescribeFaceUsageRequest) (response *DescribeFaceUsageResponse, err error) {
 	response = CreateDescribeFaceUsageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFaceUsage(request *DescribeFaceUsageRequest) (resp
 }
 
 // DescribeFaceUsageWithChan invokes the cloudauth.DescribeFaceUsage API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/describefaceusage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFaceUsageWithChan(request *DescribeFaceUsageRequest) (<-chan *DescribeFaceUsageResponse, <-chan error) {
 	responseChan := make(chan *DescribeFaceUsageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFaceUsageWithChan(request *DescribeFaceUsageReques
 }
 
 // DescribeFaceUsageWithCallback invokes the cloudauth.DescribeFaceUsage API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/describefaceusage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFaceUsageWithCallback(request *DescribeFaceUsageRequest, callback func(response *DescribeFaceUsageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

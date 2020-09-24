@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeOssUploadToken invokes the cloudauth.DescribeOssUploadToken API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/describeossuploadtoken.html
 func (client *Client) DescribeOssUploadToken(request *DescribeOssUploadTokenRequest) (response *DescribeOssUploadTokenResponse, err error) {
 	response = CreateDescribeOssUploadTokenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeOssUploadToken(request *DescribeOssUploadTokenRequ
 }
 
 // DescribeOssUploadTokenWithChan invokes the cloudauth.DescribeOssUploadToken API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/describeossuploadtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssUploadTokenWithChan(request *DescribeOssUploadTokenRequest) (<-chan *DescribeOssUploadTokenResponse, <-chan error) {
 	responseChan := make(chan *DescribeOssUploadTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeOssUploadTokenWithChan(request *DescribeOssUploadT
 }
 
 // DescribeOssUploadTokenWithCallback invokes the cloudauth.DescribeOssUploadToken API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/describeossuploadtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssUploadTokenWithCallback(request *DescribeOssUploadTokenRequest, callback func(response *DescribeOssUploadTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

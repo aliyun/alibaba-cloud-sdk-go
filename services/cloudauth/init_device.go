@@ -21,7 +21,6 @@ import (
 )
 
 // InitDevice invokes the cloudauth.InitDevice API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/initdevice.html
 func (client *Client) InitDevice(request *InitDeviceRequest) (response *InitDeviceResponse, err error) {
 	response = CreateInitDeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InitDevice(request *InitDeviceRequest) (response *InitDevi
 }
 
 // InitDeviceWithChan invokes the cloudauth.InitDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/initdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InitDeviceWithChan(request *InitDeviceRequest) (<-chan *InitDeviceResponse, <-chan error) {
 	responseChan := make(chan *InitDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InitDeviceWithChan(request *InitDeviceRequest) (<-chan *In
 }
 
 // InitDeviceWithCallback invokes the cloudauth.InitDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/initdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InitDeviceWithCallback(request *InitDeviceRequest, callback func(response *InitDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateRPSDK invokes the cloudauth.CreateRPSDK API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/createrpsdk.html
 func (client *Client) CreateRPSDK(request *CreateRPSDKRequest) (response *CreateRPSDKResponse, err error) {
 	response = CreateCreateRPSDKResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateRPSDK(request *CreateRPSDKRequest) (response *Create
 }
 
 // CreateRPSDKWithChan invokes the cloudauth.CreateRPSDK API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/createrpsdk.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRPSDKWithChan(request *CreateRPSDKRequest) (<-chan *CreateRPSDKResponse, <-chan error) {
 	responseChan := make(chan *CreateRPSDKResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateRPSDKWithChan(request *CreateRPSDKRequest) (<-chan *
 }
 
 // CreateRPSDKWithCallback invokes the cloudauth.CreateRPSDK API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/createrpsdk.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRPSDKWithCallback(request *CreateRPSDKRequest, callback func(response *CreateRPSDKResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

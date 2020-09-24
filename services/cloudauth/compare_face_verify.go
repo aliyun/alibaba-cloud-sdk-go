@@ -21,7 +21,6 @@ import (
 )
 
 // CompareFaceVerify invokes the cloudauth.CompareFaceVerify API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/comparefaceverify.html
 func (client *Client) CompareFaceVerify(request *CompareFaceVerifyRequest) (response *CompareFaceVerifyResponse, err error) {
 	response = CreateCompareFaceVerifyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CompareFaceVerify(request *CompareFaceVerifyRequest) (resp
 }
 
 // CompareFaceVerifyWithChan invokes the cloudauth.CompareFaceVerify API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/comparefaceverify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CompareFaceVerifyWithChan(request *CompareFaceVerifyRequest) (<-chan *CompareFaceVerifyResponse, <-chan error) {
 	responseChan := make(chan *CompareFaceVerifyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CompareFaceVerifyWithChan(request *CompareFaceVerifyReques
 }
 
 // CompareFaceVerifyWithCallback invokes the cloudauth.CompareFaceVerify API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/comparefaceverify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CompareFaceVerifyWithCallback(request *CompareFaceVerifyRequest, callback func(response *CompareFaceVerifyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

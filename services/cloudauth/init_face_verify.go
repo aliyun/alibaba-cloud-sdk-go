@@ -21,7 +21,6 @@ import (
 )
 
 // InitFaceVerify invokes the cloudauth.InitFaceVerify API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/initfaceverify.html
 func (client *Client) InitFaceVerify(request *InitFaceVerifyRequest) (response *InitFaceVerifyResponse, err error) {
 	response = CreateInitFaceVerifyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InitFaceVerify(request *InitFaceVerifyRequest) (response *
 }
 
 // InitFaceVerifyWithChan invokes the cloudauth.InitFaceVerify API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/initfaceverify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InitFaceVerifyWithChan(request *InitFaceVerifyRequest) (<-chan *InitFaceVerifyResponse, <-chan error) {
 	responseChan := make(chan *InitFaceVerifyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InitFaceVerifyWithChan(request *InitFaceVerifyRequest) (<-
 }
 
 // InitFaceVerifyWithCallback invokes the cloudauth.InitFaceVerify API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/initfaceverify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InitFaceVerifyWithCallback(request *InitFaceVerifyRequest, callback func(response *InitFaceVerifyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

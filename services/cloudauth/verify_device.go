@@ -21,7 +21,6 @@ import (
 )
 
 // VerifyDevice invokes the cloudauth.VerifyDevice API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/verifydevice.html
 func (client *Client) VerifyDevice(request *VerifyDeviceRequest) (response *VerifyDeviceResponse, err error) {
 	response = CreateVerifyDeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VerifyDevice(request *VerifyDeviceRequest) (response *Veri
 }
 
 // VerifyDeviceWithChan invokes the cloudauth.VerifyDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/verifydevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyDeviceWithChan(request *VerifyDeviceRequest) (<-chan *VerifyDeviceResponse, <-chan error) {
 	responseChan := make(chan *VerifyDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VerifyDeviceWithChan(request *VerifyDeviceRequest) (<-chan
 }
 
 // VerifyDeviceWithCallback invokes the cloudauth.VerifyDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/verifydevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyDeviceWithCallback(request *VerifyDeviceRequest, callback func(response *VerifyDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

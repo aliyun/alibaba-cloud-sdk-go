@@ -21,7 +21,6 @@ import (
 )
 
 // GetVerifyToken invokes the cloudauth.GetVerifyToken API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/getverifytoken.html
 func (client *Client) GetVerifyToken(request *GetVerifyTokenRequest) (response *GetVerifyTokenResponse, err error) {
 	response = CreateGetVerifyTokenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetVerifyToken(request *GetVerifyTokenRequest) (response *
 }
 
 // GetVerifyTokenWithChan invokes the cloudauth.GetVerifyToken API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/getverifytoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetVerifyTokenWithChan(request *GetVerifyTokenRequest) (<-chan *GetVerifyTokenResponse, <-chan error) {
 	responseChan := make(chan *GetVerifyTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetVerifyTokenWithChan(request *GetVerifyTokenRequest) (<-
 }
 
 // GetVerifyTokenWithCallback invokes the cloudauth.GetVerifyToken API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/getverifytoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetVerifyTokenWithCallback(request *GetVerifyTokenRequest, callback func(response *GetVerifyTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

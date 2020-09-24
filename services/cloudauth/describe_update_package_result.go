@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUpdatePackageResult invokes the cloudauth.DescribeUpdatePackageResult API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/describeupdatepackageresult.html
 func (client *Client) DescribeUpdatePackageResult(request *DescribeUpdatePackageResultRequest) (response *DescribeUpdatePackageResultResponse, err error) {
 	response = CreateDescribeUpdatePackageResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUpdatePackageResult(request *DescribeUpdatePackage
 }
 
 // DescribeUpdatePackageResultWithChan invokes the cloudauth.DescribeUpdatePackageResult API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/describeupdatepackageresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUpdatePackageResultWithChan(request *DescribeUpdatePackageResultRequest) (<-chan *DescribeUpdatePackageResultResponse, <-chan error) {
 	responseChan := make(chan *DescribeUpdatePackageResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUpdatePackageResultWithChan(request *DescribeUpdat
 }
 
 // DescribeUpdatePackageResultWithCallback invokes the cloudauth.DescribeUpdatePackageResult API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/describeupdatepackageresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUpdatePackageResultWithCallback(request *DescribeUpdatePackageResultRequest, callback func(response *DescribeUpdatePackageResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitVerification invokes the cloudauth.SubmitVerification API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/submitverification.html
 func (client *Client) SubmitVerification(request *SubmitVerificationRequest) (response *SubmitVerificationResponse, err error) {
 	response = CreateSubmitVerificationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitVerification(request *SubmitVerificationRequest) (re
 }
 
 // SubmitVerificationWithChan invokes the cloudauth.SubmitVerification API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/submitverification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVerificationWithChan(request *SubmitVerificationRequest) (<-chan *SubmitVerificationResponse, <-chan error) {
 	responseChan := make(chan *SubmitVerificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitVerificationWithChan(request *SubmitVerificationRequ
 }
 
 // SubmitVerificationWithCallback invokes the cloudauth.SubmitVerification API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/submitverification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVerificationWithCallback(request *SubmitVerificationRequest, callback func(response *SubmitVerificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

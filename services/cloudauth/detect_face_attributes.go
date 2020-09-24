@@ -21,7 +21,6 @@ import (
 )
 
 // DetectFaceAttributes invokes the cloudauth.DetectFaceAttributes API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/detectfaceattributes.html
 func (client *Client) DetectFaceAttributes(request *DetectFaceAttributesRequest) (response *DetectFaceAttributesResponse, err error) {
 	response = CreateDetectFaceAttributesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetectFaceAttributes(request *DetectFaceAttributesRequest)
 }
 
 // DetectFaceAttributesWithChan invokes the cloudauth.DetectFaceAttributes API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/detectfaceattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectFaceAttributesWithChan(request *DetectFaceAttributesRequest) (<-chan *DetectFaceAttributesResponse, <-chan error) {
 	responseChan := make(chan *DetectFaceAttributesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetectFaceAttributesWithChan(request *DetectFaceAttributes
 }
 
 // DetectFaceAttributesWithCallback invokes the cloudauth.DetectFaceAttributes API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/detectfaceattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectFaceAttributesWithCallback(request *DetectFaceAttributesRequest, callback func(response *DetectFaceAttributesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDeviceInfo invokes the cloudauth.DescribeDeviceInfo API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/describedeviceinfo.html
 func (client *Client) DescribeDeviceInfo(request *DescribeDeviceInfoRequest) (response *DescribeDeviceInfoResponse, err error) {
 	response = CreateDescribeDeviceInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDeviceInfo(request *DescribeDeviceInfoRequest) (re
 }
 
 // DescribeDeviceInfoWithChan invokes the cloudauth.DescribeDeviceInfo API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/describedeviceinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeviceInfoWithChan(request *DescribeDeviceInfoRequest) (<-chan *DescribeDeviceInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeDeviceInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDeviceInfoWithChan(request *DescribeDeviceInfoRequ
 }
 
 // DescribeDeviceInfoWithCallback invokes the cloudauth.DescribeDeviceInfo API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/describedeviceinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeviceInfoWithCallback(request *DescribeDeviceInfoRequest, callback func(response *DescribeDeviceInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

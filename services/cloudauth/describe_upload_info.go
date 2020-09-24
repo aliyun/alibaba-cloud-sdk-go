@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUploadInfo invokes the cloudauth.DescribeUploadInfo API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/describeuploadinfo.html
 func (client *Client) DescribeUploadInfo(request *DescribeUploadInfoRequest) (response *DescribeUploadInfoResponse, err error) {
 	response = CreateDescribeUploadInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUploadInfo(request *DescribeUploadInfoRequest) (re
 }
 
 // DescribeUploadInfoWithChan invokes the cloudauth.DescribeUploadInfo API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/describeuploadinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUploadInfoWithChan(request *DescribeUploadInfoRequest) (<-chan *DescribeUploadInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeUploadInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUploadInfoWithChan(request *DescribeUploadInfoRequ
 }
 
 // DescribeUploadInfoWithCallback invokes the cloudauth.DescribeUploadInfo API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/describeuploadinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUploadInfoWithCallback(request *DescribeUploadInfoRequest, callback func(response *DescribeUploadInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

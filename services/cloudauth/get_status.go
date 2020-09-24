@@ -21,7 +21,6 @@ import (
 )
 
 // GetStatus invokes the cloudauth.GetStatus API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/getstatus.html
 func (client *Client) GetStatus(request *GetStatusRequest) (response *GetStatusResponse, err error) {
 	response = CreateGetStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetStatus(request *GetStatusRequest) (response *GetStatusR
 }
 
 // GetStatusWithChan invokes the cloudauth.GetStatus API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/getstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetStatusWithChan(request *GetStatusRequest) (<-chan *GetStatusResponse, <-chan error) {
 	responseChan := make(chan *GetStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetStatusWithChan(request *GetStatusRequest) (<-chan *GetS
 }
 
 // GetStatusWithCallback invokes the cloudauth.GetStatus API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/getstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetStatusWithCallback(request *GetStatusRequest, callback func(response *GetStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

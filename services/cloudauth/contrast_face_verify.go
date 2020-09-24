@@ -21,7 +21,6 @@ import (
 )
 
 // ContrastFaceVerify invokes the cloudauth.ContrastFaceVerify API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/contrastfaceverify.html
 func (client *Client) ContrastFaceVerify(request *ContrastFaceVerifyRequest) (response *ContrastFaceVerifyResponse, err error) {
 	response = CreateContrastFaceVerifyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ContrastFaceVerify(request *ContrastFaceVerifyRequest) (re
 }
 
 // ContrastFaceVerifyWithChan invokes the cloudauth.ContrastFaceVerify API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/contrastfaceverify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ContrastFaceVerifyWithChan(request *ContrastFaceVerifyRequest) (<-chan *ContrastFaceVerifyResponse, <-chan error) {
 	responseChan := make(chan *ContrastFaceVerifyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ContrastFaceVerifyWithChan(request *ContrastFaceVerifyRequ
 }
 
 // ContrastFaceVerifyWithCallback invokes the cloudauth.ContrastFaceVerify API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/contrastfaceverify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ContrastFaceVerifyWithCallback(request *ContrastFaceVerifyRequest, callback func(response *ContrastFaceVerifyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,11 +72,7 @@ func (client *Client) ContrastFaceVerifyWithCallback(request *ContrastFaceVerify
 type ContrastFaceVerifyRequest struct {
 	*requests.RpcRequest
 	ProductCode            string           `position:"Body" name:"ProductCode"`
-	OssObjectName          string           `position:"Body" name:"OssObjectName"`
 	FaceContrastPicture    string           `position:"Body" name:"FaceContrastPicture"`
-	CertName               string           `position:"Body" name:"CertName"`
-	Ip                     string           `position:"Body" name:"Ip"`
-	Mobile                 string           `position:"Body" name:"Mobile"`
 	DeviceToken            string           `position:"Body" name:"DeviceToken"`
 	UserId                 string           `position:"Body" name:"UserId"`
 	CertifyId              string           `position:"Body" name:"CertifyId"`
@@ -89,6 +80,11 @@ type ContrastFaceVerifyRequest struct {
 	OuterOrderNo           string           `position:"Body" name:"OuterOrderNo"`
 	CertType               string           `position:"Body" name:"CertType"`
 	FaceContrastPictureUrl string           `position:"Body" name:"FaceContrastPictureUrl"`
+	Model                  string           `position:"Query" name:"Model"`
+	OssObjectName          string           `position:"Body" name:"OssObjectName"`
+	CertName               string           `position:"Body" name:"CertName"`
+	Ip                     string           `position:"Body" name:"Ip"`
+	Mobile                 string           `position:"Body" name:"Mobile"`
 	SceneId                requests.Integer `position:"Body" name:"SceneId"`
 	OssBucketName          string           `position:"Body" name:"OssBucketName"`
 }

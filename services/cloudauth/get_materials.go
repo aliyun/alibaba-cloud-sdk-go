@@ -21,7 +21,6 @@ import (
 )
 
 // GetMaterials invokes the cloudauth.GetMaterials API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/getmaterials.html
 func (client *Client) GetMaterials(request *GetMaterialsRequest) (response *GetMaterialsResponse, err error) {
 	response = CreateGetMaterialsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetMaterials(request *GetMaterialsRequest) (response *GetM
 }
 
 // GetMaterialsWithChan invokes the cloudauth.GetMaterials API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/getmaterials.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMaterialsWithChan(request *GetMaterialsRequest) (<-chan *GetMaterialsResponse, <-chan error) {
 	responseChan := make(chan *GetMaterialsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetMaterialsWithChan(request *GetMaterialsRequest) (<-chan
 }
 
 // GetMaterialsWithCallback invokes the cloudauth.GetMaterials API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/getmaterials.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMaterialsWithCallback(request *GetMaterialsRequest, callback func(response *GetMaterialsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVerifyResult invokes the cloudauth.DescribeVerifyResult API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/describeverifyresult.html
 func (client *Client) DescribeVerifyResult(request *DescribeVerifyResultRequest) (response *DescribeVerifyResultResponse, err error) {
 	response = CreateDescribeVerifyResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVerifyResult(request *DescribeVerifyResultRequest)
 }
 
 // DescribeVerifyResultWithChan invokes the cloudauth.DescribeVerifyResult API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/describeverifyresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVerifyResultWithChan(request *DescribeVerifyResultRequest) (<-chan *DescribeVerifyResultResponse, <-chan error) {
 	responseChan := make(chan *DescribeVerifyResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVerifyResultWithChan(request *DescribeVerifyResult
 }
 
 // DescribeVerifyResultWithCallback invokes the cloudauth.DescribeVerifyResult API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/describeverifyresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVerifyResultWithCallback(request *DescribeVerifyResultRequest, callback func(response *DescribeVerifyResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

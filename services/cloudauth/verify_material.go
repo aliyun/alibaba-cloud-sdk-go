@@ -21,7 +21,6 @@ import (
 )
 
 // VerifyMaterial invokes the cloudauth.VerifyMaterial API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/verifymaterial.html
 func (client *Client) VerifyMaterial(request *VerifyMaterialRequest) (response *VerifyMaterialResponse, err error) {
 	response = CreateVerifyMaterialResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VerifyMaterial(request *VerifyMaterialRequest) (response *
 }
 
 // VerifyMaterialWithChan invokes the cloudauth.VerifyMaterial API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/verifymaterial.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyMaterialWithChan(request *VerifyMaterialRequest) (<-chan *VerifyMaterialResponse, <-chan error) {
 	responseChan := make(chan *VerifyMaterialResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VerifyMaterialWithChan(request *VerifyMaterialRequest) (<-
 }
 
 // VerifyMaterialWithCallback invokes the cloudauth.VerifyMaterial API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/verifymaterial.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyMaterialWithCallback(request *VerifyMaterialRequest, callback func(response *VerifyMaterialResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

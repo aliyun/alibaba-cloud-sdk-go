@@ -21,7 +21,6 @@ import (
 )
 
 // InitSmartVerify invokes the cloudauth.InitSmartVerify API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/initsmartverify.html
 func (client *Client) InitSmartVerify(request *InitSmartVerifyRequest) (response *InitSmartVerifyResponse, err error) {
 	response = CreateInitSmartVerifyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InitSmartVerify(request *InitSmartVerifyRequest) (response
 }
 
 // InitSmartVerifyWithChan invokes the cloudauth.InitSmartVerify API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/initsmartverify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InitSmartVerifyWithChan(request *InitSmartVerifyRequest) (<-chan *InitSmartVerifyResponse, <-chan error) {
 	responseChan := make(chan *InitSmartVerifyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InitSmartVerifyWithChan(request *InitSmartVerifyRequest) (
 }
 
 // InitSmartVerifyWithCallback invokes the cloudauth.InitSmartVerify API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/initsmartverify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InitSmartVerifyWithCallback(request *InitSmartVerifyRequest, callback func(response *InitSmartVerifyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
