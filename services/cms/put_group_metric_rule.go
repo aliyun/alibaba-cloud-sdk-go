@@ -84,6 +84,7 @@ type PutGroupMetricRuleRequest struct {
 	EscalationsWarnTimes                  requests.Integer `position:"Query" name:"Escalations.Warn.Times"`
 	Period                                string           `position:"Query" name:"Period"`
 	EscalationsWarnThreshold              string           `position:"Query" name:"Escalations.Warn.Threshold"`
+	ContactGroups                         string           `position:"Query" name:"ContactGroups"`
 	EscalationsCriticalStatistics         string           `position:"Query" name:"Escalations.Critical.Statistics"`
 	GroupId                               string           `position:"Query" name:"GroupId"`
 	EscalationsInfoTimes                  requests.Integer `position:"Query" name:"Escalations.Info.Times"`

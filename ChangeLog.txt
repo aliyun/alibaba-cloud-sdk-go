@@ -1,3 +1,7 @@
+2020-09-25 Version: v1.61.530
+- Generated 2019-01-01 for `Cms`.
+- Add alarm contact group by monitor group alarm rules.
+
 2020-09-25 Version: v1.61.529
 - Generated 2018-12-03 for `Sas`.
 - Support DescribeSuspEventQuaraFiles API.
