@@ -82,8 +82,8 @@ type HandleSecurityEventsRequest struct {
 // HandleSecurityEventsResponse is the response struct for api HandleSecurityEvents
 type HandleSecurityEventsResponse struct {
 	*responses.BaseResponse
-	RequestId                    string                       `json:"RequestId" xml:"RequestId"`
-	HandleSecurityEventsResponse HandleSecurityEventsResponse `json:"HandleSecurityEventsResponse" xml:"HandleSecurityEventsResponse"`
+	RequestId                        string                           `json:"RequestId" xml:"RequestId"`
+	HandleSecurityEventsResponseItem HandleSecurityEventsResponseItem `json:"HandleSecurityEventsResponse" xml:"HandleSecurityEventsResponse"`
 }
 
 // CreateHandleSecurityEventsRequest creates a request to invoke HandleSecurityEvents API

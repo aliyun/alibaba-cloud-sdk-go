@@ -80,8 +80,8 @@ type CreateSimilarSecurityEventsQueryTaskRequest struct {
 // CreateSimilarSecurityEventsQueryTaskResponse is the response struct for api CreateSimilarSecurityEventsQueryTask
 type CreateSimilarSecurityEventsQueryTaskResponse struct {
 	*responses.BaseResponse
-	RequestId                                    string                                       `json:"RequestId" xml:"RequestId"`
-	CreateSimilarSecurityEventsQueryTaskResponse CreateSimilarSecurityEventsQueryTaskResponse `json:"CreateSimilarSecurityEventsQueryTaskResponse" xml:"CreateSimilarSecurityEventsQueryTaskResponse"`
+	RequestId                                        string                                           `json:"RequestId" xml:"RequestId"`
+	CreateSimilarSecurityEventsQueryTaskResponseItem CreateSimilarSecurityEventsQueryTaskResponseItem `json:"CreateSimilarSecurityEventsQueryTaskResponse" xml:"CreateSimilarSecurityEventsQueryTaskResponse"`
 }
 
 // CreateCreateSimilarSecurityEventsQueryTaskRequest creates a request to invoke CreateSimilarSecurityEventsQueryTask API
