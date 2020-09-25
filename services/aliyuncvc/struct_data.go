@@ -17,14 +17,26 @@ package aliyuncvc
 
 // Data is a nested struct in aliyuncvc response
 type Data struct {
+	DeviceModel     string                `json:"DeviceModel" xml:"DeviceModel"`
+	ConferenceCode  string                `json:"ConferenceCode" xml:"ConferenceCode"`
+	CreateTime      string                `json:"CreateTime" xml:"CreateTime"`
+	ConferenceName  string                `json:"ConferenceName" xml:"ConferenceName"`
+	DeviceErrorCode int                   `json:"DeviceErrorCode" xml:"DeviceErrorCode"`
+	PageSize        int                   `json:"PageSize" xml:"PageSize"`
+	SerialNumber    string                `json:"SerialNumber" xml:"SerialNumber"`
+	PictureUrl      string                `json:"PictureUrl" xml:"PictureUrl"`
 	Total           int                   `json:"Total" xml:"Total"`
 	TotalCount      int                   `json:"TotalCount" xml:"TotalCount"`
+	Manufacturer    string                `json:"Manufacturer" xml:"Manufacturer"`
+	ScreenCode      string                `json:"ScreenCode" xml:"ScreenCode"`
 	PageNumber      int                   `json:"PageNumber" xml:"PageNumber"`
-	DeviceErrorCode int                   `json:"DeviceErrorCode" xml:"DeviceErrorCode"`
 	DeviceMessage   string                `json:"DeviceMessage" xml:"DeviceMessage"`
-	PageSize        int                   `json:"PageSize" xml:"PageSize"`
+	ActivationCode  string                `json:"ActivationCode" xml:"ActivationCode"`
+	Status          string                `json:"Status" xml:"Status"`
+	CastScreenCode  string                `json:"CastScreenCode" xml:"CastScreenCode"`
 	SN              string                `json:"SN" xml:"SN"`
 	ActiveCode      string                `json:"ActiveCode" xml:"ActiveCode"`
-	Devices         []DeviceInListDevices `json:"Devices" xml:"Devices"`
+	Conferences     []Data                `json:"Conferences" xml:"Conferences"`
 	UserInfos       []UserInfo            `json:"UserInfos" xml:"UserInfos"`
+	Devices         []DeviceInListDevices `json:"Devices" xml:"Devices"`
 }
