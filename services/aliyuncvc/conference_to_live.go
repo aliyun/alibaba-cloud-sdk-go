@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateLive invokes the aliyuncvc.CreateLive API synchronously
-func (client *Client) CreateLive(request *CreateLiveRequest) (response *CreateLiveResponse, err error) {
-	response = CreateCreateLiveResponse()
+// ConferenceToLive invokes the aliyuncvc.ConferenceToLive API synchronously
+func (client *Client) ConferenceToLive(request *ConferenceToLiveRequest) (response *ConferenceToLiveResponse, err error) {
+	response = CreateConferenceToLiveResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateLiveWithChan invokes the aliyuncvc.CreateLive API asynchronously
-func (client *Client) CreateLiveWithChan(request *CreateLiveRequest) (<-chan *CreateLiveResponse, <-chan error) {
-	responseChan := make(chan *CreateLiveResponse, 1)
+// ConferenceToLiveWithChan invokes the aliyuncvc.ConferenceToLive API asynchronously
+func (client *Client) ConferenceToLiveWithChan(request *ConferenceToLiveRequest) (<-chan *ConferenceToLiveResponse, <-chan error) {
+	responseChan := make(chan *ConferenceToLiveResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateLive(request)
+		response, err := client.ConferenceToLive(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateLiveWithChan(request *CreateLiveRequest) (<-chan *Cr
 	return responseChan, errChan
 }
 
-// CreateLiveWithCallback invokes the aliyuncvc.CreateLive API asynchronously
-func (client *Client) CreateLiveWithCallback(request *CreateLiveRequest, callback func(response *CreateLiveResponse, err error)) <-chan int {
+// ConferenceToLiveWithCallback invokes the aliyuncvc.ConferenceToLive API asynchronously
+func (client *Client) ConferenceToLiveWithCallback(request *ConferenceToLiveRequest, callback func(response *ConferenceToLiveResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateLiveResponse
+		var response *ConferenceToLiveResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateLive(request)
+		response, err = client.ConferenceToLive(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,17 +68,18 @@ func (client *Client) CreateLiveWithCallback(request *CreateLiveRequest, callbac
 	return result
 }
 
-// CreateLiveRequest is the request struct for api CreateLive
-type CreateLiveRequest struct {
+// ConferenceToLiveRequest is the request struct for api ConferenceToLive
+type ConferenceToLiveRequest struct {
 	*requests.RpcRequest
 	UserId           string           `position:"Body" name:"UserId"`
 	OpenPasswordFlag requests.Boolean `position:"Body" name:"OpenPasswordFlag"`
+	MeetingUUID      string           `position:"Body" name:"MeetingUUID"`
 	Password         string           `position:"Body" name:"Password"`
 	LiveName         string           `position:"Body" name:"LiveName"`
 }
 
-// CreateLiveResponse is the response struct for api CreateLive
-type CreateLiveResponse struct {
+// ConferenceToLiveResponse is the response struct for api ConferenceToLive
+type ConferenceToLiveResponse struct {
 	*responses.BaseResponse
 	ErrorCode int      `json:"ErrorCode" xml:"ErrorCode"`
 	Message   string   `json:"Message" xml:"Message"`
@@ -87,19 +88,19 @@ type CreateLiveResponse struct {
 	LiveInfo  LiveInfo `json:"LiveInfo" xml:"LiveInfo"`
 }
 
-// CreateCreateLiveRequest creates a request to invoke CreateLive API
-func CreateCreateLiveRequest() (request *CreateLiveRequest) {
-	request = &CreateLiveRequest{
+// CreateConferenceToLiveRequest creates a request to invoke ConferenceToLive API
+func CreateConferenceToLiveRequest() (request *ConferenceToLiveRequest) {
+	request = &ConferenceToLiveRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "CreateLive", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "ConferenceToLive", "aliyuncvc", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateLiveResponse creates a response to parse from CreateLive response
-func CreateCreateLiveResponse() (response *CreateLiveResponse) {
-	response = &CreateLiveResponse{
+// CreateConferenceToLiveResponse creates a response to parse from ConferenceToLive response
+func CreateConferenceToLiveResponse() (response *ConferenceToLiveResponse) {
+	response = &ConferenceToLiveResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

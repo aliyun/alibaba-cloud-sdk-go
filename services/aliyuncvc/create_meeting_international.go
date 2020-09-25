@@ -21,7 +21,6 @@ import (
 )
 
 // CreateMeetingInternational invokes the aliyuncvc.CreateMeetingInternational API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createmeetinginternational.html
 func (client *Client) CreateMeetingInternational(request *CreateMeetingInternationalRequest) (response *CreateMeetingInternationalResponse, err error) {
 	response = CreateCreateMeetingInternationalResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateMeetingInternational(request *CreateMeetingInternati
 }
 
 // CreateMeetingInternationalWithChan invokes the aliyuncvc.CreateMeetingInternational API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createmeetinginternational.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMeetingInternationalWithChan(request *CreateMeetingInternationalRequest) (<-chan *CreateMeetingInternationalResponse, <-chan error) {
 	responseChan := make(chan *CreateMeetingInternationalResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateMeetingInternationalWithChan(request *CreateMeetingI
 }
 
 // CreateMeetingInternationalWithCallback invokes the aliyuncvc.CreateMeetingInternational API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createmeetinginternational.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMeetingInternationalWithCallback(request *CreateMeetingInternationalRequest, callback func(response *CreateMeetingInternationalResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

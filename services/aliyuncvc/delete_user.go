@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteUser invokes the aliyuncvc.DeleteUser API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/deleteuser.html
 func (client *Client) DeleteUser(request *DeleteUserRequest) (response *DeleteUserResponse, err error) {
 	response = CreateDeleteUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteUser(request *DeleteUserRequest) (response *DeleteUs
 }
 
 // DeleteUserWithChan invokes the aliyuncvc.DeleteUser API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/deleteuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUserWithChan(request *DeleteUserRequest) (<-chan *DeleteUserResponse, <-chan error) {
 	responseChan := make(chan *DeleteUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteUserWithChan(request *DeleteUserRequest) (<-chan *De
 }
 
 // DeleteUserWithCallback invokes the aliyuncvc.DeleteUser API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/deleteuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUserWithCallback(request *DeleteUserRequest, callback func(response *DeleteUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,7 +79,7 @@ type DeleteUserRequest struct {
 type DeleteUserResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   string `json:"Success" xml:"Success"`
+	Success   bool   `json:"Success" xml:"Success"`
 	ErrorCode int    `json:"ErrorCode" xml:"ErrorCode"`
 	Message   string `json:"Message" xml:"Message"`
 }
@@ -94,7 +89,7 @@ func CreateDeleteUserRequest() (request *DeleteUserRequest) {
 	request = &DeleteUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-09-19", "DeleteUser", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "DeleteUser", "aliyuncvc", "openAPI")
 	request.Method = requests.POST
 	return
 }

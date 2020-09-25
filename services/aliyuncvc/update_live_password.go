@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateLivePassword invokes the aliyuncvc.UpdateLivePassword API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/updatelivepassword.html
 func (client *Client) UpdateLivePassword(request *UpdateLivePasswordRequest) (response *UpdateLivePasswordResponse, err error) {
 	response = CreateUpdateLivePasswordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateLivePassword(request *UpdateLivePasswordRequest) (re
 }
 
 // UpdateLivePasswordWithChan invokes the aliyuncvc.UpdateLivePassword API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/updatelivepassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLivePasswordWithChan(request *UpdateLivePasswordRequest) (<-chan *UpdateLivePasswordResponse, <-chan error) {
 	responseChan := make(chan *UpdateLivePasswordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateLivePasswordWithChan(request *UpdateLivePasswordRequ
 }
 
 // UpdateLivePasswordWithCallback invokes the aliyuncvc.UpdateLivePassword API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/updatelivepassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLivePasswordWithCallback(request *UpdateLivePasswordRequest, callback func(response *UpdateLivePasswordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

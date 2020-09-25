@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDevice invokes the aliyuncvc.DeleteDevice API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/deletedevice.html
 func (client *Client) DeleteDevice(request *DeleteDeviceRequest) (response *DeleteDeviceResponse, err error) {
 	response = CreateDeleteDeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDevice(request *DeleteDeviceRequest) (response *Dele
 }
 
 // DeleteDeviceWithChan invokes the aliyuncvc.DeleteDevice API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/deletedevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDeviceWithChan(request *DeleteDeviceRequest) (<-chan *DeleteDeviceResponse, <-chan error) {
 	responseChan := make(chan *DeleteDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDeviceWithChan(request *DeleteDeviceRequest) (<-chan
 }
 
 // DeleteDeviceWithCallback invokes the aliyuncvc.DeleteDevice API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/deletedevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDeviceWithCallback(request *DeleteDeviceRequest, callback func(response *DeleteDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

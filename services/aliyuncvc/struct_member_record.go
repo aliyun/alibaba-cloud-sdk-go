@@ -20,4 +20,7 @@ type MemberRecord struct {
 	MemberUUID string `json:"MemberUUID" xml:"MemberUUID"`
 	UserId     string `json:"UserId" xml:"UserId"`
 	Status     string `json:"Status" xml:"Status"`
+	BeginTime  int64  `json:"BeginTime" xml:"BeginTime"`
+	EndTime    int64  `json:"EndTime" xml:"EndTime"`
+	UserName   string `json:"UserName" xml:"UserName"`
 }

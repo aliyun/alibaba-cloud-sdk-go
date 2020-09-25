@@ -21,7 +21,6 @@ import (
 )
 
 // CallDevice invokes the aliyuncvc.CallDevice API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/calldevice.html
 func (client *Client) CallDevice(request *CallDeviceRequest) (response *CallDeviceResponse, err error) {
 	response = CreateCallDeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CallDevice(request *CallDeviceRequest) (response *CallDevi
 }
 
 // CallDeviceWithChan invokes the aliyuncvc.CallDevice API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/calldevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CallDeviceWithChan(request *CallDeviceRequest) (<-chan *CallDeviceResponse, <-chan error) {
 	responseChan := make(chan *CallDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CallDeviceWithChan(request *CallDeviceRequest) (<-chan *Ca
 }
 
 // CallDeviceWithCallback invokes the aliyuncvc.CallDevice API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/calldevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CallDeviceWithCallback(request *CallDeviceRequest, callback func(response *CallDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) CallDeviceWithCallback(request *CallDeviceRequest, callbac
 // CallDeviceRequest is the request struct for api CallDevice
 type CallDeviceRequest struct {
 	*requests.RpcRequest
+	InviteName      string           `position:"Body" name:"InviteName"`
 	OperateUserId   string           `position:"Body" name:"OperateUserId"`
 	JoinMeetingFlag requests.Boolean `position:"Query" name:"JoinMeetingFlag"`
 	MeetingCode     string           `position:"Body" name:"MeetingCode"`

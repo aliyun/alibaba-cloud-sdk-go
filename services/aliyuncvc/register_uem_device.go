@@ -21,7 +21,6 @@ import (
 )
 
 // RegisterUemDevice invokes the aliyuncvc.RegisterUemDevice API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/registeruemdevice.html
 func (client *Client) RegisterUemDevice(request *RegisterUemDeviceRequest) (response *RegisterUemDeviceResponse, err error) {
 	response = CreateRegisterUemDeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RegisterUemDevice(request *RegisterUemDeviceRequest) (resp
 }
 
 // RegisterUemDeviceWithChan invokes the aliyuncvc.RegisterUemDevice API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/registeruemdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterUemDeviceWithChan(request *RegisterUemDeviceRequest) (<-chan *RegisterUemDeviceResponse, <-chan error) {
 	responseChan := make(chan *RegisterUemDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RegisterUemDeviceWithChan(request *RegisterUemDeviceReques
 }
 
 // RegisterUemDeviceWithCallback invokes the aliyuncvc.RegisterUemDevice API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/registeruemdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterUemDeviceWithCallback(request *RegisterUemDeviceRequest, callback func(response *RegisterUemDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type RegisterUemDeviceRequest struct {
 	*requests.RpcRequest
 	IP            string `position:"Query" name:"IP"`
 	GroupId       string `position:"Query" name:"GroupId"`
+	OwnerId       string `position:"Query" name:"OwnerId"`
 	DeviceId      string `position:"Query" name:"DeviceId"`
 	GroupName     string `position:"Query" name:"GroupName"`
 	Mac           string `position:"Query" name:"Mac"`

@@ -21,7 +21,6 @@ import (
 )
 
 // GetDeviceActiveCode invokes the aliyuncvc.GetDeviceActiveCode API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/getdeviceactivecode.html
 func (client *Client) GetDeviceActiveCode(request *GetDeviceActiveCodeRequest) (response *GetDeviceActiveCodeResponse, err error) {
 	response = CreateGetDeviceActiveCodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetDeviceActiveCode(request *GetDeviceActiveCodeRequest) (
 }
 
 // GetDeviceActiveCodeWithChan invokes the aliyuncvc.GetDeviceActiveCode API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/getdeviceactivecode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDeviceActiveCodeWithChan(request *GetDeviceActiveCodeRequest) (<-chan *GetDeviceActiveCodeResponse, <-chan error) {
 	responseChan := make(chan *GetDeviceActiveCodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetDeviceActiveCodeWithChan(request *GetDeviceActiveCodeRe
 }
 
 // GetDeviceActiveCodeWithCallback invokes the aliyuncvc.GetDeviceActiveCode API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/getdeviceactivecode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDeviceActiveCodeWithCallback(request *GetDeviceActiveCodeRequest, callback func(response *GetDeviceActiveCodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

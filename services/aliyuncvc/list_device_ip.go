@@ -21,7 +21,6 @@ import (
 )
 
 // ListDeviceIp invokes the aliyuncvc.ListDeviceIp API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/listdeviceip.html
 func (client *Client) ListDeviceIp(request *ListDeviceIpRequest) (response *ListDeviceIpResponse, err error) {
 	response = CreateListDeviceIpResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDeviceIp(request *ListDeviceIpRequest) (response *List
 }
 
 // ListDeviceIpWithChan invokes the aliyuncvc.ListDeviceIp API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/listdeviceip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDeviceIpWithChan(request *ListDeviceIpRequest) (<-chan *ListDeviceIpResponse, <-chan error) {
 	responseChan := make(chan *ListDeviceIpResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDeviceIpWithChan(request *ListDeviceIpRequest) (<-chan
 }
 
 // ListDeviceIpWithCallback invokes the aliyuncvc.ListDeviceIp API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/listdeviceip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDeviceIpWithCallback(request *ListDeviceIpRequest, callback func(response *ListDeviceIpResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

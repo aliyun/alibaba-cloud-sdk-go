@@ -17,18 +17,16 @@ package aliyuncvc
 
 // UserInfo is a nested struct in aliyuncvc response
 type UserInfo struct {
-	UserMobile          string `json:"UserMobile" xml:"UserMobile"`
-	CurNum              int    `json:"CurNum" xml:"CurNum"`
-	DepartName          string `json:"DepartName" xml:"DepartName"`
-	GroupName           string `json:"GroupName" xml:"GroupName"`
-	CreateTime          int64  `json:"CreateTime" xml:"CreateTime"`
-	UserTel             string `json:"UserTel" xml:"UserTel"`
-	UserAvatarUrl       string `json:"UserAvatarUrl" xml:"UserAvatarUrl"`
-	UserId              string `json:"UserId" xml:"UserId"`
-	UserName            string `json:"UserName" xml:"UserName"`
-	GroupId             string `json:"GroupId" xml:"GroupId"`
-	MaxNum              int    `json:"MaxNum" xml:"MaxNum"`
-	DepartId            string `json:"DepartId" xml:"DepartId"`
-	UserEmail           string `json:"UserEmail" xml:"UserEmail"`
-	MemberConcurrentMax int    `json:"MemberConcurrentMax" xml:"MemberConcurrentMax"`
+	UserMobile    string `json:"UserMobile" xml:"UserMobile"`
+	UserAvatarUrl string `json:"UserAvatarUrl" xml:"UserAvatarUrl"`
+	UserId        string `json:"UserId" xml:"UserId"`
+	DepartName    string `json:"DepartName" xml:"DepartName"`
+	UserName      string `json:"UserName" xml:"UserName"`
+	GroupName     string `json:"GroupName" xml:"GroupName"`
+	GroupId       string `json:"GroupId" xml:"GroupId"`
+	CreateTime    int64  `json:"CreateTime" xml:"CreateTime"`
+	DepartId      string `json:"DepartId" xml:"DepartId"`
+	UserTel       string `json:"UserTel" xml:"UserTel"`
+	UserEmail     string `json:"UserEmail" xml:"UserEmail"`
+	JobName       string `json:"JobName" xml:"JobName"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateUser invokes the aliyuncvc.CreateUser API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createuser.html
 func (client *Client) CreateUser(request *CreateUserRequest) (response *CreateUserResponse, err error) {
 	response = CreateCreateUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateUser(request *CreateUserRequest) (response *CreateUs
 }
 
 // CreateUserWithChan invokes the aliyuncvc.CreateUser API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserWithChan(request *CreateUserRequest) (<-chan *CreateUserResponse, <-chan error) {
 	responseChan := make(chan *CreateUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateUserWithChan(request *CreateUserRequest) (<-chan *Cr
 }
 
 // CreateUserWithCallback invokes the aliyuncvc.CreateUser API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserWithCallback(request *CreateUserRequest, callback func(response *CreateUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +82,7 @@ type CreateUserResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	UserId    string `json:"UserId" xml:"UserId"`
 }
 
 // CreateCreateUserRequest creates a request to invoke CreateUser API
@@ -94,7 +90,7 @@ func CreateCreateUserRequest() (request *CreateUserRequest) {
 	request = &CreateUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-09-19", "CreateUser", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "CreateUser", "aliyuncvc", "openAPI")
 	request.Method = requests.POST
 	return
 }

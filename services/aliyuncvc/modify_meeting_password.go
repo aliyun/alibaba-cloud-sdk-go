@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyMeetingPassword invokes the aliyuncvc.ModifyMeetingPassword API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/modifymeetingpassword.html
 func (client *Client) ModifyMeetingPassword(request *ModifyMeetingPasswordRequest) (response *ModifyMeetingPasswordResponse, err error) {
 	response = CreateModifyMeetingPasswordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyMeetingPassword(request *ModifyMeetingPasswordReques
 }
 
 // ModifyMeetingPasswordWithChan invokes the aliyuncvc.ModifyMeetingPassword API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/modifymeetingpassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyMeetingPasswordWithChan(request *ModifyMeetingPasswordRequest) (<-chan *ModifyMeetingPasswordResponse, <-chan error) {
 	responseChan := make(chan *ModifyMeetingPasswordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyMeetingPasswordWithChan(request *ModifyMeetingPasswo
 }
 
 // ModifyMeetingPasswordWithCallback invokes the aliyuncvc.ModifyMeetingPassword API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/modifymeetingpassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyMeetingPasswordWithCallback(request *ModifyMeetingPasswordRequest, callback func(response *ModifyMeetingPasswordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

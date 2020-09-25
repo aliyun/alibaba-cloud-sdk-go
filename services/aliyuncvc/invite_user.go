@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// EndDeviceMeeting invokes the aliyuncvc.EndDeviceMeeting API synchronously
-func (client *Client) EndDeviceMeeting(request *EndDeviceMeetingRequest) (response *EndDeviceMeetingResponse, err error) {
-	response = CreateEndDeviceMeetingResponse()
+// InviteUser invokes the aliyuncvc.InviteUser API synchronously
+func (client *Client) InviteUser(request *InviteUserRequest) (response *InviteUserResponse, err error) {
+	response = CreateInviteUserResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// EndDeviceMeetingWithChan invokes the aliyuncvc.EndDeviceMeeting API asynchronously
-func (client *Client) EndDeviceMeetingWithChan(request *EndDeviceMeetingRequest) (<-chan *EndDeviceMeetingResponse, <-chan error) {
-	responseChan := make(chan *EndDeviceMeetingResponse, 1)
+// InviteUserWithChan invokes the aliyuncvc.InviteUser API asynchronously
+func (client *Client) InviteUserWithChan(request *InviteUserRequest) (<-chan *InviteUserResponse, <-chan error) {
+	responseChan := make(chan *InviteUserResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.EndDeviceMeeting(request)
+		response, err := client.InviteUser(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) EndDeviceMeetingWithChan(request *EndDeviceMeetingRequest)
 	return responseChan, errChan
 }
 
-// EndDeviceMeetingWithCallback invokes the aliyuncvc.EndDeviceMeeting API asynchronously
-func (client *Client) EndDeviceMeetingWithCallback(request *EndDeviceMeetingRequest, callback func(response *EndDeviceMeetingResponse, err error)) <-chan int {
+// InviteUserWithCallback invokes the aliyuncvc.InviteUser API asynchronously
+func (client *Client) InviteUserWithCallback(request *InviteUserRequest, callback func(response *InviteUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *EndDeviceMeetingResponse
+		var response *InviteUserResponse
 		var err error
 		defer close(result)
-		response, err = client.EndDeviceMeeting(request)
+		response, err = client.InviteUser(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,15 +68,15 @@ func (client *Client) EndDeviceMeetingWithCallback(request *EndDeviceMeetingRequ
 	return result
 }
 
-// EndDeviceMeetingRequest is the request struct for api EndDeviceMeeting
-type EndDeviceMeetingRequest struct {
+// InviteUserRequest is the request struct for api InviteUser
+type InviteUserRequest struct {
 	*requests.RpcRequest
 	MeetingUUID string `position:"Body" name:"MeetingUUID"`
-	SN          string `position:"Body" name:"SN"`
+	UserIds     string `position:"Body" name:"UserIds"`
 }
 
-// EndDeviceMeetingResponse is the response struct for api EndDeviceMeeting
-type EndDeviceMeetingResponse struct {
+// InviteUserResponse is the response struct for api InviteUser
+type InviteUserResponse struct {
 	*responses.BaseResponse
 	ErrorCode int    `json:"ErrorCode" xml:"ErrorCode"`
 	Message   string `json:"Message" xml:"Message"`
@@ -84,19 +84,19 @@ type EndDeviceMeetingResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateEndDeviceMeetingRequest creates a request to invoke EndDeviceMeeting API
-func CreateEndDeviceMeetingRequest() (request *EndDeviceMeetingRequest) {
-	request = &EndDeviceMeetingRequest{
+// CreateInviteUserRequest creates a request to invoke InviteUser API
+func CreateInviteUserRequest() (request *InviteUserRequest) {
+	request = &InviteUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "EndDeviceMeeting", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "InviteUser", "aliyuncvc", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateEndDeviceMeetingResponse creates a response to parse from EndDeviceMeeting response
-func CreateEndDeviceMeetingResponse() (response *EndDeviceMeetingResponse) {
-	response = &EndDeviceMeetingResponse{
+// CreateInviteUserResponse creates a response to parse from InviteUser response
+func CreateInviteUserResponse() (response *InviteUserResponse) {
+	response = &InviteUserResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

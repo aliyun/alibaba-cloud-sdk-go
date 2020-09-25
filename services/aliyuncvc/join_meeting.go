@@ -21,7 +21,6 @@ import (
 )
 
 // JoinMeeting invokes the aliyuncvc.JoinMeeting API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/joinmeeting.html
 func (client *Client) JoinMeeting(request *JoinMeetingRequest) (response *JoinMeetingResponse, err error) {
 	response = CreateJoinMeetingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) JoinMeeting(request *JoinMeetingRequest) (response *JoinMe
 }
 
 // JoinMeetingWithChan invokes the aliyuncvc.JoinMeeting API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/joinmeeting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinMeetingWithChan(request *JoinMeetingRequest) (<-chan *JoinMeetingResponse, <-chan error) {
 	responseChan := make(chan *JoinMeetingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) JoinMeetingWithChan(request *JoinMeetingRequest) (<-chan *
 }
 
 // JoinMeetingWithCallback invokes the aliyuncvc.JoinMeeting API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/joinmeeting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinMeetingWithCallback(request *JoinMeetingRequest, callback func(response *JoinMeetingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateMeeting invokes the aliyuncvc.CreateMeeting API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createmeeting.html
 func (client *Client) CreateMeeting(request *CreateMeetingRequest) (response *CreateMeetingResponse, err error) {
 	response = CreateCreateMeetingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateMeeting(request *CreateMeetingRequest) (response *Cr
 }
 
 // CreateMeetingWithChan invokes the aliyuncvc.CreateMeeting API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createmeeting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMeetingWithChan(request *CreateMeetingRequest) (<-chan *CreateMeetingResponse, <-chan error) {
 	responseChan := make(chan *CreateMeetingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateMeetingWithChan(request *CreateMeetingRequest) (<-ch
 }
 
 // CreateMeetingWithCallback invokes the aliyuncvc.CreateMeeting API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createmeeting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMeetingWithCallback(request *CreateMeetingRequest, callback func(response *CreateMeetingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,12 @@ func (client *Client) CreateMeetingWithCallback(request *CreateMeetingRequest, c
 // CreateMeetingRequest is the request struct for api CreateMeeting
 type CreateMeetingRequest struct {
 	*requests.RpcRequest
-	MeetingName string `position:"Body" name:"MeetingName"`
-	UserId      string `position:"Body" name:"UserId"`
+	MeetingName      string           `position:"Body" name:"MeetingName"`
+	UserId           string           `position:"Body" name:"UserId"`
+	OpenPasswordFlag requests.Boolean `position:"Body" name:"OpenPasswordFlag"`
+	Password         string           `position:"Body" name:"Password"`
+	MasterEnableFlag requests.Boolean `position:"Body" name:"MasterEnableFlag"`
+	MeetingMode      string           `position:"Body" name:"MeetingMode"`
 }
 
 // CreateMeetingResponse is the response struct for api CreateMeeting
@@ -95,7 +94,7 @@ func CreateCreateMeetingRequest() (request *CreateMeetingRequest) {
 	request = &CreateMeetingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-09-19", "CreateMeeting", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "CreateMeeting", "aliyuncvc", "openAPI")
 	request.Method = requests.POST
 	return
 }

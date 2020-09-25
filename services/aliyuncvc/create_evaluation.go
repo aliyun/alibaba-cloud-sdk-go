@@ -21,7 +21,6 @@ import (
 )
 
 // CreateEvaluation invokes the aliyuncvc.CreateEvaluation API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createevaluation.html
 func (client *Client) CreateEvaluation(request *CreateEvaluationRequest) (response *CreateEvaluationResponse, err error) {
 	response = CreateCreateEvaluationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateEvaluation(request *CreateEvaluationRequest) (respon
 }
 
 // CreateEvaluationWithChan invokes the aliyuncvc.CreateEvaluation API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createevaluation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEvaluationWithChan(request *CreateEvaluationRequest) (<-chan *CreateEvaluationResponse, <-chan error) {
 	responseChan := make(chan *CreateEvaluationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateEvaluationWithChan(request *CreateEvaluationRequest)
 }
 
 // CreateEvaluationWithCallback invokes the aliyuncvc.CreateEvaluation API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createevaluation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEvaluationWithCallback(request *CreateEvaluationRequest, callback func(response *CreateEvaluationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

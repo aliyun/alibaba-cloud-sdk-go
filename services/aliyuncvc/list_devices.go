@@ -21,7 +21,6 @@ import (
 )
 
 // ListDevices invokes the aliyuncvc.ListDevices API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/listdevices.html
 func (client *Client) ListDevices(request *ListDevicesRequest) (response *ListDevicesResponse, err error) {
 	response = CreateListDevicesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDevices(request *ListDevicesRequest) (response *ListDe
 }
 
 // ListDevicesWithChan invokes the aliyuncvc.ListDevices API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/listdevices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDevicesWithChan(request *ListDevicesRequest) (<-chan *ListDevicesResponse, <-chan error) {
 	responseChan := make(chan *ListDevicesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDevicesWithChan(request *ListDevicesRequest) (<-chan *
 }
 
 // ListDevicesWithCallback invokes the aliyuncvc.ListDevices API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/listdevices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDevicesWithCallback(request *ListDevicesRequest, callback func(response *ListDevicesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateListDevicesRequest() (request *ListDevicesRequest) {
 	request = &ListDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-09-19", "ListDevices", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "ListDevices", "aliyuncvc", "openAPI")
 	request.Method = requests.POST
 	return
 }

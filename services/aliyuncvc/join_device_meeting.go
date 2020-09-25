@@ -21,7 +21,6 @@ import (
 )
 
 // JoinDeviceMeeting invokes the aliyuncvc.JoinDeviceMeeting API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/joindevicemeeting.html
 func (client *Client) JoinDeviceMeeting(request *JoinDeviceMeetingRequest) (response *JoinDeviceMeetingResponse, err error) {
 	response = CreateJoinDeviceMeetingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) JoinDeviceMeeting(request *JoinDeviceMeetingRequest) (resp
 }
 
 // JoinDeviceMeetingWithChan invokes the aliyuncvc.JoinDeviceMeeting API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/joindevicemeeting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinDeviceMeetingWithChan(request *JoinDeviceMeetingRequest) (<-chan *JoinDeviceMeetingResponse, <-chan error) {
 	responseChan := make(chan *JoinDeviceMeetingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) JoinDeviceMeetingWithChan(request *JoinDeviceMeetingReques
 }
 
 // JoinDeviceMeetingWithCallback invokes the aliyuncvc.JoinDeviceMeeting API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/joindevicemeeting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinDeviceMeetingWithCallback(request *JoinDeviceMeetingRequest, callback func(response *JoinDeviceMeetingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // GetMeeting invokes the aliyuncvc.GetMeeting API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/getmeeting.html
 func (client *Client) GetMeeting(request *GetMeetingRequest) (response *GetMeetingResponse, err error) {
 	response = CreateGetMeetingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetMeeting(request *GetMeetingRequest) (response *GetMeeti
 }
 
 // GetMeetingWithChan invokes the aliyuncvc.GetMeeting API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/getmeeting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMeetingWithChan(request *GetMeetingRequest) (<-chan *GetMeetingResponse, <-chan error) {
 	responseChan := make(chan *GetMeetingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetMeetingWithChan(request *GetMeetingRequest) (<-chan *Ge
 }
 
 // GetMeetingWithCallback invokes the aliyuncvc.GetMeeting API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/getmeeting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMeetingWithCallback(request *GetMeetingRequest, callback func(response *GetMeetingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // GetMembers invokes the aliyuncvc.GetMembers API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/getmembers.html
 func (client *Client) GetMembers(request *GetMembersRequest) (response *GetMembersResponse, err error) {
 	response = CreateGetMembersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetMembers(request *GetMembersRequest) (response *GetMembe
 }
 
 // GetMembersWithChan invokes the aliyuncvc.GetMembers API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/getmembers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMembersWithChan(request *GetMembersRequest) (<-chan *GetMembersResponse, <-chan error) {
 	responseChan := make(chan *GetMembersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetMembersWithChan(request *GetMembersRequest) (<-chan *Ge
 }
 
 // GetMembersWithCallback invokes the aliyuncvc.GetMembers API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/getmembers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMembersWithCallback(request *GetMembersRequest, callback func(response *GetMembersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

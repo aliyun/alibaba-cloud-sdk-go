@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// EndDeviceMeeting invokes the aliyuncvc.EndDeviceMeeting API synchronously
-func (client *Client) EndDeviceMeeting(request *EndDeviceMeetingRequest) (response *EndDeviceMeetingResponse, err error) {
-	response = CreateEndDeviceMeetingResponse()
+// CustomLayout invokes the aliyuncvc.CustomLayout API synchronously
+func (client *Client) CustomLayout(request *CustomLayoutRequest) (response *CustomLayoutResponse, err error) {
+	response = CreateCustomLayoutResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// EndDeviceMeetingWithChan invokes the aliyuncvc.EndDeviceMeeting API asynchronously
-func (client *Client) EndDeviceMeetingWithChan(request *EndDeviceMeetingRequest) (<-chan *EndDeviceMeetingResponse, <-chan error) {
-	responseChan := make(chan *EndDeviceMeetingResponse, 1)
+// CustomLayoutWithChan invokes the aliyuncvc.CustomLayout API asynchronously
+func (client *Client) CustomLayoutWithChan(request *CustomLayoutRequest) (<-chan *CustomLayoutResponse, <-chan error) {
+	responseChan := make(chan *CustomLayoutResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.EndDeviceMeeting(request)
+		response, err := client.CustomLayout(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) EndDeviceMeetingWithChan(request *EndDeviceMeetingRequest)
 	return responseChan, errChan
 }
 
-// EndDeviceMeetingWithCallback invokes the aliyuncvc.EndDeviceMeeting API asynchronously
-func (client *Client) EndDeviceMeetingWithCallback(request *EndDeviceMeetingRequest, callback func(response *EndDeviceMeetingResponse, err error)) <-chan int {
+// CustomLayoutWithCallback invokes the aliyuncvc.CustomLayout API asynchronously
+func (client *Client) CustomLayoutWithCallback(request *CustomLayoutRequest, callback func(response *CustomLayoutResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *EndDeviceMeetingResponse
+		var response *CustomLayoutResponse
 		var err error
 		defer close(result)
-		response, err = client.EndDeviceMeeting(request)
+		response, err = client.CustomLayout(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,15 +68,15 @@ func (client *Client) EndDeviceMeetingWithCallback(request *EndDeviceMeetingRequ
 	return result
 }
 
-// EndDeviceMeetingRequest is the request struct for api EndDeviceMeeting
-type EndDeviceMeetingRequest struct {
+// CustomLayoutRequest is the request struct for api CustomLayout
+type CustomLayoutRequest struct {
 	*requests.RpcRequest
-	MeetingUUID string `position:"Body" name:"MeetingUUID"`
-	SN          string `position:"Body" name:"SN"`
+	LiveUUID   string `position:"Body" name:"LiveUUID"`
+	LayoutInfo string `position:"Body" name:"LayoutInfo"`
 }
 
-// EndDeviceMeetingResponse is the response struct for api EndDeviceMeeting
-type EndDeviceMeetingResponse struct {
+// CustomLayoutResponse is the response struct for api CustomLayout
+type CustomLayoutResponse struct {
 	*responses.BaseResponse
 	ErrorCode int    `json:"ErrorCode" xml:"ErrorCode"`
 	Message   string `json:"Message" xml:"Message"`
@@ -84,19 +84,19 @@ type EndDeviceMeetingResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateEndDeviceMeetingRequest creates a request to invoke EndDeviceMeeting API
-func CreateEndDeviceMeetingRequest() (request *EndDeviceMeetingRequest) {
-	request = &EndDeviceMeetingRequest{
+// CreateCustomLayoutRequest creates a request to invoke CustomLayout API
+func CreateCustomLayoutRequest() (request *CustomLayoutRequest) {
+	request = &CustomLayoutRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "EndDeviceMeeting", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "CustomLayout", "aliyuncvc", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateEndDeviceMeetingResponse creates a response to parse from EndDeviceMeeting response
-func CreateEndDeviceMeetingResponse() (response *EndDeviceMeetingResponse) {
-	response = &EndDeviceMeetingResponse{
+// CreateCustomLayoutResponse creates a response to parse from CustomLayout response
+func CreateCustomLayoutResponse() (response *CustomLayoutResponse) {
+	response = &CustomLayoutResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

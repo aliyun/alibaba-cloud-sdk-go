@@ -21,7 +21,6 @@ import (
 )
 
 // JoinLive invokes the aliyuncvc.JoinLive API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/joinlive.html
 func (client *Client) JoinLive(request *JoinLiveRequest) (response *JoinLiveResponse, err error) {
 	response = CreateJoinLiveResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) JoinLive(request *JoinLiveRequest) (response *JoinLiveResp
 }
 
 // JoinLiveWithChan invokes the aliyuncvc.JoinLive API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/joinlive.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinLiveWithChan(request *JoinLiveRequest) (<-chan *JoinLiveResponse, <-chan error) {
 	responseChan := make(chan *JoinLiveResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) JoinLiveWithChan(request *JoinLiveRequest) (<-chan *JoinLi
 }
 
 // JoinLiveWithCallback invokes the aliyuncvc.JoinLive API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/joinlive.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinLiveWithCallback(request *JoinLiveRequest, callback func(response *JoinLiveResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

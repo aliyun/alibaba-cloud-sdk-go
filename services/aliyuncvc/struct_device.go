@@ -17,12 +17,19 @@ package aliyuncvc
 
 // Device is a nested struct in aliyuncvc response
 type Device struct {
-	MeetingDomain string  `json:"MeetingDomain" xml:"MeetingDomain"`
-	MeetingToken  string  `json:"MeetingToken" xml:"MeetingToken"`
-	MeetingCode   string  `json:"MeetingCode" xml:"MeetingCode"`
-	MemberUUID    string  `json:"MemberUUID" xml:"MemberUUID"`
-	ClientAppId   string  `json:"ClientAppId" xml:"ClientAppId"`
-	MeetingUUID   string  `json:"MeetingUUID" xml:"MeetingUUID"`
-	MeetingAppId  string  `json:"MeetingAppId" xml:"MeetingAppId"`
-	SlsInfo       SlsInfo `json:"SlsInfo" xml:"SlsInfo"`
+	Status         int     `json:"Status" xml:"Status"`
+	Mac            string  `json:"Mac" xml:"Mac"`
+	MeetingToken   string  `json:"MeetingToken" xml:"MeetingToken"`
+	IP             string  `json:"IP" xml:"IP"`
+	MeetingUUID    string  `json:"MeetingUUID" xml:"MeetingUUID"`
+	MeetingAppId   string  `json:"MeetingAppId" xml:"MeetingAppId"`
+	MeetingCode    string  `json:"MeetingCode" xml:"MeetingCode"`
+	Ssid           string  `json:"Ssid" xml:"Ssid"`
+	MemberUUID     string  `json:"MemberUUID" xml:"MemberUUID"`
+	ClientAppId    string  `json:"ClientAppId" xml:"ClientAppId"`
+	ActivationCode string  `json:"ActivationCode" xml:"ActivationCode"`
+	MeetingDomain  string  `json:"MeetingDomain" xml:"MeetingDomain"`
+	CastScreenCode string  `json:"CastScreenCode" xml:"CastScreenCode"`
+	Sn             string  `json:"Sn" xml:"Sn"`
+	SlsInfo        SlsInfo `json:"SlsInfo" xml:"SlsInfo"`
 }

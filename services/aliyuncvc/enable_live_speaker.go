@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// EndDeviceMeeting invokes the aliyuncvc.EndDeviceMeeting API synchronously
-func (client *Client) EndDeviceMeeting(request *EndDeviceMeetingRequest) (response *EndDeviceMeetingResponse, err error) {
-	response = CreateEndDeviceMeetingResponse()
+// EnableLiveSpeaker invokes the aliyuncvc.EnableLiveSpeaker API synchronously
+func (client *Client) EnableLiveSpeaker(request *EnableLiveSpeakerRequest) (response *EnableLiveSpeakerResponse, err error) {
+	response = CreateEnableLiveSpeakerResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// EndDeviceMeetingWithChan invokes the aliyuncvc.EndDeviceMeeting API asynchronously
-func (client *Client) EndDeviceMeetingWithChan(request *EndDeviceMeetingRequest) (<-chan *EndDeviceMeetingResponse, <-chan error) {
-	responseChan := make(chan *EndDeviceMeetingResponse, 1)
+// EnableLiveSpeakerWithChan invokes the aliyuncvc.EnableLiveSpeaker API asynchronously
+func (client *Client) EnableLiveSpeakerWithChan(request *EnableLiveSpeakerRequest) (<-chan *EnableLiveSpeakerResponse, <-chan error) {
+	responseChan := make(chan *EnableLiveSpeakerResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.EndDeviceMeeting(request)
+		response, err := client.EnableLiveSpeaker(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) EndDeviceMeetingWithChan(request *EndDeviceMeetingRequest)
 	return responseChan, errChan
 }
 
-// EndDeviceMeetingWithCallback invokes the aliyuncvc.EndDeviceMeeting API asynchronously
-func (client *Client) EndDeviceMeetingWithCallback(request *EndDeviceMeetingRequest, callback func(response *EndDeviceMeetingResponse, err error)) <-chan int {
+// EnableLiveSpeakerWithCallback invokes the aliyuncvc.EnableLiveSpeaker API asynchronously
+func (client *Client) EnableLiveSpeakerWithCallback(request *EnableLiveSpeakerRequest, callback func(response *EnableLiveSpeakerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *EndDeviceMeetingResponse
+		var response *EnableLiveSpeakerResponse
 		var err error
 		defer close(result)
-		response, err = client.EndDeviceMeeting(request)
+		response, err = client.EnableLiveSpeaker(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,15 +68,15 @@ func (client *Client) EndDeviceMeetingWithCallback(request *EndDeviceMeetingRequ
 	return result
 }
 
-// EndDeviceMeetingRequest is the request struct for api EndDeviceMeeting
-type EndDeviceMeetingRequest struct {
+// EnableLiveSpeakerRequest is the request struct for api EnableLiveSpeaker
+type EnableLiveSpeakerRequest struct {
 	*requests.RpcRequest
-	MeetingUUID string `position:"Body" name:"MeetingUUID"`
-	SN          string `position:"Body" name:"SN"`
+	LiveUUID          string           `position:"Body" name:"LiveUUID"`
+	EnableSpeakerFlag requests.Boolean `position:"Body" name:"EnableSpeakerFlag"`
 }
 
-// EndDeviceMeetingResponse is the response struct for api EndDeviceMeeting
-type EndDeviceMeetingResponse struct {
+// EnableLiveSpeakerResponse is the response struct for api EnableLiveSpeaker
+type EnableLiveSpeakerResponse struct {
 	*responses.BaseResponse
 	ErrorCode int    `json:"ErrorCode" xml:"ErrorCode"`
 	Message   string `json:"Message" xml:"Message"`
@@ -84,19 +84,19 @@ type EndDeviceMeetingResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateEndDeviceMeetingRequest creates a request to invoke EndDeviceMeeting API
-func CreateEndDeviceMeetingRequest() (request *EndDeviceMeetingRequest) {
-	request = &EndDeviceMeetingRequest{
+// CreateEnableLiveSpeakerRequest creates a request to invoke EnableLiveSpeaker API
+func CreateEnableLiveSpeakerRequest() (request *EnableLiveSpeakerRequest) {
+	request = &EnableLiveSpeakerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "EndDeviceMeeting", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "EnableLiveSpeaker", "aliyuncvc", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateEndDeviceMeetingResponse creates a response to parse from EndDeviceMeeting response
-func CreateEndDeviceMeetingResponse() (response *EndDeviceMeetingResponse) {
-	response = &EndDeviceMeetingResponse{
+// CreateEnableLiveSpeakerResponse creates a response to parse from EnableLiveSpeaker response
+func CreateEnableLiveSpeakerResponse() (response *EnableLiveSpeakerResponse) {
+	response = &EnableLiveSpeakerResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

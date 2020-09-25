@@ -21,7 +21,6 @@ import (
 )
 
 // EndLive invokes the aliyuncvc.EndLive API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/endlive.html
 func (client *Client) EndLive(request *EndLiveRequest) (response *EndLiveResponse, err error) {
 	response = CreateEndLiveResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EndLive(request *EndLiveRequest) (response *EndLiveRespons
 }
 
 // EndLiveWithChan invokes the aliyuncvc.EndLive API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/endlive.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EndLiveWithChan(request *EndLiveRequest) (<-chan *EndLiveResponse, <-chan error) {
 	responseChan := make(chan *EndLiveResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EndLiveWithChan(request *EndLiveRequest) (<-chan *EndLiveR
 }
 
 // EndLiveWithCallback invokes the aliyuncvc.EndLive API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/endlive.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EndLiveWithCallback(request *EndLiveRequest, callback func(response *EndLiveResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

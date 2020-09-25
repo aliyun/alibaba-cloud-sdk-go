@@ -21,7 +21,6 @@ import (
 )
 
 // ActiveMeeting invokes the aliyuncvc.ActiveMeeting API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/activemeeting.html
 func (client *Client) ActiveMeeting(request *ActiveMeetingRequest) (response *ActiveMeetingResponse, err error) {
 	response = CreateActiveMeetingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ActiveMeeting(request *ActiveMeetingRequest) (response *Ac
 }
 
 // ActiveMeetingWithChan invokes the aliyuncvc.ActiveMeeting API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/activemeeting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActiveMeetingWithChan(request *ActiveMeetingRequest) (<-chan *ActiveMeetingResponse, <-chan error) {
 	responseChan := make(chan *ActiveMeetingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ActiveMeetingWithChan(request *ActiveMeetingRequest) (<-ch
 }
 
 // ActiveMeetingWithCallback invokes the aliyuncvc.ActiveMeeting API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/activemeeting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActiveMeetingWithCallback(request *ActiveMeetingRequest, callback func(response *ActiveMeetingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -17,5 +17,6 @@ package aliyuncvc
 
 // Devices is a nested struct in aliyuncvc response
 type Devices struct {
-	Data []Data `json:"data" xml:"data"`
+	MeetingUUID string `json:"MeetingUUID" xml:"MeetingUUID"`
+	MeetingCode string `json:"MeetingCode" xml:"MeetingCode"`
 }

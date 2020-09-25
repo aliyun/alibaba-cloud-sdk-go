@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// EndDeviceMeeting invokes the aliyuncvc.EndDeviceMeeting API synchronously
-func (client *Client) EndDeviceMeeting(request *EndDeviceMeetingRequest) (response *EndDeviceMeetingResponse, err error) {
-	response = CreateEndDeviceMeetingResponse()
+// GetDeviceInfo invokes the aliyuncvc.GetDeviceInfo API synchronously
+func (client *Client) GetDeviceInfo(request *GetDeviceInfoRequest) (response *GetDeviceInfoResponse, err error) {
+	response = CreateGetDeviceInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// EndDeviceMeetingWithChan invokes the aliyuncvc.EndDeviceMeeting API asynchronously
-func (client *Client) EndDeviceMeetingWithChan(request *EndDeviceMeetingRequest) (<-chan *EndDeviceMeetingResponse, <-chan error) {
-	responseChan := make(chan *EndDeviceMeetingResponse, 1)
+// GetDeviceInfoWithChan invokes the aliyuncvc.GetDeviceInfo API asynchronously
+func (client *Client) GetDeviceInfoWithChan(request *GetDeviceInfoRequest) (<-chan *GetDeviceInfoResponse, <-chan error) {
+	responseChan := make(chan *GetDeviceInfoResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.EndDeviceMeeting(request)
+		response, err := client.GetDeviceInfo(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) EndDeviceMeetingWithChan(request *EndDeviceMeetingRequest)
 	return responseChan, errChan
 }
 
-// EndDeviceMeetingWithCallback invokes the aliyuncvc.EndDeviceMeeting API asynchronously
-func (client *Client) EndDeviceMeetingWithCallback(request *EndDeviceMeetingRequest, callback func(response *EndDeviceMeetingResponse, err error)) <-chan int {
+// GetDeviceInfoWithCallback invokes the aliyuncvc.GetDeviceInfo API asynchronously
+func (client *Client) GetDeviceInfoWithCallback(request *GetDeviceInfoRequest, callback func(response *GetDeviceInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *EndDeviceMeetingResponse
+		var response *GetDeviceInfoResponse
 		var err error
 		defer close(result)
-		response, err = client.EndDeviceMeeting(request)
+		response, err = client.GetDeviceInfo(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,35 +68,35 @@ func (client *Client) EndDeviceMeetingWithCallback(request *EndDeviceMeetingRequ
 	return result
 }
 
-// EndDeviceMeetingRequest is the request struct for api EndDeviceMeeting
-type EndDeviceMeetingRequest struct {
+// GetDeviceInfoRequest is the request struct for api GetDeviceInfo
+type GetDeviceInfoRequest struct {
 	*requests.RpcRequest
-	MeetingUUID string `position:"Body" name:"MeetingUUID"`
-	SN          string `position:"Body" name:"SN"`
+	CastScreenCode string `position:"Body" name:"CastScreenCode"`
 }
 
-// EndDeviceMeetingResponse is the response struct for api EndDeviceMeeting
-type EndDeviceMeetingResponse struct {
+// GetDeviceInfoResponse is the response struct for api GetDeviceInfo
+type GetDeviceInfoResponse struct {
 	*responses.BaseResponse
 	ErrorCode int    `json:"ErrorCode" xml:"ErrorCode"`
 	Message   string `json:"Message" xml:"Message"`
 	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Device    Device `json:"Device" xml:"Device"`
 }
 
-// CreateEndDeviceMeetingRequest creates a request to invoke EndDeviceMeeting API
-func CreateEndDeviceMeetingRequest() (request *EndDeviceMeetingRequest) {
-	request = &EndDeviceMeetingRequest{
+// CreateGetDeviceInfoRequest creates a request to invoke GetDeviceInfo API
+func CreateGetDeviceInfoRequest() (request *GetDeviceInfoRequest) {
+	request = &GetDeviceInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "EndDeviceMeeting", "aliyuncvc", "openAPI")
+	request.InitWithApiInfo("aliyuncvc", "2019-10-30", "GetDeviceInfo", "aliyuncvc", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateEndDeviceMeetingResponse creates a response to parse from EndDeviceMeeting response
-func CreateEndDeviceMeetingResponse() (response *EndDeviceMeetingResponse) {
-	response = &EndDeviceMeetingResponse{
+// CreateGetDeviceInfoResponse creates a response to parse from GetDeviceInfo response
+func CreateGetDeviceInfoResponse() (response *GetDeviceInfoResponse) {
+	response = &GetDeviceInfoResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLive invokes the aliyuncvc.DeleteLive API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/deletelive.html
 func (client *Client) DeleteLive(request *DeleteLiveRequest) (response *DeleteLiveResponse, err error) {
 	response = CreateDeleteLiveResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLive(request *DeleteLiveRequest) (response *DeleteLi
 }
 
 // DeleteLiveWithChan invokes the aliyuncvc.DeleteLive API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/deletelive.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveWithChan(request *DeleteLiveRequest) (<-chan *DeleteLiveResponse, <-chan error) {
 	responseChan := make(chan *DeleteLiveResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLiveWithChan(request *DeleteLiveRequest) (<-chan *De
 }
 
 // DeleteLiveWithCallback invokes the aliyuncvc.DeleteLive API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/deletelive.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveWithCallback(request *DeleteLiveRequest, callback func(response *DeleteLiveResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

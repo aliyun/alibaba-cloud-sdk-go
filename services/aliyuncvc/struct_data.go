@@ -17,19 +17,14 @@ package aliyuncvc
 
 // Data is a nested struct in aliyuncvc response
 type Data struct {
-	ConferenceCode string      `json:"ConferenceCode" xml:"ConferenceCode"`
-	CreateTime     string      `json:"CreateTime" xml:"CreateTime"`
-	ConferenceName string      `json:"ConferenceName" xml:"ConferenceName"`
-	PageSize       int         `json:"PageSize" xml:"PageSize"`
-	PictureUrl     string      `json:"PictureUrl" xml:"PictureUrl"`
-	Total          int         `json:"Total" xml:"Total"`
-	TotalCount     int         `json:"TotalCount" xml:"TotalCount"`
-	PageNumber     int         `json:"PageNumber" xml:"PageNumber"`
-	ActivationCode string      `json:"ActivationCode" xml:"ActivationCode"`
-	Status         string      `json:"Status" xml:"Status"`
-	CastScreenCode string      `json:"CastScreenCode" xml:"CastScreenCode"`
-	SN             string      `json:"SN" xml:"SN"`
-	Devices        []Data      `json:"Devices" xml:"Devices"`
-	Commodities    []Commodity `json:"Commodities" xml:"Commodities"`
-	UserInfos      []UserInfo  `json:"UserInfos" xml:"UserInfos"`
+	Total           int                   `json:"Total" xml:"Total"`
+	TotalCount      int                   `json:"TotalCount" xml:"TotalCount"`
+	PageNumber      int                   `json:"PageNumber" xml:"PageNumber"`
+	DeviceErrorCode int                   `json:"DeviceErrorCode" xml:"DeviceErrorCode"`
+	DeviceMessage   string                `json:"DeviceMessage" xml:"DeviceMessage"`
+	PageSize        int                   `json:"PageSize" xml:"PageSize"`
+	SN              string                `json:"SN" xml:"SN"`
+	ActiveCode      string                `json:"ActiveCode" xml:"ActiveCode"`
+	Devices         []DeviceInListDevices `json:"Devices" xml:"Devices"`
+	UserInfos       []UserInfo            `json:"UserInfos" xml:"UserInfos"`
 }

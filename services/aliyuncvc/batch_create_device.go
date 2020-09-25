@@ -21,7 +21,6 @@ import (
 )
 
 // BatchCreateDevice invokes the aliyuncvc.BatchCreateDevice API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/batchcreatedevice.html
 func (client *Client) BatchCreateDevice(request *BatchCreateDeviceRequest) (response *BatchCreateDeviceResponse, err error) {
 	response = CreateBatchCreateDeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchCreateDevice(request *BatchCreateDeviceRequest) (resp
 }
 
 // BatchCreateDeviceWithChan invokes the aliyuncvc.BatchCreateDevice API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/batchcreatedevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchCreateDeviceWithChan(request *BatchCreateDeviceRequest) (<-chan *BatchCreateDeviceResponse, <-chan error) {
 	responseChan := make(chan *BatchCreateDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchCreateDeviceWithChan(request *BatchCreateDeviceReques
 }
 
 // BatchCreateDeviceWithCallback invokes the aliyuncvc.BatchCreateDevice API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/batchcreatedevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchCreateDeviceWithCallback(request *BatchCreateDeviceRequest, callback func(response *BatchCreateDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

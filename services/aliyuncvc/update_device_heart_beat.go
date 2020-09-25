@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateDeviceHeartBeat invokes the aliyuncvc.UpdateDeviceHeartBeat API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/updatedeviceheartbeat.html
 func (client *Client) UpdateDeviceHeartBeat(request *UpdateDeviceHeartBeatRequest) (response *UpdateDeviceHeartBeatResponse, err error) {
 	response = CreateUpdateDeviceHeartBeatResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateDeviceHeartBeat(request *UpdateDeviceHeartBeatReques
 }
 
 // UpdateDeviceHeartBeatWithChan invokes the aliyuncvc.UpdateDeviceHeartBeat API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/updatedeviceheartbeat.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDeviceHeartBeatWithChan(request *UpdateDeviceHeartBeatRequest) (<-chan *UpdateDeviceHeartBeatResponse, <-chan error) {
 	responseChan := make(chan *UpdateDeviceHeartBeatResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateDeviceHeartBeatWithChan(request *UpdateDeviceHeartBe
 }
 
 // UpdateDeviceHeartBeatWithCallback invokes the aliyuncvc.UpdateDeviceHeartBeat API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/updatedeviceheartbeat.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDeviceHeartBeatWithCallback(request *UpdateDeviceHeartBeatRequest, callback func(response *UpdateDeviceHeartBeatResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

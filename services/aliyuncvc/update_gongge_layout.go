@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateGonggeLayout invokes the aliyuncvc.UpdateGonggeLayout API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/updategonggelayout.html
 func (client *Client) UpdateGonggeLayout(request *UpdateGonggeLayoutRequest) (response *UpdateGonggeLayoutResponse, err error) {
 	response = CreateUpdateGonggeLayoutResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateGonggeLayout(request *UpdateGonggeLayoutRequest) (re
 }
 
 // UpdateGonggeLayoutWithChan invokes the aliyuncvc.UpdateGonggeLayout API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/updategonggelayout.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateGonggeLayoutWithChan(request *UpdateGonggeLayoutRequest) (<-chan *UpdateGonggeLayoutResponse, <-chan error) {
 	responseChan := make(chan *UpdateGonggeLayoutResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateGonggeLayoutWithChan(request *UpdateGonggeLayoutRequ
 }
 
 // UpdateGonggeLayoutWithCallback invokes the aliyuncvc.UpdateGonggeLayout API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/updategonggelayout.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateGonggeLayoutWithCallback(request *UpdateGonggeLayoutRequest, callback func(response *UpdateGonggeLayoutResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

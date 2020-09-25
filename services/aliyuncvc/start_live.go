@@ -21,7 +21,6 @@ import (
 )
 
 // StartLive invokes the aliyuncvc.StartLive API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/startlive.html
 func (client *Client) StartLive(request *StartLiveRequest) (response *StartLiveResponse, err error) {
 	response = CreateStartLiveResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartLive(request *StartLiveRequest) (response *StartLiveR
 }
 
 // StartLiveWithChan invokes the aliyuncvc.StartLive API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/startlive.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartLiveWithChan(request *StartLiveRequest) (<-chan *StartLiveResponse, <-chan error) {
 	responseChan := make(chan *StartLiveResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartLiveWithChan(request *StartLiveRequest) (<-chan *Star
 }
 
 // StartLiveWithCallback invokes the aliyuncvc.StartLive API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/startlive.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartLiveWithCallback(request *StartLiveRequest, callback func(response *StartLiveResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,10 @@ func (client *Client) StartLiveWithCallback(request *StartLiveRequest, callback 
 // StartLiveRequest is the request struct for api StartLive
 type StartLiveRequest struct {
 	*requests.RpcRequest
-	LiveUUID string `position:"Body" name:"LiveUUID"`
-	UserId   string `position:"Body" name:"UserId"`
+	LiveUUID   string `position:"Body" name:"LiveUUID"`
+	PushInfo   string `position:"Body" name:"PushInfo"`
+	UserId     string `position:"Body" name:"UserId"`
+	LayoutInfo string `position:"Body" name:"LayoutInfo"`
 }
 
 // StartLiveResponse is the response struct for api StartLive

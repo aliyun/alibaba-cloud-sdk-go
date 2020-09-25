@@ -21,7 +21,6 @@ import (
 )
 
 // ListIsvStatistics invokes the aliyuncvc.ListIsvStatistics API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/listisvstatistics.html
 func (client *Client) ListIsvStatistics(request *ListIsvStatisticsRequest) (response *ListIsvStatisticsResponse, err error) {
 	response = CreateListIsvStatisticsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListIsvStatistics(request *ListIsvStatisticsRequest) (resp
 }
 
 // ListIsvStatisticsWithChan invokes the aliyuncvc.ListIsvStatistics API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/listisvstatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListIsvStatisticsWithChan(request *ListIsvStatisticsRequest) (<-chan *ListIsvStatisticsResponse, <-chan error) {
 	responseChan := make(chan *ListIsvStatisticsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListIsvStatisticsWithChan(request *ListIsvStatisticsReques
 }
 
 // ListIsvStatisticsWithCallback invokes the aliyuncvc.ListIsvStatistics API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/listisvstatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListIsvStatisticsWithCallback(request *ListIsvStatisticsRequest, callback func(response *ListIsvStatisticsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,11 +78,11 @@ type ListIsvStatisticsRequest struct {
 // ListIsvStatisticsResponse is the response struct for api ListIsvStatistics
 type ListIsvStatisticsResponse struct {
 	*responses.BaseResponse
-	ErrorCode int    `json:"ErrorCode" xml:"ErrorCode"`
-	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	ErrorCode int                     `json:"ErrorCode" xml:"ErrorCode"`
+	Message   string                  `json:"Message" xml:"Message"`
+	Success   bool                    `json:"Success" xml:"Success"`
+	RequestId string                  `json:"RequestId" xml:"RequestId"`
+	Data      DataInListIsvStatistics `json:"Data" xml:"Data"`
 }
 
 // CreateListIsvStatisticsRequest creates a request to invoke ListIsvStatistics API

@@ -21,7 +21,6 @@ import (
 )
 
 // ListEvaluations invokes the aliyuncvc.ListEvaluations API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/listevaluations.html
 func (client *Client) ListEvaluations(request *ListEvaluationsRequest) (response *ListEvaluationsResponse, err error) {
 	response = CreateListEvaluationsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListEvaluations(request *ListEvaluationsRequest) (response
 }
 
 // ListEvaluationsWithChan invokes the aliyuncvc.ListEvaluations API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/listevaluations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEvaluationsWithChan(request *ListEvaluationsRequest) (<-chan *ListEvaluationsResponse, <-chan error) {
 	responseChan := make(chan *ListEvaluationsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListEvaluationsWithChan(request *ListEvaluationsRequest) (
 }
 
 // ListEvaluationsWithCallback invokes the aliyuncvc.ListEvaluations API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/listevaluations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEvaluationsWithCallback(request *ListEvaluationsRequest, callback func(response *ListEvaluationsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

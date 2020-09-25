@@ -21,7 +21,6 @@ import (
 )
 
 // CreateUserInternational invokes the aliyuncvc.CreateUserInternational API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createuserinternational.html
 func (client *Client) CreateUserInternational(request *CreateUserInternationalRequest) (response *CreateUserInternationalResponse, err error) {
 	response = CreateCreateUserInternationalResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateUserInternational(request *CreateUserInternationalRe
 }
 
 // CreateUserInternationalWithChan invokes the aliyuncvc.CreateUserInternational API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createuserinternational.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserInternationalWithChan(request *CreateUserInternationalRequest) (<-chan *CreateUserInternationalResponse, <-chan error) {
 	responseChan := make(chan *CreateUserInternationalResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateUserInternationalWithChan(request *CreateUserInterna
 }
 
 // CreateUserInternationalWithCallback invokes the aliyuncvc.CreateUserInternational API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/createuserinternational.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserInternationalWithCallback(request *CreateUserInternationalRequest, callback func(response *CreateUserInternationalResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

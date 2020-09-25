@@ -21,7 +21,6 @@ import (
 )
 
 // ListMembers invokes the aliyuncvc.ListMembers API synchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/listmembers.html
 func (client *Client) ListMembers(request *ListMembersRequest) (response *ListMembersResponse, err error) {
 	response = CreateListMembersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListMembers(request *ListMembersRequest) (response *ListMe
 }
 
 // ListMembersWithChan invokes the aliyuncvc.ListMembers API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/listmembers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMembersWithChan(request *ListMembersRequest) (<-chan *ListMembersResponse, <-chan error) {
 	responseChan := make(chan *ListMembersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListMembersWithChan(request *ListMembersRequest) (<-chan *
 }
 
 // ListMembersWithCallback invokes the aliyuncvc.ListMembers API asynchronously
-// api document: https://help.aliyun.com/api/aliyuncvc/listmembers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMembersWithCallback(request *ListMembersRequest, callback func(response *ListMembersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
