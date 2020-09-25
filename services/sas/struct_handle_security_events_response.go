@@ -16,6 +16,6 @@ package sas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 // HandleSecurityEventsResponse is a nested struct in sas response
-type HandleSecurityEventsResponse struct {
+type HandleSecurityEventsResponseItem struct {
 	TaskId int64 `json:"TaskId" xml:"TaskId"`
 }
