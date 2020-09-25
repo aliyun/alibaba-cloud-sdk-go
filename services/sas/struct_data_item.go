@@ -28,4 +28,5 @@ type DataItem struct {
 	SysNum     int    `json:"SysNum" xml:"SysNum"`
 	CmsNum     int    `json:"CmsNum" xml:"CmsNum"`
 	AppNum     int    `json:"AppNum" xml:"AppNum"`
+	ScaNum     int    `json:"ScaNum" xml:"ScaNum"`
 }

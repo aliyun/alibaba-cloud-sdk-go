@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSuspEventDetail invokes the sas.DescribeSuspEventDetail API synchronously
-// api document: https://help.aliyun.com/api/sas/describesuspeventdetail.html
 func (client *Client) DescribeSuspEventDetail(request *DescribeSuspEventDetailRequest) (response *DescribeSuspEventDetailResponse, err error) {
 	response = CreateDescribeSuspEventDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSuspEventDetail(request *DescribeSuspEventDetailRe
 }
 
 // DescribeSuspEventDetailWithChan invokes the sas.DescribeSuspEventDetail API asynchronously
-// api document: https://help.aliyun.com/api/sas/describesuspeventdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSuspEventDetailWithChan(request *DescribeSuspEventDetailRequest) (<-chan *DescribeSuspEventDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeSuspEventDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSuspEventDetailWithChan(request *DescribeSuspEvent
 }
 
 // DescribeSuspEventDetailWithCallback invokes the sas.DescribeSuspEventDetail API asynchronously
-// api document: https://help.aliyun.com/api/sas/describesuspeventdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSuspEventDetailWithCallback(request *DescribeSuspEventDetailRequest, callback func(response *DescribeSuspEventDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -113,6 +108,7 @@ func CreateDescribeSuspEventDetailRequest() (request *DescribeSuspEventDetailReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSuspEventDetail", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

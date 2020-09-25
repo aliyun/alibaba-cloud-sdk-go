@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeGroupedVul invokes the sas.DescribeGroupedVul API synchronously
-// api document: https://help.aliyun.com/api/sas/describegroupedvul.html
 func (client *Client) DescribeGroupedVul(request *DescribeGroupedVulRequest) (response *DescribeGroupedVulResponse, err error) {
 	response = CreateDescribeGroupedVulResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeGroupedVul(request *DescribeGroupedVulRequest) (re
 }
 
 // DescribeGroupedVulWithChan invokes the sas.DescribeGroupedVul API asynchronously
-// api document: https://help.aliyun.com/api/sas/describegroupedvul.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGroupedVulWithChan(request *DescribeGroupedVulRequest) (<-chan *DescribeGroupedVulResponse, <-chan error) {
 	responseChan := make(chan *DescribeGroupedVulResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeGroupedVulWithChan(request *DescribeGroupedVulRequ
 }
 
 // DescribeGroupedVulWithCallback invokes the sas.DescribeGroupedVul API asynchronously
-// api document: https://help.aliyun.com/api/sas/describegroupedvul.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGroupedVulWithCallback(request *DescribeGroupedVulRequest, callback func(response *DescribeGroupedVulResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,22 @@ func (client *Client) DescribeGroupedVulWithCallback(request *DescribeGroupedVul
 // DescribeGroupedVulRequest is the request struct for api DescribeGroupedVul
 type DescribeGroupedVulRequest struct {
 	*requests.RpcRequest
-	StatusList  string           `position:"Query" name:"StatusList"`
-	Type        string           `position:"Query" name:"Type"`
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	Lang        string           `position:"Query" name:"Lang"`
-	GroupId     string           `position:"Query" name:"GroupId"`
-	Dealed      string           `position:"Query" name:"Dealed"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	AliasName   string           `position:"Query" name:"AliasName"`
-	Necessity   string           `position:"Query" name:"Necessity"`
-	Uuids       string           `position:"Query" name:"Uuids"`
+	StatusList          string           `position:"Query" name:"StatusList"`
+	TargetType          string           `position:"Query" name:"TargetType"`
+	MinScore            requests.Integer `position:"Query" name:"MinScore"`
+	Type                string           `position:"Query" name:"Type"`
+	ContainerFieldName  string           `position:"Query" name:"ContainerFieldName"`
+	SourceIp            string           `position:"Query" name:"SourceIp"`
+	ContainerFieldValue string           `position:"Query" name:"ContainerFieldValue"`
+	PageSize            requests.Integer `position:"Query" name:"PageSize"`
+	Lang                string           `position:"Query" name:"Lang"`
+	GroupId             string           `position:"Query" name:"GroupId"`
+	Dealed              string           `position:"Query" name:"Dealed"`
+	CurrentPage         requests.Integer `position:"Query" name:"CurrentPage"`
+	ClusterId           string           `position:"Query" name:"ClusterId"`
+	AliasName           string           `position:"Query" name:"AliasName"`
+	Necessity           string           `position:"Query" name:"Necessity"`
+	Uuids               string           `position:"Query" name:"Uuids"`
 }
 
 // DescribeGroupedVulResponse is the response struct for api DescribeGroupedVul
@@ -105,6 +105,7 @@ func CreateDescribeGroupedVulRequest() (request *DescribeGroupedVulRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeGroupedVul", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

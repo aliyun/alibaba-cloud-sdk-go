@@ -21,7 +21,6 @@ import (
 )
 
 // CreateAntiBruteForceRule invokes the sas.CreateAntiBruteForceRule API synchronously
-// api document: https://help.aliyun.com/api/sas/createantibruteforcerule.html
 func (client *Client) CreateAntiBruteForceRule(request *CreateAntiBruteForceRuleRequest) (response *CreateAntiBruteForceRuleResponse, err error) {
 	response = CreateCreateAntiBruteForceRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateAntiBruteForceRule(request *CreateAntiBruteForceRule
 }
 
 // CreateAntiBruteForceRuleWithChan invokes the sas.CreateAntiBruteForceRule API asynchronously
-// api document: https://help.aliyun.com/api/sas/createantibruteforcerule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAntiBruteForceRuleWithChan(request *CreateAntiBruteForceRuleRequest) (<-chan *CreateAntiBruteForceRuleResponse, <-chan error) {
 	responseChan := make(chan *CreateAntiBruteForceRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateAntiBruteForceRuleWithChan(request *CreateAntiBruteF
 }
 
 // CreateAntiBruteForceRuleWithCallback invokes the sas.CreateAntiBruteForceRule API asynchronously
-// api document: https://help.aliyun.com/api/sas/createantibruteforcerule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAntiBruteForceRuleWithCallback(request *CreateAntiBruteForceRuleRequest, callback func(response *CreateAntiBruteForceRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateCreateAntiBruteForceRuleRequest() (request *CreateAntiBruteForceRuleR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "CreateAntiBruteForceRule", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

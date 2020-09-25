@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCloudProductFieldStatistics invokes the sas.DescribeCloudProductFieldStatistics API synchronously
-// api document: https://help.aliyun.com/api/sas/describecloudproductfieldstatistics.html
 func (client *Client) DescribeCloudProductFieldStatistics(request *DescribeCloudProductFieldStatisticsRequest) (response *DescribeCloudProductFieldStatisticsResponse, err error) {
 	response = CreateDescribeCloudProductFieldStatisticsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCloudProductFieldStatistics(request *DescribeCloud
 }
 
 // DescribeCloudProductFieldStatisticsWithChan invokes the sas.DescribeCloudProductFieldStatistics API asynchronously
-// api document: https://help.aliyun.com/api/sas/describecloudproductfieldstatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCloudProductFieldStatisticsWithChan(request *DescribeCloudProductFieldStatisticsRequest) (<-chan *DescribeCloudProductFieldStatisticsResponse, <-chan error) {
 	responseChan := make(chan *DescribeCloudProductFieldStatisticsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCloudProductFieldStatisticsWithChan(request *Descr
 }
 
 // DescribeCloudProductFieldStatisticsWithCallback invokes the sas.DescribeCloudProductFieldStatistics API asynchronously
-// api document: https://help.aliyun.com/api/sas/describecloudproductfieldstatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCloudProductFieldStatisticsWithCallback(request *DescribeCloudProductFieldStatisticsRequest, callback func(response *DescribeCloudProductFieldStatisticsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateDescribeCloudProductFieldStatisticsRequest() (request *DescribeCloudP
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeCloudProductFieldStatistics", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

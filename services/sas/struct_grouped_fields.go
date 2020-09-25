@@ -18,13 +18,16 @@ package sas
 // GroupedFields is a nested struct in sas response
 type GroupedFields struct {
 	RegionCount              int    `json:"RegionCount" xml:"RegionCount"`
-	CategoryCount            string `json:"CategoryCount" xml:"CategoryCount"`
-	InstanceCount            int    `json:"InstanceCount" xml:"InstanceCount"`
+	ImportantAssetCount      int    `json:"ImportantAssetCount" xml:"ImportantAssetCount"`
 	NewInstanceCount         int    `json:"NewInstanceCount" xml:"NewInstanceCount"`
 	OfflineInstanceCount     int    `json:"OfflineInstanceCount" xml:"OfflineInstanceCount"`
+	UnprotectedInstanceCount int    `json:"UnprotectedInstanceCount" xml:"UnprotectedInstanceCount"`
+	GeneralAssetCount        int    `json:"GeneralAssetCount" xml:"GeneralAssetCount"`
+	TestAssetCount           int    `json:"TestAssetCount" xml:"TestAssetCount"`
+	CategoryCount            string `json:"CategoryCount" xml:"CategoryCount"`
+	InstanceCount            int    `json:"InstanceCount" xml:"InstanceCount"`
 	VpcCount                 int    `json:"VpcCount" xml:"VpcCount"`
 	GroupCount               int    `json:"GroupCount" xml:"GroupCount"`
 	NotRunningStatusCount    int    `json:"NotRunningStatusCount" xml:"NotRunningStatusCount"`
 	RiskInstanceCount        int    `json:"RiskInstanceCount" xml:"RiskInstanceCount"`
-	UnprotectedInstanceCount int    `json:"UnprotectedInstanceCount" xml:"UnprotectedInstanceCount"`
 }

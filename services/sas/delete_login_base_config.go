@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLoginBaseConfig invokes the sas.DeleteLoginBaseConfig API synchronously
-// api document: https://help.aliyun.com/api/sas/deleteloginbaseconfig.html
 func (client *Client) DeleteLoginBaseConfig(request *DeleteLoginBaseConfigRequest) (response *DeleteLoginBaseConfigResponse, err error) {
 	response = CreateDeleteLoginBaseConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLoginBaseConfig(request *DeleteLoginBaseConfigReques
 }
 
 // DeleteLoginBaseConfigWithChan invokes the sas.DeleteLoginBaseConfig API asynchronously
-// api document: https://help.aliyun.com/api/sas/deleteloginbaseconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLoginBaseConfigWithChan(request *DeleteLoginBaseConfigRequest) (<-chan *DeleteLoginBaseConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteLoginBaseConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLoginBaseConfigWithChan(request *DeleteLoginBaseConf
 }
 
 // DeleteLoginBaseConfigWithCallback invokes the sas.DeleteLoginBaseConfig API asynchronously
-// api document: https://help.aliyun.com/api/sas/deleteloginbaseconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLoginBaseConfigWithCallback(request *DeleteLoginBaseConfigRequest, callback func(response *DeleteLoginBaseConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDeleteLoginBaseConfigRequest() (request *DeleteLoginBaseConfigRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DeleteLoginBaseConfig", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVulWhitelist invokes the sas.DescribeVulWhitelist API synchronously
-// api document: https://help.aliyun.com/api/sas/describevulwhitelist.html
 func (client *Client) DescribeVulWhitelist(request *DescribeVulWhitelistRequest) (response *DescribeVulWhitelistResponse, err error) {
 	response = CreateDescribeVulWhitelistResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVulWhitelist(request *DescribeVulWhitelistRequest)
 }
 
 // DescribeVulWhitelistWithChan invokes the sas.DescribeVulWhitelist API asynchronously
-// api document: https://help.aliyun.com/api/sas/describevulwhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVulWhitelistWithChan(request *DescribeVulWhitelistRequest) (<-chan *DescribeVulWhitelistResponse, <-chan error) {
 	responseChan := make(chan *DescribeVulWhitelistResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVulWhitelistWithChan(request *DescribeVulWhitelist
 }
 
 // DescribeVulWhitelistWithCallback invokes the sas.DescribeVulWhitelist API asynchronously
-// api document: https://help.aliyun.com/api/sas/describevulwhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVulWhitelistWithCallback(request *DescribeVulWhitelistRequest, callback func(response *DescribeVulWhitelistResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateDescribeVulWhitelistRequest() (request *DescribeVulWhitelistRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeVulWhitelist", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

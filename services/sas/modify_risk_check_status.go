@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyRiskCheckStatus invokes the sas.ModifyRiskCheckStatus API synchronously
-// api document: https://help.aliyun.com/api/sas/modifyriskcheckstatus.html
 func (client *Client) ModifyRiskCheckStatus(request *ModifyRiskCheckStatusRequest) (response *ModifyRiskCheckStatusResponse, err error) {
 	response = CreateModifyRiskCheckStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyRiskCheckStatus(request *ModifyRiskCheckStatusReques
 }
 
 // ModifyRiskCheckStatusWithChan invokes the sas.ModifyRiskCheckStatus API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifyriskcheckstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRiskCheckStatusWithChan(request *ModifyRiskCheckStatusRequest) (<-chan *ModifyRiskCheckStatusResponse, <-chan error) {
 	responseChan := make(chan *ModifyRiskCheckStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyRiskCheckStatusWithChan(request *ModifyRiskCheckStat
 }
 
 // ModifyRiskCheckStatusWithCallback invokes the sas.ModifyRiskCheckStatus API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifyriskcheckstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRiskCheckStatusWithCallback(request *ModifyRiskCheckStatusRequest, callback func(response *ModifyRiskCheckStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateModifyRiskCheckStatusRequest() (request *ModifyRiskCheckStatusRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyRiskCheckStatus", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

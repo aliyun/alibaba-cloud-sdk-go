@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeExportInfo invokes the sas.DescribeExportInfo API synchronously
-// api document: https://help.aliyun.com/api/sas/describeexportinfo.html
 func (client *Client) DescribeExportInfo(request *DescribeExportInfoRequest) (response *DescribeExportInfoResponse, err error) {
 	response = CreateDescribeExportInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeExportInfo(request *DescribeExportInfoRequest) (re
 }
 
 // DescribeExportInfoWithChan invokes the sas.DescribeExportInfo API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeexportinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExportInfoWithChan(request *DescribeExportInfoRequest) (<-chan *DescribeExportInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeExportInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeExportInfoWithChan(request *DescribeExportInfoRequ
 }
 
 // DescribeExportInfoWithCallback invokes the sas.DescribeExportInfo API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeexportinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExportInfoWithCallback(request *DescribeExportInfoRequest, callback func(response *DescribeExportInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateDescribeExportInfoRequest() (request *DescribeExportInfoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeExportInfo", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

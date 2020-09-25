@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSearchCondition invokes the sas.DescribeSearchCondition API synchronously
-// api document: https://help.aliyun.com/api/sas/describesearchcondition.html
 func (client *Client) DescribeSearchCondition(request *DescribeSearchConditionRequest) (response *DescribeSearchConditionResponse, err error) {
 	response = CreateDescribeSearchConditionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSearchCondition(request *DescribeSearchConditionRe
 }
 
 // DescribeSearchConditionWithChan invokes the sas.DescribeSearchCondition API asynchronously
-// api document: https://help.aliyun.com/api/sas/describesearchcondition.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSearchConditionWithChan(request *DescribeSearchConditionRequest) (<-chan *DescribeSearchConditionResponse, <-chan error) {
 	responseChan := make(chan *DescribeSearchConditionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSearchConditionWithChan(request *DescribeSearchCon
 }
 
 // DescribeSearchConditionWithCallback invokes the sas.DescribeSearchCondition API asynchronously
-// api document: https://help.aliyun.com/api/sas/describesearchcondition.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSearchConditionWithCallback(request *DescribeSearchConditionRequest, callback func(response *DescribeSearchConditionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeSearchConditionRequest() (request *DescribeSearchConditionReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSearchCondition", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

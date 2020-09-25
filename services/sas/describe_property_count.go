@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePropertyCount invokes the sas.DescribePropertyCount API synchronously
-// api document: https://help.aliyun.com/api/sas/describepropertycount.html
 func (client *Client) DescribePropertyCount(request *DescribePropertyCountRequest) (response *DescribePropertyCountResponse, err error) {
 	response = CreateDescribePropertyCountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePropertyCount(request *DescribePropertyCountReques
 }
 
 // DescribePropertyCountWithChan invokes the sas.DescribePropertyCount API asynchronously
-// api document: https://help.aliyun.com/api/sas/describepropertycount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePropertyCountWithChan(request *DescribePropertyCountRequest) (<-chan *DescribePropertyCountResponse, <-chan error) {
 	responseChan := make(chan *DescribePropertyCountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePropertyCountWithChan(request *DescribePropertyCou
 }
 
 // DescribePropertyCountWithCallback invokes the sas.DescribePropertyCount API asynchronously
-// api document: https://help.aliyun.com/api/sas/describepropertycount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePropertyCountWithCallback(request *DescribePropertyCountRequest, callback func(response *DescribePropertyCountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,6 +85,8 @@ type DescribePropertyCountResponse struct {
 	Software  int    `json:"Software" xml:"Software"`
 	User      int    `json:"User" xml:"User"`
 	Cron      int    `json:"Cron" xml:"Cron"`
+	Sca       int    `json:"Sca" xml:"Sca"`
+	AutoRun   int    `json:"AutoRun" xml:"AutoRun"`
 }
 
 // CreateDescribePropertyCountRequest creates a request to invoke DescribePropertyCount API
@@ -98,6 +95,7 @@ func CreateDescribePropertyCountRequest() (request *DescribePropertyCountRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyCount", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

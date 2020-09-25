@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyNoticeConfig invokes the sas.ModifyNoticeConfig API synchronously
-// api document: https://help.aliyun.com/api/sas/modifynoticeconfig.html
 func (client *Client) ModifyNoticeConfig(request *ModifyNoticeConfigRequest) (response *ModifyNoticeConfigResponse, err error) {
 	response = CreateModifyNoticeConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyNoticeConfig(request *ModifyNoticeConfigRequest) (re
 }
 
 // ModifyNoticeConfigWithChan invokes the sas.ModifyNoticeConfig API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifynoticeconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNoticeConfigWithChan(request *ModifyNoticeConfigRequest) (<-chan *ModifyNoticeConfigResponse, <-chan error) {
 	responseChan := make(chan *ModifyNoticeConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyNoticeConfigWithChan(request *ModifyNoticeConfigRequ
 }
 
 // ModifyNoticeConfigWithCallback invokes the sas.ModifyNoticeConfig API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifynoticeconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNoticeConfigWithCallback(request *ModifyNoticeConfigRequest, callback func(response *ModifyNoticeConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateModifyNoticeConfigRequest() (request *ModifyNoticeConfigRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyNoticeConfig", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

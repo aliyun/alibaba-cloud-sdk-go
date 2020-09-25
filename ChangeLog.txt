@@ -1,3 +1,8 @@
+2020-09-25 Version: v1.61.529
+- Generated 2018-12-03 for `Sas`.
+- Support DescribeSuspEventQuaraFiles API.
+- Support RefreshContainerAsserts API.
+
 2020-09-25 Version: v1.61.528
 - Generated 2020-03-30, 2019-10-30 for `aliyuncvc`.
 - Public beta version.

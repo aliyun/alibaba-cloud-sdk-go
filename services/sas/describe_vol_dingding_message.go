@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVolDingdingMessage invokes the sas.DescribeVolDingdingMessage API synchronously
-// api document: https://help.aliyun.com/api/sas/describevoldingdingmessage.html
 func (client *Client) DescribeVolDingdingMessage(request *DescribeVolDingdingMessageRequest) (response *DescribeVolDingdingMessageResponse, err error) {
 	response = CreateDescribeVolDingdingMessageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVolDingdingMessage(request *DescribeVolDingdingMes
 }
 
 // DescribeVolDingdingMessageWithChan invokes the sas.DescribeVolDingdingMessage API asynchronously
-// api document: https://help.aliyun.com/api/sas/describevoldingdingmessage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVolDingdingMessageWithChan(request *DescribeVolDingdingMessageRequest) (<-chan *DescribeVolDingdingMessageResponse, <-chan error) {
 	responseChan := make(chan *DescribeVolDingdingMessageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVolDingdingMessageWithChan(request *DescribeVolDin
 }
 
 // DescribeVolDingdingMessageWithCallback invokes the sas.DescribeVolDingdingMessage API asynchronously
-// api document: https://help.aliyun.com/api/sas/describevoldingdingmessage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVolDingdingMessageWithCallback(request *DescribeVolDingdingMessageRequest, callback func(response *DescribeVolDingdingMessageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeVolDingdingMessageRequest() (request *DescribeVolDingdingMess
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeVolDingdingMessage", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

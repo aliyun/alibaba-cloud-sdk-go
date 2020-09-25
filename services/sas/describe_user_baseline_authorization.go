@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUserBaselineAuthorization invokes the sas.DescribeUserBaselineAuthorization API synchronously
-// api document: https://help.aliyun.com/api/sas/describeuserbaselineauthorization.html
 func (client *Client) DescribeUserBaselineAuthorization(request *DescribeUserBaselineAuthorizationRequest) (response *DescribeUserBaselineAuthorizationResponse, err error) {
 	response = CreateDescribeUserBaselineAuthorizationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUserBaselineAuthorization(request *DescribeUserBas
 }
 
 // DescribeUserBaselineAuthorizationWithChan invokes the sas.DescribeUserBaselineAuthorization API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeuserbaselineauthorization.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserBaselineAuthorizationWithChan(request *DescribeUserBaselineAuthorizationRequest) (<-chan *DescribeUserBaselineAuthorizationResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserBaselineAuthorizationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUserBaselineAuthorizationWithChan(request *Describ
 }
 
 // DescribeUserBaselineAuthorizationWithCallback invokes the sas.DescribeUserBaselineAuthorization API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeuserbaselineauthorization.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserBaselineAuthorizationWithCallback(request *DescribeUserBaselineAuthorizationRequest, callback func(response *DescribeUserBaselineAuthorizationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeUserBaselineAuthorizationRequest() (request *DescribeUserBase
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeUserBaselineAuthorization", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVulDetails invokes the sas.DescribeVulDetails API synchronously
-// api document: https://help.aliyun.com/api/sas/describevuldetails.html
 func (client *Client) DescribeVulDetails(request *DescribeVulDetailsRequest) (response *DescribeVulDetailsResponse, err error) {
 	response = CreateDescribeVulDetailsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVulDetails(request *DescribeVulDetailsRequest) (re
 }
 
 // DescribeVulDetailsWithChan invokes the sas.DescribeVulDetails API asynchronously
-// api document: https://help.aliyun.com/api/sas/describevuldetails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVulDetailsWithChan(request *DescribeVulDetailsRequest) (<-chan *DescribeVulDetailsResponse, <-chan error) {
 	responseChan := make(chan *DescribeVulDetailsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVulDetailsWithChan(request *DescribeVulDetailsRequ
 }
 
 // DescribeVulDetailsWithCallback invokes the sas.DescribeVulDetails API asynchronously
-// api document: https://help.aliyun.com/api/sas/describevuldetails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVulDetailsWithCallback(request *DescribeVulDetailsRequest, callback func(response *DescribeVulDetailsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateDescribeVulDetailsRequest() (request *DescribeVulDetailsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeVulDetails", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

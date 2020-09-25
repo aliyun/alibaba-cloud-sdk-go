@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteTagWithUuid invokes the sas.DeleteTagWithUuid API synchronously
-// api document: https://help.aliyun.com/api/sas/deletetagwithuuid.html
 func (client *Client) DeleteTagWithUuid(request *DeleteTagWithUuidRequest) (response *DeleteTagWithUuidResponse, err error) {
 	response = CreateDeleteTagWithUuidResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteTagWithUuid(request *DeleteTagWithUuidRequest) (resp
 }
 
 // DeleteTagWithUuidWithChan invokes the sas.DeleteTagWithUuid API asynchronously
-// api document: https://help.aliyun.com/api/sas/deletetagwithuuid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTagWithUuidWithChan(request *DeleteTagWithUuidRequest) (<-chan *DeleteTagWithUuidResponse, <-chan error) {
 	responseChan := make(chan *DeleteTagWithUuidResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteTagWithUuidWithChan(request *DeleteTagWithUuidReques
 }
 
 // DeleteTagWithUuidWithCallback invokes the sas.DeleteTagWithUuid API asynchronously
-// api document: https://help.aliyun.com/api/sas/deletetagwithuuid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTagWithUuidWithCallback(request *DeleteTagWithUuidRequest, callback func(response *DeleteTagWithUuidResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDeleteTagWithUuidRequest() (request *DeleteTagWithUuidRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DeleteTagWithUuid", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

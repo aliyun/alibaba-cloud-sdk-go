@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFieldStatistics invokes the sas.DescribeFieldStatistics API synchronously
-// api document: https://help.aliyun.com/api/sas/describefieldstatistics.html
 func (client *Client) DescribeFieldStatistics(request *DescribeFieldStatisticsRequest) (response *DescribeFieldStatisticsResponse, err error) {
 	response = CreateDescribeFieldStatisticsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFieldStatistics(request *DescribeFieldStatisticsRe
 }
 
 // DescribeFieldStatisticsWithChan invokes the sas.DescribeFieldStatistics API asynchronously
-// api document: https://help.aliyun.com/api/sas/describefieldstatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFieldStatisticsWithChan(request *DescribeFieldStatisticsRequest) (<-chan *DescribeFieldStatisticsResponse, <-chan error) {
 	responseChan := make(chan *DescribeFieldStatisticsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFieldStatisticsWithChan(request *DescribeFieldStat
 }
 
 // DescribeFieldStatisticsWithCallback invokes the sas.DescribeFieldStatistics API asynchronously
-// api document: https://help.aliyun.com/api/sas/describefieldstatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFieldStatisticsWithCallback(request *DescribeFieldStatisticsRequest, callback func(response *DescribeFieldStatisticsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeFieldStatisticsRequest() (request *DescribeFieldStatisticsReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeFieldStatistics", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

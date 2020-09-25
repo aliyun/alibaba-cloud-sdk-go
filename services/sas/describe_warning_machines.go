@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeWarningMachines invokes the sas.DescribeWarningMachines API synchronously
-// api document: https://help.aliyun.com/api/sas/describewarningmachines.html
 func (client *Client) DescribeWarningMachines(request *DescribeWarningMachinesRequest) (response *DescribeWarningMachinesResponse, err error) {
 	response = CreateDescribeWarningMachinesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeWarningMachines(request *DescribeWarningMachinesRe
 }
 
 // DescribeWarningMachinesWithChan invokes the sas.DescribeWarningMachines API asynchronously
-// api document: https://help.aliyun.com/api/sas/describewarningmachines.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWarningMachinesWithChan(request *DescribeWarningMachinesRequest) (<-chan *DescribeWarningMachinesResponse, <-chan error) {
 	responseChan := make(chan *DescribeWarningMachinesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeWarningMachinesWithChan(request *DescribeWarningMa
 }
 
 // DescribeWarningMachinesWithCallback invokes the sas.DescribeWarningMachines API asynchronously
-// api document: https://help.aliyun.com/api/sas/describewarningmachines.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWarningMachinesWithCallback(request *DescribeWarningMachinesRequest, callback func(response *DescribeWarningMachinesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,6 +98,7 @@ func CreateDescribeWarningMachinesRequest() (request *DescribeWarningMachinesReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeWarningMachines", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

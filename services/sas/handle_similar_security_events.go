@@ -21,7 +21,6 @@ import (
 )
 
 // HandleSimilarSecurityEvents invokes the sas.HandleSimilarSecurityEvents API synchronously
-// api document: https://help.aliyun.com/api/sas/handlesimilarsecurityevents.html
 func (client *Client) HandleSimilarSecurityEvents(request *HandleSimilarSecurityEventsRequest) (response *HandleSimilarSecurityEventsResponse, err error) {
 	response = CreateHandleSimilarSecurityEventsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) HandleSimilarSecurityEvents(request *HandleSimilarSecurity
 }
 
 // HandleSimilarSecurityEventsWithChan invokes the sas.HandleSimilarSecurityEvents API asynchronously
-// api document: https://help.aliyun.com/api/sas/handlesimilarsecurityevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) HandleSimilarSecurityEventsWithChan(request *HandleSimilarSecurityEventsRequest) (<-chan *HandleSimilarSecurityEventsResponse, <-chan error) {
 	responseChan := make(chan *HandleSimilarSecurityEventsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) HandleSimilarSecurityEventsWithChan(request *HandleSimilar
 }
 
 // HandleSimilarSecurityEventsWithCallback invokes the sas.HandleSimilarSecurityEvents API asynchronously
-// api document: https://help.aliyun.com/api/sas/handlesimilarsecurityevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) HandleSimilarSecurityEventsWithCallback(request *HandleSimilarSecurityEventsRequest, callback func(response *HandleSimilarSecurityEventsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) HandleSimilarSecurityEventsWithCallback(request *HandleSim
 // HandleSimilarSecurityEventsRequest is the request struct for api HandleSimilarSecurityEvents
 type HandleSimilarSecurityEventsRequest struct {
 	*requests.RpcRequest
+	MarkMissParam   string           `position:"Query" name:"MarkMissParam"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
 	OperationCode   string           `position:"Query" name:"OperationCode"`
@@ -95,6 +91,7 @@ func CreateHandleSimilarSecurityEventsRequest() (request *HandleSimilarSecurityE
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "HandleSimilarSecurityEvents", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

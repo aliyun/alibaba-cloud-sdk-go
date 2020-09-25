@@ -21,7 +21,6 @@ import (
 )
 
 // FixCheckWarnings invokes the sas.FixCheckWarnings API synchronously
-// api document: https://help.aliyun.com/api/sas/fixcheckwarnings.html
 func (client *Client) FixCheckWarnings(request *FixCheckWarningsRequest) (response *FixCheckWarningsResponse, err error) {
 	response = CreateFixCheckWarningsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FixCheckWarnings(request *FixCheckWarningsRequest) (respon
 }
 
 // FixCheckWarningsWithChan invokes the sas.FixCheckWarnings API asynchronously
-// api document: https://help.aliyun.com/api/sas/fixcheckwarnings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FixCheckWarningsWithChan(request *FixCheckWarningsRequest) (<-chan *FixCheckWarningsResponse, <-chan error) {
 	responseChan := make(chan *FixCheckWarningsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FixCheckWarningsWithChan(request *FixCheckWarningsRequest)
 }
 
 // FixCheckWarningsWithCallback invokes the sas.FixCheckWarnings API asynchronously
-// api document: https://help.aliyun.com/api/sas/fixcheckwarnings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FixCheckWarningsWithCallback(request *FixCheckWarningsRequest, callback func(response *FixCheckWarningsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateFixCheckWarningsRequest() (request *FixCheckWarningsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "FixCheckWarnings", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

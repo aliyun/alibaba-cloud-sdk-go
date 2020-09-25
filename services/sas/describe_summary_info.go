@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSummaryInfo invokes the sas.DescribeSummaryInfo API synchronously
-// api document: https://help.aliyun.com/api/sas/describesummaryinfo.html
 func (client *Client) DescribeSummaryInfo(request *DescribeSummaryInfoRequest) (response *DescribeSummaryInfoResponse, err error) {
 	response = CreateDescribeSummaryInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSummaryInfo(request *DescribeSummaryInfoRequest) (
 }
 
 // DescribeSummaryInfoWithChan invokes the sas.DescribeSummaryInfo API asynchronously
-// api document: https://help.aliyun.com/api/sas/describesummaryinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSummaryInfoWithChan(request *DescribeSummaryInfoRequest) (<-chan *DescribeSummaryInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeSummaryInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSummaryInfoWithChan(request *DescribeSummaryInfoRe
 }
 
 // DescribeSummaryInfoWithCallback invokes the sas.DescribeSummaryInfo API asynchronously
-// api document: https://help.aliyun.com/api/sas/describesummaryinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSummaryInfoWithCallback(request *DescribeSummaryInfoRequest, callback func(response *DescribeSummaryInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateDescribeSummaryInfoRequest() (request *DescribeSummaryInfoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSummaryInfo", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

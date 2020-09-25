@@ -21,7 +21,6 @@ import (
 )
 
 // CreateSimilarSecurityEventsQueryTask invokes the sas.CreateSimilarSecurityEventsQueryTask API synchronously
-// api document: https://help.aliyun.com/api/sas/createsimilarsecurityeventsquerytask.html
 func (client *Client) CreateSimilarSecurityEventsQueryTask(request *CreateSimilarSecurityEventsQueryTaskRequest) (response *CreateSimilarSecurityEventsQueryTaskResponse, err error) {
 	response = CreateCreateSimilarSecurityEventsQueryTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateSimilarSecurityEventsQueryTask(request *CreateSimila
 }
 
 // CreateSimilarSecurityEventsQueryTaskWithChan invokes the sas.CreateSimilarSecurityEventsQueryTask API asynchronously
-// api document: https://help.aliyun.com/api/sas/createsimilarsecurityeventsquerytask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSimilarSecurityEventsQueryTaskWithChan(request *CreateSimilarSecurityEventsQueryTaskRequest) (<-chan *CreateSimilarSecurityEventsQueryTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateSimilarSecurityEventsQueryTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateSimilarSecurityEventsQueryTaskWithChan(request *Crea
 }
 
 // CreateSimilarSecurityEventsQueryTaskWithCallback invokes the sas.CreateSimilarSecurityEventsQueryTask API asynchronously
-// api document: https://help.aliyun.com/api/sas/createsimilarsecurityeventsquerytask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSimilarSecurityEventsQueryTaskWithCallback(request *CreateSimilarSecurityEventsQueryTaskRequest, callback func(response *CreateSimilarSecurityEventsQueryTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,8 +80,8 @@ type CreateSimilarSecurityEventsQueryTaskRequest struct {
 // CreateSimilarSecurityEventsQueryTaskResponse is the response struct for api CreateSimilarSecurityEventsQueryTask
 type CreateSimilarSecurityEventsQueryTaskResponse struct {
 	*responses.BaseResponse
-	RequestId                                    string                                            `json:"RequestId" xml:"RequestId"`
-	CreateSimilarSecurityEventsQueryTaskResponse CreateSimilarSecurityEventsQueryTaskResponseModel `json:"CreateSimilarSecurityEventsQueryTaskResponse" xml:"CreateSimilarSecurityEventsQueryTaskResponse"`
+	RequestId                                    string                                       `json:"RequestId" xml:"RequestId"`
+	CreateSimilarSecurityEventsQueryTaskResponse CreateSimilarSecurityEventsQueryTaskResponse `json:"CreateSimilarSecurityEventsQueryTaskResponse" xml:"CreateSimilarSecurityEventsQueryTaskResponse"`
 }
 
 // CreateCreateSimilarSecurityEventsQueryTaskRequest creates a request to invoke CreateSimilarSecurityEventsQueryTask API
@@ -95,6 +90,7 @@ func CreateCreateSimilarSecurityEventsQueryTaskRequest() (request *CreateSimilar
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "CreateSimilarSecurityEventsQueryTask", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

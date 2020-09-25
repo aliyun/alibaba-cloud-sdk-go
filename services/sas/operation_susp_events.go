@@ -21,7 +21,6 @@ import (
 )
 
 // OperationSuspEvents invokes the sas.OperationSuspEvents API synchronously
-// api document: https://help.aliyun.com/api/sas/operationsuspevents.html
 func (client *Client) OperationSuspEvents(request *OperationSuspEventsRequest) (response *OperationSuspEventsResponse, err error) {
 	response = CreateOperationSuspEventsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OperationSuspEvents(request *OperationSuspEventsRequest) (
 }
 
 // OperationSuspEventsWithChan invokes the sas.OperationSuspEvents API asynchronously
-// api document: https://help.aliyun.com/api/sas/operationsuspevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OperationSuspEventsWithChan(request *OperationSuspEventsRequest) (<-chan *OperationSuspEventsResponse, <-chan error) {
 	responseChan := make(chan *OperationSuspEventsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OperationSuspEventsWithChan(request *OperationSuspEventsRe
 }
 
 // OperationSuspEventsWithCallback invokes the sas.OperationSuspEvents API asynchronously
-// api document: https://help.aliyun.com/api/sas/operationsuspevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OperationSuspEventsWithCallback(request *OperationSuspEventsRequest, callback func(response *OperationSuspEventsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateOperationSuspEventsRequest() (request *OperationSuspEventsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "OperationSuspEvents", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

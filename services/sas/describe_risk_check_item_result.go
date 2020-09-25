@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRiskCheckItemResult invokes the sas.DescribeRiskCheckItemResult API synchronously
-// api document: https://help.aliyun.com/api/sas/describeriskcheckitemresult.html
 func (client *Client) DescribeRiskCheckItemResult(request *DescribeRiskCheckItemResultRequest) (response *DescribeRiskCheckItemResultResponse, err error) {
 	response = CreateDescribeRiskCheckItemResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRiskCheckItemResult(request *DescribeRiskCheckItem
 }
 
 // DescribeRiskCheckItemResultWithChan invokes the sas.DescribeRiskCheckItemResult API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeriskcheckitemresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRiskCheckItemResultWithChan(request *DescribeRiskCheckItemResultRequest) (<-chan *DescribeRiskCheckItemResultResponse, <-chan error) {
 	responseChan := make(chan *DescribeRiskCheckItemResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRiskCheckItemResultWithChan(request *DescribeRiskC
 }
 
 // DescribeRiskCheckItemResultWithCallback invokes the sas.DescribeRiskCheckItemResult API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeriskcheckitemresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRiskCheckItemResultWithCallback(request *DescribeRiskCheckItemResultRequest, callback func(response *DescribeRiskCheckItemResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateDescribeRiskCheckItemResultRequest() (request *DescribeRiskCheckItemR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeRiskCheckItemResult", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

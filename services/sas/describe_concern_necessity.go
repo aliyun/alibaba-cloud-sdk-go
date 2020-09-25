@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeConcernNecessity invokes the sas.DescribeConcernNecessity API synchronously
-// api document: https://help.aliyun.com/api/sas/describeconcernnecessity.html
 func (client *Client) DescribeConcernNecessity(request *DescribeConcernNecessityRequest) (response *DescribeConcernNecessityResponse, err error) {
 	response = CreateDescribeConcernNecessityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeConcernNecessity(request *DescribeConcernNecessity
 }
 
 // DescribeConcernNecessityWithChan invokes the sas.DescribeConcernNecessity API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeconcernnecessity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeConcernNecessityWithChan(request *DescribeConcernNecessityRequest) (<-chan *DescribeConcernNecessityResponse, <-chan error) {
 	responseChan := make(chan *DescribeConcernNecessityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeConcernNecessityWithChan(request *DescribeConcernN
 }
 
 // DescribeConcernNecessityWithCallback invokes the sas.DescribeConcernNecessity API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeconcernnecessity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeConcernNecessityWithCallback(request *DescribeConcernNecessityRequest, callback func(response *DescribeConcernNecessityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeConcernNecessityRequest() (request *DescribeConcernNecessityR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeConcernNecessity", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

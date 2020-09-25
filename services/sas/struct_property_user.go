@@ -18,6 +18,7 @@ package sas
 // PropertyUser is a nested struct in sas response
 type PropertyUser struct {
 	LastLoginTime          string   `json:"LastLoginTime" xml:"LastLoginTime"`
+	LastLoginTimestamp     int64    `json:"LastLoginTimestamp" xml:"LastLoginTimestamp"`
 	IsRoot                 string   `json:"IsRoot" xml:"IsRoot"`
 	InstanceName           string   `json:"InstanceName" xml:"InstanceName"`
 	AccountsExpirationDate string   `json:"AccountsExpirationDate" xml:"AccountsExpirationDate"`

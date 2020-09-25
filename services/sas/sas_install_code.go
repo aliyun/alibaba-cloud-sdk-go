@@ -21,7 +21,6 @@ import (
 )
 
 // SasInstallCode invokes the sas.SasInstallCode API synchronously
-// api document: https://help.aliyun.com/api/sas/sasinstallcode.html
 func (client *Client) SasInstallCode(request *SasInstallCodeRequest) (response *SasInstallCodeResponse, err error) {
 	response = CreateSasInstallCodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SasInstallCode(request *SasInstallCodeRequest) (response *
 }
 
 // SasInstallCodeWithChan invokes the sas.SasInstallCode API asynchronously
-// api document: https://help.aliyun.com/api/sas/sasinstallcode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SasInstallCodeWithChan(request *SasInstallCodeRequest) (<-chan *SasInstallCodeResponse, <-chan error) {
 	responseChan := make(chan *SasInstallCodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SasInstallCodeWithChan(request *SasInstallCodeRequest) (<-
 }
 
 // SasInstallCodeWithCallback invokes the sas.SasInstallCode API asynchronously
-// api document: https://help.aliyun.com/api/sas/sasinstallcode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SasInstallCodeWithCallback(request *SasInstallCodeRequest, callback func(response *SasInstallCodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateSasInstallCodeRequest() (request *SasInstallCodeRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "SasInstallCode", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSecureSuggestion invokes the sas.DescribeSecureSuggestion API synchronously
-// api document: https://help.aliyun.com/api/sas/describesecuresuggestion.html
 func (client *Client) DescribeSecureSuggestion(request *DescribeSecureSuggestionRequest) (response *DescribeSecureSuggestionResponse, err error) {
 	response = CreateDescribeSecureSuggestionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSecureSuggestion(request *DescribeSecureSuggestion
 }
 
 // DescribeSecureSuggestionWithChan invokes the sas.DescribeSecureSuggestion API asynchronously
-// api document: https://help.aliyun.com/api/sas/describesecuresuggestion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecureSuggestionWithChan(request *DescribeSecureSuggestionRequest) (<-chan *DescribeSecureSuggestionResponse, <-chan error) {
 	responseChan := make(chan *DescribeSecureSuggestionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSecureSuggestionWithChan(request *DescribeSecureSu
 }
 
 // DescribeSecureSuggestionWithCallback invokes the sas.DescribeSecureSuggestion API asynchronously
-// api document: https://help.aliyun.com/api/sas/describesecuresuggestion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecureSuggestionWithCallback(request *DescribeSecureSuggestionRequest, callback func(response *DescribeSecureSuggestionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeSecureSuggestionRequest() (request *DescribeSecureSuggestionR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSecureSuggestion", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSecurityCheckScheduleConfig invokes the sas.DescribeSecurityCheckScheduleConfig API synchronously
-// api document: https://help.aliyun.com/api/sas/describesecuritycheckscheduleconfig.html
 func (client *Client) DescribeSecurityCheckScheduleConfig(request *DescribeSecurityCheckScheduleConfigRequest) (response *DescribeSecurityCheckScheduleConfigResponse, err error) {
 	response = CreateDescribeSecurityCheckScheduleConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSecurityCheckScheduleConfig(request *DescribeSecur
 }
 
 // DescribeSecurityCheckScheduleConfigWithChan invokes the sas.DescribeSecurityCheckScheduleConfig API asynchronously
-// api document: https://help.aliyun.com/api/sas/describesecuritycheckscheduleconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityCheckScheduleConfigWithChan(request *DescribeSecurityCheckScheduleConfigRequest) (<-chan *DescribeSecurityCheckScheduleConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeSecurityCheckScheduleConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSecurityCheckScheduleConfigWithChan(request *Descr
 }
 
 // DescribeSecurityCheckScheduleConfigWithCallback invokes the sas.DescribeSecurityCheckScheduleConfig API asynchronously
-// api document: https://help.aliyun.com/api/sas/describesecuritycheckscheduleconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityCheckScheduleConfigWithCallback(request *DescribeSecurityCheckScheduleConfigRequest, callback func(response *DescribeSecurityCheckScheduleConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeSecurityCheckScheduleConfigRequest() (request *DescribeSecuri
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSecurityCheckScheduleConfig", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAlarmEventList invokes the sas.DescribeAlarmEventList API synchronously
-// api document: https://help.aliyun.com/api/sas/describealarmeventlist.html
 func (client *Client) DescribeAlarmEventList(request *DescribeAlarmEventListRequest) (response *DescribeAlarmEventListResponse, err error) {
 	response = CreateDescribeAlarmEventListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAlarmEventList(request *DescribeAlarmEventListRequ
 }
 
 // DescribeAlarmEventListWithChan invokes the sas.DescribeAlarmEventList API asynchronously
-// api document: https://help.aliyun.com/api/sas/describealarmeventlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAlarmEventListWithChan(request *DescribeAlarmEventListRequest) (<-chan *DescribeAlarmEventListResponse, <-chan error) {
 	responseChan := make(chan *DescribeAlarmEventListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAlarmEventListWithChan(request *DescribeAlarmEvent
 }
 
 // DescribeAlarmEventListWithCallback invokes the sas.DescribeAlarmEventList API asynchronously
-// api document: https://help.aliyun.com/api/sas/describealarmeventlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAlarmEventListWithCallback(request *DescribeAlarmEventListRequest, callback func(response *DescribeAlarmEventListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,16 +71,20 @@ func (client *Client) DescribeAlarmEventListWithCallback(request *DescribeAlarmE
 // DescribeAlarmEventListRequest is the request struct for api DescribeAlarmEventList
 type DescribeAlarmEventListRequest struct {
 	*requests.RpcRequest
+	TargetType           string           `position:"Query" name:"TargetType"`
 	AlarmEventType       string           `position:"Query" name:"AlarmEventType"`
 	Remark               string           `position:"Query" name:"Remark"`
+	ContainerFieldName   string           `position:"Query" name:"ContainerFieldName"`
 	AlarmEventName       string           `position:"Query" name:"AlarmEventName"`
 	SourceIp             string           `position:"Query" name:"SourceIp"`
+	ContainerFieldValue  string           `position:"Query" name:"ContainerFieldValue"`
 	PageSize             string           `position:"Query" name:"PageSize"`
 	From                 string           `position:"Query" name:"From"`
 	Lang                 string           `position:"Query" name:"Lang"`
 	GroupId              string           `position:"Query" name:"GroupId"`
 	Dealed               string           `position:"Query" name:"Dealed"`
 	CurrentPage          requests.Integer `position:"Query" name:"CurrentPage"`
+	ClusterId            string           `position:"Query" name:"ClusterId"`
 	OperateErrorCodeList *[]string        `position:"Query" name:"OperateErrorCodeList"  type:"Repeated"`
 	Levels               string           `position:"Query" name:"Levels"`
 }
@@ -104,6 +103,7 @@ func CreateDescribeAlarmEventListRequest() (request *DescribeAlarmEventListReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAlarmEventList", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

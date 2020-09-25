@@ -21,7 +21,6 @@ import (
 )
 
 // OperateSuspiciousTargetConfig invokes the sas.OperateSuspiciousTargetConfig API synchronously
-// api document: https://help.aliyun.com/api/sas/operatesuspicioustargetconfig.html
 func (client *Client) OperateSuspiciousTargetConfig(request *OperateSuspiciousTargetConfigRequest) (response *OperateSuspiciousTargetConfigResponse, err error) {
 	response = CreateOperateSuspiciousTargetConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OperateSuspiciousTargetConfig(request *OperateSuspiciousTa
 }
 
 // OperateSuspiciousTargetConfigWithChan invokes the sas.OperateSuspiciousTargetConfig API asynchronously
-// api document: https://help.aliyun.com/api/sas/operatesuspicioustargetconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OperateSuspiciousTargetConfigWithChan(request *OperateSuspiciousTargetConfigRequest) (<-chan *OperateSuspiciousTargetConfigResponse, <-chan error) {
 	responseChan := make(chan *OperateSuspiciousTargetConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OperateSuspiciousTargetConfigWithChan(request *OperateSusp
 }
 
 // OperateSuspiciousTargetConfigWithCallback invokes the sas.OperateSuspiciousTargetConfig API asynchronously
-// api document: https://help.aliyun.com/api/sas/operatesuspicioustargetconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OperateSuspiciousTargetConfigWithCallback(request *OperateSuspiciousTargetConfigRequest, callback func(response *OperateSuspiciousTargetConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateOperateSuspiciousTargetConfigRequest() (request *OperateSuspiciousTar
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "OperateSuspiciousTargetConfig", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

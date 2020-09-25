@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstanceStatistics invokes the sas.DescribeInstanceStatistics API synchronously
-// api document: https://help.aliyun.com/api/sas/describeinstancestatistics.html
 func (client *Client) DescribeInstanceStatistics(request *DescribeInstanceStatisticsRequest) (response *DescribeInstanceStatisticsResponse, err error) {
 	response = CreateDescribeInstanceStatisticsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstanceStatistics(request *DescribeInstanceStatis
 }
 
 // DescribeInstanceStatisticsWithChan invokes the sas.DescribeInstanceStatistics API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeinstancestatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceStatisticsWithChan(request *DescribeInstanceStatisticsRequest) (<-chan *DescribeInstanceStatisticsResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceStatisticsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceStatisticsWithChan(request *DescribeInstan
 }
 
 // DescribeInstanceStatisticsWithCallback invokes the sas.DescribeInstanceStatistics API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeinstancestatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceStatisticsWithCallback(request *DescribeInstanceStatisticsRequest, callback func(response *DescribeInstanceStatisticsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateDescribeInstanceStatisticsRequest() (request *DescribeInstanceStatist
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeInstanceStatistics", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

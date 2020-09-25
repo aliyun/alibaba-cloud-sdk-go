@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySecurityCheckScheduleConfig invokes the sas.ModifySecurityCheckScheduleConfig API synchronously
-// api document: https://help.aliyun.com/api/sas/modifysecuritycheckscheduleconfig.html
 func (client *Client) ModifySecurityCheckScheduleConfig(request *ModifySecurityCheckScheduleConfigRequest) (response *ModifySecurityCheckScheduleConfigResponse, err error) {
 	response = CreateModifySecurityCheckScheduleConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySecurityCheckScheduleConfig(request *ModifySecurityC
 }
 
 // ModifySecurityCheckScheduleConfigWithChan invokes the sas.ModifySecurityCheckScheduleConfig API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifysecuritycheckscheduleconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityCheckScheduleConfigWithChan(request *ModifySecurityCheckScheduleConfigRequest) (<-chan *ModifySecurityCheckScheduleConfigResponse, <-chan error) {
 	responseChan := make(chan *ModifySecurityCheckScheduleConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySecurityCheckScheduleConfigWithChan(request *ModifyS
 }
 
 // ModifySecurityCheckScheduleConfigWithCallback invokes the sas.ModifySecurityCheckScheduleConfig API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifysecuritycheckscheduleconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityCheckScheduleConfigWithCallback(request *ModifySecurityCheckScheduleConfigRequest, callback func(response *ModifySecurityCheckScheduleConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateModifySecurityCheckScheduleConfigRequest() (request *ModifySecurityCh
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "ModifySecurityCheckScheduleConfig", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

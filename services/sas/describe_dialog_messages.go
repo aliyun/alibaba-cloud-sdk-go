@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDialogMessages invokes the sas.DescribeDialogMessages API synchronously
-// api document: https://help.aliyun.com/api/sas/describedialogmessages.html
 func (client *Client) DescribeDialogMessages(request *DescribeDialogMessagesRequest) (response *DescribeDialogMessagesResponse, err error) {
 	response = CreateDescribeDialogMessagesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDialogMessages(request *DescribeDialogMessagesRequ
 }
 
 // DescribeDialogMessagesWithChan invokes the sas.DescribeDialogMessages API asynchronously
-// api document: https://help.aliyun.com/api/sas/describedialogmessages.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDialogMessagesWithChan(request *DescribeDialogMessagesRequest) (<-chan *DescribeDialogMessagesResponse, <-chan error) {
 	responseChan := make(chan *DescribeDialogMessagesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDialogMessagesWithChan(request *DescribeDialogMess
 }
 
 // DescribeDialogMessagesWithCallback invokes the sas.DescribeDialogMessages API asynchronously
-// api document: https://help.aliyun.com/api/sas/describedialogmessages.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDialogMessagesWithCallback(request *DescribeDialogMessagesRequest, callback func(response *DescribeDialogMessagesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeDialogMessagesRequest() (request *DescribeDialogMessagesReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeDialogMessages", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSecurityStatInfo invokes the sas.DescribeSecurityStatInfo API synchronously
-// api document: https://help.aliyun.com/api/sas/describesecuritystatinfo.html
 func (client *Client) DescribeSecurityStatInfo(request *DescribeSecurityStatInfoRequest) (response *DescribeSecurityStatInfoResponse, err error) {
 	response = CreateDescribeSecurityStatInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSecurityStatInfo(request *DescribeSecurityStatInfo
 }
 
 // DescribeSecurityStatInfoWithChan invokes the sas.DescribeSecurityStatInfo API asynchronously
-// api document: https://help.aliyun.com/api/sas/describesecuritystatinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityStatInfoWithChan(request *DescribeSecurityStatInfoRequest) (<-chan *DescribeSecurityStatInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeSecurityStatInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSecurityStatInfoWithChan(request *DescribeSecurity
 }
 
 // DescribeSecurityStatInfoWithCallback invokes the sas.DescribeSecurityStatInfo API asynchronously
-// api document: https://help.aliyun.com/api/sas/describesecuritystatinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityStatInfoWithCallback(request *DescribeSecurityStatInfoRequest, callback func(response *DescribeSecurityStatInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateDescribeSecurityStatInfoRequest() (request *DescribeSecurityStatInfoR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSecurityStatInfo", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

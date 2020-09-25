@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeGroupedTags invokes the sas.DescribeGroupedTags API synchronously
-// api document: https://help.aliyun.com/api/sas/describegroupedtags.html
 func (client *Client) DescribeGroupedTags(request *DescribeGroupedTagsRequest) (response *DescribeGroupedTagsResponse, err error) {
 	response = CreateDescribeGroupedTagsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeGroupedTags(request *DescribeGroupedTagsRequest) (
 }
 
 // DescribeGroupedTagsWithChan invokes the sas.DescribeGroupedTags API asynchronously
-// api document: https://help.aliyun.com/api/sas/describegroupedtags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGroupedTagsWithChan(request *DescribeGroupedTagsRequest) (<-chan *DescribeGroupedTagsResponse, <-chan error) {
 	responseChan := make(chan *DescribeGroupedTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeGroupedTagsWithChan(request *DescribeGroupedTagsRe
 }
 
 // DescribeGroupedTagsWithCallback invokes the sas.DescribeGroupedTags API asynchronously
-// api document: https://help.aliyun.com/api/sas/describegroupedtags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGroupedTagsWithCallback(request *DescribeGroupedTagsRequest, callback func(response *DescribeGroupedTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateDescribeGroupedTagsRequest() (request *DescribeGroupedTagsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeGroupedTags", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

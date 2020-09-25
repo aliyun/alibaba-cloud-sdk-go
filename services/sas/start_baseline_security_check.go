@@ -21,7 +21,6 @@ import (
 )
 
 // StartBaselineSecurityCheck invokes the sas.StartBaselineSecurityCheck API synchronously
-// api document: https://help.aliyun.com/api/sas/startbaselinesecuritycheck.html
 func (client *Client) StartBaselineSecurityCheck(request *StartBaselineSecurityCheckRequest) (response *StartBaselineSecurityCheckResponse, err error) {
 	response = CreateStartBaselineSecurityCheckResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartBaselineSecurityCheck(request *StartBaselineSecurityC
 }
 
 // StartBaselineSecurityCheckWithChan invokes the sas.StartBaselineSecurityCheck API asynchronously
-// api document: https://help.aliyun.com/api/sas/startbaselinesecuritycheck.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartBaselineSecurityCheckWithChan(request *StartBaselineSecurityCheckRequest) (<-chan *StartBaselineSecurityCheckResponse, <-chan error) {
 	responseChan := make(chan *StartBaselineSecurityCheckResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartBaselineSecurityCheckWithChan(request *StartBaselineS
 }
 
 // StartBaselineSecurityCheckWithCallback invokes the sas.StartBaselineSecurityCheck API asynchronously
-// api document: https://help.aliyun.com/api/sas/startbaselinesecuritycheck.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartBaselineSecurityCheckWithCallback(request *StartBaselineSecurityCheckRequest, callback func(response *StartBaselineSecurityCheckResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateStartBaselineSecurityCheckRequest() (request *StartBaselineSecurityCh
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "StartBaselineSecurityCheck", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

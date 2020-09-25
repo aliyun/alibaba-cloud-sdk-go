@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyCreateVulWhitelist invokes the sas.ModifyCreateVulWhitelist API synchronously
-// api document: https://help.aliyun.com/api/sas/modifycreatevulwhitelist.html
 func (client *Client) ModifyCreateVulWhitelist(request *ModifyCreateVulWhitelistRequest) (response *ModifyCreateVulWhitelistResponse, err error) {
 	response = CreateModifyCreateVulWhitelistResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyCreateVulWhitelist(request *ModifyCreateVulWhitelist
 }
 
 // ModifyCreateVulWhitelistWithChan invokes the sas.ModifyCreateVulWhitelist API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifycreatevulwhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCreateVulWhitelistWithChan(request *ModifyCreateVulWhitelistRequest) (<-chan *ModifyCreateVulWhitelistResponse, <-chan error) {
 	responseChan := make(chan *ModifyCreateVulWhitelistResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyCreateVulWhitelistWithChan(request *ModifyCreateVulW
 }
 
 // ModifyCreateVulWhitelistWithCallback invokes the sas.ModifyCreateVulWhitelist API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifycreatevulwhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCreateVulWhitelistWithCallback(request *ModifyCreateVulWhitelistRequest, callback func(response *ModifyCreateVulWhitelistResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateModifyCreateVulWhitelistRequest() (request *ModifyCreateVulWhitelistR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyCreateVulWhitelist", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

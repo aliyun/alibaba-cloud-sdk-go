@@ -24,6 +24,7 @@ type SuspEventsItem struct {
 	Description            string `json:"Description" xml:"Description"`
 	StartTime              int64  `json:"StartTime" xml:"StartTime"`
 	EndTime                int64  `json:"EndTime" xml:"EndTime"`
+	OperateTime            int64  `json:"OperateTime" xml:"OperateTime"`
 	AlarmEventType         string `json:"AlarmEventType" xml:"AlarmEventType"`
 	SuspiciousEventCount   int    `json:"SuspiciousEventCount" xml:"SuspiciousEventCount"`
 	Uuid                   string `json:"Uuid" xml:"Uuid"`
@@ -41,4 +42,14 @@ type SuspEventsItem struct {
 	OperateErrorCode       string `json:"OperateErrorCode" xml:"OperateErrorCode"`
 	AlarmEventNameOriginal string `json:"AlarmEventNameOriginal" xml:"AlarmEventNameOriginal"`
 	InstanceId             string `json:"InstanceId" xml:"InstanceId"`
+	ContainHwMode          bool   `json:"ContainHwMode" xml:"ContainHwMode"`
+	Stages                 string `json:"Stages" xml:"Stages"`
+	ContainerImageId       string `json:"ContainerImageId" xml:"ContainerImageId"`
+	ContainerImageName     string `json:"ContainerImageName" xml:"ContainerImageName"`
+	ContainerId            string `json:"ContainerId" xml:"ContainerId"`
+	K8sNamespace           string `json:"K8sNamespace" xml:"K8sNamespace"`
+	K8sClusterId           string `json:"K8sClusterId" xml:"K8sClusterId"`
+	K8sNodeId              string `json:"K8sNodeId" xml:"K8sNodeId"`
+	K8sPodName             string `json:"K8sPodName" xml:"K8sPodName"`
+	K8sNodeName            string `json:"K8sNodeName" xml:"K8sNodeName"`
 }

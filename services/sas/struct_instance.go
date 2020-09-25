@@ -42,4 +42,7 @@ type Instance struct {
 	SafeEventCount   int    `json:"SafeEventCount" xml:"SafeEventCount"`
 	RegionId         string `json:"RegionId" xml:"RegionId"`
 	GroupId          string `json:"GroupId" xml:"GroupId"`
+	Importance       int    `json:"Importance" xml:"Importance"`
+	ClientVersion    string `json:"ClientVersion" xml:"ClientVersion"`
+	RiskCount        string `json:"RiskCount" xml:"RiskCount"`
 }

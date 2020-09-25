@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyVulTargetConfig invokes the sas.ModifyVulTargetConfig API synchronously
-// api document: https://help.aliyun.com/api/sas/modifyvultargetconfig.html
 func (client *Client) ModifyVulTargetConfig(request *ModifyVulTargetConfigRequest) (response *ModifyVulTargetConfigResponse, err error) {
 	response = CreateModifyVulTargetConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyVulTargetConfig(request *ModifyVulTargetConfigReques
 }
 
 // ModifyVulTargetConfigWithChan invokes the sas.ModifyVulTargetConfig API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifyvultargetconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVulTargetConfigWithChan(request *ModifyVulTargetConfigRequest) (<-chan *ModifyVulTargetConfigResponse, <-chan error) {
 	responseChan := make(chan *ModifyVulTargetConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyVulTargetConfigWithChan(request *ModifyVulTargetConf
 }
 
 // ModifyVulTargetConfigWithCallback invokes the sas.ModifyVulTargetConfig API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifyvultargetconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVulTargetConfigWithCallback(request *ModifyVulTargetConfigRequest, callback func(response *ModifyVulTargetConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateModifyVulTargetConfigRequest() (request *ModifyVulTargetConfigRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyVulTargetConfig", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

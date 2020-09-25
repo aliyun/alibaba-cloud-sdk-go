@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDingTalk invokes the sas.DescribeDingTalk API synchronously
-// api document: https://help.aliyun.com/api/sas/describedingtalk.html
 func (client *Client) DescribeDingTalk(request *DescribeDingTalkRequest) (response *DescribeDingTalkResponse, err error) {
 	response = CreateDescribeDingTalkResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDingTalk(request *DescribeDingTalkRequest) (respon
 }
 
 // DescribeDingTalkWithChan invokes the sas.DescribeDingTalk API asynchronously
-// api document: https://help.aliyun.com/api/sas/describedingtalk.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDingTalkWithChan(request *DescribeDingTalkRequest) (<-chan *DescribeDingTalkResponse, <-chan error) {
 	responseChan := make(chan *DescribeDingTalkResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDingTalkWithChan(request *DescribeDingTalkRequest)
 }
 
 // DescribeDingTalkWithCallback invokes the sas.DescribeDingTalk API asynchronously
-// api document: https://help.aliyun.com/api/sas/describedingtalk.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDingTalkWithCallback(request *DescribeDingTalkRequest, callback func(response *DescribeDingTalkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateDescribeDingTalkRequest() (request *DescribeDingTalkRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeDingTalk", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

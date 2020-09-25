@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCriteria invokes the sas.DescribeCriteria API synchronously
-// api document: https://help.aliyun.com/api/sas/describecriteria.html
 func (client *Client) DescribeCriteria(request *DescribeCriteriaRequest) (response *DescribeCriteriaResponse, err error) {
 	response = CreateDescribeCriteriaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCriteria(request *DescribeCriteriaRequest) (respon
 }
 
 // DescribeCriteriaWithChan invokes the sas.DescribeCriteria API asynchronously
-// api document: https://help.aliyun.com/api/sas/describecriteria.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCriteriaWithChan(request *DescribeCriteriaRequest) (<-chan *DescribeCriteriaResponse, <-chan error) {
 	responseChan := make(chan *DescribeCriteriaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCriteriaWithChan(request *DescribeCriteriaRequest)
 }
 
 // DescribeCriteriaWithCallback invokes the sas.DescribeCriteria API asynchronously
-// api document: https://help.aliyun.com/api/sas/describecriteria.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCriteriaWithCallback(request *DescribeCriteriaRequest, callback func(response *DescribeCriteriaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeCriteriaRequest() (request *DescribeCriteriaRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeCriteria", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUserLayoutAuthorization invokes the sas.DescribeUserLayoutAuthorization API synchronously
-// api document: https://help.aliyun.com/api/sas/describeuserlayoutauthorization.html
 func (client *Client) DescribeUserLayoutAuthorization(request *DescribeUserLayoutAuthorizationRequest) (response *DescribeUserLayoutAuthorizationResponse, err error) {
 	response = CreateDescribeUserLayoutAuthorizationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUserLayoutAuthorization(request *DescribeUserLayou
 }
 
 // DescribeUserLayoutAuthorizationWithChan invokes the sas.DescribeUserLayoutAuthorization API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeuserlayoutauthorization.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserLayoutAuthorizationWithChan(request *DescribeUserLayoutAuthorizationRequest) (<-chan *DescribeUserLayoutAuthorizationResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserLayoutAuthorizationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUserLayoutAuthorizationWithChan(request *DescribeU
 }
 
 // DescribeUserLayoutAuthorizationWithCallback invokes the sas.DescribeUserLayoutAuthorization API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeuserlayoutauthorization.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserLayoutAuthorizationWithCallback(request *DescribeUserLayoutAuthorizationRequest, callback func(response *DescribeUserLayoutAuthorizationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeUserLayoutAuthorizationRequest() (request *DescribeUserLayout
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeUserLayoutAuthorization", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

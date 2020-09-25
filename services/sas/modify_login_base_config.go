@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyLoginBaseConfig invokes the sas.ModifyLoginBaseConfig API synchronously
-// api document: https://help.aliyun.com/api/sas/modifyloginbaseconfig.html
 func (client *Client) ModifyLoginBaseConfig(request *ModifyLoginBaseConfigRequest) (response *ModifyLoginBaseConfigResponse, err error) {
 	response = CreateModifyLoginBaseConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyLoginBaseConfig(request *ModifyLoginBaseConfigReques
 }
 
 // ModifyLoginBaseConfigWithChan invokes the sas.ModifyLoginBaseConfig API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifyloginbaseconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyLoginBaseConfigWithChan(request *ModifyLoginBaseConfigRequest) (<-chan *ModifyLoginBaseConfigResponse, <-chan error) {
 	responseChan := make(chan *ModifyLoginBaseConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyLoginBaseConfigWithChan(request *ModifyLoginBaseConf
 }
 
 // ModifyLoginBaseConfigWithCallback invokes the sas.ModifyLoginBaseConfig API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifyloginbaseconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyLoginBaseConfigWithCallback(request *ModifyLoginBaseConfigRequest, callback func(response *ModifyLoginBaseConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateModifyLoginBaseConfigRequest() (request *ModifyLoginBaseConfigRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyLoginBaseConfig", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

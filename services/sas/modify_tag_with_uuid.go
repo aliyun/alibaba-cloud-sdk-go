@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyTagWithUuid invokes the sas.ModifyTagWithUuid API synchronously
-// api document: https://help.aliyun.com/api/sas/modifytagwithuuid.html
 func (client *Client) ModifyTagWithUuid(request *ModifyTagWithUuidRequest) (response *ModifyTagWithUuidResponse, err error) {
 	response = CreateModifyTagWithUuidResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyTagWithUuid(request *ModifyTagWithUuidRequest) (resp
 }
 
 // ModifyTagWithUuidWithChan invokes the sas.ModifyTagWithUuid API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifytagwithuuid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyTagWithUuidWithChan(request *ModifyTagWithUuidRequest) (<-chan *ModifyTagWithUuidResponse, <-chan error) {
 	responseChan := make(chan *ModifyTagWithUuidResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyTagWithUuidWithChan(request *ModifyTagWithUuidReques
 }
 
 // ModifyTagWithUuidWithCallback invokes the sas.ModifyTagWithUuid API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifytagwithuuid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyTagWithUuidWithCallback(request *ModifyTagWithUuidRequest, callback func(response *ModifyTagWithUuidResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateModifyTagWithUuidRequest() (request *ModifyTagWithUuidRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyTagWithUuid", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

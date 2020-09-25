@@ -17,28 +17,28 @@ package sas
 
 // ExtendContentJson is a nested struct in sas response
 type ExtendContentJson struct {
-	Os            string      `json:"Os" xml:"Os"`
-	OsRelease     string      `json:"OsRelease" xml:"OsRelease"`
-	Status        int         `json:"Status" xml:"Status"`
-	LastTs        int64       `json:"LastTs" xml:"LastTs"`
-	AliasName     string      `json:"AliasName" xml:"AliasName"`
-	Tag           string      `json:"Tag" xml:"Tag"`
-	PrimaryId     int64       `json:"PrimaryId" xml:"PrimaryId"`
-	AbsolutePath  string      `json:"AbsolutePath" xml:"AbsolutePath"`
-	Target        string      `json:"Target" xml:"Target"`
+	Owasp         string      `json:"Owasp" xml:"Owasp"`
+	Title         string      `json:"Title" xml:"Title"`
+	Effect        string      `json:"Effect" xml:"Effect"`
+	VulType       string      `json:"VulType" xml:"VulType"`
 	EmgProof      string      `json:"EmgProof" xml:"EmgProof"`
 	Reason        string      `json:"Reason" xml:"Reason"`
-	Title         string      `json:"Title" xml:"Title"`
-	Description   string      `json:"Description" xml:"Description"`
-	Ip            string      `json:"Ip" xml:"Ip"`
-	Owasp         string      `json:"Owasp" xml:"Owasp"`
-	Cwe           string      `json:"Cwe" xml:"Cwe"`
+	Os            string      `json:"Os" xml:"Os"`
 	Wasc          string      `json:"Wasc" xml:"Wasc"`
-	VulType       string      `json:"VulType" xml:"VulType"`
-	Effect        string      `json:"Effect" xml:"Effect"`
+	Tag           string      `json:"Tag" xml:"Tag"`
+	AliasName     string      `json:"AliasName" xml:"AliasName"`
+	Description   string      `json:"Description" xml:"Description"`
 	Solution      string      `json:"Solution" xml:"Solution"`
-	Reference     string      `json:"Reference" xml:"Reference"`
+	Status        int         `json:"Status" xml:"Status"`
+	AbsolutePath  string      `json:"AbsolutePath" xml:"AbsolutePath"`
+	Ip            string      `json:"Ip" xml:"Ip"`
 	Proof         string      `json:"Proof" xml:"Proof"`
+	Cwe           string      `json:"Cwe" xml:"Cwe"`
+	LastTs        int64       `json:"LastTs" xml:"LastTs"`
+	OsRelease     string      `json:"OsRelease" xml:"OsRelease"`
+	Target        string      `json:"Target" xml:"Target"`
+	Reference     string      `json:"Reference" xml:"Reference"`
+	PrimaryId     int64       `json:"PrimaryId" xml:"PrimaryId"`
 	CveList       []string    `json:"cveList" xml:"cveList"`
 	Necessity     Necessity   `json:"Necessity" xml:"Necessity"`
 	RpmEntityList []RpmEntity `json:"RpmEntityList" xml:"RpmEntityList"`

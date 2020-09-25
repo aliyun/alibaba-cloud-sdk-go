@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAssetDetailByUuid invokes the sas.DescribeAssetDetailByUuid API synchronously
-// api document: https://help.aliyun.com/api/sas/describeassetdetailbyuuid.html
 func (client *Client) DescribeAssetDetailByUuid(request *DescribeAssetDetailByUuidRequest) (response *DescribeAssetDetailByUuidResponse, err error) {
 	response = CreateDescribeAssetDetailByUuidResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAssetDetailByUuid(request *DescribeAssetDetailByUu
 }
 
 // DescribeAssetDetailByUuidWithChan invokes the sas.DescribeAssetDetailByUuid API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeassetdetailbyuuid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAssetDetailByUuidWithChan(request *DescribeAssetDetailByUuidRequest) (<-chan *DescribeAssetDetailByUuidResponse, <-chan error) {
 	responseChan := make(chan *DescribeAssetDetailByUuidResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAssetDetailByUuidWithChan(request *DescribeAssetDe
 }
 
 // DescribeAssetDetailByUuidWithCallback invokes the sas.DescribeAssetDetailByUuid API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeassetdetailbyuuid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAssetDetailByUuidWithCallback(request *DescribeAssetDetailByUuidRequest, callback func(response *DescribeAssetDetailByUuidResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeAssetDetailByUuidRequest() (request *DescribeAssetDetailByUui
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAssetDetailByUuid", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

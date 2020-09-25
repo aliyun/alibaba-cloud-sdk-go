@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEmgVulGroup invokes the sas.DescribeEmgVulGroup API synchronously
-// api document: https://help.aliyun.com/api/sas/describeemgvulgroup.html
 func (client *Client) DescribeEmgVulGroup(request *DescribeEmgVulGroupRequest) (response *DescribeEmgVulGroupResponse, err error) {
 	response = CreateDescribeEmgVulGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEmgVulGroup(request *DescribeEmgVulGroupRequest) (
 }
 
 // DescribeEmgVulGroupWithChan invokes the sas.DescribeEmgVulGroup API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeemgvulgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEmgVulGroupWithChan(request *DescribeEmgVulGroupRequest) (<-chan *DescribeEmgVulGroupResponse, <-chan error) {
 	responseChan := make(chan *DescribeEmgVulGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEmgVulGroupWithChan(request *DescribeEmgVulGroupRe
 }
 
 // DescribeEmgVulGroupWithCallback invokes the sas.DescribeEmgVulGroup API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeemgvulgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEmgVulGroupWithCallback(request *DescribeEmgVulGroupRequest, callback func(response *DescribeEmgVulGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeEmgVulGroupRequest() (request *DescribeEmgVulGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeEmgVulGroup", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

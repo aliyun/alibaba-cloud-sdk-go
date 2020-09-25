@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeNoticeConfig invokes the sas.DescribeNoticeConfig API synchronously
-// api document: https://help.aliyun.com/api/sas/describenoticeconfig.html
 func (client *Client) DescribeNoticeConfig(request *DescribeNoticeConfigRequest) (response *DescribeNoticeConfigResponse, err error) {
 	response = CreateDescribeNoticeConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeNoticeConfig(request *DescribeNoticeConfigRequest)
 }
 
 // DescribeNoticeConfigWithChan invokes the sas.DescribeNoticeConfig API asynchronously
-// api document: https://help.aliyun.com/api/sas/describenoticeconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNoticeConfigWithChan(request *DescribeNoticeConfigRequest) (<-chan *DescribeNoticeConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeNoticeConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeNoticeConfigWithChan(request *DescribeNoticeConfig
 }
 
 // DescribeNoticeConfigWithCallback invokes the sas.DescribeNoticeConfig API asynchronously
-// api document: https://help.aliyun.com/api/sas/describenoticeconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNoticeConfigWithCallback(request *DescribeNoticeConfigRequest, callback func(response *DescribeNoticeConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateDescribeNoticeConfigRequest() (request *DescribeNoticeConfigRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeNoticeConfig", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

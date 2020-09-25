@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePropertyUserDetail invokes the sas.DescribePropertyUserDetail API synchronously
-// api document: https://help.aliyun.com/api/sas/describepropertyuserdetail.html
 func (client *Client) DescribePropertyUserDetail(request *DescribePropertyUserDetailRequest) (response *DescribePropertyUserDetailResponse, err error) {
 	response = CreateDescribePropertyUserDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePropertyUserDetail(request *DescribePropertyUserDe
 }
 
 // DescribePropertyUserDetailWithChan invokes the sas.DescribePropertyUserDetail API asynchronously
-// api document: https://help.aliyun.com/api/sas/describepropertyuserdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePropertyUserDetailWithChan(request *DescribePropertyUserDetailRequest) (<-chan *DescribePropertyUserDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribePropertyUserDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePropertyUserDetailWithChan(request *DescribeProper
 }
 
 // DescribePropertyUserDetailWithCallback invokes the sas.DescribePropertyUserDetail API asynchronously
-// api document: https://help.aliyun.com/api/sas/describepropertyuserdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePropertyUserDetailWithCallback(request *DescribePropertyUserDetailRequest, callback func(response *DescribePropertyUserDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateDescribePropertyUserDetailRequest() (request *DescribePropertyUserDet
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyUserDetail", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

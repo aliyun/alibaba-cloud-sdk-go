@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyGroupProperty invokes the sas.ModifyGroupProperty API synchronously
-// api document: https://help.aliyun.com/api/sas/modifygroupproperty.html
 func (client *Client) ModifyGroupProperty(request *ModifyGroupPropertyRequest) (response *ModifyGroupPropertyResponse, err error) {
 	response = CreateModifyGroupPropertyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyGroupProperty(request *ModifyGroupPropertyRequest) (
 }
 
 // ModifyGroupPropertyWithChan invokes the sas.ModifyGroupProperty API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifygroupproperty.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyGroupPropertyWithChan(request *ModifyGroupPropertyRequest) (<-chan *ModifyGroupPropertyResponse, <-chan error) {
 	responseChan := make(chan *ModifyGroupPropertyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyGroupPropertyWithChan(request *ModifyGroupPropertyRe
 }
 
 // ModifyGroupPropertyWithCallback invokes the sas.ModifyGroupProperty API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifygroupproperty.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyGroupPropertyWithCallback(request *ModifyGroupPropertyRequest, callback func(response *ModifyGroupPropertyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateModifyGroupPropertyRequest() (request *ModifyGroupPropertyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyGroupProperty", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

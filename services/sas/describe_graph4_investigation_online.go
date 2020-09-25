@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeGraph4InvestigationOnline invokes the sas.DescribeGraph4InvestigationOnline API synchronously
-// api document: https://help.aliyun.com/api/sas/describegraph4investigationonline.html
 func (client *Client) DescribeGraph4InvestigationOnline(request *DescribeGraph4InvestigationOnlineRequest) (response *DescribeGraph4InvestigationOnlineResponse, err error) {
 	response = CreateDescribeGraph4InvestigationOnlineResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeGraph4InvestigationOnline(request *DescribeGraph4I
 }
 
 // DescribeGraph4InvestigationOnlineWithChan invokes the sas.DescribeGraph4InvestigationOnline API asynchronously
-// api document: https://help.aliyun.com/api/sas/describegraph4investigationonline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGraph4InvestigationOnlineWithChan(request *DescribeGraph4InvestigationOnlineRequest) (<-chan *DescribeGraph4InvestigationOnlineResponse, <-chan error) {
 	responseChan := make(chan *DescribeGraph4InvestigationOnlineResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeGraph4InvestigationOnlineWithChan(request *Describ
 }
 
 // DescribeGraph4InvestigationOnlineWithCallback invokes the sas.DescribeGraph4InvestigationOnline API asynchronously
-// api document: https://help.aliyun.com/api/sas/describegraph4investigationonline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGraph4InvestigationOnlineWithCallback(request *DescribeGraph4InvestigationOnlineRequest, callback func(response *DescribeGraph4InvestigationOnlineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateDescribeGraph4InvestigationOnlineRequest() (request *DescribeGraph4In
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeGraph4InvestigationOnline", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

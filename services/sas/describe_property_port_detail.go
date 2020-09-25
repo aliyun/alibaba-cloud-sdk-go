@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePropertyPortDetail invokes the sas.DescribePropertyPortDetail API synchronously
-// api document: https://help.aliyun.com/api/sas/describepropertyportdetail.html
 func (client *Client) DescribePropertyPortDetail(request *DescribePropertyPortDetailRequest) (response *DescribePropertyPortDetailResponse, err error) {
 	response = CreateDescribePropertyPortDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePropertyPortDetail(request *DescribePropertyPortDe
 }
 
 // DescribePropertyPortDetailWithChan invokes the sas.DescribePropertyPortDetail API asynchronously
-// api document: https://help.aliyun.com/api/sas/describepropertyportdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePropertyPortDetailWithChan(request *DescribePropertyPortDetailRequest) (<-chan *DescribePropertyPortDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribePropertyPortDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePropertyPortDetailWithChan(request *DescribeProper
 }
 
 // DescribePropertyPortDetailWithCallback invokes the sas.DescribePropertyPortDetail API asynchronously
-// api document: https://help.aliyun.com/api/sas/describepropertyportdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePropertyPortDetailWithCallback(request *DescribePropertyPortDetailRequest, callback func(response *DescribePropertyPortDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateDescribePropertyPortDetailRequest() (request *DescribePropertyPortDet
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyPortDetail", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

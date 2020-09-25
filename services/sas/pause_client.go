@@ -21,7 +21,6 @@ import (
 )
 
 // PauseClient invokes the sas.PauseClient API synchronously
-// api document: https://help.aliyun.com/api/sas/pauseclient.html
 func (client *Client) PauseClient(request *PauseClientRequest) (response *PauseClientResponse, err error) {
 	response = CreatePauseClientResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PauseClient(request *PauseClientRequest) (response *PauseC
 }
 
 // PauseClientWithChan invokes the sas.PauseClient API asynchronously
-// api document: https://help.aliyun.com/api/sas/pauseclient.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PauseClientWithChan(request *PauseClientRequest) (<-chan *PauseClientResponse, <-chan error) {
 	responseChan := make(chan *PauseClientResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PauseClientWithChan(request *PauseClientRequest) (<-chan *
 }
 
 // PauseClientWithCallback invokes the sas.PauseClient API asynchronously
-// api document: https://help.aliyun.com/api/sas/pauseclient.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PauseClientWithCallback(request *PauseClientRequest, callback func(response *PauseClientResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreatePauseClientRequest() (request *PauseClientRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "PauseClient", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

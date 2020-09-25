@@ -17,8 +17,22 @@ package sas
 
 // QuaraFile is a nested struct in sas response
 type QuaraFile struct {
-	Name     string `json:"Name" xml:"Name"`
-	Type     string `json:"Type" xml:"Type"`
-	InfoType string `json:"InfoType" xml:"InfoType"`
-	Value    string `json:"Value" xml:"Value"`
+	Name         string `json:"Name" xml:"Name"`
+	Path         string `json:"Path" xml:"Path"`
+	Id           int    `json:"Id" xml:"Id"`
+	InfoType     string `json:"InfoType" xml:"InfoType"`
+	ModifyTime   string `json:"ModifyTime" xml:"ModifyTime"`
+	InternetIp   string `json:"InternetIp" xml:"InternetIp"`
+	Ip           string `json:"Ip" xml:"Ip"`
+	InstanceName string `json:"InstanceName" xml:"InstanceName"`
+	EventName    string `json:"EventName" xml:"EventName"`
+	Uuid         string `json:"Uuid" xml:"Uuid"`
+	Value        string `json:"Value" xml:"Value"`
+	NameDisplay  string `json:"NameDisplay" xml:"NameDisplay"`
+	EventType    string `json:"EventType" xml:"EventType"`
+	ValueDisplay string `json:"ValueDisplay" xml:"ValueDisplay"`
+	Tag          string `json:"Tag" xml:"Tag"`
+	Md5          string `json:"Md5" xml:"Md5"`
+	Status       string `json:"Status" xml:"Status"`
+	Type         string `json:"Type" xml:"Type"`
 }

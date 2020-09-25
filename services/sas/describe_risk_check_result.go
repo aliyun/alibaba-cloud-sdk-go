@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRiskCheckResult invokes the sas.DescribeRiskCheckResult API synchronously
-// api document: https://help.aliyun.com/api/sas/describeriskcheckresult.html
 func (client *Client) DescribeRiskCheckResult(request *DescribeRiskCheckResultRequest) (response *DescribeRiskCheckResultResponse, err error) {
 	response = CreateDescribeRiskCheckResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRiskCheckResult(request *DescribeRiskCheckResultRe
 }
 
 // DescribeRiskCheckResultWithChan invokes the sas.DescribeRiskCheckResult API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeriskcheckresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRiskCheckResultWithChan(request *DescribeRiskCheckResultRequest) (<-chan *DescribeRiskCheckResultResponse, <-chan error) {
 	responseChan := make(chan *DescribeRiskCheckResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRiskCheckResultWithChan(request *DescribeRiskCheck
 }
 
 // DescribeRiskCheckResultWithCallback invokes the sas.DescribeRiskCheckResult API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeriskcheckresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRiskCheckResultWithCallback(request *DescribeRiskCheckResultRequest, callback func(response *DescribeRiskCheckResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +76,7 @@ type DescribeRiskCheckResultRequest struct {
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	Lang            string           `position:"Query" name:"Lang"`
 	AssetType       string           `position:"Query" name:"AssetType"`
+	QueryFlag       string           `position:"Query" name:"QueryFlag"`
 	GroupId         requests.Integer `position:"Query" name:"GroupId"`
 	ItemIds         *[]string        `position:"Query" name:"ItemIds"  type:"Repeated"`
 	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
@@ -108,6 +104,7 @@ func CreateDescribeRiskCheckResultRequest() (request *DescribeRiskCheckResultReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeRiskCheckResult", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

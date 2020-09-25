@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePropertySoftwareDetail invokes the sas.DescribePropertySoftwareDetail API synchronously
-// api document: https://help.aliyun.com/api/sas/describepropertysoftwaredetail.html
 func (client *Client) DescribePropertySoftwareDetail(request *DescribePropertySoftwareDetailRequest) (response *DescribePropertySoftwareDetailResponse, err error) {
 	response = CreateDescribePropertySoftwareDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePropertySoftwareDetail(request *DescribePropertySo
 }
 
 // DescribePropertySoftwareDetailWithChan invokes the sas.DescribePropertySoftwareDetail API asynchronously
-// api document: https://help.aliyun.com/api/sas/describepropertysoftwaredetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePropertySoftwareDetailWithChan(request *DescribePropertySoftwareDetailRequest) (<-chan *DescribePropertySoftwareDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribePropertySoftwareDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePropertySoftwareDetailWithChan(request *DescribePr
 }
 
 // DescribePropertySoftwareDetailWithCallback invokes the sas.DescribePropertySoftwareDetail API asynchronously
-// api document: https://help.aliyun.com/api/sas/describepropertysoftwaredetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePropertySoftwareDetailWithCallback(request *DescribePropertySoftwareDetailRequest, callback func(response *DescribePropertySoftwareDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateDescribePropertySoftwareDetailRequest() (request *DescribePropertySof
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertySoftwareDetail", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

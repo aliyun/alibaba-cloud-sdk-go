@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePropertyProcItem invokes the sas.DescribePropertyProcItem API synchronously
-// api document: https://help.aliyun.com/api/sas/describepropertyprocitem.html
 func (client *Client) DescribePropertyProcItem(request *DescribePropertyProcItemRequest) (response *DescribePropertyProcItemResponse, err error) {
 	response = CreateDescribePropertyProcItemResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePropertyProcItem(request *DescribePropertyProcItem
 }
 
 // DescribePropertyProcItemWithChan invokes the sas.DescribePropertyProcItem API asynchronously
-// api document: https://help.aliyun.com/api/sas/describepropertyprocitem.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePropertyProcItemWithChan(request *DescribePropertyProcItemRequest) (<-chan *DescribePropertyProcItemResponse, <-chan error) {
 	responseChan := make(chan *DescribePropertyProcItemResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePropertyProcItemWithChan(request *DescribeProperty
 }
 
 // DescribePropertyProcItemWithCallback invokes the sas.DescribePropertyProcItem API asynchronously
-// api document: https://help.aliyun.com/api/sas/describepropertyprocitem.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePropertyProcItemWithCallback(request *DescribePropertyProcItemRequest, callback func(response *DescribePropertyProcItemResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateDescribePropertyProcItemRequest() (request *DescribePropertyProcItemR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribePropertyProcItem", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSimilarSecurityEvents invokes the sas.DescribeSimilarSecurityEvents API synchronously
-// api document: https://help.aliyun.com/api/sas/describesimilarsecurityevents.html
 func (client *Client) DescribeSimilarSecurityEvents(request *DescribeSimilarSecurityEventsRequest) (response *DescribeSimilarSecurityEventsResponse, err error) {
 	response = CreateDescribeSimilarSecurityEventsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSimilarSecurityEvents(request *DescribeSimilarSecu
 }
 
 // DescribeSimilarSecurityEventsWithChan invokes the sas.DescribeSimilarSecurityEvents API asynchronously
-// api document: https://help.aliyun.com/api/sas/describesimilarsecurityevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSimilarSecurityEventsWithChan(request *DescribeSimilarSecurityEventsRequest) (<-chan *DescribeSimilarSecurityEventsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSimilarSecurityEventsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSimilarSecurityEventsWithChan(request *DescribeSim
 }
 
 // DescribeSimilarSecurityEventsWithCallback invokes the sas.DescribeSimilarSecurityEvents API asynchronously
-// api document: https://help.aliyun.com/api/sas/describesimilarsecurityevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSimilarSecurityEventsWithCallback(request *DescribeSimilarSecurityEventsRequest, callback func(response *DescribeSimilarSecurityEventsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateDescribeSimilarSecurityEventsRequest() (request *DescribeSimilarSecur
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSimilarSecurityEvents", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

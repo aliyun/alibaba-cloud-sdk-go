@@ -21,7 +21,6 @@ import (
 )
 
 // GetIOCs invokes the sas.GetIOCs API synchronously
-// api document: https://help.aliyun.com/api/sas/getiocs.html
 func (client *Client) GetIOCs(request *GetIOCsRequest) (response *GetIOCsResponse, err error) {
 	response = CreateGetIOCsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetIOCs(request *GetIOCsRequest) (response *GetIOCsRespons
 }
 
 // GetIOCsWithChan invokes the sas.GetIOCs API asynchronously
-// api document: https://help.aliyun.com/api/sas/getiocs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetIOCsWithChan(request *GetIOCsRequest) (<-chan *GetIOCsResponse, <-chan error) {
 	responseChan := make(chan *GetIOCsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetIOCsWithChan(request *GetIOCsRequest) (<-chan *GetIOCsR
 }
 
 // GetIOCsWithCallback invokes the sas.GetIOCs API asynchronously
-// api document: https://help.aliyun.com/api/sas/getiocs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetIOCsWithCallback(request *GetIOCsRequest, callback func(response *GetIOCsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateGetIOCsRequest() (request *GetIOCsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "GetIOCs", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

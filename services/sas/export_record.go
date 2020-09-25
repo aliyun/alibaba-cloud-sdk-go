@@ -21,7 +21,6 @@ import (
 )
 
 // ExportRecord invokes the sas.ExportRecord API synchronously
-// api document: https://help.aliyun.com/api/sas/exportrecord.html
 func (client *Client) ExportRecord(request *ExportRecordRequest) (response *ExportRecordResponse, err error) {
 	response = CreateExportRecordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExportRecord(request *ExportRecordRequest) (response *Expo
 }
 
 // ExportRecordWithChan invokes the sas.ExportRecord API asynchronously
-// api document: https://help.aliyun.com/api/sas/exportrecord.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportRecordWithChan(request *ExportRecordRequest) (<-chan *ExportRecordResponse, <-chan error) {
 	responseChan := make(chan *ExportRecordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExportRecordWithChan(request *ExportRecordRequest) (<-chan
 }
 
 // ExportRecordWithCallback invokes the sas.ExportRecord API asynchronously
-// api document: https://help.aliyun.com/api/sas/exportrecord.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportRecordWithCallback(request *ExportRecordRequest, callback func(response *ExportRecordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateExportRecordRequest() (request *ExportRecordRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "ExportRecord", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

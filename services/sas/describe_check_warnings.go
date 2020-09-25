@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCheckWarnings invokes the sas.DescribeCheckWarnings API synchronously
-// api document: https://help.aliyun.com/api/sas/describecheckwarnings.html
 func (client *Client) DescribeCheckWarnings(request *DescribeCheckWarningsRequest) (response *DescribeCheckWarningsResponse, err error) {
 	response = CreateDescribeCheckWarningsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCheckWarnings(request *DescribeCheckWarningsReques
 }
 
 // DescribeCheckWarningsWithChan invokes the sas.DescribeCheckWarnings API asynchronously
-// api document: https://help.aliyun.com/api/sas/describecheckwarnings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCheckWarningsWithChan(request *DescribeCheckWarningsRequest) (<-chan *DescribeCheckWarningsResponse, <-chan error) {
 	responseChan := make(chan *DescribeCheckWarningsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCheckWarningsWithChan(request *DescribeCheckWarnin
 }
 
 // DescribeCheckWarningsWithCallback invokes the sas.DescribeCheckWarnings API asynchronously
-// api document: https://help.aliyun.com/api/sas/describecheckwarnings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCheckWarningsWithCallback(request *DescribeCheckWarningsRequest, callback func(response *DescribeCheckWarningsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +96,7 @@ func CreateDescribeCheckWarningsRequest() (request *DescribeCheckWarningsRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeCheckWarnings", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

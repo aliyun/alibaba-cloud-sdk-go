@@ -17,7 +17,13 @@ package sas
 
 // SecurityEventOperation is a nested struct in sas response
 type SecurityEventOperation struct {
-	OperationCode   string `json:"OperationCode" xml:"OperationCode"`
-	OperationParams string `json:"OperationParams" xml:"OperationParams"`
-	UserCanOperate  bool   `json:"UserCanOperate" xml:"UserCanOperate"`
+	OperationCode    string                   `json:"OperationCode" xml:"OperationCode"`
+	UserCanOperate   bool                     `json:"UserCanOperate" xml:"UserCanOperate"`
+	FiledName        string                   `json:"FiledName" xml:"FiledName"`
+	FiledAliasName   string                   `json:"FiledAliasName" xml:"FiledAliasName"`
+	OperationParams  string                   `json:"OperationParams" xml:"OperationParams"`
+	MarkMisValue     string                   `json:"MarkMisValue" xml:"MarkMisValue"`
+	SupportedMisType []string                 `json:"SupportedMisType" xml:"SupportedMisType"`
+	MarkFieldsSource []SecurityEventOperation `json:"MarkFieldsSource" xml:"MarkFieldsSource"`
+	MarkField        []MarkFieldItem          `json:"MarkField" xml:"MarkField"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateOrUpdateAssetGroup invokes the sas.CreateOrUpdateAssetGroup API synchronously
-// api document: https://help.aliyun.com/api/sas/createorupdateassetgroup.html
 func (client *Client) CreateOrUpdateAssetGroup(request *CreateOrUpdateAssetGroupRequest) (response *CreateOrUpdateAssetGroupResponse, err error) {
 	response = CreateCreateOrUpdateAssetGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateOrUpdateAssetGroup(request *CreateOrUpdateAssetGroup
 }
 
 // CreateOrUpdateAssetGroupWithChan invokes the sas.CreateOrUpdateAssetGroup API asynchronously
-// api document: https://help.aliyun.com/api/sas/createorupdateassetgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOrUpdateAssetGroupWithChan(request *CreateOrUpdateAssetGroupRequest) (<-chan *CreateOrUpdateAssetGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateOrUpdateAssetGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateOrUpdateAssetGroupWithChan(request *CreateOrUpdateAs
 }
 
 // CreateOrUpdateAssetGroupWithCallback invokes the sas.CreateOrUpdateAssetGroup API asynchronously
-// api document: https://help.aliyun.com/api/sas/createorupdateassetgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOrUpdateAssetGroupWithCallback(request *CreateOrUpdateAssetGroupRequest, callback func(response *CreateOrUpdateAssetGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateCreateOrUpdateAssetGroupRequest() (request *CreateOrUpdateAssetGroupR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "CreateOrUpdateAssetGroup", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

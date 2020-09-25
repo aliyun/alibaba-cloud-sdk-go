@@ -21,7 +21,6 @@ import (
 )
 
 // ValidateHcWarnings invokes the sas.ValidateHcWarnings API synchronously
-// api document: https://help.aliyun.com/api/sas/validatehcwarnings.html
 func (client *Client) ValidateHcWarnings(request *ValidateHcWarningsRequest) (response *ValidateHcWarningsResponse, err error) {
 	response = CreateValidateHcWarningsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ValidateHcWarnings(request *ValidateHcWarningsRequest) (re
 }
 
 // ValidateHcWarningsWithChan invokes the sas.ValidateHcWarnings API asynchronously
-// api document: https://help.aliyun.com/api/sas/validatehcwarnings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ValidateHcWarningsWithChan(request *ValidateHcWarningsRequest) (<-chan *ValidateHcWarningsResponse, <-chan error) {
 	responseChan := make(chan *ValidateHcWarningsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ValidateHcWarningsWithChan(request *ValidateHcWarningsRequ
 }
 
 // ValidateHcWarningsWithCallback invokes the sas.ValidateHcWarnings API asynchronously
-// api document: https://help.aliyun.com/api/sas/validatehcwarnings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ValidateHcWarningsWithCallback(request *ValidateHcWarningsRequest, callback func(response *ValidateHcWarningsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateValidateHcWarningsRequest() (request *ValidateHcWarningsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "ValidateHcWarnings", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

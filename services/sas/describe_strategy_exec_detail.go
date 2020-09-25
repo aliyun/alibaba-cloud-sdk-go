@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeStrategyExecDetail invokes the sas.DescribeStrategyExecDetail API synchronously
-// api document: https://help.aliyun.com/api/sas/describestrategyexecdetail.html
 func (client *Client) DescribeStrategyExecDetail(request *DescribeStrategyExecDetailRequest) (response *DescribeStrategyExecDetailResponse, err error) {
 	response = CreateDescribeStrategyExecDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeStrategyExecDetail(request *DescribeStrategyExecDe
 }
 
 // DescribeStrategyExecDetailWithChan invokes the sas.DescribeStrategyExecDetail API asynchronously
-// api document: https://help.aliyun.com/api/sas/describestrategyexecdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStrategyExecDetailWithChan(request *DescribeStrategyExecDetailRequest) (<-chan *DescribeStrategyExecDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeStrategyExecDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeStrategyExecDetailWithChan(request *DescribeStrate
 }
 
 // DescribeStrategyExecDetailWithCallback invokes the sas.DescribeStrategyExecDetail API asynchronously
-// api document: https://help.aliyun.com/api/sas/describestrategyexecdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStrategyExecDetailWithCallback(request *DescribeStrategyExecDetailRequest, callback func(response *DescribeStrategyExecDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateDescribeStrategyExecDetailRequest() (request *DescribeStrategyExecDet
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeStrategyExecDetail", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

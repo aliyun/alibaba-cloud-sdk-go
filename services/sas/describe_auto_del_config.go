@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAutoDelConfig invokes the sas.DescribeAutoDelConfig API synchronously
-// api document: https://help.aliyun.com/api/sas/describeautodelconfig.html
 func (client *Client) DescribeAutoDelConfig(request *DescribeAutoDelConfigRequest) (response *DescribeAutoDelConfigResponse, err error) {
 	response = CreateDescribeAutoDelConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAutoDelConfig(request *DescribeAutoDelConfigReques
 }
 
 // DescribeAutoDelConfigWithChan invokes the sas.DescribeAutoDelConfig API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeautodelconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAutoDelConfigWithChan(request *DescribeAutoDelConfigRequest) (<-chan *DescribeAutoDelConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeAutoDelConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAutoDelConfigWithChan(request *DescribeAutoDelConf
 }
 
 // DescribeAutoDelConfigWithCallback invokes the sas.DescribeAutoDelConfig API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeautodelconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAutoDelConfigWithCallback(request *DescribeAutoDelConfigRequest, callback func(response *DescribeAutoDelConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateDescribeAutoDelConfigRequest() (request *DescribeAutoDelConfigRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAutoDelConfig", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

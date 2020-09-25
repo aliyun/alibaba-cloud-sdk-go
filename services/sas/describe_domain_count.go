@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainCount invokes the sas.DescribeDomainCount API synchronously
-// api document: https://help.aliyun.com/api/sas/describedomaincount.html
 func (client *Client) DescribeDomainCount(request *DescribeDomainCountRequest) (response *DescribeDomainCountResponse, err error) {
 	response = CreateDescribeDomainCountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainCount(request *DescribeDomainCountRequest) (
 }
 
 // DescribeDomainCountWithChan invokes the sas.DescribeDomainCount API asynchronously
-// api document: https://help.aliyun.com/api/sas/describedomaincount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainCountWithChan(request *DescribeDomainCountRequest) (<-chan *DescribeDomainCountResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainCountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainCountWithChan(request *DescribeDomainCountRe
 }
 
 // DescribeDomainCountWithCallback invokes the sas.DescribeDomainCount API asynchronously
-// api document: https://help.aliyun.com/api/sas/describedomaincount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainCountWithCallback(request *DescribeDomainCountRequest, callback func(response *DescribeDomainCountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeDomainCountRequest() (request *DescribeDomainCountRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeDomainCount", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

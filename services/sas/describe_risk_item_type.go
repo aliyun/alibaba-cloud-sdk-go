@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRiskItemType invokes the sas.DescribeRiskItemType API synchronously
-// api document: https://help.aliyun.com/api/sas/describeriskitemtype.html
 func (client *Client) DescribeRiskItemType(request *DescribeRiskItemTypeRequest) (response *DescribeRiskItemTypeResponse, err error) {
 	response = CreateDescribeRiskItemTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRiskItemType(request *DescribeRiskItemTypeRequest)
 }
 
 // DescribeRiskItemTypeWithChan invokes the sas.DescribeRiskItemType API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeriskitemtype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRiskItemTypeWithChan(request *DescribeRiskItemTypeRequest) (<-chan *DescribeRiskItemTypeResponse, <-chan error) {
 	responseChan := make(chan *DescribeRiskItemTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRiskItemTypeWithChan(request *DescribeRiskItemType
 }
 
 // DescribeRiskItemTypeWithCallback invokes the sas.DescribeRiskItemType API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeriskitemtype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRiskItemTypeWithCallback(request *DescribeRiskItemTypeRequest, callback func(response *DescribeRiskItemTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeRiskItemTypeRequest() (request *DescribeRiskItemTypeRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeRiskItemType", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

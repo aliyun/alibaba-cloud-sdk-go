@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyPushAllTask invokes the sas.ModifyPushAllTask API synchronously
-// api document: https://help.aliyun.com/api/sas/modifypushalltask.html
 func (client *Client) ModifyPushAllTask(request *ModifyPushAllTaskRequest) (response *ModifyPushAllTaskResponse, err error) {
 	response = CreateModifyPushAllTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyPushAllTask(request *ModifyPushAllTaskRequest) (resp
 }
 
 // ModifyPushAllTaskWithChan invokes the sas.ModifyPushAllTask API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifypushalltask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPushAllTaskWithChan(request *ModifyPushAllTaskRequest) (<-chan *ModifyPushAllTaskResponse, <-chan error) {
 	responseChan := make(chan *ModifyPushAllTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyPushAllTaskWithChan(request *ModifyPushAllTaskReques
 }
 
 // ModifyPushAllTaskWithCallback invokes the sas.ModifyPushAllTask API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifypushalltask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPushAllTaskWithCallback(request *ModifyPushAllTaskRequest, callback func(response *ModifyPushAllTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateModifyPushAllTaskRequest() (request *ModifyPushAllTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyPushAllTask", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainDetail invokes the sas.DescribeDomainDetail API synchronously
-// api document: https://help.aliyun.com/api/sas/describedomaindetail.html
 func (client *Client) DescribeDomainDetail(request *DescribeDomainDetailRequest) (response *DescribeDomainDetailResponse, err error) {
 	response = CreateDescribeDomainDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainDetail(request *DescribeDomainDetailRequest)
 }
 
 // DescribeDomainDetailWithChan invokes the sas.DescribeDomainDetail API asynchronously
-// api document: https://help.aliyun.com/api/sas/describedomaindetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainDetailWithChan(request *DescribeDomainDetailRequest) (<-chan *DescribeDomainDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainDetailWithChan(request *DescribeDomainDetail
 }
 
 // DescribeDomainDetailWithCallback invokes the sas.DescribeDomainDetail API asynchronously
-// api document: https://help.aliyun.com/api/sas/describedomaindetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainDetailWithCallback(request *DescribeDomainDetailRequest, callback func(response *DescribeDomainDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +81,8 @@ type DescribeDomainDetailResponse struct {
 	RequestId         string             `json:"RequestId" xml:"RequestId"`
 	Domain            string             `json:"Domain" xml:"Domain"`
 	RootDomain        string             `json:"RootDomain" xml:"RootDomain"`
+	VulCount          int                `json:"VulCount" xml:"VulCount"`
+	AlarmCount        int                `json:"AlarmCount" xml:"AlarmCount"`
 	DomainDetailItems []DomainDetailItem `json:"DomainDetailItems" xml:"DomainDetailItems"`
 }
 
@@ -95,6 +92,7 @@ func CreateDescribeDomainDetailRequest() (request *DescribeDomainDetailRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeDomainDetail", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -17,29 +17,31 @@ package sas
 
 // AssetDetail is a nested struct in sas response
 type AssetDetail struct {
-	InternetIp    string   `json:"InternetIp" xml:"InternetIp"`
-	IntranetIp    string   `json:"IntranetIp" xml:"IntranetIp"`
-	InstanceName  int      `json:"InstanceName" xml:"InstanceName"`
-	InstanceId    int      `json:"InstanceId" xml:"InstanceId"`
-	Ip            string   `json:"Ip" xml:"Ip"`
-	Uuid          string   `json:"Uuid" xml:"Uuid"`
-	AssetType     string   `json:"AssetType" xml:"AssetType"`
-	Os            string   `json:"Os" xml:"Os"`
-	ClientStatus  string   `json:"ClientStatus" xml:"ClientStatus"`
-	Region        string   `json:"Region" xml:"Region"`
-	RegionName    string   `json:"RegionName" xml:"RegionName"`
-	Tag           string   `json:"Tag" xml:"Tag"`
-	GroupTrace    string   `json:"GroupTrace" xml:"GroupTrace"`
-	Cpu           int      `json:"Cpu" xml:"Cpu"`
-	CpuInfo       string   `json:"CpuInfo" xml:"CpuInfo"`
-	Kernel        string   `json:"Kernel" xml:"Kernel"`
-	OsDetail      string   `json:"OsDetail" xml:"OsDetail"`
-	Mem           int      `json:"Mem" xml:"Mem"`
-	SysInfo       string   `json:"SysInfo" xml:"SysInfo"`
-	HostName      string   `json:"HostName" xml:"HostName"`
-	OsName        string   `json:"OsName" xml:"OsName"`
-	VpcInstanceId string   `json:"VpcInstanceId" xml:"VpcInstanceId"`
-	IpList        []string `json:"IpList" xml:"IpList"`
-	MacList       []string `json:"MacList" xml:"MacList"`
-	DiskInfoList  []string `json:"DiskInfoList" xml:"DiskInfoList"`
+	InternetIp     string   `json:"InternetIp" xml:"InternetIp"`
+	IntranetIp     string   `json:"IntranetIp" xml:"IntranetIp"`
+	InstanceName   string   `json:"InstanceName" xml:"InstanceName"`
+	InstanceId     string   `json:"InstanceId" xml:"InstanceId"`
+	Ip             string   `json:"Ip" xml:"Ip"`
+	Uuid           string   `json:"Uuid" xml:"Uuid"`
+	AssetType      string   `json:"AssetType" xml:"AssetType"`
+	Os             string   `json:"Os" xml:"Os"`
+	ClientStatus   string   `json:"ClientStatus" xml:"ClientStatus"`
+	Region         string   `json:"Region" xml:"Region"`
+	RegionName     string   `json:"RegionName" xml:"RegionName"`
+	Tag            string   `json:"Tag" xml:"Tag"`
+	GroupTrace     string   `json:"GroupTrace" xml:"GroupTrace"`
+	Cpu            int      `json:"Cpu" xml:"Cpu"`
+	CpuInfo        string   `json:"CpuInfo" xml:"CpuInfo"`
+	Kernel         string   `json:"Kernel" xml:"Kernel"`
+	OsDetail       string   `json:"OsDetail" xml:"OsDetail"`
+	Mem            int      `json:"Mem" xml:"Mem"`
+	SysInfo        string   `json:"SysInfo" xml:"SysInfo"`
+	HostName       string   `json:"HostName" xml:"HostName"`
+	OsName         string   `json:"OsName" xml:"OsName"`
+	VpcInstanceId  string   `json:"VpcInstanceId" xml:"VpcInstanceId"`
+	InstanceStatus string   `json:"InstanceStatus" xml:"InstanceStatus"`
+	CreateTime     int64    `json:"CreateTime" xml:"CreateTime"`
+	IpList         []string `json:"IpList" xml:"IpList"`
+	MacList        []string `json:"MacList" xml:"MacList"`
+	DiskInfoList   []string `json:"DiskInfoList" xml:"DiskInfoList"`
 }

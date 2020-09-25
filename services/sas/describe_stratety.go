@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeStratety invokes the sas.DescribeStratety API synchronously
-// api document: https://help.aliyun.com/api/sas/describestratety.html
 func (client *Client) DescribeStratety(request *DescribeStratetyRequest) (response *DescribeStratetyResponse, err error) {
 	response = CreateDescribeStratetyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeStratety(request *DescribeStratetyRequest) (respon
 }
 
 // DescribeStratetyWithChan invokes the sas.DescribeStratety API asynchronously
-// api document: https://help.aliyun.com/api/sas/describestratety.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStratetyWithChan(request *DescribeStratetyRequest) (<-chan *DescribeStratetyResponse, <-chan error) {
 	responseChan := make(chan *DescribeStratetyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeStratetyWithChan(request *DescribeStratetyRequest)
 }
 
 // DescribeStratetyWithCallback invokes the sas.DescribeStratety API asynchronously
-// api document: https://help.aliyun.com/api/sas/describestratety.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStratetyWithCallback(request *DescribeStratetyRequest, callback func(response *DescribeStratetyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeStratetyRequest() (request *DescribeStratetyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeStratety", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

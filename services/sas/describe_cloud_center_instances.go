@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCloudCenterInstances invokes the sas.DescribeCloudCenterInstances API synchronously
-// api document: https://help.aliyun.com/api/sas/describecloudcenterinstances.html
 func (client *Client) DescribeCloudCenterInstances(request *DescribeCloudCenterInstancesRequest) (response *DescribeCloudCenterInstancesResponse, err error) {
 	response = CreateDescribeCloudCenterInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCloudCenterInstances(request *DescribeCloudCenterI
 }
 
 // DescribeCloudCenterInstancesWithChan invokes the sas.DescribeCloudCenterInstances API asynchronously
-// api document: https://help.aliyun.com/api/sas/describecloudcenterinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCloudCenterInstancesWithChan(request *DescribeCloudCenterInstancesRequest) (<-chan *DescribeCloudCenterInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeCloudCenterInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCloudCenterInstancesWithChan(request *DescribeClou
 }
 
 // DescribeCloudCenterInstancesWithCallback invokes the sas.DescribeCloudCenterInstances API asynchronously
-// api document: https://help.aliyun.com/api/sas/describecloudcenterinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCloudCenterInstancesWithCallback(request *DescribeCloudCenterInstancesRequest, callback func(response *DescribeCloudCenterInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) DescribeCloudCenterInstancesWithCallback(request *Describe
 type DescribeCloudCenterInstancesRequest struct {
 	*requests.RpcRequest
 	Criteria     string           `position:"Query" name:"Criteria"`
+	Importance   requests.Integer `position:"Query" name:"Importance"`
 	SourceIp     string           `position:"Query" name:"SourceIp"`
 	NoPage       requests.Boolean `position:"Query" name:"NoPage"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
@@ -100,6 +96,7 @@ func CreateDescribeCloudCenterInstancesRequest() (request *DescribeCloudCenterIn
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeCloudCenterInstances", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

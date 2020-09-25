@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAllRegionsStatistics invokes the sas.DescribeAllRegionsStatistics API synchronously
-// api document: https://help.aliyun.com/api/sas/describeallregionsstatistics.html
 func (client *Client) DescribeAllRegionsStatistics(request *DescribeAllRegionsStatisticsRequest) (response *DescribeAllRegionsStatisticsResponse, err error) {
 	response = CreateDescribeAllRegionsStatisticsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAllRegionsStatistics(request *DescribeAllRegionsSt
 }
 
 // DescribeAllRegionsStatisticsWithChan invokes the sas.DescribeAllRegionsStatistics API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeallregionsstatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAllRegionsStatisticsWithChan(request *DescribeAllRegionsStatisticsRequest) (<-chan *DescribeAllRegionsStatisticsResponse, <-chan error) {
 	responseChan := make(chan *DescribeAllRegionsStatisticsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAllRegionsStatisticsWithChan(request *DescribeAllR
 }
 
 // DescribeAllRegionsStatisticsWithCallback invokes the sas.DescribeAllRegionsStatistics API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeallregionsstatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAllRegionsStatisticsWithCallback(request *DescribeAllRegionsStatisticsRequest, callback func(response *DescribeAllRegionsStatisticsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -112,6 +107,7 @@ func CreateDescribeAllRegionsStatisticsRequest() (request *DescribeAllRegionsSta
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAllRegionsStatistics", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAllEntity invokes the sas.DescribeAllEntity API synchronously
-// api document: https://help.aliyun.com/api/sas/describeallentity.html
 func (client *Client) DescribeAllEntity(request *DescribeAllEntityRequest) (response *DescribeAllEntityResponse, err error) {
 	response = CreateDescribeAllEntityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAllEntity(request *DescribeAllEntityRequest) (resp
 }
 
 // DescribeAllEntityWithChan invokes the sas.DescribeAllEntity API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeallentity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAllEntityWithChan(request *DescribeAllEntityRequest) (<-chan *DescribeAllEntityResponse, <-chan error) {
 	responseChan := make(chan *DescribeAllEntityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAllEntityWithChan(request *DescribeAllEntityReques
 }
 
 // DescribeAllEntityWithCallback invokes the sas.DescribeAllEntity API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeallentity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAllEntityWithCallback(request *DescribeAllEntityRequest, callback func(response *DescribeAllEntityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateDescribeAllEntityRequest() (request *DescribeAllEntityRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAllEntity", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

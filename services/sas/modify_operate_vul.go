@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyOperateVul invokes the sas.ModifyOperateVul API synchronously
-// api document: https://help.aliyun.com/api/sas/modifyoperatevul.html
 func (client *Client) ModifyOperateVul(request *ModifyOperateVulRequest) (response *ModifyOperateVulResponse, err error) {
 	response = CreateModifyOperateVulResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyOperateVul(request *ModifyOperateVulRequest) (respon
 }
 
 // ModifyOperateVulWithChan invokes the sas.ModifyOperateVul API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifyoperatevul.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyOperateVulWithChan(request *ModifyOperateVulRequest) (<-chan *ModifyOperateVulResponse, <-chan error) {
 	responseChan := make(chan *ModifyOperateVulResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyOperateVulWithChan(request *ModifyOperateVulRequest)
 }
 
 // ModifyOperateVulWithCallback invokes the sas.ModifyOperateVul API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifyoperatevul.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyOperateVulWithCallback(request *ModifyOperateVulRequest, callback func(response *ModifyOperateVulResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateModifyOperateVulRequest() (request *ModifyOperateVulRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyOperateVul", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

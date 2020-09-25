@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyEmgVulSubmit invokes the sas.ModifyEmgVulSubmit API synchronously
-// api document: https://help.aliyun.com/api/sas/modifyemgvulsubmit.html
 func (client *Client) ModifyEmgVulSubmit(request *ModifyEmgVulSubmitRequest) (response *ModifyEmgVulSubmitResponse, err error) {
 	response = CreateModifyEmgVulSubmitResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyEmgVulSubmit(request *ModifyEmgVulSubmitRequest) (re
 }
 
 // ModifyEmgVulSubmitWithChan invokes the sas.ModifyEmgVulSubmit API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifyemgvulsubmit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyEmgVulSubmitWithChan(request *ModifyEmgVulSubmitRequest) (<-chan *ModifyEmgVulSubmitResponse, <-chan error) {
 	responseChan := make(chan *ModifyEmgVulSubmitResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyEmgVulSubmitWithChan(request *ModifyEmgVulSubmitRequ
 }
 
 // ModifyEmgVulSubmitWithCallback invokes the sas.ModifyEmgVulSubmit API asynchronously
-// api document: https://help.aliyun.com/api/sas/modifyemgvulsubmit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyEmgVulSubmitWithCallback(request *ModifyEmgVulSubmitRequest, callback func(response *ModifyEmgVulSubmitResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateModifyEmgVulSubmitRequest() (request *ModifyEmgVulSubmitRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "ModifyEmgVulSubmit", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

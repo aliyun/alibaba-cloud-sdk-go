@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeIpInfo invokes the sas.DescribeIpInfo API synchronously
-// api document: https://help.aliyun.com/api/sas/describeipinfo.html
 func (client *Client) DescribeIpInfo(request *DescribeIpInfoRequest) (response *DescribeIpInfoResponse, err error) {
 	response = CreateDescribeIpInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeIpInfo(request *DescribeIpInfoRequest) (response *
 }
 
 // DescribeIpInfoWithChan invokes the sas.DescribeIpInfo API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeipinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpInfoWithChan(request *DescribeIpInfoRequest) (<-chan *DescribeIpInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeIpInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeIpInfoWithChan(request *DescribeIpInfoRequest) (<-
 }
 
 // DescribeIpInfoWithCallback invokes the sas.DescribeIpInfo API asynchronously
-// api document: https://help.aliyun.com/api/sas/describeipinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpInfoWithCallback(request *DescribeIpInfoRequest, callback func(response *DescribeIpInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -154,6 +149,7 @@ func CreateDescribeIpInfoRequest() (request *DescribeIpInfoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeIpInfo", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

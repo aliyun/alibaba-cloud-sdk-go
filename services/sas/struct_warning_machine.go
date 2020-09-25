@@ -18,7 +18,9 @@ package sas
 // WarningMachine is a nested struct in sas response
 type WarningMachine struct {
 	Uuid               string `json:"Uuid" xml:"Uuid"`
-	MachineName        string `json:"MachineName" xml:"MachineName"`
+	InstanceName       string `json:"InstanceName" xml:"InstanceName"`
+	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
+	RegionId           string `json:"RegionId" xml:"RegionId"`
 	InternetIp         string `json:"InternetIp" xml:"InternetIp"`
 	IntranetIp         string `json:"IntranetIp" xml:"IntranetIp"`
 	PassCount          int    `json:"PassCount" xml:"PassCount"`

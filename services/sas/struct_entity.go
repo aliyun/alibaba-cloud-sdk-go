@@ -21,6 +21,7 @@ type Entity struct {
 	InstanceName string `json:"InstanceName" xml:"InstanceName"`
 	Ip           string `json:"Ip" xml:"Ip"`
 	Uuid         string `json:"Uuid" xml:"Uuid"`
+	Os           string `json:"Os" xml:"Os"`
 	InternetIp   string `json:"InternetIp" xml:"InternetIp"`
 	IntranetIp   string `json:"IntranetIp" xml:"IntranetIp"`
 }

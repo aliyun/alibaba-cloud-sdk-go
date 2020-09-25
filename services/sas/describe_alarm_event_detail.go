@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAlarmEventDetail invokes the sas.DescribeAlarmEventDetail API synchronously
-// api document: https://help.aliyun.com/api/sas/describealarmeventdetail.html
 func (client *Client) DescribeAlarmEventDetail(request *DescribeAlarmEventDetailRequest) (response *DescribeAlarmEventDetailResponse, err error) {
 	response = CreateDescribeAlarmEventDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAlarmEventDetail(request *DescribeAlarmEventDetail
 }
 
 // DescribeAlarmEventDetailWithChan invokes the sas.DescribeAlarmEventDetail API asynchronously
-// api document: https://help.aliyun.com/api/sas/describealarmeventdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAlarmEventDetailWithChan(request *DescribeAlarmEventDetailRequest) (<-chan *DescribeAlarmEventDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeAlarmEventDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAlarmEventDetailWithChan(request *DescribeAlarmEve
 }
 
 // DescribeAlarmEventDetailWithCallback invokes the sas.DescribeAlarmEventDetail API asynchronously
-// api document: https://help.aliyun.com/api/sas/describealarmeventdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAlarmEventDetailWithCallback(request *DescribeAlarmEventDetailRequest, callback func(response *DescribeAlarmEventDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateDescribeAlarmEventDetailRequest() (request *DescribeAlarmEventDetailR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeAlarmEventDetail", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

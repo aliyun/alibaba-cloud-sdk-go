@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSuspEvents invokes the sas.DescribeSuspEvents API synchronously
-// api document: https://help.aliyun.com/api/sas/describesuspevents.html
 func (client *Client) DescribeSuspEvents(request *DescribeSuspEventsRequest) (response *DescribeSuspEventsResponse, err error) {
 	response = CreateDescribeSuspEventsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSuspEvents(request *DescribeSuspEventsRequest) (re
 }
 
 // DescribeSuspEventsWithChan invokes the sas.DescribeSuspEvents API asynchronously
-// api document: https://help.aliyun.com/api/sas/describesuspevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSuspEventsWithChan(request *DescribeSuspEventsRequest) (<-chan *DescribeSuspEventsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSuspEventsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSuspEventsWithChan(request *DescribeSuspEventsRequ
 }
 
 // DescribeSuspEventsWithCallback invokes the sas.DescribeSuspEvents API asynchronously
-// api document: https://help.aliyun.com/api/sas/describesuspevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSuspEventsWithCallback(request *DescribeSuspEventsRequest, callback func(response *DescribeSuspEventsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,27 @@ func (client *Client) DescribeSuspEventsWithCallback(request *DescribeSuspEvents
 // DescribeSuspEventsRequest is the request struct for api DescribeSuspEvents
 type DescribeSuspEventsRequest struct {
 	*requests.RpcRequest
-	Remark           string `position:"Query" name:"Remark"`
-	SourceIp         string `position:"Query" name:"SourceIp"`
-	PageSize         string `position:"Query" name:"PageSize"`
-	From             string `position:"Query" name:"From"`
-	Lang             string `position:"Query" name:"Lang"`
-	AlarmUniqueInfo  string `position:"Query" name:"AlarmUniqueInfo"`
-	Dealed           string `position:"Query" name:"Dealed"`
-	CurrentPage      string `position:"Query" name:"CurrentPage"`
-	Name             string `position:"Query" name:"Name"`
-	Levels           string `position:"Query" name:"Levels"`
-	ParentEventTypes string `position:"Query" name:"ParentEventTypes"`
+	TargetType           string           `position:"Query" name:"TargetType"`
+	Remark               string           `position:"Query" name:"Remark"`
+	Source               string           `position:"Query" name:"Source"`
+	ContainerFieldName   string           `position:"Query" name:"ContainerFieldName"`
+	SourceIp             string           `position:"Query" name:"SourceIp"`
+	ContainerFieldValue  string           `position:"Query" name:"ContainerFieldValue"`
+	PageSize             string           `position:"Query" name:"PageSize"`
+	From                 string           `position:"Query" name:"From"`
+	Lang                 string           `position:"Query" name:"Lang"`
+	AlarmUniqueInfo      string           `position:"Query" name:"AlarmUniqueInfo"`
+	UniqueInfo           string           `position:"Query" name:"UniqueInfo"`
+	GroupId              requests.Integer `position:"Query" name:"GroupId"`
+	Dealed               string           `position:"Query" name:"Dealed"`
+	CurrentPage          string           `position:"Query" name:"CurrentPage"`
+	ClusterId            string           `position:"Query" name:"ClusterId"`
+	OperateErrorCodeList *[]string        `position:"Query" name:"OperateErrorCodeList"  type:"Repeated"`
+	Name                 string           `position:"Query" name:"Name"`
+	Levels               string           `position:"Query" name:"Levels"`
+	ParentEventTypes     string           `position:"Query" name:"ParentEventTypes"`
+	Status               string           `position:"Query" name:"Status"`
+	Uuids                string           `position:"Query" name:"Uuids"`
 }
 
 // DescribeSuspEventsResponse is the response struct for api DescribeSuspEvents
@@ -106,6 +111,7 @@ func CreateDescribeSuspEventsRequest() (request *DescribeSuspEventsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Sas", "2018-12-03", "DescribeSuspEvents", "sas", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
