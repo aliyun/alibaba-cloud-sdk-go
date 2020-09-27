@@ -1,3 +1,7 @@
+2020-09-27 Version: v1.61.533
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Update domain API.
+
 2020-09-27 Version: v1.61.532
 - Generated 2017-09-06 for `imm`.
 - Support Open Service API.
