@@ -21,7 +21,6 @@ import (
 )
 
 // GetDRMLicense invokes the imm.GetDRMLicense API synchronously
-// api document: https://help.aliyun.com/api/imm/getdrmlicense.html
 func (client *Client) GetDRMLicense(request *GetDRMLicenseRequest) (response *GetDRMLicenseResponse, err error) {
 	response = CreateGetDRMLicenseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetDRMLicense(request *GetDRMLicenseRequest) (response *Ge
 }
 
 // GetDRMLicenseWithChan invokes the imm.GetDRMLicense API asynchronously
-// api document: https://help.aliyun.com/api/imm/getdrmlicense.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDRMLicenseWithChan(request *GetDRMLicenseRequest) (<-chan *GetDRMLicenseResponse, <-chan error) {
 	responseChan := make(chan *GetDRMLicenseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetDRMLicenseWithChan(request *GetDRMLicenseRequest) (<-ch
 }
 
 // GetDRMLicenseWithCallback invokes the imm.GetDRMLicense API asynchronously
-// api document: https://help.aliyun.com/api/imm/getdrmlicense.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDRMLicenseWithCallback(request *GetDRMLicenseRequest, callback func(response *GetDRMLicenseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,8 +79,9 @@ type GetDRMLicenseRequest struct {
 // GetDRMLicenseResponse is the response struct for api GetDRMLicense
 type GetDRMLicenseResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	DRMData   string `json:"DRMData" xml:"DRMData"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	DRMData    string `json:"DRMData" xml:"DRMData"`
+	DeviceInfo string `json:"DeviceInfo" xml:"DeviceInfo"`
 }
 
 // CreateGetDRMLicenseRequest creates a request to invoke GetDRMLicense API
@@ -93,7 +89,7 @@ func CreateGetDRMLicenseRequest() (request *GetDRMLicenseRequest) {
 	request = &GetDRMLicenseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetDRMLicense", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetDRMLicense", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

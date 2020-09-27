@@ -21,7 +21,6 @@ import (
 )
 
 // GetImageQuality invokes the imm.GetImageQuality API synchronously
-// api document: https://help.aliyun.com/api/imm/getimagequality.html
 func (client *Client) GetImageQuality(request *GetImageQualityRequest) (response *GetImageQualityResponse, err error) {
 	response = CreateGetImageQualityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetImageQuality(request *GetImageQualityRequest) (response
 }
 
 // GetImageQualityWithChan invokes the imm.GetImageQuality API asynchronously
-// api document: https://help.aliyun.com/api/imm/getimagequality.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetImageQualityWithChan(request *GetImageQualityRequest) (<-chan *GetImageQualityResponse, <-chan error) {
 	responseChan := make(chan *GetImageQualityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetImageQualityWithChan(request *GetImageQualityRequest) (
 }
 
 // GetImageQualityWithCallback invokes the imm.GetImageQuality API asynchronously
-// api document: https://help.aliyun.com/api/imm/getimagequality.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetImageQualityWithCallback(request *GetImageQualityRequest, callback func(response *GetImageQualityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateGetImageQualityRequest() (request *GetImageQualityRequest) {
 	request = &GetImageQualityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetImageQuality", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetImageQuality", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

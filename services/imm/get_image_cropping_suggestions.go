@@ -21,7 +21,6 @@ import (
 )
 
 // GetImageCroppingSuggestions invokes the imm.GetImageCroppingSuggestions API synchronously
-// api document: https://help.aliyun.com/api/imm/getimagecroppingsuggestions.html
 func (client *Client) GetImageCroppingSuggestions(request *GetImageCroppingSuggestionsRequest) (response *GetImageCroppingSuggestionsResponse, err error) {
 	response = CreateGetImageCroppingSuggestionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetImageCroppingSuggestions(request *GetImageCroppingSugge
 }
 
 // GetImageCroppingSuggestionsWithChan invokes the imm.GetImageCroppingSuggestions API asynchronously
-// api document: https://help.aliyun.com/api/imm/getimagecroppingsuggestions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetImageCroppingSuggestionsWithChan(request *GetImageCroppingSuggestionsRequest) (<-chan *GetImageCroppingSuggestionsResponse, <-chan error) {
 	responseChan := make(chan *GetImageCroppingSuggestionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetImageCroppingSuggestionsWithChan(request *GetImageCropp
 }
 
 // GetImageCroppingSuggestionsWithCallback invokes the imm.GetImageCroppingSuggestions API asynchronously
-// api document: https://help.aliyun.com/api/imm/getimagecroppingsuggestions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetImageCroppingSuggestionsWithCallback(request *GetImageCroppingSuggestionsRequest, callback func(response *GetImageCroppingSuggestionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateGetImageCroppingSuggestionsRequest() (request *GetImageCroppingSugges
 	request = &GetImageCroppingSuggestionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetImageCroppingSuggestions", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetImageCroppingSuggestions", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateStreamAnalyseTask invokes the imm.CreateStreamAnalyseTask API synchronously
-// api document: https://help.aliyun.com/api/imm/createstreamanalysetask.html
 func (client *Client) CreateStreamAnalyseTask(request *CreateStreamAnalyseTaskRequest) (response *CreateStreamAnalyseTaskResponse, err error) {
 	response = CreateCreateStreamAnalyseTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateStreamAnalyseTask(request *CreateStreamAnalyseTaskRe
 }
 
 // CreateStreamAnalyseTaskWithChan invokes the imm.CreateStreamAnalyseTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/createstreamanalysetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateStreamAnalyseTaskWithChan(request *CreateStreamAnalyseTaskRequest) (<-chan *CreateStreamAnalyseTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateStreamAnalyseTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateStreamAnalyseTaskWithChan(request *CreateStreamAnaly
 }
 
 // CreateStreamAnalyseTaskWithCallback invokes the imm.CreateStreamAnalyseTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/createstreamanalysetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateStreamAnalyseTaskWithCallback(request *CreateStreamAnalyseTaskRequest, callback func(response *CreateStreamAnalyseTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,7 @@ func CreateCreateStreamAnalyseTaskRequest() (request *CreateStreamAnalyseTaskReq
 	request = &CreateStreamAnalyseTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateStreamAnalyseTask", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateStreamAnalyseTask", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

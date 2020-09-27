@@ -21,7 +21,6 @@ import (
 )
 
 // CreateVideoAnalyseTask invokes the imm.CreateVideoAnalyseTask API synchronously
-// api document: https://help.aliyun.com/api/imm/createvideoanalysetask.html
 func (client *Client) CreateVideoAnalyseTask(request *CreateVideoAnalyseTaskRequest) (response *CreateVideoAnalyseTaskResponse, err error) {
 	response = CreateCreateVideoAnalyseTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateVideoAnalyseTask(request *CreateVideoAnalyseTaskRequ
 }
 
 // CreateVideoAnalyseTaskWithChan invokes the imm.CreateVideoAnalyseTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/createvideoanalysetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVideoAnalyseTaskWithChan(request *CreateVideoAnalyseTaskRequest) (<-chan *CreateVideoAnalyseTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateVideoAnalyseTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateVideoAnalyseTaskWithChan(request *CreateVideoAnalyse
 }
 
 // CreateVideoAnalyseTaskWithCallback invokes the imm.CreateVideoAnalyseTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/createvideoanalysetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVideoAnalyseTaskWithCallback(request *CreateVideoAnalyseTaskRequest, callback func(response *CreateVideoAnalyseTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,7 @@ func CreateCreateVideoAnalyseTaskRequest() (request *CreateVideoAnalyseTaskReque
 	request = &CreateVideoAnalyseTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateVideoAnalyseTask", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateVideoAnalyseTask", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

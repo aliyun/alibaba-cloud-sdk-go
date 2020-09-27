@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateSet invokes the imm.UpdateSet API synchronously
-// api document: https://help.aliyun.com/api/imm/updateset.html
 func (client *Client) UpdateSet(request *UpdateSetRequest) (response *UpdateSetResponse, err error) {
 	response = CreateUpdateSetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateSet(request *UpdateSetRequest) (response *UpdateSetR
 }
 
 // UpdateSetWithChan invokes the imm.UpdateSet API asynchronously
-// api document: https://help.aliyun.com/api/imm/updateset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSetWithChan(request *UpdateSetRequest) (<-chan *UpdateSetResponse, <-chan error) {
 	responseChan := make(chan *UpdateSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateSetWithChan(request *UpdateSetRequest) (<-chan *Upda
 }
 
 // UpdateSetWithCallback invokes the imm.UpdateSet API asynchronously
-// api document: https://help.aliyun.com/api/imm/updateset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSetWithCallback(request *UpdateSetRequest, callback func(response *UpdateSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateUpdateSetRequest() (request *UpdateSetRequest) {
 	request = &UpdateSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "UpdateSet", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "UpdateSet", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

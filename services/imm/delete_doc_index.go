@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDocIndex invokes the imm.DeleteDocIndex API synchronously
-// api document: https://help.aliyun.com/api/imm/deletedocindex.html
 func (client *Client) DeleteDocIndex(request *DeleteDocIndexRequest) (response *DeleteDocIndexResponse, err error) {
 	response = CreateDeleteDocIndexResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDocIndex(request *DeleteDocIndexRequest) (response *
 }
 
 // DeleteDocIndexWithChan invokes the imm.DeleteDocIndex API asynchronously
-// api document: https://help.aliyun.com/api/imm/deletedocindex.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDocIndexWithChan(request *DeleteDocIndexRequest) (<-chan *DeleteDocIndexResponse, <-chan error) {
 	responseChan := make(chan *DeleteDocIndexResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDocIndexWithChan(request *DeleteDocIndexRequest) (<-
 }
 
 // DeleteDocIndexWithCallback invokes the imm.DeleteDocIndex API asynchronously
-// api document: https://help.aliyun.com/api/imm/deletedocindex.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDocIndexWithCallback(request *DeleteDocIndexRequest, callback func(response *DeleteDocIndexResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDeleteDocIndexRequest() (request *DeleteDocIndexRequest) {
 	request = &DeleteDocIndexRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DeleteDocIndex", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "DeleteDocIndex", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

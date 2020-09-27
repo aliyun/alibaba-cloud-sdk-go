@@ -21,7 +21,6 @@ import (
 )
 
 // CompareImageFaces invokes the imm.CompareImageFaces API synchronously
-// api document: https://help.aliyun.com/api/imm/compareimagefaces.html
 func (client *Client) CompareImageFaces(request *CompareImageFacesRequest) (response *CompareImageFacesResponse, err error) {
 	response = CreateCompareImageFacesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CompareImageFaces(request *CompareImageFacesRequest) (resp
 }
 
 // CompareImageFacesWithChan invokes the imm.CompareImageFaces API asynchronously
-// api document: https://help.aliyun.com/api/imm/compareimagefaces.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CompareImageFacesWithChan(request *CompareImageFacesRequest) (<-chan *CompareImageFacesResponse, <-chan error) {
 	responseChan := make(chan *CompareImageFacesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CompareImageFacesWithChan(request *CompareImageFacesReques
 }
 
 // CompareImageFacesWithCallback invokes the imm.CompareImageFaces API asynchronously
-// api document: https://help.aliyun.com/api/imm/compareimagefaces.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CompareImageFacesWithCallback(request *CompareImageFacesRequest, callback func(response *CompareImageFacesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateCompareImageFacesRequest() (request *CompareImageFacesRequest) {
 	request = &CompareImageFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CompareImageFaces", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "CompareImageFaces", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

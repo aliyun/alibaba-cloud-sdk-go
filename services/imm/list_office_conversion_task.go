@@ -21,7 +21,6 @@ import (
 )
 
 // ListOfficeConversionTask invokes the imm.ListOfficeConversionTask API synchronously
-// api document: https://help.aliyun.com/api/imm/listofficeconversiontask.html
 func (client *Client) ListOfficeConversionTask(request *ListOfficeConversionTaskRequest) (response *ListOfficeConversionTaskResponse, err error) {
 	response = CreateListOfficeConversionTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListOfficeConversionTask(request *ListOfficeConversionTask
 }
 
 // ListOfficeConversionTaskWithChan invokes the imm.ListOfficeConversionTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/listofficeconversiontask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListOfficeConversionTaskWithChan(request *ListOfficeConversionTaskRequest) (<-chan *ListOfficeConversionTaskResponse, <-chan error) {
 	responseChan := make(chan *ListOfficeConversionTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListOfficeConversionTaskWithChan(request *ListOfficeConver
 }
 
 // ListOfficeConversionTaskWithCallback invokes the imm.ListOfficeConversionTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/listofficeconversiontask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListOfficeConversionTaskWithCallback(request *ListOfficeConversionTaskRequest, callback func(response *ListOfficeConversionTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateListOfficeConversionTaskRequest() (request *ListOfficeConversionTaskR
 	request = &ListOfficeConversionTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListOfficeConversionTask", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListOfficeConversionTask", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

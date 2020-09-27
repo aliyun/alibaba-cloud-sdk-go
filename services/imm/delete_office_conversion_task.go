@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteOfficeConversionTask invokes the imm.DeleteOfficeConversionTask API synchronously
-// api document: https://help.aliyun.com/api/imm/deleteofficeconversiontask.html
 func (client *Client) DeleteOfficeConversionTask(request *DeleteOfficeConversionTaskRequest) (response *DeleteOfficeConversionTaskResponse, err error) {
 	response = CreateDeleteOfficeConversionTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteOfficeConversionTask(request *DeleteOfficeConversion
 }
 
 // DeleteOfficeConversionTaskWithChan invokes the imm.DeleteOfficeConversionTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/deleteofficeconversiontask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteOfficeConversionTaskWithChan(request *DeleteOfficeConversionTaskRequest) (<-chan *DeleteOfficeConversionTaskResponse, <-chan error) {
 	responseChan := make(chan *DeleteOfficeConversionTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteOfficeConversionTaskWithChan(request *DeleteOfficeCo
 }
 
 // DeleteOfficeConversionTaskWithCallback invokes the imm.DeleteOfficeConversionTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/deleteofficeconversiontask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteOfficeConversionTaskWithCallback(request *DeleteOfficeConversionTaskRequest, callback func(response *DeleteOfficeConversionTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateDeleteOfficeConversionTaskRequest() (request *DeleteOfficeConversionT
 	request = &DeleteOfficeConversionTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DeleteOfficeConversionTask", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "DeleteOfficeConversionTask", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

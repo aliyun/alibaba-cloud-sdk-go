@@ -21,7 +21,6 @@ import (
 )
 
 // DetectImageTexts invokes the imm.DetectImageTexts API synchronously
-// api document: https://help.aliyun.com/api/imm/detectimagetexts.html
 func (client *Client) DetectImageTexts(request *DetectImageTextsRequest) (response *DetectImageTextsResponse, err error) {
 	response = CreateDetectImageTextsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetectImageTexts(request *DetectImageTextsRequest) (respon
 }
 
 // DetectImageTextsWithChan invokes the imm.DetectImageTexts API asynchronously
-// api document: https://help.aliyun.com/api/imm/detectimagetexts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectImageTextsWithChan(request *DetectImageTextsRequest) (<-chan *DetectImageTextsResponse, <-chan error) {
 	responseChan := make(chan *DetectImageTextsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetectImageTextsWithChan(request *DetectImageTextsRequest)
 }
 
 // DetectImageTextsWithCallback invokes the imm.DetectImageTexts API asynchronously
-// api document: https://help.aliyun.com/api/imm/detectimagetexts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectImageTextsWithCallback(request *DetectImageTextsRequest, callback func(response *DetectImageTextsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDetectImageTextsRequest() (request *DetectImageTextsRequest) {
 	request = &DetectImageTextsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageTexts", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageTexts", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

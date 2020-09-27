@@ -21,7 +21,6 @@ import (
 )
 
 // GetOfficePreviewURL invokes the imm.GetOfficePreviewURL API synchronously
-// api document: https://help.aliyun.com/api/imm/getofficepreviewurl.html
 func (client *Client) GetOfficePreviewURL(request *GetOfficePreviewURLRequest) (response *GetOfficePreviewURLResponse, err error) {
 	response = CreateGetOfficePreviewURLResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetOfficePreviewURL(request *GetOfficePreviewURLRequest) (
 }
 
 // GetOfficePreviewURLWithChan invokes the imm.GetOfficePreviewURL API asynchronously
-// api document: https://help.aliyun.com/api/imm/getofficepreviewurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetOfficePreviewURLWithChan(request *GetOfficePreviewURLRequest) (<-chan *GetOfficePreviewURLResponse, <-chan error) {
 	responseChan := make(chan *GetOfficePreviewURLResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetOfficePreviewURLWithChan(request *GetOfficePreviewURLRe
 }
 
 // GetOfficePreviewURLWithCallback invokes the imm.GetOfficePreviewURL API asynchronously
-// api document: https://help.aliyun.com/api/imm/getofficepreviewurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetOfficePreviewURLWithCallback(request *GetOfficePreviewURLRequest, callback func(response *GetOfficePreviewURLResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,7 +99,7 @@ func CreateGetOfficePreviewURLRequest() (request *GetOfficePreviewURLRequest) {
 	request = &GetOfficePreviewURLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetOfficePreviewURL", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetOfficePreviewURL", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

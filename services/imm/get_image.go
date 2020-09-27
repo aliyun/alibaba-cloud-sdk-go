@@ -21,7 +21,6 @@ import (
 )
 
 // GetImage invokes the imm.GetImage API synchronously
-// api document: https://help.aliyun.com/api/imm/getimage.html
 func (client *Client) GetImage(request *GetImageRequest) (response *GetImageResponse, err error) {
 	response = CreateGetImageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetImage(request *GetImageRequest) (response *GetImageResp
 }
 
 // GetImageWithChan invokes the imm.GetImage API asynchronously
-// api document: https://help.aliyun.com/api/imm/getimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetImageWithChan(request *GetImageRequest) (<-chan *GetImageResponse, <-chan error) {
 	responseChan := make(chan *GetImageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetImageWithChan(request *GetImageRequest) (<-chan *GetIma
 }
 
 // GetImageWithCallback invokes the imm.GetImage API asynchronously
-// api document: https://help.aliyun.com/api/imm/getimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetImageWithCallback(request *GetImageRequest, callback func(response *GetImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -142,7 +137,7 @@ func CreateGetImageRequest() (request *GetImageRequest) {
 	request = &GetImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetImage", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetImage", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

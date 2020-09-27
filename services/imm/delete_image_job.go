@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteImageJob invokes the imm.DeleteImageJob API synchronously
-// api document: https://help.aliyun.com/api/imm/deleteimagejob.html
 func (client *Client) DeleteImageJob(request *DeleteImageJobRequest) (response *DeleteImageJobResponse, err error) {
 	response = CreateDeleteImageJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteImageJob(request *DeleteImageJobRequest) (response *
 }
 
 // DeleteImageJobWithChan invokes the imm.DeleteImageJob API asynchronously
-// api document: https://help.aliyun.com/api/imm/deleteimagejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteImageJobWithChan(request *DeleteImageJobRequest) (<-chan *DeleteImageJobResponse, <-chan error) {
 	responseChan := make(chan *DeleteImageJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteImageJobWithChan(request *DeleteImageJobRequest) (<-
 }
 
 // DeleteImageJobWithCallback invokes the imm.DeleteImageJob API asynchronously
-// api document: https://help.aliyun.com/api/imm/deleteimagejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteImageJobWithCallback(request *DeleteImageJobRequest, callback func(response *DeleteImageJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDeleteImageJobRequest() (request *DeleteImageJobRequest) {
 	request = &DeleteImageJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DeleteImageJob", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "DeleteImageJob", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

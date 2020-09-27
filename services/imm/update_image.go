@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateImage invokes the imm.UpdateImage API synchronously
-// api document: https://help.aliyun.com/api/imm/updateimage.html
 func (client *Client) UpdateImage(request *UpdateImageRequest) (response *UpdateImageResponse, err error) {
 	response = CreateUpdateImageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateImage(request *UpdateImageRequest) (response *Update
 }
 
 // UpdateImageWithChan invokes the imm.UpdateImage API asynchronously
-// api document: https://help.aliyun.com/api/imm/updateimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateImageWithChan(request *UpdateImageRequest) (<-chan *UpdateImageResponse, <-chan error) {
 	responseChan := make(chan *UpdateImageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateImageWithChan(request *UpdateImageRequest) (<-chan *
 }
 
 // UpdateImageWithCallback invokes the imm.UpdateImage API asynchronously
-// api document: https://help.aliyun.com/api/imm/updateimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateImageWithCallback(request *UpdateImageRequest, callback func(response *UpdateImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -113,7 +108,7 @@ func CreateUpdateImageRequest() (request *UpdateImageRequest) {
 	request = &UpdateImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "UpdateImage", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "UpdateImage", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

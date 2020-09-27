@@ -21,7 +21,6 @@ import (
 )
 
 // StopStreamAnalyseTask invokes the imm.StopStreamAnalyseTask API synchronously
-// api document: https://help.aliyun.com/api/imm/stopstreamanalysetask.html
 func (client *Client) StopStreamAnalyseTask(request *StopStreamAnalyseTaskRequest) (response *StopStreamAnalyseTaskResponse, err error) {
 	response = CreateStopStreamAnalyseTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopStreamAnalyseTask(request *StopStreamAnalyseTaskReques
 }
 
 // StopStreamAnalyseTaskWithChan invokes the imm.StopStreamAnalyseTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/stopstreamanalysetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopStreamAnalyseTaskWithChan(request *StopStreamAnalyseTaskRequest) (<-chan *StopStreamAnalyseTaskResponse, <-chan error) {
 	responseChan := make(chan *StopStreamAnalyseTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopStreamAnalyseTaskWithChan(request *StopStreamAnalyseTa
 }
 
 // StopStreamAnalyseTaskWithCallback invokes the imm.StopStreamAnalyseTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/stopstreamanalysetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopStreamAnalyseTaskWithCallback(request *StopStreamAnalyseTaskRequest, callback func(response *StopStreamAnalyseTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateStopStreamAnalyseTaskRequest() (request *StopStreamAnalyseTaskRequest
 	request = &StopStreamAnalyseTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "StopStreamAnalyseTask", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "StopStreamAnalyseTask", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

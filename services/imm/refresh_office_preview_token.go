@@ -21,7 +21,6 @@ import (
 )
 
 // RefreshOfficePreviewToken invokes the imm.RefreshOfficePreviewToken API synchronously
-// api document: https://help.aliyun.com/api/imm/refreshofficepreviewtoken.html
 func (client *Client) RefreshOfficePreviewToken(request *RefreshOfficePreviewTokenRequest) (response *RefreshOfficePreviewTokenResponse, err error) {
 	response = CreateRefreshOfficePreviewTokenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RefreshOfficePreviewToken(request *RefreshOfficePreviewTok
 }
 
 // RefreshOfficePreviewTokenWithChan invokes the imm.RefreshOfficePreviewToken API asynchronously
-// api document: https://help.aliyun.com/api/imm/refreshofficepreviewtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshOfficePreviewTokenWithChan(request *RefreshOfficePreviewTokenRequest) (<-chan *RefreshOfficePreviewTokenResponse, <-chan error) {
 	responseChan := make(chan *RefreshOfficePreviewTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RefreshOfficePreviewTokenWithChan(request *RefreshOfficePr
 }
 
 // RefreshOfficePreviewTokenWithCallback invokes the imm.RefreshOfficePreviewToken API asynchronously
-// api document: https://help.aliyun.com/api/imm/refreshofficepreviewtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshOfficePreviewTokenWithCallback(request *RefreshOfficePreviewTokenRequest, callback func(response *RefreshOfficePreviewTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateRefreshOfficePreviewTokenRequest() (request *RefreshOfficePreviewToke
 	request = &RefreshOfficePreviewTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "RefreshOfficePreviewToken", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "RefreshOfficePreviewToken", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // GetProject invokes the imm.GetProject API synchronously
-// api document: https://help.aliyun.com/api/imm/getproject.html
 func (client *Client) GetProject(request *GetProjectRequest) (response *GetProjectResponse, err error) {
 	response = CreateGetProjectResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetProject(request *GetProjectRequest) (response *GetProje
 }
 
 // GetProjectWithChan invokes the imm.GetProject API asynchronously
-// api document: https://help.aliyun.com/api/imm/getproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetProjectWithChan(request *GetProjectRequest) (<-chan *GetProjectResponse, <-chan error) {
 	responseChan := make(chan *GetProjectResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetProjectWithChan(request *GetProjectRequest) (<-chan *Ge
 }
 
 // GetProjectWithCallback invokes the imm.GetProject API asynchronously
-// api document: https://help.aliyun.com/api/imm/getproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetProjectWithCallback(request *GetProjectRequest, callback func(response *GetProjectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateGetProjectRequest() (request *GetProjectRequest) {
 	request = &GetProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetProject", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetProject", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

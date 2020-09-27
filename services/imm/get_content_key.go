@@ -21,7 +21,6 @@ import (
 )
 
 // GetContentKey invokes the imm.GetContentKey API synchronously
-// api document: https://help.aliyun.com/api/imm/getcontentkey.html
 func (client *Client) GetContentKey(request *GetContentKeyRequest) (response *GetContentKeyResponse, err error) {
 	response = CreateGetContentKeyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetContentKey(request *GetContentKeyRequest) (response *Ge
 }
 
 // GetContentKeyWithChan invokes the imm.GetContentKey API asynchronously
-// api document: https://help.aliyun.com/api/imm/getcontentkey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetContentKeyWithChan(request *GetContentKeyRequest) (<-chan *GetContentKeyResponse, <-chan error) {
 	responseChan := make(chan *GetContentKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetContentKeyWithChan(request *GetContentKeyRequest) (<-ch
 }
 
 // GetContentKeyWithCallback invokes the imm.GetContentKey API asynchronously
-// api document: https://help.aliyun.com/api/imm/getcontentkey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetContentKeyWithCallback(request *GetContentKeyRequest, callback func(response *GetContentKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateGetContentKeyRequest() (request *GetContentKeyRequest) {
 	request = &GetContentKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetContentKey", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetContentKey", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

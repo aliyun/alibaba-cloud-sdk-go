@@ -21,7 +21,6 @@ import (
 )
 
 // GetMediaMeta invokes the imm.GetMediaMeta API synchronously
-// api document: https://help.aliyun.com/api/imm/getmediameta.html
 func (client *Client) GetMediaMeta(request *GetMediaMetaRequest) (response *GetMediaMetaResponse, err error) {
 	response = CreateGetMediaMetaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetMediaMeta(request *GetMediaMetaRequest) (response *GetM
 }
 
 // GetMediaMetaWithChan invokes the imm.GetMediaMeta API asynchronously
-// api document: https://help.aliyun.com/api/imm/getmediameta.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMediaMetaWithChan(request *GetMediaMetaRequest) (<-chan *GetMediaMetaResponse, <-chan error) {
 	responseChan := make(chan *GetMediaMetaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetMediaMetaWithChan(request *GetMediaMetaRequest) (<-chan
 }
 
 // GetMediaMetaWithCallback invokes the imm.GetMediaMeta API asynchronously
-// api document: https://help.aliyun.com/api/imm/getmediameta.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMediaMetaWithCallback(request *GetMediaMetaRequest, callback func(response *GetMediaMetaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateGetMediaMetaRequest() (request *GetMediaMetaRequest) {
 	request = &GetMediaMetaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetMediaMeta", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetMediaMeta", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

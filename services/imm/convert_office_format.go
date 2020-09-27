@@ -21,7 +21,6 @@ import (
 )
 
 // ConvertOfficeFormat invokes the imm.ConvertOfficeFormat API synchronously
-// api document: https://help.aliyun.com/api/imm/convertofficeformat.html
 func (client *Client) ConvertOfficeFormat(request *ConvertOfficeFormatRequest) (response *ConvertOfficeFormatResponse, err error) {
 	response = CreateConvertOfficeFormatResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ConvertOfficeFormat(request *ConvertOfficeFormatRequest) (
 }
 
 // ConvertOfficeFormatWithChan invokes the imm.ConvertOfficeFormat API asynchronously
-// api document: https://help.aliyun.com/api/imm/convertofficeformat.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConvertOfficeFormatWithChan(request *ConvertOfficeFormatRequest) (<-chan *ConvertOfficeFormatResponse, <-chan error) {
 	responseChan := make(chan *ConvertOfficeFormatResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ConvertOfficeFormatWithChan(request *ConvertOfficeFormatRe
 }
 
 // ConvertOfficeFormatWithCallback invokes the imm.ConvertOfficeFormat API asynchronously
-// api document: https://help.aliyun.com/api/imm/convertofficeformat.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConvertOfficeFormatWithCallback(request *ConvertOfficeFormatRequest, callback func(response *ConvertOfficeFormatResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -110,7 +105,7 @@ func CreateConvertOfficeFormatRequest() (request *ConvertOfficeFormatRequest) {
 	request = &ConvertOfficeFormatRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ConvertOfficeFormat", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "ConvertOfficeFormat", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

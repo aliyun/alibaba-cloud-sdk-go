@@ -21,7 +21,6 @@ import (
 )
 
 // ListProjectAPIs invokes the imm.ListProjectAPIs API synchronously
-// api document: https://help.aliyun.com/api/imm/listprojectapis.html
 func (client *Client) ListProjectAPIs(request *ListProjectAPIsRequest) (response *ListProjectAPIsResponse, err error) {
 	response = CreateListProjectAPIsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListProjectAPIs(request *ListProjectAPIsRequest) (response
 }
 
 // ListProjectAPIsWithChan invokes the imm.ListProjectAPIs API asynchronously
-// api document: https://help.aliyun.com/api/imm/listprojectapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListProjectAPIsWithChan(request *ListProjectAPIsRequest) (<-chan *ListProjectAPIsResponse, <-chan error) {
 	responseChan := make(chan *ListProjectAPIsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListProjectAPIsWithChan(request *ListProjectAPIsRequest) (
 }
 
 // ListProjectAPIsWithCallback invokes the imm.ListProjectAPIs API asynchronously
-// api document: https://help.aliyun.com/api/imm/listprojectapis.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListProjectAPIsWithCallback(request *ListProjectAPIsRequest, callback func(response *ListProjectAPIsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateListProjectAPIsRequest() (request *ListProjectAPIsRequest) {
 	request = &ListProjectAPIsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListProjectAPIs", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListProjectAPIs", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

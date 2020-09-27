@@ -21,7 +21,6 @@ import (
 )
 
 // DetectImageBodies invokes the imm.DetectImageBodies API synchronously
-// api document: https://help.aliyun.com/api/imm/detectimagebodies.html
 func (client *Client) DetectImageBodies(request *DetectImageBodiesRequest) (response *DetectImageBodiesResponse, err error) {
 	response = CreateDetectImageBodiesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetectImageBodies(request *DetectImageBodiesRequest) (resp
 }
 
 // DetectImageBodiesWithChan invokes the imm.DetectImageBodies API asynchronously
-// api document: https://help.aliyun.com/api/imm/detectimagebodies.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectImageBodiesWithChan(request *DetectImageBodiesRequest) (<-chan *DetectImageBodiesResponse, <-chan error) {
 	responseChan := make(chan *DetectImageBodiesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetectImageBodiesWithChan(request *DetectImageBodiesReques
 }
 
 // DetectImageBodiesWithCallback invokes the imm.DetectImageBodies API asynchronously
-// api document: https://help.aliyun.com/api/imm/detectimagebodies.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectImageBodiesWithCallback(request *DetectImageBodiesRequest, callback func(response *DetectImageBodiesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDetectImageBodiesRequest() (request *DetectImageBodiesRequest) {
 	request = &DetectImageBodiesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageBodies", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageBodies", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

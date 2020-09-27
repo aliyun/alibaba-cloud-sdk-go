@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCADConversionTask invokes the imm.CreateCADConversionTask API synchronously
-// api document: https://help.aliyun.com/api/imm/createcadconversiontask.html
 func (client *Client) CreateCADConversionTask(request *CreateCADConversionTaskRequest) (response *CreateCADConversionTaskResponse, err error) {
 	response = CreateCreateCADConversionTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCADConversionTask(request *CreateCADConversionTaskRe
 }
 
 // CreateCADConversionTaskWithChan invokes the imm.CreateCADConversionTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/createcadconversiontask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCADConversionTaskWithChan(request *CreateCADConversionTaskRequest) (<-chan *CreateCADConversionTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateCADConversionTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateCADConversionTaskWithChan(request *CreateCADConversi
 }
 
 // CreateCADConversionTaskWithCallback invokes the imm.CreateCADConversionTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/createcadconversiontask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCADConversionTaskWithCallback(request *CreateCADConversionTaskRequest, callback func(response *CreateCADConversionTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -109,7 +104,7 @@ func CreateCreateCADConversionTaskRequest() (request *CreateCADConversionTaskReq
 	request = &CreateCADConversionTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateCADConversionTask", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateCADConversionTask", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

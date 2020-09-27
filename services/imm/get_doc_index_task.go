@@ -21,7 +21,6 @@ import (
 )
 
 // GetDocIndexTask invokes the imm.GetDocIndexTask API synchronously
-// api document: https://help.aliyun.com/api/imm/getdocindextask.html
 func (client *Client) GetDocIndexTask(request *GetDocIndexTaskRequest) (response *GetDocIndexTaskResponse, err error) {
 	response = CreateGetDocIndexTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetDocIndexTask(request *GetDocIndexTaskRequest) (response
 }
 
 // GetDocIndexTaskWithChan invokes the imm.GetDocIndexTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/getdocindextask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDocIndexTaskWithChan(request *GetDocIndexTaskRequest) (<-chan *GetDocIndexTaskResponse, <-chan error) {
 	responseChan := make(chan *GetDocIndexTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetDocIndexTaskWithChan(request *GetDocIndexTaskRequest) (
 }
 
 // GetDocIndexTaskWithCallback invokes the imm.GetDocIndexTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/getdocindextask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDocIndexTaskWithCallback(request *GetDocIndexTaskRequest, callback func(response *GetDocIndexTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateGetDocIndexTaskRequest() (request *GetDocIndexTaskRequest) {
 	request = &GetDocIndexTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetDocIndexTask", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetDocIndexTask", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

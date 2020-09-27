@@ -21,7 +21,6 @@ import (
 )
 
 // SearchDocIndex invokes the imm.SearchDocIndex API synchronously
-// api document: https://help.aliyun.com/api/imm/searchdocindex.html
 func (client *Client) SearchDocIndex(request *SearchDocIndexRequest) (response *SearchDocIndexResponse, err error) {
 	response = CreateSearchDocIndexResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchDocIndex(request *SearchDocIndexRequest) (response *
 }
 
 // SearchDocIndexWithChan invokes the imm.SearchDocIndex API asynchronously
-// api document: https://help.aliyun.com/api/imm/searchdocindex.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchDocIndexWithChan(request *SearchDocIndexRequest) (<-chan *SearchDocIndexResponse, <-chan error) {
 	responseChan := make(chan *SearchDocIndexResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchDocIndexWithChan(request *SearchDocIndexRequest) (<-
 }
 
 // SearchDocIndexWithCallback invokes the imm.SearchDocIndex API asynchronously
-// api document: https://help.aliyun.com/api/imm/searchdocindex.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchDocIndexWithCallback(request *SearchDocIndexRequest, callback func(response *SearchDocIndexResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -109,7 +104,7 @@ func CreateSearchDocIndexRequest() (request *SearchDocIndexRequest) {
 	request = &SearchDocIndexRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "SearchDocIndex", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "SearchDocIndex", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

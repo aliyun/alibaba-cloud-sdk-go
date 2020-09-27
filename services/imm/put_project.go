@@ -21,7 +21,6 @@ import (
 )
 
 // PutProject invokes the imm.PutProject API synchronously
-// api document: https://help.aliyun.com/api/imm/putproject.html
 func (client *Client) PutProject(request *PutProjectRequest) (response *PutProjectResponse, err error) {
 	response = CreatePutProjectResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PutProject(request *PutProjectRequest) (response *PutProje
 }
 
 // PutProjectWithChan invokes the imm.PutProject API asynchronously
-// api document: https://help.aliyun.com/api/imm/putproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutProjectWithChan(request *PutProjectRequest) (<-chan *PutProjectResponse, <-chan error) {
 	responseChan := make(chan *PutProjectResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PutProjectWithChan(request *PutProjectRequest) (<-chan *Pu
 }
 
 // PutProjectWithCallback invokes the imm.PutProject API asynchronously
-// api document: https://help.aliyun.com/api/imm/putproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutProjectWithCallback(request *PutProjectRequest, callback func(response *PutProjectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,7 +98,7 @@ func CreatePutProjectRequest() (request *PutProjectRequest) {
 	request = &PutProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "PutProject", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "PutProject", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

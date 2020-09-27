@@ -21,7 +21,6 @@ import (
 )
 
 // DetectImageQRCodes invokes the imm.DetectImageQRCodes API synchronously
-// api document: https://help.aliyun.com/api/imm/detectimageqrcodes.html
 func (client *Client) DetectImageQRCodes(request *DetectImageQRCodesRequest) (response *DetectImageQRCodesResponse, err error) {
 	response = CreateDetectImageQRCodesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetectImageQRCodes(request *DetectImageQRCodesRequest) (re
 }
 
 // DetectImageQRCodesWithChan invokes the imm.DetectImageQRCodes API asynchronously
-// api document: https://help.aliyun.com/api/imm/detectimageqrcodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectImageQRCodesWithChan(request *DetectImageQRCodesRequest) (<-chan *DetectImageQRCodesResponse, <-chan error) {
 	responseChan := make(chan *DetectImageQRCodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetectImageQRCodesWithChan(request *DetectImageQRCodesRequ
 }
 
 // DetectImageQRCodesWithCallback invokes the imm.DetectImageQRCodes API asynchronously
-// api document: https://help.aliyun.com/api/imm/detectimageqrcodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectImageQRCodesWithCallback(request *DetectImageQRCodesRequest, callback func(response *DetectImageQRCodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDetectImageQRCodesRequest() (request *DetectImageQRCodesRequest) {
 	request = &DetectImageQRCodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageQRCodes", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageQRCodes", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

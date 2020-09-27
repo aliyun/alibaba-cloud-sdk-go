@@ -21,7 +21,6 @@ import (
 )
 
 // ListVideos invokes the imm.ListVideos API synchronously
-// api document: https://help.aliyun.com/api/imm/listvideos.html
 func (client *Client) ListVideos(request *ListVideosRequest) (response *ListVideosResponse, err error) {
 	response = CreateListVideosResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListVideos(request *ListVideosRequest) (response *ListVide
 }
 
 // ListVideosWithChan invokes the imm.ListVideos API asynchronously
-// api document: https://help.aliyun.com/api/imm/listvideos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVideosWithChan(request *ListVideosRequest) (<-chan *ListVideosResponse, <-chan error) {
 	responseChan := make(chan *ListVideosResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListVideosWithChan(request *ListVideosRequest) (<-chan *Li
 }
 
 // ListVideosWithCallback invokes the imm.ListVideos API asynchronously
-// api document: https://help.aliyun.com/api/imm/listvideos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVideosWithCallback(request *ListVideosRequest, callback func(response *ListVideosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateListVideosRequest() (request *ListVideosRequest) {
 	request = &ListVideosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListVideos", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListVideos", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

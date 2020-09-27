@@ -21,7 +21,6 @@ import (
 )
 
 // CreateOfficeConversionTask invokes the imm.CreateOfficeConversionTask API synchronously
-// api document: https://help.aliyun.com/api/imm/createofficeconversiontask.html
 func (client *Client) CreateOfficeConversionTask(request *CreateOfficeConversionTaskRequest) (response *CreateOfficeConversionTaskResponse, err error) {
 	response = CreateCreateOfficeConversionTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateOfficeConversionTask(request *CreateOfficeConversion
 }
 
 // CreateOfficeConversionTaskWithChan invokes the imm.CreateOfficeConversionTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/createofficeconversiontask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOfficeConversionTaskWithChan(request *CreateOfficeConversionTaskRequest) (<-chan *CreateOfficeConversionTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateOfficeConversionTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateOfficeConversionTaskWithChan(request *CreateOfficeCo
 }
 
 // CreateOfficeConversionTaskWithCallback invokes the imm.CreateOfficeConversionTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/createofficeconversiontask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOfficeConversionTaskWithCallback(request *CreateOfficeConversionTaskRequest, callback func(response *CreateOfficeConversionTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -118,7 +113,7 @@ func CreateCreateOfficeConversionTaskRequest() (request *CreateOfficeConversionT
 	request = &CreateOfficeConversionTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateOfficeConversionTask", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateOfficeConversionTask", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DetectQRCodes invokes the imm.DetectQRCodes API synchronously
-// api document: https://help.aliyun.com/api/imm/detectqrcodes.html
 func (client *Client) DetectQRCodes(request *DetectQRCodesRequest) (response *DetectQRCodesResponse, err error) {
 	response = CreateDetectQRCodesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetectQRCodes(request *DetectQRCodesRequest) (response *De
 }
 
 // DetectQRCodesWithChan invokes the imm.DetectQRCodes API asynchronously
-// api document: https://help.aliyun.com/api/imm/detectqrcodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectQRCodesWithChan(request *DetectQRCodesRequest) (<-chan *DetectQRCodesResponse, <-chan error) {
 	responseChan := make(chan *DetectQRCodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetectQRCodesWithChan(request *DetectQRCodesRequest) (<-ch
 }
 
 // DetectQRCodesWithCallback invokes the imm.DetectQRCodes API asynchronously
-// api document: https://help.aliyun.com/api/imm/detectqrcodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectQRCodesWithCallback(request *DetectQRCodesRequest, callback func(response *DetectQRCodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDetectQRCodesRequest() (request *DetectQRCodesRequest) {
 	request = &DetectQRCodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DetectQRCodes", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "DetectQRCodes", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

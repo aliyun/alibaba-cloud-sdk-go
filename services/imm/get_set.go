@@ -21,7 +21,6 @@ import (
 )
 
 // GetSet invokes the imm.GetSet API synchronously
-// api document: https://help.aliyun.com/api/imm/getset.html
 func (client *Client) GetSet(request *GetSetRequest) (response *GetSetResponse, err error) {
 	response = CreateGetSetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetSet(request *GetSetRequest) (response *GetSetResponse, 
 }
 
 // GetSetWithChan invokes the imm.GetSet API asynchronously
-// api document: https://help.aliyun.com/api/imm/getset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSetWithChan(request *GetSetRequest) (<-chan *GetSetResponse, <-chan error) {
 	responseChan := make(chan *GetSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetSetWithChan(request *GetSetRequest) (<-chan *GetSetResp
 }
 
 // GetSetWithCallback invokes the imm.GetSet API asynchronously
-// api document: https://help.aliyun.com/api/imm/getset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSetWithCallback(request *GetSetRequest, callback func(response *GetSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateGetSetRequest() (request *GetSetRequest) {
 	request = &GetSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetSet", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetSet", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

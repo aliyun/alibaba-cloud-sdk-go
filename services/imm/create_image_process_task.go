@@ -21,7 +21,6 @@ import (
 )
 
 // CreateImageProcessTask invokes the imm.CreateImageProcessTask API synchronously
-// api document: https://help.aliyun.com/api/imm/createimageprocesstask.html
 func (client *Client) CreateImageProcessTask(request *CreateImageProcessTaskRequest) (response *CreateImageProcessTaskResponse, err error) {
 	response = CreateCreateImageProcessTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateImageProcessTask(request *CreateImageProcessTaskRequ
 }
 
 // CreateImageProcessTaskWithChan invokes the imm.CreateImageProcessTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/createimageprocesstask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateImageProcessTaskWithChan(request *CreateImageProcessTaskRequest) (<-chan *CreateImageProcessTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateImageProcessTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateImageProcessTaskWithChan(request *CreateImageProcess
 }
 
 // CreateImageProcessTaskWithCallback invokes the imm.CreateImageProcessTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/createimageprocesstask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateImageProcessTaskWithCallback(request *CreateImageProcessTaskRequest, callback func(response *CreateImageProcessTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateCreateImageProcessTaskRequest() (request *CreateImageProcessTaskReque
 	request = &CreateImageProcessTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateImageProcessTask", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateImageProcessTask", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

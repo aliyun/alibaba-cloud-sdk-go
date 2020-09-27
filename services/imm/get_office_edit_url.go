@@ -21,7 +21,6 @@ import (
 )
 
 // GetOfficeEditURL invokes the imm.GetOfficeEditURL API synchronously
-// api document: https://help.aliyun.com/api/imm/getofficeediturl.html
 func (client *Client) GetOfficeEditURL(request *GetOfficeEditURLRequest) (response *GetOfficeEditURLResponse, err error) {
 	response = CreateGetOfficeEditURLResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetOfficeEditURL(request *GetOfficeEditURLRequest) (respon
 }
 
 // GetOfficeEditURLWithChan invokes the imm.GetOfficeEditURL API asynchronously
-// api document: https://help.aliyun.com/api/imm/getofficeediturl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetOfficeEditURLWithChan(request *GetOfficeEditURLRequest) (<-chan *GetOfficeEditURLResponse, <-chan error) {
 	responseChan := make(chan *GetOfficeEditURLResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetOfficeEditURLWithChan(request *GetOfficeEditURLRequest)
 }
 
 // GetOfficeEditURLWithCallback invokes the imm.GetOfficeEditURL API asynchronously
-// api document: https://help.aliyun.com/api/imm/getofficeediturl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetOfficeEditURLWithCallback(request *GetOfficeEditURLRequest, callback func(response *GetOfficeEditURLResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,7 +99,7 @@ func CreateGetOfficeEditURLRequest() (request *GetOfficeEditURLRequest) {
 	request = &GetOfficeEditURLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetOfficeEditURL", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetOfficeEditURL", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteImage invokes the imm.DeleteImage API synchronously
-func (client *Client) DeleteImage(request *DeleteImageRequest) (response *DeleteImageResponse, err error) {
-	response = CreateDeleteImageResponse()
+// OpenImmService invokes the imm.OpenImmService API synchronously
+func (client *Client) OpenImmService(request *OpenImmServiceRequest) (response *OpenImmServiceResponse, err error) {
+	response = CreateOpenImmServiceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteImageWithChan invokes the imm.DeleteImage API asynchronously
-func (client *Client) DeleteImageWithChan(request *DeleteImageRequest) (<-chan *DeleteImageResponse, <-chan error) {
-	responseChan := make(chan *DeleteImageResponse, 1)
+// OpenImmServiceWithChan invokes the imm.OpenImmService API asynchronously
+func (client *Client) OpenImmServiceWithChan(request *OpenImmServiceRequest) (<-chan *OpenImmServiceResponse, <-chan error) {
+	responseChan := make(chan *OpenImmServiceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteImage(request)
+		response, err := client.OpenImmService(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteImageWithChan(request *DeleteImageRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// DeleteImageWithCallback invokes the imm.DeleteImage API asynchronously
-func (client *Client) DeleteImageWithCallback(request *DeleteImageRequest, callback func(response *DeleteImageResponse, err error)) <-chan int {
+// OpenImmServiceWithCallback invokes the imm.OpenImmService API asynchronously
+func (client *Client) OpenImmServiceWithCallback(request *OpenImmServiceRequest, callback func(response *OpenImmServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteImageResponse
+		var response *OpenImmServiceResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteImage(request)
+		response, err = client.OpenImmService(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,35 +68,32 @@ func (client *Client) DeleteImageWithCallback(request *DeleteImageRequest, callb
 	return result
 }
 
-// DeleteImageRequest is the request struct for api DeleteImage
-type DeleteImageRequest struct {
+// OpenImmServiceRequest is the request struct for api OpenImmService
+type OpenImmServiceRequest struct {
 	*requests.RpcRequest
-	Project  string `position:"Query" name:"Project"`
-	ImageUri string `position:"Query" name:"ImageUri"`
-	SetId    string `position:"Query" name:"SetId"`
+	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// DeleteImageResponse is the response struct for api DeleteImage
-type DeleteImageResponse struct {
+// OpenImmServiceResponse is the response struct for api OpenImmService
+type OpenImmServiceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	SetId     string `json:"SetId" xml:"SetId"`
-	ImageUri  string `json:"ImageUri" xml:"ImageUri"`
+	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
-// CreateDeleteImageRequest creates a request to invoke DeleteImage API
-func CreateDeleteImageRequest() (request *DeleteImageRequest) {
-	request = &DeleteImageRequest{
+// CreateOpenImmServiceRequest creates a request to invoke OpenImmService API
+func CreateOpenImmServiceRequest() (request *OpenImmServiceRequest) {
+	request = &OpenImmServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DeleteImage", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "OpenImmService", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteImageResponse creates a response to parse from DeleteImage response
-func CreateDeleteImageResponse() (response *DeleteImageResponse) {
-	response = &DeleteImageResponse{
+// CreateOpenImmServiceResponse creates a response to parse from OpenImmService response
+func CreateOpenImmServiceResponse() (response *OpenImmServiceResponse) {
+	response = &OpenImmServiceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

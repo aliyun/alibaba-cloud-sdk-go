@@ -21,7 +21,6 @@ import (
 )
 
 // ListImages invokes the imm.ListImages API synchronously
-// api document: https://help.aliyun.com/api/imm/listimages.html
 func (client *Client) ListImages(request *ListImagesRequest) (response *ListImagesResponse, err error) {
 	response = CreateListImagesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListImages(request *ListImagesRequest) (response *ListImag
 }
 
 // ListImagesWithChan invokes the imm.ListImages API asynchronously
-// api document: https://help.aliyun.com/api/imm/listimages.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListImagesWithChan(request *ListImagesRequest) (<-chan *ListImagesResponse, <-chan error) {
 	responseChan := make(chan *ListImagesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListImagesWithChan(request *ListImagesRequest) (<-chan *Li
 }
 
 // ListImagesWithCallback invokes the imm.ListImages API asynchronously
-// api document: https://help.aliyun.com/api/imm/listimages.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListImagesWithCallback(request *ListImagesRequest, callback func(response *ListImagesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateListImagesRequest() (request *ListImagesRequest) {
 	request = &ListImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListImages", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListImages", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // ListSets invokes the imm.ListSets API synchronously
-// api document: https://help.aliyun.com/api/imm/listsets.html
 func (client *Client) ListSets(request *ListSetsRequest) (response *ListSetsResponse, err error) {
 	response = CreateListSetsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSets(request *ListSetsRequest) (response *ListSetsResp
 }
 
 // ListSetsWithChan invokes the imm.ListSets API asynchronously
-// api document: https://help.aliyun.com/api/imm/listsets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSetsWithChan(request *ListSetsRequest) (<-chan *ListSetsResponse, <-chan error) {
 	responseChan := make(chan *ListSetsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSetsWithChan(request *ListSetsRequest) (<-chan *ListSe
 }
 
 // ListSetsWithCallback invokes the imm.ListSets API asynchronously
-// api document: https://help.aliyun.com/api/imm/listsets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSetsWithCallback(request *ListSetsRequest, callback func(response *ListSetsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateListSetsRequest() (request *ListSetsRequest) {
 	request = &ListSetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListSets", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListSets", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

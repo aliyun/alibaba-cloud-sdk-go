@@ -21,7 +21,6 @@ import (
 )
 
 // ListVideoFrames invokes the imm.ListVideoFrames API synchronously
-// api document: https://help.aliyun.com/api/imm/listvideoframes.html
 func (client *Client) ListVideoFrames(request *ListVideoFramesRequest) (response *ListVideoFramesResponse, err error) {
 	response = CreateListVideoFramesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListVideoFrames(request *ListVideoFramesRequest) (response
 }
 
 // ListVideoFramesWithChan invokes the imm.ListVideoFrames API asynchronously
-// api document: https://help.aliyun.com/api/imm/listvideoframes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVideoFramesWithChan(request *ListVideoFramesRequest) (<-chan *ListVideoFramesResponse, <-chan error) {
 	responseChan := make(chan *ListVideoFramesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListVideoFramesWithChan(request *ListVideoFramesRequest) (
 }
 
 // ListVideoFramesWithCallback invokes the imm.ListVideoFrames API asynchronously
-// api document: https://help.aliyun.com/api/imm/listvideoframes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVideoFramesWithCallback(request *ListVideoFramesRequest, callback func(response *ListVideoFramesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateListVideoFramesRequest() (request *ListVideoFramesRequest) {
 	request = &ListVideoFramesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListVideoFrames", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListVideoFrames", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

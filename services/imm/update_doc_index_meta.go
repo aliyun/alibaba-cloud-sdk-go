@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateDocIndexMeta invokes the imm.UpdateDocIndexMeta API synchronously
-// api document: https://help.aliyun.com/api/imm/updatedocindexmeta.html
 func (client *Client) UpdateDocIndexMeta(request *UpdateDocIndexMetaRequest) (response *UpdateDocIndexMetaResponse, err error) {
 	response = CreateUpdateDocIndexMetaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateDocIndexMeta(request *UpdateDocIndexMetaRequest) (re
 }
 
 // UpdateDocIndexMetaWithChan invokes the imm.UpdateDocIndexMeta API asynchronously
-// api document: https://help.aliyun.com/api/imm/updatedocindexmeta.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDocIndexMetaWithChan(request *UpdateDocIndexMetaRequest) (<-chan *UpdateDocIndexMetaResponse, <-chan error) {
 	responseChan := make(chan *UpdateDocIndexMetaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateDocIndexMetaWithChan(request *UpdateDocIndexMetaRequ
 }
 
 // UpdateDocIndexMetaWithCallback invokes the imm.UpdateDocIndexMeta API asynchronously
-// api document: https://help.aliyun.com/api/imm/updatedocindexmeta.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDocIndexMetaWithCallback(request *UpdateDocIndexMetaRequest, callback func(response *UpdateDocIndexMetaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,7 @@ func CreateUpdateDocIndexMetaRequest() (request *UpdateDocIndexMetaRequest) {
 	request = &UpdateDocIndexMetaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "UpdateDocIndexMeta", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "UpdateDocIndexMeta", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

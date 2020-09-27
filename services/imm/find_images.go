@@ -21,7 +21,6 @@ import (
 )
 
 // FindImages invokes the imm.FindImages API synchronously
-// api document: https://help.aliyun.com/api/imm/findimages.html
 func (client *Client) FindImages(request *FindImagesRequest) (response *FindImagesResponse, err error) {
 	response = CreateFindImagesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FindImages(request *FindImagesRequest) (response *FindImag
 }
 
 // FindImagesWithChan invokes the imm.FindImages API asynchronously
-// api document: https://help.aliyun.com/api/imm/findimages.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FindImagesWithChan(request *FindImagesRequest) (<-chan *FindImagesResponse, <-chan error) {
 	responseChan := make(chan *FindImagesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FindImagesWithChan(request *FindImagesRequest) (<-chan *Fi
 }
 
 // FindImagesWithCallback invokes the imm.FindImages API asynchronously
-// api document: https://help.aliyun.com/api/imm/findimages.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FindImagesWithCallback(request *FindImagesRequest, callback func(response *FindImagesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -121,7 +116,7 @@ func CreateFindImagesRequest() (request *FindImagesRequest) {
 	request = &FindImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "FindImages", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "FindImages", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

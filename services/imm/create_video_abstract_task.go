@@ -21,7 +21,6 @@ import (
 )
 
 // CreateVideoAbstractTask invokes the imm.CreateVideoAbstractTask API synchronously
-// api document: https://help.aliyun.com/api/imm/createvideoabstracttask.html
 func (client *Client) CreateVideoAbstractTask(request *CreateVideoAbstractTaskRequest) (response *CreateVideoAbstractTaskResponse, err error) {
 	response = CreateCreateVideoAbstractTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateVideoAbstractTask(request *CreateVideoAbstractTaskRe
 }
 
 // CreateVideoAbstractTaskWithChan invokes the imm.CreateVideoAbstractTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/createvideoabstracttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVideoAbstractTaskWithChan(request *CreateVideoAbstractTaskRequest) (<-chan *CreateVideoAbstractTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateVideoAbstractTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateVideoAbstractTaskWithChan(request *CreateVideoAbstra
 }
 
 // CreateVideoAbstractTaskWithCallback invokes the imm.CreateVideoAbstractTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/createvideoabstracttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVideoAbstractTaskWithCallback(request *CreateVideoAbstractTaskRequest, callback func(response *CreateVideoAbstractTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateCreateVideoAbstractTaskRequest() (request *CreateVideoAbstractTaskReq
 	request = &CreateVideoAbstractTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateVideoAbstractTask", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateVideoAbstractTask", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

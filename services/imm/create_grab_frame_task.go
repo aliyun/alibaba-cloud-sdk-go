@@ -21,7 +21,6 @@ import (
 )
 
 // CreateGrabFrameTask invokes the imm.CreateGrabFrameTask API synchronously
-// api document: https://help.aliyun.com/api/imm/creategrabframetask.html
 func (client *Client) CreateGrabFrameTask(request *CreateGrabFrameTaskRequest) (response *CreateGrabFrameTaskResponse, err error) {
 	response = CreateCreateGrabFrameTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateGrabFrameTask(request *CreateGrabFrameTaskRequest) (
 }
 
 // CreateGrabFrameTaskWithChan invokes the imm.CreateGrabFrameTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/creategrabframetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGrabFrameTaskWithChan(request *CreateGrabFrameTaskRequest) (<-chan *CreateGrabFrameTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateGrabFrameTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateGrabFrameTaskWithChan(request *CreateGrabFrameTaskRe
 }
 
 // CreateGrabFrameTaskWithCallback invokes the imm.CreateGrabFrameTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/creategrabframetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGrabFrameTaskWithCallback(request *CreateGrabFrameTaskRequest, callback func(response *CreateGrabFrameTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateCreateGrabFrameTaskRequest() (request *CreateGrabFrameTaskRequest) {
 	request = &CreateGrabFrameTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateGrabFrameTask", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateGrabFrameTask", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // GetVideo invokes the imm.GetVideo API synchronously
-// api document: https://help.aliyun.com/api/imm/getvideo.html
 func (client *Client) GetVideo(request *GetVideoRequest) (response *GetVideoResponse, err error) {
 	response = CreateGetVideoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetVideo(request *GetVideoRequest) (response *GetVideoResp
 }
 
 // GetVideoWithChan invokes the imm.GetVideo API asynchronously
-// api document: https://help.aliyun.com/api/imm/getvideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetVideoWithChan(request *GetVideoRequest) (<-chan *GetVideoResponse, <-chan error) {
 	responseChan := make(chan *GetVideoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetVideoWithChan(request *GetVideoRequest) (<-chan *GetVid
 }
 
 // GetVideoWithCallback invokes the imm.GetVideo API asynchronously
-// api document: https://help.aliyun.com/api/imm/getvideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetVideoWithCallback(request *GetVideoRequest, callback func(response *GetVideoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -135,7 +130,7 @@ func CreateGetVideoRequest() (request *GetVideoRequest) {
 	request = &GetVideoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetVideo", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetVideo", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

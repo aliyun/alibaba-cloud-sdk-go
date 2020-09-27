@@ -21,7 +21,6 @@ import (
 )
 
 // RefreshOfficeEditToken invokes the imm.RefreshOfficeEditToken API synchronously
-// api document: https://help.aliyun.com/api/imm/refreshofficeedittoken.html
 func (client *Client) RefreshOfficeEditToken(request *RefreshOfficeEditTokenRequest) (response *RefreshOfficeEditTokenResponse, err error) {
 	response = CreateRefreshOfficeEditTokenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RefreshOfficeEditToken(request *RefreshOfficeEditTokenRequ
 }
 
 // RefreshOfficeEditTokenWithChan invokes the imm.RefreshOfficeEditToken API asynchronously
-// api document: https://help.aliyun.com/api/imm/refreshofficeedittoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshOfficeEditTokenWithChan(request *RefreshOfficeEditTokenRequest) (<-chan *RefreshOfficeEditTokenResponse, <-chan error) {
 	responseChan := make(chan *RefreshOfficeEditTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RefreshOfficeEditTokenWithChan(request *RefreshOfficeEditT
 }
 
 // RefreshOfficeEditTokenWithCallback invokes the imm.RefreshOfficeEditToken API asynchronously
-// api document: https://help.aliyun.com/api/imm/refreshofficeedittoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshOfficeEditTokenWithCallback(request *RefreshOfficeEditTokenRequest, callback func(response *RefreshOfficeEditTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateRefreshOfficeEditTokenRequest() (request *RefreshOfficeEditTokenReque
 	request = &RefreshOfficeEditTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "RefreshOfficeEditToken", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "RefreshOfficeEditToken", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

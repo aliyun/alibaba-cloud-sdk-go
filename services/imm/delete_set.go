@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSet invokes the imm.DeleteSet API synchronously
-// api document: https://help.aliyun.com/api/imm/deleteset.html
 func (client *Client) DeleteSet(request *DeleteSetRequest) (response *DeleteSetResponse, err error) {
 	response = CreateDeleteSetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSet(request *DeleteSetRequest) (response *DeleteSetR
 }
 
 // DeleteSetWithChan invokes the imm.DeleteSet API asynchronously
-// api document: https://help.aliyun.com/api/imm/deleteset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSetWithChan(request *DeleteSetRequest) (<-chan *DeleteSetResponse, <-chan error) {
 	responseChan := make(chan *DeleteSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSetWithChan(request *DeleteSetRequest) (<-chan *Dele
 }
 
 // DeleteSetWithCallback invokes the imm.DeleteSet API asynchronously
-// api document: https://help.aliyun.com/api/imm/deleteset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSetWithCallback(request *DeleteSetRequest, callback func(response *DeleteSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDeleteSetRequest() (request *DeleteSetRequest) {
 	request = &DeleteSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DeleteSet", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "DeleteSet", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

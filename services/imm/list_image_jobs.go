@@ -21,7 +21,6 @@ import (
 )
 
 // ListImageJobs invokes the imm.ListImageJobs API synchronously
-// api document: https://help.aliyun.com/api/imm/listimagejobs.html
 func (client *Client) ListImageJobs(request *ListImageJobsRequest) (response *ListImageJobsResponse, err error) {
 	response = CreateListImageJobsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListImageJobs(request *ListImageJobsRequest) (response *Li
 }
 
 // ListImageJobsWithChan invokes the imm.ListImageJobs API asynchronously
-// api document: https://help.aliyun.com/api/imm/listimagejobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListImageJobsWithChan(request *ListImageJobsRequest) (<-chan *ListImageJobsResponse, <-chan error) {
 	responseChan := make(chan *ListImageJobsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListImageJobsWithChan(request *ListImageJobsRequest) (<-ch
 }
 
 // ListImageJobsWithCallback invokes the imm.ListImageJobs API asynchronously
-// api document: https://help.aliyun.com/api/imm/listimagejobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListImageJobsWithCallback(request *ListImageJobsRequest, callback func(response *ListImageJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateListImageJobsRequest() (request *ListImageJobsRequest) {
 	request = &ListImageJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListImageJobs", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListImageJobs", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

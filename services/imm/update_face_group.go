@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateFaceGroup invokes the imm.UpdateFaceGroup API synchronously
-// api document: https://help.aliyun.com/api/imm/updatefacegroup.html
 func (client *Client) UpdateFaceGroup(request *UpdateFaceGroupRequest) (response *UpdateFaceGroupResponse, err error) {
 	response = CreateUpdateFaceGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateFaceGroup(request *UpdateFaceGroupRequest) (response
 }
 
 // UpdateFaceGroupWithChan invokes the imm.UpdateFaceGroup API asynchronously
-// api document: https://help.aliyun.com/api/imm/updatefacegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateFaceGroupWithChan(request *UpdateFaceGroupRequest) (<-chan *UpdateFaceGroupResponse, <-chan error) {
 	responseChan := make(chan *UpdateFaceGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateFaceGroupWithChan(request *UpdateFaceGroupRequest) (
 }
 
 // UpdateFaceGroupWithCallback invokes the imm.UpdateFaceGroup API asynchronously
-// api document: https://help.aliyun.com/api/imm/updatefacegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateFaceGroupWithCallback(request *UpdateFaceGroupRequest, callback func(response *UpdateFaceGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,7 +98,7 @@ func CreateUpdateFaceGroupRequest() (request *UpdateFaceGroupRequest) {
 	request = &UpdateFaceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "UpdateFaceGroup", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "UpdateFaceGroup", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

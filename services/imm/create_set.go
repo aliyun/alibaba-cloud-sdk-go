@@ -21,7 +21,6 @@ import (
 )
 
 // CreateSet invokes the imm.CreateSet API synchronously
-// api document: https://help.aliyun.com/api/imm/createset.html
 func (client *Client) CreateSet(request *CreateSetRequest) (response *CreateSetResponse, err error) {
 	response = CreateCreateSetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateSet(request *CreateSetRequest) (response *CreateSetR
 }
 
 // CreateSetWithChan invokes the imm.CreateSet API asynchronously
-// api document: https://help.aliyun.com/api/imm/createset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSetWithChan(request *CreateSetRequest) (<-chan *CreateSetResponse, <-chan error) {
 	responseChan := make(chan *CreateSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateSetWithChan(request *CreateSetRequest) (<-chan *Crea
 }
 
 // CreateSetWithCallback invokes the imm.CreateSet API asynchronously
-// api document: https://help.aliyun.com/api/imm/createset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSetWithCallback(request *CreateSetRequest, callback func(response *CreateSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateCreateSetRequest() (request *CreateSetRequest) {
 	request = &CreateSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateSet", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateSet", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateMergeFaceGroupsJob invokes the imm.CreateMergeFaceGroupsJob API synchronously
-// api document: https://help.aliyun.com/api/imm/createmergefacegroupsjob.html
 func (client *Client) CreateMergeFaceGroupsJob(request *CreateMergeFaceGroupsJobRequest) (response *CreateMergeFaceGroupsJobResponse, err error) {
 	response = CreateCreateMergeFaceGroupsJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateMergeFaceGroupsJob(request *CreateMergeFaceGroupsJob
 }
 
 // CreateMergeFaceGroupsJobWithChan invokes the imm.CreateMergeFaceGroupsJob API asynchronously
-// api document: https://help.aliyun.com/api/imm/createmergefacegroupsjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMergeFaceGroupsJobWithChan(request *CreateMergeFaceGroupsJobRequest) (<-chan *CreateMergeFaceGroupsJobResponse, <-chan error) {
 	responseChan := make(chan *CreateMergeFaceGroupsJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateMergeFaceGroupsJobWithChan(request *CreateMergeFaceG
 }
 
 // CreateMergeFaceGroupsJobWithCallback invokes the imm.CreateMergeFaceGroupsJob API asynchronously
-// api document: https://help.aliyun.com/api/imm/createmergefacegroupsjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMergeFaceGroupsJobWithCallback(request *CreateMergeFaceGroupsJobRequest, callback func(response *CreateMergeFaceGroupsJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateCreateMergeFaceGroupsJobRequest() (request *CreateMergeFaceGroupsJobR
 	request = &CreateMergeFaceGroupsJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateMergeFaceGroupsJob", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateMergeFaceGroupsJob", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

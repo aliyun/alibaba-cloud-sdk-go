@@ -21,7 +21,6 @@ import (
 )
 
 // CreateGroupFacesJob invokes the imm.CreateGroupFacesJob API synchronously
-// api document: https://help.aliyun.com/api/imm/creategroupfacesjob.html
 func (client *Client) CreateGroupFacesJob(request *CreateGroupFacesJobRequest) (response *CreateGroupFacesJobResponse, err error) {
 	response = CreateCreateGroupFacesJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateGroupFacesJob(request *CreateGroupFacesJobRequest) (
 }
 
 // CreateGroupFacesJobWithChan invokes the imm.CreateGroupFacesJob API asynchronously
-// api document: https://help.aliyun.com/api/imm/creategroupfacesjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGroupFacesJobWithChan(request *CreateGroupFacesJobRequest) (<-chan *CreateGroupFacesJobResponse, <-chan error) {
 	responseChan := make(chan *CreateGroupFacesJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateGroupFacesJobWithChan(request *CreateGroupFacesJobRe
 }
 
 // CreateGroupFacesJobWithCallback invokes the imm.CreateGroupFacesJob API asynchronously
-// api document: https://help.aliyun.com/api/imm/creategroupfacesjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGroupFacesJobWithCallback(request *CreateGroupFacesJobRequest, callback func(response *CreateGroupFacesJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateCreateGroupFacesJobRequest() (request *CreateGroupFacesJobRequest) {
 	request = &CreateGroupFacesJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateGroupFacesJob", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateGroupFacesJob", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

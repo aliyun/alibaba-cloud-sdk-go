@@ -21,7 +21,6 @@ import (
 )
 
 // IndexImage invokes the imm.IndexImage API synchronously
-// api document: https://help.aliyun.com/api/imm/indeximage.html
 func (client *Client) IndexImage(request *IndexImageRequest) (response *IndexImageResponse, err error) {
 	response = CreateIndexImageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) IndexImage(request *IndexImageRequest) (response *IndexIma
 }
 
 // IndexImageWithChan invokes the imm.IndexImage API asynchronously
-// api document: https://help.aliyun.com/api/imm/indeximage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) IndexImageWithChan(request *IndexImageRequest) (<-chan *IndexImageResponse, <-chan error) {
 	responseChan := make(chan *IndexImageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) IndexImageWithChan(request *IndexImageRequest) (<-chan *In
 }
 
 // IndexImageWithCallback invokes the imm.IndexImage API asynchronously
-// api document: https://help.aliyun.com/api/imm/indeximage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) IndexImageWithCallback(request *IndexImageRequest, callback func(response *IndexImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -116,7 +111,7 @@ func CreateIndexImageRequest() (request *IndexImageRequest) {
 	request = &IndexImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "IndexImage", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "IndexImage", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

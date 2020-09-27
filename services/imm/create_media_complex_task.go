@@ -21,7 +21,6 @@ import (
 )
 
 // CreateMediaComplexTask invokes the imm.CreateMediaComplexTask API synchronously
-// api document: https://help.aliyun.com/api/imm/createmediacomplextask.html
 func (client *Client) CreateMediaComplexTask(request *CreateMediaComplexTaskRequest) (response *CreateMediaComplexTaskResponse, err error) {
 	response = CreateCreateMediaComplexTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateMediaComplexTask(request *CreateMediaComplexTaskRequ
 }
 
 // CreateMediaComplexTaskWithChan invokes the imm.CreateMediaComplexTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/createmediacomplextask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMediaComplexTaskWithChan(request *CreateMediaComplexTaskRequest) (<-chan *CreateMediaComplexTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateMediaComplexTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateMediaComplexTaskWithChan(request *CreateMediaComplex
 }
 
 // CreateMediaComplexTaskWithCallback invokes the imm.CreateMediaComplexTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/createmediacomplextask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMediaComplexTaskWithCallback(request *CreateMediaComplexTaskRequest, callback func(response *CreateMediaComplexTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateCreateMediaComplexTaskRequest() (request *CreateMediaComplexTaskReque
 	request = &CreateMediaComplexTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateMediaComplexTask", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateMediaComplexTask", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

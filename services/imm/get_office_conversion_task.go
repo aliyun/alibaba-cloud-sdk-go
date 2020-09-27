@@ -21,7 +21,6 @@ import (
 )
 
 // GetOfficeConversionTask invokes the imm.GetOfficeConversionTask API synchronously
-// api document: https://help.aliyun.com/api/imm/getofficeconversiontask.html
 func (client *Client) GetOfficeConversionTask(request *GetOfficeConversionTaskRequest) (response *GetOfficeConversionTaskResponse, err error) {
 	response = CreateGetOfficeConversionTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetOfficeConversionTask(request *GetOfficeConversionTaskRe
 }
 
 // GetOfficeConversionTaskWithChan invokes the imm.GetOfficeConversionTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/getofficeconversiontask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetOfficeConversionTaskWithChan(request *GetOfficeConversionTaskRequest) (<-chan *GetOfficeConversionTaskResponse, <-chan error) {
 	responseChan := make(chan *GetOfficeConversionTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetOfficeConversionTaskWithChan(request *GetOfficeConversi
 }
 
 // GetOfficeConversionTaskWithCallback invokes the imm.GetOfficeConversionTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/getofficeconversiontask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetOfficeConversionTaskWithCallback(request *GetOfficeConversionTaskRequest, callback func(response *GetOfficeConversionTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -105,7 +100,7 @@ func CreateGetOfficeConversionTaskRequest() (request *GetOfficeConversionTaskReq
 	request = &GetOfficeConversionTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetOfficeConversionTask", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetOfficeConversionTask", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // ListSetTags invokes the imm.ListSetTags API synchronously
-// api document: https://help.aliyun.com/api/imm/listsettags.html
 func (client *Client) ListSetTags(request *ListSetTagsRequest) (response *ListSetTagsResponse, err error) {
 	response = CreateListSetTagsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSetTags(request *ListSetTagsRequest) (response *ListSe
 }
 
 // ListSetTagsWithChan invokes the imm.ListSetTags API asynchronously
-// api document: https://help.aliyun.com/api/imm/listsettags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSetTagsWithChan(request *ListSetTagsRequest) (<-chan *ListSetTagsResponse, <-chan error) {
 	responseChan := make(chan *ListSetTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSetTagsWithChan(request *ListSetTagsRequest) (<-chan *
 }
 
 // ListSetTagsWithCallback invokes the imm.ListSetTags API asynchronously
-// api document: https://help.aliyun.com/api/imm/listsettags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSetTagsWithCallback(request *ListSetTagsRequest, callback func(response *ListSetTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateListSetTagsRequest() (request *ListSetTagsRequest) {
 	request = &ListSetTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListSetTags", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListSetTags", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

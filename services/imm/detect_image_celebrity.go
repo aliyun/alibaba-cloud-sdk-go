@@ -21,7 +21,6 @@ import (
 )
 
 // DetectImageCelebrity invokes the imm.DetectImageCelebrity API synchronously
-// api document: https://help.aliyun.com/api/imm/detectimagecelebrity.html
 func (client *Client) DetectImageCelebrity(request *DetectImageCelebrityRequest) (response *DetectImageCelebrityResponse, err error) {
 	response = CreateDetectImageCelebrityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetectImageCelebrity(request *DetectImageCelebrityRequest)
 }
 
 // DetectImageCelebrityWithChan invokes the imm.DetectImageCelebrity API asynchronously
-// api document: https://help.aliyun.com/api/imm/detectimagecelebrity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectImageCelebrityWithChan(request *DetectImageCelebrityRequest) (<-chan *DetectImageCelebrityResponse, <-chan error) {
 	responseChan := make(chan *DetectImageCelebrityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetectImageCelebrityWithChan(request *DetectImageCelebrity
 }
 
 // DetectImageCelebrityWithCallback invokes the imm.DetectImageCelebrity API asynchronously
-// api document: https://help.aliyun.com/api/imm/detectimagecelebrity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetectImageCelebrityWithCallback(request *DetectImageCelebrityRequest, callback func(response *DetectImageCelebrityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateDetectImageCelebrityRequest() (request *DetectImageCelebrityRequest) 
 	request = &DetectImageCelebrityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageCelebrity", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageCelebrity", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

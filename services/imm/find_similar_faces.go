@@ -21,7 +21,6 @@ import (
 )
 
 // FindSimilarFaces invokes the imm.FindSimilarFaces API synchronously
-// api document: https://help.aliyun.com/api/imm/findsimilarfaces.html
 func (client *Client) FindSimilarFaces(request *FindSimilarFacesRequest) (response *FindSimilarFacesResponse, err error) {
 	response = CreateFindSimilarFacesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FindSimilarFaces(request *FindSimilarFacesRequest) (respon
 }
 
 // FindSimilarFacesWithChan invokes the imm.FindSimilarFaces API asynchronously
-// api document: https://help.aliyun.com/api/imm/findsimilarfaces.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FindSimilarFacesWithChan(request *FindSimilarFacesRequest) (<-chan *FindSimilarFacesResponse, <-chan error) {
 	responseChan := make(chan *FindSimilarFacesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FindSimilarFacesWithChan(request *FindSimilarFacesRequest)
 }
 
 // FindSimilarFacesWithCallback invokes the imm.FindSimilarFaces API asynchronously
-// api document: https://help.aliyun.com/api/imm/findsimilarfaces.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FindSimilarFacesWithCallback(request *FindSimilarFacesRequest, callback func(response *FindSimilarFacesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateFindSimilarFacesRequest() (request *FindSimilarFacesRequest) {
 	request = &FindSimilarFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "FindSimilarFaces", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "FindSimilarFaces", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

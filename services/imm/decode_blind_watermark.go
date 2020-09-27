@@ -21,7 +21,6 @@ import (
 )
 
 // DecodeBlindWatermark invokes the imm.DecodeBlindWatermark API synchronously
-// api document: https://help.aliyun.com/api/imm/decodeblindwatermark.html
 func (client *Client) DecodeBlindWatermark(request *DecodeBlindWatermarkRequest) (response *DecodeBlindWatermarkResponse, err error) {
 	response = CreateDecodeBlindWatermarkResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DecodeBlindWatermark(request *DecodeBlindWatermarkRequest)
 }
 
 // DecodeBlindWatermarkWithChan invokes the imm.DecodeBlindWatermark API asynchronously
-// api document: https://help.aliyun.com/api/imm/decodeblindwatermark.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DecodeBlindWatermarkWithChan(request *DecodeBlindWatermarkRequest) (<-chan *DecodeBlindWatermarkResponse, <-chan error) {
 	responseChan := make(chan *DecodeBlindWatermarkResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DecodeBlindWatermarkWithChan(request *DecodeBlindWatermark
 }
 
 // DecodeBlindWatermarkWithCallback invokes the imm.DecodeBlindWatermark API asynchronously
-// api document: https://help.aliyun.com/api/imm/decodeblindwatermark.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DecodeBlindWatermarkWithCallback(request *DecodeBlindWatermarkRequest, callback func(response *DecodeBlindWatermarkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateDecodeBlindWatermarkRequest() (request *DecodeBlindWatermarkRequest) 
 	request = &DecodeBlindWatermarkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DecodeBlindWatermark", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "DecodeBlindWatermark", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

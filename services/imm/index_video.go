@@ -21,7 +21,6 @@ import (
 )
 
 // IndexVideo invokes the imm.IndexVideo API synchronously
-// api document: https://help.aliyun.com/api/imm/indexvideo.html
 func (client *Client) IndexVideo(request *IndexVideoRequest) (response *IndexVideoResponse, err error) {
 	response = CreateIndexVideoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) IndexVideo(request *IndexVideoRequest) (response *IndexVid
 }
 
 // IndexVideoWithChan invokes the imm.IndexVideo API asynchronously
-// api document: https://help.aliyun.com/api/imm/indexvideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) IndexVideoWithChan(request *IndexVideoRequest) (<-chan *IndexVideoResponse, <-chan error) {
 	responseChan := make(chan *IndexVideoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) IndexVideoWithChan(request *IndexVideoRequest) (<-chan *In
 }
 
 // IndexVideoWithCallback invokes the imm.IndexVideo API asynchronously
-// api document: https://help.aliyun.com/api/imm/indexvideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) IndexVideoWithCallback(request *IndexVideoRequest, callback func(response *IndexVideoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -120,7 +115,7 @@ func CreateIndexVideoRequest() (request *IndexVideoRequest) {
 	request = &IndexVideoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "IndexVideo", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "IndexVideo", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

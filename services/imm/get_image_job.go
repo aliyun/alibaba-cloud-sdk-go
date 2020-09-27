@@ -21,7 +21,6 @@ import (
 )
 
 // GetImageJob invokes the imm.GetImageJob API synchronously
-// api document: https://help.aliyun.com/api/imm/getimagejob.html
 func (client *Client) GetImageJob(request *GetImageJobRequest) (response *GetImageJobResponse, err error) {
 	response = CreateGetImageJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetImageJob(request *GetImageJobRequest) (response *GetIma
 }
 
 // GetImageJobWithChan invokes the imm.GetImageJob API asynchronously
-// api document: https://help.aliyun.com/api/imm/getimagejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetImageJobWithChan(request *GetImageJobRequest) (<-chan *GetImageJobResponse, <-chan error) {
 	responseChan := make(chan *GetImageJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetImageJobWithChan(request *GetImageJobRequest) (<-chan *
 }
 
 // GetImageJobWithCallback invokes the imm.GetImageJob API asynchronously
-// api document: https://help.aliyun.com/api/imm/getimagejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetImageJobWithCallback(request *GetImageJobRequest, callback func(response *GetImageJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,7 +98,7 @@ func CreateGetImageJobRequest() (request *GetImageJobRequest) {
 	request = &GetImageJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetImageJob", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetImageJob", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteVideoTask invokes the imm.DeleteVideoTask API synchronously
-// api document: https://help.aliyun.com/api/imm/deletevideotask.html
 func (client *Client) DeleteVideoTask(request *DeleteVideoTaskRequest) (response *DeleteVideoTaskResponse, err error) {
 	response = CreateDeleteVideoTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteVideoTask(request *DeleteVideoTaskRequest) (response
 }
 
 // DeleteVideoTaskWithChan invokes the imm.DeleteVideoTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/deletevideotask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVideoTaskWithChan(request *DeleteVideoTaskRequest) (<-chan *DeleteVideoTaskResponse, <-chan error) {
 	responseChan := make(chan *DeleteVideoTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteVideoTaskWithChan(request *DeleteVideoTaskRequest) (
 }
 
 // DeleteVideoTaskWithCallback invokes the imm.DeleteVideoTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/deletevideotask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVideoTaskWithCallback(request *DeleteVideoTaskRequest, callback func(response *DeleteVideoTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDeleteVideoTaskRequest() (request *DeleteVideoTaskRequest) {
 	request = &DeleteVideoTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DeleteVideoTask", "", "")
+	request.InitWithApiInfo("imm", "2017-09-06", "DeleteVideoTask", "imm", "openAPI")
 	request.Method = requests.POST
 	return
 }
