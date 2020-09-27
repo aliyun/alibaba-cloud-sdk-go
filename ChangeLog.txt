@@ -1,3 +1,7 @@
+2020-09-27 Version: v1.61.531
+- Generated 2015-01-01 for `R-kvstore`.
+- DescribeAvailableResource support list available resource for modify instance.
+
 2020-09-25 Version: v1.61.530
 - Generated 2019-01-01 for `Cms`.
 - Add alarm contact group by monitor group alarm rules.
