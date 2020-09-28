@@ -21,7 +21,6 @@ import (
 )
 
 // CreateQosCar invokes the smartag.CreateQosCar API synchronously
-// api document: https://help.aliyun.com/api/smartag/createqoscar.html
 func (client *Client) CreateQosCar(request *CreateQosCarRequest) (response *CreateQosCarResponse, err error) {
 	response = CreateCreateQosCarResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateQosCar(request *CreateQosCarRequest) (response *Crea
 }
 
 // CreateQosCarWithChan invokes the smartag.CreateQosCar API asynchronously
-// api document: https://help.aliyun.com/api/smartag/createqoscar.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateQosCarWithChan(request *CreateQosCarRequest) (<-chan *CreateQosCarResponse, <-chan error) {
 	responseChan := make(chan *CreateQosCarResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateQosCarWithChan(request *CreateQosCarRequest) (<-chan
 }
 
 // CreateQosCarWithCallback invokes the smartag.CreateQosCar API asynchronously
-// api document: https://help.aliyun.com/api/smartag/createqoscar.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateQosCarWithCallback(request *CreateQosCarRequest, callback func(response *CreateQosCarResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // UnbindSmartAccessGateway invokes the smartag.UnbindSmartAccessGateway API synchronously
-// api document: https://help.aliyun.com/api/smartag/unbindsmartaccessgateway.html
 func (client *Client) UnbindSmartAccessGateway(request *UnbindSmartAccessGatewayRequest) (response *UnbindSmartAccessGatewayResponse, err error) {
 	response = CreateUnbindSmartAccessGatewayResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnbindSmartAccessGateway(request *UnbindSmartAccessGateway
 }
 
 // UnbindSmartAccessGatewayWithChan invokes the smartag.UnbindSmartAccessGateway API asynchronously
-// api document: https://help.aliyun.com/api/smartag/unbindsmartaccessgateway.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindSmartAccessGatewayWithChan(request *UnbindSmartAccessGatewayRequest) (<-chan *UnbindSmartAccessGatewayResponse, <-chan error) {
 	responseChan := make(chan *UnbindSmartAccessGatewayResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnbindSmartAccessGatewayWithChan(request *UnbindSmartAcces
 }
 
 // UnbindSmartAccessGatewayWithCallback invokes the smartag.UnbindSmartAccessGateway API asynchronously
-// api document: https://help.aliyun.com/api/smartag/unbindsmartaccessgateway.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindSmartAccessGatewayWithCallback(request *UnbindSmartAccessGatewayRequest, callback func(response *UnbindSmartAccessGatewayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePbrInterfaces invokes the smartag.DescribePbrInterfaces API synchronously
-// api document: https://help.aliyun.com/api/smartag/describepbrinterfaces.html
 func (client *Client) DescribePbrInterfaces(request *DescribePbrInterfacesRequest) (response *DescribePbrInterfacesResponse, err error) {
 	response = CreateDescribePbrInterfacesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePbrInterfaces(request *DescribePbrInterfacesReques
 }
 
 // DescribePbrInterfacesWithChan invokes the smartag.DescribePbrInterfaces API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describepbrinterfaces.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePbrInterfacesWithChan(request *DescribePbrInterfacesRequest) (<-chan *DescribePbrInterfacesResponse, <-chan error) {
 	responseChan := make(chan *DescribePbrInterfacesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePbrInterfacesWithChan(request *DescribePbrInterfac
 }
 
 // DescribePbrInterfacesWithCallback invokes the smartag.DescribePbrInterfaces API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describepbrinterfaces.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePbrInterfacesWithCallback(request *DescribePbrInterfacesRequest, callback func(response *DescribePbrInterfacesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

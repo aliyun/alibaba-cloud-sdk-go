@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySmartAccessGatewayUpBandwidth invokes the smartag.ModifySmartAccessGatewayUpBandwidth API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifysmartaccessgatewayupbandwidth.html
 func (client *Client) ModifySmartAccessGatewayUpBandwidth(request *ModifySmartAccessGatewayUpBandwidthRequest) (response *ModifySmartAccessGatewayUpBandwidthResponse, err error) {
 	response = CreateModifySmartAccessGatewayUpBandwidthResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySmartAccessGatewayUpBandwidth(request *ModifySmartAc
 }
 
 // ModifySmartAccessGatewayUpBandwidthWithChan invokes the smartag.ModifySmartAccessGatewayUpBandwidth API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysmartaccessgatewayupbandwidth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySmartAccessGatewayUpBandwidthWithChan(request *ModifySmartAccessGatewayUpBandwidthRequest) (<-chan *ModifySmartAccessGatewayUpBandwidthResponse, <-chan error) {
 	responseChan := make(chan *ModifySmartAccessGatewayUpBandwidthResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySmartAccessGatewayUpBandwidthWithChan(request *Modif
 }
 
 // ModifySmartAccessGatewayUpBandwidthWithCallback invokes the smartag.ModifySmartAccessGatewayUpBandwidth API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysmartaccessgatewayupbandwidth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySmartAccessGatewayUpBandwidthWithCallback(request *ModifySmartAccessGatewayUpBandwidthRequest, callback func(response *ModifySmartAccessGatewayUpBandwidthResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

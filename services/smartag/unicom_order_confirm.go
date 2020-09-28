@@ -21,7 +21,6 @@ import (
 )
 
 // UnicomOrderConfirm invokes the smartag.UnicomOrderConfirm API synchronously
-// api document: https://help.aliyun.com/api/smartag/unicomorderconfirm.html
 func (client *Client) UnicomOrderConfirm(request *UnicomOrderConfirmRequest) (response *UnicomOrderConfirmResponse, err error) {
 	response = CreateUnicomOrderConfirmResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnicomOrderConfirm(request *UnicomOrderConfirmRequest) (re
 }
 
 // UnicomOrderConfirmWithChan invokes the smartag.UnicomOrderConfirm API asynchronously
-// api document: https://help.aliyun.com/api/smartag/unicomorderconfirm.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnicomOrderConfirmWithChan(request *UnicomOrderConfirmRequest) (<-chan *UnicomOrderConfirmResponse, <-chan error) {
 	responseChan := make(chan *UnicomOrderConfirmResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnicomOrderConfirmWithChan(request *UnicomOrderConfirmRequ
 }
 
 // UnicomOrderConfirmWithCallback invokes the smartag.UnicomOrderConfirm API asynchronously
-// api document: https://help.aliyun.com/api/smartag/unicomorderconfirm.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnicomOrderConfirmWithCallback(request *UnicomOrderConfirmRequest, callback func(response *UnicomOrderConfirmResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

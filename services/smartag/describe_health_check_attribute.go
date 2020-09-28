@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeHealthCheckAttribute invokes the smartag.DescribeHealthCheckAttribute API synchronously
-// api document: https://help.aliyun.com/api/smartag/describehealthcheckattribute.html
 func (client *Client) DescribeHealthCheckAttribute(request *DescribeHealthCheckAttributeRequest) (response *DescribeHealthCheckAttributeResponse, err error) {
 	response = CreateDescribeHealthCheckAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeHealthCheckAttribute(request *DescribeHealthCheckA
 }
 
 // DescribeHealthCheckAttributeWithChan invokes the smartag.DescribeHealthCheckAttribute API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describehealthcheckattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHealthCheckAttributeWithChan(request *DescribeHealthCheckAttributeRequest) (<-chan *DescribeHealthCheckAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeHealthCheckAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeHealthCheckAttributeWithChan(request *DescribeHeal
 }
 
 // DescribeHealthCheckAttributeWithCallback invokes the smartag.DescribeHealthCheckAttribute API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describehealthcheckattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHealthCheckAttributeWithCallback(request *DescribeHealthCheckAttributeRequest, callback func(response *DescribeHealthCheckAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

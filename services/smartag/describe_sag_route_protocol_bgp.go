@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSagRouteProtocolBgp invokes the smartag.DescribeSagRouteProtocolBgp API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesagrouteprotocolbgp.html
 func (client *Client) DescribeSagRouteProtocolBgp(request *DescribeSagRouteProtocolBgpRequest) (response *DescribeSagRouteProtocolBgpResponse, err error) {
 	response = CreateDescribeSagRouteProtocolBgpResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSagRouteProtocolBgp(request *DescribeSagRouteProto
 }
 
 // DescribeSagRouteProtocolBgpWithChan invokes the smartag.DescribeSagRouteProtocolBgp API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagrouteprotocolbgp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagRouteProtocolBgpWithChan(request *DescribeSagRouteProtocolBgpRequest) (<-chan *DescribeSagRouteProtocolBgpResponse, <-chan error) {
 	responseChan := make(chan *DescribeSagRouteProtocolBgpResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSagRouteProtocolBgpWithChan(request *DescribeSagRo
 }
 
 // DescribeSagRouteProtocolBgpWithCallback invokes the smartag.DescribeSagRouteProtocolBgp API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagrouteprotocolbgp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagRouteProtocolBgpWithCallback(request *DescribeSagRouteProtocolBgpRequest, callback func(response *DescribeSagRouteProtocolBgpResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

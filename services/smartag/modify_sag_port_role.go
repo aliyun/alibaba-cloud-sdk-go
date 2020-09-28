@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySagPortRole invokes the smartag.ModifySagPortRole API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagportrole.html
 func (client *Client) ModifySagPortRole(request *ModifySagPortRoleRequest) (response *ModifySagPortRoleResponse, err error) {
 	response = CreateModifySagPortRoleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySagPortRole(request *ModifySagPortRoleRequest) (resp
 }
 
 // ModifySagPortRoleWithChan invokes the smartag.ModifySagPortRole API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagportrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagPortRoleWithChan(request *ModifySagPortRoleRequest) (<-chan *ModifySagPortRoleResponse, <-chan error) {
 	responseChan := make(chan *ModifySagPortRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySagPortRoleWithChan(request *ModifySagPortRoleReques
 }
 
 // ModifySagPortRoleWithCallback invokes the smartag.ModifySagPortRole API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagportrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagPortRoleWithCallback(request *ModifySagPortRoleRequest, callback func(response *ModifySagPortRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

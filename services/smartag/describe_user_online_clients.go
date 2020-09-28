@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUserOnlineClients invokes the smartag.DescribeUserOnlineClients API synchronously
-// api document: https://help.aliyun.com/api/smartag/describeuseronlineclients.html
 func (client *Client) DescribeUserOnlineClients(request *DescribeUserOnlineClientsRequest) (response *DescribeUserOnlineClientsResponse, err error) {
 	response = CreateDescribeUserOnlineClientsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUserOnlineClients(request *DescribeUserOnlineClien
 }
 
 // DescribeUserOnlineClientsWithChan invokes the smartag.DescribeUserOnlineClients API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describeuseronlineclients.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserOnlineClientsWithChan(request *DescribeUserOnlineClientsRequest) (<-chan *DescribeUserOnlineClientsResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserOnlineClientsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUserOnlineClientsWithChan(request *DescribeUserOnl
 }
 
 // DescribeUserOnlineClientsWithCallback invokes the smartag.DescribeUserOnlineClients API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describeuseronlineclients.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserOnlineClientsWithCallback(request *DescribeUserOnlineClientsRequest, callback func(response *DescribeUserOnlineClientsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // UnbindVbr invokes the smartag.UnbindVbr API synchronously
-// api document: https://help.aliyun.com/api/smartag/unbindvbr.html
 func (client *Client) UnbindVbr(request *UnbindVbrRequest) (response *UnbindVbrResponse, err error) {
 	response = CreateUnbindVbrResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnbindVbr(request *UnbindVbrRequest) (response *UnbindVbrR
 }
 
 // UnbindVbrWithChan invokes the smartag.UnbindVbr API asynchronously
-// api document: https://help.aliyun.com/api/smartag/unbindvbr.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindVbrWithChan(request *UnbindVbrRequest) (<-chan *UnbindVbrResponse, <-chan error) {
 	responseChan := make(chan *UnbindVbrResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnbindVbrWithChan(request *UnbindVbrRequest) (<-chan *Unbi
 }
 
 // UnbindVbrWithCallback invokes the smartag.UnbindVbr API asynchronously
-// api document: https://help.aliyun.com/api/smartag/unbindvbr.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindVbrWithCallback(request *UnbindVbrRequest, callback func(response *UnbindVbrResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSagStaticRoute invokes the smartag.DeleteSagStaticRoute API synchronously
-// api document: https://help.aliyun.com/api/smartag/deletesagstaticroute.html
 func (client *Client) DeleteSagStaticRoute(request *DeleteSagStaticRouteRequest) (response *DeleteSagStaticRouteResponse, err error) {
 	response = CreateDeleteSagStaticRouteResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSagStaticRoute(request *DeleteSagStaticRouteRequest)
 }
 
 // DeleteSagStaticRouteWithChan invokes the smartag.DeleteSagStaticRoute API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletesagstaticroute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSagStaticRouteWithChan(request *DeleteSagStaticRouteRequest) (<-chan *DeleteSagStaticRouteResponse, <-chan error) {
 	responseChan := make(chan *DeleteSagStaticRouteResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSagStaticRouteWithChan(request *DeleteSagStaticRoute
 }
 
 // DeleteSagStaticRouteWithCallback invokes the smartag.DeleteSagStaticRoute API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletesagstaticroute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSagStaticRouteWithCallback(request *DeleteSagStaticRouteRequest, callback func(response *DeleteSagStaticRouteResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

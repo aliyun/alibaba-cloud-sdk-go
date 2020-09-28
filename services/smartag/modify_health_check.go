@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyHealthCheck invokes the smartag.ModifyHealthCheck API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifyhealthcheck.html
 func (client *Client) ModifyHealthCheck(request *ModifyHealthCheckRequest) (response *ModifyHealthCheckResponse, err error) {
 	response = CreateModifyHealthCheckResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyHealthCheck(request *ModifyHealthCheckRequest) (resp
 }
 
 // ModifyHealthCheckWithChan invokes the smartag.ModifyHealthCheck API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifyhealthcheck.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHealthCheckWithChan(request *ModifyHealthCheckRequest) (<-chan *ModifyHealthCheckResponse, <-chan error) {
 	responseChan := make(chan *ModifyHealthCheckResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyHealthCheckWithChan(request *ModifyHealthCheckReques
 }
 
 // ModifyHealthCheckWithCallback invokes the smartag.ModifyHealthCheck API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifyhealthcheck.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHealthCheckWithCallback(request *ModifyHealthCheckRequest, callback func(response *ModifyHealthCheckResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

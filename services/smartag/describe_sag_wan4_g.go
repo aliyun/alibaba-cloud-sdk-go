@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSagWan4G invokes the smartag.DescribeSagWan4G API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesagwan4g.html
 func (client *Client) DescribeSagWan4G(request *DescribeSagWan4GRequest) (response *DescribeSagWan4GResponse, err error) {
 	response = CreateDescribeSagWan4GResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSagWan4G(request *DescribeSagWan4GRequest) (respon
 }
 
 // DescribeSagWan4GWithChan invokes the smartag.DescribeSagWan4G API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagwan4g.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagWan4GWithChan(request *DescribeSagWan4GRequest) (<-chan *DescribeSagWan4GResponse, <-chan error) {
 	responseChan := make(chan *DescribeSagWan4GResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSagWan4GWithChan(request *DescribeSagWan4GRequest)
 }
 
 // DescribeSagWan4GWithCallback invokes the smartag.DescribeSagWan4G API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagwan4g.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagWan4GWithCallback(request *DescribeSagWan4GRequest, callback func(response *DescribeSagWan4GResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,11 +82,13 @@ type DescribeSagWan4GRequest struct {
 // DescribeSagWan4GResponse is the response struct for api DescribeSagWan4G
 type DescribeSagWan4GResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Ip        string `json:"Ip" xml:"Ip"`
-	Mac       string `json:"Mac" xml:"Mac"`
-	Status    string `json:"Status" xml:"Status"`
-	Strength  string `json:"Strength" xml:"Strength"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	Ip           string `json:"Ip" xml:"Ip"`
+	Mac          string `json:"Mac" xml:"Mac"`
+	Status       string `json:"Status" xml:"Status"`
+	Strength     string `json:"Strength" xml:"Strength"`
+	Priority     int    `json:"Priority" xml:"Priority"`
+	TrafficState string `json:"TrafficState" xml:"TrafficState"`
 }
 
 // CreateDescribeSagWan4GRequest creates a request to invoke DescribeSagWan4G API

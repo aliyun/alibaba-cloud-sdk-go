@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSagPortRouteProtocolList invokes the smartag.DescribeSagPortRouteProtocolList API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesagportrouteprotocollist.html
 func (client *Client) DescribeSagPortRouteProtocolList(request *DescribeSagPortRouteProtocolListRequest) (response *DescribeSagPortRouteProtocolListResponse, err error) {
 	response = CreateDescribeSagPortRouteProtocolListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSagPortRouteProtocolList(request *DescribeSagPortR
 }
 
 // DescribeSagPortRouteProtocolListWithChan invokes the smartag.DescribeSagPortRouteProtocolList API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagportrouteprotocollist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagPortRouteProtocolListWithChan(request *DescribeSagPortRouteProtocolListRequest) (<-chan *DescribeSagPortRouteProtocolListResponse, <-chan error) {
 	responseChan := make(chan *DescribeSagPortRouteProtocolListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSagPortRouteProtocolListWithChan(request *Describe
 }
 
 // DescribeSagPortRouteProtocolListWithCallback invokes the smartag.DescribeSagPortRouteProtocolList API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagportrouteprotocollist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagPortRouteProtocolListWithCallback(request *DescribeSagPortRouteProtocolListRequest, callback func(response *DescribeSagPortRouteProtocolListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

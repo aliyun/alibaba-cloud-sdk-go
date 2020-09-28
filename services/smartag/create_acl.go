@@ -21,7 +21,6 @@ import (
 )
 
 // CreateACL invokes the smartag.CreateACL API synchronously
-// api document: https://help.aliyun.com/api/smartag/createacl.html
 func (client *Client) CreateACL(request *CreateACLRequest) (response *CreateACLResponse, err error) {
 	response = CreateCreateACLResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateACL(request *CreateACLRequest) (response *CreateACLR
 }
 
 // CreateACLWithChan invokes the smartag.CreateACL API asynchronously
-// api document: https://help.aliyun.com/api/smartag/createacl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateACLWithChan(request *CreateACLRequest) (<-chan *CreateACLResponse, <-chan error) {
 	responseChan := make(chan *CreateACLResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateACLWithChan(request *CreateACLRequest) (<-chan *Crea
 }
 
 // CreateACLWithCallback invokes the smartag.CreateACL API asynchronously
-// api document: https://help.aliyun.com/api/smartag/createacl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateACLWithCallback(request *CreateACLRequest, callback func(response *CreateACLResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

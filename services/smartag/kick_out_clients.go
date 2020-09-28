@@ -21,7 +21,6 @@ import (
 )
 
 // KickOutClients invokes the smartag.KickOutClients API synchronously
-// api document: https://help.aliyun.com/api/smartag/kickoutclients.html
 func (client *Client) KickOutClients(request *KickOutClientsRequest) (response *KickOutClientsResponse, err error) {
 	response = CreateKickOutClientsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) KickOutClients(request *KickOutClientsRequest) (response *
 }
 
 // KickOutClientsWithChan invokes the smartag.KickOutClients API asynchronously
-// api document: https://help.aliyun.com/api/smartag/kickoutclients.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) KickOutClientsWithChan(request *KickOutClientsRequest) (<-chan *KickOutClientsResponse, <-chan error) {
 	responseChan := make(chan *KickOutClientsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) KickOutClientsWithChan(request *KickOutClientsRequest) (<-
 }
 
 // KickOutClientsWithCallback invokes the smartag.KickOutClients API asynchronously
-// api document: https://help.aliyun.com/api/smartag/kickoutclients.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) KickOutClientsWithCallback(request *KickOutClientsRequest, callback func(response *KickOutClientsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

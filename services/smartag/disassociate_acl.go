@@ -21,7 +21,6 @@ import (
 )
 
 // DisassociateACL invokes the smartag.DisassociateACL API synchronously
-// api document: https://help.aliyun.com/api/smartag/disassociateacl.html
 func (client *Client) DisassociateACL(request *DisassociateACLRequest) (response *DisassociateACLResponse, err error) {
 	response = CreateDisassociateACLResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisassociateACL(request *DisassociateACLRequest) (response
 }
 
 // DisassociateACLWithChan invokes the smartag.DisassociateACL API asynchronously
-// api document: https://help.aliyun.com/api/smartag/disassociateacl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisassociateACLWithChan(request *DisassociateACLRequest) (<-chan *DisassociateACLResponse, <-chan error) {
 	responseChan := make(chan *DisassociateACLResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisassociateACLWithChan(request *DisassociateACLRequest) (
 }
 
 // DisassociateACLWithCallback invokes the smartag.DisassociateACL API asynchronously
-// api document: https://help.aliyun.com/api/smartag/disassociateacl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisassociateACLWithCallback(request *DisassociateACLRequest, callback func(response *DisassociateACLResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

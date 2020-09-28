@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRouteDistributionStrategies invokes the smartag.DescribeRouteDistributionStrategies API synchronously
-// api document: https://help.aliyun.com/api/smartag/describeroutedistributionstrategies.html
 func (client *Client) DescribeRouteDistributionStrategies(request *DescribeRouteDistributionStrategiesRequest) (response *DescribeRouteDistributionStrategiesResponse, err error) {
 	response = CreateDescribeRouteDistributionStrategiesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRouteDistributionStrategies(request *DescribeRoute
 }
 
 // DescribeRouteDistributionStrategiesWithChan invokes the smartag.DescribeRouteDistributionStrategies API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describeroutedistributionstrategies.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouteDistributionStrategiesWithChan(request *DescribeRouteDistributionStrategiesRequest) (<-chan *DescribeRouteDistributionStrategiesResponse, <-chan error) {
 	responseChan := make(chan *DescribeRouteDistributionStrategiesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRouteDistributionStrategiesWithChan(request *Descr
 }
 
 // DescribeRouteDistributionStrategiesWithCallback invokes the smartag.DescribeRouteDistributionStrategies API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describeroutedistributionstrategies.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouteDistributionStrategiesWithCallback(request *DescribeRouteDistributionStrategiesRequest, callback func(response *DescribeRouteDistributionStrategiesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

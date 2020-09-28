@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDnatEntry invokes the smartag.DeleteDnatEntry API synchronously
-// api document: https://help.aliyun.com/api/smartag/deletednatentry.html
 func (client *Client) DeleteDnatEntry(request *DeleteDnatEntryRequest) (response *DeleteDnatEntryResponse, err error) {
 	response = CreateDeleteDnatEntryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDnatEntry(request *DeleteDnatEntryRequest) (response
 }
 
 // DeleteDnatEntryWithChan invokes the smartag.DeleteDnatEntry API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletednatentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDnatEntryWithChan(request *DeleteDnatEntryRequest) (<-chan *DeleteDnatEntryResponse, <-chan error) {
 	responseChan := make(chan *DeleteDnatEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDnatEntryWithChan(request *DeleteDnatEntryRequest) (
 }
 
 // DeleteDnatEntryWithCallback invokes the smartag.DeleteDnatEntry API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletednatentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDnatEntryWithCallback(request *DeleteDnatEntryRequest, callback func(response *DeleteDnatEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

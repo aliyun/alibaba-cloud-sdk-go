@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSagVbrRelations invokes the smartag.DescribeSagVbrRelations API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesagvbrrelations.html
 func (client *Client) DescribeSagVbrRelations(request *DescribeSagVbrRelationsRequest) (response *DescribeSagVbrRelationsResponse, err error) {
 	response = CreateDescribeSagVbrRelationsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSagVbrRelations(request *DescribeSagVbrRelationsRe
 }
 
 // DescribeSagVbrRelationsWithChan invokes the smartag.DescribeSagVbrRelations API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagvbrrelations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagVbrRelationsWithChan(request *DescribeSagVbrRelationsRequest) (<-chan *DescribeSagVbrRelationsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSagVbrRelationsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSagVbrRelationsWithChan(request *DescribeSagVbrRel
 }
 
 // DescribeSagVbrRelationsWithCallback invokes the smartag.DescribeSagVbrRelations API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagvbrrelations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagVbrRelationsWithCallback(request *DescribeSagVbrRelationsRequest, callback func(response *DescribeSagVbrRelationsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

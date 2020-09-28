@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteCloudConnectNetwork invokes the smartag.DeleteCloudConnectNetwork API synchronously
-// api document: https://help.aliyun.com/api/smartag/deletecloudconnectnetwork.html
 func (client *Client) DeleteCloudConnectNetwork(request *DeleteCloudConnectNetworkRequest) (response *DeleteCloudConnectNetworkResponse, err error) {
 	response = CreateDeleteCloudConnectNetworkResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteCloudConnectNetwork(request *DeleteCloudConnectNetwo
 }
 
 // DeleteCloudConnectNetworkWithChan invokes the smartag.DeleteCloudConnectNetwork API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletecloudconnectnetwork.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCloudConnectNetworkWithChan(request *DeleteCloudConnectNetworkRequest) (<-chan *DeleteCloudConnectNetworkResponse, <-chan error) {
 	responseChan := make(chan *DeleteCloudConnectNetworkResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteCloudConnectNetworkWithChan(request *DeleteCloudConn
 }
 
 // DeleteCloudConnectNetworkWithCallback invokes the smartag.DeleteCloudConnectNetwork API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletecloudconnectnetwork.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCloudConnectNetworkWithCallback(request *DeleteCloudConnectNetworkRequest, callback func(response *DeleteCloudConnectNetworkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

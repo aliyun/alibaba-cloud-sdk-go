@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSagCidr invokes the smartag.DeleteSagCidr API synchronously
-// api document: https://help.aliyun.com/api/smartag/deletesagcidr.html
 func (client *Client) DeleteSagCidr(request *DeleteSagCidrRequest) (response *DeleteSagCidrResponse, err error) {
 	response = CreateDeleteSagCidrResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSagCidr(request *DeleteSagCidrRequest) (response *De
 }
 
 // DeleteSagCidrWithChan invokes the smartag.DeleteSagCidr API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletesagcidr.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSagCidrWithChan(request *DeleteSagCidrRequest) (<-chan *DeleteSagCidrResponse, <-chan error) {
 	responseChan := make(chan *DeleteSagCidrResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSagCidrWithChan(request *DeleteSagCidrRequest) (<-ch
 }
 
 // DeleteSagCidrWithCallback invokes the smartag.DeleteSagCidr API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletesagcidr.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSagCidrWithCallback(request *DeleteSagCidrRequest, callback func(response *DeleteSagCidrResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

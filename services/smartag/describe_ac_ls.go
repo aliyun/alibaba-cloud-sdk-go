@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeACLs invokes the smartag.DescribeACLs API synchronously
-// api document: https://help.aliyun.com/api/smartag/describeacls.html
 func (client *Client) DescribeACLs(request *DescribeACLsRequest) (response *DescribeACLsResponse, err error) {
 	response = CreateDescribeACLsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeACLs(request *DescribeACLsRequest) (response *Desc
 }
 
 // DescribeACLsWithChan invokes the smartag.DescribeACLs API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describeacls.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeACLsWithChan(request *DescribeACLsRequest) (<-chan *DescribeACLsResponse, <-chan error) {
 	responseChan := make(chan *DescribeACLsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeACLsWithChan(request *DescribeACLsRequest) (<-chan
 }
 
 // DescribeACLsWithCallback invokes the smartag.DescribeACLs API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describeacls.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeACLsWithCallback(request *DescribeACLsRequest, callback func(response *DescribeACLsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeNetworkOptimizationSettings invokes the smartag.DescribeNetworkOptimizationSettings API synchronously
-// api document: https://help.aliyun.com/api/smartag/describenetworkoptimizationsettings.html
 func (client *Client) DescribeNetworkOptimizationSettings(request *DescribeNetworkOptimizationSettingsRequest) (response *DescribeNetworkOptimizationSettingsResponse, err error) {
 	response = CreateDescribeNetworkOptimizationSettingsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeNetworkOptimizationSettings(request *DescribeNetwo
 }
 
 // DescribeNetworkOptimizationSettingsWithChan invokes the smartag.DescribeNetworkOptimizationSettings API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describenetworkoptimizationsettings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNetworkOptimizationSettingsWithChan(request *DescribeNetworkOptimizationSettingsRequest) (<-chan *DescribeNetworkOptimizationSettingsResponse, <-chan error) {
 	responseChan := make(chan *DescribeNetworkOptimizationSettingsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeNetworkOptimizationSettingsWithChan(request *Descr
 }
 
 // DescribeNetworkOptimizationSettingsWithCallback invokes the smartag.DescribeNetworkOptimizationSettings API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describenetworkoptimizationsettings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNetworkOptimizationSettingsWithCallback(request *DescribeNetworkOptimizationSettingsRequest, callback func(response *DescribeNetworkOptimizationSettingsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // AddACLRule invokes the smartag.AddACLRule API synchronously
-// api document: https://help.aliyun.com/api/smartag/addaclrule.html
 func (client *Client) AddACLRule(request *AddACLRuleRequest) (response *AddACLRuleResponse, err error) {
 	response = CreateAddACLRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddACLRule(request *AddACLRuleRequest) (response *AddACLRu
 }
 
 // AddACLRuleWithChan invokes the smartag.AddACLRule API asynchronously
-// api document: https://help.aliyun.com/api/smartag/addaclrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddACLRuleWithChan(request *AddACLRuleRequest) (<-chan *AddACLRuleResponse, <-chan error) {
 	responseChan := make(chan *AddACLRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddACLRuleWithChan(request *AddACLRuleRequest) (<-chan *Ad
 }
 
 // AddACLRuleWithCallback invokes the smartag.AddACLRule API asynchronously
-// api document: https://help.aliyun.com/api/smartag/addaclrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddACLRuleWithCallback(request *AddACLRuleRequest, callback func(response *AddACLRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

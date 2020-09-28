@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCloudConnectNetworks invokes the smartag.DescribeCloudConnectNetworks API synchronously
-// api document: https://help.aliyun.com/api/smartag/describecloudconnectnetworks.html
 func (client *Client) DescribeCloudConnectNetworks(request *DescribeCloudConnectNetworksRequest) (response *DescribeCloudConnectNetworksResponse, err error) {
 	response = CreateDescribeCloudConnectNetworksResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCloudConnectNetworks(request *DescribeCloudConnect
 }
 
 // DescribeCloudConnectNetworksWithChan invokes the smartag.DescribeCloudConnectNetworks API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describecloudconnectnetworks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCloudConnectNetworksWithChan(request *DescribeCloudConnectNetworksRequest) (<-chan *DescribeCloudConnectNetworksResponse, <-chan error) {
 	responseChan := make(chan *DescribeCloudConnectNetworksResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCloudConnectNetworksWithChan(request *DescribeClou
 }
 
 // DescribeCloudConnectNetworksWithCallback invokes the smartag.DescribeCloudConnectNetworks API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describecloudconnectnetworks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCloudConnectNetworksWithCallback(request *DescribeCloudConnectNetworksRequest, callback func(response *DescribeCloudConnectNetworksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDnatEntries invokes the smartag.DescribeDnatEntries API synchronously
-// api document: https://help.aliyun.com/api/smartag/describednatentries.html
 func (client *Client) DescribeDnatEntries(request *DescribeDnatEntriesRequest) (response *DescribeDnatEntriesResponse, err error) {
 	response = CreateDescribeDnatEntriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDnatEntries(request *DescribeDnatEntriesRequest) (
 }
 
 // DescribeDnatEntriesWithChan invokes the smartag.DescribeDnatEntries API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describednatentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDnatEntriesWithChan(request *DescribeDnatEntriesRequest) (<-chan *DescribeDnatEntriesResponse, <-chan error) {
 	responseChan := make(chan *DescribeDnatEntriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDnatEntriesWithChan(request *DescribeDnatEntriesRe
 }
 
 // DescribeDnatEntriesWithCallback invokes the smartag.DescribeDnatEntries API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describednatentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDnatEntriesWithCallback(request *DescribeDnatEntriesRequest, callback func(response *DescribeDnatEntriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

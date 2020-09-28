@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteQos invokes the smartag.DeleteQos API synchronously
-// api document: https://help.aliyun.com/api/smartag/deleteqos.html
 func (client *Client) DeleteQos(request *DeleteQosRequest) (response *DeleteQosResponse, err error) {
 	response = CreateDeleteQosResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteQos(request *DeleteQosRequest) (response *DeleteQosR
 }
 
 // DeleteQosWithChan invokes the smartag.DeleteQos API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deleteqos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteQosWithChan(request *DeleteQosRequest) (<-chan *DeleteQosResponse, <-chan error) {
 	responseChan := make(chan *DeleteQosResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteQosWithChan(request *DeleteQosRequest) (<-chan *Dele
 }
 
 // DeleteQosWithCallback invokes the smartag.DeleteQos API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deleteqos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteQosWithCallback(request *DeleteQosRequest, callback func(response *DeleteQosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

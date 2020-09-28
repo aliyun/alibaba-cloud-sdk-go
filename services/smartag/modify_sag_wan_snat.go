@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySagWanSnat invokes the smartag.ModifySagWanSnat API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagwansnat.html
 func (client *Client) ModifySagWanSnat(request *ModifySagWanSnatRequest) (response *ModifySagWanSnatResponse, err error) {
 	response = CreateModifySagWanSnatResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySagWanSnat(request *ModifySagWanSnatRequest) (respon
 }
 
 // ModifySagWanSnatWithChan invokes the smartag.ModifySagWanSnat API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagwansnat.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagWanSnatWithChan(request *ModifySagWanSnatRequest) (<-chan *ModifySagWanSnatResponse, <-chan error) {
 	responseChan := make(chan *ModifySagWanSnatResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySagWanSnatWithChan(request *ModifySagWanSnatRequest)
 }
 
 // ModifySagWanSnatWithCallback invokes the smartag.ModifySagWanSnat API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagwansnat.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagWanSnatWithCallback(request *ModifySagWanSnatRequest, callback func(response *ModifySagWanSnatResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

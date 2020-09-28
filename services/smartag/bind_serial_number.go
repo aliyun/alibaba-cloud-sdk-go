@@ -21,7 +21,6 @@ import (
 )
 
 // BindSerialNumber invokes the smartag.BindSerialNumber API synchronously
-// api document: https://help.aliyun.com/api/smartag/bindserialnumber.html
 func (client *Client) BindSerialNumber(request *BindSerialNumberRequest) (response *BindSerialNumberResponse, err error) {
 	response = CreateBindSerialNumberResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindSerialNumber(request *BindSerialNumberRequest) (respon
 }
 
 // BindSerialNumberWithChan invokes the smartag.BindSerialNumber API asynchronously
-// api document: https://help.aliyun.com/api/smartag/bindserialnumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindSerialNumberWithChan(request *BindSerialNumberRequest) (<-chan *BindSerialNumberResponse, <-chan error) {
 	responseChan := make(chan *BindSerialNumberResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindSerialNumberWithChan(request *BindSerialNumberRequest)
 }
 
 // BindSerialNumberWithCallback invokes the smartag.BindSerialNumber API asynchronously
-// api document: https://help.aliyun.com/api/smartag/bindserialnumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindSerialNumberWithCallback(request *BindSerialNumberRequest, callback func(response *BindSerialNumberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

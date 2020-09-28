@@ -21,7 +21,6 @@ import (
 )
 
 // DowngradeSmartAccessGateway invokes the smartag.DowngradeSmartAccessGateway API synchronously
-// api document: https://help.aliyun.com/api/smartag/downgradesmartaccessgateway.html
 func (client *Client) DowngradeSmartAccessGateway(request *DowngradeSmartAccessGatewayRequest) (response *DowngradeSmartAccessGatewayResponse, err error) {
 	response = CreateDowngradeSmartAccessGatewayResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DowngradeSmartAccessGateway(request *DowngradeSmartAccessG
 }
 
 // DowngradeSmartAccessGatewayWithChan invokes the smartag.DowngradeSmartAccessGateway API asynchronously
-// api document: https://help.aliyun.com/api/smartag/downgradesmartaccessgateway.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DowngradeSmartAccessGatewayWithChan(request *DowngradeSmartAccessGatewayRequest) (<-chan *DowngradeSmartAccessGatewayResponse, <-chan error) {
 	responseChan := make(chan *DowngradeSmartAccessGatewayResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DowngradeSmartAccessGatewayWithChan(request *DowngradeSmar
 }
 
 // DowngradeSmartAccessGatewayWithCallback invokes the smartag.DowngradeSmartAccessGateway API asynchronously
-// api document: https://help.aliyun.com/api/smartag/downgradesmartaccessgateway.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DowngradeSmartAccessGatewayWithCallback(request *DowngradeSmartAccessGatewayRequest, callback func(response *DowngradeSmartAccessGatewayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

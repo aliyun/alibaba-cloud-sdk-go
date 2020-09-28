@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySagWan invokes the smartag.ModifySagWan API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagwan.html
 func (client *Client) ModifySagWan(request *ModifySagWanRequest) (response *ModifySagWanResponse, err error) {
 	response = CreateModifySagWanResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySagWan(request *ModifySagWanRequest) (response *Modi
 }
 
 // ModifySagWanWithChan invokes the smartag.ModifySagWan API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagwan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagWanWithChan(request *ModifySagWanRequest) (<-chan *ModifySagWanResponse, <-chan error) {
 	responseChan := make(chan *ModifySagWanResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySagWanWithChan(request *ModifySagWanRequest) (<-chan
 }
 
 // ModifySagWanWithCallback invokes the smartag.ModifySagWan API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagwan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagWanWithCallback(request *ModifySagWanRequest, callback func(response *ModifySagWanResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +79,7 @@ type ModifySagWanRequest struct {
 	IP                   string           `position:"Query" name:"IP"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	IPType               string           `position:"Query" name:"IPType"`
+	Priority             requests.Integer `position:"Query" name:"Priority"`
 	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 	SmartAGSn            string           `position:"Query" name:"SmartAGSn"`
 	PortName             string           `position:"Query" name:"PortName"`

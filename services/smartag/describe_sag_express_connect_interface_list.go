@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSagExpressConnectInterfaceList invokes the smartag.DescribeSagExpressConnectInterfaceList API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesagexpressconnectinterfacelist.html
 func (client *Client) DescribeSagExpressConnectInterfaceList(request *DescribeSagExpressConnectInterfaceListRequest) (response *DescribeSagExpressConnectInterfaceListResponse, err error) {
 	response = CreateDescribeSagExpressConnectInterfaceListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSagExpressConnectInterfaceList(request *DescribeSa
 }
 
 // DescribeSagExpressConnectInterfaceListWithChan invokes the smartag.DescribeSagExpressConnectInterfaceList API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagexpressconnectinterfacelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagExpressConnectInterfaceListWithChan(request *DescribeSagExpressConnectInterfaceListRequest) (<-chan *DescribeSagExpressConnectInterfaceListResponse, <-chan error) {
 	responseChan := make(chan *DescribeSagExpressConnectInterfaceListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSagExpressConnectInterfaceListWithChan(request *De
 }
 
 // DescribeSagExpressConnectInterfaceListWithCallback invokes the smartag.DescribeSagExpressConnectInterfaceList API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagexpressconnectinterfacelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagExpressConnectInterfaceListWithCallback(request *DescribeSagExpressConnectInterfaceListRequest, callback func(response *DescribeSagExpressConnectInterfaceListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

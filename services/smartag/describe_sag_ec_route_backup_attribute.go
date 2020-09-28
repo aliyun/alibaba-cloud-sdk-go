@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSagECRouteBackupAttribute invokes the smartag.DescribeSagECRouteBackupAttribute API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesagecroutebackupattribute.html
 func (client *Client) DescribeSagECRouteBackupAttribute(request *DescribeSagECRouteBackupAttributeRequest) (response *DescribeSagECRouteBackupAttributeResponse, err error) {
 	response = CreateDescribeSagECRouteBackupAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSagECRouteBackupAttribute(request *DescribeSagECRo
 }
 
 // DescribeSagECRouteBackupAttributeWithChan invokes the smartag.DescribeSagECRouteBackupAttribute API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagecroutebackupattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagECRouteBackupAttributeWithChan(request *DescribeSagECRouteBackupAttributeRequest) (<-chan *DescribeSagECRouteBackupAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeSagECRouteBackupAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSagECRouteBackupAttributeWithChan(request *Describ
 }
 
 // DescribeSagECRouteBackupAttributeWithCallback invokes the smartag.DescribeSagECRouteBackupAttribute API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagecroutebackupattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagECRouteBackupAttributeWithCallback(request *DescribeSagECRouteBackupAttributeRequest, callback func(response *DescribeSagECRouteBackupAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

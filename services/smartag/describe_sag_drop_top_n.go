@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSagDropTopN invokes the smartag.DescribeSagDropTopN API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesagdroptopn.html
 func (client *Client) DescribeSagDropTopN(request *DescribeSagDropTopNRequest) (response *DescribeSagDropTopNResponse, err error) {
 	response = CreateDescribeSagDropTopNResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSagDropTopN(request *DescribeSagDropTopNRequest) (
 }
 
 // DescribeSagDropTopNWithChan invokes the smartag.DescribeSagDropTopN API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagdroptopn.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagDropTopNWithChan(request *DescribeSagDropTopNRequest) (<-chan *DescribeSagDropTopNResponse, <-chan error) {
 	responseChan := make(chan *DescribeSagDropTopNResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSagDropTopNWithChan(request *DescribeSagDropTopNRe
 }
 
 // DescribeSagDropTopNWithCallback invokes the smartag.DescribeSagDropTopN API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagdroptopn.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagDropTopNWithCallback(request *DescribeSagDropTopNRequest, callback func(response *DescribeSagDropTopNResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSagTrafficTopN invokes the smartag.DescribeSagTrafficTopN API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesagtraffictopn.html
 func (client *Client) DescribeSagTrafficTopN(request *DescribeSagTrafficTopNRequest) (response *DescribeSagTrafficTopNResponse, err error) {
 	response = CreateDescribeSagTrafficTopNResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSagTrafficTopN(request *DescribeSagTrafficTopNRequ
 }
 
 // DescribeSagTrafficTopNWithChan invokes the smartag.DescribeSagTrafficTopN API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagtraffictopn.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagTrafficTopNWithChan(request *DescribeSagTrafficTopNRequest) (<-chan *DescribeSagTrafficTopNResponse, <-chan error) {
 	responseChan := make(chan *DescribeSagTrafficTopNResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSagTrafficTopNWithChan(request *DescribeSagTraffic
 }
 
 // DescribeSagTrafficTopNWithCallback invokes the smartag.DescribeSagTrafficTopN API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagtraffictopn.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagTrafficTopNWithCallback(request *DescribeSagTrafficTopNRequest, callback func(response *DescribeSagTrafficTopNResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

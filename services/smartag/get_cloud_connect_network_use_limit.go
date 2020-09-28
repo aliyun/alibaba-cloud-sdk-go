@@ -21,7 +21,6 @@ import (
 )
 
 // GetCloudConnectNetworkUseLimit invokes the smartag.GetCloudConnectNetworkUseLimit API synchronously
-// api document: https://help.aliyun.com/api/smartag/getcloudconnectnetworkuselimit.html
 func (client *Client) GetCloudConnectNetworkUseLimit(request *GetCloudConnectNetworkUseLimitRequest) (response *GetCloudConnectNetworkUseLimitResponse, err error) {
 	response = CreateGetCloudConnectNetworkUseLimitResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetCloudConnectNetworkUseLimit(request *GetCloudConnectNet
 }
 
 // GetCloudConnectNetworkUseLimitWithChan invokes the smartag.GetCloudConnectNetworkUseLimit API asynchronously
-// api document: https://help.aliyun.com/api/smartag/getcloudconnectnetworkuselimit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCloudConnectNetworkUseLimitWithChan(request *GetCloudConnectNetworkUseLimitRequest) (<-chan *GetCloudConnectNetworkUseLimitResponse, <-chan error) {
 	responseChan := make(chan *GetCloudConnectNetworkUseLimitResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetCloudConnectNetworkUseLimitWithChan(request *GetCloudCo
 }
 
 // GetCloudConnectNetworkUseLimitWithCallback invokes the smartag.GetCloudConnectNetworkUseLimit API asynchronously
-// api document: https://help.aliyun.com/api/smartag/getcloudconnectnetworkuselimit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCloudConnectNetworkUseLimitWithCallback(request *GetCloudConnectNetworkUseLimitRequest, callback func(response *GetCloudConnectNetworkUseLimitResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ActiveFlowLog invokes the smartag.ActiveFlowLog API synchronously
-// api document: https://help.aliyun.com/api/smartag/activeflowlog.html
 func (client *Client) ActiveFlowLog(request *ActiveFlowLogRequest) (response *ActiveFlowLogResponse, err error) {
 	response = CreateActiveFlowLogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ActiveFlowLog(request *ActiveFlowLogRequest) (response *Ac
 }
 
 // ActiveFlowLogWithChan invokes the smartag.ActiveFlowLog API asynchronously
-// api document: https://help.aliyun.com/api/smartag/activeflowlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActiveFlowLogWithChan(request *ActiveFlowLogRequest) (<-chan *ActiveFlowLogResponse, <-chan error) {
 	responseChan := make(chan *ActiveFlowLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ActiveFlowLogWithChan(request *ActiveFlowLogRequest) (<-ch
 }
 
 // ActiveFlowLogWithCallback invokes the smartag.ActiveFlowLog API asynchronously
-// api document: https://help.aliyun.com/api/smartag/activeflowlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActiveFlowLogWithCallback(request *ActiveFlowLogRequest, callback func(response *ActiveFlowLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

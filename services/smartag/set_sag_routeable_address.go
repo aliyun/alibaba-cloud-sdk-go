@@ -21,7 +21,6 @@ import (
 )
 
 // SetSagRouteableAddress invokes the smartag.SetSagRouteableAddress API synchronously
-// api document: https://help.aliyun.com/api/smartag/setsagrouteableaddress.html
 func (client *Client) SetSagRouteableAddress(request *SetSagRouteableAddressRequest) (response *SetSagRouteableAddressResponse, err error) {
 	response = CreateSetSagRouteableAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetSagRouteableAddress(request *SetSagRouteableAddressRequ
 }
 
 // SetSagRouteableAddressWithChan invokes the smartag.SetSagRouteableAddress API asynchronously
-// api document: https://help.aliyun.com/api/smartag/setsagrouteableaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetSagRouteableAddressWithChan(request *SetSagRouteableAddressRequest) (<-chan *SetSagRouteableAddressResponse, <-chan error) {
 	responseChan := make(chan *SetSagRouteableAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetSagRouteableAddressWithChan(request *SetSagRouteableAdd
 }
 
 // SetSagRouteableAddressWithCallback invokes the smartag.SetSagRouteableAddress API asynchronously
-// api document: https://help.aliyun.com/api/smartag/setsagrouteableaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetSagRouteableAddressWithCallback(request *SetSagRouteableAddressRequest, callback func(response *SetSagRouteableAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

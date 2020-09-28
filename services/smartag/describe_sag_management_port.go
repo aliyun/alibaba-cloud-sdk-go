@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSagManagementPort invokes the smartag.DescribeSagManagementPort API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesagmanagementport.html
 func (client *Client) DescribeSagManagementPort(request *DescribeSagManagementPortRequest) (response *DescribeSagManagementPortResponse, err error) {
 	response = CreateDescribeSagManagementPortResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSagManagementPort(request *DescribeSagManagementPo
 }
 
 // DescribeSagManagementPortWithChan invokes the smartag.DescribeSagManagementPort API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagmanagementport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagManagementPortWithChan(request *DescribeSagManagementPortRequest) (<-chan *DescribeSagManagementPortResponse, <-chan error) {
 	responseChan := make(chan *DescribeSagManagementPortResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSagManagementPortWithChan(request *DescribeSagMana
 }
 
 // DescribeSagManagementPortWithCallback invokes the smartag.DescribeSagManagementPort API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagmanagementport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagManagementPortWithCallback(request *DescribeSagManagementPortRequest, callback func(response *DescribeSagManagementPortResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

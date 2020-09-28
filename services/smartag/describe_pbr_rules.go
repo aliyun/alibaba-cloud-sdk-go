@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePbrRules invokes the smartag.DescribePbrRules API synchronously
-// api document: https://help.aliyun.com/api/smartag/describepbrrules.html
 func (client *Client) DescribePbrRules(request *DescribePbrRulesRequest) (response *DescribePbrRulesResponse, err error) {
 	response = CreateDescribePbrRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePbrRules(request *DescribePbrRulesRequest) (respon
 }
 
 // DescribePbrRulesWithChan invokes the smartag.DescribePbrRules API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describepbrrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePbrRulesWithChan(request *DescribePbrRulesRequest) (<-chan *DescribePbrRulesResponse, <-chan error) {
 	responseChan := make(chan *DescribePbrRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePbrRulesWithChan(request *DescribePbrRulesRequest)
 }
 
 // DescribePbrRulesWithCallback invokes the smartag.DescribePbrRules API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describepbrrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePbrRulesWithCallback(request *DescribePbrRulesRequest, callback func(response *DescribePbrRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

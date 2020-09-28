@@ -17,10 +17,12 @@ package smartag
 
 // Wan is a nested struct in smartag response
 type Wan struct {
-	PortName string `json:"PortName" xml:"PortName"`
-	IPType   string `json:"IPType" xml:"IPType"`
-	IP       string `json:"IP" xml:"IP"`
-	Mask     string `json:"Mask" xml:"Mask"`
-	Gateway  string `json:"Gateway" xml:"Gateway"`
-	Username string `json:"Username" xml:"Username"`
+	PortName     string `json:"PortName" xml:"PortName"`
+	IPType       string `json:"IPType" xml:"IPType"`
+	IP           string `json:"IP" xml:"IP"`
+	Mask         string `json:"Mask" xml:"Mask"`
+	Gateway      string `json:"Gateway" xml:"Gateway"`
+	Username     string `json:"Username" xml:"Username"`
+	TrafficState string `json:"TrafficState" xml:"TrafficState"`
+	Priority     int    `json:"Priority" xml:"Priority"`
 }

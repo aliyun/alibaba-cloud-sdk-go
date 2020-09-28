@@ -21,7 +21,6 @@ import (
 )
 
 // GrantInstanceToCbn invokes the smartag.GrantInstanceToCbn API synchronously
-// api document: https://help.aliyun.com/api/smartag/grantinstancetocbn.html
 func (client *Client) GrantInstanceToCbn(request *GrantInstanceToCbnRequest) (response *GrantInstanceToCbnResponse, err error) {
 	response = CreateGrantInstanceToCbnResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GrantInstanceToCbn(request *GrantInstanceToCbnRequest) (re
 }
 
 // GrantInstanceToCbnWithChan invokes the smartag.GrantInstanceToCbn API asynchronously
-// api document: https://help.aliyun.com/api/smartag/grantinstancetocbn.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantInstanceToCbnWithChan(request *GrantInstanceToCbnRequest) (<-chan *GrantInstanceToCbnResponse, <-chan error) {
 	responseChan := make(chan *GrantInstanceToCbnResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GrantInstanceToCbnWithChan(request *GrantInstanceToCbnRequ
 }
 
 // GrantInstanceToCbnWithCallback invokes the smartag.GrantInstanceToCbn API asynchronously
-// api document: https://help.aliyun.com/api/smartag/grantinstancetocbn.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantInstanceToCbnWithCallback(request *GrantInstanceToCbnRequest, callback func(response *GrantInstanceToCbnResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

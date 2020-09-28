@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePolicyBasedRoutings invokes the smartag.DescribePolicyBasedRoutings API synchronously
-// api document: https://help.aliyun.com/api/smartag/describepolicybasedroutings.html
 func (client *Client) DescribePolicyBasedRoutings(request *DescribePolicyBasedRoutingsRequest) (response *DescribePolicyBasedRoutingsResponse, err error) {
 	response = CreateDescribePolicyBasedRoutingsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePolicyBasedRoutings(request *DescribePolicyBasedRo
 }
 
 // DescribePolicyBasedRoutingsWithChan invokes the smartag.DescribePolicyBasedRoutings API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describepolicybasedroutings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePolicyBasedRoutingsWithChan(request *DescribePolicyBasedRoutingsRequest) (<-chan *DescribePolicyBasedRoutingsResponse, <-chan error) {
 	responseChan := make(chan *DescribePolicyBasedRoutingsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePolicyBasedRoutingsWithChan(request *DescribePolic
 }
 
 // DescribePolicyBasedRoutingsWithCallback invokes the smartag.DescribePolicyBasedRoutings API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describepolicybasedroutings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePolicyBasedRoutingsWithCallback(request *DescribePolicyBasedRoutingsRequest, callback func(response *DescribePolicyBasedRoutingsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

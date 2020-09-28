@@ -21,7 +21,6 @@ import (
 )
 
 // AttachNetworkOptimizationSags invokes the smartag.AttachNetworkOptimizationSags API synchronously
-// api document: https://help.aliyun.com/api/smartag/attachnetworkoptimizationsags.html
 func (client *Client) AttachNetworkOptimizationSags(request *AttachNetworkOptimizationSagsRequest) (response *AttachNetworkOptimizationSagsResponse, err error) {
 	response = CreateAttachNetworkOptimizationSagsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AttachNetworkOptimizationSags(request *AttachNetworkOptimi
 }
 
 // AttachNetworkOptimizationSagsWithChan invokes the smartag.AttachNetworkOptimizationSags API asynchronously
-// api document: https://help.aliyun.com/api/smartag/attachnetworkoptimizationsags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachNetworkOptimizationSagsWithChan(request *AttachNetworkOptimizationSagsRequest) (<-chan *AttachNetworkOptimizationSagsResponse, <-chan error) {
 	responseChan := make(chan *AttachNetworkOptimizationSagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AttachNetworkOptimizationSagsWithChan(request *AttachNetwo
 }
 
 // AttachNetworkOptimizationSagsWithCallback invokes the smartag.AttachNetworkOptimizationSags API asynchronously
-// api document: https://help.aliyun.com/api/smartag/attachnetworkoptimizationsags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachNetworkOptimizationSagsWithCallback(request *AttachNetworkOptimizationSagsRequest, callback func(response *AttachNetworkOptimizationSagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

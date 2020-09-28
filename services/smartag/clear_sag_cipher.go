@@ -21,7 +21,6 @@ import (
 )
 
 // ClearSagCipher invokes the smartag.ClearSagCipher API synchronously
-// api document: https://help.aliyun.com/api/smartag/clearsagcipher.html
 func (client *Client) ClearSagCipher(request *ClearSagCipherRequest) (response *ClearSagCipherResponse, err error) {
 	response = CreateClearSagCipherResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ClearSagCipher(request *ClearSagCipherRequest) (response *
 }
 
 // ClearSagCipherWithChan invokes the smartag.ClearSagCipher API asynchronously
-// api document: https://help.aliyun.com/api/smartag/clearsagcipher.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearSagCipherWithChan(request *ClearSagCipherRequest) (<-chan *ClearSagCipherResponse, <-chan error) {
 	responseChan := make(chan *ClearSagCipherResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ClearSagCipherWithChan(request *ClearSagCipherRequest) (<-
 }
 
 // ClearSagCipherWithCallback invokes the smartag.ClearSagCipher API asynchronously
-// api document: https://help.aliyun.com/api/smartag/clearsagcipher.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearSagCipherWithCallback(request *ClearSagCipherRequest, callback func(response *ClearSagCipherResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

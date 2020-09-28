@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeGrantSagRules invokes the smartag.DescribeGrantSagRules API synchronously
-// api document: https://help.aliyun.com/api/smartag/describegrantsagrules.html
 func (client *Client) DescribeGrantSagRules(request *DescribeGrantSagRulesRequest) (response *DescribeGrantSagRulesResponse, err error) {
 	response = CreateDescribeGrantSagRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeGrantSagRules(request *DescribeGrantSagRulesReques
 }
 
 // DescribeGrantSagRulesWithChan invokes the smartag.DescribeGrantSagRules API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describegrantsagrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGrantSagRulesWithChan(request *DescribeGrantSagRulesRequest) (<-chan *DescribeGrantSagRulesResponse, <-chan error) {
 	responseChan := make(chan *DescribeGrantSagRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeGrantSagRulesWithChan(request *DescribeGrantSagRul
 }
 
 // DescribeGrantSagRulesWithCallback invokes the smartag.DescribeGrantSagRules API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describegrantsagrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGrantSagRulesWithCallback(request *DescribeGrantSagRulesRequest, callback func(response *DescribeGrantSagRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

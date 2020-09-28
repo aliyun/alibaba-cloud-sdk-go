@@ -1,3 +1,7 @@
+2020-09-28 Version: v1.61.536
+- Generated 2018-03-13 for `Smartag`.
+- Supported param SmartAGIds for DescribeSmartAccessGateways.
+
 2020-09-28 Version: v1.61.535
 - Generated 2016-01-20 for `Kms`.
 - Support filtering keys and secrets.

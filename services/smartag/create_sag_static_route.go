@@ -21,7 +21,6 @@ import (
 )
 
 // CreateSagStaticRoute invokes the smartag.CreateSagStaticRoute API synchronously
-// api document: https://help.aliyun.com/api/smartag/createsagstaticroute.html
 func (client *Client) CreateSagStaticRoute(request *CreateSagStaticRouteRequest) (response *CreateSagStaticRouteResponse, err error) {
 	response = CreateCreateSagStaticRouteResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateSagStaticRoute(request *CreateSagStaticRouteRequest)
 }
 
 // CreateSagStaticRouteWithChan invokes the smartag.CreateSagStaticRoute API asynchronously
-// api document: https://help.aliyun.com/api/smartag/createsagstaticroute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSagStaticRouteWithChan(request *CreateSagStaticRouteRequest) (<-chan *CreateSagStaticRouteResponse, <-chan error) {
 	responseChan := make(chan *CreateSagStaticRouteResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateSagStaticRouteWithChan(request *CreateSagStaticRoute
 }
 
 // CreateSagStaticRouteWithCallback invokes the smartag.CreateSagStaticRoute API asynchronously
-// api document: https://help.aliyun.com/api/smartag/createsagstaticroute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSagStaticRouteWithCallback(request *CreateSagStaticRouteRequest, callback func(response *CreateSagStaticRouteResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

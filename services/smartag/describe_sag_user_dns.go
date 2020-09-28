@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSagUserDns invokes the smartag.DescribeSagUserDns API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesaguserdns.html
 func (client *Client) DescribeSagUserDns(request *DescribeSagUserDnsRequest) (response *DescribeSagUserDnsResponse, err error) {
 	response = CreateDescribeSagUserDnsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSagUserDns(request *DescribeSagUserDnsRequest) (re
 }
 
 // DescribeSagUserDnsWithChan invokes the smartag.DescribeSagUserDns API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesaguserdns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagUserDnsWithChan(request *DescribeSagUserDnsRequest) (<-chan *DescribeSagUserDnsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSagUserDnsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSagUserDnsWithChan(request *DescribeSagUserDnsRequ
 }
 
 // DescribeSagUserDnsWithCallback invokes the smartag.DescribeSagUserDns API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesaguserdns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagUserDnsWithCallback(request *DescribeSagUserDnsRequest, callback func(response *DescribeSagUserDnsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

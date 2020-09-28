@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFlowLogSags invokes the smartag.DescribeFlowLogSags API synchronously
-// api document: https://help.aliyun.com/api/smartag/describeflowlogsags.html
 func (client *Client) DescribeFlowLogSags(request *DescribeFlowLogSagsRequest) (response *DescribeFlowLogSagsResponse, err error) {
 	response = CreateDescribeFlowLogSagsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFlowLogSags(request *DescribeFlowLogSagsRequest) (
 }
 
 // DescribeFlowLogSagsWithChan invokes the smartag.DescribeFlowLogSags API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describeflowlogsags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowLogSagsWithChan(request *DescribeFlowLogSagsRequest) (<-chan *DescribeFlowLogSagsResponse, <-chan error) {
 	responseChan := make(chan *DescribeFlowLogSagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFlowLogSagsWithChan(request *DescribeFlowLogSagsRe
 }
 
 // DescribeFlowLogSagsWithCallback invokes the smartag.DescribeFlowLogSags API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describeflowlogsags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowLogSagsWithCallback(request *DescribeFlowLogSagsRequest, callback func(response *DescribeFlowLogSagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

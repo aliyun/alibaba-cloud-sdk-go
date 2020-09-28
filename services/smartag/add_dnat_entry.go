@@ -21,7 +21,6 @@ import (
 )
 
 // AddDnatEntry invokes the smartag.AddDnatEntry API synchronously
-// api document: https://help.aliyun.com/api/smartag/adddnatentry.html
 func (client *Client) AddDnatEntry(request *AddDnatEntryRequest) (response *AddDnatEntryResponse, err error) {
 	response = CreateAddDnatEntryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddDnatEntry(request *AddDnatEntryRequest) (response *AddD
 }
 
 // AddDnatEntryWithChan invokes the smartag.AddDnatEntry API asynchronously
-// api document: https://help.aliyun.com/api/smartag/adddnatentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddDnatEntryWithChan(request *AddDnatEntryRequest) (<-chan *AddDnatEntryResponse, <-chan error) {
 	responseChan := make(chan *AddDnatEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddDnatEntryWithChan(request *AddDnatEntryRequest) (<-chan
 }
 
 // AddDnatEntryWithCallback invokes the smartag.AddDnatEntry API asynchronously
-// api document: https://help.aliyun.com/api/smartag/adddnatentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddDnatEntryWithCallback(request *AddDnatEntryRequest, callback func(response *AddDnatEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

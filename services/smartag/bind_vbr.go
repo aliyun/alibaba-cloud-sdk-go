@@ -21,7 +21,6 @@ import (
 )
 
 // BindVbr invokes the smartag.BindVbr API synchronously
-// api document: https://help.aliyun.com/api/smartag/bindvbr.html
 func (client *Client) BindVbr(request *BindVbrRequest) (response *BindVbrResponse, err error) {
 	response = CreateBindVbrResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindVbr(request *BindVbrRequest) (response *BindVbrRespons
 }
 
 // BindVbrWithChan invokes the smartag.BindVbr API asynchronously
-// api document: https://help.aliyun.com/api/smartag/bindvbr.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindVbrWithChan(request *BindVbrRequest) (<-chan *BindVbrResponse, <-chan error) {
 	responseChan := make(chan *BindVbrResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindVbrWithChan(request *BindVbrRequest) (<-chan *BindVbrR
 }
 
 // BindVbrWithCallback invokes the smartag.BindVbr API asynchronously
-// api document: https://help.aliyun.com/api/smartag/bindvbr.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindVbrWithCallback(request *BindVbrRequest, callback func(response *BindVbrResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeACLAttribute invokes the smartag.DescribeACLAttribute API synchronously
-// api document: https://help.aliyun.com/api/smartag/describeaclattribute.html
 func (client *Client) DescribeACLAttribute(request *DescribeACLAttributeRequest) (response *DescribeACLAttributeResponse, err error) {
 	response = CreateDescribeACLAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeACLAttribute(request *DescribeACLAttributeRequest)
 }
 
 // DescribeACLAttributeWithChan invokes the smartag.DescribeACLAttribute API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describeaclattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeACLAttributeWithChan(request *DescribeACLAttributeRequest) (<-chan *DescribeACLAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeACLAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeACLAttributeWithChan(request *DescribeACLAttribute
 }
 
 // DescribeACLAttributeWithCallback invokes the smartag.DescribeACLAttribute API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describeaclattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeACLAttributeWithCallback(request *DescribeACLAttributeRequest, callback func(response *DescribeACLAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // OrchestrateSagECRouteBackup invokes the smartag.OrchestrateSagECRouteBackup API synchronously
-// api document: https://help.aliyun.com/api/smartag/orchestratesagecroutebackup.html
 func (client *Client) OrchestrateSagECRouteBackup(request *OrchestrateSagECRouteBackupRequest) (response *OrchestrateSagECRouteBackupResponse, err error) {
 	response = CreateOrchestrateSagECRouteBackupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OrchestrateSagECRouteBackup(request *OrchestrateSagECRoute
 }
 
 // OrchestrateSagECRouteBackupWithChan invokes the smartag.OrchestrateSagECRouteBackup API asynchronously
-// api document: https://help.aliyun.com/api/smartag/orchestratesagecroutebackup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OrchestrateSagECRouteBackupWithChan(request *OrchestrateSagECRouteBackupRequest) (<-chan *OrchestrateSagECRouteBackupResponse, <-chan error) {
 	responseChan := make(chan *OrchestrateSagECRouteBackupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OrchestrateSagECRouteBackupWithChan(request *OrchestrateSa
 }
 
 // OrchestrateSagECRouteBackupWithCallback invokes the smartag.OrchestrateSagECRouteBackup API asynchronously
-// api document: https://help.aliyun.com/api/smartag/orchestratesagecroutebackup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OrchestrateSagECRouteBackupWithCallback(request *OrchestrateSagECRouteBackupRequest, callback func(response *OrchestrateSagECRouteBackupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

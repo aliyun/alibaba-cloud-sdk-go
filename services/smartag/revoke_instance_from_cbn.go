@@ -21,7 +21,6 @@ import (
 )
 
 // RevokeInstanceFromCbn invokes the smartag.RevokeInstanceFromCbn API synchronously
-// api document: https://help.aliyun.com/api/smartag/revokeinstancefromcbn.html
 func (client *Client) RevokeInstanceFromCbn(request *RevokeInstanceFromCbnRequest) (response *RevokeInstanceFromCbnResponse, err error) {
 	response = CreateRevokeInstanceFromCbnResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RevokeInstanceFromCbn(request *RevokeInstanceFromCbnReques
 }
 
 // RevokeInstanceFromCbnWithChan invokes the smartag.RevokeInstanceFromCbn API asynchronously
-// api document: https://help.aliyun.com/api/smartag/revokeinstancefromcbn.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeInstanceFromCbnWithChan(request *RevokeInstanceFromCbnRequest) (<-chan *RevokeInstanceFromCbnResponse, <-chan error) {
 	responseChan := make(chan *RevokeInstanceFromCbnResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RevokeInstanceFromCbnWithChan(request *RevokeInstanceFromC
 }
 
 // RevokeInstanceFromCbnWithCallback invokes the smartag.RevokeInstanceFromCbn API asynchronously
-// api document: https://help.aliyun.com/api/smartag/revokeinstancefromcbn.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeInstanceFromCbnWithCallback(request *RevokeInstanceFromCbnRequest, callback func(response *RevokeInstanceFromCbnResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

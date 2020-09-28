@@ -21,7 +21,6 @@ import (
 )
 
 // DeactiveFlowLog invokes the smartag.DeactiveFlowLog API synchronously
-// api document: https://help.aliyun.com/api/smartag/deactiveflowlog.html
 func (client *Client) DeactiveFlowLog(request *DeactiveFlowLogRequest) (response *DeactiveFlowLogResponse, err error) {
 	response = CreateDeactiveFlowLogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeactiveFlowLog(request *DeactiveFlowLogRequest) (response
 }
 
 // DeactiveFlowLogWithChan invokes the smartag.DeactiveFlowLog API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deactiveflowlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeactiveFlowLogWithChan(request *DeactiveFlowLogRequest) (<-chan *DeactiveFlowLogResponse, <-chan error) {
 	responseChan := make(chan *DeactiveFlowLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeactiveFlowLogWithChan(request *DeactiveFlowLogRequest) (
 }
 
 // DeactiveFlowLogWithCallback invokes the smartag.DeactiveFlowLog API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deactiveflowlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeactiveFlowLogWithCallback(request *DeactiveFlowLogRequest, callback func(response *DeactiveFlowLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

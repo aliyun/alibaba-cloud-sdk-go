@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSagWifi invokes the smartag.DescribeSagWifi API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesagwifi.html
 func (client *Client) DescribeSagWifi(request *DescribeSagWifiRequest) (response *DescribeSagWifiResponse, err error) {
 	response = CreateDescribeSagWifiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSagWifi(request *DescribeSagWifiRequest) (response
 }
 
 // DescribeSagWifiWithChan invokes the smartag.DescribeSagWifi API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagwifi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagWifiWithChan(request *DescribeSagWifiRequest) (<-chan *DescribeSagWifiResponse, <-chan error) {
 	responseChan := make(chan *DescribeSagWifiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSagWifiWithChan(request *DescribeSagWifiRequest) (
 }
 
 // DescribeSagWifiWithCallback invokes the smartag.DescribeSagWifi API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagwifi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagWifiWithCallback(request *DescribeSagWifiRequest, callback func(response *DescribeSagWifiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDeviceAutoUpgradePolicy invokes the smartag.ModifyDeviceAutoUpgradePolicy API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifydeviceautoupgradepolicy.html
 func (client *Client) ModifyDeviceAutoUpgradePolicy(request *ModifyDeviceAutoUpgradePolicyRequest) (response *ModifyDeviceAutoUpgradePolicyResponse, err error) {
 	response = CreateModifyDeviceAutoUpgradePolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDeviceAutoUpgradePolicy(request *ModifyDeviceAutoUpg
 }
 
 // ModifyDeviceAutoUpgradePolicyWithChan invokes the smartag.ModifyDeviceAutoUpgradePolicy API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifydeviceautoupgradepolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDeviceAutoUpgradePolicyWithChan(request *ModifyDeviceAutoUpgradePolicyRequest) (<-chan *ModifyDeviceAutoUpgradePolicyResponse, <-chan error) {
 	responseChan := make(chan *ModifyDeviceAutoUpgradePolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDeviceAutoUpgradePolicyWithChan(request *ModifyDevic
 }
 
 // ModifyDeviceAutoUpgradePolicyWithCallback invokes the smartag.ModifyDeviceAutoUpgradePolicy API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifydeviceautoupgradepolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDeviceAutoUpgradePolicyWithCallback(request *ModifyDeviceAutoUpgradePolicyRequest, callback func(response *ModifyDeviceAutoUpgradePolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSagRemoteAccess invokes the smartag.DescribeSagRemoteAccess API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesagremoteaccess.html
 func (client *Client) DescribeSagRemoteAccess(request *DescribeSagRemoteAccessRequest) (response *DescribeSagRemoteAccessResponse, err error) {
 	response = CreateDescribeSagRemoteAccessResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSagRemoteAccess(request *DescribeSagRemoteAccessRe
 }
 
 // DescribeSagRemoteAccessWithChan invokes the smartag.DescribeSagRemoteAccess API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagremoteaccess.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagRemoteAccessWithChan(request *DescribeSagRemoteAccessRequest) (<-chan *DescribeSagRemoteAccessResponse, <-chan error) {
 	responseChan := make(chan *DescribeSagRemoteAccessResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSagRemoteAccessWithChan(request *DescribeSagRemote
 }
 
 // DescribeSagRemoteAccessWithCallback invokes the smartag.DescribeSagRemoteAccess API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagremoteaccess.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagRemoteAccessWithCallback(request *DescribeSagRemoteAccessRequest, callback func(response *DescribeSagRemoteAccessResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

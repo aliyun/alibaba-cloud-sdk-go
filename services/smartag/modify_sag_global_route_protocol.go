@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySagGlobalRouteProtocol invokes the smartag.ModifySagGlobalRouteProtocol API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagglobalrouteprotocol.html
 func (client *Client) ModifySagGlobalRouteProtocol(request *ModifySagGlobalRouteProtocolRequest) (response *ModifySagGlobalRouteProtocolResponse, err error) {
 	response = CreateModifySagGlobalRouteProtocolResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySagGlobalRouteProtocol(request *ModifySagGlobalRoute
 }
 
 // ModifySagGlobalRouteProtocolWithChan invokes the smartag.ModifySagGlobalRouteProtocol API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagglobalrouteprotocol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagGlobalRouteProtocolWithChan(request *ModifySagGlobalRouteProtocolRequest) (<-chan *ModifySagGlobalRouteProtocolResponse, <-chan error) {
 	responseChan := make(chan *ModifySagGlobalRouteProtocolResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySagGlobalRouteProtocolWithChan(request *ModifySagGlo
 }
 
 // ModifySagGlobalRouteProtocolWithCallback invokes the smartag.ModifySagGlobalRouteProtocol API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagglobalrouteprotocol.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagGlobalRouteProtocolWithCallback(request *ModifySagGlobalRouteProtocolRequest, callback func(response *ModifySagGlobalRouteProtocolResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

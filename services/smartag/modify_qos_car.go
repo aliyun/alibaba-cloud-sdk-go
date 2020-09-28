@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyQosCar invokes the smartag.ModifyQosCar API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifyqoscar.html
 func (client *Client) ModifyQosCar(request *ModifyQosCarRequest) (response *ModifyQosCarResponse, err error) {
 	response = CreateModifyQosCarResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyQosCar(request *ModifyQosCarRequest) (response *Modi
 }
 
 // ModifyQosCarWithChan invokes the smartag.ModifyQosCar API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifyqoscar.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyQosCarWithChan(request *ModifyQosCarRequest) (<-chan *ModifyQosCarResponse, <-chan error) {
 	responseChan := make(chan *ModifyQosCarResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyQosCarWithChan(request *ModifyQosCarRequest) (<-chan
 }
 
 // ModifyQosCarWithCallback invokes the smartag.ModifyQosCar API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifyqoscar.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyQosCarWithCallback(request *ModifyQosCarRequest, callback func(response *ModifyQosCarResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

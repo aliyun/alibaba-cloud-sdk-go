@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBindableSmartAccessGateways invokes the smartag.DescribeBindableSmartAccessGateways API synchronously
-// api document: https://help.aliyun.com/api/smartag/describebindablesmartaccessgateways.html
 func (client *Client) DescribeBindableSmartAccessGateways(request *DescribeBindableSmartAccessGatewaysRequest) (response *DescribeBindableSmartAccessGatewaysResponse, err error) {
 	response = CreateDescribeBindableSmartAccessGatewaysResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBindableSmartAccessGateways(request *DescribeBinda
 }
 
 // DescribeBindableSmartAccessGatewaysWithChan invokes the smartag.DescribeBindableSmartAccessGateways API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describebindablesmartaccessgateways.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBindableSmartAccessGatewaysWithChan(request *DescribeBindableSmartAccessGatewaysRequest) (<-chan *DescribeBindableSmartAccessGatewaysResponse, <-chan error) {
 	responseChan := make(chan *DescribeBindableSmartAccessGatewaysResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBindableSmartAccessGatewaysWithChan(request *Descr
 }
 
 // DescribeBindableSmartAccessGatewaysWithCallback invokes the smartag.DescribeBindableSmartAccessGateways API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describebindablesmartaccessgateways.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBindableSmartAccessGatewaysWithCallback(request *DescribeBindableSmartAccessGatewaysRequest, callback func(response *DescribeBindableSmartAccessGatewaysResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

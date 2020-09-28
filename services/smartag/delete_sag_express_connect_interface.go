@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSagExpressConnectInterface invokes the smartag.DeleteSagExpressConnectInterface API synchronously
-// api document: https://help.aliyun.com/api/smartag/deletesagexpressconnectinterface.html
 func (client *Client) DeleteSagExpressConnectInterface(request *DeleteSagExpressConnectInterfaceRequest) (response *DeleteSagExpressConnectInterfaceResponse, err error) {
 	response = CreateDeleteSagExpressConnectInterfaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSagExpressConnectInterface(request *DeleteSagExpress
 }
 
 // DeleteSagExpressConnectInterfaceWithChan invokes the smartag.DeleteSagExpressConnectInterface API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletesagexpressconnectinterface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSagExpressConnectInterfaceWithChan(request *DeleteSagExpressConnectInterfaceRequest) (<-chan *DeleteSagExpressConnectInterfaceResponse, <-chan error) {
 	responseChan := make(chan *DeleteSagExpressConnectInterfaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSagExpressConnectInterfaceWithChan(request *DeleteSa
 }
 
 // DeleteSagExpressConnectInterfaceWithCallback invokes the smartag.DeleteSagExpressConnectInterface API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletesagexpressconnectinterface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSagExpressConnectInterfaceWithCallback(request *DeleteSagExpressConnectInterfaceRequest, callback func(response *DeleteSagExpressConnectInterfaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

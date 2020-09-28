@@ -21,7 +21,6 @@ import (
 )
 
 // CreateQos invokes the smartag.CreateQos API synchronously
-// api document: https://help.aliyun.com/api/smartag/createqos.html
 func (client *Client) CreateQos(request *CreateQosRequest) (response *CreateQosResponse, err error) {
 	response = CreateCreateQosResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateQos(request *CreateQosRequest) (response *CreateQosR
 }
 
 // CreateQosWithChan invokes the smartag.CreateQos API asynchronously
-// api document: https://help.aliyun.com/api/smartag/createqos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateQosWithChan(request *CreateQosRequest) (<-chan *CreateQosResponse, <-chan error) {
 	responseChan := make(chan *CreateQosResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateQosWithChan(request *CreateQosRequest) (<-chan *Crea
 }
 
 // CreateQosWithCallback invokes the smartag.CreateQos API asynchronously
-// api document: https://help.aliyun.com/api/smartag/createqos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateQosWithCallback(request *CreateQosRequest, callback func(response *CreateQosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeQoses invokes the smartag.DescribeQoses API synchronously
-// api document: https://help.aliyun.com/api/smartag/describeqoses.html
 func (client *Client) DescribeQoses(request *DescribeQosesRequest) (response *DescribeQosesResponse, err error) {
 	response = CreateDescribeQosesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeQoses(request *DescribeQosesRequest) (response *De
 }
 
 // DescribeQosesWithChan invokes the smartag.DescribeQoses API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describeqoses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeQosesWithChan(request *DescribeQosesRequest) (<-chan *DescribeQosesResponse, <-chan error) {
 	responseChan := make(chan *DescribeQosesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeQosesWithChan(request *DescribeQosesRequest) (<-ch
 }
 
 // DescribeQosesWithCallback invokes the smartag.DescribeQoses API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describeqoses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeQosesWithCallback(request *DescribeQosesRequest, callback func(response *DescribeQosesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

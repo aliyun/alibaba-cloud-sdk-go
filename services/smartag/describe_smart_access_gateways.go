@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSmartAccessGateways invokes the smartag.DescribeSmartAccessGateways API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesmartaccessgateways.html
 func (client *Client) DescribeSmartAccessGateways(request *DescribeSmartAccessGatewaysRequest) (response *DescribeSmartAccessGatewaysResponse, err error) {
 	response = CreateDescribeSmartAccessGatewaysResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSmartAccessGateways(request *DescribeSmartAccessGa
 }
 
 // DescribeSmartAccessGatewaysWithChan invokes the smartag.DescribeSmartAccessGateways API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesmartaccessgateways.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSmartAccessGatewaysWithChan(request *DescribeSmartAccessGatewaysRequest) (<-chan *DescribeSmartAccessGatewaysResponse, <-chan error) {
 	responseChan := make(chan *DescribeSmartAccessGatewaysResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSmartAccessGatewaysWithChan(request *DescribeSmart
 }
 
 // DescribeSmartAccessGatewaysWithCallback invokes the smartag.DescribeSmartAccessGateways API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesmartaccessgateways.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSmartAccessGatewaysWithCallback(request *DescribeSmartAccessGatewaysRequest, callback func(response *DescribeSmartAccessGatewaysResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +82,7 @@ type DescribeSmartAccessGatewaysRequest struct {
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	InstanceType         string           `position:"Query" name:"InstanceType"`
 	HardwareType         string           `position:"Query" name:"HardwareType"`
+	SmartAGIds           *[]string        `position:"Query" name:"SmartAGIds"  type:"Repeated"`
 	SerialNumber         string           `position:"Query" name:"SerialNumber"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

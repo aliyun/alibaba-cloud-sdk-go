@@ -21,7 +21,6 @@ import (
 )
 
 // UnbindSerialNumber invokes the smartag.UnbindSerialNumber API synchronously
-// api document: https://help.aliyun.com/api/smartag/unbindserialnumber.html
 func (client *Client) UnbindSerialNumber(request *UnbindSerialNumberRequest) (response *UnbindSerialNumberResponse, err error) {
 	response = CreateUnbindSerialNumberResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnbindSerialNumber(request *UnbindSerialNumberRequest) (re
 }
 
 // UnbindSerialNumberWithChan invokes the smartag.UnbindSerialNumber API asynchronously
-// api document: https://help.aliyun.com/api/smartag/unbindserialnumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindSerialNumberWithChan(request *UnbindSerialNumberRequest) (<-chan *UnbindSerialNumberResponse, <-chan error) {
 	responseChan := make(chan *UnbindSerialNumberResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnbindSerialNumberWithChan(request *UnbindSerialNumberRequ
 }
 
 // UnbindSerialNumberWithCallback invokes the smartag.UnbindSerialNumber API asynchronously
-// api document: https://help.aliyun.com/api/smartag/unbindserialnumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindSerialNumberWithCallback(request *UnbindSerialNumberRequest, callback func(response *UnbindSerialNumberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

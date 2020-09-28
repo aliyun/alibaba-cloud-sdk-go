@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSmartAccessGatewayClientUsers invokes the smartag.DescribeSmartAccessGatewayClientUsers API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesmartaccessgatewayclientusers.html
 func (client *Client) DescribeSmartAccessGatewayClientUsers(request *DescribeSmartAccessGatewayClientUsersRequest) (response *DescribeSmartAccessGatewayClientUsersResponse, err error) {
 	response = CreateDescribeSmartAccessGatewayClientUsersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSmartAccessGatewayClientUsers(request *DescribeSma
 }
 
 // DescribeSmartAccessGatewayClientUsersWithChan invokes the smartag.DescribeSmartAccessGatewayClientUsers API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesmartaccessgatewayclientusers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSmartAccessGatewayClientUsersWithChan(request *DescribeSmartAccessGatewayClientUsersRequest) (<-chan *DescribeSmartAccessGatewayClientUsersResponse, <-chan error) {
 	responseChan := make(chan *DescribeSmartAccessGatewayClientUsersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSmartAccessGatewayClientUsersWithChan(request *Des
 }
 
 // DescribeSmartAccessGatewayClientUsersWithCallback invokes the smartag.DescribeSmartAccessGatewayClientUsers API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesmartaccessgatewayclientusers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSmartAccessGatewayClientUsersWithCallback(request *DescribeSmartAccessGatewayClientUsersRequest, callback func(response *DescribeSmartAccessGatewayClientUsersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

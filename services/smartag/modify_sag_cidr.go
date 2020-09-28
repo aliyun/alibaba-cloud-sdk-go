@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySagCidr invokes the smartag.ModifySagCidr API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagcidr.html
 func (client *Client) ModifySagCidr(request *ModifySagCidrRequest) (response *ModifySagCidrResponse, err error) {
 	response = CreateModifySagCidrResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySagCidr(request *ModifySagCidrRequest) (response *Mo
 }
 
 // ModifySagCidrWithChan invokes the smartag.ModifySagCidr API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagcidr.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagCidrWithChan(request *ModifySagCidrRequest) (<-chan *ModifySagCidrResponse, <-chan error) {
 	responseChan := make(chan *ModifySagCidrResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySagCidrWithChan(request *ModifySagCidrRequest) (<-ch
 }
 
 // ModifySagCidrWithCallback invokes the smartag.ModifySagCidr API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagcidr.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagCidrWithCallback(request *ModifySagCidrRequest, callback func(response *ModifySagCidrResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

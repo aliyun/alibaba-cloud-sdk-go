@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySmartAccessGateway invokes the smartag.ModifySmartAccessGateway API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifysmartaccessgateway.html
 func (client *Client) ModifySmartAccessGateway(request *ModifySmartAccessGatewayRequest) (response *ModifySmartAccessGatewayResponse, err error) {
 	response = CreateModifySmartAccessGatewayResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySmartAccessGateway(request *ModifySmartAccessGateway
 }
 
 // ModifySmartAccessGatewayWithChan invokes the smartag.ModifySmartAccessGateway API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysmartaccessgateway.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySmartAccessGatewayWithChan(request *ModifySmartAccessGatewayRequest) (<-chan *ModifySmartAccessGatewayResponse, <-chan error) {
 	responseChan := make(chan *ModifySmartAccessGatewayResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySmartAccessGatewayWithChan(request *ModifySmartAcces
 }
 
 // ModifySmartAccessGatewayWithCallback invokes the smartag.ModifySmartAccessGateway API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysmartaccessgateway.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySmartAccessGatewayWithCallback(request *ModifySmartAccessGatewayRequest, callback func(response *ModifySmartAccessGatewayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

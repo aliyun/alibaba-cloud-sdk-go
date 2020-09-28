@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteACLRule invokes the smartag.DeleteACLRule API synchronously
-// api document: https://help.aliyun.com/api/smartag/deleteaclrule.html
 func (client *Client) DeleteACLRule(request *DeleteACLRuleRequest) (response *DeleteACLRuleResponse, err error) {
 	response = CreateDeleteACLRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteACLRule(request *DeleteACLRuleRequest) (response *De
 }
 
 // DeleteACLRuleWithChan invokes the smartag.DeleteACLRule API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deleteaclrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteACLRuleWithChan(request *DeleteACLRuleRequest) (<-chan *DeleteACLRuleResponse, <-chan error) {
 	responseChan := make(chan *DeleteACLRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteACLRuleWithChan(request *DeleteACLRuleRequest) (<-ch
 }
 
 // DeleteACLRuleWithCallback invokes the smartag.DeleteACLRule API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deleteaclrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteACLRuleWithCallback(request *DeleteACLRuleRequest, callback func(response *DeleteACLRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

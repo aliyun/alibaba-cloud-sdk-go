@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySagWifi invokes the smartag.ModifySagWifi API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagwifi.html
 func (client *Client) ModifySagWifi(request *ModifySagWifiRequest) (response *ModifySagWifiResponse, err error) {
 	response = CreateModifySagWifiResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySagWifi(request *ModifySagWifiRequest) (response *Mo
 }
 
 // ModifySagWifiWithChan invokes the smartag.ModifySagWifi API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagwifi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagWifiWithChan(request *ModifySagWifiRequest) (<-chan *ModifySagWifiResponse, <-chan error) {
 	responseChan := make(chan *ModifySagWifiResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySagWifiWithChan(request *ModifySagWifiRequest) (<-ch
 }
 
 // ModifySagWifiWithCallback invokes the smartag.ModifySagWifi API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagwifi.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagWifiWithCallback(request *ModifySagWifiRequest, callback func(response *ModifySagWifiResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

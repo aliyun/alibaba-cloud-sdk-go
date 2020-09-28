@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSAGDeviceInfo invokes the smartag.DescribeSAGDeviceInfo API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesagdeviceinfo.html
 func (client *Client) DescribeSAGDeviceInfo(request *DescribeSAGDeviceInfoRequest) (response *DescribeSAGDeviceInfoResponse, err error) {
 	response = CreateDescribeSAGDeviceInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSAGDeviceInfo(request *DescribeSAGDeviceInfoReques
 }
 
 // DescribeSAGDeviceInfoWithChan invokes the smartag.DescribeSAGDeviceInfo API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagdeviceinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSAGDeviceInfoWithChan(request *DescribeSAGDeviceInfoRequest) (<-chan *DescribeSAGDeviceInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeSAGDeviceInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSAGDeviceInfoWithChan(request *DescribeSAGDeviceIn
 }
 
 // DescribeSAGDeviceInfoWithCallback invokes the smartag.DescribeSAGDeviceInfo API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagdeviceinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSAGDeviceInfoWithCallback(request *DescribeSAGDeviceInfoRequest, callback func(response *DescribeSAGDeviceInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

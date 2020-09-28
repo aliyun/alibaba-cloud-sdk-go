@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySagRouteProtocolOspf invokes the smartag.ModifySagRouteProtocolOspf API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagrouteprotocolospf.html
 func (client *Client) ModifySagRouteProtocolOspf(request *ModifySagRouteProtocolOspfRequest) (response *ModifySagRouteProtocolOspfResponse, err error) {
 	response = CreateModifySagRouteProtocolOspfResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySagRouteProtocolOspf(request *ModifySagRouteProtocol
 }
 
 // ModifySagRouteProtocolOspfWithChan invokes the smartag.ModifySagRouteProtocolOspf API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagrouteprotocolospf.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagRouteProtocolOspfWithChan(request *ModifySagRouteProtocolOspfRequest) (<-chan *ModifySagRouteProtocolOspfResponse, <-chan error) {
 	responseChan := make(chan *ModifySagRouteProtocolOspfResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySagRouteProtocolOspfWithChan(request *ModifySagRoute
 }
 
 // ModifySagRouteProtocolOspfWithCallback invokes the smartag.ModifySagRouteProtocolOspf API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagrouteprotocolospf.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagRouteProtocolOspfWithCallback(request *ModifySagRouteProtocolOspfRequest, callback func(response *ModifySagRouteProtocolOspfResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

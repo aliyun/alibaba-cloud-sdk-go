@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSagHa invokes the smartag.DescribeSagHa API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesagha.html
 func (client *Client) DescribeSagHa(request *DescribeSagHaRequest) (response *DescribeSagHaResponse, err error) {
 	response = CreateDescribeSagHaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSagHa(request *DescribeSagHaRequest) (response *De
 }
 
 // DescribeSagHaWithChan invokes the smartag.DescribeSagHa API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagha.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagHaWithChan(request *DescribeSagHaRequest) (<-chan *DescribeSagHaResponse, <-chan error) {
 	responseChan := make(chan *DescribeSagHaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSagHaWithChan(request *DescribeSagHaRequest) (<-ch
 }
 
 // DescribeSagHaWithCallback invokes the smartag.DescribeSagHa API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagha.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagHaWithCallback(request *DescribeSagHaRequest, callback func(response *DescribeSagHaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

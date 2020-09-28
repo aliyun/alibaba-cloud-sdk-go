@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySagRemoteAccess invokes the smartag.ModifySagRemoteAccess API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagremoteaccess.html
 func (client *Client) ModifySagRemoteAccess(request *ModifySagRemoteAccessRequest) (response *ModifySagRemoteAccessResponse, err error) {
 	response = CreateModifySagRemoteAccessResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySagRemoteAccess(request *ModifySagRemoteAccessReques
 }
 
 // ModifySagRemoteAccessWithChan invokes the smartag.ModifySagRemoteAccess API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagremoteaccess.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagRemoteAccessWithChan(request *ModifySagRemoteAccessRequest) (<-chan *ModifySagRemoteAccessResponse, <-chan error) {
 	responseChan := make(chan *ModifySagRemoteAccessResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySagRemoteAccessWithChan(request *ModifySagRemoteAcce
 }
 
 // ModifySagRemoteAccessWithCallback invokes the smartag.ModifySagRemoteAccess API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagremoteaccess.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagRemoteAccessWithCallback(request *ModifySagRemoteAccessRequest, callback func(response *ModifySagRemoteAccessResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

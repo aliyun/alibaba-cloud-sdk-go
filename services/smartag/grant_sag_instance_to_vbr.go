@@ -21,7 +21,6 @@ import (
 )
 
 // GrantSagInstanceToVbr invokes the smartag.GrantSagInstanceToVbr API synchronously
-// api document: https://help.aliyun.com/api/smartag/grantsaginstancetovbr.html
 func (client *Client) GrantSagInstanceToVbr(request *GrantSagInstanceToVbrRequest) (response *GrantSagInstanceToVbrResponse, err error) {
 	response = CreateGrantSagInstanceToVbrResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GrantSagInstanceToVbr(request *GrantSagInstanceToVbrReques
 }
 
 // GrantSagInstanceToVbrWithChan invokes the smartag.GrantSagInstanceToVbr API asynchronously
-// api document: https://help.aliyun.com/api/smartag/grantsaginstancetovbr.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantSagInstanceToVbrWithChan(request *GrantSagInstanceToVbrRequest) (<-chan *GrantSagInstanceToVbrResponse, <-chan error) {
 	responseChan := make(chan *GrantSagInstanceToVbrResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GrantSagInstanceToVbrWithChan(request *GrantSagInstanceToV
 }
 
 // GrantSagInstanceToVbrWithCallback invokes the smartag.GrantSagInstanceToVbr API asynchronously
-// api document: https://help.aliyun.com/api/smartag/grantsaginstancetovbr.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantSagInstanceToVbrWithCallback(request *GrantSagInstanceToVbrRequest, callback func(response *GrantSagInstanceToVbrResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

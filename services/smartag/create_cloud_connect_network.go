@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCloudConnectNetwork invokes the smartag.CreateCloudConnectNetwork API synchronously
-// api document: https://help.aliyun.com/api/smartag/createcloudconnectnetwork.html
 func (client *Client) CreateCloudConnectNetwork(request *CreateCloudConnectNetworkRequest) (response *CreateCloudConnectNetworkResponse, err error) {
 	response = CreateCreateCloudConnectNetworkResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCloudConnectNetwork(request *CreateCloudConnectNetwo
 }
 
 // CreateCloudConnectNetworkWithChan invokes the smartag.CreateCloudConnectNetwork API asynchronously
-// api document: https://help.aliyun.com/api/smartag/createcloudconnectnetwork.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCloudConnectNetworkWithChan(request *CreateCloudConnectNetworkRequest) (<-chan *CreateCloudConnectNetworkResponse, <-chan error) {
 	responseChan := make(chan *CreateCloudConnectNetworkResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateCloudConnectNetworkWithChan(request *CreateCloudConn
 }
 
 // CreateCloudConnectNetworkWithCallback invokes the smartag.CreateCloudConnectNetwork API asynchronously
-// api document: https://help.aliyun.com/api/smartag/createcloudconnectnetwork.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCloudConnectNetworkWithCallback(request *CreateCloudConnectNetworkRequest, callback func(response *CreateCloudConnectNetworkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

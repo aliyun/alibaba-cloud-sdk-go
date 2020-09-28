@@ -21,7 +21,6 @@ import (
 )
 
 // CreateFlowLog invokes the smartag.CreateFlowLog API synchronously
-// api document: https://help.aliyun.com/api/smartag/createflowlog.html
 func (client *Client) CreateFlowLog(request *CreateFlowLogRequest) (response *CreateFlowLogResponse, err error) {
 	response = CreateCreateFlowLogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateFlowLog(request *CreateFlowLogRequest) (response *Cr
 }
 
 // CreateFlowLogWithChan invokes the smartag.CreateFlowLog API asynchronously
-// api document: https://help.aliyun.com/api/smartag/createflowlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFlowLogWithChan(request *CreateFlowLogRequest) (<-chan *CreateFlowLogResponse, <-chan error) {
 	responseChan := make(chan *CreateFlowLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateFlowLogWithChan(request *CreateFlowLogRequest) (<-ch
 }
 
 // CreateFlowLogWithCallback invokes the smartag.CreateFlowLog API asynchronously
-// api document: https://help.aliyun.com/api/smartag/createflowlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFlowLogWithCallback(request *CreateFlowLogRequest, callback func(response *CreateFlowLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

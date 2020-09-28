@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSmartAccessGatewayHa invokes the smartag.DescribeSmartAccessGatewayHa API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesmartaccessgatewayha.html
 func (client *Client) DescribeSmartAccessGatewayHa(request *DescribeSmartAccessGatewayHaRequest) (response *DescribeSmartAccessGatewayHaResponse, err error) {
 	response = CreateDescribeSmartAccessGatewayHaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSmartAccessGatewayHa(request *DescribeSmartAccessG
 }
 
 // DescribeSmartAccessGatewayHaWithChan invokes the smartag.DescribeSmartAccessGatewayHa API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesmartaccessgatewayha.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSmartAccessGatewayHaWithChan(request *DescribeSmartAccessGatewayHaRequest) (<-chan *DescribeSmartAccessGatewayHaResponse, <-chan error) {
 	responseChan := make(chan *DescribeSmartAccessGatewayHaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSmartAccessGatewayHaWithChan(request *DescribeSmar
 }
 
 // DescribeSmartAccessGatewayHaWithCallback invokes the smartag.DescribeSmartAccessGatewayHa API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesmartaccessgatewayha.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSmartAccessGatewayHaWithCallback(request *DescribeSmartAccessGatewayHaRequest, callback func(response *DescribeSmartAccessGatewayHaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

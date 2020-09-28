@@ -21,7 +21,6 @@ import (
 )
 
 // ClearSagRouteableAddress invokes the smartag.ClearSagRouteableAddress API synchronously
-// api document: https://help.aliyun.com/api/smartag/clearsagrouteableaddress.html
 func (client *Client) ClearSagRouteableAddress(request *ClearSagRouteableAddressRequest) (response *ClearSagRouteableAddressResponse, err error) {
 	response = CreateClearSagRouteableAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ClearSagRouteableAddress(request *ClearSagRouteableAddress
 }
 
 // ClearSagRouteableAddressWithChan invokes the smartag.ClearSagRouteableAddress API asynchronously
-// api document: https://help.aliyun.com/api/smartag/clearsagrouteableaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearSagRouteableAddressWithChan(request *ClearSagRouteableAddressRequest) (<-chan *ClearSagRouteableAddressResponse, <-chan error) {
 	responseChan := make(chan *ClearSagRouteableAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ClearSagRouteableAddressWithChan(request *ClearSagRouteabl
 }
 
 // ClearSagRouteableAddressWithCallback invokes the smartag.ClearSagRouteableAddress API asynchronously
-// api document: https://help.aliyun.com/api/smartag/clearsagrouteableaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearSagRouteableAddressWithCallback(request *ClearSagRouteableAddressRequest, callback func(response *ClearSagRouteableAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSmartAccessGatewayClientUser invokes the smartag.DeleteSmartAccessGatewayClientUser API synchronously
-// api document: https://help.aliyun.com/api/smartag/deletesmartaccessgatewayclientuser.html
 func (client *Client) DeleteSmartAccessGatewayClientUser(request *DeleteSmartAccessGatewayClientUserRequest) (response *DeleteSmartAccessGatewayClientUserResponse, err error) {
 	response = CreateDeleteSmartAccessGatewayClientUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSmartAccessGatewayClientUser(request *DeleteSmartAcc
 }
 
 // DeleteSmartAccessGatewayClientUserWithChan invokes the smartag.DeleteSmartAccessGatewayClientUser API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletesmartaccessgatewayclientuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSmartAccessGatewayClientUserWithChan(request *DeleteSmartAccessGatewayClientUserRequest) (<-chan *DeleteSmartAccessGatewayClientUserResponse, <-chan error) {
 	responseChan := make(chan *DeleteSmartAccessGatewayClientUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSmartAccessGatewayClientUserWithChan(request *Delete
 }
 
 // DeleteSmartAccessGatewayClientUserWithCallback invokes the smartag.DeleteSmartAccessGatewayClientUser API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletesmartaccessgatewayclientuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSmartAccessGatewayClientUserWithCallback(request *DeleteSmartAccessGatewayClientUserRequest, callback func(response *DeleteSmartAccessGatewayClientUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

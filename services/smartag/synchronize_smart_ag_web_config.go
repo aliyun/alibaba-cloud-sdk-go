@@ -21,7 +21,6 @@ import (
 )
 
 // SynchronizeSmartAGWebConfig invokes the smartag.SynchronizeSmartAGWebConfig API synchronously
-// api document: https://help.aliyun.com/api/smartag/synchronizesmartagwebconfig.html
 func (client *Client) SynchronizeSmartAGWebConfig(request *SynchronizeSmartAGWebConfigRequest) (response *SynchronizeSmartAGWebConfigResponse, err error) {
 	response = CreateSynchronizeSmartAGWebConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SynchronizeSmartAGWebConfig(request *SynchronizeSmartAGWeb
 }
 
 // SynchronizeSmartAGWebConfigWithChan invokes the smartag.SynchronizeSmartAGWebConfig API asynchronously
-// api document: https://help.aliyun.com/api/smartag/synchronizesmartagwebconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SynchronizeSmartAGWebConfigWithChan(request *SynchronizeSmartAGWebConfigRequest) (<-chan *SynchronizeSmartAGWebConfigResponse, <-chan error) {
 	responseChan := make(chan *SynchronizeSmartAGWebConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SynchronizeSmartAGWebConfigWithChan(request *SynchronizeSm
 }
 
 // SynchronizeSmartAGWebConfigWithCallback invokes the smartag.SynchronizeSmartAGWebConfig API asynchronously
-// api document: https://help.aliyun.com/api/smartag/synchronizesmartagwebconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SynchronizeSmartAGWebConfigWithCallback(request *SynchronizeSmartAGWebConfigRequest, callback func(response *SynchronizeSmartAGWebConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

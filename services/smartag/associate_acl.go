@@ -21,7 +21,6 @@ import (
 )
 
 // AssociateACL invokes the smartag.AssociateACL API synchronously
-// api document: https://help.aliyun.com/api/smartag/associateacl.html
 func (client *Client) AssociateACL(request *AssociateACLRequest) (response *AssociateACLResponse, err error) {
 	response = CreateAssociateACLResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AssociateACL(request *AssociateACLRequest) (response *Asso
 }
 
 // AssociateACLWithChan invokes the smartag.AssociateACL API asynchronously
-// api document: https://help.aliyun.com/api/smartag/associateacl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociateACLWithChan(request *AssociateACLRequest) (<-chan *AssociateACLResponse, <-chan error) {
 	responseChan := make(chan *AssociateACLResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AssociateACLWithChan(request *AssociateACLRequest) (<-chan
 }
 
 // AssociateACLWithCallback invokes the smartag.AssociateACL API asynchronously
-// api document: https://help.aliyun.com/api/smartag/associateacl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociateACLWithCallback(request *AssociateACLRequest, callback func(response *AssociateACLResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

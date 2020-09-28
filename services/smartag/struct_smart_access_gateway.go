@@ -18,13 +18,16 @@ package smartag
 // SmartAccessGateway is a nested struct in smartag response
 type SmartAccessGateway struct {
 	Name                  string                             `json:"Name" xml:"Name"`
+	AccessPointId         string                             `json:"AccessPointId" xml:"AccessPointId"`
 	MaxBandwidth          string                             `json:"MaxBandwidth" xml:"MaxBandwidth"`
+	SmartAGStatus         string                             `json:"SmartAGStatus" xml:"SmartAGStatus"`
 	HardwareVersion       string                             `json:"HardwareVersion" xml:"HardwareVersion"`
 	CreateTime            int64                              `json:"CreateTime" xml:"CreateTime"`
 	EndTime               int64                              `json:"EndTime" xml:"EndTime"`
 	SerialNumber          string                             `json:"SerialNumber" xml:"SerialNumber"`
 	ResourceGroupId       string                             `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	AclIds                string                             `json:"AclIds" xml:"AclIds"`
+	SmartAGDescription    string                             `json:"SmartAGDescription" xml:"SmartAGDescription"`
 	InstanceId            string                             `json:"InstanceId" xml:"InstanceId"`
 	SecurityLockThreshold int                                `json:"SecurityLockThreshold" xml:"SecurityLockThreshold"`
 	UserCount             int                                `json:"UserCount" xml:"UserCount"`
@@ -33,6 +36,7 @@ type SmartAccessGateway struct {
 	Description           string                             `json:"Description" xml:"Description"`
 	IpsecStatus           string                             `json:"IpsecStatus" xml:"IpsecStatus"`
 	UpBandwidth4G         int                                `json:"UpBandwidth4G" xml:"UpBandwidth4G"`
+	SmartAGName           string                             `json:"SmartAGName" xml:"SmartAGName"`
 	SoftwareVersion       string                             `json:"SoftwareVersion" xml:"SoftwareVersion"`
 	City                  string                             `json:"City" xml:"City"`
 	SmartAGUid            int64                              `json:"SmartAGUid" xml:"SmartAGUid"`

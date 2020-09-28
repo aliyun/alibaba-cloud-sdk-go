@@ -21,7 +21,6 @@ import (
 )
 
 // CreateSagExpressConnectInterface invokes the smartag.CreateSagExpressConnectInterface API synchronously
-// api document: https://help.aliyun.com/api/smartag/createsagexpressconnectinterface.html
 func (client *Client) CreateSagExpressConnectInterface(request *CreateSagExpressConnectInterfaceRequest) (response *CreateSagExpressConnectInterfaceResponse, err error) {
 	response = CreateCreateSagExpressConnectInterfaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateSagExpressConnectInterface(request *CreateSagExpress
 }
 
 // CreateSagExpressConnectInterfaceWithChan invokes the smartag.CreateSagExpressConnectInterface API asynchronously
-// api document: https://help.aliyun.com/api/smartag/createsagexpressconnectinterface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSagExpressConnectInterfaceWithChan(request *CreateSagExpressConnectInterfaceRequest) (<-chan *CreateSagExpressConnectInterfaceResponse, <-chan error) {
 	responseChan := make(chan *CreateSagExpressConnectInterfaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateSagExpressConnectInterfaceWithChan(request *CreateSa
 }
 
 // CreateSagExpressConnectInterfaceWithCallback invokes the smartag.CreateSagExpressConnectInterface API asynchronously
-// api document: https://help.aliyun.com/api/smartag/createsagexpressconnectinterface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSagExpressConnectInterfaceWithCallback(request *CreateSagExpressConnectInterfaceRequest, callback func(response *CreateSagExpressConnectInterfaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DisassociateFlowLog invokes the smartag.DisassociateFlowLog API synchronously
-// api document: https://help.aliyun.com/api/smartag/disassociateflowlog.html
 func (client *Client) DisassociateFlowLog(request *DisassociateFlowLogRequest) (response *DisassociateFlowLogResponse, err error) {
 	response = CreateDisassociateFlowLogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisassociateFlowLog(request *DisassociateFlowLogRequest) (
 }
 
 // DisassociateFlowLogWithChan invokes the smartag.DisassociateFlowLog API asynchronously
-// api document: https://help.aliyun.com/api/smartag/disassociateflowlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisassociateFlowLogWithChan(request *DisassociateFlowLogRequest) (<-chan *DisassociateFlowLogResponse, <-chan error) {
 	responseChan := make(chan *DisassociateFlowLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisassociateFlowLogWithChan(request *DisassociateFlowLogRe
 }
 
 // DisassociateFlowLogWithCallback invokes the smartag.DisassociateFlowLog API asynchronously
-// api document: https://help.aliyun.com/api/smartag/disassociateflowlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisassociateFlowLogWithCallback(request *DisassociateFlowLogRequest, callback func(response *DisassociateFlowLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // BindSmartAccessGateway invokes the smartag.BindSmartAccessGateway API synchronously
-// api document: https://help.aliyun.com/api/smartag/bindsmartaccessgateway.html
 func (client *Client) BindSmartAccessGateway(request *BindSmartAccessGatewayRequest) (response *BindSmartAccessGatewayResponse, err error) {
 	response = CreateBindSmartAccessGatewayResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindSmartAccessGateway(request *BindSmartAccessGatewayRequ
 }
 
 // BindSmartAccessGatewayWithChan invokes the smartag.BindSmartAccessGateway API asynchronously
-// api document: https://help.aliyun.com/api/smartag/bindsmartaccessgateway.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindSmartAccessGatewayWithChan(request *BindSmartAccessGatewayRequest) (<-chan *BindSmartAccessGatewayResponse, <-chan error) {
 	responseChan := make(chan *BindSmartAccessGatewayResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindSmartAccessGatewayWithChan(request *BindSmartAccessGat
 }
 
 // BindSmartAccessGatewayWithCallback invokes the smartag.BindSmartAccessGateway API asynchronously
-// api document: https://help.aliyun.com/api/smartag/bindsmartaccessgateway.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindSmartAccessGatewayWithCallback(request *BindSmartAccessGatewayRequest, callback func(response *BindSmartAccessGatewayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyClientUserDNS invokes the smartag.ModifyClientUserDNS API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifyclientuserdns.html
 func (client *Client) ModifyClientUserDNS(request *ModifyClientUserDNSRequest) (response *ModifyClientUserDNSResponse, err error) {
 	response = CreateModifyClientUserDNSResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyClientUserDNS(request *ModifyClientUserDNSRequest) (
 }
 
 // ModifyClientUserDNSWithChan invokes the smartag.ModifyClientUserDNS API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifyclientuserdns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClientUserDNSWithChan(request *ModifyClientUserDNSRequest) (<-chan *ModifyClientUserDNSResponse, <-chan error) {
 	responseChan := make(chan *ModifyClientUserDNSResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyClientUserDNSWithChan(request *ModifyClientUserDNSRe
 }
 
 // ModifyClientUserDNSWithCallback invokes the smartag.ModifyClientUserDNS API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifyclientuserdns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClientUserDNSWithCallback(request *ModifyClientUserDNSRequest, callback func(response *ModifyClientUserDNSResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

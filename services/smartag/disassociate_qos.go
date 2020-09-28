@@ -21,7 +21,6 @@ import (
 )
 
 // DisassociateQos invokes the smartag.DisassociateQos API synchronously
-// api document: https://help.aliyun.com/api/smartag/disassociateqos.html
 func (client *Client) DisassociateQos(request *DisassociateQosRequest) (response *DisassociateQosResponse, err error) {
 	response = CreateDisassociateQosResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisassociateQos(request *DisassociateQosRequest) (response
 }
 
 // DisassociateQosWithChan invokes the smartag.DisassociateQos API asynchronously
-// api document: https://help.aliyun.com/api/smartag/disassociateqos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisassociateQosWithChan(request *DisassociateQosRequest) (<-chan *DisassociateQosResponse, <-chan error) {
 	responseChan := make(chan *DisassociateQosResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisassociateQosWithChan(request *DisassociateQosRequest) (
 }
 
 // DisassociateQosWithCallback invokes the smartag.DisassociateQos API asynchronously
-// api document: https://help.aliyun.com/api/smartag/disassociateqos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisassociateQosWithCallback(request *DisassociateQosRequest, callback func(response *DisassociateQosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

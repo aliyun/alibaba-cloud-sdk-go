@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUserFlowStatistics invokes the smartag.DescribeUserFlowStatistics API synchronously
-// api document: https://help.aliyun.com/api/smartag/describeuserflowstatistics.html
 func (client *Client) DescribeUserFlowStatistics(request *DescribeUserFlowStatisticsRequest) (response *DescribeUserFlowStatisticsResponse, err error) {
 	response = CreateDescribeUserFlowStatisticsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUserFlowStatistics(request *DescribeUserFlowStatis
 }
 
 // DescribeUserFlowStatisticsWithChan invokes the smartag.DescribeUserFlowStatistics API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describeuserflowstatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserFlowStatisticsWithChan(request *DescribeUserFlowStatisticsRequest) (<-chan *DescribeUserFlowStatisticsResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserFlowStatisticsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUserFlowStatisticsWithChan(request *DescribeUserFl
 }
 
 // DescribeUserFlowStatisticsWithCallback invokes the smartag.DescribeUserFlowStatistics API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describeuserflowstatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserFlowStatisticsWithCallback(request *DescribeUserFlowStatisticsRequest, callback func(response *DescribeUserFlowStatisticsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

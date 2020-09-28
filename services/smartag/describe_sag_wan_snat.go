@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSagWanSnat invokes the smartag.DescribeSagWanSnat API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesagwansnat.html
 func (client *Client) DescribeSagWanSnat(request *DescribeSagWanSnatRequest) (response *DescribeSagWanSnatResponse, err error) {
 	response = CreateDescribeSagWanSnatResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSagWanSnat(request *DescribeSagWanSnatRequest) (re
 }
 
 // DescribeSagWanSnatWithChan invokes the smartag.DescribeSagWanSnat API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagwansnat.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagWanSnatWithChan(request *DescribeSagWanSnatRequest) (<-chan *DescribeSagWanSnatResponse, <-chan error) {
 	responseChan := make(chan *DescribeSagWanSnatResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSagWanSnatWithChan(request *DescribeSagWanSnatRequ
 }
 
 // DescribeSagWanSnatWithCallback invokes the smartag.DescribeSagWanSnat API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagwansnat.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagWanSnatWithCallback(request *DescribeSagWanSnatRequest, callback func(response *DescribeSagWanSnatResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

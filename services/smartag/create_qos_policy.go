@@ -21,7 +21,6 @@ import (
 )
 
 // CreateQosPolicy invokes the smartag.CreateQosPolicy API synchronously
-// api document: https://help.aliyun.com/api/smartag/createqospolicy.html
 func (client *Client) CreateQosPolicy(request *CreateQosPolicyRequest) (response *CreateQosPolicyResponse, err error) {
 	response = CreateCreateQosPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateQosPolicy(request *CreateQosPolicyRequest) (response
 }
 
 // CreateQosPolicyWithChan invokes the smartag.CreateQosPolicy API asynchronously
-// api document: https://help.aliyun.com/api/smartag/createqospolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateQosPolicyWithChan(request *CreateQosPolicyRequest) (<-chan *CreateQosPolicyResponse, <-chan error) {
 	responseChan := make(chan *CreateQosPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateQosPolicyWithChan(request *CreateQosPolicyRequest) (
 }
 
 // CreateQosPolicyWithCallback invokes the smartag.CreateQosPolicy API asynchronously
-// api document: https://help.aliyun.com/api/smartag/createqospolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateQosPolicyWithCallback(request *CreateQosPolicyRequest, callback func(response *CreateQosPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

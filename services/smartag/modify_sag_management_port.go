@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySagManagementPort invokes the smartag.ModifySagManagementPort API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagmanagementport.html
 func (client *Client) ModifySagManagementPort(request *ModifySagManagementPortRequest) (response *ModifySagManagementPortResponse, err error) {
 	response = CreateModifySagManagementPortResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySagManagementPort(request *ModifySagManagementPortRe
 }
 
 // ModifySagManagementPortWithChan invokes the smartag.ModifySagManagementPort API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagmanagementport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagManagementPortWithChan(request *ModifySagManagementPortRequest) (<-chan *ModifySagManagementPortResponse, <-chan error) {
 	responseChan := make(chan *ModifySagManagementPortResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySagManagementPortWithChan(request *ModifySagManageme
 }
 
 // ModifySagManagementPortWithCallback invokes the smartag.ModifySagManagementPort API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagmanagementport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagManagementPortWithCallback(request *ModifySagManagementPortRequest, callback func(response *ModifySagManagementPortResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

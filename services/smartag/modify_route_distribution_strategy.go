@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyRouteDistributionStrategy invokes the smartag.ModifyRouteDistributionStrategy API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifyroutedistributionstrategy.html
 func (client *Client) ModifyRouteDistributionStrategy(request *ModifyRouteDistributionStrategyRequest) (response *ModifyRouteDistributionStrategyResponse, err error) {
 	response = CreateModifyRouteDistributionStrategyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyRouteDistributionStrategy(request *ModifyRouteDistri
 }
 
 // ModifyRouteDistributionStrategyWithChan invokes the smartag.ModifyRouteDistributionStrategy API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifyroutedistributionstrategy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRouteDistributionStrategyWithChan(request *ModifyRouteDistributionStrategyRequest) (<-chan *ModifyRouteDistributionStrategyResponse, <-chan error) {
 	responseChan := make(chan *ModifyRouteDistributionStrategyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyRouteDistributionStrategyWithChan(request *ModifyRou
 }
 
 // ModifyRouteDistributionStrategyWithCallback invokes the smartag.ModifyRouteDistributionStrategy API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifyroutedistributionstrategy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRouteDistributionStrategyWithCallback(request *ModifyRouteDistributionStrategyRequest, callback func(response *ModifyRouteDistributionStrategyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

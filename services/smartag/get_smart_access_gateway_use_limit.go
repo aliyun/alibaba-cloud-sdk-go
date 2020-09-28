@@ -21,7 +21,6 @@ import (
 )
 
 // GetSmartAccessGatewayUseLimit invokes the smartag.GetSmartAccessGatewayUseLimit API synchronously
-// api document: https://help.aliyun.com/api/smartag/getsmartaccessgatewayuselimit.html
 func (client *Client) GetSmartAccessGatewayUseLimit(request *GetSmartAccessGatewayUseLimitRequest) (response *GetSmartAccessGatewayUseLimitResponse, err error) {
 	response = CreateGetSmartAccessGatewayUseLimitResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetSmartAccessGatewayUseLimit(request *GetSmartAccessGatew
 }
 
 // GetSmartAccessGatewayUseLimitWithChan invokes the smartag.GetSmartAccessGatewayUseLimit API asynchronously
-// api document: https://help.aliyun.com/api/smartag/getsmartaccessgatewayuselimit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSmartAccessGatewayUseLimitWithChan(request *GetSmartAccessGatewayUseLimitRequest) (<-chan *GetSmartAccessGatewayUseLimitResponse, <-chan error) {
 	responseChan := make(chan *GetSmartAccessGatewayUseLimitResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetSmartAccessGatewayUseLimitWithChan(request *GetSmartAcc
 }
 
 // GetSmartAccessGatewayUseLimitWithCallback invokes the smartag.GetSmartAccessGatewayUseLimit API asynchronously
-// api document: https://help.aliyun.com/api/smartag/getsmartaccessgatewayuselimit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSmartAccessGatewayUseLimitWithCallback(request *GetSmartAccessGatewayUseLimitRequest, callback func(response *GetSmartAccessGatewayUseLimitResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

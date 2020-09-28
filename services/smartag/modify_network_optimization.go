@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyNetworkOptimization invokes the smartag.ModifyNetworkOptimization API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifynetworkoptimization.html
 func (client *Client) ModifyNetworkOptimization(request *ModifyNetworkOptimizationRequest) (response *ModifyNetworkOptimizationResponse, err error) {
 	response = CreateModifyNetworkOptimizationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyNetworkOptimization(request *ModifyNetworkOptimizati
 }
 
 // ModifyNetworkOptimizationWithChan invokes the smartag.ModifyNetworkOptimization API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifynetworkoptimization.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNetworkOptimizationWithChan(request *ModifyNetworkOptimizationRequest) (<-chan *ModifyNetworkOptimizationResponse, <-chan error) {
 	responseChan := make(chan *ModifyNetworkOptimizationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyNetworkOptimizationWithChan(request *ModifyNetworkOp
 }
 
 // ModifyNetworkOptimizationWithCallback invokes the smartag.ModifyNetworkOptimization API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifynetworkoptimization.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNetworkOptimizationWithCallback(request *ModifyNetworkOptimizationRequest, callback func(response *ModifyNetworkOptimizationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

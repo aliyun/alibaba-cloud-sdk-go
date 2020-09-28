@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSagOnlineClientStatistics invokes the smartag.DescribeSagOnlineClientStatistics API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesagonlineclientstatistics.html
 func (client *Client) DescribeSagOnlineClientStatistics(request *DescribeSagOnlineClientStatisticsRequest) (response *DescribeSagOnlineClientStatisticsResponse, err error) {
 	response = CreateDescribeSagOnlineClientStatisticsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSagOnlineClientStatistics(request *DescribeSagOnli
 }
 
 // DescribeSagOnlineClientStatisticsWithChan invokes the smartag.DescribeSagOnlineClientStatistics API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagonlineclientstatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagOnlineClientStatisticsWithChan(request *DescribeSagOnlineClientStatisticsRequest) (<-chan *DescribeSagOnlineClientStatisticsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSagOnlineClientStatisticsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSagOnlineClientStatisticsWithChan(request *Describ
 }
 
 // DescribeSagOnlineClientStatisticsWithCallback invokes the smartag.DescribeSagOnlineClientStatistics API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagonlineclientstatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagOnlineClientStatisticsWithCallback(request *DescribeSagOnlineClientStatisticsRequest, callback func(response *DescribeSagOnlineClientStatisticsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

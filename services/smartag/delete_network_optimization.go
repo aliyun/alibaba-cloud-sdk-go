@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteNetworkOptimization invokes the smartag.DeleteNetworkOptimization API synchronously
-// api document: https://help.aliyun.com/api/smartag/deletenetworkoptimization.html
 func (client *Client) DeleteNetworkOptimization(request *DeleteNetworkOptimizationRequest) (response *DeleteNetworkOptimizationResponse, err error) {
 	response = CreateDeleteNetworkOptimizationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteNetworkOptimization(request *DeleteNetworkOptimizati
 }
 
 // DeleteNetworkOptimizationWithChan invokes the smartag.DeleteNetworkOptimization API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletenetworkoptimization.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNetworkOptimizationWithChan(request *DeleteNetworkOptimizationRequest) (<-chan *DeleteNetworkOptimizationResponse, <-chan error) {
 	responseChan := make(chan *DeleteNetworkOptimizationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteNetworkOptimizationWithChan(request *DeleteNetworkOp
 }
 
 // DeleteNetworkOptimizationWithCallback invokes the smartag.DeleteNetworkOptimization API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletenetworkoptimization.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNetworkOptimizationWithCallback(request *DeleteNetworkOptimizationRequest, callback func(response *DeleteNetworkOptimizationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

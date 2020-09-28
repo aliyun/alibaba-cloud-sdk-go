@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySagHa invokes the smartag.ModifySagHa API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagha.html
 func (client *Client) ModifySagHa(request *ModifySagHaRequest) (response *ModifySagHaResponse, err error) {
 	response = CreateModifySagHaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySagHa(request *ModifySagHaRequest) (response *Modify
 }
 
 // ModifySagHaWithChan invokes the smartag.ModifySagHa API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagha.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagHaWithChan(request *ModifySagHaRequest) (<-chan *ModifySagHaResponse, <-chan error) {
 	responseChan := make(chan *ModifySagHaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySagHaWithChan(request *ModifySagHaRequest) (<-chan *
 }
 
 // ModifySagHaWithCallback invokes the smartag.ModifySagHa API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifysagha.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySagHaWithCallback(request *ModifySagHaRequest, callback func(response *ModifySagHaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

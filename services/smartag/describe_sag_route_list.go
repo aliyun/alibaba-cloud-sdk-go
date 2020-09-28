@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSagRouteList invokes the smartag.DescribeSagRouteList API synchronously
-// api document: https://help.aliyun.com/api/smartag/describesagroutelist.html
 func (client *Client) DescribeSagRouteList(request *DescribeSagRouteListRequest) (response *DescribeSagRouteListResponse, err error) {
 	response = CreateDescribeSagRouteListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSagRouteList(request *DescribeSagRouteListRequest)
 }
 
 // DescribeSagRouteListWithChan invokes the smartag.DescribeSagRouteList API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagroutelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagRouteListWithChan(request *DescribeSagRouteListRequest) (<-chan *DescribeSagRouteListResponse, <-chan error) {
 	responseChan := make(chan *DescribeSagRouteListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSagRouteListWithChan(request *DescribeSagRouteList
 }
 
 // DescribeSagRouteListWithCallback invokes the smartag.DescribeSagRouteList API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describesagroutelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSagRouteListWithCallback(request *DescribeSagRouteListRequest, callback func(response *DescribeSagRouteListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

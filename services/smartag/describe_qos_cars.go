@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeQosCars invokes the smartag.DescribeQosCars API synchronously
-// api document: https://help.aliyun.com/api/smartag/describeqoscars.html
 func (client *Client) DescribeQosCars(request *DescribeQosCarsRequest) (response *DescribeQosCarsResponse, err error) {
 	response = CreateDescribeQosCarsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeQosCars(request *DescribeQosCarsRequest) (response
 }
 
 // DescribeQosCarsWithChan invokes the smartag.DescribeQosCars API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describeqoscars.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeQosCarsWithChan(request *DescribeQosCarsRequest) (<-chan *DescribeQosCarsResponse, <-chan error) {
 	responseChan := make(chan *DescribeQosCarsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeQosCarsWithChan(request *DescribeQosCarsRequest) (
 }
 
 // DescribeQosCarsWithCallback invokes the smartag.DescribeQosCars API asynchronously
-// api document: https://help.aliyun.com/api/smartag/describeqoscars.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeQosCarsWithCallback(request *DescribeQosCarsRequest, callback func(response *DescribeQosCarsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

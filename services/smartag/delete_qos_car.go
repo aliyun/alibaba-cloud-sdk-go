@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteQosCar invokes the smartag.DeleteQosCar API synchronously
-// api document: https://help.aliyun.com/api/smartag/deleteqoscar.html
 func (client *Client) DeleteQosCar(request *DeleteQosCarRequest) (response *DeleteQosCarResponse, err error) {
 	response = CreateDeleteQosCarResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteQosCar(request *DeleteQosCarRequest) (response *Dele
 }
 
 // DeleteQosCarWithChan invokes the smartag.DeleteQosCar API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deleteqoscar.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteQosCarWithChan(request *DeleteQosCarRequest) (<-chan *DeleteQosCarResponse, <-chan error) {
 	responseChan := make(chan *DeleteQosCarResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteQosCarWithChan(request *DeleteQosCarRequest) (<-chan
 }
 
 // DeleteQosCarWithCallback invokes the smartag.DeleteQosCar API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deleteqoscar.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteQosCarWithCallback(request *DeleteQosCarRequest, callback func(response *DeleteQosCarResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

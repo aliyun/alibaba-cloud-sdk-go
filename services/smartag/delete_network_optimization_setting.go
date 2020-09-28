@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteNetworkOptimizationSetting invokes the smartag.DeleteNetworkOptimizationSetting API synchronously
-// api document: https://help.aliyun.com/api/smartag/deletenetworkoptimizationsetting.html
 func (client *Client) DeleteNetworkOptimizationSetting(request *DeleteNetworkOptimizationSettingRequest) (response *DeleteNetworkOptimizationSettingResponse, err error) {
 	response = CreateDeleteNetworkOptimizationSettingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteNetworkOptimizationSetting(request *DeleteNetworkOpt
 }
 
 // DeleteNetworkOptimizationSettingWithChan invokes the smartag.DeleteNetworkOptimizationSetting API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletenetworkoptimizationsetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNetworkOptimizationSettingWithChan(request *DeleteNetworkOptimizationSettingRequest) (<-chan *DeleteNetworkOptimizationSettingResponse, <-chan error) {
 	responseChan := make(chan *DeleteNetworkOptimizationSettingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteNetworkOptimizationSettingWithChan(request *DeleteNe
 }
 
 // DeleteNetworkOptimizationSettingWithCallback invokes the smartag.DeleteNetworkOptimizationSetting API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletenetworkoptimizationsetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNetworkOptimizationSettingWithCallback(request *DeleteNetworkOptimizationSettingRequest, callback func(response *DeleteNetworkOptimizationSettingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

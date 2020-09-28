@@ -17,7 +17,11 @@ package smartag
 
 // Statistics is a nested struct in smartag response
 type Statistics struct {
+	Total       int    `json:"Total" xml:"Total"`
 	UserName    string `json:"UserName" xml:"UserName"`
+	Info        int    `json:"Info" xml:"Info"`
+	Error       int    `json:"Error" xml:"Error"`
+	Warning     int    `json:"Warning" xml:"Warning"`
 	OnlineCount string `json:"OnlineCount" xml:"OnlineCount"`
 	TotalBytes  string `json:"TotalBytes" xml:"TotalBytes"`
 	SmartAGId   string `json:"SmartAGId" xml:"SmartAGId"`

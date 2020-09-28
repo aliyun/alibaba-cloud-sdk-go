@@ -21,7 +21,6 @@ import (
 )
 
 // AssociateQos invokes the smartag.AssociateQos API synchronously
-// api document: https://help.aliyun.com/api/smartag/associateqos.html
 func (client *Client) AssociateQos(request *AssociateQosRequest) (response *AssociateQosResponse, err error) {
 	response = CreateAssociateQosResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AssociateQos(request *AssociateQosRequest) (response *Asso
 }
 
 // AssociateQosWithChan invokes the smartag.AssociateQos API asynchronously
-// api document: https://help.aliyun.com/api/smartag/associateqos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociateQosWithChan(request *AssociateQosRequest) (<-chan *AssociateQosResponse, <-chan error) {
 	responseChan := make(chan *AssociateQosResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AssociateQosWithChan(request *AssociateQosRequest) (<-chan
 }
 
 // AssociateQosWithCallback invokes the smartag.AssociateQos API asynchronously
-// api document: https://help.aliyun.com/api/smartag/associateqos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociateQosWithCallback(request *AssociateQosRequest, callback func(response *AssociateQosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyACLRule invokes the smartag.ModifyACLRule API synchronously
-// api document: https://help.aliyun.com/api/smartag/modifyaclrule.html
 func (client *Client) ModifyACLRule(request *ModifyACLRuleRequest) (response *ModifyACLRuleResponse, err error) {
 	response = CreateModifyACLRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyACLRule(request *ModifyACLRuleRequest) (response *Mo
 }
 
 // ModifyACLRuleWithChan invokes the smartag.ModifyACLRule API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifyaclrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyACLRuleWithChan(request *ModifyACLRuleRequest) (<-chan *ModifyACLRuleResponse, <-chan error) {
 	responseChan := make(chan *ModifyACLRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyACLRuleWithChan(request *ModifyACLRuleRequest) (<-ch
 }
 
 // ModifyACLRuleWithCallback invokes the smartag.ModifyACLRule API asynchronously
-// api document: https://help.aliyun.com/api/smartag/modifyaclrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyACLRuleWithCallback(request *ModifyACLRuleRequest, callback func(response *ModifyACLRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

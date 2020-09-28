@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteRouteDistributionStrategy invokes the smartag.DeleteRouteDistributionStrategy API synchronously
-// api document: https://help.aliyun.com/api/smartag/deleteroutedistributionstrategy.html
 func (client *Client) DeleteRouteDistributionStrategy(request *DeleteRouteDistributionStrategyRequest) (response *DeleteRouteDistributionStrategyResponse, err error) {
 	response = CreateDeleteRouteDistributionStrategyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteRouteDistributionStrategy(request *DeleteRouteDistri
 }
 
 // DeleteRouteDistributionStrategyWithChan invokes the smartag.DeleteRouteDistributionStrategy API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deleteroutedistributionstrategy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRouteDistributionStrategyWithChan(request *DeleteRouteDistributionStrategyRequest) (<-chan *DeleteRouteDistributionStrategyResponse, <-chan error) {
 	responseChan := make(chan *DeleteRouteDistributionStrategyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteRouteDistributionStrategyWithChan(request *DeleteRou
 }
 
 // DeleteRouteDistributionStrategyWithCallback invokes the smartag.DeleteRouteDistributionStrategy API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deleteroutedistributionstrategy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRouteDistributionStrategyWithCallback(request *DeleteRouteDistributionStrategyRequest, callback func(response *DeleteRouteDistributionStrategyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

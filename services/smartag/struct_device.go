@@ -23,4 +23,5 @@ type Device struct {
 	SoftwareVersion    string `json:"SoftwareVersion" xml:"SoftwareVersion"`
 	MonitorVersion     string `json:"MonitorVersion" xml:"MonitorVersion"`
 	DistributeSkStatus int    `json:"DistributeSkStatus" xml:"DistributeSkStatus"`
+	SecretKey          string `json:"SecretKey" xml:"SecretKey"`
 }

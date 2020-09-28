@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteHealthCheck invokes the smartag.DeleteHealthCheck API synchronously
-// api document: https://help.aliyun.com/api/smartag/deletehealthcheck.html
 func (client *Client) DeleteHealthCheck(request *DeleteHealthCheckRequest) (response *DeleteHealthCheckResponse, err error) {
 	response = CreateDeleteHealthCheckResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteHealthCheck(request *DeleteHealthCheckRequest) (resp
 }
 
 // DeleteHealthCheckWithChan invokes the smartag.DeleteHealthCheck API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletehealthcheck.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHealthCheckWithChan(request *DeleteHealthCheckRequest) (<-chan *DeleteHealthCheckResponse, <-chan error) {
 	responseChan := make(chan *DeleteHealthCheckResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteHealthCheckWithChan(request *DeleteHealthCheckReques
 }
 
 // DeleteHealthCheckWithCallback invokes the smartag.DeleteHealthCheck API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletehealthcheck.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHealthCheckWithCallback(request *DeleteHealthCheckRequest, callback func(response *DeleteHealthCheckResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
