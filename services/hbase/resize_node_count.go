@@ -72,7 +72,9 @@ func (client *Client) ResizeNodeCountWithCallback(request *ResizeNodeCountReques
 type ResizeNodeCountRequest struct {
 	*requests.RpcRequest
 	ClusterId string           `position:"Query" name:"ClusterId"`
+	VSwitchId string           `position:"Query" name:"VSwitchId"`
 	NodeCount requests.Integer `position:"Query" name:"NodeCount"`
+	ZoneId    string           `position:"Query" name:"ZoneId"`
 }
 
 // ResizeNodeCountResponse is the response struct for api ResizeNodeCount
