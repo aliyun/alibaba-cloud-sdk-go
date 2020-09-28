@@ -21,7 +21,6 @@ import (
 )
 
 // GenerateDataKeyWithoutPlaintext invokes the kms.GenerateDataKeyWithoutPlaintext API synchronously
-// api document: https://help.aliyun.com/api/kms/generatedatakeywithoutplaintext.html
 func (client *Client) GenerateDataKeyWithoutPlaintext(request *GenerateDataKeyWithoutPlaintextRequest) (response *GenerateDataKeyWithoutPlaintextResponse, err error) {
 	response = CreateGenerateDataKeyWithoutPlaintextResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GenerateDataKeyWithoutPlaintext(request *GenerateDataKeyWi
 }
 
 // GenerateDataKeyWithoutPlaintextWithChan invokes the kms.GenerateDataKeyWithoutPlaintext API asynchronously
-// api document: https://help.aliyun.com/api/kms/generatedatakeywithoutplaintext.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateDataKeyWithoutPlaintextWithChan(request *GenerateDataKeyWithoutPlaintextRequest) (<-chan *GenerateDataKeyWithoutPlaintextResponse, <-chan error) {
 	responseChan := make(chan *GenerateDataKeyWithoutPlaintextResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GenerateDataKeyWithoutPlaintextWithChan(request *GenerateD
 }
 
 // GenerateDataKeyWithoutPlaintextWithCallback invokes the kms.GenerateDataKeyWithoutPlaintext API asynchronously
-// api document: https://help.aliyun.com/api/kms/generatedatakeywithoutplaintext.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateDataKeyWithoutPlaintextWithCallback(request *GenerateDataKeyWithoutPlaintextRequest, callback func(response *GenerateDataKeyWithoutPlaintextResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateGenerateDataKeyWithoutPlaintextRequest() (request *GenerateDataKeyWit
 	request = &GenerateDataKeyWithoutPlaintextRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "GenerateDataKeyWithoutPlaintext", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "GenerateDataKeyWithoutPlaintext", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

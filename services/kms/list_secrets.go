@@ -21,7 +21,6 @@ import (
 )
 
 // ListSecrets invokes the kms.ListSecrets API synchronously
-// api document: https://help.aliyun.com/api/kms/listsecrets.html
 func (client *Client) ListSecrets(request *ListSecretsRequest) (response *ListSecretsResponse, err error) {
 	response = CreateListSecretsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSecrets(request *ListSecretsRequest) (response *ListSe
 }
 
 // ListSecretsWithChan invokes the kms.ListSecrets API asynchronously
-// api document: https://help.aliyun.com/api/kms/listsecrets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSecretsWithChan(request *ListSecretsRequest) (<-chan *ListSecretsResponse, <-chan error) {
 	responseChan := make(chan *ListSecretsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSecretsWithChan(request *ListSecretsRequest) (<-chan *
 }
 
 // ListSecretsWithCallback invokes the kms.ListSecrets API asynchronously
-// api document: https://help.aliyun.com/api/kms/listsecrets.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSecretsWithCallback(request *ListSecretsRequest, callback func(response *ListSecretsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) ListSecretsWithCallback(request *ListSecretsRequest, callb
 type ListSecretsRequest struct {
 	*requests.RpcRequest
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	Filters    string           `position:"Query" name:"Filters"`
 	FetchTags  string           `position:"Query" name:"FetchTags"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
@@ -84,9 +80,9 @@ type ListSecretsRequest struct {
 // ListSecretsResponse is the response struct for api ListSecrets
 type ListSecretsResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int        `json:"PageSize" xml:"PageSize"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
 	SecretList SecretList `json:"SecretList" xml:"SecretList"`
 }
@@ -96,7 +92,7 @@ func CreateListSecretsRequest() (request *ListSecretsRequest) {
 	request = &ListSecretsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "ListSecrets", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "ListSecrets", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

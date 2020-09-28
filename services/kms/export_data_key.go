@@ -21,7 +21,6 @@ import (
 )
 
 // ExportDataKey invokes the kms.ExportDataKey API synchronously
-// api document: https://help.aliyun.com/api/kms/exportdatakey.html
 func (client *Client) ExportDataKey(request *ExportDataKeyRequest) (response *ExportDataKeyResponse, err error) {
 	response = CreateExportDataKeyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExportDataKey(request *ExportDataKeyRequest) (response *Ex
 }
 
 // ExportDataKeyWithChan invokes the kms.ExportDataKey API asynchronously
-// api document: https://help.aliyun.com/api/kms/exportdatakey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportDataKeyWithChan(request *ExportDataKeyRequest) (<-chan *ExportDataKeyResponse, <-chan error) {
 	responseChan := make(chan *ExportDataKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExportDataKeyWithChan(request *ExportDataKeyRequest) (<-ch
 }
 
 // ExportDataKeyWithCallback invokes the kms.ExportDataKey API asynchronously
-// api document: https://help.aliyun.com/api/kms/exportdatakey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportDataKeyWithCallback(request *ExportDataKeyRequest, callback func(response *ExportDataKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateExportDataKeyRequest() (request *ExportDataKeyRequest) {
 	request = &ExportDataKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "ExportDataKey", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "ExportDataKey", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

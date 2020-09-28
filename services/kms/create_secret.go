@@ -21,7 +21,6 @@ import (
 )
 
 // CreateSecret invokes the kms.CreateSecret API synchronously
-// api document: https://help.aliyun.com/api/kms/createsecret.html
 func (client *Client) CreateSecret(request *CreateSecretRequest) (response *CreateSecretResponse, err error) {
 	response = CreateCreateSecretResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateSecret(request *CreateSecretRequest) (response *Crea
 }
 
 // CreateSecretWithChan invokes the kms.CreateSecret API asynchronously
-// api document: https://help.aliyun.com/api/kms/createsecret.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSecretWithChan(request *CreateSecretRequest) (<-chan *CreateSecretResponse, <-chan error) {
 	responseChan := make(chan *CreateSecretResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateSecretWithChan(request *CreateSecretRequest) (<-chan
 }
 
 // CreateSecretWithCallback invokes the kms.CreateSecret API asynchronously
-// api document: https://help.aliyun.com/api/kms/createsecret.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSecretWithCallback(request *CreateSecretRequest, callback func(response *CreateSecretResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateCreateSecretRequest() (request *CreateSecretRequest) {
 	request = &CreateSecretRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "CreateSecret", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "CreateSecret", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

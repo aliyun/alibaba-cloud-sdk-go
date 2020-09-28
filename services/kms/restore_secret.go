@@ -21,7 +21,6 @@ import (
 )
 
 // RestoreSecret invokes the kms.RestoreSecret API synchronously
-// api document: https://help.aliyun.com/api/kms/restoresecret.html
 func (client *Client) RestoreSecret(request *RestoreSecretRequest) (response *RestoreSecretResponse, err error) {
 	response = CreateRestoreSecretResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RestoreSecret(request *RestoreSecretRequest) (response *Re
 }
 
 // RestoreSecretWithChan invokes the kms.RestoreSecret API asynchronously
-// api document: https://help.aliyun.com/api/kms/restoresecret.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestoreSecretWithChan(request *RestoreSecretRequest) (<-chan *RestoreSecretResponse, <-chan error) {
 	responseChan := make(chan *RestoreSecretResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RestoreSecretWithChan(request *RestoreSecretRequest) (<-ch
 }
 
 // RestoreSecretWithCallback invokes the kms.RestoreSecret API asynchronously
-// api document: https://help.aliyun.com/api/kms/restoresecret.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestoreSecretWithCallback(request *RestoreSecretRequest, callback func(response *RestoreSecretResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateRestoreSecretRequest() (request *RestoreSecretRequest) {
 	request = &RestoreSecretRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "RestoreSecret", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "RestoreSecret", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

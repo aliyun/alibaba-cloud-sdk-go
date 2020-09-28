@@ -21,7 +21,6 @@ import (
 )
 
 // Encrypt invokes the kms.Encrypt API synchronously
-// api document: https://help.aliyun.com/api/kms/encrypt.html
 func (client *Client) Encrypt(request *EncryptRequest) (response *EncryptResponse, err error) {
 	response = CreateEncryptResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) Encrypt(request *EncryptRequest) (response *EncryptRespons
 }
 
 // EncryptWithChan invokes the kms.Encrypt API asynchronously
-// api document: https://help.aliyun.com/api/kms/encrypt.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EncryptWithChan(request *EncryptRequest) (<-chan *EncryptResponse, <-chan error) {
 	responseChan := make(chan *EncryptResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EncryptWithChan(request *EncryptRequest) (<-chan *EncryptR
 }
 
 // EncryptWithCallback invokes the kms.Encrypt API asynchronously
-// api document: https://help.aliyun.com/api/kms/encrypt.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EncryptWithCallback(request *EncryptRequest, callback func(response *EncryptResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateEncryptRequest() (request *EncryptRequest) {
 	request = &EncryptRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "Encrypt", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "Encrypt", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

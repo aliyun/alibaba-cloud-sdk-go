@@ -21,7 +21,6 @@ import (
 )
 
 // GenerateAndExportDataKey invokes the kms.GenerateAndExportDataKey API synchronously
-// api document: https://help.aliyun.com/api/kms/generateandexportdatakey.html
 func (client *Client) GenerateAndExportDataKey(request *GenerateAndExportDataKeyRequest) (response *GenerateAndExportDataKeyResponse, err error) {
 	response = CreateGenerateAndExportDataKeyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GenerateAndExportDataKey(request *GenerateAndExportDataKey
 }
 
 // GenerateAndExportDataKeyWithChan invokes the kms.GenerateAndExportDataKey API asynchronously
-// api document: https://help.aliyun.com/api/kms/generateandexportdatakey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateAndExportDataKeyWithChan(request *GenerateAndExportDataKeyRequest) (<-chan *GenerateAndExportDataKeyResponse, <-chan error) {
 	responseChan := make(chan *GenerateAndExportDataKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GenerateAndExportDataKeyWithChan(request *GenerateAndExpor
 }
 
 // GenerateAndExportDataKeyWithCallback invokes the kms.GenerateAndExportDataKey API asynchronously
-// api document: https://help.aliyun.com/api/kms/generateandexportdatakey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateAndExportDataKeyWithCallback(request *GenerateAndExportDataKeyRequest, callback func(response *GenerateAndExportDataKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateGenerateAndExportDataKeyRequest() (request *GenerateAndExportDataKeyR
 	request = &GenerateAndExportDataKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "GenerateAndExportDataKey", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "GenerateAndExportDataKey", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

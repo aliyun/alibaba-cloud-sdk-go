@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateRotationPolicy invokes the kms.UpdateRotationPolicy API synchronously
-// api document: https://help.aliyun.com/api/kms/updaterotationpolicy.html
 func (client *Client) UpdateRotationPolicy(request *UpdateRotationPolicyRequest) (response *UpdateRotationPolicyResponse, err error) {
 	response = CreateUpdateRotationPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateRotationPolicy(request *UpdateRotationPolicyRequest)
 }
 
 // UpdateRotationPolicyWithChan invokes the kms.UpdateRotationPolicy API asynchronously
-// api document: https://help.aliyun.com/api/kms/updaterotationpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateRotationPolicyWithChan(request *UpdateRotationPolicyRequest) (<-chan *UpdateRotationPolicyResponse, <-chan error) {
 	responseChan := make(chan *UpdateRotationPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateRotationPolicyWithChan(request *UpdateRotationPolicy
 }
 
 // UpdateRotationPolicyWithCallback invokes the kms.UpdateRotationPolicy API asynchronously
-// api document: https://help.aliyun.com/api/kms/updaterotationpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateRotationPolicyWithCallback(request *UpdateRotationPolicyRequest, callback func(response *UpdateRotationPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateUpdateRotationPolicyRequest() (request *UpdateRotationPolicyRequest) 
 	request = &UpdateRotationPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "UpdateRotationPolicy", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "UpdateRotationPolicy", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

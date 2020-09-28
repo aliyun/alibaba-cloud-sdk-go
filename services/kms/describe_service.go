@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeService invokes the kms.DescribeService API synchronously
-// api document: https://help.aliyun.com/api/kms/describeservice.html
 func (client *Client) DescribeService(request *DescribeServiceRequest) (response *DescribeServiceResponse, err error) {
 	response = CreateDescribeServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeService(request *DescribeServiceRequest) (response
 }
 
 // DescribeServiceWithChan invokes the kms.DescribeService API asynchronously
-// api document: https://help.aliyun.com/api/kms/describeservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServiceWithChan(request *DescribeServiceRequest) (<-chan *DescribeServiceResponse, <-chan error) {
 	responseChan := make(chan *DescribeServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeServiceWithChan(request *DescribeServiceRequest) (
 }
 
 // DescribeServiceWithCallback invokes the kms.DescribeService API asynchronously
-// api document: https://help.aliyun.com/api/kms/describeservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServiceWithCallback(request *DescribeServiceRequest, callback func(response *DescribeServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateDescribeServiceRequest() (request *DescribeServiceRequest) {
 	request = &DescribeServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "DescribeService", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "DescribeService", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

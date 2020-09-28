@@ -21,7 +21,6 @@ import (
 )
 
 // GenerateDataKey invokes the kms.GenerateDataKey API synchronously
-// api document: https://help.aliyun.com/api/kms/generatedatakey.html
 func (client *Client) GenerateDataKey(request *GenerateDataKeyRequest) (response *GenerateDataKeyResponse, err error) {
 	response = CreateGenerateDataKeyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GenerateDataKey(request *GenerateDataKeyRequest) (response
 }
 
 // GenerateDataKeyWithChan invokes the kms.GenerateDataKey API asynchronously
-// api document: https://help.aliyun.com/api/kms/generatedatakey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateDataKeyWithChan(request *GenerateDataKeyRequest) (<-chan *GenerateDataKeyResponse, <-chan error) {
 	responseChan := make(chan *GenerateDataKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GenerateDataKeyWithChan(request *GenerateDataKeyRequest) (
 }
 
 // GenerateDataKeyWithCallback invokes the kms.GenerateDataKey API asynchronously
-// api document: https://help.aliyun.com/api/kms/generatedatakey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateDataKeyWithCallback(request *GenerateDataKeyRequest, callback func(response *GenerateDataKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateGenerateDataKeyRequest() (request *GenerateDataKeyRequest) {
 	request = &GenerateDataKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "GenerateDataKey", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "GenerateDataKey", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

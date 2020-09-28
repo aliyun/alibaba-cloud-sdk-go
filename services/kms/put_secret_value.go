@@ -21,7 +21,6 @@ import (
 )
 
 // PutSecretValue invokes the kms.PutSecretValue API synchronously
-// api document: https://help.aliyun.com/api/kms/putsecretvalue.html
 func (client *Client) PutSecretValue(request *PutSecretValueRequest) (response *PutSecretValueResponse, err error) {
 	response = CreatePutSecretValueResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PutSecretValue(request *PutSecretValueRequest) (response *
 }
 
 // PutSecretValueWithChan invokes the kms.PutSecretValue API asynchronously
-// api document: https://help.aliyun.com/api/kms/putsecretvalue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutSecretValueWithChan(request *PutSecretValueRequest) (<-chan *PutSecretValueResponse, <-chan error) {
 	responseChan := make(chan *PutSecretValueResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PutSecretValueWithChan(request *PutSecretValueRequest) (<-
 }
 
 // PutSecretValueWithCallback invokes the kms.PutSecretValue API asynchronously
-// api document: https://help.aliyun.com/api/kms/putsecretvalue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutSecretValueWithCallback(request *PutSecretValueRequest, callback func(response *PutSecretValueResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreatePutSecretValueRequest() (request *PutSecretValueRequest) {
 	request = &PutSecretValueRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "PutSecretValue", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "PutSecretValue", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

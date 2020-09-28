@@ -21,7 +21,6 @@ import (
 )
 
 // CreateKeyVersion invokes the kms.CreateKeyVersion API synchronously
-// api document: https://help.aliyun.com/api/kms/createkeyversion.html
 func (client *Client) CreateKeyVersion(request *CreateKeyVersionRequest) (response *CreateKeyVersionResponse, err error) {
 	response = CreateCreateKeyVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateKeyVersion(request *CreateKeyVersionRequest) (respon
 }
 
 // CreateKeyVersionWithChan invokes the kms.CreateKeyVersion API asynchronously
-// api document: https://help.aliyun.com/api/kms/createkeyversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateKeyVersionWithChan(request *CreateKeyVersionRequest) (<-chan *CreateKeyVersionResponse, <-chan error) {
 	responseChan := make(chan *CreateKeyVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateKeyVersionWithChan(request *CreateKeyVersionRequest)
 }
 
 // CreateKeyVersionWithCallback invokes the kms.CreateKeyVersion API asynchronously
-// api document: https://help.aliyun.com/api/kms/createkeyversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateKeyVersionWithCallback(request *CreateKeyVersionRequest, callback func(response *CreateKeyVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateCreateKeyVersionRequest() (request *CreateKeyVersionRequest) {
 	request = &CreateKeyVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "CreateKeyVersion", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "CreateKeyVersion", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

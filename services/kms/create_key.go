@@ -21,7 +21,6 @@ import (
 )
 
 // CreateKey invokes the kms.CreateKey API synchronously
-// api document: https://help.aliyun.com/api/kms/createkey.html
 func (client *Client) CreateKey(request *CreateKeyRequest) (response *CreateKeyResponse, err error) {
 	response = CreateCreateKeyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateKey(request *CreateKeyRequest) (response *CreateKeyR
 }
 
 // CreateKeyWithChan invokes the kms.CreateKey API asynchronously
-// api document: https://help.aliyun.com/api/kms/createkey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateKeyWithChan(request *CreateKeyRequest) (<-chan *CreateKeyResponse, <-chan error) {
 	responseChan := make(chan *CreateKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateKeyWithChan(request *CreateKeyRequest) (<-chan *Crea
 }
 
 // CreateKeyWithCallback invokes the kms.CreateKey API asynchronously
-// api document: https://help.aliyun.com/api/kms/createkey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateKeyWithCallback(request *CreateKeyRequest, callback func(response *CreateKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateCreateKeyRequest() (request *CreateKeyRequest) {
 	request = &CreateKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "CreateKey", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "CreateKey", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

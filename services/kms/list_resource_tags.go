@@ -21,7 +21,6 @@ import (
 )
 
 // ListResourceTags invokes the kms.ListResourceTags API synchronously
-// api document: https://help.aliyun.com/api/kms/listresourcetags.html
 func (client *Client) ListResourceTags(request *ListResourceTagsRequest) (response *ListResourceTagsResponse, err error) {
 	response = CreateListResourceTagsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListResourceTags(request *ListResourceTagsRequest) (respon
 }
 
 // ListResourceTagsWithChan invokes the kms.ListResourceTags API asynchronously
-// api document: https://help.aliyun.com/api/kms/listresourcetags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListResourceTagsWithChan(request *ListResourceTagsRequest) (<-chan *ListResourceTagsResponse, <-chan error) {
 	responseChan := make(chan *ListResourceTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListResourceTagsWithChan(request *ListResourceTagsRequest)
 }
 
 // ListResourceTagsWithCallback invokes the kms.ListResourceTags API asynchronously
-// api document: https://help.aliyun.com/api/kms/listresourcetags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListResourceTagsWithCallback(request *ListResourceTagsRequest, callback func(response *ListResourceTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateListResourceTagsRequest() (request *ListResourceTagsRequest) {
 	request = &ListResourceTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "ListResourceTags", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "ListResourceTags", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

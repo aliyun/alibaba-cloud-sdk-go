@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateSecret invokes the kms.UpdateSecret API synchronously
-// api document: https://help.aliyun.com/api/kms/updatesecret.html
 func (client *Client) UpdateSecret(request *UpdateSecretRequest) (response *UpdateSecretResponse, err error) {
 	response = CreateUpdateSecretResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateSecret(request *UpdateSecretRequest) (response *Upda
 }
 
 // UpdateSecretWithChan invokes the kms.UpdateSecret API asynchronously
-// api document: https://help.aliyun.com/api/kms/updatesecret.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSecretWithChan(request *UpdateSecretRequest) (<-chan *UpdateSecretResponse, <-chan error) {
 	responseChan := make(chan *UpdateSecretResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateSecretWithChan(request *UpdateSecretRequest) (<-chan
 }
 
 // UpdateSecretWithCallback invokes the kms.UpdateSecret API asynchronously
-// api document: https://help.aliyun.com/api/kms/updatesecret.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSecretWithCallback(request *UpdateSecretRequest, callback func(response *UpdateSecretResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateUpdateSecretRequest() (request *UpdateSecretRequest) {
 	request = &UpdateSecretRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "UpdateSecret", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "UpdateSecret", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

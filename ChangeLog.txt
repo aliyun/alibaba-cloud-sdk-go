@@ -1,3 +1,9 @@
+2020-09-28 Version: v1.61.535
+- Generated 2016-01-20 for `Kms`.
+- Support filtering keys and secrets.
+- Support opening KMS service and describing service status by API.
+- Add a prefix limitation for SecretName.
+
 2020-09-27 Version: v1.61.534
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Update domain API.

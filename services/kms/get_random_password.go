@@ -21,7 +21,6 @@ import (
 )
 
 // GetRandomPassword invokes the kms.GetRandomPassword API synchronously
-// api document: https://help.aliyun.com/api/kms/getrandompassword.html
 func (client *Client) GetRandomPassword(request *GetRandomPasswordRequest) (response *GetRandomPasswordResponse, err error) {
 	response = CreateGetRandomPasswordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetRandomPassword(request *GetRandomPasswordRequest) (resp
 }
 
 // GetRandomPasswordWithChan invokes the kms.GetRandomPassword API asynchronously
-// api document: https://help.aliyun.com/api/kms/getrandompassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRandomPasswordWithChan(request *GetRandomPasswordRequest) (<-chan *GetRandomPasswordResponse, <-chan error) {
 	responseChan := make(chan *GetRandomPasswordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetRandomPasswordWithChan(request *GetRandomPasswordReques
 }
 
 // GetRandomPasswordWithCallback invokes the kms.GetRandomPassword API asynchronously
-// api document: https://help.aliyun.com/api/kms/getrandompassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRandomPasswordWithCallback(request *GetRandomPasswordRequest, callback func(response *GetRandomPasswordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateGetRandomPasswordRequest() (request *GetRandomPasswordRequest) {
 	request = &GetRandomPasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "GetRandomPassword", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "GetRandomPassword", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

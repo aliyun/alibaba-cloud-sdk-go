@@ -21,7 +21,6 @@ import (
 )
 
 // ReEncrypt invokes the kms.ReEncrypt API synchronously
-// api document: https://help.aliyun.com/api/kms/reencrypt.html
 func (client *Client) ReEncrypt(request *ReEncryptRequest) (response *ReEncryptResponse, err error) {
 	response = CreateReEncryptResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReEncrypt(request *ReEncryptRequest) (response *ReEncryptR
 }
 
 // ReEncryptWithChan invokes the kms.ReEncrypt API asynchronously
-// api document: https://help.aliyun.com/api/kms/reencrypt.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReEncryptWithChan(request *ReEncryptRequest) (<-chan *ReEncryptResponse, <-chan error) {
 	responseChan := make(chan *ReEncryptResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReEncryptWithChan(request *ReEncryptRequest) (<-chan *ReEn
 }
 
 // ReEncryptWithCallback invokes the kms.ReEncrypt API asynchronously
-// api document: https://help.aliyun.com/api/kms/reencrypt.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReEncryptWithCallback(request *ReEncryptRequest, callback func(response *ReEncryptResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateReEncryptRequest() (request *ReEncryptRequest) {
 	request = &ReEncryptRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "ReEncrypt", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "ReEncrypt", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

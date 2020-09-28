@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateKeyDescription invokes the kms.UpdateKeyDescription API synchronously
-// api document: https://help.aliyun.com/api/kms/updatekeydescription.html
 func (client *Client) UpdateKeyDescription(request *UpdateKeyDescriptionRequest) (response *UpdateKeyDescriptionResponse, err error) {
 	response = CreateUpdateKeyDescriptionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateKeyDescription(request *UpdateKeyDescriptionRequest)
 }
 
 // UpdateKeyDescriptionWithChan invokes the kms.UpdateKeyDescription API asynchronously
-// api document: https://help.aliyun.com/api/kms/updatekeydescription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateKeyDescriptionWithChan(request *UpdateKeyDescriptionRequest) (<-chan *UpdateKeyDescriptionResponse, <-chan error) {
 	responseChan := make(chan *UpdateKeyDescriptionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateKeyDescriptionWithChan(request *UpdateKeyDescription
 }
 
 // UpdateKeyDescriptionWithCallback invokes the kms.UpdateKeyDescription API asynchronously
-// api document: https://help.aliyun.com/api/kms/updatekeydescription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateKeyDescriptionWithCallback(request *UpdateKeyDescriptionRequest, callback func(response *UpdateKeyDescriptionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateUpdateKeyDescriptionRequest() (request *UpdateKeyDescriptionRequest) 
 	request = &UpdateKeyDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "UpdateKeyDescription", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "UpdateKeyDescription", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

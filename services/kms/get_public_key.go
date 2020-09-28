@@ -21,7 +21,6 @@ import (
 )
 
 // GetPublicKey invokes the kms.GetPublicKey API synchronously
-// api document: https://help.aliyun.com/api/kms/getpublickey.html
 func (client *Client) GetPublicKey(request *GetPublicKeyRequest) (response *GetPublicKeyResponse, err error) {
 	response = CreateGetPublicKeyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetPublicKey(request *GetPublicKeyRequest) (response *GetP
 }
 
 // GetPublicKeyWithChan invokes the kms.GetPublicKey API asynchronously
-// api document: https://help.aliyun.com/api/kms/getpublickey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPublicKeyWithChan(request *GetPublicKeyRequest) (<-chan *GetPublicKeyResponse, <-chan error) {
 	responseChan := make(chan *GetPublicKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetPublicKeyWithChan(request *GetPublicKeyRequest) (<-chan
 }
 
 // GetPublicKeyWithCallback invokes the kms.GetPublicKey API asynchronously
-// api document: https://help.aliyun.com/api/kms/getpublickey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPublicKeyWithCallback(request *GetPublicKeyRequest, callback func(response *GetPublicKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateGetPublicKeyRequest() (request *GetPublicKeyRequest) {
 	request = &GetPublicKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "GetPublicKey", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "GetPublicKey", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

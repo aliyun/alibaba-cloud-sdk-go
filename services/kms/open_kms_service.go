@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UpdateAlias invokes the kms.UpdateAlias API synchronously
-func (client *Client) UpdateAlias(request *UpdateAliasRequest) (response *UpdateAliasResponse, err error) {
-	response = CreateUpdateAliasResponse()
+// OpenKmsService invokes the kms.OpenKmsService API synchronously
+func (client *Client) OpenKmsService(request *OpenKmsServiceRequest) (response *OpenKmsServiceResponse, err error) {
+	response = CreateOpenKmsServiceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UpdateAliasWithChan invokes the kms.UpdateAlias API asynchronously
-func (client *Client) UpdateAliasWithChan(request *UpdateAliasRequest) (<-chan *UpdateAliasResponse, <-chan error) {
-	responseChan := make(chan *UpdateAliasResponse, 1)
+// OpenKmsServiceWithChan invokes the kms.OpenKmsService API asynchronously
+func (client *Client) OpenKmsServiceWithChan(request *OpenKmsServiceRequest) (<-chan *OpenKmsServiceResponse, <-chan error) {
+	responseChan := make(chan *OpenKmsServiceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UpdateAlias(request)
+		response, err := client.OpenKmsService(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) UpdateAliasWithChan(request *UpdateAliasRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// UpdateAliasWithCallback invokes the kms.UpdateAlias API asynchronously
-func (client *Client) UpdateAliasWithCallback(request *UpdateAliasRequest, callback func(response *UpdateAliasResponse, err error)) <-chan int {
+// OpenKmsServiceWithCallback invokes the kms.OpenKmsService API asynchronously
+func (client *Client) OpenKmsServiceWithCallback(request *OpenKmsServiceRequest, callback func(response *OpenKmsServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UpdateAliasResponse
+		var response *OpenKmsServiceResponse
 		var err error
 		defer close(result)
-		response, err = client.UpdateAlias(request)
+		response, err = client.OpenKmsService(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,32 +68,30 @@ func (client *Client) UpdateAliasWithCallback(request *UpdateAliasRequest, callb
 	return result
 }
 
-// UpdateAliasRequest is the request struct for api UpdateAlias
-type UpdateAliasRequest struct {
+// OpenKmsServiceRequest is the request struct for api OpenKmsService
+type OpenKmsServiceRequest struct {
 	*requests.RpcRequest
-	AliasName string `position:"Query" name:"AliasName"`
-	KeyId     string `position:"Query" name:"KeyId"`
 }
 
-// UpdateAliasResponse is the response struct for api UpdateAlias
-type UpdateAliasResponse struct {
+// OpenKmsServiceResponse is the response struct for api OpenKmsService
+type OpenKmsServiceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateUpdateAliasRequest creates a request to invoke UpdateAlias API
-func CreateUpdateAliasRequest() (request *UpdateAliasRequest) {
-	request = &UpdateAliasRequest{
+// CreateOpenKmsServiceRequest creates a request to invoke OpenKmsService API
+func CreateOpenKmsServiceRequest() (request *OpenKmsServiceRequest) {
+	request = &OpenKmsServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "UpdateAlias", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "OpenKmsService", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateUpdateAliasResponse creates a response to parse from UpdateAlias response
-func CreateUpdateAliasResponse() (response *UpdateAliasResponse) {
-	response = &UpdateAliasResponse{
+// CreateOpenKmsServiceResponse creates a response to parse from OpenKmsService response
+func CreateOpenKmsServiceResponse() (response *OpenKmsServiceResponse) {
+	response = &OpenKmsServiceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

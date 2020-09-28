@@ -17,9 +17,9 @@ package kms
 
 // Secret is a nested struct in kms response
 type Secret struct {
-	SecretName        string            `json:"SecretName" xml:"SecretName"`
 	CreateTime        string            `json:"CreateTime" xml:"CreateTime"`
-	UpdateTime        string            `json:"UpdateTime" xml:"UpdateTime"`
 	PlannedDeleteTime string            `json:"PlannedDeleteTime" xml:"PlannedDeleteTime"`
+	SecretName        string            `json:"SecretName" xml:"SecretName"`
+	UpdateTime        string            `json:"UpdateTime" xml:"UpdateTime"`
 	Tags              TagsInListSecrets `json:"Tags" xml:"Tags"`
 }

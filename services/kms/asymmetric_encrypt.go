@@ -21,7 +21,6 @@ import (
 )
 
 // AsymmetricEncrypt invokes the kms.AsymmetricEncrypt API synchronously
-// api document: https://help.aliyun.com/api/kms/asymmetricencrypt.html
 func (client *Client) AsymmetricEncrypt(request *AsymmetricEncryptRequest) (response *AsymmetricEncryptResponse, err error) {
 	response = CreateAsymmetricEncryptResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AsymmetricEncrypt(request *AsymmetricEncryptRequest) (resp
 }
 
 // AsymmetricEncryptWithChan invokes the kms.AsymmetricEncrypt API asynchronously
-// api document: https://help.aliyun.com/api/kms/asymmetricencrypt.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AsymmetricEncryptWithChan(request *AsymmetricEncryptRequest) (<-chan *AsymmetricEncryptResponse, <-chan error) {
 	responseChan := make(chan *AsymmetricEncryptResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AsymmetricEncryptWithChan(request *AsymmetricEncryptReques
 }
 
 // AsymmetricEncryptWithCallback invokes the kms.AsymmetricEncrypt API asynchronously
-// api document: https://help.aliyun.com/api/kms/asymmetricencrypt.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AsymmetricEncryptWithCallback(request *AsymmetricEncryptRequest, callback func(response *AsymmetricEncryptResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateAsymmetricEncryptRequest() (request *AsymmetricEncryptRequest) {
 	request = &AsymmetricEncryptRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "AsymmetricEncrypt", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "AsymmetricEncrypt", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // AsymmetricDecrypt invokes the kms.AsymmetricDecrypt API synchronously
-// api document: https://help.aliyun.com/api/kms/asymmetricdecrypt.html
 func (client *Client) AsymmetricDecrypt(request *AsymmetricDecryptRequest) (response *AsymmetricDecryptResponse, err error) {
 	response = CreateAsymmetricDecryptResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AsymmetricDecrypt(request *AsymmetricDecryptRequest) (resp
 }
 
 // AsymmetricDecryptWithChan invokes the kms.AsymmetricDecrypt API asynchronously
-// api document: https://help.aliyun.com/api/kms/asymmetricdecrypt.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AsymmetricDecryptWithChan(request *AsymmetricDecryptRequest) (<-chan *AsymmetricDecryptResponse, <-chan error) {
 	responseChan := make(chan *AsymmetricDecryptResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AsymmetricDecryptWithChan(request *AsymmetricDecryptReques
 }
 
 // AsymmetricDecryptWithCallback invokes the kms.AsymmetricDecrypt API asynchronously
-// api document: https://help.aliyun.com/api/kms/asymmetricdecrypt.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AsymmetricDecryptWithCallback(request *AsymmetricDecryptRequest, callback func(response *AsymmetricDecryptResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateAsymmetricDecryptRequest() (request *AsymmetricDecryptRequest) {
 	request = &AsymmetricDecryptRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "AsymmetricDecrypt", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "AsymmetricDecrypt", "kms", "openAPI")
 	request.Method = requests.POST
 	return
 }
