@@ -2,7 +2,6 @@ package integration
 
 import (
 	"fmt"
-	"github.com/goji/httpauth"
 	"net/http"
 	"net/http/httptest"
 	"net/http/httputil"
@@ -11,6 +10,8 @@ import (
 	"strings"
 	"testing"
 	"time"
+
+	"github.com/goji/httpauth"
 
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk"
 
@@ -81,19 +82,19 @@ func Test_DescribeRegionsWithCommonRequestWithUnicodeSpecificParams(t *testing.T
 	assert.True(t, response.IsSuccess())
 }
 
-func Test_DescribeRegionsWithCommonRequestWithError(t *testing.T) {
+func Test_AddTagsWithCommonRequestWithError(t *testing.T) {
 	request := requests.NewCommonRequest()
 	request.Version = "2014-05-26"
 	request.Product = "Ecs"
-	request.ApiName = "Describe"
+	request.ApiName = "AddTags"
 	request.SetDomain("ecs.aliyuncs.com")
 	request.TransToAcsRequest()
 	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 	_, err = client.ProcessCommonRequest(request)
 	realerr := err.(errors.Error)
-	assert.Equal(t, "InvalidParameter", realerr.ErrorCode())
-	assert.Equal(t, "The specified parameter \"Action or Version\" is not valid.", realerr.Message())
+	assert.Equal(t, "MissingParameter", realerr.ErrorCode())
+	assert.Equal(t, "The input parameter \"ResourceType\" that is mandatory for processing this request is not supplied.", realerr.Message())
 }
 
 func Test_DescribeRegionsWithCommonRequestWithIncompleteSignature(t *testing.T) {

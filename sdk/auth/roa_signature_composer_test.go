@@ -19,21 +19,21 @@ func TestRoaSignatureComposer_buildRoaStringToSign(t *testing.T) {
 	request.PathPattern = "/users/:user"
 	request.TransToAcsRequest()
 	stringToSign := buildRoaStringToSign(request)
-	assert.Equal(t, "GET\nx-acs-action:\nx-acs-version:\n/users/:user", stringToSign)
+	assert.Equal(t, "GET\nx-acs-version:\n/users/:user", stringToSign)
 
 	request.Headers["Accept"] = "application/json;charset=utf8"
 	stringToSign = buildRoaStringToSign(request)
-	assert.Equal(t, "GET\napplication/json;charset=utf8\nx-acs-action:\nx-acs-version:\n/users/:user", stringToSign)
+	assert.Equal(t, "GET\napplication/json;charset=utf8\nx-acs-version:\n/users/:user", stringToSign)
 	request.SetContentType("application/json")
 	request.Headers["x-acs-custom-header"] = "value"
 	stringToSign = buildRoaStringToSign(request)
-	assert.Equal(t, "GET\napplication/json;charset=utf8\napplication/json\nx-acs-action:\nx-acs-custom-header:value\nx-acs-version:\n/users/:user", stringToSign)
+	assert.Equal(t, "GET\napplication/json;charset=utf8\napplication/json\nx-acs-custom-header:value\nx-acs-version:\n/users/:user", stringToSign)
 	request.QueryParams["q"] = "value"
 	stringToSign = buildRoaStringToSign(request)
-	assert.Equal(t, "GET\napplication/json;charset=utf8\napplication/json\nx-acs-action:\nx-acs-custom-header:value\nx-acs-version:\n/users/:user?q=value", stringToSign)
+	assert.Equal(t, "GET\napplication/json;charset=utf8\napplication/json\nx-acs-custom-header:value\nx-acs-version:\n/users/:user?q=value", stringToSign)
 	request.QueryParams["q"] = "http://domain/?q=value&q2=value2"
 	stringToSign = buildRoaStringToSign(request)
-	assert.Equal(t, "GET\napplication/json;charset=utf8\napplication/json\nx-acs-action:\nx-acs-custom-header:value\nx-acs-version:\n/users/:user?q=http://domain/?q=value&q2=value2", stringToSign)
+	assert.Equal(t, "GET\napplication/json;charset=utf8\napplication/json\nx-acs-custom-header:value\nx-acs-version:\n/users/:user?q=http://domain/?q=value&q2=value2", stringToSign)
 }
 
 func TestRoaSignatureComposer(t *testing.T) {
@@ -48,7 +48,7 @@ func TestRoaSignatureComposer(t *testing.T) {
 	hookGetDate = mockDate
 	signRoaRequest(request, signer, "regionId")
 	assert.Equal(t, "mock date", request.GetHeaders()["Date"])
-	assert.Equal(t, "acs accessKeyId:4j2/adKDV8aMpLAHyrZClDhkTGc=", request.GetHeaders()["Authorization"])
+	assert.Equal(t, "acs accessKeyId:degLHXLEN6rMojj+bOlK74U9iic=", request.GetHeaders()["Authorization"])
 }
 
 func TestRoaSignatureComposer2(t *testing.T) {
@@ -67,7 +67,7 @@ func TestRoaSignatureComposer2(t *testing.T) {
 	assert.Equal(t, "application/x-www-form-urlencoded", request.GetHeaders()["Content-Type"])
 	assert.Equal(t, "mock date", request.GetHeaders()["Date"])
 	assert.Equal(t, "application/xml", request.GetHeaders()["Accept"])
-	assert.Equal(t, "acs accessKeyId:Wzv/b4/JSHHs+XpN9nunJJLvlQc=", request.GetHeaders()["Authorization"])
+	assert.Equal(t, "acs accessKeyId:U9uA3ftRZKixHPB08Z7Z4GOlpTY=", request.GetHeaders()["Authorization"])
 }
 
 func TestRoaSignatureComposer3(t *testing.T) {
