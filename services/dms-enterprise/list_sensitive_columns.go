@@ -72,12 +72,12 @@ func (client *Client) ListSensitiveColumnsWithCallback(request *ListSensitiveCol
 type ListSensitiveColumnsRequest struct {
 	*requests.RpcRequest
 	SchemaName    string           `position:"Query" name:"SchemaName"`
-	SecurityLevel string           `position:"Query" name:"SecurityLevel"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	TableName     string           `position:"Query" name:"TableName"`
 	ColumnName    string           `position:"Query" name:"ColumnName"`
 	Tid           requests.Integer `position:"Query" name:"Tid"`
 	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	SecurityLevel string           `position:"Query" name:"SecurityLevel"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	TableName     string           `position:"Query" name:"TableName"`
 }
 
 // ListSensitiveColumnsResponse is the response struct for api ListSensitiveColumns

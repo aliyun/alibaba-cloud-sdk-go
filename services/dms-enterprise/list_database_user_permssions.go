@@ -71,12 +71,12 @@ func (client *Client) ListDatabaseUserPermssionsWithCallback(request *ListDataba
 // ListDatabaseUserPermssionsRequest is the request struct for api ListDatabaseUserPermssions
 type ListDatabaseUserPermssionsRequest struct {
 	*requests.RpcRequest
+	Tid        requests.Integer `position:"Query" name:"Tid"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	PermType   string           `position:"Query" name:"PermType"`
 	DbId       string           `position:"Query" name:"DbId"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	Logic      requests.Boolean `position:"Query" name:"Logic"`
-	Tid        requests.Integer `position:"Query" name:"Tid"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	UserName   string           `position:"Query" name:"UserName"`
 }
 

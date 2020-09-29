@@ -74,7 +74,7 @@ type CreateOrderRequest struct {
 	PluginType      string                 `position:"Query" name:"PluginType"`
 	Comment         string                 `position:"Query" name:"Comment"`
 	Tid             requests.Integer       `position:"Query" name:"Tid"`
-	PluginParam     map[string]interface{} `position:"Query" name:"PluginParam"`
+	PluginParam     map[string]interface{} `position:"Body" name:"PluginParam"`
 	RelatedUserList string                 `position:"Query" name:"RelatedUserList"`
 }
 

@@ -1,3 +1,7 @@
+2020-09-29 Version: v1.61.540
+- Generated 2018-11-01 for `dms-enterprise`.
+- Supported regional API.
+
 2020-09-29 Version: v1.61.539
 - Generated 2017-11-15 for `scdn`.
 
