@@ -17,28 +17,32 @@ package imageprocess
 
 // Data is a nested struct in imageprocess response
 type Data struct {
-	JobId             string             `json:"JobId" xml:"JobId"`
-	OrgId             string             `json:"OrgId" xml:"OrgId"`
-	Text              string             `json:"Text" xml:"Text"`
-	Result            string             `json:"Result" xml:"Result"`
-	ErrorMessage      string             `json:"ErrorMessage" xml:"ErrorMessage"`
-	NormalProbability string             `json:"NormalProbability" xml:"NormalProbability"`
-	NewProbability    string             `json:"NewProbability" xml:"NewProbability"`
-	OtherProbability  string             `json:"OtherProbability" xml:"OtherProbability"`
-	Score             string             `json:"Score" xml:"Score"`
-	Words             int64              `json:"Words" xml:"Words"`
-	LesionRatio       string             `json:"LesionRatio" xml:"LesionRatio"`
-	DUrl              string             `json:"DUrl" xml:"DUrl"`
-	NUrl              string             `json:"NUrl" xml:"NUrl"`
-	ImageUrl          string             `json:"ImageUrl" xml:"ImageUrl"`
-	Mask              string             `json:"Mask" xml:"Mask"`
-	Status            string             `json:"Status" xml:"Status"`
-	OrgName           string             `json:"OrgName" xml:"OrgName"`
-	ErrorCode         string             `json:"ErrorCode" xml:"ErrorCode"`
-	Fractures         []FracturesItem    `json:"Fractures" xml:"Fractures"`
-	Vertebras         []Vertebra         `json:"Vertebras" xml:"Vertebras"`
-	KLDetections      []KLDetectionsItem `json:"KLDetections" xml:"KLDetections"`
-	Discs             []Disc             `json:"Discs" xml:"Discs"`
-	KeyPoints         []KeyPointsItem    `json:"KeyPoints" xml:"KeyPoints"`
-	Series            []Serie            `json:"Series" xml:"Series"`
+	Text              string                 `json:"Text" xml:"Text"`
+	ErrorMessage      string                 `json:"ErrorMessage" xml:"ErrorMessage"`
+	NormalProbability string                 `json:"NormalProbability" xml:"NormalProbability"`
+	NewProbability    string                 `json:"NewProbability" xml:"NewProbability"`
+	Score             string                 `json:"Score" xml:"Score"`
+	DUrl              string                 `json:"DUrl" xml:"DUrl"`
+	ImageUrl          string                 `json:"ImageUrl" xml:"ImageUrl"`
+	Mask              string                 `json:"Mask" xml:"Mask"`
+	ErrorCode         string                 `json:"ErrorCode" xml:"ErrorCode"`
+	JobId             string                 `json:"JobId" xml:"JobId"`
+	OrgId             string                 `json:"OrgId" xml:"OrgId"`
+	Result            string                 `json:"Result" xml:"Result"`
+	OtherProbability  string                 `json:"OtherProbability" xml:"OtherProbability"`
+	Words             int64                  `json:"Words" xml:"Words"`
+	LesionRatio       string                 `json:"LesionRatio" xml:"LesionRatio"`
+	NUrl              string                 `json:"NUrl" xml:"NUrl"`
+	Status            string                 `json:"Status" xml:"Status"`
+	Answer            string                 `json:"Answer" xml:"Answer"`
+	Results           map[string]interface{} `json:"Results" xml:"Results"`
+	OrgName           string                 `json:"OrgName" xml:"OrgName"`
+	ResultUrl         string                 `json:"ResultUrl" xml:"ResultUrl"`
+	SimilarQuestion   []string               `json:"SimilarQuestion" xml:"SimilarQuestion"`
+	Fractures         []FracturesItem        `json:"Fractures" xml:"Fractures"`
+	Discs             []Disc                 `json:"Discs" xml:"Discs"`
+	Series            []Serie                `json:"Series" xml:"Series"`
+	Vertebras         []Vertebra             `json:"Vertebras" xml:"Vertebras"`
+	KLDetections      []KLDetectionsItem     `json:"KLDetections" xml:"KLDetections"`
+	KeyPoints         []KeyPointsItem        `json:"KeyPoints" xml:"KeyPoints"`
 }
