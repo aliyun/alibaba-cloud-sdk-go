@@ -21,7 +21,6 @@ import (
 )
 
 // OnsMqttGroupIdList invokes the ons.OnsMqttGroupIdList API synchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttgroupidlist.html
 func (client *Client) OnsMqttGroupIdList(request *OnsMqttGroupIdListRequest) (response *OnsMqttGroupIdListResponse, err error) {
 	response = CreateOnsMqttGroupIdListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsMqttGroupIdList(request *OnsMqttGroupIdListRequest) (re
 }
 
 // OnsMqttGroupIdListWithChan invokes the ons.OnsMqttGroupIdList API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttgroupidlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMqttGroupIdListWithChan(request *OnsMqttGroupIdListRequest) (<-chan *OnsMqttGroupIdListResponse, <-chan error) {
 	responseChan := make(chan *OnsMqttGroupIdListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsMqttGroupIdListWithChan(request *OnsMqttGroupIdListRequ
 }
 
 // OnsMqttGroupIdListWithCallback invokes the ons.OnsMqttGroupIdList API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttgroupidlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMqttGroupIdListWithCallback(request *OnsMqttGroupIdListRequest, callback func(response *OnsMqttGroupIdListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateOnsMqttGroupIdListRequest() (request *OnsMqttGroupIdListRequest) {
 	request = &OnsMqttGroupIdListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttGroupIdList", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttGroupIdList", "", "")
 	request.Method = requests.POST
 	return
 }

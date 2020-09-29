@@ -21,7 +21,6 @@ import (
 )
 
 // OnsMqttGroupIdDelete invokes the ons.OnsMqttGroupIdDelete API synchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttgroupiddelete.html
 func (client *Client) OnsMqttGroupIdDelete(request *OnsMqttGroupIdDeleteRequest) (response *OnsMqttGroupIdDeleteResponse, err error) {
 	response = CreateOnsMqttGroupIdDeleteResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsMqttGroupIdDelete(request *OnsMqttGroupIdDeleteRequest)
 }
 
 // OnsMqttGroupIdDeleteWithChan invokes the ons.OnsMqttGroupIdDelete API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttgroupiddelete.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMqttGroupIdDeleteWithChan(request *OnsMqttGroupIdDeleteRequest) (<-chan *OnsMqttGroupIdDeleteResponse, <-chan error) {
 	responseChan := make(chan *OnsMqttGroupIdDeleteResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsMqttGroupIdDeleteWithChan(request *OnsMqttGroupIdDelete
 }
 
 // OnsMqttGroupIdDeleteWithCallback invokes the ons.OnsMqttGroupIdDelete API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttgroupiddelete.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMqttGroupIdDeleteWithCallback(request *OnsMqttGroupIdDeleteRequest, callback func(response *OnsMqttGroupIdDeleteResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateOnsMqttGroupIdDeleteRequest() (request *OnsMqttGroupIdDeleteRequest) 
 	request = &OnsMqttGroupIdDeleteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttGroupIdDelete", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttGroupIdDelete", "", "")
 	request.Method = requests.POST
 	return
 }

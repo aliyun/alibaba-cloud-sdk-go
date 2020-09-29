@@ -21,7 +21,6 @@ import (
 )
 
 // OnsConsumerGetConnection invokes the ons.OnsConsumerGetConnection API synchronously
-// api document: https://help.aliyun.com/api/ons/onsconsumergetconnection.html
 func (client *Client) OnsConsumerGetConnection(request *OnsConsumerGetConnectionRequest) (response *OnsConsumerGetConnectionResponse, err error) {
 	response = CreateOnsConsumerGetConnectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsConsumerGetConnection(request *OnsConsumerGetConnection
 }
 
 // OnsConsumerGetConnectionWithChan invokes the ons.OnsConsumerGetConnection API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsconsumergetconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsConsumerGetConnectionWithChan(request *OnsConsumerGetConnectionRequest) (<-chan *OnsConsumerGetConnectionResponse, <-chan error) {
 	responseChan := make(chan *OnsConsumerGetConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsConsumerGetConnectionWithChan(request *OnsConsumerGetCo
 }
 
 // OnsConsumerGetConnectionWithCallback invokes the ons.OnsConsumerGetConnection API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsconsumergetconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsConsumerGetConnectionWithCallback(request *OnsConsumerGetConnectionRequest, callback func(response *OnsConsumerGetConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateOnsConsumerGetConnectionRequest() (request *OnsConsumerGetConnectionR
 	request = &OnsConsumerGetConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsConsumerGetConnection", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsConsumerGetConnection", "", "")
 	request.Method = requests.POST
 	return
 }

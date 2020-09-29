@@ -21,7 +21,6 @@ import (
 )
 
 // OnsMessagePageQueryByTopic invokes the ons.OnsMessagePageQueryByTopic API synchronously
-// api document: https://help.aliyun.com/api/ons/onsmessagepagequerybytopic.html
 func (client *Client) OnsMessagePageQueryByTopic(request *OnsMessagePageQueryByTopicRequest) (response *OnsMessagePageQueryByTopicResponse, err error) {
 	response = CreateOnsMessagePageQueryByTopicResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsMessagePageQueryByTopic(request *OnsMessagePageQueryByT
 }
 
 // OnsMessagePageQueryByTopicWithChan invokes the ons.OnsMessagePageQueryByTopic API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmessagepagequerybytopic.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMessagePageQueryByTopicWithChan(request *OnsMessagePageQueryByTopicRequest) (<-chan *OnsMessagePageQueryByTopicResponse, <-chan error) {
 	responseChan := make(chan *OnsMessagePageQueryByTopicResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsMessagePageQueryByTopicWithChan(request *OnsMessagePage
 }
 
 // OnsMessagePageQueryByTopicWithCallback invokes the ons.OnsMessagePageQueryByTopic API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmessagepagequerybytopic.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMessagePageQueryByTopicWithCallback(request *OnsMessagePageQueryByTopicRequest, callback func(response *OnsMessagePageQueryByTopicResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateOnsMessagePageQueryByTopicRequest() (request *OnsMessagePageQueryByTo
 	request = &OnsMessagePageQueryByTopicRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMessagePageQueryByTopic", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMessagePageQueryByTopic", "", "")
 	request.Method = requests.POST
 	return
 }

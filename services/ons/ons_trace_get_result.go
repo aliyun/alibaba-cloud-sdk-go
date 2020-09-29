@@ -21,7 +21,6 @@ import (
 )
 
 // OnsTraceGetResult invokes the ons.OnsTraceGetResult API synchronously
-// api document: https://help.aliyun.com/api/ons/onstracegetresult.html
 func (client *Client) OnsTraceGetResult(request *OnsTraceGetResultRequest) (response *OnsTraceGetResultResponse, err error) {
 	response = CreateOnsTraceGetResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsTraceGetResult(request *OnsTraceGetResultRequest) (resp
 }
 
 // OnsTraceGetResultWithChan invokes the ons.OnsTraceGetResult API asynchronously
-// api document: https://help.aliyun.com/api/ons/onstracegetresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsTraceGetResultWithChan(request *OnsTraceGetResultRequest) (<-chan *OnsTraceGetResultResponse, <-chan error) {
 	responseChan := make(chan *OnsTraceGetResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsTraceGetResultWithChan(request *OnsTraceGetResultReques
 }
 
 // OnsTraceGetResultWithCallback invokes the ons.OnsTraceGetResult API asynchronously
-// api document: https://help.aliyun.com/api/ons/onstracegetresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsTraceGetResultWithCallback(request *OnsTraceGetResultRequest, callback func(response *OnsTraceGetResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateOnsTraceGetResultRequest() (request *OnsTraceGetResultRequest) {
 	request = &OnsTraceGetResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTraceGetResult", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTraceGetResult", "", "")
 	request.Method = requests.POST
 	return
 }

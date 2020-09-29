@@ -21,7 +21,6 @@ import (
 )
 
 // OnsConsumerStatus invokes the ons.OnsConsumerStatus API synchronously
-// api document: https://help.aliyun.com/api/ons/onsconsumerstatus.html
 func (client *Client) OnsConsumerStatus(request *OnsConsumerStatusRequest) (response *OnsConsumerStatusResponse, err error) {
 	response = CreateOnsConsumerStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsConsumerStatus(request *OnsConsumerStatusRequest) (resp
 }
 
 // OnsConsumerStatusWithChan invokes the ons.OnsConsumerStatus API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsconsumerstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsConsumerStatusWithChan(request *OnsConsumerStatusRequest) (<-chan *OnsConsumerStatusResponse, <-chan error) {
 	responseChan := make(chan *OnsConsumerStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsConsumerStatusWithChan(request *OnsConsumerStatusReques
 }
 
 // OnsConsumerStatusWithCallback invokes the ons.OnsConsumerStatus API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsconsumerstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsConsumerStatusWithCallback(request *OnsConsumerStatusRequest, callback func(response *OnsConsumerStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateOnsConsumerStatusRequest() (request *OnsConsumerStatusRequest) {
 	request = &OnsConsumerStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsConsumerStatus", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsConsumerStatus", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // OnsConsumerTimeSpan invokes the ons.OnsConsumerTimeSpan API synchronously
-// api document: https://help.aliyun.com/api/ons/onsconsumertimespan.html
 func (client *Client) OnsConsumerTimeSpan(request *OnsConsumerTimeSpanRequest) (response *OnsConsumerTimeSpanResponse, err error) {
 	response = CreateOnsConsumerTimeSpanResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsConsumerTimeSpan(request *OnsConsumerTimeSpanRequest) (
 }
 
 // OnsConsumerTimeSpanWithChan invokes the ons.OnsConsumerTimeSpan API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsconsumertimespan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsConsumerTimeSpanWithChan(request *OnsConsumerTimeSpanRequest) (<-chan *OnsConsumerTimeSpanResponse, <-chan error) {
 	responseChan := make(chan *OnsConsumerTimeSpanResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsConsumerTimeSpanWithChan(request *OnsConsumerTimeSpanRe
 }
 
 // OnsConsumerTimeSpanWithCallback invokes the ons.OnsConsumerTimeSpan API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsconsumertimespan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsConsumerTimeSpanWithCallback(request *OnsConsumerTimeSpanRequest, callback func(response *OnsConsumerTimeSpanResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateOnsConsumerTimeSpanRequest() (request *OnsConsumerTimeSpanRequest) {
 	request = &OnsConsumerTimeSpanRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsConsumerTimeSpan", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsConsumerTimeSpan", "", "")
 	request.Method = requests.POST
 	return
 }

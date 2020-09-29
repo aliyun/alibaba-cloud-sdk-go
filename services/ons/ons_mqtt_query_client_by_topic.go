@@ -21,7 +21,6 @@ import (
 )
 
 // OnsMqttQueryClientByTopic invokes the ons.OnsMqttQueryClientByTopic API synchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttqueryclientbytopic.html
 func (client *Client) OnsMqttQueryClientByTopic(request *OnsMqttQueryClientByTopicRequest) (response *OnsMqttQueryClientByTopicResponse, err error) {
 	response = CreateOnsMqttQueryClientByTopicResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsMqttQueryClientByTopic(request *OnsMqttQueryClientByTop
 }
 
 // OnsMqttQueryClientByTopicWithChan invokes the ons.OnsMqttQueryClientByTopic API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttqueryclientbytopic.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMqttQueryClientByTopicWithChan(request *OnsMqttQueryClientByTopicRequest) (<-chan *OnsMqttQueryClientByTopicResponse, <-chan error) {
 	responseChan := make(chan *OnsMqttQueryClientByTopicResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsMqttQueryClientByTopicWithChan(request *OnsMqttQueryCli
 }
 
 // OnsMqttQueryClientByTopicWithCallback invokes the ons.OnsMqttQueryClientByTopic API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttqueryclientbytopic.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMqttQueryClientByTopicWithCallback(request *OnsMqttQueryClientByTopicRequest, callback func(response *OnsMqttQueryClientByTopicResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateOnsMqttQueryClientByTopicRequest() (request *OnsMqttQueryClientByTopi
 	request = &OnsMqttQueryClientByTopicRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttQueryClientByTopic", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttQueryClientByTopic", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // OnsGroupConsumerUpdate invokes the ons.OnsGroupConsumerUpdate API synchronously
-// api document: https://help.aliyun.com/api/ons/onsgroupconsumerupdate.html
 func (client *Client) OnsGroupConsumerUpdate(request *OnsGroupConsumerUpdateRequest) (response *OnsGroupConsumerUpdateResponse, err error) {
 	response = CreateOnsGroupConsumerUpdateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsGroupConsumerUpdate(request *OnsGroupConsumerUpdateRequ
 }
 
 // OnsGroupConsumerUpdateWithChan invokes the ons.OnsGroupConsumerUpdate API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsgroupconsumerupdate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsGroupConsumerUpdateWithChan(request *OnsGroupConsumerUpdateRequest) (<-chan *OnsGroupConsumerUpdateResponse, <-chan error) {
 	responseChan := make(chan *OnsGroupConsumerUpdateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsGroupConsumerUpdateWithChan(request *OnsGroupConsumerUp
 }
 
 // OnsGroupConsumerUpdateWithCallback invokes the ons.OnsGroupConsumerUpdate API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsgroupconsumerupdate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsGroupConsumerUpdateWithCallback(request *OnsGroupConsumerUpdateRequest, callback func(response *OnsGroupConsumerUpdateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateOnsGroupConsumerUpdateRequest() (request *OnsGroupConsumerUpdateReque
 	request = &OnsGroupConsumerUpdateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsGroupConsumerUpdate", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsGroupConsumerUpdate", "", "")
 	request.Method = requests.POST
 	return
 }

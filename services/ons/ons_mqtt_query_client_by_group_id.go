@@ -21,7 +21,6 @@ import (
 )
 
 // OnsMqttQueryClientByGroupId invokes the ons.OnsMqttQueryClientByGroupId API synchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttqueryclientbygroupid.html
 func (client *Client) OnsMqttQueryClientByGroupId(request *OnsMqttQueryClientByGroupIdRequest) (response *OnsMqttQueryClientByGroupIdResponse, err error) {
 	response = CreateOnsMqttQueryClientByGroupIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsMqttQueryClientByGroupId(request *OnsMqttQueryClientByG
 }
 
 // OnsMqttQueryClientByGroupIdWithChan invokes the ons.OnsMqttQueryClientByGroupId API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttqueryclientbygroupid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMqttQueryClientByGroupIdWithChan(request *OnsMqttQueryClientByGroupIdRequest) (<-chan *OnsMqttQueryClientByGroupIdResponse, <-chan error) {
 	responseChan := make(chan *OnsMqttQueryClientByGroupIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsMqttQueryClientByGroupIdWithChan(request *OnsMqttQueryC
 }
 
 // OnsMqttQueryClientByGroupIdWithCallback invokes the ons.OnsMqttQueryClientByGroupId API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttqueryclientbygroupid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMqttQueryClientByGroupIdWithCallback(request *OnsMqttQueryClientByGroupIdRequest, callback func(response *OnsMqttQueryClientByGroupIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateOnsMqttQueryClientByGroupIdRequest() (request *OnsMqttQueryClientByGr
 	request = &OnsMqttQueryClientByGroupIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttQueryClientByGroupId", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttQueryClientByGroupId", "", "")
 	request.Method = requests.POST
 	return
 }

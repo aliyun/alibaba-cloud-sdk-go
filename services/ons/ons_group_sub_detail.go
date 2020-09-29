@@ -21,7 +21,6 @@ import (
 )
 
 // OnsGroupSubDetail invokes the ons.OnsGroupSubDetail API synchronously
-// api document: https://help.aliyun.com/api/ons/onsgroupsubdetail.html
 func (client *Client) OnsGroupSubDetail(request *OnsGroupSubDetailRequest) (response *OnsGroupSubDetailResponse, err error) {
 	response = CreateOnsGroupSubDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsGroupSubDetail(request *OnsGroupSubDetailRequest) (resp
 }
 
 // OnsGroupSubDetailWithChan invokes the ons.OnsGroupSubDetail API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsgroupsubdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsGroupSubDetailWithChan(request *OnsGroupSubDetailRequest) (<-chan *OnsGroupSubDetailResponse, <-chan error) {
 	responseChan := make(chan *OnsGroupSubDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsGroupSubDetailWithChan(request *OnsGroupSubDetailReques
 }
 
 // OnsGroupSubDetailWithCallback invokes the ons.OnsGroupSubDetail API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsgroupsubdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsGroupSubDetailWithCallback(request *OnsGroupSubDetailRequest, callback func(response *OnsGroupSubDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateOnsGroupSubDetailRequest() (request *OnsGroupSubDetailRequest) {
 	request = &OnsGroupSubDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsGroupSubDetail", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsGroupSubDetail", "", "")
 	request.Method = requests.POST
 	return
 }

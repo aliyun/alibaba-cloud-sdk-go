@@ -21,7 +21,6 @@ import (
 )
 
 // OnsTrendTopicInputTps invokes the ons.OnsTrendTopicInputTps API synchronously
-// api document: https://help.aliyun.com/api/ons/onstrendtopicinputtps.html
 func (client *Client) OnsTrendTopicInputTps(request *OnsTrendTopicInputTpsRequest) (response *OnsTrendTopicInputTpsResponse, err error) {
 	response = CreateOnsTrendTopicInputTpsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsTrendTopicInputTps(request *OnsTrendTopicInputTpsReques
 }
 
 // OnsTrendTopicInputTpsWithChan invokes the ons.OnsTrendTopicInputTps API asynchronously
-// api document: https://help.aliyun.com/api/ons/onstrendtopicinputtps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsTrendTopicInputTpsWithChan(request *OnsTrendTopicInputTpsRequest) (<-chan *OnsTrendTopicInputTpsResponse, <-chan error) {
 	responseChan := make(chan *OnsTrendTopicInputTpsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsTrendTopicInputTpsWithChan(request *OnsTrendTopicInputT
 }
 
 // OnsTrendTopicInputTpsWithCallback invokes the ons.OnsTrendTopicInputTps API asynchronously
-// api document: https://help.aliyun.com/api/ons/onstrendtopicinputtps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsTrendTopicInputTpsWithCallback(request *OnsTrendTopicInputTpsRequest, callback func(response *OnsTrendTopicInputTpsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,7 @@ func CreateOnsTrendTopicInputTpsRequest() (request *OnsTrendTopicInputTpsRequest
 	request = &OnsTrendTopicInputTpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTrendTopicInputTps", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTrendTopicInputTps", "", "")
 	request.Method = requests.POST
 	return
 }

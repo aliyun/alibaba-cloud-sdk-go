@@ -21,7 +21,6 @@ import (
 )
 
 // OnsMessageGetByKey invokes the ons.OnsMessageGetByKey API synchronously
-// api document: https://help.aliyun.com/api/ons/onsmessagegetbykey.html
 func (client *Client) OnsMessageGetByKey(request *OnsMessageGetByKeyRequest) (response *OnsMessageGetByKeyResponse, err error) {
 	response = CreateOnsMessageGetByKeyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsMessageGetByKey(request *OnsMessageGetByKeyRequest) (re
 }
 
 // OnsMessageGetByKeyWithChan invokes the ons.OnsMessageGetByKey API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmessagegetbykey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMessageGetByKeyWithChan(request *OnsMessageGetByKeyRequest) (<-chan *OnsMessageGetByKeyResponse, <-chan error) {
 	responseChan := make(chan *OnsMessageGetByKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsMessageGetByKeyWithChan(request *OnsMessageGetByKeyRequ
 }
 
 // OnsMessageGetByKeyWithCallback invokes the ons.OnsMessageGetByKey API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmessagegetbykey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMessageGetByKeyWithCallback(request *OnsMessageGetByKeyRequest, callback func(response *OnsMessageGetByKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateOnsMessageGetByKeyRequest() (request *OnsMessageGetByKeyRequest) {
 	request = &OnsMessageGetByKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMessageGetByKey", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMessageGetByKey", "", "")
 	request.Method = requests.POST
 	return
 }

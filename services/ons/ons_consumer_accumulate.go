@@ -21,7 +21,6 @@ import (
 )
 
 // OnsConsumerAccumulate invokes the ons.OnsConsumerAccumulate API synchronously
-// api document: https://help.aliyun.com/api/ons/onsconsumeraccumulate.html
 func (client *Client) OnsConsumerAccumulate(request *OnsConsumerAccumulateRequest) (response *OnsConsumerAccumulateResponse, err error) {
 	response = CreateOnsConsumerAccumulateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsConsumerAccumulate(request *OnsConsumerAccumulateReques
 }
 
 // OnsConsumerAccumulateWithChan invokes the ons.OnsConsumerAccumulate API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsconsumeraccumulate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsConsumerAccumulateWithChan(request *OnsConsumerAccumulateRequest) (<-chan *OnsConsumerAccumulateResponse, <-chan error) {
 	responseChan := make(chan *OnsConsumerAccumulateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsConsumerAccumulateWithChan(request *OnsConsumerAccumula
 }
 
 // OnsConsumerAccumulateWithCallback invokes the ons.OnsConsumerAccumulate API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsconsumeraccumulate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsConsumerAccumulateWithCallback(request *OnsConsumerAccumulateRequest, callback func(response *OnsConsumerAccumulateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateOnsConsumerAccumulateRequest() (request *OnsConsumerAccumulateRequest
 	request = &OnsConsumerAccumulateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsConsumerAccumulate", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsConsumerAccumulate", "", "")
 	request.Method = requests.POST
 	return
 }

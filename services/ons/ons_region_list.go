@@ -21,7 +21,6 @@ import (
 )
 
 // OnsRegionList invokes the ons.OnsRegionList API synchronously
-// api document: https://help.aliyun.com/api/ons/onsregionlist.html
 func (client *Client) OnsRegionList(request *OnsRegionListRequest) (response *OnsRegionListResponse, err error) {
 	response = CreateOnsRegionListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsRegionList(request *OnsRegionListRequest) (response *On
 }
 
 // OnsRegionListWithChan invokes the ons.OnsRegionList API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsregionlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsRegionListWithChan(request *OnsRegionListRequest) (<-chan *OnsRegionListResponse, <-chan error) {
 	responseChan := make(chan *OnsRegionListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsRegionListWithChan(request *OnsRegionListRequest) (<-ch
 }
 
 // OnsRegionListWithCallback invokes the ons.OnsRegionList API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsregionlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsRegionListWithCallback(request *OnsRegionListRequest, callback func(response *OnsRegionListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateOnsRegionListRequest() (request *OnsRegionListRequest) {
 	request = &OnsRegionListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsRegionList", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsRegionList", "", "")
 	request.Method = requests.POST
 	return
 }

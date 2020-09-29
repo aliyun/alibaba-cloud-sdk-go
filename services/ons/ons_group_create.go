@@ -21,7 +21,6 @@ import (
 )
 
 // OnsGroupCreate invokes the ons.OnsGroupCreate API synchronously
-// api document: https://help.aliyun.com/api/ons/onsgroupcreate.html
 func (client *Client) OnsGroupCreate(request *OnsGroupCreateRequest) (response *OnsGroupCreateResponse, err error) {
 	response = CreateOnsGroupCreateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsGroupCreate(request *OnsGroupCreateRequest) (response *
 }
 
 // OnsGroupCreateWithChan invokes the ons.OnsGroupCreate API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsgroupcreate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsGroupCreateWithChan(request *OnsGroupCreateRequest) (<-chan *OnsGroupCreateResponse, <-chan error) {
 	responseChan := make(chan *OnsGroupCreateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsGroupCreateWithChan(request *OnsGroupCreateRequest) (<-
 }
 
 // OnsGroupCreateWithCallback invokes the ons.OnsGroupCreate API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsgroupcreate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsGroupCreateWithCallback(request *OnsGroupCreateRequest, callback func(response *OnsGroupCreateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateOnsGroupCreateRequest() (request *OnsGroupCreateRequest) {
 	request = &OnsGroupCreateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsGroupCreate", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsGroupCreate", "", "")
 	request.Method = requests.POST
 	return
 }

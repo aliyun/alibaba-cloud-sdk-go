@@ -21,7 +21,6 @@ import (
 )
 
 // OnsTopicSubDetail invokes the ons.OnsTopicSubDetail API synchronously
-// api document: https://help.aliyun.com/api/ons/onstopicsubdetail.html
 func (client *Client) OnsTopicSubDetail(request *OnsTopicSubDetailRequest) (response *OnsTopicSubDetailResponse, err error) {
 	response = CreateOnsTopicSubDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsTopicSubDetail(request *OnsTopicSubDetailRequest) (resp
 }
 
 // OnsTopicSubDetailWithChan invokes the ons.OnsTopicSubDetail API asynchronously
-// api document: https://help.aliyun.com/api/ons/onstopicsubdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsTopicSubDetailWithChan(request *OnsTopicSubDetailRequest) (<-chan *OnsTopicSubDetailResponse, <-chan error) {
 	responseChan := make(chan *OnsTopicSubDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsTopicSubDetailWithChan(request *OnsTopicSubDetailReques
 }
 
 // OnsTopicSubDetailWithCallback invokes the ons.OnsTopicSubDetail API asynchronously
-// api document: https://help.aliyun.com/api/ons/onstopicsubdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsTopicSubDetailWithCallback(request *OnsTopicSubDetailRequest, callback func(response *OnsTopicSubDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateOnsTopicSubDetailRequest() (request *OnsTopicSubDetailRequest) {
 	request = &OnsTopicSubDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTopicSubDetail", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTopicSubDetail", "", "")
 	request.Method = requests.POST
 	return
 }

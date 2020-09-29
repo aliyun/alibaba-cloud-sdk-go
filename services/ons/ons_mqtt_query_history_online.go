@@ -21,7 +21,6 @@ import (
 )
 
 // OnsMqttQueryHistoryOnline invokes the ons.OnsMqttQueryHistoryOnline API synchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttqueryhistoryonline.html
 func (client *Client) OnsMqttQueryHistoryOnline(request *OnsMqttQueryHistoryOnlineRequest) (response *OnsMqttQueryHistoryOnlineResponse, err error) {
 	response = CreateOnsMqttQueryHistoryOnlineResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsMqttQueryHistoryOnline(request *OnsMqttQueryHistoryOnli
 }
 
 // OnsMqttQueryHistoryOnlineWithChan invokes the ons.OnsMqttQueryHistoryOnline API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttqueryhistoryonline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMqttQueryHistoryOnlineWithChan(request *OnsMqttQueryHistoryOnlineRequest) (<-chan *OnsMqttQueryHistoryOnlineResponse, <-chan error) {
 	responseChan := make(chan *OnsMqttQueryHistoryOnlineResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsMqttQueryHistoryOnlineWithChan(request *OnsMqttQueryHis
 }
 
 // OnsMqttQueryHistoryOnlineWithCallback invokes the ons.OnsMqttQueryHistoryOnline API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttqueryhistoryonline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMqttQueryHistoryOnlineWithCallback(request *OnsMqttQueryHistoryOnlineRequest, callback func(response *OnsMqttQueryHistoryOnlineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateOnsMqttQueryHistoryOnlineRequest() (request *OnsMqttQueryHistoryOnlin
 	request = &OnsMqttQueryHistoryOnlineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttQueryHistoryOnline", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttQueryHistoryOnline", "", "")
 	request.Method = requests.POST
 	return
 }

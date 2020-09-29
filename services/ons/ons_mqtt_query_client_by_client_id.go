@@ -21,7 +21,6 @@ import (
 )
 
 // OnsMqttQueryClientByClientId invokes the ons.OnsMqttQueryClientByClientId API synchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttqueryclientbyclientid.html
 func (client *Client) OnsMqttQueryClientByClientId(request *OnsMqttQueryClientByClientIdRequest) (response *OnsMqttQueryClientByClientIdResponse, err error) {
 	response = CreateOnsMqttQueryClientByClientIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsMqttQueryClientByClientId(request *OnsMqttQueryClientBy
 }
 
 // OnsMqttQueryClientByClientIdWithChan invokes the ons.OnsMqttQueryClientByClientId API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttqueryclientbyclientid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMqttQueryClientByClientIdWithChan(request *OnsMqttQueryClientByClientIdRequest) (<-chan *OnsMqttQueryClientByClientIdResponse, <-chan error) {
 	responseChan := make(chan *OnsMqttQueryClientByClientIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsMqttQueryClientByClientIdWithChan(request *OnsMqttQuery
 }
 
 // OnsMqttQueryClientByClientIdWithCallback invokes the ons.OnsMqttQueryClientByClientId API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttqueryclientbyclientid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMqttQueryClientByClientIdWithCallback(request *OnsMqttQueryClientByClientIdRequest, callback func(response *OnsMqttQueryClientByClientIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateOnsMqttQueryClientByClientIdRequest() (request *OnsMqttQueryClientByC
 	request = &OnsMqttQueryClientByClientIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttQueryClientByClientId", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttQueryClientByClientId", "", "")
 	request.Method = requests.POST
 	return
 }

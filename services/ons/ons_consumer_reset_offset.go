@@ -21,7 +21,6 @@ import (
 )
 
 // OnsConsumerResetOffset invokes the ons.OnsConsumerResetOffset API synchronously
-// api document: https://help.aliyun.com/api/ons/onsconsumerresetoffset.html
 func (client *Client) OnsConsumerResetOffset(request *OnsConsumerResetOffsetRequest) (response *OnsConsumerResetOffsetResponse, err error) {
 	response = CreateOnsConsumerResetOffsetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsConsumerResetOffset(request *OnsConsumerResetOffsetRequ
 }
 
 // OnsConsumerResetOffsetWithChan invokes the ons.OnsConsumerResetOffset API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsconsumerresetoffset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsConsumerResetOffsetWithChan(request *OnsConsumerResetOffsetRequest) (<-chan *OnsConsumerResetOffsetResponse, <-chan error) {
 	responseChan := make(chan *OnsConsumerResetOffsetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsConsumerResetOffsetWithChan(request *OnsConsumerResetOf
 }
 
 // OnsConsumerResetOffsetWithCallback invokes the ons.OnsConsumerResetOffset API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsconsumerresetoffset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsConsumerResetOffsetWithCallback(request *OnsConsumerResetOffsetRequest, callback func(response *OnsConsumerResetOffsetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateOnsConsumerResetOffsetRequest() (request *OnsConsumerResetOffsetReque
 	request = &OnsConsumerResetOffsetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsConsumerResetOffset", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsConsumerResetOffset", "", "")
 	request.Method = requests.POST
 	return
 }

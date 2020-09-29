@@ -21,7 +21,6 @@ import (
 )
 
 // OnsInstanceBaseInfo invokes the ons.OnsInstanceBaseInfo API synchronously
-// api document: https://help.aliyun.com/api/ons/onsinstancebaseinfo.html
 func (client *Client) OnsInstanceBaseInfo(request *OnsInstanceBaseInfoRequest) (response *OnsInstanceBaseInfoResponse, err error) {
 	response = CreateOnsInstanceBaseInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsInstanceBaseInfo(request *OnsInstanceBaseInfoRequest) (
 }
 
 // OnsInstanceBaseInfoWithChan invokes the ons.OnsInstanceBaseInfo API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsinstancebaseinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsInstanceBaseInfoWithChan(request *OnsInstanceBaseInfoRequest) (<-chan *OnsInstanceBaseInfoResponse, <-chan error) {
 	responseChan := make(chan *OnsInstanceBaseInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsInstanceBaseInfoWithChan(request *OnsInstanceBaseInfoRe
 }
 
 // OnsInstanceBaseInfoWithCallback invokes the ons.OnsInstanceBaseInfo API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsinstancebaseinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsInstanceBaseInfoWithCallback(request *OnsInstanceBaseInfoRequest, callback func(response *OnsInstanceBaseInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateOnsInstanceBaseInfoRequest() (request *OnsInstanceBaseInfoRequest) {
 	request = &OnsInstanceBaseInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsInstanceBaseInfo", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsInstanceBaseInfo", "", "")
 	request.Method = requests.POST
 	return
 }

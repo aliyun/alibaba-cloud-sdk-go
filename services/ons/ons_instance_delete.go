@@ -21,7 +21,6 @@ import (
 )
 
 // OnsInstanceDelete invokes the ons.OnsInstanceDelete API synchronously
-// api document: https://help.aliyun.com/api/ons/onsinstancedelete.html
 func (client *Client) OnsInstanceDelete(request *OnsInstanceDeleteRequest) (response *OnsInstanceDeleteResponse, err error) {
 	response = CreateOnsInstanceDeleteResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsInstanceDelete(request *OnsInstanceDeleteRequest) (resp
 }
 
 // OnsInstanceDeleteWithChan invokes the ons.OnsInstanceDelete API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsinstancedelete.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsInstanceDeleteWithChan(request *OnsInstanceDeleteRequest) (<-chan *OnsInstanceDeleteResponse, <-chan error) {
 	responseChan := make(chan *OnsInstanceDeleteResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsInstanceDeleteWithChan(request *OnsInstanceDeleteReques
 }
 
 // OnsInstanceDeleteWithCallback invokes the ons.OnsInstanceDelete API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsinstancedelete.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsInstanceDeleteWithCallback(request *OnsInstanceDeleteRequest, callback func(response *OnsInstanceDeleteResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateOnsInstanceDeleteRequest() (request *OnsInstanceDeleteRequest) {
 	request = &OnsInstanceDeleteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsInstanceDelete", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsInstanceDelete", "", "")
 	request.Method = requests.POST
 	return
 }

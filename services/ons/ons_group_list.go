@@ -21,7 +21,6 @@ import (
 )
 
 // OnsGroupList invokes the ons.OnsGroupList API synchronously
-// api document: https://help.aliyun.com/api/ons/onsgrouplist.html
 func (client *Client) OnsGroupList(request *OnsGroupListRequest) (response *OnsGroupListResponse, err error) {
 	response = CreateOnsGroupListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsGroupList(request *OnsGroupListRequest) (response *OnsG
 }
 
 // OnsGroupListWithChan invokes the ons.OnsGroupList API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsgrouplist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsGroupListWithChan(request *OnsGroupListRequest) (<-chan *OnsGroupListResponse, <-chan error) {
 	responseChan := make(chan *OnsGroupListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsGroupListWithChan(request *OnsGroupListRequest) (<-chan
 }
 
 // OnsGroupListWithCallback invokes the ons.OnsGroupList API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsgrouplist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsGroupListWithCallback(request *OnsGroupListRequest, callback func(response *OnsGroupListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,7 @@ func CreateOnsGroupListRequest() (request *OnsGroupListRequest) {
 	request = &OnsGroupListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsGroupList", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsGroupList", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // OnsWarnDelete invokes the ons.OnsWarnDelete API synchronously
-// api document: https://help.aliyun.com/api/ons/onswarndelete.html
 func (client *Client) OnsWarnDelete(request *OnsWarnDeleteRequest) (response *OnsWarnDeleteResponse, err error) {
 	response = CreateOnsWarnDeleteResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsWarnDelete(request *OnsWarnDeleteRequest) (response *On
 }
 
 // OnsWarnDeleteWithChan invokes the ons.OnsWarnDelete API asynchronously
-// api document: https://help.aliyun.com/api/ons/onswarndelete.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsWarnDeleteWithChan(request *OnsWarnDeleteRequest) (<-chan *OnsWarnDeleteResponse, <-chan error) {
 	responseChan := make(chan *OnsWarnDeleteResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsWarnDeleteWithChan(request *OnsWarnDeleteRequest) (<-ch
 }
 
 // OnsWarnDeleteWithCallback invokes the ons.OnsWarnDelete API asynchronously
-// api document: https://help.aliyun.com/api/ons/onswarndelete.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsWarnDeleteWithCallback(request *OnsWarnDeleteRequest, callback func(response *OnsWarnDeleteResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateOnsWarnDeleteRequest() (request *OnsWarnDeleteRequest) {
 	request = &OnsWarnDeleteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsWarnDelete", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsWarnDelete", "", "")
 	request.Method = requests.POST
 	return
 }

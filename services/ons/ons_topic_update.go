@@ -21,7 +21,6 @@ import (
 )
 
 // OnsTopicUpdate invokes the ons.OnsTopicUpdate API synchronously
-// api document: https://help.aliyun.com/api/ons/onstopicupdate.html
 func (client *Client) OnsTopicUpdate(request *OnsTopicUpdateRequest) (response *OnsTopicUpdateResponse, err error) {
 	response = CreateOnsTopicUpdateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsTopicUpdate(request *OnsTopicUpdateRequest) (response *
 }
 
 // OnsTopicUpdateWithChan invokes the ons.OnsTopicUpdate API asynchronously
-// api document: https://help.aliyun.com/api/ons/onstopicupdate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsTopicUpdateWithChan(request *OnsTopicUpdateRequest) (<-chan *OnsTopicUpdateResponse, <-chan error) {
 	responseChan := make(chan *OnsTopicUpdateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsTopicUpdateWithChan(request *OnsTopicUpdateRequest) (<-
 }
 
 // OnsTopicUpdateWithCallback invokes the ons.OnsTopicUpdate API asynchronously
-// api document: https://help.aliyun.com/api/ons/onstopicupdate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsTopicUpdateWithCallback(request *OnsTopicUpdateRequest, callback func(response *OnsTopicUpdateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateOnsTopicUpdateRequest() (request *OnsTopicUpdateRequest) {
 	request = &OnsTopicUpdateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTopicUpdate", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTopicUpdate", "", "")
 	request.Method = requests.POST
 	return
 }

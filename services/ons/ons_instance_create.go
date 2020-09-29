@@ -21,7 +21,6 @@ import (
 )
 
 // OnsInstanceCreate invokes the ons.OnsInstanceCreate API synchronously
-// api document: https://help.aliyun.com/api/ons/onsinstancecreate.html
 func (client *Client) OnsInstanceCreate(request *OnsInstanceCreateRequest) (response *OnsInstanceCreateResponse, err error) {
 	response = CreateOnsInstanceCreateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsInstanceCreate(request *OnsInstanceCreateRequest) (resp
 }
 
 // OnsInstanceCreateWithChan invokes the ons.OnsInstanceCreate API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsinstancecreate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsInstanceCreateWithChan(request *OnsInstanceCreateRequest) (<-chan *OnsInstanceCreateResponse, <-chan error) {
 	responseChan := make(chan *OnsInstanceCreateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsInstanceCreateWithChan(request *OnsInstanceCreateReques
 }
 
 // OnsInstanceCreateWithCallback invokes the ons.OnsInstanceCreate API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsinstancecreate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsInstanceCreateWithCallback(request *OnsInstanceCreateRequest, callback func(response *OnsInstanceCreateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateOnsInstanceCreateRequest() (request *OnsInstanceCreateRequest) {
 	request = &OnsInstanceCreateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsInstanceCreate", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsInstanceCreate", "", "")
 	request.Method = requests.POST
 	return
 }

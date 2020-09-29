@@ -21,7 +21,6 @@ import (
 )
 
 // OnsDLQMessageResendById invokes the ons.OnsDLQMessageResendById API synchronously
-// api document: https://help.aliyun.com/api/ons/onsdlqmessageresendbyid.html
 func (client *Client) OnsDLQMessageResendById(request *OnsDLQMessageResendByIdRequest) (response *OnsDLQMessageResendByIdResponse, err error) {
 	response = CreateOnsDLQMessageResendByIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsDLQMessageResendById(request *OnsDLQMessageResendByIdRe
 }
 
 // OnsDLQMessageResendByIdWithChan invokes the ons.OnsDLQMessageResendById API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsdlqmessageresendbyid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsDLQMessageResendByIdWithChan(request *OnsDLQMessageResendByIdRequest) (<-chan *OnsDLQMessageResendByIdResponse, <-chan error) {
 	responseChan := make(chan *OnsDLQMessageResendByIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsDLQMessageResendByIdWithChan(request *OnsDLQMessageRese
 }
 
 // OnsDLQMessageResendByIdWithCallback invokes the ons.OnsDLQMessageResendById API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsdlqmessageresendbyid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsDLQMessageResendByIdWithCallback(request *OnsDLQMessageResendByIdRequest, callback func(response *OnsDLQMessageResendByIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateOnsDLQMessageResendByIdRequest() (request *OnsDLQMessageResendByIdReq
 	request = &OnsDLQMessageResendByIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsDLQMessageResendById", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsDLQMessageResendById", "", "")
 	request.Method = requests.POST
 	return
 }

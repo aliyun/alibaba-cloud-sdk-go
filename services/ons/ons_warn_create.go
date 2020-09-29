@@ -21,7 +21,6 @@ import (
 )
 
 // OnsWarnCreate invokes the ons.OnsWarnCreate API synchronously
-// api document: https://help.aliyun.com/api/ons/onswarncreate.html
 func (client *Client) OnsWarnCreate(request *OnsWarnCreateRequest) (response *OnsWarnCreateResponse, err error) {
 	response = CreateOnsWarnCreateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsWarnCreate(request *OnsWarnCreateRequest) (response *On
 }
 
 // OnsWarnCreateWithChan invokes the ons.OnsWarnCreate API asynchronously
-// api document: https://help.aliyun.com/api/ons/onswarncreate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsWarnCreateWithChan(request *OnsWarnCreateRequest) (<-chan *OnsWarnCreateResponse, <-chan error) {
 	responseChan := make(chan *OnsWarnCreateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsWarnCreateWithChan(request *OnsWarnCreateRequest) (<-ch
 }
 
 // OnsWarnCreateWithCallback invokes the ons.OnsWarnCreate API asynchronously
-// api document: https://help.aliyun.com/api/ons/onswarncreate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsWarnCreateWithCallback(request *OnsWarnCreateRequest, callback func(response *OnsWarnCreateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateOnsWarnCreateRequest() (request *OnsWarnCreateRequest) {
 	request = &OnsWarnCreateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsWarnCreate", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsWarnCreate", "", "")
 	request.Method = requests.POST
 	return
 }

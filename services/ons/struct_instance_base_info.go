@@ -24,5 +24,7 @@ type InstanceBaseInfo struct {
 	InstanceName      string    `json:"InstanceName" xml:"InstanceName"`
 	IndependentNaming bool      `json:"IndependentNaming" xml:"IndependentNaming"`
 	Remark            string    `json:"Remark" xml:"Remark"`
+	TopicCapacity     int       `json:"TopicCapacity" xml:"TopicCapacity"`
+	MaxTps            int64     `json:"MaxTps" xml:"MaxTps"`
 	Endpoints         Endpoints `json:"Endpoints" xml:"Endpoints"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // OnsMessageGetByMsgId invokes the ons.OnsMessageGetByMsgId API synchronously
-// api document: https://help.aliyun.com/api/ons/onsmessagegetbymsgid.html
 func (client *Client) OnsMessageGetByMsgId(request *OnsMessageGetByMsgIdRequest) (response *OnsMessageGetByMsgIdResponse, err error) {
 	response = CreateOnsMessageGetByMsgIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsMessageGetByMsgId(request *OnsMessageGetByMsgIdRequest)
 }
 
 // OnsMessageGetByMsgIdWithChan invokes the ons.OnsMessageGetByMsgId API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmessagegetbymsgid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMessageGetByMsgIdWithChan(request *OnsMessageGetByMsgIdRequest) (<-chan *OnsMessageGetByMsgIdResponse, <-chan error) {
 	responseChan := make(chan *OnsMessageGetByMsgIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsMessageGetByMsgIdWithChan(request *OnsMessageGetByMsgId
 }
 
 // OnsMessageGetByMsgIdWithCallback invokes the ons.OnsMessageGetByMsgId API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmessagegetbymsgid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMessageGetByMsgIdWithCallback(request *OnsMessageGetByMsgIdRequest, callback func(response *OnsMessageGetByMsgIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateOnsMessageGetByMsgIdRequest() (request *OnsMessageGetByMsgIdRequest) 
 	request = &OnsMessageGetByMsgIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMessageGetByMsgId", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMessageGetByMsgId", "", "")
 	request.Method = requests.POST
 	return
 }

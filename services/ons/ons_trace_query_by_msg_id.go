@@ -21,7 +21,6 @@ import (
 )
 
 // OnsTraceQueryByMsgId invokes the ons.OnsTraceQueryByMsgId API synchronously
-// api document: https://help.aliyun.com/api/ons/onstracequerybymsgid.html
 func (client *Client) OnsTraceQueryByMsgId(request *OnsTraceQueryByMsgIdRequest) (response *OnsTraceQueryByMsgIdResponse, err error) {
 	response = CreateOnsTraceQueryByMsgIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsTraceQueryByMsgId(request *OnsTraceQueryByMsgIdRequest)
 }
 
 // OnsTraceQueryByMsgIdWithChan invokes the ons.OnsTraceQueryByMsgId API asynchronously
-// api document: https://help.aliyun.com/api/ons/onstracequerybymsgid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsTraceQueryByMsgIdWithChan(request *OnsTraceQueryByMsgIdRequest) (<-chan *OnsTraceQueryByMsgIdResponse, <-chan error) {
 	responseChan := make(chan *OnsTraceQueryByMsgIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsTraceQueryByMsgIdWithChan(request *OnsTraceQueryByMsgId
 }
 
 // OnsTraceQueryByMsgIdWithCallback invokes the ons.OnsTraceQueryByMsgId API asynchronously
-// api document: https://help.aliyun.com/api/ons/onstracequerybymsgid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsTraceQueryByMsgIdWithCallback(request *OnsTraceQueryByMsgIdRequest, callback func(response *OnsTraceQueryByMsgIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateOnsTraceQueryByMsgIdRequest() (request *OnsTraceQueryByMsgIdRequest) 
 	request = &OnsTraceQueryByMsgIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTraceQueryByMsgId", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsTraceQueryByMsgId", "", "")
 	request.Method = requests.POST
 	return
 }

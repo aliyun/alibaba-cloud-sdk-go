@@ -21,7 +21,6 @@ import (
 )
 
 // OnsDLQMessagePageQueryByGroupId invokes the ons.OnsDLQMessagePageQueryByGroupId API synchronously
-// api document: https://help.aliyun.com/api/ons/onsdlqmessagepagequerybygroupid.html
 func (client *Client) OnsDLQMessagePageQueryByGroupId(request *OnsDLQMessagePageQueryByGroupIdRequest) (response *OnsDLQMessagePageQueryByGroupIdResponse, err error) {
 	response = CreateOnsDLQMessagePageQueryByGroupIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsDLQMessagePageQueryByGroupId(request *OnsDLQMessagePage
 }
 
 // OnsDLQMessagePageQueryByGroupIdWithChan invokes the ons.OnsDLQMessagePageQueryByGroupId API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsdlqmessagepagequerybygroupid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsDLQMessagePageQueryByGroupIdWithChan(request *OnsDLQMessagePageQueryByGroupIdRequest) (<-chan *OnsDLQMessagePageQueryByGroupIdResponse, <-chan error) {
 	responseChan := make(chan *OnsDLQMessagePageQueryByGroupIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsDLQMessagePageQueryByGroupIdWithChan(request *OnsDLQMes
 }
 
 // OnsDLQMessagePageQueryByGroupIdWithCallback invokes the ons.OnsDLQMessagePageQueryByGroupId API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsdlqmessagepagequerybygroupid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsDLQMessagePageQueryByGroupIdWithCallback(request *OnsDLQMessagePageQueryByGroupIdRequest, callback func(response *OnsDLQMessagePageQueryByGroupIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateOnsDLQMessagePageQueryByGroupIdRequest() (request *OnsDLQMessagePageQ
 	request = &OnsDLQMessagePageQueryByGroupIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsDLQMessagePageQueryByGroupId", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsDLQMessagePageQueryByGroupId", "", "")
 	request.Method = requests.POST
 	return
 }

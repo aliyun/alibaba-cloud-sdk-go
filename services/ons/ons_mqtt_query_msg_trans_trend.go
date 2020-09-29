@@ -21,7 +21,6 @@ import (
 )
 
 // OnsMqttQueryMsgTransTrend invokes the ons.OnsMqttQueryMsgTransTrend API synchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttquerymsgtranstrend.html
 func (client *Client) OnsMqttQueryMsgTransTrend(request *OnsMqttQueryMsgTransTrendRequest) (response *OnsMqttQueryMsgTransTrendResponse, err error) {
 	response = CreateOnsMqttQueryMsgTransTrendResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsMqttQueryMsgTransTrend(request *OnsMqttQueryMsgTransTre
 }
 
 // OnsMqttQueryMsgTransTrendWithChan invokes the ons.OnsMqttQueryMsgTransTrend API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttquerymsgtranstrend.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMqttQueryMsgTransTrendWithChan(request *OnsMqttQueryMsgTransTrendRequest) (<-chan *OnsMqttQueryMsgTransTrendResponse, <-chan error) {
 	responseChan := make(chan *OnsMqttQueryMsgTransTrendResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsMqttQueryMsgTransTrendWithChan(request *OnsMqttQueryMsg
 }
 
 // OnsMqttQueryMsgTransTrendWithCallback invokes the ons.OnsMqttQueryMsgTransTrend API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmqttquerymsgtranstrend.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMqttQueryMsgTransTrendWithCallback(request *OnsMqttQueryMsgTransTrendRequest, callback func(response *OnsMqttQueryMsgTransTrendResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,7 @@ func CreateOnsMqttQueryMsgTransTrendRequest() (request *OnsMqttQueryMsgTransTren
 	request = &OnsMqttQueryMsgTransTrendRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttQueryMsgTransTrend", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMqttQueryMsgTransTrend", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // OnsMessageTrace invokes the ons.OnsMessageTrace API synchronously
-// api document: https://help.aliyun.com/api/ons/onsmessagetrace.html
 func (client *Client) OnsMessageTrace(request *OnsMessageTraceRequest) (response *OnsMessageTraceResponse, err error) {
 	response = CreateOnsMessageTraceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsMessageTrace(request *OnsMessageTraceRequest) (response
 }
 
 // OnsMessageTraceWithChan invokes the ons.OnsMessageTrace API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmessagetrace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMessageTraceWithChan(request *OnsMessageTraceRequest) (<-chan *OnsMessageTraceResponse, <-chan error) {
 	responseChan := make(chan *OnsMessageTraceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsMessageTraceWithChan(request *OnsMessageTraceRequest) (
 }
 
 // OnsMessageTraceWithCallback invokes the ons.OnsMessageTrace API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmessagetrace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMessageTraceWithCallback(request *OnsMessageTraceRequest, callback func(response *OnsMessageTraceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,7 @@ func CreateOnsMessageTraceRequest() (request *OnsMessageTraceRequest) {
 	request = &OnsMessageTraceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMessageTrace", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMessageTrace", "", "")
 	request.Method = requests.POST
 	return
 }

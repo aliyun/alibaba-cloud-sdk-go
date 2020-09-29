@@ -21,7 +21,6 @@ import (
 )
 
 // OnsGroupDelete invokes the ons.OnsGroupDelete API synchronously
-// api document: https://help.aliyun.com/api/ons/onsgroupdelete.html
 func (client *Client) OnsGroupDelete(request *OnsGroupDeleteRequest) (response *OnsGroupDeleteResponse, err error) {
 	response = CreateOnsGroupDeleteResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsGroupDelete(request *OnsGroupDeleteRequest) (response *
 }
 
 // OnsGroupDeleteWithChan invokes the ons.OnsGroupDelete API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsgroupdelete.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsGroupDeleteWithChan(request *OnsGroupDeleteRequest) (<-chan *OnsGroupDeleteResponse, <-chan error) {
 	responseChan := make(chan *OnsGroupDeleteResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsGroupDeleteWithChan(request *OnsGroupDeleteRequest) (<-
 }
 
 // OnsGroupDeleteWithCallback invokes the ons.OnsGroupDelete API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsgroupdelete.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsGroupDeleteWithCallback(request *OnsGroupDeleteRequest, callback func(response *OnsGroupDeleteResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateOnsGroupDeleteRequest() (request *OnsGroupDeleteRequest) {
 	request = &OnsGroupDeleteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsGroupDelete", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsGroupDelete", "", "")
 	request.Method = requests.POST
 	return
 }

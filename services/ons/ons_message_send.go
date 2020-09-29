@@ -21,7 +21,6 @@ import (
 )
 
 // OnsMessageSend invokes the ons.OnsMessageSend API synchronously
-// api document: https://help.aliyun.com/api/ons/onsmessagesend.html
 func (client *Client) OnsMessageSend(request *OnsMessageSendRequest) (response *OnsMessageSendResponse, err error) {
 	response = CreateOnsMessageSendResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OnsMessageSend(request *OnsMessageSendRequest) (response *
 }
 
 // OnsMessageSendWithChan invokes the ons.OnsMessageSend API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmessagesend.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMessageSendWithChan(request *OnsMessageSendRequest) (<-chan *OnsMessageSendResponse, <-chan error) {
 	responseChan := make(chan *OnsMessageSendResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OnsMessageSendWithChan(request *OnsMessageSendRequest) (<-
 }
 
 // OnsMessageSendWithCallback invokes the ons.OnsMessageSend API asynchronously
-// api document: https://help.aliyun.com/api/ons/onsmessagesend.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OnsMessageSendWithCallback(request *OnsMessageSendRequest, callback func(response *OnsMessageSendResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateOnsMessageSendRequest() (request *OnsMessageSendRequest) {
 	request = &OnsMessageSendRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMessageSend", "ons", "openAPI")
+	request.InitWithApiInfo("Ons", "2019-02-14", "OnsMessageSend", "", "")
 	request.Method = requests.POST
 	return
 }
