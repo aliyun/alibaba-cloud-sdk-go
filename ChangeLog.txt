@@ -1,3 +1,7 @@
+2020-09-29 Version: v1.61.542
+- Generated 2019-02-14 for `Ons`.
+- Add API OpenOnsService which can active ons service.
+
 2020-09-29 Version: v1.61.541
 - Generated 2019-02-14 for `Ons`.
 - Add API OpenOnsService which can active ons service.
