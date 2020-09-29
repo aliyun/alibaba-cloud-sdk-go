@@ -2,7 +2,6 @@ package integration
 
 import (
 	"fmt"
-	"github.com/goji/httpauth"
 	"net/http"
 	"net/http/httptest"
 	"net/http/httputil"
@@ -13,10 +12,9 @@ import (
 	"time"
 
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk"
-
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-
+	"github.com/goji/httpauth"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -85,15 +83,15 @@ func Test_DescribeRegionsWithCommonRequestWithError(t *testing.T) {
 	request := requests.NewCommonRequest()
 	request.Version = "2014-05-26"
 	request.Product = "Ecs"
-	request.ApiName = "Describe"
+	request.ApiName = "AddTags"
 	request.SetDomain("ecs.aliyuncs.com")
 	request.TransToAcsRequest()
 	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 	_, err = client.ProcessCommonRequest(request)
 	realerr := err.(errors.Error)
-	assert.Equal(t, "InvalidParameter", realerr.ErrorCode())
-	assert.Equal(t, "The specified parameter \"Action or Version\" is not valid.", realerr.Message())
+	assert.Equal(t, "MissingParameter", realerr.ErrorCode())
+	assert.Equal(t, "The input parameter \"ResourceType\" that is mandatory for processing this request is not supplied.", realerr.Message())
 }
 
 func Test_DescribeRegionsWithCommonRequestWithIncompleteSignature(t *testing.T) {
@@ -143,8 +141,8 @@ func Test_DescribeClustersWithCommonRequestWithSignatureDostNotMatch(t *testing.
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
 	real, _ := err.(*errors.ServerError)
-	assert.Contains(t, real.Recommend(), "InvalidAccessKeySecret: Please check you AccessKeySecret")
-	assert.Equal(t, real.ErrorCode(), "SignatureDoesNotMatch")
+	assert.Contains(t, real.Recommend(), "InvalidAction.NotFound")
+	assert.Equal(t, real.ErrorCode(), "InvalidAction.NotFound")
 }
 
 func Test_DescribeClustersWithCommonRequestWithROAWithSTStoken(t *testing.T) {
@@ -168,7 +166,7 @@ func Test_DescribeClustersWithCommonRequestWithROAWithSTStoken(t *testing.T) {
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
 	assert.Contains(t, client.GetLoggerMsg(), `1.1, cs.aliyuncs.com`)
-	assert.Contains(t, err.Error(), "Request url is invalid")
+	assert.Contains(t, err.Error(), "Specified api is not found, please check your url and method.")
 }
 
 func Test_DescribeClusterDetailWithCommonRequestWithROAWithHTTPS(t *testing.T) {
@@ -185,7 +183,7 @@ func Test_DescribeClusterDetailWithCommonRequestWithROAWithHTTPS(t *testing.T) {
 
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
-	assert.Contains(t, err.Error(), "Request url is invalid")
+	assert.Contains(t, err.Error(), "Request url is invalid, Illegal character in path")
 }
 
 func Test_DescribeClusterDetailWithCommonRequestWithTimeout(t *testing.T) {
