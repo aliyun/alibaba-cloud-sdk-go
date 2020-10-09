@@ -1,3 +1,7 @@
+2020-10-09 Version: v1.61.546
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Update SetVideoSeekConfig API.
+
 2020-09-29 Version: v1.61.545
 - Generated 2019-02-14 for `Ons`.
 - Add API OpenOnsService which can active ons service.
