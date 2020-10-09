@@ -1,3 +1,7 @@
+2020-10-09 Version: v1.61.547
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Update DescribeCdnUserBillHistory API.
+
 2020-10-09 Version: v1.61.546
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Update SetVideoSeekConfig API.
