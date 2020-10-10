@@ -73,6 +73,7 @@ type CreatePrePayOrderRequest struct {
 	*requests.RpcRequest
 	DiskSize   requests.Integer `position:"Query" name:"DiskSize"`
 	IoMax      requests.Integer `position:"Query" name:"IoMax"`
+	IoMaxSpec  string           `position:"Query" name:"IoMaxSpec"`
 	DiskType   string           `position:"Query" name:"DiskType"`
 	TopicQuota requests.Integer `position:"Query" name:"TopicQuota"`
 	EipMax     requests.Integer `position:"Query" name:"EipMax"`

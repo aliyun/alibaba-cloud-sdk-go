@@ -73,6 +73,7 @@ type UpgradePrePayOrderRequest struct {
 	*requests.RpcRequest
 	DiskSize   requests.Integer `position:"Query" name:"DiskSize"`
 	IoMax      requests.Integer `position:"Query" name:"IoMax"`
+	IoMaxSpec  string           `position:"Query" name:"IoMaxSpec"`
 	TopicQuota requests.Integer `position:"Query" name:"TopicQuota"`
 	EipMax     requests.Integer `position:"Query" name:"EipMax"`
 	SpecType   string           `position:"Query" name:"SpecType"`
