@@ -17,5 +17,5 @@ package nas
 
 // Clients is a nested struct in nas response
 type Clients struct {
-	Client []Client `json:"Client" xml:"Client"`
+	Client []ClientInfo `json:"Client" xml:"Client"`
 }

@@ -16,6 +16,6 @@ package nas
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 // Client is a nested struct in nas response
-type Client struct {
+type ClientInfo struct {
 	ClientIP string `json:"ClientIP" xml:"ClientIP"`
 }
