@@ -72,6 +72,7 @@ func (client *Client) ApproveOrderWithCallback(request *ApproveOrderRequest, cal
 type ApproveOrderRequest struct {
 	*requests.RpcRequest
 	ApprovalType       string           `position:"Query" name:"ApprovalType"`
+	Comment            string           `position:"Query" name:"Comment"`
 	Tid                requests.Integer `position:"Query" name:"Tid"`
 	WorkflowInstanceId requests.Integer `position:"Query" name:"WorkflowInstanceId"`
 }
