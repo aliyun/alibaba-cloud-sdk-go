@@ -20,6 +20,9 @@
 欢迎使用 Alibaba Cloud SDK for Go。Alibaba Cloud SDK for Go 让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。
 这里向您介绍如何获取 [Alibaba Cloud SDK for Go][SDK] 并开始调用。
 
+## 使用诊断
+[Troubleshoot](https://troubleshoot.api.aliyun.com/?source=github_sdk) 提供 OpenAPI 使用诊断服务，通过 `RequestID` 或 `报错信息` ，帮助开发者快速定位，为开发者提供解决方案。
+
 ## 在线示例
 [API Explorer][open-api] 提供在线调用阿里云产品，并动态生成 SDK 代码和快速检索接口等能力，能显著降低使用云 API 的难度。
 
