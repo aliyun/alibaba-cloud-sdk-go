@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateFile invokes the codeup.UpdateFile API synchronously
-// api document: https://help.aliyun.com/api/codeup/updatefile.html
 func (client *Client) UpdateFile(request *UpdateFileRequest) (response *UpdateFileResponse, err error) {
 	response = CreateUpdateFileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateFile(request *UpdateFileRequest) (response *UpdateFi
 }
 
 // UpdateFileWithChan invokes the codeup.UpdateFile API asynchronously
-// api document: https://help.aliyun.com/api/codeup/updatefile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateFileWithChan(request *UpdateFileRequest) (<-chan *UpdateFileResponse, <-chan error) {
 	responseChan := make(chan *UpdateFileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateFileWithChan(request *UpdateFileRequest) (<-chan *Up
 }
 
 // UpdateFileWithCallback invokes the codeup.UpdateFile API asynchronously
-// api document: https://help.aliyun.com/api/codeup/updatefile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateFileWithCallback(request *UpdateFileRequest, callback func(response *UpdateFileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

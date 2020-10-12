@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteRepositoryGroup invokes the codeup.DeleteRepositoryGroup API synchronously
-// api document: https://help.aliyun.com/api/codeup/deleterepositorygroup.html
 func (client *Client) DeleteRepositoryGroup(request *DeleteRepositoryGroupRequest) (response *DeleteRepositoryGroupResponse, err error) {
 	response = CreateDeleteRepositoryGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteRepositoryGroup(request *DeleteRepositoryGroupReques
 }
 
 // DeleteRepositoryGroupWithChan invokes the codeup.DeleteRepositoryGroup API asynchronously
-// api document: https://help.aliyun.com/api/codeup/deleterepositorygroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRepositoryGroupWithChan(request *DeleteRepositoryGroupRequest) (<-chan *DeleteRepositoryGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteRepositoryGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteRepositoryGroupWithChan(request *DeleteRepositoryGro
 }
 
 // DeleteRepositoryGroupWithCallback invokes the codeup.DeleteRepositoryGroup API asynchronously
-// api document: https://help.aliyun.com/api/codeup/deleterepositorygroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRepositoryGroupWithCallback(request *DeleteRepositoryGroupRequest, callback func(response *DeleteRepositoryGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,8 +92,8 @@ func CreateDeleteRepositoryGroupRequest() (request *DeleteRepositoryGroupRequest
 	request = &DeleteRepositoryGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("codeup", "2020-04-14", "DeleteRepositoryGroup", "/api/v3/groups/[GroupId]", "", "")
-	request.Method = requests.DELETE
+	request.InitWithApiInfo("codeup", "2020-04-14", "DeleteRepositoryGroup", "/api/v3/groups/[GroupId]/remove", "", "")
+	request.Method = requests.POST
 	return
 }
 

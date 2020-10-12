@@ -21,7 +21,6 @@ import (
 )
 
 // GetFileBlobs invokes the codeup.GetFileBlobs API synchronously
-// api document: https://help.aliyun.com/api/codeup/getfileblobs.html
 func (client *Client) GetFileBlobs(request *GetFileBlobsRequest) (response *GetFileBlobsResponse, err error) {
 	response = CreateGetFileBlobsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetFileBlobs(request *GetFileBlobsRequest) (response *GetF
 }
 
 // GetFileBlobsWithChan invokes the codeup.GetFileBlobs API asynchronously
-// api document: https://help.aliyun.com/api/codeup/getfileblobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetFileBlobsWithChan(request *GetFileBlobsRequest) (<-chan *GetFileBlobsResponse, <-chan error) {
 	responseChan := make(chan *GetFileBlobsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetFileBlobsWithChan(request *GetFileBlobsRequest) (<-chan
 }
 
 // GetFileBlobsWithCallback invokes the codeup.GetFileBlobs API asynchronously
-// api document: https://help.aliyun.com/api/codeup/getfileblobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetFileBlobsWithCallback(request *GetFileBlobsRequest, callback func(response *GetFileBlobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateRepositoryGroup invokes the codeup.CreateRepositoryGroup API synchronously
-func (client *Client) CreateRepositoryGroup(request *CreateRepositoryGroupRequest) (response *CreateRepositoryGroupResponse, err error) {
-	response = CreateCreateRepositoryGroupResponse()
+// GetRepositoryInfo invokes the codeup.GetRepositoryInfo API synchronously
+func (client *Client) GetRepositoryInfo(request *GetRepositoryInfoRequest) (response *GetRepositoryInfoResponse, err error) {
+	response = CreateGetRepositoryInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateRepositoryGroupWithChan invokes the codeup.CreateRepositoryGroup API asynchronously
-func (client *Client) CreateRepositoryGroupWithChan(request *CreateRepositoryGroupRequest) (<-chan *CreateRepositoryGroupResponse, <-chan error) {
-	responseChan := make(chan *CreateRepositoryGroupResponse, 1)
+// GetRepositoryInfoWithChan invokes the codeup.GetRepositoryInfo API asynchronously
+func (client *Client) GetRepositoryInfoWithChan(request *GetRepositoryInfoRequest) (<-chan *GetRepositoryInfoResponse, <-chan error) {
+	responseChan := make(chan *GetRepositoryInfoResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateRepositoryGroup(request)
+		response, err := client.GetRepositoryInfo(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateRepositoryGroupWithChan(request *CreateRepositoryGro
 	return responseChan, errChan
 }
 
-// CreateRepositoryGroupWithCallback invokes the codeup.CreateRepositoryGroup API asynchronously
-func (client *Client) CreateRepositoryGroupWithCallback(request *CreateRepositoryGroupRequest, callback func(response *CreateRepositoryGroupResponse, err error)) <-chan int {
+// GetRepositoryInfoWithCallback invokes the codeup.GetRepositoryInfo API asynchronously
+func (client *Client) GetRepositoryInfoWithCallback(request *GetRepositoryInfoRequest, callback func(response *GetRepositoryInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateRepositoryGroupResponse
+		var response *GetRepositoryInfoResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateRepositoryGroup(request)
+		response, err = client.GetRepositoryInfo(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,17 +68,16 @@ func (client *Client) CreateRepositoryGroupWithCallback(request *CreateRepositor
 	return result
 }
 
-// CreateRepositoryGroupRequest is the request struct for api CreateRepositoryGroup
-type CreateRepositoryGroupRequest struct {
+// GetRepositoryInfoRequest is the request struct for api GetRepositoryInfo
+type GetRepositoryInfoRequest struct {
 	*requests.RoaRequest
 	OrganizationId string `position:"Query" name:"OrganizationId"`
-	SubUserId      string `position:"Query" name:"SubUserId"`
-	ClientToken    string `position:"Query" name:"ClientToken"`
+	Identity       string `position:"Query" name:"Identity"`
 	AccessToken    string `position:"Query" name:"AccessToken"`
 }
 
-// CreateRepositoryGroupResponse is the response struct for api CreateRepositoryGroup
-type CreateRepositoryGroupResponse struct {
+// GetRepositoryInfoResponse is the response struct for api GetRepositoryInfo
+type GetRepositoryInfoResponse struct {
 	*responses.BaseResponse
 	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
@@ -87,19 +86,19 @@ type CreateRepositoryGroupResponse struct {
 	Result       Result `json:"Result" xml:"Result"`
 }
 
-// CreateCreateRepositoryGroupRequest creates a request to invoke CreateRepositoryGroup API
-func CreateCreateRepositoryGroupRequest() (request *CreateRepositoryGroupRequest) {
-	request = &CreateRepositoryGroupRequest{
+// CreateGetRepositoryInfoRequest creates a request to invoke GetRepositoryInfo API
+func CreateGetRepositoryInfoRequest() (request *GetRepositoryInfoRequest) {
+	request = &GetRepositoryInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("codeup", "2020-04-14", "CreateRepositoryGroup", "/api/v3/groups", "", "")
-	request.Method = requests.POST
+	request.InitWithApiInfo("codeup", "2020-04-14", "GetRepositoryInfo", "/api/v3/projects/info", "", "")
+	request.Method = requests.GET
 	return
 }
 
-// CreateCreateRepositoryGroupResponse creates a response to parse from CreateRepositoryGroup response
-func CreateCreateRepositoryGroupResponse() (response *CreateRepositoryGroupResponse) {
-	response = &CreateRepositoryGroupResponse{
+// CreateGetRepositoryInfoResponse creates a response to parse from GetRepositoryInfo response
+func CreateGetRepositoryInfoResponse() (response *GetRepositoryInfoResponse) {
+	response = &GetRepositoryInfoResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

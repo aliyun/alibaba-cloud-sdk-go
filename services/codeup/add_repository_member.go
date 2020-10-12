@@ -21,7 +21,6 @@ import (
 )
 
 // AddRepositoryMember invokes the codeup.AddRepositoryMember API synchronously
-// api document: https://help.aliyun.com/api/codeup/addrepositorymember.html
 func (client *Client) AddRepositoryMember(request *AddRepositoryMemberRequest) (response *AddRepositoryMemberResponse, err error) {
 	response = CreateAddRepositoryMemberResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddRepositoryMember(request *AddRepositoryMemberRequest) (
 }
 
 // AddRepositoryMemberWithChan invokes the codeup.AddRepositoryMember API asynchronously
-// api document: https://help.aliyun.com/api/codeup/addrepositorymember.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddRepositoryMemberWithChan(request *AddRepositoryMemberRequest) (<-chan *AddRepositoryMemberResponse, <-chan error) {
 	responseChan := make(chan *AddRepositoryMemberResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddRepositoryMemberWithChan(request *AddRepositoryMemberRe
 }
 
 // AddRepositoryMemberWithCallback invokes the codeup.AddRepositoryMember API asynchronously
-// api document: https://help.aliyun.com/api/codeup/addrepositorymember.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddRepositoryMemberWithCallback(request *AddRepositoryMemberRequest, callback func(response *AddRepositoryMemberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

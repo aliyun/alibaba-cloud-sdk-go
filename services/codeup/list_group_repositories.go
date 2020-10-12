@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ListGroupMember invokes the codeup.ListGroupMember API synchronously
-func (client *Client) ListGroupMember(request *ListGroupMemberRequest) (response *ListGroupMemberResponse, err error) {
-	response = CreateListGroupMemberResponse()
+// ListGroupRepositories invokes the codeup.ListGroupRepositories API synchronously
+func (client *Client) ListGroupRepositories(request *ListGroupRepositoriesRequest) (response *ListGroupRepositoriesResponse, err error) {
+	response = CreateListGroupRepositoriesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ListGroupMemberWithChan invokes the codeup.ListGroupMember API asynchronously
-func (client *Client) ListGroupMemberWithChan(request *ListGroupMemberRequest) (<-chan *ListGroupMemberResponse, <-chan error) {
-	responseChan := make(chan *ListGroupMemberResponse, 1)
+// ListGroupRepositoriesWithChan invokes the codeup.ListGroupRepositories API asynchronously
+func (client *Client) ListGroupRepositoriesWithChan(request *ListGroupRepositoriesRequest) (<-chan *ListGroupRepositoriesResponse, <-chan error) {
+	responseChan := make(chan *ListGroupRepositoriesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListGroupMember(request)
+		response, err := client.ListGroupRepositories(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ListGroupMemberWithChan(request *ListGroupMemberRequest) (
 	return responseChan, errChan
 }
 
-// ListGroupMemberWithCallback invokes the codeup.ListGroupMember API asynchronously
-func (client *Client) ListGroupMemberWithCallback(request *ListGroupMemberRequest, callback func(response *ListGroupMemberResponse, err error)) <-chan int {
+// ListGroupRepositoriesWithCallback invokes the codeup.ListGroupRepositories API asynchronously
+func (client *Client) ListGroupRepositoriesWithCallback(request *ListGroupRepositoriesRequest, callback func(response *ListGroupRepositoriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListGroupMemberResponse
+		var response *ListGroupRepositoriesResponse
 		var err error
 		defer close(result)
-		response, err = client.ListGroupMember(request)
+		response, err = client.ListGroupRepositories(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,19 +68,21 @@ func (client *Client) ListGroupMemberWithCallback(request *ListGroupMemberReques
 	return result
 }
 
-// ListGroupMemberRequest is the request struct for api ListGroupMember
-type ListGroupMemberRequest struct {
+// ListGroupRepositoriesRequest is the request struct for api ListGroupRepositories
+type ListGroupRepositoriesRequest struct {
 	*requests.RoaRequest
-	OrganizationId string           `position:"Query" name:"OrganizationId"`
-	SubUserId      string           `position:"Query" name:"SubUserId"`
-	GroupId        requests.Integer `position:"Path" name:"GroupId"`
-	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	AccessToken    string           `position:"Query" name:"AccessToken"`
+	IsMember       requests.Boolean `position:"Query" name:"IsMember"`
+	OrganizationId string           `position:"Query" name:"OrganizationId"`
+	Search         string           `position:"Query" name:"Search"`
+	SubUserId      string           `position:"Query" name:"SubUserId"`
+	Identity       string           `position:"Path" name:"Identity"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	Page           requests.Integer `position:"Query" name:"Page"`
 }
 
-// ListGroupMemberResponse is the response struct for api ListGroupMember
-type ListGroupMemberResponse struct {
+// ListGroupRepositoriesResponse is the response struct for api ListGroupRepositories
+type ListGroupRepositoriesResponse struct {
 	*responses.BaseResponse
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	ErrorCode    string       `json:"ErrorCode" xml:"ErrorCode"`
@@ -89,19 +91,19 @@ type ListGroupMemberResponse struct {
 	Result       []ResultItem `json:"Result" xml:"Result"`
 }
 
-// CreateListGroupMemberRequest creates a request to invoke ListGroupMember API
-func CreateListGroupMemberRequest() (request *ListGroupMemberRequest) {
-	request = &ListGroupMemberRequest{
+// CreateListGroupRepositoriesRequest creates a request to invoke ListGroupRepositories API
+func CreateListGroupRepositoriesRequest() (request *ListGroupRepositoriesRequest) {
+	request = &ListGroupRepositoriesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("codeup", "2020-04-14", "ListGroupMember", "/api/v3/groups/[GroupId]/members", "", "")
+	request.InitWithApiInfo("codeup", "2020-04-14", "ListGroupRepositories", "/api/v3/groups/[Identity]/projects", "", "")
 	request.Method = requests.GET
 	return
 }
 
-// CreateListGroupMemberResponse creates a response to parse from ListGroupMember response
-func CreateListGroupMemberResponse() (response *ListGroupMemberResponse) {
-	response = &ListGroupMemberResponse{
+// CreateListGroupRepositoriesResponse creates a response to parse from ListGroupRepositories response
+func CreateListGroupRepositoriesResponse() (response *ListGroupRepositoriesResponse) {
+	response = &ListGroupRepositoriesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

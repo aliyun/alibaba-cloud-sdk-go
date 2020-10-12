@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UpdateRepositoryMember invokes the codeup.UpdateRepositoryMember API synchronously
-func (client *Client) UpdateRepositoryMember(request *UpdateRepositoryMemberRequest) (response *UpdateRepositoryMemberResponse, err error) {
-	response = CreateUpdateRepositoryMemberResponse()
+// GetProjectMember invokes the codeup.GetProjectMember API synchronously
+func (client *Client) GetProjectMember(request *GetProjectMemberRequest) (response *GetProjectMemberResponse, err error) {
+	response = CreateGetProjectMemberResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UpdateRepositoryMemberWithChan invokes the codeup.UpdateRepositoryMember API asynchronously
-func (client *Client) UpdateRepositoryMemberWithChan(request *UpdateRepositoryMemberRequest) (<-chan *UpdateRepositoryMemberResponse, <-chan error) {
-	responseChan := make(chan *UpdateRepositoryMemberResponse, 1)
+// GetProjectMemberWithChan invokes the codeup.GetProjectMember API asynchronously
+func (client *Client) GetProjectMemberWithChan(request *GetProjectMemberRequest) (<-chan *GetProjectMemberResponse, <-chan error) {
+	responseChan := make(chan *GetProjectMemberResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UpdateRepositoryMember(request)
+		response, err := client.GetProjectMember(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) UpdateRepositoryMemberWithChan(request *UpdateRepositoryMe
 	return responseChan, errChan
 }
 
-// UpdateRepositoryMemberWithCallback invokes the codeup.UpdateRepositoryMember API asynchronously
-func (client *Client) UpdateRepositoryMemberWithCallback(request *UpdateRepositoryMemberRequest, callback func(response *UpdateRepositoryMemberResponse, err error)) <-chan int {
+// GetProjectMemberWithCallback invokes the codeup.GetProjectMember API asynchronously
+func (client *Client) GetProjectMemberWithCallback(request *GetProjectMemberRequest, callback func(response *GetProjectMemberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UpdateRepositoryMemberResponse
+		var response *GetProjectMemberResponse
 		var err error
 		defer close(result)
-		response, err = client.UpdateRepositoryMember(request)
+		response, err = client.GetProjectMember(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,8 +68,8 @@ func (client *Client) UpdateRepositoryMemberWithCallback(request *UpdateReposito
 	return result
 }
 
-// UpdateRepositoryMemberRequest is the request struct for api UpdateRepositoryMember
-type UpdateRepositoryMemberRequest struct {
+// GetProjectMemberRequest is the request struct for api GetProjectMember
+type GetProjectMemberRequest struct {
 	*requests.RoaRequest
 	OrganizationId string           `position:"Query" name:"OrganizationId"`
 	SubUserId      string           `position:"Query" name:"SubUserId"`
@@ -78,8 +78,8 @@ type UpdateRepositoryMemberRequest struct {
 	UserId         requests.Integer `position:"Path" name:"UserId"`
 }
 
-// UpdateRepositoryMemberResponse is the response struct for api UpdateRepositoryMember
-type UpdateRepositoryMemberResponse struct {
+// GetProjectMemberResponse is the response struct for api GetProjectMember
+type GetProjectMemberResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
@@ -88,19 +88,19 @@ type UpdateRepositoryMemberResponse struct {
 	Result       Result `json:"Result" xml:"Result"`
 }
 
-// CreateUpdateRepositoryMemberRequest creates a request to invoke UpdateRepositoryMember API
-func CreateUpdateRepositoryMemberRequest() (request *UpdateRepositoryMemberRequest) {
-	request = &UpdateRepositoryMemberRequest{
+// CreateGetProjectMemberRequest creates a request to invoke GetProjectMember API
+func CreateGetProjectMemberRequest() (request *GetProjectMemberRequest) {
+	request = &GetProjectMemberRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("codeup", "2020-04-14", "UpdateRepositoryMember", "/api/v3/projects/[ProjectId]/members/[UserId]", "", "")
-	request.Method = requests.PUT
+	request.InitWithApiInfo("codeup", "2020-04-14", "GetProjectMember", "/api/v3/projects/[ProjectId]/members/[UserId]", "", "")
+	request.Method = requests.GET
 	return
 }
 
-// CreateUpdateRepositoryMemberResponse creates a response to parse from UpdateRepositoryMember response
-func CreateUpdateRepositoryMemberResponse() (response *UpdateRepositoryMemberResponse) {
-	response = &UpdateRepositoryMemberResponse{
+// CreateGetProjectMemberResponse creates a response to parse from GetProjectMember response
+func CreateGetProjectMemberResponse() (response *GetProjectMemberResponse) {
+	response = &GetProjectMemberResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

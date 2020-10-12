@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UpdateRepositoryMember invokes the codeup.UpdateRepositoryMember API synchronously
-func (client *Client) UpdateRepositoryMember(request *UpdateRepositoryMemberRequest) (response *UpdateRepositoryMemberResponse, err error) {
-	response = CreateUpdateRepositoryMemberResponse()
+// CreateTag invokes the codeup.CreateTag API synchronously
+func (client *Client) CreateTag(request *CreateTagRequest) (response *CreateTagResponse, err error) {
+	response = CreateCreateTagResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UpdateRepositoryMemberWithChan invokes the codeup.UpdateRepositoryMember API asynchronously
-func (client *Client) UpdateRepositoryMemberWithChan(request *UpdateRepositoryMemberRequest) (<-chan *UpdateRepositoryMemberResponse, <-chan error) {
-	responseChan := make(chan *UpdateRepositoryMemberResponse, 1)
+// CreateTagWithChan invokes the codeup.CreateTag API asynchronously
+func (client *Client) CreateTagWithChan(request *CreateTagRequest) (<-chan *CreateTagResponse, <-chan error) {
+	responseChan := make(chan *CreateTagResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UpdateRepositoryMember(request)
+		response, err := client.CreateTag(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) UpdateRepositoryMemberWithChan(request *UpdateRepositoryMe
 	return responseChan, errChan
 }
 
-// UpdateRepositoryMemberWithCallback invokes the codeup.UpdateRepositoryMember API asynchronously
-func (client *Client) UpdateRepositoryMemberWithCallback(request *UpdateRepositoryMemberRequest, callback func(response *UpdateRepositoryMemberResponse, err error)) <-chan int {
+// CreateTagWithCallback invokes the codeup.CreateTag API asynchronously
+func (client *Client) CreateTagWithCallback(request *CreateTagRequest, callback func(response *CreateTagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UpdateRepositoryMemberResponse
+		var response *CreateTagResponse
 		var err error
 		defer close(result)
-		response, err = client.UpdateRepositoryMember(request)
+		response, err = client.CreateTag(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,18 +68,17 @@ func (client *Client) UpdateRepositoryMemberWithCallback(request *UpdateReposito
 	return result
 }
 
-// UpdateRepositoryMemberRequest is the request struct for api UpdateRepositoryMember
-type UpdateRepositoryMemberRequest struct {
+// CreateTagRequest is the request struct for api CreateTag
+type CreateTagRequest struct {
 	*requests.RoaRequest
 	OrganizationId string           `position:"Query" name:"OrganizationId"`
 	SubUserId      string           `position:"Query" name:"SubUserId"`
 	AccessToken    string           `position:"Query" name:"AccessToken"`
 	ProjectId      requests.Integer `position:"Path" name:"ProjectId"`
-	UserId         requests.Integer `position:"Path" name:"UserId"`
 }
 
-// UpdateRepositoryMemberResponse is the response struct for api UpdateRepositoryMember
-type UpdateRepositoryMemberResponse struct {
+// CreateTagResponse is the response struct for api CreateTag
+type CreateTagResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
@@ -88,19 +87,19 @@ type UpdateRepositoryMemberResponse struct {
 	Result       Result `json:"Result" xml:"Result"`
 }
 
-// CreateUpdateRepositoryMemberRequest creates a request to invoke UpdateRepositoryMember API
-func CreateUpdateRepositoryMemberRequest() (request *UpdateRepositoryMemberRequest) {
-	request = &UpdateRepositoryMemberRequest{
+// CreateCreateTagRequest creates a request to invoke CreateTag API
+func CreateCreateTagRequest() (request *CreateTagRequest) {
+	request = &CreateTagRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("codeup", "2020-04-14", "UpdateRepositoryMember", "/api/v3/projects/[ProjectId]/members/[UserId]", "", "")
-	request.Method = requests.PUT
+	request.InitWithApiInfo("codeup", "2020-04-14", "CreateTag", "/api/v3/projects/[ProjectId]/repository/tags", "", "")
+	request.Method = requests.POST
 	return
 }
 
-// CreateUpdateRepositoryMemberResponse creates a response to parse from UpdateRepositoryMember response
-func CreateUpdateRepositoryMemberResponse() (response *UpdateRepositoryMemberResponse) {
-	response = &UpdateRepositoryMemberResponse{
+// CreateCreateTagResponse creates a response to parse from CreateTag response
+func CreateCreateTagResponse() (response *CreateTagResponse) {
+	response = &CreateTagResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

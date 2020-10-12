@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteFile invokes the codeup.DeleteFile API synchronously
-// api document: https://help.aliyun.com/api/codeup/deletefile.html
 func (client *Client) DeleteFile(request *DeleteFileRequest) (response *DeleteFileResponse, err error) {
 	response = CreateDeleteFileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteFile(request *DeleteFileRequest) (response *DeleteFi
 }
 
 // DeleteFileWithChan invokes the codeup.DeleteFile API asynchronously
-// api document: https://help.aliyun.com/api/codeup/deletefile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFileWithChan(request *DeleteFileRequest) (<-chan *DeleteFileResponse, <-chan error) {
 	responseChan := make(chan *DeleteFileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteFileWithChan(request *DeleteFileRequest) (<-chan *De
 }
 
 // DeleteFileWithCallback invokes the codeup.DeleteFile API asynchronously
-// api document: https://help.aliyun.com/api/codeup/deletefile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFileWithCallback(request *DeleteFileRequest, callback func(response *DeleteFileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

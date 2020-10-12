@@ -17,10 +17,25 @@ package codeup
 
 // ResultItem is a nested struct in codeup response
 type ResultItem struct {
-	ExternUserId string `json:"ExternUserId" xml:"ExternUserId"`
-	State        string `json:"State" xml:"State"`
-	Email        string `json:"Email" xml:"Email"`
-	AccessLevel  int    `json:"AccessLevel" xml:"AccessLevel"`
-	Id           int64  `json:"Id" xml:"Id"`
-	AvatarUrl    string `json:"AvatarUrl" xml:"AvatarUrl"`
+	Name              string `json:"Name" xml:"Name"`
+	NameWithNamespace string `json:"NameWithNamespace" xml:"NameWithNamespace"`
+	SshCloneUrl       string `json:"SshCloneUrl" xml:"SshCloneUrl"`
+	ExternUserId      string `json:"ExternUserId" xml:"ExternUserId"`
+	Path              string `json:"Path" xml:"Path"`
+	Email             string `json:"Email" xml:"Email"`
+	AccessLevel       int    `json:"AccessLevel" xml:"AccessLevel"`
+	UpdatedAt         string `json:"UpdatedAt" xml:"UpdatedAt"`
+	LastActivityAt    string `json:"LastActivityAt" xml:"LastActivityAt"`
+	PathWithNamespace string `json:"PathWithNamespace" xml:"PathWithNamespace"`
+	Id                int64  `json:"Id" xml:"Id"`
+	VisibilityLevel   int    `json:"VisibilityLevel" xml:"VisibilityLevel"`
+	AvatarUrl         string `json:"AvatarUrl" xml:"AvatarUrl"`
+	Archive           bool   `json:"Archive" xml:"Archive"`
+	WebUrl            string `json:"WebUrl" xml:"WebUrl"`
+	State             string `json:"State" xml:"State"`
+	HttpCloneUrl      string `json:"HttpCloneUrl" xml:"HttpCloneUrl"`
+	CreatedAt         string `json:"CreatedAt" xml:"CreatedAt"`
+	NamespaceId       int64  `json:"NamespaceId" xml:"NamespaceId"`
+	CreatorId         int64  `json:"CreatorId" xml:"CreatorId"`
+	ImportStatus      string `json:"ImportStatus" xml:"ImportStatus"`
 }

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UpdateRepositoryMember invokes the codeup.UpdateRepositoryMember API synchronously
-func (client *Client) UpdateRepositoryMember(request *UpdateRepositoryMemberRequest) (response *UpdateRepositoryMemberResponse, err error) {
-	response = CreateUpdateRepositoryMemberResponse()
+// CreateBranch invokes the codeup.CreateBranch API synchronously
+func (client *Client) CreateBranch(request *CreateBranchRequest) (response *CreateBranchResponse, err error) {
+	response = CreateCreateBranchResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UpdateRepositoryMemberWithChan invokes the codeup.UpdateRepositoryMember API asynchronously
-func (client *Client) UpdateRepositoryMemberWithChan(request *UpdateRepositoryMemberRequest) (<-chan *UpdateRepositoryMemberResponse, <-chan error) {
-	responseChan := make(chan *UpdateRepositoryMemberResponse, 1)
+// CreateBranchWithChan invokes the codeup.CreateBranch API asynchronously
+func (client *Client) CreateBranchWithChan(request *CreateBranchRequest) (<-chan *CreateBranchResponse, <-chan error) {
+	responseChan := make(chan *CreateBranchResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UpdateRepositoryMember(request)
+		response, err := client.CreateBranch(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) UpdateRepositoryMemberWithChan(request *UpdateRepositoryMe
 	return responseChan, errChan
 }
 
-// UpdateRepositoryMemberWithCallback invokes the codeup.UpdateRepositoryMember API asynchronously
-func (client *Client) UpdateRepositoryMemberWithCallback(request *UpdateRepositoryMemberRequest, callback func(response *UpdateRepositoryMemberResponse, err error)) <-chan int {
+// CreateBranchWithCallback invokes the codeup.CreateBranch API asynchronously
+func (client *Client) CreateBranchWithCallback(request *CreateBranchRequest, callback func(response *CreateBranchResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UpdateRepositoryMemberResponse
+		var response *CreateBranchResponse
 		var err error
 		defer close(result)
-		response, err = client.UpdateRepositoryMember(request)
+		response, err = client.CreateBranch(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,18 +68,17 @@ func (client *Client) UpdateRepositoryMemberWithCallback(request *UpdateReposito
 	return result
 }
 
-// UpdateRepositoryMemberRequest is the request struct for api UpdateRepositoryMember
-type UpdateRepositoryMemberRequest struct {
+// CreateBranchRequest is the request struct for api CreateBranch
+type CreateBranchRequest struct {
 	*requests.RoaRequest
 	OrganizationId string           `position:"Query" name:"OrganizationId"`
 	SubUserId      string           `position:"Query" name:"SubUserId"`
 	AccessToken    string           `position:"Query" name:"AccessToken"`
 	ProjectId      requests.Integer `position:"Path" name:"ProjectId"`
-	UserId         requests.Integer `position:"Path" name:"UserId"`
 }
 
-// UpdateRepositoryMemberResponse is the response struct for api UpdateRepositoryMember
-type UpdateRepositoryMemberResponse struct {
+// CreateBranchResponse is the response struct for api CreateBranch
+type CreateBranchResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
@@ -88,19 +87,19 @@ type UpdateRepositoryMemberResponse struct {
 	Result       Result `json:"Result" xml:"Result"`
 }
 
-// CreateUpdateRepositoryMemberRequest creates a request to invoke UpdateRepositoryMember API
-func CreateUpdateRepositoryMemberRequest() (request *UpdateRepositoryMemberRequest) {
-	request = &UpdateRepositoryMemberRequest{
+// CreateCreateBranchRequest creates a request to invoke CreateBranch API
+func CreateCreateBranchRequest() (request *CreateBranchRequest) {
+	request = &CreateBranchRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("codeup", "2020-04-14", "UpdateRepositoryMember", "/api/v3/projects/[ProjectId]/members/[UserId]", "", "")
-	request.Method = requests.PUT
+	request.InitWithApiInfo("codeup", "2020-04-14", "CreateBranch", "/api/v3/projects/[ProjectId]/repository/branches", "", "")
+	request.Method = requests.POST
 	return
 }
 
-// CreateUpdateRepositoryMemberResponse creates a response to parse from UpdateRepositoryMember response
-func CreateUpdateRepositoryMemberResponse() (response *UpdateRepositoryMemberResponse) {
-	response = &UpdateRepositoryMemberResponse{
+// CreateCreateBranchResponse creates a response to parse from CreateBranch response
+func CreateCreateBranchResponse() (response *CreateBranchResponse) {
+	response = &CreateBranchResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

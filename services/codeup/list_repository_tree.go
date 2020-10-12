@@ -21,7 +21,6 @@ import (
 )
 
 // ListRepositoryTree invokes the codeup.ListRepositoryTree API synchronously
-// api document: https://help.aliyun.com/api/codeup/listrepositorytree.html
 func (client *Client) ListRepositoryTree(request *ListRepositoryTreeRequest) (response *ListRepositoryTreeResponse, err error) {
 	response = CreateListRepositoryTreeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListRepositoryTree(request *ListRepositoryTreeRequest) (re
 }
 
 // ListRepositoryTreeWithChan invokes the codeup.ListRepositoryTree API asynchronously
-// api document: https://help.aliyun.com/api/codeup/listrepositorytree.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRepositoryTreeWithChan(request *ListRepositoryTreeRequest) (<-chan *ListRepositoryTreeResponse, <-chan error) {
 	responseChan := make(chan *ListRepositoryTreeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListRepositoryTreeWithChan(request *ListRepositoryTreeRequ
 }
 
 // ListRepositoryTreeWithCallback invokes the codeup.ListRepositoryTree API asynchronously
-// api document: https://help.aliyun.com/api/codeup/listrepositorytree.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRepositoryTreeWithCallback(request *ListRepositoryTreeRequest, callback func(response *ListRepositoryTreeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

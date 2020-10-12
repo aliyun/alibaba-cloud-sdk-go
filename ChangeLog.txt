@@ -1,3 +1,7 @@
+2020-10-12 Version: v1.61.556
+- Generated 2020-04-14 for `codeup`.
+- Support add webhook, get repository info via id or path.
+
 2020-10-12 Version: v1.61.555
 - Generated 2020-03-30, 2019-10-30 for `aliyuncvc`.
 - Public beta version.

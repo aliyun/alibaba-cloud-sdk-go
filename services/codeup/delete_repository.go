@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteRepository invokes the codeup.DeleteRepository API synchronously
-// api document: https://help.aliyun.com/api/codeup/deleterepository.html
 func (client *Client) DeleteRepository(request *DeleteRepositoryRequest) (response *DeleteRepositoryResponse, err error) {
 	response = CreateDeleteRepositoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteRepository(request *DeleteRepositoryRequest) (respon
 }
 
 // DeleteRepositoryWithChan invokes the codeup.DeleteRepository API asynchronously
-// api document: https://help.aliyun.com/api/codeup/deleterepository.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRepositoryWithChan(request *DeleteRepositoryRequest) (<-chan *DeleteRepositoryResponse, <-chan error) {
 	responseChan := make(chan *DeleteRepositoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteRepositoryWithChan(request *DeleteRepositoryRequest)
 }
 
 // DeleteRepositoryWithCallback invokes the codeup.DeleteRepository API asynchronously
-// api document: https://help.aliyun.com/api/codeup/deleterepository.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRepositoryWithCallback(request *DeleteRepositoryRequest, callback func(response *DeleteRepositoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateDeleteRepositoryRequest() (request *DeleteRepositoryRequest) {
 		RoaRequest: &requests.RoaRequest{},
 	}
 	request.InitWithApiInfo("codeup", "2020-04-14", "DeleteRepository", "/api/v3/projects/[ProjectId]/remove", "", "")
-	request.Method = requests.DELETE
+	request.Method = requests.POST
 	return
 }
 

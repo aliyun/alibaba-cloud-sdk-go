@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UpdateRepositoryMember invokes the codeup.UpdateRepositoryMember API synchronously
-func (client *Client) UpdateRepositoryMember(request *UpdateRepositoryMemberRequest) (response *UpdateRepositoryMemberResponse, err error) {
-	response = CreateUpdateRepositoryMemberResponse()
+// CreateMergeRequest invokes the codeup.CreateMergeRequest API synchronously
+func (client *Client) CreateMergeRequest(request *CreateMergeRequestRequest) (response *CreateMergeRequestResponse, err error) {
+	response = CreateCreateMergeRequestResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UpdateRepositoryMemberWithChan invokes the codeup.UpdateRepositoryMember API asynchronously
-func (client *Client) UpdateRepositoryMemberWithChan(request *UpdateRepositoryMemberRequest) (<-chan *UpdateRepositoryMemberResponse, <-chan error) {
-	responseChan := make(chan *UpdateRepositoryMemberResponse, 1)
+// CreateMergeRequestWithChan invokes the codeup.CreateMergeRequest API asynchronously
+func (client *Client) CreateMergeRequestWithChan(request *CreateMergeRequestRequest) (<-chan *CreateMergeRequestResponse, <-chan error) {
+	responseChan := make(chan *CreateMergeRequestResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UpdateRepositoryMember(request)
+		response, err := client.CreateMergeRequest(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) UpdateRepositoryMemberWithChan(request *UpdateRepositoryMe
 	return responseChan, errChan
 }
 
-// UpdateRepositoryMemberWithCallback invokes the codeup.UpdateRepositoryMember API asynchronously
-func (client *Client) UpdateRepositoryMemberWithCallback(request *UpdateRepositoryMemberRequest, callback func(response *UpdateRepositoryMemberResponse, err error)) <-chan int {
+// CreateMergeRequestWithCallback invokes the codeup.CreateMergeRequest API asynchronously
+func (client *Client) CreateMergeRequestWithCallback(request *CreateMergeRequestRequest, callback func(response *CreateMergeRequestResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UpdateRepositoryMemberResponse
+		var response *CreateMergeRequestResponse
 		var err error
 		defer close(result)
-		response, err = client.UpdateRepositoryMember(request)
+		response, err = client.CreateMergeRequest(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,18 +68,17 @@ func (client *Client) UpdateRepositoryMemberWithCallback(request *UpdateReposito
 	return result
 }
 
-// UpdateRepositoryMemberRequest is the request struct for api UpdateRepositoryMember
-type UpdateRepositoryMemberRequest struct {
+// CreateMergeRequestRequest is the request struct for api CreateMergeRequest
+type CreateMergeRequestRequest struct {
 	*requests.RoaRequest
 	OrganizationId string           `position:"Query" name:"OrganizationId"`
 	SubUserId      string           `position:"Query" name:"SubUserId"`
 	AccessToken    string           `position:"Query" name:"AccessToken"`
 	ProjectId      requests.Integer `position:"Path" name:"ProjectId"`
-	UserId         requests.Integer `position:"Path" name:"UserId"`
 }
 
-// UpdateRepositoryMemberResponse is the response struct for api UpdateRepositoryMember
-type UpdateRepositoryMemberResponse struct {
+// CreateMergeRequestResponse is the response struct for api CreateMergeRequest
+type CreateMergeRequestResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
@@ -88,19 +87,19 @@ type UpdateRepositoryMemberResponse struct {
 	Result       Result `json:"Result" xml:"Result"`
 }
 
-// CreateUpdateRepositoryMemberRequest creates a request to invoke UpdateRepositoryMember API
-func CreateUpdateRepositoryMemberRequest() (request *UpdateRepositoryMemberRequest) {
-	request = &UpdateRepositoryMemberRequest{
+// CreateCreateMergeRequestRequest creates a request to invoke CreateMergeRequest API
+func CreateCreateMergeRequestRequest() (request *CreateMergeRequestRequest) {
+	request = &CreateMergeRequestRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("codeup", "2020-04-14", "UpdateRepositoryMember", "/api/v3/projects/[ProjectId]/members/[UserId]", "", "")
-	request.Method = requests.PUT
+	request.InitWithApiInfo("codeup", "2020-04-14", "CreateMergeRequest", "/api/v4/projects/[ProjectId]/merge_requests", "", "")
+	request.Method = requests.POST
 	return
 }
 
-// CreateUpdateRepositoryMemberResponse creates a response to parse from UpdateRepositoryMember response
-func CreateUpdateRepositoryMemberResponse() (response *UpdateRepositoryMemberResponse) {
-	response = &UpdateRepositoryMemberResponse{
+// CreateCreateMergeRequestResponse creates a response to parse from CreateMergeRequest response
+func CreateCreateMergeRequestResponse() (response *CreateMergeRequestResponse) {
+	response = &CreateMergeRequestResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

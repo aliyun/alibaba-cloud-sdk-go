@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UpdateRepositoryMember invokes the codeup.UpdateRepositoryMember API synchronously
-func (client *Client) UpdateRepositoryMember(request *UpdateRepositoryMemberRequest) (response *UpdateRepositoryMemberResponse, err error) {
-	response = CreateUpdateRepositoryMemberResponse()
+// DeleteBranch invokes the codeup.DeleteBranch API synchronously
+func (client *Client) DeleteBranch(request *DeleteBranchRequest) (response *DeleteBranchResponse, err error) {
+	response = CreateDeleteBranchResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UpdateRepositoryMemberWithChan invokes the codeup.UpdateRepositoryMember API asynchronously
-func (client *Client) UpdateRepositoryMemberWithChan(request *UpdateRepositoryMemberRequest) (<-chan *UpdateRepositoryMemberResponse, <-chan error) {
-	responseChan := make(chan *UpdateRepositoryMemberResponse, 1)
+// DeleteBranchWithChan invokes the codeup.DeleteBranch API asynchronously
+func (client *Client) DeleteBranchWithChan(request *DeleteBranchRequest) (<-chan *DeleteBranchResponse, <-chan error) {
+	responseChan := make(chan *DeleteBranchResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UpdateRepositoryMember(request)
+		response, err := client.DeleteBranch(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) UpdateRepositoryMemberWithChan(request *UpdateRepositoryMe
 	return responseChan, errChan
 }
 
-// UpdateRepositoryMemberWithCallback invokes the codeup.UpdateRepositoryMember API asynchronously
-func (client *Client) UpdateRepositoryMemberWithCallback(request *UpdateRepositoryMemberRequest, callback func(response *UpdateRepositoryMemberResponse, err error)) <-chan int {
+// DeleteBranchWithCallback invokes the codeup.DeleteBranch API asynchronously
+func (client *Client) DeleteBranchWithCallback(request *DeleteBranchRequest, callback func(response *DeleteBranchResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UpdateRepositoryMemberResponse
+		var response *DeleteBranchResponse
 		var err error
 		defer close(result)
-		response, err = client.UpdateRepositoryMember(request)
+		response, err = client.DeleteBranch(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,18 +68,18 @@ func (client *Client) UpdateRepositoryMemberWithCallback(request *UpdateReposito
 	return result
 }
 
-// UpdateRepositoryMemberRequest is the request struct for api UpdateRepositoryMember
-type UpdateRepositoryMemberRequest struct {
+// DeleteBranchRequest is the request struct for api DeleteBranch
+type DeleteBranchRequest struct {
 	*requests.RoaRequest
 	OrganizationId string           `position:"Query" name:"OrganizationId"`
 	SubUserId      string           `position:"Query" name:"SubUserId"`
 	AccessToken    string           `position:"Query" name:"AccessToken"`
 	ProjectId      requests.Integer `position:"Path" name:"ProjectId"`
-	UserId         requests.Integer `position:"Path" name:"UserId"`
+	BranchName     string           `position:"Path" name:"BranchName"`
 }
 
-// UpdateRepositoryMemberResponse is the response struct for api UpdateRepositoryMember
-type UpdateRepositoryMemberResponse struct {
+// DeleteBranchResponse is the response struct for api DeleteBranch
+type DeleteBranchResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
@@ -88,19 +88,19 @@ type UpdateRepositoryMemberResponse struct {
 	Result       Result `json:"Result" xml:"Result"`
 }
 
-// CreateUpdateRepositoryMemberRequest creates a request to invoke UpdateRepositoryMember API
-func CreateUpdateRepositoryMemberRequest() (request *UpdateRepositoryMemberRequest) {
-	request = &UpdateRepositoryMemberRequest{
+// CreateDeleteBranchRequest creates a request to invoke DeleteBranch API
+func CreateDeleteBranchRequest() (request *DeleteBranchRequest) {
+	request = &DeleteBranchRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("codeup", "2020-04-14", "UpdateRepositoryMember", "/api/v3/projects/[ProjectId]/members/[UserId]", "", "")
-	request.Method = requests.PUT
+	request.InitWithApiInfo("codeup", "2020-04-14", "DeleteBranch", "/api/v3/projects/[ProjectId]/repository/branches/[BranchName]", "", "")
+	request.Method = requests.DELETE
 	return
 }
 
-// CreateUpdateRepositoryMemberResponse creates a response to parse from UpdateRepositoryMember response
-func CreateUpdateRepositoryMemberResponse() (response *UpdateRepositoryMemberResponse) {
-	response = &UpdateRepositoryMemberResponse{
+// CreateDeleteBranchResponse creates a response to parse from DeleteBranch response
+func CreateDeleteBranchResponse() (response *DeleteBranchResponse) {
+	response = &DeleteBranchResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

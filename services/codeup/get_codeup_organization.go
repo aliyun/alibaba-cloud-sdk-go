@@ -21,7 +21,6 @@ import (
 )
 
 // GetCodeupOrganization invokes the codeup.GetCodeupOrganization API synchronously
-// api document: https://help.aliyun.com/api/codeup/getcodeuporganization.html
 func (client *Client) GetCodeupOrganization(request *GetCodeupOrganizationRequest) (response *GetCodeupOrganizationResponse, err error) {
 	response = CreateGetCodeupOrganizationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetCodeupOrganization(request *GetCodeupOrganizationReques
 }
 
 // GetCodeupOrganizationWithChan invokes the codeup.GetCodeupOrganization API asynchronously
-// api document: https://help.aliyun.com/api/codeup/getcodeuporganization.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCodeupOrganizationWithChan(request *GetCodeupOrganizationRequest) (<-chan *GetCodeupOrganizationResponse, <-chan error) {
 	responseChan := make(chan *GetCodeupOrganizationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetCodeupOrganizationWithChan(request *GetCodeupOrganizati
 }
 
 // GetCodeupOrganizationWithCallback invokes the codeup.GetCodeupOrganization API asynchronously
-// api document: https://help.aliyun.com/api/codeup/getcodeuporganization.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCodeupOrganizationWithCallback(request *GetCodeupOrganizationRequest, callback func(response *GetCodeupOrganizationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

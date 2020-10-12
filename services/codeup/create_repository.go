@@ -21,7 +21,6 @@ import (
 )
 
 // CreateRepository invokes the codeup.CreateRepository API synchronously
-// api document: https://help.aliyun.com/api/codeup/createrepository.html
 func (client *Client) CreateRepository(request *CreateRepositoryRequest) (response *CreateRepositoryResponse, err error) {
 	response = CreateCreateRepositoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateRepository(request *CreateRepositoryRequest) (respon
 }
 
 // CreateRepositoryWithChan invokes the codeup.CreateRepository API asynchronously
-// api document: https://help.aliyun.com/api/codeup/createrepository.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRepositoryWithChan(request *CreateRepositoryRequest) (<-chan *CreateRepositoryResponse, <-chan error) {
 	responseChan := make(chan *CreateRepositoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateRepositoryWithChan(request *CreateRepositoryRequest)
 }
 
 // CreateRepositoryWithCallback invokes the codeup.CreateRepository API asynchronously
-// api document: https://help.aliyun.com/api/codeup/createrepository.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRepositoryWithCallback(request *CreateRepositoryRequest, callback func(response *CreateRepositoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

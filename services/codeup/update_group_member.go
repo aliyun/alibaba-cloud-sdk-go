@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateGroupMember invokes the codeup.UpdateGroupMember API synchronously
-// api document: https://help.aliyun.com/api/codeup/updategroupmember.html
 func (client *Client) UpdateGroupMember(request *UpdateGroupMemberRequest) (response *UpdateGroupMemberResponse, err error) {
 	response = CreateUpdateGroupMemberResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateGroupMember(request *UpdateGroupMemberRequest) (resp
 }
 
 // UpdateGroupMemberWithChan invokes the codeup.UpdateGroupMember API asynchronously
-// api document: https://help.aliyun.com/api/codeup/updategroupmember.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateGroupMemberWithChan(request *UpdateGroupMemberRequest) (<-chan *UpdateGroupMemberResponse, <-chan error) {
 	responseChan := make(chan *UpdateGroupMemberResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateGroupMemberWithChan(request *UpdateGroupMemberReques
 }
 
 // UpdateGroupMemberWithCallback invokes the codeup.UpdateGroupMember API asynchronously
-// api document: https://help.aliyun.com/api/codeup/updategroupmember.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateGroupMemberWithCallback(request *UpdateGroupMemberRequest, callback func(response *UpdateGroupMemberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

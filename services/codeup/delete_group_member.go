@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteGroupMember invokes the codeup.DeleteGroupMember API synchronously
-// api document: https://help.aliyun.com/api/codeup/deletegroupmember.html
 func (client *Client) DeleteGroupMember(request *DeleteGroupMemberRequest) (response *DeleteGroupMemberResponse, err error) {
 	response = CreateDeleteGroupMemberResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteGroupMember(request *DeleteGroupMemberRequest) (resp
 }
 
 // DeleteGroupMemberWithChan invokes the codeup.DeleteGroupMember API asynchronously
-// api document: https://help.aliyun.com/api/codeup/deletegroupmember.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGroupMemberWithChan(request *DeleteGroupMemberRequest) (<-chan *DeleteGroupMemberResponse, <-chan error) {
 	responseChan := make(chan *DeleteGroupMemberResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteGroupMemberWithChan(request *DeleteGroupMemberReques
 }
 
 // DeleteGroupMemberWithCallback invokes the codeup.DeleteGroupMember API asynchronously
-// api document: https://help.aliyun.com/api/codeup/deletegroupmember.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGroupMemberWithCallback(request *DeleteGroupMemberRequest, callback func(response *DeleteGroupMemberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

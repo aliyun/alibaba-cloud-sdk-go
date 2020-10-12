@@ -21,7 +21,6 @@ import (
 )
 
 // CreateFile invokes the codeup.CreateFile API synchronously
-// api document: https://help.aliyun.com/api/codeup/createfile.html
 func (client *Client) CreateFile(request *CreateFileRequest) (response *CreateFileResponse, err error) {
 	response = CreateCreateFileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateFile(request *CreateFileRequest) (response *CreateFi
 }
 
 // CreateFileWithChan invokes the codeup.CreateFile API asynchronously
-// api document: https://help.aliyun.com/api/codeup/createfile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFileWithChan(request *CreateFileRequest) (<-chan *CreateFileResponse, <-chan error) {
 	responseChan := make(chan *CreateFileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateFileWithChan(request *CreateFileRequest) (<-chan *Cr
 }
 
 // CreateFileWithCallback invokes the codeup.CreateFile API asynchronously
-// api document: https://help.aliyun.com/api/codeup/createfile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFileWithCallback(request *CreateFileRequest, callback func(response *CreateFileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
