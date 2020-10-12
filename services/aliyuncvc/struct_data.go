@@ -36,7 +36,6 @@ type Data struct {
 	CastScreenCode  string                `json:"CastScreenCode" xml:"CastScreenCode"`
 	SN              string                `json:"SN" xml:"SN"`
 	ActiveCode      string                `json:"ActiveCode" xml:"ActiveCode"`
-	Conferences     []Data                `json:"Conferences" xml:"Conferences"`
 	UserInfos       []UserInfo            `json:"UserInfos" xml:"UserInfos"`
 	Devices         []DeviceInListDevices `json:"Devices" xml:"Devices"`
 }

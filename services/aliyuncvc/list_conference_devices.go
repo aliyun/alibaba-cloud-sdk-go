@@ -79,11 +79,11 @@ type ListConferenceDevicesRequest struct {
 // ListConferenceDevicesResponse is the response struct for api ListConferenceDevices
 type ListConferenceDevicesResponse struct {
 	*responses.BaseResponse
-	ErrorCode int    `json:"ErrorCode" xml:"ErrorCode"`
-	Message   string `json:"Message" xml:"Message"`
-	Success   bool   `json:"Success" xml:"Success"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	ErrorCode        int              `json:"ErrorCode" xml:"ErrorCode"`
+	Message          string           `json:"Message" xml:"Message"`
+	Success          bool             `json:"Success" xml:"Success"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	ConferencesDatas ConferencesDatas `json:"ConferencesDatas" xml:"ConferencesDatas"`
 }
 
 // CreateListConferenceDevicesRequest creates a request to invoke ListConferenceDevices API
