@@ -21,7 +21,6 @@ import (
 )
 
 // ListDevopsProjectSprints invokes the devops_rdc.ListDevopsProjectSprints API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/listdevopsprojectsprints.html
 func (client *Client) ListDevopsProjectSprints(request *ListDevopsProjectSprintsRequest) (response *ListDevopsProjectSprintsResponse, err error) {
 	response = CreateListDevopsProjectSprintsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDevopsProjectSprints(request *ListDevopsProjectSprints
 }
 
 // ListDevopsProjectSprintsWithChan invokes the devops_rdc.ListDevopsProjectSprints API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/listdevopsprojectsprints.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDevopsProjectSprintsWithChan(request *ListDevopsProjectSprintsRequest) (<-chan *ListDevopsProjectSprintsResponse, <-chan error) {
 	responseChan := make(chan *ListDevopsProjectSprintsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDevopsProjectSprintsWithChan(request *ListDevopsProjec
 }
 
 // ListDevopsProjectSprintsWithCallback invokes the devops_rdc.ListDevopsProjectSprints API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/listdevopsprojectsprints.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDevopsProjectSprintsWithCallback(request *ListDevopsProjectSprintsRequest, callback func(response *ListDevopsProjectSprintsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

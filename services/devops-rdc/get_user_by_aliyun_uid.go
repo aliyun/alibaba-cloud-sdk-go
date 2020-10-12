@@ -21,7 +21,6 @@ import (
 )
 
 // GetUserByAliyunUid invokes the devops_rdc.GetUserByAliyunUid API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getuserbyaliyunuid.html
 func (client *Client) GetUserByAliyunUid(request *GetUserByAliyunUidRequest) (response *GetUserByAliyunUidResponse, err error) {
 	response = CreateGetUserByAliyunUidResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetUserByAliyunUid(request *GetUserByAliyunUidRequest) (re
 }
 
 // GetUserByAliyunUidWithChan invokes the devops_rdc.GetUserByAliyunUid API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getuserbyaliyunuid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserByAliyunUidWithChan(request *GetUserByAliyunUidRequest) (<-chan *GetUserByAliyunUidResponse, <-chan error) {
 	responseChan := make(chan *GetUserByAliyunUidResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetUserByAliyunUidWithChan(request *GetUserByAliyunUidRequ
 }
 
 // GetUserByAliyunUidWithCallback invokes the devops_rdc.GetUserByAliyunUid API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getuserbyaliyunuid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserByAliyunUidWithCallback(request *GetUserByAliyunUidRequest, callback func(response *GetUserByAliyunUidResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

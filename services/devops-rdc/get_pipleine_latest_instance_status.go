@@ -21,7 +21,6 @@ import (
 )
 
 // GetPipleineLatestInstanceStatus invokes the devops_rdc.GetPipleineLatestInstanceStatus API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getpipleinelatestinstancestatus.html
 func (client *Client) GetPipleineLatestInstanceStatus(request *GetPipleineLatestInstanceStatusRequest) (response *GetPipleineLatestInstanceStatusResponse, err error) {
 	response = CreateGetPipleineLatestInstanceStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetPipleineLatestInstanceStatus(request *GetPipleineLatest
 }
 
 // GetPipleineLatestInstanceStatusWithChan invokes the devops_rdc.GetPipleineLatestInstanceStatus API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getpipleinelatestinstancestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPipleineLatestInstanceStatusWithChan(request *GetPipleineLatestInstanceStatusRequest) (<-chan *GetPipleineLatestInstanceStatusResponse, <-chan error) {
 	responseChan := make(chan *GetPipleineLatestInstanceStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetPipleineLatestInstanceStatusWithChan(request *GetPiplei
 }
 
 // GetPipleineLatestInstanceStatusWithCallback invokes the devops_rdc.GetPipleineLatestInstanceStatus API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getpipleinelatestinstancestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPipleineLatestInstanceStatusWithCallback(request *GetPipleineLatestInstanceStatusRequest, callback func(response *GetPipleineLatestInstanceStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

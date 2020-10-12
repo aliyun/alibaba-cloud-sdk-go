@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDevopsProjectSprint invokes the devops_rdc.CreateDevopsProjectSprint API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/createdevopsprojectsprint.html
 func (client *Client) CreateDevopsProjectSprint(request *CreateDevopsProjectSprintRequest) (response *CreateDevopsProjectSprintResponse, err error) {
 	response = CreateCreateDevopsProjectSprintResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDevopsProjectSprint(request *CreateDevopsProjectSpri
 }
 
 // CreateDevopsProjectSprintWithChan invokes the devops_rdc.CreateDevopsProjectSprint API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/createdevopsprojectsprint.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDevopsProjectSprintWithChan(request *CreateDevopsProjectSprintRequest) (<-chan *CreateDevopsProjectSprintResponse, <-chan error) {
 	responseChan := make(chan *CreateDevopsProjectSprintResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDevopsProjectSprintWithChan(request *CreateDevopsPro
 }
 
 // CreateDevopsProjectSprintWithCallback invokes the devops_rdc.CreateDevopsProjectSprint API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/createdevopsprojectsprint.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDevopsProjectSprintWithCallback(request *CreateDevopsProjectSprintRequest, callback func(response *CreateDevopsProjectSprintResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

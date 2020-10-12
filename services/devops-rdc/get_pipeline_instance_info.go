@@ -21,7 +21,6 @@ import (
 )
 
 // GetPipelineInstanceInfo invokes the devops_rdc.GetPipelineInstanceInfo API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getpipelineinstanceinfo.html
 func (client *Client) GetPipelineInstanceInfo(request *GetPipelineInstanceInfoRequest) (response *GetPipelineInstanceInfoResponse, err error) {
 	response = CreateGetPipelineInstanceInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetPipelineInstanceInfo(request *GetPipelineInstanceInfoRe
 }
 
 // GetPipelineInstanceInfoWithChan invokes the devops_rdc.GetPipelineInstanceInfo API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getpipelineinstanceinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPipelineInstanceInfoWithChan(request *GetPipelineInstanceInfoRequest) (<-chan *GetPipelineInstanceInfoResponse, <-chan error) {
 	responseChan := make(chan *GetPipelineInstanceInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetPipelineInstanceInfoWithChan(request *GetPipelineInstan
 }
 
 // GetPipelineInstanceInfoWithCallback invokes the devops_rdc.GetPipelineInstanceInfo API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getpipelineinstanceinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPipelineInstanceInfoWithCallback(request *GetPipelineInstanceInfoRequest, callback func(response *GetPipelineInstanceInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

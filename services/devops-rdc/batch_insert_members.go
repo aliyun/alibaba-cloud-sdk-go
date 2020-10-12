@@ -21,7 +21,6 @@ import (
 )
 
 // BatchInsertMembers invokes the devops_rdc.BatchInsertMembers API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/batchinsertmembers.html
 func (client *Client) BatchInsertMembers(request *BatchInsertMembersRequest) (response *BatchInsertMembersResponse, err error) {
 	response = CreateBatchInsertMembersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchInsertMembers(request *BatchInsertMembersRequest) (re
 }
 
 // BatchInsertMembersWithChan invokes the devops_rdc.BatchInsertMembers API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/batchinsertmembers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchInsertMembersWithChan(request *BatchInsertMembersRequest) (<-chan *BatchInsertMembersResponse, <-chan error) {
 	responseChan := make(chan *BatchInsertMembersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchInsertMembersWithChan(request *BatchInsertMembersRequ
 }
 
 // BatchInsertMembersWithCallback invokes the devops_rdc.BatchInsertMembers API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/batchinsertmembers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchInsertMembersWithCallback(request *BatchInsertMembersRequest, callback func(response *BatchInsertMembersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

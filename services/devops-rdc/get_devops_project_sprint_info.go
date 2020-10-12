@@ -21,7 +21,6 @@ import (
 )
 
 // GetDevopsProjectSprintInfo invokes the devops_rdc.GetDevopsProjectSprintInfo API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getdevopsprojectsprintinfo.html
 func (client *Client) GetDevopsProjectSprintInfo(request *GetDevopsProjectSprintInfoRequest) (response *GetDevopsProjectSprintInfoResponse, err error) {
 	response = CreateGetDevopsProjectSprintInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetDevopsProjectSprintInfo(request *GetDevopsProjectSprint
 }
 
 // GetDevopsProjectSprintInfoWithChan invokes the devops_rdc.GetDevopsProjectSprintInfo API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getdevopsprojectsprintinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDevopsProjectSprintInfoWithChan(request *GetDevopsProjectSprintInfoRequest) (<-chan *GetDevopsProjectSprintInfoResponse, <-chan error) {
 	responseChan := make(chan *GetDevopsProjectSprintInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetDevopsProjectSprintInfoWithChan(request *GetDevopsProje
 }
 
 // GetDevopsProjectSprintInfoWithCallback invokes the devops_rdc.GetDevopsProjectSprintInfo API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getdevopsprojectsprintinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDevopsProjectSprintInfoWithCallback(request *GetDevopsProjectSprintInfoRequest, callback func(response *GetDevopsProjectSprintInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

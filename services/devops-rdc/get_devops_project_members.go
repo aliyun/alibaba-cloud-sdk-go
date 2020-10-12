@@ -21,7 +21,6 @@ import (
 )
 
 // GetDevopsProjectMembers invokes the devops_rdc.GetDevopsProjectMembers API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getdevopsprojectmembers.html
 func (client *Client) GetDevopsProjectMembers(request *GetDevopsProjectMembersRequest) (response *GetDevopsProjectMembersResponse, err error) {
 	response = CreateGetDevopsProjectMembersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetDevopsProjectMembers(request *GetDevopsProjectMembersRe
 }
 
 // GetDevopsProjectMembersWithChan invokes the devops_rdc.GetDevopsProjectMembers API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getdevopsprojectmembers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDevopsProjectMembersWithChan(request *GetDevopsProjectMembersRequest) (<-chan *GetDevopsProjectMembersResponse, <-chan error) {
 	responseChan := make(chan *GetDevopsProjectMembersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetDevopsProjectMembersWithChan(request *GetDevopsProjectM
 }
 
 // GetDevopsProjectMembersWithCallback invokes the devops_rdc.GetDevopsProjectMembers API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getdevopsprojectmembers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDevopsProjectMembersWithCallback(request *GetDevopsProjectMembersRequest, callback func(response *GetDevopsProjectMembersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ListServiceConnections invokes the devops_rdc.ListServiceConnections API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/listserviceconnections.html
 func (client *Client) ListServiceConnections(request *ListServiceConnectionsRequest) (response *ListServiceConnectionsResponse, err error) {
 	response = CreateListServiceConnectionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListServiceConnections(request *ListServiceConnectionsRequ
 }
 
 // ListServiceConnectionsWithChan invokes the devops_rdc.ListServiceConnections API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/listserviceconnections.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListServiceConnectionsWithChan(request *ListServiceConnectionsRequest) (<-chan *ListServiceConnectionsResponse, <-chan error) {
 	responseChan := make(chan *ListServiceConnectionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListServiceConnectionsWithChan(request *ListServiceConnect
 }
 
 // ListServiceConnectionsWithCallback invokes the devops_rdc.ListServiceConnections API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/listserviceconnections.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListServiceConnectionsWithCallback(request *ListServiceConnectionsRequest, callback func(response *ListServiceConnectionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

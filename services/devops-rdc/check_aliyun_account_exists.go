@@ -21,7 +21,6 @@ import (
 )
 
 // CheckAliyunAccountExists invokes the devops_rdc.CheckAliyunAccountExists API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/checkaliyunaccountexists.html
 func (client *Client) CheckAliyunAccountExists(request *CheckAliyunAccountExistsRequest) (response *CheckAliyunAccountExistsResponse, err error) {
 	response = CreateCheckAliyunAccountExistsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckAliyunAccountExists(request *CheckAliyunAccountExists
 }
 
 // CheckAliyunAccountExistsWithChan invokes the devops_rdc.CheckAliyunAccountExists API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/checkaliyunaccountexists.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckAliyunAccountExistsWithChan(request *CheckAliyunAccountExistsRequest) (<-chan *CheckAliyunAccountExistsResponse, <-chan error) {
 	responseChan := make(chan *CheckAliyunAccountExistsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckAliyunAccountExistsWithChan(request *CheckAliyunAccou
 }
 
 // CheckAliyunAccountExistsWithCallback invokes the devops_rdc.CheckAliyunAccountExists API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/checkaliyunaccountexists.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckAliyunAccountExistsWithCallback(request *CheckAliyunAccountExistsRequest, callback func(response *CheckAliyunAccountExistsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

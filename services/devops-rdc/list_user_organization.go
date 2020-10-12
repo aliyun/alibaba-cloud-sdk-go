@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateDevopsProject invokes the devops_rdc.CreateDevopsProject API synchronously
-func (client *Client) CreateDevopsProject(request *CreateDevopsProjectRequest) (response *CreateDevopsProjectResponse, err error) {
-	response = CreateCreateDevopsProjectResponse()
+// ListUserOrganization invokes the devops_rdc.ListUserOrganization API synchronously
+func (client *Client) ListUserOrganization(request *ListUserOrganizationRequest) (response *ListUserOrganizationResponse, err error) {
+	response = CreateListUserOrganizationResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateDevopsProjectWithChan invokes the devops_rdc.CreateDevopsProject API asynchronously
-func (client *Client) CreateDevopsProjectWithChan(request *CreateDevopsProjectRequest) (<-chan *CreateDevopsProjectResponse, <-chan error) {
-	responseChan := make(chan *CreateDevopsProjectResponse, 1)
+// ListUserOrganizationWithChan invokes the devops_rdc.ListUserOrganization API asynchronously
+func (client *Client) ListUserOrganizationWithChan(request *ListUserOrganizationRequest) (<-chan *ListUserOrganizationResponse, <-chan error) {
+	responseChan := make(chan *ListUserOrganizationResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateDevopsProject(request)
+		response, err := client.ListUserOrganization(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) CreateDevopsProjectWithChan(request *CreateDevopsProjectRe
 	return responseChan, errChan
 }
 
-// CreateDevopsProjectWithCallback invokes the devops_rdc.CreateDevopsProject API asynchronously
-func (client *Client) CreateDevopsProjectWithCallback(request *CreateDevopsProjectRequest, callback func(response *CreateDevopsProjectResponse, err error)) <-chan int {
+// ListUserOrganizationWithCallback invokes the devops_rdc.ListUserOrganization API asynchronously
+func (client *Client) ListUserOrganizationWithCallback(request *ListUserOrganizationRequest, callback func(response *ListUserOrganizationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateDevopsProjectResponse
+		var response *ListUserOrganizationResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateDevopsProject(request)
+		response, err = client.ListUserOrganization(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,16 +68,14 @@ func (client *Client) CreateDevopsProjectWithCallback(request *CreateDevopsProje
 	return result
 }
 
-// CreateDevopsProjectRequest is the request struct for api CreateDevopsProject
-type CreateDevopsProjectRequest struct {
+// ListUserOrganizationRequest is the request struct for api ListUserOrganization
+type ListUserOrganizationRequest struct {
 	*requests.RpcRequest
-	Name        string `position:"Body" name:"Name"`
-	Description string `position:"Body" name:"Description"`
-	OrgId       string `position:"Body" name:"OrgId"`
+	RealPk string `position:"Body" name:"RealPk"`
 }
 
-// CreateDevopsProjectResponse is the response struct for api CreateDevopsProject
-type CreateDevopsProjectResponse struct {
+// ListUserOrganizationResponse is the response struct for api ListUserOrganization
+type ListUserOrganizationResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
@@ -86,19 +84,19 @@ type CreateDevopsProjectResponse struct {
 	Object       string `json:"Object" xml:"Object"`
 }
 
-// CreateCreateDevopsProjectRequest creates a request to invoke CreateDevopsProject API
-func CreateCreateDevopsProjectRequest() (request *CreateDevopsProjectRequest) {
-	request = &CreateDevopsProjectRequest{
+// CreateListUserOrganizationRequest creates a request to invoke ListUserOrganization API
+func CreateListUserOrganizationRequest() (request *ListUserOrganizationRequest) {
+	request = &ListUserOrganizationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("devops-rdc", "2020-03-03", "CreateDevopsProject", "", "")
+	request.InitWithApiInfo("devops-rdc", "2020-03-03", "ListUserOrganization", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateCreateDevopsProjectResponse creates a response to parse from CreateDevopsProject response
-func CreateCreateDevopsProjectResponse() (response *CreateDevopsProjectResponse) {
-	response = &CreateDevopsProjectResponse{
+// CreateListUserOrganizationResponse creates a response to parse from ListUserOrganization response
+func CreateListUserOrganizationResponse() (response *ListUserOrganizationResponse) {
+	response = &ListUserOrganizationResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

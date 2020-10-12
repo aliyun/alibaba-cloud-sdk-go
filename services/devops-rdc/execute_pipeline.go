@@ -21,7 +21,6 @@ import (
 )
 
 // ExecutePipeline invokes the devops_rdc.ExecutePipeline API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/executepipeline.html
 func (client *Client) ExecutePipeline(request *ExecutePipelineRequest) (response *ExecutePipelineResponse, err error) {
 	response = CreateExecutePipelineResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExecutePipeline(request *ExecutePipelineRequest) (response
 }
 
 // ExecutePipelineWithChan invokes the devops_rdc.ExecutePipeline API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/executepipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecutePipelineWithChan(request *ExecutePipelineRequest) (<-chan *ExecutePipelineResponse, <-chan error) {
 	responseChan := make(chan *ExecutePipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExecutePipelineWithChan(request *ExecutePipelineRequest) (
 }
 
 // ExecutePipelineWithCallback invokes the devops_rdc.ExecutePipeline API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/executepipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecutePipelineWithCallback(request *ExecutePipelineRequest, callback func(response *ExecutePipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

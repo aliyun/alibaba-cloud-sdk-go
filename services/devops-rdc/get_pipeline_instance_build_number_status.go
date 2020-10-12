@@ -21,7 +21,6 @@ import (
 )
 
 // GetPipelineInstanceBuildNumberStatus invokes the devops_rdc.GetPipelineInstanceBuildNumberStatus API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getpipelineinstancebuildnumberstatus.html
 func (client *Client) GetPipelineInstanceBuildNumberStatus(request *GetPipelineInstanceBuildNumberStatusRequest) (response *GetPipelineInstanceBuildNumberStatusResponse, err error) {
 	response = CreateGetPipelineInstanceBuildNumberStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetPipelineInstanceBuildNumberStatus(request *GetPipelineI
 }
 
 // GetPipelineInstanceBuildNumberStatusWithChan invokes the devops_rdc.GetPipelineInstanceBuildNumberStatus API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getpipelineinstancebuildnumberstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPipelineInstanceBuildNumberStatusWithChan(request *GetPipelineInstanceBuildNumberStatusRequest) (<-chan *GetPipelineInstanceBuildNumberStatusResponse, <-chan error) {
 	responseChan := make(chan *GetPipelineInstanceBuildNumberStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetPipelineInstanceBuildNumberStatusWithChan(request *GetP
 }
 
 // GetPipelineInstanceBuildNumberStatusWithCallback invokes the devops_rdc.GetPipelineInstanceBuildNumberStatus API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getpipelineinstancebuildnumberstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPipelineInstanceBuildNumberStatusWithCallback(request *GetPipelineInstanceBuildNumberStatusRequest, callback func(response *GetPipelineInstanceBuildNumberStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

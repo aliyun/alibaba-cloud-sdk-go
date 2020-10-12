@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDevopsProjectTask invokes the devops_rdc.CreateDevopsProjectTask API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/createdevopsprojecttask.html
 func (client *Client) CreateDevopsProjectTask(request *CreateDevopsProjectTaskRequest) (response *CreateDevopsProjectTaskResponse, err error) {
 	response = CreateCreateDevopsProjectTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDevopsProjectTask(request *CreateDevopsProjectTaskRe
 }
 
 // CreateDevopsProjectTaskWithChan invokes the devops_rdc.CreateDevopsProjectTask API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/createdevopsprojecttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDevopsProjectTaskWithChan(request *CreateDevopsProjectTaskRequest) (<-chan *CreateDevopsProjectTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateDevopsProjectTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDevopsProjectTaskWithChan(request *CreateDevopsProje
 }
 
 // CreateDevopsProjectTaskWithCallback invokes the devops_rdc.CreateDevopsProjectTask API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/createdevopsprojecttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDevopsProjectTaskWithCallback(request *CreateDevopsProjectTaskRequest, callback func(response *CreateDevopsProjectTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

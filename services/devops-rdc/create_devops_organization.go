@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDevopsOrganization invokes the devops_rdc.CreateDevopsOrganization API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/createdevopsorganization.html
 func (client *Client) CreateDevopsOrganization(request *CreateDevopsOrganizationRequest) (response *CreateDevopsOrganizationResponse, err error) {
 	response = CreateCreateDevopsOrganizationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDevopsOrganization(request *CreateDevopsOrganization
 }
 
 // CreateDevopsOrganizationWithChan invokes the devops_rdc.CreateDevopsOrganization API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/createdevopsorganization.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDevopsOrganizationWithChan(request *CreateDevopsOrganizationRequest) (<-chan *CreateDevopsOrganizationResponse, <-chan error) {
 	responseChan := make(chan *CreateDevopsOrganizationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDevopsOrganizationWithChan(request *CreateDevopsOrga
 }
 
 // CreateDevopsOrganizationWithCallback invokes the devops_rdc.CreateDevopsOrganization API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/createdevopsorganization.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDevopsOrganizationWithCallback(request *CreateDevopsOrganizationRequest, callback func(response *CreateDevopsOrganizationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDevopsProjectMembers invokes the devops_rdc.DeleteDevopsProjectMembers API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/deletedevopsprojectmembers.html
 func (client *Client) DeleteDevopsProjectMembers(request *DeleteDevopsProjectMembersRequest) (response *DeleteDevopsProjectMembersResponse, err error) {
 	response = CreateDeleteDevopsProjectMembersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDevopsProjectMembers(request *DeleteDevopsProjectMem
 }
 
 // DeleteDevopsProjectMembersWithChan invokes the devops_rdc.DeleteDevopsProjectMembers API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/deletedevopsprojectmembers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDevopsProjectMembersWithChan(request *DeleteDevopsProjectMembersRequest) (<-chan *DeleteDevopsProjectMembersResponse, <-chan error) {
 	responseChan := make(chan *DeleteDevopsProjectMembersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDevopsProjectMembersWithChan(request *DeleteDevopsPr
 }
 
 // DeleteDevopsProjectMembersWithCallback invokes the devops_rdc.DeleteDevopsProjectMembers API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/deletedevopsprojectmembers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDevopsProjectMembersWithCallback(request *DeleteDevopsProjectMembersRequest, callback func(response *DeleteDevopsProjectMembersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

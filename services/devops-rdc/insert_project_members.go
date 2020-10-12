@@ -21,7 +21,6 @@ import (
 )
 
 // InsertProjectMembers invokes the devops_rdc.InsertProjectMembers API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/insertprojectmembers.html
 func (client *Client) InsertProjectMembers(request *InsertProjectMembersRequest) (response *InsertProjectMembersResponse, err error) {
 	response = CreateInsertProjectMembersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InsertProjectMembers(request *InsertProjectMembersRequest)
 }
 
 // InsertProjectMembersWithChan invokes the devops_rdc.InsertProjectMembers API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/insertprojectmembers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertProjectMembersWithChan(request *InsertProjectMembersRequest) (<-chan *InsertProjectMembersResponse, <-chan error) {
 	responseChan := make(chan *InsertProjectMembersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InsertProjectMembersWithChan(request *InsertProjectMembers
 }
 
 // InsertProjectMembersWithCallback invokes the devops_rdc.InsertProjectMembers API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/insertprojectmembers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InsertProjectMembersWithCallback(request *InsertProjectMembersRequest, callback func(response *InsertProjectMembersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

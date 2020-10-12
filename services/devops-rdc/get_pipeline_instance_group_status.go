@@ -21,7 +21,6 @@ import (
 )
 
 // GetPipelineInstanceGroupStatus invokes the devops_rdc.GetPipelineInstanceGroupStatus API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getpipelineinstancegroupstatus.html
 func (client *Client) GetPipelineInstanceGroupStatus(request *GetPipelineInstanceGroupStatusRequest) (response *GetPipelineInstanceGroupStatusResponse, err error) {
 	response = CreateGetPipelineInstanceGroupStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetPipelineInstanceGroupStatus(request *GetPipelineInstanc
 }
 
 // GetPipelineInstanceGroupStatusWithChan invokes the devops_rdc.GetPipelineInstanceGroupStatus API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getpipelineinstancegroupstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPipelineInstanceGroupStatusWithChan(request *GetPipelineInstanceGroupStatusRequest) (<-chan *GetPipelineInstanceGroupStatusResponse, <-chan error) {
 	responseChan := make(chan *GetPipelineInstanceGroupStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetPipelineInstanceGroupStatusWithChan(request *GetPipelin
 }
 
 // GetPipelineInstanceGroupStatusWithCallback invokes the devops_rdc.GetPipelineInstanceGroupStatus API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/getpipelineinstancegroupstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPipelineInstanceGroupStatusWithCallback(request *GetPipelineInstanceGroupStatusRequest, callback func(response *GetPipelineInstanceGroupStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

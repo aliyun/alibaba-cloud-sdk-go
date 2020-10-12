@@ -21,7 +21,6 @@ import (
 )
 
 // ListPipelines invokes the devops_rdc.ListPipelines API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/listpipelines.html
 func (client *Client) ListPipelines(request *ListPipelinesRequest) (response *ListPipelinesResponse, err error) {
 	response = CreateListPipelinesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListPipelines(request *ListPipelinesRequest) (response *Li
 }
 
 // ListPipelinesWithChan invokes the devops_rdc.ListPipelines API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/listpipelines.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPipelinesWithChan(request *ListPipelinesRequest) (<-chan *ListPipelinesResponse, <-chan error) {
 	responseChan := make(chan *ListPipelinesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListPipelinesWithChan(request *ListPipelinesRequest) (<-ch
 }
 
 // ListPipelinesWithCallback invokes the devops_rdc.ListPipelines API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/listpipelines.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPipelinesWithCallback(request *ListPipelinesRequest, callback func(response *ListPipelinesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

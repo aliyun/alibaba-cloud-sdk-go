@@ -21,7 +21,6 @@ import (
 )
 
 // ListCredentials invokes the devops_rdc.ListCredentials API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/listcredentials.html
 func (client *Client) ListCredentials(request *ListCredentialsRequest) (response *ListCredentialsResponse, err error) {
 	response = CreateListCredentialsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListCredentials(request *ListCredentialsRequest) (response
 }
 
 // ListCredentialsWithChan invokes the devops_rdc.ListCredentials API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/listcredentials.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCredentialsWithChan(request *ListCredentialsRequest) (<-chan *ListCredentialsResponse, <-chan error) {
 	responseChan := make(chan *ListCredentialsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListCredentialsWithChan(request *ListCredentialsRequest) (
 }
 
 // ListCredentialsWithCallback invokes the devops_rdc.ListCredentials API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/listcredentials.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCredentialsWithCallback(request *ListCredentialsRequest, callback func(response *ListCredentialsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

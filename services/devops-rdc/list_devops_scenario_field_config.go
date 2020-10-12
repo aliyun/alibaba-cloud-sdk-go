@@ -21,7 +21,6 @@ import (
 )
 
 // ListDevopsScenarioFieldConfig invokes the devops_rdc.ListDevopsScenarioFieldConfig API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/listdevopsscenariofieldconfig.html
 func (client *Client) ListDevopsScenarioFieldConfig(request *ListDevopsScenarioFieldConfigRequest) (response *ListDevopsScenarioFieldConfigResponse, err error) {
 	response = CreateListDevopsScenarioFieldConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDevopsScenarioFieldConfig(request *ListDevopsScenarioF
 }
 
 // ListDevopsScenarioFieldConfigWithChan invokes the devops_rdc.ListDevopsScenarioFieldConfig API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/listdevopsscenariofieldconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDevopsScenarioFieldConfigWithChan(request *ListDevopsScenarioFieldConfigRequest) (<-chan *ListDevopsScenarioFieldConfigResponse, <-chan error) {
 	responseChan := make(chan *ListDevopsScenarioFieldConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDevopsScenarioFieldConfigWithChan(request *ListDevopsS
 }
 
 // ListDevopsScenarioFieldConfigWithCallback invokes the devops_rdc.ListDevopsScenarioFieldConfig API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/listdevopsscenariofieldconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDevopsScenarioFieldConfigWithCallback(request *ListDevopsScenarioFieldConfigRequest, callback func(response *ListDevopsScenarioFieldConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

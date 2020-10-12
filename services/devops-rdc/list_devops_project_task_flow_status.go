@@ -21,7 +21,6 @@ import (
 )
 
 // ListDevopsProjectTaskFlowStatus invokes the devops_rdc.ListDevopsProjectTaskFlowStatus API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/listdevopsprojecttaskflowstatus.html
 func (client *Client) ListDevopsProjectTaskFlowStatus(request *ListDevopsProjectTaskFlowStatusRequest) (response *ListDevopsProjectTaskFlowStatusResponse, err error) {
 	response = CreateListDevopsProjectTaskFlowStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDevopsProjectTaskFlowStatus(request *ListDevopsProject
 }
 
 // ListDevopsProjectTaskFlowStatusWithChan invokes the devops_rdc.ListDevopsProjectTaskFlowStatus API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/listdevopsprojecttaskflowstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDevopsProjectTaskFlowStatusWithChan(request *ListDevopsProjectTaskFlowStatusRequest) (<-chan *ListDevopsProjectTaskFlowStatusResponse, <-chan error) {
 	responseChan := make(chan *ListDevopsProjectTaskFlowStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDevopsProjectTaskFlowStatusWithChan(request *ListDevop
 }
 
 // ListDevopsProjectTaskFlowStatusWithCallback invokes the devops_rdc.ListDevopsProjectTaskFlowStatus API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/listdevopsprojecttaskflowstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDevopsProjectTaskFlowStatusWithCallback(request *ListDevopsProjectTaskFlowStatusRequest, callback func(response *ListDevopsProjectTaskFlowStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

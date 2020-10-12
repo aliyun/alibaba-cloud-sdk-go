@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCredential invokes the devops_rdc.CreateCredential API synchronously
-// api document: https://help.aliyun.com/api/devops-rdc/createcredential.html
 func (client *Client) CreateCredential(request *CreateCredentialRequest) (response *CreateCredentialResponse, err error) {
 	response = CreateCreateCredentialResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCredential(request *CreateCredentialRequest) (respon
 }
 
 // CreateCredentialWithChan invokes the devops_rdc.CreateCredential API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/createcredential.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCredentialWithChan(request *CreateCredentialRequest) (<-chan *CreateCredentialResponse, <-chan error) {
 	responseChan := make(chan *CreateCredentialResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateCredentialWithChan(request *CreateCredentialRequest)
 }
 
 // CreateCredentialWithCallback invokes the devops_rdc.CreateCredential API asynchronously
-// api document: https://help.aliyun.com/api/devops-rdc/createcredential.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCredentialWithCallback(request *CreateCredentialRequest, callback func(response *CreateCredentialResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
