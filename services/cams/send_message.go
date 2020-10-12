@@ -21,7 +21,6 @@ import (
 )
 
 // SendMessage invokes the cams.SendMessage API synchronously
-// api document: https://help.aliyun.com/api/cams/sendmessage.html
 func (client *Client) SendMessage(request *SendMessageRequest) (response *SendMessageResponse, err error) {
 	response = CreateSendMessageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SendMessage(request *SendMessageRequest) (response *SendMe
 }
 
 // SendMessageWithChan invokes the cams.SendMessage API asynchronously
-// api document: https://help.aliyun.com/api/cams/sendmessage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendMessageWithChan(request *SendMessageRequest) (<-chan *SendMessageResponse, <-chan error) {
 	responseChan := make(chan *SendMessageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SendMessageWithChan(request *SendMessageRequest) (<-chan *
 }
 
 // SendMessageWithCallback invokes the cams.SendMessage API asynchronously
-// api document: https://help.aliyun.com/api/cams/sendmessage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendMessageWithCallback(request *SendMessageRequest, callback func(response *SendMessageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,18 +72,18 @@ func (client *Client) SendMessageWithCallback(request *SendMessageRequest, callb
 type SendMessageRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	MessageType          string           `position:"Body" name:"MessageType"`
 	TemplateBodyParams   string           `position:"Body" name:"TemplateBodyParams"`
 	Link                 string           `position:"Body" name:"Link"`
 	Caption              string           `position:"Body" name:"Caption"`
 	Type                 string           `position:"Body" name:"Type"`
-	Body                 string           `position:"Body" name:"Body"`
 	ChannelType          string           `position:"Body" name:"ChannelType"`
 	From                 string           `position:"Body" name:"From"`
+	Text                 string           `position:"Body" name:"Text"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	To                   string           `position:"Body" name:"To"`
 	TemplateCode         string           `position:"Body" name:"TemplateCode"`
-	MediaType            string           `position:"Body" name:"MediaType"`
 }
 
 // SendMessageResponse is the response struct for api SendMessage

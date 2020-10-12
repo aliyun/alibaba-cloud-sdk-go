@@ -1,3 +1,8 @@
+2020-10-12 Version: v1.61.551
+- Generated 2020-06-06 for `cams`.
+- ChatApp third version.
+- Add contack check api.
+
 2020-10-10 Version: v1.61.550
 - Generated 2019-09-16 for `alikafka`.
 - Support new param IoMaxSpec for order related interface.
