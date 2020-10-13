@@ -75,6 +75,7 @@ type CreateMPULayoutRequest struct {
 	ShowLog       string                  `position:"Query" name:"ShowLog"`
 	OwnerId       requests.Integer        `position:"Query" name:"OwnerId"`
 	AppId         string                  `position:"Query" name:"AppId"`
+	Name          string                  `position:"Query" name:"Name"`
 	AudioMixCount requests.Integer        `position:"Query" name:"AudioMixCount"`
 }
 
