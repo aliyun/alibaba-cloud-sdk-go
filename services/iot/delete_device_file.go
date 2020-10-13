@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDeviceFile invokes the iot.DeleteDeviceFile API synchronously
-// api document: https://help.aliyun.com/api/iot/deletedevicefile.html
 func (client *Client) DeleteDeviceFile(request *DeleteDeviceFileRequest) (response *DeleteDeviceFileResponse, err error) {
 	response = CreateDeleteDeviceFileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDeviceFile(request *DeleteDeviceFileRequest) (respon
 }
 
 // DeleteDeviceFileWithChan invokes the iot.DeleteDeviceFile API asynchronously
-// api document: https://help.aliyun.com/api/iot/deletedevicefile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDeviceFileWithChan(request *DeleteDeviceFileRequest) (<-chan *DeleteDeviceFileResponse, <-chan error) {
 	responseChan := make(chan *DeleteDeviceFileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDeviceFileWithChan(request *DeleteDeviceFileRequest)
 }
 
 // DeleteDeviceFileWithCallback invokes the iot.DeleteDeviceFile API asynchronously
-// api document: https://help.aliyun.com/api/iot/deletedevicefile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDeviceFileWithCallback(request *DeleteDeviceFileRequest, callback func(response *DeleteDeviceFileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

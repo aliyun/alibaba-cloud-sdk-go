@@ -21,7 +21,6 @@ import (
 )
 
 // QueryDeviceByTags invokes the iot.QueryDeviceByTags API synchronously
-// api document: https://help.aliyun.com/api/iot/querydevicebytags.html
 func (client *Client) QueryDeviceByTags(request *QueryDeviceByTagsRequest) (response *QueryDeviceByTagsResponse, err error) {
 	response = CreateQueryDeviceByTagsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryDeviceByTags(request *QueryDeviceByTagsRequest) (resp
 }
 
 // QueryDeviceByTagsWithChan invokes the iot.QueryDeviceByTags API asynchronously
-// api document: https://help.aliyun.com/api/iot/querydevicebytags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceByTagsWithChan(request *QueryDeviceByTagsRequest) (<-chan *QueryDeviceByTagsResponse, <-chan error) {
 	responseChan := make(chan *QueryDeviceByTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryDeviceByTagsWithChan(request *QueryDeviceByTagsReques
 }
 
 // QueryDeviceByTagsWithCallback invokes the iot.QueryDeviceByTags API asynchronously
-// api document: https://help.aliyun.com/api/iot/querydevicebytags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceByTagsWithCallback(request *QueryDeviceByTagsRequest, callback func(response *QueryDeviceByTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ImportThingModelTsl invokes the iot.ImportThingModelTsl API synchronously
-// api document: https://help.aliyun.com/api/iot/importthingmodeltsl.html
 func (client *Client) ImportThingModelTsl(request *ImportThingModelTslRequest) (response *ImportThingModelTslResponse, err error) {
 	response = CreateImportThingModelTslResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ImportThingModelTsl(request *ImportThingModelTslRequest) (
 }
 
 // ImportThingModelTslWithChan invokes the iot.ImportThingModelTsl API asynchronously
-// api document: https://help.aliyun.com/api/iot/importthingmodeltsl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportThingModelTslWithChan(request *ImportThingModelTslRequest) (<-chan *ImportThingModelTslResponse, <-chan error) {
 	responseChan := make(chan *ImportThingModelTslResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ImportThingModelTslWithChan(request *ImportThingModelTslRe
 }
 
 // ImportThingModelTslWithCallback invokes the iot.ImportThingModelTsl API asynchronously
-// api document: https://help.aliyun.com/api/iot/importthingmodeltsl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportThingModelTslWithCallback(request *ImportThingModelTslRequest, callback func(response *ImportThingModelTslResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

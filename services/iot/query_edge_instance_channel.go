@@ -21,7 +21,6 @@ import (
 )
 
 // QueryEdgeInstanceChannel invokes the iot.QueryEdgeInstanceChannel API synchronously
-// api document: https://help.aliyun.com/api/iot/queryedgeinstancechannel.html
 func (client *Client) QueryEdgeInstanceChannel(request *QueryEdgeInstanceChannelRequest) (response *QueryEdgeInstanceChannelResponse, err error) {
 	response = CreateQueryEdgeInstanceChannelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryEdgeInstanceChannel(request *QueryEdgeInstanceChannel
 }
 
 // QueryEdgeInstanceChannelWithChan invokes the iot.QueryEdgeInstanceChannel API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryedgeinstancechannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEdgeInstanceChannelWithChan(request *QueryEdgeInstanceChannelRequest) (<-chan *QueryEdgeInstanceChannelResponse, <-chan error) {
 	responseChan := make(chan *QueryEdgeInstanceChannelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryEdgeInstanceChannelWithChan(request *QueryEdgeInstanc
 }
 
 // QueryEdgeInstanceChannelWithCallback invokes the iot.QueryEdgeInstanceChannel API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryedgeinstancechannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEdgeInstanceChannelWithCallback(request *QueryEdgeInstanceChannelRequest, callback func(response *QueryEdgeInstanceChannelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

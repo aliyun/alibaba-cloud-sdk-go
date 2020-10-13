@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSceneRule invokes the iot.DeleteSceneRule API synchronously
-// api document: https://help.aliyun.com/api/iot/deletescenerule.html
 func (client *Client) DeleteSceneRule(request *DeleteSceneRuleRequest) (response *DeleteSceneRuleResponse, err error) {
 	response = CreateDeleteSceneRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSceneRule(request *DeleteSceneRuleRequest) (response
 }
 
 // DeleteSceneRuleWithChan invokes the iot.DeleteSceneRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/deletescenerule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSceneRuleWithChan(request *DeleteSceneRuleRequest) (<-chan *DeleteSceneRuleResponse, <-chan error) {
 	responseChan := make(chan *DeleteSceneRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSceneRuleWithChan(request *DeleteSceneRuleRequest) (
 }
 
 // DeleteSceneRuleWithCallback invokes the iot.DeleteSceneRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/deletescenerule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSceneRuleWithCallback(request *DeleteSceneRuleRequest, callback func(response *DeleteSceneRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

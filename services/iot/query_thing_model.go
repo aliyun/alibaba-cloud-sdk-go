@@ -21,7 +21,6 @@ import (
 )
 
 // QueryThingModel invokes the iot.QueryThingModel API synchronously
-// api document: https://help.aliyun.com/api/iot/querythingmodel.html
 func (client *Client) QueryThingModel(request *QueryThingModelRequest) (response *QueryThingModelResponse, err error) {
 	response = CreateQueryThingModelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryThingModel(request *QueryThingModelRequest) (response
 }
 
 // QueryThingModelWithChan invokes the iot.QueryThingModel API asynchronously
-// api document: https://help.aliyun.com/api/iot/querythingmodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryThingModelWithChan(request *QueryThingModelRequest) (<-chan *QueryThingModelResponse, <-chan error) {
 	responseChan := make(chan *QueryThingModelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryThingModelWithChan(request *QueryThingModelRequest) (
 }
 
 // QueryThingModelWithCallback invokes the iot.QueryThingModel API asynchronously
-// api document: https://help.aliyun.com/api/iot/querythingmodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryThingModelWithCallback(request *QueryThingModelRequest, callback func(response *QueryThingModelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

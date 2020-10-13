@@ -21,7 +21,6 @@ import (
 )
 
 // PubBroadcast invokes the iot.PubBroadcast API synchronously
-// api document: https://help.aliyun.com/api/iot/pubbroadcast.html
 func (client *Client) PubBroadcast(request *PubBroadcastRequest) (response *PubBroadcastResponse, err error) {
 	response = CreatePubBroadcastResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PubBroadcast(request *PubBroadcastRequest) (response *PubB
 }
 
 // PubBroadcastWithChan invokes the iot.PubBroadcast API asynchronously
-// api document: https://help.aliyun.com/api/iot/pubbroadcast.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PubBroadcastWithChan(request *PubBroadcastRequest) (<-chan *PubBroadcastResponse, <-chan error) {
 	responseChan := make(chan *PubBroadcastResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PubBroadcastWithChan(request *PubBroadcastRequest) (<-chan
 }
 
 // PubBroadcastWithCallback invokes the iot.PubBroadcast API asynchronously
-// api document: https://help.aliyun.com/api/iot/pubbroadcast.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PubBroadcastWithCallback(request *PubBroadcastRequest, callback func(response *PubBroadcastResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

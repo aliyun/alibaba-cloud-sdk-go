@@ -21,7 +21,6 @@ import (
 )
 
 // QueryDetailSceneRuleLog invokes the iot.QueryDetailSceneRuleLog API synchronously
-// api document: https://help.aliyun.com/api/iot/querydetailscenerulelog.html
 func (client *Client) QueryDetailSceneRuleLog(request *QueryDetailSceneRuleLogRequest) (response *QueryDetailSceneRuleLogResponse, err error) {
 	response = CreateQueryDetailSceneRuleLogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryDetailSceneRuleLog(request *QueryDetailSceneRuleLogRe
 }
 
 // QueryDetailSceneRuleLogWithChan invokes the iot.QueryDetailSceneRuleLog API asynchronously
-// api document: https://help.aliyun.com/api/iot/querydetailscenerulelog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDetailSceneRuleLogWithChan(request *QueryDetailSceneRuleLogRequest) (<-chan *QueryDetailSceneRuleLogResponse, <-chan error) {
 	responseChan := make(chan *QueryDetailSceneRuleLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryDetailSceneRuleLogWithChan(request *QueryDetailSceneR
 }
 
 // QueryDetailSceneRuleLogWithCallback invokes the iot.QueryDetailSceneRuleLog API asynchronously
-// api document: https://help.aliyun.com/api/iot/querydetailscenerulelog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDetailSceneRuleLogWithCallback(request *QueryDetailSceneRuleLogRequest, callback func(response *QueryDetailSceneRuleLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

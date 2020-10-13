@@ -21,7 +21,6 @@ import (
 )
 
 // BatchDeleteEdgeInstanceChannel invokes the iot.BatchDeleteEdgeInstanceChannel API synchronously
-// api document: https://help.aliyun.com/api/iot/batchdeleteedgeinstancechannel.html
 func (client *Client) BatchDeleteEdgeInstanceChannel(request *BatchDeleteEdgeInstanceChannelRequest) (response *BatchDeleteEdgeInstanceChannelResponse, err error) {
 	response = CreateBatchDeleteEdgeInstanceChannelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchDeleteEdgeInstanceChannel(request *BatchDeleteEdgeIns
 }
 
 // BatchDeleteEdgeInstanceChannelWithChan invokes the iot.BatchDeleteEdgeInstanceChannel API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchdeleteedgeinstancechannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchDeleteEdgeInstanceChannelWithChan(request *BatchDeleteEdgeInstanceChannelRequest) (<-chan *BatchDeleteEdgeInstanceChannelResponse, <-chan error) {
 	responseChan := make(chan *BatchDeleteEdgeInstanceChannelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchDeleteEdgeInstanceChannelWithChan(request *BatchDelet
 }
 
 // BatchDeleteEdgeInstanceChannelWithCallback invokes the iot.BatchDeleteEdgeInstanceChannel API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchdeleteedgeinstancechannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchDeleteEdgeInstanceChannelWithCallback(request *BatchDeleteEdgeInstanceChannelRequest, callback func(response *BatchDeleteEdgeInstanceChannelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // QueryDeviceGroupByTags invokes the iot.QueryDeviceGroupByTags API synchronously
-// api document: https://help.aliyun.com/api/iot/querydevicegroupbytags.html
 func (client *Client) QueryDeviceGroupByTags(request *QueryDeviceGroupByTagsRequest) (response *QueryDeviceGroupByTagsResponse, err error) {
 	response = CreateQueryDeviceGroupByTagsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryDeviceGroupByTags(request *QueryDeviceGroupByTagsRequ
 }
 
 // QueryDeviceGroupByTagsWithChan invokes the iot.QueryDeviceGroupByTags API asynchronously
-// api document: https://help.aliyun.com/api/iot/querydevicegroupbytags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceGroupByTagsWithChan(request *QueryDeviceGroupByTagsRequest) (<-chan *QueryDeviceGroupByTagsResponse, <-chan error) {
 	responseChan := make(chan *QueryDeviceGroupByTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryDeviceGroupByTagsWithChan(request *QueryDeviceGroupBy
 }
 
 // QueryDeviceGroupByTagsWithCallback invokes the iot.QueryDeviceGroupByTags API asynchronously
-// api document: https://help.aliyun.com/api/iot/querydevicegroupbytags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceGroupByTagsWithCallback(request *QueryDeviceGroupByTagsRequest, callback func(response *QueryDeviceGroupByTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

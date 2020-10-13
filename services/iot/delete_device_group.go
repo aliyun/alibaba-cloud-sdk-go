@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDeviceGroup invokes the iot.DeleteDeviceGroup API synchronously
-// api document: https://help.aliyun.com/api/iot/deletedevicegroup.html
 func (client *Client) DeleteDeviceGroup(request *DeleteDeviceGroupRequest) (response *DeleteDeviceGroupResponse, err error) {
 	response = CreateDeleteDeviceGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDeviceGroup(request *DeleteDeviceGroupRequest) (resp
 }
 
 // DeleteDeviceGroupWithChan invokes the iot.DeleteDeviceGroup API asynchronously
-// api document: https://help.aliyun.com/api/iot/deletedevicegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDeviceGroupWithChan(request *DeleteDeviceGroupRequest) (<-chan *DeleteDeviceGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteDeviceGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDeviceGroupWithChan(request *DeleteDeviceGroupReques
 }
 
 // DeleteDeviceGroupWithCallback invokes the iot.DeleteDeviceGroup API asynchronously
-// api document: https://help.aliyun.com/api/iot/deletedevicegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDeviceGroupWithCallback(request *DeleteDeviceGroupRequest, callback func(response *DeleteDeviceGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

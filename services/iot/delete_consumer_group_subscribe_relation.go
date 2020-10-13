@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteConsumerGroupSubscribeRelation invokes the iot.DeleteConsumerGroupSubscribeRelation API synchronously
-// api document: https://help.aliyun.com/api/iot/deleteconsumergroupsubscriberelation.html
 func (client *Client) DeleteConsumerGroupSubscribeRelation(request *DeleteConsumerGroupSubscribeRelationRequest) (response *DeleteConsumerGroupSubscribeRelationResponse, err error) {
 	response = CreateDeleteConsumerGroupSubscribeRelationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteConsumerGroupSubscribeRelation(request *DeleteConsum
 }
 
 // DeleteConsumerGroupSubscribeRelationWithChan invokes the iot.DeleteConsumerGroupSubscribeRelation API asynchronously
-// api document: https://help.aliyun.com/api/iot/deleteconsumergroupsubscriberelation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteConsumerGroupSubscribeRelationWithChan(request *DeleteConsumerGroupSubscribeRelationRequest) (<-chan *DeleteConsumerGroupSubscribeRelationResponse, <-chan error) {
 	responseChan := make(chan *DeleteConsumerGroupSubscribeRelationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteConsumerGroupSubscribeRelationWithChan(request *Dele
 }
 
 // DeleteConsumerGroupSubscribeRelationWithCallback invokes the iot.DeleteConsumerGroupSubscribeRelation API asynchronously
-// api document: https://help.aliyun.com/api/iot/deleteconsumergroupsubscriberelation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteConsumerGroupSubscribeRelationWithCallback(request *DeleteConsumerGroupSubscribeRelationRequest, callback func(response *DeleteConsumerGroupSubscribeRelationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // QueryEdgeInstanceDriver invokes the iot.QueryEdgeInstanceDriver API synchronously
-// api document: https://help.aliyun.com/api/iot/queryedgeinstancedriver.html
 func (client *Client) QueryEdgeInstanceDriver(request *QueryEdgeInstanceDriverRequest) (response *QueryEdgeInstanceDriverResponse, err error) {
 	response = CreateQueryEdgeInstanceDriverResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryEdgeInstanceDriver(request *QueryEdgeInstanceDriverRe
 }
 
 // QueryEdgeInstanceDriverWithChan invokes the iot.QueryEdgeInstanceDriver API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryedgeinstancedriver.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEdgeInstanceDriverWithChan(request *QueryEdgeInstanceDriverRequest) (<-chan *QueryEdgeInstanceDriverResponse, <-chan error) {
 	responseChan := make(chan *QueryEdgeInstanceDriverResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryEdgeInstanceDriverWithChan(request *QueryEdgeInstance
 }
 
 // QueryEdgeInstanceDriverWithCallback invokes the iot.QueryEdgeInstanceDriver API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryedgeinstancedriver.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEdgeInstanceDriverWithCallback(request *QueryEdgeInstanceDriverRequest, callback func(response *QueryEdgeInstanceDriverResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

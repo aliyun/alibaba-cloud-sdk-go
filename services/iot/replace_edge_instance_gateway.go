@@ -21,7 +21,6 @@ import (
 )
 
 // ReplaceEdgeInstanceGateway invokes the iot.ReplaceEdgeInstanceGateway API synchronously
-// api document: https://help.aliyun.com/api/iot/replaceedgeinstancegateway.html
 func (client *Client) ReplaceEdgeInstanceGateway(request *ReplaceEdgeInstanceGatewayRequest) (response *ReplaceEdgeInstanceGatewayResponse, err error) {
 	response = CreateReplaceEdgeInstanceGatewayResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReplaceEdgeInstanceGateway(request *ReplaceEdgeInstanceGat
 }
 
 // ReplaceEdgeInstanceGatewayWithChan invokes the iot.ReplaceEdgeInstanceGateway API asynchronously
-// api document: https://help.aliyun.com/api/iot/replaceedgeinstancegateway.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReplaceEdgeInstanceGatewayWithChan(request *ReplaceEdgeInstanceGatewayRequest) (<-chan *ReplaceEdgeInstanceGatewayResponse, <-chan error) {
 	responseChan := make(chan *ReplaceEdgeInstanceGatewayResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReplaceEdgeInstanceGatewayWithChan(request *ReplaceEdgeIns
 }
 
 // ReplaceEdgeInstanceGatewayWithCallback invokes the iot.ReplaceEdgeInstanceGateway API asynchronously
-// api document: https://help.aliyun.com/api/iot/replaceedgeinstancegateway.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReplaceEdgeInstanceGatewayWithCallback(request *ReplaceEdgeInstanceGatewayRequest, callback func(response *ReplaceEdgeInstanceGatewayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

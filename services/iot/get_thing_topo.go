@@ -21,7 +21,6 @@ import (
 )
 
 // GetThingTopo invokes the iot.GetThingTopo API synchronously
-// api document: https://help.aliyun.com/api/iot/getthingtopo.html
 func (client *Client) GetThingTopo(request *GetThingTopoRequest) (response *GetThingTopoResponse, err error) {
 	response = CreateGetThingTopoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetThingTopo(request *GetThingTopoRequest) (response *GetT
 }
 
 // GetThingTopoWithChan invokes the iot.GetThingTopo API asynchronously
-// api document: https://help.aliyun.com/api/iot/getthingtopo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetThingTopoWithChan(request *GetThingTopoRequest) (<-chan *GetThingTopoResponse, <-chan error) {
 	responseChan := make(chan *GetThingTopoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetThingTopoWithChan(request *GetThingTopoRequest) (<-chan
 }
 
 // GetThingTopoWithCallback invokes the iot.GetThingTopo API asynchronously
-// api document: https://help.aliyun.com/api/iot/getthingtopo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetThingTopoWithCallback(request *GetThingTopoRequest, callback func(response *GetThingTopoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

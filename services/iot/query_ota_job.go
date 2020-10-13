@@ -21,7 +21,6 @@ import (
 )
 
 // QueryOTAJob invokes the iot.QueryOTAJob API synchronously
-// api document: https://help.aliyun.com/api/iot/queryotajob.html
 func (client *Client) QueryOTAJob(request *QueryOTAJobRequest) (response *QueryOTAJobResponse, err error) {
 	response = CreateQueryOTAJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryOTAJob(request *QueryOTAJobRequest) (response *QueryO
 }
 
 // QueryOTAJobWithChan invokes the iot.QueryOTAJob API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryotajob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryOTAJobWithChan(request *QueryOTAJobRequest) (<-chan *QueryOTAJobResponse, <-chan error) {
 	responseChan := make(chan *QueryOTAJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryOTAJobWithChan(request *QueryOTAJobRequest) (<-chan *
 }
 
 // QueryOTAJobWithCallback invokes the iot.QueryOTAJob API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryotajob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryOTAJobWithCallback(request *QueryOTAJobRequest, callback func(response *QueryOTAJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,11 +80,11 @@ type QueryOTAJobRequest struct {
 // QueryOTAJobResponse is the response struct for api QueryOTAJob
 type QueryOTAJobResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	Success      bool   `json:"Success" xml:"Success"`
-	Code         string `json:"Code" xml:"Code"`
-	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
-	Data         Data   `json:"Data" xml:"Data"`
+	RequestId    string            `json:"RequestId" xml:"RequestId"`
+	Success      bool              `json:"Success" xml:"Success"`
+	Code         string            `json:"Code" xml:"Code"`
+	ErrorMessage string            `json:"ErrorMessage" xml:"ErrorMessage"`
+	Data         DataInQueryOTAJob `json:"Data" xml:"Data"`
 }
 
 // CreateQueryOTAJobRequest creates a request to invoke QueryOTAJob API

@@ -21,7 +21,6 @@ import (
 )
 
 // QuerySuperDeviceGroup invokes the iot.QuerySuperDeviceGroup API synchronously
-// api document: https://help.aliyun.com/api/iot/querysuperdevicegroup.html
 func (client *Client) QuerySuperDeviceGroup(request *QuerySuperDeviceGroupRequest) (response *QuerySuperDeviceGroupResponse, err error) {
 	response = CreateQuerySuperDeviceGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QuerySuperDeviceGroup(request *QuerySuperDeviceGroupReques
 }
 
 // QuerySuperDeviceGroupWithChan invokes the iot.QuerySuperDeviceGroup API asynchronously
-// api document: https://help.aliyun.com/api/iot/querysuperdevicegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySuperDeviceGroupWithChan(request *QuerySuperDeviceGroupRequest) (<-chan *QuerySuperDeviceGroupResponse, <-chan error) {
 	responseChan := make(chan *QuerySuperDeviceGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QuerySuperDeviceGroupWithChan(request *QuerySuperDeviceGro
 }
 
 // QuerySuperDeviceGroupWithCallback invokes the iot.QuerySuperDeviceGroup API asynchronously
-// api document: https://help.aliyun.com/api/iot/querysuperdevicegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySuperDeviceGroupWithCallback(request *QuerySuperDeviceGroupRequest, callback func(response *QuerySuperDeviceGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

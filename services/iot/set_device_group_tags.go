@@ -21,7 +21,6 @@ import (
 )
 
 // SetDeviceGroupTags invokes the iot.SetDeviceGroupTags API synchronously
-// api document: https://help.aliyun.com/api/iot/setdevicegrouptags.html
 func (client *Client) SetDeviceGroupTags(request *SetDeviceGroupTagsRequest) (response *SetDeviceGroupTagsResponse, err error) {
 	response = CreateSetDeviceGroupTagsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetDeviceGroupTags(request *SetDeviceGroupTagsRequest) (re
 }
 
 // SetDeviceGroupTagsWithChan invokes the iot.SetDeviceGroupTags API asynchronously
-// api document: https://help.aliyun.com/api/iot/setdevicegrouptags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDeviceGroupTagsWithChan(request *SetDeviceGroupTagsRequest) (<-chan *SetDeviceGroupTagsResponse, <-chan error) {
 	responseChan := make(chan *SetDeviceGroupTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetDeviceGroupTagsWithChan(request *SetDeviceGroupTagsRequ
 }
 
 // SetDeviceGroupTagsWithCallback invokes the iot.SetDeviceGroupTags API asynchronously
-// api document: https://help.aliyun.com/api/iot/setdevicegrouptags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDeviceGroupTagsWithCallback(request *SetDeviceGroupTagsRequest, callback func(response *SetDeviceGroupTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

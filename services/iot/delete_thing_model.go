@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteThingModel invokes the iot.DeleteThingModel API synchronously
-// api document: https://help.aliyun.com/api/iot/deletethingmodel.html
 func (client *Client) DeleteThingModel(request *DeleteThingModelRequest) (response *DeleteThingModelResponse, err error) {
 	response = CreateDeleteThingModelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteThingModel(request *DeleteThingModelRequest) (respon
 }
 
 // DeleteThingModelWithChan invokes the iot.DeleteThingModel API asynchronously
-// api document: https://help.aliyun.com/api/iot/deletethingmodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteThingModelWithChan(request *DeleteThingModelRequest) (<-chan *DeleteThingModelResponse, <-chan error) {
 	responseChan := make(chan *DeleteThingModelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteThingModelWithChan(request *DeleteThingModelRequest)
 }
 
 // DeleteThingModelWithCallback invokes the iot.DeleteThingModel API asynchronously
-// api document: https://help.aliyun.com/api/iot/deletethingmodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteThingModelWithCallback(request *DeleteThingModelRequest, callback func(response *DeleteThingModelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

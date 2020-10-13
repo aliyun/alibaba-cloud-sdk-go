@@ -21,7 +21,6 @@ import (
 )
 
 // BindApplicationToEdgeInstance invokes the iot.BindApplicationToEdgeInstance API synchronously
-// api document: https://help.aliyun.com/api/iot/bindapplicationtoedgeinstance.html
 func (client *Client) BindApplicationToEdgeInstance(request *BindApplicationToEdgeInstanceRequest) (response *BindApplicationToEdgeInstanceResponse, err error) {
 	response = CreateBindApplicationToEdgeInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindApplicationToEdgeInstance(request *BindApplicationToEd
 }
 
 // BindApplicationToEdgeInstanceWithChan invokes the iot.BindApplicationToEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/bindapplicationtoedgeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindApplicationToEdgeInstanceWithChan(request *BindApplicationToEdgeInstanceRequest) (<-chan *BindApplicationToEdgeInstanceResponse, <-chan error) {
 	responseChan := make(chan *BindApplicationToEdgeInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindApplicationToEdgeInstanceWithChan(request *BindApplica
 }
 
 // BindApplicationToEdgeInstanceWithCallback invokes the iot.BindApplicationToEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/bindapplicationtoedgeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindApplicationToEdgeInstanceWithCallback(request *BindApplicationToEdgeInstanceRequest, callback func(response *BindApplicationToEdgeInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

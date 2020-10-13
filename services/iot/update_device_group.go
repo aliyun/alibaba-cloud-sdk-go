@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateDeviceGroup invokes the iot.UpdateDeviceGroup API synchronously
-// api document: https://help.aliyun.com/api/iot/updatedevicegroup.html
 func (client *Client) UpdateDeviceGroup(request *UpdateDeviceGroupRequest) (response *UpdateDeviceGroupResponse, err error) {
 	response = CreateUpdateDeviceGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateDeviceGroup(request *UpdateDeviceGroupRequest) (resp
 }
 
 // UpdateDeviceGroupWithChan invokes the iot.UpdateDeviceGroup API asynchronously
-// api document: https://help.aliyun.com/api/iot/updatedevicegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDeviceGroupWithChan(request *UpdateDeviceGroupRequest) (<-chan *UpdateDeviceGroupResponse, <-chan error) {
 	responseChan := make(chan *UpdateDeviceGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateDeviceGroupWithChan(request *UpdateDeviceGroupReques
 }
 
 // UpdateDeviceGroupWithCallback invokes the iot.UpdateDeviceGroup API asynchronously
-// api document: https://help.aliyun.com/api/iot/updatedevicegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDeviceGroupWithCallback(request *UpdateDeviceGroupRequest, callback func(response *UpdateDeviceGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

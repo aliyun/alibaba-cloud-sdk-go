@@ -21,7 +21,6 @@ import (
 )
 
 // QuerySceneRule invokes the iot.QuerySceneRule API synchronously
-// api document: https://help.aliyun.com/api/iot/queryscenerule.html
 func (client *Client) QuerySceneRule(request *QuerySceneRuleRequest) (response *QuerySceneRuleResponse, err error) {
 	response = CreateQuerySceneRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QuerySceneRule(request *QuerySceneRuleRequest) (response *
 }
 
 // QuerySceneRuleWithChan invokes the iot.QuerySceneRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryscenerule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySceneRuleWithChan(request *QuerySceneRuleRequest) (<-chan *QuerySceneRuleResponse, <-chan error) {
 	responseChan := make(chan *QuerySceneRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QuerySceneRuleWithChan(request *QuerySceneRuleRequest) (<-
 }
 
 // QuerySceneRuleWithCallback invokes the iot.QuerySceneRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryscenerule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySceneRuleWithCallback(request *QuerySceneRuleRequest, callback func(response *QuerySceneRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteRule invokes the iot.DeleteRule API synchronously
-// api document: https://help.aliyun.com/api/iot/deleterule.html
 func (client *Client) DeleteRule(request *DeleteRuleRequest) (response *DeleteRuleResponse, err error) {
 	response = CreateDeleteRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteRule(request *DeleteRuleRequest) (response *DeleteRu
 }
 
 // DeleteRuleWithChan invokes the iot.DeleteRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/deleterule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRuleWithChan(request *DeleteRuleRequest) (<-chan *DeleteRuleResponse, <-chan error) {
 	responseChan := make(chan *DeleteRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteRuleWithChan(request *DeleteRuleRequest) (<-chan *De
 }
 
 // DeleteRuleWithCallback invokes the iot.DeleteRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/deleterule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRuleWithCallback(request *DeleteRuleRequest, callback func(response *DeleteRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

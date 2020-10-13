@@ -21,7 +21,6 @@ import (
 )
 
 // GetEdgeDriverVersion invokes the iot.GetEdgeDriverVersion API synchronously
-// api document: https://help.aliyun.com/api/iot/getedgedriverversion.html
 func (client *Client) GetEdgeDriverVersion(request *GetEdgeDriverVersionRequest) (response *GetEdgeDriverVersionResponse, err error) {
 	response = CreateGetEdgeDriverVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetEdgeDriverVersion(request *GetEdgeDriverVersionRequest)
 }
 
 // GetEdgeDriverVersionWithChan invokes the iot.GetEdgeDriverVersion API asynchronously
-// api document: https://help.aliyun.com/api/iot/getedgedriverversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetEdgeDriverVersionWithChan(request *GetEdgeDriverVersionRequest) (<-chan *GetEdgeDriverVersionResponse, <-chan error) {
 	responseChan := make(chan *GetEdgeDriverVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetEdgeDriverVersionWithChan(request *GetEdgeDriverVersion
 }
 
 // GetEdgeDriverVersionWithCallback invokes the iot.GetEdgeDriverVersion API asynchronously
-// api document: https://help.aliyun.com/api/iot/getedgedriverversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetEdgeDriverVersionWithCallback(request *GetEdgeDriverVersionRequest, callback func(response *GetEdgeDriverVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

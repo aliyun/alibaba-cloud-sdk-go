@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateRule invokes the iot.UpdateRule API synchronously
-// api document: https://help.aliyun.com/api/iot/updaterule.html
 func (client *Client) UpdateRule(request *UpdateRuleRequest) (response *UpdateRuleResponse, err error) {
 	response = CreateUpdateRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateRule(request *UpdateRuleRequest) (response *UpdateRu
 }
 
 // UpdateRuleWithChan invokes the iot.UpdateRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/updaterule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateRuleWithChan(request *UpdateRuleRequest) (<-chan *UpdateRuleResponse, <-chan error) {
 	responseChan := make(chan *UpdateRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateRuleWithChan(request *UpdateRuleRequest) (<-chan *Up
 }
 
 // UpdateRuleWithCallback invokes the iot.UpdateRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/updaterule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateRuleWithCallback(request *UpdateRuleRequest, callback func(response *UpdateRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

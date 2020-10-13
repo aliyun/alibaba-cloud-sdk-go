@@ -21,7 +21,6 @@ import (
 )
 
 // PublishThingModel invokes the iot.PublishThingModel API synchronously
-// api document: https://help.aliyun.com/api/iot/publishthingmodel.html
 func (client *Client) PublishThingModel(request *PublishThingModelRequest) (response *PublishThingModelResponse, err error) {
 	response = CreatePublishThingModelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PublishThingModel(request *PublishThingModelRequest) (resp
 }
 
 // PublishThingModelWithChan invokes the iot.PublishThingModel API asynchronously
-// api document: https://help.aliyun.com/api/iot/publishthingmodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PublishThingModelWithChan(request *PublishThingModelRequest) (<-chan *PublishThingModelResponse, <-chan error) {
 	responseChan := make(chan *PublishThingModelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PublishThingModelWithChan(request *PublishThingModelReques
 }
 
 // PublishThingModelWithCallback invokes the iot.PublishThingModel API asynchronously
-// api document: https://help.aliyun.com/api/iot/publishthingmodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PublishThingModelWithCallback(request *PublishThingModelRequest, callback func(response *PublishThingModelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

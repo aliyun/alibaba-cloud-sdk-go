@@ -21,7 +21,6 @@ import (
 )
 
 // QueryDeviceGroupList invokes the iot.QueryDeviceGroupList API synchronously
-// api document: https://help.aliyun.com/api/iot/querydevicegrouplist.html
 func (client *Client) QueryDeviceGroupList(request *QueryDeviceGroupListRequest) (response *QueryDeviceGroupListResponse, err error) {
 	response = CreateQueryDeviceGroupListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryDeviceGroupList(request *QueryDeviceGroupListRequest)
 }
 
 // QueryDeviceGroupListWithChan invokes the iot.QueryDeviceGroupList API asynchronously
-// api document: https://help.aliyun.com/api/iot/querydevicegrouplist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceGroupListWithChan(request *QueryDeviceGroupListRequest) (<-chan *QueryDeviceGroupListResponse, <-chan error) {
 	responseChan := make(chan *QueryDeviceGroupListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryDeviceGroupListWithChan(request *QueryDeviceGroupList
 }
 
 // QueryDeviceGroupListWithCallback invokes the iot.QueryDeviceGroupList API asynchronously
-// api document: https://help.aliyun.com/api/iot/querydevicegrouplist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceGroupListWithCallback(request *QueryDeviceGroupListRequest, callback func(response *QueryDeviceGroupListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

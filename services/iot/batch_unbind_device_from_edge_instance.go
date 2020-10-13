@@ -21,7 +21,6 @@ import (
 )
 
 // BatchUnbindDeviceFromEdgeInstance invokes the iot.BatchUnbindDeviceFromEdgeInstance API synchronously
-// api document: https://help.aliyun.com/api/iot/batchunbinddevicefromedgeinstance.html
 func (client *Client) BatchUnbindDeviceFromEdgeInstance(request *BatchUnbindDeviceFromEdgeInstanceRequest) (response *BatchUnbindDeviceFromEdgeInstanceResponse, err error) {
 	response = CreateBatchUnbindDeviceFromEdgeInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchUnbindDeviceFromEdgeInstance(request *BatchUnbindDevi
 }
 
 // BatchUnbindDeviceFromEdgeInstanceWithChan invokes the iot.BatchUnbindDeviceFromEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchunbinddevicefromedgeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchUnbindDeviceFromEdgeInstanceWithChan(request *BatchUnbindDeviceFromEdgeInstanceRequest) (<-chan *BatchUnbindDeviceFromEdgeInstanceResponse, <-chan error) {
 	responseChan := make(chan *BatchUnbindDeviceFromEdgeInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchUnbindDeviceFromEdgeInstanceWithChan(request *BatchUn
 }
 
 // BatchUnbindDeviceFromEdgeInstanceWithCallback invokes the iot.BatchUnbindDeviceFromEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchunbinddevicefromedgeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchUnbindDeviceFromEdgeInstanceWithCallback(request *BatchUnbindDeviceFromEdgeInstanceRequest, callback func(response *BatchUnbindDeviceFromEdgeInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

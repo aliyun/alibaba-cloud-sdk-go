@@ -21,7 +21,6 @@ import (
 )
 
 // ListThingTemplates invokes the iot.ListThingTemplates API synchronously
-// api document: https://help.aliyun.com/api/iot/listthingtemplates.html
 func (client *Client) ListThingTemplates(request *ListThingTemplatesRequest) (response *ListThingTemplatesResponse, err error) {
 	response = CreateListThingTemplatesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListThingTemplates(request *ListThingTemplatesRequest) (re
 }
 
 // ListThingTemplatesWithChan invokes the iot.ListThingTemplates API asynchronously
-// api document: https://help.aliyun.com/api/iot/listthingtemplates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListThingTemplatesWithChan(request *ListThingTemplatesRequest) (<-chan *ListThingTemplatesResponse, <-chan error) {
 	responseChan := make(chan *ListThingTemplatesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListThingTemplatesWithChan(request *ListThingTemplatesRequ
 }
 
 // ListThingTemplatesWithCallback invokes the iot.ListThingTemplates API asynchronously
-// api document: https://help.aliyun.com/api/iot/listthingtemplates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListThingTemplatesWithCallback(request *ListThingTemplatesRequest, callback func(response *ListThingTemplatesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

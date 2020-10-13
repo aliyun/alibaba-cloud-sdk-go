@@ -21,7 +21,6 @@ import (
 )
 
 // QueryDeviceFile invokes the iot.QueryDeviceFile API synchronously
-// api document: https://help.aliyun.com/api/iot/querydevicefile.html
 func (client *Client) QueryDeviceFile(request *QueryDeviceFileRequest) (response *QueryDeviceFileResponse, err error) {
 	response = CreateQueryDeviceFileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryDeviceFile(request *QueryDeviceFileRequest) (response
 }
 
 // QueryDeviceFileWithChan invokes the iot.QueryDeviceFile API asynchronously
-// api document: https://help.aliyun.com/api/iot/querydevicefile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceFileWithChan(request *QueryDeviceFileRequest) (<-chan *QueryDeviceFileResponse, <-chan error) {
 	responseChan := make(chan *QueryDeviceFileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryDeviceFileWithChan(request *QueryDeviceFileRequest) (
 }
 
 // QueryDeviceFileWithCallback invokes the iot.QueryDeviceFile API asynchronously
-// api document: https://help.aliyun.com/api/iot/querydevicefile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceFileWithCallback(request *QueryDeviceFileRequest, callback func(response *QueryDeviceFileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

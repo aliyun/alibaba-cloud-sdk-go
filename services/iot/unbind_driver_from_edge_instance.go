@@ -21,7 +21,6 @@ import (
 )
 
 // UnbindDriverFromEdgeInstance invokes the iot.UnbindDriverFromEdgeInstance API synchronously
-// api document: https://help.aliyun.com/api/iot/unbinddriverfromedgeinstance.html
 func (client *Client) UnbindDriverFromEdgeInstance(request *UnbindDriverFromEdgeInstanceRequest) (response *UnbindDriverFromEdgeInstanceResponse, err error) {
 	response = CreateUnbindDriverFromEdgeInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnbindDriverFromEdgeInstance(request *UnbindDriverFromEdge
 }
 
 // UnbindDriverFromEdgeInstanceWithChan invokes the iot.UnbindDriverFromEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/unbinddriverfromedgeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindDriverFromEdgeInstanceWithChan(request *UnbindDriverFromEdgeInstanceRequest) (<-chan *UnbindDriverFromEdgeInstanceResponse, <-chan error) {
 	responseChan := make(chan *UnbindDriverFromEdgeInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnbindDriverFromEdgeInstanceWithChan(request *UnbindDriver
 }
 
 // UnbindDriverFromEdgeInstanceWithCallback invokes the iot.UnbindDriverFromEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/unbinddriverfromedgeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindDriverFromEdgeInstanceWithCallback(request *UnbindDriverFromEdgeInstanceRequest, callback func(response *UnbindDriverFromEdgeInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

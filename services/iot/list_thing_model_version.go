@@ -21,7 +21,6 @@ import (
 )
 
 // ListThingModelVersion invokes the iot.ListThingModelVersion API synchronously
-// api document: https://help.aliyun.com/api/iot/listthingmodelversion.html
 func (client *Client) ListThingModelVersion(request *ListThingModelVersionRequest) (response *ListThingModelVersionResponse, err error) {
 	response = CreateListThingModelVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListThingModelVersion(request *ListThingModelVersionReques
 }
 
 // ListThingModelVersionWithChan invokes the iot.ListThingModelVersion API asynchronously
-// api document: https://help.aliyun.com/api/iot/listthingmodelversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListThingModelVersionWithChan(request *ListThingModelVersionRequest) (<-chan *ListThingModelVersionResponse, <-chan error) {
 	responseChan := make(chan *ListThingModelVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListThingModelVersionWithChan(request *ListThingModelVersi
 }
 
 // ListThingModelVersionWithCallback invokes the iot.ListThingModelVersion API asynchronously
-// api document: https://help.aliyun.com/api/iot/listthingmodelversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListThingModelVersionWithCallback(request *ListThingModelVersionRequest, callback func(response *ListThingModelVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

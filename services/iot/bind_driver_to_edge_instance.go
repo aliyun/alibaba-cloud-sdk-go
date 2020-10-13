@@ -21,7 +21,6 @@ import (
 )
 
 // BindDriverToEdgeInstance invokes the iot.BindDriverToEdgeInstance API synchronously
-// api document: https://help.aliyun.com/api/iot/binddrivertoedgeinstance.html
 func (client *Client) BindDriverToEdgeInstance(request *BindDriverToEdgeInstanceRequest) (response *BindDriverToEdgeInstanceResponse, err error) {
 	response = CreateBindDriverToEdgeInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindDriverToEdgeInstance(request *BindDriverToEdgeInstance
 }
 
 // BindDriverToEdgeInstanceWithChan invokes the iot.BindDriverToEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/binddrivertoedgeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindDriverToEdgeInstanceWithChan(request *BindDriverToEdgeInstanceRequest) (<-chan *BindDriverToEdgeInstanceResponse, <-chan error) {
 	responseChan := make(chan *BindDriverToEdgeInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindDriverToEdgeInstanceWithChan(request *BindDriverToEdge
 }
 
 // BindDriverToEdgeInstanceWithCallback invokes the iot.BindDriverToEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/binddrivertoedgeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindDriverToEdgeInstanceWithCallback(request *BindDriverToEdgeInstanceRequest, callback func(response *BindDriverToEdgeInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

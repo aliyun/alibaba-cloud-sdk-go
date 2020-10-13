@@ -21,7 +21,6 @@ import (
 )
 
 // BatchDeleteDeviceGroupRelations invokes the iot.BatchDeleteDeviceGroupRelations API synchronously
-// api document: https://help.aliyun.com/api/iot/batchdeletedevicegrouprelations.html
 func (client *Client) BatchDeleteDeviceGroupRelations(request *BatchDeleteDeviceGroupRelationsRequest) (response *BatchDeleteDeviceGroupRelationsResponse, err error) {
 	response = CreateBatchDeleteDeviceGroupRelationsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchDeleteDeviceGroupRelations(request *BatchDeleteDevice
 }
 
 // BatchDeleteDeviceGroupRelationsWithChan invokes the iot.BatchDeleteDeviceGroupRelations API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchdeletedevicegrouprelations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchDeleteDeviceGroupRelationsWithChan(request *BatchDeleteDeviceGroupRelationsRequest) (<-chan *BatchDeleteDeviceGroupRelationsResponse, <-chan error) {
 	responseChan := make(chan *BatchDeleteDeviceGroupRelationsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchDeleteDeviceGroupRelationsWithChan(request *BatchDele
 }
 
 // BatchDeleteDeviceGroupRelationsWithCallback invokes the iot.BatchDeleteDeviceGroupRelations API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchdeletedevicegrouprelations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchDeleteDeviceGroupRelationsWithCallback(request *BatchDeleteDeviceGroupRelationsRequest, callback func(response *BatchDeleteDeviceGroupRelationsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateEdgeOssPreSignedAddress invokes the iot.CreateEdgeOssPreSignedAddress API synchronously
-// api document: https://help.aliyun.com/api/iot/createedgeosspresignedaddress.html
 func (client *Client) CreateEdgeOssPreSignedAddress(request *CreateEdgeOssPreSignedAddressRequest) (response *CreateEdgeOssPreSignedAddressResponse, err error) {
 	response = CreateCreateEdgeOssPreSignedAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateEdgeOssPreSignedAddress(request *CreateEdgeOssPreSig
 }
 
 // CreateEdgeOssPreSignedAddressWithChan invokes the iot.CreateEdgeOssPreSignedAddress API asynchronously
-// api document: https://help.aliyun.com/api/iot/createedgeosspresignedaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEdgeOssPreSignedAddressWithChan(request *CreateEdgeOssPreSignedAddressRequest) (<-chan *CreateEdgeOssPreSignedAddressResponse, <-chan error) {
 	responseChan := make(chan *CreateEdgeOssPreSignedAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateEdgeOssPreSignedAddressWithChan(request *CreateEdgeO
 }
 
 // CreateEdgeOssPreSignedAddressWithCallback invokes the iot.CreateEdgeOssPreSignedAddress API asynchronously
-// api document: https://help.aliyun.com/api/iot/createedgeosspresignedaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEdgeOssPreSignedAddressWithCallback(request *CreateEdgeOssPreSignedAddressRequest, callback func(response *CreateEdgeOssPreSignedAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

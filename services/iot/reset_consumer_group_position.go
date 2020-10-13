@@ -21,7 +21,6 @@ import (
 )
 
 // ResetConsumerGroupPosition invokes the iot.ResetConsumerGroupPosition API synchronously
-// api document: https://help.aliyun.com/api/iot/resetconsumergroupposition.html
 func (client *Client) ResetConsumerGroupPosition(request *ResetConsumerGroupPositionRequest) (response *ResetConsumerGroupPositionResponse, err error) {
 	response = CreateResetConsumerGroupPositionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResetConsumerGroupPosition(request *ResetConsumerGroupPosi
 }
 
 // ResetConsumerGroupPositionWithChan invokes the iot.ResetConsumerGroupPosition API asynchronously
-// api document: https://help.aliyun.com/api/iot/resetconsumergroupposition.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetConsumerGroupPositionWithChan(request *ResetConsumerGroupPositionRequest) (<-chan *ResetConsumerGroupPositionResponse, <-chan error) {
 	responseChan := make(chan *ResetConsumerGroupPositionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResetConsumerGroupPositionWithChan(request *ResetConsumerG
 }
 
 // ResetConsumerGroupPositionWithCallback invokes the iot.ResetConsumerGroupPosition API asynchronously
-// api document: https://help.aliyun.com/api/iot/resetconsumergroupposition.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetConsumerGroupPositionWithCallback(request *ResetConsumerGroupPositionRequest, callback func(response *ResetConsumerGroupPositionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

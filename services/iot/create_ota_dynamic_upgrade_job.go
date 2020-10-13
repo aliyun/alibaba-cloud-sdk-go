@@ -21,7 +21,6 @@ import (
 )
 
 // CreateOTADynamicUpgradeJob invokes the iot.CreateOTADynamicUpgradeJob API synchronously
-// api document: https://help.aliyun.com/api/iot/createotadynamicupgradejob.html
 func (client *Client) CreateOTADynamicUpgradeJob(request *CreateOTADynamicUpgradeJobRequest) (response *CreateOTADynamicUpgradeJobResponse, err error) {
 	response = CreateCreateOTADynamicUpgradeJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateOTADynamicUpgradeJob(request *CreateOTADynamicUpgrad
 }
 
 // CreateOTADynamicUpgradeJobWithChan invokes the iot.CreateOTADynamicUpgradeJob API asynchronously
-// api document: https://help.aliyun.com/api/iot/createotadynamicupgradejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOTADynamicUpgradeJobWithChan(request *CreateOTADynamicUpgradeJobRequest) (<-chan *CreateOTADynamicUpgradeJobResponse, <-chan error) {
 	responseChan := make(chan *CreateOTADynamicUpgradeJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateOTADynamicUpgradeJobWithChan(request *CreateOTADynam
 }
 
 // CreateOTADynamicUpgradeJobWithCallback invokes the iot.CreateOTADynamicUpgradeJob API asynchronously
-// api document: https://help.aliyun.com/api/iot/createotadynamicupgradejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOTADynamicUpgradeJobWithCallback(request *CreateOTADynamicUpgradeJobRequest, callback func(response *CreateOTADynamicUpgradeJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,16 +71,25 @@ func (client *Client) CreateOTADynamicUpgradeJobWithCallback(request *CreateOTAD
 // CreateOTADynamicUpgradeJobRequest is the request struct for api CreateOTADynamicUpgradeJob
 type CreateOTADynamicUpgradeJobRequest struct {
 	*requests.RpcRequest
-	RetryCount       requests.Integer `position:"Query" name:"RetryCount"`
-	TimeoutInMinutes requests.Integer `position:"Query" name:"TimeoutInMinutes"`
-	IotInstanceId    string           `position:"Query" name:"IotInstanceId"`
-	FirmwareId       string           `position:"Query" name:"FirmwareId"`
-	ProductKey       string           `position:"Query" name:"ProductKey"`
-	RetryInterval    requests.Integer `position:"Query" name:"RetryInterval"`
-	SrcVersion       *[]string        `position:"Query" name:"SrcVersion"  type:"Repeated"`
-	ApiProduct       string           `position:"Body" name:"ApiProduct"`
-	ApiRevision      string           `position:"Body" name:"ApiRevision"`
-	MaximumPerMinute requests.Integer `position:"Query" name:"MaximumPerMinute"`
+	DynamicMode      requests.Integer                 `position:"Query" name:"DynamicMode"`
+	RetryCount       requests.Integer                 `position:"Query" name:"RetryCount"`
+	TimeoutInMinutes requests.Integer                 `position:"Query" name:"TimeoutInMinutes"`
+	IotInstanceId    string                           `position:"Query" name:"IotInstanceId"`
+	Tag              *[]CreateOTADynamicUpgradeJobTag `position:"Query" name:"Tag"  type:"Repeated"`
+	FirmwareId       string                           `position:"Query" name:"FirmwareId"`
+	ProductKey       string                           `position:"Query" name:"ProductKey"`
+	RetryInterval    requests.Integer                 `position:"Query" name:"RetryInterval"`
+	SrcVersion       *[]string                        `position:"Query" name:"SrcVersion"  type:"Repeated"`
+	OverwriteMode    requests.Integer                 `position:"Query" name:"OverwriteMode"`
+	ApiProduct       string                           `position:"Body" name:"ApiProduct"`
+	ApiRevision      string                           `position:"Body" name:"ApiRevision"`
+	MaximumPerMinute requests.Integer                 `position:"Query" name:"MaximumPerMinute"`
+}
+
+// CreateOTADynamicUpgradeJobTag is a repeated param struct in CreateOTADynamicUpgradeJobRequest
+type CreateOTADynamicUpgradeJobTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateOTADynamicUpgradeJobResponse is the response struct for api CreateOTADynamicUpgradeJob

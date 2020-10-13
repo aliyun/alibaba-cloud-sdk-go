@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateThingModel invokes the iot.UpdateThingModel API synchronously
-// api document: https://help.aliyun.com/api/iot/updatethingmodel.html
 func (client *Client) UpdateThingModel(request *UpdateThingModelRequest) (response *UpdateThingModelResponse, err error) {
 	response = CreateUpdateThingModelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateThingModel(request *UpdateThingModelRequest) (respon
 }
 
 // UpdateThingModelWithChan invokes the iot.UpdateThingModel API asynchronously
-// api document: https://help.aliyun.com/api/iot/updatethingmodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateThingModelWithChan(request *UpdateThingModelRequest) (<-chan *UpdateThingModelResponse, <-chan error) {
 	responseChan := make(chan *UpdateThingModelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateThingModelWithChan(request *UpdateThingModelRequest)
 }
 
 // UpdateThingModelWithCallback invokes the iot.UpdateThingModel API asynchronously
-// api document: https://help.aliyun.com/api/iot/updatethingmodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateThingModelWithCallback(request *UpdateThingModelRequest, callback func(response *UpdateThingModelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

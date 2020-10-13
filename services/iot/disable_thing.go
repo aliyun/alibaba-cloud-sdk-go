@@ -21,7 +21,6 @@ import (
 )
 
 // DisableThing invokes the iot.DisableThing API synchronously
-// api document: https://help.aliyun.com/api/iot/disablething.html
 func (client *Client) DisableThing(request *DisableThingRequest) (response *DisableThingResponse, err error) {
 	response = CreateDisableThingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisableThing(request *DisableThingRequest) (response *Disa
 }
 
 // DisableThingWithChan invokes the iot.DisableThing API asynchronously
-// api document: https://help.aliyun.com/api/iot/disablething.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableThingWithChan(request *DisableThingRequest) (<-chan *DisableThingResponse, <-chan error) {
 	responseChan := make(chan *DisableThingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisableThingWithChan(request *DisableThingRequest) (<-chan
 }
 
 // DisableThingWithCallback invokes the iot.DisableThing API asynchronously
-// api document: https://help.aliyun.com/api/iot/disablething.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableThingWithCallback(request *DisableThingRequest, callback func(response *DisableThingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

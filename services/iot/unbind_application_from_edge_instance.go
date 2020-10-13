@@ -21,7 +21,6 @@ import (
 )
 
 // UnbindApplicationFromEdgeInstance invokes the iot.UnbindApplicationFromEdgeInstance API synchronously
-// api document: https://help.aliyun.com/api/iot/unbindapplicationfromedgeinstance.html
 func (client *Client) UnbindApplicationFromEdgeInstance(request *UnbindApplicationFromEdgeInstanceRequest) (response *UnbindApplicationFromEdgeInstanceResponse, err error) {
 	response = CreateUnbindApplicationFromEdgeInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnbindApplicationFromEdgeInstance(request *UnbindApplicati
 }
 
 // UnbindApplicationFromEdgeInstanceWithChan invokes the iot.UnbindApplicationFromEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/unbindapplicationfromedgeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindApplicationFromEdgeInstanceWithChan(request *UnbindApplicationFromEdgeInstanceRequest) (<-chan *UnbindApplicationFromEdgeInstanceResponse, <-chan error) {
 	responseChan := make(chan *UnbindApplicationFromEdgeInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnbindApplicationFromEdgeInstanceWithChan(request *UnbindA
 }
 
 // UnbindApplicationFromEdgeInstanceWithCallback invokes the iot.UnbindApplicationFromEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/unbindapplicationfromedgeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindApplicationFromEdgeInstanceWithCallback(request *UnbindApplicationFromEdgeInstanceRequest, callback func(response *UnbindApplicationFromEdgeInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

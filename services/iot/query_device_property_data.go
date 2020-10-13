@@ -21,7 +21,6 @@ import (
 )
 
 // QueryDevicePropertyData invokes the iot.QueryDevicePropertyData API synchronously
-// api document: https://help.aliyun.com/api/iot/querydevicepropertydata.html
 func (client *Client) QueryDevicePropertyData(request *QueryDevicePropertyDataRequest) (response *QueryDevicePropertyDataResponse, err error) {
 	response = CreateQueryDevicePropertyDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryDevicePropertyData(request *QueryDevicePropertyDataRe
 }
 
 // QueryDevicePropertyDataWithChan invokes the iot.QueryDevicePropertyData API asynchronously
-// api document: https://help.aliyun.com/api/iot/querydevicepropertydata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDevicePropertyDataWithChan(request *QueryDevicePropertyDataRequest) (<-chan *QueryDevicePropertyDataResponse, <-chan error) {
 	responseChan := make(chan *QueryDevicePropertyDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryDevicePropertyDataWithChan(request *QueryDeviceProper
 }
 
 // QueryDevicePropertyDataWithCallback invokes the iot.QueryDevicePropertyData API asynchronously
-// api document: https://help.aliyun.com/api/iot/querydevicepropertydata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDevicePropertyDataWithCallback(request *QueryDevicePropertyDataRequest, callback func(response *QueryDevicePropertyDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

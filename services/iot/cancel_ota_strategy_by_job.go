@@ -21,7 +21,6 @@ import (
 )
 
 // CancelOTAStrategyByJob invokes the iot.CancelOTAStrategyByJob API synchronously
-// api document: https://help.aliyun.com/api/iot/cancelotastrategybyjob.html
 func (client *Client) CancelOTAStrategyByJob(request *CancelOTAStrategyByJobRequest) (response *CancelOTAStrategyByJobResponse, err error) {
 	response = CreateCancelOTAStrategyByJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CancelOTAStrategyByJob(request *CancelOTAStrategyByJobRequ
 }
 
 // CancelOTAStrategyByJobWithChan invokes the iot.CancelOTAStrategyByJob API asynchronously
-// api document: https://help.aliyun.com/api/iot/cancelotastrategybyjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelOTAStrategyByJobWithChan(request *CancelOTAStrategyByJobRequest) (<-chan *CancelOTAStrategyByJobResponse, <-chan error) {
 	responseChan := make(chan *CancelOTAStrategyByJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CancelOTAStrategyByJobWithChan(request *CancelOTAStrategyB
 }
 
 // CancelOTAStrategyByJobWithCallback invokes the iot.CancelOTAStrategyByJob API asynchronously
-// api document: https://help.aliyun.com/api/iot/cancelotastrategybyjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelOTAStrategyByJobWithCallback(request *CancelOTAStrategyByJobRequest, callback func(response *CancelOTAStrategyByJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

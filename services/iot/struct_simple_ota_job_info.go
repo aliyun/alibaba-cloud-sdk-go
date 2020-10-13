@@ -17,15 +17,16 @@ package iot
 
 // SimpleOTAJobInfo is a nested struct in iot response
 type SimpleOTAJobInfo struct {
-	JobId           string `json:"JobId" xml:"JobId"`
-	UtcEndTime      string `json:"UtcEndTime" xml:"UtcEndTime"`
-	SelectionType   string `json:"SelectionType" xml:"SelectionType"`
-	ProductKey      string `json:"ProductKey" xml:"ProductKey"`
-	FirmwareId      string `json:"FirmwareId" xml:"FirmwareId"`
-	UtcModified     string `json:"UtcModified" xml:"UtcModified"`
-	UtcCreate       string `json:"UtcCreate" xml:"UtcCreate"`
-	UtcStartTime    string `json:"UtcStartTime" xml:"UtcStartTime"`
-	JobStatus       string `json:"JobStatus" xml:"JobStatus"`
-	JobType         string `json:"JobType" xml:"JobType"`
-	TargetSelection string `json:"TargetSelection" xml:"TargetSelection"`
+	JobId           string                   `json:"JobId" xml:"JobId"`
+	UtcEndTime      string                   `json:"UtcEndTime" xml:"UtcEndTime"`
+	SelectionType   string                   `json:"SelectionType" xml:"SelectionType"`
+	ProductKey      string                   `json:"ProductKey" xml:"ProductKey"`
+	FirmwareId      string                   `json:"FirmwareId" xml:"FirmwareId"`
+	UtcModified     string                   `json:"UtcModified" xml:"UtcModified"`
+	UtcCreate       string                   `json:"UtcCreate" xml:"UtcCreate"`
+	UtcStartTime    string                   `json:"UtcStartTime" xml:"UtcStartTime"`
+	JobStatus       string                   `json:"JobStatus" xml:"JobStatus"`
+	JobType         string                   `json:"JobType" xml:"JobType"`
+	TargetSelection string                   `json:"TargetSelection" xml:"TargetSelection"`
+	Tags            TagsInListOTAJobByDevice `json:"Tags" xml:"Tags"`
 }

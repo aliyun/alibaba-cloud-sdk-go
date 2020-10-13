@@ -21,7 +21,6 @@ import (
 )
 
 // BatchRegisterDeviceWithApplyId invokes the iot.BatchRegisterDeviceWithApplyId API synchronously
-// api document: https://help.aliyun.com/api/iot/batchregisterdevicewithapplyid.html
 func (client *Client) BatchRegisterDeviceWithApplyId(request *BatchRegisterDeviceWithApplyIdRequest) (response *BatchRegisterDeviceWithApplyIdResponse, err error) {
 	response = CreateBatchRegisterDeviceWithApplyIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchRegisterDeviceWithApplyId(request *BatchRegisterDevic
 }
 
 // BatchRegisterDeviceWithApplyIdWithChan invokes the iot.BatchRegisterDeviceWithApplyId API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchregisterdevicewithapplyid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchRegisterDeviceWithApplyIdWithChan(request *BatchRegisterDeviceWithApplyIdRequest) (<-chan *BatchRegisterDeviceWithApplyIdResponse, <-chan error) {
 	responseChan := make(chan *BatchRegisterDeviceWithApplyIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchRegisterDeviceWithApplyIdWithChan(request *BatchRegis
 }
 
 // BatchRegisterDeviceWithApplyIdWithCallback invokes the iot.BatchRegisterDeviceWithApplyId API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchregisterdevicewithapplyid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchRegisterDeviceWithApplyIdWithCallback(request *BatchRegisterDeviceWithApplyIdRequest, callback func(response *BatchRegisterDeviceWithApplyIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

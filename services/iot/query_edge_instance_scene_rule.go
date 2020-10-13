@@ -21,7 +21,6 @@ import (
 )
 
 // QueryEdgeInstanceSceneRule invokes the iot.QueryEdgeInstanceSceneRule API synchronously
-// api document: https://help.aliyun.com/api/iot/queryedgeinstancescenerule.html
 func (client *Client) QueryEdgeInstanceSceneRule(request *QueryEdgeInstanceSceneRuleRequest) (response *QueryEdgeInstanceSceneRuleResponse, err error) {
 	response = CreateQueryEdgeInstanceSceneRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryEdgeInstanceSceneRule(request *QueryEdgeInstanceScene
 }
 
 // QueryEdgeInstanceSceneRuleWithChan invokes the iot.QueryEdgeInstanceSceneRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryedgeinstancescenerule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEdgeInstanceSceneRuleWithChan(request *QueryEdgeInstanceSceneRuleRequest) (<-chan *QueryEdgeInstanceSceneRuleResponse, <-chan error) {
 	responseChan := make(chan *QueryEdgeInstanceSceneRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryEdgeInstanceSceneRuleWithChan(request *QueryEdgeInsta
 }
 
 // QueryEdgeInstanceSceneRuleWithCallback invokes the iot.QueryEdgeInstanceSceneRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryedgeinstancescenerule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEdgeInstanceSceneRuleWithCallback(request *QueryEdgeInstanceSceneRuleRequest, callback func(response *QueryEdgeInstanceSceneRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // SetDeviceProperty invokes the iot.SetDeviceProperty API synchronously
-// api document: https://help.aliyun.com/api/iot/setdeviceproperty.html
 func (client *Client) SetDeviceProperty(request *SetDevicePropertyRequest) (response *SetDevicePropertyResponse, err error) {
 	response = CreateSetDevicePropertyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetDeviceProperty(request *SetDevicePropertyRequest) (resp
 }
 
 // SetDevicePropertyWithChan invokes the iot.SetDeviceProperty API asynchronously
-// api document: https://help.aliyun.com/api/iot/setdeviceproperty.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDevicePropertyWithChan(request *SetDevicePropertyRequest) (<-chan *SetDevicePropertyResponse, <-chan error) {
 	responseChan := make(chan *SetDevicePropertyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetDevicePropertyWithChan(request *SetDevicePropertyReques
 }
 
 // SetDevicePropertyWithCallback invokes the iot.SetDeviceProperty API asynchronously
-// api document: https://help.aliyun.com/api/iot/setdeviceproperty.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDevicePropertyWithCallback(request *SetDevicePropertyRequest, callback func(response *SetDevicePropertyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

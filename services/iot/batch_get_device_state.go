@@ -21,7 +21,6 @@ import (
 )
 
 // BatchGetDeviceState invokes the iot.BatchGetDeviceState API synchronously
-// api document: https://help.aliyun.com/api/iot/batchgetdevicestate.html
 func (client *Client) BatchGetDeviceState(request *BatchGetDeviceStateRequest) (response *BatchGetDeviceStateResponse, err error) {
 	response = CreateBatchGetDeviceStateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchGetDeviceState(request *BatchGetDeviceStateRequest) (
 }
 
 // BatchGetDeviceStateWithChan invokes the iot.BatchGetDeviceState API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchgetdevicestate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchGetDeviceStateWithChan(request *BatchGetDeviceStateRequest) (<-chan *BatchGetDeviceStateResponse, <-chan error) {
 	responseChan := make(chan *BatchGetDeviceStateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchGetDeviceStateWithChan(request *BatchGetDeviceStateRe
 }
 
 // BatchGetDeviceStateWithCallback invokes the iot.BatchGetDeviceState API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchgetdevicestate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchGetDeviceStateWithCallback(request *BatchGetDeviceStateRequest, callback func(response *BatchGetDeviceStateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

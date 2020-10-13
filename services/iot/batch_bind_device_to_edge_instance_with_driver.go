@@ -21,7 +21,6 @@ import (
 )
 
 // BatchBindDeviceToEdgeInstanceWithDriver invokes the iot.BatchBindDeviceToEdgeInstanceWithDriver API synchronously
-// api document: https://help.aliyun.com/api/iot/batchbinddevicetoedgeinstancewithdriver.html
 func (client *Client) BatchBindDeviceToEdgeInstanceWithDriver(request *BatchBindDeviceToEdgeInstanceWithDriverRequest) (response *BatchBindDeviceToEdgeInstanceWithDriverResponse, err error) {
 	response = CreateBatchBindDeviceToEdgeInstanceWithDriverResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchBindDeviceToEdgeInstanceWithDriver(request *BatchBind
 }
 
 // BatchBindDeviceToEdgeInstanceWithDriverWithChan invokes the iot.BatchBindDeviceToEdgeInstanceWithDriver API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchbinddevicetoedgeinstancewithdriver.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchBindDeviceToEdgeInstanceWithDriverWithChan(request *BatchBindDeviceToEdgeInstanceWithDriverRequest) (<-chan *BatchBindDeviceToEdgeInstanceWithDriverResponse, <-chan error) {
 	responseChan := make(chan *BatchBindDeviceToEdgeInstanceWithDriverResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchBindDeviceToEdgeInstanceWithDriverWithChan(request *B
 }
 
 // BatchBindDeviceToEdgeInstanceWithDriverWithCallback invokes the iot.BatchBindDeviceToEdgeInstanceWithDriver API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchbinddevicetoedgeinstancewithdriver.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchBindDeviceToEdgeInstanceWithDriverWithCallback(request *BatchBindDeviceToEdgeInstanceWithDriverRequest, callback func(response *BatchBindDeviceToEdgeInstanceWithDriverResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateEdgeInstanceChannel invokes the iot.UpdateEdgeInstanceChannel API synchronously
-// api document: https://help.aliyun.com/api/iot/updateedgeinstancechannel.html
 func (client *Client) UpdateEdgeInstanceChannel(request *UpdateEdgeInstanceChannelRequest) (response *UpdateEdgeInstanceChannelResponse, err error) {
 	response = CreateUpdateEdgeInstanceChannelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateEdgeInstanceChannel(request *UpdateEdgeInstanceChann
 }
 
 // UpdateEdgeInstanceChannelWithChan invokes the iot.UpdateEdgeInstanceChannel API asynchronously
-// api document: https://help.aliyun.com/api/iot/updateedgeinstancechannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateEdgeInstanceChannelWithChan(request *UpdateEdgeInstanceChannelRequest) (<-chan *UpdateEdgeInstanceChannelResponse, <-chan error) {
 	responseChan := make(chan *UpdateEdgeInstanceChannelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateEdgeInstanceChannelWithChan(request *UpdateEdgeInsta
 }
 
 // UpdateEdgeInstanceChannelWithCallback invokes the iot.UpdateEdgeInstanceChannel API asynchronously
-// api document: https://help.aliyun.com/api/iot/updateedgeinstancechannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateEdgeInstanceChannelWithCallback(request *UpdateEdgeInstanceChannelRequest, callback func(response *UpdateEdgeInstanceChannelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // BatchAddThingTopo invokes the iot.BatchAddThingTopo API synchronously
-// api document: https://help.aliyun.com/api/iot/batchaddthingtopo.html
 func (client *Client) BatchAddThingTopo(request *BatchAddThingTopoRequest) (response *BatchAddThingTopoResponse, err error) {
 	response = CreateBatchAddThingTopoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchAddThingTopo(request *BatchAddThingTopoRequest) (resp
 }
 
 // BatchAddThingTopoWithChan invokes the iot.BatchAddThingTopo API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchaddthingtopo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchAddThingTopoWithChan(request *BatchAddThingTopoRequest) (<-chan *BatchAddThingTopoResponse, <-chan error) {
 	responseChan := make(chan *BatchAddThingTopoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchAddThingTopoWithChan(request *BatchAddThingTopoReques
 }
 
 // BatchAddThingTopoWithCallback invokes the iot.BatchAddThingTopo API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchaddthingtopo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchAddThingTopoWithCallback(request *BatchAddThingTopoRequest, callback func(response *BatchAddThingTopoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

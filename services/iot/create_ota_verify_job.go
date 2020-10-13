@@ -21,7 +21,6 @@ import (
 )
 
 // CreateOTAVerifyJob invokes the iot.CreateOTAVerifyJob API synchronously
-// api document: https://help.aliyun.com/api/iot/createotaverifyjob.html
 func (client *Client) CreateOTAVerifyJob(request *CreateOTAVerifyJobRequest) (response *CreateOTAVerifyJobResponse, err error) {
 	response = CreateCreateOTAVerifyJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateOTAVerifyJob(request *CreateOTAVerifyJobRequest) (re
 }
 
 // CreateOTAVerifyJobWithChan invokes the iot.CreateOTAVerifyJob API asynchronously
-// api document: https://help.aliyun.com/api/iot/createotaverifyjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOTAVerifyJobWithChan(request *CreateOTAVerifyJobRequest) (<-chan *CreateOTAVerifyJobResponse, <-chan error) {
 	responseChan := make(chan *CreateOTAVerifyJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateOTAVerifyJobWithChan(request *CreateOTAVerifyJobRequ
 }
 
 // CreateOTAVerifyJobWithCallback invokes the iot.CreateOTAVerifyJob API asynchronously
-// api document: https://help.aliyun.com/api/iot/createotaverifyjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOTAVerifyJobWithCallback(request *CreateOTAVerifyJobRequest, callback func(response *CreateOTAVerifyJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

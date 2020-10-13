@@ -21,7 +21,6 @@ import (
 )
 
 // GetThingTemplate invokes the iot.GetThingTemplate API synchronously
-// api document: https://help.aliyun.com/api/iot/getthingtemplate.html
 func (client *Client) GetThingTemplate(request *GetThingTemplateRequest) (response *GetThingTemplateResponse, err error) {
 	response = CreateGetThingTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetThingTemplate(request *GetThingTemplateRequest) (respon
 }
 
 // GetThingTemplateWithChan invokes the iot.GetThingTemplate API asynchronously
-// api document: https://help.aliyun.com/api/iot/getthingtemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetThingTemplateWithChan(request *GetThingTemplateRequest) (<-chan *GetThingTemplateResponse, <-chan error) {
 	responseChan := make(chan *GetThingTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetThingTemplateWithChan(request *GetThingTemplateRequest)
 }
 
 // GetThingTemplateWithCallback invokes the iot.GetThingTemplate API asynchronously
-// api document: https://help.aliyun.com/api/iot/getthingtemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetThingTemplateWithCallback(request *GetThingTemplateRequest, callback func(response *GetThingTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

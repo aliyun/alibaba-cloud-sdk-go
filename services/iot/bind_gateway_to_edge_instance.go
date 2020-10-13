@@ -21,7 +21,6 @@ import (
 )
 
 // BindGatewayToEdgeInstance invokes the iot.BindGatewayToEdgeInstance API synchronously
-// api document: https://help.aliyun.com/api/iot/bindgatewaytoedgeinstance.html
 func (client *Client) BindGatewayToEdgeInstance(request *BindGatewayToEdgeInstanceRequest) (response *BindGatewayToEdgeInstanceResponse, err error) {
 	response = CreateBindGatewayToEdgeInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindGatewayToEdgeInstance(request *BindGatewayToEdgeInstan
 }
 
 // BindGatewayToEdgeInstanceWithChan invokes the iot.BindGatewayToEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/bindgatewaytoedgeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindGatewayToEdgeInstanceWithChan(request *BindGatewayToEdgeInstanceRequest) (<-chan *BindGatewayToEdgeInstanceResponse, <-chan error) {
 	responseChan := make(chan *BindGatewayToEdgeInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindGatewayToEdgeInstanceWithChan(request *BindGatewayToEd
 }
 
 // BindGatewayToEdgeInstanceWithCallback invokes the iot.BindGatewayToEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/bindgatewaytoedgeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindGatewayToEdgeInstanceWithCallback(request *BindGatewayToEdgeInstanceRequest, callback func(response *BindGatewayToEdgeInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

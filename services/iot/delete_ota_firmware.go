@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteOTAFirmware invokes the iot.DeleteOTAFirmware API synchronously
-// api document: https://help.aliyun.com/api/iot/deleteotafirmware.html
 func (client *Client) DeleteOTAFirmware(request *DeleteOTAFirmwareRequest) (response *DeleteOTAFirmwareResponse, err error) {
 	response = CreateDeleteOTAFirmwareResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteOTAFirmware(request *DeleteOTAFirmwareRequest) (resp
 }
 
 // DeleteOTAFirmwareWithChan invokes the iot.DeleteOTAFirmware API asynchronously
-// api document: https://help.aliyun.com/api/iot/deleteotafirmware.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteOTAFirmwareWithChan(request *DeleteOTAFirmwareRequest) (<-chan *DeleteOTAFirmwareResponse, <-chan error) {
 	responseChan := make(chan *DeleteOTAFirmwareResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteOTAFirmwareWithChan(request *DeleteOTAFirmwareReques
 }
 
 // DeleteOTAFirmwareWithCallback invokes the iot.DeleteOTAFirmware API asynchronously
-// api document: https://help.aliyun.com/api/iot/deleteotafirmware.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteOTAFirmwareWithCallback(request *DeleteOTAFirmwareRequest, callback func(response *DeleteOTAFirmwareResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

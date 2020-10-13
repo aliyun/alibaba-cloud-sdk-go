@@ -21,7 +21,6 @@ import (
 )
 
 // QueryDeviceCert invokes the iot.QueryDeviceCert API synchronously
-// api document: https://help.aliyun.com/api/iot/querydevicecert.html
 func (client *Client) QueryDeviceCert(request *QueryDeviceCertRequest) (response *QueryDeviceCertResponse, err error) {
 	response = CreateQueryDeviceCertResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryDeviceCert(request *QueryDeviceCertRequest) (response
 }
 
 // QueryDeviceCertWithChan invokes the iot.QueryDeviceCert API asynchronously
-// api document: https://help.aliyun.com/api/iot/querydevicecert.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceCertWithChan(request *QueryDeviceCertRequest) (<-chan *QueryDeviceCertResponse, <-chan error) {
 	responseChan := make(chan *QueryDeviceCertResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryDeviceCertWithChan(request *QueryDeviceCertRequest) (
 }
 
 // QueryDeviceCertWithCallback invokes the iot.QueryDeviceCert API asynchronously
-// api document: https://help.aliyun.com/api/iot/querydevicecert.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceCertWithCallback(request *QueryDeviceCertRequest, callback func(response *QueryDeviceCertResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

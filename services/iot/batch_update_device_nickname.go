@@ -21,7 +21,6 @@ import (
 )
 
 // BatchUpdateDeviceNickname invokes the iot.BatchUpdateDeviceNickname API synchronously
-// api document: https://help.aliyun.com/api/iot/batchupdatedevicenickname.html
 func (client *Client) BatchUpdateDeviceNickname(request *BatchUpdateDeviceNicknameRequest) (response *BatchUpdateDeviceNicknameResponse, err error) {
 	response = CreateBatchUpdateDeviceNicknameResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchUpdateDeviceNickname(request *BatchUpdateDeviceNickna
 }
 
 // BatchUpdateDeviceNicknameWithChan invokes the iot.BatchUpdateDeviceNickname API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchupdatedevicenickname.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchUpdateDeviceNicknameWithChan(request *BatchUpdateDeviceNicknameRequest) (<-chan *BatchUpdateDeviceNicknameResponse, <-chan error) {
 	responseChan := make(chan *BatchUpdateDeviceNicknameResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchUpdateDeviceNicknameWithChan(request *BatchUpdateDevi
 }
 
 // BatchUpdateDeviceNicknameWithCallback invokes the iot.BatchUpdateDeviceNickname API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchupdatedevicenickname.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchUpdateDeviceNicknameWithCallback(request *BatchUpdateDeviceNicknameRequest, callback func(response *BatchUpdateDeviceNicknameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

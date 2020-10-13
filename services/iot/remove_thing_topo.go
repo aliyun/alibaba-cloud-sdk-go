@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveThingTopo invokes the iot.RemoveThingTopo API synchronously
-// api document: https://help.aliyun.com/api/iot/removethingtopo.html
 func (client *Client) RemoveThingTopo(request *RemoveThingTopoRequest) (response *RemoveThingTopoResponse, err error) {
 	response = CreateRemoveThingTopoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveThingTopo(request *RemoveThingTopoRequest) (response
 }
 
 // RemoveThingTopoWithChan invokes the iot.RemoveThingTopo API asynchronously
-// api document: https://help.aliyun.com/api/iot/removethingtopo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveThingTopoWithChan(request *RemoveThingTopoRequest) (<-chan *RemoveThingTopoResponse, <-chan error) {
 	responseChan := make(chan *RemoveThingTopoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveThingTopoWithChan(request *RemoveThingTopoRequest) (
 }
 
 // RemoveThingTopoWithCallback invokes the iot.RemoveThingTopo API asynchronously
-// api document: https://help.aliyun.com/api/iot/removethingtopo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveThingTopoWithCallback(request *RemoveThingTopoRequest, callback func(response *RemoveThingTopoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

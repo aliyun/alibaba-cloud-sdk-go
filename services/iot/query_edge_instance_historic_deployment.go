@@ -21,7 +21,6 @@ import (
 )
 
 // QueryEdgeInstanceHistoricDeployment invokes the iot.QueryEdgeInstanceHistoricDeployment API synchronously
-// api document: https://help.aliyun.com/api/iot/queryedgeinstancehistoricdeployment.html
 func (client *Client) QueryEdgeInstanceHistoricDeployment(request *QueryEdgeInstanceHistoricDeploymentRequest) (response *QueryEdgeInstanceHistoricDeploymentResponse, err error) {
 	response = CreateQueryEdgeInstanceHistoricDeploymentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryEdgeInstanceHistoricDeployment(request *QueryEdgeInst
 }
 
 // QueryEdgeInstanceHistoricDeploymentWithChan invokes the iot.QueryEdgeInstanceHistoricDeployment API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryedgeinstancehistoricdeployment.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEdgeInstanceHistoricDeploymentWithChan(request *QueryEdgeInstanceHistoricDeploymentRequest) (<-chan *QueryEdgeInstanceHistoricDeploymentResponse, <-chan error) {
 	responseChan := make(chan *QueryEdgeInstanceHistoricDeploymentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryEdgeInstanceHistoricDeploymentWithChan(request *Query
 }
 
 // QueryEdgeInstanceHistoricDeploymentWithCallback invokes the iot.QueryEdgeInstanceHistoricDeployment API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryedgeinstancehistoricdeployment.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEdgeInstanceHistoricDeploymentWithCallback(request *QueryEdgeInstanceHistoricDeploymentRequest, callback func(response *QueryEdgeInstanceHistoricDeploymentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

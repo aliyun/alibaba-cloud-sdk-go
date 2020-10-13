@@ -21,7 +21,6 @@ import (
 )
 
 // QueryConsumerGroupByGroupId invokes the iot.QueryConsumerGroupByGroupId API synchronously
-// api document: https://help.aliyun.com/api/iot/queryconsumergroupbygroupid.html
 func (client *Client) QueryConsumerGroupByGroupId(request *QueryConsumerGroupByGroupIdRequest) (response *QueryConsumerGroupByGroupIdResponse, err error) {
 	response = CreateQueryConsumerGroupByGroupIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryConsumerGroupByGroupId(request *QueryConsumerGroupByG
 }
 
 // QueryConsumerGroupByGroupIdWithChan invokes the iot.QueryConsumerGroupByGroupId API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryconsumergroupbygroupid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryConsumerGroupByGroupIdWithChan(request *QueryConsumerGroupByGroupIdRequest) (<-chan *QueryConsumerGroupByGroupIdResponse, <-chan error) {
 	responseChan := make(chan *QueryConsumerGroupByGroupIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryConsumerGroupByGroupIdWithChan(request *QueryConsumer
 }
 
 // QueryConsumerGroupByGroupIdWithCallback invokes the iot.QueryConsumerGroupByGroupId API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryconsumergroupbygroupid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryConsumerGroupByGroupIdWithCallback(request *QueryConsumerGroupByGroupIdRequest, callback func(response *QueryConsumerGroupByGroupIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

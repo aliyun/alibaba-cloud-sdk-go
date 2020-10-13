@@ -21,7 +21,6 @@ import (
 )
 
 // BatchCheckDeviceNames invokes the iot.BatchCheckDeviceNames API synchronously
-// api document: https://help.aliyun.com/api/iot/batchcheckdevicenames.html
 func (client *Client) BatchCheckDeviceNames(request *BatchCheckDeviceNamesRequest) (response *BatchCheckDeviceNamesResponse, err error) {
 	response = CreateBatchCheckDeviceNamesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchCheckDeviceNames(request *BatchCheckDeviceNamesReques
 }
 
 // BatchCheckDeviceNamesWithChan invokes the iot.BatchCheckDeviceNames API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchcheckdevicenames.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchCheckDeviceNamesWithChan(request *BatchCheckDeviceNamesRequest) (<-chan *BatchCheckDeviceNamesResponse, <-chan error) {
 	responseChan := make(chan *BatchCheckDeviceNamesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchCheckDeviceNamesWithChan(request *BatchCheckDeviceNam
 }
 
 // BatchCheckDeviceNamesWithCallback invokes the iot.BatchCheckDeviceNames API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchcheckdevicenames.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchCheckDeviceNamesWithCallback(request *BatchCheckDeviceNamesRequest, callback func(response *BatchCheckDeviceNamesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,11 +71,18 @@ func (client *Client) BatchCheckDeviceNamesWithCallback(request *BatchCheckDevic
 // BatchCheckDeviceNamesRequest is the request struct for api BatchCheckDeviceNames
 type BatchCheckDeviceNamesRequest struct {
 	*requests.RpcRequest
-	IotInstanceId string    `position:"Query" name:"IotInstanceId"`
-	ProductKey    string    `position:"Query" name:"ProductKey"`
-	ApiProduct    string    `position:"Body" name:"ApiProduct"`
-	ApiRevision   string    `position:"Body" name:"ApiRevision"`
-	DeviceName    *[]string `position:"Query" name:"DeviceName"  type:"Repeated"`
+	DeviceNameList *[]BatchCheckDeviceNamesDeviceNameList `position:"Query" name:"DeviceNameList"  type:"Repeated"`
+	IotInstanceId  string                                 `position:"Query" name:"IotInstanceId"`
+	ProductKey     string                                 `position:"Query" name:"ProductKey"`
+	ApiProduct     string                                 `position:"Body" name:"ApiProduct"`
+	ApiRevision    string                                 `position:"Body" name:"ApiRevision"`
+	DeviceName     *[]string                              `position:"Query" name:"DeviceName"  type:"Repeated"`
+}
+
+// BatchCheckDeviceNamesDeviceNameList is a repeated param struct in BatchCheckDeviceNamesRequest
+type BatchCheckDeviceNamesDeviceNameList struct {
+	DeviceNickname string `name:"DeviceNickname"`
+	DeviceName     string `name:"DeviceName"`
 }
 
 // BatchCheckDeviceNamesResponse is the response struct for api BatchCheckDeviceNames

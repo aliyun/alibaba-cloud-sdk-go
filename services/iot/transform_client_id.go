@@ -21,7 +21,6 @@ import (
 )
 
 // TransformClientId invokes the iot.TransformClientId API synchronously
-// api document: https://help.aliyun.com/api/iot/transformclientid.html
 func (client *Client) TransformClientId(request *TransformClientIdRequest) (response *TransformClientIdResponse, err error) {
 	response = CreateTransformClientIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TransformClientId(request *TransformClientIdRequest) (resp
 }
 
 // TransformClientIdWithChan invokes the iot.TransformClientId API asynchronously
-// api document: https://help.aliyun.com/api/iot/transformclientid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TransformClientIdWithChan(request *TransformClientIdRequest) (<-chan *TransformClientIdResponse, <-chan error) {
 	responseChan := make(chan *TransformClientIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TransformClientIdWithChan(request *TransformClientIdReques
 }
 
 // TransformClientIdWithCallback invokes the iot.TransformClientId API asynchronously
-// api document: https://help.aliyun.com/api/iot/transformclientid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TransformClientIdWithCallback(request *TransformClientIdRequest, callback func(response *TransformClientIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

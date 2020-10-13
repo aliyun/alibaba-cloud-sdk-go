@@ -21,7 +21,6 @@ import (
 )
 
 // CopyThingModel invokes the iot.CopyThingModel API synchronously
-// api document: https://help.aliyun.com/api/iot/copythingmodel.html
 func (client *Client) CopyThingModel(request *CopyThingModelRequest) (response *CopyThingModelResponse, err error) {
 	response = CreateCopyThingModelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CopyThingModel(request *CopyThingModelRequest) (response *
 }
 
 // CopyThingModelWithChan invokes the iot.CopyThingModel API asynchronously
-// api document: https://help.aliyun.com/api/iot/copythingmodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyThingModelWithChan(request *CopyThingModelRequest) (<-chan *CopyThingModelResponse, <-chan error) {
 	responseChan := make(chan *CopyThingModelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CopyThingModelWithChan(request *CopyThingModelRequest) (<-
 }
 
 // CopyThingModelWithCallback invokes the iot.CopyThingModel API asynchronously
-// api document: https://help.aliyun.com/api/iot/copythingmodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyThingModelWithCallback(request *CopyThingModelRequest, callback func(response *CopyThingModelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

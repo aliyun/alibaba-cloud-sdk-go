@@ -21,7 +21,6 @@ import (
 )
 
 // GetLoraNodesTask invokes the iot.GetLoraNodesTask API synchronously
-// api document: https://help.aliyun.com/api/iot/getloranodestask.html
 func (client *Client) GetLoraNodesTask(request *GetLoraNodesTaskRequest) (response *GetLoraNodesTaskResponse, err error) {
 	response = CreateGetLoraNodesTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetLoraNodesTask(request *GetLoraNodesTaskRequest) (respon
 }
 
 // GetLoraNodesTaskWithChan invokes the iot.GetLoraNodesTask API asynchronously
-// api document: https://help.aliyun.com/api/iot/getloranodestask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLoraNodesTaskWithChan(request *GetLoraNodesTaskRequest) (<-chan *GetLoraNodesTaskResponse, <-chan error) {
 	responseChan := make(chan *GetLoraNodesTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetLoraNodesTaskWithChan(request *GetLoraNodesTaskRequest)
 }
 
 // GetLoraNodesTaskWithCallback invokes the iot.GetLoraNodesTask API asynchronously
-// api document: https://help.aliyun.com/api/iot/getloranodestask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLoraNodesTaskWithCallback(request *GetLoraNodesTaskRequest, callback func(response *GetLoraNodesTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

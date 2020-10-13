@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteProductTopic invokes the iot.DeleteProductTopic API synchronously
-// api document: https://help.aliyun.com/api/iot/deleteproducttopic.html
 func (client *Client) DeleteProductTopic(request *DeleteProductTopicRequest) (response *DeleteProductTopicResponse, err error) {
 	response = CreateDeleteProductTopicResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteProductTopic(request *DeleteProductTopicRequest) (re
 }
 
 // DeleteProductTopicWithChan invokes the iot.DeleteProductTopic API asynchronously
-// api document: https://help.aliyun.com/api/iot/deleteproducttopic.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteProductTopicWithChan(request *DeleteProductTopicRequest) (<-chan *DeleteProductTopicResponse, <-chan error) {
 	responseChan := make(chan *DeleteProductTopicResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteProductTopicWithChan(request *DeleteProductTopicRequ
 }
 
 // DeleteProductTopicWithCallback invokes the iot.DeleteProductTopic API asynchronously
-// api document: https://help.aliyun.com/api/iot/deleteproducttopic.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteProductTopicWithCallback(request *DeleteProductTopicRequest, callback func(response *DeleteProductTopicResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

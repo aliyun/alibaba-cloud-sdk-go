@@ -21,7 +21,6 @@ import (
 )
 
 // BatchClearEdgeInstanceDeviceConfig invokes the iot.BatchClearEdgeInstanceDeviceConfig API synchronously
-// api document: https://help.aliyun.com/api/iot/batchclearedgeinstancedeviceconfig.html
 func (client *Client) BatchClearEdgeInstanceDeviceConfig(request *BatchClearEdgeInstanceDeviceConfigRequest) (response *BatchClearEdgeInstanceDeviceConfigResponse, err error) {
 	response = CreateBatchClearEdgeInstanceDeviceConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchClearEdgeInstanceDeviceConfig(request *BatchClearEdge
 }
 
 // BatchClearEdgeInstanceDeviceConfigWithChan invokes the iot.BatchClearEdgeInstanceDeviceConfig API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchclearedgeinstancedeviceconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchClearEdgeInstanceDeviceConfigWithChan(request *BatchClearEdgeInstanceDeviceConfigRequest) (<-chan *BatchClearEdgeInstanceDeviceConfigResponse, <-chan error) {
 	responseChan := make(chan *BatchClearEdgeInstanceDeviceConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchClearEdgeInstanceDeviceConfigWithChan(request *BatchC
 }
 
 // BatchClearEdgeInstanceDeviceConfigWithCallback invokes the iot.BatchClearEdgeInstanceDeviceConfig API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchclearedgeinstancedeviceconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchClearEdgeInstanceDeviceConfigWithCallback(request *BatchClearEdgeInstanceDeviceConfigRequest, callback func(response *BatchClearEdgeInstanceDeviceConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

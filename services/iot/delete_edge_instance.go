@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteEdgeInstance invokes the iot.DeleteEdgeInstance API synchronously
-// api document: https://help.aliyun.com/api/iot/deleteedgeinstance.html
 func (client *Client) DeleteEdgeInstance(request *DeleteEdgeInstanceRequest) (response *DeleteEdgeInstanceResponse, err error) {
 	response = CreateDeleteEdgeInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteEdgeInstance(request *DeleteEdgeInstanceRequest) (re
 }
 
 // DeleteEdgeInstanceWithChan invokes the iot.DeleteEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/deleteedgeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEdgeInstanceWithChan(request *DeleteEdgeInstanceRequest) (<-chan *DeleteEdgeInstanceResponse, <-chan error) {
 	responseChan := make(chan *DeleteEdgeInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteEdgeInstanceWithChan(request *DeleteEdgeInstanceRequ
 }
 
 // DeleteEdgeInstanceWithCallback invokes the iot.DeleteEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/deleteedgeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEdgeInstanceWithCallback(request *DeleteEdgeInstanceRequest, callback func(response *DeleteEdgeInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

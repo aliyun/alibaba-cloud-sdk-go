@@ -21,7 +21,6 @@ import (
 )
 
 // ListRuleActions invokes the iot.ListRuleActions API synchronously
-// api document: https://help.aliyun.com/api/iot/listruleactions.html
 func (client *Client) ListRuleActions(request *ListRuleActionsRequest) (response *ListRuleActionsResponse, err error) {
 	response = CreateListRuleActionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListRuleActions(request *ListRuleActionsRequest) (response
 }
 
 // ListRuleActionsWithChan invokes the iot.ListRuleActions API asynchronously
-// api document: https://help.aliyun.com/api/iot/listruleactions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRuleActionsWithChan(request *ListRuleActionsRequest) (<-chan *ListRuleActionsResponse, <-chan error) {
 	responseChan := make(chan *ListRuleActionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListRuleActionsWithChan(request *ListRuleActionsRequest) (
 }
 
 // ListRuleActionsWithCallback invokes the iot.ListRuleActions API asynchronously
-// api document: https://help.aliyun.com/api/iot/listruleactions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRuleActionsWithCallback(request *ListRuleActionsRequest, callback func(response *ListRuleActionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // RRpc invokes the iot.RRpc API synchronously
-// api document: https://help.aliyun.com/api/iot/rrpc.html
 func (client *Client) RRpc(request *RRpcRequest) (response *RRpcResponse, err error) {
 	response = CreateRRpcResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RRpc(request *RRpcRequest) (response *RRpcResponse, err er
 }
 
 // RRpcWithChan invokes the iot.RRpc API asynchronously
-// api document: https://help.aliyun.com/api/iot/rrpc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RRpcWithChan(request *RRpcRequest) (<-chan *RRpcResponse, <-chan error) {
 	responseChan := make(chan *RRpcResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RRpcWithChan(request *RRpcRequest) (<-chan *RRpcResponse, 
 }
 
 // RRpcWithCallback invokes the iot.RRpc API asynchronously
-// api document: https://help.aliyun.com/api/iot/rrpc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RRpcWithCallback(request *RRpcRequest, callback func(response *RRpcResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

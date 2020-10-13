@@ -21,7 +21,6 @@ import (
 )
 
 // QueryPageByApplyId invokes the iot.QueryPageByApplyId API synchronously
-// api document: https://help.aliyun.com/api/iot/querypagebyapplyid.html
 func (client *Client) QueryPageByApplyId(request *QueryPageByApplyIdRequest) (response *QueryPageByApplyIdResponse, err error) {
 	response = CreateQueryPageByApplyIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryPageByApplyId(request *QueryPageByApplyIdRequest) (re
 }
 
 // QueryPageByApplyIdWithChan invokes the iot.QueryPageByApplyId API asynchronously
-// api document: https://help.aliyun.com/api/iot/querypagebyapplyid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPageByApplyIdWithChan(request *QueryPageByApplyIdRequest) (<-chan *QueryPageByApplyIdResponse, <-chan error) {
 	responseChan := make(chan *QueryPageByApplyIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryPageByApplyIdWithChan(request *QueryPageByApplyIdRequ
 }
 
 // QueryPageByApplyIdWithCallback invokes the iot.QueryPageByApplyId API asynchronously
-// api document: https://help.aliyun.com/api/iot/querypagebyapplyid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPageByApplyIdWithCallback(request *QueryPageByApplyIdRequest, callback func(response *QueryPageByApplyIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

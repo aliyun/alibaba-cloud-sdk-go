@@ -21,7 +21,6 @@ import (
 )
 
 // SaveDeviceProp invokes the iot.SaveDeviceProp API synchronously
-// api document: https://help.aliyun.com/api/iot/savedeviceprop.html
 func (client *Client) SaveDeviceProp(request *SaveDevicePropRequest) (response *SaveDevicePropResponse, err error) {
 	response = CreateSaveDevicePropResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveDeviceProp(request *SaveDevicePropRequest) (response *
 }
 
 // SaveDevicePropWithChan invokes the iot.SaveDeviceProp API asynchronously
-// api document: https://help.aliyun.com/api/iot/savedeviceprop.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveDevicePropWithChan(request *SaveDevicePropRequest) (<-chan *SaveDevicePropResponse, <-chan error) {
 	responseChan := make(chan *SaveDevicePropResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveDevicePropWithChan(request *SaveDevicePropRequest) (<-
 }
 
 // SaveDevicePropWithCallback invokes the iot.SaveDeviceProp API asynchronously
-// api document: https://help.aliyun.com/api/iot/savedeviceprop.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveDevicePropWithCallback(request *SaveDevicePropRequest, callback func(response *SaveDevicePropResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

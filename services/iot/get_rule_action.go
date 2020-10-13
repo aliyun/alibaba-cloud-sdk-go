@@ -21,7 +21,6 @@ import (
 )
 
 // GetRuleAction invokes the iot.GetRuleAction API synchronously
-// api document: https://help.aliyun.com/api/iot/getruleaction.html
 func (client *Client) GetRuleAction(request *GetRuleActionRequest) (response *GetRuleActionResponse, err error) {
 	response = CreateGetRuleActionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetRuleAction(request *GetRuleActionRequest) (response *Ge
 }
 
 // GetRuleActionWithChan invokes the iot.GetRuleAction API asynchronously
-// api document: https://help.aliyun.com/api/iot/getruleaction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRuleActionWithChan(request *GetRuleActionRequest) (<-chan *GetRuleActionResponse, <-chan error) {
 	responseChan := make(chan *GetRuleActionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetRuleActionWithChan(request *GetRuleActionRequest) (<-ch
 }
 
 // GetRuleActionWithCallback invokes the iot.GetRuleAction API asynchronously
-// api document: https://help.aliyun.com/api/iot/getruleaction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRuleActionWithCallback(request *GetRuleActionRequest, callback func(response *GetRuleActionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ListOTAFirmware invokes the iot.ListOTAFirmware API synchronously
-// api document: https://help.aliyun.com/api/iot/listotafirmware.html
 func (client *Client) ListOTAFirmware(request *ListOTAFirmwareRequest) (response *ListOTAFirmwareResponse, err error) {
 	response = CreateListOTAFirmwareResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListOTAFirmware(request *ListOTAFirmwareRequest) (response
 }
 
 // ListOTAFirmwareWithChan invokes the iot.ListOTAFirmware API asynchronously
-// api document: https://help.aliyun.com/api/iot/listotafirmware.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListOTAFirmwareWithChan(request *ListOTAFirmwareRequest) (<-chan *ListOTAFirmwareResponse, <-chan error) {
 	responseChan := make(chan *ListOTAFirmwareResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListOTAFirmwareWithChan(request *ListOTAFirmwareRequest) (
 }
 
 // ListOTAFirmwareWithCallback invokes the iot.ListOTAFirmware API asynchronously
-// api document: https://help.aliyun.com/api/iot/listotafirmware.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListOTAFirmwareWithCallback(request *ListOTAFirmwareRequest, callback func(response *ListOTAFirmwareResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

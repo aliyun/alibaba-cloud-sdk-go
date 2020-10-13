@@ -21,7 +21,6 @@ import (
 )
 
 // QueryConsumerGroupStatus invokes the iot.QueryConsumerGroupStatus API synchronously
-// api document: https://help.aliyun.com/api/iot/queryconsumergroupstatus.html
 func (client *Client) QueryConsumerGroupStatus(request *QueryConsumerGroupStatusRequest) (response *QueryConsumerGroupStatusResponse, err error) {
 	response = CreateQueryConsumerGroupStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryConsumerGroupStatus(request *QueryConsumerGroupStatus
 }
 
 // QueryConsumerGroupStatusWithChan invokes the iot.QueryConsumerGroupStatus API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryconsumergroupstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryConsumerGroupStatusWithChan(request *QueryConsumerGroupStatusRequest) (<-chan *QueryConsumerGroupStatusResponse, <-chan error) {
 	responseChan := make(chan *QueryConsumerGroupStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryConsumerGroupStatusWithChan(request *QueryConsumerGro
 }
 
 // QueryConsumerGroupStatusWithCallback invokes the iot.QueryConsumerGroupStatus API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryconsumergroupstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryConsumerGroupStatusWithCallback(request *QueryConsumerGroupStatusRequest, callback func(response *QueryConsumerGroupStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

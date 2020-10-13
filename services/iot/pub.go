@@ -21,7 +21,6 @@ import (
 )
 
 // Pub invokes the iot.Pub API synchronously
-// api document: https://help.aliyun.com/api/iot/pub.html
 func (client *Client) Pub(request *PubRequest) (response *PubResponse, err error) {
 	response = CreatePubResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) Pub(request *PubRequest) (response *PubResponse, err error
 }
 
 // PubWithChan invokes the iot.Pub API asynchronously
-// api document: https://help.aliyun.com/api/iot/pub.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PubWithChan(request *PubRequest) (<-chan *PubResponse, <-chan error) {
 	responseChan := make(chan *PubResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PubWithChan(request *PubRequest) (<-chan *PubResponse, <-c
 }
 
 // PubWithCallback invokes the iot.Pub API asynchronously
-// api document: https://help.aliyun.com/api/iot/pub.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PubWithCallback(request *PubRequest, callback func(response *PubResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

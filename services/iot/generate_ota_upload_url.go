@@ -21,7 +21,6 @@ import (
 )
 
 // GenerateOTAUploadURL invokes the iot.GenerateOTAUploadURL API synchronously
-// api document: https://help.aliyun.com/api/iot/generateotauploadurl.html
 func (client *Client) GenerateOTAUploadURL(request *GenerateOTAUploadURLRequest) (response *GenerateOTAUploadURLResponse, err error) {
 	response = CreateGenerateOTAUploadURLResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GenerateOTAUploadURL(request *GenerateOTAUploadURLRequest)
 }
 
 // GenerateOTAUploadURLWithChan invokes the iot.GenerateOTAUploadURL API asynchronously
-// api document: https://help.aliyun.com/api/iot/generateotauploadurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateOTAUploadURLWithChan(request *GenerateOTAUploadURLRequest) (<-chan *GenerateOTAUploadURLResponse, <-chan error) {
 	responseChan := make(chan *GenerateOTAUploadURLResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GenerateOTAUploadURLWithChan(request *GenerateOTAUploadURL
 }
 
 // GenerateOTAUploadURLWithCallback invokes the iot.GenerateOTAUploadURL API asynchronously
-// api document: https://help.aliyun.com/api/iot/generateotauploadurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateOTAUploadURLWithCallback(request *GenerateOTAUploadURLRequest, callback func(response *GenerateOTAUploadURLResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) GenerateOTAUploadURLWithCallback(request *GenerateOTAUploa
 // GenerateOTAUploadURLRequest is the request struct for api GenerateOTAUploadURL
 type GenerateOTAUploadURLRequest struct {
 	*requests.RpcRequest
+	FileSuffix    string `position:"Query" name:"FileSuffix"`
 	IotInstanceId string `position:"Query" name:"IotInstanceId"`
 	ApiProduct    string `position:"Body" name:"ApiProduct"`
 	ApiRevision   string `position:"Body" name:"ApiRevision"`

@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateDeviceShadow invokes the iot.UpdateDeviceShadow API synchronously
-// api document: https://help.aliyun.com/api/iot/updatedeviceshadow.html
 func (client *Client) UpdateDeviceShadow(request *UpdateDeviceShadowRequest) (response *UpdateDeviceShadowResponse, err error) {
 	response = CreateUpdateDeviceShadowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateDeviceShadow(request *UpdateDeviceShadowRequest) (re
 }
 
 // UpdateDeviceShadowWithChan invokes the iot.UpdateDeviceShadow API asynchronously
-// api document: https://help.aliyun.com/api/iot/updatedeviceshadow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDeviceShadowWithChan(request *UpdateDeviceShadowRequest) (<-chan *UpdateDeviceShadowResponse, <-chan error) {
 	responseChan := make(chan *UpdateDeviceShadowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateDeviceShadowWithChan(request *UpdateDeviceShadowRequ
 }
 
 // UpdateDeviceShadowWithCallback invokes the iot.UpdateDeviceShadow API asynchronously
-// api document: https://help.aliyun.com/api/iot/updatedeviceshadow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDeviceShadowWithCallback(request *UpdateDeviceShadowRequest, callback func(response *UpdateDeviceShadowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

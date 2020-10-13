@@ -21,7 +21,6 @@ import (
 )
 
 // GetNodesAddingTask invokes the iot.GetNodesAddingTask API synchronously
-// api document: https://help.aliyun.com/api/iot/getnodesaddingtask.html
 func (client *Client) GetNodesAddingTask(request *GetNodesAddingTaskRequest) (response *GetNodesAddingTaskResponse, err error) {
 	response = CreateGetNodesAddingTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetNodesAddingTask(request *GetNodesAddingTaskRequest) (re
 }
 
 // GetNodesAddingTaskWithChan invokes the iot.GetNodesAddingTask API asynchronously
-// api document: https://help.aliyun.com/api/iot/getnodesaddingtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetNodesAddingTaskWithChan(request *GetNodesAddingTaskRequest) (<-chan *GetNodesAddingTaskResponse, <-chan error) {
 	responseChan := make(chan *GetNodesAddingTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetNodesAddingTaskWithChan(request *GetNodesAddingTaskRequ
 }
 
 // GetNodesAddingTaskWithCallback invokes the iot.GetNodesAddingTask API asynchronously
-// api document: https://help.aliyun.com/api/iot/getnodesaddingtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetNodesAddingTaskWithCallback(request *GetNodesAddingTaskRequest, callback func(response *GetNodesAddingTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

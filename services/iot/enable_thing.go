@@ -21,7 +21,6 @@ import (
 )
 
 // EnableThing invokes the iot.EnableThing API synchronously
-// api document: https://help.aliyun.com/api/iot/enablething.html
 func (client *Client) EnableThing(request *EnableThingRequest) (response *EnableThingResponse, err error) {
 	response = CreateEnableThingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnableThing(request *EnableThingRequest) (response *Enable
 }
 
 // EnableThingWithChan invokes the iot.EnableThing API asynchronously
-// api document: https://help.aliyun.com/api/iot/enablething.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableThingWithChan(request *EnableThingRequest) (<-chan *EnableThingResponse, <-chan error) {
 	responseChan := make(chan *EnableThingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnableThingWithChan(request *EnableThingRequest) (<-chan *
 }
 
 // EnableThingWithCallback invokes the iot.EnableThing API asynchronously
-// api document: https://help.aliyun.com/api/iot/enablething.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableThingWithCallback(request *EnableThingRequest, callback func(response *EnableThingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ResetThing invokes the iot.ResetThing API synchronously
-// api document: https://help.aliyun.com/api/iot/resetthing.html
 func (client *Client) ResetThing(request *ResetThingRequest) (response *ResetThingResponse, err error) {
 	response = CreateResetThingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResetThing(request *ResetThingRequest) (response *ResetThi
 }
 
 // ResetThingWithChan invokes the iot.ResetThing API asynchronously
-// api document: https://help.aliyun.com/api/iot/resetthing.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetThingWithChan(request *ResetThingRequest) (<-chan *ResetThingResponse, <-chan error) {
 	responseChan := make(chan *ResetThingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResetThingWithChan(request *ResetThingRequest) (<-chan *Re
 }
 
 // ResetThingWithCallback invokes the iot.ResetThing API asynchronously
-// api document: https://help.aliyun.com/api/iot/resetthing.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetThingWithCallback(request *ResetThingRequest, callback func(response *ResetThingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

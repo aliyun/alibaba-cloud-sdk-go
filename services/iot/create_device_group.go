@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDeviceGroup invokes the iot.CreateDeviceGroup API synchronously
-// api document: https://help.aliyun.com/api/iot/createdevicegroup.html
 func (client *Client) CreateDeviceGroup(request *CreateDeviceGroupRequest) (response *CreateDeviceGroupResponse, err error) {
 	response = CreateCreateDeviceGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDeviceGroup(request *CreateDeviceGroupRequest) (resp
 }
 
 // CreateDeviceGroupWithChan invokes the iot.CreateDeviceGroup API asynchronously
-// api document: https://help.aliyun.com/api/iot/createdevicegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDeviceGroupWithChan(request *CreateDeviceGroupRequest) (<-chan *CreateDeviceGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateDeviceGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDeviceGroupWithChan(request *CreateDeviceGroupReques
 }
 
 // CreateDeviceGroupWithCallback invokes the iot.CreateDeviceGroup API asynchronously
-// api document: https://help.aliyun.com/api/iot/createdevicegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDeviceGroupWithCallback(request *CreateDeviceGroupRequest, callback func(response *CreateDeviceGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

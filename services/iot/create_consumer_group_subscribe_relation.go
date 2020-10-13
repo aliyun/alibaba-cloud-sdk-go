@@ -21,7 +21,6 @@ import (
 )
 
 // CreateConsumerGroupSubscribeRelation invokes the iot.CreateConsumerGroupSubscribeRelation API synchronously
-// api document: https://help.aliyun.com/api/iot/createconsumergroupsubscriberelation.html
 func (client *Client) CreateConsumerGroupSubscribeRelation(request *CreateConsumerGroupSubscribeRelationRequest) (response *CreateConsumerGroupSubscribeRelationResponse, err error) {
 	response = CreateCreateConsumerGroupSubscribeRelationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateConsumerGroupSubscribeRelation(request *CreateConsum
 }
 
 // CreateConsumerGroupSubscribeRelationWithChan invokes the iot.CreateConsumerGroupSubscribeRelation API asynchronously
-// api document: https://help.aliyun.com/api/iot/createconsumergroupsubscriberelation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateConsumerGroupSubscribeRelationWithChan(request *CreateConsumerGroupSubscribeRelationRequest) (<-chan *CreateConsumerGroupSubscribeRelationResponse, <-chan error) {
 	responseChan := make(chan *CreateConsumerGroupSubscribeRelationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateConsumerGroupSubscribeRelationWithChan(request *Crea
 }
 
 // CreateConsumerGroupSubscribeRelationWithCallback invokes the iot.CreateConsumerGroupSubscribeRelation API asynchronously
-// api document: https://help.aliyun.com/api/iot/createconsumergroupsubscriberelation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateConsumerGroupSubscribeRelationWithCallback(request *CreateConsumerGroupSubscribeRelationRequest, callback func(response *CreateConsumerGroupSubscribeRelationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

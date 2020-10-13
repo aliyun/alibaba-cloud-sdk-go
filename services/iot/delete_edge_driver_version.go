@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteEdgeDriverVersion invokes the iot.DeleteEdgeDriverVersion API synchronously
-// api document: https://help.aliyun.com/api/iot/deleteedgedriverversion.html
 func (client *Client) DeleteEdgeDriverVersion(request *DeleteEdgeDriverVersionRequest) (response *DeleteEdgeDriverVersionResponse, err error) {
 	response = CreateDeleteEdgeDriverVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteEdgeDriverVersion(request *DeleteEdgeDriverVersionRe
 }
 
 // DeleteEdgeDriverVersionWithChan invokes the iot.DeleteEdgeDriverVersion API asynchronously
-// api document: https://help.aliyun.com/api/iot/deleteedgedriverversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEdgeDriverVersionWithChan(request *DeleteEdgeDriverVersionRequest) (<-chan *DeleteEdgeDriverVersionResponse, <-chan error) {
 	responseChan := make(chan *DeleteEdgeDriverVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteEdgeDriverVersionWithChan(request *DeleteEdgeDriverV
 }
 
 // DeleteEdgeDriverVersionWithCallback invokes the iot.DeleteEdgeDriverVersion API asynchronously
-// api document: https://help.aliyun.com/api/iot/deleteedgedriverversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEdgeDriverVersionWithCallback(request *DeleteEdgeDriverVersionRequest, callback func(response *DeleteEdgeDriverVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

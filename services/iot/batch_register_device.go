@@ -21,7 +21,6 @@ import (
 )
 
 // BatchRegisterDevice invokes the iot.BatchRegisterDevice API synchronously
-// api document: https://help.aliyun.com/api/iot/batchregisterdevice.html
 func (client *Client) BatchRegisterDevice(request *BatchRegisterDeviceRequest) (response *BatchRegisterDeviceResponse, err error) {
 	response = CreateBatchRegisterDeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchRegisterDevice(request *BatchRegisterDeviceRequest) (
 }
 
 // BatchRegisterDeviceWithChan invokes the iot.BatchRegisterDevice API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchregisterdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchRegisterDeviceWithChan(request *BatchRegisterDeviceRequest) (<-chan *BatchRegisterDeviceResponse, <-chan error) {
 	responseChan := make(chan *BatchRegisterDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchRegisterDeviceWithChan(request *BatchRegisterDeviceRe
 }
 
 // BatchRegisterDeviceWithCallback invokes the iot.BatchRegisterDevice API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchregisterdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchRegisterDeviceWithCallback(request *BatchRegisterDeviceRequest, callback func(response *BatchRegisterDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

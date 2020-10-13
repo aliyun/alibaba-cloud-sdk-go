@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateConsumerGroup invokes the iot.UpdateConsumerGroup API synchronously
-// api document: https://help.aliyun.com/api/iot/updateconsumergroup.html
 func (client *Client) UpdateConsumerGroup(request *UpdateConsumerGroupRequest) (response *UpdateConsumerGroupResponse, err error) {
 	response = CreateUpdateConsumerGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateConsumerGroup(request *UpdateConsumerGroupRequest) (
 }
 
 // UpdateConsumerGroupWithChan invokes the iot.UpdateConsumerGroup API asynchronously
-// api document: https://help.aliyun.com/api/iot/updateconsumergroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateConsumerGroupWithChan(request *UpdateConsumerGroupRequest) (<-chan *UpdateConsumerGroupResponse, <-chan error) {
 	responseChan := make(chan *UpdateConsumerGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateConsumerGroupWithChan(request *UpdateConsumerGroupRe
 }
 
 // UpdateConsumerGroupWithCallback invokes the iot.UpdateConsumerGroup API asynchronously
-// api document: https://help.aliyun.com/api/iot/updateconsumergroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateConsumerGroupWithCallback(request *UpdateConsumerGroupRequest, callback func(response *UpdateConsumerGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

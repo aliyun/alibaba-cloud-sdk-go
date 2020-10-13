@@ -21,7 +21,6 @@ import (
 )
 
 // QueryConsumerGroupList invokes the iot.QueryConsumerGroupList API synchronously
-// api document: https://help.aliyun.com/api/iot/queryconsumergrouplist.html
 func (client *Client) QueryConsumerGroupList(request *QueryConsumerGroupListRequest) (response *QueryConsumerGroupListResponse, err error) {
 	response = CreateQueryConsumerGroupListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryConsumerGroupList(request *QueryConsumerGroupListRequ
 }
 
 // QueryConsumerGroupListWithChan invokes the iot.QueryConsumerGroupList API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryconsumergrouplist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryConsumerGroupListWithChan(request *QueryConsumerGroupListRequest) (<-chan *QueryConsumerGroupListResponse, <-chan error) {
 	responseChan := make(chan *QueryConsumerGroupListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryConsumerGroupListWithChan(request *QueryConsumerGroup
 }
 
 // QueryConsumerGroupListWithCallback invokes the iot.QueryConsumerGroupList API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryconsumergrouplist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryConsumerGroupListWithCallback(request *QueryConsumerGroupListRequest, callback func(response *QueryConsumerGroupListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

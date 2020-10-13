@@ -21,7 +21,6 @@ import (
 )
 
 // QueryProductCertInfo invokes the iot.QueryProductCertInfo API synchronously
-// api document: https://help.aliyun.com/api/iot/queryproductcertinfo.html
 func (client *Client) QueryProductCertInfo(request *QueryProductCertInfoRequest) (response *QueryProductCertInfoResponse, err error) {
 	response = CreateQueryProductCertInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryProductCertInfo(request *QueryProductCertInfoRequest)
 }
 
 // QueryProductCertInfoWithChan invokes the iot.QueryProductCertInfo API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryproductcertinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryProductCertInfoWithChan(request *QueryProductCertInfoRequest) (<-chan *QueryProductCertInfoResponse, <-chan error) {
 	responseChan := make(chan *QueryProductCertInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryProductCertInfoWithChan(request *QueryProductCertInfo
 }
 
 // QueryProductCertInfoWithCallback invokes the iot.QueryProductCertInfo API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryproductcertinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryProductCertInfoWithCallback(request *QueryProductCertInfoRequest, callback func(response *QueryProductCertInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

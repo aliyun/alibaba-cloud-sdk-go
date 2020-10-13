@@ -21,7 +21,6 @@ import (
 )
 
 // CloseEdgeInstanceDeployment invokes the iot.CloseEdgeInstanceDeployment API synchronously
-// api document: https://help.aliyun.com/api/iot/closeedgeinstancedeployment.html
 func (client *Client) CloseEdgeInstanceDeployment(request *CloseEdgeInstanceDeploymentRequest) (response *CloseEdgeInstanceDeploymentResponse, err error) {
 	response = CreateCloseEdgeInstanceDeploymentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CloseEdgeInstanceDeployment(request *CloseEdgeInstanceDepl
 }
 
 // CloseEdgeInstanceDeploymentWithChan invokes the iot.CloseEdgeInstanceDeployment API asynchronously
-// api document: https://help.aliyun.com/api/iot/closeedgeinstancedeployment.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloseEdgeInstanceDeploymentWithChan(request *CloseEdgeInstanceDeploymentRequest) (<-chan *CloseEdgeInstanceDeploymentResponse, <-chan error) {
 	responseChan := make(chan *CloseEdgeInstanceDeploymentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CloseEdgeInstanceDeploymentWithChan(request *CloseEdgeInst
 }
 
 // CloseEdgeInstanceDeploymentWithCallback invokes the iot.CloseEdgeInstanceDeployment API asynchronously
-// api document: https://help.aliyun.com/api/iot/closeedgeinstancedeployment.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloseEdgeInstanceDeploymentWithCallback(request *CloseEdgeInstanceDeploymentRequest, callback func(response *CloseEdgeInstanceDeploymentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

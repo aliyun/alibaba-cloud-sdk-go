@@ -21,7 +21,6 @@ import (
 )
 
 // QueryLoRaJoinPermissions invokes the iot.QueryLoRaJoinPermissions API synchronously
-// api document: https://help.aliyun.com/api/iot/querylorajoinpermissions.html
 func (client *Client) QueryLoRaJoinPermissions(request *QueryLoRaJoinPermissionsRequest) (response *QueryLoRaJoinPermissionsResponse, err error) {
 	response = CreateQueryLoRaJoinPermissionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryLoRaJoinPermissions(request *QueryLoRaJoinPermissions
 }
 
 // QueryLoRaJoinPermissionsWithChan invokes the iot.QueryLoRaJoinPermissions API asynchronously
-// api document: https://help.aliyun.com/api/iot/querylorajoinpermissions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryLoRaJoinPermissionsWithChan(request *QueryLoRaJoinPermissionsRequest) (<-chan *QueryLoRaJoinPermissionsResponse, <-chan error) {
 	responseChan := make(chan *QueryLoRaJoinPermissionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryLoRaJoinPermissionsWithChan(request *QueryLoRaJoinPer
 }
 
 // QueryLoRaJoinPermissionsWithCallback invokes the iot.QueryLoRaJoinPermissions API asynchronously
-// api document: https://help.aliyun.com/api/iot/querylorajoinpermissions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryLoRaJoinPermissionsWithCallback(request *QueryLoRaJoinPermissionsRequest, callback func(response *QueryLoRaJoinPermissionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

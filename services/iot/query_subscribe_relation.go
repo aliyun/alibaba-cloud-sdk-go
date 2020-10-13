@@ -21,7 +21,6 @@ import (
 )
 
 // QuerySubscribeRelation invokes the iot.QuerySubscribeRelation API synchronously
-// api document: https://help.aliyun.com/api/iot/querysubscriberelation.html
 func (client *Client) QuerySubscribeRelation(request *QuerySubscribeRelationRequest) (response *QuerySubscribeRelationResponse, err error) {
 	response = CreateQuerySubscribeRelationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QuerySubscribeRelation(request *QuerySubscribeRelationRequ
 }
 
 // QuerySubscribeRelationWithChan invokes the iot.QuerySubscribeRelation API asynchronously
-// api document: https://help.aliyun.com/api/iot/querysubscriberelation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySubscribeRelationWithChan(request *QuerySubscribeRelationRequest) (<-chan *QuerySubscribeRelationResponse, <-chan error) {
 	responseChan := make(chan *QuerySubscribeRelationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QuerySubscribeRelationWithChan(request *QuerySubscribeRela
 }
 
 // QuerySubscribeRelationWithCallback invokes the iot.QuerySubscribeRelation API asynchronously
-// api document: https://help.aliyun.com/api/iot/querysubscriberelation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySubscribeRelationWithCallback(request *QuerySubscribeRelationRequest, callback func(response *QuerySubscribeRelationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,9 @@ type QuerySubscribeRelationResponse struct {
 	OtaEventFlag            bool     `json:"OtaEventFlag" xml:"OtaEventFlag"`
 	ThingHistoryFlag        bool     `json:"ThingHistoryFlag" xml:"ThingHistoryFlag"`
 	MnsConfiguration        string   `json:"MnsConfiguration" xml:"MnsConfiguration"`
+	DeviceTagFlag           bool     `json:"DeviceTagFlag" xml:"DeviceTagFlag"`
+	OtaVersionFlag          bool     `json:"OtaVersionFlag" xml:"OtaVersionFlag"`
+	OtaJobFlag              bool     `json:"OtaJobFlag" xml:"OtaJobFlag"`
 	ConsumerGroupIds        []string `json:"ConsumerGroupIds" xml:"ConsumerGroupIds"`
 }
 

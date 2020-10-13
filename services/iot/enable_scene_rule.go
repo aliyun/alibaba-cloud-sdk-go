@@ -21,7 +21,6 @@ import (
 )
 
 // EnableSceneRule invokes the iot.EnableSceneRule API synchronously
-// api document: https://help.aliyun.com/api/iot/enablescenerule.html
 func (client *Client) EnableSceneRule(request *EnableSceneRuleRequest) (response *EnableSceneRuleResponse, err error) {
 	response = CreateEnableSceneRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnableSceneRule(request *EnableSceneRuleRequest) (response
 }
 
 // EnableSceneRuleWithChan invokes the iot.EnableSceneRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/enablescenerule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableSceneRuleWithChan(request *EnableSceneRuleRequest) (<-chan *EnableSceneRuleResponse, <-chan error) {
 	responseChan := make(chan *EnableSceneRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnableSceneRuleWithChan(request *EnableSceneRuleRequest) (
 }
 
 // EnableSceneRuleWithCallback invokes the iot.EnableSceneRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/enablescenerule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableSceneRuleWithCallback(request *EnableSceneRuleRequest, callback func(response *EnableSceneRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

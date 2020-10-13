@@ -21,7 +21,6 @@ import (
 )
 
 // TriggerSceneRule invokes the iot.TriggerSceneRule API synchronously
-// api document: https://help.aliyun.com/api/iot/triggerscenerule.html
 func (client *Client) TriggerSceneRule(request *TriggerSceneRuleRequest) (response *TriggerSceneRuleResponse, err error) {
 	response = CreateTriggerSceneRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TriggerSceneRule(request *TriggerSceneRuleRequest) (respon
 }
 
 // TriggerSceneRuleWithChan invokes the iot.TriggerSceneRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/triggerscenerule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TriggerSceneRuleWithChan(request *TriggerSceneRuleRequest) (<-chan *TriggerSceneRuleResponse, <-chan error) {
 	responseChan := make(chan *TriggerSceneRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TriggerSceneRuleWithChan(request *TriggerSceneRuleRequest)
 }
 
 // TriggerSceneRuleWithCallback invokes the iot.TriggerSceneRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/triggerscenerule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TriggerSceneRuleWithCallback(request *TriggerSceneRuleRequest, callback func(response *TriggerSceneRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

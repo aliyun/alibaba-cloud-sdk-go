@@ -21,7 +21,6 @@ import (
 )
 
 // QueryCertUrlByApplyId invokes the iot.QueryCertUrlByApplyId API synchronously
-// api document: https://help.aliyun.com/api/iot/querycerturlbyapplyid.html
 func (client *Client) QueryCertUrlByApplyId(request *QueryCertUrlByApplyIdRequest) (response *QueryCertUrlByApplyIdResponse, err error) {
 	response = CreateQueryCertUrlByApplyIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryCertUrlByApplyId(request *QueryCertUrlByApplyIdReques
 }
 
 // QueryCertUrlByApplyIdWithChan invokes the iot.QueryCertUrlByApplyId API asynchronously
-// api document: https://help.aliyun.com/api/iot/querycerturlbyapplyid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCertUrlByApplyIdWithChan(request *QueryCertUrlByApplyIdRequest) (<-chan *QueryCertUrlByApplyIdResponse, <-chan error) {
 	responseChan := make(chan *QueryCertUrlByApplyIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryCertUrlByApplyIdWithChan(request *QueryCertUrlByApply
 }
 
 // QueryCertUrlByApplyIdWithCallback invokes the iot.QueryCertUrlByApplyId API asynchronously
-// api document: https://help.aliyun.com/api/iot/querycerturlbyapplyid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCertUrlByApplyIdWithCallback(request *QueryCertUrlByApplyIdRequest, callback func(response *QueryCertUrlByApplyIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

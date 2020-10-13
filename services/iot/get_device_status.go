@@ -21,7 +21,6 @@ import (
 )
 
 // GetDeviceStatus invokes the iot.GetDeviceStatus API synchronously
-// api document: https://help.aliyun.com/api/iot/getdevicestatus.html
 func (client *Client) GetDeviceStatus(request *GetDeviceStatusRequest) (response *GetDeviceStatusResponse, err error) {
 	response = CreateGetDeviceStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetDeviceStatus(request *GetDeviceStatusRequest) (response
 }
 
 // GetDeviceStatusWithChan invokes the iot.GetDeviceStatus API asynchronously
-// api document: https://help.aliyun.com/api/iot/getdevicestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDeviceStatusWithChan(request *GetDeviceStatusRequest) (<-chan *GetDeviceStatusResponse, <-chan error) {
 	responseChan := make(chan *GetDeviceStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetDeviceStatusWithChan(request *GetDeviceStatusRequest) (
 }
 
 // GetDeviceStatusWithCallback invokes the iot.GetDeviceStatus API asynchronously
-// api document: https://help.aliyun.com/api/iot/getdevicestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDeviceStatusWithCallback(request *GetDeviceStatusRequest, callback func(response *GetDeviceStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

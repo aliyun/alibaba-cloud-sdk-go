@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteTopicRouteTable invokes the iot.DeleteTopicRouteTable API synchronously
-// api document: https://help.aliyun.com/api/iot/deletetopicroutetable.html
 func (client *Client) DeleteTopicRouteTable(request *DeleteTopicRouteTableRequest) (response *DeleteTopicRouteTableResponse, err error) {
 	response = CreateDeleteTopicRouteTableResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteTopicRouteTable(request *DeleteTopicRouteTableReques
 }
 
 // DeleteTopicRouteTableWithChan invokes the iot.DeleteTopicRouteTable API asynchronously
-// api document: https://help.aliyun.com/api/iot/deletetopicroutetable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTopicRouteTableWithChan(request *DeleteTopicRouteTableRequest) (<-chan *DeleteTopicRouteTableResponse, <-chan error) {
 	responseChan := make(chan *DeleteTopicRouteTableResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteTopicRouteTableWithChan(request *DeleteTopicRouteTab
 }
 
 // DeleteTopicRouteTableWithCallback invokes the iot.DeleteTopicRouteTable API asynchronously
-// api document: https://help.aliyun.com/api/iot/deletetopicroutetable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTopicRouteTableWithCallback(request *DeleteTopicRouteTableRequest, callback func(response *DeleteTopicRouteTableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

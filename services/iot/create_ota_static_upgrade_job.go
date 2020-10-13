@@ -21,7 +21,6 @@ import (
 )
 
 // CreateOTAStaticUpgradeJob invokes the iot.CreateOTAStaticUpgradeJob API synchronously
-// api document: https://help.aliyun.com/api/iot/createotastaticupgradejob.html
 func (client *Client) CreateOTAStaticUpgradeJob(request *CreateOTAStaticUpgradeJobRequest) (response *CreateOTAStaticUpgradeJobResponse, err error) {
 	response = CreateCreateOTAStaticUpgradeJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateOTAStaticUpgradeJob(request *CreateOTAStaticUpgradeJ
 }
 
 // CreateOTAStaticUpgradeJobWithChan invokes the iot.CreateOTAStaticUpgradeJob API asynchronously
-// api document: https://help.aliyun.com/api/iot/createotastaticupgradejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOTAStaticUpgradeJobWithChan(request *CreateOTAStaticUpgradeJobRequest) (<-chan *CreateOTAStaticUpgradeJobResponse, <-chan error) {
 	responseChan := make(chan *CreateOTAStaticUpgradeJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateOTAStaticUpgradeJobWithChan(request *CreateOTAStatic
 }
 
 // CreateOTAStaticUpgradeJobWithCallback invokes the iot.CreateOTAStaticUpgradeJob API asynchronously
-// api document: https://help.aliyun.com/api/iot/createotastaticupgradejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOTAStaticUpgradeJobWithCallback(request *CreateOTAStaticUpgradeJobRequest, callback func(response *CreateOTAStaticUpgradeJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,21 +71,30 @@ func (client *Client) CreateOTAStaticUpgradeJobWithCallback(request *CreateOTASt
 // CreateOTAStaticUpgradeJobRequest is the request struct for api CreateOTAStaticUpgradeJob
 type CreateOTAStaticUpgradeJobRequest struct {
 	*requests.RpcRequest
-	RetryCount         requests.Integer `position:"Query" name:"RetryCount"`
-	TimeoutInMinutes   requests.Integer `position:"Query" name:"TimeoutInMinutes"`
-	IotInstanceId      string           `position:"Query" name:"IotInstanceId"`
-	TargetSelection    string           `position:"Query" name:"TargetSelection"`
-	ScheduleFinishTime requests.Integer `position:"Query" name:"ScheduleFinishTime"`
-	GrayPercent        string           `position:"Query" name:"GrayPercent"`
-	FirmwareId         string           `position:"Query" name:"FirmwareId"`
-	ProductKey         string           `position:"Query" name:"ProductKey"`
-	RetryInterval      requests.Integer `position:"Query" name:"RetryInterval"`
-	SrcVersion         *[]string        `position:"Query" name:"SrcVersion"  type:"Repeated"`
-	ScheduleTime       requests.Integer `position:"Query" name:"ScheduleTime"`
-	ApiProduct         string           `position:"Body" name:"ApiProduct"`
-	ApiRevision        string           `position:"Body" name:"ApiRevision"`
-	MaximumPerMinute   requests.Integer `position:"Query" name:"MaximumPerMinute"`
-	TargetDeviceName   *[]string        `position:"Query" name:"TargetDeviceName"  type:"Repeated"`
+	RetryCount         requests.Integer                `position:"Query" name:"RetryCount"`
+	TimeoutInMinutes   requests.Integer                `position:"Query" name:"TimeoutInMinutes"`
+	IotInstanceId      string                          `position:"Query" name:"IotInstanceId"`
+	TargetSelection    string                          `position:"Query" name:"TargetSelection"`
+	ScheduleFinishTime requests.Integer                `position:"Query" name:"ScheduleFinishTime"`
+	Tag                *[]CreateOTAStaticUpgradeJobTag `position:"Query" name:"Tag"  type:"Repeated"`
+	GrayPercent        string                          `position:"Query" name:"GrayPercent"`
+	DnListFileUrl      string                          `position:"Query" name:"DnListFileUrl"`
+	FirmwareId         string                          `position:"Query" name:"FirmwareId"`
+	ProductKey         string                          `position:"Query" name:"ProductKey"`
+	RetryInterval      requests.Integer                `position:"Query" name:"RetryInterval"`
+	SrcVersion         *[]string                       `position:"Query" name:"SrcVersion"  type:"Repeated"`
+	ScheduleTime       requests.Integer                `position:"Query" name:"ScheduleTime"`
+	OverwriteMode      requests.Integer                `position:"Query" name:"OverwriteMode"`
+	ApiProduct         string                          `position:"Body" name:"ApiProduct"`
+	ApiRevision        string                          `position:"Body" name:"ApiRevision"`
+	MaximumPerMinute   requests.Integer                `position:"Query" name:"MaximumPerMinute"`
+	TargetDeviceName   *[]string                       `position:"Query" name:"TargetDeviceName"  type:"Repeated"`
+}
+
+// CreateOTAStaticUpgradeJobTag is a repeated param struct in CreateOTAStaticUpgradeJobRequest
+type CreateOTAStaticUpgradeJobTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateOTAStaticUpgradeJobResponse is the response struct for api CreateOTAStaticUpgradeJob

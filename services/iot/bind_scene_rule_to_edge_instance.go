@@ -21,7 +21,6 @@ import (
 )
 
 // BindSceneRuleToEdgeInstance invokes the iot.BindSceneRuleToEdgeInstance API synchronously
-// api document: https://help.aliyun.com/api/iot/bindsceneruletoedgeinstance.html
 func (client *Client) BindSceneRuleToEdgeInstance(request *BindSceneRuleToEdgeInstanceRequest) (response *BindSceneRuleToEdgeInstanceResponse, err error) {
 	response = CreateBindSceneRuleToEdgeInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindSceneRuleToEdgeInstance(request *BindSceneRuleToEdgeIn
 }
 
 // BindSceneRuleToEdgeInstanceWithChan invokes the iot.BindSceneRuleToEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/bindsceneruletoedgeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindSceneRuleToEdgeInstanceWithChan(request *BindSceneRuleToEdgeInstanceRequest) (<-chan *BindSceneRuleToEdgeInstanceResponse, <-chan error) {
 	responseChan := make(chan *BindSceneRuleToEdgeInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindSceneRuleToEdgeInstanceWithChan(request *BindSceneRule
 }
 
 // BindSceneRuleToEdgeInstanceWithCallback invokes the iot.BindSceneRuleToEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/bindsceneruletoedgeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindSceneRuleToEdgeInstanceWithCallback(request *BindSceneRuleToEdgeInstanceRequest, callback func(response *BindSceneRuleToEdgeInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // QueryBatchRegisterDeviceStatus invokes the iot.QueryBatchRegisterDeviceStatus API synchronously
-// api document: https://help.aliyun.com/api/iot/querybatchregisterdevicestatus.html
 func (client *Client) QueryBatchRegisterDeviceStatus(request *QueryBatchRegisterDeviceStatusRequest) (response *QueryBatchRegisterDeviceStatusResponse, err error) {
 	response = CreateQueryBatchRegisterDeviceStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryBatchRegisterDeviceStatus(request *QueryBatchRegister
 }
 
 // QueryBatchRegisterDeviceStatusWithChan invokes the iot.QueryBatchRegisterDeviceStatus API asynchronously
-// api document: https://help.aliyun.com/api/iot/querybatchregisterdevicestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryBatchRegisterDeviceStatusWithChan(request *QueryBatchRegisterDeviceStatusRequest) (<-chan *QueryBatchRegisterDeviceStatusResponse, <-chan error) {
 	responseChan := make(chan *QueryBatchRegisterDeviceStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryBatchRegisterDeviceStatusWithChan(request *QueryBatch
 }
 
 // QueryBatchRegisterDeviceStatusWithCallback invokes the iot.QueryBatchRegisterDeviceStatus API asynchronously
-// api document: https://help.aliyun.com/api/iot/querybatchregisterdevicestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryBatchRegisterDeviceStatusWithCallback(request *QueryBatchRegisterDeviceStatusRequest, callback func(response *QueryBatchRegisterDeviceStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

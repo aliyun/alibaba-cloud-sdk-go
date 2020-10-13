@@ -21,7 +21,6 @@ import (
 )
 
 // CreateThingModel invokes the iot.CreateThingModel API synchronously
-// api document: https://help.aliyun.com/api/iot/createthingmodel.html
 func (client *Client) CreateThingModel(request *CreateThingModelRequest) (response *CreateThingModelResponse, err error) {
 	response = CreateCreateThingModelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateThingModel(request *CreateThingModelRequest) (respon
 }
 
 // CreateThingModelWithChan invokes the iot.CreateThingModel API asynchronously
-// api document: https://help.aliyun.com/api/iot/createthingmodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateThingModelWithChan(request *CreateThingModelRequest) (<-chan *CreateThingModelResponse, <-chan error) {
 	responseChan := make(chan *CreateThingModelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateThingModelWithChan(request *CreateThingModelRequest)
 }
 
 // CreateThingModelWithCallback invokes the iot.CreateThingModel API asynchronously
-// api document: https://help.aliyun.com/api/iot/createthingmodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateThingModelWithCallback(request *CreateThingModelRequest, callback func(response *CreateThingModelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

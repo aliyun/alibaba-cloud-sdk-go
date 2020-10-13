@@ -21,7 +21,6 @@ import (
 )
 
 // StopRule invokes the iot.StopRule API synchronously
-// api document: https://help.aliyun.com/api/iot/stoprule.html
 func (client *Client) StopRule(request *StopRuleRequest) (response *StopRuleResponse, err error) {
 	response = CreateStopRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopRule(request *StopRuleRequest) (response *StopRuleResp
 }
 
 // StopRuleWithChan invokes the iot.StopRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/stoprule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopRuleWithChan(request *StopRuleRequest) (<-chan *StopRuleResponse, <-chan error) {
 	responseChan := make(chan *StopRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopRuleWithChan(request *StopRuleRequest) (<-chan *StopRu
 }
 
 // StopRuleWithCallback invokes the iot.StopRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/stoprule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopRuleWithCallback(request *StopRuleRequest, callback func(response *StopRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

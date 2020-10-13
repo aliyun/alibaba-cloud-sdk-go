@@ -21,7 +21,6 @@ import (
 )
 
 // CreateSubscribeRelation invokes the iot.CreateSubscribeRelation API synchronously
-// api document: https://help.aliyun.com/api/iot/createsubscriberelation.html
 func (client *Client) CreateSubscribeRelation(request *CreateSubscribeRelationRequest) (response *CreateSubscribeRelationResponse, err error) {
 	response = CreateCreateSubscribeRelationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateSubscribeRelation(request *CreateSubscribeRelationRe
 }
 
 // CreateSubscribeRelationWithChan invokes the iot.CreateSubscribeRelation API asynchronously
-// api document: https://help.aliyun.com/api/iot/createsubscriberelation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSubscribeRelationWithChan(request *CreateSubscribeRelationRequest) (<-chan *CreateSubscribeRelationResponse, <-chan error) {
 	responseChan := make(chan *CreateSubscribeRelationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateSubscribeRelationWithChan(request *CreateSubscribeRe
 }
 
 // CreateSubscribeRelationWithCallback invokes the iot.CreateSubscribeRelation API asynchronously
-// api document: https://help.aliyun.com/api/iot/createsubscriberelation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSubscribeRelationWithCallback(request *CreateSubscribeRelationRequest, callback func(response *CreateSubscribeRelationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,10 +77,13 @@ type CreateSubscribeRelationRequest struct {
 	Type                    string           `position:"Query" name:"Type"`
 	IotInstanceId           string           `position:"Query" name:"IotInstanceId"`
 	DeviceStatusChangeFlag  requests.Boolean `position:"Query" name:"DeviceStatusChangeFlag"`
+	OtaVersionFlag          requests.Boolean `position:"Query" name:"OtaVersionFlag"`
+	DeviceTagFlag           requests.Boolean `position:"Query" name:"DeviceTagFlag"`
 	ConsumerGroupIds        *[]string        `position:"Query" name:"ConsumerGroupIds"  type:"Repeated"`
 	ProductKey              string           `position:"Query" name:"ProductKey"`
 	ThingHistoryFlag        requests.Boolean `position:"Query" name:"ThingHistoryFlag"`
 	FoundDeviceListFlag     requests.Boolean `position:"Query" name:"FoundDeviceListFlag"`
+	OtaJobFlag              requests.Boolean `position:"Query" name:"OtaJobFlag"`
 	ApiProduct              string           `position:"Body" name:"ApiProduct"`
 	DeviceDataFlag          requests.Boolean `position:"Query" name:"DeviceDataFlag"`
 	ApiRevision             string           `position:"Body" name:"ApiRevision"`

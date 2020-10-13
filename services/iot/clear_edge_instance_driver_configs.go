@@ -21,7 +21,6 @@ import (
 )
 
 // ClearEdgeInstanceDriverConfigs invokes the iot.ClearEdgeInstanceDriverConfigs API synchronously
-// api document: https://help.aliyun.com/api/iot/clearedgeinstancedriverconfigs.html
 func (client *Client) ClearEdgeInstanceDriverConfigs(request *ClearEdgeInstanceDriverConfigsRequest) (response *ClearEdgeInstanceDriverConfigsResponse, err error) {
 	response = CreateClearEdgeInstanceDriverConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ClearEdgeInstanceDriverConfigs(request *ClearEdgeInstanceD
 }
 
 // ClearEdgeInstanceDriverConfigsWithChan invokes the iot.ClearEdgeInstanceDriverConfigs API asynchronously
-// api document: https://help.aliyun.com/api/iot/clearedgeinstancedriverconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearEdgeInstanceDriverConfigsWithChan(request *ClearEdgeInstanceDriverConfigsRequest) (<-chan *ClearEdgeInstanceDriverConfigsResponse, <-chan error) {
 	responseChan := make(chan *ClearEdgeInstanceDriverConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ClearEdgeInstanceDriverConfigsWithChan(request *ClearEdgeI
 }
 
 // ClearEdgeInstanceDriverConfigsWithCallback invokes the iot.ClearEdgeInstanceDriverConfigs API asynchronously
-// api document: https://help.aliyun.com/api/iot/clearedgeinstancedriverconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearEdgeInstanceDriverConfigsWithCallback(request *ClearEdgeInstanceDriverConfigsRequest, callback func(response *ClearEdgeInstanceDriverConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

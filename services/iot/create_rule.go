@@ -21,7 +21,6 @@ import (
 )
 
 // CreateRule invokes the iot.CreateRule API synchronously
-// api document: https://help.aliyun.com/api/iot/createrule.html
 func (client *Client) CreateRule(request *CreateRuleRequest) (response *CreateRuleResponse, err error) {
 	response = CreateCreateRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateRule(request *CreateRuleRequest) (response *CreateRu
 }
 
 // CreateRuleWithChan invokes the iot.CreateRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/createrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRuleWithChan(request *CreateRuleRequest) (<-chan *CreateRuleResponse, <-chan error) {
 	responseChan := make(chan *CreateRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateRuleWithChan(request *CreateRuleRequest) (<-chan *Cr
 }
 
 // CreateRuleWithCallback invokes the iot.CreateRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/createrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRuleWithCallback(request *CreateRuleRequest, callback func(response *CreateRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ListOTATaskByJob invokes the iot.ListOTATaskByJob API synchronously
-// api document: https://help.aliyun.com/api/iot/listotataskbyjob.html
 func (client *Client) ListOTATaskByJob(request *ListOTATaskByJobRequest) (response *ListOTATaskByJobResponse, err error) {
 	response = CreateListOTATaskByJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListOTATaskByJob(request *ListOTATaskByJobRequest) (respon
 }
 
 // ListOTATaskByJobWithChan invokes the iot.ListOTATaskByJob API asynchronously
-// api document: https://help.aliyun.com/api/iot/listotataskbyjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListOTATaskByJobWithChan(request *ListOTATaskByJobRequest) (<-chan *ListOTATaskByJobResponse, <-chan error) {
 	responseChan := make(chan *ListOTATaskByJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListOTATaskByJobWithChan(request *ListOTATaskByJobRequest)
 }
 
 // ListOTATaskByJobWithCallback invokes the iot.ListOTATaskByJob API asynchronously
-// api document: https://help.aliyun.com/api/iot/listotataskbyjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListOTATaskByJobWithCallback(request *ListOTATaskByJobRequest, callback func(response *ListOTATaskByJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

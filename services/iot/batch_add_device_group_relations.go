@@ -21,7 +21,6 @@ import (
 )
 
 // BatchAddDeviceGroupRelations invokes the iot.BatchAddDeviceGroupRelations API synchronously
-// api document: https://help.aliyun.com/api/iot/batchadddevicegrouprelations.html
 func (client *Client) BatchAddDeviceGroupRelations(request *BatchAddDeviceGroupRelationsRequest) (response *BatchAddDeviceGroupRelationsResponse, err error) {
 	response = CreateBatchAddDeviceGroupRelationsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchAddDeviceGroupRelations(request *BatchAddDeviceGroupR
 }
 
 // BatchAddDeviceGroupRelationsWithChan invokes the iot.BatchAddDeviceGroupRelations API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchadddevicegrouprelations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchAddDeviceGroupRelationsWithChan(request *BatchAddDeviceGroupRelationsRequest) (<-chan *BatchAddDeviceGroupRelationsResponse, <-chan error) {
 	responseChan := make(chan *BatchAddDeviceGroupRelationsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchAddDeviceGroupRelationsWithChan(request *BatchAddDevi
 }
 
 // BatchAddDeviceGroupRelationsWithCallback invokes the iot.BatchAddDeviceGroupRelations API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchadddevicegrouprelations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchAddDeviceGroupRelationsWithCallback(request *BatchAddDeviceGroupRelationsRequest, callback func(response *BatchAddDeviceGroupRelationsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

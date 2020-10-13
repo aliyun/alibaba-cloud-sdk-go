@@ -21,7 +21,6 @@ import (
 )
 
 // ListProductByTags invokes the iot.ListProductByTags API synchronously
-// api document: https://help.aliyun.com/api/iot/listproductbytags.html
 func (client *Client) ListProductByTags(request *ListProductByTagsRequest) (response *ListProductByTagsResponse, err error) {
 	response = CreateListProductByTagsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListProductByTags(request *ListProductByTagsRequest) (resp
 }
 
 // ListProductByTagsWithChan invokes the iot.ListProductByTags API asynchronously
-// api document: https://help.aliyun.com/api/iot/listproductbytags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListProductByTagsWithChan(request *ListProductByTagsRequest) (<-chan *ListProductByTagsResponse, <-chan error) {
 	responseChan := make(chan *ListProductByTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListProductByTagsWithChan(request *ListProductByTagsReques
 }
 
 // ListProductByTagsWithCallback invokes the iot.ListProductByTags API asynchronously
-// api document: https://help.aliyun.com/api/iot/listproductbytags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListProductByTagsWithCallback(request *ListProductByTagsRequest, callback func(response *ListProductByTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

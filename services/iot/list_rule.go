@@ -21,7 +21,6 @@ import (
 )
 
 // ListRule invokes the iot.ListRule API synchronously
-// api document: https://help.aliyun.com/api/iot/listrule.html
 func (client *Client) ListRule(request *ListRuleRequest) (response *ListRuleResponse, err error) {
 	response = CreateListRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListRule(request *ListRuleRequest) (response *ListRuleResp
 }
 
 // ListRuleWithChan invokes the iot.ListRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/listrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRuleWithChan(request *ListRuleRequest) (<-chan *ListRuleResponse, <-chan error) {
 	responseChan := make(chan *ListRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListRuleWithChan(request *ListRuleRequest) (<-chan *ListRu
 }
 
 // ListRuleWithCallback invokes the iot.ListRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/listrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRuleWithCallback(request *ListRuleRequest, callback func(response *ListRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

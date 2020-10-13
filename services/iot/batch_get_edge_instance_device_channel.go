@@ -21,7 +21,6 @@ import (
 )
 
 // BatchGetEdgeInstanceDeviceChannel invokes the iot.BatchGetEdgeInstanceDeviceChannel API synchronously
-// api document: https://help.aliyun.com/api/iot/batchgetedgeinstancedevicechannel.html
 func (client *Client) BatchGetEdgeInstanceDeviceChannel(request *BatchGetEdgeInstanceDeviceChannelRequest) (response *BatchGetEdgeInstanceDeviceChannelResponse, err error) {
 	response = CreateBatchGetEdgeInstanceDeviceChannelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchGetEdgeInstanceDeviceChannel(request *BatchGetEdgeIns
 }
 
 // BatchGetEdgeInstanceDeviceChannelWithChan invokes the iot.BatchGetEdgeInstanceDeviceChannel API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchgetedgeinstancedevicechannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchGetEdgeInstanceDeviceChannelWithChan(request *BatchGetEdgeInstanceDeviceChannelRequest) (<-chan *BatchGetEdgeInstanceDeviceChannelResponse, <-chan error) {
 	responseChan := make(chan *BatchGetEdgeInstanceDeviceChannelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchGetEdgeInstanceDeviceChannelWithChan(request *BatchGe
 }
 
 // BatchGetEdgeInstanceDeviceChannelWithCallback invokes the iot.BatchGetEdgeInstanceDeviceChannel API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchgetedgeinstancedevicechannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchGetEdgeInstanceDeviceChannelWithCallback(request *BatchGetEdgeInstanceDeviceChannelRequest, callback func(response *BatchGetEdgeInstanceDeviceChannelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

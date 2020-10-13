@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateEdgeInstance invokes the iot.UpdateEdgeInstance API synchronously
-// api document: https://help.aliyun.com/api/iot/updateedgeinstance.html
 func (client *Client) UpdateEdgeInstance(request *UpdateEdgeInstanceRequest) (response *UpdateEdgeInstanceResponse, err error) {
 	response = CreateUpdateEdgeInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateEdgeInstance(request *UpdateEdgeInstanceRequest) (re
 }
 
 // UpdateEdgeInstanceWithChan invokes the iot.UpdateEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/updateedgeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateEdgeInstanceWithChan(request *UpdateEdgeInstanceRequest) (<-chan *UpdateEdgeInstanceResponse, <-chan error) {
 	responseChan := make(chan *UpdateEdgeInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateEdgeInstanceWithChan(request *UpdateEdgeInstanceRequ
 }
 
 // UpdateEdgeInstanceWithCallback invokes the iot.UpdateEdgeInstance API asynchronously
-// api document: https://help.aliyun.com/api/iot/updateedgeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateEdgeInstanceWithCallback(request *UpdateEdgeInstanceRequest, callback func(response *UpdateEdgeInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

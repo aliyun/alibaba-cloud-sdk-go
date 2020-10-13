@@ -21,7 +21,6 @@ import (
 )
 
 // GetGatewayBySubDevice invokes the iot.GetGatewayBySubDevice API synchronously
-// api document: https://help.aliyun.com/api/iot/getgatewaybysubdevice.html
 func (client *Client) GetGatewayBySubDevice(request *GetGatewayBySubDeviceRequest) (response *GetGatewayBySubDeviceResponse, err error) {
 	response = CreateGetGatewayBySubDeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetGatewayBySubDevice(request *GetGatewayBySubDeviceReques
 }
 
 // GetGatewayBySubDeviceWithChan invokes the iot.GetGatewayBySubDevice API asynchronously
-// api document: https://help.aliyun.com/api/iot/getgatewaybysubdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetGatewayBySubDeviceWithChan(request *GetGatewayBySubDeviceRequest) (<-chan *GetGatewayBySubDeviceResponse, <-chan error) {
 	responseChan := make(chan *GetGatewayBySubDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetGatewayBySubDeviceWithChan(request *GetGatewayBySubDevi
 }
 
 // GetGatewayBySubDeviceWithCallback invokes the iot.GetGatewayBySubDevice API asynchronously
-// api document: https://help.aliyun.com/api/iot/getgatewaybysubdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetGatewayBySubDeviceWithCallback(request *GetGatewayBySubDeviceRequest, callback func(response *GetGatewayBySubDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

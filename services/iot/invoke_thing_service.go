@@ -21,7 +21,6 @@ import (
 )
 
 // InvokeThingService invokes the iot.InvokeThingService API synchronously
-// api document: https://help.aliyun.com/api/iot/invokethingservice.html
 func (client *Client) InvokeThingService(request *InvokeThingServiceRequest) (response *InvokeThingServiceResponse, err error) {
 	response = CreateInvokeThingServiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InvokeThingService(request *InvokeThingServiceRequest) (re
 }
 
 // InvokeThingServiceWithChan invokes the iot.InvokeThingService API asynchronously
-// api document: https://help.aliyun.com/api/iot/invokethingservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InvokeThingServiceWithChan(request *InvokeThingServiceRequest) (<-chan *InvokeThingServiceResponse, <-chan error) {
 	responseChan := make(chan *InvokeThingServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InvokeThingServiceWithChan(request *InvokeThingServiceRequ
 }
 
 // InvokeThingServiceWithCallback invokes the iot.InvokeThingService API asynchronously
-// api document: https://help.aliyun.com/api/iot/invokethingservice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InvokeThingServiceWithCallback(request *InvokeThingServiceRequest, callback func(response *InvokeThingServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // StartRule invokes the iot.StartRule API synchronously
-// api document: https://help.aliyun.com/api/iot/startrule.html
 func (client *Client) StartRule(request *StartRuleRequest) (response *StartRuleResponse, err error) {
 	response = CreateStartRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartRule(request *StartRuleRequest) (response *StartRuleR
 }
 
 // StartRuleWithChan invokes the iot.StartRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/startrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartRuleWithChan(request *StartRuleRequest) (<-chan *StartRuleResponse, <-chan error) {
 	responseChan := make(chan *StartRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartRuleWithChan(request *StartRuleRequest) (<-chan *Star
 }
 
 // StartRuleWithCallback invokes the iot.StartRule API asynchronously
-// api document: https://help.aliyun.com/api/iot/startrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartRuleWithCallback(request *StartRuleRequest, callback func(response *StartRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

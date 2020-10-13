@@ -21,7 +21,6 @@ import (
 )
 
 // CreateOTAFirmware invokes the iot.CreateOTAFirmware API synchronously
-// api document: https://help.aliyun.com/api/iot/createotafirmware.html
 func (client *Client) CreateOTAFirmware(request *CreateOTAFirmwareRequest) (response *CreateOTAFirmwareResponse, err error) {
 	response = CreateCreateOTAFirmwareResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateOTAFirmware(request *CreateOTAFirmwareRequest) (resp
 }
 
 // CreateOTAFirmwareWithChan invokes the iot.CreateOTAFirmware API asynchronously
-// api document: https://help.aliyun.com/api/iot/createotafirmware.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOTAFirmwareWithChan(request *CreateOTAFirmwareRequest) (<-chan *CreateOTAFirmwareResponse, <-chan error) {
 	responseChan := make(chan *CreateOTAFirmwareResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateOTAFirmwareWithChan(request *CreateOTAFirmwareReques
 }
 
 // CreateOTAFirmwareWithCallback invokes the iot.CreateOTAFirmware API asynchronously
-// api document: https://help.aliyun.com/api/iot/createotafirmware.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOTAFirmwareWithCallback(request *CreateOTAFirmwareRequest, callback func(response *CreateOTAFirmwareResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) CreateOTAFirmwareWithCallback(request *CreateOTAFirmwareRe
 type CreateOTAFirmwareRequest struct {
 	*requests.RpcRequest
 	SignMethod    string           `position:"Query" name:"SignMethod"`
+	NeedToVerify  requests.Boolean `position:"Query" name:"NeedToVerify"`
 	Type          requests.Integer `position:"Query" name:"Type"`
 	FirmwareUrl   string           `position:"Query" name:"FirmwareUrl"`
 	IotInstanceId string           `position:"Query" name:"IotInstanceId"`

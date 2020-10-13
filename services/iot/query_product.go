@@ -21,7 +21,6 @@ import (
 )
 
 // QueryProduct invokes the iot.QueryProduct API synchronously
-// api document: https://help.aliyun.com/api/iot/queryproduct.html
 func (client *Client) QueryProduct(request *QueryProductRequest) (response *QueryProductResponse, err error) {
 	response = CreateQueryProductResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryProduct(request *QueryProductRequest) (response *Quer
 }
 
 // QueryProductWithChan invokes the iot.QueryProduct API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryproduct.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryProductWithChan(request *QueryProductRequest) (<-chan *QueryProductResponse, <-chan error) {
 	responseChan := make(chan *QueryProductResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryProductWithChan(request *QueryProductRequest) (<-chan
 }
 
 // QueryProductWithCallback invokes the iot.QueryProduct API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryproduct.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryProductWithCallback(request *QueryProductRequest, callback func(response *QueryProductResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

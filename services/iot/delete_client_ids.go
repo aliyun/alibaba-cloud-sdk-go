@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteClientIds invokes the iot.DeleteClientIds API synchronously
-// api document: https://help.aliyun.com/api/iot/deleteclientids.html
 func (client *Client) DeleteClientIds(request *DeleteClientIdsRequest) (response *DeleteClientIdsResponse, err error) {
 	response = CreateDeleteClientIdsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteClientIds(request *DeleteClientIdsRequest) (response
 }
 
 // DeleteClientIdsWithChan invokes the iot.DeleteClientIds API asynchronously
-// api document: https://help.aliyun.com/api/iot/deleteclientids.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteClientIdsWithChan(request *DeleteClientIdsRequest) (<-chan *DeleteClientIdsResponse, <-chan error) {
 	responseChan := make(chan *DeleteClientIdsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteClientIdsWithChan(request *DeleteClientIdsRequest) (
 }
 
 // DeleteClientIdsWithCallback invokes the iot.DeleteClientIds API asynchronously
-// api document: https://help.aliyun.com/api/iot/deleteclientids.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteClientIdsWithCallback(request *DeleteClientIdsRequest, callback func(response *DeleteClientIdsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

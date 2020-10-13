@@ -21,7 +21,6 @@ import (
 )
 
 // NotifyAddThingTopo invokes the iot.NotifyAddThingTopo API synchronously
-// api document: https://help.aliyun.com/api/iot/notifyaddthingtopo.html
 func (client *Client) NotifyAddThingTopo(request *NotifyAddThingTopoRequest) (response *NotifyAddThingTopoResponse, err error) {
 	response = CreateNotifyAddThingTopoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) NotifyAddThingTopo(request *NotifyAddThingTopoRequest) (re
 }
 
 // NotifyAddThingTopoWithChan invokes the iot.NotifyAddThingTopo API asynchronously
-// api document: https://help.aliyun.com/api/iot/notifyaddthingtopo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NotifyAddThingTopoWithChan(request *NotifyAddThingTopoRequest) (<-chan *NotifyAddThingTopoResponse, <-chan error) {
 	responseChan := make(chan *NotifyAddThingTopoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) NotifyAddThingTopoWithChan(request *NotifyAddThingTopoRequ
 }
 
 // NotifyAddThingTopoWithCallback invokes the iot.NotifyAddThingTopo API asynchronously
-// api document: https://help.aliyun.com/api/iot/notifyaddthingtopo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NotifyAddThingTopoWithCallback(request *NotifyAddThingTopoRequest, callback func(response *NotifyAddThingTopoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

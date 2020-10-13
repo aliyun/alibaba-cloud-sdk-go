@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateProductFilterConfig invokes the iot.UpdateProductFilterConfig API synchronously
-// api document: https://help.aliyun.com/api/iot/updateproductfilterconfig.html
 func (client *Client) UpdateProductFilterConfig(request *UpdateProductFilterConfigRequest) (response *UpdateProductFilterConfigResponse, err error) {
 	response = CreateUpdateProductFilterConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateProductFilterConfig(request *UpdateProductFilterConf
 }
 
 // UpdateProductFilterConfigWithChan invokes the iot.UpdateProductFilterConfig API asynchronously
-// api document: https://help.aliyun.com/api/iot/updateproductfilterconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateProductFilterConfigWithChan(request *UpdateProductFilterConfigRequest) (<-chan *UpdateProductFilterConfigResponse, <-chan error) {
 	responseChan := make(chan *UpdateProductFilterConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateProductFilterConfigWithChan(request *UpdateProductFi
 }
 
 // UpdateProductFilterConfigWithCallback invokes the iot.UpdateProductFilterConfig API asynchronously
-// api document: https://help.aliyun.com/api/iot/updateproductfilterconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateProductFilterConfigWithCallback(request *UpdateProductFilterConfigRequest, callback func(response *UpdateProductFilterConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

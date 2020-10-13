@@ -21,7 +21,6 @@ import (
 )
 
 // QueryTopicReverseRouteTable invokes the iot.QueryTopicReverseRouteTable API synchronously
-// api document: https://help.aliyun.com/api/iot/querytopicreverseroutetable.html
 func (client *Client) QueryTopicReverseRouteTable(request *QueryTopicReverseRouteTableRequest) (response *QueryTopicReverseRouteTableResponse, err error) {
 	response = CreateQueryTopicReverseRouteTableResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryTopicReverseRouteTable(request *QueryTopicReverseRout
 }
 
 // QueryTopicReverseRouteTableWithChan invokes the iot.QueryTopicReverseRouteTable API asynchronously
-// api document: https://help.aliyun.com/api/iot/querytopicreverseroutetable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTopicReverseRouteTableWithChan(request *QueryTopicReverseRouteTableRequest) (<-chan *QueryTopicReverseRouteTableResponse, <-chan error) {
 	responseChan := make(chan *QueryTopicReverseRouteTableResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryTopicReverseRouteTableWithChan(request *QueryTopicRev
 }
 
 // QueryTopicReverseRouteTableWithCallback invokes the iot.QueryTopicReverseRouteTable API asynchronously
-// api document: https://help.aliyun.com/api/iot/querytopicreverseroutetable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTopicReverseRouteTableWithCallback(request *QueryTopicReverseRouteTableRequest, callback func(response *QueryTopicReverseRouteTableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

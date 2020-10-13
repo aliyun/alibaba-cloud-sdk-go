@@ -21,7 +21,6 @@ import (
 )
 
 // BatchGetDeviceBindStatus invokes the iot.BatchGetDeviceBindStatus API synchronously
-// api document: https://help.aliyun.com/api/iot/batchgetdevicebindstatus.html
 func (client *Client) BatchGetDeviceBindStatus(request *BatchGetDeviceBindStatusRequest) (response *BatchGetDeviceBindStatusResponse, err error) {
 	response = CreateBatchGetDeviceBindStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchGetDeviceBindStatus(request *BatchGetDeviceBindStatus
 }
 
 // BatchGetDeviceBindStatusWithChan invokes the iot.BatchGetDeviceBindStatus API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchgetdevicebindstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchGetDeviceBindStatusWithChan(request *BatchGetDeviceBindStatusRequest) (<-chan *BatchGetDeviceBindStatusResponse, <-chan error) {
 	responseChan := make(chan *BatchGetDeviceBindStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchGetDeviceBindStatusWithChan(request *BatchGetDeviceBi
 }
 
 // BatchGetDeviceBindStatusWithCallback invokes the iot.BatchGetDeviceBindStatus API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchgetdevicebindstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchGetDeviceBindStatusWithCallback(request *BatchGetDeviceBindStatusRequest, callback func(response *BatchGetDeviceBindStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

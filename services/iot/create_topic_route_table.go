@@ -21,7 +21,6 @@ import (
 )
 
 // CreateTopicRouteTable invokes the iot.CreateTopicRouteTable API synchronously
-// api document: https://help.aliyun.com/api/iot/createtopicroutetable.html
 func (client *Client) CreateTopicRouteTable(request *CreateTopicRouteTableRequest) (response *CreateTopicRouteTableResponse, err error) {
 	response = CreateCreateTopicRouteTableResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateTopicRouteTable(request *CreateTopicRouteTableReques
 }
 
 // CreateTopicRouteTableWithChan invokes the iot.CreateTopicRouteTable API asynchronously
-// api document: https://help.aliyun.com/api/iot/createtopicroutetable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTopicRouteTableWithChan(request *CreateTopicRouteTableRequest) (<-chan *CreateTopicRouteTableResponse, <-chan error) {
 	responseChan := make(chan *CreateTopicRouteTableResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateTopicRouteTableWithChan(request *CreateTopicRouteTab
 }
 
 // CreateTopicRouteTableWithCallback invokes the iot.CreateTopicRouteTable API asynchronously
-// api document: https://help.aliyun.com/api/iot/createtopicroutetable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTopicRouteTableWithCallback(request *CreateTopicRouteTableRequest, callback func(response *CreateTopicRouteTableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateProductTags invokes the iot.UpdateProductTags API synchronously
-// api document: https://help.aliyun.com/api/iot/updateproducttags.html
 func (client *Client) UpdateProductTags(request *UpdateProductTagsRequest) (response *UpdateProductTagsResponse, err error) {
 	response = CreateUpdateProductTagsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateProductTags(request *UpdateProductTagsRequest) (resp
 }
 
 // UpdateProductTagsWithChan invokes the iot.UpdateProductTags API asynchronously
-// api document: https://help.aliyun.com/api/iot/updateproducttags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateProductTagsWithChan(request *UpdateProductTagsRequest) (<-chan *UpdateProductTagsResponse, <-chan error) {
 	responseChan := make(chan *UpdateProductTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateProductTagsWithChan(request *UpdateProductTagsReques
 }
 
 // UpdateProductTagsWithCallback invokes the iot.UpdateProductTags API asynchronously
-// api document: https://help.aliyun.com/api/iot/updateproducttags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateProductTagsWithCallback(request *UpdateProductTagsRequest, callback func(response *UpdateProductTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

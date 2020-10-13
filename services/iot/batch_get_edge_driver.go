@@ -21,7 +21,6 @@ import (
 )
 
 // BatchGetEdgeDriver invokes the iot.BatchGetEdgeDriver API synchronously
-// api document: https://help.aliyun.com/api/iot/batchgetedgedriver.html
 func (client *Client) BatchGetEdgeDriver(request *BatchGetEdgeDriverRequest) (response *BatchGetEdgeDriverResponse, err error) {
 	response = CreateBatchGetEdgeDriverResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchGetEdgeDriver(request *BatchGetEdgeDriverRequest) (re
 }
 
 // BatchGetEdgeDriverWithChan invokes the iot.BatchGetEdgeDriver API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchgetedgedriver.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchGetEdgeDriverWithChan(request *BatchGetEdgeDriverRequest) (<-chan *BatchGetEdgeDriverResponse, <-chan error) {
 	responseChan := make(chan *BatchGetEdgeDriverResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchGetEdgeDriverWithChan(request *BatchGetEdgeDriverRequ
 }
 
 // BatchGetEdgeDriverWithCallback invokes the iot.BatchGetEdgeDriver API asynchronously
-// api document: https://help.aliyun.com/api/iot/batchgetedgedriver.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchGetEdgeDriverWithCallback(request *BatchGetEdgeDriverRequest, callback func(response *BatchGetEdgeDriverResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

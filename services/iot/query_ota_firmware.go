@@ -21,7 +21,6 @@ import (
 )
 
 // QueryOTAFirmware invokes the iot.QueryOTAFirmware API synchronously
-// api document: https://help.aliyun.com/api/iot/queryotafirmware.html
 func (client *Client) QueryOTAFirmware(request *QueryOTAFirmwareRequest) (response *QueryOTAFirmwareResponse, err error) {
 	response = CreateQueryOTAFirmwareResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryOTAFirmware(request *QueryOTAFirmwareRequest) (respon
 }
 
 // QueryOTAFirmwareWithChan invokes the iot.QueryOTAFirmware API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryotafirmware.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryOTAFirmwareWithChan(request *QueryOTAFirmwareRequest) (<-chan *QueryOTAFirmwareResponse, <-chan error) {
 	responseChan := make(chan *QueryOTAFirmwareResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryOTAFirmwareWithChan(request *QueryOTAFirmwareRequest)
 }
 
 // QueryOTAFirmwareWithCallback invokes the iot.QueryOTAFirmware API asynchronously
-// api document: https://help.aliyun.com/api/iot/queryotafirmware.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryOTAFirmwareWithCallback(request *QueryOTAFirmwareRequest, callback func(response *QueryOTAFirmwareResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
