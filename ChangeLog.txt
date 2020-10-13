@@ -1,3 +1,7 @@
+2020-10-13 Version: v1.61.561
+- Generated 2019-12-30 for `facebody`.
+- Release PedestrianDetectAttribute.
+
 2020-10-13 Version: v1.61.560
 - Generated 2018-12-12 for `vs`.
 
