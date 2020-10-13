@@ -24,5 +24,6 @@ type Data struct {
 	Status         string    `json:"Status" xml:"Status"`
 	OriginImageURL string    `json:"OriginImageURL" xml:"OriginImageURL"`
 	ErrorCode      string    `json:"ErrorCode" xml:"ErrorCode"`
+	URL            string    `json:"URL" xml:"URL"`
 	Elements       []Element `json:"Elements" xml:"Elements"`
 }
