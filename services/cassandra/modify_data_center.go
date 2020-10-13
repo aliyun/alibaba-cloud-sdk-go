@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDataCenter invokes the cassandra.ModifyDataCenter API synchronously
-// api document: https://help.aliyun.com/api/cassandra/modifydatacenter.html
 func (client *Client) ModifyDataCenter(request *ModifyDataCenterRequest) (response *ModifyDataCenterResponse, err error) {
 	response = CreateModifyDataCenterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDataCenter(request *ModifyDataCenterRequest) (respon
 }
 
 // ModifyDataCenterWithChan invokes the cassandra.ModifyDataCenter API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/modifydatacenter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDataCenterWithChan(request *ModifyDataCenterRequest) (<-chan *ModifyDataCenterResponse, <-chan error) {
 	responseChan := make(chan *ModifyDataCenterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDataCenterWithChan(request *ModifyDataCenterRequest)
 }
 
 // ModifyDataCenterWithCallback invokes the cassandra.ModifyDataCenter API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/modifydatacenter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDataCenterWithCallback(request *ModifyDataCenterRequest, callback func(response *ModifyDataCenterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

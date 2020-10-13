@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeParameterModificationHistories invokes the cassandra.DescribeParameterModificationHistories API synchronously
-// api document: https://help.aliyun.com/api/cassandra/describeparametermodificationhistories.html
 func (client *Client) DescribeParameterModificationHistories(request *DescribeParameterModificationHistoriesRequest) (response *DescribeParameterModificationHistoriesResponse, err error) {
 	response = CreateDescribeParameterModificationHistoriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeParameterModificationHistories(request *DescribePa
 }
 
 // DescribeParameterModificationHistoriesWithChan invokes the cassandra.DescribeParameterModificationHistories API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describeparametermodificationhistories.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeParameterModificationHistoriesWithChan(request *DescribeParameterModificationHistoriesRequest) (<-chan *DescribeParameterModificationHistoriesResponse, <-chan error) {
 	responseChan := make(chan *DescribeParameterModificationHistoriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeParameterModificationHistoriesWithChan(request *De
 }
 
 // DescribeParameterModificationHistoriesWithCallback invokes the cassandra.DescribeParameterModificationHistories API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describeparametermodificationhistories.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeParameterModificationHistoriesWithCallback(request *DescribeParameterModificationHistoriesRequest, callback func(response *DescribeParameterModificationHistoriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

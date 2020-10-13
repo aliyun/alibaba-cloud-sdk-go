@@ -21,7 +21,6 @@ import (
 )
 
 // ExecuteNodeTool invokes the cassandra.ExecuteNodeTool API synchronously
-// api document: https://help.aliyun.com/api/cassandra/executenodetool.html
 func (client *Client) ExecuteNodeTool(request *ExecuteNodeToolRequest) (response *ExecuteNodeToolResponse, err error) {
 	response = CreateExecuteNodeToolResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExecuteNodeTool(request *ExecuteNodeToolRequest) (response
 }
 
 // ExecuteNodeToolWithChan invokes the cassandra.ExecuteNodeTool API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/executenodetool.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteNodeToolWithChan(request *ExecuteNodeToolRequest) (<-chan *ExecuteNodeToolResponse, <-chan error) {
 	responseChan := make(chan *ExecuteNodeToolResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExecuteNodeToolWithChan(request *ExecuteNodeToolRequest) (
 }
 
 // ExecuteNodeToolWithCallback invokes the cassandra.ExecuteNodeTool API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/executenodetool.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteNodeToolWithCallback(request *ExecuteNodeToolRequest, callback func(response *ExecuteNodeToolResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) ExecuteNodeToolWithCallback(request *ExecuteNodeToolReques
 // ExecuteNodeToolRequest is the request struct for api ExecuteNodeTool
 type ExecuteNodeToolRequest struct {
 	*requests.RpcRequest
+	ExecuteNodes string `position:"Query" name:"ExecuteNodes"`
 	DataCenterId string `position:"Query" name:"DataCenterId"`
 	ClusterId    string `position:"Query" name:"ClusterId"`
 	Command      string `position:"Query" name:"Command"`

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeClusterDashboard invokes the cassandra.DescribeClusterDashboard API synchronously
-// api document: https://help.aliyun.com/api/cassandra/describeclusterdashboard.html
 func (client *Client) DescribeClusterDashboard(request *DescribeClusterDashboardRequest) (response *DescribeClusterDashboardResponse, err error) {
 	response = CreateDescribeClusterDashboardResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeClusterDashboard(request *DescribeClusterDashboard
 }
 
 // DescribeClusterDashboardWithChan invokes the cassandra.DescribeClusterDashboard API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describeclusterdashboard.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterDashboardWithChan(request *DescribeClusterDashboardRequest) (<-chan *DescribeClusterDashboardResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterDashboardResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeClusterDashboardWithChan(request *DescribeClusterD
 }
 
 // DescribeClusterDashboardWithCallback invokes the cassandra.DescribeClusterDashboard API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describeclusterdashboard.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterDashboardWithCallback(request *DescribeClusterDashboardRequest, callback func(response *DescribeClusterDashboardResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

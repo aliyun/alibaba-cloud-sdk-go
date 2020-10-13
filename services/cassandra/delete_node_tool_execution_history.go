@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteNodeToolExecutionHistory invokes the cassandra.DeleteNodeToolExecutionHistory API synchronously
-// api document: https://help.aliyun.com/api/cassandra/deletenodetoolexecutionhistory.html
 func (client *Client) DeleteNodeToolExecutionHistory(request *DeleteNodeToolExecutionHistoryRequest) (response *DeleteNodeToolExecutionHistoryResponse, err error) {
 	response = CreateDeleteNodeToolExecutionHistoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteNodeToolExecutionHistory(request *DeleteNodeToolExec
 }
 
 // DeleteNodeToolExecutionHistoryWithChan invokes the cassandra.DeleteNodeToolExecutionHistory API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/deletenodetoolexecutionhistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNodeToolExecutionHistoryWithChan(request *DeleteNodeToolExecutionHistoryRequest) (<-chan *DeleteNodeToolExecutionHistoryResponse, <-chan error) {
 	responseChan := make(chan *DeleteNodeToolExecutionHistoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteNodeToolExecutionHistoryWithChan(request *DeleteNode
 }
 
 // DeleteNodeToolExecutionHistoryWithCallback invokes the cassandra.DeleteNodeToolExecutionHistory API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/deletenodetoolexecutionhistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNodeToolExecutionHistoryWithCallback(request *DeleteNodeToolExecutionHistoryRequest, callback func(response *DeleteNodeToolExecutionHistoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

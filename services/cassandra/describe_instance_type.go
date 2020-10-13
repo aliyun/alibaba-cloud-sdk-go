@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstanceType invokes the cassandra.DescribeInstanceType API synchronously
-// api document: https://help.aliyun.com/api/cassandra/describeinstancetype.html
 func (client *Client) DescribeInstanceType(request *DescribeInstanceTypeRequest) (response *DescribeInstanceTypeResponse, err error) {
 	response = CreateDescribeInstanceTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstanceType(request *DescribeInstanceTypeRequest)
 }
 
 // DescribeInstanceTypeWithChan invokes the cassandra.DescribeInstanceType API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describeinstancetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceTypeWithChan(request *DescribeInstanceTypeRequest) (<-chan *DescribeInstanceTypeResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceTypeWithChan(request *DescribeInstanceType
 }
 
 // DescribeInstanceTypeWithCallback invokes the cassandra.DescribeInstanceType API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describeinstancetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceTypeWithCallback(request *DescribeInstanceTypeRequest, callback func(response *DescribeInstanceTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

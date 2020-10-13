@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSecurityGroups invokes the cassandra.DescribeSecurityGroups API synchronously
-// api document: https://help.aliyun.com/api/cassandra/describesecuritygroups.html
 func (client *Client) DescribeSecurityGroups(request *DescribeSecurityGroupsRequest) (response *DescribeSecurityGroupsResponse, err error) {
 	response = CreateDescribeSecurityGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSecurityGroups(request *DescribeSecurityGroupsRequ
 }
 
 // DescribeSecurityGroupsWithChan invokes the cassandra.DescribeSecurityGroups API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describesecuritygroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupsWithChan(request *DescribeSecurityGroupsRequest) (<-chan *DescribeSecurityGroupsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSecurityGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSecurityGroupsWithChan(request *DescribeSecurityGr
 }
 
 // DescribeSecurityGroupsWithCallback invokes the cassandra.DescribeSecurityGroups API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describesecuritygroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupsWithCallback(request *DescribeSecurityGroupsRequest, callback func(response *DescribeSecurityGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

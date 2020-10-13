@@ -21,7 +21,6 @@ import (
 )
 
 // ListTags invokes the cassandra.ListTags API synchronously
-// api document: https://help.aliyun.com/api/cassandra/listtags.html
 func (client *Client) ListTags(request *ListTagsRequest) (response *ListTagsResponse, err error) {
 	response = CreateListTagsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListTags(request *ListTagsRequest) (response *ListTagsResp
 }
 
 // ListTagsWithChan invokes the cassandra.ListTags API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/listtags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTagsWithChan(request *ListTagsRequest) (<-chan *ListTagsResponse, <-chan error) {
 	responseChan := make(chan *ListTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListTagsWithChan(request *ListTagsRequest) (<-chan *ListTa
 }
 
 // ListTagsWithCallback invokes the cassandra.ListTags API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/listtags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTagsWithCallback(request *ListTagsRequest, callback func(response *ListTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

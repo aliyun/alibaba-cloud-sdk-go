@@ -21,7 +21,6 @@ import (
 )
 
 // AllocatePublicContactPoints invokes the cassandra.AllocatePublicContactPoints API synchronously
-// api document: https://help.aliyun.com/api/cassandra/allocatepubliccontactpoints.html
 func (client *Client) AllocatePublicContactPoints(request *AllocatePublicContactPointsRequest) (response *AllocatePublicContactPointsResponse, err error) {
 	response = CreateAllocatePublicContactPointsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AllocatePublicContactPoints(request *AllocatePublicContact
 }
 
 // AllocatePublicContactPointsWithChan invokes the cassandra.AllocatePublicContactPoints API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/allocatepubliccontactpoints.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocatePublicContactPointsWithChan(request *AllocatePublicContactPointsRequest) (<-chan *AllocatePublicContactPointsResponse, <-chan error) {
 	responseChan := make(chan *AllocatePublicContactPointsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AllocatePublicContactPointsWithChan(request *AllocatePubli
 }
 
 // AllocatePublicContactPointsWithCallback invokes the cassandra.AllocatePublicContactPoints API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/allocatepubliccontactpoints.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocatePublicContactPointsWithCallback(request *AllocatePublicContactPointsRequest, callback func(response *AllocatePublicContactPointsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeContactPoints invokes the cassandra.DescribeContactPoints API synchronously
-// api document: https://help.aliyun.com/api/cassandra/describecontactpoints.html
 func (client *Client) DescribeContactPoints(request *DescribeContactPointsRequest) (response *DescribeContactPointsResponse, err error) {
 	response = CreateDescribeContactPointsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeContactPoints(request *DescribeContactPointsReques
 }
 
 // DescribeContactPointsWithChan invokes the cassandra.DescribeContactPoints API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describecontactpoints.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeContactPointsWithChan(request *DescribeContactPointsRequest) (<-chan *DescribeContactPointsResponse, <-chan error) {
 	responseChan := make(chan *DescribeContactPointsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeContactPointsWithChan(request *DescribeContactPoin
 }
 
 // DescribeContactPointsWithCallback invokes the cassandra.DescribeContactPoints API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describecontactpoints.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeContactPointsWithCallback(request *DescribeContactPointsRequest, callback func(response *DescribeContactPointsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

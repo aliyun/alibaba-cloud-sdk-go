@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeClusters invokes the cassandra.DescribeClusters API synchronously
-// api document: https://help.aliyun.com/api/cassandra/describeclusters.html
 func (client *Client) DescribeClusters(request *DescribeClustersRequest) (response *DescribeClustersResponse, err error) {
 	response = CreateDescribeClustersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeClusters(request *DescribeClustersRequest) (respon
 }
 
 // DescribeClustersWithChan invokes the cassandra.DescribeClusters API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describeclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClustersWithChan(request *DescribeClustersRequest) (<-chan *DescribeClustersResponse, <-chan error) {
 	responseChan := make(chan *DescribeClustersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeClustersWithChan(request *DescribeClustersRequest)
 }
 
 // DescribeClustersWithCallback invokes the cassandra.DescribeClusters API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describeclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClustersWithCallback(request *DescribeClustersRequest, callback func(response *DescribeClustersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

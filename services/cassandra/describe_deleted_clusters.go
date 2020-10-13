@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDeletedClusters invokes the cassandra.DescribeDeletedClusters API synchronously
-// api document: https://help.aliyun.com/api/cassandra/describedeletedclusters.html
 func (client *Client) DescribeDeletedClusters(request *DescribeDeletedClustersRequest) (response *DescribeDeletedClustersResponse, err error) {
 	response = CreateDescribeDeletedClustersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDeletedClusters(request *DescribeDeletedClustersRe
 }
 
 // DescribeDeletedClustersWithChan invokes the cassandra.DescribeDeletedClusters API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describedeletedclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeletedClustersWithChan(request *DescribeDeletedClustersRequest) (<-chan *DescribeDeletedClustersResponse, <-chan error) {
 	responseChan := make(chan *DescribeDeletedClustersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDeletedClustersWithChan(request *DescribeDeletedCl
 }
 
 // DescribeDeletedClustersWithCallback invokes the cassandra.DescribeDeletedClusters API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describedeletedclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeletedClustersWithCallback(request *DescribeDeletedClustersRequest, callback func(response *DescribeDeletedClustersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

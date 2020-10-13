@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeIpWhitelistGroups invokes the cassandra.DescribeIpWhitelistGroups API synchronously
-// api document: https://help.aliyun.com/api/cassandra/describeipwhitelistgroups.html
 func (client *Client) DescribeIpWhitelistGroups(request *DescribeIpWhitelistGroupsRequest) (response *DescribeIpWhitelistGroupsResponse, err error) {
 	response = CreateDescribeIpWhitelistGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeIpWhitelistGroups(request *DescribeIpWhitelistGrou
 }
 
 // DescribeIpWhitelistGroupsWithChan invokes the cassandra.DescribeIpWhitelistGroups API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describeipwhitelistgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpWhitelistGroupsWithChan(request *DescribeIpWhitelistGroupsRequest) (<-chan *DescribeIpWhitelistGroupsResponse, <-chan error) {
 	responseChan := make(chan *DescribeIpWhitelistGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeIpWhitelistGroupsWithChan(request *DescribeIpWhite
 }
 
 // DescribeIpWhitelistGroupsWithCallback invokes the cassandra.DescribeIpWhitelistGroups API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describeipwhitelistgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpWhitelistGroupsWithCallback(request *DescribeIpWhitelistGroupsRequest, callback func(response *DescribeIpWhitelistGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

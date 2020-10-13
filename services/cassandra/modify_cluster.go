@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyCluster invokes the cassandra.ModifyCluster API synchronously
-// api document: https://help.aliyun.com/api/cassandra/modifycluster.html
 func (client *Client) ModifyCluster(request *ModifyClusterRequest) (response *ModifyClusterResponse, err error) {
 	response = CreateModifyClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyCluster(request *ModifyClusterRequest) (response *Mo
 }
 
 // ModifyClusterWithChan invokes the cassandra.ModifyCluster API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/modifycluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterWithChan(request *ModifyClusterRequest) (<-chan *ModifyClusterResponse, <-chan error) {
 	responseChan := make(chan *ModifyClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyClusterWithChan(request *ModifyClusterRequest) (<-ch
 }
 
 // ModifyClusterWithCallback invokes the cassandra.ModifyCluster API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/modifycluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterWithCallback(request *ModifyClusterRequest, callback func(response *ModifyClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyParameter invokes the cassandra.ModifyParameter API synchronously
-// api document: https://help.aliyun.com/api/cassandra/modifyparameter.html
 func (client *Client) ModifyParameter(request *ModifyParameterRequest) (response *ModifyParameterResponse, err error) {
 	response = CreateModifyParameterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyParameter(request *ModifyParameterRequest) (response
 }
 
 // ModifyParameterWithChan invokes the cassandra.ModifyParameter API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/modifyparameter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyParameterWithChan(request *ModifyParameterRequest) (<-chan *ModifyParameterResponse, <-chan error) {
 	responseChan := make(chan *ModifyParameterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyParameterWithChan(request *ModifyParameterRequest) (
 }
 
 // ModifyParameterWithCallback invokes the cassandra.ModifyParameter API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/modifyparameter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyParameterWithCallback(request *ModifyParameterRequest, callback func(response *ModifyParameterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

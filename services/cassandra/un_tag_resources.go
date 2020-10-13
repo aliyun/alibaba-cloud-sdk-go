@@ -21,7 +21,6 @@ import (
 )
 
 // UnTagResources invokes the cassandra.UnTagResources API synchronously
-// api document: https://help.aliyun.com/api/cassandra/untagresources.html
 func (client *Client) UnTagResources(request *UnTagResourcesRequest) (response *UnTagResourcesResponse, err error) {
 	response = CreateUnTagResourcesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnTagResources(request *UnTagResourcesRequest) (response *
 }
 
 // UnTagResourcesWithChan invokes the cassandra.UnTagResources API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/untagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnTagResourcesWithChan(request *UnTagResourcesRequest) (<-chan *UnTagResourcesResponse, <-chan error) {
 	responseChan := make(chan *UnTagResourcesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnTagResourcesWithChan(request *UnTagResourcesRequest) (<-
 }
 
 // UnTagResourcesWithCallback invokes the cassandra.UnTagResources API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/untagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnTagResourcesWithCallback(request *UnTagResourcesRequest, callback func(response *UnTagResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // GetCmsUrl invokes the cassandra.GetCmsUrl API synchronously
-// api document: https://help.aliyun.com/api/cassandra/getcmsurl.html
 func (client *Client) GetCmsUrl(request *GetCmsUrlRequest) (response *GetCmsUrlResponse, err error) {
 	response = CreateGetCmsUrlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetCmsUrl(request *GetCmsUrlRequest) (response *GetCmsUrlR
 }
 
 // GetCmsUrlWithChan invokes the cassandra.GetCmsUrl API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/getcmsurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCmsUrlWithChan(request *GetCmsUrlRequest) (<-chan *GetCmsUrlResponse, <-chan error) {
 	responseChan := make(chan *GetCmsUrlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetCmsUrlWithChan(request *GetCmsUrlRequest) (<-chan *GetC
 }
 
 // GetCmsUrlWithCallback invokes the cassandra.GetCmsUrl API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/getcmsurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCmsUrlWithCallback(request *GetCmsUrlRequest, callback func(response *GetCmsUrlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

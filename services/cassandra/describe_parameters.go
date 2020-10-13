@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeParameters invokes the cassandra.DescribeParameters API synchronously
-// api document: https://help.aliyun.com/api/cassandra/describeparameters.html
 func (client *Client) DescribeParameters(request *DescribeParametersRequest) (response *DescribeParametersResponse, err error) {
 	response = CreateDescribeParametersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeParameters(request *DescribeParametersRequest) (re
 }
 
 // DescribeParametersWithChan invokes the cassandra.DescribeParameters API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describeparameters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeParametersWithChan(request *DescribeParametersRequest) (<-chan *DescribeParametersResponse, <-chan error) {
 	responseChan := make(chan *DescribeParametersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeParametersWithChan(request *DescribeParametersRequ
 }
 
 // DescribeParametersWithCallback invokes the cassandra.DescribeParameters API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describeparameters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeParametersWithCallback(request *DescribeParametersRequest, callback func(response *DescribeParametersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

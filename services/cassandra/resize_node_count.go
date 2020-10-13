@@ -21,7 +21,6 @@ import (
 )
 
 // ResizeNodeCount invokes the cassandra.ResizeNodeCount API synchronously
-// api document: https://help.aliyun.com/api/cassandra/resizenodecount.html
 func (client *Client) ResizeNodeCount(request *ResizeNodeCountRequest) (response *ResizeNodeCountResponse, err error) {
 	response = CreateResizeNodeCountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResizeNodeCount(request *ResizeNodeCountRequest) (response
 }
 
 // ResizeNodeCountWithChan invokes the cassandra.ResizeNodeCount API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/resizenodecount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResizeNodeCountWithChan(request *ResizeNodeCountRequest) (<-chan *ResizeNodeCountResponse, <-chan error) {
 	responseChan := make(chan *ResizeNodeCountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResizeNodeCountWithChan(request *ResizeNodeCountRequest) (
 }
 
 // ResizeNodeCountWithCallback invokes the cassandra.ResizeNodeCount API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/resizenodecount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResizeNodeCountWithCallback(request *ResizeNodeCountRequest, callback func(response *ResizeNodeCountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

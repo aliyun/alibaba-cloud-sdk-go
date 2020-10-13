@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteBackupPlan invokes the cassandra.DeleteBackupPlan API synchronously
-// api document: https://help.aliyun.com/api/cassandra/deletebackupplan.html
 func (client *Client) DeleteBackupPlan(request *DeleteBackupPlanRequest) (response *DeleteBackupPlanResponse, err error) {
 	response = CreateDeleteBackupPlanResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteBackupPlan(request *DeleteBackupPlanRequest) (respon
 }
 
 // DeleteBackupPlanWithChan invokes the cassandra.DeleteBackupPlan API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/deletebackupplan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBackupPlanWithChan(request *DeleteBackupPlanRequest) (<-chan *DeleteBackupPlanResponse, <-chan error) {
 	responseChan := make(chan *DeleteBackupPlanResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteBackupPlanWithChan(request *DeleteBackupPlanRequest)
 }
 
 // DeleteBackupPlanWithCallback invokes the cassandra.DeleteBackupPlan API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/deletebackupplan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBackupPlanWithCallback(request *DeleteBackupPlanRequest, callback func(response *DeleteBackupPlanResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

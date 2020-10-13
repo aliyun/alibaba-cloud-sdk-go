@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDataCenters invokes the cassandra.DescribeDataCenters API synchronously
-// api document: https://help.aliyun.com/api/cassandra/describedatacenters.html
 func (client *Client) DescribeDataCenters(request *DescribeDataCentersRequest) (response *DescribeDataCentersResponse, err error) {
 	response = CreateDescribeDataCentersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDataCenters(request *DescribeDataCentersRequest) (
 }
 
 // DescribeDataCentersWithChan invokes the cassandra.DescribeDataCenters API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describedatacenters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataCentersWithChan(request *DescribeDataCentersRequest) (<-chan *DescribeDataCentersResponse, <-chan error) {
 	responseChan := make(chan *DescribeDataCentersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDataCentersWithChan(request *DescribeDataCentersRe
 }
 
 // DescribeDataCentersWithCallback invokes the cassandra.DescribeDataCenters API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describedatacenters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataCentersWithCallback(request *DescribeDataCentersRequest, callback func(response *DescribeDataCentersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

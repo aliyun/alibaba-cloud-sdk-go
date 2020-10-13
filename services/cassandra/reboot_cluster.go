@@ -21,7 +21,6 @@ import (
 )
 
 // RebootCluster invokes the cassandra.RebootCluster API synchronously
-// api document: https://help.aliyun.com/api/cassandra/rebootcluster.html
 func (client *Client) RebootCluster(request *RebootClusterRequest) (response *RebootClusterResponse, err error) {
 	response = CreateRebootClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RebootCluster(request *RebootClusterRequest) (response *Re
 }
 
 // RebootClusterWithChan invokes the cassandra.RebootCluster API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/rebootcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RebootClusterWithChan(request *RebootClusterRequest) (<-chan *RebootClusterResponse, <-chan error) {
 	responseChan := make(chan *RebootClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RebootClusterWithChan(request *RebootClusterRequest) (<-ch
 }
 
 // RebootClusterWithCallback invokes the cassandra.RebootCluster API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/rebootcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RebootClusterWithCallback(request *RebootClusterRequest, callback func(response *RebootClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

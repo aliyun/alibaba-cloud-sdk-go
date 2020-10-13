@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyIpWhitelist invokes the cassandra.ModifyIpWhitelist API synchronously
-// api document: https://help.aliyun.com/api/cassandra/modifyipwhitelist.html
 func (client *Client) ModifyIpWhitelist(request *ModifyIpWhitelistRequest) (response *ModifyIpWhitelistResponse, err error) {
 	response = CreateModifyIpWhitelistResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyIpWhitelist(request *ModifyIpWhitelistRequest) (resp
 }
 
 // ModifyIpWhitelistWithChan invokes the cassandra.ModifyIpWhitelist API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/modifyipwhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIpWhitelistWithChan(request *ModifyIpWhitelistRequest) (<-chan *ModifyIpWhitelistResponse, <-chan error) {
 	responseChan := make(chan *ModifyIpWhitelistResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyIpWhitelistWithChan(request *ModifyIpWhitelistReques
 }
 
 // ModifyIpWhitelistWithCallback invokes the cassandra.ModifyIpWhitelist API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/modifyipwhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIpWhitelistWithCallback(request *ModifyIpWhitelistRequest, callback func(response *ModifyIpWhitelistResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

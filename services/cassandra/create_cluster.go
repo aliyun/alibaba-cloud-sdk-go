@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCluster invokes the cassandra.CreateCluster API synchronously
-// api document: https://help.aliyun.com/api/cassandra/createcluster.html
 func (client *Client) CreateCluster(request *CreateClusterRequest) (response *CreateClusterResponse, err error) {
 	response = CreateCreateClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCluster(request *CreateClusterRequest) (response *Cr
 }
 
 // CreateClusterWithChan invokes the cassandra.CreateCluster API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/createcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterWithChan(request *CreateClusterRequest) (<-chan *CreateClusterResponse, <-chan error) {
 	responseChan := make(chan *CreateClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateClusterWithChan(request *CreateClusterRequest) (<-ch
 }
 
 // CreateClusterWithCallback invokes the cassandra.CreateCluster API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/createcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterWithCallback(request *CreateClusterRequest, callback func(response *CreateClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

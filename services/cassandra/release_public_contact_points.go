@@ -21,7 +21,6 @@ import (
 )
 
 // ReleasePublicContactPoints invokes the cassandra.ReleasePublicContactPoints API synchronously
-// api document: https://help.aliyun.com/api/cassandra/releasepubliccontactpoints.html
 func (client *Client) ReleasePublicContactPoints(request *ReleasePublicContactPointsRequest) (response *ReleasePublicContactPointsResponse, err error) {
 	response = CreateReleasePublicContactPointsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReleasePublicContactPoints(request *ReleasePublicContactPo
 }
 
 // ReleasePublicContactPointsWithChan invokes the cassandra.ReleasePublicContactPoints API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/releasepubliccontactpoints.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleasePublicContactPointsWithChan(request *ReleasePublicContactPointsRequest) (<-chan *ReleasePublicContactPointsResponse, <-chan error) {
 	responseChan := make(chan *ReleasePublicContactPointsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReleasePublicContactPointsWithChan(request *ReleasePublicC
 }
 
 // ReleasePublicContactPointsWithCallback invokes the cassandra.ReleasePublicContactPoints API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/releasepubliccontactpoints.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleasePublicContactPointsWithCallback(request *ReleasePublicContactPointsRequest, callback func(response *ReleasePublicContactPointsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // UpgradeClusterVersion invokes the cassandra.UpgradeClusterVersion API synchronously
-// api document: https://help.aliyun.com/api/cassandra/upgradeclusterversion.html
 func (client *Client) UpgradeClusterVersion(request *UpgradeClusterVersionRequest) (response *UpgradeClusterVersionResponse, err error) {
 	response = CreateUpgradeClusterVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpgradeClusterVersion(request *UpgradeClusterVersionReques
 }
 
 // UpgradeClusterVersionWithChan invokes the cassandra.UpgradeClusterVersion API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/upgradeclusterversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeClusterVersionWithChan(request *UpgradeClusterVersionRequest) (<-chan *UpgradeClusterVersionResponse, <-chan error) {
 	responseChan := make(chan *UpgradeClusterVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpgradeClusterVersionWithChan(request *UpgradeClusterVersi
 }
 
 // UpgradeClusterVersionWithCallback invokes the cassandra.UpgradeClusterVersion API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/upgradeclusterversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeClusterVersionWithCallback(request *UpgradeClusterVersionRequest, callback func(response *UpgradeClusterVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

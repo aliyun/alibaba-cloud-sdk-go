@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBackup invokes the cassandra.DescribeBackup API synchronously
-// api document: https://help.aliyun.com/api/cassandra/describebackup.html
 func (client *Client) DescribeBackup(request *DescribeBackupRequest) (response *DescribeBackupResponse, err error) {
 	response = CreateDescribeBackupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBackup(request *DescribeBackupRequest) (response *
 }
 
 // DescribeBackupWithChan invokes the cassandra.DescribeBackup API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describebackup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupWithChan(request *DescribeBackupRequest) (<-chan *DescribeBackupResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBackupWithChan(request *DescribeBackupRequest) (<-
 }
 
 // DescribeBackupWithCallback invokes the cassandra.DescribeBackup API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describebackup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupWithCallback(request *DescribeBackupRequest, callback func(response *DescribeBackupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

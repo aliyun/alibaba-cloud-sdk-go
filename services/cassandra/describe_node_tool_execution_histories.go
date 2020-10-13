@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeNodeToolExecutionHistories invokes the cassandra.DescribeNodeToolExecutionHistories API synchronously
-// api document: https://help.aliyun.com/api/cassandra/describenodetoolexecutionhistories.html
 func (client *Client) DescribeNodeToolExecutionHistories(request *DescribeNodeToolExecutionHistoriesRequest) (response *DescribeNodeToolExecutionHistoriesResponse, err error) {
 	response = CreateDescribeNodeToolExecutionHistoriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeNodeToolExecutionHistories(request *DescribeNodeTo
 }
 
 // DescribeNodeToolExecutionHistoriesWithChan invokes the cassandra.DescribeNodeToolExecutionHistories API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describenodetoolexecutionhistories.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNodeToolExecutionHistoriesWithChan(request *DescribeNodeToolExecutionHistoriesRequest) (<-chan *DescribeNodeToolExecutionHistoriesResponse, <-chan error) {
 	responseChan := make(chan *DescribeNodeToolExecutionHistoriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeNodeToolExecutionHistoriesWithChan(request *Descri
 }
 
 // DescribeNodeToolExecutionHistoriesWithCallback invokes the cassandra.DescribeNodeToolExecutionHistories API asynchronously
-// api document: https://help.aliyun.com/api/cassandra/describenodetoolexecutionhistories.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNodeToolExecutionHistoriesWithCallback(request *DescribeNodeToolExecutionHistoriesRequest, callback func(response *DescribeNodeToolExecutionHistoriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
