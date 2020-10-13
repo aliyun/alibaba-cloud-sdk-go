@@ -1,3 +1,7 @@
+2020-10-13 Version: v1.61.566
+- Generated 2018-01-11 for `rtc`.
+
+
 2020-10-13 Version: v1.61.565
 - Generated 2018-01-20 for `Iot`.
 - Add DeviceCenter API, including QueryDeviceBySQL.

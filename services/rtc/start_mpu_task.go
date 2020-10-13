@@ -71,31 +71,80 @@ func (client *Client) StartMPUTaskWithCallback(request *StartMPUTaskRequest, cal
 // StartMPUTaskRequest is the request struct for api StartMPUTask
 type StartMPUTaskRequest struct {
 	*requests.RpcRequest
-	PayloadType     requests.Integer         `position:"Query" name:"PayloadType"`
-	UserPanes       *[]StartMPUTaskUserPanes `position:"Query" name:"UserPanes"  type:"Repeated"`
-	RtpExtInfo      requests.Integer         `position:"Query" name:"RtpExtInfo"`
-	BackgroundColor requests.Integer         `position:"Query" name:"BackgroundColor"`
-	CropMode        requests.Integer         `position:"Query" name:"CropMode"`
-	ReportVad       requests.Integer         `position:"Query" name:"ReportVad"`
-	TaskProfile     string                   `position:"Query" name:"TaskProfile"`
-	LayoutIds       *[]string                `position:"Query" name:"LayoutIds"  type:"Repeated"`
-	TaskId          string                   `position:"Query" name:"TaskId"`
-	ShowLog         string                   `position:"Query" name:"ShowLog"`
-	StreamURL       string                   `position:"Query" name:"StreamURL"`
-	VadInterval     requests.Integer         `position:"Query" name:"VadInterval"`
-	OwnerId         requests.Integer         `position:"Query" name:"OwnerId"`
-	SubSpecUsers    *[]string                `position:"Query" name:"SubSpecUsers"  type:"Repeated"`
-	AppId           string                   `position:"Query" name:"AppId"`
-	TimeStampRef    requests.Integer         `position:"Query" name:"TimeStampRef"`
-	MediaEncode     requests.Integer         `position:"Query" name:"MediaEncode"`
-	ChannelId       string                   `position:"Query" name:"ChannelId"`
+	PayloadType     requests.Integer           `position:"Query" name:"PayloadType"`
+	UserPanes       *[]StartMPUTaskUserPanes   `position:"Query" name:"UserPanes"  type:"Repeated"`
+	RtpExtInfo      requests.Integer           `position:"Query" name:"RtpExtInfo"`
+	BackgroundColor requests.Integer           `position:"Query" name:"BackgroundColor"`
+	CropMode        requests.Integer           `position:"Query" name:"CropMode"`
+	ReportVad       requests.Integer           `position:"Query" name:"ReportVad"`
+	TaskProfile     string                     `position:"Query" name:"TaskProfile"`
+	LayoutIds       *[]string                  `position:"Query" name:"LayoutIds"  type:"Repeated"`
+	TaskId          string                     `position:"Query" name:"TaskId"`
+	ShowLog         string                     `position:"Query" name:"ShowLog"`
+	StreamURL       string                     `position:"Query" name:"StreamURL"`
+	VadInterval     requests.Integer           `position:"Query" name:"VadInterval"`
+	Watermarks      *[]StartMPUTaskWatermarks  `position:"Query" name:"Watermarks"  type:"Repeated"`
+	OwnerId         requests.Integer           `position:"Query" name:"OwnerId"`
+	SubSpecUsers    *[]string                  `position:"Query" name:"SubSpecUsers"  type:"Repeated"`
+	AppId           string                     `position:"Query" name:"AppId"`
+	Backgrounds     *[]StartMPUTaskBackgrounds `position:"Query" name:"Backgrounds"  type:"Repeated"`
+	TimeStampRef    requests.Integer           `position:"Query" name:"TimeStampRef"`
+	MediaEncode     requests.Integer           `position:"Query" name:"MediaEncode"`
+	ChannelId       string                     `position:"Query" name:"ChannelId"`
 }
 
 // StartMPUTaskUserPanes is a repeated param struct in StartMPUTaskRequest
 type StartMPUTaskUserPanes struct {
-	PaneId     string `name:"PaneId"`
-	UserId     string `name:"UserId"`
-	SourceType string `name:"SourceType"`
+	PaneId     string                `name:"PaneId"`
+	UserId     string                `name:"UserId"`
+	SourceType string                `name:"SourceType"`
+	Images     *[]StartMPUTaskImages `name:"Images" type:"Repeated"`
+	Texts      *[]StartMPUTaskTexts  `name:"Texts" type:"Repeated"`
+}
+
+// StartMPUTaskWatermarks is a repeated param struct in StartMPUTaskRequest
+type StartMPUTaskWatermarks struct {
+	Url     string `name:"Url"`
+	Alpha   string `name:"Alpha"`
+	Display string `name:"Display"`
+	X       string `name:"X"`
+	Y       string `name:"Y"`
+	Width   string `name:"Width"`
+	Height  string `name:"Height"`
+	ZOrder  string `name:"ZOrder"`
+}
+
+// StartMPUTaskBackgrounds is a repeated param struct in StartMPUTaskRequest
+type StartMPUTaskBackgrounds struct {
+	Url     string `name:"Url"`
+	Display string `name:"Display"`
+	X       string `name:"X"`
+	Y       string `name:"Y"`
+	Width   string `name:"Width"`
+	Height  string `name:"Height"`
+	ZOrder  string `name:"ZOrder"`
+}
+
+// StartMPUTaskImages is a repeated param struct in StartMPUTaskRequest
+type StartMPUTaskImages struct {
+	Url     string `name:"Url"`
+	Display string `name:"Display"`
+	X       string `name:"X"`
+	Y       string `name:"Y"`
+	Width   string `name:"Width"`
+	Height  string `name:"Height"`
+	ZOrder  string `name:"ZOrder"`
+}
+
+// StartMPUTaskTexts is a repeated param struct in StartMPUTaskRequest
+type StartMPUTaskTexts struct {
+	Text      string `name:"Text"`
+	X         string `name:"X"`
+	Y         string `name:"Y"`
+	FontType  string `name:"FontType"`
+	FontSize  string `name:"FontSize"`
+	FontColor string `name:"FontColor"`
+	ZOrder    string `name:"ZOrder"`
 }
 
 // StartMPUTaskResponse is the response struct for api StartMPUTask
