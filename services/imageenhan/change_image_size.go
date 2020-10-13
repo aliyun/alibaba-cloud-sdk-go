@@ -21,7 +21,6 @@ import (
 )
 
 // ChangeImageSize invokes the imageenhan.ChangeImageSize API synchronously
-// api document: https://help.aliyun.com/api/imageenhan/changeimagesize.html
 func (client *Client) ChangeImageSize(request *ChangeImageSizeRequest) (response *ChangeImageSizeResponse, err error) {
 	response = CreateChangeImageSizeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ChangeImageSize(request *ChangeImageSizeRequest) (response
 }
 
 // ChangeImageSizeWithChan invokes the imageenhan.ChangeImageSize API asynchronously
-// api document: https://help.aliyun.com/api/imageenhan/changeimagesize.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangeImageSizeWithChan(request *ChangeImageSizeRequest) (<-chan *ChangeImageSizeResponse, <-chan error) {
 	responseChan := make(chan *ChangeImageSizeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ChangeImageSizeWithChan(request *ChangeImageSizeRequest) (
 }
 
 // ChangeImageSizeWithCallback invokes the imageenhan.ChangeImageSize API asynchronously
-// api document: https://help.aliyun.com/api/imageenhan/changeimagesize.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangeImageSizeWithCallback(request *ChangeImageSizeRequest, callback func(response *ChangeImageSizeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateChangeImageSizeRequest() (request *ChangeImageSizeRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("imageenhan", "2019-09-30", "ChangeImageSize", "imageenhan", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -17,7 +17,21 @@ package imageenhan
 
 // Data is a nested struct in imageenhan response
 type Data struct {
-	MajorUrl  string   `json:"MajorUrl" xml:"MajorUrl"`
-	Url       string   `json:"Url" xml:"Url"`
-	ImageList []string `json:"ImageList" xml:"ImageList"`
+	JobId             string         `json:"JobId" xml:"JobId"`
+	MajorUrl          string         `json:"MajorUrl" xml:"MajorUrl"`
+	Result            string         `json:"Result" xml:"Result"`
+	Sharpness         float64        `json:"Sharpness" xml:"Sharpness"`
+	ErrorMessage      string         `json:"ErrorMessage" xml:"ErrorMessage"`
+	Score             float64        `json:"Score" xml:"Score"`
+	Exposure          float64        `json:"Exposure" xml:"Exposure"`
+	Url               string         `json:"Url" xml:"Url"`
+	TextImageURL      string         `json:"TextImageURL" xml:"TextImageURL"`
+	WatermarkImageURL string         `json:"WatermarkImageURL" xml:"WatermarkImageURL"`
+	LogoURL           string         `json:"LogoURL" xml:"LogoURL"`
+	ImageURL          string         `json:"ImageURL" xml:"ImageURL"`
+	Status            string         `json:"Status" xml:"Status"`
+	ErrorCode         string         `json:"ErrorCode" xml:"ErrorCode"`
+	ImageList         []string       `json:"ImageList" xml:"ImageList"`
+	RetainLocation    RetainLocation `json:"RetainLocation" xml:"RetainLocation"`
+	Elements          []Element      `json:"Elements" xml:"Elements"`
 }

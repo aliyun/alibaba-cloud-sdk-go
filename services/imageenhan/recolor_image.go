@@ -21,7 +21,6 @@ import (
 )
 
 // RecolorImage invokes the imageenhan.RecolorImage API synchronously
-// api document: https://help.aliyun.com/api/imageenhan/recolorimage.html
 func (client *Client) RecolorImage(request *RecolorImageRequest) (response *RecolorImageResponse, err error) {
 	response = CreateRecolorImageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecolorImage(request *RecolorImageRequest) (response *Reco
 }
 
 // RecolorImageWithChan invokes the imageenhan.RecolorImage API asynchronously
-// api document: https://help.aliyun.com/api/imageenhan/recolorimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecolorImageWithChan(request *RecolorImageRequest) (<-chan *RecolorImageResponse, <-chan error) {
 	responseChan := make(chan *RecolorImageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecolorImageWithChan(request *RecolorImageRequest) (<-chan
 }
 
 // RecolorImageWithCallback invokes the imageenhan.RecolorImage API asynchronously
-// api document: https://help.aliyun.com/api/imageenhan/recolorimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecolorImageWithCallback(request *RecolorImageRequest, callback func(response *RecolorImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +96,7 @@ func CreateRecolorImageRequest() (request *RecolorImageRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("imageenhan", "2019-09-30", "RecolorImage", "imageenhan", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // MakeSuperResolutionImage invokes the imageenhan.MakeSuperResolutionImage API synchronously
-// api document: https://help.aliyun.com/api/imageenhan/makesuperresolutionimage.html
 func (client *Client) MakeSuperResolutionImage(request *MakeSuperResolutionImageRequest) (response *MakeSuperResolutionImageResponse, err error) {
 	response = CreateMakeSuperResolutionImageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) MakeSuperResolutionImage(request *MakeSuperResolutionImage
 }
 
 // MakeSuperResolutionImageWithChan invokes the imageenhan.MakeSuperResolutionImage API asynchronously
-// api document: https://help.aliyun.com/api/imageenhan/makesuperresolutionimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MakeSuperResolutionImageWithChan(request *MakeSuperResolutionImageRequest) (<-chan *MakeSuperResolutionImageResponse, <-chan error) {
 	responseChan := make(chan *MakeSuperResolutionImageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) MakeSuperResolutionImageWithChan(request *MakeSuperResolut
 }
 
 // MakeSuperResolutionImageWithCallback invokes the imageenhan.MakeSuperResolutionImage API asynchronously
-// api document: https://help.aliyun.com/api/imageenhan/makesuperresolutionimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MakeSuperResolutionImageWithCallback(request *MakeSuperResolutionImageRequest, callback func(response *MakeSuperResolutionImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateMakeSuperResolutionImageRequest() (request *MakeSuperResolutionImageR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("imageenhan", "2019-09-30", "MakeSuperResolutionImage", "imageenhan", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

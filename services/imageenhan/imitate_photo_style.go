@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ExtendImageStyle invokes the imageenhan.ExtendImageStyle API synchronously
-func (client *Client) ExtendImageStyle(request *ExtendImageStyleRequest) (response *ExtendImageStyleResponse, err error) {
-	response = CreateExtendImageStyleResponse()
+// ImitatePhotoStyle invokes the imageenhan.ImitatePhotoStyle API synchronously
+func (client *Client) ImitatePhotoStyle(request *ImitatePhotoStyleRequest) (response *ImitatePhotoStyleResponse, err error) {
+	response = CreateImitatePhotoStyleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ExtendImageStyleWithChan invokes the imageenhan.ExtendImageStyle API asynchronously
-func (client *Client) ExtendImageStyleWithChan(request *ExtendImageStyleRequest) (<-chan *ExtendImageStyleResponse, <-chan error) {
-	responseChan := make(chan *ExtendImageStyleResponse, 1)
+// ImitatePhotoStyleWithChan invokes the imageenhan.ImitatePhotoStyle API asynchronously
+func (client *Client) ImitatePhotoStyleWithChan(request *ImitatePhotoStyleRequest) (<-chan *ImitatePhotoStyleResponse, <-chan error) {
+	responseChan := make(chan *ImitatePhotoStyleResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ExtendImageStyle(request)
+		response, err := client.ImitatePhotoStyle(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ExtendImageStyleWithChan(request *ExtendImageStyleRequest)
 	return responseChan, errChan
 }
 
-// ExtendImageStyleWithCallback invokes the imageenhan.ExtendImageStyle API asynchronously
-func (client *Client) ExtendImageStyleWithCallback(request *ExtendImageStyleRequest, callback func(response *ExtendImageStyleResponse, err error)) <-chan int {
+// ImitatePhotoStyleWithCallback invokes the imageenhan.ImitatePhotoStyle API asynchronously
+func (client *Client) ImitatePhotoStyleWithCallback(request *ImitatePhotoStyleRequest, callback func(response *ImitatePhotoStyleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ExtendImageStyleResponse
+		var response *ImitatePhotoStyleResponse
 		var err error
 		defer close(result)
-		response, err = client.ExtendImageStyle(request)
+		response, err = client.ImitatePhotoStyle(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,33 +68,33 @@ func (client *Client) ExtendImageStyleWithCallback(request *ExtendImageStyleRequ
 	return result
 }
 
-// ExtendImageStyleRequest is the request struct for api ExtendImageStyle
-type ExtendImageStyleRequest struct {
+// ImitatePhotoStyleRequest is the request struct for api ImitatePhotoStyle
+type ImitatePhotoStyleRequest struct {
 	*requests.RpcRequest
-	MajorUrl string `position:"Body" name:"MajorUrl"`
 	StyleUrl string `position:"Body" name:"StyleUrl"`
+	ImageURL string `position:"Body" name:"ImageURL"`
 }
 
-// ExtendImageStyleResponse is the response struct for api ExtendImageStyle
-type ExtendImageStyleResponse struct {
+// ImitatePhotoStyleResponse is the response struct for api ImitatePhotoStyle
+type ImitatePhotoStyleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateExtendImageStyleRequest creates a request to invoke ExtendImageStyle API
-func CreateExtendImageStyleRequest() (request *ExtendImageStyleRequest) {
-	request = &ExtendImageStyleRequest{
+// CreateImitatePhotoStyleRequest creates a request to invoke ImitatePhotoStyle API
+func CreateImitatePhotoStyleRequest() (request *ImitatePhotoStyleRequest) {
+	request = &ImitatePhotoStyleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imageenhan", "2019-09-30", "ExtendImageStyle", "imageenhan", "openAPI")
+	request.InitWithApiInfo("imageenhan", "2019-09-30", "ImitatePhotoStyle", "imageenhan", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateExtendImageStyleResponse creates a response to parse from ExtendImageStyle response
-func CreateExtendImageStyleResponse() (response *ExtendImageStyleResponse) {
-	response = &ExtendImageStyleResponse{
+// CreateImitatePhotoStyleResponse creates a response to parse from ImitatePhotoStyle response
+func CreateImitatePhotoStyleResponse() (response *ImitatePhotoStyleResponse) {
+	response = &ImitatePhotoStyleResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
