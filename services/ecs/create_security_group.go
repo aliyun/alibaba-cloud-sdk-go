@@ -73,6 +73,7 @@ type CreateSecurityGroupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer          `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string                    `position:"Query" name:"ClientToken"`
+	ServiceManaged       requests.Boolean          `position:"Query" name:"ServiceManaged"`
 	Description          string                    `position:"Query" name:"Description"`
 	SecurityGroupName    string                    `position:"Query" name:"SecurityGroupName"`
 	ResourceGroupId      string                    `position:"Query" name:"ResourceGroupId"`

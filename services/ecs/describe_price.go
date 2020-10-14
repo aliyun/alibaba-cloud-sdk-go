@@ -78,10 +78,13 @@ type DescribePriceRequest struct {
 	PriceUnit                  string           `position:"Query" name:"PriceUnit"`
 	Period                     requests.Integer `position:"Query" name:"Period"`
 	DataDisk1PerformanceLevel  string           `position:"Query" name:"DataDisk.1.PerformanceLevel"`
+	AssuranceTimes             string           `position:"Query" name:"AssuranceTimes"`
 	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceCpuCoreCount       requests.Integer `position:"Query" name:"InstanceCpuCoreCount"`
 	InternetChargeType         string           `position:"Query" name:"InternetChargeType"`
 	InstanceNetworkType        string           `position:"Query" name:"InstanceNetworkType"`
 	InstanceAmount             requests.Integer `position:"Query" name:"InstanceAmount"`
+	InstanceTypeList           *[]string        `position:"Query" name:"InstanceTypeList"  type:"Repeated"`
 	DataDisk3PerformanceLevel  string           `position:"Query" name:"DataDisk.3.PerformanceLevel"`
 	ImageId                    string           `position:"Query" name:"ImageId"`
 	IoOptimized                string           `position:"Query" name:"IoOptimized"`

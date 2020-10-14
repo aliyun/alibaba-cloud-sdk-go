@@ -71,70 +71,72 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 // CreateInstanceRequest is the request struct for api CreateInstance
 type CreateInstanceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId               requests.Integer          `position:"Query" name:"ResourceOwnerId"`
-	HpcClusterId                  string                    `position:"Query" name:"HpcClusterId"`
-	HttpPutResponseHopLimit       requests.Integer          `position:"Query" name:"HttpPutResponseHopLimit"`
-	SecurityEnhancementStrategy   string                    `position:"Query" name:"SecurityEnhancementStrategy"`
-	KeyPairName                   string                    `position:"Query" name:"KeyPairName"`
-	SpotPriceLimit                requests.Float            `position:"Query" name:"SpotPriceLimit"`
-	DeletionProtection            requests.Boolean          `position:"Query" name:"DeletionProtection"`
-	ResourceGroupId               string                    `position:"Query" name:"ResourceGroupId"`
-	HostName                      string                    `position:"Query" name:"HostName"`
-	Password                      string                    `position:"Query" name:"Password"`
-	DeploymentSetGroupNo          requests.Integer          `position:"Query" name:"DeploymentSetGroupNo"`
-	StorageSetPartitionNumber     requests.Integer          `position:"Query" name:"StorageSetPartitionNumber"`
-	Tag                           *[]CreateInstanceTag      `position:"Query" name:"Tag"  type:"Repeated"`
-	AutoRenewPeriod               requests.Integer          `position:"Query" name:"AutoRenewPeriod"`
-	NodeControllerId              string                    `position:"Query" name:"NodeControllerId"`
-	Period                        requests.Integer          `position:"Query" name:"Period"`
-	DryRun                        requests.Boolean          `position:"Query" name:"DryRun"`
-	OwnerId                       requests.Integer          `position:"Query" name:"OwnerId"`
-	CapacityReservationPreference string                    `position:"Query" name:"CapacityReservationPreference"`
-	VSwitchId                     string                    `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress              string                    `position:"Query" name:"PrivateIpAddress"`
-	SpotStrategy                  string                    `position:"Query" name:"SpotStrategy"`
-	PeriodUnit                    string                    `position:"Query" name:"PeriodUnit"`
-	InstanceName                  string                    `position:"Query" name:"InstanceName"`
-	AutoRenew                     requests.Boolean          `position:"Query" name:"AutoRenew"`
-	InternetChargeType            string                    `position:"Query" name:"InternetChargeType"`
-	ZoneId                        string                    `position:"Query" name:"ZoneId"`
-	InternetMaxBandwidthIn        requests.Integer          `position:"Query" name:"InternetMaxBandwidthIn"`
-	UseAdditionalService          requests.Boolean          `position:"Query" name:"UseAdditionalService"`
-	Affinity                      string                    `position:"Query" name:"Affinity"`
-	ImageId                       string                    `position:"Query" name:"ImageId"`
-	ClientToken                   string                    `position:"Query" name:"ClientToken"`
-	VlanId                        string                    `position:"Query" name:"VlanId"`
-	SpotInterruptionBehavior      string                    `position:"Query" name:"SpotInterruptionBehavior"`
-	IoOptimized                   string                    `position:"Query" name:"IoOptimized"`
-	SecurityGroupId               string                    `position:"Query" name:"SecurityGroupId"`
-	InternetMaxBandwidthOut       requests.Integer          `position:"Query" name:"InternetMaxBandwidthOut"`
-	Description                   string                    `position:"Query" name:"Description"`
-	SystemDiskCategory            string                    `position:"Query" name:"SystemDisk.Category"`
-	CapacityReservationId         string                    `position:"Query" name:"CapacityReservationId"`
-	SystemDiskPerformanceLevel    string                    `position:"Query" name:"SystemDisk.PerformanceLevel"`
-	UserData                      string                    `position:"Query" name:"UserData"`
-	PasswordInherit               requests.Boolean          `position:"Query" name:"PasswordInherit"`
-	HttpEndpoint                  string                    `position:"Query" name:"HttpEndpoint"`
-	InstanceType                  string                    `position:"Query" name:"InstanceType"`
-	Arn                           *[]CreateInstanceArn      `position:"Query" name:"Arn"  type:"Repeated"`
-	InstanceChargeType            string                    `position:"Query" name:"InstanceChargeType"`
-	DeploymentSetId               string                    `position:"Query" name:"DeploymentSetId"`
-	InnerIpAddress                string                    `position:"Query" name:"InnerIpAddress"`
-	ResourceOwnerAccount          string                    `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                  string                    `position:"Query" name:"OwnerAccount"`
-	Tenancy                       string                    `position:"Query" name:"Tenancy"`
-	SystemDiskDiskName            string                    `position:"Query" name:"SystemDisk.DiskName"`
-	RamRoleName                   string                    `position:"Query" name:"RamRoleName"`
-	DedicatedHostId               string                    `position:"Query" name:"DedicatedHostId"`
-	ClusterId                     string                    `position:"Query" name:"ClusterId"`
-	CreditSpecification           string                    `position:"Query" name:"CreditSpecification"`
-	SpotDuration                  requests.Integer          `position:"Query" name:"SpotDuration"`
-	DataDisk                      *[]CreateInstanceDataDisk `position:"Query" name:"DataDisk"  type:"Repeated"`
-	StorageSetId                  string                    `position:"Query" name:"StorageSetId"`
-	SystemDiskSize                requests.Integer          `position:"Query" name:"SystemDisk.Size"`
-	ImageFamily                   string                    `position:"Query" name:"ImageFamily"`
-	HttpTokens                    string                    `position:"Query" name:"HttpTokens"`
-	SystemDiskDescription         string                    `position:"Query" name:"SystemDisk.Description"`
+	ResourceOwnerId                 requests.Integer          `position:"Query" name:"ResourceOwnerId"`
+	HpcClusterId                    string                    `position:"Query" name:"HpcClusterId"`
+	HttpPutResponseHopLimit         requests.Integer          `position:"Query" name:"HttpPutResponseHopLimit"`
+	SecurityEnhancementStrategy     string                    `position:"Query" name:"SecurityEnhancementStrategy"`
+	KeyPairName                     string                    `position:"Query" name:"KeyPairName"`
+	SpotPriceLimit                  requests.Float            `position:"Query" name:"SpotPriceLimit"`
+	DeletionProtection              requests.Boolean          `position:"Query" name:"DeletionProtection"`
+	ResourceGroupId                 string                    `position:"Query" name:"ResourceGroupId"`
+	PrivatePoolOptionsMatchCriteria string                    `position:"Query" name:"PrivatePoolOptions.MatchCriteria"`
+	HostName                        string                    `position:"Query" name:"HostName"`
+	Password                        string                    `position:"Query" name:"Password"`
+	DeploymentSetGroupNo            requests.Integer          `position:"Query" name:"DeploymentSetGroupNo"`
+	StorageSetPartitionNumber       requests.Integer          `position:"Query" name:"StorageSetPartitionNumber"`
+	Tag                             *[]CreateInstanceTag      `position:"Query" name:"Tag"  type:"Repeated"`
+	PrivatePoolOptionsId            string                    `position:"Query" name:"PrivatePoolOptions.Id"`
+	AutoRenewPeriod                 requests.Integer          `position:"Query" name:"AutoRenewPeriod"`
+	NodeControllerId                string                    `position:"Query" name:"NodeControllerId"`
+	Period                          requests.Integer          `position:"Query" name:"Period"`
+	DryRun                          requests.Boolean          `position:"Query" name:"DryRun"`
+	OwnerId                         requests.Integer          `position:"Query" name:"OwnerId"`
+	CapacityReservationPreference   string                    `position:"Query" name:"CapacityReservationPreference"`
+	VSwitchId                       string                    `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress                string                    `position:"Query" name:"PrivateIpAddress"`
+	SpotStrategy                    string                    `position:"Query" name:"SpotStrategy"`
+	PeriodUnit                      string                    `position:"Query" name:"PeriodUnit"`
+	InstanceName                    string                    `position:"Query" name:"InstanceName"`
+	AutoRenew                       requests.Boolean          `position:"Query" name:"AutoRenew"`
+	InternetChargeType              string                    `position:"Query" name:"InternetChargeType"`
+	ZoneId                          string                    `position:"Query" name:"ZoneId"`
+	InternetMaxBandwidthIn          requests.Integer          `position:"Query" name:"InternetMaxBandwidthIn"`
+	UseAdditionalService            requests.Boolean          `position:"Query" name:"UseAdditionalService"`
+	Affinity                        string                    `position:"Query" name:"Affinity"`
+	ImageId                         string                    `position:"Query" name:"ImageId"`
+	ClientToken                     string                    `position:"Query" name:"ClientToken"`
+	VlanId                          string                    `position:"Query" name:"VlanId"`
+	SpotInterruptionBehavior        string                    `position:"Query" name:"SpotInterruptionBehavior"`
+	IoOptimized                     string                    `position:"Query" name:"IoOptimized"`
+	SecurityGroupId                 string                    `position:"Query" name:"SecurityGroupId"`
+	InternetMaxBandwidthOut         requests.Integer          `position:"Query" name:"InternetMaxBandwidthOut"`
+	Description                     string                    `position:"Query" name:"Description"`
+	SystemDiskCategory              string                    `position:"Query" name:"SystemDisk.Category"`
+	CapacityReservationId           string                    `position:"Query" name:"CapacityReservationId"`
+	SystemDiskPerformanceLevel      string                    `position:"Query" name:"SystemDisk.PerformanceLevel"`
+	UserData                        string                    `position:"Query" name:"UserData"`
+	PasswordInherit                 requests.Boolean          `position:"Query" name:"PasswordInherit"`
+	HttpEndpoint                    string                    `position:"Query" name:"HttpEndpoint"`
+	InstanceType                    string                    `position:"Query" name:"InstanceType"`
+	Arn                             *[]CreateInstanceArn      `position:"Query" name:"Arn"  type:"Repeated"`
+	InstanceChargeType              string                    `position:"Query" name:"InstanceChargeType"`
+	DeploymentSetId                 string                    `position:"Query" name:"DeploymentSetId"`
+	InnerIpAddress                  string                    `position:"Query" name:"InnerIpAddress"`
+	ResourceOwnerAccount            string                    `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                    string                    `position:"Query" name:"OwnerAccount"`
+	Tenancy                         string                    `position:"Query" name:"Tenancy"`
+	SystemDiskDiskName              string                    `position:"Query" name:"SystemDisk.DiskName"`
+	RamRoleName                     string                    `position:"Query" name:"RamRoleName"`
+	DedicatedHostId                 string                    `position:"Query" name:"DedicatedHostId"`
+	ClusterId                       string                    `position:"Query" name:"ClusterId"`
+	CreditSpecification             string                    `position:"Query" name:"CreditSpecification"`
+	SpotDuration                    requests.Integer          `position:"Query" name:"SpotDuration"`
+	DataDisk                        *[]CreateInstanceDataDisk `position:"Query" name:"DataDisk"  type:"Repeated"`
+	StorageSetId                    string                    `position:"Query" name:"StorageSetId"`
+	SystemDiskSize                  requests.Integer          `position:"Query" name:"SystemDisk.Size"`
+	ImageFamily                     string                    `position:"Query" name:"ImageFamily"`
+	HttpTokens                      string                    `position:"Query" name:"HttpTokens"`
+	SystemDiskDescription           string                    `position:"Query" name:"SystemDisk.Description"`
 }
 
 // CreateInstanceTag is a repeated param struct in CreateInstanceRequest
