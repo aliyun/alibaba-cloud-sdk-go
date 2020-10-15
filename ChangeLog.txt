@@ -1,3 +1,7 @@
+2020-10-15 Version: v1.61.572
+- Generated 2018-08-28 for `Tag`.
+- Supported TAG APIs.
+
 2020-10-15 Version: v1.61.571
 - Generated 2019-08-08 for `ARMS`.
 - Add SaveTraceAppConfig api.
