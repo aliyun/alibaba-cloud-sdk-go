@@ -21,7 +21,6 @@ import (
 )
 
 // GetHDMLastAliyunResourceSyncResult invokes the das.GetHDMLastAliyunResourceSyncResult API synchronously
-// api document: https://help.aliyun.com/api/das/gethdmlastaliyunresourcesyncresult.html
 func (client *Client) GetHDMLastAliyunResourceSyncResult(request *GetHDMLastAliyunResourceSyncResultRequest) (response *GetHDMLastAliyunResourceSyncResultResponse, err error) {
 	response = CreateGetHDMLastAliyunResourceSyncResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetHDMLastAliyunResourceSyncResult(request *GetHDMLastAliy
 }
 
 // GetHDMLastAliyunResourceSyncResultWithChan invokes the das.GetHDMLastAliyunResourceSyncResult API asynchronously
-// api document: https://help.aliyun.com/api/das/gethdmlastaliyunresourcesyncresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetHDMLastAliyunResourceSyncResultWithChan(request *GetHDMLastAliyunResourceSyncResultRequest) (<-chan *GetHDMLastAliyunResourceSyncResultResponse, <-chan error) {
 	responseChan := make(chan *GetHDMLastAliyunResourceSyncResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetHDMLastAliyunResourceSyncResultWithChan(request *GetHDM
 }
 
 // GetHDMLastAliyunResourceSyncResultWithCallback invokes the das.GetHDMLastAliyunResourceSyncResult API asynchronously
-// api document: https://help.aliyun.com/api/das/gethdmlastaliyunresourcesyncresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetHDMLastAliyunResourceSyncResultWithCallback(request *GetHDMLastAliyunResourceSyncResultRequest, callback func(response *GetHDMLastAliyunResourceSyncResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

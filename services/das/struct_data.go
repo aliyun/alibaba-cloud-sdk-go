@@ -17,26 +17,36 @@ package das
 
 // Data is a nested struct in das response
 type Data struct {
+	PageSize   int64                                      `json:"PageSize" xml:"PageSize"`
+	TaskState  string                                     `json:"TaskState" xml:"TaskState"`
+	Uuid       string                                     `json:"Uuid" xml:"Uuid"`
+	ErrMsg     string                                     `json:"ErrMsg" xml:"ErrMsg"`
+	NodeId     string                                     `json:"NodeId" xml:"NodeId"`
+	TaskId     string                                     `json:"TaskId" xml:"TaskId"`
+	Role       string                                     `json:"Role" xml:"Role"`
+	InstanceId string                                     `json:"InstanceId" xml:"InstanceId"`
+	VpcId      string                                     `json:"VpcId" xml:"VpcId"`
+	TenantId   string                                     `json:"TenantId" xml:"TenantId"`
 	Results    string                                     `json:"Results" xml:"Results"`
 	Token      string                                     `json:"Token" xml:"Token"`
+	JobId      string                                     `json:"JobId" xml:"JobId"`
 	Port       int                                        `json:"Port" xml:"Port"`
 	Error      string                                     `json:"Error" xml:"Error"`
+	Message    string                                     `json:"Message" xml:"Message"`
 	CallerUid  string                                     `json:"CallerUid" xml:"CallerUid"`
 	ErrorMsg   string                                     `json:"ErrorMsg" xml:"ErrorMsg"`
 	DbLinkId   int64                                      `json:"DbLinkId" xml:"DbLinkId"`
 	Ip         string                                     `json:"Ip" xml:"Ip"`
+	PageNo     int64                                      `json:"PageNo" xml:"PageNo"`
+	Extra      string                                     `json:"Extra" xml:"Extra"`
 	SyncStatus string                                     `json:"SyncStatus" xml:"SyncStatus"`
-	Uuid       string                                     `json:"Uuid" xml:"Uuid"`
-	ErrMsg     string                                     `json:"ErrMsg" xml:"ErrMsg"`
 	AccountId  string                                     `json:"AccountId" xml:"AccountId"`
-	TaskId     string                                     `json:"TaskId" xml:"TaskId"`
 	OriUuid    string                                     `json:"OriUuid" xml:"OriUuid"`
-	Role       string                                     `json:"Role" xml:"Role"`
-	InstanceId string                                     `json:"InstanceId" xml:"InstanceId"`
 	OwnerId    string                                     `json:"OwnerId" xml:"OwnerId"`
-	VpcId      string                                     `json:"VpcId" xml:"VpcId"`
 	Code       int                                        `json:"Code" xml:"Code"`
 	Status     string                                     `json:"Status" xml:"Status"`
-	TenantId   string                                     `json:"TenantId" xml:"TenantId"`
+	Total      int64                                      `json:"Total" xml:"Total"`
 	SubResults SubResultsInGetHDMAliyunResourceSyncResult `json:"SubResults" xml:"SubResults"`
+	List       List                                       `json:"List" xml:"List"`
+	BigKeys    BigKeysInCreateCacheAnalysisJob            `json:"BigKeys" xml:"BigKeys"`
 }

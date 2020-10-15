@@ -21,7 +21,6 @@ import (
 )
 
 // GetEndpointSwitchTask invokes the das.GetEndpointSwitchTask API synchronously
-// api document: https://help.aliyun.com/api/das/getendpointswitchtask.html
 func (client *Client) GetEndpointSwitchTask(request *GetEndpointSwitchTaskRequest) (response *GetEndpointSwitchTaskResponse, err error) {
 	response = CreateGetEndpointSwitchTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetEndpointSwitchTask(request *GetEndpointSwitchTaskReques
 }
 
 // GetEndpointSwitchTaskWithChan invokes the das.GetEndpointSwitchTask API asynchronously
-// api document: https://help.aliyun.com/api/das/getendpointswitchtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetEndpointSwitchTaskWithChan(request *GetEndpointSwitchTaskRequest) (<-chan *GetEndpointSwitchTaskResponse, <-chan error) {
 	responseChan := make(chan *GetEndpointSwitchTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetEndpointSwitchTaskWithChan(request *GetEndpointSwitchTa
 }
 
 // GetEndpointSwitchTaskWithCallback invokes the das.GetEndpointSwitchTask API asynchronously
-// api document: https://help.aliyun.com/api/das/getendpointswitchtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetEndpointSwitchTaskWithCallback(request *GetEndpointSwitchTaskRequest, callback func(response *GetEndpointSwitchTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

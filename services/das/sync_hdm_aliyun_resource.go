@@ -21,7 +21,6 @@ import (
 )
 
 // SyncHDMAliyunResource invokes the das.SyncHDMAliyunResource API synchronously
-// api document: https://help.aliyun.com/api/das/synchdmaliyunresource.html
 func (client *Client) SyncHDMAliyunResource(request *SyncHDMAliyunResourceRequest) (response *SyncHDMAliyunResourceResponse, err error) {
 	response = CreateSyncHDMAliyunResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SyncHDMAliyunResource(request *SyncHDMAliyunResourceReques
 }
 
 // SyncHDMAliyunResourceWithChan invokes the das.SyncHDMAliyunResource API asynchronously
-// api document: https://help.aliyun.com/api/das/synchdmaliyunresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SyncHDMAliyunResourceWithChan(request *SyncHDMAliyunResourceRequest) (<-chan *SyncHDMAliyunResourceResponse, <-chan error) {
 	responseChan := make(chan *SyncHDMAliyunResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SyncHDMAliyunResourceWithChan(request *SyncHDMAliyunResour
 }
 
 // SyncHDMAliyunResourceWithCallback invokes the das.SyncHDMAliyunResource API asynchronously
-// api document: https://help.aliyun.com/api/das/synchdmaliyunresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SyncHDMAliyunResourceWithCallback(request *SyncHDMAliyunResourceRequest, callback func(response *SyncHDMAliyunResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

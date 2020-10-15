@@ -21,7 +21,6 @@ import (
 )
 
 // AddHDMInstance invokes the das.AddHDMInstance API synchronously
-// api document: https://help.aliyun.com/api/das/addhdminstance.html
 func (client *Client) AddHDMInstance(request *AddHDMInstanceRequest) (response *AddHDMInstanceResponse, err error) {
 	response = CreateAddHDMInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddHDMInstance(request *AddHDMInstanceRequest) (response *
 }
 
 // AddHDMInstanceWithChan invokes the das.AddHDMInstance API asynchronously
-// api document: https://help.aliyun.com/api/das/addhdminstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddHDMInstanceWithChan(request *AddHDMInstanceRequest) (<-chan *AddHDMInstanceResponse, <-chan error) {
 	responseChan := make(chan *AddHDMInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddHDMInstanceWithChan(request *AddHDMInstanceRequest) (<-
 }
 
 // AddHDMInstanceWithCallback invokes the das.AddHDMInstance API asynchronously
-// api document: https://help.aliyun.com/api/das/addhdminstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddHDMInstanceWithCallback(request *AddHDMInstanceRequest, callback func(response *AddHDMInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
