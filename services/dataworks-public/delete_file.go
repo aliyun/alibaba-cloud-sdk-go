@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteFile invokes the dataworks_public.DeleteFile API synchronously
-// api document: https://help.aliyun.com/api/dataworks-public/deletefile.html
 func (client *Client) DeleteFile(request *DeleteFileRequest) (response *DeleteFileResponse, err error) {
 	response = CreateDeleteFileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteFile(request *DeleteFileRequest) (response *DeleteFi
 }
 
 // DeleteFileWithChan invokes the dataworks_public.DeleteFile API asynchronously
-// api document: https://help.aliyun.com/api/dataworks-public/deletefile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFileWithChan(request *DeleteFileRequest) (<-chan *DeleteFileResponse, <-chan error) {
 	responseChan := make(chan *DeleteFileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteFileWithChan(request *DeleteFileRequest) (<-chan *De
 }
 
 // DeleteFileWithCallback invokes the dataworks_public.DeleteFile API asynchronously
-// api document: https://help.aliyun.com/api/dataworks-public/deletefile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFileWithCallback(request *DeleteFileRequest, callback func(response *DeleteFileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateDeleteFileRequest() (request *DeleteFileRequest) {
 	request = &DeleteFileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dataworks-public", "2020-05-18", "DeleteFile", "dide", "openAPI")
+	request.InitWithApiInfo("dataworks-public", "2018-06-01", "DeleteFile", "", "")
 	request.Method = requests.POST
 	return
 }
