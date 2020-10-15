@@ -21,7 +21,6 @@ import (
 )
 
 // QueryDataset invokes the arms.QueryDataset API synchronously
-// api document: https://help.aliyun.com/api/arms/querydataset.html
 func (client *Client) QueryDataset(request *QueryDatasetRequest) (response *QueryDatasetResponse, err error) {
 	response = CreateQueryDatasetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryDataset(request *QueryDatasetRequest) (response *Quer
 }
 
 // QueryDatasetWithChan invokes the arms.QueryDataset API asynchronously
-// api document: https://help.aliyun.com/api/arms/querydataset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDatasetWithChan(request *QueryDatasetRequest) (<-chan *QueryDatasetResponse, <-chan error) {
 	responseChan := make(chan *QueryDatasetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryDatasetWithChan(request *QueryDatasetRequest) (<-chan
 }
 
 // QueryDatasetWithCallback invokes the arms.QueryDataset API asynchronously
-// api document: https://help.aliyun.com/api/arms/querydataset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDatasetWithCallback(request *QueryDatasetRequest, callback func(response *QueryDatasetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

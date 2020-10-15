@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteAlertContact invokes the arms.DeleteAlertContact API synchronously
-// api document: https://help.aliyun.com/api/arms/deletealertcontact.html
 func (client *Client) DeleteAlertContact(request *DeleteAlertContactRequest) (response *DeleteAlertContactResponse, err error) {
 	response = CreateDeleteAlertContactResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteAlertContact(request *DeleteAlertContactRequest) (re
 }
 
 // DeleteAlertContactWithChan invokes the arms.DeleteAlertContact API asynchronously
-// api document: https://help.aliyun.com/api/arms/deletealertcontact.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAlertContactWithChan(request *DeleteAlertContactRequest) (<-chan *DeleteAlertContactResponse, <-chan error) {
 	responseChan := make(chan *DeleteAlertContactResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteAlertContactWithChan(request *DeleteAlertContactRequ
 }
 
 // DeleteAlertContactWithCallback invokes the arms.DeleteAlertContact API asynchronously
-// api document: https://help.aliyun.com/api/arms/deletealertcontact.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAlertContactWithCallback(request *DeleteAlertContactRequest, callback func(response *DeleteAlertContactResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // GetStack invokes the arms.GetStack API synchronously
-// api document: https://help.aliyun.com/api/arms/getstack.html
 func (client *Client) GetStack(request *GetStackRequest) (response *GetStackResponse, err error) {
 	response = CreateGetStackResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetStack(request *GetStackRequest) (response *GetStackResp
 }
 
 // GetStackWithChan invokes the arms.GetStack API asynchronously
-// api document: https://help.aliyun.com/api/arms/getstack.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetStackWithChan(request *GetStackRequest) (<-chan *GetStackResponse, <-chan error) {
 	responseChan := make(chan *GetStackResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetStackWithChan(request *GetStackRequest) (<-chan *GetSta
 }
 
 // GetStackWithCallback invokes the arms.GetStack API asynchronously
-// api document: https://help.aliyun.com/api/arms/getstack.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetStackWithCallback(request *GetStackRequest, callback func(response *GetStackResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

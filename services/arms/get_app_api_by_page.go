@@ -21,7 +21,6 @@ import (
 )
 
 // GetAppApiByPage invokes the arms.GetAppApiByPage API synchronously
-// api document: https://help.aliyun.com/api/arms/getappapibypage.html
 func (client *Client) GetAppApiByPage(request *GetAppApiByPageRequest) (response *GetAppApiByPageResponse, err error) {
 	response = CreateGetAppApiByPageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetAppApiByPage(request *GetAppApiByPageRequest) (response
 }
 
 // GetAppApiByPageWithChan invokes the arms.GetAppApiByPage API asynchronously
-// api document: https://help.aliyun.com/api/arms/getappapibypage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAppApiByPageWithChan(request *GetAppApiByPageRequest) (<-chan *GetAppApiByPageResponse, <-chan error) {
 	responseChan := make(chan *GetAppApiByPageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetAppApiByPageWithChan(request *GetAppApiByPageRequest) (
 }
 
 // GetAppApiByPageWithCallback invokes the arms.GetAppApiByPage API asynchronously
-// api document: https://help.aliyun.com/api/arms/getappapibypage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAppApiByPageWithCallback(request *GetAppApiByPageRequest, callback func(response *GetAppApiByPageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

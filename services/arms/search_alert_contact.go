@@ -21,7 +21,6 @@ import (
 )
 
 // SearchAlertContact invokes the arms.SearchAlertContact API synchronously
-// api document: https://help.aliyun.com/api/arms/searchalertcontact.html
 func (client *Client) SearchAlertContact(request *SearchAlertContactRequest) (response *SearchAlertContactResponse, err error) {
 	response = CreateSearchAlertContactResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchAlertContact(request *SearchAlertContactRequest) (re
 }
 
 // SearchAlertContactWithChan invokes the arms.SearchAlertContact API asynchronously
-// api document: https://help.aliyun.com/api/arms/searchalertcontact.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchAlertContactWithChan(request *SearchAlertContactRequest) (<-chan *SearchAlertContactResponse, <-chan error) {
 	responseChan := make(chan *SearchAlertContactResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchAlertContactWithChan(request *SearchAlertContactRequ
 }
 
 // SearchAlertContactWithCallback invokes the arms.SearchAlertContact API asynchronously
-// api document: https://help.aliyun.com/api/arms/searchalertcontact.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchAlertContactWithCallback(request *SearchAlertContactRequest, callback func(response *SearchAlertContactResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type SearchAlertContactRequest struct {
 	*requests.RpcRequest
 	CurrentPage string `position:"Query" name:"CurrentPage"`
 	ProxyUserId string `position:"Query" name:"ProxyUserId"`
+	ContactIds  string `position:"Query" name:"ContactIds"`
 	ContactName string `position:"Query" name:"ContactName"`
 	Phone       string `position:"Query" name:"Phone"`
 	PageSize    string `position:"Query" name:"PageSize"`

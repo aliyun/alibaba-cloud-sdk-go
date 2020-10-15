@@ -21,7 +21,6 @@ import (
 )
 
 // ListPromClusters invokes the arms.ListPromClusters API synchronously
-// api document: https://help.aliyun.com/api/arms/listpromclusters.html
 func (client *Client) ListPromClusters(request *ListPromClustersRequest) (response *ListPromClustersResponse, err error) {
 	response = CreateListPromClustersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListPromClusters(request *ListPromClustersRequest) (respon
 }
 
 // ListPromClustersWithChan invokes the arms.ListPromClusters API asynchronously
-// api document: https://help.aliyun.com/api/arms/listpromclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPromClustersWithChan(request *ListPromClustersRequest) (<-chan *ListPromClustersResponse, <-chan error) {
 	responseChan := make(chan *ListPromClustersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListPromClustersWithChan(request *ListPromClustersRequest)
 }
 
 // ListPromClustersWithCallback invokes the arms.ListPromClusters API asynchronously
-// api document: https://help.aliyun.com/api/arms/listpromclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPromClustersWithCallback(request *ListPromClustersRequest, callback func(response *ListPromClustersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

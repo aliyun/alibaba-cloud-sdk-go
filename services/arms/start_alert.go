@@ -21,7 +21,6 @@ import (
 )
 
 // StartAlert invokes the arms.StartAlert API synchronously
-// api document: https://help.aliyun.com/api/arms/startalert.html
 func (client *Client) StartAlert(request *StartAlertRequest) (response *StartAlertResponse, err error) {
 	response = CreateStartAlertResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartAlert(request *StartAlertRequest) (response *StartAle
 }
 
 // StartAlertWithChan invokes the arms.StartAlert API asynchronously
-// api document: https://help.aliyun.com/api/arms/startalert.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartAlertWithChan(request *StartAlertRequest) (<-chan *StartAlertResponse, <-chan error) {
 	responseChan := make(chan *StartAlertResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartAlertWithChan(request *StartAlertRequest) (<-chan *St
 }
 
 // StartAlertWithCallback invokes the arms.StartAlert API asynchronously
-// api document: https://help.aliyun.com/api/arms/startalert.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartAlertWithCallback(request *StartAlertRequest, callback func(response *StartAlertResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

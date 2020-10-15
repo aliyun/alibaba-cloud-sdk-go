@@ -21,7 +21,6 @@ import (
 )
 
 // QueryMetric invokes the arms.QueryMetric API synchronously
-// api document: https://help.aliyun.com/api/arms/querymetric.html
 func (client *Client) QueryMetric(request *QueryMetricRequest) (response *QueryMetricResponse, err error) {
 	response = CreateQueryMetricResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryMetric(request *QueryMetricRequest) (response *QueryM
 }
 
 // QueryMetricWithChan invokes the arms.QueryMetric API asynchronously
-// api document: https://help.aliyun.com/api/arms/querymetric.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMetricWithChan(request *QueryMetricRequest) (<-chan *QueryMetricResponse, <-chan error) {
 	responseChan := make(chan *QueryMetricResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryMetricWithChan(request *QueryMetricRequest) (<-chan *
 }
 
 // QueryMetricWithCallback invokes the arms.QueryMetric API asynchronously
-// api document: https://help.aliyun.com/api/arms/querymetric.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMetricWithCallback(request *QueryMetricRequest, callback func(response *QueryMetricResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

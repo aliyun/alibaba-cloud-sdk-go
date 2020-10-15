@@ -21,7 +21,6 @@ import (
 )
 
 // CreateAlertContactGroup invokes the arms.CreateAlertContactGroup API synchronously
-// api document: https://help.aliyun.com/api/arms/createalertcontactgroup.html
 func (client *Client) CreateAlertContactGroup(request *CreateAlertContactGroupRequest) (response *CreateAlertContactGroupResponse, err error) {
 	response = CreateCreateAlertContactGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateAlertContactGroup(request *CreateAlertContactGroupRe
 }
 
 // CreateAlertContactGroupWithChan invokes the arms.CreateAlertContactGroup API asynchronously
-// api document: https://help.aliyun.com/api/arms/createalertcontactgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAlertContactGroupWithChan(request *CreateAlertContactGroupRequest) (<-chan *CreateAlertContactGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateAlertContactGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateAlertContactGroupWithChan(request *CreateAlertContac
 }
 
 // CreateAlertContactGroupWithCallback invokes the arms.CreateAlertContactGroup API asynchronously
-// api document: https://help.aliyun.com/api/arms/createalertcontactgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAlertContactGroupWithCallback(request *CreateAlertContactGroupRequest, callback func(response *CreateAlertContactGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

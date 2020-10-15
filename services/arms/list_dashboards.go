@@ -21,7 +21,6 @@ import (
 )
 
 // ListDashboards invokes the arms.ListDashboards API synchronously
-// api document: https://help.aliyun.com/api/arms/listdashboards.html
 func (client *Client) ListDashboards(request *ListDashboardsRequest) (response *ListDashboardsResponse, err error) {
 	response = CreateListDashboardsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDashboards(request *ListDashboardsRequest) (response *
 }
 
 // ListDashboardsWithChan invokes the arms.ListDashboards API asynchronously
-// api document: https://help.aliyun.com/api/arms/listdashboards.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDashboardsWithChan(request *ListDashboardsRequest) (<-chan *ListDashboardsResponse, <-chan error) {
 	responseChan := make(chan *ListDashboardsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDashboardsWithChan(request *ListDashboardsRequest) (<-
 }
 
 // ListDashboardsWithCallback invokes the arms.ListDashboards API asynchronously
-// api document: https://help.aliyun.com/api/arms/listdashboards.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDashboardsWithCallback(request *ListDashboardsRequest, callback func(response *ListDashboardsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

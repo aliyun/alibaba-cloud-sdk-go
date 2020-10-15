@@ -21,7 +21,6 @@ import (
 )
 
 // StopAlert invokes the arms.StopAlert API synchronously
-// api document: https://help.aliyun.com/api/arms/stopalert.html
 func (client *Client) StopAlert(request *StopAlertRequest) (response *StopAlertResponse, err error) {
 	response = CreateStopAlertResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopAlert(request *StopAlertRequest) (response *StopAlertR
 }
 
 // StopAlertWithChan invokes the arms.StopAlert API asynchronously
-// api document: https://help.aliyun.com/api/arms/stopalert.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopAlertWithChan(request *StopAlertRequest) (<-chan *StopAlertResponse, <-chan error) {
 	responseChan := make(chan *StopAlertResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopAlertWithChan(request *StopAlertRequest) (<-chan *Stop
 }
 
 // StopAlertWithCallback invokes the arms.StopAlert API asynchronously
-// api document: https://help.aliyun.com/api/arms/stopalert.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopAlertWithCallback(request *StopAlertRequest, callback func(response *StopAlertResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

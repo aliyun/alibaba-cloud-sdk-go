@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteRetcodeApp invokes the arms.DeleteRetcodeApp API synchronously
-// api document: https://help.aliyun.com/api/arms/deleteretcodeapp.html
 func (client *Client) DeleteRetcodeApp(request *DeleteRetcodeAppRequest) (response *DeleteRetcodeAppResponse, err error) {
 	response = CreateDeleteRetcodeAppResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteRetcodeApp(request *DeleteRetcodeAppRequest) (respon
 }
 
 // DeleteRetcodeAppWithChan invokes the arms.DeleteRetcodeApp API asynchronously
-// api document: https://help.aliyun.com/api/arms/deleteretcodeapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRetcodeAppWithChan(request *DeleteRetcodeAppRequest) (<-chan *DeleteRetcodeAppResponse, <-chan error) {
 	responseChan := make(chan *DeleteRetcodeAppResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteRetcodeAppWithChan(request *DeleteRetcodeAppRequest)
 }
 
 // DeleteRetcodeAppWithCallback invokes the arms.DeleteRetcodeApp API asynchronously
-// api document: https://help.aliyun.com/api/arms/deleteretcodeapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRetcodeAppWithCallback(request *DeleteRetcodeAppRequest, callback func(response *DeleteRetcodeAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

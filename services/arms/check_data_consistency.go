@@ -21,7 +21,6 @@ import (
 )
 
 // CheckDataConsistency invokes the arms.CheckDataConsistency API synchronously
-// api document: https://help.aliyun.com/api/arms/checkdataconsistency.html
 func (client *Client) CheckDataConsistency(request *CheckDataConsistencyRequest) (response *CheckDataConsistencyResponse, err error) {
 	response = CreateCheckDataConsistencyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckDataConsistency(request *CheckDataConsistencyRequest)
 }
 
 // CheckDataConsistencyWithChan invokes the arms.CheckDataConsistency API asynchronously
-// api document: https://help.aliyun.com/api/arms/checkdataconsistency.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDataConsistencyWithChan(request *CheckDataConsistencyRequest) (<-chan *CheckDataConsistencyResponse, <-chan error) {
 	responseChan := make(chan *CheckDataConsistencyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckDataConsistencyWithChan(request *CheckDataConsistency
 }
 
 // CheckDataConsistencyWithCallback invokes the arms.CheckDataConsistency API asynchronously
-// api document: https://help.aliyun.com/api/arms/checkdataconsistency.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDataConsistencyWithCallback(request *CheckDataConsistencyRequest, callback func(response *CheckDataConsistencyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

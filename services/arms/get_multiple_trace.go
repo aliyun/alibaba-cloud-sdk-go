@@ -21,7 +21,6 @@ import (
 )
 
 // GetMultipleTrace invokes the arms.GetMultipleTrace API synchronously
-// api document: https://help.aliyun.com/api/arms/getmultipletrace.html
 func (client *Client) GetMultipleTrace(request *GetMultipleTraceRequest) (response *GetMultipleTraceResponse, err error) {
 	response = CreateGetMultipleTraceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetMultipleTrace(request *GetMultipleTraceRequest) (respon
 }
 
 // GetMultipleTraceWithChan invokes the arms.GetMultipleTrace API asynchronously
-// api document: https://help.aliyun.com/api/arms/getmultipletrace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMultipleTraceWithChan(request *GetMultipleTraceRequest) (<-chan *GetMultipleTraceResponse, <-chan error) {
 	responseChan := make(chan *GetMultipleTraceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetMultipleTraceWithChan(request *GetMultipleTraceRequest)
 }
 
 // GetMultipleTraceWithCallback invokes the arms.GetMultipleTrace API asynchronously
-// api document: https://help.aliyun.com/api/arms/getmultipletrace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMultipleTraceWithCallback(request *GetMultipleTraceRequest, callback func(response *GetMultipleTraceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

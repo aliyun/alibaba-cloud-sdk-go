@@ -21,7 +21,6 @@ import (
 )
 
 // ConfigApp invokes the arms.ConfigApp API synchronously
-// api document: https://help.aliyun.com/api/arms/configapp.html
 func (client *Client) ConfigApp(request *ConfigAppRequest) (response *ConfigAppResponse, err error) {
 	response = CreateConfigAppResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ConfigApp(request *ConfigAppRequest) (response *ConfigAppR
 }
 
 // ConfigAppWithChan invokes the arms.ConfigApp API asynchronously
-// api document: https://help.aliyun.com/api/arms/configapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConfigAppWithChan(request *ConfigAppRequest) (<-chan *ConfigAppResponse, <-chan error) {
 	responseChan := make(chan *ConfigAppResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ConfigAppWithChan(request *ConfigAppRequest) (<-chan *Conf
 }
 
 // ConfigAppWithCallback invokes the arms.ConfigApp API asynchronously
-// api document: https://help.aliyun.com/api/arms/configapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConfigAppWithCallback(request *ConfigAppRequest, callback func(response *ConfigAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

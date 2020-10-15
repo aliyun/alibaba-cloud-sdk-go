@@ -21,7 +21,6 @@ import (
 )
 
 // QueryMetricByPage invokes the arms.QueryMetricByPage API synchronously
-// api document: https://help.aliyun.com/api/arms/querymetricbypage.html
 func (client *Client) QueryMetricByPage(request *QueryMetricByPageRequest) (response *QueryMetricByPageResponse, err error) {
 	response = CreateQueryMetricByPageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryMetricByPage(request *QueryMetricByPageRequest) (resp
 }
 
 // QueryMetricByPageWithChan invokes the arms.QueryMetricByPage API asynchronously
-// api document: https://help.aliyun.com/api/arms/querymetricbypage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMetricByPageWithChan(request *QueryMetricByPageRequest) (<-chan *QueryMetricByPageResponse, <-chan error) {
 	responseChan := make(chan *QueryMetricByPageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryMetricByPageWithChan(request *QueryMetricByPageReques
 }
 
 // QueryMetricByPageWithCallback invokes the arms.QueryMetricByPage API asynchronously
-// api document: https://help.aliyun.com/api/arms/querymetricbypage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMetricByPageWithCallback(request *QueryMetricByPageRequest, callback func(response *QueryMetricByPageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

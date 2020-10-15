@@ -21,7 +21,6 @@ import (
 )
 
 // SearchRetcodeAppByPage invokes the arms.SearchRetcodeAppByPage API synchronously
-// api document: https://help.aliyun.com/api/arms/searchretcodeappbypage.html
 func (client *Client) SearchRetcodeAppByPage(request *SearchRetcodeAppByPageRequest) (response *SearchRetcodeAppByPageResponse, err error) {
 	response = CreateSearchRetcodeAppByPageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchRetcodeAppByPage(request *SearchRetcodeAppByPageRequ
 }
 
 // SearchRetcodeAppByPageWithChan invokes the arms.SearchRetcodeAppByPage API asynchronously
-// api document: https://help.aliyun.com/api/arms/searchretcodeappbypage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchRetcodeAppByPageWithChan(request *SearchRetcodeAppByPageRequest) (<-chan *SearchRetcodeAppByPageResponse, <-chan error) {
 	responseChan := make(chan *SearchRetcodeAppByPageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchRetcodeAppByPageWithChan(request *SearchRetcodeAppBy
 }
 
 // SearchRetcodeAppByPageWithCallback invokes the arms.SearchRetcodeAppByPage API asynchronously
-// api document: https://help.aliyun.com/api/arms/searchretcodeappbypage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchRetcodeAppByPageWithCallback(request *SearchRetcodeAppByPageRequest, callback func(response *SearchRetcodeAppByPageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

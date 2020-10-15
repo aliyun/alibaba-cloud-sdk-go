@@ -21,7 +21,6 @@ import (
 )
 
 // SearchTraceAppByName invokes the arms.SearchTraceAppByName API synchronously
-// api document: https://help.aliyun.com/api/arms/searchtraceappbyname.html
 func (client *Client) SearchTraceAppByName(request *SearchTraceAppByNameRequest) (response *SearchTraceAppByNameResponse, err error) {
 	response = CreateSearchTraceAppByNameResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchTraceAppByName(request *SearchTraceAppByNameRequest)
 }
 
 // SearchTraceAppByNameWithChan invokes the arms.SearchTraceAppByName API asynchronously
-// api document: https://help.aliyun.com/api/arms/searchtraceappbyname.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchTraceAppByNameWithChan(request *SearchTraceAppByNameRequest) (<-chan *SearchTraceAppByNameResponse, <-chan error) {
 	responseChan := make(chan *SearchTraceAppByNameResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchTraceAppByNameWithChan(request *SearchTraceAppByName
 }
 
 // SearchTraceAppByNameWithCallback invokes the arms.SearchTraceAppByName API asynchronously
-// api document: https://help.aliyun.com/api/arms/searchtraceappbyname.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchTraceAppByNameWithCallback(request *SearchTraceAppByNameRequest, callback func(response *SearchTraceAppByNameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

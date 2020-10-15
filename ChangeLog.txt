@@ -1,3 +1,7 @@
+2020-10-15 Version: v1.61.571
+- Generated 2019-08-08 for `ARMS`.
+- Add SaveTraceAppConfig api.
+
 2020-10-15 Version: v1.61.570
 - Generated 2020-01-16 for `DAS`.
 - Supported CacheAnalysis For Redis.

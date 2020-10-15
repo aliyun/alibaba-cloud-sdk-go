@@ -21,7 +21,6 @@ import (
 )
 
 // SearchAlertContactGroup invokes the arms.SearchAlertContactGroup API synchronously
-// api document: https://help.aliyun.com/api/arms/searchalertcontactgroup.html
 func (client *Client) SearchAlertContactGroup(request *SearchAlertContactGroupRequest) (response *SearchAlertContactGroupResponse, err error) {
 	response = CreateSearchAlertContactGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchAlertContactGroup(request *SearchAlertContactGroupRe
 }
 
 // SearchAlertContactGroupWithChan invokes the arms.SearchAlertContactGroup API asynchronously
-// api document: https://help.aliyun.com/api/arms/searchalertcontactgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchAlertContactGroupWithChan(request *SearchAlertContactGroupRequest) (<-chan *SearchAlertContactGroupResponse, <-chan error) {
 	responseChan := make(chan *SearchAlertContactGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchAlertContactGroupWithChan(request *SearchAlertContac
 }
 
 // SearchAlertContactGroupWithCallback invokes the arms.SearchAlertContactGroup API asynchronously
-// api document: https://help.aliyun.com/api/arms/searchalertcontactgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchAlertContactGroupWithCallback(request *SearchAlertContactGroupRequest, callback func(response *SearchAlertContactGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,10 +71,12 @@ func (client *Client) SearchAlertContactGroupWithCallback(request *SearchAlertCo
 // SearchAlertContactGroupRequest is the request struct for api SearchAlertContactGroup
 type SearchAlertContactGroupRequest struct {
 	*requests.RpcRequest
-	ContactName      string           `position:"Query" name:"ContactName"`
 	ContactId        requests.Integer `position:"Query" name:"ContactId"`
+	IsDetail         requests.Boolean `position:"Query" name:"IsDetail"`
 	ContactGroupName string           `position:"Query" name:"ContactGroupName"`
 	ProxyUserId      string           `position:"Query" name:"ProxyUserId"`
+	ContactName      string           `position:"Query" name:"ContactName"`
+	ContactGroupIds  string           `position:"Query" name:"ContactGroupIds"`
 }
 
 // SearchAlertContactGroupResponse is the response struct for api SearchAlertContactGroup

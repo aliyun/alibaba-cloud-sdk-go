@@ -21,7 +21,6 @@ import (
 )
 
 // SearchAlertRules invokes the arms.SearchAlertRules API synchronously
-// api document: https://help.aliyun.com/api/arms/searchalertrules.html
 func (client *Client) SearchAlertRules(request *SearchAlertRulesRequest) (response *SearchAlertRulesResponse, err error) {
 	response = CreateSearchAlertRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchAlertRules(request *SearchAlertRulesRequest) (respon
 }
 
 // SearchAlertRulesWithChan invokes the arms.SearchAlertRules API asynchronously
-// api document: https://help.aliyun.com/api/arms/searchalertrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchAlertRulesWithChan(request *SearchAlertRulesRequest) (<-chan *SearchAlertRulesResponse, <-chan error) {
 	responseChan := make(chan *SearchAlertRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchAlertRulesWithChan(request *SearchAlertRulesRequest)
 }
 
 // SearchAlertRulesWithCallback invokes the arms.SearchAlertRules API asynchronously
-// api document: https://help.aliyun.com/api/arms/searchalertrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchAlertRulesWithCallback(request *SearchAlertRulesRequest, callback func(response *SearchAlertRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

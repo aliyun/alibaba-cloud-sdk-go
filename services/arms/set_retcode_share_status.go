@@ -21,7 +21,6 @@ import (
 )
 
 // SetRetcodeShareStatus invokes the arms.SetRetcodeShareStatus API synchronously
-// api document: https://help.aliyun.com/api/arms/setretcodesharestatus.html
 func (client *Client) SetRetcodeShareStatus(request *SetRetcodeShareStatusRequest) (response *SetRetcodeShareStatusResponse, err error) {
 	response = CreateSetRetcodeShareStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetRetcodeShareStatus(request *SetRetcodeShareStatusReques
 }
 
 // SetRetcodeShareStatusWithChan invokes the arms.SetRetcodeShareStatus API asynchronously
-// api document: https://help.aliyun.com/api/arms/setretcodesharestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRetcodeShareStatusWithChan(request *SetRetcodeShareStatusRequest) (<-chan *SetRetcodeShareStatusResponse, <-chan error) {
 	responseChan := make(chan *SetRetcodeShareStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetRetcodeShareStatusWithChan(request *SetRetcodeShareStat
 }
 
 // SetRetcodeShareStatusWithCallback invokes the arms.SetRetcodeShareStatus API asynchronously
-// api document: https://help.aliyun.com/api/arms/setretcodesharestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRetcodeShareStatusWithCallback(request *SetRetcodeShareStatusRequest, callback func(response *SetRetcodeShareStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeTraceLocation invokes the arms.DescribeTraceLocation API synchronously
-// api document: https://help.aliyun.com/api/arms/describetracelocation.html
 func (client *Client) DescribeTraceLocation(request *DescribeTraceLocationRequest) (response *DescribeTraceLocationResponse, err error) {
 	response = CreateDescribeTraceLocationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeTraceLocation(request *DescribeTraceLocationReques
 }
 
 // DescribeTraceLocationWithChan invokes the arms.DescribeTraceLocation API asynchronously
-// api document: https://help.aliyun.com/api/arms/describetracelocation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTraceLocationWithChan(request *DescribeTraceLocationRequest) (<-chan *DescribeTraceLocationResponse, <-chan error) {
 	responseChan := make(chan *DescribeTraceLocationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeTraceLocationWithChan(request *DescribeTraceLocati
 }
 
 // DescribeTraceLocationWithCallback invokes the arms.DescribeTraceLocation API asynchronously
-// api document: https://help.aliyun.com/api/arms/describetracelocation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTraceLocationWithCallback(request *DescribeTraceLocationRequest, callback func(response *DescribeTraceLocationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

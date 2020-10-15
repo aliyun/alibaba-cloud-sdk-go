@@ -21,7 +21,6 @@ import (
 )
 
 // ListRetcodeApps invokes the arms.ListRetcodeApps API synchronously
-// api document: https://help.aliyun.com/api/arms/listretcodeapps.html
 func (client *Client) ListRetcodeApps(request *ListRetcodeAppsRequest) (response *ListRetcodeAppsResponse, err error) {
 	response = CreateListRetcodeAppsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListRetcodeApps(request *ListRetcodeAppsRequest) (response
 }
 
 // ListRetcodeAppsWithChan invokes the arms.ListRetcodeApps API asynchronously
-// api document: https://help.aliyun.com/api/arms/listretcodeapps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRetcodeAppsWithChan(request *ListRetcodeAppsRequest) (<-chan *ListRetcodeAppsResponse, <-chan error) {
 	responseChan := make(chan *ListRetcodeAppsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListRetcodeAppsWithChan(request *ListRetcodeAppsRequest) (
 }
 
 // ListRetcodeAppsWithCallback invokes the arms.ListRetcodeApps API asynchronously
-// api document: https://help.aliyun.com/api/arms/listretcodeapps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRetcodeAppsWithCallback(request *ListRetcodeAppsRequest, callback func(response *ListRetcodeAppsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

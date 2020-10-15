@@ -21,7 +21,6 @@ import (
 )
 
 // GetTrace invokes the arms.GetTrace API synchronously
-// api document: https://help.aliyun.com/api/arms/gettrace.html
 func (client *Client) GetTrace(request *GetTraceRequest) (response *GetTraceResponse, err error) {
 	response = CreateGetTraceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetTrace(request *GetTraceRequest) (response *GetTraceResp
 }
 
 // GetTraceWithChan invokes the arms.GetTrace API asynchronously
-// api document: https://help.aliyun.com/api/arms/gettrace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTraceWithChan(request *GetTraceRequest) (<-chan *GetTraceResponse, <-chan error) {
 	responseChan := make(chan *GetTraceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetTraceWithChan(request *GetTraceRequest) (<-chan *GetTra
 }
 
 // GetTraceWithCallback invokes the arms.GetTrace API asynchronously
-// api document: https://help.aliyun.com/api/arms/gettrace.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTraceWithCallback(request *GetTraceRequest, callback func(response *GetTraceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // GetRetcodeShareUrl invokes the arms.GetRetcodeShareUrl API synchronously
-// api document: https://help.aliyun.com/api/arms/getretcodeshareurl.html
 func (client *Client) GetRetcodeShareUrl(request *GetRetcodeShareUrlRequest) (response *GetRetcodeShareUrlResponse, err error) {
 	response = CreateGetRetcodeShareUrlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetRetcodeShareUrl(request *GetRetcodeShareUrlRequest) (re
 }
 
 // GetRetcodeShareUrlWithChan invokes the arms.GetRetcodeShareUrl API asynchronously
-// api document: https://help.aliyun.com/api/arms/getretcodeshareurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRetcodeShareUrlWithChan(request *GetRetcodeShareUrlRequest) (<-chan *GetRetcodeShareUrlResponse, <-chan error) {
 	responseChan := make(chan *GetRetcodeShareUrlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetRetcodeShareUrlWithChan(request *GetRetcodeShareUrlRequ
 }
 
 // GetRetcodeShareUrlWithCallback invokes the arms.GetRetcodeShareUrl API asynchronously
-// api document: https://help.aliyun.com/api/arms/getretcodeshareurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRetcodeShareUrlWithCallback(request *GetRetcodeShareUrlRequest, callback func(response *GetRetcodeShareUrlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeTraceLicenseKey invokes the arms.DescribeTraceLicenseKey API synchronously
-// api document: https://help.aliyun.com/api/arms/describetracelicensekey.html
 func (client *Client) DescribeTraceLicenseKey(request *DescribeTraceLicenseKeyRequest) (response *DescribeTraceLicenseKeyResponse, err error) {
 	response = CreateDescribeTraceLicenseKeyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeTraceLicenseKey(request *DescribeTraceLicenseKeyRe
 }
 
 // DescribeTraceLicenseKeyWithChan invokes the arms.DescribeTraceLicenseKey API asynchronously
-// api document: https://help.aliyun.com/api/arms/describetracelicensekey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTraceLicenseKeyWithChan(request *DescribeTraceLicenseKeyRequest) (<-chan *DescribeTraceLicenseKeyResponse, <-chan error) {
 	responseChan := make(chan *DescribeTraceLicenseKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeTraceLicenseKeyWithChan(request *DescribeTraceLice
 }
 
 // DescribeTraceLicenseKeyWithCallback invokes the arms.DescribeTraceLicenseKey API asynchronously
-// api document: https://help.aliyun.com/api/arms/describetracelicensekey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTraceLicenseKeyWithCallback(request *DescribeTraceLicenseKeyRequest, callback func(response *DescribeTraceLicenseKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

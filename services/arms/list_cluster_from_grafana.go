@@ -21,7 +21,6 @@ import (
 )
 
 // ListClusterFromGrafana invokes the arms.ListClusterFromGrafana API synchronously
-// api document: https://help.aliyun.com/api/arms/listclusterfromgrafana.html
 func (client *Client) ListClusterFromGrafana(request *ListClusterFromGrafanaRequest) (response *ListClusterFromGrafanaResponse, err error) {
 	response = CreateListClusterFromGrafanaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListClusterFromGrafana(request *ListClusterFromGrafanaRequ
 }
 
 // ListClusterFromGrafanaWithChan invokes the arms.ListClusterFromGrafana API asynchronously
-// api document: https://help.aliyun.com/api/arms/listclusterfromgrafana.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterFromGrafanaWithChan(request *ListClusterFromGrafanaRequest) (<-chan *ListClusterFromGrafanaResponse, <-chan error) {
 	responseChan := make(chan *ListClusterFromGrafanaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListClusterFromGrafanaWithChan(request *ListClusterFromGra
 }
 
 // ListClusterFromGrafanaWithCallback invokes the arms.ListClusterFromGrafana API asynchronously
-// api document: https://help.aliyun.com/api/arms/listclusterfromgrafana.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterFromGrafanaWithCallback(request *ListClusterFromGrafanaRequest, callback func(response *ListClusterFromGrafanaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

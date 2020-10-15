@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteAlertRules invokes the arms.DeleteAlertRules API synchronously
-// api document: https://help.aliyun.com/api/arms/deletealertrules.html
 func (client *Client) DeleteAlertRules(request *DeleteAlertRulesRequest) (response *DeleteAlertRulesResponse, err error) {
 	response = CreateDeleteAlertRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteAlertRules(request *DeleteAlertRulesRequest) (respon
 }
 
 // DeleteAlertRulesWithChan invokes the arms.DeleteAlertRules API asynchronously
-// api document: https://help.aliyun.com/api/arms/deletealertrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAlertRulesWithChan(request *DeleteAlertRulesRequest) (<-chan *DeleteAlertRulesResponse, <-chan error) {
 	responseChan := make(chan *DeleteAlertRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteAlertRulesWithChan(request *DeleteAlertRulesRequest)
 }
 
 // DeleteAlertRulesWithCallback invokes the arms.DeleteAlertRules API asynchronously
-// api document: https://help.aliyun.com/api/arms/deletealertrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAlertRulesWithCallback(request *DeleteAlertRulesRequest, callback func(response *DeleteAlertRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

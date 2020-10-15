@@ -21,7 +21,6 @@ import (
 )
 
 // ImportAppAlertRules invokes the arms.ImportAppAlertRules API synchronously
-// api document: https://help.aliyun.com/api/arms/importappalertrules.html
 func (client *Client) ImportAppAlertRules(request *ImportAppAlertRulesRequest) (response *ImportAppAlertRulesResponse, err error) {
 	response = CreateImportAppAlertRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ImportAppAlertRules(request *ImportAppAlertRulesRequest) (
 }
 
 // ImportAppAlertRulesWithChan invokes the arms.ImportAppAlertRules API asynchronously
-// api document: https://help.aliyun.com/api/arms/importappalertrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportAppAlertRulesWithChan(request *ImportAppAlertRulesRequest) (<-chan *ImportAppAlertRulesResponse, <-chan error) {
 	responseChan := make(chan *ImportAppAlertRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ImportAppAlertRulesWithChan(request *ImportAppAlertRulesRe
 }
 
 // ImportAppAlertRulesWithCallback invokes the arms.ImportAppAlertRules API asynchronously
-// api document: https://help.aliyun.com/api/arms/importappalertrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportAppAlertRulesWithCallback(request *ImportAppAlertRulesRequest, callback func(response *ImportAppAlertRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

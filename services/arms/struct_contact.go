@@ -25,5 +25,6 @@ type Contact struct {
 	CreateTime  int64  `json:"CreateTime" xml:"CreateTime"`
 	ContactId   int64  `json:"ContactId" xml:"ContactId"`
 	Phone       string `json:"Phone" xml:"Phone"`
+	Webhook     string `json:"Webhook" xml:"Webhook"`
 	SystemNoc   bool   `json:"SystemNoc" xml:"SystemNoc"`
 }

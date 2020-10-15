@@ -21,7 +21,6 @@ import (
 )
 
 // AddGrafana invokes the arms.AddGrafana API synchronously
-// api document: https://help.aliyun.com/api/arms/addgrafana.html
 func (client *Client) AddGrafana(request *AddGrafanaRequest) (response *AddGrafanaResponse, err error) {
 	response = CreateAddGrafanaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddGrafana(request *AddGrafanaRequest) (response *AddGrafa
 }
 
 // AddGrafanaWithChan invokes the arms.AddGrafana API asynchronously
-// api document: https://help.aliyun.com/api/arms/addgrafana.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddGrafanaWithChan(request *AddGrafanaRequest) (<-chan *AddGrafanaResponse, <-chan error) {
 	responseChan := make(chan *AddGrafanaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddGrafanaWithChan(request *AddGrafanaRequest) (<-chan *Ad
 }
 
 // AddGrafanaWithCallback invokes the arms.AddGrafana API asynchronously
-// api document: https://help.aliyun.com/api/arms/addgrafana.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddGrafanaWithCallback(request *AddGrafanaRequest, callback func(response *AddGrafanaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

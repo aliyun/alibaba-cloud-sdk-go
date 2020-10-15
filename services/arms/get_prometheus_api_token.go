@@ -21,7 +21,6 @@ import (
 )
 
 // GetPrometheusApiToken invokes the arms.GetPrometheusApiToken API synchronously
-// api document: https://help.aliyun.com/api/arms/getprometheusapitoken.html
 func (client *Client) GetPrometheusApiToken(request *GetPrometheusApiTokenRequest) (response *GetPrometheusApiTokenResponse, err error) {
 	response = CreateGetPrometheusApiTokenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetPrometheusApiToken(request *GetPrometheusApiTokenReques
 }
 
 // GetPrometheusApiTokenWithChan invokes the arms.GetPrometheusApiToken API asynchronously
-// api document: https://help.aliyun.com/api/arms/getprometheusapitoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPrometheusApiTokenWithChan(request *GetPrometheusApiTokenRequest) (<-chan *GetPrometheusApiTokenResponse, <-chan error) {
 	responseChan := make(chan *GetPrometheusApiTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetPrometheusApiTokenWithChan(request *GetPrometheusApiTok
 }
 
 // GetPrometheusApiTokenWithCallback invokes the arms.GetPrometheusApiToken API asynchronously
-// api document: https://help.aliyun.com/api/arms/getprometheusapitoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPrometheusApiTokenWithCallback(request *GetPrometheusApiTokenRequest, callback func(response *GetPrometheusApiTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

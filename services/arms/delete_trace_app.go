@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteTraceApp invokes the arms.DeleteTraceApp API synchronously
-// api document: https://help.aliyun.com/api/arms/deletetraceapp.html
 func (client *Client) DeleteTraceApp(request *DeleteTraceAppRequest) (response *DeleteTraceAppResponse, err error) {
 	response = CreateDeleteTraceAppResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteTraceApp(request *DeleteTraceAppRequest) (response *
 }
 
 // DeleteTraceAppWithChan invokes the arms.DeleteTraceApp API asynchronously
-// api document: https://help.aliyun.com/api/arms/deletetraceapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTraceAppWithChan(request *DeleteTraceAppRequest) (<-chan *DeleteTraceAppResponse, <-chan error) {
 	responseChan := make(chan *DeleteTraceAppResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteTraceAppWithChan(request *DeleteTraceAppRequest) (<-
 }
 
 // DeleteTraceAppWithCallback invokes the arms.DeleteTraceApp API asynchronously
-// api document: https://help.aliyun.com/api/arms/deletetraceapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTraceAppWithCallback(request *DeleteTraceAppRequest, callback func(response *DeleteTraceAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

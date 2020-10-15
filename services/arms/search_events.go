@@ -21,7 +21,6 @@ import (
 )
 
 // SearchEvents invokes the arms.SearchEvents API synchronously
-// api document: https://help.aliyun.com/api/arms/searchevents.html
 func (client *Client) SearchEvents(request *SearchEventsRequest) (response *SearchEventsResponse, err error) {
 	response = CreateSearchEventsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchEvents(request *SearchEventsRequest) (response *Sear
 }
 
 // SearchEventsWithChan invokes the arms.SearchEvents API asynchronously
-// api document: https://help.aliyun.com/api/arms/searchevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchEventsWithChan(request *SearchEventsRequest) (<-chan *SearchEventsResponse, <-chan error) {
 	responseChan := make(chan *SearchEventsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchEventsWithChan(request *SearchEventsRequest) (<-chan
 }
 
 // SearchEventsWithCallback invokes the arms.SearchEvents API asynchronously
-// api document: https://help.aliyun.com/api/arms/searchevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchEventsWithCallback(request *SearchEventsRequest, callback func(response *SearchEventsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

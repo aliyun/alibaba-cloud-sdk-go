@@ -21,7 +21,6 @@ import (
 )
 
 // CreateAlertContact invokes the arms.CreateAlertContact API synchronously
-// api document: https://help.aliyun.com/api/arms/createalertcontact.html
 func (client *Client) CreateAlertContact(request *CreateAlertContactRequest) (response *CreateAlertContactResponse, err error) {
 	response = CreateCreateAlertContactResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateAlertContact(request *CreateAlertContactRequest) (re
 }
 
 // CreateAlertContactWithChan invokes the arms.CreateAlertContact API asynchronously
-// api document: https://help.aliyun.com/api/arms/createalertcontact.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAlertContactWithChan(request *CreateAlertContactRequest) (<-chan *CreateAlertContactResponse, <-chan error) {
 	responseChan := make(chan *CreateAlertContactResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateAlertContactWithChan(request *CreateAlertContactRequ
 }
 
 // CreateAlertContactWithCallback invokes the arms.CreateAlertContact API asynchronously
-// api document: https://help.aliyun.com/api/arms/createalertcontact.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAlertContactWithCallback(request *CreateAlertContactRequest, callback func(response *CreateAlertContactResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

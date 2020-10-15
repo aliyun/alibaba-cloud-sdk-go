@@ -21,7 +21,6 @@ import (
 )
 
 // AddIntegration invokes the arms.AddIntegration API synchronously
-// api document: https://help.aliyun.com/api/arms/addintegration.html
 func (client *Client) AddIntegration(request *AddIntegrationRequest) (response *AddIntegrationResponse, err error) {
 	response = CreateAddIntegrationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddIntegration(request *AddIntegrationRequest) (response *
 }
 
 // AddIntegrationWithChan invokes the arms.AddIntegration API asynchronously
-// api document: https://help.aliyun.com/api/arms/addintegration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddIntegrationWithChan(request *AddIntegrationRequest) (<-chan *AddIntegrationResponse, <-chan error) {
 	responseChan := make(chan *AddIntegrationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddIntegrationWithChan(request *AddIntegrationRequest) (<-
 }
 
 // AddIntegrationWithCallback invokes the arms.AddIntegration API asynchronously
-// api document: https://help.aliyun.com/api/arms/addintegration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddIntegrationWithCallback(request *AddIntegrationRequest, callback func(response *AddIntegrationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

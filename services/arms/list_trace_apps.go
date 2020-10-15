@@ -21,7 +21,6 @@ import (
 )
 
 // ListTraceApps invokes the arms.ListTraceApps API synchronously
-// api document: https://help.aliyun.com/api/arms/listtraceapps.html
 func (client *Client) ListTraceApps(request *ListTraceAppsRequest) (response *ListTraceAppsResponse, err error) {
 	response = CreateListTraceAppsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListTraceApps(request *ListTraceAppsRequest) (response *Li
 }
 
 // ListTraceAppsWithChan invokes the arms.ListTraceApps API asynchronously
-// api document: https://help.aliyun.com/api/arms/listtraceapps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTraceAppsWithChan(request *ListTraceAppsRequest) (<-chan *ListTraceAppsResponse, <-chan error) {
 	responseChan := make(chan *ListTraceAppsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListTraceAppsWithChan(request *ListTraceAppsRequest) (<-ch
 }
 
 // ListTraceAppsWithCallback invokes the arms.ListTraceApps API asynchronously
-// api document: https://help.aliyun.com/api/arms/listtraceapps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTraceAppsWithCallback(request *ListTraceAppsRequest, callback func(response *ListTraceAppsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

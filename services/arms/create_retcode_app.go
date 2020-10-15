@@ -21,7 +21,6 @@ import (
 )
 
 // CreateRetcodeApp invokes the arms.CreateRetcodeApp API synchronously
-// api document: https://help.aliyun.com/api/arms/createretcodeapp.html
 func (client *Client) CreateRetcodeApp(request *CreateRetcodeAppRequest) (response *CreateRetcodeAppResponse, err error) {
 	response = CreateCreateRetcodeAppResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateRetcodeApp(request *CreateRetcodeAppRequest) (respon
 }
 
 // CreateRetcodeAppWithChan invokes the arms.CreateRetcodeApp API asynchronously
-// api document: https://help.aliyun.com/api/arms/createretcodeapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRetcodeAppWithChan(request *CreateRetcodeAppRequest) (<-chan *CreateRetcodeAppResponse, <-chan error) {
 	responseChan := make(chan *CreateRetcodeAppResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateRetcodeAppWithChan(request *CreateRetcodeAppRequest)
 }
 
 // CreateRetcodeAppWithCallback invokes the arms.CreateRetcodeApp API asynchronously
-// api document: https://help.aliyun.com/api/arms/createretcodeapp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRetcodeAppWithCallback(request *CreateRetcodeAppRequest, callback func(response *CreateRetcodeAppResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
