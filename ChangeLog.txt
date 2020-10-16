@@ -1,3 +1,7 @@
+2020-10-16 Version: v1.61.575
+- Generated 2019-01-01 for `HBase`.
+- Support create for serverlesshbase.
+
 2020-10-16 Version: v1.61.574
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Update cert API.

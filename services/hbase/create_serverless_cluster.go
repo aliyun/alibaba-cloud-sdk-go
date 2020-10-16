@@ -93,6 +93,7 @@ type CreateServerlessClusterResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	ClusterId string `json:"ClusterId" xml:"ClusterId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
+	PassWord  string `json:"PassWord" xml:"PassWord"`
 }
 
 // CreateCreateServerlessClusterRequest creates a request to invoke CreateServerlessCluster API
