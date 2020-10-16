@@ -71,15 +71,12 @@ func (client *Client) DeleteOTAModuleWithCallback(request *DeleteOTAModuleReques
 // DeleteOTAModuleRequest is the request struct for api DeleteOTAModule
 type DeleteOTAModuleRequest struct {
 	*requests.RpcRequest
-	AuthConfig      string `position:"Query" name:"AuthConfig"`
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
-	IotId           string `position:"Query" name:"IotId"`
-	IotInstanceId   string `position:"Query" name:"IotInstanceId"`
-	ModuleName      string `position:"Query" name:"ModuleName"`
-	ProductKey      string `position:"Query" name:"ProductKey"`
-	ApiProduct      string `position:"Body" name:"ApiProduct"`
-	ApiRevision     string `position:"Body" name:"ApiRevision"`
-	DeviceName      string `position:"Query" name:"DeviceName"`
+	AuthConfig    string `position:"Query" name:"AuthConfig"`
+	IotInstanceId string `position:"Query" name:"IotInstanceId"`
+	ModuleName    string `position:"Query" name:"ModuleName"`
+	ProductKey    string `position:"Query" name:"ProductKey"`
+	ApiProduct    string `position:"Body" name:"ApiProduct"`
+	ApiRevision   string `position:"Body" name:"ApiRevision"`
 }
 
 // DeleteOTAModuleResponse is the response struct for api DeleteOTAModule
