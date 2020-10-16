@@ -21,7 +21,6 @@ import (
 )
 
 // UnbindTag invokes the push.UnbindTag API synchronously
-// api document: https://help.aliyun.com/api/push/unbindtag.html
 func (client *Client) UnbindTag(request *UnbindTagRequest) (response *UnbindTagResponse, err error) {
 	response = CreateUnbindTagResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnbindTag(request *UnbindTagRequest) (response *UnbindTagR
 }
 
 // UnbindTagWithChan invokes the push.UnbindTag API asynchronously
-// api document: https://help.aliyun.com/api/push/unbindtag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindTagWithChan(request *UnbindTagRequest) (<-chan *UnbindTagResponse, <-chan error) {
 	responseChan := make(chan *UnbindTagResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnbindTagWithChan(request *UnbindTagRequest) (<-chan *Unbi
 }
 
 // UnbindTagWithCallback invokes the push.UnbindTag API asynchronously
-// api document: https://help.aliyun.com/api/push/unbindtag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindTagWithCallback(request *UnbindTagRequest, callback func(response *UnbindTagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

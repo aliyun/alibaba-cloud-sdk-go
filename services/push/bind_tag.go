@@ -21,7 +21,6 @@ import (
 )
 
 // BindTag invokes the push.BindTag API synchronously
-// api document: https://help.aliyun.com/api/push/bindtag.html
 func (client *Client) BindTag(request *BindTagRequest) (response *BindTagResponse, err error) {
 	response = CreateBindTagResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindTag(request *BindTagRequest) (response *BindTagRespons
 }
 
 // BindTagWithChan invokes the push.BindTag API asynchronously
-// api document: https://help.aliyun.com/api/push/bindtag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindTagWithChan(request *BindTagRequest) (<-chan *BindTagResponse, <-chan error) {
 	responseChan := make(chan *BindTagResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindTagWithChan(request *BindTagRequest) (<-chan *BindTagR
 }
 
 // BindTagWithCallback invokes the push.BindTag API asynchronously
-// api document: https://help.aliyun.com/api/push/bindtag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindTagWithCallback(request *BindTagRequest, callback func(response *BindTagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

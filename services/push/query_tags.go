@@ -21,7 +21,6 @@ import (
 )
 
 // QueryTags invokes the push.QueryTags API synchronously
-// api document: https://help.aliyun.com/api/push/querytags.html
 func (client *Client) QueryTags(request *QueryTagsRequest) (response *QueryTagsResponse, err error) {
 	response = CreateQueryTagsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryTags(request *QueryTagsRequest) (response *QueryTagsR
 }
 
 // QueryTagsWithChan invokes the push.QueryTags API asynchronously
-// api document: https://help.aliyun.com/api/push/querytags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTagsWithChan(request *QueryTagsRequest) (<-chan *QueryTagsResponse, <-chan error) {
 	responseChan := make(chan *QueryTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryTagsWithChan(request *QueryTagsRequest) (<-chan *Quer
 }
 
 // QueryTagsWithCallback invokes the push.QueryTags API asynchronously
-// api document: https://help.aliyun.com/api/push/querytags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTagsWithCallback(request *QueryTagsRequest, callback func(response *QueryTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

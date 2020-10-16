@@ -21,7 +21,6 @@ import (
 )
 
 // MassPush invokes the push.MassPush API synchronously
-// api document: https://help.aliyun.com/api/push/masspush.html
 func (client *Client) MassPush(request *MassPushRequest) (response *MassPushResponse, err error) {
 	response = CreateMassPushResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) MassPush(request *MassPushRequest) (response *MassPushResp
 }
 
 // MassPushWithChan invokes the push.MassPush API asynchronously
-// api document: https://help.aliyun.com/api/push/masspush.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MassPushWithChan(request *MassPushRequest) (<-chan *MassPushResponse, <-chan error) {
 	responseChan := make(chan *MassPushResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) MassPushWithChan(request *MassPushRequest) (<-chan *MassPu
 }
 
 // MassPushWithCallback invokes the push.MassPush API asynchronously
-// api document: https://help.aliyun.com/api/push/masspush.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MassPushWithCallback(request *MassPushRequest, callback func(response *MassPushResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -118,10 +113,12 @@ type MassPushPushTask struct {
 	AndroidXiaoMiNotifyBody          string `name:"AndroidXiaoMiNotifyBody"`
 	IOSSubtitle                      string `name:"iOSSubtitle"`
 	IOSRemind                        string `name:"iOSRemind"`
+	AndroidNotificationNotifyId      string `name:"AndroidNotificationNotifyId"`
 	TargetValue                      string `name:"TargetValue"`
 	AndroidMusic                     string `name:"AndroidMusic"`
 	AndroidXiaoMiActivity            string `name:"AndroidXiaoMiActivity"`
 	AndroidXiaoMiNotifyTitle         string `name:"AndroidXiaoMiNotifyTitle"`
+	IOSNotificationCollapseId        string `name:"iOSNotificationCollapseId"`
 	PushType                         string `name:"PushType"`
 }
 

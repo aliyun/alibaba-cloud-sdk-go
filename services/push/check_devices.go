@@ -21,7 +21,6 @@ import (
 )
 
 // CheckDevices invokes the push.CheckDevices API synchronously
-// api document: https://help.aliyun.com/api/push/checkdevices.html
 func (client *Client) CheckDevices(request *CheckDevicesRequest) (response *CheckDevicesResponse, err error) {
 	response = CreateCheckDevicesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckDevices(request *CheckDevicesRequest) (response *Chec
 }
 
 // CheckDevicesWithChan invokes the push.CheckDevices API asynchronously
-// api document: https://help.aliyun.com/api/push/checkdevices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDevicesWithChan(request *CheckDevicesRequest) (<-chan *CheckDevicesResponse, <-chan error) {
 	responseChan := make(chan *CheckDevicesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckDevicesWithChan(request *CheckDevicesRequest) (<-chan
 }
 
 // CheckDevicesWithCallback invokes the push.CheckDevices API asynchronously
-// api document: https://help.aliyun.com/api/push/checkdevices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDevicesWithCallback(request *CheckDevicesRequest, callback func(response *CheckDevicesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

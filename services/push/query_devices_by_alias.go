@@ -21,7 +21,6 @@ import (
 )
 
 // QueryDevicesByAlias invokes the push.QueryDevicesByAlias API synchronously
-// api document: https://help.aliyun.com/api/push/querydevicesbyalias.html
 func (client *Client) QueryDevicesByAlias(request *QueryDevicesByAliasRequest) (response *QueryDevicesByAliasResponse, err error) {
 	response = CreateQueryDevicesByAliasResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryDevicesByAlias(request *QueryDevicesByAliasRequest) (
 }
 
 // QueryDevicesByAliasWithChan invokes the push.QueryDevicesByAlias API asynchronously
-// api document: https://help.aliyun.com/api/push/querydevicesbyalias.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDevicesByAliasWithChan(request *QueryDevicesByAliasRequest) (<-chan *QueryDevicesByAliasResponse, <-chan error) {
 	responseChan := make(chan *QueryDevicesByAliasResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryDevicesByAliasWithChan(request *QueryDevicesByAliasRe
 }
 
 // QueryDevicesByAliasWithCallback invokes the push.QueryDevicesByAlias API asynchronously
-// api document: https://help.aliyun.com/api/push/querydevicesbyalias.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDevicesByAliasWithCallback(request *QueryDevicesByAliasRequest, callback func(response *QueryDevicesByAliasResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

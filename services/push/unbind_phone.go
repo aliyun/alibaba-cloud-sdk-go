@@ -21,7 +21,6 @@ import (
 )
 
 // UnbindPhone invokes the push.UnbindPhone API synchronously
-// api document: https://help.aliyun.com/api/push/unbindphone.html
 func (client *Client) UnbindPhone(request *UnbindPhoneRequest) (response *UnbindPhoneResponse, err error) {
 	response = CreateUnbindPhoneResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnbindPhone(request *UnbindPhoneRequest) (response *Unbind
 }
 
 // UnbindPhoneWithChan invokes the push.UnbindPhone API asynchronously
-// api document: https://help.aliyun.com/api/push/unbindphone.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindPhoneWithChan(request *UnbindPhoneRequest) (<-chan *UnbindPhoneResponse, <-chan error) {
 	responseChan := make(chan *UnbindPhoneResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnbindPhoneWithChan(request *UnbindPhoneRequest) (<-chan *
 }
 
 // UnbindPhoneWithCallback invokes the push.UnbindPhone API asynchronously
-// api document: https://help.aliyun.com/api/push/unbindphone.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindPhoneWithCallback(request *UnbindPhoneRequest, callback func(response *UnbindPhoneResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

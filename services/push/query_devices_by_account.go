@@ -21,7 +21,6 @@ import (
 )
 
 // QueryDevicesByAccount invokes the push.QueryDevicesByAccount API synchronously
-// api document: https://help.aliyun.com/api/push/querydevicesbyaccount.html
 func (client *Client) QueryDevicesByAccount(request *QueryDevicesByAccountRequest) (response *QueryDevicesByAccountResponse, err error) {
 	response = CreateQueryDevicesByAccountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryDevicesByAccount(request *QueryDevicesByAccountReques
 }
 
 // QueryDevicesByAccountWithChan invokes the push.QueryDevicesByAccount API asynchronously
-// api document: https://help.aliyun.com/api/push/querydevicesbyaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDevicesByAccountWithChan(request *QueryDevicesByAccountRequest) (<-chan *QueryDevicesByAccountResponse, <-chan error) {
 	responseChan := make(chan *QueryDevicesByAccountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryDevicesByAccountWithChan(request *QueryDevicesByAccou
 }
 
 // QueryDevicesByAccountWithCallback invokes the push.QueryDevicesByAccount API asynchronously
-// api document: https://help.aliyun.com/api/push/querydevicesbyaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDevicesByAccountWithCallback(request *QueryDevicesByAccountRequest, callback func(response *QueryDevicesByAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

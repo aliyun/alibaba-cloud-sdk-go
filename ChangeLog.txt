@@ -1,3 +1,8 @@
+2020-10-16 Version: v1.61.576
+- Generated 2016-08-01 for `Push`.
+- Supported AndroidNotificationNotifyId for Push and MassPush.
+- Supported iOSNotificationCollapseId for Push and MassPush.
+
 2020-10-16 Version: v1.61.575
 - Generated 2019-01-01 for `HBase`.
 - Support create for serverlesshbase.

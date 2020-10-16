@@ -21,7 +21,6 @@ import (
 )
 
 // ListSummaryApps invokes the push.ListSummaryApps API synchronously
-// api document: https://help.aliyun.com/api/push/listsummaryapps.html
 func (client *Client) ListSummaryApps(request *ListSummaryAppsRequest) (response *ListSummaryAppsResponse, err error) {
 	response = CreateListSummaryAppsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSummaryApps(request *ListSummaryAppsRequest) (response
 }
 
 // ListSummaryAppsWithChan invokes the push.ListSummaryApps API asynchronously
-// api document: https://help.aliyun.com/api/push/listsummaryapps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSummaryAppsWithChan(request *ListSummaryAppsRequest) (<-chan *ListSummaryAppsResponse, <-chan error) {
 	responseChan := make(chan *ListSummaryAppsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSummaryAppsWithChan(request *ListSummaryAppsRequest) (
 }
 
 // ListSummaryAppsWithCallback invokes the push.ListSummaryApps API asynchronously
-// api document: https://help.aliyun.com/api/push/listsummaryapps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSummaryAppsWithCallback(request *ListSummaryAppsRequest, callback func(response *ListSummaryAppsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

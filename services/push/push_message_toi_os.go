@@ -21,7 +21,6 @@ import (
 )
 
 // PushMessageToiOS invokes the push.PushMessageToiOS API synchronously
-// api document: https://help.aliyun.com/api/push/pushmessagetoios.html
 func (client *Client) PushMessageToiOS(request *PushMessageToiOSRequest) (response *PushMessageToiOSResponse, err error) {
 	response = CreatePushMessageToiOSResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PushMessageToiOS(request *PushMessageToiOSRequest) (respon
 }
 
 // PushMessageToiOSWithChan invokes the push.PushMessageToiOS API asynchronously
-// api document: https://help.aliyun.com/api/push/pushmessagetoios.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushMessageToiOSWithChan(request *PushMessageToiOSRequest) (<-chan *PushMessageToiOSResponse, <-chan error) {
 	responseChan := make(chan *PushMessageToiOSResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PushMessageToiOSWithChan(request *PushMessageToiOSRequest)
 }
 
 // PushMessageToiOSWithCallback invokes the push.PushMessageToiOS API asynchronously
-// api document: https://help.aliyun.com/api/push/pushmessagetoios.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushMessageToiOSWithCallback(request *PushMessageToiOSRequest, callback func(response *PushMessageToiOSResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

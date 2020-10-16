@@ -21,7 +21,6 @@ import (
 )
 
 // QueryAliases invokes the push.QueryAliases API synchronously
-// api document: https://help.aliyun.com/api/push/queryaliases.html
 func (client *Client) QueryAliases(request *QueryAliasesRequest) (response *QueryAliasesResponse, err error) {
 	response = CreateQueryAliasesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryAliases(request *QueryAliasesRequest) (response *Quer
 }
 
 // QueryAliasesWithChan invokes the push.QueryAliases API asynchronously
-// api document: https://help.aliyun.com/api/push/queryaliases.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAliasesWithChan(request *QueryAliasesRequest) (<-chan *QueryAliasesResponse, <-chan error) {
 	responseChan := make(chan *QueryAliasesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryAliasesWithChan(request *QueryAliasesRequest) (<-chan
 }
 
 // QueryAliasesWithCallback invokes the push.QueryAliases API asynchronously
-// api document: https://help.aliyun.com/api/push/queryaliases.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAliasesWithCallback(request *QueryAliasesRequest, callback func(response *QueryAliasesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // Push invokes the push.Push API synchronously
-// api document: https://help.aliyun.com/api/push/push.html
 func (client *Client) Push(request *PushRequest) (response *PushResponse, err error) {
 	response = CreatePushResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) Push(request *PushRequest) (response *PushResponse, err er
 }
 
 // PushWithChan invokes the push.Push API asynchronously
-// api document: https://help.aliyun.com/api/push/push.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushWithChan(request *PushRequest) (<-chan *PushResponse, <-chan error) {
 	responseChan := make(chan *PushResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PushWithChan(request *PushRequest) (<-chan *PushResponse, 
 }
 
 // PushWithCallback invokes the push.Push API asynchronously
-// api document: https://help.aliyun.com/api/push/push.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushWithCallback(request *PushRequest, callback func(response *PushResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,6 +98,7 @@ type PushRequest struct {
 	IOSSubtitle                      string           `position:"Query" name:"iOSSubtitle"`
 	IOSRemind                        requests.Boolean `position:"Query" name:"iOSRemind"`
 	AndroidMusic                     string           `position:"Query" name:"AndroidMusic"`
+	IOSNotificationCollapseId        string           `position:"Query" name:"iOSNotificationCollapseId"`
 	PushType                         string           `position:"Query" name:"PushType"`
 	AndroidExtParameters             string           `position:"Query" name:"AndroidExtParameters"`
 	IOSBadge                         requests.Integer `position:"Query" name:"iOSBadge"`
@@ -119,6 +115,7 @@ type PushRequest struct {
 	AndroidRemind                    requests.Boolean `position:"Query" name:"AndroidRemind"`
 	AndroidActivity                  string           `position:"Query" name:"AndroidActivity"`
 	SmsSignName                      string           `position:"Query" name:"SmsSignName"`
+	AndroidNotificationNotifyId      requests.Integer `position:"Query" name:"AndroidNotificationNotifyId"`
 	AppKey                           requests.Integer `position:"Query" name:"AppKey"`
 	TargetValue                      string           `position:"Query" name:"TargetValue"`
 	AndroidXiaoMiActivity            string           `position:"Query" name:"AndroidXiaoMiActivity"`

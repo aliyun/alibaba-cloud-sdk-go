@@ -21,7 +21,6 @@ import (
 )
 
 // QueryDeviceInfo invokes the push.QueryDeviceInfo API synchronously
-// api document: https://help.aliyun.com/api/push/querydeviceinfo.html
 func (client *Client) QueryDeviceInfo(request *QueryDeviceInfoRequest) (response *QueryDeviceInfoResponse, err error) {
 	response = CreateQueryDeviceInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryDeviceInfo(request *QueryDeviceInfoRequest) (response
 }
 
 // QueryDeviceInfoWithChan invokes the push.QueryDeviceInfo API asynchronously
-// api document: https://help.aliyun.com/api/push/querydeviceinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceInfoWithChan(request *QueryDeviceInfoRequest) (<-chan *QueryDeviceInfoResponse, <-chan error) {
 	responseChan := make(chan *QueryDeviceInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryDeviceInfoWithChan(request *QueryDeviceInfoRequest) (
 }
 
 // QueryDeviceInfoWithCallback invokes the push.QueryDeviceInfo API asynchronously
-// api document: https://help.aliyun.com/api/push/querydeviceinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceInfoWithCallback(request *QueryDeviceInfoRequest, callback func(response *QueryDeviceInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

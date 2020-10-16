@@ -21,7 +21,6 @@ import (
 )
 
 // PushNoticeToAndroid invokes the push.PushNoticeToAndroid API synchronously
-// api document: https://help.aliyun.com/api/push/pushnoticetoandroid.html
 func (client *Client) PushNoticeToAndroid(request *PushNoticeToAndroidRequest) (response *PushNoticeToAndroidResponse, err error) {
 	response = CreatePushNoticeToAndroidResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PushNoticeToAndroid(request *PushNoticeToAndroidRequest) (
 }
 
 // PushNoticeToAndroidWithChan invokes the push.PushNoticeToAndroid API asynchronously
-// api document: https://help.aliyun.com/api/push/pushnoticetoandroid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushNoticeToAndroidWithChan(request *PushNoticeToAndroidRequest) (<-chan *PushNoticeToAndroidResponse, <-chan error) {
 	responseChan := make(chan *PushNoticeToAndroidResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PushNoticeToAndroidWithChan(request *PushNoticeToAndroidRe
 }
 
 // PushNoticeToAndroidWithCallback invokes the push.PushNoticeToAndroid API asynchronously
-// api document: https://help.aliyun.com/api/push/pushnoticetoandroid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushNoticeToAndroidWithCallback(request *PushNoticeToAndroidRequest, callback func(response *PushNoticeToAndroidResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

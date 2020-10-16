@@ -21,7 +21,6 @@ import (
 )
 
 // CompleteContinuouslyPush invokes the push.CompleteContinuouslyPush API synchronously
-// api document: https://help.aliyun.com/api/push/completecontinuouslypush.html
 func (client *Client) CompleteContinuouslyPush(request *CompleteContinuouslyPushRequest) (response *CompleteContinuouslyPushResponse, err error) {
 	response = CreateCompleteContinuouslyPushResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CompleteContinuouslyPush(request *CompleteContinuouslyPush
 }
 
 // CompleteContinuouslyPushWithChan invokes the push.CompleteContinuouslyPush API asynchronously
-// api document: https://help.aliyun.com/api/push/completecontinuouslypush.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CompleteContinuouslyPushWithChan(request *CompleteContinuouslyPushRequest) (<-chan *CompleteContinuouslyPushResponse, <-chan error) {
 	responseChan := make(chan *CompleteContinuouslyPushResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CompleteContinuouslyPushWithChan(request *CompleteContinuo
 }
 
 // CompleteContinuouslyPushWithCallback invokes the push.CompleteContinuouslyPush API asynchronously
-// api document: https://help.aliyun.com/api/push/completecontinuouslypush.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CompleteContinuouslyPushWithCallback(request *CompleteContinuouslyPushRequest, callback func(response *CompleteContinuouslyPushResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

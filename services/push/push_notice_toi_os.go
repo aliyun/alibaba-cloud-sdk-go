@@ -21,7 +21,6 @@ import (
 )
 
 // PushNoticeToiOS invokes the push.PushNoticeToiOS API synchronously
-// api document: https://help.aliyun.com/api/push/pushnoticetoios.html
 func (client *Client) PushNoticeToiOS(request *PushNoticeToiOSRequest) (response *PushNoticeToiOSResponse, err error) {
 	response = CreatePushNoticeToiOSResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PushNoticeToiOS(request *PushNoticeToiOSRequest) (response
 }
 
 // PushNoticeToiOSWithChan invokes the push.PushNoticeToiOS API asynchronously
-// api document: https://help.aliyun.com/api/push/pushnoticetoios.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushNoticeToiOSWithChan(request *PushNoticeToiOSRequest) (<-chan *PushNoticeToiOSResponse, <-chan error) {
 	responseChan := make(chan *PushNoticeToiOSResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PushNoticeToiOSWithChan(request *PushNoticeToiOSRequest) (
 }
 
 // PushNoticeToiOSWithCallback invokes the push.PushNoticeToiOS API asynchronously
-// api document: https://help.aliyun.com/api/push/pushnoticetoios.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushNoticeToiOSWithCallback(request *PushNoticeToiOSRequest, callback func(response *PushNoticeToiOSResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

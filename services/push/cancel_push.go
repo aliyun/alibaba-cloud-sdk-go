@@ -21,7 +21,6 @@ import (
 )
 
 // CancelPush invokes the push.CancelPush API synchronously
-// api document: https://help.aliyun.com/api/push/cancelpush.html
 func (client *Client) CancelPush(request *CancelPushRequest) (response *CancelPushResponse, err error) {
 	response = CreateCancelPushResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CancelPush(request *CancelPushRequest) (response *CancelPu
 }
 
 // CancelPushWithChan invokes the push.CancelPush API asynchronously
-// api document: https://help.aliyun.com/api/push/cancelpush.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelPushWithChan(request *CancelPushRequest) (<-chan *CancelPushResponse, <-chan error) {
 	responseChan := make(chan *CancelPushResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CancelPushWithChan(request *CancelPushRequest) (<-chan *Ca
 }
 
 // CancelPushWithCallback invokes the push.CancelPush API asynchronously
-// api document: https://help.aliyun.com/api/push/cancelpush.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelPushWithCallback(request *CancelPushRequest, callback func(response *CancelPushResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // PushMessageToAndroid invokes the push.PushMessageToAndroid API synchronously
-// api document: https://help.aliyun.com/api/push/pushmessagetoandroid.html
 func (client *Client) PushMessageToAndroid(request *PushMessageToAndroidRequest) (response *PushMessageToAndroidResponse, err error) {
 	response = CreatePushMessageToAndroidResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PushMessageToAndroid(request *PushMessageToAndroidRequest)
 }
 
 // PushMessageToAndroidWithChan invokes the push.PushMessageToAndroid API asynchronously
-// api document: https://help.aliyun.com/api/push/pushmessagetoandroid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushMessageToAndroidWithChan(request *PushMessageToAndroidRequest) (<-chan *PushMessageToAndroidResponse, <-chan error) {
 	responseChan := make(chan *PushMessageToAndroidResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PushMessageToAndroidWithChan(request *PushMessageToAndroid
 }
 
 // PushMessageToAndroidWithCallback invokes the push.PushMessageToAndroid API asynchronously
-// api document: https://help.aliyun.com/api/push/pushmessagetoandroid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushMessageToAndroidWithCallback(request *PushMessageToAndroidRequest, callback func(response *PushMessageToAndroidResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

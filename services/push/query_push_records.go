@@ -21,7 +21,6 @@ import (
 )
 
 // QueryPushRecords invokes the push.QueryPushRecords API synchronously
-// api document: https://help.aliyun.com/api/push/querypushrecords.html
 func (client *Client) QueryPushRecords(request *QueryPushRecordsRequest) (response *QueryPushRecordsResponse, err error) {
 	response = CreateQueryPushRecordsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryPushRecords(request *QueryPushRecordsRequest) (respon
 }
 
 // QueryPushRecordsWithChan invokes the push.QueryPushRecords API asynchronously
-// api document: https://help.aliyun.com/api/push/querypushrecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPushRecordsWithChan(request *QueryPushRecordsRequest) (<-chan *QueryPushRecordsResponse, <-chan error) {
 	responseChan := make(chan *QueryPushRecordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryPushRecordsWithChan(request *QueryPushRecordsRequest)
 }
 
 // QueryPushRecordsWithCallback invokes the push.QueryPushRecords API asynchronously
-// api document: https://help.aliyun.com/api/push/querypushrecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPushRecordsWithCallback(request *QueryPushRecordsRequest, callback func(response *QueryPushRecordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // UnbindAlias invokes the push.UnbindAlias API synchronously
-// api document: https://help.aliyun.com/api/push/unbindalias.html
 func (client *Client) UnbindAlias(request *UnbindAliasRequest) (response *UnbindAliasResponse, err error) {
 	response = CreateUnbindAliasResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnbindAlias(request *UnbindAliasRequest) (response *Unbind
 }
 
 // UnbindAliasWithChan invokes the push.UnbindAlias API asynchronously
-// api document: https://help.aliyun.com/api/push/unbindalias.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindAliasWithChan(request *UnbindAliasRequest) (<-chan *UnbindAliasResponse, <-chan error) {
 	responseChan := make(chan *UnbindAliasResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnbindAliasWithChan(request *UnbindAliasRequest) (<-chan *
 }
 
 // UnbindAliasWithCallback invokes the push.UnbindAlias API asynchronously
-// api document: https://help.aliyun.com/api/push/unbindalias.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindAliasWithCallback(request *UnbindAliasRequest, callback func(response *UnbindAliasResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
