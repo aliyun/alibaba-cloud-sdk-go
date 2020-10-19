@@ -25,8 +25,10 @@ type Data struct {
 	Language                string                        `json:"Language" xml:"Language"`
 	NoFirstUppercaseList    string                        `json:"NoFirstUppercaseList" xml:"NoFirstUppercaseList"`
 	DuplicateWords          string                        `json:"DuplicateWords" xml:"DuplicateWords"`
+	ImageData               string                        `json:"ImageData" xml:"ImageData"`
 	AllUppercaseWords       string                        `json:"AllUppercaseWords" xml:"AllUppercaseWords"`
 	Url                     string                        `json:"Url" xml:"Url"`
+	TaskId                  string                        `json:"TaskId" xml:"TaskId"`
 	LanguageQualityScore    string                        `json:"LanguageQualityScore" xml:"LanguageQualityScore"`
 	Orc                     string                        `json:"Orc" xml:"Orc"`
 	WordCount               string                        `json:"WordCount" xml:"WordCount"`
