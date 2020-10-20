@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyFirstRank invokes the opensearch.ModifyFirstRank API synchronously
-// api document: https://help.aliyun.com/api/opensearch/modifyfirstrank.html
 func (client *Client) ModifyFirstRank(request *ModifyFirstRankRequest) (response *ModifyFirstRankResponse, err error) {
 	response = CreateModifyFirstRankResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyFirstRank(request *ModifyFirstRankRequest) (response
 }
 
 // ModifyFirstRankWithChan invokes the opensearch.ModifyFirstRank API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/modifyfirstrank.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFirstRankWithChan(request *ModifyFirstRankRequest) (<-chan *ModifyFirstRankResponse, <-chan error) {
 	responseChan := make(chan *ModifyFirstRankResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyFirstRankWithChan(request *ModifyFirstRankRequest) (
 }
 
 // ModifyFirstRankWithCallback invokes the opensearch.ModifyFirstRank API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/modifyfirstrank.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFirstRankWithCallback(request *ModifyFirstRankRequest, callback func(response *ModifyFirstRankResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

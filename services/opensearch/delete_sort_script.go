@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSortScript invokes the opensearch.DeleteSortScript API synchronously
-// api document: https://help.aliyun.com/api/opensearch/deletesortscript.html
 func (client *Client) DeleteSortScript(request *DeleteSortScriptRequest) (response *DeleteSortScriptResponse, err error) {
 	response = CreateDeleteSortScriptResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSortScript(request *DeleteSortScriptRequest) (respon
 }
 
 // DeleteSortScriptWithChan invokes the opensearch.DeleteSortScript API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/deletesortscript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSortScriptWithChan(request *DeleteSortScriptRequest) (<-chan *DeleteSortScriptResponse, <-chan error) {
 	responseChan := make(chan *DeleteSortScriptResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSortScriptWithChan(request *DeleteSortScriptRequest)
 }
 
 // DeleteSortScriptWithCallback invokes the opensearch.DeleteSortScript API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/deletesortscript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSortScriptWithCallback(request *DeleteSortScriptRequest, callback func(response *DeleteSortScriptResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ListInterventionDictionaryEntries invokes the opensearch.ListInterventionDictionaryEntries API synchronously
-// api document: https://help.aliyun.com/api/opensearch/listinterventiondictionaryentries.html
 func (client *Client) ListInterventionDictionaryEntries(request *ListInterventionDictionaryEntriesRequest) (response *ListInterventionDictionaryEntriesResponse, err error) {
 	response = CreateListInterventionDictionaryEntriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListInterventionDictionaryEntries(request *ListInterventio
 }
 
 // ListInterventionDictionaryEntriesWithChan invokes the opensearch.ListInterventionDictionaryEntries API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listinterventiondictionaryentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListInterventionDictionaryEntriesWithChan(request *ListInterventionDictionaryEntriesRequest) (<-chan *ListInterventionDictionaryEntriesResponse, <-chan error) {
 	responseChan := make(chan *ListInterventionDictionaryEntriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListInterventionDictionaryEntriesWithChan(request *ListInt
 }
 
 // ListInterventionDictionaryEntriesWithCallback invokes the opensearch.ListInterventionDictionaryEntries API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listinterventiondictionaryentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListInterventionDictionaryEntriesWithCallback(request *ListInterventionDictionaryEntriesRequest, callback func(response *ListInterventionDictionaryEntriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,10 @@ func (client *Client) ListInterventionDictionaryEntriesWithCallback(request *Lis
 // ListInterventionDictionaryEntriesRequest is the request struct for api ListInterventionDictionaryEntries
 type ListInterventionDictionaryEntriesRequest struct {
 	*requests.RoaRequest
-	Name string `position:"Path" name:"name"`
-	Word string `position:"Query" name:"word"`
+	Name       string           `position:"Path" name:"name"`
+	PageSize   requests.Integer `position:"Query" name:"pageSize"`
+	Word       string           `position:"Query" name:"word"`
+	PageNumber requests.Integer `position:"Query" name:"pageNumber"`
 }
 
 // ListInterventionDictionaryEntriesResponse is the response struct for api ListInterventionDictionaryEntries

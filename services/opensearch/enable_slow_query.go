@@ -21,7 +21,6 @@ import (
 )
 
 // EnableSlowQuery invokes the opensearch.EnableSlowQuery API synchronously
-// api document: https://help.aliyun.com/api/opensearch/enableslowquery.html
 func (client *Client) EnableSlowQuery(request *EnableSlowQueryRequest) (response *EnableSlowQueryResponse, err error) {
 	response = CreateEnableSlowQueryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnableSlowQuery(request *EnableSlowQueryRequest) (response
 }
 
 // EnableSlowQueryWithChan invokes the opensearch.EnableSlowQuery API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/enableslowquery.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableSlowQueryWithChan(request *EnableSlowQueryRequest) (<-chan *EnableSlowQueryResponse, <-chan error) {
 	responseChan := make(chan *EnableSlowQueryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnableSlowQueryWithChan(request *EnableSlowQueryRequest) (
 }
 
 // EnableSlowQueryWithCallback invokes the opensearch.EnableSlowQuery API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/enableslowquery.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableSlowQueryWithCallback(request *EnableSlowQueryRequest, callback func(response *EnableSlowQueryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

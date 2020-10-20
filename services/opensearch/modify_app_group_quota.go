@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyAppGroupQuota invokes the opensearch.ModifyAppGroupQuota API synchronously
-// api document: https://help.aliyun.com/api/opensearch/modifyappgroupquota.html
 func (client *Client) ModifyAppGroupQuota(request *ModifyAppGroupQuotaRequest) (response *ModifyAppGroupQuotaResponse, err error) {
 	response = CreateModifyAppGroupQuotaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyAppGroupQuota(request *ModifyAppGroupQuotaRequest) (
 }
 
 // ModifyAppGroupQuotaWithChan invokes the opensearch.ModifyAppGroupQuota API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/modifyappgroupquota.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAppGroupQuotaWithChan(request *ModifyAppGroupQuotaRequest) (<-chan *ModifyAppGroupQuotaResponse, <-chan error) {
 	responseChan := make(chan *ModifyAppGroupQuotaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyAppGroupQuotaWithChan(request *ModifyAppGroupQuotaRe
 }
 
 // ModifyAppGroupQuotaWithCallback invokes the opensearch.ModifyAppGroupQuota API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/modifyappgroupquota.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAppGroupQuotaWithCallback(request *ModifyAppGroupQuotaRequest, callback func(response *ModifyAppGroupQuotaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

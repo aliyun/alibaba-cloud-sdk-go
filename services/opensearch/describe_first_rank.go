@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFirstRank invokes the opensearch.DescribeFirstRank API synchronously
-// api document: https://help.aliyun.com/api/opensearch/describefirstrank.html
 func (client *Client) DescribeFirstRank(request *DescribeFirstRankRequest) (response *DescribeFirstRankResponse, err error) {
 	response = CreateDescribeFirstRankResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFirstRank(request *DescribeFirstRankRequest) (resp
 }
 
 // DescribeFirstRankWithChan invokes the opensearch.DescribeFirstRank API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describefirstrank.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFirstRankWithChan(request *DescribeFirstRankRequest) (<-chan *DescribeFirstRankResponse, <-chan error) {
 	responseChan := make(chan *DescribeFirstRankResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFirstRankWithChan(request *DescribeFirstRankReques
 }
 
 // DescribeFirstRankWithCallback invokes the opensearch.DescribeFirstRank API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describefirstrank.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFirstRankWithCallback(request *DescribeFirstRankRequest, callback func(response *DescribeFirstRankResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

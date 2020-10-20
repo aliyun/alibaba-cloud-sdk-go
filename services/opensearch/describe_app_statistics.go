@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAppStatistics invokes the opensearch.DescribeAppStatistics API synchronously
-// api document: https://help.aliyun.com/api/opensearch/describeappstatistics.html
 func (client *Client) DescribeAppStatistics(request *DescribeAppStatisticsRequest) (response *DescribeAppStatisticsResponse, err error) {
 	response = CreateDescribeAppStatisticsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAppStatistics(request *DescribeAppStatisticsReques
 }
 
 // DescribeAppStatisticsWithChan invokes the opensearch.DescribeAppStatistics API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describeappstatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppStatisticsWithChan(request *DescribeAppStatisticsRequest) (<-chan *DescribeAppStatisticsResponse, <-chan error) {
 	responseChan := make(chan *DescribeAppStatisticsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAppStatisticsWithChan(request *DescribeAppStatisti
 }
 
 // DescribeAppStatisticsWithCallback invokes the opensearch.DescribeAppStatistics API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describeappstatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppStatisticsWithCallback(request *DescribeAppStatisticsRequest, callback func(response *DescribeAppStatisticsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

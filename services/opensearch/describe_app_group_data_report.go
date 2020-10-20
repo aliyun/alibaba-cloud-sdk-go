@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAppGroupDataReport invokes the opensearch.DescribeAppGroupDataReport API synchronously
-// api document: https://help.aliyun.com/api/opensearch/describeappgroupdatareport.html
 func (client *Client) DescribeAppGroupDataReport(request *DescribeAppGroupDataReportRequest) (response *DescribeAppGroupDataReportResponse, err error) {
 	response = CreateDescribeAppGroupDataReportResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAppGroupDataReport(request *DescribeAppGroupDataRe
 }
 
 // DescribeAppGroupDataReportWithChan invokes the opensearch.DescribeAppGroupDataReport API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describeappgroupdatareport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppGroupDataReportWithChan(request *DescribeAppGroupDataReportRequest) (<-chan *DescribeAppGroupDataReportResponse, <-chan error) {
 	responseChan := make(chan *DescribeAppGroupDataReportResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAppGroupDataReportWithChan(request *DescribeAppGro
 }
 
 // DescribeAppGroupDataReportWithCallback invokes the opensearch.DescribeAppGroupDataReport API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describeappgroupdatareport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppGroupDataReportWithCallback(request *DescribeAppGroupDataReportRequest, callback func(response *DescribeAppGroupDataReportResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

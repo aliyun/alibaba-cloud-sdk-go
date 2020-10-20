@@ -21,7 +21,6 @@ import (
 )
 
 // ListDeployedAlgorithmModels invokes the opensearch.ListDeployedAlgorithmModels API synchronously
-// api document: https://help.aliyun.com/api/opensearch/listdeployedalgorithmmodels.html
 func (client *Client) ListDeployedAlgorithmModels(request *ListDeployedAlgorithmModelsRequest) (response *ListDeployedAlgorithmModelsResponse, err error) {
 	response = CreateListDeployedAlgorithmModelsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDeployedAlgorithmModels(request *ListDeployedAlgorithm
 }
 
 // ListDeployedAlgorithmModelsWithChan invokes the opensearch.ListDeployedAlgorithmModels API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listdeployedalgorithmmodels.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDeployedAlgorithmModelsWithChan(request *ListDeployedAlgorithmModelsRequest) (<-chan *ListDeployedAlgorithmModelsResponse, <-chan error) {
 	responseChan := make(chan *ListDeployedAlgorithmModelsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDeployedAlgorithmModelsWithChan(request *ListDeployedA
 }
 
 // ListDeployedAlgorithmModelsWithCallback invokes the opensearch.ListDeployedAlgorithmModels API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listdeployedalgorithmmodels.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDeployedAlgorithmModelsWithCallback(request *ListDeployedAlgorithmModelsRequest, callback func(response *ListDeployedAlgorithmModelsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateABTestGroup invokes the opensearch.CreateABTestGroup API synchronously
-// api document: https://help.aliyun.com/api/opensearch/createabtestgroup.html
 func (client *Client) CreateABTestGroup(request *CreateABTestGroupRequest) (response *CreateABTestGroupResponse, err error) {
 	response = CreateCreateABTestGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateABTestGroup(request *CreateABTestGroupRequest) (resp
 }
 
 // CreateABTestGroupWithChan invokes the opensearch.CreateABTestGroup API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/createabtestgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateABTestGroupWithChan(request *CreateABTestGroupRequest) (<-chan *CreateABTestGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateABTestGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateABTestGroupWithChan(request *CreateABTestGroupReques
 }
 
 // CreateABTestGroupWithCallback invokes the opensearch.CreateABTestGroup API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/createabtestgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateABTestGroupWithCallback(request *CreateABTestGroupRequest, callback func(response *CreateABTestGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

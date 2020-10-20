@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DisableSlowQuery invokes the opensearch.DisableSlowQuery API synchronously
-func (client *Client) DisableSlowQuery(request *DisableSlowQueryRequest) (response *DisableSlowQueryResponse, err error) {
-	response = CreateDisableSlowQueryResponse()
+// GetModelReport invokes the opensearch.GetModelReport API synchronously
+func (client *Client) GetModelReport(request *GetModelReportRequest) (response *GetModelReportResponse, err error) {
+	response = CreateGetModelReportResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DisableSlowQueryWithChan invokes the opensearch.DisableSlowQuery API asynchronously
-func (client *Client) DisableSlowQueryWithChan(request *DisableSlowQueryRequest) (<-chan *DisableSlowQueryResponse, <-chan error) {
-	responseChan := make(chan *DisableSlowQueryResponse, 1)
+// GetModelReportWithChan invokes the opensearch.GetModelReport API asynchronously
+func (client *Client) GetModelReportWithChan(request *GetModelReportRequest) (<-chan *GetModelReportResponse, <-chan error) {
+	responseChan := make(chan *GetModelReportResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DisableSlowQuery(request)
+		response, err := client.GetModelReport(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DisableSlowQueryWithChan(request *DisableSlowQueryRequest)
 	return responseChan, errChan
 }
 
-// DisableSlowQueryWithCallback invokes the opensearch.DisableSlowQuery API asynchronously
-func (client *Client) DisableSlowQueryWithCallback(request *DisableSlowQueryRequest, callback func(response *DisableSlowQueryResponse, err error)) <-chan int {
+// GetModelReportWithCallback invokes the opensearch.GetModelReport API asynchronously
+func (client *Client) GetModelReportWithCallback(request *GetModelReportRequest, callback func(response *GetModelReportResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DisableSlowQueryResponse
+		var response *GetModelReportResponse
 		var err error
 		defer close(result)
-		response, err = client.DisableSlowQuery(request)
+		response, err = client.GetModelReport(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,32 +68,33 @@ func (client *Client) DisableSlowQueryWithCallback(request *DisableSlowQueryRequ
 	return result
 }
 
-// DisableSlowQueryRequest is the request struct for api DisableSlowQuery
-type DisableSlowQueryRequest struct {
+// GetModelReportRequest is the request struct for api GetModelReport
+type GetModelReportRequest struct {
 	*requests.RoaRequest
+	ModelName        string `position:"Path" name:"modelName"`
 	AppGroupIdentity string `position:"Path" name:"appGroupIdentity"`
 }
 
-// DisableSlowQueryResponse is the response struct for api DisableSlowQuery
-type DisableSlowQueryResponse struct {
+// GetModelReportResponse is the response struct for api GetModelReport
+type GetModelReportResponse struct {
 	*responses.BaseResponse
 	RequestId string                 `json:"requestId" xml:"requestId"`
 	Result    map[string]interface{} `json:"result" xml:"result"`
 }
 
-// CreateDisableSlowQueryRequest creates a request to invoke DisableSlowQuery API
-func CreateDisableSlowQueryRequest() (request *DisableSlowQueryRequest) {
-	request = &DisableSlowQueryRequest{
+// CreateGetModelReportRequest creates a request to invoke GetModelReport API
+func CreateGetModelReportRequest() (request *GetModelReportRequest) {
+	request = &GetModelReportRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "DisableSlowQuery", "/v4/openapi/app-groups/[appGroupIdentity]/optimizers/slow-query/actions/disable", "opensearch", "openAPI")
-	request.Method = requests.POST
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "GetModelReport", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/report", "opensearch", "openAPI")
+	request.Method = requests.GET
 	return
 }
 
-// CreateDisableSlowQueryResponse creates a response to parse from DisableSlowQuery response
-func CreateDisableSlowQueryResponse() (response *DisableSlowQueryResponse) {
-	response = &DisableSlowQueryResponse{
+// CreateGetModelReportResponse creates a response to parse from GetModelReport response
+func CreateGetModelReportResponse() (response *GetModelReportResponse) {
+	response = &GetModelReportResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

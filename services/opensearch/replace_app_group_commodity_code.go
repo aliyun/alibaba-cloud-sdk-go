@@ -21,7 +21,6 @@ import (
 )
 
 // ReplaceAppGroupCommodityCode invokes the opensearch.ReplaceAppGroupCommodityCode API synchronously
-// api document: https://help.aliyun.com/api/opensearch/replaceappgroupcommoditycode.html
 func (client *Client) ReplaceAppGroupCommodityCode(request *ReplaceAppGroupCommodityCodeRequest) (response *ReplaceAppGroupCommodityCodeResponse, err error) {
 	response = CreateReplaceAppGroupCommodityCodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReplaceAppGroupCommodityCode(request *ReplaceAppGroupCommo
 }
 
 // ReplaceAppGroupCommodityCodeWithChan invokes the opensearch.ReplaceAppGroupCommodityCode API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/replaceappgroupcommoditycode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReplaceAppGroupCommodityCodeWithChan(request *ReplaceAppGroupCommodityCodeRequest) (<-chan *ReplaceAppGroupCommodityCodeResponse, <-chan error) {
 	responseChan := make(chan *ReplaceAppGroupCommodityCodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReplaceAppGroupCommodityCodeWithChan(request *ReplaceAppGr
 }
 
 // ReplaceAppGroupCommodityCodeWithCallback invokes the opensearch.ReplaceAppGroupCommodityCode API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/replaceappgroupcommoditycode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReplaceAppGroupCommodityCodeWithCallback(request *ReplaceAppGroupCommodityCodeRequest, callback func(response *ReplaceAppGroupCommodityCodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

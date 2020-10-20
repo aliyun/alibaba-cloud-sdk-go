@@ -21,7 +21,6 @@ import (
 )
 
 // ListAppGroups invokes the opensearch.ListAppGroups API synchronously
-// api document: https://help.aliyun.com/api/opensearch/listappgroups.html
 func (client *Client) ListAppGroups(request *ListAppGroupsRequest) (response *ListAppGroupsResponse, err error) {
 	response = CreateListAppGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAppGroups(request *ListAppGroupsRequest) (response *Li
 }
 
 // ListAppGroupsWithChan invokes the opensearch.ListAppGroups API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listappgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAppGroupsWithChan(request *ListAppGroupsRequest) (<-chan *ListAppGroupsResponse, <-chan error) {
 	responseChan := make(chan *ListAppGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAppGroupsWithChan(request *ListAppGroupsRequest) (<-ch
 }
 
 // ListAppGroupsWithCallback invokes the opensearch.ListAppGroups API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listappgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAppGroupsWithCallback(request *ListAppGroupsRequest, callback func(response *ListAppGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

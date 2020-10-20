@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeScheduledTask invokes the opensearch.DescribeScheduledTask API synchronously
-// api document: https://help.aliyun.com/api/opensearch/describescheduledtask.html
 func (client *Client) DescribeScheduledTask(request *DescribeScheduledTaskRequest) (response *DescribeScheduledTaskResponse, err error) {
 	response = CreateDescribeScheduledTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeScheduledTask(request *DescribeScheduledTaskReques
 }
 
 // DescribeScheduledTaskWithChan invokes the opensearch.DescribeScheduledTask API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describescheduledtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScheduledTaskWithChan(request *DescribeScheduledTaskRequest) (<-chan *DescribeScheduledTaskResponse, <-chan error) {
 	responseChan := make(chan *DescribeScheduledTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeScheduledTaskWithChan(request *DescribeScheduledTa
 }
 
 // DescribeScheduledTaskWithCallback invokes the opensearch.DescribeScheduledTask API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describescheduledtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScheduledTaskWithCallback(request *DescribeScheduledTaskRequest, callback func(response *DescribeScheduledTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

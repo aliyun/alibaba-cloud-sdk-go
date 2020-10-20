@@ -21,7 +21,6 @@ import (
 )
 
 // TrainModel invokes the opensearch.TrainModel API synchronously
-// api document: https://help.aliyun.com/api/opensearch/trainmodel.html
 func (client *Client) TrainModel(request *TrainModelRequest) (response *TrainModelResponse, err error) {
 	response = CreateTrainModelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TrainModel(request *TrainModelRequest) (response *TrainMod
 }
 
 // TrainModelWithChan invokes the opensearch.TrainModel API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/trainmodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TrainModelWithChan(request *TrainModelRequest) (<-chan *TrainModelResponse, <-chan error) {
 	responseChan := make(chan *TrainModelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TrainModelWithChan(request *TrainModelRequest) (<-chan *Tr
 }
 
 // TrainModelWithCallback invokes the opensearch.TrainModel API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/trainmodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TrainModelWithCallback(request *TrainModelRequest, callback func(response *TrainModelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

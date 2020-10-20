@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateFetchFields invokes the opensearch.UpdateFetchFields API synchronously
-// api document: https://help.aliyun.com/api/opensearch/updatefetchfields.html
 func (client *Client) UpdateFetchFields(request *UpdateFetchFieldsRequest) (response *UpdateFetchFieldsResponse, err error) {
 	response = CreateUpdateFetchFieldsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateFetchFields(request *UpdateFetchFieldsRequest) (resp
 }
 
 // UpdateFetchFieldsWithChan invokes the opensearch.UpdateFetchFields API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/updatefetchfields.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateFetchFieldsWithChan(request *UpdateFetchFieldsRequest) (<-chan *UpdateFetchFieldsResponse, <-chan error) {
 	responseChan := make(chan *UpdateFetchFieldsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateFetchFieldsWithChan(request *UpdateFetchFieldsReques
 }
 
 // UpdateFetchFieldsWithCallback invokes the opensearch.UpdateFetchFields API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/updatefetchfields.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateFetchFieldsWithCallback(request *UpdateFetchFieldsRequest, callback func(response *UpdateFetchFieldsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

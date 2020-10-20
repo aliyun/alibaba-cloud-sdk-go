@@ -21,7 +21,6 @@ import (
 )
 
 // ListQueryProcessorNers invokes the opensearch.ListQueryProcessorNers API synchronously
-// api document: https://help.aliyun.com/api/opensearch/listqueryprocessorners.html
 func (client *Client) ListQueryProcessorNers(request *ListQueryProcessorNersRequest) (response *ListQueryProcessorNersResponse, err error) {
 	response = CreateListQueryProcessorNersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListQueryProcessorNers(request *ListQueryProcessorNersRequ
 }
 
 // ListQueryProcessorNersWithChan invokes the opensearch.ListQueryProcessorNers API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listqueryprocessorners.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListQueryProcessorNersWithChan(request *ListQueryProcessorNersRequest) (<-chan *ListQueryProcessorNersResponse, <-chan error) {
 	responseChan := make(chan *ListQueryProcessorNersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListQueryProcessorNersWithChan(request *ListQueryProcessor
 }
 
 // ListQueryProcessorNersWithCallback invokes the opensearch.ListQueryProcessorNers API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listqueryprocessorners.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListQueryProcessorNersWithCallback(request *ListQueryProcessorNersRequest, callback func(response *ListQueryProcessorNersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

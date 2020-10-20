@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeABTestScene invokes the opensearch.DescribeABTestScene API synchronously
-// api document: https://help.aliyun.com/api/opensearch/describeabtestscene.html
 func (client *Client) DescribeABTestScene(request *DescribeABTestSceneRequest) (response *DescribeABTestSceneResponse, err error) {
 	response = CreateDescribeABTestSceneResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeABTestScene(request *DescribeABTestSceneRequest) (
 }
 
 // DescribeABTestSceneWithChan invokes the opensearch.DescribeABTestScene API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describeabtestscene.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeABTestSceneWithChan(request *DescribeABTestSceneRequest) (<-chan *DescribeABTestSceneResponse, <-chan error) {
 	responseChan := make(chan *DescribeABTestSceneResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeABTestSceneWithChan(request *DescribeABTestSceneRe
 }
 
 // DescribeABTestSceneWithCallback invokes the opensearch.DescribeABTestScene API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describeabtestscene.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeABTestSceneWithCallback(request *DescribeABTestSceneRequest, callback func(response *DescribeABTestSceneResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

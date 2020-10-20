@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeQueryProcessor invokes the opensearch.DescribeQueryProcessor API synchronously
-// api document: https://help.aliyun.com/api/opensearch/describequeryprocessor.html
 func (client *Client) DescribeQueryProcessor(request *DescribeQueryProcessorRequest) (response *DescribeQueryProcessorResponse, err error) {
 	response = CreateDescribeQueryProcessorResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeQueryProcessor(request *DescribeQueryProcessorRequ
 }
 
 // DescribeQueryProcessorWithChan invokes the opensearch.DescribeQueryProcessor API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describequeryprocessor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeQueryProcessorWithChan(request *DescribeQueryProcessorRequest) (<-chan *DescribeQueryProcessorResponse, <-chan error) {
 	responseChan := make(chan *DescribeQueryProcessorResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeQueryProcessorWithChan(request *DescribeQueryProce
 }
 
 // DescribeQueryProcessorWithCallback invokes the opensearch.DescribeQueryProcessor API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describequeryprocessor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeQueryProcessorWithCallback(request *DescribeQueryProcessorRequest, callback func(response *DescribeQueryProcessorResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

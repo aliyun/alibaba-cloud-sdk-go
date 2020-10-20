@@ -21,7 +21,6 @@ import (
 )
 
 // ListUserAnalyzers invokes the opensearch.ListUserAnalyzers API synchronously
-// api document: https://help.aliyun.com/api/opensearch/listuseranalyzers.html
 func (client *Client) ListUserAnalyzers(request *ListUserAnalyzersRequest) (response *ListUserAnalyzersResponse, err error) {
 	response = CreateListUserAnalyzersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListUserAnalyzers(request *ListUserAnalyzersRequest) (resp
 }
 
 // ListUserAnalyzersWithChan invokes the opensearch.ListUserAnalyzers API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listuseranalyzers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUserAnalyzersWithChan(request *ListUserAnalyzersRequest) (<-chan *ListUserAnalyzersResponse, <-chan error) {
 	responseChan := make(chan *ListUserAnalyzersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListUserAnalyzersWithChan(request *ListUserAnalyzersReques
 }
 
 // ListUserAnalyzersWithCallback invokes the opensearch.ListUserAnalyzers API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listuseranalyzers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUserAnalyzersWithCallback(request *ListUserAnalyzersRequest, callback func(response *ListUserAnalyzersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

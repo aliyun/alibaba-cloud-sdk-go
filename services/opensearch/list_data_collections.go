@@ -21,7 +21,6 @@ import (
 )
 
 // ListDataCollections invokes the opensearch.ListDataCollections API synchronously
-// api document: https://help.aliyun.com/api/opensearch/listdatacollections.html
 func (client *Client) ListDataCollections(request *ListDataCollectionsRequest) (response *ListDataCollectionsResponse, err error) {
 	response = CreateListDataCollectionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDataCollections(request *ListDataCollectionsRequest) (
 }
 
 // ListDataCollectionsWithChan invokes the opensearch.ListDataCollections API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listdatacollections.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDataCollectionsWithChan(request *ListDataCollectionsRequest) (<-chan *ListDataCollectionsResponse, <-chan error) {
 	responseChan := make(chan *ListDataCollectionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDataCollectionsWithChan(request *ListDataCollectionsRe
 }
 
 // ListDataCollectionsWithCallback invokes the opensearch.ListDataCollections API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listdatacollections.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDataCollectionsWithCallback(request *ListDataCollectionsRequest, callback func(response *ListDataCollectionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

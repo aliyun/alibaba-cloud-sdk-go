@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveFirstRank invokes the opensearch.RemoveFirstRank API synchronously
-// api document: https://help.aliyun.com/api/opensearch/removefirstrank.html
 func (client *Client) RemoveFirstRank(request *RemoveFirstRankRequest) (response *RemoveFirstRankResponse, err error) {
 	response = CreateRemoveFirstRankResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveFirstRank(request *RemoveFirstRankRequest) (response
 }
 
 // RemoveFirstRankWithChan invokes the opensearch.RemoveFirstRank API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/removefirstrank.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveFirstRankWithChan(request *RemoveFirstRankRequest) (<-chan *RemoveFirstRankResponse, <-chan error) {
 	responseChan := make(chan *RemoveFirstRankResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveFirstRankWithChan(request *RemoveFirstRankRequest) (
 }
 
 // RemoveFirstRankWithCallback invokes the opensearch.RemoveFirstRank API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/removefirstrank.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveFirstRankWithCallback(request *RemoveFirstRankRequest, callback func(response *RemoveFirstRankResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

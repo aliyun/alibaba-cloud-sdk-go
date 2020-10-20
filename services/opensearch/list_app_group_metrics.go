@@ -21,7 +21,6 @@ import (
 )
 
 // ListAppGroupMetrics invokes the opensearch.ListAppGroupMetrics API synchronously
-// api document: https://help.aliyun.com/api/opensearch/listappgroupmetrics.html
 func (client *Client) ListAppGroupMetrics(request *ListAppGroupMetricsRequest) (response *ListAppGroupMetricsResponse, err error) {
 	response = CreateListAppGroupMetricsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAppGroupMetrics(request *ListAppGroupMetricsRequest) (
 }
 
 // ListAppGroupMetricsWithChan invokes the opensearch.ListAppGroupMetrics API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listappgroupmetrics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAppGroupMetricsWithChan(request *ListAppGroupMetricsRequest) (<-chan *ListAppGroupMetricsResponse, <-chan error) {
 	responseChan := make(chan *ListAppGroupMetricsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAppGroupMetricsWithChan(request *ListAppGroupMetricsRe
 }
 
 // ListAppGroupMetricsWithCallback invokes the opensearch.ListAppGroupMetrics API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listappgroupmetrics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAppGroupMetricsWithCallback(request *ListAppGroupMetricsRequest, callback func(response *ListAppGroupMetricsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAppGroup invokes the opensearch.DescribeAppGroup API synchronously
-// api document: https://help.aliyun.com/api/opensearch/describeappgroup.html
 func (client *Client) DescribeAppGroup(request *DescribeAppGroupRequest) (response *DescribeAppGroupResponse, err error) {
 	response = CreateDescribeAppGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAppGroup(request *DescribeAppGroupRequest) (respon
 }
 
 // DescribeAppGroupWithChan invokes the opensearch.DescribeAppGroup API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describeappgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppGroupWithChan(request *DescribeAppGroupRequest) (<-chan *DescribeAppGroupResponse, <-chan error) {
 	responseChan := make(chan *DescribeAppGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAppGroupWithChan(request *DescribeAppGroupRequest)
 }
 
 // DescribeAppGroupWithCallback invokes the opensearch.DescribeAppGroup API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describeappgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppGroupWithCallback(request *DescribeAppGroupRequest, callback func(response *DescribeAppGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

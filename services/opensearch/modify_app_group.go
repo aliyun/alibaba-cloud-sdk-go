@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyAppGroup invokes the opensearch.ModifyAppGroup API synchronously
-// api document: https://help.aliyun.com/api/opensearch/modifyappgroup.html
 func (client *Client) ModifyAppGroup(request *ModifyAppGroupRequest) (response *ModifyAppGroupResponse, err error) {
 	response = CreateModifyAppGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyAppGroup(request *ModifyAppGroupRequest) (response *
 }
 
 // ModifyAppGroupWithChan invokes the opensearch.ModifyAppGroup API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/modifyappgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAppGroupWithChan(request *ModifyAppGroupRequest) (<-chan *ModifyAppGroupResponse, <-chan error) {
 	responseChan := make(chan *ModifyAppGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyAppGroupWithChan(request *ModifyAppGroupRequest) (<-
 }
 
 // ModifyAppGroupWithCallback invokes the opensearch.ModifyAppGroup API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/modifyappgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAppGroupWithCallback(request *ModifyAppGroupRequest, callback func(response *ModifyAppGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

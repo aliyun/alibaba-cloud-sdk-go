@@ -21,7 +21,6 @@ import (
 )
 
 // ListModels invokes the opensearch.ListModels API synchronously
-// api document: https://help.aliyun.com/api/opensearch/listmodels.html
 func (client *Client) ListModels(request *ListModelsRequest) (response *ListModelsResponse, err error) {
 	response = CreateListModelsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListModels(request *ListModelsRequest) (response *ListMode
 }
 
 // ListModelsWithChan invokes the opensearch.ListModels API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listmodels.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListModelsWithChan(request *ListModelsRequest) (<-chan *ListModelsResponse, <-chan error) {
 	responseChan := make(chan *ListModelsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListModelsWithChan(request *ListModelsRequest) (<-chan *Li
 }
 
 // ListModelsWithCallback invokes the opensearch.ListModels API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listmodels.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListModelsWithCallback(request *ListModelsRequest, callback func(response *ListModelsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

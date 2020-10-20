@@ -21,7 +21,6 @@ import (
 )
 
 // ListInterventionDictionaryRelatedEntities invokes the opensearch.ListInterventionDictionaryRelatedEntities API synchronously
-// api document: https://help.aliyun.com/api/opensearch/listinterventiondictionaryrelatedentities.html
 func (client *Client) ListInterventionDictionaryRelatedEntities(request *ListInterventionDictionaryRelatedEntitiesRequest) (response *ListInterventionDictionaryRelatedEntitiesResponse, err error) {
 	response = CreateListInterventionDictionaryRelatedEntitiesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListInterventionDictionaryRelatedEntities(request *ListInt
 }
 
 // ListInterventionDictionaryRelatedEntitiesWithChan invokes the opensearch.ListInterventionDictionaryRelatedEntities API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listinterventiondictionaryrelatedentities.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListInterventionDictionaryRelatedEntitiesWithChan(request *ListInterventionDictionaryRelatedEntitiesRequest) (<-chan *ListInterventionDictionaryRelatedEntitiesResponse, <-chan error) {
 	responseChan := make(chan *ListInterventionDictionaryRelatedEntitiesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListInterventionDictionaryRelatedEntitiesWithChan(request 
 }
 
 // ListInterventionDictionaryRelatedEntitiesWithCallback invokes the opensearch.ListInterventionDictionaryRelatedEntities API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listinterventiondictionaryrelatedentities.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListInterventionDictionaryRelatedEntitiesWithCallback(request *ListInterventionDictionaryRelatedEntitiesRequest, callback func(response *ListInterventionDictionaryRelatedEntitiesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

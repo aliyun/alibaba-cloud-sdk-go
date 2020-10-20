@@ -21,7 +21,6 @@ import (
 )
 
 // CreateModel invokes the opensearch.CreateModel API synchronously
-// api document: https://help.aliyun.com/api/opensearch/createmodel.html
 func (client *Client) CreateModel(request *CreateModelRequest) (response *CreateModelResponse, err error) {
 	response = CreateCreateModelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateModel(request *CreateModelRequest) (response *Create
 }
 
 // CreateModelWithChan invokes the opensearch.CreateModel API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/createmodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateModelWithChan(request *CreateModelRequest) (<-chan *CreateModelResponse, <-chan error) {
 	responseChan := make(chan *CreateModelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateModelWithChan(request *CreateModelRequest) (<-chan *
 }
 
 // CreateModelWithCallback invokes the opensearch.CreateModel API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/createmodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateModelWithCallback(request *CreateModelRequest, callback func(response *CreateModelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

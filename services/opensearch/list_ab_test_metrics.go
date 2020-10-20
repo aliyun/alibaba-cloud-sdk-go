@@ -21,7 +21,6 @@ import (
 )
 
 // ListABTestMetrics invokes the opensearch.ListABTestMetrics API synchronously
-// api document: https://help.aliyun.com/api/opensearch/listabtestmetrics.html
 func (client *Client) ListABTestMetrics(request *ListABTestMetricsRequest) (response *ListABTestMetricsResponse, err error) {
 	response = CreateListABTestMetricsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListABTestMetrics(request *ListABTestMetricsRequest) (resp
 }
 
 // ListABTestMetricsWithChan invokes the opensearch.ListABTestMetrics API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listabtestmetrics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListABTestMetricsWithChan(request *ListABTestMetricsRequest) (<-chan *ListABTestMetricsResponse, <-chan error) {
 	responseChan := make(chan *ListABTestMetricsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListABTestMetricsWithChan(request *ListABTestMetricsReques
 }
 
 // ListABTestMetricsWithCallback invokes the opensearch.ListABTestMetrics API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listabtestmetrics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListABTestMetricsWithCallback(request *ListABTestMetricsRequest, callback func(response *ListABTestMetricsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

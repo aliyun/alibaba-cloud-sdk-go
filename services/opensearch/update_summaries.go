@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateSummaries invokes the opensearch.UpdateSummaries API synchronously
-// api document: https://help.aliyun.com/api/opensearch/updatesummaries.html
 func (client *Client) UpdateSummaries(request *UpdateSummariesRequest) (response *UpdateSummariesResponse, err error) {
 	response = CreateUpdateSummariesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateSummaries(request *UpdateSummariesRequest) (response
 }
 
 // UpdateSummariesWithChan invokes the opensearch.UpdateSummaries API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/updatesummaries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSummariesWithChan(request *UpdateSummariesRequest) (<-chan *UpdateSummariesResponse, <-chan error) {
 	responseChan := make(chan *UpdateSummariesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateSummariesWithChan(request *UpdateSummariesRequest) (
 }
 
 // UpdateSummariesWithCallback invokes the opensearch.UpdateSummaries API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/updatesummaries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSummariesWithCallback(request *UpdateSummariesRequest, callback func(response *UpdateSummariesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

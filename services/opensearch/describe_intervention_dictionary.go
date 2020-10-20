@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInterventionDictionary invokes the opensearch.DescribeInterventionDictionary API synchronously
-// api document: https://help.aliyun.com/api/opensearch/describeinterventiondictionary.html
 func (client *Client) DescribeInterventionDictionary(request *DescribeInterventionDictionaryRequest) (response *DescribeInterventionDictionaryResponse, err error) {
 	response = CreateDescribeInterventionDictionaryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInterventionDictionary(request *DescribeInterventi
 }
 
 // DescribeInterventionDictionaryWithChan invokes the opensearch.DescribeInterventionDictionary API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describeinterventiondictionary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInterventionDictionaryWithChan(request *DescribeInterventionDictionaryRequest) (<-chan *DescribeInterventionDictionaryResponse, <-chan error) {
 	responseChan := make(chan *DescribeInterventionDictionaryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInterventionDictionaryWithChan(request *DescribeIn
 }
 
 // DescribeInterventionDictionaryWithCallback invokes the opensearch.DescribeInterventionDictionary API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describeinterventiondictionary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInterventionDictionaryWithCallback(request *DescribeInterventionDictionaryRequest, callback func(response *DescribeInterventionDictionaryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

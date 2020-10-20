@@ -21,7 +21,6 @@ import (
 )
 
 // CreateABTestScene invokes the opensearch.CreateABTestScene API synchronously
-// api document: https://help.aliyun.com/api/opensearch/createabtestscene.html
 func (client *Client) CreateABTestScene(request *CreateABTestSceneRequest) (response *CreateABTestSceneResponse, err error) {
 	response = CreateCreateABTestSceneResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateABTestScene(request *CreateABTestSceneRequest) (resp
 }
 
 // CreateABTestSceneWithChan invokes the opensearch.CreateABTestScene API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/createabtestscene.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateABTestSceneWithChan(request *CreateABTestSceneRequest) (<-chan *CreateABTestSceneResponse, <-chan error) {
 	responseChan := make(chan *CreateABTestSceneResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateABTestSceneWithChan(request *CreateABTestSceneReques
 }
 
 // CreateABTestSceneWithCallback invokes the opensearch.CreateABTestScene API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/createabtestscene.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateABTestSceneWithCallback(request *CreateABTestSceneRequest, callback func(response *CreateABTestSceneResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

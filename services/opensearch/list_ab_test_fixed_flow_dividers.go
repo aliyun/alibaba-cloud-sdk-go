@@ -21,7 +21,6 @@ import (
 )
 
 // ListABTestFixedFlowDividers invokes the opensearch.ListABTestFixedFlowDividers API synchronously
-// api document: https://help.aliyun.com/api/opensearch/listabtestfixedflowdividers.html
 func (client *Client) ListABTestFixedFlowDividers(request *ListABTestFixedFlowDividersRequest) (response *ListABTestFixedFlowDividersResponse, err error) {
 	response = CreateListABTestFixedFlowDividersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListABTestFixedFlowDividers(request *ListABTestFixedFlowDi
 }
 
 // ListABTestFixedFlowDividersWithChan invokes the opensearch.ListABTestFixedFlowDividers API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listabtestfixedflowdividers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListABTestFixedFlowDividersWithChan(request *ListABTestFixedFlowDividersRequest) (<-chan *ListABTestFixedFlowDividersResponse, <-chan error) {
 	responseChan := make(chan *ListABTestFixedFlowDividersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListABTestFixedFlowDividersWithChan(request *ListABTestFix
 }
 
 // ListABTestFixedFlowDividersWithCallback invokes the opensearch.ListABTestFixedFlowDividers API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listabtestfixedflowdividers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListABTestFixedFlowDividersWithCallback(request *ListABTestFixedFlowDividersRequest, callback func(response *ListABTestFixedFlowDividersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

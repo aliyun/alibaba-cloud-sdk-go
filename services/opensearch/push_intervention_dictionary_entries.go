@@ -21,7 +21,6 @@ import (
 )
 
 // PushInterventionDictionaryEntries invokes the opensearch.PushInterventionDictionaryEntries API synchronously
-// api document: https://help.aliyun.com/api/opensearch/pushinterventiondictionaryentries.html
 func (client *Client) PushInterventionDictionaryEntries(request *PushInterventionDictionaryEntriesRequest) (response *PushInterventionDictionaryEntriesResponse, err error) {
 	response = CreatePushInterventionDictionaryEntriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PushInterventionDictionaryEntries(request *PushInterventio
 }
 
 // PushInterventionDictionaryEntriesWithChan invokes the opensearch.PushInterventionDictionaryEntries API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/pushinterventiondictionaryentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushInterventionDictionaryEntriesWithChan(request *PushInterventionDictionaryEntriesRequest) (<-chan *PushInterventionDictionaryEntriesResponse, <-chan error) {
 	responseChan := make(chan *PushInterventionDictionaryEntriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PushInterventionDictionaryEntriesWithChan(request *PushInt
 }
 
 // PushInterventionDictionaryEntriesWithCallback invokes the opensearch.PushInterventionDictionaryEntries API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/pushinterventiondictionaryentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushInterventionDictionaryEntriesWithCallback(request *PushInterventionDictionaryEntriesRequest, callback func(response *PushInterventionDictionaryEntriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

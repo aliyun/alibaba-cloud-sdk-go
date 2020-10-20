@@ -21,7 +21,6 @@ import (
 )
 
 // SaveSortScriptFile invokes the opensearch.SaveSortScriptFile API synchronously
-// api document: https://help.aliyun.com/api/opensearch/savesortscriptfile.html
 func (client *Client) SaveSortScriptFile(request *SaveSortScriptFileRequest) (response *SaveSortScriptFileResponse, err error) {
 	response = CreateSaveSortScriptFileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveSortScriptFile(request *SaveSortScriptFileRequest) (re
 }
 
 // SaveSortScriptFileWithChan invokes the opensearch.SaveSortScriptFile API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/savesortscriptfile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSortScriptFileWithChan(request *SaveSortScriptFileRequest) (<-chan *SaveSortScriptFileResponse, <-chan error) {
 	responseChan := make(chan *SaveSortScriptFileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveSortScriptFileWithChan(request *SaveSortScriptFileRequ
 }
 
 // SaveSortScriptFileWithCallback invokes the opensearch.SaveSortScriptFile API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/savesortscriptfile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSortScriptFileWithCallback(request *SaveSortScriptFileRequest, callback func(response *SaveSortScriptFileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) SaveSortScriptFileWithCallback(request *SaveSortScriptFile
 type SaveSortScriptFileRequest struct {
 	*requests.RoaRequest
 	AppVersionId     string `position:"Path" name:"appVersionId"`
+	FileName         string `position:"Path" name:"fileName"`
 	ScriptName       string `position:"Path" name:"scriptName"`
 	AppGroupIdentity string `position:"Path" name:"appGroupIdentity"`
 }
@@ -92,7 +88,7 @@ func CreateSaveSortScriptFileRequest() (request *SaveSortScriptFileRequest) {
 	request = &SaveSortScriptFileRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "SaveSortScriptFile", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/files/src/UserScorer.cava", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "SaveSortScriptFile", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/files/src/[fileName]", "opensearch", "openAPI")
 	request.Method = requests.PUT
 	return
 }

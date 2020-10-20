@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveAppGroup invokes the opensearch.RemoveAppGroup API synchronously
-// api document: https://help.aliyun.com/api/opensearch/removeappgroup.html
 func (client *Client) RemoveAppGroup(request *RemoveAppGroupRequest) (response *RemoveAppGroupResponse, err error) {
 	response = CreateRemoveAppGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveAppGroup(request *RemoveAppGroupRequest) (response *
 }
 
 // RemoveAppGroupWithChan invokes the opensearch.RemoveAppGroup API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/removeappgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveAppGroupWithChan(request *RemoveAppGroupRequest) (<-chan *RemoveAppGroupResponse, <-chan error) {
 	responseChan := make(chan *RemoveAppGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveAppGroupWithChan(request *RemoveAppGroupRequest) (<-
 }
 
 // RemoveAppGroupWithCallback invokes the opensearch.RemoveAppGroup API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/removeappgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveAppGroupWithCallback(request *RemoveAppGroupRequest, callback func(response *RemoveAppGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

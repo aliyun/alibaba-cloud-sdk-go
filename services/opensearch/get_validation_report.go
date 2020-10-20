@@ -21,7 +21,6 @@ import (
 )
 
 // GetValidationReport invokes the opensearch.GetValidationReport API synchronously
-// api document: https://help.aliyun.com/api/opensearch/getvalidationreport.html
 func (client *Client) GetValidationReport(request *GetValidationReportRequest) (response *GetValidationReportResponse, err error) {
 	response = CreateGetValidationReportResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetValidationReport(request *GetValidationReportRequest) (
 }
 
 // GetValidationReportWithChan invokes the opensearch.GetValidationReport API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/getvalidationreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetValidationReportWithChan(request *GetValidationReportRequest) (<-chan *GetValidationReportResponse, <-chan error) {
 	responseChan := make(chan *GetValidationReportResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetValidationReportWithChan(request *GetValidationReportRe
 }
 
 // GetValidationReportWithCallback invokes the opensearch.GetValidationReport API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/getvalidationreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetValidationReportWithCallback(request *GetValidationReportRequest, callback func(response *GetValidationReportResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

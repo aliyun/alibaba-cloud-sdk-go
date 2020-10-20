@@ -21,7 +21,6 @@ import (
 )
 
 // PushUserAnalyzerEntries invokes the opensearch.PushUserAnalyzerEntries API synchronously
-// api document: https://help.aliyun.com/api/opensearch/pushuseranalyzerentries.html
 func (client *Client) PushUserAnalyzerEntries(request *PushUserAnalyzerEntriesRequest) (response *PushUserAnalyzerEntriesResponse, err error) {
 	response = CreatePushUserAnalyzerEntriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PushUserAnalyzerEntries(request *PushUserAnalyzerEntriesRe
 }
 
 // PushUserAnalyzerEntriesWithChan invokes the opensearch.PushUserAnalyzerEntries API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/pushuseranalyzerentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushUserAnalyzerEntriesWithChan(request *PushUserAnalyzerEntriesRequest) (<-chan *PushUserAnalyzerEntriesResponse, <-chan error) {
 	responseChan := make(chan *PushUserAnalyzerEntriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PushUserAnalyzerEntriesWithChan(request *PushUserAnalyzerE
 }
 
 // PushUserAnalyzerEntriesWithCallback invokes the opensearch.PushUserAnalyzerEntries API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/pushuseranalyzerentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushUserAnalyzerEntriesWithCallback(request *PushUserAnalyzerEntriesRequest, callback func(response *PushUserAnalyzerEntriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

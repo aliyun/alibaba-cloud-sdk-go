@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveQueryProcessor invokes the opensearch.RemoveQueryProcessor API synchronously
-// api document: https://help.aliyun.com/api/opensearch/removequeryprocessor.html
 func (client *Client) RemoveQueryProcessor(request *RemoveQueryProcessorRequest) (response *RemoveQueryProcessorResponse, err error) {
 	response = CreateRemoveQueryProcessorResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveQueryProcessor(request *RemoveQueryProcessorRequest)
 }
 
 // RemoveQueryProcessorWithChan invokes the opensearch.RemoveQueryProcessor API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/removequeryprocessor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveQueryProcessorWithChan(request *RemoveQueryProcessorRequest) (<-chan *RemoveQueryProcessorResponse, <-chan error) {
 	responseChan := make(chan *RemoveQueryProcessorResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveQueryProcessorWithChan(request *RemoveQueryProcessor
 }
 
 // RemoveQueryProcessorWithCallback invokes the opensearch.RemoveQueryProcessor API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/removequeryprocessor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveQueryProcessorWithCallback(request *RemoveQueryProcessorRequest, callback func(response *RemoveQueryProcessorResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

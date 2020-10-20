@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyQueryProcessor invokes the opensearch.ModifyQueryProcessor API synchronously
-// api document: https://help.aliyun.com/api/opensearch/modifyqueryprocessor.html
 func (client *Client) ModifyQueryProcessor(request *ModifyQueryProcessorRequest) (response *ModifyQueryProcessorResponse, err error) {
 	response = CreateModifyQueryProcessorResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyQueryProcessor(request *ModifyQueryProcessorRequest)
 }
 
 // ModifyQueryProcessorWithChan invokes the opensearch.ModifyQueryProcessor API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/modifyqueryprocessor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyQueryProcessorWithChan(request *ModifyQueryProcessorRequest) (<-chan *ModifyQueryProcessorResponse, <-chan error) {
 	responseChan := make(chan *ModifyQueryProcessorResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyQueryProcessorWithChan(request *ModifyQueryProcessor
 }
 
 // ModifyQueryProcessorWithCallback invokes the opensearch.ModifyQueryProcessor API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/modifyqueryprocessor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyQueryProcessorWithCallback(request *ModifyQueryProcessorRequest, callback func(response *ModifyQueryProcessorResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

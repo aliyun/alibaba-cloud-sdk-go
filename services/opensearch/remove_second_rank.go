@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveSecondRank invokes the opensearch.RemoveSecondRank API synchronously
-// api document: https://help.aliyun.com/api/opensearch/removesecondrank.html
 func (client *Client) RemoveSecondRank(request *RemoveSecondRankRequest) (response *RemoveSecondRankResponse, err error) {
 	response = CreateRemoveSecondRankResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveSecondRank(request *RemoveSecondRankRequest) (respon
 }
 
 // RemoveSecondRankWithChan invokes the opensearch.RemoveSecondRank API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/removesecondrank.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveSecondRankWithChan(request *RemoveSecondRankRequest) (<-chan *RemoveSecondRankResponse, <-chan error) {
 	responseChan := make(chan *RemoveSecondRankResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveSecondRankWithChan(request *RemoveSecondRankRequest)
 }
 
 // RemoveSecondRankWithCallback invokes the opensearch.RemoveSecondRank API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/removesecondrank.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveSecondRankWithCallback(request *RemoveSecondRankRequest, callback func(response *RemoveSecondRankResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ModifyModel invokes the opensearch.ModifyModel API synchronously
-func (client *Client) ModifyModel(request *ModifyModelRequest) (response *ModifyModelResponse, err error) {
-	response = CreateModifyModelResponse()
+// RankPreviewQuery invokes the opensearch.RankPreviewQuery API synchronously
+func (client *Client) RankPreviewQuery(request *RankPreviewQueryRequest) (response *RankPreviewQueryResponse, err error) {
+	response = CreateRankPreviewQueryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ModifyModelWithChan invokes the opensearch.ModifyModel API asynchronously
-func (client *Client) ModifyModelWithChan(request *ModifyModelRequest) (<-chan *ModifyModelResponse, <-chan error) {
-	responseChan := make(chan *ModifyModelResponse, 1)
+// RankPreviewQueryWithChan invokes the opensearch.RankPreviewQuery API asynchronously
+func (client *Client) RankPreviewQueryWithChan(request *RankPreviewQueryRequest) (<-chan *RankPreviewQueryResponse, <-chan error) {
+	responseChan := make(chan *RankPreviewQueryResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ModifyModel(request)
+		response, err := client.RankPreviewQuery(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ModifyModelWithChan(request *ModifyModelRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// ModifyModelWithCallback invokes the opensearch.ModifyModel API asynchronously
-func (client *Client) ModifyModelWithCallback(request *ModifyModelRequest, callback func(response *ModifyModelResponse, err error)) <-chan int {
+// RankPreviewQueryWithCallback invokes the opensearch.RankPreviewQuery API asynchronously
+func (client *Client) RankPreviewQueryWithCallback(request *RankPreviewQueryRequest, callback func(response *RankPreviewQueryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ModifyModelResponse
+		var response *RankPreviewQueryResponse
 		var err error
 		defer close(result)
-		response, err = client.ModifyModel(request)
+		response, err = client.RankPreviewQuery(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,33 +68,32 @@ func (client *Client) ModifyModelWithCallback(request *ModifyModelRequest, callb
 	return result
 }
 
-// ModifyModelRequest is the request struct for api ModifyModel
-type ModifyModelRequest struct {
+// RankPreviewQueryRequest is the request struct for api RankPreviewQuery
+type RankPreviewQueryRequest struct {
 	*requests.RoaRequest
 	ModelName        string `position:"Path" name:"modelName"`
 	AppGroupIdentity string `position:"Path" name:"appGroupIdentity"`
 }
 
-// ModifyModelResponse is the response struct for api ModifyModel
-type ModifyModelResponse struct {
+// RankPreviewQueryResponse is the response struct for api RankPreviewQuery
+type RankPreviewQueryResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"requestId" xml:"requestId"`
-	Result    string `json:"result" xml:"result"`
 }
 
-// CreateModifyModelRequest creates a request to invoke ModifyModel API
-func CreateModifyModelRequest() (request *ModifyModelRequest) {
-	request = &ModifyModelRequest{
+// CreateRankPreviewQueryRequest creates a request to invoke RankPreviewQuery API
+func CreateRankPreviewQueryRequest() (request *RankPreviewQueryRequest) {
+	request = &RankPreviewQueryRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ModifyModel", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]", "opensearch", "openAPI")
-	request.Method = requests.PUT
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "RankPreviewQuery", "/v4/openapi/app-groups/[appGroupIdentity]/algorithm/models/[modelName]/actions/query-rank", "opensearch", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
-// CreateModifyModelResponse creates a response to parse from ModifyModel response
-func CreateModifyModelResponse() (response *ModifyModelResponse) {
-	response = &ModifyModelResponse{
+// CreateRankPreviewQueryResponse creates a response to parse from RankPreviewQuery response
+func CreateRankPreviewQueryResponse() (response *RankPreviewQueryResponse) {
+	response = &RankPreviewQueryResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

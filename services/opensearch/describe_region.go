@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRegion invokes the opensearch.DescribeRegion API synchronously
-// api document: https://help.aliyun.com/api/opensearch/describeregion.html
 func (client *Client) DescribeRegion(request *DescribeRegionRequest) (response *DescribeRegionResponse, err error) {
 	response = CreateDescribeRegionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRegion(request *DescribeRegionRequest) (response *
 }
 
 // DescribeRegionWithChan invokes the opensearch.DescribeRegion API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describeregion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRegionWithChan(request *DescribeRegionRequest) (<-chan *DescribeRegionResponse, <-chan error) {
 	responseChan := make(chan *DescribeRegionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRegionWithChan(request *DescribeRegionRequest) (<-
 }
 
 // DescribeRegionWithCallback invokes the opensearch.DescribeRegion API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describeregion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRegionWithCallback(request *DescribeRegionRequest, callback func(response *DescribeRegionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDataCollction invokes the opensearch.DescribeDataCollction API synchronously
-// api document: https://help.aliyun.com/api/opensearch/describedatacollction.html
 func (client *Client) DescribeDataCollction(request *DescribeDataCollctionRequest) (response *DescribeDataCollctionResponse, err error) {
 	response = CreateDescribeDataCollctionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDataCollction(request *DescribeDataCollctionReques
 }
 
 // DescribeDataCollctionWithChan invokes the opensearch.DescribeDataCollction API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describedatacollction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataCollctionWithChan(request *DescribeDataCollctionRequest) (<-chan *DescribeDataCollctionResponse, <-chan error) {
 	responseChan := make(chan *DescribeDataCollctionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDataCollctionWithChan(request *DescribeDataCollcti
 }
 
 // DescribeDataCollctionWithCallback invokes the opensearch.DescribeDataCollction API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describedatacollction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataCollctionWithCallback(request *DescribeDataCollctionRequest, callback func(response *DescribeDataCollctionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

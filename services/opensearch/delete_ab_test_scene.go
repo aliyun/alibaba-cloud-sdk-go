@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteABTestScene invokes the opensearch.DeleteABTestScene API synchronously
-// api document: https://help.aliyun.com/api/opensearch/deleteabtestscene.html
 func (client *Client) DeleteABTestScene(request *DeleteABTestSceneRequest) (response *DeleteABTestSceneResponse, err error) {
 	response = CreateDeleteABTestSceneResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteABTestScene(request *DeleteABTestSceneRequest) (resp
 }
 
 // DeleteABTestSceneWithChan invokes the opensearch.DeleteABTestScene API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/deleteabtestscene.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteABTestSceneWithChan(request *DeleteABTestSceneRequest) (<-chan *DeleteABTestSceneResponse, <-chan error) {
 	responseChan := make(chan *DeleteABTestSceneResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteABTestSceneWithChan(request *DeleteABTestSceneReques
 }
 
 // DeleteABTestSceneWithCallback invokes the opensearch.DeleteABTestScene API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/deleteabtestscene.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteABTestSceneWithCallback(request *DeleteABTestSceneRequest, callback func(response *DeleteABTestSceneResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ListAppGroupErrors invokes the opensearch.ListAppGroupErrors API synchronously
-func (client *Client) ListAppGroupErrors(request *ListAppGroupErrorsRequest) (response *ListAppGroupErrorsResponse, err error) {
-	response = CreateListAppGroupErrorsResponse()
+// ListStatisticReport invokes the opensearch.ListStatisticReport API synchronously
+func (client *Client) ListStatisticReport(request *ListStatisticReportRequest) (response *ListStatisticReportResponse, err error) {
+	response = CreateListStatisticReportResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ListAppGroupErrorsWithChan invokes the opensearch.ListAppGroupErrors API asynchronously
-func (client *Client) ListAppGroupErrorsWithChan(request *ListAppGroupErrorsRequest) (<-chan *ListAppGroupErrorsResponse, <-chan error) {
-	responseChan := make(chan *ListAppGroupErrorsResponse, 1)
+// ListStatisticReportWithChan invokes the opensearch.ListStatisticReport API asynchronously
+func (client *Client) ListStatisticReportWithChan(request *ListStatisticReportRequest) (<-chan *ListStatisticReportResponse, <-chan error) {
+	responseChan := make(chan *ListStatisticReportResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListAppGroupErrors(request)
+		response, err := client.ListStatisticReport(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ListAppGroupErrorsWithChan(request *ListAppGroupErrorsRequ
 	return responseChan, errChan
 }
 
-// ListAppGroupErrorsWithCallback invokes the opensearch.ListAppGroupErrors API asynchronously
-func (client *Client) ListAppGroupErrorsWithCallback(request *ListAppGroupErrorsRequest, callback func(response *ListAppGroupErrorsResponse, err error)) <-chan int {
+// ListStatisticReportWithCallback invokes the opensearch.ListStatisticReport API asynchronously
+func (client *Client) ListStatisticReportWithCallback(request *ListStatisticReportRequest, callback func(response *ListStatisticReportResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListAppGroupErrorsResponse
+		var response *ListStatisticReportResponse
 		var err error
 		defer close(result)
-		response, err = client.ListAppGroupErrors(request)
+		response, err = client.ListStatisticReport(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,38 +68,40 @@ func (client *Client) ListAppGroupErrorsWithCallback(request *ListAppGroupErrors
 	return result
 }
 
-// ListAppGroupErrorsRequest is the request struct for api ListAppGroupErrors
-type ListAppGroupErrorsRequest struct {
+// ListStatisticReportRequest is the request struct for api ListStatisticReport
+type ListStatisticReportRequest struct {
 	*requests.RoaRequest
-	AppId            string           `position:"Query" name:"appId"`
+	Columns          string           `position:"Query" name:"columns"`
+	Query            string           `position:"Query" name:"query"`
 	PageSize         requests.Integer `position:"Query" name:"pageSize"`
+	ModuleName       string           `position:"Path" name:"moduleName"`
+	EndTime          requests.Integer `position:"Query" name:"endTime"`
 	StartTime        requests.Integer `position:"Query" name:"startTime"`
-	StopTime         requests.Integer `position:"Query" name:"stopTime"`
 	AppGroupIdentity string           `position:"Path" name:"appGroupIdentity"`
 	PageNumber       requests.Integer `position:"Query" name:"pageNumber"`
 }
 
-// ListAppGroupErrorsResponse is the response struct for api ListAppGroupErrors
-type ListAppGroupErrorsResponse struct {
+// ListStatisticReportResponse is the response struct for api ListStatisticReport
+type ListStatisticReportResponse struct {
 	*responses.BaseResponse
 	RequestId  string                   `json:"requestId" xml:"requestId"`
 	TotalCount int64                    `json:"totalCount" xml:"totalCount"`
 	Result     []map[string]interface{} `json:"result" xml:"result"`
 }
 
-// CreateListAppGroupErrorsRequest creates a request to invoke ListAppGroupErrors API
-func CreateListAppGroupErrorsRequest() (request *ListAppGroupErrorsRequest) {
-	request = &ListAppGroupErrorsRequest{
+// CreateListStatisticReportRequest creates a request to invoke ListStatisticReport API
+func CreateListStatisticReportRequest() (request *ListStatisticReportRequest) {
+	request = &ListStatisticReportRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListAppGroupErrors", "/v4/openapi/app-groups/[appGroupIdentity]/errors", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "ListStatisticReport", "/v4/openapi/app-groups/[appGroupIdentity]/statistic-report/[moduleName]", "opensearch", "openAPI")
 	request.Method = requests.GET
 	return
 }
 
-// CreateListAppGroupErrorsResponse creates a response to parse from ListAppGroupErrors response
-func CreateListAppGroupErrorsResponse() (response *ListAppGroupErrorsResponse) {
-	response = &ListAppGroupErrorsResponse{
+// CreateListStatisticReportResponse creates a response to parse from ListStatisticReport response
+func CreateListStatisticReportResponse() (response *ListStatisticReportResponse) {
+	response = &ListStatisticReportResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

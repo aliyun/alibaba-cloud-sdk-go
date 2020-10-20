@@ -21,7 +21,6 @@ import (
 )
 
 // CreateSortScript invokes the opensearch.CreateSortScript API synchronously
-// api document: https://help.aliyun.com/api/opensearch/createsortscript.html
 func (client *Client) CreateSortScript(request *CreateSortScriptRequest) (response *CreateSortScriptResponse, err error) {
 	response = CreateCreateSortScriptResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateSortScript(request *CreateSortScriptRequest) (respon
 }
 
 // CreateSortScriptWithChan invokes the opensearch.CreateSortScript API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/createsortscript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSortScriptWithChan(request *CreateSortScriptRequest) (<-chan *CreateSortScriptResponse, <-chan error) {
 	responseChan := make(chan *CreateSortScriptResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateSortScriptWithChan(request *CreateSortScriptRequest)
 }
 
 // CreateSortScriptWithCallback invokes the opensearch.CreateSortScript API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/createsortscript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSortScriptWithCallback(request *CreateSortScriptRequest, callback func(response *CreateSortScriptResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

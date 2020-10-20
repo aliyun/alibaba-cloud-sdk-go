@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateABTestFixedFlowDividers invokes the opensearch.UpdateABTestFixedFlowDividers API synchronously
-// api document: https://help.aliyun.com/api/opensearch/updateabtestfixedflowdividers.html
 func (client *Client) UpdateABTestFixedFlowDividers(request *UpdateABTestFixedFlowDividersRequest) (response *UpdateABTestFixedFlowDividersResponse, err error) {
 	response = CreateUpdateABTestFixedFlowDividersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateABTestFixedFlowDividers(request *UpdateABTestFixedFl
 }
 
 // UpdateABTestFixedFlowDividersWithChan invokes the opensearch.UpdateABTestFixedFlowDividers API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/updateabtestfixedflowdividers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateABTestFixedFlowDividersWithChan(request *UpdateABTestFixedFlowDividersRequest) (<-chan *UpdateABTestFixedFlowDividersResponse, <-chan error) {
 	responseChan := make(chan *UpdateABTestFixedFlowDividersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateABTestFixedFlowDividersWithChan(request *UpdateABTes
 }
 
 // UpdateABTestFixedFlowDividersWithCallback invokes the opensearch.UpdateABTestFixedFlowDividers API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/updateabtestfixedflowdividers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateABTestFixedFlowDividersWithCallback(request *UpdateABTestFixedFlowDividersRequest, callback func(response *UpdateABTestFixedFlowDividersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

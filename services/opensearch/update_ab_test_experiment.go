@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateABTestExperiment invokes the opensearch.UpdateABTestExperiment API synchronously
-// api document: https://help.aliyun.com/api/opensearch/updateabtestexperiment.html
 func (client *Client) UpdateABTestExperiment(request *UpdateABTestExperimentRequest) (response *UpdateABTestExperimentResponse, err error) {
 	response = CreateUpdateABTestExperimentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateABTestExperiment(request *UpdateABTestExperimentRequ
 }
 
 // UpdateABTestExperimentWithChan invokes the opensearch.UpdateABTestExperiment API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/updateabtestexperiment.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateABTestExperimentWithChan(request *UpdateABTestExperimentRequest) (<-chan *UpdateABTestExperimentResponse, <-chan error) {
 	responseChan := make(chan *UpdateABTestExperimentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateABTestExperimentWithChan(request *UpdateABTestExperi
 }
 
 // UpdateABTestExperimentWithCallback invokes the opensearch.UpdateABTestExperiment API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/updateabtestexperiment.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateABTestExperimentWithCallback(request *UpdateABTestExperimentRequest, callback func(response *UpdateABTestExperimentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

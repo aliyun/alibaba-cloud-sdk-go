@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveInterventionDictionary invokes the opensearch.RemoveInterventionDictionary API synchronously
-// api document: https://help.aliyun.com/api/opensearch/removeinterventiondictionary.html
 func (client *Client) RemoveInterventionDictionary(request *RemoveInterventionDictionaryRequest) (response *RemoveInterventionDictionaryResponse, err error) {
 	response = CreateRemoveInterventionDictionaryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveInterventionDictionary(request *RemoveInterventionDi
 }
 
 // RemoveInterventionDictionaryWithChan invokes the opensearch.RemoveInterventionDictionary API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/removeinterventiondictionary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveInterventionDictionaryWithChan(request *RemoveInterventionDictionaryRequest) (<-chan *RemoveInterventionDictionaryResponse, <-chan error) {
 	responseChan := make(chan *RemoveInterventionDictionaryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveInterventionDictionaryWithChan(request *RemoveInterv
 }
 
 // RemoveInterventionDictionaryWithCallback invokes the opensearch.RemoveInterventionDictionary API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/removeinterventiondictionary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveInterventionDictionaryWithCallback(request *RemoveInterventionDictionaryRequest, callback func(response *RemoveInterventionDictionaryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

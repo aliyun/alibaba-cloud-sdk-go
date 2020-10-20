@@ -21,7 +21,6 @@ import (
 )
 
 // ListSortExpressions invokes the opensearch.ListSortExpressions API synchronously
-// api document: https://help.aliyun.com/api/opensearch/listsortexpressions.html
 func (client *Client) ListSortExpressions(request *ListSortExpressionsRequest) (response *ListSortExpressionsResponse, err error) {
 	response = CreateListSortExpressionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSortExpressions(request *ListSortExpressionsRequest) (
 }
 
 // ListSortExpressionsWithChan invokes the opensearch.ListSortExpressions API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listsortexpressions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSortExpressionsWithChan(request *ListSortExpressionsRequest) (<-chan *ListSortExpressionsResponse, <-chan error) {
 	responseChan := make(chan *ListSortExpressionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSortExpressionsWithChan(request *ListSortExpressionsRe
 }
 
 // ListSortExpressionsWithCallback invokes the opensearch.ListSortExpressions API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listsortexpressions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSortExpressionsWithCallback(request *ListSortExpressionsRequest, callback func(response *ListSortExpressionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

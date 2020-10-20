@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteABTestGroup invokes the opensearch.DeleteABTestGroup API synchronously
-// api document: https://help.aliyun.com/api/opensearch/deleteabtestgroup.html
 func (client *Client) DeleteABTestGroup(request *DeleteABTestGroupRequest) (response *DeleteABTestGroupResponse, err error) {
 	response = CreateDeleteABTestGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteABTestGroup(request *DeleteABTestGroupRequest) (resp
 }
 
 // DeleteABTestGroupWithChan invokes the opensearch.DeleteABTestGroup API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/deleteabtestgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteABTestGroupWithChan(request *DeleteABTestGroupRequest) (<-chan *DeleteABTestGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteABTestGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteABTestGroupWithChan(request *DeleteABTestGroupReques
 }
 
 // DeleteABTestGroupWithCallback invokes the opensearch.DeleteABTestGroup API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/deleteabtestgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteABTestGroupWithCallback(request *DeleteABTestGroupRequest, callback func(response *DeleteABTestGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

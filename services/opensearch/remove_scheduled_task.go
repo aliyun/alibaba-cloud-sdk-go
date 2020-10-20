@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveScheduledTask invokes the opensearch.RemoveScheduledTask API synchronously
-// api document: https://help.aliyun.com/api/opensearch/removescheduledtask.html
 func (client *Client) RemoveScheduledTask(request *RemoveScheduledTaskRequest) (response *RemoveScheduledTaskResponse, err error) {
 	response = CreateRemoveScheduledTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveScheduledTask(request *RemoveScheduledTaskRequest) (
 }
 
 // RemoveScheduledTaskWithChan invokes the opensearch.RemoveScheduledTask API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/removescheduledtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveScheduledTaskWithChan(request *RemoveScheduledTaskRequest) (<-chan *RemoveScheduledTaskResponse, <-chan error) {
 	responseChan := make(chan *RemoveScheduledTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveScheduledTaskWithChan(request *RemoveScheduledTaskRe
 }
 
 // RemoveScheduledTaskWithCallback invokes the opensearch.RemoveScheduledTask API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/removescheduledtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveScheduledTaskWithCallback(request *RemoveScheduledTaskRequest, callback func(response *RemoveScheduledTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

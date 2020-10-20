@@ -21,7 +21,6 @@ import (
 )
 
 // RenewAppGroup invokes the opensearch.RenewAppGroup API synchronously
-// api document: https://help.aliyun.com/api/opensearch/renewappgroup.html
 func (client *Client) RenewAppGroup(request *RenewAppGroupRequest) (response *RenewAppGroupResponse, err error) {
 	response = CreateRenewAppGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RenewAppGroup(request *RenewAppGroupRequest) (response *Re
 }
 
 // RenewAppGroupWithChan invokes the opensearch.RenewAppGroup API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/renewappgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenewAppGroupWithChan(request *RenewAppGroupRequest) (<-chan *RenewAppGroupResponse, <-chan error) {
 	responseChan := make(chan *RenewAppGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RenewAppGroupWithChan(request *RenewAppGroupRequest) (<-ch
 }
 
 // RenewAppGroupWithCallback invokes the opensearch.RenewAppGroup API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/renewappgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenewAppGroupWithCallback(request *RenewAppGroupRequest, callback func(response *RenewAppGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ListQueryProcessors invokes the opensearch.ListQueryProcessors API synchronously
-// api document: https://help.aliyun.com/api/opensearch/listqueryprocessors.html
 func (client *Client) ListQueryProcessors(request *ListQueryProcessorsRequest) (response *ListQueryProcessorsResponse, err error) {
 	response = CreateListQueryProcessorsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListQueryProcessors(request *ListQueryProcessorsRequest) (
 }
 
 // ListQueryProcessorsWithChan invokes the opensearch.ListQueryProcessors API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listqueryprocessors.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListQueryProcessorsWithChan(request *ListQueryProcessorsRequest) (<-chan *ListQueryProcessorsResponse, <-chan error) {
 	responseChan := make(chan *ListQueryProcessorsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListQueryProcessorsWithChan(request *ListQueryProcessorsRe
 }
 
 // ListQueryProcessorsWithCallback invokes the opensearch.ListQueryProcessors API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listqueryprocessors.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListQueryProcessorsWithCallback(request *ListQueryProcessorsRequest, callback func(response *ListQueryProcessorsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

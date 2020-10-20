@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySecondRank invokes the opensearch.ModifySecondRank API synchronously
-// api document: https://help.aliyun.com/api/opensearch/modifysecondrank.html
 func (client *Client) ModifySecondRank(request *ModifySecondRankRequest) (response *ModifySecondRankResponse, err error) {
 	response = CreateModifySecondRankResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySecondRank(request *ModifySecondRankRequest) (respon
 }
 
 // ModifySecondRankWithChan invokes the opensearch.ModifySecondRank API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/modifysecondrank.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecondRankWithChan(request *ModifySecondRankRequest) (<-chan *ModifySecondRankResponse, <-chan error) {
 	responseChan := make(chan *ModifySecondRankResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySecondRankWithChan(request *ModifySecondRankRequest)
 }
 
 // ModifySecondRankWithCallback invokes the opensearch.ModifySecondRank API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/modifysecondrank.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecondRankWithCallback(request *ModifySecondRankRequest, callback func(response *ModifySecondRankResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

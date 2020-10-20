@@ -21,7 +21,6 @@ import (
 )
 
 // ListApps invokes the opensearch.ListApps API synchronously
-// api document: https://help.aliyun.com/api/opensearch/listapps.html
 func (client *Client) ListApps(request *ListAppsRequest) (response *ListAppsResponse, err error) {
 	response = CreateListAppsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListApps(request *ListAppsRequest) (response *ListAppsResp
 }
 
 // ListAppsWithChan invokes the opensearch.ListApps API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listapps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAppsWithChan(request *ListAppsRequest) (<-chan *ListAppsResponse, <-chan error) {
 	responseChan := make(chan *ListAppsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAppsWithChan(request *ListAppsRequest) (<-chan *ListAp
 }
 
 // ListAppsWithCallback invokes the opensearch.ListApps API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/listapps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAppsWithCallback(request *ListAppsRequest, callback func(response *ListAppsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUserAnalyzer invokes the opensearch.DescribeUserAnalyzer API synchronously
-// api document: https://help.aliyun.com/api/opensearch/describeuseranalyzer.html
 func (client *Client) DescribeUserAnalyzer(request *DescribeUserAnalyzerRequest) (response *DescribeUserAnalyzerResponse, err error) {
 	response = CreateDescribeUserAnalyzerResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUserAnalyzer(request *DescribeUserAnalyzerRequest)
 }
 
 // DescribeUserAnalyzerWithChan invokes the opensearch.DescribeUserAnalyzer API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describeuseranalyzer.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserAnalyzerWithChan(request *DescribeUserAnalyzerRequest) (<-chan *DescribeUserAnalyzerResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserAnalyzerResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUserAnalyzerWithChan(request *DescribeUserAnalyzer
 }
 
 // DescribeUserAnalyzerWithCallback invokes the opensearch.DescribeUserAnalyzer API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describeuseranalyzer.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserAnalyzerWithCallback(request *DescribeUserAnalyzerRequest, callback func(response *DescribeUserAnalyzerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

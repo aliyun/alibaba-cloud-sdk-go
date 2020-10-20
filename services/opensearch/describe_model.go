@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeModel invokes the opensearch.DescribeModel API synchronously
-// api document: https://help.aliyun.com/api/opensearch/describemodel.html
 func (client *Client) DescribeModel(request *DescribeModelRequest) (response *DescribeModelResponse, err error) {
 	response = CreateDescribeModelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeModel(request *DescribeModelRequest) (response *De
 }
 
 // DescribeModelWithChan invokes the opensearch.DescribeModel API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describemodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeModelWithChan(request *DescribeModelRequest) (<-chan *DescribeModelResponse, <-chan error) {
 	responseChan := make(chan *DescribeModelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeModelWithChan(request *DescribeModelRequest) (<-ch
 }
 
 // DescribeModelWithCallback invokes the opensearch.DescribeModel API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/describemodel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeModelWithCallback(request *DescribeModelRequest, callback func(response *DescribeModelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // GetSortScriptFile invokes the opensearch.GetSortScriptFile API synchronously
-// api document: https://help.aliyun.com/api/opensearch/getsortscriptfile.html
 func (client *Client) GetSortScriptFile(request *GetSortScriptFileRequest) (response *GetSortScriptFileResponse, err error) {
 	response = CreateGetSortScriptFileResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetSortScriptFile(request *GetSortScriptFileRequest) (resp
 }
 
 // GetSortScriptFileWithChan invokes the opensearch.GetSortScriptFile API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/getsortscriptfile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSortScriptFileWithChan(request *GetSortScriptFileRequest) (<-chan *GetSortScriptFileResponse, <-chan error) {
 	responseChan := make(chan *GetSortScriptFileResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetSortScriptFileWithChan(request *GetSortScriptFileReques
 }
 
 // GetSortScriptFileWithCallback invokes the opensearch.GetSortScriptFile API asynchronously
-// api document: https://help.aliyun.com/api/opensearch/getsortscriptfile.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSortScriptFileWithCallback(request *GetSortScriptFileRequest, callback func(response *GetSortScriptFileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) GetSortScriptFileWithCallback(request *GetSortScriptFileRe
 type GetSortScriptFileRequest struct {
 	*requests.RoaRequest
 	AppVersionId     string `position:"Path" name:"appVersionId"`
+	FileName         string `position:"Path" name:"fileName"`
 	ScriptName       string `position:"Path" name:"scriptName"`
 	AppGroupIdentity string `position:"Path" name:"appGroupIdentity"`
 }
@@ -93,7 +89,7 @@ func CreateGetSortScriptFileRequest() (request *GetSortScriptFileRequest) {
 	request = &GetSortScriptFileRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("OpenSearch", "2017-12-25", "GetSortScriptFile", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/files/src/UserScorer.cava", "opensearch", "openAPI")
+	request.InitWithApiInfo("OpenSearch", "2017-12-25", "GetSortScriptFile", "/v4/openapi/app-groups/[appGroupIdentity]/apps/[appVersionId]/sort-scripts/[scriptName]/files/src/[fileName]", "opensearch", "openAPI")
 	request.Method = requests.GET
 	return
 }
