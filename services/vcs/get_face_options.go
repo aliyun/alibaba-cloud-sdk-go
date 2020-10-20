@@ -88,7 +88,7 @@ func CreateGetFaceOptionsRequest() (request *GetFaceOptionsRequest) {
 	request = &GetFaceOptionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "GetFaceOptions", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetFaceOptions", "", "")
 	request.Method = requests.POST
 	return
 }

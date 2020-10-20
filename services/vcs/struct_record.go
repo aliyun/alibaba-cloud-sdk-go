@@ -19,22 +19,33 @@ package vcs
 type Record struct {
 	MatchSuggestion string  `json:"MatchSuggestion" xml:"MatchSuggestion"`
 	CorpName        string  `json:"CorpName" xml:"CorpName"`
+	RuleName        string  `json:"RuleName" xml:"RuleName"`
+	ModifiedDate    string  `json:"ModifiedDate" xml:"ModifiedDate"`
 	ParentCorpId    string  `json:"ParentCorpId" xml:"ParentCorpId"`
 	InProtocol      string  `json:"InProtocol" xml:"InProtocol"`
+	NotifierExtra   string  `json:"NotifierExtra" xml:"NotifierExtra"`
 	Score           float64 `json:"Score" xml:"Score"`
 	CreateTime      string  `json:"CreateTime" xml:"CreateTime"`
 	IsvSubId        string  `json:"IsvSubId" xml:"IsvSubId"`
 	DeviceType      string  `json:"DeviceType" xml:"DeviceType"`
 	Latitude        string  `json:"Latitude" xml:"Latitude"`
+	AlgorithmVendor string  `json:"AlgorithmVendor" xml:"AlgorithmVendor"`
+	DeviceList      string  `json:"DeviceList" xml:"DeviceList"`
+	NotifierType    string  `json:"NotifierType" xml:"NotifierType"`
+	TaskId          string  `json:"TaskId" xml:"TaskId"`
 	LeftTopX        float64 `json:"LeftTopX" xml:"LeftTopX"`
 	CorpId          string  `json:"CorpId" xml:"CorpId"`
 	ImageUrl        string  `json:"ImageUrl" xml:"ImageUrl"`
 	DeviceAddress   string  `json:"DeviceAddress" xml:"DeviceAddress"`
 	DeviceId        string  `json:"DeviceId" xml:"DeviceId"`
+	Expression      string  `json:"Expression" xml:"Expression"`
 	RightBottomX    float64 `json:"RightBottomX" xml:"RightBottomX"`
 	Vendor          string  `json:"Vendor" xml:"Vendor"`
 	Description     string  `json:"Description" xml:"Description"`
+	ImageMatch      string  `json:"ImageMatch" xml:"ImageMatch"`
+	Attributes      string  `json:"Attributes" xml:"Attributes"`
 	IconPath        string  `json:"IconPath" xml:"IconPath"`
+	MonitorType     string  `json:"MonitorType" xml:"MonitorType"`
 	Longitude       string  `json:"Longitude" xml:"Longitude"`
 	SourceId        string  `json:"SourceId" xml:"SourceId"`
 	DeviceName      string  `json:"DeviceName" xml:"DeviceName"`
@@ -43,6 +54,7 @@ type Record struct {
 	AcuUsed         int     `json:"AcuUsed" xml:"AcuUsed"`
 	DeviceCount     int     `json:"DeviceCount" xml:"DeviceCount"`
 	Status          string  `json:"Status" xml:"Status"`
+	RuleExpression  string  `json:"RuleExpression" xml:"RuleExpression"`
 	AppName         string  `json:"AppName" xml:"AppName"`
 	RightBottomY    float64 `json:"RightBottomY" xml:"RightBottomY"`
 	TargetImageUrl  string  `json:"TargetImageUrl" xml:"TargetImageUrl"`

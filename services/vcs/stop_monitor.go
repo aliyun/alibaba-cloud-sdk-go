@@ -89,7 +89,7 @@ func CreateStopMonitorRequest() (request *StopMonitorRequest) {
 	request = &StopMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "StopMonitor", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "StopMonitor", "", "")
 	request.Method = requests.POST
 	return
 }

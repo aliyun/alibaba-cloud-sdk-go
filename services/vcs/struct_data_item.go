@@ -36,6 +36,6 @@ type DataItem struct {
 	TagValue        string           `json:"TagValue" xml:"TagValue"`
 	CorpGroupId     string           `json:"CorpGroupId" xml:"CorpGroupId"`
 	ParentCatalogId int64            `json:"ParentCatalogId" xml:"ParentCatalogId"`
-	OptionList      []OptionListItem `json:"OptionList" xml:"OptionList"`
 	List            []ListItem       `json:"List" xml:"List"`
+	OptionList      []OptionListItem `json:"OptionList" xml:"OptionList"`
 }

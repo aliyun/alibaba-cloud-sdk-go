@@ -89,7 +89,7 @@ func CreateDeleteCorpGroupRequest() (request *DeleteCorpGroupRequest) {
 	request = &DeleteCorpGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "DeleteCorpGroup", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "DeleteCorpGroup", "", "")
 	request.Method = requests.POST
 	return
 }

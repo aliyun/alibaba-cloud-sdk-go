@@ -90,7 +90,7 @@ func CreateGetFaceModelResultRequest() (request *GetFaceModelResultRequest) {
 	request = &GetFaceModelResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "GetFaceModelResult", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetFaceModelResult", "", "")
 	request.Method = requests.POST
 	return
 }

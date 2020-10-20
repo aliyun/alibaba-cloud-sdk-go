@@ -91,7 +91,7 @@ func CreateRecognizeImageRequest() (request *RecognizeImageRequest) {
 	request = &RecognizeImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "RecognizeImage", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "RecognizeImage", "", "")
 	request.Method = requests.POST
 	return
 }

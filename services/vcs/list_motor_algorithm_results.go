@@ -95,7 +95,7 @@ func CreateListMotorAlgorithmResultsRequest() (request *ListMotorAlgorithmResult
 	request = &ListMotorAlgorithmResultsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListMotorAlgorithmResults", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListMotorAlgorithmResults", "", "")
 	request.Method = requests.POST
 	return
 }

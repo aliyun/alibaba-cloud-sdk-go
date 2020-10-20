@@ -90,7 +90,7 @@ func CreateDeleteProfileCatalogRequest() (request *DeleteProfileCatalogRequest) 
 	request = &DeleteProfileCatalogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "DeleteProfileCatalog", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "DeleteProfileCatalog", "", "")
 	request.Method = requests.POST
 	return
 }

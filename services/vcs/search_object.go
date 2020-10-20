@@ -87,10 +87,10 @@ type SearchObjectRequest struct {
 // SearchObjectResponse is the response struct for api SearchObject
 type SearchObjectResponse struct {
 	*responses.BaseResponse
-	Code      string                   `json:"Code" xml:"Code"`
-	Message   string                   `json:"Message" xml:"Message"`
-	RequestId string                   `json:"RequestId" xml:"RequestId"`
-	Data      []DataItemInSearchObject `json:"Data" xml:"Data"`
+	Code      string             `json:"Code" xml:"Code"`
+	Message   string             `json:"Message" xml:"Message"`
+	RequestId string             `json:"RequestId" xml:"RequestId"`
+	Data      DataInSearchObject `json:"Data" xml:"Data"`
 }
 
 // CreateSearchObjectRequest creates a request to invoke SearchObject API
@@ -98,7 +98,7 @@ func CreateSearchObjectRequest() (request *SearchObjectRequest) {
 	request = &SearchObjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "SearchObject", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "SearchObject", "", "")
 	request.Method = requests.POST
 	return
 }

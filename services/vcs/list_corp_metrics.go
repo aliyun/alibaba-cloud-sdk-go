@@ -100,7 +100,7 @@ func CreateListCorpMetricsRequest() (request *ListCorpMetricsRequest) {
 	request = &ListCorpMetricsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListCorpMetrics", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListCorpMetrics", "", "")
 	request.Method = requests.POST
 	return
 }

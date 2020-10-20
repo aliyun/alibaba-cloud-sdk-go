@@ -94,7 +94,7 @@ func CreateGetDeviceVideoUrlRequest() (request *GetDeviceVideoUrlRequest) {
 	request = &GetDeviceVideoUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "GetDeviceVideoUrl", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetDeviceVideoUrl", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -92,7 +92,7 @@ func CreateBindPersonRequest() (request *BindPersonRequest) {
 	request = &BindPersonRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "BindPerson", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "BindPerson", "", "")
 	request.Method = requests.POST
 	return
 }

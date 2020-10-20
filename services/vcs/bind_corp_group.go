@@ -89,7 +89,7 @@ func CreateBindCorpGroupRequest() (request *BindCorpGroupRequest) {
 	request = &BindCorpGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "BindCorpGroup", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "BindCorpGroup", "", "")
 	request.Method = requests.POST
 	return
 }

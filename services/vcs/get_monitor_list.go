@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteProfile invokes the vcs.DeleteProfile API synchronously
-func (client *Client) DeleteProfile(request *DeleteProfileRequest) (response *DeleteProfileResponse, err error) {
-	response = CreateDeleteProfileResponse()
+// GetMonitorList invokes the vcs.GetMonitorList API synchronously
+func (client *Client) GetMonitorList(request *GetMonitorListRequest) (response *GetMonitorListResponse, err error) {
+	response = CreateGetMonitorListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteProfileWithChan invokes the vcs.DeleteProfile API asynchronously
-func (client *Client) DeleteProfileWithChan(request *DeleteProfileRequest) (<-chan *DeleteProfileResponse, <-chan error) {
-	responseChan := make(chan *DeleteProfileResponse, 1)
+// GetMonitorListWithChan invokes the vcs.GetMonitorList API asynchronously
+func (client *Client) GetMonitorListWithChan(request *GetMonitorListRequest) (<-chan *GetMonitorListResponse, <-chan error) {
+	responseChan := make(chan *GetMonitorListResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteProfile(request)
+		response, err := client.GetMonitorList(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteProfileWithChan(request *DeleteProfileRequest) (<-ch
 	return responseChan, errChan
 }
 
-// DeleteProfileWithCallback invokes the vcs.DeleteProfile API asynchronously
-func (client *Client) DeleteProfileWithCallback(request *DeleteProfileRequest, callback func(response *DeleteProfileResponse, err error)) <-chan int {
+// GetMonitorListWithCallback invokes the vcs.GetMonitorList API asynchronously
+func (client *Client) GetMonitorListWithCallback(request *GetMonitorListRequest, callback func(response *GetMonitorListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteProfileResponse
+		var response *GetMonitorListResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteProfile(request)
+		response, err = client.GetMonitorList(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,36 +68,36 @@ func (client *Client) DeleteProfileWithCallback(request *DeleteProfileRequest, c
 	return result
 }
 
-// DeleteProfileRequest is the request struct for api DeleteProfile
-type DeleteProfileRequest struct {
+// GetMonitorListRequest is the request struct for api GetMonitorList
+type GetMonitorListRequest struct {
 	*requests.RpcRequest
-	IsvSubId  string           `position:"Body" name:"IsvSubId"`
-	CorpId    string           `position:"Body" name:"CorpId"`
-	ProfileId requests.Integer `position:"Body" name:"ProfileId"`
+	CorpId   string           `position:"Body" name:"CorpId"`
+	PageNo   requests.Integer `position:"Body" name:"PageNo"`
+	PageSize requests.Integer `position:"Body" name:"PageSize"`
 }
 
-// DeleteProfileResponse is the response struct for api DeleteProfile
-type DeleteProfileResponse struct {
+// GetMonitorListResponse is the response struct for api GetMonitorList
+type GetMonitorListResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
-	Data      bool   `json:"Data" xml:"Data"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateDeleteProfileRequest creates a request to invoke DeleteProfile API
-func CreateDeleteProfileRequest() (request *DeleteProfileRequest) {
-	request = &DeleteProfileRequest{
+// CreateGetMonitorListRequest creates a request to invoke GetMonitorList API
+func CreateGetMonitorListRequest() (request *GetMonitorListRequest) {
+	request = &GetMonitorListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "DeleteProfile", "", "")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "GetMonitorList", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteProfileResponse creates a response to parse from DeleteProfile response
-func CreateDeleteProfileResponse() (response *DeleteProfileResponse) {
-	response = &DeleteProfileResponse{
+// CreateGetMonitorListResponse creates a response to parse from GetMonitorList response
+func CreateGetMonitorListResponse() (response *GetMonitorListResponse) {
+	response = &GetMonitorListResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

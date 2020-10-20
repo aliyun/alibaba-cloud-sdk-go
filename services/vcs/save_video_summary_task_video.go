@@ -90,7 +90,7 @@ func CreateSaveVideoSummaryTaskVideoRequest() (request *SaveVideoSummaryTaskVide
 	request = &SaveVideoSummaryTaskVideoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "SaveVideoSummaryTaskVideo", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "SaveVideoSummaryTaskVideo", "", "")
 	request.Method = requests.POST
 	return
 }

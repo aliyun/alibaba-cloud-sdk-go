@@ -17,14 +17,11 @@ package vcs
 
 // RecordsItemInSearchObject is a nested struct in vcs response
 type RecordsItemInSearchObject struct {
-	BodyShotTime    string  `json:"BodyShotTime" xml:"BodyShotTime"`
 	CompareResult   string  `json:"CompareResult" xml:"CompareResult"`
 	DeviceID        string  `json:"DeviceID" xml:"DeviceID"`
-	FaceShotTime    int64   `json:"FaceShotTime" xml:"FaceShotTime"`
+	ShotTime        int64   `json:"ShotTime" xml:"ShotTime"`
 	LeftTopX        int     `json:"LeftTopX" xml:"LeftTopX"`
 	LeftTopY        int     `json:"LeftTopY" xml:"LeftTopY"`
-	MotorShotTime   string  `json:"MotorShotTime" xml:"MotorShotTime"`
-	PassTime        string  `json:"PassTime" xml:"PassTime"`
 	RightBtmX       int     `json:"RightBtmX" xml:"RightBtmX"`
 	RightBtmY       int     `json:"RightBtmY" xml:"RightBtmY"`
 	Score           float64 `json:"Score" xml:"Score"`

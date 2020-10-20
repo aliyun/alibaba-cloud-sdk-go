@@ -94,7 +94,7 @@ func CreateListFaceAlgorithmResultsRequest() (request *ListFaceAlgorithmResultsR
 	request = &ListFaceAlgorithmResultsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "ListFaceAlgorithmResults", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "ListFaceAlgorithmResults", "", "")
 	request.Method = requests.POST
 	return
 }

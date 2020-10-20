@@ -100,7 +100,7 @@ func CreateUpdateProfileRequest() (request *UpdateProfileRequest) {
 	request = &UpdateProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vcs", "2020-05-15", "UpdateProfile", "vcs", "openAPI")
+	request.InitWithApiInfo("Vcs", "2020-05-15", "UpdateProfile", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -17,14 +17,18 @@ package vcs
 
 // ListItem is a nested struct in vcs response
 type ListItem struct {
-	DeviceGroup    string `json:"DeviceGroup" xml:"DeviceGroup"`
-	DeviceName     string `json:"DeviceName" xml:"DeviceName"`
-	DeviceCode     string `json:"DeviceCode" xml:"DeviceCode"`
-	BitRate        string `json:"BitRate" xml:"BitRate"`
-	CodingFormat   string `json:"CodingFormat" xml:"CodingFormat"`
-	ResolvingPower string `json:"ResolvingPower" xml:"ResolvingPower"`
-	DataSourceType string `json:"DataSourceType" xml:"DataSourceType"`
-	RegionName     string `json:"RegionName" xml:"RegionName"`
-	RegionId       string `json:"RegionId" xml:"RegionId"`
-	InstallAddress string `json:"InstallAddress" xml:"InstallAddress"`
+	DeviceGroup         string `json:"DeviceGroup" xml:"DeviceGroup"`
+	DeviceName          string `json:"DeviceName" xml:"DeviceName"`
+	DeviceCode          string `json:"DeviceCode" xml:"DeviceCode"`
+	BitRate             string `json:"BitRate" xml:"BitRate"`
+	CodingFormat        string `json:"CodingFormat" xml:"CodingFormat"`
+	ResolvingPower      string `json:"ResolvingPower" xml:"ResolvingPower"`
+	DataSourceType      string `json:"DataSourceType" xml:"DataSourceType"`
+	RegionName          string `json:"RegionName" xml:"RegionName"`
+	RegionId            string `json:"RegionId" xml:"RegionId"`
+	InstallAddress      string `json:"InstallAddress" xml:"InstallAddress"`
+	DeviceSn            string `json:"DeviceSn" xml:"DeviceSn"`
+	DeviceStatus        string `json:"DeviceStatus" xml:"DeviceStatus"`
+	DeviceStreamStatus  string `json:"DeviceStreamStatus" xml:"DeviceStreamStatus"`
+	DeviceComputeStatus string `json:"DeviceComputeStatus" xml:"DeviceComputeStatus"`
 }
