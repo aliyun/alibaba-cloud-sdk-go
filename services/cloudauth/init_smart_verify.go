@@ -71,17 +71,24 @@ func (client *Client) InitSmartVerifyWithCallback(request *InitSmartVerifyReques
 // InitSmartVerifyRequest is the request struct for api InitSmartVerify
 type InitSmartVerifyRequest struct {
 	*requests.RpcRequest
-	Ip           string           `position:"Body" name:"Ip"`
-	CertName     string           `position:"Body" name:"CertName"`
-	Mobile       string           `position:"Body" name:"Mobile"`
-	UserId       string           `position:"Body" name:"UserId"`
-	Mode         string           `position:"Body" name:"Mode"`
-	CertNo       string           `position:"Body" name:"CertNo"`
-	OuterOrderNo string           `position:"Body" name:"OuterOrderNo"`
-	CertType     string           `position:"Body" name:"CertType"`
-	SceneId      requests.Integer `position:"Body" name:"SceneId"`
-	MetaInfo     string           `position:"Body" name:"MetaInfo"`
-	Ocr          string           `position:"Body" name:"Ocr"`
+	UserId            string           `position:"Body" name:"UserId"`
+	CertifyId         string           `position:"Body" name:"CertifyId"`
+	FacePictureBase64 string           `position:"Body" name:"FacePictureBase64"`
+	Mode              string           `position:"Body" name:"Mode"`
+	CertNo            string           `position:"Body" name:"CertNo"`
+	OuterOrderNo      string           `position:"Body" name:"OuterOrderNo"`
+	CertType          string           `position:"Body" name:"CertType"`
+	MetaInfo          string           `position:"Body" name:"MetaInfo"`
+	Ocr               string           `position:"Body" name:"Ocr"`
+	OssObjectName     string           `position:"Body" name:"OssObjectName"`
+	FacePictureUrl    string           `position:"Body" name:"FacePictureUrl"`
+	Ip                string           `position:"Body" name:"Ip"`
+	CertName          string           `position:"Body" name:"CertName"`
+	Mobile            string           `position:"Body" name:"Mobile"`
+	SceneId           requests.Integer `position:"Body" name:"SceneId"`
+	CallbackToken     string           `position:"Body" name:"CallbackToken"`
+	OssBucketName     string           `position:"Body" name:"OssBucketName"`
+	CallbackUrl       string           `position:"Body" name:"CallbackUrl"`
 }
 
 // InitSmartVerifyResponse is the response struct for api InitSmartVerify

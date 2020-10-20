@@ -1,3 +1,7 @@
+2020-10-20 Version: v1.61.583
+- Generated 2019-03-07, 2018-09-16, 2020-06-18 for `Cloudauth`.
+- Add LivenessFaceVerify API.
+
 2020-10-20 Version: v1.61.582
 - Generated 2020-05-15 for `Vcs`.
 - Update Configuration.

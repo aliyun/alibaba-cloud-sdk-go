@@ -87,7 +87,9 @@ type InitFaceVerifyRequest struct {
 	Mobile                 string           `position:"Query" name:"Mobile"`
 	SceneId                requests.Integer `position:"Query" name:"SceneId"`
 	OssBucketName          string           `position:"Query" name:"OssBucketName"`
+	CallbackToken          string           `position:"Query" name:"CallbackToken"`
 	ReturnUrl              string           `position:"Query" name:"ReturnUrl"`
+	CallbackUrl            string           `position:"Query" name:"CallbackUrl"`
 }
 
 // InitFaceVerifyResponse is the response struct for api InitFaceVerify
