@@ -1,3 +1,7 @@
+2020-10-20 Version: v1.61.579
+- Generated 2016-11-01 for `live`.
+
+
 2020-10-19 Version: v1.61.578
 - Generated 2018-10-12 for `alimt`.
 - Add a new interface for asynchronous image translation.
