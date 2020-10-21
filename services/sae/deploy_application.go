@@ -21,7 +21,6 @@ import (
 )
 
 // DeployApplication invokes the sae.DeployApplication API synchronously
-// api document: https://help.aliyun.com/api/sae/deployapplication.html
 func (client *Client) DeployApplication(request *DeployApplicationRequest) (response *DeployApplicationResponse, err error) {
 	response = CreateDeployApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeployApplication(request *DeployApplicationRequest) (resp
 }
 
 // DeployApplicationWithChan invokes the sae.DeployApplication API asynchronously
-// api document: https://help.aliyun.com/api/sae/deployapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeployApplicationWithChan(request *DeployApplicationRequest) (<-chan *DeployApplicationResponse, <-chan error) {
 	responseChan := make(chan *DeployApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeployApplicationWithChan(request *DeployApplicationReques
 }
 
 // DeployApplicationWithCallback invokes the sae.DeployApplication API asynchronously
-// api document: https://help.aliyun.com/api/sae/deployapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeployApplicationWithCallback(request *DeployApplicationRequest, callback func(response *DeployApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,24 +71,41 @@ func (client *Client) DeployApplicationWithCallback(request *DeployApplicationRe
 // DeployApplicationRequest is the request struct for api DeployApplication
 type DeployApplicationRequest struct {
 	*requests.RoaRequest
-	WebContainer         string           `position:"Query" name:"WebContainer"`
-	JarStartArgs         string           `position:"Query" name:"JarStartArgs"`
-	CommandArgs          string           `position:"Query" name:"CommandArgs"`
-	Readiness            string           `position:"Query" name:"Readiness"`
-	BatchWaitTime        requests.Integer `position:"Query" name:"BatchWaitTime"`
-	Liveness             string           `position:"Query" name:"Liveness"`
-	Envs                 string           `position:"Query" name:"Envs"`
-	PackageVersion       string           `position:"Query" name:"PackageVersion"`
-	Command              string           `position:"Query" name:"Command"`
-	CustomHostAlias      string           `position:"Query" name:"CustomHostAlias"`
-	UpdateStrategy       string           `position:"Query" name:"UpdateStrategy"`
-	Jdk                  string           `position:"Query" name:"Jdk"`
-	JarStartOptions      string           `position:"Query" name:"JarStartOptions"`
-	MinReadyInstances    requests.Integer `position:"Query" name:"MinReadyInstances"`
-	EdasContainerVersion string           `position:"Query" name:"EdasContainerVersion"`
-	PackageUrl           string           `position:"Query" name:"PackageUrl"`
-	AppId                string           `position:"Query" name:"AppId"`
-	ImageUrl             string           `position:"Query" name:"ImageUrl"`
+	NasId                            string           `position:"Path" name:"NasId"`
+	WebContainer                     string           `position:"Query" name:"WebContainer"`
+	JarStartArgs                     string           `position:"Query" name:"JarStartArgs"`
+	EnableAhas                       string           `position:"Query" name:"EnableAhas"`
+	SlsConfigs                       string           `position:"Query" name:"SlsConfigs"`
+	CommandArgs                      string           `position:"Query" name:"CommandArgs"`
+	Readiness                        string           `position:"Query" name:"Readiness"`
+	Timezone                         string           `position:"Query" name:"Timezone"`
+	MountHost                        string           `position:"Path" name:"MountHost"`
+	BatchWaitTime                    requests.Integer `position:"Query" name:"BatchWaitTime"`
+	Liveness                         string           `position:"Query" name:"Liveness"`
+	Envs                             string           `position:"Query" name:"Envs"`
+	PhpArmsConfigLocation            string           `position:"Query" name:"PhpArmsConfigLocation"`
+	PackageVersion                   string           `position:"Query" name:"PackageVersion"`
+	TomcatConfig                     string           `position:"Query" name:"TomcatConfig"`
+	CustomHostAlias                  string           `position:"Query" name:"CustomHostAlias"`
+	WarStartOptions                  string           `position:"Query" name:"WarStartOptions"`
+	JarStartOptions                  string           `position:"Query" name:"JarStartOptions"`
+	EdasContainerVersion             string           `position:"Query" name:"EdasContainerVersion"`
+	PackageUrl                       string           `position:"Query" name:"PackageUrl"`
+	TerminationGracePeriodSeconds    requests.Integer `position:"Query" name:"TerminationGracePeriodSeconds"`
+	ConfigMapMountDesc               string           `position:"Body" name:"ConfigMapMountDesc"`
+	PhpConfig                        string           `position:"Body" name:"PhpConfig"`
+	PreStop                          string           `position:"Query" name:"PreStop"`
+	Command                          string           `position:"Query" name:"Command"`
+	UpdateStrategy                   string           `position:"Query" name:"UpdateStrategy"`
+	MountDesc                        string           `position:"Path" name:"MountDesc"`
+	Jdk                              string           `position:"Query" name:"Jdk"`
+	MinReadyInstances                requests.Integer `position:"Query" name:"MinReadyInstances"`
+	ChangeOrderDesc                  string           `position:"Query" name:"ChangeOrderDesc"`
+	AppId                            string           `position:"Query" name:"AppId"`
+	ImageUrl                         string           `position:"Query" name:"ImageUrl"`
+	AutoEnableApplicationScalingRule requests.Boolean `position:"Query" name:"AutoEnableApplicationScalingRule"`
+	PhpConfigLocation                string           `position:"Query" name:"PhpConfigLocation"`
+	PostStart                        string           `position:"Query" name:"PostStart"`
 }
 
 // DeployApplicationResponse is the response struct for api DeployApplication

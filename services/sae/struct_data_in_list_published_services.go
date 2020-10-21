@@ -17,5 +17,5 @@ package sae
 
 // DataInListPublishedServices is a nested struct in sae response
 type DataInListPublishedServices struct {
-	DataItem []DataItem `json:"DataItem" xml:"DataItem"`
+	DataItem []DataItemInListPublishedServices `json:"Data" xml:"Data"`
 }

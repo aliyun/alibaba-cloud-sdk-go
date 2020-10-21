@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeNamespaceList invokes the sae.DescribeNamespaceList API synchronously
-// api document: https://help.aliyun.com/api/sae/describenamespacelist.html
 func (client *Client) DescribeNamespaceList(request *DescribeNamespaceListRequest) (response *DescribeNamespaceListResponse, err error) {
 	response = CreateDescribeNamespaceListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeNamespaceList(request *DescribeNamespaceListReques
 }
 
 // DescribeNamespaceListWithChan invokes the sae.DescribeNamespaceList API asynchronously
-// api document: https://help.aliyun.com/api/sae/describenamespacelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNamespaceListWithChan(request *DescribeNamespaceListRequest) (<-chan *DescribeNamespaceListResponse, <-chan error) {
 	responseChan := make(chan *DescribeNamespaceListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeNamespaceListWithChan(request *DescribeNamespaceLi
 }
 
 // DescribeNamespaceListWithCallback invokes the sae.DescribeNamespaceList API asynchronously
-// api document: https://help.aliyun.com/api/sae/describenamespacelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNamespaceListWithCallback(request *DescribeNamespaceListRequest, callback func(response *DescribeNamespaceListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

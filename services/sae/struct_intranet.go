@@ -17,5 +17,5 @@ package sae
 
 // Intranet is a nested struct in sae response
 type Intranet struct {
-	IntranetItem []IntranetItem `json:"IntranetItem" xml:"IntranetItem"`
+	IntranetItem []IntranetItem `json:"Intranet" xml:"Intranet"`
 }

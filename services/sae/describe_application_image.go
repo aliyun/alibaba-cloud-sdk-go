@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApplicationImage invokes the sae.DescribeApplicationImage API synchronously
-// api document: https://help.aliyun.com/api/sae/describeapplicationimage.html
 func (client *Client) DescribeApplicationImage(request *DescribeApplicationImageRequest) (response *DescribeApplicationImageResponse, err error) {
 	response = CreateDescribeApplicationImageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApplicationImage(request *DescribeApplicationImage
 }
 
 // DescribeApplicationImageWithChan invokes the sae.DescribeApplicationImage API asynchronously
-// api document: https://help.aliyun.com/api/sae/describeapplicationimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApplicationImageWithChan(request *DescribeApplicationImageRequest) (<-chan *DescribeApplicationImageResponse, <-chan error) {
 	responseChan := make(chan *DescribeApplicationImageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApplicationImageWithChan(request *DescribeApplicat
 }
 
 // DescribeApplicationImageWithCallback invokes the sae.DescribeApplicationImage API asynchronously
-// api document: https://help.aliyun.com/api/sae/describeapplicationimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApplicationImageWithCallback(request *DescribeApplicationImageRequest, callback func(response *DescribeApplicationImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

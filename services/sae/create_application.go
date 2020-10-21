@@ -21,7 +21,6 @@ import (
 )
 
 // CreateApplication invokes the sae.CreateApplication API synchronously
-// api document: https://help.aliyun.com/api/sae/createapplication.html
 func (client *Client) CreateApplication(request *CreateApplicationRequest) (response *CreateApplicationResponse, err error) {
 	response = CreateCreateApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateApplication(request *CreateApplicationRequest) (resp
 }
 
 // CreateApplicationWithChan invokes the sae.CreateApplication API asynchronously
-// api document: https://help.aliyun.com/api/sae/createapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateApplicationWithChan(request *CreateApplicationRequest) (<-chan *CreateApplicationResponse, <-chan error) {
 	responseChan := make(chan *CreateApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateApplicationWithChan(request *CreateApplicationReques
 }
 
 // CreateApplicationWithCallback invokes the sae.CreateApplication API asynchronously
-// api document: https://help.aliyun.com/api/sae/createapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateApplicationWithCallback(request *CreateApplicationRequest, callback func(response *CreateApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,32 +71,46 @@ func (client *Client) CreateApplicationWithCallback(request *CreateApplicationRe
 // CreateApplicationRequest is the request struct for api CreateApplication
 type CreateApplicationRequest struct {
 	*requests.RoaRequest
-	WebContainer         string           `position:"Query" name:"WebContainer"`
-	JarStartArgs         string           `position:"Query" name:"JarStartArgs"`
-	Memory               requests.Integer `position:"Query" name:"Memory"`
-	SlsConfigs           string           `position:"Query" name:"SlsConfigs"`
-	CommandArgs          string           `position:"Query" name:"CommandArgs"`
-	Readiness            string           `position:"Query" name:"Readiness"`
-	Timezone             string           `position:"Query" name:"Timezone"`
-	Liveness             string           `position:"Query" name:"Liveness"`
-	Envs                 string           `position:"Query" name:"Envs"`
-	PackageVersion       string           `position:"Query" name:"PackageVersion"`
-	CustomHostAlias      string           `position:"Query" name:"CustomHostAlias"`
-	Deploy               requests.Boolean `position:"Query" name:"Deploy"`
-	JarStartOptions      string           `position:"Query" name:"JarStartOptions"`
-	EdasContainerVersion string           `position:"Query" name:"EdasContainerVersion"`
-	AppName              string           `position:"Query" name:"AppName"`
-	NamespaceId          string           `position:"Query" name:"NamespaceId"`
-	PackageUrl           string           `position:"Query" name:"PackageUrl"`
-	Replicas             requests.Integer `position:"Query" name:"Replicas"`
-	Cpu                  requests.Integer `position:"Query" name:"Cpu"`
-	Command              string           `position:"Query" name:"Command"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	Jdk                  string           `position:"Query" name:"Jdk"`
-	AppDescription       string           `position:"Query" name:"AppDescription"`
-	VpcId                string           `position:"Query" name:"VpcId"`
-	ImageUrl             string           `position:"Query" name:"ImageUrl"`
-	PackageType          string           `position:"Query" name:"PackageType"`
+	NasId                         string           `position:"Query" name:"NasId"`
+	WebContainer                  string           `position:"Query" name:"WebContainer"`
+	JarStartArgs                  string           `position:"Query" name:"JarStartArgs"`
+	Memory                        requests.Integer `position:"Query" name:"Memory"`
+	SlsConfigs                    string           `position:"Query" name:"SlsConfigs"`
+	CommandArgs                   string           `position:"Query" name:"CommandArgs"`
+	Readiness                     string           `position:"Query" name:"Readiness"`
+	Timezone                      string           `position:"Query" name:"Timezone"`
+	MountHost                     string           `position:"Query" name:"MountHost"`
+	AutoConfig                    requests.Boolean `position:"Query" name:"AutoConfig"`
+	Liveness                      string           `position:"Query" name:"Liveness"`
+	SecurityGroupId               string           `position:"Query" name:"SecurityGroupId"`
+	Envs                          string           `position:"Query" name:"Envs"`
+	PhpArmsConfigLocation         string           `position:"Query" name:"PhpArmsConfigLocation"`
+	PackageVersion                string           `position:"Query" name:"PackageVersion"`
+	TomcatConfig                  string           `position:"Query" name:"TomcatConfig"`
+	CustomHostAlias               string           `position:"Query" name:"CustomHostAlias"`
+	Deploy                        requests.Boolean `position:"Query" name:"Deploy"`
+	WarStartOptions               string           `position:"Query" name:"WarStartOptions"`
+	JarStartOptions               string           `position:"Query" name:"JarStartOptions"`
+	EdasContainerVersion          string           `position:"Query" name:"EdasContainerVersion"`
+	AppName                       string           `position:"Query" name:"AppName"`
+	NamespaceId                   string           `position:"Query" name:"NamespaceId"`
+	PackageUrl                    string           `position:"Query" name:"PackageUrl"`
+	TerminationGracePeriodSeconds requests.Integer `position:"Query" name:"TerminationGracePeriodSeconds"`
+	ConfigMapMountDesc            string           `position:"Body" name:"ConfigMapMountDesc"`
+	PhpConfig                     string           `position:"Body" name:"PhpConfig"`
+	PreStop                       string           `position:"Query" name:"PreStop"`
+	Replicas                      requests.Integer `position:"Query" name:"Replicas"`
+	Cpu                           requests.Integer `position:"Query" name:"Cpu"`
+	Command                       string           `position:"Query" name:"Command"`
+	MountDesc                     string           `position:"Query" name:"MountDesc"`
+	VSwitchId                     string           `position:"Query" name:"VSwitchId"`
+	Jdk                           string           `position:"Query" name:"Jdk"`
+	AppDescription                string           `position:"Query" name:"AppDescription"`
+	VpcId                         string           `position:"Query" name:"VpcId"`
+	ImageUrl                      string           `position:"Query" name:"ImageUrl"`
+	PackageType                   string           `position:"Query" name:"PackageType"`
+	PhpConfigLocation             string           `position:"Query" name:"PhpConfigLocation"`
+	PostStart                     string           `position:"Query" name:"PostStart"`
 }
 
 // CreateApplicationResponse is the response struct for api CreateApplication

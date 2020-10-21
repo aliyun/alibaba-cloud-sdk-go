@@ -21,7 +21,6 @@ import (
 )
 
 // RestartApplication invokes the sae.RestartApplication API synchronously
-// api document: https://help.aliyun.com/api/sae/restartapplication.html
 func (client *Client) RestartApplication(request *RestartApplicationRequest) (response *RestartApplicationResponse, err error) {
 	response = CreateRestartApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RestartApplication(request *RestartApplicationRequest) (re
 }
 
 // RestartApplicationWithChan invokes the sae.RestartApplication API asynchronously
-// api document: https://help.aliyun.com/api/sae/restartapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartApplicationWithChan(request *RestartApplicationRequest) (<-chan *RestartApplicationResponse, <-chan error) {
 	responseChan := make(chan *RestartApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RestartApplicationWithChan(request *RestartApplicationRequ
 }
 
 // RestartApplicationWithCallback invokes the sae.RestartApplication API asynchronously
-// api document: https://help.aliyun.com/api/sae/restartapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartApplicationWithCallback(request *RestartApplicationRequest, callback func(response *RestartApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

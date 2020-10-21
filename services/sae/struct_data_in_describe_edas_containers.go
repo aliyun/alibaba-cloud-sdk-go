@@ -17,5 +17,5 @@ package sae
 
 // DataInDescribeEdasContainers is a nested struct in sae response
 type DataInDescribeEdasContainers struct {
-	DataItem []DataItem `json:"DataItem" xml:"DataItem"`
+	DataItem []DataItem `json:"Data" xml:"Data"`
 }

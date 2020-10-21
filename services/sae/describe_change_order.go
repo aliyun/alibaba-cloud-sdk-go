@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeChangeOrder invokes the sae.DescribeChangeOrder API synchronously
-// api document: https://help.aliyun.com/api/sae/describechangeorder.html
 func (client *Client) DescribeChangeOrder(request *DescribeChangeOrderRequest) (response *DescribeChangeOrderResponse, err error) {
 	response = CreateDescribeChangeOrderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeChangeOrder(request *DescribeChangeOrderRequest) (
 }
 
 // DescribeChangeOrderWithChan invokes the sae.DescribeChangeOrder API asynchronously
-// api document: https://help.aliyun.com/api/sae/describechangeorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeChangeOrderWithChan(request *DescribeChangeOrderRequest) (<-chan *DescribeChangeOrderResponse, <-chan error) {
 	responseChan := make(chan *DescribeChangeOrderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeChangeOrderWithChan(request *DescribeChangeOrderRe
 }
 
 // DescribeChangeOrderWithCallback invokes the sae.DescribeChangeOrder API asynchronously
-// api document: https://help.aliyun.com/api/sae/describechangeorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeChangeOrderWithCallback(request *DescribeChangeOrderRequest, callback func(response *DescribeChangeOrderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

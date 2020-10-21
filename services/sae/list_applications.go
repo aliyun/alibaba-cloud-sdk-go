@@ -21,7 +21,6 @@ import (
 )
 
 // ListApplications invokes the sae.ListApplications API synchronously
-// api document: https://help.aliyun.com/api/sae/listapplications.html
 func (client *Client) ListApplications(request *ListApplicationsRequest) (response *ListApplicationsResponse, err error) {
 	response = CreateListApplicationsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListApplications(request *ListApplicationsRequest) (respon
 }
 
 // ListApplicationsWithChan invokes the sae.ListApplications API asynchronously
-// api document: https://help.aliyun.com/api/sae/listapplications.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListApplicationsWithChan(request *ListApplicationsRequest) (<-chan *ListApplicationsResponse, <-chan error) {
 	responseChan := make(chan *ListApplicationsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListApplicationsWithChan(request *ListApplicationsRequest)
 }
 
 // ListApplicationsWithCallback invokes the sae.ListApplications API asynchronously
-// api document: https://help.aliyun.com/api/sae/listapplications.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListApplicationsWithCallback(request *ListApplicationsRequest, callback func(response *ListApplicationsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,8 +72,10 @@ func (client *Client) ListApplicationsWithCallback(request *ListApplicationsRequ
 type ListApplicationsRequest struct {
 	*requests.RoaRequest
 	AppName     string           `position:"Query" name:"AppName"`
+	NamespaceId string           `position:"Query" name:"NamespaceId"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	Tags        string           `position:"Query" name:"Tags"`
 }
 
 // ListApplicationsResponse is the response struct for api ListApplications

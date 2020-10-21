@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApplicationStatus invokes the sae.DescribeApplicationStatus API synchronously
-// api document: https://help.aliyun.com/api/sae/describeapplicationstatus.html
 func (client *Client) DescribeApplicationStatus(request *DescribeApplicationStatusRequest) (response *DescribeApplicationStatusResponse, err error) {
 	response = CreateDescribeApplicationStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApplicationStatus(request *DescribeApplicationStat
 }
 
 // DescribeApplicationStatusWithChan invokes the sae.DescribeApplicationStatus API asynchronously
-// api document: https://help.aliyun.com/api/sae/describeapplicationstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApplicationStatusWithChan(request *DescribeApplicationStatusRequest) (<-chan *DescribeApplicationStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeApplicationStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApplicationStatusWithChan(request *DescribeApplica
 }
 
 // DescribeApplicationStatusWithCallback invokes the sae.DescribeApplicationStatus API asynchronously
-// api document: https://help.aliyun.com/api/sae/describeapplicationstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApplicationStatusWithCallback(request *DescribeApplicationStatusRequest, callback func(response *DescribeApplicationStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

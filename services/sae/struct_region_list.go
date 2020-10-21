@@ -26,4 +26,5 @@ type RegionList struct {
 	HybridCloudEnable bool   `json:"HybridCloudEnable" xml:"HybridCloudEnable"`
 	VpcId             string `json:"VpcId" xml:"VpcId"`
 	VSwitchId         string `json:"VSwitchId" xml:"VSwitchId"`
+	SecurityGroupId   string `json:"SecurityGroupId" xml:"SecurityGroupId"`
 }

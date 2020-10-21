@@ -21,7 +21,6 @@ import (
 )
 
 // ConfirmPipelineBatch invokes the sae.ConfirmPipelineBatch API synchronously
-// api document: https://help.aliyun.com/api/sae/confirmpipelinebatch.html
 func (client *Client) ConfirmPipelineBatch(request *ConfirmPipelineBatchRequest) (response *ConfirmPipelineBatchResponse, err error) {
 	response = CreateConfirmPipelineBatchResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ConfirmPipelineBatch(request *ConfirmPipelineBatchRequest)
 }
 
 // ConfirmPipelineBatchWithChan invokes the sae.ConfirmPipelineBatch API asynchronously
-// api document: https://help.aliyun.com/api/sae/confirmpipelinebatch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConfirmPipelineBatchWithChan(request *ConfirmPipelineBatchRequest) (<-chan *ConfirmPipelineBatchResponse, <-chan error) {
 	responseChan := make(chan *ConfirmPipelineBatchResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ConfirmPipelineBatchWithChan(request *ConfirmPipelineBatch
 }
 
 // ConfirmPipelineBatchWithCallback invokes the sae.ConfirmPipelineBatch API asynchronously
-// api document: https://help.aliyun.com/api/sae/confirmpipelinebatch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConfirmPipelineBatchWithCallback(request *ConfirmPipelineBatchRequest, callback func(response *ConfirmPipelineBatchResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // RescaleApplication invokes the sae.RescaleApplication API synchronously
-// api document: https://help.aliyun.com/api/sae/rescaleapplication.html
 func (client *Client) RescaleApplication(request *RescaleApplicationRequest) (response *RescaleApplicationResponse, err error) {
 	response = CreateRescaleApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RescaleApplication(request *RescaleApplicationRequest) (re
 }
 
 // RescaleApplicationWithChan invokes the sae.RescaleApplication API asynchronously
-// api document: https://help.aliyun.com/api/sae/rescaleapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RescaleApplicationWithChan(request *RescaleApplicationRequest) (<-chan *RescaleApplicationResponse, <-chan error) {
 	responseChan := make(chan *RescaleApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RescaleApplicationWithChan(request *RescaleApplicationRequ
 }
 
 // RescaleApplicationWithCallback invokes the sae.RescaleApplication API asynchronously
-// api document: https://help.aliyun.com/api/sae/rescaleapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RescaleApplicationWithCallback(request *RescaleApplicationRequest, callback func(response *RescaleApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,9 @@ func (client *Client) RescaleApplicationWithCallback(request *RescaleApplication
 // RescaleApplicationRequest is the request struct for api RescaleApplication
 type RescaleApplicationRequest struct {
 	*requests.RoaRequest
-	Replicas requests.Integer `position:"Query" name:"Replicas"`
-	AppId    string           `position:"Query" name:"AppId"`
+	MinReadyInstances requests.Integer `position:"Query" name:"MinReadyInstances"`
+	Replicas          requests.Integer `position:"Query" name:"Replicas"`
+	AppId             string           `position:"Query" name:"AppId"`
 }
 
 // RescaleApplicationResponse is the response struct for api RescaleApplication

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstanceSpecifications invokes the sae.DescribeInstanceSpecifications API synchronously
-// api document: https://help.aliyun.com/api/sae/describeinstancespecifications.html
 func (client *Client) DescribeInstanceSpecifications(request *DescribeInstanceSpecificationsRequest) (response *DescribeInstanceSpecificationsResponse, err error) {
 	response = CreateDescribeInstanceSpecificationsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstanceSpecifications(request *DescribeInstanceSp
 }
 
 // DescribeInstanceSpecificationsWithChan invokes the sae.DescribeInstanceSpecifications API asynchronously
-// api document: https://help.aliyun.com/api/sae/describeinstancespecifications.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceSpecificationsWithChan(request *DescribeInstanceSpecificationsRequest) (<-chan *DescribeInstanceSpecificationsResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceSpecificationsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceSpecificationsWithChan(request *DescribeIn
 }
 
 // DescribeInstanceSpecificationsWithCallback invokes the sae.DescribeInstanceSpecifications API asynchronously
-// api document: https://help.aliyun.com/api/sae/describeinstancespecifications.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceSpecificationsWithCallback(request *DescribeInstanceSpecificationsRequest, callback func(response *DescribeInstanceSpecificationsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,13 +76,13 @@ type DescribeInstanceSpecificationsRequest struct {
 // DescribeInstanceSpecificationsResponse is the response struct for api DescribeInstanceSpecifications
 type DescribeInstanceSpecificationsResponse struct {
 	*responses.BaseResponse
-	RequestId string                                     `json:"RequestId" xml:"RequestId"`
-	Code      string                                     `json:"Code" xml:"Code"`
-	Message   string                                     `json:"Message" xml:"Message"`
-	Success   bool                                       `json:"Success" xml:"Success"`
-	ErrorCode string                                     `json:"ErrorCode" xml:"ErrorCode"`
-	TraceId   string                                     `json:"TraceId" xml:"TraceId"`
-	Data      []DataItemInDescribeInstanceSpecifications `json:"Data" xml:"Data"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
+	Code      string     `json:"Code" xml:"Code"`
+	Message   string     `json:"Message" xml:"Message"`
+	Success   bool       `json:"Success" xml:"Success"`
+	ErrorCode string     `json:"ErrorCode" xml:"ErrorCode"`
+	TraceId   string     `json:"TraceId" xml:"TraceId"`
+	Data      []DataItem `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeInstanceSpecificationsRequest creates a request to invoke DescribeInstanceSpecifications API

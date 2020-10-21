@@ -21,7 +21,6 @@ import (
 )
 
 // BindSlb invokes the sae.BindSlb API synchronously
-// api document: https://help.aliyun.com/api/sae/bindslb.html
 func (client *Client) BindSlb(request *BindSlbRequest) (response *BindSlbResponse, err error) {
 	response = CreateBindSlbResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindSlb(request *BindSlbRequest) (response *BindSlbRespons
 }
 
 // BindSlbWithChan invokes the sae.BindSlb API asynchronously
-// api document: https://help.aliyun.com/api/sae/bindslb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindSlbWithChan(request *BindSlbRequest) (<-chan *BindSlbResponse, <-chan error) {
 	responseChan := make(chan *BindSlbResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindSlbWithChan(request *BindSlbRequest) (<-chan *BindSlbR
 }
 
 // BindSlbWithCallback invokes the sae.BindSlb API asynchronously
-// api document: https://help.aliyun.com/api/sae/bindslb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindSlbWithCallback(request *BindSlbRequest, callback func(response *BindSlbResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,11 @@ func (client *Client) BindSlbWithCallback(request *BindSlbRequest, callback func
 // BindSlbRequest is the request struct for api BindSlb
 type BindSlbRequest struct {
 	*requests.RoaRequest
-	Intranet string `position:"Query" name:"Intranet"`
-	AppId    string `position:"Query" name:"AppId"`
-	Internet string `position:"Query" name:"Internet"`
+	Intranet      string `position:"Query" name:"Intranet"`
+	IntranetSlbId string `position:"Query" name:"IntranetSlbId"`
+	InternetSlbId string `position:"Query" name:"InternetSlbId"`
+	AppId         string `position:"Query" name:"AppId"`
+	Internet      string `position:"Query" name:"Internet"`
 }
 
 // BindSlbResponse is the response struct for api BindSlb

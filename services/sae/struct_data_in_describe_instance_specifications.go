@@ -17,5 +17,5 @@ package sae
 
 // DataInDescribeInstanceSpecifications is a nested struct in sae response
 type DataInDescribeInstanceSpecifications struct {
-	DataItem []DataItemInDescribeInstanceSpecifications `json:"DataItem" xml:"DataItem"`
+	DataItem []DataItem `json:"Data" xml:"Data"`
 }

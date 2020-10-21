@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApplicationConfig invokes the sae.DescribeApplicationConfig API synchronously
-// api document: https://help.aliyun.com/api/sae/describeapplicationconfig.html
 func (client *Client) DescribeApplicationConfig(request *DescribeApplicationConfigRequest) (response *DescribeApplicationConfigResponse, err error) {
 	response = CreateDescribeApplicationConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApplicationConfig(request *DescribeApplicationConf
 }
 
 // DescribeApplicationConfigWithChan invokes the sae.DescribeApplicationConfig API asynchronously
-// api document: https://help.aliyun.com/api/sae/describeapplicationconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApplicationConfigWithChan(request *DescribeApplicationConfigRequest) (<-chan *DescribeApplicationConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeApplicationConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApplicationConfigWithChan(request *DescribeApplica
 }
 
 // DescribeApplicationConfigWithCallback invokes the sae.DescribeApplicationConfig API asynchronously
-// api document: https://help.aliyun.com/api/sae/describeapplicationconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApplicationConfigWithCallback(request *DescribeApplicationConfigRequest, callback func(response *DescribeApplicationConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,7 +71,8 @@ func (client *Client) DescribeApplicationConfigWithCallback(request *DescribeApp
 // DescribeApplicationConfigRequest is the request struct for api DescribeApplicationConfig
 type DescribeApplicationConfigRequest struct {
 	*requests.RoaRequest
-	AppId string `position:"Query" name:"AppId"`
+	VersionId string `position:"Query" name:"VersionId"`
+	AppId     string `position:"Query" name:"AppId"`
 }
 
 // DescribeApplicationConfigResponse is the response struct for api DescribeApplicationConfig

@@ -21,7 +21,6 @@ import (
 )
 
 // UnbindSlb invokes the sae.UnbindSlb API synchronously
-// api document: https://help.aliyun.com/api/sae/unbindslb.html
 func (client *Client) UnbindSlb(request *UnbindSlbRequest) (response *UnbindSlbResponse, err error) {
 	response = CreateUnbindSlbResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnbindSlb(request *UnbindSlbRequest) (response *UnbindSlbR
 }
 
 // UnbindSlbWithChan invokes the sae.UnbindSlb API asynchronously
-// api document: https://help.aliyun.com/api/sae/unbindslb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindSlbWithChan(request *UnbindSlbRequest) (<-chan *UnbindSlbResponse, <-chan error) {
 	responseChan := make(chan *UnbindSlbResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnbindSlbWithChan(request *UnbindSlbRequest) (<-chan *Unbi
 }
 
 // UnbindSlbWithCallback invokes the sae.UnbindSlb API asynchronously
-// api document: https://help.aliyun.com/api/sae/unbindslb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindSlbWithCallback(request *UnbindSlbRequest, callback func(response *UnbindSlbResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEdasContainers invokes the sae.DescribeEdasContainers API synchronously
-// api document: https://help.aliyun.com/api/sae/describeedascontainers.html
 func (client *Client) DescribeEdasContainers(request *DescribeEdasContainersRequest) (response *DescribeEdasContainersResponse, err error) {
 	response = CreateDescribeEdasContainersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEdasContainers(request *DescribeEdasContainersRequ
 }
 
 // DescribeEdasContainersWithChan invokes the sae.DescribeEdasContainers API asynchronously
-// api document: https://help.aliyun.com/api/sae/describeedascontainers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEdasContainersWithChan(request *DescribeEdasContainersRequest) (<-chan *DescribeEdasContainersResponse, <-chan error) {
 	responseChan := make(chan *DescribeEdasContainersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEdasContainersWithChan(request *DescribeEdasContai
 }
 
 // DescribeEdasContainersWithCallback invokes the sae.DescribeEdasContainers API asynchronously
-// api document: https://help.aliyun.com/api/sae/describeedascontainers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEdasContainersWithCallback(request *DescribeEdasContainersRequest, callback func(response *DescribeEdasContainersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

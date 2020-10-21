@@ -21,7 +21,6 @@ import (
 )
 
 // StartApplication invokes the sae.StartApplication API synchronously
-// api document: https://help.aliyun.com/api/sae/startapplication.html
 func (client *Client) StartApplication(request *StartApplicationRequest) (response *StartApplicationResponse, err error) {
 	response = CreateStartApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartApplication(request *StartApplicationRequest) (respon
 }
 
 // StartApplicationWithChan invokes the sae.StartApplication API asynchronously
-// api document: https://help.aliyun.com/api/sae/startapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartApplicationWithChan(request *StartApplicationRequest) (<-chan *StartApplicationResponse, <-chan error) {
 	responseChan := make(chan *StartApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartApplicationWithChan(request *StartApplicationRequest)
 }
 
 // StartApplicationWithCallback invokes the sae.StartApplication API asynchronously
-// api document: https://help.aliyun.com/api/sae/startapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartApplicationWithCallback(request *StartApplicationRequest, callback func(response *StartApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

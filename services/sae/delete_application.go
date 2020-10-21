@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteApplication invokes the sae.DeleteApplication API synchronously
-// api document: https://help.aliyun.com/api/sae/deleteapplication.html
 func (client *Client) DeleteApplication(request *DeleteApplicationRequest) (response *DeleteApplicationResponse, err error) {
 	response = CreateDeleteApplicationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteApplication(request *DeleteApplicationRequest) (resp
 }
 
 // DeleteApplicationWithChan invokes the sae.DeleteApplication API asynchronously
-// api document: https://help.aliyun.com/api/sae/deleteapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteApplicationWithChan(request *DeleteApplicationRequest) (<-chan *DeleteApplicationResponse, <-chan error) {
 	responseChan := make(chan *DeleteApplicationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteApplicationWithChan(request *DeleteApplicationReques
 }
 
 // DeleteApplicationWithCallback invokes the sae.DeleteApplication API asynchronously
-// api document: https://help.aliyun.com/api/sae/deleteapplication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteApplicationWithCallback(request *DeleteApplicationRequest, callback func(response *DeleteApplicationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

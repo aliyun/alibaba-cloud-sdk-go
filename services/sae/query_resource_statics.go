@@ -21,7 +21,6 @@ import (
 )
 
 // QueryResourceStatics invokes the sae.QueryResourceStatics API synchronously
-// api document: https://help.aliyun.com/api/sae/queryresourcestatics.html
 func (client *Client) QueryResourceStatics(request *QueryResourceStaticsRequest) (response *QueryResourceStaticsResponse, err error) {
 	response = CreateQueryResourceStaticsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryResourceStatics(request *QueryResourceStaticsRequest)
 }
 
 // QueryResourceStaticsWithChan invokes the sae.QueryResourceStatics API asynchronously
-// api document: https://help.aliyun.com/api/sae/queryresourcestatics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryResourceStaticsWithChan(request *QueryResourceStaticsRequest) (<-chan *QueryResourceStaticsResponse, <-chan error) {
 	responseChan := make(chan *QueryResourceStaticsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryResourceStaticsWithChan(request *QueryResourceStatics
 }
 
 // QueryResourceStaticsWithCallback invokes the sae.QueryResourceStatics API asynchronously
-// api document: https://help.aliyun.com/api/sae/queryresourcestatics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryResourceStaticsWithCallback(request *QueryResourceStaticsRequest, callback func(response *QueryResourceStaticsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

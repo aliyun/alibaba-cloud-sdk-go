@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApplicationGroups invokes the sae.DescribeApplicationGroups API synchronously
-// api document: https://help.aliyun.com/api/sae/describeapplicationgroups.html
 func (client *Client) DescribeApplicationGroups(request *DescribeApplicationGroupsRequest) (response *DescribeApplicationGroupsResponse, err error) {
 	response = CreateDescribeApplicationGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApplicationGroups(request *DescribeApplicationGrou
 }
 
 // DescribeApplicationGroupsWithChan invokes the sae.DescribeApplicationGroups API asynchronously
-// api document: https://help.aliyun.com/api/sae/describeapplicationgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApplicationGroupsWithChan(request *DescribeApplicationGroupsRequest) (<-chan *DescribeApplicationGroupsResponse, <-chan error) {
 	responseChan := make(chan *DescribeApplicationGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApplicationGroupsWithChan(request *DescribeApplica
 }
 
 // DescribeApplicationGroupsWithCallback invokes the sae.DescribeApplicationGroups API asynchronously
-// api document: https://help.aliyun.com/api/sae/describeapplicationgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApplicationGroupsWithCallback(request *DescribeApplicationGroupsRequest, callback func(response *DescribeApplicationGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

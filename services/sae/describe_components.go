@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeComponents invokes the sae.DescribeComponents API synchronously
-// api document: https://help.aliyun.com/api/sae/describecomponents.html
 func (client *Client) DescribeComponents(request *DescribeComponentsRequest) (response *DescribeComponentsResponse, err error) {
 	response = CreateDescribeComponentsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeComponents(request *DescribeComponentsRequest) (re
 }
 
 // DescribeComponentsWithChan invokes the sae.DescribeComponents API asynchronously
-// api document: https://help.aliyun.com/api/sae/describecomponents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeComponentsWithChan(request *DescribeComponentsRequest) (<-chan *DescribeComponentsResponse, <-chan error) {
 	responseChan := make(chan *DescribeComponentsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeComponentsWithChan(request *DescribeComponentsRequ
 }
 
 // DescribeComponentsWithCallback invokes the sae.DescribeComponents API asynchronously
-// api document: https://help.aliyun.com/api/sae/describecomponents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeComponentsWithCallback(request *DescribeComponentsRequest, callback func(response *DescribeComponentsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

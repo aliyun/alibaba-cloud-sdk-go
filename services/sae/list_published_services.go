@@ -21,7 +21,6 @@ import (
 )
 
 // ListPublishedServices invokes the sae.ListPublishedServices API synchronously
-// api document: https://help.aliyun.com/api/sae/listpublishedservices.html
 func (client *Client) ListPublishedServices(request *ListPublishedServicesRequest) (response *ListPublishedServicesResponse, err error) {
 	response = CreateListPublishedServicesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListPublishedServices(request *ListPublishedServicesReques
 }
 
 // ListPublishedServicesWithChan invokes the sae.ListPublishedServices API asynchronously
-// api document: https://help.aliyun.com/api/sae/listpublishedservices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPublishedServicesWithChan(request *ListPublishedServicesRequest) (<-chan *ListPublishedServicesResponse, <-chan error) {
 	responseChan := make(chan *ListPublishedServicesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListPublishedServicesWithChan(request *ListPublishedServic
 }
 
 // ListPublishedServicesWithCallback invokes the sae.ListPublishedServices API asynchronously
-// api document: https://help.aliyun.com/api/sae/listpublishedservices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPublishedServicesWithCallback(request *ListPublishedServicesRequest, callback func(response *ListPublishedServicesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,13 +77,13 @@ type ListPublishedServicesRequest struct {
 // ListPublishedServicesResponse is the response struct for api ListPublishedServices
 type ListPublishedServicesResponse struct {
 	*responses.BaseResponse
-	Code      string     `json:"Code" xml:"Code"`
-	Message   string     `json:"Message" xml:"Message"`
-	RequestId string     `json:"RequestId" xml:"RequestId"`
-	Success   bool       `json:"Success" xml:"Success"`
-	ErrorCode string     `json:"ErrorCode" xml:"ErrorCode"`
-	TraceId   string     `json:"TraceId" xml:"TraceId"`
-	Data      []DataItem `json:"Data" xml:"Data"`
+	Code      string                            `json:"Code" xml:"Code"`
+	Message   string                            `json:"Message" xml:"Message"`
+	RequestId string                            `json:"RequestId" xml:"RequestId"`
+	Success   bool                              `json:"Success" xml:"Success"`
+	ErrorCode string                            `json:"ErrorCode" xml:"ErrorCode"`
+	TraceId   string                            `json:"TraceId" xml:"TraceId"`
+	Data      []DataItemInListPublishedServices `json:"Data" xml:"Data"`
 }
 
 // CreateListPublishedServicesRequest creates a request to invoke ListPublishedServices API

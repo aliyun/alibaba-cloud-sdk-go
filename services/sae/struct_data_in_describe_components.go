@@ -17,5 +17,5 @@ package sae
 
 // DataInDescribeComponents is a nested struct in sae response
 type DataInDescribeComponents struct {
-	DataItem []DataItem `json:"DataItem" xml:"DataItem"`
+	DataItem []DataItem `json:"Data" xml:"Data"`
 }

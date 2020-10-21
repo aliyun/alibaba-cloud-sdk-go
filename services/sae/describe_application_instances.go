@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApplicationInstances invokes the sae.DescribeApplicationInstances API synchronously
-// api document: https://help.aliyun.com/api/sae/describeapplicationinstances.html
 func (client *Client) DescribeApplicationInstances(request *DescribeApplicationInstancesRequest) (response *DescribeApplicationInstancesResponse, err error) {
 	response = CreateDescribeApplicationInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApplicationInstances(request *DescribeApplicationI
 }
 
 // DescribeApplicationInstancesWithChan invokes the sae.DescribeApplicationInstances API asynchronously
-// api document: https://help.aliyun.com/api/sae/describeapplicationinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApplicationInstancesWithChan(request *DescribeApplicationInstancesRequest) (<-chan *DescribeApplicationInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeApplicationInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApplicationInstancesWithChan(request *DescribeAppl
 }
 
 // DescribeApplicationInstancesWithCallback invokes the sae.DescribeApplicationInstances API asynchronously
-// api document: https://help.aliyun.com/api/sae/describeapplicationinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApplicationInstancesWithCallback(request *DescribeApplicationInstancesRequest, callback func(response *DescribeApplicationInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

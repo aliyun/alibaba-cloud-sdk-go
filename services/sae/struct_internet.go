@@ -17,5 +17,5 @@ package sae
 
 // Internet is a nested struct in sae response
 type Internet struct {
-	InternetItem []InternetItem `json:"InternetItem" xml:"InternetItem"`
+	InternetItem []InternetItem `json:"Internet" xml:"Internet"`
 }

@@ -17,17 +17,20 @@ package sae
 
 // ChangeOrder is a nested struct in sae response
 type ChangeOrder struct {
-	AppId         string `json:"AppId" xml:"AppId"`
-	BatchCount    int    `json:"BatchCount" xml:"BatchCount"`
-	BatchType     string `json:"BatchType" xml:"BatchType"`
+	Status        int    `json:"Status" xml:"Status"`
 	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
+	BatchType     string `json:"BatchType" xml:"BatchType"`
+	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
 	CoType        string `json:"CoType" xml:"CoType"`
 	CoTypeCode    string `json:"CoTypeCode" xml:"CoTypeCode"`
-	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-	Description   string `json:"Description" xml:"Description"`
 	FinishTime    string `json:"FinishTime" xml:"FinishTime"`
-	GroupId       string `json:"GroupId" xml:"GroupId"`
-	Pipelines     string `json:"Pipelines" xml:"Pipelines"`
 	Source        string `json:"Source" xml:"Source"`
-	Status        int    `json:"Status" xml:"Status"`
+	BatchCount    int    `json:"BatchCount" xml:"BatchCount"`
+	AppId         string `json:"AppId" xml:"AppId"`
+	Pipelines     string `json:"Pipelines" xml:"Pipelines"`
+	UserId        string `json:"UserId" xml:"UserId"`
+	NamespaceId   string `json:"NamespaceId" xml:"NamespaceId"`
+	GroupId       string `json:"GroupId" xml:"GroupId"`
+	CreateUserId  string `json:"CreateUserId" xml:"CreateUserId"`
+	Description   string `json:"Description" xml:"Description"`
 }

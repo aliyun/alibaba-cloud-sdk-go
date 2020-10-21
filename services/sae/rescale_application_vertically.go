@@ -21,7 +21,6 @@ import (
 )
 
 // RescaleApplicationVertically invokes the sae.RescaleApplicationVertically API synchronously
-// api document: https://help.aliyun.com/api/sae/rescaleapplicationvertically.html
 func (client *Client) RescaleApplicationVertically(request *RescaleApplicationVerticallyRequest) (response *RescaleApplicationVerticallyResponse, err error) {
 	response = CreateRescaleApplicationVerticallyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RescaleApplicationVertically(request *RescaleApplicationVe
 }
 
 // RescaleApplicationVerticallyWithChan invokes the sae.RescaleApplicationVertically API asynchronously
-// api document: https://help.aliyun.com/api/sae/rescaleapplicationvertically.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RescaleApplicationVerticallyWithChan(request *RescaleApplicationVerticallyRequest) (<-chan *RescaleApplicationVerticallyResponse, <-chan error) {
 	responseChan := make(chan *RescaleApplicationVerticallyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RescaleApplicationVerticallyWithChan(request *RescaleAppli
 }
 
 // RescaleApplicationVerticallyWithCallback invokes the sae.RescaleApplicationVertically API asynchronously
-// api document: https://help.aliyun.com/api/sae/rescaleapplicationvertically.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RescaleApplicationVerticallyWithCallback(request *RescaleApplicationVerticallyRequest, callback func(response *RescaleApplicationVerticallyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

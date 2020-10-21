@@ -17,6 +17,6 @@ package sae
 
 // RealTimeRes is a nested struct in sae response
 type RealTimeRes struct {
-	Cpu    int `json:"Cpu" xml:"Cpu"`
-	Memory int `json:"Memory" xml:"Memory"`
+	Cpu    float64 `json:"Cpu" xml:"Cpu"`
+	Memory float64 `json:"Memory" xml:"Memory"`
 }

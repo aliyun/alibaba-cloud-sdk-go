@@ -21,7 +21,6 @@ import (
 )
 
 // AbortAndRollbackChangeOrder invokes the sae.AbortAndRollbackChangeOrder API synchronously
-// api document: https://help.aliyun.com/api/sae/abortandrollbackchangeorder.html
 func (client *Client) AbortAndRollbackChangeOrder(request *AbortAndRollbackChangeOrderRequest) (response *AbortAndRollbackChangeOrderResponse, err error) {
 	response = CreateAbortAndRollbackChangeOrderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AbortAndRollbackChangeOrder(request *AbortAndRollbackChang
 }
 
 // AbortAndRollbackChangeOrderWithChan invokes the sae.AbortAndRollbackChangeOrder API asynchronously
-// api document: https://help.aliyun.com/api/sae/abortandrollbackchangeorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AbortAndRollbackChangeOrderWithChan(request *AbortAndRollbackChangeOrderRequest) (<-chan *AbortAndRollbackChangeOrderResponse, <-chan error) {
 	responseChan := make(chan *AbortAndRollbackChangeOrderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AbortAndRollbackChangeOrderWithChan(request *AbortAndRollb
 }
 
 // AbortAndRollbackChangeOrderWithCallback invokes the sae.AbortAndRollbackChangeOrder API asynchronously
-// api document: https://help.aliyun.com/api/sae/abortandrollbackchangeorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AbortAndRollbackChangeOrderWithCallback(request *AbortAndRollbackChangeOrderRequest, callback func(response *AbortAndRollbackChangeOrderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

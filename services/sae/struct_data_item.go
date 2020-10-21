@@ -17,16 +17,16 @@ package sae
 
 // DataItem is a nested struct in sae response
 type DataItem struct {
-	Name                 string   `json:"Name" xml:"Name"`
-	AppId                string   `json:"AppId" xml:"AppId"`
-	Expired              bool     `json:"Expired" xml:"Expired"`
-	EdasContainerVersion string   `json:"EdasContainerVersion" xml:"EdasContainerVersion"`
-	Group2Ip             string   `json:"Group2Ip" xml:"Group2Ip"`
-	Disabled             bool     `json:"Disabled" xml:"Disabled"`
-	Version              string   `json:"Version" xml:"Version"`
-	ComponentKey         string   `json:"ComponentKey" xml:"ComponentKey"`
-	ComponentDescription string   `json:"ComponentDescription" xml:"ComponentDescription"`
-	Type                 string   `json:"Type" xml:"Type"`
-	Groups               []string `json:"Groups" xml:"Groups"`
-	Ips                  []string `json:"Ips" xml:"Ips"`
+	Id                   int    `json:"Id" xml:"Id"`
+	Expired              bool   `json:"Expired" xml:"Expired"`
+	EdasContainerVersion string `json:"EdasContainerVersion" xml:"EdasContainerVersion"`
+	Memory               int    `json:"Memory" xml:"Memory"`
+	Disabled             bool   `json:"Disabled" xml:"Disabled"`
+	Version              int    `json:"Version" xml:"Version"`
+	Enable               bool   `json:"Enable" xml:"Enable"`
+	ComponentKey         string `json:"ComponentKey" xml:"ComponentKey"`
+	ComponentDescription string `json:"ComponentDescription" xml:"ComponentDescription"`
+	Cpu                  int    `json:"Cpu" xml:"Cpu"`
+	SpecInfo             string `json:"SpecInfo" xml:"SpecInfo"`
+	Type                 string `json:"Type" xml:"Type"`
 }
