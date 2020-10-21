@@ -21,7 +21,6 @@ type Datas struct {
 	TagMetrics       string `json:"TagMetrics" xml:"TagMetrics"`
 	RightBottomY     string `json:"RightBottomY" xml:"RightBottomY"`
 	PageSize         int64  `json:"PageSize" xml:"PageSize"`
-	IsvId            string `json:"IsvId" xml:"IsvId"`
 	TargetPicUrlPath string `json:"TargetPicUrlPath" xml:"TargetPicUrlPath"`
 	DayId            string `json:"DayId" xml:"DayId"`
 	CorpId           string `json:"CorpId" xml:"CorpId"`

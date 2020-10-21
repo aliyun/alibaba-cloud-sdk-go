@@ -78,7 +78,6 @@ type ListPersonTraceDetailsRequest struct {
 	SubId      string           `position:"Body" name:"SubId"`
 	PageSize   requests.Integer `position:"Body" name:"PageSize"`
 	PersonId   string           `position:"Body" name:"PersonId"`
-	IsvId      string           `position:"Body" name:"IsvId"`
 }
 
 // ListPersonTraceDetailsResponse is the response struct for api ListPersonTraceDetails
