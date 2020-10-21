@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitMediaCensorJob invokes the mts.SubmitMediaCensorJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submitmediacensorjob.html
 func (client *Client) SubmitMediaCensorJob(request *SubmitMediaCensorJobRequest) (response *SubmitMediaCensorJobResponse, err error) {
 	response = CreateSubmitMediaCensorJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitMediaCensorJob(request *SubmitMediaCensorJobRequest)
 }
 
 // SubmitMediaCensorJobWithChan invokes the mts.SubmitMediaCensorJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitmediacensorjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitMediaCensorJobWithChan(request *SubmitMediaCensorJobRequest) (<-chan *SubmitMediaCensorJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitMediaCensorJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitMediaCensorJobWithChan(request *SubmitMediaCensorJob
 }
 
 // SubmitMediaCensorJobWithCallback invokes the mts.SubmitMediaCensorJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitmediacensorjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitMediaCensorJobWithCallback(request *SubmitMediaCensorJobRequest, callback func(response *SubmitMediaCensorJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,7 +97,8 @@ func CreateSubmitMediaCensorJobRequest() (request *SubmitMediaCensorJobRequest) 
 	request = &SubmitMediaCensorJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitMediaCensorJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitMediaCensorJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

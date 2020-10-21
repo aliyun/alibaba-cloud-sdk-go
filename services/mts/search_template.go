@@ -21,7 +21,6 @@ import (
 )
 
 // SearchTemplate invokes the mts.SearchTemplate API synchronously
-// api document: https://help.aliyun.com/api/mts/searchtemplate.html
 func (client *Client) SearchTemplate(request *SearchTemplateRequest) (response *SearchTemplateResponse, err error) {
 	response = CreateSearchTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchTemplate(request *SearchTemplateRequest) (response *
 }
 
 // SearchTemplateWithChan invokes the mts.SearchTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/searchtemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchTemplateWithChan(request *SearchTemplateRequest) (<-chan *SearchTemplateResponse, <-chan error) {
 	responseChan := make(chan *SearchTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchTemplateWithChan(request *SearchTemplateRequest) (<-
 }
 
 // SearchTemplateWithCallback invokes the mts.SearchTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/searchtemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchTemplateWithCallback(request *SearchTemplateRequest, callback func(response *SearchTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,8 @@ func CreateSearchTemplateRequest() (request *SearchTemplateRequest) {
 	request = &SearchTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SearchTemplate", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SearchTemplate", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

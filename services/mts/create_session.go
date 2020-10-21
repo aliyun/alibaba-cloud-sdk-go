@@ -21,7 +21,6 @@ import (
 )
 
 // CreateSession invokes the mts.CreateSession API synchronously
-// api document: https://help.aliyun.com/api/mts/createsession.html
 func (client *Client) CreateSession(request *CreateSessionRequest) (response *CreateSessionResponse, err error) {
 	response = CreateCreateSessionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateSession(request *CreateSessionRequest) (response *Cr
 }
 
 // CreateSessionWithChan invokes the mts.CreateSession API asynchronously
-// api document: https://help.aliyun.com/api/mts/createsession.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSessionWithChan(request *CreateSessionRequest) (<-chan *CreateSessionResponse, <-chan error) {
 	responseChan := make(chan *CreateSessionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateSessionWithChan(request *CreateSessionRequest) (<-ch
 }
 
 // CreateSessionWithCallback invokes the mts.CreateSession API asynchronously
-// api document: https://help.aliyun.com/api/mts/createsession.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSessionWithCallback(request *CreateSessionRequest, callback func(response *CreateSessionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateCreateSessionRequest() (request *CreateSessionRequest) {
 	request = &CreateSessionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "CreateSession", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "CreateSession", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

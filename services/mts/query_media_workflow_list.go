@@ -21,7 +21,6 @@ import (
 )
 
 // QueryMediaWorkflowList invokes the mts.QueryMediaWorkflowList API synchronously
-// api document: https://help.aliyun.com/api/mts/querymediaworkflowlist.html
 func (client *Client) QueryMediaWorkflowList(request *QueryMediaWorkflowListRequest) (response *QueryMediaWorkflowListResponse, err error) {
 	response = CreateQueryMediaWorkflowListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryMediaWorkflowList(request *QueryMediaWorkflowListRequ
 }
 
 // QueryMediaWorkflowListWithChan invokes the mts.QueryMediaWorkflowList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querymediaworkflowlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaWorkflowListWithChan(request *QueryMediaWorkflowListRequest) (<-chan *QueryMediaWorkflowListResponse, <-chan error) {
 	responseChan := make(chan *QueryMediaWorkflowListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryMediaWorkflowListWithChan(request *QueryMediaWorkflow
 }
 
 // QueryMediaWorkflowListWithCallback invokes the mts.QueryMediaWorkflowList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querymediaworkflowlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaWorkflowListWithCallback(request *QueryMediaWorkflowListRequest, callback func(response *QueryMediaWorkflowListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateQueryMediaWorkflowListRequest() (request *QueryMediaWorkflowListReque
 	request = &QueryMediaWorkflowListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaWorkflowList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaWorkflowList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

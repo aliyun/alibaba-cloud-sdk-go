@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateAsrPipeline invokes the mts.UpdateAsrPipeline API synchronously
-// api document: https://help.aliyun.com/api/mts/updateasrpipeline.html
 func (client *Client) UpdateAsrPipeline(request *UpdateAsrPipelineRequest) (response *UpdateAsrPipelineResponse, err error) {
 	response = CreateUpdateAsrPipelineResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateAsrPipeline(request *UpdateAsrPipelineRequest) (resp
 }
 
 // UpdateAsrPipelineWithChan invokes the mts.UpdateAsrPipeline API asynchronously
-// api document: https://help.aliyun.com/api/mts/updateasrpipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAsrPipelineWithChan(request *UpdateAsrPipelineRequest) (<-chan *UpdateAsrPipelineResponse, <-chan error) {
 	responseChan := make(chan *UpdateAsrPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateAsrPipelineWithChan(request *UpdateAsrPipelineReques
 }
 
 // UpdateAsrPipelineWithCallback invokes the mts.UpdateAsrPipeline API asynchronously
-// api document: https://help.aliyun.com/api/mts/updateasrpipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAsrPipelineWithCallback(request *UpdateAsrPipelineRequest, callback func(response *UpdateAsrPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,8 @@ func CreateUpdateAsrPipelineRequest() (request *UpdateAsrPipelineRequest) {
 	request = &UpdateAsrPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateAsrPipeline", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateAsrPipeline", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

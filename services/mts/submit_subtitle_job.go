@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitSubtitleJob invokes the mts.SubmitSubtitleJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submitsubtitlejob.html
 func (client *Client) SubmitSubtitleJob(request *SubmitSubtitleJobRequest) (response *SubmitSubtitleJobResponse, err error) {
 	response = CreateSubmitSubtitleJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitSubtitleJob(request *SubmitSubtitleJobRequest) (resp
 }
 
 // SubmitSubtitleJobWithChan invokes the mts.SubmitSubtitleJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitsubtitlejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSubtitleJobWithChan(request *SubmitSubtitleJobRequest) (<-chan *SubmitSubtitleJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitSubtitleJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitSubtitleJobWithChan(request *SubmitSubtitleJobReques
 }
 
 // SubmitSubtitleJobWithCallback invokes the mts.SubmitSubtitleJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitsubtitlejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSubtitleJobWithCallback(request *SubmitSubtitleJobRequest, callback func(response *SubmitSubtitleJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateSubmitSubtitleJobRequest() (request *SubmitSubtitleJobRequest) {
 	request = &SubmitSubtitleJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitSubtitleJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitSubtitleJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

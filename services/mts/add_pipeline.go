@@ -21,7 +21,6 @@ import (
 )
 
 // AddPipeline invokes the mts.AddPipeline API synchronously
-// api document: https://help.aliyun.com/api/mts/addpipeline.html
 func (client *Client) AddPipeline(request *AddPipelineRequest) (response *AddPipelineResponse, err error) {
 	response = CreateAddPipelineResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddPipeline(request *AddPipelineRequest) (response *AddPip
 }
 
 // AddPipelineWithChan invokes the mts.AddPipeline API asynchronously
-// api document: https://help.aliyun.com/api/mts/addpipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddPipelineWithChan(request *AddPipelineRequest) (<-chan *AddPipelineResponse, <-chan error) {
 	responseChan := make(chan *AddPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddPipelineWithChan(request *AddPipelineRequest) (<-chan *
 }
 
 // AddPipelineWithCallback invokes the mts.AddPipeline API asynchronously
-// api document: https://help.aliyun.com/api/mts/addpipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddPipelineWithCallback(request *AddPipelineRequest, callback func(response *AddPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,8 @@ func CreateAddPipelineRequest() (request *AddPipelineRequest) {
 	request = &AddPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddPipeline", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "AddPipeline", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

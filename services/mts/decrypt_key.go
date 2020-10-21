@@ -21,7 +21,6 @@ import (
 )
 
 // DecryptKey invokes the mts.DecryptKey API synchronously
-// api document: https://help.aliyun.com/api/mts/decryptkey.html
 func (client *Client) DecryptKey(request *DecryptKeyRequest) (response *DecryptKeyResponse, err error) {
 	response = CreateDecryptKeyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DecryptKey(request *DecryptKeyRequest) (response *DecryptK
 }
 
 // DecryptKeyWithChan invokes the mts.DecryptKey API asynchronously
-// api document: https://help.aliyun.com/api/mts/decryptkey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DecryptKeyWithChan(request *DecryptKeyRequest) (<-chan *DecryptKeyResponse, <-chan error) {
 	responseChan := make(chan *DecryptKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DecryptKeyWithChan(request *DecryptKeyRequest) (<-chan *De
 }
 
 // DecryptKeyWithCallback invokes the mts.DecryptKey API asynchronously
-// api document: https://help.aliyun.com/api/mts/decryptkey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DecryptKeyWithCallback(request *DecryptKeyRequest, callback func(response *DecryptKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateDecryptKeyRequest() (request *DecryptKeyRequest) {
 	request = &DecryptKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DecryptKey", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DecryptKey", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

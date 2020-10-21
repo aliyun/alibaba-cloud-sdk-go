@@ -21,7 +21,6 @@ import (
 )
 
 // QueryMediaInfoJobList invokes the mts.QueryMediaInfoJobList API synchronously
-// api document: https://help.aliyun.com/api/mts/querymediainfojoblist.html
 func (client *Client) QueryMediaInfoJobList(request *QueryMediaInfoJobListRequest) (response *QueryMediaInfoJobListResponse, err error) {
 	response = CreateQueryMediaInfoJobListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryMediaInfoJobList(request *QueryMediaInfoJobListReques
 }
 
 // QueryMediaInfoJobListWithChan invokes the mts.QueryMediaInfoJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querymediainfojoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaInfoJobListWithChan(request *QueryMediaInfoJobListRequest) (<-chan *QueryMediaInfoJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryMediaInfoJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryMediaInfoJobListWithChan(request *QueryMediaInfoJobLi
 }
 
 // QueryMediaInfoJobListWithCallback invokes the mts.QueryMediaInfoJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querymediainfojoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaInfoJobListWithCallback(request *QueryMediaInfoJobListRequest, callback func(response *QueryMediaInfoJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateQueryMediaInfoJobListRequest() (request *QueryMediaInfoJobListRequest
 	request = &QueryMediaInfoJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaInfoJobList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaInfoJobList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

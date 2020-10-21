@@ -21,7 +21,6 @@ import (
 )
 
 // CheckResource invokes the mts.CheckResource API synchronously
-// api document: https://help.aliyun.com/api/mts/checkresource.html
 func (client *Client) CheckResource(request *CheckResourceRequest) (response *CheckResourceResponse, err error) {
 	response = CreateCheckResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckResource(request *CheckResourceRequest) (response *Ch
 }
 
 // CheckResourceWithChan invokes the mts.CheckResource API asynchronously
-// api document: https://help.aliyun.com/api/mts/checkresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckResourceWithChan(request *CheckResourceRequest) (<-chan *CheckResourceResponse, <-chan error) {
 	responseChan := make(chan *CheckResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckResourceWithChan(request *CheckResourceRequest) (<-ch
 }
 
 // CheckResourceWithCallback invokes the mts.CheckResource API asynchronously
-// api document: https://help.aliyun.com/api/mts/checkresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckResourceWithCallback(request *CheckResourceRequest, callback func(response *CheckResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -116,7 +111,8 @@ func CreateCheckResourceRequest() (request *CheckResourceRequest) {
 	request = &CheckResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "CheckResource", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "CheckResource", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

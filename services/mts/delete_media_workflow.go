@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteMediaWorkflow invokes the mts.DeleteMediaWorkflow API synchronously
-// api document: https://help.aliyun.com/api/mts/deletemediaworkflow.html
 func (client *Client) DeleteMediaWorkflow(request *DeleteMediaWorkflowRequest) (response *DeleteMediaWorkflowResponse, err error) {
 	response = CreateDeleteMediaWorkflowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteMediaWorkflow(request *DeleteMediaWorkflowRequest) (
 }
 
 // DeleteMediaWorkflowWithChan invokes the mts.DeleteMediaWorkflow API asynchronously
-// api document: https://help.aliyun.com/api/mts/deletemediaworkflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMediaWorkflowWithChan(request *DeleteMediaWorkflowRequest) (<-chan *DeleteMediaWorkflowResponse, <-chan error) {
 	responseChan := make(chan *DeleteMediaWorkflowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteMediaWorkflowWithChan(request *DeleteMediaWorkflowRe
 }
 
 // DeleteMediaWorkflowWithCallback invokes the mts.DeleteMediaWorkflow API asynchronously
-// api document: https://help.aliyun.com/api/mts/deletemediaworkflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMediaWorkflowWithCallback(request *DeleteMediaWorkflowRequest, callback func(response *DeleteMediaWorkflowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateDeleteMediaWorkflowRequest() (request *DeleteMediaWorkflowRequest) {
 	request = &DeleteMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMediaWorkflow", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMediaWorkflow", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

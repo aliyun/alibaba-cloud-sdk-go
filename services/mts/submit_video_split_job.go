@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitVideoSplitJob invokes the mts.SubmitVideoSplitJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submitvideosplitjob.html
 func (client *Client) SubmitVideoSplitJob(request *SubmitVideoSplitJobRequest) (response *SubmitVideoSplitJobResponse, err error) {
 	response = CreateSubmitVideoSplitJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitVideoSplitJob(request *SubmitVideoSplitJobRequest) (
 }
 
 // SubmitVideoSplitJobWithChan invokes the mts.SubmitVideoSplitJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitvideosplitjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVideoSplitJobWithChan(request *SubmitVideoSplitJobRequest) (<-chan *SubmitVideoSplitJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitVideoSplitJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitVideoSplitJobWithChan(request *SubmitVideoSplitJobRe
 }
 
 // SubmitVideoSplitJobWithCallback invokes the mts.SubmitVideoSplitJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitvideosplitjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVideoSplitJobWithCallback(request *SubmitVideoSplitJobRequest, callback func(response *SubmitVideoSplitJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateSubmitVideoSplitJobRequest() (request *SubmitVideoSplitJobRequest) {
 	request = &SubmitVideoSplitJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitVideoSplitJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitVideoSplitJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

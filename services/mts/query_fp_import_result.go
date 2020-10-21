@@ -21,7 +21,6 @@ import (
 )
 
 // QueryFpImportResult invokes the mts.QueryFpImportResult API synchronously
-// api document: https://help.aliyun.com/api/mts/queryfpimportresult.html
 func (client *Client) QueryFpImportResult(request *QueryFpImportResultRequest) (response *QueryFpImportResultResponse, err error) {
 	response = CreateQueryFpImportResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryFpImportResult(request *QueryFpImportResultRequest) (
 }
 
 // QueryFpImportResultWithChan invokes the mts.QueryFpImportResult API asynchronously
-// api document: https://help.aliyun.com/api/mts/queryfpimportresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryFpImportResultWithChan(request *QueryFpImportResultRequest) (<-chan *QueryFpImportResultResponse, <-chan error) {
 	responseChan := make(chan *QueryFpImportResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryFpImportResultWithChan(request *QueryFpImportResultRe
 }
 
 // QueryFpImportResultWithCallback invokes the mts.QueryFpImportResult API asynchronously
-// api document: https://help.aliyun.com/api/mts/queryfpimportresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryFpImportResultWithCallback(request *QueryFpImportResultRequest, callback func(response *QueryFpImportResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,8 @@ func CreateQueryFpImportResultRequest() (request *QueryFpImportResultRequest) {
 	request = &QueryFpImportResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryFpImportResult", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryFpImportResult", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

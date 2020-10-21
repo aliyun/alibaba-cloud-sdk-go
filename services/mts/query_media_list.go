@@ -21,7 +21,6 @@ import (
 )
 
 // QueryMediaList invokes the mts.QueryMediaList API synchronously
-// api document: https://help.aliyun.com/api/mts/querymedialist.html
 func (client *Client) QueryMediaList(request *QueryMediaListRequest) (response *QueryMediaListResponse, err error) {
 	response = CreateQueryMediaListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryMediaList(request *QueryMediaListRequest) (response *
 }
 
 // QueryMediaListWithChan invokes the mts.QueryMediaList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querymedialist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaListWithChan(request *QueryMediaListRequest) (<-chan *QueryMediaListResponse, <-chan error) {
 	responseChan := make(chan *QueryMediaListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryMediaListWithChan(request *QueryMediaListRequest) (<-
 }
 
 // QueryMediaListWithCallback invokes the mts.QueryMediaList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querymedialist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaListWithCallback(request *QueryMediaListRequest, callback func(response *QueryMediaListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,8 @@ func CreateQueryMediaListRequest() (request *QueryMediaListRequest) {
 	request = &QueryMediaListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

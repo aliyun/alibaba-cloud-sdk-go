@@ -21,7 +21,6 @@ import (
 )
 
 // QueryPornPipelineList invokes the mts.QueryPornPipelineList API synchronously
-// api document: https://help.aliyun.com/api/mts/querypornpipelinelist.html
 func (client *Client) QueryPornPipelineList(request *QueryPornPipelineListRequest) (response *QueryPornPipelineListResponse, err error) {
 	response = CreateQueryPornPipelineListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryPornPipelineList(request *QueryPornPipelineListReques
 }
 
 // QueryPornPipelineListWithChan invokes the mts.QueryPornPipelineList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querypornpipelinelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPornPipelineListWithChan(request *QueryPornPipelineListRequest) (<-chan *QueryPornPipelineListResponse, <-chan error) {
 	responseChan := make(chan *QueryPornPipelineListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryPornPipelineListWithChan(request *QueryPornPipelineLi
 }
 
 // QueryPornPipelineListWithCallback invokes the mts.QueryPornPipelineList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querypornpipelinelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPornPipelineListWithCallback(request *QueryPornPipelineListRequest, callback func(response *QueryPornPipelineListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateQueryPornPipelineListRequest() (request *QueryPornPipelineListRequest
 	request = &QueryPornPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryPornPipelineList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryPornPipelineList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

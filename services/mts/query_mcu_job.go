@@ -21,7 +21,6 @@ import (
 )
 
 // QueryMcuJob invokes the mts.QueryMcuJob API synchronously
-// api document: https://help.aliyun.com/api/mts/querymcujob.html
 func (client *Client) QueryMcuJob(request *QueryMcuJobRequest) (response *QueryMcuJobResponse, err error) {
 	response = CreateQueryMcuJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryMcuJob(request *QueryMcuJobRequest) (response *QueryM
 }
 
 // QueryMcuJobWithChan invokes the mts.QueryMcuJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/querymcujob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMcuJobWithChan(request *QueryMcuJobRequest) (<-chan *QueryMcuJobResponse, <-chan error) {
 	responseChan := make(chan *QueryMcuJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryMcuJobWithChan(request *QueryMcuJobRequest) (<-chan *
 }
 
 // QueryMcuJobWithCallback invokes the mts.QueryMcuJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/querymcujob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMcuJobWithCallback(request *QueryMcuJobRequest, callback func(response *QueryMcuJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateQueryMcuJobRequest() (request *QueryMcuJobRequest) {
 	request = &QueryMcuJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMcuJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMcuJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

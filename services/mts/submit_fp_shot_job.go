@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitFpShotJob invokes the mts.SubmitFpShotJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submitfpshotjob.html
 func (client *Client) SubmitFpShotJob(request *SubmitFpShotJobRequest) (response *SubmitFpShotJobResponse, err error) {
 	response = CreateSubmitFpShotJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitFpShotJob(request *SubmitFpShotJobRequest) (response
 }
 
 // SubmitFpShotJobWithChan invokes the mts.SubmitFpShotJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitfpshotjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitFpShotJobWithChan(request *SubmitFpShotJobRequest) (<-chan *SubmitFpShotJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitFpShotJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitFpShotJobWithChan(request *SubmitFpShotJobRequest) (
 }
 
 // SubmitFpShotJobWithCallback invokes the mts.SubmitFpShotJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitfpshotjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitFpShotJobWithCallback(request *SubmitFpShotJobRequest, callback func(response *SubmitFpShotJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateSubmitFpShotJobRequest() (request *SubmitFpShotJobRequest) {
 	request = &SubmitFpShotJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitFpShotJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitFpShotJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

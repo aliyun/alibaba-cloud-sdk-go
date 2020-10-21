@@ -21,7 +21,6 @@ import (
 )
 
 // QueryMediaListByURL invokes the mts.QueryMediaListByURL API synchronously
-// api document: https://help.aliyun.com/api/mts/querymedialistbyurl.html
 func (client *Client) QueryMediaListByURL(request *QueryMediaListByURLRequest) (response *QueryMediaListByURLResponse, err error) {
 	response = CreateQueryMediaListByURLResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryMediaListByURL(request *QueryMediaListByURLRequest) (
 }
 
 // QueryMediaListByURLWithChan invokes the mts.QueryMediaListByURL API asynchronously
-// api document: https://help.aliyun.com/api/mts/querymedialistbyurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaListByURLWithChan(request *QueryMediaListByURLRequest) (<-chan *QueryMediaListByURLResponse, <-chan error) {
 	responseChan := make(chan *QueryMediaListByURLResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryMediaListByURLWithChan(request *QueryMediaListByURLRe
 }
 
 // QueryMediaListByURLWithCallback invokes the mts.QueryMediaListByURL API asynchronously
-// api document: https://help.aliyun.com/api/mts/querymedialistbyurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaListByURLWithCallback(request *QueryMediaListByURLRequest, callback func(response *QueryMediaListByURLResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,8 @@ func CreateQueryMediaListByURLRequest() (request *QueryMediaListByURLRequest) {
 	request = &QueryMediaListByURLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaListByURL", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaListByURL", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

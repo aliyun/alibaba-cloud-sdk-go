@@ -21,7 +21,6 @@ import (
 )
 
 // PhysicalDeleteResource invokes the mts.PhysicalDeleteResource API synchronously
-// api document: https://help.aliyun.com/api/mts/physicaldeleteresource.html
 func (client *Client) PhysicalDeleteResource(request *PhysicalDeleteResourceRequest) (response *PhysicalDeleteResourceResponse, err error) {
 	response = CreatePhysicalDeleteResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PhysicalDeleteResource(request *PhysicalDeleteResourceRequ
 }
 
 // PhysicalDeleteResourceWithChan invokes the mts.PhysicalDeleteResource API asynchronously
-// api document: https://help.aliyun.com/api/mts/physicaldeleteresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PhysicalDeleteResourceWithChan(request *PhysicalDeleteResourceRequest) (<-chan *PhysicalDeleteResourceResponse, <-chan error) {
 	responseChan := make(chan *PhysicalDeleteResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PhysicalDeleteResourceWithChan(request *PhysicalDeleteReso
 }
 
 // PhysicalDeleteResourceWithCallback invokes the mts.PhysicalDeleteResource API asynchronously
-// api document: https://help.aliyun.com/api/mts/physicaldeleteresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PhysicalDeleteResourceWithCallback(request *PhysicalDeleteResourceRequest, callback func(response *PhysicalDeleteResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -110,7 +105,8 @@ func CreatePhysicalDeleteResourceRequest() (request *PhysicalDeleteResourceReque
 	request = &PhysicalDeleteResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "PhysicalDeleteResource", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "PhysicalDeleteResource", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

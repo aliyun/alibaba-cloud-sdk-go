@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitAnnotationJob invokes the mts.SubmitAnnotationJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submitannotationjob.html
 func (client *Client) SubmitAnnotationJob(request *SubmitAnnotationJobRequest) (response *SubmitAnnotationJobResponse, err error) {
 	response = CreateSubmitAnnotationJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitAnnotationJob(request *SubmitAnnotationJobRequest) (
 }
 
 // SubmitAnnotationJobWithChan invokes the mts.SubmitAnnotationJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitannotationjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAnnotationJobWithChan(request *SubmitAnnotationJobRequest) (<-chan *SubmitAnnotationJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitAnnotationJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitAnnotationJobWithChan(request *SubmitAnnotationJobRe
 }
 
 // SubmitAnnotationJobWithCallback invokes the mts.SubmitAnnotationJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitannotationjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAnnotationJobWithCallback(request *SubmitAnnotationJobRequest, callback func(response *SubmitAnnotationJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateSubmitAnnotationJobRequest() (request *SubmitAnnotationJobRequest) {
 	request = &SubmitAnnotationJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitAnnotationJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitAnnotationJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

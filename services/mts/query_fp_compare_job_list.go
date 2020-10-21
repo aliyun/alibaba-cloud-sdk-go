@@ -21,7 +21,6 @@ import (
 )
 
 // QueryFpCompareJobList invokes the mts.QueryFpCompareJobList API synchronously
-// api document: https://help.aliyun.com/api/mts/queryfpcomparejoblist.html
 func (client *Client) QueryFpCompareJobList(request *QueryFpCompareJobListRequest) (response *QueryFpCompareJobListResponse, err error) {
 	response = CreateQueryFpCompareJobListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryFpCompareJobList(request *QueryFpCompareJobListReques
 }
 
 // QueryFpCompareJobListWithChan invokes the mts.QueryFpCompareJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/queryfpcomparejoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryFpCompareJobListWithChan(request *QueryFpCompareJobListRequest) (<-chan *QueryFpCompareJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryFpCompareJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryFpCompareJobListWithChan(request *QueryFpCompareJobLi
 }
 
 // QueryFpCompareJobListWithCallback invokes the mts.QueryFpCompareJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/queryfpcomparejoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryFpCompareJobListWithCallback(request *QueryFpCompareJobListRequest, callback func(response *QueryFpCompareJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateQueryFpCompareJobListRequest() (request *QueryFpCompareJobListRequest
 	request = &QueryFpCompareJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryFpCompareJobList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryFpCompareJobList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

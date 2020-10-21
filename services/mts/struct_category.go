@@ -17,10 +17,14 @@ package mts
 
 // Category is a nested struct in mts response
 type Category struct {
-	Score    string `json:"Score" xml:"Score"`
-	CateId   string `json:"CateId" xml:"CateId"`
-	ParentId string `json:"ParentId" xml:"ParentId"`
-	Label    string `json:"Label" xml:"Label"`
-	Level    string `json:"Level" xml:"Level"`
-	CateName string `json:"CateName" xml:"CateName"`
+	CategoryName        string  `json:"CategoryName" xml:"CategoryName"`
+	Score               string  `json:"Score" xml:"Score"`
+	CateId              string  `json:"CateId" xml:"CateId"`
+	CategoryId          string  `json:"CategoryId" xml:"CategoryId"`
+	ParentId            string  `json:"ParentId" xml:"ParentId"`
+	Label               string  `json:"Label" xml:"Label"`
+	Level               string  `json:"Level" xml:"Level"`
+	CateName            string  `json:"CateName" xml:"CateName"`
+	CategoryDescription string  `json:"CategoryDescription" xml:"CategoryDescription"`
+	Persons             Persons `json:"Persons" xml:"Persons"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // ListAllCategory invokes the mts.ListAllCategory API synchronously
-// api document: https://help.aliyun.com/api/mts/listallcategory.html
 func (client *Client) ListAllCategory(request *ListAllCategoryRequest) (response *ListAllCategoryResponse, err error) {
 	response = CreateListAllCategoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAllCategory(request *ListAllCategoryRequest) (response
 }
 
 // ListAllCategoryWithChan invokes the mts.ListAllCategory API asynchronously
-// api document: https://help.aliyun.com/api/mts/listallcategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAllCategoryWithChan(request *ListAllCategoryRequest) (<-chan *ListAllCategoryResponse, <-chan error) {
 	responseChan := make(chan *ListAllCategoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAllCategoryWithChan(request *ListAllCategoryRequest) (
 }
 
 // ListAllCategoryWithCallback invokes the mts.ListAllCategory API asynchronously
-// api document: https://help.aliyun.com/api/mts/listallcategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAllCategoryWithCallback(request *ListAllCategoryRequest, callback func(response *ListAllCategoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateListAllCategoryRequest() (request *ListAllCategoryRequest) {
 	request = &ListAllCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ListAllCategory", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ListAllCategory", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

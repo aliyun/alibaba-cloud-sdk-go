@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateCensorPipeline invokes the mts.UpdateCensorPipeline API synchronously
-// api document: https://help.aliyun.com/api/mts/updatecensorpipeline.html
 func (client *Client) UpdateCensorPipeline(request *UpdateCensorPipelineRequest) (response *UpdateCensorPipelineResponse, err error) {
 	response = CreateUpdateCensorPipelineResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateCensorPipeline(request *UpdateCensorPipelineRequest)
 }
 
 // UpdateCensorPipelineWithChan invokes the mts.UpdateCensorPipeline API asynchronously
-// api document: https://help.aliyun.com/api/mts/updatecensorpipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCensorPipelineWithChan(request *UpdateCensorPipelineRequest) (<-chan *UpdateCensorPipelineResponse, <-chan error) {
 	responseChan := make(chan *UpdateCensorPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateCensorPipelineWithChan(request *UpdateCensorPipeline
 }
 
 // UpdateCensorPipelineWithCallback invokes the mts.UpdateCensorPipeline API asynchronously
-// api document: https://help.aliyun.com/api/mts/updatecensorpipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCensorPipelineWithCallback(request *UpdateCensorPipelineRequest, callback func(response *UpdateCensorPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,8 @@ func CreateUpdateCensorPipelineRequest() (request *UpdateCensorPipelineRequest) 
 	request = &UpdateCensorPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateCensorPipeline", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateCensorPipeline", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ReportFacerecogJobResult invokes the mts.ReportFacerecogJobResult API synchronously
-// api document: https://help.aliyun.com/api/mts/reportfacerecogjobresult.html
 func (client *Client) ReportFacerecogJobResult(request *ReportFacerecogJobResultRequest) (response *ReportFacerecogJobResultResponse, err error) {
 	response = CreateReportFacerecogJobResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReportFacerecogJobResult(request *ReportFacerecogJobResult
 }
 
 // ReportFacerecogJobResultWithChan invokes the mts.ReportFacerecogJobResult API asynchronously
-// api document: https://help.aliyun.com/api/mts/reportfacerecogjobresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportFacerecogJobResultWithChan(request *ReportFacerecogJobResultRequest) (<-chan *ReportFacerecogJobResultResponse, <-chan error) {
 	responseChan := make(chan *ReportFacerecogJobResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReportFacerecogJobResultWithChan(request *ReportFacerecogJ
 }
 
 // ReportFacerecogJobResultWithCallback invokes the mts.ReportFacerecogJobResult API asynchronously
-// api document: https://help.aliyun.com/api/mts/reportfacerecogjobresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportFacerecogJobResultWithCallback(request *ReportFacerecogJobResultRequest, callback func(response *ReportFacerecogJobResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateReportFacerecogJobResultRequest() (request *ReportFacerecogJobResultR
 	request = &ReportFacerecogJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportFacerecogJobResult", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportFacerecogJobResult", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

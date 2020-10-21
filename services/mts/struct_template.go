@@ -17,23 +17,29 @@ package mts
 
 // Template is a nested struct in mts response
 type Template struct {
-	TemplateId  string      `json:"TemplateId" xml:"TemplateId"`
-	Name        string      `json:"Name" xml:"Name"`
-	Terrorism   string      `json:"Terrorism" xml:"Terrorism"`
-	Logo        string      `json:"Logo" xml:"Logo"`
-	Contraband  string      `json:"Contraband" xml:"Contraband"`
-	Qrcode      string      `json:"Qrcode" xml:"Qrcode"`
-	Abuse       string      `json:"Abuse" xml:"Abuse"`
-	Id          string      `json:"Id" xml:"Id"`
-	Live        string      `json:"Live" xml:"Live"`
-	Spam        string      `json:"Spam" xml:"Spam"`
-	Ad          string      `json:"Ad" xml:"Ad"`
-	State       string      `json:"State" xml:"State"`
-	Porn        string      `json:"Porn" xml:"Porn"`
-	Politics    string      `json:"Politics" xml:"Politics"`
-	MuxConfig   MuxConfig   `json:"MuxConfig" xml:"MuxConfig"`
-	Audio       Audio       `json:"Audio" xml:"Audio"`
-	TransConfig TransConfig `json:"TransConfig" xml:"TransConfig"`
-	Video       Video       `json:"Video" xml:"Video"`
-	Container   Container   `json:"Container" xml:"Container"`
+	TemplateId      string      `json:"TemplateId" xml:"TemplateId"`
+	Name            string      `json:"Name" xml:"Name"`
+	Terrorism       string      `json:"Terrorism" xml:"Terrorism"`
+	TemplateName    string      `json:"TemplateName" xml:"TemplateName"`
+	FaceCategoryIds string      `json:"FaceCategoryIds" xml:"FaceCategoryIds"`
+	Logo            string      `json:"Logo" xml:"Logo"`
+	Contraband      string      `json:"Contraband" xml:"Contraband"`
+	IsDefault       bool        `json:"IsDefault" xml:"IsDefault"`
+	Qrcode          string      `json:"Qrcode" xml:"Qrcode"`
+	Abuse           string      `json:"Abuse" xml:"Abuse"`
+	Id              string      `json:"Id" xml:"Id"`
+	Live            string      `json:"Live" xml:"Live"`
+	AnalyseTypes    string      `json:"AnalyseTypes" xml:"AnalyseTypes"`
+	Industry        string      `json:"Industry" xml:"Industry"`
+	Spam            string      `json:"Spam" xml:"Spam"`
+	Ad              string      `json:"Ad" xml:"Ad"`
+	State           string      `json:"State" xml:"State"`
+	Scene           string      `json:"Scene" xml:"Scene"`
+	Porn            string      `json:"Porn" xml:"Porn"`
+	Politics        string      `json:"Politics" xml:"Politics"`
+	MuxConfig       MuxConfig   `json:"MuxConfig" xml:"MuxConfig"`
+	Audio           Audio       `json:"Audio" xml:"Audio"`
+	TransConfig     TransConfig `json:"TransConfig" xml:"TransConfig"`
+	Video           Video       `json:"Video" xml:"Video"`
+	Container       Container   `json:"Container" xml:"Container"`
 }

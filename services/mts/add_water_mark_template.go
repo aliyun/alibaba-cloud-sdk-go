@@ -21,7 +21,6 @@ import (
 )
 
 // AddWaterMarkTemplate invokes the mts.AddWaterMarkTemplate API synchronously
-// api document: https://help.aliyun.com/api/mts/addwatermarktemplate.html
 func (client *Client) AddWaterMarkTemplate(request *AddWaterMarkTemplateRequest) (response *AddWaterMarkTemplateResponse, err error) {
 	response = CreateAddWaterMarkTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddWaterMarkTemplate(request *AddWaterMarkTemplateRequest)
 }
 
 // AddWaterMarkTemplateWithChan invokes the mts.AddWaterMarkTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/addwatermarktemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddWaterMarkTemplateWithChan(request *AddWaterMarkTemplateRequest) (<-chan *AddWaterMarkTemplateResponse, <-chan error) {
 	responseChan := make(chan *AddWaterMarkTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddWaterMarkTemplateWithChan(request *AddWaterMarkTemplate
 }
 
 // AddWaterMarkTemplateWithCallback invokes the mts.AddWaterMarkTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/addwatermarktemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddWaterMarkTemplateWithCallback(request *AddWaterMarkTemplateRequest, callback func(response *AddWaterMarkTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateAddWaterMarkTemplateRequest() (request *AddWaterMarkTemplateRequest) 
 	request = &AddWaterMarkTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddWaterMarkTemplate", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "AddWaterMarkTemplate", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

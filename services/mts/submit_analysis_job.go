@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitAnalysisJob invokes the mts.SubmitAnalysisJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submitanalysisjob.html
 func (client *Client) SubmitAnalysisJob(request *SubmitAnalysisJobRequest) (response *SubmitAnalysisJobResponse, err error) {
 	response = CreateSubmitAnalysisJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitAnalysisJob(request *SubmitAnalysisJobRequest) (resp
 }
 
 // SubmitAnalysisJobWithChan invokes the mts.SubmitAnalysisJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitanalysisjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAnalysisJobWithChan(request *SubmitAnalysisJobRequest) (<-chan *SubmitAnalysisJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitAnalysisJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitAnalysisJobWithChan(request *SubmitAnalysisJobReques
 }
 
 // SubmitAnalysisJobWithCallback invokes the mts.SubmitAnalysisJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitanalysisjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAnalysisJobWithCallback(request *SubmitAnalysisJobRequest, callback func(response *SubmitAnalysisJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,8 @@ func CreateSubmitAnalysisJobRequest() (request *SubmitAnalysisJobRequest) {
 	request = &SubmitAnalysisJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitAnalysisJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitAnalysisJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

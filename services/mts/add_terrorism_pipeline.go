@@ -21,7 +21,6 @@ import (
 )
 
 // AddTerrorismPipeline invokes the mts.AddTerrorismPipeline API synchronously
-// api document: https://help.aliyun.com/api/mts/addterrorismpipeline.html
 func (client *Client) AddTerrorismPipeline(request *AddTerrorismPipelineRequest) (response *AddTerrorismPipelineResponse, err error) {
 	response = CreateAddTerrorismPipelineResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddTerrorismPipeline(request *AddTerrorismPipelineRequest)
 }
 
 // AddTerrorismPipelineWithChan invokes the mts.AddTerrorismPipeline API asynchronously
-// api document: https://help.aliyun.com/api/mts/addterrorismpipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTerrorismPipelineWithChan(request *AddTerrorismPipelineRequest) (<-chan *AddTerrorismPipelineResponse, <-chan error) {
 	responseChan := make(chan *AddTerrorismPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddTerrorismPipelineWithChan(request *AddTerrorismPipeline
 }
 
 // AddTerrorismPipelineWithCallback invokes the mts.AddTerrorismPipeline API asynchronously
-// api document: https://help.aliyun.com/api/mts/addterrorismpipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTerrorismPipelineWithCallback(request *AddTerrorismPipelineRequest, callback func(response *AddTerrorismPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateAddTerrorismPipelineRequest() (request *AddTerrorismPipelineRequest) 
 	request = &AddTerrorismPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddTerrorismPipeline", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "AddTerrorismPipeline", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateMediaWorkflowTriggerMode invokes the mts.UpdateMediaWorkflowTriggerMode API synchronously
-// api document: https://help.aliyun.com/api/mts/updatemediaworkflowtriggermode.html
 func (client *Client) UpdateMediaWorkflowTriggerMode(request *UpdateMediaWorkflowTriggerModeRequest) (response *UpdateMediaWorkflowTriggerModeResponse, err error) {
 	response = CreateUpdateMediaWorkflowTriggerModeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateMediaWorkflowTriggerMode(request *UpdateMediaWorkflo
 }
 
 // UpdateMediaWorkflowTriggerModeWithChan invokes the mts.UpdateMediaWorkflowTriggerMode API asynchronously
-// api document: https://help.aliyun.com/api/mts/updatemediaworkflowtriggermode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaWorkflowTriggerModeWithChan(request *UpdateMediaWorkflowTriggerModeRequest) (<-chan *UpdateMediaWorkflowTriggerModeResponse, <-chan error) {
 	responseChan := make(chan *UpdateMediaWorkflowTriggerModeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateMediaWorkflowTriggerModeWithChan(request *UpdateMedi
 }
 
 // UpdateMediaWorkflowTriggerModeWithCallback invokes the mts.UpdateMediaWorkflowTriggerMode API asynchronously
-// api document: https://help.aliyun.com/api/mts/updatemediaworkflowtriggermode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaWorkflowTriggerModeWithCallback(request *UpdateMediaWorkflowTriggerModeRequest, callback func(response *UpdateMediaWorkflowTriggerModeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateUpdateMediaWorkflowTriggerModeRequest() (request *UpdateMediaWorkflow
 	request = &UpdateMediaWorkflowTriggerModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMediaWorkflowTriggerMode", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMediaWorkflowTriggerMode", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // GetPackage invokes the mts.GetPackage API synchronously
-// api document: https://help.aliyun.com/api/mts/getpackage.html
 func (client *Client) GetPackage(request *GetPackageRequest) (response *GetPackageResponse, err error) {
 	response = CreateGetPackageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetPackage(request *GetPackageRequest) (response *GetPacka
 }
 
 // GetPackageWithChan invokes the mts.GetPackage API asynchronously
-// api document: https://help.aliyun.com/api/mts/getpackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPackageWithChan(request *GetPackageRequest) (<-chan *GetPackageResponse, <-chan error) {
 	responseChan := make(chan *GetPackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetPackageWithChan(request *GetPackageRequest) (<-chan *Ge
 }
 
 // GetPackageWithCallback invokes the mts.GetPackage API asynchronously
-// api document: https://help.aliyun.com/api/mts/getpackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPackageWithCallback(request *GetPackageRequest, callback func(response *GetPackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateGetPackageRequest() (request *GetPackageRequest) {
 	request = &GetPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "GetPackage", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "GetPackage", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

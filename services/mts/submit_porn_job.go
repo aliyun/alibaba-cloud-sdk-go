@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitPornJob invokes the mts.SubmitPornJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submitpornjob.html
 func (client *Client) SubmitPornJob(request *SubmitPornJobRequest) (response *SubmitPornJobResponse, err error) {
 	response = CreateSubmitPornJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitPornJob(request *SubmitPornJobRequest) (response *Su
 }
 
 // SubmitPornJobWithChan invokes the mts.SubmitPornJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitpornjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitPornJobWithChan(request *SubmitPornJobRequest) (<-chan *SubmitPornJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitPornJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitPornJobWithChan(request *SubmitPornJobRequest) (<-ch
 }
 
 // SubmitPornJobWithCallback invokes the mts.SubmitPornJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitpornjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitPornJobWithCallback(request *SubmitPornJobRequest, callback func(response *SubmitPornJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateSubmitPornJobRequest() (request *SubmitPornJobRequest) {
 	request = &SubmitPornJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitPornJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitPornJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

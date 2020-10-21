@@ -21,7 +21,6 @@ import (
 )
 
 // QueryCensorPipelineList invokes the mts.QueryCensorPipelineList API synchronously
-// api document: https://help.aliyun.com/api/mts/querycensorpipelinelist.html
 func (client *Client) QueryCensorPipelineList(request *QueryCensorPipelineListRequest) (response *QueryCensorPipelineListResponse, err error) {
 	response = CreateQueryCensorPipelineListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryCensorPipelineList(request *QueryCensorPipelineListRe
 }
 
 // QueryCensorPipelineListWithChan invokes the mts.QueryCensorPipelineList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querycensorpipelinelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCensorPipelineListWithChan(request *QueryCensorPipelineListRequest) (<-chan *QueryCensorPipelineListResponse, <-chan error) {
 	responseChan := make(chan *QueryCensorPipelineListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryCensorPipelineListWithChan(request *QueryCensorPipeli
 }
 
 // QueryCensorPipelineListWithCallback invokes the mts.QueryCensorPipelineList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querycensorpipelinelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCensorPipelineListWithCallback(request *QueryCensorPipelineListRequest, callback func(response *QueryCensorPipelineListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateQueryCensorPipelineListRequest() (request *QueryCensorPipelineListReq
 	request = &QueryCensorPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryCensorPipelineList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryCensorPipelineList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

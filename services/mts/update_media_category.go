@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateMediaCategory invokes the mts.UpdateMediaCategory API synchronously
-// api document: https://help.aliyun.com/api/mts/updatemediacategory.html
 func (client *Client) UpdateMediaCategory(request *UpdateMediaCategoryRequest) (response *UpdateMediaCategoryResponse, err error) {
 	response = CreateUpdateMediaCategoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateMediaCategory(request *UpdateMediaCategoryRequest) (
 }
 
 // UpdateMediaCategoryWithChan invokes the mts.UpdateMediaCategory API asynchronously
-// api document: https://help.aliyun.com/api/mts/updatemediacategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaCategoryWithChan(request *UpdateMediaCategoryRequest) (<-chan *UpdateMediaCategoryResponse, <-chan error) {
 	responseChan := make(chan *UpdateMediaCategoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateMediaCategoryWithChan(request *UpdateMediaCategoryRe
 }
 
 // UpdateMediaCategoryWithCallback invokes the mts.UpdateMediaCategory API asynchronously
-// api document: https://help.aliyun.com/api/mts/updatemediacategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaCategoryWithCallback(request *UpdateMediaCategoryRequest, callback func(response *UpdateMediaCategoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateUpdateMediaCategoryRequest() (request *UpdateMediaCategoryRequest) {
 	request = &UpdateMediaCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMediaCategory", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMediaCategory", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

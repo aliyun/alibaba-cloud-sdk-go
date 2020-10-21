@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitMCJob invokes the mts.SubmitMCJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submitmcjob.html
 func (client *Client) SubmitMCJob(request *SubmitMCJobRequest) (response *SubmitMCJobResponse, err error) {
 	response = CreateSubmitMCJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitMCJob(request *SubmitMCJobRequest) (response *Submit
 }
 
 // SubmitMCJobWithChan invokes the mts.SubmitMCJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitmcjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitMCJobWithChan(request *SubmitMCJobRequest) (<-chan *SubmitMCJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitMCJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitMCJobWithChan(request *SubmitMCJobRequest) (<-chan *
 }
 
 // SubmitMCJobWithCallback invokes the mts.SubmitMCJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitmcjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitMCJobWithCallback(request *SubmitMCJobRequest, callback func(response *SubmitMCJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,8 @@ func CreateSubmitMCJobRequest() (request *SubmitMCJobRequest) {
 	request = &SubmitMCJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitMCJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitMCJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

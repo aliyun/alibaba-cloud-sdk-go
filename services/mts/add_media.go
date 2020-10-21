@@ -21,7 +21,6 @@ import (
 )
 
 // AddMedia invokes the mts.AddMedia API synchronously
-// api document: https://help.aliyun.com/api/mts/addmedia.html
 func (client *Client) AddMedia(request *AddMediaRequest) (response *AddMediaResponse, err error) {
 	response = CreateAddMediaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddMedia(request *AddMediaRequest) (response *AddMediaResp
 }
 
 // AddMediaWithChan invokes the mts.AddMedia API asynchronously
-// api document: https://help.aliyun.com/api/mts/addmedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddMediaWithChan(request *AddMediaRequest) (<-chan *AddMediaResponse, <-chan error) {
 	responseChan := make(chan *AddMediaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddMediaWithChan(request *AddMediaRequest) (<-chan *AddMed
 }
 
 // AddMediaWithCallback invokes the mts.AddMedia API asynchronously
-// api document: https://help.aliyun.com/api/mts/addmedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddMediaWithCallback(request *AddMediaRequest, callback func(response *AddMediaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,7 +99,8 @@ func CreateAddMediaRequest() (request *AddMediaRequest) {
 	request = &AddMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddMedia", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "AddMedia", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

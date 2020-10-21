@@ -21,7 +21,6 @@ import (
 )
 
 // PlayerAuth invokes the mts.PlayerAuth API synchronously
-// api document: https://help.aliyun.com/api/mts/playerauth.html
 func (client *Client) PlayerAuth(request *PlayerAuthRequest) (response *PlayerAuthResponse, err error) {
 	response = CreatePlayerAuthResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PlayerAuth(request *PlayerAuthRequest) (response *PlayerAu
 }
 
 // PlayerAuthWithChan invokes the mts.PlayerAuth API asynchronously
-// api document: https://help.aliyun.com/api/mts/playerauth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PlayerAuthWithChan(request *PlayerAuthRequest) (<-chan *PlayerAuthResponse, <-chan error) {
 	responseChan := make(chan *PlayerAuthResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PlayerAuthWithChan(request *PlayerAuthRequest) (<-chan *Pl
 }
 
 // PlayerAuthWithCallback invokes the mts.PlayerAuth API asynchronously
-// api document: https://help.aliyun.com/api/mts/playerauth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PlayerAuthWithCallback(request *PlayerAuthRequest, callback func(response *PlayerAuthResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreatePlayerAuthRequest() (request *PlayerAuthRequest) {
 	request = &PlayerAuthRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "PlayerAuth", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "PlayerAuth", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

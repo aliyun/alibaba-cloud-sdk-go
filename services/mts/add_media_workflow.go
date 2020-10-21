@@ -21,7 +21,6 @@ import (
 )
 
 // AddMediaWorkflow invokes the mts.AddMediaWorkflow API synchronously
-// api document: https://help.aliyun.com/api/mts/addmediaworkflow.html
 func (client *Client) AddMediaWorkflow(request *AddMediaWorkflowRequest) (response *AddMediaWorkflowResponse, err error) {
 	response = CreateAddMediaWorkflowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddMediaWorkflow(request *AddMediaWorkflowRequest) (respon
 }
 
 // AddMediaWorkflowWithChan invokes the mts.AddMediaWorkflow API asynchronously
-// api document: https://help.aliyun.com/api/mts/addmediaworkflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddMediaWorkflowWithChan(request *AddMediaWorkflowRequest) (<-chan *AddMediaWorkflowResponse, <-chan error) {
 	responseChan := make(chan *AddMediaWorkflowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddMediaWorkflowWithChan(request *AddMediaWorkflowRequest)
 }
 
 // AddMediaWorkflowWithCallback invokes the mts.AddMediaWorkflow API asynchronously
-// api document: https://help.aliyun.com/api/mts/addmediaworkflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddMediaWorkflowWithCallback(request *AddMediaWorkflowRequest, callback func(response *AddMediaWorkflowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateAddMediaWorkflowRequest() (request *AddMediaWorkflowRequest) {
 	request = &AddMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddMediaWorkflow", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "AddMediaWorkflow", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

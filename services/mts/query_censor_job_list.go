@@ -21,7 +21,6 @@ import (
 )
 
 // QueryCensorJobList invokes the mts.QueryCensorJobList API synchronously
-// api document: https://help.aliyun.com/api/mts/querycensorjoblist.html
 func (client *Client) QueryCensorJobList(request *QueryCensorJobListRequest) (response *QueryCensorJobListResponse, err error) {
 	response = CreateQueryCensorJobListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryCensorJobList(request *QueryCensorJobListRequest) (re
 }
 
 // QueryCensorJobListWithChan invokes the mts.QueryCensorJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querycensorjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCensorJobListWithChan(request *QueryCensorJobListRequest) (<-chan *QueryCensorJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryCensorJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryCensorJobListWithChan(request *QueryCensorJobListRequ
 }
 
 // QueryCensorJobListWithCallback invokes the mts.QueryCensorJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querycensorjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCensorJobListWithCallback(request *QueryCensorJobListRequest, callback func(response *QueryCensorJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateQueryCensorJobListRequest() (request *QueryCensorJobListRequest) {
 	request = &QueryCensorJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryCensorJobList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryCensorJobList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // QueryMediaWorkflowExecutionList invokes the mts.QueryMediaWorkflowExecutionList API synchronously
-// api document: https://help.aliyun.com/api/mts/querymediaworkflowexecutionlist.html
 func (client *Client) QueryMediaWorkflowExecutionList(request *QueryMediaWorkflowExecutionListRequest) (response *QueryMediaWorkflowExecutionListResponse, err error) {
 	response = CreateQueryMediaWorkflowExecutionListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryMediaWorkflowExecutionList(request *QueryMediaWorkflo
 }
 
 // QueryMediaWorkflowExecutionListWithChan invokes the mts.QueryMediaWorkflowExecutionList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querymediaworkflowexecutionlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaWorkflowExecutionListWithChan(request *QueryMediaWorkflowExecutionListRequest) (<-chan *QueryMediaWorkflowExecutionListResponse, <-chan error) {
 	responseChan := make(chan *QueryMediaWorkflowExecutionListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryMediaWorkflowExecutionListWithChan(request *QueryMedi
 }
 
 // QueryMediaWorkflowExecutionListWithCallback invokes the mts.QueryMediaWorkflowExecutionList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querymediaworkflowexecutionlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaWorkflowExecutionListWithCallback(request *QueryMediaWorkflowExecutionListRequest, callback func(response *QueryMediaWorkflowExecutionListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateQueryMediaWorkflowExecutionListRequest() (request *QueryMediaWorkflow
 	request = &QueryMediaWorkflowExecutionListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaWorkflowExecutionList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaWorkflowExecutionList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

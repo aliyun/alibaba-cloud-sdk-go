@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitFacerecogJob invokes the mts.SubmitFacerecogJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submitfacerecogjob.html
 func (client *Client) SubmitFacerecogJob(request *SubmitFacerecogJobRequest) (response *SubmitFacerecogJobResponse, err error) {
 	response = CreateSubmitFacerecogJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitFacerecogJob(request *SubmitFacerecogJobRequest) (re
 }
 
 // SubmitFacerecogJobWithChan invokes the mts.SubmitFacerecogJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitfacerecogjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitFacerecogJobWithChan(request *SubmitFacerecogJobRequest) (<-chan *SubmitFacerecogJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitFacerecogJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitFacerecogJobWithChan(request *SubmitFacerecogJobRequ
 }
 
 // SubmitFacerecogJobWithCallback invokes the mts.SubmitFacerecogJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitfacerecogjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitFacerecogJobWithCallback(request *SubmitFacerecogJobRequest, callback func(response *SubmitFacerecogJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateSubmitFacerecogJobRequest() (request *SubmitFacerecogJobRequest) {
 	request = &SubmitFacerecogJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitFacerecogJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitFacerecogJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

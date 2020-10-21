@@ -21,7 +21,6 @@ import (
 )
 
 // ListFpShotDB invokes the mts.ListFpShotDB API synchronously
-// api document: https://help.aliyun.com/api/mts/listfpshotdb.html
 func (client *Client) ListFpShotDB(request *ListFpShotDBRequest) (response *ListFpShotDBResponse, err error) {
 	response = CreateListFpShotDBResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFpShotDB(request *ListFpShotDBRequest) (response *List
 }
 
 // ListFpShotDBWithChan invokes the mts.ListFpShotDB API asynchronously
-// api document: https://help.aliyun.com/api/mts/listfpshotdb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFpShotDBWithChan(request *ListFpShotDBRequest) (<-chan *ListFpShotDBResponse, <-chan error) {
 	responseChan := make(chan *ListFpShotDBResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFpShotDBWithChan(request *ListFpShotDBRequest) (<-chan
 }
 
 // ListFpShotDBWithCallback invokes the mts.ListFpShotDB API asynchronously
-// api document: https://help.aliyun.com/api/mts/listfpshotdb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFpShotDBWithCallback(request *ListFpShotDBRequest, callback func(response *ListFpShotDBResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateListFpShotDBRequest() (request *ListFpShotDBRequest) {
 	request = &ListFpShotDBRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ListFpShotDB", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ListFpShotDB", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // SetAuthConfig invokes the mts.SetAuthConfig API synchronously
-// api document: https://help.aliyun.com/api/mts/setauthconfig.html
 func (client *Client) SetAuthConfig(request *SetAuthConfigRequest) (response *SetAuthConfigResponse, err error) {
 	response = CreateSetAuthConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetAuthConfig(request *SetAuthConfigRequest) (response *Se
 }
 
 // SetAuthConfigWithChan invokes the mts.SetAuthConfig API asynchronously
-// api document: https://help.aliyun.com/api/mts/setauthconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAuthConfigWithChan(request *SetAuthConfigRequest) (<-chan *SetAuthConfigResponse, <-chan error) {
 	responseChan := make(chan *SetAuthConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetAuthConfigWithChan(request *SetAuthConfigRequest) (<-ch
 }
 
 // SetAuthConfigWithCallback invokes the mts.SetAuthConfig API asynchronously
-// api document: https://help.aliyun.com/api/mts/setauthconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAuthConfigWithCallback(request *SetAuthConfigRequest, callback func(response *SetAuthConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateSetAuthConfigRequest() (request *SetAuthConfigRequest) {
 	request = &SetAuthConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SetAuthConfig", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SetAuthConfig", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

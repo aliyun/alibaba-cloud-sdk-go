@@ -21,7 +21,6 @@ import (
 )
 
 // QueryMediaCensorJobList invokes the mts.QueryMediaCensorJobList API synchronously
-// api document: https://help.aliyun.com/api/mts/querymediacensorjoblist.html
 func (client *Client) QueryMediaCensorJobList(request *QueryMediaCensorJobListRequest) (response *QueryMediaCensorJobListResponse, err error) {
 	response = CreateQueryMediaCensorJobListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryMediaCensorJobList(request *QueryMediaCensorJobListRe
 }
 
 // QueryMediaCensorJobListWithChan invokes the mts.QueryMediaCensorJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querymediacensorjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaCensorJobListWithChan(request *QueryMediaCensorJobListRequest) (<-chan *QueryMediaCensorJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryMediaCensorJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryMediaCensorJobListWithChan(request *QueryMediaCensorJ
 }
 
 // QueryMediaCensorJobListWithCallback invokes the mts.QueryMediaCensorJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querymediacensorjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaCensorJobListWithCallback(request *QueryMediaCensorJobListRequest, callback func(response *QueryMediaCensorJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,7 +98,8 @@ func CreateQueryMediaCensorJobListRequest() (request *QueryMediaCensorJobListReq
 	request = &QueryMediaCensorJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaCensorJobList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaCensorJobList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

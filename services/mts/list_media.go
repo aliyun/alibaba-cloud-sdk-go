@@ -21,7 +21,6 @@ import (
 )
 
 // ListMedia invokes the mts.ListMedia API synchronously
-// api document: https://help.aliyun.com/api/mts/listmedia.html
 func (client *Client) ListMedia(request *ListMediaRequest) (response *ListMediaResponse, err error) {
 	response = CreateListMediaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListMedia(request *ListMediaRequest) (response *ListMediaR
 }
 
 // ListMediaWithChan invokes the mts.ListMedia API asynchronously
-// api document: https://help.aliyun.com/api/mts/listmedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMediaWithChan(request *ListMediaRequest) (<-chan *ListMediaResponse, <-chan error) {
 	responseChan := make(chan *ListMediaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListMediaWithChan(request *ListMediaRequest) (<-chan *List
 }
 
 // ListMediaWithCallback invokes the mts.ListMedia API asynchronously
-// api document: https://help.aliyun.com/api/mts/listmedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMediaWithCallback(request *ListMediaRequest, callback func(response *ListMediaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,8 @@ func CreateListMediaRequest() (request *ListMediaRequest) {
 	request = &ListMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ListMedia", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ListMedia", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

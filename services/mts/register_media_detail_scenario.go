@@ -21,7 +21,6 @@ import (
 )
 
 // RegisterMediaDetailScenario invokes the mts.RegisterMediaDetailScenario API synchronously
-// api document: https://help.aliyun.com/api/mts/registermediadetailscenario.html
 func (client *Client) RegisterMediaDetailScenario(request *RegisterMediaDetailScenarioRequest) (response *RegisterMediaDetailScenarioResponse, err error) {
 	response = CreateRegisterMediaDetailScenarioResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RegisterMediaDetailScenario(request *RegisterMediaDetailSc
 }
 
 // RegisterMediaDetailScenarioWithChan invokes the mts.RegisterMediaDetailScenario API asynchronously
-// api document: https://help.aliyun.com/api/mts/registermediadetailscenario.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterMediaDetailScenarioWithChan(request *RegisterMediaDetailScenarioRequest) (<-chan *RegisterMediaDetailScenarioResponse, <-chan error) {
 	responseChan := make(chan *RegisterMediaDetailScenarioResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RegisterMediaDetailScenarioWithChan(request *RegisterMedia
 }
 
 // RegisterMediaDetailScenarioWithCallback invokes the mts.RegisterMediaDetailScenario API asynchronously
-// api document: https://help.aliyun.com/api/mts/registermediadetailscenario.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterMediaDetailScenarioWithCallback(request *RegisterMediaDetailScenarioRequest, callback func(response *RegisterMediaDetailScenarioResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateRegisterMediaDetailScenarioRequest() (request *RegisterMediaDetailSce
 	request = &RegisterMediaDetailScenarioRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "RegisterMediaDetailScenario", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "RegisterMediaDetailScenario", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

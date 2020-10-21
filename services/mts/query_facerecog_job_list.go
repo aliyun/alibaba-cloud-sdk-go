@@ -21,7 +21,6 @@ import (
 )
 
 // QueryFacerecogJobList invokes the mts.QueryFacerecogJobList API synchronously
-// api document: https://help.aliyun.com/api/mts/queryfacerecogjoblist.html
 func (client *Client) QueryFacerecogJobList(request *QueryFacerecogJobListRequest) (response *QueryFacerecogJobListResponse, err error) {
 	response = CreateQueryFacerecogJobListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryFacerecogJobList(request *QueryFacerecogJobListReques
 }
 
 // QueryFacerecogJobListWithChan invokes the mts.QueryFacerecogJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/queryfacerecogjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryFacerecogJobListWithChan(request *QueryFacerecogJobListRequest) (<-chan *QueryFacerecogJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryFacerecogJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryFacerecogJobListWithChan(request *QueryFacerecogJobLi
 }
 
 // QueryFacerecogJobListWithCallback invokes the mts.QueryFacerecogJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/queryfacerecogjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryFacerecogJobListWithCallback(request *QueryFacerecogJobListRequest, callback func(response *QueryFacerecogJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateQueryFacerecogJobListRequest() (request *QueryFacerecogJobListRequest
 	request = &QueryFacerecogJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryFacerecogJobList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryFacerecogJobList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

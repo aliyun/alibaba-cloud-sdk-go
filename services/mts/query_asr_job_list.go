@@ -21,7 +21,6 @@ import (
 )
 
 // QueryAsrJobList invokes the mts.QueryAsrJobList API synchronously
-// api document: https://help.aliyun.com/api/mts/queryasrjoblist.html
 func (client *Client) QueryAsrJobList(request *QueryAsrJobListRequest) (response *QueryAsrJobListResponse, err error) {
 	response = CreateQueryAsrJobListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryAsrJobList(request *QueryAsrJobListRequest) (response
 }
 
 // QueryAsrJobListWithChan invokes the mts.QueryAsrJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/queryasrjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAsrJobListWithChan(request *QueryAsrJobListRequest) (<-chan *QueryAsrJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryAsrJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryAsrJobListWithChan(request *QueryAsrJobListRequest) (
 }
 
 // QueryAsrJobListWithCallback invokes the mts.QueryAsrJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/queryasrjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAsrJobListWithCallback(request *QueryAsrJobListRequest, callback func(response *QueryAsrJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateQueryAsrJobListRequest() (request *QueryAsrJobListRequest) {
 	request = &QueryAsrJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAsrJobList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAsrJobList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

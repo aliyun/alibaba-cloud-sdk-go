@@ -21,7 +21,6 @@ import (
 )
 
 // QueryVideoSplitJobList invokes the mts.QueryVideoSplitJobList API synchronously
-// api document: https://help.aliyun.com/api/mts/queryvideosplitjoblist.html
 func (client *Client) QueryVideoSplitJobList(request *QueryVideoSplitJobListRequest) (response *QueryVideoSplitJobListResponse, err error) {
 	response = CreateQueryVideoSplitJobListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryVideoSplitJobList(request *QueryVideoSplitJobListRequ
 }
 
 // QueryVideoSplitJobListWithChan invokes the mts.QueryVideoSplitJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/queryvideosplitjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryVideoSplitJobListWithChan(request *QueryVideoSplitJobListRequest) (<-chan *QueryVideoSplitJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryVideoSplitJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryVideoSplitJobListWithChan(request *QueryVideoSplitJob
 }
 
 // QueryVideoSplitJobListWithCallback invokes the mts.QueryVideoSplitJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/queryvideosplitjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryVideoSplitJobListWithCallback(request *QueryVideoSplitJobListRequest, callback func(response *QueryVideoSplitJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateQueryVideoSplitJobListRequest() (request *QueryVideoSplitJobListReque
 	request = &QueryVideoSplitJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryVideoSplitJobList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryVideoSplitJobList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

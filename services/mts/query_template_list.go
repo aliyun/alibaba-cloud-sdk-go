@@ -21,7 +21,6 @@ import (
 )
 
 // QueryTemplateList invokes the mts.QueryTemplateList API synchronously
-// api document: https://help.aliyun.com/api/mts/querytemplatelist.html
 func (client *Client) QueryTemplateList(request *QueryTemplateListRequest) (response *QueryTemplateListResponse, err error) {
 	response = CreateQueryTemplateListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryTemplateList(request *QueryTemplateListRequest) (resp
 }
 
 // QueryTemplateListWithChan invokes the mts.QueryTemplateList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querytemplatelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTemplateListWithChan(request *QueryTemplateListRequest) (<-chan *QueryTemplateListResponse, <-chan error) {
 	responseChan := make(chan *QueryTemplateListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryTemplateListWithChan(request *QueryTemplateListReques
 }
 
 // QueryTemplateListWithCallback invokes the mts.QueryTemplateList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querytemplatelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTemplateListWithCallback(request *QueryTemplateListRequest, callback func(response *QueryTemplateListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateQueryTemplateListRequest() (request *QueryTemplateListRequest) {
 	request = &QueryTemplateListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryTemplateList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryTemplateList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

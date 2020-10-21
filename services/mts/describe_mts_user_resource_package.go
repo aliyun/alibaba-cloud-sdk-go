@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMtsUserResourcePackage invokes the mts.DescribeMtsUserResourcePackage API synchronously
-// api document: https://help.aliyun.com/api/mts/describemtsuserresourcepackage.html
 func (client *Client) DescribeMtsUserResourcePackage(request *DescribeMtsUserResourcePackageRequest) (response *DescribeMtsUserResourcePackageResponse, err error) {
 	response = CreateDescribeMtsUserResourcePackageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMtsUserResourcePackage(request *DescribeMtsUserRes
 }
 
 // DescribeMtsUserResourcePackageWithChan invokes the mts.DescribeMtsUserResourcePackage API asynchronously
-// api document: https://help.aliyun.com/api/mts/describemtsuserresourcepackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMtsUserResourcePackageWithChan(request *DescribeMtsUserResourcePackageRequest) (<-chan *DescribeMtsUserResourcePackageResponse, <-chan error) {
 	responseChan := make(chan *DescribeMtsUserResourcePackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMtsUserResourcePackageWithChan(request *DescribeMt
 }
 
 // DescribeMtsUserResourcePackageWithCallback invokes the mts.DescribeMtsUserResourcePackage API asynchronously
-// api document: https://help.aliyun.com/api/mts/describemtsuserresourcepackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMtsUserResourcePackageWithCallback(request *DescribeMtsUserResourcePackageRequest, callback func(response *DescribeMtsUserResourcePackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateDescribeMtsUserResourcePackageRequest() (request *DescribeMtsUserReso
 	request = &DescribeMtsUserResourcePackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DescribeMtsUserResourcePackage", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DescribeMtsUserResourcePackage", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

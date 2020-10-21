@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitFpCompareJob invokes the mts.SubmitFpCompareJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submitfpcomparejob.html
 func (client *Client) SubmitFpCompareJob(request *SubmitFpCompareJobRequest) (response *SubmitFpCompareJobResponse, err error) {
 	response = CreateSubmitFpCompareJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitFpCompareJob(request *SubmitFpCompareJobRequest) (re
 }
 
 // SubmitFpCompareJobWithChan invokes the mts.SubmitFpCompareJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitfpcomparejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitFpCompareJobWithChan(request *SubmitFpCompareJobRequest) (<-chan *SubmitFpCompareJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitFpCompareJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitFpCompareJobWithChan(request *SubmitFpCompareJobRequ
 }
 
 // SubmitFpCompareJobWithCallback invokes the mts.SubmitFpCompareJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitfpcomparejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitFpCompareJobWithCallback(request *SubmitFpCompareJobRequest, callback func(response *SubmitFpCompareJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,8 @@ func CreateSubmitFpCompareJobRequest() (request *SubmitFpCompareJobRequest) {
 	request = &SubmitFpCompareJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitFpCompareJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitFpCompareJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // BindInputBucket invokes the mts.BindInputBucket API synchronously
-// api document: https://help.aliyun.com/api/mts/bindinputbucket.html
 func (client *Client) BindInputBucket(request *BindInputBucketRequest) (response *BindInputBucketResponse, err error) {
 	response = CreateBindInputBucketResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindInputBucket(request *BindInputBucketRequest) (response
 }
 
 // BindInputBucketWithChan invokes the mts.BindInputBucket API asynchronously
-// api document: https://help.aliyun.com/api/mts/bindinputbucket.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindInputBucketWithChan(request *BindInputBucketRequest) (<-chan *BindInputBucketResponse, <-chan error) {
 	responseChan := make(chan *BindInputBucketResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindInputBucketWithChan(request *BindInputBucketRequest) (
 }
 
 // BindInputBucketWithCallback invokes the mts.BindInputBucket API asynchronously
-// api document: https://help.aliyun.com/api/mts/bindinputbucket.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindInputBucketWithCallback(request *BindInputBucketRequest, callback func(response *BindInputBucketResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateBindInputBucketRequest() (request *BindInputBucketRequest) {
 	request = &BindInputBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "BindInputBucket", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "BindInputBucket", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateMcuTemplate invokes the mts.CreateMcuTemplate API synchronously
-// api document: https://help.aliyun.com/api/mts/createmcutemplate.html
 func (client *Client) CreateMcuTemplate(request *CreateMcuTemplateRequest) (response *CreateMcuTemplateResponse, err error) {
 	response = CreateCreateMcuTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateMcuTemplate(request *CreateMcuTemplateRequest) (resp
 }
 
 // CreateMcuTemplateWithChan invokes the mts.CreateMcuTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/createmcutemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMcuTemplateWithChan(request *CreateMcuTemplateRequest) (<-chan *CreateMcuTemplateResponse, <-chan error) {
 	responseChan := make(chan *CreateMcuTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateMcuTemplateWithChan(request *CreateMcuTemplateReques
 }
 
 // CreateMcuTemplateWithCallback invokes the mts.CreateMcuTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/createmcutemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMcuTemplateWithCallback(request *CreateMcuTemplateRequest, callback func(response *CreateMcuTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateCreateMcuTemplateRequest() (request *CreateMcuTemplateRequest) {
 	request = &CreateMcuTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "CreateMcuTemplate", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "CreateMcuTemplate", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

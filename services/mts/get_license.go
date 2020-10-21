@@ -21,7 +21,6 @@ import (
 )
 
 // GetLicense invokes the mts.GetLicense API synchronously
-// api document: https://help.aliyun.com/api/mts/getlicense.html
 func (client *Client) GetLicense(request *GetLicenseRequest) (response *GetLicenseResponse, err error) {
 	response = CreateGetLicenseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetLicense(request *GetLicenseRequest) (response *GetLicen
 }
 
 // GetLicenseWithChan invokes the mts.GetLicense API asynchronously
-// api document: https://help.aliyun.com/api/mts/getlicense.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLicenseWithChan(request *GetLicenseRequest) (<-chan *GetLicenseResponse, <-chan error) {
 	responseChan := make(chan *GetLicenseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetLicenseWithChan(request *GetLicenseRequest) (<-chan *Ge
 }
 
 // GetLicenseWithCallback invokes the mts.GetLicense API asynchronously
-// api document: https://help.aliyun.com/api/mts/getlicense.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLicenseWithCallback(request *GetLicenseRequest, callback func(response *GetLicenseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,8 @@ func CreateGetLicenseRequest() (request *GetLicenseRequest) {
 	request = &GetLicenseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "GetLicense", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "GetLicense", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

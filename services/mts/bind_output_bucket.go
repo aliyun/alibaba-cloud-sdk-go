@@ -21,7 +21,6 @@ import (
 )
 
 // BindOutputBucket invokes the mts.BindOutputBucket API synchronously
-// api document: https://help.aliyun.com/api/mts/bindoutputbucket.html
 func (client *Client) BindOutputBucket(request *BindOutputBucketRequest) (response *BindOutputBucketResponse, err error) {
 	response = CreateBindOutputBucketResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindOutputBucket(request *BindOutputBucketRequest) (respon
 }
 
 // BindOutputBucketWithChan invokes the mts.BindOutputBucket API asynchronously
-// api document: https://help.aliyun.com/api/mts/bindoutputbucket.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindOutputBucketWithChan(request *BindOutputBucketRequest) (<-chan *BindOutputBucketResponse, <-chan error) {
 	responseChan := make(chan *BindOutputBucketResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindOutputBucketWithChan(request *BindOutputBucketRequest)
 }
 
 // BindOutputBucketWithCallback invokes the mts.BindOutputBucket API asynchronously
-// api document: https://help.aliyun.com/api/mts/bindoutputbucket.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindOutputBucketWithCallback(request *BindOutputBucketRequest, callback func(response *BindOutputBucketResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateBindOutputBucketRequest() (request *BindOutputBucketRequest) {
 	request = &BindOutputBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "BindOutputBucket", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "BindOutputBucket", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

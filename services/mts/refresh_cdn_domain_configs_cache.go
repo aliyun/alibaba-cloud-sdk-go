@@ -21,7 +21,6 @@ import (
 )
 
 // RefreshCdnDomainConfigsCache invokes the mts.RefreshCdnDomainConfigsCache API synchronously
-// api document: https://help.aliyun.com/api/mts/refreshcdndomainconfigscache.html
 func (client *Client) RefreshCdnDomainConfigsCache(request *RefreshCdnDomainConfigsCacheRequest) (response *RefreshCdnDomainConfigsCacheResponse, err error) {
 	response = CreateRefreshCdnDomainConfigsCacheResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RefreshCdnDomainConfigsCache(request *RefreshCdnDomainConf
 }
 
 // RefreshCdnDomainConfigsCacheWithChan invokes the mts.RefreshCdnDomainConfigsCache API asynchronously
-// api document: https://help.aliyun.com/api/mts/refreshcdndomainconfigscache.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshCdnDomainConfigsCacheWithChan(request *RefreshCdnDomainConfigsCacheRequest) (<-chan *RefreshCdnDomainConfigsCacheResponse, <-chan error) {
 	responseChan := make(chan *RefreshCdnDomainConfigsCacheResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RefreshCdnDomainConfigsCacheWithChan(request *RefreshCdnDo
 }
 
 // RefreshCdnDomainConfigsCacheWithCallback invokes the mts.RefreshCdnDomainConfigsCache API asynchronously
-// api document: https://help.aliyun.com/api/mts/refreshcdndomainconfigscache.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshCdnDomainConfigsCacheWithCallback(request *RefreshCdnDomainConfigsCacheRequest, callback func(response *RefreshCdnDomainConfigsCacheResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateRefreshCdnDomainConfigsCacheRequest() (request *RefreshCdnDomainConfi
 	request = &RefreshCdnDomainConfigsCacheRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "RefreshCdnDomainConfigsCache", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

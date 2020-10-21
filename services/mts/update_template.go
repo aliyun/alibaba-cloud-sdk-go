@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateTemplate invokes the mts.UpdateTemplate API synchronously
-// api document: https://help.aliyun.com/api/mts/updatetemplate.html
 func (client *Client) UpdateTemplate(request *UpdateTemplateRequest) (response *UpdateTemplateResponse, err error) {
 	response = CreateUpdateTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateTemplate(request *UpdateTemplateRequest) (response *
 }
 
 // UpdateTemplateWithChan invokes the mts.UpdateTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/updatetemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateTemplateWithChan(request *UpdateTemplateRequest) (<-chan *UpdateTemplateResponse, <-chan error) {
 	responseChan := make(chan *UpdateTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateTemplateWithChan(request *UpdateTemplateRequest) (<-
 }
 
 // UpdateTemplateWithCallback invokes the mts.UpdateTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/updatetemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateTemplateWithCallback(request *UpdateTemplateRequest, callback func(response *UpdateTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,7 +96,8 @@ func CreateUpdateTemplateRequest() (request *UpdateTemplateRequest) {
 	request = &UpdateTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateTemplate", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateTemplate", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

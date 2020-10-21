@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitBeautifyJobs invokes the mts.SubmitBeautifyJobs API synchronously
-// api document: https://help.aliyun.com/api/mts/submitbeautifyjobs.html
 func (client *Client) SubmitBeautifyJobs(request *SubmitBeautifyJobsRequest) (response *SubmitBeautifyJobsResponse, err error) {
 	response = CreateSubmitBeautifyJobsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitBeautifyJobs(request *SubmitBeautifyJobsRequest) (re
 }
 
 // SubmitBeautifyJobsWithChan invokes the mts.SubmitBeautifyJobs API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitbeautifyjobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitBeautifyJobsWithChan(request *SubmitBeautifyJobsRequest) (<-chan *SubmitBeautifyJobsResponse, <-chan error) {
 	responseChan := make(chan *SubmitBeautifyJobsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitBeautifyJobsWithChan(request *SubmitBeautifyJobsRequ
 }
 
 // SubmitBeautifyJobsWithCallback invokes the mts.SubmitBeautifyJobs API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitbeautifyjobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitBeautifyJobsWithCallback(request *SubmitBeautifyJobsRequest, callback func(response *SubmitBeautifyJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateSubmitBeautifyJobsRequest() (request *SubmitBeautifyJobsRequest) {
 	request = &SubmitBeautifyJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitBeautifyJobs", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitBeautifyJobs", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

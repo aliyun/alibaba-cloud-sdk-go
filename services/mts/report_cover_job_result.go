@@ -21,7 +21,6 @@ import (
 )
 
 // ReportCoverJobResult invokes the mts.ReportCoverJobResult API synchronously
-// api document: https://help.aliyun.com/api/mts/reportcoverjobresult.html
 func (client *Client) ReportCoverJobResult(request *ReportCoverJobResultRequest) (response *ReportCoverJobResultResponse, err error) {
 	response = CreateReportCoverJobResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReportCoverJobResult(request *ReportCoverJobResultRequest)
 }
 
 // ReportCoverJobResultWithChan invokes the mts.ReportCoverJobResult API asynchronously
-// api document: https://help.aliyun.com/api/mts/reportcoverjobresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportCoverJobResultWithChan(request *ReportCoverJobResultRequest) (<-chan *ReportCoverJobResultResponse, <-chan error) {
 	responseChan := make(chan *ReportCoverJobResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReportCoverJobResultWithChan(request *ReportCoverJobResult
 }
 
 // ReportCoverJobResultWithCallback invokes the mts.ReportCoverJobResult API asynchronously
-// api document: https://help.aliyun.com/api/mts/reportcoverjobresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportCoverJobResultWithCallback(request *ReportCoverJobResultRequest, callback func(response *ReportCoverJobResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateReportCoverJobResultRequest() (request *ReportCoverJobResultRequest) 
 	request = &ReportCoverJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportCoverJobResult", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportCoverJobResult", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

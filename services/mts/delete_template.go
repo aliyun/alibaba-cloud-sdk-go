@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteTemplate invokes the mts.DeleteTemplate API synchronously
-// api document: https://help.aliyun.com/api/mts/deletetemplate.html
 func (client *Client) DeleteTemplate(request *DeleteTemplateRequest) (response *DeleteTemplateResponse, err error) {
 	response = CreateDeleteTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteTemplate(request *DeleteTemplateRequest) (response *
 }
 
 // DeleteTemplateWithChan invokes the mts.DeleteTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/deletetemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTemplateWithChan(request *DeleteTemplateRequest) (<-chan *DeleteTemplateResponse, <-chan error) {
 	responseChan := make(chan *DeleteTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteTemplateWithChan(request *DeleteTemplateRequest) (<-
 }
 
 // DeleteTemplateWithCallback invokes the mts.DeleteTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/deletetemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTemplateWithCallback(request *DeleteTemplateRequest, callback func(response *DeleteTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateDeleteTemplateRequest() (request *DeleteTemplateRequest) {
 	request = &DeleteTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteTemplate", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteTemplate", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

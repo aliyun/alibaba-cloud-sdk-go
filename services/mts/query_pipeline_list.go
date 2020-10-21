@@ -21,7 +21,6 @@ import (
 )
 
 // QueryPipelineList invokes the mts.QueryPipelineList API synchronously
-// api document: https://help.aliyun.com/api/mts/querypipelinelist.html
 func (client *Client) QueryPipelineList(request *QueryPipelineListRequest) (response *QueryPipelineListResponse, err error) {
 	response = CreateQueryPipelineListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryPipelineList(request *QueryPipelineListRequest) (resp
 }
 
 // QueryPipelineListWithChan invokes the mts.QueryPipelineList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querypipelinelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPipelineListWithChan(request *QueryPipelineListRequest) (<-chan *QueryPipelineListResponse, <-chan error) {
 	responseChan := make(chan *QueryPipelineListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryPipelineListWithChan(request *QueryPipelineListReques
 }
 
 // QueryPipelineListWithCallback invokes the mts.QueryPipelineList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querypipelinelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPipelineListWithCallback(request *QueryPipelineListRequest, callback func(response *QueryPipelineListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateQueryPipelineListRequest() (request *QueryPipelineListRequest) {
 	request = &QueryPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryPipelineList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryPipelineList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

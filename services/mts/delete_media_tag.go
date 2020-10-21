@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteMediaTag invokes the mts.DeleteMediaTag API synchronously
-// api document: https://help.aliyun.com/api/mts/deletemediatag.html
 func (client *Client) DeleteMediaTag(request *DeleteMediaTagRequest) (response *DeleteMediaTagResponse, err error) {
 	response = CreateDeleteMediaTagResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteMediaTag(request *DeleteMediaTagRequest) (response *
 }
 
 // DeleteMediaTagWithChan invokes the mts.DeleteMediaTag API asynchronously
-// api document: https://help.aliyun.com/api/mts/deletemediatag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMediaTagWithChan(request *DeleteMediaTagRequest) (<-chan *DeleteMediaTagResponse, <-chan error) {
 	responseChan := make(chan *DeleteMediaTagResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteMediaTagWithChan(request *DeleteMediaTagRequest) (<-
 }
 
 // DeleteMediaTagWithCallback invokes the mts.DeleteMediaTag API asynchronously
-// api document: https://help.aliyun.com/api/mts/deletemediatag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMediaTagWithCallback(request *DeleteMediaTagRequest, callback func(response *DeleteMediaTagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateDeleteMediaTagRequest() (request *DeleteMediaTagRequest) {
 	request = &DeleteMediaTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMediaTag", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMediaTag", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

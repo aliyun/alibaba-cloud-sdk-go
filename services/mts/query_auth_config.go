@@ -21,7 +21,6 @@ import (
 )
 
 // QueryAuthConfig invokes the mts.QueryAuthConfig API synchronously
-// api document: https://help.aliyun.com/api/mts/queryauthconfig.html
 func (client *Client) QueryAuthConfig(request *QueryAuthConfigRequest) (response *QueryAuthConfigResponse, err error) {
 	response = CreateQueryAuthConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryAuthConfig(request *QueryAuthConfigRequest) (response
 }
 
 // QueryAuthConfigWithChan invokes the mts.QueryAuthConfig API asynchronously
-// api document: https://help.aliyun.com/api/mts/queryauthconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAuthConfigWithChan(request *QueryAuthConfigRequest) (<-chan *QueryAuthConfigResponse, <-chan error) {
 	responseChan := make(chan *QueryAuthConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryAuthConfigWithChan(request *QueryAuthConfigRequest) (
 }
 
 // QueryAuthConfigWithCallback invokes the mts.QueryAuthConfig API asynchronously
-// api document: https://help.aliyun.com/api/mts/queryauthconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAuthConfigWithCallback(request *QueryAuthConfigRequest, callback func(response *QueryAuthConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateQueryAuthConfigRequest() (request *QueryAuthConfigRequest) {
 	request = &QueryAuthConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAuthConfig", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryAuthConfig", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

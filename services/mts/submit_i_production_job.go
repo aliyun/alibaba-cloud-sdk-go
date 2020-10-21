@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitIProductionJob invokes the mts.SubmitIProductionJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submitiproductionjob.html
 func (client *Client) SubmitIProductionJob(request *SubmitIProductionJobRequest) (response *SubmitIProductionJobResponse, err error) {
 	response = CreateSubmitIProductionJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitIProductionJob(request *SubmitIProductionJobRequest)
 }
 
 // SubmitIProductionJobWithChan invokes the mts.SubmitIProductionJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitiproductionjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitIProductionJobWithChan(request *SubmitIProductionJobRequest) (<-chan *SubmitIProductionJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitIProductionJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitIProductionJobWithChan(request *SubmitIProductionJob
 }
 
 // SubmitIProductionJobWithCallback invokes the mts.SubmitIProductionJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitiproductionjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitIProductionJobWithCallback(request *SubmitIProductionJobRequest, callback func(response *SubmitIProductionJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type SubmitIProductionJobRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	JobParams            string           `position:"Query" name:"JobParams"`
+	Output               string           `position:"Query" name:"Output"`
 	UserData             string           `position:"Query" name:"UserData"`
 	FunctionName         string           `position:"Query" name:"FunctionName"`
 	NotifyUrl            string           `position:"Query" name:"NotifyUrl"`
@@ -86,6 +82,7 @@ type SubmitIProductionJobRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
+	Input                string           `position:"Query" name:"Input"`
 	ScheduleParams       string           `position:"Query" name:"ScheduleParams"`
 }
 
@@ -101,7 +98,8 @@ func CreateSubmitIProductionJobRequest() (request *SubmitIProductionJobRequest) 
 	request = &SubmitIProductionJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitIProductionJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitIProductionJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

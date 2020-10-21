@@ -21,7 +21,6 @@ import (
 )
 
 // UnbindOutputBucket invokes the mts.UnbindOutputBucket API synchronously
-// api document: https://help.aliyun.com/api/mts/unbindoutputbucket.html
 func (client *Client) UnbindOutputBucket(request *UnbindOutputBucketRequest) (response *UnbindOutputBucketResponse, err error) {
 	response = CreateUnbindOutputBucketResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnbindOutputBucket(request *UnbindOutputBucketRequest) (re
 }
 
 // UnbindOutputBucketWithChan invokes the mts.UnbindOutputBucket API asynchronously
-// api document: https://help.aliyun.com/api/mts/unbindoutputbucket.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindOutputBucketWithChan(request *UnbindOutputBucketRequest) (<-chan *UnbindOutputBucketResponse, <-chan error) {
 	responseChan := make(chan *UnbindOutputBucketResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnbindOutputBucketWithChan(request *UnbindOutputBucketRequ
 }
 
 // UnbindOutputBucketWithCallback invokes the mts.UnbindOutputBucket API asynchronously
-// api document: https://help.aliyun.com/api/mts/unbindoutputbucket.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindOutputBucketWithCallback(request *UnbindOutputBucketRequest, callback func(response *UnbindOutputBucketResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateUnbindOutputBucketRequest() (request *UnbindOutputBucketRequest) {
 	request = &UnbindOutputBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UnbindOutputBucket", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UnbindOutputBucket", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // QuerySubtitleJobList invokes the mts.QuerySubtitleJobList API synchronously
-// api document: https://help.aliyun.com/api/mts/querysubtitlejoblist.html
 func (client *Client) QuerySubtitleJobList(request *QuerySubtitleJobListRequest) (response *QuerySubtitleJobListResponse, err error) {
 	response = CreateQuerySubtitleJobListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QuerySubtitleJobList(request *QuerySubtitleJobListRequest)
 }
 
 // QuerySubtitleJobListWithChan invokes the mts.QuerySubtitleJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querysubtitlejoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySubtitleJobListWithChan(request *QuerySubtitleJobListRequest) (<-chan *QuerySubtitleJobListResponse, <-chan error) {
 	responseChan := make(chan *QuerySubtitleJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QuerySubtitleJobListWithChan(request *QuerySubtitleJobList
 }
 
 // QuerySubtitleJobListWithCallback invokes the mts.QuerySubtitleJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querysubtitlejoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySubtitleJobListWithCallback(request *QuerySubtitleJobListRequest, callback func(response *QuerySubtitleJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateQuerySubtitleJobListRequest() (request *QuerySubtitleJobListRequest) 
 	request = &QuerySubtitleJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QuerySubtitleJobList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QuerySubtitleJobList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

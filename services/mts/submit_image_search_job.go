@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitImageSearchJob invokes the mts.SubmitImageSearchJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submitimagesearchjob.html
 func (client *Client) SubmitImageSearchJob(request *SubmitImageSearchJobRequest) (response *SubmitImageSearchJobResponse, err error) {
 	response = CreateSubmitImageSearchJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitImageSearchJob(request *SubmitImageSearchJobRequest)
 }
 
 // SubmitImageSearchJobWithChan invokes the mts.SubmitImageSearchJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitimagesearchjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitImageSearchJobWithChan(request *SubmitImageSearchJobRequest) (<-chan *SubmitImageSearchJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitImageSearchJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitImageSearchJobWithChan(request *SubmitImageSearchJob
 }
 
 // SubmitImageSearchJobWithCallback invokes the mts.SubmitImageSearchJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitimagesearchjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitImageSearchJobWithCallback(request *SubmitImageSearchJobRequest, callback func(response *SubmitImageSearchJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,8 @@ func CreateSubmitImageSearchJobRequest() (request *SubmitImageSearchJobRequest) 
 	request = &SubmitImageSearchJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitImageSearchJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitImageSearchJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

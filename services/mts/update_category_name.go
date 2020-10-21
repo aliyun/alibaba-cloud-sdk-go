@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateCategoryName invokes the mts.UpdateCategoryName API synchronously
-// api document: https://help.aliyun.com/api/mts/updatecategoryname.html
 func (client *Client) UpdateCategoryName(request *UpdateCategoryNameRequest) (response *UpdateCategoryNameResponse, err error) {
 	response = CreateUpdateCategoryNameResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateCategoryName(request *UpdateCategoryNameRequest) (re
 }
 
 // UpdateCategoryNameWithChan invokes the mts.UpdateCategoryName API asynchronously
-// api document: https://help.aliyun.com/api/mts/updatecategoryname.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCategoryNameWithChan(request *UpdateCategoryNameRequest) (<-chan *UpdateCategoryNameResponse, <-chan error) {
 	responseChan := make(chan *UpdateCategoryNameResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateCategoryNameWithChan(request *UpdateCategoryNameRequ
 }
 
 // UpdateCategoryNameWithCallback invokes the mts.UpdateCategoryName API asynchronously
-// api document: https://help.aliyun.com/api/mts/updatecategoryname.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCategoryNameWithCallback(request *UpdateCategoryNameRequest, callback func(response *UpdateCategoryNameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateUpdateCategoryNameRequest() (request *UpdateCategoryNameRequest) {
 	request = &UpdateCategoryNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateCategoryName", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateCategoryName", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

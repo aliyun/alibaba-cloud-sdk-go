@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteMcuJob invokes the mts.DeleteMcuJob API synchronously
-// api document: https://help.aliyun.com/api/mts/deletemcujob.html
 func (client *Client) DeleteMcuJob(request *DeleteMcuJobRequest) (response *DeleteMcuJobResponse, err error) {
 	response = CreateDeleteMcuJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteMcuJob(request *DeleteMcuJobRequest) (response *Dele
 }
 
 // DeleteMcuJobWithChan invokes the mts.DeleteMcuJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/deletemcujob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMcuJobWithChan(request *DeleteMcuJobRequest) (<-chan *DeleteMcuJobResponse, <-chan error) {
 	responseChan := make(chan *DeleteMcuJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteMcuJobWithChan(request *DeleteMcuJobRequest) (<-chan
 }
 
 // DeleteMcuJobWithCallback invokes the mts.DeleteMcuJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/deletemcujob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMcuJobWithCallback(request *DeleteMcuJobRequest, callback func(response *DeleteMcuJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateDeleteMcuJobRequest() (request *DeleteMcuJobRequest) {
 	request = &DeleteMcuJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMcuJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMcuJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

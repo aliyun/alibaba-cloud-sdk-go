@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateMedia invokes the mts.UpdateMedia API synchronously
-// api document: https://help.aliyun.com/api/mts/updatemedia.html
 func (client *Client) UpdateMedia(request *UpdateMediaRequest) (response *UpdateMediaResponse, err error) {
 	response = CreateUpdateMediaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateMedia(request *UpdateMediaRequest) (response *Update
 }
 
 // UpdateMediaWithChan invokes the mts.UpdateMedia API asynchronously
-// api document: https://help.aliyun.com/api/mts/updatemedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaWithChan(request *UpdateMediaRequest) (<-chan *UpdateMediaResponse, <-chan error) {
 	responseChan := make(chan *UpdateMediaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateMediaWithChan(request *UpdateMediaRequest) (<-chan *
 }
 
 // UpdateMediaWithCallback invokes the mts.UpdateMedia API asynchronously
-// api document: https://help.aliyun.com/api/mts/updatemedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaWithCallback(request *UpdateMediaRequest, callback func(response *UpdateMediaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,8 @@ func CreateUpdateMediaRequest() (request *UpdateMediaRequest) {
 	request = &UpdateMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMedia", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdateMedia", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

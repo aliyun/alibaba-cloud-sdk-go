@@ -21,7 +21,6 @@ import (
 )
 
 // QueryWaterMarkTemplateList invokes the mts.QueryWaterMarkTemplateList API synchronously
-// api document: https://help.aliyun.com/api/mts/querywatermarktemplatelist.html
 func (client *Client) QueryWaterMarkTemplateList(request *QueryWaterMarkTemplateListRequest) (response *QueryWaterMarkTemplateListResponse, err error) {
 	response = CreateQueryWaterMarkTemplateListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryWaterMarkTemplateList(request *QueryWaterMarkTemplate
 }
 
 // QueryWaterMarkTemplateListWithChan invokes the mts.QueryWaterMarkTemplateList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querywatermarktemplatelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryWaterMarkTemplateListWithChan(request *QueryWaterMarkTemplateListRequest) (<-chan *QueryWaterMarkTemplateListResponse, <-chan error) {
 	responseChan := make(chan *QueryWaterMarkTemplateListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryWaterMarkTemplateListWithChan(request *QueryWaterMark
 }
 
 // QueryWaterMarkTemplateListWithCallback invokes the mts.QueryWaterMarkTemplateList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querywatermarktemplatelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryWaterMarkTemplateListWithCallback(request *QueryWaterMarkTemplateListRequest, callback func(response *QueryWaterMarkTemplateListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateQueryWaterMarkTemplateListRequest() (request *QueryWaterMarkTemplateL
 	request = &QueryWaterMarkTemplateListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryWaterMarkTemplateList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryWaterMarkTemplateList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

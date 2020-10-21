@@ -21,7 +21,6 @@ import (
 )
 
 // ReportAnnotationJobResult invokes the mts.ReportAnnotationJobResult API synchronously
-// api document: https://help.aliyun.com/api/mts/reportannotationjobresult.html
 func (client *Client) ReportAnnotationJobResult(request *ReportAnnotationJobResultRequest) (response *ReportAnnotationJobResultResponse, err error) {
 	response = CreateReportAnnotationJobResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReportAnnotationJobResult(request *ReportAnnotationJobResu
 }
 
 // ReportAnnotationJobResultWithChan invokes the mts.ReportAnnotationJobResult API asynchronously
-// api document: https://help.aliyun.com/api/mts/reportannotationjobresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportAnnotationJobResultWithChan(request *ReportAnnotationJobResultRequest) (<-chan *ReportAnnotationJobResultResponse, <-chan error) {
 	responseChan := make(chan *ReportAnnotationJobResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReportAnnotationJobResultWithChan(request *ReportAnnotatio
 }
 
 // ReportAnnotationJobResultWithCallback invokes the mts.ReportAnnotationJobResult API asynchronously
-// api document: https://help.aliyun.com/api/mts/reportannotationjobresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportAnnotationJobResultWithCallback(request *ReportAnnotationJobResultRequest, callback func(response *ReportAnnotationJobResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateReportAnnotationJobResultRequest() (request *ReportAnnotationJobResul
 	request = &ReportAnnotationJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportAnnotationJobResult", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportAnnotationJobResult", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

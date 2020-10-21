@@ -21,7 +21,6 @@ import (
 )
 
 // ReportFpShotJobResult invokes the mts.ReportFpShotJobResult API synchronously
-// api document: https://help.aliyun.com/api/mts/reportfpshotjobresult.html
 func (client *Client) ReportFpShotJobResult(request *ReportFpShotJobResultRequest) (response *ReportFpShotJobResultResponse, err error) {
 	response = CreateReportFpShotJobResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReportFpShotJobResult(request *ReportFpShotJobResultReques
 }
 
 // ReportFpShotJobResultWithChan invokes the mts.ReportFpShotJobResult API asynchronously
-// api document: https://help.aliyun.com/api/mts/reportfpshotjobresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportFpShotJobResultWithChan(request *ReportFpShotJobResultRequest) (<-chan *ReportFpShotJobResultResponse, <-chan error) {
 	responseChan := make(chan *ReportFpShotJobResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReportFpShotJobResultWithChan(request *ReportFpShotJobResu
 }
 
 // ReportFpShotJobResultWithCallback invokes the mts.ReportFpShotJobResult API asynchronously
-// api document: https://help.aliyun.com/api/mts/reportfpshotjobresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportFpShotJobResultWithCallback(request *ReportFpShotJobResultRequest, callback func(response *ReportFpShotJobResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateReportFpShotJobResultRequest() (request *ReportFpShotJobResultRequest
 	request = &ReportFpShotJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportFpShotJobResult", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportFpShotJobResult", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

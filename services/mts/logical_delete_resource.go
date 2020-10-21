@@ -21,7 +21,6 @@ import (
 )
 
 // LogicalDeleteResource invokes the mts.LogicalDeleteResource API synchronously
-// api document: https://help.aliyun.com/api/mts/logicaldeleteresource.html
 func (client *Client) LogicalDeleteResource(request *LogicalDeleteResourceRequest) (response *LogicalDeleteResourceResponse, err error) {
 	response = CreateLogicalDeleteResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) LogicalDeleteResource(request *LogicalDeleteResourceReques
 }
 
 // LogicalDeleteResourceWithChan invokes the mts.LogicalDeleteResource API asynchronously
-// api document: https://help.aliyun.com/api/mts/logicaldeleteresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LogicalDeleteResourceWithChan(request *LogicalDeleteResourceRequest) (<-chan *LogicalDeleteResourceResponse, <-chan error) {
 	responseChan := make(chan *LogicalDeleteResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) LogicalDeleteResourceWithChan(request *LogicalDeleteResour
 }
 
 // LogicalDeleteResourceWithCallback invokes the mts.LogicalDeleteResource API asynchronously
-// api document: https://help.aliyun.com/api/mts/logicaldeleteresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LogicalDeleteResourceWithCallback(request *LogicalDeleteResourceRequest, callback func(response *LogicalDeleteResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -110,7 +105,8 @@ func CreateLogicalDeleteResourceRequest() (request *LogicalDeleteResourceRequest
 	request = &LogicalDeleteResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "LogicalDeleteResource", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "LogicalDeleteResource", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // CancelJob invokes the mts.CancelJob API synchronously
-// api document: https://help.aliyun.com/api/mts/canceljob.html
 func (client *Client) CancelJob(request *CancelJobRequest) (response *CancelJobResponse, err error) {
 	response = CreateCancelJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CancelJob(request *CancelJobRequest) (response *CancelJobR
 }
 
 // CancelJobWithChan invokes the mts.CancelJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/canceljob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelJobWithChan(request *CancelJobRequest) (<-chan *CancelJobResponse, <-chan error) {
 	responseChan := make(chan *CancelJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CancelJobWithChan(request *CancelJobRequest) (<-chan *Canc
 }
 
 // CancelJobWithCallback invokes the mts.CancelJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/canceljob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelJobWithCallback(request *CancelJobRequest, callback func(response *CancelJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateCancelJobRequest() (request *CancelJobRequest) {
 	request = &CancelJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "CancelJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "CancelJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

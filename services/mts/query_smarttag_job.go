@@ -21,7 +21,6 @@ import (
 )
 
 // QuerySmarttagJob invokes the mts.QuerySmarttagJob API synchronously
-// api document: https://help.aliyun.com/api/mts/querysmarttagjob.html
 func (client *Client) QuerySmarttagJob(request *QuerySmarttagJobRequest) (response *QuerySmarttagJobResponse, err error) {
 	response = CreateQuerySmarttagJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QuerySmarttagJob(request *QuerySmarttagJobRequest) (respon
 }
 
 // QuerySmarttagJobWithChan invokes the mts.QuerySmarttagJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/querysmarttagjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySmarttagJobWithChan(request *QuerySmarttagJobRequest) (<-chan *QuerySmarttagJobResponse, <-chan error) {
 	responseChan := make(chan *QuerySmarttagJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QuerySmarttagJobWithChan(request *QuerySmarttagJobRequest)
 }
 
 // QuerySmarttagJobWithCallback invokes the mts.QuerySmarttagJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/querysmarttagjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySmarttagJobWithCallback(request *QuerySmarttagJobRequest, callback func(response *QuerySmarttagJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateQuerySmarttagJobRequest() (request *QuerySmarttagJobRequest) {
 	request = &QuerySmarttagJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QuerySmarttagJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QuerySmarttagJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ListMediaWorkflowExecutions invokes the mts.ListMediaWorkflowExecutions API synchronously
-// api document: https://help.aliyun.com/api/mts/listmediaworkflowexecutions.html
 func (client *Client) ListMediaWorkflowExecutions(request *ListMediaWorkflowExecutionsRequest) (response *ListMediaWorkflowExecutionsResponse, err error) {
 	response = CreateListMediaWorkflowExecutionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListMediaWorkflowExecutions(request *ListMediaWorkflowExec
 }
 
 // ListMediaWorkflowExecutionsWithChan invokes the mts.ListMediaWorkflowExecutions API asynchronously
-// api document: https://help.aliyun.com/api/mts/listmediaworkflowexecutions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMediaWorkflowExecutionsWithChan(request *ListMediaWorkflowExecutionsRequest) (<-chan *ListMediaWorkflowExecutionsResponse, <-chan error) {
 	responseChan := make(chan *ListMediaWorkflowExecutionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListMediaWorkflowExecutionsWithChan(request *ListMediaWork
 }
 
 // ListMediaWorkflowExecutionsWithCallback invokes the mts.ListMediaWorkflowExecutions API asynchronously
-// api document: https://help.aliyun.com/api/mts/listmediaworkflowexecutions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMediaWorkflowExecutionsWithCallback(request *ListMediaWorkflowExecutionsRequest, callback func(response *ListMediaWorkflowExecutionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,8 @@ func CreateListMediaWorkflowExecutionsRequest() (request *ListMediaWorkflowExecu
 	request = &ListMediaWorkflowExecutionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ListMediaWorkflowExecutions", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ListMediaWorkflowExecutions", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

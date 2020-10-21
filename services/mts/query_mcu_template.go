@@ -21,7 +21,6 @@ import (
 )
 
 // QueryMcuTemplate invokes the mts.QueryMcuTemplate API synchronously
-// api document: https://help.aliyun.com/api/mts/querymcutemplate.html
 func (client *Client) QueryMcuTemplate(request *QueryMcuTemplateRequest) (response *QueryMcuTemplateResponse, err error) {
 	response = CreateQueryMcuTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryMcuTemplate(request *QueryMcuTemplateRequest) (respon
 }
 
 // QueryMcuTemplateWithChan invokes the mts.QueryMcuTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/querymcutemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMcuTemplateWithChan(request *QueryMcuTemplateRequest) (<-chan *QueryMcuTemplateResponse, <-chan error) {
 	responseChan := make(chan *QueryMcuTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryMcuTemplateWithChan(request *QueryMcuTemplateRequest)
 }
 
 // QueryMcuTemplateWithCallback invokes the mts.QueryMcuTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/querymcutemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMcuTemplateWithCallback(request *QueryMcuTemplateRequest, callback func(response *QueryMcuTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,8 +81,8 @@ type QueryMcuTemplateRequest struct {
 // QueryMcuTemplateResponse is the response struct for api QueryMcuTemplate
 type QueryMcuTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
-	Templates Templates `json:"Templates" xml:"Templates"`
+	RequestId string                      `json:"RequestId" xml:"RequestId"`
+	Templates TemplatesInQueryMcuTemplate `json:"Templates" xml:"Templates"`
 }
 
 // CreateQueryMcuTemplateRequest creates a request to invoke QueryMcuTemplate API
@@ -95,7 +90,8 @@ func CreateQueryMcuTemplateRequest() (request *QueryMcuTemplateRequest) {
 	request = &QueryMcuTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMcuTemplate", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMcuTemplate", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

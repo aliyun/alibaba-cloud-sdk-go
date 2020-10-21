@@ -21,7 +21,6 @@ import (
 )
 
 // QuerySnapshotJobList invokes the mts.QuerySnapshotJobList API synchronously
-// api document: https://help.aliyun.com/api/mts/querysnapshotjoblist.html
 func (client *Client) QuerySnapshotJobList(request *QuerySnapshotJobListRequest) (response *QuerySnapshotJobListResponse, err error) {
 	response = CreateQuerySnapshotJobListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QuerySnapshotJobList(request *QuerySnapshotJobListRequest)
 }
 
 // QuerySnapshotJobListWithChan invokes the mts.QuerySnapshotJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querysnapshotjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySnapshotJobListWithChan(request *QuerySnapshotJobListRequest) (<-chan *QuerySnapshotJobListResponse, <-chan error) {
 	responseChan := make(chan *QuerySnapshotJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QuerySnapshotJobListWithChan(request *QuerySnapshotJobList
 }
 
 // QuerySnapshotJobListWithCallback invokes the mts.QuerySnapshotJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querysnapshotjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySnapshotJobListWithCallback(request *QuerySnapshotJobListRequest, callback func(response *QuerySnapshotJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,7 +98,8 @@ func CreateQuerySnapshotJobListRequest() (request *QuerySnapshotJobListRequest) 
 	request = &QuerySnapshotJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QuerySnapshotJobList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QuerySnapshotJobList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

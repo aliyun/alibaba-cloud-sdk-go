@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteWaterMarkTemplate invokes the mts.DeleteWaterMarkTemplate API synchronously
-// api document: https://help.aliyun.com/api/mts/deletewatermarktemplate.html
 func (client *Client) DeleteWaterMarkTemplate(request *DeleteWaterMarkTemplateRequest) (response *DeleteWaterMarkTemplateResponse, err error) {
 	response = CreateDeleteWaterMarkTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteWaterMarkTemplate(request *DeleteWaterMarkTemplateRe
 }
 
 // DeleteWaterMarkTemplateWithChan invokes the mts.DeleteWaterMarkTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/deletewatermarktemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteWaterMarkTemplateWithChan(request *DeleteWaterMarkTemplateRequest) (<-chan *DeleteWaterMarkTemplateResponse, <-chan error) {
 	responseChan := make(chan *DeleteWaterMarkTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteWaterMarkTemplateWithChan(request *DeleteWaterMarkTe
 }
 
 // DeleteWaterMarkTemplateWithCallback invokes the mts.DeleteWaterMarkTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/deletewatermarktemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteWaterMarkTemplateWithCallback(request *DeleteWaterMarkTemplateRequest, callback func(response *DeleteWaterMarkTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateDeleteWaterMarkTemplateRequest() (request *DeleteWaterMarkTemplateReq
 	request = &DeleteWaterMarkTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteWaterMarkTemplate", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteWaterMarkTemplate", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

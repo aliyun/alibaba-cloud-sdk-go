@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitTagJob invokes the mts.SubmitTagJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submittagjob.html
 func (client *Client) SubmitTagJob(request *SubmitTagJobRequest) (response *SubmitTagJobResponse, err error) {
 	response = CreateSubmitTagJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitTagJob(request *SubmitTagJobRequest) (response *Subm
 }
 
 // SubmitTagJobWithChan invokes the mts.SubmitTagJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submittagjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitTagJobWithChan(request *SubmitTagJobRequest) (<-chan *SubmitTagJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitTagJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitTagJobWithChan(request *SubmitTagJobRequest) (<-chan
 }
 
 // SubmitTagJobWithCallback invokes the mts.SubmitTagJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submittagjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitTagJobWithCallback(request *SubmitTagJobRequest, callback func(response *SubmitTagJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateSubmitTagJobRequest() (request *SubmitTagJobRequest) {
 	request = &SubmitTagJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitTagJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitTagJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

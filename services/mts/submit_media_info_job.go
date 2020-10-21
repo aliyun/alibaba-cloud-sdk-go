@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitMediaInfoJob invokes the mts.SubmitMediaInfoJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submitmediainfojob.html
 func (client *Client) SubmitMediaInfoJob(request *SubmitMediaInfoJobRequest) (response *SubmitMediaInfoJobResponse, err error) {
 	response = CreateSubmitMediaInfoJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitMediaInfoJob(request *SubmitMediaInfoJobRequest) (re
 }
 
 // SubmitMediaInfoJobWithChan invokes the mts.SubmitMediaInfoJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitmediainfojob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitMediaInfoJobWithChan(request *SubmitMediaInfoJobRequest) (<-chan *SubmitMediaInfoJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitMediaInfoJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitMediaInfoJobWithChan(request *SubmitMediaInfoJobRequ
 }
 
 // SubmitMediaInfoJobWithCallback invokes the mts.SubmitMediaInfoJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitmediainfojob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitMediaInfoJobWithCallback(request *SubmitMediaInfoJobRequest, callback func(response *SubmitMediaInfoJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateSubmitMediaInfoJobRequest() (request *SubmitMediaInfoJobRequest) {
 	request = &SubmitMediaInfoJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitMediaInfoJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitMediaInfoJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

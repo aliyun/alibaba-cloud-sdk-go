@@ -21,7 +21,6 @@ import (
 )
 
 // QueryMediaCensorJobDetail invokes the mts.QueryMediaCensorJobDetail API synchronously
-// api document: https://help.aliyun.com/api/mts/querymediacensorjobdetail.html
 func (client *Client) QueryMediaCensorJobDetail(request *QueryMediaCensorJobDetailRequest) (response *QueryMediaCensorJobDetailResponse, err error) {
 	response = CreateQueryMediaCensorJobDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryMediaCensorJobDetail(request *QueryMediaCensorJobDeta
 }
 
 // QueryMediaCensorJobDetailWithChan invokes the mts.QueryMediaCensorJobDetail API asynchronously
-// api document: https://help.aliyun.com/api/mts/querymediacensorjobdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaCensorJobDetailWithChan(request *QueryMediaCensorJobDetailRequest) (<-chan *QueryMediaCensorJobDetailResponse, <-chan error) {
 	responseChan := make(chan *QueryMediaCensorJobDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryMediaCensorJobDetailWithChan(request *QueryMediaCenso
 }
 
 // QueryMediaCensorJobDetailWithCallback invokes the mts.QueryMediaCensorJobDetail API asynchronously
-// api document: https://help.aliyun.com/api/mts/querymediacensorjobdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaCensorJobDetailWithCallback(request *QueryMediaCensorJobDetailRequest, callback func(response *QueryMediaCensorJobDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateQueryMediaCensorJobDetailRequest() (request *QueryMediaCensorJobDetai
 	request = &QueryMediaCensorJobDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaCensorJobDetail", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryMediaCensorJobDetail", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

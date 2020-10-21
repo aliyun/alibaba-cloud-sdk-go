@@ -21,7 +21,6 @@ import (
 )
 
 // QueryTerrorismPipelineList invokes the mts.QueryTerrorismPipelineList API synchronously
-// api document: https://help.aliyun.com/api/mts/queryterrorismpipelinelist.html
 func (client *Client) QueryTerrorismPipelineList(request *QueryTerrorismPipelineListRequest) (response *QueryTerrorismPipelineListResponse, err error) {
 	response = CreateQueryTerrorismPipelineListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryTerrorismPipelineList(request *QueryTerrorismPipeline
 }
 
 // QueryTerrorismPipelineListWithChan invokes the mts.QueryTerrorismPipelineList API asynchronously
-// api document: https://help.aliyun.com/api/mts/queryterrorismpipelinelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTerrorismPipelineListWithChan(request *QueryTerrorismPipelineListRequest) (<-chan *QueryTerrorismPipelineListResponse, <-chan error) {
 	responseChan := make(chan *QueryTerrorismPipelineListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryTerrorismPipelineListWithChan(request *QueryTerrorism
 }
 
 // QueryTerrorismPipelineListWithCallback invokes the mts.QueryTerrorismPipelineList API asynchronously
-// api document: https://help.aliyun.com/api/mts/queryterrorismpipelinelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTerrorismPipelineListWithCallback(request *QueryTerrorismPipelineListRequest, callback func(response *QueryTerrorismPipelineListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateQueryTerrorismPipelineListRequest() (request *QueryTerrorismPipelineL
 	request = &QueryTerrorismPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryTerrorismPipelineList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryTerrorismPipelineList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

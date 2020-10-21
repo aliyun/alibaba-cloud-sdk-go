@@ -21,7 +21,6 @@ import (
 )
 
 // SearchMediaWorkflow invokes the mts.SearchMediaWorkflow API synchronously
-// api document: https://help.aliyun.com/api/mts/searchmediaworkflow.html
 func (client *Client) SearchMediaWorkflow(request *SearchMediaWorkflowRequest) (response *SearchMediaWorkflowResponse, err error) {
 	response = CreateSearchMediaWorkflowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchMediaWorkflow(request *SearchMediaWorkflowRequest) (
 }
 
 // SearchMediaWorkflowWithChan invokes the mts.SearchMediaWorkflow API asynchronously
-// api document: https://help.aliyun.com/api/mts/searchmediaworkflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchMediaWorkflowWithChan(request *SearchMediaWorkflowRequest) (<-chan *SearchMediaWorkflowResponse, <-chan error) {
 	responseChan := make(chan *SearchMediaWorkflowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchMediaWorkflowWithChan(request *SearchMediaWorkflowRe
 }
 
 // SearchMediaWorkflowWithCallback invokes the mts.SearchMediaWorkflow API asynchronously
-// api document: https://help.aliyun.com/api/mts/searchmediaworkflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchMediaWorkflowWithCallback(request *SearchMediaWorkflowRequest, callback func(response *SearchMediaWorkflowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,8 @@ func CreateSearchMediaWorkflowRequest() (request *SearchMediaWorkflowRequest) {
 	request = &SearchMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SearchMediaWorkflow", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SearchMediaWorkflow", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

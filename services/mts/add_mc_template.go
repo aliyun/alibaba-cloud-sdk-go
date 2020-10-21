@@ -21,7 +21,6 @@ import (
 )
 
 // AddMCTemplate invokes the mts.AddMCTemplate API synchronously
-// api document: https://help.aliyun.com/api/mts/addmctemplate.html
 func (client *Client) AddMCTemplate(request *AddMCTemplateRequest) (response *AddMCTemplateResponse, err error) {
 	response = CreateAddMCTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddMCTemplate(request *AddMCTemplateRequest) (response *Ad
 }
 
 // AddMCTemplateWithChan invokes the mts.AddMCTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/addmctemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddMCTemplateWithChan(request *AddMCTemplateRequest) (<-chan *AddMCTemplateResponse, <-chan error) {
 	responseChan := make(chan *AddMCTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddMCTemplateWithChan(request *AddMCTemplateRequest) (<-ch
 }
 
 // AddMCTemplateWithCallback invokes the mts.AddMCTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/addmctemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddMCTemplateWithCallback(request *AddMCTemplateRequest, callback func(response *AddMCTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -105,7 +100,8 @@ func CreateAddMCTemplateRequest() (request *AddMCTemplateRequest) {
 	request = &AddMCTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "AddMCTemplate", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "AddMCTemplate", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

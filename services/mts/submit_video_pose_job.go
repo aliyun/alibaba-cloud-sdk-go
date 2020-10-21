@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitVideoPoseJob invokes the mts.SubmitVideoPoseJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submitvideoposejob.html
 func (client *Client) SubmitVideoPoseJob(request *SubmitVideoPoseJobRequest) (response *SubmitVideoPoseJobResponse, err error) {
 	response = CreateSubmitVideoPoseJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitVideoPoseJob(request *SubmitVideoPoseJobRequest) (re
 }
 
 // SubmitVideoPoseJobWithChan invokes the mts.SubmitVideoPoseJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitvideoposejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVideoPoseJobWithChan(request *SubmitVideoPoseJobRequest) (<-chan *SubmitVideoPoseJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitVideoPoseJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitVideoPoseJobWithChan(request *SubmitVideoPoseJobRequ
 }
 
 // SubmitVideoPoseJobWithCallback invokes the mts.SubmitVideoPoseJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitvideoposejob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVideoPoseJobWithCallback(request *SubmitVideoPoseJobRequest, callback func(response *SubmitVideoPoseJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateSubmitVideoPoseJobRequest() (request *SubmitVideoPoseJobRequest) {
 	request = &SubmitVideoPoseJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitVideoPoseJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitVideoPoseJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

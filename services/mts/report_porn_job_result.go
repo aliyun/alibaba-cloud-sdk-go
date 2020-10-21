@@ -21,7 +21,6 @@ import (
 )
 
 // ReportPornJobResult invokes the mts.ReportPornJobResult API synchronously
-// api document: https://help.aliyun.com/api/mts/reportpornjobresult.html
 func (client *Client) ReportPornJobResult(request *ReportPornJobResultRequest) (response *ReportPornJobResultResponse, err error) {
 	response = CreateReportPornJobResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReportPornJobResult(request *ReportPornJobResultRequest) (
 }
 
 // ReportPornJobResultWithChan invokes the mts.ReportPornJobResult API asynchronously
-// api document: https://help.aliyun.com/api/mts/reportpornjobresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportPornJobResultWithChan(request *ReportPornJobResultRequest) (<-chan *ReportPornJobResultResponse, <-chan error) {
 	responseChan := make(chan *ReportPornJobResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReportPornJobResultWithChan(request *ReportPornJobResultRe
 }
 
 // ReportPornJobResultWithCallback invokes the mts.ReportPornJobResult API asynchronously
-// api document: https://help.aliyun.com/api/mts/reportpornjobresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportPornJobResultWithCallback(request *ReportPornJobResultRequest, callback func(response *ReportPornJobResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateReportPornJobResultRequest() (request *ReportPornJobResultRequest) {
 	request = &ReportPornJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportPornJobResult", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportPornJobResult", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

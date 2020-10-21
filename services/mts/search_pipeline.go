@@ -21,7 +21,6 @@ import (
 )
 
 // SearchPipeline invokes the mts.SearchPipeline API synchronously
-// api document: https://help.aliyun.com/api/mts/searchpipeline.html
 func (client *Client) SearchPipeline(request *SearchPipelineRequest) (response *SearchPipelineResponse, err error) {
 	response = CreateSearchPipelineResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchPipeline(request *SearchPipelineRequest) (response *
 }
 
 // SearchPipelineWithChan invokes the mts.SearchPipeline API asynchronously
-// api document: https://help.aliyun.com/api/mts/searchpipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchPipelineWithChan(request *SearchPipelineRequest) (<-chan *SearchPipelineResponse, <-chan error) {
 	responseChan := make(chan *SearchPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchPipelineWithChan(request *SearchPipelineRequest) (<-
 }
 
 // SearchPipelineWithCallback invokes the mts.SearchPipeline API asynchronously
-// api document: https://help.aliyun.com/api/mts/searchpipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchPipelineWithCallback(request *SearchPipelineRequest, callback func(response *SearchPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,8 @@ func CreateSearchPipelineRequest() (request *SearchPipelineRequest) {
 	request = &SearchPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SearchPipeline", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SearchPipeline", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

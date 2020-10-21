@@ -21,7 +21,6 @@ import (
 )
 
 // ReportCensorJobResult invokes the mts.ReportCensorJobResult API synchronously
-// api document: https://help.aliyun.com/api/mts/reportcensorjobresult.html
 func (client *Client) ReportCensorJobResult(request *ReportCensorJobResultRequest) (response *ReportCensorJobResultResponse, err error) {
 	response = CreateReportCensorJobResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReportCensorJobResult(request *ReportCensorJobResultReques
 }
 
 // ReportCensorJobResultWithChan invokes the mts.ReportCensorJobResult API asynchronously
-// api document: https://help.aliyun.com/api/mts/reportcensorjobresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportCensorJobResultWithChan(request *ReportCensorJobResultRequest) (<-chan *ReportCensorJobResultResponse, <-chan error) {
 	responseChan := make(chan *ReportCensorJobResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReportCensorJobResultWithChan(request *ReportCensorJobResu
 }
 
 // ReportCensorJobResultWithCallback invokes the mts.ReportCensorJobResult API asynchronously
-// api document: https://help.aliyun.com/api/mts/reportcensorjobresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportCensorJobResultWithCallback(request *ReportCensorJobResultRequest, callback func(response *ReportCensorJobResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateReportCensorJobResultRequest() (request *ReportCensorJobResultRequest
 	request = &ReportCensorJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportCensorJobResult", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportCensorJobResult", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

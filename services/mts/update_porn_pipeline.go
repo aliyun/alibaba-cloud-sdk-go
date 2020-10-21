@@ -21,7 +21,6 @@ import (
 )
 
 // UpdatePornPipeline invokes the mts.UpdatePornPipeline API synchronously
-// api document: https://help.aliyun.com/api/mts/updatepornpipeline.html
 func (client *Client) UpdatePornPipeline(request *UpdatePornPipelineRequest) (response *UpdatePornPipelineResponse, err error) {
 	response = CreateUpdatePornPipelineResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdatePornPipeline(request *UpdatePornPipelineRequest) (re
 }
 
 // UpdatePornPipelineWithChan invokes the mts.UpdatePornPipeline API asynchronously
-// api document: https://help.aliyun.com/api/mts/updatepornpipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePornPipelineWithChan(request *UpdatePornPipelineRequest) (<-chan *UpdatePornPipelineResponse, <-chan error) {
 	responseChan := make(chan *UpdatePornPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdatePornPipelineWithChan(request *UpdatePornPipelineRequ
 }
 
 // UpdatePornPipelineWithCallback invokes the mts.UpdatePornPipeline API asynchronously
-// api document: https://help.aliyun.com/api/mts/updatepornpipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePornPipelineWithCallback(request *UpdatePornPipelineRequest, callback func(response *UpdatePornPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,8 @@ func CreateUpdatePornPipelineRequest() (request *UpdatePornPipelineRequest) {
 	request = &UpdatePornPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "UpdatePornPipeline", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "UpdatePornPipeline", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // SearchWaterMarkTemplate invokes the mts.SearchWaterMarkTemplate API synchronously
-// api document: https://help.aliyun.com/api/mts/searchwatermarktemplate.html
 func (client *Client) SearchWaterMarkTemplate(request *SearchWaterMarkTemplateRequest) (response *SearchWaterMarkTemplateResponse, err error) {
 	response = CreateSearchWaterMarkTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchWaterMarkTemplate(request *SearchWaterMarkTemplateRe
 }
 
 // SearchWaterMarkTemplateWithChan invokes the mts.SearchWaterMarkTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/searchwatermarktemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchWaterMarkTemplateWithChan(request *SearchWaterMarkTemplateRequest) (<-chan *SearchWaterMarkTemplateResponse, <-chan error) {
 	responseChan := make(chan *SearchWaterMarkTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchWaterMarkTemplateWithChan(request *SearchWaterMarkTe
 }
 
 // SearchWaterMarkTemplateWithCallback invokes the mts.SearchWaterMarkTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/searchwatermarktemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchWaterMarkTemplateWithCallback(request *SearchWaterMarkTemplateRequest, callback func(response *SearchWaterMarkTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,8 @@ func CreateSearchWaterMarkTemplateRequest() (request *SearchWaterMarkTemplateReq
 	request = &SearchWaterMarkTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SearchWaterMarkTemplate", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SearchWaterMarkTemplate", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

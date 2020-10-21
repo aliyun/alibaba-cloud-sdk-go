@@ -21,7 +21,6 @@ import (
 )
 
 // QueryCoverPipelineList invokes the mts.QueryCoverPipelineList API synchronously
-// api document: https://help.aliyun.com/api/mts/querycoverpipelinelist.html
 func (client *Client) QueryCoverPipelineList(request *QueryCoverPipelineListRequest) (response *QueryCoverPipelineListResponse, err error) {
 	response = CreateQueryCoverPipelineListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryCoverPipelineList(request *QueryCoverPipelineListRequ
 }
 
 // QueryCoverPipelineListWithChan invokes the mts.QueryCoverPipelineList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querycoverpipelinelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCoverPipelineListWithChan(request *QueryCoverPipelineListRequest) (<-chan *QueryCoverPipelineListResponse, <-chan error) {
 	responseChan := make(chan *QueryCoverPipelineListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryCoverPipelineListWithChan(request *QueryCoverPipeline
 }
 
 // QueryCoverPipelineListWithCallback invokes the mts.QueryCoverPipelineList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querycoverpipelinelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCoverPipelineListWithCallback(request *QueryCoverPipelineListRequest, callback func(response *QueryCoverPipelineListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateQueryCoverPipelineListRequest() (request *QueryCoverPipelineListReque
 	request = &QueryCoverPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryCoverPipelineList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryCoverPipelineList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

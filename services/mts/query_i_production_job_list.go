@@ -21,7 +21,6 @@ import (
 )
 
 // QueryIProductionJobList invokes the mts.QueryIProductionJobList API synchronously
-// api document: https://help.aliyun.com/api/mts/queryiproductionjoblist.html
 func (client *Client) QueryIProductionJobList(request *QueryIProductionJobListRequest) (response *QueryIProductionJobListResponse, err error) {
 	response = CreateQueryIProductionJobListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryIProductionJobList(request *QueryIProductionJobListRe
 }
 
 // QueryIProductionJobListWithChan invokes the mts.QueryIProductionJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/queryiproductionjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryIProductionJobListWithChan(request *QueryIProductionJobListRequest) (<-chan *QueryIProductionJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryIProductionJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryIProductionJobListWithChan(request *QueryIProductionJ
 }
 
 // QueryIProductionJobListWithCallback invokes the mts.QueryIProductionJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/queryiproductionjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryIProductionJobListWithCallback(request *QueryIProductionJobListRequest, callback func(response *QueryIProductionJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateQueryIProductionJobListRequest() (request *QueryIProductionJobListReq
 	request = &QueryIProductionJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryIProductionJobList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryIProductionJobList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -1,3 +1,8 @@
+2020-10-21 Version: v1.61.588
+- Generated 2014-06-18 for `Mts`.
+- Add custom person interfaces, support registration, update etc.
+- Optimize updateSmarttagTemplate interface, set some parameters as optional.
+
 2020-10-21 Version: v1.61.587
 - Generated 2018-01-15 for `dcdn`.
 - Update cert API.

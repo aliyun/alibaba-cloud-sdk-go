@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitVideoSummaryJob invokes the mts.SubmitVideoSummaryJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submitvideosummaryjob.html
 func (client *Client) SubmitVideoSummaryJob(request *SubmitVideoSummaryJobRequest) (response *SubmitVideoSummaryJobResponse, err error) {
 	response = CreateSubmitVideoSummaryJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitVideoSummaryJob(request *SubmitVideoSummaryJobReques
 }
 
 // SubmitVideoSummaryJobWithChan invokes the mts.SubmitVideoSummaryJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitvideosummaryjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVideoSummaryJobWithChan(request *SubmitVideoSummaryJobRequest) (<-chan *SubmitVideoSummaryJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitVideoSummaryJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitVideoSummaryJobWithChan(request *SubmitVideoSummaryJ
 }
 
 // SubmitVideoSummaryJobWithCallback invokes the mts.SubmitVideoSummaryJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitvideosummaryjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVideoSummaryJobWithCallback(request *SubmitVideoSummaryJobRequest, callback func(response *SubmitVideoSummaryJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateSubmitVideoSummaryJobRequest() (request *SubmitVideoSummaryJobRequest
 	request = &SubmitVideoSummaryJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitVideoSummaryJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitVideoSummaryJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitCoverJob invokes the mts.SubmitCoverJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submitcoverjob.html
 func (client *Client) SubmitCoverJob(request *SubmitCoverJobRequest) (response *SubmitCoverJobResponse, err error) {
 	response = CreateSubmitCoverJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitCoverJob(request *SubmitCoverJobRequest) (response *
 }
 
 // SubmitCoverJobWithChan invokes the mts.SubmitCoverJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitcoverjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitCoverJobWithChan(request *SubmitCoverJobRequest) (<-chan *SubmitCoverJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitCoverJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitCoverJobWithChan(request *SubmitCoverJobRequest) (<-
 }
 
 // SubmitCoverJobWithCallback invokes the mts.SubmitCoverJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitcoverjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitCoverJobWithCallback(request *SubmitCoverJobRequest, callback func(response *SubmitCoverJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateSubmitCoverJobRequest() (request *SubmitCoverJobRequest) {
 	request = &SubmitCoverJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitCoverJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitCoverJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitImageQualityJob invokes the mts.SubmitImageQualityJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submitimagequalityjob.html
 func (client *Client) SubmitImageQualityJob(request *SubmitImageQualityJobRequest) (response *SubmitImageQualityJobResponse, err error) {
 	response = CreateSubmitImageQualityJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitImageQualityJob(request *SubmitImageQualityJobReques
 }
 
 // SubmitImageQualityJobWithChan invokes the mts.SubmitImageQualityJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitimagequalityjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitImageQualityJobWithChan(request *SubmitImageQualityJobRequest) (<-chan *SubmitImageQualityJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitImageQualityJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitImageQualityJobWithChan(request *SubmitImageQualityJ
 }
 
 // SubmitImageQualityJobWithCallback invokes the mts.SubmitImageQualityJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitimagequalityjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitImageQualityJobWithCallback(request *SubmitImageQualityJobRequest, callback func(response *SubmitImageQualityJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateSubmitImageQualityJobRequest() (request *SubmitImageQualityJobRequest
 	request = &SubmitImageQualityJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitImageQualityJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitImageQualityJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteCategory invokes the mts.DeleteCategory API synchronously
-// api document: https://help.aliyun.com/api/mts/deletecategory.html
 func (client *Client) DeleteCategory(request *DeleteCategoryRequest) (response *DeleteCategoryResponse, err error) {
 	response = CreateDeleteCategoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteCategory(request *DeleteCategoryRequest) (response *
 }
 
 // DeleteCategoryWithChan invokes the mts.DeleteCategory API asynchronously
-// api document: https://help.aliyun.com/api/mts/deletecategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCategoryWithChan(request *DeleteCategoryRequest) (<-chan *DeleteCategoryResponse, <-chan error) {
 	responseChan := make(chan *DeleteCategoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteCategoryWithChan(request *DeleteCategoryRequest) (<-
 }
 
 // DeleteCategoryWithCallback invokes the mts.DeleteCategory API asynchronously
-// api document: https://help.aliyun.com/api/mts/deletecategory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCategoryWithCallback(request *DeleteCategoryRequest, callback func(response *DeleteCategoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateDeleteCategoryRequest() (request *DeleteCategoryRequest) {
 	request = &DeleteCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteCategory", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteCategory", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

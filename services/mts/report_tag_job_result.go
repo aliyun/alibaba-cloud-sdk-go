@@ -21,7 +21,6 @@ import (
 )
 
 // ReportTagJobResult invokes the mts.ReportTagJobResult API synchronously
-// api document: https://help.aliyun.com/api/mts/reporttagjobresult.html
 func (client *Client) ReportTagJobResult(request *ReportTagJobResultRequest) (response *ReportTagJobResultResponse, err error) {
 	response = CreateReportTagJobResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReportTagJobResult(request *ReportTagJobResultRequest) (re
 }
 
 // ReportTagJobResultWithChan invokes the mts.ReportTagJobResult API asynchronously
-// api document: https://help.aliyun.com/api/mts/reporttagjobresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportTagJobResultWithChan(request *ReportTagJobResultRequest) (<-chan *ReportTagJobResultResponse, <-chan error) {
 	responseChan := make(chan *ReportTagJobResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReportTagJobResultWithChan(request *ReportTagJobResultRequ
 }
 
 // ReportTagJobResultWithCallback invokes the mts.ReportTagJobResult API asynchronously
-// api document: https://help.aliyun.com/api/mts/reporttagjobresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportTagJobResultWithCallback(request *ReportTagJobResultRequest, callback func(response *ReportTagJobResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateReportTagJobResultRequest() (request *ReportTagJobResultRequest) {
 	request = &ReportTagJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ReportTagJobResult", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ReportTagJobResult", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

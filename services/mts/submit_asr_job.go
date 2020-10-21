@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitAsrJob invokes the mts.SubmitAsrJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submitasrjob.html
 func (client *Client) SubmitAsrJob(request *SubmitAsrJobRequest) (response *SubmitAsrJobResponse, err error) {
 	response = CreateSubmitAsrJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitAsrJob(request *SubmitAsrJobRequest) (response *Subm
 }
 
 // SubmitAsrJobWithChan invokes the mts.SubmitAsrJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitasrjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAsrJobWithChan(request *SubmitAsrJobRequest) (<-chan *SubmitAsrJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitAsrJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitAsrJobWithChan(request *SubmitAsrJobRequest) (<-chan
 }
 
 // SubmitAsrJobWithCallback invokes the mts.SubmitAsrJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitasrjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAsrJobWithCallback(request *SubmitAsrJobRequest, callback func(response *SubmitAsrJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateSubmitAsrJobRequest() (request *SubmitAsrJobRequest) {
 	request = &SubmitAsrJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitAsrJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitAsrJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

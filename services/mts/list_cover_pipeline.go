@@ -21,7 +21,6 @@ import (
 )
 
 // ListCoverPipeline invokes the mts.ListCoverPipeline API synchronously
-// api document: https://help.aliyun.com/api/mts/listcoverpipeline.html
 func (client *Client) ListCoverPipeline(request *ListCoverPipelineRequest) (response *ListCoverPipelineResponse, err error) {
 	response = CreateListCoverPipelineResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListCoverPipeline(request *ListCoverPipelineRequest) (resp
 }
 
 // ListCoverPipelineWithChan invokes the mts.ListCoverPipeline API asynchronously
-// api document: https://help.aliyun.com/api/mts/listcoverpipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCoverPipelineWithChan(request *ListCoverPipelineRequest) (<-chan *ListCoverPipelineResponse, <-chan error) {
 	responseChan := make(chan *ListCoverPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListCoverPipelineWithChan(request *ListCoverPipelineReques
 }
 
 // ListCoverPipelineWithCallback invokes the mts.ListCoverPipeline API asynchronously
-// api document: https://help.aliyun.com/api/mts/listcoverpipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCoverPipelineWithCallback(request *ListCoverPipelineRequest, callback func(response *ListCoverPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,8 @@ func CreateListCoverPipelineRequest() (request *ListCoverPipelineRequest) {
 	request = &ListCoverPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "ListCoverPipeline", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "ListCoverPipeline", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

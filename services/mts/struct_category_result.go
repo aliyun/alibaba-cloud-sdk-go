@@ -17,6 +17,6 @@ package mts
 
 // CategoryResult is a nested struct in mts response
 type CategoryResult struct {
-	Details    string     `json:"Details" xml:"Details"`
-	Categories Categories `json:"Categories" xml:"Categories"`
+	Details    string                  `json:"Details" xml:"Details"`
+	Categories CategoriesInQueryMcuJob `json:"Categories" xml:"Categories"`
 }

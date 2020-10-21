@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteMcuTemplate invokes the mts.DeleteMcuTemplate API synchronously
-// api document: https://help.aliyun.com/api/mts/deletemcutemplate.html
 func (client *Client) DeleteMcuTemplate(request *DeleteMcuTemplateRequest) (response *DeleteMcuTemplateResponse, err error) {
 	response = CreateDeleteMcuTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteMcuTemplate(request *DeleteMcuTemplateRequest) (resp
 }
 
 // DeleteMcuTemplateWithChan invokes the mts.DeleteMcuTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/deletemcutemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMcuTemplateWithChan(request *DeleteMcuTemplateRequest) (<-chan *DeleteMcuTemplateResponse, <-chan error) {
 	responseChan := make(chan *DeleteMcuTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteMcuTemplateWithChan(request *DeleteMcuTemplateReques
 }
 
 // DeleteMcuTemplateWithCallback invokes the mts.DeleteMcuTemplate API asynchronously
-// api document: https://help.aliyun.com/api/mts/deletemcutemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMcuTemplateWithCallback(request *DeleteMcuTemplateRequest, callback func(response *DeleteMcuTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateDeleteMcuTemplateRequest() (request *DeleteMcuTemplateRequest) {
 	request = &DeleteMcuTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMcuTemplate", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeleteMcuTemplate", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

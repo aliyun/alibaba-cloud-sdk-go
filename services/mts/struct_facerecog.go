@@ -17,6 +17,6 @@ package mts
 
 // Facerecog is a nested struct in mts response
 type Facerecog struct {
-	Time  string `json:"Time" xml:"Time"`
-	Faces Faces  `json:"Faces" xml:"Faces"`
+	Time  string                       `json:"Time" xml:"Time"`
+	Faces FacesInQueryFacerecogJobList `json:"Faces" xml:"Faces"`
 }

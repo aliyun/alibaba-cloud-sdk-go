@@ -21,7 +21,6 @@ import (
 )
 
 // QueryTagJobList invokes the mts.QueryTagJobList API synchronously
-// api document: https://help.aliyun.com/api/mts/querytagjoblist.html
 func (client *Client) QueryTagJobList(request *QueryTagJobListRequest) (response *QueryTagJobListResponse, err error) {
 	response = CreateQueryTagJobListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryTagJobList(request *QueryTagJobListRequest) (response
 }
 
 // QueryTagJobListWithChan invokes the mts.QueryTagJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querytagjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTagJobListWithChan(request *QueryTagJobListRequest) (<-chan *QueryTagJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryTagJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryTagJobListWithChan(request *QueryTagJobListRequest) (
 }
 
 // QueryTagJobListWithCallback invokes the mts.QueryTagJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/querytagjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTagJobListWithCallback(request *QueryTagJobListRequest, callback func(response *QueryTagJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateQueryTagJobListRequest() (request *QueryTagJobListRequest) {
 	request = &QueryTagJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryTagJobList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryTagJobList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

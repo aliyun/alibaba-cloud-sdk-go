@@ -21,7 +21,6 @@ import (
 )
 
 // QueryTerrorismJobList invokes the mts.QueryTerrorismJobList API synchronously
-// api document: https://help.aliyun.com/api/mts/queryterrorismjoblist.html
 func (client *Client) QueryTerrorismJobList(request *QueryTerrorismJobListRequest) (response *QueryTerrorismJobListResponse, err error) {
 	response = CreateQueryTerrorismJobListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryTerrorismJobList(request *QueryTerrorismJobListReques
 }
 
 // QueryTerrorismJobListWithChan invokes the mts.QueryTerrorismJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/queryterrorismjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTerrorismJobListWithChan(request *QueryTerrorismJobListRequest) (<-chan *QueryTerrorismJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryTerrorismJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryTerrorismJobListWithChan(request *QueryTerrorismJobLi
 }
 
 // QueryTerrorismJobListWithCallback invokes the mts.QueryTerrorismJobList API asynchronously
-// api document: https://help.aliyun.com/api/mts/queryterrorismjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTerrorismJobListWithCallback(request *QueryTerrorismJobListRequest, callback func(response *QueryTerrorismJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateQueryTerrorismJobListRequest() (request *QueryTerrorismJobListRequest
 	request = &QueryTerrorismJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "QueryTerrorismJobList", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "QueryTerrorismJobList", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

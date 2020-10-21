@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitTerrorismJob invokes the mts.SubmitTerrorismJob API synchronously
-// api document: https://help.aliyun.com/api/mts/submitterrorismjob.html
 func (client *Client) SubmitTerrorismJob(request *SubmitTerrorismJobRequest) (response *SubmitTerrorismJobResponse, err error) {
 	response = CreateSubmitTerrorismJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitTerrorismJob(request *SubmitTerrorismJobRequest) (re
 }
 
 // SubmitTerrorismJobWithChan invokes the mts.SubmitTerrorismJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitterrorismjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitTerrorismJobWithChan(request *SubmitTerrorismJobRequest) (<-chan *SubmitTerrorismJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitTerrorismJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitTerrorismJobWithChan(request *SubmitTerrorismJobRequ
 }
 
 // SubmitTerrorismJobWithCallback invokes the mts.SubmitTerrorismJob API asynchronously
-// api document: https://help.aliyun.com/api/mts/submitterrorismjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitTerrorismJobWithCallback(request *SubmitTerrorismJobRequest, callback func(response *SubmitTerrorismJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateSubmitTerrorismJobRequest() (request *SubmitTerrorismJobRequest) {
 	request = &SubmitTerrorismJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitTerrorismJob", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "SubmitTerrorismJob", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

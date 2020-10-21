@@ -21,7 +21,6 @@ import (
 )
 
 // DeletePipeline invokes the mts.DeletePipeline API synchronously
-// api document: https://help.aliyun.com/api/mts/deletepipeline.html
 func (client *Client) DeletePipeline(request *DeletePipelineRequest) (response *DeletePipelineResponse, err error) {
 	response = CreateDeletePipelineResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeletePipeline(request *DeletePipelineRequest) (response *
 }
 
 // DeletePipelineWithChan invokes the mts.DeletePipeline API asynchronously
-// api document: https://help.aliyun.com/api/mts/deletepipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePipelineWithChan(request *DeletePipelineRequest) (<-chan *DeletePipelineResponse, <-chan error) {
 	responseChan := make(chan *DeletePipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeletePipelineWithChan(request *DeletePipelineRequest) (<-
 }
 
 // DeletePipelineWithCallback invokes the mts.DeletePipeline API asynchronously
-// api document: https://help.aliyun.com/api/mts/deletepipeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePipelineWithCallback(request *DeletePipelineRequest, callback func(response *DeletePipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateDeletePipelineRequest() (request *DeletePipelineRequest) {
 	request = &DeletePipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "DeletePipeline", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "DeletePipeline", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

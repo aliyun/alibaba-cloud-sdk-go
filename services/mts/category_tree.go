@@ -21,7 +21,6 @@ import (
 )
 
 // CategoryTree invokes the mts.CategoryTree API synchronously
-// api document: https://help.aliyun.com/api/mts/categorytree.html
 func (client *Client) CategoryTree(request *CategoryTreeRequest) (response *CategoryTreeResponse, err error) {
 	response = CreateCategoryTreeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CategoryTree(request *CategoryTreeRequest) (response *Cate
 }
 
 // CategoryTreeWithChan invokes the mts.CategoryTree API asynchronously
-// api document: https://help.aliyun.com/api/mts/categorytree.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CategoryTreeWithChan(request *CategoryTreeRequest) (<-chan *CategoryTreeResponse, <-chan error) {
 	responseChan := make(chan *CategoryTreeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CategoryTreeWithChan(request *CategoryTreeRequest) (<-chan
 }
 
 // CategoryTreeWithCallback invokes the mts.CategoryTree API asynchronously
-// api document: https://help.aliyun.com/api/mts/categorytree.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CategoryTreeWithCallback(request *CategoryTreeRequest, callback func(response *CategoryTreeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateCategoryTreeRequest() (request *CategoryTreeRequest) {
 	request = &CategoryTreeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Mts", "2014-06-18", "CategoryTree", "", "")
+	request.InitWithApiInfo("Mts", "2014-06-18", "CategoryTree", "mts", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
