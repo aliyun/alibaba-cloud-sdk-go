@@ -91,4 +91,9 @@ func TestCompleteROASignParams(t *testing.T) {
 	completeROASignParams(req, sign, "cn-hangzhou")
 	head := req.GetHeaders()
 	assert.Equal(t, "Bearer.Token", head["x-acs-bearer-token"])
+
+	sign1 := signers.NewStsTokenSigner(credentials.NewStsTokenCredential("accessKeyId", "accessKeySecret", "accessKeyStsToken"))
+	completeROASignParams(req, sign1, "cn-hangzhou")
+	head = req.GetHeaders()
+	assert.Equal(t, "accessKeyStsToken", head["x-acs-security-token"])
 }

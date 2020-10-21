@@ -35,11 +35,15 @@ func TestInstanceCredentialsProvider(t *testing.T) {
 
 	//testcase 4
 	//return nil, fmt.Errorf("The role was not found in the instance")
+	tmp := provider.HookGet
 	provider.HookGet = func(fn func(string) (int, []byte, error)) func(string) (int, []byte, error) {
 		return func(string) (int, []byte, error) {
 			return 404, []byte(""), nil
 		}
 	}
+	defer func() {
+		provider.HookGet = tmp
+	}()
 	c, err = p.Resolve()
 	assert.Nil(t, c)
 	assert.EqualError(t, err, "The role was not found in the instance")

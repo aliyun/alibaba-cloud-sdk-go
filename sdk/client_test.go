@@ -85,6 +85,14 @@ func Test_NewClientWithOptions(t *testing.T) {
 	c.Timeout = 10 * time.Second
 	credential := credentials.NewAccessKeyCredential("acesskeyid", "accesskeysecret")
 	client, err := NewClientWithOptions("regionid", c, credential)
+	client.AddAsyncTask(func() {})
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
+
+	c.Transport = &http.Transport{
+		IdleConnTimeout: time.Duration(10 * time.Second),
+	}
+	client, err = NewClientWithOptions("regionid", c, credential)
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
 }
@@ -236,6 +244,11 @@ func Test_DoActionWithProxy(t *testing.T) {
 	assert.Equal(t, url.Scheme, "https")
 	assert.Equal(t, url.Host, "127.0.0.1:9000")
 
+	// Test when https proxy is invalid
+	client.SetHttpsProxy("#$%sagf#4sf")
+	err = client.DoAction(request, response)
+	assert.Contains(t, err.Error(), "invalid URL escape", "#$%sagf#4sf")
+
 	// Test when setting https proxy, client has a high priority than environment variable
 	client.SetHttpsProxy("https://username:password@127.0.0.1:6666")
 	err = client.DoAction(request, response)
@@ -245,6 +258,11 @@ func Test_DoActionWithProxy(t *testing.T) {
 	assert.Equal(t, url.Scheme, "https")
 	assert.Equal(t, url.Host, "127.0.0.1:6666")
 	assert.Equal(t, url.User.Username(), "username")
+
+	// Test when noproxy is invalid
+	client.SetNoProxy(")(")
+	err = client.DoAction(request, response)
+	assert.Equal(t, err.Error(), "error parsing regexp: unexpected ): `)(`")
 
 	client.Shutdown()
 	os.Setenv("https_proxy", envHttpsProxy)
@@ -265,6 +283,7 @@ func Test_DoAction_HTTPSInsecure(t *testing.T) {
 	request.ApiName = "CreateRole"
 	request.Domain = "ecs.aliyuncs.com"
 	request.QueryParams["RegionId"] = os.Getenv("REGION_ID")
+	request.Headers["Host"] = "ecs.aliyuncs.com"
 	request.TransToAcsRequest()
 	response := responses.NewCommonResponse()
 	origTestHookDo := hookDo
@@ -850,6 +869,12 @@ func TestClient_SetTransport_httpTransport(t *testing.T) {
 	client, err := NewClientWithBearerToken("cn-hangzhou", "Bearer.Token")
 	assert.Nil(t, err)
 	transport := &http.Transport{}
+	client.SetTransport(transport)
+	if client.httpClient.Transport.(*http.Transport) != transport {
+		t.Fail()
+	}
+
+	client = &Client{}
 	client.SetTransport(transport)
 	if client.httpClient.Transport.(*http.Transport) != transport {
 		t.Fail()

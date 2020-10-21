@@ -19,4 +19,11 @@ func Test_getAPIMaxTimeout(t *testing.T) {
 	timeout, ok = getAPIMaxTimeout("Acs", "UnassociateEipAddress")
 	assert.False(t, ok)
 	assert.Equal(t, 0*time.Second, timeout)
+
+	tmp := apiTimeouts
+	apiTimeouts = ""
+	timeout, ok = getAPIMaxTimeout("Acs", "UnassociateEipAddress")
+	apiTimeouts = tmp
+	assert.False(t, ok)
+	assert.Equal(t, 0*time.Second, timeout)
 }

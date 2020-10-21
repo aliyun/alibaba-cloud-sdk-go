@@ -101,20 +101,20 @@ func TestProfileProvider(t *testing.T) {
 	assert.True(t, ok)
 	os.Unsetenv(HOME)
 
-	// testcase 1, no HOME or USERPROFILE environment variable set
+	// testcase, no HOME or USERPROFILE environment variable set
 	p := provider.NewProfileProvider()
 	c, err := p.Resolve()
 	assert.Nil(t, c)
 	assert.EqualError(t, err, "The default credential file path is invalid")
 
-	// testcase 2, default profile object
+	// testcase, default profile object
 	os.Setenv(HOME, path)
 	p = provider.NewProfileProvider()
 	value, ok := p.(*provider.ProfileProvider)
 	assert.True(t, ok)
 	assert.Equal(t, value.Profile, "default")
 
-	// testcase 3, credential file does not exist in the default path
+	// testcase, credential file does not exist in the default path
 	// and section name does not exist
 	p = provider.NewProfileProvider("first")
 	value, ok = p.(*provider.ProfileProvider)
@@ -124,12 +124,18 @@ func TestProfileProvider(t *testing.T) {
 	assert.Nil(t, c)
 	assert.Nil(t, err)
 
-	// testcase 4, credential file path is error
+	// testcase, credential file path is error
 	os.Setenv(provider.ENVCredentialFile, "../../credentials_error")
 	p = provider.NewProfileProvider()
 	c, err = p.Resolve()
 	assert.Nil(t, c)
 	assert.True(t, strings.Contains(err.Error(), "ERROR: Can not open file"))
+
+	os.Setenv(provider.ENVCredentialFile, "")
+	p = provider.NewProfileProvider()
+	c, err = p.Resolve()
+	assert.Nil(t, c)
+	assert.Equal(t, err.Error(), "Environment variable 'ALIBABA_CLOUD_CREDENTIALS_FILE' cannot be empty")
 
 	// create profile
 	os.Setenv(provider.ENVCredentialFile, "./credentials")
@@ -140,67 +146,67 @@ func TestProfileProvider(t *testing.T) {
 	file.Close()
 	defer os.Remove("./credentials")
 
-	// testcase 5, section does not exist
+	// testcase, section does not exist
 	p = provider.NewProfileProvider("NonExist")
 	c, err = p.Resolve()
 	assert.Nil(t, c)
 	assert.True(t, strings.Contains(err.Error(), "ERROR: Can not load section"))
 
-	// testcase 6, credential type does not set
+	// testcase, credential type does not set
 	p = provider.NewProfileProvider("notype")
 	c, err = p.Resolve()
 	assert.Nil(t, c)
 	assert.True(t, strings.Contains(err.Error(), "ERROR: Can not find credential type"))
 
-	// testcase 7, normal AK
+	// testcase, normal AK
 	p = provider.NewProfileProvider()
 	c, err = p.Resolve()
 	assert.Equal(t, credentials.NewAccessKeyCredential("foo", "bar"), c)
 	assert.Nil(t, err)
-	// testcase 8, key does not exist
+	// testcase, key does not exist
 	p = provider.NewProfileProvider("noak")
 	c, err = p.Resolve()
 	assert.Nil(t, c)
 	assert.True(t, strings.Contains(err.Error(), "ERROR: Failed to get value"))
-	// testcase 9, value is empty
+	// testcase, value is empty
 	p = provider.NewProfileProvider("emptyak")
 	c, err = p.Resolve()
 	assert.Nil(t, c)
 	assert.True(t, strings.Contains(err.Error(), "ERROR: Value can't be empty"))
 
-	//testcase 10, normal EcsRamRole
+	//testcase, normal EcsRamRole
 	p = provider.NewProfileProvider("ecs")
 	c, err = p.Resolve()
 	assert.Equal(t, credentials.NewEcsRamRoleCredential("EcsRamRoleTest"), c)
 	assert.Nil(t, err)
-	//testcase 11, key does not exist
+	//testcase, key does not exist
 	p = provider.NewProfileProvider("noecs")
 	c, err = p.Resolve()
 	assert.Nil(t, c)
 	assert.True(t, strings.Contains(err.Error(), "ERROR: Failed to get value"))
-	//testcase 12, value is empty
+	//testcase, value is empty
 	p = provider.NewProfileProvider("emptyecs")
 	c, err = p.Resolve()
 	assert.Nil(t, c)
 	assert.True(t, strings.Contains(err.Error(), "ERROR: Value can't be empty"))
 
-	//testcase 13, normal RamRoleArn
+	//testcase, normal RamRoleArn
 	p = provider.NewProfileProvider("ram")
 	c, err = p.Resolve()
 	assert.Equal(t, credentials.NewRamRoleArnCredential("foo", "bar", "role_arn", "session_name", 3600), c)
 	assert.Nil(t, err)
-	//testcase 14, key does not exist
+	//testcase, key does not exist
 	p = provider.NewProfileProvider("noram")
 	c, err = p.Resolve()
 	assert.Nil(t, c)
 	assert.True(t, strings.Contains(err.Error(), "ERROR: Failed to get value"))
-	//testcase 15, value is empty
+	//testcase, value is empty
 	p = provider.NewProfileProvider("emptyram")
 	c, err = p.Resolve()
 	assert.Nil(t, c)
 	assert.True(t, strings.Contains(err.Error(), "ERROR: Value can't be empty"))
 
-	//testase 16, normal RsaKeyPair
+	//testase, normal RsaKeyPair
 	file, err = os.Create("./pk.pem")
 	assert.Nil(t, err)
 	file.WriteString(privatekey)
@@ -211,24 +217,24 @@ func TestProfileProvider(t *testing.T) {
 	assert.Equal(t, credentials.NewRsaKeyPairCredential("", "publicKeyId", 3600), c)
 	assert.Nil(t, err)
 	defer os.Remove(`./pk.pem`)
-	//testcase 17, key does not exist
+	//testcase, key does not exist
 	p = provider.NewProfileProvider("norsa")
 	c, err = p.Resolve()
 	assert.Nil(t, c)
 	assert.True(t, strings.Contains(err.Error(), "ERROR: Failed to get value"))
-	//testcase 18, value is empty
+	//testcase, value is empty
 	p = provider.NewProfileProvider("emptyrsa")
 	c, err = p.Resolve()
 	assert.Nil(t, c)
 	assert.True(t, strings.Contains(err.Error(), "ERROR: Value can't be empty"))
 
-	//testcase 19, the value is error
+	//testcase, the value is error
 	p = provider.NewProfileProvider("error_rsa")
 	c, err = p.Resolve()
 	assert.Nil(t, c)
 	assert.True(t, strings.Contains(err.Error(), "ERROR: Can not get private_key"))
 
-	//testcase 20, credential type is error
+	//testcase, credential type is error
 	p = provider.NewProfileProvider("error_type")
 	c, err = p.Resolve()
 	assert.Nil(t, c)

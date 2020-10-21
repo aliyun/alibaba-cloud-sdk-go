@@ -81,14 +81,34 @@ func TestSigner_BearerTokenSigner(t *testing.T) {
 	assert.True(t, ok)
 }
 
-type OtherCredential struct {
+type otherCredential struct {
 }
 
 func TestSigner_OtherSigner(t *testing.T) {
-	c := &OtherCredential{}
+	c := &otherCredential{}
 	_, err := NewSignerWithCredential(c, nil)
 	assert.NotNil(t, err)
-	assert.Equal(t, "[SDK.UnsupportedCredential] Specified credential (type = *auth.OtherCredential) is not supported, please check", err.Error())
+	assert.Equal(t, "[SDK.UnsupportedCredential] Specified credential (type = *auth.otherCredential) is not supported, please check", err.Error())
+}
+
+type otherRequest struct {
+	*requests.RpcRequest
+}
+
+func (*otherRequest) GetStyle() string {
+	return "Other"
+}
+
+func Test_Sign_Other(t *testing.T) {
+	request := &otherRequest{}
+	rpcRequest := new(requests.RpcRequest)
+	rpcRequest.InitWithApiInfo("", "", "", "", "")
+	request.RpcRequest = rpcRequest
+	c := credentials.NewAccessKeyCredential("accessKeyId", "accessKeySecret")
+	signer := signers.NewAccessKeySigner(c)
+
+	err := Sign(request, signer, "regionId")
+	assert.Equal(t, "[SDK.UnknownRequestType] Unknown Request Type: *auth.otherRequest", err.Error())
 }
 
 func Test_Sign_ROA(t *testing.T) {

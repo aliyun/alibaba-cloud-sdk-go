@@ -1,8 +1,9 @@
 package sdk
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_OpenLogger(t *testing.T) {
@@ -42,4 +43,12 @@ func Test_GetLoggerMsg(t *testing.T) {
 	assert.Equal(t, true, client.isRunning)
 
 	assert.Equal(t, "", client.GetLoggerMsg())
+}
+
+func Test_TransToString(t *testing.T) {
+	x := map[string]interface{}{
+		"foo": make(chan int),
+	}
+	str := TransToString(x)
+	assert.Equal(t, str, "")
 }
