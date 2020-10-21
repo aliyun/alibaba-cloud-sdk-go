@@ -56,5 +56,6 @@ type DBInstanceAttribute struct {
 	VpcCloudInstanceId        string                          `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
 	InstanceReleaseProtection bool                            `json:"InstanceReleaseProtection" xml:"InstanceReleaseProtection"`
 	ResourceGroupId           string                          `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ShardCount                int                             `json:"ShardCount" xml:"ShardCount"`
 	Tags                      TagsInDescribeInstanceAttribute `json:"Tags" xml:"Tags"`
 }

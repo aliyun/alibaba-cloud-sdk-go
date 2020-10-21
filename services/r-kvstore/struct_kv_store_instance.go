@@ -51,5 +51,7 @@ type KVStoreInstance struct {
 	ConnectionMode      string                  `json:"ConnectionMode" xml:"ConnectionMode"`
 	VpcCloudInstanceId  string                  `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
 	ResourceGroupId     string                  `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ShardCount          int                     `json:"ShardCount" xml:"ShardCount"`
+	ProxyCount          int                     `json:"ProxyCount" xml:"ProxyCount"`
 	Tags                TagsInDescribeInstances `json:"Tags" xml:"Tags"`
 }
