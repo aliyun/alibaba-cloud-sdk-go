@@ -1,3 +1,7 @@
+2020-10-21 Version: v1.61.589
+- Generated 2020-05-15 for `Vcs`.
+- Change Documentation configuration.
+
 2020-10-21 Version: v1.61.588
 - Generated 2014-06-18 for `Mts`.
 - Add custom person interfaces, support registration, update etc.
