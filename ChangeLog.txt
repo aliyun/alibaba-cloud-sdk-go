@@ -1,3 +1,7 @@
+2020-10-21 Version: v1.61.587
+- Generated 2018-01-15 for `dcdn`.
+- Update cert API.
+
 2020-10-21 Version: v1.61.586
 - Generated 2017-11-15 for `scdn`.
 - Add PHP sdk.

@@ -71,18 +71,17 @@ func (client *Client) DescribeDcdnRefreshTasksWithCallback(request *DescribeDcdn
 // DescribeDcdnRefreshTasksRequest is the request struct for api DescribeDcdnRefreshTasks
 type DescribeDcdnRefreshTasksRequest struct {
 	*requests.RpcRequest
-	ObjectPath      string           `position:"Query" name:"ObjectPath"`
-	StartTime       string           `position:"Query" name:"StartTime"`
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
-	SecurityToken   string           `position:"Query" name:"SecurityToken"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	ObjectType      string           `position:"Query" name:"ObjectType"`
-	TaskId          string           `position:"Query" name:"TaskId"`
-	DomainName      string           `position:"Query" name:"DomainName"`
-	EndTime         string           `position:"Query" name:"EndTime"`
-	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
-	Status          string           `position:"Query" name:"Status"`
+	ObjectPath    string           `position:"Query" name:"ObjectPath"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	ObjectType    string           `position:"Query" name:"ObjectType"`
+	TaskId        string           `position:"Query" name:"TaskId"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Status        string           `position:"Query" name:"Status"`
 }
 
 // DescribeDcdnRefreshTasksResponse is the response struct for api DescribeDcdnRefreshTasks
