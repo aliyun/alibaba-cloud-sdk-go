@@ -1,3 +1,7 @@
+2020-10-22 Version: v1.61.598
+- Generated 2020-03-03 for `devops-rdc`.
+- Add Pipeline Member api.
+
 2020-10-22 Version: v1.61.597
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Update data API.
