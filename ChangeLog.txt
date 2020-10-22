@@ -1,3 +1,7 @@
+2020-10-22 Version: v1.61.597
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Update data API.
+
 2020-10-22 Version: v1.61.596
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Update cert API.
