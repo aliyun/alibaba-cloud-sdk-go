@@ -1,3 +1,7 @@
+2020-10-22 Version: v1.61.595
+- Generated 2018-01-15 for `dcdn`.
+- Update data API.
+
 2020-10-21 Version: v1.61.594
 - Generated 2015-01-01 for `R-kvstore`.
 - DescribeAvailableResource support AcceptLanguage.
