@@ -20,7 +20,6 @@ type Datas struct {
 	LeftTopY         string `json:"LeftTopY" xml:"LeftTopY"`
 	TagMetrics       string `json:"TagMetrics" xml:"TagMetrics"`
 	RightBottomY     string `json:"RightBottomY" xml:"RightBottomY"`
-	PageSize         int64  `json:"PageSize" xml:"PageSize"`
 	TargetPicUrlPath string `json:"TargetPicUrlPath" xml:"TargetPicUrlPath"`
 	DayId            string `json:"DayId" xml:"DayId"`
 	CorpId           string `json:"CorpId" xml:"CorpId"`
@@ -33,9 +32,7 @@ type Datas struct {
 	FaceCount        string `json:"FaceCount" xml:"FaceCount"`
 	ExtraExtendValue string `json:"ExtraExtendValue" xml:"ExtraExtendValue"`
 	HourId           string `json:"HourId" xml:"HourId"`
-	PageNumber       int64  `json:"PageNumber" xml:"PageNumber"`
 	DataSourceId     string `json:"DataSourceId" xml:"DataSourceId"`
-	TotalCount       int64  `json:"TotalCount" xml:"TotalCount"`
 	PersonId         string `json:"PersonId" xml:"PersonId"`
 	SubId            string `json:"SubId" xml:"SubId"`
 	SourceId         string `json:"SourceId" xml:"SourceId"`
@@ -43,7 +40,6 @@ type Datas struct {
 	ShotTime         string `json:"ShotTime" xml:"ShotTime"`
 	TagCode          string `json:"TagCode" xml:"TagCode"`
 	EventType        string `json:"EventType" xml:"EventType"`
-	TotalPage        int64  `json:"TotalPage" xml:"TotalPage"`
 	LeftTopX         string `json:"LeftTopX" xml:"LeftTopX"`
 	PointY           string `json:"PointY" xml:"PointY"`
 	RightBottomX     string `json:"RightBottomX" xml:"RightBottomX"`

@@ -71,22 +71,26 @@ func (client *Client) ListPersonTraceDetailsWithCallback(request *ListPersonTrac
 // ListPersonTraceDetailsRequest is the request struct for api ListPersonTraceDetails
 type ListPersonTraceDetailsRequest struct {
 	*requests.RpcRequest
-	CorpId     string           `position:"Body" name:"CorpId"`
-	EndTime    string           `position:"Body" name:"EndTime"`
-	StartTime  string           `position:"Body" name:"StartTime"`
-	PageNumber requests.Integer `position:"Body" name:"PageNumber"`
-	SubId      string           `position:"Body" name:"SubId"`
-	PageSize   requests.Integer `position:"Body" name:"PageSize"`
-	PersonId   string           `position:"Body" name:"PersonId"`
+	CorpId       string           `position:"Body" name:"CorpId"`
+	EndTime      string           `position:"Body" name:"EndTime"`
+	StartTime    string           `position:"Body" name:"StartTime"`
+	PageNumber   requests.Integer `position:"Body" name:"PageNumber"`
+	SubId        string           `position:"Body" name:"SubId"`
+	PageSize     requests.Integer `position:"Body" name:"PageSize"`
+	DataSourceId string           `position:"Body" name:"DataSourceId"`
+	PersonId     string           `position:"Body" name:"PersonId"`
 }
 
 // ListPersonTraceDetailsResponse is the response struct for api ListPersonTraceDetails
 type ListPersonTraceDetailsResponse struct {
 	*responses.BaseResponse
-	Code      string  `json:"Code" xml:"Code"`
-	Message   string  `json:"Message" xml:"Message"`
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	Data      []Datas `json:"Data" xml:"Data"`
+	Code       string  `json:"Code" xml:"Code"`
+	Message    string  `json:"Message" xml:"Message"`
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
+	PageNumber int64   `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int64   `json:"PageSize" xml:"PageSize"`
+	TotalCount int64   `json:"TotalCount" xml:"TotalCount"`
+	Data       []Datas `json:"Data" xml:"Data"`
 }
 
 // CreateListPersonTraceDetailsRequest creates a request to invoke ListPersonTraceDetails API
