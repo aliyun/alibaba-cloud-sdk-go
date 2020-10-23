@@ -17,15 +17,16 @@ package imageprocess
 
 // Element is a nested struct in imageprocess response
 type Element struct {
-	Category   string  `json:"Category" xml:"Category"`
-	Confidence float64 `json:"Confidence" xml:"Confidence"`
-	Diameter   float64 `json:"Diameter" xml:"Diameter"`
-	Lobe       string  `json:"Lobe" xml:"Lobe"`
-	Lung       string  `json:"Lung" xml:"Lung"`
-	X          float64 `json:"X" xml:"X"`
-	Z          float64 `json:"Z" xml:"Z"`
-	Y          float64 `json:"Y" xml:"Y"`
-	ImageX     float64 `json:"ImageX" xml:"ImageX"`
-	ImageY     float64 `json:"ImageY" xml:"ImageY"`
-	ImageZ     float64 `json:"ImageZ" xml:"ImageZ"`
+	Category       string  `json:"Category" xml:"Category"`
+	Confidence     float64 `json:"Confidence" xml:"Confidence"`
+	Diameter       float64 `json:"Diameter" xml:"Diameter"`
+	Lobe           string  `json:"Lobe" xml:"Lobe"`
+	Lung           string  `json:"Lung" xml:"Lung"`
+	X              float64 `json:"X" xml:"X"`
+	Z              float64 `json:"Z" xml:"Z"`
+	Y              float64 `json:"Y" xml:"Y"`
+	ImageX         float64 `json:"ImageX" xml:"ImageX"`
+	ImageY         float64 `json:"ImageY" xml:"ImageY"`
+	ImageZ         float64 `json:"ImageZ" xml:"ImageZ"`
+	SOPInstanceUID string  `json:"SOPInstanceUID" xml:"SOPInstanceUID"`
 }
