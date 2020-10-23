@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyIpv6InternetBandwidth invokes the vpc.ModifyIpv6InternetBandwidth API synchronously
-// api document: https://help.aliyun.com/api/vpc/modifyipv6internetbandwidth.html
 func (client *Client) ModifyIpv6InternetBandwidth(request *ModifyIpv6InternetBandwidthRequest) (response *ModifyIpv6InternetBandwidthResponse, err error) {
 	response = CreateModifyIpv6InternetBandwidthResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyIpv6InternetBandwidth(request *ModifyIpv6InternetBan
 }
 
 // ModifyIpv6InternetBandwidthWithChan invokes the vpc.ModifyIpv6InternetBandwidth API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyipv6internetbandwidth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIpv6InternetBandwidthWithChan(request *ModifyIpv6InternetBandwidthRequest) (<-chan *ModifyIpv6InternetBandwidthResponse, <-chan error) {
 	responseChan := make(chan *ModifyIpv6InternetBandwidthResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyIpv6InternetBandwidthWithChan(request *ModifyIpv6Int
 }
 
 // ModifyIpv6InternetBandwidthWithCallback invokes the vpc.ModifyIpv6InternetBandwidth API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyipv6internetbandwidth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIpv6InternetBandwidthWithCallback(request *ModifyIpv6InternetBandwidthRequest, callback func(response *ModifyIpv6InternetBandwidthResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // GetDhcpOptionsSet invokes the vpc.GetDhcpOptionsSet API synchronously
-// api document: https://help.aliyun.com/api/vpc/getdhcpoptionsset.html
 func (client *Client) GetDhcpOptionsSet(request *GetDhcpOptionsSetRequest) (response *GetDhcpOptionsSetResponse, err error) {
 	response = CreateGetDhcpOptionsSetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetDhcpOptionsSet(request *GetDhcpOptionsSetRequest) (resp
 }
 
 // GetDhcpOptionsSetWithChan invokes the vpc.GetDhcpOptionsSet API asynchronously
-// api document: https://help.aliyun.com/api/vpc/getdhcpoptionsset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDhcpOptionsSetWithChan(request *GetDhcpOptionsSetRequest) (<-chan *GetDhcpOptionsSetResponse, <-chan error) {
 	responseChan := make(chan *GetDhcpOptionsSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetDhcpOptionsSetWithChan(request *GetDhcpOptionsSetReques
 }
 
 // GetDhcpOptionsSetWithCallback invokes the vpc.GetDhcpOptionsSet API asynchronously
-// api document: https://help.aliyun.com/api/vpc/getdhcpoptionsset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDhcpOptionsSetWithCallback(request *GetDhcpOptionsSetRequest, callback func(response *GetDhcpOptionsSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

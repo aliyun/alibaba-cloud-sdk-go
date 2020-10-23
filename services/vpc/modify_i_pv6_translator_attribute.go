@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyIPv6TranslatorAttribute invokes the vpc.ModifyIPv6TranslatorAttribute API synchronously
-// api document: https://help.aliyun.com/api/vpc/modifyipv6translatorattribute.html
 func (client *Client) ModifyIPv6TranslatorAttribute(request *ModifyIPv6TranslatorAttributeRequest) (response *ModifyIPv6TranslatorAttributeResponse, err error) {
 	response = CreateModifyIPv6TranslatorAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyIPv6TranslatorAttribute(request *ModifyIPv6Translato
 }
 
 // ModifyIPv6TranslatorAttributeWithChan invokes the vpc.ModifyIPv6TranslatorAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyipv6translatorattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIPv6TranslatorAttributeWithChan(request *ModifyIPv6TranslatorAttributeRequest) (<-chan *ModifyIPv6TranslatorAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyIPv6TranslatorAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyIPv6TranslatorAttributeWithChan(request *ModifyIPv6T
 }
 
 // ModifyIPv6TranslatorAttributeWithCallback invokes the vpc.ModifyIPv6TranslatorAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyipv6translatorattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIPv6TranslatorAttributeWithCallback(request *ModifyIPv6TranslatorAttributeRequest, callback func(response *ModifyIPv6TranslatorAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

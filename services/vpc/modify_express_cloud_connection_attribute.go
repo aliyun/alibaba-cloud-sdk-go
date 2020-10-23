@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyExpressCloudConnectionAttribute invokes the vpc.ModifyExpressCloudConnectionAttribute API synchronously
-// api document: https://help.aliyun.com/api/vpc/modifyexpresscloudconnectionattribute.html
 func (client *Client) ModifyExpressCloudConnectionAttribute(request *ModifyExpressCloudConnectionAttributeRequest) (response *ModifyExpressCloudConnectionAttributeResponse, err error) {
 	response = CreateModifyExpressCloudConnectionAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyExpressCloudConnectionAttribute(request *ModifyExpre
 }
 
 // ModifyExpressCloudConnectionAttributeWithChan invokes the vpc.ModifyExpressCloudConnectionAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyexpresscloudconnectionattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyExpressCloudConnectionAttributeWithChan(request *ModifyExpressCloudConnectionAttributeRequest) (<-chan *ModifyExpressCloudConnectionAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyExpressCloudConnectionAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyExpressCloudConnectionAttributeWithChan(request *Mod
 }
 
 // ModifyExpressCloudConnectionAttributeWithCallback invokes the vpc.ModifyExpressCloudConnectionAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyexpresscloudconnectionattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyExpressCloudConnectionAttributeWithCallback(request *ModifyExpressCloudConnectionAttributeRequest, callback func(response *ModifyExpressCloudConnectionAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CopyNetworkAclEntries invokes the vpc.CopyNetworkAclEntries API synchronously
-// api document: https://help.aliyun.com/api/vpc/copynetworkaclentries.html
 func (client *Client) CopyNetworkAclEntries(request *CopyNetworkAclEntriesRequest) (response *CopyNetworkAclEntriesResponse, err error) {
 	response = CreateCopyNetworkAclEntriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CopyNetworkAclEntries(request *CopyNetworkAclEntriesReques
 }
 
 // CopyNetworkAclEntriesWithChan invokes the vpc.CopyNetworkAclEntries API asynchronously
-// api document: https://help.aliyun.com/api/vpc/copynetworkaclentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyNetworkAclEntriesWithChan(request *CopyNetworkAclEntriesRequest) (<-chan *CopyNetworkAclEntriesResponse, <-chan error) {
 	responseChan := make(chan *CopyNetworkAclEntriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CopyNetworkAclEntriesWithChan(request *CopyNetworkAclEntri
 }
 
 // CopyNetworkAclEntriesWithCallback invokes the vpc.CopyNetworkAclEntries API asynchronously
-// api document: https://help.aliyun.com/api/vpc/copynetworkaclentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyNetworkAclEntriesWithCallback(request *CopyNetworkAclEntriesRequest, callback func(response *CopyNetworkAclEntriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

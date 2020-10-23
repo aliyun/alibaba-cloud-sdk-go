@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteBgpGroup invokes the vpc.DeleteBgpGroup API synchronously
-// api document: https://help.aliyun.com/api/vpc/deletebgpgroup.html
 func (client *Client) DeleteBgpGroup(request *DeleteBgpGroupRequest) (response *DeleteBgpGroupResponse, err error) {
 	response = CreateDeleteBgpGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteBgpGroup(request *DeleteBgpGroupRequest) (response *
 }
 
 // DeleteBgpGroupWithChan invokes the vpc.DeleteBgpGroup API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletebgpgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBgpGroupWithChan(request *DeleteBgpGroupRequest) (<-chan *DeleteBgpGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteBgpGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteBgpGroupWithChan(request *DeleteBgpGroupRequest) (<-
 }
 
 // DeleteBgpGroupWithCallback invokes the vpc.DeleteBgpGroup API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletebgpgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBgpGroupWithCallback(request *DeleteBgpGroupRequest, callback func(response *DeleteBgpGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

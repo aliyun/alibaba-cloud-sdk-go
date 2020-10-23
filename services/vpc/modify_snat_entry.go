@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySnatEntry invokes the vpc.ModifySnatEntry API synchronously
-// api document: https://help.aliyun.com/api/vpc/modifysnatentry.html
 func (client *Client) ModifySnatEntry(request *ModifySnatEntryRequest) (response *ModifySnatEntryResponse, err error) {
 	response = CreateModifySnatEntryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySnatEntry(request *ModifySnatEntryRequest) (response
 }
 
 // ModifySnatEntryWithChan invokes the vpc.ModifySnatEntry API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifysnatentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySnatEntryWithChan(request *ModifySnatEntryRequest) (<-chan *ModifySnatEntryResponse, <-chan error) {
 	responseChan := make(chan *ModifySnatEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySnatEntryWithChan(request *ModifySnatEntryRequest) (
 }
 
 // ModifySnatEntryWithCallback invokes the vpc.ModifySnatEntry API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifysnatentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySnatEntryWithCallback(request *ModifySnatEntryRequest, callback func(response *ModifySnatEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

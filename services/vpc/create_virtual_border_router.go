@@ -21,7 +21,6 @@ import (
 )
 
 // CreateVirtualBorderRouter invokes the vpc.CreateVirtualBorderRouter API synchronously
-// api document: https://help.aliyun.com/api/vpc/createvirtualborderrouter.html
 func (client *Client) CreateVirtualBorderRouter(request *CreateVirtualBorderRouterRequest) (response *CreateVirtualBorderRouterResponse, err error) {
 	response = CreateCreateVirtualBorderRouterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateVirtualBorderRouter(request *CreateVirtualBorderRout
 }
 
 // CreateVirtualBorderRouterWithChan invokes the vpc.CreateVirtualBorderRouter API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createvirtualborderrouter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVirtualBorderRouterWithChan(request *CreateVirtualBorderRouterRequest) (<-chan *CreateVirtualBorderRouterResponse, <-chan error) {
 	responseChan := make(chan *CreateVirtualBorderRouterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateVirtualBorderRouterWithChan(request *CreateVirtualBo
 }
 
 // CreateVirtualBorderRouterWithCallback invokes the vpc.CreateVirtualBorderRouter API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createvirtualborderrouter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVirtualBorderRouterWithCallback(request *CreateVirtualBorderRouterRequest, callback func(response *CreateVirtualBorderRouterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +83,7 @@ type CreateVirtualBorderRouterRequest struct {
 	LocalGatewayIp        string           `position:"Query" name:"LocalGatewayIp"`
 	PeeringIpv6SubnetMask string           `position:"Query" name:"PeeringIpv6SubnetMask"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	Bandwidth             requests.Integer `position:"Query" name:"Bandwidth"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	PhysicalConnectionId  string           `position:"Query" name:"PhysicalConnectionId"`

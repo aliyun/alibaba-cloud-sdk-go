@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyCommonBandwidthPackageIpBandwidth invokes the vpc.ModifyCommonBandwidthPackageIpBandwidth API synchronously
-// api document: https://help.aliyun.com/api/vpc/modifycommonbandwidthpackageipbandwidth.html
 func (client *Client) ModifyCommonBandwidthPackageIpBandwidth(request *ModifyCommonBandwidthPackageIpBandwidthRequest) (response *ModifyCommonBandwidthPackageIpBandwidthResponse, err error) {
 	response = CreateModifyCommonBandwidthPackageIpBandwidthResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyCommonBandwidthPackageIpBandwidth(request *ModifyCom
 }
 
 // ModifyCommonBandwidthPackageIpBandwidthWithChan invokes the vpc.ModifyCommonBandwidthPackageIpBandwidth API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifycommonbandwidthpackageipbandwidth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCommonBandwidthPackageIpBandwidthWithChan(request *ModifyCommonBandwidthPackageIpBandwidthRequest) (<-chan *ModifyCommonBandwidthPackageIpBandwidthResponse, <-chan error) {
 	responseChan := make(chan *ModifyCommonBandwidthPackageIpBandwidthResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyCommonBandwidthPackageIpBandwidthWithChan(request *M
 }
 
 // ModifyCommonBandwidthPackageIpBandwidthWithCallback invokes the vpc.ModifyCommonBandwidthPackageIpBandwidth API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifycommonbandwidthpackageipbandwidth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCommonBandwidthPackageIpBandwidthWithCallback(request *ModifyCommonBandwidthPackageIpBandwidthRequest, callback func(response *ModifyCommonBandwidthPackageIpBandwidthResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

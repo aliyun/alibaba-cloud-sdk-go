@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeIpv6GatewayAttribute invokes the vpc.DescribeIpv6GatewayAttribute API synchronously
-// api document: https://help.aliyun.com/api/vpc/describeipv6gatewayattribute.html
 func (client *Client) DescribeIpv6GatewayAttribute(request *DescribeIpv6GatewayAttributeRequest) (response *DescribeIpv6GatewayAttributeResponse, err error) {
 	response = CreateDescribeIpv6GatewayAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeIpv6GatewayAttribute(request *DescribeIpv6GatewayA
 }
 
 // DescribeIpv6GatewayAttributeWithChan invokes the vpc.DescribeIpv6GatewayAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeipv6gatewayattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpv6GatewayAttributeWithChan(request *DescribeIpv6GatewayAttributeRequest) (<-chan *DescribeIpv6GatewayAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeIpv6GatewayAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeIpv6GatewayAttributeWithChan(request *DescribeIpv6
 }
 
 // DescribeIpv6GatewayAttributeWithCallback invokes the vpc.DescribeIpv6GatewayAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeipv6gatewayattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpv6GatewayAttributeWithCallback(request *DescribeIpv6GatewayAttributeRequest, callback func(response *DescribeIpv6GatewayAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

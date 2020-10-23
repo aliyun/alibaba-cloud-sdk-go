@@ -21,7 +21,6 @@ import (
 )
 
 // CreateIPv6TranslatorEntry invokes the vpc.CreateIPv6TranslatorEntry API synchronously
-// api document: https://help.aliyun.com/api/vpc/createipv6translatorentry.html
 func (client *Client) CreateIPv6TranslatorEntry(request *CreateIPv6TranslatorEntryRequest) (response *CreateIPv6TranslatorEntryResponse, err error) {
 	response = CreateCreateIPv6TranslatorEntryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateIPv6TranslatorEntry(request *CreateIPv6TranslatorEnt
 }
 
 // CreateIPv6TranslatorEntryWithChan invokes the vpc.CreateIPv6TranslatorEntry API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createipv6translatorentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateIPv6TranslatorEntryWithChan(request *CreateIPv6TranslatorEntryRequest) (<-chan *CreateIPv6TranslatorEntryResponse, <-chan error) {
 	responseChan := make(chan *CreateIPv6TranslatorEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateIPv6TranslatorEntryWithChan(request *CreateIPv6Trans
 }
 
 // CreateIPv6TranslatorEntryWithCallback invokes the vpc.CreateIPv6TranslatorEntry API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createipv6translatorentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateIPv6TranslatorEntryWithCallback(request *CreateIPv6TranslatorEntryRequest, callback func(response *CreateIPv6TranslatorEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

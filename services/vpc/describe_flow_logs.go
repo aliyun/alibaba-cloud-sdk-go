@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFlowLogs invokes the vpc.DescribeFlowLogs API synchronously
-// api document: https://help.aliyun.com/api/vpc/describeflowlogs.html
 func (client *Client) DescribeFlowLogs(request *DescribeFlowLogsRequest) (response *DescribeFlowLogsResponse, err error) {
 	response = CreateDescribeFlowLogsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFlowLogs(request *DescribeFlowLogsRequest) (respon
 }
 
 // DescribeFlowLogsWithChan invokes the vpc.DescribeFlowLogs API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeflowlogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowLogsWithChan(request *DescribeFlowLogsRequest) (<-chan *DescribeFlowLogsResponse, <-chan error) {
 	responseChan := make(chan *DescribeFlowLogsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFlowLogsWithChan(request *DescribeFlowLogsRequest)
 }
 
 // DescribeFlowLogsWithCallback invokes the vpc.DescribeFlowLogs API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeflowlogs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowLogsWithCallback(request *DescribeFlowLogsRequest, callback func(response *DescribeFlowLogsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

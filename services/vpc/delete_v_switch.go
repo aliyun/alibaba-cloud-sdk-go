@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteVSwitch invokes the vpc.DeleteVSwitch API synchronously
-// api document: https://help.aliyun.com/api/vpc/deletevswitch.html
 func (client *Client) DeleteVSwitch(request *DeleteVSwitchRequest) (response *DeleteVSwitchResponse, err error) {
 	response = CreateDeleteVSwitchResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteVSwitch(request *DeleteVSwitchRequest) (response *De
 }
 
 // DeleteVSwitchWithChan invokes the vpc.DeleteVSwitch API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletevswitch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVSwitchWithChan(request *DeleteVSwitchRequest) (<-chan *DeleteVSwitchResponse, <-chan error) {
 	responseChan := make(chan *DeleteVSwitchResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteVSwitchWithChan(request *DeleteVSwitchRequest) (<-ch
 }
 
 // DeleteVSwitchWithCallback invokes the vpc.DeleteVSwitch API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletevswitch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVSwitchWithCallback(request *DeleteVSwitchRequest, callback func(response *DeleteVSwitchResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

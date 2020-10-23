@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyVpnPbrRouteEntryWeight invokes the vpc.ModifyVpnPbrRouteEntryWeight API synchronously
-// api document: https://help.aliyun.com/api/vpc/modifyvpnpbrrouteentryweight.html
 func (client *Client) ModifyVpnPbrRouteEntryWeight(request *ModifyVpnPbrRouteEntryWeightRequest) (response *ModifyVpnPbrRouteEntryWeightResponse, err error) {
 	response = CreateModifyVpnPbrRouteEntryWeightResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyVpnPbrRouteEntryWeight(request *ModifyVpnPbrRouteEnt
 }
 
 // ModifyVpnPbrRouteEntryWeightWithChan invokes the vpc.ModifyVpnPbrRouteEntryWeight API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyvpnpbrrouteentryweight.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVpnPbrRouteEntryWeightWithChan(request *ModifyVpnPbrRouteEntryWeightRequest) (<-chan *ModifyVpnPbrRouteEntryWeightResponse, <-chan error) {
 	responseChan := make(chan *ModifyVpnPbrRouteEntryWeightResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyVpnPbrRouteEntryWeightWithChan(request *ModifyVpnPbr
 }
 
 // ModifyVpnPbrRouteEntryWeightWithCallback invokes the vpc.ModifyVpnPbrRouteEntryWeight API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyvpnpbrrouteentryweight.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVpnPbrRouteEntryWeightWithCallback(request *ModifyVpnPbrRouteEntryWeightRequest, callback func(response *ModifyVpnPbrRouteEntryWeightResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteCommonBandwidthPackage invokes the vpc.DeleteCommonBandwidthPackage API synchronously
-// api document: https://help.aliyun.com/api/vpc/deletecommonbandwidthpackage.html
 func (client *Client) DeleteCommonBandwidthPackage(request *DeleteCommonBandwidthPackageRequest) (response *DeleteCommonBandwidthPackageResponse, err error) {
 	response = CreateDeleteCommonBandwidthPackageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteCommonBandwidthPackage(request *DeleteCommonBandwidt
 }
 
 // DeleteCommonBandwidthPackageWithChan invokes the vpc.DeleteCommonBandwidthPackage API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletecommonbandwidthpackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCommonBandwidthPackageWithChan(request *DeleteCommonBandwidthPackageRequest) (<-chan *DeleteCommonBandwidthPackageResponse, <-chan error) {
 	responseChan := make(chan *DeleteCommonBandwidthPackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteCommonBandwidthPackageWithChan(request *DeleteCommon
 }
 
 // DeleteCommonBandwidthPackageWithCallback invokes the vpc.DeleteCommonBandwidthPackage API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletecommonbandwidthpackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCommonBandwidthPackageWithCallback(request *DeleteCommonBandwidthPackageRequest, callback func(response *DeleteCommonBandwidthPackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

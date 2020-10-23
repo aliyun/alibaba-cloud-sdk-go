@@ -21,7 +21,6 @@ import (
 )
 
 // AssociateRouteTable invokes the vpc.AssociateRouteTable API synchronously
-// api document: https://help.aliyun.com/api/vpc/associateroutetable.html
 func (client *Client) AssociateRouteTable(request *AssociateRouteTableRequest) (response *AssociateRouteTableResponse, err error) {
 	response = CreateAssociateRouteTableResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AssociateRouteTable(request *AssociateRouteTableRequest) (
 }
 
 // AssociateRouteTableWithChan invokes the vpc.AssociateRouteTable API asynchronously
-// api document: https://help.aliyun.com/api/vpc/associateroutetable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociateRouteTableWithChan(request *AssociateRouteTableRequest) (<-chan *AssociateRouteTableResponse, <-chan error) {
 	responseChan := make(chan *AssociateRouteTableResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AssociateRouteTableWithChan(request *AssociateRouteTableRe
 }
 
 // AssociateRouteTableWithCallback invokes the vpc.AssociateRouteTable API asynchronously
-// api document: https://help.aliyun.com/api/vpc/associateroutetable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociateRouteTableWithCallback(request *AssociateRouteTableRequest, callback func(response *AssociateRouteTableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

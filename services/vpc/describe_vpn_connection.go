@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVpnConnection invokes the vpc.DescribeVpnConnection API synchronously
-// api document: https://help.aliyun.com/api/vpc/describevpnconnection.html
 func (client *Client) DescribeVpnConnection(request *DescribeVpnConnectionRequest) (response *DescribeVpnConnectionResponse, err error) {
 	response = CreateDescribeVpnConnectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVpnConnection(request *DescribeVpnConnectionReques
 }
 
 // DescribeVpnConnectionWithChan invokes the vpc.DescribeVpnConnection API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describevpnconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpnConnectionWithChan(request *DescribeVpnConnectionRequest) (<-chan *DescribeVpnConnectionResponse, <-chan error) {
 	responseChan := make(chan *DescribeVpnConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVpnConnectionWithChan(request *DescribeVpnConnecti
 }
 
 // DescribeVpnConnectionWithCallback invokes the vpc.DescribeVpnConnection API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describevpnconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpnConnectionWithCallback(request *DescribeVpnConnectionRequest, callback func(response *DescribeVpnConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // TerminateVirtualBorderRouter invokes the vpc.TerminateVirtualBorderRouter API synchronously
-// api document: https://help.aliyun.com/api/vpc/terminatevirtualborderrouter.html
 func (client *Client) TerminateVirtualBorderRouter(request *TerminateVirtualBorderRouterRequest) (response *TerminateVirtualBorderRouterResponse, err error) {
 	response = CreateTerminateVirtualBorderRouterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TerminateVirtualBorderRouter(request *TerminateVirtualBord
 }
 
 // TerminateVirtualBorderRouterWithChan invokes the vpc.TerminateVirtualBorderRouter API asynchronously
-// api document: https://help.aliyun.com/api/vpc/terminatevirtualborderrouter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TerminateVirtualBorderRouterWithChan(request *TerminateVirtualBorderRouterRequest) (<-chan *TerminateVirtualBorderRouterResponse, <-chan error) {
 	responseChan := make(chan *TerminateVirtualBorderRouterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TerminateVirtualBorderRouterWithChan(request *TerminateVir
 }
 
 // TerminateVirtualBorderRouterWithCallback invokes the vpc.TerminateVirtualBorderRouter API asynchronously
-// api document: https://help.aliyun.com/api/vpc/terminatevirtualborderrouter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TerminateVirtualBorderRouterWithCallback(request *TerminateVirtualBorderRouterRequest, callback func(response *TerminateVirtualBorderRouterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

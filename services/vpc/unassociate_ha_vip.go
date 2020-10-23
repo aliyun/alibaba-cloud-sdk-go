@@ -21,7 +21,6 @@ import (
 )
 
 // UnassociateHaVip invokes the vpc.UnassociateHaVip API synchronously
-// api document: https://help.aliyun.com/api/vpc/unassociatehavip.html
 func (client *Client) UnassociateHaVip(request *UnassociateHaVipRequest) (response *UnassociateHaVipResponse, err error) {
 	response = CreateUnassociateHaVipResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnassociateHaVip(request *UnassociateHaVipRequest) (respon
 }
 
 // UnassociateHaVipWithChan invokes the vpc.UnassociateHaVip API asynchronously
-// api document: https://help.aliyun.com/api/vpc/unassociatehavip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassociateHaVipWithChan(request *UnassociateHaVipRequest) (<-chan *UnassociateHaVipResponse, <-chan error) {
 	responseChan := make(chan *UnassociateHaVipResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnassociateHaVipWithChan(request *UnassociateHaVipRequest)
 }
 
 // UnassociateHaVipWithCallback invokes the vpc.UnassociateHaVip API asynchronously
-// api document: https://help.aliyun.com/api/vpc/unassociatehavip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassociateHaVipWithCallback(request *UnassociateHaVipRequest, callback func(response *UnassociateHaVipResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

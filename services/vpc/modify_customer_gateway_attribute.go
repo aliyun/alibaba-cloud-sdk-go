@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyCustomerGatewayAttribute invokes the vpc.ModifyCustomerGatewayAttribute API synchronously
-// api document: https://help.aliyun.com/api/vpc/modifycustomergatewayattribute.html
 func (client *Client) ModifyCustomerGatewayAttribute(request *ModifyCustomerGatewayAttributeRequest) (response *ModifyCustomerGatewayAttributeResponse, err error) {
 	response = CreateModifyCustomerGatewayAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyCustomerGatewayAttribute(request *ModifyCustomerGate
 }
 
 // ModifyCustomerGatewayAttributeWithChan invokes the vpc.ModifyCustomerGatewayAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifycustomergatewayattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCustomerGatewayAttributeWithChan(request *ModifyCustomerGatewayAttributeRequest) (<-chan *ModifyCustomerGatewayAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyCustomerGatewayAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyCustomerGatewayAttributeWithChan(request *ModifyCust
 }
 
 // ModifyCustomerGatewayAttributeWithCallback invokes the vpc.ModifyCustomerGatewayAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifycustomergatewayattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCustomerGatewayAttributeWithCallback(request *ModifyCustomerGatewayAttributeRequest, callback func(response *ModifyCustomerGatewayAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

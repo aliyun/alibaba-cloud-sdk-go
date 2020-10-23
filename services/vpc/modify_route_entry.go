@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyRouteEntry invokes the vpc.ModifyRouteEntry API synchronously
-// api document: https://help.aliyun.com/api/vpc/modifyrouteentry.html
 func (client *Client) ModifyRouteEntry(request *ModifyRouteEntryRequest) (response *ModifyRouteEntryResponse, err error) {
 	response = CreateModifyRouteEntryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyRouteEntry(request *ModifyRouteEntryRequest) (respon
 }
 
 // ModifyRouteEntryWithChan invokes the vpc.ModifyRouteEntry API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyrouteentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRouteEntryWithChan(request *ModifyRouteEntryRequest) (<-chan *ModifyRouteEntryResponse, <-chan error) {
 	responseChan := make(chan *ModifyRouteEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyRouteEntryWithChan(request *ModifyRouteEntryRequest)
 }
 
 // ModifyRouteEntryWithCallback invokes the vpc.ModifyRouteEntry API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyrouteentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRouteEntryWithCallback(request *ModifyRouteEntryRequest, callback func(response *ModifyRouteEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

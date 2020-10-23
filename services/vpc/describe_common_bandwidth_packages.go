@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCommonBandwidthPackages invokes the vpc.DescribeCommonBandwidthPackages API synchronously
-// api document: https://help.aliyun.com/api/vpc/describecommonbandwidthpackages.html
 func (client *Client) DescribeCommonBandwidthPackages(request *DescribeCommonBandwidthPackagesRequest) (response *DescribeCommonBandwidthPackagesResponse, err error) {
 	response = CreateDescribeCommonBandwidthPackagesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCommonBandwidthPackages(request *DescribeCommonBan
 }
 
 // DescribeCommonBandwidthPackagesWithChan invokes the vpc.DescribeCommonBandwidthPackages API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describecommonbandwidthpackages.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCommonBandwidthPackagesWithChan(request *DescribeCommonBandwidthPackagesRequest) (<-chan *DescribeCommonBandwidthPackagesResponse, <-chan error) {
 	responseChan := make(chan *DescribeCommonBandwidthPackagesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCommonBandwidthPackagesWithChan(request *DescribeC
 }
 
 // DescribeCommonBandwidthPackagesWithCallback invokes the vpc.DescribeCommonBandwidthPackages API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describecommonbandwidthpackages.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCommonBandwidthPackagesWithCallback(request *DescribeCommonBandwidthPackagesRequest, callback func(response *DescribeCommonBandwidthPackagesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,24 @@ func (client *Client) DescribeCommonBandwidthPackagesWithCallback(request *Descr
 // DescribeCommonBandwidthPackagesRequest is the request struct for api DescribeCommonBandwidthPackages
 type DescribeCommonBandwidthPackagesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	IncludeReservationData requests.Boolean `position:"Query" name:"IncludeReservationData"`
-	PageNumber             requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceGroupId        string           `position:"Query" name:"ResourceGroupId"`
-	PageSize               requests.Integer `position:"Query" name:"PageSize"`
-	BandwidthPackageId     string           `position:"Query" name:"BandwidthPackageId"`
-	DryRun                 requests.Boolean `position:"Query" name:"DryRun"`
-	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	Name                   string           `position:"Query" name:"Name"`
+	ResourceOwnerId        requests.Integer                      `position:"Query" name:"ResourceOwnerId"`
+	IncludeReservationData requests.Boolean                      `position:"Query" name:"IncludeReservationData"`
+	PageNumber             requests.Integer                      `position:"Query" name:"PageNumber"`
+	ResourceGroupId        string                                `position:"Query" name:"ResourceGroupId"`
+	PageSize               requests.Integer                      `position:"Query" name:"PageSize"`
+	Tag                    *[]DescribeCommonBandwidthPackagesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	BandwidthPackageId     string                                `position:"Query" name:"BandwidthPackageId"`
+	DryRun                 requests.Boolean                      `position:"Query" name:"DryRun"`
+	ResourceOwnerAccount   string                                `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount           string                                `position:"Query" name:"OwnerAccount"`
+	OwnerId                requests.Integer                      `position:"Query" name:"OwnerId"`
+	Name                   string                                `position:"Query" name:"Name"`
+}
+
+// DescribeCommonBandwidthPackagesTag is a repeated param struct in DescribeCommonBandwidthPackagesRequest
+type DescribeCommonBandwidthPackagesTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeCommonBandwidthPackagesResponse is the response struct for api DescribeCommonBandwidthPackages

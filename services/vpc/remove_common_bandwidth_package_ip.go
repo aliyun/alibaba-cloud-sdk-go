@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveCommonBandwidthPackageIp invokes the vpc.RemoveCommonBandwidthPackageIp API synchronously
-// api document: https://help.aliyun.com/api/vpc/removecommonbandwidthpackageip.html
 func (client *Client) RemoveCommonBandwidthPackageIp(request *RemoveCommonBandwidthPackageIpRequest) (response *RemoveCommonBandwidthPackageIpResponse, err error) {
 	response = CreateRemoveCommonBandwidthPackageIpResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveCommonBandwidthPackageIp(request *RemoveCommonBandwi
 }
 
 // RemoveCommonBandwidthPackageIpWithChan invokes the vpc.RemoveCommonBandwidthPackageIp API asynchronously
-// api document: https://help.aliyun.com/api/vpc/removecommonbandwidthpackageip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveCommonBandwidthPackageIpWithChan(request *RemoveCommonBandwidthPackageIpRequest) (<-chan *RemoveCommonBandwidthPackageIpResponse, <-chan error) {
 	responseChan := make(chan *RemoveCommonBandwidthPackageIpResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveCommonBandwidthPackageIpWithChan(request *RemoveComm
 }
 
 // RemoveCommonBandwidthPackageIpWithCallback invokes the vpc.RemoveCommonBandwidthPackageIp API asynchronously
-// api document: https://help.aliyun.com/api/vpc/removecommonbandwidthpackageip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveCommonBandwidthPackageIpWithCallback(request *RemoveCommonBandwidthPackageIpRequest, callback func(response *RemoveCommonBandwidthPackageIpResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

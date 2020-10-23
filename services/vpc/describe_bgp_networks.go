@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBgpNetworks invokes the vpc.DescribeBgpNetworks API synchronously
-// api document: https://help.aliyun.com/api/vpc/describebgpnetworks.html
 func (client *Client) DescribeBgpNetworks(request *DescribeBgpNetworksRequest) (response *DescribeBgpNetworksResponse, err error) {
 	response = CreateDescribeBgpNetworksResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBgpNetworks(request *DescribeBgpNetworksRequest) (
 }
 
 // DescribeBgpNetworksWithChan invokes the vpc.DescribeBgpNetworks API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describebgpnetworks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBgpNetworksWithChan(request *DescribeBgpNetworksRequest) (<-chan *DescribeBgpNetworksResponse, <-chan error) {
 	responseChan := make(chan *DescribeBgpNetworksResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBgpNetworksWithChan(request *DescribeBgpNetworksRe
 }
 
 // DescribeBgpNetworksWithCallback invokes the vpc.DescribeBgpNetworks API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describebgpnetworks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBgpNetworksWithCallback(request *DescribeBgpNetworksRequest, callback func(response *DescribeBgpNetworksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

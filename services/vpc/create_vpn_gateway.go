@@ -21,7 +21,6 @@ import (
 )
 
 // CreateVpnGateway invokes the vpc.CreateVpnGateway API synchronously
-// api document: https://help.aliyun.com/api/vpc/createvpngateway.html
 func (client *Client) CreateVpnGateway(request *CreateVpnGatewayRequest) (response *CreateVpnGatewayResponse, err error) {
 	response = CreateCreateVpnGatewayResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateVpnGateway(request *CreateVpnGatewayRequest) (respon
 }
 
 // CreateVpnGatewayWithChan invokes the vpc.CreateVpnGateway API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createvpngateway.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVpnGatewayWithChan(request *CreateVpnGatewayRequest) (<-chan *CreateVpnGatewayResponse, <-chan error) {
 	responseChan := make(chan *CreateVpnGatewayResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateVpnGatewayWithChan(request *CreateVpnGatewayRequest)
 }
 
 // CreateVpnGatewayWithCallback invokes the vpc.CreateVpnGateway API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createvpngateway.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVpnGatewayWithCallback(request *CreateVpnGatewayRequest, callback func(response *CreateVpnGatewayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

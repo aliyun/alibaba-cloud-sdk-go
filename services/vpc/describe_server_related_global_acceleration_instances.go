@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeServerRelatedGlobalAccelerationInstances invokes the vpc.DescribeServerRelatedGlobalAccelerationInstances API synchronously
-// api document: https://help.aliyun.com/api/vpc/describeserverrelatedglobalaccelerationinstances.html
 func (client *Client) DescribeServerRelatedGlobalAccelerationInstances(request *DescribeServerRelatedGlobalAccelerationInstancesRequest) (response *DescribeServerRelatedGlobalAccelerationInstancesResponse, err error) {
 	response = CreateDescribeServerRelatedGlobalAccelerationInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeServerRelatedGlobalAccelerationInstances(request *
 }
 
 // DescribeServerRelatedGlobalAccelerationInstancesWithChan invokes the vpc.DescribeServerRelatedGlobalAccelerationInstances API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeserverrelatedglobalaccelerationinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServerRelatedGlobalAccelerationInstancesWithChan(request *DescribeServerRelatedGlobalAccelerationInstancesRequest) (<-chan *DescribeServerRelatedGlobalAccelerationInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeServerRelatedGlobalAccelerationInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeServerRelatedGlobalAccelerationInstancesWithChan(r
 }
 
 // DescribeServerRelatedGlobalAccelerationInstancesWithCallback invokes the vpc.DescribeServerRelatedGlobalAccelerationInstances API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeserverrelatedglobalaccelerationinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServerRelatedGlobalAccelerationInstancesWithCallback(request *DescribeServerRelatedGlobalAccelerationInstancesRequest, callback func(response *DescribeServerRelatedGlobalAccelerationInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

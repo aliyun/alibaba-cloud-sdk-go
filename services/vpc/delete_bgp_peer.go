@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteBgpPeer invokes the vpc.DeleteBgpPeer API synchronously
-// api document: https://help.aliyun.com/api/vpc/deletebgppeer.html
 func (client *Client) DeleteBgpPeer(request *DeleteBgpPeerRequest) (response *DeleteBgpPeerResponse, err error) {
 	response = CreateDeleteBgpPeerResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteBgpPeer(request *DeleteBgpPeerRequest) (response *De
 }
 
 // DeleteBgpPeerWithChan invokes the vpc.DeleteBgpPeer API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletebgppeer.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBgpPeerWithChan(request *DeleteBgpPeerRequest) (<-chan *DeleteBgpPeerResponse, <-chan error) {
 	responseChan := make(chan *DeleteBgpPeerResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteBgpPeerWithChan(request *DeleteBgpPeerRequest) (<-ch
 }
 
 // DeleteBgpPeerWithCallback invokes the vpc.DeleteBgpPeer API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletebgppeer.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBgpPeerWithCallback(request *DeleteBgpPeerRequest, callback func(response *DeleteBgpPeerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

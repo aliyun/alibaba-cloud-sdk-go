@@ -21,7 +21,6 @@ import (
 )
 
 // ApplyPhysicalConnectionLOA invokes the vpc.ApplyPhysicalConnectionLOA API synchronously
-// api document: https://help.aliyun.com/api/vpc/applyphysicalconnectionloa.html
 func (client *Client) ApplyPhysicalConnectionLOA(request *ApplyPhysicalConnectionLOARequest) (response *ApplyPhysicalConnectionLOAResponse, err error) {
 	response = CreateApplyPhysicalConnectionLOAResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ApplyPhysicalConnectionLOA(request *ApplyPhysicalConnectio
 }
 
 // ApplyPhysicalConnectionLOAWithChan invokes the vpc.ApplyPhysicalConnectionLOA API asynchronously
-// api document: https://help.aliyun.com/api/vpc/applyphysicalconnectionloa.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApplyPhysicalConnectionLOAWithChan(request *ApplyPhysicalConnectionLOARequest) (<-chan *ApplyPhysicalConnectionLOAResponse, <-chan error) {
 	responseChan := make(chan *ApplyPhysicalConnectionLOAResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ApplyPhysicalConnectionLOAWithChan(request *ApplyPhysicalC
 }
 
 // ApplyPhysicalConnectionLOAWithCallback invokes the vpc.ApplyPhysicalConnectionLOA API asynchronously
-// api document: https://help.aliyun.com/api/vpc/applyphysicalconnectionloa.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApplyPhysicalConnectionLOAWithCallback(request *ApplyPhysicalConnectionLOARequest, callback func(response *ApplyPhysicalConnectionLOAResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

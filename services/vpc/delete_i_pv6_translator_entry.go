@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteIPv6TranslatorEntry invokes the vpc.DeleteIPv6TranslatorEntry API synchronously
-// api document: https://help.aliyun.com/api/vpc/deleteipv6translatorentry.html
 func (client *Client) DeleteIPv6TranslatorEntry(request *DeleteIPv6TranslatorEntryRequest) (response *DeleteIPv6TranslatorEntryResponse, err error) {
 	response = CreateDeleteIPv6TranslatorEntryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteIPv6TranslatorEntry(request *DeleteIPv6TranslatorEnt
 }
 
 // DeleteIPv6TranslatorEntryWithChan invokes the vpc.DeleteIPv6TranslatorEntry API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deleteipv6translatorentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteIPv6TranslatorEntryWithChan(request *DeleteIPv6TranslatorEntryRequest) (<-chan *DeleteIPv6TranslatorEntryResponse, <-chan error) {
 	responseChan := make(chan *DeleteIPv6TranslatorEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteIPv6TranslatorEntryWithChan(request *DeleteIPv6Trans
 }
 
 // DeleteIPv6TranslatorEntryWithCallback invokes the vpc.DeleteIPv6TranslatorEntry API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deleteipv6translatorentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteIPv6TranslatorEntryWithCallback(request *DeleteIPv6TranslatorEntryRequest, callback func(response *DeleteIPv6TranslatorEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

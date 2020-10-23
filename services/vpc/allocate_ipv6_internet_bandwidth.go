@@ -21,7 +21,6 @@ import (
 )
 
 // AllocateIpv6InternetBandwidth invokes the vpc.AllocateIpv6InternetBandwidth API synchronously
-// api document: https://help.aliyun.com/api/vpc/allocateipv6internetbandwidth.html
 func (client *Client) AllocateIpv6InternetBandwidth(request *AllocateIpv6InternetBandwidthRequest) (response *AllocateIpv6InternetBandwidthResponse, err error) {
 	response = CreateAllocateIpv6InternetBandwidthResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AllocateIpv6InternetBandwidth(request *AllocateIpv6Interne
 }
 
 // AllocateIpv6InternetBandwidthWithChan invokes the vpc.AllocateIpv6InternetBandwidth API asynchronously
-// api document: https://help.aliyun.com/api/vpc/allocateipv6internetbandwidth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateIpv6InternetBandwidthWithChan(request *AllocateIpv6InternetBandwidthRequest) (<-chan *AllocateIpv6InternetBandwidthResponse, <-chan error) {
 	responseChan := make(chan *AllocateIpv6InternetBandwidthResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AllocateIpv6InternetBandwidthWithChan(request *AllocateIpv
 }
 
 // AllocateIpv6InternetBandwidthWithCallback invokes the vpc.AllocateIpv6InternetBandwidth API asynchronously
-// api document: https://help.aliyun.com/api/vpc/allocateipv6internetbandwidth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateIpv6InternetBandwidthWithCallback(request *AllocateIpv6InternetBandwidthRequest, callback func(response *AllocateIpv6InternetBandwidthResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

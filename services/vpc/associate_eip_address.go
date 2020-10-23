@@ -21,7 +21,6 @@ import (
 )
 
 // AssociateEipAddress invokes the vpc.AssociateEipAddress API synchronously
-// api document: https://help.aliyun.com/api/vpc/associateeipaddress.html
 func (client *Client) AssociateEipAddress(request *AssociateEipAddressRequest) (response *AssociateEipAddressResponse, err error) {
 	response = CreateAssociateEipAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AssociateEipAddress(request *AssociateEipAddressRequest) (
 }
 
 // AssociateEipAddressWithChan invokes the vpc.AssociateEipAddress API asynchronously
-// api document: https://help.aliyun.com/api/vpc/associateeipaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociateEipAddressWithChan(request *AssociateEipAddressRequest) (<-chan *AssociateEipAddressResponse, <-chan error) {
 	responseChan := make(chan *AssociateEipAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AssociateEipAddressWithChan(request *AssociateEipAddressRe
 }
 
 // AssociateEipAddressWithCallback invokes the vpc.AssociateEipAddress API asynchronously
-// api document: https://help.aliyun.com/api/vpc/associateeipaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociateEipAddressWithCallback(request *AssociateEipAddressRequest, callback func(response *AssociateEipAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

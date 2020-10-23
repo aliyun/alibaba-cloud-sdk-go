@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyNetworkAclAttributes invokes the vpc.ModifyNetworkAclAttributes API synchronously
-// api document: https://help.aliyun.com/api/vpc/modifynetworkaclattributes.html
 func (client *Client) ModifyNetworkAclAttributes(request *ModifyNetworkAclAttributesRequest) (response *ModifyNetworkAclAttributesResponse, err error) {
 	response = CreateModifyNetworkAclAttributesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyNetworkAclAttributes(request *ModifyNetworkAclAttrib
 }
 
 // ModifyNetworkAclAttributesWithChan invokes the vpc.ModifyNetworkAclAttributes API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifynetworkaclattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNetworkAclAttributesWithChan(request *ModifyNetworkAclAttributesRequest) (<-chan *ModifyNetworkAclAttributesResponse, <-chan error) {
 	responseChan := make(chan *ModifyNetworkAclAttributesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyNetworkAclAttributesWithChan(request *ModifyNetworkA
 }
 
 // ModifyNetworkAclAttributesWithCallback invokes the vpc.ModifyNetworkAclAttributes API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifynetworkaclattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNetworkAclAttributesWithCallback(request *ModifyNetworkAclAttributesRequest, callback func(response *ModifyNetworkAclAttributesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

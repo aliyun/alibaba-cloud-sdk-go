@@ -21,7 +21,6 @@ import (
 )
 
 // AddCommonBandwidthPackageIp invokes the vpc.AddCommonBandwidthPackageIp API synchronously
-// api document: https://help.aliyun.com/api/vpc/addcommonbandwidthpackageip.html
 func (client *Client) AddCommonBandwidthPackageIp(request *AddCommonBandwidthPackageIpRequest) (response *AddCommonBandwidthPackageIpResponse, err error) {
 	response = CreateAddCommonBandwidthPackageIpResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddCommonBandwidthPackageIp(request *AddCommonBandwidthPac
 }
 
 // AddCommonBandwidthPackageIpWithChan invokes the vpc.AddCommonBandwidthPackageIp API asynchronously
-// api document: https://help.aliyun.com/api/vpc/addcommonbandwidthpackageip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCommonBandwidthPackageIpWithChan(request *AddCommonBandwidthPackageIpRequest) (<-chan *AddCommonBandwidthPackageIpResponse, <-chan error) {
 	responseChan := make(chan *AddCommonBandwidthPackageIpResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddCommonBandwidthPackageIpWithChan(request *AddCommonBand
 }
 
 // AddCommonBandwidthPackageIpWithCallback invokes the vpc.AddCommonBandwidthPackageIp API asynchronously
-// api document: https://help.aliyun.com/api/vpc/addcommonbandwidthpackageip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCommonBandwidthPackageIpWithCallback(request *AddCommonBandwidthPackageIpRequest, callback func(response *AddCommonBandwidthPackageIpResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

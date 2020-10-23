@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteIpv6EgressOnlyRule invokes the vpc.DeleteIpv6EgressOnlyRule API synchronously
-// api document: https://help.aliyun.com/api/vpc/deleteipv6egressonlyrule.html
 func (client *Client) DeleteIpv6EgressOnlyRule(request *DeleteIpv6EgressOnlyRuleRequest) (response *DeleteIpv6EgressOnlyRuleResponse, err error) {
 	response = CreateDeleteIpv6EgressOnlyRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteIpv6EgressOnlyRule(request *DeleteIpv6EgressOnlyRule
 }
 
 // DeleteIpv6EgressOnlyRuleWithChan invokes the vpc.DeleteIpv6EgressOnlyRule API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deleteipv6egressonlyrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteIpv6EgressOnlyRuleWithChan(request *DeleteIpv6EgressOnlyRuleRequest) (<-chan *DeleteIpv6EgressOnlyRuleResponse, <-chan error) {
 	responseChan := make(chan *DeleteIpv6EgressOnlyRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteIpv6EgressOnlyRuleWithChan(request *DeleteIpv6Egress
 }
 
 // DeleteIpv6EgressOnlyRuleWithCallback invokes the vpc.DeleteIpv6EgressOnlyRule API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deleteipv6egressonlyrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteIpv6EgressOnlyRuleWithCallback(request *DeleteIpv6EgressOnlyRuleRequest, callback func(response *DeleteIpv6EgressOnlyRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateSslVpnServer invokes the vpc.CreateSslVpnServer API synchronously
-// api document: https://help.aliyun.com/api/vpc/createsslvpnserver.html
 func (client *Client) CreateSslVpnServer(request *CreateSslVpnServerRequest) (response *CreateSslVpnServerResponse, err error) {
 	response = CreateCreateSslVpnServerResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateSslVpnServer(request *CreateSslVpnServerRequest) (re
 }
 
 // CreateSslVpnServerWithChan invokes the vpc.CreateSslVpnServer API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createsslvpnserver.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSslVpnServerWithChan(request *CreateSslVpnServerRequest) (<-chan *CreateSslVpnServerResponse, <-chan error) {
 	responseChan := make(chan *CreateSslVpnServerResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateSslVpnServerWithChan(request *CreateSslVpnServerRequ
 }
 
 // CreateSslVpnServerWithCallback invokes the vpc.CreateSslVpnServer API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createsslvpnserver.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSslVpnServerWithCallback(request *CreateSslVpnServerRequest, callback func(response *CreateSslVpnServerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

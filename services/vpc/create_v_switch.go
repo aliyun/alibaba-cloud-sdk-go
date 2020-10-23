@@ -21,7 +21,6 @@ import (
 )
 
 // CreateVSwitch invokes the vpc.CreateVSwitch API synchronously
-// api document: https://help.aliyun.com/api/vpc/createvswitch.html
 func (client *Client) CreateVSwitch(request *CreateVSwitchRequest) (response *CreateVSwitchResponse, err error) {
 	response = CreateCreateVSwitchResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateVSwitch(request *CreateVSwitchRequest) (response *Cr
 }
 
 // CreateVSwitchWithChan invokes the vpc.CreateVSwitch API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createvswitch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVSwitchWithChan(request *CreateVSwitchRequest) (<-chan *CreateVSwitchResponse, <-chan error) {
 	responseChan := make(chan *CreateVSwitchResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateVSwitchWithChan(request *CreateVSwitchRequest) (<-ch
 }
 
 // CreateVSwitchWithCallback invokes the vpc.CreateVSwitch API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createvswitch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVSwitchWithCallback(request *CreateVSwitchRequest, callback func(response *CreateVSwitchResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteHaVip invokes the vpc.DeleteHaVip API synchronously
-// api document: https://help.aliyun.com/api/vpc/deletehavip.html
 func (client *Client) DeleteHaVip(request *DeleteHaVipRequest) (response *DeleteHaVipResponse, err error) {
 	response = CreateDeleteHaVipResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteHaVip(request *DeleteHaVipRequest) (response *Delete
 }
 
 // DeleteHaVipWithChan invokes the vpc.DeleteHaVip API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletehavip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHaVipWithChan(request *DeleteHaVipRequest) (<-chan *DeleteHaVipResponse, <-chan error) {
 	responseChan := make(chan *DeleteHaVipResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteHaVipWithChan(request *DeleteHaVipRequest) (<-chan *
 }
 
 // DeleteHaVipWithCallback invokes the vpc.DeleteHaVip API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletehavip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHaVipWithCallback(request *DeleteHaVipRequest, callback func(response *DeleteHaVipResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

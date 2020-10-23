@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeGlobalAccelerationInstances invokes the vpc.DescribeGlobalAccelerationInstances API synchronously
-// api document: https://help.aliyun.com/api/vpc/describeglobalaccelerationinstances.html
 func (client *Client) DescribeGlobalAccelerationInstances(request *DescribeGlobalAccelerationInstancesRequest) (response *DescribeGlobalAccelerationInstancesResponse, err error) {
 	response = CreateDescribeGlobalAccelerationInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeGlobalAccelerationInstances(request *DescribeGloba
 }
 
 // DescribeGlobalAccelerationInstancesWithChan invokes the vpc.DescribeGlobalAccelerationInstances API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeglobalaccelerationinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGlobalAccelerationInstancesWithChan(request *DescribeGlobalAccelerationInstancesRequest) (<-chan *DescribeGlobalAccelerationInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeGlobalAccelerationInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeGlobalAccelerationInstancesWithChan(request *Descr
 }
 
 // DescribeGlobalAccelerationInstancesWithCallback invokes the vpc.DescribeGlobalAccelerationInstances API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeglobalaccelerationinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGlobalAccelerationInstancesWithCallback(request *DescribeGlobalAccelerationInstancesRequest, callback func(response *DescribeGlobalAccelerationInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

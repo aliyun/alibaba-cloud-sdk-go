@@ -21,7 +21,6 @@ import (
 )
 
 // AddGlobalAccelerationInstanceIp invokes the vpc.AddGlobalAccelerationInstanceIp API synchronously
-// api document: https://help.aliyun.com/api/vpc/addglobalaccelerationinstanceip.html
 func (client *Client) AddGlobalAccelerationInstanceIp(request *AddGlobalAccelerationInstanceIpRequest) (response *AddGlobalAccelerationInstanceIpResponse, err error) {
 	response = CreateAddGlobalAccelerationInstanceIpResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddGlobalAccelerationInstanceIp(request *AddGlobalAccelera
 }
 
 // AddGlobalAccelerationInstanceIpWithChan invokes the vpc.AddGlobalAccelerationInstanceIp API asynchronously
-// api document: https://help.aliyun.com/api/vpc/addglobalaccelerationinstanceip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddGlobalAccelerationInstanceIpWithChan(request *AddGlobalAccelerationInstanceIpRequest) (<-chan *AddGlobalAccelerationInstanceIpResponse, <-chan error) {
 	responseChan := make(chan *AddGlobalAccelerationInstanceIpResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddGlobalAccelerationInstanceIpWithChan(request *AddGlobal
 }
 
 // AddGlobalAccelerationInstanceIpWithCallback invokes the vpc.AddGlobalAccelerationInstanceIp API asynchronously
-// api document: https://help.aliyun.com/api/vpc/addglobalaccelerationinstanceip.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddGlobalAccelerationInstanceIpWithCallback(request *AddGlobalAccelerationInstanceIpRequest, callback func(response *AddGlobalAccelerationInstanceIpResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

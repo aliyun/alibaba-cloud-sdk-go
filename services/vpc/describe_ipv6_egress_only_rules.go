@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeIpv6EgressOnlyRules invokes the vpc.DescribeIpv6EgressOnlyRules API synchronously
-// api document: https://help.aliyun.com/api/vpc/describeipv6egressonlyrules.html
 func (client *Client) DescribeIpv6EgressOnlyRules(request *DescribeIpv6EgressOnlyRulesRequest) (response *DescribeIpv6EgressOnlyRulesResponse, err error) {
 	response = CreateDescribeIpv6EgressOnlyRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeIpv6EgressOnlyRules(request *DescribeIpv6EgressOnl
 }
 
 // DescribeIpv6EgressOnlyRulesWithChan invokes the vpc.DescribeIpv6EgressOnlyRules API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeipv6egressonlyrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpv6EgressOnlyRulesWithChan(request *DescribeIpv6EgressOnlyRulesRequest) (<-chan *DescribeIpv6EgressOnlyRulesResponse, <-chan error) {
 	responseChan := make(chan *DescribeIpv6EgressOnlyRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeIpv6EgressOnlyRulesWithChan(request *DescribeIpv6E
 }
 
 // DescribeIpv6EgressOnlyRulesWithCallback invokes the vpc.DescribeIpv6EgressOnlyRules API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeipv6egressonlyrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpv6EgressOnlyRulesWithCallback(request *DescribeIpv6EgressOnlyRulesRequest, callback func(response *DescribeIpv6EgressOnlyRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

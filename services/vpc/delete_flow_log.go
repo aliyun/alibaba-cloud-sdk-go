@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteFlowLog invokes the vpc.DeleteFlowLog API synchronously
-// api document: https://help.aliyun.com/api/vpc/deleteflowlog.html
 func (client *Client) DeleteFlowLog(request *DeleteFlowLogRequest) (response *DeleteFlowLogResponse, err error) {
 	response = CreateDeleteFlowLogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteFlowLog(request *DeleteFlowLogRequest) (response *De
 }
 
 // DeleteFlowLogWithChan invokes the vpc.DeleteFlowLog API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deleteflowlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFlowLogWithChan(request *DeleteFlowLogRequest) (<-chan *DeleteFlowLogResponse, <-chan error) {
 	responseChan := make(chan *DeleteFlowLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteFlowLogWithChan(request *DeleteFlowLogRequest) (<-ch
 }
 
 // DeleteFlowLogWithCallback invokes the vpc.DeleteFlowLog API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deleteflowlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFlowLogWithCallback(request *DeleteFlowLogRequest, callback func(response *DeleteFlowLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

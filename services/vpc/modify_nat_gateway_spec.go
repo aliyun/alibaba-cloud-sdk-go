@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyNatGatewaySpec invokes the vpc.ModifyNatGatewaySpec API synchronously
-// api document: https://help.aliyun.com/api/vpc/modifynatgatewayspec.html
 func (client *Client) ModifyNatGatewaySpec(request *ModifyNatGatewaySpecRequest) (response *ModifyNatGatewaySpecResponse, err error) {
 	response = CreateModifyNatGatewaySpecResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyNatGatewaySpec(request *ModifyNatGatewaySpecRequest)
 }
 
 // ModifyNatGatewaySpecWithChan invokes the vpc.ModifyNatGatewaySpec API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifynatgatewayspec.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNatGatewaySpecWithChan(request *ModifyNatGatewaySpecRequest) (<-chan *ModifyNatGatewaySpecResponse, <-chan error) {
 	responseChan := make(chan *ModifyNatGatewaySpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyNatGatewaySpecWithChan(request *ModifyNatGatewaySpec
 }
 
 // ModifyNatGatewaySpecWithCallback invokes the vpc.ModifyNatGatewaySpec API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifynatgatewayspec.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNatGatewaySpecWithCallback(request *ModifyNatGatewaySpecRequest, callback func(response *ModifyNatGatewaySpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

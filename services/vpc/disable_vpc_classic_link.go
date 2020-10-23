@@ -21,7 +21,6 @@ import (
 )
 
 // DisableVpcClassicLink invokes the vpc.DisableVpcClassicLink API synchronously
-// api document: https://help.aliyun.com/api/vpc/disablevpcclassiclink.html
 func (client *Client) DisableVpcClassicLink(request *DisableVpcClassicLinkRequest) (response *DisableVpcClassicLinkResponse, err error) {
 	response = CreateDisableVpcClassicLinkResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisableVpcClassicLink(request *DisableVpcClassicLinkReques
 }
 
 // DisableVpcClassicLinkWithChan invokes the vpc.DisableVpcClassicLink API asynchronously
-// api document: https://help.aliyun.com/api/vpc/disablevpcclassiclink.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableVpcClassicLinkWithChan(request *DisableVpcClassicLinkRequest) (<-chan *DisableVpcClassicLinkResponse, <-chan error) {
 	responseChan := make(chan *DisableVpcClassicLinkResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisableVpcClassicLinkWithChan(request *DisableVpcClassicLi
 }
 
 // DisableVpcClassicLinkWithCallback invokes the vpc.DisableVpcClassicLink API asynchronously
-// api document: https://help.aliyun.com/api/vpc/disablevpcclassiclink.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableVpcClassicLinkWithCallback(request *DisableVpcClassicLinkRequest, callback func(response *DisableVpcClassicLinkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

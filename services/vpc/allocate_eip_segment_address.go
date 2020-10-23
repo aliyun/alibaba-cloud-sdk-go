@@ -21,7 +21,6 @@ import (
 )
 
 // AllocateEipSegmentAddress invokes the vpc.AllocateEipSegmentAddress API synchronously
-// api document: https://help.aliyun.com/api/vpc/allocateeipsegmentaddress.html
 func (client *Client) AllocateEipSegmentAddress(request *AllocateEipSegmentAddressRequest) (response *AllocateEipSegmentAddressResponse, err error) {
 	response = CreateAllocateEipSegmentAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AllocateEipSegmentAddress(request *AllocateEipSegmentAddre
 }
 
 // AllocateEipSegmentAddressWithChan invokes the vpc.AllocateEipSegmentAddress API asynchronously
-// api document: https://help.aliyun.com/api/vpc/allocateeipsegmentaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateEipSegmentAddressWithChan(request *AllocateEipSegmentAddressRequest) (<-chan *AllocateEipSegmentAddressResponse, <-chan error) {
 	responseChan := make(chan *AllocateEipSegmentAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AllocateEipSegmentAddressWithChan(request *AllocateEipSegm
 }
 
 // AllocateEipSegmentAddressWithCallback invokes the vpc.AllocateEipSegmentAddress API asynchronously
-// api document: https://help.aliyun.com/api/vpc/allocateeipsegmentaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateEipSegmentAddressWithCallback(request *AllocateEipSegmentAddressRequest, callback func(response *AllocateEipSegmentAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type AllocateEipSegmentAddressRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	Isp                  string           `position:"Query" name:"Isp"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	Netmode              string           `position:"Query" name:"Netmode"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

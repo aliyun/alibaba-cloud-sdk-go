@@ -21,7 +21,6 @@ import (
 )
 
 // ReleaseEipAddress invokes the vpc.ReleaseEipAddress API synchronously
-// api document: https://help.aliyun.com/api/vpc/releaseeipaddress.html
 func (client *Client) ReleaseEipAddress(request *ReleaseEipAddressRequest) (response *ReleaseEipAddressResponse, err error) {
 	response = CreateReleaseEipAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReleaseEipAddress(request *ReleaseEipAddressRequest) (resp
 }
 
 // ReleaseEipAddressWithChan invokes the vpc.ReleaseEipAddress API asynchronously
-// api document: https://help.aliyun.com/api/vpc/releaseeipaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseEipAddressWithChan(request *ReleaseEipAddressRequest) (<-chan *ReleaseEipAddressResponse, <-chan error) {
 	responseChan := make(chan *ReleaseEipAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReleaseEipAddressWithChan(request *ReleaseEipAddressReques
 }
 
 // ReleaseEipAddressWithCallback invokes the vpc.ReleaseEipAddress API asynchronously
-// api document: https://help.aliyun.com/api/vpc/releaseeipaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseEipAddressWithCallback(request *ReleaseEipAddressRequest, callback func(response *ReleaseEipAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

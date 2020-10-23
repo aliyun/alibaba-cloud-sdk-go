@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteGlobalAccelerationInstance invokes the vpc.DeleteGlobalAccelerationInstance API synchronously
-// api document: https://help.aliyun.com/api/vpc/deleteglobalaccelerationinstance.html
 func (client *Client) DeleteGlobalAccelerationInstance(request *DeleteGlobalAccelerationInstanceRequest) (response *DeleteGlobalAccelerationInstanceResponse, err error) {
 	response = CreateDeleteGlobalAccelerationInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteGlobalAccelerationInstance(request *DeleteGlobalAcce
 }
 
 // DeleteGlobalAccelerationInstanceWithChan invokes the vpc.DeleteGlobalAccelerationInstance API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deleteglobalaccelerationinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGlobalAccelerationInstanceWithChan(request *DeleteGlobalAccelerationInstanceRequest) (<-chan *DeleteGlobalAccelerationInstanceResponse, <-chan error) {
 	responseChan := make(chan *DeleteGlobalAccelerationInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteGlobalAccelerationInstanceWithChan(request *DeleteGl
 }
 
 // DeleteGlobalAccelerationInstanceWithCallback invokes the vpc.DeleteGlobalAccelerationInstance API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deleteglobalaccelerationinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGlobalAccelerationInstanceWithCallback(request *DeleteGlobalAccelerationInstanceRequest, callback func(response *DeleteGlobalAccelerationInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyIpv6GatewaySpec invokes the vpc.ModifyIpv6GatewaySpec API synchronously
-// api document: https://help.aliyun.com/api/vpc/modifyipv6gatewayspec.html
 func (client *Client) ModifyIpv6GatewaySpec(request *ModifyIpv6GatewaySpecRequest) (response *ModifyIpv6GatewaySpecResponse, err error) {
 	response = CreateModifyIpv6GatewaySpecResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyIpv6GatewaySpec(request *ModifyIpv6GatewaySpecReques
 }
 
 // ModifyIpv6GatewaySpecWithChan invokes the vpc.ModifyIpv6GatewaySpec API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyipv6gatewayspec.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIpv6GatewaySpecWithChan(request *ModifyIpv6GatewaySpecRequest) (<-chan *ModifyIpv6GatewaySpecResponse, <-chan error) {
 	responseChan := make(chan *ModifyIpv6GatewaySpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyIpv6GatewaySpecWithChan(request *ModifyIpv6GatewaySp
 }
 
 // ModifyIpv6GatewaySpecWithCallback invokes the vpc.ModifyIpv6GatewaySpec API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyipv6gatewayspec.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIpv6GatewaySpecWithCallback(request *ModifyIpv6GatewaySpecRequest, callback func(response *ModifyIpv6GatewaySpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVSwitchAttributes invokes the vpc.DescribeVSwitchAttributes API synchronously
-// api document: https://help.aliyun.com/api/vpc/describevswitchattributes.html
 func (client *Client) DescribeVSwitchAttributes(request *DescribeVSwitchAttributesRequest) (response *DescribeVSwitchAttributesResponse, err error) {
 	response = CreateDescribeVSwitchAttributesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVSwitchAttributes(request *DescribeVSwitchAttribut
 }
 
 // DescribeVSwitchAttributesWithChan invokes the vpc.DescribeVSwitchAttributes API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describevswitchattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVSwitchAttributesWithChan(request *DescribeVSwitchAttributesRequest) (<-chan *DescribeVSwitchAttributesResponse, <-chan error) {
 	responseChan := make(chan *DescribeVSwitchAttributesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVSwitchAttributesWithChan(request *DescribeVSwitch
 }
 
 // DescribeVSwitchAttributesWithCallback invokes the vpc.DescribeVSwitchAttributes API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describevswitchattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVSwitchAttributesWithCallback(request *DescribeVSwitchAttributesRequest, callback func(response *DescribeVSwitchAttributesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

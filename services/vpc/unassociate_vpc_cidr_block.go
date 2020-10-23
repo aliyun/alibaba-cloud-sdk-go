@@ -21,7 +21,6 @@ import (
 )
 
 // UnassociateVpcCidrBlock invokes the vpc.UnassociateVpcCidrBlock API synchronously
-// api document: https://help.aliyun.com/api/vpc/unassociatevpccidrblock.html
 func (client *Client) UnassociateVpcCidrBlock(request *UnassociateVpcCidrBlockRequest) (response *UnassociateVpcCidrBlockResponse, err error) {
 	response = CreateUnassociateVpcCidrBlockResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnassociateVpcCidrBlock(request *UnassociateVpcCidrBlockRe
 }
 
 // UnassociateVpcCidrBlockWithChan invokes the vpc.UnassociateVpcCidrBlock API asynchronously
-// api document: https://help.aliyun.com/api/vpc/unassociatevpccidrblock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassociateVpcCidrBlockWithChan(request *UnassociateVpcCidrBlockRequest) (<-chan *UnassociateVpcCidrBlockResponse, <-chan error) {
 	responseChan := make(chan *UnassociateVpcCidrBlockResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnassociateVpcCidrBlockWithChan(request *UnassociateVpcCid
 }
 
 // UnassociateVpcCidrBlockWithCallback invokes the vpc.UnassociateVpcCidrBlock API asynchronously
-// api document: https://help.aliyun.com/api/vpc/unassociatevpccidrblock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassociateVpcCidrBlockWithCallback(request *UnassociateVpcCidrBlockRequest, callback func(response *UnassociateVpcCidrBlockResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

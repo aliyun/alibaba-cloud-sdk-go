@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteVpnPbrRouteEntry invokes the vpc.DeleteVpnPbrRouteEntry API synchronously
-// api document: https://help.aliyun.com/api/vpc/deletevpnpbrrouteentry.html
 func (client *Client) DeleteVpnPbrRouteEntry(request *DeleteVpnPbrRouteEntryRequest) (response *DeleteVpnPbrRouteEntryResponse, err error) {
 	response = CreateDeleteVpnPbrRouteEntryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteVpnPbrRouteEntry(request *DeleteVpnPbrRouteEntryRequ
 }
 
 // DeleteVpnPbrRouteEntryWithChan invokes the vpc.DeleteVpnPbrRouteEntry API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletevpnpbrrouteentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVpnPbrRouteEntryWithChan(request *DeleteVpnPbrRouteEntryRequest) (<-chan *DeleteVpnPbrRouteEntryResponse, <-chan error) {
 	responseChan := make(chan *DeleteVpnPbrRouteEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteVpnPbrRouteEntryWithChan(request *DeleteVpnPbrRouteE
 }
 
 // DeleteVpnPbrRouteEntryWithCallback invokes the vpc.DeleteVpnPbrRouteEntry API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletevpnpbrrouteentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVpnPbrRouteEntryWithCallback(request *DeleteVpnPbrRouteEntryRequest, callback func(response *DeleteVpnPbrRouteEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

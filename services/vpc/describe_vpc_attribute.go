@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVpcAttribute invokes the vpc.DescribeVpcAttribute API synchronously
-// api document: https://help.aliyun.com/api/vpc/describevpcattribute.html
 func (client *Client) DescribeVpcAttribute(request *DescribeVpcAttributeRequest) (response *DescribeVpcAttributeResponse, err error) {
 	response = CreateDescribeVpcAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVpcAttribute(request *DescribeVpcAttributeRequest)
 }
 
 // DescribeVpcAttributeWithChan invokes the vpc.DescribeVpcAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describevpcattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpcAttributeWithChan(request *DescribeVpcAttributeRequest) (<-chan *DescribeVpcAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeVpcAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVpcAttributeWithChan(request *DescribeVpcAttribute
 }
 
 // DescribeVpcAttributeWithCallback invokes the vpc.DescribeVpcAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describevpcattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpcAttributeWithCallback(request *DescribeVpcAttributeRequest, callback func(response *DescribeVpcAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

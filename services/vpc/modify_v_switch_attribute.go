@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyVSwitchAttribute invokes the vpc.ModifyVSwitchAttribute API synchronously
-// api document: https://help.aliyun.com/api/vpc/modifyvswitchattribute.html
 func (client *Client) ModifyVSwitchAttribute(request *ModifyVSwitchAttributeRequest) (response *ModifyVSwitchAttributeResponse, err error) {
 	response = CreateModifyVSwitchAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyVSwitchAttribute(request *ModifyVSwitchAttributeRequ
 }
 
 // ModifyVSwitchAttributeWithChan invokes the vpc.ModifyVSwitchAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyvswitchattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVSwitchAttributeWithChan(request *ModifyVSwitchAttributeRequest) (<-chan *ModifyVSwitchAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyVSwitchAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyVSwitchAttributeWithChan(request *ModifyVSwitchAttri
 }
 
 // ModifyVSwitchAttributeWithCallback invokes the vpc.ModifyVSwitchAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyvswitchattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVSwitchAttributeWithCallback(request *ModifyVSwitchAttributeRequest, callback func(response *ModifyVSwitchAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) ModifyVSwitchAttributeWithCallback(request *ModifyVSwitchA
 type ModifyVSwitchAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	EnableIPv6           requests.Boolean `position:"Query" name:"EnableIPv6"`
 	Description          string           `position:"Query" name:"Description"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

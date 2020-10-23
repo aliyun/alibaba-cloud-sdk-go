@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyCommonBandwidthPackagePayType invokes the vpc.ModifyCommonBandwidthPackagePayType API synchronously
-// api document: https://help.aliyun.com/api/vpc/modifycommonbandwidthpackagepaytype.html
 func (client *Client) ModifyCommonBandwidthPackagePayType(request *ModifyCommonBandwidthPackagePayTypeRequest) (response *ModifyCommonBandwidthPackagePayTypeResponse, err error) {
 	response = CreateModifyCommonBandwidthPackagePayTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyCommonBandwidthPackagePayType(request *ModifyCommonB
 }
 
 // ModifyCommonBandwidthPackagePayTypeWithChan invokes the vpc.ModifyCommonBandwidthPackagePayType API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifycommonbandwidthpackagepaytype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCommonBandwidthPackagePayTypeWithChan(request *ModifyCommonBandwidthPackagePayTypeRequest) (<-chan *ModifyCommonBandwidthPackagePayTypeResponse, <-chan error) {
 	responseChan := make(chan *ModifyCommonBandwidthPackagePayTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyCommonBandwidthPackagePayTypeWithChan(request *Modif
 }
 
 // ModifyCommonBandwidthPackagePayTypeWithCallback invokes the vpc.ModifyCommonBandwidthPackagePayType API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifycommonbandwidthpackagepaytype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCommonBandwidthPackagePayTypeWithCallback(request *ModifyCommonBandwidthPackagePayTypeRequest, callback func(response *ModifyCommonBandwidthPackagePayTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

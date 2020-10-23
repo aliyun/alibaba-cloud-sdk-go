@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeHighDefinitionMonitorLogAttribute invokes the vpc.DescribeHighDefinitionMonitorLogAttribute API synchronously
-// api document: https://help.aliyun.com/api/vpc/describehighdefinitionmonitorlogattribute.html
 func (client *Client) DescribeHighDefinitionMonitorLogAttribute(request *DescribeHighDefinitionMonitorLogAttributeRequest) (response *DescribeHighDefinitionMonitorLogAttributeResponse, err error) {
 	response = CreateDescribeHighDefinitionMonitorLogAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeHighDefinitionMonitorLogAttribute(request *Describ
 }
 
 // DescribeHighDefinitionMonitorLogAttributeWithChan invokes the vpc.DescribeHighDefinitionMonitorLogAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describehighdefinitionmonitorlogattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHighDefinitionMonitorLogAttributeWithChan(request *DescribeHighDefinitionMonitorLogAttributeRequest) (<-chan *DescribeHighDefinitionMonitorLogAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeHighDefinitionMonitorLogAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeHighDefinitionMonitorLogAttributeWithChan(request 
 }
 
 // DescribeHighDefinitionMonitorLogAttributeWithCallback invokes the vpc.DescribeHighDefinitionMonitorLogAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describehighdefinitionmonitorlogattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHighDefinitionMonitorLogAttributeWithCallback(request *DescribeHighDefinitionMonitorLogAttributeRequest, callback func(response *DescribeHighDefinitionMonitorLogAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

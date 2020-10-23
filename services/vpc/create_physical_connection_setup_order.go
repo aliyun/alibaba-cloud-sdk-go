@@ -21,7 +21,6 @@ import (
 )
 
 // CreatePhysicalConnectionSetupOrder invokes the vpc.CreatePhysicalConnectionSetupOrder API synchronously
-// api document: https://help.aliyun.com/api/vpc/createphysicalconnectionsetuporder.html
 func (client *Client) CreatePhysicalConnectionSetupOrder(request *CreatePhysicalConnectionSetupOrderRequest) (response *CreatePhysicalConnectionSetupOrderResponse, err error) {
 	response = CreateCreatePhysicalConnectionSetupOrderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreatePhysicalConnectionSetupOrder(request *CreatePhysical
 }
 
 // CreatePhysicalConnectionSetupOrderWithChan invokes the vpc.CreatePhysicalConnectionSetupOrder API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createphysicalconnectionsetuporder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePhysicalConnectionSetupOrderWithChan(request *CreatePhysicalConnectionSetupOrderRequest) (<-chan *CreatePhysicalConnectionSetupOrderResponse, <-chan error) {
 	responseChan := make(chan *CreatePhysicalConnectionSetupOrderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreatePhysicalConnectionSetupOrderWithChan(request *Create
 }
 
 // CreatePhysicalConnectionSetupOrderWithCallback invokes the vpc.CreatePhysicalConnectionSetupOrder API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createphysicalconnectionsetuporder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePhysicalConnectionSetupOrderWithCallback(request *CreatePhysicalConnectionSetupOrderRequest, callback func(response *CreatePhysicalConnectionSetupOrderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

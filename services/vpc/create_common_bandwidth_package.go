@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCommonBandwidthPackage invokes the vpc.CreateCommonBandwidthPackage API synchronously
-// api document: https://help.aliyun.com/api/vpc/createcommonbandwidthpackage.html
 func (client *Client) CreateCommonBandwidthPackage(request *CreateCommonBandwidthPackageRequest) (response *CreateCommonBandwidthPackageResponse, err error) {
 	response = CreateCreateCommonBandwidthPackageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCommonBandwidthPackage(request *CreateCommonBandwidt
 }
 
 // CreateCommonBandwidthPackageWithChan invokes the vpc.CreateCommonBandwidthPackage API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createcommonbandwidthpackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCommonBandwidthPackageWithChan(request *CreateCommonBandwidthPackageRequest) (<-chan *CreateCommonBandwidthPackageResponse, <-chan error) {
 	responseChan := make(chan *CreateCommonBandwidthPackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateCommonBandwidthPackageWithChan(request *CreateCommon
 }
 
 // CreateCommonBandwidthPackageWithCallback invokes the vpc.CreateCommonBandwidthPackage API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createcommonbandwidthpackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCommonBandwidthPackageWithCallback(request *CreateCommonBandwidthPackageRequest, callback func(response *CreateCommonBandwidthPackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

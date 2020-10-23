@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteRouteTable invokes the vpc.DeleteRouteTable API synchronously
-// api document: https://help.aliyun.com/api/vpc/deleteroutetable.html
 func (client *Client) DeleteRouteTable(request *DeleteRouteTableRequest) (response *DeleteRouteTableResponse, err error) {
 	response = CreateDeleteRouteTableResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteRouteTable(request *DeleteRouteTableRequest) (respon
 }
 
 // DeleteRouteTableWithChan invokes the vpc.DeleteRouteTable API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deleteroutetable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRouteTableWithChan(request *DeleteRouteTableRequest) (<-chan *DeleteRouteTableResponse, <-chan error) {
 	responseChan := make(chan *DeleteRouteTableResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteRouteTableWithChan(request *DeleteRouteTableRequest)
 }
 
 // DeleteRouteTableWithCallback invokes the vpc.DeleteRouteTable API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deleteroutetable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRouteTableWithCallback(request *DeleteRouteTableRequest, callback func(response *DeleteRouteTableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

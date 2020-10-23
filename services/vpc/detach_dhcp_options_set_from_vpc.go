@@ -21,7 +21,6 @@ import (
 )
 
 // DetachDhcpOptionsSetFromVpc invokes the vpc.DetachDhcpOptionsSetFromVpc API synchronously
-// api document: https://help.aliyun.com/api/vpc/detachdhcpoptionssetfromvpc.html
 func (client *Client) DetachDhcpOptionsSetFromVpc(request *DetachDhcpOptionsSetFromVpcRequest) (response *DetachDhcpOptionsSetFromVpcResponse, err error) {
 	response = CreateDetachDhcpOptionsSetFromVpcResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetachDhcpOptionsSetFromVpc(request *DetachDhcpOptionsSetF
 }
 
 // DetachDhcpOptionsSetFromVpcWithChan invokes the vpc.DetachDhcpOptionsSetFromVpc API asynchronously
-// api document: https://help.aliyun.com/api/vpc/detachdhcpoptionssetfromvpc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachDhcpOptionsSetFromVpcWithChan(request *DetachDhcpOptionsSetFromVpcRequest) (<-chan *DetachDhcpOptionsSetFromVpcResponse, <-chan error) {
 	responseChan := make(chan *DetachDhcpOptionsSetFromVpcResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetachDhcpOptionsSetFromVpcWithChan(request *DetachDhcpOpt
 }
 
 // DetachDhcpOptionsSetFromVpcWithCallback invokes the vpc.DetachDhcpOptionsSetFromVpc API asynchronously
-// api document: https://help.aliyun.com/api/vpc/detachdhcpoptionssetfromvpc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachDhcpOptionsSetFromVpcWithCallback(request *DetachDhcpOptionsSetFromVpcRequest, callback func(response *DetachDhcpOptionsSetFromVpcResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEipGatewayInfo invokes the vpc.DescribeEipGatewayInfo API synchronously
-// api document: https://help.aliyun.com/api/vpc/describeeipgatewayinfo.html
 func (client *Client) DescribeEipGatewayInfo(request *DescribeEipGatewayInfoRequest) (response *DescribeEipGatewayInfoResponse, err error) {
 	response = CreateDescribeEipGatewayInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEipGatewayInfo(request *DescribeEipGatewayInfoRequ
 }
 
 // DescribeEipGatewayInfoWithChan invokes the vpc.DescribeEipGatewayInfo API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeeipgatewayinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEipGatewayInfoWithChan(request *DescribeEipGatewayInfoRequest) (<-chan *DescribeEipGatewayInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeEipGatewayInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEipGatewayInfoWithChan(request *DescribeEipGateway
 }
 
 // DescribeEipGatewayInfoWithCallback invokes the vpc.DescribeEipGatewayInfo API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeeipgatewayinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEipGatewayInfoWithCallback(request *DescribeEipGatewayInfoRequest, callback func(response *DescribeEipGatewayInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

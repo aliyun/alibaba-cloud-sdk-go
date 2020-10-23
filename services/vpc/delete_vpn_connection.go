@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteVpnConnection invokes the vpc.DeleteVpnConnection API synchronously
-// api document: https://help.aliyun.com/api/vpc/deletevpnconnection.html
 func (client *Client) DeleteVpnConnection(request *DeleteVpnConnectionRequest) (response *DeleteVpnConnectionResponse, err error) {
 	response = CreateDeleteVpnConnectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteVpnConnection(request *DeleteVpnConnectionRequest) (
 }
 
 // DeleteVpnConnectionWithChan invokes the vpc.DeleteVpnConnection API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletevpnconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVpnConnectionWithChan(request *DeleteVpnConnectionRequest) (<-chan *DeleteVpnConnectionResponse, <-chan error) {
 	responseChan := make(chan *DeleteVpnConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteVpnConnectionWithChan(request *DeleteVpnConnectionRe
 }
 
 // DeleteVpnConnectionWithCallback invokes the vpc.DeleteVpnConnection API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletevpnconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVpnConnectionWithCallback(request *DeleteVpnConnectionRequest, callback func(response *DeleteVpnConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

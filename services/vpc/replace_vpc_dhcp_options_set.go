@@ -21,7 +21,6 @@ import (
 )
 
 // ReplaceVpcDhcpOptionsSet invokes the vpc.ReplaceVpcDhcpOptionsSet API synchronously
-// api document: https://help.aliyun.com/api/vpc/replacevpcdhcpoptionsset.html
 func (client *Client) ReplaceVpcDhcpOptionsSet(request *ReplaceVpcDhcpOptionsSetRequest) (response *ReplaceVpcDhcpOptionsSetResponse, err error) {
 	response = CreateReplaceVpcDhcpOptionsSetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReplaceVpcDhcpOptionsSet(request *ReplaceVpcDhcpOptionsSet
 }
 
 // ReplaceVpcDhcpOptionsSetWithChan invokes the vpc.ReplaceVpcDhcpOptionsSet API asynchronously
-// api document: https://help.aliyun.com/api/vpc/replacevpcdhcpoptionsset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReplaceVpcDhcpOptionsSetWithChan(request *ReplaceVpcDhcpOptionsSetRequest) (<-chan *ReplaceVpcDhcpOptionsSetResponse, <-chan error) {
 	responseChan := make(chan *ReplaceVpcDhcpOptionsSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReplaceVpcDhcpOptionsSetWithChan(request *ReplaceVpcDhcpOp
 }
 
 // ReplaceVpcDhcpOptionsSetWithCallback invokes the vpc.ReplaceVpcDhcpOptionsSet API asynchronously
-// api document: https://help.aliyun.com/api/vpc/replacevpcdhcpoptionsset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReplaceVpcDhcpOptionsSetWithCallback(request *ReplaceVpcDhcpOptionsSetRequest, callback func(response *ReplaceVpcDhcpOptionsSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

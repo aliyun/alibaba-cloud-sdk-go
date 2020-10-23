@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyBgpGroupAttribute invokes the vpc.ModifyBgpGroupAttribute API synchronously
-// api document: https://help.aliyun.com/api/vpc/modifybgpgroupattribute.html
 func (client *Client) ModifyBgpGroupAttribute(request *ModifyBgpGroupAttributeRequest) (response *ModifyBgpGroupAttributeResponse, err error) {
 	response = CreateModifyBgpGroupAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyBgpGroupAttribute(request *ModifyBgpGroupAttributeRe
 }
 
 // ModifyBgpGroupAttributeWithChan invokes the vpc.ModifyBgpGroupAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifybgpgroupattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBgpGroupAttributeWithChan(request *ModifyBgpGroupAttributeRequest) (<-chan *ModifyBgpGroupAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyBgpGroupAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyBgpGroupAttributeWithChan(request *ModifyBgpGroupAtt
 }
 
 // ModifyBgpGroupAttributeWithCallback invokes the vpc.ModifyBgpGroupAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifybgpgroupattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBgpGroupAttributeWithCallback(request *ModifyBgpGroupAttributeRequest, callback func(response *ModifyBgpGroupAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

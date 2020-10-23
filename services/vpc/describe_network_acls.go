@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeNetworkAcls invokes the vpc.DescribeNetworkAcls API synchronously
-// api document: https://help.aliyun.com/api/vpc/describenetworkacls.html
 func (client *Client) DescribeNetworkAcls(request *DescribeNetworkAclsRequest) (response *DescribeNetworkAclsResponse, err error) {
 	response = CreateDescribeNetworkAclsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeNetworkAcls(request *DescribeNetworkAclsRequest) (
 }
 
 // DescribeNetworkAclsWithChan invokes the vpc.DescribeNetworkAcls API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describenetworkacls.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNetworkAclsWithChan(request *DescribeNetworkAclsRequest) (<-chan *DescribeNetworkAclsResponse, <-chan error) {
 	responseChan := make(chan *DescribeNetworkAclsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeNetworkAclsWithChan(request *DescribeNetworkAclsRe
 }
 
 // DescribeNetworkAclsWithCallback invokes the vpc.DescribeNetworkAcls API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describenetworkacls.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNetworkAclsWithCallback(request *DescribeNetworkAclsRequest, callback func(response *DescribeNetworkAclsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

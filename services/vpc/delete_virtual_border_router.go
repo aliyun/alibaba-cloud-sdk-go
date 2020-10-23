@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteVirtualBorderRouter invokes the vpc.DeleteVirtualBorderRouter API synchronously
-// api document: https://help.aliyun.com/api/vpc/deletevirtualborderrouter.html
 func (client *Client) DeleteVirtualBorderRouter(request *DeleteVirtualBorderRouterRequest) (response *DeleteVirtualBorderRouterResponse, err error) {
 	response = CreateDeleteVirtualBorderRouterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteVirtualBorderRouter(request *DeleteVirtualBorderRout
 }
 
 // DeleteVirtualBorderRouterWithChan invokes the vpc.DeleteVirtualBorderRouter API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletevirtualborderrouter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVirtualBorderRouterWithChan(request *DeleteVirtualBorderRouterRequest) (<-chan *DeleteVirtualBorderRouterResponse, <-chan error) {
 	responseChan := make(chan *DeleteVirtualBorderRouterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteVirtualBorderRouterWithChan(request *DeleteVirtualBo
 }
 
 // DeleteVirtualBorderRouterWithCallback invokes the vpc.DeleteVirtualBorderRouter API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletevirtualborderrouter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVirtualBorderRouterWithCallback(request *DeleteVirtualBorderRouterRequest, callback func(response *DeleteVirtualBorderRouterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

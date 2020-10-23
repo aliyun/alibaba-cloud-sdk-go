@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSslVpnClientCert invokes the vpc.DeleteSslVpnClientCert API synchronously
-// api document: https://help.aliyun.com/api/vpc/deletesslvpnclientcert.html
 func (client *Client) DeleteSslVpnClientCert(request *DeleteSslVpnClientCertRequest) (response *DeleteSslVpnClientCertResponse, err error) {
 	response = CreateDeleteSslVpnClientCertResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSslVpnClientCert(request *DeleteSslVpnClientCertRequ
 }
 
 // DeleteSslVpnClientCertWithChan invokes the vpc.DeleteSslVpnClientCert API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletesslvpnclientcert.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSslVpnClientCertWithChan(request *DeleteSslVpnClientCertRequest) (<-chan *DeleteSslVpnClientCertResponse, <-chan error) {
 	responseChan := make(chan *DeleteSslVpnClientCertResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSslVpnClientCertWithChan(request *DeleteSslVpnClient
 }
 
 // DeleteSslVpnClientCertWithCallback invokes the vpc.DeleteSslVpnClientCert API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletesslvpnclientcert.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSslVpnClientCertWithCallback(request *DeleteSslVpnClientCertRequest, callback func(response *DeleteSslVpnClientCertResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

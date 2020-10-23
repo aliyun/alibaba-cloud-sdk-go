@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSslVpnClientCerts invokes the vpc.DescribeSslVpnClientCerts API synchronously
-// api document: https://help.aliyun.com/api/vpc/describesslvpnclientcerts.html
 func (client *Client) DescribeSslVpnClientCerts(request *DescribeSslVpnClientCertsRequest) (response *DescribeSslVpnClientCertsResponse, err error) {
 	response = CreateDescribeSslVpnClientCertsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSslVpnClientCerts(request *DescribeSslVpnClientCer
 }
 
 // DescribeSslVpnClientCertsWithChan invokes the vpc.DescribeSslVpnClientCerts API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describesslvpnclientcerts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSslVpnClientCertsWithChan(request *DescribeSslVpnClientCertsRequest) (<-chan *DescribeSslVpnClientCertsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSslVpnClientCertsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSslVpnClientCertsWithChan(request *DescribeSslVpnC
 }
 
 // DescribeSslVpnClientCertsWithCallback invokes the vpc.DescribeSslVpnClientCerts API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describesslvpnclientcerts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSslVpnClientCertsWithCallback(request *DescribeSslVpnClientCertsRequest, callback func(response *DescribeSslVpnClientCertsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

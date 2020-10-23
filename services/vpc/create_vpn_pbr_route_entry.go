@@ -21,7 +21,6 @@ import (
 )
 
 // CreateVpnPbrRouteEntry invokes the vpc.CreateVpnPbrRouteEntry API synchronously
-// api document: https://help.aliyun.com/api/vpc/createvpnpbrrouteentry.html
 func (client *Client) CreateVpnPbrRouteEntry(request *CreateVpnPbrRouteEntryRequest) (response *CreateVpnPbrRouteEntryResponse, err error) {
 	response = CreateCreateVpnPbrRouteEntryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateVpnPbrRouteEntry(request *CreateVpnPbrRouteEntryRequ
 }
 
 // CreateVpnPbrRouteEntryWithChan invokes the vpc.CreateVpnPbrRouteEntry API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createvpnpbrrouteentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVpnPbrRouteEntryWithChan(request *CreateVpnPbrRouteEntryRequest) (<-chan *CreateVpnPbrRouteEntryResponse, <-chan error) {
 	responseChan := make(chan *CreateVpnPbrRouteEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateVpnPbrRouteEntryWithChan(request *CreateVpnPbrRouteE
 }
 
 // CreateVpnPbrRouteEntryWithCallback invokes the vpc.CreateVpnPbrRouteEntry API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createvpnpbrrouteentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVpnPbrRouteEntryWithCallback(request *CreateVpnPbrRouteEntryRequest, callback func(response *CreateVpnPbrRouteEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

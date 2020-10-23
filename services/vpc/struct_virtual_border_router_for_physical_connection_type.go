@@ -39,4 +39,5 @@ type VirtualBorderRouterForPhysicalConnectionType struct {
 	PeerIpv6GatewayIp       string `json:"PeerIpv6GatewayIp" xml:"PeerIpv6GatewayIp"`
 	PeeringIpv6SubnetMask   string `json:"PeeringIpv6SubnetMask" xml:"PeeringIpv6SubnetMask"`
 	EnableIpv6              bool   `json:"EnableIpv6" xml:"EnableIpv6"`
+	BandwidthStatus         string `json:"BandwidthStatus" xml:"BandwidthStatus"`
 }

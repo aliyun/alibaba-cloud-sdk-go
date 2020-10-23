@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstanceAutoRenewAttribute invokes the vpc.DescribeInstanceAutoRenewAttribute API synchronously
-// api document: https://help.aliyun.com/api/vpc/describeinstanceautorenewattribute.html
 func (client *Client) DescribeInstanceAutoRenewAttribute(request *DescribeInstanceAutoRenewAttributeRequest) (response *DescribeInstanceAutoRenewAttributeResponse, err error) {
 	response = CreateDescribeInstanceAutoRenewAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstanceAutoRenewAttribute(request *DescribeInstan
 }
 
 // DescribeInstanceAutoRenewAttributeWithChan invokes the vpc.DescribeInstanceAutoRenewAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeinstanceautorenewattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceAutoRenewAttributeWithChan(request *DescribeInstanceAutoRenewAttributeRequest) (<-chan *DescribeInstanceAutoRenewAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceAutoRenewAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceAutoRenewAttributeWithChan(request *Descri
 }
 
 // DescribeInstanceAutoRenewAttributeWithCallback invokes the vpc.DescribeInstanceAutoRenewAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeinstanceautorenewattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceAutoRenewAttributeWithCallback(request *DescribeInstanceAutoRenewAttributeRequest, callback func(response *DescribeInstanceAutoRenewAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyVpnConnectionAttribute invokes the vpc.ModifyVpnConnectionAttribute API synchronously
-// api document: https://help.aliyun.com/api/vpc/modifyvpnconnectionattribute.html
 func (client *Client) ModifyVpnConnectionAttribute(request *ModifyVpnConnectionAttributeRequest) (response *ModifyVpnConnectionAttributeResponse, err error) {
 	response = CreateModifyVpnConnectionAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyVpnConnectionAttribute(request *ModifyVpnConnectionA
 }
 
 // ModifyVpnConnectionAttributeWithChan invokes the vpc.ModifyVpnConnectionAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyvpnconnectionattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVpnConnectionAttributeWithChan(request *ModifyVpnConnectionAttributeRequest) (<-chan *ModifyVpnConnectionAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyVpnConnectionAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyVpnConnectionAttributeWithChan(request *ModifyVpnCon
 }
 
 // ModifyVpnConnectionAttributeWithCallback invokes the vpc.ModifyVpnConnectionAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyvpnconnectionattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVpnConnectionAttributeWithCallback(request *ModifyVpnConnectionAttributeRequest, callback func(response *ModifyVpnConnectionAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

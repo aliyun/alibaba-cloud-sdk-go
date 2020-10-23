@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAccessPoints invokes the vpc.DescribeAccessPoints API synchronously
-// api document: https://help.aliyun.com/api/vpc/describeaccesspoints.html
 func (client *Client) DescribeAccessPoints(request *DescribeAccessPointsRequest) (response *DescribeAccessPointsResponse, err error) {
 	response = CreateDescribeAccessPointsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAccessPoints(request *DescribeAccessPointsRequest)
 }
 
 // DescribeAccessPointsWithChan invokes the vpc.DescribeAccessPoints API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeaccesspoints.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccessPointsWithChan(request *DescribeAccessPointsRequest) (<-chan *DescribeAccessPointsResponse, <-chan error) {
 	responseChan := make(chan *DescribeAccessPointsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAccessPointsWithChan(request *DescribeAccessPoints
 }
 
 // DescribeAccessPointsWithCallback invokes the vpc.DescribeAccessPoints API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeaccesspoints.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccessPointsWithCallback(request *DescribeAccessPointsRequest, callback func(response *DescribeAccessPointsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

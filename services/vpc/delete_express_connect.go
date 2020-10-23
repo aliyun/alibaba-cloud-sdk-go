@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteExpressConnect invokes the vpc.DeleteExpressConnect API synchronously
-// api document: https://help.aliyun.com/api/vpc/deleteexpressconnect.html
 func (client *Client) DeleteExpressConnect(request *DeleteExpressConnectRequest) (response *DeleteExpressConnectResponse, err error) {
 	response = CreateDeleteExpressConnectResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteExpressConnect(request *DeleteExpressConnectRequest)
 }
 
 // DeleteExpressConnectWithChan invokes the vpc.DeleteExpressConnect API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deleteexpressconnect.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteExpressConnectWithChan(request *DeleteExpressConnectRequest) (<-chan *DeleteExpressConnectResponse, <-chan error) {
 	responseChan := make(chan *DeleteExpressConnectResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteExpressConnectWithChan(request *DeleteExpressConnect
 }
 
 // DeleteExpressConnectWithCallback invokes the vpc.DeleteExpressConnect API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deleteexpressconnect.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteExpressConnectWithCallback(request *DeleteExpressConnectRequest, callback func(response *DeleteExpressConnectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

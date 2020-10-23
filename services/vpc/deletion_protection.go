@@ -21,7 +21,6 @@ import (
 )
 
 // DeletionProtection invokes the vpc.DeletionProtection API synchronously
-// api document: https://help.aliyun.com/api/vpc/deletionprotection.html
 func (client *Client) DeletionProtection(request *DeletionProtectionRequest) (response *DeletionProtectionResponse, err error) {
 	response = CreateDeletionProtectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeletionProtection(request *DeletionProtectionRequest) (re
 }
 
 // DeletionProtectionWithChan invokes the vpc.DeletionProtection API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletionprotection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletionProtectionWithChan(request *DeletionProtectionRequest) (<-chan *DeletionProtectionResponse, <-chan error) {
 	responseChan := make(chan *DeletionProtectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeletionProtectionWithChan(request *DeletionProtectionRequ
 }
 
 // DeletionProtectionWithCallback invokes the vpc.DeletionProtection API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletionprotection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletionProtectionWithCallback(request *DeletionProtectionRequest, callback func(response *DeletionProtectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

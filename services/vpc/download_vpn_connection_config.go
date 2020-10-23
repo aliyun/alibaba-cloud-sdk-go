@@ -21,7 +21,6 @@ import (
 )
 
 // DownloadVpnConnectionConfig invokes the vpc.DownloadVpnConnectionConfig API synchronously
-// api document: https://help.aliyun.com/api/vpc/downloadvpnconnectionconfig.html
 func (client *Client) DownloadVpnConnectionConfig(request *DownloadVpnConnectionConfigRequest) (response *DownloadVpnConnectionConfigResponse, err error) {
 	response = CreateDownloadVpnConnectionConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DownloadVpnConnectionConfig(request *DownloadVpnConnection
 }
 
 // DownloadVpnConnectionConfigWithChan invokes the vpc.DownloadVpnConnectionConfig API asynchronously
-// api document: https://help.aliyun.com/api/vpc/downloadvpnconnectionconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DownloadVpnConnectionConfigWithChan(request *DownloadVpnConnectionConfigRequest) (<-chan *DownloadVpnConnectionConfigResponse, <-chan error) {
 	responseChan := make(chan *DownloadVpnConnectionConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DownloadVpnConnectionConfigWithChan(request *DownloadVpnCo
 }
 
 // DownloadVpnConnectionConfigWithCallback invokes the vpc.DownloadVpnConnectionConfig API asynchronously
-// api document: https://help.aliyun.com/api/vpc/downloadvpnconnectionconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DownloadVpnConnectionConfigWithCallback(request *DownloadVpnConnectionConfigRequest, callback func(response *DownloadVpnConnectionConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeVirtualBorderRouters invokes the vpc.DescribeVirtualBorderRouters API synchronously
-// api document: https://help.aliyun.com/api/vpc/describevirtualborderrouters.html
 func (client *Client) DescribeVirtualBorderRouters(request *DescribeVirtualBorderRoutersRequest) (response *DescribeVirtualBorderRoutersResponse, err error) {
 	response = CreateDescribeVirtualBorderRoutersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeVirtualBorderRouters(request *DescribeVirtualBorde
 }
 
 // DescribeVirtualBorderRoutersWithChan invokes the vpc.DescribeVirtualBorderRouters API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describevirtualborderrouters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVirtualBorderRoutersWithChan(request *DescribeVirtualBorderRoutersRequest) (<-chan *DescribeVirtualBorderRoutersResponse, <-chan error) {
 	responseChan := make(chan *DescribeVirtualBorderRoutersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeVirtualBorderRoutersWithChan(request *DescribeVirt
 }
 
 // DescribeVirtualBorderRoutersWithCallback invokes the vpc.DescribeVirtualBorderRouters API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describevirtualborderrouters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVirtualBorderRoutersWithCallback(request *DescribeVirtualBorderRoutersRequest, callback func(response *DescribeVirtualBorderRoutersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

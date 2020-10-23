@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeIPv6TranslatorAclListAttributes invokes the vpc.DescribeIPv6TranslatorAclListAttributes API synchronously
-// api document: https://help.aliyun.com/api/vpc/describeipv6translatoracllistattributes.html
 func (client *Client) DescribeIPv6TranslatorAclListAttributes(request *DescribeIPv6TranslatorAclListAttributesRequest) (response *DescribeIPv6TranslatorAclListAttributesResponse, err error) {
 	response = CreateDescribeIPv6TranslatorAclListAttributesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeIPv6TranslatorAclListAttributes(request *DescribeI
 }
 
 // DescribeIPv6TranslatorAclListAttributesWithChan invokes the vpc.DescribeIPv6TranslatorAclListAttributes API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeipv6translatoracllistattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIPv6TranslatorAclListAttributesWithChan(request *DescribeIPv6TranslatorAclListAttributesRequest) (<-chan *DescribeIPv6TranslatorAclListAttributesResponse, <-chan error) {
 	responseChan := make(chan *DescribeIPv6TranslatorAclListAttributesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeIPv6TranslatorAclListAttributesWithChan(request *D
 }
 
 // DescribeIPv6TranslatorAclListAttributesWithCallback invokes the vpc.DescribeIPv6TranslatorAclListAttributes API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeipv6translatoracllistattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIPv6TranslatorAclListAttributesWithCallback(request *DescribeIPv6TranslatorAclListAttributesRequest, callback func(response *DescribeIPv6TranslatorAclListAttributesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

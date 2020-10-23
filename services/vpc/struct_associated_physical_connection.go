@@ -31,4 +31,5 @@ type AssociatedPhysicalConnection struct {
 	PeerIpv6GatewayIp                string `json:"PeerIpv6GatewayIp" xml:"PeerIpv6GatewayIp"`
 	PeeringIpv6SubnetMask            string `json:"PeeringIpv6SubnetMask" xml:"PeeringIpv6SubnetMask"`
 	Status                           string `json:"Status" xml:"Status"`
+	EnableIpv6                       bool   `json:"EnableIpv6" xml:"EnableIpv6"`
 }

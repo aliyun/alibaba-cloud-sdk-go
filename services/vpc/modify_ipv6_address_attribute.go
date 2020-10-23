@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyIpv6AddressAttribute invokes the vpc.ModifyIpv6AddressAttribute API synchronously
-// api document: https://help.aliyun.com/api/vpc/modifyipv6addressattribute.html
 func (client *Client) ModifyIpv6AddressAttribute(request *ModifyIpv6AddressAttributeRequest) (response *ModifyIpv6AddressAttributeResponse, err error) {
 	response = CreateModifyIpv6AddressAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyIpv6AddressAttribute(request *ModifyIpv6AddressAttri
 }
 
 // ModifyIpv6AddressAttributeWithChan invokes the vpc.ModifyIpv6AddressAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyipv6addressattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIpv6AddressAttributeWithChan(request *ModifyIpv6AddressAttributeRequest) (<-chan *ModifyIpv6AddressAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyIpv6AddressAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyIpv6AddressAttributeWithChan(request *ModifyIpv6Addr
 }
 
 // ModifyIpv6AddressAttributeWithCallback invokes the vpc.ModifyIpv6AddressAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyipv6addressattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIpv6AddressAttributeWithCallback(request *ModifyIpv6AddressAttributeRequest, callback func(response *ModifyIpv6AddressAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

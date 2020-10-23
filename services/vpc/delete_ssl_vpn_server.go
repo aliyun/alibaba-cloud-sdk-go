@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSslVpnServer invokes the vpc.DeleteSslVpnServer API synchronously
-// api document: https://help.aliyun.com/api/vpc/deletesslvpnserver.html
 func (client *Client) DeleteSslVpnServer(request *DeleteSslVpnServerRequest) (response *DeleteSslVpnServerResponse, err error) {
 	response = CreateDeleteSslVpnServerResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSslVpnServer(request *DeleteSslVpnServerRequest) (re
 }
 
 // DeleteSslVpnServerWithChan invokes the vpc.DeleteSslVpnServer API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletesslvpnserver.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSslVpnServerWithChan(request *DeleteSslVpnServerRequest) (<-chan *DeleteSslVpnServerResponse, <-chan error) {
 	responseChan := make(chan *DeleteSslVpnServerResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSslVpnServerWithChan(request *DeleteSslVpnServerRequ
 }
 
 // DeleteSslVpnServerWithCallback invokes the vpc.DeleteSslVpnServer API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletesslvpnserver.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSslVpnServerWithCallback(request *DeleteSslVpnServerRequest, callback func(response *DeleteSslVpnServerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRouteEntryList invokes the vpc.DescribeRouteEntryList API synchronously
-// api document: https://help.aliyun.com/api/vpc/describerouteentrylist.html
 func (client *Client) DescribeRouteEntryList(request *DescribeRouteEntryListRequest) (response *DescribeRouteEntryListResponse, err error) {
 	response = CreateDescribeRouteEntryListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRouteEntryList(request *DescribeRouteEntryListRequ
 }
 
 // DescribeRouteEntryListWithChan invokes the vpc.DescribeRouteEntryList API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describerouteentrylist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouteEntryListWithChan(request *DescribeRouteEntryListRequest) (<-chan *DescribeRouteEntryListResponse, <-chan error) {
 	responseChan := make(chan *DescribeRouteEntryListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRouteEntryListWithChan(request *DescribeRouteEntry
 }
 
 // DescribeRouteEntryListWithCallback invokes the vpc.DescribeRouteEntryList API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describerouteentrylist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouteEntryListWithCallback(request *DescribeRouteEntryListRequest, callback func(response *DescribeRouteEntryListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

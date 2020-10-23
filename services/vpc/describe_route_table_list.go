@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRouteTableList invokes the vpc.DescribeRouteTableList API synchronously
-// api document: https://help.aliyun.com/api/vpc/describeroutetablelist.html
 func (client *Client) DescribeRouteTableList(request *DescribeRouteTableListRequest) (response *DescribeRouteTableListResponse, err error) {
 	response = CreateDescribeRouteTableListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRouteTableList(request *DescribeRouteTableListRequ
 }
 
 // DescribeRouteTableListWithChan invokes the vpc.DescribeRouteTableList API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeroutetablelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouteTableListWithChan(request *DescribeRouteTableListRequest) (<-chan *DescribeRouteTableListResponse, <-chan error) {
 	responseChan := make(chan *DescribeRouteTableListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRouteTableListWithChan(request *DescribeRouteTable
 }
 
 // DescribeRouteTableListWithCallback invokes the vpc.DescribeRouteTableList API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeroutetablelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouteTableListWithCallback(request *DescribeRouteTableListRequest, callback func(response *DescribeRouteTableListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

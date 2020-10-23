@@ -21,7 +21,6 @@ import (
 )
 
 // CancelExpressCloudConnection invokes the vpc.CancelExpressCloudConnection API synchronously
-// api document: https://help.aliyun.com/api/vpc/cancelexpresscloudconnection.html
 func (client *Client) CancelExpressCloudConnection(request *CancelExpressCloudConnectionRequest) (response *CancelExpressCloudConnectionResponse, err error) {
 	response = CreateCancelExpressCloudConnectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CancelExpressCloudConnection(request *CancelExpressCloudCo
 }
 
 // CancelExpressCloudConnectionWithChan invokes the vpc.CancelExpressCloudConnection API asynchronously
-// api document: https://help.aliyun.com/api/vpc/cancelexpresscloudconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelExpressCloudConnectionWithChan(request *CancelExpressCloudConnectionRequest) (<-chan *CancelExpressCloudConnectionResponse, <-chan error) {
 	responseChan := make(chan *CancelExpressCloudConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CancelExpressCloudConnectionWithChan(request *CancelExpres
 }
 
 // CancelExpressCloudConnectionWithCallback invokes the vpc.CancelExpressCloudConnection API asynchronously
-// api document: https://help.aliyun.com/api/vpc/cancelexpresscloudconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelExpressCloudConnectionWithCallback(request *CancelExpressCloudConnectionRequest, callback func(response *CancelExpressCloudConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

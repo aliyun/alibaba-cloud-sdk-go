@@ -21,7 +21,6 @@ import (
 )
 
 // CreateNetworkAcl invokes the vpc.CreateNetworkAcl API synchronously
-// api document: https://help.aliyun.com/api/vpc/createnetworkacl.html
 func (client *Client) CreateNetworkAcl(request *CreateNetworkAclRequest) (response *CreateNetworkAclResponse, err error) {
 	response = CreateCreateNetworkAclResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateNetworkAcl(request *CreateNetworkAclRequest) (respon
 }
 
 // CreateNetworkAclWithChan invokes the vpc.CreateNetworkAcl API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createnetworkacl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNetworkAclWithChan(request *CreateNetworkAclRequest) (<-chan *CreateNetworkAclResponse, <-chan error) {
 	responseChan := make(chan *CreateNetworkAclResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateNetworkAclWithChan(request *CreateNetworkAclRequest)
 }
 
 // CreateNetworkAclWithCallback invokes the vpc.CreateNetworkAcl API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createnetworkacl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNetworkAclWithCallback(request *CreateNetworkAclRequest, callback func(response *CreateNetworkAclResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

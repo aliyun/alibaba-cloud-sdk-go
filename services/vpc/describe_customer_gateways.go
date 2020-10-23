@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCustomerGateways invokes the vpc.DescribeCustomerGateways API synchronously
-// api document: https://help.aliyun.com/api/vpc/describecustomergateways.html
 func (client *Client) DescribeCustomerGateways(request *DescribeCustomerGatewaysRequest) (response *DescribeCustomerGatewaysResponse, err error) {
 	response = CreateDescribeCustomerGatewaysResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCustomerGateways(request *DescribeCustomerGateways
 }
 
 // DescribeCustomerGatewaysWithChan invokes the vpc.DescribeCustomerGateways API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describecustomergateways.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomerGatewaysWithChan(request *DescribeCustomerGatewaysRequest) (<-chan *DescribeCustomerGatewaysResponse, <-chan error) {
 	responseChan := make(chan *DescribeCustomerGatewaysResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCustomerGatewaysWithChan(request *DescribeCustomer
 }
 
 // DescribeCustomerGatewaysWithCallback invokes the vpc.DescribeCustomerGateways API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describecustomergateways.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomerGatewaysWithCallback(request *DescribeCustomerGatewaysRequest, callback func(response *DescribeCustomerGatewaysResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ReleaseEipSegmentAddress invokes the vpc.ReleaseEipSegmentAddress API synchronously
-// api document: https://help.aliyun.com/api/vpc/releaseeipsegmentaddress.html
 func (client *Client) ReleaseEipSegmentAddress(request *ReleaseEipSegmentAddressRequest) (response *ReleaseEipSegmentAddressResponse, err error) {
 	response = CreateReleaseEipSegmentAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReleaseEipSegmentAddress(request *ReleaseEipSegmentAddress
 }
 
 // ReleaseEipSegmentAddressWithChan invokes the vpc.ReleaseEipSegmentAddress API asynchronously
-// api document: https://help.aliyun.com/api/vpc/releaseeipsegmentaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseEipSegmentAddressWithChan(request *ReleaseEipSegmentAddressRequest) (<-chan *ReleaseEipSegmentAddressResponse, <-chan error) {
 	responseChan := make(chan *ReleaseEipSegmentAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReleaseEipSegmentAddressWithChan(request *ReleaseEipSegmen
 }
 
 // ReleaseEipSegmentAddressWithCallback invokes the vpc.ReleaseEipSegmentAddress API asynchronously
-// api document: https://help.aliyun.com/api/vpc/releaseeipsegmentaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseEipSegmentAddressWithCallback(request *ReleaseEipSegmentAddressRequest, callback func(response *ReleaseEipSegmentAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

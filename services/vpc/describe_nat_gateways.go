@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeNatGateways invokes the vpc.DescribeNatGateways API synchronously
-// api document: https://help.aliyun.com/api/vpc/describenatgateways.html
 func (client *Client) DescribeNatGateways(request *DescribeNatGatewaysRequest) (response *DescribeNatGatewaysResponse, err error) {
 	response = CreateDescribeNatGatewaysResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeNatGateways(request *DescribeNatGatewaysRequest) (
 }
 
 // DescribeNatGatewaysWithChan invokes the vpc.DescribeNatGateways API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describenatgateways.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNatGatewaysWithChan(request *DescribeNatGatewaysRequest) (<-chan *DescribeNatGatewaysResponse, <-chan error) {
 	responseChan := make(chan *DescribeNatGatewaysResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeNatGatewaysWithChan(request *DescribeNatGatewaysRe
 }
 
 // DescribeNatGatewaysWithCallback invokes the vpc.DescribeNatGateways API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describenatgateways.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNatGatewaysWithCallback(request *DescribeNatGatewaysRequest, callback func(response *DescribeNatGatewaysResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,20 +71,27 @@ func (client *Client) DescribeNatGatewaysWithCallback(request *DescribeNatGatewa
 // DescribeNatGatewaysRequest is the request struct for api DescribeNatGateways
 type DescribeNatGatewaysRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Spec                 string           `position:"Query" name:"Spec"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	NatType              string           `position:"Query" name:"NatType"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
-	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
-	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	VpcId                string           `position:"Query" name:"VpcId"`
-	Name                 string           `position:"Query" name:"Name"`
+	ResourceOwnerId      requests.Integer          `position:"Query" name:"ResourceOwnerId"`
+	Spec                 string                    `position:"Query" name:"Spec"`
+	PageNumber           requests.Integer          `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string                    `position:"Query" name:"ResourceGroupId"`
+	NatType              string                    `position:"Query" name:"NatType"`
+	PageSize             requests.Integer          `position:"Query" name:"PageSize"`
+	NatGatewayId         string                    `position:"Query" name:"NatGatewayId"`
+	Tag                  *[]DescribeNatGatewaysTag `position:"Query" name:"Tag"  type:"Repeated"`
+	InstanceChargeType   string                    `position:"Query" name:"InstanceChargeType"`
+	DryRun               requests.Boolean          `position:"Query" name:"DryRun"`
+	ResourceOwnerAccount string                    `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                    `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer          `position:"Query" name:"OwnerId"`
+	VpcId                string                    `position:"Query" name:"VpcId"`
+	Name                 string                    `position:"Query" name:"Name"`
+}
+
+// DescribeNatGatewaysTag is a repeated param struct in DescribeNatGatewaysRequest
+type DescribeNatGatewaysTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeNatGatewaysResponse is the response struct for api DescribeNatGateways

@@ -21,7 +21,6 @@ import (
 )
 
 // UnassociatePhysicalConnectionFromVirtualBorderRouter invokes the vpc.UnassociatePhysicalConnectionFromVirtualBorderRouter API synchronously
-// api document: https://help.aliyun.com/api/vpc/unassociatephysicalconnectionfromvirtualborderrouter.html
 func (client *Client) UnassociatePhysicalConnectionFromVirtualBorderRouter(request *UnassociatePhysicalConnectionFromVirtualBorderRouterRequest) (response *UnassociatePhysicalConnectionFromVirtualBorderRouterResponse, err error) {
 	response = CreateUnassociatePhysicalConnectionFromVirtualBorderRouterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnassociatePhysicalConnectionFromVirtualBorderRouter(reque
 }
 
 // UnassociatePhysicalConnectionFromVirtualBorderRouterWithChan invokes the vpc.UnassociatePhysicalConnectionFromVirtualBorderRouter API asynchronously
-// api document: https://help.aliyun.com/api/vpc/unassociatephysicalconnectionfromvirtualborderrouter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassociatePhysicalConnectionFromVirtualBorderRouterWithChan(request *UnassociatePhysicalConnectionFromVirtualBorderRouterRequest) (<-chan *UnassociatePhysicalConnectionFromVirtualBorderRouterResponse, <-chan error) {
 	responseChan := make(chan *UnassociatePhysicalConnectionFromVirtualBorderRouterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnassociatePhysicalConnectionFromVirtualBorderRouterWithCh
 }
 
 // UnassociatePhysicalConnectionFromVirtualBorderRouterWithCallback invokes the vpc.UnassociatePhysicalConnectionFromVirtualBorderRouter API asynchronously
-// api document: https://help.aliyun.com/api/vpc/unassociatephysicalconnectionfromvirtualborderrouter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassociatePhysicalConnectionFromVirtualBorderRouterWithCallback(request *UnassociatePhysicalConnectionFromVirtualBorderRouterRequest, callback func(response *UnassociatePhysicalConnectionFromVirtualBorderRouterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

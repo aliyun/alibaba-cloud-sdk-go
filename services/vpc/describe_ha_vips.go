@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeHaVips invokes the vpc.DescribeHaVips API synchronously
-// api document: https://help.aliyun.com/api/vpc/describehavips.html
 func (client *Client) DescribeHaVips(request *DescribeHaVipsRequest) (response *DescribeHaVipsResponse, err error) {
 	response = CreateDescribeHaVipsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeHaVips(request *DescribeHaVipsRequest) (response *
 }
 
 // DescribeHaVipsWithChan invokes the vpc.DescribeHaVips API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describehavips.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHaVipsWithChan(request *DescribeHaVipsRequest) (<-chan *DescribeHaVipsResponse, <-chan error) {
 	responseChan := make(chan *DescribeHaVipsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeHaVipsWithChan(request *DescribeHaVipsRequest) (<-
 }
 
 // DescribeHaVipsWithCallback invokes the vpc.DescribeHaVips API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describehavips.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHaVipsWithCallback(request *DescribeHaVipsRequest, callback func(response *DescribeHaVipsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

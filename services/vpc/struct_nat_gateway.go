@@ -33,6 +33,7 @@ type NatGateway struct {
 	InternetChargeType    string                                   `json:"InternetChargeType" xml:"InternetChargeType"`
 	ResourceGroupId       string                                   `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DeletionProtection    bool                                     `json:"DeletionProtection" xml:"DeletionProtection"`
+	EcsMetricEnabled      bool                                     `json:"EcsMetricEnabled" xml:"EcsMetricEnabled"`
 	ForwardTableIds       ForwardTableIdsInDescribeNatGateways     `json:"ForwardTableIds" xml:"ForwardTableIds"`
 	SnatTableIds          SnatTableIdsInDescribeNatGateways        `json:"SnatTableIds" xml:"SnatTableIds"`
 	BandwidthPackageIds   BandwidthPackageIdsInDescribeNatGateways `json:"BandwidthPackageIds" xml:"BandwidthPackageIds"`

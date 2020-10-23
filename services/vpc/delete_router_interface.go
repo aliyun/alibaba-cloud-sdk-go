@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteRouterInterface invokes the vpc.DeleteRouterInterface API synchronously
-// api document: https://help.aliyun.com/api/vpc/deleterouterinterface.html
 func (client *Client) DeleteRouterInterface(request *DeleteRouterInterfaceRequest) (response *DeleteRouterInterfaceResponse, err error) {
 	response = CreateDeleteRouterInterfaceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteRouterInterface(request *DeleteRouterInterfaceReques
 }
 
 // DeleteRouterInterfaceWithChan invokes the vpc.DeleteRouterInterface API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deleterouterinterface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRouterInterfaceWithChan(request *DeleteRouterInterfaceRequest) (<-chan *DeleteRouterInterfaceResponse, <-chan error) {
 	responseChan := make(chan *DeleteRouterInterfaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteRouterInterfaceWithChan(request *DeleteRouterInterfa
 }
 
 // DeleteRouterInterfaceWithCallback invokes the vpc.DeleteRouterInterface API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deleterouterinterface.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRouterInterfaceWithCallback(request *DeleteRouterInterfaceRequest, callback func(response *DeleteRouterInterfaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

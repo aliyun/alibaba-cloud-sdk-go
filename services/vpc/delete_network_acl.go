@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteNetworkAcl invokes the vpc.DeleteNetworkAcl API synchronously
-// api document: https://help.aliyun.com/api/vpc/deletenetworkacl.html
 func (client *Client) DeleteNetworkAcl(request *DeleteNetworkAclRequest) (response *DeleteNetworkAclResponse, err error) {
 	response = CreateDeleteNetworkAclResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteNetworkAcl(request *DeleteNetworkAclRequest) (respon
 }
 
 // DeleteNetworkAclWithChan invokes the vpc.DeleteNetworkAcl API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletenetworkacl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNetworkAclWithChan(request *DeleteNetworkAclRequest) (<-chan *DeleteNetworkAclResponse, <-chan error) {
 	responseChan := make(chan *DeleteNetworkAclResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteNetworkAclWithChan(request *DeleteNetworkAclRequest)
 }
 
 // DeleteNetworkAclWithCallback invokes the vpc.DeleteNetworkAcl API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletenetworkacl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNetworkAclWithCallback(request *DeleteNetworkAclRequest, callback func(response *DeleteNetworkAclResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

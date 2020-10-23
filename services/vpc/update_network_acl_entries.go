@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateNetworkAclEntries invokes the vpc.UpdateNetworkAclEntries API synchronously
-// api document: https://help.aliyun.com/api/vpc/updatenetworkaclentries.html
 func (client *Client) UpdateNetworkAclEntries(request *UpdateNetworkAclEntriesRequest) (response *UpdateNetworkAclEntriesResponse, err error) {
 	response = CreateUpdateNetworkAclEntriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateNetworkAclEntries(request *UpdateNetworkAclEntriesRe
 }
 
 // UpdateNetworkAclEntriesWithChan invokes the vpc.UpdateNetworkAclEntries API asynchronously
-// api document: https://help.aliyun.com/api/vpc/updatenetworkaclentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateNetworkAclEntriesWithChan(request *UpdateNetworkAclEntriesRequest) (<-chan *UpdateNetworkAclEntriesResponse, <-chan error) {
 	responseChan := make(chan *UpdateNetworkAclEntriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateNetworkAclEntriesWithChan(request *UpdateNetworkAclE
 }
 
 // UpdateNetworkAclEntriesWithCallback invokes the vpc.UpdateNetworkAclEntries API asynchronously
-// api document: https://help.aliyun.com/api/vpc/updatenetworkaclentries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateNetworkAclEntriesWithCallback(request *UpdateNetworkAclEntriesRequest, callback func(response *UpdateNetworkAclEntriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

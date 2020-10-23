@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteVpnGateway invokes the vpc.DeleteVpnGateway API synchronously
-// api document: https://help.aliyun.com/api/vpc/deletevpngateway.html
 func (client *Client) DeleteVpnGateway(request *DeleteVpnGatewayRequest) (response *DeleteVpnGatewayResponse, err error) {
 	response = CreateDeleteVpnGatewayResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteVpnGateway(request *DeleteVpnGatewayRequest) (respon
 }
 
 // DeleteVpnGatewayWithChan invokes the vpc.DeleteVpnGateway API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletevpngateway.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVpnGatewayWithChan(request *DeleteVpnGatewayRequest) (<-chan *DeleteVpnGatewayResponse, <-chan error) {
 	responseChan := make(chan *DeleteVpnGatewayResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteVpnGatewayWithChan(request *DeleteVpnGatewayRequest)
 }
 
 // DeleteVpnGatewayWithCallback invokes the vpc.DeleteVpnGateway API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletevpngateway.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVpnGatewayWithCallback(request *DeleteVpnGatewayRequest, callback func(response *DeleteVpnGatewayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

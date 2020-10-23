@@ -21,7 +21,6 @@ import (
 )
 
 // UnassociateEipAddress invokes the vpc.UnassociateEipAddress API synchronously
-// api document: https://help.aliyun.com/api/vpc/unassociateeipaddress.html
 func (client *Client) UnassociateEipAddress(request *UnassociateEipAddressRequest) (response *UnassociateEipAddressResponse, err error) {
 	response = CreateUnassociateEipAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnassociateEipAddress(request *UnassociateEipAddressReques
 }
 
 // UnassociateEipAddressWithChan invokes the vpc.UnassociateEipAddress API asynchronously
-// api document: https://help.aliyun.com/api/vpc/unassociateeipaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassociateEipAddressWithChan(request *UnassociateEipAddressRequest) (<-chan *UnassociateEipAddressResponse, <-chan error) {
 	responseChan := make(chan *UnassociateEipAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnassociateEipAddressWithChan(request *UnassociateEipAddre
 }
 
 // UnassociateEipAddressWithCallback invokes the vpc.UnassociateEipAddress API asynchronously
-// api document: https://help.aliyun.com/api/vpc/unassociateeipaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassociateEipAddressWithCallback(request *UnassociateEipAddressRequest, callback func(response *UnassociateEipAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

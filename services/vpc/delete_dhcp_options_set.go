@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDhcpOptionsSet invokes the vpc.DeleteDhcpOptionsSet API synchronously
-// api document: https://help.aliyun.com/api/vpc/deletedhcpoptionsset.html
 func (client *Client) DeleteDhcpOptionsSet(request *DeleteDhcpOptionsSetRequest) (response *DeleteDhcpOptionsSetResponse, err error) {
 	response = CreateDeleteDhcpOptionsSetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDhcpOptionsSet(request *DeleteDhcpOptionsSetRequest)
 }
 
 // DeleteDhcpOptionsSetWithChan invokes the vpc.DeleteDhcpOptionsSet API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletedhcpoptionsset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDhcpOptionsSetWithChan(request *DeleteDhcpOptionsSetRequest) (<-chan *DeleteDhcpOptionsSetResponse, <-chan error) {
 	responseChan := make(chan *DeleteDhcpOptionsSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDhcpOptionsSetWithChan(request *DeleteDhcpOptionsSet
 }
 
 // DeleteDhcpOptionsSetWithCallback invokes the vpc.DeleteDhcpOptionsSet API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletedhcpoptionsset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDhcpOptionsSetWithCallback(request *DeleteDhcpOptionsSetRequest, callback func(response *DeleteDhcpOptionsSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

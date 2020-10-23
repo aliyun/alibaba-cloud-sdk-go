@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRouterInterfaceAttribute invokes the vpc.DescribeRouterInterfaceAttribute API synchronously
-// api document: https://help.aliyun.com/api/vpc/describerouterinterfaceattribute.html
 func (client *Client) DescribeRouterInterfaceAttribute(request *DescribeRouterInterfaceAttributeRequest) (response *DescribeRouterInterfaceAttributeResponse, err error) {
 	response = CreateDescribeRouterInterfaceAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRouterInterfaceAttribute(request *DescribeRouterIn
 }
 
 // DescribeRouterInterfaceAttributeWithChan invokes the vpc.DescribeRouterInterfaceAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describerouterinterfaceattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouterInterfaceAttributeWithChan(request *DescribeRouterInterfaceAttributeRequest) (<-chan *DescribeRouterInterfaceAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeRouterInterfaceAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRouterInterfaceAttributeWithChan(request *Describe
 }
 
 // DescribeRouterInterfaceAttributeWithCallback invokes the vpc.DescribeRouterInterfaceAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describerouterinterfaceattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouterInterfaceAttributeWithCallback(request *DescribeRouterInterfaceAttributeRequest, callback func(response *DescribeRouterInterfaceAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

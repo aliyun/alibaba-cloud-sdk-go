@@ -21,7 +21,6 @@ import (
 )
 
 // CreateExpressCloudConnection invokes the vpc.CreateExpressCloudConnection API synchronously
-// api document: https://help.aliyun.com/api/vpc/createexpresscloudconnection.html
 func (client *Client) CreateExpressCloudConnection(request *CreateExpressCloudConnectionRequest) (response *CreateExpressCloudConnectionResponse, err error) {
 	response = CreateCreateExpressCloudConnectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateExpressCloudConnection(request *CreateExpressCloudCo
 }
 
 // CreateExpressCloudConnectionWithChan invokes the vpc.CreateExpressCloudConnection API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createexpresscloudconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateExpressCloudConnectionWithChan(request *CreateExpressCloudConnectionRequest) (<-chan *CreateExpressCloudConnectionResponse, <-chan error) {
 	responseChan := make(chan *CreateExpressCloudConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateExpressCloudConnectionWithChan(request *CreateExpres
 }
 
 // CreateExpressCloudConnectionWithCallback invokes the vpc.CreateExpressCloudConnection API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createexpresscloudconnection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateExpressCloudConnectionWithCallback(request *CreateExpressCloudConnectionRequest, callback func(response *CreateExpressCloudConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeExpressCloudConnections invokes the vpc.DescribeExpressCloudConnections API synchronously
-// api document: https://help.aliyun.com/api/vpc/describeexpresscloudconnections.html
 func (client *Client) DescribeExpressCloudConnections(request *DescribeExpressCloudConnectionsRequest) (response *DescribeExpressCloudConnectionsResponse, err error) {
 	response = CreateDescribeExpressCloudConnectionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeExpressCloudConnections(request *DescribeExpressCl
 }
 
 // DescribeExpressCloudConnectionsWithChan invokes the vpc.DescribeExpressCloudConnections API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeexpresscloudconnections.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExpressCloudConnectionsWithChan(request *DescribeExpressCloudConnectionsRequest) (<-chan *DescribeExpressCloudConnectionsResponse, <-chan error) {
 	responseChan := make(chan *DescribeExpressCloudConnectionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeExpressCloudConnectionsWithChan(request *DescribeE
 }
 
 // DescribeExpressCloudConnectionsWithCallback invokes the vpc.DescribeExpressCloudConnections API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeexpresscloudconnections.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExpressCloudConnectionsWithCallback(request *DescribeExpressCloudConnectionsRequest, callback func(response *DescribeExpressCloudConnectionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

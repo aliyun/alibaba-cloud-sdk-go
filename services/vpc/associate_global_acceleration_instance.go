@@ -21,7 +21,6 @@ import (
 )
 
 // AssociateGlobalAccelerationInstance invokes the vpc.AssociateGlobalAccelerationInstance API synchronously
-// api document: https://help.aliyun.com/api/vpc/associateglobalaccelerationinstance.html
 func (client *Client) AssociateGlobalAccelerationInstance(request *AssociateGlobalAccelerationInstanceRequest) (response *AssociateGlobalAccelerationInstanceResponse, err error) {
 	response = CreateAssociateGlobalAccelerationInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AssociateGlobalAccelerationInstance(request *AssociateGlob
 }
 
 // AssociateGlobalAccelerationInstanceWithChan invokes the vpc.AssociateGlobalAccelerationInstance API asynchronously
-// api document: https://help.aliyun.com/api/vpc/associateglobalaccelerationinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociateGlobalAccelerationInstanceWithChan(request *AssociateGlobalAccelerationInstanceRequest) (<-chan *AssociateGlobalAccelerationInstanceResponse, <-chan error) {
 	responseChan := make(chan *AssociateGlobalAccelerationInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AssociateGlobalAccelerationInstanceWithChan(request *Assoc
 }
 
 // AssociateGlobalAccelerationInstanceWithCallback invokes the vpc.AssociateGlobalAccelerationInstance API asynchronously
-// api document: https://help.aliyun.com/api/vpc/associateglobalaccelerationinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociateGlobalAccelerationInstanceWithCallback(request *AssociateGlobalAccelerationInstanceRequest, callback func(response *AssociateGlobalAccelerationInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

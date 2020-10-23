@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteIpv6InternetBandwidth invokes the vpc.DeleteIpv6InternetBandwidth API synchronously
-// api document: https://help.aliyun.com/api/vpc/deleteipv6internetbandwidth.html
 func (client *Client) DeleteIpv6InternetBandwidth(request *DeleteIpv6InternetBandwidthRequest) (response *DeleteIpv6InternetBandwidthResponse, err error) {
 	response = CreateDeleteIpv6InternetBandwidthResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteIpv6InternetBandwidth(request *DeleteIpv6InternetBan
 }
 
 // DeleteIpv6InternetBandwidthWithChan invokes the vpc.DeleteIpv6InternetBandwidth API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deleteipv6internetbandwidth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteIpv6InternetBandwidthWithChan(request *DeleteIpv6InternetBandwidthRequest) (<-chan *DeleteIpv6InternetBandwidthResponse, <-chan error) {
 	responseChan := make(chan *DeleteIpv6InternetBandwidthResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteIpv6InternetBandwidthWithChan(request *DeleteIpv6Int
 }
 
 // DeleteIpv6InternetBandwidthWithCallback invokes the vpc.DeleteIpv6InternetBandwidth API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deleteipv6internetbandwidth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteIpv6InternetBandwidthWithCallback(request *DeleteIpv6InternetBandwidthRequest, callback func(response *DeleteIpv6InternetBandwidthResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

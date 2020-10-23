@@ -21,7 +21,6 @@ import (
 )
 
 // ConvertBandwidthPackage invokes the vpc.ConvertBandwidthPackage API synchronously
-// api document: https://help.aliyun.com/api/vpc/convertbandwidthpackage.html
 func (client *Client) ConvertBandwidthPackage(request *ConvertBandwidthPackageRequest) (response *ConvertBandwidthPackageResponse, err error) {
 	response = CreateConvertBandwidthPackageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ConvertBandwidthPackage(request *ConvertBandwidthPackageRe
 }
 
 // ConvertBandwidthPackageWithChan invokes the vpc.ConvertBandwidthPackage API asynchronously
-// api document: https://help.aliyun.com/api/vpc/convertbandwidthpackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConvertBandwidthPackageWithChan(request *ConvertBandwidthPackageRequest) (<-chan *ConvertBandwidthPackageResponse, <-chan error) {
 	responseChan := make(chan *ConvertBandwidthPackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ConvertBandwidthPackageWithChan(request *ConvertBandwidthP
 }
 
 // ConvertBandwidthPackageWithCallback invokes the vpc.ConvertBandwidthPackage API asynchronously
-// api document: https://help.aliyun.com/api/vpc/convertbandwidthpackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConvertBandwidthPackageWithCallback(request *ConvertBandwidthPackageRequest, callback func(response *ConvertBandwidthPackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // AssociatePhysicalConnectionToVirtualBorderRouter invokes the vpc.AssociatePhysicalConnectionToVirtualBorderRouter API synchronously
-// api document: https://help.aliyun.com/api/vpc/associatephysicalconnectiontovirtualborderrouter.html
 func (client *Client) AssociatePhysicalConnectionToVirtualBorderRouter(request *AssociatePhysicalConnectionToVirtualBorderRouterRequest) (response *AssociatePhysicalConnectionToVirtualBorderRouterResponse, err error) {
 	response = CreateAssociatePhysicalConnectionToVirtualBorderRouterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AssociatePhysicalConnectionToVirtualBorderRouter(request *
 }
 
 // AssociatePhysicalConnectionToVirtualBorderRouterWithChan invokes the vpc.AssociatePhysicalConnectionToVirtualBorderRouter API asynchronously
-// api document: https://help.aliyun.com/api/vpc/associatephysicalconnectiontovirtualborderrouter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociatePhysicalConnectionToVirtualBorderRouterWithChan(request *AssociatePhysicalConnectionToVirtualBorderRouterRequest) (<-chan *AssociatePhysicalConnectionToVirtualBorderRouterResponse, <-chan error) {
 	responseChan := make(chan *AssociatePhysicalConnectionToVirtualBorderRouterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AssociatePhysicalConnectionToVirtualBorderRouterWithChan(r
 }
 
 // AssociatePhysicalConnectionToVirtualBorderRouterWithCallback invokes the vpc.AssociatePhysicalConnectionToVirtualBorderRouter API asynchronously
-// api document: https://help.aliyun.com/api/vpc/associatephysicalconnectiontovirtualborderrouter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociatePhysicalConnectionToVirtualBorderRouterWithCallback(request *AssociatePhysicalConnectionToVirtualBorderRouterRequest, callback func(response *AssociatePhysicalConnectionToVirtualBorderRouterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,18 +71,22 @@ func (client *Client) AssociatePhysicalConnectionToVirtualBorderRouterWithCallba
 // AssociatePhysicalConnectionToVirtualBorderRouterRequest is the request struct for api AssociatePhysicalConnectionToVirtualBorderRouter
 type AssociatePhysicalConnectionToVirtualBorderRouterRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CircuitCode          string           `position:"Query" name:"CircuitCode"`
-	VlanId               string           `position:"Query" name:"VlanId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	VbrId                string           `position:"Query" name:"VbrId"`
-	PeerGatewayIp        string           `position:"Query" name:"PeerGatewayIp"`
-	PeeringSubnetMask    string           `position:"Query" name:"PeeringSubnetMask"`
-	LocalGatewayIp       string           `position:"Query" name:"LocalGatewayIp"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CircuitCode           string           `position:"Query" name:"CircuitCode"`
+	VlanId                string           `position:"Query" name:"VlanId"`
+	ClientToken           string           `position:"Query" name:"ClientToken"`
+	EnableIpv6            string           `position:"Query" name:"EnableIpv6"`
+	VbrId                 string           `position:"Query" name:"VbrId"`
+	PeerGatewayIp         string           `position:"Query" name:"PeerGatewayIp"`
+	PeerIpv6GatewayIp     string           `position:"Query" name:"PeerIpv6GatewayIp"`
+	PeeringSubnetMask     string           `position:"Query" name:"PeeringSubnetMask"`
+	LocalGatewayIp        string           `position:"Query" name:"LocalGatewayIp"`
+	PeeringIpv6SubnetMask string           `position:"Query" name:"PeeringIpv6SubnetMask"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	PhysicalConnectionId  string           `position:"Query" name:"PhysicalConnectionId"`
+	LocalIpv6GatewayIp    string           `position:"Query" name:"LocalIpv6GatewayIp"`
 }
 
 // AssociatePhysicalConnectionToVirtualBorderRouterResponse is the response struct for api AssociatePhysicalConnectionToVirtualBorderRouter

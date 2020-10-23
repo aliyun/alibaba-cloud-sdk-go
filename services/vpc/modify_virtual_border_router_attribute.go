@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyVirtualBorderRouterAttribute invokes the vpc.ModifyVirtualBorderRouterAttribute API synchronously
-// api document: https://help.aliyun.com/api/vpc/modifyvirtualborderrouterattribute.html
 func (client *Client) ModifyVirtualBorderRouterAttribute(request *ModifyVirtualBorderRouterAttributeRequest) (response *ModifyVirtualBorderRouterAttributeResponse, err error) {
 	response = CreateModifyVirtualBorderRouterAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyVirtualBorderRouterAttribute(request *ModifyVirtualB
 }
 
 // ModifyVirtualBorderRouterAttributeWithChan invokes the vpc.ModifyVirtualBorderRouterAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyvirtualborderrouterattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVirtualBorderRouterAttributeWithChan(request *ModifyVirtualBorderRouterAttributeRequest) (<-chan *ModifyVirtualBorderRouterAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyVirtualBorderRouterAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyVirtualBorderRouterAttributeWithChan(request *Modify
 }
 
 // ModifyVirtualBorderRouterAttributeWithCallback invokes the vpc.ModifyVirtualBorderRouterAttribute API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyvirtualborderrouterattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVirtualBorderRouterAttributeWithCallback(request *ModifyVirtualBorderRouterAttributeRequest, callback func(response *ModifyVirtualBorderRouterAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ type ModifyVirtualBorderRouterAttributeRequest struct {
 	MinTxInterval                 requests.Integer `position:"Query" name:"MinTxInterval"`
 	PeeringIpv6SubnetMask         string           `position:"Query" name:"PeeringIpv6SubnetMask"`
 	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
+	Bandwidth                     requests.Integer `position:"Query" name:"Bandwidth"`
 	OwnerAccount                  string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
 	MinRxInterval                 requests.Integer `position:"Query" name:"MinRxInterval"`

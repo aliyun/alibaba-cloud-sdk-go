@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeIpv6Addresses invokes the vpc.DescribeIpv6Addresses API synchronously
-// api document: https://help.aliyun.com/api/vpc/describeipv6addresses.html
 func (client *Client) DescribeIpv6Addresses(request *DescribeIpv6AddressesRequest) (response *DescribeIpv6AddressesResponse, err error) {
 	response = CreateDescribeIpv6AddressesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeIpv6Addresses(request *DescribeIpv6AddressesReques
 }
 
 // DescribeIpv6AddressesWithChan invokes the vpc.DescribeIpv6Addresses API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeipv6addresses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpv6AddressesWithChan(request *DescribeIpv6AddressesRequest) (<-chan *DescribeIpv6AddressesResponse, <-chan error) {
 	responseChan := make(chan *DescribeIpv6AddressesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeIpv6AddressesWithChan(request *DescribeIpv6Address
 }
 
 // DescribeIpv6AddressesWithCallback invokes the vpc.DescribeIpv6Addresses API asynchronously
-// api document: https://help.aliyun.com/api/vpc/describeipv6addresses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpv6AddressesWithCallback(request *DescribeIpv6AddressesRequest, callback func(response *DescribeIpv6AddressesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

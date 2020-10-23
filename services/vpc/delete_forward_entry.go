@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteForwardEntry invokes the vpc.DeleteForwardEntry API synchronously
-// api document: https://help.aliyun.com/api/vpc/deleteforwardentry.html
 func (client *Client) DeleteForwardEntry(request *DeleteForwardEntryRequest) (response *DeleteForwardEntryResponse, err error) {
 	response = CreateDeleteForwardEntryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteForwardEntry(request *DeleteForwardEntryRequest) (re
 }
 
 // DeleteForwardEntryWithChan invokes the vpc.DeleteForwardEntry API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deleteforwardentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteForwardEntryWithChan(request *DeleteForwardEntryRequest) (<-chan *DeleteForwardEntryResponse, <-chan error) {
 	responseChan := make(chan *DeleteForwardEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteForwardEntryWithChan(request *DeleteForwardEntryRequ
 }
 
 // DeleteForwardEntryWithCallback invokes the vpc.DeleteForwardEntry API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deleteforwardentry.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteForwardEntryWithCallback(request *DeleteForwardEntryRequest, callback func(response *DeleteForwardEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

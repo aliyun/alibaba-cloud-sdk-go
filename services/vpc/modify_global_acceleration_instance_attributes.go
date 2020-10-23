@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyGlobalAccelerationInstanceAttributes invokes the vpc.ModifyGlobalAccelerationInstanceAttributes API synchronously
-// api document: https://help.aliyun.com/api/vpc/modifyglobalaccelerationinstanceattributes.html
 func (client *Client) ModifyGlobalAccelerationInstanceAttributes(request *ModifyGlobalAccelerationInstanceAttributesRequest) (response *ModifyGlobalAccelerationInstanceAttributesResponse, err error) {
 	response = CreateModifyGlobalAccelerationInstanceAttributesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyGlobalAccelerationInstanceAttributes(request *Modify
 }
 
 // ModifyGlobalAccelerationInstanceAttributesWithChan invokes the vpc.ModifyGlobalAccelerationInstanceAttributes API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyglobalaccelerationinstanceattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyGlobalAccelerationInstanceAttributesWithChan(request *ModifyGlobalAccelerationInstanceAttributesRequest) (<-chan *ModifyGlobalAccelerationInstanceAttributesResponse, <-chan error) {
 	responseChan := make(chan *ModifyGlobalAccelerationInstanceAttributesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyGlobalAccelerationInstanceAttributesWithChan(request
 }
 
 // ModifyGlobalAccelerationInstanceAttributesWithCallback invokes the vpc.ModifyGlobalAccelerationInstanceAttributes API asynchronously
-// api document: https://help.aliyun.com/api/vpc/modifyglobalaccelerationinstanceattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyGlobalAccelerationInstanceAttributesWithCallback(request *ModifyGlobalAccelerationInstanceAttributesRequest, callback func(response *ModifyGlobalAccelerationInstanceAttributesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

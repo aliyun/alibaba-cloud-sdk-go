@@ -21,7 +21,6 @@ import (
 )
 
 // AddBgpNetwork invokes the vpc.AddBgpNetwork API synchronously
-// api document: https://help.aliyun.com/api/vpc/addbgpnetwork.html
 func (client *Client) AddBgpNetwork(request *AddBgpNetworkRequest) (response *AddBgpNetworkResponse, err error) {
 	response = CreateAddBgpNetworkResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddBgpNetwork(request *AddBgpNetworkRequest) (response *Ad
 }
 
 // AddBgpNetworkWithChan invokes the vpc.AddBgpNetwork API asynchronously
-// api document: https://help.aliyun.com/api/vpc/addbgpnetwork.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddBgpNetworkWithChan(request *AddBgpNetworkRequest) (<-chan *AddBgpNetworkResponse, <-chan error) {
 	responseChan := make(chan *AddBgpNetworkResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddBgpNetworkWithChan(request *AddBgpNetworkRequest) (<-ch
 }
 
 // AddBgpNetworkWithCallback invokes the vpc.AddBgpNetwork API asynchronously
-// api document: https://help.aliyun.com/api/vpc/addbgpnetwork.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddBgpNetworkWithCallback(request *AddBgpNetworkRequest, callback func(response *AddBgpNetworkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

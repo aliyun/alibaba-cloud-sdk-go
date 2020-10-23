@@ -21,7 +21,6 @@ import (
 )
 
 // AllocateEipAddressPro invokes the vpc.AllocateEipAddressPro API synchronously
-// api document: https://help.aliyun.com/api/vpc/allocateeipaddresspro.html
 func (client *Client) AllocateEipAddressPro(request *AllocateEipAddressProRequest) (response *AllocateEipAddressProResponse, err error) {
 	response = CreateAllocateEipAddressProResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AllocateEipAddressPro(request *AllocateEipAddressProReques
 }
 
 // AllocateEipAddressProWithChan invokes the vpc.AllocateEipAddressPro API asynchronously
-// api document: https://help.aliyun.com/api/vpc/allocateeipaddresspro.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateEipAddressProWithChan(request *AllocateEipAddressProRequest) (<-chan *AllocateEipAddressProResponse, <-chan error) {
 	responseChan := make(chan *AllocateEipAddressProResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AllocateEipAddressProWithChan(request *AllocateEipAddressP
 }
 
 // AllocateEipAddressProWithCallback invokes the vpc.AllocateEipAddressPro API asynchronously
-// api document: https://help.aliyun.com/api/vpc/allocateeipaddresspro.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateEipAddressProWithCallback(request *AllocateEipAddressProRequest, callback func(response *AllocateEipAddressProResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

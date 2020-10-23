@@ -39,7 +39,7 @@ type EipAddress struct {
 	BandwidthPackageType          string                               `json:"BandwidthPackageType" xml:"BandwidthPackageType"`
 	BandwidthPackageBandwidth     string                               `json:"BandwidthPackageBandwidth" xml:"BandwidthPackageBandwidth"`
 	ResourceGroupId               string                               `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	HasReservationData            bool                                 `json:"HasReservationData" xml:"HasReservationData"`
+	HasReservationData            string                               `json:"HasReservationData" xml:"HasReservationData"`
 	ReservationBandwidth          string                               `json:"ReservationBandwidth" xml:"ReservationBandwidth"`
 	ReservationInternetChargeType string                               `json:"ReservationInternetChargeType" xml:"ReservationInternetChargeType"`
 	ReservationActiveTime         string                               `json:"ReservationActiveTime" xml:"ReservationActiveTime"`
@@ -49,6 +49,8 @@ type EipAddress struct {
 	SecondLimited                 bool                                 `json:"SecondLimited" xml:"SecondLimited"`
 	SegmentInstanceId             string                               `json:"SegmentInstanceId" xml:"SegmentInstanceId"`
 	Netmode                       string                               `json:"Netmode" xml:"Netmode"`
+	ServiceManaged                int                                  `json:"ServiceManaged" xml:"ServiceManaged"`
+	BusinessStatus                string                               `json:"BusinessStatus" xml:"BusinessStatus"`
 	AvailableRegions              AvailableRegions                     `json:"AvailableRegions" xml:"AvailableRegions"`
 	OperationLocks                OperationLocksInDescribeEipAddresses `json:"OperationLocks" xml:"OperationLocks"`
 	Tags                          TagsInDescribeEipAddresses           `json:"Tags" xml:"Tags"`

@@ -1,3 +1,7 @@
+2020-10-23 Version: v1.61.601
+- Generated 2016-04-28 for `Vpc`.
+- NAT CONVERT2 SUPPORT.
+
 2020-10-23 Version: v1.61.600
 - Generated 2020-03-20 for `imageprocess`.
 - Update DetectLungNodule.
