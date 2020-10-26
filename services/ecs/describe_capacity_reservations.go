@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeElasticityAssurances invokes the ecs.DescribeElasticityAssurances API synchronously
-func (client *Client) DescribeElasticityAssurances(request *DescribeElasticityAssurancesRequest) (response *DescribeElasticityAssurancesResponse, err error) {
-	response = CreateDescribeElasticityAssurancesResponse()
+// DescribeCapacityReservations invokes the ecs.DescribeCapacityReservations API synchronously
+func (client *Client) DescribeCapacityReservations(request *DescribeCapacityReservationsRequest) (response *DescribeCapacityReservationsResponse, err error) {
+	response = CreateDescribeCapacityReservationsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeElasticityAssurancesWithChan invokes the ecs.DescribeElasticityAssurances API asynchronously
-func (client *Client) DescribeElasticityAssurancesWithChan(request *DescribeElasticityAssurancesRequest) (<-chan *DescribeElasticityAssurancesResponse, <-chan error) {
-	responseChan := make(chan *DescribeElasticityAssurancesResponse, 1)
+// DescribeCapacityReservationsWithChan invokes the ecs.DescribeCapacityReservations API asynchronously
+func (client *Client) DescribeCapacityReservationsWithChan(request *DescribeCapacityReservationsRequest) (<-chan *DescribeCapacityReservationsResponse, <-chan error) {
+	responseChan := make(chan *DescribeCapacityReservationsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeElasticityAssurances(request)
+		response, err := client.DescribeCapacityReservations(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DescribeElasticityAssurancesWithChan(request *DescribeElas
 	return responseChan, errChan
 }
 
-// DescribeElasticityAssurancesWithCallback invokes the ecs.DescribeElasticityAssurances API asynchronously
-func (client *Client) DescribeElasticityAssurancesWithCallback(request *DescribeElasticityAssurancesRequest, callback func(response *DescribeElasticityAssurancesResponse, err error)) <-chan int {
+// DescribeCapacityReservationsWithCallback invokes the ecs.DescribeCapacityReservations API asynchronously
+func (client *Client) DescribeCapacityReservationsWithCallback(request *DescribeCapacityReservationsRequest, callback func(response *DescribeCapacityReservationsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeElasticityAssurancesResponse
+		var response *DescribeCapacityReservationsResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeElasticityAssurances(request)
+		response, err = client.DescribeCapacityReservations(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,8 +68,8 @@ func (client *Client) DescribeElasticityAssurancesWithCallback(request *Describe
 	return result
 }
 
-// DescribeElasticityAssurancesRequest is the request struct for api DescribeElasticityAssurances
-type DescribeElasticityAssurancesRequest struct {
+// DescribeCapacityReservationsRequest is the request struct for api DescribeCapacityReservations
+type DescribeCapacityReservationsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Platform              string           `position:"Query" name:"Platform"`
@@ -85,29 +85,29 @@ type DescribeElasticityAssurancesRequest struct {
 	PackageType           string           `position:"Query" name:"PackageType"`
 }
 
-// DescribeElasticityAssurancesResponse is the response struct for api DescribeElasticityAssurances
-type DescribeElasticityAssurancesResponse struct {
+// DescribeCapacityReservationsResponse is the response struct for api DescribeCapacityReservations
+type DescribeCapacityReservationsResponse struct {
 	*responses.BaseResponse
 	RequestId              string                 `json:"RequestId" xml:"RequestId"`
 	NextToken              string                 `json:"NextToken" xml:"NextToken"`
 	MaxResults             int                    `json:"MaxResults" xml:"MaxResults"`
 	TotalCount             int                    `json:"TotalCount" xml:"TotalCount"`
-	ElasticityAssuranceSet ElasticityAssuranceSet `json:"ElasticityAssuranceSet" xml:"ElasticityAssuranceSet"`
+	CapacityReservationSet CapacityReservationSet `json:"CapacityReservationSet" xml:"CapacityReservationSet"`
 }
 
-// CreateDescribeElasticityAssurancesRequest creates a request to invoke DescribeElasticityAssurances API
-func CreateDescribeElasticityAssurancesRequest() (request *DescribeElasticityAssurancesRequest) {
-	request = &DescribeElasticityAssurancesRequest{
+// CreateDescribeCapacityReservationsRequest creates a request to invoke DescribeCapacityReservations API
+func CreateDescribeCapacityReservationsRequest() (request *DescribeCapacityReservationsRequest) {
+	request = &DescribeCapacityReservationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeElasticityAssurances", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeCapacityReservations", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDescribeElasticityAssurancesResponse creates a response to parse from DescribeElasticityAssurances response
-func CreateDescribeElasticityAssurancesResponse() (response *DescribeElasticityAssurancesResponse) {
-	response = &DescribeElasticityAssurancesResponse{
+// CreateDescribeCapacityReservationsResponse creates a response to parse from DescribeCapacityReservations response
+func CreateDescribeCapacityReservationsResponse() (response *DescribeCapacityReservationsResponse) {
+	response = &DescribeCapacityReservationsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
