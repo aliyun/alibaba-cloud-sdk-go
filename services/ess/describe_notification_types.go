@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeNotificationTypes invokes the ess.DescribeNotificationTypes API synchronously
-// api document: https://help.aliyun.com/api/ess/describenotificationtypes.html
 func (client *Client) DescribeNotificationTypes(request *DescribeNotificationTypesRequest) (response *DescribeNotificationTypesResponse, err error) {
 	response = CreateDescribeNotificationTypesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeNotificationTypes(request *DescribeNotificationTyp
 }
 
 // DescribeNotificationTypesWithChan invokes the ess.DescribeNotificationTypes API asynchronously
-// api document: https://help.aliyun.com/api/ess/describenotificationtypes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNotificationTypesWithChan(request *DescribeNotificationTypesRequest) (<-chan *DescribeNotificationTypesResponse, <-chan error) {
 	responseChan := make(chan *DescribeNotificationTypesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeNotificationTypesWithChan(request *DescribeNotific
 }
 
 // DescribeNotificationTypesWithCallback invokes the ess.DescribeNotificationTypes API asynchronously
-// api document: https://help.aliyun.com/api/ess/describenotificationtypes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNotificationTypesWithCallback(request *DescribeNotificationTypesRequest, callback func(response *DescribeNotificationTypesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeNotificationTypesRequest() (request *DescribeNotificationType
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeNotificationTypes", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

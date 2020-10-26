@@ -21,7 +21,6 @@ import (
 )
 
 // SuspendProcesses invokes the ess.SuspendProcesses API synchronously
-// api document: https://help.aliyun.com/api/ess/suspendprocesses.html
 func (client *Client) SuspendProcesses(request *SuspendProcessesRequest) (response *SuspendProcessesResponse, err error) {
 	response = CreateSuspendProcessesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SuspendProcesses(request *SuspendProcessesRequest) (respon
 }
 
 // SuspendProcessesWithChan invokes the ess.SuspendProcesses API asynchronously
-// api document: https://help.aliyun.com/api/ess/suspendprocesses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SuspendProcessesWithChan(request *SuspendProcessesRequest) (<-chan *SuspendProcessesResponse, <-chan error) {
 	responseChan := make(chan *SuspendProcessesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SuspendProcessesWithChan(request *SuspendProcessesRequest)
 }
 
 // SuspendProcessesWithCallback invokes the ess.SuspendProcesses API asynchronously
-// api document: https://help.aliyun.com/api/ess/suspendprocesses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SuspendProcessesWithCallback(request *SuspendProcessesRequest, callback func(response *SuspendProcessesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,10 @@ func (client *Client) SuspendProcessesWithCallback(request *SuspendProcessesRequ
 // SuspendProcessesRequest is the request struct for api SuspendProcesses
 type SuspendProcessesRequest struct {
 	*requests.RpcRequest
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	Process              *[]string        `position:"Query" name:"Process"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
@@ -94,6 +90,7 @@ func CreateSuspendProcessesRequest() (request *SuspendProcessesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "SuspendProcesses", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

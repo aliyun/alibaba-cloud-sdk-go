@@ -21,7 +21,6 @@ import (
 )
 
 // RebalanceInstances invokes the ess.RebalanceInstances API synchronously
-// api document: https://help.aliyun.com/api/ess/rebalanceinstances.html
 func (client *Client) RebalanceInstances(request *RebalanceInstancesRequest) (response *RebalanceInstancesResponse, err error) {
 	response = CreateRebalanceInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RebalanceInstances(request *RebalanceInstancesRequest) (re
 }
 
 // RebalanceInstancesWithChan invokes the ess.RebalanceInstances API asynchronously
-// api document: https://help.aliyun.com/api/ess/rebalanceinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RebalanceInstancesWithChan(request *RebalanceInstancesRequest) (<-chan *RebalanceInstancesResponse, <-chan error) {
 	responseChan := make(chan *RebalanceInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RebalanceInstancesWithChan(request *RebalanceInstancesRequ
 }
 
 // RebalanceInstancesWithCallback invokes the ess.RebalanceInstances API asynchronously
-// api document: https://help.aliyun.com/api/ess/rebalanceinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RebalanceInstancesWithCallback(request *RebalanceInstancesRequest, callback func(response *RebalanceInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateRebalanceInstancesRequest() (request *RebalanceInstancesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "RebalanceInstances", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

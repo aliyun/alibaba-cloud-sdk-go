@@ -21,7 +21,6 @@ import (
 )
 
 // ResumeProcesses invokes the ess.ResumeProcesses API synchronously
-// api document: https://help.aliyun.com/api/ess/resumeprocesses.html
 func (client *Client) ResumeProcesses(request *ResumeProcessesRequest) (response *ResumeProcessesResponse, err error) {
 	response = CreateResumeProcessesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResumeProcesses(request *ResumeProcessesRequest) (response
 }
 
 // ResumeProcessesWithChan invokes the ess.ResumeProcesses API asynchronously
-// api document: https://help.aliyun.com/api/ess/resumeprocesses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeProcessesWithChan(request *ResumeProcessesRequest) (<-chan *ResumeProcessesResponse, <-chan error) {
 	responseChan := make(chan *ResumeProcessesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResumeProcessesWithChan(request *ResumeProcessesRequest) (
 }
 
 // ResumeProcessesWithCallback invokes the ess.ResumeProcesses API asynchronously
-// api document: https://help.aliyun.com/api/ess/resumeprocesses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeProcessesWithCallback(request *ResumeProcessesRequest, callback func(response *ResumeProcessesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,10 @@ func (client *Client) ResumeProcessesWithCallback(request *ResumeProcessesReques
 // ResumeProcessesRequest is the request struct for api ResumeProcesses
 type ResumeProcessesRequest struct {
 	*requests.RpcRequest
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	Process              *[]string        `position:"Query" name:"Process"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
@@ -94,6 +90,7 @@ func CreateResumeProcessesRequest() (request *ResumeProcessesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "ResumeProcesses", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DetachInstances invokes the ess.DetachInstances API synchronously
-// api document: https://help.aliyun.com/api/ess/detachinstances.html
 func (client *Client) DetachInstances(request *DetachInstancesRequest) (response *DetachInstancesResponse, err error) {
 	response = CreateDetachInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetachInstances(request *DetachInstancesRequest) (response
 }
 
 // DetachInstancesWithChan invokes the ess.DetachInstances API asynchronously
-// api document: https://help.aliyun.com/api/ess/detachinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachInstancesWithChan(request *DetachInstancesRequest) (<-chan *DetachInstancesResponse, <-chan error) {
 	responseChan := make(chan *DetachInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetachInstancesWithChan(request *DetachInstancesRequest) (
 }
 
 // DetachInstancesWithCallback invokes the ess.DetachInstances API asynchronously
-// api document: https://help.aliyun.com/api/ess/detachinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachInstancesWithCallback(request *DetachInstancesRequest, callback func(response *DetachInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +78,7 @@ type DetachInstancesRequest struct {
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId              *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
+	DetachOption            string           `position:"Query" name:"DetachOption"`
 }
 
 // DetachInstancesResponse is the response struct for api DetachInstances
@@ -98,6 +94,7 @@ func CreateDetachInstancesRequest() (request *DetachInstancesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DetachInstances", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

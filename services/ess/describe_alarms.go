@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAlarms invokes the ess.DescribeAlarms API synchronously
-// api document: https://help.aliyun.com/api/ess/describealarms.html
 func (client *Client) DescribeAlarms(request *DescribeAlarmsRequest) (response *DescribeAlarmsResponse, err error) {
 	response = CreateDescribeAlarmsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAlarms(request *DescribeAlarmsRequest) (response *
 }
 
 // DescribeAlarmsWithChan invokes the ess.DescribeAlarms API asynchronously
-// api document: https://help.aliyun.com/api/ess/describealarms.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAlarmsWithChan(request *DescribeAlarmsRequest) (<-chan *DescribeAlarmsResponse, <-chan error) {
 	responseChan := make(chan *DescribeAlarmsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAlarmsWithChan(request *DescribeAlarmsRequest) (<-
 }
 
 // DescribeAlarmsWithCallback invokes the ess.DescribeAlarms API asynchronously
-// api document: https://help.aliyun.com/api/ess/describealarms.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAlarmsWithCallback(request *DescribeAlarmsRequest, callback func(response *DescribeAlarmsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,6 +98,7 @@ func CreateDescribeAlarmsRequest() (request *DescribeAlarmsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeAlarms", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

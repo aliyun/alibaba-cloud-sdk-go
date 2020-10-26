@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyScalingGroup invokes the ess.ModifyScalingGroup API synchronously
-// api document: https://help.aliyun.com/api/ess/modifyscalinggroup.html
 func (client *Client) ModifyScalingGroup(request *ModifyScalingGroupRequest) (response *ModifyScalingGroupResponse, err error) {
 	response = CreateModifyScalingGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyScalingGroup(request *ModifyScalingGroupRequest) (re
 }
 
 // ModifyScalingGroupWithChan invokes the ess.ModifyScalingGroup API asynchronously
-// api document: https://help.aliyun.com/api/ess/modifyscalinggroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyScalingGroupWithChan(request *ModifyScalingGroupRequest) (<-chan *ModifyScalingGroupResponse, <-chan error) {
 	responseChan := make(chan *ModifyScalingGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyScalingGroupWithChan(request *ModifyScalingGroupRequ
 }
 
 // ModifyScalingGroupWithCallback invokes the ess.ModifyScalingGroup API asynchronously
-// api document: https://help.aliyun.com/api/ess/modifyscalinggroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyScalingGroupWithCallback(request *ModifyScalingGroupRequest, callback func(response *ModifyScalingGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +78,7 @@ type ModifyScalingGroupRequest struct {
 	OnDemandBaseCapacity                requests.Integer `position:"Query" name:"OnDemandBaseCapacity"`
 	OnDemandPercentageAboveBaseCapacity requests.Integer `position:"Query" name:"OnDemandPercentageAboveBaseCapacity"`
 	SpotInstanceRemedy                  requests.Boolean `position:"Query" name:"SpotInstanceRemedy"`
+	ScaleOutAmountCheck                 requests.Boolean `position:"Query" name:"ScaleOutAmountCheck"`
 	DefaultCooldown                     requests.Integer `position:"Query" name:"DefaultCooldown"`
 	RemovalPolicy1                      string           `position:"Query" name:"RemovalPolicy.1"`
 	RemovalPolicy2                      string           `position:"Query" name:"RemovalPolicy.2"`
@@ -92,6 +88,7 @@ type ModifyScalingGroupRequest struct {
 	ResourceOwnerAccount                string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupName                    string           `position:"Query" name:"ScalingGroupName"`
 	OwnerAccount                        string           `position:"Query" name:"OwnerAccount"`
+	CompensateWithOnDemand              requests.Boolean `position:"Query" name:"CompensateWithOnDemand"`
 	SpotInstancePools                   requests.Integer `position:"Query" name:"SpotInstancePools"`
 	MinSize                             requests.Integer `position:"Query" name:"MinSize"`
 	GroupDeletionProtection             requests.Boolean `position:"Query" name:"GroupDeletionProtection"`
@@ -112,6 +109,7 @@ func CreateModifyScalingGroupRequest() (request *ModifyScalingGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyScalingGroup", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

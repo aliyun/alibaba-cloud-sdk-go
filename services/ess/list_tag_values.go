@@ -21,7 +21,6 @@ import (
 )
 
 // ListTagValues invokes the ess.ListTagValues API synchronously
-// api document: https://help.aliyun.com/api/ess/listtagvalues.html
 func (client *Client) ListTagValues(request *ListTagValuesRequest) (response *ListTagValuesResponse, err error) {
 	response = CreateListTagValuesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListTagValues(request *ListTagValuesRequest) (response *Li
 }
 
 // ListTagValuesWithChan invokes the ess.ListTagValues API asynchronously
-// api document: https://help.aliyun.com/api/ess/listtagvalues.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTagValuesWithChan(request *ListTagValuesRequest) (<-chan *ListTagValuesResponse, <-chan error) {
 	responseChan := make(chan *ListTagValuesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListTagValuesWithChan(request *ListTagValuesRequest) (<-ch
 }
 
 // ListTagValuesWithCallback invokes the ess.ListTagValues API asynchronously
-// api document: https://help.aliyun.com/api/ess/listtagvalues.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTagValuesWithCallback(request *ListTagValuesRequest, callback func(response *ListTagValuesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateListTagValuesRequest() (request *ListTagValuesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "ListTagValues", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

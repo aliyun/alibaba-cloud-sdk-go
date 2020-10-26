@@ -21,7 +21,6 @@ import (
 )
 
 // DeactivateScalingConfiguration invokes the ess.DeactivateScalingConfiguration API synchronously
-// api document: https://help.aliyun.com/api/ess/deactivatescalingconfiguration.html
 func (client *Client) DeactivateScalingConfiguration(request *DeactivateScalingConfigurationRequest) (response *DeactivateScalingConfigurationResponse, err error) {
 	response = CreateDeactivateScalingConfigurationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeactivateScalingConfiguration(request *DeactivateScalingC
 }
 
 // DeactivateScalingConfigurationWithChan invokes the ess.DeactivateScalingConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/ess/deactivatescalingconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeactivateScalingConfigurationWithChan(request *DeactivateScalingConfigurationRequest) (<-chan *DeactivateScalingConfigurationResponse, <-chan error) {
 	responseChan := make(chan *DeactivateScalingConfigurationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeactivateScalingConfigurationWithChan(request *Deactivate
 }
 
 // DeactivateScalingConfigurationWithCallback invokes the ess.DeactivateScalingConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/ess/deactivatescalingconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeactivateScalingConfigurationWithCallback(request *DeactivateScalingConfigurationRequest, callback func(response *DeactivateScalingConfigurationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDeactivateScalingConfigurationRequest() (request *DeactivateScalingCo
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DeactivateScalingConfiguration", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

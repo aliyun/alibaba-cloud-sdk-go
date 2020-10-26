@@ -21,7 +21,6 @@ import (
 )
 
 // EnableAlarm invokes the ess.EnableAlarm API synchronously
-// api document: https://help.aliyun.com/api/ess/enablealarm.html
 func (client *Client) EnableAlarm(request *EnableAlarmRequest) (response *EnableAlarmResponse, err error) {
 	response = CreateEnableAlarmResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnableAlarm(request *EnableAlarmRequest) (response *Enable
 }
 
 // EnableAlarmWithChan invokes the ess.EnableAlarm API asynchronously
-// api document: https://help.aliyun.com/api/ess/enablealarm.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableAlarmWithChan(request *EnableAlarmRequest) (<-chan *EnableAlarmResponse, <-chan error) {
 	responseChan := make(chan *EnableAlarmResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnableAlarmWithChan(request *EnableAlarmRequest) (<-chan *
 }
 
 // EnableAlarmWithCallback invokes the ess.EnableAlarm API asynchronously
-// api document: https://help.aliyun.com/api/ess/enablealarm.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableAlarmWithCallback(request *EnableAlarmRequest, callback func(response *EnableAlarmResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateEnableAlarmRequest() (request *EnableAlarmRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "EnableAlarm", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteNotificationConfiguration invokes the ess.DeleteNotificationConfiguration API synchronously
-// api document: https://help.aliyun.com/api/ess/deletenotificationconfiguration.html
 func (client *Client) DeleteNotificationConfiguration(request *DeleteNotificationConfigurationRequest) (response *DeleteNotificationConfigurationResponse, err error) {
 	response = CreateDeleteNotificationConfigurationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteNotificationConfiguration(request *DeleteNotificatio
 }
 
 // DeleteNotificationConfigurationWithChan invokes the ess.DeleteNotificationConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/ess/deletenotificationconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNotificationConfigurationWithChan(request *DeleteNotificationConfigurationRequest) (<-chan *DeleteNotificationConfigurationResponse, <-chan error) {
 	responseChan := make(chan *DeleteNotificationConfigurationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteNotificationConfigurationWithChan(request *DeleteNot
 }
 
 // DeleteNotificationConfigurationWithCallback invokes the ess.DeleteNotificationConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/ess/deletenotificationconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNotificationConfigurationWithCallback(request *DeleteNotificationConfigurationRequest, callback func(response *DeleteNotificationConfigurationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDeleteNotificationConfigurationRequest() (request *DeleteNotification
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteNotificationConfiguration", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

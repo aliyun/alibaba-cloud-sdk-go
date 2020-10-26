@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeScalingInstances invokes the ess.DescribeScalingInstances API synchronously
-// api document: https://help.aliyun.com/api/ess/describescalinginstances.html
 func (client *Client) DescribeScalingInstances(request *DescribeScalingInstancesRequest) (response *DescribeScalingInstancesResponse, err error) {
 	response = CreateDescribeScalingInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeScalingInstances(request *DescribeScalingInstances
 }
 
 // DescribeScalingInstancesWithChan invokes the ess.DescribeScalingInstances API asynchronously
-// api document: https://help.aliyun.com/api/ess/describescalinginstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingInstancesWithChan(request *DescribeScalingInstancesRequest) (<-chan *DescribeScalingInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeScalingInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeScalingInstancesWithChan(request *DescribeScalingI
 }
 
 // DescribeScalingInstancesWithCallback invokes the ess.DescribeScalingInstances API asynchronously
-// api document: https://help.aliyun.com/api/ess/describescalinginstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingInstancesWithCallback(request *DescribeScalingInstancesRequest, callback func(response *DescribeScalingInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -125,6 +120,7 @@ func CreateDescribeScalingInstancesRequest() (request *DescribeScalingInstancesR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingInstances", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

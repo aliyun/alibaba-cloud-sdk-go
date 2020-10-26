@@ -21,7 +21,6 @@ import (
 )
 
 // VerifyAuthentication invokes the ess.VerifyAuthentication API synchronously
-// api document: https://help.aliyun.com/api/ess/verifyauthentication.html
 func (client *Client) VerifyAuthentication(request *VerifyAuthenticationRequest) (response *VerifyAuthenticationResponse, err error) {
 	response = CreateVerifyAuthenticationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VerifyAuthentication(request *VerifyAuthenticationRequest)
 }
 
 // VerifyAuthenticationWithChan invokes the ess.VerifyAuthentication API asynchronously
-// api document: https://help.aliyun.com/api/ess/verifyauthentication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyAuthenticationWithChan(request *VerifyAuthenticationRequest) (<-chan *VerifyAuthenticationResponse, <-chan error) {
 	responseChan := make(chan *VerifyAuthenticationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VerifyAuthenticationWithChan(request *VerifyAuthentication
 }
 
 // VerifyAuthenticationWithCallback invokes the ess.VerifyAuthentication API asynchronously
-// api document: https://help.aliyun.com/api/ess/verifyauthentication.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyAuthenticationWithCallback(request *VerifyAuthenticationRequest, callback func(response *VerifyAuthenticationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +74,7 @@ type VerifyAuthenticationRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OnlyCheck            requests.Boolean `position:"Query" name:"OnlyCheck"`
 	Uid                  requests.Integer `position:"Query" name:"Uid"`
 }
 
@@ -94,6 +90,7 @@ func CreateVerifyAuthenticationRequest() (request *VerifyAuthenticationRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "VerifyAuthentication", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // SetInstancesProtection invokes the ess.SetInstancesProtection API synchronously
-// api document: https://help.aliyun.com/api/ess/setinstancesprotection.html
 func (client *Client) SetInstancesProtection(request *SetInstancesProtectionRequest) (response *SetInstancesProtectionResponse, err error) {
 	response = CreateSetInstancesProtectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetInstancesProtection(request *SetInstancesProtectionRequ
 }
 
 // SetInstancesProtectionWithChan invokes the ess.SetInstancesProtection API asynchronously
-// api document: https://help.aliyun.com/api/ess/setinstancesprotection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetInstancesProtectionWithChan(request *SetInstancesProtectionRequest) (<-chan *SetInstancesProtectionResponse, <-chan error) {
 	responseChan := make(chan *SetInstancesProtectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetInstancesProtectionWithChan(request *SetInstancesProtec
 }
 
 // SetInstancesProtectionWithCallback invokes the ess.SetInstancesProtection API asynchronously
-// api document: https://help.aliyun.com/api/ess/setinstancesprotection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetInstancesProtectionWithCallback(request *SetInstancesProtectionRequest, callback func(response *SetInstancesProtectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateSetInstancesProtectionRequest() (request *SetInstancesProtectionReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "SetInstancesProtection", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeScalingActivityDetail invokes the ess.DescribeScalingActivityDetail API synchronously
-// api document: https://help.aliyun.com/api/ess/describescalingactivitydetail.html
 func (client *Client) DescribeScalingActivityDetail(request *DescribeScalingActivityDetailRequest) (response *DescribeScalingActivityDetailResponse, err error) {
 	response = CreateDescribeScalingActivityDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeScalingActivityDetail(request *DescribeScalingActi
 }
 
 // DescribeScalingActivityDetailWithChan invokes the ess.DescribeScalingActivityDetail API asynchronously
-// api document: https://help.aliyun.com/api/ess/describescalingactivitydetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingActivityDetailWithChan(request *DescribeScalingActivityDetailRequest) (<-chan *DescribeScalingActivityDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeScalingActivityDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeScalingActivityDetailWithChan(request *DescribeSca
 }
 
 // DescribeScalingActivityDetailWithCallback invokes the ess.DescribeScalingActivityDetail API asynchronously
-// api document: https://help.aliyun.com/api/ess/describescalingactivitydetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingActivityDetailWithCallback(request *DescribeScalingActivityDetailRequest, callback func(response *DescribeScalingActivityDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateDescribeScalingActivityDetailRequest() (request *DescribeScalingActiv
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingActivityDetail", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLifecycleHooks invokes the ess.DescribeLifecycleHooks API synchronously
-// api document: https://help.aliyun.com/api/ess/describelifecyclehooks.html
 func (client *Client) DescribeLifecycleHooks(request *DescribeLifecycleHooksRequest) (response *DescribeLifecycleHooksResponse, err error) {
 	response = CreateDescribeLifecycleHooksResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLifecycleHooks(request *DescribeLifecycleHooksRequ
 }
 
 // DescribeLifecycleHooksWithChan invokes the ess.DescribeLifecycleHooks API asynchronously
-// api document: https://help.aliyun.com/api/ess/describelifecyclehooks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLifecycleHooksWithChan(request *DescribeLifecycleHooksRequest) (<-chan *DescribeLifecycleHooksResponse, <-chan error) {
 	responseChan := make(chan *DescribeLifecycleHooksResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLifecycleHooksWithChan(request *DescribeLifecycleH
 }
 
 // DescribeLifecycleHooksWithCallback invokes the ess.DescribeLifecycleHooks API asynchronously
-// api document: https://help.aliyun.com/api/ess/describelifecyclehooks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLifecycleHooksWithCallback(request *DescribeLifecycleHooksRequest, callback func(response *DescribeLifecycleHooksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,6 +97,7 @@ func CreateDescribeLifecycleHooksRequest() (request *DescribeLifecycleHooksReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeLifecycleHooks", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteScalingGroup invokes the ess.DeleteScalingGroup API synchronously
-// api document: https://help.aliyun.com/api/ess/deletescalinggroup.html
 func (client *Client) DeleteScalingGroup(request *DeleteScalingGroupRequest) (response *DeleteScalingGroupResponse, err error) {
 	response = CreateDeleteScalingGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteScalingGroup(request *DeleteScalingGroupRequest) (re
 }
 
 // DeleteScalingGroupWithChan invokes the ess.DeleteScalingGroup API asynchronously
-// api document: https://help.aliyun.com/api/ess/deletescalinggroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScalingGroupWithChan(request *DeleteScalingGroupRequest) (<-chan *DeleteScalingGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteScalingGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteScalingGroupWithChan(request *DeleteScalingGroupRequ
 }
 
 // DeleteScalingGroupWithCallback invokes the ess.DeleteScalingGroup API asynchronously
-// api document: https://help.aliyun.com/api/ess/deletescalinggroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScalingGroupWithCallback(request *DeleteScalingGroupRequest, callback func(response *DeleteScalingGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateDeleteScalingGroupRequest() (request *DeleteScalingGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScalingGroup", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

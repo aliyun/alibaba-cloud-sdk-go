@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeScalingActivities invokes the ess.DescribeScalingActivities API synchronously
-// api document: https://help.aliyun.com/api/ess/describescalingactivities.html
 func (client *Client) DescribeScalingActivities(request *DescribeScalingActivitiesRequest) (response *DescribeScalingActivitiesResponse, err error) {
 	response = CreateDescribeScalingActivitiesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeScalingActivities(request *DescribeScalingActiviti
 }
 
 // DescribeScalingActivitiesWithChan invokes the ess.DescribeScalingActivities API asynchronously
-// api document: https://help.aliyun.com/api/ess/describescalingactivities.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingActivitiesWithChan(request *DescribeScalingActivitiesRequest) (<-chan *DescribeScalingActivitiesResponse, <-chan error) {
 	responseChan := make(chan *DescribeScalingActivitiesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeScalingActivitiesWithChan(request *DescribeScaling
 }
 
 // DescribeScalingActivitiesWithCallback invokes the ess.DescribeScalingActivities API asynchronously
-// api document: https://help.aliyun.com/api/ess/describescalingactivities.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingActivitiesWithCallback(request *DescribeScalingActivitiesRequest, callback func(response *DescribeScalingActivitiesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -122,6 +117,7 @@ func CreateDescribeScalingActivitiesRequest() (request *DescribeScalingActivitie
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingActivities", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

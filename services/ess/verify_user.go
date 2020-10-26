@@ -21,7 +21,6 @@ import (
 )
 
 // VerifyUser invokes the ess.VerifyUser API synchronously
-// api document: https://help.aliyun.com/api/ess/verifyuser.html
 func (client *Client) VerifyUser(request *VerifyUserRequest) (response *VerifyUserResponse, err error) {
 	response = CreateVerifyUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VerifyUser(request *VerifyUserRequest) (response *VerifyUs
 }
 
 // VerifyUserWithChan invokes the ess.VerifyUser API asynchronously
-// api document: https://help.aliyun.com/api/ess/verifyuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyUserWithChan(request *VerifyUserRequest) (<-chan *VerifyUserResponse, <-chan error) {
 	responseChan := make(chan *VerifyUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VerifyUserWithChan(request *VerifyUserRequest) (<-chan *Ve
 }
 
 // VerifyUserWithCallback invokes the ess.VerifyUser API asynchronously
-// api document: https://help.aliyun.com/api/ess/verifyuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyUserWithCallback(request *VerifyUserRequest, callback func(response *VerifyUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateVerifyUserRequest() (request *VerifyUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "VerifyUser", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

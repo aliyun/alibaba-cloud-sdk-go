@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeScheduledTasks invokes the ess.DescribeScheduledTasks API synchronously
-// api document: https://help.aliyun.com/api/ess/describescheduledtasks.html
 func (client *Client) DescribeScheduledTasks(request *DescribeScheduledTasksRequest) (response *DescribeScheduledTasksResponse, err error) {
 	response = CreateDescribeScheduledTasksResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeScheduledTasks(request *DescribeScheduledTasksRequ
 }
 
 // DescribeScheduledTasksWithChan invokes the ess.DescribeScheduledTasks API asynchronously
-// api document: https://help.aliyun.com/api/ess/describescheduledtasks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScheduledTasksWithChan(request *DescribeScheduledTasksRequest) (<-chan *DescribeScheduledTasksResponse, <-chan error) {
 	responseChan := make(chan *DescribeScheduledTasksResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeScheduledTasksWithChan(request *DescribeScheduledT
 }
 
 // DescribeScheduledTasksWithCallback invokes the ess.DescribeScheduledTasks API asynchronously
-// api document: https://help.aliyun.com/api/ess/describescheduledtasks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScheduledTasksWithCallback(request *DescribeScheduledTasksRequest, callback func(response *DescribeScheduledTasksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,6 +86,7 @@ type DescribeScheduledTasksRequest struct {
 	ScheduledTaskName19  string           `position:"Query" name:"ScheduledTaskName.19"`
 	ScheduledTaskName18  string           `position:"Query" name:"ScheduledTaskName.18"`
 	ScheduledTaskId20    string           `position:"Query" name:"ScheduledTaskId.20"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	ScheduledTaskName13  string           `position:"Query" name:"ScheduledTaskName.13"`
 	ScheduledTaskName12  string           `position:"Query" name:"ScheduledTaskName.12"`
 	ScheduledTaskName11  string           `position:"Query" name:"ScheduledTaskName.11"`
@@ -160,6 +156,7 @@ func CreateDescribeScheduledTasksRequest() (request *DescribeScheduledTasksReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScheduledTasks", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

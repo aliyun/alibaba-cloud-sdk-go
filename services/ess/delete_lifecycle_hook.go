@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLifecycleHook invokes the ess.DeleteLifecycleHook API synchronously
-// api document: https://help.aliyun.com/api/ess/deletelifecyclehook.html
 func (client *Client) DeleteLifecycleHook(request *DeleteLifecycleHookRequest) (response *DeleteLifecycleHookResponse, err error) {
 	response = CreateDeleteLifecycleHookResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLifecycleHook(request *DeleteLifecycleHookRequest) (
 }
 
 // DeleteLifecycleHookWithChan invokes the ess.DeleteLifecycleHook API asynchronously
-// api document: https://help.aliyun.com/api/ess/deletelifecyclehook.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLifecycleHookWithChan(request *DeleteLifecycleHookRequest) (<-chan *DeleteLifecycleHookResponse, <-chan error) {
 	responseChan := make(chan *DeleteLifecycleHookResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLifecycleHookWithChan(request *DeleteLifecycleHookRe
 }
 
 // DeleteLifecycleHookWithCallback invokes the ess.DeleteLifecycleHook API asynchronously
-// api document: https://help.aliyun.com/api/ess/deletelifecyclehook.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLifecycleHookWithCallback(request *DeleteLifecycleHookRequest, callback func(response *DeleteLifecycleHookResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateDeleteLifecycleHookRequest() (request *DeleteLifecycleHookRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteLifecycleHook", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

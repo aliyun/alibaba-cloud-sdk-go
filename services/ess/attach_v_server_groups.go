@@ -21,7 +21,6 @@ import (
 )
 
 // AttachVServerGroups invokes the ess.AttachVServerGroups API synchronously
-// api document: https://help.aliyun.com/api/ess/attachvservergroups.html
 func (client *Client) AttachVServerGroups(request *AttachVServerGroupsRequest) (response *AttachVServerGroupsResponse, err error) {
 	response = CreateAttachVServerGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AttachVServerGroups(request *AttachVServerGroupsRequest) (
 }
 
 // AttachVServerGroupsWithChan invokes the ess.AttachVServerGroups API asynchronously
-// api document: https://help.aliyun.com/api/ess/attachvservergroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachVServerGroupsWithChan(request *AttachVServerGroupsRequest) (<-chan *AttachVServerGroupsResponse, <-chan error) {
 	responseChan := make(chan *AttachVServerGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AttachVServerGroupsWithChan(request *AttachVServerGroupsRe
 }
 
 // AttachVServerGroupsWithCallback invokes the ess.AttachVServerGroups API asynchronously
-// api document: https://help.aliyun.com/api/ess/attachvservergroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachVServerGroupsWithCallback(request *AttachVServerGroupsRequest, callback func(response *AttachVServerGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) AttachVServerGroupsWithCallback(request *AttachVServerGrou
 // AttachVServerGroupsRequest is the request struct for api AttachVServerGroups
 type AttachVServerGroupsRequest struct {
 	*requests.RpcRequest
+	ClientToken          string                             `position:"Query" name:"ClientToken"`
 	ScalingGroupId       string                             `position:"Query" name:"ScalingGroupId"`
 	ForceAttach          requests.Boolean                   `position:"Query" name:"ForceAttach"`
 	ResourceOwnerAccount string                             `position:"Query" name:"ResourceOwnerAccount"`
@@ -108,6 +104,7 @@ func CreateAttachVServerGroupsRequest() (request *AttachVServerGroupsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "AttachVServerGroups", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteScalingConfiguration invokes the ess.DeleteScalingConfiguration API synchronously
-// api document: https://help.aliyun.com/api/ess/deletescalingconfiguration.html
 func (client *Client) DeleteScalingConfiguration(request *DeleteScalingConfigurationRequest) (response *DeleteScalingConfigurationResponse, err error) {
 	response = CreateDeleteScalingConfigurationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteScalingConfiguration(request *DeleteScalingConfigura
 }
 
 // DeleteScalingConfigurationWithChan invokes the ess.DeleteScalingConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/ess/deletescalingconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScalingConfigurationWithChan(request *DeleteScalingConfigurationRequest) (<-chan *DeleteScalingConfigurationResponse, <-chan error) {
 	responseChan := make(chan *DeleteScalingConfigurationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteScalingConfigurationWithChan(request *DeleteScalingC
 }
 
 // DeleteScalingConfigurationWithCallback invokes the ess.DeleteScalingConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/ess/deletescalingconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScalingConfigurationWithCallback(request *DeleteScalingConfigurationRequest, callback func(response *DeleteScalingConfigurationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDeleteScalingConfigurationRequest() (request *DeleteScalingConfigurat
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScalingConfiguration", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

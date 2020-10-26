@@ -21,7 +21,6 @@ import (
 )
 
 // RecordLifecycleActionHeartbeat invokes the ess.RecordLifecycleActionHeartbeat API synchronously
-// api document: https://help.aliyun.com/api/ess/recordlifecycleactionheartbeat.html
 func (client *Client) RecordLifecycleActionHeartbeat(request *RecordLifecycleActionHeartbeatRequest) (response *RecordLifecycleActionHeartbeatResponse, err error) {
 	response = CreateRecordLifecycleActionHeartbeatResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecordLifecycleActionHeartbeat(request *RecordLifecycleAct
 }
 
 // RecordLifecycleActionHeartbeatWithChan invokes the ess.RecordLifecycleActionHeartbeat API asynchronously
-// api document: https://help.aliyun.com/api/ess/recordlifecycleactionheartbeat.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecordLifecycleActionHeartbeatWithChan(request *RecordLifecycleActionHeartbeatRequest) (<-chan *RecordLifecycleActionHeartbeatResponse, <-chan error) {
 	responseChan := make(chan *RecordLifecycleActionHeartbeatResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecordLifecycleActionHeartbeatWithChan(request *RecordLife
 }
 
 // RecordLifecycleActionHeartbeatWithCallback invokes the ess.RecordLifecycleActionHeartbeat API asynchronously
-// api document: https://help.aliyun.com/api/ess/recordlifecycleactionheartbeat.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecordLifecycleActionHeartbeatWithCallback(request *RecordLifecycleActionHeartbeatRequest, callback func(response *RecordLifecycleActionHeartbeatResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateRecordLifecycleActionHeartbeatRequest() (request *RecordLifecycleActi
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "RecordLifecycleActionHeartbeat", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteAlarm invokes the ess.DeleteAlarm API synchronously
-// api document: https://help.aliyun.com/api/ess/deletealarm.html
 func (client *Client) DeleteAlarm(request *DeleteAlarmRequest) (response *DeleteAlarmResponse, err error) {
 	response = CreateDeleteAlarmResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteAlarm(request *DeleteAlarmRequest) (response *Delete
 }
 
 // DeleteAlarmWithChan invokes the ess.DeleteAlarm API asynchronously
-// api document: https://help.aliyun.com/api/ess/deletealarm.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAlarmWithChan(request *DeleteAlarmRequest) (<-chan *DeleteAlarmResponse, <-chan error) {
 	responseChan := make(chan *DeleteAlarmResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteAlarmWithChan(request *DeleteAlarmRequest) (<-chan *
 }
 
 // DeleteAlarmWithCallback invokes the ess.DeleteAlarm API asynchronously
-// api document: https://help.aliyun.com/api/ess/deletealarm.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAlarmWithCallback(request *DeleteAlarmRequest, callback func(response *DeleteAlarmResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDeleteAlarmRequest() (request *DeleteAlarmRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteAlarm", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

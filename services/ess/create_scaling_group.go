@@ -21,7 +21,6 @@ import (
 )
 
 // CreateScalingGroup invokes the ess.CreateScalingGroup API synchronously
-// api document: https://help.aliyun.com/api/ess/createscalinggroup.html
 func (client *Client) CreateScalingGroup(request *CreateScalingGroupRequest) (response *CreateScalingGroupResponse, err error) {
 	response = CreateCreateScalingGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateScalingGroup(request *CreateScalingGroupRequest) (re
 }
 
 // CreateScalingGroupWithChan invokes the ess.CreateScalingGroup API asynchronously
-// api document: https://help.aliyun.com/api/ess/createscalinggroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScalingGroupWithChan(request *CreateScalingGroupRequest) (<-chan *CreateScalingGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateScalingGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateScalingGroupWithChan(request *CreateScalingGroupRequ
 }
 
 // CreateScalingGroupWithCallback invokes the ess.CreateScalingGroup API asynchronously
-// api document: https://help.aliyun.com/api/ess/createscalinggroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScalingGroupWithCallback(request *CreateScalingGroupRequest, callback func(response *CreateScalingGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,12 +73,14 @@ type CreateScalingGroupRequest struct {
 	*requests.RpcRequest
 	VSwitchIds                          *[]string                          `position:"Query" name:"VSwitchIds"  type:"Repeated"`
 	SpotInstanceRemedy                  requests.Boolean                   `position:"Query" name:"SpotInstanceRemedy"`
+	ScaleOutAmountCheck                 requests.Boolean                   `position:"Query" name:"ScaleOutAmountCheck"`
 	Tag                                 *[]CreateScalingGroupTag           `position:"Query" name:"Tag"  type:"Repeated"`
 	DefaultCooldown                     requests.Integer                   `position:"Query" name:"DefaultCooldown"`
 	MultiAZPolicy                       string                             `position:"Query" name:"MultiAZPolicy"`
 	DBInstanceIds                       string                             `position:"Query" name:"DBInstanceIds"`
 	LaunchTemplateId                    string                             `position:"Query" name:"LaunchTemplateId"`
 	DesiredCapacity                     requests.Integer                   `position:"Query" name:"DesiredCapacity"`
+	CompensateWithOnDemand              requests.Boolean                   `position:"Query" name:"CompensateWithOnDemand"`
 	MinSize                             requests.Integer                   `position:"Query" name:"MinSize"`
 	OwnerId                             requests.Integer                   `position:"Query" name:"OwnerId"`
 	VSwitchId                           string                             `position:"Query" name:"VSwitchId"`
@@ -149,6 +146,7 @@ func CreateCreateScalingGroupRequest() (request *CreateScalingGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingGroup", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

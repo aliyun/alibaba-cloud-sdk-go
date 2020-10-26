@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeNotificationConfigurations invokes the ess.DescribeNotificationConfigurations API synchronously
-// api document: https://help.aliyun.com/api/ess/describenotificationconfigurations.html
 func (client *Client) DescribeNotificationConfigurations(request *DescribeNotificationConfigurationsRequest) (response *DescribeNotificationConfigurationsResponse, err error) {
 	response = CreateDescribeNotificationConfigurationsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeNotificationConfigurations(request *DescribeNotifi
 }
 
 // DescribeNotificationConfigurationsWithChan invokes the ess.DescribeNotificationConfigurations API asynchronously
-// api document: https://help.aliyun.com/api/ess/describenotificationconfigurations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNotificationConfigurationsWithChan(request *DescribeNotificationConfigurationsRequest) (<-chan *DescribeNotificationConfigurationsResponse, <-chan error) {
 	responseChan := make(chan *DescribeNotificationConfigurationsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeNotificationConfigurationsWithChan(request *Descri
 }
 
 // DescribeNotificationConfigurationsWithCallback invokes the ess.DescribeNotificationConfigurations API asynchronously
-// api document: https://help.aliyun.com/api/ess/describenotificationconfigurations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNotificationConfigurationsWithCallback(request *DescribeNotificationConfigurationsRequest, callback func(response *DescribeNotificationConfigurationsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeNotificationConfigurationsRequest() (request *DescribeNotific
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeNotificationConfigurations", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // CompleteLifecycleAction invokes the ess.CompleteLifecycleAction API synchronously
-// api document: https://help.aliyun.com/api/ess/completelifecycleaction.html
 func (client *Client) CompleteLifecycleAction(request *CompleteLifecycleActionRequest) (response *CompleteLifecycleActionResponse, err error) {
 	response = CreateCompleteLifecycleActionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CompleteLifecycleAction(request *CompleteLifecycleActionRe
 }
 
 // CompleteLifecycleActionWithChan invokes the ess.CompleteLifecycleAction API asynchronously
-// api document: https://help.aliyun.com/api/ess/completelifecycleaction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CompleteLifecycleActionWithChan(request *CompleteLifecycleActionRequest) (<-chan *CompleteLifecycleActionResponse, <-chan error) {
 	responseChan := make(chan *CompleteLifecycleActionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CompleteLifecycleActionWithChan(request *CompleteLifecycle
 }
 
 // CompleteLifecycleActionWithCallback invokes the ess.CompleteLifecycleAction API asynchronously
-// api document: https://help.aliyun.com/api/ess/completelifecycleaction.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CompleteLifecycleActionWithCallback(request *CompleteLifecycleActionRequest, callback func(response *CompleteLifecycleActionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) CompleteLifecycleActionWithCallback(request *CompleteLifec
 type CompleteLifecycleActionRequest struct {
 	*requests.RpcRequest
 	LifecycleActionToken  string           `position:"Query" name:"LifecycleActionToken"`
+	ClientToken           string           `position:"Query" name:"ClientToken"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	LifecycleHookId       string           `position:"Query" name:"LifecycleHookId"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
@@ -96,6 +92,7 @@ func CreateCompleteLifecycleActionRequest() (request *CompleteLifecycleActionReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "CompleteLifecycleAction", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

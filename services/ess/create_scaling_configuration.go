@@ -21,7 +21,6 @@ import (
 )
 
 // CreateScalingConfiguration invokes the ess.CreateScalingConfiguration API synchronously
-// api document: https://help.aliyun.com/api/ess/createscalingconfiguration.html
 func (client *Client) CreateScalingConfiguration(request *CreateScalingConfigurationRequest) (response *CreateScalingConfigurationResponse, err error) {
 	response = CreateCreateScalingConfigurationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateScalingConfiguration(request *CreateScalingConfigura
 }
 
 // CreateScalingConfigurationWithChan invokes the ess.CreateScalingConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/ess/createscalingconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScalingConfigurationWithChan(request *CreateScalingConfigurationRequest) (<-chan *CreateScalingConfigurationResponse, <-chan error) {
 	responseChan := make(chan *CreateScalingConfigurationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateScalingConfigurationWithChan(request *CreateScalingC
 }
 
 // CreateScalingConfigurationWithCallback invokes the ess.CreateScalingConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/ess/createscalingconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScalingConfigurationWithCallback(request *CreateScalingConfigurationRequest, callback func(response *CreateScalingConfigurationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,49 +71,56 @@ func (client *Client) CreateScalingConfigurationWithCallback(request *CreateScal
 // CreateScalingConfigurationRequest is the request struct for api CreateScalingConfiguration
 type CreateScalingConfigurationRequest struct {
 	*requests.RpcRequest
-	HpcClusterId                   string                                      `position:"Query" name:"HpcClusterId"`
-	SecurityEnhancementStrategy    string                                      `position:"Query" name:"SecurityEnhancementStrategy"`
-	KeyPairName                    string                                      `position:"Query" name:"KeyPairName"`
-	SpotPriceLimit                 *[]CreateScalingConfigurationSpotPriceLimit `position:"Query" name:"SpotPriceLimit"  type:"Repeated"`
-	ResourceGroupId                string                                      `position:"Query" name:"ResourceGroupId"`
-	HostName                       string                                      `position:"Query" name:"HostName"`
-	Password                       string                                      `position:"Query" name:"Password"`
-	InstanceDescription            string                                      `position:"Query" name:"InstanceDescription"`
-	SystemDiskAutoSnapshotPolicyId string                                      `position:"Query" name:"SystemDisk.AutoSnapshotPolicyId"`
-	Ipv6AddressCount               requests.Integer                            `position:"Query" name:"Ipv6AddressCount"`
-	Cpu                            requests.Integer                            `position:"Query" name:"Cpu"`
-	OwnerId                        requests.Integer                            `position:"Query" name:"OwnerId"`
-	ScalingConfigurationName       string                                      `position:"Query" name:"ScalingConfigurationName"`
-	Tags                           string                                      `position:"Query" name:"Tags"`
-	SpotStrategy                   string                                      `position:"Query" name:"SpotStrategy"`
-	InstanceName                   string                                      `position:"Query" name:"InstanceName"`
-	InternetChargeType             string                                      `position:"Query" name:"InternetChargeType"`
-	InternetMaxBandwidthIn         requests.Integer                            `position:"Query" name:"InternetMaxBandwidthIn"`
-	ImageId                        string                                      `position:"Query" name:"ImageId"`
-	Memory                         requests.Integer                            `position:"Query" name:"Memory"`
-	ClientToken                    string                                      `position:"Query" name:"ClientToken"`
-	ScalingGroupId                 string                                      `position:"Query" name:"ScalingGroupId"`
-	InstanceTypes                  *[]string                                   `position:"Query" name:"InstanceTypes"  type:"Repeated"`
-	IoOptimized                    string                                      `position:"Query" name:"IoOptimized"`
-	SecurityGroupId                string                                      `position:"Query" name:"SecurityGroupId"`
-	InternetMaxBandwidthOut        requests.Integer                            `position:"Query" name:"InternetMaxBandwidthOut"`
-	SystemDiskCategory             string                                      `position:"Query" name:"SystemDisk.Category"`
-	UserData                       string                                      `position:"Query" name:"UserData"`
-	PasswordInherit                requests.Boolean                            `position:"Query" name:"PasswordInherit"`
-	ImageName                      string                                      `position:"Query" name:"ImageName"`
-	InstanceType                   string                                      `position:"Query" name:"InstanceType"`
-	DeploymentSetId                string                                      `position:"Query" name:"DeploymentSetId"`
-	ResourceOwnerAccount           string                                      `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                   string                                      `position:"Query" name:"OwnerAccount"`
-	SystemDiskDiskName             string                                      `position:"Query" name:"SystemDisk.DiskName"`
-	RamRoleName                    string                                      `position:"Query" name:"RamRoleName"`
-	CreditSpecification            string                                      `position:"Query" name:"CreditSpecification"`
-	SecurityGroupIds               *[]string                                   `position:"Query" name:"SecurityGroupIds"  type:"Repeated"`
-	DataDisk                       *[]CreateScalingConfigurationDataDisk       `position:"Query" name:"DataDisk"  type:"Repeated"`
-	LoadBalancerWeight             requests.Integer                            `position:"Query" name:"LoadBalancerWeight"`
-	SystemDiskSize                 requests.Integer                            `position:"Query" name:"SystemDisk.Size"`
-	ImageFamily                    string                                      `position:"Query" name:"ImageFamily"`
-	SystemDiskDescription          string                                      `position:"Query" name:"SystemDisk.Description"`
+	HpcClusterId                    string                                      `position:"Query" name:"HpcClusterId"`
+	SecurityEnhancementStrategy     string                                      `position:"Query" name:"SecurityEnhancementStrategy"`
+	KeyPairName                     string                                      `position:"Query" name:"KeyPairName"`
+	SpotPriceLimit                  *[]CreateScalingConfigurationSpotPriceLimit `position:"Query" name:"SpotPriceLimit"  type:"Repeated"`
+	ResourceGroupId                 string                                      `position:"Query" name:"ResourceGroupId"`
+	PrivatePoolOptionsMatchCriteria string                                      `position:"Query" name:"PrivatePoolOptions.MatchCriteria"`
+	HostName                        string                                      `position:"Query" name:"HostName"`
+	Password                        string                                      `position:"Query" name:"Password"`
+	InstanceDescription             string                                      `position:"Query" name:"InstanceDescription"`
+	SystemDiskAutoSnapshotPolicyId  string                                      `position:"Query" name:"SystemDisk.AutoSnapshotPolicyId"`
+	PrivatePoolOptionsId            string                                      `position:"Query" name:"PrivatePoolOptions.Id"`
+	Ipv6AddressCount                requests.Integer                            `position:"Query" name:"Ipv6AddressCount"`
+	Cpu                             requests.Integer                            `position:"Query" name:"Cpu"`
+	OwnerId                         requests.Integer                            `position:"Query" name:"OwnerId"`
+	ScalingConfigurationName        string                                      `position:"Query" name:"ScalingConfigurationName"`
+	Tags                            string                                      `position:"Query" name:"Tags"`
+	SpotStrategy                    string                                      `position:"Query" name:"SpotStrategy"`
+	InstanceName                    string                                      `position:"Query" name:"InstanceName"`
+	InternetChargeType              string                                      `position:"Query" name:"InternetChargeType"`
+	ZoneId                          string                                      `position:"Query" name:"ZoneId"`
+	InternetMaxBandwidthIn          requests.Integer                            `position:"Query" name:"InternetMaxBandwidthIn"`
+	Affinity                        string                                      `position:"Query" name:"Affinity"`
+	ImageId                         string                                      `position:"Query" name:"ImageId"`
+	Memory                          requests.Integer                            `position:"Query" name:"Memory"`
+	ClientToken                     string                                      `position:"Query" name:"ClientToken"`
+	ScalingGroupId                  string                                      `position:"Query" name:"ScalingGroupId"`
+	InstanceTypes                   *[]string                                   `position:"Query" name:"InstanceTypes"  type:"Repeated"`
+	IoOptimized                     string                                      `position:"Query" name:"IoOptimized"`
+	SecurityGroupId                 string                                      `position:"Query" name:"SecurityGroupId"`
+	InternetMaxBandwidthOut         requests.Integer                            `position:"Query" name:"InternetMaxBandwidthOut"`
+	SystemDiskCategory              string                                      `position:"Query" name:"SystemDisk.Category"`
+	UserData                        string                                      `position:"Query" name:"UserData"`
+	PasswordInherit                 requests.Boolean                            `position:"Query" name:"PasswordInherit"`
+	ImageName                       string                                      `position:"Query" name:"ImageName"`
+	InstanceType                    string                                      `position:"Query" name:"InstanceType"`
+	SchedulerOptions                map[string]interface{}                      `position:"Query" name:"SchedulerOptions"`
+	DeploymentSetId                 string                                      `position:"Query" name:"DeploymentSetId"`
+	ResourceOwnerAccount            string                                      `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                    string                                      `position:"Query" name:"OwnerAccount"`
+	Tenancy                         string                                      `position:"Query" name:"Tenancy"`
+	SystemDiskDiskName              string                                      `position:"Query" name:"SystemDisk.DiskName"`
+	RamRoleName                     string                                      `position:"Query" name:"RamRoleName"`
+	DedicatedHostId                 string                                      `position:"Query" name:"DedicatedHostId"`
+	CreditSpecification             string                                      `position:"Query" name:"CreditSpecification"`
+	SecurityGroupIds                *[]string                                   `position:"Query" name:"SecurityGroupIds"  type:"Repeated"`
+	DataDisk                        *[]CreateScalingConfigurationDataDisk       `position:"Query" name:"DataDisk"  type:"Repeated"`
+	LoadBalancerWeight              requests.Integer                            `position:"Query" name:"LoadBalancerWeight"`
+	SystemDiskSize                  requests.Integer                            `position:"Query" name:"SystemDisk.Size"`
+	ImageFamily                     string                                      `position:"Query" name:"ImageFamily"`
+	SystemDiskDescription           string                                      `position:"Query" name:"SystemDisk.Description"`
 }
 
 // CreateScalingConfigurationSpotPriceLimit is a repeated param struct in CreateScalingConfigurationRequest
@@ -154,6 +156,7 @@ func CreateCreateScalingConfigurationRequest() (request *CreateScalingConfigurat
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingConfiguration", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

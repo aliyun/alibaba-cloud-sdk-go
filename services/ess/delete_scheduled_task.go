@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteScheduledTask invokes the ess.DeleteScheduledTask API synchronously
-// api document: https://help.aliyun.com/api/ess/deletescheduledtask.html
 func (client *Client) DeleteScheduledTask(request *DeleteScheduledTaskRequest) (response *DeleteScheduledTaskResponse, err error) {
 	response = CreateDeleteScheduledTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteScheduledTask(request *DeleteScheduledTaskRequest) (
 }
 
 // DeleteScheduledTaskWithChan invokes the ess.DeleteScheduledTask API asynchronously
-// api document: https://help.aliyun.com/api/ess/deletescheduledtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScheduledTaskWithChan(request *DeleteScheduledTaskRequest) (<-chan *DeleteScheduledTaskResponse, <-chan error) {
 	responseChan := make(chan *DeleteScheduledTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteScheduledTaskWithChan(request *DeleteScheduledTaskRe
 }
 
 // DeleteScheduledTaskWithCallback invokes the ess.DeleteScheduledTask API asynchronously
-// api document: https://help.aliyun.com/api/ess/deletescheduledtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScheduledTaskWithCallback(request *DeleteScheduledTaskRequest, callback func(response *DeleteScheduledTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDeleteScheduledTaskRequest() (request *DeleteScheduledTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScheduledTask", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

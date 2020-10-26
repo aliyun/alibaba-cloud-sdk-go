@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeScalingConfigurations invokes the ess.DescribeScalingConfigurations API synchronously
-// api document: https://help.aliyun.com/api/ess/describescalingconfigurations.html
 func (client *Client) DescribeScalingConfigurations(request *DescribeScalingConfigurationsRequest) (response *DescribeScalingConfigurationsResponse, err error) {
 	response = CreateDescribeScalingConfigurationsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeScalingConfigurations(request *DescribeScalingConf
 }
 
 // DescribeScalingConfigurationsWithChan invokes the ess.DescribeScalingConfigurations API asynchronously
-// api document: https://help.aliyun.com/api/ess/describescalingconfigurations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingConfigurationsWithChan(request *DescribeScalingConfigurationsRequest) (<-chan *DescribeScalingConfigurationsResponse, <-chan error) {
 	responseChan := make(chan *DescribeScalingConfigurationsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeScalingConfigurationsWithChan(request *DescribeSca
 }
 
 // DescribeScalingConfigurationsWithCallback invokes the ess.DescribeScalingConfigurations API asynchronously
-// api document: https://help.aliyun.com/api/ess/describescalingconfigurations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingConfigurationsWithCallback(request *DescribeScalingConfigurationsRequest, callback func(response *DescribeScalingConfigurationsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -121,6 +116,7 @@ func CreateDescribeScalingConfigurationsRequest() (request *DescribeScalingConfi
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingConfigurations", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

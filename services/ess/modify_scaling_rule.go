@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyScalingRule invokes the ess.ModifyScalingRule API synchronously
-// api document: https://help.aliyun.com/api/ess/modifyscalingrule.html
 func (client *Client) ModifyScalingRule(request *ModifyScalingRuleRequest) (response *ModifyScalingRuleResponse, err error) {
 	response = CreateModifyScalingRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyScalingRule(request *ModifyScalingRuleRequest) (resp
 }
 
 // ModifyScalingRuleWithChan invokes the ess.ModifyScalingRule API asynchronously
-// api document: https://help.aliyun.com/api/ess/modifyscalingrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyScalingRuleWithChan(request *ModifyScalingRuleRequest) (<-chan *ModifyScalingRuleResponse, <-chan error) {
 	responseChan := make(chan *ModifyScalingRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyScalingRuleWithChan(request *ModifyScalingRuleReques
 }
 
 // ModifyScalingRuleWithCallback invokes the ess.ModifyScalingRule API asynchronously
-// api document: https://help.aliyun.com/api/ess/modifyscalingrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyScalingRuleWithCallback(request *ModifyScalingRuleRequest, callback func(response *ModifyScalingRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +79,7 @@ type ModifyScalingRuleRequest struct {
 	ScalingRuleName          string                             `position:"Query" name:"ScalingRuleName"`
 	Cooldown                 requests.Integer                   `position:"Query" name:"Cooldown"`
 	PredictiveValueBehavior  string                             `position:"Query" name:"PredictiveValueBehavior"`
+	ScaleInEvaluationCount   requests.Integer                   `position:"Query" name:"ScaleInEvaluationCount"`
 	MetricName               string                             `position:"Query" name:"MetricName"`
 	PredictiveScalingMode    string                             `position:"Query" name:"PredictiveScalingMode"`
 	ResourceOwnerAccount     string                             `position:"Query" name:"ResourceOwnerAccount"`
@@ -94,6 +90,7 @@ type ModifyScalingRuleRequest struct {
 	AdjustmentType           string                             `position:"Query" name:"AdjustmentType"`
 	OwnerId                  requests.Integer                   `position:"Query" name:"OwnerId"`
 	PredictiveValueBuffer    requests.Integer                   `position:"Query" name:"PredictiveValueBuffer"`
+	ScaleOutEvaluationCount  requests.Integer                   `position:"Query" name:"ScaleOutEvaluationCount"`
 	MinAdjustmentMagnitude   requests.Integer                   `position:"Query" name:"MinAdjustmentMagnitude"`
 	TargetValue              requests.Float                     `position:"Query" name:"TargetValue"`
 }
@@ -117,6 +114,7 @@ func CreateModifyScalingRuleRequest() (request *ModifyScalingRuleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyScalingRule", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

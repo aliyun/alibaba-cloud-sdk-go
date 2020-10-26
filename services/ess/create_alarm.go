@@ -21,7 +21,6 @@ import (
 )
 
 // CreateAlarm invokes the ess.CreateAlarm API synchronously
-// api document: https://help.aliyun.com/api/ess/createalarm.html
 func (client *Client) CreateAlarm(request *CreateAlarmRequest) (response *CreateAlarmResponse, err error) {
 	response = CreateCreateAlarmResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateAlarm(request *CreateAlarmRequest) (response *Create
 }
 
 // CreateAlarmWithChan invokes the ess.CreateAlarm API asynchronously
-// api document: https://help.aliyun.com/api/ess/createalarm.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAlarmWithChan(request *CreateAlarmRequest) (<-chan *CreateAlarmResponse, <-chan error) {
 	responseChan := make(chan *CreateAlarmResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateAlarmWithChan(request *CreateAlarmRequest) (<-chan *
 }
 
 // CreateAlarmWithCallback invokes the ess.CreateAlarm API asynchronously
-// api document: https://help.aliyun.com/api/ess/createalarm.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAlarmWithCallback(request *CreateAlarmRequest, callback func(response *CreateAlarmResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +76,7 @@ type CreateAlarmRequest struct {
 	Description          string                  `position:"Query" name:"Description"`
 	AlarmAction          *[]string               `position:"Query" name:"AlarmAction"  type:"Repeated"`
 	Threshold            requests.Float          `position:"Query" name:"Threshold"`
+	Effective            string                  `position:"Query" name:"Effective"`
 	EvaluationCount      requests.Integer        `position:"Query" name:"EvaluationCount"`
 	MetricName           string                  `position:"Query" name:"MetricName"`
 	Dimension            *[]CreateAlarmDimension `position:"Query" name:"Dimension"  type:"Repeated"`
@@ -112,6 +108,7 @@ func CreateCreateAlarmRequest() (request *CreateAlarmRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "CreateAlarm", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

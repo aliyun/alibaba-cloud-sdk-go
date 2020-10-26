@@ -46,9 +46,11 @@ type ScalingGroup struct {
 	OnDemandBaseCapacity                int                `json:"OnDemandBaseCapacity" xml:"OnDemandBaseCapacity"`
 	OnDemandPercentageAboveBaseCapacity int                `json:"OnDemandPercentageAboveBaseCapacity" xml:"OnDemandPercentageAboveBaseCapacity"`
 	SpotInstanceRemedy                  bool               `json:"SpotInstanceRemedy" xml:"SpotInstanceRemedy"`
+	CompensateWithOnDemand              bool               `json:"CompensateWithOnDemand" xml:"CompensateWithOnDemand"`
 	SpotInstancePools                   int                `json:"SpotInstancePools" xml:"SpotInstancePools"`
 	DesiredCapacity                     int                `json:"DesiredCapacity" xml:"DesiredCapacity"`
 	GroupDeletionProtection             bool               `json:"GroupDeletionProtection" xml:"GroupDeletionProtection"`
+	ScaleOutAmountCheck                 bool               `json:"ScaleOutAmountCheck" xml:"ScaleOutAmountCheck"`
 	VSwitchIds                          VSwitchIds         `json:"VSwitchIds" xml:"VSwitchIds"`
 	RemovalPolicies                     RemovalPolicies    `json:"RemovalPolicies" xml:"RemovalPolicies"`
 	DBInstanceIds                       DBInstanceIds      `json:"DBInstanceIds" xml:"DBInstanceIds"`

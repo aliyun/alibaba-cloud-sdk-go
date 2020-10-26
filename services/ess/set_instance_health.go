@@ -21,7 +21,6 @@ import (
 )
 
 // SetInstanceHealth invokes the ess.SetInstanceHealth API synchronously
-// api document: https://help.aliyun.com/api/ess/setinstancehealth.html
 func (client *Client) SetInstanceHealth(request *SetInstanceHealthRequest) (response *SetInstanceHealthResponse, err error) {
 	response = CreateSetInstanceHealthResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetInstanceHealth(request *SetInstanceHealthRequest) (resp
 }
 
 // SetInstanceHealthWithChan invokes the ess.SetInstanceHealth API asynchronously
-// api document: https://help.aliyun.com/api/ess/setinstancehealth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetInstanceHealthWithChan(request *SetInstanceHealthRequest) (<-chan *SetInstanceHealthResponse, <-chan error) {
 	responseChan := make(chan *SetInstanceHealthResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetInstanceHealthWithChan(request *SetInstanceHealthReques
 }
 
 // SetInstanceHealthWithCallback invokes the ess.SetInstanceHealth API asynchronously
-// api document: https://help.aliyun.com/api/ess/setinstancehealth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetInstanceHealthWithCallback(request *SetInstanceHealthRequest, callback func(response *SetInstanceHealthResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateSetInstanceHealthRequest() (request *SetInstanceHealthRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "SetInstanceHealth", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

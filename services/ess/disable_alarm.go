@@ -21,7 +21,6 @@ import (
 )
 
 // DisableAlarm invokes the ess.DisableAlarm API synchronously
-// api document: https://help.aliyun.com/api/ess/disablealarm.html
 func (client *Client) DisableAlarm(request *DisableAlarmRequest) (response *DisableAlarmResponse, err error) {
 	response = CreateDisableAlarmResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisableAlarm(request *DisableAlarmRequest) (response *Disa
 }
 
 // DisableAlarmWithChan invokes the ess.DisableAlarm API asynchronously
-// api document: https://help.aliyun.com/api/ess/disablealarm.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableAlarmWithChan(request *DisableAlarmRequest) (<-chan *DisableAlarmResponse, <-chan error) {
 	responseChan := make(chan *DisableAlarmResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisableAlarmWithChan(request *DisableAlarmRequest) (<-chan
 }
 
 // DisableAlarmWithCallback invokes the ess.DisableAlarm API asynchronously
-// api document: https://help.aliyun.com/api/ess/disablealarm.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableAlarmWithCallback(request *DisableAlarmRequest, callback func(response *DisableAlarmResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDisableAlarmRequest() (request *DisableAlarmRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DisableAlarm", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

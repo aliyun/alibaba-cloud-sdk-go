@@ -22,6 +22,7 @@ type Alarm struct {
 	Period             int                        `json:"Period" xml:"Period"`
 	Threshold          float64                    `json:"Threshold" xml:"Threshold"`
 	AlarmTaskId        string                     `json:"AlarmTaskId" xml:"AlarmTaskId"`
+	Effective          string                     `json:"Effective" xml:"Effective"`
 	ComparisonOperator string                     `json:"ComparisonOperator" xml:"ComparisonOperator"`
 	State              string                     `json:"State" xml:"State"`
 	Enable             bool                       `json:"Enable" xml:"Enable"`

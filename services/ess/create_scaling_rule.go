@@ -21,7 +21,6 @@ import (
 )
 
 // CreateScalingRule invokes the ess.CreateScalingRule API synchronously
-// api document: https://help.aliyun.com/api/ess/createscalingrule.html
 func (client *Client) CreateScalingRule(request *CreateScalingRuleRequest) (response *CreateScalingRuleResponse, err error) {
 	response = CreateCreateScalingRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateScalingRule(request *CreateScalingRuleRequest) (resp
 }
 
 // CreateScalingRuleWithChan invokes the ess.CreateScalingRule API asynchronously
-// api document: https://help.aliyun.com/api/ess/createscalingrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScalingRuleWithChan(request *CreateScalingRuleRequest) (<-chan *CreateScalingRuleResponse, <-chan error) {
 	responseChan := make(chan *CreateScalingRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateScalingRuleWithChan(request *CreateScalingRuleReques
 }
 
 // CreateScalingRuleWithCallback invokes the ess.CreateScalingRule API asynchronously
-// api document: https://help.aliyun.com/api/ess/createscalingrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScalingRuleWithCallback(request *CreateScalingRuleRequest, callback func(response *CreateScalingRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +78,7 @@ type CreateScalingRuleRequest struct {
 	ScalingRuleName          string                             `position:"Query" name:"ScalingRuleName"`
 	Cooldown                 requests.Integer                   `position:"Query" name:"Cooldown"`
 	PredictiveValueBehavior  string                             `position:"Query" name:"PredictiveValueBehavior"`
+	ScaleInEvaluationCount   requests.Integer                   `position:"Query" name:"ScaleInEvaluationCount"`
 	ScalingRuleType          string                             `position:"Query" name:"ScalingRuleType"`
 	MetricName               string                             `position:"Query" name:"MetricName"`
 	PredictiveScalingMode    string                             `position:"Query" name:"PredictiveScalingMode"`
@@ -94,6 +90,7 @@ type CreateScalingRuleRequest struct {
 	AdjustmentType           string                             `position:"Query" name:"AdjustmentType"`
 	OwnerId                  requests.Integer                   `position:"Query" name:"OwnerId"`
 	PredictiveValueBuffer    requests.Integer                   `position:"Query" name:"PredictiveValueBuffer"`
+	ScaleOutEvaluationCount  requests.Integer                   `position:"Query" name:"ScaleOutEvaluationCount"`
 	MinAdjustmentMagnitude   requests.Integer                   `position:"Query" name:"MinAdjustmentMagnitude"`
 	TargetValue              requests.Float                     `position:"Query" name:"TargetValue"`
 }
@@ -119,6 +116,7 @@ func CreateCreateScalingRuleRequest() (request *CreateScalingRuleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingRule", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveInstances invokes the ess.RemoveInstances API synchronously
-// api document: https://help.aliyun.com/api/ess/removeinstances.html
 func (client *Client) RemoveInstances(request *RemoveInstancesRequest) (response *RemoveInstancesResponse, err error) {
 	response = CreateRemoveInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveInstances(request *RemoveInstancesRequest) (response
 }
 
 // RemoveInstancesWithChan invokes the ess.RemoveInstances API asynchronously
-// api document: https://help.aliyun.com/api/ess/removeinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveInstancesWithChan(request *RemoveInstancesRequest) (<-chan *RemoveInstancesResponse, <-chan error) {
 	responseChan := make(chan *RemoveInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveInstancesWithChan(request *RemoveInstancesRequest) (
 }
 
 // RemoveInstancesWithCallback invokes the ess.RemoveInstances API asynchronously
-// api document: https://help.aliyun.com/api/ess/removeinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveInstancesWithCallback(request *RemoveInstancesRequest, callback func(response *RemoveInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateRemoveInstancesRequest() (request *RemoveInstancesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "RemoveInstances", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

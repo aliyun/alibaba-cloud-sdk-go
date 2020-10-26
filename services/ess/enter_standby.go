@@ -21,7 +21,6 @@ import (
 )
 
 // EnterStandby invokes the ess.EnterStandby API synchronously
-// api document: https://help.aliyun.com/api/ess/enterstandby.html
 func (client *Client) EnterStandby(request *EnterStandbyRequest) (response *EnterStandbyResponse, err error) {
 	response = CreateEnterStandbyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnterStandby(request *EnterStandbyRequest) (response *Ente
 }
 
 // EnterStandbyWithChan invokes the ess.EnterStandby API asynchronously
-// api document: https://help.aliyun.com/api/ess/enterstandby.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnterStandbyWithChan(request *EnterStandbyRequest) (<-chan *EnterStandbyResponse, <-chan error) {
 	responseChan := make(chan *EnterStandbyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnterStandbyWithChan(request *EnterStandbyRequest) (<-chan
 }
 
 // EnterStandbyWithCallback invokes the ess.EnterStandby API asynchronously
-// api document: https://help.aliyun.com/api/ess/enterstandby.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnterStandbyWithCallback(request *EnterStandbyRequest, callback func(response *EnterStandbyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,9 @@ func (client *Client) EnterStandbyWithCallback(request *EnterStandbyRequest, cal
 // EnterStandbyRequest is the request struct for api EnterStandby
 type EnterStandbyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 }
@@ -94,6 +90,7 @@ func CreateEnterStandbyRequest() (request *EnterStandbyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "EnterStandby", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

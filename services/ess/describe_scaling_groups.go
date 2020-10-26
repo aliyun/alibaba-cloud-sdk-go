@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeScalingGroups invokes the ess.DescribeScalingGroups API synchronously
-// api document: https://help.aliyun.com/api/ess/describescalinggroups.html
 func (client *Client) DescribeScalingGroups(request *DescribeScalingGroupsRequest) (response *DescribeScalingGroupsResponse, err error) {
 	response = CreateDescribeScalingGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeScalingGroups(request *DescribeScalingGroupsReques
 }
 
 // DescribeScalingGroupsWithChan invokes the ess.DescribeScalingGroups API asynchronously
-// api document: https://help.aliyun.com/api/ess/describescalinggroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingGroupsWithChan(request *DescribeScalingGroupsRequest) (<-chan *DescribeScalingGroupsResponse, <-chan error) {
 	responseChan := make(chan *DescribeScalingGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeScalingGroupsWithChan(request *DescribeScalingGrou
 }
 
 // DescribeScalingGroupsWithCallback invokes the ess.DescribeScalingGroups API asynchronously
-// api document: https://help.aliyun.com/api/ess/describescalinggroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingGroupsWithCallback(request *DescribeScalingGroupsRequest, callback func(response *DescribeScalingGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -140,6 +135,7 @@ func CreateDescribeScalingGroupsRequest() (request *DescribeScalingGroupsRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingGroups", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

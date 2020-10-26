@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyScheduledTask invokes the ess.ModifyScheduledTask API synchronously
-// api document: https://help.aliyun.com/api/ess/modifyscheduledtask.html
 func (client *Client) ModifyScheduledTask(request *ModifyScheduledTaskRequest) (response *ModifyScheduledTaskResponse, err error) {
 	response = CreateModifyScheduledTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyScheduledTask(request *ModifyScheduledTaskRequest) (
 }
 
 // ModifyScheduledTaskWithChan invokes the ess.ModifyScheduledTask API asynchronously
-// api document: https://help.aliyun.com/api/ess/modifyscheduledtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyScheduledTaskWithChan(request *ModifyScheduledTaskRequest) (<-chan *ModifyScheduledTaskResponse, <-chan error) {
 	responseChan := make(chan *ModifyScheduledTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyScheduledTaskWithChan(request *ModifyScheduledTaskRe
 }
 
 // ModifyScheduledTaskWithCallback invokes the ess.ModifyScheduledTask API asynchronously
-// api document: https://help.aliyun.com/api/ess/modifyscheduledtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyScheduledTaskWithCallback(request *ModifyScheduledTaskRequest, callback func(response *ModifyScheduledTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -108,6 +103,7 @@ func CreateModifyScheduledTaskRequest() (request *ModifyScheduledTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyScheduledTask", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

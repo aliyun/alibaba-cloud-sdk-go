@@ -32,6 +32,8 @@ type ScalingRule struct {
 	MetricName               string          `json:"MetricName" xml:"MetricName"`
 	TargetValue              float64         `json:"TargetValue" xml:"TargetValue"`
 	DisableScaleIn           bool            `json:"DisableScaleIn" xml:"DisableScaleIn"`
+	ScaleInEvaluationCount   int             `json:"ScaleInEvaluationCount" xml:"ScaleInEvaluationCount"`
+	ScaleOutEvaluationCount  int             `json:"ScaleOutEvaluationCount" xml:"ScaleOutEvaluationCount"`
 	PredictiveScalingMode    string          `json:"PredictiveScalingMode" xml:"PredictiveScalingMode"`
 	PredictiveValueBehavior  string          `json:"PredictiveValueBehavior" xml:"PredictiveValueBehavior"`
 	PredictiveValueBuffer    int             `json:"PredictiveValueBuffer" xml:"PredictiveValueBuffer"`

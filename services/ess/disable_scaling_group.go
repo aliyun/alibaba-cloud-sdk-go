@@ -21,7 +21,6 @@ import (
 )
 
 // DisableScalingGroup invokes the ess.DisableScalingGroup API synchronously
-// api document: https://help.aliyun.com/api/ess/disablescalinggroup.html
 func (client *Client) DisableScalingGroup(request *DisableScalingGroupRequest) (response *DisableScalingGroupResponse, err error) {
 	response = CreateDisableScalingGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisableScalingGroup(request *DisableScalingGroupRequest) (
 }
 
 // DisableScalingGroupWithChan invokes the ess.DisableScalingGroup API asynchronously
-// api document: https://help.aliyun.com/api/ess/disablescalinggroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableScalingGroupWithChan(request *DisableScalingGroupRequest) (<-chan *DisableScalingGroupResponse, <-chan error) {
 	responseChan := make(chan *DisableScalingGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisableScalingGroupWithChan(request *DisableScalingGroupRe
 }
 
 // DisableScalingGroupWithCallback invokes the ess.DisableScalingGroup API asynchronously
-// api document: https://help.aliyun.com/api/ess/disablescalinggroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableScalingGroupWithCallback(request *DisableScalingGroupRequest, callback func(response *DisableScalingGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateDisableScalingGroupRequest() (request *DisableScalingGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "DisableScalingGroup", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

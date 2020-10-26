@@ -21,7 +21,6 @@ import (
 )
 
 // SetGroupDeletionProtection invokes the ess.SetGroupDeletionProtection API synchronously
-// api document: https://help.aliyun.com/api/ess/setgroupdeletionprotection.html
 func (client *Client) SetGroupDeletionProtection(request *SetGroupDeletionProtectionRequest) (response *SetGroupDeletionProtectionResponse, err error) {
 	response = CreateSetGroupDeletionProtectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetGroupDeletionProtection(request *SetGroupDeletionProtec
 }
 
 // SetGroupDeletionProtectionWithChan invokes the ess.SetGroupDeletionProtection API asynchronously
-// api document: https://help.aliyun.com/api/ess/setgroupdeletionprotection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetGroupDeletionProtectionWithChan(request *SetGroupDeletionProtectionRequest) (<-chan *SetGroupDeletionProtectionResponse, <-chan error) {
 	responseChan := make(chan *SetGroupDeletionProtectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetGroupDeletionProtectionWithChan(request *SetGroupDeleti
 }
 
 // SetGroupDeletionProtectionWithCallback invokes the ess.SetGroupDeletionProtection API asynchronously
-// api document: https://help.aliyun.com/api/ess/setgroupdeletionprotection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetGroupDeletionProtectionWithCallback(request *SetGroupDeletionProtectionRequest, callback func(response *SetGroupDeletionProtectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateSetGroupDeletionProtectionRequest() (request *SetGroupDeletionProtect
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "SetGroupDeletionProtection", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

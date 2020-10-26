@@ -21,7 +21,6 @@ import (
 )
 
 // ExecuteScalingRule invokes the ess.ExecuteScalingRule API synchronously
-// api document: https://help.aliyun.com/api/ess/executescalingrule.html
 func (client *Client) ExecuteScalingRule(request *ExecuteScalingRuleRequest) (response *ExecuteScalingRuleResponse, err error) {
 	response = CreateExecuteScalingRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExecuteScalingRule(request *ExecuteScalingRuleRequest) (re
 }
 
 // ExecuteScalingRuleWithChan invokes the ess.ExecuteScalingRule API asynchronously
-// api document: https://help.aliyun.com/api/ess/executescalingrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteScalingRuleWithChan(request *ExecuteScalingRuleRequest) (<-chan *ExecuteScalingRuleResponse, <-chan error) {
 	responseChan := make(chan *ExecuteScalingRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExecuteScalingRuleWithChan(request *ExecuteScalingRuleRequ
 }
 
 // ExecuteScalingRuleWithCallback invokes the ess.ExecuteScalingRule API asynchronously
-// api document: https://help.aliyun.com/api/ess/executescalingrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteScalingRuleWithCallback(request *ExecuteScalingRuleRequest, callback func(response *ExecuteScalingRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateExecuteScalingRuleRequest() (request *ExecuteScalingRuleRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "ExecuteScalingRule", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

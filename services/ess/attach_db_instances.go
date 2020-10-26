@@ -21,7 +21,6 @@ import (
 )
 
 // AttachDBInstances invokes the ess.AttachDBInstances API synchronously
-// api document: https://help.aliyun.com/api/ess/attachdbinstances.html
 func (client *Client) AttachDBInstances(request *AttachDBInstancesRequest) (response *AttachDBInstancesResponse, err error) {
 	response = CreateAttachDBInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AttachDBInstances(request *AttachDBInstancesRequest) (resp
 }
 
 // AttachDBInstancesWithChan invokes the ess.AttachDBInstances API asynchronously
-// api document: https://help.aliyun.com/api/ess/attachdbinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachDBInstancesWithChan(request *AttachDBInstancesRequest) (<-chan *AttachDBInstancesResponse, <-chan error) {
 	responseChan := make(chan *AttachDBInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AttachDBInstancesWithChan(request *AttachDBInstancesReques
 }
 
 // AttachDBInstancesWithCallback invokes the ess.AttachDBInstances API asynchronously
-// api document: https://help.aliyun.com/api/ess/attachdbinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachDBInstancesWithCallback(request *AttachDBInstancesRequest, callback func(response *AttachDBInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) AttachDBInstancesWithCallback(request *AttachDBInstancesRe
 // AttachDBInstancesRequest is the request struct for api AttachDBInstances
 type AttachDBInstancesRequest struct {
 	*requests.RpcRequest
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	ForceAttach          requests.Boolean `position:"Query" name:"ForceAttach"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -95,6 +91,7 @@ func CreateAttachDBInstancesRequest() (request *AttachDBInstancesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Ess", "2014-08-28", "AttachDBInstances", "ess", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
