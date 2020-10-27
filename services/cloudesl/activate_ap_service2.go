@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteStore invokes the cloudesl.DeleteStore API synchronously
-func (client *Client) DeleteStore(request *DeleteStoreRequest) (response *DeleteStoreResponse, err error) {
-	response = CreateDeleteStoreResponse()
+// ActivateApService2 invokes the cloudesl.ActivateApService2 API synchronously
+func (client *Client) ActivateApService2(request *ActivateApService2Request) (response *ActivateApService2Response, err error) {
+	response = CreateActivateApService2Response()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteStoreWithChan invokes the cloudesl.DeleteStore API asynchronously
-func (client *Client) DeleteStoreWithChan(request *DeleteStoreRequest) (<-chan *DeleteStoreResponse, <-chan error) {
-	responseChan := make(chan *DeleteStoreResponse, 1)
+// ActivateApService2WithChan invokes the cloudesl.ActivateApService2 API asynchronously
+func (client *Client) ActivateApService2WithChan(request *ActivateApService2Request) (<-chan *ActivateApService2Response, <-chan error) {
+	responseChan := make(chan *ActivateApService2Response, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteStore(request)
+		response, err := client.ActivateApService2(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteStoreWithChan(request *DeleteStoreRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// DeleteStoreWithCallback invokes the cloudesl.DeleteStore API asynchronously
-func (client *Client) DeleteStoreWithCallback(request *DeleteStoreRequest, callback func(response *DeleteStoreResponse, err error)) <-chan int {
+// ActivateApService2WithCallback invokes the cloudesl.ActivateApService2 API asynchronously
+func (client *Client) ActivateApService2WithCallback(request *ActivateApService2Request, callback func(response *ActivateApService2Response, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteStoreResponse
+		var response *ActivateApService2Response
 		var err error
 		defer close(result)
-		response, err = client.DeleteStore(request)
+		response, err = client.ActivateApService2(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,34 +68,36 @@ func (client *Client) DeleteStoreWithCallback(request *DeleteStoreRequest, callb
 	return result
 }
 
-// DeleteStoreRequest is the request struct for api DeleteStore
-type DeleteStoreRequest struct {
+// ActivateApService2Request is the request struct for api ActivateApService2
+type ActivateApService2Request struct {
 	*requests.RpcRequest
+	ApMac   string `position:"Query" name:"ApMac"`
 	StoreId string `position:"Query" name:"StoreId"`
 }
 
-// DeleteStoreResponse is the response struct for api DeleteStore
-type DeleteStoreResponse struct {
+// ActivateApService2Response is the response struct for api ActivateApService2
+type ActivateApService2Response struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
 	Message   string `json:"Message" xml:"Message"`
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	Code      string `json:"Code" xml:"Code"`
 }
 
-// CreateDeleteStoreRequest creates a request to invoke DeleteStore API
-func CreateDeleteStoreRequest() (request *DeleteStoreRequest) {
-	request = &DeleteStoreRequest{
+// CreateActivateApService2Request creates a request to invoke ActivateApService2 API
+func CreateActivateApService2Request() (request *ActivateApService2Request) {
+	request = &ActivateApService2Request{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2018-08-01", "DeleteStore", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2018-08-01", "ActivateApService2", "cloudesl", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteStoreResponse creates a response to parse from DeleteStore response
-func CreateDeleteStoreResponse() (response *DeleteStoreResponse) {
-	response = &DeleteStoreResponse{
+// CreateActivateApService2Response creates a response to parse from ActivateApService2 response
+func CreateActivateApService2Response() (response *ActivateApService2Response) {
+	response = &ActivateApService2Response{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// BindEslDevice invokes the cloudesl.BindEslDevice API synchronously
-func (client *Client) BindEslDevice(request *BindEslDeviceRequest) (response *BindEslDeviceResponse, err error) {
-	response = CreateBindEslDeviceResponse()
+// DeleteItem invokes the cloudesl.DeleteItem API synchronously
+func (client *Client) DeleteItem(request *DeleteItemRequest) (response *DeleteItemResponse, err error) {
+	response = CreateDeleteItemResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// BindEslDeviceWithChan invokes the cloudesl.BindEslDevice API asynchronously
-func (client *Client) BindEslDeviceWithChan(request *BindEslDeviceRequest) (<-chan *BindEslDeviceResponse, <-chan error) {
-	responseChan := make(chan *BindEslDeviceResponse, 1)
+// DeleteItemWithChan invokes the cloudesl.DeleteItem API asynchronously
+func (client *Client) DeleteItemWithChan(request *DeleteItemRequest) (<-chan *DeleteItemResponse, <-chan error) {
+	responseChan := make(chan *DeleteItemResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.BindEslDevice(request)
+		response, err := client.DeleteItem(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) BindEslDeviceWithChan(request *BindEslDeviceRequest) (<-ch
 	return responseChan, errChan
 }
 
-// BindEslDeviceWithCallback invokes the cloudesl.BindEslDevice API asynchronously
-func (client *Client) BindEslDeviceWithCallback(request *BindEslDeviceRequest, callback func(response *BindEslDeviceResponse, err error)) <-chan int {
+// DeleteItemWithCallback invokes the cloudesl.DeleteItem API asynchronously
+func (client *Client) DeleteItemWithCallback(request *DeleteItemRequest, callback func(response *DeleteItemResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *BindEslDeviceResponse
+		var response *DeleteItemResponse
 		var err error
 		defer close(result)
-		response, err = client.BindEslDevice(request)
+		response, err = client.DeleteItem(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,16 +68,15 @@ func (client *Client) BindEslDeviceWithCallback(request *BindEslDeviceRequest, c
 	return result
 }
 
-// BindEslDeviceRequest is the request struct for api BindEslDevice
-type BindEslDeviceRequest struct {
+// DeleteItemRequest is the request struct for api DeleteItem
+type DeleteItemRequest struct {
 	*requests.RpcRequest
 	StoreId     string `position:"Query" name:"StoreId"`
-	EslBarCode  string `position:"Query" name:"EslBarCode"`
 	ItemBarCode string `position:"Query" name:"ItemBarCode"`
 }
 
-// BindEslDeviceResponse is the response struct for api BindEslDevice
-type BindEslDeviceResponse struct {
+// DeleteItemResponse is the response struct for api DeleteItem
+type DeleteItemResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
@@ -85,19 +84,19 @@ type BindEslDeviceResponse struct {
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 }
 
-// CreateBindEslDeviceRequest creates a request to invoke BindEslDevice API
-func CreateBindEslDeviceRequest() (request *BindEslDeviceRequest) {
-	request = &BindEslDeviceRequest{
+// CreateDeleteItemRequest creates a request to invoke DeleteItem API
+func CreateDeleteItemRequest() (request *DeleteItemRequest) {
+	request = &DeleteItemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2018-08-01", "BindEslDevice", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2018-08-01", "DeleteItem", "cloudesl", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateBindEslDeviceResponse creates a response to parse from BindEslDevice response
-func CreateBindEslDeviceResponse() (response *BindEslDeviceResponse) {
-	response = &BindEslDeviceResponse{
+// CreateDeleteItemResponse creates a response to parse from DeleteItem response
+func CreateDeleteItemResponse() (response *DeleteItemResponse) {
+	response = &DeleteItemResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

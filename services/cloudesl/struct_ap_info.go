@@ -17,10 +17,8 @@ package cloudesl
 
 // ApInfo is a nested struct in cloudesl response
 type ApInfo struct {
+	IsActivate bool   `json:"IsActivate" xml:"IsActivate"`
 	Mac        string `json:"Mac" xml:"Mac"`
-	Status     bool   `json:"Status" xml:"Status"`
 	Model      string `json:"Model" xml:"Model"`
-	Remark     string `json:"Remark" xml:"Remark"`
-	StoreId    string `json:"StoreId" xml:"StoreId"`
-	BeActivate bool   `json:"BeActivate" xml:"BeActivate"`
+	Status     bool   `json:"Status" xml:"Status"`
 }

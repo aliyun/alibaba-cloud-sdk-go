@@ -71,32 +71,32 @@ func (client *Client) DescribeEslDevicesWithCallback(request *DescribeEslDevices
 // DescribeEslDevicesRequest is the request struct for api DescribeEslDevices
 type DescribeEslDevicesRequest struct {
 	*requests.RpcRequest
-	ExtraParams      string           `position:"Body" name:"ExtraParams"`
-	Type             string           `position:"Body" name:"Type"`
-	StoreId          string           `position:"Body" name:"StoreId"`
-	PageNumber       requests.Integer `position:"Body" name:"PageNumber"`
-	EslBarCode       string           `position:"Body" name:"EslBarCode"`
-	PageSize         requests.Integer `position:"Body" name:"PageSize"`
-	EslStatus        string           `position:"Body" name:"EslStatus"`
-	ToBatteryLevel   requests.Integer `position:"Body" name:"ToBatteryLevel"`
-	FromBatteryLevel requests.Integer `position:"Body" name:"FromBatteryLevel"`
+	StoreId          string           `position:"Query" name:"StoreId"`
+	Type             string           `position:"Query" name:"Type"`
+	Mac              string           `position:"Query" name:"Mac"`
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
+	EslBarCode       string           `position:"Query" name:"EslBarCode"`
+	Vendor           string           `position:"Query" name:"Vendor"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	ItemBarCode      string           `position:"Query" name:"ItemBarCode"`
+	EslStatus        string           `position:"Query" name:"EslStatus"`
+	ToBatteryLevel   requests.Integer `position:"Query" name:"ToBatteryLevel"`
+	FromBatteryLevel requests.Integer `position:"Query" name:"FromBatteryLevel"`
+	ShelfCode        string           `position:"Query" name:"ShelfCode"`
+	BeBind           requests.Boolean `position:"Query" name:"BeBind"`
 }
 
 // DescribeEslDevicesResponse is the response struct for api DescribeEslDevices
 type DescribeEslDevicesResponse struct {
 	*responses.BaseResponse
-	ErrorMessage   string          `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode      string          `json:"ErrorCode" xml:"ErrorCode"`
-	PageSize       int             `json:"PageSize" xml:"PageSize"`
-	Message        string          `json:"Message" xml:"Message"`
-	TotalCount     int             `json:"TotalCount" xml:"TotalCount"`
-	DynamicCode    string          `json:"DynamicCode" xml:"DynamicCode"`
-	Code           string          `json:"Code" xml:"Code"`
-	PageNumber     int             `json:"PageNumber" xml:"PageNumber"`
-	DynamicMessage string          `json:"DynamicMessage" xml:"DynamicMessage"`
-	RequestId      string          `json:"RequestId" xml:"RequestId"`
-	Success        bool            `json:"Success" xml:"Success"`
-	EslDevices     []EslDeviceInfo `json:"EslDevices" xml:"EslDevices"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	Success    bool       `json:"Success" xml:"Success"`
+	Message    string     `json:"Message" xml:"Message"`
+	ErrorCode  string     `json:"ErrorCode" xml:"ErrorCode"`
+	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int        `json:"PageSize" xml:"PageSize"`
+	EslDevices EslDevices `json:"EslDevices" xml:"EslDevices"`
 }
 
 // CreateDescribeEslDevicesRequest creates a request to invoke DescribeEslDevices API
@@ -104,7 +104,7 @@ func CreateDescribeEslDevicesRequest() (request *DescribeEslDevicesRequest) {
 	request = &DescribeEslDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeEslDevices", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2018-08-01", "DescribeEslDevices", "cloudesl", "openAPI")
 	request.Method = requests.POST
 	return
 }

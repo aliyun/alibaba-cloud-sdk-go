@@ -71,26 +71,24 @@ func (client *Client) CreateStoreWithCallback(request *CreateStoreRequest, callb
 // CreateStoreRequest is the request struct for api CreateStore
 type CreateStoreRequest struct {
 	*requests.RpcRequest
-	ExtraParams   string `position:"Body" name:"ExtraParams"`
-	ClientToken   string `position:"Body" name:"ClientToken"`
-	StoreName     string `position:"Body" name:"StoreName"`
-	ParentId      string `position:"Body" name:"ParentId"`
-	UserStoreCode string `position:"Body" name:"UserStoreCode"`
-	Phone         string `position:"Body" name:"Phone"`
+	StoreName string `position:"Query" name:"StoreName"`
+	ParentId  string `position:"Query" name:"ParentId"`
+	CompanyId string `position:"Query" name:"CompanyId"`
+	Brand     string `position:"Query" name:"Brand"`
+	Comments  string `position:"Query" name:"Comments"`
+	Groups    string `position:"Query" name:"Groups"`
+	Phone     string `position:"Query" name:"Phone"`
+	OutId     string `position:"Query" name:"OutId"`
 }
 
 // CreateStoreResponse is the response struct for api CreateStore
 type CreateStoreResponse struct {
 	*responses.BaseResponse
-	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
-	Message        string `json:"Message" xml:"Message"`
-	StoreId        string `json:"StoreId" xml:"StoreId"`
-	DynamicCode    string `json:"DynamicCode" xml:"DynamicCode"`
-	Code           string `json:"Code" xml:"Code"`
-	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Message   string `json:"Message" xml:"Message"`
+	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
+	StoreId   string `json:"StoreId" xml:"StoreId"`
 }
 
 // CreateCreateStoreRequest creates a request to invoke CreateStore API
@@ -98,7 +96,7 @@ func CreateCreateStoreRequest() (request *CreateStoreRequest) {
 	request = &CreateStoreRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "CreateStore", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2018-08-01", "CreateStore", "cloudesl", "openAPI")
 	request.Method = requests.POST
 	return
 }

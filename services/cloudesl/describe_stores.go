@@ -71,31 +71,27 @@ func (client *Client) DescribeStoresWithCallback(request *DescribeStoresRequest,
 // DescribeStoresRequest is the request struct for api DescribeStores
 type DescribeStoresRequest struct {
 	*requests.RpcRequest
-	ExtraParams   string           `position:"Body" name:"ExtraParams"`
-	StoreName     string           `position:"Body" name:"StoreName"`
-	StoreId       string           `position:"Body" name:"StoreId"`
-	PageNumber    requests.Integer `position:"Body" name:"PageNumber"`
-	FromDate      string           `position:"Body" name:"FromDate"`
-	ToDate        string           `position:"Body" name:"ToDate"`
-	PageSize      requests.Integer `position:"Body" name:"PageSize"`
-	UserStoreCode string           `position:"Body" name:"UserStoreCode"`
+	StoreName  string           `position:"Query" name:"StoreName"`
+	StoreId    string           `position:"Query" name:"StoreId"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	FromDate   string           `position:"Query" name:"FromDate"`
+	ToDate     string           `position:"Query" name:"ToDate"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	Brand      string           `position:"Query" name:"Brand"`
+	Groups     string           `position:"Query" name:"Groups"`
 }
 
 // DescribeStoresResponse is the response struct for api DescribeStores
 type DescribeStoresResponse struct {
 	*responses.BaseResponse
-	ErrorMessage   string      `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode      string      `json:"ErrorCode" xml:"ErrorCode"`
-	TotalCount     int         `json:"TotalCount" xml:"TotalCount"`
-	Message        string      `json:"Message" xml:"Message"`
-	PageSize       int         `json:"PageSize" xml:"PageSize"`
-	DynamicCode    string      `json:"DynamicCode" xml:"DynamicCode"`
-	Code           string      `json:"Code" xml:"Code"`
-	PageNumber     int         `json:"PageNumber" xml:"PageNumber"`
-	DynamicMessage string      `json:"DynamicMessage" xml:"DynamicMessage"`
-	RequestId      string      `json:"RequestId" xml:"RequestId"`
-	Success        bool        `json:"Success" xml:"Success"`
-	Stores         []StoreInfo `json:"Stores" xml:"Stores"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	Success    bool   `json:"Success" xml:"Success"`
+	Message    string `json:"Message" xml:"Message"`
+	ErrorCode  string `json:"ErrorCode" xml:"ErrorCode"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	Stores     Stores `json:"Stores" xml:"Stores"`
 }
 
 // CreateDescribeStoresRequest creates a request to invoke DescribeStores API
@@ -103,7 +99,7 @@ func CreateDescribeStoresRequest() (request *DescribeStoresRequest) {
 	request = &DescribeStoresRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeStores", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2018-08-01", "DescribeStores", "cloudesl", "openAPI")
 	request.Method = requests.POST
 	return
 }

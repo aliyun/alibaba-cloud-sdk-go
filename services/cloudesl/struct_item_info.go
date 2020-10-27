@@ -17,56 +17,46 @@ package cloudesl
 
 // ItemInfo is a nested struct in cloudesl response
 type ItemInfo struct {
-	CategoryName      string `json:"CategoryName" xml:"CategoryName"`
-	EnergyEfficiency  string `json:"EnergyEfficiency" xml:"EnergyEfficiency"`
-	CustomizeFeatureO string `json:"CustomizeFeatureO" xml:"CustomizeFeatureO"`
-	Manufacturer      string `json:"Manufacturer" xml:"Manufacturer"`
-	CustomizeFeatureM string `json:"CustomizeFeatureM" xml:"CustomizeFeatureM"`
-	CustomizeFeatureN string `json:"CustomizeFeatureN" xml:"CustomizeFeatureN"`
-	CustomizeFeatureK string `json:"CustomizeFeatureK" xml:"CustomizeFeatureK"`
-	CustomizeFeatureL string `json:"CustomizeFeatureL" xml:"CustomizeFeatureL"`
-	PromotionEnd      string `json:"PromotionEnd" xml:"PromotionEnd"`
-	OriginalPrice     int    `json:"OriginalPrice" xml:"OriginalPrice"`
-	CustomizeFeatureI string `json:"CustomizeFeatureI" xml:"CustomizeFeatureI"`
-	ItemTitle         string `json:"ItemTitle" xml:"ItemTitle"`
-	CustomizeFeatureJ string `json:"CustomizeFeatureJ" xml:"CustomizeFeatureJ"`
-	CustomizeFeatureG string `json:"CustomizeFeatureG" xml:"CustomizeFeatureG"`
-	SaleSpec          string `json:"SaleSpec" xml:"SaleSpec"`
-	CustomizeFeatureH string `json:"CustomizeFeatureH" xml:"CustomizeFeatureH"`
-	CustomizeFeatureE string `json:"CustomizeFeatureE" xml:"CustomizeFeatureE"`
-	CustomizeFeatureF string `json:"CustomizeFeatureF" xml:"CustomizeFeatureF"`
-	CustomizeFeatureC string `json:"CustomizeFeatureC" xml:"CustomizeFeatureC"`
-	CustomizeFeatureD string `json:"CustomizeFeatureD" xml:"CustomizeFeatureD"`
-	CustomizeFeatureA string `json:"CustomizeFeatureA" xml:"CustomizeFeatureA"`
-	CustomizeFeatureB string `json:"CustomizeFeatureB" xml:"CustomizeFeatureB"`
-	TaxFee            string `json:"TaxFee" xml:"TaxFee"`
-	PromotionText     string `json:"PromotionText" xml:"PromotionText"`
-	MemberPrice       int    `json:"MemberPrice" xml:"MemberPrice"`
-	SupplierName      string `json:"SupplierName" xml:"SupplierName"`
-	ForestFirstId     string `json:"ForestFirstId" xml:"ForestFirstId"`
-	ModelNumber       string `json:"ModelNumber" xml:"ModelNumber"`
-	ItemShortTitle    string `json:"ItemShortTitle" xml:"ItemShortTitle"`
-	Material          string `json:"Material" xml:"Material"`
-	BePromotion       bool   `json:"BePromotion" xml:"BePromotion"`
-	ForestSecondId    string `json:"ForestSecondId" xml:"ForestSecondId"`
-	BeSourceCode      bool   `json:"BeSourceCode" xml:"BeSourceCode"`
-	SalesPrice        int    `json:"SalesPrice" xml:"SalesPrice"`
-	ItemPicUrl        string `json:"ItemPicUrl" xml:"ItemPicUrl"`
-	SkuId             string `json:"SkuId" xml:"SkuId"`
-	SuggestPrice      int    `json:"SuggestPrice" xml:"SuggestPrice"`
-	Rank              string `json:"Rank" xml:"Rank"`
-	SourceCode        string `json:"SourceCode" xml:"SourceCode"`
-	ProductionPlace   string `json:"ProductionPlace" xml:"ProductionPlace"`
-	ItemInfoIndex     int    `json:"ItemInfoIndex" xml:"ItemInfoIndex"`
-	InventoryStatus   string `json:"InventoryStatus" xml:"InventoryStatus"`
+	CompanyId         string `json:"CompanyId" xml:"CompanyId"`
+	StoreId           string `json:"StoreId" xml:"StoreId"`
 	PriceUnit         string `json:"PriceUnit" xml:"PriceUnit"`
 	ActionPrice       int    `json:"ActionPrice" xml:"ActionPrice"`
-	BrandName         string `json:"BrandName" xml:"BrandName"`
-	ItemQrCode        string `json:"ItemQrCode" xml:"ItemQrCode"`
-	PromotionReason   string `json:"PromotionReason" xml:"PromotionReason"`
 	ItemBarCode       string `json:"ItemBarCode" xml:"ItemBarCode"`
-	ItemId            string `json:"ItemId" xml:"ItemId"`
+	ItemTitle         string `json:"ItemTitle" xml:"ItemTitle"`
+	ItemId            int64  `json:"ItemId" xml:"ItemId"`
+	ModelNumber       string `json:"ModelNumber" xml:"ModelNumber"`
+	BrandName         string `json:"BrandName" xml:"BrandName"`
+	SaleSpec          string `json:"SaleSpec" xml:"SaleSpec"`
+	CategoryName      string `json:"CategoryName" xml:"CategoryName"`
+	Rank              string `json:"Rank" xml:"Rank"`
+	EnergyEfficiency  string `json:"EnergyEfficiency" xml:"EnergyEfficiency"`
+	SkuId             string `json:"SkuId" xml:"SkuId"`
 	PromotionStart    string `json:"PromotionStart" xml:"PromotionStart"`
-	GmtCreate         string `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified       string `json:"GmtModified" xml:"GmtModified"`
+	PromotionEnd      string `json:"PromotionEnd" xml:"PromotionEnd"`
+	PromotionText     string `json:"PromotionText" xml:"PromotionText"`
+	PromotionReason   string `json:"PromotionReason" xml:"PromotionReason"`
+	BePromotion       bool   `json:"BePromotion" xml:"BePromotion"`
+	ItemQrCode        string `json:"ItemQrCode" xml:"ItemQrCode"`
+	OriginalPrice     int    `json:"OriginalPrice" xml:"OriginalPrice"`
+	MemberPrice       int    `json:"MemberPrice" xml:"MemberPrice"`
+	SuggestPrice      int    `json:"SuggestPrice" xml:"SuggestPrice"`
+	ItemShortTitle    string `json:"ItemShortTitle" xml:"ItemShortTitle"`
+	OptionGroups      string `json:"OptionGroups" xml:"OptionGroups"`
+	ProductionPlace   string `json:"ProductionPlace" xml:"ProductionPlace"`
+	PositionCode      string `json:"PositionCode" xml:"PositionCode"`
+	ExtraAttribute    string `json:"ExtraAttribute" xml:"ExtraAttribute"`
+	BeSourceCode      bool   `json:"BeSourceCode" xml:"BeSourceCode"`
+	SourceCode        string `json:"SourceCode" xml:"SourceCode"`
+	ForestFirstId     string `json:"ForestFirstId" xml:"ForestFirstId"`
+	ForestSecondId    string `json:"ForestSecondId" xml:"ForestSecondId"`
+	CustomizeFeatureA string `json:"CustomizeFeatureA" xml:"CustomizeFeatureA"`
+	CustomizeFeatureB string `json:"CustomizeFeatureB" xml:"CustomizeFeatureB"`
+	CustomizeFeatureC string `json:"CustomizeFeatureC" xml:"CustomizeFeatureC"`
+	CustomizeFeatureD string `json:"CustomizeFeatureD" xml:"CustomizeFeatureD"`
+	CustomizeFeatureE string `json:"CustomizeFeatureE" xml:"CustomizeFeatureE"`
+	CustomizeFeatureF string `json:"CustomizeFeatureF" xml:"CustomizeFeatureF"`
+	CustomizeFeatureG string `json:"CustomizeFeatureG" xml:"CustomizeFeatureG"`
+	CustomizeFeatureH string `json:"CustomizeFeatureH" xml:"CustomizeFeatureH"`
+	CustomizeFeatureI string `json:"CustomizeFeatureI" xml:"CustomizeFeatureI"`
+	CustomizeFeatureJ string `json:"CustomizeFeatureJ" xml:"CustomizeFeatureJ"`
 }

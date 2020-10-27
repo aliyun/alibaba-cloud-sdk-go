@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// BindEslDevice invokes the cloudesl.BindEslDevice API synchronously
-func (client *Client) BindEslDevice(request *BindEslDeviceRequest) (response *BindEslDeviceResponse, err error) {
-	response = CreateBindEslDeviceResponse()
+// DeleteApService invokes the cloudesl.DeleteApService API synchronously
+func (client *Client) DeleteApService(request *DeleteApServiceRequest) (response *DeleteApServiceResponse, err error) {
+	response = CreateDeleteApServiceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// BindEslDeviceWithChan invokes the cloudesl.BindEslDevice API asynchronously
-func (client *Client) BindEslDeviceWithChan(request *BindEslDeviceRequest) (<-chan *BindEslDeviceResponse, <-chan error) {
-	responseChan := make(chan *BindEslDeviceResponse, 1)
+// DeleteApServiceWithChan invokes the cloudesl.DeleteApService API asynchronously
+func (client *Client) DeleteApServiceWithChan(request *DeleteApServiceRequest) (<-chan *DeleteApServiceResponse, <-chan error) {
+	responseChan := make(chan *DeleteApServiceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.BindEslDevice(request)
+		response, err := client.DeleteApService(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) BindEslDeviceWithChan(request *BindEslDeviceRequest) (<-ch
 	return responseChan, errChan
 }
 
-// BindEslDeviceWithCallback invokes the cloudesl.BindEslDevice API asynchronously
-func (client *Client) BindEslDeviceWithCallback(request *BindEslDeviceRequest, callback func(response *BindEslDeviceResponse, err error)) <-chan int {
+// DeleteApServiceWithCallback invokes the cloudesl.DeleteApService API asynchronously
+func (client *Client) DeleteApServiceWithCallback(request *DeleteApServiceRequest, callback func(response *DeleteApServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *BindEslDeviceResponse
+		var response *DeleteApServiceResponse
 		var err error
 		defer close(result)
-		response, err = client.BindEslDevice(request)
+		response, err = client.DeleteApService(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,16 +68,15 @@ func (client *Client) BindEslDeviceWithCallback(request *BindEslDeviceRequest, c
 	return result
 }
 
-// BindEslDeviceRequest is the request struct for api BindEslDevice
-type BindEslDeviceRequest struct {
+// DeleteApServiceRequest is the request struct for api DeleteApService
+type DeleteApServiceRequest struct {
 	*requests.RpcRequest
-	StoreId     string `position:"Query" name:"StoreId"`
-	EslBarCode  string `position:"Query" name:"EslBarCode"`
-	ItemBarCode string `position:"Query" name:"ItemBarCode"`
+	ApMac   string `position:"Query" name:"ApMac"`
+	StoreId string `position:"Query" name:"StoreId"`
 }
 
-// BindEslDeviceResponse is the response struct for api BindEslDevice
-type BindEslDeviceResponse struct {
+// DeleteApServiceResponse is the response struct for api DeleteApService
+type DeleteApServiceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
@@ -85,19 +84,19 @@ type BindEslDeviceResponse struct {
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 }
 
-// CreateBindEslDeviceRequest creates a request to invoke BindEslDevice API
-func CreateBindEslDeviceRequest() (request *BindEslDeviceRequest) {
-	request = &BindEslDeviceRequest{
+// CreateDeleteApServiceRequest creates a request to invoke DeleteApService API
+func CreateDeleteApServiceRequest() (request *DeleteApServiceRequest) {
+	request = &DeleteApServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2018-08-01", "BindEslDevice", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2018-08-01", "DeleteApService", "cloudesl", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateBindEslDeviceResponse creates a response to parse from BindEslDevice response
-func CreateBindEslDeviceResponse() (response *BindEslDeviceResponse) {
-	response = &BindEslDeviceResponse{
+// CreateDeleteApServiceResponse creates a response to parse from DeleteApService response
+func CreateDeleteApServiceResponse() (response *DeleteApServiceResponse) {
+	response = &DeleteApServiceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

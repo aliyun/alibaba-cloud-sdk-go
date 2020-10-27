@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// BindEslDevice invokes the cloudesl.BindEslDevice API synchronously
-func (client *Client) BindEslDevice(request *BindEslDeviceRequest) (response *BindEslDeviceResponse, err error) {
-	response = CreateBindEslDeviceResponse()
+// BindApStoreService invokes the cloudesl.BindApStoreService API synchronously
+func (client *Client) BindApStoreService(request *BindApStoreServiceRequest) (response *BindApStoreServiceResponse, err error) {
+	response = CreateBindApStoreServiceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// BindEslDeviceWithChan invokes the cloudesl.BindEslDevice API asynchronously
-func (client *Client) BindEslDeviceWithChan(request *BindEslDeviceRequest) (<-chan *BindEslDeviceResponse, <-chan error) {
-	responseChan := make(chan *BindEslDeviceResponse, 1)
+// BindApStoreServiceWithChan invokes the cloudesl.BindApStoreService API asynchronously
+func (client *Client) BindApStoreServiceWithChan(request *BindApStoreServiceRequest) (<-chan *BindApStoreServiceResponse, <-chan error) {
+	responseChan := make(chan *BindApStoreServiceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.BindEslDevice(request)
+		response, err := client.BindApStoreService(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) BindEslDeviceWithChan(request *BindEslDeviceRequest) (<-ch
 	return responseChan, errChan
 }
 
-// BindEslDeviceWithCallback invokes the cloudesl.BindEslDevice API asynchronously
-func (client *Client) BindEslDeviceWithCallback(request *BindEslDeviceRequest, callback func(response *BindEslDeviceResponse, err error)) <-chan int {
+// BindApStoreServiceWithCallback invokes the cloudesl.BindApStoreService API asynchronously
+func (client *Client) BindApStoreServiceWithCallback(request *BindApStoreServiceRequest, callback func(response *BindApStoreServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *BindEslDeviceResponse
+		var response *BindApStoreServiceResponse
 		var err error
 		defer close(result)
-		response, err = client.BindEslDevice(request)
+		response, err = client.BindApStoreService(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,16 +68,15 @@ func (client *Client) BindEslDeviceWithCallback(request *BindEslDeviceRequest, c
 	return result
 }
 
-// BindEslDeviceRequest is the request struct for api BindEslDevice
-type BindEslDeviceRequest struct {
+// BindApStoreServiceRequest is the request struct for api BindApStoreService
+type BindApStoreServiceRequest struct {
 	*requests.RpcRequest
-	StoreId     string `position:"Query" name:"StoreId"`
-	EslBarCode  string `position:"Query" name:"EslBarCode"`
-	ItemBarCode string `position:"Query" name:"ItemBarCode"`
+	ApMac   string `position:"Query" name:"ApMac"`
+	StoreId string `position:"Query" name:"StoreId"`
 }
 
-// BindEslDeviceResponse is the response struct for api BindEslDevice
-type BindEslDeviceResponse struct {
+// BindApStoreServiceResponse is the response struct for api BindApStoreService
+type BindApStoreServiceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
@@ -85,19 +84,19 @@ type BindEslDeviceResponse struct {
 	ErrorCode string `json:"ErrorCode" xml:"ErrorCode"`
 }
 
-// CreateBindEslDeviceRequest creates a request to invoke BindEslDevice API
-func CreateBindEslDeviceRequest() (request *BindEslDeviceRequest) {
-	request = &BindEslDeviceRequest{
+// CreateBindApStoreServiceRequest creates a request to invoke BindApStoreService API
+func CreateBindApStoreServiceRequest() (request *BindApStoreServiceRequest) {
+	request = &BindApStoreServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2018-08-01", "BindEslDevice", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2018-08-01", "BindApStoreService", "cloudesl", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateBindEslDeviceResponse creates a response to parse from BindEslDevice response
-func CreateBindEslDeviceResponse() (response *BindEslDeviceResponse) {
-	response = &BindEslDeviceResponse{
+// CreateBindApStoreServiceResponse creates a response to parse from BindApStoreService response
+func CreateBindApStoreServiceResponse() (response *BindApStoreServiceResponse) {
+	response = &BindApStoreServiceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

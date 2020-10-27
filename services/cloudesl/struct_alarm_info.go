@@ -17,21 +17,20 @@ package cloudesl
 
 // AlarmInfo is a nested struct in cloudesl response
 type AlarmInfo struct {
-	Remark           string `json:"Remark" xml:"Remark"`
-	StoreId          string `json:"StoreId" xml:"StoreId"`
-	DeviceBarCode    string `json:"DeviceBarCode" xml:"DeviceBarCode"`
-	DealUserId       string `json:"DealUserId" xml:"DealUserId"`
-	DeviceType       string `json:"DeviceType" xml:"DeviceType"`
-	ItemTitle        string `json:"ItemTitle" xml:"ItemTitle"`
-	AlarmTime        string `json:"AlarmTime" xml:"AlarmTime"`
-	ErrorType        string `json:"ErrorType" xml:"ErrorType"`
-	DeviceMac        string `json:"DeviceMac" xml:"DeviceMac"`
-	AlarmId          string `json:"AlarmId" xml:"AlarmId"`
-	RetryGmtCreate   string `json:"RetryGmtCreate" xml:"RetryGmtCreate"`
-	RetryGmtModified string `json:"RetryGmtModified" xml:"RetryGmtModified"`
-	ItemBarCode      string `json:"ItemBarCode" xml:"ItemBarCode"`
-	RetryTimes       int64  `json:"RetryTimes" xml:"RetryTimes"`
-	DealTime         string `json:"DealTime" xml:"DealTime"`
-	AlarmType        string `json:"AlarmType" xml:"AlarmType"`
-	AlarmStatus      string `json:"AlarmStatus" xml:"AlarmStatus"`
+	AlarmId       string `json:"AlarmId" xml:"AlarmId"`
+	AlarmType     string `json:"AlarmType" xml:"AlarmType"`
+	DeviceType    string `json:"DeviceType" xml:"DeviceType"`
+	DeviceBarCode string `json:"DeviceBarCode" xml:"DeviceBarCode"`
+	DeviceMac     string `json:"DeviceMac" xml:"DeviceMac"`
+	ErrorType     string `json:"ErrorType" xml:"ErrorType"`
+	ItemBarCode   string `json:"ItemBarCode" xml:"ItemBarCode"`
+	ItemTitle     string `json:"ItemTitle" xml:"ItemTitle"`
+	CompanyId     string `json:"CompanyId" xml:"CompanyId"`
+	StoreId       string `json:"StoreId" xml:"StoreId"`
+	AlarmTime     string `json:"AlarmTime" xml:"AlarmTime"`
+	AlarmStatus   string `json:"AlarmStatus" xml:"AlarmStatus"`
+	DealUserId    int64  `json:"DealUserId" xml:"DealUserId"`
+	DealTime      string `json:"DealTime" xml:"DealTime"`
+	Vendor        string `json:"Vendor" xml:"Vendor"`
+	Model         string `json:"Model" xml:"Model"`
 }
