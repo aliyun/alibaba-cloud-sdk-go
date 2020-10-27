@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetToken invokes the xtrace.GetToken API synchronously
-func (client *Client) GetToken(request *GetTokenRequest) (response *GetTokenResponse, err error) {
-	response = CreateGetTokenResponse()
+// UpdateSampling invokes the xtrace.UpdateSampling API synchronously
+func (client *Client) UpdateSampling(request *UpdateSamplingRequest) (response *UpdateSamplingResponse, err error) {
+	response = CreateUpdateSamplingResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetTokenWithChan invokes the xtrace.GetToken API asynchronously
-func (client *Client) GetTokenWithChan(request *GetTokenRequest) (<-chan *GetTokenResponse, <-chan error) {
-	responseChan := make(chan *GetTokenResponse, 1)
+// UpdateSamplingWithChan invokes the xtrace.UpdateSampling API asynchronously
+func (client *Client) UpdateSamplingWithChan(request *UpdateSamplingRequest) (<-chan *UpdateSamplingResponse, <-chan error) {
+	responseChan := make(chan *UpdateSamplingResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetToken(request)
+		response, err := client.UpdateSampling(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetTokenWithChan(request *GetTokenRequest) (<-chan *GetTok
 	return responseChan, errChan
 }
 
-// GetTokenWithCallback invokes the xtrace.GetToken API asynchronously
-func (client *Client) GetTokenWithCallback(request *GetTokenRequest, callback func(response *GetTokenResponse, err error)) <-chan int {
+// UpdateSamplingWithCallback invokes the xtrace.UpdateSampling API asynchronously
+func (client *Client) UpdateSamplingWithCallback(request *UpdateSamplingRequest, callback func(response *UpdateSamplingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetTokenResponse
+		var response *UpdateSamplingResponse
 		var err error
 		defer close(result)
-		response, err = client.GetToken(request)
+		response, err = client.UpdateSampling(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,33 +68,33 @@ func (client *Client) GetTokenWithCallback(request *GetTokenRequest, callback fu
 	return result
 }
 
-// GetTokenRequest is the request struct for api GetToken
-type GetTokenRequest struct {
+// UpdateSamplingRequest is the request struct for api UpdateSampling
+type UpdateSamplingRequest struct {
 	*requests.RpcRequest
-	AppType     string `position:"Query" name:"AppType"`
+	Sampling    string `position:"Query" name:"Sampling"`
 	ProxyUserId string `position:"Query" name:"ProxyUserId"`
 }
 
-// GetTokenResponse is the response struct for api GetToken
-type GetTokenResponse struct {
+// UpdateSamplingResponse is the response struct for api UpdateSampling
+type UpdateSamplingResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Token     Token  `json:"Token" xml:"Token"`
+	Data      string `json:"Data" xml:"Data"`
 }
 
-// CreateGetTokenRequest creates a request to invoke GetToken API
-func CreateGetTokenRequest() (request *GetTokenRequest) {
-	request = &GetTokenRequest{
+// CreateUpdateSamplingRequest creates a request to invoke UpdateSampling API
+func CreateUpdateSamplingRequest() (request *UpdateSamplingRequest) {
+	request = &UpdateSamplingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("xtrace", "2019-08-08", "GetToken", "", "")
+	request.InitWithApiInfo("xtrace", "2019-08-08", "UpdateSampling", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetTokenResponse creates a response to parse from GetToken response
-func CreateGetTokenResponse() (response *GetTokenResponse) {
-	response = &GetTokenResponse{
+// CreateUpdateSamplingResponse creates a response to parse from UpdateSampling response
+func CreateUpdateSamplingResponse() (response *UpdateSamplingResponse) {
+	response = &UpdateSamplingResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

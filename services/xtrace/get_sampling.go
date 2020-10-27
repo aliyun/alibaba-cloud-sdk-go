@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ListServices invokes the xtrace.ListServices API synchronously
-func (client *Client) ListServices(request *ListServicesRequest) (response *ListServicesResponse, err error) {
-	response = CreateListServicesResponse()
+// GetSampling invokes the xtrace.GetSampling API synchronously
+func (client *Client) GetSampling(request *GetSamplingRequest) (response *GetSamplingResponse, err error) {
+	response = CreateGetSamplingResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ListServicesWithChan invokes the xtrace.ListServices API asynchronously
-func (client *Client) ListServicesWithChan(request *ListServicesRequest) (<-chan *ListServicesResponse, <-chan error) {
-	responseChan := make(chan *ListServicesResponse, 1)
+// GetSamplingWithChan invokes the xtrace.GetSampling API asynchronously
+func (client *Client) GetSamplingWithChan(request *GetSamplingRequest) (<-chan *GetSamplingResponse, <-chan error) {
+	responseChan := make(chan *GetSamplingResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListServices(request)
+		response, err := client.GetSampling(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ListServicesWithChan(request *ListServicesRequest) (<-chan
 	return responseChan, errChan
 }
 
-// ListServicesWithCallback invokes the xtrace.ListServices API asynchronously
-func (client *Client) ListServicesWithCallback(request *ListServicesRequest, callback func(response *ListServicesResponse, err error)) <-chan int {
+// GetSamplingWithCallback invokes the xtrace.GetSampling API asynchronously
+func (client *Client) GetSamplingWithCallback(request *GetSamplingRequest, callback func(response *GetSamplingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListServicesResponse
+		var response *GetSamplingResponse
 		var err error
 		defer close(result)
-		response, err = client.ListServices(request)
+		response, err = client.GetSampling(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,32 +68,32 @@ func (client *Client) ListServicesWithCallback(request *ListServicesRequest, cal
 	return result
 }
 
-// ListServicesRequest is the request struct for api ListServices
-type ListServicesRequest struct {
+// GetSamplingRequest is the request struct for api GetSampling
+type GetSamplingRequest struct {
 	*requests.RpcRequest
-	AppType string `position:"Query" name:"AppType"`
+	ProxyUserId string `position:"Query" name:"ProxyUserId"`
 }
 
-// ListServicesResponse is the response struct for api ListServices
-type ListServicesResponse struct {
+// GetSamplingResponse is the response struct for api GetSampling
+type GetSamplingResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Services  Services `json:"Services" xml:"Services"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      string `json:"Data" xml:"Data"`
 }
 
-// CreateListServicesRequest creates a request to invoke ListServices API
-func CreateListServicesRequest() (request *ListServicesRequest) {
-	request = &ListServicesRequest{
+// CreateGetSamplingRequest creates a request to invoke GetSampling API
+func CreateGetSamplingRequest() (request *GetSamplingRequest) {
+	request = &GetSamplingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("xtrace", "2019-08-08", "ListServices", "", "")
+	request.InitWithApiInfo("xtrace", "2019-08-08", "GetSampling", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateListServicesResponse creates a response to parse from ListServices response
-func CreateListServicesResponse() (response *ListServicesResponse) {
-	response = &ListServicesResponse{
+// CreateGetSamplingResponse creates a response to parse from GetSampling response
+func CreateGetSamplingResponse() (response *GetSamplingResponse) {
+	response = &GetSamplingResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

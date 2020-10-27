@@ -21,7 +21,6 @@ import (
 )
 
 // GetTagKey invokes the xtrace.GetTagKey API synchronously
-// api document: https://help.aliyun.com/api/xtrace/gettagkey.html
 func (client *Client) GetTagKey(request *GetTagKeyRequest) (response *GetTagKeyResponse, err error) {
 	response = CreateGetTagKeyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetTagKey(request *GetTagKeyRequest) (response *GetTagKeyR
 }
 
 // GetTagKeyWithChan invokes the xtrace.GetTagKey API asynchronously
-// api document: https://help.aliyun.com/api/xtrace/gettagkey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTagKeyWithChan(request *GetTagKeyRequest) (<-chan *GetTagKeyResponse, <-chan error) {
 	responseChan := make(chan *GetTagKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetTagKeyWithChan(request *GetTagKeyRequest) (<-chan *GetT
 }
 
 // GetTagKeyWithCallback invokes the xtrace.GetTagKey API asynchronously
-// api document: https://help.aliyun.com/api/xtrace/gettagkey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTagKeyWithCallback(request *GetTagKeyRequest, callback func(response *GetTagKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

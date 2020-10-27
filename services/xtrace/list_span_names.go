@@ -21,7 +21,6 @@ import (
 )
 
 // ListSpanNames invokes the xtrace.ListSpanNames API synchronously
-// api document: https://help.aliyun.com/api/xtrace/listspannames.html
 func (client *Client) ListSpanNames(request *ListSpanNamesRequest) (response *ListSpanNamesResponse, err error) {
 	response = CreateListSpanNamesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSpanNames(request *ListSpanNamesRequest) (response *Li
 }
 
 // ListSpanNamesWithChan invokes the xtrace.ListSpanNames API asynchronously
-// api document: https://help.aliyun.com/api/xtrace/listspannames.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSpanNamesWithChan(request *ListSpanNamesRequest) (<-chan *ListSpanNamesResponse, <-chan error) {
 	responseChan := make(chan *ListSpanNamesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSpanNamesWithChan(request *ListSpanNamesRequest) (<-ch
 }
 
 // ListSpanNamesWithCallback invokes the xtrace.ListSpanNames API asynchronously
-// api document: https://help.aliyun.com/api/xtrace/listspannames.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSpanNamesWithCallback(request *ListSpanNamesRequest, callback func(response *ListSpanNamesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

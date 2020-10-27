@@ -21,7 +21,6 @@ import (
 )
 
 // ListIpOrHosts invokes the xtrace.ListIpOrHosts API synchronously
-// api document: https://help.aliyun.com/api/xtrace/listiporhosts.html
 func (client *Client) ListIpOrHosts(request *ListIpOrHostsRequest) (response *ListIpOrHostsResponse, err error) {
 	response = CreateListIpOrHostsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListIpOrHosts(request *ListIpOrHostsRequest) (response *Li
 }
 
 // ListIpOrHostsWithChan invokes the xtrace.ListIpOrHosts API asynchronously
-// api document: https://help.aliyun.com/api/xtrace/listiporhosts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListIpOrHostsWithChan(request *ListIpOrHostsRequest) (<-chan *ListIpOrHostsResponse, <-chan error) {
 	responseChan := make(chan *ListIpOrHostsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListIpOrHostsWithChan(request *ListIpOrHostsRequest) (<-ch
 }
 
 // ListIpOrHostsWithCallback invokes the xtrace.ListIpOrHosts API asynchronously
-// api document: https://help.aliyun.com/api/xtrace/listiporhosts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListIpOrHostsWithCallback(request *ListIpOrHostsRequest, callback func(response *ListIpOrHostsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
