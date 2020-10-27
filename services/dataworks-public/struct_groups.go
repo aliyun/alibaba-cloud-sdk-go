@@ -17,5 +17,5 @@ package dataworks_public
 
 // Groups is a nested struct in dataworks_public response
 type Groups struct {
-	Group []string `json:"Group" xml:"Group"`
+	Group []Group `json:"Group" xml:"Group"`
 }
