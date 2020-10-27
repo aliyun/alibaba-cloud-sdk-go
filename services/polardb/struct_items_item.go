@@ -18,8 +18,8 @@ package polardb
 // ItemsItem is a nested struct in polardb response
 type ItemsItem struct {
 	Id              int    `json:"Id" xml:"Id"`
-	InsName         string `json:"InsName" xml:"InsName"`
-	DbType          string `json:"DbType" xml:"DbType"`
+	DBClusterId     string `json:"DBClusterId" xml:"DBClusterId"`
+	DBType          string `json:"DBType" xml:"DBType"`
 	StartTime       string `json:"StartTime" xml:"StartTime"`
 	SwitchTime      string `json:"SwitchTime" xml:"SwitchTime"`
 	Deadline        string `json:"Deadline" xml:"Deadline"`
@@ -28,8 +28,7 @@ type ItemsItem struct {
 	ModifiedTime    string `json:"ModifiedTime" xml:"ModifiedTime"`
 	ResultInfo      string `json:"ResultInfo" xml:"ResultInfo"`
 	PrepareInterval string `json:"PrepareInterval" xml:"PrepareInterval"`
-	TaskParams      string `json:"TaskParams" xml:"TaskParams"`
 	TaskType        string `json:"TaskType" xml:"TaskType"`
-	DbVersion       string `json:"DbVersion" xml:"DbVersion"`
+	DBVersion       string `json:"DBVersion" xml:"DBVersion"`
 	Region          string `json:"Region" xml:"Region"`
 }

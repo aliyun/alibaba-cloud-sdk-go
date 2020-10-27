@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeActiveOperationTask invokes the polardb.DescribeActiveOperationTask API synchronously
-func (client *Client) DescribeActiveOperationTask(request *DescribeActiveOperationTaskRequest) (response *DescribeActiveOperationTaskResponse, err error) {
-	response = CreateDescribeActiveOperationTaskResponse()
+// DescribePendingMaintenanceAction invokes the polardb.DescribePendingMaintenanceAction API synchronously
+func (client *Client) DescribePendingMaintenanceAction(request *DescribePendingMaintenanceActionRequest) (response *DescribePendingMaintenanceActionResponse, err error) {
+	response = CreateDescribePendingMaintenanceActionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeActiveOperationTaskWithChan invokes the polardb.DescribeActiveOperationTask API asynchronously
-func (client *Client) DescribeActiveOperationTaskWithChan(request *DescribeActiveOperationTaskRequest) (<-chan *DescribeActiveOperationTaskResponse, <-chan error) {
-	responseChan := make(chan *DescribeActiveOperationTaskResponse, 1)
+// DescribePendingMaintenanceActionWithChan invokes the polardb.DescribePendingMaintenanceAction API asynchronously
+func (client *Client) DescribePendingMaintenanceActionWithChan(request *DescribePendingMaintenanceActionRequest) (<-chan *DescribePendingMaintenanceActionResponse, <-chan error) {
+	responseChan := make(chan *DescribePendingMaintenanceActionResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeActiveOperationTask(request)
+		response, err := client.DescribePendingMaintenanceAction(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DescribeActiveOperationTaskWithChan(request *DescribeActiv
 	return responseChan, errChan
 }
 
-// DescribeActiveOperationTaskWithCallback invokes the polardb.DescribeActiveOperationTask API asynchronously
-func (client *Client) DescribeActiveOperationTaskWithCallback(request *DescribeActiveOperationTaskRequest, callback func(response *DescribeActiveOperationTaskResponse, err error)) <-chan int {
+// DescribePendingMaintenanceActionWithCallback invokes the polardb.DescribePendingMaintenanceAction API asynchronously
+func (client *Client) DescribePendingMaintenanceActionWithCallback(request *DescribePendingMaintenanceActionRequest, callback func(response *DescribePendingMaintenanceActionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeActiveOperationTaskResponse
+		var response *DescribePendingMaintenanceActionResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeActiveOperationTask(request)
+		response, err = client.DescribePendingMaintenanceAction(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,11 +68,10 @@ func (client *Client) DescribeActiveOperationTaskWithCallback(request *DescribeA
 	return result
 }
 
-// DescribeActiveOperationTaskRequest is the request struct for api DescribeActiveOperationTask
-type DescribeActiveOperationTaskRequest struct {
+// DescribePendingMaintenanceActionRequest is the request struct for api DescribePendingMaintenanceAction
+type DescribePendingMaintenanceActionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ProductId            string           `position:"Query" name:"ProductId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	IsHistory            requests.Integer `position:"Query" name:"IsHistory"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
@@ -84,8 +83,8 @@ type DescribeActiveOperationTaskRequest struct {
 	Region               string           `position:"Query" name:"Region"`
 }
 
-// DescribeActiveOperationTaskResponse is the response struct for api DescribeActiveOperationTask
-type DescribeActiveOperationTaskResponse struct {
+// DescribePendingMaintenanceActionResponse is the response struct for api DescribePendingMaintenanceAction
+type DescribePendingMaintenanceActionResponse struct {
 	*responses.BaseResponse
 	RequestId        string      `json:"RequestId" xml:"RequestId"`
 	TotalRecordCount int         `json:"TotalRecordCount" xml:"TotalRecordCount"`
@@ -94,19 +93,19 @@ type DescribeActiveOperationTaskResponse struct {
 	Items            []ItemsItem `json:"Items" xml:"Items"`
 }
 
-// CreateDescribeActiveOperationTaskRequest creates a request to invoke DescribeActiveOperationTask API
-func CreateDescribeActiveOperationTaskRequest() (request *DescribeActiveOperationTaskRequest) {
-	request = &DescribeActiveOperationTaskRequest{
+// CreateDescribePendingMaintenanceActionRequest creates a request to invoke DescribePendingMaintenanceAction API
+func CreateDescribePendingMaintenanceActionRequest() (request *DescribePendingMaintenanceActionRequest) {
+	request = &DescribePendingMaintenanceActionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DescribeActiveOperationTask", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "DescribePendingMaintenanceAction", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDescribeActiveOperationTaskResponse creates a response to parse from DescribeActiveOperationTask response
-func CreateDescribeActiveOperationTaskResponse() (response *DescribeActiveOperationTaskResponse) {
-	response = &DescribeActiveOperationTaskResponse{
+// CreateDescribePendingMaintenanceActionResponse creates a response to parse from DescribePendingMaintenanceAction response
+func CreateDescribePendingMaintenanceActionResponse() (response *DescribePendingMaintenanceActionResponse) {
+	response = &DescribePendingMaintenanceActionResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

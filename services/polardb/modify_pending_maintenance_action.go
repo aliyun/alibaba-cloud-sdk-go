@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ModifyActiveOperationTask invokes the polardb.ModifyActiveOperationTask API synchronously
-func (client *Client) ModifyActiveOperationTask(request *ModifyActiveOperationTaskRequest) (response *ModifyActiveOperationTaskResponse, err error) {
-	response = CreateModifyActiveOperationTaskResponse()
+// ModifyPendingMaintenanceAction invokes the polardb.ModifyPendingMaintenanceAction API synchronously
+func (client *Client) ModifyPendingMaintenanceAction(request *ModifyPendingMaintenanceActionRequest) (response *ModifyPendingMaintenanceActionResponse, err error) {
+	response = CreateModifyPendingMaintenanceActionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ModifyActiveOperationTaskWithChan invokes the polardb.ModifyActiveOperationTask API asynchronously
-func (client *Client) ModifyActiveOperationTaskWithChan(request *ModifyActiveOperationTaskRequest) (<-chan *ModifyActiveOperationTaskResponse, <-chan error) {
-	responseChan := make(chan *ModifyActiveOperationTaskResponse, 1)
+// ModifyPendingMaintenanceActionWithChan invokes the polardb.ModifyPendingMaintenanceAction API asynchronously
+func (client *Client) ModifyPendingMaintenanceActionWithChan(request *ModifyPendingMaintenanceActionRequest) (<-chan *ModifyPendingMaintenanceActionResponse, <-chan error) {
+	responseChan := make(chan *ModifyPendingMaintenanceActionResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ModifyActiveOperationTask(request)
+		response, err := client.ModifyPendingMaintenanceAction(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ModifyActiveOperationTaskWithChan(request *ModifyActiveOpe
 	return responseChan, errChan
 }
 
-// ModifyActiveOperationTaskWithCallback invokes the polardb.ModifyActiveOperationTask API asynchronously
-func (client *Client) ModifyActiveOperationTaskWithCallback(request *ModifyActiveOperationTaskRequest, callback func(response *ModifyActiveOperationTaskResponse, err error)) <-chan int {
+// ModifyPendingMaintenanceActionWithCallback invokes the polardb.ModifyPendingMaintenanceAction API asynchronously
+func (client *Client) ModifyPendingMaintenanceActionWithCallback(request *ModifyPendingMaintenanceActionRequest, callback func(response *ModifyPendingMaintenanceActionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ModifyActiveOperationTaskResponse
+		var response *ModifyPendingMaintenanceActionResponse
 		var err error
 		defer close(result)
-		response, err = client.ModifyActiveOperationTask(request)
+		response, err = client.ModifyPendingMaintenanceAction(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,8 +68,8 @@ func (client *Client) ModifyActiveOperationTaskWithCallback(request *ModifyActiv
 	return result
 }
 
-// ModifyActiveOperationTaskRequest is the request struct for api ModifyActiveOperationTask
-type ModifyActiveOperationTaskRequest struct {
+// ModifyPendingMaintenanceActionRequest is the request struct for api ModifyPendingMaintenanceAction
+type ModifyPendingMaintenanceActionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
@@ -80,26 +80,26 @@ type ModifyActiveOperationTaskRequest struct {
 	Ids                  string           `position:"Query" name:"Ids"`
 }
 
-// ModifyActiveOperationTaskResponse is the response struct for api ModifyActiveOperationTask
-type ModifyActiveOperationTaskResponse struct {
+// ModifyPendingMaintenanceActionResponse is the response struct for api ModifyPendingMaintenanceAction
+type ModifyPendingMaintenanceActionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Ids       string `json:"Ids" xml:"Ids"`
 }
 
-// CreateModifyActiveOperationTaskRequest creates a request to invoke ModifyActiveOperationTask API
-func CreateModifyActiveOperationTaskRequest() (request *ModifyActiveOperationTaskRequest) {
-	request = &ModifyActiveOperationTaskRequest{
+// CreateModifyPendingMaintenanceActionRequest creates a request to invoke ModifyPendingMaintenanceAction API
+func CreateModifyPendingMaintenanceActionRequest() (request *ModifyPendingMaintenanceActionRequest) {
+	request = &ModifyPendingMaintenanceActionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyActiveOperationTask", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyPendingMaintenanceAction", "polardb", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateModifyActiveOperationTaskResponse creates a response to parse from ModifyActiveOperationTask response
-func CreateModifyActiveOperationTaskResponse() (response *ModifyActiveOperationTaskResponse) {
-	response = &ModifyActiveOperationTaskResponse{
+// CreateModifyPendingMaintenanceActionResponse creates a response to parse from ModifyPendingMaintenanceAction response
+func CreateModifyPendingMaintenanceActionResponse() (response *ModifyPendingMaintenanceActionResponse) {
+	response = &ModifyPendingMaintenanceActionResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -17,7 +17,6 @@ package polardb
 
 // Items is a nested struct in polardb response
 type Items struct {
-	Region   string `json:"Region" xml:"Region"`
 	Count    int    `json:"Count" xml:"Count"`
 	TaskType string `json:"TaskType" xml:"TaskType"`
 }
