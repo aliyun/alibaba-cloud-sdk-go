@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePlanogramRails invokes the cloudesl.DescribePlanogramRails API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeplanogramrails.html
 func (client *Client) DescribePlanogramRails(request *DescribePlanogramRailsRequest) (response *DescribePlanogramRailsResponse, err error) {
 	response = CreateDescribePlanogramRailsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePlanogramRails(request *DescribePlanogramRailsRequ
 }
 
 // DescribePlanogramRailsWithChan invokes the cloudesl.DescribePlanogramRails API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeplanogramrails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePlanogramRailsWithChan(request *DescribePlanogramRailsRequest) (<-chan *DescribePlanogramRailsResponse, <-chan error) {
 	responseChan := make(chan *DescribePlanogramRailsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePlanogramRailsWithChan(request *DescribePlanogramR
 }
 
 // DescribePlanogramRailsWithCallback invokes the cloudesl.DescribePlanogramRails API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeplanogramrails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePlanogramRailsWithCallback(request *DescribePlanogramRailsRequest, callback func(response *DescribePlanogramRailsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,12 +71,13 @@ func (client *Client) DescribePlanogramRailsWithCallback(request *DescribePlanog
 // DescribePlanogramRailsRequest is the request struct for api DescribePlanogramRails
 type DescribePlanogramRailsRequest struct {
 	*requests.RpcRequest
-	StoreId    string           `position:"Body" name:"StoreId"`
-	Layer      requests.Integer `position:"Body" name:"Layer"`
-	PageNumber requests.Integer `position:"Body" name:"PageNumber"`
-	Shelf      string           `position:"Body" name:"Shelf"`
-	RailCode   string           `position:"Body" name:"RailCode"`
-	PageSize   requests.Integer `position:"Body" name:"PageSize"`
+	ExtraParams string           `position:"Body" name:"ExtraParams"`
+	StoreId     string           `position:"Body" name:"StoreId"`
+	Layer       requests.Integer `position:"Body" name:"Layer"`
+	PageNumber  requests.Integer `position:"Body" name:"PageNumber"`
+	PageSize    requests.Integer `position:"Body" name:"PageSize"`
+	Shelf       string           `position:"Body" name:"Shelf"`
+	RailCode    string           `position:"Body" name:"RailCode"`
 }
 
 // DescribePlanogramRailsResponse is the response struct for api DescribePlanogramRails
@@ -108,6 +104,7 @@ func CreateDescribePlanogramRailsRequest() (request *DescribePlanogramRailsReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribePlanogramRails", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

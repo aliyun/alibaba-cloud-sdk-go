@@ -21,7 +21,6 @@ import (
 )
 
 // BatchInsertItems invokes the cloudesl.BatchInsertItems API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/batchinsertitems.html
 func (client *Client) BatchInsertItems(request *BatchInsertItemsRequest) (response *BatchInsertItemsResponse, err error) {
 	response = CreateBatchInsertItemsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BatchInsertItems(request *BatchInsertItemsRequest) (respon
 }
 
 // BatchInsertItemsWithChan invokes the cloudesl.BatchInsertItems API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/batchinsertitems.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchInsertItemsWithChan(request *BatchInsertItemsRequest) (<-chan *BatchInsertItemsResponse, <-chan error) {
 	responseChan := make(chan *BatchInsertItemsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BatchInsertItemsWithChan(request *BatchInsertItemsRequest)
 }
 
 // BatchInsertItemsWithCallback invokes the cloudesl.BatchInsertItems API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/batchinsertitems.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchInsertItemsWithCallback(request *BatchInsertItemsRequest, callback func(response *BatchInsertItemsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,9 @@ func (client *Client) BatchInsertItemsWithCallback(request *BatchInsertItemsRequ
 // BatchInsertItemsRequest is the request struct for api BatchInsertItems
 type BatchInsertItemsRequest struct {
 	*requests.RpcRequest
-	StoreId  string                      `position:"Body" name:"StoreId"`
-	ItemInfo *[]BatchInsertItemsItemInfo `position:"Body" name:"ItemInfo"  type:"Repeated"`
+	ExtraParams string                      `position:"Body" name:"ExtraParams"`
+	StoreId     string                      `position:"Body" name:"StoreId"`
+	ItemInfo    *[]BatchInsertItemsItemInfo `position:"Body" name:"ItemInfo"  type:"Repeated"`
 }
 
 // BatchInsertItemsItemInfo is a repeated param struct in BatchInsertItemsRequest
@@ -154,6 +150,7 @@ func CreateBatchInsertItemsRequest() (request *BatchInsertItemsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "BatchInsertItems", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUsers invokes the cloudesl.DescribeUsers API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeusers.html
 func (client *Client) DescribeUsers(request *DescribeUsersRequest) (response *DescribeUsersResponse, err error) {
 	response = CreateDescribeUsersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUsers(request *DescribeUsersRequest) (response *De
 }
 
 // DescribeUsersWithChan invokes the cloudesl.DescribeUsers API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeusers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUsersWithChan(request *DescribeUsersRequest) (<-chan *DescribeUsersResponse, <-chan error) {
 	responseChan := make(chan *DescribeUsersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUsersWithChan(request *DescribeUsersRequest) (<-ch
 }
 
 // DescribeUsersWithCallback invokes the cloudesl.DescribeUsers API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeusers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUsersWithCallback(request *DescribeUsersRequest, callback func(response *DescribeUsersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,11 +71,12 @@ func (client *Client) DescribeUsersWithCallback(request *DescribeUsersRequest, c
 // DescribeUsersRequest is the request struct for api DescribeUsers
 type DescribeUsersRequest struct {
 	*requests.RpcRequest
-	UserType   string           `position:"Body" name:"UserType"`
-	UserId     string           `position:"Body" name:"UserId"`
-	PageNumber requests.Integer `position:"Body" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Body" name:"PageSize"`
-	UserName   string           `position:"Body" name:"UserName"`
+	ExtraParams string           `position:"Body" name:"ExtraParams"`
+	UserId      string           `position:"Body" name:"UserId"`
+	PageNumber  requests.Integer `position:"Body" name:"PageNumber"`
+	PageSize    requests.Integer `position:"Body" name:"PageSize"`
+	UserType    string           `position:"Body" name:"UserType"`
+	UserName    string           `position:"Body" name:"UserName"`
 }
 
 // DescribeUsersResponse is the response struct for api DescribeUsers
@@ -106,6 +102,7 @@ func CreateDescribeUsersRequest() (request *DescribeUsersRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeUsers", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

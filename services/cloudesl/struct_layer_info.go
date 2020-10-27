@@ -18,6 +18,7 @@ package cloudesl
 // LayerInfo is a nested struct in cloudesl response
 type LayerInfo struct {
 	Layer              int                 `json:"Layer" xml:"Layer"`
+	RailCode           string              `json:"RailCode" xml:"RailCode"`
 	LayerOrigin        string              `json:"LayerOrigin" xml:"LayerOrigin"`
 	ShelfPositionInfos []ShelfPositionInfo `json:"ShelfPositionInfos" xml:"ShelfPositionInfos"`
 }

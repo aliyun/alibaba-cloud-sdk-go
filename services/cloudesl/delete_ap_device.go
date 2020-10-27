@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteApDevice invokes the cloudesl.DeleteApDevice API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/deleteapdevice.html
 func (client *Client) DeleteApDevice(request *DeleteApDeviceRequest) (response *DeleteApDeviceResponse, err error) {
 	response = CreateDeleteApDeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteApDevice(request *DeleteApDeviceRequest) (response *
 }
 
 // DeleteApDeviceWithChan invokes the cloudesl.DeleteApDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/deleteapdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteApDeviceWithChan(request *DeleteApDeviceRequest) (<-chan *DeleteApDeviceResponse, <-chan error) {
 	responseChan := make(chan *DeleteApDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteApDeviceWithChan(request *DeleteApDeviceRequest) (<-
 }
 
 // DeleteApDeviceWithCallback invokes the cloudesl.DeleteApDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/deleteapdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteApDeviceWithCallback(request *DeleteApDeviceRequest, callback func(response *DeleteApDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,9 @@ func (client *Client) DeleteApDeviceWithCallback(request *DeleteApDeviceRequest,
 // DeleteApDeviceRequest is the request struct for api DeleteApDevice
 type DeleteApDeviceRequest struct {
 	*requests.RpcRequest
-	ApMac   string `position:"Body" name:"ApMac"`
-	StoreId string `position:"Body" name:"StoreId"`
+	ExtraParams string `position:"Body" name:"ExtraParams"`
+	ApMac       string `position:"Body" name:"ApMac"`
+	StoreId     string `position:"Body" name:"StoreId"`
 }
 
 // DeleteApDeviceResponse is the response struct for api DeleteApDevice
@@ -99,6 +95,7 @@ func CreateDeleteApDeviceRequest() (request *DeleteApDeviceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "DeleteApDevice", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeStores invokes the cloudesl.DescribeStores API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/describestores.html
 func (client *Client) DescribeStores(request *DescribeStoresRequest) (response *DescribeStoresResponse, err error) {
 	response = CreateDescribeStoresResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeStores(request *DescribeStoresRequest) (response *
 }
 
 // DescribeStoresWithChan invokes the cloudesl.DescribeStores API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describestores.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStoresWithChan(request *DescribeStoresRequest) (<-chan *DescribeStoresResponse, <-chan error) {
 	responseChan := make(chan *DescribeStoresResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeStoresWithChan(request *DescribeStoresRequest) (<-
 }
 
 // DescribeStoresWithCallback invokes the cloudesl.DescribeStores API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describestores.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStoresWithCallback(request *DescribeStoresRequest, callback func(response *DescribeStoresResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) DescribeStoresWithCallback(request *DescribeStoresRequest,
 // DescribeStoresRequest is the request struct for api DescribeStores
 type DescribeStoresRequest struct {
 	*requests.RpcRequest
+	ExtraParams   string           `position:"Body" name:"ExtraParams"`
 	StoreName     string           `position:"Body" name:"StoreName"`
 	StoreId       string           `position:"Body" name:"StoreId"`
 	PageNumber    requests.Integer `position:"Body" name:"PageNumber"`
@@ -108,6 +104,7 @@ func CreateDescribeStoresRequest() (request *DescribeStoresRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeStores", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

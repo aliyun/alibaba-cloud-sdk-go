@@ -17,8 +17,11 @@ package cloudesl
 
 // UserInfo is a nested struct in cloudesl response
 type UserInfo struct {
-	Stores   string `json:"Stores" xml:"Stores"`
-	UserName string `json:"UserName" xml:"UserName"`
-	UserId   string `json:"UserId" xml:"UserId"`
-	UserType string `json:"UserType" xml:"UserType"`
+	Stores        string         `json:"Stores" xml:"Stores"`
+	UserName      string         `json:"UserName" xml:"UserName"`
+	UserId        string         `json:"UserId" xml:"UserId"`
+	UserType      string         `json:"UserType" xml:"UserType"`
+	OwnerId       string         `json:"OwnerId" xml:"OwnerId"`
+	Bid           string         `json:"Bid" xml:"Bid"`
+	DingTalkInfos []DingTalkInfo `json:"DingTalkInfos" xml:"DingTalkInfos"`
 }

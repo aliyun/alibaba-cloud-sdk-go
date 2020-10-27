@@ -21,7 +21,6 @@ import (
 )
 
 // UnassignUser invokes the cloudesl.UnassignUser API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/unassignuser.html
 func (client *Client) UnassignUser(request *UnassignUserRequest) (response *UnassignUserResponse, err error) {
 	response = CreateUnassignUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnassignUser(request *UnassignUserRequest) (response *Unas
 }
 
 // UnassignUserWithChan invokes the cloudesl.UnassignUser API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/unassignuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassignUserWithChan(request *UnassignUserRequest) (<-chan *UnassignUserResponse, <-chan error) {
 	responseChan := make(chan *UnassignUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnassignUserWithChan(request *UnassignUserRequest) (<-chan
 }
 
 // UnassignUserWithCallback invokes the cloudesl.UnassignUser API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/unassignuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassignUserWithCallback(request *UnassignUserRequest, callback func(response *UnassignUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,7 +71,8 @@ func (client *Client) UnassignUserWithCallback(request *UnassignUserRequest, cal
 // UnassignUserRequest is the request struct for api UnassignUser
 type UnassignUserRequest struct {
 	*requests.RpcRequest
-	UserId string `position:"Body" name:"UserId"`
+	ExtraParams string `position:"Body" name:"ExtraParams"`
+	UserId      string `position:"Body" name:"UserId"`
 }
 
 // UnassignUserResponse is the response struct for api UnassignUser
@@ -98,6 +94,7 @@ func CreateUnassignUserRequest() (request *UnassignUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "UnassignUser", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

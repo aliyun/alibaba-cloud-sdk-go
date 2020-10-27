@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUserLog invokes the cloudesl.DescribeUserLog API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeuserlog.html
 func (client *Client) DescribeUserLog(request *DescribeUserLogRequest) (response *DescribeUserLogResponse, err error) {
 	response = CreateDescribeUserLogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUserLog(request *DescribeUserLogRequest) (response
 }
 
 // DescribeUserLogWithChan invokes the cloudesl.DescribeUserLog API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeuserlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserLogWithChan(request *DescribeUserLogRequest) (<-chan *DescribeUserLogResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUserLogWithChan(request *DescribeUserLogRequest) (
 }
 
 // DescribeUserLogWithCallback invokes the cloudesl.DescribeUserLog API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeuserlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserLogWithCallback(request *DescribeUserLogRequest, callback func(response *DescribeUserLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) DescribeUserLogWithCallback(request *DescribeUserLogReques
 // DescribeUserLogRequest is the request struct for api DescribeUserLog
 type DescribeUserLogRequest struct {
 	*requests.RpcRequest
+	ExtraParams     string           `position:"Body" name:"ExtraParams"`
 	StoreId         string           `position:"Body" name:"StoreId"`
 	UserId          string           `position:"Body" name:"UserId"`
 	PageNumber      requests.Integer `position:"Body" name:"PageNumber"`
@@ -113,6 +109,7 @@ func CreateDescribeUserLogRequest() (request *DescribeUserLogRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeUserLog", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

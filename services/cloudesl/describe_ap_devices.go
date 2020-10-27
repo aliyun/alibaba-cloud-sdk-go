@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeApDevices invokes the cloudesl.DescribeApDevices API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeapdevices.html
 func (client *Client) DescribeApDevices(request *DescribeApDevicesRequest) (response *DescribeApDevicesResponse, err error) {
 	response = CreateDescribeApDevicesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeApDevices(request *DescribeApDevicesRequest) (resp
 }
 
 // DescribeApDevicesWithChan invokes the cloudesl.DescribeApDevices API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeapdevices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApDevicesWithChan(request *DescribeApDevicesRequest) (<-chan *DescribeApDevicesResponse, <-chan error) {
 	responseChan := make(chan *DescribeApDevicesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeApDevicesWithChan(request *DescribeApDevicesReques
 }
 
 // DescribeApDevicesWithCallback invokes the cloudesl.DescribeApDevices API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeapdevices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeApDevicesWithCallback(request *DescribeApDevicesRequest, callback func(response *DescribeApDevicesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,13 +71,14 @@ func (client *Client) DescribeApDevicesWithCallback(request *DescribeApDevicesRe
 // DescribeApDevicesRequest is the request struct for api DescribeApDevices
 type DescribeApDevicesRequest struct {
 	*requests.RpcRequest
-	ApMac      string           `position:"Body" name:"ApMac"`
-	StoreId    string           `position:"Body" name:"StoreId"`
-	PageNumber requests.Integer `position:"Body" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Body" name:"PageSize"`
-	Model      string           `position:"Body" name:"Model"`
-	BeActivate requests.Boolean `position:"Body" name:"BeActivate"`
-	Status     requests.Boolean `position:"Body" name:"Status"`
+	ExtraParams string           `position:"Body" name:"ExtraParams"`
+	ApMac       string           `position:"Body" name:"ApMac"`
+	StoreId     string           `position:"Body" name:"StoreId"`
+	PageNumber  requests.Integer `position:"Body" name:"PageNumber"`
+	PageSize    requests.Integer `position:"Body" name:"PageSize"`
+	Model       string           `position:"Body" name:"Model"`
+	BeActivate  requests.Boolean `position:"Body" name:"BeActivate"`
+	Status      requests.Boolean `position:"Body" name:"Status"`
 }
 
 // DescribeApDevicesResponse is the response struct for api DescribeApDevices
@@ -108,6 +104,7 @@ func CreateDescribeApDevicesRequest() (request *DescribeApDevicesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeApDevices", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

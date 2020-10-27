@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEslDevices invokes the cloudesl.DescribeEslDevices API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeesldevices.html
 func (client *Client) DescribeEslDevices(request *DescribeEslDevicesRequest) (response *DescribeEslDevicesResponse, err error) {
 	response = CreateDescribeEslDevicesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEslDevices(request *DescribeEslDevicesRequest) (re
 }
 
 // DescribeEslDevicesWithChan invokes the cloudesl.DescribeEslDevices API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeesldevices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEslDevicesWithChan(request *DescribeEslDevicesRequest) (<-chan *DescribeEslDevicesResponse, <-chan error) {
 	responseChan := make(chan *DescribeEslDevicesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEslDevicesWithChan(request *DescribeEslDevicesRequ
 }
 
 // DescribeEslDevicesWithCallback invokes the cloudesl.DescribeEslDevices API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeesldevices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEslDevicesWithCallback(request *DescribeEslDevicesRequest, callback func(response *DescribeEslDevicesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) DescribeEslDevicesWithCallback(request *DescribeEslDevices
 // DescribeEslDevicesRequest is the request struct for api DescribeEslDevices
 type DescribeEslDevicesRequest struct {
 	*requests.RpcRequest
+	ExtraParams      string           `position:"Body" name:"ExtraParams"`
 	Type             string           `position:"Body" name:"Type"`
 	StoreId          string           `position:"Body" name:"StoreId"`
 	PageNumber       requests.Integer `position:"Body" name:"PageNumber"`
@@ -109,6 +105,7 @@ func CreateDescribeEslDevicesRequest() (request *DescribeEslDevicesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeEslDevices", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

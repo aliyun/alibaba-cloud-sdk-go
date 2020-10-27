@@ -21,7 +21,6 @@ import (
 )
 
 // ComposePlanogramPositions invokes the cloudesl.ComposePlanogramPositions API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/composeplanogrampositions.html
 func (client *Client) ComposePlanogramPositions(request *ComposePlanogramPositionsRequest) (response *ComposePlanogramPositionsResponse, err error) {
 	response = CreateComposePlanogramPositionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ComposePlanogramPositions(request *ComposePlanogramPositio
 }
 
 // ComposePlanogramPositionsWithChan invokes the cloudesl.ComposePlanogramPositions API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/composeplanogrampositions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ComposePlanogramPositionsWithChan(request *ComposePlanogramPositionsRequest) (<-chan *ComposePlanogramPositionsResponse, <-chan error) {
 	responseChan := make(chan *ComposePlanogramPositionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ComposePlanogramPositionsWithChan(request *ComposePlanogra
 }
 
 // ComposePlanogramPositionsWithCallback invokes the cloudesl.ComposePlanogramPositions API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/composeplanogrampositions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ComposePlanogramPositionsWithCallback(request *ComposePlanogramPositionsRequest, callback func(response *ComposePlanogramPositionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,11 +72,12 @@ func (client *Client) ComposePlanogramPositionsWithCallback(request *ComposePlan
 type ComposePlanogramPositionsRequest struct {
 	*requests.RpcRequest
 	ActionType        string                                        `position:"Body" name:"ActionType"`
-	BeAutoRefresh     requests.Boolean                              `position:"Body" name:"BeAutoRefresh"`
+	ExtraParams       string                                        `position:"Body" name:"ExtraParams"`
 	StoreId           string                                        `position:"Body" name:"StoreId"`
 	Layer             requests.Integer                              `position:"Body" name:"Layer"`
-	Shelf             string                                        `position:"Body" name:"Shelf"`
 	LayerOrigin       string                                        `position:"Body" name:"LayerOrigin"`
+	BeAutoRefresh     requests.Boolean                              `position:"Body" name:"BeAutoRefresh"`
+	Shelf             string                                        `position:"Body" name:"Shelf"`
 	ShelfPositionInfo *[]ComposePlanogramPositionsShelfPositionInfo `position:"Body" name:"ShelfPositionInfo"  type:"Repeated"`
 }
 
@@ -114,6 +110,7 @@ func CreateComposePlanogramPositionsRequest() (request *ComposePlanogramPosition
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "ComposePlanogramPositions", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

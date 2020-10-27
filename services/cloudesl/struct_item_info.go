@@ -67,4 +67,6 @@ type ItemInfo struct {
 	ItemBarCode       string `json:"ItemBarCode" xml:"ItemBarCode"`
 	ItemId            string `json:"ItemId" xml:"ItemId"`
 	PromotionStart    string `json:"PromotionStart" xml:"PromotionStart"`
+	GmtCreate         string `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified       string `json:"GmtModified" xml:"GmtModified"`
 }

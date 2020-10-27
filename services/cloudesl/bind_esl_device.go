@@ -21,7 +21,6 @@ import (
 )
 
 // BindEslDevice invokes the cloudesl.BindEslDevice API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/bindesldevice.html
 func (client *Client) BindEslDevice(request *BindEslDeviceRequest) (response *BindEslDeviceResponse, err error) {
 	response = CreateBindEslDeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BindEslDevice(request *BindEslDeviceRequest) (response *Bi
 }
 
 // BindEslDeviceWithChan invokes the cloudesl.BindEslDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/bindesldevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindEslDeviceWithChan(request *BindEslDeviceRequest) (<-chan *BindEslDeviceResponse, <-chan error) {
 	responseChan := make(chan *BindEslDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BindEslDeviceWithChan(request *BindEslDeviceRequest) (<-ch
 }
 
 // BindEslDeviceWithCallback invokes the cloudesl.BindEslDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/bindesldevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindEslDeviceWithCallback(request *BindEslDeviceRequest, callback func(response *BindEslDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,12 +71,13 @@ func (client *Client) BindEslDeviceWithCallback(request *BindEslDeviceRequest, c
 // BindEslDeviceRequest is the request struct for api BindEslDevice
 type BindEslDeviceRequest struct {
 	*requests.RpcRequest
-	Column      string           `position:"Body" name:"Column"`
+	ExtraParams string           `position:"Body" name:"ExtraParams"`
 	StoreId     string           `position:"Body" name:"StoreId"`
 	Layer       requests.Integer `position:"Body" name:"Layer"`
-	Shelf       string           `position:"Body" name:"Shelf"`
 	EslBarCode  string           `position:"Body" name:"EslBarCode"`
 	ItemBarCode string           `position:"Body" name:"ItemBarCode"`
+	Column      string           `position:"Body" name:"Column"`
+	Shelf       string           `position:"Body" name:"Shelf"`
 }
 
 // BindEslDeviceResponse is the response struct for api BindEslDevice
@@ -103,6 +99,7 @@ func CreateBindEslDeviceRequest() (request *BindEslDeviceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "BindEslDevice", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

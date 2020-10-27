@@ -21,7 +21,6 @@ import (
 )
 
 // ActivateApDevice invokes the cloudesl.ActivateApDevice API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/activateapdevice.html
 func (client *Client) ActivateApDevice(request *ActivateApDeviceRequest) (response *ActivateApDeviceResponse, err error) {
 	response = CreateActivateApDeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ActivateApDevice(request *ActivateApDeviceRequest) (respon
 }
 
 // ActivateApDeviceWithChan invokes the cloudesl.ActivateApDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/activateapdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActivateApDeviceWithChan(request *ActivateApDeviceRequest) (<-chan *ActivateApDeviceResponse, <-chan error) {
 	responseChan := make(chan *ActivateApDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ActivateApDeviceWithChan(request *ActivateApDeviceRequest)
 }
 
 // ActivateApDeviceWithCallback invokes the cloudesl.ActivateApDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/activateapdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActivateApDeviceWithCallback(request *ActivateApDeviceRequest, callback func(response *ActivateApDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,9 @@ func (client *Client) ActivateApDeviceWithCallback(request *ActivateApDeviceRequ
 // ActivateApDeviceRequest is the request struct for api ActivateApDevice
 type ActivateApDeviceRequest struct {
 	*requests.RpcRequest
-	ApMac   string `position:"Body" name:"ApMac"`
-	StoreId string `position:"Body" name:"StoreId"`
+	ExtraParams string `position:"Body" name:"ExtraParams"`
+	ApMac       string `position:"Body" name:"ApMac"`
+	StoreId     string `position:"Body" name:"StoreId"`
 }
 
 // ActivateApDeviceResponse is the response struct for api ActivateApDevice
@@ -99,6 +95,7 @@ func CreateActivateApDeviceRequest() (request *ActivateApDeviceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "ActivateApDevice", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

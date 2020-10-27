@@ -18,5 +18,9 @@ package cloudesl
 // ShelfInfo is a nested struct in cloudesl response
 type ShelfInfo struct {
 	Shelf      string      `json:"Shelf" xml:"Shelf"`
+	BeMatch    bool        `json:"BeMatch" xml:"BeMatch"`
+	Zone       string      `json:"Zone" xml:"Zone"`
+	Category   string      `json:"Category" xml:"Category"`
+	ShelfType  string      `json:"ShelfType" xml:"ShelfType"`
 	LayerInfos []LayerInfo `json:"LayerInfos" xml:"LayerInfos"`
 }

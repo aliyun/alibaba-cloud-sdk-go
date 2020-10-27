@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateStoreConfig invokes the cloudesl.UpdateStoreConfig API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/updatestoreconfig.html
 func (client *Client) UpdateStoreConfig(request *UpdateStoreConfigRequest) (response *UpdateStoreConfigResponse, err error) {
 	response = CreateUpdateStoreConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateStoreConfig(request *UpdateStoreConfigRequest) (resp
 }
 
 // UpdateStoreConfigWithChan invokes the cloudesl.UpdateStoreConfig API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/updatestoreconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateStoreConfigWithChan(request *UpdateStoreConfigRequest) (<-chan *UpdateStoreConfigResponse, <-chan error) {
 	responseChan := make(chan *UpdateStoreConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateStoreConfigWithChan(request *UpdateStoreConfigReques
 }
 
 // UpdateStoreConfigWithCallback invokes the cloudesl.UpdateStoreConfig API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/updatestoreconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateStoreConfigWithCallback(request *UpdateStoreConfigRequest, callback func(response *UpdateStoreConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,10 @@ func (client *Client) UpdateStoreConfigWithCallback(request *UpdateStoreConfigRe
 // UpdateStoreConfigRequest is the request struct for api UpdateStoreConfig
 type UpdateStoreConfigRequest struct {
 	*requests.RpcRequest
+	ExtraParams             string           `position:"Body" name:"ExtraParams"`
+	StoreId                 string           `position:"Body" name:"StoreId"`
 	EnableNotification      requests.Boolean `position:"Body" name:"EnableNotification"`
 	NotificationWebHook     string           `position:"Body" name:"NotificationWebHook"`
-	StoreId                 string           `position:"Body" name:"StoreId"`
 	NotificationSilentTimes string           `position:"Body" name:"NotificationSilentTimes"`
 }
 
@@ -101,6 +97,7 @@ func CreateUpdateStoreConfigRequest() (request *UpdateStoreConfigRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "UpdateStoreConfig", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

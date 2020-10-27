@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeItems invokes the cloudesl.DescribeItems API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeitems.html
 func (client *Client) DescribeItems(request *DescribeItemsRequest) (response *DescribeItemsResponse, err error) {
 	response = CreateDescribeItemsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeItems(request *DescribeItemsRequest) (response *De
 }
 
 // DescribeItemsWithChan invokes the cloudesl.DescribeItems API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeitems.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeItemsWithChan(request *DescribeItemsRequest) (<-chan *DescribeItemsResponse, <-chan error) {
 	responseChan := make(chan *DescribeItemsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeItemsWithChan(request *DescribeItemsRequest) (<-ch
 }
 
 // DescribeItemsWithCallback invokes the cloudesl.DescribeItems API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeitems.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeItemsWithCallback(request *DescribeItemsRequest, callback func(response *DescribeItemsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) DescribeItemsWithCallback(request *DescribeItemsRequest, c
 // DescribeItemsRequest is the request struct for api DescribeItems
 type DescribeItemsRequest struct {
 	*requests.RpcRequest
+	ExtraParams string           `position:"Body" name:"ExtraParams"`
 	StoreId     string           `position:"Body" name:"StoreId"`
 	PageNumber  requests.Integer `position:"Body" name:"PageNumber"`
 	ItemId      string           `position:"Body" name:"ItemId"`
@@ -109,6 +105,7 @@ func CreateDescribeItemsRequest() (request *DescribeItemsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeItems", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

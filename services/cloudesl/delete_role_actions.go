@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// AddPlanogramShelf invokes the cloudesl.AddPlanogramShelf API synchronously
-func (client *Client) AddPlanogramShelf(request *AddPlanogramShelfRequest) (response *AddPlanogramShelfResponse, err error) {
-	response = CreateAddPlanogramShelfResponse()
+// DeleteRoleActions invokes the cloudesl.DeleteRoleActions API synchronously
+func (client *Client) DeleteRoleActions(request *DeleteRoleActionsRequest) (response *DeleteRoleActionsResponse, err error) {
+	response = CreateDeleteRoleActionsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// AddPlanogramShelfWithChan invokes the cloudesl.AddPlanogramShelf API asynchronously
-func (client *Client) AddPlanogramShelfWithChan(request *AddPlanogramShelfRequest) (<-chan *AddPlanogramShelfResponse, <-chan error) {
-	responseChan := make(chan *AddPlanogramShelfResponse, 1)
+// DeleteRoleActionsWithChan invokes the cloudesl.DeleteRoleActions API asynchronously
+func (client *Client) DeleteRoleActionsWithChan(request *DeleteRoleActionsRequest) (<-chan *DeleteRoleActionsResponse, <-chan error) {
+	responseChan := make(chan *DeleteRoleActionsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.AddPlanogramShelf(request)
+		response, err := client.DeleteRoleActions(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) AddPlanogramShelfWithChan(request *AddPlanogramShelfReques
 	return responseChan, errChan
 }
 
-// AddPlanogramShelfWithCallback invokes the cloudesl.AddPlanogramShelf API asynchronously
-func (client *Client) AddPlanogramShelfWithCallback(request *AddPlanogramShelfRequest, callback func(response *AddPlanogramShelfResponse, err error)) <-chan int {
+// DeleteRoleActionsWithCallback invokes the cloudesl.DeleteRoleActions API asynchronously
+func (client *Client) DeleteRoleActionsWithCallback(request *DeleteRoleActionsRequest, callback func(response *DeleteRoleActionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *AddPlanogramShelfResponse
+		var response *DeleteRoleActionsResponse
 		var err error
 		defer close(result)
-		response, err = client.AddPlanogramShelf(request)
+		response, err = client.DeleteRoleActions(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,20 +68,16 @@ func (client *Client) AddPlanogramShelfWithCallback(request *AddPlanogramShelfRe
 	return result
 }
 
-// AddPlanogramShelfRequest is the request struct for api AddPlanogramShelf
-type AddPlanogramShelfRequest struct {
+// DeleteRoleActionsRequest is the request struct for api DeleteRoleActions
+type DeleteRoleActionsRequest struct {
 	*requests.RpcRequest
-	ExtraParams string `position:"Body" name:"ExtraParams"`
-	ClientToken string `position:"Body" name:"ClientToken"`
-	ShelfType   string `position:"Body" name:"ShelfType"`
-	StoreId     string `position:"Body" name:"StoreId"`
-	Zone        string `position:"Body" name:"Zone"`
-	Shelf       string `position:"Body" name:"Shelf"`
-	Category    string `position:"Body" name:"Category"`
+	RoleCode           string `position:"Body" name:"RoleCode"`
+	ExtraParams        string `position:"Body" name:"ExtraParams"`
+	AccessControlLists string `position:"Body" name:"AccessControlLists"`
 }
 
-// AddPlanogramShelfResponse is the response struct for api AddPlanogramShelf
-type AddPlanogramShelfResponse struct {
+// DeleteRoleActionsResponse is the response struct for api DeleteRoleActions
+type DeleteRoleActionsResponse struct {
 	*responses.BaseResponse
 	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
@@ -93,19 +89,19 @@ type AddPlanogramShelfResponse struct {
 	Success        bool   `json:"Success" xml:"Success"`
 }
 
-// CreateAddPlanogramShelfRequest creates a request to invoke AddPlanogramShelf API
-func CreateAddPlanogramShelfRequest() (request *AddPlanogramShelfRequest) {
-	request = &AddPlanogramShelfRequest{
+// CreateDeleteRoleActionsRequest creates a request to invoke DeleteRoleActions API
+func CreateDeleteRoleActionsRequest() (request *DeleteRoleActionsRequest) {
+	request = &DeleteRoleActionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "AddPlanogramShelf", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "DeleteRoleActions", "cloudesl", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateAddPlanogramShelfResponse creates a response to parse from AddPlanogramShelf response
-func CreateAddPlanogramShelfResponse() (response *AddPlanogramShelfResponse) {
-	response = &AddPlanogramShelfResponse{
+// CreateDeleteRoleActionsResponse creates a response to parse from DeleteRoleActions response
+func CreateDeleteRoleActionsResponse() (response *DeleteRoleActionsResponse) {
+	response = &DeleteRoleActionsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

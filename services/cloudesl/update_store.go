@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateStore invokes the cloudesl.UpdateStore API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/updatestore.html
 func (client *Client) UpdateStore(request *UpdateStoreRequest) (response *UpdateStoreResponse, err error) {
 	response = CreateUpdateStoreResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateStore(request *UpdateStoreRequest) (response *Update
 }
 
 // UpdateStoreWithChan invokes the cloudesl.UpdateStore API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/updatestore.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateStoreWithChan(request *UpdateStoreRequest) (<-chan *UpdateStoreResponse, <-chan error) {
 	responseChan := make(chan *UpdateStoreResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateStoreWithChan(request *UpdateStoreRequest) (<-chan *
 }
 
 // UpdateStoreWithCallback invokes the cloudesl.UpdateStore API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/updatestore.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateStoreWithCallback(request *UpdateStoreRequest, callback func(response *UpdateStoreResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,10 +71,11 @@ func (client *Client) UpdateStoreWithCallback(request *UpdateStoreRequest, callb
 // UpdateStoreRequest is the request struct for api UpdateStore
 type UpdateStoreRequest struct {
 	*requests.RpcRequest
+	ExtraParams   string `position:"Body" name:"ExtraParams"`
 	StoreName     string `position:"Body" name:"StoreName"`
 	StoreId       string `position:"Body" name:"StoreId"`
-	Phone         string `position:"Body" name:"Phone"`
 	UserStoreCode string `position:"Body" name:"UserStoreCode"`
+	Phone         string `position:"Body" name:"Phone"`
 }
 
 // UpdateStoreResponse is the response struct for api UpdateStore
@@ -101,6 +97,7 @@ func CreateUpdateStoreRequest() (request *UpdateStoreRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "UpdateStore", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

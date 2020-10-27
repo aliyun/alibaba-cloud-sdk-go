@@ -21,7 +21,6 @@ import (
 )
 
 // AddUser invokes the cloudesl.AddUser API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/adduser.html
 func (client *Client) AddUser(request *AddUserRequest) (response *AddUserResponse, err error) {
 	response = CreateAddUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddUser(request *AddUserRequest) (response *AddUserRespons
 }
 
 // AddUserWithChan invokes the cloudesl.AddUser API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/adduser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddUserWithChan(request *AddUserRequest) (<-chan *AddUserResponse, <-chan error) {
 	responseChan := make(chan *AddUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddUserWithChan(request *AddUserRequest) (<-chan *AddUserR
 }
 
 // AddUserWithCallback invokes the cloudesl.AddUser API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/adduser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddUserWithCallback(request *AddUserRequest, callback func(response *AddUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,7 +71,9 @@ func (client *Client) AddUserWithCallback(request *AddUserRequest, callback func
 // AddUserRequest is the request struct for api AddUser
 type AddUserRequest struct {
 	*requests.RpcRequest
-	UserId string `position:"Body" name:"UserId"`
+	ExtraParams string `position:"Body" name:"ExtraParams"`
+	ClientToken string `position:"Body" name:"ClientToken"`
+	UserId      string `position:"Body" name:"UserId"`
 }
 
 // AddUserResponse is the response struct for api AddUser
@@ -98,6 +95,7 @@ func CreateAddUserRequest() (request *AddUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "AddUser", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

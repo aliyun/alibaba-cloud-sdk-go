@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteStore invokes the cloudesl.DeleteStore API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/deletestore.html
 func (client *Client) DeleteStore(request *DeleteStoreRequest) (response *DeleteStoreResponse, err error) {
 	response = CreateDeleteStoreResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteStore(request *DeleteStoreRequest) (response *Delete
 }
 
 // DeleteStoreWithChan invokes the cloudesl.DeleteStore API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/deletestore.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteStoreWithChan(request *DeleteStoreRequest) (<-chan *DeleteStoreResponse, <-chan error) {
 	responseChan := make(chan *DeleteStoreResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteStoreWithChan(request *DeleteStoreRequest) (<-chan *
 }
 
 // DeleteStoreWithCallback invokes the cloudesl.DeleteStore API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/deletestore.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteStoreWithCallback(request *DeleteStoreRequest, callback func(response *DeleteStoreResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,7 +71,8 @@ func (client *Client) DeleteStoreWithCallback(request *DeleteStoreRequest, callb
 // DeleteStoreRequest is the request struct for api DeleteStore
 type DeleteStoreRequest struct {
 	*requests.RpcRequest
-	StoreId string `position:"Body" name:"StoreId"`
+	ExtraParams string `position:"Body" name:"ExtraParams"`
+	StoreId     string `position:"Body" name:"StoreId"`
 }
 
 // DeleteStoreResponse is the response struct for api DeleteStore
@@ -98,6 +94,7 @@ func CreateDeleteStoreRequest() (request *DeleteStoreRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "DeleteStore", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

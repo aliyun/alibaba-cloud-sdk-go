@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeStoreConfig invokes the cloudesl.DescribeStoreConfig API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/describestoreconfig.html
 func (client *Client) DescribeStoreConfig(request *DescribeStoreConfigRequest) (response *DescribeStoreConfigResponse, err error) {
 	response = CreateDescribeStoreConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeStoreConfig(request *DescribeStoreConfigRequest) (
 }
 
 // DescribeStoreConfigWithChan invokes the cloudesl.DescribeStoreConfig API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describestoreconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStoreConfigWithChan(request *DescribeStoreConfigRequest) (<-chan *DescribeStoreConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeStoreConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeStoreConfigWithChan(request *DescribeStoreConfigRe
 }
 
 // DescribeStoreConfigWithCallback invokes the cloudesl.DescribeStoreConfig API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describestoreconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStoreConfigWithCallback(request *DescribeStoreConfigRequest, callback func(response *DescribeStoreConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,7 +71,8 @@ func (client *Client) DescribeStoreConfigWithCallback(request *DescribeStoreConf
 // DescribeStoreConfigRequest is the request struct for api DescribeStoreConfig
 type DescribeStoreConfigRequest struct {
 	*requests.RpcRequest
-	StoreId string `position:"Body" name:"StoreId"`
+	ExtraParams string `position:"Body" name:"ExtraParams"`
+	StoreId     string `position:"Body" name:"StoreId"`
 }
 
 // DescribeStoreConfigResponse is the response struct for api DescribeStoreConfig
@@ -99,6 +95,7 @@ func CreateDescribeStoreConfigRequest() (request *DescribeStoreConfigRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeStoreConfig", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

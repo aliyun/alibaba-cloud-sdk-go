@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAlarms invokes the cloudesl.DescribeAlarms API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/describealarms.html
 func (client *Client) DescribeAlarms(request *DescribeAlarmsRequest) (response *DescribeAlarmsResponse, err error) {
 	response = CreateDescribeAlarmsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAlarms(request *DescribeAlarmsRequest) (response *
 }
 
 // DescribeAlarmsWithChan invokes the cloudesl.DescribeAlarms API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describealarms.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAlarmsWithChan(request *DescribeAlarmsRequest) (<-chan *DescribeAlarmsResponse, <-chan error) {
 	responseChan := make(chan *DescribeAlarmsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAlarmsWithChan(request *DescribeAlarmsRequest) (<-
 }
 
 // DescribeAlarmsWithCallback invokes the cloudesl.DescribeAlarms API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describealarms.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAlarmsWithCallback(request *DescribeAlarmsRequest, callback func(response *DescribeAlarmsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) DescribeAlarmsWithCallback(request *DescribeAlarmsRequest,
 // DescribeAlarmsRequest is the request struct for api DescribeAlarms
 type DescribeAlarmsRequest struct {
 	*requests.RpcRequest
+	ExtraParams string           `position:"Body" name:"ExtraParams"`
 	StoreId     string           `position:"Body" name:"StoreId"`
 	PageNumber  requests.Integer `position:"Body" name:"PageNumber"`
 	PageSize    requests.Integer `position:"Body" name:"PageSize"`
@@ -109,6 +105,7 @@ func CreateDescribeAlarmsRequest() (request *DescribeAlarmsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeAlarms", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

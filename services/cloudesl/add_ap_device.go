@@ -21,7 +21,6 @@ import (
 )
 
 // AddApDevice invokes the cloudesl.AddApDevice API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/addapdevice.html
 func (client *Client) AddApDevice(request *AddApDeviceRequest) (response *AddApDeviceResponse, err error) {
 	response = CreateAddApDeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddApDevice(request *AddApDeviceRequest) (response *AddApD
 }
 
 // AddApDeviceWithChan invokes the cloudesl.AddApDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/addapdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddApDeviceWithChan(request *AddApDeviceRequest) (<-chan *AddApDeviceResponse, <-chan error) {
 	responseChan := make(chan *AddApDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddApDeviceWithChan(request *AddApDeviceRequest) (<-chan *
 }
 
 // AddApDeviceWithCallback invokes the cloudesl.AddApDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/addapdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddApDeviceWithCallback(request *AddApDeviceRequest, callback func(response *AddApDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,11 @@ func (client *Client) AddApDeviceWithCallback(request *AddApDeviceRequest, callb
 // AddApDeviceRequest is the request struct for api AddApDevice
 type AddApDeviceRequest struct {
 	*requests.RpcRequest
-	Remark  string `position:"Body" name:"Remark"`
-	ApMac   string `position:"Body" name:"ApMac"`
-	StoreId string `position:"Body" name:"StoreId"`
+	ExtraParams string `position:"Body" name:"ExtraParams"`
+	ClientToken string `position:"Body" name:"ClientToken"`
+	Remark      string `position:"Body" name:"Remark"`
+	ApMac       string `position:"Body" name:"ApMac"`
+	StoreId     string `position:"Body" name:"StoreId"`
 }
 
 // AddApDeviceResponse is the response struct for api AddApDevice
@@ -100,6 +97,7 @@ func CreateAddApDeviceRequest() (request *AddApDeviceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "AddApDevice", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

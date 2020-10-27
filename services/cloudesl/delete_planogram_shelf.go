@@ -21,7 +21,6 @@ import (
 )
 
 // DeletePlanogramShelf invokes the cloudesl.DeletePlanogramShelf API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/deleteplanogramshelf.html
 func (client *Client) DeletePlanogramShelf(request *DeletePlanogramShelfRequest) (response *DeletePlanogramShelfResponse, err error) {
 	response = CreateDeletePlanogramShelfResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeletePlanogramShelf(request *DeletePlanogramShelfRequest)
 }
 
 // DeletePlanogramShelfWithChan invokes the cloudesl.DeletePlanogramShelf API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/deleteplanogramshelf.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePlanogramShelfWithChan(request *DeletePlanogramShelfRequest) (<-chan *DeletePlanogramShelfResponse, <-chan error) {
 	responseChan := make(chan *DeletePlanogramShelfResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeletePlanogramShelfWithChan(request *DeletePlanogramShelf
 }
 
 // DeletePlanogramShelfWithCallback invokes the cloudesl.DeletePlanogramShelf API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/deleteplanogramshelf.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePlanogramShelfWithCallback(request *DeletePlanogramShelfRequest, callback func(response *DeletePlanogramShelfResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) DeletePlanogramShelfWithCallback(request *DeletePlanogramS
 // DeletePlanogramShelfRequest is the request struct for api DeletePlanogramShelf
 type DeletePlanogramShelfRequest struct {
 	*requests.RpcRequest
+	ExtraParams   string           `position:"Body" name:"ExtraParams"`
 	BeAutoRefresh requests.Boolean `position:"Body" name:"BeAutoRefresh"`
 	StoreId       string           `position:"Body" name:"StoreId"`
 	Shelf         string           `position:"Body" name:"Shelf"`
@@ -100,6 +96,7 @@ func CreateDeletePlanogramShelfRequest() (request *DeletePlanogramShelfRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "DeletePlanogramShelf", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

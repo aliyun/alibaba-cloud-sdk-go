@@ -1,3 +1,7 @@
+2020-10-27 Version: v1.61.607
+- Generated 2020-02-01 for `cloudesl`.
+- Add role authority management.
+
 2020-10-26 Version: v1.61.606
 - Generated 2014-05-26 for `Ecs`.
 

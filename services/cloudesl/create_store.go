@@ -21,7 +21,6 @@ import (
 )
 
 // CreateStore invokes the cloudesl.CreateStore API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/createstore.html
 func (client *Client) CreateStore(request *CreateStoreRequest) (response *CreateStoreResponse, err error) {
 	response = CreateCreateStoreResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateStore(request *CreateStoreRequest) (response *Create
 }
 
 // CreateStoreWithChan invokes the cloudesl.CreateStore API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/createstore.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateStoreWithChan(request *CreateStoreRequest) (<-chan *CreateStoreResponse, <-chan error) {
 	responseChan := make(chan *CreateStoreResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateStoreWithChan(request *CreateStoreRequest) (<-chan *
 }
 
 // CreateStoreWithCallback invokes the cloudesl.CreateStore API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/createstore.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateStoreWithCallback(request *CreateStoreRequest, callback func(response *CreateStoreResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,10 +71,12 @@ func (client *Client) CreateStoreWithCallback(request *CreateStoreRequest, callb
 // CreateStoreRequest is the request struct for api CreateStore
 type CreateStoreRequest struct {
 	*requests.RpcRequest
+	ExtraParams   string `position:"Body" name:"ExtraParams"`
+	ClientToken   string `position:"Body" name:"ClientToken"`
 	StoreName     string `position:"Body" name:"StoreName"`
 	ParentId      string `position:"Body" name:"ParentId"`
-	Phone         string `position:"Body" name:"Phone"`
 	UserStoreCode string `position:"Body" name:"UserStoreCode"`
+	Phone         string `position:"Body" name:"Phone"`
 }
 
 // CreateStoreResponse is the response struct for api CreateStore
@@ -102,6 +99,7 @@ func CreateCreateStoreRequest() (request *CreateStoreRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "CreateStore", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

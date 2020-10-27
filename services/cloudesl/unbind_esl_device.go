@@ -21,7 +21,6 @@ import (
 )
 
 // UnbindEslDevice invokes the cloudesl.UnbindEslDevice API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/unbindesldevice.html
 func (client *Client) UnbindEslDevice(request *UnbindEslDeviceRequest) (response *UnbindEslDeviceResponse, err error) {
 	response = CreateUnbindEslDeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UnbindEslDevice(request *UnbindEslDeviceRequest) (response
 }
 
 // UnbindEslDeviceWithChan invokes the cloudesl.UnbindEslDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/unbindesldevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindEslDeviceWithChan(request *UnbindEslDeviceRequest) (<-chan *UnbindEslDeviceResponse, <-chan error) {
 	responseChan := make(chan *UnbindEslDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UnbindEslDeviceWithChan(request *UnbindEslDeviceRequest) (
 }
 
 // UnbindEslDeviceWithCallback invokes the cloudesl.UnbindEslDevice API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/unbindesldevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindEslDeviceWithCallback(request *UnbindEslDeviceRequest, callback func(response *UnbindEslDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,12 +71,13 @@ func (client *Client) UnbindEslDeviceWithCallback(request *UnbindEslDeviceReques
 // UnbindEslDeviceRequest is the request struct for api UnbindEslDevice
 type UnbindEslDeviceRequest struct {
 	*requests.RpcRequest
-	Column      string           `position:"Body" name:"Column"`
+	ExtraParams string           `position:"Body" name:"ExtraParams"`
 	StoreId     string           `position:"Body" name:"StoreId"`
 	Layer       requests.Integer `position:"Body" name:"Layer"`
-	Shelf       string           `position:"Body" name:"Shelf"`
 	EslBarCode  string           `position:"Body" name:"EslBarCode"`
 	ItemBarCode string           `position:"Body" name:"ItemBarCode"`
+	Column      string           `position:"Body" name:"Column"`
+	Shelf       string           `position:"Body" name:"Shelf"`
 }
 
 // UnbindEslDeviceResponse is the response struct for api UnbindEslDevice
@@ -103,6 +99,7 @@ func CreateUnbindEslDeviceRequest() (request *UnbindEslDeviceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "UnbindEslDevice", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

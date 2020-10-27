@@ -21,7 +21,6 @@ import (
 )
 
 // AssignUser invokes the cloudesl.AssignUser API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/assignuser.html
 func (client *Client) AssignUser(request *AssignUserRequest) (response *AssignUserResponse, err error) {
 	response = CreateAssignUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AssignUser(request *AssignUserRequest) (response *AssignUs
 }
 
 // AssignUserWithChan invokes the cloudesl.AssignUser API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/assignuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssignUserWithChan(request *AssignUserRequest) (<-chan *AssignUserResponse, <-chan error) {
 	responseChan := make(chan *AssignUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AssignUserWithChan(request *AssignUserRequest) (<-chan *As
 }
 
 // AssignUserWithCallback invokes the cloudesl.AssignUser API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/assignuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssignUserWithCallback(request *AssignUserRequest, callback func(response *AssignUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,10 @@ func (client *Client) AssignUserWithCallback(request *AssignUserRequest, callbac
 // AssignUserRequest is the request struct for api AssignUser
 type AssignUserRequest struct {
 	*requests.RpcRequest
-	Stores   string `position:"Body" name:"Stores"`
-	UserType string `position:"Body" name:"UserType"`
-	UserId   string `position:"Body" name:"UserId"`
+	ExtraParams string `position:"Body" name:"ExtraParams"`
+	Stores      string `position:"Body" name:"Stores"`
+	UserType    string `position:"Body" name:"UserType"`
+	UserId      string `position:"Body" name:"UserId"`
 }
 
 // AssignUserResponse is the response struct for api AssignUser
@@ -100,6 +96,7 @@ func CreateAssignUserRequest() (request *AssignUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "AssignUser", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

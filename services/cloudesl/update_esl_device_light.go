@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateEslDeviceLight invokes the cloudesl.UpdateEslDeviceLight API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/updateesldevicelight.html
 func (client *Client) UpdateEslDeviceLight(request *UpdateEslDeviceLightRequest) (response *UpdateEslDeviceLightResponse, err error) {
 	response = CreateUpdateEslDeviceLightResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateEslDeviceLight(request *UpdateEslDeviceLightRequest)
 }
 
 // UpdateEslDeviceLightWithChan invokes the cloudesl.UpdateEslDeviceLight API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/updateesldevicelight.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateEslDeviceLightWithChan(request *UpdateEslDeviceLightRequest) (<-chan *UpdateEslDeviceLightResponse, <-chan error) {
 	responseChan := make(chan *UpdateEslDeviceLightResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateEslDeviceLightWithChan(request *UpdateEslDeviceLight
 }
 
 // UpdateEslDeviceLightWithCallback invokes the cloudesl.UpdateEslDeviceLight API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/updateesldevicelight.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateEslDeviceLightWithCallback(request *UpdateEslDeviceLightRequest, callback func(response *UpdateEslDeviceLightResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +71,7 @@ func (client *Client) UpdateEslDeviceLightWithCallback(request *UpdateEslDeviceL
 // UpdateEslDeviceLightRequest is the request struct for api UpdateEslDeviceLight
 type UpdateEslDeviceLightRequest struct {
 	*requests.RpcRequest
+	ExtraParams string           `position:"Body" name:"ExtraParams"`
 	LightUpTime requests.Integer `position:"Body" name:"LightUpTime"`
 	StoreId     string           `position:"Body" name:"StoreId"`
 	Frequency   string           `position:"Body" name:"Frequency"`
@@ -106,6 +102,7 @@ func CreateUpdateEslDeviceLightRequest() (request *UpdateEslDeviceLightRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "UpdateEslDeviceLight", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

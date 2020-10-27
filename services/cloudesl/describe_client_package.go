@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// AddPlanogramShelf invokes the cloudesl.AddPlanogramShelf API synchronously
-func (client *Client) AddPlanogramShelf(request *AddPlanogramShelfRequest) (response *AddPlanogramShelfResponse, err error) {
-	response = CreateAddPlanogramShelfResponse()
+// DescribeClientPackage invokes the cloudesl.DescribeClientPackage API synchronously
+func (client *Client) DescribeClientPackage(request *DescribeClientPackageRequest) (response *DescribeClientPackageResponse, err error) {
+	response = CreateDescribeClientPackageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// AddPlanogramShelfWithChan invokes the cloudesl.AddPlanogramShelf API asynchronously
-func (client *Client) AddPlanogramShelfWithChan(request *AddPlanogramShelfRequest) (<-chan *AddPlanogramShelfResponse, <-chan error) {
-	responseChan := make(chan *AddPlanogramShelfResponse, 1)
+// DescribeClientPackageWithChan invokes the cloudesl.DescribeClientPackage API asynchronously
+func (client *Client) DescribeClientPackageWithChan(request *DescribeClientPackageRequest) (<-chan *DescribeClientPackageResponse, <-chan error) {
+	responseChan := make(chan *DescribeClientPackageResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.AddPlanogramShelf(request)
+		response, err := client.DescribeClientPackage(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) AddPlanogramShelfWithChan(request *AddPlanogramShelfReques
 	return responseChan, errChan
 }
 
-// AddPlanogramShelfWithCallback invokes the cloudesl.AddPlanogramShelf API asynchronously
-func (client *Client) AddPlanogramShelfWithCallback(request *AddPlanogramShelfRequest, callback func(response *AddPlanogramShelfResponse, err error)) <-chan int {
+// DescribeClientPackageWithCallback invokes the cloudesl.DescribeClientPackage API asynchronously
+func (client *Client) DescribeClientPackageWithCallback(request *DescribeClientPackageRequest, callback func(response *DescribeClientPackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *AddPlanogramShelfResponse
+		var response *DescribeClientPackageResponse
 		var err error
 		defer close(result)
-		response, err = client.AddPlanogramShelf(request)
+		response, err = client.DescribeClientPackage(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,24 +68,23 @@ func (client *Client) AddPlanogramShelfWithCallback(request *AddPlanogramShelfRe
 	return result
 }
 
-// AddPlanogramShelfRequest is the request struct for api AddPlanogramShelf
-type AddPlanogramShelfRequest struct {
+// DescribeClientPackageRequest is the request struct for api DescribeClientPackage
+type DescribeClientPackageRequest struct {
 	*requests.RpcRequest
+	ClientType  string `position:"Body" name:"ClientType"`
 	ExtraParams string `position:"Body" name:"ExtraParams"`
-	ClientToken string `position:"Body" name:"ClientToken"`
-	ShelfType   string `position:"Body" name:"ShelfType"`
-	StoreId     string `position:"Body" name:"StoreId"`
-	Zone        string `position:"Body" name:"Zone"`
-	Shelf       string `position:"Body" name:"Shelf"`
-	Category    string `position:"Body" name:"Category"`
 }
 
-// AddPlanogramShelfResponse is the response struct for api AddPlanogramShelf
-type AddPlanogramShelfResponse struct {
+// DescribeClientPackageResponse is the response struct for api DescribeClientPackage
+type DescribeClientPackageResponse struct {
 	*responses.BaseResponse
 	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
+	Description    string `json:"Description" xml:"Description"`
 	Message        string `json:"Message" xml:"Message"`
+	UpdateType     string `json:"UpdateType" xml:"UpdateType"`
+	Url            string `json:"Url" xml:"Url"`
+	Version        string `json:"Version" xml:"Version"`
 	DynamicCode    string `json:"DynamicCode" xml:"DynamicCode"`
 	Code           string `json:"Code" xml:"Code"`
 	DynamicMessage string `json:"DynamicMessage" xml:"DynamicMessage"`
@@ -93,19 +92,19 @@ type AddPlanogramShelfResponse struct {
 	Success        bool   `json:"Success" xml:"Success"`
 }
 
-// CreateAddPlanogramShelfRequest creates a request to invoke AddPlanogramShelf API
-func CreateAddPlanogramShelfRequest() (request *AddPlanogramShelfRequest) {
-	request = &AddPlanogramShelfRequest{
+// CreateDescribeClientPackageRequest creates a request to invoke DescribeClientPackage API
+func CreateDescribeClientPackageRequest() (request *DescribeClientPackageRequest) {
+	request = &DescribeClientPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "AddPlanogramShelf", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeClientPackage", "cloudesl", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateAddPlanogramShelfResponse creates a response to parse from AddPlanogramShelf response
-func CreateAddPlanogramShelfResponse() (response *AddPlanogramShelfResponse) {
-	response = &AddPlanogramShelfResponse{
+// CreateDescribeClientPackageResponse creates a response to parse from DescribeClientPackage response
+func CreateDescribeClientPackageResponse() (response *DescribeClientPackageResponse) {
+	response = &DescribeClientPackageResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -21,7 +21,6 @@ import (
 )
 
 // DissociatePlanogramRail invokes the cloudesl.DissociatePlanogramRail API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/dissociateplanogramrail.html
 func (client *Client) DissociatePlanogramRail(request *DissociatePlanogramRailRequest) (response *DissociatePlanogramRailResponse, err error) {
 	response = CreateDissociatePlanogramRailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DissociatePlanogramRail(request *DissociatePlanogramRailRe
 }
 
 // DissociatePlanogramRailWithChan invokes the cloudesl.DissociatePlanogramRail API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/dissociateplanogramrail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DissociatePlanogramRailWithChan(request *DissociatePlanogramRailRequest) (<-chan *DissociatePlanogramRailResponse, <-chan error) {
 	responseChan := make(chan *DissociatePlanogramRailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DissociatePlanogramRailWithChan(request *DissociatePlanogr
 }
 
 // DissociatePlanogramRailWithCallback invokes the cloudesl.DissociatePlanogramRail API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/dissociateplanogramrail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DissociatePlanogramRailWithCallback(request *DissociatePlanogramRailRequest, callback func(response *DissociatePlanogramRailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,9 @@ func (client *Client) DissociatePlanogramRailWithCallback(request *DissociatePla
 // DissociatePlanogramRailRequest is the request struct for api DissociatePlanogramRail
 type DissociatePlanogramRailRequest struct {
 	*requests.RpcRequest
-	StoreId  string `position:"Body" name:"StoreId"`
-	RailCode string `position:"Body" name:"RailCode"`
+	ExtraParams string `position:"Body" name:"ExtraParams"`
+	StoreId     string `position:"Body" name:"StoreId"`
+	RailCode    string `position:"Body" name:"RailCode"`
 }
 
 // DissociatePlanogramRailResponse is the response struct for api DissociatePlanogramRail
@@ -99,6 +95,7 @@ func CreateDissociatePlanogramRailRequest() (request *DissociatePlanogramRailReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "DissociatePlanogramRail", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

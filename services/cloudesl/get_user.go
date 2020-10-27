@@ -21,7 +21,6 @@ import (
 )
 
 // GetUser invokes the cloudesl.GetUser API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/getuser.html
 func (client *Client) GetUser(request *GetUserRequest) (response *GetUserResponse, err error) {
 	response = CreateGetUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetUser(request *GetUserRequest) (response *GetUserRespons
 }
 
 // GetUserWithChan invokes the cloudesl.GetUser API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/getuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserWithChan(request *GetUserRequest) (<-chan *GetUserResponse, <-chan error) {
 	responseChan := make(chan *GetUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetUserWithChan(request *GetUserRequest) (<-chan *GetUserR
 }
 
 // GetUserWithCallback invokes the cloudesl.GetUser API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/getuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserWithCallback(request *GetUserRequest, callback func(response *GetUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,7 +71,8 @@ func (client *Client) GetUserWithCallback(request *GetUserRequest, callback func
 // GetUserRequest is the request struct for api GetUser
 type GetUserRequest struct {
 	*requests.RpcRequest
-	UserId string `position:"Body" name:"UserId"`
+	ExtraParams string `position:"Body" name:"ExtraParams"`
+	UserId      string `position:"Body" name:"UserId"`
 }
 
 // GetUserResponse is the response struct for api GetUser
@@ -99,6 +95,7 @@ func CreateGetUserRequest() (request *GetUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "GetUser", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

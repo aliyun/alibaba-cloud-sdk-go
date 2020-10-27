@@ -21,7 +21,6 @@ import (
 )
 
 // AssociatePlanogramRail invokes the cloudesl.AssociatePlanogramRail API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/associateplanogramrail.html
 func (client *Client) AssociatePlanogramRail(request *AssociatePlanogramRailRequest) (response *AssociatePlanogramRailResponse, err error) {
 	response = CreateAssociatePlanogramRailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AssociatePlanogramRail(request *AssociatePlanogramRailRequ
 }
 
 // AssociatePlanogramRailWithChan invokes the cloudesl.AssociatePlanogramRail API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/associateplanogramrail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociatePlanogramRailWithChan(request *AssociatePlanogramRailRequest) (<-chan *AssociatePlanogramRailResponse, <-chan error) {
 	responseChan := make(chan *AssociatePlanogramRailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AssociatePlanogramRailWithChan(request *AssociatePlanogram
 }
 
 // AssociatePlanogramRailWithCallback invokes the cloudesl.AssociatePlanogramRail API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/associateplanogramrail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociatePlanogramRailWithCallback(request *AssociatePlanogramRailRequest, callback func(response *AssociatePlanogramRailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,10 +71,11 @@ func (client *Client) AssociatePlanogramRailWithCallback(request *AssociatePlano
 // AssociatePlanogramRailRequest is the request struct for api AssociatePlanogramRail
 type AssociatePlanogramRailRequest struct {
 	*requests.RpcRequest
-	StoreId  string           `position:"Body" name:"StoreId"`
-	Layer    requests.Integer `position:"Body" name:"Layer"`
-	Shelf    string           `position:"Body" name:"Shelf"`
-	RailCode string           `position:"Body" name:"RailCode"`
+	ExtraParams string           `position:"Body" name:"ExtraParams"`
+	StoreId     string           `position:"Body" name:"StoreId"`
+	Layer       requests.Integer `position:"Body" name:"Layer"`
+	Shelf       string           `position:"Body" name:"Shelf"`
+	RailCode    string           `position:"Body" name:"RailCode"`
 }
 
 // AssociatePlanogramRailResponse is the response struct for api AssociatePlanogramRail
@@ -101,6 +97,7 @@ func CreateAssociatePlanogramRailRequest() (request *AssociatePlanogramRailReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "AssociatePlanogramRail", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

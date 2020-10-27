@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBinders invokes the cloudesl.DescribeBinders API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/describebinders.html
 func (client *Client) DescribeBinders(request *DescribeBindersRequest) (response *DescribeBindersResponse, err error) {
 	response = CreateDescribeBindersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBinders(request *DescribeBindersRequest) (response
 }
 
 // DescribeBindersWithChan invokes the cloudesl.DescribeBinders API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describebinders.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBindersWithChan(request *DescribeBindersRequest) (<-chan *DescribeBindersResponse, <-chan error) {
 	responseChan := make(chan *DescribeBindersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBindersWithChan(request *DescribeBindersRequest) (
 }
 
 // DescribeBindersWithCallback invokes the cloudesl.DescribeBinders API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describebinders.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBindersWithCallback(request *DescribeBindersRequest, callback func(response *DescribeBindersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,12 +71,13 @@ func (client *Client) DescribeBindersWithCallback(request *DescribeBindersReques
 // DescribeBindersRequest is the request struct for api DescribeBinders
 type DescribeBindersRequest struct {
 	*requests.RpcRequest
-	ItemTitle   string           `position:"Body" name:"ItemTitle"`
+	ExtraParams string           `position:"Body" name:"ExtraParams"`
 	StoreId     string           `position:"Body" name:"StoreId"`
 	PageNumber  requests.Integer `position:"Body" name:"PageNumber"`
 	EslBarCode  string           `position:"Body" name:"EslBarCode"`
 	PageSize    requests.Integer `position:"Body" name:"PageSize"`
 	ItemBarCode string           `position:"Body" name:"ItemBarCode"`
+	ItemTitle   string           `position:"Body" name:"ItemTitle"`
 }
 
 // DescribeBindersResponse is the response struct for api DescribeBinders
@@ -107,6 +103,7 @@ func CreateDescribeBindersRequest() (request *DescribeBindersRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribeBinders", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

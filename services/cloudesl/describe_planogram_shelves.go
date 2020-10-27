@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePlanogramShelves invokes the cloudesl.DescribePlanogramShelves API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeplanogramshelves.html
 func (client *Client) DescribePlanogramShelves(request *DescribePlanogramShelvesRequest) (response *DescribePlanogramShelvesResponse, err error) {
 	response = CreateDescribePlanogramShelvesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePlanogramShelves(request *DescribePlanogramShelves
 }
 
 // DescribePlanogramShelvesWithChan invokes the cloudesl.DescribePlanogramShelves API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeplanogramshelves.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePlanogramShelvesWithChan(request *DescribePlanogramShelvesRequest) (<-chan *DescribePlanogramShelvesResponse, <-chan error) {
 	responseChan := make(chan *DescribePlanogramShelvesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePlanogramShelvesWithChan(request *DescribePlanogra
 }
 
 // DescribePlanogramShelvesWithCallback invokes the cloudesl.DescribePlanogramShelves API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeplanogramshelves.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePlanogramShelvesWithCallback(request *DescribePlanogramShelvesRequest, callback func(response *DescribePlanogramShelvesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,7 +71,10 @@ func (client *Client) DescribePlanogramShelvesWithCallback(request *DescribePlan
 // DescribePlanogramShelvesRequest is the request struct for api DescribePlanogramShelves
 type DescribePlanogramShelvesRequest struct {
 	*requests.RpcRequest
-	StoreId string `position:"Body" name:"StoreId"`
+	ExtraParams string           `position:"Body" name:"ExtraParams"`
+	StoreId     string           `position:"Body" name:"StoreId"`
+	PageNumber  requests.Integer `position:"Body" name:"PageNumber"`
+	PageSize    requests.Integer `position:"Body" name:"PageSize"`
 }
 
 // DescribePlanogramShelvesResponse is the response struct for api DescribePlanogramShelves
@@ -91,6 +89,9 @@ type DescribePlanogramShelvesResponse struct {
 	RequestId      string      `json:"RequestId" xml:"RequestId"`
 	StoreId        string      `json:"StoreId" xml:"StoreId"`
 	Success        bool        `json:"Success" xml:"Success"`
+	PageNumber     int         `json:"PageNumber" xml:"PageNumber"`
+	PageSize       int         `json:"PageSize" xml:"PageSize"`
+	TotalCount     int         `json:"TotalCount" xml:"TotalCount"`
 	ShelfInfos     []ShelfInfo `json:"ShelfInfos" xml:"ShelfInfos"`
 }
 
@@ -100,6 +101,7 @@ func CreateDescribePlanogramShelvesRequest() (request *DescribePlanogramShelvesR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribePlanogramShelves", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteUser invokes the cloudesl.DeleteUser API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/deleteuser.html
 func (client *Client) DeleteUser(request *DeleteUserRequest) (response *DeleteUserResponse, err error) {
 	response = CreateDeleteUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteUser(request *DeleteUserRequest) (response *DeleteUs
 }
 
 // DeleteUserWithChan invokes the cloudesl.DeleteUser API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/deleteuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUserWithChan(request *DeleteUserRequest) (<-chan *DeleteUserResponse, <-chan error) {
 	responseChan := make(chan *DeleteUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteUserWithChan(request *DeleteUserRequest) (<-chan *De
 }
 
 // DeleteUserWithCallback invokes the cloudesl.DeleteUser API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/deleteuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUserWithCallback(request *DeleteUserRequest, callback func(response *DeleteUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,7 +71,8 @@ func (client *Client) DeleteUserWithCallback(request *DeleteUserRequest, callbac
 // DeleteUserRequest is the request struct for api DeleteUser
 type DeleteUserRequest struct {
 	*requests.RpcRequest
-	UserId string `position:"Body" name:"UserId"`
+	ExtraParams string `position:"Body" name:"ExtraParams"`
+	UserId      string `position:"Body" name:"UserId"`
 }
 
 // DeleteUserResponse is the response struct for api DeleteUser
@@ -98,6 +94,7 @@ func CreateDeleteUserRequest() (request *DeleteUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "DeleteUser", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

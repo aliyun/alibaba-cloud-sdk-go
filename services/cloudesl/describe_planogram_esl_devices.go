@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePlanogramEslDevices invokes the cloudesl.DescribePlanogramEslDevices API synchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeplanogramesldevices.html
 func (client *Client) DescribePlanogramEslDevices(request *DescribePlanogramEslDevicesRequest) (response *DescribePlanogramEslDevicesResponse, err error) {
 	response = CreateDescribePlanogramEslDevicesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePlanogramEslDevices(request *DescribePlanogramEslD
 }
 
 // DescribePlanogramEslDevicesWithChan invokes the cloudesl.DescribePlanogramEslDevices API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeplanogramesldevices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePlanogramEslDevicesWithChan(request *DescribePlanogramEslDevicesRequest) (<-chan *DescribePlanogramEslDevicesResponse, <-chan error) {
 	responseChan := make(chan *DescribePlanogramEslDevicesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePlanogramEslDevicesWithChan(request *DescribePlano
 }
 
 // DescribePlanogramEslDevicesWithCallback invokes the cloudesl.DescribePlanogramEslDevices API asynchronously
-// api document: https://help.aliyun.com/api/cloudesl/describeplanogramesldevices.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePlanogramEslDevicesWithCallback(request *DescribePlanogramEslDevicesRequest, callback func(response *DescribePlanogramEslDevicesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,9 +71,11 @@ func (client *Client) DescribePlanogramEslDevicesWithCallback(request *DescribeP
 // DescribePlanogramEslDevicesRequest is the request struct for api DescribePlanogramEslDevices
 type DescribePlanogramEslDevicesRequest struct {
 	*requests.RpcRequest
-	StoreId string           `position:"Body" name:"StoreId"`
-	Layer   requests.Integer `position:"Body" name:"Layer"`
-	Shelf   string           `position:"Body" name:"Shelf"`
+	ExtraParams string           `position:"Body" name:"ExtraParams"`
+	StoreId     string           `position:"Body" name:"StoreId"`
+	Layer       requests.Integer `position:"Body" name:"Layer"`
+	EslBarCode  string           `position:"Body" name:"EslBarCode"`
+	Shelf       string           `position:"Body" name:"Shelf"`
 }
 
 // DescribePlanogramEslDevicesResponse is the response struct for api DescribePlanogramEslDevices
@@ -103,6 +100,7 @@ func CreateDescribePlanogramEslDevicesRequest() (request *DescribePlanogramEslDe
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("cloudesl", "2020-02-01", "DescribePlanogramEslDevices", "cloudesl", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

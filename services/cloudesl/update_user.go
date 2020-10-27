@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// AddPlanogramShelf invokes the cloudesl.AddPlanogramShelf API synchronously
-func (client *Client) AddPlanogramShelf(request *AddPlanogramShelfRequest) (response *AddPlanogramShelfResponse, err error) {
-	response = CreateAddPlanogramShelfResponse()
+// UpdateUser invokes the cloudesl.UpdateUser API synchronously
+func (client *Client) UpdateUser(request *UpdateUserRequest) (response *UpdateUserResponse, err error) {
+	response = CreateUpdateUserResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// AddPlanogramShelfWithChan invokes the cloudesl.AddPlanogramShelf API asynchronously
-func (client *Client) AddPlanogramShelfWithChan(request *AddPlanogramShelfRequest) (<-chan *AddPlanogramShelfResponse, <-chan error) {
-	responseChan := make(chan *AddPlanogramShelfResponse, 1)
+// UpdateUserWithChan invokes the cloudesl.UpdateUser API asynchronously
+func (client *Client) UpdateUserWithChan(request *UpdateUserRequest) (<-chan *UpdateUserResponse, <-chan error) {
+	responseChan := make(chan *UpdateUserResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.AddPlanogramShelf(request)
+		response, err := client.UpdateUser(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) AddPlanogramShelfWithChan(request *AddPlanogramShelfReques
 	return responseChan, errChan
 }
 
-// AddPlanogramShelfWithCallback invokes the cloudesl.AddPlanogramShelf API asynchronously
-func (client *Client) AddPlanogramShelfWithCallback(request *AddPlanogramShelfRequest, callback func(response *AddPlanogramShelfResponse, err error)) <-chan int {
+// UpdateUserWithCallback invokes the cloudesl.UpdateUser API asynchronously
+func (client *Client) UpdateUserWithCallback(request *UpdateUserRequest, callback func(response *UpdateUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *AddPlanogramShelfResponse
+		var response *UpdateUserResponse
 		var err error
 		defer close(result)
-		response, err = client.AddPlanogramShelf(request)
+		response, err = client.UpdateUser(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,20 +68,17 @@ func (client *Client) AddPlanogramShelfWithCallback(request *AddPlanogramShelfRe
 	return result
 }
 
-// AddPlanogramShelfRequest is the request struct for api AddPlanogramShelf
-type AddPlanogramShelfRequest struct {
+// UpdateUserRequest is the request struct for api UpdateUser
+type UpdateUserRequest struct {
 	*requests.RpcRequest
-	ExtraParams string `position:"Body" name:"ExtraParams"`
-	ClientToken string `position:"Body" name:"ClientToken"`
-	ShelfType   string `position:"Body" name:"ShelfType"`
-	StoreId     string `position:"Body" name:"StoreId"`
-	Zone        string `position:"Body" name:"Zone"`
-	Shelf       string `position:"Body" name:"Shelf"`
-	Category    string `position:"Body" name:"Category"`
+	ExtraParams       string `position:"Body" name:"ExtraParams"`
+	DingTalkUserId    string `position:"Body" name:"DingTalkUserId"`
+	UserId            string `position:"Body" name:"UserId"`
+	DingTalkCompanyId string `position:"Body" name:"DingTalkCompanyId"`
 }
 
-// AddPlanogramShelfResponse is the response struct for api AddPlanogramShelf
-type AddPlanogramShelfResponse struct {
+// UpdateUserResponse is the response struct for api UpdateUser
+type UpdateUserResponse struct {
 	*responses.BaseResponse
 	ErrorMessage   string `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode      string `json:"ErrorCode" xml:"ErrorCode"`
@@ -93,19 +90,19 @@ type AddPlanogramShelfResponse struct {
 	Success        bool   `json:"Success" xml:"Success"`
 }
 
-// CreateAddPlanogramShelfRequest creates a request to invoke AddPlanogramShelf API
-func CreateAddPlanogramShelfRequest() (request *AddPlanogramShelfRequest) {
-	request = &AddPlanogramShelfRequest{
+// CreateUpdateUserRequest creates a request to invoke UpdateUser API
+func CreateUpdateUserRequest() (request *UpdateUserRequest) {
+	request = &UpdateUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cloudesl", "2020-02-01", "AddPlanogramShelf", "cloudesl", "openAPI")
+	request.InitWithApiInfo("cloudesl", "2020-02-01", "UpdateUser", "cloudesl", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateAddPlanogramShelfResponse creates a response to parse from AddPlanogramShelf response
-func CreateAddPlanogramShelfResponse() (response *AddPlanogramShelfResponse) {
-	response = &AddPlanogramShelfResponse{
+// CreateUpdateUserResponse creates a response to parse from UpdateUser response
+func CreateUpdateUserResponse() (response *UpdateUserResponse) {
+	response = &UpdateUserResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
