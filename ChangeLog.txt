@@ -1,3 +1,8 @@
+2020-10-28 Version: v1.61.613
+- Generated 2020-02-02 for `polardbx`.
+- Supported all language sdk.
+- Fixed some bugs for polardbx.
+
 2020-10-28 Version: v1.61.612
 - Generated 2019-01-23, 2015-04-13, 2016-05-06, 2016-12-13, 2017-10-16 for `Drds`.
 - Supported golang sdk.
