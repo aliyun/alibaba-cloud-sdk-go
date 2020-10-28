@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeHotDbList invokes the drds.DescribeHotDbList API synchronously
-// api document: https://help.aliyun.com/api/drds/describehotdblist.html
 func (client *Client) DescribeHotDbList(request *DescribeHotDbListRequest) (response *DescribeHotDbListResponse, err error) {
 	response = CreateDescribeHotDbListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeHotDbList(request *DescribeHotDbListRequest) (resp
 }
 
 // DescribeHotDbListWithChan invokes the drds.DescribeHotDbList API asynchronously
-// api document: https://help.aliyun.com/api/drds/describehotdblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHotDbListWithChan(request *DescribeHotDbListRequest) (<-chan *DescribeHotDbListResponse, <-chan error) {
 	responseChan := make(chan *DescribeHotDbListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeHotDbListWithChan(request *DescribeHotDbListReques
 }
 
 // DescribeHotDbListWithCallback invokes the drds.DescribeHotDbList API asynchronously
-// api document: https://help.aliyun.com/api/drds/describehotdblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHotDbListWithCallback(request *DescribeHotDbListRequest, callback func(response *DescribeHotDbListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateDescribeHotDbListRequest() (request *DescribeHotDbListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeHotDbList", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // SetupDrdsParams invokes the drds.SetupDrdsParams API synchronously
-// api document: https://help.aliyun.com/api/drds/setupdrdsparams.html
 func (client *Client) SetupDrdsParams(request *SetupDrdsParamsRequest) (response *SetupDrdsParamsResponse, err error) {
 	response = CreateSetupDrdsParamsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetupDrdsParams(request *SetupDrdsParamsRequest) (response
 }
 
 // SetupDrdsParamsWithChan invokes the drds.SetupDrdsParams API asynchronously
-// api document: https://help.aliyun.com/api/drds/setupdrdsparams.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetupDrdsParamsWithChan(request *SetupDrdsParamsRequest) (<-chan *SetupDrdsParamsResponse, <-chan error) {
 	responseChan := make(chan *SetupDrdsParamsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetupDrdsParamsWithChan(request *SetupDrdsParamsRequest) (
 }
 
 // SetupDrdsParamsWithCallback invokes the drds.SetupDrdsParams API asynchronously
-// api document: https://help.aliyun.com/api/drds/setupdrdsparams.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetupDrdsParamsWithCallback(request *SetupDrdsParamsRequest, callback func(response *SetupDrdsParamsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,6 +99,7 @@ func CreateSetupDrdsParamsRequest() (request *SetupDrdsParamsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SetupDrdsParams", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

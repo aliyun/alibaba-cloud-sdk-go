@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstanceSwitchAzone invokes the drds.DescribeInstanceSwitchAzone API synchronously
-// api document: https://help.aliyun.com/api/drds/describeinstanceswitchazone.html
 func (client *Client) DescribeInstanceSwitchAzone(request *DescribeInstanceSwitchAzoneRequest) (response *DescribeInstanceSwitchAzoneResponse, err error) {
 	response = CreateDescribeInstanceSwitchAzoneResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstanceSwitchAzone(request *DescribeInstanceSwitc
 }
 
 // DescribeInstanceSwitchAzoneWithChan invokes the drds.DescribeInstanceSwitchAzone API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeinstanceswitchazone.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceSwitchAzoneWithChan(request *DescribeInstanceSwitchAzoneRequest) (<-chan *DescribeInstanceSwitchAzoneResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceSwitchAzoneResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceSwitchAzoneWithChan(request *DescribeInsta
 }
 
 // DescribeInstanceSwitchAzoneWithCallback invokes the drds.DescribeInstanceSwitchAzone API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeinstanceswitchazone.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceSwitchAzoneWithCallback(request *DescribeInstanceSwitchAzoneRequest, callback func(response *DescribeInstanceSwitchAzoneResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeInstanceSwitchAzoneRequest() (request *DescribeInstanceSwitch
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeInstanceSwitchAzone", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

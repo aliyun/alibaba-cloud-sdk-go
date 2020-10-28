@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDrdsInstance invokes the drds.DescribeDrdsInstance API synchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsinstance.html
 func (client *Client) DescribeDrdsInstance(request *DescribeDrdsInstanceRequest) (response *DescribeDrdsInstanceResponse, err error) {
 	response = CreateDescribeDrdsInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDrdsInstance(request *DescribeDrdsInstanceRequest)
 }
 
 // DescribeDrdsInstanceWithChan invokes the drds.DescribeDrdsInstance API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsInstanceWithChan(request *DescribeDrdsInstanceRequest) (<-chan *DescribeDrdsInstanceResponse, <-chan error) {
 	responseChan := make(chan *DescribeDrdsInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDrdsInstanceWithChan(request *DescribeDrdsInstance
 }
 
 // DescribeDrdsInstanceWithCallback invokes the drds.DescribeDrdsInstance API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsInstanceWithCallback(request *DescribeDrdsInstanceRequest, callback func(response *DescribeDrdsInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,9 +77,9 @@ type DescribeDrdsInstanceRequest struct {
 // DescribeDrdsInstanceResponse is the response struct for api DescribeDrdsInstance
 type DescribeDrdsInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string                     `json:"RequestId" xml:"RequestId"`
-	Success   bool                       `json:"Success" xml:"Success"`
-	Data      DataInDescribeDrdsInstance `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeDrdsInstanceRequest creates a request to invoke DescribeDrdsInstance API
@@ -92,7 +87,8 @@ func CreateDescribeDrdsInstanceRequest() (request *DescribeDrdsInstanceRequest) 
 	request = &DescribeDrdsInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsInstance", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeDrdsInstance", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

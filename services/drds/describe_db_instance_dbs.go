@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDbInstanceDbs invokes the drds.DescribeDbInstanceDbs API synchronously
-// api document: https://help.aliyun.com/api/drds/describedbinstancedbs.html
 func (client *Client) DescribeDbInstanceDbs(request *DescribeDbInstanceDbsRequest) (response *DescribeDbInstanceDbsResponse, err error) {
 	response = CreateDescribeDbInstanceDbsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDbInstanceDbs(request *DescribeDbInstanceDbsReques
 }
 
 // DescribeDbInstanceDbsWithChan invokes the drds.DescribeDbInstanceDbs API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedbinstancedbs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDbInstanceDbsWithChan(request *DescribeDbInstanceDbsRequest) (<-chan *DescribeDbInstanceDbsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDbInstanceDbsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDbInstanceDbsWithChan(request *DescribeDbInstanceD
 }
 
 // DescribeDbInstanceDbsWithCallback invokes the drds.DescribeDbInstanceDbs API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedbinstancedbs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDbInstanceDbsWithCallback(request *DescribeDbInstanceDbsRequest, callback func(response *DescribeDbInstanceDbsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateDescribeDbInstanceDbsRequest() (request *DescribeDbInstanceDbsRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDbInstanceDbs", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

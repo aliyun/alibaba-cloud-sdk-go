@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyRdsReadWeight invokes the drds.ModifyRdsReadWeight API synchronously
-// api document: https://help.aliyun.com/api/drds/modifyrdsreadweight.html
 func (client *Client) ModifyRdsReadWeight(request *ModifyRdsReadWeightRequest) (response *ModifyRdsReadWeightResponse, err error) {
 	response = CreateModifyRdsReadWeightResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyRdsReadWeight(request *ModifyRdsReadWeightRequest) (
 }
 
 // ModifyRdsReadWeightWithChan invokes the drds.ModifyRdsReadWeight API asynchronously
-// api document: https://help.aliyun.com/api/drds/modifyrdsreadweight.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRdsReadWeightWithChan(request *ModifyRdsReadWeightRequest) (<-chan *ModifyRdsReadWeightResponse, <-chan error) {
 	responseChan := make(chan *ModifyRdsReadWeightResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyRdsReadWeightWithChan(request *ModifyRdsReadWeightRe
 }
 
 // ModifyRdsReadWeightWithCallback invokes the drds.ModifyRdsReadWeight API asynchronously
-// api document: https://help.aliyun.com/api/drds/modifyrdsreadweight.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRdsReadWeightWithCallback(request *ModifyRdsReadWeightRequest, callback func(response *ModifyRdsReadWeightResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateModifyRdsReadWeightRequest() (request *ModifyRdsReadWeightRequest) {
 	request = &ModifyRdsReadWeightRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "ModifyRdsReadWeight", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2017-10-16", "ModifyRdsReadWeight", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

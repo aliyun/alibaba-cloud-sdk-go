@@ -30,5 +30,6 @@ type ReadOnlyInstance struct {
 	ConnectUrl       string `json:"ConnectUrl" xml:"ConnectUrl"`
 	ExpireTime       string `json:"ExpireTime" xml:"ExpireTime"`
 	DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
+	DmInstanceId     string `json:"DmInstanceId" xml:"DmInstanceId"`
 	NetworkType      string `json:"NetworkType" xml:"NetworkType"`
 }

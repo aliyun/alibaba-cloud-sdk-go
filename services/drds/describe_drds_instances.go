@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDrdsInstances invokes the drds.DescribeDrdsInstances API synchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsinstances.html
 func (client *Client) DescribeDrdsInstances(request *DescribeDrdsInstancesRequest) (response *DescribeDrdsInstancesResponse, err error) {
 	response = CreateDescribeDrdsInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDrdsInstances(request *DescribeDrdsInstancesReques
 }
 
 // DescribeDrdsInstancesWithChan invokes the drds.DescribeDrdsInstances API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsInstancesWithChan(request *DescribeDrdsInstancesRequest) (<-chan *DescribeDrdsInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeDrdsInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDrdsInstancesWithChan(request *DescribeDrdsInstanc
 }
 
 // DescribeDrdsInstancesWithCallback invokes the drds.DescribeDrdsInstances API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsInstancesWithCallback(request *DescribeDrdsInstancesRequest, callback func(response *DescribeDrdsInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,28 +71,16 @@ func (client *Client) DescribeDrdsInstancesWithCallback(request *DescribeDrdsIns
 // DescribeDrdsInstancesRequest is the request struct for api DescribeDrdsInstances
 type DescribeDrdsInstancesRequest struct {
 	*requests.RpcRequest
-	Description string                      `position:"Query" name:"Description"`
-	Type        string                      `position:"Query" name:"Type"`
-	PageNumber  requests.Integer            `position:"Query" name:"PageNumber"`
-	Expired     requests.Boolean            `position:"Query" name:"Expired"`
-	PageSize    requests.Integer            `position:"Query" name:"PageSize"`
-	Tag         *[]DescribeDrdsInstancesTag `position:"Query" name:"Tag"  type:"Repeated"`
-}
-
-// DescribeDrdsInstancesTag is a repeated param struct in DescribeDrdsInstancesRequest
-type DescribeDrdsInstancesTag struct {
-	Value string `name:"Value"`
-	Key   string `name:"Key"`
+	Type string `position:"Query" name:"Type"`
+	Tags string `position:"Query" name:"Tags"`
 }
 
 // DescribeDrdsInstancesResponse is the response struct for api DescribeDrdsInstances
 type DescribeDrdsInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId  string    `json:"RequestId" xml:"RequestId"`
-	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int       `json:"PageSize" xml:"PageSize"`
-	Total      int       `json:"Total" xml:"Total"`
-	Instances  Instances `json:"Instances" xml:"Instances"`
+	RequestId string                      `json:"RequestId" xml:"RequestId"`
+	Success   bool                        `json:"Success" xml:"Success"`
+	Data      DataInDescribeDrdsInstances `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeDrdsInstancesRequest creates a request to invoke DescribeDrdsInstances API
@@ -105,7 +88,8 @@ func CreateDescribeDrdsInstancesRequest() (request *DescribeDrdsInstancesRequest
 	request = &DescribeDrdsInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsInstances", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeDrdsInstances", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

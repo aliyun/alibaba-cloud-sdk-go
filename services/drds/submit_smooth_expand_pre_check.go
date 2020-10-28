@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitSmoothExpandPreCheck invokes the drds.SubmitSmoothExpandPreCheck API synchronously
-// api document: https://help.aliyun.com/api/drds/submitsmoothexpandprecheck.html
 func (client *Client) SubmitSmoothExpandPreCheck(request *SubmitSmoothExpandPreCheckRequest) (response *SubmitSmoothExpandPreCheckResponse, err error) {
 	response = CreateSubmitSmoothExpandPreCheckResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitSmoothExpandPreCheck(request *SubmitSmoothExpandPreC
 }
 
 // SubmitSmoothExpandPreCheckWithChan invokes the drds.SubmitSmoothExpandPreCheck API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitsmoothexpandprecheck.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSmoothExpandPreCheckWithChan(request *SubmitSmoothExpandPreCheckRequest) (<-chan *SubmitSmoothExpandPreCheckResponse, <-chan error) {
 	responseChan := make(chan *SubmitSmoothExpandPreCheckResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitSmoothExpandPreCheckWithChan(request *SubmitSmoothEx
 }
 
 // SubmitSmoothExpandPreCheckWithCallback invokes the drds.SubmitSmoothExpandPreCheck API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitsmoothexpandprecheck.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSmoothExpandPreCheckWithCallback(request *SubmitSmoothExpandPreCheckRequest, callback func(response *SubmitSmoothExpandPreCheckResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateSubmitSmoothExpandPreCheckRequest() (request *SubmitSmoothExpandPreCh
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSmoothExpandPreCheck", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

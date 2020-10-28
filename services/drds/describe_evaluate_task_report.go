@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEvaluateTaskReport invokes the drds.DescribeEvaluateTaskReport API synchronously
-// api document: https://help.aliyun.com/api/drds/describeevaluatetaskreport.html
 func (client *Client) DescribeEvaluateTaskReport(request *DescribeEvaluateTaskReportRequest) (response *DescribeEvaluateTaskReportResponse, err error) {
 	response = CreateDescribeEvaluateTaskReportResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEvaluateTaskReport(request *DescribeEvaluateTaskRe
 }
 
 // DescribeEvaluateTaskReportWithChan invokes the drds.DescribeEvaluateTaskReport API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeevaluatetaskreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEvaluateTaskReportWithChan(request *DescribeEvaluateTaskReportRequest) (<-chan *DescribeEvaluateTaskReportResponse, <-chan error) {
 	responseChan := make(chan *DescribeEvaluateTaskReportResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEvaluateTaskReportWithChan(request *DescribeEvalua
 }
 
 // DescribeEvaluateTaskReportWithCallback invokes the drds.DescribeEvaluateTaskReport API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeevaluatetaskreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEvaluateTaskReportWithCallback(request *DescribeEvaluateTaskReportRequest, callback func(response *DescribeEvaluateTaskReportResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeEvaluateTaskReportRequest() (request *DescribeEvaluateTaskRep
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeEvaluateTaskReport", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

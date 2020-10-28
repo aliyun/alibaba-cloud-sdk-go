@@ -21,7 +21,6 @@ import (
 )
 
 // PutStartBackup invokes the drds.PutStartBackup API synchronously
-// api document: https://help.aliyun.com/api/drds/putstartbackup.html
 func (client *Client) PutStartBackup(request *PutStartBackupRequest) (response *PutStartBackupResponse, err error) {
 	response = CreatePutStartBackupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PutStartBackup(request *PutStartBackupRequest) (response *
 }
 
 // PutStartBackupWithChan invokes the drds.PutStartBackup API asynchronously
-// api document: https://help.aliyun.com/api/drds/putstartbackup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutStartBackupWithChan(request *PutStartBackupRequest) (<-chan *PutStartBackupResponse, <-chan error) {
 	responseChan := make(chan *PutStartBackupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PutStartBackupWithChan(request *PutStartBackupRequest) (<-
 }
 
 // PutStartBackupWithCallback invokes the drds.PutStartBackup API asynchronously
-// api document: https://help.aliyun.com/api/drds/putstartbackup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutStartBackupWithCallback(request *PutStartBackupRequest, callback func(response *PutStartBackupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreatePutStartBackupRequest() (request *PutStartBackupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "PutStartBackup", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

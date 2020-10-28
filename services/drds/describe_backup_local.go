@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBackupLocal invokes the drds.DescribeBackupLocal API synchronously
-// api document: https://help.aliyun.com/api/drds/describebackuplocal.html
 func (client *Client) DescribeBackupLocal(request *DescribeBackupLocalRequest) (response *DescribeBackupLocalResponse, err error) {
 	response = CreateDescribeBackupLocalResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBackupLocal(request *DescribeBackupLocalRequest) (
 }
 
 // DescribeBackupLocalWithChan invokes the drds.DescribeBackupLocal API asynchronously
-// api document: https://help.aliyun.com/api/drds/describebackuplocal.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupLocalWithChan(request *DescribeBackupLocalRequest) (<-chan *DescribeBackupLocalResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackupLocalResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBackupLocalWithChan(request *DescribeBackupLocalRe
 }
 
 // DescribeBackupLocalWithCallback invokes the drds.DescribeBackupLocal API asynchronously
-// api document: https://help.aliyun.com/api/drds/describebackuplocal.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupLocalWithCallback(request *DescribeBackupLocalRequest, callback func(response *DescribeBackupLocalResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeBackupLocalRequest() (request *DescribeBackupLocalRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeBackupLocal", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

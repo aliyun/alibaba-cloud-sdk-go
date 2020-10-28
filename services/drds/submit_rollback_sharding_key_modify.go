@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitRollbackShardingKeyModify invokes the drds.SubmitRollbackShardingKeyModify API synchronously
-// api document: https://help.aliyun.com/api/drds/submitrollbackshardingkeymodify.html
 func (client *Client) SubmitRollbackShardingKeyModify(request *SubmitRollbackShardingKeyModifyRequest) (response *SubmitRollbackShardingKeyModifyResponse, err error) {
 	response = CreateSubmitRollbackShardingKeyModifyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitRollbackShardingKeyModify(request *SubmitRollbackSha
 }
 
 // SubmitRollbackShardingKeyModifyWithChan invokes the drds.SubmitRollbackShardingKeyModify API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitrollbackshardingkeymodify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitRollbackShardingKeyModifyWithChan(request *SubmitRollbackShardingKeyModifyRequest) (<-chan *SubmitRollbackShardingKeyModifyResponse, <-chan error) {
 	responseChan := make(chan *SubmitRollbackShardingKeyModifyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitRollbackShardingKeyModifyWithChan(request *SubmitRol
 }
 
 // SubmitRollbackShardingKeyModifyWithCallback invokes the drds.SubmitRollbackShardingKeyModify API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitrollbackshardingkeymodify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitRollbackShardingKeyModifyWithCallback(request *SubmitRollbackShardingKeyModifyRequest, callback func(response *SubmitRollbackShardingKeyModifyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateSubmitRollbackShardingKeyModifyRequest() (request *SubmitRollbackShar
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitRollbackShardingKeyModify", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

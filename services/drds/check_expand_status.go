@@ -21,7 +21,6 @@ import (
 )
 
 // CheckExpandStatus invokes the drds.CheckExpandStatus API synchronously
-// api document: https://help.aliyun.com/api/drds/checkexpandstatus.html
 func (client *Client) CheckExpandStatus(request *CheckExpandStatusRequest) (response *CheckExpandStatusResponse, err error) {
 	response = CreateCheckExpandStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckExpandStatus(request *CheckExpandStatusRequest) (resp
 }
 
 // CheckExpandStatusWithChan invokes the drds.CheckExpandStatus API asynchronously
-// api document: https://help.aliyun.com/api/drds/checkexpandstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckExpandStatusWithChan(request *CheckExpandStatusRequest) (<-chan *CheckExpandStatusResponse, <-chan error) {
 	responseChan := make(chan *CheckExpandStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckExpandStatusWithChan(request *CheckExpandStatusReques
 }
 
 // CheckExpandStatusWithCallback invokes the drds.CheckExpandStatus API asynchronously
-// api document: https://help.aliyun.com/api/drds/checkexpandstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckExpandStatusWithCallback(request *CheckExpandStatusRequest, callback func(response *CheckExpandStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateCheckExpandStatusRequest() (request *CheckExpandStatusRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "CheckExpandStatus", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

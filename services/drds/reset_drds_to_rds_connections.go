@@ -21,7 +21,6 @@ import (
 )
 
 // ResetDrdsToRdsConnections invokes the drds.ResetDrdsToRdsConnections API synchronously
-// api document: https://help.aliyun.com/api/drds/resetdrdstordsconnections.html
 func (client *Client) ResetDrdsToRdsConnections(request *ResetDrdsToRdsConnectionsRequest) (response *ResetDrdsToRdsConnectionsResponse, err error) {
 	response = CreateResetDrdsToRdsConnectionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResetDrdsToRdsConnections(request *ResetDrdsToRdsConnectio
 }
 
 // ResetDrdsToRdsConnectionsWithChan invokes the drds.ResetDrdsToRdsConnections API asynchronously
-// api document: https://help.aliyun.com/api/drds/resetdrdstordsconnections.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetDrdsToRdsConnectionsWithChan(request *ResetDrdsToRdsConnectionsRequest) (<-chan *ResetDrdsToRdsConnectionsResponse, <-chan error) {
 	responseChan := make(chan *ResetDrdsToRdsConnectionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResetDrdsToRdsConnectionsWithChan(request *ResetDrdsToRdsC
 }
 
 // ResetDrdsToRdsConnectionsWithCallback invokes the drds.ResetDrdsToRdsConnections API asynchronously
-// api document: https://help.aliyun.com/api/drds/resetdrdstordsconnections.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetDrdsToRdsConnectionsWithCallback(request *ResetDrdsToRdsConnectionsRequest, callback func(response *ResetDrdsToRdsConnectionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateResetDrdsToRdsConnectionsRequest() (request *ResetDrdsToRdsConnection
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "ResetDrdsToRdsConnections", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitSqlFlashbackTask invokes the drds.SubmitSqlFlashbackTask API synchronously
-// api document: https://help.aliyun.com/api/drds/submitsqlflashbacktask.html
 func (client *Client) SubmitSqlFlashbackTask(request *SubmitSqlFlashbackTaskRequest) (response *SubmitSqlFlashbackTaskResponse, err error) {
 	response = CreateSubmitSqlFlashbackTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitSqlFlashbackTask(request *SubmitSqlFlashbackTaskRequ
 }
 
 // SubmitSqlFlashbackTaskWithChan invokes the drds.SubmitSqlFlashbackTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitsqlflashbacktask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSqlFlashbackTaskWithChan(request *SubmitSqlFlashbackTaskRequest) (<-chan *SubmitSqlFlashbackTaskResponse, <-chan error) {
 	responseChan := make(chan *SubmitSqlFlashbackTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitSqlFlashbackTaskWithChan(request *SubmitSqlFlashback
 }
 
 // SubmitSqlFlashbackTaskWithCallback invokes the drds.SubmitSqlFlashbackTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitsqlflashbacktask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSqlFlashbackTaskWithCallback(request *SubmitSqlFlashbackTaskRequest, callback func(response *SubmitSqlFlashbackTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,6 +97,7 @@ func CreateSubmitSqlFlashbackTaskRequest() (request *SubmitSqlFlashbackTaskReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSqlFlashbackTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

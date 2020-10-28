@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitHotExpandTask invokes the drds.SubmitHotExpandTask API synchronously
-// api document: https://help.aliyun.com/api/drds/submithotexpandtask.html
 func (client *Client) SubmitHotExpandTask(request *SubmitHotExpandTaskRequest) (response *SubmitHotExpandTaskResponse, err error) {
 	response = CreateSubmitHotExpandTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitHotExpandTask(request *SubmitHotExpandTaskRequest) (
 }
 
 // SubmitHotExpandTaskWithChan invokes the drds.SubmitHotExpandTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/submithotexpandtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitHotExpandTaskWithChan(request *SubmitHotExpandTaskRequest) (<-chan *SubmitHotExpandTaskResponse, <-chan error) {
 	responseChan := make(chan *SubmitHotExpandTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitHotExpandTaskWithChan(request *SubmitHotExpandTaskRe
 }
 
 // SubmitHotExpandTaskWithCallback invokes the drds.SubmitHotExpandTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/submithotexpandtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitHotExpandTaskWithCallback(request *SubmitHotExpandTaskRequest, callback func(response *SubmitHotExpandTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -129,6 +124,7 @@ func CreateSubmitHotExpandTaskRequest() (request *SubmitHotExpandTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitHotExpandTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

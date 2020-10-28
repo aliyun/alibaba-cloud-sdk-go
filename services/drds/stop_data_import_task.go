@@ -21,7 +21,6 @@ import (
 )
 
 // StopDataImportTask invokes the drds.StopDataImportTask API synchronously
-// api document: https://help.aliyun.com/api/drds/stopdataimporttask.html
 func (client *Client) StopDataImportTask(request *StopDataImportTaskRequest) (response *StopDataImportTaskResponse, err error) {
 	response = CreateStopDataImportTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopDataImportTask(request *StopDataImportTaskRequest) (re
 }
 
 // StopDataImportTaskWithChan invokes the drds.StopDataImportTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/stopdataimporttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopDataImportTaskWithChan(request *StopDataImportTaskRequest) (<-chan *StopDataImportTaskResponse, <-chan error) {
 	responseChan := make(chan *StopDataImportTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopDataImportTaskWithChan(request *StopDataImportTaskRequ
 }
 
 // StopDataImportTaskWithCallback invokes the drds.StopDataImportTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/stopdataimporttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopDataImportTaskWithCallback(request *StopDataImportTaskRequest, callback func(response *StopDataImportTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateStopDataImportTaskRequest() (request *StopDataImportTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "StopDataImportTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

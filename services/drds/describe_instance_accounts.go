@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstanceAccounts invokes the drds.DescribeInstanceAccounts API synchronously
-// api document: https://help.aliyun.com/api/drds/describeinstanceaccounts.html
 func (client *Client) DescribeInstanceAccounts(request *DescribeInstanceAccountsRequest) (response *DescribeInstanceAccountsResponse, err error) {
 	response = CreateDescribeInstanceAccountsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstanceAccounts(request *DescribeInstanceAccounts
 }
 
 // DescribeInstanceAccountsWithChan invokes the drds.DescribeInstanceAccounts API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeinstanceaccounts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceAccountsWithChan(request *DescribeInstanceAccountsRequest) (<-chan *DescribeInstanceAccountsResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceAccountsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceAccountsWithChan(request *DescribeInstance
 }
 
 // DescribeInstanceAccountsWithCallback invokes the drds.DescribeInstanceAccounts API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeinstanceaccounts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceAccountsWithCallback(request *DescribeInstanceAccountsRequest, callback func(response *DescribeInstanceAccountsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeInstanceAccountsRequest() (request *DescribeInstanceAccountsR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeInstanceAccounts", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

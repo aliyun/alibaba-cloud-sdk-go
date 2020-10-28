@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeFirstDrdsInstanceByOrderId invokes the drds.DescribeFirstDrdsInstanceByOrderId API synchronously
-// api document: https://help.aliyun.com/api/drds/describefirstdrdsinstancebyorderid.html
 func (client *Client) DescribeFirstDrdsInstanceByOrderId(request *DescribeFirstDrdsInstanceByOrderIdRequest) (response *DescribeFirstDrdsInstanceByOrderIdResponse, err error) {
 	response = CreateDescribeFirstDrdsInstanceByOrderIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeFirstDrdsInstanceByOrderId(request *DescribeFirstD
 }
 
 // DescribeFirstDrdsInstanceByOrderIdWithChan invokes the drds.DescribeFirstDrdsInstanceByOrderId API asynchronously
-// api document: https://help.aliyun.com/api/drds/describefirstdrdsinstancebyorderid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFirstDrdsInstanceByOrderIdWithChan(request *DescribeFirstDrdsInstanceByOrderIdRequest) (<-chan *DescribeFirstDrdsInstanceByOrderIdResponse, <-chan error) {
 	responseChan := make(chan *DescribeFirstDrdsInstanceByOrderIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeFirstDrdsInstanceByOrderIdWithChan(request *Descri
 }
 
 // DescribeFirstDrdsInstanceByOrderIdWithCallback invokes the drds.DescribeFirstDrdsInstanceByOrderId API asynchronously
-// api document: https://help.aliyun.com/api/drds/describefirstdrdsinstancebyorderid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFirstDrdsInstanceByOrderIdWithCallback(request *DescribeFirstDrdsInstanceByOrderIdRequest, callback func(response *DescribeFirstDrdsInstanceByOrderIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeFirstDrdsInstanceByOrderIdRequest() (request *DescribeFirstDr
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeFirstDrdsInstanceByOrderId", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

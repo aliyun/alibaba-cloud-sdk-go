@@ -38,6 +38,8 @@ type DataInDescribeDrdsInstance struct {
 	MachineType           string                                      `json:"MachineType" xml:"MachineType"`
 	OrderInstanceId       string                                      `json:"OrderInstanceId" xml:"OrderInstanceId"`
 	MysqlVersion          int                                         `json:"MysqlVersion" xml:"MysqlVersion"`
+	StorageType           string                                      `json:"StorageType" xml:"StorageType"`
+	ResourceGroupId       string                                      `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	ReadOnlyDBInstanceIds ReadOnlyDBInstanceIdsInDescribeDrdsInstance `json:"ReadOnlyDBInstanceIds" xml:"ReadOnlyDBInstanceIds"`
 	Vips                  VipsInDescribeDrdsInstance                  `json:"Vips" xml:"Vips"`
 }

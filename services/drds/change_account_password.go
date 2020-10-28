@@ -21,7 +21,6 @@ import (
 )
 
 // ChangeAccountPassword invokes the drds.ChangeAccountPassword API synchronously
-// api document: https://help.aliyun.com/api/drds/changeaccountpassword.html
 func (client *Client) ChangeAccountPassword(request *ChangeAccountPasswordRequest) (response *ChangeAccountPasswordResponse, err error) {
 	response = CreateChangeAccountPasswordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ChangeAccountPassword(request *ChangeAccountPasswordReques
 }
 
 // ChangeAccountPasswordWithChan invokes the drds.ChangeAccountPassword API asynchronously
-// api document: https://help.aliyun.com/api/drds/changeaccountpassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangeAccountPasswordWithChan(request *ChangeAccountPasswordRequest) (<-chan *ChangeAccountPasswordResponse, <-chan error) {
 	responseChan := make(chan *ChangeAccountPasswordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ChangeAccountPasswordWithChan(request *ChangeAccountPasswo
 }
 
 // ChangeAccountPasswordWithCallback invokes the drds.ChangeAccountPassword API asynchronously
-// api document: https://help.aliyun.com/api/drds/changeaccountpassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangeAccountPasswordWithCallback(request *ChangeAccountPasswordRequest, callback func(response *ChangeAccountPasswordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateChangeAccountPasswordRequest() (request *ChangeAccountPasswordRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "ChangeAccountPassword", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

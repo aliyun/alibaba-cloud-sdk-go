@@ -21,7 +21,6 @@ import (
 )
 
 // ListUserReports invokes the drds.ListUserReports API synchronously
-// api document: https://help.aliyun.com/api/drds/listuserreports.html
 func (client *Client) ListUserReports(request *ListUserReportsRequest) (response *ListUserReportsResponse, err error) {
 	response = CreateListUserReportsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListUserReports(request *ListUserReportsRequest) (response
 }
 
 // ListUserReportsWithChan invokes the drds.ListUserReports API asynchronously
-// api document: https://help.aliyun.com/api/drds/listuserreports.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUserReportsWithChan(request *ListUserReportsRequest) (<-chan *ListUserReportsResponse, <-chan error) {
 	responseChan := make(chan *ListUserReportsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListUserReportsWithChan(request *ListUserReportsRequest) (
 }
 
 // ListUserReportsWithCallback invokes the drds.ListUserReports API asynchronously
-// api document: https://help.aliyun.com/api/drds/listuserreports.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUserReportsWithCallback(request *ListUserReportsRequest, callback func(response *ListUserReportsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateListUserReportsRequest() (request *ListUserReportsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "ListUserReports", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDrdsInstance invokes the drds.CreateDrdsInstance API synchronously
-// api document: https://help.aliyun.com/api/drds/createdrdsinstance.html
 func (client *Client) CreateDrdsInstance(request *CreateDrdsInstanceRequest) (response *CreateDrdsInstanceResponse, err error) {
 	response = CreateCreateDrdsInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDrdsInstance(request *CreateDrdsInstanceRequest) (re
 }
 
 // CreateDrdsInstanceWithChan invokes the drds.CreateDrdsInstance API asynchronously
-// api document: https://help.aliyun.com/api/drds/createdrdsinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDrdsInstanceWithChan(request *CreateDrdsInstanceRequest) (<-chan *CreateDrdsInstanceResponse, <-chan error) {
 	responseChan := make(chan *CreateDrdsInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDrdsInstanceWithChan(request *CreateDrdsInstanceRequ
 }
 
 // CreateDrdsInstanceWithCallback invokes the drds.CreateDrdsInstance API asynchronously
-// api document: https://help.aliyun.com/api/drds/createdrdsinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDrdsInstanceWithCallback(request *CreateDrdsInstanceRequest, callback func(response *CreateDrdsInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,10 +76,8 @@ type CreateDrdsInstanceRequest struct {
 	Description    string           `position:"Query" name:"Description"`
 	Type           string           `position:"Query" name:"Type"`
 	Duration       requests.Integer `position:"Query" name:"Duration"`
-	IsHa           requests.Boolean `position:"Query" name:"isHa"`
-	MySQLVersion   requests.Integer `position:"Query" name:"MySQLVersion"`
+	IsHa           requests.Boolean `position:"Query" name:"IsHa"`
 	InstanceSeries string           `position:"Query" name:"InstanceSeries"`
-	MasterInstId   string           `position:"Query" name:"MasterInstId"`
 	Quantity       requests.Integer `position:"Query" name:"Quantity"`
 	Specification  string           `position:"Query" name:"Specification"`
 	VswitchId      string           `position:"Query" name:"VswitchId"`
@@ -107,7 +100,8 @@ func CreateCreateDrdsInstanceRequest() (request *CreateDrdsInstanceRequest) {
 	request = &CreateDrdsInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "CreateDrdsInstance", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2017-10-16", "CreateDrdsInstance", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

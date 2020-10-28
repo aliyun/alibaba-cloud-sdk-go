@@ -21,7 +21,6 @@ import (
 )
 
 // CreateOrderForRds invokes the drds.CreateOrderForRds API synchronously
-// api document: https://help.aliyun.com/api/drds/createorderforrds.html
 func (client *Client) CreateOrderForRds(request *CreateOrderForRdsRequest) (response *CreateOrderForRdsResponse, err error) {
 	response = CreateCreateOrderForRdsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateOrderForRds(request *CreateOrderForRdsRequest) (resp
 }
 
 // CreateOrderForRdsWithChan invokes the drds.CreateOrderForRds API asynchronously
-// api document: https://help.aliyun.com/api/drds/createorderforrds.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOrderForRdsWithChan(request *CreateOrderForRdsRequest) (<-chan *CreateOrderForRdsResponse, <-chan error) {
 	responseChan := make(chan *CreateOrderForRdsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateOrderForRdsWithChan(request *CreateOrderForRdsReques
 }
 
 // CreateOrderForRdsWithCallback invokes the drds.CreateOrderForRds API asynchronously
-// api document: https://help.aliyun.com/api/drds/createorderforrds.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOrderForRdsWithCallback(request *CreateOrderForRdsRequest, callback func(response *CreateOrderForRdsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateCreateOrderForRdsRequest() (request *CreateOrderForRdsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "CreateOrderForRds", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

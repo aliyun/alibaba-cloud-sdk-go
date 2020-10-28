@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeShardTaskInfo invokes the drds.DescribeShardTaskInfo API synchronously
-// api document: https://help.aliyun.com/api/drds/describeshardtaskinfo.html
 func (client *Client) DescribeShardTaskInfo(request *DescribeShardTaskInfoRequest) (response *DescribeShardTaskInfoResponse, err error) {
 	response = CreateDescribeShardTaskInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeShardTaskInfo(request *DescribeShardTaskInfoReques
 }
 
 // DescribeShardTaskInfoWithChan invokes the drds.DescribeShardTaskInfo API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeshardtaskinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeShardTaskInfoWithChan(request *DescribeShardTaskInfoRequest) (<-chan *DescribeShardTaskInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeShardTaskInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeShardTaskInfoWithChan(request *DescribeShardTaskIn
 }
 
 // DescribeShardTaskInfoWithCallback invokes the drds.DescribeShardTaskInfo API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeshardtaskinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeShardTaskInfoWithCallback(request *DescribeShardTaskInfoRequest, callback func(response *DescribeShardTaskInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateDescribeShardTaskInfoRequest() (request *DescribeShardTaskInfoRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeShardTaskInfo", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

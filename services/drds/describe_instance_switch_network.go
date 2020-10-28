@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstanceSwitchNetwork invokes the drds.DescribeInstanceSwitchNetwork API synchronously
-// api document: https://help.aliyun.com/api/drds/describeinstanceswitchnetwork.html
 func (client *Client) DescribeInstanceSwitchNetwork(request *DescribeInstanceSwitchNetworkRequest) (response *DescribeInstanceSwitchNetworkResponse, err error) {
 	response = CreateDescribeInstanceSwitchNetworkResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstanceSwitchNetwork(request *DescribeInstanceSwi
 }
 
 // DescribeInstanceSwitchNetworkWithChan invokes the drds.DescribeInstanceSwitchNetwork API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeinstanceswitchnetwork.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceSwitchNetworkWithChan(request *DescribeInstanceSwitchNetworkRequest) (<-chan *DescribeInstanceSwitchNetworkResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceSwitchNetworkResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceSwitchNetworkWithChan(request *DescribeIns
 }
 
 // DescribeInstanceSwitchNetworkWithCallback invokes the drds.DescribeInstanceSwitchNetwork API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeinstanceswitchnetwork.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceSwitchNetworkWithCallback(request *DescribeInstanceSwitchNetworkRequest, callback func(response *DescribeInstanceSwitchNetworkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeInstanceSwitchNetworkRequest() (request *DescribeInstanceSwit
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeInstanceSwitchNetwork", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

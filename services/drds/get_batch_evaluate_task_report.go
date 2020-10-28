@@ -21,7 +21,6 @@ import (
 )
 
 // GetBatchEvaluateTaskReport invokes the drds.GetBatchEvaluateTaskReport API synchronously
-// api document: https://help.aliyun.com/api/drds/getbatchevaluatetaskreport.html
 func (client *Client) GetBatchEvaluateTaskReport(request *GetBatchEvaluateTaskReportRequest) (response *GetBatchEvaluateTaskReportResponse, err error) {
 	response = CreateGetBatchEvaluateTaskReportResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetBatchEvaluateTaskReport(request *GetBatchEvaluateTaskRe
 }
 
 // GetBatchEvaluateTaskReportWithChan invokes the drds.GetBatchEvaluateTaskReport API asynchronously
-// api document: https://help.aliyun.com/api/drds/getbatchevaluatetaskreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetBatchEvaluateTaskReportWithChan(request *GetBatchEvaluateTaskReportRequest) (<-chan *GetBatchEvaluateTaskReportResponse, <-chan error) {
 	responseChan := make(chan *GetBatchEvaluateTaskReportResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetBatchEvaluateTaskReportWithChan(request *GetBatchEvalua
 }
 
 // GetBatchEvaluateTaskReportWithCallback invokes the drds.GetBatchEvaluateTaskReport API asynchronously
-// api document: https://help.aliyun.com/api/drds/getbatchevaluatetaskreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetBatchEvaluateTaskReportWithCallback(request *GetBatchEvaluateTaskReportRequest, callback func(response *GetBatchEvaluateTaskReportResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateGetBatchEvaluateTaskReportRequest() (request *GetBatchEvaluateTaskRep
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "GetBatchEvaluateTaskReport", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

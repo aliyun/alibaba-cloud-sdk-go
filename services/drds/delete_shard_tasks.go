@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteShardTasks invokes the drds.DeleteShardTasks API synchronously
-// api document: https://help.aliyun.com/api/drds/deleteshardtasks.html
 func (client *Client) DeleteShardTasks(request *DeleteShardTasksRequest) (response *DeleteShardTasksResponse, err error) {
 	response = CreateDeleteShardTasksResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteShardTasks(request *DeleteShardTasksRequest) (respon
 }
 
 // DeleteShardTasksWithChan invokes the drds.DeleteShardTasks API asynchronously
-// api document: https://help.aliyun.com/api/drds/deleteshardtasks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteShardTasksWithChan(request *DeleteShardTasksRequest) (<-chan *DeleteShardTasksResponse, <-chan error) {
 	responseChan := make(chan *DeleteShardTasksResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteShardTasksWithChan(request *DeleteShardTasksRequest)
 }
 
 // DeleteShardTasksWithCallback invokes the drds.DeleteShardTasks API asynchronously
-// api document: https://help.aliyun.com/api/drds/deleteshardtasks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteShardTasksWithCallback(request *DeleteShardTasksRequest, callback func(response *DeleteShardTasksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +96,7 @@ func CreateDeleteShardTasksRequest() (request *DeleteShardTasksRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DeleteShardTasks", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

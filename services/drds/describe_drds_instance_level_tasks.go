@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDrdsInstanceLevelTasks invokes the drds.DescribeDrdsInstanceLevelTasks API synchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsinstanceleveltasks.html
 func (client *Client) DescribeDrdsInstanceLevelTasks(request *DescribeDrdsInstanceLevelTasksRequest) (response *DescribeDrdsInstanceLevelTasksResponse, err error) {
 	response = CreateDescribeDrdsInstanceLevelTasksResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDrdsInstanceLevelTasks(request *DescribeDrdsInstan
 }
 
 // DescribeDrdsInstanceLevelTasksWithChan invokes the drds.DescribeDrdsInstanceLevelTasks API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsinstanceleveltasks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsInstanceLevelTasksWithChan(request *DescribeDrdsInstanceLevelTasksRequest) (<-chan *DescribeDrdsInstanceLevelTasksResponse, <-chan error) {
 	responseChan := make(chan *DescribeDrdsInstanceLevelTasksResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDrdsInstanceLevelTasksWithChan(request *DescribeDr
 }
 
 // DescribeDrdsInstanceLevelTasksWithCallback invokes the drds.DescribeDrdsInstanceLevelTasks API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsinstanceleveltasks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsInstanceLevelTasksWithCallback(request *DescribeDrdsInstanceLevelTasksRequest, callback func(response *DescribeDrdsInstanceLevelTasksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeDrdsInstanceLevelTasksRequest() (request *DescribeDrdsInstanc
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsInstanceLevelTasks", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

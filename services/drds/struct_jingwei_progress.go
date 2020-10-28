@@ -19,6 +19,6 @@ package drds
 type JingweiProgress struct {
 	FullRunning      bool      `json:"FullRunning" xml:"FullRunning"`
 	IncrementRunning bool      `json:"IncrementRunning" xml:"IncrementRunning"`
-	Full             Full      `json:"Full" xml:"Full"`
 	Increment        Increment `json:"Increment" xml:"Increment"`
+	Full             Full      `json:"Full" xml:"Full"`
 }

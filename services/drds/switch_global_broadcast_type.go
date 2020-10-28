@@ -21,7 +21,6 @@ import (
 )
 
 // SwitchGlobalBroadcastType invokes the drds.SwitchGlobalBroadcastType API synchronously
-// api document: https://help.aliyun.com/api/drds/switchglobalbroadcasttype.html
 func (client *Client) SwitchGlobalBroadcastType(request *SwitchGlobalBroadcastTypeRequest) (response *SwitchGlobalBroadcastTypeResponse, err error) {
 	response = CreateSwitchGlobalBroadcastTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SwitchGlobalBroadcastType(request *SwitchGlobalBroadcastTy
 }
 
 // SwitchGlobalBroadcastTypeWithChan invokes the drds.SwitchGlobalBroadcastType API asynchronously
-// api document: https://help.aliyun.com/api/drds/switchglobalbroadcasttype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchGlobalBroadcastTypeWithChan(request *SwitchGlobalBroadcastTypeRequest) (<-chan *SwitchGlobalBroadcastTypeResponse, <-chan error) {
 	responseChan := make(chan *SwitchGlobalBroadcastTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SwitchGlobalBroadcastTypeWithChan(request *SwitchGlobalBro
 }
 
 // SwitchGlobalBroadcastTypeWithCallback invokes the drds.SwitchGlobalBroadcastType API asynchronously
-// api document: https://help.aliyun.com/api/drds/switchglobalbroadcasttype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchGlobalBroadcastTypeWithCallback(request *SwitchGlobalBroadcastTypeRequest, callback func(response *SwitchGlobalBroadcastTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateSwitchGlobalBroadcastTypeRequest() (request *SwitchGlobalBroadcastTyp
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SwitchGlobalBroadcastType", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

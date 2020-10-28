@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRestoreOrder invokes the drds.DescribeRestoreOrder API synchronously
-// api document: https://help.aliyun.com/api/drds/describerestoreorder.html
 func (client *Client) DescribeRestoreOrder(request *DescribeRestoreOrderRequest) (response *DescribeRestoreOrderResponse, err error) {
 	response = CreateDescribeRestoreOrderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRestoreOrder(request *DescribeRestoreOrderRequest)
 }
 
 // DescribeRestoreOrderWithChan invokes the drds.DescribeRestoreOrder API asynchronously
-// api document: https://help.aliyun.com/api/drds/describerestoreorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRestoreOrderWithChan(request *DescribeRestoreOrderRequest) (<-chan *DescribeRestoreOrderResponse, <-chan error) {
 	responseChan := make(chan *DescribeRestoreOrderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRestoreOrderWithChan(request *DescribeRestoreOrder
 }
 
 // DescribeRestoreOrderWithCallback invokes the drds.DescribeRestoreOrder API asynchronously
-// api document: https://help.aliyun.com/api/drds/describerestoreorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRestoreOrderWithCallback(request *DescribeRestoreOrderRequest, callback func(response *DescribeRestoreOrderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateDescribeRestoreOrderRequest() (request *DescribeRestoreOrderRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRestoreOrder", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

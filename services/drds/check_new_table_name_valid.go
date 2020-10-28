@@ -21,7 +21,6 @@ import (
 )
 
 // CheckNewTableNameValid invokes the drds.CheckNewTableNameValid API synchronously
-// api document: https://help.aliyun.com/api/drds/checknewtablenamevalid.html
 func (client *Client) CheckNewTableNameValid(request *CheckNewTableNameValidRequest) (response *CheckNewTableNameValidResponse, err error) {
 	response = CreateCheckNewTableNameValidResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckNewTableNameValid(request *CheckNewTableNameValidRequ
 }
 
 // CheckNewTableNameValidWithChan invokes the drds.CheckNewTableNameValid API asynchronously
-// api document: https://help.aliyun.com/api/drds/checknewtablenamevalid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckNewTableNameValidWithChan(request *CheckNewTableNameValidRequest) (<-chan *CheckNewTableNameValidResponse, <-chan error) {
 	responseChan := make(chan *CheckNewTableNameValidResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckNewTableNameValidWithChan(request *CheckNewTableNameV
 }
 
 // CheckNewTableNameValidWithCallback invokes the drds.CheckNewTableNameValid API asynchronously
-// api document: https://help.aliyun.com/api/drds/checknewtablenamevalid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckNewTableNameValidWithCallback(request *CheckNewTableNameValidRequest, callback func(response *CheckNewTableNameValidResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateCheckNewTableNameValidRequest() (request *CheckNewTableNameValidReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "CheckNewTableNameValid", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeGlobalBroadcastType invokes the drds.DescribeGlobalBroadcastType API synchronously
-// api document: https://help.aliyun.com/api/drds/describeglobalbroadcasttype.html
 func (client *Client) DescribeGlobalBroadcastType(request *DescribeGlobalBroadcastTypeRequest) (response *DescribeGlobalBroadcastTypeResponse, err error) {
 	response = CreateDescribeGlobalBroadcastTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeGlobalBroadcastType(request *DescribeGlobalBroadca
 }
 
 // DescribeGlobalBroadcastTypeWithChan invokes the drds.DescribeGlobalBroadcastType API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeglobalbroadcasttype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGlobalBroadcastTypeWithChan(request *DescribeGlobalBroadcastTypeRequest) (<-chan *DescribeGlobalBroadcastTypeResponse, <-chan error) {
 	responseChan := make(chan *DescribeGlobalBroadcastTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeGlobalBroadcastTypeWithChan(request *DescribeGloba
 }
 
 // DescribeGlobalBroadcastTypeWithCallback invokes the drds.DescribeGlobalBroadcastType API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeglobalbroadcasttype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGlobalBroadcastTypeWithCallback(request *DescribeGlobalBroadcastTypeRequest, callback func(response *DescribeGlobalBroadcastTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeGlobalBroadcastTypeRequest() (request *DescribeGlobalBroadcas
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeGlobalBroadcastType", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

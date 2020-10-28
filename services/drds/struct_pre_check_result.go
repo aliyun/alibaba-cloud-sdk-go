@@ -19,5 +19,5 @@ package drds
 type PreCheckResult struct {
 	State         string                                          `json:"State" xml:"State"`
 	PreCheckName  string                                          `json:"PreCheckName" xml:"PreCheckName"`
-	SubCheckItems SubCheckItemsInDescribeDataImportPreCheckResult `json:"SubCheckItems" xml:"SubCheckItems"`
+	SubCheckItems SubCheckItemsInDescribeDataExportPreCheckResult `json:"SubCheckItems" xml:"SubCheckItems"`
 }

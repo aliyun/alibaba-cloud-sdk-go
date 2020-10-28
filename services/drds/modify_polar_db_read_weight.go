@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyPolarDbReadWeight invokes the drds.ModifyPolarDbReadWeight API synchronously
-// api document: https://help.aliyun.com/api/drds/modifypolardbreadweight.html
 func (client *Client) ModifyPolarDbReadWeight(request *ModifyPolarDbReadWeightRequest) (response *ModifyPolarDbReadWeightResponse, err error) {
 	response = CreateModifyPolarDbReadWeightResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyPolarDbReadWeight(request *ModifyPolarDbReadWeightRe
 }
 
 // ModifyPolarDbReadWeightWithChan invokes the drds.ModifyPolarDbReadWeight API asynchronously
-// api document: https://help.aliyun.com/api/drds/modifypolardbreadweight.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPolarDbReadWeightWithChan(request *ModifyPolarDbReadWeightRequest) (<-chan *ModifyPolarDbReadWeightResponse, <-chan error) {
 	responseChan := make(chan *ModifyPolarDbReadWeightResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyPolarDbReadWeightWithChan(request *ModifyPolarDbRead
 }
 
 // ModifyPolarDbReadWeightWithCallback invokes the drds.ModifyPolarDbReadWeight API asynchronously
-// api document: https://help.aliyun.com/api/drds/modifypolardbreadweight.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPolarDbReadWeightWithCallback(request *ModifyPolarDbReadWeightRequest, callback func(response *ModifyPolarDbReadWeightResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateModifyPolarDbReadWeightRequest() (request *ModifyPolarDbReadWeightReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "ModifyPolarDbReadWeight", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

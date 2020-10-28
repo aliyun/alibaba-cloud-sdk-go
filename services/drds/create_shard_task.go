@@ -21,7 +21,6 @@ import (
 )
 
 // CreateShardTask invokes the drds.CreateShardTask API synchronously
-// api document: https://help.aliyun.com/api/drds/createshardtask.html
 func (client *Client) CreateShardTask(request *CreateShardTaskRequest) (response *CreateShardTaskResponse, err error) {
 	response = CreateCreateShardTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateShardTask(request *CreateShardTaskRequest) (response
 }
 
 // CreateShardTaskWithChan invokes the drds.CreateShardTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/createshardtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateShardTaskWithChan(request *CreateShardTaskRequest) (<-chan *CreateShardTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateShardTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateShardTaskWithChan(request *CreateShardTaskRequest) (
 }
 
 // CreateShardTaskWithCallback invokes the drds.CreateShardTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/createshardtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateShardTaskWithCallback(request *CreateShardTaskRequest, callback func(response *CreateShardTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateCreateShardTaskRequest() (request *CreateShardTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "CreateShardTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

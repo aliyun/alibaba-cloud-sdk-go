@@ -21,7 +21,6 @@ import (
 )
 
 // CreateEvaluateDataImportTask invokes the drds.CreateEvaluateDataImportTask API synchronously
-// api document: https://help.aliyun.com/api/drds/createevaluatedataimporttask.html
 func (client *Client) CreateEvaluateDataImportTask(request *CreateEvaluateDataImportTaskRequest) (response *CreateEvaluateDataImportTaskResponse, err error) {
 	response = CreateCreateEvaluateDataImportTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateEvaluateDataImportTask(request *CreateEvaluateDataIm
 }
 
 // CreateEvaluateDataImportTaskWithChan invokes the drds.CreateEvaluateDataImportTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/createevaluatedataimporttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEvaluateDataImportTaskWithChan(request *CreateEvaluateDataImportTaskRequest) (<-chan *CreateEvaluateDataImportTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateEvaluateDataImportTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateEvaluateDataImportTaskWithChan(request *CreateEvalua
 }
 
 // CreateEvaluateDataImportTaskWithCallback invokes the drds.CreateEvaluateDataImportTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/createevaluatedataimporttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEvaluateDataImportTaskWithCallback(request *CreateEvaluateDataImportTaskRequest, callback func(response *CreateEvaluateDataImportTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateCreateEvaluateDataImportTaskRequest() (request *CreateEvaluateDataImp
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "CreateEvaluateDataImportTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

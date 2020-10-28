@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBackupDbs invokes the drds.DescribeBackupDbs API synchronously
-// api document: https://help.aliyun.com/api/drds/describebackupdbs.html
 func (client *Client) DescribeBackupDbs(request *DescribeBackupDbsRequest) (response *DescribeBackupDbsResponse, err error) {
 	response = CreateDescribeBackupDbsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBackupDbs(request *DescribeBackupDbsRequest) (resp
 }
 
 // DescribeBackupDbsWithChan invokes the drds.DescribeBackupDbs API asynchronously
-// api document: https://help.aliyun.com/api/drds/describebackupdbs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupDbsWithChan(request *DescribeBackupDbsRequest) (<-chan *DescribeBackupDbsResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackupDbsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBackupDbsWithChan(request *DescribeBackupDbsReques
 }
 
 // DescribeBackupDbsWithCallback invokes the drds.DescribeBackupDbs API asynchronously
-// api document: https://help.aliyun.com/api/drds/describebackupdbs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupDbsWithCallback(request *DescribeBackupDbsRequest, callback func(response *DescribeBackupDbsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,9 +79,9 @@ type DescribeBackupDbsRequest struct {
 // DescribeBackupDbsResponse is the response struct for api DescribeBackupDbs
 type DescribeBackupDbsResponse struct {
 	*responses.BaseResponse
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	Success   bool    `json:"Success" xml:"Success"`
-	DbNames   DbNames `json:"DbNames" xml:"DbNames"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
+	Success   bool                       `json:"Success" xml:"Success"`
+	DbNames   DbNamesInDescribeBackupDbs `json:"DbNames" xml:"DbNames"`
 }
 
 // CreateDescribeBackupDbsRequest creates a request to invoke DescribeBackupDbs API
@@ -95,6 +90,7 @@ func CreateDescribeBackupDbsRequest() (request *DescribeBackupDbsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeBackupDbs", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

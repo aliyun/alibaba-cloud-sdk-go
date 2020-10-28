@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyAccountPrivilege invokes the drds.ModifyAccountPrivilege API synchronously
-// api document: https://help.aliyun.com/api/drds/modifyaccountprivilege.html
 func (client *Client) ModifyAccountPrivilege(request *ModifyAccountPrivilegeRequest) (response *ModifyAccountPrivilegeResponse, err error) {
 	response = CreateModifyAccountPrivilegeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyAccountPrivilege(request *ModifyAccountPrivilegeRequ
 }
 
 // ModifyAccountPrivilegeWithChan invokes the drds.ModifyAccountPrivilege API asynchronously
-// api document: https://help.aliyun.com/api/drds/modifyaccountprivilege.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccountPrivilegeWithChan(request *ModifyAccountPrivilegeRequest) (<-chan *ModifyAccountPrivilegeResponse, <-chan error) {
 	responseChan := make(chan *ModifyAccountPrivilegeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyAccountPrivilegeWithChan(request *ModifyAccountPrivi
 }
 
 // ModifyAccountPrivilegeWithCallback invokes the drds.ModifyAccountPrivilege API asynchronously
-// api document: https://help.aliyun.com/api/drds/modifyaccountprivilege.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccountPrivilegeWithCallback(request *ModifyAccountPrivilegeRequest, callback func(response *ModifyAccountPrivilegeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateModifyAccountPrivilegeRequest() (request *ModifyAccountPrivilegeReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "ModifyAccountPrivilege", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

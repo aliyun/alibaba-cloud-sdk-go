@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRDSPerformance invokes the drds.DescribeRDSPerformance API synchronously
-// api document: https://help.aliyun.com/api/drds/describerdsperformance.html
 func (client *Client) DescribeRDSPerformance(request *DescribeRDSPerformanceRequest) (response *DescribeRDSPerformanceResponse, err error) {
 	response = CreateDescribeRDSPerformanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRDSPerformance(request *DescribeRDSPerformanceRequ
 }
 
 // DescribeRDSPerformanceWithChan invokes the drds.DescribeRDSPerformance API asynchronously
-// api document: https://help.aliyun.com/api/drds/describerdsperformance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRDSPerformanceWithChan(request *DescribeRDSPerformanceRequest) (<-chan *DescribeRDSPerformanceResponse, <-chan error) {
 	responseChan := make(chan *DescribeRDSPerformanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRDSPerformanceWithChan(request *DescribeRDSPerform
 }
 
 // DescribeRDSPerformanceWithCallback invokes the drds.DescribeRDSPerformance API asynchronously
-// api document: https://help.aliyun.com/api/drds/describerdsperformance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRDSPerformanceWithCallback(request *DescribeRDSPerformanceRequest, callback func(response *DescribeRDSPerformanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateDescribeRDSPerformanceRequest() (request *DescribeRDSPerformanceReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRDSPerformance", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

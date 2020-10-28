@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeExpandLogicTableInfoList invokes the drds.DescribeExpandLogicTableInfoList API synchronously
-// api document: https://help.aliyun.com/api/drds/describeexpandlogictableinfolist.html
 func (client *Client) DescribeExpandLogicTableInfoList(request *DescribeExpandLogicTableInfoListRequest) (response *DescribeExpandLogicTableInfoListResponse, err error) {
 	response = CreateDescribeExpandLogicTableInfoListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeExpandLogicTableInfoList(request *DescribeExpandLo
 }
 
 // DescribeExpandLogicTableInfoListWithChan invokes the drds.DescribeExpandLogicTableInfoList API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeexpandlogictableinfolist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExpandLogicTableInfoListWithChan(request *DescribeExpandLogicTableInfoListRequest) (<-chan *DescribeExpandLogicTableInfoListResponse, <-chan error) {
 	responseChan := make(chan *DescribeExpandLogicTableInfoListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeExpandLogicTableInfoListWithChan(request *Describe
 }
 
 // DescribeExpandLogicTableInfoListWithCallback invokes the drds.DescribeExpandLogicTableInfoList API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeexpandlogictableinfolist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExpandLogicTableInfoListWithCallback(request *DescribeExpandLogicTableInfoListRequest, callback func(response *DescribeExpandLogicTableInfoListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeExpandLogicTableInfoListRequest() (request *DescribeExpandLog
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeExpandLogicTableInfoList", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

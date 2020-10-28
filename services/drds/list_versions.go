@@ -21,7 +21,6 @@ import (
 )
 
 // ListVersions invokes the drds.ListVersions API synchronously
-// api document: https://help.aliyun.com/api/drds/listversions.html
 func (client *Client) ListVersions(request *ListVersionsRequest) (response *ListVersionsResponse, err error) {
 	response = CreateListVersionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListVersions(request *ListVersionsRequest) (response *List
 }
 
 // ListVersionsWithChan invokes the drds.ListVersions API asynchronously
-// api document: https://help.aliyun.com/api/drds/listversions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVersionsWithChan(request *ListVersionsRequest) (<-chan *ListVersionsResponse, <-chan error) {
 	responseChan := make(chan *ListVersionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListVersionsWithChan(request *ListVersionsRequest) (<-chan
 }
 
 // ListVersionsWithCallback invokes the drds.ListVersions API asynchronously
-// api document: https://help.aliyun.com/api/drds/listversions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVersionsWithCallback(request *ListVersionsRequest, callback func(response *ListVersionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateListVersionsRequest() (request *ListVersionsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "ListVersions", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

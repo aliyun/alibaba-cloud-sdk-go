@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCustomDataImportSrcDstTables invokes the drds.DescribeCustomDataImportSrcDstTables API synchronously
-// api document: https://help.aliyun.com/api/drds/describecustomdataimportsrcdsttables.html
 func (client *Client) DescribeCustomDataImportSrcDstTables(request *DescribeCustomDataImportSrcDstTablesRequest) (response *DescribeCustomDataImportSrcDstTablesResponse, err error) {
 	response = CreateDescribeCustomDataImportSrcDstTablesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCustomDataImportSrcDstTables(request *DescribeCust
 }
 
 // DescribeCustomDataImportSrcDstTablesWithChan invokes the drds.DescribeCustomDataImportSrcDstTables API asynchronously
-// api document: https://help.aliyun.com/api/drds/describecustomdataimportsrcdsttables.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomDataImportSrcDstTablesWithChan(request *DescribeCustomDataImportSrcDstTablesRequest) (<-chan *DescribeCustomDataImportSrcDstTablesResponse, <-chan error) {
 	responseChan := make(chan *DescribeCustomDataImportSrcDstTablesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCustomDataImportSrcDstTablesWithChan(request *Desc
 }
 
 // DescribeCustomDataImportSrcDstTablesWithCallback invokes the drds.DescribeCustomDataImportSrcDstTables API asynchronously
-// api document: https://help.aliyun.com/api/drds/describecustomdataimportsrcdsttables.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomDataImportSrcDstTablesWithCallback(request *DescribeCustomDataImportSrcDstTablesRequest, callback func(response *DescribeCustomDataImportSrcDstTablesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeCustomDataImportSrcDstTablesRequest() (request *DescribeCusto
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeCustomDataImportSrcDstTables", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

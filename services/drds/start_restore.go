@@ -21,7 +21,6 @@ import (
 )
 
 // StartRestore invokes the drds.StartRestore API synchronously
-// api document: https://help.aliyun.com/api/drds/startrestore.html
 func (client *Client) StartRestore(request *StartRestoreRequest) (response *StartRestoreResponse, err error) {
 	response = CreateStartRestoreResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartRestore(request *StartRestoreRequest) (response *Star
 }
 
 // StartRestoreWithChan invokes the drds.StartRestore API asynchronously
-// api document: https://help.aliyun.com/api/drds/startrestore.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartRestoreWithChan(request *StartRestoreRequest) (<-chan *StartRestoreResponse, <-chan error) {
 	responseChan := make(chan *StartRestoreResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartRestoreWithChan(request *StartRestoreRequest) (<-chan
 }
 
 // StartRestoreWithCallback invokes the drds.StartRestore API asynchronously
-// api document: https://help.aliyun.com/api/drds/startrestore.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartRestoreWithCallback(request *StartRestoreRequest, callback func(response *StartRestoreResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateStartRestoreRequest() (request *StartRestoreRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "StartRestore", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

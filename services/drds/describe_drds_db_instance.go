@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDrdsDbInstance invokes the drds.DescribeDrdsDbInstance API synchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsdbinstance.html
 func (client *Client) DescribeDrdsDbInstance(request *DescribeDrdsDbInstanceRequest) (response *DescribeDrdsDbInstanceResponse, err error) {
 	response = CreateDescribeDrdsDbInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDrdsDbInstance(request *DescribeDrdsDbInstanceRequ
 }
 
 // DescribeDrdsDbInstanceWithChan invokes the drds.DescribeDrdsDbInstance API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsdbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsDbInstanceWithChan(request *DescribeDrdsDbInstanceRequest) (<-chan *DescribeDrdsDbInstanceResponse, <-chan error) {
 	responseChan := make(chan *DescribeDrdsDbInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDrdsDbInstanceWithChan(request *DescribeDrdsDbInst
 }
 
 // DescribeDrdsDbInstanceWithCallback invokes the drds.DescribeDrdsDbInstance API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsdbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsDbInstanceWithCallback(request *DescribeDrdsDbInstanceRequest, callback func(response *DescribeDrdsDbInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,9 +79,9 @@ type DescribeDrdsDbInstanceRequest struct {
 // DescribeDrdsDbInstanceResponse is the response struct for api DescribeDrdsDbInstance
 type DescribeDrdsDbInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId  string                             `json:"RequestId" xml:"RequestId"`
-	Success    bool                               `json:"Success" xml:"Success"`
-	DbInstance DbInstanceInDescribeDrdsDbInstance `json:"DbInstance" xml:"DbInstance"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	Success    bool       `json:"Success" xml:"Success"`
+	DbInstance DbInstance `json:"DbInstance" xml:"DbInstance"`
 }
 
 // CreateDescribeDrdsDbInstanceRequest creates a request to invoke DescribeDrdsDbInstance API
@@ -95,6 +90,7 @@ func CreateDescribeDrdsDbInstanceRequest() (request *DescribeDrdsDbInstanceReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDbInstance", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

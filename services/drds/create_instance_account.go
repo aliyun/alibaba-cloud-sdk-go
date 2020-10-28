@@ -21,7 +21,6 @@ import (
 )
 
 // CreateInstanceAccount invokes the drds.CreateInstanceAccount API synchronously
-// api document: https://help.aliyun.com/api/drds/createinstanceaccount.html
 func (client *Client) CreateInstanceAccount(request *CreateInstanceAccountRequest) (response *CreateInstanceAccountResponse, err error) {
 	response = CreateCreateInstanceAccountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateInstanceAccount(request *CreateInstanceAccountReques
 }
 
 // CreateInstanceAccountWithChan invokes the drds.CreateInstanceAccount API asynchronously
-// api document: https://help.aliyun.com/api/drds/createinstanceaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateInstanceAccountWithChan(request *CreateInstanceAccountRequest) (<-chan *CreateInstanceAccountResponse, <-chan error) {
 	responseChan := make(chan *CreateInstanceAccountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateInstanceAccountWithChan(request *CreateInstanceAccou
 }
 
 // CreateInstanceAccountWithCallback invokes the drds.CreateInstanceAccount API asynchronously
-// api document: https://help.aliyun.com/api/drds/createinstanceaccount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateInstanceAccountWithCallback(request *CreateInstanceAccountRequest, callback func(response *CreateInstanceAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +96,7 @@ func CreateCreateInstanceAccountRequest() (request *CreateInstanceAccountRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "CreateInstanceAccount", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

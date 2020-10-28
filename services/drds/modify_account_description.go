@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyAccountDescription invokes the drds.ModifyAccountDescription API synchronously
-// api document: https://help.aliyun.com/api/drds/modifyaccountdescription.html
 func (client *Client) ModifyAccountDescription(request *ModifyAccountDescriptionRequest) (response *ModifyAccountDescriptionResponse, err error) {
 	response = CreateModifyAccountDescriptionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyAccountDescription(request *ModifyAccountDescription
 }
 
 // ModifyAccountDescriptionWithChan invokes the drds.ModifyAccountDescription API asynchronously
-// api document: https://help.aliyun.com/api/drds/modifyaccountdescription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccountDescriptionWithChan(request *ModifyAccountDescriptionRequest) (<-chan *ModifyAccountDescriptionResponse, <-chan error) {
 	responseChan := make(chan *ModifyAccountDescriptionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyAccountDescriptionWithChan(request *ModifyAccountDes
 }
 
 // ModifyAccountDescriptionWithCallback invokes the drds.ModifyAccountDescription API asynchronously
-// api document: https://help.aliyun.com/api/drds/modifyaccountdescription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccountDescriptionWithCallback(request *ModifyAccountDescriptionRequest, callback func(response *ModifyAccountDescriptionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateModifyAccountDescriptionRequest() (request *ModifyAccountDescriptionR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "ModifyAccountDescription", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

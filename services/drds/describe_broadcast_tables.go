@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBroadcastTables invokes the drds.DescribeBroadcastTables API synchronously
-// api document: https://help.aliyun.com/api/drds/describebroadcasttables.html
 func (client *Client) DescribeBroadcastTables(request *DescribeBroadcastTablesRequest) (response *DescribeBroadcastTablesResponse, err error) {
 	response = CreateDescribeBroadcastTablesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBroadcastTables(request *DescribeBroadcastTablesRe
 }
 
 // DescribeBroadcastTablesWithChan invokes the drds.DescribeBroadcastTables API asynchronously
-// api document: https://help.aliyun.com/api/drds/describebroadcasttables.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBroadcastTablesWithChan(request *DescribeBroadcastTablesRequest) (<-chan *DescribeBroadcastTablesResponse, <-chan error) {
 	responseChan := make(chan *DescribeBroadcastTablesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBroadcastTablesWithChan(request *DescribeBroadcast
 }
 
 // DescribeBroadcastTablesWithCallback invokes the drds.DescribeBroadcastTables API asynchronously
-// api document: https://help.aliyun.com/api/drds/describebroadcasttables.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBroadcastTablesWithCallback(request *DescribeBroadcastTablesRequest, callback func(response *DescribeBroadcastTablesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +96,7 @@ func CreateDescribeBroadcastTablesRequest() (request *DescribeBroadcastTablesReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeBroadcastTables", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

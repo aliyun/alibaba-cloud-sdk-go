@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDrdsDB invokes the drds.DescribeDrdsDB API synchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsdb.html
 func (client *Client) DescribeDrdsDB(request *DescribeDrdsDBRequest) (response *DescribeDrdsDBResponse, err error) {
 	response = CreateDescribeDrdsDBResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDrdsDB(request *DescribeDrdsDBRequest) (response *
 }
 
 // DescribeDrdsDBWithChan invokes the drds.DescribeDrdsDB API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsdb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsDBWithChan(request *DescribeDrdsDBRequest) (<-chan *DescribeDrdsDBResponse, <-chan error) {
 	responseChan := make(chan *DescribeDrdsDBResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDrdsDBWithChan(request *DescribeDrdsDBRequest) (<-
 }
 
 // DescribeDrdsDBWithCallback invokes the drds.DescribeDrdsDB API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsdb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsDBWithCallback(request *DescribeDrdsDBRequest, callback func(response *DescribeDrdsDBResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,9 +78,9 @@ type DescribeDrdsDBRequest struct {
 // DescribeDrdsDBResponse is the response struct for api DescribeDrdsDB
 type DescribeDrdsDBResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string               `json:"RequestId" xml:"RequestId"`
+	Success   bool                 `json:"Success" xml:"Success"`
+	Data      DataInDescribeDrdsDB `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeDrdsDBRequest creates a request to invoke DescribeDrdsDB API
@@ -93,7 +88,8 @@ func CreateDescribeDrdsDBRequest() (request *DescribeDrdsDBRequest) {
 	request = &DescribeDrdsDBRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDB", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeDrdsDB", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

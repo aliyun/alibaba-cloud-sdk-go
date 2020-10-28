@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePreCheckResult invokes the drds.DescribePreCheckResult API synchronously
-// api document: https://help.aliyun.com/api/drds/describeprecheckresult.html
 func (client *Client) DescribePreCheckResult(request *DescribePreCheckResultRequest) (response *DescribePreCheckResultResponse, err error) {
 	response = CreateDescribePreCheckResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePreCheckResult(request *DescribePreCheckResultRequ
 }
 
 // DescribePreCheckResultWithChan invokes the drds.DescribePreCheckResult API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeprecheckresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePreCheckResultWithChan(request *DescribePreCheckResultRequest) (<-chan *DescribePreCheckResultResponse, <-chan error) {
 	responseChan := make(chan *DescribePreCheckResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePreCheckResultWithChan(request *DescribePreCheckRe
 }
 
 // DescribePreCheckResultWithCallback invokes the drds.DescribePreCheckResult API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeprecheckresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePreCheckResultWithCallback(request *DescribePreCheckResultRequest, callback func(response *DescribePreCheckResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,9 +78,9 @@ type DescribePreCheckResultRequest struct {
 // DescribePreCheckResultResponse is the response struct for api DescribePreCheckResult
 type DescribePreCheckResultResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	Success        bool           `json:"Success" xml:"Success"`
-	PreCheckResult PreCheckResult `json:"PreCheckResult" xml:"PreCheckResult"`
+	RequestId      string                                 `json:"RequestId" xml:"RequestId"`
+	Success        bool                                   `json:"Success" xml:"Success"`
+	PreCheckResult PreCheckResultInDescribePreCheckResult `json:"PreCheckResult" xml:"PreCheckResult"`
 }
 
 // CreateDescribePreCheckResultRequest creates a request to invoke DescribePreCheckResult API
@@ -94,6 +89,7 @@ func CreateDescribePreCheckResultRequest() (request *DescribePreCheckResultReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribePreCheckResult", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // EnableSqlFlashbackMatchSwitch invokes the drds.EnableSqlFlashbackMatchSwitch API synchronously
-// api document: https://help.aliyun.com/api/drds/enablesqlflashbackmatchswitch.html
 func (client *Client) EnableSqlFlashbackMatchSwitch(request *EnableSqlFlashbackMatchSwitchRequest) (response *EnableSqlFlashbackMatchSwitchResponse, err error) {
 	response = CreateEnableSqlFlashbackMatchSwitchResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnableSqlFlashbackMatchSwitch(request *EnableSqlFlashbackM
 }
 
 // EnableSqlFlashbackMatchSwitchWithChan invokes the drds.EnableSqlFlashbackMatchSwitch API asynchronously
-// api document: https://help.aliyun.com/api/drds/enablesqlflashbackmatchswitch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableSqlFlashbackMatchSwitchWithChan(request *EnableSqlFlashbackMatchSwitchRequest) (<-chan *EnableSqlFlashbackMatchSwitchResponse, <-chan error) {
 	responseChan := make(chan *EnableSqlFlashbackMatchSwitchResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnableSqlFlashbackMatchSwitchWithChan(request *EnableSqlFl
 }
 
 // EnableSqlFlashbackMatchSwitchWithCallback invokes the drds.EnableSqlFlashbackMatchSwitch API asynchronously
-// api document: https://help.aliyun.com/api/drds/enablesqlflashbackmatchswitch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableSqlFlashbackMatchSwitchWithCallback(request *EnableSqlFlashbackMatchSwitchRequest, callback func(response *EnableSqlFlashbackMatchSwitchResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateEnableSqlFlashbackMatchSwitchRequest() (request *EnableSqlFlashbackMa
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "EnableSqlFlashbackMatchSwitch", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // CheckConnectivity invokes the drds.CheckConnectivity API synchronously
-// api document: https://help.aliyun.com/api/drds/checkconnectivity.html
 func (client *Client) CheckConnectivity(request *CheckConnectivityRequest) (response *CheckConnectivityResponse, err error) {
 	response = CreateCheckConnectivityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckConnectivity(request *CheckConnectivityRequest) (resp
 }
 
 // CheckConnectivityWithChan invokes the drds.CheckConnectivity API asynchronously
-// api document: https://help.aliyun.com/api/drds/checkconnectivity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckConnectivityWithChan(request *CheckConnectivityRequest) (<-chan *CheckConnectivityResponse, <-chan error) {
 	responseChan := make(chan *CheckConnectivityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckConnectivityWithChan(request *CheckConnectivityReques
 }
 
 // CheckConnectivityWithCallback invokes the drds.CheckConnectivity API asynchronously
-// api document: https://help.aliyun.com/api/drds/checkconnectivity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckConnectivityWithCallback(request *CheckConnectivityRequest, callback func(response *CheckConnectivityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateCheckConnectivityRequest() (request *CheckConnectivityRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "CheckConnectivity", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

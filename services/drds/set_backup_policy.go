@@ -21,7 +21,6 @@ import (
 )
 
 // SetBackupPolicy invokes the drds.SetBackupPolicy API synchronously
-// api document: https://help.aliyun.com/api/drds/setbackuppolicy.html
 func (client *Client) SetBackupPolicy(request *SetBackupPolicyRequest) (response *SetBackupPolicyResponse, err error) {
 	response = CreateSetBackupPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetBackupPolicy(request *SetBackupPolicyRequest) (response
 }
 
 // SetBackupPolicyWithChan invokes the drds.SetBackupPolicy API asynchronously
-// api document: https://help.aliyun.com/api/drds/setbackuppolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetBackupPolicyWithChan(request *SetBackupPolicyRequest) (<-chan *SetBackupPolicyResponse, <-chan error) {
 	responseChan := make(chan *SetBackupPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetBackupPolicyWithChan(request *SetBackupPolicyRequest) (
 }
 
 // SetBackupPolicyWithCallback invokes the drds.SetBackupPolicy API asynchronously
-// api document: https://help.aliyun.com/api/drds/setbackuppolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetBackupPolicyWithCallback(request *SetBackupPolicyRequest, callback func(response *SetBackupPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,6 +97,7 @@ func CreateSetBackupPolicyRequest() (request *SetBackupPolicyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SetBackupPolicy", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

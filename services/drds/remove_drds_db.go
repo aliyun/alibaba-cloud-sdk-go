@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveDrdsDb invokes the drds.RemoveDrdsDb API synchronously
-// api document: https://help.aliyun.com/api/drds/removedrdsdb.html
 func (client *Client) RemoveDrdsDb(request *RemoveDrdsDbRequest) (response *RemoveDrdsDbResponse, err error) {
 	response = CreateRemoveDrdsDbResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveDrdsDb(request *RemoveDrdsDbRequest) (response *Remo
 }
 
 // RemoveDrdsDbWithChan invokes the drds.RemoveDrdsDb API asynchronously
-// api document: https://help.aliyun.com/api/drds/removedrdsdb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveDrdsDbWithChan(request *RemoveDrdsDbRequest) (<-chan *RemoveDrdsDbResponse, <-chan error) {
 	responseChan := make(chan *RemoveDrdsDbResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveDrdsDbWithChan(request *RemoveDrdsDbRequest) (<-chan
 }
 
 // RemoveDrdsDbWithCallback invokes the drds.RemoveDrdsDb API asynchronously
-// api document: https://help.aliyun.com/api/drds/removedrdsdb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveDrdsDbWithCallback(request *RemoveDrdsDbRequest, callback func(response *RemoveDrdsDbResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateRemoveDrdsDbRequest() (request *RemoveDrdsDbRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveDrdsDb", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

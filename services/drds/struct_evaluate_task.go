@@ -28,4 +28,5 @@ type EvaluateTask struct {
 	Progress            int    `json:"Progress" xml:"Progress"`
 	EvalauteHours       int    `json:"EvalauteHours" xml:"EvalauteHours"`
 	AllSqlCount         int    `json:"AllSqlCount" xml:"AllSqlCount"`
+	DbType              int    `json:"DbType" xml:"DbType"`
 }

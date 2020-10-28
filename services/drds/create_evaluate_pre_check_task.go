@@ -21,7 +21,6 @@ import (
 )
 
 // CreateEvaluatePreCheckTask invokes the drds.CreateEvaluatePreCheckTask API synchronously
-// api document: https://help.aliyun.com/api/drds/createevaluateprechecktask.html
 func (client *Client) CreateEvaluatePreCheckTask(request *CreateEvaluatePreCheckTaskRequest) (response *CreateEvaluatePreCheckTaskResponse, err error) {
 	response = CreateCreateEvaluatePreCheckTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateEvaluatePreCheckTask(request *CreateEvaluatePreCheck
 }
 
 // CreateEvaluatePreCheckTaskWithChan invokes the drds.CreateEvaluatePreCheckTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/createevaluateprechecktask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEvaluatePreCheckTaskWithChan(request *CreateEvaluatePreCheckTaskRequest) (<-chan *CreateEvaluatePreCheckTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateEvaluatePreCheckTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateEvaluatePreCheckTaskWithChan(request *CreateEvaluate
 }
 
 // CreateEvaluatePreCheckTaskWithCallback invokes the drds.CreateEvaluatePreCheckTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/createevaluateprechecktask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEvaluatePreCheckTaskWithCallback(request *CreateEvaluatePreCheckTaskRequest, callback func(response *CreateEvaluatePreCheckTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -106,6 +101,7 @@ func CreateCreateEvaluatePreCheckTaskRequest() (request *CreateEvaluatePreCheckT
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "CreateEvaluatePreCheckTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

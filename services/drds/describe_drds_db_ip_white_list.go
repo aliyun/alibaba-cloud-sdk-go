@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDrdsDBIpWhiteList invokes the drds.DescribeDrdsDBIpWhiteList API synchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsdbipwhitelist.html
 func (client *Client) DescribeDrdsDBIpWhiteList(request *DescribeDrdsDBIpWhiteListRequest) (response *DescribeDrdsDBIpWhiteListResponse, err error) {
 	response = CreateDescribeDrdsDBIpWhiteListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDrdsDBIpWhiteList(request *DescribeDrdsDBIpWhiteLi
 }
 
 // DescribeDrdsDBIpWhiteListWithChan invokes the drds.DescribeDrdsDBIpWhiteList API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsdbipwhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsDBIpWhiteListWithChan(request *DescribeDrdsDBIpWhiteListRequest) (<-chan *DescribeDrdsDBIpWhiteListResponse, <-chan error) {
 	responseChan := make(chan *DescribeDrdsDBIpWhiteListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDrdsDBIpWhiteListWithChan(request *DescribeDrdsDBI
 }
 
 // DescribeDrdsDBIpWhiteListWithCallback invokes the drds.DescribeDrdsDBIpWhiteList API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsdbipwhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsDBIpWhiteListWithCallback(request *DescribeDrdsDBIpWhiteListRequest, callback func(response *DescribeDrdsDBIpWhiteListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,9 +79,9 @@ type DescribeDrdsDBIpWhiteListRequest struct {
 // DescribeDrdsDBIpWhiteListResponse is the response struct for api DescribeDrdsDBIpWhiteList
 type DescribeDrdsDBIpWhiteListResponse struct {
 	*responses.BaseResponse
-	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	Success     bool        `json:"Success" xml:"Success"`
-	IpWhiteList IpWhiteList `json:"IpWhiteList" xml:"IpWhiteList"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeDrdsDBIpWhiteListRequest creates a request to invoke DescribeDrdsDBIpWhiteList API
@@ -94,7 +89,8 @@ func CreateDescribeDrdsDBIpWhiteListRequest() (request *DescribeDrdsDBIpWhiteLis
 	request = &DescribeDrdsDBIpWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDBIpWhiteList", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeDrdsDBIpWhiteList", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

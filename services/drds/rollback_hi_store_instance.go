@@ -21,7 +21,6 @@ import (
 )
 
 // RollbackHiStoreInstance invokes the drds.RollbackHiStoreInstance API synchronously
-// api document: https://help.aliyun.com/api/drds/rollbackhistoreinstance.html
 func (client *Client) RollbackHiStoreInstance(request *RollbackHiStoreInstanceRequest) (response *RollbackHiStoreInstanceResponse, err error) {
 	response = CreateRollbackHiStoreInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RollbackHiStoreInstance(request *RollbackHiStoreInstanceRe
 }
 
 // RollbackHiStoreInstanceWithChan invokes the drds.RollbackHiStoreInstance API asynchronously
-// api document: https://help.aliyun.com/api/drds/rollbackhistoreinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RollbackHiStoreInstanceWithChan(request *RollbackHiStoreInstanceRequest) (<-chan *RollbackHiStoreInstanceResponse, <-chan error) {
 	responseChan := make(chan *RollbackHiStoreInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RollbackHiStoreInstanceWithChan(request *RollbackHiStoreIn
 }
 
 // RollbackHiStoreInstanceWithCallback invokes the drds.RollbackHiStoreInstance API asynchronously
-// api document: https://help.aliyun.com/api/drds/rollbackhistoreinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RollbackHiStoreInstanceWithCallback(request *RollbackHiStoreInstanceRequest, callback func(response *RollbackHiStoreInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateRollbackHiStoreInstanceRequest() (request *RollbackHiStoreInstanceReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "RollbackHiStoreInstance", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

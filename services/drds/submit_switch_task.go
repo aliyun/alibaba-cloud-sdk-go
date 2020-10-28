@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitSwitchTask invokes the drds.SubmitSwitchTask API synchronously
-// api document: https://help.aliyun.com/api/drds/submitswitchtask.html
 func (client *Client) SubmitSwitchTask(request *SubmitSwitchTaskRequest) (response *SubmitSwitchTaskResponse, err error) {
 	response = CreateSubmitSwitchTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitSwitchTask(request *SubmitSwitchTaskRequest) (respon
 }
 
 // SubmitSwitchTaskWithChan invokes the drds.SubmitSwitchTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitswitchtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSwitchTaskWithChan(request *SubmitSwitchTaskRequest) (<-chan *SubmitSwitchTaskResponse, <-chan error) {
 	responseChan := make(chan *SubmitSwitchTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitSwitchTaskWithChan(request *SubmitSwitchTaskRequest)
 }
 
 // SubmitSwitchTaskWithCallback invokes the drds.SubmitSwitchTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitswitchtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSwitchTaskWithCallback(request *SubmitSwitchTaskRequest, callback func(response *SubmitSwitchTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateSubmitSwitchTaskRequest() (request *SubmitSwitchTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSwitchTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

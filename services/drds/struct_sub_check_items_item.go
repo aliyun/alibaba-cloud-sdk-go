@@ -20,5 +20,5 @@ type SubCheckItemsItem struct {
 	State            string                                           `json:"State" xml:"State"`
 	ErrorMsgCode     string                                           `json:"ErrorMsgCode" xml:"ErrorMsgCode"`
 	PreCheckItemName string                                           `json:"PreCheckItemName" xml:"PreCheckItemName"`
-	ErrorMsgParams   ErrorMsgParamsInDescribeDataImportPreCheckResult `json:"ErrorMsgParams" xml:"ErrorMsgParams"`
+	ErrorMsgParams   ErrorMsgParamsInDescribeDataExportPreCheckResult `json:"ErrorMsgParams" xml:"ErrorMsgParams"`
 }

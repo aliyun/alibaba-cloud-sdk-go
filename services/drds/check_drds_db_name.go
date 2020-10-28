@@ -21,7 +21,6 @@ import (
 )
 
 // CheckDrdsDbName invokes the drds.CheckDrdsDbName API synchronously
-// api document: https://help.aliyun.com/api/drds/checkdrdsdbname.html
 func (client *Client) CheckDrdsDbName(request *CheckDrdsDbNameRequest) (response *CheckDrdsDbNameResponse, err error) {
 	response = CreateCheckDrdsDbNameResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckDrdsDbName(request *CheckDrdsDbNameRequest) (response
 }
 
 // CheckDrdsDbNameWithChan invokes the drds.CheckDrdsDbName API asynchronously
-// api document: https://help.aliyun.com/api/drds/checkdrdsdbname.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDrdsDbNameWithChan(request *CheckDrdsDbNameRequest) (<-chan *CheckDrdsDbNameResponse, <-chan error) {
 	responseChan := make(chan *CheckDrdsDbNameResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckDrdsDbNameWithChan(request *CheckDrdsDbNameRequest) (
 }
 
 // CheckDrdsDbNameWithCallback invokes the drds.CheckDrdsDbName API asynchronously
-// api document: https://help.aliyun.com/api/drds/checkdrdsdbname.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDrdsDbNameWithCallback(request *CheckDrdsDbNameRequest, callback func(response *CheckDrdsDbNameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateCheckDrdsDbNameRequest() (request *CheckDrdsDbNameRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "CheckDrdsDbName", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDrdsDBCluster invokes the drds.DescribeDrdsDBCluster API synchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsdbcluster.html
 func (client *Client) DescribeDrdsDBCluster(request *DescribeDrdsDBClusterRequest) (response *DescribeDrdsDBClusterResponse, err error) {
 	response = CreateDescribeDrdsDBClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDrdsDBCluster(request *DescribeDrdsDBClusterReques
 }
 
 // DescribeDrdsDBClusterWithChan invokes the drds.DescribeDrdsDBCluster API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsdbcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsDBClusterWithChan(request *DescribeDrdsDBClusterRequest) (<-chan *DescribeDrdsDBClusterResponse, <-chan error) {
 	responseChan := make(chan *DescribeDrdsDBClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDrdsDBClusterWithChan(request *DescribeDrdsDBClust
 }
 
 // DescribeDrdsDBClusterWithCallback invokes the drds.DescribeDrdsDBCluster API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsdbcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsDBClusterWithCallback(request *DescribeDrdsDBClusterRequest, callback func(response *DescribeDrdsDBClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,9 +79,9 @@ type DescribeDrdsDBClusterRequest struct {
 // DescribeDrdsDBClusterResponse is the response struct for api DescribeDrdsDBCluster
 type DescribeDrdsDBClusterResponse struct {
 	*responses.BaseResponse
-	RequestId  string                            `json:"RequestId" xml:"RequestId"`
-	Success    bool                              `json:"Success" xml:"Success"`
-	DbInstance DbInstanceInDescribeDrdsDBCluster `json:"DbInstance" xml:"DbInstance"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	Success    bool       `json:"Success" xml:"Success"`
+	DbInstance DbInstance `json:"DbInstance" xml:"DbInstance"`
 }
 
 // CreateDescribeDrdsDBClusterRequest creates a request to invoke DescribeDrdsDBCluster API
@@ -95,6 +90,7 @@ func CreateDescribeDrdsDBClusterRequest() (request *DescribeDrdsDBClusterRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDBCluster", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

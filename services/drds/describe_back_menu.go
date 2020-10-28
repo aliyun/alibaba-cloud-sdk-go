@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBackMenu invokes the drds.DescribeBackMenu API synchronously
-// api document: https://help.aliyun.com/api/drds/describebackmenu.html
 func (client *Client) DescribeBackMenu(request *DescribeBackMenuRequest) (response *DescribeBackMenuResponse, err error) {
 	response = CreateDescribeBackMenuResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBackMenu(request *DescribeBackMenuRequest) (respon
 }
 
 // DescribeBackMenuWithChan invokes the drds.DescribeBackMenu API asynchronously
-// api document: https://help.aliyun.com/api/drds/describebackmenu.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackMenuWithChan(request *DescribeBackMenuRequest) (<-chan *DescribeBackMenuResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackMenuResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBackMenuWithChan(request *DescribeBackMenuRequest)
 }
 
 // DescribeBackMenuWithCallback invokes the drds.DescribeBackMenu API asynchronously
-// api document: https://help.aliyun.com/api/drds/describebackmenu.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackMenuWithCallback(request *DescribeBackMenuRequest, callback func(response *DescribeBackMenuResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeBackMenuRequest() (request *DescribeBackMenuRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeBackMenu", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

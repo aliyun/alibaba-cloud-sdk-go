@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDrdsInstanceDbMonitor invokes the drds.DescribeDrdsInstanceDbMonitor API synchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsinstancedbmonitor.html
 func (client *Client) DescribeDrdsInstanceDbMonitor(request *DescribeDrdsInstanceDbMonitorRequest) (response *DescribeDrdsInstanceDbMonitorResponse, err error) {
 	response = CreateDescribeDrdsInstanceDbMonitorResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDrdsInstanceDbMonitor(request *DescribeDrdsInstanc
 }
 
 // DescribeDrdsInstanceDbMonitorWithChan invokes the drds.DescribeDrdsInstanceDbMonitor API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsinstancedbmonitor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsInstanceDbMonitorWithChan(request *DescribeDrdsInstanceDbMonitorRequest) (<-chan *DescribeDrdsInstanceDbMonitorResponse, <-chan error) {
 	responseChan := make(chan *DescribeDrdsInstanceDbMonitorResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDrdsInstanceDbMonitorWithChan(request *DescribeDrd
 }
 
 // DescribeDrdsInstanceDbMonitorWithCallback invokes the drds.DescribeDrdsInstanceDbMonitor API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsinstancedbmonitor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsInstanceDbMonitorWithCallback(request *DescribeDrdsInstanceDbMonitorRequest, callback func(response *DescribeDrdsInstanceDbMonitorResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,9 +81,9 @@ type DescribeDrdsInstanceDbMonitorRequest struct {
 // DescribeDrdsInstanceDbMonitorResponse is the response struct for api DescribeDrdsInstanceDbMonitor
 type DescribeDrdsInstanceDbMonitorResponse struct {
 	*responses.BaseResponse
-	RequestId string                   `json:"RequestId" xml:"RequestId"`
-	Success   bool                     `json:"Success" xml:"Success"`
-	Data      []PartialPerformanceData `json:"Data" xml:"Data"`
+	RequestId string                              `json:"RequestId" xml:"RequestId"`
+	Success   bool                                `json:"Success" xml:"Success"`
+	Data      DataInDescribeDrdsInstanceDbMonitor `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeDrdsInstanceDbMonitorRequest creates a request to invoke DescribeDrdsInstanceDbMonitor API
@@ -96,7 +91,8 @@ func CreateDescribeDrdsInstanceDbMonitorRequest() (request *DescribeDrdsInstance
 	request = &DescribeDrdsInstanceDbMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsInstanceDbMonitor", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeDrdsInstanceDbMonitor", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

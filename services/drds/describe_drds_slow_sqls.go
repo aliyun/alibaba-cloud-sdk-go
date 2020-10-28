@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDrdsSlowSqls invokes the drds.DescribeDrdsSlowSqls API synchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsslowsqls.html
 func (client *Client) DescribeDrdsSlowSqls(request *DescribeDrdsSlowSqlsRequest) (response *DescribeDrdsSlowSqlsResponse, err error) {
 	response = CreateDescribeDrdsSlowSqlsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDrdsSlowSqls(request *DescribeDrdsSlowSqlsRequest)
 }
 
 // DescribeDrdsSlowSqlsWithChan invokes the drds.DescribeDrdsSlowSqls API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsslowsqls.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsSlowSqlsWithChan(request *DescribeDrdsSlowSqlsRequest) (<-chan *DescribeDrdsSlowSqlsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDrdsSlowSqlsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDrdsSlowSqlsWithChan(request *DescribeDrdsSlowSqls
 }
 
 // DescribeDrdsSlowSqlsWithCallback invokes the drds.DescribeDrdsSlowSqls API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsslowsqls.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsSlowSqlsWithCallback(request *DescribeDrdsSlowSqlsRequest, callback func(response *DescribeDrdsSlowSqlsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,6 +97,7 @@ func CreateDescribeDrdsSlowSqlsRequest() (request *DescribeDrdsSlowSqlsRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsSlowSqls", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDrdsInstanceDescription invokes the drds.ModifyDrdsInstanceDescription API synchronously
-// api document: https://help.aliyun.com/api/drds/modifydrdsinstancedescription.html
 func (client *Client) ModifyDrdsInstanceDescription(request *ModifyDrdsInstanceDescriptionRequest) (response *ModifyDrdsInstanceDescriptionResponse, err error) {
 	response = CreateModifyDrdsInstanceDescriptionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDrdsInstanceDescription(request *ModifyDrdsInstanceD
 }
 
 // ModifyDrdsInstanceDescriptionWithChan invokes the drds.ModifyDrdsInstanceDescription API asynchronously
-// api document: https://help.aliyun.com/api/drds/modifydrdsinstancedescription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDrdsInstanceDescriptionWithChan(request *ModifyDrdsInstanceDescriptionRequest) (<-chan *ModifyDrdsInstanceDescriptionResponse, <-chan error) {
 	responseChan := make(chan *ModifyDrdsInstanceDescriptionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDrdsInstanceDescriptionWithChan(request *ModifyDrdsI
 }
 
 // ModifyDrdsInstanceDescriptionWithCallback invokes the drds.ModifyDrdsInstanceDescription API asynchronously
-// api document: https://help.aliyun.com/api/drds/modifydrdsinstancedescription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDrdsInstanceDescriptionWithCallback(request *ModifyDrdsInstanceDescriptionRequest, callback func(response *ModifyDrdsInstanceDescriptionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateModifyDrdsInstanceDescriptionRequest() (request *ModifyDrdsInstanceDe
 	request = &ModifyDrdsInstanceDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "ModifyDrdsInstanceDescription", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2017-10-16", "ModifyDrdsInstanceDescription", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

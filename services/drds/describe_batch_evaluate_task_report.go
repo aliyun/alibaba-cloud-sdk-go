@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBatchEvaluateTaskReport invokes the drds.DescribeBatchEvaluateTaskReport API synchronously
-// api document: https://help.aliyun.com/api/drds/describebatchevaluatetaskreport.html
 func (client *Client) DescribeBatchEvaluateTaskReport(request *DescribeBatchEvaluateTaskReportRequest) (response *DescribeBatchEvaluateTaskReportResponse, err error) {
 	response = CreateDescribeBatchEvaluateTaskReportResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBatchEvaluateTaskReport(request *DescribeBatchEval
 }
 
 // DescribeBatchEvaluateTaskReportWithChan invokes the drds.DescribeBatchEvaluateTaskReport API asynchronously
-// api document: https://help.aliyun.com/api/drds/describebatchevaluatetaskreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBatchEvaluateTaskReportWithChan(request *DescribeBatchEvaluateTaskReportRequest) (<-chan *DescribeBatchEvaluateTaskReportResponse, <-chan error) {
 	responseChan := make(chan *DescribeBatchEvaluateTaskReportResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBatchEvaluateTaskReportWithChan(request *DescribeB
 }
 
 // DescribeBatchEvaluateTaskReportWithCallback invokes the drds.DescribeBatchEvaluateTaskReport API asynchronously
-// api document: https://help.aliyun.com/api/drds/describebatchevaluatetaskreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBatchEvaluateTaskReportWithCallback(request *DescribeBatchEvaluateTaskReportRequest, callback func(response *DescribeBatchEvaluateTaskReportResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeBatchEvaluateTaskReportRequest() (request *DescribeBatchEvalu
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeBatchEvaluateTaskReport", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeTableListByType invokes the drds.DescribeTableListByType API synchronously
-// api document: https://help.aliyun.com/api/drds/describetablelistbytype.html
 func (client *Client) DescribeTableListByType(request *DescribeTableListByTypeRequest) (response *DescribeTableListByTypeResponse, err error) {
 	response = CreateDescribeTableListByTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeTableListByType(request *DescribeTableListByTypeRe
 }
 
 // DescribeTableListByTypeWithChan invokes the drds.DescribeTableListByType API asynchronously
-// api document: https://help.aliyun.com/api/drds/describetablelistbytype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTableListByTypeWithChan(request *DescribeTableListByTypeRequest) (<-chan *DescribeTableListByTypeResponse, <-chan error) {
 	responseChan := make(chan *DescribeTableListByTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeTableListByTypeWithChan(request *DescribeTableList
 }
 
 // DescribeTableListByTypeWithCallback invokes the drds.DescribeTableListByType API asynchronously
-// api document: https://help.aliyun.com/api/drds/describetablelistbytype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTableListByTypeWithCallback(request *DescribeTableListByTypeRequest, callback func(response *DescribeTableListByTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +96,7 @@ func CreateDescribeTableListByTypeRequest() (request *DescribeTableListByTypeReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeTableListByType", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

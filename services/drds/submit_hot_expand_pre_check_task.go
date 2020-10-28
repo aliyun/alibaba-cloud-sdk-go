@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitHotExpandPreCheckTask invokes the drds.SubmitHotExpandPreCheckTask API synchronously
-// api document: https://help.aliyun.com/api/drds/submithotexpandprechecktask.html
 func (client *Client) SubmitHotExpandPreCheckTask(request *SubmitHotExpandPreCheckTaskRequest) (response *SubmitHotExpandPreCheckTaskResponse, err error) {
 	response = CreateSubmitHotExpandPreCheckTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitHotExpandPreCheckTask(request *SubmitHotExpandPreChe
 }
 
 // SubmitHotExpandPreCheckTaskWithChan invokes the drds.SubmitHotExpandPreCheckTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/submithotexpandprechecktask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitHotExpandPreCheckTaskWithChan(request *SubmitHotExpandPreCheckTaskRequest) (<-chan *SubmitHotExpandPreCheckTaskResponse, <-chan error) {
 	responseChan := make(chan *SubmitHotExpandPreCheckTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitHotExpandPreCheckTaskWithChan(request *SubmitHotExpa
 }
 
 // SubmitHotExpandPreCheckTaskWithCallback invokes the drds.SubmitHotExpandPreCheckTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/submithotexpandprechecktask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitHotExpandPreCheckTaskWithCallback(request *SubmitHotExpandPreCheckTaskRequest, callback func(response *SubmitHotExpandPreCheckTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateSubmitHotExpandPreCheckTaskRequest() (request *SubmitHotExpandPreChec
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitHotExpandPreCheckTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

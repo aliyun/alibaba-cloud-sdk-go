@@ -22,4 +22,5 @@ type RdsPerformanceInfo struct {
 	Iops           float64 `json:"Iops" xml:"Iops"`
 	ActiveSessions int     `json:"ActiveSessions" xml:"ActiveSessions"`
 	TotalSessions  int     `json:"TotalSessions" xml:"TotalSessions"`
+	SpaceUsage     int64   `json:"SpaceUsage" xml:"SpaceUsage"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRecycleBinStatus invokes the drds.DescribeRecycleBinStatus API synchronously
-// api document: https://help.aliyun.com/api/drds/describerecyclebinstatus.html
 func (client *Client) DescribeRecycleBinStatus(request *DescribeRecycleBinStatusRequest) (response *DescribeRecycleBinStatusResponse, err error) {
 	response = CreateDescribeRecycleBinStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRecycleBinStatus(request *DescribeRecycleBinStatus
 }
 
 // DescribeRecycleBinStatusWithChan invokes the drds.DescribeRecycleBinStatus API asynchronously
-// api document: https://help.aliyun.com/api/drds/describerecyclebinstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecycleBinStatusWithChan(request *DescribeRecycleBinStatusRequest) (<-chan *DescribeRecycleBinStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeRecycleBinStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRecycleBinStatusWithChan(request *DescribeRecycleB
 }
 
 // DescribeRecycleBinStatusWithCallback invokes the drds.DescribeRecycleBinStatus API asynchronously
-// api document: https://help.aliyun.com/api/drds/describerecyclebinstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecycleBinStatusWithCallback(request *DescribeRecycleBinStatusRequest, callback func(response *DescribeRecycleBinStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeRecycleBinStatusRequest() (request *DescribeRecycleBinStatusR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRecycleBinStatus", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

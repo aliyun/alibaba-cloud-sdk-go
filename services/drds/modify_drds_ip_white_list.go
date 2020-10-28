@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDrdsIpWhiteList invokes the drds.ModifyDrdsIpWhiteList API synchronously
-// api document: https://help.aliyun.com/api/drds/modifydrdsipwhitelist.html
 func (client *Client) ModifyDrdsIpWhiteList(request *ModifyDrdsIpWhiteListRequest) (response *ModifyDrdsIpWhiteListResponse, err error) {
 	response = CreateModifyDrdsIpWhiteListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDrdsIpWhiteList(request *ModifyDrdsIpWhiteListReques
 }
 
 // ModifyDrdsIpWhiteListWithChan invokes the drds.ModifyDrdsIpWhiteList API asynchronously
-// api document: https://help.aliyun.com/api/drds/modifydrdsipwhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDrdsIpWhiteListWithChan(request *ModifyDrdsIpWhiteListRequest) (<-chan *ModifyDrdsIpWhiteListResponse, <-chan error) {
 	responseChan := make(chan *ModifyDrdsIpWhiteListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDrdsIpWhiteListWithChan(request *ModifyDrdsIpWhiteLi
 }
 
 // ModifyDrdsIpWhiteListWithCallback invokes the drds.ModifyDrdsIpWhiteList API asynchronously
-// api document: https://help.aliyun.com/api/drds/modifydrdsipwhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDrdsIpWhiteListWithCallback(request *ModifyDrdsIpWhiteListRequest, callback func(response *ModifyDrdsIpWhiteListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateModifyDrdsIpWhiteListRequest() (request *ModifyDrdsIpWhiteListRequest
 	request = &ModifyDrdsIpWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "ModifyDrdsIpWhiteList", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2017-10-16", "ModifyDrdsIpWhiteList", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

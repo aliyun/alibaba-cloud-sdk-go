@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitRollbackTask invokes the drds.SubmitRollbackTask API synchronously
-// api document: https://help.aliyun.com/api/drds/submitrollbacktask.html
 func (client *Client) SubmitRollbackTask(request *SubmitRollbackTaskRequest) (response *SubmitRollbackTaskResponse, err error) {
 	response = CreateSubmitRollbackTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitRollbackTask(request *SubmitRollbackTaskRequest) (re
 }
 
 // SubmitRollbackTaskWithChan invokes the drds.SubmitRollbackTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitrollbacktask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitRollbackTaskWithChan(request *SubmitRollbackTaskRequest) (<-chan *SubmitRollbackTaskResponse, <-chan error) {
 	responseChan := make(chan *SubmitRollbackTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitRollbackTaskWithChan(request *SubmitRollbackTaskRequ
 }
 
 // SubmitRollbackTaskWithCallback invokes the drds.SubmitRollbackTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitrollbacktask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitRollbackTaskWithCallback(request *SubmitRollbackTaskRequest, callback func(response *SubmitRollbackTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateSubmitRollbackTaskRequest() (request *SubmitRollbackTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitRollbackTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

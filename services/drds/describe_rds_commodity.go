@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRdsCommodity invokes the drds.DescribeRdsCommodity API synchronously
-// api document: https://help.aliyun.com/api/drds/describerdscommodity.html
 func (client *Client) DescribeRdsCommodity(request *DescribeRdsCommodityRequest) (response *DescribeRdsCommodityResponse, err error) {
 	response = CreateDescribeRdsCommodityResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRdsCommodity(request *DescribeRdsCommodityRequest)
 }
 
 // DescribeRdsCommodityWithChan invokes the drds.DescribeRdsCommodity API asynchronously
-// api document: https://help.aliyun.com/api/drds/describerdscommodity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRdsCommodityWithChan(request *DescribeRdsCommodityRequest) (<-chan *DescribeRdsCommodityResponse, <-chan error) {
 	responseChan := make(chan *DescribeRdsCommodityResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRdsCommodityWithChan(request *DescribeRdsCommodity
 }
 
 // DescribeRdsCommodityWithCallback invokes the drds.DescribeRdsCommodity API asynchronously
-// api document: https://help.aliyun.com/api/drds/describerdscommodity.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRdsCommodityWithCallback(request *DescribeRdsCommodityRequest, callback func(response *DescribeRdsCommodityResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateDescribeRdsCommodityRequest() (request *DescribeRdsCommodityRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRdsCommodity", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

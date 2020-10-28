@@ -21,7 +21,6 @@ import (
 )
 
 // UpgradeInstanceVersion invokes the drds.UpgradeInstanceVersion API synchronously
-// api document: https://help.aliyun.com/api/drds/upgradeinstanceversion.html
 func (client *Client) UpgradeInstanceVersion(request *UpgradeInstanceVersionRequest) (response *UpgradeInstanceVersionResponse, err error) {
 	response = CreateUpgradeInstanceVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpgradeInstanceVersion(request *UpgradeInstanceVersionRequ
 }
 
 // UpgradeInstanceVersionWithChan invokes the drds.UpgradeInstanceVersion API asynchronously
-// api document: https://help.aliyun.com/api/drds/upgradeinstanceversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeInstanceVersionWithChan(request *UpgradeInstanceVersionRequest) (<-chan *UpgradeInstanceVersionResponse, <-chan error) {
 	responseChan := make(chan *UpgradeInstanceVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpgradeInstanceVersionWithChan(request *UpgradeInstanceVer
 }
 
 // UpgradeInstanceVersionWithCallback invokes the drds.UpgradeInstanceVersion API asynchronously
-// api document: https://help.aliyun.com/api/drds/upgradeinstanceversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeInstanceVersionWithCallback(request *UpgradeInstanceVersionRequest, callback func(response *UpgradeInstanceVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateUpgradeInstanceVersionRequest() (request *UpgradeInstanceVersionReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "UpgradeInstanceVersion", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

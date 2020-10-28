@@ -21,7 +21,6 @@ import (
 )
 
 // FlashbackRecycleBinTable invokes the drds.FlashbackRecycleBinTable API synchronously
-// api document: https://help.aliyun.com/api/drds/flashbackrecyclebintable.html
 func (client *Client) FlashbackRecycleBinTable(request *FlashbackRecycleBinTableRequest) (response *FlashbackRecycleBinTableResponse, err error) {
 	response = CreateFlashbackRecycleBinTableResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FlashbackRecycleBinTable(request *FlashbackRecycleBinTable
 }
 
 // FlashbackRecycleBinTableWithChan invokes the drds.FlashbackRecycleBinTable API asynchronously
-// api document: https://help.aliyun.com/api/drds/flashbackrecyclebintable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FlashbackRecycleBinTableWithChan(request *FlashbackRecycleBinTableRequest) (<-chan *FlashbackRecycleBinTableResponse, <-chan error) {
 	responseChan := make(chan *FlashbackRecycleBinTableResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FlashbackRecycleBinTableWithChan(request *FlashbackRecycle
 }
 
 // FlashbackRecycleBinTableWithCallback invokes the drds.FlashbackRecycleBinTable API asynchronously
-// api document: https://help.aliyun.com/api/drds/flashbackrecyclebintable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FlashbackRecycleBinTableWithCallback(request *FlashbackRecycleBinTableRequest, callback func(response *FlashbackRecycleBinTableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateFlashbackRecycleBinTableRequest() (request *FlashbackRecycleBinTableR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "FlashbackRecycleBinTable", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

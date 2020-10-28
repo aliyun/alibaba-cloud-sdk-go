@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstanceMenuSwitch invokes the drds.DescribeInstanceMenuSwitch API synchronously
-// api document: https://help.aliyun.com/api/drds/describeinstancemenuswitch.html
 func (client *Client) DescribeInstanceMenuSwitch(request *DescribeInstanceMenuSwitchRequest) (response *DescribeInstanceMenuSwitchResponse, err error) {
 	response = CreateDescribeInstanceMenuSwitchResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstanceMenuSwitch(request *DescribeInstanceMenuSw
 }
 
 // DescribeInstanceMenuSwitchWithChan invokes the drds.DescribeInstanceMenuSwitch API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeinstancemenuswitch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceMenuSwitchWithChan(request *DescribeInstanceMenuSwitchRequest) (<-chan *DescribeInstanceMenuSwitchResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceMenuSwitchResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceMenuSwitchWithChan(request *DescribeInstan
 }
 
 // DescribeInstanceMenuSwitchWithCallback invokes the drds.DescribeInstanceMenuSwitch API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeinstancemenuswitch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceMenuSwitchWithCallback(request *DescribeInstanceMenuSwitchRequest, callback func(response *DescribeInstanceMenuSwitchResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeInstanceMenuSwitchRequest() (request *DescribeInstanceMenuSwi
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeInstanceMenuSwitch", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

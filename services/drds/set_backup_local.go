@@ -21,7 +21,6 @@ import (
 )
 
 // SetBackupLocal invokes the drds.SetBackupLocal API synchronously
-// api document: https://help.aliyun.com/api/drds/setbackuplocal.html
 func (client *Client) SetBackupLocal(request *SetBackupLocalRequest) (response *SetBackupLocalResponse, err error) {
 	response = CreateSetBackupLocalResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetBackupLocal(request *SetBackupLocalRequest) (response *
 }
 
 // SetBackupLocalWithChan invokes the drds.SetBackupLocal API asynchronously
-// api document: https://help.aliyun.com/api/drds/setbackuplocal.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetBackupLocalWithChan(request *SetBackupLocalRequest) (<-chan *SetBackupLocalResponse, <-chan error) {
 	responseChan := make(chan *SetBackupLocalResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetBackupLocalWithChan(request *SetBackupLocalRequest) (<-
 }
 
 // SetBackupLocalWithCallback invokes the drds.SetBackupLocal API asynchronously
-// api document: https://help.aliyun.com/api/drds/setbackuplocal.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetBackupLocalWithCallback(request *SetBackupLocalRequest, callback func(response *SetBackupLocalResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateSetBackupLocalRequest() (request *SetBackupLocalRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SetBackupLocal", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

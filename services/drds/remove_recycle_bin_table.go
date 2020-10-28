@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveRecycleBinTable invokes the drds.RemoveRecycleBinTable API synchronously
-// api document: https://help.aliyun.com/api/drds/removerecyclebintable.html
 func (client *Client) RemoveRecycleBinTable(request *RemoveRecycleBinTableRequest) (response *RemoveRecycleBinTableResponse, err error) {
 	response = CreateRemoveRecycleBinTableResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveRecycleBinTable(request *RemoveRecycleBinTableReques
 }
 
 // RemoveRecycleBinTableWithChan invokes the drds.RemoveRecycleBinTable API asynchronously
-// api document: https://help.aliyun.com/api/drds/removerecyclebintable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveRecycleBinTableWithChan(request *RemoveRecycleBinTableRequest) (<-chan *RemoveRecycleBinTableResponse, <-chan error) {
 	responseChan := make(chan *RemoveRecycleBinTableResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveRecycleBinTableWithChan(request *RemoveRecycleBinTab
 }
 
 // RemoveRecycleBinTableWithCallback invokes the drds.RemoveRecycleBinTable API asynchronously
-// api document: https://help.aliyun.com/api/drds/removerecyclebintable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveRecycleBinTableWithCallback(request *RemoveRecycleBinTableRequest, callback func(response *RemoveRecycleBinTableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateRemoveRecycleBinTableRequest() (request *RemoveRecycleBinTableRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveRecycleBinTable", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ReleaseHiStoreInstance invokes the drds.ReleaseHiStoreInstance API synchronously
-// api document: https://help.aliyun.com/api/drds/releasehistoreinstance.html
 func (client *Client) ReleaseHiStoreInstance(request *ReleaseHiStoreInstanceRequest) (response *ReleaseHiStoreInstanceResponse, err error) {
 	response = CreateReleaseHiStoreInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReleaseHiStoreInstance(request *ReleaseHiStoreInstanceRequ
 }
 
 // ReleaseHiStoreInstanceWithChan invokes the drds.ReleaseHiStoreInstance API asynchronously
-// api document: https://help.aliyun.com/api/drds/releasehistoreinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseHiStoreInstanceWithChan(request *ReleaseHiStoreInstanceRequest) (<-chan *ReleaseHiStoreInstanceResponse, <-chan error) {
 	responseChan := make(chan *ReleaseHiStoreInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReleaseHiStoreInstanceWithChan(request *ReleaseHiStoreInst
 }
 
 // ReleaseHiStoreInstanceWithCallback invokes the drds.ReleaseHiStoreInstance API asynchronously
-// api document: https://help.aliyun.com/api/drds/releasehistoreinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseHiStoreInstanceWithCallback(request *ReleaseHiStoreInstanceRequest, callback func(response *ReleaseHiStoreInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateReleaseHiStoreInstanceRequest() (request *ReleaseHiStoreInstanceReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "ReleaseHiStoreInstance", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

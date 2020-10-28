@@ -21,7 +21,6 @@ import (
 )
 
 // CreateEvaluateDataImportPreCheckTask invokes the drds.CreateEvaluateDataImportPreCheckTask API synchronously
-// api document: https://help.aliyun.com/api/drds/createevaluatedataimportprechecktask.html
 func (client *Client) CreateEvaluateDataImportPreCheckTask(request *CreateEvaluateDataImportPreCheckTaskRequest) (response *CreateEvaluateDataImportPreCheckTaskResponse, err error) {
 	response = CreateCreateEvaluateDataImportPreCheckTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateEvaluateDataImportPreCheckTask(request *CreateEvalua
 }
 
 // CreateEvaluateDataImportPreCheckTaskWithChan invokes the drds.CreateEvaluateDataImportPreCheckTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/createevaluatedataimportprechecktask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEvaluateDataImportPreCheckTaskWithChan(request *CreateEvaluateDataImportPreCheckTaskRequest) (<-chan *CreateEvaluateDataImportPreCheckTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateEvaluateDataImportPreCheckTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateEvaluateDataImportPreCheckTaskWithChan(request *Crea
 }
 
 // CreateEvaluateDataImportPreCheckTaskWithCallback invokes the drds.CreateEvaluateDataImportPreCheckTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/createevaluatedataimportprechecktask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEvaluateDataImportPreCheckTaskWithCallback(request *CreateEvaluateDataImportPreCheckTaskRequest, callback func(response *CreateEvaluateDataImportPreCheckTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateCreateEvaluateDataImportPreCheckTaskRequest() (request *CreateEvaluat
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "CreateEvaluateDataImportPreCheckTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

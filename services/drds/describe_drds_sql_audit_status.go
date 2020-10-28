@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDrdsSqlAuditStatus invokes the drds.DescribeDrdsSqlAuditStatus API synchronously
-// api document: https://help.aliyun.com/api/drds/describedrdssqlauditstatus.html
 func (client *Client) DescribeDrdsSqlAuditStatus(request *DescribeDrdsSqlAuditStatusRequest) (response *DescribeDrdsSqlAuditStatusResponse, err error) {
 	response = CreateDescribeDrdsSqlAuditStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDrdsSqlAuditStatus(request *DescribeDrdsSqlAuditSt
 }
 
 // DescribeDrdsSqlAuditStatusWithChan invokes the drds.DescribeDrdsSqlAuditStatus API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdssqlauditstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsSqlAuditStatusWithChan(request *DescribeDrdsSqlAuditStatusRequest) (<-chan *DescribeDrdsSqlAuditStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeDrdsSqlAuditStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDrdsSqlAuditStatusWithChan(request *DescribeDrdsSq
 }
 
 // DescribeDrdsSqlAuditStatusWithCallback invokes the drds.DescribeDrdsSqlAuditStatus API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdssqlauditstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsSqlAuditStatusWithCallback(request *DescribeDrdsSqlAuditStatusRequest, callback func(response *DescribeDrdsSqlAuditStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeDrdsSqlAuditStatusRequest() (request *DescribeDrdsSqlAuditSta
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsSqlAuditStatus", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

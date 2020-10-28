@@ -21,7 +21,6 @@ import (
 )
 
 // AsyncTaskCancel invokes the drds.AsyncTaskCancel API synchronously
-// api document: https://help.aliyun.com/api/drds/asynctaskcancel.html
 func (client *Client) AsyncTaskCancel(request *AsyncTaskCancelRequest) (response *AsyncTaskCancelResponse, err error) {
 	response = CreateAsyncTaskCancelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AsyncTaskCancel(request *AsyncTaskCancelRequest) (response
 }
 
 // AsyncTaskCancelWithChan invokes the drds.AsyncTaskCancel API asynchronously
-// api document: https://help.aliyun.com/api/drds/asynctaskcancel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AsyncTaskCancelWithChan(request *AsyncTaskCancelRequest) (<-chan *AsyncTaskCancelResponse, <-chan error) {
 	responseChan := make(chan *AsyncTaskCancelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AsyncTaskCancelWithChan(request *AsyncTaskCancelRequest) (
 }
 
 // AsyncTaskCancelWithCallback invokes the drds.AsyncTaskCancel API asynchronously
-// api document: https://help.aliyun.com/api/drds/asynctaskcancel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AsyncTaskCancelWithCallback(request *AsyncTaskCancelRequest, callback func(response *AsyncTaskCancelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateAsyncTaskCancelRequest() (request *AsyncTaskCancelRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "AsyncTaskCancel", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

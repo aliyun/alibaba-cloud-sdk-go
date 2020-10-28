@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstDbLogInfo invokes the drds.DescribeInstDbLogInfo API synchronously
-// api document: https://help.aliyun.com/api/drds/describeinstdbloginfo.html
 func (client *Client) DescribeInstDbLogInfo(request *DescribeInstDbLogInfoRequest) (response *DescribeInstDbLogInfoResponse, err error) {
 	response = CreateDescribeInstDbLogInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstDbLogInfo(request *DescribeInstDbLogInfoReques
 }
 
 // DescribeInstDbLogInfoWithChan invokes the drds.DescribeInstDbLogInfo API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeinstdbloginfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstDbLogInfoWithChan(request *DescribeInstDbLogInfoRequest) (<-chan *DescribeInstDbLogInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstDbLogInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstDbLogInfoWithChan(request *DescribeInstDbLogIn
 }
 
 // DescribeInstDbLogInfoWithCallback invokes the drds.DescribeInstDbLogInfo API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeinstdbloginfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstDbLogInfoWithCallback(request *DescribeInstDbLogInfoRequest, callback func(response *DescribeInstDbLogInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeInstDbLogInfoRequest() (request *DescribeInstDbLogInfoRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeInstDbLogInfo", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

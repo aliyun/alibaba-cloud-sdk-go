@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDataImportTaskReport invokes the drds.DescribeDataImportTaskReport API synchronously
-// api document: https://help.aliyun.com/api/drds/describedataimporttaskreport.html
 func (client *Client) DescribeDataImportTaskReport(request *DescribeDataImportTaskReportRequest) (response *DescribeDataImportTaskReportResponse, err error) {
 	response = CreateDescribeDataImportTaskReportResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDataImportTaskReport(request *DescribeDataImportTa
 }
 
 // DescribeDataImportTaskReportWithChan invokes the drds.DescribeDataImportTaskReport API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedataimporttaskreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataImportTaskReportWithChan(request *DescribeDataImportTaskReportRequest) (<-chan *DescribeDataImportTaskReportResponse, <-chan error) {
 	responseChan := make(chan *DescribeDataImportTaskReportResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDataImportTaskReportWithChan(request *DescribeData
 }
 
 // DescribeDataImportTaskReportWithCallback invokes the drds.DescribeDataImportTaskReport API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedataimporttaskreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataImportTaskReportWithCallback(request *DescribeDataImportTaskReportRequest, callback func(response *DescribeDataImportTaskReportResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeDataImportTaskReportRequest() (request *DescribeDataImportTas
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDataImportTaskReport", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

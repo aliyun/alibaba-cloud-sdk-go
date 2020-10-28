@@ -21,7 +21,6 @@ import (
 )
 
 // DisableSqlAudit invokes the drds.DisableSqlAudit API synchronously
-// api document: https://help.aliyun.com/api/drds/disablesqlaudit.html
 func (client *Client) DisableSqlAudit(request *DisableSqlAuditRequest) (response *DisableSqlAuditResponse, err error) {
 	response = CreateDisableSqlAuditResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisableSqlAudit(request *DisableSqlAuditRequest) (response
 }
 
 // DisableSqlAuditWithChan invokes the drds.DisableSqlAudit API asynchronously
-// api document: https://help.aliyun.com/api/drds/disablesqlaudit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableSqlAuditWithChan(request *DisableSqlAuditRequest) (<-chan *DisableSqlAuditResponse, <-chan error) {
 	responseChan := make(chan *DisableSqlAuditResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisableSqlAuditWithChan(request *DisableSqlAuditRequest) (
 }
 
 // DisableSqlAuditWithCallback invokes the drds.DisableSqlAudit API asynchronously
-// api document: https://help.aliyun.com/api/drds/disablesqlaudit.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableSqlAuditWithCallback(request *DisableSqlAuditRequest, callback func(response *DisableSqlAuditResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDisableSqlAuditRequest() (request *DisableSqlAuditRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DisableSqlAudit", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

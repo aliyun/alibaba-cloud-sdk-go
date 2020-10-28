@@ -21,7 +21,6 @@ import (
 )
 
 // RestartDrdsInstance invokes the drds.RestartDrdsInstance API synchronously
-// api document: https://help.aliyun.com/api/drds/restartdrdsinstance.html
 func (client *Client) RestartDrdsInstance(request *RestartDrdsInstanceRequest) (response *RestartDrdsInstanceResponse, err error) {
 	response = CreateRestartDrdsInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RestartDrdsInstance(request *RestartDrdsInstanceRequest) (
 }
 
 // RestartDrdsInstanceWithChan invokes the drds.RestartDrdsInstance API asynchronously
-// api document: https://help.aliyun.com/api/drds/restartdrdsinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartDrdsInstanceWithChan(request *RestartDrdsInstanceRequest) (<-chan *RestartDrdsInstanceResponse, <-chan error) {
 	responseChan := make(chan *RestartDrdsInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RestartDrdsInstanceWithChan(request *RestartDrdsInstanceRe
 }
 
 // RestartDrdsInstanceWithCallback invokes the drds.RestartDrdsInstance API asynchronously
-// api document: https://help.aliyun.com/api/drds/restartdrdsinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartDrdsInstanceWithCallback(request *RestartDrdsInstanceRequest, callback func(response *RestartDrdsInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateRestartDrdsInstanceRequest() (request *RestartDrdsInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "RestartDrdsInstance", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitSwitchTableShardingKeyModify invokes the drds.SubmitSwitchTableShardingKeyModify API synchronously
-// api document: https://help.aliyun.com/api/drds/submitswitchtableshardingkeymodify.html
 func (client *Client) SubmitSwitchTableShardingKeyModify(request *SubmitSwitchTableShardingKeyModifyRequest) (response *SubmitSwitchTableShardingKeyModifyResponse, err error) {
 	response = CreateSubmitSwitchTableShardingKeyModifyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitSwitchTableShardingKeyModify(request *SubmitSwitchTa
 }
 
 // SubmitSwitchTableShardingKeyModifyWithChan invokes the drds.SubmitSwitchTableShardingKeyModify API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitswitchtableshardingkeymodify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSwitchTableShardingKeyModifyWithChan(request *SubmitSwitchTableShardingKeyModifyRequest) (<-chan *SubmitSwitchTableShardingKeyModifyResponse, <-chan error) {
 	responseChan := make(chan *SubmitSwitchTableShardingKeyModifyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitSwitchTableShardingKeyModifyWithChan(request *Submit
 }
 
 // SubmitSwitchTableShardingKeyModifyWithCallback invokes the drds.SubmitSwitchTableShardingKeyModify API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitswitchtableshardingkeymodify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSwitchTableShardingKeyModifyWithCallback(request *SubmitSwitchTableShardingKeyModifyRequest, callback func(response *SubmitSwitchTableShardingKeyModifyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateSubmitSwitchTableShardingKeyModifyRequest() (request *SubmitSwitchTab
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSwitchTableShardingKeyModify", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateInstanceNetwork invokes the drds.UpdateInstanceNetwork API synchronously
-// api document: https://help.aliyun.com/api/drds/updateinstancenetwork.html
 func (client *Client) UpdateInstanceNetwork(request *UpdateInstanceNetworkRequest) (response *UpdateInstanceNetworkResponse, err error) {
 	response = CreateUpdateInstanceNetworkResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateInstanceNetwork(request *UpdateInstanceNetworkReques
 }
 
 // UpdateInstanceNetworkWithChan invokes the drds.UpdateInstanceNetwork API asynchronously
-// api document: https://help.aliyun.com/api/drds/updateinstancenetwork.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateInstanceNetworkWithChan(request *UpdateInstanceNetworkRequest) (<-chan *UpdateInstanceNetworkResponse, <-chan error) {
 	responseChan := make(chan *UpdateInstanceNetworkResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateInstanceNetworkWithChan(request *UpdateInstanceNetwo
 }
 
 // UpdateInstanceNetworkWithCallback invokes the drds.UpdateInstanceNetwork API asynchronously
-// api document: https://help.aliyun.com/api/drds/updateinstancenetwork.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateInstanceNetworkWithCallback(request *UpdateInstanceNetworkRequest, callback func(response *UpdateInstanceNetworkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateUpdateInstanceNetworkRequest() (request *UpdateInstanceNetworkRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "UpdateInstanceNetwork", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

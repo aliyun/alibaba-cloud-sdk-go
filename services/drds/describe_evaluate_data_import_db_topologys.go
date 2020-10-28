@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEvaluateDataImportDbTopologys invokes the drds.DescribeEvaluateDataImportDbTopologys API synchronously
-// api document: https://help.aliyun.com/api/drds/describeevaluatedataimportdbtopologys.html
 func (client *Client) DescribeEvaluateDataImportDbTopologys(request *DescribeEvaluateDataImportDbTopologysRequest) (response *DescribeEvaluateDataImportDbTopologysResponse, err error) {
 	response = CreateDescribeEvaluateDataImportDbTopologysResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEvaluateDataImportDbTopologys(request *DescribeEva
 }
 
 // DescribeEvaluateDataImportDbTopologysWithChan invokes the drds.DescribeEvaluateDataImportDbTopologys API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeevaluatedataimportdbtopologys.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEvaluateDataImportDbTopologysWithChan(request *DescribeEvaluateDataImportDbTopologysRequest) (<-chan *DescribeEvaluateDataImportDbTopologysResponse, <-chan error) {
 	responseChan := make(chan *DescribeEvaluateDataImportDbTopologysResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEvaluateDataImportDbTopologysWithChan(request *Des
 }
 
 // DescribeEvaluateDataImportDbTopologysWithCallback invokes the drds.DescribeEvaluateDataImportDbTopologys API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeevaluatedataimportdbtopologys.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEvaluateDataImportDbTopologysWithCallback(request *DescribeEvaluateDataImportDbTopologysRequest, callback func(response *DescribeEvaluateDataImportDbTopologysResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeEvaluateDataImportDbTopologysRequest() (request *DescribeEval
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeEvaluateDataImportDbTopologys", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

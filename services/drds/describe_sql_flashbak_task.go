@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSqlFlashbakTask invokes the drds.DescribeSqlFlashbakTask API synchronously
-// api document: https://help.aliyun.com/api/drds/describesqlflashbaktask.html
 func (client *Client) DescribeSqlFlashbakTask(request *DescribeSqlFlashbakTaskRequest) (response *DescribeSqlFlashbakTaskResponse, err error) {
 	response = CreateDescribeSqlFlashbakTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSqlFlashbakTask(request *DescribeSqlFlashbakTaskRe
 }
 
 // DescribeSqlFlashbakTaskWithChan invokes the drds.DescribeSqlFlashbakTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/describesqlflashbaktask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSqlFlashbakTaskWithChan(request *DescribeSqlFlashbakTaskRequest) (<-chan *DescribeSqlFlashbakTaskResponse, <-chan error) {
 	responseChan := make(chan *DescribeSqlFlashbakTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSqlFlashbakTaskWithChan(request *DescribeSqlFlashb
 }
 
 // DescribeSqlFlashbakTaskWithCallback invokes the drds.DescribeSqlFlashbakTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/describesqlflashbaktask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSqlFlashbakTaskWithCallback(request *DescribeSqlFlashbakTaskRequest, callback func(response *DescribeSqlFlashbakTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeSqlFlashbakTaskRequest() (request *DescribeSqlFlashbakTaskReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeSqlFlashbakTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

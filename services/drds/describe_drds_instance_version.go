@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDrdsInstanceVersion invokes the drds.DescribeDrdsInstanceVersion API synchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsinstanceversion.html
 func (client *Client) DescribeDrdsInstanceVersion(request *DescribeDrdsInstanceVersionRequest) (response *DescribeDrdsInstanceVersionResponse, err error) {
 	response = CreateDescribeDrdsInstanceVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDrdsInstanceVersion(request *DescribeDrdsInstanceV
 }
 
 // DescribeDrdsInstanceVersionWithChan invokes the drds.DescribeDrdsInstanceVersion API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsinstanceversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsInstanceVersionWithChan(request *DescribeDrdsInstanceVersionRequest) (<-chan *DescribeDrdsInstanceVersionResponse, <-chan error) {
 	responseChan := make(chan *DescribeDrdsInstanceVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDrdsInstanceVersionWithChan(request *DescribeDrdsI
 }
 
 // DescribeDrdsInstanceVersionWithCallback invokes the drds.DescribeDrdsInstanceVersion API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsinstanceversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsInstanceVersionWithCallback(request *DescribeDrdsInstanceVersionRequest, callback func(response *DescribeDrdsInstanceVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeDrdsInstanceVersionRequest() (request *DescribeDrdsInstanceVe
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsInstanceVersion", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

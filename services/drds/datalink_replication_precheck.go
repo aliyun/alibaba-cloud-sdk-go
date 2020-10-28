@@ -21,7 +21,6 @@ import (
 )
 
 // DatalinkReplicationPrecheck invokes the drds.DatalinkReplicationPrecheck API synchronously
-// api document: https://help.aliyun.com/api/drds/datalinkreplicationprecheck.html
 func (client *Client) DatalinkReplicationPrecheck(request *DatalinkReplicationPrecheckRequest) (response *DatalinkReplicationPrecheckResponse, err error) {
 	response = CreateDatalinkReplicationPrecheckResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DatalinkReplicationPrecheck(request *DatalinkReplicationPr
 }
 
 // DatalinkReplicationPrecheckWithChan invokes the drds.DatalinkReplicationPrecheck API asynchronously
-// api document: https://help.aliyun.com/api/drds/datalinkreplicationprecheck.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DatalinkReplicationPrecheckWithChan(request *DatalinkReplicationPrecheckRequest) (<-chan *DatalinkReplicationPrecheckResponse, <-chan error) {
 	responseChan := make(chan *DatalinkReplicationPrecheckResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DatalinkReplicationPrecheckWithChan(request *DatalinkRepli
 }
 
 // DatalinkReplicationPrecheckWithCallback invokes the drds.DatalinkReplicationPrecheck API asynchronously
-// api document: https://help.aliyun.com/api/drds/datalinkreplicationprecheck.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DatalinkReplicationPrecheckWithCallback(request *DatalinkReplicationPrecheckRequest, callback func(response *DatalinkReplicationPrecheckResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateDatalinkReplicationPrecheckRequest() (request *DatalinkReplicationPre
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DatalinkReplicationPrecheck", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

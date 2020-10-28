@@ -21,7 +21,6 @@ import (
 )
 
 // ValidateShardTask invokes the drds.ValidateShardTask API synchronously
-// api document: https://help.aliyun.com/api/drds/validateshardtask.html
 func (client *Client) ValidateShardTask(request *ValidateShardTaskRequest) (response *ValidateShardTaskResponse, err error) {
 	response = CreateValidateShardTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ValidateShardTask(request *ValidateShardTaskRequest) (resp
 }
 
 // ValidateShardTaskWithChan invokes the drds.ValidateShardTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/validateshardtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ValidateShardTaskWithChan(request *ValidateShardTaskRequest) (<-chan *ValidateShardTaskResponse, <-chan error) {
 	responseChan := make(chan *ValidateShardTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ValidateShardTaskWithChan(request *ValidateShardTaskReques
 }
 
 // ValidateShardTaskWithCallback invokes the drds.ValidateShardTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/validateshardtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ValidateShardTaskWithCallback(request *ValidateShardTaskRequest, callback func(response *ValidateShardTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateValidateShardTaskRequest() (request *ValidateShardTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "ValidateShardTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

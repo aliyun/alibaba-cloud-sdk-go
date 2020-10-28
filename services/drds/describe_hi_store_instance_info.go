@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeHiStoreInstanceInfo invokes the drds.DescribeHiStoreInstanceInfo API synchronously
-// api document: https://help.aliyun.com/api/drds/describehistoreinstanceinfo.html
 func (client *Client) DescribeHiStoreInstanceInfo(request *DescribeHiStoreInstanceInfoRequest) (response *DescribeHiStoreInstanceInfoResponse, err error) {
 	response = CreateDescribeHiStoreInstanceInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeHiStoreInstanceInfo(request *DescribeHiStoreInstan
 }
 
 // DescribeHiStoreInstanceInfoWithChan invokes the drds.DescribeHiStoreInstanceInfo API asynchronously
-// api document: https://help.aliyun.com/api/drds/describehistoreinstanceinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHiStoreInstanceInfoWithChan(request *DescribeHiStoreInstanceInfoRequest) (<-chan *DescribeHiStoreInstanceInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeHiStoreInstanceInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeHiStoreInstanceInfoWithChan(request *DescribeHiSto
 }
 
 // DescribeHiStoreInstanceInfoWithCallback invokes the drds.DescribeHiStoreInstanceInfo API asynchronously
-// api document: https://help.aliyun.com/api/drds/describehistoreinstanceinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHiStoreInstanceInfoWithCallback(request *DescribeHiStoreInstanceInfoRequest, callback func(response *DescribeHiStoreInstanceInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeHiStoreInstanceInfoRequest() (request *DescribeHiStoreInstanc
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeHiStoreInstanceInfo", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ReleaseInstanceInternetAddress invokes the drds.ReleaseInstanceInternetAddress API synchronously
-// api document: https://help.aliyun.com/api/drds/releaseinstanceinternetaddress.html
 func (client *Client) ReleaseInstanceInternetAddress(request *ReleaseInstanceInternetAddressRequest) (response *ReleaseInstanceInternetAddressResponse, err error) {
 	response = CreateReleaseInstanceInternetAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReleaseInstanceInternetAddress(request *ReleaseInstanceInt
 }
 
 // ReleaseInstanceInternetAddressWithChan invokes the drds.ReleaseInstanceInternetAddress API asynchronously
-// api document: https://help.aliyun.com/api/drds/releaseinstanceinternetaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseInstanceInternetAddressWithChan(request *ReleaseInstanceInternetAddressRequest) (<-chan *ReleaseInstanceInternetAddressResponse, <-chan error) {
 	responseChan := make(chan *ReleaseInstanceInternetAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReleaseInstanceInternetAddressWithChan(request *ReleaseIns
 }
 
 // ReleaseInstanceInternetAddressWithCallback invokes the drds.ReleaseInstanceInternetAddress API asynchronously
-// api document: https://help.aliyun.com/api/drds/releaseinstanceinternetaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseInstanceInternetAddressWithCallback(request *ReleaseInstanceInternetAddressRequest, callback func(response *ReleaseInstanceInternetAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateReleaseInstanceInternetAddressRequest() (request *ReleaseInstanceInte
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "ReleaseInstanceInternetAddress", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

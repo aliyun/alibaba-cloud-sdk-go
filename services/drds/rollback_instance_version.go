@@ -21,7 +21,6 @@ import (
 )
 
 // RollbackInstanceVersion invokes the drds.RollbackInstanceVersion API synchronously
-// api document: https://help.aliyun.com/api/drds/rollbackinstanceversion.html
 func (client *Client) RollbackInstanceVersion(request *RollbackInstanceVersionRequest) (response *RollbackInstanceVersionResponse, err error) {
 	response = CreateRollbackInstanceVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RollbackInstanceVersion(request *RollbackInstanceVersionRe
 }
 
 // RollbackInstanceVersionWithChan invokes the drds.RollbackInstanceVersion API asynchronously
-// api document: https://help.aliyun.com/api/drds/rollbackinstanceversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RollbackInstanceVersionWithChan(request *RollbackInstanceVersionRequest) (<-chan *RollbackInstanceVersionResponse, <-chan error) {
 	responseChan := make(chan *RollbackInstanceVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RollbackInstanceVersionWithChan(request *RollbackInstanceV
 }
 
 // RollbackInstanceVersionWithCallback invokes the drds.RollbackInstanceVersion API asynchronously
-// api document: https://help.aliyun.com/api/drds/rollbackinstanceversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RollbackInstanceVersionWithCallback(request *RollbackInstanceVersionRequest, callback func(response *RollbackInstanceVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateRollbackInstanceVersionRequest() (request *RollbackInstanceVersionReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "RollbackInstanceVersion", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

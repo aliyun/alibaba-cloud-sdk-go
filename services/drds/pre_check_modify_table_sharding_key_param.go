@@ -21,7 +21,6 @@ import (
 )
 
 // PreCheckModifyTableShardingKeyParam invokes the drds.PreCheckModifyTableShardingKeyParam API synchronously
-// api document: https://help.aliyun.com/api/drds/precheckmodifytableshardingkeyparam.html
 func (client *Client) PreCheckModifyTableShardingKeyParam(request *PreCheckModifyTableShardingKeyParamRequest) (response *PreCheckModifyTableShardingKeyParamResponse, err error) {
 	response = CreatePreCheckModifyTableShardingKeyParamResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PreCheckModifyTableShardingKeyParam(request *PreCheckModif
 }
 
 // PreCheckModifyTableShardingKeyParamWithChan invokes the drds.PreCheckModifyTableShardingKeyParam API asynchronously
-// api document: https://help.aliyun.com/api/drds/precheckmodifytableshardingkeyparam.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PreCheckModifyTableShardingKeyParamWithChan(request *PreCheckModifyTableShardingKeyParamRequest) (<-chan *PreCheckModifyTableShardingKeyParamResponse, <-chan error) {
 	responseChan := make(chan *PreCheckModifyTableShardingKeyParamResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PreCheckModifyTableShardingKeyParamWithChan(request *PreCh
 }
 
 // PreCheckModifyTableShardingKeyParamWithCallback invokes the drds.PreCheckModifyTableShardingKeyParam API asynchronously
-// api document: https://help.aliyun.com/api/drds/precheckmodifytableshardingkeyparam.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PreCheckModifyTableShardingKeyParamWithCallback(request *PreCheckModifyTableShardingKeyParamRequest, callback func(response *PreCheckModifyTableShardingKeyParamResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -106,6 +101,7 @@ func CreatePreCheckModifyTableShardingKeyParamRequest() (request *PreCheckModify
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "PreCheckModifyTableShardingKeyParam", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

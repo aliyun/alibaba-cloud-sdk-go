@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRdsSuperAccountInstances invokes the drds.DescribeRdsSuperAccountInstances API synchronously
-// api document: https://help.aliyun.com/api/drds/describerdssuperaccountinstances.html
 func (client *Client) DescribeRdsSuperAccountInstances(request *DescribeRdsSuperAccountInstancesRequest) (response *DescribeRdsSuperAccountInstancesResponse, err error) {
 	response = CreateDescribeRdsSuperAccountInstancesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRdsSuperAccountInstances(request *DescribeRdsSuper
 }
 
 // DescribeRdsSuperAccountInstancesWithChan invokes the drds.DescribeRdsSuperAccountInstances API asynchronously
-// api document: https://help.aliyun.com/api/drds/describerdssuperaccountinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRdsSuperAccountInstancesWithChan(request *DescribeRdsSuperAccountInstancesRequest) (<-chan *DescribeRdsSuperAccountInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeRdsSuperAccountInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRdsSuperAccountInstancesWithChan(request *Describe
 }
 
 // DescribeRdsSuperAccountInstancesWithCallback invokes the drds.DescribeRdsSuperAccountInstances API asynchronously
-// api document: https://help.aliyun.com/api/drds/describerdssuperaccountinstances.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRdsSuperAccountInstancesWithCallback(request *DescribeRdsSuperAccountInstancesRequest, callback func(response *DescribeRdsSuperAccountInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeRdsSuperAccountInstancesRequest() (request *DescribeRdsSuperA
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRdsSuperAccountInstances", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

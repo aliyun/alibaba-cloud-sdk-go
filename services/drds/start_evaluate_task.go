@@ -21,7 +21,6 @@ import (
 )
 
 // StartEvaluateTask invokes the drds.StartEvaluateTask API synchronously
-// api document: https://help.aliyun.com/api/drds/startevaluatetask.html
 func (client *Client) StartEvaluateTask(request *StartEvaluateTaskRequest) (response *StartEvaluateTaskResponse, err error) {
 	response = CreateStartEvaluateTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartEvaluateTask(request *StartEvaluateTaskRequest) (resp
 }
 
 // StartEvaluateTaskWithChan invokes the drds.StartEvaluateTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/startevaluatetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartEvaluateTaskWithChan(request *StartEvaluateTaskRequest) (<-chan *StartEvaluateTaskResponse, <-chan error) {
 	responseChan := make(chan *StartEvaluateTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartEvaluateTaskWithChan(request *StartEvaluateTaskReques
 }
 
 // StartEvaluateTaskWithCallback invokes the drds.StartEvaluateTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/startevaluatetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartEvaluateTaskWithCallback(request *StartEvaluateTaskRequest, callback func(response *StartEvaluateTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateStartEvaluateTaskRequest() (request *StartEvaluateTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "StartEvaluateTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

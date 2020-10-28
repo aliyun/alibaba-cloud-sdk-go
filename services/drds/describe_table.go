@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeTable invokes the drds.DescribeTable API synchronously
-// api document: https://help.aliyun.com/api/drds/describetable.html
 func (client *Client) DescribeTable(request *DescribeTableRequest) (response *DescribeTableResponse, err error) {
 	response = CreateDescribeTableResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeTable(request *DescribeTableRequest) (response *De
 }
 
 // DescribeTableWithChan invokes the drds.DescribeTable API asynchronously
-// api document: https://help.aliyun.com/api/drds/describetable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTableWithChan(request *DescribeTableRequest) (<-chan *DescribeTableResponse, <-chan error) {
 	responseChan := make(chan *DescribeTableResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeTableWithChan(request *DescribeTableRequest) (<-ch
 }
 
 // DescribeTableWithCallback invokes the drds.DescribeTable API asynchronously
-// api document: https://help.aliyun.com/api/drds/describetable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTableWithCallback(request *DescribeTableRequest, callback func(response *DescribeTableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateDescribeTableRequest() (request *DescribeTableRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeTable", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

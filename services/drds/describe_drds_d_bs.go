@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDrdsDBs invokes the drds.DescribeDrdsDBs API synchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsdbs.html
 func (client *Client) DescribeDrdsDBs(request *DescribeDrdsDBsRequest) (response *DescribeDrdsDBsResponse, err error) {
 	response = CreateDescribeDrdsDBsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDrdsDBs(request *DescribeDrdsDBsRequest) (response
 }
 
 // DescribeDrdsDBsWithChan invokes the drds.DescribeDrdsDBs API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsdbs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsDBsWithChan(request *DescribeDrdsDBsRequest) (<-chan *DescribeDrdsDBsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDrdsDBsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDrdsDBsWithChan(request *DescribeDrdsDBsRequest) (
 }
 
 // DescribeDrdsDBsWithCallback invokes the drds.DescribeDrdsDBs API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsdbs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsDBsWithCallback(request *DescribeDrdsDBsRequest, callback func(response *DescribeDrdsDBsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,20 +71,15 @@ func (client *Client) DescribeDrdsDBsWithCallback(request *DescribeDrdsDBsReques
 // DescribeDrdsDBsRequest is the request struct for api DescribeDrdsDBs
 type DescribeDrdsDBsRequest struct {
 	*requests.RpcRequest
-	DrdsInstanceId string           `position:"Query" name:"DrdsInstanceId"`
-	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
 // DescribeDrdsDBsResponse is the response struct for api DescribeDrdsDBs
 type DescribeDrdsDBsResponse struct {
 	*responses.BaseResponse
-	RequestId  string                `json:"RequestId" xml:"RequestId"`
-	Success    bool                  `json:"Success" xml:"Success"`
-	PageNumber string                `json:"PageNumber" xml:"PageNumber"`
-	PageSize   string                `json:"PageSize" xml:"PageSize"`
-	Total      string                `json:"Total" xml:"Total"`
-	Data       DataInDescribeDrdsDBs `json:"Data" xml:"Data"`
+	RequestId string                `json:"RequestId" xml:"RequestId"`
+	Success   bool                  `json:"Success" xml:"Success"`
+	Data      DataInDescribeDrdsDBs `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeDrdsDBsRequest creates a request to invoke DescribeDrdsDBs API
@@ -97,7 +87,8 @@ func CreateDescribeDrdsDBsRequest() (request *DescribeDrdsDBsRequest) {
 	request = &DescribeDrdsDBsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDBs", "Drds", "openAPI")
+	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeDrdsDBs", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

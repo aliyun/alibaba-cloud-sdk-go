@@ -21,7 +21,6 @@ import (
 )
 
 // SqlCompatibilityCancel invokes the drds.SqlCompatibilityCancel API synchronously
-// api document: https://help.aliyun.com/api/drds/sqlcompatibilitycancel.html
 func (client *Client) SqlCompatibilityCancel(request *SqlCompatibilityCancelRequest) (response *SqlCompatibilityCancelResponse, err error) {
 	response = CreateSqlCompatibilityCancelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SqlCompatibilityCancel(request *SqlCompatibilityCancelRequ
 }
 
 // SqlCompatibilityCancelWithChan invokes the drds.SqlCompatibilityCancel API asynchronously
-// api document: https://help.aliyun.com/api/drds/sqlcompatibilitycancel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SqlCompatibilityCancelWithChan(request *SqlCompatibilityCancelRequest) (<-chan *SqlCompatibilityCancelResponse, <-chan error) {
 	responseChan := make(chan *SqlCompatibilityCancelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SqlCompatibilityCancelWithChan(request *SqlCompatibilityCa
 }
 
 // SqlCompatibilityCancelWithCallback invokes the drds.SqlCompatibilityCancel API asynchronously
-// api document: https://help.aliyun.com/api/drds/sqlcompatibilitycancel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SqlCompatibilityCancelWithCallback(request *SqlCompatibilityCancelRequest, callback func(response *SqlCompatibilityCancelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateSqlCompatibilityCancelRequest() (request *SqlCompatibilityCancelReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SqlCompatibilityCancel", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

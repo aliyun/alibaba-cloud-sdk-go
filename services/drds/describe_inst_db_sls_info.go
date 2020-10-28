@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstDbSlsInfo invokes the drds.DescribeInstDbSlsInfo API synchronously
-// api document: https://help.aliyun.com/api/drds/describeinstdbslsinfo.html
 func (client *Client) DescribeInstDbSlsInfo(request *DescribeInstDbSlsInfoRequest) (response *DescribeInstDbSlsInfoResponse, err error) {
 	response = CreateDescribeInstDbSlsInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstDbSlsInfo(request *DescribeInstDbSlsInfoReques
 }
 
 // DescribeInstDbSlsInfoWithChan invokes the drds.DescribeInstDbSlsInfo API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeinstdbslsinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstDbSlsInfoWithChan(request *DescribeInstDbSlsInfoRequest) (<-chan *DescribeInstDbSlsInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstDbSlsInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstDbSlsInfoWithChan(request *DescribeInstDbSlsIn
 }
 
 // DescribeInstDbSlsInfoWithCallback invokes the drds.DescribeInstDbSlsInfo API asynchronously
-// api document: https://help.aliyun.com/api/drds/describeinstdbslsinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstDbSlsInfoWithCallback(request *DescribeInstDbSlsInfoRequest, callback func(response *DescribeInstDbSlsInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeInstDbSlsInfoRequest() (request *DescribeInstDbSlsInfoRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeInstDbSlsInfo", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

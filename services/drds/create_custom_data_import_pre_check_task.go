@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCustomDataImportPreCheckTask invokes the drds.CreateCustomDataImportPreCheckTask API synchronously
-// api document: https://help.aliyun.com/api/drds/createcustomdataimportprechecktask.html
 func (client *Client) CreateCustomDataImportPreCheckTask(request *CreateCustomDataImportPreCheckTaskRequest) (response *CreateCustomDataImportPreCheckTaskResponse, err error) {
 	response = CreateCreateCustomDataImportPreCheckTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCustomDataImportPreCheckTask(request *CreateCustomDa
 }
 
 // CreateCustomDataImportPreCheckTaskWithChan invokes the drds.CreateCustomDataImportPreCheckTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/createcustomdataimportprechecktask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCustomDataImportPreCheckTaskWithChan(request *CreateCustomDataImportPreCheckTaskRequest) (<-chan *CreateCustomDataImportPreCheckTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateCustomDataImportPreCheckTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateCustomDataImportPreCheckTaskWithChan(request *Create
 }
 
 // CreateCustomDataImportPreCheckTaskWithCallback invokes the drds.CreateCustomDataImportPreCheckTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/createcustomdataimportprechecktask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCustomDataImportPreCheckTaskWithCallback(request *CreateCustomDataImportPreCheckTaskRequest, callback func(response *CreateCustomDataImportPreCheckTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateCreateCustomDataImportPreCheckTaskRequest() (request *CreateCustomDat
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "CreateCustomDataImportPreCheckTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

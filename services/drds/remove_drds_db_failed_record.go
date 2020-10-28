@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveDrdsDbFailedRecord invokes the drds.RemoveDrdsDbFailedRecord API synchronously
-// api document: https://help.aliyun.com/api/drds/removedrdsdbfailedrecord.html
 func (client *Client) RemoveDrdsDbFailedRecord(request *RemoveDrdsDbFailedRecordRequest) (response *RemoveDrdsDbFailedRecordResponse, err error) {
 	response = CreateRemoveDrdsDbFailedRecordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveDrdsDbFailedRecord(request *RemoveDrdsDbFailedRecord
 }
 
 // RemoveDrdsDbFailedRecordWithChan invokes the drds.RemoveDrdsDbFailedRecord API asynchronously
-// api document: https://help.aliyun.com/api/drds/removedrdsdbfailedrecord.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveDrdsDbFailedRecordWithChan(request *RemoveDrdsDbFailedRecordRequest) (<-chan *RemoveDrdsDbFailedRecordResponse, <-chan error) {
 	responseChan := make(chan *RemoveDrdsDbFailedRecordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveDrdsDbFailedRecordWithChan(request *RemoveDrdsDbFail
 }
 
 // RemoveDrdsDbFailedRecordWithCallback invokes the drds.RemoveDrdsDbFailedRecord API asynchronously
-// api document: https://help.aliyun.com/api/drds/removedrdsdbfailedrecord.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveDrdsDbFailedRecordWithCallback(request *RemoveDrdsDbFailedRecordRequest, callback func(response *RemoveDrdsDbFailedRecordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateRemoveDrdsDbFailedRecordRequest() (request *RemoveDrdsDbFailedRecordR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveDrdsDbFailedRecord", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

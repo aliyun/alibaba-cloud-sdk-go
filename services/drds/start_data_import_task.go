@@ -21,7 +21,6 @@ import (
 )
 
 // StartDataImportTask invokes the drds.StartDataImportTask API synchronously
-// api document: https://help.aliyun.com/api/drds/startdataimporttask.html
 func (client *Client) StartDataImportTask(request *StartDataImportTaskRequest) (response *StartDataImportTaskResponse, err error) {
 	response = CreateStartDataImportTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartDataImportTask(request *StartDataImportTaskRequest) (
 }
 
 // StartDataImportTaskWithChan invokes the drds.StartDataImportTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/startdataimporttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartDataImportTaskWithChan(request *StartDataImportTaskRequest) (<-chan *StartDataImportTaskResponse, <-chan error) {
 	responseChan := make(chan *StartDataImportTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartDataImportTaskWithChan(request *StartDataImportTaskRe
 }
 
 // StartDataImportTaskWithCallback invokes the drds.StartDataImportTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/startdataimporttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartDataImportTaskWithCallback(request *StartDataImportTaskRequest, callback func(response *StartDataImportTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateStartDataImportTaskRequest() (request *StartDataImportTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "StartDataImportTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

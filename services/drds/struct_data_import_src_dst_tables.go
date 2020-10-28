@@ -17,6 +17,6 @@ package drds
 
 // DataImportSrcDstTables is a nested struct in drds response
 type DataImportSrcDstTables struct {
-	SrcTables SrcTables `json:"SrcTables" xml:"SrcTables"`
-	DstTables DstTables `json:"DstTables" xml:"DstTables"`
+	SrcTables SrcTablesInDescribeCustomDataImportSrcDstTables `json:"SrcTables" xml:"SrcTables"`
+	DstTables DstTablesInDescribeCustomDataImportSrcDstTables `json:"DstTables" xml:"DstTables"`
 }

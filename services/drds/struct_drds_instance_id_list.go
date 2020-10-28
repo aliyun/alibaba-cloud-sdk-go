@@ -17,5 +17,5 @@ package drds
 
 // DrdsInstanceIdList is a nested struct in drds response
 type DrdsInstanceIdList struct {
-	DrdsInstanceIdList []string `json:"drdsInstanceIdList" xml:"drdsInstanceIdList"`
+	DrdsInstanceId []string `json:"DrdsInstanceId" xml:"DrdsInstanceId"`
 }

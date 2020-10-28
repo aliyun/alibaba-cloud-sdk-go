@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveEvaluateTask invokes the drds.RemoveEvaluateTask API synchronously
-// api document: https://help.aliyun.com/api/drds/removeevaluatetask.html
 func (client *Client) RemoveEvaluateTask(request *RemoveEvaluateTaskRequest) (response *RemoveEvaluateTaskResponse, err error) {
 	response = CreateRemoveEvaluateTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveEvaluateTask(request *RemoveEvaluateTaskRequest) (re
 }
 
 // RemoveEvaluateTaskWithChan invokes the drds.RemoveEvaluateTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/removeevaluatetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveEvaluateTaskWithChan(request *RemoveEvaluateTaskRequest) (<-chan *RemoveEvaluateTaskResponse, <-chan error) {
 	responseChan := make(chan *RemoveEvaluateTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveEvaluateTaskWithChan(request *RemoveEvaluateTaskRequ
 }
 
 // RemoveEvaluateTaskWithCallback invokes the drds.RemoveEvaluateTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/removeevaluatetask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveEvaluateTaskWithCallback(request *RemoveEvaluateTaskRequest, callback func(response *RemoveEvaluateTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateRemoveEvaluateTaskRequest() (request *RemoveEvaluateTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveEvaluateTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

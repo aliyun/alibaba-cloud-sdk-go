@@ -21,7 +21,6 @@ import (
 )
 
 // CheckSqlAuditEnableStatus invokes the drds.CheckSqlAuditEnableStatus API synchronously
-// api document: https://help.aliyun.com/api/drds/checksqlauditenablestatus.html
 func (client *Client) CheckSqlAuditEnableStatus(request *CheckSqlAuditEnableStatusRequest) (response *CheckSqlAuditEnableStatusResponse, err error) {
 	response = CreateCheckSqlAuditEnableStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckSqlAuditEnableStatus(request *CheckSqlAuditEnableStat
 }
 
 // CheckSqlAuditEnableStatusWithChan invokes the drds.CheckSqlAuditEnableStatus API asynchronously
-// api document: https://help.aliyun.com/api/drds/checksqlauditenablestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckSqlAuditEnableStatusWithChan(request *CheckSqlAuditEnableStatusRequest) (<-chan *CheckSqlAuditEnableStatusResponse, <-chan error) {
 	responseChan := make(chan *CheckSqlAuditEnableStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckSqlAuditEnableStatusWithChan(request *CheckSqlAuditEn
 }
 
 // CheckSqlAuditEnableStatusWithCallback invokes the drds.CheckSqlAuditEnableStatus API asynchronously
-// api document: https://help.aliyun.com/api/drds/checksqlauditenablestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckSqlAuditEnableStatusWithCallback(request *CheckSqlAuditEnableStatusRequest, callback func(response *CheckSqlAuditEnableStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateCheckSqlAuditEnableStatusRequest() (request *CheckSqlAuditEnableStatu
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "CheckSqlAuditEnableStatus", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

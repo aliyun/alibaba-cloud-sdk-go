@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitCleanTask invokes the drds.SubmitCleanTask API synchronously
-// api document: https://help.aliyun.com/api/drds/submitcleantask.html
 func (client *Client) SubmitCleanTask(request *SubmitCleanTaskRequest) (response *SubmitCleanTaskResponse, err error) {
 	response = CreateSubmitCleanTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitCleanTask(request *SubmitCleanTaskRequest) (response
 }
 
 // SubmitCleanTaskWithChan invokes the drds.SubmitCleanTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitcleantask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitCleanTaskWithChan(request *SubmitCleanTaskRequest) (<-chan *SubmitCleanTaskResponse, <-chan error) {
 	responseChan := make(chan *SubmitCleanTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitCleanTaskWithChan(request *SubmitCleanTaskRequest) (
 }
 
 // SubmitCleanTaskWithCallback invokes the drds.SubmitCleanTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitcleantask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitCleanTaskWithCallback(request *SubmitCleanTaskRequest, callback func(response *SubmitCleanTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateSubmitCleanTaskRequest() (request *SubmitCleanTaskRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitCleanTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

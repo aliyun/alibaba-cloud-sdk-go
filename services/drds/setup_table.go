@@ -21,7 +21,6 @@ import (
 )
 
 // SetupTable invokes the drds.SetupTable API synchronously
-// api document: https://help.aliyun.com/api/drds/setuptable.html
 func (client *Client) SetupTable(request *SetupTableRequest) (response *SetupTableResponse, err error) {
 	response = CreateSetupTableResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetupTable(request *SetupTableRequest) (response *SetupTab
 }
 
 // SetupTableWithChan invokes the drds.SetupTable API asynchronously
-// api document: https://help.aliyun.com/api/drds/setuptable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetupTableWithChan(request *SetupTableRequest) (<-chan *SetupTableResponse, <-chan error) {
 	responseChan := make(chan *SetupTableResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetupTableWithChan(request *SetupTableRequest) (<-chan *Se
 }
 
 // SetupTableWithCallback invokes the drds.SetupTable API asynchronously
-// api document: https://help.aliyun.com/api/drds/setuptable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetupTableWithCallback(request *SetupTableRequest, callback func(response *SetupTableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateSetupTableRequest() (request *SetupTableRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SetupTable", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

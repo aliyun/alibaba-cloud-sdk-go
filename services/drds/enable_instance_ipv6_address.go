@@ -21,7 +21,6 @@ import (
 )
 
 // EnableInstanceIpv6Address invokes the drds.EnableInstanceIpv6Address API synchronously
-// api document: https://help.aliyun.com/api/drds/enableinstanceipv6address.html
 func (client *Client) EnableInstanceIpv6Address(request *EnableInstanceIpv6AddressRequest) (response *EnableInstanceIpv6AddressResponse, err error) {
 	response = CreateEnableInstanceIpv6AddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnableInstanceIpv6Address(request *EnableInstanceIpv6Addre
 }
 
 // EnableInstanceIpv6AddressWithChan invokes the drds.EnableInstanceIpv6Address API asynchronously
-// api document: https://help.aliyun.com/api/drds/enableinstanceipv6address.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableInstanceIpv6AddressWithChan(request *EnableInstanceIpv6AddressRequest) (<-chan *EnableInstanceIpv6AddressResponse, <-chan error) {
 	responseChan := make(chan *EnableInstanceIpv6AddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnableInstanceIpv6AddressWithChan(request *EnableInstanceI
 }
 
 // EnableInstanceIpv6AddressWithCallback invokes the drds.EnableInstanceIpv6Address API asynchronously
-// api document: https://help.aliyun.com/api/drds/enableinstanceipv6address.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableInstanceIpv6AddressWithCallback(request *EnableInstanceIpv6AddressRequest, callback func(response *EnableInstanceIpv6AddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateEnableInstanceIpv6AddressRequest() (request *EnableInstanceIpv6Addres
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "EnableInstanceIpv6Address", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

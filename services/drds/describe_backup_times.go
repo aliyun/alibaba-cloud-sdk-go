@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBackupTimes invokes the drds.DescribeBackupTimes API synchronously
-// api document: https://help.aliyun.com/api/drds/describebackuptimes.html
 func (client *Client) DescribeBackupTimes(request *DescribeBackupTimesRequest) (response *DescribeBackupTimesResponse, err error) {
 	response = CreateDescribeBackupTimesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBackupTimes(request *DescribeBackupTimesRequest) (
 }
 
 // DescribeBackupTimesWithChan invokes the drds.DescribeBackupTimes API asynchronously
-// api document: https://help.aliyun.com/api/drds/describebackuptimes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupTimesWithChan(request *DescribeBackupTimesRequest) (<-chan *DescribeBackupTimesResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackupTimesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBackupTimesWithChan(request *DescribeBackupTimesRe
 }
 
 // DescribeBackupTimesWithCallback invokes the drds.DescribeBackupTimes API asynchronously
-// api document: https://help.aliyun.com/api/drds/describebackuptimes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupTimesWithCallback(request *DescribeBackupTimesRequest, callback func(response *DescribeBackupTimesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeBackupTimesRequest() (request *DescribeBackupTimesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeBackupTimes", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

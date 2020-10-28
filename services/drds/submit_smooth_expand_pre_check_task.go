@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitSmoothExpandPreCheckTask invokes the drds.SubmitSmoothExpandPreCheckTask API synchronously
-// api document: https://help.aliyun.com/api/drds/submitsmoothexpandprechecktask.html
 func (client *Client) SubmitSmoothExpandPreCheckTask(request *SubmitSmoothExpandPreCheckTaskRequest) (response *SubmitSmoothExpandPreCheckTaskResponse, err error) {
 	response = CreateSubmitSmoothExpandPreCheckTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitSmoothExpandPreCheckTask(request *SubmitSmoothExpand
 }
 
 // SubmitSmoothExpandPreCheckTaskWithChan invokes the drds.SubmitSmoothExpandPreCheckTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitsmoothexpandprechecktask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSmoothExpandPreCheckTaskWithChan(request *SubmitSmoothExpandPreCheckTaskRequest) (<-chan *SubmitSmoothExpandPreCheckTaskResponse, <-chan error) {
 	responseChan := make(chan *SubmitSmoothExpandPreCheckTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitSmoothExpandPreCheckTaskWithChan(request *SubmitSmoo
 }
 
 // SubmitSmoothExpandPreCheckTaskWithCallback invokes the drds.SubmitSmoothExpandPreCheckTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitsmoothexpandprechecktask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSmoothExpandPreCheckTaskWithCallback(request *SubmitSmoothExpandPreCheckTaskRequest, callback func(response *SubmitSmoothExpandPreCheckTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateSubmitSmoothExpandPreCheckTaskRequest() (request *SubmitSmoothExpandP
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSmoothExpandPreCheckTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

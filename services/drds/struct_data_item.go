@@ -17,10 +17,14 @@ package drds
 
 // DataItem is a nested struct in drds response
 type DataItem struct {
+	ExtraSlsProject   string `json:"ExtraSlsProject" xml:"ExtraSlsProject"`
 	Enabled           string `json:"Enabled" xml:"Enabled"`
 	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
+	ExtraWriteEnabled bool   `json:"ExtraWriteEnabled" xml:"ExtraWriteEnabled"`
 	Detailed          string `json:"Detailed" xml:"Detailed"`
 	OriginalTableName string `json:"OriginalTableName" xml:"OriginalTableName"`
+	ExtraAliUid       int64  `json:"ExtraAliUid" xml:"ExtraAliUid"`
+	ExtraSlsLogStore  string `json:"ExtraSlsLogStore" xml:"ExtraSlsLogStore"`
 	TableName         string `json:"TableName" xml:"TableName"`
 	DbName            string `json:"DbName" xml:"DbName"`
 }

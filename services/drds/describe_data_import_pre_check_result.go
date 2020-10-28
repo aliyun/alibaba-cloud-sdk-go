@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDataImportPreCheckResult invokes the drds.DescribeDataImportPreCheckResult API synchronously
-// api document: https://help.aliyun.com/api/drds/describedataimportprecheckresult.html
 func (client *Client) DescribeDataImportPreCheckResult(request *DescribeDataImportPreCheckResultRequest) (response *DescribeDataImportPreCheckResultResponse, err error) {
 	response = CreateDescribeDataImportPreCheckResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDataImportPreCheckResult(request *DescribeDataImpo
 }
 
 // DescribeDataImportPreCheckResultWithChan invokes the drds.DescribeDataImportPreCheckResult API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedataimportprecheckresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataImportPreCheckResultWithChan(request *DescribeDataImportPreCheckResultRequest) (<-chan *DescribeDataImportPreCheckResultResponse, <-chan error) {
 	responseChan := make(chan *DescribeDataImportPreCheckResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDataImportPreCheckResultWithChan(request *Describe
 }
 
 // DescribeDataImportPreCheckResultWithCallback invokes the drds.DescribeDataImportPreCheckResult API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedataimportprecheckresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDataImportPreCheckResultWithCallback(request *DescribeDataImportPreCheckResultRequest, callback func(response *DescribeDataImportPreCheckResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeDataImportPreCheckResultRequest() (request *DescribeDataImpor
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDataImportPreCheckResult", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitCleanTableShardingKeyModify invokes the drds.SubmitCleanTableShardingKeyModify API synchronously
-// api document: https://help.aliyun.com/api/drds/submitcleantableshardingkeymodify.html
 func (client *Client) SubmitCleanTableShardingKeyModify(request *SubmitCleanTableShardingKeyModifyRequest) (response *SubmitCleanTableShardingKeyModifyResponse, err error) {
 	response = CreateSubmitCleanTableShardingKeyModifyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitCleanTableShardingKeyModify(request *SubmitCleanTabl
 }
 
 // SubmitCleanTableShardingKeyModifyWithChan invokes the drds.SubmitCleanTableShardingKeyModify API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitcleantableshardingkeymodify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitCleanTableShardingKeyModifyWithChan(request *SubmitCleanTableShardingKeyModifyRequest) (<-chan *SubmitCleanTableShardingKeyModifyResponse, <-chan error) {
 	responseChan := make(chan *SubmitCleanTableShardingKeyModifyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitCleanTableShardingKeyModifyWithChan(request *SubmitC
 }
 
 // SubmitCleanTableShardingKeyModifyWithCallback invokes the drds.SubmitCleanTableShardingKeyModify API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitcleantableshardingkeymodify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitCleanTableShardingKeyModifyWithCallback(request *SubmitCleanTableShardingKeyModifyRequest, callback func(response *SubmitCleanTableShardingKeyModifyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateSubmitCleanTableShardingKeyModifyRequest() (request *SubmitCleanTable
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitCleanTableShardingKeyModify", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

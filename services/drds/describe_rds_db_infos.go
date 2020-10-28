@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRdsDbInfos invokes the drds.DescribeRdsDbInfos API synchronously
-// api document: https://help.aliyun.com/api/drds/describerdsdbinfos.html
 func (client *Client) DescribeRdsDbInfos(request *DescribeRdsDbInfosRequest) (response *DescribeRdsDbInfosResponse, err error) {
 	response = CreateDescribeRdsDbInfosResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRdsDbInfos(request *DescribeRdsDbInfosRequest) (re
 }
 
 // DescribeRdsDbInfosWithChan invokes the drds.DescribeRdsDbInfos API asynchronously
-// api document: https://help.aliyun.com/api/drds/describerdsdbinfos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRdsDbInfosWithChan(request *DescribeRdsDbInfosRequest) (<-chan *DescribeRdsDbInfosResponse, <-chan error) {
 	responseChan := make(chan *DescribeRdsDbInfosResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRdsDbInfosWithChan(request *DescribeRdsDbInfosRequ
 }
 
 // DescribeRdsDbInfosWithCallback invokes the drds.DescribeRdsDbInfos API asynchronously
-// api document: https://help.aliyun.com/api/drds/describerdsdbinfos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRdsDbInfosWithCallback(request *DescribeRdsDbInfosRequest, callback func(response *DescribeRdsDbInfosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateDescribeRdsDbInfosRequest() (request *DescribeRdsDbInfosRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeRdsDbInfos", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

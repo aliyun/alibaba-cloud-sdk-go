@@ -18,6 +18,7 @@ package drds
 // DbInstanceInDescribeDrdsDbInstances is a nested struct in drds response
 type DbInstanceInDescribeDrdsDbInstances struct {
 	DBInstanceId      string                                     `json:"DBInstanceId" xml:"DBInstanceId"`
+	DmInstanceId      string                                     `json:"DmInstanceId" xml:"DmInstanceId"`
 	ConnectUrl        string                                     `json:"ConnectUrl" xml:"ConnectUrl"`
 	Port              int                                        `json:"Port" xml:"Port"`
 	DBInstanceStatus  string                                     `json:"DBInstanceStatus" xml:"DBInstanceStatus"`

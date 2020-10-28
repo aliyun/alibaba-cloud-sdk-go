@@ -21,7 +21,6 @@ import (
 )
 
 // SqlCompatibilityStart invokes the drds.SqlCompatibilityStart API synchronously
-// api document: https://help.aliyun.com/api/drds/sqlcompatibilitystart.html
 func (client *Client) SqlCompatibilityStart(request *SqlCompatibilityStartRequest) (response *SqlCompatibilityStartResponse, err error) {
 	response = CreateSqlCompatibilityStartResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SqlCompatibilityStart(request *SqlCompatibilityStartReques
 }
 
 // SqlCompatibilityStartWithChan invokes the drds.SqlCompatibilityStart API asynchronously
-// api document: https://help.aliyun.com/api/drds/sqlcompatibilitystart.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SqlCompatibilityStartWithChan(request *SqlCompatibilityStartRequest) (<-chan *SqlCompatibilityStartResponse, <-chan error) {
 	responseChan := make(chan *SqlCompatibilityStartResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SqlCompatibilityStartWithChan(request *SqlCompatibilitySta
 }
 
 // SqlCompatibilityStartWithCallback invokes the drds.SqlCompatibilityStart API asynchronously
-// api document: https://help.aliyun.com/api/drds/sqlcompatibilitystart.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SqlCompatibilityStartWithCallback(request *SqlCompatibilityStartRequest, callback func(response *SqlCompatibilityStartResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,9 @@ func (client *Client) SqlCompatibilityStartWithCallback(request *SqlCompatibilit
 // SqlCompatibilityStartRequest is the request struct for api SqlCompatibilityStart
 type SqlCompatibilityStartRequest struct {
 	*requests.RpcRequest
-	TargetVersion  string `position:"Query" name:"TargetVersion"`
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	TargetVersion   string           `position:"Query" name:"TargetVersion"`
+	DrdsInstanceId  string           `position:"Query" name:"DrdsInstanceId"`
+	PerformanceTest requests.Boolean `position:"Query" name:"PerformanceTest"`
 }
 
 // SqlCompatibilityStartResponse is the response struct for api SqlCompatibilityStart
@@ -94,6 +90,7 @@ func CreateSqlCompatibilityStartRequest() (request *SqlCompatibilityStartRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SqlCompatibilityStart", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

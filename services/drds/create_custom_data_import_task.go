@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCustomDataImportTask invokes the drds.CreateCustomDataImportTask API synchronously
-// api document: https://help.aliyun.com/api/drds/createcustomdataimporttask.html
 func (client *Client) CreateCustomDataImportTask(request *CreateCustomDataImportTaskRequest) (response *CreateCustomDataImportTaskResponse, err error) {
 	response = CreateCreateCustomDataImportTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCustomDataImportTask(request *CreateCustomDataImport
 }
 
 // CreateCustomDataImportTaskWithChan invokes the drds.CreateCustomDataImportTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/createcustomdataimporttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCustomDataImportTaskWithChan(request *CreateCustomDataImportTaskRequest) (<-chan *CreateCustomDataImportTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateCustomDataImportTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateCustomDataImportTaskWithChan(request *CreateCustomDa
 }
 
 // CreateCustomDataImportTaskWithCallback invokes the drds.CreateCustomDataImportTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/createcustomdataimporttask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCustomDataImportTaskWithCallback(request *CreateCustomDataImportTaskRequest, callback func(response *CreateCustomDataImportTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateCreateCustomDataImportTaskRequest() (request *CreateCustomDataImportT
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "CreateCustomDataImportTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

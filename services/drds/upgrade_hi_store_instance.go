@@ -21,7 +21,6 @@ import (
 )
 
 // UpgradeHiStoreInstance invokes the drds.UpgradeHiStoreInstance API synchronously
-// api document: https://help.aliyun.com/api/drds/upgradehistoreinstance.html
 func (client *Client) UpgradeHiStoreInstance(request *UpgradeHiStoreInstanceRequest) (response *UpgradeHiStoreInstanceResponse, err error) {
 	response = CreateUpgradeHiStoreInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpgradeHiStoreInstance(request *UpgradeHiStoreInstanceRequ
 }
 
 // UpgradeHiStoreInstanceWithChan invokes the drds.UpgradeHiStoreInstance API asynchronously
-// api document: https://help.aliyun.com/api/drds/upgradehistoreinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeHiStoreInstanceWithChan(request *UpgradeHiStoreInstanceRequest) (<-chan *UpgradeHiStoreInstanceResponse, <-chan error) {
 	responseChan := make(chan *UpgradeHiStoreInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpgradeHiStoreInstanceWithChan(request *UpgradeHiStoreInst
 }
 
 // UpgradeHiStoreInstanceWithCallback invokes the drds.UpgradeHiStoreInstance API asynchronously
-// api document: https://help.aliyun.com/api/drds/upgradehistoreinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeHiStoreInstanceWithCallback(request *UpgradeHiStoreInstanceRequest, callback func(response *UpgradeHiStoreInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateUpgradeHiStoreInstanceRequest() (request *UpgradeHiStoreInstanceReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "UpgradeHiStoreInstance", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

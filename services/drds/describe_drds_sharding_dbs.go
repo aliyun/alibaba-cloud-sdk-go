@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDrdsShardingDbs invokes the drds.DescribeDrdsShardingDbs API synchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsshardingdbs.html
 func (client *Client) DescribeDrdsShardingDbs(request *DescribeDrdsShardingDbsRequest) (response *DescribeDrdsShardingDbsResponse, err error) {
 	response = CreateDescribeDrdsShardingDbsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDrdsShardingDbs(request *DescribeDrdsShardingDbsRe
 }
 
 // DescribeDrdsShardingDbsWithChan invokes the drds.DescribeDrdsShardingDbs API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsshardingdbs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsShardingDbsWithChan(request *DescribeDrdsShardingDbsRequest) (<-chan *DescribeDrdsShardingDbsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDrdsShardingDbsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDrdsShardingDbsWithChan(request *DescribeDrdsShard
 }
 
 // DescribeDrdsShardingDbsWithCallback invokes the drds.DescribeDrdsShardingDbs API asynchronously
-// api document: https://help.aliyun.com/api/drds/describedrdsshardingdbs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDrdsShardingDbsWithCallback(request *DescribeDrdsShardingDbsRequest, callback func(response *DescribeDrdsShardingDbsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateDescribeDrdsShardingDbsRequest() (request *DescribeDrdsShardingDbsReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsShardingDbs", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

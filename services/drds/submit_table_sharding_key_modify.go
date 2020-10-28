@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitTableShardingKeyModify invokes the drds.SubmitTableShardingKeyModify API synchronously
-// api document: https://help.aliyun.com/api/drds/submittableshardingkeymodify.html
 func (client *Client) SubmitTableShardingKeyModify(request *SubmitTableShardingKeyModifyRequest) (response *SubmitTableShardingKeyModifyResponse, err error) {
 	response = CreateSubmitTableShardingKeyModifyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitTableShardingKeyModify(request *SubmitTableShardingK
 }
 
 // SubmitTableShardingKeyModifyWithChan invokes the drds.SubmitTableShardingKeyModify API asynchronously
-// api document: https://help.aliyun.com/api/drds/submittableshardingkeymodify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitTableShardingKeyModifyWithChan(request *SubmitTableShardingKeyModifyRequest) (<-chan *SubmitTableShardingKeyModifyResponse, <-chan error) {
 	responseChan := make(chan *SubmitTableShardingKeyModifyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitTableShardingKeyModifyWithChan(request *SubmitTableS
 }
 
 // SubmitTableShardingKeyModifyWithCallback invokes the drds.SubmitTableShardingKeyModify API asynchronously
-// api document: https://help.aliyun.com/api/drds/submittableshardingkeymodify.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitTableShardingKeyModifyWithCallback(request *SubmitTableShardingKeyModifyRequest, callback func(response *SubmitTableShardingKeyModifyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -106,6 +101,7 @@ func CreateSubmitTableShardingKeyModifyRequest() (request *SubmitTableShardingKe
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitTableShardingKeyModify", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

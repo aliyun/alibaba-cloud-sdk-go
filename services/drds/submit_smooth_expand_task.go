@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitSmoothExpandTask invokes the drds.SubmitSmoothExpandTask API synchronously
-// api document: https://help.aliyun.com/api/drds/submitsmoothexpandtask.html
 func (client *Client) SubmitSmoothExpandTask(request *SubmitSmoothExpandTaskRequest) (response *SubmitSmoothExpandTaskResponse, err error) {
 	response = CreateSubmitSmoothExpandTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitSmoothExpandTask(request *SubmitSmoothExpandTaskRequ
 }
 
 // SubmitSmoothExpandTaskWithChan invokes the drds.SubmitSmoothExpandTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitsmoothexpandtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSmoothExpandTaskWithChan(request *SubmitSmoothExpandTaskRequest) (<-chan *SubmitSmoothExpandTaskResponse, <-chan error) {
 	responseChan := make(chan *SubmitSmoothExpandTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitSmoothExpandTaskWithChan(request *SubmitSmoothExpand
 }
 
 // SubmitSmoothExpandTaskWithCallback invokes the drds.SubmitSmoothExpandTask API asynchronously
-// api document: https://help.aliyun.com/api/drds/submitsmoothexpandtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSmoothExpandTaskWithCallback(request *SubmitSmoothExpandTaskRequest, callback func(response *SubmitSmoothExpandTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -111,6 +106,7 @@ func CreateSubmitSmoothExpandTaskRequest() (request *SubmitSmoothExpandTaskReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "SubmitSmoothExpandTask", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

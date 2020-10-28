@@ -21,7 +21,6 @@ import (
 )
 
 // CreateInstanceInternetAddress invokes the drds.CreateInstanceInternetAddress API synchronously
-// api document: https://help.aliyun.com/api/drds/createinstanceinternetaddress.html
 func (client *Client) CreateInstanceInternetAddress(request *CreateInstanceInternetAddressRequest) (response *CreateInstanceInternetAddressResponse, err error) {
 	response = CreateCreateInstanceInternetAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateInstanceInternetAddress(request *CreateInstanceInter
 }
 
 // CreateInstanceInternetAddressWithChan invokes the drds.CreateInstanceInternetAddress API asynchronously
-// api document: https://help.aliyun.com/api/drds/createinstanceinternetaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateInstanceInternetAddressWithChan(request *CreateInstanceInternetAddressRequest) (<-chan *CreateInstanceInternetAddressResponse, <-chan error) {
 	responseChan := make(chan *CreateInstanceInternetAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateInstanceInternetAddressWithChan(request *CreateInsta
 }
 
 // CreateInstanceInternetAddressWithCallback invokes the drds.CreateInstanceInternetAddress API asynchronously
-// api document: https://help.aliyun.com/api/drds/createinstanceinternetaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateInstanceInternetAddressWithCallback(request *CreateInstanceInternetAddressRequest, callback func(response *CreateInstanceInternetAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateCreateInstanceInternetAddressRequest() (request *CreateInstanceIntern
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "CreateInstanceInternetAddress", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

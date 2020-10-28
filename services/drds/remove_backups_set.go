@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveBackupsSet invokes the drds.RemoveBackupsSet API synchronously
-// api document: https://help.aliyun.com/api/drds/removebackupsset.html
 func (client *Client) RemoveBackupsSet(request *RemoveBackupsSetRequest) (response *RemoveBackupsSetResponse, err error) {
 	response = CreateRemoveBackupsSetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveBackupsSet(request *RemoveBackupsSetRequest) (respon
 }
 
 // RemoveBackupsSetWithChan invokes the drds.RemoveBackupsSet API asynchronously
-// api document: https://help.aliyun.com/api/drds/removebackupsset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveBackupsSetWithChan(request *RemoveBackupsSetRequest) (<-chan *RemoveBackupsSetResponse, <-chan error) {
 	responseChan := make(chan *RemoveBackupsSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveBackupsSetWithChan(request *RemoveBackupsSetRequest)
 }
 
 // RemoveBackupsSetWithCallback invokes the drds.RemoveBackupsSet API asynchronously
-// api document: https://help.aliyun.com/api/drds/removebackupsset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveBackupsSetWithCallback(request *RemoveBackupsSetRequest, callback func(response *RemoveBackupsSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateRemoveBackupsSetRequest() (request *RemoveBackupsSetRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2019-01-23", "RemoveBackupsSet", "Drds", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

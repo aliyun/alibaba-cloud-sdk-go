@@ -17,14 +17,18 @@ package drds
 
 // TableShardResultsItem is a nested struct in drds response
 type TableShardResultsItem struct {
-	RowCount       int    `json:"RowCount" xml:"RowCount"`
-	Dbpartitions   int    `json:"Dbpartitions" xml:"Dbpartitions"`
-	ShardKeyType   string `json:"ShardKeyType" xml:"ShardKeyType"`
-	Table          string `json:"Table" xml:"Table"`
-	DbShardKey     string `json:"DbShardKey" xml:"DbShardKey"`
-	Tbpartitions   int    `json:"Tbpartitions" xml:"Tbpartitions"`
-	SqlCount       int    `json:"SqlCount" xml:"SqlCount"`
-	CreateTableSql string `json:"CreateTableSql" xml:"CreateTableSql"`
-	ShardType      string `json:"ShardType" xml:"ShardType"`
-	TbShardKey     string `json:"TbShardKey" xml:"TbShardKey"`
+	ShardKeyType        string `json:"ShardKeyType" xml:"ShardKeyType"`
+	Table               string `json:"Table" xml:"Table"`
+	CreateTableSql      string `json:"CreateTableSql" xml:"CreateTableSql"`
+	OriginTbShardMethod string `json:"OriginTbShardMethod" xml:"OriginTbShardMethod"`
+	ShardType           string `json:"ShardType" xml:"ShardType"`
+	DbShardMethod       string `json:"DbShardMethod" xml:"DbShardMethod"`
+	RowCount            int    `json:"RowCount" xml:"RowCount"`
+	Dbpartitions        int    `json:"Dbpartitions" xml:"Dbpartitions"`
+	DbShardKey          string `json:"DbShardKey" xml:"DbShardKey"`
+	Tbpartitions        int    `json:"Tbpartitions" xml:"Tbpartitions"`
+	SqlCount            int    `json:"SqlCount" xml:"SqlCount"`
+	OriginDbShardMethod string `json:"OriginDbShardMethod" xml:"OriginDbShardMethod"`
+	TbShardKey          string `json:"TbShardKey" xml:"TbShardKey"`
+	TbShardMethod       string `json:"TbShardMethod" xml:"TbShardMethod"`
 }

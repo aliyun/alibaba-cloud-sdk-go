@@ -18,6 +18,7 @@ package drds
 // ReadOnlyInstanceInDescribeDrdsDbInstances is a nested struct in drds response
 type ReadOnlyInstanceInDescribeDrdsDbInstances struct {
 	InstanceName     string `json:"InstanceName" xml:"InstanceName"`
+	DmInstanceId     string `json:"DmInstanceId" xml:"DmInstanceId"`
 	ConnectUrl       string `json:"ConnectUrl" xml:"ConnectUrl"`
 	Port             int    `json:"Port" xml:"Port"`
 	DBInstanceStatus string `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
