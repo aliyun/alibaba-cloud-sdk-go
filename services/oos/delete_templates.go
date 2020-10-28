@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteTemplates invokes the oos.DeleteTemplates API synchronously
-// api document: https://help.aliyun.com/api/oos/deletetemplates.html
 func (client *Client) DeleteTemplates(request *DeleteTemplatesRequest) (response *DeleteTemplatesResponse, err error) {
 	response = CreateDeleteTemplatesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteTemplates(request *DeleteTemplatesRequest) (response
 }
 
 // DeleteTemplatesWithChan invokes the oos.DeleteTemplates API asynchronously
-// api document: https://help.aliyun.com/api/oos/deletetemplates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTemplatesWithChan(request *DeleteTemplatesRequest) (<-chan *DeleteTemplatesResponse, <-chan error) {
 	responseChan := make(chan *DeleteTemplatesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteTemplatesWithChan(request *DeleteTemplatesRequest) (
 }
 
 // DeleteTemplatesWithCallback invokes the oos.DeleteTemplates API asynchronously
-// api document: https://help.aliyun.com/api/oos/deletetemplates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTemplatesWithCallback(request *DeleteTemplatesRequest, callback func(response *DeleteTemplatesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

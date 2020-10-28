@@ -21,7 +21,6 @@ import (
 )
 
 // StartExecution invokes the oos.StartExecution API synchronously
-// api document: https://help.aliyun.com/api/oos/startexecution.html
 func (client *Client) StartExecution(request *StartExecutionRequest) (response *StartExecutionResponse, err error) {
 	response = CreateStartExecutionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartExecution(request *StartExecutionRequest) (response *
 }
 
 // StartExecutionWithChan invokes the oos.StartExecution API asynchronously
-// api document: https://help.aliyun.com/api/oos/startexecution.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartExecutionWithChan(request *StartExecutionRequest) (<-chan *StartExecutionResponse, <-chan error) {
 	responseChan := make(chan *StartExecutionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartExecutionWithChan(request *StartExecutionRequest) (<-
 }
 
 // StartExecutionWithCallback invokes the oos.StartExecution API asynchronously
-// api document: https://help.aliyun.com/api/oos/startexecution.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartExecutionWithCallback(request *StartExecutionRequest, callback func(response *StartExecutionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

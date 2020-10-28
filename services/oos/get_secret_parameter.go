@@ -21,7 +21,6 @@ import (
 )
 
 // GetSecretParameter invokes the oos.GetSecretParameter API synchronously
-// api document: https://help.aliyun.com/api/oos/getsecretparameter.html
 func (client *Client) GetSecretParameter(request *GetSecretParameterRequest) (response *GetSecretParameterResponse, err error) {
 	response = CreateGetSecretParameterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetSecretParameter(request *GetSecretParameterRequest) (re
 }
 
 // GetSecretParameterWithChan invokes the oos.GetSecretParameter API asynchronously
-// api document: https://help.aliyun.com/api/oos/getsecretparameter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSecretParameterWithChan(request *GetSecretParameterRequest) (<-chan *GetSecretParameterResponse, <-chan error) {
 	responseChan := make(chan *GetSecretParameterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetSecretParameterWithChan(request *GetSecretParameterRequ
 }
 
 // GetSecretParameterWithCallback invokes the oos.GetSecretParameter API asynchronously
-// api document: https://help.aliyun.com/api/oos/getsecretparameter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSecretParameterWithCallback(request *GetSecretParameterRequest, callback func(response *GetSecretParameterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ListTaskExecutions invokes the oos.ListTaskExecutions API synchronously
-// api document: https://help.aliyun.com/api/oos/listtaskexecutions.html
 func (client *Client) ListTaskExecutions(request *ListTaskExecutionsRequest) (response *ListTaskExecutionsResponse, err error) {
 	response = CreateListTaskExecutionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListTaskExecutions(request *ListTaskExecutionsRequest) (re
 }
 
 // ListTaskExecutionsWithChan invokes the oos.ListTaskExecutions API asynchronously
-// api document: https://help.aliyun.com/api/oos/listtaskexecutions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTaskExecutionsWithChan(request *ListTaskExecutionsRequest) (<-chan *ListTaskExecutionsResponse, <-chan error) {
 	responseChan := make(chan *ListTaskExecutionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListTaskExecutionsWithChan(request *ListTaskExecutionsRequ
 }
 
 // ListTaskExecutionsWithCallback invokes the oos.ListTaskExecutions API asynchronously
-// api document: https://help.aliyun.com/api/oos/listtaskexecutions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTaskExecutionsWithCallback(request *ListTaskExecutionsRequest, callback func(response *ListTaskExecutionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

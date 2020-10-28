@@ -21,7 +21,6 @@ import (
 )
 
 // GetTemplate invokes the oos.GetTemplate API synchronously
-// api document: https://help.aliyun.com/api/oos/gettemplate.html
 func (client *Client) GetTemplate(request *GetTemplateRequest) (response *GetTemplateResponse, err error) {
 	response = CreateGetTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetTemplate(request *GetTemplateRequest) (response *GetTem
 }
 
 // GetTemplateWithChan invokes the oos.GetTemplate API asynchronously
-// api document: https://help.aliyun.com/api/oos/gettemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTemplateWithChan(request *GetTemplateRequest) (<-chan *GetTemplateResponse, <-chan error) {
 	responseChan := make(chan *GetTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetTemplateWithChan(request *GetTemplateRequest) (<-chan *
 }
 
 // GetTemplateWithCallback invokes the oos.GetTemplate API asynchronously
-// api document: https://help.aliyun.com/api/oos/gettemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTemplateWithCallback(request *GetTemplateRequest, callback func(response *GetTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

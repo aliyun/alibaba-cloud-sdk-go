@@ -21,7 +21,6 @@ import (
 )
 
 // ListSecretParameterVersions invokes the oos.ListSecretParameterVersions API synchronously
-// api document: https://help.aliyun.com/api/oos/listsecretparameterversions.html
 func (client *Client) ListSecretParameterVersions(request *ListSecretParameterVersionsRequest) (response *ListSecretParameterVersionsResponse, err error) {
 	response = CreateListSecretParameterVersionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSecretParameterVersions(request *ListSecretParameterVe
 }
 
 // ListSecretParameterVersionsWithChan invokes the oos.ListSecretParameterVersions API asynchronously
-// api document: https://help.aliyun.com/api/oos/listsecretparameterversions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSecretParameterVersionsWithChan(request *ListSecretParameterVersionsRequest) (<-chan *ListSecretParameterVersionsResponse, <-chan error) {
 	responseChan := make(chan *ListSecretParameterVersionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSecretParameterVersionsWithChan(request *ListSecretPar
 }
 
 // ListSecretParameterVersionsWithCallback invokes the oos.ListSecretParameterVersions API asynchronously
-// api document: https://help.aliyun.com/api/oos/listsecretparameterversions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSecretParameterVersionsWithCallback(request *ListSecretParameterVersionsRequest, callback func(response *ListSecretParameterVersionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

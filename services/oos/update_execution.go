@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// TriggerExecution invokes the oos.TriggerExecution API synchronously
-func (client *Client) TriggerExecution(request *TriggerExecutionRequest) (response *TriggerExecutionResponse, err error) {
-	response = CreateTriggerExecutionResponse()
+// UpdateExecution invokes the oos.UpdateExecution API synchronously
+func (client *Client) UpdateExecution(request *UpdateExecutionRequest) (response *UpdateExecutionResponse, err error) {
+	response = CreateUpdateExecutionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// TriggerExecutionWithChan invokes the oos.TriggerExecution API asynchronously
-func (client *Client) TriggerExecutionWithChan(request *TriggerExecutionRequest) (<-chan *TriggerExecutionResponse, <-chan error) {
-	responseChan := make(chan *TriggerExecutionResponse, 1)
+// UpdateExecutionWithChan invokes the oos.UpdateExecution API asynchronously
+func (client *Client) UpdateExecutionWithChan(request *UpdateExecutionRequest) (<-chan *UpdateExecutionResponse, <-chan error) {
+	responseChan := make(chan *UpdateExecutionResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.TriggerExecution(request)
+		response, err := client.UpdateExecution(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) TriggerExecutionWithChan(request *TriggerExecutionRequest)
 	return responseChan, errChan
 }
 
-// TriggerExecutionWithCallback invokes the oos.TriggerExecution API asynchronously
-func (client *Client) TriggerExecutionWithCallback(request *TriggerExecutionRequest, callback func(response *TriggerExecutionResponse, err error)) <-chan int {
+// UpdateExecutionWithCallback invokes the oos.UpdateExecution API asynchronously
+func (client *Client) UpdateExecutionWithCallback(request *UpdateExecutionRequest, callback func(response *UpdateExecutionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *TriggerExecutionResponse
+		var response *UpdateExecutionResponse
 		var err error
 		defer close(result)
-		response, err = client.TriggerExecution(request)
+		response, err = client.UpdateExecution(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,34 +68,33 @@ func (client *Client) TriggerExecutionWithCallback(request *TriggerExecutionRequ
 	return result
 }
 
-// TriggerExecutionRequest is the request struct for api TriggerExecution
-type TriggerExecutionRequest struct {
+// UpdateExecutionRequest is the request struct for api UpdateExecution
+type UpdateExecutionRequest struct {
 	*requests.RpcRequest
 	ClientToken string `position:"Query" name:"ClientToken"`
-	Type        string `position:"Query" name:"Type"`
-	Content     string `position:"Query" name:"Content"`
 	ExecutionId string `position:"Query" name:"ExecutionId"`
+	Parameters  string `position:"Query" name:"Parameters"`
 }
 
-// TriggerExecutionResponse is the response struct for api TriggerExecution
-type TriggerExecutionResponse struct {
+// UpdateExecutionResponse is the response struct for api UpdateExecution
+type UpdateExecutionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateTriggerExecutionRequest creates a request to invoke TriggerExecution API
-func CreateTriggerExecutionRequest() (request *TriggerExecutionRequest) {
-	request = &TriggerExecutionRequest{
+// CreateUpdateExecutionRequest creates a request to invoke UpdateExecution API
+func CreateUpdateExecutionRequest() (request *UpdateExecutionRequest) {
+	request = &UpdateExecutionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("oos", "2019-06-01", "TriggerExecution", "oos", "openAPI")
+	request.InitWithApiInfo("oos", "2019-06-01", "UpdateExecution", "oos", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateTriggerExecutionResponse creates a response to parse from TriggerExecution response
-func CreateTriggerExecutionResponse() (response *TriggerExecutionResponse) {
-	response = &TriggerExecutionResponse{
+// CreateUpdateExecutionResponse creates a response to parse from UpdateExecution response
+func CreateUpdateExecutionResponse() (response *UpdateExecutionResponse) {
+	response = &UpdateExecutionResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

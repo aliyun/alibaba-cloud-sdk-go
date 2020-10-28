@@ -21,7 +21,6 @@ import (
 )
 
 // ListParameterVersions invokes the oos.ListParameterVersions API synchronously
-// api document: https://help.aliyun.com/api/oos/listparameterversions.html
 func (client *Client) ListParameterVersions(request *ListParameterVersionsRequest) (response *ListParameterVersionsResponse, err error) {
 	response = CreateListParameterVersionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListParameterVersions(request *ListParameterVersionsReques
 }
 
 // ListParameterVersionsWithChan invokes the oos.ListParameterVersions API asynchronously
-// api document: https://help.aliyun.com/api/oos/listparameterversions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListParameterVersionsWithChan(request *ListParameterVersionsRequest) (<-chan *ListParameterVersionsResponse, <-chan error) {
 	responseChan := make(chan *ListParameterVersionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListParameterVersionsWithChan(request *ListParameterVersio
 }
 
 // ListParameterVersionsWithCallback invokes the oos.ListParameterVersions API asynchronously
-// api document: https://help.aliyun.com/api/oos/listparameterversions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListParameterVersionsWithCallback(request *ListParameterVersionsRequest, callback func(response *ListParameterVersionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

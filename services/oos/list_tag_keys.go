@@ -21,7 +21,6 @@ import (
 )
 
 // ListTagKeys invokes the oos.ListTagKeys API synchronously
-// api document: https://help.aliyun.com/api/oos/listtagkeys.html
 func (client *Client) ListTagKeys(request *ListTagKeysRequest) (response *ListTagKeysResponse, err error) {
 	response = CreateListTagKeysResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListTagKeys(request *ListTagKeysRequest) (response *ListTa
 }
 
 // ListTagKeysWithChan invokes the oos.ListTagKeys API asynchronously
-// api document: https://help.aliyun.com/api/oos/listtagkeys.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTagKeysWithChan(request *ListTagKeysRequest) (<-chan *ListTagKeysResponse, <-chan error) {
 	responseChan := make(chan *ListTagKeysResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListTagKeysWithChan(request *ListTagKeysRequest) (<-chan *
 }
 
 // ListTagKeysWithCallback invokes the oos.ListTagKeys API asynchronously
-// api document: https://help.aliyun.com/api/oos/listtagkeys.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTagKeysWithCallback(request *ListTagKeysRequest, callback func(response *ListTagKeysResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

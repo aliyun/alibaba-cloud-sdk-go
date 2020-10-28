@@ -27,4 +27,5 @@ type ParameterInListSecretParameters struct {
 	ShareType        string `json:"ShareType" xml:"ShareType"`
 	ParameterVersion string `json:"ParameterVersion" xml:"ParameterVersion"`
 	Type             string `json:"Type" xml:"Type"`
+	KeyId            string `json:"KeyId" xml:"KeyId"`
 }

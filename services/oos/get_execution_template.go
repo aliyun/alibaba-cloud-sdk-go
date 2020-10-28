@@ -21,7 +21,6 @@ import (
 )
 
 // GetExecutionTemplate invokes the oos.GetExecutionTemplate API synchronously
-// api document: https://help.aliyun.com/api/oos/getexecutiontemplate.html
 func (client *Client) GetExecutionTemplate(request *GetExecutionTemplateRequest) (response *GetExecutionTemplateResponse, err error) {
 	response = CreateGetExecutionTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetExecutionTemplate(request *GetExecutionTemplateRequest)
 }
 
 // GetExecutionTemplateWithChan invokes the oos.GetExecutionTemplate API asynchronously
-// api document: https://help.aliyun.com/api/oos/getexecutiontemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetExecutionTemplateWithChan(request *GetExecutionTemplateRequest) (<-chan *GetExecutionTemplateResponse, <-chan error) {
 	responseChan := make(chan *GetExecutionTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetExecutionTemplateWithChan(request *GetExecutionTemplate
 }
 
 // GetExecutionTemplateWithCallback invokes the oos.GetExecutionTemplate API asynchronously
-// api document: https://help.aliyun.com/api/oos/getexecutiontemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetExecutionTemplateWithCallback(request *GetExecutionTemplateRequest, callback func(response *GetExecutionTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

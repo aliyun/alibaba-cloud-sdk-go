@@ -21,7 +21,6 @@ import (
 )
 
 // ListTemplateVersions invokes the oos.ListTemplateVersions API synchronously
-// api document: https://help.aliyun.com/api/oos/listtemplateversions.html
 func (client *Client) ListTemplateVersions(request *ListTemplateVersionsRequest) (response *ListTemplateVersionsResponse, err error) {
 	response = CreateListTemplateVersionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListTemplateVersions(request *ListTemplateVersionsRequest)
 }
 
 // ListTemplateVersionsWithChan invokes the oos.ListTemplateVersions API asynchronously
-// api document: https://help.aliyun.com/api/oos/listtemplateversions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTemplateVersionsWithChan(request *ListTemplateVersionsRequest) (<-chan *ListTemplateVersionsResponse, <-chan error) {
 	responseChan := make(chan *ListTemplateVersionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListTemplateVersionsWithChan(request *ListTemplateVersions
 }
 
 // ListTemplateVersionsWithCallback invokes the oos.ListTemplateVersions API asynchronously
-// api document: https://help.aliyun.com/api/oos/listtemplateversions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTemplateVersionsWithCallback(request *ListTemplateVersionsRequest, callback func(response *ListTemplateVersionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

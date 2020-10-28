@@ -18,13 +18,15 @@ package oos
 // Parameter is a nested struct in oos response
 type Parameter struct {
 	Name             string `json:"Name" xml:"Name"`
+	CreatedBy        string `json:"CreatedBy" xml:"CreatedBy"`
 	ParameterVersion int    `json:"ParameterVersion" xml:"ParameterVersion"`
 	Value            string `json:"Value" xml:"Value"`
 	UpdatedBy        string `json:"UpdatedBy" xml:"UpdatedBy"`
+	Constraints      string `json:"Constraints" xml:"Constraints"`
 	CreatedDate      string `json:"CreatedDate" xml:"CreatedDate"`
 	Id               string `json:"Id" xml:"Id"`
 	Description      string `json:"Description" xml:"Description"`
-	CreatedBy        string `json:"CreatedBy" xml:"CreatedBy"`
+	KeyId            string `json:"KeyId" xml:"KeyId"`
 	UpdatedDate      string `json:"UpdatedDate" xml:"UpdatedDate"`
 	ShareType        string `json:"ShareType" xml:"ShareType"`
 	Type             string `json:"Type" xml:"Type"`

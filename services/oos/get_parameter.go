@@ -21,7 +21,6 @@ import (
 )
 
 // GetParameter invokes the oos.GetParameter API synchronously
-// api document: https://help.aliyun.com/api/oos/getparameter.html
 func (client *Client) GetParameter(request *GetParameterRequest) (response *GetParameterResponse, err error) {
 	response = CreateGetParameterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetParameter(request *GetParameterRequest) (response *GetP
 }
 
 // GetParameterWithChan invokes the oos.GetParameter API asynchronously
-// api document: https://help.aliyun.com/api/oos/getparameter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetParameterWithChan(request *GetParameterRequest) (<-chan *GetParameterResponse, <-chan error) {
 	responseChan := make(chan *GetParameterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetParameterWithChan(request *GetParameterRequest) (<-chan
 }
 
 // GetParameterWithCallback invokes the oos.GetParameter API asynchronously
-// api document: https://help.aliyun.com/api/oos/getparameter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetParameterWithCallback(request *GetParameterRequest, callback func(response *GetParameterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

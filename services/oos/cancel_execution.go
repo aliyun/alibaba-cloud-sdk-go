@@ -21,7 +21,6 @@ import (
 )
 
 // CancelExecution invokes the oos.CancelExecution API synchronously
-// api document: https://help.aliyun.com/api/oos/cancelexecution.html
 func (client *Client) CancelExecution(request *CancelExecutionRequest) (response *CancelExecutionResponse, err error) {
 	response = CreateCancelExecutionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CancelExecution(request *CancelExecutionRequest) (response
 }
 
 // CancelExecutionWithChan invokes the oos.CancelExecution API asynchronously
-// api document: https://help.aliyun.com/api/oos/cancelexecution.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelExecutionWithChan(request *CancelExecutionRequest) (<-chan *CancelExecutionResponse, <-chan error) {
 	responseChan := make(chan *CancelExecutionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CancelExecutionWithChan(request *CancelExecutionRequest) (
 }
 
 // CancelExecutionWithCallback invokes the oos.CancelExecution API asynchronously
-// api document: https://help.aliyun.com/api/oos/cancelexecution.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelExecutionWithCallback(request *CancelExecutionRequest, callback func(response *CancelExecutionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

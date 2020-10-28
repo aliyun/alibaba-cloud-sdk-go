@@ -21,7 +21,6 @@ import (
 )
 
 // ValidateTemplateContent invokes the oos.ValidateTemplateContent API synchronously
-// api document: https://help.aliyun.com/api/oos/validatetemplatecontent.html
 func (client *Client) ValidateTemplateContent(request *ValidateTemplateContentRequest) (response *ValidateTemplateContentResponse, err error) {
 	response = CreateValidateTemplateContentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ValidateTemplateContent(request *ValidateTemplateContentRe
 }
 
 // ValidateTemplateContentWithChan invokes the oos.ValidateTemplateContent API asynchronously
-// api document: https://help.aliyun.com/api/oos/validatetemplatecontent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ValidateTemplateContentWithChan(request *ValidateTemplateContentRequest) (<-chan *ValidateTemplateContentResponse, <-chan error) {
 	responseChan := make(chan *ValidateTemplateContentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ValidateTemplateContentWithChan(request *ValidateTemplateC
 }
 
 // ValidateTemplateContentWithCallback invokes the oos.ValidateTemplateContent API asynchronously
-// api document: https://help.aliyun.com/api/oos/validatetemplatecontent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ValidateTemplateContentWithCallback(request *ValidateTemplateContentRequest, callback func(response *ValidateTemplateContentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

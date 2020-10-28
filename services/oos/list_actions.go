@@ -21,7 +21,6 @@ import (
 )
 
 // ListActions invokes the oos.ListActions API synchronously
-// api document: https://help.aliyun.com/api/oos/listactions.html
 func (client *Client) ListActions(request *ListActionsRequest) (response *ListActionsResponse, err error) {
 	response = CreateListActionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListActions(request *ListActionsRequest) (response *ListAc
 }
 
 // ListActionsWithChan invokes the oos.ListActions API asynchronously
-// api document: https://help.aliyun.com/api/oos/listactions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListActionsWithChan(request *ListActionsRequest) (<-chan *ListActionsResponse, <-chan error) {
 	responseChan := make(chan *ListActionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListActionsWithChan(request *ListActionsRequest) (<-chan *
 }
 
 // ListActionsWithCallback invokes the oos.ListActions API asynchronously
-// api document: https://help.aliyun.com/api/oos/listactions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListActionsWithCallback(request *ListActionsRequest, callback func(response *ListActionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

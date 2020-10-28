@@ -21,7 +21,6 @@ import (
 )
 
 // ListSecretParameters invokes the oos.ListSecretParameters API synchronously
-// api document: https://help.aliyun.com/api/oos/listsecretparameters.html
 func (client *Client) ListSecretParameters(request *ListSecretParametersRequest) (response *ListSecretParametersResponse, err error) {
 	response = CreateListSecretParametersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSecretParameters(request *ListSecretParametersRequest)
 }
 
 // ListSecretParametersWithChan invokes the oos.ListSecretParameters API asynchronously
-// api document: https://help.aliyun.com/api/oos/listsecretparameters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSecretParametersWithChan(request *ListSecretParametersRequest) (<-chan *ListSecretParametersResponse, <-chan error) {
 	responseChan := make(chan *ListSecretParametersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSecretParametersWithChan(request *ListSecretParameters
 }
 
 // ListSecretParametersWithCallback invokes the oos.ListSecretParameters API asynchronously
-// api document: https://help.aliyun.com/api/oos/listsecretparameters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSecretParametersWithCallback(request *ListSecretParametersRequest, callback func(response *ListSecretParametersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

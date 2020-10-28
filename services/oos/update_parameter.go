@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateParameter invokes the oos.UpdateParameter API synchronously
-// api document: https://help.aliyun.com/api/oos/updateparameter.html
 func (client *Client) UpdateParameter(request *UpdateParameterRequest) (response *UpdateParameterResponse, err error) {
 	response = CreateUpdateParameterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateParameter(request *UpdateParameterRequest) (response
 }
 
 // UpdateParameterWithChan invokes the oos.UpdateParameter API asynchronously
-// api document: https://help.aliyun.com/api/oos/updateparameter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateParameterWithChan(request *UpdateParameterRequest) (<-chan *UpdateParameterResponse, <-chan error) {
 	responseChan := make(chan *UpdateParameterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateParameterWithChan(request *UpdateParameterRequest) (
 }
 
 // UpdateParameterWithCallback invokes the oos.UpdateParameter API asynchronously
-// api document: https://help.aliyun.com/api/oos/updateparameter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateParameterWithCallback(request *UpdateParameterRequest, callback func(response *UpdateParameterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSecretParameter invokes the oos.DeleteSecretParameter API synchronously
-// api document: https://help.aliyun.com/api/oos/deletesecretparameter.html
 func (client *Client) DeleteSecretParameter(request *DeleteSecretParameterRequest) (response *DeleteSecretParameterResponse, err error) {
 	response = CreateDeleteSecretParameterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSecretParameter(request *DeleteSecretParameterReques
 }
 
 // DeleteSecretParameterWithChan invokes the oos.DeleteSecretParameter API asynchronously
-// api document: https://help.aliyun.com/api/oos/deletesecretparameter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSecretParameterWithChan(request *DeleteSecretParameterRequest) (<-chan *DeleteSecretParameterResponse, <-chan error) {
 	responseChan := make(chan *DeleteSecretParameterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSecretParameterWithChan(request *DeleteSecretParamet
 }
 
 // DeleteSecretParameterWithCallback invokes the oos.DeleteSecretParameter API asynchronously
-// api document: https://help.aliyun.com/api/oos/deletesecretparameter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSecretParameterWithCallback(request *DeleteSecretParameterRequest, callback func(response *DeleteSecretParameterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

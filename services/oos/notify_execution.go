@@ -21,7 +21,6 @@ import (
 )
 
 // NotifyExecution invokes the oos.NotifyExecution API synchronously
-// api document: https://help.aliyun.com/api/oos/notifyexecution.html
 func (client *Client) NotifyExecution(request *NotifyExecutionRequest) (response *NotifyExecutionResponse, err error) {
 	response = CreateNotifyExecutionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) NotifyExecution(request *NotifyExecutionRequest) (response
 }
 
 // NotifyExecutionWithChan invokes the oos.NotifyExecution API asynchronously
-// api document: https://help.aliyun.com/api/oos/notifyexecution.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NotifyExecutionWithChan(request *NotifyExecutionRequest) (<-chan *NotifyExecutionResponse, <-chan error) {
 	responseChan := make(chan *NotifyExecutionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) NotifyExecutionWithChan(request *NotifyExecutionRequest) (
 }
 
 // NotifyExecutionWithCallback invokes the oos.NotifyExecution API asynchronously
-// api document: https://help.aliyun.com/api/oos/notifyexecution.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NotifyExecutionWithCallback(request *NotifyExecutionRequest, callback func(response *NotifyExecutionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

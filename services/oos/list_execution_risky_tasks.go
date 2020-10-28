@@ -21,7 +21,6 @@ import (
 )
 
 // ListExecutionRiskyTasks invokes the oos.ListExecutionRiskyTasks API synchronously
-// api document: https://help.aliyun.com/api/oos/listexecutionriskytasks.html
 func (client *Client) ListExecutionRiskyTasks(request *ListExecutionRiskyTasksRequest) (response *ListExecutionRiskyTasksResponse, err error) {
 	response = CreateListExecutionRiskyTasksResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListExecutionRiskyTasks(request *ListExecutionRiskyTasksRe
 }
 
 // ListExecutionRiskyTasksWithChan invokes the oos.ListExecutionRiskyTasks API asynchronously
-// api document: https://help.aliyun.com/api/oos/listexecutionriskytasks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListExecutionRiskyTasksWithChan(request *ListExecutionRiskyTasksRequest) (<-chan *ListExecutionRiskyTasksResponse, <-chan error) {
 	responseChan := make(chan *ListExecutionRiskyTasksResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListExecutionRiskyTasksWithChan(request *ListExecutionRisk
 }
 
 // ListExecutionRiskyTasksWithCallback invokes the oos.ListExecutionRiskyTasks API asynchronously
-// api document: https://help.aliyun.com/api/oos/listexecutionriskytasks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListExecutionRiskyTasksWithCallback(request *ListExecutionRiskyTasksRequest, callback func(response *ListExecutionRiskyTasksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

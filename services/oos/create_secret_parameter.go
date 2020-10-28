@@ -21,7 +21,6 @@ import (
 )
 
 // CreateSecretParameter invokes the oos.CreateSecretParameter API synchronously
-// api document: https://help.aliyun.com/api/oos/createsecretparameter.html
 func (client *Client) CreateSecretParameter(request *CreateSecretParameterRequest) (response *CreateSecretParameterResponse, err error) {
 	response = CreateCreateSecretParameterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateSecretParameter(request *CreateSecretParameterReques
 }
 
 // CreateSecretParameterWithChan invokes the oos.CreateSecretParameter API asynchronously
-// api document: https://help.aliyun.com/api/oos/createsecretparameter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSecretParameterWithChan(request *CreateSecretParameterRequest) (<-chan *CreateSecretParameterResponse, <-chan error) {
 	responseChan := make(chan *CreateSecretParameterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateSecretParameterWithChan(request *CreateSecretParamet
 }
 
 // CreateSecretParameterWithCallback invokes the oos.CreateSecretParameter API asynchronously
-// api document: https://help.aliyun.com/api/oos/createsecretparameter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSecretParameterWithCallback(request *CreateSecretParameterRequest, callback func(response *CreateSecretParameterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +75,7 @@ type CreateSecretParameterRequest struct {
 	Description string `position:"Query" name:"Description"`
 	KeyId       string `position:"Query" name:"KeyId"`
 	Type        string `position:"Query" name:"Type"`
+	Constraints string `position:"Query" name:"Constraints"`
 	Name        string `position:"Query" name:"Name"`
 	Value       string `position:"Query" name:"Value"`
 }

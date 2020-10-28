@@ -21,7 +21,6 @@ import (
 )
 
 // GenerateExecutionPolicy invokes the oos.GenerateExecutionPolicy API synchronously
-// api document: https://help.aliyun.com/api/oos/generateexecutionpolicy.html
 func (client *Client) GenerateExecutionPolicy(request *GenerateExecutionPolicyRequest) (response *GenerateExecutionPolicyResponse, err error) {
 	response = CreateGenerateExecutionPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GenerateExecutionPolicy(request *GenerateExecutionPolicyRe
 }
 
 // GenerateExecutionPolicyWithChan invokes the oos.GenerateExecutionPolicy API asynchronously
-// api document: https://help.aliyun.com/api/oos/generateexecutionpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateExecutionPolicyWithChan(request *GenerateExecutionPolicyRequest) (<-chan *GenerateExecutionPolicyResponse, <-chan error) {
 	responseChan := make(chan *GenerateExecutionPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GenerateExecutionPolicyWithChan(request *GenerateExecution
 }
 
 // GenerateExecutionPolicyWithCallback invokes the oos.GenerateExecutionPolicy API asynchronously
-// api document: https://help.aliyun.com/api/oos/generateexecutionpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateExecutionPolicyWithCallback(request *GenerateExecutionPolicyRequest, callback func(response *GenerateExecutionPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

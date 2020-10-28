@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateSecretParameter invokes the oos.UpdateSecretParameter API synchronously
-// api document: https://help.aliyun.com/api/oos/updatesecretparameter.html
 func (client *Client) UpdateSecretParameter(request *UpdateSecretParameterRequest) (response *UpdateSecretParameterResponse, err error) {
 	response = CreateUpdateSecretParameterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateSecretParameter(request *UpdateSecretParameterReques
 }
 
 // UpdateSecretParameterWithChan invokes the oos.UpdateSecretParameter API asynchronously
-// api document: https://help.aliyun.com/api/oos/updatesecretparameter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSecretParameterWithChan(request *UpdateSecretParameterRequest) (<-chan *UpdateSecretParameterResponse, <-chan error) {
 	responseChan := make(chan *UpdateSecretParameterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateSecretParameterWithChan(request *UpdateSecretParamet
 }
 
 // UpdateSecretParameterWithCallback invokes the oos.UpdateSecretParameter API asynchronously
-// api document: https://help.aliyun.com/api/oos/updatesecretparameter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSecretParameterWithCallback(request *UpdateSecretParameterRequest, callback func(response *UpdateSecretParameterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

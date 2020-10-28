@@ -1,3 +1,7 @@
+2020-10-28 Version: v1.61.614
+- Generated 2019-06-01 for `oos`.
+- Support GetParameters, GetParametersByPath, GetSecretParameters, GetSecretParametersByPath.
+
 2020-10-28 Version: v1.61.613
 - Generated 2020-02-02 for `polardbx`.
 - Supported all language sdk.

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteParameter invokes the oos.DeleteParameter API synchronously
-// api document: https://help.aliyun.com/api/oos/deleteparameter.html
 func (client *Client) DeleteParameter(request *DeleteParameterRequest) (response *DeleteParameterResponse, err error) {
 	response = CreateDeleteParameterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteParameter(request *DeleteParameterRequest) (response
 }
 
 // DeleteParameterWithChan invokes the oos.DeleteParameter API asynchronously
-// api document: https://help.aliyun.com/api/oos/deleteparameter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteParameterWithChan(request *DeleteParameterRequest) (<-chan *DeleteParameterResponse, <-chan error) {
 	responseChan := make(chan *DeleteParameterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteParameterWithChan(request *DeleteParameterRequest) (
 }
 
 // DeleteParameterWithCallback invokes the oos.DeleteParameter API asynchronously
-// api document: https://help.aliyun.com/api/oos/deleteparameter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteParameterWithCallback(request *DeleteParameterRequest, callback func(response *DeleteParameterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteExecutions invokes the oos.DeleteExecutions API synchronously
-// api document: https://help.aliyun.com/api/oos/deleteexecutions.html
 func (client *Client) DeleteExecutions(request *DeleteExecutionsRequest) (response *DeleteExecutionsResponse, err error) {
 	response = CreateDeleteExecutionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteExecutions(request *DeleteExecutionsRequest) (respon
 }
 
 // DeleteExecutionsWithChan invokes the oos.DeleteExecutions API asynchronously
-// api document: https://help.aliyun.com/api/oos/deleteexecutions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteExecutionsWithChan(request *DeleteExecutionsRequest) (<-chan *DeleteExecutionsResponse, <-chan error) {
 	responseChan := make(chan *DeleteExecutionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteExecutionsWithChan(request *DeleteExecutionsRequest)
 }
 
 // DeleteExecutionsWithCallback invokes the oos.DeleteExecutions API asynchronously
-// api document: https://help.aliyun.com/api/oos/deleteexecutions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteExecutionsWithCallback(request *DeleteExecutionsRequest, callback func(response *DeleteExecutionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

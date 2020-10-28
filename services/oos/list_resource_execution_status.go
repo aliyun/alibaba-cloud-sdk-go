@@ -21,7 +21,6 @@ import (
 )
 
 // ListResourceExecutionStatus invokes the oos.ListResourceExecutionStatus API synchronously
-// api document: https://help.aliyun.com/api/oos/listresourceexecutionstatus.html
 func (client *Client) ListResourceExecutionStatus(request *ListResourceExecutionStatusRequest) (response *ListResourceExecutionStatusResponse, err error) {
 	response = CreateListResourceExecutionStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListResourceExecutionStatus(request *ListResourceExecution
 }
 
 // ListResourceExecutionStatusWithChan invokes the oos.ListResourceExecutionStatus API asynchronously
-// api document: https://help.aliyun.com/api/oos/listresourceexecutionstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListResourceExecutionStatusWithChan(request *ListResourceExecutionStatusRequest) (<-chan *ListResourceExecutionStatusResponse, <-chan error) {
 	responseChan := make(chan *ListResourceExecutionStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListResourceExecutionStatusWithChan(request *ListResourceE
 }
 
 // ListResourceExecutionStatusWithCallback invokes the oos.ListResourceExecutionStatus API asynchronously
-// api document: https://help.aliyun.com/api/oos/listresourceexecutionstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListResourceExecutionStatusWithCallback(request *ListResourceExecutionStatusRequest, callback func(response *ListResourceExecutionStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

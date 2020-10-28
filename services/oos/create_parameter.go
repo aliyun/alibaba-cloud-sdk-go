@@ -21,7 +21,6 @@ import (
 )
 
 // CreateParameter invokes the oos.CreateParameter API synchronously
-// api document: https://help.aliyun.com/api/oos/createparameter.html
 func (client *Client) CreateParameter(request *CreateParameterRequest) (response *CreateParameterResponse, err error) {
 	response = CreateCreateParameterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateParameter(request *CreateParameterRequest) (response
 }
 
 // CreateParameterWithChan invokes the oos.CreateParameter API asynchronously
-// api document: https://help.aliyun.com/api/oos/createparameter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateParameterWithChan(request *CreateParameterRequest) (<-chan *CreateParameterResponse, <-chan error) {
 	responseChan := make(chan *CreateParameterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateParameterWithChan(request *CreateParameterRequest) (
 }
 
 // CreateParameterWithCallback invokes the oos.CreateParameter API asynchronously
-// api document: https://help.aliyun.com/api/oos/createparameter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateParameterWithCallback(request *CreateParameterRequest, callback func(response *CreateParameterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +74,7 @@ type CreateParameterRequest struct {
 	ClientToken string `position:"Query" name:"ClientToken"`
 	Description string `position:"Query" name:"Description"`
 	Type        string `position:"Query" name:"Type"`
+	Constraints string `position:"Query" name:"Constraints"`
 	Name        string `position:"Query" name:"Name"`
 	Value       string `position:"Query" name:"Value"`
 }
