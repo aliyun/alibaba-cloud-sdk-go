@@ -21,7 +21,6 @@ import (
 )
 
 // InstallUserPlugins invokes the elasticsearch.InstallUserPlugins API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/installuserplugins.html
 func (client *Client) InstallUserPlugins(request *InstallUserPluginsRequest) (response *InstallUserPluginsResponse, err error) {
 	response = CreateInstallUserPluginsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InstallUserPlugins(request *InstallUserPluginsRequest) (re
 }
 
 // InstallUserPluginsWithChan invokes the elasticsearch.InstallUserPlugins API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/installuserplugins.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InstallUserPluginsWithChan(request *InstallUserPluginsRequest) (<-chan *InstallUserPluginsResponse, <-chan error) {
 	responseChan := make(chan *InstallUserPluginsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InstallUserPluginsWithChan(request *InstallUserPluginsRequ
 }
 
 // InstallUserPluginsWithCallback invokes the elasticsearch.InstallUserPlugins API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/installuserplugins.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InstallUserPluginsWithCallback(request *InstallUserPluginsRequest, callback func(response *InstallUserPluginsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

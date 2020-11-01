@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateSnapshotSetting invokes the elasticsearch.UpdateSnapshotSetting API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatesnapshotsetting.html
 func (client *Client) UpdateSnapshotSetting(request *UpdateSnapshotSettingRequest) (response *UpdateSnapshotSettingResponse, err error) {
 	response = CreateUpdateSnapshotSettingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateSnapshotSetting(request *UpdateSnapshotSettingReques
 }
 
 // UpdateSnapshotSettingWithChan invokes the elasticsearch.UpdateSnapshotSetting API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatesnapshotsetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSnapshotSettingWithChan(request *UpdateSnapshotSettingRequest) (<-chan *UpdateSnapshotSettingResponse, <-chan error) {
 	responseChan := make(chan *UpdateSnapshotSettingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateSnapshotSettingWithChan(request *UpdateSnapshotSetti
 }
 
 // UpdateSnapshotSettingWithCallback invokes the elasticsearch.UpdateSnapshotSetting API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatesnapshotsetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSnapshotSettingWithCallback(request *UpdateSnapshotSettingRequest, callback func(response *UpdateSnapshotSettingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

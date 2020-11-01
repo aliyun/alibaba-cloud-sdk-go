@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeKibanaSettings invokes the elasticsearch.DescribeKibanaSettings API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/describekibanasettings.html
 func (client *Client) DescribeKibanaSettings(request *DescribeKibanaSettingsRequest) (response *DescribeKibanaSettingsResponse, err error) {
 	response = CreateDescribeKibanaSettingsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeKibanaSettings(request *DescribeKibanaSettingsRequ
 }
 
 // DescribeKibanaSettingsWithChan invokes the elasticsearch.DescribeKibanaSettings API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/describekibanasettings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeKibanaSettingsWithChan(request *DescribeKibanaSettingsRequest) (<-chan *DescribeKibanaSettingsResponse, <-chan error) {
 	responseChan := make(chan *DescribeKibanaSettingsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeKibanaSettingsWithChan(request *DescribeKibanaSett
 }
 
 // DescribeKibanaSettingsWithCallback invokes the elasticsearch.DescribeKibanaSettings API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/describekibanasettings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeKibanaSettingsWithCallback(request *DescribeKibanaSettingsRequest, callback func(response *DescribeKibanaSettingsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

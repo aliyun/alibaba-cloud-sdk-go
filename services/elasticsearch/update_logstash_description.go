@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateLogstashDescription invokes the elasticsearch.UpdateLogstashDescription API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatelogstashdescription.html
 func (client *Client) UpdateLogstashDescription(request *UpdateLogstashDescriptionRequest) (response *UpdateLogstashDescriptionResponse, err error) {
 	response = CreateUpdateLogstashDescriptionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateLogstashDescription(request *UpdateLogstashDescripti
 }
 
 // UpdateLogstashDescriptionWithChan invokes the elasticsearch.UpdateLogstashDescription API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatelogstashdescription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLogstashDescriptionWithChan(request *UpdateLogstashDescriptionRequest) (<-chan *UpdateLogstashDescriptionResponse, <-chan error) {
 	responseChan := make(chan *UpdateLogstashDescriptionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateLogstashDescriptionWithChan(request *UpdateLogstashD
 }
 
 // UpdateLogstashDescriptionWithCallback invokes the elasticsearch.UpdateLogstashDescription API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatelogstashdescription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLogstashDescriptionWithCallback(request *UpdateLogstashDescriptionRequest, callback func(response *UpdateLogstashDescriptionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // RestartInstance invokes the elasticsearch.RestartInstance API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/restartinstance.html
 func (client *Client) RestartInstance(request *RestartInstanceRequest) (response *RestartInstanceResponse, err error) {
 	response = CreateRestartInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RestartInstance(request *RestartInstanceRequest) (response
 }
 
 // RestartInstanceWithChan invokes the elasticsearch.RestartInstance API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/restartinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartInstanceWithChan(request *RestartInstanceRequest) (<-chan *RestartInstanceResponse, <-chan error) {
 	responseChan := make(chan *RestartInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RestartInstanceWithChan(request *RestartInstanceRequest) (
 }
 
 // RestartInstanceWithCallback invokes the elasticsearch.RestartInstance API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/restartinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartInstanceWithCallback(request *RestartInstanceRequest, callback func(response *RestartInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,7 +79,8 @@ type RestartInstanceRequest struct {
 // RestartInstanceResponse is the response struct for api RestartInstance
 type RestartInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string                  `json:"RequestId" xml:"RequestId"`
+	Result    ResultInRestartInstance `json:"Result" xml:"Result"`
 }
 
 // CreateRestartInstanceRequest creates a request to invoke RestartInstance API

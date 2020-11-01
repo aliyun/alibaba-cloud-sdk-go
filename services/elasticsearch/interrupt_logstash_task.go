@@ -21,7 +21,6 @@ import (
 )
 
 // InterruptLogstashTask invokes the elasticsearch.InterruptLogstashTask API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/interruptlogstashtask.html
 func (client *Client) InterruptLogstashTask(request *InterruptLogstashTaskRequest) (response *InterruptLogstashTaskResponse, err error) {
 	response = CreateInterruptLogstashTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InterruptLogstashTask(request *InterruptLogstashTaskReques
 }
 
 // InterruptLogstashTaskWithChan invokes the elasticsearch.InterruptLogstashTask API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/interruptlogstashtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InterruptLogstashTaskWithChan(request *InterruptLogstashTaskRequest) (<-chan *InterruptLogstashTaskResponse, <-chan error) {
 	responseChan := make(chan *InterruptLogstashTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InterruptLogstashTaskWithChan(request *InterruptLogstashTa
 }
 
 // InterruptLogstashTaskWithCallback invokes the elasticsearch.InterruptLogstashTask API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/interruptlogstashtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InterruptLogstashTaskWithCallback(request *InterruptLogstashTaskRequest, callback func(response *InterruptLogstashTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

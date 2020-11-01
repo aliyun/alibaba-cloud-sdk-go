@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateInstanceSettings invokes the elasticsearch.UpdateInstanceSettings API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updateinstancesettings.html
 func (client *Client) UpdateInstanceSettings(request *UpdateInstanceSettingsRequest) (response *UpdateInstanceSettingsResponse, err error) {
 	response = CreateUpdateInstanceSettingsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateInstanceSettings(request *UpdateInstanceSettingsRequ
 }
 
 // UpdateInstanceSettingsWithChan invokes the elasticsearch.UpdateInstanceSettings API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updateinstancesettings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateInstanceSettingsWithChan(request *UpdateInstanceSettingsRequest) (<-chan *UpdateInstanceSettingsResponse, <-chan error) {
 	responseChan := make(chan *UpdateInstanceSettingsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateInstanceSettingsWithChan(request *UpdateInstanceSett
 }
 
 // UpdateInstanceSettingsWithCallback invokes the elasticsearch.UpdateInstanceSettings API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updateinstancesettings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateInstanceSettingsWithCallback(request *UpdateInstanceSettingsRequest, callback func(response *UpdateInstanceSettingsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

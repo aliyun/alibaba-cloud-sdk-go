@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyWhiteIps invokes the elasticsearch.ModifyWhiteIps API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/modifywhiteips.html
 func (client *Client) ModifyWhiteIps(request *ModifyWhiteIpsRequest) (response *ModifyWhiteIpsResponse, err error) {
 	response = CreateModifyWhiteIpsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyWhiteIps(request *ModifyWhiteIpsRequest) (response *
 }
 
 // ModifyWhiteIpsWithChan invokes the elasticsearch.ModifyWhiteIps API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/modifywhiteips.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWhiteIpsWithChan(request *ModifyWhiteIpsRequest) (<-chan *ModifyWhiteIpsResponse, <-chan error) {
 	responseChan := make(chan *ModifyWhiteIpsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyWhiteIpsWithChan(request *ModifyWhiteIpsRequest) (<-
 }
 
 // ModifyWhiteIpsWithCallback invokes the elasticsearch.ModifyWhiteIps API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/modifywhiteips.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWhiteIpsWithCallback(request *ModifyWhiteIpsRequest, callback func(response *ModifyWhiteIpsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

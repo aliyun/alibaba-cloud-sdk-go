@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateDescription invokes the elasticsearch.UpdateDescription API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatedescription.html
 func (client *Client) UpdateDescription(request *UpdateDescriptionRequest) (response *UpdateDescriptionResponse, err error) {
 	response = CreateUpdateDescriptionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateDescription(request *UpdateDescriptionRequest) (resp
 }
 
 // UpdateDescriptionWithChan invokes the elasticsearch.UpdateDescription API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatedescription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDescriptionWithChan(request *UpdateDescriptionRequest) (<-chan *UpdateDescriptionResponse, <-chan error) {
 	responseChan := make(chan *UpdateDescriptionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateDescriptionWithChan(request *UpdateDescriptionReques
 }
 
 // UpdateDescriptionWithCallback invokes the elasticsearch.UpdateDescription API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatedescription.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDescriptionWithCallback(request *UpdateDescriptionRequest, callback func(response *UpdateDescriptionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

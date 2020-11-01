@@ -21,7 +21,6 @@ import (
 )
 
 // ListPlugins invokes the elasticsearch.ListPlugins API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listplugins.html
 func (client *Client) ListPlugins(request *ListPluginsRequest) (response *ListPluginsResponse, err error) {
 	response = CreateListPluginsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListPlugins(request *ListPluginsRequest) (response *ListPl
 }
 
 // ListPluginsWithChan invokes the elasticsearch.ListPlugins API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listplugins.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPluginsWithChan(request *ListPluginsRequest) (<-chan *ListPluginsResponse, <-chan error) {
 	responseChan := make(chan *ListPluginsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListPluginsWithChan(request *ListPluginsRequest) (<-chan *
 }
 
 // ListPluginsWithCallback invokes the elasticsearch.ListPlugins API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listplugins.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPluginsWithCallback(request *ListPluginsRequest, callback func(response *ListPluginsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

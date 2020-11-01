@@ -21,7 +21,6 @@ import (
 )
 
 // CreateLogstash invokes the elasticsearch.CreateLogstash API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/createlogstash.html
 func (client *Client) CreateLogstash(request *CreateLogstashRequest) (response *CreateLogstashResponse, err error) {
 	response = CreateCreateLogstashResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateLogstash(request *CreateLogstashRequest) (response *
 }
 
 // CreateLogstashWithChan invokes the elasticsearch.CreateLogstash API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/createlogstash.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLogstashWithChan(request *CreateLogstashRequest) (<-chan *CreateLogstashResponse, <-chan error) {
 	responseChan := make(chan *CreateLogstashResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateLogstashWithChan(request *CreateLogstashRequest) (<-
 }
 
 // CreateLogstashWithCallback invokes the elasticsearch.CreateLogstash API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/createlogstash.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLogstashWithCallback(request *CreateLogstashRequest, callback func(response *CreateLogstashResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

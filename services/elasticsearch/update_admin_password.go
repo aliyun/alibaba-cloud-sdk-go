@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateAdminPassword invokes the elasticsearch.UpdateAdminPassword API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updateadminpassword.html
 func (client *Client) UpdateAdminPassword(request *UpdateAdminPasswordRequest) (response *UpdateAdminPasswordResponse, err error) {
 	response = CreateUpdateAdminPasswordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateAdminPassword(request *UpdateAdminPasswordRequest) (
 }
 
 // UpdateAdminPasswordWithChan invokes the elasticsearch.UpdateAdminPassword API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updateadminpassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAdminPasswordWithChan(request *UpdateAdminPasswordRequest) (<-chan *UpdateAdminPasswordResponse, <-chan error) {
 	responseChan := make(chan *UpdateAdminPasswordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateAdminPasswordWithChan(request *UpdateAdminPasswordRe
 }
 
 // UpdateAdminPasswordWithCallback invokes the elasticsearch.UpdateAdminPassword API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updateadminpassword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAdminPasswordWithCallback(request *UpdateAdminPasswordRequest, callback func(response *UpdateAdminPasswordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSnapshotSetting invokes the elasticsearch.DescribeSnapshotSetting API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/describesnapshotsetting.html
 func (client *Client) DescribeSnapshotSetting(request *DescribeSnapshotSettingRequest) (response *DescribeSnapshotSettingResponse, err error) {
 	response = CreateDescribeSnapshotSettingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSnapshotSetting(request *DescribeSnapshotSettingRe
 }
 
 // DescribeSnapshotSettingWithChan invokes the elasticsearch.DescribeSnapshotSetting API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/describesnapshotsetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotSettingWithChan(request *DescribeSnapshotSettingRequest) (<-chan *DescribeSnapshotSettingResponse, <-chan error) {
 	responseChan := make(chan *DescribeSnapshotSettingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSnapshotSettingWithChan(request *DescribeSnapshotS
 }
 
 // DescribeSnapshotSettingWithCallback invokes the elasticsearch.DescribeSnapshotSetting API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/describesnapshotsetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotSettingWithCallback(request *DescribeSnapshotSettingRequest, callback func(response *DescribeSnapshotSettingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

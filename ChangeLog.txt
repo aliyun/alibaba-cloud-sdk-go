@@ -1,3 +1,7 @@
+2020-11-01 Version: v1.61.615
+- Generated 2017-06-13 for `elasticsearch`.
+- Supported All Console APIs.
+
 2020-10-28 Version: v1.61.614
 - Generated 2019-06-01 for `oos`.
 - Support GetParameters, GetParametersByPath, GetSecretParameters, GetSecretParametersByPath.

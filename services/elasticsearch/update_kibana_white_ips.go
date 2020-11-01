@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateKibanaWhiteIps invokes the elasticsearch.UpdateKibanaWhiteIps API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatekibanawhiteips.html
 func (client *Client) UpdateKibanaWhiteIps(request *UpdateKibanaWhiteIpsRequest) (response *UpdateKibanaWhiteIpsResponse, err error) {
 	response = CreateUpdateKibanaWhiteIpsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateKibanaWhiteIps(request *UpdateKibanaWhiteIpsRequest)
 }
 
 // UpdateKibanaWhiteIpsWithChan invokes the elasticsearch.UpdateKibanaWhiteIps API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatekibanawhiteips.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateKibanaWhiteIpsWithChan(request *UpdateKibanaWhiteIpsRequest) (<-chan *UpdateKibanaWhiteIpsResponse, <-chan error) {
 	responseChan := make(chan *UpdateKibanaWhiteIpsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateKibanaWhiteIpsWithChan(request *UpdateKibanaWhiteIps
 }
 
 // UpdateKibanaWhiteIpsWithCallback invokes the elasticsearch.UpdateKibanaWhiteIps API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatekibanawhiteips.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateKibanaWhiteIpsWithCallback(request *UpdateKibanaWhiteIpsRequest, callback func(response *UpdateKibanaWhiteIpsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

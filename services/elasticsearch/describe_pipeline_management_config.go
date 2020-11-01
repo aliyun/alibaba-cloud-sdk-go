@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePipelineManagementConfig invokes the elasticsearch.DescribePipelineManagementConfig API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/describepipelinemanagementconfig.html
 func (client *Client) DescribePipelineManagementConfig(request *DescribePipelineManagementConfigRequest) (response *DescribePipelineManagementConfigResponse, err error) {
 	response = CreateDescribePipelineManagementConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePipelineManagementConfig(request *DescribePipeline
 }
 
 // DescribePipelineManagementConfigWithChan invokes the elasticsearch.DescribePipelineManagementConfig API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/describepipelinemanagementconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePipelineManagementConfigWithChan(request *DescribePipelineManagementConfigRequest) (<-chan *DescribePipelineManagementConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribePipelineManagementConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePipelineManagementConfigWithChan(request *Describe
 }
 
 // DescribePipelineManagementConfigWithCallback invokes the elasticsearch.DescribePipelineManagementConfig API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/describepipelinemanagementconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePipelineManagementConfigWithCallback(request *DescribePipelineManagementConfigRequest, callback func(response *DescribePipelineManagementConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDescribePipelineManagementConfigRequest() (request *DescribePipelineM
 	request = &DescribePipelineManagementConfigRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("elasticsearch", "2017-06-13", "DescribePipelineManagementConfig", "/openapi/logstashes/[InstanceId]//pipeline-management-config", "elasticsearch", "openAPI")
+	request.InitWithApiInfo("elasticsearch", "2017-06-13", "DescribePipelineManagementConfig", "/openapi/logstashes/[InstanceId]/pipeline-management-config", "elasticsearch", "openAPI")
 	request.Method = requests.GET
 	return
 }

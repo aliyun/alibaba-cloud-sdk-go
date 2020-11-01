@@ -21,7 +21,6 @@ import (
 )
 
 // ListAlternativeSnapshotRepos invokes the elasticsearch.ListAlternativeSnapshotRepos API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listalternativesnapshotrepos.html
 func (client *Client) ListAlternativeSnapshotRepos(request *ListAlternativeSnapshotReposRequest) (response *ListAlternativeSnapshotReposResponse, err error) {
 	response = CreateListAlternativeSnapshotReposResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAlternativeSnapshotRepos(request *ListAlternativeSnaps
 }
 
 // ListAlternativeSnapshotReposWithChan invokes the elasticsearch.ListAlternativeSnapshotRepos API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listalternativesnapshotrepos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlternativeSnapshotReposWithChan(request *ListAlternativeSnapshotReposRequest) (<-chan *ListAlternativeSnapshotReposResponse, <-chan error) {
 	responseChan := make(chan *ListAlternativeSnapshotReposResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAlternativeSnapshotReposWithChan(request *ListAlternat
 }
 
 // ListAlternativeSnapshotReposWithCallback invokes the elasticsearch.ListAlternativeSnapshotRepos API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listalternativesnapshotrepos.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlternativeSnapshotReposWithCallback(request *ListAlternativeSnapshotReposRequest, callback func(response *ListAlternativeSnapshotReposResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

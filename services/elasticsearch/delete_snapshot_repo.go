@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSnapshotRepo invokes the elasticsearch.DeleteSnapshotRepo API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/deletesnapshotrepo.html
 func (client *Client) DeleteSnapshotRepo(request *DeleteSnapshotRepoRequest) (response *DeleteSnapshotRepoResponse, err error) {
 	response = CreateDeleteSnapshotRepoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSnapshotRepo(request *DeleteSnapshotRepoRequest) (re
 }
 
 // DeleteSnapshotRepoWithChan invokes the elasticsearch.DeleteSnapshotRepo API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/deletesnapshotrepo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSnapshotRepoWithChan(request *DeleteSnapshotRepoRequest) (<-chan *DeleteSnapshotRepoResponse, <-chan error) {
 	responseChan := make(chan *DeleteSnapshotRepoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSnapshotRepoWithChan(request *DeleteSnapshotRepoRequ
 }
 
 // DeleteSnapshotRepoWithCallback invokes the elasticsearch.DeleteSnapshotRepo API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/deletesnapshotrepo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSnapshotRepoWithCallback(request *DeleteSnapshotRepoRequest, callback func(response *DeleteSnapshotRepoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

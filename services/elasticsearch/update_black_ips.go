@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateBlackIps invokes the elasticsearch.UpdateBlackIps API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updateblackips.html
 func (client *Client) UpdateBlackIps(request *UpdateBlackIpsRequest) (response *UpdateBlackIpsResponse, err error) {
 	response = CreateUpdateBlackIpsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateBlackIps(request *UpdateBlackIpsRequest) (response *
 }
 
 // UpdateBlackIpsWithChan invokes the elasticsearch.UpdateBlackIps API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updateblackips.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateBlackIpsWithChan(request *UpdateBlackIpsRequest) (<-chan *UpdateBlackIpsResponse, <-chan error) {
 	responseChan := make(chan *UpdateBlackIpsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateBlackIpsWithChan(request *UpdateBlackIpsRequest) (<-
 }
 
 // UpdateBlackIpsWithCallback invokes the elasticsearch.UpdateBlackIps API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updateblackips.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateBlackIpsWithCallback(request *UpdateBlackIpsRequest, callback func(response *UpdateBlackIpsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

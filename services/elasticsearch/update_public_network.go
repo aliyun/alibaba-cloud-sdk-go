@@ -21,7 +21,6 @@ import (
 )
 
 // UpdatePublicNetwork invokes the elasticsearch.UpdatePublicNetwork API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatepublicnetwork.html
 func (client *Client) UpdatePublicNetwork(request *UpdatePublicNetworkRequest) (response *UpdatePublicNetworkResponse, err error) {
 	response = CreateUpdatePublicNetworkResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdatePublicNetwork(request *UpdatePublicNetworkRequest) (
 }
 
 // UpdatePublicNetworkWithChan invokes the elasticsearch.UpdatePublicNetwork API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatepublicnetwork.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePublicNetworkWithChan(request *UpdatePublicNetworkRequest) (<-chan *UpdatePublicNetworkResponse, <-chan error) {
 	responseChan := make(chan *UpdatePublicNetworkResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdatePublicNetworkWithChan(request *UpdatePublicNetworkRe
 }
 
 // UpdatePublicNetworkWithCallback invokes the elasticsearch.UpdatePublicNetwork API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatepublicnetwork.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePublicNetworkWithCallback(request *UpdatePublicNetworkRequest, callback func(response *UpdatePublicNetworkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateProject invokes the elasticsearch.CreateProject API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/createproject.html
 func (client *Client) CreateProject(request *CreateProjectRequest) (response *CreateProjectResponse, err error) {
 	response = CreateCreateProjectResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateProject(request *CreateProjectRequest) (response *Cr
 }
 
 // CreateProjectWithChan invokes the elasticsearch.CreateProject API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/createproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateProjectWithChan(request *CreateProjectRequest) (<-chan *CreateProjectResponse, <-chan error) {
 	responseChan := make(chan *CreateProjectResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateProjectWithChan(request *CreateProjectRequest) (<-ch
 }
 
 // CreateProjectWithCallback invokes the elasticsearch.CreateProject API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/createproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateProjectWithCallback(request *CreateProjectRequest, callback func(response *CreateProjectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

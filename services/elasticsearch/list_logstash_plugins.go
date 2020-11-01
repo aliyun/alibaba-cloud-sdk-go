@@ -21,7 +21,6 @@ import (
 )
 
 // ListLogstashPlugins invokes the elasticsearch.ListLogstashPlugins API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listlogstashplugins.html
 func (client *Client) ListLogstashPlugins(request *ListLogstashPluginsRequest) (response *ListLogstashPluginsResponse, err error) {
 	response = CreateListLogstashPluginsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListLogstashPlugins(request *ListLogstashPluginsRequest) (
 }
 
 // ListLogstashPluginsWithChan invokes the elasticsearch.ListLogstashPlugins API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listlogstashplugins.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListLogstashPluginsWithChan(request *ListLogstashPluginsRequest) (<-chan *ListLogstashPluginsResponse, <-chan error) {
 	responseChan := make(chan *ListLogstashPluginsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListLogstashPluginsWithChan(request *ListLogstashPluginsRe
 }
 
 // ListLogstashPluginsWithCallback invokes the elasticsearch.ListLogstashPlugins API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listlogstashplugins.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListLogstashPluginsWithCallback(request *ListLogstashPluginsRequest, callback func(response *ListLogstashPluginsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,7 +74,7 @@ type ListLogstashPluginsRequest struct {
 	InstanceId string           `position:"Path" name:"InstanceId"`
 	Size       requests.Integer `position:"Query" name:"size"`
 	Name       string           `position:"Query" name:"name"`
-	Page       string           `position:"Query" name:"page"`
+	Page       requests.Integer `position:"Query" name:"page"`
 	Source     string           `position:"Query" name:"source"`
 }
 

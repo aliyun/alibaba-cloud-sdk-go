@@ -17,9 +17,8 @@ package elasticsearch
 
 // DictList is a nested struct in elasticsearch response
 type DictList struct {
-	Type       string    `json:"type" xml:"type"`
-	FileSize   int64     `json:"fileSize" xml:"fileSize"`
-	SourceType string    `json:"sourceType" xml:"sourceType"`
-	Name       string    `json:"name" xml:"name"`
-	OssObject  OssObject `json:"ossObject" xml:"ossObject"`
+	Type       string `json:"type" xml:"type"`
+	FileSize   int64  `json:"fileSize" xml:"fileSize"`
+	SourceType string `json:"sourceType" xml:"sourceType"`
+	Name       string `json:"name" xml:"name"`
 }

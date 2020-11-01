@@ -21,7 +21,6 @@ import (
 )
 
 // UninstallLogstashPlugin invokes the elasticsearch.UninstallLogstashPlugin API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/uninstalllogstashplugin.html
 func (client *Client) UninstallLogstashPlugin(request *UninstallLogstashPluginRequest) (response *UninstallLogstashPluginResponse, err error) {
 	response = CreateUninstallLogstashPluginResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UninstallLogstashPlugin(request *UninstallLogstashPluginRe
 }
 
 // UninstallLogstashPluginWithChan invokes the elasticsearch.UninstallLogstashPlugin API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/uninstalllogstashplugin.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UninstallLogstashPluginWithChan(request *UninstallLogstashPluginRequest) (<-chan *UninstallLogstashPluginResponse, <-chan error) {
 	responseChan := make(chan *UninstallLogstashPluginResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UninstallLogstashPluginWithChan(request *UninstallLogstash
 }
 
 // UninstallLogstashPluginWithCallback invokes the elasticsearch.UninstallLogstashPlugin API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/uninstalllogstashplugin.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UninstallLogstashPluginWithCallback(request *UninstallLogstashPluginRequest, callback func(response *UninstallLogstashPluginResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

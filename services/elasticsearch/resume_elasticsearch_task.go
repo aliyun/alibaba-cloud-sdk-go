@@ -21,7 +21,6 @@ import (
 )
 
 // ResumeElasticsearchTask invokes the elasticsearch.ResumeElasticsearchTask API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/resumeelasticsearchtask.html
 func (client *Client) ResumeElasticsearchTask(request *ResumeElasticsearchTaskRequest) (response *ResumeElasticsearchTaskResponse, err error) {
 	response = CreateResumeElasticsearchTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResumeElasticsearchTask(request *ResumeElasticsearchTaskRe
 }
 
 // ResumeElasticsearchTaskWithChan invokes the elasticsearch.ResumeElasticsearchTask API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/resumeelasticsearchtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeElasticsearchTaskWithChan(request *ResumeElasticsearchTaskRequest) (<-chan *ResumeElasticsearchTaskResponse, <-chan error) {
 	responseChan := make(chan *ResumeElasticsearchTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResumeElasticsearchTaskWithChan(request *ResumeElasticsear
 }
 
 // ResumeElasticsearchTaskWithCallback invokes the elasticsearch.ResumeElasticsearchTask API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/resumeelasticsearchtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeElasticsearchTaskWithCallback(request *ResumeElasticsearchTaskRequest, callback func(response *ResumeElasticsearchTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,8 +79,6 @@ type ResumeElasticsearchTaskRequest struct {
 type ResumeElasticsearchTaskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
 	Result    bool   `json:"Result" xml:"Result"`
 }
 

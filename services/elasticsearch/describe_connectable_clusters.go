@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeConnectableClusters invokes the elasticsearch.DescribeConnectableClusters API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/describeconnectableclusters.html
 func (client *Client) DescribeConnectableClusters(request *DescribeConnectableClustersRequest) (response *DescribeConnectableClustersResponse, err error) {
 	response = CreateDescribeConnectableClustersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeConnectableClusters(request *DescribeConnectableCl
 }
 
 // DescribeConnectableClustersWithChan invokes the elasticsearch.DescribeConnectableClusters API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/describeconnectableclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeConnectableClustersWithChan(request *DescribeConnectableClustersRequest) (<-chan *DescribeConnectableClustersResponse, <-chan error) {
 	responseChan := make(chan *DescribeConnectableClustersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeConnectableClustersWithChan(request *DescribeConne
 }
 
 // DescribeConnectableClustersWithCallback invokes the elasticsearch.DescribeConnectableClusters API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/describeconnectableclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeConnectableClustersWithCallback(request *DescribeConnectableClustersRequest, callback func(response *DescribeConnectableClustersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

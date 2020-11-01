@@ -21,7 +21,6 @@ import (
 )
 
 // ValidateShrinkNodes invokes the elasticsearch.ValidateShrinkNodes API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/validateshrinknodes.html
 func (client *Client) ValidateShrinkNodes(request *ValidateShrinkNodesRequest) (response *ValidateShrinkNodesResponse, err error) {
 	response = CreateValidateShrinkNodesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ValidateShrinkNodes(request *ValidateShrinkNodesRequest) (
 }
 
 // ValidateShrinkNodesWithChan invokes the elasticsearch.ValidateShrinkNodes API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/validateshrinknodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ValidateShrinkNodesWithChan(request *ValidateShrinkNodesRequest) (<-chan *ValidateShrinkNodesResponse, <-chan error) {
 	responseChan := make(chan *ValidateShrinkNodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ValidateShrinkNodesWithChan(request *ValidateShrinkNodesRe
 }
 
 // ValidateShrinkNodesWithCallback invokes the elasticsearch.ValidateShrinkNodes API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/validateshrinknodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ValidateShrinkNodesWithCallback(request *ValidateShrinkNodesRequest, callback func(response *ValidateShrinkNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

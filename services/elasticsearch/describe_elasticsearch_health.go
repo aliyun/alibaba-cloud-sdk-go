@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeElasticsearchHealth invokes the elasticsearch.DescribeElasticsearchHealth API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/describeelasticsearchhealth.html
 func (client *Client) DescribeElasticsearchHealth(request *DescribeElasticsearchHealthRequest) (response *DescribeElasticsearchHealthResponse, err error) {
 	response = CreateDescribeElasticsearchHealthResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeElasticsearchHealth(request *DescribeElasticsearch
 }
 
 // DescribeElasticsearchHealthWithChan invokes the elasticsearch.DescribeElasticsearchHealth API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/describeelasticsearchhealth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeElasticsearchHealthWithChan(request *DescribeElasticsearchHealthRequest) (<-chan *DescribeElasticsearchHealthResponse, <-chan error) {
 	responseChan := make(chan *DescribeElasticsearchHealthResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeElasticsearchHealthWithChan(request *DescribeElast
 }
 
 // DescribeElasticsearchHealthWithCallback invokes the elasticsearch.DescribeElasticsearchHealth API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/describeelasticsearchhealth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeElasticsearchHealthWithCallback(request *DescribeElasticsearchHealthRequest, callback func(response *DescribeElasticsearchHealthResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

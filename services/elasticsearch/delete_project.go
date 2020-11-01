@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteProject invokes the elasticsearch.DeleteProject API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/deleteproject.html
 func (client *Client) DeleteProject(request *DeleteProjectRequest) (response *DeleteProjectResponse, err error) {
 	response = CreateDeleteProjectResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteProject(request *DeleteProjectRequest) (response *De
 }
 
 // DeleteProjectWithChan invokes the elasticsearch.DeleteProject API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/deleteproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteProjectWithChan(request *DeleteProjectRequest) (<-chan *DeleteProjectResponse, <-chan error) {
 	responseChan := make(chan *DeleteProjectResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteProjectWithChan(request *DeleteProjectRequest) (<-ch
 }
 
 // DeleteProjectWithCallback invokes the elasticsearch.DeleteProject API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/deleteproject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteProjectWithCallback(request *DeleteProjectRequest, callback func(response *DeleteProjectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

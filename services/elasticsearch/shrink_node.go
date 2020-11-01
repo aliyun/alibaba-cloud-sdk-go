@@ -21,7 +21,6 @@ import (
 )
 
 // ShrinkNode invokes the elasticsearch.ShrinkNode API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/shrinknode.html
 func (client *Client) ShrinkNode(request *ShrinkNodeRequest) (response *ShrinkNodeResponse, err error) {
 	response = CreateShrinkNodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ShrinkNode(request *ShrinkNodeRequest) (response *ShrinkNo
 }
 
 // ShrinkNodeWithChan invokes the elasticsearch.ShrinkNode API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/shrinknode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ShrinkNodeWithChan(request *ShrinkNodeRequest) (<-chan *ShrinkNodeResponse, <-chan error) {
 	responseChan := make(chan *ShrinkNodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ShrinkNodeWithChan(request *ShrinkNodeRequest) (<-chan *Sh
 }
 
 // ShrinkNodeWithCallback invokes the elasticsearch.ShrinkNode API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/shrinknode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ShrinkNodeWithCallback(request *ShrinkNodeRequest, callback func(response *ShrinkNodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

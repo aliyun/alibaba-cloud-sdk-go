@@ -21,7 +21,6 @@ import (
 )
 
 // ListSearchLog invokes the elasticsearch.ListSearchLog API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listsearchlog.html
 func (client *Client) ListSearchLog(request *ListSearchLogRequest) (response *ListSearchLogResponse, err error) {
 	response = CreateListSearchLogResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSearchLog(request *ListSearchLogRequest) (response *Li
 }
 
 // ListSearchLogWithChan invokes the elasticsearch.ListSearchLog API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listsearchlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSearchLogWithChan(request *ListSearchLogRequest) (<-chan *ListSearchLogResponse, <-chan error) {
 	responseChan := make(chan *ListSearchLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSearchLogWithChan(request *ListSearchLogRequest) (<-ch
 }
 
 // ListSearchLogWithCallback invokes the elasticsearch.ListSearchLog API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listsearchlog.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSearchLogWithCallback(request *ListSearchLogRequest, callback func(response *ListSearchLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

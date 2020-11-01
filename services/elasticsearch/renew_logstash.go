@@ -21,7 +21,6 @@ import (
 )
 
 // RenewLogstash invokes the elasticsearch.RenewLogstash API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/renewlogstash.html
 func (client *Client) RenewLogstash(request *RenewLogstashRequest) (response *RenewLogstashResponse, err error) {
 	response = CreateRenewLogstashResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RenewLogstash(request *RenewLogstashRequest) (response *Re
 }
 
 // RenewLogstashWithChan invokes the elasticsearch.RenewLogstash API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/renewlogstash.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenewLogstashWithChan(request *RenewLogstashRequest) (<-chan *RenewLogstashResponse, <-chan error) {
 	responseChan := make(chan *RenewLogstashResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RenewLogstashWithChan(request *RenewLogstashRequest) (<-ch
 }
 
 // RenewLogstashWithCallback invokes the elasticsearch.RenewLogstash API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/renewlogstash.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenewLogstashWithCallback(request *RenewLogstashRequest, callback func(response *RenewLogstashResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

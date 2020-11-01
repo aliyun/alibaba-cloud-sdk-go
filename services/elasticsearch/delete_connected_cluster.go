@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteConnectedCluster invokes the elasticsearch.DeleteConnectedCluster API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/deleteconnectedcluster.html
 func (client *Client) DeleteConnectedCluster(request *DeleteConnectedClusterRequest) (response *DeleteConnectedClusterResponse, err error) {
 	response = CreateDeleteConnectedClusterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteConnectedCluster(request *DeleteConnectedClusterRequ
 }
 
 // DeleteConnectedClusterWithChan invokes the elasticsearch.DeleteConnectedCluster API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/deleteconnectedcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteConnectedClusterWithChan(request *DeleteConnectedClusterRequest) (<-chan *DeleteConnectedClusterResponse, <-chan error) {
 	responseChan := make(chan *DeleteConnectedClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteConnectedClusterWithChan(request *DeleteConnectedClu
 }
 
 // DeleteConnectedClusterWithCallback invokes the elasticsearch.DeleteConnectedCluster API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/deleteconnectedcluster.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteConnectedClusterWithCallback(request *DeleteConnectedClusterRequest, callback func(response *DeleteConnectedClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

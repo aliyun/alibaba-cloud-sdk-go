@@ -21,7 +21,6 @@ import (
 )
 
 // AddSnapshotRepo invokes the elasticsearch.AddSnapshotRepo API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/addsnapshotrepo.html
 func (client *Client) AddSnapshotRepo(request *AddSnapshotRepoRequest) (response *AddSnapshotRepoResponse, err error) {
 	response = CreateAddSnapshotRepoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddSnapshotRepo(request *AddSnapshotRepoRequest) (response
 }
 
 // AddSnapshotRepoWithChan invokes the elasticsearch.AddSnapshotRepo API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/addsnapshotrepo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddSnapshotRepoWithChan(request *AddSnapshotRepoRequest) (<-chan *AddSnapshotRepoResponse, <-chan error) {
 	responseChan := make(chan *AddSnapshotRepoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddSnapshotRepoWithChan(request *AddSnapshotRepoRequest) (
 }
 
 // AddSnapshotRepoWithCallback invokes the elasticsearch.AddSnapshotRepo API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/addsnapshotrepo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddSnapshotRepoWithCallback(request *AddSnapshotRepoRequest, callback func(response *AddSnapshotRepoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,8 +78,6 @@ type AddSnapshotRepoRequest struct {
 type AddSnapshotRepoResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
 	Result    bool   `json:"Result" xml:"Result"`
 }
 

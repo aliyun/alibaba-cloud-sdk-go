@@ -21,7 +21,6 @@ import (
 )
 
 // UpdatePrivateNetworkWhiteIps invokes the elasticsearch.UpdatePrivateNetworkWhiteIps API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updateprivatenetworkwhiteips.html
 func (client *Client) UpdatePrivateNetworkWhiteIps(request *UpdatePrivateNetworkWhiteIpsRequest) (response *UpdatePrivateNetworkWhiteIpsResponse, err error) {
 	response = CreateUpdatePrivateNetworkWhiteIpsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdatePrivateNetworkWhiteIps(request *UpdatePrivateNetwork
 }
 
 // UpdatePrivateNetworkWhiteIpsWithChan invokes the elasticsearch.UpdatePrivateNetworkWhiteIps API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updateprivatenetworkwhiteips.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePrivateNetworkWhiteIpsWithChan(request *UpdatePrivateNetworkWhiteIpsRequest) (<-chan *UpdatePrivateNetworkWhiteIpsResponse, <-chan error) {
 	responseChan := make(chan *UpdatePrivateNetworkWhiteIpsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdatePrivateNetworkWhiteIpsWithChan(request *UpdatePrivat
 }
 
 // UpdatePrivateNetworkWhiteIpsWithCallback invokes the elasticsearch.UpdatePrivateNetworkWhiteIps API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updateprivatenetworkwhiteips.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePrivateNetworkWhiteIpsWithCallback(request *UpdatePrivateNetworkWhiteIpsRequest, callback func(response *UpdatePrivateNetworkWhiteIpsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

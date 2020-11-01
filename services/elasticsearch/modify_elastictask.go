@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyElastictask invokes the elasticsearch.ModifyElastictask API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/modifyelastictask.html
 func (client *Client) ModifyElastictask(request *ModifyElastictaskRequest) (response *ModifyElastictaskResponse, err error) {
 	response = CreateModifyElastictaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyElastictask(request *ModifyElastictaskRequest) (resp
 }
 
 // ModifyElastictaskWithChan invokes the elasticsearch.ModifyElastictask API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/modifyelastictask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyElastictaskWithChan(request *ModifyElastictaskRequest) (<-chan *ModifyElastictaskResponse, <-chan error) {
 	responseChan := make(chan *ModifyElastictaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyElastictaskWithChan(request *ModifyElastictaskReques
 }
 
 // ModifyElastictaskWithCallback invokes the elasticsearch.ModifyElastictask API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/modifyelastictask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyElastictaskWithCallback(request *ModifyElastictaskRequest, callback func(response *ModifyElastictaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

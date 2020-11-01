@@ -21,7 +21,6 @@ import (
 )
 
 // OpenHttps invokes the elasticsearch.OpenHttps API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/openhttps.html
 func (client *Client) OpenHttps(request *OpenHttpsRequest) (response *OpenHttpsResponse, err error) {
 	response = CreateOpenHttpsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) OpenHttps(request *OpenHttpsRequest) (response *OpenHttpsR
 }
 
 // OpenHttpsWithChan invokes the elasticsearch.OpenHttps API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/openhttps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OpenHttpsWithChan(request *OpenHttpsRequest) (<-chan *OpenHttpsResponse, <-chan error) {
 	responseChan := make(chan *OpenHttpsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) OpenHttpsWithChan(request *OpenHttpsRequest) (<-chan *Open
 }
 
 // OpenHttpsWithCallback invokes the elasticsearch.OpenHttps API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/openhttps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OpenHttpsWithCallback(request *OpenHttpsRequest, callback func(response *OpenHttpsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

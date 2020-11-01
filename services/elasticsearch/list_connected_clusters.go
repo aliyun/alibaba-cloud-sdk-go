@@ -21,7 +21,6 @@ import (
 )
 
 // ListConnectedClusters invokes the elasticsearch.ListConnectedClusters API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listconnectedclusters.html
 func (client *Client) ListConnectedClusters(request *ListConnectedClustersRequest) (response *ListConnectedClustersResponse, err error) {
 	response = CreateListConnectedClustersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListConnectedClusters(request *ListConnectedClustersReques
 }
 
 // ListConnectedClustersWithChan invokes the elasticsearch.ListConnectedClusters API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listconnectedclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListConnectedClustersWithChan(request *ListConnectedClustersRequest) (<-chan *ListConnectedClustersResponse, <-chan error) {
 	responseChan := make(chan *ListConnectedClustersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListConnectedClustersWithChan(request *ListConnectedCluste
 }
 
 // ListConnectedClustersWithCallback invokes the elasticsearch.ListConnectedClusters API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listconnectedclusters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListConnectedClustersWithCallback(request *ListConnectedClustersRequest, callback func(response *ListConnectedClustersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

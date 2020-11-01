@@ -21,7 +21,6 @@ import (
 )
 
 // UpdatePipelineManagementConfig invokes the elasticsearch.UpdatePipelineManagementConfig API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatepipelinemanagementconfig.html
 func (client *Client) UpdatePipelineManagementConfig(request *UpdatePipelineManagementConfigRequest) (response *UpdatePipelineManagementConfigResponse, err error) {
 	response = CreateUpdatePipelineManagementConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdatePipelineManagementConfig(request *UpdatePipelineMana
 }
 
 // UpdatePipelineManagementConfigWithChan invokes the elasticsearch.UpdatePipelineManagementConfig API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatepipelinemanagementconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePipelineManagementConfigWithChan(request *UpdatePipelineManagementConfigRequest) (<-chan *UpdatePipelineManagementConfigResponse, <-chan error) {
 	responseChan := make(chan *UpdatePipelineManagementConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdatePipelineManagementConfigWithChan(request *UpdatePipe
 }
 
 // UpdatePipelineManagementConfigWithCallback invokes the elasticsearch.UpdatePipelineManagementConfig API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatepipelinemanagementconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePipelineManagementConfigWithCallback(request *UpdatePipelineManagementConfigRequest, callback func(response *UpdatePipelineManagementConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

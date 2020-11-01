@@ -21,7 +21,6 @@ import (
 )
 
 // TriggerNetwork invokes the elasticsearch.TriggerNetwork API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/triggernetwork.html
 func (client *Client) TriggerNetwork(request *TriggerNetworkRequest) (response *TriggerNetworkResponse, err error) {
 	response = CreateTriggerNetworkResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TriggerNetwork(request *TriggerNetworkRequest) (response *
 }
 
 // TriggerNetworkWithChan invokes the elasticsearch.TriggerNetwork API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/triggernetwork.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TriggerNetworkWithChan(request *TriggerNetworkRequest) (<-chan *TriggerNetworkResponse, <-chan error) {
 	responseChan := make(chan *TriggerNetworkResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TriggerNetworkWithChan(request *TriggerNetworkRequest) (<-
 }
 
 // TriggerNetworkWithCallback invokes the elasticsearch.TriggerNetwork API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/triggernetwork.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TriggerNetworkWithCallback(request *TriggerNetworkRequest, callback func(response *TriggerNetworkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

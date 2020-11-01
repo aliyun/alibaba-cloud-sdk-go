@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateLogstashChargeType invokes the elasticsearch.UpdateLogstashChargeType API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatelogstashchargetype.html
 func (client *Client) UpdateLogstashChargeType(request *UpdateLogstashChargeTypeRequest) (response *UpdateLogstashChargeTypeResponse, err error) {
 	response = CreateUpdateLogstashChargeTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateLogstashChargeType(request *UpdateLogstashChargeType
 }
 
 // UpdateLogstashChargeTypeWithChan invokes the elasticsearch.UpdateLogstashChargeType API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatelogstashchargetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLogstashChargeTypeWithChan(request *UpdateLogstashChargeTypeRequest) (<-chan *UpdateLogstashChargeTypeResponse, <-chan error) {
 	responseChan := make(chan *UpdateLogstashChargeTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateLogstashChargeTypeWithChan(request *UpdateLogstashCh
 }
 
 // UpdateLogstashChargeTypeWithCallback invokes the elasticsearch.UpdateLogstashChargeType API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatelogstashchargetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLogstashChargeTypeWithCallback(request *UpdateLogstashChargeTypeRequest, callback func(response *UpdateLogstashChargeTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

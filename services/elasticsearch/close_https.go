@@ -21,7 +21,6 @@ import (
 )
 
 // CloseHttps invokes the elasticsearch.CloseHttps API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/closehttps.html
 func (client *Client) CloseHttps(request *CloseHttpsRequest) (response *CloseHttpsResponse, err error) {
 	response = CreateCloseHttpsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CloseHttps(request *CloseHttpsRequest) (response *CloseHtt
 }
 
 // CloseHttpsWithChan invokes the elasticsearch.CloseHttps API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/closehttps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloseHttpsWithChan(request *CloseHttpsRequest) (<-chan *CloseHttpsResponse, <-chan error) {
 	responseChan := make(chan *CloseHttpsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CloseHttpsWithChan(request *CloseHttpsRequest) (<-chan *Cl
 }
 
 // CloseHttpsWithCallback invokes the elasticsearch.CloseHttps API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/closehttps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CloseHttpsWithCallback(request *CloseHttpsRequest, callback func(response *CloseHttpsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

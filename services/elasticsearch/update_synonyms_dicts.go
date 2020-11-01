@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateSynonymsDicts invokes the elasticsearch.UpdateSynonymsDicts API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatesynonymsdicts.html
 func (client *Client) UpdateSynonymsDicts(request *UpdateSynonymsDictsRequest) (response *UpdateSynonymsDictsResponse, err error) {
 	response = CreateUpdateSynonymsDictsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateSynonymsDicts(request *UpdateSynonymsDictsRequest) (
 }
 
 // UpdateSynonymsDictsWithChan invokes the elasticsearch.UpdateSynonymsDicts API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatesynonymsdicts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSynonymsDictsWithChan(request *UpdateSynonymsDictsRequest) (<-chan *UpdateSynonymsDictsResponse, <-chan error) {
 	responseChan := make(chan *UpdateSynonymsDictsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateSynonymsDictsWithChan(request *UpdateSynonymsDictsRe
 }
 
 // UpdateSynonymsDictsWithCallback invokes the elasticsearch.UpdateSynonymsDicts API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatesynonymsdicts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSynonymsDictsWithCallback(request *UpdateSynonymsDictsRequest, callback func(response *UpdateSynonymsDictsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

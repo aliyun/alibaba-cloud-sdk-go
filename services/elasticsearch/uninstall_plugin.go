@@ -21,7 +21,6 @@ import (
 )
 
 // UninstallPlugin invokes the elasticsearch.UninstallPlugin API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/uninstallplugin.html
 func (client *Client) UninstallPlugin(request *UninstallPluginRequest) (response *UninstallPluginResponse, err error) {
 	response = CreateUninstallPluginResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UninstallPlugin(request *UninstallPluginRequest) (response
 }
 
 // UninstallPluginWithChan invokes the elasticsearch.UninstallPlugin API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/uninstallplugin.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UninstallPluginWithChan(request *UninstallPluginRequest) (<-chan *UninstallPluginResponse, <-chan error) {
 	responseChan := make(chan *UninstallPluginResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UninstallPluginWithChan(request *UninstallPluginRequest) (
 }
 
 // UninstallPluginWithCallback invokes the elasticsearch.UninstallPlugin API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/uninstallplugin.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UninstallPluginWithCallback(request *UninstallPluginRequest, callback func(response *UninstallPluginResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

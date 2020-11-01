@@ -21,7 +21,6 @@ import (
 )
 
 // ActivateZones invokes the elasticsearch.ActivateZones API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/activatezones.html
 func (client *Client) ActivateZones(request *ActivateZonesRequest) (response *ActivateZonesResponse, err error) {
 	response = CreateActivateZonesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ActivateZones(request *ActivateZonesRequest) (response *Ac
 }
 
 // ActivateZonesWithChan invokes the elasticsearch.ActivateZones API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/activatezones.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActivateZonesWithChan(request *ActivateZonesRequest) (<-chan *ActivateZonesResponse, <-chan error) {
 	responseChan := make(chan *ActivateZonesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ActivateZonesWithChan(request *ActivateZonesRequest) (<-ch
 }
 
 // ActivateZonesWithCallback invokes the elasticsearch.ActivateZones API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/activatezones.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActivateZonesWithCallback(request *ActivateZonesRequest, callback func(response *ActivateZonesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

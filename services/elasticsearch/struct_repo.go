@@ -17,8 +17,8 @@ package elasticsearch
 
 // Repo is a nested struct in elasticsearch response
 type Repo struct {
-	SnapWarehouse string `json:"snapWarehouse" xml:"snapWarehouse"`
 	RepoPath      string `json:"repoPath" xml:"repoPath"`
+	SnapWarehouse string `json:"snapWarehouse" xml:"snapWarehouse"`
 	InstanceId    string `json:"instanceId" xml:"instanceId"`
 	Status        string `json:"status" xml:"status"`
 }

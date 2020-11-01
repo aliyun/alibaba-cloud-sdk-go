@@ -21,7 +21,6 @@ import (
 )
 
 // UninstallKibanaPlugin invokes the elasticsearch.UninstallKibanaPlugin API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/uninstallkibanaplugin.html
 func (client *Client) UninstallKibanaPlugin(request *UninstallKibanaPluginRequest) (response *UninstallKibanaPluginResponse, err error) {
 	response = CreateUninstallKibanaPluginResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UninstallKibanaPlugin(request *UninstallKibanaPluginReques
 }
 
 // UninstallKibanaPluginWithChan invokes the elasticsearch.UninstallKibanaPlugin API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/uninstallkibanaplugin.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UninstallKibanaPluginWithChan(request *UninstallKibanaPluginRequest) (<-chan *UninstallKibanaPluginResponse, <-chan error) {
 	responseChan := make(chan *UninstallKibanaPluginResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UninstallKibanaPluginWithChan(request *UninstallKibanaPlug
 }
 
 // UninstallKibanaPluginWithCallback invokes the elasticsearch.UninstallKibanaPlugin API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/uninstallkibanaplugin.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UninstallKibanaPluginWithCallback(request *UninstallKibanaPluginRequest, callback func(response *UninstallKibanaPluginResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

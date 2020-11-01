@@ -17,5 +17,5 @@ package elasticsearch
 
 // ResultInListConnectedClusters is a nested struct in elasticsearch response
 type ResultInListConnectedClusters struct {
-	ConnectableClustersInfo []ConnectableClustersInfo `json:"ConnectableClustersInfo" xml:"ConnectableClustersInfo"`
+	ResultItem []ResultItem `json:"Result" xml:"Result"`
 }

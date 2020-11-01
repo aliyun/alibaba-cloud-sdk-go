@@ -17,9 +17,9 @@ package elasticsearch
 
 // ElasticExpansionTask is a nested struct in elasticsearch response
 type ElasticExpansionTask struct {
-	CronExpression   string   `json:"CronExpression" xml:"CronExpression"`
-	ElasticNodeCount int      `json:"ElasticNodeCount" xml:"ElasticNodeCount"`
-	TriggerType      string   `json:"TriggerType" xml:"TriggerType"`
-	ReplicaCount     int      `json:"ReplicaCount" xml:"ReplicaCount"`
-	TargetIndices    []string `json:"TargetIndices" xml:"TargetIndices"`
+	TriggerType      string   `json:"triggerType" xml:"triggerType"`
+	ElasticNodeCount int      `json:"elasticNodeCount" xml:"elasticNodeCount"`
+	ReplicaCount     int      `json:"replicaCount" xml:"replicaCount"`
+	CronExpression   string   `json:"cronExpression" xml:"cronExpression"`
+	TargetIndices    []string `json:"targetIndices" xml:"targetIndices"`
 }

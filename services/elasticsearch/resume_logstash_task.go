@@ -21,7 +21,6 @@ import (
 )
 
 // ResumeLogstashTask invokes the elasticsearch.ResumeLogstashTask API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/resumelogstashtask.html
 func (client *Client) ResumeLogstashTask(request *ResumeLogstashTaskRequest) (response *ResumeLogstashTaskResponse, err error) {
 	response = CreateResumeLogstashTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResumeLogstashTask(request *ResumeLogstashTaskRequest) (re
 }
 
 // ResumeLogstashTaskWithChan invokes the elasticsearch.ResumeLogstashTask API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/resumelogstashtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeLogstashTaskWithChan(request *ResumeLogstashTaskRequest) (<-chan *ResumeLogstashTaskResponse, <-chan error) {
 	responseChan := make(chan *ResumeLogstashTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResumeLogstashTaskWithChan(request *ResumeLogstashTaskRequ
 }
 
 // ResumeLogstashTaskWithCallback invokes the elasticsearch.ResumeLogstashTask API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/resumelogstashtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeLogstashTaskWithCallback(request *ResumeLogstashTaskRequest, callback func(response *ResumeLogstashTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

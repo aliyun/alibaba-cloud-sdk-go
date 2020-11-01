@@ -21,7 +21,6 @@ import (
 )
 
 // GetSuggestShrinkableNodes invokes the elasticsearch.GetSuggestShrinkableNodes API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/getsuggestshrinkablenodes.html
 func (client *Client) GetSuggestShrinkableNodes(request *GetSuggestShrinkableNodesRequest) (response *GetSuggestShrinkableNodesResponse, err error) {
 	response = CreateGetSuggestShrinkableNodesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetSuggestShrinkableNodes(request *GetSuggestShrinkableNod
 }
 
 // GetSuggestShrinkableNodesWithChan invokes the elasticsearch.GetSuggestShrinkableNodes API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/getsuggestshrinkablenodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSuggestShrinkableNodesWithChan(request *GetSuggestShrinkableNodesRequest) (<-chan *GetSuggestShrinkableNodesResponse, <-chan error) {
 	responseChan := make(chan *GetSuggestShrinkableNodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetSuggestShrinkableNodesWithChan(request *GetSuggestShrin
 }
 
 // GetSuggestShrinkableNodesWithCallback invokes the elasticsearch.GetSuggestShrinkableNodes API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/getsuggestshrinkablenodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSuggestShrinkableNodesWithCallback(request *GetSuggestShrinkableNodesRequest, callback func(response *GetSuggestShrinkableNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

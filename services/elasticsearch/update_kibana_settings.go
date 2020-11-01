@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateKibanaSettings invokes the elasticsearch.UpdateKibanaSettings API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatekibanasettings.html
 func (client *Client) UpdateKibanaSettings(request *UpdateKibanaSettingsRequest) (response *UpdateKibanaSettingsResponse, err error) {
 	response = CreateUpdateKibanaSettingsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateKibanaSettings(request *UpdateKibanaSettingsRequest)
 }
 
 // UpdateKibanaSettingsWithChan invokes the elasticsearch.UpdateKibanaSettings API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatekibanasettings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateKibanaSettingsWithChan(request *UpdateKibanaSettingsRequest) (<-chan *UpdateKibanaSettingsResponse, <-chan error) {
 	responseChan := make(chan *UpdateKibanaSettingsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateKibanaSettingsWithChan(request *UpdateKibanaSettings
 }
 
 // UpdateKibanaSettingsWithCallback invokes the elasticsearch.UpdateKibanaSettings API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatekibanasettings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateKibanaSettingsWithCallback(request *UpdateKibanaSettingsRequest, callback func(response *UpdateKibanaSettingsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

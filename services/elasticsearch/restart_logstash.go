@@ -21,7 +21,6 @@ import (
 )
 
 // RestartLogstash invokes the elasticsearch.RestartLogstash API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/restartlogstash.html
 func (client *Client) RestartLogstash(request *RestartLogstashRequest) (response *RestartLogstashResponse, err error) {
 	response = CreateRestartLogstashResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RestartLogstash(request *RestartLogstashRequest) (response
 }
 
 // RestartLogstashWithChan invokes the elasticsearch.RestartLogstash API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/restartlogstash.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartLogstashWithChan(request *RestartLogstashRequest) (<-chan *RestartLogstashResponse, <-chan error) {
 	responseChan := make(chan *RestartLogstashResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RestartLogstashWithChan(request *RestartLogstashRequest) (
 }
 
 // RestartLogstashWithCallback invokes the elasticsearch.RestartLogstash API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/restartlogstash.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestartLogstashWithCallback(request *RestartLogstashRequest, callback func(response *RestartLogstashResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateHotIkDicts invokes the elasticsearch.UpdateHotIkDicts API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatehotikdicts.html
 func (client *Client) UpdateHotIkDicts(request *UpdateHotIkDictsRequest) (response *UpdateHotIkDictsResponse, err error) {
 	response = CreateUpdateHotIkDictsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateHotIkDicts(request *UpdateHotIkDictsRequest) (respon
 }
 
 // UpdateHotIkDictsWithChan invokes the elasticsearch.UpdateHotIkDicts API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatehotikdicts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateHotIkDictsWithChan(request *UpdateHotIkDictsRequest) (<-chan *UpdateHotIkDictsResponse, <-chan error) {
 	responseChan := make(chan *UpdateHotIkDictsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateHotIkDictsWithChan(request *UpdateHotIkDictsRequest)
 }
 
 // UpdateHotIkDictsWithCallback invokes the elasticsearch.UpdateHotIkDicts API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatehotikdicts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateHotIkDictsWithCallback(request *UpdateHotIkDictsRequest, callback func(response *UpdateHotIkDictsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

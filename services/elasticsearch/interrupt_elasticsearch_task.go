@@ -21,7 +21,6 @@ import (
 )
 
 // InterruptElasticsearchTask invokes the elasticsearch.InterruptElasticsearchTask API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/interruptelasticsearchtask.html
 func (client *Client) InterruptElasticsearchTask(request *InterruptElasticsearchTaskRequest) (response *InterruptElasticsearchTaskResponse, err error) {
 	response = CreateInterruptElasticsearchTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InterruptElasticsearchTask(request *InterruptElasticsearch
 }
 
 // InterruptElasticsearchTaskWithChan invokes the elasticsearch.InterruptElasticsearchTask API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/interruptelasticsearchtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InterruptElasticsearchTaskWithChan(request *InterruptElasticsearchTaskRequest) (<-chan *InterruptElasticsearchTaskResponse, <-chan error) {
 	responseChan := make(chan *InterruptElasticsearchTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InterruptElasticsearchTaskWithChan(request *InterruptElast
 }
 
 // InterruptElasticsearchTaskWithCallback invokes the elasticsearch.InterruptElasticsearchTask API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/interruptelasticsearchtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InterruptElasticsearchTaskWithCallback(request *InterruptElasticsearchTaskRequest, callback func(response *InterruptElasticsearchTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

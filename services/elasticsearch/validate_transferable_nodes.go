@@ -21,7 +21,6 @@ import (
 )
 
 // ValidateTransferableNodes invokes the elasticsearch.ValidateTransferableNodes API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/validatetransferablenodes.html
 func (client *Client) ValidateTransferableNodes(request *ValidateTransferableNodesRequest) (response *ValidateTransferableNodesResponse, err error) {
 	response = CreateValidateTransferableNodesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ValidateTransferableNodes(request *ValidateTransferableNod
 }
 
 // ValidateTransferableNodesWithChan invokes the elasticsearch.ValidateTransferableNodes API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/validatetransferablenodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ValidateTransferableNodesWithChan(request *ValidateTransferableNodesRequest) (<-chan *ValidateTransferableNodesResponse, <-chan error) {
 	responseChan := make(chan *ValidateTransferableNodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ValidateTransferableNodesWithChan(request *ValidateTransfe
 }
 
 // ValidateTransferableNodesWithCallback invokes the elasticsearch.ValidateTransferableNodes API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/validatetransferablenodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ValidateTransferableNodesWithCallback(request *ValidateTransferableNodesRequest, callback func(response *ValidateTransferableNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

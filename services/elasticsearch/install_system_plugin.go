@@ -21,7 +21,6 @@ import (
 )
 
 // InstallSystemPlugin invokes the elasticsearch.InstallSystemPlugin API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/installsystemplugin.html
 func (client *Client) InstallSystemPlugin(request *InstallSystemPluginRequest) (response *InstallSystemPluginResponse, err error) {
 	response = CreateInstallSystemPluginResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InstallSystemPlugin(request *InstallSystemPluginRequest) (
 }
 
 // InstallSystemPluginWithChan invokes the elasticsearch.InstallSystemPlugin API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/installsystemplugin.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InstallSystemPluginWithChan(request *InstallSystemPluginRequest) (<-chan *InstallSystemPluginResponse, <-chan error) {
 	responseChan := make(chan *InstallSystemPluginResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InstallSystemPluginWithChan(request *InstallSystemPluginRe
 }
 
 // InstallSystemPluginWithCallback invokes the elasticsearch.InstallSystemPlugin API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/installsystemplugin.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InstallSystemPluginWithCallback(request *InstallSystemPluginRequest, callback func(response *InstallSystemPluginResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

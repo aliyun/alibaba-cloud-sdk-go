@@ -21,7 +21,6 @@ import (
 )
 
 // ListAllNode invokes the elasticsearch.ListAllNode API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listallnode.html
 func (client *Client) ListAllNode(request *ListAllNodeRequest) (response *ListAllNodeResponse, err error) {
 	response = CreateListAllNodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAllNode(request *ListAllNodeRequest) (response *ListAl
 }
 
 // ListAllNodeWithChan invokes the elasticsearch.ListAllNode API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listallnode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAllNodeWithChan(request *ListAllNodeRequest) (<-chan *ListAllNodeResponse, <-chan error) {
 	responseChan := make(chan *ListAllNodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAllNodeWithChan(request *ListAllNodeRequest) (<-chan *
 }
 
 // ListAllNodeWithCallback invokes the elasticsearch.ListAllNode API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listallnode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAllNodeWithCallback(request *ListAllNodeRequest, callback func(response *ListAllNodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

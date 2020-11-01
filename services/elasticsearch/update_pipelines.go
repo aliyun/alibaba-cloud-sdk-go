@@ -21,7 +21,6 @@ import (
 )
 
 // UpdatePipelines invokes the elasticsearch.UpdatePipelines API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatepipelines.html
 func (client *Client) UpdatePipelines(request *UpdatePipelinesRequest) (response *UpdatePipelinesResponse, err error) {
 	response = CreateUpdatePipelinesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdatePipelines(request *UpdatePipelinesRequest) (response
 }
 
 // UpdatePipelinesWithChan invokes the elasticsearch.UpdatePipelines API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatepipelines.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePipelinesWithChan(request *UpdatePipelinesRequest) (<-chan *UpdatePipelinesResponse, <-chan error) {
 	responseChan := make(chan *UpdatePipelinesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdatePipelinesWithChan(request *UpdatePipelinesRequest) (
 }
 
 // UpdatePipelinesWithCallback invokes the elasticsearch.UpdatePipelines API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatepipelines.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePipelinesWithCallback(request *UpdatePipelinesRequest, callback func(response *UpdatePipelinesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

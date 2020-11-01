@@ -21,7 +21,6 @@ import (
 )
 
 // GetElastictask invokes the elasticsearch.GetElastictask API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/getelastictask.html
 func (client *Client) GetElastictask(request *GetElastictaskRequest) (response *GetElastictaskResponse, err error) {
 	response = CreateGetElastictaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetElastictask(request *GetElastictaskRequest) (response *
 }
 
 // GetElastictaskWithChan invokes the elasticsearch.GetElastictask API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/getelastictask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetElastictaskWithChan(request *GetElastictaskRequest) (<-chan *GetElastictaskResponse, <-chan error) {
 	responseChan := make(chan *GetElastictaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetElastictaskWithChan(request *GetElastictaskRequest) (<-
 }
 
 // GetElastictaskWithCallback invokes the elasticsearch.GetElastictask API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/getelastictask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetElastictaskWithCallback(request *GetElastictaskRequest, callback func(response *GetElastictaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

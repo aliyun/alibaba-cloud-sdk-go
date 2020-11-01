@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteLogstash invokes the elasticsearch.DeleteLogstash API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/deletelogstash.html
 func (client *Client) DeleteLogstash(request *DeleteLogstashRequest) (response *DeleteLogstashResponse, err error) {
 	response = CreateDeleteLogstashResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteLogstash(request *DeleteLogstashRequest) (response *
 }
 
 // DeleteLogstashWithChan invokes the elasticsearch.DeleteLogstash API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/deletelogstash.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLogstashWithChan(request *DeleteLogstashRequest) (<-chan *DeleteLogstashResponse, <-chan error) {
 	responseChan := make(chan *DeleteLogstashResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteLogstashWithChan(request *DeleteLogstashRequest) (<-
 }
 
 // DeleteLogstashWithCallback invokes the elasticsearch.DeleteLogstash API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/deletelogstash.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLogstashWithCallback(request *DeleteLogstashRequest, callback func(response *DeleteLogstashResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

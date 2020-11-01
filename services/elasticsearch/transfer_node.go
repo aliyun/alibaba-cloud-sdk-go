@@ -21,7 +21,6 @@ import (
 )
 
 // TransferNode invokes the elasticsearch.TransferNode API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/transfernode.html
 func (client *Client) TransferNode(request *TransferNodeRequest) (response *TransferNodeResponse, err error) {
 	response = CreateTransferNodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TransferNode(request *TransferNodeRequest) (response *Tran
 }
 
 // TransferNodeWithChan invokes the elasticsearch.TransferNode API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/transfernode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TransferNodeWithChan(request *TransferNodeRequest) (<-chan *TransferNodeResponse, <-chan error) {
 	responseChan := make(chan *TransferNodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TransferNodeWithChan(request *TransferNodeRequest) (<-chan
 }
 
 // TransferNodeWithCallback invokes the elasticsearch.TransferNode API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/transfernode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TransferNodeWithCallback(request *TransferNodeRequest, callback func(response *TransferNodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

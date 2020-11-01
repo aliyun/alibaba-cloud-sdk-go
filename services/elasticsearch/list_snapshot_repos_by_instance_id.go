@@ -21,7 +21,6 @@ import (
 )
 
 // ListSnapshotReposByInstanceId invokes the elasticsearch.ListSnapshotReposByInstanceId API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listsnapshotreposbyinstanceid.html
 func (client *Client) ListSnapshotReposByInstanceId(request *ListSnapshotReposByInstanceIdRequest) (response *ListSnapshotReposByInstanceIdResponse, err error) {
 	response = CreateListSnapshotReposByInstanceIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSnapshotReposByInstanceId(request *ListSnapshotReposBy
 }
 
 // ListSnapshotReposByInstanceIdWithChan invokes the elasticsearch.ListSnapshotReposByInstanceId API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listsnapshotreposbyinstanceid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSnapshotReposByInstanceIdWithChan(request *ListSnapshotReposByInstanceIdRequest) (<-chan *ListSnapshotReposByInstanceIdResponse, <-chan error) {
 	responseChan := make(chan *ListSnapshotReposByInstanceIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSnapshotReposByInstanceIdWithChan(request *ListSnapsho
 }
 
 // ListSnapshotReposByInstanceIdWithCallback invokes the elasticsearch.ListSnapshotReposByInstanceId API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listsnapshotreposbyinstanceid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSnapshotReposByInstanceIdWithCallback(request *ListSnapshotReposByInstanceIdRequest, callback func(response *ListSnapshotReposByInstanceIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

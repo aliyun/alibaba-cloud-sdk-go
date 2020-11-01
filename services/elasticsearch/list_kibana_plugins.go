@@ -21,7 +21,6 @@ import (
 )
 
 // ListKibanaPlugins invokes the elasticsearch.ListKibanaPlugins API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listkibanaplugins.html
 func (client *Client) ListKibanaPlugins(request *ListKibanaPluginsRequest) (response *ListKibanaPluginsResponse, err error) {
 	response = CreateListKibanaPluginsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListKibanaPlugins(request *ListKibanaPluginsRequest) (resp
 }
 
 // ListKibanaPluginsWithChan invokes the elasticsearch.ListKibanaPlugins API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listkibanaplugins.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListKibanaPluginsWithChan(request *ListKibanaPluginsRequest) (<-chan *ListKibanaPluginsResponse, <-chan error) {
 	responseChan := make(chan *ListKibanaPluginsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListKibanaPluginsWithChan(request *ListKibanaPluginsReques
 }
 
 // ListKibanaPluginsWithCallback invokes the elasticsearch.ListKibanaPlugins API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/listkibanaplugins.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListKibanaPluginsWithCallback(request *ListKibanaPluginsRequest, callback func(response *ListKibanaPluginsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

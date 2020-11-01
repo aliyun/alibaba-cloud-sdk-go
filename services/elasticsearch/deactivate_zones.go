@@ -21,7 +21,6 @@ import (
 )
 
 // DeactivateZones invokes the elasticsearch.DeactivateZones API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/deactivatezones.html
 func (client *Client) DeactivateZones(request *DeactivateZonesRequest) (response *DeactivateZonesResponse, err error) {
 	response = CreateDeactivateZonesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeactivateZones(request *DeactivateZonesRequest) (response
 }
 
 // DeactivateZonesWithChan invokes the elasticsearch.DeactivateZones API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/deactivatezones.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeactivateZonesWithChan(request *DeactivateZonesRequest) (<-chan *DeactivateZonesResponse, <-chan error) {
 	responseChan := make(chan *DeactivateZonesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeactivateZonesWithChan(request *DeactivateZonesRequest) (
 }
 
 // DeactivateZonesWithCallback invokes the elasticsearch.DeactivateZones API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/deactivatezones.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeactivateZonesWithCallback(request *DeactivateZonesRequest, callback func(response *DeactivateZonesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

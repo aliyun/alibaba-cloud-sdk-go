@@ -21,7 +21,6 @@ import (
 )
 
 // GetTransferableNodes invokes the elasticsearch.GetTransferableNodes API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/gettransferablenodes.html
 func (client *Client) GetTransferableNodes(request *GetTransferableNodesRequest) (response *GetTransferableNodesResponse, err error) {
 	response = CreateGetTransferableNodesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetTransferableNodes(request *GetTransferableNodesRequest)
 }
 
 // GetTransferableNodesWithChan invokes the elasticsearch.GetTransferableNodes API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/gettransferablenodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTransferableNodesWithChan(request *GetTransferableNodesRequest) (<-chan *GetTransferableNodesResponse, <-chan error) {
 	responseChan := make(chan *GetTransferableNodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetTransferableNodesWithChan(request *GetTransferableNodes
 }
 
 // GetTransferableNodesWithCallback invokes the elasticsearch.GetTransferableNodes API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/gettransferablenodes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTransferableNodesWithCallback(request *GetTransferableNodesRequest, callback func(response *GetTransferableNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

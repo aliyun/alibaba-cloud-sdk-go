@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateInstanceChargeType invokes the elasticsearch.UpdateInstanceChargeType API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updateinstancechargetype.html
 func (client *Client) UpdateInstanceChargeType(request *UpdateInstanceChargeTypeRequest) (response *UpdateInstanceChargeTypeResponse, err error) {
 	response = CreateUpdateInstanceChargeTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateInstanceChargeType(request *UpdateInstanceChargeType
 }
 
 // UpdateInstanceChargeTypeWithChan invokes the elasticsearch.UpdateInstanceChargeType API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updateinstancechargetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateInstanceChargeTypeWithChan(request *UpdateInstanceChargeTypeRequest) (<-chan *UpdateInstanceChargeTypeResponse, <-chan error) {
 	responseChan := make(chan *UpdateInstanceChargeTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateInstanceChargeTypeWithChan(request *UpdateInstanceCh
 }
 
 // UpdateInstanceChargeTypeWithCallback invokes the elasticsearch.UpdateInstanceChargeType API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updateinstancechargetype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateInstanceChargeTypeWithCallback(request *UpdateInstanceChargeTypeRequest, callback func(response *UpdateInstanceChargeTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

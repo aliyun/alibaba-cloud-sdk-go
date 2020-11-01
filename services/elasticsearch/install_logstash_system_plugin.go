@@ -21,7 +21,6 @@ import (
 )
 
 // InstallLogstashSystemPlugin invokes the elasticsearch.InstallLogstashSystemPlugin API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/installlogstashsystemplugin.html
 func (client *Client) InstallLogstashSystemPlugin(request *InstallLogstashSystemPluginRequest) (response *InstallLogstashSystemPluginResponse, err error) {
 	response = CreateInstallLogstashSystemPluginResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InstallLogstashSystemPlugin(request *InstallLogstashSystem
 }
 
 // InstallLogstashSystemPluginWithChan invokes the elasticsearch.InstallLogstashSystemPlugin API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/installlogstashsystemplugin.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InstallLogstashSystemPluginWithChan(request *InstallLogstashSystemPluginRequest) (<-chan *InstallLogstashSystemPluginResponse, <-chan error) {
 	responseChan := make(chan *InstallLogstashSystemPluginResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InstallLogstashSystemPluginWithChan(request *InstallLogsta
 }
 
 // InstallLogstashSystemPluginWithCallback invokes the elasticsearch.InstallLogstashSystemPlugin API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/installlogstashsystemplugin.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InstallLogstashSystemPluginWithCallback(request *InstallLogstashSystemPluginRequest, callback func(response *InstallLogstashSystemPluginResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

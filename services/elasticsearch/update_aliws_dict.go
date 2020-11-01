@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateAliwsDict invokes the elasticsearch.UpdateAliwsDict API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatealiwsdict.html
 func (client *Client) UpdateAliwsDict(request *UpdateAliwsDictRequest) (response *UpdateAliwsDictResponse, err error) {
 	response = CreateUpdateAliwsDictResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateAliwsDict(request *UpdateAliwsDictRequest) (response
 }
 
 // UpdateAliwsDictWithChan invokes the elasticsearch.UpdateAliwsDict API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatealiwsdict.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAliwsDictWithChan(request *UpdateAliwsDictRequest) (<-chan *UpdateAliwsDictResponse, <-chan error) {
 	responseChan := make(chan *UpdateAliwsDictResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateAliwsDictWithChan(request *UpdateAliwsDictRequest) (
 }
 
 // UpdateAliwsDictWithCallback invokes the elasticsearch.UpdateAliwsDict API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updatealiwsdict.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAliwsDictWithCallback(request *UpdateAliwsDictRequest, callback func(response *UpdateAliwsDictResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

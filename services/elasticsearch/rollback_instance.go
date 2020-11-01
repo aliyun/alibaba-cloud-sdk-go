@@ -21,7 +21,6 @@ import (
 )
 
 // RollbackInstance invokes the elasticsearch.RollbackInstance API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/rollbackinstance.html
 func (client *Client) RollbackInstance(request *RollbackInstanceRequest) (response *RollbackInstanceResponse, err error) {
 	response = CreateRollbackInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RollbackInstance(request *RollbackInstanceRequest) (respon
 }
 
 // RollbackInstanceWithChan invokes the elasticsearch.RollbackInstance API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/rollbackinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RollbackInstanceWithChan(request *RollbackInstanceRequest) (<-chan *RollbackInstanceResponse, <-chan error) {
 	responseChan := make(chan *RollbackInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RollbackInstanceWithChan(request *RollbackInstanceRequest)
 }
 
 // RollbackInstanceWithCallback invokes the elasticsearch.RollbackInstance API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/rollbackinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RollbackInstanceWithCallback(request *RollbackInstanceRequest, callback func(response *RollbackInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

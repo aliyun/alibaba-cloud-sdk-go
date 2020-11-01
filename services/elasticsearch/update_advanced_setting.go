@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateAdvancedSetting invokes the elasticsearch.UpdateAdvancedSetting API synchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updateadvancedsetting.html
 func (client *Client) UpdateAdvancedSetting(request *UpdateAdvancedSettingRequest) (response *UpdateAdvancedSettingResponse, err error) {
 	response = CreateUpdateAdvancedSettingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateAdvancedSetting(request *UpdateAdvancedSettingReques
 }
 
 // UpdateAdvancedSettingWithChan invokes the elasticsearch.UpdateAdvancedSetting API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updateadvancedsetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAdvancedSettingWithChan(request *UpdateAdvancedSettingRequest) (<-chan *UpdateAdvancedSettingResponse, <-chan error) {
 	responseChan := make(chan *UpdateAdvancedSettingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateAdvancedSettingWithChan(request *UpdateAdvancedSetti
 }
 
 // UpdateAdvancedSettingWithCallback invokes the elasticsearch.UpdateAdvancedSetting API asynchronously
-// api document: https://help.aliyun.com/api/elasticsearch/updateadvancedsetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAdvancedSettingWithCallback(request *UpdateAdvancedSettingRequest, callback func(response *UpdateAdvancedSettingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
