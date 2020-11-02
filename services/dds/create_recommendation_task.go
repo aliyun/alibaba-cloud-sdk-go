@@ -21,7 +21,6 @@ import (
 )
 
 // CreateRecommendationTask invokes the dds.CreateRecommendationTask API synchronously
-// api document: https://help.aliyun.com/api/dds/createrecommendationtask.html
 func (client *Client) CreateRecommendationTask(request *CreateRecommendationTaskRequest) (response *CreateRecommendationTaskResponse, err error) {
 	response = CreateCreateRecommendationTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateRecommendationTask(request *CreateRecommendationTask
 }
 
 // CreateRecommendationTaskWithChan invokes the dds.CreateRecommendationTask API asynchronously
-// api document: https://help.aliyun.com/api/dds/createrecommendationtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRecommendationTaskWithChan(request *CreateRecommendationTaskRequest) (<-chan *CreateRecommendationTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateRecommendationTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateRecommendationTaskWithChan(request *CreateRecommenda
 }
 
 // CreateRecommendationTaskWithCallback invokes the dds.CreateRecommendationTask API asynchronously
-// api document: https://help.aliyun.com/api/dds/createrecommendationtask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRecommendationTaskWithCallback(request *CreateRecommendationTaskRequest, callback func(response *CreateRecommendationTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

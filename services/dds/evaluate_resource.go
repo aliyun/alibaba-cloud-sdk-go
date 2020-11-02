@@ -21,7 +21,6 @@ import (
 )
 
 // EvaluateResource invokes the dds.EvaluateResource API synchronously
-// api document: https://help.aliyun.com/api/dds/evaluateresource.html
 func (client *Client) EvaluateResource(request *EvaluateResourceRequest) (response *EvaluateResourceResponse, err error) {
 	response = CreateEvaluateResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EvaluateResource(request *EvaluateResourceRequest) (respon
 }
 
 // EvaluateResourceWithChan invokes the dds.EvaluateResource API asynchronously
-// api document: https://help.aliyun.com/api/dds/evaluateresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EvaluateResourceWithChan(request *EvaluateResourceRequest) (<-chan *EvaluateResourceResponse, <-chan error) {
 	responseChan := make(chan *EvaluateResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EvaluateResourceWithChan(request *EvaluateResourceRequest)
 }
 
 // EvaluateResourceWithCallback invokes the dds.EvaluateResource API asynchronously
-// api document: https://help.aliyun.com/api/dds/evaluateresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EvaluateResourceWithCallback(request *EvaluateResourceRequest, callback func(response *EvaluateResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

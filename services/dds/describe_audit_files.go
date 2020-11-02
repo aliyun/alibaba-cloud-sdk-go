@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAuditFiles invokes the dds.DescribeAuditFiles API synchronously
-// api document: https://help.aliyun.com/api/dds/describeauditfiles.html
 func (client *Client) DescribeAuditFiles(request *DescribeAuditFilesRequest) (response *DescribeAuditFilesResponse, err error) {
 	response = CreateDescribeAuditFilesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAuditFiles(request *DescribeAuditFilesRequest) (re
 }
 
 // DescribeAuditFilesWithChan invokes the dds.DescribeAuditFiles API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeauditfiles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAuditFilesWithChan(request *DescribeAuditFilesRequest) (<-chan *DescribeAuditFilesResponse, <-chan error) {
 	responseChan := make(chan *DescribeAuditFilesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAuditFilesWithChan(request *DescribeAuditFilesRequ
 }
 
 // DescribeAuditFilesWithCallback invokes the dds.DescribeAuditFiles API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeauditfiles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAuditFilesWithCallback(request *DescribeAuditFilesRequest, callback func(response *DescribeAuditFilesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

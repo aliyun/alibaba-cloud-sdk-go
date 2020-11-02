@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstanceAutoRenewalAttribute invokes the dds.DescribeInstanceAutoRenewalAttribute API synchronously
-// api document: https://help.aliyun.com/api/dds/describeinstanceautorenewalattribute.html
 func (client *Client) DescribeInstanceAutoRenewalAttribute(request *DescribeInstanceAutoRenewalAttributeRequest) (response *DescribeInstanceAutoRenewalAttributeResponse, err error) {
 	response = CreateDescribeInstanceAutoRenewalAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstanceAutoRenewalAttribute(request *DescribeInst
 }
 
 // DescribeInstanceAutoRenewalAttributeWithChan invokes the dds.DescribeInstanceAutoRenewalAttribute API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeinstanceautorenewalattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceAutoRenewalAttributeWithChan(request *DescribeInstanceAutoRenewalAttributeRequest) (<-chan *DescribeInstanceAutoRenewalAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceAutoRenewalAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceAutoRenewalAttributeWithChan(request *Desc
 }
 
 // DescribeInstanceAutoRenewalAttributeWithCallback invokes the dds.DescribeInstanceAutoRenewalAttribute API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeinstanceautorenewalattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceAutoRenewalAttributeWithCallback(request *DescribeInstanceAutoRenewalAttributeRequest, callback func(response *DescribeInstanceAutoRenewalAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

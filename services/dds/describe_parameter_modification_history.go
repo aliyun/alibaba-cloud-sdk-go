@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeParameterModificationHistory invokes the dds.DescribeParameterModificationHistory API synchronously
-// api document: https://help.aliyun.com/api/dds/describeparametermodificationhistory.html
 func (client *Client) DescribeParameterModificationHistory(request *DescribeParameterModificationHistoryRequest) (response *DescribeParameterModificationHistoryResponse, err error) {
 	response = CreateDescribeParameterModificationHistoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeParameterModificationHistory(request *DescribePara
 }
 
 // DescribeParameterModificationHistoryWithChan invokes the dds.DescribeParameterModificationHistory API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeparametermodificationhistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeParameterModificationHistoryWithChan(request *DescribeParameterModificationHistoryRequest) (<-chan *DescribeParameterModificationHistoryResponse, <-chan error) {
 	responseChan := make(chan *DescribeParameterModificationHistoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeParameterModificationHistoryWithChan(request *Desc
 }
 
 // DescribeParameterModificationHistoryWithCallback invokes the dds.DescribeParameterModificationHistory API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeparametermodificationhistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeParameterModificationHistoryWithCallback(request *DescribeParameterModificationHistoryRequest, callback func(response *DescribeParameterModificationHistoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

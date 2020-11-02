@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBInstanceSSL invokes the dds.DescribeDBInstanceSSL API synchronously
-// api document: https://help.aliyun.com/api/dds/describedbinstancessl.html
 func (client *Client) DescribeDBInstanceSSL(request *DescribeDBInstanceSSLRequest) (response *DescribeDBInstanceSSLResponse, err error) {
 	response = CreateDescribeDBInstanceSSLResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBInstanceSSL(request *DescribeDBInstanceSSLReques
 }
 
 // DescribeDBInstanceSSLWithChan invokes the dds.DescribeDBInstanceSSL API asynchronously
-// api document: https://help.aliyun.com/api/dds/describedbinstancessl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceSSLWithChan(request *DescribeDBInstanceSSLRequest) (<-chan *DescribeDBInstanceSSLResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstanceSSLResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBInstanceSSLWithChan(request *DescribeDBInstanceS
 }
 
 // DescribeDBInstanceSSLWithCallback invokes the dds.DescribeDBInstanceSSL API asynchronously
-// api document: https://help.aliyun.com/api/dds/describedbinstancessl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceSSLWithCallback(request *DescribeDBInstanceSSLRequest, callback func(response *DescribeDBInstanceSSLResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

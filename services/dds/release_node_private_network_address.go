@@ -21,7 +21,6 @@ import (
 )
 
 // ReleaseNodePrivateNetworkAddress invokes the dds.ReleaseNodePrivateNetworkAddress API synchronously
-// api document: https://help.aliyun.com/api/dds/releasenodeprivatenetworkaddress.html
 func (client *Client) ReleaseNodePrivateNetworkAddress(request *ReleaseNodePrivateNetworkAddressRequest) (response *ReleaseNodePrivateNetworkAddressResponse, err error) {
 	response = CreateReleaseNodePrivateNetworkAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReleaseNodePrivateNetworkAddress(request *ReleaseNodePriva
 }
 
 // ReleaseNodePrivateNetworkAddressWithChan invokes the dds.ReleaseNodePrivateNetworkAddress API asynchronously
-// api document: https://help.aliyun.com/api/dds/releasenodeprivatenetworkaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseNodePrivateNetworkAddressWithChan(request *ReleaseNodePrivateNetworkAddressRequest) (<-chan *ReleaseNodePrivateNetworkAddressResponse, <-chan error) {
 	responseChan := make(chan *ReleaseNodePrivateNetworkAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReleaseNodePrivateNetworkAddressWithChan(request *ReleaseN
 }
 
 // ReleaseNodePrivateNetworkAddressWithCallback invokes the dds.ReleaseNodePrivateNetworkAddress API asynchronously
-// api document: https://help.aliyun.com/api/dds/releasenodeprivatenetworkaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseNodePrivateNetworkAddressWithCallback(request *ReleaseNodePrivateNetworkAddressRequest, callback func(response *ReleaseNodePrivateNetworkAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

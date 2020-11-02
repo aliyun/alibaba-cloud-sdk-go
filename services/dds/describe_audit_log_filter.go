@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAuditLogFilter invokes the dds.DescribeAuditLogFilter API synchronously
-// api document: https://help.aliyun.com/api/dds/describeauditlogfilter.html
 func (client *Client) DescribeAuditLogFilter(request *DescribeAuditLogFilterRequest) (response *DescribeAuditLogFilterResponse, err error) {
 	response = CreateDescribeAuditLogFilterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAuditLogFilter(request *DescribeAuditLogFilterRequ
 }
 
 // DescribeAuditLogFilterWithChan invokes the dds.DescribeAuditLogFilter API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeauditlogfilter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAuditLogFilterWithChan(request *DescribeAuditLogFilterRequest) (<-chan *DescribeAuditLogFilterResponse, <-chan error) {
 	responseChan := make(chan *DescribeAuditLogFilterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAuditLogFilterWithChan(request *DescribeAuditLogFi
 }
 
 // DescribeAuditLogFilterWithCallback invokes the dds.DescribeAuditLogFilter API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeauditlogfilter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAuditLogFilterWithCallback(request *DescribeAuditLogFilterRequest, callback func(response *DescribeAuditLogFilterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

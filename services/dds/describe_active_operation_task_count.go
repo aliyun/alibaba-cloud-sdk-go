@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeActiveOperationTaskCount invokes the dds.DescribeActiveOperationTaskCount API synchronously
-// api document: https://help.aliyun.com/api/dds/describeactiveoperationtaskcount.html
 func (client *Client) DescribeActiveOperationTaskCount(request *DescribeActiveOperationTaskCountRequest) (response *DescribeActiveOperationTaskCountResponse, err error) {
 	response = CreateDescribeActiveOperationTaskCountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeActiveOperationTaskCount(request *DescribeActiveOp
 }
 
 // DescribeActiveOperationTaskCountWithChan invokes the dds.DescribeActiveOperationTaskCount API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeactiveoperationtaskcount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeActiveOperationTaskCountWithChan(request *DescribeActiveOperationTaskCountRequest) (<-chan *DescribeActiveOperationTaskCountResponse, <-chan error) {
 	responseChan := make(chan *DescribeActiveOperationTaskCountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeActiveOperationTaskCountWithChan(request *Describe
 }
 
 // DescribeActiveOperationTaskCountWithCallback invokes the dds.DescribeActiveOperationTaskCount API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeactiveoperationtaskcount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeActiveOperationTaskCountWithCallback(request *DescribeActiveOperationTaskCountRequest, callback func(response *DescribeActiveOperationTaskCountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeIndexRecommendation invokes the dds.DescribeIndexRecommendation API synchronously
-// api document: https://help.aliyun.com/api/dds/describeindexrecommendation.html
 func (client *Client) DescribeIndexRecommendation(request *DescribeIndexRecommendationRequest) (response *DescribeIndexRecommendationResponse, err error) {
 	response = CreateDescribeIndexRecommendationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeIndexRecommendation(request *DescribeIndexRecommen
 }
 
 // DescribeIndexRecommendationWithChan invokes the dds.DescribeIndexRecommendation API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeindexrecommendation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIndexRecommendationWithChan(request *DescribeIndexRecommendationRequest) (<-chan *DescribeIndexRecommendationResponse, <-chan error) {
 	responseChan := make(chan *DescribeIndexRecommendationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeIndexRecommendationWithChan(request *DescribeIndex
 }
 
 // DescribeIndexRecommendationWithCallback invokes the dds.DescribeIndexRecommendation API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeindexrecommendation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIndexRecommendationWithCallback(request *DescribeIndexRecommendationRequest, callback func(response *DescribeIndexRecommendationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

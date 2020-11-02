@@ -21,7 +21,6 @@ import (
 )
 
 // AllocatePublicNetworkAddress invokes the dds.AllocatePublicNetworkAddress API synchronously
-// api document: https://help.aliyun.com/api/dds/allocatepublicnetworkaddress.html
 func (client *Client) AllocatePublicNetworkAddress(request *AllocatePublicNetworkAddressRequest) (response *AllocatePublicNetworkAddressResponse, err error) {
 	response = CreateAllocatePublicNetworkAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AllocatePublicNetworkAddress(request *AllocatePublicNetwor
 }
 
 // AllocatePublicNetworkAddressWithChan invokes the dds.AllocatePublicNetworkAddress API asynchronously
-// api document: https://help.aliyun.com/api/dds/allocatepublicnetworkaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocatePublicNetworkAddressWithChan(request *AllocatePublicNetworkAddressRequest) (<-chan *AllocatePublicNetworkAddressResponse, <-chan error) {
 	responseChan := make(chan *AllocatePublicNetworkAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AllocatePublicNetworkAddressWithChan(request *AllocatePubl
 }
 
 // AllocatePublicNetworkAddressWithCallback invokes the dds.AllocatePublicNetworkAddress API asynchronously
-// api document: https://help.aliyun.com/api/dds/allocatepublicnetworkaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocatePublicNetworkAddressWithCallback(request *AllocatePublicNetworkAddressRequest, callback func(response *AllocatePublicNetworkAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

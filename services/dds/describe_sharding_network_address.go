@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeShardingNetworkAddress invokes the dds.DescribeShardingNetworkAddress API synchronously
-// api document: https://help.aliyun.com/api/dds/describeshardingnetworkaddress.html
 func (client *Client) DescribeShardingNetworkAddress(request *DescribeShardingNetworkAddressRequest) (response *DescribeShardingNetworkAddressResponse, err error) {
 	response = CreateDescribeShardingNetworkAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeShardingNetworkAddress(request *DescribeShardingNe
 }
 
 // DescribeShardingNetworkAddressWithChan invokes the dds.DescribeShardingNetworkAddress API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeshardingnetworkaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeShardingNetworkAddressWithChan(request *DescribeShardingNetworkAddressRequest) (<-chan *DescribeShardingNetworkAddressResponse, <-chan error) {
 	responseChan := make(chan *DescribeShardingNetworkAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeShardingNetworkAddressWithChan(request *DescribeSh
 }
 
 // DescribeShardingNetworkAddressWithCallback invokes the dds.DescribeShardingNetworkAddress API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeshardingnetworkaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeShardingNetworkAddressWithCallback(request *DescribeShardingNetworkAddressRequest, callback func(response *DescribeShardingNetworkAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

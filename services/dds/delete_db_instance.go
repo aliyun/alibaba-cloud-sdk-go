@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDBInstance invokes the dds.DeleteDBInstance API synchronously
-// api document: https://help.aliyun.com/api/dds/deletedbinstance.html
 func (client *Client) DeleteDBInstance(request *DeleteDBInstanceRequest) (response *DeleteDBInstanceResponse, err error) {
 	response = CreateDeleteDBInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDBInstance(request *DeleteDBInstanceRequest) (respon
 }
 
 // DeleteDBInstanceWithChan invokes the dds.DeleteDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/dds/deletedbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDBInstanceWithChan(request *DeleteDBInstanceRequest) (<-chan *DeleteDBInstanceResponse, <-chan error) {
 	responseChan := make(chan *DeleteDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDBInstanceWithChan(request *DeleteDBInstanceRequest)
 }
 
 // DeleteDBInstanceWithCallback invokes the dds.DeleteDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/dds/deletedbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDBInstanceWithCallback(request *DeleteDBInstanceRequest, callback func(response *DeleteDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

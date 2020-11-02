@@ -21,7 +21,6 @@ import (
 )
 
 // RestoreDBInstance invokes the dds.RestoreDBInstance API synchronously
-// api document: https://help.aliyun.com/api/dds/restoredbinstance.html
 func (client *Client) RestoreDBInstance(request *RestoreDBInstanceRequest) (response *RestoreDBInstanceResponse, err error) {
 	response = CreateRestoreDBInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RestoreDBInstance(request *RestoreDBInstanceRequest) (resp
 }
 
 // RestoreDBInstanceWithChan invokes the dds.RestoreDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/dds/restoredbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestoreDBInstanceWithChan(request *RestoreDBInstanceRequest) (<-chan *RestoreDBInstanceResponse, <-chan error) {
 	responseChan := make(chan *RestoreDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RestoreDBInstanceWithChan(request *RestoreDBInstanceReques
 }
 
 // RestoreDBInstanceWithCallback invokes the dds.RestoreDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/dds/restoredbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestoreDBInstanceWithCallback(request *RestoreDBInstanceRequest, callback func(response *RestoreDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

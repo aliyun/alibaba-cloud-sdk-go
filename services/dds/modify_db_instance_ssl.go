@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBInstanceSSL invokes the dds.ModifyDBInstanceSSL API synchronously
-// api document: https://help.aliyun.com/api/dds/modifydbinstancessl.html
 func (client *Client) ModifyDBInstanceSSL(request *ModifyDBInstanceSSLRequest) (response *ModifyDBInstanceSSLResponse, err error) {
 	response = CreateModifyDBInstanceSSLResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBInstanceSSL(request *ModifyDBInstanceSSLRequest) (
 }
 
 // ModifyDBInstanceSSLWithChan invokes the dds.ModifyDBInstanceSSL API asynchronously
-// api document: https://help.aliyun.com/api/dds/modifydbinstancessl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceSSLWithChan(request *ModifyDBInstanceSSLRequest) (<-chan *ModifyDBInstanceSSLResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBInstanceSSLResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBInstanceSSLWithChan(request *ModifyDBInstanceSSLRe
 }
 
 // ModifyDBInstanceSSLWithCallback invokes the dds.ModifyDBInstanceSSL API asynchronously
-// api document: https://help.aliyun.com/api/dds/modifydbinstancessl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceSSLWithCallback(request *ModifyDBInstanceSSLRequest, callback func(response *ModifyDBInstanceSSLResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBackupDBs invokes the dds.DescribeBackupDBs API synchronously
-// api document: https://help.aliyun.com/api/dds/describebackupdbs.html
 func (client *Client) DescribeBackupDBs(request *DescribeBackupDBsRequest) (response *DescribeBackupDBsResponse, err error) {
 	response = CreateDescribeBackupDBsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBackupDBs(request *DescribeBackupDBsRequest) (resp
 }
 
 // DescribeBackupDBsWithChan invokes the dds.DescribeBackupDBs API asynchronously
-// api document: https://help.aliyun.com/api/dds/describebackupdbs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupDBsWithChan(request *DescribeBackupDBsRequest) (<-chan *DescribeBackupDBsResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackupDBsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBackupDBsWithChan(request *DescribeBackupDBsReques
 }
 
 // DescribeBackupDBsWithCallback invokes the dds.DescribeBackupDBs API asynchronously
-// api document: https://help.aliyun.com/api/dds/describebackupdbs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupDBsWithCallback(request *DescribeBackupDBsRequest, callback func(response *DescribeBackupDBsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

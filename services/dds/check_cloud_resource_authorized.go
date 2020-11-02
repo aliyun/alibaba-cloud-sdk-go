@@ -21,7 +21,6 @@ import (
 )
 
 // CheckCloudResourceAuthorized invokes the dds.CheckCloudResourceAuthorized API synchronously
-// api document: https://help.aliyun.com/api/dds/checkcloudresourceauthorized.html
 func (client *Client) CheckCloudResourceAuthorized(request *CheckCloudResourceAuthorizedRequest) (response *CheckCloudResourceAuthorizedResponse, err error) {
 	response = CreateCheckCloudResourceAuthorizedResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckCloudResourceAuthorized(request *CheckCloudResourceAu
 }
 
 // CheckCloudResourceAuthorizedWithChan invokes the dds.CheckCloudResourceAuthorized API asynchronously
-// api document: https://help.aliyun.com/api/dds/checkcloudresourceauthorized.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckCloudResourceAuthorizedWithChan(request *CheckCloudResourceAuthorizedRequest) (<-chan *CheckCloudResourceAuthorizedResponse, <-chan error) {
 	responseChan := make(chan *CheckCloudResourceAuthorizedResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckCloudResourceAuthorizedWithChan(request *CheckCloudRe
 }
 
 // CheckCloudResourceAuthorizedWithCallback invokes the dds.CheckCloudResourceAuthorized API asynchronously
-// api document: https://help.aliyun.com/api/dds/checkcloudresourceauthorized.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckCloudResourceAuthorizedWithCallback(request *CheckCloudResourceAuthorizedRequest, callback func(response *CheckCloudResourceAuthorizedResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

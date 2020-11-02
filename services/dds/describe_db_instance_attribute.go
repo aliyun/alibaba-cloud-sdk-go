@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBInstanceAttribute invokes the dds.DescribeDBInstanceAttribute API synchronously
-// api document: https://help.aliyun.com/api/dds/describedbinstanceattribute.html
 func (client *Client) DescribeDBInstanceAttribute(request *DescribeDBInstanceAttributeRequest) (response *DescribeDBInstanceAttributeResponse, err error) {
 	response = CreateDescribeDBInstanceAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBInstanceAttribute(request *DescribeDBInstanceAtt
 }
 
 // DescribeDBInstanceAttributeWithChan invokes the dds.DescribeDBInstanceAttribute API asynchronously
-// api document: https://help.aliyun.com/api/dds/describedbinstanceattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceAttributeWithChan(request *DescribeDBInstanceAttributeRequest) (<-chan *DescribeDBInstanceAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstanceAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBInstanceAttributeWithChan(request *DescribeDBIns
 }
 
 // DescribeDBInstanceAttributeWithCallback invokes the dds.DescribeDBInstanceAttribute API asynchronously
-// api document: https://help.aliyun.com/api/dds/describedbinstanceattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceAttributeWithCallback(request *DescribeDBInstanceAttributeRequest, callback func(response *DescribeDBInstanceAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

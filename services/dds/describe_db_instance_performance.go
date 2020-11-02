@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBInstancePerformance invokes the dds.DescribeDBInstancePerformance API synchronously
-// api document: https://help.aliyun.com/api/dds/describedbinstanceperformance.html
 func (client *Client) DescribeDBInstancePerformance(request *DescribeDBInstancePerformanceRequest) (response *DescribeDBInstancePerformanceResponse, err error) {
 	response = CreateDescribeDBInstancePerformanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBInstancePerformance(request *DescribeDBInstanceP
 }
 
 // DescribeDBInstancePerformanceWithChan invokes the dds.DescribeDBInstancePerformance API asynchronously
-// api document: https://help.aliyun.com/api/dds/describedbinstanceperformance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancePerformanceWithChan(request *DescribeDBInstancePerformanceRequest) (<-chan *DescribeDBInstancePerformanceResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstancePerformanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBInstancePerformanceWithChan(request *DescribeDBI
 }
 
 // DescribeDBInstancePerformanceWithCallback invokes the dds.DescribeDBInstancePerformance API asynchronously
-// api document: https://help.aliyun.com/api/dds/describedbinstanceperformance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancePerformanceWithCallback(request *DescribeDBInstancePerformanceRequest, callback func(response *DescribeDBInstancePerformanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

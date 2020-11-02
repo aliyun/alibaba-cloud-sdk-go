@@ -21,7 +21,6 @@ import (
 )
 
 // RenewDBInstance invokes the dds.RenewDBInstance API synchronously
-// api document: https://help.aliyun.com/api/dds/renewdbinstance.html
 func (client *Client) RenewDBInstance(request *RenewDBInstanceRequest) (response *RenewDBInstanceResponse, err error) {
 	response = CreateRenewDBInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RenewDBInstance(request *RenewDBInstanceRequest) (response
 }
 
 // RenewDBInstanceWithChan invokes the dds.RenewDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/dds/renewdbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenewDBInstanceWithChan(request *RenewDBInstanceRequest) (<-chan *RenewDBInstanceResponse, <-chan error) {
 	responseChan := make(chan *RenewDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RenewDBInstanceWithChan(request *RenewDBInstanceRequest) (
 }
 
 // RenewDBInstanceWithCallback invokes the dds.RenewDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/dds/renewdbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenewDBInstanceWithCallback(request *RenewDBInstanceRequest, callback func(response *RenewDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

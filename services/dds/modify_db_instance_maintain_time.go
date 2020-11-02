@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBInstanceMaintainTime invokes the dds.ModifyDBInstanceMaintainTime API synchronously
-// api document: https://help.aliyun.com/api/dds/modifydbinstancemaintaintime.html
 func (client *Client) ModifyDBInstanceMaintainTime(request *ModifyDBInstanceMaintainTimeRequest) (response *ModifyDBInstanceMaintainTimeResponse, err error) {
 	response = CreateModifyDBInstanceMaintainTimeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBInstanceMaintainTime(request *ModifyDBInstanceMain
 }
 
 // ModifyDBInstanceMaintainTimeWithChan invokes the dds.ModifyDBInstanceMaintainTime API asynchronously
-// api document: https://help.aliyun.com/api/dds/modifydbinstancemaintaintime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceMaintainTimeWithChan(request *ModifyDBInstanceMaintainTimeRequest) (<-chan *ModifyDBInstanceMaintainTimeResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBInstanceMaintainTimeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBInstanceMaintainTimeWithChan(request *ModifyDBInst
 }
 
 // ModifyDBInstanceMaintainTimeWithCallback invokes the dds.ModifyDBInstanceMaintainTime API asynchronously
-// api document: https://help.aliyun.com/api/dds/modifydbinstancemaintaintime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceMaintainTimeWithCallback(request *ModifyDBInstanceMaintainTimeRequest, callback func(response *ModifyDBInstanceMaintainTimeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

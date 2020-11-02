@@ -21,7 +21,6 @@ import (
 )
 
 // UpgradeDBInstanceEngineVersion invokes the dds.UpgradeDBInstanceEngineVersion API synchronously
-// api document: https://help.aliyun.com/api/dds/upgradedbinstanceengineversion.html
 func (client *Client) UpgradeDBInstanceEngineVersion(request *UpgradeDBInstanceEngineVersionRequest) (response *UpgradeDBInstanceEngineVersionResponse, err error) {
 	response = CreateUpgradeDBInstanceEngineVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpgradeDBInstanceEngineVersion(request *UpgradeDBInstanceE
 }
 
 // UpgradeDBInstanceEngineVersionWithChan invokes the dds.UpgradeDBInstanceEngineVersion API asynchronously
-// api document: https://help.aliyun.com/api/dds/upgradedbinstanceengineversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeDBInstanceEngineVersionWithChan(request *UpgradeDBInstanceEngineVersionRequest) (<-chan *UpgradeDBInstanceEngineVersionResponse, <-chan error) {
 	responseChan := make(chan *UpgradeDBInstanceEngineVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpgradeDBInstanceEngineVersionWithChan(request *UpgradeDBI
 }
 
 // UpgradeDBInstanceEngineVersionWithCallback invokes the dds.UpgradeDBInstanceEngineVersion API asynchronously
-// api document: https://help.aliyun.com/api/dds/upgradedbinstanceengineversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeDBInstanceEngineVersionWithCallback(request *UpgradeDBInstanceEngineVersionRequest, callback func(response *UpgradeDBInstanceEngineVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

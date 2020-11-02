@@ -21,7 +21,6 @@ import (
 )
 
 // UpgradeDBInstanceKernelVersion invokes the dds.UpgradeDBInstanceKernelVersion API synchronously
-// api document: https://help.aliyun.com/api/dds/upgradedbinstancekernelversion.html
 func (client *Client) UpgradeDBInstanceKernelVersion(request *UpgradeDBInstanceKernelVersionRequest) (response *UpgradeDBInstanceKernelVersionResponse, err error) {
 	response = CreateUpgradeDBInstanceKernelVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpgradeDBInstanceKernelVersion(request *UpgradeDBInstanceK
 }
 
 // UpgradeDBInstanceKernelVersionWithChan invokes the dds.UpgradeDBInstanceKernelVersion API asynchronously
-// api document: https://help.aliyun.com/api/dds/upgradedbinstancekernelversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeDBInstanceKernelVersionWithChan(request *UpgradeDBInstanceKernelVersionRequest) (<-chan *UpgradeDBInstanceKernelVersionResponse, <-chan error) {
 	responseChan := make(chan *UpgradeDBInstanceKernelVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpgradeDBInstanceKernelVersionWithChan(request *UpgradeDBI
 }
 
 // UpgradeDBInstanceKernelVersionWithCallback invokes the dds.UpgradeDBInstanceKernelVersion API asynchronously
-// api document: https://help.aliyun.com/api/dds/upgradedbinstancekernelversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeDBInstanceKernelVersionWithCallback(request *UpgradeDBInstanceKernelVersionRequest, callback func(response *UpgradeDBInstanceKernelVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

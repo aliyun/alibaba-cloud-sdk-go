@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeMongoDBLogConfig invokes the dds.DescribeMongoDBLogConfig API synchronously
-// api document: https://help.aliyun.com/api/dds/describemongodblogconfig.html
 func (client *Client) DescribeMongoDBLogConfig(request *DescribeMongoDBLogConfigRequest) (response *DescribeMongoDBLogConfigResponse, err error) {
 	response = CreateDescribeMongoDBLogConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeMongoDBLogConfig(request *DescribeMongoDBLogConfig
 }
 
 // DescribeMongoDBLogConfigWithChan invokes the dds.DescribeMongoDBLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/dds/describemongodblogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMongoDBLogConfigWithChan(request *DescribeMongoDBLogConfigRequest) (<-chan *DescribeMongoDBLogConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeMongoDBLogConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeMongoDBLogConfigWithChan(request *DescribeMongoDBL
 }
 
 // DescribeMongoDBLogConfigWithCallback invokes the dds.DescribeMongoDBLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/dds/describemongodblogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMongoDBLogConfigWithCallback(request *DescribeMongoDBLogConfigRequest, callback func(response *DescribeMongoDBLogConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

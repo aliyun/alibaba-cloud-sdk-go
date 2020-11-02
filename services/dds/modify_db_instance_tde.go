@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBInstanceTDE invokes the dds.ModifyDBInstanceTDE API synchronously
-// api document: https://help.aliyun.com/api/dds/modifydbinstancetde.html
 func (client *Client) ModifyDBInstanceTDE(request *ModifyDBInstanceTDERequest) (response *ModifyDBInstanceTDEResponse, err error) {
 	response = CreateModifyDBInstanceTDEResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBInstanceTDE(request *ModifyDBInstanceTDERequest) (
 }
 
 // ModifyDBInstanceTDEWithChan invokes the dds.ModifyDBInstanceTDE API asynchronously
-// api document: https://help.aliyun.com/api/dds/modifydbinstancetde.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceTDEWithChan(request *ModifyDBInstanceTDERequest) (<-chan *ModifyDBInstanceTDEResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBInstanceTDEResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBInstanceTDEWithChan(request *ModifyDBInstanceTDERe
 }
 
 // ModifyDBInstanceTDEWithCallback invokes the dds.ModifyDBInstanceTDE API asynchronously
-// api document: https://help.aliyun.com/api/dds/modifydbinstancetde.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceTDEWithCallback(request *ModifyDBInstanceTDERequest, callback func(response *ModifyDBInstanceTDEResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

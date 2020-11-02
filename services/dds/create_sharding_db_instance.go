@@ -21,7 +21,6 @@ import (
 )
 
 // CreateShardingDBInstance invokes the dds.CreateShardingDBInstance API synchronously
-// api document: https://help.aliyun.com/api/dds/createshardingdbinstance.html
 func (client *Client) CreateShardingDBInstance(request *CreateShardingDBInstanceRequest) (response *CreateShardingDBInstanceResponse, err error) {
 	response = CreateCreateShardingDBInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateShardingDBInstance(request *CreateShardingDBInstance
 }
 
 // CreateShardingDBInstanceWithChan invokes the dds.CreateShardingDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/dds/createshardingdbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateShardingDBInstanceWithChan(request *CreateShardingDBInstanceRequest) (<-chan *CreateShardingDBInstanceResponse, <-chan error) {
 	responseChan := make(chan *CreateShardingDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateShardingDBInstanceWithChan(request *CreateShardingDB
 }
 
 // CreateShardingDBInstanceWithCallback invokes the dds.CreateShardingDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/dds/createshardingdbinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateShardingDBInstanceWithCallback(request *CreateShardingDBInstanceRequest, callback func(response *CreateShardingDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

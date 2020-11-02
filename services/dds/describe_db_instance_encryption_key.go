@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBInstanceEncryptionKey invokes the dds.DescribeDBInstanceEncryptionKey API synchronously
-// api document: https://help.aliyun.com/api/dds/describedbinstanceencryptionkey.html
 func (client *Client) DescribeDBInstanceEncryptionKey(request *DescribeDBInstanceEncryptionKeyRequest) (response *DescribeDBInstanceEncryptionKeyResponse, err error) {
 	response = CreateDescribeDBInstanceEncryptionKeyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBInstanceEncryptionKey(request *DescribeDBInstanc
 }
 
 // DescribeDBInstanceEncryptionKeyWithChan invokes the dds.DescribeDBInstanceEncryptionKey API asynchronously
-// api document: https://help.aliyun.com/api/dds/describedbinstanceencryptionkey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceEncryptionKeyWithChan(request *DescribeDBInstanceEncryptionKeyRequest) (<-chan *DescribeDBInstanceEncryptionKeyResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstanceEncryptionKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBInstanceEncryptionKeyWithChan(request *DescribeD
 }
 
 // DescribeDBInstanceEncryptionKeyWithCallback invokes the dds.DescribeDBInstanceEncryptionKey API asynchronously
-// api document: https://help.aliyun.com/api/dds/describedbinstanceencryptionkey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceEncryptionKeyWithCallback(request *DescribeDBInstanceEncryptionKeyRequest, callback func(response *DescribeDBInstanceEncryptionKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

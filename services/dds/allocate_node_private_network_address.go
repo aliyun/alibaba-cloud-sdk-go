@@ -21,7 +21,6 @@ import (
 )
 
 // AllocateNodePrivateNetworkAddress invokes the dds.AllocateNodePrivateNetworkAddress API synchronously
-// api document: https://help.aliyun.com/api/dds/allocatenodeprivatenetworkaddress.html
 func (client *Client) AllocateNodePrivateNetworkAddress(request *AllocateNodePrivateNetworkAddressRequest) (response *AllocateNodePrivateNetworkAddressResponse, err error) {
 	response = CreateAllocateNodePrivateNetworkAddressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AllocateNodePrivateNetworkAddress(request *AllocateNodePri
 }
 
 // AllocateNodePrivateNetworkAddressWithChan invokes the dds.AllocateNodePrivateNetworkAddress API asynchronously
-// api document: https://help.aliyun.com/api/dds/allocatenodeprivatenetworkaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateNodePrivateNetworkAddressWithChan(request *AllocateNodePrivateNetworkAddressRequest) (<-chan *AllocateNodePrivateNetworkAddressResponse, <-chan error) {
 	responseChan := make(chan *AllocateNodePrivateNetworkAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AllocateNodePrivateNetworkAddressWithChan(request *Allocat
 }
 
 // AllocateNodePrivateNetworkAddressWithCallback invokes the dds.AllocateNodePrivateNetworkAddress API asynchronously
-// api document: https://help.aliyun.com/api/dds/allocatenodeprivatenetworkaddress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateNodePrivateNetworkAddressWithCallback(request *AllocateNodePrivateNetworkAddressRequest, callback func(response *AllocateNodePrivateNetworkAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

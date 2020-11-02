@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAuditPolicy invokes the dds.DescribeAuditPolicy API synchronously
-// api document: https://help.aliyun.com/api/dds/describeauditpolicy.html
 func (client *Client) DescribeAuditPolicy(request *DescribeAuditPolicyRequest) (response *DescribeAuditPolicyResponse, err error) {
 	response = CreateDescribeAuditPolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAuditPolicy(request *DescribeAuditPolicyRequest) (
 }
 
 // DescribeAuditPolicyWithChan invokes the dds.DescribeAuditPolicy API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeauditpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAuditPolicyWithChan(request *DescribeAuditPolicyRequest) (<-chan *DescribeAuditPolicyResponse, <-chan error) {
 	responseChan := make(chan *DescribeAuditPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAuditPolicyWithChan(request *DescribeAuditPolicyRe
 }
 
 // DescribeAuditPolicyWithCallback invokes the dds.DescribeAuditPolicy API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeauditpolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAuditPolicyWithCallback(request *DescribeAuditPolicyRequest, callback func(response *DescribeAuditPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

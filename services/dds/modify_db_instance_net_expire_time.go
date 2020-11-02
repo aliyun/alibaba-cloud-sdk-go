@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDBInstanceNetExpireTime invokes the dds.ModifyDBInstanceNetExpireTime API synchronously
-// api document: https://help.aliyun.com/api/dds/modifydbinstancenetexpiretime.html
 func (client *Client) ModifyDBInstanceNetExpireTime(request *ModifyDBInstanceNetExpireTimeRequest) (response *ModifyDBInstanceNetExpireTimeResponse, err error) {
 	response = CreateModifyDBInstanceNetExpireTimeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDBInstanceNetExpireTime(request *ModifyDBInstanceNet
 }
 
 // ModifyDBInstanceNetExpireTimeWithChan invokes the dds.ModifyDBInstanceNetExpireTime API asynchronously
-// api document: https://help.aliyun.com/api/dds/modifydbinstancenetexpiretime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceNetExpireTimeWithChan(request *ModifyDBInstanceNetExpireTimeRequest) (<-chan *ModifyDBInstanceNetExpireTimeResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBInstanceNetExpireTimeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDBInstanceNetExpireTimeWithChan(request *ModifyDBIns
 }
 
 // ModifyDBInstanceNetExpireTimeWithCallback invokes the dds.ModifyDBInstanceNetExpireTime API asynchronously
-// api document: https://help.aliyun.com/api/dds/modifydbinstancenetexpiretime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceNetExpireTimeWithCallback(request *ModifyDBInstanceNetExpireTimeRequest, callback func(response *ModifyDBInstanceNetExpireTimeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

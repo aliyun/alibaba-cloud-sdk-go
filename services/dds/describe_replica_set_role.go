@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeReplicaSetRole invokes the dds.DescribeReplicaSetRole API synchronously
-// api document: https://help.aliyun.com/api/dds/describereplicasetrole.html
 func (client *Client) DescribeReplicaSetRole(request *DescribeReplicaSetRoleRequest) (response *DescribeReplicaSetRoleResponse, err error) {
 	response = CreateDescribeReplicaSetRoleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeReplicaSetRole(request *DescribeReplicaSetRoleRequ
 }
 
 // DescribeReplicaSetRoleWithChan invokes the dds.DescribeReplicaSetRole API asynchronously
-// api document: https://help.aliyun.com/api/dds/describereplicasetrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReplicaSetRoleWithChan(request *DescribeReplicaSetRoleRequest) (<-chan *DescribeReplicaSetRoleResponse, <-chan error) {
 	responseChan := make(chan *DescribeReplicaSetRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeReplicaSetRoleWithChan(request *DescribeReplicaSet
 }
 
 // DescribeReplicaSetRoleWithCallback invokes the dds.DescribeReplicaSetRole API asynchronously
-// api document: https://help.aliyun.com/api/dds/describereplicasetrole.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReplicaSetRoleWithCallback(request *DescribeReplicaSetRoleRequest, callback func(response *DescribeReplicaSetRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

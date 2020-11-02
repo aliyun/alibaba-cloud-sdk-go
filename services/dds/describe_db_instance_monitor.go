@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBInstanceMonitor invokes the dds.DescribeDBInstanceMonitor API synchronously
-// api document: https://help.aliyun.com/api/dds/describedbinstancemonitor.html
 func (client *Client) DescribeDBInstanceMonitor(request *DescribeDBInstanceMonitorRequest) (response *DescribeDBInstanceMonitorResponse, err error) {
 	response = CreateDescribeDBInstanceMonitorResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBInstanceMonitor(request *DescribeDBInstanceMonit
 }
 
 // DescribeDBInstanceMonitorWithChan invokes the dds.DescribeDBInstanceMonitor API asynchronously
-// api document: https://help.aliyun.com/api/dds/describedbinstancemonitor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceMonitorWithChan(request *DescribeDBInstanceMonitorRequest) (<-chan *DescribeDBInstanceMonitorResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstanceMonitorResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBInstanceMonitorWithChan(request *DescribeDBInsta
 }
 
 // DescribeDBInstanceMonitorWithCallback invokes the dds.DescribeDBInstanceMonitor API asynchronously
-// api document: https://help.aliyun.com/api/dds/describedbinstancemonitor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceMonitorWithCallback(request *DescribeDBInstanceMonitorRequest, callback func(response *DescribeDBInstanceMonitorResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

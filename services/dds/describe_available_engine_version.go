@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAvailableEngineVersion invokes the dds.DescribeAvailableEngineVersion API synchronously
-// api document: https://help.aliyun.com/api/dds/describeavailableengineversion.html
 func (client *Client) DescribeAvailableEngineVersion(request *DescribeAvailableEngineVersionRequest) (response *DescribeAvailableEngineVersionResponse, err error) {
 	response = CreateDescribeAvailableEngineVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAvailableEngineVersion(request *DescribeAvailableE
 }
 
 // DescribeAvailableEngineVersionWithChan invokes the dds.DescribeAvailableEngineVersion API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeavailableengineversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableEngineVersionWithChan(request *DescribeAvailableEngineVersionRequest) (<-chan *DescribeAvailableEngineVersionResponse, <-chan error) {
 	responseChan := make(chan *DescribeAvailableEngineVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAvailableEngineVersionWithChan(request *DescribeAv
 }
 
 // DescribeAvailableEngineVersionWithCallback invokes the dds.DescribeAvailableEngineVersion API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeavailableengineversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableEngineVersionWithCallback(request *DescribeAvailableEngineVersionRequest, callback func(response *DescribeAvailableEngineVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

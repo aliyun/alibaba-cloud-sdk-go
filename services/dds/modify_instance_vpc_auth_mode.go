@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyInstanceVpcAuthMode invokes the dds.ModifyInstanceVpcAuthMode API synchronously
-// api document: https://help.aliyun.com/api/dds/modifyinstancevpcauthmode.html
 func (client *Client) ModifyInstanceVpcAuthMode(request *ModifyInstanceVpcAuthModeRequest) (response *ModifyInstanceVpcAuthModeResponse, err error) {
 	response = CreateModifyInstanceVpcAuthModeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyInstanceVpcAuthMode(request *ModifyInstanceVpcAuthMo
 }
 
 // ModifyInstanceVpcAuthModeWithChan invokes the dds.ModifyInstanceVpcAuthMode API asynchronously
-// api document: https://help.aliyun.com/api/dds/modifyinstancevpcauthmode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceVpcAuthModeWithChan(request *ModifyInstanceVpcAuthModeRequest) (<-chan *ModifyInstanceVpcAuthModeResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceVpcAuthModeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyInstanceVpcAuthModeWithChan(request *ModifyInstanceV
 }
 
 // ModifyInstanceVpcAuthModeWithCallback invokes the dds.ModifyInstanceVpcAuthMode API asynchronously
-// api document: https://help.aliyun.com/api/dds/modifyinstancevpcauthmode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceVpcAuthModeWithCallback(request *ModifyInstanceVpcAuthModeRequest, callback func(response *ModifyInstanceVpcAuthModeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

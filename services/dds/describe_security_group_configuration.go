@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSecurityGroupConfiguration invokes the dds.DescribeSecurityGroupConfiguration API synchronously
-// api document: https://help.aliyun.com/api/dds/describesecuritygroupconfiguration.html
 func (client *Client) DescribeSecurityGroupConfiguration(request *DescribeSecurityGroupConfigurationRequest) (response *DescribeSecurityGroupConfigurationResponse, err error) {
 	response = CreateDescribeSecurityGroupConfigurationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSecurityGroupConfiguration(request *DescribeSecuri
 }
 
 // DescribeSecurityGroupConfigurationWithChan invokes the dds.DescribeSecurityGroupConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/dds/describesecuritygroupconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupConfigurationWithChan(request *DescribeSecurityGroupConfigurationRequest) (<-chan *DescribeSecurityGroupConfigurationResponse, <-chan error) {
 	responseChan := make(chan *DescribeSecurityGroupConfigurationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSecurityGroupConfigurationWithChan(request *Descri
 }
 
 // DescribeSecurityGroupConfigurationWithCallback invokes the dds.DescribeSecurityGroupConfiguration API asynchronously
-// api document: https://help.aliyun.com/api/dds/describesecuritygroupconfiguration.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupConfigurationWithCallback(request *DescribeSecurityGroupConfigurationRequest, callback func(response *DescribeSecurityGroupConfigurationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

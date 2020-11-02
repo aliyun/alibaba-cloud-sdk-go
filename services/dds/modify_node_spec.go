@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyNodeSpec invokes the dds.ModifyNodeSpec API synchronously
-// api document: https://help.aliyun.com/api/dds/modifynodespec.html
 func (client *Client) ModifyNodeSpec(request *ModifyNodeSpecRequest) (response *ModifyNodeSpecResponse, err error) {
 	response = CreateModifyNodeSpecResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyNodeSpec(request *ModifyNodeSpecRequest) (response *
 }
 
 // ModifyNodeSpecWithChan invokes the dds.ModifyNodeSpec API asynchronously
-// api document: https://help.aliyun.com/api/dds/modifynodespec.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNodeSpecWithChan(request *ModifyNodeSpecRequest) (<-chan *ModifyNodeSpecResponse, <-chan error) {
 	responseChan := make(chan *ModifyNodeSpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyNodeSpecWithChan(request *ModifyNodeSpecRequest) (<-
 }
 
 // ModifyNodeSpecWithCallback invokes the dds.ModifyNodeSpec API asynchronously
-// api document: https://help.aliyun.com/api/dds/modifynodespec.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNodeSpecWithCallback(request *ModifyNodeSpecRequest, callback func(response *ModifyNodeSpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

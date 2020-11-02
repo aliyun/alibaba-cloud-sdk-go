@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDBInstanceTDEInfo invokes the dds.DescribeDBInstanceTDEInfo API synchronously
-// api document: https://help.aliyun.com/api/dds/describedbinstancetdeinfo.html
 func (client *Client) DescribeDBInstanceTDEInfo(request *DescribeDBInstanceTDEInfoRequest) (response *DescribeDBInstanceTDEInfoResponse, err error) {
 	response = CreateDescribeDBInstanceTDEInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDBInstanceTDEInfo(request *DescribeDBInstanceTDEIn
 }
 
 // DescribeDBInstanceTDEInfoWithChan invokes the dds.DescribeDBInstanceTDEInfo API asynchronously
-// api document: https://help.aliyun.com/api/dds/describedbinstancetdeinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceTDEInfoWithChan(request *DescribeDBInstanceTDEInfoRequest) (<-chan *DescribeDBInstanceTDEInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstanceTDEInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDBInstanceTDEInfoWithChan(request *DescribeDBInsta
 }
 
 // DescribeDBInstanceTDEInfoWithCallback invokes the dds.DescribeDBInstanceTDEInfo API asynchronously
-// api document: https://help.aliyun.com/api/dds/describedbinstancetdeinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceTDEInfoWithCallback(request *DescribeDBInstanceTDEInfoRequest, callback func(response *DescribeDBInstanceTDEInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

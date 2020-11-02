@@ -21,7 +21,6 @@ import (
 )
 
 // MigrateToOtherZone invokes the dds.MigrateToOtherZone API synchronously
-// api document: https://help.aliyun.com/api/dds/migratetootherzone.html
 func (client *Client) MigrateToOtherZone(request *MigrateToOtherZoneRequest) (response *MigrateToOtherZoneResponse, err error) {
 	response = CreateMigrateToOtherZoneResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) MigrateToOtherZone(request *MigrateToOtherZoneRequest) (re
 }
 
 // MigrateToOtherZoneWithChan invokes the dds.MigrateToOtherZone API asynchronously
-// api document: https://help.aliyun.com/api/dds/migratetootherzone.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MigrateToOtherZoneWithChan(request *MigrateToOtherZoneRequest) (<-chan *MigrateToOtherZoneResponse, <-chan error) {
 	responseChan := make(chan *MigrateToOtherZoneResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) MigrateToOtherZoneWithChan(request *MigrateToOtherZoneRequ
 }
 
 // MigrateToOtherZoneWithCallback invokes the dds.MigrateToOtherZone API asynchronously
-// api document: https://help.aliyun.com/api/dds/migratetootherzone.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MigrateToOtherZoneWithCallback(request *MigrateToOtherZoneRequest, callback func(response *MigrateToOtherZoneResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

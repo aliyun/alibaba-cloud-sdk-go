@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyAuditLogFilter invokes the dds.ModifyAuditLogFilter API synchronously
-// api document: https://help.aliyun.com/api/dds/modifyauditlogfilter.html
 func (client *Client) ModifyAuditLogFilter(request *ModifyAuditLogFilterRequest) (response *ModifyAuditLogFilterResponse, err error) {
 	response = CreateModifyAuditLogFilterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyAuditLogFilter(request *ModifyAuditLogFilterRequest)
 }
 
 // ModifyAuditLogFilterWithChan invokes the dds.ModifyAuditLogFilter API asynchronously
-// api document: https://help.aliyun.com/api/dds/modifyauditlogfilter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAuditLogFilterWithChan(request *ModifyAuditLogFilterRequest) (<-chan *ModifyAuditLogFilterResponse, <-chan error) {
 	responseChan := make(chan *ModifyAuditLogFilterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyAuditLogFilterWithChan(request *ModifyAuditLogFilter
 }
 
 // ModifyAuditLogFilterWithCallback invokes the dds.ModifyAuditLogFilter API asynchronously
-// api document: https://help.aliyun.com/api/dds/modifyauditlogfilter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAuditLogFilterWithCallback(request *ModifyAuditLogFilterRequest, callback func(response *ModifyAuditLogFilterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

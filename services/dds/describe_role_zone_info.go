@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRoleZoneInfo invokes the dds.DescribeRoleZoneInfo API synchronously
-// api document: https://help.aliyun.com/api/dds/describerolezoneinfo.html
 func (client *Client) DescribeRoleZoneInfo(request *DescribeRoleZoneInfoRequest) (response *DescribeRoleZoneInfoResponse, err error) {
 	response = CreateDescribeRoleZoneInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRoleZoneInfo(request *DescribeRoleZoneInfoRequest)
 }
 
 // DescribeRoleZoneInfoWithChan invokes the dds.DescribeRoleZoneInfo API asynchronously
-// api document: https://help.aliyun.com/api/dds/describerolezoneinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRoleZoneInfoWithChan(request *DescribeRoleZoneInfoRequest) (<-chan *DescribeRoleZoneInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeRoleZoneInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRoleZoneInfoWithChan(request *DescribeRoleZoneInfo
 }
 
 // DescribeRoleZoneInfoWithCallback invokes the dds.DescribeRoleZoneInfo API asynchronously
-// api document: https://help.aliyun.com/api/dds/describerolezoneinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRoleZoneInfoWithCallback(request *DescribeRoleZoneInfoRequest, callback func(response *DescribeRoleZoneInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

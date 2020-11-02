@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAvailableTimeRange invokes the dds.DescribeAvailableTimeRange API synchronously
-// api document: https://help.aliyun.com/api/dds/describeavailabletimerange.html
 func (client *Client) DescribeAvailableTimeRange(request *DescribeAvailableTimeRangeRequest) (response *DescribeAvailableTimeRangeResponse, err error) {
 	response = CreateDescribeAvailableTimeRangeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAvailableTimeRange(request *DescribeAvailableTimeR
 }
 
 // DescribeAvailableTimeRangeWithChan invokes the dds.DescribeAvailableTimeRange API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeavailabletimerange.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableTimeRangeWithChan(request *DescribeAvailableTimeRangeRequest) (<-chan *DescribeAvailableTimeRangeResponse, <-chan error) {
 	responseChan := make(chan *DescribeAvailableTimeRangeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAvailableTimeRangeWithChan(request *DescribeAvaila
 }
 
 // DescribeAvailableTimeRangeWithCallback invokes the dds.DescribeAvailableTimeRange API asynchronously
-// api document: https://help.aliyun.com/api/dds/describeavailabletimerange.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableTimeRangeWithCallback(request *DescribeAvailableTimeRangeRequest, callback func(response *DescribeAvailableTimeRangeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

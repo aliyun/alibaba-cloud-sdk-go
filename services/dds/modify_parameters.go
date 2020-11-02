@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyParameters invokes the dds.ModifyParameters API synchronously
-// api document: https://help.aliyun.com/api/dds/modifyparameters.html
 func (client *Client) ModifyParameters(request *ModifyParametersRequest) (response *ModifyParametersResponse, err error) {
 	response = CreateModifyParametersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyParameters(request *ModifyParametersRequest) (respon
 }
 
 // ModifyParametersWithChan invokes the dds.ModifyParameters API asynchronously
-// api document: https://help.aliyun.com/api/dds/modifyparameters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyParametersWithChan(request *ModifyParametersRequest) (<-chan *ModifyParametersResponse, <-chan error) {
 	responseChan := make(chan *ModifyParametersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyParametersWithChan(request *ModifyParametersRequest)
 }
 
 // ModifyParametersWithCallback invokes the dds.ModifyParameters API asynchronously
-// api document: https://help.aliyun.com/api/dds/modifyparameters.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyParametersWithCallback(request *ModifyParametersRequest, callback func(response *ModifyParametersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

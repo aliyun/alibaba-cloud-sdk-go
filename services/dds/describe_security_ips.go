@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSecurityIps invokes the dds.DescribeSecurityIps API synchronously
-// api document: https://help.aliyun.com/api/dds/describesecurityips.html
 func (client *Client) DescribeSecurityIps(request *DescribeSecurityIpsRequest) (response *DescribeSecurityIpsResponse, err error) {
 	response = CreateDescribeSecurityIpsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSecurityIps(request *DescribeSecurityIpsRequest) (
 }
 
 // DescribeSecurityIpsWithChan invokes the dds.DescribeSecurityIps API asynchronously
-// api document: https://help.aliyun.com/api/dds/describesecurityips.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityIpsWithChan(request *DescribeSecurityIpsRequest) (<-chan *DescribeSecurityIpsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSecurityIpsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSecurityIpsWithChan(request *DescribeSecurityIpsRe
 }
 
 // DescribeSecurityIpsWithCallback invokes the dds.DescribeSecurityIps API asynchronously
-// api document: https://help.aliyun.com/api/dds/describesecurityips.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityIpsWithCallback(request *DescribeSecurityIpsRequest, callback func(response *DescribeSecurityIpsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
