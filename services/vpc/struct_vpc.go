@@ -27,7 +27,7 @@ type Vpc struct {
 	VRouterId              string                            `json:"VRouterId" xml:"VRouterId"`
 	Description            string                            `json:"Description" xml:"Description"`
 	IsDefault              bool                              `json:"IsDefault" xml:"IsDefault"`
-	NetworkAclNum          string                            `json:"NetworkAclNum" xml:"NetworkAclNum"`
+	NetworkAclNum          int64                             `json:"NetworkAclNum" xml:"NetworkAclNum"`
 	ResourceGroupId        string                            `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	CenStatus              string                            `json:"CenStatus" xml:"CenStatus"`
 	OwnerId                int64                             `json:"OwnerId" xml:"OwnerId"`
