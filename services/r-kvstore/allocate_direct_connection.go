@@ -73,6 +73,7 @@ type AllocateDirectConnectionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ConnectionString     string           `position:"Query" name:"ConnectionString"`
+	OnlyAllocateIp       requests.Boolean `position:"Query" name:"OnlyAllocateIp"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

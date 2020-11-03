@@ -1,3 +1,7 @@
+2020-11-03 Version: v1.61.618
+- Generated 2015-01-01 for `R-kvstore`.
+- Minor update for r-kvstore.
+
 2020-11-03 Version: v1.61.617
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Update data API.
