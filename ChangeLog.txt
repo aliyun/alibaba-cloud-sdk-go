@@ -1,3 +1,7 @@
+2020-11-05 Version: v1.61.623
+- Generated 2019-01-01 for `HBase`.
+- Support modifyInstnaceType.
+
 2020-11-04 Version: v1.61.622
 - Generated 2019-01-01 for `Cassandra`.
 
