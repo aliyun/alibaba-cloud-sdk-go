@@ -21,7 +21,6 @@ import (
 )
 
 // StartLogging invokes the actiontrail.StartLogging API synchronously
-// api document: https://help.aliyun.com/api/actiontrail/startlogging.html
 func (client *Client) StartLogging(request *StartLoggingRequest) (response *StartLoggingResponse, err error) {
 	response = CreateStartLoggingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartLogging(request *StartLoggingRequest) (response *Star
 }
 
 // StartLoggingWithChan invokes the actiontrail.StartLogging API asynchronously
-// api document: https://help.aliyun.com/api/actiontrail/startlogging.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartLoggingWithChan(request *StartLoggingRequest) (<-chan *StartLoggingResponse, <-chan error) {
 	responseChan := make(chan *StartLoggingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartLoggingWithChan(request *StartLoggingRequest) (<-chan
 }
 
 // StartLoggingWithCallback invokes the actiontrail.StartLogging API asynchronously
-// api document: https://help.aliyun.com/api/actiontrail/startlogging.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartLoggingWithCallback(request *StartLoggingRequest, callback func(response *StartLoggingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

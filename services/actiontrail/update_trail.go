@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateTrail invokes the actiontrail.UpdateTrail API synchronously
-// api document: https://help.aliyun.com/api/actiontrail/updatetrail.html
 func (client *Client) UpdateTrail(request *UpdateTrailRequest) (response *UpdateTrailResponse, err error) {
 	response = CreateUpdateTrailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateTrail(request *UpdateTrailRequest) (response *Update
 }
 
 // UpdateTrailWithChan invokes the actiontrail.UpdateTrail API asynchronously
-// api document: https://help.aliyun.com/api/actiontrail/updatetrail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateTrailWithChan(request *UpdateTrailRequest) (<-chan *UpdateTrailResponse, <-chan error) {
 	responseChan := make(chan *UpdateTrailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateTrailWithChan(request *UpdateTrailRequest) (<-chan *
 }
 
 // UpdateTrailWithCallback invokes the actiontrail.UpdateTrail API asynchronously
-// api document: https://help.aliyun.com/api/actiontrail/updatetrail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateTrailWithCallback(request *UpdateTrailRequest, callback func(response *UpdateTrailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

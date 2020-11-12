@@ -21,7 +21,6 @@ import (
 )
 
 // LookupEvents invokes the actiontrail.LookupEvents API synchronously
-// api document: https://help.aliyun.com/api/actiontrail/lookupevents.html
 func (client *Client) LookupEvents(request *LookupEventsRequest) (response *LookupEventsResponse, err error) {
 	response = CreateLookupEventsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) LookupEvents(request *LookupEventsRequest) (response *Look
 }
 
 // LookupEventsWithChan invokes the actiontrail.LookupEvents API asynchronously
-// api document: https://help.aliyun.com/api/actiontrail/lookupevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LookupEventsWithChan(request *LookupEventsRequest) (<-chan *LookupEventsResponse, <-chan error) {
 	responseChan := make(chan *LookupEventsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) LookupEventsWithChan(request *LookupEventsRequest) (<-chan
 }
 
 // LookupEventsWithCallback invokes the actiontrail.LookupEvents API asynchronously
-// api document: https://help.aliyun.com/api/actiontrail/lookupevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LookupEventsWithCallback(request *LookupEventsRequest, callback func(response *LookupEventsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

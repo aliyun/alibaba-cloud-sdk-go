@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteTrail invokes the actiontrail.DeleteTrail API synchronously
-// api document: https://help.aliyun.com/api/actiontrail/deletetrail.html
 func (client *Client) DeleteTrail(request *DeleteTrailRequest) (response *DeleteTrailResponse, err error) {
 	response = CreateDeleteTrailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteTrail(request *DeleteTrailRequest) (response *Delete
 }
 
 // DeleteTrailWithChan invokes the actiontrail.DeleteTrail API asynchronously
-// api document: https://help.aliyun.com/api/actiontrail/deletetrail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTrailWithChan(request *DeleteTrailRequest) (<-chan *DeleteTrailResponse, <-chan error) {
 	responseChan := make(chan *DeleteTrailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteTrailWithChan(request *DeleteTrailRequest) (<-chan *
 }
 
 // DeleteTrailWithCallback invokes the actiontrail.DeleteTrail API asynchronously
-// api document: https://help.aliyun.com/api/actiontrail/deletetrail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTrailWithCallback(request *DeleteTrailRequest, callback func(response *DeleteTrailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

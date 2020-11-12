@@ -21,7 +21,6 @@ import (
 )
 
 // StopLogging invokes the actiontrail.StopLogging API synchronously
-// api document: https://help.aliyun.com/api/actiontrail/stoplogging.html
 func (client *Client) StopLogging(request *StopLoggingRequest) (response *StopLoggingResponse, err error) {
 	response = CreateStopLoggingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopLogging(request *StopLoggingRequest) (response *StopLo
 }
 
 // StopLoggingWithChan invokes the actiontrail.StopLogging API asynchronously
-// api document: https://help.aliyun.com/api/actiontrail/stoplogging.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopLoggingWithChan(request *StopLoggingRequest) (<-chan *StopLoggingResponse, <-chan error) {
 	responseChan := make(chan *StopLoggingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopLoggingWithChan(request *StopLoggingRequest) (<-chan *
 }
 
 // StopLoggingWithCallback invokes the actiontrail.StopLogging API asynchronously
-// api document: https://help.aliyun.com/api/actiontrail/stoplogging.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopLoggingWithCallback(request *StopLoggingRequest, callback func(response *StopLoggingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

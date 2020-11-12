@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeTrails invokes the actiontrail.DescribeTrails API synchronously
-// api document: https://help.aliyun.com/api/actiontrail/describetrails.html
 func (client *Client) DescribeTrails(request *DescribeTrailsRequest) (response *DescribeTrailsResponse, err error) {
 	response = CreateDescribeTrailsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeTrails(request *DescribeTrailsRequest) (response *
 }
 
 // DescribeTrailsWithChan invokes the actiontrail.DescribeTrails API asynchronously
-// api document: https://help.aliyun.com/api/actiontrail/describetrails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTrailsWithChan(request *DescribeTrailsRequest) (<-chan *DescribeTrailsResponse, <-chan error) {
 	responseChan := make(chan *DescribeTrailsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeTrailsWithChan(request *DescribeTrailsRequest) (<-
 }
 
 // DescribeTrailsWithCallback invokes the actiontrail.DescribeTrails API asynchronously
-// api document: https://help.aliyun.com/api/actiontrail/describetrails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTrailsWithCallback(request *DescribeTrailsRequest, callback func(response *DescribeTrailsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

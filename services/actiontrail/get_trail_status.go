@@ -21,7 +21,6 @@ import (
 )
 
 // GetTrailStatus invokes the actiontrail.GetTrailStatus API synchronously
-// api document: https://help.aliyun.com/api/actiontrail/gettrailstatus.html
 func (client *Client) GetTrailStatus(request *GetTrailStatusRequest) (response *GetTrailStatusResponse, err error) {
 	response = CreateGetTrailStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetTrailStatus(request *GetTrailStatusRequest) (response *
 }
 
 // GetTrailStatusWithChan invokes the actiontrail.GetTrailStatus API asynchronously
-// api document: https://help.aliyun.com/api/actiontrail/gettrailstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTrailStatusWithChan(request *GetTrailStatusRequest) (<-chan *GetTrailStatusResponse, <-chan error) {
 	responseChan := make(chan *GetTrailStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetTrailStatusWithChan(request *GetTrailStatusRequest) (<-
 }
 
 // GetTrailStatusWithCallback invokes the actiontrail.GetTrailStatus API asynchronously
-// api document: https://help.aliyun.com/api/actiontrail/gettrailstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTrailStatusWithCallback(request *GetTrailStatusRequest, callback func(response *GetTrailStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

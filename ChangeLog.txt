@@ -1,3 +1,7 @@
+2020-11-12 Version: v1.61.624
+- Generated 2017-12-04 for `Actiontrail`.
+- Update DescribeTrails Response.
+
 2020-11-05 Version: v1.61.623
 - Generated 2019-01-01 for `HBase`.
 - Support modifyInstnaceType.

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateTrail invokes the actiontrail.CreateTrail API synchronously
-// api document: https://help.aliyun.com/api/actiontrail/createtrail.html
 func (client *Client) CreateTrail(request *CreateTrailRequest) (response *CreateTrailResponse, err error) {
 	response = CreateCreateTrailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateTrail(request *CreateTrailRequest) (response *Create
 }
 
 // CreateTrailWithChan invokes the actiontrail.CreateTrail API asynchronously
-// api document: https://help.aliyun.com/api/actiontrail/createtrail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTrailWithChan(request *CreateTrailRequest) (<-chan *CreateTrailResponse, <-chan error) {
 	responseChan := make(chan *CreateTrailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateTrailWithChan(request *CreateTrailRequest) (<-chan *
 }
 
 // CreateTrailWithCallback invokes the actiontrail.CreateTrail API asynchronously
-// api document: https://help.aliyun.com/api/actiontrail/createtrail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTrailWithCallback(request *CreateTrailRequest, callback func(response *CreateTrailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
