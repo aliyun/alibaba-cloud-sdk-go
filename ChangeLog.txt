@@ -1,3 +1,7 @@
+2020-11-12 Version: v1.61.626
+- Generated 2018-06-19, 2020-09-28 for `openanalytics-open`.
+- Support OpenAPI.
+
 2020-11-12 Version: v1.61.625
 - Generated 2020-04-15 for `Privatelink`.
 - Add type of payment for endpoint service.
