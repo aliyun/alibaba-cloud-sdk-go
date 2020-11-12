@@ -28,4 +28,5 @@ type MediaFormat struct {
 	CreationTime   string  `json:"CreationTime" xml:"CreationTime"`
 	Location       string  `json:"Location" xml:"Location"`
 	Address        Address `json:"Address" xml:"Address"`
+	Tag            Tag     `json:"Tag" xml:"Tag"`
 }
