@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ResizeDbfs invokes the dbfs.ResizeDbfs API synchronously
-func (client *Client) ResizeDbfs(request *ResizeDbfsRequest) (response *ResizeDbfsResponse, err error) {
-	response = CreateResizeDbfsResponse()
+// TagDbfs invokes the dbfs.TagDbfs API synchronously
+func (client *Client) TagDbfs(request *TagDbfsRequest) (response *TagDbfsResponse, err error) {
+	response = CreateTagDbfsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ResizeDbfsWithChan invokes the dbfs.ResizeDbfs API asynchronously
-func (client *Client) ResizeDbfsWithChan(request *ResizeDbfsRequest) (<-chan *ResizeDbfsResponse, <-chan error) {
-	responseChan := make(chan *ResizeDbfsResponse, 1)
+// TagDbfsWithChan invokes the dbfs.TagDbfs API asynchronously
+func (client *Client) TagDbfsWithChan(request *TagDbfsRequest) (<-chan *TagDbfsResponse, <-chan error) {
+	responseChan := make(chan *TagDbfsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ResizeDbfs(request)
+		response, err := client.TagDbfs(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ResizeDbfsWithChan(request *ResizeDbfsRequest) (<-chan *Re
 	return responseChan, errChan
 }
 
-// ResizeDbfsWithCallback invokes the dbfs.ResizeDbfs API asynchronously
-func (client *Client) ResizeDbfsWithCallback(request *ResizeDbfsRequest, callback func(response *ResizeDbfsResponse, err error)) <-chan int {
+// TagDbfsWithCallback invokes the dbfs.TagDbfs API asynchronously
+func (client *Client) TagDbfsWithCallback(request *TagDbfsRequest, callback func(response *TagDbfsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ResizeDbfsResponse
+		var response *TagDbfsResponse
 		var err error
 		defer close(result)
-		response, err = client.ResizeDbfs(request)
+		response, err = client.TagDbfs(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,33 +68,32 @@ func (client *Client) ResizeDbfsWithCallback(request *ResizeDbfsRequest, callbac
 	return result
 }
 
-// ResizeDbfsRequest is the request struct for api ResizeDbfs
-type ResizeDbfsRequest struct {
+// TagDbfsRequest is the request struct for api TagDbfs
+type TagDbfsRequest struct {
 	*requests.RpcRequest
-	ClientToken string           `position:"Query" name:"ClientToken"`
-	NewSizeG    requests.Integer `position:"Query" name:"NewSizeG"`
-	FsId        string           `position:"Query" name:"FsId"`
+	Tags   string `position:"Query" name:"Tags"`
+	DbfsId string `position:"Query" name:"DbfsId"`
 }
 
-// ResizeDbfsResponse is the response struct for api ResizeDbfs
-type ResizeDbfsResponse struct {
+// TagDbfsResponse is the response struct for api TagDbfs
+type TagDbfsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateResizeDbfsRequest creates a request to invoke ResizeDbfs API
-func CreateResizeDbfsRequest() (request *ResizeDbfsRequest) {
-	request = &ResizeDbfsRequest{
+// CreateTagDbfsRequest creates a request to invoke TagDbfs API
+func CreateTagDbfsRequest() (request *TagDbfsRequest) {
+	request = &TagDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "ResizeDbfs", "", "")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "TagDbfs", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateResizeDbfsResponse creates a response to parse from ResizeDbfs response
-func CreateResizeDbfsResponse() (response *ResizeDbfsResponse) {
-	response = &ResizeDbfsResponse{
+// CreateTagDbfsResponse creates a response to parse from TagDbfs response
+func CreateTagDbfsResponse() (response *TagDbfsResponse) {
+	response = &TagDbfsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

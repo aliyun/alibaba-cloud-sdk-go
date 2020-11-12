@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ResizeDbfs invokes the dbfs.ResizeDbfs API synchronously
-func (client *Client) ResizeDbfs(request *ResizeDbfsRequest) (response *ResizeDbfsResponse, err error) {
-	response = CreateResizeDbfsResponse()
+// ResetDbfs invokes the dbfs.ResetDbfs API synchronously
+func (client *Client) ResetDbfs(request *ResetDbfsRequest) (response *ResetDbfsResponse, err error) {
+	response = CreateResetDbfsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ResizeDbfsWithChan invokes the dbfs.ResizeDbfs API asynchronously
-func (client *Client) ResizeDbfsWithChan(request *ResizeDbfsRequest) (<-chan *ResizeDbfsResponse, <-chan error) {
-	responseChan := make(chan *ResizeDbfsResponse, 1)
+// ResetDbfsWithChan invokes the dbfs.ResetDbfs API asynchronously
+func (client *Client) ResetDbfsWithChan(request *ResetDbfsRequest) (<-chan *ResetDbfsResponse, <-chan error) {
+	responseChan := make(chan *ResetDbfsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ResizeDbfs(request)
+		response, err := client.ResetDbfs(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ResizeDbfsWithChan(request *ResizeDbfsRequest) (<-chan *Re
 	return responseChan, errChan
 }
 
-// ResizeDbfsWithCallback invokes the dbfs.ResizeDbfs API asynchronously
-func (client *Client) ResizeDbfsWithCallback(request *ResizeDbfsRequest, callback func(response *ResizeDbfsResponse, err error)) <-chan int {
+// ResetDbfsWithCallback invokes the dbfs.ResetDbfs API asynchronously
+func (client *Client) ResetDbfsWithCallback(request *ResetDbfsRequest, callback func(response *ResetDbfsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ResizeDbfsResponse
+		var response *ResetDbfsResponse
 		var err error
 		defer close(result)
-		response, err = client.ResizeDbfs(request)
+		response, err = client.ResetDbfs(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,33 +68,33 @@ func (client *Client) ResizeDbfsWithCallback(request *ResizeDbfsRequest, callbac
 	return result
 }
 
-// ResizeDbfsRequest is the request struct for api ResizeDbfs
-type ResizeDbfsRequest struct {
+// ResetDbfsRequest is the request struct for api ResetDbfs
+type ResetDbfsRequest struct {
 	*requests.RpcRequest
-	ClientToken string           `position:"Query" name:"ClientToken"`
-	NewSizeG    requests.Integer `position:"Query" name:"NewSizeG"`
-	FsId        string           `position:"Query" name:"FsId"`
+	SnapshotId  string `position:"Query" name:"SnapshotId"`
+	ClientToken string `position:"Query" name:"ClientToken"`
+	FsId        string `position:"Query" name:"FsId"`
 }
 
-// ResizeDbfsResponse is the response struct for api ResizeDbfs
-type ResizeDbfsResponse struct {
+// ResetDbfsResponse is the response struct for api ResetDbfs
+type ResetDbfsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateResizeDbfsRequest creates a request to invoke ResizeDbfs API
-func CreateResizeDbfsRequest() (request *ResizeDbfsRequest) {
-	request = &ResizeDbfsRequest{
+// CreateResetDbfsRequest creates a request to invoke ResetDbfs API
+func CreateResetDbfsRequest() (request *ResetDbfsRequest) {
+	request = &ResetDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "ResizeDbfs", "", "")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "ResetDbfs", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateResizeDbfsResponse creates a response to parse from ResizeDbfs response
-func CreateResizeDbfsResponse() (response *ResizeDbfsResponse) {
-	response = &ResizeDbfsResponse{
+// CreateResetDbfsResponse creates a response to parse from ResetDbfs response
+func CreateResetDbfsResponse() (response *ResetDbfsResponse) {
+	response = &ResetDbfsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

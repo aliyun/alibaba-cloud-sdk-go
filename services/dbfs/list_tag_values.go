@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetDbfs invokes the dbfs.GetDbfs API synchronously
-func (client *Client) GetDbfs(request *GetDbfsRequest) (response *GetDbfsResponse, err error) {
-	response = CreateGetDbfsResponse()
+// ListTagValues invokes the dbfs.ListTagValues API synchronously
+func (client *Client) ListTagValues(request *ListTagValuesRequest) (response *ListTagValuesResponse, err error) {
+	response = CreateListTagValuesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetDbfsWithChan invokes the dbfs.GetDbfs API asynchronously
-func (client *Client) GetDbfsWithChan(request *GetDbfsRequest) (<-chan *GetDbfsResponse, <-chan error) {
-	responseChan := make(chan *GetDbfsResponse, 1)
+// ListTagValuesWithChan invokes the dbfs.ListTagValues API asynchronously
+func (client *Client) ListTagValuesWithChan(request *ListTagValuesRequest) (<-chan *ListTagValuesResponse, <-chan error) {
+	responseChan := make(chan *ListTagValuesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetDbfs(request)
+		response, err := client.ListTagValues(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) GetDbfsWithChan(request *GetDbfsRequest) (<-chan *GetDbfsR
 	return responseChan, errChan
 }
 
-// GetDbfsWithCallback invokes the dbfs.GetDbfs API asynchronously
-func (client *Client) GetDbfsWithCallback(request *GetDbfsRequest, callback func(response *GetDbfsResponse, err error)) <-chan int {
+// ListTagValuesWithCallback invokes the dbfs.ListTagValues API asynchronously
+func (client *Client) ListTagValuesWithCallback(request *ListTagValuesRequest, callback func(response *ListTagValuesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetDbfsResponse
+		var response *ListTagValuesResponse
 		var err error
 		defer close(result)
-		response, err = client.GetDbfs(request)
+		response, err = client.ListTagValues(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,32 +68,32 @@ func (client *Client) GetDbfsWithCallback(request *GetDbfsRequest, callback func
 	return result
 }
 
-// GetDbfsRequest is the request struct for api GetDbfs
-type GetDbfsRequest struct {
+// ListTagValuesRequest is the request struct for api ListTagValues
+type ListTagValuesRequest struct {
 	*requests.RpcRequest
-	FsId string `position:"Query" name:"FsId"`
+	TagKey string `position:"Query" name:"TagKey"`
 }
 
-// GetDbfsResponse is the response struct for api GetDbfs
-type GetDbfsResponse struct {
+// ListTagValuesResponse is the response struct for api ListTagValues
+type ListTagValuesResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
-	DBFSInfo  DBFSInfo `json:"DBFSInfo" xml:"DBFSInfo"`
+	TagValues []string `json:"TagValues" xml:"TagValues"`
 }
 
-// CreateGetDbfsRequest creates a request to invoke GetDbfs API
-func CreateGetDbfsRequest() (request *GetDbfsRequest) {
-	request = &GetDbfsRequest{
+// CreateListTagValuesRequest creates a request to invoke ListTagValues API
+func CreateListTagValuesRequest() (request *ListTagValuesRequest) {
+	request = &ListTagValuesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "GetDbfs", "", "")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "ListTagValues", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateGetDbfsResponse creates a response to parse from GetDbfs response
-func CreateGetDbfsResponse() (response *GetDbfsResponse) {
-	response = &GetDbfsResponse{
+// CreateListTagValuesResponse creates a response to parse from ListTagValues response
+func CreateListTagValuesResponse() (response *ListTagValuesResponse) {
+	response = &ListTagValuesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDbfs invokes the dbfs.CreateDbfs API synchronously
-// api document: https://help.aliyun.com/api/dbfs/createdbfs.html
 func (client *Client) CreateDbfs(request *CreateDbfsRequest) (response *CreateDbfsResponse, err error) {
 	response = CreateCreateDbfsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDbfs(request *CreateDbfsRequest) (response *CreateDb
 }
 
 // CreateDbfsWithChan invokes the dbfs.CreateDbfs API asynchronously
-// api document: https://help.aliyun.com/api/dbfs/createdbfs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDbfsWithChan(request *CreateDbfsRequest) (<-chan *CreateDbfsResponse, <-chan error) {
 	responseChan := make(chan *CreateDbfsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDbfsWithChan(request *CreateDbfsRequest) (<-chan *Cr
 }
 
 // CreateDbfsWithCallback invokes the dbfs.CreateDbfs API asynchronously
-// api document: https://help.aliyun.com/api/dbfs/createdbfs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDbfsWithCallback(request *CreateDbfsRequest, callback func(response *CreateDbfsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,11 +71,16 @@ func (client *Client) CreateDbfsWithCallback(request *CreateDbfsRequest, callbac
 // CreateDbfsRequest is the request struct for api CreateDbfs
 type CreateDbfsRequest struct {
 	*requests.RpcRequest
-	SizeG       requests.Integer `position:"Query" name:"SizeG"`
-	ClientToken string           `position:"Query" name:"ClientToken"`
-	FsName      string           `position:"Query" name:"FsName"`
-	ZoneId      string           `position:"Query" name:"ZoneId"`
-	Category    string           `position:"Query" name:"Category"`
+	SizeG                requests.Integer `position:"Query" name:"SizeG"`
+	SnapshotId           string           `position:"Query" name:"SnapshotId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	FsName               string           `position:"Query" name:"FsName"`
+	RaidStripeUnitNumber requests.Integer `position:"Query" name:"RaidStripeUnitNumber"`
+	PerformanceLevel     string           `position:"Query" name:"PerformanceLevel"`
+	EnableRaid           requests.Boolean `position:"Query" name:"EnableRaid"`
+	DeleteSnapshot       requests.Boolean `position:"Query" name:"DeleteSnapshot"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	Category             string           `position:"Query" name:"Category"`
 }
 
 // CreateDbfsResponse is the response struct for api CreateDbfs
@@ -95,7 +95,7 @@ func CreateCreateDbfsRequest() (request *CreateDbfsRequest) {
 	request = &CreateDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-02-19", "CreateDbfs", "", "")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "CreateDbfs", "", "")
 	request.Method = requests.POST
 	return
 }

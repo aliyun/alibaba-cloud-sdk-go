@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteDbfs invokes the dbfs.DeleteDbfs API synchronously
-func (client *Client) DeleteDbfs(request *DeleteDbfsRequest) (response *DeleteDbfsResponse, err error) {
-	response = CreateDeleteDbfsResponse()
+// ListTagKeys invokes the dbfs.ListTagKeys API synchronously
+func (client *Client) ListTagKeys(request *ListTagKeysRequest) (response *ListTagKeysResponse, err error) {
+	response = CreateListTagKeysResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteDbfsWithChan invokes the dbfs.DeleteDbfs API asynchronously
-func (client *Client) DeleteDbfsWithChan(request *DeleteDbfsRequest) (<-chan *DeleteDbfsResponse, <-chan error) {
-	responseChan := make(chan *DeleteDbfsResponse, 1)
+// ListTagKeysWithChan invokes the dbfs.ListTagKeys API asynchronously
+func (client *Client) ListTagKeysWithChan(request *ListTagKeysRequest) (<-chan *ListTagKeysResponse, <-chan error) {
+	responseChan := make(chan *ListTagKeysResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteDbfs(request)
+		response, err := client.ListTagKeys(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteDbfsWithChan(request *DeleteDbfsRequest) (<-chan *De
 	return responseChan, errChan
 }
 
-// DeleteDbfsWithCallback invokes the dbfs.DeleteDbfs API asynchronously
-func (client *Client) DeleteDbfsWithCallback(request *DeleteDbfsRequest, callback func(response *DeleteDbfsResponse, err error)) <-chan int {
+// ListTagKeysWithCallback invokes the dbfs.ListTagKeys API asynchronously
+func (client *Client) ListTagKeysWithCallback(request *ListTagKeysRequest, callback func(response *ListTagKeysResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteDbfsResponse
+		var response *ListTagKeysResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteDbfs(request)
+		response, err = client.ListTagKeys(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,31 +68,31 @@ func (client *Client) DeleteDbfsWithCallback(request *DeleteDbfsRequest, callbac
 	return result
 }
 
-// DeleteDbfsRequest is the request struct for api DeleteDbfs
-type DeleteDbfsRequest struct {
+// ListTagKeysRequest is the request struct for api ListTagKeys
+type ListTagKeysRequest struct {
 	*requests.RpcRequest
-	FsId string `position:"Query" name:"FsId"`
 }
 
-// DeleteDbfsResponse is the response struct for api DeleteDbfs
-type DeleteDbfsResponse struct {
+// ListTagKeysResponse is the response struct for api ListTagKeys
+type ListTagKeysResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	TagKeys   []string `json:"TagKeys" xml:"TagKeys"`
 }
 
-// CreateDeleteDbfsRequest creates a request to invoke DeleteDbfs API
-func CreateDeleteDbfsRequest() (request *DeleteDbfsRequest) {
-	request = &DeleteDbfsRequest{
+// CreateListTagKeysRequest creates a request to invoke ListTagKeys API
+func CreateListTagKeysRequest() (request *ListTagKeysRequest) {
+	request = &ListTagKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "DeleteDbfs", "", "")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "ListTagKeys", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteDbfsResponse creates a response to parse from DeleteDbfs response
-func CreateDeleteDbfsResponse() (response *DeleteDbfsResponse) {
-	response = &DeleteDbfsResponse{
+// CreateListTagKeysResponse creates a response to parse from ListTagKeys response
+func CreateListTagKeysResponse() (response *ListTagKeysResponse) {
+	response = &ListTagKeysResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ListDbfs invokes the dbfs.ListDbfs API synchronously
-func (client *Client) ListDbfs(request *ListDbfsRequest) (response *ListDbfsResponse, err error) {
-	response = CreateListDbfsResponse()
+// ListTask invokes the dbfs.ListTask API synchronously
+func (client *Client) ListTask(request *ListTaskRequest) (response *ListTaskResponse, err error) {
+	response = CreateListTaskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ListDbfsWithChan invokes the dbfs.ListDbfs API asynchronously
-func (client *Client) ListDbfsWithChan(request *ListDbfsRequest) (<-chan *ListDbfsResponse, <-chan error) {
-	responseChan := make(chan *ListDbfsResponse, 1)
+// ListTaskWithChan invokes the dbfs.ListTask API asynchronously
+func (client *Client) ListTaskWithChan(request *ListTaskRequest) (<-chan *ListTaskResponse, <-chan error) {
+	responseChan := make(chan *ListTaskResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListDbfs(request)
+		response, err := client.ListTask(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ListDbfsWithChan(request *ListDbfsRequest) (<-chan *ListDb
 	return responseChan, errChan
 }
 
-// ListDbfsWithCallback invokes the dbfs.ListDbfs API asynchronously
-func (client *Client) ListDbfsWithCallback(request *ListDbfsRequest, callback func(response *ListDbfsResponse, err error)) <-chan int {
+// ListTaskWithCallback invokes the dbfs.ListTask API asynchronously
+func (client *Client) ListTaskWithCallback(request *ListTaskRequest, callback func(response *ListTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListDbfsResponse
+		var response *ListTaskResponse
 		var err error
 		defer close(result)
-		response, err = client.ListDbfs(request)
+		response, err = client.ListTask(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,42 +68,40 @@ func (client *Client) ListDbfsWithCallback(request *ListDbfsRequest, callback fu
 	return result
 }
 
-// ListDbfsRequest is the request struct for api ListDbfs
-type ListDbfsRequest struct {
+// ListTaskRequest is the request struct for api ListTask
+type ListTaskRequest struct {
 	*requests.RpcRequest
 	SortType    string           `position:"Query" name:"SortType"`
-	ClientToken string           `position:"Query" name:"ClientToken"`
 	FilterValue string           `position:"Query" name:"FilterValue"`
 	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
-	Tags        string           `position:"Query" name:"Tags"`
 	FilterKey   string           `position:"Query" name:"FilterKey"`
 	SortKey     string           `position:"Query" name:"SortKey"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 }
 
-// ListDbfsResponse is the response struct for api ListDbfs
-type ListDbfsResponse struct {
+// ListTaskResponse is the response struct for api ListTask
+type ListTaskResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	DBFSInfo   []Info `json:"DBFSInfo" xml:"DBFSInfo"`
+	RequestId  string      `json:"RequestId" xml:"RequestId"`
+	TotalCount int         `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int         `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int         `json:"PageSize" xml:"PageSize"`
+	Tasks      []TasksItem `json:"Tasks" xml:"Tasks"`
 }
 
-// CreateListDbfsRequest creates a request to invoke ListDbfs API
-func CreateListDbfsRequest() (request *ListDbfsRequest) {
-	request = &ListDbfsRequest{
+// CreateListTaskRequest creates a request to invoke ListTask API
+func CreateListTaskRequest() (request *ListTaskRequest) {
+	request = &ListTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "ListDbfs", "", "")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "ListTask", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateListDbfsResponse creates a response to parse from ListDbfs response
-func CreateListDbfsResponse() (response *ListDbfsResponse) {
-	response = &ListDbfsResponse{
+// CreateListTaskResponse creates a response to parse from ListTask response
+func CreateListTaskResponse() (response *ListTaskResponse) {
+	response = &ListTaskResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -17,14 +17,17 @@ package dbfs
 
 // Info is a nested struct in dbfs response
 type Info struct {
-	Category         string `json:"Category" xml:"Category"`
-	FsId             string `json:"FsId" xml:"FsId"`
-	SizeG            int    `json:"SizeG" xml:"SizeG"`
-	DBFSClusterId    string `json:"DBFSClusterId" xml:"DBFSClusterId"`
-	FsName           string `json:"FsName" xml:"FsName"`
-	RegionId         string `json:"RegionId" xml:"RegionId"`
-	ZoneId           string `json:"ZoneId" xml:"ZoneId"`
-	PayType          string `json:"PayType" xml:"PayType"`
-	Status           string `json:"Status" xml:"Status"`
-	AttachNodeNumber int    `json:"AttachNodeNumber" xml:"AttachNodeNumber"`
+	FsName           string              `json:"FsName" xml:"FsName"`
+	DBFSClusterId    string              `json:"DBFSClusterId" xml:"DBFSClusterId"`
+	Category         string              `json:"Category" xml:"Category"`
+	Status           string              `json:"Status" xml:"Status"`
+	RegionId         string              `json:"RegionId" xml:"RegionId"`
+	ZoneId           string              `json:"ZoneId" xml:"ZoneId"`
+	AttachNodeNumber int                 `json:"AttachNodeNumber" xml:"AttachNodeNumber"`
+	PayType          string              `json:"PayType" xml:"PayType"`
+	FsId             string              `json:"FsId" xml:"FsId"`
+	SizeG            int                 `json:"SizeG" xml:"SizeG"`
+	CreatedTime      string              `json:"CreatedTime" xml:"CreatedTime"`
+	Tags             []TagListInListDbfs `json:"Tags" xml:"Tags"`
+	EcsList          []EcsListItem       `json:"EcsList" xml:"EcsList"`
 }

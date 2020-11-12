@@ -21,7 +21,6 @@ import (
 )
 
 // AttachDbfs invokes the dbfs.AttachDbfs API synchronously
-// api document: https://help.aliyun.com/api/dbfs/attachdbfs.html
 func (client *Client) AttachDbfs(request *AttachDbfsRequest) (response *AttachDbfsResponse, err error) {
 	response = CreateAttachDbfsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AttachDbfs(request *AttachDbfsRequest) (response *AttachDb
 }
 
 // AttachDbfsWithChan invokes the dbfs.AttachDbfs API asynchronously
-// api document: https://help.aliyun.com/api/dbfs/attachdbfs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachDbfsWithChan(request *AttachDbfsRequest) (<-chan *AttachDbfsResponse, <-chan error) {
 	responseChan := make(chan *AttachDbfsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AttachDbfsWithChan(request *AttachDbfsRequest) (<-chan *At
 }
 
 // AttachDbfsWithCallback invokes the dbfs.AttachDbfs API asynchronously
-// api document: https://help.aliyun.com/api/dbfs/attachdbfs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachDbfsWithCallback(request *AttachDbfsRequest, callback func(response *AttachDbfsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateAttachDbfsRequest() (request *AttachDbfsRequest) {
 	request = &AttachDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-02-19", "AttachDbfs", "", "")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "AttachDbfs", "", "")
 	request.Method = requests.POST
 	return
 }

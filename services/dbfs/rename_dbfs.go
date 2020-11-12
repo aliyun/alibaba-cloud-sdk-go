@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ResizeDbfs invokes the dbfs.ResizeDbfs API synchronously
-func (client *Client) ResizeDbfs(request *ResizeDbfsRequest) (response *ResizeDbfsResponse, err error) {
-	response = CreateResizeDbfsResponse()
+// RenameDbfs invokes the dbfs.RenameDbfs API synchronously
+func (client *Client) RenameDbfs(request *RenameDbfsRequest) (response *RenameDbfsResponse, err error) {
+	response = CreateRenameDbfsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ResizeDbfsWithChan invokes the dbfs.ResizeDbfs API asynchronously
-func (client *Client) ResizeDbfsWithChan(request *ResizeDbfsRequest) (<-chan *ResizeDbfsResponse, <-chan error) {
-	responseChan := make(chan *ResizeDbfsResponse, 1)
+// RenameDbfsWithChan invokes the dbfs.RenameDbfs API asynchronously
+func (client *Client) RenameDbfsWithChan(request *RenameDbfsRequest) (<-chan *RenameDbfsResponse, <-chan error) {
+	responseChan := make(chan *RenameDbfsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ResizeDbfs(request)
+		response, err := client.RenameDbfs(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ResizeDbfsWithChan(request *ResizeDbfsRequest) (<-chan *Re
 	return responseChan, errChan
 }
 
-// ResizeDbfsWithCallback invokes the dbfs.ResizeDbfs API asynchronously
-func (client *Client) ResizeDbfsWithCallback(request *ResizeDbfsRequest, callback func(response *ResizeDbfsResponse, err error)) <-chan int {
+// RenameDbfsWithCallback invokes the dbfs.RenameDbfs API asynchronously
+func (client *Client) RenameDbfsWithCallback(request *RenameDbfsRequest, callback func(response *RenameDbfsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ResizeDbfsResponse
+		var response *RenameDbfsResponse
 		var err error
 		defer close(result)
-		response, err = client.ResizeDbfs(request)
+		response, err = client.RenameDbfs(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,33 +68,32 @@ func (client *Client) ResizeDbfsWithCallback(request *ResizeDbfsRequest, callbac
 	return result
 }
 
-// ResizeDbfsRequest is the request struct for api ResizeDbfs
-type ResizeDbfsRequest struct {
+// RenameDbfsRequest is the request struct for api RenameDbfs
+type RenameDbfsRequest struct {
 	*requests.RpcRequest
-	ClientToken string           `position:"Query" name:"ClientToken"`
-	NewSizeG    requests.Integer `position:"Query" name:"NewSizeG"`
-	FsId        string           `position:"Query" name:"FsId"`
+	FsName string `position:"Query" name:"FsName"`
+	FsId   string `position:"Query" name:"FsId"`
 }
 
-// ResizeDbfsResponse is the response struct for api ResizeDbfs
-type ResizeDbfsResponse struct {
+// RenameDbfsResponse is the response struct for api RenameDbfs
+type RenameDbfsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateResizeDbfsRequest creates a request to invoke ResizeDbfs API
-func CreateResizeDbfsRequest() (request *ResizeDbfsRequest) {
-	request = &ResizeDbfsRequest{
+// CreateRenameDbfsRequest creates a request to invoke RenameDbfs API
+func CreateRenameDbfsRequest() (request *RenameDbfsRequest) {
+	request = &RenameDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "ResizeDbfs", "", "")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "RenameDbfs", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateResizeDbfsResponse creates a response to parse from ResizeDbfs response
-func CreateResizeDbfsResponse() (response *ResizeDbfsResponse) {
-	response = &ResizeDbfsResponse{
+// CreateRenameDbfsResponse creates a response to parse from RenameDbfs response
+func CreateRenameDbfsResponse() (response *RenameDbfsResponse) {
+	response = &RenameDbfsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

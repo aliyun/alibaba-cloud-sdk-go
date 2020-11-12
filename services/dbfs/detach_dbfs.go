@@ -21,7 +21,6 @@ import (
 )
 
 // DetachDbfs invokes the dbfs.DetachDbfs API synchronously
-// api document: https://help.aliyun.com/api/dbfs/detachdbfs.html
 func (client *Client) DetachDbfs(request *DetachDbfsRequest) (response *DetachDbfsResponse, err error) {
 	response = CreateDetachDbfsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DetachDbfs(request *DetachDbfsRequest) (response *DetachDb
 }
 
 // DetachDbfsWithChan invokes the dbfs.DetachDbfs API asynchronously
-// api document: https://help.aliyun.com/api/dbfs/detachdbfs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachDbfsWithChan(request *DetachDbfsRequest) (<-chan *DetachDbfsResponse, <-chan error) {
 	responseChan := make(chan *DetachDbfsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DetachDbfsWithChan(request *DetachDbfsRequest) (<-chan *De
 }
 
 // DetachDbfsWithCallback invokes the dbfs.DetachDbfs API asynchronously
-// api document: https://help.aliyun.com/api/dbfs/detachdbfs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachDbfsWithCallback(request *DetachDbfsRequest, callback func(response *DetachDbfsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateDetachDbfsRequest() (request *DetachDbfsRequest) {
 	request = &DetachDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-02-19", "DetachDbfs", "", "")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "DetachDbfs", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ResizeDbfs invokes the dbfs.ResizeDbfs API synchronously
-func (client *Client) ResizeDbfs(request *ResizeDbfsRequest) (response *ResizeDbfsResponse, err error) {
-	response = CreateResizeDbfsResponse()
+// DeleteSnapshot invokes the dbfs.DeleteSnapshot API synchronously
+func (client *Client) DeleteSnapshot(request *DeleteSnapshotRequest) (response *DeleteSnapshotResponse, err error) {
+	response = CreateDeleteSnapshotResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ResizeDbfsWithChan invokes the dbfs.ResizeDbfs API asynchronously
-func (client *Client) ResizeDbfsWithChan(request *ResizeDbfsRequest) (<-chan *ResizeDbfsResponse, <-chan error) {
-	responseChan := make(chan *ResizeDbfsResponse, 1)
+// DeleteSnapshotWithChan invokes the dbfs.DeleteSnapshot API asynchronously
+func (client *Client) DeleteSnapshotWithChan(request *DeleteSnapshotRequest) (<-chan *DeleteSnapshotResponse, <-chan error) {
+	responseChan := make(chan *DeleteSnapshotResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ResizeDbfs(request)
+		response, err := client.DeleteSnapshot(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ResizeDbfsWithChan(request *ResizeDbfsRequest) (<-chan *Re
 	return responseChan, errChan
 }
 
-// ResizeDbfsWithCallback invokes the dbfs.ResizeDbfs API asynchronously
-func (client *Client) ResizeDbfsWithCallback(request *ResizeDbfsRequest, callback func(response *ResizeDbfsResponse, err error)) <-chan int {
+// DeleteSnapshotWithCallback invokes the dbfs.DeleteSnapshot API asynchronously
+func (client *Client) DeleteSnapshotWithCallback(request *DeleteSnapshotRequest, callback func(response *DeleteSnapshotResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ResizeDbfsResponse
+		var response *DeleteSnapshotResponse
 		var err error
 		defer close(result)
-		response, err = client.ResizeDbfs(request)
+		response, err = client.DeleteSnapshot(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,33 +68,33 @@ func (client *Client) ResizeDbfsWithCallback(request *ResizeDbfsRequest, callbac
 	return result
 }
 
-// ResizeDbfsRequest is the request struct for api ResizeDbfs
-type ResizeDbfsRequest struct {
+// DeleteSnapshotRequest is the request struct for api DeleteSnapshot
+type DeleteSnapshotRequest struct {
 	*requests.RpcRequest
+	SnapshotId  string           `position:"Query" name:"SnapshotId"`
 	ClientToken string           `position:"Query" name:"ClientToken"`
-	NewSizeG    requests.Integer `position:"Query" name:"NewSizeG"`
-	FsId        string           `position:"Query" name:"FsId"`
+	Force       requests.Boolean `position:"Query" name:"Force"`
 }
 
-// ResizeDbfsResponse is the response struct for api ResizeDbfs
-type ResizeDbfsResponse struct {
+// DeleteSnapshotResponse is the response struct for api DeleteSnapshot
+type DeleteSnapshotResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateResizeDbfsRequest creates a request to invoke ResizeDbfs API
-func CreateResizeDbfsRequest() (request *ResizeDbfsRequest) {
-	request = &ResizeDbfsRequest{
+// CreateDeleteSnapshotRequest creates a request to invoke DeleteSnapshot API
+func CreateDeleteSnapshotRequest() (request *DeleteSnapshotRequest) {
+	request = &DeleteSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "ResizeDbfs", "", "")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "DeleteSnapshot", "", "")
 	request.Method = requests.POST
 	return
 }
 
-// CreateResizeDbfsResponse creates a response to parse from ResizeDbfs response
-func CreateResizeDbfsResponse() (response *ResizeDbfsResponse) {
-	response = &ResizeDbfsResponse{
+// CreateDeleteSnapshotResponse creates a response to parse from DeleteSnapshot response
+func CreateDeleteSnapshotResponse() (response *DeleteSnapshotResponse) {
+	response = &DeleteSnapshotResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
