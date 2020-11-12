@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSourceServer invokes the smc.DeleteSourceServer API synchronously
-// api document: https://help.aliyun.com/api/smc/deletesourceserver.html
 func (client *Client) DeleteSourceServer(request *DeleteSourceServerRequest) (response *DeleteSourceServerResponse, err error) {
 	response = CreateDeleteSourceServerResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSourceServer(request *DeleteSourceServerRequest) (re
 }
 
 // DeleteSourceServerWithChan invokes the smc.DeleteSourceServer API asynchronously
-// api document: https://help.aliyun.com/api/smc/deletesourceserver.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSourceServerWithChan(request *DeleteSourceServerRequest) (<-chan *DeleteSourceServerResponse, <-chan error) {
 	responseChan := make(chan *DeleteSourceServerResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSourceServerWithChan(request *DeleteSourceServerRequ
 }
 
 // DeleteSourceServerWithCallback invokes the smc.DeleteSourceServer API asynchronously
-// api document: https://help.aliyun.com/api/smc/deletesourceserver.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSourceServerWithCallback(request *DeleteSourceServerRequest, callback func(response *DeleteSourceServerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDeleteSourceServerRequest() (request *DeleteSourceServerRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("smc", "2019-06-01", "DeleteSourceServer", "smc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

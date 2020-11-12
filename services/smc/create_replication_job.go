@@ -21,7 +21,6 @@ import (
 )
 
 // CreateReplicationJob invokes the smc.CreateReplicationJob API synchronously
-// api document: https://help.aliyun.com/api/smc/createreplicationjob.html
 func (client *Client) CreateReplicationJob(request *CreateReplicationJobRequest) (response *CreateReplicationJobResponse, err error) {
 	response = CreateCreateReplicationJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateReplicationJob(request *CreateReplicationJobRequest)
 }
 
 // CreateReplicationJobWithChan invokes the smc.CreateReplicationJob API asynchronously
-// api document: https://help.aliyun.com/api/smc/createreplicationjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateReplicationJobWithChan(request *CreateReplicationJobRequest) (<-chan *CreateReplicationJobResponse, <-chan error) {
 	responseChan := make(chan *CreateReplicationJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateReplicationJobWithChan(request *CreateReplicationJob
 }
 
 // CreateReplicationJobWithCallback invokes the smc.CreateReplicationJob API asynchronously
-// api document: https://help.aliyun.com/api/smc/createreplicationjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateReplicationJobWithCallback(request *CreateReplicationJobRequest, callback func(response *CreateReplicationJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,28 +71,35 @@ func (client *Client) CreateReplicationJobWithCallback(request *CreateReplicatio
 // CreateReplicationJobRequest is the request struct for api CreateReplicationJob
 type CreateReplicationJobRequest struct {
 	*requests.RpcRequest
-	TargetType             string                          `position:"Query" name:"TargetType"`
-	ClientToken            string                          `position:"Query" name:"ClientToken"`
-	Description            string                          `position:"Query" name:"Description"`
-	Frequency              requests.Integer                `position:"Query" name:"Frequency"`
-	ReplicationParameters  string                          `position:"Query" name:"ReplicationParameters"`
-	ImageName              string                          `position:"Query" name:"ImageName"`
-	SystemDiskSize         requests.Integer                `position:"Query" name:"SystemDiskSize"`
-	InstanceType           string                          `position:"Query" name:"InstanceType"`
-	Tag                    *[]CreateReplicationJobTag      `position:"Query" name:"Tag"  type:"Repeated"`
-	NetMode                requests.Integer                `position:"Query" name:"NetMode"`
-	SourceId               string                          `position:"Query" name:"SourceId"`
-	RunOnce                requests.Boolean                `position:"Query" name:"RunOnce"`
-	ResourceOwnerAccount   string                          `position:"Query" name:"ResourceOwnerAccount"`
-	ValidTime              string                          `position:"Query" name:"ValidTime"`
-	OwnerId                requests.Integer                `position:"Query" name:"OwnerId"`
-	DataDisk               *[]CreateReplicationJobDataDisk `position:"Query" name:"DataDisk"  type:"Repeated"`
-	VSwitchId              string                          `position:"Query" name:"VSwitchId"`
-	ScheduledStartTime     string                          `position:"Query" name:"ScheduledStartTime"`
-	InstanceId             string                          `position:"Query" name:"InstanceId"`
-	VpcId                  string                          `position:"Query" name:"VpcId"`
-	Name                   string                          `position:"Query" name:"Name"`
-	MaxNumberOfImageToKeep requests.Integer                `position:"Query" name:"MaxNumberOfImageToKeep"`
+	Frequency              requests.Integer                      `position:"Query" name:"Frequency"`
+	ReplicationParameters  string                                `position:"Query" name:"ReplicationParameters"`
+	SystemDiskSize         requests.Integer                      `position:"Query" name:"SystemDiskSize"`
+	Tag                    *[]CreateReplicationJobTag            `position:"Query" name:"Tag"  type:"Repeated"`
+	NetMode                requests.Integer                      `position:"Query" name:"NetMode"`
+	ContainerNamespace     string                                `position:"Query" name:"ContainerNamespace"`
+	LaunchTemplateId       string                                `position:"Query" name:"LaunchTemplateId"`
+	ValidTime              string                                `position:"Query" name:"ValidTime"`
+	OwnerId                requests.Integer                      `position:"Query" name:"OwnerId"`
+	VSwitchId              string                                `position:"Query" name:"VSwitchId"`
+	ScheduledStartTime     string                                `position:"Query" name:"ScheduledStartTime"`
+	InstanceId             string                                `position:"Query" name:"InstanceId"`
+	InstanceRamRole        string                                `position:"Query" name:"InstanceRamRole"`
+	Name                   string                                `position:"Query" name:"Name"`
+	MaxNumberOfImageToKeep requests.Integer                      `position:"Query" name:"MaxNumberOfImageToKeep"`
+	TargetType             string                                `position:"Query" name:"TargetType"`
+	ClientToken            string                                `position:"Query" name:"ClientToken"`
+	Description            string                                `position:"Query" name:"Description"`
+	ImageName              string                                `position:"Query" name:"ImageName"`
+	InstanceType           string                                `position:"Query" name:"InstanceType"`
+	ContainerRepository    string                                `position:"Query" name:"ContainerRepository"`
+	ContainerTag           string                                `position:"Query" name:"ContainerTag"`
+	SourceId               string                                `position:"Query" name:"SourceId"`
+	RunOnce                requests.Boolean                      `position:"Query" name:"RunOnce"`
+	ResourceOwnerAccount   string                                `position:"Query" name:"ResourceOwnerAccount"`
+	SystemDiskPart         *[]CreateReplicationJobSystemDiskPart `position:"Query" name:"SystemDiskPart"  type:"Repeated"`
+	DataDisk               *[]CreateReplicationJobDataDisk       `position:"Query" name:"DataDisk"  type:"Repeated"`
+	LaunchTemplateVersion  string                                `position:"Query" name:"LaunchTemplateVersion"`
+	VpcId                  string                                `position:"Query" name:"VpcId"`
 }
 
 // CreateReplicationJobTag is a repeated param struct in CreateReplicationJobRequest
@@ -106,10 +108,25 @@ type CreateReplicationJobTag struct {
 	Key   string `name:"Key"`
 }
 
+// CreateReplicationJobSystemDiskPart is a repeated param struct in CreateReplicationJobRequest
+type CreateReplicationJobSystemDiskPart struct {
+	SizeBytes string `name:"SizeBytes"`
+	Block     string `name:"Block"`
+	Device    string `name:"Device"`
+}
+
 // CreateReplicationJobDataDisk is a repeated param struct in CreateReplicationJobRequest
 type CreateReplicationJobDataDisk struct {
-	Size  string `name:"Size"`
-	Index string `name:"Index"`
+	Size  string                      `name:"Size"`
+	Part  *[]CreateReplicationJobPart `name:"Part" type:"Repeated"`
+	Index string                      `name:"Index"`
+}
+
+// CreateReplicationJobPart is a repeated param struct in CreateReplicationJobRequest
+type CreateReplicationJobPart struct {
+	SizeBytes string `name:"SizeBytes"`
+	Block     string `name:"Block"`
+	Device    string `name:"Device"`
 }
 
 // CreateReplicationJobResponse is the response struct for api CreateReplicationJob
@@ -125,6 +142,7 @@ func CreateCreateReplicationJobRequest() (request *CreateReplicationJobRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("smc", "2019-06-01", "CreateReplicationJob", "smc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // StartReplicationJob invokes the smc.StartReplicationJob API synchronously
-// api document: https://help.aliyun.com/api/smc/startreplicationjob.html
 func (client *Client) StartReplicationJob(request *StartReplicationJobRequest) (response *StartReplicationJobResponse, err error) {
 	response = CreateStartReplicationJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartReplicationJob(request *StartReplicationJobRequest) (
 }
 
 // StartReplicationJobWithChan invokes the smc.StartReplicationJob API asynchronously
-// api document: https://help.aliyun.com/api/smc/startreplicationjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartReplicationJobWithChan(request *StartReplicationJobRequest) (<-chan *StartReplicationJobResponse, <-chan error) {
 	responseChan := make(chan *StartReplicationJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartReplicationJobWithChan(request *StartReplicationJobRe
 }
 
 // StartReplicationJobWithCallback invokes the smc.StartReplicationJob API asynchronously
-// api document: https://help.aliyun.com/api/smc/startreplicationjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartReplicationJobWithCallback(request *StartReplicationJobRequest, callback func(response *StartReplicationJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateStartReplicationJobRequest() (request *StartReplicationJobRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("smc", "2019-06-01", "StartReplicationJob", "smc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

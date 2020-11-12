@@ -21,7 +21,6 @@ import (
 )
 
 // StopReplicationJob invokes the smc.StopReplicationJob API synchronously
-// api document: https://help.aliyun.com/api/smc/stopreplicationjob.html
 func (client *Client) StopReplicationJob(request *StopReplicationJobRequest) (response *StopReplicationJobResponse, err error) {
 	response = CreateStopReplicationJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopReplicationJob(request *StopReplicationJobRequest) (re
 }
 
 // StopReplicationJobWithChan invokes the smc.StopReplicationJob API asynchronously
-// api document: https://help.aliyun.com/api/smc/stopreplicationjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopReplicationJobWithChan(request *StopReplicationJobRequest) (<-chan *StopReplicationJobResponse, <-chan error) {
 	responseChan := make(chan *StopReplicationJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopReplicationJobWithChan(request *StopReplicationJobRequ
 }
 
 // StopReplicationJobWithCallback invokes the smc.StopReplicationJob API asynchronously
-// api document: https://help.aliyun.com/api/smc/stopreplicationjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopReplicationJobWithCallback(request *StopReplicationJobRequest, callback func(response *StopReplicationJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateStopReplicationJobRequest() (request *StopReplicationJobRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("smc", "2019-06-01", "StopReplicationJob", "smc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

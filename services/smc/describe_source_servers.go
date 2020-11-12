@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSourceServers invokes the smc.DescribeSourceServers API synchronously
-// api document: https://help.aliyun.com/api/smc/describesourceservers.html
 func (client *Client) DescribeSourceServers(request *DescribeSourceServersRequest) (response *DescribeSourceServersResponse, err error) {
 	response = CreateDescribeSourceServersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSourceServers(request *DescribeSourceServersReques
 }
 
 // DescribeSourceServersWithChan invokes the smc.DescribeSourceServers API asynchronously
-// api document: https://help.aliyun.com/api/smc/describesourceservers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSourceServersWithChan(request *DescribeSourceServersRequest) (<-chan *DescribeSourceServersResponse, <-chan error) {
 	responseChan := make(chan *DescribeSourceServersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSourceServersWithChan(request *DescribeSourceServe
 }
 
 // DescribeSourceServersWithCallback invokes the smc.DescribeSourceServers API asynchronously
-// api document: https://help.aliyun.com/api/smc/describesourceservers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSourceServersWithCallback(request *DescribeSourceServersRequest, callback func(response *DescribeSourceServersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,6 +97,7 @@ func CreateDescribeSourceServersRequest() (request *DescribeSourceServersRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("smc", "2019-06-01", "DescribeSourceServers", "smc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeReplicationJobs invokes the smc.DescribeReplicationJobs API synchronously
-// api document: https://help.aliyun.com/api/smc/describereplicationjobs.html
 func (client *Client) DescribeReplicationJobs(request *DescribeReplicationJobsRequest) (response *DescribeReplicationJobsResponse, err error) {
 	response = CreateDescribeReplicationJobsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeReplicationJobs(request *DescribeReplicationJobsRe
 }
 
 // DescribeReplicationJobsWithChan invokes the smc.DescribeReplicationJobs API asynchronously
-// api document: https://help.aliyun.com/api/smc/describereplicationjobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReplicationJobsWithChan(request *DescribeReplicationJobsRequest) (<-chan *DescribeReplicationJobsResponse, <-chan error) {
 	responseChan := make(chan *DescribeReplicationJobsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeReplicationJobsWithChan(request *DescribeReplicati
 }
 
 // DescribeReplicationJobsWithCallback invokes the smc.DescribeReplicationJobs API asynchronously
-// api document: https://help.aliyun.com/api/smc/describereplicationjobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReplicationJobsWithCallback(request *DescribeReplicationJobsRequest, callback func(response *DescribeReplicationJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,6 +98,7 @@ func CreateDescribeReplicationJobsRequest() (request *DescribeReplicationJobsReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("smc", "2019-06-01", "DescribeReplicationJobs", "smc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

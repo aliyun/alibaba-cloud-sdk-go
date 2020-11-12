@@ -17,21 +17,22 @@ package smc
 
 // SourceServer is a nested struct in smc response
 type SourceServer struct {
-	SourceId          string                           `json:"SourceId" xml:"SourceId"`
-	JobId             string                           `json:"JobId" xml:"JobId"`
-	AgentVersion      string                           `json:"AgentVersion" xml:"AgentVersion"`
-	Name              string                           `json:"Name" xml:"Name"`
-	Description       string                           `json:"Description" xml:"Description"`
-	KernelLevel       int                              `json:"KernelLevel" xml:"KernelLevel"`
-	Platform          string                           `json:"Platform" xml:"Platform"`
-	Architecture      string                           `json:"Architecture" xml:"Architecture"`
-	SystemDiskSize    int                              `json:"SystemDiskSize" xml:"SystemDiskSize"`
-	ReplicationDriver string                           `json:"ReplicationDriver" xml:"ReplicationDriver"`
-	SystemInfo        string                           `json:"SystemInfo" xml:"SystemInfo"`
-	CreationTime      string                           `json:"CreationTime" xml:"CreationTime"`
-	State             string                           `json:"State" xml:"State"`
-	ErrorCode         string                           `json:"ErrorCode" xml:"ErrorCode"`
-	StatusInfo        string                           `json:"StatusInfo" xml:"StatusInfo"`
-	HeartbeatRate     int                              `json:"HeartbeatRate" xml:"HeartbeatRate"`
-	DataDisks         DataDisksInDescribeSourceServers `json:"DataDisks" xml:"DataDisks"`
+	SourceId          string                                 `json:"SourceId" xml:"SourceId"`
+	JobId             string                                 `json:"JobId" xml:"JobId"`
+	AgentVersion      string                                 `json:"AgentVersion" xml:"AgentVersion"`
+	Name              string                                 `json:"Name" xml:"Name"`
+	Description       string                                 `json:"Description" xml:"Description"`
+	KernelLevel       int                                    `json:"KernelLevel" xml:"KernelLevel"`
+	Platform          string                                 `json:"Platform" xml:"Platform"`
+	Architecture      string                                 `json:"Architecture" xml:"Architecture"`
+	SystemDiskSize    int                                    `json:"SystemDiskSize" xml:"SystemDiskSize"`
+	ReplicationDriver string                                 `json:"ReplicationDriver" xml:"ReplicationDriver"`
+	SystemInfo        string                                 `json:"SystemInfo" xml:"SystemInfo"`
+	CreationTime      string                                 `json:"CreationTime" xml:"CreationTime"`
+	State             string                                 `json:"State" xml:"State"`
+	ErrorCode         string                                 `json:"ErrorCode" xml:"ErrorCode"`
+	StatusInfo        string                                 `json:"StatusInfo" xml:"StatusInfo"`
+	HeartbeatRate     int                                    `json:"HeartbeatRate" xml:"HeartbeatRate"`
+	DataDisks         DataDisksInDescribeSourceServers       `json:"DataDisks" xml:"DataDisks"`
+	SystemDiskParts   SystemDiskPartsInDescribeSourceServers `json:"SystemDiskParts" xml:"SystemDiskParts"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteReplicationJob invokes the smc.DeleteReplicationJob API synchronously
-// api document: https://help.aliyun.com/api/smc/deletereplicationjob.html
 func (client *Client) DeleteReplicationJob(request *DeleteReplicationJobRequest) (response *DeleteReplicationJobResponse, err error) {
 	response = CreateDeleteReplicationJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteReplicationJob(request *DeleteReplicationJobRequest)
 }
 
 // DeleteReplicationJobWithChan invokes the smc.DeleteReplicationJob API asynchronously
-// api document: https://help.aliyun.com/api/smc/deletereplicationjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteReplicationJobWithChan(request *DeleteReplicationJobRequest) (<-chan *DeleteReplicationJobResponse, <-chan error) {
 	responseChan := make(chan *DeleteReplicationJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteReplicationJobWithChan(request *DeleteReplicationJob
 }
 
 // DeleteReplicationJobWithCallback invokes the smc.DeleteReplicationJob API asynchronously
-// api document: https://help.aliyun.com/api/smc/deletereplicationjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteReplicationJobWithCallback(request *DeleteReplicationJobRequest, callback func(response *DeleteReplicationJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDeleteReplicationJobRequest() (request *DeleteReplicationJobRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("smc", "2019-06-01", "DeleteReplicationJob", "smc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySourceServerAttribute invokes the smc.ModifySourceServerAttribute API synchronously
-// api document: https://help.aliyun.com/api/smc/modifysourceserverattribute.html
 func (client *Client) ModifySourceServerAttribute(request *ModifySourceServerAttributeRequest) (response *ModifySourceServerAttributeResponse, err error) {
 	response = CreateModifySourceServerAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySourceServerAttribute(request *ModifySourceServerAtt
 }
 
 // ModifySourceServerAttributeWithChan invokes the smc.ModifySourceServerAttribute API asynchronously
-// api document: https://help.aliyun.com/api/smc/modifysourceserverattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySourceServerAttributeWithChan(request *ModifySourceServerAttributeRequest) (<-chan *ModifySourceServerAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifySourceServerAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySourceServerAttributeWithChan(request *ModifySourceS
 }
 
 // ModifySourceServerAttributeWithCallback invokes the smc.ModifySourceServerAttribute API asynchronously
-// api document: https://help.aliyun.com/api/smc/modifysourceserverattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySourceServerAttributeWithCallback(request *ModifySourceServerAttributeRequest, callback func(response *ModifySourceServerAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateModifySourceServerAttributeRequest() (request *ModifySourceServerAttr
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("smc", "2019-06-01", "ModifySourceServerAttribute", "smc", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
