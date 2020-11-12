@@ -91,6 +91,7 @@ type GetVpcEndpointAttributeResponse struct {
 	ServiceName            string `json:"ServiceName" xml:"ServiceName"`
 	VpcId                  string `json:"VpcId" xml:"VpcId"`
 	RegionId               string `json:"RegionId" xml:"RegionId"`
+	Payer                  string `json:"Payer" xml:"Payer"`
 }
 
 // CreateGetVpcEndpointAttributeRequest creates a request to invoke GetVpcEndpointAttribute API

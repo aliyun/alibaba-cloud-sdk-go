@@ -1,3 +1,8 @@
+2020-11-12 Version: v1.61.625
+- Generated 2020-04-15 for `Privatelink`.
+- Add type of payment for endpoint service.
+- Add api for opening endpoint.
+
 2020-11-12 Version: v1.61.624
 - Generated 2017-12-04 for `Actiontrail`.
 - Update DescribeTrails Response.

@@ -73,6 +73,7 @@ type CreateVpcEndpointServiceRequest struct {
 	*requests.RpcRequest
 	AutoAcceptEnabled  requests.Boolean                    `position:"Query" name:"AutoAcceptEnabled"`
 	ClientToken        string                              `position:"Query" name:"ClientToken"`
+	Payer              string                              `position:"Query" name:"Payer"`
 	DryRun             requests.Boolean                    `position:"Query" name:"DryRun"`
 	Resource           *[]CreateVpcEndpointServiceResource `position:"Query" name:"Resource"  type:"Repeated"`
 	ServiceDescription string                              `position:"Query" name:"ServiceDescription"`

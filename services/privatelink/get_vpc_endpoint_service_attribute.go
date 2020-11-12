@@ -90,6 +90,7 @@ type GetVpcEndpointServiceAttributeResponse struct {
 	MinBandwidth          int      `json:"MinBandwidth" xml:"MinBandwidth"`
 	ConnectBandwidth      int      `json:"ConnectBandwidth" xml:"ConnectBandwidth"`
 	RegionId              string   `json:"RegionId" xml:"RegionId"`
+	Payer                 string   `json:"Payer" xml:"Payer"`
 	Zones                 []string `json:"Zones" xml:"Zones"`
 }
 

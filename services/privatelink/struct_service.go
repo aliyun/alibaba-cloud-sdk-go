@@ -22,6 +22,7 @@ type Service struct {
 	ServiceDomain         string   `json:"ServiceDomain" xml:"ServiceDomain"`
 	CreateTime            string   `json:"CreateTime" xml:"CreateTime"`
 	AutoAcceptEnabled     bool     `json:"AutoAcceptEnabled" xml:"AutoAcceptEnabled"`
+	Payer                 string   `json:"Payer" xml:"Payer"`
 	ServiceStatus         string   `json:"ServiceStatus" xml:"ServiceStatus"`
 	ServiceId             string   `json:"ServiceId" xml:"ServiceId"`
 	RegionId              string   `json:"RegionId" xml:"RegionId"`
