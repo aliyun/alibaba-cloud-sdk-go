@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUserServiceStatus invokes the pvtz.DescribeUserServiceStatus API synchronously
-// api document: https://help.aliyun.com/api/pvtz/describeuserservicestatus.html
 func (client *Client) DescribeUserServiceStatus(request *DescribeUserServiceStatusRequest) (response *DescribeUserServiceStatusResponse, err error) {
 	response = CreateDescribeUserServiceStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUserServiceStatus(request *DescribeUserServiceStat
 }
 
 // DescribeUserServiceStatusWithChan invokes the pvtz.DescribeUserServiceStatus API asynchronously
-// api document: https://help.aliyun.com/api/pvtz/describeuserservicestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserServiceStatusWithChan(request *DescribeUserServiceStatusRequest) (<-chan *DescribeUserServiceStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserServiceStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUserServiceStatusWithChan(request *DescribeUserSer
 }
 
 // DescribeUserServiceStatusWithCallback invokes the pvtz.DescribeUserServiceStatus API asynchronously
-// api document: https://help.aliyun.com/api/pvtz/describeuserservicestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserServiceStatusWithCallback(request *DescribeUserServiceStatusRequest, callback func(response *DescribeUserServiceStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeUserServiceStatusRequest() (request *DescribeUserServiceStatu
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("pvtz", "2018-01-01", "DescribeUserServiceStatus", "pvtz", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

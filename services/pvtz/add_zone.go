@@ -21,7 +21,6 @@ import (
 )
 
 // AddZone invokes the pvtz.AddZone API synchronously
-// api document: https://help.aliyun.com/api/pvtz/addzone.html
 func (client *Client) AddZone(request *AddZoneRequest) (response *AddZoneResponse, err error) {
 	response = CreateAddZoneResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddZone(request *AddZoneRequest) (response *AddZoneRespons
 }
 
 // AddZoneWithChan invokes the pvtz.AddZone API asynchronously
-// api document: https://help.aliyun.com/api/pvtz/addzone.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddZoneWithChan(request *AddZoneRequest) (<-chan *AddZoneResponse, <-chan error) {
 	responseChan := make(chan *AddZoneResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddZoneWithChan(request *AddZoneRequest) (<-chan *AddZoneR
 }
 
 // AddZoneWithCallback invokes the pvtz.AddZone API asynchronously
-// api document: https://help.aliyun.com/api/pvtz/addzone.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddZoneWithCallback(request *AddZoneRequest, callback func(response *AddZoneResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateAddZoneRequest() (request *AddZoneRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("pvtz", "2018-01-01", "AddZone", "pvtz", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

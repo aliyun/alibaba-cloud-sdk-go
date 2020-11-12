@@ -20,6 +20,7 @@ type Zone struct {
 	ZoneId          string `json:"ZoneId" xml:"ZoneId"`
 	UpdateTime      string `json:"UpdateTime" xml:"UpdateTime"`
 	ProxyPattern    string `json:"ProxyPattern" xml:"ProxyPattern"`
+	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	Remark          string `json:"Remark" xml:"Remark"`
 	CreateTimestamp int64  `json:"CreateTimestamp" xml:"CreateTimestamp"`
 	RecordCount     int    `json:"RecordCount" xml:"RecordCount"`
