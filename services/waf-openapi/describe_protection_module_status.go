@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeProtectionModuleStatus invokes the waf_openapi.DescribeProtectionModuleStatus API synchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describeprotectionmodulestatus.html
 func (client *Client) DescribeProtectionModuleStatus(request *DescribeProtectionModuleStatusRequest) (response *DescribeProtectionModuleStatusResponse, err error) {
 	response = CreateDescribeProtectionModuleStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeProtectionModuleStatus(request *DescribeProtection
 }
 
 // DescribeProtectionModuleStatusWithChan invokes the waf_openapi.DescribeProtectionModuleStatus API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describeprotectionmodulestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeProtectionModuleStatusWithChan(request *DescribeProtectionModuleStatusRequest) (<-chan *DescribeProtectionModuleStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeProtectionModuleStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeProtectionModuleStatusWithChan(request *DescribePr
 }
 
 // DescribeProtectionModuleStatusWithCallback invokes the waf_openapi.DescribeProtectionModuleStatus API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describeprotectionmodulestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeProtectionModuleStatusWithCallback(request *DescribeProtectionModuleStatusRequest, callback func(response *DescribeProtectionModuleStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

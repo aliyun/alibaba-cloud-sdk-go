@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCertMatchStatus invokes the waf_openapi.DescribeCertMatchStatus API synchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describecertmatchstatus.html
 func (client *Client) DescribeCertMatchStatus(request *DescribeCertMatchStatusRequest) (response *DescribeCertMatchStatusResponse, err error) {
 	response = CreateDescribeCertMatchStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCertMatchStatus(request *DescribeCertMatchStatusRe
 }
 
 // DescribeCertMatchStatusWithChan invokes the waf_openapi.DescribeCertMatchStatus API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describecertmatchstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCertMatchStatusWithChan(request *DescribeCertMatchStatusRequest) (<-chan *DescribeCertMatchStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeCertMatchStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCertMatchStatusWithChan(request *DescribeCertMatch
 }
 
 // DescribeCertMatchStatusWithCallback invokes the waf_openapi.DescribeCertMatchStatus API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describecertmatchstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCertMatchStatusWithCallback(request *DescribeCertMatchStatusRequest, callback func(response *DescribeCertMatchStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

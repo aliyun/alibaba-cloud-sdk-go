@@ -21,7 +21,6 @@ import (
 )
 
 // SetDomainRuleGroup invokes the waf_openapi.SetDomainRuleGroup API synchronously
-// api document: https://help.aliyun.com/api/waf-openapi/setdomainrulegroup.html
 func (client *Client) SetDomainRuleGroup(request *SetDomainRuleGroupRequest) (response *SetDomainRuleGroupResponse, err error) {
 	response = CreateSetDomainRuleGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SetDomainRuleGroup(request *SetDomainRuleGroupRequest) (re
 }
 
 // SetDomainRuleGroupWithChan invokes the waf_openapi.SetDomainRuleGroup API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/setdomainrulegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDomainRuleGroupWithChan(request *SetDomainRuleGroupRequest) (<-chan *SetDomainRuleGroupResponse, <-chan error) {
 	responseChan := make(chan *SetDomainRuleGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SetDomainRuleGroupWithChan(request *SetDomainRuleGroupRequ
 }
 
 // SetDomainRuleGroupWithCallback invokes the waf_openapi.SetDomainRuleGroup API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/setdomainrulegroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDomainRuleGroupWithCallback(request *SetDomainRuleGroupRequest, callback func(response *SetDomainRuleGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

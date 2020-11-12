@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCertificateByCertificateId invokes the waf_openapi.CreateCertificateByCertificateId API synchronously
-// api document: https://help.aliyun.com/api/waf-openapi/createcertificatebycertificateid.html
 func (client *Client) CreateCertificateByCertificateId(request *CreateCertificateByCertificateIdRequest) (response *CreateCertificateByCertificateIdResponse, err error) {
 	response = CreateCreateCertificateByCertificateIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCertificateByCertificateId(request *CreateCertificat
 }
 
 // CreateCertificateByCertificateIdWithChan invokes the waf_openapi.CreateCertificateByCertificateId API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/createcertificatebycertificateid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCertificateByCertificateIdWithChan(request *CreateCertificateByCertificateIdRequest) (<-chan *CreateCertificateByCertificateIdResponse, <-chan error) {
 	responseChan := make(chan *CreateCertificateByCertificateIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateCertificateByCertificateIdWithChan(request *CreateCe
 }
 
 // CreateCertificateByCertificateIdWithCallback invokes the waf_openapi.CreateCertificateByCertificateId API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/createcertificatebycertificateid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCertificateByCertificateIdWithCallback(request *CreateCertificateByCertificateIdRequest, callback func(response *CreateCertificateByCertificateIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

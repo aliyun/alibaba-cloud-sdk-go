@@ -21,7 +21,6 @@ import (
 )
 
 // CreateDomain invokes the waf_openapi.CreateDomain API synchronously
-// api document: https://help.aliyun.com/api/waf-openapi/createdomain.html
 func (client *Client) CreateDomain(request *CreateDomainRequest) (response *CreateDomainResponse, err error) {
 	response = CreateCreateDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateDomain(request *CreateDomainRequest) (response *Crea
 }
 
 // CreateDomainWithChan invokes the waf_openapi.CreateDomain API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/createdomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDomainWithChan(request *CreateDomainRequest) (<-chan *CreateDomainResponse, <-chan error) {
 	responseChan := make(chan *CreateDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateDomainWithChan(request *CreateDomainRequest) (<-chan
 }
 
 // CreateDomainWithCallback invokes the waf_openapi.CreateDomain API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/createdomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDomainWithCallback(request *CreateDomainRequest, callback func(response *CreateDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,24 +71,26 @@ func (client *Client) CreateDomainWithCallback(request *CreateDomainRequest, cal
 // CreateDomainRequest is the request struct for api CreateDomain
 type CreateDomainRequest struct {
 	*requests.RpcRequest
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	HttpPort        string           `position:"Query" name:"HttpPort"`
-	Http2Port       string           `position:"Query" name:"Http2Port"`
-	WriteTime       requests.Integer `position:"Query" name:"WriteTime"`
-	Lang            string           `position:"Query" name:"Lang"`
-	LogHeaders      string           `position:"Query" name:"LogHeaders"`
-	ConnectionTime  requests.Integer `position:"Query" name:"ConnectionTime"`
-	ClusterType     requests.Integer `position:"Query" name:"ClusterType"`
-	HttpsRedirect   requests.Integer `position:"Query" name:"HttpsRedirect"`
-	InstanceId      string           `position:"Query" name:"InstanceId"`
-	SourceIps       string           `position:"Query" name:"SourceIps"`
-	Domain          string           `position:"Query" name:"Domain"`
-	IsAccessProduct requests.Integer `position:"Query" name:"IsAccessProduct"`
-	ReadTime        requests.Integer `position:"Query" name:"ReadTime"`
-	HttpsPort       string           `position:"Query" name:"HttpsPort"`
-	LoadBalancing   requests.Integer `position:"Query" name:"LoadBalancing"`
-	HttpToUserIp    requests.Integer `position:"Query" name:"HttpToUserIp"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	SourceIp             string           `position:"Query" name:"SourceIp"`
+	HttpPort             string           `position:"Query" name:"HttpPort"`
+	Http2Port            string           `position:"Query" name:"Http2Port"`
+	WriteTime            requests.Integer `position:"Query" name:"WriteTime"`
+	Lang                 string           `position:"Query" name:"Lang"`
+	AccessType           string           `position:"Query" name:"AccessType"`
+	LogHeaders           string           `position:"Query" name:"LogHeaders"`
+	ConnectionTime       requests.Integer `position:"Query" name:"ConnectionTime"`
+	ClusterType          requests.Integer `position:"Query" name:"ClusterType"`
+	CloudNativeInstances string           `position:"Query" name:"CloudNativeInstances"`
+	HttpsRedirect        requests.Integer `position:"Query" name:"HttpsRedirect"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	SourceIps            string           `position:"Query" name:"SourceIps"`
+	Domain               string           `position:"Query" name:"Domain"`
+	IsAccessProduct      requests.Integer `position:"Query" name:"IsAccessProduct"`
+	ReadTime             requests.Integer `position:"Query" name:"ReadTime"`
+	HttpsPort            string           `position:"Query" name:"HttpsPort"`
+	LoadBalancing        requests.Integer `position:"Query" name:"LoadBalancing"`
+	HttpToUserIp         requests.Integer `position:"Query" name:"HttpToUserIp"`
 }
 
 // CreateDomainResponse is the response struct for api CreateDomain

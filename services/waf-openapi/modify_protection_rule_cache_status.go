@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyProtectionRuleCacheStatus invokes the waf_openapi.ModifyProtectionRuleCacheStatus API synchronously
-// api document: https://help.aliyun.com/api/waf-openapi/modifyprotectionrulecachestatus.html
 func (client *Client) ModifyProtectionRuleCacheStatus(request *ModifyProtectionRuleCacheStatusRequest) (response *ModifyProtectionRuleCacheStatusResponse, err error) {
 	response = CreateModifyProtectionRuleCacheStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyProtectionRuleCacheStatus(request *ModifyProtectionR
 }
 
 // ModifyProtectionRuleCacheStatusWithChan invokes the waf_openapi.ModifyProtectionRuleCacheStatus API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/modifyprotectionrulecachestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyProtectionRuleCacheStatusWithChan(request *ModifyProtectionRuleCacheStatusRequest) (<-chan *ModifyProtectionRuleCacheStatusResponse, <-chan error) {
 	responseChan := make(chan *ModifyProtectionRuleCacheStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyProtectionRuleCacheStatusWithChan(request *ModifyPro
 }
 
 // ModifyProtectionRuleCacheStatusWithCallback invokes the waf_openapi.ModifyProtectionRuleCacheStatus API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/modifyprotectionrulecachestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyProtectionRuleCacheStatusWithCallback(request *ModifyProtectionRuleCacheStatusRequest, callback func(response *ModifyProtectionRuleCacheStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

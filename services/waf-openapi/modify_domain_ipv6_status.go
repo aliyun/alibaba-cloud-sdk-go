@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDomainIpv6Status invokes the waf_openapi.ModifyDomainIpv6Status API synchronously
-// api document: https://help.aliyun.com/api/waf-openapi/modifydomainipv6status.html
 func (client *Client) ModifyDomainIpv6Status(request *ModifyDomainIpv6StatusRequest) (response *ModifyDomainIpv6StatusResponse, err error) {
 	response = CreateModifyDomainIpv6StatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDomainIpv6Status(request *ModifyDomainIpv6StatusRequ
 }
 
 // ModifyDomainIpv6StatusWithChan invokes the waf_openapi.ModifyDomainIpv6Status API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/modifydomainipv6status.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDomainIpv6StatusWithChan(request *ModifyDomainIpv6StatusRequest) (<-chan *ModifyDomainIpv6StatusResponse, <-chan error) {
 	responseChan := make(chan *ModifyDomainIpv6StatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDomainIpv6StatusWithChan(request *ModifyDomainIpv6St
 }
 
 // ModifyDomainIpv6StatusWithCallback invokes the waf_openapi.ModifyDomainIpv6Status API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/modifydomainipv6status.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDomainIpv6StatusWithCallback(request *ModifyDomainIpv6StatusRequest, callback func(response *ModifyDomainIpv6StatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

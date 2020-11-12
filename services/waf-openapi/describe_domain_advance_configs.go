@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainAdvanceConfigs invokes the waf_openapi.DescribeDomainAdvanceConfigs API synchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describedomainadvanceconfigs.html
 func (client *Client) DescribeDomainAdvanceConfigs(request *DescribeDomainAdvanceConfigsRequest) (response *DescribeDomainAdvanceConfigsResponse, err error) {
 	response = CreateDescribeDomainAdvanceConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainAdvanceConfigs(request *DescribeDomainAdvanc
 }
 
 // DescribeDomainAdvanceConfigsWithChan invokes the waf_openapi.DescribeDomainAdvanceConfigs API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describedomainadvanceconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainAdvanceConfigsWithChan(request *DescribeDomainAdvanceConfigsRequest) (<-chan *DescribeDomainAdvanceConfigsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainAdvanceConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainAdvanceConfigsWithChan(request *DescribeDoma
 }
 
 // DescribeDomainAdvanceConfigsWithCallback invokes the waf_openapi.DescribeDomainAdvanceConfigs API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describedomainadvanceconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainAdvanceConfigsWithCallback(request *DescribeDomainAdvanceConfigsRequest, callback func(response *DescribeDomainAdvanceConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

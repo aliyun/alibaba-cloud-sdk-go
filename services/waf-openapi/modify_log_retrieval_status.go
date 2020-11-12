@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyLogRetrievalStatus invokes the waf_openapi.ModifyLogRetrievalStatus API synchronously
-// api document: https://help.aliyun.com/api/waf-openapi/modifylogretrievalstatus.html
 func (client *Client) ModifyLogRetrievalStatus(request *ModifyLogRetrievalStatusRequest) (response *ModifyLogRetrievalStatusResponse, err error) {
 	response = CreateModifyLogRetrievalStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyLogRetrievalStatus(request *ModifyLogRetrievalStatus
 }
 
 // ModifyLogRetrievalStatusWithChan invokes the waf_openapi.ModifyLogRetrievalStatus API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/modifylogretrievalstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyLogRetrievalStatusWithChan(request *ModifyLogRetrievalStatusRequest) (<-chan *ModifyLogRetrievalStatusResponse, <-chan error) {
 	responseChan := make(chan *ModifyLogRetrievalStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyLogRetrievalStatusWithChan(request *ModifyLogRetriev
 }
 
 // ModifyLogRetrievalStatusWithCallback invokes the waf_openapi.ModifyLogRetrievalStatus API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/modifylogretrievalstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyLogRetrievalStatusWithCallback(request *ModifyLogRetrievalStatusRequest, callback func(response *ModifyLogRetrievalStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

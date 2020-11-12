@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeProtectionModuleMode invokes the waf_openapi.DescribeProtectionModuleMode API synchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describeprotectionmodulemode.html
 func (client *Client) DescribeProtectionModuleMode(request *DescribeProtectionModuleModeRequest) (response *DescribeProtectionModuleModeResponse, err error) {
 	response = CreateDescribeProtectionModuleModeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeProtectionModuleMode(request *DescribeProtectionMo
 }
 
 // DescribeProtectionModuleModeWithChan invokes the waf_openapi.DescribeProtectionModuleMode API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describeprotectionmodulemode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeProtectionModuleModeWithChan(request *DescribeProtectionModuleModeRequest) (<-chan *DescribeProtectionModuleModeResponse, <-chan error) {
 	responseChan := make(chan *DescribeProtectionModuleModeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeProtectionModuleModeWithChan(request *DescribeProt
 }
 
 // DescribeProtectionModuleModeWithCallback invokes the waf_openapi.DescribeProtectionModuleMode API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describeprotectionmodulemode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeProtectionModuleModeWithCallback(request *DescribeProtectionModuleModeRequest, callback func(response *DescribeProtectionModuleModeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

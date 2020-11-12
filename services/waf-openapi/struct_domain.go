@@ -17,20 +17,22 @@ package waf_openapi
 
 // Domain is a nested struct in waf_openapi response
 type Domain struct {
-	HttpToUserIp    int         `json:"HttpToUserIp" xml:"HttpToUserIp"`
-	HttpsRedirect   int         `json:"HttpsRedirect" xml:"HttpsRedirect"`
-	LoadBalancing   int         `json:"LoadBalancing" xml:"LoadBalancing"`
-	Cname           string      `json:"Cname" xml:"Cname"`
-	IsAccessProduct int         `json:"IsAccessProduct" xml:"IsAccessProduct"`
-	Version         int64       `json:"Version" xml:"Version"`
-	ClusterType     int         `json:"ClusterType" xml:"ClusterType"`
-	ConnectionTime  int         `json:"ConnectionTime" xml:"ConnectionTime"`
-	ReadTime        int         `json:"ReadTime" xml:"ReadTime"`
-	WriteTime       int         `json:"WriteTime" xml:"WriteTime"`
-	ResourceGroupId string      `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	SourceIps       []string    `json:"SourceIps" xml:"SourceIps"`
-	Http2Port       []string    `json:"Http2Port" xml:"Http2Port"`
-	HttpPort        []string    `json:"HttpPort" xml:"HttpPort"`
-	HttpsPort       []string    `json:"HttpsPort" xml:"HttpsPort"`
-	LogHeaders      []LogHeader `json:"LogHeaders" xml:"LogHeaders"`
+	HttpToUserIp         int                        `json:"HttpToUserIp" xml:"HttpToUserIp"`
+	HttpsRedirect        int                        `json:"HttpsRedirect" xml:"HttpsRedirect"`
+	LoadBalancing        int                        `json:"LoadBalancing" xml:"LoadBalancing"`
+	Cname                string                     `json:"Cname" xml:"Cname"`
+	IsAccessProduct      int                        `json:"IsAccessProduct" xml:"IsAccessProduct"`
+	Version              int64                      `json:"Version" xml:"Version"`
+	ClusterType          int                        `json:"ClusterType" xml:"ClusterType"`
+	ConnectionTime       int                        `json:"ConnectionTime" xml:"ConnectionTime"`
+	ReadTime             int                        `json:"ReadTime" xml:"ReadTime"`
+	WriteTime            int                        `json:"WriteTime" xml:"WriteTime"`
+	ResourceGroupId      string                     `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	AccessType           string                     `json:"AccessType" xml:"AccessType"`
+	SourceIps            []string                   `json:"SourceIps" xml:"SourceIps"`
+	Http2Port            []string                   `json:"Http2Port" xml:"Http2Port"`
+	HttpPort             []string                   `json:"HttpPort" xml:"HttpPort"`
+	HttpsPort            []string                   `json:"HttpsPort" xml:"HttpsPort"`
+	LogHeaders           []LogHeader                `json:"LogHeaders" xml:"LogHeaders"`
+	CloudNativeInstances []CloudNativeInstancesItem `json:"CloudNativeInstances" xml:"CloudNativeInstances"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainBasicConfigs invokes the waf_openapi.DescribeDomainBasicConfigs API synchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describedomainbasicconfigs.html
 func (client *Client) DescribeDomainBasicConfigs(request *DescribeDomainBasicConfigsRequest) (response *DescribeDomainBasicConfigsResponse, err error) {
 	response = CreateDescribeDomainBasicConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainBasicConfigs(request *DescribeDomainBasicCon
 }
 
 // DescribeDomainBasicConfigsWithChan invokes the waf_openapi.DescribeDomainBasicConfigs API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describedomainbasicconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainBasicConfigsWithChan(request *DescribeDomainBasicConfigsRequest) (<-chan *DescribeDomainBasicConfigsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainBasicConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainBasicConfigsWithChan(request *DescribeDomain
 }
 
 // DescribeDomainBasicConfigsWithCallback invokes the waf_openapi.DescribeDomainBasicConfigs API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describedomainbasicconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainBasicConfigsWithCallback(request *DescribeDomainBasicConfigsRequest, callback func(response *DescribeDomainBasicConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,13 +71,15 @@ func (client *Client) DescribeDomainBasicConfigsWithCallback(request *DescribeDo
 // DescribeDomainBasicConfigsRequest is the request struct for api DescribeDomainBasicConfigs
 type DescribeDomainBasicConfigsRequest struct {
 	*requests.RpcRequest
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	Lang            string           `position:"Query" name:"Lang"`
-	InstanceId      string           `position:"Query" name:"InstanceId"`
-	DomainKey       string           `position:"Query" name:"DomainKey"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	SourceIp             string           `position:"Query" name:"SourceIp"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	Lang                 string           `position:"Query" name:"Lang"`
+	AccessType           string           `position:"Query" name:"AccessType"`
+	CloudNativeProductId requests.Integer `position:"Query" name:"CloudNativeProductId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	DomainKey            string           `position:"Query" name:"DomainKey"`
 }
 
 // DescribeDomainBasicConfigsResponse is the response struct for api DescribeDomainBasicConfigs

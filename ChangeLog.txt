@@ -1,3 +1,7 @@
+2020-11-12 Version: v1.61.629
+- Generated 2019-09-10 for `waf-openapi`.
+
+
 2020-11-12 Version: v1.61.628
 - Generated 2017-08-01 for `polardb`.
 - Support DescribeDBClusterTDE.

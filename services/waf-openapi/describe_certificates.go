@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCertificates invokes the waf_openapi.DescribeCertificates API synchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describecertificates.html
 func (client *Client) DescribeCertificates(request *DescribeCertificatesRequest) (response *DescribeCertificatesResponse, err error) {
 	response = CreateDescribeCertificatesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCertificates(request *DescribeCertificatesRequest)
 }
 
 // DescribeCertificatesWithChan invokes the waf_openapi.DescribeCertificates API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describecertificates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCertificatesWithChan(request *DescribeCertificatesRequest) (<-chan *DescribeCertificatesResponse, <-chan error) {
 	responseChan := make(chan *DescribeCertificatesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCertificatesWithChan(request *DescribeCertificates
 }
 
 // DescribeCertificatesWithCallback invokes the waf_openapi.DescribeCertificates API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describecertificates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCertificatesWithCallback(request *DescribeCertificatesRequest, callback func(response *DescribeCertificatesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

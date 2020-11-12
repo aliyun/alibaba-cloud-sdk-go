@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteInstance invokes the waf_openapi.DeleteInstance API synchronously
-func (client *Client) DeleteInstance(request *DeleteInstanceRequest) (response *DeleteInstanceResponse, err error) {
-	response = CreateDeleteInstanceResponse()
+// CreateOutputDomain invokes the waf_openapi.CreateOutputDomain API synchronously
+func (client *Client) CreateOutputDomain(request *CreateOutputDomainRequest) (response *CreateOutputDomainResponse, err error) {
+	response = CreateCreateOutputDomainResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteInstanceWithChan invokes the waf_openapi.DeleteInstance API asynchronously
-func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-chan *DeleteInstanceResponse, <-chan error) {
-	responseChan := make(chan *DeleteInstanceResponse, 1)
+// CreateOutputDomainWithChan invokes the waf_openapi.CreateOutputDomain API asynchronously
+func (client *Client) CreateOutputDomainWithChan(request *CreateOutputDomainRequest) (<-chan *CreateOutputDomainResponse, <-chan error) {
+	responseChan := make(chan *CreateOutputDomainResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteInstance(request)
+		response, err := client.CreateOutputDomain(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-
 	return responseChan, errChan
 }
 
-// DeleteInstanceWithCallback invokes the waf_openapi.DeleteInstance API asynchronously
-func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest, callback func(response *DeleteInstanceResponse, err error)) <-chan int {
+// CreateOutputDomainWithCallback invokes the waf_openapi.CreateOutputDomain API asynchronously
+func (client *Client) CreateOutputDomainWithCallback(request *CreateOutputDomainRequest, callback func(response *CreateOutputDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteInstanceResponse
+		var response *CreateOutputDomainResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteInstance(request)
+		response, err = client.CreateOutputDomain(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,34 +68,37 @@ func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest,
 	return result
 }
 
-// DeleteInstanceRequest is the request struct for api DeleteInstance
-type DeleteInstanceRequest struct {
+// CreateOutputDomainRequest is the request struct for api CreateOutputDomain
+type CreateOutputDomainRequest struct {
 	*requests.RpcRequest
 	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	InstanceId      string `position:"Query" name:"InstanceId"`
 	SourceIp        string `position:"Query" name:"SourceIp"`
+	Domain          string `position:"Query" name:"Domain"`
 	Lang            string `position:"Query" name:"Lang"`
+	Region          string `position:"Query" name:"Region"`
 }
 
-// DeleteInstanceResponse is the response struct for api DeleteInstance
-type DeleteInstanceResponse struct {
+// CreateOutputDomainResponse is the response struct for api CreateOutputDomain
+type CreateOutputDomainResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Result    Result `json:"Result" xml:"Result"`
 }
 
-// CreateDeleteInstanceRequest creates a request to invoke DeleteInstance API
-func CreateDeleteInstanceRequest() (request *DeleteInstanceRequest) {
-	request = &DeleteInstanceRequest{
+// CreateCreateOutputDomainRequest creates a request to invoke CreateOutputDomain API
+func CreateCreateOutputDomainRequest() (request *CreateOutputDomainRequest) {
+	request = &CreateOutputDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("waf-openapi", "2019-09-10", "DeleteInstance", "waf", "openAPI")
+	request.InitWithApiInfo("waf-openapi", "2019-09-10", "CreateOutputDomain", "waf", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteInstanceResponse creates a response to parse from DeleteInstance response
-func CreateDeleteInstanceResponse() (response *DeleteInstanceResponse) {
-	response = &DeleteInstanceResponse{
+// CreateCreateOutputDomainResponse creates a response to parse from CreateOutputDomain response
+func CreateCreateOutputDomainResponse() (response *CreateOutputDomainResponse) {
+	response = &CreateOutputDomainResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

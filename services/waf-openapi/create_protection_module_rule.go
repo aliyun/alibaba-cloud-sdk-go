@@ -21,7 +21,6 @@ import (
 )
 
 // CreateProtectionModuleRule invokes the waf_openapi.CreateProtectionModuleRule API synchronously
-// api document: https://help.aliyun.com/api/waf-openapi/createprotectionmodulerule.html
 func (client *Client) CreateProtectionModuleRule(request *CreateProtectionModuleRuleRequest) (response *CreateProtectionModuleRuleResponse, err error) {
 	response = CreateCreateProtectionModuleRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateProtectionModuleRule(request *CreateProtectionModule
 }
 
 // CreateProtectionModuleRuleWithChan invokes the waf_openapi.CreateProtectionModuleRule API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/createprotectionmodulerule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateProtectionModuleRuleWithChan(request *CreateProtectionModuleRuleRequest) (<-chan *CreateProtectionModuleRuleResponse, <-chan error) {
 	responseChan := make(chan *CreateProtectionModuleRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateProtectionModuleRuleWithChan(request *CreateProtecti
 }
 
 // CreateProtectionModuleRuleWithCallback invokes the waf_openapi.CreateProtectionModuleRule API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/createprotectionmodulerule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateProtectionModuleRuleWithCallback(request *CreateProtectionModuleRuleRequest, callback func(response *CreateProtectionModuleRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

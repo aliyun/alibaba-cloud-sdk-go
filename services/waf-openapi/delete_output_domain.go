@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteDomain invokes the waf_openapi.DeleteDomain API synchronously
-func (client *Client) DeleteDomain(request *DeleteDomainRequest) (response *DeleteDomainResponse, err error) {
-	response = CreateDeleteDomainResponse()
+// DeleteOutputDomain invokes the waf_openapi.DeleteOutputDomain API synchronously
+func (client *Client) DeleteOutputDomain(request *DeleteOutputDomainRequest) (response *DeleteOutputDomainResponse, err error) {
+	response = CreateDeleteOutputDomainResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteDomainWithChan invokes the waf_openapi.DeleteDomain API asynchronously
-func (client *Client) DeleteDomainWithChan(request *DeleteDomainRequest) (<-chan *DeleteDomainResponse, <-chan error) {
-	responseChan := make(chan *DeleteDomainResponse, 1)
+// DeleteOutputDomainWithChan invokes the waf_openapi.DeleteOutputDomain API asynchronously
+func (client *Client) DeleteOutputDomainWithChan(request *DeleteOutputDomainRequest) (<-chan *DeleteOutputDomainResponse, <-chan error) {
+	responseChan := make(chan *DeleteOutputDomainResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteDomain(request)
+		response, err := client.DeleteOutputDomain(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteDomainWithChan(request *DeleteDomainRequest) (<-chan
 	return responseChan, errChan
 }
 
-// DeleteDomainWithCallback invokes the waf_openapi.DeleteDomain API asynchronously
-func (client *Client) DeleteDomainWithCallback(request *DeleteDomainRequest, callback func(response *DeleteDomainResponse, err error)) <-chan int {
+// DeleteOutputDomainWithCallback invokes the waf_openapi.DeleteOutputDomain API asynchronously
+func (client *Client) DeleteOutputDomainWithCallback(request *DeleteOutputDomainRequest, callback func(response *DeleteOutputDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteDomainResponse
+		var response *DeleteOutputDomainResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteDomain(request)
+		response, err = client.DeleteOutputDomain(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,34 +68,36 @@ func (client *Client) DeleteDomainWithCallback(request *DeleteDomainRequest, cal
 	return result
 }
 
-// DeleteDomainRequest is the request struct for api DeleteDomain
-type DeleteDomainRequest struct {
+// DeleteOutputDomainRequest is the request struct for api DeleteOutputDomain
+type DeleteOutputDomainRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
 	SourceIp   string `position:"Query" name:"SourceIp"`
 	Domain     string `position:"Query" name:"Domain"`
 	Lang       string `position:"Query" name:"Lang"`
+	Region     string `position:"Query" name:"Region"`
 }
 
-// DeleteDomainResponse is the response struct for api DeleteDomain
-type DeleteDomainResponse struct {
+// DeleteOutputDomainResponse is the response struct for api DeleteOutputDomain
+type DeleteOutputDomainResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Result    Result `json:"Result" xml:"Result"`
 }
 
-// CreateDeleteDomainRequest creates a request to invoke DeleteDomain API
-func CreateDeleteDomainRequest() (request *DeleteDomainRequest) {
-	request = &DeleteDomainRequest{
+// CreateDeleteOutputDomainRequest creates a request to invoke DeleteOutputDomain API
+func CreateDeleteOutputDomainRequest() (request *DeleteOutputDomainRequest) {
+	request = &DeleteOutputDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("waf-openapi", "2019-09-10", "DeleteDomain", "waf", "openAPI")
+	request.InitWithApiInfo("waf-openapi", "2019-09-10", "DeleteOutputDomain", "waf", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteDomainResponse creates a response to parse from DeleteDomain response
-func CreateDeleteDomainResponse() (response *DeleteDomainResponse) {
-	response = &DeleteDomainResponse{
+// CreateDeleteOutputDomainResponse creates a response to parse from DeleteOutputDomain response
+func CreateDeleteOutputDomainResponse() (response *DeleteOutputDomainResponse) {
+	response = &DeleteOutputDomainResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyProtectionRuleStatus invokes the waf_openapi.ModifyProtectionRuleStatus API synchronously
-// api document: https://help.aliyun.com/api/waf-openapi/modifyprotectionrulestatus.html
 func (client *Client) ModifyProtectionRuleStatus(request *ModifyProtectionRuleStatusRequest) (response *ModifyProtectionRuleStatusResponse, err error) {
 	response = CreateModifyProtectionRuleStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyProtectionRuleStatus(request *ModifyProtectionRuleSt
 }
 
 // ModifyProtectionRuleStatusWithChan invokes the waf_openapi.ModifyProtectionRuleStatus API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/modifyprotectionrulestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyProtectionRuleStatusWithChan(request *ModifyProtectionRuleStatusRequest) (<-chan *ModifyProtectionRuleStatusResponse, <-chan error) {
 	responseChan := make(chan *ModifyProtectionRuleStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyProtectionRuleStatusWithChan(request *ModifyProtecti
 }
 
 // ModifyProtectionRuleStatusWithCallback invokes the waf_openapi.ModifyProtectionRuleStatus API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/modifyprotectionrulestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyProtectionRuleStatusWithCallback(request *ModifyProtectionRuleStatusRequest, callback func(response *ModifyProtectionRuleStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

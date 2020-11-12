@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDomain invokes the waf_openapi.ModifyDomain API synchronously
-// api document: https://help.aliyun.com/api/waf-openapi/modifydomain.html
 func (client *Client) ModifyDomain(request *ModifyDomainRequest) (response *ModifyDomainResponse, err error) {
 	response = CreateModifyDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDomain(request *ModifyDomainRequest) (response *Modi
 }
 
 // ModifyDomainWithChan invokes the waf_openapi.ModifyDomain API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/modifydomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDomainWithChan(request *ModifyDomainRequest) (<-chan *ModifyDomainResponse, <-chan error) {
 	responseChan := make(chan *ModifyDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDomainWithChan(request *ModifyDomainRequest) (<-chan
 }
 
 // ModifyDomainWithCallback invokes the waf_openapi.ModifyDomain API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/modifydomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDomainWithCallback(request *ModifyDomainRequest, callback func(response *ModifyDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,26 +71,28 @@ func (client *Client) ModifyDomainWithCallback(request *ModifyDomainRequest, cal
 // ModifyDomainRequest is the request struct for api ModifyDomain
 type ModifyDomainRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	XffHeaderMode   requests.Integer `position:"Query" name:"XffHeaderMode"`
-	HttpPort        string           `position:"Query" name:"HttpPort"`
-	Http2Port       string           `position:"Query" name:"Http2Port"`
-	WriteTime       requests.Integer `position:"Query" name:"WriteTime"`
-	Lang            string           `position:"Query" name:"Lang"`
-	XffHeaders      string           `position:"Query" name:"XffHeaders"`
-	BindingIpv6     requests.Integer `position:"Query" name:"BindingIpv6"`
-	LogHeaders      string           `position:"Query" name:"LogHeaders"`
-	ConnectionTime  requests.Integer `position:"Query" name:"ConnectionTime"`
-	ClusterType     requests.Integer `position:"Query" name:"ClusterType"`
-	HttpsRedirect   requests.Integer `position:"Query" name:"HttpsRedirect"`
-	InstanceId      string           `position:"Query" name:"InstanceId"`
-	SourceIps       string           `position:"Query" name:"SourceIps"`
-	Domain          string           `position:"Query" name:"Domain"`
-	IsAccessProduct requests.Integer `position:"Query" name:"IsAccessProduct"`
-	ReadTime        requests.Integer `position:"Query" name:"ReadTime"`
-	HttpsPort       string           `position:"Query" name:"HttpsPort"`
-	LoadBalancing   requests.Integer `position:"Query" name:"LoadBalancing"`
-	HttpToUserIp    requests.Integer `position:"Query" name:"HttpToUserIp"`
+	SourceIp             string           `position:"Query" name:"SourceIp"`
+	XffHeaderMode        requests.Integer `position:"Query" name:"XffHeaderMode"`
+	HttpPort             string           `position:"Query" name:"HttpPort"`
+	Http2Port            string           `position:"Query" name:"Http2Port"`
+	WriteTime            requests.Integer `position:"Query" name:"WriteTime"`
+	Lang                 string           `position:"Query" name:"Lang"`
+	XffHeaders           string           `position:"Query" name:"XffHeaders"`
+	AccessType           string           `position:"Query" name:"AccessType"`
+	BindingIpv6          requests.Integer `position:"Query" name:"BindingIpv6"`
+	LogHeaders           string           `position:"Query" name:"LogHeaders"`
+	ConnectionTime       requests.Integer `position:"Query" name:"ConnectionTime"`
+	ClusterType          requests.Integer `position:"Query" name:"ClusterType"`
+	CloudNativeInstances string           `position:"Query" name:"CloudNativeInstances"`
+	HttpsRedirect        requests.Integer `position:"Query" name:"HttpsRedirect"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	SourceIps            string           `position:"Query" name:"SourceIps"`
+	Domain               string           `position:"Query" name:"Domain"`
+	IsAccessProduct      requests.Integer `position:"Query" name:"IsAccessProduct"`
+	ReadTime             requests.Integer `position:"Query" name:"ReadTime"`
+	HttpsPort            string           `position:"Query" name:"HttpsPort"`
+	LoadBalancing        requests.Integer `position:"Query" name:"LoadBalancing"`
+	HttpToUserIp         requests.Integer `position:"Query" name:"HttpToUserIp"`
 }
 
 // ModifyDomainResponse is the response struct for api ModifyDomain

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstanceSpecInfo invokes the waf_openapi.DescribeInstanceSpecInfo API synchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describeinstancespecinfo.html
 func (client *Client) DescribeInstanceSpecInfo(request *DescribeInstanceSpecInfoRequest) (response *DescribeInstanceSpecInfoResponse, err error) {
 	response = CreateDescribeInstanceSpecInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstanceSpecInfo(request *DescribeInstanceSpecInfo
 }
 
 // DescribeInstanceSpecInfoWithChan invokes the waf_openapi.DescribeInstanceSpecInfo API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describeinstancespecinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceSpecInfoWithChan(request *DescribeInstanceSpecInfoRequest) (<-chan *DescribeInstanceSpecInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceSpecInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceSpecInfoWithChan(request *DescribeInstance
 }
 
 // DescribeInstanceSpecInfoWithCallback invokes the waf_openapi.DescribeInstanceSpecInfo API asynchronously
-// api document: https://help.aliyun.com/api/waf-openapi/describeinstancespecinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceSpecInfoWithCallback(request *DescribeInstanceSpecInfoRequest, callback func(response *DescribeInstanceSpecInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
