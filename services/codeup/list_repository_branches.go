@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ListGroupRepositories invokes the codeup.ListGroupRepositories API synchronously
-func (client *Client) ListGroupRepositories(request *ListGroupRepositoriesRequest) (response *ListGroupRepositoriesResponse, err error) {
-	response = CreateListGroupRepositoriesResponse()
+// ListRepositoryBranches invokes the codeup.ListRepositoryBranches API synchronously
+func (client *Client) ListRepositoryBranches(request *ListRepositoryBranchesRequest) (response *ListRepositoryBranchesResponse, err error) {
+	response = CreateListRepositoryBranchesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ListGroupRepositoriesWithChan invokes the codeup.ListGroupRepositories API asynchronously
-func (client *Client) ListGroupRepositoriesWithChan(request *ListGroupRepositoriesRequest) (<-chan *ListGroupRepositoriesResponse, <-chan error) {
-	responseChan := make(chan *ListGroupRepositoriesResponse, 1)
+// ListRepositoryBranchesWithChan invokes the codeup.ListRepositoryBranches API asynchronously
+func (client *Client) ListRepositoryBranchesWithChan(request *ListRepositoryBranchesRequest) (<-chan *ListRepositoryBranchesResponse, <-chan error) {
+	responseChan := make(chan *ListRepositoryBranchesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListGroupRepositories(request)
+		response, err := client.ListRepositoryBranches(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) ListGroupRepositoriesWithChan(request *ListGroupRepositori
 	return responseChan, errChan
 }
 
-// ListGroupRepositoriesWithCallback invokes the codeup.ListGroupRepositories API asynchronously
-func (client *Client) ListGroupRepositoriesWithCallback(request *ListGroupRepositoriesRequest, callback func(response *ListGroupRepositoriesResponse, err error)) <-chan int {
+// ListRepositoryBranchesWithCallback invokes the codeup.ListRepositoryBranches API asynchronously
+func (client *Client) ListRepositoryBranchesWithCallback(request *ListRepositoryBranchesRequest, callback func(response *ListRepositoryBranchesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListGroupRepositoriesResponse
+		var response *ListRepositoryBranchesResponse
 		var err error
 		defer close(result)
-		response, err = client.ListGroupRepositories(request)
+		response, err = client.ListRepositoryBranches(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,21 +68,20 @@ func (client *Client) ListGroupRepositoriesWithCallback(request *ListGroupReposi
 	return result
 }
 
-// ListGroupRepositoriesRequest is the request struct for api ListGroupRepositories
-type ListGroupRepositoriesRequest struct {
+// ListRepositoryBranchesRequest is the request struct for api ListRepositoryBranches
+type ListRepositoryBranchesRequest struct {
 	*requests.RoaRequest
-	AccessToken    string           `position:"Query" name:"AccessToken"`
-	IsMember       requests.Boolean `position:"Query" name:"IsMember"`
 	OrganizationId string           `position:"Query" name:"OrganizationId"`
 	Search         string           `position:"Query" name:"Search"`
 	SubUserId      string           `position:"Query" name:"SubUserId"`
-	Identity       string           `position:"Path" name:"Identity"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	AccessToken    string           `position:"Query" name:"AccessToken"`
 	Page           requests.Integer `position:"Query" name:"Page"`
+	ProjectId      requests.Integer `position:"Path" name:"ProjectId"`
 }
 
-// ListGroupRepositoriesResponse is the response struct for api ListGroupRepositories
-type ListGroupRepositoriesResponse struct {
+// ListRepositoryBranchesResponse is the response struct for api ListRepositoryBranches
+type ListRepositoryBranchesResponse struct {
 	*responses.BaseResponse
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	ErrorCode    string       `json:"ErrorCode" xml:"ErrorCode"`
@@ -92,19 +91,19 @@ type ListGroupRepositoriesResponse struct {
 	Result       []ResultItem `json:"Result" xml:"Result"`
 }
 
-// CreateListGroupRepositoriesRequest creates a request to invoke ListGroupRepositories API
-func CreateListGroupRepositoriesRequest() (request *ListGroupRepositoriesRequest) {
-	request = &ListGroupRepositoriesRequest{
+// CreateListRepositoryBranchesRequest creates a request to invoke ListRepositoryBranches API
+func CreateListRepositoryBranchesRequest() (request *ListRepositoryBranchesRequest) {
+	request = &ListRepositoryBranchesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("codeup", "2020-04-14", "ListGroupRepositories", "/api/v3/groups/[Identity]/projects", "", "")
+	request.InitWithApiInfo("codeup", "2020-04-14", "ListRepositoryBranches", "/api/v3/projects/[ProjectId]/repository/branches", "", "")
 	request.Method = requests.GET
 	return
 }
 
-// CreateListGroupRepositoriesResponse creates a response to parse from ListGroupRepositories response
-func CreateListGroupRepositoriesResponse() (response *ListGroupRepositoriesResponse) {
-	response = &ListGroupRepositoriesResponse{
+// CreateListRepositoryBranchesResponse creates a response to parse from ListRepositoryBranches response
+func CreateListRepositoryBranchesResponse() (response *ListRepositoryBranchesResponse) {
+	response = &ListRepositoryBranchesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

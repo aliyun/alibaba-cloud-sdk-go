@@ -87,6 +87,7 @@ type ListRepositoryMemberResponse struct {
 	ErrorCode    string       `json:"ErrorCode" xml:"ErrorCode"`
 	Success      bool         `json:"Success" xml:"Success"`
 	ErrorMessage string       `json:"ErrorMessage" xml:"ErrorMessage"`
+	Total        int64        `json:"Total" xml:"Total"`
 	Result       []ResultItem `json:"Result" xml:"Result"`
 }
 

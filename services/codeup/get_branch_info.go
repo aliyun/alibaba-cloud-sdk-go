@@ -75,7 +75,7 @@ type GetBranchInfoRequest struct {
 	SubUserId      string           `position:"Query" name:"SubUserId"`
 	AccessToken    string           `position:"Query" name:"AccessToken"`
 	ProjectId      requests.Integer `position:"Path" name:"ProjectId"`
-	BranchName     string           `position:"Path" name:"BranchName"`
+	BranchName     string           `position:"Query" name:"BranchName"`
 }
 
 // GetBranchInfoResponse is the response struct for api GetBranchInfo
@@ -93,7 +93,7 @@ func CreateGetBranchInfoRequest() (request *GetBranchInfoRequest) {
 	request = &GetBranchInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("codeup", "2020-04-14", "GetBranchInfo", "/api/v3/projects/[ProjectId]/repository/branches/[BranchName]", "", "")
+	request.InitWithApiInfo("codeup", "2020-04-14", "GetBranchInfo", "/api/v3/projects/[ProjectId]/repository/branches/detail", "", "")
 	request.Method = requests.GET
 	return
 }

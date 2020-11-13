@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteBranch invokes the codeup.DeleteBranch API synchronously
-func (client *Client) DeleteBranch(request *DeleteBranchRequest) (response *DeleteBranchResponse, err error) {
-	response = CreateDeleteBranchResponse()
+// GetGroupDetail invokes the codeup.GetGroupDetail API synchronously
+func (client *Client) GetGroupDetail(request *GetGroupDetailRequest) (response *GetGroupDetailResponse, err error) {
+	response = CreateGetGroupDetailResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteBranchWithChan invokes the codeup.DeleteBranch API asynchronously
-func (client *Client) DeleteBranchWithChan(request *DeleteBranchRequest) (<-chan *DeleteBranchResponse, <-chan error) {
-	responseChan := make(chan *DeleteBranchResponse, 1)
+// GetGroupDetailWithChan invokes the codeup.GetGroupDetail API asynchronously
+func (client *Client) GetGroupDetailWithChan(request *GetGroupDetailRequest) (<-chan *GetGroupDetailResponse, <-chan error) {
+	responseChan := make(chan *GetGroupDetailResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteBranch(request)
+		response, err := client.GetGroupDetail(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DeleteBranchWithChan(request *DeleteBranchRequest) (<-chan
 	return responseChan, errChan
 }
 
-// DeleteBranchWithCallback invokes the codeup.DeleteBranch API asynchronously
-func (client *Client) DeleteBranchWithCallback(request *DeleteBranchRequest, callback func(response *DeleteBranchResponse, err error)) <-chan int {
+// GetGroupDetailWithCallback invokes the codeup.GetGroupDetail API asynchronously
+func (client *Client) GetGroupDetailWithCallback(request *GetGroupDetailRequest, callback func(response *GetGroupDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteBranchResponse
+		var response *GetGroupDetailResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteBranch(request)
+		response, err = client.GetGroupDetail(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,18 +68,17 @@ func (client *Client) DeleteBranchWithCallback(request *DeleteBranchRequest, cal
 	return result
 }
 
-// DeleteBranchRequest is the request struct for api DeleteBranch
-type DeleteBranchRequest struct {
+// GetGroupDetailRequest is the request struct for api GetGroupDetail
+type GetGroupDetailRequest struct {
 	*requests.RoaRequest
 	OrganizationId string           `position:"Query" name:"OrganizationId"`
 	SubUserId      string           `position:"Query" name:"SubUserId"`
+	GroupId        requests.Integer `position:"Query" name:"GroupId"`
 	AccessToken    string           `position:"Query" name:"AccessToken"`
-	ProjectId      requests.Integer `position:"Path" name:"ProjectId"`
-	BranchName     string           `position:"Query" name:"BranchName"`
 }
 
-// DeleteBranchResponse is the response struct for api DeleteBranch
-type DeleteBranchResponse struct {
+// GetGroupDetailResponse is the response struct for api GetGroupDetail
+type GetGroupDetailResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
@@ -88,19 +87,19 @@ type DeleteBranchResponse struct {
 	Result       Result `json:"Result" xml:"Result"`
 }
 
-// CreateDeleteBranchRequest creates a request to invoke DeleteBranch API
-func CreateDeleteBranchRequest() (request *DeleteBranchRequest) {
-	request = &DeleteBranchRequest{
+// CreateGetGroupDetailRequest creates a request to invoke GetGroupDetail API
+func CreateGetGroupDetailRequest() (request *GetGroupDetailRequest) {
+	request = &GetGroupDetailRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("codeup", "2020-04-14", "DeleteBranch", "/api/v3/projects/[ProjectId]/repository/branches/delete", "", "")
-	request.Method = requests.DELETE
+	request.InitWithApiInfo("codeup", "2020-04-14", "GetGroupDetail", "/api/v3/groups/detail", "", "")
+	request.Method = requests.GET
 	return
 }
 
-// CreateDeleteBranchResponse creates a response to parse from DeleteBranch response
-func CreateDeleteBranchResponse() (response *DeleteBranchResponse) {
-	response = &DeleteBranchResponse{
+// CreateGetGroupDetailResponse creates a response to parse from GetGroupDetail response
+func CreateGetGroupDetailResponse() (response *GetGroupDetailResponse) {
+	response = &GetGroupDetailResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
