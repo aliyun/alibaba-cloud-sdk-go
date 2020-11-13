@@ -1,3 +1,7 @@
+2020-11-13 Version: v1.61.634
+- Generated 2019-12-30 for `imageseg`.
+- Release SegmentHDSky SegmentHDCommonImage.
+
 2020-11-12 Version: v1.61.633
 - Generated 2020-04-18 for `DBFS`.
 - Release for db test.

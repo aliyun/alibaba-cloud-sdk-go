@@ -20,10 +20,11 @@ type Data struct {
 	JobId          string    `json:"JobId" xml:"JobId"`
 	Result         string    `json:"Result" xml:"Result"`
 	ErrorMessage   string    `json:"ErrorMessage" xml:"ErrorMessage"`
+	URL            string    `json:"URL" xml:"URL"`
+	ImageUrl       string    `json:"ImageUrl" xml:"ImageUrl"`
 	ImageURL       string    `json:"ImageURL" xml:"ImageURL"`
 	Status         string    `json:"Status" xml:"Status"`
 	OriginImageURL string    `json:"OriginImageURL" xml:"OriginImageURL"`
 	ErrorCode      string    `json:"ErrorCode" xml:"ErrorCode"`
-	URL            string    `json:"URL" xml:"URL"`
 	Elements       []Element `json:"Elements" xml:"Elements"`
 }
