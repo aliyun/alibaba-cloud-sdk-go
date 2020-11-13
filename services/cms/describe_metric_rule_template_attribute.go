@@ -71,8 +71,8 @@ func (client *Client) DescribeMetricRuleTemplateAttributeWithCallback(request *D
 // DescribeMetricRuleTemplateAttributeRequest is the request struct for api DescribeMetricRuleTemplateAttribute
 type DescribeMetricRuleTemplateAttributeRequest struct {
 	*requests.RpcRequest
-	Name       string `position:"Query" name:"Name"`
 	TemplateId string `position:"Query" name:"TemplateId"`
+	Name       string `position:"Query" name:"Name"`
 }
 
 // DescribeMetricRuleTemplateAttributeResponse is the response struct for api DescribeMetricRuleTemplateAttribute

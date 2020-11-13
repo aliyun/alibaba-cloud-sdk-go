@@ -18,7 +18,6 @@ package cms
 // Warn is a nested struct in cms response
 type Warn struct {
 	ComparisonOperator string `json:"ComparisonOperator" xml:"ComparisonOperator"`
-	PreCondition       string `json:"PreCondition" xml:"PreCondition"`
 	Times              string `json:"Times" xml:"Times"`
 	Statistics         string `json:"Statistics" xml:"Statistics"`
 	Threshold          string `json:"Threshold" xml:"Threshold"`

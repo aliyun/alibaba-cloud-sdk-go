@@ -17,5 +17,5 @@ package cms
 
 // Alarms is a nested struct in cms response
 type Alarms struct {
-	Alarm []Alarm `json:"Alarm" xml:"Alarm"`
+	Alarm []AlarmInDescribeMetricRuleList `json:"Alarm" xml:"Alarm"`
 }

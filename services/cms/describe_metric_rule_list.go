@@ -73,13 +73,13 @@ type DescribeMetricRuleListRequest struct {
 	*requests.RpcRequest
 	EnableState requests.Boolean `position:"Query" name:"EnableState"`
 	RuleName    string           `position:"Query" name:"RuleName"`
-	PageSize    string           `position:"Query" name:"PageSize"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	MetricName  string           `position:"Query" name:"MetricName"`
 	GroupId     string           `position:"Query" name:"GroupId"`
 	RuleIds     string           `position:"Query" name:"RuleIds"`
 	Namespace   string           `position:"Query" name:"Namespace"`
 	AlertState  string           `position:"Query" name:"AlertState"`
-	Page        string           `position:"Query" name:"Page"`
+	Page        requests.Integer `position:"Query" name:"Page"`
 	Dimensions  string           `position:"Query" name:"Dimensions"`
 }
 

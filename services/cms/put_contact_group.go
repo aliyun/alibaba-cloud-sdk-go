@@ -71,11 +71,10 @@ func (client *Client) PutContactGroupWithCallback(request *PutContactGroupReques
 // PutContactGroupRequest is the request struct for api PutContactGroup
 type PutContactGroupRequest struct {
 	*requests.RpcRequest
-	EnableSubscribed    requests.Boolean `position:"Query" name:"EnableSubscribed"`
-	ContactGroupName    string           `position:"Query" name:"ContactGroupName"`
-	EnabledWeeklyReport requests.Boolean `position:"Query" name:"EnabledWeeklyReport"`
-	Describe            string           `position:"Query" name:"Describe"`
-	ContactNames        *[]string        `position:"Query" name:"ContactNames"  type:"Repeated"`
+	EnableSubscribed requests.Boolean `position:"Query" name:"EnableSubscribed"`
+	ContactGroupName string           `position:"Query" name:"ContactGroupName"`
+	Describe         string           `position:"Query" name:"Describe"`
+	ContactNames     *[]string        `position:"Query" name:"ContactNames"  type:"Repeated"`
 }
 
 // PutContactGroupResponse is the response struct for api PutContactGroup

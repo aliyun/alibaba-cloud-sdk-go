@@ -76,6 +76,7 @@ type DescribeMonitorGroupsRequest struct {
 	DynamicTagRuleId       string                      `position:"Query" name:"DynamicTagRuleId"`
 	Type                   string                      `position:"Query" name:"Type"`
 	PageNumber             requests.Integer            `position:"Query" name:"PageNumber"`
+	ResourceGroupId        string                      `position:"Query" name:"ResourceGroupId"`
 	PageSize               requests.Integer            `position:"Query" name:"PageSize"`
 	Tag                    *[]DescribeMonitorGroupsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	Keyword                string                      `position:"Query" name:"Keyword"`
