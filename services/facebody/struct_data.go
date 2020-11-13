@@ -27,9 +27,11 @@ type Data struct {
 	MaskRef              int                   `json:"MaskRef" xml:"MaskRef"`
 	ObjTypeScore         float64               `json:"ObjTypeScore" xml:"ObjTypeScore"`
 	Token                string                `json:"Token" xml:"Token"`
+	HotMap               string                `json:"HotMap" xml:"HotMap"`
 	DbName               string                `json:"DbName" xml:"DbName"`
 	EntityId             string                `json:"EntityId" xml:"EntityId"`
 	Gender               string                `json:"Gender" xml:"Gender"`
+	PeopleNumber         int                   `json:"PeopleNumber" xml:"PeopleNumber"`
 	LowerType            string                `json:"LowerType" xml:"LowerType"`
 	Width                int                   `json:"Width" xml:"Width"`
 	UpperColorScore      float64               `json:"UpperColorScore" xml:"UpperColorScore"`

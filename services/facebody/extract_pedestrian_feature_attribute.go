@@ -71,15 +71,21 @@ func (client *Client) ExtractPedestrianFeatureAttributeWithCallback(request *Ext
 // ExtractPedestrianFeatureAttributeRequest is the request struct for api ExtractPedestrianFeatureAttribute
 type ExtractPedestrianFeatureAttributeRequest struct {
 	*requests.RpcRequest
-	Mode     string `position:"Body" name:"Mode"`
-	ImageURL string `position:"Body" name:"ImageURL"`
+	UrlList  *[]ExtractPedestrianFeatureAttributeUrlList `position:"Body" name:"UrlList"  type:"Repeated"`
+	Mode     string                                      `position:"Body" name:"Mode"`
+	ImageURL string                                      `position:"Body" name:"ImageURL"`
+}
+
+// ExtractPedestrianFeatureAttributeUrlList is a repeated param struct in ExtractPedestrianFeatureAttributeRequest
+type ExtractPedestrianFeatureAttributeUrlList struct {
+	Url string `name:"Url"`
 }
 
 // ExtractPedestrianFeatureAttributeResponse is the response struct for api ExtractPedestrianFeatureAttribute
 type ExtractPedestrianFeatureAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                                  `json:"RequestId" xml:"RequestId"`
+	Data      DataInExtractPedestrianFeatureAttribute `json:"Data" xml:"Data"`
 }
 
 // CreateExtractPedestrianFeatureAttributeRequest creates a request to invoke ExtractPedestrianFeatureAttribute API
