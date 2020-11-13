@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeQrCode invokes the ocr.RecognizeQrCode API synchronously
-// api document: https://help.aliyun.com/api/ocr/recognizeqrcode.html
 func (client *Client) RecognizeQrCode(request *RecognizeQrCodeRequest) (response *RecognizeQrCodeResponse, err error) {
 	response = CreateRecognizeQrCodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeQrCode(request *RecognizeQrCodeRequest) (response
 }
 
 // RecognizeQrCodeWithChan invokes the ocr.RecognizeQrCode API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizeqrcode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeQrCodeWithChan(request *RecognizeQrCodeRequest) (<-chan *RecognizeQrCodeResponse, <-chan error) {
 	responseChan := make(chan *RecognizeQrCodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeQrCodeWithChan(request *RecognizeQrCodeRequest) (
 }
 
 // RecognizeQrCodeWithCallback invokes the ocr.RecognizeQrCode API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizeqrcode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeQrCodeWithCallback(request *RecognizeQrCodeRequest, callback func(response *RecognizeQrCodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

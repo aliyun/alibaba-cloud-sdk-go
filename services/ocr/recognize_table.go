@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeTable invokes the ocr.RecognizeTable API synchronously
-// api document: https://help.aliyun.com/api/ocr/recognizetable.html
 func (client *Client) RecognizeTable(request *RecognizeTableRequest) (response *RecognizeTableResponse, err error) {
 	response = CreateRecognizeTableResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeTable(request *RecognizeTableRequest) (response *
 }
 
 // RecognizeTableWithChan invokes the ocr.RecognizeTable API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizetable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeTableWithChan(request *RecognizeTableRequest) (<-chan *RecognizeTableResponse, <-chan error) {
 	responseChan := make(chan *RecognizeTableResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeTableWithChan(request *RecognizeTableRequest) (<-
 }
 
 // RecognizeTableWithCallback invokes the ocr.RecognizeTable API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizetable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeTableWithCallback(request *RecognizeTableRequest, callback func(response *RecognizeTableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

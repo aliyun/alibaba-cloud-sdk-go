@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeAccountPage invokes the ocr.RecognizeAccountPage API synchronously
-// api document: https://help.aliyun.com/api/ocr/recognizeaccountpage.html
 func (client *Client) RecognizeAccountPage(request *RecognizeAccountPageRequest) (response *RecognizeAccountPageResponse, err error) {
 	response = CreateRecognizeAccountPageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeAccountPage(request *RecognizeAccountPageRequest)
 }
 
 // RecognizeAccountPageWithChan invokes the ocr.RecognizeAccountPage API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizeaccountpage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeAccountPageWithChan(request *RecognizeAccountPageRequest) (<-chan *RecognizeAccountPageResponse, <-chan error) {
 	responseChan := make(chan *RecognizeAccountPageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeAccountPageWithChan(request *RecognizeAccountPage
 }
 
 // RecognizeAccountPageWithCallback invokes the ocr.RecognizeAccountPage API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizeaccountpage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeAccountPageWithCallback(request *RecognizeAccountPageRequest, callback func(response *RecognizeAccountPageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

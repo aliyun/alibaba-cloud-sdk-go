@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeIdentityCard invokes the ocr.RecognizeIdentityCard API synchronously
-// api document: https://help.aliyun.com/api/ocr/recognizeidentitycard.html
 func (client *Client) RecognizeIdentityCard(request *RecognizeIdentityCardRequest) (response *RecognizeIdentityCardResponse, err error) {
 	response = CreateRecognizeIdentityCardResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeIdentityCard(request *RecognizeIdentityCardReques
 }
 
 // RecognizeIdentityCardWithChan invokes the ocr.RecognizeIdentityCard API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizeidentitycard.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeIdentityCardWithChan(request *RecognizeIdentityCardRequest) (<-chan *RecognizeIdentityCardResponse, <-chan error) {
 	responseChan := make(chan *RecognizeIdentityCardResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeIdentityCardWithChan(request *RecognizeIdentityCa
 }
 
 // RecognizeIdentityCardWithCallback invokes the ocr.RecognizeIdentityCard API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizeidentitycard.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeIdentityCardWithCallback(request *RecognizeIdentityCardRequest, callback func(response *RecognizeIdentityCardResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

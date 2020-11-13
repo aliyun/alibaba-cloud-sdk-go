@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeChinapassport invokes the ocr.RecognizeChinapassport API synchronously
-// api document: https://help.aliyun.com/api/ocr/recognizechinapassport.html
 func (client *Client) RecognizeChinapassport(request *RecognizeChinapassportRequest) (response *RecognizeChinapassportResponse, err error) {
 	response = CreateRecognizeChinapassportResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeChinapassport(request *RecognizeChinapassportRequ
 }
 
 // RecognizeChinapassportWithChan invokes the ocr.RecognizeChinapassport API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizechinapassport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeChinapassportWithChan(request *RecognizeChinapassportRequest) (<-chan *RecognizeChinapassportResponse, <-chan error) {
 	responseChan := make(chan *RecognizeChinapassportResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeChinapassportWithChan(request *RecognizeChinapass
 }
 
 // RecognizeChinapassportWithCallback invokes the ocr.RecognizeChinapassport API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizechinapassport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeChinapassportWithCallback(request *RecognizeChinapassportRequest, callback func(response *RecognizeChinapassportResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

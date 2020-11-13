@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeTaxiInvoice invokes the ocr.RecognizeTaxiInvoice API synchronously
-// api document: https://help.aliyun.com/api/ocr/recognizetaxiinvoice.html
 func (client *Client) RecognizeTaxiInvoice(request *RecognizeTaxiInvoiceRequest) (response *RecognizeTaxiInvoiceResponse, err error) {
 	response = CreateRecognizeTaxiInvoiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeTaxiInvoice(request *RecognizeTaxiInvoiceRequest)
 }
 
 // RecognizeTaxiInvoiceWithChan invokes the ocr.RecognizeTaxiInvoice API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizetaxiinvoice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeTaxiInvoiceWithChan(request *RecognizeTaxiInvoiceRequest) (<-chan *RecognizeTaxiInvoiceResponse, <-chan error) {
 	responseChan := make(chan *RecognizeTaxiInvoiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeTaxiInvoiceWithChan(request *RecognizeTaxiInvoice
 }
 
 // RecognizeTaxiInvoiceWithCallback invokes the ocr.RecognizeTaxiInvoice API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizetaxiinvoice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeTaxiInvoiceWithCallback(request *RecognizeTaxiInvoiceRequest, callback func(response *RecognizeTaxiInvoiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

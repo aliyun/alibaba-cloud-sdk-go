@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeStamp invokes the ocr.RecognizeStamp API synchronously
-// api document: https://help.aliyun.com/api/ocr/recognizestamp.html
 func (client *Client) RecognizeStamp(request *RecognizeStampRequest) (response *RecognizeStampResponse, err error) {
 	response = CreateRecognizeStampResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeStamp(request *RecognizeStampRequest) (response *
 }
 
 // RecognizeStampWithChan invokes the ocr.RecognizeStamp API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizestamp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeStampWithChan(request *RecognizeStampRequest) (<-chan *RecognizeStampResponse, <-chan error) {
 	responseChan := make(chan *RecognizeStampResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeStampWithChan(request *RecognizeStampRequest) (<-
 }
 
 // RecognizeStampWithCallback invokes the ocr.RecognizeStamp API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizestamp.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeStampWithCallback(request *RecognizeStampRequest, callback func(response *RecognizeStampResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

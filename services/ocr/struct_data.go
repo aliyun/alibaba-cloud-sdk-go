@@ -21,10 +21,14 @@ type Data struct {
 	Date                string               `json:"Date" xml:"Date"`
 	ExpiryDay           string               `json:"ExpiryDay" xml:"ExpiryDay"`
 	Seat                string               `json:"Seat" xml:"Seat"`
+	EstablishDate       string               `json:"EstablishDate" xml:"EstablishDate"`
 	FileContent         string               `json:"FileContent" xml:"FileContent"`
+	ValidPeriod         string               `json:"ValidPeriod" xml:"ValidPeriod"`
 	Type                string               `json:"Type" xml:"Type"`
 	NameChineseRaw      string               `json:"NameChineseRaw" xml:"NameChineseRaw"`
 	NativePlace         string               `json:"NativePlace" xml:"NativePlace"`
+	LegalPerson         string               `json:"LegalPerson" xml:"LegalPerson"`
+	RegisterNumber      string               `json:"RegisterNumber" xml:"RegisterNumber"`
 	IssuePlaceRaw       string               `json:"IssuePlaceRaw" xml:"IssuePlaceRaw"`
 	Destination         string               `json:"Destination" xml:"Destination"`
 	Price               float64              `json:"Price" xml:"Price"`
@@ -42,12 +46,15 @@ type Data struct {
 	IDNumber            string               `json:"IDNumber" xml:"IDNumber"`
 	ErrorMessage        string               `json:"ErrorMessage" xml:"ErrorMessage"`
 	Sex                 string               `json:"Sex" xml:"Sex"`
+	Capital             string               `json:"Capital" xml:"Capital"`
 	LineOne             string               `json:"LineOne" xml:"LineOne"`
+	IsBlur              bool                 `json:"IsBlur" xml:"IsBlur"`
 	Authority           string               `json:"Authority" xml:"Authority"`
 	CardNumber          string               `json:"CardNumber" xml:"CardNumber"`
 	VinCode             string               `json:"VinCode" xml:"VinCode"`
 	ErrorCode           string               `json:"ErrorCode" xml:"ErrorCode"`
 	Angle               float64              `json:"Angle" xml:"Angle"`
+	Business            string               `json:"Business" xml:"Business"`
 	Country             string               `json:"Country" xml:"Country"`
 	JobId               string               `json:"JobId" xml:"JobId"`
 	BirthPlace          string               `json:"BirthPlace" xml:"BirthPlace"`
@@ -58,6 +65,8 @@ type Data struct {
 	PersonId            string               `json:"PersonId" xml:"PersonId"`
 	SourceCountry       string               `json:"SourceCountry" xml:"SourceCountry"`
 	NameChinese         string               `json:"NameChinese" xml:"NameChinese"`
+	Address             string               `json:"Address" xml:"Address"`
+	IsCard              bool                 `json:"IsCard" xml:"IsCard"`
 	Number              string               `json:"Number" xml:"Number"`
 	BirthDate           string               `json:"BirthDate" xml:"BirthDate"`
 	LineZero            string               `json:"LineZero" xml:"LineZero"`
@@ -71,13 +80,20 @@ type Data struct {
 	Addresses           []string             `json:"Addresses" xml:"Addresses"`
 	Box                 Box                  `json:"Box" xml:"Box"`
 	FaceResult          FaceResult           `json:"FaceResult" xml:"FaceResult"`
+	Summary             Summary              `json:"Summary" xml:"Summary"`
 	Content             Content              `json:"Content" xml:"Content"`
+	SpoofResult         SpoofResult          `json:"SpoofResult" xml:"SpoofResult"`
 	BackResult          BackResult           `json:"BackResult" xml:"BackResult"`
+	Stamp               Stamp                `json:"Stamp" xml:"Stamp"`
 	FrontResult         FrontResult          `json:"FrontResult" xml:"FrontResult"`
 	TitleArea           TitleArea            `json:"TitleArea" xml:"TitleArea"`
+	QRCode              QRCode               `json:"QRCode" xml:"QRCode"`
+	Title               Title                `json:"Title" xml:"Title"`
+	Emblem              Emblem               `json:"Emblem" xml:"Emblem"`
 	Regions             []Region             `json:"Regions" xml:"Regions"`
 	Tables              []Table              `json:"Tables" xml:"Tables"`
 	InvalidStampAreas   []InvalidStampArea   `json:"InvalidStampAreas" xml:"InvalidStampAreas"`
+	Signboards          []SignboardsItem     `json:"Signboards" xml:"Signboards"`
 	Invoices            []Invoice            `json:"Invoices" xml:"Invoices"`
 	RegisterStampAreas  []RegisterStampArea  `json:"RegisterStampAreas" xml:"RegisterStampAreas"`
 	Results             []Result             `json:"Results" xml:"Results"`

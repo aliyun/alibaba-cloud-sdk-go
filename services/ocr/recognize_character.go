@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeCharacter invokes the ocr.RecognizeCharacter API synchronously
-// api document: https://help.aliyun.com/api/ocr/recognizecharacter.html
 func (client *Client) RecognizeCharacter(request *RecognizeCharacterRequest) (response *RecognizeCharacterResponse, err error) {
 	response = CreateRecognizeCharacterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeCharacter(request *RecognizeCharacterRequest) (re
 }
 
 // RecognizeCharacterWithChan invokes the ocr.RecognizeCharacter API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizecharacter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeCharacterWithChan(request *RecognizeCharacterRequest) (<-chan *RecognizeCharacterResponse, <-chan error) {
 	responseChan := make(chan *RecognizeCharacterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeCharacterWithChan(request *RecognizeCharacterRequ
 }
 
 // RecognizeCharacterWithCallback invokes the ocr.RecognizeCharacter API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizecharacter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeCharacterWithCallback(request *RecognizeCharacterRequest, callback func(response *RecognizeCharacterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

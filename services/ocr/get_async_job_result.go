@@ -21,7 +21,6 @@ import (
 )
 
 // GetAsyncJobResult invokes the ocr.GetAsyncJobResult API synchronously
-// api document: https://help.aliyun.com/api/ocr/getasyncjobresult.html
 func (client *Client) GetAsyncJobResult(request *GetAsyncJobResultRequest) (response *GetAsyncJobResultResponse, err error) {
 	response = CreateGetAsyncJobResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetAsyncJobResult(request *GetAsyncJobResultRequest) (resp
 }
 
 // GetAsyncJobResultWithChan invokes the ocr.GetAsyncJobResult API asynchronously
-// api document: https://help.aliyun.com/api/ocr/getasyncjobresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAsyncJobResultWithChan(request *GetAsyncJobResultRequest) (<-chan *GetAsyncJobResultResponse, <-chan error) {
 	responseChan := make(chan *GetAsyncJobResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetAsyncJobResultWithChan(request *GetAsyncJobResultReques
 }
 
 // GetAsyncJobResultWithCallback invokes the ocr.GetAsyncJobResult API asynchronously
-// api document: https://help.aliyun.com/api/ocr/getasyncjobresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAsyncJobResultWithCallback(request *GetAsyncJobResultRequest, callback func(response *GetAsyncJobResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

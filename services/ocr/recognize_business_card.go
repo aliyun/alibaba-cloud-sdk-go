@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeBusinessCard invokes the ocr.RecognizeBusinessCard API synchronously
-// api document: https://help.aliyun.com/api/ocr/recognizebusinesscard.html
 func (client *Client) RecognizeBusinessCard(request *RecognizeBusinessCardRequest) (response *RecognizeBusinessCardResponse, err error) {
 	response = CreateRecognizeBusinessCardResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeBusinessCard(request *RecognizeBusinessCardReques
 }
 
 // RecognizeBusinessCardWithChan invokes the ocr.RecognizeBusinessCard API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizebusinesscard.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeBusinessCardWithChan(request *RecognizeBusinessCardRequest) (<-chan *RecognizeBusinessCardResponse, <-chan error) {
 	responseChan := make(chan *RecognizeBusinessCardResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeBusinessCardWithChan(request *RecognizeBusinessCa
 }
 
 // RecognizeBusinessCardWithCallback invokes the ocr.RecognizeBusinessCard API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizebusinesscard.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeBusinessCardWithCallback(request *RecognizeBusinessCardRequest, callback func(response *RecognizeBusinessCardResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

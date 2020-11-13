@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeTakeoutOrder invokes the ocr.RecognizeTakeoutOrder API synchronously
-// api document: https://help.aliyun.com/api/ocr/recognizetakeoutorder.html
 func (client *Client) RecognizeTakeoutOrder(request *RecognizeTakeoutOrderRequest) (response *RecognizeTakeoutOrderResponse, err error) {
 	response = CreateRecognizeTakeoutOrderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeTakeoutOrder(request *RecognizeTakeoutOrderReques
 }
 
 // RecognizeTakeoutOrderWithChan invokes the ocr.RecognizeTakeoutOrder API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizetakeoutorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeTakeoutOrderWithChan(request *RecognizeTakeoutOrderRequest) (<-chan *RecognizeTakeoutOrderResponse, <-chan error) {
 	responseChan := make(chan *RecognizeTakeoutOrderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeTakeoutOrderWithChan(request *RecognizeTakeoutOrd
 }
 
 // RecognizeTakeoutOrderWithCallback invokes the ocr.RecognizeTakeoutOrder API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizetakeoutorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeTakeoutOrderWithCallback(request *RecognizeTakeoutOrderRequest, callback func(response *RecognizeTakeoutOrderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

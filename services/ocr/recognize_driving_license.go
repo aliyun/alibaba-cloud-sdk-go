@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeDrivingLicense invokes the ocr.RecognizeDrivingLicense API synchronously
-// api document: https://help.aliyun.com/api/ocr/recognizedrivinglicense.html
 func (client *Client) RecognizeDrivingLicense(request *RecognizeDrivingLicenseRequest) (response *RecognizeDrivingLicenseResponse, err error) {
 	response = CreateRecognizeDrivingLicenseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeDrivingLicense(request *RecognizeDrivingLicenseRe
 }
 
 // RecognizeDrivingLicenseWithChan invokes the ocr.RecognizeDrivingLicense API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizedrivinglicense.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeDrivingLicenseWithChan(request *RecognizeDrivingLicenseRequest) (<-chan *RecognizeDrivingLicenseResponse, <-chan error) {
 	responseChan := make(chan *RecognizeDrivingLicenseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeDrivingLicenseWithChan(request *RecognizeDrivingL
 }
 
 // RecognizeDrivingLicenseWithCallback invokes the ocr.RecognizeDrivingLicense API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizedrivinglicense.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeDrivingLicenseWithCallback(request *RecognizeDrivingLicenseRequest, callback func(response *RecognizeDrivingLicenseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

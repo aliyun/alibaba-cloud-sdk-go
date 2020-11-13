@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeLicensePlate invokes the ocr.RecognizeLicensePlate API synchronously
-// api document: https://help.aliyun.com/api/ocr/recognizelicenseplate.html
 func (client *Client) RecognizeLicensePlate(request *RecognizeLicensePlateRequest) (response *RecognizeLicensePlateResponse, err error) {
 	response = CreateRecognizeLicensePlateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeLicensePlate(request *RecognizeLicensePlateReques
 }
 
 // RecognizeLicensePlateWithChan invokes the ocr.RecognizeLicensePlate API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizelicenseplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeLicensePlateWithChan(request *RecognizeLicensePlateRequest) (<-chan *RecognizeLicensePlateResponse, <-chan error) {
 	responseChan := make(chan *RecognizeLicensePlateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeLicensePlateWithChan(request *RecognizeLicensePla
 }
 
 // RecognizeLicensePlateWithCallback invokes the ocr.RecognizeLicensePlate API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizelicenseplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeLicensePlateWithCallback(request *RecognizeLicensePlateRequest, callback func(response *RecognizeLicensePlateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

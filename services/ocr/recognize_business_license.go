@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeBusinessLicense invokes the ocr.RecognizeBusinessLicense API synchronously
-// api document: https://help.aliyun.com/api/ocr/recognizebusinesslicense.html
 func (client *Client) RecognizeBusinessLicense(request *RecognizeBusinessLicenseRequest) (response *RecognizeBusinessLicenseResponse, err error) {
 	response = CreateRecognizeBusinessLicenseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeBusinessLicense(request *RecognizeBusinessLicense
 }
 
 // RecognizeBusinessLicenseWithChan invokes the ocr.RecognizeBusinessLicense API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizebusinesslicense.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeBusinessLicenseWithChan(request *RecognizeBusinessLicenseRequest) (<-chan *RecognizeBusinessLicenseResponse, <-chan error) {
 	responseChan := make(chan *RecognizeBusinessLicenseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeBusinessLicenseWithChan(request *RecognizeBusines
 }
 
 // RecognizeBusinessLicenseWithCallback invokes the ocr.RecognizeBusinessLicense API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizebusinesslicense.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeBusinessLicenseWithCallback(request *RecognizeBusinessLicenseRequest, callback func(response *RecognizeBusinessLicenseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,8 +78,8 @@ type RecognizeBusinessLicenseRequest struct {
 // RecognizeBusinessLicenseResponse is the response struct for api RecognizeBusinessLicense
 type RecognizeBusinessLicenseResponse struct {
 	*responses.BaseResponse
-	RequestId string                         `json:"RequestId" xml:"RequestId"`
-	Data      DataInRecognizeBusinessLicense `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateRecognizeBusinessLicenseRequest creates a request to invoke RecognizeBusinessLicense API

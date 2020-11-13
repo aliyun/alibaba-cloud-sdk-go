@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// RecognizePassportMRZ invokes the ocr.RecognizePassportMRZ API synchronously
-func (client *Client) RecognizePassportMRZ(request *RecognizePassportMRZRequest) (response *RecognizePassportMRZResponse, err error) {
-	response = CreateRecognizePassportMRZResponse()
+// RecognizePoiName invokes the ocr.RecognizePoiName API synchronously
+func (client *Client) RecognizePoiName(request *RecognizePoiNameRequest) (response *RecognizePoiNameResponse, err error) {
+	response = CreateRecognizePoiNameResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// RecognizePassportMRZWithChan invokes the ocr.RecognizePassportMRZ API asynchronously
-func (client *Client) RecognizePassportMRZWithChan(request *RecognizePassportMRZRequest) (<-chan *RecognizePassportMRZResponse, <-chan error) {
-	responseChan := make(chan *RecognizePassportMRZResponse, 1)
+// RecognizePoiNameWithChan invokes the ocr.RecognizePoiName API asynchronously
+func (client *Client) RecognizePoiNameWithChan(request *RecognizePoiNameRequest) (<-chan *RecognizePoiNameResponse, <-chan error) {
+	responseChan := make(chan *RecognizePoiNameResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.RecognizePassportMRZ(request)
+		response, err := client.RecognizePoiName(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) RecognizePassportMRZWithChan(request *RecognizePassportMRZ
 	return responseChan, errChan
 }
 
-// RecognizePassportMRZWithCallback invokes the ocr.RecognizePassportMRZ API asynchronously
-func (client *Client) RecognizePassportMRZWithCallback(request *RecognizePassportMRZRequest, callback func(response *RecognizePassportMRZResponse, err error)) <-chan int {
+// RecognizePoiNameWithCallback invokes the ocr.RecognizePoiName API asynchronously
+func (client *Client) RecognizePoiNameWithCallback(request *RecognizePoiNameRequest, callback func(response *RecognizePoiNameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *RecognizePassportMRZResponse
+		var response *RecognizePoiNameResponse
 		var err error
 		defer close(result)
-		response, err = client.RecognizePassportMRZ(request)
+		response, err = client.RecognizePoiName(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,32 +68,32 @@ func (client *Client) RecognizePassportMRZWithCallback(request *RecognizePasspor
 	return result
 }
 
-// RecognizePassportMRZRequest is the request struct for api RecognizePassportMRZ
-type RecognizePassportMRZRequest struct {
+// RecognizePoiNameRequest is the request struct for api RecognizePoiName
+type RecognizePoiNameRequest struct {
 	*requests.RpcRequest
 	ImageURL string `position:"Body" name:"ImageURL"`
 }
 
-// RecognizePassportMRZResponse is the response struct for api RecognizePassportMRZ
-type RecognizePassportMRZResponse struct {
+// RecognizePoiNameResponse is the response struct for api RecognizePoiName
+type RecognizePoiNameResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateRecognizePassportMRZRequest creates a request to invoke RecognizePassportMRZ API
-func CreateRecognizePassportMRZRequest() (request *RecognizePassportMRZRequest) {
-	request = &RecognizePassportMRZRequest{
+// CreateRecognizePoiNameRequest creates a request to invoke RecognizePoiName API
+func CreateRecognizePoiNameRequest() (request *RecognizePoiNameRequest) {
+	request = &RecognizePoiNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ocr", "2019-12-30", "RecognizePassportMRZ", "ocr", "openAPI")
+	request.InitWithApiInfo("ocr", "2019-12-30", "RecognizePoiName", "ocr", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateRecognizePassportMRZResponse creates a response to parse from RecognizePassportMRZ response
-func CreateRecognizePassportMRZResponse() (response *RecognizePassportMRZResponse) {
-	response = &RecognizePassportMRZResponse{
+// CreateRecognizePoiNameResponse creates a response to parse from RecognizePoiName response
+func CreateRecognizePoiNameResponse() (response *RecognizePoiNameResponse) {
+	response = &RecognizePoiNameResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

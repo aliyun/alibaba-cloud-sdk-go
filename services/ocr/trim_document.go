@@ -21,7 +21,6 @@ import (
 )
 
 // TrimDocument invokes the ocr.TrimDocument API synchronously
-// api document: https://help.aliyun.com/api/ocr/trimdocument.html
 func (client *Client) TrimDocument(request *TrimDocumentRequest) (response *TrimDocumentResponse, err error) {
 	response = CreateTrimDocumentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TrimDocument(request *TrimDocumentRequest) (response *Trim
 }
 
 // TrimDocumentWithChan invokes the ocr.TrimDocument API asynchronously
-// api document: https://help.aliyun.com/api/ocr/trimdocument.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TrimDocumentWithChan(request *TrimDocumentRequest) (<-chan *TrimDocumentResponse, <-chan error) {
 	responseChan := make(chan *TrimDocumentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TrimDocumentWithChan(request *TrimDocumentRequest) (<-chan
 }
 
 // TrimDocumentWithCallback invokes the ocr.TrimDocument API asynchronously
-// api document: https://help.aliyun.com/api/ocr/trimdocument.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TrimDocumentWithCallback(request *TrimDocumentRequest, callback func(response *TrimDocumentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

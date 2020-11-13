@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeVATInvoice invokes the ocr.RecognizeVATInvoice API synchronously
-// api document: https://help.aliyun.com/api/ocr/recognizevatinvoice.html
 func (client *Client) RecognizeVATInvoice(request *RecognizeVATInvoiceRequest) (response *RecognizeVATInvoiceResponse, err error) {
 	response = CreateRecognizeVATInvoiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeVATInvoice(request *RecognizeVATInvoiceRequest) (
 }
 
 // RecognizeVATInvoiceWithChan invokes the ocr.RecognizeVATInvoice API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizevatinvoice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeVATInvoiceWithChan(request *RecognizeVATInvoiceRequest) (<-chan *RecognizeVATInvoiceResponse, <-chan error) {
 	responseChan := make(chan *RecognizeVATInvoiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeVATInvoiceWithChan(request *RecognizeVATInvoiceRe
 }
 
 // RecognizeVATInvoiceWithCallback invokes the ocr.RecognizeVATInvoice API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizevatinvoice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeVATInvoiceWithCallback(request *RecognizeVATInvoiceRequest, callback func(response *RecognizeVATInvoiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

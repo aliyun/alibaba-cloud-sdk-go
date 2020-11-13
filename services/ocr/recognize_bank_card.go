@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeBankCard invokes the ocr.RecognizeBankCard API synchronously
-// api document: https://help.aliyun.com/api/ocr/recognizebankcard.html
 func (client *Client) RecognizeBankCard(request *RecognizeBankCardRequest) (response *RecognizeBankCardResponse, err error) {
 	response = CreateRecognizeBankCardResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeBankCard(request *RecognizeBankCardRequest) (resp
 }
 
 // RecognizeBankCardWithChan invokes the ocr.RecognizeBankCard API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizebankcard.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeBankCardWithChan(request *RecognizeBankCardRequest) (<-chan *RecognizeBankCardResponse, <-chan error) {
 	responseChan := make(chan *RecognizeBankCardResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeBankCardWithChan(request *RecognizeBankCardReques
 }
 
 // RecognizeBankCardWithCallback invokes the ocr.RecognizeBankCard API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizebankcard.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeBankCardWithCallback(request *RecognizeBankCardRequest, callback func(response *RecognizeBankCardResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // RecognizeVINCode invokes the ocr.RecognizeVINCode API synchronously
-// api document: https://help.aliyun.com/api/ocr/recognizevincode.html
 func (client *Client) RecognizeVINCode(request *RecognizeVINCodeRequest) (response *RecognizeVINCodeResponse, err error) {
 	response = CreateRecognizeVINCodeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RecognizeVINCode(request *RecognizeVINCodeRequest) (respon
 }
 
 // RecognizeVINCodeWithChan invokes the ocr.RecognizeVINCode API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizevincode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeVINCodeWithChan(request *RecognizeVINCodeRequest) (<-chan *RecognizeVINCodeResponse, <-chan error) {
 	responseChan := make(chan *RecognizeVINCodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RecognizeVINCodeWithChan(request *RecognizeVINCodeRequest)
 }
 
 // RecognizeVINCodeWithCallback invokes the ocr.RecognizeVINCode API asynchronously
-// api document: https://help.aliyun.com/api/ocr/recognizevincode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RecognizeVINCodeWithCallback(request *RecognizeVINCodeRequest, callback func(response *RecognizeVINCodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// RecognizePassportMRZ invokes the ocr.RecognizePassportMRZ API synchronously
-func (client *Client) RecognizePassportMRZ(request *RecognizePassportMRZRequest) (response *RecognizePassportMRZResponse, err error) {
-	response = CreateRecognizePassportMRZResponse()
+// DetectCardScreenshot invokes the ocr.DetectCardScreenshot API synchronously
+func (client *Client) DetectCardScreenshot(request *DetectCardScreenshotRequest) (response *DetectCardScreenshotResponse, err error) {
+	response = CreateDetectCardScreenshotResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// RecognizePassportMRZWithChan invokes the ocr.RecognizePassportMRZ API asynchronously
-func (client *Client) RecognizePassportMRZWithChan(request *RecognizePassportMRZRequest) (<-chan *RecognizePassportMRZResponse, <-chan error) {
-	responseChan := make(chan *RecognizePassportMRZResponse, 1)
+// DetectCardScreenshotWithChan invokes the ocr.DetectCardScreenshot API asynchronously
+func (client *Client) DetectCardScreenshotWithChan(request *DetectCardScreenshotRequest) (<-chan *DetectCardScreenshotResponse, <-chan error) {
+	responseChan := make(chan *DetectCardScreenshotResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.RecognizePassportMRZ(request)
+		response, err := client.DetectCardScreenshot(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) RecognizePassportMRZWithChan(request *RecognizePassportMRZ
 	return responseChan, errChan
 }
 
-// RecognizePassportMRZWithCallback invokes the ocr.RecognizePassportMRZ API asynchronously
-func (client *Client) RecognizePassportMRZWithCallback(request *RecognizePassportMRZRequest, callback func(response *RecognizePassportMRZResponse, err error)) <-chan int {
+// DetectCardScreenshotWithCallback invokes the ocr.DetectCardScreenshot API asynchronously
+func (client *Client) DetectCardScreenshotWithCallback(request *DetectCardScreenshotRequest, callback func(response *DetectCardScreenshotResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *RecognizePassportMRZResponse
+		var response *DetectCardScreenshotResponse
 		var err error
 		defer close(result)
-		response, err = client.RecognizePassportMRZ(request)
+		response, err = client.DetectCardScreenshot(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,32 +68,32 @@ func (client *Client) RecognizePassportMRZWithCallback(request *RecognizePasspor
 	return result
 }
 
-// RecognizePassportMRZRequest is the request struct for api RecognizePassportMRZ
-type RecognizePassportMRZRequest struct {
+// DetectCardScreenshotRequest is the request struct for api DetectCardScreenshot
+type DetectCardScreenshotRequest struct {
 	*requests.RpcRequest
 	ImageURL string `position:"Body" name:"ImageURL"`
 }
 
-// RecognizePassportMRZResponse is the response struct for api RecognizePassportMRZ
-type RecognizePassportMRZResponse struct {
+// DetectCardScreenshotResponse is the response struct for api DetectCardScreenshot
+type DetectCardScreenshotResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateRecognizePassportMRZRequest creates a request to invoke RecognizePassportMRZ API
-func CreateRecognizePassportMRZRequest() (request *RecognizePassportMRZRequest) {
-	request = &RecognizePassportMRZRequest{
+// CreateDetectCardScreenshotRequest creates a request to invoke DetectCardScreenshot API
+func CreateDetectCardScreenshotRequest() (request *DetectCardScreenshotRequest) {
+	request = &DetectCardScreenshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ocr", "2019-12-30", "RecognizePassportMRZ", "ocr", "openAPI")
+	request.InitWithApiInfo("ocr", "2019-12-30", "DetectCardScreenshot", "ocr", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateRecognizePassportMRZResponse creates a response to parse from RecognizePassportMRZ response
-func CreateRecognizePassportMRZResponse() (response *RecognizePassportMRZResponse) {
-	response = &RecognizePassportMRZResponse{
+// CreateDetectCardScreenshotResponse creates a response to parse from DetectCardScreenshot response
+func CreateDetectCardScreenshotResponse() (response *DetectCardScreenshotResponse) {
+	response = &DetectCardScreenshotResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
