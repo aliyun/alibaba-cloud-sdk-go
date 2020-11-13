@@ -28,6 +28,7 @@ type Data struct {
 	TextImageURL      string         `json:"TextImageURL" xml:"TextImageURL"`
 	WatermarkImageURL string         `json:"WatermarkImageURL" xml:"WatermarkImageURL"`
 	LogoURL           string         `json:"LogoURL" xml:"LogoURL"`
+	ImageUrl          string         `json:"ImageUrl" xml:"ImageUrl"`
 	ImageURL          string         `json:"ImageURL" xml:"ImageURL"`
 	Status            string         `json:"Status" xml:"Status"`
 	ErrorCode         string         `json:"ErrorCode" xml:"ErrorCode"`
