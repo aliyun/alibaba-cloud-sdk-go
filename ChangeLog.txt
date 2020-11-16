@@ -1,3 +1,7 @@
+2020-11-16 Version: v1.61.645
+- Generated 2019-12-30 for `objectdet`.
+- Update objectdet.
+
 2020-11-16 Version: v1.61.644
 - Generated 2020-03-20 for `imgsearch`.
 - Update imgsearch.
