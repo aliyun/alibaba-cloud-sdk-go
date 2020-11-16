@@ -30,6 +30,7 @@ type Data struct {
 	Url                     string                        `json:"Url" xml:"Url"`
 	TaskId                  string                        `json:"TaskId" xml:"TaskId"`
 	LanguageQualityScore    string                        `json:"LanguageQualityScore" xml:"LanguageQualityScore"`
+	PictureEditor           string                        `json:"PictureEditor" xml:"PictureEditor"`
 	Orc                     string                        `json:"Orc" xml:"Orc"`
 	WordCount               string                        `json:"WordCount" xml:"WordCount"`
 	TotalScore              string                        `json:"TotalScore" xml:"TotalScore"`

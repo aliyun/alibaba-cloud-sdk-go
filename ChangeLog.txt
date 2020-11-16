@@ -1,3 +1,7 @@
+2020-11-16 Version: v1.61.649
+- Generated 2018-10-12 for `alimt`.
+- Add a new interface for asynchronous image translation.
+
 2020-11-16 Version: v1.61.648
 - Generated 2020-03-20 for `videoenhan`.
 - Update videoenhan.
