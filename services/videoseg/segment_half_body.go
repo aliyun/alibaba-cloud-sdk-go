@@ -21,7 +21,6 @@ import (
 )
 
 // SegmentHalfBody invokes the videoseg.SegmentHalfBody API synchronously
-// api document: https://help.aliyun.com/api/videoseg/segmenthalfbody.html
 func (client *Client) SegmentHalfBody(request *SegmentHalfBodyRequest) (response *SegmentHalfBodyResponse, err error) {
 	response = CreateSegmentHalfBodyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SegmentHalfBody(request *SegmentHalfBodyRequest) (response
 }
 
 // SegmentHalfBodyWithChan invokes the videoseg.SegmentHalfBody API asynchronously
-// api document: https://help.aliyun.com/api/videoseg/segmenthalfbody.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentHalfBodyWithChan(request *SegmentHalfBodyRequest) (<-chan *SegmentHalfBodyResponse, <-chan error) {
 	responseChan := make(chan *SegmentHalfBodyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SegmentHalfBodyWithChan(request *SegmentHalfBodyRequest) (
 }
 
 // SegmentHalfBodyWithCallback invokes the videoseg.SegmentHalfBody API asynchronously
-// api document: https://help.aliyun.com/api/videoseg/segmenthalfbody.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentHalfBodyWithCallback(request *SegmentHalfBodyRequest, callback func(response *SegmentHalfBodyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

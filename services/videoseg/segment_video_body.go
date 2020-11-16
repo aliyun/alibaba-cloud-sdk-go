@@ -21,7 +21,6 @@ import (
 )
 
 // SegmentVideoBody invokes the videoseg.SegmentVideoBody API synchronously
-// api document: https://help.aliyun.com/api/videoseg/segmentvideobody.html
 func (client *Client) SegmentVideoBody(request *SegmentVideoBodyRequest) (response *SegmentVideoBodyResponse, err error) {
 	response = CreateSegmentVideoBodyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SegmentVideoBody(request *SegmentVideoBodyRequest) (respon
 }
 
 // SegmentVideoBodyWithChan invokes the videoseg.SegmentVideoBody API asynchronously
-// api document: https://help.aliyun.com/api/videoseg/segmentvideobody.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentVideoBodyWithChan(request *SegmentVideoBodyRequest) (<-chan *SegmentVideoBodyResponse, <-chan error) {
 	responseChan := make(chan *SegmentVideoBodyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SegmentVideoBodyWithChan(request *SegmentVideoBodyRequest)
 }
 
 // SegmentVideoBodyWithCallback invokes the videoseg.SegmentVideoBody API asynchronously
-// api document: https://help.aliyun.com/api/videoseg/segmentvideobody.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SegmentVideoBodyWithCallback(request *SegmentVideoBodyRequest, callback func(response *SegmentVideoBodyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

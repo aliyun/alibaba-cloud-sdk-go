@@ -1,3 +1,7 @@
+2020-11-16 Version: v1.61.647
+- Generated 2020-03-20 for `videoseg`.
+- Update videoseg.
+
 2020-11-16 Version: v1.61.646
 - Generated 2020-03-20 for `videorecog`.
 - Update videorecog.
