@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DetachDbfs invokes the dbfs.DetachDbfs API synchronously
-func (client *Client) DetachDbfs(request *DetachDbfsRequest) (response *DetachDbfsResponse, err error) {
-	response = CreateDetachDbfsResponse()
+// UpdateTask invokes the dbfs.UpdateTask API synchronously
+func (client *Client) UpdateTask(request *UpdateTaskRequest) (response *UpdateTaskResponse, err error) {
+	response = CreateUpdateTaskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DetachDbfsWithChan invokes the dbfs.DetachDbfs API asynchronously
-func (client *Client) DetachDbfsWithChan(request *DetachDbfsRequest) (<-chan *DetachDbfsResponse, <-chan error) {
-	responseChan := make(chan *DetachDbfsResponse, 1)
+// UpdateTaskWithChan invokes the dbfs.UpdateTask API asynchronously
+func (client *Client) UpdateTaskWithChan(request *UpdateTaskRequest) (<-chan *UpdateTaskResponse, <-chan error) {
+	responseChan := make(chan *UpdateTaskResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DetachDbfs(request)
+		response, err := client.UpdateTask(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) DetachDbfsWithChan(request *DetachDbfsRequest) (<-chan *De
 	return responseChan, errChan
 }
 
-// DetachDbfsWithCallback invokes the dbfs.DetachDbfs API asynchronously
-func (client *Client) DetachDbfsWithCallback(request *DetachDbfsRequest, callback func(response *DetachDbfsResponse, err error)) <-chan int {
+// UpdateTaskWithCallback invokes the dbfs.UpdateTask API asynchronously
+func (client *Client) UpdateTaskWithCallback(request *UpdateTaskRequest, callback func(response *UpdateTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DetachDbfsResponse
+		var response *UpdateTaskResponse
 		var err error
 		defer close(result)
-		response, err = client.DetachDbfs(request)
+		response, err = client.UpdateTask(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,32 +68,32 @@ func (client *Client) DetachDbfsWithCallback(request *DetachDbfsRequest, callbac
 	return result
 }
 
-// DetachDbfsRequest is the request struct for api DetachDbfs
-type DetachDbfsRequest struct {
+// UpdateTaskRequest is the request struct for api UpdateTask
+type UpdateTaskRequest struct {
 	*requests.RpcRequest
-	ECSInstanceId string `position:"Query" name:"ECSInstanceId"`
-	FsId          string `position:"Query" name:"FsId"`
+	TaskProgress requests.Integer `position:"Query" name:"TaskProgress"`
+	TaskIds      string           `position:"Query" name:"TaskIds"`
 }
 
-// DetachDbfsResponse is the response struct for api DetachDbfs
-type DetachDbfsResponse struct {
+// UpdateTaskResponse is the response struct for api UpdateTask
+type UpdateTaskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDetachDbfsRequest creates a request to invoke DetachDbfs API
-func CreateDetachDbfsRequest() (request *DetachDbfsRequest) {
-	request = &DetachDbfsRequest{
+// CreateUpdateTaskRequest creates a request to invoke UpdateTask API
+func CreateUpdateTaskRequest() (request *UpdateTaskRequest) {
+	request = &UpdateTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "DetachDbfs", "dbfs", "openAPI")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "UpdateTask", "dbfs", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDetachDbfsResponse creates a response to parse from DetachDbfs response
-func CreateDetachDbfsResponse() (response *DetachDbfsResponse) {
-	response = &DetachDbfsResponse{
+// CreateUpdateTaskResponse creates a response to parse from UpdateTask response
+func CreateUpdateTaskResponse() (response *UpdateTaskResponse) {
+	response = &UpdateTaskResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

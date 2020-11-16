@@ -90,7 +90,7 @@ func CreateCreateSnapshotRequest() (request *CreateSnapshotRequest) {
 	request = &CreateSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "CreateSnapshot", "", "")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "CreateSnapshot", "dbfs", "openAPI")
 	request.Method = requests.POST
 	return
 }

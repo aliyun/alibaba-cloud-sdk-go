@@ -87,7 +87,7 @@ func CreateResetDbfsRequest() (request *ResetDbfsRequest) {
 	request = &ResetDbfsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DBFS", "2020-04-18", "ResetDbfs", "", "")
+	request.InitWithApiInfo("DBFS", "2020-04-18", "ResetDbfs", "dbfs", "openAPI")
 	request.Method = requests.POST
 	return
 }
