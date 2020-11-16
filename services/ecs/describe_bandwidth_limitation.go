@@ -94,7 +94,7 @@ func CreateDescribeBandwidthLimitationRequest() (request *DescribeBandwidthLimit
 	request = &DescribeBandwidthLimitationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeBandwidthLimitation", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeBandwidthLimitation", "", "")
 	request.Method = requests.POST
 	return
 }

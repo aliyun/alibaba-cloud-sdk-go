@@ -100,7 +100,7 @@ func CreateSendFileRequest() (request *SendFileRequest) {
 	request = &SendFileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "SendFile", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "SendFile", "", "")
 	request.Method = requests.POST
 	return
 }

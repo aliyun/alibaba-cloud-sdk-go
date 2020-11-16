@@ -89,6 +89,7 @@ type CreateCapacityReservationRequest struct {
 	OwnerId                         requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceType                    string           `position:"Query" name:"ResourceType"`
 	PeriodUnit                      string           `position:"Query" name:"PeriodUnit"`
+	TimeSlot                        string           `position:"Query" name:"TimeSlot"`
 	ZoneId                          *[]string        `position:"Query" name:"ZoneId"  type:"Repeated"`
 	ChargeType                      string           `position:"Query" name:"ChargeType"`
 	PackageType                     string           `position:"Query" name:"PackageType"`
@@ -107,7 +108,7 @@ func CreateCreateCapacityReservationRequest() (request *CreateCapacityReservatio
 	request = &CreateCapacityReservationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateCapacityReservation", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateCapacityReservation", "", "")
 	request.Method = requests.POST
 	return
 }

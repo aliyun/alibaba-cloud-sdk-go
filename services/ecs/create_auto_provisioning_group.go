@@ -119,7 +119,7 @@ func CreateCreateAutoProvisioningGroupRequest() (request *CreateAutoProvisioning
 	request = &CreateAutoProvisioningGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateAutoProvisioningGroup", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateAutoProvisioningGroup", "", "")
 	request.Method = requests.POST
 	return
 }

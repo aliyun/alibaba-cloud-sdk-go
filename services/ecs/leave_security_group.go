@@ -90,7 +90,7 @@ func CreateLeaveSecurityGroupRequest() (request *LeaveSecurityGroupRequest) {
 	request = &LeaveSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "LeaveSecurityGroup", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "LeaveSecurityGroup", "", "")
 	request.Method = requests.POST
 	return
 }

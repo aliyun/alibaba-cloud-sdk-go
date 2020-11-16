@@ -94,7 +94,7 @@ func CreateModifyImageAttributeRequest() (request *ModifyImageAttributeRequest) 
 	request = &ModifyImageAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyImageAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyImageAttribute", "", "")
 	request.Method = requests.POST
 	return
 }

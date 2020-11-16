@@ -99,7 +99,7 @@ func CreateDescribeCommandsRequest() (request *DescribeCommandsRequest) {
 	request = &DescribeCommandsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeCommands", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeCommands", "", "")
 	request.Method = requests.POST
 	return
 }

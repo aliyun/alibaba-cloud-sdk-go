@@ -98,7 +98,7 @@ func CreateDescribeStorageSetsRequest() (request *DescribeStorageSetsRequest) {
 	request = &DescribeStorageSetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeStorageSets", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeStorageSets", "", "")
 	request.Method = requests.POST
 	return
 }

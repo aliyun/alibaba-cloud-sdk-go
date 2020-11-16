@@ -96,7 +96,7 @@ func CreateDescribeForwardTableEntriesRequest() (request *DescribeForwardTableEn
 	request = &DescribeForwardTableEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeForwardTableEntries", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeForwardTableEntries", "", "")
 	request.Method = requests.POST
 	return
 }

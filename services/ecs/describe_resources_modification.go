@@ -96,7 +96,7 @@ func CreateDescribeResourcesModificationRequest() (request *DescribeResourcesMod
 	request = &DescribeResourcesModificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeResourcesModification", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeResourcesModification", "", "")
 	request.Method = requests.POST
 	return
 }

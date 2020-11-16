@@ -73,6 +73,7 @@ type ModifyInstanceNetworkSpecRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken             string           `position:"Query" name:"ClientToken"`
+	ISP                     string           `position:"Query" name:"ISP"`
 	InternetMaxBandwidthOut requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
 	StartTime               string           `position:"Query" name:"StartTime"`
 	AutoPay                 requests.Boolean `position:"Query" name:"AutoPay"`
@@ -98,7 +99,7 @@ func CreateModifyInstanceNetworkSpecRequest() (request *ModifyInstanceNetworkSpe
 	request = &ModifyInstanceNetworkSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceNetworkSpec", "", "")
 	request.Method = requests.POST
 	return
 }

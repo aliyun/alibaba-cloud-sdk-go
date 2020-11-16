@@ -115,6 +115,7 @@ type RunInstancesRequest struct {
 	ResourceOwnerId                       requests.Integer                `position:"Query" name:"ResourceOwnerId"`
 	HpcClusterId                          string                          `position:"Query" name:"HpcClusterId"`
 	HttpPutResponseHopLimit               requests.Integer                `position:"Query" name:"HttpPutResponseHopLimit"`
+	Isp                                   string                          `position:"Query" name:"Isp"`
 	KeyPairName                           string                          `position:"Query" name:"KeyPairName"`
 	SpotPriceLimit                        requests.Float                  `position:"Query" name:"SpotPriceLimit"`
 	StorageSetPartitionNumber             requests.Integer                `position:"Query" name:"StorageSetPartitionNumber"`
@@ -206,7 +207,7 @@ func CreateRunInstancesRequest() (request *RunInstancesRequest) {
 	request = &RunInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "RunInstances", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "RunInstances", "", "")
 	request.Method = requests.POST
 	return
 }

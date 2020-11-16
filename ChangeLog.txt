@@ -1,3 +1,7 @@
+2020-11-16 Version: v1.61.652
+- Generated 2014-05-26 for `Ecs`.
+- Nat public IP supports the ISP attribute.
+
 2020-11-16 Version: v1.61.651
 - Generated 2020-04-18 for `DBFS`.
 - Release for db test.

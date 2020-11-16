@@ -92,7 +92,7 @@ func CreateGetInstanceScreenshotRequest() (request *GetInstanceScreenshotRequest
 	request = &GetInstanceScreenshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "GetInstanceScreenshot", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "GetInstanceScreenshot", "", "")
 	request.Method = requests.POST
 	return
 }

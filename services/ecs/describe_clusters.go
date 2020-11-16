@@ -89,7 +89,7 @@ func CreateDescribeClustersRequest() (request *DescribeClustersRequest) {
 	request = &DescribeClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeClusters", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeClusters", "", "")
 	request.Method = requests.POST
 	return
 }

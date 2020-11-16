@@ -90,7 +90,7 @@ func CreateDeleteAutoProvisioningGroupRequest() (request *DeleteAutoProvisioning
 	request = &DeleteAutoProvisioningGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteAutoProvisioningGroup", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteAutoProvisioningGroup", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -115,7 +115,7 @@ func CreateCreateImageRequest() (request *CreateImageRequest) {
 	request = &CreateImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateImage", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "CreateImage", "", "")
 	request.Method = requests.POST
 	return
 }

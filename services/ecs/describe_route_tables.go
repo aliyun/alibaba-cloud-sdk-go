@@ -99,7 +99,7 @@ func CreateDescribeRouteTablesRequest() (request *DescribeRouteTablesRequest) {
 	request = &DescribeRouteTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRouteTables", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeRouteTables", "", "")
 	request.Method = requests.POST
 	return
 }

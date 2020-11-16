@@ -98,7 +98,7 @@ func CreateModifyDedicatedHostsChargeTypeRequest() (request *ModifyDedicatedHost
 	request = &ModifyDedicatedHostsChargeTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDedicatedHostsChargeType", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyDedicatedHostsChargeType", "", "")
 	request.Method = requests.POST
 	return
 }

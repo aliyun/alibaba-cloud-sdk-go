@@ -96,7 +96,7 @@ func CreateDescribeInstanceAutoRenewAttributeRequest() (request *DescribeInstanc
 	request = &DescribeInstanceAutoRenewAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceAutoRenewAttribute", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceAutoRenewAttribute", "", "")
 	request.Method = requests.POST
 	return
 }

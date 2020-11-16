@@ -91,7 +91,7 @@ func CreateModifyInstanceAttachmentAttributesRequest() (request *ModifyInstanceA
 	request = &ModifyInstanceAttachmentAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceAttachmentAttributes", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ModifyInstanceAttachmentAttributes", "", "")
 	request.Method = requests.POST
 	return
 }

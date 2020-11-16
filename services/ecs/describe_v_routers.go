@@ -95,7 +95,7 @@ func CreateDescribeVRoutersRequest() (request *DescribeVRoutersRequest) {
 	request = &DescribeVRoutersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVRouters", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeVRouters", "", "")
 	request.Method = requests.POST
 	return
 }
