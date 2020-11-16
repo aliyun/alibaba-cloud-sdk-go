@@ -21,7 +21,6 @@ import (
 )
 
 // AbstractFilmVideo invokes the videoenhan.AbstractFilmVideo API synchronously
-// api document: https://help.aliyun.com/api/videoenhan/abstractfilmvideo.html
 func (client *Client) AbstractFilmVideo(request *AbstractFilmVideoRequest) (response *AbstractFilmVideoResponse, err error) {
 	response = CreateAbstractFilmVideoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AbstractFilmVideo(request *AbstractFilmVideoRequest) (resp
 }
 
 // AbstractFilmVideoWithChan invokes the videoenhan.AbstractFilmVideo API asynchronously
-// api document: https://help.aliyun.com/api/videoenhan/abstractfilmvideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AbstractFilmVideoWithChan(request *AbstractFilmVideoRequest) (<-chan *AbstractFilmVideoResponse, <-chan error) {
 	responseChan := make(chan *AbstractFilmVideoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AbstractFilmVideoWithChan(request *AbstractFilmVideoReques
 }
 
 // AbstractFilmVideoWithCallback invokes the videoenhan.AbstractFilmVideo API asynchronously
-// api document: https://help.aliyun.com/api/videoenhan/abstractfilmvideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AbstractFilmVideoWithCallback(request *AbstractFilmVideoRequest, callback func(response *AbstractFilmVideoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ChangeVideoSize invokes the videoenhan.ChangeVideoSize API synchronously
-// api document: https://help.aliyun.com/api/videoenhan/changevideosize.html
 func (client *Client) ChangeVideoSize(request *ChangeVideoSizeRequest) (response *ChangeVideoSizeResponse, err error) {
 	response = CreateChangeVideoSizeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ChangeVideoSize(request *ChangeVideoSizeRequest) (response
 }
 
 // ChangeVideoSizeWithChan invokes the videoenhan.ChangeVideoSize API asynchronously
-// api document: https://help.aliyun.com/api/videoenhan/changevideosize.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangeVideoSizeWithChan(request *ChangeVideoSizeRequest) (<-chan *ChangeVideoSizeResponse, <-chan error) {
 	responseChan := make(chan *ChangeVideoSizeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ChangeVideoSizeWithChan(request *ChangeVideoSizeRequest) (
 }
 
 // ChangeVideoSizeWithCallback invokes the videoenhan.ChangeVideoSize API asynchronously
-// api document: https://help.aliyun.com/api/videoenhan/changevideosize.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangeVideoSizeWithCallback(request *ChangeVideoSizeRequest, callback func(response *ChangeVideoSizeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

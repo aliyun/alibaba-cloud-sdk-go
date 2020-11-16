@@ -21,7 +21,6 @@ import (
 )
 
 // GenerateVideo invokes the videoenhan.GenerateVideo API synchronously
-// api document: https://help.aliyun.com/api/videoenhan/generatevideo.html
 func (client *Client) GenerateVideo(request *GenerateVideoRequest) (response *GenerateVideoResponse, err error) {
 	response = CreateGenerateVideoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GenerateVideo(request *GenerateVideoRequest) (response *Ge
 }
 
 // GenerateVideoWithChan invokes the videoenhan.GenerateVideo API asynchronously
-// api document: https://help.aliyun.com/api/videoenhan/generatevideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateVideoWithChan(request *GenerateVideoRequest) (<-chan *GenerateVideoResponse, <-chan error) {
 	responseChan := make(chan *GenerateVideoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GenerateVideoWithChan(request *GenerateVideoRequest) (<-ch
 }
 
 // GenerateVideoWithCallback invokes the videoenhan.GenerateVideo API asynchronously
-// api document: https://help.aliyun.com/api/videoenhan/generatevideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateVideoWithCallback(request *GenerateVideoRequest, callback func(response *GenerateVideoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

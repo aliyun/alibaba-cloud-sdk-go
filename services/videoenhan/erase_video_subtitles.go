@@ -21,7 +21,6 @@ import (
 )
 
 // EraseVideoSubtitles invokes the videoenhan.EraseVideoSubtitles API synchronously
-// api document: https://help.aliyun.com/api/videoenhan/erasevideosubtitles.html
 func (client *Client) EraseVideoSubtitles(request *EraseVideoSubtitlesRequest) (response *EraseVideoSubtitlesResponse, err error) {
 	response = CreateEraseVideoSubtitlesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EraseVideoSubtitles(request *EraseVideoSubtitlesRequest) (
 }
 
 // EraseVideoSubtitlesWithChan invokes the videoenhan.EraseVideoSubtitles API asynchronously
-// api document: https://help.aliyun.com/api/videoenhan/erasevideosubtitles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EraseVideoSubtitlesWithChan(request *EraseVideoSubtitlesRequest) (<-chan *EraseVideoSubtitlesResponse, <-chan error) {
 	responseChan := make(chan *EraseVideoSubtitlesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EraseVideoSubtitlesWithChan(request *EraseVideoSubtitlesRe
 }
 
 // EraseVideoSubtitlesWithCallback invokes the videoenhan.EraseVideoSubtitles API asynchronously
-// api document: https://help.aliyun.com/api/videoenhan/erasevideosubtitles.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EraseVideoSubtitlesWithCallback(request *EraseVideoSubtitlesRequest, callback func(response *EraseVideoSubtitlesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

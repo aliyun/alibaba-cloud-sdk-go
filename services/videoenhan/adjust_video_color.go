@@ -21,7 +21,6 @@ import (
 )
 
 // AdjustVideoColor invokes the videoenhan.AdjustVideoColor API synchronously
-// api document: https://help.aliyun.com/api/videoenhan/adjustvideocolor.html
 func (client *Client) AdjustVideoColor(request *AdjustVideoColorRequest) (response *AdjustVideoColorResponse, err error) {
 	response = CreateAdjustVideoColorResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AdjustVideoColor(request *AdjustVideoColorRequest) (respon
 }
 
 // AdjustVideoColorWithChan invokes the videoenhan.AdjustVideoColor API asynchronously
-// api document: https://help.aliyun.com/api/videoenhan/adjustvideocolor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AdjustVideoColorWithChan(request *AdjustVideoColorRequest) (<-chan *AdjustVideoColorResponse, <-chan error) {
 	responseChan := make(chan *AdjustVideoColorResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AdjustVideoColorWithChan(request *AdjustVideoColorRequest)
 }
 
 // AdjustVideoColorWithCallback invokes the videoenhan.AdjustVideoColor API asynchronously
-// api document: https://help.aliyun.com/api/videoenhan/adjustvideocolor.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AdjustVideoColorWithCallback(request *AdjustVideoColorRequest, callback func(response *AdjustVideoColorResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

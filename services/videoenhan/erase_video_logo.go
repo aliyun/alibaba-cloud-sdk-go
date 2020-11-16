@@ -21,7 +21,6 @@ import (
 )
 
 // EraseVideoLogo invokes the videoenhan.EraseVideoLogo API synchronously
-// api document: https://help.aliyun.com/api/videoenhan/erasevideologo.html
 func (client *Client) EraseVideoLogo(request *EraseVideoLogoRequest) (response *EraseVideoLogoResponse, err error) {
 	response = CreateEraseVideoLogoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EraseVideoLogo(request *EraseVideoLogoRequest) (response *
 }
 
 // EraseVideoLogoWithChan invokes the videoenhan.EraseVideoLogo API asynchronously
-// api document: https://help.aliyun.com/api/videoenhan/erasevideologo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EraseVideoLogoWithChan(request *EraseVideoLogoRequest) (<-chan *EraseVideoLogoResponse, <-chan error) {
 	responseChan := make(chan *EraseVideoLogoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EraseVideoLogoWithChan(request *EraseVideoLogoRequest) (<-
 }
 
 // EraseVideoLogoWithCallback invokes the videoenhan.EraseVideoLogo API asynchronously
-// api document: https://help.aliyun.com/api/videoenhan/erasevideologo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EraseVideoLogoWithCallback(request *EraseVideoLogoRequest, callback func(response *EraseVideoLogoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

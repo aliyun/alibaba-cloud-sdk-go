@@ -21,7 +21,6 @@ import (
 )
 
 // SuperResolveVideo invokes the videoenhan.SuperResolveVideo API synchronously
-// api document: https://help.aliyun.com/api/videoenhan/superresolvevideo.html
 func (client *Client) SuperResolveVideo(request *SuperResolveVideoRequest) (response *SuperResolveVideoResponse, err error) {
 	response = CreateSuperResolveVideoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SuperResolveVideo(request *SuperResolveVideoRequest) (resp
 }
 
 // SuperResolveVideoWithChan invokes the videoenhan.SuperResolveVideo API asynchronously
-// api document: https://help.aliyun.com/api/videoenhan/superresolvevideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SuperResolveVideoWithChan(request *SuperResolveVideoRequest) (<-chan *SuperResolveVideoResponse, <-chan error) {
 	responseChan := make(chan *SuperResolveVideoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SuperResolveVideoWithChan(request *SuperResolveVideoReques
 }
 
 // SuperResolveVideoWithCallback invokes the videoenhan.SuperResolveVideo API asynchronously
-// api document: https://help.aliyun.com/api/videoenhan/superresolvevideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SuperResolveVideoWithCallback(request *SuperResolveVideoRequest, callback func(response *SuperResolveVideoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

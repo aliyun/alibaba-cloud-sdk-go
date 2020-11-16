@@ -21,7 +21,6 @@ import (
 )
 
 // AbstractEcommerceVideo invokes the videoenhan.AbstractEcommerceVideo API synchronously
-// api document: https://help.aliyun.com/api/videoenhan/abstractecommercevideo.html
 func (client *Client) AbstractEcommerceVideo(request *AbstractEcommerceVideoRequest) (response *AbstractEcommerceVideoResponse, err error) {
 	response = CreateAbstractEcommerceVideoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AbstractEcommerceVideo(request *AbstractEcommerceVideoRequ
 }
 
 // AbstractEcommerceVideoWithChan invokes the videoenhan.AbstractEcommerceVideo API asynchronously
-// api document: https://help.aliyun.com/api/videoenhan/abstractecommercevideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AbstractEcommerceVideoWithChan(request *AbstractEcommerceVideoRequest) (<-chan *AbstractEcommerceVideoResponse, <-chan error) {
 	responseChan := make(chan *AbstractEcommerceVideoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AbstractEcommerceVideoWithChan(request *AbstractEcommerceV
 }
 
 // AbstractEcommerceVideoWithCallback invokes the videoenhan.AbstractEcommerceVideo API asynchronously
-// api document: https://help.aliyun.com/api/videoenhan/abstractecommercevideo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AbstractEcommerceVideoWithCallback(request *AbstractEcommerceVideoRequest, callback func(response *AbstractEcommerceVideoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
