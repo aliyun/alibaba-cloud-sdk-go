@@ -21,7 +21,6 @@ import (
 )
 
 // SearchImage invokes the imgsearch.SearchImage API synchronously
-// api document: https://help.aliyun.com/api/imgsearch/searchimage.html
 func (client *Client) SearchImage(request *SearchImageRequest) (response *SearchImageResponse, err error) {
 	response = CreateSearchImageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SearchImage(request *SearchImageRequest) (response *Search
 }
 
 // SearchImageWithChan invokes the imgsearch.SearchImage API asynchronously
-// api document: https://help.aliyun.com/api/imgsearch/searchimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchImageWithChan(request *SearchImageRequest) (<-chan *SearchImageResponse, <-chan error) {
 	responseChan := make(chan *SearchImageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SearchImageWithChan(request *SearchImageRequest) (<-chan *
 }
 
 // SearchImageWithCallback invokes the imgsearch.SearchImage API asynchronously
-// api document: https://help.aliyun.com/api/imgsearch/searchimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchImageWithCallback(request *SearchImageRequest, callback func(response *SearchImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteImageDb invokes the imgsearch.DeleteImageDb API synchronously
-// api document: https://help.aliyun.com/api/imgsearch/deleteimagedb.html
 func (client *Client) DeleteImageDb(request *DeleteImageDbRequest) (response *DeleteImageDbResponse, err error) {
 	response = CreateDeleteImageDbResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteImageDb(request *DeleteImageDbRequest) (response *De
 }
 
 // DeleteImageDbWithChan invokes the imgsearch.DeleteImageDb API asynchronously
-// api document: https://help.aliyun.com/api/imgsearch/deleteimagedb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteImageDbWithChan(request *DeleteImageDbRequest) (<-chan *DeleteImageDbResponse, <-chan error) {
 	responseChan := make(chan *DeleteImageDbResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteImageDbWithChan(request *DeleteImageDbRequest) (<-ch
 }
 
 // DeleteImageDbWithCallback invokes the imgsearch.DeleteImageDb API asynchronously
-// api document: https://help.aliyun.com/api/imgsearch/deleteimagedb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteImageDbWithCallback(request *DeleteImageDbRequest, callback func(response *DeleteImageDbResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

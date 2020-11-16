@@ -21,7 +21,6 @@ import (
 )
 
 // ListImageDbs invokes the imgsearch.ListImageDbs API synchronously
-// api document: https://help.aliyun.com/api/imgsearch/listimagedbs.html
 func (client *Client) ListImageDbs(request *ListImageDbsRequest) (response *ListImageDbsResponse, err error) {
 	response = CreateListImageDbsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListImageDbs(request *ListImageDbsRequest) (response *List
 }
 
 // ListImageDbsWithChan invokes the imgsearch.ListImageDbs API asynchronously
-// api document: https://help.aliyun.com/api/imgsearch/listimagedbs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListImageDbsWithChan(request *ListImageDbsRequest) (<-chan *ListImageDbsResponse, <-chan error) {
 	responseChan := make(chan *ListImageDbsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListImageDbsWithChan(request *ListImageDbsRequest) (<-chan
 }
 
 // ListImageDbsWithCallback invokes the imgsearch.ListImageDbs API asynchronously
-// api document: https://help.aliyun.com/api/imgsearch/listimagedbs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListImageDbsWithCallback(request *ListImageDbsRequest, callback func(response *ListImageDbsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

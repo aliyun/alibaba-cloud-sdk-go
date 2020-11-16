@@ -21,7 +21,6 @@ import (
 )
 
 // CreateImageDb invokes the imgsearch.CreateImageDb API synchronously
-// api document: https://help.aliyun.com/api/imgsearch/createimagedb.html
 func (client *Client) CreateImageDb(request *CreateImageDbRequest) (response *CreateImageDbResponse, err error) {
 	response = CreateCreateImageDbResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateImageDb(request *CreateImageDbRequest) (response *Cr
 }
 
 // CreateImageDbWithChan invokes the imgsearch.CreateImageDb API asynchronously
-// api document: https://help.aliyun.com/api/imgsearch/createimagedb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateImageDbWithChan(request *CreateImageDbRequest) (<-chan *CreateImageDbResponse, <-chan error) {
 	responseChan := make(chan *CreateImageDbResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateImageDbWithChan(request *CreateImageDbRequest) (<-ch
 }
 
 // CreateImageDbWithCallback invokes the imgsearch.CreateImageDb API asynchronously
-// api document: https://help.aliyun.com/api/imgsearch/createimagedb.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateImageDbWithCallback(request *CreateImageDbRequest, callback func(response *CreateImageDbResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
