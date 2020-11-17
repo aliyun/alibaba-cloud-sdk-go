@@ -21,7 +21,6 @@ import (
 )
 
 // ListConfigRules invokes the config.ListConfigRules API synchronously
-// api document: https://help.aliyun.com/api/config/listconfigrules.html
 func (client *Client) ListConfigRules(request *ListConfigRulesRequest) (response *ListConfigRulesResponse, err error) {
 	response = CreateListConfigRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListConfigRules(request *ListConfigRulesRequest) (response
 }
 
 // ListConfigRulesWithChan invokes the config.ListConfigRules API asynchronously
-// api document: https://help.aliyun.com/api/config/listconfigrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListConfigRulesWithChan(request *ListConfigRulesRequest) (<-chan *ListConfigRulesResponse, <-chan error) {
 	responseChan := make(chan *ListConfigRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListConfigRulesWithChan(request *ListConfigRulesRequest) (
 }
 
 // ListConfigRulesWithCallback invokes the config.ListConfigRules API asynchronously
-// api document: https://help.aliyun.com/api/config/listconfigrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListConfigRulesWithCallback(request *ListConfigRulesRequest, callback func(response *ListConfigRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,14 +71,15 @@ func (client *Client) ListConfigRulesWithCallback(request *ListConfigRulesReques
 // ListConfigRulesRequest is the request struct for api ListConfigRules
 type ListConfigRulesRequest struct {
 	*requests.RpcRequest
-	MultiAccount    requests.Boolean `position:"Query" name:"MultiAccount"`
-	MessageType     string           `position:"Query" name:"MessageType"`
-	ConfigRuleState string           `position:"Query" name:"ConfigRuleState"`
-	RiskLevel       requests.Integer `position:"Query" name:"RiskLevel"`
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	ComplianceType  string           `position:"Query" name:"ComplianceType"`
-	MemberId        requests.Integer `position:"Query" name:"MemberId"`
+	MultiAccount      requests.Boolean `position:"Query" name:"MultiAccount"`
+	MessageType       string           `position:"Query" name:"MessageType"`
+	ConfigRuleState   string           `position:"Query" name:"ConfigRuleState"`
+	PageNumber        requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize          requests.Integer `position:"Query" name:"PageSize"`
+	ComplianceType    string           `position:"Query" name:"ComplianceType"`
+	ConfigRuleSceneId string           `position:"Query" name:"ConfigRuleSceneId"`
+	RiskLevel         requests.Integer `position:"Query" name:"RiskLevel"`
+	MemberId          requests.Integer `position:"Query" name:"MemberId"`
 }
 
 // ListConfigRulesResponse is the response struct for api ListConfigRules
@@ -98,7 +94,7 @@ func CreateListConfigRulesRequest() (request *ListConfigRulesRequest) {
 	request = &ListConfigRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "ListConfigRules", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "ListConfigRules", "Config", "openAPI")
 	request.Method = requests.GET
 	return
 }

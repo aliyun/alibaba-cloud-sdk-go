@@ -29,4 +29,5 @@ type ConfigurationListItem struct {
 	ResourceName       string `json:"ResourceName" xml:"ResourceName"`
 	ResourceType       string `json:"ResourceType" xml:"ResourceType"`
 	Tags               string `json:"Tags" xml:"Tags"`
+	ResourceEventType  string `json:"ResourceEventType" xml:"ResourceEventType"`
 }

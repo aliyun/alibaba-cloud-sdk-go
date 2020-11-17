@@ -21,7 +21,6 @@ import (
 )
 
 // GetResourceComplianceTimeline invokes the config.GetResourceComplianceTimeline API synchronously
-// api document: https://help.aliyun.com/api/config/getresourcecompliancetimeline.html
 func (client *Client) GetResourceComplianceTimeline(request *GetResourceComplianceTimelineRequest) (response *GetResourceComplianceTimelineResponse, err error) {
 	response = CreateGetResourceComplianceTimelineResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetResourceComplianceTimeline(request *GetResourceComplian
 }
 
 // GetResourceComplianceTimelineWithChan invokes the config.GetResourceComplianceTimeline API asynchronously
-// api document: https://help.aliyun.com/api/config/getresourcecompliancetimeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetResourceComplianceTimelineWithChan(request *GetResourceComplianceTimelineRequest) (<-chan *GetResourceComplianceTimelineResponse, <-chan error) {
 	responseChan := make(chan *GetResourceComplianceTimelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetResourceComplianceTimelineWithChan(request *GetResource
 }
 
 // GetResourceComplianceTimelineWithCallback invokes the config.GetResourceComplianceTimeline API asynchronously
-// api document: https://help.aliyun.com/api/config/getresourcecompliancetimeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetResourceComplianceTimelineWithCallback(request *GetResourceComplianceTimelineRequest, callback func(response *GetResourceComplianceTimelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateGetResourceComplianceTimelineRequest() (request *GetResourceComplianc
 	request = &GetResourceComplianceTimelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "GetResourceComplianceTimeline", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "GetResourceComplianceTimeline", "Config", "openAPI")
 	request.Method = requests.GET
 	return
 }

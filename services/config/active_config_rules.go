@@ -21,7 +21,6 @@ import (
 )
 
 // ActiveConfigRules invokes the config.ActiveConfigRules API synchronously
-// api document: https://help.aliyun.com/api/config/activeconfigrules.html
 func (client *Client) ActiveConfigRules(request *ActiveConfigRulesRequest) (response *ActiveConfigRulesResponse, err error) {
 	response = CreateActiveConfigRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ActiveConfigRules(request *ActiveConfigRulesRequest) (resp
 }
 
 // ActiveConfigRulesWithChan invokes the config.ActiveConfigRules API asynchronously
-// api document: https://help.aliyun.com/api/config/activeconfigrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActiveConfigRulesWithChan(request *ActiveConfigRulesRequest) (<-chan *ActiveConfigRulesResponse, <-chan error) {
 	responseChan := make(chan *ActiveConfigRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ActiveConfigRulesWithChan(request *ActiveConfigRulesReques
 }
 
 // ActiveConfigRulesWithCallback invokes the config.ActiveConfigRules API asynchronously
-// api document: https://help.aliyun.com/api/config/activeconfigrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActiveConfigRulesWithCallback(request *ActiveConfigRulesRequest, callback func(response *ActiveConfigRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateActiveConfigRulesRequest() (request *ActiveConfigRulesRequest) {
 	request = &ActiveConfigRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "ActiveConfigRules", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "ActiveConfigRules", "Config", "openAPI")
 	request.Method = requests.POST
 	return
 }

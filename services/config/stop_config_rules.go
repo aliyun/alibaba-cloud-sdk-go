@@ -21,7 +21,6 @@ import (
 )
 
 // StopConfigRules invokes the config.StopConfigRules API synchronously
-// api document: https://help.aliyun.com/api/config/stopconfigrules.html
 func (client *Client) StopConfigRules(request *StopConfigRulesRequest) (response *StopConfigRulesResponse, err error) {
 	response = CreateStopConfigRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StopConfigRules(request *StopConfigRulesRequest) (response
 }
 
 // StopConfigRulesWithChan invokes the config.StopConfigRules API asynchronously
-// api document: https://help.aliyun.com/api/config/stopconfigrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopConfigRulesWithChan(request *StopConfigRulesRequest) (<-chan *StopConfigRulesResponse, <-chan error) {
 	responseChan := make(chan *StopConfigRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StopConfigRulesWithChan(request *StopConfigRulesRequest) (
 }
 
 // StopConfigRulesWithCallback invokes the config.StopConfigRules API asynchronously
-// api document: https://help.aliyun.com/api/config/stopconfigrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopConfigRulesWithCallback(request *StopConfigRulesRequest, callback func(response *StopConfigRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateStopConfigRulesRequest() (request *StopConfigRulesRequest) {
 	request = &StopConfigRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "StopConfigRules", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "StopConfigRules", "Config", "openAPI")
 	request.Method = requests.POST
 	return
 }

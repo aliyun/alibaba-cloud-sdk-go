@@ -21,7 +21,6 @@ import (
 )
 
 // ListDiscoveredResources invokes the config.ListDiscoveredResources API synchronously
-// api document: https://help.aliyun.com/api/config/listdiscoveredresources.html
 func (client *Client) ListDiscoveredResources(request *ListDiscoveredResourcesRequest) (response *ListDiscoveredResourcesResponse, err error) {
 	response = CreateListDiscoveredResourcesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDiscoveredResources(request *ListDiscoveredResourcesRe
 }
 
 // ListDiscoveredResourcesWithChan invokes the config.ListDiscoveredResources API asynchronously
-// api document: https://help.aliyun.com/api/config/listdiscoveredresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDiscoveredResourcesWithChan(request *ListDiscoveredResourcesRequest) (<-chan *ListDiscoveredResourcesResponse, <-chan error) {
 	responseChan := make(chan *ListDiscoveredResourcesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDiscoveredResourcesWithChan(request *ListDiscoveredRes
 }
 
 // ListDiscoveredResourcesWithCallback invokes the config.ListDiscoveredResources API asynchronously
-// api document: https://help.aliyun.com/api/config/listdiscoveredresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDiscoveredResourcesWithCallback(request *ListDiscoveredResourcesRequest, callback func(response *ListDiscoveredResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateListDiscoveredResourcesRequest() (request *ListDiscoveredResourcesReq
 	request = &ListDiscoveredResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "ListDiscoveredResources", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "ListDiscoveredResources", "Config", "openAPI")
 	request.Method = requests.GET
 	return
 }

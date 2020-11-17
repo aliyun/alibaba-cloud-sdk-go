@@ -21,7 +21,6 @@ import (
 )
 
 // StartConfigurationRecorder invokes the config.StartConfigurationRecorder API synchronously
-// api document: https://help.aliyun.com/api/config/startconfigurationrecorder.html
 func (client *Client) StartConfigurationRecorder(request *StartConfigurationRecorderRequest) (response *StartConfigurationRecorderResponse, err error) {
 	response = CreateStartConfigurationRecorderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartConfigurationRecorder(request *StartConfigurationReco
 }
 
 // StartConfigurationRecorderWithChan invokes the config.StartConfigurationRecorder API asynchronously
-// api document: https://help.aliyun.com/api/config/startconfigurationrecorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartConfigurationRecorderWithChan(request *StartConfigurationRecorderRequest) (<-chan *StartConfigurationRecorderResponse, <-chan error) {
 	responseChan := make(chan *StartConfigurationRecorderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartConfigurationRecorderWithChan(request *StartConfigura
 }
 
 // StartConfigurationRecorderWithCallback invokes the config.StartConfigurationRecorder API asynchronously
-// api document: https://help.aliyun.com/api/config/startconfigurationrecorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartConfigurationRecorderWithCallback(request *StartConfigurationRecorderRequest, callback func(response *StartConfigurationRecorderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateStartConfigurationRecorderRequest() (request *StartConfigurationRecor
 	request = &StartConfigurationRecorderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "StartConfigurationRecorder", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "StartConfigurationRecorder", "Config", "openAPI")
 	request.Method = requests.POST
 	return
 }

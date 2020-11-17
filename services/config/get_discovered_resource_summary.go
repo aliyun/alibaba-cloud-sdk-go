@@ -21,7 +21,6 @@ import (
 )
 
 // GetDiscoveredResourceSummary invokes the config.GetDiscoveredResourceSummary API synchronously
-// api document: https://help.aliyun.com/api/config/getdiscoveredresourcesummary.html
 func (client *Client) GetDiscoveredResourceSummary(request *GetDiscoveredResourceSummaryRequest) (response *GetDiscoveredResourceSummaryResponse, err error) {
 	response = CreateGetDiscoveredResourceSummaryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetDiscoveredResourceSummary(request *GetDiscoveredResourc
 }
 
 // GetDiscoveredResourceSummaryWithChan invokes the config.GetDiscoveredResourceSummary API asynchronously
-// api document: https://help.aliyun.com/api/config/getdiscoveredresourcesummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDiscoveredResourceSummaryWithChan(request *GetDiscoveredResourceSummaryRequest) (<-chan *GetDiscoveredResourceSummaryResponse, <-chan error) {
 	responseChan := make(chan *GetDiscoveredResourceSummaryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetDiscoveredResourceSummaryWithChan(request *GetDiscovere
 }
 
 // GetDiscoveredResourceSummaryWithCallback invokes the config.GetDiscoveredResourceSummary API asynchronously
-// api document: https://help.aliyun.com/api/config/getdiscoveredresourcesummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDiscoveredResourceSummaryWithCallback(request *GetDiscoveredResourceSummaryRequest, callback func(response *GetDiscoveredResourceSummaryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateGetDiscoveredResourceSummaryRequest() (request *GetDiscoveredResource
 	request = &GetDiscoveredResourceSummaryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "GetDiscoveredResourceSummary", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "GetDiscoveredResourceSummary", "Config", "openAPI")
 	request.Method = requests.GET
 	return
 }

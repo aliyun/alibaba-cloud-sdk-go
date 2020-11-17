@@ -21,7 +21,6 @@ import (
 )
 
 // PutDeliveryChannel invokes the config.PutDeliveryChannel API synchronously
-// api document: https://help.aliyun.com/api/config/putdeliverychannel.html
 func (client *Client) PutDeliveryChannel(request *PutDeliveryChannelRequest) (response *PutDeliveryChannelResponse, err error) {
 	response = CreatePutDeliveryChannelResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PutDeliveryChannel(request *PutDeliveryChannelRequest) (re
 }
 
 // PutDeliveryChannelWithChan invokes the config.PutDeliveryChannel API asynchronously
-// api document: https://help.aliyun.com/api/config/putdeliverychannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutDeliveryChannelWithChan(request *PutDeliveryChannelRequest) (<-chan *PutDeliveryChannelResponse, <-chan error) {
 	responseChan := make(chan *PutDeliveryChannelResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PutDeliveryChannelWithChan(request *PutDeliveryChannelRequ
 }
 
 // PutDeliveryChannelWithCallback invokes the config.PutDeliveryChannel API asynchronously
-// api document: https://help.aliyun.com/api/config/putdeliverychannel.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutDeliveryChannelWithCallback(request *PutDeliveryChannelRequest, callback func(response *PutDeliveryChannelResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreatePutDeliveryChannelRequest() (request *PutDeliveryChannelRequest) {
 	request = &PutDeliveryChannelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "PutDeliveryChannel", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "PutDeliveryChannel", "Config", "openAPI")
 	request.Method = requests.POST
 	return
 }

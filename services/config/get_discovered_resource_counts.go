@@ -21,7 +21,6 @@ import (
 )
 
 // GetDiscoveredResourceCounts invokes the config.GetDiscoveredResourceCounts API synchronously
-// api document: https://help.aliyun.com/api/config/getdiscoveredresourcecounts.html
 func (client *Client) GetDiscoveredResourceCounts(request *GetDiscoveredResourceCountsRequest) (response *GetDiscoveredResourceCountsResponse, err error) {
 	response = CreateGetDiscoveredResourceCountsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetDiscoveredResourceCounts(request *GetDiscoveredResource
 }
 
 // GetDiscoveredResourceCountsWithChan invokes the config.GetDiscoveredResourceCounts API asynchronously
-// api document: https://help.aliyun.com/api/config/getdiscoveredresourcecounts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDiscoveredResourceCountsWithChan(request *GetDiscoveredResourceCountsRequest) (<-chan *GetDiscoveredResourceCountsResponse, <-chan error) {
 	responseChan := make(chan *GetDiscoveredResourceCountsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetDiscoveredResourceCountsWithChan(request *GetDiscovered
 }
 
 // GetDiscoveredResourceCountsWithCallback invokes the config.GetDiscoveredResourceCounts API asynchronously
-// api document: https://help.aliyun.com/api/config/getdiscoveredresourcecounts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDiscoveredResourceCountsWithCallback(request *GetDiscoveredResourceCountsRequest, callback func(response *GetDiscoveredResourceCountsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateGetDiscoveredResourceCountsRequest() (request *GetDiscoveredResourceC
 	request = &GetDiscoveredResourceCountsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "GetDiscoveredResourceCounts", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "GetDiscoveredResourceCounts", "Config", "openAPI")
 	request.Method = requests.GET
 	return
 }

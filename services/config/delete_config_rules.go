@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteConfigRules invokes the config.DeleteConfigRules API synchronously
-// api document: https://help.aliyun.com/api/config/deleteconfigrules.html
 func (client *Client) DeleteConfigRules(request *DeleteConfigRulesRequest) (response *DeleteConfigRulesResponse, err error) {
 	response = CreateDeleteConfigRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteConfigRules(request *DeleteConfigRulesRequest) (resp
 }
 
 // DeleteConfigRulesWithChan invokes the config.DeleteConfigRules API asynchronously
-// api document: https://help.aliyun.com/api/config/deleteconfigrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteConfigRulesWithChan(request *DeleteConfigRulesRequest) (<-chan *DeleteConfigRulesResponse, <-chan error) {
 	responseChan := make(chan *DeleteConfigRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteConfigRulesWithChan(request *DeleteConfigRulesReques
 }
 
 // DeleteConfigRulesWithCallback invokes the config.DeleteConfigRules API asynchronously
-// api document: https://help.aliyun.com/api/config/deleteconfigrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteConfigRulesWithCallback(request *DeleteConfigRulesRequest, callback func(response *DeleteConfigRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateDeleteConfigRulesRequest() (request *DeleteConfigRulesRequest) {
 	request = &DeleteConfigRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "DeleteConfigRules", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "DeleteConfigRules", "Config", "openAPI")
 	request.Method = requests.POST
 	return
 }

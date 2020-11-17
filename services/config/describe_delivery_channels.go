@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDeliveryChannels invokes the config.DescribeDeliveryChannels API synchronously
-// api document: https://help.aliyun.com/api/config/describedeliverychannels.html
 func (client *Client) DescribeDeliveryChannels(request *DescribeDeliveryChannelsRequest) (response *DescribeDeliveryChannelsResponse, err error) {
 	response = CreateDescribeDeliveryChannelsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDeliveryChannels(request *DescribeDeliveryChannels
 }
 
 // DescribeDeliveryChannelsWithChan invokes the config.DescribeDeliveryChannels API asynchronously
-// api document: https://help.aliyun.com/api/config/describedeliverychannels.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeliveryChannelsWithChan(request *DescribeDeliveryChannelsRequest) (<-chan *DescribeDeliveryChannelsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDeliveryChannelsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDeliveryChannelsWithChan(request *DescribeDelivery
 }
 
 // DescribeDeliveryChannelsWithCallback invokes the config.DescribeDeliveryChannels API asynchronously
-// api document: https://help.aliyun.com/api/config/describedeliverychannels.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeliveryChannelsWithCallback(request *DescribeDeliveryChannelsRequest, callback func(response *DescribeDeliveryChannelsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreateDescribeDeliveryChannelsRequest() (request *DescribeDeliveryChannelsR
 	request = &DescribeDeliveryChannelsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "DescribeDeliveryChannels", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "DescribeDeliveryChannels", "Config", "openAPI")
 	request.Method = requests.GET
 	return
 }

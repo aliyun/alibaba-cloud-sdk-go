@@ -21,7 +21,6 @@ import (
 )
 
 // PutConfigurationRecorder invokes the config.PutConfigurationRecorder API synchronously
-// api document: https://help.aliyun.com/api/config/putconfigurationrecorder.html
 func (client *Client) PutConfigurationRecorder(request *PutConfigurationRecorderRequest) (response *PutConfigurationRecorderResponse, err error) {
 	response = CreatePutConfigurationRecorderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PutConfigurationRecorder(request *PutConfigurationRecorder
 }
 
 // PutConfigurationRecorderWithChan invokes the config.PutConfigurationRecorder API asynchronously
-// api document: https://help.aliyun.com/api/config/putconfigurationrecorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutConfigurationRecorderWithChan(request *PutConfigurationRecorderRequest) (<-chan *PutConfigurationRecorderResponse, <-chan error) {
 	responseChan := make(chan *PutConfigurationRecorderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PutConfigurationRecorderWithChan(request *PutConfiguration
 }
 
 // PutConfigurationRecorderWithCallback invokes the config.PutConfigurationRecorder API asynchronously
-// api document: https://help.aliyun.com/api/config/putconfigurationrecorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutConfigurationRecorderWithCallback(request *PutConfigurationRecorderRequest, callback func(response *PutConfigurationRecorderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,7 @@ func CreatePutConfigurationRecorderRequest() (request *PutConfigurationRecorderR
 	request = &PutConfigurationRecorderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "PutConfigurationRecorder", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "PutConfigurationRecorder", "Config", "openAPI")
 	request.Method = requests.POST
 	return
 }

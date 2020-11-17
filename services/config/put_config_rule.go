@@ -21,7 +21,6 @@ import (
 )
 
 // PutConfigRule invokes the config.PutConfigRule API synchronously
-// api document: https://help.aliyun.com/api/config/putconfigrule.html
 func (client *Client) PutConfigRule(request *PutConfigRuleRequest) (response *PutConfigRuleResponse, err error) {
 	response = CreatePutConfigRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PutConfigRule(request *PutConfigRuleRequest) (response *Pu
 }
 
 // PutConfigRuleWithChan invokes the config.PutConfigRule API asynchronously
-// api document: https://help.aliyun.com/api/config/putconfigrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutConfigRuleWithChan(request *PutConfigRuleRequest) (<-chan *PutConfigRuleResponse, <-chan error) {
 	responseChan := make(chan *PutConfigRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PutConfigRuleWithChan(request *PutConfigRuleRequest) (<-ch
 }
 
 // PutConfigRuleWithCallback invokes the config.PutConfigRule API asynchronously
-// api document: https://help.aliyun.com/api/config/putconfigrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutConfigRuleWithCallback(request *PutConfigRuleRequest, callback func(response *PutConfigRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,7 +99,7 @@ func CreatePutConfigRuleRequest() (request *PutConfigRuleRequest) {
 	request = &PutConfigRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "PutConfigRule", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "PutConfigRule", "Config", "openAPI")
 	request.Method = requests.POST
 	return
 }

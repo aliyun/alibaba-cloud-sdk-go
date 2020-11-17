@@ -21,7 +21,6 @@ import (
 )
 
 // GetSupportedResourceTypes invokes the config.GetSupportedResourceTypes API synchronously
-// api document: https://help.aliyun.com/api/config/getsupportedresourcetypes.html
 func (client *Client) GetSupportedResourceTypes(request *GetSupportedResourceTypesRequest) (response *GetSupportedResourceTypesResponse, err error) {
 	response = CreateGetSupportedResourceTypesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetSupportedResourceTypes(request *GetSupportedResourceTyp
 }
 
 // GetSupportedResourceTypesWithChan invokes the config.GetSupportedResourceTypes API asynchronously
-// api document: https://help.aliyun.com/api/config/getsupportedresourcetypes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSupportedResourceTypesWithChan(request *GetSupportedResourceTypesRequest) (<-chan *GetSupportedResourceTypesResponse, <-chan error) {
 	responseChan := make(chan *GetSupportedResourceTypesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetSupportedResourceTypesWithChan(request *GetSupportedRes
 }
 
 // GetSupportedResourceTypesWithCallback invokes the config.GetSupportedResourceTypes API asynchronously
-// api document: https://help.aliyun.com/api/config/getsupportedresourcetypes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSupportedResourceTypesWithCallback(request *GetSupportedResourceTypesRequest, callback func(response *GetSupportedResourceTypesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,7 +85,7 @@ func CreateGetSupportedResourceTypesRequest() (request *GetSupportedResourceType
 	request = &GetSupportedResourceTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "GetSupportedResourceTypes", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "GetSupportedResourceTypes", "Config", "openAPI")
 	request.Method = requests.GET
 	return
 }

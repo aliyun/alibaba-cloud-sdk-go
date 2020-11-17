@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeConfigRule invokes the config.DescribeConfigRule API synchronously
-// api document: https://help.aliyun.com/api/config/describeconfigrule.html
 func (client *Client) DescribeConfigRule(request *DescribeConfigRuleRequest) (response *DescribeConfigRuleResponse, err error) {
 	response = CreateDescribeConfigRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeConfigRule(request *DescribeConfigRuleRequest) (re
 }
 
 // DescribeConfigRuleWithChan invokes the config.DescribeConfigRule API asynchronously
-// api document: https://help.aliyun.com/api/config/describeconfigrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeConfigRuleWithChan(request *DescribeConfigRuleRequest) (<-chan *DescribeConfigRuleResponse, <-chan error) {
 	responseChan := make(chan *DescribeConfigRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeConfigRuleWithChan(request *DescribeConfigRuleRequ
 }
 
 // DescribeConfigRuleWithCallback invokes the config.DescribeConfigRule API asynchronously
-// api document: https://help.aliyun.com/api/config/describeconfigrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeConfigRuleWithCallback(request *DescribeConfigRuleRequest, callback func(response *DescribeConfigRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateDescribeConfigRuleRequest() (request *DescribeConfigRuleRequest) {
 	request = &DescribeConfigRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "DescribeConfigRule", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "DescribeConfigRule", "Config", "openAPI")
 	request.Method = requests.GET
 	return
 }

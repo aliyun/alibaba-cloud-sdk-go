@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDiscoveredResource invokes the config.DescribeDiscoveredResource API synchronously
-// api document: https://help.aliyun.com/api/config/describediscoveredresource.html
 func (client *Client) DescribeDiscoveredResource(request *DescribeDiscoveredResourceRequest) (response *DescribeDiscoveredResourceResponse, err error) {
 	response = CreateDescribeDiscoveredResourceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDiscoveredResource(request *DescribeDiscoveredReso
 }
 
 // DescribeDiscoveredResourceWithChan invokes the config.DescribeDiscoveredResource API asynchronously
-// api document: https://help.aliyun.com/api/config/describediscoveredresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDiscoveredResourceWithChan(request *DescribeDiscoveredResourceRequest) (<-chan *DescribeDiscoveredResourceResponse, <-chan error) {
 	responseChan := make(chan *DescribeDiscoveredResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDiscoveredResourceWithChan(request *DescribeDiscov
 }
 
 // DescribeDiscoveredResourceWithCallback invokes the config.DescribeDiscoveredResource API asynchronously
-// api document: https://help.aliyun.com/api/config/describediscoveredresource.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDiscoveredResourceWithCallback(request *DescribeDiscoveredResourceRequest, callback func(response *DescribeDiscoveredResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,7 @@ func CreateDescribeDiscoveredResourceRequest() (request *DescribeDiscoveredResou
 	request = &DescribeDiscoveredResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "DescribeDiscoveredResource", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "DescribeDiscoveredResource", "Config", "openAPI")
 	request.Method = requests.GET
 	return
 }

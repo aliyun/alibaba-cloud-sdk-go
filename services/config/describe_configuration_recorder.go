@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeConfigurationRecorder invokes the config.DescribeConfigurationRecorder API synchronously
-// api document: https://help.aliyun.com/api/config/describeconfigurationrecorder.html
 func (client *Client) DescribeConfigurationRecorder(request *DescribeConfigurationRecorderRequest) (response *DescribeConfigurationRecorderResponse, err error) {
 	response = CreateDescribeConfigurationRecorderResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeConfigurationRecorder(request *DescribeConfigurati
 }
 
 // DescribeConfigurationRecorderWithChan invokes the config.DescribeConfigurationRecorder API asynchronously
-// api document: https://help.aliyun.com/api/config/describeconfigurationrecorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeConfigurationRecorderWithChan(request *DescribeConfigurationRecorderRequest) (<-chan *DescribeConfigurationRecorderResponse, <-chan error) {
 	responseChan := make(chan *DescribeConfigurationRecorderResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeConfigurationRecorderWithChan(request *DescribeCon
 }
 
 // DescribeConfigurationRecorderWithCallback invokes the config.DescribeConfigurationRecorder API asynchronously
-// api document: https://help.aliyun.com/api/config/describeconfigurationrecorder.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeConfigurationRecorderWithCallback(request *DescribeConfigurationRecorderRequest, callback func(response *DescribeConfigurationRecorderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,7 +85,7 @@ func CreateDescribeConfigurationRecorderRequest() (request *DescribeConfiguratio
 	request = &DescribeConfigurationRecorderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "DescribeConfigurationRecorder", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "DescribeConfigurationRecorder", "Config", "openAPI")
 	request.Method = requests.GET
 	return
 }

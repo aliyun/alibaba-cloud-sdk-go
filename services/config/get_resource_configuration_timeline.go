@@ -21,7 +21,6 @@ import (
 )
 
 // GetResourceConfigurationTimeline invokes the config.GetResourceConfigurationTimeline API synchronously
-// api document: https://help.aliyun.com/api/config/getresourceconfigurationtimeline.html
 func (client *Client) GetResourceConfigurationTimeline(request *GetResourceConfigurationTimelineRequest) (response *GetResourceConfigurationTimelineResponse, err error) {
 	response = CreateGetResourceConfigurationTimelineResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetResourceConfigurationTimeline(request *GetResourceConfi
 }
 
 // GetResourceConfigurationTimelineWithChan invokes the config.GetResourceConfigurationTimeline API asynchronously
-// api document: https://help.aliyun.com/api/config/getresourceconfigurationtimeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetResourceConfigurationTimelineWithChan(request *GetResourceConfigurationTimelineRequest) (<-chan *GetResourceConfigurationTimelineResponse, <-chan error) {
 	responseChan := make(chan *GetResourceConfigurationTimelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetResourceConfigurationTimelineWithChan(request *GetResou
 }
 
 // GetResourceConfigurationTimelineWithCallback invokes the config.GetResourceConfigurationTimeline API asynchronously
-// api document: https://help.aliyun.com/api/config/getresourceconfigurationtimeline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetResourceConfigurationTimelineWithCallback(request *GetResourceConfigurationTimelineRequest, callback func(response *GetResourceConfigurationTimelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,7 +94,7 @@ func CreateGetResourceConfigurationTimelineRequest() (request *GetResourceConfig
 	request = &GetResourceConfigurationTimelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "GetResourceConfigurationTimeline", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "GetResourceConfigurationTimeline", "Config", "openAPI")
 	request.Method = requests.GET
 	return
 }

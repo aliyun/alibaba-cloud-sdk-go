@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeComplianceSummary invokes the config.DescribeComplianceSummary API synchronously
-// api document: https://help.aliyun.com/api/config/describecompliancesummary.html
 func (client *Client) DescribeComplianceSummary(request *DescribeComplianceSummaryRequest) (response *DescribeComplianceSummaryResponse, err error) {
 	response = CreateDescribeComplianceSummaryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeComplianceSummary(request *DescribeComplianceSumma
 }
 
 // DescribeComplianceSummaryWithChan invokes the config.DescribeComplianceSummary API asynchronously
-// api document: https://help.aliyun.com/api/config/describecompliancesummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeComplianceSummaryWithChan(request *DescribeComplianceSummaryRequest) (<-chan *DescribeComplianceSummaryResponse, <-chan error) {
 	responseChan := make(chan *DescribeComplianceSummaryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeComplianceSummaryWithChan(request *DescribeComplia
 }
 
 // DescribeComplianceSummaryWithCallback invokes the config.DescribeComplianceSummary API asynchronously
-// api document: https://help.aliyun.com/api/config/describecompliancesummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeComplianceSummaryWithCallback(request *DescribeComplianceSummaryRequest, callback func(response *DescribeComplianceSummaryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,7 @@ func CreateDescribeComplianceSummaryRequest() (request *DescribeComplianceSummar
 	request = &DescribeComplianceSummaryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "DescribeComplianceSummary", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "DescribeComplianceSummary", "Config", "openAPI")
 	request.Method = requests.GET
 	return
 }

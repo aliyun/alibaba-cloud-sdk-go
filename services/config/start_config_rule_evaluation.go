@@ -21,7 +21,6 @@ import (
 )
 
 // StartConfigRuleEvaluation invokes the config.StartConfigRuleEvaluation API synchronously
-// api document: https://help.aliyun.com/api/config/startconfigruleevaluation.html
 func (client *Client) StartConfigRuleEvaluation(request *StartConfigRuleEvaluationRequest) (response *StartConfigRuleEvaluationResponse, err error) {
 	response = CreateStartConfigRuleEvaluationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartConfigRuleEvaluation(request *StartConfigRuleEvaluati
 }
 
 // StartConfigRuleEvaluationWithChan invokes the config.StartConfigRuleEvaluation API asynchronously
-// api document: https://help.aliyun.com/api/config/startconfigruleevaluation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartConfigRuleEvaluationWithChan(request *StartConfigRuleEvaluationRequest) (<-chan *StartConfigRuleEvaluationResponse, <-chan error) {
 	responseChan := make(chan *StartConfigRuleEvaluationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartConfigRuleEvaluationWithChan(request *StartConfigRule
 }
 
 // StartConfigRuleEvaluationWithCallback invokes the config.StartConfigRuleEvaluation API asynchronously
-// api document: https://help.aliyun.com/api/config/startconfigruleevaluation.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartConfigRuleEvaluationWithCallback(request *StartConfigRuleEvaluationRequest, callback func(response *StartConfigRuleEvaluationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,7 @@ func CreateStartConfigRuleEvaluationRequest() (request *StartConfigRuleEvaluatio
 	request = &StartConfigRuleEvaluationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "StartConfigRuleEvaluation", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "StartConfigRuleEvaluation", "Config", "openAPI")
 	request.Method = requests.POST
 	return
 }

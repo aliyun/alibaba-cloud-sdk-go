@@ -1,3 +1,10 @@
+2020-11-17 Version: v1.61.657
+- Generated 2019-01-08 for `Config`.
+- Support event type in timeline of resource properties.
+- Support resourceOwnerId in evaluation result.
+- Support resource directory in config rule scene.
+- Fix terraform related bugs.
+
 2020-11-17 Version: v1.61.656
 - Generated 2017-08-01 for `polardb`.
 - Support ModifyDBClusterPrimaryZone.

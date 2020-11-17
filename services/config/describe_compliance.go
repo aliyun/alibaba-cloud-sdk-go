@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCompliance invokes the config.DescribeCompliance API synchronously
-// api document: https://help.aliyun.com/api/config/describecompliance.html
 func (client *Client) DescribeCompliance(request *DescribeComplianceRequest) (response *DescribeComplianceResponse, err error) {
 	response = CreateDescribeComplianceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCompliance(request *DescribeComplianceRequest) (re
 }
 
 // DescribeComplianceWithChan invokes the config.DescribeCompliance API asynchronously
-// api document: https://help.aliyun.com/api/config/describecompliance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeComplianceWithChan(request *DescribeComplianceRequest) (<-chan *DescribeComplianceResponse, <-chan error) {
 	responseChan := make(chan *DescribeComplianceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeComplianceWithChan(request *DescribeComplianceRequ
 }
 
 // DescribeComplianceWithCallback invokes the config.DescribeCompliance API asynchronously
-// api document: https://help.aliyun.com/api/config/describecompliance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeComplianceWithCallback(request *DescribeComplianceRequest, callback func(response *DescribeComplianceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,7 @@ func CreateDescribeComplianceRequest() (request *DescribeComplianceRequest) {
 	request = &DescribeComplianceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "DescribeCompliance", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "DescribeCompliance", "Config", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeEvaluationResults invokes the config.DescribeEvaluationResults API synchronously
-// api document: https://help.aliyun.com/api/config/describeevaluationresults.html
 func (client *Client) DescribeEvaluationResults(request *DescribeEvaluationResultsRequest) (response *DescribeEvaluationResultsResponse, err error) {
 	response = CreateDescribeEvaluationResultsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeEvaluationResults(request *DescribeEvaluationResul
 }
 
 // DescribeEvaluationResultsWithChan invokes the config.DescribeEvaluationResults API asynchronously
-// api document: https://help.aliyun.com/api/config/describeevaluationresults.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEvaluationResultsWithChan(request *DescribeEvaluationResultsRequest) (<-chan *DescribeEvaluationResultsResponse, <-chan error) {
 	responseChan := make(chan *DescribeEvaluationResultsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeEvaluationResultsWithChan(request *DescribeEvaluat
 }
 
 // DescribeEvaluationResultsWithCallback invokes the config.DescribeEvaluationResults API asynchronously
-// api document: https://help.aliyun.com/api/config/describeevaluationresults.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEvaluationResultsWithCallback(request *DescribeEvaluationResultsRequest, callback func(response *DescribeEvaluationResultsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,7 @@ func CreateDescribeEvaluationResultsRequest() (request *DescribeEvaluationResult
 	request = &DescribeEvaluationResultsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Config", "2019-01-08", "DescribeEvaluationResults", "config", "openAPI")
+	request.InitWithApiInfo("Config", "2019-01-08", "DescribeEvaluationResults", "Config", "openAPI")
 	request.Method = requests.GET
 	return
 }

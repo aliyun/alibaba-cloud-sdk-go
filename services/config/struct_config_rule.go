@@ -30,6 +30,7 @@ type ConfigRule struct {
 	AccountId                  int64                      `json:"AccountId" xml:"AccountId"`
 	SourceIdentifier           string                     `json:"SourceIdentifier" xml:"SourceIdentifier"`
 	Description                string                     `json:"Description" xml:"Description"`
+	MaximumExecutionFrequency  string                     `json:"MaximumExecutionFrequency" xml:"MaximumExecutionFrequency"`
 	Source                     Source                     `json:"Source" xml:"Source"`
 	ConfigRuleEvaluationStatus ConfigRuleEvaluationStatus `json:"ConfigRuleEvaluationStatus" xml:"ConfigRuleEvaluationStatus"`
 	CreateBy                   CreateBy                   `json:"CreateBy" xml:"CreateBy"`
