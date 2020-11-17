@@ -18,27 +18,28 @@ package polardb
 // DBCluster is a nested struct in polardb response
 type DBCluster struct {
 	DBNodeClass          string                      `json:"DBNodeClass" xml:"DBNodeClass"`
-	DeletionLock         int                         `json:"DeletionLock" xml:"DeletionLock"`
 	DBType               string                      `json:"DBType" xml:"DBType"`
-	DBVersion            string                      `json:"DBVersion" xml:"DBVersion"`
 	Engine               string                      `json:"Engine" xml:"Engine"`
-	PayType              string                      `json:"PayType" xml:"PayType"`
 	CreateTime           string                      `json:"CreateTime" xml:"CreateTime"`
 	DBClusterNetworkType string                      `json:"DBClusterNetworkType" xml:"DBClusterNetworkType"`
-	DBClusterId          string                      `json:"DBClusterId" xml:"DBClusterId"`
-	DBClusterStatus      string                      `json:"DBClusterStatus" xml:"DBClusterStatus"`
 	RegionId             string                      `json:"RegionId" xml:"RegionId"`
 	DeletedTime          string                      `json:"DeletedTime" xml:"DeletedTime"`
-	ZoneId               string                      `json:"ZoneId" xml:"ZoneId"`
 	DBNodeNumber         int                         `json:"DBNodeNumber" xml:"DBNodeNumber"`
 	ResourceGroupId      string                      `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	StorageUsed          int64                       `json:"StorageUsed" xml:"StorageUsed"`
-	IsDeleted            int                         `json:"IsDeleted" xml:"IsDeleted"`
-	DBClusterDescription string                      `json:"DBClusterDescription" xml:"DBClusterDescription"`
+	Role                 string                      `json:"Role" xml:"Role"`
 	ExpireTime           string                      `json:"ExpireTime" xml:"ExpireTime"`
 	VpcId                string                      `json:"VpcId" xml:"VpcId"`
 	Expired              string                      `json:"Expired" xml:"Expired"`
+	DeletionLock         int                         `json:"DeletionLock" xml:"DeletionLock"`
+	DBVersion            string                      `json:"DBVersion" xml:"DBVersion"`
+	PayType              string                      `json:"PayType" xml:"PayType"`
+	DBClusterId          string                      `json:"DBClusterId" xml:"DBClusterId"`
+	DBClusterStatus      string                      `json:"DBClusterStatus" xml:"DBClusterStatus"`
+	ZoneId               string                      `json:"ZoneId" xml:"ZoneId"`
+	StorageUsed          int64                       `json:"StorageUsed" xml:"StorageUsed"`
+	IsDeleted            int                         `json:"IsDeleted" xml:"IsDeleted"`
+	DBClusterDescription string                      `json:"DBClusterDescription" xml:"DBClusterDescription"`
 	LockMode             string                      `json:"LockMode" xml:"LockMode"`
-	DBNodes              DBNodesInDescribeDBClusters `json:"DBNodes" xml:"DBNodes"`
 	Tags                 TagsInDescribeDBClusters    `json:"Tags" xml:"Tags"`
+	DBNodes              DBNodesInDescribeDBClusters `json:"DBNodes" xml:"DBNodes"`
 }

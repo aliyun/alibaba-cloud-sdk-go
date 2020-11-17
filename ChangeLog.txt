@@ -1,3 +1,8 @@
+2020-11-17 Version: v1.61.656
+- Generated 2017-08-01 for `polardb`.
+- Support ModifyDBClusterPrimaryZone.
+- Support DescribeGlobalDatabaseNetworks.
+
 2020-11-17 Version: v1.61.655
 - Generated 2017-06-13 for `elasticsearch`.
 - Supported International-26888 Sites Region Endpoints.
