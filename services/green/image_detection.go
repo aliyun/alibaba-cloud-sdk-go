@@ -21,7 +21,6 @@ import (
 )
 
 // ImageDetection invokes the green.ImageDetection API synchronously
-// api document: https://help.aliyun.com/api/green/imagedetection.html
 func (client *Client) ImageDetection(request *ImageDetectionRequest) (response *ImageDetectionResponse, err error) {
 	response = CreateImageDetectionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ImageDetection(request *ImageDetectionRequest) (response *
 }
 
 // ImageDetectionWithChan invokes the green.ImageDetection API asynchronously
-// api document: https://help.aliyun.com/api/green/imagedetection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImageDetectionWithChan(request *ImageDetectionRequest) (<-chan *ImageDetectionResponse, <-chan error) {
 	responseChan := make(chan *ImageDetectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ImageDetectionWithChan(request *ImageDetectionRequest) (<-
 }
 
 // ImageDetectionWithCallback invokes the green.ImageDetection API asynchronously
-// api document: https://help.aliyun.com/api/green/imagedetection.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImageDetectionWithCallback(request *ImageDetectionRequest, callback func(response *ImageDetectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

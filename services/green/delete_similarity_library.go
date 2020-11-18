@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSimilarityLibrary invokes the green.DeleteSimilarityLibrary API synchronously
-// api document: https://help.aliyun.com/api/green/deletesimilaritylibrary.html
 func (client *Client) DeleteSimilarityLibrary(request *DeleteSimilarityLibraryRequest) (response *DeleteSimilarityLibraryResponse, err error) {
 	response = CreateDeleteSimilarityLibraryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSimilarityLibrary(request *DeleteSimilarityLibraryRe
 }
 
 // DeleteSimilarityLibraryWithChan invokes the green.DeleteSimilarityLibrary API asynchronously
-// api document: https://help.aliyun.com/api/green/deletesimilaritylibrary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSimilarityLibraryWithChan(request *DeleteSimilarityLibraryRequest) (<-chan *DeleteSimilarityLibraryResponse, <-chan error) {
 	responseChan := make(chan *DeleteSimilarityLibraryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSimilarityLibraryWithChan(request *DeleteSimilarityL
 }
 
 // DeleteSimilarityLibraryWithCallback invokes the green.DeleteSimilarityLibrary API asynchronously
-// api document: https://help.aliyun.com/api/green/deletesimilaritylibrary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSimilarityLibraryWithCallback(request *DeleteSimilarityLibraryRequest, callback func(response *DeleteSimilarityLibraryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

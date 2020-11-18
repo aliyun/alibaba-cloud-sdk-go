@@ -21,7 +21,6 @@ import (
 )
 
 // ImageResults invokes the green.ImageResults API synchronously
-// api document: https://help.aliyun.com/api/green/imageresults.html
 func (client *Client) ImageResults(request *ImageResultsRequest) (response *ImageResultsResponse, err error) {
 	response = CreateImageResultsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ImageResults(request *ImageResultsRequest) (response *Imag
 }
 
 // ImageResultsWithChan invokes the green.ImageResults API asynchronously
-// api document: https://help.aliyun.com/api/green/imageresults.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImageResultsWithChan(request *ImageResultsRequest) (<-chan *ImageResultsResponse, <-chan error) {
 	responseChan := make(chan *ImageResultsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ImageResultsWithChan(request *ImageResultsRequest) (<-chan
 }
 
 // ImageResultsWithCallback invokes the green.ImageResults API asynchronously
-// api document: https://help.aliyun.com/api/green/imageresults.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImageResultsWithCallback(request *ImageResultsRequest, callback func(response *ImageResultsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeWebsiteIndexPageBaseline invokes the green.DescribeWebsiteIndexPageBaseline API synchronously
-// api document: https://help.aliyun.com/api/green/describewebsiteindexpagebaseline.html
 func (client *Client) DescribeWebsiteIndexPageBaseline(request *DescribeWebsiteIndexPageBaselineRequest) (response *DescribeWebsiteIndexPageBaselineResponse, err error) {
 	response = CreateDescribeWebsiteIndexPageBaselineResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeWebsiteIndexPageBaseline(request *DescribeWebsiteI
 }
 
 // DescribeWebsiteIndexPageBaselineWithChan invokes the green.DescribeWebsiteIndexPageBaseline API asynchronously
-// api document: https://help.aliyun.com/api/green/describewebsiteindexpagebaseline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebsiteIndexPageBaselineWithChan(request *DescribeWebsiteIndexPageBaselineRequest) (<-chan *DescribeWebsiteIndexPageBaselineResponse, <-chan error) {
 	responseChan := make(chan *DescribeWebsiteIndexPageBaselineResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeWebsiteIndexPageBaselineWithChan(request *Describe
 }
 
 // DescribeWebsiteIndexPageBaselineWithCallback invokes the green.DescribeWebsiteIndexPageBaseline API asynchronously
-// api document: https://help.aliyun.com/api/green/describewebsiteindexpagebaseline.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebsiteIndexPageBaselineWithCallback(request *DescribeWebsiteIndexPageBaselineRequest, callback func(response *DescribeWebsiteIndexPageBaselineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

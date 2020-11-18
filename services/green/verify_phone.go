@@ -21,7 +21,6 @@ import (
 )
 
 // VerifyPhone invokes the green.VerifyPhone API synchronously
-// api document: https://help.aliyun.com/api/green/verifyphone.html
 func (client *Client) VerifyPhone(request *VerifyPhoneRequest) (response *VerifyPhoneResponse, err error) {
 	response = CreateVerifyPhoneResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VerifyPhone(request *VerifyPhoneRequest) (response *Verify
 }
 
 // VerifyPhoneWithChan invokes the green.VerifyPhone API asynchronously
-// api document: https://help.aliyun.com/api/green/verifyphone.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyPhoneWithChan(request *VerifyPhoneRequest) (<-chan *VerifyPhoneResponse, <-chan error) {
 	responseChan := make(chan *VerifyPhoneResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VerifyPhoneWithChan(request *VerifyPhoneRequest) (<-chan *
 }
 
 // VerifyPhoneWithCallback invokes the green.VerifyPhone API asynchronously
-// api document: https://help.aliyun.com/api/green/verifyphone.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyPhoneWithCallback(request *VerifyPhoneRequest, callback func(response *VerifyPhoneResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

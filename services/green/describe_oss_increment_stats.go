@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeOssIncrementStats invokes the green.DescribeOssIncrementStats API synchronously
-// api document: https://help.aliyun.com/api/green/describeossincrementstats.html
 func (client *Client) DescribeOssIncrementStats(request *DescribeOssIncrementStatsRequest) (response *DescribeOssIncrementStatsResponse, err error) {
 	response = CreateDescribeOssIncrementStatsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeOssIncrementStats(request *DescribeOssIncrementSta
 }
 
 // DescribeOssIncrementStatsWithChan invokes the green.DescribeOssIncrementStats API asynchronously
-// api document: https://help.aliyun.com/api/green/describeossincrementstats.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssIncrementStatsWithChan(request *DescribeOssIncrementStatsRequest) (<-chan *DescribeOssIncrementStatsResponse, <-chan error) {
 	responseChan := make(chan *DescribeOssIncrementStatsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeOssIncrementStatsWithChan(request *DescribeOssIncr
 }
 
 // DescribeOssIncrementStatsWithCallback invokes the green.DescribeOssIncrementStats API asynchronously
-// api document: https://help.aliyun.com/api/green/describeossincrementstats.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssIncrementStatsWithCallback(request *DescribeOssIncrementStatsRequest, callback func(response *DescribeOssIncrementStatsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

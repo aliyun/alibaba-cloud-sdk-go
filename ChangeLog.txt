@@ -1,3 +1,7 @@
+2020-11-18 Version: v1.61.658
+- Generated 2016-12-22, 2017-08-23, 2018-05-09 for `Green`.
+- Supported webpage scan.
+
 2020-11-17 Version: v1.61.657
 - Generated 2019-01-08 for `Config`.
 - Support event type in timeline of resource properties.

@@ -21,7 +21,6 @@ import (
 )
 
 // VoiceCancelScan invokes the green.VoiceCancelScan API synchronously
-// api document: https://help.aliyun.com/api/green/voicecancelscan.html
 func (client *Client) VoiceCancelScan(request *VoiceCancelScanRequest) (response *VoiceCancelScanResponse, err error) {
 	response = CreateVoiceCancelScanResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VoiceCancelScan(request *VoiceCancelScanRequest) (response
 }
 
 // VoiceCancelScanWithChan invokes the green.VoiceCancelScan API asynchronously
-// api document: https://help.aliyun.com/api/green/voicecancelscan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VoiceCancelScanWithChan(request *VoiceCancelScanRequest) (<-chan *VoiceCancelScanResponse, <-chan error) {
 	responseChan := make(chan *VoiceCancelScanResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VoiceCancelScanWithChan(request *VoiceCancelScanRequest) (
 }
 
 // VoiceCancelScanWithCallback invokes the green.VoiceCancelScan API asynchronously
-// api document: https://help.aliyun.com/api/green/voicecancelscan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VoiceCancelScanWithCallback(request *VoiceCancelScanRequest, callback func(response *VoiceCancelScanResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

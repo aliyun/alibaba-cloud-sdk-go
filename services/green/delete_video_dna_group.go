@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteVideoDnaGroup invokes the green.DeleteVideoDnaGroup API synchronously
-// api document: https://help.aliyun.com/api/green/deletevideodnagroup.html
 func (client *Client) DeleteVideoDnaGroup(request *DeleteVideoDnaGroupRequest) (response *DeleteVideoDnaGroupResponse, err error) {
 	response = CreateDeleteVideoDnaGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteVideoDnaGroup(request *DeleteVideoDnaGroupRequest) (
 }
 
 // DeleteVideoDnaGroupWithChan invokes the green.DeleteVideoDnaGroup API asynchronously
-// api document: https://help.aliyun.com/api/green/deletevideodnagroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVideoDnaGroupWithChan(request *DeleteVideoDnaGroupRequest) (<-chan *DeleteVideoDnaGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteVideoDnaGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteVideoDnaGroupWithChan(request *DeleteVideoDnaGroupRe
 }
 
 // DeleteVideoDnaGroupWithCallback invokes the green.DeleteVideoDnaGroup API asynchronously
-// api document: https://help.aliyun.com/api/green/deletevideodnagroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVideoDnaGroupWithCallback(request *DeleteVideoDnaGroupRequest, callback func(response *DeleteVideoDnaGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

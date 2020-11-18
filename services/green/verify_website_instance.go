@@ -21,7 +21,6 @@ import (
 )
 
 // VerifyWebsiteInstance invokes the green.VerifyWebsiteInstance API synchronously
-// api document: https://help.aliyun.com/api/green/verifywebsiteinstance.html
 func (client *Client) VerifyWebsiteInstance(request *VerifyWebsiteInstanceRequest) (response *VerifyWebsiteInstanceResponse, err error) {
 	response = CreateVerifyWebsiteInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VerifyWebsiteInstance(request *VerifyWebsiteInstanceReques
 }
 
 // VerifyWebsiteInstanceWithChan invokes the green.VerifyWebsiteInstance API asynchronously
-// api document: https://help.aliyun.com/api/green/verifywebsiteinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyWebsiteInstanceWithChan(request *VerifyWebsiteInstanceRequest) (<-chan *VerifyWebsiteInstanceResponse, <-chan error) {
 	responseChan := make(chan *VerifyWebsiteInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VerifyWebsiteInstanceWithChan(request *VerifyWebsiteInstan
 }
 
 // VerifyWebsiteInstanceWithCallback invokes the green.VerifyWebsiteInstance API asynchronously
-// api document: https://help.aliyun.com/api/green/verifywebsiteinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyWebsiteInstanceWithCallback(request *VerifyWebsiteInstanceRequest, callback func(response *VerifyWebsiteInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

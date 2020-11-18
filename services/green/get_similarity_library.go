@@ -21,7 +21,6 @@ import (
 )
 
 // GetSimilarityLibrary invokes the green.GetSimilarityLibrary API synchronously
-// api document: https://help.aliyun.com/api/green/getsimilaritylibrary.html
 func (client *Client) GetSimilarityLibrary(request *GetSimilarityLibraryRequest) (response *GetSimilarityLibraryResponse, err error) {
 	response = CreateGetSimilarityLibraryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetSimilarityLibrary(request *GetSimilarityLibraryRequest)
 }
 
 // GetSimilarityLibraryWithChan invokes the green.GetSimilarityLibrary API asynchronously
-// api document: https://help.aliyun.com/api/green/getsimilaritylibrary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSimilarityLibraryWithChan(request *GetSimilarityLibraryRequest) (<-chan *GetSimilarityLibraryResponse, <-chan error) {
 	responseChan := make(chan *GetSimilarityLibraryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetSimilarityLibraryWithChan(request *GetSimilarityLibrary
 }
 
 // GetSimilarityLibraryWithCallback invokes the green.GetSimilarityLibrary API asynchronously
-// api document: https://help.aliyun.com/api/green/getsimilaritylibrary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSimilarityLibraryWithCallback(request *GetSimilarityLibraryRequest, callback func(response *GetSimilarityLibraryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

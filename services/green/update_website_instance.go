@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateWebsiteInstance invokes the green.UpdateWebsiteInstance API synchronously
-// api document: https://help.aliyun.com/api/green/updatewebsiteinstance.html
 func (client *Client) UpdateWebsiteInstance(request *UpdateWebsiteInstanceRequest) (response *UpdateWebsiteInstanceResponse, err error) {
 	response = CreateUpdateWebsiteInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateWebsiteInstance(request *UpdateWebsiteInstanceReques
 }
 
 // UpdateWebsiteInstanceWithChan invokes the green.UpdateWebsiteInstance API asynchronously
-// api document: https://help.aliyun.com/api/green/updatewebsiteinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateWebsiteInstanceWithChan(request *UpdateWebsiteInstanceRequest) (<-chan *UpdateWebsiteInstanceResponse, <-chan error) {
 	responseChan := make(chan *UpdateWebsiteInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateWebsiteInstanceWithChan(request *UpdateWebsiteInstan
 }
 
 // UpdateWebsiteInstanceWithCallback invokes the green.UpdateWebsiteInstance API asynchronously
-// api document: https://help.aliyun.com/api/green/updatewebsiteinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateWebsiteInstanceWithCallback(request *UpdateWebsiteInstanceRequest, callback func(response *UpdateWebsiteInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

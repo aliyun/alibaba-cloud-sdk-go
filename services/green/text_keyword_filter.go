@@ -21,7 +21,6 @@ import (
 )
 
 // TextKeywordFilter invokes the green.TextKeywordFilter API synchronously
-// api document: https://help.aliyun.com/api/green/textkeywordfilter.html
 func (client *Client) TextKeywordFilter(request *TextKeywordFilterRequest) (response *TextKeywordFilterResponse, err error) {
 	response = CreateTextKeywordFilterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) TextKeywordFilter(request *TextKeywordFilterRequest) (resp
 }
 
 // TextKeywordFilterWithChan invokes the green.TextKeywordFilter API asynchronously
-// api document: https://help.aliyun.com/api/green/textkeywordfilter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TextKeywordFilterWithChan(request *TextKeywordFilterRequest) (<-chan *TextKeywordFilterResponse, <-chan error) {
 	responseChan := make(chan *TextKeywordFilterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) TextKeywordFilterWithChan(request *TextKeywordFilterReques
 }
 
 // TextKeywordFilterWithCallback invokes the green.TextKeywordFilter API asynchronously
-// api document: https://help.aliyun.com/api/green/textkeywordfilter.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TextKeywordFilterWithCallback(request *TextKeywordFilterRequest, callback func(response *TextKeywordFilterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeViewContent invokes the green.DescribeViewContent API synchronously
-// api document: https://help.aliyun.com/api/green/describeviewcontent.html
 func (client *Client) DescribeViewContent(request *DescribeViewContentRequest) (response *DescribeViewContentResponse, err error) {
 	response = CreateDescribeViewContentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeViewContent(request *DescribeViewContentRequest) (
 }
 
 // DescribeViewContentWithChan invokes the green.DescribeViewContent API asynchronously
-// api document: https://help.aliyun.com/api/green/describeviewcontent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeViewContentWithChan(request *DescribeViewContentRequest) (<-chan *DescribeViewContentResponse, <-chan error) {
 	responseChan := make(chan *DescribeViewContentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeViewContentWithChan(request *DescribeViewContentRe
 }
 
 // DescribeViewContentWithCallback invokes the green.DescribeViewContent API asynchronously
-// api document: https://help.aliyun.com/api/green/describeviewcontent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeViewContentWithCallback(request *DescribeViewContentRequest, callback func(response *DescribeViewContentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +78,7 @@ type DescribeViewContentRequest struct {
 	LibType      string           `position:"Query" name:"LibType"`
 	AuditResult  string           `position:"Query" name:"AuditResult"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	Keyword      string           `position:"Query" name:"Keyword"`
 	TaskId       string           `position:"Query" name:"TaskId"`
 	TotalCount   requests.Integer `position:"Query" name:"TotalCount"`
 	KeywordId    string           `position:"Query" name:"KeywordId"`

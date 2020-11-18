@@ -21,7 +21,6 @@ import (
 )
 
 // RefundCdiBaseBag invokes the green.RefundCdiBaseBag API synchronously
-// api document: https://help.aliyun.com/api/green/refundcdibasebag.html
 func (client *Client) RefundCdiBaseBag(request *RefundCdiBaseBagRequest) (response *RefundCdiBaseBagResponse, err error) {
 	response = CreateRefundCdiBaseBagResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RefundCdiBaseBag(request *RefundCdiBaseBagRequest) (respon
 }
 
 // RefundCdiBaseBagWithChan invokes the green.RefundCdiBaseBag API asynchronously
-// api document: https://help.aliyun.com/api/green/refundcdibasebag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefundCdiBaseBagWithChan(request *RefundCdiBaseBagRequest) (<-chan *RefundCdiBaseBagResponse, <-chan error) {
 	responseChan := make(chan *RefundCdiBaseBagResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RefundCdiBaseBagWithChan(request *RefundCdiBaseBagRequest)
 }
 
 // RefundCdiBaseBagWithCallback invokes the green.RefundCdiBaseBag API asynchronously
-// api document: https://help.aliyun.com/api/green/refundcdibasebag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefundCdiBaseBagWithCallback(request *RefundCdiBaseBagRequest, callback func(response *RefundCdiBaseBagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

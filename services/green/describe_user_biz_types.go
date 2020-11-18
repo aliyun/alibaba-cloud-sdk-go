@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUserBizTypes invokes the green.DescribeUserBizTypes API synchronously
-// api document: https://help.aliyun.com/api/green/describeuserbiztypes.html
 func (client *Client) DescribeUserBizTypes(request *DescribeUserBizTypesRequest) (response *DescribeUserBizTypesResponse, err error) {
 	response = CreateDescribeUserBizTypesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUserBizTypes(request *DescribeUserBizTypesRequest)
 }
 
 // DescribeUserBizTypesWithChan invokes the green.DescribeUserBizTypes API asynchronously
-// api document: https://help.aliyun.com/api/green/describeuserbiztypes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserBizTypesWithChan(request *DescribeUserBizTypesRequest) (<-chan *DescribeUserBizTypesResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserBizTypesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUserBizTypesWithChan(request *DescribeUserBizTypes
 }
 
 // DescribeUserBizTypesWithCallback invokes the green.DescribeUserBizTypes API asynchronously
-// api document: https://help.aliyun.com/api/green/describeuserbiztypes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserBizTypesWithCallback(request *DescribeUserBizTypesRequest, callback func(response *DescribeUserBizTypesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

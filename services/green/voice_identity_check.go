@@ -21,7 +21,6 @@ import (
 )
 
 // VoiceIdentityCheck invokes the green.VoiceIdentityCheck API synchronously
-// api document: https://help.aliyun.com/api/green/voiceidentitycheck.html
 func (client *Client) VoiceIdentityCheck(request *VoiceIdentityCheckRequest) (response *VoiceIdentityCheckResponse, err error) {
 	response = CreateVoiceIdentityCheckResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VoiceIdentityCheck(request *VoiceIdentityCheckRequest) (re
 }
 
 // VoiceIdentityCheckWithChan invokes the green.VoiceIdentityCheck API asynchronously
-// api document: https://help.aliyun.com/api/green/voiceidentitycheck.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VoiceIdentityCheckWithChan(request *VoiceIdentityCheckRequest) (<-chan *VoiceIdentityCheckResponse, <-chan error) {
 	responseChan := make(chan *VoiceIdentityCheckResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VoiceIdentityCheckWithChan(request *VoiceIdentityCheckRequ
 }
 
 // VoiceIdentityCheckWithCallback invokes the green.VoiceIdentityCheck API asynchronously
-// api document: https://help.aliyun.com/api/green/voiceidentitycheck.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VoiceIdentityCheckWithCallback(request *VoiceIdentityCheckRequest, callback func(response *VoiceIdentityCheckResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAuditSetting invokes the green.DescribeAuditSetting API synchronously
-// api document: https://help.aliyun.com/api/green/describeauditsetting.html
 func (client *Client) DescribeAuditSetting(request *DescribeAuditSettingRequest) (response *DescribeAuditSettingResponse, err error) {
 	response = CreateDescribeAuditSettingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAuditSetting(request *DescribeAuditSettingRequest)
 }
 
 // DescribeAuditSettingWithChan invokes the green.DescribeAuditSetting API asynchronously
-// api document: https://help.aliyun.com/api/green/describeauditsetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAuditSettingWithChan(request *DescribeAuditSettingRequest) (<-chan *DescribeAuditSettingResponse, <-chan error) {
 	responseChan := make(chan *DescribeAuditSettingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAuditSettingWithChan(request *DescribeAuditSetting
 }
 
 // DescribeAuditSettingWithCallback invokes the green.DescribeAuditSetting API asynchronously
-// api document: https://help.aliyun.com/api/green/describeauditsetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAuditSettingWithCallback(request *DescribeAuditSettingRequest, callback func(response *DescribeAuditSettingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

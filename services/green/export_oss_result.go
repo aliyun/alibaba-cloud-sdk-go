@@ -21,7 +21,6 @@ import (
 )
 
 // ExportOssResult invokes the green.ExportOssResult API synchronously
-// api document: https://help.aliyun.com/api/green/exportossresult.html
 func (client *Client) ExportOssResult(request *ExportOssResultRequest) (response *ExportOssResultResponse, err error) {
 	response = CreateExportOssResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExportOssResult(request *ExportOssResultRequest) (response
 }
 
 // ExportOssResultWithChan invokes the green.ExportOssResult API asynchronously
-// api document: https://help.aliyun.com/api/green/exportossresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportOssResultWithChan(request *ExportOssResultRequest) (<-chan *ExportOssResultResponse, <-chan error) {
 	responseChan := make(chan *ExportOssResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExportOssResultWithChan(request *ExportOssResultRequest) (
 }
 
 // ExportOssResultWithCallback invokes the green.ExportOssResult API asynchronously
-// api document: https://help.aliyun.com/api/green/exportossresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportOssResultWithCallback(request *ExportOssResultRequest, callback func(response *ExportOssResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type ExportOssResultRequest struct {
 	*requests.RpcRequest
 	MinScore     requests.Float   `position:"Query" name:"MinScore"`
 	MaxScore     requests.Float   `position:"Query" name:"MaxScore"`
+	StockTaskId  requests.Integer `position:"Query" name:"StockTaskId"`
 	StartDate    string           `position:"Query" name:"StartDate"`
 	Scene        string           `position:"Query" name:"Scene"`
 	SourceIp     string           `position:"Query" name:"SourceIp"`

@@ -21,7 +21,6 @@ import (
 )
 
 // ImageAsyncScan invokes the green.ImageAsyncScan API synchronously
-// api document: https://help.aliyun.com/api/green/imageasyncscan.html
 func (client *Client) ImageAsyncScan(request *ImageAsyncScanRequest) (response *ImageAsyncScanResponse, err error) {
 	response = CreateImageAsyncScanResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ImageAsyncScan(request *ImageAsyncScanRequest) (response *
 }
 
 // ImageAsyncScanWithChan invokes the green.ImageAsyncScan API asynchronously
-// api document: https://help.aliyun.com/api/green/imageasyncscan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImageAsyncScanWithChan(request *ImageAsyncScanRequest) (<-chan *ImageAsyncScanResponse, <-chan error) {
 	responseChan := make(chan *ImageAsyncScanResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ImageAsyncScanWithChan(request *ImageAsyncScanRequest) (<-
 }
 
 // ImageAsyncScanWithCallback invokes the green.ImageAsyncScan API asynchronously
-// api document: https://help.aliyun.com/api/green/imageasyncscan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImageAsyncScanWithCallback(request *ImageAsyncScanRequest, callback func(response *ImageAsyncScanResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

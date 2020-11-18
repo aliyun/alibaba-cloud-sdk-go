@@ -17,19 +17,21 @@ package green
 
 // ScanResult is a nested struct in green response
 type ScanResult struct {
-	TaskId           string        `json:"TaskId" xml:"TaskId"`
-	DataId           string        `json:"DataId" xml:"DataId"`
-	NewUrl           string        `json:"NewUrl" xml:"NewUrl"`
-	Thumbnail        string        `json:"Thumbnail" xml:"Thumbnail"`
-	RequestTime      string        `json:"RequestTime" xml:"RequestTime"`
-	ScanFinishedTime string        `json:"ScanFinishedTime" xml:"ScanFinishedTime"`
-	CreateTime       string        `json:"CreateTime" xml:"CreateTime"`
-	Suggestion       string        `json:"Suggestion" xml:"Suggestion"`
-	Id               int64         `json:"Id" xml:"Id"`
-	Bucket           string        `json:"Bucket" xml:"Bucket"`
-	Object           string        `json:"Object" xml:"Object"`
-	Score            string        `json:"Score" xml:"Score"`
-	HandleStatus     int           `json:"HandleStatus" xml:"HandleStatus"`
-	ResourceStatus   int           `json:"ResourceStatus" xml:"ResourceStatus"`
-	FrameResults     []FrameResult `json:"FrameResults" xml:"FrameResults"`
+	TaskId                      string                       `json:"TaskId" xml:"TaskId"`
+	DataId                      string                       `json:"DataId" xml:"DataId"`
+	NewUrl                      string                       `json:"NewUrl" xml:"NewUrl"`
+	Thumbnail                   string                       `json:"Thumbnail" xml:"Thumbnail"`
+	RequestTime                 string                       `json:"RequestTime" xml:"RequestTime"`
+	ScanFinishedTime            string                       `json:"ScanFinishedTime" xml:"ScanFinishedTime"`
+	CreateTime                  string                       `json:"CreateTime" xml:"CreateTime"`
+	Suggestion                  string                       `json:"Suggestion" xml:"Suggestion"`
+	Id                          int64                        `json:"Id" xml:"Id"`
+	Bucket                      string                       `json:"Bucket" xml:"Bucket"`
+	Object                      string                       `json:"Object" xml:"Object"`
+	Score                       string                       `json:"Score" xml:"Score"`
+	HandleStatus                int                          `json:"HandleStatus" xml:"HandleStatus"`
+	ResourceStatus              int                          `json:"ResourceStatus" xml:"ResourceStatus"`
+	Content                     string                       `json:"Content" xml:"Content"`
+	FrameResults                []FrameResult                `json:"FrameResults" xml:"FrameResults"`
+	VoiceSegmentAntispamResults []VoiceSegmentAntispamResult `json:"VoiceSegmentAntispamResults" xml:"VoiceSegmentAntispamResults"`
 }

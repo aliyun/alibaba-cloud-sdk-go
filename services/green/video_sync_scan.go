@@ -21,7 +21,6 @@ import (
 )
 
 // VideoSyncScan invokes the green.VideoSyncScan API synchronously
-// api document: https://help.aliyun.com/api/green/videosyncscan.html
 func (client *Client) VideoSyncScan(request *VideoSyncScanRequest) (response *VideoSyncScanResponse, err error) {
 	response = CreateVideoSyncScanResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VideoSyncScan(request *VideoSyncScanRequest) (response *Vi
 }
 
 // VideoSyncScanWithChan invokes the green.VideoSyncScan API asynchronously
-// api document: https://help.aliyun.com/api/green/videosyncscan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VideoSyncScanWithChan(request *VideoSyncScanRequest) (<-chan *VideoSyncScanResponse, <-chan error) {
 	responseChan := make(chan *VideoSyncScanResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VideoSyncScanWithChan(request *VideoSyncScanRequest) (<-ch
 }
 
 // VideoSyncScanWithCallback invokes the green.VideoSyncScan API asynchronously
-// api document: https://help.aliyun.com/api/green/videosyncscan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VideoSyncScanWithCallback(request *VideoSyncScanRequest, callback func(response *VideoSyncScanResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

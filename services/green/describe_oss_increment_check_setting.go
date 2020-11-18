@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeOssIncrementCheckSetting invokes the green.DescribeOssIncrementCheckSetting API synchronously
-// api document: https://help.aliyun.com/api/green/describeossincrementchecksetting.html
 func (client *Client) DescribeOssIncrementCheckSetting(request *DescribeOssIncrementCheckSettingRequest) (response *DescribeOssIncrementCheckSettingResponse, err error) {
 	response = CreateDescribeOssIncrementCheckSettingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeOssIncrementCheckSetting(request *DescribeOssIncre
 }
 
 // DescribeOssIncrementCheckSettingWithChan invokes the green.DescribeOssIncrementCheckSetting API asynchronously
-// api document: https://help.aliyun.com/api/green/describeossincrementchecksetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssIncrementCheckSettingWithChan(request *DescribeOssIncrementCheckSettingRequest) (<-chan *DescribeOssIncrementCheckSettingResponse, <-chan error) {
 	responseChan := make(chan *DescribeOssIncrementCheckSettingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeOssIncrementCheckSettingWithChan(request *Describe
 }
 
 // DescribeOssIncrementCheckSettingWithCallback invokes the green.DescribeOssIncrementCheckSetting API asynchronously
-// api document: https://help.aliyun.com/api/green/describeossincrementchecksetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssIncrementCheckSettingWithCallback(request *DescribeOssIncrementCheckSettingRequest, callback func(response *DescribeOssIncrementCheckSettingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,6 +85,8 @@ type DescribeOssIncrementCheckSettingResponse struct {
 	VideoMaxFrames           int             `json:"VideoMaxFrames" xml:"VideoMaxFrames"`
 	VideoMaxSize             int             `json:"VideoMaxSize" xml:"VideoMaxSize"`
 	AutoFreezeType           string          `json:"AutoFreezeType" xml:"AutoFreezeType"`
+	CallbackId               string          `json:"CallbackId" xml:"CallbackId"`
+	CallbackName             string          `json:"CallbackName" xml:"CallbackName"`
 	ImageSceneList           []string        `json:"ImageSceneList" xml:"ImageSceneList"`
 	VideoSceneList           []string        `json:"VideoSceneList" xml:"VideoSceneList"`
 	VideoAutoFreezeSceneList []string        `json:"VideoAutoFreezeSceneList" xml:"VideoAutoFreezeSceneList"`

@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateAppPackage invokes the green.UpdateAppPackage API synchronously
-// api document: https://help.aliyun.com/api/green/updateapppackage.html
 func (client *Client) UpdateAppPackage(request *UpdateAppPackageRequest) (response *UpdateAppPackageResponse, err error) {
 	response = CreateUpdateAppPackageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateAppPackage(request *UpdateAppPackageRequest) (respon
 }
 
 // UpdateAppPackageWithChan invokes the green.UpdateAppPackage API asynchronously
-// api document: https://help.aliyun.com/api/green/updateapppackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAppPackageWithChan(request *UpdateAppPackageRequest) (<-chan *UpdateAppPackageResponse, <-chan error) {
 	responseChan := make(chan *UpdateAppPackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateAppPackageWithChan(request *UpdateAppPackageRequest)
 }
 
 // UpdateAppPackageWithCallback invokes the green.UpdateAppPackage API asynchronously
-// api document: https://help.aliyun.com/api/green/updateapppackage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAppPackageWithCallback(request *UpdateAppPackageRequest, callback func(response *UpdateAppPackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

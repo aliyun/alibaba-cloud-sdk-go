@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeWebsiteInstanceId invokes the green.DescribeWebsiteInstanceId API synchronously
-// api document: https://help.aliyun.com/api/green/describewebsiteinstanceid.html
 func (client *Client) DescribeWebsiteInstanceId(request *DescribeWebsiteInstanceIdRequest) (response *DescribeWebsiteInstanceIdResponse, err error) {
 	response = CreateDescribeWebsiteInstanceIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeWebsiteInstanceId(request *DescribeWebsiteInstance
 }
 
 // DescribeWebsiteInstanceIdWithChan invokes the green.DescribeWebsiteInstanceId API asynchronously
-// api document: https://help.aliyun.com/api/green/describewebsiteinstanceid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebsiteInstanceIdWithChan(request *DescribeWebsiteInstanceIdRequest) (<-chan *DescribeWebsiteInstanceIdResponse, <-chan error) {
 	responseChan := make(chan *DescribeWebsiteInstanceIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeWebsiteInstanceIdWithChan(request *DescribeWebsite
 }
 
 // DescribeWebsiteInstanceIdWithCallback invokes the green.DescribeWebsiteInstanceId API asynchronously
-// api document: https://help.aliyun.com/api/green/describewebsiteinstanceid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebsiteInstanceIdWithCallback(request *DescribeWebsiteInstanceIdRequest, callback func(response *DescribeWebsiteInstanceIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

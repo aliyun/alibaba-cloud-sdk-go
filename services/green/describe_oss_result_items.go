@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeOssResultItems invokes the green.DescribeOssResultItems API synchronously
-// api document: https://help.aliyun.com/api/green/describeossresultitems.html
 func (client *Client) DescribeOssResultItems(request *DescribeOssResultItemsRequest) (response *DescribeOssResultItemsResponse, err error) {
 	response = CreateDescribeOssResultItemsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeOssResultItems(request *DescribeOssResultItemsRequ
 }
 
 // DescribeOssResultItemsWithChan invokes the green.DescribeOssResultItems API asynchronously
-// api document: https://help.aliyun.com/api/green/describeossresultitems.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssResultItemsWithChan(request *DescribeOssResultItemsRequest) (<-chan *DescribeOssResultItemsResponse, <-chan error) {
 	responseChan := make(chan *DescribeOssResultItemsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeOssResultItemsWithChan(request *DescribeOssResultI
 }
 
 // DescribeOssResultItemsWithCallback invokes the green.DescribeOssResultItems API asynchronously
-// api document: https://help.aliyun.com/api/green/describeossresultitems.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssResultItemsWithCallback(request *DescribeOssResultItemsRequest, callback func(response *DescribeOssResultItemsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +73,7 @@ type DescribeOssResultItemsRequest struct {
 	*requests.RpcRequest
 	MinScore     requests.Float   `position:"Query" name:"MinScore"`
 	MaxScore     requests.Float   `position:"Query" name:"MaxScore"`
+	StockTaskId  requests.Integer `position:"Query" name:"StockTaskId"`
 	StartDate    string           `position:"Query" name:"StartDate"`
 	Scene        string           `position:"Query" name:"Scene"`
 	SourceIp     string           `position:"Query" name:"SourceIp"`

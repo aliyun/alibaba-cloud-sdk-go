@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeOssStockStatus invokes the green.DescribeOssStockStatus API synchronously
-// api document: https://help.aliyun.com/api/green/describeossstockstatus.html
 func (client *Client) DescribeOssStockStatus(request *DescribeOssStockStatusRequest) (response *DescribeOssStockStatusResponse, err error) {
 	response = CreateDescribeOssStockStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeOssStockStatus(request *DescribeOssStockStatusRequ
 }
 
 // DescribeOssStockStatusWithChan invokes the green.DescribeOssStockStatus API asynchronously
-// api document: https://help.aliyun.com/api/green/describeossstockstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssStockStatusWithChan(request *DescribeOssStockStatusRequest) (<-chan *DescribeOssStockStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeOssStockStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeOssStockStatusWithChan(request *DescribeOssStockSt
 }
 
 // DescribeOssStockStatusWithCallback invokes the green.DescribeOssStockStatus API asynchronously
-// api document: https://help.aliyun.com/api/green/describeossstockstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssStockStatusWithCallback(request *DescribeOssStockStatusRequest, callback func(response *DescribeOssStockStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

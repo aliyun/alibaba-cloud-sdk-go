@@ -21,7 +21,6 @@ import (
 )
 
 // ImportKeywords invokes the green.ImportKeywords API synchronously
-// api document: https://help.aliyun.com/api/green/importkeywords.html
 func (client *Client) ImportKeywords(request *ImportKeywordsRequest) (response *ImportKeywordsResponse, err error) {
 	response = CreateImportKeywordsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ImportKeywords(request *ImportKeywordsRequest) (response *
 }
 
 // ImportKeywordsWithChan invokes the green.ImportKeywords API asynchronously
-// api document: https://help.aliyun.com/api/green/importkeywords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportKeywordsWithChan(request *ImportKeywordsRequest) (<-chan *ImportKeywordsResponse, <-chan error) {
 	responseChan := make(chan *ImportKeywordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ImportKeywordsWithChan(request *ImportKeywordsRequest) (<-
 }
 
 // ImportKeywordsWithCallback invokes the green.ImportKeywords API asynchronously
-// api document: https://help.aliyun.com/api/green/importkeywords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportKeywordsWithCallback(request *ImportKeywordsRequest, callback func(response *ImportKeywordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

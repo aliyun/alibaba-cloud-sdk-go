@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeWebsiteScanResultDetail invokes the green.DescribeWebsiteScanResultDetail API synchronously
-// api document: https://help.aliyun.com/api/green/describewebsitescanresultdetail.html
 func (client *Client) DescribeWebsiteScanResultDetail(request *DescribeWebsiteScanResultDetailRequest) (response *DescribeWebsiteScanResultDetailResponse, err error) {
 	response = CreateDescribeWebsiteScanResultDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeWebsiteScanResultDetail(request *DescribeWebsiteSc
 }
 
 // DescribeWebsiteScanResultDetailWithChan invokes the green.DescribeWebsiteScanResultDetail API asynchronously
-// api document: https://help.aliyun.com/api/green/describewebsitescanresultdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebsiteScanResultDetailWithChan(request *DescribeWebsiteScanResultDetailRequest) (<-chan *DescribeWebsiteScanResultDetailResponse, <-chan error) {
 	responseChan := make(chan *DescribeWebsiteScanResultDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeWebsiteScanResultDetailWithChan(request *DescribeW
 }
 
 // DescribeWebsiteScanResultDetailWithCallback invokes the green.DescribeWebsiteScanResultDetail API asynchronously
-// api document: https://help.aliyun.com/api/green/describewebsitescanresultdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebsiteScanResultDetailWithCallback(request *DescribeWebsiteScanResultDetailRequest, callback func(response *DescribeWebsiteScanResultDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

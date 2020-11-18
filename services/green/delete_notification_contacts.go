@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteNotificationContacts invokes the green.DeleteNotificationContacts API synchronously
-// api document: https://help.aliyun.com/api/green/deletenotificationcontacts.html
 func (client *Client) DeleteNotificationContacts(request *DeleteNotificationContactsRequest) (response *DeleteNotificationContactsResponse, err error) {
 	response = CreateDeleteNotificationContactsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteNotificationContacts(request *DeleteNotificationCont
 }
 
 // DeleteNotificationContactsWithChan invokes the green.DeleteNotificationContacts API asynchronously
-// api document: https://help.aliyun.com/api/green/deletenotificationcontacts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNotificationContactsWithChan(request *DeleteNotificationContactsRequest) (<-chan *DeleteNotificationContactsResponse, <-chan error) {
 	responseChan := make(chan *DeleteNotificationContactsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteNotificationContactsWithChan(request *DeleteNotifica
 }
 
 // DeleteNotificationContactsWithCallback invokes the green.DeleteNotificationContacts API asynchronously
-// api document: https://help.aliyun.com/api/green/deletenotificationcontacts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNotificationContactsWithCallback(request *DeleteNotificationContactsRequest, callback func(response *DeleteNotificationContactsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

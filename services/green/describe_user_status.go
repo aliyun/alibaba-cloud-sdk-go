@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUserStatus invokes the green.DescribeUserStatus API synchronously
-// api document: https://help.aliyun.com/api/green/describeuserstatus.html
 func (client *Client) DescribeUserStatus(request *DescribeUserStatusRequest) (response *DescribeUserStatusResponse, err error) {
 	response = CreateDescribeUserStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUserStatus(request *DescribeUserStatusRequest) (re
 }
 
 // DescribeUserStatusWithChan invokes the green.DescribeUserStatus API asynchronously
-// api document: https://help.aliyun.com/api/green/describeuserstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserStatusWithChan(request *DescribeUserStatusRequest) (<-chan *DescribeUserStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUserStatusWithChan(request *DescribeUserStatusRequ
 }
 
 // DescribeUserStatusWithCallback invokes the green.DescribeUserStatus API asynchronously
-// api document: https://help.aliyun.com/api/green/describeuserstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserStatusWithCallback(request *DescribeUserStatusRequest, callback func(response *DescribeUserStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeWebsiteStat invokes the green.DescribeWebsiteStat API synchronously
-// api document: https://help.aliyun.com/api/green/describewebsitestat.html
 func (client *Client) DescribeWebsiteStat(request *DescribeWebsiteStatRequest) (response *DescribeWebsiteStatResponse, err error) {
 	response = CreateDescribeWebsiteStatResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeWebsiteStat(request *DescribeWebsiteStatRequest) (
 }
 
 // DescribeWebsiteStatWithChan invokes the green.DescribeWebsiteStat API asynchronously
-// api document: https://help.aliyun.com/api/green/describewebsitestat.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebsiteStatWithChan(request *DescribeWebsiteStatRequest) (<-chan *DescribeWebsiteStatResponse, <-chan error) {
 	responseChan := make(chan *DescribeWebsiteStatResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeWebsiteStatWithChan(request *DescribeWebsiteStatRe
 }
 
 // DescribeWebsiteStatWithCallback invokes the green.DescribeWebsiteStat API asynchronously
-// api document: https://help.aliyun.com/api/green/describewebsitestat.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebsiteStatWithCallback(request *DescribeWebsiteStatRequest, callback func(response *DescribeWebsiteStatResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

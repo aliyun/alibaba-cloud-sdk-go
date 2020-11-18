@@ -21,7 +21,6 @@ import (
 )
 
 // SampleFeedback invokes the green.SampleFeedback API synchronously
-// api document: https://help.aliyun.com/api/green/samplefeedback.html
 func (client *Client) SampleFeedback(request *SampleFeedbackRequest) (response *SampleFeedbackResponse, err error) {
 	response = CreateSampleFeedbackResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SampleFeedback(request *SampleFeedbackRequest) (response *
 }
 
 // SampleFeedbackWithChan invokes the green.SampleFeedback API asynchronously
-// api document: https://help.aliyun.com/api/green/samplefeedback.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SampleFeedbackWithChan(request *SampleFeedbackRequest) (<-chan *SampleFeedbackResponse, <-chan error) {
 	responseChan := make(chan *SampleFeedbackResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SampleFeedbackWithChan(request *SampleFeedbackRequest) (<-
 }
 
 // SampleFeedbackWithCallback invokes the green.SampleFeedback API asynchronously
-// api document: https://help.aliyun.com/api/green/samplefeedback.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SampleFeedbackWithCallback(request *SampleFeedbackRequest, callback func(response *SampleFeedbackResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

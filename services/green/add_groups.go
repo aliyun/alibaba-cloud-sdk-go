@@ -21,7 +21,6 @@ import (
 )
 
 // AddGroups invokes the green.AddGroups API synchronously
-// api document: https://help.aliyun.com/api/green/addgroups.html
 func (client *Client) AddGroups(request *AddGroupsRequest) (response *AddGroupsResponse, err error) {
 	response = CreateAddGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddGroups(request *AddGroupsRequest) (response *AddGroupsR
 }
 
 // AddGroupsWithChan invokes the green.AddGroups API asynchronously
-// api document: https://help.aliyun.com/api/green/addgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddGroupsWithChan(request *AddGroupsRequest) (<-chan *AddGroupsResponse, <-chan error) {
 	responseChan := make(chan *AddGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddGroupsWithChan(request *AddGroupsRequest) (<-chan *AddG
 }
 
 // AddGroupsWithCallback invokes the green.AddGroups API asynchronously
-// api document: https://help.aliyun.com/api/green/addgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddGroupsWithCallback(request *AddGroupsRequest, callback func(response *AddGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

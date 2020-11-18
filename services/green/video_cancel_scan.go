@@ -21,7 +21,6 @@ import (
 )
 
 // VideoCancelScan invokes the green.VideoCancelScan API synchronously
-// api document: https://help.aliyun.com/api/green/videocancelscan.html
 func (client *Client) VideoCancelScan(request *VideoCancelScanRequest) (response *VideoCancelScanResponse, err error) {
 	response = CreateVideoCancelScanResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VideoCancelScan(request *VideoCancelScanRequest) (response
 }
 
 // VideoCancelScanWithChan invokes the green.VideoCancelScan API asynchronously
-// api document: https://help.aliyun.com/api/green/videocancelscan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VideoCancelScanWithChan(request *VideoCancelScanRequest) (<-chan *VideoCancelScanResponse, <-chan error) {
 	responseChan := make(chan *VideoCancelScanResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VideoCancelScanWithChan(request *VideoCancelScanRequest) (
 }
 
 // VideoCancelScanWithCallback invokes the green.VideoCancelScan API asynchronously
-// api document: https://help.aliyun.com/api/green/videocancelscan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VideoCancelScanWithCallback(request *VideoCancelScanRequest, callback func(response *VideoCancelScanResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

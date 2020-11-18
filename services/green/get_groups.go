@@ -21,7 +21,6 @@ import (
 )
 
 // GetGroups invokes the green.GetGroups API synchronously
-// api document: https://help.aliyun.com/api/green/getgroups.html
 func (client *Client) GetGroups(request *GetGroupsRequest) (response *GetGroupsResponse, err error) {
 	response = CreateGetGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetGroups(request *GetGroupsRequest) (response *GetGroupsR
 }
 
 // GetGroupsWithChan invokes the green.GetGroups API asynchronously
-// api document: https://help.aliyun.com/api/green/getgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetGroupsWithChan(request *GetGroupsRequest) (<-chan *GetGroupsResponse, <-chan error) {
 	responseChan := make(chan *GetGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetGroupsWithChan(request *GetGroupsRequest) (<-chan *GetG
 }
 
 // GetGroupsWithCallback invokes the green.GetGroups API asynchronously
-// api document: https://help.aliyun.com/api/green/getgroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetGroupsWithCallback(request *GetGroupsRequest, callback func(response *GetGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

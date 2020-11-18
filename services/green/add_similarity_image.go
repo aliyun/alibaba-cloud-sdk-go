@@ -21,7 +21,6 @@ import (
 )
 
 // AddSimilarityImage invokes the green.AddSimilarityImage API synchronously
-// api document: https://help.aliyun.com/api/green/addsimilarityimage.html
 func (client *Client) AddSimilarityImage(request *AddSimilarityImageRequest) (response *AddSimilarityImageResponse, err error) {
 	response = CreateAddSimilarityImageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddSimilarityImage(request *AddSimilarityImageRequest) (re
 }
 
 // AddSimilarityImageWithChan invokes the green.AddSimilarityImage API asynchronously
-// api document: https://help.aliyun.com/api/green/addsimilarityimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddSimilarityImageWithChan(request *AddSimilarityImageRequest) (<-chan *AddSimilarityImageResponse, <-chan error) {
 	responseChan := make(chan *AddSimilarityImageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddSimilarityImageWithChan(request *AddSimilarityImageRequ
 }
 
 // AddSimilarityImageWithCallback invokes the green.AddSimilarityImage API asynchronously
-// api document: https://help.aliyun.com/api/green/addsimilarityimage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddSimilarityImageWithCallback(request *AddSimilarityImageRequest, callback func(response *AddSimilarityImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteGroups invokes the green.DeleteGroups API synchronously
-// api document: https://help.aliyun.com/api/green/deletegroups.html
 func (client *Client) DeleteGroups(request *DeleteGroupsRequest) (response *DeleteGroupsResponse, err error) {
 	response = CreateDeleteGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteGroups(request *DeleteGroupsRequest) (response *Dele
 }
 
 // DeleteGroupsWithChan invokes the green.DeleteGroups API asynchronously
-// api document: https://help.aliyun.com/api/green/deletegroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGroupsWithChan(request *DeleteGroupsRequest) (<-chan *DeleteGroupsResponse, <-chan error) {
 	responseChan := make(chan *DeleteGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteGroupsWithChan(request *DeleteGroupsRequest) (<-chan
 }
 
 // DeleteGroupsWithCallback invokes the green.DeleteGroups API asynchronously
-// api document: https://help.aliyun.com/api/green/deletegroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGroupsWithCallback(request *DeleteGroupsRequest, callback func(response *DeleteGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

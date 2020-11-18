@@ -21,7 +21,6 @@ import (
 )
 
 // UploadCredentials invokes the green.UploadCredentials API synchronously
-// api document: https://help.aliyun.com/api/green/uploadcredentials.html
 func (client *Client) UploadCredentials(request *UploadCredentialsRequest) (response *UploadCredentialsResponse, err error) {
 	response = CreateUploadCredentialsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UploadCredentials(request *UploadCredentialsRequest) (resp
 }
 
 // UploadCredentialsWithChan invokes the green.UploadCredentials API asynchronously
-// api document: https://help.aliyun.com/api/green/uploadcredentials.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadCredentialsWithChan(request *UploadCredentialsRequest) (<-chan *UploadCredentialsResponse, <-chan error) {
 	responseChan := make(chan *UploadCredentialsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UploadCredentialsWithChan(request *UploadCredentialsReques
 }
 
 // UploadCredentialsWithCallback invokes the green.UploadCredentials API asynchronously
-// api document: https://help.aliyun.com/api/green/uploadcredentials.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadCredentialsWithCallback(request *UploadCredentialsRequest, callback func(response *UploadCredentialsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

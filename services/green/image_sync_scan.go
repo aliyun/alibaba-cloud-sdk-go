@@ -21,7 +21,6 @@ import (
 )
 
 // ImageSyncScan invokes the green.ImageSyncScan API synchronously
-// api document: https://help.aliyun.com/api/green/imagesyncscan.html
 func (client *Client) ImageSyncScan(request *ImageSyncScanRequest) (response *ImageSyncScanResponse, err error) {
 	response = CreateImageSyncScanResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ImageSyncScan(request *ImageSyncScanRequest) (response *Im
 }
 
 // ImageSyncScanWithChan invokes the green.ImageSyncScan API asynchronously
-// api document: https://help.aliyun.com/api/green/imagesyncscan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImageSyncScanWithChan(request *ImageSyncScanRequest) (<-chan *ImageSyncScanResponse, <-chan error) {
 	responseChan := make(chan *ImageSyncScanResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ImageSyncScanWithChan(request *ImageSyncScanRequest) (<-ch
 }
 
 // ImageSyncScanWithCallback invokes the green.ImageSyncScan API asynchronously
-// api document: https://help.aliyun.com/api/green/imagesyncscan.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImageSyncScanWithCallback(request *ImageSyncScanRequest, callback func(response *ImageSyncScanResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

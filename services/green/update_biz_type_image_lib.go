@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateBizTypeImageLib invokes the green.UpdateBizTypeImageLib API synchronously
-// api document: https://help.aliyun.com/api/green/updatebiztypeimagelib.html
 func (client *Client) UpdateBizTypeImageLib(request *UpdateBizTypeImageLibRequest) (response *UpdateBizTypeImageLibResponse, err error) {
 	response = CreateUpdateBizTypeImageLibResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateBizTypeImageLib(request *UpdateBizTypeImageLibReques
 }
 
 // UpdateBizTypeImageLibWithChan invokes the green.UpdateBizTypeImageLib API asynchronously
-// api document: https://help.aliyun.com/api/green/updatebiztypeimagelib.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateBizTypeImageLibWithChan(request *UpdateBizTypeImageLibRequest) (<-chan *UpdateBizTypeImageLibResponse, <-chan error) {
 	responseChan := make(chan *UpdateBizTypeImageLibResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateBizTypeImageLibWithChan(request *UpdateBizTypeImageL
 }
 
 // UpdateBizTypeImageLibWithCallback invokes the green.UpdateBizTypeImageLib API asynchronously
-// api document: https://help.aliyun.com/api/green/updatebiztypeimagelib.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateBizTypeImageLibWithCallback(request *UpdateBizTypeImageLibRequest, callback func(response *UpdateBizTypeImageLibResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

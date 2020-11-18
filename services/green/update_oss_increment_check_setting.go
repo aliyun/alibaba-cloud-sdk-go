@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateOssIncrementCheckSetting invokes the green.UpdateOssIncrementCheckSetting API synchronously
-// api document: https://help.aliyun.com/api/green/updateossincrementchecksetting.html
 func (client *Client) UpdateOssIncrementCheckSetting(request *UpdateOssIncrementCheckSettingRequest) (response *UpdateOssIncrementCheckSettingResponse, err error) {
 	response = CreateUpdateOssIncrementCheckSettingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateOssIncrementCheckSetting(request *UpdateOssIncrement
 }
 
 // UpdateOssIncrementCheckSettingWithChan invokes the green.UpdateOssIncrementCheckSetting API asynchronously
-// api document: https://help.aliyun.com/api/green/updateossincrementchecksetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateOssIncrementCheckSettingWithChan(request *UpdateOssIncrementCheckSettingRequest) (<-chan *UpdateOssIncrementCheckSettingResponse, <-chan error) {
 	responseChan := make(chan *UpdateOssIncrementCheckSettingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateOssIncrementCheckSettingWithChan(request *UpdateOssI
 }
 
 // UpdateOssIncrementCheckSettingWithCallback invokes the green.UpdateOssIncrementCheckSetting API asynchronously
-// api document: https://help.aliyun.com/api/green/updateossincrementchecksetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateOssIncrementCheckSettingWithCallback(request *UpdateOssIncrementCheckSettingRequest, callback func(response *UpdateOssIncrementCheckSettingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +75,7 @@ type UpdateOssIncrementCheckSettingRequest struct {
 	ImageSceneList           string           `position:"Query" name:"ImageSceneList"`
 	VideoFrameInterval       requests.Integer `position:"Query" name:"VideoFrameInterval"`
 	SourceIp                 string           `position:"Query" name:"SourceIp"`
+	CallbackId               string           `position:"Query" name:"CallbackId"`
 	ImageScanLimit           string           `position:"Query" name:"ImageScanLimit"`
 	VideoAutoFreezeSceneList string           `position:"Query" name:"VideoAutoFreezeSceneList"`
 	Lang                     string           `position:"Query" name:"Lang"`

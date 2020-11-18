@@ -21,7 +21,6 @@ import (
 )
 
 // VoiceIdentityRegister invokes the green.VoiceIdentityRegister API synchronously
-// api document: https://help.aliyun.com/api/green/voiceidentityregister.html
 func (client *Client) VoiceIdentityRegister(request *VoiceIdentityRegisterRequest) (response *VoiceIdentityRegisterResponse, err error) {
 	response = CreateVoiceIdentityRegisterResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VoiceIdentityRegister(request *VoiceIdentityRegisterReques
 }
 
 // VoiceIdentityRegisterWithChan invokes the green.VoiceIdentityRegister API asynchronously
-// api document: https://help.aliyun.com/api/green/voiceidentityregister.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VoiceIdentityRegisterWithChan(request *VoiceIdentityRegisterRequest) (<-chan *VoiceIdentityRegisterResponse, <-chan error) {
 	responseChan := make(chan *VoiceIdentityRegisterResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VoiceIdentityRegisterWithChan(request *VoiceIdentityRegist
 }
 
 // VoiceIdentityRegisterWithCallback invokes the green.VoiceIdentityRegister API asynchronously
-// api document: https://help.aliyun.com/api/green/voiceidentityregister.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VoiceIdentityRegisterWithCallback(request *VoiceIdentityRegisterRequest, callback func(response *VoiceIdentityRegisterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

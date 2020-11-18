@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateNotificationSetting invokes the green.UpdateNotificationSetting API synchronously
-// api document: https://help.aliyun.com/api/green/updatenotificationsetting.html
 func (client *Client) UpdateNotificationSetting(request *UpdateNotificationSettingRequest) (response *UpdateNotificationSettingResponse, err error) {
 	response = CreateUpdateNotificationSettingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateNotificationSetting(request *UpdateNotificationSetti
 }
 
 // UpdateNotificationSettingWithChan invokes the green.UpdateNotificationSetting API asynchronously
-// api document: https://help.aliyun.com/api/green/updatenotificationsetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateNotificationSettingWithChan(request *UpdateNotificationSettingRequest) (<-chan *UpdateNotificationSettingResponse, <-chan error) {
 	responseChan := make(chan *UpdateNotificationSettingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateNotificationSettingWithChan(request *UpdateNotificat
 }
 
 // UpdateNotificationSettingWithCallback invokes the green.UpdateNotificationSetting API asynchronously
-// api document: https://help.aliyun.com/api/green/updatenotificationsetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateNotificationSettingWithCallback(request *UpdateNotificationSettingRequest, callback func(response *UpdateNotificationSettingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

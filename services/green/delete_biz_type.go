@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteBizType invokes the green.DeleteBizType API synchronously
-// api document: https://help.aliyun.com/api/green/deletebiztype.html
 func (client *Client) DeleteBizType(request *DeleteBizTypeRequest) (response *DeleteBizTypeResponse, err error) {
 	response = CreateDeleteBizTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteBizType(request *DeleteBizTypeRequest) (response *De
 }
 
 // DeleteBizTypeWithChan invokes the green.DeleteBizType API asynchronously
-// api document: https://help.aliyun.com/api/green/deletebiztype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBizTypeWithChan(request *DeleteBizTypeRequest) (<-chan *DeleteBizTypeResponse, <-chan error) {
 	responseChan := make(chan *DeleteBizTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteBizTypeWithChan(request *DeleteBizTypeRequest) (<-ch
 }
 
 // DeleteBizTypeWithCallback invokes the green.DeleteBizType API asynchronously
-// api document: https://help.aliyun.com/api/green/deletebiztype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBizTypeWithCallback(request *DeleteBizTypeRequest, callback func(response *DeleteBizTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // SendWebsiteFeedback invokes the green.SendWebsiteFeedback API synchronously
-// api document: https://help.aliyun.com/api/green/sendwebsitefeedback.html
 func (client *Client) SendWebsiteFeedback(request *SendWebsiteFeedbackRequest) (response *SendWebsiteFeedbackResponse, err error) {
 	response = CreateSendWebsiteFeedbackResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SendWebsiteFeedback(request *SendWebsiteFeedbackRequest) (
 }
 
 // SendWebsiteFeedbackWithChan invokes the green.SendWebsiteFeedback API asynchronously
-// api document: https://help.aliyun.com/api/green/sendwebsitefeedback.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendWebsiteFeedbackWithChan(request *SendWebsiteFeedbackRequest) (<-chan *SendWebsiteFeedbackResponse, <-chan error) {
 	responseChan := make(chan *SendWebsiteFeedbackResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SendWebsiteFeedbackWithChan(request *SendWebsiteFeedbackRe
 }
 
 // SendWebsiteFeedbackWithCallback invokes the green.SendWebsiteFeedback API asynchronously
-// api document: https://help.aliyun.com/api/green/sendwebsitefeedback.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendWebsiteFeedbackWithCallback(request *SendWebsiteFeedbackRequest, callback func(response *SendWebsiteFeedbackResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

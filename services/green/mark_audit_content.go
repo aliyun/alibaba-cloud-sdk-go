@@ -21,7 +21,6 @@ import (
 )
 
 // MarkAuditContent invokes the green.MarkAuditContent API synchronously
-// api document: https://help.aliyun.com/api/green/markauditcontent.html
 func (client *Client) MarkAuditContent(request *MarkAuditContentRequest) (response *MarkAuditContentResponse, err error) {
 	response = CreateMarkAuditContentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) MarkAuditContent(request *MarkAuditContentRequest) (respon
 }
 
 // MarkAuditContentWithChan invokes the green.MarkAuditContent API asynchronously
-// api document: https://help.aliyun.com/api/green/markauditcontent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MarkAuditContentWithChan(request *MarkAuditContentRequest) (<-chan *MarkAuditContentResponse, <-chan error) {
 	responseChan := make(chan *MarkAuditContentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) MarkAuditContentWithChan(request *MarkAuditContentRequest)
 }
 
 // MarkAuditContentWithCallback invokes the green.MarkAuditContent API asynchronously
-// api document: https://help.aliyun.com/api/green/markauditcontent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MarkAuditContentWithCallback(request *MarkAuditContentRequest, callback func(response *MarkAuditContentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

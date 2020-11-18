@@ -21,7 +21,6 @@ import (
 )
 
 // CreateWebSiteInstance invokes the green.CreateWebSiteInstance API synchronously
-// api document: https://help.aliyun.com/api/green/createwebsiteinstance.html
 func (client *Client) CreateWebSiteInstance(request *CreateWebSiteInstanceRequest) (response *CreateWebSiteInstanceResponse, err error) {
 	response = CreateCreateWebSiteInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateWebSiteInstance(request *CreateWebSiteInstanceReques
 }
 
 // CreateWebSiteInstanceWithChan invokes the green.CreateWebSiteInstance API asynchronously
-// api document: https://help.aliyun.com/api/green/createwebsiteinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateWebSiteInstanceWithChan(request *CreateWebSiteInstanceRequest) (<-chan *CreateWebSiteInstanceResponse, <-chan error) {
 	responseChan := make(chan *CreateWebSiteInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateWebSiteInstanceWithChan(request *CreateWebSiteInstan
 }
 
 // CreateWebSiteInstanceWithCallback invokes the green.CreateWebSiteInstance API asynchronously
-// api document: https://help.aliyun.com/api/green/createwebsiteinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateWebSiteInstanceWithCallback(request *CreateWebSiteInstanceRequest, callback func(response *CreateWebSiteInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateImageLib invokes the green.CreateImageLib API synchronously
-// api document: https://help.aliyun.com/api/green/createimagelib.html
 func (client *Client) CreateImageLib(request *CreateImageLibRequest) (response *CreateImageLibResponse, err error) {
 	response = CreateCreateImageLibResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateImageLib(request *CreateImageLibRequest) (response *
 }
 
 // CreateImageLibWithChan invokes the green.CreateImageLib API asynchronously
-// api document: https://help.aliyun.com/api/green/createimagelib.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateImageLibWithChan(request *CreateImageLibRequest) (<-chan *CreateImageLibResponse, <-chan error) {
 	responseChan := make(chan *CreateImageLibResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateImageLibWithChan(request *CreateImageLibRequest) (<-
 }
 
 // CreateImageLibWithCallback invokes the green.CreateImageLib API asynchronously
-// api document: https://help.aliyun.com/api/green/createimagelib.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateImageLibWithCallback(request *CreateImageLibRequest, callback func(response *CreateImageLibResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCdiBag invokes the green.CreateCdiBag API synchronously
-// api document: https://help.aliyun.com/api/green/createcdibag.html
 func (client *Client) CreateCdiBag(request *CreateCdiBagRequest) (response *CreateCdiBagResponse, err error) {
 	response = CreateCreateCdiBagResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCdiBag(request *CreateCdiBagRequest) (response *Crea
 }
 
 // CreateCdiBagWithChan invokes the green.CreateCdiBag API asynchronously
-// api document: https://help.aliyun.com/api/green/createcdibag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCdiBagWithChan(request *CreateCdiBagRequest) (<-chan *CreateCdiBagResponse, <-chan error) {
 	responseChan := make(chan *CreateCdiBagResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateCdiBagWithChan(request *CreateCdiBagRequest) (<-chan
 }
 
 // CreateCdiBagWithCallback invokes the green.CreateCdiBag API asynchronously
-// api document: https://help.aliyun.com/api/green/createcdibag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCdiBagWithCallback(request *CreateCdiBagRequest, callback func(response *CreateCdiBagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

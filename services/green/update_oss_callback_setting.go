@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateOssCallbackSetting invokes the green.UpdateOssCallbackSetting API synchronously
-// api document: https://help.aliyun.com/api/green/updateosscallbacksetting.html
 func (client *Client) UpdateOssCallbackSetting(request *UpdateOssCallbackSettingRequest) (response *UpdateOssCallbackSettingResponse, err error) {
 	response = CreateUpdateOssCallbackSettingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateOssCallbackSetting(request *UpdateOssCallbackSetting
 }
 
 // UpdateOssCallbackSettingWithChan invokes the green.UpdateOssCallbackSetting API asynchronously
-// api document: https://help.aliyun.com/api/green/updateosscallbacksetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateOssCallbackSettingWithChan(request *UpdateOssCallbackSettingRequest) (<-chan *UpdateOssCallbackSettingResponse, <-chan error) {
 	responseChan := make(chan *UpdateOssCallbackSettingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateOssCallbackSettingWithChan(request *UpdateOssCallbac
 }
 
 // UpdateOssCallbackSettingWithCallback invokes the green.UpdateOssCallbackSetting API asynchronously
-// api document: https://help.aliyun.com/api/green/updateosscallbacksetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateOssCallbackSettingWithCallback(request *UpdateOssCallbackSettingRequest, callback func(response *UpdateOssCallbackSettingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

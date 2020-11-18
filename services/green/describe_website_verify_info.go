@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeWebsiteVerifyInfo invokes the green.DescribeWebsiteVerifyInfo API synchronously
-// api document: https://help.aliyun.com/api/green/describewebsiteverifyinfo.html
 func (client *Client) DescribeWebsiteVerifyInfo(request *DescribeWebsiteVerifyInfoRequest) (response *DescribeWebsiteVerifyInfoResponse, err error) {
 	response = CreateDescribeWebsiteVerifyInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeWebsiteVerifyInfo(request *DescribeWebsiteVerifyIn
 }
 
 // DescribeWebsiteVerifyInfoWithChan invokes the green.DescribeWebsiteVerifyInfo API asynchronously
-// api document: https://help.aliyun.com/api/green/describewebsiteverifyinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebsiteVerifyInfoWithChan(request *DescribeWebsiteVerifyInfoRequest) (<-chan *DescribeWebsiteVerifyInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeWebsiteVerifyInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeWebsiteVerifyInfoWithChan(request *DescribeWebsite
 }
 
 // DescribeWebsiteVerifyInfoWithCallback invokes the green.DescribeWebsiteVerifyInfo API asynchronously
-// api document: https://help.aliyun.com/api/green/describewebsiteverifyinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebsiteVerifyInfoWithCallback(request *DescribeWebsiteVerifyInfoRequest, callback func(response *DescribeWebsiteVerifyInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

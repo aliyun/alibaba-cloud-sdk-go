@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateBizTypeSetting invokes the green.UpdateBizTypeSetting API synchronously
-// api document: https://help.aliyun.com/api/green/updatebiztypesetting.html
 func (client *Client) UpdateBizTypeSetting(request *UpdateBizTypeSettingRequest) (response *UpdateBizTypeSettingResponse, err error) {
 	response = CreateUpdateBizTypeSettingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateBizTypeSetting(request *UpdateBizTypeSettingRequest)
 }
 
 // UpdateBizTypeSettingWithChan invokes the green.UpdateBizTypeSetting API asynchronously
-// api document: https://help.aliyun.com/api/green/updatebiztypesetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateBizTypeSettingWithChan(request *UpdateBizTypeSettingRequest) (<-chan *UpdateBizTypeSettingResponse, <-chan error) {
 	responseChan := make(chan *UpdateBizTypeSettingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateBizTypeSettingWithChan(request *UpdateBizTypeSetting
 }
 
 // UpdateBizTypeSettingWithCallback invokes the green.UpdateBizTypeSetting API asynchronously
-// api document: https://help.aliyun.com/api/green/updatebiztypesetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateBizTypeSettingWithCallback(request *UpdateBizTypeSettingRequest, callback func(response *UpdateBizTypeSettingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateCustomOcrTemplate invokes the green.UpdateCustomOcrTemplate API synchronously
-// api document: https://help.aliyun.com/api/green/updatecustomocrtemplate.html
 func (client *Client) UpdateCustomOcrTemplate(request *UpdateCustomOcrTemplateRequest) (response *UpdateCustomOcrTemplateResponse, err error) {
 	response = CreateUpdateCustomOcrTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateCustomOcrTemplate(request *UpdateCustomOcrTemplateRe
 }
 
 // UpdateCustomOcrTemplateWithChan invokes the green.UpdateCustomOcrTemplate API asynchronously
-// api document: https://help.aliyun.com/api/green/updatecustomocrtemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCustomOcrTemplateWithChan(request *UpdateCustomOcrTemplateRequest) (<-chan *UpdateCustomOcrTemplateResponse, <-chan error) {
 	responseChan := make(chan *UpdateCustomOcrTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateCustomOcrTemplateWithChan(request *UpdateCustomOcrTe
 }
 
 // UpdateCustomOcrTemplateWithCallback invokes the green.UpdateCustomOcrTemplate API asynchronously
-// api document: https://help.aliyun.com/api/green/updatecustomocrtemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCustomOcrTemplateWithCallback(request *UpdateCustomOcrTemplateRequest, callback func(response *UpdateCustomOcrTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

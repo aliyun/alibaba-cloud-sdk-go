@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSdkUrl invokes the green.DescribeSdkUrl API synchronously
-// api document: https://help.aliyun.com/api/green/describesdkurl.html
 func (client *Client) DescribeSdkUrl(request *DescribeSdkUrlRequest) (response *DescribeSdkUrlResponse, err error) {
 	response = CreateDescribeSdkUrlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSdkUrl(request *DescribeSdkUrlRequest) (response *
 }
 
 // DescribeSdkUrlWithChan invokes the green.DescribeSdkUrl API asynchronously
-// api document: https://help.aliyun.com/api/green/describesdkurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSdkUrlWithChan(request *DescribeSdkUrlRequest) (<-chan *DescribeSdkUrlResponse, <-chan error) {
 	responseChan := make(chan *DescribeSdkUrlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSdkUrlWithChan(request *DescribeSdkUrlRequest) (<-
 }
 
 // DescribeSdkUrlWithCallback invokes the green.DescribeSdkUrl API asynchronously
-// api document: https://help.aliyun.com/api/green/describesdkurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSdkUrlWithCallback(request *DescribeSdkUrlRequest, callback func(response *DescribeSdkUrlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

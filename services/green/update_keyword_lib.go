@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateKeywordLib invokes the green.UpdateKeywordLib API synchronously
-// api document: https://help.aliyun.com/api/green/updatekeywordlib.html
 func (client *Client) UpdateKeywordLib(request *UpdateKeywordLibRequest) (response *UpdateKeywordLibResponse, err error) {
 	response = CreateUpdateKeywordLibResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateKeywordLib(request *UpdateKeywordLibRequest) (respon
 }
 
 // UpdateKeywordLibWithChan invokes the green.UpdateKeywordLib API asynchronously
-// api document: https://help.aliyun.com/api/green/updatekeywordlib.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateKeywordLibWithChan(request *UpdateKeywordLibRequest) (<-chan *UpdateKeywordLibResponse, <-chan error) {
 	responseChan := make(chan *UpdateKeywordLibResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateKeywordLibWithChan(request *UpdateKeywordLibRequest)
 }
 
 // UpdateKeywordLibWithCallback invokes the green.UpdateKeywordLib API asynchronously
-// api document: https://help.aliyun.com/api/green/updatekeywordlib.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateKeywordLibWithCallback(request *UpdateKeywordLibRequest, callback func(response *UpdateKeywordLibResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

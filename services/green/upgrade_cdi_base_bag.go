@@ -21,7 +21,6 @@ import (
 )
 
 // UpgradeCdiBaseBag invokes the green.UpgradeCdiBaseBag API synchronously
-// api document: https://help.aliyun.com/api/green/upgradecdibasebag.html
 func (client *Client) UpgradeCdiBaseBag(request *UpgradeCdiBaseBagRequest) (response *UpgradeCdiBaseBagResponse, err error) {
 	response = CreateUpgradeCdiBaseBagResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpgradeCdiBaseBag(request *UpgradeCdiBaseBagRequest) (resp
 }
 
 // UpgradeCdiBaseBagWithChan invokes the green.UpgradeCdiBaseBag API asynchronously
-// api document: https://help.aliyun.com/api/green/upgradecdibasebag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeCdiBaseBagWithChan(request *UpgradeCdiBaseBagRequest) (<-chan *UpgradeCdiBaseBagResponse, <-chan error) {
 	responseChan := make(chan *UpgradeCdiBaseBagResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpgradeCdiBaseBagWithChan(request *UpgradeCdiBaseBagReques
 }
 
 // UpgradeCdiBaseBagWithCallback invokes the green.UpgradeCdiBaseBag API asynchronously
-// api document: https://help.aliyun.com/api/green/upgradecdibasebag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeCdiBaseBagWithCallback(request *UpgradeCdiBaseBagRequest, callback func(response *UpgradeCdiBaseBagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

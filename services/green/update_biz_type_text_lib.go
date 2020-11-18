@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateBizTypeTextLib invokes the green.UpdateBizTypeTextLib API synchronously
-// api document: https://help.aliyun.com/api/green/updatebiztypetextlib.html
 func (client *Client) UpdateBizTypeTextLib(request *UpdateBizTypeTextLibRequest) (response *UpdateBizTypeTextLibResponse, err error) {
 	response = CreateUpdateBizTypeTextLibResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateBizTypeTextLib(request *UpdateBizTypeTextLibRequest)
 }
 
 // UpdateBizTypeTextLibWithChan invokes the green.UpdateBizTypeTextLib API asynchronously
-// api document: https://help.aliyun.com/api/green/updatebiztypetextlib.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateBizTypeTextLibWithChan(request *UpdateBizTypeTextLibRequest) (<-chan *UpdateBizTypeTextLibResponse, <-chan error) {
 	responseChan := make(chan *UpdateBizTypeTextLibResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateBizTypeTextLibWithChan(request *UpdateBizTypeTextLib
 }
 
 // UpdateBizTypeTextLibWithCallback invokes the green.UpdateBizTypeTextLib API asynchronously
-// api document: https://help.aliyun.com/api/green/updatebiztypetextlib.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateBizTypeTextLibWithCallback(request *UpdateBizTypeTextLibRequest, callback func(response *UpdateBizTypeTextLibResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

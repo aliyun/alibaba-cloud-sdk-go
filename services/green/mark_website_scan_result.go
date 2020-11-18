@@ -21,7 +21,6 @@ import (
 )
 
 // MarkWebsiteScanResult invokes the green.MarkWebsiteScanResult API synchronously
-// api document: https://help.aliyun.com/api/green/markwebsitescanresult.html
 func (client *Client) MarkWebsiteScanResult(request *MarkWebsiteScanResultRequest) (response *MarkWebsiteScanResultResponse, err error) {
 	response = CreateMarkWebsiteScanResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) MarkWebsiteScanResult(request *MarkWebsiteScanResultReques
 }
 
 // MarkWebsiteScanResultWithChan invokes the green.MarkWebsiteScanResult API asynchronously
-// api document: https://help.aliyun.com/api/green/markwebsitescanresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MarkWebsiteScanResultWithChan(request *MarkWebsiteScanResultRequest) (<-chan *MarkWebsiteScanResultResponse, <-chan error) {
 	responseChan := make(chan *MarkWebsiteScanResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) MarkWebsiteScanResultWithChan(request *MarkWebsiteScanResu
 }
 
 // MarkWebsiteScanResultWithCallback invokes the green.MarkWebsiteScanResult API asynchronously
-// api document: https://help.aliyun.com/api/green/markwebsitescanresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MarkWebsiteScanResultWithCallback(request *MarkWebsiteScanResultRequest, callback func(response *MarkWebsiteScanResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

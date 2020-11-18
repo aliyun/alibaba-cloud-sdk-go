@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeImageUploadInfo invokes the green.DescribeImageUploadInfo API synchronously
-// api document: https://help.aliyun.com/api/green/describeimageuploadinfo.html
 func (client *Client) DescribeImageUploadInfo(request *DescribeImageUploadInfoRequest) (response *DescribeImageUploadInfoResponse, err error) {
 	response = CreateDescribeImageUploadInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeImageUploadInfo(request *DescribeImageUploadInfoRe
 }
 
 // DescribeImageUploadInfoWithChan invokes the green.DescribeImageUploadInfo API asynchronously
-// api document: https://help.aliyun.com/api/green/describeimageuploadinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImageUploadInfoWithChan(request *DescribeImageUploadInfoRequest) (<-chan *DescribeImageUploadInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeImageUploadInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeImageUploadInfoWithChan(request *DescribeImageUplo
 }
 
 // DescribeImageUploadInfoWithCallback invokes the green.DescribeImageUploadInfo API asynchronously
-// api document: https://help.aliyun.com/api/green/describeimageuploadinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImageUploadInfoWithCallback(request *DescribeImageUploadInfoRequest, callback func(response *DescribeImageUploadInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

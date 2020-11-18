@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeOpenApiUsage invokes the green.DescribeOpenApiUsage API synchronously
-// api document: https://help.aliyun.com/api/green/describeopenapiusage.html
 func (client *Client) DescribeOpenApiUsage(request *DescribeOpenApiUsageRequest) (response *DescribeOpenApiUsageResponse, err error) {
 	response = CreateDescribeOpenApiUsageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeOpenApiUsage(request *DescribeOpenApiUsageRequest)
 }
 
 // DescribeOpenApiUsageWithChan invokes the green.DescribeOpenApiUsage API asynchronously
-// api document: https://help.aliyun.com/api/green/describeopenapiusage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOpenApiUsageWithChan(request *DescribeOpenApiUsageRequest) (<-chan *DescribeOpenApiUsageResponse, <-chan error) {
 	responseChan := make(chan *DescribeOpenApiUsageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeOpenApiUsageWithChan(request *DescribeOpenApiUsage
 }
 
 // DescribeOpenApiUsageWithCallback invokes the green.DescribeOpenApiUsage API asynchronously
-// api document: https://help.aliyun.com/api/green/describeopenapiusage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOpenApiUsageWithCallback(request *DescribeOpenApiUsageRequest, callback func(response *DescribeOpenApiUsageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

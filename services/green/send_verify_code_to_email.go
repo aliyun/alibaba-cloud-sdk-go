@@ -21,7 +21,6 @@ import (
 )
 
 // SendVerifyCodeToEmail invokes the green.SendVerifyCodeToEmail API synchronously
-// api document: https://help.aliyun.com/api/green/sendverifycodetoemail.html
 func (client *Client) SendVerifyCodeToEmail(request *SendVerifyCodeToEmailRequest) (response *SendVerifyCodeToEmailResponse, err error) {
 	response = CreateSendVerifyCodeToEmailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SendVerifyCodeToEmail(request *SendVerifyCodeToEmailReques
 }
 
 // SendVerifyCodeToEmailWithChan invokes the green.SendVerifyCodeToEmail API asynchronously
-// api document: https://help.aliyun.com/api/green/sendverifycodetoemail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendVerifyCodeToEmailWithChan(request *SendVerifyCodeToEmailRequest) (<-chan *SendVerifyCodeToEmailResponse, <-chan error) {
 	responseChan := make(chan *SendVerifyCodeToEmailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SendVerifyCodeToEmailWithChan(request *SendVerifyCodeToEma
 }
 
 // SendVerifyCodeToEmailWithCallback invokes the green.SendVerifyCodeToEmail API asynchronously
-// api document: https://help.aliyun.com/api/green/sendverifycodetoemail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendVerifyCodeToEmailWithCallback(request *SendVerifyCodeToEmailRequest, callback func(response *SendVerifyCodeToEmailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

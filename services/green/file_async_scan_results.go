@@ -21,7 +21,6 @@ import (
 )
 
 // FileAsyncScanResults invokes the green.FileAsyncScanResults API synchronously
-// api document: https://help.aliyun.com/api/green/fileasyncscanresults.html
 func (client *Client) FileAsyncScanResults(request *FileAsyncScanResultsRequest) (response *FileAsyncScanResultsResponse, err error) {
 	response = CreateFileAsyncScanResultsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FileAsyncScanResults(request *FileAsyncScanResultsRequest)
 }
 
 // FileAsyncScanResultsWithChan invokes the green.FileAsyncScanResults API asynchronously
-// api document: https://help.aliyun.com/api/green/fileasyncscanresults.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FileAsyncScanResultsWithChan(request *FileAsyncScanResultsRequest) (<-chan *FileAsyncScanResultsResponse, <-chan error) {
 	responseChan := make(chan *FileAsyncScanResultsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FileAsyncScanResultsWithChan(request *FileAsyncScanResults
 }
 
 // FileAsyncScanResultsWithCallback invokes the green.FileAsyncScanResults API asynchronously
-// api document: https://help.aliyun.com/api/green/fileasyncscanresults.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FileAsyncScanResultsWithCallback(request *FileAsyncScanResultsRequest, callback func(response *FileAsyncScanResultsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

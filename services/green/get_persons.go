@@ -21,7 +21,6 @@ import (
 )
 
 // GetPersons invokes the green.GetPersons API synchronously
-// api document: https://help.aliyun.com/api/green/getpersons.html
 func (client *Client) GetPersons(request *GetPersonsRequest) (response *GetPersonsResponse, err error) {
 	response = CreateGetPersonsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetPersons(request *GetPersonsRequest) (response *GetPerso
 }
 
 // GetPersonsWithChan invokes the green.GetPersons API asynchronously
-// api document: https://help.aliyun.com/api/green/getpersons.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPersonsWithChan(request *GetPersonsRequest) (<-chan *GetPersonsResponse, <-chan error) {
 	responseChan := make(chan *GetPersonsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetPersonsWithChan(request *GetPersonsRequest) (<-chan *Ge
 }
 
 // GetPersonsWithCallback invokes the green.GetPersons API asynchronously
-// api document: https://help.aliyun.com/api/green/getpersons.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPersonsWithCallback(request *GetPersonsRequest, callback func(response *GetPersonsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

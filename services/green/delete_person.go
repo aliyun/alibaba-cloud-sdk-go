@@ -21,7 +21,6 @@ import (
 )
 
 // DeletePerson invokes the green.DeletePerson API synchronously
-// api document: https://help.aliyun.com/api/green/deleteperson.html
 func (client *Client) DeletePerson(request *DeletePersonRequest) (response *DeletePersonResponse, err error) {
 	response = CreateDeletePersonResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeletePerson(request *DeletePersonRequest) (response *Dele
 }
 
 // DeletePersonWithChan invokes the green.DeletePerson API asynchronously
-// api document: https://help.aliyun.com/api/green/deleteperson.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePersonWithChan(request *DeletePersonRequest) (<-chan *DeletePersonResponse, <-chan error) {
 	responseChan := make(chan *DeletePersonResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeletePersonWithChan(request *DeletePersonRequest) (<-chan
 }
 
 // DeletePersonWithCallback invokes the green.DeletePerson API asynchronously
-// api document: https://help.aliyun.com/api/green/deleteperson.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePersonWithCallback(request *DeletePersonRequest, callback func(response *DeletePersonResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

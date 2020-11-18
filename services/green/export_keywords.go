@@ -21,7 +21,6 @@ import (
 )
 
 // ExportKeywords invokes the green.ExportKeywords API synchronously
-// api document: https://help.aliyun.com/api/green/exportkeywords.html
 func (client *Client) ExportKeywords(request *ExportKeywordsRequest) (response *ExportKeywordsResponse, err error) {
 	response = CreateExportKeywordsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExportKeywords(request *ExportKeywordsRequest) (response *
 }
 
 // ExportKeywordsWithChan invokes the green.ExportKeywords API asynchronously
-// api document: https://help.aliyun.com/api/green/exportkeywords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportKeywordsWithChan(request *ExportKeywordsRequest) (<-chan *ExportKeywordsResponse, <-chan error) {
 	responseChan := make(chan *ExportKeywordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExportKeywordsWithChan(request *ExportKeywordsRequest) (<-
 }
 
 // ExportKeywordsWithCallback invokes the green.ExportKeywords API asynchronously
-// api document: https://help.aliyun.com/api/green/exportkeywords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportKeywordsWithCallback(request *ExportKeywordsRequest, callback func(response *ExportKeywordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

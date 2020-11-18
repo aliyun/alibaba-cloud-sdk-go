@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateOssStockStatus invokes the green.UpdateOssStockStatus API synchronously
-// api document: https://help.aliyun.com/api/green/updateossstockstatus.html
 func (client *Client) UpdateOssStockStatus(request *UpdateOssStockStatusRequest) (response *UpdateOssStockStatusResponse, err error) {
 	response = CreateUpdateOssStockStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateOssStockStatus(request *UpdateOssStockStatusRequest)
 }
 
 // UpdateOssStockStatusWithChan invokes the green.UpdateOssStockStatus API asynchronously
-// api document: https://help.aliyun.com/api/green/updateossstockstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateOssStockStatusWithChan(request *UpdateOssStockStatusRequest) (<-chan *UpdateOssStockStatusResponse, <-chan error) {
 	responseChan := make(chan *UpdateOssStockStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateOssStockStatusWithChan(request *UpdateOssStockStatus
 }
 
 // UpdateOssStockStatusWithCallback invokes the green.UpdateOssStockStatus API asynchronously
-// api document: https://help.aliyun.com/api/green/updateossstockstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateOssStockStatusWithCallback(request *UpdateOssStockStatusRequest, callback func(response *UpdateOssStockStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

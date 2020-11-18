@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateWebsiteInstanceStatus invokes the green.UpdateWebsiteInstanceStatus API synchronously
-// api document: https://help.aliyun.com/api/green/updatewebsiteinstancestatus.html
 func (client *Client) UpdateWebsiteInstanceStatus(request *UpdateWebsiteInstanceStatusRequest) (response *UpdateWebsiteInstanceStatusResponse, err error) {
 	response = CreateUpdateWebsiteInstanceStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateWebsiteInstanceStatus(request *UpdateWebsiteInstance
 }
 
 // UpdateWebsiteInstanceStatusWithChan invokes the green.UpdateWebsiteInstanceStatus API asynchronously
-// api document: https://help.aliyun.com/api/green/updatewebsiteinstancestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateWebsiteInstanceStatusWithChan(request *UpdateWebsiteInstanceStatusRequest) (<-chan *UpdateWebsiteInstanceStatusResponse, <-chan error) {
 	responseChan := make(chan *UpdateWebsiteInstanceStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateWebsiteInstanceStatusWithChan(request *UpdateWebsite
 }
 
 // UpdateWebsiteInstanceStatusWithCallback invokes the green.UpdateWebsiteInstanceStatus API asynchronously
-// api document: https://help.aliyun.com/api/green/updatewebsiteinstancestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateWebsiteInstanceStatusWithCallback(request *UpdateWebsiteInstanceStatusRequest, callback func(response *UpdateWebsiteInstanceStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

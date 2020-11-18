@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteFaces invokes the green.DeleteFaces API synchronously
-// api document: https://help.aliyun.com/api/green/deletefaces.html
 func (client *Client) DeleteFaces(request *DeleteFacesRequest) (response *DeleteFacesResponse, err error) {
 	response = CreateDeleteFacesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteFaces(request *DeleteFacesRequest) (response *Delete
 }
 
 // DeleteFacesWithChan invokes the green.DeleteFaces API asynchronously
-// api document: https://help.aliyun.com/api/green/deletefaces.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFacesWithChan(request *DeleteFacesRequest) (<-chan *DeleteFacesResponse, <-chan error) {
 	responseChan := make(chan *DeleteFacesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteFacesWithChan(request *DeleteFacesRequest) (<-chan *
 }
 
 // DeleteFacesWithCallback invokes the green.DeleteFaces API asynchronously
-// api document: https://help.aliyun.com/api/green/deletefaces.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFacesWithCallback(request *DeleteFacesRequest, callback func(response *DeleteFacesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

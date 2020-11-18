@@ -21,7 +21,6 @@ import (
 )
 
 // CreateKeyword invokes the green.CreateKeyword API synchronously
-// api document: https://help.aliyun.com/api/green/createkeyword.html
 func (client *Client) CreateKeyword(request *CreateKeywordRequest) (response *CreateKeywordResponse, err error) {
 	response = CreateCreateKeywordResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateKeyword(request *CreateKeywordRequest) (response *Cr
 }
 
 // CreateKeywordWithChan invokes the green.CreateKeyword API asynchronously
-// api document: https://help.aliyun.com/api/green/createkeyword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateKeywordWithChan(request *CreateKeywordRequest) (<-chan *CreateKeywordResponse, <-chan error) {
 	responseChan := make(chan *CreateKeywordResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateKeywordWithChan(request *CreateKeywordRequest) (<-ch
 }
 
 // CreateKeywordWithCallback invokes the green.CreateKeyword API asynchronously
-// api document: https://help.aliyun.com/api/green/createkeyword.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateKeywordWithCallback(request *CreateKeywordRequest, callback func(response *CreateKeywordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

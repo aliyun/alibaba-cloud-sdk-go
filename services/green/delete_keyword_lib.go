@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteKeywordLib invokes the green.DeleteKeywordLib API synchronously
-// api document: https://help.aliyun.com/api/green/deletekeywordlib.html
 func (client *Client) DeleteKeywordLib(request *DeleteKeywordLibRequest) (response *DeleteKeywordLibResponse, err error) {
 	response = CreateDeleteKeywordLibResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteKeywordLib(request *DeleteKeywordLibRequest) (respon
 }
 
 // DeleteKeywordLibWithChan invokes the green.DeleteKeywordLib API asynchronously
-// api document: https://help.aliyun.com/api/green/deletekeywordlib.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteKeywordLibWithChan(request *DeleteKeywordLibRequest) (<-chan *DeleteKeywordLibResponse, <-chan error) {
 	responseChan := make(chan *DeleteKeywordLibResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteKeywordLibWithChan(request *DeleteKeywordLibRequest)
 }
 
 // DeleteKeywordLibWithCallback invokes the green.DeleteKeywordLib API asynchronously
-// api document: https://help.aliyun.com/api/green/deletekeywordlib.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteKeywordLibWithCallback(request *DeleteKeywordLibRequest, callback func(response *DeleteKeywordLibResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

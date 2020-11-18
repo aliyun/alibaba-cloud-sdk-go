@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateAuditSetting invokes the green.UpdateAuditSetting API synchronously
-// api document: https://help.aliyun.com/api/green/updateauditsetting.html
 func (client *Client) UpdateAuditSetting(request *UpdateAuditSettingRequest) (response *UpdateAuditSettingResponse, err error) {
 	response = CreateUpdateAuditSettingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateAuditSetting(request *UpdateAuditSettingRequest) (re
 }
 
 // UpdateAuditSettingWithChan invokes the green.UpdateAuditSetting API asynchronously
-// api document: https://help.aliyun.com/api/green/updateauditsetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAuditSettingWithChan(request *UpdateAuditSettingRequest) (<-chan *UpdateAuditSettingResponse, <-chan error) {
 	responseChan := make(chan *UpdateAuditSettingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateAuditSettingWithChan(request *UpdateAuditSettingRequ
 }
 
 // UpdateAuditSettingWithCallback invokes the green.UpdateAuditSetting API asynchronously
-// api document: https://help.aliyun.com/api/green/updateauditsetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAuditSettingWithCallback(request *UpdateAuditSettingRequest, callback func(response *UpdateAuditSettingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

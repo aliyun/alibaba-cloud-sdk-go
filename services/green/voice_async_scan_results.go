@@ -21,7 +21,6 @@ import (
 )
 
 // VoiceAsyncScanResults invokes the green.VoiceAsyncScanResults API synchronously
-// api document: https://help.aliyun.com/api/green/voiceasyncscanresults.html
 func (client *Client) VoiceAsyncScanResults(request *VoiceAsyncScanResultsRequest) (response *VoiceAsyncScanResultsResponse, err error) {
 	response = CreateVoiceAsyncScanResultsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VoiceAsyncScanResults(request *VoiceAsyncScanResultsReques
 }
 
 // VoiceAsyncScanResultsWithChan invokes the green.VoiceAsyncScanResults API asynchronously
-// api document: https://help.aliyun.com/api/green/voiceasyncscanresults.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VoiceAsyncScanResultsWithChan(request *VoiceAsyncScanResultsRequest) (<-chan *VoiceAsyncScanResultsResponse, <-chan error) {
 	responseChan := make(chan *VoiceAsyncScanResultsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VoiceAsyncScanResultsWithChan(request *VoiceAsyncScanResul
 }
 
 // VoiceAsyncScanResultsWithCallback invokes the green.VoiceAsyncScanResults API asynchronously
-// api document: https://help.aliyun.com/api/green/voiceasyncscanresults.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VoiceAsyncScanResultsWithCallback(request *VoiceAsyncScanResultsRequest, callback func(response *VoiceAsyncScanResultsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

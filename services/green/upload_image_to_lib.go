@@ -21,7 +21,6 @@ import (
 )
 
 // UploadImageToLib invokes the green.UploadImageToLib API synchronously
-// api document: https://help.aliyun.com/api/green/uploadimagetolib.html
 func (client *Client) UploadImageToLib(request *UploadImageToLibRequest) (response *UploadImageToLibResponse, err error) {
 	response = CreateUploadImageToLibResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UploadImageToLib(request *UploadImageToLibRequest) (respon
 }
 
 // UploadImageToLibWithChan invokes the green.UploadImageToLib API asynchronously
-// api document: https://help.aliyun.com/api/green/uploadimagetolib.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadImageToLibWithChan(request *UploadImageToLibRequest) (<-chan *UploadImageToLibResponse, <-chan error) {
 	responseChan := make(chan *UploadImageToLibResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UploadImageToLibWithChan(request *UploadImageToLibRequest)
 }
 
 // UploadImageToLibWithCallback invokes the green.UploadImageToLib API asynchronously
-// api document: https://help.aliyun.com/api/green/uploadimagetolib.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadImageToLibWithCallback(request *UploadImageToLibRequest, callback func(response *UploadImageToLibResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

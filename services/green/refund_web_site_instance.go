@@ -21,7 +21,6 @@ import (
 )
 
 // RefundWebSiteInstance invokes the green.RefundWebSiteInstance API synchronously
-// api document: https://help.aliyun.com/api/green/refundwebsiteinstance.html
 func (client *Client) RefundWebSiteInstance(request *RefundWebSiteInstanceRequest) (response *RefundWebSiteInstanceResponse, err error) {
 	response = CreateRefundWebSiteInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RefundWebSiteInstance(request *RefundWebSiteInstanceReques
 }
 
 // RefundWebSiteInstanceWithChan invokes the green.RefundWebSiteInstance API asynchronously
-// api document: https://help.aliyun.com/api/green/refundwebsiteinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefundWebSiteInstanceWithChan(request *RefundWebSiteInstanceRequest) (<-chan *RefundWebSiteInstanceResponse, <-chan error) {
 	responseChan := make(chan *RefundWebSiteInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RefundWebSiteInstanceWithChan(request *RefundWebSiteInstan
 }
 
 // RefundWebSiteInstanceWithCallback invokes the green.RefundWebSiteInstance API asynchronously
-// api document: https://help.aliyun.com/api/green/refundwebsiteinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefundWebSiteInstanceWithCallback(request *RefundWebSiteInstanceRequest, callback func(response *RefundWebSiteInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

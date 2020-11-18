@@ -21,7 +21,6 @@ import (
 )
 
 // ImageScanFeedback invokes the green.ImageScanFeedback API synchronously
-// api document: https://help.aliyun.com/api/green/imagescanfeedback.html
 func (client *Client) ImageScanFeedback(request *ImageScanFeedbackRequest) (response *ImageScanFeedbackResponse, err error) {
 	response = CreateImageScanFeedbackResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ImageScanFeedback(request *ImageScanFeedbackRequest) (resp
 }
 
 // ImageScanFeedbackWithChan invokes the green.ImageScanFeedback API asynchronously
-// api document: https://help.aliyun.com/api/green/imagescanfeedback.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImageScanFeedbackWithChan(request *ImageScanFeedbackRequest) (<-chan *ImageScanFeedbackResponse, <-chan error) {
 	responseChan := make(chan *ImageScanFeedbackResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ImageScanFeedbackWithChan(request *ImageScanFeedbackReques
 }
 
 // ImageScanFeedbackWithCallback invokes the green.ImageScanFeedback API asynchronously
-// api document: https://help.aliyun.com/api/green/imagescanfeedback.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImageScanFeedbackWithCallback(request *ImageScanFeedbackRequest, callback func(response *ImageScanFeedbackResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

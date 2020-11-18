@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAuditCallback invokes the green.DescribeAuditCallback API synchronously
-// api document: https://help.aliyun.com/api/green/describeauditcallback.html
 func (client *Client) DescribeAuditCallback(request *DescribeAuditCallbackRequest) (response *DescribeAuditCallbackResponse, err error) {
 	response = CreateDescribeAuditCallbackResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAuditCallback(request *DescribeAuditCallbackReques
 }
 
 // DescribeAuditCallbackWithChan invokes the green.DescribeAuditCallback API asynchronously
-// api document: https://help.aliyun.com/api/green/describeauditcallback.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAuditCallbackWithChan(request *DescribeAuditCallbackRequest) (<-chan *DescribeAuditCallbackResponse, <-chan error) {
 	responseChan := make(chan *DescribeAuditCallbackResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAuditCallbackWithChan(request *DescribeAuditCallba
 }
 
 // DescribeAuditCallbackWithCallback invokes the green.DescribeAuditCallback API asynchronously
-// api document: https://help.aliyun.com/api/green/describeauditcallback.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAuditCallbackWithCallback(request *DescribeAuditCallbackRequest, callback func(response *DescribeAuditCallbackResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeOssIncrementOverview invokes the green.DescribeOssIncrementOverview API synchronously
-// api document: https://help.aliyun.com/api/green/describeossincrementoverview.html
 func (client *Client) DescribeOssIncrementOverview(request *DescribeOssIncrementOverviewRequest) (response *DescribeOssIncrementOverviewResponse, err error) {
 	response = CreateDescribeOssIncrementOverviewResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeOssIncrementOverview(request *DescribeOssIncrement
 }
 
 // DescribeOssIncrementOverviewWithChan invokes the green.DescribeOssIncrementOverview API asynchronously
-// api document: https://help.aliyun.com/api/green/describeossincrementoverview.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssIncrementOverviewWithChan(request *DescribeOssIncrementOverviewRequest) (<-chan *DescribeOssIncrementOverviewResponse, <-chan error) {
 	responseChan := make(chan *DescribeOssIncrementOverviewResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeOssIncrementOverviewWithChan(request *DescribeOssI
 }
 
 // DescribeOssIncrementOverviewWithCallback invokes the green.DescribeOssIncrementOverview API asynchronously
-// api document: https://help.aliyun.com/api/green/describeossincrementoverview.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssIncrementOverviewWithCallback(request *DescribeOssIncrementOverviewRequest, callback func(response *DescribeOssIncrementOverviewResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,12 +78,15 @@ type DescribeOssIncrementOverviewRequest struct {
 // DescribeOssIncrementOverviewResponse is the response struct for api DescribeOssIncrementOverview
 type DescribeOssIncrementOverviewResponse struct {
 	*responses.BaseResponse
-	RequestId              string `json:"RequestId" xml:"RequestId"`
-	ImageCount             int    `json:"ImageCount" xml:"ImageCount"`
-	VideoCount             int    `json:"VideoCount" xml:"VideoCount"`
-	VideoFrameCount        int    `json:"VideoFrameCount" xml:"VideoFrameCount"`
-	PornUnhandleCount      int    `json:"PornUnhandleCount" xml:"PornUnhandleCount"`
-	TerrorismUnhandleCount int    `json:"TerrorismUnhandleCount" xml:"TerrorismUnhandleCount"`
+	RequestId                  string `json:"RequestId" xml:"RequestId"`
+	ImageCount                 int    `json:"ImageCount" xml:"ImageCount"`
+	VideoCount                 int    `json:"VideoCount" xml:"VideoCount"`
+	VideoFrameCount            int    `json:"VideoFrameCount" xml:"VideoFrameCount"`
+	PornUnhandleCount          int    `json:"PornUnhandleCount" xml:"PornUnhandleCount"`
+	TerrorismUnhandleCount     int    `json:"TerrorismUnhandleCount" xml:"TerrorismUnhandleCount"`
+	AdUnhandleCount            int    `json:"AdUnhandleCount" xml:"AdUnhandleCount"`
+	LiveUnhandleCount          int    `json:"LiveUnhandleCount" xml:"LiveUnhandleCount"`
+	VoiceAntispamUnhandleCount int    `json:"VoiceAntispamUnhandleCount" xml:"VoiceAntispamUnhandleCount"`
 }
 
 // CreateDescribeOssIncrementOverviewRequest creates a request to invoke DescribeOssIncrementOverview API

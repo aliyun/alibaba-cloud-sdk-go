@@ -17,11 +17,12 @@ package green
 
 // Stat is a nested struct in green response
 type Stat struct {
-	ResourceType string `json:"ResourceType" xml:"ResourceType"`
-	Scene        string `json:"Scene" xml:"Scene"`
-	Date         string `json:"Date" xml:"Date"`
-	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
-	PassCount    int    `json:"PassCount" xml:"PassCount"`
-	ReviewCount  int    `json:"ReviewCount" xml:"ReviewCount"`
-	BlockCount   int    `json:"BlockCount" xml:"BlockCount"`
+	PassCount     int    `json:"PassCount" xml:"PassCount"`
+	ResourceType  string `json:"ResourceType" xml:"ResourceType"`
+	TotalCount    int    `json:"TotalCount" xml:"TotalCount"`
+	TotalDuration int    `json:"TotalDuration" xml:"TotalDuration"`
+	Scene         string `json:"Scene" xml:"Scene"`
+	Date          string `json:"Date" xml:"Date"`
+	ReviewCount   int    `json:"ReviewCount" xml:"ReviewCount"`
+	BlockCount    int    `json:"BlockCount" xml:"BlockCount"`
 }

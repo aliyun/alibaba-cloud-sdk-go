@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateAuditRange invokes the green.UpdateAuditRange API synchronously
-// api document: https://help.aliyun.com/api/green/updateauditrange.html
 func (client *Client) UpdateAuditRange(request *UpdateAuditRangeRequest) (response *UpdateAuditRangeResponse, err error) {
 	response = CreateUpdateAuditRangeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateAuditRange(request *UpdateAuditRangeRequest) (respon
 }
 
 // UpdateAuditRangeWithChan invokes the green.UpdateAuditRange API asynchronously
-// api document: https://help.aliyun.com/api/green/updateauditrange.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAuditRangeWithChan(request *UpdateAuditRangeRequest) (<-chan *UpdateAuditRangeResponse, <-chan error) {
 	responseChan := make(chan *UpdateAuditRangeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateAuditRangeWithChan(request *UpdateAuditRangeRequest)
 }
 
 // UpdateAuditRangeWithCallback invokes the green.UpdateAuditRange API asynchronously
-// api document: https://help.aliyun.com/api/green/updateauditrange.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAuditRangeWithCallback(request *UpdateAuditRangeRequest, callback func(response *UpdateAuditRangeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

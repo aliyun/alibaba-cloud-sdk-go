@@ -21,7 +21,6 @@ import (
 )
 
 // MarkOssResult invokes the green.MarkOssResult API synchronously
-// api document: https://help.aliyun.com/api/green/markossresult.html
 func (client *Client) MarkOssResult(request *MarkOssResultRequest) (response *MarkOssResultResponse, err error) {
 	response = CreateMarkOssResultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) MarkOssResult(request *MarkOssResultRequest) (response *Ma
 }
 
 // MarkOssResultWithChan invokes the green.MarkOssResult API asynchronously
-// api document: https://help.aliyun.com/api/green/markossresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MarkOssResultWithChan(request *MarkOssResultRequest) (<-chan *MarkOssResultResponse, <-chan error) {
 	responseChan := make(chan *MarkOssResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) MarkOssResultWithChan(request *MarkOssResultRequest) (<-ch
 }
 
 // MarkOssResultWithCallback invokes the green.MarkOssResult API asynchronously
-// api document: https://help.aliyun.com/api/green/markossresult.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MarkOssResultWithCallback(request *MarkOssResultRequest, callback func(response *MarkOssResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

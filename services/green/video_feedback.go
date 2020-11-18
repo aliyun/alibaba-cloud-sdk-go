@@ -21,7 +21,6 @@ import (
 )
 
 // VideoFeedback invokes the green.VideoFeedback API synchronously
-// api document: https://help.aliyun.com/api/green/videofeedback.html
 func (client *Client) VideoFeedback(request *VideoFeedbackRequest) (response *VideoFeedbackResponse, err error) {
 	response = CreateVideoFeedbackResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VideoFeedback(request *VideoFeedbackRequest) (response *Vi
 }
 
 // VideoFeedbackWithChan invokes the green.VideoFeedback API asynchronously
-// api document: https://help.aliyun.com/api/green/videofeedback.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VideoFeedbackWithChan(request *VideoFeedbackRequest) (<-chan *VideoFeedbackResponse, <-chan error) {
 	responseChan := make(chan *VideoFeedbackResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VideoFeedbackWithChan(request *VideoFeedbackRequest) (<-ch
 }
 
 // VideoFeedbackWithCallback invokes the green.VideoFeedback API asynchronously
-// api document: https://help.aliyun.com/api/green/videofeedback.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VideoFeedbackWithCallback(request *VideoFeedbackRequest, callback func(response *VideoFeedbackResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

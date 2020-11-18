@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAppInfo invokes the green.DescribeAppInfo API synchronously
-// api document: https://help.aliyun.com/api/green/describeappinfo.html
 func (client *Client) DescribeAppInfo(request *DescribeAppInfoRequest) (response *DescribeAppInfoResponse, err error) {
 	response = CreateDescribeAppInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAppInfo(request *DescribeAppInfoRequest) (response
 }
 
 // DescribeAppInfoWithChan invokes the green.DescribeAppInfo API asynchronously
-// api document: https://help.aliyun.com/api/green/describeappinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppInfoWithChan(request *DescribeAppInfoRequest) (<-chan *DescribeAppInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeAppInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAppInfoWithChan(request *DescribeAppInfoRequest) (
 }
 
 // DescribeAppInfoWithCallback invokes the green.DescribeAppInfo API asynchronously
-// api document: https://help.aliyun.com/api/green/describeappinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAppInfoWithCallback(request *DescribeAppInfoRequest, callback func(response *DescribeAppInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

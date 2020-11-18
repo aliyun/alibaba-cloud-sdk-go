@@ -21,7 +21,6 @@ import (
 )
 
 // VerifyEmail invokes the green.VerifyEmail API synchronously
-// api document: https://help.aliyun.com/api/green/verifyemail.html
 func (client *Client) VerifyEmail(request *VerifyEmailRequest) (response *VerifyEmailResponse, err error) {
 	response = CreateVerifyEmailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) VerifyEmail(request *VerifyEmailRequest) (response *Verify
 }
 
 // VerifyEmailWithChan invokes the green.VerifyEmail API asynchronously
-// api document: https://help.aliyun.com/api/green/verifyemail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyEmailWithChan(request *VerifyEmailRequest) (<-chan *VerifyEmailResponse, <-chan error) {
 	responseChan := make(chan *VerifyEmailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) VerifyEmailWithChan(request *VerifyEmailRequest) (<-chan *
 }
 
 // VerifyEmailWithCallback invokes the green.VerifyEmail API asynchronously
-// api document: https://help.aliyun.com/api/green/verifyemail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyEmailWithCallback(request *VerifyEmailRequest, callback func(response *VerifyEmailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

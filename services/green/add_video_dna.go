@@ -21,7 +21,6 @@ import (
 )
 
 // AddVideoDna invokes the green.AddVideoDna API synchronously
-// api document: https://help.aliyun.com/api/green/addvideodna.html
 func (client *Client) AddVideoDna(request *AddVideoDnaRequest) (response *AddVideoDnaResponse, err error) {
 	response = CreateAddVideoDnaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddVideoDna(request *AddVideoDnaRequest) (response *AddVid
 }
 
 // AddVideoDnaWithChan invokes the green.AddVideoDna API asynchronously
-// api document: https://help.aliyun.com/api/green/addvideodna.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddVideoDnaWithChan(request *AddVideoDnaRequest) (<-chan *AddVideoDnaResponse, <-chan error) {
 	responseChan := make(chan *AddVideoDnaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddVideoDnaWithChan(request *AddVideoDnaRequest) (<-chan *
 }
 
 // AddVideoDnaWithCallback invokes the green.AddVideoDna API asynchronously
-// api document: https://help.aliyun.com/api/green/addvideodna.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddVideoDnaWithCallback(request *AddVideoDnaRequest, callback func(response *AddVideoDnaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

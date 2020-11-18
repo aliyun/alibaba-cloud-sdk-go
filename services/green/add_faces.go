@@ -21,7 +21,6 @@ import (
 )
 
 // AddFaces invokes the green.AddFaces API synchronously
-// api document: https://help.aliyun.com/api/green/addfaces.html
 func (client *Client) AddFaces(request *AddFacesRequest) (response *AddFacesResponse, err error) {
 	response = CreateAddFacesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddFaces(request *AddFacesRequest) (response *AddFacesResp
 }
 
 // AddFacesWithChan invokes the green.AddFaces API asynchronously
-// api document: https://help.aliyun.com/api/green/addfaces.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddFacesWithChan(request *AddFacesRequest) (<-chan *AddFacesResponse, <-chan error) {
 	responseChan := make(chan *AddFacesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddFacesWithChan(request *AddFacesRequest) (<-chan *AddFac
 }
 
 // AddFacesWithCallback invokes the green.AddFaces API asynchronously
-// api document: https://help.aliyun.com/api/green/addfaces.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddFacesWithCallback(request *AddFacesRequest, callback func(response *AddFacesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

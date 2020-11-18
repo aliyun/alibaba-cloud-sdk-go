@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeNotificationSetting invokes the green.DescribeNotificationSetting API synchronously
-// api document: https://help.aliyun.com/api/green/describenotificationsetting.html
 func (client *Client) DescribeNotificationSetting(request *DescribeNotificationSettingRequest) (response *DescribeNotificationSettingResponse, err error) {
 	response = CreateDescribeNotificationSettingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeNotificationSetting(request *DescribeNotificationS
 }
 
 // DescribeNotificationSettingWithChan invokes the green.DescribeNotificationSetting API asynchronously
-// api document: https://help.aliyun.com/api/green/describenotificationsetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNotificationSettingWithChan(request *DescribeNotificationSettingRequest) (<-chan *DescribeNotificationSettingResponse, <-chan error) {
 	responseChan := make(chan *DescribeNotificationSettingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeNotificationSettingWithChan(request *DescribeNotif
 }
 
 // DescribeNotificationSettingWithCallback invokes the green.DescribeNotificationSetting API asynchronously
-// api document: https://help.aliyun.com/api/green/describenotificationsetting.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNotificationSettingWithCallback(request *DescribeNotificationSettingRequest, callback func(response *DescribeNotificationSettingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

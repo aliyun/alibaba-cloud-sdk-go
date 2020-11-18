@@ -21,7 +21,6 @@ import (
 )
 
 // CreateBizType invokes the green.CreateBizType API synchronously
-// api document: https://help.aliyun.com/api/green/createbiztype.html
 func (client *Client) CreateBizType(request *CreateBizTypeRequest) (response *CreateBizTypeResponse, err error) {
 	response = CreateCreateBizTypeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateBizType(request *CreateBizTypeRequest) (response *Cr
 }
 
 // CreateBizTypeWithChan invokes the green.CreateBizType API asynchronously
-// api document: https://help.aliyun.com/api/green/createbiztype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBizTypeWithChan(request *CreateBizTypeRequest) (<-chan *CreateBizTypeResponse, <-chan error) {
 	responseChan := make(chan *CreateBizTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateBizTypeWithChan(request *CreateBizTypeRequest) (<-ch
 }
 
 // CreateBizTypeWithCallback invokes the green.CreateBizType API asynchronously
-// api document: https://help.aliyun.com/api/green/createbiztype.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBizTypeWithCallback(request *CreateBizTypeRequest, callback func(response *CreateBizTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

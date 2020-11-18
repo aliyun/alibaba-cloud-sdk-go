@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteImageLib invokes the green.DeleteImageLib API synchronously
-// api document: https://help.aliyun.com/api/green/deleteimagelib.html
 func (client *Client) DeleteImageLib(request *DeleteImageLibRequest) (response *DeleteImageLibResponse, err error) {
 	response = CreateDeleteImageLibResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteImageLib(request *DeleteImageLibRequest) (response *
 }
 
 // DeleteImageLibWithChan invokes the green.DeleteImageLib API asynchronously
-// api document: https://help.aliyun.com/api/green/deleteimagelib.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteImageLibWithChan(request *DeleteImageLibRequest) (<-chan *DeleteImageLibResponse, <-chan error) {
 	responseChan := make(chan *DeleteImageLibResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteImageLibWithChan(request *DeleteImageLibRequest) (<-
 }
 
 // DeleteImageLibWithCallback invokes the green.DeleteImageLib API asynchronously
-// api document: https://help.aliyun.com/api/green/deleteimagelib.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteImageLibWithCallback(request *DeleteImageLibRequest, callback func(response *DeleteImageLibResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
