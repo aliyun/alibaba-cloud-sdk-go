@@ -17,6 +17,7 @@ package waf_openapi
 
 // Domain is a nested struct in waf_openapi response
 type Domain struct {
+	IpFollowStatus       int                        `json:"IpFollowStatus" xml:"IpFollowStatus"`
 	HttpToUserIp         int                        `json:"HttpToUserIp" xml:"HttpToUserIp"`
 	HttpsRedirect        int                        `json:"HttpsRedirect" xml:"HttpsRedirect"`
 	LoadBalancing        int                        `json:"LoadBalancing" xml:"LoadBalancing"`

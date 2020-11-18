@@ -71,14 +71,13 @@ func (client *Client) CreateCertificateWithCallback(request *CreateCertificateRe
 // CreateCertificateRequest is the request struct for api CreateCertificate
 type CreateCertificateRequest struct {
 	*requests.RpcRequest
-	Certificate     string           `position:"Query" name:"Certificate"`
-	PrivateKey      string           `position:"Query" name:"PrivateKey"`
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	Lang            string           `position:"Query" name:"Lang"`
-	InstanceId      string           `position:"Query" name:"InstanceId"`
-	Domain          string           `position:"Query" name:"Domain"`
-	CertificateName string           `position:"Query" name:"CertificateName"`
-	HttpsCertId     requests.Integer `position:"Query" name:"HttpsCertId"`
+	Certificate     string `position:"Query" name:"Certificate"`
+	PrivateKey      string `position:"Query" name:"PrivateKey"`
+	SourceIp        string `position:"Query" name:"SourceIp"`
+	Lang            string `position:"Query" name:"Lang"`
+	InstanceId      string `position:"Query" name:"InstanceId"`
+	Domain          string `position:"Query" name:"Domain"`
+	CertificateName string `position:"Query" name:"CertificateName"`
 }
 
 // CreateCertificateResponse is the response struct for api CreateCertificate

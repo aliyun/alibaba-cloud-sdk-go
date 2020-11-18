@@ -71,6 +71,7 @@ func (client *Client) CreateDomainWithCallback(request *CreateDomainRequest, cal
 // CreateDomainRequest is the request struct for api CreateDomain
 type CreateDomainRequest struct {
 	*requests.RpcRequest
+	IpFollowStatus       requests.Integer `position:"Query" name:"IpFollowStatus"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	SourceIp             string           `position:"Query" name:"SourceIp"`
 	HttpPort             string           `position:"Query" name:"HttpPort"`

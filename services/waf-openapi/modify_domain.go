@@ -71,6 +71,7 @@ func (client *Client) ModifyDomainWithCallback(request *ModifyDomainRequest, cal
 // ModifyDomainRequest is the request struct for api ModifyDomain
 type ModifyDomainRequest struct {
 	*requests.RpcRequest
+	IpFollowStatus       requests.Integer `position:"Query" name:"IpFollowStatus"`
 	SourceIp             string           `position:"Query" name:"SourceIp"`
 	XffHeaderMode        requests.Integer `position:"Query" name:"XffHeaderMode"`
 	HttpPort             string           `position:"Query" name:"HttpPort"`

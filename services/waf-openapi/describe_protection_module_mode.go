@@ -82,8 +82,9 @@ type DescribeProtectionModuleModeRequest struct {
 // DescribeProtectionModuleModeResponse is the response struct for api DescribeProtectionModuleMode
 type DescribeProtectionModuleModeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Mode      int    `json:"Mode" xml:"Mode"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	Mode        int    `json:"Mode" xml:"Mode"`
+	LearnStatus int    `json:"LearnStatus" xml:"LearnStatus"`
 }
 
 // CreateDescribeProtectionModuleModeRequest creates a request to invoke DescribeProtectionModuleMode API
