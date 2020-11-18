@@ -1,3 +1,7 @@
+2020-11-18 Version: v1.61.661
+- Generated 2020-01-16 for `DAS`.
+- Supported Hotkey For Redis.
+
 2020-11-18 Version: v1.61.660
 - Generated 2019-11-20 for `Ga`.
 
