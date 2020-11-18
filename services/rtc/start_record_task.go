@@ -83,9 +83,33 @@ type StartRecordTaskRequest struct {
 
 // StartRecordTaskUserPanes is a repeated param struct in StartRecordTaskRequest
 type StartRecordTaskUserPanes struct {
-	PaneId     string `name:"PaneId"`
-	UserId     string `name:"UserId"`
-	SourceType string `name:"SourceType"`
+	PaneId     string                   `name:"PaneId"`
+	UserId     string                   `name:"UserId"`
+	SourceType string                   `name:"SourceType"`
+	Images     *[]StartRecordTaskImages `name:"Images" type:"Repeated"`
+	Texts      *[]StartRecordTaskTexts  `name:"Texts" type:"Repeated"`
+}
+
+// StartRecordTaskImages is a repeated param struct in StartRecordTaskRequest
+type StartRecordTaskImages struct {
+	Url     string `name:"Url"`
+	Display string `name:"Display"`
+	X       string `name:"X"`
+	Y       string `name:"Y"`
+	Width   string `name:"Width"`
+	Height  string `name:"Height"`
+	ZOrder  string `name:"ZOrder"`
+}
+
+// StartRecordTaskTexts is a repeated param struct in StartRecordTaskRequest
+type StartRecordTaskTexts struct {
+	Text      string `name:"Text"`
+	X         string `name:"X"`
+	Y         string `name:"Y"`
+	FontType  string `name:"FontType"`
+	FontSize  string `name:"FontSize"`
+	FontColor string `name:"FontColor"`
+	ZOrder    string `name:"ZOrder"`
 }
 
 // StartRecordTaskResponse is the response struct for api StartRecordTask
