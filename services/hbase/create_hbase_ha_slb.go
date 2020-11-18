@@ -71,10 +71,11 @@ func (client *Client) CreateHbaseHaSlbWithCallback(request *CreateHbaseHaSlbRequ
 // CreateHbaseHaSlbRequest is the request struct for api CreateHbaseHaSlb
 type CreateHbaseHaSlbRequest struct {
 	*requests.RpcRequest
-	HaTypes   string `position:"Query" name:"HaTypes"`
-	HbaseType string `position:"Query" name:"HbaseType"`
-	BdsId     string `position:"Query" name:"BdsId"`
-	HaId      string `position:"Query" name:"HaId"`
+	ClientToken string `position:"Query" name:"ClientToken"`
+	HaTypes     string `position:"Query" name:"HaTypes"`
+	HbaseType   string `position:"Query" name:"HbaseType"`
+	BdsId       string `position:"Query" name:"BdsId"`
+	HaId        string `position:"Query" name:"HaId"`
 }
 
 // CreateHbaseHaSlbResponse is the response struct for api CreateHbaseHaSlb

@@ -119,6 +119,7 @@ type DescribeInstanceResponse struct {
 	ModuleStackVersion   string                 `json:"ModuleStackVersion" xml:"ModuleStackVersion"`
 	AutoRenewal          bool                   `json:"AutoRenewal" xml:"AutoRenewal"`
 	Duration             int                    `json:"Duration" xml:"Duration"`
+	ColdStorageSize      int                    `json:"ColdStorageSize" xml:"ColdStorageSize"`
 	Tags                 TagsInDescribeInstance `json:"Tags" xml:"Tags"`
 }
 

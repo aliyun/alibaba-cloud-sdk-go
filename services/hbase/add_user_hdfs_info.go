@@ -71,8 +71,9 @@ func (client *Client) AddUserHdfsInfoWithCallback(request *AddUserHdfsInfoReques
 // AddUserHdfsInfoRequest is the request struct for api AddUserHdfsInfo
 type AddUserHdfsInfoRequest struct {
 	*requests.RpcRequest
-	ExtInfo   string `position:"Query" name:"ExtInfo"`
-	ClusterId string `position:"Query" name:"ClusterId"`
+	ExtInfo     string `position:"Query" name:"ExtInfo"`
+	ClientToken string `position:"Query" name:"ClientToken"`
+	ClusterId   string `position:"Query" name:"ClusterId"`
 }
 
 // AddUserHdfsInfoResponse is the response struct for api AddUserHdfsInfo
