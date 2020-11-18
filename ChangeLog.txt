@@ -1,3 +1,7 @@
+2020-11-18 Version: v1.61.663
+- Generated 2015-12-01 for `Dds`.
+- Update DescribeDedicatedClusterInstanceList InstanceStatus type.
+
 2020-11-18 Version: v1.61.662
 - Generated 2018-01-11 for `rtc`.
 

@@ -77,7 +77,7 @@ type DescribeDedicatedClusterInstanceListRequest struct {
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	Engine               string           `position:"Query" name:"Engine"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	InstanceStatus       requests.Integer `position:"Query" name:"InstanceStatus"`
+	InstanceStatus       string           `position:"Query" name:"InstanceStatus"`
 	DedicatedHostName    string           `position:"Query" name:"DedicatedHostName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

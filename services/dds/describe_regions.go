@@ -76,6 +76,7 @@ type DescribeRegionsRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
 }
 
 // DescribeRegionsResponse is the response struct for api DescribeRegions

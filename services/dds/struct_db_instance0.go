@@ -24,7 +24,7 @@ type DbInstance struct {
 	InstanceName      string           `json:"InstanceName" xml:"InstanceName"`
 	InstanceStatus    string           `json:"InstanceStatus" xml:"InstanceStatus"`
 	EngineVersion     string           `json:"EngineVersion" xml:"EngineVersion"`
-	CharacterType     int              `json:"CharacterType" xml:"CharacterType"`
+	CharacterType     string           `json:"CharacterType" xml:"CharacterType"`
 	MaintainStartTime string           `json:"MaintainStartTime" xml:"MaintainStartTime"`
 	MaintainEndTime   string           `json:"MaintainEndTime" xml:"MaintainEndTime"`
 	RegionId          string           `json:"RegionId" xml:"RegionId"`
