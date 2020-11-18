@@ -93,7 +93,7 @@ func CreateDescribeCacheAnalysisJobsRequest() (request *DescribeCacheAnalysisJob
 	request = &DescribeCacheAnalysisJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "DescribeCacheAnalysisJobs", "hdm", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "DescribeCacheAnalysisJobs", "das", "openAPI")
 	request.Method = requests.POST
 	return
 }

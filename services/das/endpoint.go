@@ -10,7 +10,7 @@ var EndpointType = "central"
 func GetEndpointMap() map[string]string {
 	if EndpointMap == nil {
 		EndpointMap = map[string]string{
-			"cn-shanghai": "hdm-api.aliyuncs.com",
+			"cn-shanghai": "das.cn-shanghai.aliyuncs.com",
 		}
 	}
 	return EndpointMap

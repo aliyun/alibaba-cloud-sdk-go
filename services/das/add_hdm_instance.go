@@ -108,7 +108,7 @@ func CreateAddHDMInstanceRequest() (request *AddHDMInstanceRequest) {
 	request = &AddHDMInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "AddHDMInstance", "hdm", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "AddHDMInstance", "das", "openAPI")
 	request.Method = requests.POST
 	return
 }

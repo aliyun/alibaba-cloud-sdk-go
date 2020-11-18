@@ -99,7 +99,7 @@ func CreateCreateDiagnosticReportRequest() (request *CreateDiagnosticReportReque
 	request = &CreateDiagnosticReportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "CreateDiagnosticReport", "hdm", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "CreateDiagnosticReport", "das", "openAPI")
 	request.Method = requests.POST
 	return
 }

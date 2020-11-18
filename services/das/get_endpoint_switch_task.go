@@ -97,7 +97,7 @@ func CreateGetEndpointSwitchTaskRequest() (request *GetEndpointSwitchTaskRequest
 	request = &GetEndpointSwitchTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("DAS", "2020-01-16", "GetEndpointSwitchTask", "hdm", "openAPI")
+	request.InitWithApiInfo("DAS", "2020-01-16", "GetEndpointSwitchTask", "das", "openAPI")
 	request.Method = requests.POST
 	return
 }
