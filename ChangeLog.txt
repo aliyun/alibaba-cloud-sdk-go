@@ -1,3 +1,7 @@
+2020-11-19 Version: v1.61.669
+- Generated 2017-06-13 for `elasticsearch`.
+- Supported International-26888 Sites Region Endpoints.
+
 2020-11-19 Version: v1.61.668
 - Generated 2014-08-28 for `Ess`.
 - Support performance level.
