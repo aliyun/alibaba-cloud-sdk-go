@@ -85,6 +85,8 @@ type DescribeDedicatedClusterInstanceListRequest struct {
 	ClusterId            string           `position:"Query" name:"ClusterId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	Region               string           `position:"Query" name:"Region"`
 }
 
 // DescribeDedicatedClusterInstanceListResponse is the response struct for api DescribeDedicatedClusterInstanceList

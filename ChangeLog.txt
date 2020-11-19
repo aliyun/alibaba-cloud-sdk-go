@@ -1,3 +1,7 @@
+2020-11-19 Version: v1.61.674
+- Generated 2015-12-01 for `Dds`.
+- Update DescribeDedicatedClusterInstanceList return data.
+
 2020-11-19 Version: v1.61.673
 - Generated 2020-01-16 for `DAS`.
 - Supported GetEventOverview for Events.
