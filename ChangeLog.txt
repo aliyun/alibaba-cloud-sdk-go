@@ -1,3 +1,7 @@
+2020-11-19 Version: v1.61.673
+- Generated 2020-01-16 for `DAS`.
+- Supported GetEventOverview for Events.
+
 2020-11-19 Version: v1.61.672
 - Generated 2020-01-16 for `DAS`.
 - Supported GetEventOverview for Events.
