@@ -1,3 +1,7 @@
+2020-11-19 Version: v1.61.672
+- Generated 2020-01-16 for `DAS`.
+- Supported GetEventOverview for Events.
+
 2020-11-19 Version: v1.61.671
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Update data API.

@@ -20,7 +20,6 @@ type HotKey struct {
 	Db      int    `json:"Db" xml:"Db"`
 	KeyType string `json:"KeyType" xml:"KeyType"`
 	Size    int64  `json:"Size" xml:"Size"`
-	Lru     int    `json:"Lru" xml:"Lru"`
 	Hot     string `json:"Hot" xml:"Hot"`
 	Key     string `json:"Key" xml:"Key"`
 }
