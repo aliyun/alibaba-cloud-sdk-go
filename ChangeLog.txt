@@ -1,3 +1,7 @@
+2020-11-19 Version: v1.61.670
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Update data API.
+
 2020-11-19 Version: v1.61.669
 - Generated 2017-06-13 for `elasticsearch`.
 - Supported International-26888 Sites Region Endpoints.
