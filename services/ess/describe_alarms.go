@@ -76,6 +76,7 @@ type DescribeAlarmsRequest struct {
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	State                string           `position:"Query" name:"State"`
+	MetricName           string           `position:"Query" name:"MetricName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AlarmTaskId          string           `position:"Query" name:"AlarmTaskId"`

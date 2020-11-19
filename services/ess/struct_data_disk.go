@@ -27,4 +27,5 @@ type DataDisk struct {
 	DiskName             string `json:"DiskName" xml:"DiskName"`
 	Description          string `json:"Description" xml:"Description"`
 	AutoSnapshotPolicyId string `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
+	PerformanceLevel     string `json:"PerformanceLevel" xml:"PerformanceLevel"`
 }

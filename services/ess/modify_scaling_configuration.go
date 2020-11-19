@@ -98,6 +98,7 @@ type ModifyScalingConfigurationRequest struct {
 	InternetMaxBandwidthOut         requests.Integer                            `position:"Query" name:"InternetMaxBandwidthOut"`
 	SecurityGroupId                 string                                      `position:"Query" name:"SecurityGroupId"`
 	SystemDiskCategory              string                                      `position:"Query" name:"SystemDisk.Category"`
+	SystemDiskPerformanceLevel      string                                      `position:"Query" name:"SystemDisk.PerformanceLevel"`
 	UserData                        string                                      `position:"Query" name:"UserData"`
 	PasswordInherit                 requests.Boolean                            `position:"Query" name:"PasswordInherit"`
 	ImageName                       string                                      `position:"Query" name:"ImageName"`
@@ -131,6 +132,7 @@ type ModifyScalingConfigurationDataDisk struct {
 	SnapshotId           string `name:"SnapshotId"`
 	Size                 string `name:"Size"`
 	Encrypted            string `name:"Encrypted"`
+	PerformanceLevel     string `name:"PerformanceLevel"`
 	AutoSnapshotPolicyId string `name:"AutoSnapshotPolicyId"`
 	Description          string `name:"Description"`
 	Category             string `name:"Category"`

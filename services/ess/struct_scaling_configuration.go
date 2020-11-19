@@ -38,6 +38,7 @@ type ScalingConfiguration struct {
 	SystemDiskName                  string           `json:"SystemDiskName" xml:"SystemDiskName"`
 	SystemDiskDescription           string           `json:"SystemDiskDescription" xml:"SystemDiskDescription"`
 	SystemDiskAutoSnapshotPolicyId  string           `json:"SystemDiskAutoSnapshotPolicyId" xml:"SystemDiskAutoSnapshotPolicyId"`
+	SystemDiskPerformanceLevel      string           `json:"SystemDiskPerformanceLevel" xml:"SystemDiskPerformanceLevel"`
 	LifecycleState                  string           `json:"LifecycleState" xml:"LifecycleState"`
 	CreationTime                    string           `json:"CreationTime" xml:"CreationTime"`
 	LoadBalancerWeight              int              `json:"LoadBalancerWeight" xml:"LoadBalancerWeight"`
