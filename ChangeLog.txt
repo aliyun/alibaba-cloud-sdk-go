@@ -1,3 +1,7 @@
+2020-11-19 Version: v1.61.666
+- Generated 2019-12-30 for `imageseg`.
+- Update SegmentBody.
+
 2020-11-18 Version: v1.61.665
 - Generated 2019-09-10 for `waf-openapi`.
 

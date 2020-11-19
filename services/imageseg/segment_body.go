@@ -71,8 +71,9 @@ func (client *Client) SegmentBodyWithCallback(request *SegmentBodyRequest, callb
 // SegmentBodyRequest is the request struct for api SegmentBody
 type SegmentBodyRequest struct {
 	*requests.RpcRequest
-	Async    requests.Boolean `position:"Body" name:"Async"`
-	ImageURL string           `position:"Query" name:"ImageURL"`
+	ReturnForm string           `position:"Query" name:"ReturnForm"`
+	Async      requests.Boolean `position:"Body" name:"Async"`
+	ImageURL   string           `position:"Query" name:"ImageURL"`
 }
 
 // SegmentBodyResponse is the response struct for api SegmentBody
