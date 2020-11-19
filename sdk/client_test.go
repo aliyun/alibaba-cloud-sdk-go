@@ -86,8 +86,14 @@ func Test_NewClientWithOptions(t *testing.T) {
 	credential := credentials.NewAccessKeyCredential("acesskeyid", "accesskeysecret")
 	client, err := NewClientWithOptions("regionid", c, credential)
 	client.AddAsyncTask(func() {})
+	client.EnableAsync(10, 10)
+	assert.True(t, client.isOpenAsync)
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
+
+	client.Shutdown()
+	assert.False(t, client.isOpenAsync)
+	assert.False(t, client.isRunning)
 
 	c.Transport = &http.Transport{
 		IdleConnTimeout: time.Duration(10 * time.Second),

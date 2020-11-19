@@ -75,6 +75,7 @@ type Client struct {
 	EndpointType   string
 	Network        string
 	Domain         string
+	isOpenAsync    bool
 
 	debug     bool
 	isRunning bool
@@ -230,10 +231,26 @@ func (client *Client) getNoProxy(scheme string) []string {
 
 // EnableAsync enable the async task queue
 func (client *Client) EnableAsync(routinePoolSize, maxTaskQueueSize int) {
-	client.asyncTaskQueue = make(chan func(), maxTaskQueueSize)
+	if client.isOpenAsync {
+		fmt.Println("warning: Please not call EnableAsync repeatedly")
+		return
+	}
+	if client.asyncChanLock == nil {
+		client.asyncChanLock = new(sync.RWMutex)
+	}
+	client.asyncChanLock.Lock()
+	defer client.asyncChanLock.Unlock()
+	client.isRunning = true
+	client.isOpenAsync = true
+	if client.asyncTaskQueue == nil {
+		client.asyncTaskQueue = make(chan func(), maxTaskQueueSize)
+	}
 	for i := 0; i < routinePoolSize; i++ {
 		go func() {
-			for client.isRunning {
+			client.asyncChanLock.RLock()
+			ok := client.isRunning
+			client.asyncChanLock.RUnlock()
+			for ok {
 				select {
 				case task, notClosed := <-client.asyncTaskQueue:
 					if notClosed {
@@ -823,6 +840,7 @@ func (client *Client) Shutdown() {
 		close(client.asyncTaskQueue)
 	}
 	client.isRunning = false
+	client.isOpenAsync = false
 }
 
 // Deprecated: Use NewClientWithRamRoleArn in this package instead.
