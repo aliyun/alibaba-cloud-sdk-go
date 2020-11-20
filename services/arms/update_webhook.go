@@ -71,10 +71,10 @@ func (client *Client) UpdateWebhookWithCallback(request *UpdateWebhookRequest, c
 // UpdateWebhookRequest is the request struct for api UpdateWebhook
 type UpdateWebhookRequest struct {
 	*requests.RpcRequest
-	Headers     string           `position:"Query" name:"Headers"`
+	HttpHeaders string           `position:"Query" name:"HttpHeaders"`
 	Method      string           `position:"Query" name:"Method"`
 	ContactId   requests.Integer `position:"Query" name:"ContactId"`
-	Params      string           `position:"Query" name:"Params"`
+	HttpParams  string           `position:"Query" name:"HttpParams"`
 	ProxyUserId string           `position:"Query" name:"ProxyUserId"`
 	Body        string           `position:"Query" name:"Body"`
 	Url         string           `position:"Query" name:"Url"`
@@ -93,7 +93,7 @@ func CreateUpdateWebhookRequest() (request *UpdateWebhookRequest) {
 	request = &UpdateWebhookRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "UpdateWebhook", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "UpdateWebhook", "", "")
 	request.Method = requests.POST
 	return
 }

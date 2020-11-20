@@ -86,7 +86,7 @@ func CreateListRetcodeAppsRequest() (request *ListRetcodeAppsRequest) {
 	request = &ListRetcodeAppsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "ListRetcodeApps", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "ListRetcodeApps", "", "")
 	request.Method = requests.POST
 	return
 }

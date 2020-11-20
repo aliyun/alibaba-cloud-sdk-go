@@ -1,3 +1,7 @@
+2020-11-20 Version: v1.61.678
+- Generated 2019-08-08 for `ARMS`.
+- Add dispatchRule CRUD.
+
 2020-11-20 Version: v1.61.677
 - Generated 2019-12-30 for `facebody`.
 - Update DetectFace.

@@ -71,9 +71,9 @@ func (client *Client) CreateWehookWithCallback(request *CreateWehookRequest, cal
 // CreateWehookRequest is the request struct for api CreateWehook
 type CreateWehookRequest struct {
 	*requests.RpcRequest
-	Headers     string `position:"Query" name:"Headers"`
+	HttpHeaders string `position:"Query" name:"HttpHeaders"`
 	Method      string `position:"Query" name:"Method"`
-	Params      string `position:"Query" name:"Params"`
+	HttpParams  string `position:"Query" name:"HttpParams"`
 	ProxyUserId string `position:"Query" name:"ProxyUserId"`
 	Body        string `position:"Query" name:"Body"`
 	Url         string `position:"Query" name:"Url"`
@@ -92,7 +92,7 @@ func CreateCreateWehookRequest() (request *CreateWehookRequest) {
 	request = &CreateWehookRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "CreateWehook", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "CreateWehook", "", "")
 	request.Method = requests.POST
 	return
 }

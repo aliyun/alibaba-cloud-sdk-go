@@ -87,7 +87,7 @@ func CreateDeleteAlertRulesRequest() (request *DeleteAlertRulesRequest) {
 	request = &DeleteAlertRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteAlertRules", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteAlertRules", "", "")
 	request.Method = requests.POST
 	return
 }

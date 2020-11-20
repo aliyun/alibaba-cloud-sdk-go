@@ -90,7 +90,7 @@ func CreateImportCustomAlertRulesRequest() (request *ImportCustomAlertRulesReque
 	request = &ImportCustomAlertRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "ImportCustomAlertRules", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "ImportCustomAlertRules", "", "")
 	request.Method = requests.POST
 	return
 }
