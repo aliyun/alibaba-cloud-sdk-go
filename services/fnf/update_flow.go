@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateFlow invokes the fnf.UpdateFlow API synchronously
-// api document: https://help.aliyun.com/api/fnf/updateflow.html
 func (client *Client) UpdateFlow(request *UpdateFlowRequest) (response *UpdateFlowResponse, err error) {
 	response = CreateUpdateFlowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateFlow(request *UpdateFlowRequest) (response *UpdateFl
 }
 
 // UpdateFlowWithChan invokes the fnf.UpdateFlow API asynchronously
-// api document: https://help.aliyun.com/api/fnf/updateflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateFlowWithChan(request *UpdateFlowRequest) (<-chan *UpdateFlowResponse, <-chan error) {
 	responseChan := make(chan *UpdateFlowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateFlowWithChan(request *UpdateFlowRequest) (<-chan *Up
 }
 
 // UpdateFlowWithCallback invokes the fnf.UpdateFlow API asynchronously
-// api document: https://help.aliyun.com/api/fnf/updateflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateFlowWithCallback(request *UpdateFlowRequest, callback func(response *UpdateFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -105,7 +100,8 @@ func CreateUpdateFlowRequest() (request *UpdateFlowRequest) {
 	request = &UpdateFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "UpdateFlow", "", "")
+	request.InitWithApiInfo("fnf", "2019-03-15", "UpdateFlow", "fnf", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSchedule invokes the fnf.DescribeSchedule API synchronously
-// api document: https://help.aliyun.com/api/fnf/describeschedule.html
 func (client *Client) DescribeSchedule(request *DescribeScheduleRequest) (response *DescribeScheduleResponse, err error) {
 	response = CreateDescribeScheduleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSchedule(request *DescribeScheduleRequest) (respon
 }
 
 // DescribeScheduleWithChan invokes the fnf.DescribeSchedule API asynchronously
-// api document: https://help.aliyun.com/api/fnf/describeschedule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScheduleWithChan(request *DescribeScheduleRequest) (<-chan *DescribeScheduleResponse, <-chan error) {
 	responseChan := make(chan *DescribeScheduleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeScheduleWithChan(request *DescribeScheduleRequest)
 }
 
 // DescribeScheduleWithCallback invokes the fnf.DescribeSchedule API asynchronously
-// api document: https://help.aliyun.com/api/fnf/describeschedule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScheduleWithCallback(request *DescribeScheduleRequest, callback func(response *DescribeScheduleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,8 @@ func CreateDescribeScheduleRequest() (request *DescribeScheduleRequest) {
 	request = &DescribeScheduleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "DescribeSchedule", "", "")
+	request.InitWithApiInfo("fnf", "2019-03-15", "DescribeSchedule", "fnf", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

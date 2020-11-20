@@ -21,7 +21,6 @@ import (
 )
 
 // ListFlows invokes the fnf.ListFlows API synchronously
-// api document: https://help.aliyun.com/api/fnf/listflows.html
 func (client *Client) ListFlows(request *ListFlowsRequest) (response *ListFlowsResponse, err error) {
 	response = CreateListFlowsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListFlows(request *ListFlowsRequest) (response *ListFlowsR
 }
 
 // ListFlowsWithChan invokes the fnf.ListFlows API asynchronously
-// api document: https://help.aliyun.com/api/fnf/listflows.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowsWithChan(request *ListFlowsRequest) (<-chan *ListFlowsResponse, <-chan error) {
 	responseChan := make(chan *ListFlowsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListFlowsWithChan(request *ListFlowsRequest) (<-chan *List
 }
 
 // ListFlowsWithCallback invokes the fnf.ListFlows API asynchronously
-// api document: https://help.aliyun.com/api/fnf/listflows.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFlowsWithCallback(request *ListFlowsRequest, callback func(response *ListFlowsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateListFlowsRequest() (request *ListFlowsRequest) {
 	request = &ListFlowsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "ListFlows", "", "")
+	request.InitWithApiInfo("fnf", "2019-03-15", "ListFlows", "fnf", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

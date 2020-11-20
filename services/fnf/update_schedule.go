@@ -21,7 +21,6 @@ import (
 )
 
 // UpdateSchedule invokes the fnf.UpdateSchedule API synchronously
-// api document: https://help.aliyun.com/api/fnf/updateschedule.html
 func (client *Client) UpdateSchedule(request *UpdateScheduleRequest) (response *UpdateScheduleResponse, err error) {
 	response = CreateUpdateScheduleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) UpdateSchedule(request *UpdateScheduleRequest) (response *
 }
 
 // UpdateScheduleWithChan invokes the fnf.UpdateSchedule API asynchronously
-// api document: https://help.aliyun.com/api/fnf/updateschedule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateScheduleWithChan(request *UpdateScheduleRequest) (<-chan *UpdateScheduleResponse, <-chan error) {
 	responseChan := make(chan *UpdateScheduleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) UpdateScheduleWithChan(request *UpdateScheduleRequest) (<-
 }
 
 // UpdateScheduleWithCallback invokes the fnf.UpdateSchedule API asynchronously
-// api document: https://help.aliyun.com/api/fnf/updateschedule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateScheduleWithCallback(request *UpdateScheduleRequest, callback func(response *UpdateScheduleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,7 +99,8 @@ func CreateUpdateScheduleRequest() (request *UpdateScheduleRequest) {
 	request = &UpdateScheduleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "UpdateSchedule", "", "")
+	request.InitWithApiInfo("fnf", "2019-03-15", "UpdateSchedule", "fnf", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

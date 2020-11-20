@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSchedule invokes the fnf.DeleteSchedule API synchronously
-// api document: https://help.aliyun.com/api/fnf/deleteschedule.html
 func (client *Client) DeleteSchedule(request *DeleteScheduleRequest) (response *DeleteScheduleResponse, err error) {
 	response = CreateDeleteScheduleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSchedule(request *DeleteScheduleRequest) (response *
 }
 
 // DeleteScheduleWithChan invokes the fnf.DeleteSchedule API asynchronously
-// api document: https://help.aliyun.com/api/fnf/deleteschedule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScheduleWithChan(request *DeleteScheduleRequest) (<-chan *DeleteScheduleResponse, <-chan error) {
 	responseChan := make(chan *DeleteScheduleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteScheduleWithChan(request *DeleteScheduleRequest) (<-
 }
 
 // DeleteScheduleWithCallback invokes the fnf.DeleteSchedule API asynchronously
-// api document: https://help.aliyun.com/api/fnf/deleteschedule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScheduleWithCallback(request *DeleteScheduleRequest, callback func(response *DeleteScheduleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateDeleteScheduleRequest() (request *DeleteScheduleRequest) {
 	request = &DeleteScheduleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "DeleteSchedule", "", "")
+	request.InitWithApiInfo("fnf", "2019-03-15", "DeleteSchedule", "fnf", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

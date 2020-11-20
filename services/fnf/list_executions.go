@@ -21,7 +21,6 @@ import (
 )
 
 // ListExecutions invokes the fnf.ListExecutions API synchronously
-// api document: https://help.aliyun.com/api/fnf/listexecutions.html
 func (client *Client) ListExecutions(request *ListExecutionsRequest) (response *ListExecutionsResponse, err error) {
 	response = CreateListExecutionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListExecutions(request *ListExecutionsRequest) (response *
 }
 
 // ListExecutionsWithChan invokes the fnf.ListExecutions API asynchronously
-// api document: https://help.aliyun.com/api/fnf/listexecutions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListExecutionsWithChan(request *ListExecutionsRequest) (<-chan *ListExecutionsResponse, <-chan error) {
 	responseChan := make(chan *ListExecutionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListExecutionsWithChan(request *ListExecutionsRequest) (<-
 }
 
 // ListExecutionsWithCallback invokes the fnf.ListExecutions API asynchronously
-// api document: https://help.aliyun.com/api/fnf/listexecutions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListExecutionsWithCallback(request *ListExecutionsRequest, callback func(response *ListExecutionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,11 +71,14 @@ func (client *Client) ListExecutionsWithCallback(request *ListExecutionsRequest,
 // ListExecutionsRequest is the request struct for api ListExecutions
 type ListExecutionsRequest struct {
 	*requests.RpcRequest
-	NextToken string           `position:"Query" name:"NextToken"`
-	RequestId string           `position:"Query" name:"RequestId"`
-	Limit     requests.Integer `position:"Query" name:"Limit"`
-	FlowName  string           `position:"Query" name:"FlowName"`
-	Status    string           `position:"Query" name:"Status"`
+	StartedTimeBegin    string           `position:"Query" name:"StartedTimeBegin"`
+	ExecutionNamePrefix string           `position:"Query" name:"ExecutionNamePrefix"`
+	NextToken           string           `position:"Query" name:"NextToken"`
+	RequestId           string           `position:"Query" name:"RequestId"`
+	Limit               requests.Integer `position:"Query" name:"Limit"`
+	FlowName            string           `position:"Query" name:"FlowName"`
+	StartedTimeEnd      string           `position:"Query" name:"StartedTimeEnd"`
+	Status              string           `position:"Query" name:"Status"`
 }
 
 // ListExecutionsResponse is the response struct for api ListExecutions
@@ -96,7 +94,8 @@ func CreateListExecutionsRequest() (request *ListExecutionsRequest) {
 	request = &ListExecutionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "ListExecutions", "", "")
+	request.InitWithApiInfo("fnf", "2019-03-15", "ListExecutions", "fnf", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

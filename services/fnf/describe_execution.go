@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeExecution invokes the fnf.DescribeExecution API synchronously
-// api document: https://help.aliyun.com/api/fnf/describeexecution.html
 func (client *Client) DescribeExecution(request *DescribeExecutionRequest) (response *DescribeExecutionResponse, err error) {
 	response = CreateDescribeExecutionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeExecution(request *DescribeExecutionRequest) (resp
 }
 
 // DescribeExecutionWithChan invokes the fnf.DescribeExecution API asynchronously
-// api document: https://help.aliyun.com/api/fnf/describeexecution.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExecutionWithChan(request *DescribeExecutionRequest) (<-chan *DescribeExecutionResponse, <-chan error) {
 	responseChan := make(chan *DescribeExecutionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeExecutionWithChan(request *DescribeExecutionReques
 }
 
 // DescribeExecutionWithCallback invokes the fnf.DescribeExecution API asynchronously
-// api document: https://help.aliyun.com/api/fnf/describeexecution.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExecutionWithCallback(request *DescribeExecutionRequest, callback func(response *DescribeExecutionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,7 +98,8 @@ func CreateDescribeExecutionRequest() (request *DescribeExecutionRequest) {
 	request = &DescribeExecutionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "DescribeExecution", "", "")
+	request.InitWithApiInfo("fnf", "2019-03-15", "DescribeExecution", "fnf", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

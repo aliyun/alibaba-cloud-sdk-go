@@ -21,7 +21,6 @@ import (
 )
 
 // GetExecutionHistory invokes the fnf.GetExecutionHistory API synchronously
-// api document: https://help.aliyun.com/api/fnf/getexecutionhistory.html
 func (client *Client) GetExecutionHistory(request *GetExecutionHistoryRequest) (response *GetExecutionHistoryResponse, err error) {
 	response = CreateGetExecutionHistoryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetExecutionHistory(request *GetExecutionHistoryRequest) (
 }
 
 // GetExecutionHistoryWithChan invokes the fnf.GetExecutionHistory API asynchronously
-// api document: https://help.aliyun.com/api/fnf/getexecutionhistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetExecutionHistoryWithChan(request *GetExecutionHistoryRequest) (<-chan *GetExecutionHistoryResponse, <-chan error) {
 	responseChan := make(chan *GetExecutionHistoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetExecutionHistoryWithChan(request *GetExecutionHistoryRe
 }
 
 // GetExecutionHistoryWithCallback invokes the fnf.GetExecutionHistory API asynchronously
-// api document: https://help.aliyun.com/api/fnf/getexecutionhistory.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetExecutionHistoryWithCallback(request *GetExecutionHistoryRequest, callback func(response *GetExecutionHistoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateGetExecutionHistoryRequest() (request *GetExecutionHistoryRequest) {
 	request = &GetExecutionHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "GetExecutionHistory", "", "")
+	request.InitWithApiInfo("fnf", "2019-03-15", "GetExecutionHistory", "fnf", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ReportTaskSucceeded invokes the fnf.ReportTaskSucceeded API synchronously
-// api document: https://help.aliyun.com/api/fnf/reporttasksucceeded.html
 func (client *Client) ReportTaskSucceeded(request *ReportTaskSucceededRequest) (response *ReportTaskSucceededResponse, err error) {
 	response = CreateReportTaskSucceededResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ReportTaskSucceeded(request *ReportTaskSucceededRequest) (
 }
 
 // ReportTaskSucceededWithChan invokes the fnf.ReportTaskSucceeded API asynchronously
-// api document: https://help.aliyun.com/api/fnf/reporttasksucceeded.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportTaskSucceededWithChan(request *ReportTaskSucceededRequest) (<-chan *ReportTaskSucceededResponse, <-chan error) {
 	responseChan := make(chan *ReportTaskSucceededResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ReportTaskSucceededWithChan(request *ReportTaskSucceededRe
 }
 
 // ReportTaskSucceededWithCallback invokes the fnf.ReportTaskSucceeded API asynchronously
-// api document: https://help.aliyun.com/api/fnf/reporttasksucceeded.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportTaskSucceededWithCallback(request *ReportTaskSucceededRequest, callback func(response *ReportTaskSucceededResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateReportTaskSucceededRequest() (request *ReportTaskSucceededRequest) {
 	request = &ReportTaskSucceededRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "ReportTaskSucceeded", "", "")
+	request.InitWithApiInfo("fnf", "2019-03-15", "ReportTaskSucceeded", "fnf", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteFlow invokes the fnf.DeleteFlow API synchronously
-// api document: https://help.aliyun.com/api/fnf/deleteflow.html
 func (client *Client) DeleteFlow(request *DeleteFlowRequest) (response *DeleteFlowResponse, err error) {
 	response = CreateDeleteFlowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteFlow(request *DeleteFlowRequest) (response *DeleteFl
 }
 
 // DeleteFlowWithChan invokes the fnf.DeleteFlow API asynchronously
-// api document: https://help.aliyun.com/api/fnf/deleteflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFlowWithChan(request *DeleteFlowRequest) (<-chan *DeleteFlowResponse, <-chan error) {
 	responseChan := make(chan *DeleteFlowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteFlowWithChan(request *DeleteFlowRequest) (<-chan *De
 }
 
 // DeleteFlowWithCallback invokes the fnf.DeleteFlow API asynchronously
-// api document: https://help.aliyun.com/api/fnf/deleteflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFlowWithCallback(request *DeleteFlowRequest, callback func(response *DeleteFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,8 @@ func CreateDeleteFlowRequest() (request *DeleteFlowRequest) {
 	request = &DeleteFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "DeleteFlow", "", "")
+	request.InitWithApiInfo("fnf", "2019-03-15", "DeleteFlow", "fnf", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

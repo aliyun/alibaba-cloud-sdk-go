@@ -21,7 +21,6 @@ import (
 )
 
 // ListSchedules invokes the fnf.ListSchedules API synchronously
-// api document: https://help.aliyun.com/api/fnf/listschedules.html
 func (client *Client) ListSchedules(request *ListSchedulesRequest) (response *ListSchedulesResponse, err error) {
 	response = CreateListSchedulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSchedules(request *ListSchedulesRequest) (response *Li
 }
 
 // ListSchedulesWithChan invokes the fnf.ListSchedules API asynchronously
-// api document: https://help.aliyun.com/api/fnf/listschedules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSchedulesWithChan(request *ListSchedulesRequest) (<-chan *ListSchedulesResponse, <-chan error) {
 	responseChan := make(chan *ListSchedulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSchedulesWithChan(request *ListSchedulesRequest) (<-ch
 }
 
 // ListSchedulesWithCallback invokes the fnf.ListSchedules API asynchronously
-// api document: https://help.aliyun.com/api/fnf/listschedules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSchedulesWithCallback(request *ListSchedulesRequest, callback func(response *ListSchedulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateListSchedulesRequest() (request *ListSchedulesRequest) {
 	request = &ListSchedulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("fnf", "2019-03-15", "ListSchedules", "", "")
+	request.InitWithApiInfo("fnf", "2019-03-15", "ListSchedules", "fnf", "openAPI")
+	request.Method = requests.GET
 	return
 }
 
