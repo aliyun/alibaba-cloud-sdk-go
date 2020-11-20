@@ -61,15 +61,18 @@ type Data struct {
 	RectBList            []int                 `json:"RectBList" xml:"RectBList"`
 	DenseFeatures        []string              `json:"DenseFeatures" xml:"DenseFeatures"`
 	RectangleRef         []int                 `json:"RectangleRef" xml:"RectangleRef"`
+	HatList              []int                 `json:"HatList" xml:"HatList"`
 	Rectangle            []int                 `json:"Rectangle" xml:"Rectangle"`
 	Thresholds           []float64             `json:"Thresholds" xml:"Thresholds"`
 	Landmarks            []float64             `json:"Landmarks" xml:"Landmarks"`
 	FaceRectangles       []int                 `json:"FaceRectangles" xml:"FaceRectangles"`
+	BeuatyList           []float64             `json:"BeuatyList" xml:"BeuatyList"`
 	RectAList            []int                 `json:"RectAList" xml:"RectAList"`
 	AgeList              []int                 `json:"AgeList" xml:"AgeList"`
 	FaceProbabilityList  []float64             `json:"FaceProbabilityList" xml:"FaceProbabilityList"`
 	Expressions          []int                 `json:"Expressions" xml:"Expressions"`
 	MetaObject           MetaObject            `json:"MetaObject" xml:"MetaObject"`
+	Qualities            Qualities             `json:"Qualities" xml:"Qualities"`
 	ImageInfoList        []ImageInfoListItem   `json:"ImageInfoList" xml:"ImageInfoList"`
 	Outputs              []Output              `json:"Outputs" xml:"Outputs"`
 	Faces                []Face                `json:"Faces" xml:"Faces"`

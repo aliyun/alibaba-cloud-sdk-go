@@ -1,3 +1,8 @@
+2020-11-20 Version: v1.61.677
+- Generated 2019-12-30 for `facebody`.
+- Update DetectFace.
+- Update RecognizeFace.
+
 2020-11-20 Version: v1.61.676
 - Generated 2018-10-12 for `alimt`.
 - Add a new interface for asynchronous image translation.
