@@ -85,9 +85,9 @@ type DescribeClusterConnectionResponse struct {
 	IsMultimod          string              `json:"IsMultimod" xml:"IsMultimod"`
 	UiProxyConnAddrInfo UiProxyConnAddrInfo `json:"UiProxyConnAddrInfo" xml:"UiProxyConnAddrInfo"`
 	ThriftConn          ThriftConn          `json:"ThriftConn" xml:"ThriftConn"`
-	ZkConnAddrs         []ZkConnAddr        `json:"ZkConnAddrs" xml:"ZkConnAddrs"`
-	SlbConnAddrs        []SlbConnAddr       `json:"SlbConnAddrs" xml:"SlbConnAddrs"`
-	ServiceConnAddrs    []ServiceConnAddr   `json:"ServiceConnAddrs" xml:"ServiceConnAddrs"`
+	ZkConnAddrs         ZkConnAddrs         `json:"ZkConnAddrs" xml:"ZkConnAddrs"`
+	SlbConnAddrs        SlbConnAddrs        `json:"SlbConnAddrs" xml:"SlbConnAddrs"`
+	ServiceConnAddrs    ServiceConnAddrs    `json:"ServiceConnAddrs" xml:"ServiceConnAddrs"`
 }
 
 // CreateDescribeClusterConnectionRequest creates a request to invoke DescribeClusterConnection API

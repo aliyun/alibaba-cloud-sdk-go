@@ -1,3 +1,7 @@
+2020-11-22 Version: v1.61.681
+- Generated 2019-01-01 for `HBase`.
+- DescribeClusterConnection.
+
 2020-11-20 Version: v1.61.680
 - Generated 2019-03-15 for `fnf`.
 - Support ListExecutions with filter functionality.
