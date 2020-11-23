@@ -25,6 +25,6 @@ type AccountInfo struct {
 	UserStatus             int    `json:"UserStatus" xml:"UserStatus"`
 	SignSecret             string `json:"SignSecret" xml:"SignSecret"`
 	UnsignedEnabled        bool   `json:"UnsignedEnabled" xml:"UnsignedEnabled"`
-	SignedCount            int    `json:"SignedCount" xml:"SignedCount"`
-	UnsignedCount          int    `json:"UnsignedCount" xml:"UnsignedCount"`
+	SignedCount            int64  `json:"SignedCount" xml:"SignedCount"`
+	UnsignedCount          int64  `json:"UnsignedCount" xml:"UnsignedCount"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomains invokes the httpdns.DescribeDomains API synchronously
-// api document: https://help.aliyun.com/api/httpdns/describedomains.html
 func (client *Client) DescribeDomains(request *DescribeDomainsRequest) (response *DescribeDomainsResponse, err error) {
 	response = CreateDescribeDomainsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomains(request *DescribeDomainsRequest) (response
 }
 
 // DescribeDomainsWithChan invokes the httpdns.DescribeDomains API asynchronously
-// api document: https://help.aliyun.com/api/httpdns/describedomains.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainsWithChan(request *DescribeDomainsRequest) (<-chan *DescribeDomainsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainsWithChan(request *DescribeDomainsRequest) (
 }
 
 // DescribeDomainsWithCallback invokes the httpdns.DescribeDomains API asynchronously
-// api document: https://help.aliyun.com/api/httpdns/describedomains.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainsWithCallback(request *DescribeDomainsRequest, callback func(response *DescribeDomainsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,18 +71,18 @@ func (client *Client) DescribeDomainsWithCallback(request *DescribeDomainsReques
 // DescribeDomainsRequest is the request struct for api DescribeDomains
 type DescribeDomainsRequest struct {
 	*requests.RpcRequest
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	AccountId  string           `position:"Query" name:"AccountId"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeDomainsResponse is the response struct for api DescribeDomains
 type DescribeDomainsResponse struct {
 	*responses.BaseResponse
 	RequestId  string  `json:"RequestId" xml:"RequestId"`
-	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int     `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int     `json:"PageSize" xml:"PageSize"`
+	TotalCount int64   `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int64   `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int64   `json:"PageSize" xml:"PageSize"`
 	Domains    Domains `json:"Domains" xml:"Domains"`
 }
 
@@ -96,7 +91,8 @@ func CreateDescribeDomainsRequest() (request *DescribeDomainsRequest) {
 	request = &DescribeDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Httpdns", "2016-02-01", "DescribeDomains", "httpdns", "openAPI")
+	request.InitWithApiInfo("Httpdns", "2016-02-01", "DescribeDomains", "", "")
+	request.Method = requests.POST
 	return
 }
 

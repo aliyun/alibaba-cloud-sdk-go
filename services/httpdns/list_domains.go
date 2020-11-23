@@ -21,7 +21,6 @@ import (
 )
 
 // ListDomains invokes the httpdns.ListDomains API synchronously
-// api document: https://help.aliyun.com/api/httpdns/listdomains.html
 func (client *Client) ListDomains(request *ListDomainsRequest) (response *ListDomainsResponse, err error) {
 	response = CreateListDomainsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDomains(request *ListDomainsRequest) (response *ListDo
 }
 
 // ListDomainsWithChan invokes the httpdns.ListDomains API asynchronously
-// api document: https://help.aliyun.com/api/httpdns/listdomains.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDomainsWithChan(request *ListDomainsRequest) (<-chan *ListDomainsResponse, <-chan error) {
 	responseChan := make(chan *ListDomainsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDomainsWithChan(request *ListDomainsRequest) (<-chan *
 }
 
 // ListDomainsWithCallback invokes the httpdns.ListDomains API asynchronously
-// api document: https://help.aliyun.com/api/httpdns/listdomains.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDomainsWithCallback(request *ListDomainsRequest, callback func(response *ListDomainsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,17 +71,17 @@ func (client *Client) ListDomainsWithCallback(request *ListDomainsRequest, callb
 // ListDomainsRequest is the request struct for api ListDomains
 type ListDomainsRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListDomainsResponse is the response struct for api ListDomains
 type ListDomainsResponse struct {
 	*responses.BaseResponse
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  int         `json:"PageNumber" xml:"PageNumber"`
-	PageSize    int         `json:"PageSize" xml:"PageSize"`
+	TotalCount  int64       `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  int64       `json:"PageNumber" xml:"PageNumber"`
+	PageSize    int64       `json:"PageSize" xml:"PageSize"`
 	DomainInfos DomainInfos `json:"DomainInfos" xml:"DomainInfos"`
 }
 
@@ -95,7 +90,8 @@ func CreateListDomainsRequest() (request *ListDomainsRequest) {
 	request = &ListDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Httpdns", "2016-02-01", "ListDomains", "httpdns", "openAPI")
+	request.InitWithApiInfo("Httpdns", "2016-02-01", "ListDomains", "", "")
+	request.Method = requests.POST
 	return
 }
 

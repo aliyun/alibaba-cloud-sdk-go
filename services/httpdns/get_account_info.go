@@ -21,7 +21,6 @@ import (
 )
 
 // GetAccountInfo invokes the httpdns.GetAccountInfo API synchronously
-// api document: https://help.aliyun.com/api/httpdns/getaccountinfo.html
 func (client *Client) GetAccountInfo(request *GetAccountInfoRequest) (response *GetAccountInfoResponse, err error) {
 	response = CreateGetAccountInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetAccountInfo(request *GetAccountInfoRequest) (response *
 }
 
 // GetAccountInfoWithChan invokes the httpdns.GetAccountInfo API asynchronously
-// api document: https://help.aliyun.com/api/httpdns/getaccountinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAccountInfoWithChan(request *GetAccountInfoRequest) (<-chan *GetAccountInfoResponse, <-chan error) {
 	responseChan := make(chan *GetAccountInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetAccountInfoWithChan(request *GetAccountInfoRequest) (<-
 }
 
 // GetAccountInfoWithCallback invokes the httpdns.GetAccountInfo API asynchronously
-// api document: https://help.aliyun.com/api/httpdns/getaccountinfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAccountInfoWithCallback(request *GetAccountInfoRequest, callback func(response *GetAccountInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,7 +85,8 @@ func CreateGetAccountInfoRequest() (request *GetAccountInfoRequest) {
 	request = &GetAccountInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Httpdns", "2016-02-01", "GetAccountInfo", "httpdns", "openAPI")
+	request.InitWithApiInfo("Httpdns", "2016-02-01", "GetAccountInfo", "", "")
+	request.Method = requests.POST
 	return
 }
 

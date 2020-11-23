@@ -21,7 +21,6 @@ import (
 )
 
 // AddDomain invokes the httpdns.AddDomain API synchronously
-// api document: https://help.aliyun.com/api/httpdns/adddomain.html
 func (client *Client) AddDomain(request *AddDomainRequest) (response *AddDomainResponse, err error) {
 	response = CreateAddDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddDomain(request *AddDomainRequest) (response *AddDomainR
 }
 
 // AddDomainWithChan invokes the httpdns.AddDomain API asynchronously
-// api document: https://help.aliyun.com/api/httpdns/adddomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddDomainWithChan(request *AddDomainRequest) (<-chan *AddDomainResponse, <-chan error) {
 	responseChan := make(chan *AddDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddDomainWithChan(request *AddDomainRequest) (<-chan *AddD
 }
 
 // AddDomainWithCallback invokes the httpdns.AddDomain API asynchronously
-// api document: https://help.aliyun.com/api/httpdns/adddomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddDomainWithCallback(request *AddDomainRequest, callback func(response *AddDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,8 @@ func (client *Client) AddDomainWithCallback(request *AddDomainRequest, callback 
 // AddDomainRequest is the request struct for api AddDomain
 type AddDomainRequest struct {
 	*requests.RpcRequest
-	AccountId  string `position:"Query" name:"AccountId"`
 	DomainName string `position:"Query" name:"DomainName"`
+	AccountId  string `position:"Query" name:"AccountId"`
 }
 
 // AddDomainResponse is the response struct for api AddDomain
@@ -92,7 +87,8 @@ func CreateAddDomainRequest() (request *AddDomainRequest) {
 	request = &AddDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Httpdns", "2016-02-01", "AddDomain", "httpdns", "openAPI")
+	request.InitWithApiInfo("Httpdns", "2016-02-01", "AddDomain", "", "")
+	request.Method = requests.POST
 	return
 }
 

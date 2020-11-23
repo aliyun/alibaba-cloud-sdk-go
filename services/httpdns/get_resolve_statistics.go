@@ -21,7 +21,6 @@ import (
 )
 
 // GetResolveStatistics invokes the httpdns.GetResolveStatistics API synchronously
-// api document: https://help.aliyun.com/api/httpdns/getresolvestatistics.html
 func (client *Client) GetResolveStatistics(request *GetResolveStatisticsRequest) (response *GetResolveStatisticsResponse, err error) {
 	response = CreateGetResolveStatisticsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetResolveStatistics(request *GetResolveStatisticsRequest)
 }
 
 // GetResolveStatisticsWithChan invokes the httpdns.GetResolveStatistics API asynchronously
-// api document: https://help.aliyun.com/api/httpdns/getresolvestatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetResolveStatisticsWithChan(request *GetResolveStatisticsRequest) (<-chan *GetResolveStatisticsResponse, <-chan error) {
 	responseChan := make(chan *GetResolveStatisticsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetResolveStatisticsWithChan(request *GetResolveStatistics
 }
 
 // GetResolveStatisticsWithCallback invokes the httpdns.GetResolveStatistics API asynchronously
-// api document: https://help.aliyun.com/api/httpdns/getresolvestatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetResolveStatisticsWithCallback(request *GetResolveStatisticsRequest, callback func(response *GetResolveStatisticsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,10 +71,10 @@ func (client *Client) GetResolveStatisticsWithCallback(request *GetResolveStatis
 // GetResolveStatisticsRequest is the request struct for api GetResolveStatistics
 type GetResolveStatisticsRequest struct {
 	*requests.RpcRequest
-	Granularity  string           `position:"Query" name:"Granularity"`
 	ProtocolName string           `position:"Query" name:"ProtocolName"`
 	DomainName   string           `position:"Query" name:"DomainName"`
 	TimeSpan     requests.Integer `position:"Query" name:"TimeSpan"`
+	Granularity  string           `position:"Query" name:"Granularity"`
 }
 
 // GetResolveStatisticsResponse is the response struct for api GetResolveStatistics
@@ -94,7 +89,8 @@ func CreateGetResolveStatisticsRequest() (request *GetResolveStatisticsRequest) 
 	request = &GetResolveStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Httpdns", "2016-02-01", "GetResolveStatistics", "httpdns", "openAPI")
+	request.InitWithApiInfo("Httpdns", "2016-02-01", "GetResolveStatistics", "", "")
+	request.Method = requests.POST
 	return
 }
 

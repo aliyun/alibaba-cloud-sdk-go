@@ -21,7 +21,6 @@ import (
 )
 
 // GetResolveCountSummary invokes the httpdns.GetResolveCountSummary API synchronously
-// api document: https://help.aliyun.com/api/httpdns/getresolvecountsummary.html
 func (client *Client) GetResolveCountSummary(request *GetResolveCountSummaryRequest) (response *GetResolveCountSummaryResponse, err error) {
 	response = CreateGetResolveCountSummaryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetResolveCountSummary(request *GetResolveCountSummaryRequ
 }
 
 // GetResolveCountSummaryWithChan invokes the httpdns.GetResolveCountSummary API asynchronously
-// api document: https://help.aliyun.com/api/httpdns/getresolvecountsummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetResolveCountSummaryWithChan(request *GetResolveCountSummaryRequest) (<-chan *GetResolveCountSummaryResponse, <-chan error) {
 	responseChan := make(chan *GetResolveCountSummaryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetResolveCountSummaryWithChan(request *GetResolveCountSum
 }
 
 // GetResolveCountSummaryWithCallback invokes the httpdns.GetResolveCountSummary API asynchronously
-// api document: https://help.aliyun.com/api/httpdns/getresolvecountsummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetResolveCountSummaryWithCallback(request *GetResolveCountSummaryRequest, callback func(response *GetResolveCountSummaryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,8 @@ func (client *Client) GetResolveCountSummaryWithCallback(request *GetResolveCoun
 // GetResolveCountSummaryRequest is the request struct for api GetResolveCountSummary
 type GetResolveCountSummaryRequest struct {
 	*requests.RpcRequest
-	Granularity string           `position:"Query" name:"Granularity"`
 	TimeSpan    requests.Integer `position:"Query" name:"TimeSpan"`
+	Granularity string           `position:"Query" name:"Granularity"`
 }
 
 // GetResolveCountSummaryResponse is the response struct for api GetResolveCountSummary
@@ -92,7 +87,8 @@ func CreateGetResolveCountSummaryRequest() (request *GetResolveCountSummaryReque
 	request = &GetResolveCountSummaryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Httpdns", "2016-02-01", "GetResolveCountSummary", "httpdns", "openAPI")
+	request.InitWithApiInfo("Httpdns", "2016-02-01", "GetResolveCountSummary", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDomain invokes the httpdns.DeleteDomain API synchronously
-// api document: https://help.aliyun.com/api/httpdns/deletedomain.html
 func (client *Client) DeleteDomain(request *DeleteDomainRequest) (response *DeleteDomainResponse, err error) {
 	response = CreateDeleteDomainResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDomain(request *DeleteDomainRequest) (response *Dele
 }
 
 // DeleteDomainWithChan invokes the httpdns.DeleteDomain API asynchronously
-// api document: https://help.aliyun.com/api/httpdns/deletedomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDomainWithChan(request *DeleteDomainRequest) (<-chan *DeleteDomainResponse, <-chan error) {
 	responseChan := make(chan *DeleteDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDomainWithChan(request *DeleteDomainRequest) (<-chan
 }
 
 // DeleteDomainWithCallback invokes the httpdns.DeleteDomain API asynchronously
-// api document: https://help.aliyun.com/api/httpdns/deletedomain.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDomainWithCallback(request *DeleteDomainRequest, callback func(response *DeleteDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,8 +71,8 @@ func (client *Client) DeleteDomainWithCallback(request *DeleteDomainRequest, cal
 // DeleteDomainRequest is the request struct for api DeleteDomain
 type DeleteDomainRequest struct {
 	*requests.RpcRequest
-	AccountId  string `position:"Query" name:"AccountId"`
 	DomainName string `position:"Query" name:"DomainName"`
+	AccountId  string `position:"Query" name:"AccountId"`
 }
 
 // DeleteDomainResponse is the response struct for api DeleteDomain
@@ -92,7 +87,8 @@ func CreateDeleteDomainRequest() (request *DeleteDomainRequest) {
 	request = &DeleteDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Httpdns", "2016-02-01", "DeleteDomain", "httpdns", "openAPI")
+	request.InitWithApiInfo("Httpdns", "2016-02-01", "DeleteDomain", "", "")
+	request.Method = requests.POST
 	return
 }
 
