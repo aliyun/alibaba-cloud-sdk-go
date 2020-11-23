@@ -1,3 +1,7 @@
+2020-11-23 Version: v1.61.682
+- Generated 2020-11-12, 2020-06-18, 2019-03-07, 2018-09-16 for `Cloudauth`.
+- Add LivenessDetect API.
+
 2020-11-22 Version: v1.61.681
 - Generated 2019-01-01 for `HBase`.
 - DescribeClusterConnection.
