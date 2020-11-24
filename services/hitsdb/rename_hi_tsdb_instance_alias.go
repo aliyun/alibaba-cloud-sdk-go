@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UpdateInstanceIpWhiteList invokes the hitsdb.UpdateInstanceIpWhiteList API synchronously
-func (client *Client) UpdateInstanceIpWhiteList(request *UpdateInstanceIpWhiteListRequest) (response *UpdateInstanceIpWhiteListResponse, err error) {
-	response = CreateUpdateInstanceIpWhiteListResponse()
+// RenameHiTSDBInstanceAlias invokes the hitsdb.RenameHiTSDBInstanceAlias API synchronously
+func (client *Client) RenameHiTSDBInstanceAlias(request *RenameHiTSDBInstanceAliasRequest) (response *RenameHiTSDBInstanceAliasResponse, err error) {
+	response = CreateRenameHiTSDBInstanceAliasResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UpdateInstanceIpWhiteListWithChan invokes the hitsdb.UpdateInstanceIpWhiteList API asynchronously
-func (client *Client) UpdateInstanceIpWhiteListWithChan(request *UpdateInstanceIpWhiteListRequest) (<-chan *UpdateInstanceIpWhiteListResponse, <-chan error) {
-	responseChan := make(chan *UpdateInstanceIpWhiteListResponse, 1)
+// RenameHiTSDBInstanceAliasWithChan invokes the hitsdb.RenameHiTSDBInstanceAlias API asynchronously
+func (client *Client) RenameHiTSDBInstanceAliasWithChan(request *RenameHiTSDBInstanceAliasRequest) (<-chan *RenameHiTSDBInstanceAliasResponse, <-chan error) {
+	responseChan := make(chan *RenameHiTSDBInstanceAliasResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UpdateInstanceIpWhiteList(request)
+		response, err := client.RenameHiTSDBInstanceAlias(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) UpdateInstanceIpWhiteListWithChan(request *UpdateInstanceI
 	return responseChan, errChan
 }
 
-// UpdateInstanceIpWhiteListWithCallback invokes the hitsdb.UpdateInstanceIpWhiteList API asynchronously
-func (client *Client) UpdateInstanceIpWhiteListWithCallback(request *UpdateInstanceIpWhiteListRequest, callback func(response *UpdateInstanceIpWhiteListResponse, err error)) <-chan int {
+// RenameHiTSDBInstanceAliasWithCallback invokes the hitsdb.RenameHiTSDBInstanceAlias API asynchronously
+func (client *Client) RenameHiTSDBInstanceAliasWithCallback(request *RenameHiTSDBInstanceAliasRequest, callback func(response *RenameHiTSDBInstanceAliasResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UpdateInstanceIpWhiteListResponse
+		var response *RenameHiTSDBInstanceAliasResponse
 		var err error
 		defer close(result)
-		response, err = client.UpdateInstanceIpWhiteList(request)
+		response, err = client.RenameHiTSDBInstanceAlias(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,38 +68,37 @@ func (client *Client) UpdateInstanceIpWhiteListWithCallback(request *UpdateInsta
 	return result
 }
 
-// UpdateInstanceIpWhiteListRequest is the request struct for api UpdateInstanceIpWhiteList
-type UpdateInstanceIpWhiteListRequest struct {
+// RenameHiTSDBInstanceAliasRequest is the request struct for api RenameHiTSDBInstanceAlias
+type RenameHiTSDBInstanceAliasRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	InstanceAlias        string           `position:"Query" name:"InstanceAlias"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	GroupName            string           `position:"Query" name:"GroupName"`
-	SecurityIpList       string           `position:"Query" name:"SecurityIpList"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
-// UpdateInstanceIpWhiteListResponse is the response struct for api UpdateInstanceIpWhiteList
-type UpdateInstanceIpWhiteListResponse struct {
+// RenameHiTSDBInstanceAliasResponse is the response struct for api RenameHiTSDBInstanceAlias
+type RenameHiTSDBInstanceAliasResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateUpdateInstanceIpWhiteListRequest creates a request to invoke UpdateInstanceIpWhiteList API
-func CreateUpdateInstanceIpWhiteListRequest() (request *UpdateInstanceIpWhiteListRequest) {
-	request = &UpdateInstanceIpWhiteListRequest{
+// CreateRenameHiTSDBInstanceAliasRequest creates a request to invoke RenameHiTSDBInstanceAlias API
+func CreateRenameHiTSDBInstanceAliasRequest() (request *RenameHiTSDBInstanceAliasRequest) {
+	request = &RenameHiTSDBInstanceAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2020-06-15", "UpdateInstanceIpWhiteList", "hitsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2017-06-01", "RenameHiTSDBInstanceAlias", "tsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateUpdateInstanceIpWhiteListResponse creates a response to parse from UpdateInstanceIpWhiteList response
-func CreateUpdateInstanceIpWhiteListResponse() (response *UpdateInstanceIpWhiteListResponse) {
-	response = &UpdateInstanceIpWhiteListResponse{
+// CreateRenameHiTSDBInstanceAliasResponse creates a response to parse from RenameHiTSDBInstanceAlias response
+func CreateRenameHiTSDBInstanceAliasResponse() (response *RenameHiTSDBInstanceAliasResponse) {
+	response = &RenameHiTSDBInstanceAliasResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
