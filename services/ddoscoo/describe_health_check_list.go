@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeHealthCheckList invokes the ddoscoo.DescribeHealthCheckList API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describehealthchecklist.html
 func (client *Client) DescribeHealthCheckList(request *DescribeHealthCheckListRequest) (response *DescribeHealthCheckListResponse, err error) {
 	response = CreateDescribeHealthCheckListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeHealthCheckList(request *DescribeHealthCheckListRe
 }
 
 // DescribeHealthCheckListWithChan invokes the ddoscoo.DescribeHealthCheckList API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describehealthchecklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHealthCheckListWithChan(request *DescribeHealthCheckListRequest) (<-chan *DescribeHealthCheckListResponse, <-chan error) {
 	responseChan := make(chan *DescribeHealthCheckListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeHealthCheckListWithChan(request *DescribeHealthChe
 }
 
 // DescribeHealthCheckListWithCallback invokes the ddoscoo.DescribeHealthCheckList API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describehealthchecklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHealthCheckListWithCallback(request *DescribeHealthCheckListRequest, callback func(response *DescribeHealthCheckListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateDescribeHealthCheckListRequest() (request *DescribeHealthCheckListReq
 	request = &DescribeHealthCheckListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeHealthCheckList", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeHealthCheckList", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -20,5 +20,6 @@ type SchedulerRule struct {
 	RuleName string `json:"RuleName" xml:"RuleName"`
 	Cname    string `json:"Cname" xml:"Cname"`
 	RuleType string `json:"RuleType" xml:"RuleType"`
+	Param    Param  `json:"Param" xml:"Param"`
 	Rules    []Rule `json:"Rules" xml:"Rules"`
 }

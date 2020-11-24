@@ -21,7 +21,6 @@ import (
 )
 
 // AttachSceneDefenseObject invokes the ddoscoo.AttachSceneDefenseObject API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/attachscenedefenseobject.html
 func (client *Client) AttachSceneDefenseObject(request *AttachSceneDefenseObjectRequest) (response *AttachSceneDefenseObjectResponse, err error) {
 	response = CreateAttachSceneDefenseObjectResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AttachSceneDefenseObject(request *AttachSceneDefenseObject
 }
 
 // AttachSceneDefenseObjectWithChan invokes the ddoscoo.AttachSceneDefenseObject API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/attachscenedefenseobject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachSceneDefenseObjectWithChan(request *AttachSceneDefenseObjectRequest) (<-chan *AttachSceneDefenseObjectResponse, <-chan error) {
 	responseChan := make(chan *AttachSceneDefenseObjectResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AttachSceneDefenseObjectWithChan(request *AttachSceneDefen
 }
 
 // AttachSceneDefenseObjectWithCallback invokes the ddoscoo.AttachSceneDefenseObject API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/attachscenedefenseobject.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachSceneDefenseObjectWithCallback(request *AttachSceneDefenseObjectRequest, callback func(response *AttachSceneDefenseObjectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateAttachSceneDefenseObjectRequest() (request *AttachSceneDefenseObjectR
 	request = &AttachSceneDefenseObjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "AttachSceneDefenseObject", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "AttachSceneDefenseObject", "", "")
+	request.Method = requests.POST
 	return
 }
 

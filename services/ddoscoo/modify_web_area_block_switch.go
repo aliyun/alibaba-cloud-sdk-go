@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyWebAreaBlockSwitch invokes the ddoscoo.ModifyWebAreaBlockSwitch API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebareablockswitch.html
 func (client *Client) ModifyWebAreaBlockSwitch(request *ModifyWebAreaBlockSwitchRequest) (response *ModifyWebAreaBlockSwitchResponse, err error) {
 	response = CreateModifyWebAreaBlockSwitchResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyWebAreaBlockSwitch(request *ModifyWebAreaBlockSwitch
 }
 
 // ModifyWebAreaBlockSwitchWithChan invokes the ddoscoo.ModifyWebAreaBlockSwitch API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebareablockswitch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebAreaBlockSwitchWithChan(request *ModifyWebAreaBlockSwitchRequest) (<-chan *ModifyWebAreaBlockSwitchResponse, <-chan error) {
 	responseChan := make(chan *ModifyWebAreaBlockSwitchResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyWebAreaBlockSwitchWithChan(request *ModifyWebAreaBlo
 }
 
 // ModifyWebAreaBlockSwitchWithCallback invokes the ddoscoo.ModifyWebAreaBlockSwitch API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebareablockswitch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebAreaBlockSwitchWithCallback(request *ModifyWebAreaBlockSwitchRequest, callback func(response *ModifyWebAreaBlockSwitchResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateModifyWebAreaBlockSwitchRequest() (request *ModifyWebAreaBlockSwitchR
 	request = &ModifyWebAreaBlockSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebAreaBlockSwitch", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebAreaBlockSwitch", "", "")
+	request.Method = requests.POST
 	return
 }
 

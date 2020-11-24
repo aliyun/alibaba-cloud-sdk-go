@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyWebCacheMode invokes the ddoscoo.ModifyWebCacheMode API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebcachemode.html
 func (client *Client) ModifyWebCacheMode(request *ModifyWebCacheModeRequest) (response *ModifyWebCacheModeResponse, err error) {
 	response = CreateModifyWebCacheModeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyWebCacheMode(request *ModifyWebCacheModeRequest) (re
 }
 
 // ModifyWebCacheModeWithChan invokes the ddoscoo.ModifyWebCacheMode API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebcachemode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebCacheModeWithChan(request *ModifyWebCacheModeRequest) (<-chan *ModifyWebCacheModeResponse, <-chan error) {
 	responseChan := make(chan *ModifyWebCacheModeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyWebCacheModeWithChan(request *ModifyWebCacheModeRequ
 }
 
 // ModifyWebCacheModeWithCallback invokes the ddoscoo.ModifyWebCacheMode API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebcachemode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebCacheModeWithCallback(request *ModifyWebCacheModeRequest, callback func(response *ModifyWebCacheModeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateModifyWebCacheModeRequest() (request *ModifyWebCacheModeRequest) {
 	request = &ModifyWebCacheModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebCacheMode", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebCacheMode", "", "")
+	request.Method = requests.POST
 	return
 }
 

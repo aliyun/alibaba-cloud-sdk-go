@@ -21,7 +21,6 @@ import (
 )
 
 // AddAutoCcWhitelist invokes the ddoscoo.AddAutoCcWhitelist API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/addautoccwhitelist.html
 func (client *Client) AddAutoCcWhitelist(request *AddAutoCcWhitelistRequest) (response *AddAutoCcWhitelistResponse, err error) {
 	response = CreateAddAutoCcWhitelistResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddAutoCcWhitelist(request *AddAutoCcWhitelistRequest) (re
 }
 
 // AddAutoCcWhitelistWithChan invokes the ddoscoo.AddAutoCcWhitelist API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/addautoccwhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddAutoCcWhitelistWithChan(request *AddAutoCcWhitelistRequest) (<-chan *AddAutoCcWhitelistResponse, <-chan error) {
 	responseChan := make(chan *AddAutoCcWhitelistResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddAutoCcWhitelistWithChan(request *AddAutoCcWhitelistRequ
 }
 
 // AddAutoCcWhitelistWithCallback invokes the ddoscoo.AddAutoCcWhitelist API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/addautoccwhitelist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddAutoCcWhitelistWithCallback(request *AddAutoCcWhitelistRequest, callback func(response *AddAutoCcWhitelistResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateAddAutoCcWhitelistRequest() (request *AddAutoCcWhitelistRequest) {
 	request = &AddAutoCcWhitelistRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "AddAutoCcWhitelist", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "AddAutoCcWhitelist", "", "")
+	request.Method = requests.POST
 	return
 }
 

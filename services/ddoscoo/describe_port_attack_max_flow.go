@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePortAttackMaxFlow invokes the ddoscoo.DescribePortAttackMaxFlow API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeportattackmaxflow.html
 func (client *Client) DescribePortAttackMaxFlow(request *DescribePortAttackMaxFlowRequest) (response *DescribePortAttackMaxFlowResponse, err error) {
 	response = CreateDescribePortAttackMaxFlowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePortAttackMaxFlow(request *DescribePortAttackMaxFl
 }
 
 // DescribePortAttackMaxFlowWithChan invokes the ddoscoo.DescribePortAttackMaxFlow API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeportattackmaxflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePortAttackMaxFlowWithChan(request *DescribePortAttackMaxFlowRequest) (<-chan *DescribePortAttackMaxFlowResponse, <-chan error) {
 	responseChan := make(chan *DescribePortAttackMaxFlowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePortAttackMaxFlowWithChan(request *DescribePortAtt
 }
 
 // DescribePortAttackMaxFlowWithCallback invokes the ddoscoo.DescribePortAttackMaxFlow API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeportattackmaxflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePortAttackMaxFlowWithCallback(request *DescribePortAttackMaxFlowRequest, callback func(response *DescribePortAttackMaxFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateDescribePortAttackMaxFlowRequest() (request *DescribePortAttackMaxFlo
 	request = &DescribePortAttackMaxFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortAttackMaxFlow", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortAttackMaxFlow", "", "")
+	request.Method = requests.POST
 	return
 }
 

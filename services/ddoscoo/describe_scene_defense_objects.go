@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSceneDefenseObjects invokes the ddoscoo.DescribeSceneDefenseObjects API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describescenedefenseobjects.html
 func (client *Client) DescribeSceneDefenseObjects(request *DescribeSceneDefenseObjectsRequest) (response *DescribeSceneDefenseObjectsResponse, err error) {
 	response = CreateDescribeSceneDefenseObjectsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSceneDefenseObjects(request *DescribeSceneDefenseO
 }
 
 // DescribeSceneDefenseObjectsWithChan invokes the ddoscoo.DescribeSceneDefenseObjects API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describescenedefenseobjects.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSceneDefenseObjectsWithChan(request *DescribeSceneDefenseObjectsRequest) (<-chan *DescribeSceneDefenseObjectsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSceneDefenseObjectsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSceneDefenseObjectsWithChan(request *DescribeScene
 }
 
 // DescribeSceneDefenseObjectsWithCallback invokes the ddoscoo.DescribeSceneDefenseObjects API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describescenedefenseobjects.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSceneDefenseObjectsWithCallback(request *DescribeSceneDefenseObjectsRequest, callback func(response *DescribeSceneDefenseObjectsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateDescribeSceneDefenseObjectsRequest() (request *DescribeSceneDefenseOb
 	request = &DescribeSceneDefenseObjectsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeSceneDefenseObjects", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeSceneDefenseObjects", "", "")
+	request.Method = requests.POST
 	return
 }
 

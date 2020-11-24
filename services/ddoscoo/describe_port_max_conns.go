@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePortMaxConns invokes the ddoscoo.DescribePortMaxConns API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeportmaxconns.html
 func (client *Client) DescribePortMaxConns(request *DescribePortMaxConnsRequest) (response *DescribePortMaxConnsResponse, err error) {
 	response = CreateDescribePortMaxConnsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePortMaxConns(request *DescribePortMaxConnsRequest)
 }
 
 // DescribePortMaxConnsWithChan invokes the ddoscoo.DescribePortMaxConns API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeportmaxconns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePortMaxConnsWithChan(request *DescribePortMaxConnsRequest) (<-chan *DescribePortMaxConnsResponse, <-chan error) {
 	responseChan := make(chan *DescribePortMaxConnsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePortMaxConnsWithChan(request *DescribePortMaxConns
 }
 
 // DescribePortMaxConnsWithCallback invokes the ddoscoo.DescribePortMaxConns API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeportmaxconns.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePortMaxConnsWithCallback(request *DescribePortMaxConnsRequest, callback func(response *DescribePortMaxConnsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateDescribePortMaxConnsRequest() (request *DescribePortMaxConnsRequest) 
 	request = &DescribePortMaxConnsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortMaxConns", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortMaxConns", "", "")
+	request.Method = requests.POST
 	return
 }
 

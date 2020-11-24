@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUnBlockCount invokes the ddoscoo.DescribeUnBlockCount API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeunblockcount.html
 func (client *Client) DescribeUnBlockCount(request *DescribeUnBlockCountRequest) (response *DescribeUnBlockCountResponse, err error) {
 	response = CreateDescribeUnBlockCountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUnBlockCount(request *DescribeUnBlockCountRequest)
 }
 
 // DescribeUnBlockCountWithChan invokes the ddoscoo.DescribeUnBlockCount API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeunblockcount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUnBlockCountWithChan(request *DescribeUnBlockCountRequest) (<-chan *DescribeUnBlockCountResponse, <-chan error) {
 	responseChan := make(chan *DescribeUnBlockCountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUnBlockCountWithChan(request *DescribeUnBlockCount
 }
 
 // DescribeUnBlockCountWithCallback invokes the ddoscoo.DescribeUnBlockCount API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeunblockcount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUnBlockCountWithCallback(request *DescribeUnBlockCountRequest, callback func(response *DescribeUnBlockCountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateDescribeUnBlockCountRequest() (request *DescribeUnBlockCountRequest) 
 	request = &DescribeUnBlockCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeUnBlockCount", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeUnBlockCount", "", "")
+	request.Method = requests.POST
 	return
 }
 

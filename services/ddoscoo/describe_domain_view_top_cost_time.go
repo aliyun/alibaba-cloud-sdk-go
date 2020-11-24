@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainViewTopCostTime invokes the ddoscoo.DescribeDomainViewTopCostTime API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainviewtopcosttime.html
 func (client *Client) DescribeDomainViewTopCostTime(request *DescribeDomainViewTopCostTimeRequest) (response *DescribeDomainViewTopCostTimeResponse, err error) {
 	response = CreateDescribeDomainViewTopCostTimeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainViewTopCostTime(request *DescribeDomainViewT
 }
 
 // DescribeDomainViewTopCostTimeWithChan invokes the ddoscoo.DescribeDomainViewTopCostTime API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainviewtopcosttime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainViewTopCostTimeWithChan(request *DescribeDomainViewTopCostTimeRequest) (<-chan *DescribeDomainViewTopCostTimeResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainViewTopCostTimeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainViewTopCostTimeWithChan(request *DescribeDom
 }
 
 // DescribeDomainViewTopCostTimeWithCallback invokes the ddoscoo.DescribeDomainViewTopCostTime API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainviewtopcosttime.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainViewTopCostTimeWithCallback(request *DescribeDomainViewTopCostTimeRequest, callback func(response *DescribeDomainViewTopCostTimeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateDescribeDomainViewTopCostTimeRequest() (request *DescribeDomainViewTo
 	request = &DescribeDomainViewTopCostTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainViewTopCostTime", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainViewTopCostTime", "", "")
+	request.Method = requests.POST
 	return
 }
 

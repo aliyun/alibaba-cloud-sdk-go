@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeWebRules invokes the ddoscoo.DescribeWebRules API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebrules.html
 func (client *Client) DescribeWebRules(request *DescribeWebRulesRequest) (response *DescribeWebRulesResponse, err error) {
 	response = CreateDescribeWebRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeWebRules(request *DescribeWebRulesRequest) (respon
 }
 
 // DescribeWebRulesWithChan invokes the ddoscoo.DescribeWebRules API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebRulesWithChan(request *DescribeWebRulesRequest) (<-chan *DescribeWebRulesResponse, <-chan error) {
 	responseChan := make(chan *DescribeWebRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeWebRulesWithChan(request *DescribeWebRulesRequest)
 }
 
 // DescribeWebRulesWithCallback invokes the ddoscoo.DescribeWebRules API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebRulesWithCallback(request *DescribeWebRulesRequest, callback func(response *DescribeWebRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateDescribeWebRulesRequest() (request *DescribeWebRulesRequest) {
 	request = &DescribeWebRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebRules", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebRules", "", "")
+	request.Method = requests.POST
 	return
 }
 

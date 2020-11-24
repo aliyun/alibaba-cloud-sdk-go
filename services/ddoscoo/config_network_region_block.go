@@ -21,7 +21,6 @@ import (
 )
 
 // ConfigNetworkRegionBlock invokes the ddoscoo.ConfigNetworkRegionBlock API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/confignetworkregionblock.html
 func (client *Client) ConfigNetworkRegionBlock(request *ConfigNetworkRegionBlockRequest) (response *ConfigNetworkRegionBlockResponse, err error) {
 	response = CreateConfigNetworkRegionBlockResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ConfigNetworkRegionBlock(request *ConfigNetworkRegionBlock
 }
 
 // ConfigNetworkRegionBlockWithChan invokes the ddoscoo.ConfigNetworkRegionBlock API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/confignetworkregionblock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConfigNetworkRegionBlockWithChan(request *ConfigNetworkRegionBlockRequest) (<-chan *ConfigNetworkRegionBlockResponse, <-chan error) {
 	responseChan := make(chan *ConfigNetworkRegionBlockResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ConfigNetworkRegionBlockWithChan(request *ConfigNetworkReg
 }
 
 // ConfigNetworkRegionBlockWithCallback invokes the ddoscoo.ConfigNetworkRegionBlock API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/confignetworkregionblock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConfigNetworkRegionBlockWithCallback(request *ConfigNetworkRegionBlockRequest, callback func(response *ConfigNetworkRegionBlockResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateConfigNetworkRegionBlockRequest() (request *ConfigNetworkRegionBlockR
 	request = &ConfigNetworkRegionBlockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigNetworkRegionBlock", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigNetworkRegionBlock", "", "")
+	request.Method = requests.POST
 	return
 }
 

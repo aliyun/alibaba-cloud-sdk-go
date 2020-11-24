@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAutoCcBlacklist invokes the ddoscoo.DescribeAutoCcBlacklist API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeautoccblacklist.html
 func (client *Client) DescribeAutoCcBlacklist(request *DescribeAutoCcBlacklistRequest) (response *DescribeAutoCcBlacklistResponse, err error) {
 	response = CreateDescribeAutoCcBlacklistResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAutoCcBlacklist(request *DescribeAutoCcBlacklistRe
 }
 
 // DescribeAutoCcBlacklistWithChan invokes the ddoscoo.DescribeAutoCcBlacklist API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeautoccblacklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAutoCcBlacklistWithChan(request *DescribeAutoCcBlacklistRequest) (<-chan *DescribeAutoCcBlacklistResponse, <-chan error) {
 	responseChan := make(chan *DescribeAutoCcBlacklistResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAutoCcBlacklistWithChan(request *DescribeAutoCcBla
 }
 
 // DescribeAutoCcBlacklistWithCallback invokes the ddoscoo.DescribeAutoCcBlacklist API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeautoccblacklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAutoCcBlacklistWithCallback(request *DescribeAutoCcBlacklistRequest, callback func(response *DescribeAutoCcBlacklistResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateDescribeAutoCcBlacklistRequest() (request *DescribeAutoCcBlacklistReq
 	request = &DescribeAutoCcBlacklistRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeAutoCcBlacklist", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeAutoCcBlacklist", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeElasticBandwidthSpec invokes the ddoscoo.DescribeElasticBandwidthSpec API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeelasticbandwidthspec.html
 func (client *Client) DescribeElasticBandwidthSpec(request *DescribeElasticBandwidthSpecRequest) (response *DescribeElasticBandwidthSpecResponse, err error) {
 	response = CreateDescribeElasticBandwidthSpecResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeElasticBandwidthSpec(request *DescribeElasticBandw
 }
 
 // DescribeElasticBandwidthSpecWithChan invokes the ddoscoo.DescribeElasticBandwidthSpec API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeelasticbandwidthspec.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeElasticBandwidthSpecWithChan(request *DescribeElasticBandwidthSpecRequest) (<-chan *DescribeElasticBandwidthSpecResponse, <-chan error) {
 	responseChan := make(chan *DescribeElasticBandwidthSpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeElasticBandwidthSpecWithChan(request *DescribeElas
 }
 
 // DescribeElasticBandwidthSpecWithCallback invokes the ddoscoo.DescribeElasticBandwidthSpec API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeelasticbandwidthspec.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeElasticBandwidthSpecWithCallback(request *DescribeElasticBandwidthSpecRequest, callback func(response *DescribeElasticBandwidthSpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateDescribeElasticBandwidthSpecRequest() (request *DescribeElasticBandwi
 	request = &DescribeElasticBandwidthSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeElasticBandwidthSpec", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeElasticBandwidthSpec", "", "")
+	request.Method = requests.POST
 	return
 }
 

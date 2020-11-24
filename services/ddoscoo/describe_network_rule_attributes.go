@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeNetworkRuleAttributes invokes the ddoscoo.DescribeNetworkRuleAttributes API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describenetworkruleattributes.html
 func (client *Client) DescribeNetworkRuleAttributes(request *DescribeNetworkRuleAttributesRequest) (response *DescribeNetworkRuleAttributesResponse, err error) {
 	response = CreateDescribeNetworkRuleAttributesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeNetworkRuleAttributes(request *DescribeNetworkRule
 }
 
 // DescribeNetworkRuleAttributesWithChan invokes the ddoscoo.DescribeNetworkRuleAttributes API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describenetworkruleattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNetworkRuleAttributesWithChan(request *DescribeNetworkRuleAttributesRequest) (<-chan *DescribeNetworkRuleAttributesResponse, <-chan error) {
 	responseChan := make(chan *DescribeNetworkRuleAttributesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeNetworkRuleAttributesWithChan(request *DescribeNet
 }
 
 // DescribeNetworkRuleAttributesWithCallback invokes the ddoscoo.DescribeNetworkRuleAttributes API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describenetworkruleattributes.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNetworkRuleAttributesWithCallback(request *DescribeNetworkRuleAttributesRequest, callback func(response *DescribeNetworkRuleAttributesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateDescribeNetworkRuleAttributesRequest() (request *DescribeNetworkRuleA
 	request = &DescribeNetworkRuleAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeNetworkRuleAttributes", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeNetworkRuleAttributes", "", "")
+	request.Method = requests.POST
 	return
 }
 

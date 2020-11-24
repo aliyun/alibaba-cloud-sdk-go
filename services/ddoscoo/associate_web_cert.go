@@ -21,7 +21,6 @@ import (
 )
 
 // AssociateWebCert invokes the ddoscoo.AssociateWebCert API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/associatewebcert.html
 func (client *Client) AssociateWebCert(request *AssociateWebCertRequest) (response *AssociateWebCertResponse, err error) {
 	response = CreateAssociateWebCertResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AssociateWebCert(request *AssociateWebCertRequest) (respon
 }
 
 // AssociateWebCertWithChan invokes the ddoscoo.AssociateWebCert API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/associatewebcert.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociateWebCertWithChan(request *AssociateWebCertRequest) (<-chan *AssociateWebCertResponse, <-chan error) {
 	responseChan := make(chan *AssociateWebCertResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AssociateWebCertWithChan(request *AssociateWebCertRequest)
 }
 
 // AssociateWebCertWithCallback invokes the ddoscoo.AssociateWebCert API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/associatewebcert.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociateWebCertWithCallback(request *AssociateWebCertRequest, callback func(response *AssociateWebCertResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateAssociateWebCertRequest() (request *AssociateWebCertRequest) {
 	request = &AssociateWebCertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "AssociateWebCert", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "AssociateWebCert", "", "")
+	request.Method = requests.POST
 	return
 }
 

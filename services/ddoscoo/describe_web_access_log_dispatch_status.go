@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeWebAccessLogDispatchStatus invokes the ddoscoo.DescribeWebAccessLogDispatchStatus API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebaccesslogdispatchstatus.html
 func (client *Client) DescribeWebAccessLogDispatchStatus(request *DescribeWebAccessLogDispatchStatusRequest) (response *DescribeWebAccessLogDispatchStatusResponse, err error) {
 	response = CreateDescribeWebAccessLogDispatchStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeWebAccessLogDispatchStatus(request *DescribeWebAcc
 }
 
 // DescribeWebAccessLogDispatchStatusWithChan invokes the ddoscoo.DescribeWebAccessLogDispatchStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebaccesslogdispatchstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebAccessLogDispatchStatusWithChan(request *DescribeWebAccessLogDispatchStatusRequest) (<-chan *DescribeWebAccessLogDispatchStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeWebAccessLogDispatchStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeWebAccessLogDispatchStatusWithChan(request *Descri
 }
 
 // DescribeWebAccessLogDispatchStatusWithCallback invokes the ddoscoo.DescribeWebAccessLogDispatchStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebaccesslogdispatchstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebAccessLogDispatchStatusWithCallback(request *DescribeWebAccessLogDispatchStatusRequest, callback func(response *DescribeWebAccessLogDispatchStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateDescribeWebAccessLogDispatchStatusRequest() (request *DescribeWebAcce
 	request = &DescribeWebAccessLogDispatchStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebAccessLogDispatchStatus", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebAccessLogDispatchStatus", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateSceneDefensePolicy invokes the ddoscoo.CreateSceneDefensePolicy API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/createscenedefensepolicy.html
 func (client *Client) CreateSceneDefensePolicy(request *CreateSceneDefensePolicyRequest) (response *CreateSceneDefensePolicyResponse, err error) {
 	response = CreateCreateSceneDefensePolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateSceneDefensePolicy(request *CreateSceneDefensePolicy
 }
 
 // CreateSceneDefensePolicyWithChan invokes the ddoscoo.CreateSceneDefensePolicy API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/createscenedefensepolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSceneDefensePolicyWithChan(request *CreateSceneDefensePolicyRequest) (<-chan *CreateSceneDefensePolicyResponse, <-chan error) {
 	responseChan := make(chan *CreateSceneDefensePolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateSceneDefensePolicyWithChan(request *CreateSceneDefen
 }
 
 // CreateSceneDefensePolicyWithCallback invokes the ddoscoo.CreateSceneDefensePolicy API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/createscenedefensepolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSceneDefensePolicyWithCallback(request *CreateSceneDefensePolicyRequest, callback func(response *CreateSceneDefensePolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateCreateSceneDefensePolicyRequest() (request *CreateSceneDefensePolicyR
 	request = &CreateSceneDefensePolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "CreateSceneDefensePolicy", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "CreateSceneDefensePolicy", "", "")
+	request.Method = requests.POST
 	return
 }
 

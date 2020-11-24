@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeUnBlackholeCount invokes the ddoscoo.DescribeUnBlackholeCount API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeunblackholecount.html
 func (client *Client) DescribeUnBlackholeCount(request *DescribeUnBlackholeCountRequest) (response *DescribeUnBlackholeCountResponse, err error) {
 	response = CreateDescribeUnBlackholeCountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeUnBlackholeCount(request *DescribeUnBlackholeCount
 }
 
 // DescribeUnBlackholeCountWithChan invokes the ddoscoo.DescribeUnBlackholeCount API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeunblackholecount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUnBlackholeCountWithChan(request *DescribeUnBlackholeCountRequest) (<-chan *DescribeUnBlackholeCountResponse, <-chan error) {
 	responseChan := make(chan *DescribeUnBlackholeCountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeUnBlackholeCountWithChan(request *DescribeUnBlackh
 }
 
 // DescribeUnBlackholeCountWithCallback invokes the ddoscoo.DescribeUnBlackholeCount API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeunblackholecount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUnBlackholeCountWithCallback(request *DescribeUnBlackholeCountRequest, callback func(response *DescribeUnBlackholeCountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateDescribeUnBlackholeCountRequest() (request *DescribeUnBlackholeCountR
 	request = &DescribeUnBlackholeCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeUnBlackholeCount", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeUnBlackholeCount", "", "")
+	request.Method = requests.POST
 	return
 }
 

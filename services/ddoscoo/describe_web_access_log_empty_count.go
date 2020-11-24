@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeWebAccessLogEmptyCount invokes the ddoscoo.DescribeWebAccessLogEmptyCount API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebaccesslogemptycount.html
 func (client *Client) DescribeWebAccessLogEmptyCount(request *DescribeWebAccessLogEmptyCountRequest) (response *DescribeWebAccessLogEmptyCountResponse, err error) {
 	response = CreateDescribeWebAccessLogEmptyCountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeWebAccessLogEmptyCount(request *DescribeWebAccessL
 }
 
 // DescribeWebAccessLogEmptyCountWithChan invokes the ddoscoo.DescribeWebAccessLogEmptyCount API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebaccesslogemptycount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebAccessLogEmptyCountWithChan(request *DescribeWebAccessLogEmptyCountRequest) (<-chan *DescribeWebAccessLogEmptyCountResponse, <-chan error) {
 	responseChan := make(chan *DescribeWebAccessLogEmptyCountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeWebAccessLogEmptyCountWithChan(request *DescribeWe
 }
 
 // DescribeWebAccessLogEmptyCountWithCallback invokes the ddoscoo.DescribeWebAccessLogEmptyCount API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebaccesslogemptycount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebAccessLogEmptyCountWithCallback(request *DescribeWebAccessLogEmptyCountRequest, callback func(response *DescribeWebAccessLogEmptyCountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateDescribeWebAccessLogEmptyCountRequest() (request *DescribeWebAccessLo
 	request = &DescribeWebAccessLogEmptyCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebAccessLogEmptyCount", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebAccessLogEmptyCount", "", "")
+	request.Method = requests.POST
 	return
 }
 

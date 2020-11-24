@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyFullLogTtl invokes the ddoscoo.ModifyFullLogTtl API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyfulllogttl.html
 func (client *Client) ModifyFullLogTtl(request *ModifyFullLogTtlRequest) (response *ModifyFullLogTtlResponse, err error) {
 	response = CreateModifyFullLogTtlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyFullLogTtl(request *ModifyFullLogTtlRequest) (respon
 }
 
 // ModifyFullLogTtlWithChan invokes the ddoscoo.ModifyFullLogTtl API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyfulllogttl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFullLogTtlWithChan(request *ModifyFullLogTtlRequest) (<-chan *ModifyFullLogTtlResponse, <-chan error) {
 	responseChan := make(chan *ModifyFullLogTtlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyFullLogTtlWithChan(request *ModifyFullLogTtlRequest)
 }
 
 // ModifyFullLogTtlWithCallback invokes the ddoscoo.ModifyFullLogTtl API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyfulllogttl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFullLogTtlWithCallback(request *ModifyFullLogTtlRequest, callback func(response *ModifyFullLogTtlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateModifyFullLogTtlRequest() (request *ModifyFullLogTtlRequest) {
 	request = &ModifyFullLogTtlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyFullLogTtl", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyFullLogTtl", "", "")
+	request.Method = requests.POST
 	return
 }
 

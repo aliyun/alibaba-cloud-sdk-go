@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyWebAreaBlock invokes the ddoscoo.ModifyWebAreaBlock API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebareablock.html
 func (client *Client) ModifyWebAreaBlock(request *ModifyWebAreaBlockRequest) (response *ModifyWebAreaBlockResponse, err error) {
 	response = CreateModifyWebAreaBlockResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyWebAreaBlock(request *ModifyWebAreaBlockRequest) (re
 }
 
 // ModifyWebAreaBlockWithChan invokes the ddoscoo.ModifyWebAreaBlock API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebareablock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebAreaBlockWithChan(request *ModifyWebAreaBlockRequest) (<-chan *ModifyWebAreaBlockResponse, <-chan error) {
 	responseChan := make(chan *ModifyWebAreaBlockResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyWebAreaBlockWithChan(request *ModifyWebAreaBlockRequ
 }
 
 // ModifyWebAreaBlockWithCallback invokes the ddoscoo.ModifyWebAreaBlock API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebareablock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebAreaBlockWithCallback(request *ModifyWebAreaBlockRequest, callback func(response *ModifyWebAreaBlockResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateModifyWebAreaBlockRequest() (request *ModifyWebAreaBlockRequest) {
 	request = &ModifyWebAreaBlockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebAreaBlock", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebAreaBlock", "", "")
+	request.Method = requests.POST
 	return
 }
 

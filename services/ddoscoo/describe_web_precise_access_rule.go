@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeWebPreciseAccessRule invokes the ddoscoo.DescribeWebPreciseAccessRule API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebpreciseaccessrule.html
 func (client *Client) DescribeWebPreciseAccessRule(request *DescribeWebPreciseAccessRuleRequest) (response *DescribeWebPreciseAccessRuleResponse, err error) {
 	response = CreateDescribeWebPreciseAccessRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeWebPreciseAccessRule(request *DescribeWebPreciseAc
 }
 
 // DescribeWebPreciseAccessRuleWithChan invokes the ddoscoo.DescribeWebPreciseAccessRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebpreciseaccessrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebPreciseAccessRuleWithChan(request *DescribeWebPreciseAccessRuleRequest) (<-chan *DescribeWebPreciseAccessRuleResponse, <-chan error) {
 	responseChan := make(chan *DescribeWebPreciseAccessRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeWebPreciseAccessRuleWithChan(request *DescribeWebP
 }
 
 // DescribeWebPreciseAccessRuleWithCallback invokes the ddoscoo.DescribeWebPreciseAccessRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebpreciseaccessrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebPreciseAccessRuleWithCallback(request *DescribeWebPreciseAccessRuleRequest, callback func(response *DescribeWebPreciseAccessRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateDescribeWebPreciseAccessRuleRequest() (request *DescribeWebPreciseAcc
 	request = &DescribeWebPreciseAccessRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebPreciseAccessRule", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebPreciseAccessRule", "", "")
+	request.Method = requests.POST
 	return
 }
 

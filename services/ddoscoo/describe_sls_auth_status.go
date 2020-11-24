@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSlsAuthStatus invokes the ddoscoo.DescribeSlsAuthStatus API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeslsauthstatus.html
 func (client *Client) DescribeSlsAuthStatus(request *DescribeSlsAuthStatusRequest) (response *DescribeSlsAuthStatusResponse, err error) {
 	response = CreateDescribeSlsAuthStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSlsAuthStatus(request *DescribeSlsAuthStatusReques
 }
 
 // DescribeSlsAuthStatusWithChan invokes the ddoscoo.DescribeSlsAuthStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeslsauthstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlsAuthStatusWithChan(request *DescribeSlsAuthStatusRequest) (<-chan *DescribeSlsAuthStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeSlsAuthStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSlsAuthStatusWithChan(request *DescribeSlsAuthStat
 }
 
 // DescribeSlsAuthStatusWithCallback invokes the ddoscoo.DescribeSlsAuthStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeslsauthstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlsAuthStatusWithCallback(request *DescribeSlsAuthStatusRequest, callback func(response *DescribeSlsAuthStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateDescribeSlsAuthStatusRequest() (request *DescribeSlsAuthStatusRequest
 	request = &DescribeSlsAuthStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeSlsAuthStatus", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeSlsAuthStatus", "", "")
+	request.Method = requests.POST
 	return
 }
 

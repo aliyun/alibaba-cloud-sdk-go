@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeHealthCheckStatus invokes the ddoscoo.DescribeHealthCheckStatus API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describehealthcheckstatus.html
 func (client *Client) DescribeHealthCheckStatus(request *DescribeHealthCheckStatusRequest) (response *DescribeHealthCheckStatusResponse, err error) {
 	response = CreateDescribeHealthCheckStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeHealthCheckStatus(request *DescribeHealthCheckStat
 }
 
 // DescribeHealthCheckStatusWithChan invokes the ddoscoo.DescribeHealthCheckStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describehealthcheckstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHealthCheckStatusWithChan(request *DescribeHealthCheckStatusRequest) (<-chan *DescribeHealthCheckStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeHealthCheckStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeHealthCheckStatusWithChan(request *DescribeHealthC
 }
 
 // DescribeHealthCheckStatusWithCallback invokes the ddoscoo.DescribeHealthCheckStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describehealthcheckstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHealthCheckStatusWithCallback(request *DescribeHealthCheckStatusRequest, callback func(response *DescribeHealthCheckStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateDescribeHealthCheckStatusRequest() (request *DescribeHealthCheckStatu
 	request = &DescribeHealthCheckStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeHealthCheckStatus", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeHealthCheckStatus", "", "")
+	request.Method = requests.POST
 	return
 }
 

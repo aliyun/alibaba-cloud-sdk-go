@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePortAutoCcStatus invokes the ddoscoo.DescribePortAutoCcStatus API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeportautoccstatus.html
 func (client *Client) DescribePortAutoCcStatus(request *DescribePortAutoCcStatusRequest) (response *DescribePortAutoCcStatusResponse, err error) {
 	response = CreateDescribePortAutoCcStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePortAutoCcStatus(request *DescribePortAutoCcStatus
 }
 
 // DescribePortAutoCcStatusWithChan invokes the ddoscoo.DescribePortAutoCcStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeportautoccstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePortAutoCcStatusWithChan(request *DescribePortAutoCcStatusRequest) (<-chan *DescribePortAutoCcStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribePortAutoCcStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePortAutoCcStatusWithChan(request *DescribePortAuto
 }
 
 // DescribePortAutoCcStatusWithCallback invokes the ddoscoo.DescribePortAutoCcStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeportautoccstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePortAutoCcStatusWithCallback(request *DescribePortAutoCcStatusRequest, callback func(response *DescribePortAutoCcStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateDescribePortAutoCcStatusRequest() (request *DescribePortAutoCcStatusR
 	request = &DescribePortAutoCcStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortAutoCcStatus", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortAutoCcStatus", "", "")
+	request.Method = requests.POST
 	return
 }
 

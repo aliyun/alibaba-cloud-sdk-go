@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePortFlowList invokes the ddoscoo.DescribePortFlowList API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeportflowlist.html
 func (client *Client) DescribePortFlowList(request *DescribePortFlowListRequest) (response *DescribePortFlowListResponse, err error) {
 	response = CreateDescribePortFlowListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePortFlowList(request *DescribePortFlowListRequest)
 }
 
 // DescribePortFlowListWithChan invokes the ddoscoo.DescribePortFlowList API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeportflowlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePortFlowListWithChan(request *DescribePortFlowListRequest) (<-chan *DescribePortFlowListResponse, <-chan error) {
 	responseChan := make(chan *DescribePortFlowListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePortFlowListWithChan(request *DescribePortFlowList
 }
 
 // DescribePortFlowListWithCallback invokes the ddoscoo.DescribePortFlowList API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeportflowlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePortFlowListWithCallback(request *DescribePortFlowListRequest, callback func(response *DescribePortFlowListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateDescribePortFlowListRequest() (request *DescribePortFlowListRequest) 
 	request = &DescribePortFlowListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortFlowList", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortFlowList", "", "")
+	request.Method = requests.POST
 	return
 }
 

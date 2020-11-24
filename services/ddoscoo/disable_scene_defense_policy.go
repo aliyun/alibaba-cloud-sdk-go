@@ -21,7 +21,6 @@ import (
 )
 
 // DisableSceneDefensePolicy invokes the ddoscoo.DisableSceneDefensePolicy API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/disablescenedefensepolicy.html
 func (client *Client) DisableSceneDefensePolicy(request *DisableSceneDefensePolicyRequest) (response *DisableSceneDefensePolicyResponse, err error) {
 	response = CreateDisableSceneDefensePolicyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisableSceneDefensePolicy(request *DisableSceneDefensePoli
 }
 
 // DisableSceneDefensePolicyWithChan invokes the ddoscoo.DisableSceneDefensePolicy API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/disablescenedefensepolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableSceneDefensePolicyWithChan(request *DisableSceneDefensePolicyRequest) (<-chan *DisableSceneDefensePolicyResponse, <-chan error) {
 	responseChan := make(chan *DisableSceneDefensePolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisableSceneDefensePolicyWithChan(request *DisableSceneDef
 }
 
 // DisableSceneDefensePolicyWithCallback invokes the ddoscoo.DisableSceneDefensePolicy API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/disablescenedefensepolicy.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableSceneDefensePolicyWithCallback(request *DisableSceneDefensePolicyRequest, callback func(response *DisableSceneDefensePolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateDisableSceneDefensePolicyRequest() (request *DisableSceneDefensePolic
 	request = &DisableSceneDefensePolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DisableSceneDefensePolicy", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DisableSceneDefensePolicy", "", "")
+	request.Method = requests.POST
 	return
 }
 

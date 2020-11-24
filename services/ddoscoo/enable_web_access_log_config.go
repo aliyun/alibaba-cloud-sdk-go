@@ -21,7 +21,6 @@ import (
 )
 
 // EnableWebAccessLogConfig invokes the ddoscoo.EnableWebAccessLogConfig API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/enablewebaccesslogconfig.html
 func (client *Client) EnableWebAccessLogConfig(request *EnableWebAccessLogConfigRequest) (response *EnableWebAccessLogConfigResponse, err error) {
 	response = CreateEnableWebAccessLogConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnableWebAccessLogConfig(request *EnableWebAccessLogConfig
 }
 
 // EnableWebAccessLogConfigWithChan invokes the ddoscoo.EnableWebAccessLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/enablewebaccesslogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableWebAccessLogConfigWithChan(request *EnableWebAccessLogConfigRequest) (<-chan *EnableWebAccessLogConfigResponse, <-chan error) {
 	responseChan := make(chan *EnableWebAccessLogConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnableWebAccessLogConfigWithChan(request *EnableWebAccessL
 }
 
 // EnableWebAccessLogConfigWithCallback invokes the ddoscoo.EnableWebAccessLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/enablewebaccesslogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableWebAccessLogConfigWithCallback(request *EnableWebAccessLogConfigRequest, callback func(response *EnableWebAccessLogConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateEnableWebAccessLogConfigRequest() (request *EnableWebAccessLogConfigR
 	request = &EnableWebAccessLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "EnableWebAccessLogConfig", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "EnableWebAccessLogConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

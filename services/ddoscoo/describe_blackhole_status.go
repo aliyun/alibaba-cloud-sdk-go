@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBlackholeStatus invokes the ddoscoo.DescribeBlackholeStatus API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeblackholestatus.html
 func (client *Client) DescribeBlackholeStatus(request *DescribeBlackholeStatusRequest) (response *DescribeBlackholeStatusResponse, err error) {
 	response = CreateDescribeBlackholeStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBlackholeStatus(request *DescribeBlackholeStatusRe
 }
 
 // DescribeBlackholeStatusWithChan invokes the ddoscoo.DescribeBlackholeStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeblackholestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBlackholeStatusWithChan(request *DescribeBlackholeStatusRequest) (<-chan *DescribeBlackholeStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeBlackholeStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBlackholeStatusWithChan(request *DescribeBlackhole
 }
 
 // DescribeBlackholeStatusWithCallback invokes the ddoscoo.DescribeBlackholeStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeblackholestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBlackholeStatusWithCallback(request *DescribeBlackholeStatusRequest, callback func(response *DescribeBlackholeStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateDescribeBlackholeStatusRequest() (request *DescribeBlackholeStatusReq
 	request = &DescribeBlackholeStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeBlackholeStatus", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeBlackholeStatus", "", "")
+	request.Method = requests.POST
 	return
 }
 

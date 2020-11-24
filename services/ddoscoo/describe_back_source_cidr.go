@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBackSourceCidr invokes the ddoscoo.DescribeBackSourceCidr API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describebacksourcecidr.html
 func (client *Client) DescribeBackSourceCidr(request *DescribeBackSourceCidrRequest) (response *DescribeBackSourceCidrResponse, err error) {
 	response = CreateDescribeBackSourceCidrResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBackSourceCidr(request *DescribeBackSourceCidrRequ
 }
 
 // DescribeBackSourceCidrWithChan invokes the ddoscoo.DescribeBackSourceCidr API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describebacksourcecidr.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackSourceCidrWithChan(request *DescribeBackSourceCidrRequest) (<-chan *DescribeBackSourceCidrResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackSourceCidrResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBackSourceCidrWithChan(request *DescribeBackSource
 }
 
 // DescribeBackSourceCidrWithCallback invokes the ddoscoo.DescribeBackSourceCidr API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describebacksourcecidr.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackSourceCidrWithCallback(request *DescribeBackSourceCidrRequest, callback func(response *DescribeBackSourceCidrResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateDescribeBackSourceCidrRequest() (request *DescribeBackSourceCidrReque
 	request = &DescribeBackSourceCidrRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeBackSourceCidr", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeBackSourceCidr", "", "")
+	request.Method = requests.POST
 	return
 }
 

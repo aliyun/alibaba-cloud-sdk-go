@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePortViewSourceIsps invokes the ddoscoo.DescribePortViewSourceIsps API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeportviewsourceisps.html
 func (client *Client) DescribePortViewSourceIsps(request *DescribePortViewSourceIspsRequest) (response *DescribePortViewSourceIspsResponse, err error) {
 	response = CreateDescribePortViewSourceIspsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePortViewSourceIsps(request *DescribePortViewSource
 }
 
 // DescribePortViewSourceIspsWithChan invokes the ddoscoo.DescribePortViewSourceIsps API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeportviewsourceisps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePortViewSourceIspsWithChan(request *DescribePortViewSourceIspsRequest) (<-chan *DescribePortViewSourceIspsResponse, <-chan error) {
 	responseChan := make(chan *DescribePortViewSourceIspsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePortViewSourceIspsWithChan(request *DescribePortVi
 }
 
 // DescribePortViewSourceIspsWithCallback invokes the ddoscoo.DescribePortViewSourceIsps API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeportviewsourceisps.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePortViewSourceIspsWithCallback(request *DescribePortViewSourceIspsRequest, callback func(response *DescribePortViewSourceIspsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateDescribePortViewSourceIspsRequest() (request *DescribePortViewSourceI
 	request = &DescribePortViewSourceIspsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortViewSourceIsps", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortViewSourceIsps", "", "")
+	request.Method = requests.POST
 	return
 }
 

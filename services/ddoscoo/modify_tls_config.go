@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyTlsConfig invokes the ddoscoo.ModifyTlsConfig API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifytlsconfig.html
 func (client *Client) ModifyTlsConfig(request *ModifyTlsConfigRequest) (response *ModifyTlsConfigResponse, err error) {
 	response = CreateModifyTlsConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyTlsConfig(request *ModifyTlsConfigRequest) (response
 }
 
 // ModifyTlsConfigWithChan invokes the ddoscoo.ModifyTlsConfig API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifytlsconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyTlsConfigWithChan(request *ModifyTlsConfigRequest) (<-chan *ModifyTlsConfigResponse, <-chan error) {
 	responseChan := make(chan *ModifyTlsConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyTlsConfigWithChan(request *ModifyTlsConfigRequest) (
 }
 
 // ModifyTlsConfigWithCallback invokes the ddoscoo.ModifyTlsConfig API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifytlsconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyTlsConfigWithCallback(request *ModifyTlsConfigRequest, callback func(response *ModifyTlsConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateModifyTlsConfigRequest() (request *ModifyTlsConfigRequest) {
 	request = &ModifyTlsConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyTlsConfig", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyTlsConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeWebAccessLogStatus invokes the ddoscoo.DescribeWebAccessLogStatus API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebaccesslogstatus.html
 func (client *Client) DescribeWebAccessLogStatus(request *DescribeWebAccessLogStatusRequest) (response *DescribeWebAccessLogStatusResponse, err error) {
 	response = CreateDescribeWebAccessLogStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeWebAccessLogStatus(request *DescribeWebAccessLogSt
 }
 
 // DescribeWebAccessLogStatusWithChan invokes the ddoscoo.DescribeWebAccessLogStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebaccesslogstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebAccessLogStatusWithChan(request *DescribeWebAccessLogStatusRequest) (<-chan *DescribeWebAccessLogStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeWebAccessLogStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeWebAccessLogStatusWithChan(request *DescribeWebAcc
 }
 
 // DescribeWebAccessLogStatusWithCallback invokes the ddoscoo.DescribeWebAccessLogStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebaccesslogstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebAccessLogStatusWithCallback(request *DescribeWebAccessLogStatusRequest, callback func(response *DescribeWebAccessLogStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateDescribeWebAccessLogStatusRequest() (request *DescribeWebAccessLogSta
 	request = &DescribeWebAccessLogStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebAccessLogStatus", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebAccessLogStatus", "", "")
+	request.Method = requests.POST
 	return
 }
 

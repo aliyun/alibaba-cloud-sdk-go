@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteWebPreciseAccessRule invokes the ddoscoo.DeleteWebPreciseAccessRule API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deletewebpreciseaccessrule.html
 func (client *Client) DeleteWebPreciseAccessRule(request *DeleteWebPreciseAccessRuleRequest) (response *DeleteWebPreciseAccessRuleResponse, err error) {
 	response = CreateDeleteWebPreciseAccessRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteWebPreciseAccessRule(request *DeleteWebPreciseAccess
 }
 
 // DeleteWebPreciseAccessRuleWithChan invokes the ddoscoo.DeleteWebPreciseAccessRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deletewebpreciseaccessrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteWebPreciseAccessRuleWithChan(request *DeleteWebPreciseAccessRuleRequest) (<-chan *DeleteWebPreciseAccessRuleResponse, <-chan error) {
 	responseChan := make(chan *DeleteWebPreciseAccessRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteWebPreciseAccessRuleWithChan(request *DeleteWebPreci
 }
 
 // DeleteWebPreciseAccessRuleWithCallback invokes the ddoscoo.DeleteWebPreciseAccessRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deletewebpreciseaccessrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteWebPreciseAccessRuleWithCallback(request *DeleteWebPreciseAccessRuleRequest, callback func(response *DeleteWebPreciseAccessRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateDeleteWebPreciseAccessRuleRequest() (request *DeleteWebPreciseAccessR
 	request = &DeleteWebPreciseAccessRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteWebPreciseAccessRule", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteWebPreciseAccessRule", "", "")
+	request.Method = requests.POST
 	return
 }
 

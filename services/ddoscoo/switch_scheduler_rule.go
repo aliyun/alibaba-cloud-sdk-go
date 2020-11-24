@@ -21,7 +21,6 @@ import (
 )
 
 // SwitchSchedulerRule invokes the ddoscoo.SwitchSchedulerRule API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/switchschedulerrule.html
 func (client *Client) SwitchSchedulerRule(request *SwitchSchedulerRuleRequest) (response *SwitchSchedulerRuleResponse, err error) {
 	response = CreateSwitchSchedulerRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SwitchSchedulerRule(request *SwitchSchedulerRuleRequest) (
 }
 
 // SwitchSchedulerRuleWithChan invokes the ddoscoo.SwitchSchedulerRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/switchschedulerrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchSchedulerRuleWithChan(request *SwitchSchedulerRuleRequest) (<-chan *SwitchSchedulerRuleResponse, <-chan error) {
 	responseChan := make(chan *SwitchSchedulerRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SwitchSchedulerRuleWithChan(request *SwitchSchedulerRuleRe
 }
 
 // SwitchSchedulerRuleWithCallback invokes the ddoscoo.SwitchSchedulerRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/switchschedulerrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SwitchSchedulerRuleWithCallback(request *SwitchSchedulerRuleRequest, callback func(response *SwitchSchedulerRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateSwitchSchedulerRuleRequest() (request *SwitchSchedulerRuleRequest) {
 	request = &SwitchSchedulerRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "SwitchSchedulerRule", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "SwitchSchedulerRule", "", "")
+	request.Method = requests.POST
 	return
 }
 

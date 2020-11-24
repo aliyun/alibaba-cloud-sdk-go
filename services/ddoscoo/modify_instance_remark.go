@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyInstanceRemark invokes the ddoscoo.ModifyInstanceRemark API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyinstanceremark.html
 func (client *Client) ModifyInstanceRemark(request *ModifyInstanceRemarkRequest) (response *ModifyInstanceRemarkResponse, err error) {
 	response = CreateModifyInstanceRemarkResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyInstanceRemark(request *ModifyInstanceRemarkRequest)
 }
 
 // ModifyInstanceRemarkWithChan invokes the ddoscoo.ModifyInstanceRemark API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyinstanceremark.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceRemarkWithChan(request *ModifyInstanceRemarkRequest) (<-chan *ModifyInstanceRemarkResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceRemarkResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyInstanceRemarkWithChan(request *ModifyInstanceRemark
 }
 
 // ModifyInstanceRemarkWithCallback invokes the ddoscoo.ModifyInstanceRemark API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyinstanceremark.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceRemarkWithCallback(request *ModifyInstanceRemarkRequest, callback func(response *ModifyInstanceRemarkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateModifyInstanceRemarkRequest() (request *ModifyInstanceRemarkRequest) 
 	request = &ModifyInstanceRemarkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyInstanceRemark", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyInstanceRemark", "", "")
+	request.Method = requests.POST
 	return
 }
 

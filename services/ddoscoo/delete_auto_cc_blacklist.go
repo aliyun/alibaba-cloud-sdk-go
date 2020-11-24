@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteAutoCcBlacklist invokes the ddoscoo.DeleteAutoCcBlacklist API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deleteautoccblacklist.html
 func (client *Client) DeleteAutoCcBlacklist(request *DeleteAutoCcBlacklistRequest) (response *DeleteAutoCcBlacklistResponse, err error) {
 	response = CreateDeleteAutoCcBlacklistResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteAutoCcBlacklist(request *DeleteAutoCcBlacklistReques
 }
 
 // DeleteAutoCcBlacklistWithChan invokes the ddoscoo.DeleteAutoCcBlacklist API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deleteautoccblacklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAutoCcBlacklistWithChan(request *DeleteAutoCcBlacklistRequest) (<-chan *DeleteAutoCcBlacklistResponse, <-chan error) {
 	responseChan := make(chan *DeleteAutoCcBlacklistResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteAutoCcBlacklistWithChan(request *DeleteAutoCcBlackli
 }
 
 // DeleteAutoCcBlacklistWithCallback invokes the ddoscoo.DeleteAutoCcBlacklist API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deleteautoccblacklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAutoCcBlacklistWithCallback(request *DeleteAutoCcBlacklistRequest, callback func(response *DeleteAutoCcBlacklistResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateDeleteAutoCcBlacklistRequest() (request *DeleteAutoCcBlacklistRequest
 	request = &DeleteAutoCcBlacklistRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteAutoCcBlacklist", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteAutoCcBlacklist", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyWebCacheSwitch invokes the ddoscoo.ModifyWebCacheSwitch API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebcacheswitch.html
 func (client *Client) ModifyWebCacheSwitch(request *ModifyWebCacheSwitchRequest) (response *ModifyWebCacheSwitchResponse, err error) {
 	response = CreateModifyWebCacheSwitchResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyWebCacheSwitch(request *ModifyWebCacheSwitchRequest)
 }
 
 // ModifyWebCacheSwitchWithChan invokes the ddoscoo.ModifyWebCacheSwitch API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebcacheswitch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebCacheSwitchWithChan(request *ModifyWebCacheSwitchRequest) (<-chan *ModifyWebCacheSwitchResponse, <-chan error) {
 	responseChan := make(chan *ModifyWebCacheSwitchResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyWebCacheSwitchWithChan(request *ModifyWebCacheSwitch
 }
 
 // ModifyWebCacheSwitchWithCallback invokes the ddoscoo.ModifyWebCacheSwitch API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebcacheswitch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebCacheSwitchWithCallback(request *ModifyWebCacheSwitchRequest, callback func(response *ModifyWebCacheSwitchResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateModifyWebCacheSwitchRequest() (request *ModifyWebCacheSwitchRequest) 
 	request = &ModifyWebCacheSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebCacheSwitch", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebCacheSwitch", "", "")
+	request.Method = requests.POST
 	return
 }
 

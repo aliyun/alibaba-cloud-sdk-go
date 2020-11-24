@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyElasticBandWidth invokes the ddoscoo.ModifyElasticBandWidth API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyelasticbandwidth.html
 func (client *Client) ModifyElasticBandWidth(request *ModifyElasticBandWidthRequest) (response *ModifyElasticBandWidthResponse, err error) {
 	response = CreateModifyElasticBandWidthResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyElasticBandWidth(request *ModifyElasticBandWidthRequ
 }
 
 // ModifyElasticBandWidthWithChan invokes the ddoscoo.ModifyElasticBandWidth API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyelasticbandwidth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyElasticBandWidthWithChan(request *ModifyElasticBandWidthRequest) (<-chan *ModifyElasticBandWidthResponse, <-chan error) {
 	responseChan := make(chan *ModifyElasticBandWidthResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyElasticBandWidthWithChan(request *ModifyElasticBandW
 }
 
 // ModifyElasticBandWidthWithCallback invokes the ddoscoo.ModifyElasticBandWidth API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyelasticbandwidth.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyElasticBandWidthWithCallback(request *ModifyElasticBandWidthRequest, callback func(response *ModifyElasticBandWidthResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateModifyElasticBandWidthRequest() (request *ModifyElasticBandWidthReque
 	request = &ModifyElasticBandWidthRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyElasticBandWidth", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyElasticBandWidth", "", "")
+	request.Method = requests.POST
 	return
 }
 

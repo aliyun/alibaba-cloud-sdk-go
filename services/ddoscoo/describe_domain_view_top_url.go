@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainViewTopUrl invokes the ddoscoo.DescribeDomainViewTopUrl API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainviewtopurl.html
 func (client *Client) DescribeDomainViewTopUrl(request *DescribeDomainViewTopUrlRequest) (response *DescribeDomainViewTopUrlResponse, err error) {
 	response = CreateDescribeDomainViewTopUrlResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainViewTopUrl(request *DescribeDomainViewTopUrl
 }
 
 // DescribeDomainViewTopUrlWithChan invokes the ddoscoo.DescribeDomainViewTopUrl API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainviewtopurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainViewTopUrlWithChan(request *DescribeDomainViewTopUrlRequest) (<-chan *DescribeDomainViewTopUrlResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainViewTopUrlResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainViewTopUrlWithChan(request *DescribeDomainVi
 }
 
 // DescribeDomainViewTopUrlWithCallback invokes the ddoscoo.DescribeDomainViewTopUrl API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainviewtopurl.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainViewTopUrlWithCallback(request *DescribeDomainViewTopUrlRequest, callback func(response *DescribeDomainViewTopUrlResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateDescribeDomainViewTopUrlRequest() (request *DescribeDomainViewTopUrlR
 	request = &DescribeDomainViewTopUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainViewTopUrl", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainViewTopUrl", "", "")
+	request.Method = requests.POST
 	return
 }
 

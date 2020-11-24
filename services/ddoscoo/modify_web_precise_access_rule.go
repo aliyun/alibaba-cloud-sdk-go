@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyWebPreciseAccessRule invokes the ddoscoo.ModifyWebPreciseAccessRule API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebpreciseaccessrule.html
 func (client *Client) ModifyWebPreciseAccessRule(request *ModifyWebPreciseAccessRuleRequest) (response *ModifyWebPreciseAccessRuleResponse, err error) {
 	response = CreateModifyWebPreciseAccessRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyWebPreciseAccessRule(request *ModifyWebPreciseAccess
 }
 
 // ModifyWebPreciseAccessRuleWithChan invokes the ddoscoo.ModifyWebPreciseAccessRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebpreciseaccessrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebPreciseAccessRuleWithChan(request *ModifyWebPreciseAccessRuleRequest) (<-chan *ModifyWebPreciseAccessRuleResponse, <-chan error) {
 	responseChan := make(chan *ModifyWebPreciseAccessRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyWebPreciseAccessRuleWithChan(request *ModifyWebPreci
 }
 
 // ModifyWebPreciseAccessRuleWithCallback invokes the ddoscoo.ModifyWebPreciseAccessRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebpreciseaccessrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebPreciseAccessRuleWithCallback(request *ModifyWebPreciseAccessRuleRequest, callback func(response *ModifyWebPreciseAccessRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateModifyWebPreciseAccessRuleRequest() (request *ModifyWebPreciseAccessR
 	request = &ModifyWebPreciseAccessRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebPreciseAccessRule", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebPreciseAccessRule", "", "")
+	request.Method = requests.POST
 	return
 }
 

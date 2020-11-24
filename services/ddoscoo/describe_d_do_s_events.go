@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDDoSEvents invokes the ddoscoo.DescribeDDoSEvents API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeddosevents.html
 func (client *Client) DescribeDDoSEvents(request *DescribeDDoSEventsRequest) (response *DescribeDDoSEventsResponse, err error) {
 	response = CreateDescribeDDoSEventsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDDoSEvents(request *DescribeDDoSEventsRequest) (re
 }
 
 // DescribeDDoSEventsWithChan invokes the ddoscoo.DescribeDDoSEvents API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeddosevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDDoSEventsWithChan(request *DescribeDDoSEventsRequest) (<-chan *DescribeDDoSEventsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDDoSEventsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDDoSEventsWithChan(request *DescribeDDoSEventsRequ
 }
 
 // DescribeDDoSEventsWithCallback invokes the ddoscoo.DescribeDDoSEvents API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeddosevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDDoSEventsWithCallback(request *DescribeDDoSEventsRequest, callback func(response *DescribeDDoSEventsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateDescribeDDoSEventsRequest() (request *DescribeDDoSEventsRequest) {
 	request = &DescribeDDoSEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDDoSEvents", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDDoSEvents", "", "")
+	request.Method = requests.POST
 	return
 }
 

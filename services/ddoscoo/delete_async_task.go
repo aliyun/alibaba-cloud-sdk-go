@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteAsyncTask invokes the ddoscoo.DeleteAsyncTask API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deleteasynctask.html
 func (client *Client) DeleteAsyncTask(request *DeleteAsyncTaskRequest) (response *DeleteAsyncTaskResponse, err error) {
 	response = CreateDeleteAsyncTaskResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteAsyncTask(request *DeleteAsyncTaskRequest) (response
 }
 
 // DeleteAsyncTaskWithChan invokes the ddoscoo.DeleteAsyncTask API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deleteasynctask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAsyncTaskWithChan(request *DeleteAsyncTaskRequest) (<-chan *DeleteAsyncTaskResponse, <-chan error) {
 	responseChan := make(chan *DeleteAsyncTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteAsyncTaskWithChan(request *DeleteAsyncTaskRequest) (
 }
 
 // DeleteAsyncTaskWithCallback invokes the ddoscoo.DeleteAsyncTask API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deleteasynctask.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAsyncTaskWithCallback(request *DeleteAsyncTaskRequest, callback func(response *DeleteAsyncTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateDeleteAsyncTaskRequest() (request *DeleteAsyncTaskRequest) {
 	request = &DeleteAsyncTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteAsyncTask", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteAsyncTask", "", "")
+	request.Method = requests.POST
 	return
 }
 

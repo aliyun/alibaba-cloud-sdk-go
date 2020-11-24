@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCerts invokes the ddoscoo.DescribeCerts API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describecerts.html
 func (client *Client) DescribeCerts(request *DescribeCertsRequest) (response *DescribeCertsResponse, err error) {
 	response = CreateDescribeCertsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCerts(request *DescribeCertsRequest) (response *De
 }
 
 // DescribeCertsWithChan invokes the ddoscoo.DescribeCerts API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describecerts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCertsWithChan(request *DescribeCertsRequest) (<-chan *DescribeCertsResponse, <-chan error) {
 	responseChan := make(chan *DescribeCertsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCertsWithChan(request *DescribeCertsRequest) (<-ch
 }
 
 // DescribeCertsWithCallback invokes the ddoscoo.DescribeCerts API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describecerts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCertsWithCallback(request *DescribeCertsRequest, callback func(response *DescribeCertsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateDescribeCertsRequest() (request *DescribeCertsRequest) {
 	request = &DescribeCertsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeCerts", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeCerts", "", "")
+	request.Method = requests.POST
 	return
 }
 

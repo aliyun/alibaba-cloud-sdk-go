@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyWebAccessMode invokes the ddoscoo.ModifyWebAccessMode API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebaccessmode.html
 func (client *Client) ModifyWebAccessMode(request *ModifyWebAccessModeRequest) (response *ModifyWebAccessModeResponse, err error) {
 	response = CreateModifyWebAccessModeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyWebAccessMode(request *ModifyWebAccessModeRequest) (
 }
 
 // ModifyWebAccessModeWithChan invokes the ddoscoo.ModifyWebAccessMode API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebaccessmode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebAccessModeWithChan(request *ModifyWebAccessModeRequest) (<-chan *ModifyWebAccessModeResponse, <-chan error) {
 	responseChan := make(chan *ModifyWebAccessModeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyWebAccessModeWithChan(request *ModifyWebAccessModeRe
 }
 
 // ModifyWebAccessModeWithCallback invokes the ddoscoo.ModifyWebAccessMode API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebaccessmode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebAccessModeWithCallback(request *ModifyWebAccessModeRequest, callback func(response *ModifyWebAccessModeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateModifyWebAccessModeRequest() (request *ModifyWebAccessModeRequest) {
 	request = &ModifyWebAccessModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebAccessMode", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebAccessMode", "", "")
+	request.Method = requests.POST
 	return
 }
 

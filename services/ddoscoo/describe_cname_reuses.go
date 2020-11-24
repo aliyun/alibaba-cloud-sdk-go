@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeCnameReuses invokes the ddoscoo.DescribeCnameReuses API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describecnamereuses.html
 func (client *Client) DescribeCnameReuses(request *DescribeCnameReusesRequest) (response *DescribeCnameReusesResponse, err error) {
 	response = CreateDescribeCnameReusesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeCnameReuses(request *DescribeCnameReusesRequest) (
 }
 
 // DescribeCnameReusesWithChan invokes the ddoscoo.DescribeCnameReuses API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describecnamereuses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCnameReusesWithChan(request *DescribeCnameReusesRequest) (<-chan *DescribeCnameReusesResponse, <-chan error) {
 	responseChan := make(chan *DescribeCnameReusesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeCnameReusesWithChan(request *DescribeCnameReusesRe
 }
 
 // DescribeCnameReusesWithCallback invokes the ddoscoo.DescribeCnameReuses API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describecnamereuses.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCnameReusesWithCallback(request *DescribeCnameReusesRequest, callback func(response *DescribeCnameReusesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateDescribeCnameReusesRequest() (request *DescribeCnameReusesRequest) {
 	request = &DescribeCnameReusesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeCnameReuses", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeCnameReuses", "", "")
+	request.Method = requests.POST
 	return
 }
 

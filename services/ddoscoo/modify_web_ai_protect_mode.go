@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyWebAIProtectMode invokes the ddoscoo.ModifyWebAIProtectMode API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebaiprotectmode.html
 func (client *Client) ModifyWebAIProtectMode(request *ModifyWebAIProtectModeRequest) (response *ModifyWebAIProtectModeResponse, err error) {
 	response = CreateModifyWebAIProtectModeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyWebAIProtectMode(request *ModifyWebAIProtectModeRequ
 }
 
 // ModifyWebAIProtectModeWithChan invokes the ddoscoo.ModifyWebAIProtectMode API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebaiprotectmode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebAIProtectModeWithChan(request *ModifyWebAIProtectModeRequest) (<-chan *ModifyWebAIProtectModeResponse, <-chan error) {
 	responseChan := make(chan *ModifyWebAIProtectModeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyWebAIProtectModeWithChan(request *ModifyWebAIProtect
 }
 
 // ModifyWebAIProtectModeWithCallback invokes the ddoscoo.ModifyWebAIProtectMode API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebaiprotectmode.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebAIProtectModeWithCallback(request *ModifyWebAIProtectModeRequest, callback func(response *ModifyWebAIProtectModeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateModifyWebAIProtectModeRequest() (request *ModifyWebAIProtectModeReque
 	request = &ModifyWebAIProtectModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebAIProtectMode", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebAIProtectMode", "", "")
+	request.Method = requests.POST
 	return
 }
 

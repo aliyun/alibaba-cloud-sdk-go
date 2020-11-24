@@ -21,7 +21,6 @@ import (
 )
 
 // EmptyAutoCcBlacklist invokes the ddoscoo.EmptyAutoCcBlacklist API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/emptyautoccblacklist.html
 func (client *Client) EmptyAutoCcBlacklist(request *EmptyAutoCcBlacklistRequest) (response *EmptyAutoCcBlacklistResponse, err error) {
 	response = CreateEmptyAutoCcBlacklistResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EmptyAutoCcBlacklist(request *EmptyAutoCcBlacklistRequest)
 }
 
 // EmptyAutoCcBlacklistWithChan invokes the ddoscoo.EmptyAutoCcBlacklist API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/emptyautoccblacklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EmptyAutoCcBlacklistWithChan(request *EmptyAutoCcBlacklistRequest) (<-chan *EmptyAutoCcBlacklistResponse, <-chan error) {
 	responseChan := make(chan *EmptyAutoCcBlacklistResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EmptyAutoCcBlacklistWithChan(request *EmptyAutoCcBlacklist
 }
 
 // EmptyAutoCcBlacklistWithCallback invokes the ddoscoo.EmptyAutoCcBlacklist API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/emptyautoccblacklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EmptyAutoCcBlacklistWithCallback(request *EmptyAutoCcBlacklistRequest, callback func(response *EmptyAutoCcBlacklistResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,8 @@ func CreateEmptyAutoCcBlacklistRequest() (request *EmptyAutoCcBlacklistRequest) 
 	request = &EmptyAutoCcBlacklistRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "EmptyAutoCcBlacklist", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "EmptyAutoCcBlacklist", "", "")
+	request.Method = requests.POST
 	return
 }
 

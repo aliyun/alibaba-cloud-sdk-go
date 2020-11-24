@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeNetworkRegionBlock invokes the ddoscoo.DescribeNetworkRegionBlock API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describenetworkregionblock.html
 func (client *Client) DescribeNetworkRegionBlock(request *DescribeNetworkRegionBlockRequest) (response *DescribeNetworkRegionBlockResponse, err error) {
 	response = CreateDescribeNetworkRegionBlockResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeNetworkRegionBlock(request *DescribeNetworkRegionB
 }
 
 // DescribeNetworkRegionBlockWithChan invokes the ddoscoo.DescribeNetworkRegionBlock API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describenetworkregionblock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNetworkRegionBlockWithChan(request *DescribeNetworkRegionBlockRequest) (<-chan *DescribeNetworkRegionBlockResponse, <-chan error) {
 	responseChan := make(chan *DescribeNetworkRegionBlockResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeNetworkRegionBlockWithChan(request *DescribeNetwor
 }
 
 // DescribeNetworkRegionBlockWithCallback invokes the ddoscoo.DescribeNetworkRegionBlock API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describenetworkregionblock.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNetworkRegionBlockWithCallback(request *DescribeNetworkRegionBlockRequest, callback func(response *DescribeNetworkRegionBlockResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateDescribeNetworkRegionBlockRequest() (request *DescribeNetworkRegionBl
 	request = &DescribeNetworkRegionBlockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeNetworkRegionBlock", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeNetworkRegionBlock", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteWebCacheCustomRule invokes the ddoscoo.DeleteWebCacheCustomRule API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deletewebcachecustomrule.html
 func (client *Client) DeleteWebCacheCustomRule(request *DeleteWebCacheCustomRuleRequest) (response *DeleteWebCacheCustomRuleResponse, err error) {
 	response = CreateDeleteWebCacheCustomRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteWebCacheCustomRule(request *DeleteWebCacheCustomRule
 }
 
 // DeleteWebCacheCustomRuleWithChan invokes the ddoscoo.DeleteWebCacheCustomRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deletewebcachecustomrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteWebCacheCustomRuleWithChan(request *DeleteWebCacheCustomRuleRequest) (<-chan *DeleteWebCacheCustomRuleResponse, <-chan error) {
 	responseChan := make(chan *DeleteWebCacheCustomRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteWebCacheCustomRuleWithChan(request *DeleteWebCacheCu
 }
 
 // DeleteWebCacheCustomRuleWithCallback invokes the ddoscoo.DeleteWebCacheCustomRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deletewebcachecustomrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteWebCacheCustomRuleWithCallback(request *DeleteWebCacheCustomRuleRequest, callback func(response *DeleteWebCacheCustomRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateDeleteWebCacheCustomRuleRequest() (request *DeleteWebCacheCustomRuleR
 	request = &DeleteWebCacheCustomRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteWebCacheCustomRule", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteWebCacheCustomRule", "", "")
+	request.Method = requests.POST
 	return
 }
 

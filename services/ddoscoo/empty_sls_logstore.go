@@ -21,7 +21,6 @@ import (
 )
 
 // EmptySlsLogstore invokes the ddoscoo.EmptySlsLogstore API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/emptyslslogstore.html
 func (client *Client) EmptySlsLogstore(request *EmptySlsLogstoreRequest) (response *EmptySlsLogstoreResponse, err error) {
 	response = CreateEmptySlsLogstoreResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EmptySlsLogstore(request *EmptySlsLogstoreRequest) (respon
 }
 
 // EmptySlsLogstoreWithChan invokes the ddoscoo.EmptySlsLogstore API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/emptyslslogstore.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EmptySlsLogstoreWithChan(request *EmptySlsLogstoreRequest) (<-chan *EmptySlsLogstoreResponse, <-chan error) {
 	responseChan := make(chan *EmptySlsLogstoreResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EmptySlsLogstoreWithChan(request *EmptySlsLogstoreRequest)
 }
 
 // EmptySlsLogstoreWithCallback invokes the ddoscoo.EmptySlsLogstore API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/emptyslslogstore.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EmptySlsLogstoreWithCallback(request *EmptySlsLogstoreRequest, callback func(response *EmptySlsLogstoreResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateEmptySlsLogstoreRequest() (request *EmptySlsLogstoreRequest) {
 	request = &EmptySlsLogstoreRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "EmptySlsLogstore", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "EmptySlsLogstore", "", "")
+	request.Method = requests.POST
 	return
 }
 

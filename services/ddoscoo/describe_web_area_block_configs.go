@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeWebAreaBlockConfigs invokes the ddoscoo.DescribeWebAreaBlockConfigs API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebareablockconfigs.html
 func (client *Client) DescribeWebAreaBlockConfigs(request *DescribeWebAreaBlockConfigsRequest) (response *DescribeWebAreaBlockConfigsResponse, err error) {
 	response = CreateDescribeWebAreaBlockConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeWebAreaBlockConfigs(request *DescribeWebAreaBlockC
 }
 
 // DescribeWebAreaBlockConfigsWithChan invokes the ddoscoo.DescribeWebAreaBlockConfigs API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebareablockconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebAreaBlockConfigsWithChan(request *DescribeWebAreaBlockConfigsRequest) (<-chan *DescribeWebAreaBlockConfigsResponse, <-chan error) {
 	responseChan := make(chan *DescribeWebAreaBlockConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeWebAreaBlockConfigsWithChan(request *DescribeWebAr
 }
 
 // DescribeWebAreaBlockConfigsWithCallback invokes the ddoscoo.DescribeWebAreaBlockConfigs API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebareablockconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebAreaBlockConfigsWithCallback(request *DescribeWebAreaBlockConfigsRequest, callback func(response *DescribeWebAreaBlockConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateDescribeWebAreaBlockConfigsRequest() (request *DescribeWebAreaBlockCo
 	request = &DescribeWebAreaBlockConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebAreaBlockConfigs", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebAreaBlockConfigs", "", "")
+	request.Method = requests.POST
 	return
 }
 

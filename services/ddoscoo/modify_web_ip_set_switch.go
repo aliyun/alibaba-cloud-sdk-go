@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyWebIpSetSwitch invokes the ddoscoo.ModifyWebIpSetSwitch API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebipsetswitch.html
 func (client *Client) ModifyWebIpSetSwitch(request *ModifyWebIpSetSwitchRequest) (response *ModifyWebIpSetSwitchResponse, err error) {
 	response = CreateModifyWebIpSetSwitchResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyWebIpSetSwitch(request *ModifyWebIpSetSwitchRequest)
 }
 
 // ModifyWebIpSetSwitchWithChan invokes the ddoscoo.ModifyWebIpSetSwitch API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebipsetswitch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebIpSetSwitchWithChan(request *ModifyWebIpSetSwitchRequest) (<-chan *ModifyWebIpSetSwitchResponse, <-chan error) {
 	responseChan := make(chan *ModifyWebIpSetSwitchResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyWebIpSetSwitchWithChan(request *ModifyWebIpSetSwitch
 }
 
 // ModifyWebIpSetSwitchWithCallback invokes the ddoscoo.ModifyWebIpSetSwitch API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebipsetswitch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebIpSetSwitchWithCallback(request *ModifyWebIpSetSwitchRequest, callback func(response *ModifyWebIpSetSwitchResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateModifyWebIpSetSwitchRequest() (request *ModifyWebIpSetSwitchRequest) 
 	request = &ModifyWebIpSetSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebIpSetSwitch", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebIpSetSwitch", "", "")
+	request.Method = requests.POST
 	return
 }
 

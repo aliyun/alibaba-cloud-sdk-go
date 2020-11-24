@@ -21,7 +21,6 @@ import (
 )
 
 // ConfigWebIpSet invokes the ddoscoo.ConfigWebIpSet API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/configwebipset.html
 func (client *Client) ConfigWebIpSet(request *ConfigWebIpSetRequest) (response *ConfigWebIpSetResponse, err error) {
 	response = CreateConfigWebIpSetResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ConfigWebIpSet(request *ConfigWebIpSetRequest) (response *
 }
 
 // ConfigWebIpSetWithChan invokes the ddoscoo.ConfigWebIpSet API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/configwebipset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConfigWebIpSetWithChan(request *ConfigWebIpSetRequest) (<-chan *ConfigWebIpSetResponse, <-chan error) {
 	responseChan := make(chan *ConfigWebIpSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ConfigWebIpSetWithChan(request *ConfigWebIpSetRequest) (<-
 }
 
 // ConfigWebIpSetWithCallback invokes the ddoscoo.ConfigWebIpSet API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/configwebipset.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConfigWebIpSetWithCallback(request *ConfigWebIpSetRequest, callback func(response *ConfigWebIpSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateConfigWebIpSetRequest() (request *ConfigWebIpSetRequest) {
 	request = &ConfigWebIpSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigWebIpSet", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigWebIpSet", "", "")
+	request.Method = requests.POST
 	return
 }
 

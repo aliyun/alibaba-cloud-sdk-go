@@ -21,7 +21,6 @@ import (
 )
 
 // EnableWebCCRule invokes the ddoscoo.EnableWebCCRule API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/enablewebccrule.html
 func (client *Client) EnableWebCCRule(request *EnableWebCCRuleRequest) (response *EnableWebCCRuleResponse, err error) {
 	response = CreateEnableWebCCRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnableWebCCRule(request *EnableWebCCRuleRequest) (response
 }
 
 // EnableWebCCRuleWithChan invokes the ddoscoo.EnableWebCCRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/enablewebccrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableWebCCRuleWithChan(request *EnableWebCCRuleRequest) (<-chan *EnableWebCCRuleResponse, <-chan error) {
 	responseChan := make(chan *EnableWebCCRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnableWebCCRuleWithChan(request *EnableWebCCRuleRequest) (
 }
 
 // EnableWebCCRuleWithCallback invokes the ddoscoo.EnableWebCCRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/enablewebccrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableWebCCRuleWithCallback(request *EnableWebCCRuleRequest, callback func(response *EnableWebCCRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateEnableWebCCRuleRequest() (request *EnableWebCCRuleRequest) {
 	request = &EnableWebCCRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "EnableWebCCRule", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "EnableWebCCRule", "", "")
+	request.Method = requests.POST
 	return
 }
 

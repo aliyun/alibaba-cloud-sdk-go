@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeAsyncTasks invokes the ddoscoo.DescribeAsyncTasks API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeasynctasks.html
 func (client *Client) DescribeAsyncTasks(request *DescribeAsyncTasksRequest) (response *DescribeAsyncTasksResponse, err error) {
 	response = CreateDescribeAsyncTasksResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeAsyncTasks(request *DescribeAsyncTasksRequest) (re
 }
 
 // DescribeAsyncTasksWithChan invokes the ddoscoo.DescribeAsyncTasks API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeasynctasks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAsyncTasksWithChan(request *DescribeAsyncTasksRequest) (<-chan *DescribeAsyncTasksResponse, <-chan error) {
 	responseChan := make(chan *DescribeAsyncTasksResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeAsyncTasksWithChan(request *DescribeAsyncTasksRequ
 }
 
 // DescribeAsyncTasksWithCallback invokes the ddoscoo.DescribeAsyncTasks API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeasynctasks.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAsyncTasksWithCallback(request *DescribeAsyncTasksRequest, callback func(response *DescribeAsyncTasksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateDescribeAsyncTasksRequest() (request *DescribeAsyncTasksRequest) {
 	request = &DescribeAsyncTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeAsyncTasks", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeAsyncTasks", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // CreateTagResources invokes the ddoscoo.CreateTagResources API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/createtagresources.html
 func (client *Client) CreateTagResources(request *CreateTagResourcesRequest) (response *CreateTagResourcesResponse, err error) {
 	response = CreateCreateTagResourcesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateTagResources(request *CreateTagResourcesRequest) (re
 }
 
 // CreateTagResourcesWithChan invokes the ddoscoo.CreateTagResources API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/createtagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTagResourcesWithChan(request *CreateTagResourcesRequest) (<-chan *CreateTagResourcesResponse, <-chan error) {
 	responseChan := make(chan *CreateTagResourcesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateTagResourcesWithChan(request *CreateTagResourcesRequ
 }
 
 // CreateTagResourcesWithCallback invokes the ddoscoo.CreateTagResources API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/createtagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTagResourcesWithCallback(request *CreateTagResourcesRequest, callback func(response *CreateTagResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,7 +95,8 @@ func CreateCreateTagResourcesRequest() (request *CreateTagResourcesRequest) {
 	request = &CreateTagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "CreateTagResources", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "CreateTagResources", "", "")
+	request.Method = requests.POST
 	return
 }
 

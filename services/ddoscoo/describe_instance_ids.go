@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstanceIds invokes the ddoscoo.DescribeInstanceIds API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeinstanceids.html
 func (client *Client) DescribeInstanceIds(request *DescribeInstanceIdsRequest) (response *DescribeInstanceIdsResponse, err error) {
 	response = CreateDescribeInstanceIdsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstanceIds(request *DescribeInstanceIdsRequest) (
 }
 
 // DescribeInstanceIdsWithChan invokes the ddoscoo.DescribeInstanceIds API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeinstanceids.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceIdsWithChan(request *DescribeInstanceIdsRequest) (<-chan *DescribeInstanceIdsResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceIdsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceIdsWithChan(request *DescribeInstanceIdsRe
 }
 
 // DescribeInstanceIdsWithCallback invokes the ddoscoo.DescribeInstanceIds API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeinstanceids.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceIdsWithCallback(request *DescribeInstanceIdsRequest, callback func(response *DescribeInstanceIdsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateDescribeInstanceIdsRequest() (request *DescribeInstanceIdsRequest) {
 	request = &DescribeInstanceIdsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeInstanceIds", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeInstanceIds", "", "")
+	request.Method = requests.POST
 	return
 }
 

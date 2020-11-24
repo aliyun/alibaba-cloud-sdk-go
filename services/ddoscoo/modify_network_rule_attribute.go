@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyNetworkRuleAttribute invokes the ddoscoo.ModifyNetworkRuleAttribute API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifynetworkruleattribute.html
 func (client *Client) ModifyNetworkRuleAttribute(request *ModifyNetworkRuleAttributeRequest) (response *ModifyNetworkRuleAttributeResponse, err error) {
 	response = CreateModifyNetworkRuleAttributeResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyNetworkRuleAttribute(request *ModifyNetworkRuleAttri
 }
 
 // ModifyNetworkRuleAttributeWithChan invokes the ddoscoo.ModifyNetworkRuleAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifynetworkruleattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNetworkRuleAttributeWithChan(request *ModifyNetworkRuleAttributeRequest) (<-chan *ModifyNetworkRuleAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyNetworkRuleAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyNetworkRuleAttributeWithChan(request *ModifyNetworkR
 }
 
 // ModifyNetworkRuleAttributeWithCallback invokes the ddoscoo.ModifyNetworkRuleAttribute API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifynetworkruleattribute.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNetworkRuleAttributeWithCallback(request *ModifyNetworkRuleAttributeRequest, callback func(response *ModifyNetworkRuleAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateModifyNetworkRuleAttributeRequest() (request *ModifyNetworkRuleAttrib
 	request = &ModifyNetworkRuleAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyNetworkRuleAttribute", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyNetworkRuleAttribute", "", "")
+	request.Method = requests.POST
 	return
 }
 

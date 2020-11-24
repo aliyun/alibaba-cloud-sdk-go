@@ -21,7 +21,6 @@ import (
 )
 
 // EnableWebCC invokes the ddoscoo.EnableWebCC API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/enablewebcc.html
 func (client *Client) EnableWebCC(request *EnableWebCCRequest) (response *EnableWebCCResponse, err error) {
 	response = CreateEnableWebCCResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnableWebCC(request *EnableWebCCRequest) (response *Enable
 }
 
 // EnableWebCCWithChan invokes the ddoscoo.EnableWebCC API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/enablewebcc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableWebCCWithChan(request *EnableWebCCRequest) (<-chan *EnableWebCCResponse, <-chan error) {
 	responseChan := make(chan *EnableWebCCResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnableWebCCWithChan(request *EnableWebCCRequest) (<-chan *
 }
 
 // EnableWebCCWithCallback invokes the ddoscoo.EnableWebCC API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/enablewebcc.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableWebCCWithCallback(request *EnableWebCCRequest, callback func(response *EnableWebCCResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateEnableWebCCRequest() (request *EnableWebCCRequest) {
 	request = &EnableWebCCRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "EnableWebCC", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "EnableWebCC", "", "")
+	request.Method = requests.POST
 	return
 }
 

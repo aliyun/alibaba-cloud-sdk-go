@@ -21,7 +21,6 @@ import (
 )
 
 // DescribePortViewSourceCountries invokes the ddoscoo.DescribePortViewSourceCountries API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeportviewsourcecountries.html
 func (client *Client) DescribePortViewSourceCountries(request *DescribePortViewSourceCountriesRequest) (response *DescribePortViewSourceCountriesResponse, err error) {
 	response = CreateDescribePortViewSourceCountriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribePortViewSourceCountries(request *DescribePortViewS
 }
 
 // DescribePortViewSourceCountriesWithChan invokes the ddoscoo.DescribePortViewSourceCountries API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeportviewsourcecountries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePortViewSourceCountriesWithChan(request *DescribePortViewSourceCountriesRequest) (<-chan *DescribePortViewSourceCountriesResponse, <-chan error) {
 	responseChan := make(chan *DescribePortViewSourceCountriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribePortViewSourceCountriesWithChan(request *DescribeP
 }
 
 // DescribePortViewSourceCountriesWithCallback invokes the ddoscoo.DescribePortViewSourceCountries API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeportviewsourcecountries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePortViewSourceCountriesWithCallback(request *DescribePortViewSourceCountriesRequest, callback func(response *DescribePortViewSourceCountriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateDescribePortViewSourceCountriesRequest() (request *DescribePortViewSo
 	request = &DescribePortViewSourceCountriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortViewSourceCountries", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribePortViewSourceCountries", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyWebPreciseAccessSwitch invokes the ddoscoo.ModifyWebPreciseAccessSwitch API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebpreciseaccessswitch.html
 func (client *Client) ModifyWebPreciseAccessSwitch(request *ModifyWebPreciseAccessSwitchRequest) (response *ModifyWebPreciseAccessSwitchResponse, err error) {
 	response = CreateModifyWebPreciseAccessSwitchResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyWebPreciseAccessSwitch(request *ModifyWebPreciseAcce
 }
 
 // ModifyWebPreciseAccessSwitchWithChan invokes the ddoscoo.ModifyWebPreciseAccessSwitch API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebpreciseaccessswitch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebPreciseAccessSwitchWithChan(request *ModifyWebPreciseAccessSwitchRequest) (<-chan *ModifyWebPreciseAccessSwitchResponse, <-chan error) {
 	responseChan := make(chan *ModifyWebPreciseAccessSwitchResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyWebPreciseAccessSwitchWithChan(request *ModifyWebPre
 }
 
 // ModifyWebPreciseAccessSwitchWithCallback invokes the ddoscoo.ModifyWebPreciseAccessSwitch API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebpreciseaccessswitch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebPreciseAccessSwitchWithCallback(request *ModifyWebPreciseAccessSwitchRequest, callback func(response *ModifyWebPreciseAccessSwitchResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateModifyWebPreciseAccessSwitchRequest() (request *ModifyWebPreciseAcces
 	request = &ModifyWebPreciseAccessSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebPreciseAccessSwitch", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebPreciseAccessSwitch", "", "")
+	request.Method = requests.POST
 	return
 }
 

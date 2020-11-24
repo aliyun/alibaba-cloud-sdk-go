@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyBlockStatus invokes the ddoscoo.ModifyBlockStatus API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyblockstatus.html
 func (client *Client) ModifyBlockStatus(request *ModifyBlockStatusRequest) (response *ModifyBlockStatusResponse, err error) {
 	response = CreateModifyBlockStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyBlockStatus(request *ModifyBlockStatusRequest) (resp
 }
 
 // ModifyBlockStatusWithChan invokes the ddoscoo.ModifyBlockStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyblockstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBlockStatusWithChan(request *ModifyBlockStatusRequest) (<-chan *ModifyBlockStatusResponse, <-chan error) {
 	responseChan := make(chan *ModifyBlockStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyBlockStatusWithChan(request *ModifyBlockStatusReques
 }
 
 // ModifyBlockStatusWithCallback invokes the ddoscoo.ModifyBlockStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyblockstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBlockStatusWithCallback(request *ModifyBlockStatusRequest, callback func(response *ModifyBlockStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateModifyBlockStatusRequest() (request *ModifyBlockStatusRequest) {
 	request = &ModifyBlockStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyBlockStatus", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyBlockStatus", "", "")
+	request.Method = requests.POST
 	return
 }
 

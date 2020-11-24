@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteWebCCRule invokes the ddoscoo.DeleteWebCCRule API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deletewebccrule.html
 func (client *Client) DeleteWebCCRule(request *DeleteWebCCRuleRequest) (response *DeleteWebCCRuleResponse, err error) {
 	response = CreateDeleteWebCCRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteWebCCRule(request *DeleteWebCCRuleRequest) (response
 }
 
 // DeleteWebCCRuleWithChan invokes the ddoscoo.DeleteWebCCRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deletewebccrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteWebCCRuleWithChan(request *DeleteWebCCRuleRequest) (<-chan *DeleteWebCCRuleResponse, <-chan error) {
 	responseChan := make(chan *DeleteWebCCRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteWebCCRuleWithChan(request *DeleteWebCCRuleRequest) (
 }
 
 // DeleteWebCCRuleWithCallback invokes the ddoscoo.DeleteWebCCRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deletewebccrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteWebCCRuleWithCallback(request *DeleteWebCCRuleRequest, callback func(response *DeleteWebCCRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateDeleteWebCCRuleRequest() (request *DeleteWebCCRuleRequest) {
 	request = &DeleteWebCCRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteWebCCRule", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteWebCCRule", "", "")
+	request.Method = requests.POST
 	return
 }
 

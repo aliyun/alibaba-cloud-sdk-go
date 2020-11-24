@@ -21,7 +21,6 @@ import (
 )
 
 // ConfigWebCCTemplate invokes the ddoscoo.ConfigWebCCTemplate API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/configwebcctemplate.html
 func (client *Client) ConfigWebCCTemplate(request *ConfigWebCCTemplateRequest) (response *ConfigWebCCTemplateResponse, err error) {
 	response = CreateConfigWebCCTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ConfigWebCCTemplate(request *ConfigWebCCTemplateRequest) (
 }
 
 // ConfigWebCCTemplateWithChan invokes the ddoscoo.ConfigWebCCTemplate API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/configwebcctemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConfigWebCCTemplateWithChan(request *ConfigWebCCTemplateRequest) (<-chan *ConfigWebCCTemplateResponse, <-chan error) {
 	responseChan := make(chan *ConfigWebCCTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ConfigWebCCTemplateWithChan(request *ConfigWebCCTemplateRe
 }
 
 // ConfigWebCCTemplateWithCallback invokes the ddoscoo.ConfigWebCCTemplate API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/configwebcctemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConfigWebCCTemplateWithCallback(request *ConfigWebCCTemplateRequest, callback func(response *ConfigWebCCTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateConfigWebCCTemplateRequest() (request *ConfigWebCCTemplateRequest) {
 	request = &ConfigWebCCTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigWebCCTemplate", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigWebCCTemplate", "", "")
+	request.Method = requests.POST
 	return
 }
 

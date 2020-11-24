@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeLogStoreExistStatus invokes the ddoscoo.DescribeLogStoreExistStatus API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describelogstoreexiststatus.html
 func (client *Client) DescribeLogStoreExistStatus(request *DescribeLogStoreExistStatusRequest) (response *DescribeLogStoreExistStatusResponse, err error) {
 	response = CreateDescribeLogStoreExistStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeLogStoreExistStatus(request *DescribeLogStoreExist
 }
 
 // DescribeLogStoreExistStatusWithChan invokes the ddoscoo.DescribeLogStoreExistStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describelogstoreexiststatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLogStoreExistStatusWithChan(request *DescribeLogStoreExistStatusRequest) (<-chan *DescribeLogStoreExistStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeLogStoreExistStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeLogStoreExistStatusWithChan(request *DescribeLogSt
 }
 
 // DescribeLogStoreExistStatusWithCallback invokes the ddoscoo.DescribeLogStoreExistStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describelogstoreexiststatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLogStoreExistStatusWithCallback(request *DescribeLogStoreExistStatusRequest, callback func(response *DescribeLogStoreExistStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateDescribeLogStoreExistStatusRequest() (request *DescribeLogStoreExistS
 	request = &DescribeLogStoreExistStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeLogStoreExistStatus", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeLogStoreExistStatus", "", "")
+	request.Method = requests.POST
 	return
 }
 

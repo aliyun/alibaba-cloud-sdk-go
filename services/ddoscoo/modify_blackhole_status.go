@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyBlackholeStatus invokes the ddoscoo.ModifyBlackholeStatus API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyblackholestatus.html
 func (client *Client) ModifyBlackholeStatus(request *ModifyBlackholeStatusRequest) (response *ModifyBlackholeStatusResponse, err error) {
 	response = CreateModifyBlackholeStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyBlackholeStatus(request *ModifyBlackholeStatusReques
 }
 
 // ModifyBlackholeStatusWithChan invokes the ddoscoo.ModifyBlackholeStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyblackholestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBlackholeStatusWithChan(request *ModifyBlackholeStatusRequest) (<-chan *ModifyBlackholeStatusResponse, <-chan error) {
 	responseChan := make(chan *ModifyBlackholeStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyBlackholeStatusWithChan(request *ModifyBlackholeStat
 }
 
 // ModifyBlackholeStatusWithCallback invokes the ddoscoo.ModifyBlackholeStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyblackholestatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBlackholeStatusWithCallback(request *ModifyBlackholeStatusRequest, callback func(response *ModifyBlackholeStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateModifyBlackholeStatusRequest() (request *ModifyBlackholeStatusRequest
 	request = &ModifyBlackholeStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyBlackholeStatus", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyBlackholeStatus", "", "")
+	request.Method = requests.POST
 	return
 }
 

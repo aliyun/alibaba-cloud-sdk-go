@@ -21,7 +21,6 @@ import (
 )
 
 // CreateWebRule invokes the ddoscoo.CreateWebRule API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/createwebrule.html
 func (client *Client) CreateWebRule(request *CreateWebRuleRequest) (response *CreateWebRuleResponse, err error) {
 	response = CreateCreateWebRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateWebRule(request *CreateWebRuleRequest) (response *Cr
 }
 
 // CreateWebRuleWithChan invokes the ddoscoo.CreateWebRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/createwebrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateWebRuleWithChan(request *CreateWebRuleRequest) (<-chan *CreateWebRuleResponse, <-chan error) {
 	responseChan := make(chan *CreateWebRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateWebRuleWithChan(request *CreateWebRuleRequest) (<-ch
 }
 
 // CreateWebRuleWithCallback invokes the ddoscoo.CreateWebRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/createwebrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateWebRuleWithCallback(request *CreateWebRuleRequest, callback func(response *CreateWebRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateCreateWebRuleRequest() (request *CreateWebRuleRequest) {
 	request = &CreateWebRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "CreateWebRule", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "CreateWebRule", "", "")
+	request.Method = requests.POST
 	return
 }
 

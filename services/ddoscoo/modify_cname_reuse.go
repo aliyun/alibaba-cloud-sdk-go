@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyCnameReuse invokes the ddoscoo.ModifyCnameReuse API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifycnamereuse.html
 func (client *Client) ModifyCnameReuse(request *ModifyCnameReuseRequest) (response *ModifyCnameReuseResponse, err error) {
 	response = CreateModifyCnameReuseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyCnameReuse(request *ModifyCnameReuseRequest) (respon
 }
 
 // ModifyCnameReuseWithChan invokes the ddoscoo.ModifyCnameReuse API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifycnamereuse.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCnameReuseWithChan(request *ModifyCnameReuseRequest) (<-chan *ModifyCnameReuseResponse, <-chan error) {
 	responseChan := make(chan *ModifyCnameReuseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyCnameReuseWithChan(request *ModifyCnameReuseRequest)
 }
 
 // ModifyCnameReuseWithCallback invokes the ddoscoo.ModifyCnameReuse API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifycnamereuse.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCnameReuseWithCallback(request *ModifyCnameReuseRequest, callback func(response *ModifyCnameReuseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateModifyCnameReuseRequest() (request *ModifyCnameReuseRequest) {
 	request = &ModifyCnameReuseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyCnameReuse", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyCnameReuse", "", "")
+	request.Method = requests.POST
 	return
 }
 

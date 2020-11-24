@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSchedulerRule invokes the ddoscoo.DeleteSchedulerRule API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deleteschedulerrule.html
 func (client *Client) DeleteSchedulerRule(request *DeleteSchedulerRuleRequest) (response *DeleteSchedulerRuleResponse, err error) {
 	response = CreateDeleteSchedulerRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSchedulerRule(request *DeleteSchedulerRuleRequest) (
 }
 
 // DeleteSchedulerRuleWithChan invokes the ddoscoo.DeleteSchedulerRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deleteschedulerrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSchedulerRuleWithChan(request *DeleteSchedulerRuleRequest) (<-chan *DeleteSchedulerRuleResponse, <-chan error) {
 	responseChan := make(chan *DeleteSchedulerRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSchedulerRuleWithChan(request *DeleteSchedulerRuleRe
 }
 
 // DeleteSchedulerRuleWithCallback invokes the ddoscoo.DeleteSchedulerRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deleteschedulerrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSchedulerRuleWithCallback(request *DeleteSchedulerRuleRequest, callback func(response *DeleteSchedulerRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateDeleteSchedulerRuleRequest() (request *DeleteSchedulerRuleRequest) {
 	request = &DeleteSchedulerRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteSchedulerRule", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteSchedulerRule", "", "")
+	request.Method = requests.POST
 	return
 }
 

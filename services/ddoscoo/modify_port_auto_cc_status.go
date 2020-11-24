@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyPortAutoCcStatus invokes the ddoscoo.ModifyPortAutoCcStatus API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyportautoccstatus.html
 func (client *Client) ModifyPortAutoCcStatus(request *ModifyPortAutoCcStatusRequest) (response *ModifyPortAutoCcStatusResponse, err error) {
 	response = CreateModifyPortAutoCcStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyPortAutoCcStatus(request *ModifyPortAutoCcStatusRequ
 }
 
 // ModifyPortAutoCcStatusWithChan invokes the ddoscoo.ModifyPortAutoCcStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyportautoccstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPortAutoCcStatusWithChan(request *ModifyPortAutoCcStatusRequest) (<-chan *ModifyPortAutoCcStatusResponse, <-chan error) {
 	responseChan := make(chan *ModifyPortAutoCcStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyPortAutoCcStatusWithChan(request *ModifyPortAutoCcSt
 }
 
 // ModifyPortAutoCcStatusWithCallback invokes the ddoscoo.ModifyPortAutoCcStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyportautoccstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPortAutoCcStatusWithCallback(request *ModifyPortAutoCcStatusRequest, callback func(response *ModifyPortAutoCcStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateModifyPortAutoCcStatusRequest() (request *ModifyPortAutoCcStatusReque
 	request = &ModifyPortAutoCcStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyPortAutoCcStatus", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyPortAutoCcStatus", "", "")
+	request.Method = requests.POST
 	return
 }
 

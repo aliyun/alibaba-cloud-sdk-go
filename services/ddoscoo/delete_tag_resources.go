@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteTagResources invokes the ddoscoo.DeleteTagResources API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deletetagresources.html
 func (client *Client) DeleteTagResources(request *DeleteTagResourcesRequest) (response *DeleteTagResourcesResponse, err error) {
 	response = CreateDeleteTagResourcesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteTagResources(request *DeleteTagResourcesRequest) (re
 }
 
 // DeleteTagResourcesWithChan invokes the ddoscoo.DeleteTagResources API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deletetagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTagResourcesWithChan(request *DeleteTagResourcesRequest) (<-chan *DeleteTagResourcesResponse, <-chan error) {
 	responseChan := make(chan *DeleteTagResourcesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteTagResourcesWithChan(request *DeleteTagResourcesRequ
 }
 
 // DeleteTagResourcesWithCallback invokes the ddoscoo.DeleteTagResources API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/deletetagresources.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTagResourcesWithCallback(request *DeleteTagResourcesRequest, callback func(response *DeleteTagResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateDeleteTagResourcesRequest() (request *DeleteTagResourcesRequest) {
 	request = &DeleteTagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteTagResources", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DeleteTagResources", "", "")
+	request.Method = requests.POST
 	return
 }
 

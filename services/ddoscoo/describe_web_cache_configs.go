@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeWebCacheConfigs invokes the ddoscoo.DescribeWebCacheConfigs API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebcacheconfigs.html
 func (client *Client) DescribeWebCacheConfigs(request *DescribeWebCacheConfigsRequest) (response *DescribeWebCacheConfigsResponse, err error) {
 	response = CreateDescribeWebCacheConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeWebCacheConfigs(request *DescribeWebCacheConfigsRe
 }
 
 // DescribeWebCacheConfigsWithChan invokes the ddoscoo.DescribeWebCacheConfigs API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebcacheconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebCacheConfigsWithChan(request *DescribeWebCacheConfigsRequest) (<-chan *DescribeWebCacheConfigsResponse, <-chan error) {
 	responseChan := make(chan *DescribeWebCacheConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeWebCacheConfigsWithChan(request *DescribeWebCacheC
 }
 
 // DescribeWebCacheConfigsWithCallback invokes the ddoscoo.DescribeWebCacheConfigs API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebcacheconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebCacheConfigsWithCallback(request *DescribeWebCacheConfigsRequest, callback func(response *DescribeWebCacheConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateDescribeWebCacheConfigsRequest() (request *DescribeWebCacheConfigsReq
 	request = &DescribeWebCacheConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebCacheConfigs", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebCacheConfigs", "", "")
+	request.Method = requests.POST
 	return
 }
 

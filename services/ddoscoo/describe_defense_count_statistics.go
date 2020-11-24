@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDefenseCountStatistics invokes the ddoscoo.DescribeDefenseCountStatistics API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedefensecountstatistics.html
 func (client *Client) DescribeDefenseCountStatistics(request *DescribeDefenseCountStatisticsRequest) (response *DescribeDefenseCountStatisticsResponse, err error) {
 	response = CreateDescribeDefenseCountStatisticsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDefenseCountStatistics(request *DescribeDefenseCou
 }
 
 // DescribeDefenseCountStatisticsWithChan invokes the ddoscoo.DescribeDefenseCountStatistics API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedefensecountstatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDefenseCountStatisticsWithChan(request *DescribeDefenseCountStatisticsRequest) (<-chan *DescribeDefenseCountStatisticsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDefenseCountStatisticsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDefenseCountStatisticsWithChan(request *DescribeDe
 }
 
 // DescribeDefenseCountStatisticsWithCallback invokes the ddoscoo.DescribeDefenseCountStatistics API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedefensecountstatistics.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDefenseCountStatisticsWithCallback(request *DescribeDefenseCountStatisticsRequest, callback func(response *DescribeDefenseCountStatisticsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,7 +87,8 @@ func CreateDescribeDefenseCountStatisticsRequest() (request *DescribeDefenseCoun
 	request = &DescribeDefenseCountStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDefenseCountStatistics", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDefenseCountStatistics", "", "")
+	request.Method = requests.POST
 	return
 }
 

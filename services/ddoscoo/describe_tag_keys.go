@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeTagKeys invokes the ddoscoo.DescribeTagKeys API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describetagkeys.html
 func (client *Client) DescribeTagKeys(request *DescribeTagKeysRequest) (response *DescribeTagKeysResponse, err error) {
 	response = CreateDescribeTagKeysResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeTagKeys(request *DescribeTagKeysRequest) (response
 }
 
 // DescribeTagKeysWithChan invokes the ddoscoo.DescribeTagKeys API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describetagkeys.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTagKeysWithChan(request *DescribeTagKeysRequest) (<-chan *DescribeTagKeysResponse, <-chan error) {
 	responseChan := make(chan *DescribeTagKeysResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeTagKeysWithChan(request *DescribeTagKeysRequest) (
 }
 
 // DescribeTagKeysWithCallback invokes the ddoscoo.DescribeTagKeys API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describetagkeys.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTagKeysWithCallback(request *DescribeTagKeysRequest, callback func(response *DescribeTagKeysResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateDescribeTagKeysRequest() (request *DescribeTagKeysRequest) {
 	request = &DescribeTagKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeTagKeys", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeTagKeys", "", "")
+	request.Method = requests.POST
 	return
 }
 

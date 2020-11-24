@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainQPSList invokes the ddoscoo.DescribeDomainQPSList API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainqpslist.html
 func (client *Client) DescribeDomainQPSList(request *DescribeDomainQPSListRequest) (response *DescribeDomainQPSListResponse, err error) {
 	response = CreateDescribeDomainQPSListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainQPSList(request *DescribeDomainQPSListReques
 }
 
 // DescribeDomainQPSListWithChan invokes the ddoscoo.DescribeDomainQPSList API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainqpslist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainQPSListWithChan(request *DescribeDomainQPSListRequest) (<-chan *DescribeDomainQPSListResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainQPSListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainQPSListWithChan(request *DescribeDomainQPSLi
 }
 
 // DescribeDomainQPSListWithCallback invokes the ddoscoo.DescribeDomainQPSList API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainqpslist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainQPSListWithCallback(request *DescribeDomainQPSListRequest, callback func(response *DescribeDomainQPSListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateDescribeDomainQPSListRequest() (request *DescribeDomainQPSListRequest
 	request = &DescribeDomainQPSListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainQPSList", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainQPSList", "", "")
+	request.Method = requests.POST
 	return
 }
 

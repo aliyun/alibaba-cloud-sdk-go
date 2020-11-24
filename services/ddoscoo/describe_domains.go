@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomains invokes the ddoscoo.DescribeDomains API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomains.html
 func (client *Client) DescribeDomains(request *DescribeDomainsRequest) (response *DescribeDomainsResponse, err error) {
 	response = CreateDescribeDomainsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomains(request *DescribeDomainsRequest) (response
 }
 
 // DescribeDomainsWithChan invokes the ddoscoo.DescribeDomains API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomains.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainsWithChan(request *DescribeDomainsRequest) (<-chan *DescribeDomainsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainsWithChan(request *DescribeDomainsRequest) (
 }
 
 // DescribeDomainsWithCallback invokes the ddoscoo.DescribeDomains API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomains.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainsWithCallback(request *DescribeDomainsRequest, callback func(response *DescribeDomainsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateDescribeDomainsRequest() (request *DescribeDomainsRequest) {
 	request = &DescribeDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomains", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomains", "", "")
+	request.Method = requests.POST
 	return
 }
 

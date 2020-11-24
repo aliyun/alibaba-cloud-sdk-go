@@ -21,7 +21,6 @@ import (
 )
 
 // ConfigNetworkRules invokes the ddoscoo.ConfigNetworkRules API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/confignetworkrules.html
 func (client *Client) ConfigNetworkRules(request *ConfigNetworkRulesRequest) (response *ConfigNetworkRulesResponse, err error) {
 	response = CreateConfigNetworkRulesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ConfigNetworkRules(request *ConfigNetworkRulesRequest) (re
 }
 
 // ConfigNetworkRulesWithChan invokes the ddoscoo.ConfigNetworkRules API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/confignetworkrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConfigNetworkRulesWithChan(request *ConfigNetworkRulesRequest) (<-chan *ConfigNetworkRulesResponse, <-chan error) {
 	responseChan := make(chan *ConfigNetworkRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ConfigNetworkRulesWithChan(request *ConfigNetworkRulesRequ
 }
 
 // ConfigNetworkRulesWithCallback invokes the ddoscoo.ConfigNetworkRules API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/confignetworkrules.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConfigNetworkRulesWithCallback(request *ConfigNetworkRulesRequest, callback func(response *ConfigNetworkRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,7 +86,8 @@ func CreateConfigNetworkRulesRequest() (request *ConfigNetworkRulesRequest) {
 	request = &ConfigNetworkRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigNetworkRules", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ConfigNetworkRules", "", "")
+	request.Method = requests.POST
 	return
 }
 

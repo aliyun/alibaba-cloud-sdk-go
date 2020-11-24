@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainQpsWithCache invokes the ddoscoo.DescribeDomainQpsWithCache API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainqpswithcache.html
 func (client *Client) DescribeDomainQpsWithCache(request *DescribeDomainQpsWithCacheRequest) (response *DescribeDomainQpsWithCacheResponse, err error) {
 	response = CreateDescribeDomainQpsWithCacheResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainQpsWithCache(request *DescribeDomainQpsWithC
 }
 
 // DescribeDomainQpsWithCacheWithChan invokes the ddoscoo.DescribeDomainQpsWithCache API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainqpswithcache.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainQpsWithCacheWithChan(request *DescribeDomainQpsWithCacheRequest) (<-chan *DescribeDomainQpsWithCacheResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainQpsWithCacheResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainQpsWithCacheWithChan(request *DescribeDomain
 }
 
 // DescribeDomainQpsWithCacheWithCallback invokes the ddoscoo.DescribeDomainQpsWithCache API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainqpswithcache.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainQpsWithCacheWithCallback(request *DescribeDomainQpsWithCacheRequest, callback func(response *DescribeDomainQpsWithCacheResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -105,7 +100,8 @@ func CreateDescribeDomainQpsWithCacheRequest() (request *DescribeDomainQpsWithCa
 	request = &DescribeDomainQpsWithCacheRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainQpsWithCache", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainQpsWithCache", "", "")
+	request.Method = requests.POST
 	return
 }
 

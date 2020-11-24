@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyWebAIProtectSwitch invokes the ddoscoo.ModifyWebAIProtectSwitch API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebaiprotectswitch.html
 func (client *Client) ModifyWebAIProtectSwitch(request *ModifyWebAIProtectSwitchRequest) (response *ModifyWebAIProtectSwitchResponse, err error) {
 	response = CreateModifyWebAIProtectSwitchResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyWebAIProtectSwitch(request *ModifyWebAIProtectSwitch
 }
 
 // ModifyWebAIProtectSwitchWithChan invokes the ddoscoo.ModifyWebAIProtectSwitch API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebaiprotectswitch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebAIProtectSwitchWithChan(request *ModifyWebAIProtectSwitchRequest) (<-chan *ModifyWebAIProtectSwitchResponse, <-chan error) {
 	responseChan := make(chan *ModifyWebAIProtectSwitchResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyWebAIProtectSwitchWithChan(request *ModifyWebAIProte
 }
 
 // ModifyWebAIProtectSwitchWithCallback invokes the ddoscoo.ModifyWebAIProtectSwitch API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebaiprotectswitch.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebAIProtectSwitchWithCallback(request *ModifyWebAIProtectSwitchRequest, callback func(response *ModifyWebAIProtectSwitchResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateModifyWebAIProtectSwitchRequest() (request *ModifyWebAIProtectSwitchR
 	request = &ModifyWebAIProtectSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebAIProtectSwitch", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebAIProtectSwitch", "", "")
+	request.Method = requests.POST
 	return
 }
 

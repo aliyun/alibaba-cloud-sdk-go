@@ -19,4 +19,5 @@ package ddoscoo
 type Object struct {
 	PolicyId string `json:"PolicyId" xml:"PolicyId"`
 	Domain   string `json:"Domain" xml:"Domain"`
+	Vip      string `json:"Vip" xml:"Vip"`
 }

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainTopAttackList invokes the ddoscoo.DescribeDomainTopAttackList API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomaintopattacklist.html
 func (client *Client) DescribeDomainTopAttackList(request *DescribeDomainTopAttackListRequest) (response *DescribeDomainTopAttackListResponse, err error) {
 	response = CreateDescribeDomainTopAttackListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainTopAttackList(request *DescribeDomainTopAtta
 }
 
 // DescribeDomainTopAttackListWithChan invokes the ddoscoo.DescribeDomainTopAttackList API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomaintopattacklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainTopAttackListWithChan(request *DescribeDomainTopAttackListRequest) (<-chan *DescribeDomainTopAttackListResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainTopAttackListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainTopAttackListWithChan(request *DescribeDomai
 }
 
 // DescribeDomainTopAttackListWithCallback invokes the ddoscoo.DescribeDomainTopAttackList API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomaintopattacklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainTopAttackListWithCallback(request *DescribeDomainTopAttackListRequest, callback func(response *DescribeDomainTopAttackListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateDescribeDomainTopAttackListRequest() (request *DescribeDomainTopAttac
 	request = &DescribeDomainTopAttackListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainTopAttackList", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainTopAttackList", "", "")
+	request.Method = requests.POST
 	return
 }
 

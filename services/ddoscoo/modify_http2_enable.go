@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyHttp2Enable invokes the ddoscoo.ModifyHttp2Enable API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyhttp2enable.html
 func (client *Client) ModifyHttp2Enable(request *ModifyHttp2EnableRequest) (response *ModifyHttp2EnableResponse, err error) {
 	response = CreateModifyHttp2EnableResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyHttp2Enable(request *ModifyHttp2EnableRequest) (resp
 }
 
 // ModifyHttp2EnableWithChan invokes the ddoscoo.ModifyHttp2Enable API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyhttp2enable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHttp2EnableWithChan(request *ModifyHttp2EnableRequest) (<-chan *ModifyHttp2EnableResponse, <-chan error) {
 	responseChan := make(chan *ModifyHttp2EnableResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyHttp2EnableWithChan(request *ModifyHttp2EnableReques
 }
 
 // ModifyHttp2EnableWithCallback invokes the ddoscoo.ModifyHttp2Enable API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifyhttp2enable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHttp2EnableWithCallback(request *ModifyHttp2EnableRequest, callback func(response *ModifyHttp2EnableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateModifyHttp2EnableRequest() (request *ModifyHttp2EnableRequest) {
 	request = &ModifyHttp2EnableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyHttp2Enable", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyHttp2Enable", "", "")
+	request.Method = requests.POST
 	return
 }
 

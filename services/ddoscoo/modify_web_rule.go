@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyWebRule invokes the ddoscoo.ModifyWebRule API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebrule.html
 func (client *Client) ModifyWebRule(request *ModifyWebRuleRequest) (response *ModifyWebRuleResponse, err error) {
 	response = CreateModifyWebRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyWebRule(request *ModifyWebRuleRequest) (response *Mo
 }
 
 // ModifyWebRuleWithChan invokes the ddoscoo.ModifyWebRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebRuleWithChan(request *ModifyWebRuleRequest) (<-chan *ModifyWebRuleResponse, <-chan error) {
 	responseChan := make(chan *ModifyWebRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyWebRuleWithChan(request *ModifyWebRuleRequest) (<-ch
 }
 
 // ModifyWebRuleWithCallback invokes the ddoscoo.ModifyWebRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/modifywebrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyWebRuleWithCallback(request *ModifyWebRuleRequest, callback func(response *ModifyWebRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,7 +91,8 @@ func CreateModifyWebRuleRequest() (request *ModifyWebRuleRequest) {
 	request = &ModifyWebRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebRule", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "ModifyWebRule", "", "")
+	request.Method = requests.POST
 	return
 }
 

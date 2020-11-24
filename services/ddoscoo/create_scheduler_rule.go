@@ -21,7 +21,6 @@ import (
 )
 
 // CreateSchedulerRule invokes the ddoscoo.CreateSchedulerRule API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/createschedulerrule.html
 func (client *Client) CreateSchedulerRule(request *CreateSchedulerRuleRequest) (response *CreateSchedulerRuleResponse, err error) {
 	response = CreateCreateSchedulerRuleResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateSchedulerRule(request *CreateSchedulerRuleRequest) (
 }
 
 // CreateSchedulerRuleWithChan invokes the ddoscoo.CreateSchedulerRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/createschedulerrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSchedulerRuleWithChan(request *CreateSchedulerRuleRequest) (<-chan *CreateSchedulerRuleResponse, <-chan error) {
 	responseChan := make(chan *CreateSchedulerRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateSchedulerRuleWithChan(request *CreateSchedulerRuleRe
 }
 
 // CreateSchedulerRuleWithCallback invokes the ddoscoo.CreateSchedulerRule API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/createschedulerrule.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSchedulerRuleWithCallback(request *CreateSchedulerRuleRequest, callback func(response *CreateSchedulerRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,7 +92,8 @@ func CreateCreateSchedulerRuleRequest() (request *CreateSchedulerRuleRequest) {
 	request = &CreateSchedulerRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "CreateSchedulerRule", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "CreateSchedulerRule", "", "")
+	request.Method = requests.POST
 	return
 }
 

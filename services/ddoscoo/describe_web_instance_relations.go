@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeWebInstanceRelations invokes the ddoscoo.DescribeWebInstanceRelations API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebinstancerelations.html
 func (client *Client) DescribeWebInstanceRelations(request *DescribeWebInstanceRelationsRequest) (response *DescribeWebInstanceRelationsResponse, err error) {
 	response = CreateDescribeWebInstanceRelationsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeWebInstanceRelations(request *DescribeWebInstanceR
 }
 
 // DescribeWebInstanceRelationsWithChan invokes the ddoscoo.DescribeWebInstanceRelations API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebinstancerelations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebInstanceRelationsWithChan(request *DescribeWebInstanceRelationsRequest) (<-chan *DescribeWebInstanceRelationsResponse, <-chan error) {
 	responseChan := make(chan *DescribeWebInstanceRelationsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeWebInstanceRelationsWithChan(request *DescribeWebI
 }
 
 // DescribeWebInstanceRelationsWithCallback invokes the ddoscoo.DescribeWebInstanceRelations API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describewebinstancerelations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebInstanceRelationsWithCallback(request *DescribeWebInstanceRelationsRequest, callback func(response *DescribeWebInstanceRelationsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateDescribeWebInstanceRelationsRequest() (request *DescribeWebInstanceRe
 	request = &DescribeWebInstanceRelationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebInstanceRelations", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeWebInstanceRelations", "", "")
+	request.Method = requests.POST
 	return
 }
 

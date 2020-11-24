@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeBlockStatus invokes the ddoscoo.DescribeBlockStatus API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeblockstatus.html
 func (client *Client) DescribeBlockStatus(request *DescribeBlockStatusRequest) (response *DescribeBlockStatusResponse, err error) {
 	response = CreateDescribeBlockStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeBlockStatus(request *DescribeBlockStatusRequest) (
 }
 
 // DescribeBlockStatusWithChan invokes the ddoscoo.DescribeBlockStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeblockstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBlockStatusWithChan(request *DescribeBlockStatusRequest) (<-chan *DescribeBlockStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeBlockStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeBlockStatusWithChan(request *DescribeBlockStatusRe
 }
 
 // DescribeBlockStatusWithCallback invokes the ddoscoo.DescribeBlockStatus API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describeblockstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBlockStatusWithCallback(request *DescribeBlockStatusRequest, callback func(response *DescribeBlockStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,7 +89,8 @@ func CreateDescribeBlockStatusRequest() (request *DescribeBlockStatusRequest) {
 	request = &DescribeBlockStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeBlockStatus", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeBlockStatus", "", "")
+	request.Method = requests.POST
 	return
 }
 

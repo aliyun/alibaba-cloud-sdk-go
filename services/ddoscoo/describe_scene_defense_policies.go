@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeSceneDefensePolicies invokes the ddoscoo.DescribeSceneDefensePolicies API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describescenedefensepolicies.html
 func (client *Client) DescribeSceneDefensePolicies(request *DescribeSceneDefensePoliciesRequest) (response *DescribeSceneDefensePoliciesResponse, err error) {
 	response = CreateDescribeSceneDefensePoliciesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeSceneDefensePolicies(request *DescribeSceneDefense
 }
 
 // DescribeSceneDefensePoliciesWithChan invokes the ddoscoo.DescribeSceneDefensePolicies API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describescenedefensepolicies.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSceneDefensePoliciesWithChan(request *DescribeSceneDefensePoliciesRequest) (<-chan *DescribeSceneDefensePoliciesResponse, <-chan error) {
 	responseChan := make(chan *DescribeSceneDefensePoliciesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeSceneDefensePoliciesWithChan(request *DescribeScen
 }
 
 // DescribeSceneDefensePoliciesWithCallback invokes the ddoscoo.DescribeSceneDefensePolicies API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describescenedefensepolicies.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSceneDefensePoliciesWithCallback(request *DescribeSceneDefensePoliciesRequest, callback func(response *DescribeSceneDefensePoliciesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateDescribeSceneDefensePoliciesRequest() (request *DescribeSceneDefenseP
 	request = &DescribeSceneDefensePoliciesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeSceneDefensePolicies", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeSceneDefensePolicies", "", "")
+	request.Method = requests.POST
 	return
 }
 

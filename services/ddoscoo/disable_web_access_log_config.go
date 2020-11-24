@@ -21,7 +21,6 @@ import (
 )
 
 // DisableWebAccessLogConfig invokes the ddoscoo.DisableWebAccessLogConfig API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/disablewebaccesslogconfig.html
 func (client *Client) DisableWebAccessLogConfig(request *DisableWebAccessLogConfigRequest) (response *DisableWebAccessLogConfigResponse, err error) {
 	response = CreateDisableWebAccessLogConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisableWebAccessLogConfig(request *DisableWebAccessLogConf
 }
 
 // DisableWebAccessLogConfigWithChan invokes the ddoscoo.DisableWebAccessLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/disablewebaccesslogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableWebAccessLogConfigWithChan(request *DisableWebAccessLogConfigRequest) (<-chan *DisableWebAccessLogConfigResponse, <-chan error) {
 	responseChan := make(chan *DisableWebAccessLogConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisableWebAccessLogConfigWithChan(request *DisableWebAcces
 }
 
 // DisableWebAccessLogConfigWithCallback invokes the ddoscoo.DisableWebAccessLogConfig API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/disablewebaccesslogconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableWebAccessLogConfigWithCallback(request *DisableWebAccessLogConfigRequest, callback func(response *DisableWebAccessLogConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,7 +88,8 @@ func CreateDisableWebAccessLogConfigRequest() (request *DisableWebAccessLogConfi
 	request = &DisableWebAccessLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DisableWebAccessLogConfig", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DisableWebAccessLogConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

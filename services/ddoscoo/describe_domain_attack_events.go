@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainAttackEvents invokes the ddoscoo.DescribeDomainAttackEvents API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainattackevents.html
 func (client *Client) DescribeDomainAttackEvents(request *DescribeDomainAttackEventsRequest) (response *DescribeDomainAttackEventsResponse, err error) {
 	response = CreateDescribeDomainAttackEventsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainAttackEvents(request *DescribeDomainAttackEv
 }
 
 // DescribeDomainAttackEventsWithChan invokes the ddoscoo.DescribeDomainAttackEvents API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainattackevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainAttackEventsWithChan(request *DescribeDomainAttackEventsRequest) (<-chan *DescribeDomainAttackEventsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainAttackEventsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainAttackEventsWithChan(request *DescribeDomain
 }
 
 // DescribeDomainAttackEventsWithCallback invokes the ddoscoo.DescribeDomainAttackEvents API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainattackevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainAttackEventsWithCallback(request *DescribeDomainAttackEventsRequest, callback func(response *DescribeDomainAttackEventsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,7 +93,8 @@ func CreateDescribeDomainAttackEventsRequest() (request *DescribeDomainAttackEve
 	request = &DescribeDomainAttackEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainAttackEvents", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainAttackEvents", "", "")
+	request.Method = requests.POST
 	return
 }
 

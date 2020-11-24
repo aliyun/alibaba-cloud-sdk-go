@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainViewSourceCountries invokes the ddoscoo.DescribeDomainViewSourceCountries API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainviewsourcecountries.html
 func (client *Client) DescribeDomainViewSourceCountries(request *DescribeDomainViewSourceCountriesRequest) (response *DescribeDomainViewSourceCountriesResponse, err error) {
 	response = CreateDescribeDomainViewSourceCountriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainViewSourceCountries(request *DescribeDomainV
 }
 
 // DescribeDomainViewSourceCountriesWithChan invokes the ddoscoo.DescribeDomainViewSourceCountries API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainviewsourcecountries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainViewSourceCountriesWithChan(request *DescribeDomainViewSourceCountriesRequest) (<-chan *DescribeDomainViewSourceCountriesResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainViewSourceCountriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainViewSourceCountriesWithChan(request *Describ
 }
 
 // DescribeDomainViewSourceCountriesWithCallback invokes the ddoscoo.DescribeDomainViewSourceCountries API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainviewsourcecountries.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainViewSourceCountriesWithCallback(request *DescribeDomainViewSourceCountriesRequest, callback func(response *DescribeDomainViewSourceCountriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,7 +90,8 @@ func CreateDescribeDomainViewSourceCountriesRequest() (request *DescribeDomainVi
 	request = &DescribeDomainViewSourceCountriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainViewSourceCountries", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainViewSourceCountries", "", "")
+	request.Method = requests.POST
 	return
 }
 

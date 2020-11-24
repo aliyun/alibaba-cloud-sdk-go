@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeDomainStatusCodeCount invokes the ddoscoo.DescribeDomainStatusCodeCount API synchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainstatuscodecount.html
 func (client *Client) DescribeDomainStatusCodeCount(request *DescribeDomainStatusCodeCountRequest) (response *DescribeDomainStatusCodeCountResponse, err error) {
 	response = CreateDescribeDomainStatusCodeCountResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeDomainStatusCodeCount(request *DescribeDomainStatu
 }
 
 // DescribeDomainStatusCodeCountWithChan invokes the ddoscoo.DescribeDomainStatusCodeCount API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainstatuscodecount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainStatusCodeCountWithChan(request *DescribeDomainStatusCodeCountRequest) (<-chan *DescribeDomainStatusCodeCountResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainStatusCodeCountResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeDomainStatusCodeCountWithChan(request *DescribeDom
 }
 
 // DescribeDomainStatusCodeCountWithCallback invokes the ddoscoo.DescribeDomainStatusCodeCount API asynchronously
-// api document: https://help.aliyun.com/api/ddoscoo/describedomainstatuscodecount.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainStatusCodeCountWithCallback(request *DescribeDomainStatusCodeCountRequest, callback func(response *DescribeDomainStatusCodeCountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -106,7 +101,8 @@ func CreateDescribeDomainStatusCodeCountRequest() (request *DescribeDomainStatus
 	request = &DescribeDomainStatusCodeCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainStatusCodeCount", "ddoscoo", "openAPI")
+	request.InitWithApiInfo("ddoscoo", "2020-01-01", "DescribeDomainStatusCodeCount", "", "")
+	request.Method = requests.POST
 	return
 }
 
