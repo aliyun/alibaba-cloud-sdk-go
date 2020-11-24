@@ -99,7 +99,7 @@ func CreateDeleteHiTSDBInstanceDataRequest() (request *DeleteHiTSDBInstanceDataR
 	request = &DeleteHiTSDBInstanceDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "DeleteHiTSDBInstanceData", "tsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2017-06-01", "DeleteHiTSDBInstanceData", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }

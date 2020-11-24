@@ -92,7 +92,7 @@ func CreateModifyHiTSDBInstanceClassRequest() (request *ModifyHiTSDBInstanceClas
 	request = &ModifyHiTSDBInstanceClassRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "ModifyHiTSDBInstanceClass", "tsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2017-06-01", "ModifyHiTSDBInstanceClass", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }

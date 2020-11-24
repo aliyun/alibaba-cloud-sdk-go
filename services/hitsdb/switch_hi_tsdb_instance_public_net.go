@@ -91,7 +91,7 @@ func CreateSwitchHiTSDBInstancePublicNetRequest() (request *SwitchHiTSDBInstance
 	request = &SwitchHiTSDBInstancePublicNetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "SwitchHiTSDBInstancePublicNet", "tsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2017-06-01", "SwitchHiTSDBInstancePublicNet", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }

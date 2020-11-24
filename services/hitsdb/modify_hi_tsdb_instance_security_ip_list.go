@@ -91,7 +91,7 @@ func CreateModifyHiTSDBInstanceSecurityIpListRequest() (request *ModifyHiTSDBIns
 	request = &ModifyHiTSDBInstanceSecurityIpListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "ModifyHiTSDBInstanceSecurityIpList", "tsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2017-06-01", "ModifyHiTSDBInstanceSecurityIpList", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }

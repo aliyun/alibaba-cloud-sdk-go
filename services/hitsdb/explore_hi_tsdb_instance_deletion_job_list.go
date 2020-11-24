@@ -99,7 +99,7 @@ func CreateExploreHiTSDBInstanceDeletionJobListRequest() (request *ExploreHiTSDB
 	request = &ExploreHiTSDBInstanceDeletionJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "ExploreHiTSDBInstanceDeletionJobList", "tsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2017-06-01", "ExploreHiTSDBInstanceDeletionJobList", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }

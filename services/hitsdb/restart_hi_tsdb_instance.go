@@ -90,7 +90,7 @@ func CreateRestartHiTSDBInstanceRequest() (request *RestartHiTSDBInstanceRequest
 	request = &RestartHiTSDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "RestartHiTSDBInstance", "tsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2017-06-01", "RestartHiTSDBInstance", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }

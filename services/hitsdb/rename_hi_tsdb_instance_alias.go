@@ -91,7 +91,7 @@ func CreateRenameHiTSDBInstanceAliasRequest() (request *RenameHiTSDBInstanceAlia
 	request = &RenameHiTSDBInstanceAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "RenameHiTSDBInstanceAlias", "tsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2017-06-01", "RenameHiTSDBInstanceAlias", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }

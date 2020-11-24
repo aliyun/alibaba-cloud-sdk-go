@@ -95,7 +95,7 @@ func CreateUpdateHiTSDBInstanceDataTtlRequest() (request *UpdateHiTSDBInstanceDa
 	request = &UpdateHiTSDBInstanceDataTtlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "UpdateHiTSDBInstanceDataTtl", "tsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2017-06-01", "UpdateHiTSDBInstanceDataTtl", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -97,7 +97,7 @@ func CreateDeleteHiTSDBInstanceMetaRequest() (request *DeleteHiTSDBInstanceMetaR
 	request = &DeleteHiTSDBInstanceMetaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "DeleteHiTSDBInstanceMeta", "tsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2017-06-01", "DeleteHiTSDBInstanceMeta", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }

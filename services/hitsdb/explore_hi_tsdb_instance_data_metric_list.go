@@ -98,7 +98,7 @@ func CreateExploreHiTSDBInstanceDataMetricListRequest() (request *ExploreHiTSDBI
 	request = &ExploreHiTSDBInstanceDataMetricListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "ExploreHiTSDBInstanceDataMetricList", "tsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2017-06-01", "ExploreHiTSDBInstanceDataMetricList", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }

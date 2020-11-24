@@ -99,7 +99,7 @@ func CreateExploreHiTSDBInstanceDataTagValueListRequest() (request *ExploreHiTSD
 	request = &ExploreHiTSDBInstanceDataTagValueListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "ExploreHiTSDBInstanceDataTagValueList", "tsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2017-06-01", "ExploreHiTSDBInstanceDataTagValueList", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -118,7 +118,7 @@ func CreateDescribeHiTSDBInstanceRequest() (request *DescribeHiTSDBInstanceReque
 	request = &DescribeHiTSDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("hitsdb", "2017-06-01", "DescribeHiTSDBInstance", "tsdb", "openAPI")
+	request.InitWithApiInfo("hitsdb", "2017-06-01", "DescribeHiTSDBInstance", "hitsdb", "openAPI")
 	request.Method = requests.POST
 	return
 }
