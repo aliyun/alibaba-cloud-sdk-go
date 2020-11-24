@@ -73,6 +73,7 @@ type Data struct {
 	Expressions          []int                 `json:"Expressions" xml:"Expressions"`
 	MetaObject           MetaObject            `json:"MetaObject" xml:"MetaObject"`
 	Qualities            Qualities             `json:"Qualities" xml:"Qualities"`
+	MatchList            []MatchListItem       `json:"MatchList" xml:"MatchList"`
 	ImageInfoList        []ImageInfoListItem   `json:"ImageInfoList" xml:"ImageInfoList"`
 	Outputs              []Output              `json:"Outputs" xml:"Outputs"`
 	Faces                []Face                `json:"Faces" xml:"Faces"`
@@ -82,5 +83,4 @@ type Data struct {
 	DbList               []DbListItem          `json:"DbList" xml:"DbList"`
 	Elements             []ElementsItem        `json:"Elements" xml:"Elements"`
 	FaceRecognizeResults []FaceRecognizeResult `json:"FaceRecognizeResults" xml:"FaceRecognizeResults"`
-	MatchList            []MatchListItem       `json:"MatchList" xml:"MatchList"`
 }

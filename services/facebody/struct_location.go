@@ -19,6 +19,6 @@ package facebody
 type Location struct {
 	X      int `json:"X" xml:"X"`
 	Y      int `json:"Y" xml:"Y"`
-	Width  int `json:"Width" xml:"Width"`
 	Height int `json:"Height" xml:"Height"`
+	Width  int `json:"Width" xml:"Width"`
 }

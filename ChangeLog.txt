@@ -1,3 +1,7 @@
+2020-11-24 Version: v1.61.686
+- Generated 2019-12-30 for `facebody`.
+- Update SearchFace.
+
 2020-11-24 Version: v1.61.685
 - Generated 2020-01-01 for `ddoscoo`.
 
