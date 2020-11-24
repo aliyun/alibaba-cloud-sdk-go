@@ -1,3 +1,7 @@
+2020-11-24 Version: v1.61.687
+- Generated 2020-06-15 for `hitsdb`.
+- Create lindorm Open api.
+
 2020-11-24 Version: v1.61.686
 - Generated 2019-12-30 for `facebody`.
 - Update SearchFace.
