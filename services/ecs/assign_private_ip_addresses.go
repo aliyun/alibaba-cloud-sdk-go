@@ -93,7 +93,7 @@ func CreateAssignPrivateIpAddressesRequest() (request *AssignPrivateIpAddressesR
 	request = &AssignPrivateIpAddressesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "AssignPrivateIpAddresses", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "AssignPrivateIpAddresses", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

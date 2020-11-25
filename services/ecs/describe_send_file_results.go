@@ -97,7 +97,7 @@ func CreateDescribeSendFileResultsRequest() (request *DescribeSendFileResultsReq
 	request = &DescribeSendFileResultsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSendFileResults", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeSendFileResults", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

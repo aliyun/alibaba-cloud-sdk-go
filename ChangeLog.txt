@@ -1,3 +1,7 @@
+2020-11-25 Version: v1.61.693
+- Generated 2014-05-26 for `Ecs`.
+- Supported Primary NetworkInterface IP for API DescribeInstances.
+
 2020-11-25 Version: v1.61.692
 - Generated 2017-08-01 for `polardb`.
 - Support DescribeDBClusterVersion.

@@ -95,7 +95,7 @@ func CreateDescribeInstanceAttachmentAttributesRequest() (request *DescribeInsta
 	request = &DescribeInstanceAttachmentAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceAttachmentAttributes", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DescribeInstanceAttachmentAttributes", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }

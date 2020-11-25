@@ -89,7 +89,7 @@ func CreateDeleteDedicatedHostClusterRequest() (request *DeleteDedicatedHostClus
 	request = &DeleteDedicatedHostClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDedicatedHostCluster", "", "")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "DeleteDedicatedHostCluster", "ecs", "openAPI")
 	request.Method = requests.POST
 	return
 }
