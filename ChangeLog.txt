@@ -1,3 +1,7 @@
+2020-11-25 Version: v1.61.694
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Update SetVideoSeekConfig.
+
 2020-11-25 Version: v1.61.693
 - Generated 2014-05-26 for `Ecs`.
 - Supported Primary NetworkInterface IP for API DescribeInstances.

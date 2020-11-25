@@ -71,11 +71,10 @@ func (client *Client) DescribeDomainPvDataWithCallback(request *DescribeDomainPv
 // DescribeDomainPvDataRequest is the request struct for api DescribeDomainPvData
 type DescribeDomainPvDataRequest struct {
 	*requests.RpcRequest
-	StartTime     string           `position:"Query" name:"StartTime"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	EndTime       string           `position:"Query" name:"EndTime"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	StartTime  string           `position:"Query" name:"StartTime"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDomainPvDataResponse is the response struct for api DescribeDomainPvData
@@ -83,9 +82,9 @@ type DescribeDomainPvDataResponse struct {
 	*responses.BaseResponse
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	DomainName     string         `json:"DomainName" xml:"DomainName"`
-	DataInterval   string         `json:"DataInterval" xml:"DataInterval"`
 	StartTime      string         `json:"StartTime" xml:"StartTime"`
 	EndTime        string         `json:"EndTime" xml:"EndTime"`
+	DataInterval   string         `json:"DataInterval" xml:"DataInterval"`
 	PvDataInterval PvDataInterval `json:"PvDataInterval" xml:"PvDataInterval"`
 }
 

@@ -17,6 +17,6 @@ package cdn
 
 // UsageDataInDescribeDomainPvData is a nested struct in cdn response
 type UsageDataInDescribeDomainPvData struct {
-	TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
 	Value     string `json:"Value" xml:"Value"`
+	TimeStamp string `json:"TimeStamp" xml:"TimeStamp"`
 }

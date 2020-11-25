@@ -71,10 +71,9 @@ func (client *Client) DescribeUserVipsByDomainWithCallback(request *DescribeUser
 // DescribeUserVipsByDomainRequest is the request struct for api DescribeUserVipsByDomain
 type DescribeUserVipsByDomainRequest struct {
 	*requests.RpcRequest
-	DomainName    string           `position:"Query" name:"DomainName"`
-	Available     string           `position:"Query" name:"Available"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	Available  string           `position:"Query" name:"Available"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeUserVipsByDomainResponse is the response struct for api DescribeUserVipsByDomain
@@ -91,7 +90,7 @@ func CreateDescribeUserVipsByDomainRequest() (request *DescribeUserVipsByDomainR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeUserVipsByDomain", "", "")
-	request.Method = requests.POST
+	request.Method = requests.GET
 	return
 }
 

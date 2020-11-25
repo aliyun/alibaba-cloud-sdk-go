@@ -71,11 +71,10 @@ func (client *Client) DescribeDomainUvDataWithCallback(request *DescribeDomainUv
 // DescribeDomainUvDataRequest is the request struct for api DescribeDomainUvData
 type DescribeDomainUvDataRequest struct {
 	*requests.RpcRequest
-	DomainName    string           `position:"Query" name:"DomainName"`
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	StartTime  string           `position:"Query" name:"StartTime"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDomainUvDataResponse is the response struct for api DescribeDomainUvData
@@ -83,9 +82,9 @@ type DescribeDomainUvDataResponse struct {
 	*responses.BaseResponse
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	DomainName     string         `json:"DomainName" xml:"DomainName"`
-	DataInterval   string         `json:"DataInterval" xml:"DataInterval"`
 	StartTime      string         `json:"StartTime" xml:"StartTime"`
 	EndTime        string         `json:"EndTime" xml:"EndTime"`
+	DataInterval   string         `json:"DataInterval" xml:"DataInterval"`
 	UvDataInterval UvDataInterval `json:"UvDataInterval" xml:"UvDataInterval"`
 }
 
