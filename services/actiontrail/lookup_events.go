@@ -71,18 +71,20 @@ func (client *Client) LookupEventsWithCallback(request *LookupEventsRequest, cal
 // LookupEventsRequest is the request struct for api LookupEvents
 type LookupEventsRequest struct {
 	*requests.RpcRequest
-	EndTime         string                         `position:"Query" name:"EndTime"`
-	StartTime       string                         `position:"Query" name:"StartTime"`
-	NextToken       string                         `position:"Query" name:"NextToken"`
-	LookupAttribute *[]LookupEventsLookupAttribute `position:"Query" name:"LookupAttribute"  type:"Repeated"`
-	MaxResults      string                         `position:"Query" name:"MaxResults"`
-	Direction       string                         `position:"Query" name:"Direction"`
-}
-
-// LookupEventsLookupAttribute is a repeated param struct in LookupEventsRequest
-type LookupEventsLookupAttribute struct {
-	Value string `name:"Value"`
-	Key   string `name:"Key"`
+	Request          string `position:"Query" name:"Request"`
+	StartTime        string `position:"Query" name:"StartTime"`
+	EventName        string `position:"Query" name:"EventName"`
+	NextToken        string `position:"Query" name:"NextToken"`
+	ServiceName      string `position:"Query" name:"ServiceName"`
+	Event            string `position:"Query" name:"Event"`
+	EventAccessKeyId string `position:"Query" name:"EventAccessKeyId"`
+	EndTime          string `position:"Query" name:"EndTime"`
+	EventRW          string `position:"Query" name:"EventRW"`
+	ResourceType     string `position:"Query" name:"ResourceType"`
+	MaxResults       string `position:"Query" name:"MaxResults"`
+	EventType        string `position:"Query" name:"EventType"`
+	ResourceName     string `position:"Query" name:"ResourceName"`
+	User             string `position:"Query" name:"User"`
 }
 
 // LookupEventsResponse is the response struct for api LookupEvents
@@ -100,7 +102,7 @@ func CreateLookupEventsRequest() (request *LookupEventsRequest) {
 	request = &LookupEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Actiontrail", "2020-07-06", "LookupEvents", "actiontrail", "openAPI")
+	request.InitWithApiInfo("Actiontrail", "2017-12-04", "LookupEvents", "actiontrail", "openAPI")
 	request.Method = requests.POST
 	return
 }
