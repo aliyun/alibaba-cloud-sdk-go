@@ -1,3 +1,7 @@
+2020-11-26 Version: v1.61.696
+- Generated 2020-04-14 for `codeup`.
+- Add tags api, include GetRepositoryTag, ListRepositoryTags, DeleteRepositoryTag.
+
 2020-11-25 Version: v1.61.695
 - Generated 2017-11-15 for `scdn`.
 - Update DescribeScdnDomainCertificateInfo.

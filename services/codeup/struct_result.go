@@ -25,6 +25,7 @@ type Result struct {
 	WebUrl                   string             `json:"WebUrl" xml:"WebUrl"`
 	MergedRevision           string             `json:"MergedRevision" xml:"MergedRevision"`
 	MergeRequestsEvents      bool               `json:"MergeRequestsEvents" xml:"MergeRequestsEvents"`
+	TagName                  string             `json:"TagName" xml:"TagName"`
 	Content                  string             `json:"Content" xml:"Content"`
 	PushEvents               bool               `json:"PushEvents" xml:"PushEvents"`
 	MergeError               string             `json:"MergeError" xml:"MergeError"`
