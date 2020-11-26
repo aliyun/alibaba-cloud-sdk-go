@@ -85,6 +85,7 @@ type ContrastFaceVerifyRequest struct {
 	CertName               string           `position:"Body" name:"CertName"`
 	Ip                     string           `position:"Body" name:"Ip"`
 	Mobile                 string           `position:"Body" name:"Mobile"`
+	FaceContrastFile       string           `position:"Body" name:"FaceContrastFile"`
 	SceneId                requests.Integer `position:"Body" name:"SceneId"`
 	OssBucketName          string           `position:"Body" name:"OssBucketName"`
 }
