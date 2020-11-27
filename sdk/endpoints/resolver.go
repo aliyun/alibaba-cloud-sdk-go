@@ -61,6 +61,10 @@ func Resolve(param *ResolveParam) (endpoint string, err error) {
 		}
 	}
 
+	if param.Product == "xtrace" {
+		return fmt.Sprintf("xtrace.%s.aliyuncs.com", param.RegionId), nil
+	}
+
 	// not support
 	errorMsg := fmt.Sprintf(errors.CanNotResolveEndpointErrorMessage, param, ResolveEndpointUserGuideLink)
 	err = errors.NewClientError(errors.CanNotResolveEndpointErrorCode, errorMsg, lastErr)

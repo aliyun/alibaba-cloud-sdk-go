@@ -13,7 +13,7 @@ func TestResolver_ResolveParam_String(t *testing.T) {
 
 func TestResolve(t *testing.T) {
 	param := &ResolveParam{
-		Product: "Ecs",
+		Product:  "Ecs",
 		RegionId: "cn-hangzhou",
 	}
 	AddEndpointMapping("cn-hangzhou", "Ecs", "unreachable.aliyuncs.com")
@@ -25,11 +25,22 @@ func TestResolve(t *testing.T) {
 
 func TestResolve_WithInvalidProduct(t *testing.T) {
 	param := &ResolveParam{
-		Product: "Invalid",
+		Product:  "Invalid",
 		RegionId: "cn-hangzhou",
 	}
 	endpoint, err := Resolve(param)
 
 	assert.NotNil(t, err)
 	assert.Equal(t, "", endpoint)
+}
+
+func TestResolveXTrace(t *testing.T) {
+	param := &ResolveParam{
+		Product:  "xtrace",
+		RegionId: "cn-hangzhou",
+	}
+	endpoint, err := Resolve(param)
+
+	assert.Nil(t, err)
+	assert.Equal(t, "xtrace.cn-hangzhou.aliyuncs.com", endpoint)
 }
