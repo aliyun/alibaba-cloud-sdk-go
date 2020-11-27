@@ -1,3 +1,8 @@
+2020-11-27 Version: v1.61.704
+- Generated 2020-02-02 for `polardbx`.
+- Supported all language sdk.
+- Fixed some bugs for polardbx.
+
 2020-11-27 Version: v1.61.703
 - Generated 2020-02-02 for `polardbx`.
 - Supported all language sdk.
