@@ -92,7 +92,7 @@ func CreateCreateKeyRequest() (request *CreateKeyRequest) {
 	request = &CreateKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "CreateKey", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "CreateKey", "kms-service", "openAPI")
 	request.Method = requests.POST
 	return
 }

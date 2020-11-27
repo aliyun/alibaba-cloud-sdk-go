@@ -1,3 +1,7 @@
+2020-11-27 Version: v1.61.701
+- Generated 2016-01-20 for `Kms`.
+- Add Certificate Manager Api.
+
 2020-11-27 Version: v1.61.700
 - Generated 2020-03-03 for `devops-rdc`.
 - Support taskList.

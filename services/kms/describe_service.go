@@ -86,7 +86,7 @@ func CreateDescribeServiceRequest() (request *DescribeServiceRequest) {
 	request = &DescribeServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "DescribeService", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "DescribeService", "kms-service", "openAPI")
 	request.Method = requests.POST
 	return
 }

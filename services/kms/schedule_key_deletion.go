@@ -86,7 +86,7 @@ func CreateScheduleKeyDeletionRequest() (request *ScheduleKeyDeletionRequest) {
 	request = &ScheduleKeyDeletionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "ScheduleKeyDeletion", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "ScheduleKeyDeletion", "kms-service", "openAPI")
 	request.Method = requests.POST
 	return
 }

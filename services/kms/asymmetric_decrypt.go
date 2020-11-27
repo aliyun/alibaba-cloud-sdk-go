@@ -91,7 +91,7 @@ func CreateAsymmetricDecryptRequest() (request *AsymmetricDecryptRequest) {
 	request = &AsymmetricDecryptRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "AsymmetricDecrypt", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "AsymmetricDecrypt", "kms-service", "openAPI")
 	request.Method = requests.POST
 	return
 }

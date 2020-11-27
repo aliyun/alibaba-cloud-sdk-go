@@ -92,7 +92,7 @@ func CreateGetRandomPasswordRequest() (request *GetRandomPasswordRequest) {
 	request = &GetRandomPasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "GetRandomPassword", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "GetRandomPassword", "kms-service", "openAPI")
 	request.Method = requests.POST
 	return
 }

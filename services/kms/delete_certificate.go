@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UntagResource invokes the kms.UntagResource API synchronously
-func (client *Client) UntagResource(request *UntagResourceRequest) (response *UntagResourceResponse, err error) {
-	response = CreateUntagResourceResponse()
+// DeleteCertificate invokes the kms.DeleteCertificate API synchronously
+func (client *Client) DeleteCertificate(request *DeleteCertificateRequest) (response *DeleteCertificateResponse, err error) {
+	response = CreateDeleteCertificateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UntagResourceWithChan invokes the kms.UntagResource API asynchronously
-func (client *Client) UntagResourceWithChan(request *UntagResourceRequest) (<-chan *UntagResourceResponse, <-chan error) {
-	responseChan := make(chan *UntagResourceResponse, 1)
+// DeleteCertificateWithChan invokes the kms.DeleteCertificate API asynchronously
+func (client *Client) DeleteCertificateWithChan(request *DeleteCertificateRequest) (<-chan *DeleteCertificateResponse, <-chan error) {
+	responseChan := make(chan *DeleteCertificateResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UntagResource(request)
+		response, err := client.DeleteCertificate(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) UntagResourceWithChan(request *UntagResourceRequest) (<-ch
 	return responseChan, errChan
 }
 
-// UntagResourceWithCallback invokes the kms.UntagResource API asynchronously
-func (client *Client) UntagResourceWithCallback(request *UntagResourceRequest, callback func(response *UntagResourceResponse, err error)) <-chan int {
+// DeleteCertificateWithCallback invokes the kms.DeleteCertificate API asynchronously
+func (client *Client) DeleteCertificateWithCallback(request *DeleteCertificateRequest, callback func(response *DeleteCertificateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UntagResourceResponse
+		var response *DeleteCertificateResponse
 		var err error
 		defer close(result)
-		response, err = client.UntagResource(request)
+		response, err = client.DeleteCertificate(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,34 +68,31 @@ func (client *Client) UntagResourceWithCallback(request *UntagResourceRequest, c
 	return result
 }
 
-// UntagResourceRequest is the request struct for api UntagResource
-type UntagResourceRequest struct {
+// DeleteCertificateRequest is the request struct for api DeleteCertificate
+type DeleteCertificateRequest struct {
 	*requests.RpcRequest
 	CertificateId string `position:"Query" name:"CertificateId"`
-	TagKeys       string `position:"Query" name:"TagKeys"`
-	KeyId         string `position:"Query" name:"KeyId"`
-	SecretName    string `position:"Query" name:"SecretName"`
 }
 
-// UntagResourceResponse is the response struct for api UntagResource
-type UntagResourceResponse struct {
+// DeleteCertificateResponse is the response struct for api DeleteCertificate
+type DeleteCertificateResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateUntagResourceRequest creates a request to invoke UntagResource API
-func CreateUntagResourceRequest() (request *UntagResourceRequest) {
-	request = &UntagResourceRequest{
+// CreateDeleteCertificateRequest creates a request to invoke DeleteCertificate API
+func CreateDeleteCertificateRequest() (request *DeleteCertificateRequest) {
+	request = &DeleteCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "UntagResource", "kms-service", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "DeleteCertificate", "kms-service", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateUntagResourceResponse creates a response to parse from UntagResource response
-func CreateUntagResourceResponse() (response *UntagResourceResponse) {
-	response = &UntagResourceResponse{
+// CreateDeleteCertificateResponse creates a response to parse from DeleteCertificate response
+func CreateDeleteCertificateResponse() (response *DeleteCertificateResponse) {
+	response = &DeleteCertificateResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

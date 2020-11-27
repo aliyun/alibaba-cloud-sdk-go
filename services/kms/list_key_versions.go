@@ -91,7 +91,7 @@ func CreateListKeyVersionsRequest() (request *ListKeyVersionsRequest) {
 	request = &ListKeyVersionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "ListKeyVersions", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "ListKeyVersions", "kms-service", "openAPI")
 	request.Method = requests.POST
 	return
 }

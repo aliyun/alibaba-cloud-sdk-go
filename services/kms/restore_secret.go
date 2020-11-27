@@ -86,7 +86,7 @@ func CreateRestoreSecretRequest() (request *RestoreSecretRequest) {
 	request = &RestoreSecretRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "RestoreSecret", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "RestoreSecret", "kms-service", "openAPI")
 	request.Method = requests.POST
 	return
 }

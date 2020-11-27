@@ -92,7 +92,7 @@ func CreatePutSecretValueRequest() (request *PutSecretValueRequest) {
 	request = &PutSecretValueRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "PutSecretValue", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "PutSecretValue", "kms-service", "openAPI")
 	request.Method = requests.POST
 	return
 }

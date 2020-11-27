@@ -91,7 +91,7 @@ func CreateGetParametersForImportRequest() (request *GetParametersForImportReque
 	request = &GetParametersForImportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "GetParametersForImport", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "GetParametersForImport", "kms-service", "openAPI")
 	request.Method = requests.POST
 	return
 }

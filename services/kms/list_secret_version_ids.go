@@ -93,7 +93,7 @@ func CreateListSecretVersionIdsRequest() (request *ListSecretVersionIdsRequest) 
 	request = &ListSecretVersionIdsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "ListSecretVersionIds", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "ListSecretVersionIds", "kms-service", "openAPI")
 	request.Method = requests.POST
 	return
 }

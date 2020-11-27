@@ -85,7 +85,7 @@ func CreateDescribeAccountKmsStatusRequest() (request *DescribeAccountKmsStatusR
 	request = &DescribeAccountKmsStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "DescribeAccountKmsStatus", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "DescribeAccountKmsStatus", "kms-service", "openAPI")
 	request.Method = requests.POST
 	return
 }

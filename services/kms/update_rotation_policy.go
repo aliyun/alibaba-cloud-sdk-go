@@ -87,7 +87,7 @@ func CreateUpdateRotationPolicyRequest() (request *UpdateRotationPolicyRequest) 
 	request = &UpdateRotationPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "UpdateRotationPolicy", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "UpdateRotationPolicy", "kms-service", "openAPI")
 	request.Method = requests.POST
 	return
 }

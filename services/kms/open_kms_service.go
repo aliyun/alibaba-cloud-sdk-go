@@ -84,7 +84,7 @@ func CreateOpenKmsServiceRequest() (request *OpenKmsServiceRequest) {
 	request = &OpenKmsServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "OpenKmsService", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "OpenKmsService", "kms-service", "openAPI")
 	request.Method = requests.POST
 	return
 }

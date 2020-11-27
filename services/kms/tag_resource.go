@@ -71,9 +71,10 @@ func (client *Client) TagResourceWithCallback(request *TagResourceRequest, callb
 // TagResourceRequest is the request struct for api TagResource
 type TagResourceRequest struct {
 	*requests.RpcRequest
-	KeyId      string `position:"Query" name:"KeyId"`
-	SecretName string `position:"Query" name:"SecretName"`
-	Tags       string `position:"Query" name:"Tags"`
+	CertificateId string `position:"Query" name:"CertificateId"`
+	KeyId         string `position:"Query" name:"KeyId"`
+	SecretName    string `position:"Query" name:"SecretName"`
+	Tags          string `position:"Query" name:"Tags"`
 }
 
 // TagResourceResponse is the response struct for api TagResource
@@ -87,7 +88,7 @@ func CreateTagResourceRequest() (request *TagResourceRequest) {
 	request = &TagResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "TagResource", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "TagResource", "kms-service", "openAPI")
 	request.Method = requests.POST
 	return
 }

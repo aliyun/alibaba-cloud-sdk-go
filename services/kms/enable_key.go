@@ -85,7 +85,7 @@ func CreateEnableKeyRequest() (request *EnableKeyRequest) {
 	request = &EnableKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "EnableKey", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "EnableKey", "kms-service", "openAPI")
 	request.Method = requests.POST
 	return
 }
