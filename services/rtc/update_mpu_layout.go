@@ -71,16 +71,17 @@ func (client *Client) UpdateMPULayoutWithCallback(request *UpdateMPULayoutReques
 // UpdateMPULayoutRequest is the request struct for api UpdateMPULayout
 type UpdateMPULayoutRequest struct {
 	*requests.RpcRequest
-	UserPanes       *[]UpdateMPULayoutUserPanes   `position:"Query" name:"UserPanes"  type:"Repeated"`
-	BackgroundColor requests.Integer              `position:"Query" name:"BackgroundColor"`
-	CropMode        requests.Integer              `position:"Query" name:"CropMode"`
-	LayoutIds       *[]string                     `position:"Query" name:"LayoutIds"  type:"Repeated"`
-	TaskId          string                        `position:"Query" name:"TaskId"`
-	ShowLog         string                        `position:"Query" name:"ShowLog"`
-	Watermarks      *[]UpdateMPULayoutWatermarks  `position:"Query" name:"Watermarks"  type:"Repeated"`
-	OwnerId         requests.Integer              `position:"Query" name:"OwnerId"`
-	AppId           string                        `position:"Query" name:"AppId"`
-	Backgrounds     *[]UpdateMPULayoutBackgrounds `position:"Query" name:"Backgrounds"  type:"Repeated"`
+	UserPanes       *[]UpdateMPULayoutUserPanes    `position:"Query" name:"UserPanes"  type:"Repeated"`
+	BackgroundColor requests.Integer               `position:"Query" name:"BackgroundColor"`
+	CropMode        requests.Integer               `position:"Query" name:"CropMode"`
+	LayoutIds       *[]string                      `position:"Query" name:"LayoutIds"  type:"Repeated"`
+	TaskId          string                         `position:"Query" name:"TaskId"`
+	ClockWidgets    *[]UpdateMPULayoutClockWidgets `position:"Query" name:"ClockWidgets"  type:"Repeated"`
+	ShowLog         string                         `position:"Query" name:"ShowLog"`
+	Watermarks      *[]UpdateMPULayoutWatermarks   `position:"Query" name:"Watermarks"  type:"Repeated"`
+	OwnerId         requests.Integer               `position:"Query" name:"OwnerId"`
+	AppId           string                         `position:"Query" name:"AppId"`
+	Backgrounds     *[]UpdateMPULayoutBackgrounds  `position:"Query" name:"Backgrounds"  type:"Repeated"`
 }
 
 // UpdateMPULayoutUserPanes is a repeated param struct in UpdateMPULayoutRequest
@@ -90,6 +91,16 @@ type UpdateMPULayoutUserPanes struct {
 	SourceType string                   `name:"SourceType"`
 	Images     *[]UpdateMPULayoutImages `name:"Images" type:"Repeated"`
 	Texts      *[]UpdateMPULayoutTexts  `name:"Texts" type:"Repeated"`
+}
+
+// UpdateMPULayoutClockWidgets is a repeated param struct in UpdateMPULayoutRequest
+type UpdateMPULayoutClockWidgets struct {
+	X         string `name:"X"`
+	Y         string `name:"Y"`
+	FontType  string `name:"FontType"`
+	FontSize  string `name:"FontSize"`
+	FontColor string `name:"FontColor"`
+	ZOrder    string `name:"ZOrder"`
 }
 
 // UpdateMPULayoutWatermarks is a repeated param struct in UpdateMPULayoutRequest
