@@ -1,3 +1,7 @@
+2020-11-27 Version: v1.61.700
+- Generated 2020-03-03 for `devops-rdc`.
+- Support taskList.
+
 2020-11-26 Version: v1.61.699
 - Generated 2019-03-07, 2020-06-18, 2020-11-12, 2018-09-16 for `Cloudauth`.
 - ContrastFaceVerify Support Video.
