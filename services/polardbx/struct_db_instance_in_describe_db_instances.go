@@ -17,26 +17,27 @@ package polardbx
 
 // DBInstanceInDescribeDBInstances is a nested struct in polardbx response
 type DBInstanceInDescribeDBInstances struct {
-	Id              string   `json:"Id" xml:"Id"`
-	Description     string   `json:"Description" xml:"Description"`
-	PayType         string   `json:"PayType" xml:"PayType"`
-	CreateTime      string   `json:"CreateTime" xml:"CreateTime"`
-	ExpireTime      string   `json:"ExpireTime" xml:"ExpireTime"`
-	Expired         bool     `json:"Expired" xml:"Expired"`
-	RegionId        string   `json:"RegionId" xml:"RegionId"`
-	ZoneId          string   `json:"ZoneId" xml:"ZoneId"`
-	Network         string   `json:"Network" xml:"Network"`
-	VPCId           string   `json:"VPCId" xml:"VPCId"`
-	Engine          string   `json:"Engine" xml:"Engine"`
-	DBType          string   `json:"DBType" xml:"DBType"`
-	DBVersion       string   `json:"DBVersion" xml:"DBVersion"`
-	Status          string   `json:"Status" xml:"Status"`
-	LockMode        string   `json:"LockMode" xml:"LockMode"`
-	LockReason      string   `json:"LockReason" xml:"LockReason"`
-	NodeCount       int      `json:"NodeCount" xml:"NodeCount"`
-	NodeClass       string   `json:"NodeClass" xml:"NodeClass"`
-	StorageUsed     int      `json:"StorageUsed" xml:"StorageUsed"`
-	CommodityCode   string   `json:"CommodityCode" xml:"CommodityCode"`
-	Type            string   `json:"Type" xml:"Type"`
-	ReadDBInstances []string `json:"ReadDBInstances" xml:"ReadDBInstances"`
+	Id              string         `json:"Id" xml:"Id"`
+	Description     string         `json:"Description" xml:"Description"`
+	PayType         string         `json:"PayType" xml:"PayType"`
+	CreateTime      string         `json:"CreateTime" xml:"CreateTime"`
+	ExpireTime      string         `json:"ExpireTime" xml:"ExpireTime"`
+	Expired         bool           `json:"Expired" xml:"Expired"`
+	RegionId        string         `json:"RegionId" xml:"RegionId"`
+	ZoneId          string         `json:"ZoneId" xml:"ZoneId"`
+	Network         string         `json:"Network" xml:"Network"`
+	VPCId           string         `json:"VPCId" xml:"VPCId"`
+	Engine          string         `json:"Engine" xml:"Engine"`
+	DBType          string         `json:"DBType" xml:"DBType"`
+	DBVersion       string         `json:"DBVersion" xml:"DBVersion"`
+	Status          string         `json:"Status" xml:"Status"`
+	LockMode        string         `json:"LockMode" xml:"LockMode"`
+	LockReason      string         `json:"LockReason" xml:"LockReason"`
+	NodeCount       int            `json:"NodeCount" xml:"NodeCount"`
+	NodeClass       string         `json:"NodeClass" xml:"NodeClass"`
+	StorageUsed     int            `json:"StorageUsed" xml:"StorageUsed"`
+	CommodityCode   string         `json:"CommodityCode" xml:"CommodityCode"`
+	Type            string         `json:"Type" xml:"Type"`
+	ReadDBInstances []string       `json:"ReadDBInstances" xml:"ReadDBInstances"`
+	Nodes           []PolarDBXNode `json:"Nodes" xml:"Nodes"`
 }

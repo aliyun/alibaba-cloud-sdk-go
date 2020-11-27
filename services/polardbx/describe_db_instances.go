@@ -82,6 +82,7 @@ type DescribeDBInstancesResponse struct {
 	RequestId   string                            `json:"RequestId" xml:"RequestId"`
 	PageNumber  int                               `json:"PageNumber" xml:"PageNumber"`
 	PageSize    int                               `json:"PageSize" xml:"PageSize"`
+	TotalNumber int                               `json:"TotalNumber" xml:"TotalNumber"`
 	DBInstances []DBInstanceInDescribeDBInstances `json:"DBInstances" xml:"DBInstances"`
 }
 
