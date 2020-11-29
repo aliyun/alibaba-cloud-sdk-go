@@ -1,3 +1,7 @@
+2020-11-29 Version: v1.61.707
+- Generated 2020-01-01 for `Dts`.
+- Support CPP and Go and PHP.
+
 2020-11-29 Version: v1.61.706
 - Generated 2020-02-02 for `polardbx`.
 - Supported all language sdk.
