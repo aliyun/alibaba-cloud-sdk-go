@@ -71,6 +71,7 @@ func (client *Client) CreateServerlessClusterWithCallback(request *CreateServerl
 // CreateServerlessClusterRequest is the request struct for api CreateServerlessCluster
 type CreateServerlessClusterRequest struct {
 	*requests.RpcRequest
+	ClientType           string           `position:"Query" name:"ClientType"`
 	ClusterName          string           `position:"Query" name:"ClusterName"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`

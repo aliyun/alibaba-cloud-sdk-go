@@ -1,3 +1,7 @@
+2020-11-30 Version: v1.61.711
+- Generated 2019-01-01 for `HBase`.
+- Add SourceType for severless instance.
+
 2020-11-30 Version: v1.61.710
 - Generated 2020-02-02 for `polardbx`.
 - Supported all language sdk.
