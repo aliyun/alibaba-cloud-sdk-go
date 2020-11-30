@@ -71,22 +71,29 @@ func (client *Client) ScaleoutApplicationWithNewInstancesWithCallback(request *S
 // ScaleoutApplicationWithNewInstancesRequest is the request struct for api ScaleoutApplicationWithNewInstances
 type ScaleoutApplicationWithNewInstancesRequest struct {
 	*requests.RoaRequest
-	TemplateVersion    string           `position:"Query" name:"TemplateVersion"`
-	TemplateInstanceId string           `position:"Query" name:"TemplateInstanceId"`
-	AppId              string           `position:"Query" name:"AppId"`
-	GroupId            string           `position:"Query" name:"GroupId"`
-	ScalingNum         requests.Integer `position:"Query" name:"ScalingNum"`
-	TemplateId         string           `position:"Query" name:"TemplateId"`
-	ScalingPolicy      string           `position:"Query" name:"ScalingPolicy"`
+	AutoRenewPeriod          requests.Integer `position:"Query" name:"AutoRenewPeriod"`
+	TemplateInstanceId       string           `position:"Query" name:"TemplateInstanceId"`
+	GroupId                  string           `position:"Query" name:"GroupId"`
+	InstanceChargePeriodUnit string           `position:"Query" name:"InstanceChargePeriodUnit"`
+	ClusterId                string           `position:"Query" name:"ClusterId"`
+	ScalingNum               requests.Integer `position:"Query" name:"ScalingNum"`
+	TemplateId               string           `position:"Query" name:"TemplateId"`
+	ScalingPolicy            string           `position:"Query" name:"ScalingPolicy"`
+	TemplateVersion          string           `position:"Query" name:"TemplateVersion"`
+	AutoRenew                requests.Boolean `position:"Query" name:"AutoRenew"`
+	AppId                    string           `position:"Query" name:"AppId"`
+	InstanceChargePeriod     requests.Integer `position:"Query" name:"InstanceChargePeriod"`
+	InstanceChargeType       string           `position:"Query" name:"InstanceChargeType"`
 }
 
 // ScaleoutApplicationWithNewInstancesResponse is the response struct for api ScaleoutApplicationWithNewInstances
 type ScaleoutApplicationWithNewInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	Code          int    `json:"Code" xml:"Code"`
-	Message       string `json:"Message" xml:"Message"`
-	ChangeOrderId string `json:"ChangeOrderId" xml:"ChangeOrderId"`
+	RequestId     string   `json:"RequestId" xml:"RequestId"`
+	Code          int      `json:"Code" xml:"Code"`
+	Message       string   `json:"Message" xml:"Message"`
+	ChangeOrderId string   `json:"ChangeOrderId" xml:"ChangeOrderId"`
+	InstanceIds   []string `json:"InstanceIds" xml:"InstanceIds"`
 }
 
 // CreateScaleoutApplicationWithNewInstancesRequest creates a request to invoke ScaleoutApplicationWithNewInstances API
@@ -94,7 +101,7 @@ func CreateScaleoutApplicationWithNewInstancesRequest() (request *ScaleoutApplic
 	request = &ScaleoutApplicationWithNewInstancesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleoutApplicationWithNewInstances", "/pop/v5/scaling/scale_out", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleoutApplicationWithNewInstances", "/pop/v5/scaling/scale_out", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -71,19 +71,21 @@ func (client *Client) DeployApplicationWithCallback(request *DeployApplicationRe
 // DeployApplicationRequest is the request struct for api DeployApplication
 type DeployApplicationRequest struct {
 	*requests.RoaRequest
-	BuildPackId    requests.Integer `position:"Query" name:"BuildPackId"`
-	ComponentIds   string           `position:"Query" name:"ComponentIds"`
-	GroupId        string           `position:"Query" name:"GroupId"`
-	BatchWaitTime  requests.Integer `position:"Query" name:"BatchWaitTime"`
-	ReleaseType    requests.Integer `position:"Query" name:"ReleaseType"`
-	Batch          requests.Integer `position:"Query" name:"Batch"`
-	AppEnv         string           `position:"Query" name:"AppEnv"`
-	PackageVersion string           `position:"Query" name:"PackageVersion"`
-	AppId          string           `position:"Query" name:"AppId"`
-	ImageUrl       string           `position:"Query" name:"ImageUrl"`
-	WarUrl         string           `position:"Query" name:"WarUrl"`
-	Desc           string           `position:"Query" name:"Desc"`
-	DeployType     string           `position:"Query" name:"DeployType"`
+	BuildPackId            requests.Integer `position:"Query" name:"BuildPackId"`
+	ComponentIds           string           `position:"Query" name:"ComponentIds"`
+	GroupId                string           `position:"Query" name:"GroupId"`
+	BatchWaitTime          requests.Integer `position:"Query" name:"BatchWaitTime"`
+	ReleaseType            requests.Integer `position:"Query" name:"ReleaseType"`
+	Batch                  requests.Integer `position:"Query" name:"Batch"`
+	AppEnv                 string           `position:"Query" name:"AppEnv"`
+	PackageVersion         string           `position:"Query" name:"PackageVersion"`
+	Gray                   requests.Boolean `position:"Query" name:"Gray"`
+	AppId                  string           `position:"Query" name:"AppId"`
+	ImageUrl               string           `position:"Query" name:"ImageUrl"`
+	WarUrl                 string           `position:"Query" name:"WarUrl"`
+	TrafficControlStrategy string           `position:"Query" name:"TrafficControlStrategy"`
+	Desc                   string           `position:"Query" name:"Desc"`
+	DeployType             string           `position:"Query" name:"DeployType"`
 }
 
 // DeployApplicationResponse is the response struct for api DeployApplication
@@ -100,7 +102,7 @@ func CreateDeployApplicationRequest() (request *DeployApplicationRequest) {
 	request = &DeployApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeployApplication", "/pop/v5/changeorder/co_deploy", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeployApplication", "/pop/v5/changeorder/co_deploy", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

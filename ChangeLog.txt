@@ -1,3 +1,7 @@
+2020-11-30 Version: v1.61.718
+- Generated 2017-08-01 for `Edas`.
+- Modify API ScaleoutApplicationWithNewInstances.
+
 2020-11-30 Version: v1.61.717
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Update SetVideoSeekConfig.

@@ -31,4 +31,5 @@ type Conf struct {
 	RuntimeClassName   string `json:"RuntimeClassName" xml:"RuntimeClassName"`
 	DeployAcrossZones  string `json:"DeployAcrossZones" xml:"DeployAcrossZones"`
 	AhasEnabled        bool   `json:"AhasEnabled" xml:"AhasEnabled"`
+	DeployAcrossNodes  string `json:"DeployAcrossNodes" xml:"DeployAcrossNodes"`
 }

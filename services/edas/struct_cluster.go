@@ -31,6 +31,7 @@ type Cluster struct {
 	ClusterImportStatus int    `json:"ClusterImportStatus" xml:"ClusterImportStatus"`
 	ClusterStatus       int    `json:"ClusterStatus" xml:"ClusterStatus"`
 	RegionId            string `json:"RegionId" xml:"RegionId"`
+	ResourceGroupId     string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	VswitchId           string `json:"VswitchId" xml:"VswitchId"`
 	ClusterName         string `json:"ClusterName" xml:"ClusterName"`
 	CpuUsed             int    `json:"CpuUsed" xml:"CpuUsed"`

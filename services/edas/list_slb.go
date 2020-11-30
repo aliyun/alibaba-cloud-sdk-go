@@ -87,7 +87,7 @@ func CreateListSlbRequest() (request *ListSlbRequest) {
 	request = &ListSlbRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListSlb", "/pop/v5/slb_list", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListSlb", "/pop/v5/slb_list", "Edas", "openAPI")
 	request.Method = requests.GET
 	return
 }

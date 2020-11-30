@@ -88,7 +88,7 @@ func CreateAuthorizeResourceGroupRequest() (request *AuthorizeResourceGroupReque
 	request = &AuthorizeResourceGroupRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "AuthorizeResourceGroup", "/pop/v5/account/authorize_res_group", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "AuthorizeResourceGroup", "/pop/v5/account/authorize_res_group", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

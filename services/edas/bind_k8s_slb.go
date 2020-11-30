@@ -71,11 +71,13 @@ func (client *Client) BindK8sSlbWithCallback(request *BindK8sSlbRequest, callbac
 // BindK8sSlbRequest is the request struct for api BindK8sSlb
 type BindK8sSlbRequest struct {
 	*requests.RoaRequest
+	Scheduler        string `position:"Query" name:"Scheduler"`
 	ServicePortInfos string `position:"Query" name:"ServicePortInfos"`
 	SlbId            string `position:"Query" name:"SlbId"`
 	SlbProtocol      string `position:"Query" name:"SlbProtocol"`
 	Port             string `position:"Query" name:"Port"`
 	AppId            string `position:"Query" name:"AppId"`
+	Specification    string `position:"Query" name:"Specification"`
 	ClusterId        string `position:"Query" name:"ClusterId"`
 	Type             string `position:"Query" name:"Type"`
 	TargetPort       string `position:"Query" name:"TargetPort"`
@@ -95,7 +97,7 @@ func CreateBindK8sSlbRequest() (request *BindK8sSlbRequest) {
 	request = &BindK8sSlbRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "BindK8sSlb", "/pop/v5/k8s/acs/k8s_slb_binding", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "BindK8sSlb", "/pop/v5/k8s/acs/k8s_slb_binding", "Edas", "openAPI")
 	request.Method = requests.POST
 	return
 }
