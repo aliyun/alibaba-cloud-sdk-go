@@ -1,3 +1,8 @@
+2020-11-30 Version: v1.61.710
+- Generated 2020-02-02 for `polardbx`.
+- Supported all language sdk.
+- Fixed some bugs for polardbx.
+
 2020-11-30 Version: v1.61.709
 - Generated 2018-01-15 for `dcdn`.
 - Update OpenDcdnService.
