@@ -1,3 +1,7 @@
+2020-11-30 Version: v1.61.708
+- Generated 2020-01-16 for `DAS`.
+- Supported GetAutonomousNotifyEvents and GetAutonomousNotifyEventDetails.
+
 2020-11-29 Version: v1.61.707
 - Generated 2020-01-01 for `Dts`.
 - Support CPP and Go and PHP.
