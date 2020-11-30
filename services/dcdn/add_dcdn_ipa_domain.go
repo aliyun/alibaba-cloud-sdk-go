@@ -73,6 +73,7 @@ type AddDcdnIpaDomainRequest struct {
 	*requests.RpcRequest
 	Sources         string           `position:"Query" name:"Sources"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	Protocol        string           `position:"Query" name:"Protocol"`
 	SecurityToken   string           `position:"Query" name:"SecurityToken"`
 	Scope           string           `position:"Query" name:"Scope"`
 	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`

@@ -71,19 +71,26 @@ func (client *Client) DescribeDcdnUserDomainsWithCallback(request *DescribeDcdnU
 // DescribeDcdnUserDomainsRequest is the request struct for api DescribeDcdnUserDomains
 type DescribeDcdnUserDomainsRequest struct {
 	*requests.RpcRequest
-	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
-	CheckDomainShow  requests.Boolean `position:"Query" name:"CheckDomainShow"`
-	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
-	SecurityToken    string           `position:"Query" name:"SecurityToken"`
-	ChangeEndTime    string           `position:"Query" name:"ChangeEndTime"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	FuncFilter       string           `position:"Query" name:"FuncFilter"`
-	DomainName       string           `position:"Query" name:"DomainName"`
-	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
-	FuncId           string           `position:"Query" name:"FuncId"`
-	DomainStatus     string           `position:"Query" name:"DomainStatus"`
-	DomainSearchType string           `position:"Query" name:"DomainSearchType"`
-	ChangeStartTime  string           `position:"Query" name:"ChangeStartTime"`
+	PageNumber       requests.Integer              `position:"Query" name:"PageNumber"`
+	CheckDomainShow  requests.Boolean              `position:"Query" name:"CheckDomainShow"`
+	ResourceGroupId  string                        `position:"Query" name:"ResourceGroupId"`
+	SecurityToken    string                        `position:"Query" name:"SecurityToken"`
+	ChangeEndTime    string                        `position:"Query" name:"ChangeEndTime"`
+	PageSize         requests.Integer              `position:"Query" name:"PageSize"`
+	Tag              *[]DescribeDcdnUserDomainsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	FuncFilter       string                        `position:"Query" name:"FuncFilter"`
+	DomainName       string                        `position:"Query" name:"DomainName"`
+	OwnerId          requests.Integer              `position:"Query" name:"OwnerId"`
+	FuncId           string                        `position:"Query" name:"FuncId"`
+	DomainStatus     string                        `position:"Query" name:"DomainStatus"`
+	DomainSearchType string                        `position:"Query" name:"DomainSearchType"`
+	ChangeStartTime  string                        `position:"Query" name:"ChangeStartTime"`
+}
+
+// DescribeDcdnUserDomainsTag is a repeated param struct in DescribeDcdnUserDomainsRequest
+type DescribeDcdnUserDomainsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeDcdnUserDomainsResponse is the response struct for api DescribeDcdnUserDomains
