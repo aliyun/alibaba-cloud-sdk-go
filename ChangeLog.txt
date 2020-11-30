@@ -1,3 +1,7 @@
+2020-11-30 Version: v1.61.717
+- Generated 2014-11-11, 2018-05-10 for `Cdn`.
+- Update SetVideoSeekConfig.
+
 2020-11-30 Version: v1.61.716
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Update SetVideoSeekConfig.
