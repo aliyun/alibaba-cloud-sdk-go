@@ -17,13 +17,14 @@ package ecs
 
 // CapacityReservationItem is a nested struct in ecs response
 type CapacityReservationItem struct {
-	Platform                        string                                           `json:"Platform" xml:"Platform"`
 	PrivatePoolOptionsName          string                                           `json:"PrivatePoolOptionsName" xml:"PrivatePoolOptionsName"`
+	EndTimeType                     string                                           `json:"EndTimeType" xml:"EndTimeType"`
+	PrivatePoolOptionsMatchCriteria string                                           `json:"PrivatePoolOptionsMatchCriteria" xml:"PrivatePoolOptionsMatchCriteria"`
+	TimeSlot                        string                                           `json:"TimeSlot" xml:"TimeSlot"`
+	Platform                        string                                           `json:"Platform" xml:"Platform"`
 	RegionId                        string                                           `json:"RegionId" xml:"RegionId"`
 	StartTime                       string                                           `json:"StartTime" xml:"StartTime"`
 	EndTime                         string                                           `json:"EndTime" xml:"EndTime"`
-	EndTimeType                     string                                           `json:"EndTimeType" xml:"EndTimeType"`
-	PrivatePoolOptionsMatchCriteria string                                           `json:"PrivatePoolOptionsMatchCriteria" xml:"PrivatePoolOptionsMatchCriteria"`
 	Status                          string                                           `json:"Status" xml:"Status"`
 	Description                     string                                           `json:"Description" xml:"Description"`
 	InstanceChargeType              string                                           `json:"InstanceChargeType" xml:"InstanceChargeType"`

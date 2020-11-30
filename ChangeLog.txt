@@ -1,3 +1,7 @@
+2020-11-30 Version: v1.61.713
+- Generated 2014-05-26 for `Ecs`.
+- Support autoPtovisioning whth DiskConfigs.
+
 2020-11-30 Version: v1.61.712
 - Generated 2018-01-15 for `dcdn`.
 - Update OpenDcdnService.

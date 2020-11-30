@@ -77,6 +77,7 @@ type JoinSecurityGroupRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	NetworkInterfaceId   string           `position:"Query" name:"NetworkInterfaceId"`
 }
 
 // JoinSecurityGroupResponse is the response struct for api JoinSecurityGroup

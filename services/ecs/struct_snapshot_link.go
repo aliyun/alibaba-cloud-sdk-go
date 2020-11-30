@@ -26,6 +26,7 @@ type SnapshotLink struct {
 	SourceDiskSize int    `json:"SourceDiskSize" xml:"SourceDiskSize"`
 	SourceDiskType string `json:"SourceDiskType" xml:"SourceDiskType"`
 	Category       string `json:"Category" xml:"Category"`
+	InstantAccess  bool   `json:"InstantAccess" xml:"InstantAccess"`
 	TotalSize      int64  `json:"TotalSize" xml:"TotalSize"`
 	TotalCount     int    `json:"TotalCount" xml:"TotalCount"`
 }

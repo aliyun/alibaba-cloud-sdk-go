@@ -83,6 +83,7 @@ type DescribeCapacityReservationsRequest struct {
 	MaxResults            requests.Integer `position:"Query" name:"MaxResults"`
 	ZoneId                string           `position:"Query" name:"ZoneId"`
 	PackageType           string           `position:"Query" name:"PackageType"`
+	Status                string           `position:"Query" name:"Status"`
 }
 
 // DescribeCapacityReservationsResponse is the response struct for api DescribeCapacityReservations

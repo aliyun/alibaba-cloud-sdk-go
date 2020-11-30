@@ -71,18 +71,20 @@ func (client *Client) CreateSnapshotWithCallback(request *CreateSnapshotRequest,
 // CreateSnapshotRequest is the request struct for api CreateSnapshot
 type CreateSnapshotRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer     `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string               `position:"Query" name:"ClientToken"`
-	Description          string               `position:"Query" name:"Description"`
-	SnapshotName         string               `position:"Query" name:"SnapshotName"`
-	ResourceGroupId      string               `position:"Query" name:"ResourceGroupId"`
-	DiskId               string               `position:"Query" name:"DiskId"`
-	Tag                  *[]CreateSnapshotTag `position:"Query" name:"Tag"  type:"Repeated"`
-	ResourceOwnerAccount string               `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string               `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer     `position:"Query" name:"OwnerId"`
-	RetentionDays        requests.Integer     `position:"Query" name:"RetentionDays"`
-	Category             string               `position:"Query" name:"Category"`
+	ResourceOwnerId            requests.Integer     `position:"Query" name:"ResourceOwnerId"`
+	ClientToken                string               `position:"Query" name:"ClientToken"`
+	InstantAccess              requests.Boolean     `position:"Query" name:"InstantAccess"`
+	Description                string               `position:"Query" name:"Description"`
+	SnapshotName               string               `position:"Query" name:"SnapshotName"`
+	ResourceGroupId            string               `position:"Query" name:"ResourceGroupId"`
+	InstantAccessRetentionDays requests.Integer     `position:"Query" name:"InstantAccessRetentionDays"`
+	DiskId                     string               `position:"Query" name:"DiskId"`
+	Tag                        *[]CreateSnapshotTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceOwnerAccount       string               `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount               string               `position:"Query" name:"OwnerAccount"`
+	OwnerId                    requests.Integer     `position:"Query" name:"OwnerId"`
+	RetentionDays              requests.Integer     `position:"Query" name:"RetentionDays"`
+	Category                   string               `position:"Query" name:"Category"`
 }
 
 // CreateSnapshotTag is a repeated param struct in CreateSnapshotRequest

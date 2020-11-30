@@ -75,6 +75,7 @@ type CreateAutoProvisioningGroupRequest struct {
 	ResourceOwnerId                                requests.Integer                                          `position:"Query" name:"ResourceOwnerId"`
 	LaunchConfigurationSystemDiskCategory          string                                                    `position:"Query" name:"LaunchConfiguration.SystemDiskCategory"`
 	AutoProvisioningGroupType                      string                                                    `position:"Query" name:"AutoProvisioningGroupType"`
+	LaunchConfigurationSystemDiskPerformanceLevel  string                                                    `position:"Query" name:"LaunchConfiguration.SystemDiskPerformanceLevel"`
 	ResourceGroupId                                string                                                    `position:"Query" name:"ResourceGroupId"`
 	LaunchConfigurationImageId                     string                                                    `position:"Query" name:"LaunchConfiguration.ImageId"`
 	LaunchConfigurationResourceGroupId             string                                                    `position:"Query" name:"LaunchConfiguration.ResourceGroupId"`
@@ -95,6 +96,7 @@ type CreateAutoProvisioningGroupRequest struct {
 	Description                                    string                                                    `position:"Query" name:"Description"`
 	TerminateInstancesWithExpiration               requests.Boolean                                          `position:"Query" name:"TerminateInstancesWithExpiration"`
 	LaunchConfigurationUserData                    string                                                    `position:"Query" name:"LaunchConfiguration.UserData"`
+	LaunchConfigurationCreditSpecification         string                                                    `position:"Query" name:"LaunchConfiguration.CreditSpecification"`
 	LaunchConfigurationInstanceName                string                                                    `position:"Query" name:"LaunchConfiguration.InstanceName"`
 	LaunchConfigurationInstanceDescription         string                                                    `position:"Query" name:"LaunchConfiguration.InstanceDescription"`
 	SpotAllocationStrategy                         string                                                    `position:"Query" name:"SpotAllocationStrategy"`
@@ -123,8 +125,9 @@ type CreateAutoProvisioningGroupRequest struct {
 
 // CreateAutoProvisioningGroupLaunchConfiguration.DataDisk is a repeated param struct in CreateAutoProvisioningGroupRequest
 type CreateAutoProvisioningGroupLaunchConfigurationDataDisk struct {
-	Size     string `name:"Size"`
-	Category string `name:"Category"`
+	Size             string `name:"Size"`
+	Category         string `name:"Category"`
+	PerformanceLevel string `name:"PerformanceLevel"`
 }
 
 // CreateAutoProvisioningGroupSystemDiskConfig is a repeated param struct in CreateAutoProvisioningGroupRequest
