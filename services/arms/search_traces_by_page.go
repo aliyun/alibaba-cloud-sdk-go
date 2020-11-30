@@ -101,7 +101,7 @@ func CreateSearchTracesByPageRequest() (request *SearchTracesByPageRequest) {
 	request = &SearchTracesByPageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "SearchTracesByPage", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "SearchTracesByPage", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

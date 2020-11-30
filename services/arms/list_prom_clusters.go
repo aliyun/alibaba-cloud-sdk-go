@@ -85,7 +85,7 @@ func CreateListPromClustersRequest() (request *ListPromClustersRequest) {
 	request = &ListPromClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "ListPromClusters", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "ListPromClusters", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

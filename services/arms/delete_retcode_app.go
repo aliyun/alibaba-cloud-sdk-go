@@ -86,7 +86,7 @@ func CreateDeleteRetcodeAppRequest() (request *DeleteRetcodeAppRequest) {
 	request = &DeleteRetcodeAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteRetcodeApp", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "DeleteRetcodeApp", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

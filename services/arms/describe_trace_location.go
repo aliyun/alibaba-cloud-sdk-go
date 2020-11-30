@@ -85,7 +85,7 @@ func CreateDescribeTraceLocationRequest() (request *DescribeTraceLocationRequest
 	request = &DescribeTraceLocationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "DescribeTraceLocation", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "DescribeTraceLocation", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }

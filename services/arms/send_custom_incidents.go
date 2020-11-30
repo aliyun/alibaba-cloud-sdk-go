@@ -20,21 +20,21 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SendMseIncident invokes the arms.SendMseIncident API synchronously
-func (client *Client) SendMseIncident(request *SendMseIncidentRequest) (response *SendMseIncidentResponse, err error) {
-	response = CreateSendMseIncidentResponse()
+// SendCustomIncidents invokes the arms.SendCustomIncidents API synchronously
+func (client *Client) SendCustomIncidents(request *SendCustomIncidentsRequest) (response *SendCustomIncidentsResponse, err error) {
+	response = CreateSendCustomIncidentsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SendMseIncidentWithChan invokes the arms.SendMseIncident API asynchronously
-func (client *Client) SendMseIncidentWithChan(request *SendMseIncidentRequest) (<-chan *SendMseIncidentResponse, <-chan error) {
-	responseChan := make(chan *SendMseIncidentResponse, 1)
+// SendCustomIncidentsWithChan invokes the arms.SendCustomIncidents API asynchronously
+func (client *Client) SendCustomIncidentsWithChan(request *SendCustomIncidentsRequest) (<-chan *SendCustomIncidentsResponse, <-chan error) {
+	responseChan := make(chan *SendCustomIncidentsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SendMseIncident(request)
+		response, err := client.SendCustomIncidents(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -49,14 +49,14 @@ func (client *Client) SendMseIncidentWithChan(request *SendMseIncidentRequest) (
 	return responseChan, errChan
 }
 
-// SendMseIncidentWithCallback invokes the arms.SendMseIncident API asynchronously
-func (client *Client) SendMseIncidentWithCallback(request *SendMseIncidentRequest, callback func(response *SendMseIncidentResponse, err error)) <-chan int {
+// SendCustomIncidentsWithCallback invokes the arms.SendCustomIncidents API asynchronously
+func (client *Client) SendCustomIncidentsWithCallback(request *SendCustomIncidentsRequest, callback func(response *SendCustomIncidentsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SendMseIncidentResponse
+		var response *SendCustomIncidentsResponse
 		var err error
 		defer close(result)
-		response, err = client.SendMseIncident(request)
+		response, err = client.SendCustomIncidents(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -68,33 +68,34 @@ func (client *Client) SendMseIncidentWithCallback(request *SendMseIncidentReques
 	return result
 }
 
-// SendMseIncidentRequest is the request struct for api SendMseIncident
-type SendMseIncidentRequest struct {
+// SendCustomIncidentsRequest is the request struct for api SendCustomIncidents
+type SendCustomIncidentsRequest struct {
 	*requests.RpcRequest
 	Incidents   string `position:"Query" name:"Incidents"`
 	ProxyUserId string `position:"Query" name:"ProxyUserId"`
+	ProductType string `position:"Query" name:"ProductType"`
 }
 
-// SendMseIncidentResponse is the response struct for api SendMseIncident
-type SendMseIncidentResponse struct {
+// SendCustomIncidentsResponse is the response struct for api SendCustomIncidents
+type SendCustomIncidentsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
 }
 
-// CreateSendMseIncidentRequest creates a request to invoke SendMseIncident API
-func CreateSendMseIncidentRequest() (request *SendMseIncidentRequest) {
-	request = &SendMseIncidentRequest{
+// CreateSendCustomIncidentsRequest creates a request to invoke SendCustomIncidents API
+func CreateSendCustomIncidentsRequest() (request *SendCustomIncidentsRequest) {
+	request = &SendCustomIncidentsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "SendMseIncident", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "SendCustomIncidents", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateSendMseIncidentResponse creates a response to parse from SendMseIncident response
-func CreateSendMseIncidentResponse() (response *SendMseIncidentResponse) {
-	response = &SendMseIncidentResponse{
+// CreateSendCustomIncidentsResponse creates a response to parse from SendCustomIncidents response
+func CreateSendCustomIncidentsResponse() (response *SendCustomIncidentsResponse) {
+	response = &SendCustomIncidentsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

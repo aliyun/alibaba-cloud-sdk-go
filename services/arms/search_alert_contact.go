@@ -92,7 +92,7 @@ func CreateSearchAlertContactRequest() (request *SearchAlertContactRequest) {
 	request = &SearchAlertContactRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2019-08-08", "SearchAlertContact", "", "")
+	request.InitWithApiInfo("ARMS", "2019-08-08", "SearchAlertContact", "arms", "openAPI")
 	request.Method = requests.POST
 	return
 }
