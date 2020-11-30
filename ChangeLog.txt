@@ -1,3 +1,7 @@
+2020-11-30 Version: v1.61.715
+- Generated 2017-11-15 for `scdn`.
+- Update DescribeScdnDomainCertificateInfo.
+
 2020-11-30 Version: v1.61.714
 - Generated 2019-08-08 for `ARMS`.
 - Add OpenARMS api.
