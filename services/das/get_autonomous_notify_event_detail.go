@@ -80,10 +80,10 @@ type GetAutonomousNotifyEventDetailRequest struct {
 type GetAutonomousNotifyEventDetailResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
+	Data      string `json:"Data" xml:"Data"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   string `json:"Success" xml:"Success"`
-	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateGetAutonomousNotifyEventDetailRequest creates a request to invoke GetAutonomousNotifyEventDetail API

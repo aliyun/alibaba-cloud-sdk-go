@@ -1,3 +1,7 @@
+2020-12-01 Version: v1.61.725
+- Generated 2020-01-16 for `DAS`.
+- Support new API GetAutonomousNotifyEventsInRange and GetAutonomousNotifyEventContent.
+
 2020-12-01 Version: v1.61.724
 - Generated 2020-03-03 for `devops-rdc`.
 - Add task api.
