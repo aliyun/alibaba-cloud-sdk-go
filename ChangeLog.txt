@@ -1,3 +1,7 @@
+2020-12-01 Version: v1.61.722
+- Generated 2017-07-05 for `CCC`.
+- Fixed bugs for CCC.
+
 2020-12-01 Version: v1.61.721
 - Generated 2020-09-28, 2018-06-19 for `openanalytics-open`.
 - Supported Open Api.

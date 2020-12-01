@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteMedia invokes the ccc.DeleteMedia API synchronously
-// api document: https://help.aliyun.com/api/ccc/deletemedia.html
 func (client *Client) DeleteMedia(request *DeleteMediaRequest) (response *DeleteMediaResponse, err error) {
 	response = CreateDeleteMediaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteMedia(request *DeleteMediaRequest) (response *Delete
 }
 
 // DeleteMediaWithChan invokes the ccc.DeleteMedia API asynchronously
-// api document: https://help.aliyun.com/api/ccc/deletemedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMediaWithChan(request *DeleteMediaRequest) (<-chan *DeleteMediaResponse, <-chan error) {
 	responseChan := make(chan *DeleteMediaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteMediaWithChan(request *DeleteMediaRequest) (<-chan *
 }
 
 // DeleteMediaWithCallback invokes the ccc.DeleteMedia API asynchronously
-// api document: https://help.aliyun.com/api/ccc/deletemedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMediaWithCallback(request *DeleteMediaRequest, callback func(response *DeleteMediaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateDeleteMediaRequest() (request *DeleteMediaRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "DeleteMedia", "", "")
+	request.Method = requests.POST
 	return
 }
 

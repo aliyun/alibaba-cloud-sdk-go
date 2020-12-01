@@ -21,7 +21,6 @@ import (
 )
 
 // StartBack2BackCall invokes the ccc.StartBack2BackCall API synchronously
-// api document: https://help.aliyun.com/api/ccc/startback2backcall.html
 func (client *Client) StartBack2BackCall(request *StartBack2BackCallRequest) (response *StartBack2BackCallResponse, err error) {
 	response = CreateStartBack2BackCallResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartBack2BackCall(request *StartBack2BackCallRequest) (re
 }
 
 // StartBack2BackCallWithChan invokes the ccc.StartBack2BackCall API asynchronously
-// api document: https://help.aliyun.com/api/ccc/startback2backcall.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartBack2BackCallWithChan(request *StartBack2BackCallRequest) (<-chan *StartBack2BackCallResponse, <-chan error) {
 	responseChan := make(chan *StartBack2BackCallResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartBack2BackCallWithChan(request *StartBack2BackCallRequ
 }
 
 // StartBack2BackCallWithCallback invokes the ccc.StartBack2BackCall API asynchronously
-// api document: https://help.aliyun.com/api/ccc/startback2backcall.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartBack2BackCallWithCallback(request *StartBack2BackCallRequest, callback func(response *StartBack2BackCallResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,6 +98,7 @@ func CreateStartBack2BackCallRequest() (request *StartBack2BackCallRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "StartBack2BackCall", "", "")
+	request.Method = requests.POST
 	return
 }
 

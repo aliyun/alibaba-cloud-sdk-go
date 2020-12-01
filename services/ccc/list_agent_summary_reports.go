@@ -21,7 +21,6 @@ import (
 )
 
 // ListAgentSummaryReports invokes the ccc.ListAgentSummaryReports API synchronously
-// api document: https://help.aliyun.com/api/ccc/listagentsummaryreports.html
 func (client *Client) ListAgentSummaryReports(request *ListAgentSummaryReportsRequest) (response *ListAgentSummaryReportsResponse, err error) {
 	response = CreateListAgentSummaryReportsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAgentSummaryReports(request *ListAgentSummaryReportsRe
 }
 
 // ListAgentSummaryReportsWithChan invokes the ccc.ListAgentSummaryReports API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listagentsummaryreports.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAgentSummaryReportsWithChan(request *ListAgentSummaryReportsRequest) (<-chan *ListAgentSummaryReportsResponse, <-chan error) {
 	responseChan := make(chan *ListAgentSummaryReportsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAgentSummaryReportsWithChan(request *ListAgentSummaryR
 }
 
 // ListAgentSummaryReportsWithCallback invokes the ccc.ListAgentSummaryReports API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listagentsummaryreports.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAgentSummaryReportsWithCallback(request *ListAgentSummaryReportsRequest, callback func(response *ListAgentSummaryReportsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,6 +97,7 @@ func CreateListAgentSummaryReportsRequest() (request *ListAgentSummaryReportsReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListAgentSummaryReports", "", "")
+	request.Method = requests.POST
 	return
 }
 

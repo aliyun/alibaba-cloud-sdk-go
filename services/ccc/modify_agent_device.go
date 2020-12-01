@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyAgentDevice invokes the ccc.ModifyAgentDevice API synchronously
-// api document: https://help.aliyun.com/api/ccc/modifyagentdevice.html
 func (client *Client) ModifyAgentDevice(request *ModifyAgentDeviceRequest) (response *ModifyAgentDeviceResponse, err error) {
 	response = CreateModifyAgentDeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyAgentDevice(request *ModifyAgentDeviceRequest) (resp
 }
 
 // ModifyAgentDeviceWithChan invokes the ccc.ModifyAgentDevice API asynchronously
-// api document: https://help.aliyun.com/api/ccc/modifyagentdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAgentDeviceWithChan(request *ModifyAgentDeviceRequest) (<-chan *ModifyAgentDeviceResponse, <-chan error) {
 	responseChan := make(chan *ModifyAgentDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyAgentDeviceWithChan(request *ModifyAgentDeviceReques
 }
 
 // ModifyAgentDeviceWithCallback invokes the ccc.ModifyAgentDevice API asynchronously
-// api document: https://help.aliyun.com/api/ccc/modifyagentdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAgentDeviceWithCallback(request *ModifyAgentDeviceRequest, callback func(response *ModifyAgentDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateModifyAgentDeviceRequest() (request *ModifyAgentDeviceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ModifyAgentDevice", "", "")
+	request.Method = requests.POST
 	return
 }
 

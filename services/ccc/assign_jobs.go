@@ -21,7 +21,6 @@ import (
 )
 
 // AssignJobs invokes the ccc.AssignJobs API synchronously
-// api document: https://help.aliyun.com/api/ccc/assignjobs.html
 func (client *Client) AssignJobs(request *AssignJobsRequest) (response *AssignJobsResponse, err error) {
 	response = CreateAssignJobsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AssignJobs(request *AssignJobsRequest) (response *AssignJo
 }
 
 // AssignJobsWithChan invokes the ccc.AssignJobs API asynchronously
-// api document: https://help.aliyun.com/api/ccc/assignjobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssignJobsWithChan(request *AssignJobsRequest) (<-chan *AssignJobsResponse, <-chan error) {
 	responseChan := make(chan *AssignJobsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AssignJobsWithChan(request *AssignJobsRequest) (<-chan *As
 }
 
 // AssignJobsWithCallback invokes the ccc.AssignJobs API asynchronously
-// api document: https://help.aliyun.com/api/ccc/assignjobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssignJobsWithCallback(request *AssignJobsRequest, callback func(response *AssignJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +96,7 @@ func CreateAssignJobsRequest() (request *AssignJobsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "AssignJobs", "", "")
+	request.Method = requests.POST
 	return
 }
 

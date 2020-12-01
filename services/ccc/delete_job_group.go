@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteJobGroup invokes the ccc.DeleteJobGroup API synchronously
-// api document: https://help.aliyun.com/api/ccc/deletejobgroup.html
 func (client *Client) DeleteJobGroup(request *DeleteJobGroupRequest) (response *DeleteJobGroupResponse, err error) {
 	response = CreateDeleteJobGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteJobGroup(request *DeleteJobGroupRequest) (response *
 }
 
 // DeleteJobGroupWithChan invokes the ccc.DeleteJobGroup API asynchronously
-// api document: https://help.aliyun.com/api/ccc/deletejobgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteJobGroupWithChan(request *DeleteJobGroupRequest) (<-chan *DeleteJobGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteJobGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteJobGroupWithChan(request *DeleteJobGroupRequest) (<-
 }
 
 // DeleteJobGroupWithCallback invokes the ccc.DeleteJobGroup API asynchronously
-// api document: https://help.aliyun.com/api/ccc/deletejobgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteJobGroupWithCallback(request *DeleteJobGroupRequest, callback func(response *DeleteJobGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateDeleteJobGroupRequest() (request *DeleteJobGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "DeleteJobGroup", "", "")
+	request.Method = requests.POST
 	return
 }
 

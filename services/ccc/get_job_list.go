@@ -21,7 +21,6 @@ import (
 )
 
 // GetJobList invokes the ccc.GetJobList API synchronously
-// api document: https://help.aliyun.com/api/ccc/getjoblist.html
 func (client *Client) GetJobList(request *GetJobListRequest) (response *GetJobListResponse, err error) {
 	response = CreateGetJobListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetJobList(request *GetJobListRequest) (response *GetJobLi
 }
 
 // GetJobListWithChan invokes the ccc.GetJobList API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJobListWithChan(request *GetJobListRequest) (<-chan *GetJobListResponse, <-chan error) {
 	responseChan := make(chan *GetJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetJobListWithChan(request *GetJobListRequest) (<-chan *Ge
 }
 
 // GetJobListWithCallback invokes the ccc.GetJobList API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getjoblist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJobListWithCallback(request *GetJobListRequest, callback func(response *GetJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +96,7 @@ func CreateGetJobListRequest() (request *GetJobListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetJobList", "", "")
+	request.Method = requests.POST
 	return
 }
 

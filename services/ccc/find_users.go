@@ -21,7 +21,6 @@ import (
 )
 
 // FindUsers invokes the ccc.FindUsers API synchronously
-// api document: https://help.aliyun.com/api/ccc/findusers.html
 func (client *Client) FindUsers(request *FindUsersRequest) (response *FindUsersResponse, err error) {
 	response = CreateFindUsersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) FindUsers(request *FindUsersRequest) (response *FindUsersR
 }
 
 // FindUsersWithChan invokes the ccc.FindUsers API asynchronously
-// api document: https://help.aliyun.com/api/ccc/findusers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FindUsersWithChan(request *FindUsersRequest) (<-chan *FindUsersResponse, <-chan error) {
 	responseChan := make(chan *FindUsersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) FindUsersWithChan(request *FindUsersRequest) (<-chan *Find
 }
 
 // FindUsersWithCallback invokes the ccc.FindUsers API asynchronously
-// api document: https://help.aliyun.com/api/ccc/findusers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) FindUsersWithCallback(request *FindUsersRequest, callback func(response *FindUsersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateFindUsersRequest() (request *FindUsersRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "FindUsers", "", "")
+	request.Method = requests.POST
 	return
 }
 

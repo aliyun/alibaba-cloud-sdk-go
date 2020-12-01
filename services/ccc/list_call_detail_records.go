@@ -21,7 +21,6 @@ import (
 )
 
 // ListCallDetailRecords invokes the ccc.ListCallDetailRecords API synchronously
-// api document: https://help.aliyun.com/api/ccc/listcalldetailrecords.html
 func (client *Client) ListCallDetailRecords(request *ListCallDetailRecordsRequest) (response *ListCallDetailRecordsResponse, err error) {
 	response = CreateListCallDetailRecordsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListCallDetailRecords(request *ListCallDetailRecordsReques
 }
 
 // ListCallDetailRecordsWithChan invokes the ccc.ListCallDetailRecords API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listcalldetailrecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCallDetailRecordsWithChan(request *ListCallDetailRecordsRequest) (<-chan *ListCallDetailRecordsResponse, <-chan error) {
 	responseChan := make(chan *ListCallDetailRecordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListCallDetailRecordsWithChan(request *ListCallDetailRecor
 }
 
 // ListCallDetailRecordsWithCallback invokes the ccc.ListCallDetailRecords API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listcalldetailrecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCallDetailRecordsWithCallback(request *ListCallDetailRecordsRequest, callback func(response *ListCallDetailRecordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -107,6 +102,7 @@ func CreateListCallDetailRecordsRequest() (request *ListCallDetailRecordsRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListCallDetailRecords", "", "")
+	request.Method = requests.POST
 	return
 }
 

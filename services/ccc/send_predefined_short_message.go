@@ -21,7 +21,6 @@ import (
 )
 
 // SendPredefinedShortMessage invokes the ccc.SendPredefinedShortMessage API synchronously
-// api document: https://help.aliyun.com/api/ccc/sendpredefinedshortmessage.html
 func (client *Client) SendPredefinedShortMessage(request *SendPredefinedShortMessageRequest) (response *SendPredefinedShortMessageResponse, err error) {
 	response = CreateSendPredefinedShortMessageResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SendPredefinedShortMessage(request *SendPredefinedShortMes
 }
 
 // SendPredefinedShortMessageWithChan invokes the ccc.SendPredefinedShortMessage API asynchronously
-// api document: https://help.aliyun.com/api/ccc/sendpredefinedshortmessage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendPredefinedShortMessageWithChan(request *SendPredefinedShortMessageRequest) (<-chan *SendPredefinedShortMessageResponse, <-chan error) {
 	responseChan := make(chan *SendPredefinedShortMessageResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SendPredefinedShortMessageWithChan(request *SendPredefined
 }
 
 // SendPredefinedShortMessageWithCallback invokes the ccc.SendPredefinedShortMessage API asynchronously
-// api document: https://help.aliyun.com/api/ccc/sendpredefinedshortmessage.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendPredefinedShortMessageWithCallback(request *SendPredefinedShortMessageRequest, callback func(response *SendPredefinedShortMessageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateSendPredefinedShortMessageRequest() (request *SendPredefinedShortMess
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "SendPredefinedShortMessage", "", "")
+	request.Method = requests.POST
 	return
 }
 

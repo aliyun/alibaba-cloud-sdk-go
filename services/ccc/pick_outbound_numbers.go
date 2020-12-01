@@ -21,7 +21,6 @@ import (
 )
 
 // PickOutboundNumbers invokes the ccc.PickOutboundNumbers API synchronously
-// api document: https://help.aliyun.com/api/ccc/pickoutboundnumbers.html
 func (client *Client) PickOutboundNumbers(request *PickOutboundNumbersRequest) (response *PickOutboundNumbersResponse, err error) {
 	response = CreatePickOutboundNumbersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PickOutboundNumbers(request *PickOutboundNumbersRequest) (
 }
 
 // PickOutboundNumbersWithChan invokes the ccc.PickOutboundNumbers API asynchronously
-// api document: https://help.aliyun.com/api/ccc/pickoutboundnumbers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PickOutboundNumbersWithChan(request *PickOutboundNumbersRequest) (<-chan *PickOutboundNumbersResponse, <-chan error) {
 	responseChan := make(chan *PickOutboundNumbersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PickOutboundNumbersWithChan(request *PickOutboundNumbersRe
 }
 
 // PickOutboundNumbersWithCallback invokes the ccc.PickOutboundNumbers API asynchronously
-// api document: https://help.aliyun.com/api/ccc/pickoutboundnumbers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PickOutboundNumbersWithCallback(request *PickOutboundNumbersRequest, callback func(response *PickOutboundNumbersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreatePickOutboundNumbersRequest() (request *PickOutboundNumbersRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "PickOutboundNumbers", "", "")
+	request.Method = requests.POST
 	return
 }
 

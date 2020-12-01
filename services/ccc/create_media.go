@@ -21,7 +21,6 @@ import (
 )
 
 // CreateMedia invokes the ccc.CreateMedia API synchronously
-// api document: https://help.aliyun.com/api/ccc/createmedia.html
 func (client *Client) CreateMedia(request *CreateMediaRequest) (response *CreateMediaResponse, err error) {
 	response = CreateCreateMediaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateMedia(request *CreateMediaRequest) (response *Create
 }
 
 // CreateMediaWithChan invokes the ccc.CreateMedia API asynchronously
-// api document: https://help.aliyun.com/api/ccc/createmedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMediaWithChan(request *CreateMediaRequest) (<-chan *CreateMediaResponse, <-chan error) {
 	responseChan := make(chan *CreateMediaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateMediaWithChan(request *CreateMediaRequest) (<-chan *
 }
 
 // CreateMediaWithCallback invokes the ccc.CreateMedia API asynchronously
-// api document: https://help.aliyun.com/api/ccc/createmedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMediaWithCallback(request *CreateMediaRequest, callback func(response *CreateMediaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,6 +99,7 @@ func CreateCreateMediaRequest() (request *CreateMediaRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "CreateMedia", "", "")
+	request.Method = requests.POST
 	return
 }
 

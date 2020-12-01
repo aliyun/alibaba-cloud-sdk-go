@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySkillGroupOfUser invokes the ccc.ModifySkillGroupOfUser API synchronously
-// api document: https://help.aliyun.com/api/ccc/modifyskillgroupofuser.html
 func (client *Client) ModifySkillGroupOfUser(request *ModifySkillGroupOfUserRequest) (response *ModifySkillGroupOfUserResponse, err error) {
 	response = CreateModifySkillGroupOfUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySkillGroupOfUser(request *ModifySkillGroupOfUserRequ
 }
 
 // ModifySkillGroupOfUserWithChan invokes the ccc.ModifySkillGroupOfUser API asynchronously
-// api document: https://help.aliyun.com/api/ccc/modifyskillgroupofuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySkillGroupOfUserWithChan(request *ModifySkillGroupOfUserRequest) (<-chan *ModifySkillGroupOfUserResponse, <-chan error) {
 	responseChan := make(chan *ModifySkillGroupOfUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySkillGroupOfUserWithChan(request *ModifySkillGroupOf
 }
 
 // ModifySkillGroupOfUserWithCallback invokes the ccc.ModifySkillGroupOfUser API asynchronously
-// api document: https://help.aliyun.com/api/ccc/modifyskillgroupofuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySkillGroupOfUserWithCallback(request *ModifySkillGroupOfUserRequest, callback func(response *ModifySkillGroupOfUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateModifySkillGroupOfUserRequest() (request *ModifySkillGroupOfUserReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ModifySkillGroupOfUser", "", "")
+	request.Method = requests.POST
 	return
 }
 

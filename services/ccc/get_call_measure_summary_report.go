@@ -21,7 +21,6 @@ import (
 )
 
 // GetCallMeasureSummaryReport invokes the ccc.GetCallMeasureSummaryReport API synchronously
-// api document: https://help.aliyun.com/api/ccc/getcallmeasuresummaryreport.html
 func (client *Client) GetCallMeasureSummaryReport(request *GetCallMeasureSummaryReportRequest) (response *GetCallMeasureSummaryReportResponse, err error) {
 	response = CreateGetCallMeasureSummaryReportResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetCallMeasureSummaryReport(request *GetCallMeasureSummary
 }
 
 // GetCallMeasureSummaryReportWithChan invokes the ccc.GetCallMeasureSummaryReport API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getcallmeasuresummaryreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCallMeasureSummaryReportWithChan(request *GetCallMeasureSummaryReportRequest) (<-chan *GetCallMeasureSummaryReportResponse, <-chan error) {
 	responseChan := make(chan *GetCallMeasureSummaryReportResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetCallMeasureSummaryReportWithChan(request *GetCallMeasur
 }
 
 // GetCallMeasureSummaryReportWithCallback invokes the ccc.GetCallMeasureSummaryReport API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getcallmeasuresummaryreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCallMeasureSummaryReportWithCallback(request *GetCallMeasureSummaryReportRequest, callback func(response *GetCallMeasureSummaryReportResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,6 +97,7 @@ func CreateGetCallMeasureSummaryReportRequest() (request *GetCallMeasureSummaryR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetCallMeasureSummaryReport", "", "")
+	request.Method = requests.POST
 	return
 }
 

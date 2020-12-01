@@ -21,7 +21,6 @@ import (
 )
 
 // DownloadCabRecording invokes the ccc.DownloadCabRecording API synchronously
-// api document: https://help.aliyun.com/api/ccc/downloadcabrecording.html
 func (client *Client) DownloadCabRecording(request *DownloadCabRecordingRequest) (response *DownloadCabRecordingResponse, err error) {
 	response = CreateDownloadCabRecordingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DownloadCabRecording(request *DownloadCabRecordingRequest)
 }
 
 // DownloadCabRecordingWithChan invokes the ccc.DownloadCabRecording API asynchronously
-// api document: https://help.aliyun.com/api/ccc/downloadcabrecording.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DownloadCabRecordingWithChan(request *DownloadCabRecordingRequest) (<-chan *DownloadCabRecordingResponse, <-chan error) {
 	responseChan := make(chan *DownloadCabRecordingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DownloadCabRecordingWithChan(request *DownloadCabRecording
 }
 
 // DownloadCabRecordingWithCallback invokes the ccc.DownloadCabRecording API asynchronously
-// api document: https://help.aliyun.com/api/ccc/downloadcabrecording.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DownloadCabRecordingWithCallback(request *DownloadCabRecordingRequest, callback func(response *DownloadCabRecordingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateDownloadCabRecordingRequest() (request *DownloadCabRecordingRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "DownloadCabRecording", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ResumeJobs invokes the ccc.ResumeJobs API synchronously
-// api document: https://help.aliyun.com/api/ccc/resumejobs.html
 func (client *Client) ResumeJobs(request *ResumeJobsRequest) (response *ResumeJobsResponse, err error) {
 	response = CreateResumeJobsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResumeJobs(request *ResumeJobsRequest) (response *ResumeJo
 }
 
 // ResumeJobsWithChan invokes the ccc.ResumeJobs API asynchronously
-// api document: https://help.aliyun.com/api/ccc/resumejobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeJobsWithChan(request *ResumeJobsRequest) (<-chan *ResumeJobsResponse, <-chan error) {
 	responseChan := make(chan *ResumeJobsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResumeJobsWithChan(request *ResumeJobsRequest) (<-chan *Re
 }
 
 // ResumeJobsWithCallback invokes the ccc.ResumeJobs API asynchronously
-// api document: https://help.aliyun.com/api/ccc/resumejobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeJobsWithCallback(request *ResumeJobsRequest, callback func(response *ResumeJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateResumeJobsRequest() (request *ResumeJobsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ResumeJobs", "", "")
+	request.Method = requests.POST
 	return
 }
 

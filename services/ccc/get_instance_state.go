@@ -21,7 +21,6 @@ import (
 )
 
 // GetInstanceState invokes the ccc.GetInstanceState API synchronously
-// api document: https://help.aliyun.com/api/ccc/getinstancestate.html
 func (client *Client) GetInstanceState(request *GetInstanceStateRequest) (response *GetInstanceStateResponse, err error) {
 	response = CreateGetInstanceStateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetInstanceState(request *GetInstanceStateRequest) (respon
 }
 
 // GetInstanceStateWithChan invokes the ccc.GetInstanceState API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getinstancestate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceStateWithChan(request *GetInstanceStateRequest) (<-chan *GetInstanceStateResponse, <-chan error) {
 	responseChan := make(chan *GetInstanceStateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetInstanceStateWithChan(request *GetInstanceStateRequest)
 }
 
 // GetInstanceStateWithCallback invokes the ccc.GetInstanceState API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getinstancestate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceStateWithCallback(request *GetInstanceStateRequest, callback func(response *GetInstanceStateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateGetInstanceStateRequest() (request *GetInstanceStateRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetInstanceState", "", "")
+	request.Method = requests.POST
 	return
 }
 

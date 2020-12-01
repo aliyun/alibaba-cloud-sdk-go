@@ -21,7 +21,6 @@ import (
 )
 
 // ListRecentCallRecords invokes the ccc.ListRecentCallRecords API synchronously
-// api document: https://help.aliyun.com/api/ccc/listrecentcallrecords.html
 func (client *Client) ListRecentCallRecords(request *ListRecentCallRecordsRequest) (response *ListRecentCallRecordsResponse, err error) {
 	response = CreateListRecentCallRecordsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListRecentCallRecords(request *ListRecentCallRecordsReques
 }
 
 // ListRecentCallRecordsWithChan invokes the ccc.ListRecentCallRecords API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listrecentcallrecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRecentCallRecordsWithChan(request *ListRecentCallRecordsRequest) (<-chan *ListRecentCallRecordsResponse, <-chan error) {
 	responseChan := make(chan *ListRecentCallRecordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListRecentCallRecordsWithChan(request *ListRecentCallRecor
 }
 
 // ListRecentCallRecordsWithCallback invokes the ccc.ListRecentCallRecords API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listrecentcallrecords.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRecentCallRecordsWithCallback(request *ListRecentCallRecordsRequest, callback func(response *ListRecentCallRecordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +96,7 @@ func CreateListRecentCallRecordsRequest() (request *ListRecentCallRecordsRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListRecentCallRecords", "", "")
+	request.Method = requests.POST
 	return
 }
 

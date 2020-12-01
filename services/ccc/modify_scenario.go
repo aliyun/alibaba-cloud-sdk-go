@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyScenario invokes the ccc.ModifyScenario API synchronously
-// api document: https://help.aliyun.com/api/ccc/modifyscenario.html
 func (client *Client) ModifyScenario(request *ModifyScenarioRequest) (response *ModifyScenarioResponse, err error) {
 	response = CreateModifyScenarioResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyScenario(request *ModifyScenarioRequest) (response *
 }
 
 // ModifyScenarioWithChan invokes the ccc.ModifyScenario API asynchronously
-// api document: https://help.aliyun.com/api/ccc/modifyscenario.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyScenarioWithChan(request *ModifyScenarioRequest) (<-chan *ModifyScenarioResponse, <-chan error) {
 	responseChan := make(chan *ModifyScenarioResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyScenarioWithChan(request *ModifyScenarioRequest) (<-
 }
 
 // ModifyScenarioWithCallback invokes the ccc.ModifyScenario API asynchronously
-// api document: https://help.aliyun.com/api/ccc/modifyscenario.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyScenarioWithCallback(request *ModifyScenarioRequest, callback func(response *ModifyScenarioResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateModifyScenarioRequest() (request *ModifyScenarioRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ModifyScenario", "", "")
+	request.Method = requests.POST
 	return
 }
 

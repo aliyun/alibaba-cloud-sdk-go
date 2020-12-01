@@ -21,7 +21,6 @@ import (
 )
 
 // CreateScenario invokes the ccc.CreateScenario API synchronously
-// api document: https://help.aliyun.com/api/ccc/createscenario.html
 func (client *Client) CreateScenario(request *CreateScenarioRequest) (response *CreateScenarioResponse, err error) {
 	response = CreateCreateScenarioResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateScenario(request *CreateScenarioRequest) (response *
 }
 
 // CreateScenarioWithChan invokes the ccc.CreateScenario API asynchronously
-// api document: https://help.aliyun.com/api/ccc/createscenario.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScenarioWithChan(request *CreateScenarioRequest) (<-chan *CreateScenarioResponse, <-chan error) {
 	responseChan := make(chan *CreateScenarioResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateScenarioWithChan(request *CreateScenarioRequest) (<-
 }
 
 // CreateScenarioWithCallback invokes the ccc.CreateScenario API asynchronously
-// api document: https://help.aliyun.com/api/ccc/createscenario.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScenarioWithCallback(request *CreateScenarioRequest, callback func(response *CreateScenarioResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +96,7 @@ func CreateCreateScenarioRequest() (request *CreateScenarioRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "CreateScenario", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // GetJobDataUploadParams invokes the ccc.GetJobDataUploadParams API synchronously
-// api document: https://help.aliyun.com/api/ccc/getjobdatauploadparams.html
 func (client *Client) GetJobDataUploadParams(request *GetJobDataUploadParamsRequest) (response *GetJobDataUploadParamsResponse, err error) {
 	response = CreateGetJobDataUploadParamsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetJobDataUploadParams(request *GetJobDataUploadParamsRequ
 }
 
 // GetJobDataUploadParamsWithChan invokes the ccc.GetJobDataUploadParams API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getjobdatauploadparams.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJobDataUploadParamsWithChan(request *GetJobDataUploadParamsRequest) (<-chan *GetJobDataUploadParamsResponse, <-chan error) {
 	responseChan := make(chan *GetJobDataUploadParamsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetJobDataUploadParamsWithChan(request *GetJobDataUploadPa
 }
 
 // GetJobDataUploadParamsWithCallback invokes the ccc.GetJobDataUploadParams API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getjobdatauploadparams.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJobDataUploadParamsWithCallback(request *GetJobDataUploadParamsRequest, callback func(response *GetJobDataUploadParamsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateGetJobDataUploadParamsRequest() (request *GetJobDataUploadParamsReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetJobDataUploadParams", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ListRecordings invokes the ccc.ListRecordings API synchronously
-// api document: https://help.aliyun.com/api/ccc/listrecordings.html
 func (client *Client) ListRecordings(request *ListRecordingsRequest) (response *ListRecordingsResponse, err error) {
 	response = CreateListRecordingsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListRecordings(request *ListRecordingsRequest) (response *
 }
 
 // ListRecordingsWithChan invokes the ccc.ListRecordings API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listrecordings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRecordingsWithChan(request *ListRecordingsRequest) (<-chan *ListRecordingsResponse, <-chan error) {
 	responseChan := make(chan *ListRecordingsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListRecordingsWithChan(request *ListRecordingsRequest) (<-
 }
 
 // ListRecordingsWithCallback invokes the ccc.ListRecordings API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listrecordings.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRecordingsWithCallback(request *ListRecordingsRequest, callback func(response *ListRecordingsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,6 +98,7 @@ func CreateListRecordingsRequest() (request *ListRecordingsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListRecordings", "", "")
+	request.Method = requests.POST
 	return
 }
 

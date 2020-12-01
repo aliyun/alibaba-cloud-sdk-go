@@ -21,7 +21,6 @@ import (
 )
 
 // GetInstanceSummaryReportSinceMidnight invokes the ccc.GetInstanceSummaryReportSinceMidnight API synchronously
-// api document: https://help.aliyun.com/api/ccc/getinstancesummaryreportsincemidnight.html
 func (client *Client) GetInstanceSummaryReportSinceMidnight(request *GetInstanceSummaryReportSinceMidnightRequest) (response *GetInstanceSummaryReportSinceMidnightResponse, err error) {
 	response = CreateGetInstanceSummaryReportSinceMidnightResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetInstanceSummaryReportSinceMidnight(request *GetInstance
 }
 
 // GetInstanceSummaryReportSinceMidnightWithChan invokes the ccc.GetInstanceSummaryReportSinceMidnight API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getinstancesummaryreportsincemidnight.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceSummaryReportSinceMidnightWithChan(request *GetInstanceSummaryReportSinceMidnightRequest) (<-chan *GetInstanceSummaryReportSinceMidnightResponse, <-chan error) {
 	responseChan := make(chan *GetInstanceSummaryReportSinceMidnightResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetInstanceSummaryReportSinceMidnightWithChan(request *Get
 }
 
 // GetInstanceSummaryReportSinceMidnightWithCallback invokes the ccc.GetInstanceSummaryReportSinceMidnight API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getinstancesummaryreportsincemidnight.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceSummaryReportSinceMidnightWithCallback(request *GetInstanceSummaryReportSinceMidnightRequest, callback func(response *GetInstanceSummaryReportSinceMidnightResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateGetInstanceSummaryReportSinceMidnightRequest() (request *GetInstanceS
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetInstanceSummaryReportSinceMidnight", "", "")
+	request.Method = requests.POST
 	return
 }
 

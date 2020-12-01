@@ -21,7 +21,6 @@ import (
 )
 
 // InflightTaskTimeout invokes the ccc.InflightTaskTimeout API synchronously
-// api document: https://help.aliyun.com/api/ccc/inflighttasktimeout.html
 func (client *Client) InflightTaskTimeout(request *InflightTaskTimeoutRequest) (response *InflightTaskTimeoutResponse, err error) {
 	response = CreateInflightTaskTimeoutResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) InflightTaskTimeout(request *InflightTaskTimeoutRequest) (
 }
 
 // InflightTaskTimeoutWithChan invokes the ccc.InflightTaskTimeout API asynchronously
-// api document: https://help.aliyun.com/api/ccc/inflighttasktimeout.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InflightTaskTimeoutWithChan(request *InflightTaskTimeoutRequest) (<-chan *InflightTaskTimeoutResponse, <-chan error) {
 	responseChan := make(chan *InflightTaskTimeoutResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) InflightTaskTimeoutWithChan(request *InflightTaskTimeoutRe
 }
 
 // InflightTaskTimeoutWithCallback invokes the ccc.InflightTaskTimeout API asynchronously
-// api document: https://help.aliyun.com/api/ccc/inflighttasktimeout.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InflightTaskTimeoutWithCallback(request *InflightTaskTimeoutRequest, callback func(response *InflightTaskTimeoutResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateInflightTaskTimeoutRequest() (request *InflightTaskTimeoutRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "InflightTaskTimeout", "", "")
+	request.Method = requests.POST
 	return
 }
 

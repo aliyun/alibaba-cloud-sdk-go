@@ -21,7 +21,6 @@ import (
 )
 
 // ListVoiceAppraise invokes the ccc.ListVoiceAppraise API synchronously
-// api document: https://help.aliyun.com/api/ccc/listvoiceappraise.html
 func (client *Client) ListVoiceAppraise(request *ListVoiceAppraiseRequest) (response *ListVoiceAppraiseResponse, err error) {
 	response = CreateListVoiceAppraiseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListVoiceAppraise(request *ListVoiceAppraiseRequest) (resp
 }
 
 // ListVoiceAppraiseWithChan invokes the ccc.ListVoiceAppraise API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listvoiceappraise.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVoiceAppraiseWithChan(request *ListVoiceAppraiseRequest) (<-chan *ListVoiceAppraiseResponse, <-chan error) {
 	responseChan := make(chan *ListVoiceAppraiseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListVoiceAppraiseWithChan(request *ListVoiceAppraiseReques
 }
 
 // ListVoiceAppraiseWithCallback invokes the ccc.ListVoiceAppraise API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listvoiceappraise.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVoiceAppraiseWithCallback(request *ListVoiceAppraiseRequest, callback func(response *ListVoiceAppraiseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateListVoiceAppraiseRequest() (request *ListVoiceAppraiseRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListVoiceAppraise", "", "")
+	request.Method = requests.POST
 	return
 }
 

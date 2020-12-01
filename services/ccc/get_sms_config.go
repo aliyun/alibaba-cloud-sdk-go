@@ -21,7 +21,6 @@ import (
 )
 
 // GetSmsConfig invokes the ccc.GetSmsConfig API synchronously
-// api document: https://help.aliyun.com/api/ccc/getsmsconfig.html
 func (client *Client) GetSmsConfig(request *GetSmsConfigRequest) (response *GetSmsConfigResponse, err error) {
 	response = CreateGetSmsConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetSmsConfig(request *GetSmsConfigRequest) (response *GetS
 }
 
 // GetSmsConfigWithChan invokes the ccc.GetSmsConfig API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getsmsconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSmsConfigWithChan(request *GetSmsConfigRequest) (<-chan *GetSmsConfigResponse, <-chan error) {
 	responseChan := make(chan *GetSmsConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetSmsConfigWithChan(request *GetSmsConfigRequest) (<-chan
 }
 
 // GetSmsConfigWithCallback invokes the ccc.GetSmsConfig API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getsmsconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSmsConfigWithCallback(request *GetSmsConfigRequest, callback func(response *GetSmsConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateGetSmsConfigRequest() (request *GetSmsConfigRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetSmsConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

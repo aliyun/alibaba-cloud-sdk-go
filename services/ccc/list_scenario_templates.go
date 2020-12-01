@@ -21,7 +21,6 @@ import (
 )
 
 // ListScenarioTemplates invokes the ccc.ListScenarioTemplates API synchronously
-// api document: https://help.aliyun.com/api/ccc/listscenariotemplates.html
 func (client *Client) ListScenarioTemplates(request *ListScenarioTemplatesRequest) (response *ListScenarioTemplatesResponse, err error) {
 	response = CreateListScenarioTemplatesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListScenarioTemplates(request *ListScenarioTemplatesReques
 }
 
 // ListScenarioTemplatesWithChan invokes the ccc.ListScenarioTemplates API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listscenariotemplates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListScenarioTemplatesWithChan(request *ListScenarioTemplatesRequest) (<-chan *ListScenarioTemplatesResponse, <-chan error) {
 	responseChan := make(chan *ListScenarioTemplatesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListScenarioTemplatesWithChan(request *ListScenarioTemplat
 }
 
 // ListScenarioTemplatesWithCallback invokes the ccc.ListScenarioTemplates API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listscenariotemplates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListScenarioTemplatesWithCallback(request *ListScenarioTemplatesRequest, callback func(response *ListScenarioTemplatesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateListScenarioTemplatesRequest() (request *ListScenarioTemplatesRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListScenarioTemplates", "", "")
+	request.Method = requests.POST
 	return
 }
 

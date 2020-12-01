@@ -21,7 +21,6 @@ import (
 )
 
 // CreateSkillGroup invokes the ccc.CreateSkillGroup API synchronously
-// api document: https://help.aliyun.com/api/ccc/createskillgroup.html
 func (client *Client) CreateSkillGroup(request *CreateSkillGroupRequest) (response *CreateSkillGroupResponse, err error) {
 	response = CreateCreateSkillGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateSkillGroup(request *CreateSkillGroupRequest) (respon
 }
 
 // CreateSkillGroupWithChan invokes the ccc.CreateSkillGroup API asynchronously
-// api document: https://help.aliyun.com/api/ccc/createskillgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSkillGroupWithChan(request *CreateSkillGroupRequest) (<-chan *CreateSkillGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateSkillGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateSkillGroupWithChan(request *CreateSkillGroupRequest)
 }
 
 // CreateSkillGroupWithCallback invokes the ccc.CreateSkillGroup API asynchronously
-// api document: https://help.aliyun.com/api/ccc/createskillgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSkillGroupWithCallback(request *CreateSkillGroupRequest, callback func(response *CreateSkillGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,6 +98,7 @@ func CreateCreateSkillGroupRequest() (request *CreateSkillGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "CreateSkillGroup", "", "")
+	request.Method = requests.POST
 	return
 }
 

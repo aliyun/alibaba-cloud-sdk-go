@@ -21,7 +21,6 @@ import (
 )
 
 // CreateCabInstance invokes the ccc.CreateCabInstance API synchronously
-// api document: https://help.aliyun.com/api/ccc/createcabinstance.html
 func (client *Client) CreateCabInstance(request *CreateCabInstanceRequest) (response *CreateCabInstanceResponse, err error) {
 	response = CreateCreateCabInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateCabInstance(request *CreateCabInstanceRequest) (resp
 }
 
 // CreateCabInstanceWithChan invokes the ccc.CreateCabInstance API asynchronously
-// api document: https://help.aliyun.com/api/ccc/createcabinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCabInstanceWithChan(request *CreateCabInstanceRequest) (<-chan *CreateCabInstanceResponse, <-chan error) {
 	responseChan := make(chan *CreateCabInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateCabInstanceWithChan(request *CreateCabInstanceReques
 }
 
 // CreateCabInstanceWithCallback invokes the ccc.CreateCabInstance API asynchronously
-// api document: https://help.aliyun.com/api/ccc/createcabinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCabInstanceWithCallback(request *CreateCabInstanceRequest, callback func(response *CreateCabInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateCreateCabInstanceRequest() (request *CreateCabInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "CreateCabInstance", "", "")
+	request.Method = requests.POST
 	return
 }
 

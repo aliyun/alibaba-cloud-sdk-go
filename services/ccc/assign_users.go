@@ -21,7 +21,6 @@ import (
 )
 
 // AssignUsers invokes the ccc.AssignUsers API synchronously
-// api document: https://help.aliyun.com/api/ccc/assignusers.html
 func (client *Client) AssignUsers(request *AssignUsersRequest) (response *AssignUsersResponse, err error) {
 	response = CreateAssignUsersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AssignUsers(request *AssignUsersRequest) (response *Assign
 }
 
 // AssignUsersWithChan invokes the ccc.AssignUsers API asynchronously
-// api document: https://help.aliyun.com/api/ccc/assignusers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssignUsersWithChan(request *AssignUsersRequest) (<-chan *AssignUsersResponse, <-chan error) {
 	responseChan := make(chan *AssignUsersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AssignUsersWithChan(request *AssignUsersRequest) (<-chan *
 }
 
 // AssignUsersWithCallback invokes the ccc.AssignUsers API asynchronously
-// api document: https://help.aliyun.com/api/ccc/assignusers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssignUsersWithCallback(request *AssignUsersRequest, callback func(response *AssignUsersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateAssignUsersRequest() (request *AssignUsersRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "AssignUsers", "", "")
+	request.Method = requests.POST
 	return
 }
 

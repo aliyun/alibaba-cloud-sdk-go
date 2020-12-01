@@ -21,7 +21,6 @@ import (
 )
 
 // ListRealTimeAgent invokes the ccc.ListRealTimeAgent API synchronously
-// api document: https://help.aliyun.com/api/ccc/listrealtimeagent.html
 func (client *Client) ListRealTimeAgent(request *ListRealTimeAgentRequest) (response *ListRealTimeAgentResponse, err error) {
 	response = CreateListRealTimeAgentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListRealTimeAgent(request *ListRealTimeAgentRequest) (resp
 }
 
 // ListRealTimeAgentWithChan invokes the ccc.ListRealTimeAgent API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listrealtimeagent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRealTimeAgentWithChan(request *ListRealTimeAgentRequest) (<-chan *ListRealTimeAgentResponse, <-chan error) {
 	responseChan := make(chan *ListRealTimeAgentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListRealTimeAgentWithChan(request *ListRealTimeAgentReques
 }
 
 // ListRealTimeAgentWithCallback invokes the ccc.ListRealTimeAgent API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listrealtimeagent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRealTimeAgentWithCallback(request *ListRealTimeAgentRequest, callback func(response *ListRealTimeAgentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateListRealTimeAgentRequest() (request *ListRealTimeAgentRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListRealTimeAgent", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSkillGroup invokes the ccc.DeleteSkillGroup API synchronously
-// api document: https://help.aliyun.com/api/ccc/deleteskillgroup.html
 func (client *Client) DeleteSkillGroup(request *DeleteSkillGroupRequest) (response *DeleteSkillGroupResponse, err error) {
 	response = CreateDeleteSkillGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSkillGroup(request *DeleteSkillGroupRequest) (respon
 }
 
 // DeleteSkillGroupWithChan invokes the ccc.DeleteSkillGroup API asynchronously
-// api document: https://help.aliyun.com/api/ccc/deleteskillgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSkillGroupWithChan(request *DeleteSkillGroupRequest) (<-chan *DeleteSkillGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteSkillGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSkillGroupWithChan(request *DeleteSkillGroupRequest)
 }
 
 // DeleteSkillGroupWithCallback invokes the ccc.DeleteSkillGroup API asynchronously
-// api document: https://help.aliyun.com/api/ccc/deleteskillgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSkillGroupWithCallback(request *DeleteSkillGroupRequest, callback func(response *DeleteSkillGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateDeleteSkillGroupRequest() (request *DeleteSkillGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "DeleteSkillGroup", "", "")
+	request.Method = requests.POST
 	return
 }
 

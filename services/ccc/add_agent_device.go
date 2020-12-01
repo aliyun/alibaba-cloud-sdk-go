@@ -21,7 +21,6 @@ import (
 )
 
 // AddAgentDevice invokes the ccc.AddAgentDevice API synchronously
-// api document: https://help.aliyun.com/api/ccc/addagentdevice.html
 func (client *Client) AddAgentDevice(request *AddAgentDeviceRequest) (response *AddAgentDeviceResponse, err error) {
 	response = CreateAddAgentDeviceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddAgentDevice(request *AddAgentDeviceRequest) (response *
 }
 
 // AddAgentDeviceWithChan invokes the ccc.AddAgentDevice API asynchronously
-// api document: https://help.aliyun.com/api/ccc/addagentdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddAgentDeviceWithChan(request *AddAgentDeviceRequest) (<-chan *AddAgentDeviceResponse, <-chan error) {
 	responseChan := make(chan *AddAgentDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddAgentDeviceWithChan(request *AddAgentDeviceRequest) (<-
 }
 
 // AddAgentDeviceWithCallback invokes the ccc.AddAgentDevice API asynchronously
-// api document: https://help.aliyun.com/api/ccc/addagentdevice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddAgentDeviceWithCallback(request *AddAgentDeviceRequest, callback func(response *AddAgentDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateAddAgentDeviceRequest() (request *AddAgentDeviceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "AddAgentDevice", "", "")
+	request.Method = requests.POST
 	return
 }
 

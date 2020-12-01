@@ -21,7 +21,6 @@ import (
 )
 
 // ListAgentStates invokes the ccc.ListAgentStates API synchronously
-// api document: https://help.aliyun.com/api/ccc/listagentstates.html
 func (client *Client) ListAgentStates(request *ListAgentStatesRequest) (response *ListAgentStatesResponse, err error) {
 	response = CreateListAgentStatesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAgentStates(request *ListAgentStatesRequest) (response
 }
 
 // ListAgentStatesWithChan invokes the ccc.ListAgentStates API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listagentstates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAgentStatesWithChan(request *ListAgentStatesRequest) (<-chan *ListAgentStatesResponse, <-chan error) {
 	responseChan := make(chan *ListAgentStatesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAgentStatesWithChan(request *ListAgentStatesRequest) (
 }
 
 // ListAgentStatesWithCallback invokes the ccc.ListAgentStates API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listagentstates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAgentStatesWithCallback(request *ListAgentStatesRequest, callback func(response *ListAgentStatesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +96,7 @@ func CreateListAgentStatesRequest() (request *ListAgentStatesRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListAgentStates", "", "")
+	request.Method = requests.POST
 	return
 }
 

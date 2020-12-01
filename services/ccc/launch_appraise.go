@@ -21,7 +21,6 @@ import (
 )
 
 // LaunchAppraise invokes the ccc.LaunchAppraise API synchronously
-// api document: https://help.aliyun.com/api/ccc/launchappraise.html
 func (client *Client) LaunchAppraise(request *LaunchAppraiseRequest) (response *LaunchAppraiseResponse, err error) {
 	response = CreateLaunchAppraiseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) LaunchAppraise(request *LaunchAppraiseRequest) (response *
 }
 
 // LaunchAppraiseWithChan invokes the ccc.LaunchAppraise API asynchronously
-// api document: https://help.aliyun.com/api/ccc/launchappraise.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LaunchAppraiseWithChan(request *LaunchAppraiseRequest) (<-chan *LaunchAppraiseResponse, <-chan error) {
 	responseChan := make(chan *LaunchAppraiseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) LaunchAppraiseWithChan(request *LaunchAppraiseRequest) (<-
 }
 
 // LaunchAppraiseWithCallback invokes the ccc.LaunchAppraise API asynchronously
-// api document: https://help.aliyun.com/api/ccc/launchappraise.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LaunchAppraiseWithCallback(request *LaunchAppraiseRequest, callback func(response *LaunchAppraiseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateLaunchAppraiseRequest() (request *LaunchAppraiseRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "LaunchAppraise", "", "")
+	request.Method = requests.POST
 	return
 }
 

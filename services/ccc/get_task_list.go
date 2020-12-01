@@ -21,7 +21,6 @@ import (
 )
 
 // GetTaskList invokes the ccc.GetTaskList API synchronously
-// api document: https://help.aliyun.com/api/ccc/gettasklist.html
 func (client *Client) GetTaskList(request *GetTaskListRequest) (response *GetTaskListResponse, err error) {
 	response = CreateGetTaskListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetTaskList(request *GetTaskListRequest) (response *GetTas
 }
 
 // GetTaskListWithChan invokes the ccc.GetTaskList API asynchronously
-// api document: https://help.aliyun.com/api/ccc/gettasklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTaskListWithChan(request *GetTaskListRequest) (<-chan *GetTaskListResponse, <-chan error) {
 	responseChan := make(chan *GetTaskListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetTaskListWithChan(request *GetTaskListRequest) (<-chan *
 }
 
 // GetTaskListWithCallback invokes the ccc.GetTaskList API asynchronously
-// api document: https://help.aliyun.com/api/ccc/gettasklist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTaskListWithCallback(request *GetTaskListRequest, callback func(response *GetTaskListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateGetTaskListRequest() (request *GetTaskListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetTaskList", "", "")
+	request.Method = requests.POST
 	return
 }
 

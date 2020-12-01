@@ -21,7 +21,6 @@ import (
 )
 
 // CreateContactFlow invokes the ccc.CreateContactFlow API synchronously
-// api document: https://help.aliyun.com/api/ccc/createcontactflow.html
 func (client *Client) CreateContactFlow(request *CreateContactFlowRequest) (response *CreateContactFlowResponse, err error) {
 	response = CreateCreateContactFlowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateContactFlow(request *CreateContactFlowRequest) (resp
 }
 
 // CreateContactFlowWithChan invokes the ccc.CreateContactFlow API asynchronously
-// api document: https://help.aliyun.com/api/ccc/createcontactflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateContactFlowWithChan(request *CreateContactFlowRequest) (<-chan *CreateContactFlowResponse, <-chan error) {
 	responseChan := make(chan *CreateContactFlowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateContactFlowWithChan(request *CreateContactFlowReques
 }
 
 // CreateContactFlowWithCallback invokes the ccc.CreateContactFlow API asynchronously
-// api document: https://help.aliyun.com/api/ccc/createcontactflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateContactFlowWithCallback(request *CreateContactFlowRequest, callback func(response *CreateContactFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +96,7 @@ func CreateCreateContactFlowRequest() (request *CreateContactFlowRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "CreateContactFlow", "", "")
+	request.Method = requests.POST
 	return
 }
 

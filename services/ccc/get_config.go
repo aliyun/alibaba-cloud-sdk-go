@@ -21,7 +21,6 @@ import (
 )
 
 // GetConfig invokes the ccc.GetConfig API synchronously
-// api document: https://help.aliyun.com/api/ccc/getconfig.html
 func (client *Client) GetConfig(request *GetConfigRequest) (response *GetConfigResponse, err error) {
 	response = CreateGetConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetConfig(request *GetConfigRequest) (response *GetConfigR
 }
 
 // GetConfigWithChan invokes the ccc.GetConfig API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetConfigWithChan(request *GetConfigRequest) (<-chan *GetConfigResponse, <-chan error) {
 	responseChan := make(chan *GetConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetConfigWithChan(request *GetConfigRequest) (<-chan *GetC
 }
 
 // GetConfigWithCallback invokes the ccc.GetConfig API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetConfigWithCallback(request *GetConfigRequest, callback func(response *GetConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateGetConfigRequest() (request *GetConfigRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

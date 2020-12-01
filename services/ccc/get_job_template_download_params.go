@@ -21,7 +21,6 @@ import (
 )
 
 // GetJobTemplateDownloadParams invokes the ccc.GetJobTemplateDownloadParams API synchronously
-// api document: https://help.aliyun.com/api/ccc/getjobtemplatedownloadparams.html
 func (client *Client) GetJobTemplateDownloadParams(request *GetJobTemplateDownloadParamsRequest) (response *GetJobTemplateDownloadParamsResponse, err error) {
 	response = CreateGetJobTemplateDownloadParamsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetJobTemplateDownloadParams(request *GetJobTemplateDownlo
 }
 
 // GetJobTemplateDownloadParamsWithChan invokes the ccc.GetJobTemplateDownloadParams API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getjobtemplatedownloadparams.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJobTemplateDownloadParamsWithChan(request *GetJobTemplateDownloadParamsRequest) (<-chan *GetJobTemplateDownloadParamsResponse, <-chan error) {
 	responseChan := make(chan *GetJobTemplateDownloadParamsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetJobTemplateDownloadParamsWithChan(request *GetJobTempla
 }
 
 // GetJobTemplateDownloadParamsWithCallback invokes the ccc.GetJobTemplateDownloadParams API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getjobtemplatedownloadparams.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJobTemplateDownloadParamsWithCallback(request *GetJobTemplateDownloadParamsRequest, callback func(response *GetJobTemplateDownloadParamsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateGetJobTemplateDownloadParamsRequest() (request *GetJobTemplateDownloa
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetJobTemplateDownloadParams", "", "")
+	request.Method = requests.POST
 	return
 }
 

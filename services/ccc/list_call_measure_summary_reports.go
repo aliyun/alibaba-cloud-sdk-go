@@ -21,7 +21,6 @@ import (
 )
 
 // ListCallMeasureSummaryReports invokes the ccc.ListCallMeasureSummaryReports API synchronously
-// api document: https://help.aliyun.com/api/ccc/listcallmeasuresummaryreports.html
 func (client *Client) ListCallMeasureSummaryReports(request *ListCallMeasureSummaryReportsRequest) (response *ListCallMeasureSummaryReportsResponse, err error) {
 	response = CreateListCallMeasureSummaryReportsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListCallMeasureSummaryReports(request *ListCallMeasureSumm
 }
 
 // ListCallMeasureSummaryReportsWithChan invokes the ccc.ListCallMeasureSummaryReports API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listcallmeasuresummaryreports.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCallMeasureSummaryReportsWithChan(request *ListCallMeasureSummaryReportsRequest) (<-chan *ListCallMeasureSummaryReportsResponse, <-chan error) {
 	responseChan := make(chan *ListCallMeasureSummaryReportsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListCallMeasureSummaryReportsWithChan(request *ListCallMea
 }
 
 // ListCallMeasureSummaryReportsWithCallback invokes the ccc.ListCallMeasureSummaryReports API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listcallmeasuresummaryreports.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCallMeasureSummaryReportsWithCallback(request *ListCallMeasureSummaryReportsRequest, callback func(response *ListCallMeasureSummaryReportsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateListCallMeasureSummaryReportsRequest() (request *ListCallMeasureSumma
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListCallMeasureSummaryReports", "", "")
+	request.Method = requests.POST
 	return
 }
 

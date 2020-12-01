@@ -20,6 +20,7 @@ type Detail struct {
 	Email       string `json:"Email" xml:"Email"`
 	LoginName   string `json:"LoginName" xml:"LoginName"`
 	Department  string `json:"Department" xml:"Department"`
+	Extension   string `json:"Extension" xml:"Extension"`
 	Phone       string `json:"Phone" xml:"Phone"`
 	DisplayName string `json:"DisplayName" xml:"DisplayName"`
 }

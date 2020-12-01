@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveUsersFromSkillGroup invokes the ccc.RemoveUsersFromSkillGroup API synchronously
-// api document: https://help.aliyun.com/api/ccc/removeusersfromskillgroup.html
 func (client *Client) RemoveUsersFromSkillGroup(request *RemoveUsersFromSkillGroupRequest) (response *RemoveUsersFromSkillGroupResponse, err error) {
 	response = CreateRemoveUsersFromSkillGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveUsersFromSkillGroup(request *RemoveUsersFromSkillGro
 }
 
 // RemoveUsersFromSkillGroupWithChan invokes the ccc.RemoveUsersFromSkillGroup API asynchronously
-// api document: https://help.aliyun.com/api/ccc/removeusersfromskillgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveUsersFromSkillGroupWithChan(request *RemoveUsersFromSkillGroupRequest) (<-chan *RemoveUsersFromSkillGroupResponse, <-chan error) {
 	responseChan := make(chan *RemoveUsersFromSkillGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveUsersFromSkillGroupWithChan(request *RemoveUsersFrom
 }
 
 // RemoveUsersFromSkillGroupWithCallback invokes the ccc.RemoveUsersFromSkillGroup API asynchronously
-// api document: https://help.aliyun.com/api/ccc/removeusersfromskillgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveUsersFromSkillGroupWithCallback(request *RemoveUsersFromSkillGroupRequest, callback func(response *RemoveUsersFromSkillGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateRemoveUsersFromSkillGroupRequest() (request *RemoveUsersFromSkillGrou
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "RemoveUsersFromSkillGroup", "", "")
+	request.Method = requests.POST
 	return
 }
 

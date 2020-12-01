@@ -21,7 +21,6 @@ import (
 )
 
 // RemoveUsers invokes the ccc.RemoveUsers API synchronously
-// api document: https://help.aliyun.com/api/ccc/removeusers.html
 func (client *Client) RemoveUsers(request *RemoveUsersRequest) (response *RemoveUsersResponse, err error) {
 	response = CreateRemoveUsersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RemoveUsers(request *RemoveUsersRequest) (response *Remove
 }
 
 // RemoveUsersWithChan invokes the ccc.RemoveUsers API asynchronously
-// api document: https://help.aliyun.com/api/ccc/removeusers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveUsersWithChan(request *RemoveUsersRequest) (<-chan *RemoveUsersResponse, <-chan error) {
 	responseChan := make(chan *RemoveUsersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RemoveUsersWithChan(request *RemoveUsersRequest) (<-chan *
 }
 
 // RemoveUsersWithCallback invokes the ccc.RemoveUsers API asynchronously
-// api document: https://help.aliyun.com/api/ccc/removeusers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveUsersWithCallback(request *RemoveUsersRequest, callback func(response *RemoveUsersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateRemoveUsersRequest() (request *RemoveUsersRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "RemoveUsers", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // ListCallEventDetailByContactId invokes the ccc.ListCallEventDetailByContactId API synchronously
-// api document: https://help.aliyun.com/api/ccc/listcalleventdetailbycontactid.html
 func (client *Client) ListCallEventDetailByContactId(request *ListCallEventDetailByContactIdRequest) (response *ListCallEventDetailByContactIdResponse, err error) {
 	response = CreateListCallEventDetailByContactIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListCallEventDetailByContactId(request *ListCallEventDetai
 }
 
 // ListCallEventDetailByContactIdWithChan invokes the ccc.ListCallEventDetailByContactId API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listcalleventdetailbycontactid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCallEventDetailByContactIdWithChan(request *ListCallEventDetailByContactIdRequest) (<-chan *ListCallEventDetailByContactIdResponse, <-chan error) {
 	responseChan := make(chan *ListCallEventDetailByContactIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListCallEventDetailByContactIdWithChan(request *ListCallEv
 }
 
 // ListCallEventDetailByContactIdWithCallback invokes the ccc.ListCallEventDetailByContactId API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listcalleventdetailbycontactid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCallEventDetailByContactIdWithCallback(request *ListCallEventDetailByContactIdRequest, callback func(response *ListCallEventDetailByContactIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateListCallEventDetailByContactIdRequest() (request *ListCallEventDetail
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListCallEventDetailByContactId", "", "")
+	request.Method = requests.POST
 	return
 }
 

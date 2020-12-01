@@ -21,7 +21,6 @@ import (
 )
 
 // GetInstanceSummaryReportByInterval invokes the ccc.GetInstanceSummaryReportByInterval API synchronously
-// api document: https://help.aliyun.com/api/ccc/getinstancesummaryreportbyinterval.html
 func (client *Client) GetInstanceSummaryReportByInterval(request *GetInstanceSummaryReportByIntervalRequest) (response *GetInstanceSummaryReportByIntervalResponse, err error) {
 	response = CreateGetInstanceSummaryReportByIntervalResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetInstanceSummaryReportByInterval(request *GetInstanceSum
 }
 
 // GetInstanceSummaryReportByIntervalWithChan invokes the ccc.GetInstanceSummaryReportByInterval API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getinstancesummaryreportbyinterval.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceSummaryReportByIntervalWithChan(request *GetInstanceSummaryReportByIntervalRequest) (<-chan *GetInstanceSummaryReportByIntervalResponse, <-chan error) {
 	responseChan := make(chan *GetInstanceSummaryReportByIntervalResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetInstanceSummaryReportByIntervalWithChan(request *GetIns
 }
 
 // GetInstanceSummaryReportByIntervalWithCallback invokes the ccc.GetInstanceSummaryReportByInterval API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getinstancesummaryreportbyinterval.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceSummaryReportByIntervalWithCallback(request *GetInstanceSummaryReportByIntervalRequest, callback func(response *GetInstanceSummaryReportByIntervalResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +96,7 @@ func CreateGetInstanceSummaryReportByIntervalRequest() (request *GetInstanceSumm
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetInstanceSummaryReportByInterval", "", "")
+	request.Method = requests.POST
 	return
 }
 

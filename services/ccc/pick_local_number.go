@@ -21,7 +21,6 @@ import (
 )
 
 // PickLocalNumber invokes the ccc.PickLocalNumber API synchronously
-// api document: https://help.aliyun.com/api/ccc/picklocalnumber.html
 func (client *Client) PickLocalNumber(request *PickLocalNumberRequest) (response *PickLocalNumberResponse, err error) {
 	response = CreatePickLocalNumberResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PickLocalNumber(request *PickLocalNumberRequest) (response
 }
 
 // PickLocalNumberWithChan invokes the ccc.PickLocalNumber API asynchronously
-// api document: https://help.aliyun.com/api/ccc/picklocalnumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PickLocalNumberWithChan(request *PickLocalNumberRequest) (<-chan *PickLocalNumberResponse, <-chan error) {
 	responseChan := make(chan *PickLocalNumberResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PickLocalNumberWithChan(request *PickLocalNumberRequest) (
 }
 
 // PickLocalNumberWithCallback invokes the ccc.PickLocalNumber API asynchronously
-// api document: https://help.aliyun.com/api/ccc/picklocalnumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PickLocalNumberWithCallback(request *PickLocalNumberRequest, callback func(response *PickLocalNumberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreatePickLocalNumberRequest() (request *PickLocalNumberRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "PickLocalNumber", "", "")
+	request.Method = requests.POST
 	return
 }
 

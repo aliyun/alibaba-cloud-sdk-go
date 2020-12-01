@@ -21,7 +21,6 @@ import (
 )
 
 // CheckNumberAvaliable invokes the ccc.CheckNumberAvaliable API synchronously
-// api document: https://help.aliyun.com/api/ccc/checknumberavaliable.html
 func (client *Client) CheckNumberAvaliable(request *CheckNumberAvaliableRequest) (response *CheckNumberAvaliableResponse, err error) {
 	response = CreateCheckNumberAvaliableResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CheckNumberAvaliable(request *CheckNumberAvaliableRequest)
 }
 
 // CheckNumberAvaliableWithChan invokes the ccc.CheckNumberAvaliable API asynchronously
-// api document: https://help.aliyun.com/api/ccc/checknumberavaliable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckNumberAvaliableWithChan(request *CheckNumberAvaliableRequest) (<-chan *CheckNumberAvaliableResponse, <-chan error) {
 	responseChan := make(chan *CheckNumberAvaliableResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CheckNumberAvaliableWithChan(request *CheckNumberAvaliable
 }
 
 // CheckNumberAvaliableWithCallback invokes the ccc.CheckNumberAvaliable API asynchronously
-// api document: https://help.aliyun.com/api/ccc/checknumberavaliable.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckNumberAvaliableWithCallback(request *CheckNumberAvaliableRequest, callback func(response *CheckNumberAvaliableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateCheckNumberAvaliableRequest() (request *CheckNumberAvaliableRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "CheckNumberAvaliable", "", "")
+	request.Method = requests.POST
 	return
 }
 

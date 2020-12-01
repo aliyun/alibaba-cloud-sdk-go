@@ -21,7 +21,6 @@ import (
 )
 
 // ListAgentEvents invokes the ccc.ListAgentEvents API synchronously
-// api document: https://help.aliyun.com/api/ccc/listagentevents.html
 func (client *Client) ListAgentEvents(request *ListAgentEventsRequest) (response *ListAgentEventsResponse, err error) {
 	response = CreateListAgentEventsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAgentEvents(request *ListAgentEventsRequest) (response
 }
 
 // ListAgentEventsWithChan invokes the ccc.ListAgentEvents API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listagentevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAgentEventsWithChan(request *ListAgentEventsRequest) (<-chan *ListAgentEventsResponse, <-chan error) {
 	responseChan := make(chan *ListAgentEventsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAgentEventsWithChan(request *ListAgentEventsRequest) (
 }
 
 // ListAgentEventsWithCallback invokes the ccc.ListAgentEvents API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listagentevents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAgentEventsWithCallback(request *ListAgentEventsRequest, callback func(response *ListAgentEventsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateListAgentEventsRequest() (request *ListAgentEventsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListAgentEvents", "", "")
+	request.Method = requests.POST
 	return
 }
 

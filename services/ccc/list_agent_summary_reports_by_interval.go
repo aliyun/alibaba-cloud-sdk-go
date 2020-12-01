@@ -21,7 +21,6 @@ import (
 )
 
 // ListAgentSummaryReportsByInterval invokes the ccc.ListAgentSummaryReportsByInterval API synchronously
-// api document: https://help.aliyun.com/api/ccc/listagentsummaryreportsbyinterval.html
 func (client *Client) ListAgentSummaryReportsByInterval(request *ListAgentSummaryReportsByIntervalRequest) (response *ListAgentSummaryReportsByIntervalResponse, err error) {
 	response = CreateListAgentSummaryReportsByIntervalResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAgentSummaryReportsByInterval(request *ListAgentSummar
 }
 
 // ListAgentSummaryReportsByIntervalWithChan invokes the ccc.ListAgentSummaryReportsByInterval API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listagentsummaryreportsbyinterval.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAgentSummaryReportsByIntervalWithChan(request *ListAgentSummaryReportsByIntervalRequest) (<-chan *ListAgentSummaryReportsByIntervalResponse, <-chan error) {
 	responseChan := make(chan *ListAgentSummaryReportsByIntervalResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAgentSummaryReportsByIntervalWithChan(request *ListAge
 }
 
 // ListAgentSummaryReportsByIntervalWithCallback invokes the ccc.ListAgentSummaryReportsByInterval API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listagentsummaryreportsbyinterval.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAgentSummaryReportsByIntervalWithCallback(request *ListAgentSummaryReportsByIntervalRequest, callback func(response *ListAgentSummaryReportsByIntervalResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,6 +98,7 @@ func CreateListAgentSummaryReportsByIntervalRequest() (request *ListAgentSummary
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListAgentSummaryReportsByInterval", "", "")
+	request.Method = requests.POST
 	return
 }
 

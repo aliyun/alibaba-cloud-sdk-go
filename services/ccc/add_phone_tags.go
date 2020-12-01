@@ -21,7 +21,6 @@ import (
 )
 
 // AddPhoneTags invokes the ccc.AddPhoneTags API synchronously
-// api document: https://help.aliyun.com/api/ccc/addphonetags.html
 func (client *Client) AddPhoneTags(request *AddPhoneTagsRequest) (response *AddPhoneTagsResponse, err error) {
 	response = CreateAddPhoneTagsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AddPhoneTags(request *AddPhoneTagsRequest) (response *AddP
 }
 
 // AddPhoneTagsWithChan invokes the ccc.AddPhoneTags API asynchronously
-// api document: https://help.aliyun.com/api/ccc/addphonetags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddPhoneTagsWithChan(request *AddPhoneTagsRequest) (<-chan *AddPhoneTagsResponse, <-chan error) {
 	responseChan := make(chan *AddPhoneTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AddPhoneTagsWithChan(request *AddPhoneTagsRequest) (<-chan
 }
 
 // AddPhoneTagsWithCallback invokes the ccc.AddPhoneTags API asynchronously
-// api document: https://help.aliyun.com/api/ccc/addphonetags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddPhoneTagsWithCallback(request *AddPhoneTagsRequest, callback func(response *AddPhoneTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +78,7 @@ type AddPhoneTagsRequest struct {
 	Provider           string           `position:"Query" name:"Provider"`
 	PhoneNumberList    *[]string        `position:"Query" name:"PhoneNumberList"  type:"Repeated"`
 	ServiceTag         string           `position:"Query" name:"ServiceTag"`
+	SipTag             string           `position:"Query" name:"SipTag"`
 	RegionNameCity     string           `position:"Query" name:"RegionNameCity"`
 }
 
@@ -102,6 +98,7 @@ func CreateAddPhoneTagsRequest() (request *AddPhoneTagsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "AddPhoneTags", "", "")
+	request.Method = requests.POST
 	return
 }
 

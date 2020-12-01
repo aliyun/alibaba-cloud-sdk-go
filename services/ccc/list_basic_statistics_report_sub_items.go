@@ -21,7 +21,6 @@ import (
 )
 
 // ListBasicStatisticsReportSubItems invokes the ccc.ListBasicStatisticsReportSubItems API synchronously
-// api document: https://help.aliyun.com/api/ccc/listbasicstatisticsreportsubitems.html
 func (client *Client) ListBasicStatisticsReportSubItems(request *ListBasicStatisticsReportSubItemsRequest) (response *ListBasicStatisticsReportSubItemsResponse, err error) {
 	response = CreateListBasicStatisticsReportSubItemsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListBasicStatisticsReportSubItems(request *ListBasicStatis
 }
 
 // ListBasicStatisticsReportSubItemsWithChan invokes the ccc.ListBasicStatisticsReportSubItems API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listbasicstatisticsreportsubitems.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListBasicStatisticsReportSubItemsWithChan(request *ListBasicStatisticsReportSubItemsRequest) (<-chan *ListBasicStatisticsReportSubItemsResponse, <-chan error) {
 	responseChan := make(chan *ListBasicStatisticsReportSubItemsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListBasicStatisticsReportSubItemsWithChan(request *ListBas
 }
 
 // ListBasicStatisticsReportSubItemsWithCallback invokes the ccc.ListBasicStatisticsReportSubItems API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listbasicstatisticsreportsubitems.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListBasicStatisticsReportSubItemsWithCallback(request *ListBasicStatisticsReportSubItemsRequest, callback func(response *ListBasicStatisticsReportSubItemsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateListBasicStatisticsReportSubItemsRequest() (request *ListBasicStatist
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListBasicStatisticsReportSubItems", "", "")
+	request.Method = requests.POST
 	return
 }
 

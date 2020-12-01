@@ -21,7 +21,6 @@ import (
 )
 
 // LaunchShortMessageAppraise invokes the ccc.LaunchShortMessageAppraise API synchronously
-// api document: https://help.aliyun.com/api/ccc/launchshortmessageappraise.html
 func (client *Client) LaunchShortMessageAppraise(request *LaunchShortMessageAppraiseRequest) (response *LaunchShortMessageAppraiseResponse, err error) {
 	response = CreateLaunchShortMessageAppraiseResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) LaunchShortMessageAppraise(request *LaunchShortMessageAppr
 }
 
 // LaunchShortMessageAppraiseWithChan invokes the ccc.LaunchShortMessageAppraise API asynchronously
-// api document: https://help.aliyun.com/api/ccc/launchshortmessageappraise.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LaunchShortMessageAppraiseWithChan(request *LaunchShortMessageAppraiseRequest) (<-chan *LaunchShortMessageAppraiseResponse, <-chan error) {
 	responseChan := make(chan *LaunchShortMessageAppraiseResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) LaunchShortMessageAppraiseWithChan(request *LaunchShortMes
 }
 
 // LaunchShortMessageAppraiseWithCallback invokes the ccc.LaunchShortMessageAppraise API asynchronously
-// api document: https://help.aliyun.com/api/ccc/launchshortmessageappraise.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LaunchShortMessageAppraiseWithCallback(request *LaunchShortMessageAppraiseRequest, callback func(response *LaunchShortMessageAppraiseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateLaunchShortMessageAppraiseRequest() (request *LaunchShortMessageAppra
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "LaunchShortMessageAppraise", "", "")
+	request.Method = requests.POST
 	return
 }
 

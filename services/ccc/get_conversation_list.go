@@ -21,7 +21,6 @@ import (
 )
 
 // GetConversationList invokes the ccc.GetConversationList API synchronously
-// api document: https://help.aliyun.com/api/ccc/getconversationlist.html
 func (client *Client) GetConversationList(request *GetConversationListRequest) (response *GetConversationListResponse, err error) {
 	response = CreateGetConversationListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetConversationList(request *GetConversationListRequest) (
 }
 
 // GetConversationListWithChan invokes the ccc.GetConversationList API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getconversationlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetConversationListWithChan(request *GetConversationListRequest) (<-chan *GetConversationListResponse, <-chan error) {
 	responseChan := make(chan *GetConversationListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetConversationListWithChan(request *GetConversationListRe
 }
 
 // GetConversationListWithCallback invokes the ccc.GetConversationList API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getconversationlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetConversationListWithCallback(request *GetConversationListRequest, callback func(response *GetConversationListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateGetConversationListRequest() (request *GetConversationListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetConversationList", "", "")
+	request.Method = requests.POST
 	return
 }
 

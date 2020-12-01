@@ -21,7 +21,6 @@ import (
 )
 
 // GetNumberRegionInfo invokes the ccc.GetNumberRegionInfo API synchronously
-// api document: https://help.aliyun.com/api/ccc/getnumberregioninfo.html
 func (client *Client) GetNumberRegionInfo(request *GetNumberRegionInfoRequest) (response *GetNumberRegionInfoResponse, err error) {
 	response = CreateGetNumberRegionInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetNumberRegionInfo(request *GetNumberRegionInfoRequest) (
 }
 
 // GetNumberRegionInfoWithChan invokes the ccc.GetNumberRegionInfo API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getnumberregioninfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetNumberRegionInfoWithChan(request *GetNumberRegionInfoRequest) (<-chan *GetNumberRegionInfoResponse, <-chan error) {
 	responseChan := make(chan *GetNumberRegionInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetNumberRegionInfoWithChan(request *GetNumberRegionInfoRe
 }
 
 // GetNumberRegionInfoWithCallback invokes the ccc.GetNumberRegionInfo API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getnumberregioninfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetNumberRegionInfoWithCallback(request *GetNumberRegionInfoRequest, callback func(response *GetNumberRegionInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateGetNumberRegionInfoRequest() (request *GetNumberRegionInfoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetNumberRegionInfo", "", "")
+	request.Method = requests.POST
 	return
 }
 

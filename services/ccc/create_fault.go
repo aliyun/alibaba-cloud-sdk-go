@@ -21,7 +21,6 @@ import (
 )
 
 // CreateFault invokes the ccc.CreateFault API synchronously
-// api document: https://help.aliyun.com/api/ccc/createfault.html
 func (client *Client) CreateFault(request *CreateFaultRequest) (response *CreateFaultResponse, err error) {
 	response = CreateCreateFaultResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateFault(request *CreateFaultRequest) (response *Create
 }
 
 // CreateFaultWithChan invokes the ccc.CreateFault API asynchronously
-// api document: https://help.aliyun.com/api/ccc/createfault.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFaultWithChan(request *CreateFaultRequest) (<-chan *CreateFaultResponse, <-chan error) {
 	responseChan := make(chan *CreateFaultResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateFaultWithChan(request *CreateFaultRequest) (<-chan *
 }
 
 // CreateFaultWithCallback invokes the ccc.CreateFault API asynchronously
-// api document: https://help.aliyun.com/api/ccc/createfault.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFaultWithCallback(request *CreateFaultRequest, callback func(response *CreateFaultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -114,6 +109,7 @@ func CreateCreateFaultRequest() (request *CreateFaultRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "CreateFault", "", "")
+	request.Method = requests.POST
 	return
 }
 

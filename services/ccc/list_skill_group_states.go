@@ -21,7 +21,6 @@ import (
 )
 
 // ListSkillGroupStates invokes the ccc.ListSkillGroupStates API synchronously
-// api document: https://help.aliyun.com/api/ccc/listskillgroupstates.html
 func (client *Client) ListSkillGroupStates(request *ListSkillGroupStatesRequest) (response *ListSkillGroupStatesResponse, err error) {
 	response = CreateListSkillGroupStatesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSkillGroupStates(request *ListSkillGroupStatesRequest)
 }
 
 // ListSkillGroupStatesWithChan invokes the ccc.ListSkillGroupStates API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listskillgroupstates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSkillGroupStatesWithChan(request *ListSkillGroupStatesRequest) (<-chan *ListSkillGroupStatesResponse, <-chan error) {
 	responseChan := make(chan *ListSkillGroupStatesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSkillGroupStatesWithChan(request *ListSkillGroupStates
 }
 
 // ListSkillGroupStatesWithCallback invokes the ccc.ListSkillGroupStates API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listskillgroupstates.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSkillGroupStatesWithCallback(request *ListSkillGroupStatesRequest, callback func(response *ListSkillGroupStatesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateListSkillGroupStatesRequest() (request *ListSkillGroupStatesRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListSkillGroupStates", "", "")
+	request.Method = requests.POST
 	return
 }
 

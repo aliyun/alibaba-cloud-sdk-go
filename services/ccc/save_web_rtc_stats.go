@@ -21,7 +21,6 @@ import (
 )
 
 // SaveWebRTCStats invokes the ccc.SaveWebRTCStats API synchronously
-// api document: https://help.aliyun.com/api/ccc/savewebrtcstats.html
 func (client *Client) SaveWebRTCStats(request *SaveWebRTCStatsRequest) (response *SaveWebRTCStatsResponse, err error) {
 	response = CreateSaveWebRTCStatsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveWebRTCStats(request *SaveWebRTCStatsRequest) (response
 }
 
 // SaveWebRTCStatsWithChan invokes the ccc.SaveWebRTCStats API asynchronously
-// api document: https://help.aliyun.com/api/ccc/savewebrtcstats.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveWebRTCStatsWithChan(request *SaveWebRTCStatsRequest) (<-chan *SaveWebRTCStatsResponse, <-chan error) {
 	responseChan := make(chan *SaveWebRTCStatsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveWebRTCStatsWithChan(request *SaveWebRTCStatsRequest) (
 }
 
 // SaveWebRTCStatsWithCallback invokes the ccc.SaveWebRTCStats API asynchronously
-// api document: https://help.aliyun.com/api/ccc/savewebrtcstats.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveWebRTCStatsWithCallback(request *SaveWebRTCStatsRequest, callback func(response *SaveWebRTCStatsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,6 +99,7 @@ func CreateSaveWebRTCStatsRequest() (request *SaveWebRTCStatsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "SaveWebRTCStats", "", "")
+	request.Method = requests.POST
 	return
 }
 

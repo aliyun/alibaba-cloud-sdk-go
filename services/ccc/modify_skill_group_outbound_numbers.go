@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySkillGroupOutboundNumbers invokes the ccc.ModifySkillGroupOutboundNumbers API synchronously
-// api document: https://help.aliyun.com/api/ccc/modifyskillgroupoutboundnumbers.html
 func (client *Client) ModifySkillGroupOutboundNumbers(request *ModifySkillGroupOutboundNumbersRequest) (response *ModifySkillGroupOutboundNumbersResponse, err error) {
 	response = CreateModifySkillGroupOutboundNumbersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySkillGroupOutboundNumbers(request *ModifySkillGroupO
 }
 
 // ModifySkillGroupOutboundNumbersWithChan invokes the ccc.ModifySkillGroupOutboundNumbers API asynchronously
-// api document: https://help.aliyun.com/api/ccc/modifyskillgroupoutboundnumbers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySkillGroupOutboundNumbersWithChan(request *ModifySkillGroupOutboundNumbersRequest) (<-chan *ModifySkillGroupOutboundNumbersResponse, <-chan error) {
 	responseChan := make(chan *ModifySkillGroupOutboundNumbersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySkillGroupOutboundNumbersWithChan(request *ModifySki
 }
 
 // ModifySkillGroupOutboundNumbersWithCallback invokes the ccc.ModifySkillGroupOutboundNumbers API asynchronously
-// api document: https://help.aliyun.com/api/ccc/modifyskillgroupoutboundnumbers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySkillGroupOutboundNumbersWithCallback(request *ModifySkillGroupOutboundNumbersRequest, callback func(response *ModifySkillGroupOutboundNumbersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateModifySkillGroupOutboundNumbersRequest() (request *ModifySkillGroupOu
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ModifySkillGroupOutboundNumbers", "", "")
+	request.Method = requests.POST
 	return
 }
 

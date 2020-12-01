@@ -21,7 +21,6 @@ import (
 )
 
 // GenerateAgentStatisticReport invokes the ccc.GenerateAgentStatisticReport API synchronously
-// api document: https://help.aliyun.com/api/ccc/generateagentstatisticreport.html
 func (client *Client) GenerateAgentStatisticReport(request *GenerateAgentStatisticReportRequest) (response *GenerateAgentStatisticReportResponse, err error) {
 	response = CreateGenerateAgentStatisticReportResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GenerateAgentStatisticReport(request *GenerateAgentStatist
 }
 
 // GenerateAgentStatisticReportWithChan invokes the ccc.GenerateAgentStatisticReport API asynchronously
-// api document: https://help.aliyun.com/api/ccc/generateagentstatisticreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateAgentStatisticReportWithChan(request *GenerateAgentStatisticReportRequest) (<-chan *GenerateAgentStatisticReportResponse, <-chan error) {
 	responseChan := make(chan *GenerateAgentStatisticReportResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GenerateAgentStatisticReportWithChan(request *GenerateAgen
 }
 
 // GenerateAgentStatisticReportWithCallback invokes the ccc.GenerateAgentStatisticReport API asynchronously
-// api document: https://help.aliyun.com/api/ccc/generateagentstatisticreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateAgentStatisticReportWithCallback(request *GenerateAgentStatisticReportRequest, callback func(response *GenerateAgentStatisticReportResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +96,7 @@ func CreateGenerateAgentStatisticReportRequest() (request *GenerateAgentStatisti
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GenerateAgentStatisticReport", "", "")
+	request.Method = requests.POST
 	return
 }
 

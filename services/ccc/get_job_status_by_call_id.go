@@ -21,7 +21,6 @@ import (
 )
 
 // GetJobStatusByCallId invokes the ccc.GetJobStatusByCallId API synchronously
-// api document: https://help.aliyun.com/api/ccc/getjobstatusbycallid.html
 func (client *Client) GetJobStatusByCallId(request *GetJobStatusByCallIdRequest) (response *GetJobStatusByCallIdResponse, err error) {
 	response = CreateGetJobStatusByCallIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetJobStatusByCallId(request *GetJobStatusByCallIdRequest)
 }
 
 // GetJobStatusByCallIdWithChan invokes the ccc.GetJobStatusByCallId API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getjobstatusbycallid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJobStatusByCallIdWithChan(request *GetJobStatusByCallIdRequest) (<-chan *GetJobStatusByCallIdResponse, <-chan error) {
 	responseChan := make(chan *GetJobStatusByCallIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetJobStatusByCallIdWithChan(request *GetJobStatusByCallId
 }
 
 // GetJobStatusByCallIdWithCallback invokes the ccc.GetJobStatusByCallId API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getjobstatusbycallid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetJobStatusByCallIdWithCallback(request *GetJobStatusByCallIdRequest, callback func(response *GetJobStatusByCallIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateGetJobStatusByCallIdRequest() (request *GetJobStatusByCallIdRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetJobStatusByCallId", "", "")
+	request.Method = requests.POST
 	return
 }
 

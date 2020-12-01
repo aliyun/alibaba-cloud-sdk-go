@@ -21,7 +21,6 @@ import (
 )
 
 // DownloadAllTypeRecording invokes the ccc.DownloadAllTypeRecording API synchronously
-// api document: https://help.aliyun.com/api/ccc/downloadalltyperecording.html
 func (client *Client) DownloadAllTypeRecording(request *DownloadAllTypeRecordingRequest) (response *DownloadAllTypeRecordingResponse, err error) {
 	response = CreateDownloadAllTypeRecordingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DownloadAllTypeRecording(request *DownloadAllTypeRecording
 }
 
 // DownloadAllTypeRecordingWithChan invokes the ccc.DownloadAllTypeRecording API asynchronously
-// api document: https://help.aliyun.com/api/ccc/downloadalltyperecording.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DownloadAllTypeRecordingWithChan(request *DownloadAllTypeRecordingRequest) (<-chan *DownloadAllTypeRecordingResponse, <-chan error) {
 	responseChan := make(chan *DownloadAllTypeRecordingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DownloadAllTypeRecordingWithChan(request *DownloadAllTypeR
 }
 
 // DownloadAllTypeRecordingWithCallback invokes the ccc.DownloadAllTypeRecording API asynchronously
-// api document: https://help.aliyun.com/api/ccc/downloadalltyperecording.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DownloadAllTypeRecordingWithCallback(request *DownloadAllTypeRecordingRequest, callback func(response *DownloadAllTypeRecordingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateDownloadAllTypeRecordingRequest() (request *DownloadAllTypeRecordingR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "DownloadAllTypeRecording", "", "")
+	request.Method = requests.POST
 	return
 }
 

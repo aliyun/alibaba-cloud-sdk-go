@@ -21,7 +21,6 @@ import (
 )
 
 // ListMedias invokes the ccc.ListMedias API synchronously
-// api document: https://help.aliyun.com/api/ccc/listmedias.html
 func (client *Client) ListMedias(request *ListMediasRequest) (response *ListMediasResponse, err error) {
 	response = CreateListMediasResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListMedias(request *ListMediasRequest) (response *ListMedi
 }
 
 // ListMediasWithChan invokes the ccc.ListMedias API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listmedias.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMediasWithChan(request *ListMediasRequest) (<-chan *ListMediasResponse, <-chan error) {
 	responseChan := make(chan *ListMediasResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListMediasWithChan(request *ListMediasRequest) (<-chan *Li
 }
 
 // ListMediasWithCallback invokes the ccc.ListMedias API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listmedias.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMediasWithCallback(request *ListMediasRequest, callback func(response *ListMediasResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateListMediasRequest() (request *ListMediasRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListMedias", "", "")
+	request.Method = requests.POST
 	return
 }
 

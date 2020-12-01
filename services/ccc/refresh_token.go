@@ -21,7 +21,6 @@ import (
 )
 
 // RefreshToken invokes the ccc.RefreshToken API synchronously
-// api document: https://help.aliyun.com/api/ccc/refreshtoken.html
 func (client *Client) RefreshToken(request *RefreshTokenRequest) (response *RefreshTokenResponse, err error) {
 	response = CreateRefreshTokenResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RefreshToken(request *RefreshTokenRequest) (response *Refr
 }
 
 // RefreshTokenWithChan invokes the ccc.RefreshToken API asynchronously
-// api document: https://help.aliyun.com/api/ccc/refreshtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshTokenWithChan(request *RefreshTokenRequest) (<-chan *RefreshTokenResponse, <-chan error) {
 	responseChan := make(chan *RefreshTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RefreshTokenWithChan(request *RefreshTokenRequest) (<-chan
 }
 
 // RefreshTokenWithCallback invokes the ccc.RefreshToken API asynchronously
-// api document: https://help.aliyun.com/api/ccc/refreshtoken.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshTokenWithCallback(request *RefreshTokenRequest, callback func(response *RefreshTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateRefreshTokenRequest() (request *RefreshTokenRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "RefreshToken", "", "")
+	request.Method = requests.POST
 	return
 }
 

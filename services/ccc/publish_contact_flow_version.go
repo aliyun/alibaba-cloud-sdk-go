@@ -21,7 +21,6 @@ import (
 )
 
 // PublishContactFlowVersion invokes the ccc.PublishContactFlowVersion API synchronously
-// api document: https://help.aliyun.com/api/ccc/publishcontactflowversion.html
 func (client *Client) PublishContactFlowVersion(request *PublishContactFlowVersionRequest) (response *PublishContactFlowVersionResponse, err error) {
 	response = CreatePublishContactFlowVersionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PublishContactFlowVersion(request *PublishContactFlowVersi
 }
 
 // PublishContactFlowVersionWithChan invokes the ccc.PublishContactFlowVersion API asynchronously
-// api document: https://help.aliyun.com/api/ccc/publishcontactflowversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PublishContactFlowVersionWithChan(request *PublishContactFlowVersionRequest) (<-chan *PublishContactFlowVersionResponse, <-chan error) {
 	responseChan := make(chan *PublishContactFlowVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PublishContactFlowVersionWithChan(request *PublishContactF
 }
 
 // PublishContactFlowVersionWithCallback invokes the ccc.PublishContactFlowVersion API asynchronously
-// api document: https://help.aliyun.com/api/ccc/publishcontactflowversion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PublishContactFlowVersionWithCallback(request *PublishContactFlowVersionRequest, callback func(response *PublishContactFlowVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreatePublishContactFlowVersionRequest() (request *PublishContactFlowVersio
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "PublishContactFlowVersion", "", "")
+	request.Method = requests.POST
 	return
 }
 

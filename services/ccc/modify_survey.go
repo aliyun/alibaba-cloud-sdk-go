@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySurvey invokes the ccc.ModifySurvey API synchronously
-// api document: https://help.aliyun.com/api/ccc/modifysurvey.html
 func (client *Client) ModifySurvey(request *ModifySurveyRequest) (response *ModifySurveyResponse, err error) {
 	response = CreateModifySurveyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySurvey(request *ModifySurveyRequest) (response *Modi
 }
 
 // ModifySurveyWithChan invokes the ccc.ModifySurvey API asynchronously
-// api document: https://help.aliyun.com/api/ccc/modifysurvey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySurveyWithChan(request *ModifySurveyRequest) (<-chan *ModifySurveyResponse, <-chan error) {
 	responseChan := make(chan *ModifySurveyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySurveyWithChan(request *ModifySurveyRequest) (<-chan
 }
 
 // ModifySurveyWithCallback invokes the ccc.ModifySurvey API asynchronously
-// api document: https://help.aliyun.com/api/ccc/modifysurvey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySurveyWithCallback(request *ModifySurveyRequest, callback func(response *ModifySurveyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -107,6 +102,7 @@ func CreateModifySurveyRequest() (request *ModifySurveyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ModifySurvey", "", "")
+	request.Method = requests.POST
 	return
 }
 

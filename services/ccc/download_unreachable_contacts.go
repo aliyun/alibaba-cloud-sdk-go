@@ -21,7 +21,6 @@ import (
 )
 
 // DownloadUnreachableContacts invokes the ccc.DownloadUnreachableContacts API synchronously
-// api document: https://help.aliyun.com/api/ccc/downloadunreachablecontacts.html
 func (client *Client) DownloadUnreachableContacts(request *DownloadUnreachableContactsRequest) (response *DownloadUnreachableContactsResponse, err error) {
 	response = CreateDownloadUnreachableContactsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DownloadUnreachableContacts(request *DownloadUnreachableCo
 }
 
 // DownloadUnreachableContactsWithChan invokes the ccc.DownloadUnreachableContacts API asynchronously
-// api document: https://help.aliyun.com/api/ccc/downloadunreachablecontacts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DownloadUnreachableContactsWithChan(request *DownloadUnreachableContactsRequest) (<-chan *DownloadUnreachableContactsResponse, <-chan error) {
 	responseChan := make(chan *DownloadUnreachableContactsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DownloadUnreachableContactsWithChan(request *DownloadUnrea
 }
 
 // DownloadUnreachableContactsWithCallback invokes the ccc.DownloadUnreachableContacts API asynchronously
-// api document: https://help.aliyun.com/api/ccc/downloadunreachablecontacts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DownloadUnreachableContactsWithCallback(request *DownloadUnreachableContactsRequest, callback func(response *DownloadUnreachableContactsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateDownloadUnreachableContactsRequest() (request *DownloadUnreachableCon
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "DownloadUnreachableContacts", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // CallOnlinePrivacyNumber invokes the ccc.CallOnlinePrivacyNumber API synchronously
-// api document: https://help.aliyun.com/api/ccc/callonlineprivacynumber.html
 func (client *Client) CallOnlinePrivacyNumber(request *CallOnlinePrivacyNumberRequest) (response *CallOnlinePrivacyNumberResponse, err error) {
 	response = CreateCallOnlinePrivacyNumberResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CallOnlinePrivacyNumber(request *CallOnlinePrivacyNumberRe
 }
 
 // CallOnlinePrivacyNumberWithChan invokes the ccc.CallOnlinePrivacyNumber API asynchronously
-// api document: https://help.aliyun.com/api/ccc/callonlineprivacynumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CallOnlinePrivacyNumberWithChan(request *CallOnlinePrivacyNumberRequest) (<-chan *CallOnlinePrivacyNumberResponse, <-chan error) {
 	responseChan := make(chan *CallOnlinePrivacyNumberResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CallOnlinePrivacyNumberWithChan(request *CallOnlinePrivacy
 }
 
 // CallOnlinePrivacyNumberWithCallback invokes the ccc.CallOnlinePrivacyNumber API asynchronously
-// api document: https://help.aliyun.com/api/ccc/callonlineprivacynumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CallOnlinePrivacyNumberWithCallback(request *CallOnlinePrivacyNumberRequest, callback func(response *CallOnlinePrivacyNumberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateCallOnlinePrivacyNumberRequest() (request *CallOnlinePrivacyNumberReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "CallOnlinePrivacyNumber", "", "")
+	request.Method = requests.POST
 	return
 }
 

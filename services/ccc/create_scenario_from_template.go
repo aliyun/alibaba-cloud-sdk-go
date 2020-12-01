@@ -21,7 +21,6 @@ import (
 )
 
 // CreateScenarioFromTemplate invokes the ccc.CreateScenarioFromTemplate API synchronously
-// api document: https://help.aliyun.com/api/ccc/createscenariofromtemplate.html
 func (client *Client) CreateScenarioFromTemplate(request *CreateScenarioFromTemplateRequest) (response *CreateScenarioFromTemplateResponse, err error) {
 	response = CreateCreateScenarioFromTemplateResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateScenarioFromTemplate(request *CreateScenarioFromTemp
 }
 
 // CreateScenarioFromTemplateWithChan invokes the ccc.CreateScenarioFromTemplate API asynchronously
-// api document: https://help.aliyun.com/api/ccc/createscenariofromtemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScenarioFromTemplateWithChan(request *CreateScenarioFromTemplateRequest) (<-chan *CreateScenarioFromTemplateResponse, <-chan error) {
 	responseChan := make(chan *CreateScenarioFromTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateScenarioFromTemplateWithChan(request *CreateScenario
 }
 
 // CreateScenarioFromTemplateWithCallback invokes the ccc.CreateScenarioFromTemplate API asynchronously
-// api document: https://help.aliyun.com/api/ccc/createscenariofromtemplate.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScenarioFromTemplateWithCallback(request *CreateScenarioFromTemplateRequest, callback func(response *CreateScenarioFromTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateCreateScenarioFromTemplateRequest() (request *CreateScenarioFromTempl
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "CreateScenarioFromTemplate", "", "")
+	request.Method = requests.POST
 	return
 }
 

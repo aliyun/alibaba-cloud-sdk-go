@@ -21,7 +21,6 @@ import (
 )
 
 // SaveStats invokes the ccc.SaveStats API synchronously
-// api document: https://help.aliyun.com/api/ccc/savestats.html
 func (client *Client) SaveStats(request *SaveStatsRequest) (response *SaveStatsResponse, err error) {
 	response = CreateSaveStatsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveStats(request *SaveStatsRequest) (response *SaveStatsR
 }
 
 // SaveStatsWithChan invokes the ccc.SaveStats API asynchronously
-// api document: https://help.aliyun.com/api/ccc/savestats.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveStatsWithChan(request *SaveStatsRequest) (<-chan *SaveStatsResponse, <-chan error) {
 	responseChan := make(chan *SaveStatsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveStatsWithChan(request *SaveStatsRequest) (<-chan *Save
 }
 
 // SaveStatsWithCallback invokes the ccc.SaveStats API asynchronously
-// api document: https://help.aliyun.com/api/ccc/savestats.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveStatsWithCallback(request *SaveStatsRequest, callback func(response *SaveStatsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,6 +99,7 @@ func CreateSaveStatsRequest() (request *SaveStatsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "SaveStats", "", "")
+	request.Method = requests.POST
 	return
 }
 

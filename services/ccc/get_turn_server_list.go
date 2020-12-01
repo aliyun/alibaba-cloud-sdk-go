@@ -21,7 +21,6 @@ import (
 )
 
 // GetTURNServerList invokes the ccc.GetTURNServerList API synchronously
-// api document: https://help.aliyun.com/api/ccc/getturnserverlist.html
 func (client *Client) GetTURNServerList(request *GetTURNServerListRequest) (response *GetTURNServerListResponse, err error) {
 	response = CreateGetTURNServerListResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetTURNServerList(request *GetTURNServerListRequest) (resp
 }
 
 // GetTURNServerListWithChan invokes the ccc.GetTURNServerList API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getturnserverlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTURNServerListWithChan(request *GetTURNServerListRequest) (<-chan *GetTURNServerListResponse, <-chan error) {
 	responseChan := make(chan *GetTURNServerListResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetTURNServerListWithChan(request *GetTURNServerListReques
 }
 
 // GetTURNServerListWithCallback invokes the ccc.GetTURNServerList API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getturnserverlist.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTURNServerListWithCallback(request *GetTURNServerListRequest, callback func(response *GetTURNServerListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateGetTURNServerListRequest() (request *GetTURNServerListRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetTURNServerList", "", "")
+	request.Method = requests.POST
 	return
 }
 

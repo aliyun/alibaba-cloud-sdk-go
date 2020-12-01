@@ -22,12 +22,14 @@ type Overall struct {
 	MaxHoldTime                  int64   `json:"MaxHoldTime" xml:"MaxHoldTime"`
 	SatisfactionSurveysResponded int64   `json:"SatisfactionSurveysResponded" xml:"SatisfactionSurveysResponded"`
 	AverageWorkTime              int64   `json:"AverageWorkTime" xml:"AverageWorkTime"`
+	FirstLogInTime               string  `json:"FirstLogInTime" xml:"FirstLogInTime"`
 	SatisfactionIndex            float64 `json:"SatisfactionIndex" xml:"SatisfactionIndex"`
 	AverageReadyTime             int64   `json:"AverageReadyTime" xml:"AverageReadyTime"`
 	AverageTalkTime              int64   `json:"AverageTalkTime" xml:"AverageTalkTime"`
 	MaxTalkTime                  int64   `json:"MaxTalkTime" xml:"MaxTalkTime"`
 	MaxReadyTime                 int64   `json:"MaxReadyTime" xml:"MaxReadyTime"`
 	TotalTalkTime                int64   `json:"TotalTalkTime" xml:"TotalTalkTime"`
+	LastLogOutTime               string  `json:"LastLogOutTime" xml:"LastLogOutTime"`
 	TotalCalls                   int64   `json:"TotalCalls" xml:"TotalCalls"`
 	MaxWorkTime                  int64   `json:"MaxWorkTime" xml:"MaxWorkTime"`
 	TotalReadyTime               int64   `json:"TotalReadyTime" xml:"TotalReadyTime"`

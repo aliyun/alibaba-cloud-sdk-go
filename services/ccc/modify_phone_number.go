@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyPhoneNumber invokes the ccc.ModifyPhoneNumber API synchronously
-// api document: https://help.aliyun.com/api/ccc/modifyphonenumber.html
 func (client *Client) ModifyPhoneNumber(request *ModifyPhoneNumberRequest) (response *ModifyPhoneNumberResponse, err error) {
 	response = CreateModifyPhoneNumberResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyPhoneNumber(request *ModifyPhoneNumberRequest) (resp
 }
 
 // ModifyPhoneNumberWithChan invokes the ccc.ModifyPhoneNumber API asynchronously
-// api document: https://help.aliyun.com/api/ccc/modifyphonenumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPhoneNumberWithChan(request *ModifyPhoneNumberRequest) (<-chan *ModifyPhoneNumberResponse, <-chan error) {
 	responseChan := make(chan *ModifyPhoneNumberResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyPhoneNumberWithChan(request *ModifyPhoneNumberReques
 }
 
 // ModifyPhoneNumberWithCallback invokes the ccc.ModifyPhoneNumber API asynchronously
-// api document: https://help.aliyun.com/api/ccc/modifyphonenumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPhoneNumberWithCallback(request *ModifyPhoneNumberRequest, callback func(response *ModifyPhoneNumberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateModifyPhoneNumberRequest() (request *ModifyPhoneNumberRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ModifyPhoneNumber", "", "")
+	request.Method = requests.POST
 	return
 }
 

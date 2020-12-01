@@ -21,7 +21,6 @@ import (
 )
 
 // ListSurveys invokes the ccc.ListSurveys API synchronously
-// api document: https://help.aliyun.com/api/ccc/listsurveys.html
 func (client *Client) ListSurveys(request *ListSurveysRequest) (response *ListSurveysResponse, err error) {
 	response = CreateListSurveysResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSurveys(request *ListSurveysRequest) (response *ListSu
 }
 
 // ListSurveysWithChan invokes the ccc.ListSurveys API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listsurveys.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSurveysWithChan(request *ListSurveysRequest) (<-chan *ListSurveysResponse, <-chan error) {
 	responseChan := make(chan *ListSurveysResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSurveysWithChan(request *ListSurveysRequest) (<-chan *
 }
 
 // ListSurveysWithCallback invokes the ccc.ListSurveys API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listsurveys.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSurveysWithCallback(request *ListSurveysRequest, callback func(response *ListSurveysResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateListSurveysRequest() (request *ListSurveysRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListSurveys", "", "")
+	request.Method = requests.POST
 	return
 }
 

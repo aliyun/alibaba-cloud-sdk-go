@@ -21,7 +21,6 @@ import (
 )
 
 // DownloadOriginalStatisticsReport invokes the ccc.DownloadOriginalStatisticsReport API synchronously
-// api document: https://help.aliyun.com/api/ccc/downloadoriginalstatisticsreport.html
 func (client *Client) DownloadOriginalStatisticsReport(request *DownloadOriginalStatisticsReportRequest) (response *DownloadOriginalStatisticsReportResponse, err error) {
 	response = CreateDownloadOriginalStatisticsReportResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DownloadOriginalStatisticsReport(request *DownloadOriginal
 }
 
 // DownloadOriginalStatisticsReportWithChan invokes the ccc.DownloadOriginalStatisticsReport API asynchronously
-// api document: https://help.aliyun.com/api/ccc/downloadoriginalstatisticsreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DownloadOriginalStatisticsReportWithChan(request *DownloadOriginalStatisticsReportRequest) (<-chan *DownloadOriginalStatisticsReportResponse, <-chan error) {
 	responseChan := make(chan *DownloadOriginalStatisticsReportResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DownloadOriginalStatisticsReportWithChan(request *Download
 }
 
 // DownloadOriginalStatisticsReportWithCallback invokes the ccc.DownloadOriginalStatisticsReport API asynchronously
-// api document: https://help.aliyun.com/api/ccc/downloadoriginalstatisticsreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DownloadOriginalStatisticsReportWithCallback(request *DownloadOriginalStatisticsReportRequest, callback func(response *DownloadOriginalStatisticsReportResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateDownloadOriginalStatisticsReportRequest() (request *DownloadOriginalS
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "DownloadOriginalStatisticsReport", "", "")
+	request.Method = requests.POST
 	return
 }
 

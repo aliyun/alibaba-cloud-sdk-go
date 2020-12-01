@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyUser invokes the ccc.ModifyUser API synchronously
-// api document: https://help.aliyun.com/api/ccc/modifyuser.html
 func (client *Client) ModifyUser(request *ModifyUserRequest) (response *ModifyUserResponse, err error) {
 	response = CreateModifyUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyUser(request *ModifyUserRequest) (response *ModifyUs
 }
 
 // ModifyUserWithChan invokes the ccc.ModifyUser API asynchronously
-// api document: https://help.aliyun.com/api/ccc/modifyuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserWithChan(request *ModifyUserRequest) (<-chan *ModifyUserResponse, <-chan error) {
 	responseChan := make(chan *ModifyUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyUserWithChan(request *ModifyUserRequest) (<-chan *Mo
 }
 
 // ModifyUserWithCallback invokes the ccc.ModifyUser API asynchronously
-// api document: https://help.aliyun.com/api/ccc/modifyuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserWithCallback(request *ModifyUserRequest, callback func(response *ModifyUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,6 +98,7 @@ func CreateModifyUserRequest() (request *ModifyUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ModifyUser", "", "")
+	request.Method = requests.POST
 	return
 }
 

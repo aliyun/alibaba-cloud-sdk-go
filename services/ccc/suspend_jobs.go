@@ -21,7 +21,6 @@ import (
 )
 
 // SuspendJobs invokes the ccc.SuspendJobs API synchronously
-// api document: https://help.aliyun.com/api/ccc/suspendjobs.html
 func (client *Client) SuspendJobs(request *SuspendJobsRequest) (response *SuspendJobsResponse, err error) {
 	response = CreateSuspendJobsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SuspendJobs(request *SuspendJobsRequest) (response *Suspen
 }
 
 // SuspendJobsWithChan invokes the ccc.SuspendJobs API asynchronously
-// api document: https://help.aliyun.com/api/ccc/suspendjobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SuspendJobsWithChan(request *SuspendJobsRequest) (<-chan *SuspendJobsResponse, <-chan error) {
 	responseChan := make(chan *SuspendJobsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SuspendJobsWithChan(request *SuspendJobsRequest) (<-chan *
 }
 
 // SuspendJobsWithCallback invokes the ccc.SuspendJobs API asynchronously
-// api document: https://help.aliyun.com/api/ccc/suspendjobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SuspendJobsWithCallback(request *SuspendJobsRequest, callback func(response *SuspendJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateSuspendJobsRequest() (request *SuspendJobsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "SuspendJobs", "", "")
+	request.Method = requests.POST
 	return
 }
 

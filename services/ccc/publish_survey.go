@@ -21,7 +21,6 @@ import (
 )
 
 // PublishSurvey invokes the ccc.PublishSurvey API synchronously
-// api document: https://help.aliyun.com/api/ccc/publishsurvey.html
 func (client *Client) PublishSurvey(request *PublishSurveyRequest) (response *PublishSurveyResponse, err error) {
 	response = CreatePublishSurveyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PublishSurvey(request *PublishSurveyRequest) (response *Pu
 }
 
 // PublishSurveyWithChan invokes the ccc.PublishSurvey API asynchronously
-// api document: https://help.aliyun.com/api/ccc/publishsurvey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PublishSurveyWithChan(request *PublishSurveyRequest) (<-chan *PublishSurveyResponse, <-chan error) {
 	responseChan := make(chan *PublishSurveyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PublishSurveyWithChan(request *PublishSurveyRequest) (<-ch
 }
 
 // PublishSurveyWithCallback invokes the ccc.PublishSurvey API asynchronously
-// api document: https://help.aliyun.com/api/ccc/publishsurvey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PublishSurveyWithCallback(request *PublishSurveyRequest, callback func(response *PublishSurveyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreatePublishSurveyRequest() (request *PublishSurveyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "PublishSurvey", "", "")
+	request.Method = requests.POST
 	return
 }
 

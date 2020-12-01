@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyPrivacyNumberCallDetail invokes the ccc.ModifyPrivacyNumberCallDetail API synchronously
-// api document: https://help.aliyun.com/api/ccc/modifyprivacynumbercalldetail.html
 func (client *Client) ModifyPrivacyNumberCallDetail(request *ModifyPrivacyNumberCallDetailRequest) (response *ModifyPrivacyNumberCallDetailResponse, err error) {
 	response = CreateModifyPrivacyNumberCallDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyPrivacyNumberCallDetail(request *ModifyPrivacyNumber
 }
 
 // ModifyPrivacyNumberCallDetailWithChan invokes the ccc.ModifyPrivacyNumberCallDetail API asynchronously
-// api document: https://help.aliyun.com/api/ccc/modifyprivacynumbercalldetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPrivacyNumberCallDetailWithChan(request *ModifyPrivacyNumberCallDetailRequest) (<-chan *ModifyPrivacyNumberCallDetailResponse, <-chan error) {
 	responseChan := make(chan *ModifyPrivacyNumberCallDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyPrivacyNumberCallDetailWithChan(request *ModifyPriva
 }
 
 // ModifyPrivacyNumberCallDetailWithCallback invokes the ccc.ModifyPrivacyNumberCallDetail API asynchronously
-// api document: https://help.aliyun.com/api/ccc/modifyprivacynumbercalldetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPrivacyNumberCallDetailWithCallback(request *ModifyPrivacyNumberCallDetailRequest, callback func(response *ModifyPrivacyNumberCallDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateModifyPrivacyNumberCallDetailRequest() (request *ModifyPrivacyNumberC
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ModifyPrivacyNumberCallDetail", "", "")
+	request.Method = requests.POST
 	return
 }
 

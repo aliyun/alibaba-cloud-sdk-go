@@ -21,7 +21,6 @@ import (
 )
 
 // ListJobsByGroup invokes the ccc.ListJobsByGroup API synchronously
-// api document: https://help.aliyun.com/api/ccc/listjobsbygroup.html
 func (client *Client) ListJobsByGroup(request *ListJobsByGroupRequest) (response *ListJobsByGroupResponse, err error) {
 	response = CreateListJobsByGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListJobsByGroup(request *ListJobsByGroupRequest) (response
 }
 
 // ListJobsByGroupWithChan invokes the ccc.ListJobsByGroup API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listjobsbygroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListJobsByGroupWithChan(request *ListJobsByGroupRequest) (<-chan *ListJobsByGroupResponse, <-chan error) {
 	responseChan := make(chan *ListJobsByGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListJobsByGroupWithChan(request *ListJobsByGroupRequest) (
 }
 
 // ListJobsByGroupWithCallback invokes the ccc.ListJobsByGroup API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listjobsbygroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListJobsByGroupWithCallback(request *ListJobsByGroupRequest, callback func(response *ListJobsByGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +96,7 @@ func CreateListJobsByGroupRequest() (request *ListJobsByGroupRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListJobsByGroup", "", "")
+	request.Method = requests.POST
 	return
 }
 

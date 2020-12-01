@@ -21,7 +21,6 @@ import (
 )
 
 // ListSkillGroupSummaryReportsSinceMidnight invokes the ccc.ListSkillGroupSummaryReportsSinceMidnight API synchronously
-// api document: https://help.aliyun.com/api/ccc/listskillgroupsummaryreportssincemidnight.html
 func (client *Client) ListSkillGroupSummaryReportsSinceMidnight(request *ListSkillGroupSummaryReportsSinceMidnightRequest) (response *ListSkillGroupSummaryReportsSinceMidnightResponse, err error) {
 	response = CreateListSkillGroupSummaryReportsSinceMidnightResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSkillGroupSummaryReportsSinceMidnight(request *ListSki
 }
 
 // ListSkillGroupSummaryReportsSinceMidnightWithChan invokes the ccc.ListSkillGroupSummaryReportsSinceMidnight API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listskillgroupsummaryreportssincemidnight.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSkillGroupSummaryReportsSinceMidnightWithChan(request *ListSkillGroupSummaryReportsSinceMidnightRequest) (<-chan *ListSkillGroupSummaryReportsSinceMidnightResponse, <-chan error) {
 	responseChan := make(chan *ListSkillGroupSummaryReportsSinceMidnightResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSkillGroupSummaryReportsSinceMidnightWithChan(request 
 }
 
 // ListSkillGroupSummaryReportsSinceMidnightWithCallback invokes the ccc.ListSkillGroupSummaryReportsSinceMidnight API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listskillgroupsummaryreportssincemidnight.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSkillGroupSummaryReportsSinceMidnightWithCallback(request *ListSkillGroupSummaryReportsSinceMidnightRequest, callback func(response *ListSkillGroupSummaryReportsSinceMidnightResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateListSkillGroupSummaryReportsSinceMidnightRequest() (request *ListSkil
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListSkillGroupSummaryReportsSinceMidnight", "", "")
+	request.Method = requests.POST
 	return
 }
 

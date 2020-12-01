@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyPhoneTags invokes the ccc.ModifyPhoneTags API synchronously
-// api document: https://help.aliyun.com/api/ccc/modifyphonetags.html
 func (client *Client) ModifyPhoneTags(request *ModifyPhoneTagsRequest) (response *ModifyPhoneTagsResponse, err error) {
 	response = CreateModifyPhoneTagsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyPhoneTags(request *ModifyPhoneTagsRequest) (response
 }
 
 // ModifyPhoneTagsWithChan invokes the ccc.ModifyPhoneTags API asynchronously
-// api document: https://help.aliyun.com/api/ccc/modifyphonetags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPhoneTagsWithChan(request *ModifyPhoneTagsRequest) (<-chan *ModifyPhoneTagsResponse, <-chan error) {
 	responseChan := make(chan *ModifyPhoneTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyPhoneTagsWithChan(request *ModifyPhoneTagsRequest) (
 }
 
 // ModifyPhoneTagsWithCallback invokes the ccc.ModifyPhoneTags API asynchronously
-// api document: https://help.aliyun.com/api/ccc/modifyphonetags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPhoneTagsWithCallback(request *ModifyPhoneTagsRequest, callback func(response *ModifyPhoneTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateModifyPhoneTagsRequest() (request *ModifyPhoneTagsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ModifyPhoneTags", "", "")
+	request.Method = requests.POST
 	return
 }
 

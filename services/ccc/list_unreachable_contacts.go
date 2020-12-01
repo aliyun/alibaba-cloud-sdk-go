@@ -21,7 +21,6 @@ import (
 )
 
 // ListUnreachableContacts invokes the ccc.ListUnreachableContacts API synchronously
-// api document: https://help.aliyun.com/api/ccc/listunreachablecontacts.html
 func (client *Client) ListUnreachableContacts(request *ListUnreachableContactsRequest) (response *ListUnreachableContactsResponse, err error) {
 	response = CreateListUnreachableContactsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListUnreachableContacts(request *ListUnreachableContactsRe
 }
 
 // ListUnreachableContactsWithChan invokes the ccc.ListUnreachableContacts API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listunreachablecontacts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUnreachableContactsWithChan(request *ListUnreachableContactsRequest) (<-chan *ListUnreachableContactsResponse, <-chan error) {
 	responseChan := make(chan *ListUnreachableContactsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListUnreachableContactsWithChan(request *ListUnreachableCo
 }
 
 // ListUnreachableContactsWithCallback invokes the ccc.ListUnreachableContacts API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listunreachablecontacts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUnreachableContactsWithCallback(request *ListUnreachableContactsRequest, callback func(response *ListUnreachableContactsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateListUnreachableContactsRequest() (request *ListUnreachableContactsReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListUnreachableContacts", "", "")
+	request.Method = requests.POST
 	return
 }
 

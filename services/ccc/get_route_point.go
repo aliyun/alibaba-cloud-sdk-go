@@ -21,7 +21,6 @@ import (
 )
 
 // GetRoutePoint invokes the ccc.GetRoutePoint API synchronously
-// api document: https://help.aliyun.com/api/ccc/getroutepoint.html
 func (client *Client) GetRoutePoint(request *GetRoutePointRequest) (response *GetRoutePointResponse, err error) {
 	response = CreateGetRoutePointResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetRoutePoint(request *GetRoutePointRequest) (response *Ge
 }
 
 // GetRoutePointWithChan invokes the ccc.GetRoutePoint API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getroutepoint.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRoutePointWithChan(request *GetRoutePointRequest) (<-chan *GetRoutePointResponse, <-chan error) {
 	responseChan := make(chan *GetRoutePointResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetRoutePointWithChan(request *GetRoutePointRequest) (<-ch
 }
 
 // GetRoutePointWithCallback invokes the ccc.GetRoutePoint API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getroutepoint.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRoutePointWithCallback(request *GetRoutePointRequest, callback func(response *GetRoutePointResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateGetRoutePointRequest() (request *GetRoutePointRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetRoutePoint", "", "")
+	request.Method = requests.POST
 	return
 }
 

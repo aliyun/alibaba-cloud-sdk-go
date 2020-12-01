@@ -21,7 +21,6 @@ import (
 )
 
 // GetSurvey invokes the ccc.GetSurvey API synchronously
-// api document: https://help.aliyun.com/api/ccc/getsurvey.html
 func (client *Client) GetSurvey(request *GetSurveyRequest) (response *GetSurveyResponse, err error) {
 	response = CreateGetSurveyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetSurvey(request *GetSurveyRequest) (response *GetSurveyR
 }
 
 // GetSurveyWithChan invokes the ccc.GetSurvey API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getsurvey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSurveyWithChan(request *GetSurveyRequest) (<-chan *GetSurveyResponse, <-chan error) {
 	responseChan := make(chan *GetSurveyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetSurveyWithChan(request *GetSurveyRequest) (<-chan *GetS
 }
 
 // GetSurveyWithCallback invokes the ccc.GetSurvey API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getsurvey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSurveyWithCallback(request *GetSurveyRequest, callback func(response *GetSurveyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateGetSurveyRequest() (request *GetSurveyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetSurvey", "", "")
+	request.Method = requests.POST
 	return
 }
 

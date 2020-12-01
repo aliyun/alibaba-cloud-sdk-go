@@ -21,7 +21,6 @@ import (
 )
 
 // GetAgentData invokes the ccc.GetAgentData API synchronously
-// api document: https://help.aliyun.com/api/ccc/getagentdata.html
 func (client *Client) GetAgentData(request *GetAgentDataRequest) (response *GetAgentDataResponse, err error) {
 	response = CreateGetAgentDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetAgentData(request *GetAgentDataRequest) (response *GetA
 }
 
 // GetAgentDataWithChan invokes the ccc.GetAgentData API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getagentdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAgentDataWithChan(request *GetAgentDataRequest) (<-chan *GetAgentDataResponse, <-chan error) {
 	responseChan := make(chan *GetAgentDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetAgentDataWithChan(request *GetAgentDataRequest) (<-chan
 }
 
 // GetAgentDataWithCallback invokes the ccc.GetAgentData API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getagentdata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAgentDataWithCallback(request *GetAgentDataRequest, callback func(response *GetAgentDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +96,7 @@ func CreateGetAgentDataRequest() (request *GetAgentDataRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetAgentData", "", "")
+	request.Method = requests.POST
 	return
 }
 

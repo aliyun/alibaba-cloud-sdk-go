@@ -21,7 +21,6 @@ import (
 )
 
 // ListSkillGroupSummaryReportsByInterval invokes the ccc.ListSkillGroupSummaryReportsByInterval API synchronously
-// api document: https://help.aliyun.com/api/ccc/listskillgroupsummaryreportsbyinterval.html
 func (client *Client) ListSkillGroupSummaryReportsByInterval(request *ListSkillGroupSummaryReportsByIntervalRequest) (response *ListSkillGroupSummaryReportsByIntervalResponse, err error) {
 	response = CreateListSkillGroupSummaryReportsByIntervalResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListSkillGroupSummaryReportsByInterval(request *ListSkillG
 }
 
 // ListSkillGroupSummaryReportsByIntervalWithChan invokes the ccc.ListSkillGroupSummaryReportsByInterval API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listskillgroupsummaryreportsbyinterval.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSkillGroupSummaryReportsByIntervalWithChan(request *ListSkillGroupSummaryReportsByIntervalRequest) (<-chan *ListSkillGroupSummaryReportsByIntervalResponse, <-chan error) {
 	responseChan := make(chan *ListSkillGroupSummaryReportsByIntervalResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListSkillGroupSummaryReportsByIntervalWithChan(request *Li
 }
 
 // ListSkillGroupSummaryReportsByIntervalWithCallback invokes the ccc.ListSkillGroupSummaryReportsByInterval API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listskillgroupsummaryreportsbyinterval.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSkillGroupSummaryReportsByIntervalWithCallback(request *ListSkillGroupSummaryReportsByIntervalRequest, callback func(response *ListSkillGroupSummaryReportsByIntervalResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,6 +97,7 @@ func CreateListSkillGroupSummaryReportsByIntervalRequest() (request *ListSkillGr
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListSkillGroupSummaryReportsByInterval", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // CommitContactFlowVersionModification invokes the ccc.CommitContactFlowVersionModification API synchronously
-// api document: https://help.aliyun.com/api/ccc/commitcontactflowversionmodification.html
 func (client *Client) CommitContactFlowVersionModification(request *CommitContactFlowVersionModificationRequest) (response *CommitContactFlowVersionModificationResponse, err error) {
 	response = CreateCommitContactFlowVersionModificationResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CommitContactFlowVersionModification(request *CommitContac
 }
 
 // CommitContactFlowVersionModificationWithChan invokes the ccc.CommitContactFlowVersionModification API asynchronously
-// api document: https://help.aliyun.com/api/ccc/commitcontactflowversionmodification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CommitContactFlowVersionModificationWithChan(request *CommitContactFlowVersionModificationRequest) (<-chan *CommitContactFlowVersionModificationResponse, <-chan error) {
 	responseChan := make(chan *CommitContactFlowVersionModificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CommitContactFlowVersionModificationWithChan(request *Comm
 }
 
 // CommitContactFlowVersionModificationWithCallback invokes the ccc.CommitContactFlowVersionModification API asynchronously
-// api document: https://help.aliyun.com/api/ccc/commitcontactflowversionmodification.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CommitContactFlowVersionModificationWithCallback(request *CommitContactFlowVersionModificationRequest, callback func(response *CommitContactFlowVersionModificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateCommitContactFlowVersionModificationRequest() (request *CommitContact
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "CommitContactFlowVersionModification", "", "")
+	request.Method = requests.POST
 	return
 }
 

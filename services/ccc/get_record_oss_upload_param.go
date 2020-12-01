@@ -21,7 +21,6 @@ import (
 )
 
 // GetRecordOssUploadParam invokes the ccc.GetRecordOssUploadParam API synchronously
-// api document: https://help.aliyun.com/api/ccc/getrecordossuploadparam.html
 func (client *Client) GetRecordOssUploadParam(request *GetRecordOssUploadParamRequest) (response *GetRecordOssUploadParamResponse, err error) {
 	response = CreateGetRecordOssUploadParamResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetRecordOssUploadParam(request *GetRecordOssUploadParamRe
 }
 
 // GetRecordOssUploadParamWithChan invokes the ccc.GetRecordOssUploadParam API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getrecordossuploadparam.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRecordOssUploadParamWithChan(request *GetRecordOssUploadParamRequest) (<-chan *GetRecordOssUploadParamResponse, <-chan error) {
 	responseChan := make(chan *GetRecordOssUploadParamResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetRecordOssUploadParamWithChan(request *GetRecordOssUploa
 }
 
 // GetRecordOssUploadParamWithCallback invokes the ccc.GetRecordOssUploadParam API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getrecordossuploadparam.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRecordOssUploadParamWithCallback(request *GetRecordOssUploadParamRequest, callback func(response *GetRecordOssUploadParamResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,6 +98,7 @@ func CreateGetRecordOssUploadParamRequest() (request *GetRecordOssUploadParamReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetRecordOssUploadParam", "", "")
+	request.Method = requests.POST
 	return
 }
 

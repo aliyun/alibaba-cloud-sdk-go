@@ -21,7 +21,6 @@ import (
 )
 
 // ListAgentSummaryReportsSinceMidnight invokes the ccc.ListAgentSummaryReportsSinceMidnight API synchronously
-// api document: https://help.aliyun.com/api/ccc/listagentsummaryreportssincemidnight.html
 func (client *Client) ListAgentSummaryReportsSinceMidnight(request *ListAgentSummaryReportsSinceMidnightRequest) (response *ListAgentSummaryReportsSinceMidnightResponse, err error) {
 	response = CreateListAgentSummaryReportsSinceMidnightResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListAgentSummaryReportsSinceMidnight(request *ListAgentSum
 }
 
 // ListAgentSummaryReportsSinceMidnightWithChan invokes the ccc.ListAgentSummaryReportsSinceMidnight API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listagentsummaryreportssincemidnight.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAgentSummaryReportsSinceMidnightWithChan(request *ListAgentSummaryReportsSinceMidnightRequest) (<-chan *ListAgentSummaryReportsSinceMidnightResponse, <-chan error) {
 	responseChan := make(chan *ListAgentSummaryReportsSinceMidnightResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListAgentSummaryReportsSinceMidnightWithChan(request *List
 }
 
 // ListAgentSummaryReportsSinceMidnightWithCallback invokes the ccc.ListAgentSummaryReportsSinceMidnight API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listagentsummaryreportssincemidnight.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAgentSummaryReportsSinceMidnightWithCallback(request *ListAgentSummaryReportsSinceMidnightRequest, callback func(response *ListAgentSummaryReportsSinceMidnightResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateListAgentSummaryReportsSinceMidnightRequest() (request *ListAgentSumm
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListAgentSummaryReportsSinceMidnight", "", "")
+	request.Method = requests.POST
 	return
 }
 

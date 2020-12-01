@@ -21,7 +21,6 @@ import (
 )
 
 // GetConversationDetailByContactId invokes the ccc.GetConversationDetailByContactId API synchronously
-// api document: https://help.aliyun.com/api/ccc/getconversationdetailbycontactid.html
 func (client *Client) GetConversationDetailByContactId(request *GetConversationDetailByContactIdRequest) (response *GetConversationDetailByContactIdResponse, err error) {
 	response = CreateGetConversationDetailByContactIdResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetConversationDetailByContactId(request *GetConversationD
 }
 
 // GetConversationDetailByContactIdWithChan invokes the ccc.GetConversationDetailByContactId API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getconversationdetailbycontactid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetConversationDetailByContactIdWithChan(request *GetConversationDetailByContactIdRequest) (<-chan *GetConversationDetailByContactIdResponse, <-chan error) {
 	responseChan := make(chan *GetConversationDetailByContactIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetConversationDetailByContactIdWithChan(request *GetConve
 }
 
 // GetConversationDetailByContactIdWithCallback invokes the ccc.GetConversationDetailByContactId API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getconversationdetailbycontactid.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetConversationDetailByContactIdWithCallback(request *GetConversationDetailByContactIdRequest, callback func(response *GetConversationDetailByContactIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateGetConversationDetailByContactIdRequest() (request *GetConversationDe
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetConversationDetailByContactId", "", "")
+	request.Method = requests.POST
 	return
 }
 

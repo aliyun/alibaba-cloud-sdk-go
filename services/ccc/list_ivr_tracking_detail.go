@@ -21,7 +21,6 @@ import (
 )
 
 // ListIvrTrackingDetail invokes the ccc.ListIvrTrackingDetail API synchronously
-// api document: https://help.aliyun.com/api/ccc/listivrtrackingdetail.html
 func (client *Client) ListIvrTrackingDetail(request *ListIvrTrackingDetailRequest) (response *ListIvrTrackingDetailResponse, err error) {
 	response = CreateListIvrTrackingDetailResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListIvrTrackingDetail(request *ListIvrTrackingDetailReques
 }
 
 // ListIvrTrackingDetailWithChan invokes the ccc.ListIvrTrackingDetail API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listivrtrackingdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListIvrTrackingDetailWithChan(request *ListIvrTrackingDetailRequest) (<-chan *ListIvrTrackingDetailResponse, <-chan error) {
 	responseChan := make(chan *ListIvrTrackingDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListIvrTrackingDetailWithChan(request *ListIvrTrackingDeta
 }
 
 // ListIvrTrackingDetailWithCallback invokes the ccc.ListIvrTrackingDetail API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listivrtrackingdetail.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListIvrTrackingDetailWithCallback(request *ListIvrTrackingDetailRequest, callback func(response *ListIvrTrackingDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,6 +98,7 @@ func CreateListIvrTrackingDetailRequest() (request *ListIvrTrackingDetailRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListIvrTrackingDetail", "", "")
+	request.Method = requests.POST
 	return
 }
 

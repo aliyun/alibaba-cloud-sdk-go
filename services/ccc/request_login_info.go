@@ -21,7 +21,6 @@ import (
 )
 
 // RequestLoginInfo invokes the ccc.RequestLoginInfo API synchronously
-// api document: https://help.aliyun.com/api/ccc/requestlogininfo.html
 func (client *Client) RequestLoginInfo(request *RequestLoginInfoRequest) (response *RequestLoginInfoResponse, err error) {
 	response = CreateRequestLoginInfoResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RequestLoginInfo(request *RequestLoginInfoRequest) (respon
 }
 
 // RequestLoginInfoWithChan invokes the ccc.RequestLoginInfo API asynchronously
-// api document: https://help.aliyun.com/api/ccc/requestlogininfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RequestLoginInfoWithChan(request *RequestLoginInfoRequest) (<-chan *RequestLoginInfoResponse, <-chan error) {
 	responseChan := make(chan *RequestLoginInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RequestLoginInfoWithChan(request *RequestLoginInfoRequest)
 }
 
 // RequestLoginInfoWithCallback invokes the ccc.RequestLoginInfo API asynchronously
-// api document: https://help.aliyun.com/api/ccc/requestlogininfo.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RequestLoginInfoWithCallback(request *RequestLoginInfoRequest, callback func(response *RequestLoginInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +72,7 @@ func (client *Client) RequestLoginInfoWithCallback(request *RequestLoginInfoRequ
 type RequestLoginInfoRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
+	UserId     string `position:"Query" name:"UserId"`
 }
 
 // RequestLoginInfoResponse is the response struct for api RequestLoginInfo
@@ -96,6 +92,7 @@ func CreateRequestLoginInfoRequest() (request *RequestLoginInfoRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "RequestLoginInfo", "", "")
+	request.Method = requests.POST
 	return
 }
 

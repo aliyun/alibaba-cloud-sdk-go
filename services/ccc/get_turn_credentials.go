@@ -21,7 +21,6 @@ import (
 )
 
 // GetTURNCredentials invokes the ccc.GetTURNCredentials API synchronously
-// api document: https://help.aliyun.com/api/ccc/getturncredentials.html
 func (client *Client) GetTURNCredentials(request *GetTURNCredentialsRequest) (response *GetTURNCredentialsResponse, err error) {
 	response = CreateGetTURNCredentialsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetTURNCredentials(request *GetTURNCredentialsRequest) (re
 }
 
 // GetTURNCredentialsWithChan invokes the ccc.GetTURNCredentials API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getturncredentials.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTURNCredentialsWithChan(request *GetTURNCredentialsRequest) (<-chan *GetTURNCredentialsResponse, <-chan error) {
 	responseChan := make(chan *GetTURNCredentialsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetTURNCredentialsWithChan(request *GetTURNCredentialsRequ
 }
 
 // GetTURNCredentialsWithCallback invokes the ccc.GetTURNCredentials API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getturncredentials.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTURNCredentialsWithCallback(request *GetTURNCredentialsRequest, callback func(response *GetTURNCredentialsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateGetTURNCredentialsRequest() (request *GetTURNCredentialsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetTURNCredentials", "", "")
+	request.Method = requests.POST
 	return
 }
 

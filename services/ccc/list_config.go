@@ -21,7 +21,6 @@ import (
 )
 
 // ListConfig invokes the ccc.ListConfig API synchronously
-// api document: https://help.aliyun.com/api/ccc/listconfig.html
 func (client *Client) ListConfig(request *ListConfigRequest) (response *ListConfigResponse, err error) {
 	response = CreateListConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListConfig(request *ListConfigRequest) (response *ListConf
 }
 
 // ListConfigWithChan invokes the ccc.ListConfig API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListConfigWithChan(request *ListConfigRequest) (<-chan *ListConfigResponse, <-chan error) {
 	responseChan := make(chan *ListConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListConfigWithChan(request *ListConfigRequest) (<-chan *Li
 }
 
 // ListConfigWithCallback invokes the ccc.ListConfig API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListConfigWithCallback(request *ListConfigRequest, callback func(response *ListConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateListConfigRequest() (request *ListConfigRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListConfig", "", "")
+	request.Method = requests.POST
 	return
 }
 

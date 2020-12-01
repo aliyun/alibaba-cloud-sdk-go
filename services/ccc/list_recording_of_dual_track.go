@@ -21,7 +21,6 @@ import (
 )
 
 // ListRecordingOfDualTrack invokes the ccc.ListRecordingOfDualTrack API synchronously
-// api document: https://help.aliyun.com/api/ccc/listrecordingofdualtrack.html
 func (client *Client) ListRecordingOfDualTrack(request *ListRecordingOfDualTrackRequest) (response *ListRecordingOfDualTrackResponse, err error) {
 	response = CreateListRecordingOfDualTrackResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListRecordingOfDualTrack(request *ListRecordingOfDualTrack
 }
 
 // ListRecordingOfDualTrackWithChan invokes the ccc.ListRecordingOfDualTrack API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listrecordingofdualtrack.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRecordingOfDualTrackWithChan(request *ListRecordingOfDualTrackRequest) (<-chan *ListRecordingOfDualTrackResponse, <-chan error) {
 	responseChan := make(chan *ListRecordingOfDualTrackResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListRecordingOfDualTrackWithChan(request *ListRecordingOfD
 }
 
 // ListRecordingOfDualTrackWithCallback invokes the ccc.ListRecordingOfDualTrack API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listrecordingofdualtrack.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRecordingOfDualTrackWithCallback(request *ListRecordingOfDualTrackRequest, callback func(response *ListRecordingOfDualTrackResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -104,6 +99,7 @@ func CreateListRecordingOfDualTrackRequest() (request *ListRecordingOfDualTrackR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListRecordingOfDualTrack", "", "")
+	request.Method = requests.POST
 	return
 }
 

@@ -17,8 +17,8 @@ package ccc
 
 // PagedAgentSummaryReport is a nested struct in ccc response
 type PagedAgentSummaryReport struct {
-	TotalCount int                                        `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int                                        `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int                                        `json:"PageSize" xml:"PageSize"`
-	List       ListInListAgentSummaryReportsSinceMidnight `json:"List" xml:"List"`
+	TotalCount int                           `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int                           `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                           `json:"PageSize" xml:"PageSize"`
+	List       ListInListAgentSummaryReports `json:"List" xml:"List"`
 }

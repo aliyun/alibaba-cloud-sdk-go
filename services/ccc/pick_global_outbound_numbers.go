@@ -21,7 +21,6 @@ import (
 )
 
 // PickGlobalOutboundNumbers invokes the ccc.PickGlobalOutboundNumbers API synchronously
-// api document: https://help.aliyun.com/api/ccc/pickglobaloutboundnumbers.html
 func (client *Client) PickGlobalOutboundNumbers(request *PickGlobalOutboundNumbersRequest) (response *PickGlobalOutboundNumbersResponse, err error) {
 	response = CreatePickGlobalOutboundNumbersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PickGlobalOutboundNumbers(request *PickGlobalOutboundNumbe
 }
 
 // PickGlobalOutboundNumbersWithChan invokes the ccc.PickGlobalOutboundNumbers API asynchronously
-// api document: https://help.aliyun.com/api/ccc/pickglobaloutboundnumbers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PickGlobalOutboundNumbersWithChan(request *PickGlobalOutboundNumbersRequest) (<-chan *PickGlobalOutboundNumbersResponse, <-chan error) {
 	responseChan := make(chan *PickGlobalOutboundNumbersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PickGlobalOutboundNumbersWithChan(request *PickGlobalOutbo
 }
 
 // PickGlobalOutboundNumbersWithCallback invokes the ccc.PickGlobalOutboundNumbers API asynchronously
-// api document: https://help.aliyun.com/api/ccc/pickglobaloutboundnumbers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PickGlobalOutboundNumbersWithCallback(request *PickGlobalOutboundNumbersRequest, callback func(response *PickGlobalOutboundNumbersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreatePickGlobalOutboundNumbersRequest() (request *PickGlobalOutboundNumber
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "PickGlobalOutboundNumbers", "", "")
+	request.Method = requests.POST
 	return
 }
 

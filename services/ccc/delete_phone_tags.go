@@ -21,7 +21,6 @@ import (
 )
 
 // DeletePhoneTags invokes the ccc.DeletePhoneTags API synchronously
-// api document: https://help.aliyun.com/api/ccc/deletephonetags.html
 func (client *Client) DeletePhoneTags(request *DeletePhoneTagsRequest) (response *DeletePhoneTagsResponse, err error) {
 	response = CreateDeletePhoneTagsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeletePhoneTags(request *DeletePhoneTagsRequest) (response
 }
 
 // DeletePhoneTagsWithChan invokes the ccc.DeletePhoneTags API asynchronously
-// api document: https://help.aliyun.com/api/ccc/deletephonetags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePhoneTagsWithChan(request *DeletePhoneTagsRequest) (<-chan *DeletePhoneTagsResponse, <-chan error) {
 	responseChan := make(chan *DeletePhoneTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeletePhoneTagsWithChan(request *DeletePhoneTagsRequest) (
 }
 
 // DeletePhoneTagsWithCallback invokes the ccc.DeletePhoneTags API asynchronously
-// api document: https://help.aliyun.com/api/ccc/deletephonetags.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePhoneTagsWithCallback(request *DeletePhoneTagsRequest, callback func(response *DeletePhoneTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateDeletePhoneTagsRequest() (request *DeletePhoneTagsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "DeletePhoneTags", "", "")
+	request.Method = requests.POST
 	return
 }
 

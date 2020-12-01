@@ -21,7 +21,6 @@ import (
 )
 
 // ListOutboundPhoneNumberOfUser invokes the ccc.ListOutboundPhoneNumberOfUser API synchronously
-// api document: https://help.aliyun.com/api/ccc/listoutboundphonenumberofuser.html
 func (client *Client) ListOutboundPhoneNumberOfUser(request *ListOutboundPhoneNumberOfUserRequest) (response *ListOutboundPhoneNumberOfUserResponse, err error) {
 	response = CreateListOutboundPhoneNumberOfUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListOutboundPhoneNumberOfUser(request *ListOutboundPhoneNu
 }
 
 // ListOutboundPhoneNumberOfUserWithChan invokes the ccc.ListOutboundPhoneNumberOfUser API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listoutboundphonenumberofuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListOutboundPhoneNumberOfUserWithChan(request *ListOutboundPhoneNumberOfUserRequest) (<-chan *ListOutboundPhoneNumberOfUserResponse, <-chan error) {
 	responseChan := make(chan *ListOutboundPhoneNumberOfUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListOutboundPhoneNumberOfUserWithChan(request *ListOutboun
 }
 
 // ListOutboundPhoneNumberOfUserWithCallback invokes the ccc.ListOutboundPhoneNumberOfUser API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listoutboundphonenumberofuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListOutboundPhoneNumberOfUserWithCallback(request *ListOutboundPhoneNumberOfUserRequest, callback func(response *ListOutboundPhoneNumberOfUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateListOutboundPhoneNumberOfUserRequest() (request *ListOutboundPhoneNum
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListOutboundPhoneNumberOfUser", "", "")
+	request.Method = requests.POST
 	return
 }
 

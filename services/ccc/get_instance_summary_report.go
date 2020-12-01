@@ -21,7 +21,6 @@ import (
 )
 
 // GetInstanceSummaryReport invokes the ccc.GetInstanceSummaryReport API synchronously
-// api document: https://help.aliyun.com/api/ccc/getinstancesummaryreport.html
 func (client *Client) GetInstanceSummaryReport(request *GetInstanceSummaryReportRequest) (response *GetInstanceSummaryReportResponse, err error) {
 	response = CreateGetInstanceSummaryReportResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetInstanceSummaryReport(request *GetInstanceSummaryReport
 }
 
 // GetInstanceSummaryReportWithChan invokes the ccc.GetInstanceSummaryReport API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getinstancesummaryreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceSummaryReportWithChan(request *GetInstanceSummaryReportRequest) (<-chan *GetInstanceSummaryReportResponse, <-chan error) {
 	responseChan := make(chan *GetInstanceSummaryReportResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetInstanceSummaryReportWithChan(request *GetInstanceSumma
 }
 
 // GetInstanceSummaryReportWithCallback invokes the ccc.GetInstanceSummaryReport API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getinstancesummaryreport.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetInstanceSummaryReportWithCallback(request *GetInstanceSummaryReportRequest, callback func(response *GetInstanceSummaryReportResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateGetInstanceSummaryReportRequest() (request *GetInstanceSummaryReportR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetInstanceSummaryReport", "", "")
+	request.Method = requests.POST
 	return
 }
 

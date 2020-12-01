@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteSurvey invokes the ccc.DeleteSurvey API synchronously
-// api document: https://help.aliyun.com/api/ccc/deletesurvey.html
 func (client *Client) DeleteSurvey(request *DeleteSurveyRequest) (response *DeleteSurveyResponse, err error) {
 	response = CreateDeleteSurveyResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteSurvey(request *DeleteSurveyRequest) (response *Dele
 }
 
 // DeleteSurveyWithChan invokes the ccc.DeleteSurvey API asynchronously
-// api document: https://help.aliyun.com/api/ccc/deletesurvey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSurveyWithChan(request *DeleteSurveyRequest) (<-chan *DeleteSurveyResponse, <-chan error) {
 	responseChan := make(chan *DeleteSurveyResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteSurveyWithChan(request *DeleteSurveyRequest) (<-chan
 }
 
 // DeleteSurveyWithCallback invokes the ccc.DeleteSurvey API asynchronously
-// api document: https://help.aliyun.com/api/ccc/deletesurvey.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSurveyWithCallback(request *DeleteSurveyRequest, callback func(response *DeleteSurveyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateDeleteSurveyRequest() (request *DeleteSurveyRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "DeleteSurvey", "", "")
+	request.Method = requests.POST
 	return
 }
 

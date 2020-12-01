@@ -21,7 +21,6 @@ import (
 )
 
 // ListInstancesOfUser invokes the ccc.ListInstancesOfUser API synchronously
-// api document: https://help.aliyun.com/api/ccc/listinstancesofuser.html
 func (client *Client) ListInstancesOfUser(request *ListInstancesOfUserRequest) (response *ListInstancesOfUserResponse, err error) {
 	response = CreateListInstancesOfUserResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListInstancesOfUser(request *ListInstancesOfUserRequest) (
 }
 
 // ListInstancesOfUserWithChan invokes the ccc.ListInstancesOfUser API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listinstancesofuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListInstancesOfUserWithChan(request *ListInstancesOfUserRequest) (<-chan *ListInstancesOfUserResponse, <-chan error) {
 	responseChan := make(chan *ListInstancesOfUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListInstancesOfUserWithChan(request *ListInstancesOfUserRe
 }
 
 // ListInstancesOfUserWithCallback invokes the ccc.ListInstancesOfUser API asynchronously
-// api document: https://help.aliyun.com/api/ccc/listinstancesofuser.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListInstancesOfUserWithCallback(request *ListInstancesOfUserRequest, callback func(response *ListInstancesOfUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateListInstancesOfUserRequest() (request *ListInstancesOfUserRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ListInstancesOfUser", "", "")
+	request.Method = requests.POST
 	return
 }
 

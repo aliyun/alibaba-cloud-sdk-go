@@ -21,7 +21,6 @@ import (
 )
 
 // GetServiceExtensions invokes the ccc.GetServiceExtensions API synchronously
-// api document: https://help.aliyun.com/api/ccc/getserviceextensions.html
 func (client *Client) GetServiceExtensions(request *GetServiceExtensionsRequest) (response *GetServiceExtensionsResponse, err error) {
 	response = CreateGetServiceExtensionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) GetServiceExtensions(request *GetServiceExtensionsRequest)
 }
 
 // GetServiceExtensionsWithChan invokes the ccc.GetServiceExtensions API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getserviceextensions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetServiceExtensionsWithChan(request *GetServiceExtensionsRequest) (<-chan *GetServiceExtensionsResponse, <-chan error) {
 	responseChan := make(chan *GetServiceExtensionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) GetServiceExtensionsWithChan(request *GetServiceExtensions
 }
 
 // GetServiceExtensionsWithCallback invokes the ccc.GetServiceExtensions API asynchronously
-// api document: https://help.aliyun.com/api/ccc/getserviceextensions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetServiceExtensionsWithCallback(request *GetServiceExtensionsRequest, callback func(response *GetServiceExtensionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateGetServiceExtensionsRequest() (request *GetServiceExtensionsRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "GetServiceExtensions", "", "")
+	request.Method = requests.POST
 	return
 }
 

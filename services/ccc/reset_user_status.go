@@ -21,7 +21,6 @@ import (
 )
 
 // ResetUserStatus invokes the ccc.ResetUserStatus API synchronously
-// api document: https://help.aliyun.com/api/ccc/resetuserstatus.html
 func (client *Client) ResetUserStatus(request *ResetUserStatusRequest) (response *ResetUserStatusResponse, err error) {
 	response = CreateResetUserStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ResetUserStatus(request *ResetUserStatusRequest) (response
 }
 
 // ResetUserStatusWithChan invokes the ccc.ResetUserStatus API asynchronously
-// api document: https://help.aliyun.com/api/ccc/resetuserstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetUserStatusWithChan(request *ResetUserStatusRequest) (<-chan *ResetUserStatusResponse, <-chan error) {
 	responseChan := make(chan *ResetUserStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ResetUserStatusWithChan(request *ResetUserStatusRequest) (
 }
 
 // ResetUserStatusWithCallback invokes the ccc.ResetUserStatus API asynchronously
-// api document: https://help.aliyun.com/api/ccc/resetuserstatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetUserStatusWithCallback(request *ResetUserStatusRequest, callback func(response *ResetUserStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,7 +71,8 @@ func (client *Client) ResetUserStatusWithCallback(request *ResetUserStatusReques
 // ResetUserStatusRequest is the request struct for api ResetUserStatus
 type ResetUserStatusRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
+	InstanceId string    `position:"Query" name:"InstanceId"`
+	RamIdList  *[]string `position:"Query" name:"RamIdList"  type:"Repeated"`
 }
 
 // ResetUserStatusResponse is the response struct for api ResetUserStatus
@@ -95,6 +91,7 @@ func CreateResetUserStatusRequest() (request *ResetUserStatusRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("CCC", "2017-07-05", "ResetUserStatus", "", "")
+	request.Method = requests.POST
 	return
 }
 
