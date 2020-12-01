@@ -17,36 +17,9 @@ package openanalytics_open
 
 // DataItem is a nested struct in openanalytics_open response
 type DataItem struct {
-	Name                     string                      `json:"Name" xml:"Name"`
-	ChargeType               string                      `json:"ChargeType" xml:"ChargeType"`
-	CreateTime               string                      `json:"CreateTime" xml:"CreateTime"`
-	DefaultExecutorNumbers   int64                       `json:"DefaultExecutorNumbers" xml:"DefaultExecutorNumbers"`
-	MaxMemoryLimit           float64                     `json:"MaxMemoryLimit" xml:"MaxMemoryLimit"`
-	AssumeRolePolicyDocument string                      `json:"AssumeRolePolicyDocument" xml:"AssumeRolePolicyDocument"`
-	RoleName                 string                      `json:"RoleName" xml:"RoleName"`
-	MaxCpuLimit              float64                     `json:"MaxCpuLimit" xml:"MaxCpuLimit"`
-	Role                     string                      `json:"Role" xml:"Role"`
-	CreatorId                string                      `json:"CreatorId" xml:"CreatorId"`
-	MinCpu                   string                      `json:"MinCpu" xml:"MinCpu"`
-	Description              string                      `json:"Description" xml:"Description"`
-	DefaultExecutorSpecName  string                      `json:"DefaultExecutorSpecName" xml:"DefaultExecutorSpecName"`
-	Type                     string                      `json:"Type" xml:"Type"`
-	IsServiceLinkRole        bool                        `json:"IsServiceLinkRole" xml:"IsServiceLinkRole"`
-	DefaultDriverSpecName    string                      `json:"DefaultDriverSpecName" xml:"DefaultDriverSpecName"`
-	RoleId                   string                      `json:"RoleId" xml:"RoleId"`
-	ShortName                string                      `json:"ShortName" xml:"ShortName"`
-	Remark                   string                      `json:"Remark" xml:"Remark"`
-	RamUid                   string                      `json:"RamUid" xml:"RamUid"`
-	Version                  string                      `json:"Version" xml:"Version"`
-	SparkVersionDescription  string                      `json:"SparkVersionDescription" xml:"SparkVersionDescription"`
-	RolePrincipalName        string                      `json:"RolePrincipalName" xml:"RolePrincipalName"`
-	MaxMemory                float64                     `json:"MaxMemory" xml:"MaxMemory"`
-	CreateDate               string                      `json:"CreateDate" xml:"CreateDate"`
-	Arn                      string                      `json:"Arn" xml:"Arn"`
-	UserName                 string                      `json:"UserName" xml:"UserName"`
-	Status                   string                      `json:"Status" xml:"Status"`
-	SparkEngineModuleName    string                      `json:"SparkEngineModuleName" xml:"SparkEngineModuleName"`
-	MaxCpu                   float64                     `json:"MaxCpu" xml:"MaxCpu"`
-	SparkEngineConfig        SparkEngineConfig           `json:"SparkEngineConfig" xml:"SparkEngineConfig"`
-	UserNetWorkConfigList    []UserNetWorkConfigListItem `json:"UserNetWorkConfigList" xml:"UserNetWorkConfigList"`
+	UserName  string `json:"UserName" xml:"UserName"`
+	Role      string `json:"Role" xml:"Role"`
+	ShortName string `json:"ShortName" xml:"ShortName"`
+	Remark    string `json:"Remark" xml:"Remark"`
+	RamUid    string `json:"RamUid" xml:"RamUid"`
 }

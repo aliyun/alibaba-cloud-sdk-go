@@ -1,3 +1,7 @@
+2020-12-01 Version: v1.61.721
+- Generated 2020-09-28, 2018-06-19 for `openanalytics-open`.
+- Supported Open Api.
+
 2020-11-30 Version: v1.61.720
 - Generated 2019-08-08 for `ARMS`.
 - Add OpenARMS api.

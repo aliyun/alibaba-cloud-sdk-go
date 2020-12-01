@@ -17,33 +17,19 @@ package openanalytics_open
 
 // Data is a nested struct in openanalytics_open response
 type Data struct {
-	MfaAuthenticated        bool   `json:"MfaAuthenticated" xml:"MfaAuthenticated"`
-	TokenPrincipalId        string `json:"TokenPrincipalId" xml:"TokenPrincipalId"`
-	CreateTime              string `json:"CreateTime" xml:"CreateTime"`
-	ProxyTrustTransportInfo bool   `json:"ProxyTrustTransportInfo" xml:"ProxyTrustTransportInfo"`
-	Detail                  string `json:"Detail" xml:"Detail"`
-	RoleName                string `json:"RoleName" xml:"RoleName"`
-	TokenPrincipalName      string `json:"TokenPrincipalName" xml:"TokenPrincipalName"`
-	SubmitTime              string `json:"SubmitTime" xml:"SubmitTime"`
-	SparkUI                 string `json:"SparkUI" xml:"SparkUI"`
-	DriverResourceSpec      string `json:"DriverResourceSpec" xml:"DriverResourceSpec"`
-	Policy                  string `json:"Policy" xml:"Policy"`
-	JobName                 string `json:"JobName" xml:"JobName"`
-	SubmitTimeValue         string `json:"SubmitTimeValue" xml:"SubmitTimeValue"`
-	ExpireDate              int64  `json:"ExpireDate" xml:"ExpireDate"`
-	JobId                   string `json:"JobId" xml:"JobId"`
-	PlayerUid               string `json:"PlayerUid" xml:"PlayerUid"`
-	UpdateTime              string `json:"UpdateTime" xml:"UpdateTime"`
-	CreateTimeValue         string `json:"CreateTimeValue" xml:"CreateTimeValue"`
-	RoleId                  int64  `json:"RoleId" xml:"RoleId"`
-	GrantorId               int64  `json:"GrantorId" xml:"GrantorId"`
-	UpdateTimeValue         string `json:"UpdateTimeValue" xml:"UpdateTimeValue"`
-	AccountBid              int64  `json:"AccountBid" xml:"AccountBid"`
-	ExecutorInstances       string `json:"ExecutorInstances" xml:"ExecutorInstances"`
-	AccountUid              int64  `json:"AccountUid" xml:"AccountUid"`
-	Status                  string `json:"Status" xml:"Status"`
-	AkProxy                 string `json:"AkProxy" xml:"AkProxy"`
-	ExecutorResourceSpec    string `json:"ExecutorResourceSpec" xml:"ExecutorResourceSpec"`
-	VcName                  string `json:"VcName" xml:"VcName"`
-	TokenType               string `json:"TokenType" xml:"TokenType"`
+	JobId                string `json:"JobId" xml:"JobId"`
+	UpdateTime           string `json:"UpdateTime" xml:"UpdateTime"`
+	CreateTime           string `json:"CreateTime" xml:"CreateTime"`
+	Detail               string `json:"Detail" xml:"Detail"`
+	CreateTimeValue      string `json:"CreateTimeValue" xml:"CreateTimeValue"`
+	UpdateTimeValue      string `json:"UpdateTimeValue" xml:"UpdateTimeValue"`
+	SubmitTime           string `json:"SubmitTime" xml:"SubmitTime"`
+	ExecutorInstances    string `json:"ExecutorInstances" xml:"ExecutorInstances"`
+	SparkUI              string `json:"SparkUI" xml:"SparkUI"`
+	Status               string `json:"Status" xml:"Status"`
+	DriverResourceSpec   string `json:"DriverResourceSpec" xml:"DriverResourceSpec"`
+	ExecutorResourceSpec string `json:"ExecutorResourceSpec" xml:"ExecutorResourceSpec"`
+	JobName              string `json:"JobName" xml:"JobName"`
+	VcName               string `json:"VcName" xml:"VcName"`
+	SubmitTimeValue      string `json:"SubmitTimeValue" xml:"SubmitTimeValue"`
 }
