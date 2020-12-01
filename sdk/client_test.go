@@ -93,7 +93,6 @@ func Test_NewClientWithOptions(t *testing.T) {
 
 	client.Shutdown()
 	assert.False(t, client.isOpenAsync)
-	assert.False(t, client.isRunning)
 
 	c.Transport = &http.Transport{
 		IdleConnTimeout: time.Duration(10 * time.Second),
@@ -159,7 +158,6 @@ func Test_DoActionWithProxy(t *testing.T) {
 	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
-	assert.Equal(t, true, client.isRunning)
 
 	request := requests.NewCommonRequest()
 	request.Domain = "ecs.aliyuncs.com"
@@ -274,7 +272,6 @@ func Test_DoActionWithProxy(t *testing.T) {
 	os.Setenv("https_proxy", envHttpsProxy)
 	os.Setenv("http_proxy", envHttpProxy)
 	os.Setenv("no_proxy", envNoProxy)
-	assert.Equal(t, false, client.isRunning)
 }
 
 func Test_DoAction_HTTPSInsecure(t *testing.T) {
@@ -380,14 +377,12 @@ func Test_DoAction_HTTPSInsecure(t *testing.T) {
 	os.Setenv("HTTPS_PROXY", envHttpsProxy)
 	os.Setenv("HTTP_PROXY", envHttpProxy)
 	os.Setenv("NO_PROXY", envNoProxy)
-	assert.Equal(t, false, client.isRunning)
 }
 
 func Test_DoAction_Timeout(t *testing.T) {
 	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
-	assert.Equal(t, true, client.isRunning)
 	request := requests.NewCommonRequest()
 	request.Domain = "ecs.aliyuncs.com"
 	request.Version = "2014-05-26"
@@ -436,7 +431,6 @@ func Test_DoAction_Timeout(t *testing.T) {
 	assert.Equal(t, "", response.GetHttpContentString())
 
 	client.Shutdown()
-	assert.Equal(t, false, client.isRunning)
 }
 
 func Test_ProcessCommonRequest(t *testing.T) {
@@ -471,7 +465,6 @@ func mockServer(status int, json string) (server *httptest.Server) {
 	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(status)
 		w.Write([]byte(json))
-		return
 	}))
 	return ts
 }
@@ -480,7 +473,6 @@ func Test_DoAction_With500(t *testing.T) {
 	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
-	assert.Equal(t, true, client.isRunning)
 	request := requests.NewCommonRequest()
 	request.Version = "2014-05-26"
 	request.ApiName = "DescribeInstanceStatus"
@@ -503,7 +495,6 @@ func Test_DoAction_WithLogger(t *testing.T) {
 	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
-	assert.Equal(t, true, client.isRunning)
 	request := requests.NewCommonRequest()
 	request.Version = "2014-05-26"
 	request.ApiName = "DescribeInstanceStatus"
@@ -555,7 +546,6 @@ func TestClient_BuildRequestWithSigner(t *testing.T) {
 	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
-	assert.Equal(t, true, client.isRunning)
 	request := requests.NewCommonRequest()
 	request.Domain = "ecs.aliyuncs.com"
 	request.Version = "2014-05-26"
@@ -574,7 +564,6 @@ func TestClient_BuildRequestWithSigner1(t *testing.T) {
 	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
-	assert.Equal(t, true, client.isRunning)
 	request := requests.NewCommonRequest()
 	request.Version = "2014-05-26"
 	request.ApiName = "DescribeInstanceStatus"
@@ -595,7 +584,6 @@ func TestClient_BuildRequestWithSigner2(t *testing.T) {
 	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
-	assert.Equal(t, true, client.isRunning)
 	request := requests.NewCommonRequest()
 	request.Version = "2014-05-26"
 	request.ApiName = "DescribeInstanceStatus"
@@ -667,7 +655,6 @@ func TestClient_ProcessCommonRequestWithSigner(t *testing.T) {
 	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
-	assert.Equal(t, true, client.isRunning)
 	request := requests.NewCommonRequest()
 	request.Domain = "ecs.aliyuncs.com"
 	request.Version = "2014-05-26"
@@ -696,7 +683,6 @@ func TestClient_AppendUserAgent(t *testing.T) {
 	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
-	assert.Equal(t, true, client.isRunning)
 	request := requests.NewCommonRequest()
 	request.Domain = "ecs.aliyuncs.com"
 	request.Version = "2014-05-26"
@@ -760,7 +746,6 @@ func TestClient_ProcessCommonRequestWithSigner_Error(t *testing.T) {
 	client, err = NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
-	assert.Equal(t, true, client.isRunning)
 	request := requests.NewCommonRequest()
 	request.Domain = "ecs.aliyuncs.com"
 	request.Version = "2014-05-26"
@@ -790,7 +775,6 @@ func TestClient_NewClientWithStsRoleNameOnEcs(t *testing.T) {
 	client, err := NewClientWithStsRoleNameOnEcs("regionid", "rolename")
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
-	assert.Equal(t, true, client.isRunning)
 	config := client.GetConfig()
 	assert.NotNil(t, config)
 	err = client.AddAsyncTask(nil)
@@ -805,13 +789,11 @@ func TestClient_NewClientWithStsRoleArn(t *testing.T) {
 	client, err := NewClientWithStsRoleArn("regionid", "acesskeyid", "accesskeysecret", "rolearn", "rolesessionname")
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
-	assert.Equal(t, true, client.isRunning)
 	task := func() {}
 	client.asyncTaskQueue = make(chan func(), 1)
 	err = client.AddAsyncTask(task)
 	assert.Nil(t, err)
 	client.Shutdown()
-	assert.Equal(t, false, client.isRunning)
 }
 
 func TestInitWithProviderChain(t *testing.T) {
