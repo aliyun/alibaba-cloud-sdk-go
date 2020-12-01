@@ -78,11 +78,11 @@ type ListDevopsProjectTaskListRequest struct {
 // ListDevopsProjectTaskListResponse is the response struct for api ListDevopsProjectTaskList
 type ListDevopsProjectTaskListResponse struct {
 	*responses.BaseResponse
-	Successful bool   `json:"Successful" xml:"Successful"`
-	ErrorCode  string `json:"ErrorCode" xml:"ErrorCode"`
-	ErrorMsg   string `json:"ErrorMsg" xml:"ErrorMsg"`
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Object     Object `json:"Object" xml:"Object"`
+	Successful bool                              `json:"Successful" xml:"Successful"`
+	ErrorCode  string                            `json:"ErrorCode" xml:"ErrorCode"`
+	ErrorMsg   string                            `json:"ErrorMsg" xml:"ErrorMsg"`
+	RequestId  string                            `json:"RequestId" xml:"RequestId"`
+	Object     ObjectInListDevopsProjectTaskList `json:"Object" xml:"Object"`
 }
 
 // CreateListDevopsProjectTaskListRequest creates a request to invoke ListDevopsProjectTaskList API
