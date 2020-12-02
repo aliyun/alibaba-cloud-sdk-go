@@ -1,3 +1,9 @@
+2020-12-02 Version: v1.61.732
+- Generated 2017-08-01 for `polardb`.
+- Support CreateDBLink for polardb oracle.
+- Support DeleteDBLink for polardb oracle.
+- Support DescribeDBLinks for polardb oracle.
+
 2020-12-02 Version: v1.61.731
 - Generated 2019-12-26 for `OutboundBot`.
 - Update version.

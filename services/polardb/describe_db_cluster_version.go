@@ -82,7 +82,7 @@ type DescribeDBClusterVersionRequest struct {
 type DescribeDBClusterVersionResponse struct {
 	*responses.BaseResponse
 	RequestId             string `json:"RequestId" xml:"RequestId"`
-	DBInstanceName        string `json:"DBInstanceName" xml:"DBInstanceName"`
+	DBClusterId           string `json:"DBClusterId" xml:"DBClusterId"`
 	DBVersion             string `json:"DBVersion" xml:"DBVersion"`
 	DBMinorVersion        string `json:"DBMinorVersion" xml:"DBMinorVersion"`
 	DBRevisionVersion     string `json:"DBRevisionVersion" xml:"DBRevisionVersion"`
