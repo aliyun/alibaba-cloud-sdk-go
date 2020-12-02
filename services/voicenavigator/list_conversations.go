@@ -21,7 +21,6 @@ import (
 )
 
 // ListConversations invokes the voicenavigator.ListConversations API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/listconversations.html
 func (client *Client) ListConversations(request *ListConversationsRequest) (response *ListConversationsResponse, err error) {
 	response = CreateListConversationsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListConversations(request *ListConversationsRequest) (resp
 }
 
 // ListConversationsWithChan invokes the voicenavigator.ListConversations API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/listconversations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListConversationsWithChan(request *ListConversationsRequest) (<-chan *ListConversationsResponse, <-chan error) {
 	responseChan := make(chan *ListConversationsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListConversationsWithChan(request *ListConversationsReques
 }
 
 // ListConversationsWithCallback invokes the voicenavigator.ListConversations API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/listconversations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListConversationsWithCallback(request *ListConversationsRequest, callback func(response *ListConversationsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateListConversationsRequest() (request *ListConversationsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "ListConversations", "voicebot", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

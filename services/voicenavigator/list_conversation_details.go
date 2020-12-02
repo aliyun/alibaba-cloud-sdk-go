@@ -21,7 +21,6 @@ import (
 )
 
 // ListConversationDetails invokes the voicenavigator.ListConversationDetails API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/listconversationdetails.html
 func (client *Client) ListConversationDetails(request *ListConversationDetailsRequest) (response *ListConversationDetailsResponse, err error) {
 	response = CreateListConversationDetailsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListConversationDetails(request *ListConversationDetailsRe
 }
 
 // ListConversationDetailsWithChan invokes the voicenavigator.ListConversationDetails API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/listconversationdetails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListConversationDetailsWithChan(request *ListConversationDetailsRequest) (<-chan *ListConversationDetailsResponse, <-chan error) {
 	responseChan := make(chan *ListConversationDetailsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListConversationDetailsWithChan(request *ListConversationD
 }
 
 // ListConversationDetailsWithCallback invokes the voicenavigator.ListConversationDetails API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/listconversationdetails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListConversationDetailsWithCallback(request *ListConversationDetailsRequest, callback func(response *ListConversationDetailsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateListConversationDetailsRequest() (request *ListConversationDetailsReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "ListConversationDetails", "voicebot", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

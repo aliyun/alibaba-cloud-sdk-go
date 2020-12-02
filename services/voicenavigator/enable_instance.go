@@ -21,7 +21,6 @@ import (
 )
 
 // EnableInstance invokes the voicenavigator.EnableInstance API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/enableinstance.html
 func (client *Client) EnableInstance(request *EnableInstanceRequest) (response *EnableInstanceResponse, err error) {
 	response = CreateEnableInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) EnableInstance(request *EnableInstanceRequest) (response *
 }
 
 // EnableInstanceWithChan invokes the voicenavigator.EnableInstance API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/enableinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableInstanceWithChan(request *EnableInstanceRequest) (<-chan *EnableInstanceResponse, <-chan error) {
 	responseChan := make(chan *EnableInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) EnableInstanceWithChan(request *EnableInstanceRequest) (<-
 }
 
 // EnableInstanceWithCallback invokes the voicenavigator.EnableInstance API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/enableinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableInstanceWithCallback(request *EnableInstanceRequest, callback func(response *EnableInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateEnableInstanceRequest() (request *EnableInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "EnableInstance", "voicebot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

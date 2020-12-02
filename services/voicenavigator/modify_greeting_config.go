@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyGreetingConfig invokes the voicenavigator.ModifyGreetingConfig API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/modifygreetingconfig.html
 func (client *Client) ModifyGreetingConfig(request *ModifyGreetingConfigRequest) (response *ModifyGreetingConfigResponse, err error) {
 	response = CreateModifyGreetingConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyGreetingConfig(request *ModifyGreetingConfigRequest)
 }
 
 // ModifyGreetingConfigWithChan invokes the voicenavigator.ModifyGreetingConfig API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/modifygreetingconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyGreetingConfigWithChan(request *ModifyGreetingConfigRequest) (<-chan *ModifyGreetingConfigResponse, <-chan error) {
 	responseChan := make(chan *ModifyGreetingConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyGreetingConfigWithChan(request *ModifyGreetingConfig
 }
 
 // ModifyGreetingConfigWithCallback invokes the voicenavigator.ModifyGreetingConfig API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/modifygreetingconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyGreetingConfigWithCallback(request *ModifyGreetingConfigRequest, callback func(response *ModifyGreetingConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateModifyGreetingConfigRequest() (request *ModifyGreetingConfigRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "ModifyGreetingConfig", "voicebot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

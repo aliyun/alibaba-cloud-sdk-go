@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeRecording invokes the voicenavigator.DescribeRecording API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describerecording.html
 func (client *Client) DescribeRecording(request *DescribeRecordingRequest) (response *DescribeRecordingResponse, err error) {
 	response = CreateDescribeRecordingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeRecording(request *DescribeRecordingRequest) (resp
 }
 
 // DescribeRecordingWithChan invokes the voicenavigator.DescribeRecording API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describerecording.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecordingWithChan(request *DescribeRecordingRequest) (<-chan *DescribeRecordingResponse, <-chan error) {
 	responseChan := make(chan *DescribeRecordingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeRecordingWithChan(request *DescribeRecordingReques
 }
 
 // DescribeRecordingWithCallback invokes the voicenavigator.DescribeRecording API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describerecording.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecordingWithCallback(request *DescribeRecordingRequest, callback func(response *DescribeRecordingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeRecordingRequest() (request *DescribeRecordingRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "DescribeRecording", "voicebot", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

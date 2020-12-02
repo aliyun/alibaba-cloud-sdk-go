@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeTTSConfig invokes the voicenavigator.DescribeTTSConfig API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describettsconfig.html
 func (client *Client) DescribeTTSConfig(request *DescribeTTSConfigRequest) (response *DescribeTTSConfigResponse, err error) {
 	response = CreateDescribeTTSConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeTTSConfig(request *DescribeTTSConfigRequest) (resp
 }
 
 // DescribeTTSConfigWithChan invokes the voicenavigator.DescribeTTSConfig API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describettsconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTTSConfigWithChan(request *DescribeTTSConfigRequest) (<-chan *DescribeTTSConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeTTSConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeTTSConfigWithChan(request *DescribeTTSConfigReques
 }
 
 // DescribeTTSConfigWithCallback invokes the voicenavigator.DescribeTTSConfig API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describettsconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTTSConfigWithCallback(request *DescribeTTSConfigRequest, callback func(response *DescribeTTSConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeTTSConfigRequest() (request *DescribeTTSConfigRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "DescribeTTSConfig", "voicebot", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeInstance invokes the voicenavigator.DescribeInstance API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describeinstance.html
 func (client *Client) DescribeInstance(request *DescribeInstanceRequest) (response *DescribeInstanceResponse, err error) {
 	response = CreateDescribeInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeInstance(request *DescribeInstanceRequest) (respon
 }
 
 // DescribeInstanceWithChan invokes the voicenavigator.DescribeInstance API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceWithChan(request *DescribeInstanceRequest) (<-chan *DescribeInstanceResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeInstanceWithChan(request *DescribeInstanceRequest)
 }
 
 // DescribeInstanceWithCallback invokes the voicenavigator.DescribeInstance API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describeinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceWithCallback(request *DescribeInstanceRequest, callback func(response *DescribeInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateDescribeInstanceRequest() (request *DescribeInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "DescribeInstance", "voicebot", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DisableInstance invokes the voicenavigator.DisableInstance API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/disableinstance.html
 func (client *Client) DisableInstance(request *DisableInstanceRequest) (response *DisableInstanceResponse, err error) {
 	response = CreateDisableInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DisableInstance(request *DisableInstanceRequest) (response
 }
 
 // DisableInstanceWithChan invokes the voicenavigator.DisableInstance API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/disableinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableInstanceWithChan(request *DisableInstanceRequest) (<-chan *DisableInstanceResponse, <-chan error) {
 	responseChan := make(chan *DisableInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DisableInstanceWithChan(request *DisableInstanceRequest) (
 }
 
 // DisableInstanceWithCallback invokes the voicenavigator.DisableInstance API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/disableinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableInstanceWithCallback(request *DisableInstanceRequest, callback func(response *DisableInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +87,7 @@ func CreateDisableInstanceRequest() (request *DisableInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "DisableInstance", "voicebot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

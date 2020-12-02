@@ -21,7 +21,6 @@ import (
 )
 
 // ModifySilenceTimeoutConfig invokes the voicenavigator.ModifySilenceTimeoutConfig API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/modifysilencetimeoutconfig.html
 func (client *Client) ModifySilenceTimeoutConfig(request *ModifySilenceTimeoutConfigRequest) (response *ModifySilenceTimeoutConfigResponse, err error) {
 	response = CreateModifySilenceTimeoutConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifySilenceTimeoutConfig(request *ModifySilenceTimeoutCo
 }
 
 // ModifySilenceTimeoutConfigWithChan invokes the voicenavigator.ModifySilenceTimeoutConfig API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/modifysilencetimeoutconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySilenceTimeoutConfigWithChan(request *ModifySilenceTimeoutConfigRequest) (<-chan *ModifySilenceTimeoutConfigResponse, <-chan error) {
 	responseChan := make(chan *ModifySilenceTimeoutConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifySilenceTimeoutConfigWithChan(request *ModifySilenceT
 }
 
 // ModifySilenceTimeoutConfigWithCallback invokes the voicenavigator.ModifySilenceTimeoutConfig API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/modifysilencetimeoutconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySilenceTimeoutConfigWithCallback(request *ModifySilenceTimeoutConfigRequest, callback func(response *ModifySilenceTimeoutConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateModifySilenceTimeoutConfigRequest() (request *ModifySilenceTimeoutCon
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "ModifySilenceTimeoutConfig", "voicebot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

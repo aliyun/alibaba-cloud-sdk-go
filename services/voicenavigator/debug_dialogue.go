@@ -21,7 +21,6 @@ import (
 )
 
 // DebugDialogue invokes the voicenavigator.DebugDialogue API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/debugdialogue.html
 func (client *Client) DebugDialogue(request *DebugDialogueRequest) (response *DebugDialogueResponse, err error) {
 	response = CreateDebugDialogueResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DebugDialogue(request *DebugDialogueRequest) (response *De
 }
 
 // DebugDialogueWithChan invokes the voicenavigator.DebugDialogue API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/debugdialogue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DebugDialogueWithChan(request *DebugDialogueRequest) (<-chan *DebugDialogueResponse, <-chan error) {
 	responseChan := make(chan *DebugDialogueResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DebugDialogueWithChan(request *DebugDialogueRequest) (<-ch
 }
 
 // DebugDialogueWithCallback invokes the voicenavigator.DebugDialogue API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/debugdialogue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DebugDialogueWithCallback(request *DebugDialogueRequest, callback func(response *DebugDialogueResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -98,6 +93,7 @@ func CreateDebugDialogueRequest() (request *DebugDialogueRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "DebugDialogue", "voicebot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // SilenceTimeout invokes the voicenavigator.SilenceTimeout API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/silencetimeout.html
 func (client *Client) SilenceTimeout(request *SilenceTimeoutRequest) (response *SilenceTimeoutResponse, err error) {
 	response = CreateSilenceTimeoutResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SilenceTimeout(request *SilenceTimeoutRequest) (response *
 }
 
 // SilenceTimeoutWithChan invokes the voicenavigator.SilenceTimeout API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/silencetimeout.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SilenceTimeoutWithChan(request *SilenceTimeoutRequest) (<-chan *SilenceTimeoutResponse, <-chan error) {
 	responseChan := make(chan *SilenceTimeoutResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SilenceTimeoutWithChan(request *SilenceTimeoutRequest) (<-
 }
 
 // SilenceTimeoutWithCallback invokes the voicenavigator.SilenceTimeout API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/silencetimeout.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SilenceTimeoutWithCallback(request *SilenceTimeoutRequest, callback func(response *SilenceTimeoutResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,11 +79,11 @@ type SilenceTimeoutRequest struct {
 // SilenceTimeoutResponse is the response struct for api SilenceTimeout
 type SilenceTimeoutResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	TextResponse  string `json:"TextResponse" xml:"TextResponse"`
-	Interruptible bool   `json:"Interruptible" xml:"Interruptible"`
 	Action        string `json:"Action" xml:"Action"`
 	ActionParams  string `json:"ActionParams" xml:"ActionParams"`
+	Interruptible bool   `json:"Interruptible" xml:"Interruptible"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	TextResponse  string `json:"TextResponse" xml:"TextResponse"`
 }
 
 // CreateSilenceTimeoutRequest creates a request to invoke SilenceTimeout API
@@ -97,6 +92,7 @@ func CreateSilenceTimeoutRequest() (request *SilenceTimeoutRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "SilenceTimeout", "voicebot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

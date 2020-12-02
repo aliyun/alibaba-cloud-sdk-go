@@ -21,7 +21,6 @@ import (
 )
 
 // SaveRecording invokes the voicenavigator.SaveRecording API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/saverecording.html
 func (client *Client) SaveRecording(request *SaveRecordingRequest) (response *SaveRecordingResponse, err error) {
 	response = CreateSaveRecordingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SaveRecording(request *SaveRecordingRequest) (response *Sa
 }
 
 // SaveRecordingWithChan invokes the voicenavigator.SaveRecording API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/saverecording.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveRecordingWithChan(request *SaveRecordingRequest) (<-chan *SaveRecordingResponse, <-chan error) {
 	responseChan := make(chan *SaveRecordingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SaveRecordingWithChan(request *SaveRecordingRequest) (<-ch
 }
 
 // SaveRecordingWithCallback invokes the voicenavigator.SaveRecording API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/saverecording.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveRecordingWithCallback(request *SaveRecordingRequest, callback func(response *SaveRecordingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateSaveRecordingRequest() (request *SaveRecordingRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "SaveRecording", "voicebot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

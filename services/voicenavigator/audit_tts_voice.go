@@ -21,7 +21,6 @@ import (
 )
 
 // AuditTTSVoice invokes the voicenavigator.AuditTTSVoice API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/auditttsvoice.html
 func (client *Client) AuditTTSVoice(request *AuditTTSVoiceRequest) (response *AuditTTSVoiceResponse, err error) {
 	response = CreateAuditTTSVoiceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AuditTTSVoice(request *AuditTTSVoiceRequest) (response *Au
 }
 
 // AuditTTSVoiceWithChan invokes the voicenavigator.AuditTTSVoice API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/auditttsvoice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AuditTTSVoiceWithChan(request *AuditTTSVoiceRequest) (<-chan *AuditTTSVoiceResponse, <-chan error) {
 	responseChan := make(chan *AuditTTSVoiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AuditTTSVoiceWithChan(request *AuditTTSVoiceRequest) (<-ch
 }
 
 // AuditTTSVoiceWithCallback invokes the voicenavigator.AuditTTSVoice API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/auditttsvoice.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AuditTTSVoiceWithCallback(request *AuditTTSVoiceRequest, callback func(response *AuditTTSVoiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateAuditTTSVoiceRequest() (request *AuditTTSVoiceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "AuditTTSVoice", "voicebot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

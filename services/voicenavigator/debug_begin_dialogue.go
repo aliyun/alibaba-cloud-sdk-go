@@ -21,7 +21,6 @@ import (
 )
 
 // DebugBeginDialogue invokes the voicenavigator.DebugBeginDialogue API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/debugbegindialogue.html
 func (client *Client) DebugBeginDialogue(request *DebugBeginDialogueRequest) (response *DebugBeginDialogueResponse, err error) {
 	response = CreateDebugBeginDialogueResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DebugBeginDialogue(request *DebugBeginDialogueRequest) (re
 }
 
 // DebugBeginDialogueWithChan invokes the voicenavigator.DebugBeginDialogue API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/debugbegindialogue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DebugBeginDialogueWithChan(request *DebugBeginDialogueRequest) (<-chan *DebugBeginDialogueResponse, <-chan error) {
 	responseChan := make(chan *DebugBeginDialogueResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DebugBeginDialogueWithChan(request *DebugBeginDialogueRequ
 }
 
 // DebugBeginDialogueWithCallback invokes the voicenavigator.DebugBeginDialogue API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/debugbegindialogue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DebugBeginDialogueWithCallback(request *DebugBeginDialogueRequest, callback func(response *DebugBeginDialogueResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,21 +71,21 @@ func (client *Client) DebugBeginDialogueWithCallback(request *DebugBeginDialogue
 // DebugBeginDialogueRequest is the request struct for api DebugBeginDialogue
 type DebugBeginDialogueRequest struct {
 	*requests.RpcRequest
+	ConversationId string `position:"Query" name:"ConversationId"`
+	InitialContext string `position:"Query" name:"InitialContext"`
 	CallingNumber  string `position:"Query" name:"CallingNumber"`
 	InstanceId     string `position:"Query" name:"InstanceId"`
 	CalledNumber   string `position:"Query" name:"CalledNumber"`
-	ConversationId string `position:"Query" name:"ConversationId"`
-	InitialContext string `position:"Query" name:"InitialContext"`
 }
 
 // DebugBeginDialogueResponse is the response struct for api DebugBeginDialogue
 type DebugBeginDialogueResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	TextResponse  string `json:"TextResponse" xml:"TextResponse"`
-	Interruptible bool   `json:"Interruptible" xml:"Interruptible"`
 	Action        string `json:"Action" xml:"Action"`
 	ActionParams  string `json:"ActionParams" xml:"ActionParams"`
+	Interruptible bool   `json:"Interruptible" xml:"Interruptible"`
+	RequestId     string `json:"RequestId" xml:"RequestId"`
+	TextResponse  string `json:"TextResponse" xml:"TextResponse"`
 }
 
 // CreateDebugBeginDialogueRequest creates a request to invoke DebugBeginDialogue API
@@ -99,6 +94,7 @@ func CreateDebugBeginDialogueRequest() (request *DebugBeginDialogueRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "DebugBeginDialogue", "voicebot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

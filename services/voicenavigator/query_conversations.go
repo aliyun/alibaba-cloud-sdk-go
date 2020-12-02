@@ -21,7 +21,6 @@ import (
 )
 
 // QueryConversations invokes the voicenavigator.QueryConversations API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/queryconversations.html
 func (client *Client) QueryConversations(request *QueryConversationsRequest) (response *QueryConversationsResponse, err error) {
 	response = CreateQueryConversationsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryConversations(request *QueryConversationsRequest) (re
 }
 
 // QueryConversationsWithChan invokes the voicenavigator.QueryConversations API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/queryconversations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryConversationsWithChan(request *QueryConversationsRequest) (<-chan *QueryConversationsResponse, <-chan error) {
 	responseChan := make(chan *QueryConversationsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryConversationsWithChan(request *QueryConversationsRequ
 }
 
 // QueryConversationsWithCallback invokes the voicenavigator.QueryConversations API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/queryconversations.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryConversationsWithCallback(request *QueryConversationsRequest, callback func(response *QueryConversationsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +95,7 @@ func CreateQueryConversationsRequest() (request *QueryConversationsRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "QueryConversations", "voicebot", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

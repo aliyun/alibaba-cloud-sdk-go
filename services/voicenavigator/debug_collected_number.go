@@ -21,7 +21,6 @@ import (
 )
 
 // DebugCollectedNumber invokes the voicenavigator.DebugCollectedNumber API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/debugcollectednumber.html
 func (client *Client) DebugCollectedNumber(request *DebugCollectedNumberRequest) (response *DebugCollectedNumberResponse, err error) {
 	response = CreateDebugCollectedNumberResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DebugCollectedNumber(request *DebugCollectedNumberRequest)
 }
 
 // DebugCollectedNumberWithChan invokes the voicenavigator.DebugCollectedNumber API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/debugcollectednumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DebugCollectedNumberWithChan(request *DebugCollectedNumberRequest) (<-chan *DebugCollectedNumberResponse, <-chan error) {
 	responseChan := make(chan *DebugCollectedNumberResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DebugCollectedNumberWithChan(request *DebugCollectedNumber
 }
 
 // DebugCollectedNumberWithCallback invokes the voicenavigator.DebugCollectedNumber API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/debugcollectednumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DebugCollectedNumberWithCallback(request *DebugCollectedNumberRequest, callback func(response *DebugCollectedNumberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateDebugCollectedNumberRequest() (request *DebugCollectedNumberRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "DebugCollectedNumber", "voicebot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // CollectedNumber invokes the voicenavigator.CollectedNumber API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/collectednumber.html
 func (client *Client) CollectedNumber(request *CollectedNumberRequest) (response *CollectedNumberResponse, err error) {
 	response = CreateCollectedNumberResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CollectedNumber(request *CollectedNumberRequest) (response
 }
 
 // CollectedNumberWithChan invokes the voicenavigator.CollectedNumber API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/collectednumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CollectedNumberWithChan(request *CollectedNumberRequest) (<-chan *CollectedNumberResponse, <-chan error) {
 	responseChan := make(chan *CollectedNumberResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CollectedNumberWithChan(request *CollectedNumberRequest) (
 }
 
 // CollectedNumberWithCallback invokes the voicenavigator.CollectedNumber API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/collectednumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CollectedNumberWithCallback(request *CollectedNumberRequest, callback func(response *CollectedNumberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateCollectedNumberRequest() (request *CollectedNumberRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "CollectedNumber", "voicebot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

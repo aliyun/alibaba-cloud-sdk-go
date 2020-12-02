@@ -21,7 +21,6 @@ import (
 )
 
 // BeginDialogue invokes the voicenavigator.BeginDialogue API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/begindialogue.html
 func (client *Client) BeginDialogue(request *BeginDialogueRequest) (response *BeginDialogueResponse, err error) {
 	response = CreateBeginDialogueResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) BeginDialogue(request *BeginDialogueRequest) (response *Be
 }
 
 // BeginDialogueWithChan invokes the voicenavigator.BeginDialogue API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/begindialogue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BeginDialogueWithChan(request *BeginDialogueRequest) (<-chan *BeginDialogueResponse, <-chan error) {
 	responseChan := make(chan *BeginDialogueResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) BeginDialogueWithChan(request *BeginDialogueRequest) (<-ch
 }
 
 // BeginDialogueWithCallback invokes the voicenavigator.BeginDialogue API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/begindialogue.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BeginDialogueWithCallback(request *BeginDialogueRequest, callback func(response *BeginDialogueResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -99,6 +94,7 @@ func CreateBeginDialogueRequest() (request *BeginDialogueRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "BeginDialogue", "voicebot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeNavigationConfig invokes the voicenavigator.DescribeNavigationConfig API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describenavigationconfig.html
 func (client *Client) DescribeNavigationConfig(request *DescribeNavigationConfigRequest) (response *DescribeNavigationConfigResponse, err error) {
 	response = CreateDescribeNavigationConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeNavigationConfig(request *DescribeNavigationConfig
 }
 
 // DescribeNavigationConfigWithChan invokes the voicenavigator.DescribeNavigationConfig API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describenavigationconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNavigationConfigWithChan(request *DescribeNavigationConfigRequest) (<-chan *DescribeNavigationConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeNavigationConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeNavigationConfigWithChan(request *DescribeNavigati
 }
 
 // DescribeNavigationConfigWithCallback invokes the voicenavigator.DescribeNavigationConfig API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describenavigationconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNavigationConfigWithCallback(request *DescribeNavigationConfigRequest, callback func(response *DescribeNavigationConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -97,6 +92,7 @@ func CreateDescribeNavigationConfigRequest() (request *DescribeNavigationConfigR
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "DescribeNavigationConfig", "voicebot", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

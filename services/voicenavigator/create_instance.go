@@ -21,7 +21,6 @@ import (
 )
 
 // CreateInstance invokes the voicenavigator.CreateInstance API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/createinstance.html
 func (client *Client) CreateInstance(request *CreateInstanceRequest) (response *CreateInstanceResponse, err error) {
 	response = CreateCreateInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateInstance(request *CreateInstanceRequest) (response *
 }
 
 // CreateInstanceWithChan invokes the voicenavigator.CreateInstance API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/createinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateInstanceWithChan(request *CreateInstanceRequest) (<-chan *CreateInstanceResponse, <-chan error) {
 	responseChan := make(chan *CreateInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateInstanceWithChan(request *CreateInstanceRequest) (<-
 }
 
 // CreateInstanceWithCallback invokes the voicenavigator.CreateInstance API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/createinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest, callback func(response *CreateInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +76,7 @@ type CreateInstanceRequest struct {
 	ChatbotInstanceId string           `position:"Query" name:"ChatbotInstanceId"`
 	Name              string           `position:"Query" name:"Name"`
 	NluServiceType    string           `position:"Query" name:"NluServiceType"`
+	ChatbotName       string           `position:"Query" name:"ChatbotName"`
 }
 
 // CreateInstanceResponse is the response struct for api CreateInstance
@@ -96,6 +92,7 @@ func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "CreateInstance", "voicebot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

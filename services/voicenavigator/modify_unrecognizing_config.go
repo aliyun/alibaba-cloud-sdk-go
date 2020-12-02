@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyUnrecognizingConfig invokes the voicenavigator.ModifyUnrecognizingConfig API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/modifyunrecognizingconfig.html
 func (client *Client) ModifyUnrecognizingConfig(request *ModifyUnrecognizingConfigRequest) (response *ModifyUnrecognizingConfigResponse, err error) {
 	response = CreateModifyUnrecognizingConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyUnrecognizingConfig(request *ModifyUnrecognizingConf
 }
 
 // ModifyUnrecognizingConfigWithChan invokes the voicenavigator.ModifyUnrecognizingConfig API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/modifyunrecognizingconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUnrecognizingConfigWithChan(request *ModifyUnrecognizingConfigRequest) (<-chan *ModifyUnrecognizingConfigResponse, <-chan error) {
 	responseChan := make(chan *ModifyUnrecognizingConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyUnrecognizingConfigWithChan(request *ModifyUnrecogni
 }
 
 // ModifyUnrecognizingConfigWithCallback invokes the voicenavigator.ModifyUnrecognizingConfig API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/modifyunrecognizingconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUnrecognizingConfigWithCallback(request *ModifyUnrecognizingConfigRequest, callback func(response *ModifyUnrecognizingConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateModifyUnrecognizingConfigRequest() (request *ModifyUnrecognizingConfi
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "ModifyUnrecognizingConfig", "voicebot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

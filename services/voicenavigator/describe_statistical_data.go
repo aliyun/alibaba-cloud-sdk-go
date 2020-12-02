@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeStatisticalData invokes the voicenavigator.DescribeStatisticalData API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describestatisticaldata.html
 func (client *Client) DescribeStatisticalData(request *DescribeStatisticalDataRequest) (response *DescribeStatisticalDataResponse, err error) {
 	response = CreateDescribeStatisticalDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeStatisticalData(request *DescribeStatisticalDataRe
 }
 
 // DescribeStatisticalDataWithChan invokes the voicenavigator.DescribeStatisticalData API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describestatisticaldata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStatisticalDataWithChan(request *DescribeStatisticalDataRequest) (<-chan *DescribeStatisticalDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeStatisticalDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeStatisticalDataWithChan(request *DescribeStatistic
 }
 
 // DescribeStatisticalDataWithCallback invokes the voicenavigator.DescribeStatisticalData API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describestatisticaldata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStatisticalDataWithCallback(request *DescribeStatisticalDataRequest, callback func(response *DescribeStatisticalDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +96,7 @@ func CreateDescribeStatisticalDataRequest() (request *DescribeStatisticalDataReq
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "DescribeStatisticalData", "voicebot", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

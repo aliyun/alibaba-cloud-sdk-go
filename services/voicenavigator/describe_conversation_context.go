@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeConversationContext invokes the voicenavigator.DescribeConversationContext API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describeconversationcontext.html
 func (client *Client) DescribeConversationContext(request *DescribeConversationContextRequest) (response *DescribeConversationContextResponse, err error) {
 	response = CreateDescribeConversationContextResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeConversationContext(request *DescribeConversationC
 }
 
 // DescribeConversationContextWithChan invokes the voicenavigator.DescribeConversationContext API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describeconversationcontext.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeConversationContextWithChan(request *DescribeConversationContextRequest) (<-chan *DescribeConversationContextResponse, <-chan error) {
 	responseChan := make(chan *DescribeConversationContextResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeConversationContextWithChan(request *DescribeConve
 }
 
 // DescribeConversationContextWithCallback invokes the voicenavigator.DescribeConversationContext API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describeconversationcontext.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeConversationContextWithCallback(request *DescribeConversationContextRequest, callback func(response *DescribeConversationContextResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +88,7 @@ func CreateDescribeConversationContextRequest() (request *DescribeConversationCo
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "DescribeConversationContext", "voicebot", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

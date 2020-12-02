@@ -21,7 +21,6 @@ import (
 )
 
 // ExportConversationDetails invokes the voicenavigator.ExportConversationDetails API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/exportconversationdetails.html
 func (client *Client) ExportConversationDetails(request *ExportConversationDetailsRequest) (response *ExportConversationDetailsResponse, err error) {
 	response = CreateExportConversationDetailsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExportConversationDetails(request *ExportConversationDetai
 }
 
 // ExportConversationDetailsWithChan invokes the voicenavigator.ExportConversationDetails API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/exportconversationdetails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportConversationDetailsWithChan(request *ExportConversationDetailsRequest) (<-chan *ExportConversationDetailsResponse, <-chan error) {
 	responseChan := make(chan *ExportConversationDetailsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExportConversationDetailsWithChan(request *ExportConversat
 }
 
 // ExportConversationDetailsWithCallback invokes the voicenavigator.ExportConversationDetails API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/exportconversationdetails.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportConversationDetailsWithCallback(request *ExportConversationDetailsRequest, callback func(response *ExportConversationDetailsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +90,7 @@ func CreateExportConversationDetailsRequest() (request *ExportConversationDetail
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "ExportConversationDetails", "voicebot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

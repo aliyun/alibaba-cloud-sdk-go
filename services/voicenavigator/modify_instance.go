@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyInstance invokes the voicenavigator.ModifyInstance API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/modifyinstance.html
 func (client *Client) ModifyInstance(request *ModifyInstanceRequest) (response *ModifyInstanceResponse, err error) {
 	response = CreateModifyInstanceResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyInstance(request *ModifyInstanceRequest) (response *
 }
 
 // ModifyInstanceWithChan invokes the voicenavigator.ModifyInstance API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/modifyinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceWithChan(request *ModifyInstanceRequest) (<-chan *ModifyInstanceResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyInstanceWithChan(request *ModifyInstanceRequest) (<-
 }
 
 // ModifyInstanceWithCallback invokes the voicenavigator.ModifyInstance API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/modifyinstance.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceWithCallback(request *ModifyInstanceRequest, callback func(response *ModifyInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateModifyInstanceRequest() (request *ModifyInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "ModifyInstance", "voicebot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

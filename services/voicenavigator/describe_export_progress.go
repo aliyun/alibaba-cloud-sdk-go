@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeExportProgress invokes the voicenavigator.DescribeExportProgress API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describeexportprogress.html
 func (client *Client) DescribeExportProgress(request *DescribeExportProgressRequest) (response *DescribeExportProgressResponse, err error) {
 	response = CreateDescribeExportProgressResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeExportProgress(request *DescribeExportProgressRequ
 }
 
 // DescribeExportProgressWithChan invokes the voicenavigator.DescribeExportProgress API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describeexportprogress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExportProgressWithChan(request *DescribeExportProgressRequest) (<-chan *DescribeExportProgressResponse, <-chan error) {
 	responseChan := make(chan *DescribeExportProgressResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeExportProgressWithChan(request *DescribeExportProg
 }
 
 // DescribeExportProgressWithCallback invokes the voicenavigator.DescribeExportProgress API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/describeexportprogress.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExportProgressWithCallback(request *DescribeExportProgressRequest, callback func(response *DescribeExportProgressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +89,7 @@ func CreateDescribeExportProgressRequest() (request *DescribeExportProgressReque
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "DescribeExportProgress", "voicebot", "openAPI")
+	request.Method = requests.GET
 	return
 }
 

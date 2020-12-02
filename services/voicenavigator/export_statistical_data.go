@@ -21,7 +21,6 @@ import (
 )
 
 // ExportStatisticalData invokes the voicenavigator.ExportStatisticalData API synchronously
-// api document: https://help.aliyun.com/api/voicenavigator/exportstatisticaldata.html
 func (client *Client) ExportStatisticalData(request *ExportStatisticalDataRequest) (response *ExportStatisticalDataResponse, err error) {
 	response = CreateExportStatisticalDataResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExportStatisticalData(request *ExportStatisticalDataReques
 }
 
 // ExportStatisticalDataWithChan invokes the voicenavigator.ExportStatisticalData API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/exportstatisticaldata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportStatisticalDataWithChan(request *ExportStatisticalDataRequest) (<-chan *ExportStatisticalDataResponse, <-chan error) {
 	responseChan := make(chan *ExportStatisticalDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExportStatisticalDataWithChan(request *ExportStatisticalDa
 }
 
 // ExportStatisticalDataWithCallback invokes the voicenavigator.ExportStatisticalData API asynchronously
-// api document: https://help.aliyun.com/api/voicenavigator/exportstatisticaldata.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportStatisticalDataWithCallback(request *ExportStatisticalDataRequest, callback func(response *ExportStatisticalDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +91,7 @@ func CreateExportStatisticalDataRequest() (request *ExportStatisticalDataRequest
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("VoiceNavigator", "2018-06-12", "ExportStatisticalData", "voicebot", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
