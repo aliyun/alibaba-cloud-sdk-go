@@ -23,5 +23,6 @@ type Data struct {
 	VideoCoverUrl string `json:"VideoCoverUrl" xml:"VideoCoverUrl"`
 	Status        string `json:"Status" xml:"Status"`
 	VideoUrl      string `json:"VideoUrl" xml:"VideoUrl"`
+	VideoURL      string `json:"VideoURL" xml:"VideoURL"`
 	ErrorCode     string `json:"ErrorCode" xml:"ErrorCode"`
 }

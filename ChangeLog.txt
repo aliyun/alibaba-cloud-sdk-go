@@ -1,3 +1,7 @@
+2020-12-02 Version: v1.61.727
+- Generated 2020-03-20 for `videoenhan`.
+- Release MergeVideoFace EnhanceVideoQuality.
+
 2020-12-02 Version: v1.61.726
 - Generated 2019-12-30 for `imageseg`.
 - Update SegmentHead.
