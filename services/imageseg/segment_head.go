@@ -71,7 +71,8 @@ func (client *Client) SegmentHeadWithCallback(request *SegmentHeadRequest, callb
 // SegmentHeadRequest is the request struct for api SegmentHead
 type SegmentHeadRequest struct {
 	*requests.RpcRequest
-	ImageURL string `position:"Query" name:"ImageURL"`
+	ReturnForm string `position:"Query" name:"ReturnForm"`
+	ImageURL   string `position:"Query" name:"ImageURL"`
 }
 
 // SegmentHeadResponse is the response struct for api SegmentHead

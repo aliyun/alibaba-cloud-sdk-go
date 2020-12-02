@@ -1,3 +1,7 @@
+2020-12-02 Version: v1.61.726
+- Generated 2019-12-30 for `imageseg`.
+- Update SegmentHead.
+
 2020-12-01 Version: v1.61.725
 - Generated 2020-01-16 for `DAS`.
 - Support new API GetAutonomousNotifyEventsInRange and GetAutonomousNotifyEventContent.
