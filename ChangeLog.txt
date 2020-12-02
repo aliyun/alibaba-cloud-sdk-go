@@ -1,3 +1,7 @@
+2020-12-02 Version: v1.61.728
+- Generated 2019-09-30 for `imageenhan`.
+- Release ColorizeImage.
+
 2020-12-02 Version: v1.61.727
 - Generated 2020-03-20 for `videoenhan`.
 - Release MergeVideoFace EnhanceVideoQuality.
