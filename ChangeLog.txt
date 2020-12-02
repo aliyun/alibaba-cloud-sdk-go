@@ -1,3 +1,7 @@
+2020-12-02 Version: v1.61.729
+- Generated 2020-06-30 for `idrsservice`.
+- Supported OpenAPI for SDK.
+
 2020-12-02 Version: v1.61.728
 - Generated 2019-09-30 for `imageenhan`.
 - Release ColorizeImage.
