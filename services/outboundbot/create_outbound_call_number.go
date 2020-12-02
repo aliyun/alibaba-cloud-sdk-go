@@ -21,7 +21,6 @@ import (
 )
 
 // CreateOutboundCallNumber invokes the outboundbot.CreateOutboundCallNumber API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/createoutboundcallnumber.html
 func (client *Client) CreateOutboundCallNumber(request *CreateOutboundCallNumberRequest) (response *CreateOutboundCallNumberResponse, err error) {
 	response = CreateCreateOutboundCallNumberResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateOutboundCallNumber(request *CreateOutboundCallNumber
 }
 
 // CreateOutboundCallNumberWithChan invokes the outboundbot.CreateOutboundCallNumber API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/createoutboundcallnumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOutboundCallNumberWithChan(request *CreateOutboundCallNumberRequest) (<-chan *CreateOutboundCallNumberResponse, <-chan error) {
 	responseChan := make(chan *CreateOutboundCallNumberResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateOutboundCallNumberWithChan(request *CreateOutboundCa
 }
 
 // CreateOutboundCallNumberWithCallback invokes the outboundbot.CreateOutboundCallNumber API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/createoutboundcallnumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateOutboundCallNumberWithCallback(request *CreateOutboundCallNumberRequest, callback func(response *CreateOutboundCallNumberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

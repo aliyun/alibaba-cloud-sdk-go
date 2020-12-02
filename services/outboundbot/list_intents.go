@@ -21,7 +21,6 @@ import (
 )
 
 // ListIntents invokes the outboundbot.ListIntents API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/listintents.html
 func (client *Client) ListIntents(request *ListIntentsRequest) (response *ListIntentsResponse, err error) {
 	response = CreateListIntentsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListIntents(request *ListIntentsRequest) (response *ListIn
 }
 
 // ListIntentsWithChan invokes the outboundbot.ListIntents API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/listintents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListIntentsWithChan(request *ListIntentsRequest) (<-chan *ListIntentsResponse, <-chan error) {
 	responseChan := make(chan *ListIntentsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListIntentsWithChan(request *ListIntentsRequest) (<-chan *
 }
 
 // ListIntentsWithCallback invokes the outboundbot.ListIntents API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/listintents.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListIntentsWithCallback(request *ListIntentsRequest, callback func(response *ListIntentsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

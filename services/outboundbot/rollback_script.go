@@ -21,7 +21,6 @@ import (
 )
 
 // RollbackScript invokes the outboundbot.RollbackScript API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/rollbackscript.html
 func (client *Client) RollbackScript(request *RollbackScriptRequest) (response *RollbackScriptResponse, err error) {
 	response = CreateRollbackScriptResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) RollbackScript(request *RollbackScriptRequest) (response *
 }
 
 // RollbackScriptWithChan invokes the outboundbot.RollbackScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/rollbackscript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RollbackScriptWithChan(request *RollbackScriptRequest) (<-chan *RollbackScriptResponse, <-chan error) {
 	responseChan := make(chan *RollbackScriptResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) RollbackScriptWithChan(request *RollbackScriptRequest) (<-
 }
 
 // RollbackScriptWithCallback invokes the outboundbot.RollbackScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/rollbackscript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RollbackScriptWithCallback(request *RollbackScriptRequest, callback func(response *RollbackScriptResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

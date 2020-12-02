@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteDialogueFlow invokes the outboundbot.DeleteDialogueFlow API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/deletedialogueflow.html
 func (client *Client) DeleteDialogueFlow(request *DeleteDialogueFlowRequest) (response *DeleteDialogueFlowResponse, err error) {
 	response = CreateDeleteDialogueFlowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteDialogueFlow(request *DeleteDialogueFlowRequest) (re
 }
 
 // DeleteDialogueFlowWithChan invokes the outboundbot.DeleteDialogueFlow API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/deletedialogueflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDialogueFlowWithChan(request *DeleteDialogueFlowRequest) (<-chan *DeleteDialogueFlowResponse, <-chan error) {
 	responseChan := make(chan *DeleteDialogueFlowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteDialogueFlowWithChan(request *DeleteDialogueFlowRequ
 }
 
 // DeleteDialogueFlowWithCallback invokes the outboundbot.DeleteDialogueFlow API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/deletedialogueflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDialogueFlowWithCallback(request *DeleteDialogueFlowRequest, callback func(response *DeleteDialogueFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

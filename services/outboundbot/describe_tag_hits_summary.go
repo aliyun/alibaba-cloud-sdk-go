@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeTagHitsSummary invokes the outboundbot.DescribeTagHitsSummary API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/describetaghitssummary.html
 func (client *Client) DescribeTagHitsSummary(request *DescribeTagHitsSummaryRequest) (response *DescribeTagHitsSummaryResponse, err error) {
 	response = CreateDescribeTagHitsSummaryResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeTagHitsSummary(request *DescribeTagHitsSummaryRequ
 }
 
 // DescribeTagHitsSummaryWithChan invokes the outboundbot.DescribeTagHitsSummary API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/describetaghitssummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTagHitsSummaryWithChan(request *DescribeTagHitsSummaryRequest) (<-chan *DescribeTagHitsSummaryResponse, <-chan error) {
 	responseChan := make(chan *DescribeTagHitsSummaryResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeTagHitsSummaryWithChan(request *DescribeTagHitsSum
 }
 
 // DescribeTagHitsSummaryWithCallback invokes the outboundbot.DescribeTagHitsSummary API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/describetaghitssummary.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTagHitsSummaryWithCallback(request *DescribeTagHitsSummaryRequest, callback func(response *DescribeTagHitsSummaryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

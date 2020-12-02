@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteGlobalQuestion invokes the outboundbot.DeleteGlobalQuestion API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/deleteglobalquestion.html
 func (client *Client) DeleteGlobalQuestion(request *DeleteGlobalQuestionRequest) (response *DeleteGlobalQuestionResponse, err error) {
 	response = CreateDeleteGlobalQuestionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteGlobalQuestion(request *DeleteGlobalQuestionRequest)
 }
 
 // DeleteGlobalQuestionWithChan invokes the outboundbot.DeleteGlobalQuestion API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/deleteglobalquestion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGlobalQuestionWithChan(request *DeleteGlobalQuestionRequest) (<-chan *DeleteGlobalQuestionResponse, <-chan error) {
 	responseChan := make(chan *DeleteGlobalQuestionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteGlobalQuestionWithChan(request *DeleteGlobalQuestion
 }
 
 // DeleteGlobalQuestionWithCallback invokes the outboundbot.DeleteGlobalQuestion API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/deleteglobalquestion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGlobalQuestionWithCallback(request *DeleteGlobalQuestionRequest, callback func(response *DeleteGlobalQuestionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

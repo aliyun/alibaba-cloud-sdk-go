@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteScript invokes the outboundbot.DeleteScript API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/deletescript.html
 func (client *Client) DeleteScript(request *DeleteScriptRequest) (response *DeleteScriptResponse, err error) {
 	response = CreateDeleteScriptResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteScript(request *DeleteScriptRequest) (response *Dele
 }
 
 // DeleteScriptWithChan invokes the outboundbot.DeleteScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/deletescript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScriptWithChan(request *DeleteScriptRequest) (<-chan *DeleteScriptResponse, <-chan error) {
 	responseChan := make(chan *DeleteScriptResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteScriptWithChan(request *DeleteScriptRequest) (<-chan
 }
 
 // DeleteScriptWithCallback invokes the outboundbot.DeleteScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/deletescript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScriptWithCallback(request *DeleteScriptRequest, callback func(response *DeleteScriptResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

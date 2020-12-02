@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyIntent invokes the outboundbot.ModifyIntent API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifyintent.html
 func (client *Client) ModifyIntent(request *ModifyIntentRequest) (response *ModifyIntentResponse, err error) {
 	response = CreateModifyIntentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyIntent(request *ModifyIntentRequest) (response *Modi
 }
 
 // ModifyIntentWithChan invokes the outboundbot.ModifyIntent API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifyintent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIntentWithChan(request *ModifyIntentRequest) (<-chan *ModifyIntentResponse, <-chan error) {
 	responseChan := make(chan *ModifyIntentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyIntentWithChan(request *ModifyIntentRequest) (<-chan
 }
 
 // ModifyIntentWithCallback invokes the outboundbot.ModifyIntent API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifyintent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIntentWithCallback(request *ModifyIntentRequest, callback func(response *ModifyIntentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

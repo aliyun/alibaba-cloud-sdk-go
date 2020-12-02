@@ -21,7 +21,6 @@ import (
 )
 
 // CreateTag invokes the outboundbot.CreateTag API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/createtag.html
 func (client *Client) CreateTag(request *CreateTagRequest) (response *CreateTagResponse, err error) {
 	response = CreateCreateTagResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateTag(request *CreateTagRequest) (response *CreateTagR
 }
 
 // CreateTagWithChan invokes the outboundbot.CreateTag API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/createtag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTagWithChan(request *CreateTagRequest) (<-chan *CreateTagResponse, <-chan error) {
 	responseChan := make(chan *CreateTagResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateTagWithChan(request *CreateTagRequest) (<-chan *Crea
 }
 
 // CreateTagWithCallback invokes the outboundbot.CreateTag API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/createtag.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTagWithCallback(request *CreateTagRequest, callback func(response *CreateTagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

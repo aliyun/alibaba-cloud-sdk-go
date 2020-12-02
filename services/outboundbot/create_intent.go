@@ -21,7 +21,6 @@ import (
 )
 
 // CreateIntent invokes the outboundbot.CreateIntent API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/createintent.html
 func (client *Client) CreateIntent(request *CreateIntentRequest) (response *CreateIntentResponse, err error) {
 	response = CreateCreateIntentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateIntent(request *CreateIntentRequest) (response *Crea
 }
 
 // CreateIntentWithChan invokes the outboundbot.CreateIntent API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/createintent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateIntentWithChan(request *CreateIntentRequest) (<-chan *CreateIntentResponse, <-chan error) {
 	responseChan := make(chan *CreateIntentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateIntentWithChan(request *CreateIntentRequest) (<-chan
 }
 
 // CreateIntentWithCallback invokes the outboundbot.CreateIntent API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/createintent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateIntentWithCallback(request *CreateIntentRequest, callback func(response *CreateIntentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

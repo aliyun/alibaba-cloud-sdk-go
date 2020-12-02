@@ -21,7 +21,6 @@ import (
 )
 
 // ListOutboundCallNumbers invokes the outboundbot.ListOutboundCallNumbers API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/listoutboundcallnumbers.html
 func (client *Client) ListOutboundCallNumbers(request *ListOutboundCallNumbersRequest) (response *ListOutboundCallNumbersResponse, err error) {
 	response = CreateListOutboundCallNumbersResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListOutboundCallNumbers(request *ListOutboundCallNumbersRe
 }
 
 // ListOutboundCallNumbersWithChan invokes the outboundbot.ListOutboundCallNumbers API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/listoutboundcallnumbers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListOutboundCallNumbersWithChan(request *ListOutboundCallNumbersRequest) (<-chan *ListOutboundCallNumbersResponse, <-chan error) {
 	responseChan := make(chan *ListOutboundCallNumbersResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListOutboundCallNumbersWithChan(request *ListOutboundCallN
 }
 
 // ListOutboundCallNumbersWithCallback invokes the outboundbot.ListOutboundCallNumbers API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/listoutboundcallnumbers.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListOutboundCallNumbersWithCallback(request *ListOutboundCallNumbersRequest, callback func(response *ListOutboundCallNumbersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

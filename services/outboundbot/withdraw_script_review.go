@@ -21,7 +21,6 @@ import (
 )
 
 // WithdrawScriptReview invokes the outboundbot.WithdrawScriptReview API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/withdrawscriptreview.html
 func (client *Client) WithdrawScriptReview(request *WithdrawScriptReviewRequest) (response *WithdrawScriptReviewResponse, err error) {
 	response = CreateWithdrawScriptReviewResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) WithdrawScriptReview(request *WithdrawScriptReviewRequest)
 }
 
 // WithdrawScriptReviewWithChan invokes the outboundbot.WithdrawScriptReview API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/withdrawscriptreview.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) WithdrawScriptReviewWithChan(request *WithdrawScriptReviewRequest) (<-chan *WithdrawScriptReviewResponse, <-chan error) {
 	responseChan := make(chan *WithdrawScriptReviewResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) WithdrawScriptReviewWithChan(request *WithdrawScriptReview
 }
 
 // WithdrawScriptReviewWithCallback invokes the outboundbot.WithdrawScriptReview API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/withdrawscriptreview.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) WithdrawScriptReviewWithCallback(request *WithdrawScriptReviewRequest, callback func(response *WithdrawScriptReviewResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

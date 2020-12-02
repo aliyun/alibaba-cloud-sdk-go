@@ -21,7 +21,6 @@ import (
 )
 
 // ImportScript invokes the outboundbot.ImportScript API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/importscript.html
 func (client *Client) ImportScript(request *ImportScriptRequest) (response *ImportScriptResponse, err error) {
 	response = CreateImportScriptResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ImportScript(request *ImportScriptRequest) (response *Impo
 }
 
 // ImportScriptWithChan invokes the outboundbot.ImportScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/importscript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportScriptWithChan(request *ImportScriptRequest) (<-chan *ImportScriptResponse, <-chan error) {
 	responseChan := make(chan *ImportScriptResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ImportScriptWithChan(request *ImportScriptRequest) (<-chan
 }
 
 // ImportScriptWithCallback invokes the outboundbot.ImportScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/importscript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportScriptWithCallback(request *ImportScriptRequest, callback func(response *ImportScriptResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

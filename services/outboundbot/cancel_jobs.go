@@ -21,7 +21,6 @@ import (
 )
 
 // CancelJobs invokes the outboundbot.CancelJobs API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/canceljobs.html
 func (client *Client) CancelJobs(request *CancelJobsRequest) (response *CancelJobsResponse, err error) {
 	response = CreateCancelJobsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CancelJobs(request *CancelJobsRequest) (response *CancelJo
 }
 
 // CancelJobsWithChan invokes the outboundbot.CancelJobs API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/canceljobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelJobsWithChan(request *CancelJobsRequest) (<-chan *CancelJobsResponse, <-chan error) {
 	responseChan := make(chan *CancelJobsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CancelJobsWithChan(request *CancelJobsRequest) (<-chan *Ca
 }
 
 // CancelJobsWithCallback invokes the outboundbot.CancelJobs API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/canceljobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelJobsWithCallback(request *CancelJobsRequest, callback func(response *CancelJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

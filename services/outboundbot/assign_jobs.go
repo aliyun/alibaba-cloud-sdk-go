@@ -21,7 +21,6 @@ import (
 )
 
 // AssignJobs invokes the outboundbot.AssignJobs API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/assignjobs.html
 func (client *Client) AssignJobs(request *AssignJobsRequest) (response *AssignJobsResponse, err error) {
 	response = CreateAssignJobsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) AssignJobs(request *AssignJobsRequest) (response *AssignJo
 }
 
 // AssignJobsWithChan invokes the outboundbot.AssignJobs API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/assignjobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssignJobsWithChan(request *AssignJobsRequest) (<-chan *AssignJobsResponse, <-chan error) {
 	responseChan := make(chan *AssignJobsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) AssignJobsWithChan(request *AssignJobsRequest) (<-chan *As
 }
 
 // AssignJobsWithCallback invokes the outboundbot.AssignJobs API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/assignjobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssignJobsWithCallback(request *AssignJobsRequest, callback func(response *AssignJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

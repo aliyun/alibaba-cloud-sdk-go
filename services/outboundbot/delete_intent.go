@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteIntent invokes the outboundbot.DeleteIntent API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/deleteintent.html
 func (client *Client) DeleteIntent(request *DeleteIntentRequest) (response *DeleteIntentResponse, err error) {
 	response = CreateDeleteIntentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteIntent(request *DeleteIntentRequest) (response *Dele
 }
 
 // DeleteIntentWithChan invokes the outboundbot.DeleteIntent API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/deleteintent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteIntentWithChan(request *DeleteIntentRequest) (<-chan *DeleteIntentResponse, <-chan error) {
 	responseChan := make(chan *DeleteIntentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteIntentWithChan(request *DeleteIntentRequest) (<-chan
 }
 
 // DeleteIntentWithCallback invokes the outboundbot.DeleteIntent API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/deleteintent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteIntentWithCallback(request *DeleteIntentRequest, callback func(response *DeleteIntentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

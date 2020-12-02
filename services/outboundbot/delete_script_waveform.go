@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteScriptWaveform invokes the outboundbot.DeleteScriptWaveform API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/deletescriptwaveform.html
 func (client *Client) DeleteScriptWaveform(request *DeleteScriptWaveformRequest) (response *DeleteScriptWaveformResponse, err error) {
 	response = CreateDeleteScriptWaveformResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteScriptWaveform(request *DeleteScriptWaveformRequest)
 }
 
 // DeleteScriptWaveformWithChan invokes the outboundbot.DeleteScriptWaveform API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/deletescriptwaveform.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScriptWaveformWithChan(request *DeleteScriptWaveformRequest) (<-chan *DeleteScriptWaveformResponse, <-chan error) {
 	responseChan := make(chan *DeleteScriptWaveformResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteScriptWaveformWithChan(request *DeleteScriptWaveform
 }
 
 // DeleteScriptWaveformWithCallback invokes the outboundbot.DeleteScriptWaveform API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/deletescriptwaveform.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScriptWaveformWithCallback(request *DeleteScriptWaveformRequest, callback func(response *DeleteScriptWaveformResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

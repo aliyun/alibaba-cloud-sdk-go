@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyTTSConfig invokes the outboundbot.ModifyTTSConfig API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifyttsconfig.html
 func (client *Client) ModifyTTSConfig(request *ModifyTTSConfigRequest) (response *ModifyTTSConfigResponse, err error) {
 	response = CreateModifyTTSConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyTTSConfig(request *ModifyTTSConfigRequest) (response
 }
 
 // ModifyTTSConfigWithChan invokes the outboundbot.ModifyTTSConfig API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifyttsconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyTTSConfigWithChan(request *ModifyTTSConfigRequest) (<-chan *ModifyTTSConfigResponse, <-chan error) {
 	responseChan := make(chan *ModifyTTSConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyTTSConfigWithChan(request *ModifyTTSConfigRequest) (
 }
 
 // ModifyTTSConfigWithCallback invokes the outboundbot.ModifyTTSConfig API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifyttsconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyTTSConfigWithCallback(request *ModifyTTSConfigRequest, callback func(response *ModifyTTSConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

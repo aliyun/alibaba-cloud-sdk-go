@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyOutboundCallNumber invokes the outboundbot.ModifyOutboundCallNumber API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifyoutboundcallnumber.html
 func (client *Client) ModifyOutboundCallNumber(request *ModifyOutboundCallNumberRequest) (response *ModifyOutboundCallNumberResponse, err error) {
 	response = CreateModifyOutboundCallNumberResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyOutboundCallNumber(request *ModifyOutboundCallNumber
 }
 
 // ModifyOutboundCallNumberWithChan invokes the outboundbot.ModifyOutboundCallNumber API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifyoutboundcallnumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyOutboundCallNumberWithChan(request *ModifyOutboundCallNumberRequest) (<-chan *ModifyOutboundCallNumberResponse, <-chan error) {
 	responseChan := make(chan *ModifyOutboundCallNumberResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyOutboundCallNumberWithChan(request *ModifyOutboundCa
 }
 
 // ModifyOutboundCallNumberWithCallback invokes the outboundbot.ModifyOutboundCallNumber API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifyoutboundcallnumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyOutboundCallNumberWithCallback(request *ModifyOutboundCallNumberRequest, callback func(response *ModifyOutboundCallNumberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

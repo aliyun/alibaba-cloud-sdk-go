@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyGlobalQuestion invokes the outboundbot.ModifyGlobalQuestion API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifyglobalquestion.html
 func (client *Client) ModifyGlobalQuestion(request *ModifyGlobalQuestionRequest) (response *ModifyGlobalQuestionResponse, err error) {
 	response = CreateModifyGlobalQuestionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyGlobalQuestion(request *ModifyGlobalQuestionRequest)
 }
 
 // ModifyGlobalQuestionWithChan invokes the outboundbot.ModifyGlobalQuestion API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifyglobalquestion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyGlobalQuestionWithChan(request *ModifyGlobalQuestionRequest) (<-chan *ModifyGlobalQuestionResponse, <-chan error) {
 	responseChan := make(chan *ModifyGlobalQuestionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyGlobalQuestionWithChan(request *ModifyGlobalQuestion
 }
 
 // ModifyGlobalQuestionWithCallback invokes the outboundbot.ModifyGlobalQuestion API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifyglobalquestion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyGlobalQuestionWithCallback(request *ModifyGlobalQuestionRequest, callback func(response *ModifyGlobalQuestionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

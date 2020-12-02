@@ -21,7 +21,6 @@ import (
 )
 
 // ListScriptVoiceConfigs invokes the outboundbot.ListScriptVoiceConfigs API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/listscriptvoiceconfigs.html
 func (client *Client) ListScriptVoiceConfigs(request *ListScriptVoiceConfigsRequest) (response *ListScriptVoiceConfigsResponse, err error) {
 	response = CreateListScriptVoiceConfigsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListScriptVoiceConfigs(request *ListScriptVoiceConfigsRequ
 }
 
 // ListScriptVoiceConfigsWithChan invokes the outboundbot.ListScriptVoiceConfigs API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/listscriptvoiceconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListScriptVoiceConfigsWithChan(request *ListScriptVoiceConfigsRequest) (<-chan *ListScriptVoiceConfigsResponse, <-chan error) {
 	responseChan := make(chan *ListScriptVoiceConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListScriptVoiceConfigsWithChan(request *ListScriptVoiceCon
 }
 
 // ListScriptVoiceConfigsWithCallback invokes the outboundbot.ListScriptVoiceConfigs API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/listscriptvoiceconfigs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListScriptVoiceConfigsWithCallback(request *ListScriptVoiceConfigsRequest, callback func(response *ListScriptVoiceConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

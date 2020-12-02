@@ -21,7 +21,6 @@ import (
 )
 
 // ListMedia invokes the outboundbot.ListMedia API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/listmedia.html
 func (client *Client) ListMedia(request *ListMediaRequest) (response *ListMediaResponse, err error) {
 	response = CreateListMediaResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListMedia(request *ListMediaRequest) (response *ListMediaR
 }
 
 // ListMediaWithChan invokes the outboundbot.ListMedia API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/listmedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMediaWithChan(request *ListMediaRequest) (<-chan *ListMediaResponse, <-chan error) {
 	responseChan := make(chan *ListMediaResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListMediaWithChan(request *ListMediaRequest) (<-chan *List
 }
 
 // ListMediaWithCallback invokes the outboundbot.ListMedia API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/listmedia.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMediaWithCallback(request *ListMediaRequest, callback func(response *ListMediaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

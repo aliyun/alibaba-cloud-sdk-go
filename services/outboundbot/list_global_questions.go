@@ -21,7 +21,6 @@ import (
 )
 
 // ListGlobalQuestions invokes the outboundbot.ListGlobalQuestions API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/listglobalquestions.html
 func (client *Client) ListGlobalQuestions(request *ListGlobalQuestionsRequest) (response *ListGlobalQuestionsResponse, err error) {
 	response = CreateListGlobalQuestionsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListGlobalQuestions(request *ListGlobalQuestionsRequest) (
 }
 
 // ListGlobalQuestionsWithChan invokes the outboundbot.ListGlobalQuestions API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/listglobalquestions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListGlobalQuestionsWithChan(request *ListGlobalQuestionsRequest) (<-chan *ListGlobalQuestionsResponse, <-chan error) {
 	responseChan := make(chan *ListGlobalQuestionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListGlobalQuestionsWithChan(request *ListGlobalQuestionsRe
 }
 
 // ListGlobalQuestionsWithCallback invokes the outboundbot.ListGlobalQuestions API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/listglobalquestions.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListGlobalQuestionsWithCallback(request *ListGlobalQuestionsRequest, callback func(response *ListGlobalQuestionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

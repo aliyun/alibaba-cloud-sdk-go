@@ -21,7 +21,6 @@ import (
 )
 
 // PublishScriptForDebug invokes the outboundbot.PublishScriptForDebug API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/publishscriptfordebug.html
 func (client *Client) PublishScriptForDebug(request *PublishScriptForDebugRequest) (response *PublishScriptForDebugResponse, err error) {
 	response = CreatePublishScriptForDebugResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PublishScriptForDebug(request *PublishScriptForDebugReques
 }
 
 // PublishScriptForDebugWithChan invokes the outboundbot.PublishScriptForDebug API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/publishscriptfordebug.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PublishScriptForDebugWithChan(request *PublishScriptForDebugRequest) (<-chan *PublishScriptForDebugResponse, <-chan error) {
 	responseChan := make(chan *PublishScriptForDebugResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PublishScriptForDebugWithChan(request *PublishScriptForDeb
 }
 
 // PublishScriptForDebugWithCallback invokes the outboundbot.PublishScriptForDebug API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/publishscriptfordebug.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PublishScriptForDebugWithCallback(request *PublishScriptForDebugRequest, callback func(response *PublishScriptForDebugResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

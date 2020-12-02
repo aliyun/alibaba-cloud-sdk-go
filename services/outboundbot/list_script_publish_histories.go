@@ -21,7 +21,6 @@ import (
 )
 
 // ListScriptPublishHistories invokes the outboundbot.ListScriptPublishHistories API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/listscriptpublishhistories.html
 func (client *Client) ListScriptPublishHistories(request *ListScriptPublishHistoriesRequest) (response *ListScriptPublishHistoriesResponse, err error) {
 	response = CreateListScriptPublishHistoriesResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListScriptPublishHistories(request *ListScriptPublishHisto
 }
 
 // ListScriptPublishHistoriesWithChan invokes the outboundbot.ListScriptPublishHistories API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/listscriptpublishhistories.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListScriptPublishHistoriesWithChan(request *ListScriptPublishHistoriesRequest) (<-chan *ListScriptPublishHistoriesResponse, <-chan error) {
 	responseChan := make(chan *ListScriptPublishHistoriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListScriptPublishHistoriesWithChan(request *ListScriptPubl
 }
 
 // ListScriptPublishHistoriesWithCallback invokes the outboundbot.ListScriptPublishHistories API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/listscriptpublishhistories.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListScriptPublishHistoriesWithCallback(request *ListScriptPublishHistoriesRequest, callback func(response *ListScriptPublishHistoriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

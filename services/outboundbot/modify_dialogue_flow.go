@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyDialogueFlow invokes the outboundbot.ModifyDialogueFlow API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifydialogueflow.html
 func (client *Client) ModifyDialogueFlow(request *ModifyDialogueFlowRequest) (response *ModifyDialogueFlowResponse, err error) {
 	response = CreateModifyDialogueFlowResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyDialogueFlow(request *ModifyDialogueFlowRequest) (re
 }
 
 // ModifyDialogueFlowWithChan invokes the outboundbot.ModifyDialogueFlow API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifydialogueflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDialogueFlowWithChan(request *ModifyDialogueFlowRequest) (<-chan *ModifyDialogueFlowResponse, <-chan error) {
 	responseChan := make(chan *ModifyDialogueFlowResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyDialogueFlowWithChan(request *ModifyDialogueFlowRequ
 }
 
 // ModifyDialogueFlowWithCallback invokes the outboundbot.ModifyDialogueFlow API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifydialogueflow.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDialogueFlowWithCallback(request *ModifyDialogueFlowRequest, callback func(response *ModifyDialogueFlowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,10 +71,11 @@ func (client *Client) ModifyDialogueFlowWithCallback(request *ModifyDialogueFlow
 // ModifyDialogueFlowRequest is the request struct for api ModifyDialogueFlow
 type ModifyDialogueFlowRequest struct {
 	*requests.RpcRequest
-	ScriptId               string `position:"Query" name:"ScriptId"`
-	InstanceId             string `position:"Query" name:"InstanceId"`
-	DialogueFlowDefinition string `position:"Query" name:"DialogueFlowDefinition"`
-	DialogueFlowId         string `position:"Query" name:"DialogueFlowId"`
+	IsDrafted              requests.Boolean `position:"Query" name:"IsDrafted"`
+	ScriptId               string           `position:"Query" name:"ScriptId"`
+	InstanceId             string           `position:"Query" name:"InstanceId"`
+	DialogueFlowDefinition string           `position:"Query" name:"DialogueFlowDefinition"`
+	DialogueFlowId         string           `position:"Query" name:"DialogueFlowId"`
 }
 
 // ModifyDialogueFlowResponse is the response struct for api ModifyDialogueFlow

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyTagGroups invokes the outboundbot.ModifyTagGroups API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifytaggroups.html
 func (client *Client) ModifyTagGroups(request *ModifyTagGroupsRequest) (response *ModifyTagGroupsResponse, err error) {
 	response = CreateModifyTagGroupsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyTagGroups(request *ModifyTagGroupsRequest) (response
 }
 
 // ModifyTagGroupsWithChan invokes the outboundbot.ModifyTagGroups API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifytaggroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyTagGroupsWithChan(request *ModifyTagGroupsRequest) (<-chan *ModifyTagGroupsResponse, <-chan error) {
 	responseChan := make(chan *ModifyTagGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyTagGroupsWithChan(request *ModifyTagGroupsRequest) (
 }
 
 // ModifyTagGroupsWithCallback invokes the outboundbot.ModifyTagGroups API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifytaggroups.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyTagGroupsWithCallback(request *ModifyTagGroupsRequest, callback func(response *ModifyTagGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

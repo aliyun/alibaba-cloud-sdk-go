@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteOutboundCallNumber invokes the outboundbot.DeleteOutboundCallNumber API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/deleteoutboundcallnumber.html
 func (client *Client) DeleteOutboundCallNumber(request *DeleteOutboundCallNumberRequest) (response *DeleteOutboundCallNumberResponse, err error) {
 	response = CreateDeleteOutboundCallNumberResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteOutboundCallNumber(request *DeleteOutboundCallNumber
 }
 
 // DeleteOutboundCallNumberWithChan invokes the outboundbot.DeleteOutboundCallNumber API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/deleteoutboundcallnumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteOutboundCallNumberWithChan(request *DeleteOutboundCallNumberRequest) (<-chan *DeleteOutboundCallNumberResponse, <-chan error) {
 	responseChan := make(chan *DeleteOutboundCallNumberResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteOutboundCallNumberWithChan(request *DeleteOutboundCa
 }
 
 // DeleteOutboundCallNumberWithCallback invokes the outboundbot.DeleteOutboundCallNumber API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/deleteoutboundcallnumber.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteOutboundCallNumberWithCallback(request *DeleteOutboundCallNumberRequest, callback func(response *DeleteOutboundCallNumberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

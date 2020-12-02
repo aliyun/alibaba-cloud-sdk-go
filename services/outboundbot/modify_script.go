@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyScript invokes the outboundbot.ModifyScript API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifyscript.html
 func (client *Client) ModifyScript(request *ModifyScriptRequest) (response *ModifyScriptResponse, err error) {
 	response = CreateModifyScriptResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyScript(request *ModifyScriptRequest) (response *Modi
 }
 
 // ModifyScriptWithChan invokes the outboundbot.ModifyScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifyscript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyScriptWithChan(request *ModifyScriptRequest) (<-chan *ModifyScriptResponse, <-chan error) {
 	responseChan := make(chan *ModifyScriptResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyScriptWithChan(request *ModifyScriptRequest) (<-chan
 }
 
 // ModifyScriptWithCallback invokes the outboundbot.ModifyScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifyscript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyScriptWithCallback(request *ModifyScriptRequest, callback func(response *ModifyScriptResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

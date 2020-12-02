@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeScriptVoiceConfig invokes the outboundbot.DescribeScriptVoiceConfig API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/describescriptvoiceconfig.html
 func (client *Client) DescribeScriptVoiceConfig(request *DescribeScriptVoiceConfigRequest) (response *DescribeScriptVoiceConfigResponse, err error) {
 	response = CreateDescribeScriptVoiceConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeScriptVoiceConfig(request *DescribeScriptVoiceConf
 }
 
 // DescribeScriptVoiceConfigWithChan invokes the outboundbot.DescribeScriptVoiceConfig API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/describescriptvoiceconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScriptVoiceConfigWithChan(request *DescribeScriptVoiceConfigRequest) (<-chan *DescribeScriptVoiceConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeScriptVoiceConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeScriptVoiceConfigWithChan(request *DescribeScriptV
 }
 
 // DescribeScriptVoiceConfigWithCallback invokes the outboundbot.DescribeScriptVoiceConfig API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/describescriptvoiceconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScriptVoiceConfigWithCallback(request *DescribeScriptVoiceConfigRequest, callback func(response *DescribeScriptVoiceConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeJobGroup invokes the outboundbot.DescribeJobGroup API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/describejobgroup.html
 func (client *Client) DescribeJobGroup(request *DescribeJobGroupRequest) (response *DescribeJobGroupResponse, err error) {
 	response = CreateDescribeJobGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeJobGroup(request *DescribeJobGroupRequest) (respon
 }
 
 // DescribeJobGroupWithChan invokes the outboundbot.DescribeJobGroup API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/describejobgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeJobGroupWithChan(request *DescribeJobGroupRequest) (<-chan *DescribeJobGroupResponse, <-chan error) {
 	responseChan := make(chan *DescribeJobGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeJobGroupWithChan(request *DescribeJobGroupRequest)
 }
 
 // DescribeJobGroupWithCallback invokes the outboundbot.DescribeJobGroup API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/describejobgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeJobGroupWithCallback(request *DescribeJobGroupRequest, callback func(response *DescribeJobGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

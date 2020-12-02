@@ -21,7 +21,6 @@ import (
 )
 
 // DuplicateScript invokes the outboundbot.DuplicateScript API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/duplicatescript.html
 func (client *Client) DuplicateScript(request *DuplicateScriptRequest) (response *DuplicateScriptResponse, err error) {
 	response = CreateDuplicateScriptResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DuplicateScript(request *DuplicateScriptRequest) (response
 }
 
 // DuplicateScriptWithChan invokes the outboundbot.DuplicateScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/duplicatescript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DuplicateScriptWithChan(request *DuplicateScriptRequest) (<-chan *DuplicateScriptResponse, <-chan error) {
 	responseChan := make(chan *DuplicateScriptResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DuplicateScriptWithChan(request *DuplicateScriptRequest) (
 }
 
 // DuplicateScriptWithCallback invokes the outboundbot.DuplicateScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/duplicatescript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DuplicateScriptWithCallback(request *DuplicateScriptRequest, callback func(response *DuplicateScriptResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

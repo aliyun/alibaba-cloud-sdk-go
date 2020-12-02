@@ -1,3 +1,7 @@
+2020-12-02 Version: v1.61.731
+- Generated 2019-12-26 for `OutboundBot`.
+- Update version.
+
 2020-12-02 Version: v1.61.730
 - Generated 2019-06-01 for `oos`.
 - Support TemplateContent.

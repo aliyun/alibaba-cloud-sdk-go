@@ -21,7 +21,6 @@ import (
 )
 
 // ListScripts invokes the outboundbot.ListScripts API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/listscripts.html
 func (client *Client) ListScripts(request *ListScriptsRequest) (response *ListScriptsResponse, err error) {
 	response = CreateListScriptsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListScripts(request *ListScriptsRequest) (response *ListSc
 }
 
 // ListScriptsWithChan invokes the outboundbot.ListScripts API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/listscripts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListScriptsWithChan(request *ListScriptsRequest) (<-chan *ListScriptsResponse, <-chan error) {
 	responseChan := make(chan *ListScriptsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListScriptsWithChan(request *ListScriptsRequest) (<-chan *
 }
 
 // ListScriptsWithCallback invokes the outboundbot.ListScripts API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/listscripts.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListScriptsWithCallback(request *ListScriptsRequest, callback func(response *ListScriptsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

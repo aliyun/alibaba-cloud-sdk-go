@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeScript invokes the outboundbot.DescribeScript API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/describescript.html
 func (client *Client) DescribeScript(request *DescribeScriptRequest) (response *DescribeScriptResponse, err error) {
 	response = CreateDescribeScriptResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeScript(request *DescribeScriptRequest) (response *
 }
 
 // DescribeScriptWithChan invokes the outboundbot.DescribeScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/describescript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScriptWithChan(request *DescribeScriptRequest) (<-chan *DescribeScriptResponse, <-chan error) {
 	responseChan := make(chan *DescribeScriptResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeScriptWithChan(request *DescribeScriptRequest) (<-
 }
 
 // DescribeScriptWithCallback invokes the outboundbot.DescribeScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/describescript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScriptWithCallback(request *DescribeScriptRequest, callback func(response *DescribeScriptResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

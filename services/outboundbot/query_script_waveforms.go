@@ -21,7 +21,6 @@ import (
 )
 
 // QueryScriptWaveforms invokes the outboundbot.QueryScriptWaveforms API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/queryscriptwaveforms.html
 func (client *Client) QueryScriptWaveforms(request *QueryScriptWaveformsRequest) (response *QueryScriptWaveformsResponse, err error) {
 	response = CreateQueryScriptWaveformsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryScriptWaveforms(request *QueryScriptWaveformsRequest)
 }
 
 // QueryScriptWaveformsWithChan invokes the outboundbot.QueryScriptWaveforms API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/queryscriptwaveforms.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryScriptWaveformsWithChan(request *QueryScriptWaveformsRequest) (<-chan *QueryScriptWaveformsResponse, <-chan error) {
 	responseChan := make(chan *QueryScriptWaveformsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryScriptWaveformsWithChan(request *QueryScriptWaveforms
 }
 
 // QueryScriptWaveformsWithCallback invokes the outboundbot.QueryScriptWaveforms API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/queryscriptwaveforms.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryScriptWaveformsWithCallback(request *QueryScriptWaveformsRequest, callback func(response *QueryScriptWaveformsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitBatchJobs invokes the outboundbot.SubmitBatchJobs API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/submitbatchjobs.html
 func (client *Client) SubmitBatchJobs(request *SubmitBatchJobsRequest) (response *SubmitBatchJobsResponse, err error) {
 	response = CreateSubmitBatchJobsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitBatchJobs(request *SubmitBatchJobsRequest) (response
 }
 
 // SubmitBatchJobsWithChan invokes the outboundbot.SubmitBatchJobs API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/submitbatchjobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitBatchJobsWithChan(request *SubmitBatchJobsRequest) (<-chan *SubmitBatchJobsResponse, <-chan error) {
 	responseChan := make(chan *SubmitBatchJobsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitBatchJobsWithChan(request *SubmitBatchJobsRequest) (
 }
 
 // SubmitBatchJobsWithCallback invokes the outboundbot.SubmitBatchJobs API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/submitbatchjobs.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitBatchJobsWithCallback(request *SubmitBatchJobsRequest, callback func(response *SubmitBatchJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // ModifyScriptVoiceConfig invokes the outboundbot.ModifyScriptVoiceConfig API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifyscriptvoiceconfig.html
 func (client *Client) ModifyScriptVoiceConfig(request *ModifyScriptVoiceConfigRequest) (response *ModifyScriptVoiceConfigResponse, err error) {
 	response = CreateModifyScriptVoiceConfigResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ModifyScriptVoiceConfig(request *ModifyScriptVoiceConfigRe
 }
 
 // ModifyScriptVoiceConfigWithChan invokes the outboundbot.ModifyScriptVoiceConfig API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifyscriptvoiceconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyScriptVoiceConfigWithChan(request *ModifyScriptVoiceConfigRequest) (<-chan *ModifyScriptVoiceConfigResponse, <-chan error) {
 	responseChan := make(chan *ModifyScriptVoiceConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ModifyScriptVoiceConfigWithChan(request *ModifyScriptVoice
 }
 
 // ModifyScriptVoiceConfigWithCallback invokes the outboundbot.ModifyScriptVoiceConfig API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/modifyscriptvoiceconfig.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyScriptVoiceConfigWithCallback(request *ModifyScriptVoiceConfigRequest, callback func(response *ModifyScriptVoiceConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

@@ -21,7 +21,6 @@ import (
 )
 
 // PublishScript invokes the outboundbot.PublishScript API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/publishscript.html
 func (client *Client) PublishScript(request *PublishScriptRequest) (response *PublishScriptResponse, err error) {
 	response = CreatePublishScriptResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) PublishScript(request *PublishScriptRequest) (response *Pu
 }
 
 // PublishScriptWithChan invokes the outboundbot.PublishScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/publishscript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PublishScriptWithChan(request *PublishScriptRequest) (<-chan *PublishScriptResponse, <-chan error) {
 	responseChan := make(chan *PublishScriptResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) PublishScriptWithChan(request *PublishScriptRequest) (<-ch
 }
 
 // PublishScriptWithCallback invokes the outboundbot.PublishScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/publishscript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PublishScriptWithCallback(request *PublishScriptRequest, callback func(response *PublishScriptResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

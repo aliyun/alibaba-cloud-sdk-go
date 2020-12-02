@@ -21,7 +21,6 @@ import (
 )
 
 // StartJob invokes the outboundbot.StartJob API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/startjob.html
 func (client *Client) StartJob(request *StartJobRequest) (response *StartJobResponse, err error) {
 	response = CreateStartJobResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) StartJob(request *StartJobRequest) (response *StartJobResp
 }
 
 // StartJobWithChan invokes the outboundbot.StartJob API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/startjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartJobWithChan(request *StartJobRequest) (<-chan *StartJobResponse, <-chan error) {
 	responseChan := make(chan *StartJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) StartJobWithChan(request *StartJobRequest) (<-chan *StartJ
 }
 
 // StartJobWithCallback invokes the outboundbot.StartJob API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/startjob.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartJobWithCallback(request *StartJobRequest, callback func(response *StartJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

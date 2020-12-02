@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeIntent invokes the outboundbot.DescribeIntent API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/describeintent.html
 func (client *Client) DescribeIntent(request *DescribeIntentRequest) (response *DescribeIntentResponse, err error) {
 	response = CreateDescribeIntentResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeIntent(request *DescribeIntentRequest) (response *
 }
 
 // DescribeIntentWithChan invokes the outboundbot.DescribeIntent API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/describeintent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIntentWithChan(request *DescribeIntentRequest) (<-chan *DescribeIntentResponse, <-chan error) {
 	responseChan := make(chan *DescribeIntentResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeIntentWithChan(request *DescribeIntentRequest) (<-
 }
 
 // DescribeIntentWithCallback invokes the outboundbot.DescribeIntent API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/describeintent.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIntentWithCallback(request *DescribeIntentRequest, callback func(response *DescribeIntentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

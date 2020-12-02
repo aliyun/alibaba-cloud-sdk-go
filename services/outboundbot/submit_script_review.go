@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitScriptReview invokes the outboundbot.SubmitScriptReview API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/submitscriptreview.html
 func (client *Client) SubmitScriptReview(request *SubmitScriptReviewRequest) (response *SubmitScriptReviewResponse, err error) {
 	response = CreateSubmitScriptReviewResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitScriptReview(request *SubmitScriptReviewRequest) (re
 }
 
 // SubmitScriptReviewWithChan invokes the outboundbot.SubmitScriptReview API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/submitscriptreview.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitScriptReviewWithChan(request *SubmitScriptReviewRequest) (<-chan *SubmitScriptReviewResponse, <-chan error) {
 	responseChan := make(chan *SubmitScriptReviewResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitScriptReviewWithChan(request *SubmitScriptReviewRequ
 }
 
 // SubmitScriptReviewWithCallback invokes the outboundbot.SubmitScriptReview API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/submitscriptreview.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitScriptReviewWithCallback(request *SubmitScriptReviewRequest, callback func(response *SubmitScriptReviewResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

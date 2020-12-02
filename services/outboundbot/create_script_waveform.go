@@ -21,7 +21,6 @@ import (
 )
 
 // CreateScriptWaveform invokes the outboundbot.CreateScriptWaveform API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/createscriptwaveform.html
 func (client *Client) CreateScriptWaveform(request *CreateScriptWaveformRequest) (response *CreateScriptWaveformResponse, err error) {
 	response = CreateCreateScriptWaveformResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateScriptWaveform(request *CreateScriptWaveformRequest)
 }
 
 // CreateScriptWaveformWithChan invokes the outboundbot.CreateScriptWaveform API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/createscriptwaveform.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScriptWaveformWithChan(request *CreateScriptWaveformRequest) (<-chan *CreateScriptWaveformResponse, <-chan error) {
 	responseChan := make(chan *CreateScriptWaveformResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateScriptWaveformWithChan(request *CreateScriptWaveform
 }
 
 // CreateScriptWaveformWithCallback invokes the outboundbot.CreateScriptWaveform API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/createscriptwaveform.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScriptWaveformWithCallback(request *CreateScriptWaveformRequest, callback func(response *CreateScriptWaveformResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

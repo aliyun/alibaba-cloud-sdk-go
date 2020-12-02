@@ -21,7 +21,6 @@ import (
 )
 
 // QueryScriptsByStatus invokes the outboundbot.QueryScriptsByStatus API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/queryscriptsbystatus.html
 func (client *Client) QueryScriptsByStatus(request *QueryScriptsByStatusRequest) (response *QueryScriptsByStatusResponse, err error) {
 	response = CreateQueryScriptsByStatusResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) QueryScriptsByStatus(request *QueryScriptsByStatusRequest)
 }
 
 // QueryScriptsByStatusWithChan invokes the outboundbot.QueryScriptsByStatus API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/queryscriptsbystatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryScriptsByStatusWithChan(request *QueryScriptsByStatusRequest) (<-chan *QueryScriptsByStatusResponse, <-chan error) {
 	responseChan := make(chan *QueryScriptsByStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) QueryScriptsByStatusWithChan(request *QueryScriptsByStatus
 }
 
 // QueryScriptsByStatusWithCallback invokes the outboundbot.QueryScriptsByStatus API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/queryscriptsbystatus.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryScriptsByStatusWithCallback(request *QueryScriptsByStatusRequest, callback func(response *QueryScriptsByStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

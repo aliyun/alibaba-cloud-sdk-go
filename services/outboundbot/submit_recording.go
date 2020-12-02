@@ -21,7 +21,6 @@ import (
 )
 
 // SubmitRecording invokes the outboundbot.SubmitRecording API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/submitrecording.html
 func (client *Client) SubmitRecording(request *SubmitRecordingRequest) (response *SubmitRecordingResponse, err error) {
 	response = CreateSubmitRecordingResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) SubmitRecording(request *SubmitRecordingRequest) (response
 }
 
 // SubmitRecordingWithChan invokes the outboundbot.SubmitRecording API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/submitrecording.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitRecordingWithChan(request *SubmitRecordingRequest) (<-chan *SubmitRecordingResponse, <-chan error) {
 	responseChan := make(chan *SubmitRecordingResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) SubmitRecordingWithChan(request *SubmitRecordingRequest) (
 }
 
 // SubmitRecordingWithCallback invokes the outboundbot.SubmitRecording API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/submitrecording.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitRecordingWithCallback(request *SubmitRecordingRequest, callback func(response *SubmitRecordingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

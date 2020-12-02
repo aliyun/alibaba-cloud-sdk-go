@@ -21,7 +21,6 @@ import (
 )
 
 // DescribeGlobalQuestion invokes the outboundbot.DescribeGlobalQuestion API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/describeglobalquestion.html
 func (client *Client) DescribeGlobalQuestion(request *DescribeGlobalQuestionRequest) (response *DescribeGlobalQuestionResponse, err error) {
 	response = CreateDescribeGlobalQuestionResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DescribeGlobalQuestion(request *DescribeGlobalQuestionRequ
 }
 
 // DescribeGlobalQuestionWithChan invokes the outboundbot.DescribeGlobalQuestion API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/describeglobalquestion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGlobalQuestionWithChan(request *DescribeGlobalQuestionRequest) (<-chan *DescribeGlobalQuestionResponse, <-chan error) {
 	responseChan := make(chan *DescribeGlobalQuestionResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DescribeGlobalQuestionWithChan(request *DescribeGlobalQues
 }
 
 // DescribeGlobalQuestionWithCallback invokes the outboundbot.DescribeGlobalQuestion API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/describeglobalquestion.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeGlobalQuestionWithCallback(request *DescribeGlobalQuestionRequest, callback func(response *DescribeGlobalQuestionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

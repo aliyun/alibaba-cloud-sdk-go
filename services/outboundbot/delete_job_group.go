@@ -21,7 +21,6 @@ import (
 )
 
 // DeleteJobGroup invokes the outboundbot.DeleteJobGroup API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/deletejobgroup.html
 func (client *Client) DeleteJobGroup(request *DeleteJobGroupRequest) (response *DeleteJobGroupResponse, err error) {
 	response = CreateDeleteJobGroupResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) DeleteJobGroup(request *DeleteJobGroupRequest) (response *
 }
 
 // DeleteJobGroupWithChan invokes the outboundbot.DeleteJobGroup API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/deletejobgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteJobGroupWithChan(request *DeleteJobGroupRequest) (<-chan *DeleteJobGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteJobGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) DeleteJobGroupWithChan(request *DeleteJobGroupRequest) (<-
 }
 
 // DeleteJobGroupWithCallback invokes the outboundbot.DeleteJobGroup API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/deletejobgroup.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteJobGroupWithCallback(request *DeleteJobGroupRequest, callback func(response *DeleteJobGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

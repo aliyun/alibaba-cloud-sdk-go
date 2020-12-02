@@ -21,7 +21,6 @@ import (
 )
 
 // ExportScript invokes the outboundbot.ExportScript API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/exportscript.html
 func (client *Client) ExportScript(request *ExportScriptRequest) (response *ExportScriptResponse, err error) {
 	response = CreateExportScriptResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ExportScript(request *ExportScriptRequest) (response *Expo
 }
 
 // ExportScriptWithChan invokes the outboundbot.ExportScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/exportscript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportScriptWithChan(request *ExportScriptRequest) (<-chan *ExportScriptResponse, <-chan error) {
 	responseChan := make(chan *ExportScriptResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ExportScriptWithChan(request *ExportScriptRequest) (<-chan
 }
 
 // ExportScriptWithCallback invokes the outboundbot.ExportScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/exportscript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportScriptWithCallback(request *ExportScriptRequest, callback func(response *ExportScriptResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

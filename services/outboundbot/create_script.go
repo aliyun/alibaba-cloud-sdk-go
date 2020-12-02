@@ -21,7 +21,6 @@ import (
 )
 
 // CreateScript invokes the outboundbot.CreateScript API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/createscript.html
 func (client *Client) CreateScript(request *CreateScriptRequest) (response *CreateScriptResponse, err error) {
 	response = CreateCreateScriptResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) CreateScript(request *CreateScriptRequest) (response *Crea
 }
 
 // CreateScriptWithChan invokes the outboundbot.CreateScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/createscript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScriptWithChan(request *CreateScriptRequest) (<-chan *CreateScriptResponse, <-chan error) {
 	responseChan := make(chan *CreateScriptResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) CreateScriptWithChan(request *CreateScriptRequest) (<-chan
 }
 
 // CreateScriptWithCallback invokes the outboundbot.CreateScript API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/createscript.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScriptWithCallback(request *CreateScriptRequest, callback func(response *CreateScriptResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {

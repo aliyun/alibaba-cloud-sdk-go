@@ -21,7 +21,6 @@ import (
 )
 
 // ListDialogueFlows invokes the outboundbot.ListDialogueFlows API synchronously
-// api document: https://help.aliyun.com/api/outboundbot/listdialogueflows.html
 func (client *Client) ListDialogueFlows(request *ListDialogueFlowsRequest) (response *ListDialogueFlowsResponse, err error) {
 	response = CreateListDialogueFlowsResponse()
 	err = client.DoAction(request, response)
@@ -29,8 +28,6 @@ func (client *Client) ListDialogueFlows(request *ListDialogueFlowsRequest) (resp
 }
 
 // ListDialogueFlowsWithChan invokes the outboundbot.ListDialogueFlows API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/listdialogueflows.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDialogueFlowsWithChan(request *ListDialogueFlowsRequest) (<-chan *ListDialogueFlowsResponse, <-chan error) {
 	responseChan := make(chan *ListDialogueFlowsResponse, 1)
 	errChan := make(chan error, 1)
@@ -53,8 +50,6 @@ func (client *Client) ListDialogueFlowsWithChan(request *ListDialogueFlowsReques
 }
 
 // ListDialogueFlowsWithCallback invokes the outboundbot.ListDialogueFlows API asynchronously
-// api document: https://help.aliyun.com/api/outboundbot/listdialogueflows.html
-// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDialogueFlowsWithCallback(request *ListDialogueFlowsRequest, callback func(response *ListDialogueFlowsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
