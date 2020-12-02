@@ -79,6 +79,7 @@ type StartExecutionRequest struct {
 	LoopMode          string                 `position:"Query" name:"LoopMode"`
 	SafetyCheck       string                 `position:"Query" name:"SafetyCheck"`
 	Tags              map[string]interface{} `position:"Query" name:"Tags"`
+	TemplateContent   string                 `position:"Query" name:"TemplateContent"`
 	ParentExecutionId string                 `position:"Query" name:"ParentExecutionId"`
 	Parameters        string                 `position:"Query" name:"Parameters"`
 }
