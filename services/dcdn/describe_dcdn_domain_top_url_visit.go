@@ -71,11 +71,10 @@ func (client *Client) DescribeDcdnDomainTopUrlVisitWithCallback(request *Describ
 // DescribeDcdnDomainTopUrlVisitRequest is the request struct for api DescribeDcdnDomainTopUrlVisit
 type DescribeDcdnDomainTopUrlVisitRequest struct {
 	*requests.RpcRequest
-	DomainName    string           `position:"Query" name:"DomainName"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	SortBy        string           `position:"Query" name:"SortBy"`
+	StartTime  string           `position:"Query" name:"StartTime"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	SortBy     string           `position:"Query" name:"SortBy"`
 }
 
 // DescribeDcdnDomainTopUrlVisitResponse is the response struct for api DescribeDcdnDomainTopUrlVisit

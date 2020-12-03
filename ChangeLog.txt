@@ -1,3 +1,7 @@
+2020-12-03 Version: v1.61.741
+- Generated 2018-01-15 for `dcdn`.
+- Update ModifyDcdnService.
+
 2020-12-03 Version: v1.61.740
 - Generated 2014-11-11, 2018-05-10 for `Cdn`.
 - Update DescribeDomainMax95BpsData.
